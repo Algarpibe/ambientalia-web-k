@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VideoLightbox } from "./VideoLightbox";
 
 /**
  * Hero — banner-home (`et_pb_section_0`).
@@ -89,14 +90,11 @@ export function HeroSection() {
           {/* Móvil: mb 20.8 del módulo del subtítulo y stride 84 entre botones
               apilados (50 + 34 del wrapper Divi) */}
           <div className="mt-[21px] flex flex-wrap items-center gap-x-4 gap-y-[34px] md:mt-8 md:gap-4">
-            <Link
-              href="#video"
-              data-trigger-click="video"
-              className="banner-home-button group inline-flex h-[50px] items-center text-white"
-            >
+            {/* M5: abre el lightbox con el vídeo de Brightcove (antes #video) */}
+            <VideoLightbox className="banner-home-button group inline-flex h-[50px] items-center text-white">
               <PlayCircleAnimated className="mr-[10px] h-[50px] w-[50px] shrink-0" />
               <span className="text-[18px] font-bold">Descubre cómo funciona</span>
-            </Link>
+            </VideoLightbox>
 
             <Link
               href="https://kunakair.com/es/descarga-catalogo/"
