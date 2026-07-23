@@ -8,20 +8,20 @@ import { SectionRow, SectionTitle, BlueButton } from "./SectionRow";
 export function PresenciaMundial() {
   return (
     <section
-      className="relative bg-white bg-no-repeat"
+      className="relative bg-white bg-no-repeat pb-[146px] pt-[85px] md:pb-[101px]"
       style={{
-        paddingTop: 85,
-        paddingBottom: 146,
         backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
         backgroundPosition: "0% 0%",
       }}
     >
       <SectionRow
-        title={<SectionTitle>Presencia mundial</SectionTitle>}
-        belowTitle={
-          <div className="flex flex-col items-start gap-8">
-            <div className="space-y-6 text-[18px] leading-[1.7] text-[#333]">
-              <p>
+        title={
+          <div>
+            <SectionTitle>Presencia mundial</SectionTitle>
+            {/* En el original los párrafos van en el mismo módulo que el título
+                (+6px), con pb 18 el primero; ancho 363 para calcar el wrap */}
+            <div className="mt-[6px] text-[18px] leading-[1.7] text-[#333] md:max-w-[363px]">
+              <p className="pb-[18px]">
                 Las estaciones Kunak AIR han sido probadas en las condiciones más adversas en más de 80 países por
                 los 5 continentes. Desde los países nórdicos con temperaturas de -30ºC hasta Oriente Medio a +50ºC.
               </p>
@@ -30,8 +30,10 @@ export function PresenciaMundial() {
                 de extrema temperatura y humedad como las zonas tropicales o zonas gélidas como la Antártida.
               </p>
             </div>
-            <BlueButton href="https://kunakair.com/es/contacto/">¿Cómo podemos ayudarte?</BlueButton>
           </div>
+        }
+        belowTitle={
+          <BlueButton href="https://kunakair.com/es/contacto/">¿Cómo podemos ayudarte?</BlueButton>
         }
       >
         <img
@@ -39,7 +41,7 @@ export function PresenciaMundial() {
           alt="Mapa mundial de la presencia de Kunak"
           width={786}
           height={405}
-          className="h-auto w-full"
+          className="h-auto w-full md:mt-[30px]"
           style={{ maxWidth: "100%" }}
         />
       </SectionRow>

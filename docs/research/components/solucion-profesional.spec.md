@@ -97,3 +97,37 @@ punteado.svg · real-time.svg · Mcerts.svg · data-quality-1.svg · global-pres
 ## Responsive
 - ≤980px: filas 1/3+2/3 se apilan (título arriba); H2 44→35px; blurbs `iconos-xs-2` a 2 por fila (48% + 2% gap).
 - ≤767px: H2 35px; blurbs siguen 2 por fila; botones full-width tendencia Divi (`et_pb_button_alignment_tablet_center` en ficha técnica).
+
+---
+
+## Addendum A2 (2026-07-23) — ritmo vertical Divi exacto (extraído módulo a módulo)
+
+Medido con perfil limpio + Cookiebot bloqueado. Valores desktop a 1418px de
+ancho útil (los % de Divi resueltos a px) y móvil a 390.
+
+### Geometría global (aplicada en `SectionRow.tsx`, afecta a toda la página)
+- Fila `.et_pb_row`: **width 86.35% / max-width 1380** (1224.6px @1418).
+- Columnas: 1/3 = **29.6667%** (363.3px) · gutter **5.5%** (67.3px) · 2/3 = **64.833%** (794px). Sin flex-shrink.
+- Padding de fila: **28.47px** (2%) arriba/abajo; fila 2 de S2: pb **71.19px**; fila de Sostenibilidad: pt 20 / pb 71.19.
+- Margen inferior de módulo: **33.67px**; margen superior de módulo de texto: 10px (colapsa salvo el primero de cada columna).
+- Todos los h1-h6 llevan `padding-bottom: 10px` (regla Divi global → `SectionTitle`).
+- Párrafos: `padding-bottom: 1em` (18px) salvo el último del módulo.
+- Botones `.et_pb_button`: 15px/25.5 fw700, padding **7.5/40.5/9/22.5**, borde 1px, radius 30 → alto 44px; flecha (20px) siempre visible dentro del padding; hover: `padding-right: 55.5px` y flecha +7px.
+- Móvil (≤767): sección pt 50, filas pt 30 (pbs 7.8/19.5/30), títulos **35px**, columnas apiladas con mb 30 (colapsa con el mt-10 del primer módulo), gaps de módulo ≈26-33px.
+
+### Detalles S2 que difieren del spec original
+- "Mide múltiples…", "Protege tu salud." y "Construye un futuro…" son **H2 37px con line-height 1em (37px)** + pb 10 — no 1.25.
+- "Protege tu salud." y "Protege el medio ambiente." son **dos H2 consecutivos**, ambos azules sin negrita (h 94px total).
+- Ante el recuadro azul hay un `<p>&nbsp;</p>` (30.6px) — clonado como mt-[30px].
+- Título de fila 1 y 2 con módulo estrechado (margin-right 10% → texto a 327px, 5 líneas).
+- Blurbs de features: icono 50 (+6 arriba, +18 abajo) y etiqueta **18px/21.6** con pb 12; grid desktop gap 8px; móvil 2/fila con gap-y 32.
+- Validadores: ancho **por logo** (EPA 120, resto 100, Airparif 100% de celda), limitado por la celda (113px desktop; 161 móvil); wrap con mb 30.
+- Awards: 150px fijos, celda con mb 30; móvil 1/fila alineados a la izquierda (+23px) con gap 33.
+- "SENSOR MULTI-CONTAMINANTE MÁS PRECISO" en **azul**; el enlace "Más info" en **#333**.
+- Banner AIRLAB: img + **8px** de colchón inferior (módulo 167px).
+- Tras el newsletter (S8) el original deja **53px desktop / 15px móvil** de margen entre secciones.
+
+### Verificación final
+- S2 desktop: clon 2407 vs original 2409 (21 anclas de texto dentro de ±9).
+- S2 móvil: clon **4884 vs 4884** (exacto).
+- Página desktop completa: 11840 vs 11863 (−23; restos: S3 −13 y newsletter −10, pendientes M3/B1).

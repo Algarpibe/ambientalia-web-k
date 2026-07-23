@@ -36,17 +36,22 @@ const PILLARS: { icon: string; body: ReactNode }[] = [
 
 export function Sostenibilidad() {
   return (
-    <section className="relative bg-white pb-[80px] pt-[56px] md:pb-[152px] md:pt-[76px]">
-      <SectionRow title={<SectionTitle>Comprometidos con la sostenibilidad</SectionTitle>}>
-        <div className="space-y-6 text-[18px] leading-[1.7] text-[#333]">
-          <p>
+    <section className="relative bg-white pb-[80px] pt-[56px] md:pb-[59px] md:pt-[57px]">
+      <SectionRow
+        className="md:pb-[71px] md:pt-[20px]"
+        title={<SectionTitle>Comprometidos con la sostenibilidad</SectionTitle>}
+      >
+        <div className="text-[18px] leading-[1.7] text-[#333] md:mt-[10px]">
+          <p className="pb-[18px]">
             Las estaciones de monitorización de la calidad del aire de Kunak son los sistemas de monitorización
             ambiental más sostenibles del mercado.
           </p>
           <p>En su fabricación, cuidamos al detalle:</p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {/* Pilares Divi: columnas de 238 (gutter 40), icono + 26 de aire (=76
+            hasta el texto), descripción de 159px, margen de módulo 34 al pie */}
+        <div className="mt-[20px] grid grid-cols-1 gap-6 sm:grid-cols-3 md:mb-[34px] md:gap-[40px]">
           {PILLARS.map((p, i) => (
             <div key={i} className="px-[40px] text-center">
               <img
@@ -55,7 +60,7 @@ export function Sostenibilidad() {
                 aria-hidden
                 width={50}
                 height={50}
-                className="mx-auto mb-[30px]"
+                className="mx-auto mb-[26px]"
                 style={{ width: 50, height: 50 }}
               />
               <p className="text-[16px] leading-[1.37] text-[#333]">{p.body}</p>

@@ -29,7 +29,8 @@ export function UltimosArticulos() {
           <SectionTitle>Últimos artículos</SectionTitle>
         </div>
 
-        <div className="mt-[43px] grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        {/* −10 compensa el pb-[10px] que ahora lleva SectionTitle (regla Divi h2) */}
+        <div className="mt-[33px] grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((post) => (
             <article key={post.href}>
               <a

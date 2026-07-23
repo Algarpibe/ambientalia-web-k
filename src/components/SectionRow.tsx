@@ -19,11 +19,14 @@ export function SectionRow({
   return (
     <div
       className={
-        "mx-auto flex w-[85%] max-w-[1380px] flex-col gap-8 md:flex-row md:gap-[5.5%] " +
+        // Divi: .et_pb_row width 86.35% max 1380; cols 29.6667% + 64.833%,
+        // gutter 5.5% (valores exactos del CSS inline de la página original)
+        // Móvil: columnas apiladas con 30px (margin-bottom de columna Divi)
+        "mx-auto flex w-[86.35%] max-w-[1380px] flex-col gap-[30px] md:flex-row md:gap-[5.5%] " +
         className
       }
     >
-      <div className="relative w-full md:w-1/3">
+      <div className="relative w-full md:w-[29.6667%] md:shrink-0">
         <img
           src="/images/uploads/2022/12/punteado.svg"
           alt=""
@@ -34,20 +37,25 @@ export function SectionRow({
           style={{ width: 60, height: 22 }}
         />
         <div>{title}</div>
-        {belowTitle ? <div className="mt-6">{belowTitle}</div> : null}
+        {/* Gap módulo Divi: margin-bottom 33.67px del módulo de título en
+            desktop; en móvil colapsa a 0 (solo queda el pb-20 del título) */}
+        {belowTitle ? <div className="md:mt-[34px]">{belowTitle}</div> : null}
       </div>
-      <div className="w-full md:w-2/3">{children}</div>
+      <div className="w-full md:w-[64.833%] md:shrink-0">{children}</div>
     </div>
   );
 }
 
-/** Standard title used in the left column of each 1/3+2/3 row. */
+/** Standard title used in the left column of each 1/3+2/3 row.
+    Divi da `padding-bottom: 10px` a todos los h1-h6. */
 export function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <h2
+      className="pb-[10px]"
       style={{
         fontWeight: 300,
-        fontSize: "clamp(32px, 3.5vw, 44px)",
+        // Original: 35px en móvil (≤767), 44px en desktop
+        fontSize: "clamp(35px, 3.5vw, 44px)",
         lineHeight: 1.25,
         color: "#333",
         letterSpacing: "-0.5px",
@@ -69,19 +77,22 @@ export function BlueButton({
   external?: boolean;
 }) {
   const isPdf = href.endsWith(".pdf");
+  // Divi .et_pb_button.boton-azul: 15px/25.5 fw700, padding 7.5/40.5/9/22.5,
+  // borde 1px radius 30 → alto 44px. Flecha siempre visible dentro del padding
+  // derecho; hover: padding-right 55.5px (el botón crece) + flecha se desplaza.
   return (
     <a
       href={href}
       {...(external || isPdf ? { target: "_blank", rel: "noopener" } : {})}
-      className="inline-flex items-center gap-2 rounded-full bg-[#0075C9] px-6 py-3 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#7F8798]"
+      className="group relative inline-block rounded-[30px] border border-[#0075C9] bg-[#0075C9] pb-[9px] pl-[22.5px] pr-[40.5px] pt-[7.5px] text-[15px] font-bold leading-[25.5px] text-white transition-all duration-300 hover:border-[#7F8798] hover:bg-[#7F8798] hover:pr-[55.5px]"
     >
       {children}
-      <span className="arrow inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+      <span className="arrow absolute ml-[5px] inline-block text-[20px] leading-[25.5px] transition-all duration-300 group-hover:ml-[12px]">→</span>
     </a>
   );
 }
 
-/** Outline pill button, Divi's default variant. */
+/** Outline pill button, Divi's default variant (borde #333, flecha azul al hover). */
 export function OutlineButton({
   href,
   children,
@@ -96,10 +107,10 @@ export function OutlineButton({
     <a
       href={href}
       {...(external || isPdf ? { target: "_blank", rel: "noopener" } : {})}
-      className="group inline-flex items-center gap-2 rounded-full border border-[#333]/40 px-6 py-3 text-[14px] font-semibold text-[#333] transition-colors duration-300 hover:border-[#0075C9] hover:text-[#0075C9]"
+      className="group relative inline-block rounded-[30px] border border-[#333] pb-[9px] pl-[22.5px] pr-[40.5px] pt-[7.5px] text-[15px] font-bold leading-[25.5px] text-[#333] transition-all duration-300 hover:pr-[55.5px]"
     >
       {children}
-      <span className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">→</span>
+      <span className="arrow absolute ml-[5px] inline-block text-[20px] leading-[25.5px] transition-all duration-300 group-hover:ml-[12px] group-hover:text-[#0075C9]">→</span>
     </a>
   );
 }

@@ -6,8 +6,9 @@
  * Spec: docs/research/components/cta-newsletter.spec.md
  */
 export function CtaNewsletter() {
+  // El original deja 15px (móvil) / 53px (desktop) hasta "Últimos artículos"
   return (
-    <section className="w-full bg-white">
+    <section className="mb-[15px] w-full bg-white md:mb-[53px]">
       <div
         className="w-full bg-cover"
         style={{
