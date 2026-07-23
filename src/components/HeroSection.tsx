@@ -10,8 +10,9 @@ import Link from "next/link";
  */
 export function HeroSection() {
   return (
+    // Móvil: tras los badges quedan mb30 del módulo + pb 40 de columna Divi
     <section
-      className="banner-home relative overflow-hidden"
+      className="banner-home relative overflow-hidden pb-[70px] md:pb-0"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.47) 100%), url('/images/uploads/2023/07/imagen-banner-principal-2-1-1.webp')",
@@ -21,10 +22,11 @@ export function HeroSection() {
         paddingTop: "clamp(120px, 12.7vw, 180px)",
       }}
     >
-      {/* Watermark "K" — mix-blend soft-light */}
+      {/* Watermark "K" — mix-blend soft-light. El original lo mete en
+          @media (min-width: 768px): en móvil NO se pinta */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 z-[1] w-full"
+        className="pointer-events-none absolute inset-x-0 z-[1] hidden w-full md:block"
         style={{
           top: "31%",
           height: "100%",
@@ -35,7 +37,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-[2] mx-auto flex w-[85%] max-w-[1380px] items-stretch gap-[5.5%] lg:min-h-[80vh]">
+      <div className="relative z-[2] mx-auto flex w-[86.35%] max-w-[1380px] items-stretch gap-[5.5%] md:w-[85%] lg:min-h-[80vh]">
         {/* Left column — the AIR Pro sensor pinned to the bottom edge */}
         <div className="banner-home-col-izda hidden w-[36.7%] shrink-0 flex-col items-end self-end lg:flex">
           <img
@@ -48,26 +50,29 @@ export function HeroSection() {
 
         {/* Right column — text stack + CTAs + logos */}
         <div className="banner-home-col-dcha flex w-full flex-col self-center lg:w-[57.8%]">
-          <div style={{ width: "90%" }}>
+          {/* Móvil: los módulos de texto ocupan la fila completa (335px en el
+              original — con 90% el titular caía en 6 líneas en vez de 4) */}
+          <div className="w-full md:w-[90%]">
             {/* SEO kicker — present in the original DOM but renders 0×0 */}
             <h1 className="sr-only">Monitoreo de la calidad del aire</h1>
 
-            {/* Titular: 38px en móvil (≤767 Divi), 42px desktop — hero.spec.md */}
+            {/* Titular: 38px en móvil (≤767 Divi), 42px desktop — hero.spec.md.
+                Móvil: sin mt (arranca en el pt de columna) y pb10 Divi */}
             <h2
-              className="text-[38px] leading-[45.6px] text-white md:text-[42px] md:leading-[50.4px]"
+              className="mt-0 pb-[10px] text-[38px] leading-[45.6px] text-white md:mt-[10px] md:pb-0 md:text-[42px] md:leading-[50.4px]"
               style={{
                 letterSpacing: "-0.5px",
                 fontWeight: 600,
                 color: "#fff",
                 textShadow: "0em 0em 0.3em rgba(0,0,0,0.64)",
-                marginTop: 10,
               }}
             >
               La solución profesional para la monitorización de la calidad del aire
             </h2>
 
+            {/* Móvil: mb 3.34 del módulo anterior y pb10 Divi */}
             <h2
-              className="text-white"
+              className="mt-[3px] pb-[10px] text-white md:mt-[14px] md:pb-0"
               style={{
                 fontSize: 28,
                 lineHeight: 1.3,
@@ -75,14 +80,15 @@ export function HeroSection() {
                 fontWeight: 300,
                 color: "#fff",
                 textShadow: "0em 0em 0.3em rgba(0,0,0,0.64)",
-                marginTop: 14,
               }}
             >
               Datos fiables y trazables para decisiones operativas y cumplimiento normativo
             </h2>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          {/* Móvil: mb 20.8 del módulo del subtítulo y stride 84 entre botones
+              apilados (50 + 34 del wrapper Divi) */}
+          <div className="mt-[21px] flex flex-wrap items-center gap-x-4 gap-y-[34px] md:mt-8 md:gap-4">
             <Link
               href="#video"
               data-trigger-click="video"
@@ -103,15 +109,16 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Divider + certification badges */}
-          <div
-            className="mt-10 border-t border-white/40 pt-5 text-white"
-            style={{ width: "90%" }}
-          >
-            <p className="text-[16px]">
+          {/* Divider + certification badges.
+              Móvil: pt8 del módulo con borde, P a 16px/30.6 (lh phone Divi),
+              logos pegados al párrafo y en UNA fila con gaps de 16 */}
+          <div className="mt-10 w-full border-t border-white/40 pt-[8px] text-white md:w-[90%] md:pt-5">
+            {/* text-white explícito: la regla global `p { color:#333 }` de
+                globals.css gana a la herencia del contenedor */}
+            <p className="text-[16px] leading-[30.6px] text-white md:leading-[1.7]">
               Evaluado por los principales expertos mundiales en calidad del aire
             </p>
-            <div className="mt-4 flex flex-wrap items-center gap-8">
+            <div className="mt-0 flex flex-wrap items-center gap-[16px] md:mt-4 md:gap-8">
               <a
                 href="/doc/09.StudiesReferences/Independent_studies/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf"
                 target="_blank"
@@ -119,12 +126,14 @@ export function HeroSection() {
                 title="EPA"
                 className="banner-logotipo inline-block transition-opacity duration-200 hover:opacity-75"
               >
+                {/* Móvil: 134×60 como el original (así los 3 caben en fila) */}
                 <img
                   src="/images/uploads/2025/10/logos-banner-home-epa.svg"
                   alt="EPA"
                   width={143}
                   height={64}
-                  style={{ width: 143, height: 64, maxWidth: "none" }}
+                  className="h-[60px] w-[134px] md:h-[64px] md:w-[143px]"
+                  style={{ maxWidth: "none" }}
                 />
               </a>
               <a
@@ -252,9 +261,10 @@ function DownloadCircleAnimated({ className }: { className?: string }) {
 
 function ScrollIndicator() {
   return (
+    // Divi oculta el módulo scroll-code en phone (display:none a 390, verificado)
     <div
       aria-hidden
-      className="scroll-code absolute z-[3] w-[40px]"
+      className="scroll-code absolute z-[3] hidden w-[40px] md:block"
       style={{ bottom: 60, left: "50%", transform: "translate(-50%, 0)" }}
     >
       <div className="mx-auto flex h-[38px] w-[24px] items-start justify-center rounded-full border border-white/70">
