@@ -56,7 +56,7 @@ export function SectoresCarousel() {
         }}
       >
         {SECTOR_SLIDES.map((s) => (
-          <SwiperSlide key={s.slug} className="!h-[500px] !overflow-hidden !rounded-[10px]">
+          <SwiperSlide key={s.slug} className="!h-[450px] !overflow-hidden !rounded-[10px] sm:!h-[500px]">
             <SectorCard slide={s} />
           </SwiperSlide>
         ))}
@@ -118,7 +118,7 @@ export function SectoresCarousel() {
 
 function SectorCard({ slide }: { slide: typeof SECTOR_SLIDES[number] }) {
   return (
-    <div className="sector-imagen-wrap absolute inset-0 h-[500px] w-full overflow-hidden rounded-[10px]">
+    <div className="sector-imagen-wrap absolute inset-0 h-[450px] w-full overflow-hidden rounded-[10px] sm:h-[500px]">
       <a
         href={slide.href}
         className="sector-imagen group relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-black"

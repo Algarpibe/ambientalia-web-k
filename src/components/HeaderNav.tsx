@@ -98,7 +98,13 @@ export function HeaderNav() {
               ? "fixed inset-x-0 top-0 z-[1000] pb-0 pt-[14px] shadow-[0_0_20px_rgba(0,0,0,0.1)] lg:pb-[10px] lg:pt-[18px]"
               : "relative pb-[30px] pt-[30px] shadow-none")
           }
-          style={{ backgroundColor: sticky ? "#ffffff" : "transparent" }}
+          style={{
+            // Fondo sticky "vidrio": rgba blanca 0.576 documentada + blur,
+            // no blanco sólido (pendiente M6 / token en globals.css).
+            backgroundColor: sticky ? "rgba(255, 255, 255, 0.576)" : "transparent",
+            backdropFilter: sticky ? "blur(10px)" : undefined,
+            WebkitBackdropFilter: sticky ? "blur(10px)" : undefined,
+          }}
         >
           <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center lg:gap-8">
             {/* Logo column — the SVG fills flip on sticky. Móvil: 120px (104 sticky),

@@ -43,10 +43,11 @@ export function TrustBar() {
             className="absolute z-[-1]"
             style={{ top: -10, left: -65 }}
           />
+          {/* Móvil 30px (spec: render ~28-30px; el clamp bajaba a 22 y apilaba
+              con poco aire — B2). Desktop mantiene el clamp verificado exacto. */}
           <p
-            className="text-[#333]"
+            className="text-[30px] text-[#333] md:text-[clamp(22px,1.9vw,30px)]"
             style={{
-              fontSize: "clamp(22px, 1.9vw, 30px)",
               fontWeight: 300,
               lineHeight: 1.25,
               letterSpacing: "-0.5px",

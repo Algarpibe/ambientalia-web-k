@@ -27,7 +27,9 @@ export function CtaNewsletter() {
               Innovación en calidad del aire a 1 clic
             </p>
 
-            <div className="space-y-4 pb-[30px] text-[18px] leading-[1.7] text-white">
+            {/* Rítmica Divi: cada <p> lleva padding-bottom 1em (18px) salvo el
+                último; el bloque .calls-text remata con 30px (cta-newsletter.spec) */}
+            <div className="pb-[30px] text-[18px] leading-[1.7] text-white [&>p:not(:last-child)]:pb-[18px]">
               <p>¡Mantente informado sobre el aire que respiras!</p>
               <p>
                 Suscríbete a nuestra newsletter para recibir las últimas novedades en tecnología de monitorización

@@ -1,4 +1,5 @@
 import { BlueButton } from "./SectionRow";
+import { CookiePreferencesButton } from "./CookiePreferencesButton";
 import {
   LinkedInIcon,
   XIcon,
@@ -96,12 +97,11 @@ export function Footer() {
                       {l.label}
                     </a>
                   ) : (
-                    <button
-                      type="button"
+                    // "Editar preferencias de cookies" → abre Cookiebot (B6)
+                    <CookiePreferencesButton
+                      label={l.label}
                       className="text-[#333] transition-colors hover:text-[#0075C9]"
-                    >
-                      {l.label}
-                    </button>
+                    />
                   )}
                 </span>
               ))}

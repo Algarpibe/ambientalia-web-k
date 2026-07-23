@@ -52,11 +52,10 @@ export function HeroSection() {
             {/* SEO kicker — present in the original DOM but renders 0×0 */}
             <h1 className="sr-only">Monitoreo de la calidad del aire</h1>
 
+            {/* Titular: 38px en móvil (≤767 Divi), 42px desktop — hero.spec.md */}
             <h2
-              className="text-white"
+              className="text-[38px] leading-[45.6px] text-white md:text-[42px] md:leading-[50.4px]"
               style={{
-                fontSize: 42,
-                lineHeight: "50.4px",
                 letterSpacing: "-0.5px",
                 fontWeight: 600,
                 color: "#fff",
