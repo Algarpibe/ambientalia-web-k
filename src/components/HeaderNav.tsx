@@ -106,29 +106,38 @@ export function HeaderNav() {
             WebkitBackdropFilter: sticky ? "blur(10px)" : undefined,
           }}
         >
-          <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center lg:gap-8">
+          {/* Geometría original (1424 vw): col logo 192px (15.87% de la fila
+              de 1210), menú a 56px (4.63%) de la col, items li px-8 sin gap */}
+          <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center">
             {/* Logo column — the SVG fills flip on sticky. Móvil: 120px (104 sticky),
                 margin-inline-start 10% como .col-logotipo-cabecera del original */}
+            {/* Desktop: la columna del logo es un 25% FIJO de la fila en ambos
+                estados (como la col 1/4 Divi) — solo encoge el SVG dentro; así
+                el menú no salta al entrar en sticky. Móvil: cap en el link
+                (120→104), verificado en A1. */}
             <Link
               href="/"
               aria-label="Kunak"
               className={
-                "col-logotipo-cabecera relative z-[20001] ml-[10%] block shrink-0 lg:ml-0 lg:w-1/4 " +
-                (sticky ? "max-w-[104px]" : "max-w-[120px] lg:max-w-[170px]")
+                "col-logotipo-cabecera relative z-[20001] ml-[10%] block shrink-0 lg:ml-0 lg:w-[15.87%] lg:max-w-none " +
+                (sticky ? "max-w-[104px]" : "max-w-[120px]")
               }
             >
               <KunakLogoBrand
                 primaryFill={sticky ? "#0075C9" : "#ffffff"}
                 secondaryFill={sticky ? "#5E666F" : "#ffffff"}
-                className="h-auto w-full transition-[fill] duration-200"
+                className={
+                  "h-auto w-full transition-[fill] duration-200 " +
+                  (sticky ? "lg:max-w-[104px]" : "lg:max-w-[170px]")
+                }
               />
             </Link>
 
             {/* Menu column — two rows like the original: links + help pill,
                 then the catalog pill on its own line, left-aligned. */}
-            <div className="hidden flex-1 flex-col items-start gap-2 lg:flex">
+            <div className="hidden flex-1 flex-col items-start gap-2 lg:ml-[4.63%] lg:flex">
               <nav
-                className="flex flex-wrap items-center gap-6"
+                className="flex flex-wrap items-center"
                 aria-label="Menú principal"
               >
                 <MainLink label="Inicio" href="https://kunakair.com/es/" sticky={sticky} />
@@ -268,7 +277,7 @@ function MainLink({
     <Link
       href={href}
       className={
-        "text-[14px] font-medium transition-colors duration-400 " +
+        "px-2 text-[14px] font-medium transition-colors duration-400 " +
         (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
       }
     >
@@ -276,6 +285,17 @@ function MainLink({
     </Link>
   );
 }
+
+/** Caja de dropdown estándar: como el sub-menu Divi original — `position:
+ *  fixed` a la línea 120/73 del viewport (medida 2026-07-23 en top/sticky),
+ *  SIN left (la posición estática lo alinea al borde izquierdo del li, como
+ *  el original), cuadrada, sombra 0 2px 5px. El ::before es el puente de
+ *  gracia del hover (li padding-bottom 23px + ::after 2rem en el original). */
+const DROPDOWN_BOX =
+  "pointer-events-none fixed z-50 bg-white py-2 opacity-0 " +
+  "shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-opacity duration-200 " +
+  "group-hover:pointer-events-auto group-hover:opacity-100 " +
+  "before:absolute before:bottom-full before:left-0 before:h-[20px] before:w-full before:content-['']";
 
 function MainDropdown({
   label,
@@ -293,14 +313,14 @@ function MainDropdown({
       <Link
         href={href}
         className={
-          "inline-flex items-center gap-1 text-[14px] font-medium transition-colors duration-400 " +
+          "inline-flex items-center gap-1 px-2 text-[14px] font-medium transition-colors duration-400 " +
           (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
         }
       >
         {label}
         <ChevronDownIcon className="h-3 w-3" />
       </Link>
-      <div className="pointer-events-none absolute right-0 top-full z-50 min-w-[240px] translate-y-1 rounded-md bg-white py-2 opacity-0 shadow-lg transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+      <div className={"min-w-[240px] " + DROPDOWN_BOX} style={{ top: sticky ? 73 : 120 }}>
         {items.map((sub) => (
           <Link
             key={sub.label}
@@ -322,7 +342,7 @@ function MegaMenuProducts({ sticky }: { sticky: boolean }) {
       <Link
         href="https://kunakair.com/es/productos/"
         className={
-          "inline-flex items-center gap-1 text-[14px] font-medium transition-colors duration-400 " +
+          "inline-flex items-center gap-1 px-2 text-[14px] font-medium transition-colors duration-400 " +
           (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
         }
       >
@@ -330,8 +350,12 @@ function MegaMenuProducts({ sticky }: { sticky: boolean }) {
         <ChevronDownIcon className="h-3 w-3" />
       </Link>
       <div
-        className="pointer-events-none fixed inset-x-0 z-[999999] border-t border-black/30 bg-white opacity-0 shadow-md transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100"
-        style={{ top: sticky ? 73 : 119 }}
+        className="pointer-events-none fixed inset-x-0 z-[999999] border-t border-[#333]/30 bg-white opacity-0 transition-opacity duration-150 before:absolute before:bottom-full before:left-0 before:h-[20px] before:w-full before:content-[''] group-hover:pointer-events-auto group-hover:opacity-100"
+        style={{
+          top: sticky ? 73 : 119,
+          // Sombras del original: 0 2px 5px en top, 0 0 4px con nav fixed
+          boxShadow: sticky ? "0 0 4px rgba(0,0,0,0.1)" : "0 2px 5px rgba(0,0,0,0.1)",
+        }}
       >
         <div className="mx-auto flex max-w-[1380px] justify-center gap-2 px-6 py-4 text-center">
           {PRODUCTS.map((p) => (
@@ -365,19 +389,21 @@ function SectorsDropdown({ sticky }: { sticky: boolean }) {
       <Link
         href="https://kunakair.com/es/sectores/"
         className={
-          "inline-flex items-center gap-1 text-[14px] font-medium transition-colors duration-400 " +
+          "inline-flex items-center gap-1 px-2 text-[14px] font-medium transition-colors duration-400 " +
           (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
         }
       >
         Sectores
         <ChevronDownIcon className="h-3 w-3" />
       </Link>
-      <div className="pointer-events-none absolute right-0 top-full z-50 min-w-[280px] translate-y-1 rounded-md bg-white py-2 opacity-0 shadow-lg transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+      <div className={"min-w-[240px] " + DROPDOWN_BOX} style={{ top: sticky ? 73 : 120 }}>
+        {/* Iconos a la IZQUIERDA del texto (verificado en captura en vivo
+            2026-07-23 — el spec de Fase 3 decía lo contrario) */}
         {SECTORS.map((s) => (
           <Link
             key={s.label}
             href={s.href}
-            className="group/sector flex flex-row-reverse items-center justify-between gap-3 px-5 py-2 text-[13.5px] text-[#333] transition-colors hover:text-[#0075C9]"
+            className="group/sector flex items-center gap-3 px-5 py-1.5 text-[13.5px] text-[#333] transition-colors hover:text-[#0075C9]"
           >
             <img
               src={s.icon}
