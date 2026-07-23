@@ -8,7 +8,7 @@
 
 - **jQuery 3.7.1** — motor de todos los listeners custom.
 - **SwiperJS** — inicializada como `sectoresSwiper` en el carrusel de sectores.
-- **Divi builtin animations** — 23 módulos en la home usan clases del tipo `et_pb_animation_*`. Son animaciones **on-view** de Divi (fade / slide / zoom con la entrada al viewport), no requieren AOS/ScrollReveal.
+- **Divi builtin animations** — ~~23 módulos con animaciones on-view~~ **CORRECCIÓN (2026-07-23, verificado en vivo para M7):** los 23 módulos (todos `<img>` de blurbs: features S2, validadores, awards, beneficios HazVisible, pilares Sostenibilidad) llevan `et-waypoint` + **`et_pb_animation_off`/`_off_tablet`/`_off_phone`** — la animación está **desactivada** en los 3 breakpoints. El critical CSS de Divi eliminó todas las reglas `.et-animated`/`.et_pb_animation_*` (en runtime `document.styleSheets` no contiene ninguna, verificado por CDP); los iconos están a `opacity: 1` desde el load en desktop y móvil, y el waypoint de `scripts.min.js` (offset `"100%"`) añade `et-animated` al entrar en viewport **sin ningún efecto visual** (animationName none, sin inline styles, opacity 1→1). **La home NO tiene animaciones de entrada** — el clon estático es el comportamiento fiel.
 - **Cookiebot** — banner de consentimiento (`window.Cookiebot` presente, iframe `.CybotCookiebotHiddenIframe`).
 - **NO se detectan**: `Lenis`, `LocomotiveScroll`, `GSAP`, `AOS`, `ScrollReveal`. Scroll es nativo del navegador (no smooth-scroll custom).
 - Plugins WordPress extra activos: `3d-flip-book-client-locale-loader`, `snazzymaps` (probable render del mapa mundial), `dvmd-tm-module`, `txtcc-tooltip_js`.
