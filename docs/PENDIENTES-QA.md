@@ -17,7 +17,6 @@ de tarjetas, footer).
 
 | # | Sección | Descripción | Magnitud |
 |---|---------|-------------|----------|
-| A1 | Header (móvil/tablet ≤980px) | **No hay menú hamburguesa.** El original sustituye el menú horizontal por `.mobile_nav` (botón hamburguesa + desplegable `.et_mobile_menu` con submenús). El clon deja los links en flex-wrap, que desbordan/se amontonan en viewports pequeños. | Funcional — el header móvil no es usable como el original |
 | A2 | S2 "La solución profesional" (desktop) | Ritmo vertical interno ~261px más corto que el original (2145 vs 2406). El contenido y estilos ya coinciden (texto 18px, recuadro azul, logos 100px, banner AIRLAB 791px, destacados 37px); lo que falta son los micro-espaciados entre módulos Divi (márgenes de párrafo/módulo `~1em`/`2.75%` y paddings de fila 28/14 fila a fila). Requiere desglose módulo a módulo con `qa/probe3.mjs` como base. | −261px desktop / −598px móvil (~11%) |
 
 ## Prioridad MEDIA
@@ -44,6 +43,12 @@ de tarjetas, footer).
 | B5 | Productos — acordeón móvil | Al abrir un item, el original hace scroll animado hasta el item (`$("html,body").animate({scrollTop: offset−5}, "slow")` en init.js). El clon abre/cierra sin scroll. Añadir `scrollIntoView` suave en el toggle móvil. | Interacción sutil solo móvil |
 | B6 | Cookiebot | El banner de consentimiento del original no está clonado (decisión pendiente desde el recon: punto abierto #8 de BEHAVIORS.md). El enlace "Editar preferencias de cookies" del footer es un botón sin acción (en el original lo gestiona el plugin GDPR). | Funcional — decidir si se implementa un banner propio |
 | B7 | TrustBar / carruseles | En capturas simultáneas los logos/slides visibles difieren entre original y clon por el instante del autoplay. **No es defecto** — anotado para no re-investigarlo en futuros QA. | N/A |
+
+## Resueltos
+
+| # | Sección | Resolución | Fecha |
+|---|---------|-----------|-------|
+| A1 | Header móvil — menú hamburguesa | **Implementado** en `HeaderNav.tsx` (breakpoint real del tema: **≤1023px**, no 980). Hamburguesa de 3 barras 28×2 (blancas/`#333` en sticky, morph a ✕), panel 90vh con slide 500ms, 11 items verbatim, submenús acordeón +/− con overlay `.hover-link`, pill azul "Descargar catálogo"; "¿Cómo podemos ayudarte?" oculto como el original (`visible-escritorio`). Spec completo en `docs/research/components/mobile-nav.spec.md`. Verificado por CDP a 390 y 800px contra el original (fila 126→73px sticky, logo 120→104px, panel y96/y73, filas 47px — todo ±1px); desktop sin cambios (fullpage 11511px idéntico). Pendiente visto bueno. | 2026-07-23 |
 
 ## Notas para retomar
 

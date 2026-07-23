@@ -11,6 +11,7 @@ import {
   SECTORS,
   COMPANY,
   RESOURCES,
+  type NavLink,
 } from "@/lib/nav";
 
 /**
@@ -31,6 +32,7 @@ import {
 export function HeaderNav() {
   const rowRef = useRef<HTMLDivElement>(null);
   const [sticky, setSticky] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const row = rowRef.current;
@@ -75,8 +77,9 @@ export function HeaderNav() {
       />
 
       <div className="relative">
-        {/* Row 0 — utility bar (hides with page scroll, does not re-fix) */}
-        <div className="border-b border-white/10">
+        {/* Row 0 — utility bar (hides with page scroll, does not re-fix).
+            Oculta a ≤1023px como el original (theme style.css @max-width:1023). */}
+        <div className="hidden border-b border-white/10 lg:block">
           <div className="mx-auto flex h-[41px] w-[85%] max-w-[1380px] items-center justify-end gap-6 text-[13px] font-medium text-white">
             {UTILITY_MENU.map((item) => (
               <UtilityDropdown key={item.label} item={item} />
@@ -92,34 +95,32 @@ export function HeaderNav() {
           className={
             "kunak-main-nav transition-[background-color] duration-300 " +
             (sticky
-              ? "fixed inset-x-0 top-0 z-[1000] shadow-[0_0_20px_rgba(0,0,0,0.1)]"
-              : "relative shadow-none")
+              ? "fixed inset-x-0 top-0 z-[1000] pb-0 pt-[14px] shadow-[0_0_20px_rgba(0,0,0,0.1)] lg:pb-[10px] lg:pt-[18px]"
+              : "relative pb-[30px] pt-[30px] shadow-none")
           }
-          style={{
-            paddingTop: sticky ? 18 : 30,
-            paddingBottom: sticky ? 10 : 30,
-            backgroundColor: sticky ? "#ffffff" : "transparent",
-          }}
+          style={{ backgroundColor: sticky ? "#ffffff" : "transparent" }}
         >
-          <div className="mx-auto flex w-[85%] max-w-[1380px] items-center gap-8">
-            {/* Logo column — the SVG fills flip on sticky */}
+          <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center lg:gap-8">
+            {/* Logo column — the SVG fills flip on sticky. Móvil: 120px (104 sticky),
+                margin-inline-start 10% como .col-logotipo-cabecera del original */}
             <Link
               href="/"
               aria-label="Kunak"
-              className="col-logotipo-cabecera relative z-[20001] block w-1/4 shrink-0"
-              style={{ maxWidth: sticky ? 104 : 170 }}
+              className={
+                "col-logotipo-cabecera relative z-[20001] ml-[10%] block shrink-0 lg:ml-0 lg:w-1/4 " +
+                (sticky ? "max-w-[104px]" : "max-w-[120px] lg:max-w-[170px]")
+              }
             >
               <KunakLogoBrand
                 primaryFill={sticky ? "#0075C9" : "#ffffff"}
                 secondaryFill={sticky ? "#5E666F" : "#ffffff"}
                 className="h-auto w-full transition-[fill] duration-200"
-                style={{ maxWidth: sticky ? 104 : 170 }}
               />
             </Link>
 
             {/* Menu column — two rows like the original: links + help pill,
                 then the catalog pill on its own line, left-aligned. */}
-            <div className="flex flex-1 flex-col items-start gap-2">
+            <div className="hidden flex-1 flex-col items-start gap-2 lg:flex">
               <nav
                 className="flex flex-wrap items-center gap-6"
                 aria-label="Menú principal"
@@ -148,7 +149,25 @@ export function HeaderNav() {
               </nav>
               <CatalogPill />
             </div>
+
+            {/* Hamburguesa (≤1023px) — 48×52, 3 barras 28×2; ver mobile-nav.spec.md */}
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setMobileOpen((v) => !v)}
+              className={
+                "group relative ml-auto block h-[52px] w-[48px] cursor-pointer lg:hidden " +
+                (sticky ? "my-[3.5px]" : "mt-[14px]")
+              }
+              style={{ marginRight: "calc(3vh + 6px)" }}
+            >
+              <MobileBars open={mobileOpen} sticky={sticky} />
+            </button>
           </div>
+
+          <MobileMenu sticky={sticky} open={mobileOpen} onClose={() => setMobileOpen(false)} />
         </div>
 
         {/* Spacer to preserve layout when the row goes fixed */}
@@ -401,5 +420,241 @@ function CatalogPill() {
     >
       Descargar catálogo
     </Link>
+  );
+}
+
+/* --------------------------------------------------------------------------
+ * Menú móvil (≤1023px) — spec en docs/research/components/mobile-nav.spec.md.
+ * Mecanismo transcrito del original: hamburguesa de 3 barras (span 28×2),
+ * panel 90vh con slide de 500ms, submenús acordeón instantáneo con +/−
+ * y overlay .hover-link que navega a la página de sección.
+ * ------------------------------------------------------------------------ */
+
+interface MobileNavItemData {
+  label: string;
+  href: string;
+  children?: MobileNavItemData[];
+  /** Items visible-movil (Soporte/Blog/Contacto): 13.5px */
+  small?: boolean;
+  /** Los submenús de visible-movil van con fondo #eee */
+  graySub?: boolean;
+  /** "Descargar catálogo" — botón azul full-width */
+  pill?: boolean;
+  /** Página actual (Inicio en la home): texto azul */
+  current?: boolean;
+}
+
+const SOPORTE_SUB = UTILITY_MENU[0].children ?? [];
+const soporteLink = (label: string): NavLink =>
+  SOPORTE_SUB.find((c) => c.label === label) ?? { label, href: "#" };
+
+/** 11 items verbatim de #mobile_menu2 en /es/ (sin selector de idioma;
+    "¿Cómo podemos ayudarte?" lleva visible-escritorio y NO aparece). */
+const MOBILE_MENU: MobileNavItemData[] = [
+  { label: "Inicio", href: "https://kunakair.com/es/", current: true },
+  {
+    label: "Productos",
+    href: "https://kunakair.com/es/productos/",
+    children: PRODUCTS.map((p) => ({
+      label: p.label,
+      href: p.href,
+      children: p.children,
+    })),
+  },
+  {
+    label: "Sectores",
+    href: "https://kunakair.com/es/sectores/",
+    children: SECTORS.map((s) => ({ label: s.label, href: s.href })),
+  },
+  {
+    label: "Empresa",
+    href: "https://kunakair.com/es/empresa/",
+    children: COMPANY,
+  },
+  { label: "Casos de éxito", href: "https://kunakair.com/es/casos-de-exito/" },
+  {
+    label: "Recursos",
+    href: "https://kunakair.com/es/recursos/",
+    children: RESOURCES,
+  },
+  {
+    label: "Descargar catálogo",
+    href: "https://kunakair.com/es/descarga-catalogo/",
+    pill: true,
+  },
+  {
+    label: "Soporte",
+    href: "https://kunakair.com/es/soporte/",
+    small: true,
+    graySub: true,
+    // Orden móvil del original (distinto al utility bar de escritorio)
+    children: [
+      soporteLink("Centro de ayuda"),
+      soporteLink("Soporte técnico"),
+      soporteLink("Servicio de reparación (RMA)"),
+    ],
+  },
+  { label: "Blog", href: "https://kunakair.com/es/blog/", small: true },
+  { label: "Contacto", href: "https://kunakair.com/es/contacto/", small: true },
+];
+
+/** 3 barras 28×2 → ✕ al abrir. Blancas sobre el hero, #333 en sticky. */
+function MobileBars({ open, sticky }: { open: boolean; sticky: boolean }) {
+  const color = sticky ? "bg-[#333333]" : "bg-white";
+  const bar =
+    "absolute left-[10px] h-[2px] w-[28px] transition-[transform,top,background-color] ";
+  return (
+    <>
+      <span
+        aria-hidden
+        className={
+          bar +
+          color +
+          " " +
+          (open
+            ? "top-[13px] -rotate-45 duration-100 group-hover:rotate-0"
+            : "top-[5px] duration-300 group-hover:translate-y-[2px]")
+        }
+      />
+      <span
+        aria-hidden
+        className={
+          "absolute left-[10px] top-[13px] h-[2px] w-[28px] transition-colors duration-150 " +
+          (open ? "bg-transparent" : color)
+        }
+      />
+      <span
+        aria-hidden
+        className={
+          bar +
+          color +
+          " " +
+          (open
+            ? "top-[13px] rotate-45 duration-100 group-hover:rotate-0"
+            : "top-[21px] duration-300 group-hover:-translate-y-[2px]")
+        }
+      />
+    </>
+  );
+}
+
+/** Panel desplegable: 90vh, borde azul 3px, slide 500ms ease-in-out. */
+function MobileMenu({
+  sticky,
+  open,
+  onClose,
+}: {
+  sticky: boolean;
+  open: boolean;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      aria-hidden={!open}
+      className="absolute inset-x-0 z-[9999] overflow-hidden transition-[height] duration-500 ease-in-out lg:hidden"
+      // No sticky: la fila tiene 30px de padding inferior y el panel ancla
+      // al bottom del botón (y=96 en el original); sticky: al bottom de la fila.
+      style={{ top: sticky ? "100%" : "calc(100% - 30px)", height: open ? "90vh" : 0 }}
+    >
+      <ul
+        id="mobile-menu"
+        className="h-[90vh] overflow-y-auto border-t-[3px] border-[#0075C9] bg-white pt-[2%] shadow-[0_2px_5px_rgba(0,0,0,0.1)]"
+      >
+        {MOBILE_MENU.map((item) => (
+          <MobileMenuItem key={item.label} item={item} onNavigate={onClose} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function MobileMenuItem({
+  item,
+  onNavigate,
+  inGraySub,
+}: {
+  item: MobileNavItemData;
+  onNavigate: () => void;
+  inGraySub?: boolean;
+}) {
+  // Igual que el original: el estado expandido persiste al cerrar el menú.
+  const [expanded, setExpanded] = useState(false);
+  const hasChildren = !!item.children?.length;
+
+  if (item.pill) {
+    return (
+      <li className="block px-[5%]">
+        <a
+          href={item.href}
+          onClick={onNavigate}
+          className="my-[7px] block rounded-[15px] border-b border-t-[6px] border-[#0075C9] bg-[#0075C9] px-[5px] pb-[5px] text-[15px] font-medium leading-[26px] text-white"
+        >
+          {item.label}
+        </a>
+      </li>
+    );
+  }
+
+  const rowClasses =
+    "block border-b border-black/[0.03] px-[5%] py-[10px] font-medium leading-[26px] transition-[opacity,background-color] duration-200 " +
+    (item.small ? "text-[13.5px] " : "text-[15px] ") +
+    (item.current ? "text-[#0075C9] " : "text-[#333] ") +
+    (inGraySub ? "bg-[#eee] " : "hover:bg-[#f9f9f9] ");
+
+  if (!hasChildren) {
+    return (
+      <li className="px-[5%]">
+        <a href={item.href} onClick={onNavigate} className={rowClasses}>
+          {item.label}
+        </a>
+      </li>
+    );
+  }
+
+  return (
+    <li className="relative px-[5%]">
+      <a
+        href="#"
+        aria-expanded={expanded}
+        onClick={(e) => {
+          e.preventDefault();
+          setExpanded((v) => !v);
+        }}
+        className={"group/mi relative " + rowClasses}
+      >
+        {item.label}
+        {/* Icono +/− (a::after del original), hover → filtro azul */}
+        <span
+          aria-hidden
+          className="absolute right-[10px] top-[14px] h-[20px] w-[20px] bg-center bg-no-repeat group-hover/mi:[filter:invert(37%)_sepia(70%)_saturate(7166%)_hue-rotate(191deg)_brightness(80%)_contrast(101%)]"
+          style={{
+            backgroundImage: `url(${
+              expanded ? "/images/theme/minus-light.svg" : "/images/theme/plus-light.svg"
+            })`,
+          }}
+        />
+      </a>
+      {/* .hover-link del original: la zona del texto navega a la página de
+          sección; solo los 60px derechos (icono) hacen toggle */}
+      <a
+        href={item.href}
+        tabIndex={-1}
+        aria-hidden
+        onClick={onNavigate}
+        className="absolute left-0 right-[60px] top-0 z-[1] h-[47px]"
+      />
+      {expanded ? (
+        <ul>
+          {item.children!.map((c) => (
+            <MobileMenuItem
+              key={c.label}
+              item={c}
+              onNavigate={onNavigate}
+              inGraySub={item.graySub || inGraySub}
+            />
+          ))}
+        </ul>
+      ) : null}
+    </li>
   );
 }
