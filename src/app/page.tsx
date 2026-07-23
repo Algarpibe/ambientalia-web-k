@@ -35,11 +35,21 @@ export default function Home() {
         {/* 6 CTA "¿Estás inmerso…?" */}
         <CtaInmerso />
 
-        {/* 7 composite: Presencia mundial → Testimonios → Haz visible + Beneficios → Nuestros productos */}
-        <PresenciaMundial />
-        <Testimonios />
-        <HazVisible />
-        <ProductosTabs />
+        {/* 7 composite: Presencia mundial → Testimonios → Haz visible + Beneficios → Nuestros productos.
+            En el original es UNA sección Divi con el fondo K (710×1302) continuo
+            desde su borde superior; el wrapper evita que se recorte entre bloques. */}
+        <div
+          className="bg-white bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
+            backgroundPosition: "0% 0%",
+          }}
+        >
+          <PresenciaMundial />
+          <Testimonios />
+          <HazVisible />
+          <ProductosTabs />
+        </div>
 
         {/* 8 CTA newsletter · 9 Últimos artículos · 10 Últimos proyectos */}
         <CtaNewsletter />

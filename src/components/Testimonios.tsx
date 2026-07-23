@@ -47,10 +47,7 @@ export function Testimonios() {
   };
 
   return (
-    <section
-      className="testimonios-section relative bg-white"
-      style={{ paddingTop: 28, paddingBottom: 60 }}
-    >
+    <section className="testimonios-section relative pb-[39px] pt-[30px] md:pb-[60px] md:pt-[28px]">
       {/* Row 7 — heading */}
       <SectionRow title={<SectionTitle>Testimonios</SectionTitle>}>
         {/* the right column stays visually empty per original layout */}
@@ -58,8 +55,10 @@ export function Testimonios() {
       </SectionRow>
 
       {/* Row 8 — full-width slider */}
+      {/* Móvil: hueco H2→slider = mb20 módulo + mb30 col + pb19.5 fila + pt30
+          fila slider − 30 del gap flex ya presente = 69.5px */}
       <div
-        className="testimonios relative mx-auto mt-6 w-[85%] max-w-[1080px]"
+        className="testimonios relative mx-auto mt-[69.5px] w-[86.35%] max-w-[1080px] md:mt-6 md:w-[85%]"
         onMouseEnter={() => {
           hoveredRef.current = true;
         }}
@@ -85,38 +84,41 @@ export function Testimonios() {
           <ChevronRightIcon className="h-8 w-8" />
         </button>
 
-        {/* Stacked slides — crossfade on opacity */}
-        <div
-          className="relative mx-auto"
-          style={{ minHeight: 400, maxWidth: 920 }}
-        >
+        {/* Slides — móvil: el activo va en flujo y el resto display:none (como
+            el fadeIn/fadeOut de Divi, la altura la marca el slide activo);
+            desktop: pila absoluta con crossfade sobre min-h 400 */}
+        <div className="relative mx-auto md:min-h-[400px]" style={{ maxWidth: 920 }}>
           {TESTIMONIALS.map((t, i) => (
             <div
               key={t.name}
               aria-hidden={i !== index}
-              className="absolute inset-0 flex flex-col items-center gap-8 px-8 md:flex-row md:items-start md:gap-12"
+              className={
+                "flex-col items-center gap-8 px-[20px] md:absolute md:inset-0 md:flex md:flex-row md:items-start md:gap-12 md:px-8 " +
+                (i === index ? "flex" : "hidden")
+              }
               style={{
                 opacity: i === index ? 1 : 0,
                 transition: `opacity ${FADE_MS}ms ease`,
                 pointerEvents: i === index ? "auto" : "none",
               }}
             >
-              {/* Avatar 180×180 circular */}
-              <div className="shrink-0" style={{ width: "28%", minWidth: 180 }}>
+              {/* Avatar circular — móvil 177×177 con mt 17.7 (Divi 60% / mt 6%) */}
+              <div className="shrink-0 md:w-[28%] md:min-w-[180px]">
                 <img
                   src={t.avatar}
                   alt={t.name}
                   width={180}
                   height={180}
-                  className="mx-auto rounded-full object-cover"
-                  style={{ width: 180, height: 180 }}
+                  className="mx-auto mt-[18px] h-[177px] w-[177px] rounded-full object-cover md:mt-0 md:h-[180px] md:w-[180px]"
                 />
               </div>
 
-              {/* Description — column-reverse: quote first, author below */}
-              <div className="flex flex-1 flex-col-reverse" style={{ width: "70%" }}>
+              {/* Description — column-reverse: quote first, author below.
+                  Móvil: ancho completo + pb 104 del slide description Divi */}
+              <div className="flex w-full flex-1 flex-col-reverse pb-[104px] md:w-[70%] md:pb-0">
                 <div className="mt-6">
                   <h3
+                    className="pb-[10px]"
                     style={{
                       fontSize: 20,
                       fontWeight: 300,
@@ -126,10 +128,7 @@ export function Testimonios() {
                     }}
                   >
                     {t.name}
-                    <span
-                      className="mt-1 block"
-                      style={{ fontSize: 16, color: "#333" }}
-                    >
+                    <span className="block" style={{ fontSize: 16, color: "#333" }}>
                       {t.role}
                     </span>
                   </h3>

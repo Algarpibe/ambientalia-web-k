@@ -42,15 +42,16 @@ export function ProductosTabs() {
   const active = PRODUCTS_TABS.find((p) => p.id === activeId) ?? null;
 
   return (
-    <section className="relative bg-white" style={{ paddingTop: 28, paddingBottom: 123 }}>
-      <div className="mx-auto w-[85%] max-w-[1380px]">
-        <div className="pb-[10px]">
+    <section className="relative pb-[50px] pt-[30px] md:pb-[123px] md:pt-[28px]">
+      <div className="mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]">
+        {/* Móvil: la lista arranca pegada al H2 (mb 0 del módulo de título) */}
+        <div className="md:pb-[10px]">
           <SectionTitle>Nuestros productos</SectionTitle>
         </div>
 
-        <div className="mt-4 w-full overflow-hidden md:flex md:gap-[3%]">
-          {/* Left column — tab list */}
-          <ul className="md:w-[30%] md:min-w-[250px] md:shrink-0">
+        <div className="w-full overflow-hidden md:mt-4 md:flex md:gap-[3%]">
+          {/* Left column — tab list (móvil: la UL Divi remata con pb18) */}
+          <ul className="pb-[18px] md:w-[30%] md:min-w-[250px] md:shrink-0 md:pb-0">
             {PRODUCTS_TABS.map((p) => {
               const isActive = p.id === activeId;
               return (
@@ -83,9 +84,10 @@ export function ProductosTabs() {
                     <strong className="block text-[16px] font-normal">{p.tagline}</strong>
                   </button>
 
-                  {/* Mobile accordion panel */}
+                  {/* Mobile accordion panel — sin hueco tras el header, como
+                      .lista-contenido-item del original */}
                   {isActive ? (
-                    <div className="mt-4 md:hidden">
+                    <div className="md:hidden">
                       <ProductPanel product={p} />
                     </div>
                   ) : null}
@@ -100,8 +102,9 @@ export function ProductosTabs() {
           </div>
         </div>
 
-        {/* Centered relative to the right panel column, like the original */}
-        <div className="mt-[70px] flex justify-center md:pl-[33%]">
+        {/* Centered relative to the right panel column, like the original.
+            Móvil: pb 3.89 fila + pt 30 fila botón ≈ 34 */}
+        <div className="mt-[34px] flex justify-center md:mt-[70px] md:pl-[33%]">
           <BlueButton href="https://kunakair.com/es/contacto/">Cuéntanos tus necesidades</BlueButton>
         </div>
       </div>
@@ -113,7 +116,10 @@ export function ProductosTabs() {
 function ProductPanel({ product }: { product: Product }) {
   const hasImage = product.image !== "";
   return (
-    <div className="flex flex-col gap-6 sm:flex-row sm:gap-8 md:rounded-[10px] md:border md:border-[#777] md:p-[30px]">
+    // Móvil (<640): rítmica del .lista-contenido-item original — imagen pegada
+    // (+6), p 18px/27 con pb18, ul pt10/pb10 con li pb10+mb10, botón a +20 y
+    // pb 21 al pie del panel (medido 2026-07-23)
+    <div className="flex flex-col gap-[6px] pb-[21px] sm:flex-row sm:gap-8 sm:pb-0 md:rounded-[10px] md:border md:border-[#777] md:p-[30px]">
       {hasImage ? (
         <div className="sm:w-1/2">
           <img
@@ -128,17 +134,26 @@ function ProductPanel({ product }: { product: Product }) {
         <h3 className="hidden text-[20px] font-bold leading-[1.5] text-[#333] sm:block">
           {product.name}
         </h3>
-        <p className="mt-0 text-[18px] leading-[1.45] text-[#333] sm:mt-3">
+        <p className="mt-0 pb-[18px] text-[18px] leading-[1.5] text-[#333] sm:mt-3 sm:pb-0 sm:leading-[1.45]">
           {product.description}
         </p>
-        <p className="mt-4 text-[18px] leading-[1.45] text-[#333]">{product.highlight}</p>
-        <p className="mt-4 text-[18px] font-bold leading-[1.45] text-[#333]">Ventajas</p>
-        <ul className="mt-2 list-disc pl-[28px] text-[18px] leading-[1.5] text-[#333] marker:text-[22px] marker:text-[#0075C9]">
+        <p className="pb-[18px] text-[18px] leading-[1.5] text-[#333] sm:mt-4 sm:pb-0 sm:leading-[1.45]">
+          {product.highlight}
+        </p>
+        <p className="text-[18px] font-bold leading-[1.5] text-[#333] sm:mt-4 sm:leading-[1.45]">Ventajas</p>
+        {/* Móvil: sin viñetas y con divisor #999 por li (regla
+            .lista-contenido-ul li del tema); bullets azules solo en sm+ */}
+        <ul className="list-none pb-[10px] pl-0 pt-[10px] text-[18px] leading-[1.5] text-[#333] marker:text-[22px] marker:text-[#0075C9] sm:mt-2 sm:list-disc sm:pb-0 sm:pl-[28px] sm:pt-0">
           {product.bullets.map((b) => (
-            <li key={b}>{b}</li>
+            <li
+              key={b}
+              className="mb-[10px] border-b border-[#999] pb-[10px] last:border-b-0 sm:mb-0 sm:border-b-0 sm:pb-0"
+            >
+              {b}
+            </li>
           ))}
         </ul>
-        <div className="mt-6">
+        <div className="mt-[20px] sm:mt-6">
           <OutlineButton href={product.href}>Ver más</OutlineButton>
         </div>
       </div>

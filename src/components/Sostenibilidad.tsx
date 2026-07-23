@@ -36,7 +36,7 @@ const PILLARS: { icon: string; body: ReactNode }[] = [
 
 export function Sostenibilidad() {
   return (
-    <section className="relative bg-white pb-[80px] pt-[56px] md:pb-[59px] md:pt-[57px]">
+    <section className="relative bg-white pb-[80px] pt-[70px] md:pb-[59px] md:pt-[57px]">
       <SectionRow
         className="md:pb-[71px] md:pt-[20px]"
         title={<SectionTitle>Comprometidos con la sostenibilidad</SectionTitle>}
@@ -51,9 +51,11 @@ export function Sostenibilidad() {
 
         {/* Pilares Divi: columnas de 238 (gutter 40), icono + 26 de aire (=76
             hasta el texto), descripción de 159px, margen de módulo 34 al pie */}
-        <div className="mt-[20px] grid grid-cols-1 gap-6 sm:grid-cols-3 md:mb-[34px] md:gap-[40px]">
+        <div className="mt-[20px] grid grid-cols-1 gap-[30px] sm:grid-cols-3 md:mb-[34px] md:gap-[40px]">
           {PILLARS.map((p, i) => (
-            <div key={i} className="px-[40px] text-center">
+            // Móvil: texto a la izquierda con padding 17 (blurb_content 302px
+            // del original); centrado solo a partir de sm
+            <div key={i} className="px-[17px] text-left sm:px-[40px] sm:text-center">
               <img
                 src={p.icon}
                 alt=""

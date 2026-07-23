@@ -9,13 +9,13 @@ import { SectionTitle, BlueButton } from "./SectionRow";
 export function UltimosArticulos() {
   return (
     <section
-      className="relative bg-white bg-no-repeat pb-[60px] pt-[56px] md:pb-[101px] md:pt-[84px]"
+      className="relative bg-white bg-no-repeat pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]"
       style={{
         backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
         backgroundPosition: "0% 0%",
       }}
     >
-      <div className="mx-auto w-[85%] max-w-[1380px]">
+      <div className="mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]">
         <div className="relative">
           <img
             src="/images/uploads/2022/12/punteado.svg"
@@ -30,7 +30,7 @@ export function UltimosArticulos() {
         </div>
 
         {/* −10 compensa el pb-[10px] que ahora lleva SectionTitle (regla Divi h2) */}
-        <div className="mt-[33px] grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-[30px] grid gap-x-[40px] gap-y-[32px] sm:grid-cols-2 md:mt-[33px] md:gap-y-10 lg:grid-cols-3">
           {ARTICLES.map((post) => (
             <article key={post.href}>
               <a
@@ -48,12 +48,12 @@ export function UltimosArticulos() {
                   {post.title}
                 </a>
               </h3>
-              <p className="mt-2 text-[13.5px] leading-[1.55] text-[#333]">{post.date}</p>
+              <p className="text-[13.5px] leading-[1.55] text-[#333] md:mt-2">{post.date}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 flex justify-end md:mt-[80px]">
+        <div className="mt-4 flex justify-end md:mt-[80px]">
           <BlueButton href="https://kunakair.com/es/recursos/guias/">
             Amplia tus conocimientos con nuestras guías
           </BlueButton>

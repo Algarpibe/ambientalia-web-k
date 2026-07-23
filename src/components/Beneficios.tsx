@@ -22,7 +22,9 @@ export function Beneficios() {
     <div className="mt-10">
       <p className="text-[18px] leading-[1.7] text-[#333]">Beneficios:</p>
 
-      <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3">
+      {/* Móvil: 2 col de 162 con gutter 13, icono a 76 del texto (50+26),
+          H3 16px/19.2 con pb10 y stride de fila 157 (medido 2026-07-23) */}
+      <div className="mt-[20px] grid grid-cols-2 gap-x-[13px] gap-y-[33px] sm:grid-cols-3 md:mt-6 md:gap-x-6 md:gap-y-8">
         {BENEFITS.map((b) => (
           <div key={b.label} className="flex flex-col items-center text-center">
             <img
@@ -31,12 +33,12 @@ export function Beneficios() {
               aria-hidden
               width={50}
               height={50}
-              className="mb-[30px]"
+              className="mb-[26px] md:mb-[30px]"
               style={{ width: 50, height: 50 }}
             />
             <h3
+              className="pb-[10px] text-[16px] md:pb-0 md:text-[18px]"
               style={{
-                fontSize: 18,
                 fontWeight: 300,
                 lineHeight: 1.2,
                 letterSpacing: "-0.5px",
@@ -49,7 +51,7 @@ export function Beneficios() {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mb-[30px] mt-[30px] flex justify-center md:mb-0 md:mt-8">
         <BlueButton href="https://kunakair.com/es/contacto/">Solicita más información</BlueButton>
       </div>
     </div>

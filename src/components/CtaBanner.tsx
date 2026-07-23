@@ -15,17 +15,17 @@ export function CtaBanner({
   heading,
   buttonLabel,
   buttonHref,
-  bottomGap = 0,
+  bottomGapClassName = "",
 }: {
   image: string;
   heading: string;
   buttonLabel: string;
   buttonHref: string;
   /** White space below the photo, inside the section (Divi slider margin). */
-  bottomGap?: number;
+  bottomGapClassName?: string;
 }) {
   return (
-    <section className="w-full bg-white" style={{ paddingBottom: bottomGap }}>
+    <section className={"w-full bg-white " + bottomGapClassName}>
       <div
         className="relative w-full bg-cover bg-center px-[6%]"
         style={{
@@ -34,11 +34,12 @@ export function CtaBanner({
           backgroundBlendMode: "multiply",
         }}
       >
-        <div className="mx-auto max-w-[1380px] py-[40px] text-left md:py-[74px] md:pl-[49%]">
+        {/* Móvil: slide description Divi pt 34.3 / pb 51.5 (10% / 15% de 343) */}
+        <div className="mx-auto max-w-[1380px] pb-[51px] pt-[34px] text-left md:py-[74px] md:pl-[49%]">
+          {/* Peso responsive Divi: 500 en móvil, 300 en desktop */}
           <h2
-            className="text-[28px] text-white md:text-[45px]"
+            className="pb-[10px] text-[27px] font-medium text-white md:pb-0 md:text-[45px] md:font-light"
             style={{
-              fontWeight: 300,
               lineHeight: 1.3,
               letterSpacing: "-0.5px",
             }}
@@ -48,7 +49,7 @@ export function CtaBanner({
 
           <a
             href={buttonHref}
-            className="group mt-8 inline-flex items-center gap-2 rounded-[30px] border border-white px-6 py-[9px] text-[15px] font-bold text-white transition-colors duration-200 hover:border-[#7F8798] hover:bg-[#7F8798]"
+            className="group mt-[20px] inline-flex items-center gap-2 rounded-[30px] border border-white px-6 pb-[9px] pt-[7.5px] text-[15px] font-bold text-white transition-colors duration-200 hover:border-[#7F8798] hover:bg-[#7F8798] md:mt-8"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.15)" }}
           >
             {buttonLabel}

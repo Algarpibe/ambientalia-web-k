@@ -11,7 +11,7 @@ export function CtaInmerso() {
       heading="¿Estás inmerso en un proyecto de calidad del aire y necesitas información fiable?"
       buttonLabel="Podemos ayudarte"
       buttonHref="https://kunakair.com/es/contacto/"
-      bottomGap={71}
+      bottomGapClassName="pb-[20px] md:pb-[71px]"
     />
   );
 }
