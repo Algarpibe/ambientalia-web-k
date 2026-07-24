@@ -349,31 +349,64 @@ function MegaMenuProducts({ sticky }: { sticky: boolean }) {
         Productos
         <ChevronDownIcon className="h-3 w-3" />
       </Link>
+      {/* Panel medido 2026-07-23 (sonda b8-probe): 1418×198 en y119/y73, SIN
+          border-top (el spec de Fase 3 decía 1px — computed 0px en vivo) y
+          padding 0. Celdas li de 200×198 con stride 202.8 (whitespace 2.8px
+          entre inline-blocks del original). */}
       <div
-        className="pointer-events-none fixed inset-x-0 z-[999999] border-t border-[#333]/30 bg-white opacity-0 transition-opacity duration-150 before:absolute before:bottom-full before:left-0 before:h-[20px] before:w-full before:content-[''] group-hover:pointer-events-auto group-hover:opacity-100"
+        className="pointer-events-none fixed inset-x-0 z-[999999] bg-white opacity-0 transition-opacity duration-150 before:absolute before:bottom-full before:left-0 before:h-[20px] before:w-full before:content-[''] group-hover:pointer-events-auto group-hover:opacity-100"
         style={{
           top: sticky ? 73 : 119,
           // Sombras del original: 0 2px 5px en top, 0 0 4px con nav fixed
           boxShadow: sticky ? "0 0 4px rgba(0,0,0,0.1)" : "0 2px 5px rgba(0,0,0,0.1)",
         }}
       >
-        <div className="mx-auto flex max-w-[1380px] justify-center gap-2 px-6 py-4 text-center">
+        <div className="mx-auto flex justify-center gap-[2.8px] text-center">
           {PRODUCTS.map((p) => (
-            <div key={p.label} className="group/product w-[15%] max-w-[180px]">
+            <div key={p.label} className="group/product relative w-[200px] max-w-[15%]">
               <Link
                 href={p.href}
-                className="flex flex-col-reverse items-center gap-2 py-2 text-[15px] text-[#333] transition-colors hover:text-[#0075C9]"
+                className="relative flex flex-col-reverse items-center py-[10px] text-[15px] leading-[28px] text-[#333] transition-colors hover:text-[#0075C9]"
               >
                 <span>{p.label}</span>
                 {p.image ? (
-                  // Product thumbnails swap from 130 → 150 px on hover
+                  // Miniatura 130→150 px en hover; el padding 10→0 mantiene
+                  // la caja a 150 de alto (mecanismo original, sin reflow)
                   <img
                     src={p.image}
                     alt={p.label}
-                    className="w-[130px] transition-all duration-300 group-hover/product:w-[150px]"
+                    className="w-[130px] py-[10px] transition-all duration-300 group-hover/product:w-[150px] group-hover/product:py-0"
                   />
                 ) : null}
+                {p.children ? (
+                  // Caret del original: a::after ETmodules "3" 16px, right 0 / top 160
+                  <ChevronDownIcon className="absolute right-0 top-[160px] h-4 w-4" />
+                ) : null}
               </Link>
+              {p.children ? (
+                // Sub-sub "Cartuchos inteligentes": grid 9 filas × 2 columnas
+                // (273px + 296px medidas), top 197 del li en ambos estados,
+                // toggle instantáneo por visibility+opacity (sin transición)
+                <div
+                  className="invisible absolute left-0 top-[197px] z-[1000] min-w-[500px] bg-white py-4 text-left opacity-0 shadow-[0_2px_5px_rgba(0,0,0,0.1)] group-hover/product:visible group-hover/product:opacity-100"
+                  style={{
+                    display: "grid",
+                    gridAutoFlow: "column",
+                    gridTemplateRows: "repeat(9, auto)",
+                    gridTemplateColumns: "273px 296px",
+                  }}
+                >
+                  {p.children.map((c) => (
+                    <Link
+                      key={c.label}
+                      href={c.href}
+                      className="block self-start px-5 py-[6px] text-[13.5px] font-medium leading-[1.6] text-[#333] transition-colors hover:bg-black/10 hover:text-[#0075C9]"
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </div>
           ))}
         </div>

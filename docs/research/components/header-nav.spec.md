@@ -142,6 +142,24 @@ $(window).scroll(function () {
 - Main: `Inicio` · `Productos` · `Kunak AIR Pro` · `Kunak AIR Lite` · `Kunak AIR Cloud` · `Cartuchos inteligentes` · `Kunak API` · `Accesorios` · `Sectores` · `Urbano` · `Industria y olores` · `EDAR` · `Petróleo y gas` · `Puertos y aeropuertos` · `Construcción` · `Minería` · `Investigación y consultoría` · `Empresa` · `Sobre nosotros` · `Premios y reconocimientos` · `Casos de éxito` · `Recursos` · `Artículos` · `Documentos científicos` · `Kunakpedia` · `Centro de ayuda` · `Preguntas frecuentes` · `¿Cómo podemos ayudarte?` · `Descargar catálogo`
 - Cartuchos (sub-sub): `Monóxido de carbono (CO)` · `Óxido nítrico (NO)` · `Dióxido de nitrógeno (NO₂)` · `Ozono (O₃)` · `Dióxido de azufre (SO₂)` · `Sulfuro de hidrógeno (H₂S)` · `Dióxido de carbono (CO₂)` · `Metano (CH₄)` · `Compuestos orgánicos volátiles (COV)` · `Hidrocarburos no metánicos (NMHC)` · `Amoniaco (NH₃)` · `Cloruro de hidrógeno (HCl)` · `Cianuro de hidrógeno (HCN)` · `Fluoruro de hidrógeno (HF)` · `Cloro (Cl₂)` · `Oxígeno (O₂)` · `Material particulado (MP)` · `Partículas ultrafinas (PUF)`
 
+## Addendum B8 (2026-07-23, medido en vivo con `qa/b8-probe.mjs` — corrige lo de arriba)
+
+- El panel del mega **NO tiene border-top** (computed `0px` en top y sticky; el 1px
+  de arriba venía del CSS fuente pero el critical CSS lo anula). Panel 1418×198,
+  padding 0.
+- Celdas li del mega: **200×198** (stride 202.8 = 200 + 2.8 de whitespace entre
+  inline-blocks), `a` py 10 / 15px / lh 28; img caja 130×150 (130 + py 10);
+  hover img 150 + padding 0 → caja constante, sin reflow.
+- Sub-sub "Cartuchos inteligentes": `absolute; top: 197px` del li **en ambos
+  estados** (viewport y316 top / y270 sticky — la regla `top: 43px` de arriba no
+  aplica al sub-sub). Grid 9 filas × 2 columnas de **273px + 296px** (la 2ª la
+  ensancha el max-content de NMHC), padding 16px 0, sombra `0 2px 5px` también en
+  sticky. Cerrado va por `visibility: hidden + opacity: 0` sin transición
+  (toggle instantáneo). Items 13.5px / fw 500 / lh 1.6 / padding 6px 20px, hover
+  `bg rgba(0,0,0,0.1)` + color azul; el `a` NO se estira a la fila (el wrap de
+  COV crea una fila de 55.2 y el hover de PUF pinta solo 33.6 → `self-start`).
+- Caret del item Cartuchos: `a::after` ETmodules `"3"` 16px, `right: 0; top: 160px`.
+
 ## Notas de implementación
 - Implementar sticky con listener rAF-throttled y `data-sticky` (ya existe `.kunak-nav[data-sticky]` en globals.css); medir el offset inicial al montar.
 - El wrap `.fila-menu-principal-contenido` (max-width 1380px / 85%) debe existir también en estado no-fixed para el centrado.
