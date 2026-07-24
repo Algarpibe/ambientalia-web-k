@@ -12,6 +12,10 @@ import { cn } from "@/lib/utils";
  * al pulsarlo, un overlay oscuro con el iframe 16:9. Cierra con ✕, Esc o clic
  * fuera; bloquea el scroll del body mientras está abierto. El iframe se
  * desmonta al cerrar, así que el vídeo se detiene.
+ *
+ * Fuente parametrizable: por defecto el player Brightcove de la home; pásale
+ * `youtubeId` (p.ej. "tuTfw6KIvd4" en /monitor-calidad-aire) o un `src`
+ * completo para otro proveedor.
  */
 const VIDEO_SRC =
   "https://players.brightcove.net/4684385811001/default_default/index.html?videoId=6361248610112";
@@ -19,12 +23,28 @@ const VIDEO_SRC =
 export function VideoLightbox({
   children,
   className,
+  src,
+  youtubeId,
+  title = "Cómo funciona Kunak AIR",
+  ariaLabel = "Vídeo: cómo funciona Kunak AIR",
 }: {
   children: ReactNode;
   className?: string;
+  /** URL de embed completa (tiene prioridad sobre `youtubeId`). */
+  src?: string;
+  /** ID de YouTube; se convierte en la URL de embed oembed. */
+  youtubeId?: string;
+  title?: string;
+  ariaLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  const videoSrc =
+    src ??
+    (youtubeId
+      ? `https://www.youtube.com/embed/${youtubeId}?feature=oembed&autoplay=1&rel=0`
+      : VIDEO_SRC);
 
   useEffect(() => {
     if (!open) return;
@@ -63,7 +83,7 @@ export function VideoLightbox({
             <div
               role="dialog"
               aria-modal="true"
-              aria-label="Vídeo: cómo funciona Kunak AIR"
+              aria-label={ariaLabel}
               onClick={() => setOpen(false)}
               className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/80 p-4"
             >
@@ -84,8 +104,8 @@ export function VideoLightbox({
                 {/* aspect-video = 16:9 responsive */}
                 <div className="relative aspect-video w-full overflow-hidden rounded-[4px] bg-black">
                   <iframe
-                    src={VIDEO_SRC}
-                    title="Cómo funciona Kunak AIR"
+                    src={videoSrc}
+                    title={title}
                     allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 h-full w-full border-0"
