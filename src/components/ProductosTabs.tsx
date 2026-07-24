@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Product } from "@/types/kunak";
 import { PRODUCTS_TABS } from "@/lib/products";
 import { SectionTitle, BlueButton, OutlineButton } from "./SectionRow";
@@ -32,12 +32,34 @@ export function ProductosTabs() {
     return () => mq.removeEventListener("change", update);
   }, []);
 
+  // B5 — scroll animado del acordeón móvil, verificado en vivo (b5-probe):
+  // al ABRIR, el original anima hasta `li.offset().top − 5` (~600ms, jQuery
+  // "slow"; liTop final = 5); al CERRAR no hay scroll. Medir DESPUÉS del
+  // commit (el cierre del item anterior desplaza el destino).
+  const liRefs = useRef(new Map<string, HTMLLIElement>());
+  const scrollTargetRef = useRef<string | null>(null);
+
   const onEnter = (id: string) => {
     if (isDesktop) setActiveId(id);
   };
   const onClick = (id: string) => {
-    if (!isDesktop) setActiveId((cur) => (cur === id ? null : id));
+    if (isDesktop) return;
+    const opening = activeId !== id;
+    scrollTargetRef.current = opening ? id : null;
+    setActiveId(opening ? id : null);
   };
+
+  useEffect(() => {
+    const id = scrollTargetRef.current;
+    if (!id || id !== activeId) return;
+    scrollTargetRef.current = null;
+    const li = liRefs.current.get(id);
+    if (!li) return;
+    window.scrollTo({
+      top: li.getBoundingClientRect().top + window.scrollY - 5,
+      behavior: "smooth",
+    });
+  }, [activeId]);
 
   const active = PRODUCTS_TABS.find((p) => p.id === activeId) ?? null;
 
@@ -57,6 +79,10 @@ export function ProductosTabs() {
               return (
                 <li
                   key={p.id}
+                  ref={(el) => {
+                    if (el) liRefs.current.set(p.id, el);
+                    else liRefs.current.delete(p.id);
+                  }}
                   className="mb-[10px] border-b border-[#999] pb-[10px] last:border-b-0 md:border-b-0 md:pb-0"
                 >
                   <button

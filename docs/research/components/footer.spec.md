@@ -125,3 +125,19 @@ footer.et-l--footer > section (bg #fff, padding-top 56.36px)
 - **≥981px:** 5 columnas iguales (row0); row1 = 3/5 + 1/5 + 1/5.
 - **≤980px:** columnas apiladas (Divi); footer-redes e idioma se apilan a la izquierda; `footer-idioma` width 17.6% hasta 1023px (regla del tema) — en móvil apilado.
 - **≤767px:** todo en una columna; iconos sociales en fila; submenú idioma sigue abriendo hacia arriba.
+
+## Addendum B4 — ritmo móvil medido en vivo (2026-07-23, `qa/b4-probe.mjs`, 390 real)
+
+- Sección links pt **50** (56 es desktop); fila pt/pb **30**, margen lateral 27.3 (fila 335.4).
+- Headings `p` de **30.6 SIN margen**: line-height **30.6px fijo** heredado (1.7em del
+  body de 18px — NO 1.7 sin unidades). Aplica también al legal (12px → lh 30.6 igual).
+- li de **26px exactos**: el original fija fs 14 en el li (con fs heredado de 18, el
+  strut infla la caja a 28). ul con **pb 14**.
+- Botón ¡Suscríbete!: 48 antes (32 mb widget + 16 wrapper), alto **45** (pb 10 móvil,
+  no 9), 46 después (30 mb span + 16 wrapper).
+- CERT: heading 30.6 + img 121.7 pegada; después **62** (32 mb widget + 30 pb fila).
+- Legal: fila con pad **1%** (3.9), bloque 122.4 (3 líneas + 1 a lh 30.6) + **62**
+  hasta iconos; iconos (25px, caja 31.6) + **30** hasta idioma (30); spacer final 40.
+- Iconos sociales móvil: margen Divi responsive `0 33.7 0 9` → **42.7 entre iconos,
+  9 de entrada** (desktop: 9px entre iconos, sin cambio).
+- Total footer móvil original: **1761.4**.

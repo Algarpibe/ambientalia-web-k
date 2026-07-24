@@ -38,16 +38,21 @@ const SOCIAL_ICON: Record<SocialLink["network"], typeof LinkedInIcon> = {
 export function Footer() {
   return (
     <footer className="et-l--footer bg-white">
-      <div className="mx-auto w-[85%] max-w-[1380px]" style={{ paddingTop: 56 }}>
+      {/* Ritmo móvil (<640) medido en vivo B4 (qa/b4-probe.mjs, 390 real):
+          sección pt 50, fila pt 30, headings p de 30.6 SIN margen (lh 30.6px
+          fijo heredado — 1.7em de 18, no 1.7 sin unidades), li de 26 (fs 14
+          en el li para que el strut no infle la caja), ul pb 14, y tras CERT
+          32 (mb de widget) + 30 (pb de fila) = 62. En sm: se restauran los
+          valores verificados de desktop (footer 592 exacto). */}
+      <div className="mx-auto w-[85%] max-w-[1380px] pt-[50px] sm:pt-[56px]">
         {/* Row 0 — link columns */}
-        <div
-          className="grid grid-cols-1 gap-8 border-t border-[#333] sm:grid-cols-3 lg:grid-cols-5"
-          style={{ paddingTop: 28, paddingBottom: 55 }}
-        >
+        <div className="grid grid-cols-1 gap-8 border-t border-[#333] pb-[62px] pt-[30px] sm:grid-cols-3 sm:pb-[55px] sm:pt-[28px] lg:grid-cols-5">
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <p className="mb-4 text-[14px] font-bold text-[#333]">{col.title}</p>
-              <ul className="pb-[18px] leading-[26px]">
+              <p className="mb-0 text-[14px] font-bold leading-[30.6px] text-[#333] sm:mb-4 sm:leading-[1.7]">
+                {col.title}
+              </p>
+              <ul className="pb-[14px] text-[14px] leading-[26px] sm:pb-[18px] sm:text-[18px]">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <a
@@ -61,7 +66,10 @@ export function Footer() {
               </ul>
 
               {col.title === "EMPRESA" ? (
-                <div className="mt-6">
+                // Móvil: 48 antes (mb 32 widget + 16 wrapper), 14 después
+                // (+32 del gap = 46 = mb 30 del span + 16 del wrapper) y
+                // pb 10 del botón (45 de alto; 9/44 solo desktop)
+                <div className="mb-[14px] mt-[48px] max-sm:[&>a]:pb-[10px] sm:mb-0 sm:mt-6">
                   <BlueButton href={SUBSCRIBE_HREF}>¡Suscríbete!</BlueButton>
                 </div>
               ) : null}
@@ -70,7 +78,7 @@ export function Footer() {
 
           {/* Certificaciones column */}
           <div>
-            <p className="mb-2 text-[14px] font-bold text-[#333]">CERTIFICACIONES</p>
+            <p className="mb-0 text-[14px] font-bold leading-[30.6px] text-[#333] sm:mb-2 sm:leading-[1.7]">CERTIFICACIONES</p>
             <a href={ENS_CERT.href} target="_blank" rel="noopener">
               <img
                 src={ENS_CERT.image}
@@ -83,10 +91,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Row 1 — legal / social / language */}
-        <div className="flex flex-col gap-6 pb-[32px] pt-[28px] md:flex-row md:items-start md:justify-between">
+        {/* Row 1 — legal / social / language. Móvil: fila con pad 1% (3.9),
+            legal a lh 30.6 (3+1 líneas = 122.4) + 62 hasta iconos (32 widget
+            + 30 col), iconos + 38 hasta idioma (61.6 − 24 de caja). */}
+        <div className="flex flex-col pb-[4px] pt-[4px] sm:gap-6 sm:pb-[32px] sm:pt-[28px] md:flex-row md:items-start md:justify-between">
           {/* Legal */}
-          <div className="space-y-1 text-[12px] leading-[1.6] text-[#333] md:w-3/5">
+          <div className="mb-[62px] text-[12px] leading-[30.6px] text-[#333] sm:mb-0 sm:space-y-1 sm:leading-[1.6] md:w-3/5">
             <p>
               2026 © KUNAK TECHNOLOGIES SL ·{" "}
               {LEGAL_LINKS.map((l, i) => (
@@ -121,8 +131,9 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Social */}
-          <div className="flex items-center gap-[9px] text-[#333]">
+          {/* Social — móvil: margen Divi responsive 9+33.7 por icono (42.7
+              entre iconos, 9 de entrada); desktop: 9px verificado */}
+          <div className="mb-[38px] flex items-center gap-[42.7px] pl-[9px] text-[#333] sm:mb-0 sm:gap-[9px] sm:pl-0">
             {SOCIALS.map((s) => {
               const Icon = SOCIAL_ICON[s.network];
               return (
