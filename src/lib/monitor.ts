@@ -241,5 +241,38 @@ export const CO_LOCATION_FULL_PDF = `${RD}Kunak_AIR_Pro_Co-location_tests.pdf`;
 export const PRECISION_HELP_HREF =
   "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/";
 
+/* --- #software: 4 párrafos con enlaces inline + botón outline ---
+ * Spec: docs/research/monitor-calidad-aire/components/software.spec.md
+ * ⚠️ El bloque NO lleva capturas: es texto puro + botón (corrige PAGE_TOPOLOGY). */
+
+/** Trozo de párrafo: texto plano, o enlace inline si lleva `href`. */
+export interface ParaSeg {
+  t: string;
+  href?: string;
+}
+
+// hrefs verbatim del original: el de AIR Cloud va SIN prefijo /es/ y el del
+// botón además sin barra final. Se replican tal cual.
+export const SOFTWARE_PARAGRAPHS: ParaSeg[][] = [
+  [
+    { t: "Analiza todos los datos recogidos por las estaciones Kunak AIR de forma sencilla con nuestro software avanzado de calidad del aire " },
+    { t: "Kunak AIR Cloud", href: "https://kunakair.com/software-medicion-calidad-del-aire/" },
+    { t: " y genera informes que te faciliten la toma de decisiones. " },
+  ],
+  [
+    { t: "Además, podrás configurar los dispositivos desplegados y disponer de un sistema de alarmas que te facilitará la operación y mantenimiento remoto de la red de una forma sencilla." },
+  ],
+  [
+    { t: "Integra los datos recopilados por la red y almacenados por el servidor en plataformas de calidad del aire públicas o en aplicaciones de terceros a través de la potente " },
+    { t: "API Rest", href: "https://kunakair.com/es/kunak-api/" },
+    { t: "." },
+  ],
+  [
+    { t: "Si lo necesitas, la API también te permite integrar datos de fuentes externas que complementen la información que te proporciona la red de monitorización y así analizarás todos los datos en una única plataforma." },
+  ],
+];
+
+export const SOFTWARE_MORE_HREF = "https://kunakair.com/software-calidad-aire";
+
 /** Helper de tipografía usado por varias secciones (evita re-declararlo). */
 export type WithChildren = { children: ReactNode };

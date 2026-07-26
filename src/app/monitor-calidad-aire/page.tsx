@@ -13,6 +13,7 @@ import { SubNavAnclas } from "@/components/monitor/SubNavAnclas";
 import { Beneficios } from "@/components/monitor/Beneficios";
 import { Especificaciones } from "@/components/monitor/Especificaciones";
 import { GaleriaEnsayos } from "@/components/monitor/GaleriaEnsayos";
+import { Software } from "@/components/monitor/Software";
 import { CONTACT_HREF } from "@/lib/monitor";
 
 export const metadata: Metadata = {
@@ -25,10 +26,11 @@ export const metadata: Metadata = {
  * /monitor-calidad-aire — Kunak AIR Pro (CPT solutions, id 768).
  * Topología: docs/research/monitor-calidad-aire/PAGE_TOPOLOGY.md
  *
- * GRUPO A (esta entrega): cabecera + Hero (visor 360 nativo) + Información del
- * producto + CTA banner + sub-nav de anclas sticky/scrollspy + reutilizables
- * ya wireados. Las secciones NUEVAS de los grupos B/C quedan como placeholders
- * comentados con su ancla funcional (para que el scrollspy resuelva los 8 ids).
+ * GRUPO A: cabecera + Hero (visor 360 nativo) + Información del producto +
+ * CTA banner + sub-nav de anclas sticky/scrollspy + reutilizables wireados.
+ * GRUPO B: Beneficios, Software, Especificaciones, Galería de ensayos.
+ * Pendiente GRUPO C: sondas meteorológicas y FAQ — siguen como placeholders
+ * con su ancla funcional (para que el scrollspy resuelva los 8 ids).
  */
 export default function MonitorCalidadAirePage() {
   return (
@@ -82,9 +84,9 @@ export default function MonitorCalidadAirePage() {
                 <SectoresCarousel />
               </div>
 
-              {/* #software — texto Kunak AIR Cloud + capturas — GRUPO B */}
+              {/* #software — texto Kunak AIR Cloud + botón (sin capturas) */}
               <div id="software" className="scroll-mt-[110px] py-8">
-                <PlaceholderBlock label="Software — Kunak AIR Cloud (Grupo B)" />
+                <Software />
               </div>
 
               {/* #specifications — tabla de especificaciones (15 filas + sellos) */}
