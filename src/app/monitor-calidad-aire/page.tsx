@@ -72,7 +72,11 @@ export default function MonitorCalidadAirePage() {
           <div className="mx-auto flex w-[85%] max-w-[1080px] flex-col gap-[30px] md:flex-row md:gap-[3%]">
             <SubNavAnclas />
 
-            <div className="w-full space-y-[10px] md:flex-1">
+            {/* `min-w-0` es imprescindible: sin él, el `min-width:auto` por
+                defecto del flex item impide encoger por debajo del min-content
+                de la tabla de especificaciones y la columna se va a 1080px
+                (desbordando el contenedor y dando scroll horizontal a la página). */}
+            <div className="w-full min-w-0 space-y-[10px] md:flex-1">
               {/* #benefits — Beneficios (grid 3×3 icon-blurbs) */}
               <div id="benefits" className="scroll-mt-[110px] py-8">
                 <Beneficios />

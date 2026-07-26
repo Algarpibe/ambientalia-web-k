@@ -55,6 +55,10 @@ export function SubNavAnclas() {
     <aside
       className={
         "columna-lista-anclas w-full md:w-[25%] md:shrink-0 " +
+        // `md:self-start` es imprescindible: por defecto el flex item se estira
+        // (align-items:stretch) a la altura completa de la fila (~5300px) y un
+        // sticky tan alto como su contenedor no llega a pegarse nunca.
+        "md:self-start " +
         // Desktop: barra lateral sticky. Móvil: barra horizontal gris bajo el header.
         "md:sticky md:top-[70px] max-md:sticky max-md:top-[60px] max-md:z-[2] max-md:bg-[#eee] max-md:py-2"
       }
