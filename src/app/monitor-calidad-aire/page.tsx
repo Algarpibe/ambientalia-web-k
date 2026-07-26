@@ -10,6 +10,9 @@ import { ProductosTabs } from "@/components/ProductosTabs";
 import { HeroProducto } from "@/components/monitor/HeroProducto";
 import { InformacionProducto } from "@/components/monitor/InformacionProducto";
 import { SubNavAnclas } from "@/components/monitor/SubNavAnclas";
+import { Beneficios } from "@/components/monitor/Beneficios";
+import { Especificaciones } from "@/components/monitor/Especificaciones";
+import { GaleriaEnsayos } from "@/components/monitor/GaleriaEnsayos";
 import { CONTACT_HREF } from "@/lib/monitor";
 
 export const metadata: Metadata = {
@@ -68,9 +71,9 @@ export default function MonitorCalidadAirePage() {
             <SubNavAnclas />
 
             <div className="w-full space-y-[10px] md:flex-1">
-              {/* #benefits — Beneficios (grid 3×3 icon-blurbs) — GRUPO B */}
+              {/* #benefits — Beneficios (grid 3×3 icon-blurbs) */}
               <div id="benefits" className="scroll-mt-[110px] py-8">
-                <PlaceholderBlock label="Beneficios — grid 3×3 (Grupo B)" />
+                <Beneficios />
               </div>
 
               {/* #applications — SectoresCarousel (mismo shortcode que la home).
@@ -84,14 +87,14 @@ export default function MonitorCalidadAirePage() {
                 <PlaceholderBlock label="Software — Kunak AIR Cloud (Grupo B)" />
               </div>
 
-              {/* #specifications — tabla de especificaciones (17 filas) — GRUPO C */}
+              {/* #specifications — tabla de especificaciones (15 filas + sellos) */}
               <div id="specifications" className="scroll-mt-[110px] py-8">
-                <PlaceholderBlock label="Especificaciones — tabla (Grupo C)" />
+                <Especificaciones />
               </div>
 
-              {/* #trials-test — galería-slider de ensayos (9 gráficas) — GRUPO C */}
+              {/* #trials-test — galería-slider de ensayos (9 gráficas) */}
               <div id="trials-test" className="scroll-mt-[110px] py-8">
-                <PlaceholderBlock label="Ensayos y pruebas — galería (Grupo C)" />
+                <GaleriaEnsayos />
               </div>
 
               {/* #case-studies — UltimosProyectos (mismas 3 tarjetas que la home).

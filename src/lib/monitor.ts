@@ -135,5 +135,111 @@ export const DATASHEET_PDF = "https://kunakair.com/doc/External/Kunak_AIR_Datash
 export const CONTACT_HREF = "https://kunakair.com/es/contacto/";
 export const CATALOG_HREF = "https://kunakair.com/es/descarga-catalogo/";
 
+/* =========================================================================
+ * GRUPO B — datos de las 3 secciones nuevas de S3
+ * Specs: docs/research/monitor-calidad-aire/components/{beneficios,
+ *        especificaciones,galeria-ensayos}.spec.md
+ * ========================================================================= */
+
+/* --- #benefits: grid 3×3 de icon-blurbs (≠ Beneficios de la home) --- */
+export interface BenefitItem {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+export const BENEFITS_ITEMS: BenefitItem[] = [
+  { icon: "/images/uploads/2023/02/easy-fast-installation.svg", title: "Instalación sencilla y rápida", text: "Instala la estación en menos de 10′ con diagnóstico visual en pantalla." },
+  { icon: "/images/uploads/2023/02/cartridge-system.svg", title: "Sistema de cartuchos", text: "Sustituye y combina los cartuchos mediante sistema plug & play." },
+  { icon: "/images/uploads/2023/02/accuracy.svg", title: "Precisión probada", text: "Adquiere el sistema más fiable y preciso del mercado." },
+  { icon: "/images/uploads/2023/02/easy-calibration.svg", title: "Calibración sencilla", text: "Calibra todo el rango de medida solo con dos puntos." },
+  { icon: "/images/uploads/2023/02/cloud-platform.svg", title: "Plataforma cloud de calidad del aire", text: "Visualiza, analiza y gestiona tu red de equipos y tus datos en la nube." },
+  { icon: "/images/uploads/2023/02/multi-pollutant-1.svg", title: "Múltiples contaminantes", text: "Aprovecha su capacidad para medir hasta 5 gases y partículas a la vez." },
+  { icon: "/images/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg", title: "Totalmente autónomo", text: "Funcionamiento autónomo gracias a su batería integrada y a su panel solar." },
+  { icon: "/images/uploads/2023/02/real-time.svg", title: "Datos en tiempo real", text: "Accede a tus datos y alarmas en tiempo real." },
+  { icon: "/images/uploads/2023/02/additional-probes.svg", title: "Sensores adicionales", text: "Conecta sondas como sensores de viento, lluvia, ruido, etc." },
+];
+
+/* --- #specifications: 15 filas (label + valor multilínea) + sellos --- */
+export interface SpecRow {
+  label: string;
+  /** líneas del valor (>1 = varias líneas separadas por <br> en el original) */
+  value: string[];
+}
+
+export const SPEC_ROWS: SpecRow[] = [
+  { label: "Dimensiones / Peso", value: ["257 x 270 x 225 mm / <3,5 kg"] },
+  { label: "Carcasa", value: ["PMMA, policarbonato y acero inoxidable"] },
+  { label: "Temp. / HR de funcionamiento", value: ["De -40ºC a 60ºC / De 0 a 99% HR"] },
+  { label: "Grado de protección IP", value: ["IP65"] },
+  { label: "Batería", value: ["Litio 26Ah"] },
+  { label: "Alimentación externa", value: ["Cargador 7 – 12 Vdc. o panel solar"] },
+  { label: "Autonomía", value: ["24/7 con cargador o panel solar", "9-30 días funcionamiento con batería (dependiendo de la configuración)"] },
+  { label: "Consumo energético", value: ["0,08-1,2W (según la configuración)"] },
+  { label: "Comunicaciones", value: ["Multibanda 2G/3G/4G, Ethernet y Modbus RTU Esclavo"] },
+  { label: "GNSS", value: ["GPS y GLONASS"] },
+  { label: "Sensores integrados", value: ["Temp. | Humedad | Presión atmosférica | Punto de rocío"] },
+  { label: "Conectores", value: ["#1: Alimentación de 7V a 12V o Ethernet", "#2: Modbus RTU esclavo", "#3: Sonómetro, UV", "#4: WBGT, piranómetro, Modbus RTU maestro", "#5: Anemómetro y pluviómetro", "#Wifi: Sensor de partículas ultrafinas (PUF)"] },
+  { label: "Periodos de muestreo", value: ["Desde 10 segundos a un máximo de 24h"] },
+  { label: "Periodos de envío", value: ["Desde 5 minutos a un máximo de 24h"] },
+  { label: "SIM", value: ["eSIM integrada y soporte SIM adicional"] },
+];
+
+export interface CertSeal {
+  src: string;
+  alt: string;
+}
+
+export const CERT_SEALS: CertSeal[] = [
+  { src: "/images/uploads/2023/01/certificate-FCC-1.svg", alt: "Certificado FCC" },
+  { src: "/images/uploads/2023/01/certificate-CE-1.svg", alt: "Certificado CE" },
+  { src: "/images/uploads/2023/01/certificate-rohs.svg", alt: "Certificado RoHS" },
+];
+
+/* --- #trials-test: galería de 9 gráficas + enlaces de resultados ---
+ * Nombres locales saneados (el original sirve 6 con <sub> codificado que dan
+ * 404; se usan las variantes saneadas que sí resuelven — ver spec). */
+export interface TrialImage {
+  src: string;
+  alt: string;
+}
+
+export const TRIALS_GALLERY: TrialImage[] = [
+  { src: "/images/uploads/2023/09/co_mexico.webp", alt: "CO — co-ubicación en Ciudad de México (México)" },
+  { src: "/images/uploads/2023/09/NO_sweden.webp", alt: "NO — co-ubicación en Suecia" },
+  { src: "/images/uploads/2023/09/no2_uk.webp", alt: "NO₂ — co-ubicación en Reino Unido" },
+  { src: "/images/uploads/2023/09/o3_spain.webp", alt: "O₃ — co-ubicación en España" },
+  { src: "/images/uploads/2023/09/so2_france.webp", alt: "SO₂ — co-ubicación en Francia" },
+  { src: "/images/uploads/2023/09/h2s_spain.webp", alt: "H₂S — co-ubicación en España" },
+  { src: "/images/uploads/2023/09/pm10_belgium.webp", alt: "PM₁₀ — co-ubicación en Bélgica" },
+  { src: "/images/uploads/2023/09/pm25_belgium.webp", alt: "PM₂,₅ — co-ubicación en Bélgica" },
+  { src: "/images/uploads/2023/01/co2_glasgow.jpg", alt: "CO₂ — co-ubicación en Glasgow" },
+];
+
+/** Enlace de resultado (chip con subíndice + PDF del estudio por contaminante). */
+export interface TrialResult {
+  label: string;
+  segs: ChipSeg[];
+  href: string;
+}
+
+const RD = "https://kunakair.com/doc/External/";
+
+// hrefs saneados (los verbatim con <sub> codificado dan 404 en el original).
+export const TRIALS_RESULTS: TrialResult[] = [
+  { label: "CO", segs: [{ t: "CO" }], href: `${RD}Kunak_AIR_Co-location_test_CO.pdf` },
+  { label: "NO", segs: [{ t: "NO" }], href: `${RD}Kunak_AIR_Pro_Co-location_test_NO.pdf` },
+  { label: "NO2", segs: [{ t: "NO" }, { t: "2", sub: true }], href: `${RD}Kunak_AIR_Pro_Co-location_test_NO2.pdf` },
+  { label: "O3", segs: [{ t: "O" }, { t: "3", sub: true }], href: `${RD}Kunak_AIR_Pro_Co-location_test_O3.pdf` },
+  { label: "SO2", segs: [{ t: "SO" }, { t: "2", sub: true }], href: `${RD}Kunak_AIR_Pro_Co-location_test_SO2.pdf` },
+  { label: "H2S", segs: [{ t: "H" }, { t: "2", sub: true }, { t: "S" }], href: `${RD}Kunak_AIR_Pro_Co-location_test_H2S.pdf` },
+  { label: "CO2", segs: [{ t: "CO" }, { t: "2", sub: true }], href: `${RD}Kunak_AIR_Pro_Co-location_test_CO2.pdf` },
+  { label: "PM", segs: [{ t: "PM" }], href: `${RD}Kunak_AIR_Pro_Co-location_test_PM.pdf` },
+];
+
+export const CO_LOCATION_FULL_PDF = `${RD}Kunak_AIR_Pro_Co-location_tests.pdf`;
+export const PRECISION_HELP_HREF =
+  "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/";
+
 /** Helper de tipografía usado por varias secciones (evita re-declararlo). */
 export type WithChildren = { children: ReactNode };
