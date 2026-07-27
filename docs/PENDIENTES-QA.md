@@ -71,6 +71,30 @@
   732.5 / 1083.2 / 1484.1, iconos y1887.6, idioma y1979.2). Home verificada
   sin regresión: móvil **19182 / footer 1761.6 exactos** (B4) y desktop
   1418 footer **592.2 exacto**.
+- **Header P2 (cerrado 2026-07-27, `qa/p2-probe.mjs`/`p2-cycle.mjs`)**: el
+  header original (MISMO template en home y monitor — verificado a 1280
+  idénticos) tiene **tres regímenes por ancho de viewport útil**:
+  **≤1379px → fila `contenido` al 92% sin max-width** (1177.6 a cw1280, col
+  logo 11.87% = 139.8 + margen 5.5% = 64.8, menú 973) y el menú entero en
+  **UNA fila** con "Descargar catálogo" inline a 12px del pill de ayuda
+  (catálogo x1059.5 y60, también en sticky: fila 75, catálogo y14);
+  **1380–1417 → fila ~85%** y el catálogo cae a su 2ª línea (el estado
+  verificado de la home a cw1403 en M4); **≥1418 → fila a ancho completo**
+  y vuelve a una fila (fuera de alcance — la referencia de la home es
+  cw1403). Fix en `HeaderNav` con variantes `lg:max-[1379px]:*` (fila 92%
+  sin max-w, logo 11.87%, ml 5.5%, columna de menú en flex-row con gap 12):
+  el clon a 1280 clava el contenedor (x51.2/1177.6/139.8/973) en top,
+  sticky y vuelta a 0, en ambas páginas. Residuos anotados: catálogo
+  x1013.3 vs 1059.5 (−46, deriva acumulada de anchos de items — misma
+  familia que el dLeft de M4), alto de fila 115.9 vs 95.5 (pre-existente a
+  todos los anchos), y a cw1265 (1280 CON scrollbar) el original ya no cabe
+  y envuelve por flex-wrap mientras el clon (items más estrechos) aguanta
+  hasta ~cw1210. **Re-verificado sin regresión**: home cw1403 con 35 links
+  del header idénticos pre/post, M4 por hover real dTop 0/−1 en los 8 casos
+  y dLeft −11/−20/−34 (los residuos aceptados), home docH 11837 / footer
+  592.2 (B4). Ojo QA: la cabecera del original sirvió `cabecera-puerto` en
+  esta tanda (el 26-07 sirvió construcción) — la imagen VARÍA entre visitas,
+  no re-investigar.
 - **Hover #power-packs (desktop)**: ✅ verificado por ratón real contra el
   original — mismo comportamiento exacto (hover = preview con mouseenter
   ~300ms, click = fija, mouseleave = vuelve al fijado; opacidades .3/1 y ⊖/⊕).
@@ -88,7 +112,7 @@
 | # | Zona | Delta | Nota |
 |---|------|-------|------|
 | P1 | ~~Footer TB (esta página)~~ | ✅ 2026-07-27 | Resuelto — ver «Footer TB» en la lista de corregidos: `template="tb"` con secciones a ancho completo, fila 80%, li 30.6+7, paddings % del padre. Desktop exacto, móvil +0.6. |
-| P2 | Header a <~1330px | visual | El menú compartido rompe "Descargar catálogo" a 2ª línea a 1280 (la home se verificó a 1418). El original sigue en una fila. Tocar `HeaderNav` exige re-verificar M4 (dropdowns) en la home. |
+| P2 | ~~Header a <~1330px~~ | ✅ 2026-07-27 | Resuelto — régimen responsive ≤1379px en `HeaderNav` (ver «Header P2» en corregidos). No era un wrap del texto: el original tiene TRES regímenes de fila por ancho y a ≤1379 mete todo el menú en UNA fila. M4 re-verificada sin regresión. |
 | P3 | Fila 2 móvil | −209 | Ritmo de módulos móvil de la col derecha (space-y 28 vs mezcla Divi 18/30). Desktop quedó −90. |
 | P4 | Artículos y Guías | −55 d / −194 m | Alturas dependientes del CONTENIDO: los 3 posts van congelados (decisión §4) y el original los sortea — no comparable px a px. |
 | P5 | Sondas/Paquetes móvil | −94 / −43 | Acordeón inline `lista-contenido` algo compacto vs original. |

@@ -107,8 +107,15 @@ export function HeaderNav() {
           }}
         >
           {/* Geometría original (1424 vw): col logo 192px (15.87% de la fila
-              de 1210), menú a 56px (4.63%) de la col, items li px-8 sin gap */}
-          <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center">
+              de 1210), menú a 56px (4.63%) de la col, items li px-8 sin gap.
+              P2 (QA 2026-07-27, qa/p2-probe.mjs): el original tiene un régimen
+              responsive a ≤1379px — fila `contenido` al 92% SIN max-width
+              (1177.6 a cw1280), col logo 11.87% (139.8) + margen 5.5% (64.8),
+              menú 82.62% (973) y el menú entero en UNA fila con "Descargar
+              catálogo" inline a 12px del pill de ayuda (catálogo x1059.5 y60).
+              A 1380–1417 la fila se capa (~85%) y el catálogo cae a su 2ª
+              línea — el estado ya verificado de la home a cw1403 (M4). */}
+          <div className="mx-auto flex w-full items-start lg:w-[85%] lg:max-w-[1380px] lg:items-center lg:max-[1379px]:w-[92%] lg:max-[1379px]:max-w-none">
             {/* Logo column — the SVG fills flip on sticky. Móvil: 120px (104 sticky),
                 margin-inline-start 10% como .col-logotipo-cabecera del original */}
             {/* Desktop: la columna del logo es un 25% FIJO de la fila en ambos
@@ -119,7 +126,7 @@ export function HeaderNav() {
               href="/"
               aria-label="Kunak"
               className={
-                "col-logotipo-cabecera relative z-[20001] ml-[10%] block shrink-0 lg:ml-0 lg:w-[15.87%] lg:max-w-none " +
+                "col-logotipo-cabecera relative z-[20001] ml-[10%] block shrink-0 lg:ml-0 lg:w-[15.87%] lg:max-w-none lg:max-[1379px]:w-[11.87%] " +
                 (sticky ? "max-w-[104px]" : "max-w-[120px]")
               }
             >
@@ -133,9 +140,10 @@ export function HeaderNav() {
               />
             </Link>
 
-            {/* Menu column — two rows like the original: links + help pill,
-                then the catalog pill on its own line, left-aligned. */}
-            <div className="hidden flex-1 flex-col items-start gap-2 lg:ml-[4.63%] lg:flex">
+            {/* Menu column — two rows like the original (≥1380): links + help
+                pill, then the catalog pill on its own line, left-aligned.
+                A lg…1379px (régimen 92%): UNA fila con el catálogo inline. */}
+            <div className="hidden flex-1 flex-col items-start gap-2 lg:ml-[4.63%] lg:flex lg:max-[1379px]:ml-[5.5%] lg:max-[1379px]:flex-row lg:max-[1379px]:items-center lg:max-[1379px]:gap-[12px]">
               <nav
                 className="flex flex-wrap items-center"
                 aria-label="Menú principal"
