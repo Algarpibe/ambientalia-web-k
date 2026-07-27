@@ -152,6 +152,12 @@
     color: #333333;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* A3: el original lo aplica de forma global (regla Divi) y el clon no lo
+       tenía. Se pone en `body` porque `overflow-wrap` es heredada, que es el
+       mismo alcance que en el original. Sin esto, un título largo en columna
+       estrecha desborda en vez de partirse: p. ej. "Preguntas frecuentes" del
+       FAQ ocupaba 2 líneas/120px en vez de las 3/175px del original. */
+    overflow-wrap: break-word;
   }
   /* SIN `scroll-behavior: smooth` en html a propósito: convertía el salto
      nativo al fragmento (`/accesorios#pluviometro`) en una animación que se

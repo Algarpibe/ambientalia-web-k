@@ -107,7 +107,7 @@ export default function AccesoriosPage() {
               <p className="text-[50px] font-extrabold leading-[60px] text-[#333]">{HERO.kicker}</p>
               {/* pb-[10px]: regla Divi de titulares, presente en TODOS los h1/h2
                   del original (QA 2026-07-27; ya la tenían el h3 de ficha y el FAQ). */}
-              <h1 className="pb-[10px] pl-[10px] text-[23px] font-light leading-[23px] text-[#333]">
+              <h1 className="pb-[10px] text-[23px] font-light leading-[23px] text-[#333]">
                 {HERO.h1}
               </h1>
               {/* w-[80%]: el módulo de texto del original es más estrecho que su
@@ -117,7 +117,7 @@ export default function AccesoriosPage() {
                   1.25× — la proporción del original en todos sus h2. */}
               <h2
                 id={HERO.h2Id}
-                className="mt-[32px] w-[80%] pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
+                className="mt-[32px] w-[80%] pb-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
               >
                 {HERO.h2}
               </h2>
@@ -149,7 +149,7 @@ export default function AccesoriosPage() {
             />
             <h2
               id={INTRO_HEADING_ID}
-              className="pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
+              className="pb-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
             >
               {INTRO_HEADING}
             </h2>
@@ -202,7 +202,7 @@ export default function AccesoriosPage() {
                       anclas, que en móvil no existe (allí el h2 va a mb 0).
                       35px en móvil / 32 en desktop: el h2 de Divi es MAYOR en
                       móvil, no menor. */}
-                  <h2 className="pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:mb-[27.9px] md:text-[32px]">
+                  <h2 className="pb-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:mb-[27.9px] md:text-[32px]">
                     {cat.heading}
                   </h2>
                 </div>

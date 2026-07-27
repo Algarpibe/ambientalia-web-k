@@ -351,6 +351,82 @@ Dos notas para no confundir en el próximo pase:
   original 0 sobre el h2 y el hueco lo pone el módulo Divi), pero la
   **geometría resultante es la misma**. No "corregirlo" a 0 sin medir el hueco.
 
+### A3 · `overflow-wrap: break-word` — RESUELTO (2026-07-27)
+
+Aplicado en `body` dentro de `globals.css`. Se pone ahí, y no en `SectionTitle`,
+porque **`overflow-wrap` es una propiedad heredada** y ese es exactamente el
+alcance que tiene en el original (regla global de Divi): medido, el original
+devuelve `break-word` en **todos** los h2 de las tres páginas y el clon devolvía
+`normal` en todos.
+
+**Efecto buscado**: el h2 "Preguntas frecuentes", en la columna de 211.2, pasa
+de desbordar en 2 líneas/120px a partirse en **3 líneas/175px** — el valor
+exacto del original — en /monitor-calidad-aire y /accesorios.
+
+**Verificación de no regresión** (las 3 páginas × 2 viewports, alturas de
+documento medidas antes y después con el mismo arnés):
+
+| Página | Antes | Después | Original | Δ vs original |
+|---|---|---|---|---|
+| home @1280 | 11995 | 11995 | 11797 | +198 → +198 |
+| monitor @1280 | 12532 | 12532 | 12927 | −395 → −395 |
+| accesorios @1280 | 11315 | 11315 | 11416 | −101 → −101 |
+| home @390 | 19182 | 19182 | 19221 | −39 → −39 |
+| monitor @390 | 21798 | 21819 | 22309 | −511 → **−490** |
+| accesorios @390 | 21197 | 21197 | 20338 | +859 → +859 |
+
+Ninguna empeora y monitor@390 mejora 21. A 1280 la altura total no se mueve
+porque los h2 afectados viven en la columna 1/4, que no manda en la altura de
+la sección. El otro h2 que cambió, "Reconocimientos" de la home (65 → 120),
+**convergió con el original** (dejó de aparecer en el diff contra el original).
+
+**Bug latente que destapó, y que hubo que corregir a la vez**: los 4 titulares
+de `/accesorios` llevaban `pl-[10px]` y **el original los tiene a
+`padding-left: 0`** (medido en los cuatro: h1, h2 del hero, h2 de "Información
+sobre el producto" y h2 de categoría). Sin `break-word` el desajuste no se veía
+—la palabra larga desbordaba en silencio—, pero con él el h2 del hero pasaba a
+7 líneas/316.3 en móvil en vez de las 6/272.5 del original. Quitado el
+`pl-[10px]`, vuelve a coincidir exactamente. Es cambio de `page.tsx`, no de
+componente compartido.
+
+### A2 · por qué se queda como está (2026-07-27)
+
+**No se arregla, y no es por falta de intento.** El pendiente original decía
+"el clon la resuelve en una fila y el original en dos, −47.7px". Medido en
+serio a varios anchos (valores estables, repetidos dos veces cada uno):
+
+| Ancho | Original | filas | Clon | filas |
+|---|---|---|---|---|
+| 1440 | 237 | 2 | 177 | 2 |
+| 1380 | 237 | 2 | 177 | 2 |
+| 1280 | **188.5** | **1** | 177 | 1 |
+| 1024 | 237 | 2 | 177 | **1** |
+
+Es decir: **el original NO sigue una regla de breakpoint**, es no monótono —
+una fila a 1280, dos filas tanto a 1024 como a 1440. El mecanismo está medido:
+el contenedor del menú del original mide **973px a 1280 pero 962.4px a 1440**
+(más ancho en el viewport más estrecho), y por eso el botón "Descargar
+catálogo" (165.3) cabe en la fila del menú solo a 1280. Es una rareza del
+dimensionado de la cabecera de Divi, no un diseño.
+
+Razones para no forzarlo:
+
+1. Replicarlo significa **reproducir un accidente de layout**, no una regla, en
+   `HeaderNav`, que es compartido por las 4 páginas (incluida /software, que
+   está por construir).
+2. Deshace la decisión de **P2** (commit `4975da9`), que puso el botón en una
+   línea a ≤1379px y se validó explícitamente contra regresiones en la home.
+3. **No hay defecto visual que arreglar**: a 1440 la cabecera del clon mide
+   203.6 y la franja 177, pero el botón termina en 173.6 —dentro de la foto— y
+   nunca colisiona con el breadcrumb, que empieza en 189. Comprobado a 1440,
+   1380, 1280 y 1024: `invade: false` en los cuatro.
+4. La ganancia sería **solo de altura de cabecera** (entre −11.5 a 1280 y −60 a
+   1440), sin ningún acercamiento en fidelidad de contenido.
+
+Si en el futuro se quisiera abordar, el punto de partida es entender por qué el
+contenedor del menú del original es más ancho a 1280 que a 1440 — hasta que eso
+esté explicado, cualquier ajuste será prueba y error.
+
 ### Verificado correcto (no tocar)
 
 - **Interiores de las 11 fichas: idénticos al píxel.** Alturas de bloque
@@ -367,20 +443,8 @@ Dos notas para no confundir en el próximo pase:
 
 ### Pendiente
 
-- **A2 · Franja de cabecera 177 vs 224.7 (−47.7).** MEDIA, compartida.
-  A 1280 el original reparte la cabecera en **dos filas** (menú + botón
-  "Descargar catálogo" debajo) y ocupa 224.7; el clon la resuelve en **una**
-  (156.9 de header + franja fija de 177). Es consecuencia directa de la
-  decisión de P2 (commit 4975da9, "Descargar catálogo en una línea a ≤1379px"),
-  tomada durante la QA del monitor. No se toca aquí porque afecta a home y
-  monitor: hay que decidir si aquella decisión se mantiene y esta diferencia se
-  acepta, o si se replica el original y se ajusta la franja.
-- **A3 · `overflow-wrap: break-word` ausente (−55).** MEDIA, compartida.
-  El original lo aplica de forma global (regla Divi); el h2 "Preguntas
-  frecuentes" del FAQ, en una columna de 211.2, parte la palabra y ocupa **3
-  líneas / 175px**, mientras el clon la deja desbordar en **2 / 120px**
-  (`scrollWidth` 216 > `clientWidth` 211). Vive en `FaqAcordeon`, compartido
-  con /monitor-calidad-aire, así que el arreglo debe verificarse en ambas.
+- **A2 · Franja de cabecera — NO SE ARREGLA (decisión razonada, 2026-07-27).**
+  Ver la sección "A2 · por qué se queda como está" más abajo.
 - **A5 · Residuo de altura: −101 a 1280**, y ya está explicado. Con medición
   homogénea (puppeteer, `--hide-scrollbars`) el clon queda en **11315** frente
   a **11416** del original. Ese −101 lo cubren A2 (−47.7) y A3 (−55), que
