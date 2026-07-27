@@ -51,6 +51,26 @@
   arriba Y abajo, remate mb30. Desktop −2, móvil +9.
 - **Footer**: nueva prop `backgroundStrip` con la franja `footer-background`
   (`cabecera-puerto-1.jpg`, 41/40px).
+- **Footer TB (P1, cerrado 2026-07-27)**: `Footer` gana `template="tb"` (la
+  prop `backgroundStrip` desaparece — el tb la implica) con la plantilla TB
+  propia de esta página medida módulo a módulo (`qa/p1-probe.mjs`, 1280/390
+  reales): **los paddings Divi son % del ancho del PADRE** (sección links pt
+  4% desktop / 50px móvil y pb 0; fila links py 2% / 30px; fila legal py 1%
+  en ambos) → el shell tb son secciones a ancho completo con la fila
+  **80% máx 1380** dentro (la home conserva su wrapper 85% byte-idéntico);
+  columnas **sin gutter** (5×20%, el aire lo pone el mb 32 del widget → ul
+  pb 32), **li 14px/lh 30.6 con mb 7** (stride 37.6, no 26), cabeceras p
+  30.6 pegadas al ul (mb 0 también desktop), Suscríbete **pb 2 desktop /
+  3.1 móvil** (h 37/38.1) con mt 16 + mb 46, CERT img + pb 32, legal
+  **12px/lh 30.6 también en desktop** (2+1 líneas = 91.8; p2 a 9.6px) con
+  mb 32/62, iconos móvil **gap 38 + pl 19** (no 42.7/9) en caja 31.6 +
+  60 hasta idioma, fila legal py 1% (12.64/3.89), **sin espaciador de 40**
+  y franja 41/40. Resultado: desktop **694.2 vs 694.2 (exacto**, links+legal
+  653.2 = 653.2; era −41.8**)**, móvil **2053.7 vs 2053.1 (+0.6**, era
+  −251.5**)** con las anclas de columnas idénticas al píxel (y 369.2 /
+  732.5 / 1083.2 / 1484.1, iconos y1887.6, idioma y1979.2). Home verificada
+  sin regresión: móvil **19182 / footer 1761.6 exactos** (B4) y desktop
+  1418 footer **592.2 exacto**.
 - **Hover #power-packs (desktop)**: ✅ verificado por ratón real contra el
   original — mismo comportamiento exacto (hover = preview con mouseenter
   ~300ms, click = fija, mouseleave = vuelve al fijado; opacidades .3/1 y ⊖/⊕).
@@ -59,9 +79,15 @@
 
 ### Pendientes (residuos anotados, por orden de magnitud)
 
+> Referencias re-medidas el 2026-07-27 (el contenido del blog del original
+> varía a diario y mueve el total — no re-investigar): original **12533 d /
+> 22248 m**; clon tras P1 **12567 (+34) / 21798 (−450)**. El footer ya no
+> resta: el +34 desktop es P4 (artículos congelados vs original más corto
+> hoy) y el −450 móvil es la suma P3+P4+P5+P6 ya anotada.
+
 | # | Zona | Delta | Nota |
 |---|------|-------|------|
-| P1 | Footer TB (esta página) | −86 d / −293 m | El footer de /monitor-calidad-aire es OTRA plantilla TB con más aire que el de la home (links+legal 654/2013 vs 592/1761). Requiere tanda propia estilo B4 midiendo el template módulo a módulo. |
+| P1 | ~~Footer TB (esta página)~~ | ✅ 2026-07-27 | Resuelto — ver «Footer TB» en la lista de corregidos: `template="tb"` con secciones a ancho completo, fila 80%, li 30.6+7, paddings % del padre. Desktop exacto, móvil +0.6. |
 | P2 | Header a <~1330px | visual | El menú compartido rompe "Descargar catálogo" a 2ª línea a 1280 (la home se verificó a 1418). El original sigue en una fila. Tocar `HeaderNav` exige re-verificar M4 (dropdowns) en la home. |
 | P3 | Fila 2 móvil | −209 | Ritmo de módulos móvil de la col derecha (space-y 28 vs mezcla Divi 18/30). Desktop quedó −90. |
 | P4 | Artículos y Guías | −55 d / −194 m | Alturas dependientes del CONTENIDO: los 3 posts van congelados (decisión §4) y el original los sortea — no comparable px a px. |

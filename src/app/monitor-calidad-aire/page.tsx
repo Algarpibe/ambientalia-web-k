@@ -142,7 +142,7 @@ export default function MonitorCalidadAirePage() {
         <FaqAcordeon />
       </main>
 
-      <Footer backgroundStrip />
+      <Footer template="tb" />
       <ScrollToTop />
     </>
   );
