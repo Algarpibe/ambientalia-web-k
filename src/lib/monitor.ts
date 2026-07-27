@@ -3,7 +3,7 @@
  * Specs: docs/research/monitor-calidad-aire/components/*.spec.md
  */
 import type { ReactNode } from "react";
-import type { AccesorioItem } from "@/types/kunak";
+import type { AccesorioItem, BlogPost } from "@/types/kunak";
 
 /* --- Visor 360° del hero: 35 frames kunak360_IMG_01..35.jpg (2023/03) --- */
 export const FRAMES_360: string[] = Array.from({ length: 35 }, (_, i) => {
@@ -548,5 +548,94 @@ export const FAQ_ITEMS: FaqItem[] = [
         ],
       },
     ],
+  },
+];
+
+/* =========================================================================
+ * REUTILIZABLES — los 5 ajustes de las secciones compartidas con la home
+ * Spec: docs/research/monitor-calidad-aire/components/reutilizables.spec.md
+ * ========================================================================= */
+
+/* --- S2: banner "No se puede mejorar…" (variante texto a la izquierda) ---
+ * El título lleva DOBLES espacios en el original (sic; el HTML los colapsa al
+ * pintar) y es un enlace a contacto. La cita cierra el párrafo, sin cursiva. */
+export const S2_HEADING = "No se puede mejorar  lo que no se puede medir  de forma precisa y fiable";
+export const S2_BODY =
+  "La calidad de los datos es una cuestión clave; los datos de calidad deficiente o desconocida son menos útiles que la ausencia de datos ya que pueden conducir a decisiones equivocadas. (Snyder et al., 2013)";
+export const S2_IMAGE = "/images/uploads/2023/02/hyper-local-scale-data.jpg";
+
+/* --- #applications: banner-guía + popup de descarga --- */
+export const GUIA_IMAGE = "/images/uploads/2023/02/people-city-urban.jpg";
+export const GUIA_HEADING = "Diseña tu proyecto de calidad del aire";
+export const GUIA_BODY =
+  "Descarga gratis la guía que hemos diseñado con los aspectos clave que debes tener en cuenta a la hora de diseñar tu proyecto de calidad del aire.";
+export const APLICACIONES_CLAIM = "Facilitamos la toma de decisiones con datos ambientales precisos.";
+
+/** Opciones del `<select name="field[51]">` del formulario de la guía. */
+export const GUIA_SECTORES: string[] = [
+  "Urbano",
+  "Minería",
+  "Petróleo y Gas",
+  "Aguas residuales",
+  "Otras industrias",
+  "Puertos y Aeropuertos",
+  "Construcción",
+  "Investigación y consultoría",
+  "Obras y Demoliciones",
+  "Otros",
+];
+
+/* --- #power-packs: 3 accesorios de energía (1º activo) --- */
+export const POWER_PACKS: AccesorioItem[] = [
+  {
+    id: "panel-solar",
+    label: "Panel solar",
+    intro:
+      "El panel solar monocristalino de alta eficiencia de 6,3 voltios es robusto, resistente al agua (IP67) y ha sido diseñado para un uso prolongado en exteriores en cualquier entorno.",
+    image: `${U12}/kunak_IMG_0017-300x300-2-300x300.jpg`,
+    href: `${ACC}#panel-solar`,
+  },
+  {
+    // sic: la etiqueta va en plural y el data-id en singular
+    id: "cargador-para-exteriores",
+    label: "Cargadores para exteriores",
+    intro:
+      "Pequeño, ligero e impermeable y ha sido diseñado para un uso prolongado al aire libre en cualquier entorno. Para utilizar cuando las estaciones Kunak AIR vayan a instalarse en el exterior.",
+    image: `${U12}/kunak_IMG_0015-300x300-1-300x300.jpg`,
+    href: `${ACC}#cargador-para-exteriores`,
+  },
+  {
+    id: "cargador-para-interiores",
+    label: "Cargador para interiores",
+    intro:
+      "Se dispone de un cargador de interior con enchufes globales para su comprobación y verificación.",
+    image: `${U12}/kunak-air-indoor-charger-300x300.jpg`,
+    href: `${ACC}#cargador-para-interiores`,
+  },
+];
+
+/* --- S4: los 3 posts de "Artículos y Guías" ---
+ * ⚠️ El original sortea 3 posts distintos en cada carga (módulo de blog con
+ * orden aleatorio): se congela el set del snapshot de recon (2026-07-26). */
+export const MONITOR_ARTICLES: BlogPost[] = [
+  {
+    title: "Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte",
+    date: "Feb 28, 2025",
+    image:
+      "/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg",
+    href: "https://kunakair.com/es/running-for-clean-air/",
+  },
+  {
+    title: "Detectores de calidad del aire y movilidad, ¿qué nos cuentan los sistemas de monitorización?",
+    date: "Nov 4, 2020",
+    image: "/images/uploads/2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
+    href: "https://kunakair.com/es/detectores-calidad-aire-movilidad/",
+  },
+  {
+    title: "¿Cómo afecta la calidad del aire al rendimiento de los atletas?",
+    date: "Nov 29, 2018",
+    image:
+      "/images/uploads/2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg",
+    href: "https://kunakair.com/es/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas/",
   },
 ];

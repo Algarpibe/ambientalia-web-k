@@ -1,4 +1,4 @@
-import { OutlineButton } from "@/components/SectionRow";
+import { BlockTitle, OutlineButton } from "@/components/SectionRow";
 import { SOFTWARE_PARAGRAPHS, SOFTWARE_MORE_HREF } from "@/lib/monitor";
 
 /**
@@ -16,12 +16,7 @@ import { SOFTWARE_PARAGRAPHS, SOFTWARE_MORE_HREF } from "@/lib/monitor";
 export function Software() {
   return (
     <div>
-      <h2
-        className="pb-[10px]"
-        style={{ fontSize: 37, lineHeight: "37px", fontWeight: 300, letterSpacing: "-0.5px", color: "#333" }}
-      >
-        Software
-      </h2>
+      <BlockTitle>Software</BlockTitle>
 
       {/* pb 18px en todos menos el último (igual que el original) */}
       {SOFTWARE_PARAGRAPHS.map((segs, p) => (

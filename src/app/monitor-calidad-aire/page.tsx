@@ -3,10 +3,10 @@ import { HeaderNav } from "@/components/HeaderNav";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CtaBanner } from "@/components/CtaBanner";
-import { SectoresCarousel } from "@/components/SectoresCarousel";
 import { UltimosProyectos } from "@/components/UltimosProyectos";
 import { UltimosArticulos } from "@/components/UltimosArticulos";
-import { ProductosTabs } from "@/components/ProductosTabs";
+import { Aplicaciones } from "@/components/monitor/Aplicaciones";
+import { PaquetesEnergia } from "@/components/monitor/PaquetesEnergia";
 import { HeroProducto } from "@/components/monitor/HeroProducto";
 import { InformacionProducto } from "@/components/monitor/InformacionProducto";
 import { SubNavAnclas } from "@/components/monitor/SubNavAnclas";
@@ -16,7 +16,7 @@ import { GaleriaEnsayos } from "@/components/monitor/GaleriaEnsayos";
 import { Software } from "@/components/monitor/Software";
 import { SondasMeteorologicas } from "@/components/monitor/SondasMeteorologicas";
 import { FaqAcordeon } from "@/components/monitor/FaqAcordeon";
-import { CONTACT_HREF } from "@/lib/monitor";
+import { CONTACT_HREF, MONITOR_ARTICLES, S2_BODY, S2_HEADING, S2_IMAGE } from "@/lib/monitor";
 
 export const metadata: Metadata = {
   title: "Monitor de calidad del aire profesional | Kunak AIR Pro",
@@ -58,13 +58,17 @@ export default function MonitorCalidadAirePage() {
         {/* S1 fila 2 — Información del producto */}
         <InformacionProducto />
 
-        {/* S2 — CTA banner "No se puede mejorar…" (variante texto a la izquierda).
-            Grupo B: falta el asset exacto (foto ciclistas) + la variante align:left
-            + la cita "(Snyder et al., 2013)". De momento se wirea con la copy
-            principal y una foto urbana existente como placeholder. */}
+        {/* S2 — CTA banner "No se puede mejorar…": texto a la IZQUIERDA, cita de
+            Snyder cerrando el párrafo y botón outline #333 (el slider de esta
+            página no es `bg_layout_dark`, así que el tema le deja el botón por
+            defecto pese a ir sobre foto — verificado en vivo). */}
         <CtaBanner
-          image="/images/uploads/2023/02/people-city-urban.jpg"
-          heading="No se puede mejorar lo que no se puede medir."
+          image={S2_IMAGE}
+          heading={S2_HEADING}
+          headingHref={CONTACT_HREF}
+          body={S2_BODY}
+          align="left"
+          buttonVariant="outline"
           buttonLabel="Empezar a medir con precisión"
           buttonHref={CONTACT_HREF}
         />
@@ -84,10 +88,10 @@ export default function MonitorCalidadAirePage() {
                 <Beneficios />
               </div>
 
-              {/* #applications — SectoresCarousel (mismo shortcode que la home).
-                  Grupo B: variante embebida en columna 3/4 + bullets píldora. */}
-              <div id="applications" className="scroll-mt-[110px]">
-                <SectoresCarousel />
+              {/* #applications — carrusel de sectores embebido + frase azul +
+                  banner-guía con popup de descarga */}
+              <div id="applications" className="scroll-mt-[110px] py-8">
+                <Aplicaciones />
               </div>
 
               {/* #software — texto Kunak AIR Cloud + botón (sin capturas) */}
@@ -105,16 +109,14 @@ export default function MonitorCalidadAirePage() {
                 <GaleriaEnsayos />
               </div>
 
-              {/* #case-studies — UltimosProyectos (mismas 3 tarjetas que la home).
-                  Grupo B: título "Casos de éxito" + CTA "Ver todos los casos". */}
-              <div id="case-studies" className="scroll-mt-[110px]">
-                <UltimosProyectos />
+              {/* #case-studies — las mismas 3 tarjetas que la home, embebidas */}
+              <div id="case-studies" className="scroll-mt-[110px] py-8">
+                <UltimosProyectos embedded title="Casos de éxito" ctaLabel="Ver todos los casos" />
               </div>
 
-              {/* #power-packs — ProductosTabs (patrón lista-contenido).
-                  Grupo B: datos "Paquetes de energía" (panel solar, cargadores). */}
-              <div id="power-packs" className="scroll-mt-[110px]">
-                <ProductosTabs />
+              {/* #power-packs — shortcode `lista-contenido` con los 3 accesorios */}
+              <div id="power-packs" className="scroll-mt-[110px] py-8">
+                <PaquetesEnergia />
               </div>
 
               {/* #meteo-sensors — shortcode `lista-contenido` con las 6 sondas */}
@@ -125,9 +127,9 @@ export default function MonitorCalidadAirePage() {
           </div>
         </section>
 
-        {/* S4 — Artículos y Guías (UltimosArticulos).
-            Grupo B: título "Artículos y Guías" + 3 posts distintos. */}
-        <UltimosArticulos />
+        {/* S4 — Artículos y Guías. El original sortea los 3 posts en cada carga;
+            aquí va congelado el set del recon. */}
+        <UltimosArticulos title="Artículos y Guías" posts={MONITOR_ARTICLES} />
 
         {/* S5 — Preguntas frecuentes (19 toggles acordeón) */}
         <FaqAcordeon />

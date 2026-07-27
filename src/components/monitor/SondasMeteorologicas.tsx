@@ -1,4 +1,5 @@
 import { ListaContenido } from "@/components/ListaContenido";
+import { BlockTitle } from "@/components/SectionRow";
 import { METEO_SENSORS } from "@/lib/monitor";
 
 /**
@@ -17,14 +18,8 @@ import { METEO_SENSORS } from "@/lib/monitor";
 export function SondasMeteorologicas() {
   return (
     <div>
-      {/* 37px = escala de los H2 de S3 (no la de 44px de las cabeceras de
-          sección); mb 28px ≈ el 2,75% del módulo de título original */}
-      <h2
-        className="mb-[28px] pb-[10px]"
-        style={{ fontSize: 37, lineHeight: "37px", fontWeight: 300, letterSpacing: "-0.5px", color: "#333" }}
-      >
-        Sondas meteorológicas
-      </h2>
+      {/* mb 28px ≈ el 2,75% de margen del módulo de título original */}
+      <BlockTitle className="mb-[28px]">Sondas meteorológicas</BlockTitle>
 
       <ListaContenido items={METEO_SENSORS} />
     </div>

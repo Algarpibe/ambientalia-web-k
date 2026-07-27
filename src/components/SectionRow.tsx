@@ -66,6 +66,34 @@ export function SectionTitle({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Título de un bloque dentro de la columna 3/4 de S3 en /monitor-calidad-aire:
+ * la escala de 37px del original (`.et_pb_text_inner h2`), no la de 44px de las
+ * cabeceras de sección que pinta `SectionTitle`.
+ */
+export function BlockTitle({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={"pb-[10px] " + className}
+      style={{
+        fontSize: 37,
+        lineHeight: "37px",
+        fontWeight: 300,
+        letterSpacing: "-0.5px",
+        color: "#333",
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
 /** Solid blue pill button used all over the page (`.boton-azul`). */
 export function BlueButton({
   href,
@@ -92,22 +120,67 @@ export function BlueButton({
   );
 }
 
+/**
+ * Botón claro sobre foto oscura (Divi `et_pb_bg_layout_dark`): borde blanco y
+ * fondo `rgba(0,0,0,.15)`. Sirve como enlace (`href`) o como disparador
+ * (`onClick`, p. ej. el CTA que abre el popup de la guía).
+ */
+export function LightButton({
+  href,
+  onClick,
+  children,
+  className: extra = "",
+}: {
+  href?: string;
+  onClick?: () => void;
+  children: ReactNode;
+  className?: string;
+}) {
+  const className =
+    "group inline-flex items-center gap-2 rounded-[30px] border border-white px-6 pb-[9px] pt-[7.5px] text-[15px] font-bold text-white transition-colors duration-200 hover:border-[#7F8798] hover:bg-[#7F8798] " +
+    extra;
+  const style = { backgroundColor: "rgba(0, 0, 0, 0.15)" };
+  const inner = (
+    <>
+      {children}
+      <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+        →
+      </span>
+    </>
+  );
+
+  return href ? (
+    <a href={href} className={className} style={style}>
+      {inner}
+    </a>
+  ) : (
+    <button type="button" onClick={onClick} className={className} style={style}>
+      {inner}
+    </button>
+  );
+}
+
 /** Outline pill button, Divi's default variant (borde #333, flecha azul al hover). */
 export function OutlineButton({
   href,
   children,
   external = false,
+  className = "",
 }: {
   href: string;
   children: ReactNode;
   external?: boolean;
+  className?: string;
 }) {
   const isPdf = href.endsWith(".pdf");
   return (
     <a
       href={href}
       {...(external || isPdf ? { target: "_blank", rel: "noopener" } : {})}
-      className="group relative inline-block rounded-[30px] border border-[#333] pb-[9px] pl-[22.5px] pr-[40.5px] pt-[7.5px] text-[15px] font-bold leading-[25.5px] text-[#333] transition-all duration-300 hover:pr-[55.5px]"
+      className={
+        "group relative inline-block rounded-[30px] border border-[#333] pb-[9px] pl-[22.5px] pr-[40.5px] pt-[7.5px] text-[15px] font-bold leading-[25.5px] text-[#333] transition-all duration-300 hover:pr-[55.5px] " +
+        className
+      }
     >
       {children}
       <span className="arrow absolute ml-[5px] inline-block text-[20px] leading-[25.5px] transition-all duration-300 group-hover:ml-[12px] group-hover:text-[#0075C9]">→</span>

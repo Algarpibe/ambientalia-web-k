@@ -1,30 +1,36 @@
 import { PROJECTS } from "@/lib/projects";
-import { SectionTitle, OutlineButton } from "./SectionRow";
+import { SectionTitle, BlockTitle, OutlineButton } from "./SectionRow";
 
 /**
  * `et_pb_section_10` — "Últimos proyectos" (3 case-study cards).
  * Images are `background-image` layers that scale 1.1× on hover.
  * "Ver todos los casos de éxito" maps to the ES case-studies page.
  * Spec: docs/research/components/ultimos-proyectos.spec.md
+ *
+ * `embedded` = la instancia de /monitor-calidad-aire (#case-studies): las
+ * mismas 3 tarjetas, pero dentro de la columna 3/4 (sin sección propia ni
+ * punteado), con el título a la escala de 37px y el CTA alineado a la
+ * izquierda. Spec: …/monitor-calidad-aire/components/reutilizables.spec.md §3
  */
-export function UltimosProyectos() {
-  return (
-    <section className="relative bg-white pb-[50px] pt-[56px] md:pb-[71px] md:pt-[84px]">
-      <div className="mx-auto w-[85%] max-w-[1380px]">
-        <div className="relative">
-          <img
-            src="/images/uploads/2022/12/punteado.svg"
-            alt=""
-            aria-hidden
-            width={60}
-            height={22}
-            className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
-            style={{ width: 60, height: 22 }}
-          />
-          <SectionTitle>Últimos proyectos</SectionTitle>
-        </div>
-
-        <div className="mt-[43px] grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+export function UltimosProyectos({
+  title = "Últimos proyectos",
+  ctaLabel = "Ver todos los casos de éxito",
+  ctaHref = "https://kunakair.com/es/casos-de-exito/",
+  embedded = false,
+}: {
+  title?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  embedded?: boolean;
+} = {}) {
+  const cards = (
+    <>
+      <div
+        className={
+          "grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3 " +
+          (embedded ? "mt-0" : "mt-[43px]")
+        }
+      >
           {PROJECTS.map((c) => (
             <article key={c.href} className="flex flex-col">
               <div className="aspect-[4/2.7] overflow-hidden rounded-[10px]">
@@ -60,11 +66,45 @@ export function UltimosProyectos() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-end md:mt-[91px]">
-          <OutlineButton href="https://kunakair.com/es/casos-de-exito/">
-            Ver todos los casos de éxito
-          </OutlineButton>
+      {/* El CTA va centrado a la derecha en la home; en la columna 3/4 del
+          monitor el wrapper del original no lleva clase de alineación → izda. */}
+      <div
+        className={
+          "flex " +
+          (embedded ? "mt-[35px] justify-start" : "mt-10 justify-end md:mt-[91px]")
+        }
+      >
+        <OutlineButton href={ctaHref}>{ctaLabel}</OutlineButton>
+      </div>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div>
+        <BlockTitle className="mb-[28px]">{title}</BlockTitle>
+        {cards}
+      </div>
+    );
+  }
+
+  return (
+    <section className="relative bg-white pb-[50px] pt-[56px] md:pb-[71px] md:pt-[84px]">
+      <div className="mx-auto w-[85%] max-w-[1380px]">
+        <div className="relative">
+          <img
+            src="/images/uploads/2022/12/punteado.svg"
+            alt=""
+            aria-hidden
+            width={60}
+            height={22}
+            className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
+            style={{ width: 60, height: 22 }}
+          />
+          <SectionTitle>{title}</SectionTitle>
         </div>
+
+        {cards}
       </div>
     </section>
   );

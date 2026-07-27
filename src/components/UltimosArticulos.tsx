@@ -1,3 +1,4 @@
+import type { BlogPost } from "@/types/kunak";
 import { ARTICLES } from "@/lib/articles";
 import { SectionTitle, BlueButton } from "./SectionRow";
 
@@ -5,8 +6,19 @@ import { SectionTitle, BlueButton } from "./SectionRow";
  * `et_pb_section_9` — "Últimos artículos" (3-card blog grid).
  * Cards zoom their image 1.1× on hover; titles turn blue on hover.
  * Spec: docs/research/components/ultimos-articulos.spec.md
+ *
+ * /monitor-calidad-aire reusa el bloque con otro título ("Artículos y Guías") y
+ * otros 3 posts: el original los sortea en cada carga, así que el clon congela
+ * el set capturado en el recon (`MONITOR_ARTICLES`).
+ * Spec: docs/research/monitor-calidad-aire/components/reutilizables.spec.md §4
  */
-export function UltimosArticulos() {
+export function UltimosArticulos({
+  title = "Últimos artículos",
+  posts = ARTICLES,
+}: {
+  title?: string;
+  posts?: BlogPost[];
+} = {}) {
   return (
     <section
       className="relative bg-white bg-no-repeat pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]"
@@ -26,12 +38,12 @@ export function UltimosArticulos() {
             className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
             style={{ width: 60, height: 22 }}
           />
-          <SectionTitle>Últimos artículos</SectionTitle>
+          <SectionTitle>{title}</SectionTitle>
         </div>
 
         {/* −10 compensa el pb-[10px] que ahora lleva SectionTitle (regla Divi h2) */}
         <div className="mt-[30px] grid gap-x-[40px] gap-y-[32px] sm:grid-cols-2 md:mt-[33px] md:gap-y-10 lg:grid-cols-3">
-          {ARTICLES.map((post) => (
+          {posts.map((post) => (
             <article key={post.href}>
               <a
                 href={post.href}

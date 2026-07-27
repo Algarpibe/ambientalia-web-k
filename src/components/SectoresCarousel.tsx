@@ -29,15 +29,33 @@ import { SECTOR_SLIDES } from "@/lib/sectors";
  * Non-active slides fade to opacity 0.3 and become non-interactive; the
  * active slide shows a hover overlay in Kunak blue (rgba(0,117,201,0.65))
  * and scales its background image to 1.1x, both in 500ms.
+ *
+ * `variant="embedded"` = la instancia de /monitor-calidad-aire (#applications),
+ * que va dentro de la columna 3/4. El tema la re-estila vía `body.single-solutions`:
+ * slides de 400px desde 981 (en vez de 500), icono/título arrancando arriba
+ * (`justify-content: flex-start` + padding-top 10% → 30% desde 981), descripción
+ * a 1rem y `padding-inline-start: 0` en el swiper (queda solo el pr de 7vw).
+ * Spec: docs/research/monitor-calidad-aire/components/reutilizables.spec.md §2a
  */
-export function SectoresCarousel() {
+export function SectoresCarousel({
+  variant = "fullwidth",
+}: {
+  variant?: "fullwidth" | "embedded";
+} = {}) {
+  const embedded = variant === "embedded";
+
   return (
     <section
-      className="sectoresSwiper-wrapper relative w-full overflow-hidden bg-white"
-      style={{ paddingBottom: 40 }}
+      className={
+        "sectoresSwiper-wrapper relative w-full overflow-hidden " + (embedded ? "" : "bg-white")
+      }
+      style={embedded ? undefined : { paddingBottom: 40 }}
     >
       <Swiper
-        className="sectoresSwiper !px-[7vw] !pb-12"
+        className={
+          "sectoresSwiper !pb-12 " +
+          (embedded ? "sectoresSwiper--embedded !pl-0 !pr-[7vw]" : "!px-[7vw]")
+        }
         modules={[Autoplay, Pagination, Navigation]}
         slidesPerView={1}
         spaceBetween={30}
@@ -56,8 +74,11 @@ export function SectoresCarousel() {
         }}
       >
         {SECTOR_SLIDES.map((s) => (
-          <SwiperSlide key={s.slug} className="!h-[450px] !overflow-hidden !rounded-[10px] sm:!h-[500px]">
-            <SectorCard slide={s} />
+          <SwiperSlide
+            key={s.slug}
+            className="!h-[450px] !overflow-hidden !rounded-[10px] sm:!h-[500px]"
+          >
+            <SectorCard slide={s} embedded={embedded} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -93,6 +114,9 @@ export function SectoresCarousel() {
           cursor: default;
         }
 
+        /* La altura de 400px de la variante embebida vive en globals.css: tiene
+           que ir en la capa utilities para ganar al !important de Tailwind. */
+
         /* Pagination bullets: pill 2rem × 7px */
         .sectores-dots .swiper-pagination-bullet {
           width: 2rem;
@@ -116,18 +140,27 @@ export function SectoresCarousel() {
   );
 }
 
-function SectorCard({ slide }: { slide: typeof SECTOR_SLIDES[number] }) {
+function SectorCard({
+  slide,
+  embedded = false,
+}: {
+  slide: typeof SECTOR_SLIDES[number];
+  embedded?: boolean;
+}) {
   return (
     <div className="sector-imagen-wrap absolute inset-0 h-[450px] w-full overflow-hidden rounded-[10px] sm:h-[500px]">
       <a
         href={slide.href}
-        className="sector-imagen group relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-black"
+        className={
+          "sector-imagen group relative flex h-full w-full flex-col items-center overflow-hidden bg-black " +
+          (embedded ? "justify-start pb-0 pt-[10%] min-[981px]:pt-[30%]" : "justify-center")
+        }
         style={{
           backgroundImage: `url('${slide.bg}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           transition: "all 0.5s",
-          paddingBottom: "30%",
+          ...(embedded ? null : { paddingBottom: "30%" }),
         }}
       >
         {/* Overlay ::before — starts dark, hover becomes Kunak blue */}
@@ -169,8 +202,12 @@ function SectorCard({ slide }: { slide: typeof SECTOR_SLIDES[number] }) {
         >
           {slide.title}
         </h3>
+        {/* embebido: el tema sube la descripción a 1rem en single-solutions */}
         <div
-          className="sector-descripcion mt-2 pb-3 text-[14.5px] leading-[1.5] text-white"
+          className={
+            "sector-descripcion mt-2 pb-3 leading-[1.5] text-white " +
+            (embedded ? "text-[16px]" : "text-[14.5px]")
+          }
         >
           {slide.description}
         </div>
