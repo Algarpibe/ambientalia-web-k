@@ -14,9 +14,12 @@ export interface AnchorNavItem {
  * Spec: docs/research/accesorios/components/anchor-nav.spec.md
  *
  * Valores medidos 2026-07-27 en el original de AMBAS páginas (idénticos):
- * caja border 1px #333 radius 10 padding 17/17/0 mb 27.2; ul pb 17; li pb 10;
- * `a` 17px/26 fw800 con `ico-arrow.svg` 30×30 de background a 100% 0% y
+ * caja border 1px #333 radius 10 padding 16/16/0 mb 27.2; ul pb 17; li pb 10;
+ * `a` 16px/26 fw800 con `ico-arrow.svg` 30×30 de background a 100% 0% y
  * padding-right 30; #BBB → #0075C9 al activarse (el peso no cambia).
+ * OJO: el spec decía 17/17; el QA visual del 2026-07-27 midió 16/16 en el
+ * original (padding 16px 16px 0 y font-size 16px). El 17 era una regresión
+ * introducida al extraer este componente desde `SubNavAnclas`, que sí tenía 16.
  *
  * Sticky: el original lo hace por JS de Divi (clona el nodo y lo fija con
  * inline styles); aquí `position: sticky; top: 70px` nativo da el mismo
@@ -83,7 +86,7 @@ export function AnchorNav({
       {/* Caja `menu-anclas` — oculta en móvil (regla ≤980 del tema) */}
       <div
         className={
-          "mb-[27.2px] hidden w-full rounded-[10px] border border-[#333] px-[17px] pb-0 pt-[17px] md:block " +
+          "mb-[27.2px] hidden w-full rounded-[10px] border border-[#333] px-4 pb-0 pt-4 md:block " +
           boxClassName
         }
       >
@@ -97,7 +100,7 @@ export function AnchorNav({
                   href={`#${a.id}`}
                   onClick={(e) => onAnchorClick(e, a.id)}
                   className={
-                    "block py-[2px] pr-[30px] text-[17px] font-extrabold leading-[26px] transition-colors " +
+                    "block py-[2px] pr-[30px] text-[16px] font-extrabold leading-[26px] transition-colors " +
                     (isActive
                       ? "text-[#0075C9]"
                       : "text-[#BBB]" + (hoverable ? " hover:text-[#0075C9]" : ""))

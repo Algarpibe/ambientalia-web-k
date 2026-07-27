@@ -97,17 +97,23 @@ export default function AccesoriosPage() {
                 aria-hidden
                 width={60}
                 height={22}
-                className="absolute -top-[26px] left-0"
+                // QA: en el original el punteado cuelga 65px a la IZQUIERDA de la
+                // columna (medido l=61.5 con la retícula empezando en 126.5).
+                className="absolute -top-[26px] left-0 md:-left-[65px]"
               />
               {/* Inversión tipográfica del original: el <p> es el titular
                   visual (50px/fw800) y el <h1> va debajo a 23px/fw300. */}
               <p className="text-[50px] font-extrabold leading-[60px] text-[#333]">{HERO.kicker}</p>
-              <h1 className="pl-[10px] text-[23px] font-light leading-[23px] text-[#333]">
+              {/* pb-[10px]: regla Divi de titulares, presente en TODOS los h1/h2
+                  del original (QA 2026-07-27; ya la tenían el h3 de ficha y el FAQ). */}
+              <h1 className="pb-[10px] pl-[10px] text-[23px] font-light leading-[23px] text-[#333]">
                 {HERO.h1}
               </h1>
+              {/* md:w-[80%]: el módulo de texto del original mide 467.8 dentro de
+                  una columna de 584.8 → el titular envuelve a 4 líneas, no a 3. */}
               <h2
                 id={HERO.h2Id}
-                className="mt-[32px] pl-[10px] text-[44px] font-light leading-[55px] text-[#333]"
+                className="mt-[32px] pb-[10px] pl-[10px] text-[44px] font-light leading-[55px] text-[#333] md:w-[80%]"
               >
                 {HERO.h2}
               </h2>
@@ -135,11 +141,11 @@ export default function AccesoriosPage() {
               aria-hidden
               width={60}
               height={22}
-              className="absolute top-[24px] left-0"
+              className="absolute top-[24px] left-0 md:-left-[65px]"
             />
             <h2
               id={INTRO_HEADING_ID}
-              className="pl-[10px] text-[44px] font-light leading-[55px] text-[#333]"
+              className="pb-[10px] pl-[10px] text-[44px] font-light leading-[55px] text-[#333]"
             >
               {INTRO_HEADING}
             </h2>
@@ -183,9 +189,11 @@ export default function AccesoriosPage() {
                     aria-hidden
                     width={60}
                     height={22}
-                    className="absolute -top-[32px] left-0 hidden md:block"
+                    className="absolute -top-[32px] -left-[65px] hidden md:block"
                   />
-                  <h2 className="mb-[32px] pl-[10px] text-[32px] font-light leading-[40px] text-[#333]">
+                  {/* mb 27.9: hueco medido entre el h2 y la caja de anclas del
+                      original (el 32 anterior venía de una estimación). */}
+                  <h2 className="mb-[27.9px] pb-[10px] pl-[10px] text-[32px] font-light leading-[40px] text-[#333]">
                     {cat.heading}
                   </h2>
                 </div>

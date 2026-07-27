@@ -212,3 +212,112 @@ de tarjetas, footer).
   móvil, `belowTitle` a +34 (0 en móvil), botones Divi exactos (15px/44px,
   padding 7.5/40.5/9/22.5, flecha siempre visible, hover expande a pr 55.5).
   Cualquier ajuste futuro de sección debe medir DESPUÉS de estos valores.
+
+## /accesorios — QA visual (2026-07-27)
+
+> Comparación lado a lado clon (localhost:3000) vs original a **1280×631**
+> (DPR 1.5), medida con computed styles + rects vía CDP sobre los 11 `id` de
+> ficha, que existen en ambos. Alturas de documento del día: original
+> **11423**, clon **11125 antes** → **11211 después** de la tanda (−212).
+> Móvil 390 **no verificado** (ver pendiente A4).
+>
+> **Tres trampas de método que invalidaron medidas y conviene no repetir:**
+> 1. **Imágenes lazy del original**: sin forzar la carga, el original mide
+>    11361 en vez de 11423 y 3 de los 6 punteados dan `w=0`. Hay que recorrer
+>    la página y poner `loading='eager'` antes de medir.
+> 2. **`requestAnimationFrame` no corre en pestañas ocultas**: el scrollspy
+>    (que va dentro de un rAF) se queda congelado y parece roto en AMBOS
+>    sitios. Para probarlo hay que desplazar con ratón real sobre la pestaña
+>    activa y leer el resultado en la captura, no con `scrollTo` vía JS.
+> 3. `html { scroll-behavior: smooth }` hace que `scrollTo` + lectura
+>    inmediata de `scrollY` devuelva valores obsoletos: usar
+>    `behavior:'instant'`.
+
+### Corregido en la tanda (desktop 1280)
+
+- **`padding-bottom: 10px` en los titulares** (regla Divi de h1/h2, la misma
+  que ya aplicaba `SectionTitle` en la home). Faltaba en los 5 titulares
+  escritos a mano en `page.tsx`: h1 46→**56**, h2 del hero, h2 "Información
+  sobre el producto" 55→**65**, y los dos h2 de categoría 80→**90**. El h3 de
+  ficha y el h2 del FAQ ya la tenían.
+- **h2 del hero a `md:w-[80%]`**: en el original el módulo de texto mide
+  **467.8** dentro de una columna de 584.8, así que el titular envuelve a
+  **4 líneas**; el clon lo tenía a ancho completo y salían 3 (−55px). Ahora
+  467.4 y altura 230 = original.
+- **Punteado 65px a la izquierda de la retícula**: el original coloca los 6 a
+  `l=61.5` (la fila empieza en 126.5); el clon ponía a `l=126.5` los 4 de
+  `page.tsx` (los 2 de componentes compartidos ya estaban bien). Aplicado
+  `md:-left-[65px]` (en los de categoría, `-left-[65px]` a secas: ya iban
+  `hidden md:block`).
+- **Hueco h2 de categoría → caja de anclas**: `mb` 32 → **27.9** (medido).
+- **`AnchorNav` a 16px/16px — REGRESIÓN PROPIA**: al extraer el componente
+  desde `SubNavAnclas` (commit 91fe57f) se subió a `text-[17px]` y padding
+  17/17 siguiendo el spec `anchor-nav.spec.md`. El original mide **16px de
+  fuente y padding 16px 16px 0** en ambas páginas, que es justo lo que tenía
+  el `SubNavAnclas` previo. Revertido a 16/16 — **esto también toca
+  /monitor-calidad-aire**, devolviéndolo a sus valores de la QA de julio.
+  El spec sigue diciendo 17; conviene corregirlo.
+
+### Verificado correcto (no tocar)
+
+- **Interiores de las 11 fichas: idénticos al píxel.** Alturas de bloque
+  595.7 / 329.8 / 329.8 / 606.8 / 747.1 / 552.5…, imagen 260×244 flotada,
+  tablas 339.4 / 117.8 / 394.8, ancho de columna 744.9. El modelo
+  `AccesorioCard` + `SpecTable` reproduce el original sin desviación.
+- **Footer**: 693.6 en ambos (trabajo de P1 intacto).
+- **Scrollspy**: funciona y coincide con el original. Con desplazamiento real
+  y pestaña activa, al llegar a "Cargadores para exteriores" ambos marcan
+  "Cargador para exteriores". El original **sí** tiene scrollspy en esta
+  página (la primera lectura, que decía que no, era el artefacto del rAF).
+- **Caja de anclas**: border 1px #333, radius 10, mb 27.2, `li` 30/56,
+  flecha `ico-arrow.svg` 30×30 a `100% 0%`, pr 30 — todo coincide.
+
+### Pendiente
+
+- **A1 · El salto por hash NO funciona — rompe 9 enlaces reales.** ALTA.
+  `/accesorios#pluviometro` deja la página en `scrollY = 0`; el original va a
+  4492 (ficha a **0px** del viewport, `scroll-margin-top: 0`). Afecta a los 9
+  "Ver más" de /monitor-calidad-aire, que desde el commit f34bedc apuntan a
+  `/accesorios#<slug>` y aterrizan todos arriba del todo.
+  Diagnóstico hecho: `scrollIntoView({block:'start'})` lanzado a mano **sí**
+  funciona y respeta el `scroll-mt-[80px]` de la ficha (deja 4487.3 → ficha a
+  80px). O sea, el problema es de **momento**, no de API: el App Router
+  devuelve el scroll a 0 después de la hidratación. Se probó un componente
+  cliente `HashLanding` (efecto en montaje, y luego con reintentos cada 40 ms
+  hasta 12 veces): **no funcionó** —`history.scrollRestoration` seguía en
+  "auto", señal de que el efecto no llegó a ejecutarse— y se ha **retirado**
+  para no dejar código que aparente arreglarlo. Siguiente vía a probar:
+  `scroll-behavior: smooth` está en `html` (globals.css) y puede estar
+  anulando el salto nativo; probar a quitarlo o a acotarlo, y verificar
+  SIEMPRE con la pestaña en primer plano.
+  Decisión abierta al arreglarlo: el original aterriza a **0px** por hash y a
+  **80px** al pulsar un ancla (BEHAVIORS §5). El clon usa 80 en ambos casos, lo
+  que evita que la cabecera fija tape el título; hay que confirmar si se
+  mantiene esa desviación deliberada.
+- **A2 · Franja de cabecera 177 vs 224.7 (−47.7).** MEDIA, compartida.
+  A 1280 el original reparte la cabecera en **dos filas** (menú + botón
+  "Descargar catálogo" debajo) y ocupa 224.7; el clon la resuelve en **una**
+  (156.9 de header + franja fija de 177). Es consecuencia directa de la
+  decisión de P2 (commit 4975da9, "Descargar catálogo en una línea a ≤1379px"),
+  tomada durante la QA del monitor. No se toca aquí porque afecta a home y
+  monitor: hay que decidir si aquella decisión se mantiene y esta diferencia se
+  acepta, o si se replica el original y se ajusta la franja.
+- **A3 · `overflow-wrap: break-word` ausente (−55).** MEDIA, compartida.
+  El original lo aplica de forma global (regla Divi); el h2 "Preguntas
+  frecuentes" del FAQ, en una columna de 211.2, parte la palabra y ocupa **3
+  líneas / 175px**, mientras el clon la deja desbordar en **2 / 120px**
+  (`scrollWidth` 216 > `clientWidth` 211). Vive en `FaqAcordeon`, compartido
+  con /monitor-calidad-aire, así que el arreglo debe verificarse en ambas.
+- **A4 · Móvil 390 SIN VERIFICAR.** ALTA.
+  No se pudo comprobar en esta sesión: `resize_window` devuelve éxito pero el
+  viewport se queda en 1280 (mínimo de ventana de Chrome), y no hay emulación
+  de dispositivo disponible por esta vía. Queda sin validar justo lo que el
+  commit 91fe57f da por bueno: **imagen apilada sobre el título** y **tabla
+  `matrix` con scroll horizontal**. Hay que medirlo con device metrics reales
+  (como en la tanda del monitor, que sí lo hizo) antes de darlo por cerrado.
+- **A5 · Quedan −212 de diferencia total sin desglosar del todo.**
+  De ellos, −47.7 son A2 y −55 son A3; los ~109 restantes se acumulan sobre
+  todo entre el segundo h2 de categoría y el footer (deltas de posición: h2cat1
+  −70.2, h2cat2 −106.2, artículos −195.3, footer −211.9). Como los interiores
+  de las 11 fichas coinciden exactamente, la diferencia tiene que estar en los
+  **huecos entre bloques** (márgenes de fila/sección), no en el contenido.
