@@ -258,6 +258,42 @@ de tarjetas, footer).
   /monitor-calidad-aire**, devolviéndolo a sus valores de la QA de julio.
   El spec sigue diciendo 17; conviene corregirlo.
 
+### A1 · Salto por hash — RESUELTO (2026-07-27, misma sesión)
+
+**Síntoma**: `/accesorios#pluviometro` dejaba la página en `scrollY = 0`, así
+que los 9 "Ver más" de /monitor-calidad-aire aterrizaban arriba del todo.
+
+**Causa raíz**: `html { scroll-behavior: smooth }` en `globals.css`. Con esa
+regla, el salto nativo al fragmento en la carga inicial pasa a ser una
+**animación**, y cualquier reajuste de layout durante la carga la cancela: la
+página se queda donde estaba (0). No era, como se supuso al principio, que el
+App Router reseteara el scroll tras hidratar — esa hipótesis nunca llegó a
+probarse (el indicio que lo delataba: `history.scrollRestoration` seguía en
+"auto", o sea que el efecto del componente que se probó ni se ejecutó).
+
+**Arreglo**: eliminar la regla. Tres líneas de CSS, sin JS ni componentes.
+
+**Por qué es seguro y además más fiel**:
+- El original tiene `scroll-behavior: **auto**` en `html` y en `body` (medido).
+- `scroll-behavior` solo aplica cuando la API de scroll **no** especifica
+  `behavior`. Los dos únicos consumidores de scroll suave del clon —
+  `ScrollToTop` y `AnchorNav`— lo pasan **explícito** en JS, así que no cambian.
+- El único otro enlace interno era `href="#catalogo"` en `SectoresIntro`, y
+  **no existe ningún `id="catalogo"`** en el proyecto: no apuntaba a nada.
+  El `href="#"` de `HeaderNav` lleva `preventDefault()`. Cero consumidores.
+
+**Verificado**: los 4 slugs probados aterrizan a 80px del viewport (el
+`scroll-mt-[80px]` de `AccesorioCard`) — `panel-solar` 79.7 · `piranometro` 80
+· `gashood` 80.1 — y, sobre todo, **clic real en un "Ver más" desde
+/monitor-calidad-aire**: navega a `/accesorios#anemometro-mecanico`, queda en
+`scrollY 3038` con la ficha a **79.7** y el h3 correcto.
+
+**Desviación deliberada que queda en pie**: el original aterriza la ficha a
+**0px** en la navegación por hash y a **80px** al pulsar un ancla de la caja
+(BEHAVIORS §5). El clon usa 80 en ambos casos, para que la cabecera fija no
+tape el título. Si se quisiera fidelidad estricta, habría que quitar el
+`scroll-mt-[80px]` de `AccesorioCard` y asumir que el título queda tapado.
+
 ### Verificado correcto (no tocar)
 
 - **Interiores de las 11 fichas: idénticos al píxel.** Alturas de bloque
@@ -274,26 +310,6 @@ de tarjetas, footer).
 
 ### Pendiente
 
-- **A1 · El salto por hash NO funciona — rompe 9 enlaces reales.** ALTA.
-  `/accesorios#pluviometro` deja la página en `scrollY = 0`; el original va a
-  4492 (ficha a **0px** del viewport, `scroll-margin-top: 0`). Afecta a los 9
-  "Ver más" de /monitor-calidad-aire, que desde el commit f34bedc apuntan a
-  `/accesorios#<slug>` y aterrizan todos arriba del todo.
-  Diagnóstico hecho: `scrollIntoView({block:'start'})` lanzado a mano **sí**
-  funciona y respeta el `scroll-mt-[80px]` de la ficha (deja 4487.3 → ficha a
-  80px). O sea, el problema es de **momento**, no de API: el App Router
-  devuelve el scroll a 0 después de la hidratación. Se probó un componente
-  cliente `HashLanding` (efecto en montaje, y luego con reintentos cada 40 ms
-  hasta 12 veces): **no funcionó** —`history.scrollRestoration` seguía en
-  "auto", señal de que el efecto no llegó a ejecutarse— y se ha **retirado**
-  para no dejar código que aparente arreglarlo. Siguiente vía a probar:
-  `scroll-behavior: smooth` está en `html` (globals.css) y puede estar
-  anulando el salto nativo; probar a quitarlo o a acotarlo, y verificar
-  SIEMPRE con la pestaña en primer plano.
-  Decisión abierta al arreglarlo: el original aterriza a **0px** por hash y a
-  **80px** al pulsar un ancla (BEHAVIORS §5). El clon usa 80 en ambos casos, lo
-  que evita que la cabecera fija tape el título; hay que confirmar si se
-  mantiene esa desviación deliberada.
 - **A2 · Franja de cabecera 177 vs 224.7 (−47.7).** MEDIA, compartida.
   A 1280 el original reparte la cabecera en **dos filas** (menú + botón
   "Descargar catálogo" debajo) y ocupa 224.7; el clon la resuelve en **una**

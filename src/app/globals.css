@@ -153,9 +153,11 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  html {
-    scroll-behavior: smooth;
-  }
+  /* SIN `scroll-behavior: smooth` en html a propósito: convertía el salto
+     nativo al fragmento (`/accesorios#pluviometro`) en una animación que se
+     cancela durante la carga, dejando la página en scrollY 0. Los dos sitios
+     que quieren scroll suave —`ScrollToTop` y `AnchorNav`— ya pasan
+     `behavior:"smooth"` explícito en JS, así que no pierden nada. */
   h1,
   h2,
   h3,
