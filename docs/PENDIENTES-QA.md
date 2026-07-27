@@ -294,6 +294,63 @@ probarse (el indicio que lo delataba: `history.scrollRestoration` seguía en
 tape el título. Si se quisiera fidelidad estricta, habría que quitar el
 `scroll-mt-[80px]` de `AccesorioCard` y asumir que el título queda tapado.
 
+### A4 · Móvil 390 — VERIFICADO Y CORREGIDO (2026-07-27, misma sesión)
+
+Medido con **`Emulation.setDeviceMetricsOverride` a 390×844** (puppeteer-core
+sobre el Chrome del sistema, perfil limpio, headless). `resize_window` de la
+extensión NO sirve: informa éxito pero el viewport se queda en 1280.
+Sonda reutilizable en el scratchpad de la sesión (`qa/m390.mjs` mide fichas,
+`qa/m390b.mjs` titulares y punteados; el segundo se convierte a 1280 con un
+`sed` sobre las dos líneas de métricas).
+
+**Las dos correcciones móviles funcionan.** Contra el original a 390:
+
+| | Clon | Original |
+|---|---|---|
+| h3 "Panel solar" | **42px / 1.31 líneas** | 138px / **4.31 líneas** |
+| h3 "Cargadores para exteriores" | **74px / 2.31** | 266px / **8.31 líneas** |
+| Imagen de ficha | `float:none`, **apilada sobre el título** | `inline-end` |
+| Envoltorio de tabla | `overflow-x: auto` | `visible` |
+| **4ª columna alcanzable** | **sí** | **no** |
+| Scroll horizontal de página | no | no |
+
+O sea: el original parte "Pa/nel/so/lar" letra a letra y deja "Notas de
+instalación" inalcanzable; el clon no. Confirmado también a ojo en las
+capturas `m390-clon-panelsolar.png` / `m390-orig-panelsolar.png`.
+
+**Pero el pase destapó que las 5 correcciones de la tanda de desktop se habían
+verificado SOLO a 1280 y tres estaban mal en móvil.** Corregido:
+
+- **Los h2 son MÁS grandes en móvil, no más pequeños**: el original usa **35px
+  en ≤767** para los tres (hero, "Información sobre el producto" y los de
+  categoría), incluso para el de categoría que en desktop mide 32. El clon los
+  dejaba en 44/44/32. Ahora `text-[35px] md:text-[44px]` y
+  `text-[35px] md:text-[32px]`.
+- **Interlínea proporcional**: el original mantiene **1.25× el tamaño** en
+  todos sus h2 (44→55, 32→40, 35→43.75). Se sustituye el `leading-[55px]`
+  fijo por `leading-[1.25]`, que sirve para los dos tamaños.
+- **El punteado también cuelga −65px en móvil** (l=−26 con la retícula en 39),
+  y el de los titulares de categoría **sí se ve a 390** — lo que desaparece
+  bajo 980 es la caja de anclas, no el punteado. Se quitan el `md:` del
+  desplazamiento y el `hidden md:block`.
+- **`w-[80%]` del h2 del hero aplica en ambos tamaños** (249.6/312 a 390,
+  igual que 467.8/584.8 a 1280), no solo desde `md:`.
+- El `mb-[27.9px]` del h2 de categoría pasa a `md:mb-[27.9px]`: en móvil no hay
+  caja de anclas debajo y el original va a mb 0.
+
+**Resultado tras corregir** — a 390 coincide **exactamente** en todo lo medido
+(punteados −26 ×6; h2hero 35px/249.6/272.5; h2info 35px/312/97.5; h2cat
+35px/97.5/mb 0; h1 79/pb 10), y a 1280 no hay regresión: la altura total
+mejora de −212 a **−101**.
+
+Dos notas para no confundir en el próximo pase:
+- **El clon es más ALTO que el original en móvil** (21197 vs 20338, +859). Es
+  la consecuencia esperada de apilar la imagen sobre el título en las 11
+  fichas; no es un defecto.
+- El `mb` del h2 de categoría difiere en la propiedad (clon 27.9 sobre el h2,
+  original 0 sobre el h2 y el hueco lo pone el módulo Divi), pero la
+  **geometría resultante es la misma**. No "corregirlo" a 0 sin medir el hueco.
+
 ### Verificado correcto (no tocar)
 
 - **Interiores de las 11 fichas: idénticos al píxel.** Alturas de bloque
@@ -324,16 +381,8 @@ tape el título. Si se quisiera fidelidad estricta, habría que quitar el
   líneas / 175px**, mientras el clon la deja desbordar en **2 / 120px**
   (`scrollWidth` 216 > `clientWidth` 211). Vive en `FaqAcordeon`, compartido
   con /monitor-calidad-aire, así que el arreglo debe verificarse en ambas.
-- **A4 · Móvil 390 SIN VERIFICAR.** ALTA.
-  No se pudo comprobar en esta sesión: `resize_window` devuelve éxito pero el
-  viewport se queda en 1280 (mínimo de ventana de Chrome), y no hay emulación
-  de dispositivo disponible por esta vía. Queda sin validar justo lo que el
-  commit 91fe57f da por bueno: **imagen apilada sobre el título** y **tabla
-  `matrix` con scroll horizontal**. Hay que medirlo con device metrics reales
-  (como en la tanda del monitor, que sí lo hizo) antes de darlo por cerrado.
-- **A5 · Quedan −212 de diferencia total sin desglosar del todo.**
-  De ellos, −47.7 son A2 y −55 son A3; los ~109 restantes se acumulan sobre
-  todo entre el segundo h2 de categoría y el footer (deltas de posición: h2cat1
-  −70.2, h2cat2 −106.2, artículos −195.3, footer −211.9). Como los interiores
-  de las 11 fichas coinciden exactamente, la diferencia tiene que estar en los
-  **huecos entre bloques** (márgenes de fila/sección), no en el contenido.
+- **A5 · Residuo de altura: −101 a 1280**, y ya está explicado. Con medición
+  homogénea (puppeteer, `--hide-scrollbars`) el clon queda en **11315** frente
+  a **11416** del original. Ese −101 lo cubren A2 (−47.7) y A3 (−55), que
+  suman −102.7: **no queda diferencia sin atribuir**. Los interiores de las 11
+  fichas ya coincidían al píxel.

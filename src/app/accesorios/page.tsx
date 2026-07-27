@@ -98,8 +98,9 @@ export default function AccesoriosPage() {
                 width={60}
                 height={22}
                 // QA: en el original el punteado cuelga 65px a la IZQUIERDA de la
-                // columna (medido l=61.5 con la retícula empezando en 126.5).
-                className="absolute -top-[26px] left-0 md:-left-[65px]"
+                // columna, TAMBIÉN en móvil (1280: l=61.5 con la retícula en
+                // 126.5; 390: l=-26 con la retícula en 39 — el mismo -65).
+                className="absolute -top-[26px] -left-[65px]"
               />
               {/* Inversión tipográfica del original: el <p> es el titular
                   visual (50px/fw800) y el <h1> va debajo a 23px/fw300. */}
@@ -109,11 +110,14 @@ export default function AccesoriosPage() {
               <h1 className="pb-[10px] pl-[10px] text-[23px] font-light leading-[23px] text-[#333]">
                 {HERO.h1}
               </h1>
-              {/* md:w-[80%]: el módulo de texto del original mide 467.8 dentro de
-                  una columna de 584.8 → el titular envuelve a 4 líneas, no a 3. */}
+              {/* w-[80%]: el módulo de texto del original es más estrecho que su
+                  columna en AMBOS tamaños (467.8/584.8 a 1280; 249.6/312 a 390)
+                  → el titular envuelve a 4 líneas, no a 3.
+                  Tamaño: 35px en móvil (≤767) y 44 en desktop, con interlínea
+                  1.25× — la proporción del original en todos sus h2. */}
               <h2
                 id={HERO.h2Id}
-                className="mt-[32px] pb-[10px] pl-[10px] text-[44px] font-light leading-[55px] text-[#333] md:w-[80%]"
+                className="mt-[32px] w-[80%] pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
               >
                 {HERO.h2}
               </h2>
@@ -141,11 +145,11 @@ export default function AccesoriosPage() {
               aria-hidden
               width={60}
               height={22}
-              className="absolute top-[24px] left-0 md:-left-[65px]"
+              className="absolute top-[24px] -left-[65px]"
             />
             <h2
               id={INTRO_HEADING_ID}
-              className="pb-[10px] pl-[10px] text-[44px] font-light leading-[55px] text-[#333]"
+              className="pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:text-[44px]"
             >
               {INTRO_HEADING}
             </h2>
@@ -189,11 +193,16 @@ export default function AccesoriosPage() {
                     aria-hidden
                     width={60}
                     height={22}
-                    className="absolute -top-[32px] -left-[65px] hidden md:block"
+                    // visible también en móvil: el original lo pinta en las 6
+                    // posiciones a 390 (el que desaparece es la caja de anclas,
+                    // no el punteado del titular de categoría)
+                    className="absolute -top-[32px] -left-[65px]"
                   />
-                  {/* mb 27.9: hueco medido entre el h2 y la caja de anclas del
-                      original (el 32 anterior venía de una estimación). */}
-                  <h2 className="mb-[27.9px] pb-[10px] pl-[10px] text-[32px] font-light leading-[40px] text-[#333]">
+                  {/* mb 27.9 solo en desktop: es el hueco hasta la caja de
+                      anclas, que en móvil no existe (allí el h2 va a mb 0).
+                      35px en móvil / 32 en desktop: el h2 de Divi es MAYOR en
+                      móvil, no menor. */}
+                  <h2 className="pb-[10px] pl-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:mb-[27.9px] md:text-[32px]">
                     {cat.heading}
                   </h2>
                 </div>
