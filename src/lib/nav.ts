@@ -67,7 +67,8 @@ const CARTRIDGES: NavLink[] = [
 export const PRODUCTS: NavProductItem[] = [
   {
     label: "Kunak AIR Pro",
-    href: "https://kunakair.com/es/monitor-calidad-aire/",
+    // ruta local: esta página ya está clonada (src/app/monitor-calidad-aire)
+    href: "/monitor-calidad-aire",
     image: "/images/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
   },
   {
@@ -93,7 +94,8 @@ export const PRODUCTS: NavProductItem[] = [
   },
   {
     label: "Accesorios",
-    href: "https://kunakair.com/es/accesorios/",
+    // ruta local: esta página ya está clonada (src/app/accesorios)
+    href: "/accesorios",
     image: "/images/uploads/2023/03/kunak-air-accessories.jpg",
   },
 ];

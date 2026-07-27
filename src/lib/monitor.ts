@@ -287,7 +287,11 @@ export type WithChildren = { children: ReactNode };
 /* --- #meteo-sensors: 6 sondas (shortcode `lista-contenido`, variante
  * accesorios; el 1º arranca activo). Textos verbatim del original, typos
  * incluidos: "Anenómetro" (#2) y "de energía de energía" (#6). --- */
-const ACC = "https://kunakair.com/es/accesorios/";
+// Ruta LOCAL: /accesorios ya está clonada y define los 11 slugs (los 9 que se
+// enlazan desde aquí, incluidos). Los "Ver más" resuelven dentro del clon; el
+// aterrizaje del ancla lo cubre el `scroll-mt-[80px]` de `AccesorioCard`.
+// Sin barra final: `trailingSlash` no está activado en next.config.
+const ACC = "/accesorios";
 const U12 = "/images/uploads/2022/12";
 
 export const METEO_SENSORS: AccesorioItem[] = [

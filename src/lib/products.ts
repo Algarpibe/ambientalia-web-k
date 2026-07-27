@@ -20,7 +20,8 @@ export const PRODUCTS_TABS: Product[] = [
       "Precisión probada",
     ],
     image: "/images/uploads/2022/12/Kunak-AIR-Pro-1024.jpg",
-    href: "https://kunakair.com/es/monitor-calidad-aire/",
+    // ruta local: esta página ya está clonada (src/app/monitor-calidad-aire)
+    href: "/monitor-calidad-aire",
   },
   {
     id: "estacion-de-monitoreo-de-calidad-del-aire",

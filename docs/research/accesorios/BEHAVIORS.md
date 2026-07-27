@@ -153,12 +153,28 @@ con el acordeón de productos en B5).
   instalación", es **inalcanzable en móvil**. Las tablas `pairs` (312 px) sí
   caben.
 
-**Decisión pendiente para Fase 2** (no la tomo aquí): replicar los dos defectos
-al pie de la letra —coherente con la política de emulación fiel del proyecto,
-que ya conservó cosas como los botones cortados del sticky del monitor— o
-corregirlos (título con `min-width`/imagen no flotada en móvil, y tabla en un
-contenedor `overflow-x: auto`). El defecto 2 **oculta datos al usuario**, así
-que conviene decidirlo explícitamente antes de construir.
+**DECISIÓN TOMADA Y APLICADA (2026-07-27, commit `91fe57f`): se CORRIGEN los
+dos defectos.** Se descartó replicarlos al pie de la letra —pese a la política
+de emulación fiel del proyecto— porque el defecto 2 **oculta datos al usuario**.
+Cómo se resolvió, y dónde:
+
+- **Defecto 1 → `AccesorioCard.tsx`**: por debajo de `sm` (640 px) la imagen
+  **no flota**; es un bloque propio apilado **encima** del `<h3>`, que pasa a
+  ocupar el ancho completo. Desde `sm:` se restaura el original exacto
+  (`float-right`, `mt-[-32px]`, `pl-[16px]`).
+- **Defecto 2 → `SpecTable.tsx`**: la tabla va dentro de un envoltorio con
+  **`overflow-x: auto`**, y las `matrix` llevan `min-w-[420px] sm:min-w-0`. En
+  móvil se desplazan horizontalmente dentro de su caja (la 4ª columna deja de
+  ser inalcanzable); en desktop el envoltorio es inerte, la tabla cabe al 100 %
+  y el render es idéntico al original. Ojo: ese envoltorio crea un BFC, de ahí
+  el `clear: both` que ya traía la `<table>` del original.
+
+**Desktop sigue siendo 100 % fiel**; la desviación es exclusivamente < 640 px.
+El primer punto de la lista (la caja de anclas oculta en móvil, sin CTAs que la
+sustituyan) **sí se replica tal cual** — no se consideró defecto.
+
+Pendiente de comprobar en el **QA visual (Fase 5)**: que ambas correcciones se
+comporten como se espera a 390 px reales.
 
 ## 9. Lo que NO existe en esta página (verificado, no re-investigar)
 
