@@ -14,6 +14,8 @@ import { Beneficios } from "@/components/monitor/Beneficios";
 import { Especificaciones } from "@/components/monitor/Especificaciones";
 import { GaleriaEnsayos } from "@/components/monitor/GaleriaEnsayos";
 import { Software } from "@/components/monitor/Software";
+import { SondasMeteorologicas } from "@/components/monitor/SondasMeteorologicas";
+import { FaqAcordeon } from "@/components/monitor/FaqAcordeon";
 import { CONTACT_HREF } from "@/lib/monitor";
 
 export const metadata: Metadata = {
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
  * GRUPO A: cabecera + Hero (visor 360 nativo) + Información del producto +
  * CTA banner + sub-nav de anclas sticky/scrollspy + reutilizables wireados.
  * GRUPO B: Beneficios, Software, Especificaciones, Galería de ensayos.
- * Pendiente GRUPO C: sondas meteorológicas y FAQ — siguen como placeholders
- * con su ancla funcional (para que el scrollspy resuelva los 8 ids).
+ * GRUPO C: Sondas meteorológicas y Preguntas frecuentes — con esto los 8
+ * anclas del scrollspy quedan resueltas y no queda ningún placeholder.
  */
 export default function MonitorCalidadAirePage() {
   return (
@@ -115,9 +117,9 @@ export default function MonitorCalidadAirePage() {
                 <ProductosTabs />
               </div>
 
-              {/* #meteo-sensors — 2ª instancia ProductosTabs (6 sondas) — GRUPO C */}
+              {/* #meteo-sensors — shortcode `lista-contenido` con las 6 sondas */}
               <div id="meteo-sensors" className="scroll-mt-[110px] py-8">
-                <PlaceholderBlock label="Sondas meteorológicas — tabs (Grupo C)" />
+                <SondasMeteorologicas />
               </div>
             </div>
           </div>
@@ -127,25 +129,12 @@ export default function MonitorCalidadAirePage() {
             Grupo B: título "Artículos y Guías" + 3 posts distintos. */}
         <UltimosArticulos />
 
-        {/* S5 — Preguntas frecuentes (19 toggles acordeón) — GRUPO C */}
-        <section className="bg-white py-10">
-          <div className="mx-auto w-[85%] max-w-[1080px]">
-            <PlaceholderBlock label="Preguntas frecuentes — 19 toggles (Grupo C)" />
-          </div>
-        </section>
+        {/* S5 — Preguntas frecuentes (19 toggles acordeón) */}
+        <FaqAcordeon />
       </main>
 
       <Footer />
       <ScrollToTop />
     </>
-  );
-}
-
-/** Stub visible de una sección pendiente; conserva el ancla para el scrollspy. */
-function PlaceholderBlock({ label }: { label: string }) {
-  return (
-    <p className="rounded-[8px] border border-dashed border-[#ccc] px-4 py-6 text-center text-[14px] text-[#BBB]">
-      [ {label} ]
-    </p>
   );
 }

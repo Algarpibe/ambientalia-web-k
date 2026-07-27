@@ -76,6 +76,22 @@ export interface Product {
   href: string;
 }
 
+/**
+ * Item of the `lista-contenido` shortcode in its "accesorios" flavour
+ * (`#producto-accesorios-*`): label + photo + one intro line + "Ver más".
+ * The richer `Product` above is the "soluciones" flavour of the same
+ * shortcode (`#lista-soluciones`, with tagline/highlight/bullets).
+ */
+export interface AccesorioItem {
+  /** data-id of the `<span>` label (also the panel's `item-<id>`). */
+  id: string;
+  /** Label in the left list; repeated as the panel heading. */
+  label: string;
+  intro: string;
+  image: string;
+  href: string;
+}
+
 export interface BlogPost {
   title: string;
   date: string;

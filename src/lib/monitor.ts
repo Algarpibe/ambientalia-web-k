@@ -3,6 +3,7 @@
  * Specs: docs/research/monitor-calidad-aire/components/*.spec.md
  */
 import type { ReactNode } from "react";
+import type { AccesorioItem } from "@/types/kunak";
 
 /* --- Visor 360° del hero: 35 frames kunak360_IMG_01..35.jpg (2023/03) --- */
 export const FRAMES_360: string[] = Array.from({ length: 35 }, (_, i) => {
@@ -276,3 +277,276 @@ export const SOFTWARE_MORE_HREF = "https://kunakair.com/software-calidad-aire";
 
 /** Helper de tipografía usado por varias secciones (evita re-declararlo). */
 export type WithChildren = { children: ReactNode };
+
+/* =========================================================================
+ * GRUPO C — sondas meteorológicas (S3 · #meteo-sensors) + FAQ (S5)
+ * Specs: docs/research/monitor-calidad-aire/components/{sondas-meteorologicas,
+ *        faq}.spec.md
+ * ========================================================================= */
+
+/* --- #meteo-sensors: 6 sondas (shortcode `lista-contenido`, variante
+ * accesorios; el 1º arranca activo). Textos verbatim del original, typos
+ * incluidos: "Anenómetro" (#2) y "de energía de energía" (#6). --- */
+const ACC = "https://kunakair.com/es/accesorios/";
+const U12 = "/images/uploads/2022/12";
+
+export const METEO_SENSORS: AccesorioItem[] = [
+  {
+    id: "anemometro-mecanico",
+    label: "Anemómetro Mecánico",
+    intro: "Incluye sensores de velocidad y de dirección del viento.",
+    image: `${U12}/kunak_IMG_0047-copia-300x300-1-300x300.jpg`,
+    href: `${ACC}#anemometro-mecanico`,
+  },
+  {
+    id: "anemometro-ultrasonico",
+    label: "Anenómetro Ultrasónico",
+    intro: "Incluye sensores de velocidad y de dirección del viento.",
+    image: `${U12}/kunak_IMG_0061-copia-300X300-300x300.jpg`,
+    href: `${ACC}#anemometro-ultrasonico`,
+  },
+  {
+    id: "pluviometro",
+    label: "Pluviómetro",
+    intro:
+      "Gracias a su gran fiabilidad, fácil mantenimiento y limpieza sencilla, ofrece aplicaciones en todos los climas.",
+    image: `${U12}/rain-gauge-300x300.jpg`,
+    href: `${ACC}#pluviometro`,
+  },
+  {
+    id: "piranometro",
+    label: "Piranómetro",
+    intro:
+      "El piranómetro mide la radiación solar mediante una termopila ennegrecida de alta calidad protegida por una cúpula.",
+    image: `${U12}/pyranometer-300x300.jpg`,
+    href: `${ACC}#piranometro`,
+  },
+  {
+    id: "termometro-de-globo-y-de-bulbo-humedo-wbgt",
+    label: "Termómetro de globo y de bulbo húmedo (WBGT)",
+    intro:
+      "El termómetro de globo y de bulbo húmedo (WBGT) mide el estrés térmico bajo la luz solar directa, teniendo en cuenta la temperatura, la humedad, la velocidad del viento (sensación térmica) y la radiación solar.",
+    image: `${U12}/WBGT-300x300-1-300x300.jpg`,
+    href: `${ACC}#termometro-de-globo-y-de-bulbo-humedo-wbgt`,
+  },
+  {
+    id: "sensor-ultravioleta-a",
+    label: "Sensor Ultravioleta-A",
+    intro:
+      "Estos sensores UV-A detectan la radiación UV de 300 a 400 nm y están calibrados en unidades de densidad de flujo de energía de energía en vatios por metro cuadrado.",
+    image: `${U12}/apogee-su-202-ultraviolet-A-sensor-300x163.jpg`,
+    href: `${ACC}#sensor-ultravioleta-a`,
+  },
+];
+
+/* --- S5: 19 preguntas frecuentes (acordeón de toggles independientes) --- */
+
+/** Trozo de párrafo de una respuesta. */
+export interface FaqSeg {
+  t: string;
+  /** renderiza `t` como <sub> (solo la pregunta 17: PM₁, PM₂,₅, PM₁₀) */
+  sub?: boolean;
+  /** inserta un <br/> ANTES de este segmento (solo la pregunta 12) */
+  br?: boolean;
+  /** enlace inline (solo la pregunta 19: "catálogo") */
+  href?: string;
+}
+
+/** Bloque de una respuesta: párrafo o lista con viñeta azul. */
+export type FaqBlock = { type: "p"; segs: FaqSeg[] } | { type: "ul"; items: string[] };
+
+export interface FaqItem {
+  q: string;
+  a: FaqBlock[];
+}
+
+/** Atajo para el caso común: respuesta de párrafos de texto plano. */
+const ps = (...texts: string[]): FaqBlock[] => texts.map((t) => ({ type: "p", segs: [{ t }] }));
+
+export const FAQ_ITEMS: FaqItem[] = [
+  {
+    q: "¿Los equipos Kunak son certificados ATEX?",
+    a: ps(
+      "Los equipos Kunak están diseñados para el monitoreo perimetral de emisiones difusas o detección de fugas en zonas no clasificadas como ATEX.",
+      "Pueden adaptarse para operar en entornos con riesgo de explosión cumpliendo los requisitos de la Zona 1 ATEX, siempre que se configure el sistema adecuadamente.",
+    ),
+  },
+  {
+    q: "¿Qué área cubre cada dispositivo?",
+    a: ps(
+      "En cuanto al alcance del dispositivo, es importante tener en cuenta que los equipos Kunak realizan mediciones puntuales (point measurement). No existe un “radio” de alcance, es decir, miden la concentración en el punto donde están instalados. La representatividad espacial que pueda tener esa medición depende de múltiples factores como la orografía, las fuentes emisoras cercanas y las condiciones meteorológicas.",
+    ),
+  },
+  {
+    q: "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el software?",
+    a: ps(
+      "La vida útil de los cartuchos depende del tipo de sensor y las condiciones ambientales, con un rango estimado de entre 12 y 36 meses. Puede consultarse más información en la página correspondiente del catálogo.",
+      "Los servicios en la nube (Kunak Cloud) se renuevan anualmente para mantener las funciones de análisis, calibración y trazabilidad actualizadas.",
+    ),
+  },
+  {
+    // El original arrastra un <span data-sheets-root="1"> mal anidado que cruza
+    // los dos <p> (artefacto de pegado desde Sheets). No se replica.
+    q: "¿El equipo es portátil o fijo?",
+    a: ps(
+      "Los equipos Kunak pueden instalarse en farolas, paredes, mástiles o trípodes.",
+      "Gracias a su diseño ligero y modular, es posible reubicarlos fácilmente retirando la base y fijándolos en otro punto de la instalación.",
+    ),
+  },
+  {
+    q: "¿Cada cuánto se calibra el equipo?",
+    a: ps(
+      "Los sensores se entregan calibrados de fábrica con certificado oficial de calibración.",
+      "Para mantener la precisión de las mediciones, se recomienda realizar una calibración o ajuste remoto cada tres meses, o bien tras un cambio de ubicación o de estación del año.",
+    ),
+  },
+  {
+    q: "¿Qué opciones de calibración existen?",
+    a: [
+      { type: "p", segs: [{ t: "La calibración puede hacerse mediante tres métodos:" }] },
+      {
+        type: "ul",
+        items: [
+          "co-locación con una estación de referencia",
+          "campana de gas (gashood) con botellas patrón",
+          "ajuste remoto utilizando datos históricos para corregir la línea base",
+        ],
+      },
+      {
+        type: "p",
+        segs: [{ t: "La elección dependerá de las necesidades del proyecto y del presupuesto disponible." }],
+      },
+    ],
+  },
+  {
+    q: "¿Se pueden obtener los datos en local (Modbus)?",
+    a: ps(
+      "Sí. Todos los equipos Kunak incorporan el protocolo Modbus RTU RSxx, que permite la transmisión y lectura local de datos sin depender de la conexión a Internet.",
+    ),
+  },
+  {
+    q: "¿Cómo se comunica el equipo?",
+    a: ps(
+      "El sistema puede enviar datos mediante conexión celular (4G/3G), Ethernet, Wi-Fi o Modbus, adaptándose a las infraestructuras de red disponibles en cada emplazamiento.",
+    ),
+  },
+  {
+    q: "¿Cuál es la duración de la batería?",
+    a: ps(
+      "Los equipos incluyen una batería interna de respaldo con una autonomía de entre 3 y 30 días, dependiendo de la configuración y del tipo de sensor activo.",
+    ),
+  },
+  {
+    q: "¿A qué altura debe instalarse el equipo?",
+    a: ps(
+      "Se recomienda una altura de instalación de 3 a 4 metros sobre el suelo, para garantizar representatividad en la medición y evitar interferencias o actos vandálicos.",
+    ),
+  },
+  {
+    q: "¿El equipo tiene memoria interna?",
+    a: ps(
+      "Sí. Dispone de memoria interna de alta velocidad capaz de almacenar los datos hasta 15 días sin conexión a Internet, asegurando la continuidad de los registros.",
+    ),
+  },
+  {
+    q: "¿Se pueden conectar sondas meteorológicas?",
+    a: [
+      {
+        type: "p",
+        segs: [
+          {
+            t: "Sí. Kunak AIR Pro admite hasta 6 sondas meteorológicas. Kunak AIR Lite, hasta 2 sondas, según la versión del equipo.",
+          },
+          {
+            t: "Esto permite correlacionar variables ambientales con las concentraciones de contaminantes.",
+            br: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    q: "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimiento?",
+    a: ps(
+      "Sí, siempre que la velocidad no supere los 20 km/h. De este modo se garantiza la estabilidad de la medición y la correcta captura de datos ambientales.",
+    ),
+  },
+  {
+    q: "¿Cuenta esta tecnología con certificaciones?",
+    a: ps(
+      "Los equipos basados en sensores no se rigen por una certificación única. Kunak valida continuamente sus dispositivos en campo junto a organismos independientes.",
+      "Estas pruebas garantizan que los datos cumplen con la Directiva Europea de Calidad del Aire y los estándares de la US EPA.",
+    ),
+  },
+  {
+    q: "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud?",
+    a: ps(
+      "Sí. Kunak AIR Cloud es esencial para compensar efectos de temperatura y humedad, ejecutar mantenimiento remoto y autodiagnóstico, corregir la línea base y validar los datos, y asegurar la trazabilidad y fiabilidad de las mediciones.",
+    ),
+  },
+  {
+    q: "¿Pueden utilizarse los equipos en interiores?",
+    a: ps(
+      "Sí. Los equipos pueden utilizarse en entornos industriales, ganaderos o logísticos, ofreciendo un control preciso de los contaminantes también en espacios cerrados.",
+    ),
+  },
+  {
+    q: "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el AIR Lite?",
+    a: [
+      {
+        type: "p",
+        segs: [
+          { t: "Kunak AIR Pro: Sensor de 24 canales, certificado MCERTS, mide partículas finas y gruesas (PM" },
+          { t: "1", sub: true },
+          { t: ", PM" },
+          { t: "2.5", sub: true },
+          { t: ", PM" },
+          { t: "10", sub: true },
+          { t: ") y cumple con medidas indicativas." },
+        ],
+      },
+      {
+        type: "p",
+        segs: [
+          {
+            t: "Kunak AIR Lite: Sensor de 5 canales, sin certificación MCERTS, especializado en la detección de partículas finas.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    q: "¿Cómo se integran los datos a una tercera plataforma?",
+    a: ps(
+      "Los datos pueden integrarse automáticamente mediante REST API, Modbus o FTP, facilitando la conexión con plataformas de terceros y sistemas de gestión ambiental o industrial.",
+    ),
+  },
+  {
+    q: "¿Cuál es la diferencia entre calibración y corrección?",
+    a: [
+      {
+        type: "ul",
+        items: [
+          "La calibración ajusta la respuesta del sensor comparando sus datos con una referencia trazable (como una estación de referencia o gas certificado) para determinar su incertidumbre exacta.",
+          "La corrección modifica la respuesta del sensor sin referencia externa para reducir errores y compensar la deriva natural, aunque no permite calcular la incertidumbre con precisión.",
+        ],
+      },
+      {
+        type: "p",
+        segs: [
+          {
+            t: "En síntesis, la calibración usa una referencia externa y la corrección es un ajuste interno para mantener la fiabilidad del sensor.",
+          },
+        ],
+      },
+      {
+        type: "p",
+        segs: [
+          { t: "Más info en la página 35 del " },
+          { t: "catálogo", href: CATALOG_HREF },
+          { t: "." },
+        ],
+      },
+    ],
+  },
+];
