@@ -71,7 +71,7 @@ export function UltimosProyectos({
       <div
         className={
           "flex " +
-          (embedded ? "mt-[35px] justify-start" : "mt-10 justify-end md:mt-[91px]")
+          (embedded ? "mb-[30px] mt-[46px] justify-start" : "mt-10 justify-end md:mt-[91px]")
         }
       >
         <OutlineButton href={ctaHref}>{ctaLabel}</OutlineButton>

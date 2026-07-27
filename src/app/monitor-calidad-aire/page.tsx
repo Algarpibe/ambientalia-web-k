@@ -43,12 +43,15 @@ export default function MonitorCalidadAirePage() {
         {/* Cabecera TB: franja foto puerto + gradiente detrás del header transparente.
             (En el original es una sección de la plantilla de header; aquí la
             renderizamos como banda superior sobre la que flota el HeaderNav.) */}
+        {/* QA 2026-07-26: el original sirve cabecera-construccion.jpg (vista aérea
+            de ciudad) y la banda mide 137px (móvil/hamburguesa) / 177px (menú
+            desktop ≥1024) hasta el breadcrumb — medido por CDP a 390 y 1280. */}
         <div
           aria-hidden
-          className="h-[220px] w-full bg-cover bg-center md:h-[300px]"
+          className="h-[137px] w-full bg-cover bg-center lg:h-[177px]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(71,71,71,0.17), rgba(71,71,71,0)), url('/images/uploads/2023/10/cabecera-puerto.jpg')",
+              "linear-gradient(rgba(71,71,71,0.17), rgba(71,71,71,0)), url('/images/uploads/2023/10/cabecera-construccion.jpg')",
           }}
         />
 
@@ -58,69 +61,73 @@ export default function MonitorCalidadAirePage() {
         {/* S1 fila 2 — Información del producto */}
         <InformacionProducto />
 
-        {/* S2 — CTA banner "No se puede mejorar…": texto a la IZQUIERDA, cita de
-            Snyder cerrando el párrafo y botón outline #333 (el slider de esta
-            página no es `bg_layout_dark`, así que el tema le deja el botón por
-            defecto pese a ir sobre foto — verificado en vivo). */}
+        {/* S2 — CTA banner "No se puede mejorar…": texto a la IZQUIERDA y cita de
+            Snyder cerrando el párrafo. QA 2026-07-26: el slider SÍ lleva
+            `et_pb_bg_layout_dark` (computed por CDP: botón BLANCO con bg
+            rgba(0,0,0,0.15), como los banners de la home) — la spec §1 que decía
+            outline #333 estaba equivocada. */}
         <CtaBanner
           image={S2_IMAGE}
           heading={S2_HEADING}
           headingHref={CONTACT_HREF}
           body={S2_BODY}
           align="left"
-          buttonVariant="outline"
           buttonLabel="Empezar a medir con precisión"
           buttonHref={CONTACT_HREF}
         />
 
         {/* S3 — bloque compuesto: sub-nav de anclas sticky (1/4) + 8 bloques (3/4) */}
-        <section className="bg-white py-[40px]">
-          <div className="mx-auto flex w-[85%] max-w-[1080px] flex-col gap-[30px] md:flex-row md:gap-[3%]">
+        {/* Geometría Divi medida: sección pb 4vw (50 móvil), fila 80% máx 1380
+            con pt 4vw / pb 2vw (30 móvil) y gutter 5.5% entre columnas 1/4-3/4. */}
+        <section className="bg-white pb-[50px] lg:pb-[4vw]">
+          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[4vw] md:flex-row md:gap-[5.5%] lg:pb-[2vw]">
             <SubNavAnclas />
 
             {/* `min-w-0` es imprescindible: sin él, el `min-width:auto` por
                 defecto del flex item impide encoger por debajo del min-content
                 de la tabla de especificaciones y la columna se va a 1080px
                 (desbordando el contenedor y dando scroll horizontal a la página). */}
-            <div className="w-full min-w-0 space-y-[10px] md:flex-1">
+            {/* Los bloques cierran con el mb ~28px del último módulo Divi
+                (pb-[28px] del wrapper); sin py extra entre bloques. */}
+            <div className="w-full min-w-0 md:flex-1">
               {/* #benefits — Beneficios (grid 3×3 icon-blurbs) */}
-              <div id="benefits" className="scroll-mt-[110px] py-8">
+              <div id="benefits" className="scroll-mt-[110px] pb-[28px]">
                 <Beneficios />
               </div>
 
               {/* #applications — carrusel de sectores embebido + frase azul +
                   banner-guía con popup de descarga */}
-              <div id="applications" className="scroll-mt-[110px] py-8">
+              <div id="applications" className="scroll-mt-[110px] pb-[28px]">
                 <Aplicaciones />
               </div>
 
               {/* #software — texto Kunak AIR Cloud + botón (sin capturas) */}
-              <div id="software" className="scroll-mt-[110px] py-8">
+              <div id="software" className="scroll-mt-[110px] pb-[28px]">
                 <Software />
               </div>
 
               {/* #specifications — tabla de especificaciones (15 filas + sellos) */}
-              <div id="specifications" className="scroll-mt-[110px] py-8">
+              <div id="specifications" className="scroll-mt-[110px] pb-[28px]">
                 <Especificaciones />
               </div>
 
               {/* #trials-test — galería-slider de ensayos (9 gráficas) */}
-              <div id="trials-test" className="scroll-mt-[110px] py-8">
+              <div id="trials-test" className="scroll-mt-[110px] pb-[28px]">
                 <GaleriaEnsayos />
               </div>
 
               {/* #case-studies — las mismas 3 tarjetas que la home, embebidas */}
-              <div id="case-studies" className="scroll-mt-[110px] py-8">
+              <div id="case-studies" className="scroll-mt-[110px] pb-[28px]">
                 <UltimosProyectos embedded title="Casos de éxito" ctaLabel="Ver todos los casos" />
               </div>
 
               {/* #power-packs — shortcode `lista-contenido` con los 3 accesorios */}
-              <div id="power-packs" className="scroll-mt-[110px] py-8">
+              <div id="power-packs" className="scroll-mt-[110px] pb-[28px]">
                 <PaquetesEnergia />
               </div>
 
               {/* #meteo-sensors — shortcode `lista-contenido` con las 6 sondas */}
-              <div id="meteo-sensors" className="scroll-mt-[110px] py-8">
+              <div id="meteo-sensors" className="scroll-mt-[110px] pb-[28px]">
                 <SondasMeteorologicas />
               </div>
             </div>
@@ -129,13 +136,13 @@ export default function MonitorCalidadAirePage() {
 
         {/* S4 — Artículos y Guías. El original sortea los 3 posts en cada carga;
             aquí va congelado el set del recon. */}
-        <UltimosArticulos title="Artículos y Guías" posts={MONITOR_ARTICLES} />
+        <UltimosArticulos title="Artículos y Guías" posts={MONITOR_ARTICLES} variant="monitor" />
 
         {/* S5 — Preguntas frecuentes (19 toggles acordeón) */}
         <FaqAcordeon />
       </main>
 
-      <Footer />
+      <Footer backgroundStrip />
       <ScrollToTop />
     </>
   );

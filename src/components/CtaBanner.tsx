@@ -58,10 +58,13 @@ export function CtaBanner({
         }}
       >
         {/* Móvil: slide description Divi pt 34.3 / pb 51.5 (10% / 15% de 343).
-            align="left": pr 31% solo desde 981 (el original lo anula a ≤980). */}
+            align="left": pr 31% solo desde 981 (el original lo anula a ≤980).
+            Desktop: la home usa 74px fijos (verificado); la variante con `body`
+            (S2 de monitor) usa el 5% global de Divi (56.3 a 1280 — QA 26-07). */}
         <div
           className={
-            "mx-auto max-w-[1380px] pb-[51px] pt-[34px] text-left md:py-[74px] " +
+            "mx-auto max-w-[1380px] pb-[51px] pt-[34px] text-left " +
+            (body ? "md:py-[5%] " : "md:py-[74px] ") +
             (isLeft ? "min-[981px]:pr-[31%]" : "md:pl-[49%]")
           }
         >
@@ -86,7 +89,12 @@ export function CtaBanner({
             )}
           </h2>
 
-          {body ? <p className="text-[20px] leading-[1.6em] text-white">{body}</p> : null}
+          {/* QA 2026-07-26: el párrafo baja a 14px/22.4 en móvil (computed a 390). */}
+          {body ? (
+            <p className="text-[14px] leading-[22.4px] text-white md:text-[20px] md:leading-[32px]">
+              {body}
+            </p>
+          ) : null}
 
           {/* Botón: margin-top 20px del original; la home sube a 32 en desktop
               porque allí no hay párrafo intermedio. */}

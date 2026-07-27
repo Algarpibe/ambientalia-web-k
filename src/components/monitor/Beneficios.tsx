@@ -18,7 +18,7 @@ export function Beneficios() {
       >
         Beneficios
       </h2>
-      <p className="mb-[38px]" style={{ fontSize: 18, lineHeight: "30.6px", fontWeight: 400, color: "#333" }}>
+      <p className="mb-[28px]" style={{ fontSize: 18, lineHeight: "30.6px", fontWeight: 400, color: "#333" }}>
         Facilitamos la toma de decisiones con datos ambientales precisos
       </p>
 
@@ -26,7 +26,7 @@ export function Beneficios() {
         {BENEFITS_ITEMS.map((b) => (
           <li
             key={b.title}
-            className="mb-[38px] w-full md:mr-[2%] md:w-[31%] md:[&:nth-child(3n)]:mr-0"
+            className="mb-[28px] w-full md:mr-[2%] md:w-[31%] md:[&:nth-child(3n)]:mr-0"
           >
             <div className="flex items-start gap-[15px]">
               <img

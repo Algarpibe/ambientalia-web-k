@@ -35,7 +35,7 @@ export function GaleriaEnsayos() {
       </h2>
 
       {/* Botón outline → PDF del estudio de co-ubicación completo */}
-      <div className="mb-[30px]">
+      <div className="mb-[30px] mt-[28px]">
         <OutlineButton href={CO_LOCATION_FULL_PDF}>
           Kunak AIR Pro: Estudio de campo de co-ubicación (completo)
         </OutlineButton>
@@ -103,31 +103,43 @@ export function GaleriaEnsayos() {
 
       {/* Resultado de las pruebas — H3 32px + lista a 2 columnas de PDFs */}
       <h3
-        className="pb-[10px] pt-[30px]"
+        className="mb-[14px] pb-[10px] pt-[30px]"
         style={{ fontSize: 32, lineHeight: "32px", fontWeight: 300, letterSpacing: "-0.5px", color: "#333" }}
       >
         Resultado de las pruebas
       </h3>
-      <ul className="list-none columns-2 p-0">
+      {/* QA 2026-07-26 (CDP): cada item lleva un CHIP circular 46×46 (borde 2px
+          azul, radius 30, 14px w700 azul) dentro del propio enlace, fila de 56px
+          (chip + mb10), enlace 18px/26 #333 con flecha →; ul pb 18. */}
+      {/* columns-2: el original rellena por COLUMNAS (izq CO·NO·NO₂·O₃). */}
+      <ul className="list-none gap-x-[18px] p-0 pb-[18px] sm:columns-2">
         {TRIALS_RESULTS.map((r) => (
-          <li key={r.label} className="mb-[6px] break-inside-avoid text-[18px] leading-[26px]">
+          <li key={r.label} className="mb-[10px] break-inside-avoid">
             <a
               href={r.href}
               target="_blank"
               rel="noopener"
-              className="text-[#333] no-underline hover:text-[#0075C9]"
+              className="group flex items-center gap-[10px] text-[18px] leading-[26px] text-[#333] no-underline hover:text-[#0075C9]"
             >
-              <strong className="font-bold">
-                {r.segs.map((s, i) => (s.sub ? <sub key={i}>{s.t}</sub> : <span key={i}>{s.t}</span>))}
-              </strong>{" "}
-              Estudio de campo en coubicación
+              <strong className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[30px] border-2 border-[#0075C9] bg-white text-center text-[14px] font-bold leading-[14px] text-[#0075C9]">
+                <span>
+                  {r.segs.map((s, i) => (s.sub ? <sub key={i}>{s.t}</sub> : <span key={i}>{s.t}</span>))}
+                </span>
+              </strong>
+              <span>
+                Estudio de campo en coubicación
+                <span className="ml-[4px] inline-block transition-transform duration-200 group-hover:translate-x-[4px]">
+                  →
+                </span>
+              </span>
             </a>
           </li>
         ))}
       </ul>
 
-      {/* CTA azul centrado */}
-      <div className="mt-[24px] flex justify-center">
+      {/* CTA azul alineado a la IZQUIERDA (el wrapper del original no centra
+          sobre la columna completa — QA 2026-07-26). */}
+      <div className="mb-[30px] mt-[28px]">
         <BlueButton href={PRECISION_HELP_HREF} external>
           ¿Cómo asegura Kunak la mejor precisión?
         </BlueButton>

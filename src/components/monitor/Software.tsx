@@ -16,7 +16,7 @@ import { SOFTWARE_PARAGRAPHS, SOFTWARE_MORE_HREF } from "@/lib/monitor";
 export function Software() {
   return (
     <div>
-      <BlockTitle>Software</BlockTitle>
+      <BlockTitle className="mb-[28px]">Software</BlockTitle>
 
       {/* pb 18px en todos menos el último (igual que el original) */}
       {SOFTWARE_PARAGRAPHS.map((segs, p) => (

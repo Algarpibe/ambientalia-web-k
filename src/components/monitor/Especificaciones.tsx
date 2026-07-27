@@ -19,8 +19,11 @@ export function Especificaciones() {
         Especificaciones
       </h2>
 
-      <div className="max-w-[880px] overflow-x-auto">
-        <div className="grid grid-cols-[minmax(120px,33%)_minmax(160px,67%)] overflow-hidden rounded-[10px] border-l border-t border-[#333]">
+      <div className="mt-[28px] max-w-[880px] overflow-x-auto">
+        {/* QA 2026-07-26 móvil: el original reparte ~35%/65% (la etiqueta llega a
+            truncarse); el minmax de 120px estrechaba la columna de valores y
+            duplicaba wraps (+137px). Desktop conserva el reparto verificado. */}
+        <div className="grid grid-cols-[35%_65%] overflow-hidden rounded-[10px] border-l border-t border-[#333] md:grid-cols-[minmax(120px,33%)_minmax(160px,67%)]">
           {SPEC_ROWS.map((row) => (
             <div key={row.label} className="group/row contents">
               <Cell>{row.label}</Cell>
@@ -48,7 +51,9 @@ export function Especificaciones() {
  *  fondo blanco, texto 15px/1.4 #333, y hover de fila #eee solo ≥md. */
 function Cell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-[35px] flex-col justify-center border-b border-r border-[#333] bg-white px-[20px] py-[8px] text-[15px] leading-[1.4] text-[#333] md:group-hover/row:bg-[#eee]">
+    // QA 2026-07-26: en filas altas (Autonomía, Conectores) el original alinea
+    // el contenido ARRIBA, no centrado.
+    <div className="flex min-h-[35px] flex-col justify-start border-b border-r border-[#333] bg-white px-[12px] py-[8px] text-[15px] leading-[1.4] text-[#333] md:px-[20px] md:group-hover/row:bg-[#eee]">
       {children}
     </div>
   );

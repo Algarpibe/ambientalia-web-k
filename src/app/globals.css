@@ -372,6 +372,12 @@
    tiene que ir en la MISMA capa (allí decide la especificidad: 2 clases > 1).
    Spec: docs/research/monitor-calidad-aire/components/reutilizables.spec.md §2a */
 @layer utilities {
+  /* QA 2026-07-26: en el original (body.single-solutions) el slide móvil mide
+     300px — no los 450/500 de la home. */
+  .sectoresSwiper--embedded .swiper-slide,
+  .sectoresSwiper--embedded .sector-imagen-wrap {
+    height: 300px !important;
+  }
   @media (min-width: 981px) {
     .sectoresSwiper--embedded .swiper-slide,
     .sectoresSwiper--embedded .sector-imagen-wrap {
@@ -379,3 +385,4 @@
     }
   }
 }
+

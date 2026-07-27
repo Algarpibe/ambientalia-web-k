@@ -40,7 +40,7 @@ export function CtaGuiaProyecto() {
     <>
       {/* ---------- Banner promo (dentro de la columna 3/4) ---------- */}
       <div
-        className="mb-[35px] bg-cover bg-center px-[60px] py-[40px] text-center"
+        className="mb-[35px] bg-cover bg-center px-[40px] py-[40px] text-center md:px-[60px]"
         style={{
           backgroundImage: `url('${GUIA_IMAGE}')`,
           backgroundColor: "rgba(0, 0, 0, 0.33)",

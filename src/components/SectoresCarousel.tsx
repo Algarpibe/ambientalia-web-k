@@ -84,7 +84,14 @@ export function SectoresCarousel({
       </Swiper>
 
       {/* Pagination dots — pill-shaped 2rem × 7px */}
-      <div className="sectores-dots mt-6 flex items-center justify-center gap-2" />
+      {/* QA 2026-07-26 (embedded): el original pinta los dots a bottom:10 del
+          swiper (~28px bajo los slides) — se remontan al hueco del pb-48. */}
+      <div
+        className={
+          "sectores-dots flex items-center justify-center gap-2 " +
+          (embedded ? "-mt-[24px]" : "mt-6")
+        }
+      />
 
       <style jsx global>{`
         .sectoresSwiper .swiper-wrapper {

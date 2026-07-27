@@ -15,19 +15,38 @@ import { SectionTitle, BlueButton } from "./SectionRow";
 export function UltimosArticulos({
   title = "Últimos artículos",
   posts = ARTICLES,
+  variant = "home",
 }: {
   title?: string;
   posts?: BlogPost[];
+  /** "monitor" = /monitor-calidad-aire (QA 2026-07-26): sección SIN watermark
+   *  (et_pb_section_4 bg none), fila Divi 80%/máx 1380 con pt 140 y remate
+   *  pb 64 + mb 30 del botón. La home no cambia. */
+  variant?: "home" | "monitor";
 } = {}) {
+  const monitor = variant === "monitor";
   return (
     <section
-      className="relative bg-white bg-no-repeat pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]"
-      style={{
-        backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
-        backgroundPosition: "0% 0%",
-      }}
+      className={
+        "relative bg-white bg-no-repeat " +
+        (monitor ? "" : "pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]")
+      }
+      style={
+        monitor
+          ? undefined
+          : {
+              backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
+              backgroundPosition: "0% 0%",
+            }
+      }
     >
-      <div className="mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]">
+      <div
+        className={
+          monitor
+            ? "mx-auto w-[80%] max-w-[1380px] pb-[49px] pt-[140px] md:pb-[94px]"
+            : "mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]"
+        }
+      >
         <div className="relative">
           <img
             src="/images/uploads/2022/12/punteado.svg"
@@ -42,7 +61,12 @@ export function UltimosArticulos({
         </div>
 
         {/* −10 compensa el pb-[10px] que ahora lleva SectionTitle (regla Divi h2) */}
-        <div className="mt-[30px] grid gap-x-[40px] gap-y-[32px] sm:grid-cols-2 md:mt-[33px] md:gap-y-10 lg:grid-cols-3">
+        <div
+          className={
+            (monitor ? "mt-[28px] " : "mt-[30px] md:mt-[33px] ") +
+            "grid gap-x-[40px] gap-y-[32px] sm:grid-cols-2 md:gap-y-10 lg:grid-cols-3"
+          }
+        >
           {posts.map((post) => (
             <article key={post.href}>
               <a
@@ -65,7 +89,7 @@ export function UltimosArticulos({
           ))}
         </div>
 
-        <div className="mt-4 flex justify-end md:mt-[80px]">
+        <div className={monitor ? "mt-4 flex justify-end md:mt-[46px]" : "mt-4 flex justify-end md:mt-[80px]"}>
           <BlueButton href="https://kunakair.com/es/recursos/guias/">
             Amplia tus conocimientos con nuestras guías
           </BlueButton>

@@ -48,10 +48,13 @@ function InlineLink({ href, children }: { href: string; children: ReactNode }) {
 
 export function InformacionProducto() {
   return (
-    <section className="bg-white py-[30px]">
-      <div className="mx-auto flex w-[85%] max-w-[1080px] flex-col gap-[30px] md:flex-row md:gap-[4%]">
+    /* Geometría Divi medida (QA 2026-07-26): sección pb 4vw (50 móvil); fila
+       80%/máx 1380 con py 2vw (pt 30 móvil); columnas 29.6667% / 64.833% con
+       gutter 5.5%. */
+    <section className="bg-white pb-[50px] lg:pb-[4vw]">
+      <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[2vw] pt-[30px] md:flex-row md:gap-[5.5%] lg:py-[2vw]">
         {/* ---------- Columna izquierda (1/3) ---------- */}
-        <div className="relative w-full md:w-[30%] md:shrink-0">
+        <div className="relative w-full md:w-[29.6667%] md:shrink-0">
           <img
             src="/images/uploads/2022/12/punteado.svg"
             alt=""
@@ -68,10 +71,12 @@ export function InformacionProducto() {
             Información del producto
           </p>
 
+          {/* QA 2026-07-26: el original OCULTA esta imagen en móvil (columna
+              izquierda medida: 308px, solo título + botones). */}
           <img
             src="/images/uploads/2022/12/kunak_air_pro_completo-isolated-2.png"
             alt="Kunak AIR Pro instalado en mástil con panel solar"
-            className="my-[20px] h-auto w-full max-w-[220px] object-contain max-md:mx-auto"
+            className="my-[20px] hidden h-auto w-full max-w-[220px] object-contain md:block"
           />
 
           <div className="flex flex-col items-start gap-[16px] max-md:items-center">
@@ -81,8 +86,8 @@ export function InformacionProducto() {
           </div>
         </div>
 
-        {/* ---------- Columna derecha (2/3) ---------- */}
-        <div className="w-full space-y-[22px] md:w-[66%]">
+        {/* ---------- Columna derecha (2/3) — ritmo Divi: módulos con mb 28 ---------- */}
+        <div className="w-full space-y-[28px] md:w-[64.833%]">
           <H3Blue>Te mereces una buena calidad del aire.</H3Blue>
 
           <BodyP>
@@ -120,14 +125,19 @@ export function InformacionProducto() {
             sensores en cualquier momento para adaptarlos a las necesidades de tu proyecto.
           </BodyP>
 
-          {/* Checklist de 6 iconos — grid 2 col */}
-          <ul className="grid list-none grid-cols-1 gap-x-[2%] gap-y-[18px] p-0 sm:grid-cols-2">
+          {/* Checklist de 6 iconos. QA 2026-07-26 (CDP): blurbs Divi de 199px en
+              3 columnas (2 en móvil, 150px), icono 50×50 CENTRADO arriba y
+              etiqueta h4 18px/21.6 w300 centrada con pb10; item mb 28. */}
+          <ul className="grid list-none grid-cols-2 gap-x-[6px] p-0 md:grid-cols-3 md:gap-x-[20px]">
             {CHECKLIST_ITEMS.map((c) => (
-              <li key={c.label} className="flex items-center gap-3">
-                <img src={c.icon} alt="" aria-hidden className="h-[40px] w-[40px] shrink-0 object-contain" />
-                <span style={{ fontSize: 18, lineHeight: "21.6px", fontWeight: 300, color: "#333" }}>
+              <li key={c.label} className="mb-[28px] text-center">
+                <img src={c.icon} alt="" aria-hidden className="mx-auto mb-[20px] h-[50px] w-[50px] object-contain" />
+                <h4
+                  className="pb-[10px] text-center"
+                  style={{ fontSize: 18, lineHeight: "21.6px", fontWeight: 300, color: "#333" }}
+                >
                   {c.label}
-                </span>
+                </h4>
               </li>
             ))}
           </ul>
@@ -145,8 +155,10 @@ export function InformacionProducto() {
               Las estaciones Kunak AIR ofrecen niveles de rendimiento cercanos a los{" "}
               <Hi>estándares de referencia</Hi>, proporcionando datos fiables y precisos según la{" "}
               <Hi>norma europea CEN/TS 17660</Hi> para alcanzar los DQO de Clase 1 y acorde a los protocolos,
-              métricas y valores objetivo <Hi>EPA/600/R-20/279</Hi> para O3, <Hi>EPA/600/R-23/14</Hi> para
-              NO2, CO y SO2, <Hi>EPA/600/R-20/280</Hi> para PM2,5 y <Hi>EPA/600/R-23/145</Hi> para PM10.
+              métricas y valores objetivo <Hi>EPA/600/R-20/279</Hi> para O<sub>3</sub>,{" "}
+              <Hi>EPA/600/R-23/14</Hi> para NO<sub>2</sub>, CO y SO<sub>2</sub>,{" "}
+              <Hi>EPA/600/R-20/280</Hi> para PM<sub>2,5</sub> y <Hi>EPA/600/R-23/145</Hi> para PM
+              <sub>10</sub>.
             </BodyP>
             <BodyP className="mt-[15px]">
               Además, los datos son trazables a estándares internacionales reconocidos (
@@ -170,33 +182,29 @@ export function InformacionProducto() {
             Nuestra solución ha sido testada por los principales expertos en calidad del aire del mundo.
           </BodyP>
 
-          {/* 2ª fila de logos validadores */}
-          <div className="flex flex-wrap items-center gap-x-[4%] gap-y-[22px] sm:gap-x-[26px]">
-            {VALIDATOR_LOGOS.map((v) => (
-              <a
-                key={v.title}
-                href={v.href}
-                target="_blank"
-                rel="noopener"
-                title={v.title}
-                className="flex w-[48%] items-center justify-center sm:w-auto sm:justify-start"
-              >
-                <img
-                  src={v.src}
-                  alt={v.title}
-                  className="h-[52px] w-auto max-w-full object-contain"
-                  style={v.width ? { width: v.width } : undefined}
-                />
-              </a>
-            ))}
+          {/* 2ª fila de logos validadores. QA 2026-07-26: versiones CUADRADAS —
+              desktop 6 en fila a 94px con gap 20; móvil 2 columnas con tamaños
+              por logo (EPA 120 · MCERTS/AIRPARIF 100 · AQ-SPEC 150 · resto 100). */}
+          <div className="grid grid-cols-2 items-center justify-items-center gap-y-[30px] sm:flex sm:flex-nowrap sm:justify-start sm:gap-x-[19px] sm:gap-y-0">
+            {VALIDATOR_LOGOS.map((v, i) => {
+              const mobile = [120, 100, 100, 150, 100, 100][i] ?? 100;
+              return (
+                <a key={v.title} href={v.href} target="_blank" rel="noopener" title={v.title}>
+                  <img
+                    src={v.src}
+                    alt={v.title}
+                    className="aspect-square w-auto object-contain sm:!h-[94px]"
+                    style={{ height: mobile }}
+                  />
+                </a>
+              );
+            })}
           </div>
 
           {/* Grid de 16 chips de contaminantes */}
           <div className="clear-both pt-[10px]">
-            <h3
-              className="pb-[17px]"
-              style={{ fontSize: 37, lineHeight: "37px", fontWeight: 300, color: "#0075C9", letterSpacing: "-0.5px" }}
-            >
+            {/* QA 2026-07-26: es un H3 de 20px/24 w700 #333 (no la escala azul 37). */}
+            <h3 className="pb-[17px]" style={{ fontSize: 20, lineHeight: "24px", fontWeight: 700, color: "#333" }}>
               La gama de contaminantes más completa
             </h3>
             <ul className="flex list-none flex-wrap gap-x-[8px] gap-y-[10px] p-0">

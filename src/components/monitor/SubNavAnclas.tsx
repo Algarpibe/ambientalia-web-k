@@ -54,18 +54,21 @@ export function SubNavAnclas() {
   return (
     <aside
       className={
-        "columna-lista-anclas w-full md:w-[25%] md:shrink-0 " +
+        // QA 2026-07-26: columna Divi 1/4 = 20.875% con pt 32 en desktop.
+        "columna-lista-anclas w-full md:w-[20.875%] md:shrink-0 md:pt-[32px] " +
         // `md:self-start` es imprescindible: por defecto el flex item se estira
         // (align-items:stretch) a la altura completa de la fila (~5300px) y un
         // sticky tan alto como su contenedor no llega a pegarse nunca.
         "md:self-start " +
         // Desktop: barra lateral sticky. Móvil: barra horizontal gris bajo el header.
-        "md:sticky md:top-[70px] max-md:sticky max-md:top-[60px] max-md:z-[2] max-md:bg-[#eee] max-md:py-2"
+        "md:sticky md:top-[70px] max-md:sticky max-md:top-[60px] max-md:z-[2] max-md:bg-[#f4f4f4] max-md:py-2"
       }
     >
-      {/* Caja menú de anclas — solo desktop */}
-      <div className="hidden w-[172px] rounded-[10px] border-[0.67px] border-[#333] px-4 pb-0 pt-4 md:block">
-        <ul className="m-0 list-none p-0">
+      {/* Caja menú de anclas — solo desktop. QA 2026-07-26: módulo `menu-anclas`
+          a ancho de columna, border 1px #333 radius 10, p 16/16/0 + ul pb16,
+          mb 27px; cada enlace lleva la flecha `ico-arrow.svg` 30×30 arriba-dcha. */}
+      <div className="mb-[27px] hidden w-full rounded-[10px] border border-[#333] px-4 pb-0 pt-4 md:block">
+        <ul className="m-0 list-none p-0 pb-[16px]">
           {ANCHOR_LINKS.map((a) => {
             const isActive = active === a.id;
             return (
@@ -75,9 +78,15 @@ export function SubNavAnclas() {
                   href={`#${a.id}`}
                   onClick={(e) => onAnchorClick(e, a.id)}
                   className={
-                    "block py-[2px] text-[16px] font-extrabold leading-[26px] transition-colors " +
+                    "block py-[2px] pr-[30px] text-[16px] font-extrabold leading-[26px] transition-colors " +
                     (isActive ? "text-[#0075C9]" : "text-[#BBB] hover:text-[#0075C9]")
                   }
+                  style={{
+                    backgroundImage: "url('/images/theme/ico-arrow.svg')",
+                    backgroundPosition: "right top",
+                    backgroundSize: "30px 30px",
+                    backgroundRepeat: "no-repeat",
+                  }}
                 >
                   {a.label}
                 </a>
@@ -88,7 +97,7 @@ export function SubNavAnclas() {
       </div>
 
       {/* 3 CTAs — apilados en desktop, barra horizontal en móvil */}
-      <div className="mt-0 flex flex-row flex-wrap justify-center gap-2 md:mt-6 md:w-[172px] md:flex-col md:items-start md:gap-3">
+      <div className="mt-0 flex flex-row flex-wrap justify-center gap-2 md:mt-0 md:w-full md:flex-col md:items-start md:gap-[14px]">
         <OutlineButton href={DATASHEET_PDF}>Descargar ficha técnica</OutlineButton>
         <BlueButton href={CONTACT_HREF}>Solicita más información</BlueButton>
         <BlueButton href={CATALOG_HREF}>Descarga el catálogo</BlueButton>

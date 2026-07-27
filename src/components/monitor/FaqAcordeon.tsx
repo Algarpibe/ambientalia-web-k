@@ -59,10 +59,11 @@ export function FaqAcordeon() {
       className="bg-white bg-left-top bg-no-repeat"
       style={{ backgroundImage: "url('/images/theme/recurso-k-fondo.svg')" }}
     >
-      {/* Divi: sección 4% arriba/abajo + fila pt 20 / pb 5% */}
-      <div className="mx-auto flex w-[85%] max-w-[1080px] flex-col gap-[30px] pb-[104px] pt-[70px] md:flex-row md:gap-[3%]">
+      {/* QA 2026-07-26 (CDP): sección py 4vw (50 móvil) + fila pt 20 / pb 64
+          (19.5 móvil); fila 80%/máx 1380, columnas 1/4-3/4 con gutter 5.5%. */}
+      <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[70px] pt-[70px] md:flex-row md:gap-[5.5%] lg:pb-[calc(4vw+64px)] lg:pt-[calc(4vw+20px)]">
         {/* ---------- Columna izquierda (1/4) ---------- */}
-        <div className="relative w-full md:w-[25%] md:shrink-0">
+        <div className="relative w-full md:w-[20.875%] md:shrink-0">
           <img
             src="/images/uploads/2022/12/punteado.svg"
             alt=""
@@ -75,14 +76,16 @@ export function FaqAcordeon() {
           <SectionTitle>Preguntas frecuentes</SectionTitle>
         </div>
 
-        {/* ---------- Columna derecha (3/4) — los 19 toggles ---------- */}
-        <div className="w-full min-w-0 md:flex-1">
+        {/* ---------- Columna derecha (3/4) — los 19 toggles ----------
+            QA 2026-07-26: cada toggle lleva border ARRIBA y ABAJO (1px 0px) y el
+            módulo remata con mb 30. */}
+        <div className="w-full min-w-0 pb-[30px] md:flex-1">
           {FAQ_ITEMS.map((item, i) => {
             const isOpen = open.has(i);
             return (
               <div
                 key={item.q}
-                className="border-b border-[#d9d9d9] px-[8px] py-[17px] transition-all duration-200 first:border-t first:border-t-[#d9d9d9] hover:bg-[#f4f4f4]"
+                className="border-y border-[#d9d9d9] px-[8px] py-[17px] transition-all duration-200 hover:bg-[#f4f4f4]"
               >
                 <h3 className="relative">
                   <button

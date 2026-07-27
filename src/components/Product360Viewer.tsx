@@ -200,11 +200,13 @@ export function Product360Viewer({
       {/* Hint pill "arrastrar para rotar" — se oculta al primer arrastre. */}
       {ready && showHint ? (
         <div
-          className="pointer-events-none absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+          className="pointer-events-none absolute left-1/2 top-[60%] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
           style={{ zIndex: 200 }}
         >
+          {/* QA 2026-07-26: la píldora del original mide 116×35 (lh 30.6 heredado)
+              y se pinta al ~60% de la altura de la imagen, no centrada. */}
           <span
-            className="whitespace-nowrap rounded-[0.5em] bg-black/20 px-[0.5em] py-[0.2em] text-center text-[12px] leading-none"
+            className="whitespace-nowrap rounded-[6px] bg-black/20 px-[6px] py-[2.4px] text-center text-[12px] leading-[30.6px]"
             style={{ color: "rgb(243, 237, 237)" }}
           >
             {hint}

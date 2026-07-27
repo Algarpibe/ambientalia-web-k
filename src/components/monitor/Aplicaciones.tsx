@@ -19,16 +19,12 @@ export function Aplicaciones() {
 
       <SectoresCarousel variant="embedded" />
 
-      {/* et_pb_text_19: no es un h3, es un <p> azul a la escala de 37px */}
+      {/* et_pb_text_19: no es un h3, es un <p> azul a la escala de 37px —
+          también en móvil (verificado en captura 390: 4 líneas grandes; ojo, hay
+          otro "Facilitamos…" a 18px en Beneficios que confunde a las sondas). */}
       <p
-        className="my-[20px]"
-        style={{
-          fontSize: 37,
-          lineHeight: "37px",
-          fontWeight: 300,
-          letterSpacing: "-0.5px",
-          color: "#0075C9",
-        }}
+        className="my-[20px] text-[37px] leading-[37px]"
+        style={{ fontWeight: 300, letterSpacing: "-0.5px", color: "#0075C9" }}
       >
         {APLICACIONES_CLAIM}
       </p>

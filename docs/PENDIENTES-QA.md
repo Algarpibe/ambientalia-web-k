@@ -1,5 +1,76 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## /monitor-calidad-aire — QA visual final (2026-07-26)
+
+> Comparación CDP por secciones (puppeteer-core + Chrome del sistema, perfil
+> limpio, Cookiebot bloqueado) a **1280** y **390 real** (device metrics), clips
+> lado a lado + computed styles. Referencias del día: original desktop
+> **12927** / móvil **22363**. Clon tras la tanda: **12489 (−438)** / **21546
+> (−817)**. Sondas reutilizables en el scratchpad de la sesión (`qa/snap.mjs`
+> captura+clips por sección/ancla, `qa/probe*.mjs` computed, `qa/hover2.mjs`
+> hover por ratón real — ojo: en el original el label es `p.lista-titulo`, el
+> primer `a` del li es el "Ver más" del panel oculto con rect 0×0).
+
+### Corregido en la tanda (desktop y móvil salvo indicación)
+
+- **Cabecera**: el original sirve `cabecera-construccion.jpg` (no
+  cabecera-puerto) y la banda mide **137px móvil / 177px desktop** (era 220/300).
+- **Retícula**: TODAS las filas de esta página son Divi **80% máx 1380** (no
+  85%/1080), gutter 5.5%, cols 47.25 · 29.6667/64.833 · 20.875/73.625; secciones
+  py 4vw (50 móvil), filas pt 2vw (30 móvil). Aplicado en breadcrumb, hero,
+  fila 2, S3, artículos y FAQ. Esto arregló de rebote todos los wraps (chips
+  9/fila, blurbs, "Preguntas frecuente-s"…).
+- **S2 CtaBanner**: el slider SÍ es `bg_layout_dark` → **botón BLANCO** con bg
+  rgba(0,0,0,.15) (la spec §1 decía outline #333 — corregida aquí), desc py 5%
+  desktop (la home mantiene sus 74px) y párrafo **14px/22.4 en móvil**. Exacto:
+  400/400 d · 376/377 m.
+- **Fila 2**: checklist en blurbs **3×2 centrados** (icono 50 arriba, h4 18/21.6
+  w300, item 199, mb28; móvil 2×150), "La gama de contaminantes más completa"
+  es **H3 20px/24 w700 #333** (no azul 37), subíndices añadidos en el recuadro
+  azul 2 (O₃/NO₂/SO₂/PM₂,₅/PM₁₀), logos validadores con los SVG **cuadrados**
+  (hero: fila única 69/49; fila 2: 94px ×6 gap 19; móvil 2 col 90-150), y la
+  **imagen del mástil se OCULTA en móvil** (col izq original: 308px).
+- **Sub-nav anclas**: caja a ancho de columna con **flecha `ico-arrow.svg`
+  30×30** en cada ítem (bg del `a`, pr 30), ul pb16, mb 27, col pt 32; móvil
+  gris #f4f4f4.
+- **Aplicaciones**: slide embebido **300px en móvil** (no 450; regla en
+  globals), dots remontados a ~28px bajo los slides (solo embedded), banner-guía
+  px 40 en móvil. Móvil **+3 exacto**; frase azul 37px TAMBIÉN en móvil (hay un
+  segundo "Facilitamos…" a 18px en Beneficios que confunde sondas de texto).
+- **Ensayos**: lista de resultados con **chips circulares 46×46** (strong dentro
+  del enlace, borde 2px azul, 14px w700), filas de 56, relleno por **columnas**
+  (columns-2), flecha → al final del enlace y CTA azul **a la izquierda**.
+  Móvil −2.
+- **Especificaciones**: labels alineados ARRIBA en filas altas, gap título→tabla
+  28, y en móvil columnas **35/65 con padding de celda 12** (antes 50/50+40 →
+  +137 de wraps).
+- **Artículos y Guías**: variante `monitor` de UltimosArticulos — **sin
+  watermark K** (sección bg none), fila 80%, pt 140, CTA a +46 con remate
+  30+64.
+- **FAQ**: sección 4vw + fila pt20/pb64 (50/19.5 móvil), toggles con borde
+  arriba Y abajo, remate mb30. Desktop −2, móvil +9.
+- **Footer**: nueva prop `backgroundStrip` con la franja `footer-background`
+  (`cabecera-puerto-1.jpg`, 41/40px).
+- **Hover #power-packs (desktop)**: ✅ verificado por ratón real contra el
+  original — mismo comportamiento exacto (hover = preview con mouseenter
+  ~300ms, click = fija, mouseleave = vuelve al fijado; opacidades .3/1 y ⊖/⊕).
+- Home verificada sin regresión tras la tanda: móvil **19182 exacto**; desktop
+  por secciones idéntico (el hero es 100vh — depende del alto de viewport).
+
+### Pendientes (residuos anotados, por orden de magnitud)
+
+| # | Zona | Delta | Nota |
+|---|------|-------|------|
+| P1 | Footer TB (esta página) | −86 d / −293 m | El footer de /monitor-calidad-aire es OTRA plantilla TB con más aire que el de la home (links+legal 654/2013 vs 592/1761). Requiere tanda propia estilo B4 midiendo el template módulo a módulo. |
+| P2 | Header a <~1330px | visual | El menú compartido rompe "Descargar catálogo" a 2ª línea a 1280 (la home se verificó a 1418). El original sigue en una fila. Tocar `HeaderNav` exige re-verificar M4 (dropdowns) en la home. |
+| P3 | Fila 2 móvil | −209 | Ritmo de módulos móvil de la col derecha (space-y 28 vs mezcla Divi 18/30). Desktop quedó −90. |
+| P4 | Artículos y Guías | −55 d / −194 m | Alturas dependientes del CONTENIDO: los 3 posts van congelados (decisión §4) y el original los sortea — no comparable px a px. |
+| P5 | Sondas/Paquetes móvil | −94 / −43 | Acordeón inline `lista-contenido` algo compacto vs original. |
+| P6 | Especificaciones móvil | +74 | Wraps residuales de la tabla (original trunca labels con overflow). |
+| P7 | Chips fila 1 | 10 vs 9 | A 1280 el clon mete NMHC en la 1ª fila (geometría de chip idéntica; es el whitespace inline de li del original). |
+| P8 | Círculo "N" en capturas | N/A | Es el indicador DevTools de Next (el server corre `next dev`, no `next start` — nota de cabecera desactualizada). No existe en producción. |
+
+
 > Estado tras la Fase 5 (QA visual) del 2026-07-22, actualizado el 2026-07-23
 > tras cerrar A1 y A2. Comparación por capturas CDP full-page (viewport real
 > 1440×900 → ancho útil 1418px; móvil emulado 390×844) entre

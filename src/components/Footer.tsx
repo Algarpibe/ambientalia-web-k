@@ -35,7 +35,7 @@ const SOCIAL_ICON: Record<SocialLink["network"], typeof LinkedInIcon> = {
   youtube: YouTubeIcon,
 };
 
-export function Footer() {
+export function Footer({ backgroundStrip = false }: { backgroundStrip?: boolean } = {}) {
   return (
     <footer className="et-l--footer bg-white">
       {/* Ritmo móvil (<640) medido en vivo B4 (qa/b4-probe.mjs, 390 real):
@@ -178,6 +178,20 @@ export function Footer() {
         {/* Row 2 — empty spacer row from the original template */}
         <div aria-hidden style={{ height: 40 }} />
       </div>
+
+      {/* `footer-background` — franja foto del puerto (solo plantillas TB con
+          footer propio, p. ej. /monitor-calidad-aire). QA 2026-07-26: 41px
+          desktop / 40px móvil, cover 50% 0%. */}
+      {backgroundStrip ? (
+        <div
+          aria-hidden
+          className="h-[40px] w-full bg-cover lg:h-[41px]"
+          style={{
+            backgroundImage: "url('/images/uploads/2022/12/cabecera-puerto-1.jpg')",
+            backgroundPosition: "50% 0%",
+          }}
+        />
+      ) : null}
     </footer>
   );
 }
