@@ -78,7 +78,8 @@ export const PRODUCTS: NavProductItem[] = [
   },
   {
     label: "Kunak AIR Cloud",
-    href: "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+    // ruta local: esta página ya está clonada (src/app/software-de-medicion-calidad-del-aire)
+    href: "/software-de-medicion-calidad-del-aire",
     image: "/images/uploads/2023/01/air-cloud.jpg",
   },
   {

@@ -31,6 +31,7 @@ export function CtaBanner({
   body,
   headingHref,
   buttonVariant = "light",
+  padYClassName,
 }: {
   image: string;
   heading: string;
@@ -44,8 +45,16 @@ export function CtaBanner({
   /** Si se pasa, el título se pinta como enlace (blanco, sin subrayado). */
   headingHref?: string;
   buttonVariant?: "light" | "outline";
+  /**
+   * Padding vertical de la descripción en desktop. Por defecto se deriva de
+   * `body` (74px fijos sin párrafo — la home; 5% con él — S2 del monitor), pero
+   * el S2 de /software usa **5% sin párrafo** (medido: 55.65 a cw 1264.7), así
+   * que necesita decirlo explícitamente.
+   */
+  padYClassName?: string;
 }) {
   const isLeft = align === "left";
+  const padY = padYClassName ?? (body ? "md:py-[5%]" : "md:py-[74px]");
 
   return (
     <section className={"w-full bg-white " + bottomGapClassName}>
@@ -64,7 +73,8 @@ export function CtaBanner({
         <div
           className={
             "mx-auto max-w-[1380px] pb-[51px] pt-[34px] text-left " +
-            (body ? "md:py-[5%] " : "md:py-[74px] ") +
+            padY +
+            " " +
             (isLeft ? "min-[981px]:pr-[31%]" : "md:pl-[49%]")
           }
         >

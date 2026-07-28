@@ -98,9 +98,8 @@ export function InformacionProducto() {
           <BodyP>
             Todos los datos recogidos se pueden visualizar y analizar en cualquier momento y lugar a través
             de la plataforma web{" "}
-            <InlineLink href="https://kunakair.com/es/software-de-medicion-calidad-del-aire/">
-              Kunak AIR Cloud
-            </InlineLink>
+            {/* ruta local: esta página ya está clonada */}
+            <InlineLink href="/software-de-medicion-calidad-del-aire">Kunak AIR Cloud</InlineLink>
             .
           </BodyP>
 

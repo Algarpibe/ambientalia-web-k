@@ -1,3 +1,4 @@
+import type { CaseStudy } from "@/types/kunak";
 import { PROJECTS } from "@/lib/projects";
 import { SectionTitle, BlockTitle, OutlineButton } from "./SectionRow";
 
@@ -11,17 +12,24 @@ import { SectionTitle, BlockTitle, OutlineButton } from "./SectionRow";
  * mismas 3 tarjetas, pero dentro de la columna 3/4 (sin sección propia ni
  * punteado), con el título a la escala de 37px y el CTA alineado a la
  * izquierda. Spec: …/monitor-calidad-aire/components/reutilizables.spec.md §3
+ *
+ * `posts` permite pasar otro juego de casos (misma prop que `UltimosArticulos`).
+ * Hoy las 3 páginas sirven los mismos 3 —verificado en el DOM del original—,
+ * pero cada página guarda su lista en su propio `lib/*.ts`, así que el
+ * componente no debe cablear `PROJECTS`.
  */
 export function UltimosProyectos({
   title = "Últimos proyectos",
   ctaLabel = "Ver todos los casos de éxito",
   ctaHref = "https://kunakair.com/es/casos-de-exito/",
   embedded = false,
+  posts = PROJECTS,
 }: {
   title?: string;
   ctaLabel?: string;
   ctaHref?: string;
   embedded?: boolean;
+  posts?: CaseStudy[];
 } = {}) {
   const cards = (
     <>
@@ -31,7 +39,7 @@ export function UltimosProyectos({
           (embedded ? "mt-0" : "mt-[43px]")
         }
       >
-          {PROJECTS.map((c) => (
+          {posts.map((c) => (
             <article key={c.href} className="flex flex-col">
               <div className="aspect-[4/2.7] overflow-hidden rounded-[10px]">
                 <a href={c.href} className="group block h-full w-full" aria-label={c.title}>

@@ -450,3 +450,116 @@ esté explicado, cualquier ajuste será prueba y error.
   a **11416** del original. Ese −101 lo cubren A2 (−47.7) y A3 (−55), que
   suman −102.7: **no queda diferencia sin atribuir**. Los interiores de las 11
   fichas ya coincidían al píxel.
+
+## /software-de-medicion-calidad-del-aire — QA de construcción (2026-07-27)
+
+> Medido con puppeteer-core sobre el Chrome del sistema (headless, perfil
+> limpio, Cookiebot bloqueado, `--hide-scrollbars`, imágenes perezosas forzadas
+> a `eager` + pase de scroll) a **1280×900** y **390×844 reales**
+> (`Emulation.setDeviceMetricsOverride`). Sondas en el scratchpad de la sesión:
+> `m390.mjs` (bloques), `m390b.mjs` (anclas verticales), `m390c.mjs`
+> (tipografía de la columna 1/3), `m390d.mjs` (ritmo móvil), `shot.mjs`.
+> La página **nace con A3 aplicado**, así que no hereda el defecto de los h2.
+
+### Desktop 1280 — anclas verticales (clon vs original)
+
+| Ancla | Clon | Original | Δ |
+|---|---|---|---|
+| kicker "Kunak AIR Cloud" | 303.8 | 303.3 | +0.5 |
+| h1 | 363.8 | 363.3 | +0.5 |
+| h2 del hero | 434.2 | 434.1 | +0.1 |
+| claim azul | 670.4 | 670.4 | **0** |
+| "Información del producto" | 965.8 | 966.5 | −0.7 |
+| h2 azul 1 | 985.8 | 986.5 | −0.7 |
+| "Características:" | 1589.7 | 1592.4 | −2.7 |
+| h2 azul 2 | 1945.5 | 1948.9 | −3.4 |
+| párrafo de cierre | 2621.5 | 2631.3 | −9.8 |
+| h2 Beneficios | 3219 | 3227.2 | −8.2 |
+| h2 Herramientas | 4319.8 | 4331.5 | −11.7 |
+| h2 Casos de éxito | 8051.5 | 8062.9 | −11.4 |
+| h2 Artículos y Guías | 8848.4 | 8848.3 | **+0.1** |
+| h2 Preguntas frecuentes | 9543.9 | 9625.7 | −81.8 |
+| **Altura de documento** | **11579** | **11705** | **−126** |
+
+El −126 está **atribuido por completo**: −81.8 es P4 (los 3 posts van
+congelados y el original los sortea; los titulares envuelven distinto) y el
+resto es el remate del footer ya anotado. Los −9…−12 intermedios son el strut
+de los `<span>` de 17pt del original (sus módulos miden 31.9/78.9 donde el clon
+da 30.6/77.6): sub-2px por módulo, no se fuerza.
+
+Coinciden **al píxel**: carrusel 655.9×500 con borde 22 #eee, radius 32 y
+sombra `0 0 5px`; los 9 puntos en x 738.7…874.7 (paso 17); las flechas en
+526.3/1046.2 a 48×48; tarjeta de herramienta 350.1×421.8 con captura
+350.1×233.4; blurb de beneficio 744.9×82.6 con icono 40 y gap 15; bloque de
+las 6 características 285.2 de alto; caja de anclas 211.2×154.3.
+
+### Móvil 390 — anclas verticales
+
+| Ancla | Clon | Original | Δ |
+|---|---|---|---|
+| kicker | 267 | 266.6 | +0.4 |
+| h1 | 309 | 308.6 | +0.4 |
+| h2 del hero | 402.4 | 400.8 | +1.6 |
+| "Información del producto" | 1214.7 | 1224.6 | −9.9 |
+| h2 azul 1 | 1438.4 | 1430.5 | +7.9 |
+| h2 azul 2 | 3457 | 3434.1 | +22.9 |
+| h2 Beneficios | 5120.9 | 5081.4 | +39.5 |
+| h2 Herramientas | 6978.2 | 6960.6 | +17.6 |
+| h2 Casos de éxito | 13852.8 | 13837.5 | +15.3 |
+| h2 Artículos y Guías | 15407.8 | 15366.8 | +41 |
+| h2 Preguntas frecuentes | 16743.6 | 16870 | −126.4 |
+| **Altura de documento** | **20757** | **20916** | **−159** |
+
+Sin scroll horizontal (`scrollWidth == clientWidth == 390`). Interiores
+idénticos al píxel: carrusel 312×500, tarjetas 312×396.4 y 312×365.8, blurb de
+beneficio 312×148.4, h2 del hero 35px/228.8. El −159 es, otra vez, P4
+(artículos→FAQ: −167).
+
+**Cuatro reglas móviles del original que hubo que descubrir midiendo** (todas
+aplicadas; sin ellas el clon salía +212 en vez de −159):
+
+1. El **kicker baja a 35px/42** en ≤767 (a 50px "Kunak AIR Cloud" envuelve a 2
+   líneas y el hero crece 78px).
+2. **"Información del producto" baja a 35px/43.75** (misma regla que los h2).
+3. La imagen **`kunak-cloud-dispositivos.png` se OCULTA en móvil**
+   (`display: none` medido), igual que el mástil de /monitor-calidad-aire.
+4. Las filas Divi usan **30px fijos** de padding y de margin-bottom en móvil,
+   no el 2% del ancho; la fila de S3 usa **50px** de padding superior y los 2
+   CTAs de la columna 1/4 se apilan con **44.4px** entre ellos.
+
+### Comportamientos verificados en vivo
+
+- **Autoplay del carrusel**: 6000 ms por diapositiva (5 s de `et_slider_speed_5000`
+  + 1 s de fundido), bucle infinito, **fundido cruzado** sin desplazamiento
+  horizontal. Corrige la estimación de "~3,5 s" de `BEHAVIORS.md` §1, que
+  arrancó a mitad de ciclo.
+- **Flechas**: invisibles en reposo (`opacity: 0`, `left/right: -22px`) y
+  visibles al pasar el ratón (`opacity: 1`, 22px), transición 0.2s. En el
+  original el disparador es la clase `et_slider_hovered` que Divi añade **por
+  JS**: leer computed styles justo después de mover el ratón todavía devuelve
+  `opacity: 0`. Trampa de método, anotada también en la spec.
+- **Lightbox de vídeo**: abre `youtube.com/embed/sRLe65Enlbs`, con
+  `aria-modal`, `body { overflow: hidden }` y cierre por ✕/Esc/clic fuera. La
+  URL se capturó abriendo el modal real del original: el plugin
+  *popups-for-divi* **extrae la sección `#video` del DOM** al cargar y la
+  reinyecta al pulsar, por eso no aparece en una lectura inicial.
+- **Scrollspy**: marca una sola ancla y en el mismo orden que el original
+  (`y=0` ninguna · 3500 Beneficios · 4500/6000 Herramientas · 8000/8600 Casos).
+  Ojo con la trampa de siempre: con la pestaña en segundo plano
+  (`document.visibilityState === "hidden"`) el rAF de `AnchorNav` no corre y el
+  scrollspy parece congelado; para medirlo hay que parchear `rAF` a
+  `setTimeout` **y descontar un paso de retardo** en la lectura, o usar ratón
+  real con la pestaña visible.
+- **FAQ**: 19 toggles, todos cerrados de inicio. **Artículos**: 3. **Casos**: 3
+  + CTA "Ver todos los casos".
+
+### Pendiente
+
+- **S1 · Residuo de −9 en la columna 2/3 a 1280.** Son 4 módulos que en el
+  original miden 1,3px más de alto por el strut de sus `<span>` de 17pt. No se
+  fuerza.
+- **P4 (heredado)**: los 3 posts de "Artículos y Guías" van congelados y el
+  original los sortea en cada carga — −81.8 a 1280 y −167 a 390. No es
+  comparable px a px.
+- **A2 (heredado)**: la franja de cabecera. Afecta igual que a las otras
+  páginas y sigue sin arreglarse por la decisión razonada de más arriba.

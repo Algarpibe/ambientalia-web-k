@@ -70,7 +70,8 @@ export const PRODUCTS_TABS: Product[] = [
       "Integración y envío de datos",
     ],
     image: "/images/uploads/2023/01/air-cloud.jpg",
-    href: "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+    // ruta local: esta página ya está clonada (src/app/software-de-medicion-calidad-del-aire)
+    href: "/software-de-medicion-calidad-del-aire",
   },
   {
     id: "kunak-api",

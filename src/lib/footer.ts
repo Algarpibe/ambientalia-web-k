@@ -15,7 +15,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Kunak AIR Pro", href: "/monitor-calidad-aire" },
       { label: "Kunak AIR Lite", href: `${BASE}/es/estacion-de-monitoreo-de-calidad-del-aire/` },
-      { label: "Kunak AIR Cloud", href: `${BASE}/es/software-de-medicion-calidad-del-aire/` },
+      { label: "Kunak AIR Cloud", href: "/software-de-medicion-calidad-del-aire" },
       { label: "Kunak API", href: `${BASE}/es/kunak-api/` },
       { label: "Cartuchos inteligentes", href: `${BASE}/es/sensor-de-calidad-del-aire/` },
       { label: "Accesorios", href: "/accesorios" },

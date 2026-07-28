@@ -46,7 +46,8 @@ export function HazVisible() {
             Súmate al cambio y empieza a medir de forma fiable la contaminación con los sensores de calidad del aire
             más precisos del mercado y toma mejores decisiones gracias al{" "}
             <a
-              href="https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+              // ruta local: esta página ya está clonada
+              href="/software-de-medicion-calidad-del-aire"
               className="text-[#333] hover:text-[#0075C9] hover:underline"
             >
               software de calidad del aire
