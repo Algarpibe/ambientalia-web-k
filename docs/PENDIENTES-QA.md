@@ -1016,3 +1016,121 @@ cambios es de maquetación, pero se volvió a medir.
    fixed` y sale del flujo. Para comparar alturas hay que usar **la misma sonda
    y el mismo estado de scroll** en el antes y el después, no dos sondas
    distintas.
+
+## /sectores/[slug] — QA de construcción (2026-07-28)
+
+> Primera **ruta anidada y dinámica** del proyecto:
+> `src/app/sectores/[slug]/page.tsx` con `generateStaticParams()` sobre
+> `SECTORES_PUBLICADOS` de `src/lib/sectores.ts`. Hoy solo Urbano; dar de alta
+> otro sector es añadir un `SectorPage` a esa lista, sin tocar código.
+> Medido con el arnés de siempre (puppeteer-core, Chrome del sistema, headless,
+> perfil limpio, Cookiebot bloqueado, `--hide-scrollbars`, lazy→eager + pase de
+> scroll) a **1440×900** y **390×844** reales. Sondas en el scratchpad:
+> `spec.mjs` (fichas de los 6 bloques), `cmp.mjs` (clon vs original),
+> `clon.mjs` (no regresión de las 5 páginas), `umbral.mjs`, `shots.mjs`.
+
+### Alturas y anclas
+
+| | original | clon | Δ |
+|---|---|---|---|
+| Documento @1440 | 6081 | **6122** | +41 |
+| Documento @390 | 10913 | **11064** | +151 |
+
+Sin scroll horizontal en ninguno de los dos (`scrollWidth == clientWidth`).
+
+Anclas verticales (Δ del clon contra el original):
+
+| Ancla | @1440 | @390 |
+|---|---|---|
+| h1 de la cabecera | **0** | **0** |
+| banda de clientes | **0** | **0** |
+| breadcrumb | **0** | **0** |
+| h2 del hero | **0** | **0** |
+| título del CTA de descarga | **0** | −8.4 |
+| h3 "Beneficios…" / "Aplicaciones…" | −8.6 | −8.5 |
+| claim azul | +5.4 | +5.5 |
+| h2 "Nuestras soluciones" | −8.7 | −8.5 |
+| h2 "Últimos proyectos" | −8.6 | −18.6 |
+| h2 "Artículos y Guías" | −24.8 | −82.5 |
+| footer | −73.8 | −141.4 |
+
+Y coinciden **al píxel** las cajas: h2 del hero 585.1×121 · h3 de listas
+468.1×175 · claim 560.1×148 · banda 1440×122 · panel de soluciones
+**780.2×500** · fila del h2 de proyectos 122.6.
+
+### Tres errores propios que costó encontrar (y cómo se vieron)
+
+1. **La retícula del sector es el 86%, no el 80%.** El recon anotó "80% máx
+   1380 (1238.4px a 1440)" — dos datos que no cuadran entre sí: 80% de 1440 son
+   1152. Medido a cuatro anchos (1280/1440/1600/1800 → 1100.8 · 1238.39 · 1376
+   · 1380) la fila es **86% con máximo 1380**, que entra a ~1605px. Corregido en
+   los 7 componentes, en la página y en las specs. Se vio porque las cajas del
+   h2 y del h3 salían ~41px estrechas.
+2. **`ProductosTabs` anidaba dos retículas.** Con `sinTitulo` seguía aplicando
+   su propia fila dentro de la fila del sector → panel de 671 en vez de 780.2.
+   Ahora en ese modo va a `w-full` y la fila la pone la página.
+3. **Un `style` inline no lo pisa una clase `md:`.** El fondo del CTA de
+   descarga iba en `style={{backgroundColor}}` y la caja salía **gris también
+   en desktop**, cuando ahí es blanca con borde. Movido a clases. De rebote
+   apareció el otro clásico: la regla global `p { color: #333 }` le gana a la
+   herencia, así que en móvil el texto del CTA salía gris sobre fondo oscuro —
+   el color va explícito en cada `<p>` (mismo tropiezo que M1 en la home).
+
+### Residuo: los interiores de las tarjetas (−74 @1440 / −141 @390)
+
+Todo el delta que queda está **después** de "Nuestras soluciones" y es de los
+interiores de `UltimosProyectos` y `UltimosArticulos`, que son **compartidos con
+la home, /monitor, /software y /kunak-api**:
+
+- ficha de caso **404.9** en el clon vs **421.1** en el original (−16.2);
+- ficha de artículo **395.6** vs **414.5** (−18.9).
+
+Desglosado: el `.case-cliente` del original va a `16px/**30.6**` y el clon usa
+`leading-[1.4]` (22.4) → −8.2; la foto lleva `margin-bottom: 4` que el clon no
+pone → −4; el resto son 2-4px de la caja de taxonomías. **No se toca**:
+corregirlo cambia la tarjeta en las cuatro páginas ya verificadas y eso pide su
+propia tanda con medición antes/después. Anotado aquí para que no se
+re-investigue.
+
+Lo que sí se ajustó, y solo para el sector, es el `margin-bottom: 40` de la
+ficha, que en el original cuenta **también cuando las 3 caben en una fila** (la
+rejilla mide ficha + 40); el `gap-y` del clon solo actúa entre filas.
+
+### Verificado en vivo
+
+- **Autoplay del CTA**: cambio de diapositiva cada **~6950 ms** medido en el
+  clon (original 7000). Fundido cruzado, 3 dots, flechas al hover.
+- **Rutas locales**: `Inicio → /` y `Ver más → /monitor-calidad-aire`. El resto
+  apunta al original porque no está clonado, con `target="_blank"` solo en los
+  dos que lo llevan (`Descargar informe` y `Ver todos los casos de éxito`).
+- **404** en un slug que no existe (`/sectores/no-existe`).
+
+### Sin regresión en las 4 páginas anteriores
+
+Se tocaron 5 componentes compartidos (`TrustBar`, `Footer`, `ProductosTabs`,
+`UltimosProyectos`, `UltimosArticulos`). Alturas de documento **idénticas** al
+baseline de K12/K13 en las 5 páginas y los 2 anchos:
+
+| | home | monitor | accesorios | software | api |
+|---|---|---|---|---|---|
+| @1440 | 11870 | 12410 | 10863 | 11711 | 5289 |
+| @390 | 19182 | 21854 | 21180 | 20844 | 9125 |
+
+Todas las variantes nuevas van cerradas por prop (`TrustBar variant`,
+`Footer stripImage`, `ProductosTabs sinTitulo`, `UltimosProyectos bare`,
+`UltimosArticulos variant="sectores"`), así que el camino por defecto de esas
+páginas no cambia.
+
+### Pendientes
+
+- **S1 · Interiores de tarjeta** (−16.2 caso / −18.9 artículo). Ver arriba.
+- **S2 · `ProductosTabs` en la home**: el original le da al panel
+  `height: 500px` y `margin-bottom: 32`; el clon va a 497.5 con `mb 0`. En el
+  sector se aplica (la lista de 3 ítems deja mandar al panel y sin los 500 el
+  bloque salía +79.5); en la home la lista de 5 lo enmascara y **se deja como
+  está** para no tocar una página verificada. Pendiente de su QA.
+- **S3 · `MapaProyectos` es un placeholder deliberado**: pinta titular, intro y
+  la lista de pines, no el mapa de Google (haría falta clave propia). Urbano no
+  lo usa; lo usarán Industria, Puertos y Minería.
+- **P4 (heredado)**: los 3 artículos van congelados y el original los sortea —
+  entre dos medidas del mismo día su footer se movió de 5487.2 a 5514.2.

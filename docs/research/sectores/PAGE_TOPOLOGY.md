@@ -35,7 +35,7 @@
   (3 niveles, el último sin enlace, `ol.kunak-breadcrumbs` con schema.org)
 - **Altura de documento**: **6081** a 1440 · **10913** a 390. Sin scroll
   horizontal en ninguno de los dos.
-- **Retícula**: fila Divi **80% máx 1380** (1238.4px a 1440) — la misma que
+- **Retícula**: fila Divi **86% máx 1380** (1238.4px a 1440). **NO es el 80%** de
   /monitor-calidad-aire, /software y /kunak-api. La única excepción es
   `banda-clientes`, que va al **95%** (1368px).
 - **Taxonomía asociada**: `https://kunakair.com/es/sector/urbano/` (es la que

@@ -22,43 +22,69 @@ import { CLIENT_LOGOS } from "@/lib/clients";
  *     1280: { slidesPerView: 6, spaceBetween: 50 },
  *   }
  */
-export function TrustBar() {
+export function TrustBar({ variant = "home" }: { variant?: "home" | "sectores" } = {}) {
+  /**
+   * `sectores` — la banda de las páginas de sector. Mismo shortcode y misma
+   * configuración de Swiper, pero **sin la columna del titular**: los logos
+   * ocupan la fila entera. Medido 2026-07-28 en el original a 1440 y 390:
+   *
+   * | | home | sector |
+   * |---|---|---|
+   * | Alto de sección | 153.2 | **122** |
+   * | Fila | 85% máx 1380 | **95%** sin máximo (1368 a 1440 · 370.5 a 390) |
+   * | `padding` de fila | `30 0 20` | **`20 0`** |
+   * | Titular | sí (col. 1/3) | **no** |
+   *
+   * Los 13 logos y la altura de 80px son idénticos en las dos.
+   */
+  const sectores = variant === "sectores";
+
   return (
     <section
       className="banda-clientes relative"
       style={{ backgroundColor: "#e4e5e5" }}
     >
       <div
-        className="mx-auto flex w-[85%] max-w-[1380px] flex-col items-center gap-8 md:flex-row"
-        style={{ paddingTop: 30, paddingBottom: 20, minHeight: 153 }}
+        className={
+          sectores
+            ? "mx-auto flex w-[95%] flex-col items-center md:flex-row"
+            : "mx-auto flex w-[85%] max-w-[1380px] flex-col items-center gap-8 md:flex-row"
+        }
+        style={
+          sectores
+            ? { paddingTop: 20, paddingBottom: 20, minHeight: 122 }
+            : { paddingTop: 30, paddingBottom: 20, minHeight: 153 }
+        }
       >
         {/* Column 1/3 — heading with the decorative dot pattern */}
-        <div className="relative w-full md:w-1/3">
-          <img
-            src="/images/uploads/2022/12/punteado.svg"
-            alt=""
-            aria-hidden
-            width={60}
-            height={22}
-            className="absolute z-[-1]"
-            style={{ top: -10, left: -65 }}
-          />
-          {/* Móvil 30px (spec: render ~28-30px; el clamp bajaba a 22 y apilaba
-              con poco aire — B2). Desktop mantiene el clamp verificado exacto. */}
-          <p
-            className="text-[30px] text-[#333] md:text-[clamp(22px,1.9vw,30px)]"
-            style={{
-              fontWeight: 300,
-              lineHeight: 1.25,
-              letterSpacing: "-0.5px",
-            }}
-          >
-            Con la confianza de empresas líderes
-          </p>
-        </div>
+        {sectores ? null : (
+          <div className="relative w-full md:w-1/3">
+            <img
+              src="/images/uploads/2022/12/punteado.svg"
+              alt=""
+              aria-hidden
+              width={60}
+              height={22}
+              className="absolute z-[-1]"
+              style={{ top: -10, left: -65 }}
+            />
+            {/* Móvil 30px (spec: render ~28-30px; el clamp bajaba a 22 y apilaba
+                con poco aire — B2). Desktop mantiene el clamp verificado exacto. */}
+            <p
+              className="text-[30px] text-[#333] md:text-[clamp(22px,1.9vw,30px)]"
+              style={{
+                fontWeight: 300,
+                lineHeight: 1.25,
+                letterSpacing: "-0.5px",
+              }}
+            >
+              Con la confianza de empresas líderes
+            </p>
+          </div>
+        )}
 
         {/* Column 2/3 — Swiper carousel */}
-        <div className="relative w-full md:w-2/3">
+        <div className={"relative w-full " + (sectores ? "" : "md:w-2/3")}>
           <Swiper
             className="clientesSwiper"
             modules={[Autoplay]}

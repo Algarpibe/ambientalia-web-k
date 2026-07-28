@@ -396,6 +396,23 @@ export const SECTOR_URBANO: SectorPage = {
   footerStripImage: "/images/uploads/2023/01/urban-1920.jpg",
 };
 
+/* ────────────────────── registro para la ruta dinámica ─────────────────── */
+
+/**
+ * Los sectores **poblados**. `src/app/sectores/[slug]/page.tsx` genera una ruta
+ * estática por cada entrada con `generateStaticParams()`, así que añadir un
+ * sector nuevo es añadir un `SectorPage` a esta lista — **sin tocar código**.
+ *
+ * Hoy solo Urbano. Los otros 7 están inventariados en `SECTORES_INDICE` con su
+ * URL del original; según se vayan poblando, pasan de allí a aquí y su `href`
+ * del índice se cambia por la ruta local.
+ */
+export const SECTORES_PUBLICADOS: SectorPage[] = [SECTOR_URBANO];
+
+export function getSector(slug: string): SectorPage | undefined {
+  return SECTORES_PUBLICADOS.find((s) => s.slug === slug);
+}
+
 /**
  * Índice de los 8 sectores del sitio (el orden es el del mega-menú).
  * `href` local solo para los ya clonados.

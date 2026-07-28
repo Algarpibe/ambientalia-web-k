@@ -45,7 +45,19 @@ const SOCIAL_ICON: Record<SocialLink["network"], typeof LinkedInIcon> = {
   youtube: YouTubeIcon,
 };
 
-export function Footer({ template = "home" }: { template?: "home" | "tb" } = {}) {
+export function Footer({
+  template = "home",
+  stripImage = "/images/uploads/2022/12/cabecera-puerto-1.jpg",
+}: {
+  template?: "home" | "tb";
+  /**
+   * Foto de la franja `footer-background` (solo `template="tb"`). Las 4
+   * páginas de producto sirven la del puerto; **cada sector sirve la SUYA**,
+   * la misma de su cabecera (medido 2026-07-28: urbano → `urban-1920.jpg`,
+   * industria → `industry-1920x1024-1.jpg`).
+   */
+  stripImage?: string;
+} = {}) {
   const tb = template === "tb";
 
   /* Ritmo móvil home (<640) medido en vivo B4 (qa/b4-probe.mjs, 390 real):
@@ -267,7 +279,7 @@ export function Footer({ template = "home" }: { template?: "home" | "tb" } = {})
           aria-hidden
           className="h-[40px] w-full bg-cover lg:h-[41px]"
           style={{
-            backgroundImage: "url('/images/uploads/2022/12/cabecera-puerto-1.jpg')",
+            backgroundImage: `url('${stripImage}')`,
             backgroundPosition: "50% 0%",
           }}
         />

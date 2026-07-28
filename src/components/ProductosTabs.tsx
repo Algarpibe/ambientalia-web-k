@@ -25,19 +25,54 @@ import { SectionTitle, BlueButton, OutlineButton } from "./SectionRow";
 const PLUS_ICON = "/images/theme/ico-plus-negro.svg";
 const MINUS_ICON = "/images/theme/ico-minus-azul.svg";
 
-export function ProductosTabs({ items = PRODUCTS_TABS }: { items?: Product[] }) {
+export function ProductosTabs({
+  items = PRODUCTS_TABS,
+  sinTitulo = false,
+}: {
+  items?: Product[];
+  /**
+   * `sinTitulo` — las páginas de sector titulan el bloque **"Nuestras
+   * soluciones"** y lo hacen en su propia fila, con el punteado, porque el
+   * titular y la lista viven en filas Divi distintas. Con esta prop el
+   * componente aporta solo la lista + el panel; el titular y la fila los pone
+   * la página, que además usa la retícula del sector (86%, no el 85%) y el
+   * ritmo de fila del sector (`py: 30 móvil / 28.7969 desktop`, no el
+   * `pt 28 / pb 123` de la home).
+   */
+  sinTitulo?: boolean;
+}) {
   const { activeId, liRef, onEnter, onClick } = useListaContenido(items[0]?.id ?? null);
   const active = items.find((p) => p.id === activeId) ?? null;
 
   return (
-    <section className="relative pb-[50px] pt-[30px] md:pb-[123px] md:pt-[28px]">
-      <div className="mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]">
+    <section
+      className={
+        sinTitulo ? "relative" : "relative pb-[50px] pt-[30px] md:pb-[123px] md:pt-[28px]"
+      }
+    >
+      <div
+        className={
+          // Con `sinTitulo` la FILA la pone la página (el sector ya envuelve
+          // este bloque en su retícula del 86%): aquí solo el ancho completo,
+          // o se anidarían dos retículas y el panel saldría 100px estrecho.
+          sinTitulo ? "w-full" : "mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]"
+        }
+      >
         {/* Móvil: la lista arranca pegada al H2 (mb 0 del módulo de título) */}
-        <div className="md:pb-[10px]">
-          <SectionTitle>Nuestros productos</SectionTitle>
-        </div>
+        {sinTitulo ? null : (
+          <div className="md:pb-[10px]">
+            <SectionTitle>Nuestros productos</SectionTitle>
+          </div>
+        )}
 
-        <div className="w-full overflow-hidden md:mt-4 md:flex md:gap-[3%]">
+        {/* El `md:mt-4` es el hueco de la home entre su titular y la lista; en
+            el sector ese hueco ya lo pone el `margin-bottom` del módulo del h2
+            (34.05), así que aquí sobra. */}
+        <div
+          className={
+            "w-full overflow-hidden md:flex md:gap-[3%] " + (sinTitulo ? "" : "md:mt-4")
+          }
+        >
           {/* Left column — tab list (móvil: la UL Divi remata con pb18) */}
           <ul className="pb-[18px] md:w-[30%] md:min-w-[250px] md:shrink-0 md:pb-0">
             {items.map((p) => {
@@ -87,28 +122,47 @@ export function ProductosTabs({ items = PRODUCTS_TABS }: { items?: Product[] }) 
 
           {/* Right column — active panel (desktop only) */}
           <div className="hidden md:block md:w-[63%]">
-            {active ? <ProductPanel product={active} /> : null}
+            {active ? <ProductPanel product={active} alto={sinTitulo} /> : null}
           </div>
         </div>
 
         {/* Centered relative to the right panel column, like the original.
-            Móvil: pb 3.89 fila + pt 30 fila botón ≈ 34 */}
-        <div className="mt-[34px] flex justify-center md:mt-[70px] md:pl-[33%]">
-          <BlueButton href="https://kunakair.com/es/contacto/">Cuéntanos tus necesidades</BlueButton>
-        </div>
+            Móvil: pb 3.89 fila + pt 30 fila botón ≈ 34
+            En las páginas de sector este CTA NO existe: la fila del original
+            solo lleva punteado + h2 + la lista (verificado en el DOM). */}
+        {sinTitulo ? null : (
+          <div className="mt-[34px] flex justify-center md:mt-[70px] md:pl-[33%]">
+            <BlueButton href="https://kunakair.com/es/contacto/">
+              Cuéntanos tus necesidades
+            </BlueButton>
+          </div>
+        )}
       </div>
     </section>
   );
 }
 
 /** Right-hand product panel. Card border/padding only from ≥768px. */
-function ProductPanel({ product }: { product: Product }) {
+/**
+ * `alto` — el panel del original tiene **`height: 500px` fijo** y
+ * `margin-bottom: 32px` (medido a 1440 en el sector Y en la home). Se aplica
+ * solo en las páginas de sector: allí la lista tiene 3 ítems y el panel manda
+ * en la altura del bloque, así que sin los 500 el bloque salía +79.5. En la
+ * home la lista de 5 ítems lo enmascara y el clon va a 497.5 con `mb 0`; se
+ * deja como está para no tocar una página ya verificada — anotado para su QA.
+ */
+function ProductPanel({ product, alto = false }: { product: Product; alto?: boolean }) {
   const hasImage = product.image !== "";
   return (
     // Móvil (<640): rítmica del .lista-contenido-item original — imagen pegada
     // (+6), p 18px/27 con pb18, ul pt10/pb10 con li pb10+mb10, botón a +20 y
     // pb 21 al pie del panel (medido 2026-07-23)
-    <div className="flex flex-col gap-[6px] pb-[21px] sm:flex-row sm:gap-8 sm:pb-0 md:rounded-[10px] md:border md:border-[#777] md:p-[30px]">
+    <div
+      className={
+        "flex flex-col gap-[6px] pb-[21px] sm:flex-row sm:gap-8 sm:pb-0 md:rounded-[10px] md:border md:border-[#777] md:p-[30px] " +
+        (alto ? "md:mb-[32px] md:h-[500px]" : "")
+      }
+    >
       {hasImage ? (
         <div className="sm:w-1/2">
           <img

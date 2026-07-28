@@ -29,21 +29,32 @@ export function UltimosArticulos({
    * 140px fijos; y el CTA cuelga a `1%` de las tarjetas en vez de a 46px
    * (son dos filas Divi: `28.8px 0 1%` y `0 0 5%`).
    *
+   * "sectores" = /sectores/[slug]: **mezcla medida el 2026-07-28**, no encaja
+   * en ninguna de las anteriores. Del lado de `monitor` toma que el título de
+   * la ficha **NO se pone azul al hover** (medido con ratón real: reposo
+   * #333 → hover #333). Del lado de `home` toma la calibración de la rejilla:
+   * la ficha va a `padding: 0` y `margin-bottom: 40` (medido), no al
+   * `pb 25 / mb 60` de las páginas de producto. Y no aporta sección ni fila:
+   * en el original el titular y las tarjetas son DOS filas Divi y la retícula
+   * es la del sector (86%), así que las compone la página.
+   *
    * La home no cambia.
    */
-  variant?: "home" | "monitor" | "api";
+  variant?: "home" | "monitor" | "api" | "sectores";
 } = {}) {
+  const sectores = variant === "sectores";
   // las dos variantes de ficha de producto comparten sección y retícula
-  const monitor = variant !== "home";
+  const monitor = variant === "monitor" || variant === "api";
   const api = variant === "api";
   return (
     <section
       className={
-        "relative bg-white bg-no-repeat " +
-        (monitor ? "" : "pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]")
+        "relative bg-no-repeat " +
+        (sectores ? "" : "bg-white ") +
+        (monitor || sectores ? "" : "pb-[50px] pt-[80px] md:pb-[101px] md:pt-[84px]")
       }
       style={
-        monitor
+        monitor || sectores
           ? undefined
           : {
               backgroundImage: "url('/images/theme/recurso-k-fondo.svg')",
@@ -53,11 +64,15 @@ export function UltimosArticulos({
     >
       <div
         className={
-          monitor
-            ? "mx-auto w-[80%] max-w-[1380px] pb-[49px] md:pb-[94px] " +
-              // móvil: las filas Divi usan 30px fijos, no el 2% del ancho
-              (api ? "pt-[30px] md:pt-[2vw]" : "pt-[140px]")
-            : "mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]"
+          sectores
+            ? // sector: dos filas Divi de `py: 30 móvil / 28.7969 desktop`
+              // sobre la retícula del sector (86% máx 1380)
+              "mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]"
+            : monitor
+              ? "mx-auto w-[80%] max-w-[1380px] pb-[49px] md:pb-[94px] " +
+                // móvil: las filas Divi usan 30px fijos, no el 2% del ancho
+                (api ? "pt-[30px] md:pt-[2vw]" : "pt-[140px]")
+              : "mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]"
         }
       >
         <div className="relative">
@@ -104,9 +119,15 @@ export function UltimosArticulos({
             QA de la home. */}
         <div
           className={
-            (monitor
-              ? "mt-[28px] gap-y-[42px] md:gap-y-[60px] md:pb-[60px] "
-              : "mt-[30px] gap-y-[32px] md:mt-[33px] md:gap-y-10 ") +
+            (sectores
+              ? // sector: ficha `padding: 0` y `margin-bottom: 40` (medido) —
+                // la calibración de la home, no el pb 25 / mb 60 del monitor.
+                // El hueco titular→rejilla son las dos filas Divi: 28.797×2.
+                // el `mb: 40` de la ficha cuenta también con una sola fila
+                "mt-[30px] gap-y-[32px] md:mt-[57.5938px] md:gap-y-10 md:pb-[40px] "
+              : monitor
+                ? "mt-[28px] gap-y-[42px] md:gap-y-[60px] md:pb-[60px] "
+                : "mt-[30px] gap-y-[32px] md:mt-[33px] md:gap-y-10 ") +
             "grid gap-x-[40px] sm:grid-cols-2 lg:grid-cols-3"
           }
         >
@@ -150,7 +171,9 @@ export function UltimosArticulos({
         <div
           className={
             "mt-4 flex justify-end " +
-            (api ? "md:mt-[1vw]" : monitor ? "md:mt-[46px]" : "md:mt-[80px]")
+            // sector: el CTA arranca justo donde acaba la rejilla (medido:
+            // rejilla 4956.86+427.52 = 5384.38 = y del wrapper del botón)
+            (sectores ? "md:mt-0" : api ? "md:mt-[1vw]" : monitor ? "md:mt-[46px]" : "md:mt-[80px]")
           }
         >
           <BlueButton href="https://kunakair.com/es/recursos/guias/">

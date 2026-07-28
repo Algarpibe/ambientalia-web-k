@@ -22,13 +22,29 @@ export function UltimosProyectos({
   title = "Últimos proyectos",
   ctaLabel = "Ver todos los casos de éxito",
   ctaHref = "https://kunakair.com/es/casos-de-exito/",
+  ctaExternal = false,
   embedded = false,
+  bare = false,
   posts = PROJECTS,
 }: {
   title?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /**
+   * `target="_blank"`. Las páginas de sector lo necesitan: allí el CTA apunta a
+   * `https://kunakair.com/case-studies/` (SIN `/es/`) y el original lo abre en
+   * otra pestaña — medido 2026-07-28.
+   */
+  ctaExternal?: boolean;
   embedded?: boolean;
+  /**
+   * `bare` — solo la rejilla y el CTA, **sin sección, sin fila y sin titular**.
+   * Lo usan las páginas de sector, donde el titular y las tarjetas viven en
+   * DOS filas Divi distintas (medido: fila del h2 122.59 · fila de tarjetas
+   * 587.66) y la retícula es la del sector (86%), no el 85% de la home. La
+   * página compone las filas; aquí solo va el contenido.
+   */
+  bare?: boolean;
   posts?: CaseStudy[];
 } = {}) {
   const cards = (
@@ -36,7 +52,10 @@ export function UltimosProyectos({
       <div
         className={
           "grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3 " +
-          (embedded ? "mt-0" : "mt-[43px]")
+          // sector: el `margin-bottom: 40` de la ficha del original cuenta
+          // también cuando las 3 caben en una sola fila (rejilla 461.06 =
+          // ficha 421.06 + 40); el `gap-y` solo actúa ENTRE filas.
+          (bare ? "mt-0 md:pb-[40px] " : embedded ? "mt-0 " : "mt-[43px] ")
         }
       >
           {posts.map((c) => (
@@ -79,13 +98,23 @@ export function UltimosProyectos({
       <div
         className={
           "flex " +
-          (embedded ? "mb-[30px] mt-[46px] justify-start" : "mt-10 justify-end md:mt-[91px]")
+          // sector: el original deja 25px justos entre la rejilla y el CTA
+          // (rejilla acaba en 4707.67 · wrapper del botón en 4732.67)
+          (bare
+            ? "mt-[25px] justify-end"
+            : embedded
+              ? "mb-[30px] mt-[46px] justify-start"
+              : "mt-10 justify-end md:mt-[91px]")
         }
       >
-        <OutlineButton href={ctaHref}>{ctaLabel}</OutlineButton>
+        <OutlineButton href={ctaHref} external={ctaExternal}>
+          {ctaLabel}
+        </OutlineButton>
       </div>
     </>
   );
+
+  if (bare) return cards;
 
   if (embedded) {
     return (
