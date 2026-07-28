@@ -28,7 +28,7 @@ export function BeneficiosApi() {
           aria-hidden
           width={60}
           height={22}
-          className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
+          className="pointer-events-none absolute -left-[65px] -top-[40px]"
           style={{ width: 60, height: 22 }}
         />
         <h2
@@ -40,10 +40,14 @@ export function BeneficiosApi() {
       </div>
 
       {/* ---------- Columna 3/4 ---------- */}
-      <div className="w-full min-w-0 pt-[10px] md:w-[73.625%]">
+      {/* `pt-[10px]` es de la retícula de DESKTOP; en móvil las columnas se
+          apilan y el original deja 30 del rótulo al párrafo, no 40. */}
+      <div className="w-full min-w-0 md:w-[73.625%] md:pt-[10px]">
         {/* El módulo del párrafo cierra con `padding-bottom: 20px` ADEMÁS de sus
-            20 de `margin-bottom` (medido: módulo 142.4 = 122.4 del `<p>` + 20). */}
-        <p className="mb-[20px] pb-[20px] text-[18px] leading-[30.6px] text-[#333]">
+            20 de `margin-bottom` (medido: módulo 142.4 = 122.4 del `<p>` + 20).
+            En MÓVIL no hay `pb` y el hueco hasta los blurbs es **43**
+            (QA Fase 5, 2026-07-28). */}
+        <p className="mb-[43px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[20px]">
           {BENEFICIOS_INTRO}
         </p>
 

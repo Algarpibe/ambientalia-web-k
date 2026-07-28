@@ -566,6 +566,11 @@ aplicadas; sin ellas el clon salía +212 en vez de −159):
 
 ## /kunak-api — QA de construcción (2026-07-27)
 
+> ⚠️ **SUPERADA por "/kunak-api — QA VISUAL (Fase 5) · 2026-07-28"**, al final
+> del archivo. Se conserva como registro histórico, pero **sus números no valen
+> como referencia**: el móvil se midió dentro de un iframe y eso ocultó que S1
+> iba +166.5px. Ir a la entrada de Fase 5.
+
 > Medido con Claude in Chrome (`javascript_tool`, computed styles reales,
 > imágenes perezosas forzadas a `eager` + pase de scroll) a **cw 1264.7**
 > (viewport 1280) contra el original en vivo. El móvil se midió en un
@@ -668,3 +673,150 @@ Lo único que cambia es **cómo** se pinta la separación: antes `margin-right: 
 con `nth-child(3n)` a 0, ahora `column-gap: 2%`. Mismas posiciones.
 Móvil 390 también verificado: 1 blurb por fila a ancho completo, `mb 30`, sin
 scroll horizontal.
+
+## /kunak-api — QA VISUAL (Fase 5) · 2026-07-28
+
+> Sustituye en autoridad al bloque **"/kunak-api — QA de construcción"** de más
+> arriba, que midió con Claude in Chrome y **el móvil dentro de un iframe de
+> 390** servido desde localhost. Ese atajo ocultó el defecto más grande de la
+> página (S1 iba **+166.5px** en móvil): dentro del iframe el ritmo vertical no
+> es el de un viewport real. Los números de aquella entrada se mantienen como
+> registro histórico; los válidos son estos.
+>
+> Metodología (la de `CLAUDE.md`): puppeteer-core sobre el Chrome del sistema,
+> headless, **perfil limpio**, Cookiebot bloqueado por `--host-resolver-rules`,
+> `--hide-scrollbars`, imágenes perezosas forzadas a `eager` + pase de scroll y
+> settle. **1280×900** y **390×844 reales** por
+> `Emulation.setDeviceMetricsOverride`. Capturas por viewport con `setViewport`
+> (nunca `fullPage`). Hovers con ratón real (`page.mouse.move`) y con el zoom
+> 1.1 de la imagen como **control de que el hover aterriza**.
+> Sondas en el scratchpad de la sesión: `lib.mjs` (base), `secciones.mjs`,
+> `s1movil.mjs`, `s2.mjs`, `faq-strut.mjs`, `faqoffset.mjs`, `compartidos.mjs`
+> (las 5 páginas a la vez), `bp.mjs` (barrido de breakpoints), `hover*.mjs`,
+> `punteado.mjs`, `tiras.mjs` (capturas).
+
+### Resultado por sección (clon vs original)
+
+| Sección | 1280 antes | 1280 después | 390 antes | 390 después |
+|---|---|---|---|---|
+| S1 hero + info + beneficios | −14.5 | **−14.5** | **+166.5** | **+7.9** |
+| S2 Artículos y Guías | −88.1 | **−3.1** | −167.4 | **−18.4** |
+| S3 Preguntas frecuentes | −2 | **−10** | +8.5 | **−9.5** |
+| S4 CTA de ancho completo | 0 | **0** | −0.8 | **−0.8** |
+| Documento | −146 | **−69** | −34 | **−62** |
+
+Ojo con los totales de documento: **no son el indicador bueno**. Antes, el
++166.5 de S1 en móvil cancelaba el −167.4 de S2 y el total salía "bueno" (−34)
+con las dos secciones muy desviadas. Lo que cuenta es la tabla por sección.
+
+### Discrepancias encontradas, por prioridad
+
+**ALTA — corregidas**
+
+| # | Qué | Medida | Dónde |
+|---|---|---|---|
+| K1 | **Ritmo móvil de S1**: 6 huecos inflados y 2 cortos | +166.5 acumulado | `HeroApi`, `InfoProductoApi`, `BeneficiosApi` |
+| K2 | **Tarjeta de artículo sin los remates del módulo de blog**: falta `padding-bottom: 25px` en la ficha y el margen inferior (60 desktop / 42 móvil) | rejilla 347.3 vs 435.3 → **−88** | `UltimosArticulos` (compartido) |
+| K3 | **Doble raya entre toggles del FAQ**: el clon ponía `border-y` en los 19; el original solo borde arriba en el 1.º y abajo en todos | +18.1 de alto y raya de 2px en vez de 1px | `FaqAcordeon` (compartido) |
+| K4 | **Punteado invisible**: con `z-[-1]` se pinta por detrás del `bg-white` de su sección (`elementFromPoint` devolvía la `<section>`) | 3 de los 4 punteados de la página no se veían | `InfoProductoApi`, `BeneficiosApi`, `FaqAcordeon`, `UltimosArticulos` |
+| K5 | **Título de artículo azul al hover** donde el original lo deja en `#333` | color | `UltimosArticulos` (compartido) |
+
+**MEDIA — corregidas**
+
+| # | Qué | Medida | Dónde |
+|---|---|---|---|
+| K6 | **Botón claro sin la geometría Divi**: `px-6` simétrico + flecha en flujo, en vez de `padding 7.5/40.5/9/22.5` con flecha absoluta y `pr 55.5` al hover | +8.5 de ancho en las 3 páginas donde se midió | `LightButton` (compartido) |
+| K7 | **El h4 de los blurbs `iconos-md-3` no baja a 16/19.2 por debajo de 981px** | +2.4 por título de 1 línea, +4.8 por los de 2 | `BlurbsIconos` (compartido) |
+| K8 | **La columna de toggles del FAQ no baja 10px** respecto al h2 | −10 constante | `FaqAcordeon`, prop `desfaseColumna` |
+
+**BAJA — no se tocan**
+
+- **K9 · Residuo del strut de los `inline-block` (punto abierto 2 del recon,
+  RESUELTO Y CUANTIFICADO)**: el original pinta los blurbs con
+  `display: inline-block` + `vertical-align: text-top` dentro de una columna con
+  `line-height: 30.6px`, así que cada fila forma un *line box* **3.3px más alto**
+  que la caja del blurb (paso real 160.3 = 129.2 del blurb + 28.16 de margen
+  **+2.94 de interlínea**). El clon usa flex, donde no hay line box: paso 157.0
+  exacto. Son **4 filas de blurbs → −13.2**, que es casi todo el −14.5 de S1 en
+  desktop. Antes se anotó "~2.7px"; el valor medido es **3.3 por fila**. Se
+  mantiene la decisión de /software: **no se fuerza**. Si algún día se quisiera,
+  el arreglo es sumar 3.3 al `mb` de la fila de blurbs en `BlurbsIconos`.
+- **K10 · −10 de alto en la sección del FAQ.** Los 19 toggles ya casan al píxel
+  (q1 a 0.0 y el último a +0.1 del original, a 1280 y a 390); el residuo está en
+  el relleno de la sección, no en el acordeón.
+- **P4 (heredado)**: el original **sortea** los 3 posts en cada carga. S2 no es
+  comparable px a px y la altura de documento varía entre cargas (medido en el
+  original: 5331 / 5358 a 1280). Los ±3…18 que quedan en S2 son eso.
+- **P2 (heredado)**: la foto de la franja de cabecera cambia entre visitas.
+- **A2 (heredado)**: la franja del header mide menos que la del original.
+
+### Puntos abiertos del recon — los dos resueltos
+
+1. **¿El título de la tarjeta de artículo se pone azul al hover?**
+   **NO en las fichas de producto, SÍ en la home.** Medido con ratón real y con
+   el zoom de la imagen como control:
+
+   | Página (original) | Título al hover | Control |
+   |---|---|---|
+   | home | **#0075C9** | zoom OK |
+   | /monitor-calidad-aire | #333 | zoom OK |
+   | /software | #333 | zoom OK |
+   | /kunak-api | #333 | zoom OK |
+   | /accesorios | #333 | *el hover no aterrizó* |
+
+   El recon acertaba. Como `UltimosArticulos` lo usan 4 páginas, el hover se ha
+   dejado **solo en la variante `home`**. /accesorios se agrupa con las fichas de
+   producto **por inferencia** (su sonda no llegó a aterrizar, pero monta el
+   mismo módulo de blog: ficha `pb 25` / `mb 60`, frente al `pb 0` / `mb 40` de
+   la home). Si alguien quiere cerrarlo del todo, es re-medir esa página.
+
+2. **Residuo del strut** → K9, arriba.
+
+Y un tercero que salió al medir: el `<h2>` "Integra datos de fuentes externas"
+**no es una discrepancia de color** aunque lo parezca. El original deja el `h2`
+en `#333` y mete todo el texto en un `<span>` a `#0075C9` (comprobado: el span
+cubre el 100% del texto); el clon pinta el color en el propio `h2`. Misma
+pintura. Anotado para que nadie lo vuelva a "arreglar".
+
+### Verificación de no regresión (componentes compartidos)
+
+`UltimosArticulos`, `FaqAcordeon`, `LightButton` y `BlurbsIconos` los usan las 5
+páginas. Medido en las 5, original vs clon, a 1280 después de los cambios:
+
+| | FAQ (paso / alto) | Botón claro | Ficha de artículo |
+|---|---|---|---|
+| home | (no tiene) | 200.3 y 210.9 = **exactos** (antes +8.5) | **intacta**: `pb 0` / `mb 0`, rejilla 361.7 — la variante `home` no se tocó |
+| /monitor-calidad-aire | 61.88 = 61.88 ✔ | 285 = **285** (antes 293.4) | `pb 25` ✔, rejilla 432.3 vs 435.3 |
+| /accesorios | 61.88 vs 61.87 · 1176.7 vs 1176.6 ✔ | (no tiene) | `pb 25` ✔, rejilla 432.3 vs 435.3 |
+| /software | 61.88 vs 61.87 · 1176.7 vs 1176.6 ✔ · desfase 28 = 28 ✔ | 256.3 = **256.3** (antes 264.8) | `pb 25` ✔ |
+| /kunak-api | 61.88 · 1176.7 vs 1176.6 ✔ · desfase 28 = 28 ✔ | 178.1 = **178.1** (antes 186.6) | `pb 25` ✔, hueco al CTA 12.8 = 12.8 ✔ |
+
+Ninguna regresión; el arreglo del botón claro y el del FAQ **mejoran también**
+las otras páginas.
+
+### Hallazgos de otras páginas (fuera de este QA, sin tocar)
+
+- **`/monitor-calidad-aire` · el FAQ del original tiene 18 preguntas y arranca
+  por "¿Qué área cubre cada dispositivo?"**, mientras el clon monta las 19 de
+  `FAQ_ITEMS` empezando por "¿Los equipos Kunak son certificados ATEX?". Es una
+  discrepancia de **contenido**, no de maquetación (el paso por toggle ya casa:
+  61.88 en ambos). Por eso su `desfaseColumna` se ha dejado a 0 pese a medir
+  12.7 en el original: primero hay que resolver qué preguntas van.
+- **El punteado con `z-[-1]` (K4) está en otros 5 componentes**:
+  `SectionRow`, `HeroProducto`, `InformacionProducto`, `InfoProductoSoftware`,
+  `UltimosProyectos` (y `TrustBar`, con otro patrón). Casi seguro invisibles por
+  el mismo motivo, pero afectan a páginas que no entraban en este QA. Se dejan
+  para el QA de cada una.
+- **Home**: la rejilla de artículos va **−34.9** a 1280 (su original monta la
+  ficha con `pb 0` / `mb 40`, calibración distinta a la de las fichas de
+  producto), y le queda un botón claro sin migrar ("¡Me apunto!", 24/24
+  `inline-flex`) que no sale de `LightButton`.
+
+### Nota de método (cara de aprender)
+
+Durante esta tanda un `npm run build` **con `next start` levantado** dejó el
+HTML estático sin regenerar: las páginas seguían sirviendo el marcado anterior
+y una verificación dio por bueno un cambio que no estaba aplicado. `CLAUDE.md`
+ya avisa ("parar el proceso, `npm run build` y relanzar") — cúmplase al pie, y
+ante la duda `rm -rf .next`. Comprobación barata: `curl` a la página y buscar la
+clase que se acaba de tocar antes de medir nada.

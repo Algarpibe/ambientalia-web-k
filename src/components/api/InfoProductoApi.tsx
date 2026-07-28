@@ -22,7 +22,10 @@ import { CARACTERISTICAS, INFO } from "@/lib/api";
  */
 export function InfoProductoApi() {
   return (
-    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[20px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw]">
+    // QA Fase 5 (2026-07-28): el `pt` móvil pasa a 23.9 — es el hueco entero
+    // medido de la foto del hero a este rótulo, que antes salía a 50 porque se
+    // sumaba con el `pb-[30px]` de `HeroApi` (ya retirado en móvil).
+    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[23.9px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw] md:pt-[20px]">
       {/* ---------- Columna 1/3 ---------- */}
       <div className="relative w-full md:w-[29.6667%] md:shrink-0">
         <img
@@ -31,7 +34,7 @@ export function InfoProductoApi() {
           aria-hidden
           width={60}
           height={22}
-          className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
+          className="pointer-events-none absolute -left-[65px] -top-[40px]"
           style={{ width: 60, height: 22 }}
         />
         {/* 44px/55 en desktop y 35/43.75 en móvil, como todos los titulares de
@@ -45,13 +48,18 @@ export function InfoProductoApi() {
       </div>
 
       {/* ---------- Columna 2/3 — ritmo Divi de 20px entre módulos ---------- */}
-      <div className="w-full min-w-0 space-y-[20px] pt-[10px] md:w-[64.833%]">
+      {/* El `pt-[10px]` es de la retícula de DESKTOP: en móvil las columnas se
+          apilan y el original deja 30 limpios del rótulo al párrafo, no 40. */}
+      <div className="w-full min-w-0 space-y-[20px] md:w-[64.833%] md:pt-[10px]">
         {/* `mb-[19px]`, no `-mb-[1px]`: el módulo del párrafo de entrada lleva
             `margin-bottom: -1px` en el original, que COLAPSA con los 20 del
             siguiente → 19 de hueco. Aquí hay que escribir el resultado, porque
             el `margin-bottom` de `space-y` va con `:where()` (especificidad 0)
             y cualquier clase de margen propia lo sustituye en vez de sumarse. */}
-        <p className="mb-[19px] text-[18px] leading-[30.6px] text-[#333]">
+        {/* En MÓVIL el hueco medido hasta el titular azul es **−1**: los 20 de
+            `space-y` no llegan a aplicarse porque el módulo del original solo
+            arrastra su `margin-bottom: -1px` (QA Fase 5, 2026-07-28). */}
+        <p className="-mb-px text-[18px] leading-[30.6px] text-[#333] md:mb-[19px]">
           {INFO.parrafoIntro.antes}
           {/* ruta LOCAL: /software-de-medicion-calidad-del-aire ya está clonada.
               El original abre en pestaña nueva (`target="_blank"`); dentro del
@@ -85,7 +93,9 @@ export function InfoProductoApi() {
         {/* `pb-[7.82px]` (padding, no margin): el módulo cierra con 27.82 y el
             `space-y` ya pone 20 — un margen se colaparía con él y perderíamos
             los 7.82; el padding se suma. */}
-        <p className="pb-[7.82px] text-[18px] leading-[30.6px] text-[#333]">
+        {/* Móvil: la caja va sin `pb` (30.6 limpios, como el original) y el
+            hueco hasta los blurbs es **33**, no los 20 de `space-y`. */}
+        <p className="mb-[33px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[7.82px]">
           {INFO.caracteristicasLabel}
         </p>
 

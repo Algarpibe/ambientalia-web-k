@@ -38,8 +38,13 @@ const VARIANTES = {
     caja: "w-[48%] min-[480px]:w-[30%]",
     // 20 = los 30 del `.et_pb_main_blurb_image` menos los −10 del wrap interno
     icono: "mb-[20px]",
-    // el `letter-spacing: -0.5px` lo pone la regla global de h1–h6
-    titulo: "pb-[10px] text-[18px] font-light leading-[21.6px] text-[#333]",
+    // el `letter-spacing: -0.5px` lo pone la regla global de h1–h6.
+    // QA Fase 5 de /kunak-api (2026-07-28): el h4 NO es 18/21.6 a todos los
+    // anchos — el original baja a **16/19.2 por debajo de 981px** (corte
+    // barrido a 390/420/479/480/560/640/767/768/900/980/981/1100/1280). Con
+    // 18/21.6 fijo cada título de 1 línea salía +2.4 y los de 2 líneas +4.8.
+    titulo:
+      "pb-[10px] text-[16px] font-light leading-[19.2px] text-[#333] min-[981px]:text-[18px] min-[981px]:leading-[21.6px]",
   },
   /** `.modulo-beneficios` — ancho completo hasta el corte, 3 por fila desde él. */
   "modulo-beneficios": {

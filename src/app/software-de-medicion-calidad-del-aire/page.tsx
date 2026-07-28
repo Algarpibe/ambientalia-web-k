@@ -189,7 +189,7 @@ export default function SoftwareMedicionCalidadDelAirePage() {
         <UltimosArticulos title="Artículos y Guías" posts={SOFTWARE_ARTICLES} variant="monitor" />
 
         {/* --- S5 · Preguntas frecuentes (19 toggles, idénticas al monitor) --- */}
-        <FaqAcordeon />
+        <FaqAcordeon desfaseColumna={10} />
       </main>
 
       <Footer template="tb" />

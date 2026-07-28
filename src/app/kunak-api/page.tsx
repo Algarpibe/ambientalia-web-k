@@ -99,7 +99,7 @@ export default function KunakApiPage() {
         <UltimosArticulos title="Artículos y Guías" posts={API_ARTICLES} variant="api" />
 
         {/* --- S3 · Preguntas frecuentes (19 toggles, idénticas al monitor) --- */}
-        <FaqAcordeon />
+        <FaqAcordeon desfaseColumna={10} />
 
         {/* --- S4 · CTA de ancho completo, AL FINAL ---
             `et_pb_fullwidth_slider` de 1 diapositiva, sin flechas, sin puntos y

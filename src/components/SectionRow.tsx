@@ -136,14 +136,21 @@ export function LightButton({
   children: ReactNode;
   className?: string;
 }) {
+  // QA Fase 5 de /kunak-api (2026-07-28): este botón no seguía la geometría
+  // Divi que sí replica `OutlineButton`. Llevaba `px-6` simétrico + flecha en
+  // flujo con `gap-2`, y salía 8.5px más ancho que el original en las 3 páginas
+  // donde se midió (178.1→186.6 en /kunak-api, 256.3→264.8 en /software,
+  // 285→293.4 en /monitor). El original es `inline-block` con
+  // `padding: 7.5px 40.5px 9px 22.5px`, flecha absoluta dentro del hueco de la
+  // derecha y `padding-right: 55.5px` al hover — igual que el botón de contorno.
   const className =
-    "group inline-flex items-center gap-2 rounded-[30px] border border-white px-6 pb-[9px] pt-[7.5px] text-[15px] font-bold text-white transition-colors duration-200 hover:border-[#7F8798] hover:bg-[#7F8798] " +
+    "group relative inline-block rounded-[30px] border border-white pb-[9px] pl-[22.5px] pr-[40.5px] pt-[7.5px] text-[15px] font-bold leading-[25.5px] text-white transition-all duration-300 hover:border-[#7F8798] hover:bg-[#7F8798] hover:pr-[55.5px] " +
     extra;
   const style = { backgroundColor: "rgba(0, 0, 0, 0.15)" };
   const inner = (
     <>
       {children}
-      <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+      <span className="arrow absolute ml-[5px] inline-block text-[20px] leading-[25.5px] transition-all duration-300 group-hover:ml-[12px]">
         →
       </span>
     </>

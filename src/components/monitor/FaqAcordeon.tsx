@@ -28,7 +28,19 @@ const ICON_CLOSED_HOVER = "/images/theme/ico-plus-azul.svg";
 const ICON_OPEN = "/images/theme/ico-minus-negro.svg";
 const ICON_OPEN_HOVER = "/images/theme/ico-minus-azul.svg";
 
-export function FaqAcordeon() {
+export function FaqAcordeon({
+  /**
+   * Desfase en desktop del techo de la columna de toggles respecto al `<h2>`
+   * (el `margin-top` de módulo Divi). Medido en los originales el 2026-07-28:
+   * `/accesorios` **0**, `/software` **10**, `/kunak-api` **10**. En móvil las
+   * columnas se apilan y el desfase es el mismo en todas (145.5 medido), así
+   * que solo se aplica desde `md`.
+   *
+   * /monitor-calidad-aire mide 12.7, pero su FAQ además arranca por otra
+   * pregunta y lista 18 en vez de 19 — necesita su propio QA antes de tocarlo.
+   */
+  desfaseColumna = 0,
+}: { desfaseColumna?: 0 | 10 } = {}) {
   const [open, setOpen] = useState<ReadonlySet<number>>(new Set());
   const contents = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -64,13 +76,16 @@ export function FaqAcordeon() {
       <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[70px] pt-[70px] md:flex-row md:gap-[5.5%] lg:pb-[calc(4vw+64px)] lg:pt-[calc(4vw+20px)]">
         {/* ---------- Columna izquierda (1/4) ---------- */}
         <div className="relative w-full md:w-[20.875%] md:shrink-0">
+          {/* QA Fase 5 de /kunak-api (2026-07-28): sin `z-[-1]`. Con z-index
+              negativo el punteado se pintaba detrás del `bg-white` de esta
+              sección y no se veía; el original lo deja en `z-index: auto`. */}
           <img
             src="/images/uploads/2022/12/punteado.svg"
             alt=""
             aria-hidden
             width={60}
             height={22}
-            className="pointer-events-none absolute -left-[65px] -top-[40px] z-[-1]"
+            className="pointer-events-none absolute -left-[65px] -top-[40px]"
             style={{ width: 60, height: 22 }}
           />
           <SectionTitle>Preguntas frecuentes</SectionTitle>
@@ -79,13 +94,25 @@ export function FaqAcordeon() {
         {/* ---------- Columna derecha (3/4) — los 19 toggles ----------
             QA 2026-07-26: cada toggle lleva border ARRIBA y ABAJO (1px 0px) y el
             módulo remata con mb 30. */}
-        <div className="w-full min-w-0 pb-[30px] md:flex-1">
+        <div
+          className={
+            "w-full min-w-0 pb-[30px] md:flex-1 " +
+            (desfaseColumna === 10 ? "md:pt-[10px]" : "")
+          }
+        >
           {FAQ_ITEMS.map((item, i) => {
             const isOpen = open.has(i);
             return (
               <div
                 key={item.q}
-                className="border-y border-[#d9d9d9] px-[8px] py-[17px] transition-all duration-200 hover:bg-[#f4f4f4]"
+                // QA Fase 5 de /kunak-api (2026-07-28): el original NO pone
+                // `border-y` en cada toggle — el 1.º lleva borde arriba y abajo
+                // (alto 62.9) y del 2.º en adelante solo abajo (61.9), así que
+                // entre dos toggles hay UNA raya de 1px, no dos pegadas. Con
+                // `border-y` el bloque de 19 salía 18.1px más alto y pintaba una
+                // doble raya de 2px. Verificado idéntico en el original de
+                // /accesorios, /software y /kunak-api, a 1280 y a 390.
+                className="border-b border-[#d9d9d9] px-[8px] py-[17px] transition-all duration-200 first:border-t hover:bg-[#f4f4f4]"
               >
                 <h3 className="relative">
                   <button
