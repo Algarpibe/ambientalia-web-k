@@ -21,12 +21,16 @@ import { ChevronUpIcon } from "./icons";
  * 40; replicarlo con un SVG de 30×30 agrandaría el chevron. Lo que se replica
  * es el resultado, no la implementación.
  *
- * Umbral de aparición: 500px de scroll. **Ojo, esto NO es lo que hace el
- * original**: medido, aparece al pasar una pantalla completa (off hasta y800 y
- * on en y900 con `innerHeight` 900; a 390, off en y800 y on en y900 con
- * `innerHeight` 844). Y el hover del original pinta el fondo de **azul
- * `#0075C9`**, no un negro más oscuro. Ninguna de las dos cosas entra en esta
- * corrección — anotadas en docs/PENDIENTES-QA.md para decidirlas aparte.
+ * **Umbral de aparición: `scrollY > 800`, constante.** No es relativo al
+ * viewport: búsqueda binaria del punto de corte a 1440×600, 1440×900,
+ * 1440×1200 y 390×844 → los cuatro cortan en el MISMO sitio (off en y800, on
+ * en y801), así que el umbral no sigue a `innerHeight`. Sin histéresis:
+ * bajando se apaga en el mismo 800. El clon usaba 500px.
+ *
+ * **Hover: fondo `#0075C9`** (azul de marca), no un negro más oscuro. El
+ * original computa `transition: all 0s`, o sea el cambio de color es
+ * instantáneo; la `transition-opacity` de aquí solo afecta a la aparición
+ * (en el original es un fade de jQuery, no CSS).
  */
 export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -38,7 +42,7 @@ export function ScrollToTop() {
       rafPending = true;
       requestAnimationFrame(() => {
         rafPending = false;
-        setVisible(window.scrollY > 500);
+        setVisible(window.scrollY > 800);
       });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -52,7 +56,7 @@ export function ScrollToTop() {
       aria-label="Volver arriba"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={
-        "fixed right-0 z-[99999] flex h-[40px] w-[40px] items-center justify-center rounded-l-[5px] bg-black/40 text-white transition-opacity duration-300 hover:bg-black/60 " +
+        "fixed right-0 z-[99999] flex h-[40px] w-[40px] items-center justify-center rounded-l-[5px] bg-black/40 text-white transition-opacity duration-300 hover:bg-[#0075C9] " +
         (visible ? "opacity-100" : "pointer-events-none opacity-0")
       }
       style={{ bottom: 125 }}

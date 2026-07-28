@@ -960,16 +960,59 @@ los dos anchos.
 | @1440 antes / después | 11870 / **11870** | 12410 / **12410** | 10863 / **10863** | 11711 / **11711** | 5289 / **5289** |
 | @390 antes / después | 19182 / **19182** | 21854 / **21854** | 21180 / **21180** | 20844 / **20844** | 9125 / **9125** |
 
-### Lo que NO se ha tocado del mismo botón (decisión pendiente)
+### K13 · Remates del mismo botón: umbral y hover · RESUELTO (2026-07-28)
 
-Al medirlo salieron otras dos diferencias que **no** entraban en el encargo y
-quedan aquí para decidirlas aparte:
+**Umbral de aparición: `scrollY > 800`, constante.** El clon usaba 500px fijos.
 
-- **Umbral de aparición.** El clon usa 500px fijos. El original aparece al
-  pasar **una pantalla completa**: a 1440 (`innerHeight` 900) está apagado en
-  y800 y encendido en y900; a 390 (`innerHeight` 844), lo mismo. O sea, la
-  regla parece ser `scrollY > innerHeight`, no una constante. Muestreo en pasos
-  de 100px: si se aborda, conviene afinarlo en pasos de 25.
-- **Color del hover.** El original pinta el fondo de **`#0075C9`** (azul de
-  marca) al pasar el ratón; el clon oscurece a `bg-black/60`. Medido a 1440;
-  a 390 no hay hover.
+> ⚠️ **Corrección de un hallazgo mal anotado en K12.** Allí se dijo que el
+> original "aparece al pasar una pantalla completa" y que la regla parecía ser
+> `scrollY > innerHeight`. **Es falso.** Salió de muestrear en pasos de 100px a
+> dos alturas de viewport (900 y 844) que están las dos entre 800 y 900: los
+> dos casos daban "off en y800, on en y900" y eso se leyó como dependencia del
+> viewport. Repetido con **búsqueda binaria del punto de corte a cuatro
+> geometrías** —1440×600, 1440×900, 1440×1200 y 390×844— los cuatro cortan en
+> el **mismo** sitio:
+>
+> | Viewport | `innerHeight` | Corte | umbral / innerHeight |
+> |---|---|---|---|
+> | 1440×600 | 600 | **800–802** | 1.337 |
+> | 1440×900 | 900 | **800–802** | 0.891 |
+> | 1440×1200 | 1200 | **800–802** | 0.668 |
+> | 390×844 | 844 | **800–802** | 0.950 |
+>
+> Al píxel: **off en y800, on en y801**, y sin histéresis (bajando se apaga en
+> el mismo 800). Es la misma lección que dejó el falso hallazgo del FAQ al
+> final de este archivo: **dos muestras que comparten el sesgo del método no
+> son dos comprobaciones**. Aquí bastaba variar el alto del viewport.
+
+**Hover: fondo `#0075C9`.** El clon oscurecía a `bg-black/60`. Medido en el
+original: reposo `rgba(0,0,0,.4)` → hover `rgb(0,117,201)` → vuelta a
+`rgba(0,0,0,.4)`. El cambio es **instantáneo**: el original computa
+`transition: all 0s`. La `transition-opacity duration-300` del clon solo afecta
+a la aparición (en el original ese fundido lo hace jQuery, no CSS), así que no
+se toca.
+
+**Verificado en el clon**, las 5 páginas × 3 geometrías (1440×900, 1440×600 y
+390×844): corte en **800/801 en las 15 combinaciones** —igual que el original y
+sin depender del alto de viewport— y hover `rgb(0, 117, 201)` en las 5.
+
+Sin regresión: alturas de documento idénticas a las de K12 en las 5 páginas y
+los 2 anchos (11870 · 12410 · 10863 · 11711 · 5289 a 1440; 19182 · 21854 ·
+21180 · 20844 · 9125 a 390). El botón es `position: fixed` y ninguno de los dos
+cambios es de maquetación, pero se volvió a medir.
+
+#### Dos trampas de la sonda, pagadas en esta tanda
+
+1. **No leer la `opacity` computada para saber si el botón está visible.** El
+   clon tiene `transition-opacity duration-300`; con una espera de 260 ms la
+   opacidad va todavía por 0.9x, así que el test daba **falso negativo** y la
+   búsqueda binaria convergía a un 1500 sin sentido, idéntico en las 5 páginas
+   (señal de que el sondeo estaba roto, no de que el umbral fuera ése). Hay que
+   mirar la **clase** de estado, que cambia sin transición — el equivalente del
+   `et-visible` del original.
+2. **`document.scrollHeight` depende de dónde esté el scroll.** Medido al final
+   de un pase de scroll, la home a 390 da **19174**; medido con el scroll en 0,
+   **19182**. Son 8px del header, que al hacerse sticky pasa a `position:
+   fixed` y sale del flujo. Para comparar alturas hay que usar **la misma sonda
+   y el mismo estado de scroll** en el antes y el después, no dos sondas
+   distintas.
