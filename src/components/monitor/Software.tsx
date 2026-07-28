@@ -30,8 +30,12 @@ export function Software() {
               <a
                 key={i}
                 href={s.href}
-                target="_blank"
-                rel="noopener"
+                // El original abre estos dos enlaces en pestaña nueva, pero los
+                // dos apuntan ya a RUTAS LOCALES del clon (ver el comentario de
+                // `SOFTWARE_PARAGRAPHS`): abrir el propio clon en otra pestaña
+                // no tiene sentido, así que el `target` solo va si el destino
+                // es externo. Mismo criterio que en `InfoProductoApi`.
+                {...(s.href.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}
                 className="text-inherit no-underline transition-colors duration-300 hover:text-[#5e6770]"
               >
                 {s.t}

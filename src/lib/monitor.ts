@@ -252,12 +252,26 @@ export interface ParaSeg {
   href?: string;
 }
 
-// hrefs verbatim del original: el de AIR Cloud va SIN prefijo /es/ y el del
-// botón además sin barra final. Se replican tal cual.
+// Regla del proyecto: los destinos que YA están clonados van a RUTA LOCAL (sin
+// barra final: `trailingSlash` no está activado); el resto sigue apuntando al
+// original hasta que se clone. La misma que aplican `nav.ts`, `footer.ts`,
+// `products.ts` y `lib/api.ts`.
+//
+// Los dos enlaces inline de este bloque ya están localizados (2026-07-27). Sus
+// hrefs en el original, por si hay que rehacer la comparación:
+//   · Kunak AIR Cloud → `https://kunakair.com/software-medicion-calidad-del-aire/`
+//     (sic: SIN el prefijo /es/; responde 301 a /es/software-de-medicion-calidad-del-aire/)
+//   · API Rest        → `https://kunakair.com/es/kunak-api/`
+//
+// ⚠️ Queda un TERCER enlace del mismo bloque sin localizar: el botón
+// "Saber más" (`SOFTWARE_MORE_HREF`), que acaba también en la ficha de software
+// (`/software-calidad-aire` → 301 → `/es/software-de-medicion-calidad-del-aire/`).
+// Se deja verbatim a la espera de decisión.
 export const SOFTWARE_PARAGRAPHS: ParaSeg[][] = [
   [
     { t: "Analiza todos los datos recogidos por las estaciones Kunak AIR de forma sencilla con nuestro software avanzado de calidad del aire " },
-    { t: "Kunak AIR Cloud", href: "https://kunakair.com/software-medicion-calidad-del-aire/" },
+    // ruta local: esta página ya está clonada (src/app/software-de-medicion-calidad-del-aire)
+    { t: "Kunak AIR Cloud", href: "/software-de-medicion-calidad-del-aire" },
     { t: " y genera informes que te faciliten la toma de decisiones. " },
   ],
   [
@@ -265,7 +279,8 @@ export const SOFTWARE_PARAGRAPHS: ParaSeg[][] = [
   ],
   [
     { t: "Integra los datos recopilados por la red y almacenados por el servidor en plataformas de calidad del aire públicas o en aplicaciones de terceros a través de la potente " },
-    { t: "API Rest", href: "https://kunakair.com/es/kunak-api/" },
+    // ruta local: esta página ya está clonada (src/app/kunak-api)
+    { t: "API Rest", href: "/kunak-api" },
     { t: "." },
   ],
   [
