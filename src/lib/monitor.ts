@@ -257,16 +257,14 @@ export interface ParaSeg {
 // original hasta que se clone. La misma que aplican `nav.ts`, `footer.ts`,
 // `products.ts` y `lib/api.ts`.
 //
-// Los dos enlaces inline de este bloque ya están localizados (2026-07-27). Sus
-// hrefs en el original, por si hay que rehacer la comparación:
+// Los TRES enlaces de este bloque ya están localizados (2026-07-28). Sus hrefs
+// en el original, por si hay que rehacer la comparación:
 //   · Kunak AIR Cloud → `https://kunakair.com/software-medicion-calidad-del-aire/`
 //     (sic: SIN el prefijo /es/; responde 301 a /es/software-de-medicion-calidad-del-aire/)
 //   · API Rest        → `https://kunakair.com/es/kunak-api/`
-//
-// ⚠️ Queda un TERCER enlace del mismo bloque sin localizar: el botón
-// "Saber más" (`SOFTWARE_MORE_HREF`), que acaba también en la ficha de software
-// (`/software-calidad-aire` → 301 → `/es/software-de-medicion-calidad-del-aire/`).
-// Se deja verbatim a la espera de decisión.
+//   · "Saber más"     → `https://kunakair.com/software-calidad-aire`
+//     (301 a /es/software-de-medicion-calidad-del-aire/ — mismo destino que el
+//     primero, con otro slug heredado)
 export const SOFTWARE_PARAGRAPHS: ParaSeg[][] = [
   [
     { t: "Analiza todos los datos recogidos por las estaciones Kunak AIR de forma sencilla con nuestro software avanzado de calidad del aire " },
@@ -288,7 +286,8 @@ export const SOFTWARE_PARAGRAPHS: ParaSeg[][] = [
   ],
 ];
 
-export const SOFTWARE_MORE_HREF = "https://kunakair.com/software-calidad-aire";
+// ruta local: esta página ya está clonada (src/app/software-de-medicion-calidad-del-aire)
+export const SOFTWARE_MORE_HREF = "/software-de-medicion-calidad-del-aire";
 
 /** Helper de tipografía usado por varias secciones (evita re-declararlo). */
 export type WithChildren = { children: ReactNode };
