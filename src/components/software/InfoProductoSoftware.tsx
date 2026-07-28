@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { BlurbsIconos } from "@/components/BlurbsIconos";
 import { VideoLightbox } from "@/components/VideoLightbox";
 import { CarruselCapturas } from "@/components/software/CarruselCapturas";
 import {
@@ -145,37 +146,12 @@ export function InfoProductoSoftware() {
 
         {/* 6 blurbs de característica: 31% + 2% de margen, 3 por fila.
             El original aplica la regla `.modulo-beneficios` desde 981px; el clon
-            mapea ese breakpoint a `md`, igual que monitor/Beneficios. */}
+            mapea ese breakpoint a `md`, igual que monitor/Beneficios.
+            Forma compartida con los 12 de /kunak-api → `BlurbsIconos`. */}
         {/* Sin `m-0`: el `space-y` del contenedor pinta su margen con `:where()`
             (especificidad 0) y `m-0` se lo comería, dejando el bloque pegado al
             titular azul siguiente. */}
-        <ul className="flex list-none flex-col p-0 md:flex-row md:flex-wrap">
-          {CARACTERISTICAS.map((c) => (
-            <li
-              key={c.titulo}
-              // pt 6: el `et_pb_only_image_mode_wrap` del original empuja el
-              // icono 6px hacia abajo (blurb 105.2 = 6 + 50 + 30 + 19.2).
-              // mb 30 en móvil / 27.82 desde md (medido en ambos anchos).
-              className="mb-[30px] w-full pt-[6px] md:mr-[2%] md:mb-[27.82px] md:w-[31%] md:[&:nth-child(3n)]:mr-0"
-            >
-              <img
-                src={c.icono}
-                alt=""
-                aria-hidden
-                width={50}
-                height={50}
-                className="mx-auto mb-[30px] block object-contain"
-                style={{ width: 50, height: 50 }}
-              />
-              <h4
-                className="text-center"
-                style={{ fontSize: 16, lineHeight: "19.2px", fontWeight: 400, color: "#333" }}
-              >
-                {c.titulo}
-              </h4>
-            </li>
-          ))}
-        </ul>
+        <BlurbsIconos items={CARACTERISTICAS} variante="modulo-beneficios" />
 
         <BloqueAzul heading={INFO_BLOQUE_2.heading} lead={INFO_BLOQUE_2.lead} />
 

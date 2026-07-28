@@ -145,8 +145,17 @@ Al construir, se congela el set capturado, como en las otras tres páginas.
 Muy poco, y nada nuevo:
 
 1. Confirmar el hover del título de artículo (§5).
-2. Decidir la variante de espaciado de `UltimosArticulos`: esta página usa
-   `padding-top: 28.8` (2%) en la fila del titular, no los 140px de
-   /monitor-calidad-aire y /software (`PAGE_TOPOLOGY.md` §S2).
-3. Medir el `margin-top: -54.42px` de la foto del hero a otros anchos, para
-   saber si es un valor fijo o un porcentaje.
+2. ~~Decidir la variante de espaciado de `UltimosArticulos`~~ → **hecho**
+   (2026-07-27): variante `variant="api"`, fila del titular a `2%` y CTA a
+   `1%` de las tarjetas, con el mismo remate de 94 que la variante `monitor`.
+   Verificado: 25.6 vs 25.3 y 12.7 vs 12.7 del original.
+3. ~~Medir el `margin-top: -54.42px` de la foto del hero~~ → **hecho**
+   (2026-07-27): es un **porcentaje**, `margin-top: -10%` del ancho de la
+   columna. Medido −47.80 a columna 478.0 (cw 1264.7) y −54.42 a columna
+   544.3 (cw 1440). Ver `components/hero-api.spec.md`.
+
+Y una que no estaba en la lista, encontrada al construir: la regla
+`:nth-child(3n+1)` con la que el tema anula el margen de los blurbs cuenta
+sobre **todos** los hijos de la columna Divi. En esta página cae justo en los
+blurbs 3 y 6 (huecos uniformes); en /software cae en el 2 y el 5 y deja dos
+blurbs pegados. Anotado como **A5** en `docs/PENDIENTES-QA.md`.

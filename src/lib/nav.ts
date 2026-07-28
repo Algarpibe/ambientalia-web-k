@@ -90,7 +90,8 @@ export const PRODUCTS: NavProductItem[] = [
   },
   {
     label: "Kunak API",
-    href: "https://kunakair.com/es/kunak-api/",
+    // ruta local: esta página ya está clonada (src/app/kunak-api)
+    href: "/kunak-api",
     image: "/images/uploads/2026/04/kunak-api.jpg",
   },
   {

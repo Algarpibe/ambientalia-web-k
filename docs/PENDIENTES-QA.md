@@ -563,3 +563,108 @@ aplicadas; sin ellas el clon salía +212 en vez de −159):
   comparable px a px.
 - **A2 (heredado)**: la franja de cabecera. Afecta igual que a las otras
   páginas y sigue sin arreglarse por la decisión razonada de más arriba.
+
+## /kunak-api — QA de construcción (2026-07-27)
+
+> Medido con Claude in Chrome (`javascript_tool`, computed styles reales,
+> imágenes perezosas forzadas a `eager` + pase de scroll) a **cw 1264.7**
+> (viewport 1280) contra el original en vivo. El móvil se midió en un
+> **iframe de 390** servido desde el propio `localhost:3000` (el navegador de la
+> sesión no baja de 1280 de viewport): dentro del iframe `innerWidth` es 390 y
+> el contenido 374.7, porque la barra de scroll sí ocupa — las alturas son
+> comparables, los anchos van un ~4% cortos.
+> Specs de bloque: `docs/research/kunak-api/components/*.spec.md`.
+
+### Desktop 1280 — secciones (clon vs original)
+
+| Sección | Clon | Original | Δ |
+|---|---|---|---|
+| S0 breadcrumb | 50 | 50 | **0** |
+| S1 hero + info + beneficios | 1956.7 | 1965 | −8.3 |
+| · fila 1 (hero) | 563.5 | 563.4 | **+0.1** |
+| · fila 2 (información) | 771.5 | 776.1 | −4.6 |
+| · fila 3 (beneficios) | 570.5 | 575 | −4.5 |
+| S2 Artículos y Guías | 613.3 | 699.8 | −86.5 |
+| S3 Preguntas frecuentes | 1398.4 | 1404.4 | −6 |
+| S4 CTA de ancho completo | 275.1 | 275.1 | **0** |
+
+- La **fila 1 es exacta**: kicker 60, h1 56, h2 175, claim 61.2, botón 43.3 con
+  su remate de 90 (30 del botón + 60 del wrapper), columna 550.7 y foto a
+  −47.8 (el `margin-top: -10%`, ver `hero-api.spec.md`).
+- El **CTA final es exacto**: caja 275.1 con `padding` 55.65 / `padding-right`
+  345, `<h2>` 68.5 y párrafo 32 — sin una sola prop nueva en `CtaBanner`.
+- Los −4.5 de las filas 2 y 3 son **el strut de los `inline-block`**: en el
+  original los blurbs forman line boxes y cada fila se lleva ~2.7px extra de
+  interlínea que el flex del clon no tiene. Es el mismo residuo aceptado en
+  /software; no se fuerza.
+- El **espaciado nuevo de `UltimosArticulos` es correcto**: fila del titular a
+  25.6 del techo de sección (original 25.3, el 2%) y CTA a 12.7 de las tarjetas
+  (original 12.7, el 1%), con el mismo remate de 94.
+
+### Móvil 390 — verificado
+
+- **Sin scroll horizontal** (`scrollWidth == clientWidth`).
+- Altura de documento **9196**, dentro de la horquilla del propio original
+  (**9176 / 9203 / 9230** en tres cargas seguidas: los posts se sortean, P4).
+- Los 12 blurbs pasan a **2 por fila** al 48% — el corte de esta variante es
+  **480px**, no 768 ni 981.
+- La foto del hero **se mantiene visible** (a diferencia de la de /software).
+- Punteado recortado contra el borde izquierdo, como en /accesorios (A4).
+
+### Pendiente
+
+- **P4 (heredado)**: los −86.5 de "Artículos y Guías". Los 3 posts van
+  congelados (el original los sortea) y, además, el módulo de blog del original
+  se lleva ~60px de relleno interno que el clon no pinta — el mismo residuo que
+  ya tienen /monitor-calidad-aire y /software con el componente compartido.
+- **P2 (heredado)**: la franja de cabecera cambia de foto entre visitas. El
+  recon capturó `cabecera-urbana.jpg` y el clon la fija; en la comprobación de
+  hoy el original servía `cabecera-puerto-1.jpg`. No se re-investiga.
+- **A2 (heredado)**: la franja del header mide menos que la del original.
+  Decisión ya tomada: no se fuerza.
+
+### A5 · Los blurbs de /software van 13px descolocados en el ORIGINAL (2026-07-27)
+
+Descubierto al extraer `BlurbsIconos`. El tema separa los blurbs con
+`margin-inline-end` y lo anula con `:nth-child(3n+1)`, que cuenta sobre **todos**
+los hijos de la columna Divi, no solo sobre los blurbs:
+
+| Página | Módulos de texto antes | `3n+1` cae en | Efecto |
+|---|---|---|---|
+| /kunak-api | 4 | blurbs **3 y 6** | huecos uniformes del 3% ✔ |
+| /software | 5 | blurbs **2 y 5** | el 2.º y el 3.º de cada fila salen **PEGADOS** |
+
+Medido en el original de /software: `x = 482.3 · 698.7 · 902.0` con caja 203.3
+→ hueco 1→2 = 13.1 (2%) y hueco 2→3 = **0**.
+
+El clon pinta huecos uniformes en las dos páginas, así que en /software el 3.er
+blurb de cada fila queda **13.1px a la derecha** del original. **No se corrige**:
+el encargo del refactor era extraer el componente sin mover /software, y el
+resultado uniforme se ve mejor que el del tema. Queda anotado por si algún día
+se quiere fidelidad total.
+
+Del mismo A/B salen otras dos desviaciones **preexistentes** de /software, que
+tampoco se han tocado: el `<h4>` del blurb se pinta a **fw 400** cuando el
+original es **fw 300**, y el reparto vertical es `icono mb 30 + h4 sin padding`
+en vez de `icono mb 20 + h4 pb 10` (el alto total del blurb es el mismo, 105.2,
+pero el título va 10px más abajo dentro de la caja).
+
+### /software — A/B del refactor: SIN regresión
+
+Medido a 1280 antes y después de sustituir el bloque inline por `BlurbsIconos`,
+recargando la misma página:
+
+| | Antes | Después |
+|---|---|---|
+| Altura de documento | **11533** | **11533** |
+| `<main>` (7 bloques) | idénticos | idénticos |
+| `<ul>` de blurbs | 1639.2 / 285.2 / 482.3 / 655.9 | idéntico |
+| `x` de los 6 blurbs | 482.3 · 698.7 · 915.1 (×2) | idéntico |
+| Alto de blurb | 105.2 / 124.4 | idéntico |
+| Icono | 1645.2 / 50 / 558.9 | idéntico |
+| `<h4>` | 1725.2 / 19.2 / 482.3 / 203.3 | idéntico |
+
+Lo único que cambia es **cómo** se pinta la separación: antes `margin-right: 2%`
+con `nth-child(3n)` a 0, ahora `column-gap: 2%`. Mismas posiciones.
+Móvil 390 también verificado: 1 blurb por fila a ancho completo, `mb 30`, sin
+scroll horizontal.

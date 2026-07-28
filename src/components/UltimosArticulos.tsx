@@ -19,12 +19,23 @@ export function UltimosArticulos({
 }: {
   title?: string;
   posts?: BlogPost[];
-  /** "monitor" = /monitor-calidad-aire (QA 2026-07-26): sección SIN watermark
-   *  (et_pb_section_4 bg none), fila Divi 80%/máx 1380 con pt 140 y remate
-   *  pb 64 + mb 30 del botón. La home no cambia. */
-  variant?: "home" | "monitor";
+  /**
+   * "monitor" = /monitor-calidad-aire (QA 2026-07-26): sección SIN watermark
+   * (et_pb_section_4 bg none), fila Divi 80%/máx 1380 con pt 140 y remate
+   * pb 64 + mb 30 del botón. También la usa /software.
+   *
+   * "api" = /kunak-api: idéntica salvo el ESPACIADO de la fila del titular —
+   * el original le da `padding-top: 2%` (25.29 medido a cw 1264.7), no los
+   * 140px fijos; y el CTA cuelga a `1%` de las tarjetas en vez de a 46px
+   * (son dos filas Divi: `28.8px 0 1%` y `0 0 5%`).
+   *
+   * La home no cambia.
+   */
+  variant?: "home" | "monitor" | "api";
 } = {}) {
-  const monitor = variant === "monitor";
+  // las dos variantes de ficha de producto comparten sección y retícula
+  const monitor = variant !== "home";
+  const api = variant === "api";
   return (
     <section
       className={
@@ -43,7 +54,9 @@ export function UltimosArticulos({
       <div
         className={
           monitor
-            ? "mx-auto w-[80%] max-w-[1380px] pb-[49px] pt-[140px] md:pb-[94px]"
+            ? "mx-auto w-[80%] max-w-[1380px] pb-[49px] md:pb-[94px] " +
+              // móvil: las filas Divi usan 30px fijos, no el 2% del ancho
+              (api ? "pt-[30px] md:pt-[2vw]" : "pt-[140px]")
             : "mx-auto w-[86.35%] max-w-[1380px] md:w-[85%]"
         }
       >
@@ -89,7 +102,12 @@ export function UltimosArticulos({
           ))}
         </div>
 
-        <div className={monitor ? "mt-4 flex justify-end md:mt-[46px]" : "mt-4 flex justify-end md:mt-[80px]"}>
+        <div
+          className={
+            "mt-4 flex justify-end " +
+            (api ? "md:mt-[1vw]" : monitor ? "md:mt-[46px]" : "md:mt-[80px]")
+          }
+        >
           <BlueButton href="https://kunakair.com/es/recursos/guias/">
             Amplia tus conocimientos con nuestras guías
           </BlueButton>

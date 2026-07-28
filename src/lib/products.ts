@@ -88,6 +88,7 @@ export const PRODUCTS_TABS: Product[] = [
       "Importación y exportación de datos",
     ],
     image: "",
-    href: "https://kunakair.com/es/kunak-api/",
+    // ruta local: esta página ya está clonada (src/app/kunak-api)
+    href: "/kunak-api",
   },
 ];
