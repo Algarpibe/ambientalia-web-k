@@ -1211,10 +1211,17 @@ Arreglarlo bien pide que el modelo sepa si un bloque **abre sección o continúa
 la anterior** — es un cambio de diseño del content type, no un retoque. Es la
 misma lección que las dos pieles: el ritmo se calibró con una instancia.
 
-**S8 · `MapaProyectos` no fija altura en móvil.** El contenedor lleva
-`md:h-[570px]`, así que a 390 los 41 pines se despliegan enteros: **1632.9** de
-alto frente a los **570** del original (que mide 570 en los dos anchos). Es
-+1062.9, y explica por sí solo el grueso del desfase móvil de Industria
-(docH 13689 vs 12530). Un `h-[570px]` sin prefijo lo cerraría, pero conviene
-decidirlo junto con S3 (el mapa es un placeholder deliberado: no se clona el
-mapa de Google).
+**S8 · `MapaProyectos` no fijaba altura en móvil · RESUELTO (2026-07-28).**
+El contenedor llevaba `md:h-[570px]`, así que a 390 los 41 pines se desplegaban
+enteros: **1632.9** de alto frente a los **570** del original. Medido el
+`et_pb_map_container` del original: **`height: 570px` fijo en los dos anchos**
+(1238.4×570 y 335.4×570), así que la altura va **sin prefijo**.
+
+Efecto en Industria a 390: el mapa pasa a 570 (Δ0) y el documento de **13689 a
+12626** frente a los 12530 del original — el desfase cae de **+1159 a +96**. Las
+anclas de más abajo pasan de +1053 / +1043 / +979 a **−9.6 / −19.7 / −83.5**,
+ya dentro del residuo conocido de los interiores de tarjeta (S1). Desktop no se
+mueve (ya iba a 570). Sin regresión en las 6 páginas anteriores.
+
+Sigue en pie lo de S3: el mapa de Google **no se clona** (haría falta clave
+propia); el bloque pinta titular, intro y la lista de pines en la caja de 570.
