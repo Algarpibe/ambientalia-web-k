@@ -49,8 +49,12 @@ export function SectorHero({ hero }: { hero: SectorHeroData }) {
 
           {/* ── columna derecha ─────────────────────────────────── */}
           <div className="w-full md:w-[47.25%]">
+            {/* El color del span es CONTENIDO, no estilo: lo pone quien edita
+                en WordPress y varía por sector (Urbano #0075c9, Industria
+                #0c71c3). Por eso viene del content type, con el azul de marca
+                por defecto. */}
             <h2 className="mb-[30px] pb-[10px] text-[37px] font-light leading-[37px] tracking-[-0.5px] text-[#333] md:mb-[34.0469px]">
-              <span style={{ color: "#0075C9" }}>{hero.heading}</span>
+              <span style={{ color: hero.headingColor ?? "#0075C9" }}>{hero.heading}</span>
             </h2>
 
             <div className="text-[18px] leading-[30.6px] text-[#333] [&>p:not(:last-child)]:pb-[18px]">

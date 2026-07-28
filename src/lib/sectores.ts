@@ -66,21 +66,45 @@ export interface SectorHero {
   /** Los dos botones azules bajo la foto (siempre 2 en los 7 sectores). */
   ctas: SectorLink[];
   /**
-   * El `<h2>`. En el original el azul lo pone un `<span style="color:#0075c9">`
+   * El `<h2>`. En el original el color lo pone un `<span style="color:…">`
    * dentro del h2, no el h2: el h2 computa `#333`.
    */
   heading: string;
+  /**
+   * Color de ese `<span>`. **Es contenido, no estilo**: lo escribe quien edita
+   * la página en WordPress y no es el mismo en todos los sectores — Urbano usa
+   * `#0075c9` (el azul de marca) e Industria `#0c71c3` (el azul por defecto de
+   * Divi). Por defecto, el de marca.
+   */
+  headingColor?: string;
   /** Párrafos a 18/30.6 con la rítmica Divi (`padding-bottom: 18px` salvo el último). */
   paragraphs: string[];
 }
 
-/** CTA de descarga — shortcode `calls` en su variante `call-con-foto`. */
+/**
+ * CTA de descarga — shortcode `calls`. Tiene **dos pieles** y el mismo campo
+ * `image` alimenta las dos; lo que cambia es dónde se pinta la foto:
+ *
+ * | | `"foto"` (Urbano) | `"fondo"` (Industria) |
+ * |---|---|---|
+ * | Clases del original | `…espacio-derecha call-fondo-blanco …` **`call-con-foto`** | `calls one-column call-fondo-blanco espacio-blanco-derecha` |
+ * | La foto | `<img>` de 280 a la izquierda, sangrada −30 | **`background-image: cover`** de la caja |
+ * | `padding` desktop | `40px 50px` | **`40px 60px`** |
+ * | `padding` móvil | `30px 30px 40px` | **`40px 60px`** |
+ * | Texto | tras la foto (inner 866.4) | inner a ancho completo con **`padding-left: 36%`** |
+ * | Alto a 1440 | 337 | 420 |
+ *
+ * Lo descubrió poblar Industria (2026-07-28): el componente solo sabía pintar
+ * la primera y la página salía +53 desplazada de ahí abajo.
+ */
 export interface SectorBloqueCtaDescarga {
   kind: "ctaDescarga";
   title: string;
   body: string[];
   cta: SectorLink;
   image: string;
+  /** Por defecto `"foto"` — la piel de Urbano. */
+  variante?: "foto" | "fondo";
 }
 
 /** Las dos listas con viñeta azul: "Beneficios de…" | "Aplicaciones en…". */
@@ -444,6 +468,8 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     ],
     heading:
       "Mide el impacto de las emisiones industriales con datos fiables sobre múltiples contaminantes.",
+    // el original de Industria usa el azul por defecto de Divi, no el de marca
+    headingColor: "#0c71c3",
     paragraphs: [
       "El crecimiento de las ciudades hace que a menudo la gente acabe viviendo junto a industrias dando lugar a quejas y molestias por la contaminación o los olores que desprenden.",
       "El control y la monitorización de emisiones industriales ayuda a minimizar estos problemas.",
@@ -498,6 +524,8 @@ export const SECTOR_INDUSTRIA: SectorPage = {
         external: true,
       },
       image: "/images/uploads/2024/11/cta-informe-tecnico-industria-scaled.jpg",
+      // Industria no lleva `call-con-foto`: la foto es el fondo de la caja.
+      variante: "fondo",
     },
     {
       kind: "listaSimple2Col",

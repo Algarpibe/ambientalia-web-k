@@ -1,17 +1,37 @@
-# CtaDescarga — shortcode `calls` variante `call-con-foto`
+# CtaDescarga — shortcode `calls`, sus **dos pieles**
 
-> Medido 2026-07-28 a **1440×900** y **390×844** reales.
+> Medido 2026-07-28 a **1440×900** y **390×844** reales, en Urbano y en
+> Industria y olores.
 > Componente: `src/components/sectores/CtaDescarga.tsx`.
-> Bloque del *flexible content*: `{ kind: "ctaDescarga", … }`.
+> Bloque del *flexible content*: `{ kind: "ctaDescarga", variante?: "foto" | "fondo", … }`.
 
 ## Qué es
 
-El **mismo shortcode `calls`** que la newsletter de la home, con otra piel. Las
-clases del original lo dicen:
+El **mismo shortcode `calls`** que la newsletter de la home, con otra piel. Y
+**la piel no es una sola**: los sectores usan dos variantes distintas, que se
+distinguen por las clases del original.
 
-```
-calls one-column espacio-derecha call-fondo-blanco espacio-blanco-derecha call-con-foto
-```
+| | `"foto"` — Urbano | `"fondo"` — Industria |
+|---|---|---|
+| Clases | `calls one-column espacio-derecha call-fondo-blanco espacio-blanco-derecha` **`call-con-foto`** | `calls one-column call-fondo-blanco espacio-blanco-derecha` |
+| La foto | `<img>` de **280×246.39** a la izquierda, `margin: 0 20px 0 −30px` (se sale de la caja) | **`background-image: cover`** de la caja, a `0% 0%` |
+| `.calls-content` | `display: flex` | `display: block` |
+| `padding` desktop | `40px 50px` | **`40px 60px`** |
+| `padding` móvil | `30px 30px 40px` | **`40px 60px`** (no cambia) |
+| Texto | tras la foto, inner **866.4** | inner **1116.39** con `padding-left: 401.891` (**36%**) |
+| Alto a 1440 | **337** | **420** |
+
+Lo que comparten: `margin-bottom` 46.25 desktop / 12.5156 móvil, borde
+`1px solid #d8d8d8` en desktop y ninguno en móvil, y el vuelco de color del
+móvil (ver abajo).
+
+> **Cómo apareció la segunda piel.** El arquetipo se especificó viendo **una
+> sola instancia** (Urbano). Al poblar Industria solo con datos, el componente
+> pintó su foto como `<img>` de 280 en vez de como fondo: el ancla del CTA cayó
+> **+42.8** y arrastró ~**+53** a toda la página por debajo. El campo `image`
+> valía para las dos; lo que faltaba era el discriminador. Es el argumento para
+> no cerrar un arquetipo con una única instancia.
+
 (la home usa solo `calls one-column`).
 
 Y la piel **cambia entera entre desktop y móvil** — no es un simple reflow:
@@ -44,6 +64,12 @@ debajo; aquí no.)
 |---|---|---|
 | `.calls-title` | `37px / 51.8px` **w400** `#333`, `padding-bottom: 10px` | `27px / 37.8px` w400 **`#fff`** |
 | `.calls-text` | `18px / 30.6px` w400, `padding-bottom: 30px` | `14px / 22.4px` w400 `#fff` |
+| `.calls-text p` | **`padding-bottom: 18px` salvo el último** | **`14px` salvo el último** |
+
+⚠️ La rítmica de los párrafos **no se ve en Urbano**, que tiene uno solo.
+Industria tiene dos y sin ella salen pegados (−18). Medido en Industria:
+`79.19 pb:18px` + `61.19 pb:0px` a 1440; `103.63 pb:14px` + `112.03 pb:0px`
+a 390.
 | `.calls-button` | `15px/25.5px` w700, `padding: 7.5 40.5 9 22.5`, `radius 30`, `margin: 0 15px 10px 0` | igual, invertido de color |
 
 Ojo: el título es un `<p class="calls-title">`, **no** un heading — y a 37px

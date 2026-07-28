@@ -1134,3 +1134,87 @@ páginas no cambia.
   lo usa; lo usarán Industria, Puertos y Minería.
 - **P4 (heredado)**: los 3 artículos van congelados y el original los sortea —
   entre dos medidas del mismo día su footer se movió de 5487.2 a 5514.2.
+
+## /sectores — lo que enseñó poblar el 2º sector (2026-07-28)
+
+> Industria y olores se pobló **solo con datos** (commit `6b65c2d`) para probar
+> hasta dónde llega la plantilla. El modelo aguantó: otra composición, otro
+> orden y los dos tipos que Urbano no ejercitaba (`listaSimple2Col`,
+> `mapaProyectos` con 41 pines) entraron sin tocar código. Lo que falló fue el
+> **componente**, calibrado viendo una sola instancia.
+
+### S4 · Las dos pieles del shortcode `calls` · RESUELTO
+
+| | `"foto"` (Urbano) | `"fondo"` (Industria) |
+|---|---|---|
+| Clases | `…espacio-derecha …` **`call-con-foto`** | `calls one-column call-fondo-blanco espacio-blanco-derecha` |
+| La foto | `<img>` 280 a la izquierda, sangrada −30 | **`background-image: cover`** a `0% 0%` |
+| `.calls-content` | `flex` | `block` |
+| `padding` desktop | 40/50 | **40/60** |
+| `padding` móvil | 30/30/40 | **40/60** |
+| Texto | inner 866.4 | inner 1116.39 con `padding-left` **36%** |
+| Alto @1440 | 337 | **420** |
+
+Añadido `variante?: "foto" | "fondo"` al bloque (por defecto `"foto"`). El campo
+`image` ya servía para las dos: lo que faltaba era el discriminador.
+**Verificado contra el original a 1440 y 390**: caja `1238.4×420` / `335.4×578.6`,
+`padding 40px 60px`, x del título `563.7` / `87.3` — **idénticos**.
+
+### S5 · El color del titular del hero es CONTENIDO · RESUELTO
+
+`SectorHero` cableaba `#0075C9`. Urbano usa ese, **Industria usa `#0c71c3`**
+(el azul por defecto de Divi) — y dentro de la propia Industria el claim sí
+lleva `#0075c9`, o sea que conviven los dos en la misma página. Viene del
+`<span style="color:…">` que escribe quien edita en WordPress. Añadido
+`headingColor?: string` al content type. Verificado: `rgb(12, 113, 195)` en el
+clon y en el original.
+
+### S6 · Rítmica Divi entre párrafos del `.calls-text` · RESUELTO
+
+El original da `padding-bottom` de 1em a cada `<p>` salvo el último: **18px en
+desktop, 14px en móvil**. Faltaba. No se veía en Urbano, que tiene un solo
+párrafo; Industria tiene dos y salían pegados. Verificado: `79.2/pb18 + 61.2/pb0`
+a 1440 y `103.6/pb14 + 112/pb0` a 390, igual que el original.
+
+### Sin regresión
+
+Las 6 páginas anteriores mantienen su altura exacta en los 2 anchos:
+
+| | home | monitor | accesorios | software | api | urbano |
+|---|---|---|---|---|---|---|
+| @1440 | 11870 | 12410 | 10863 | 11711 | 5289 | 6122 |
+| @390 | 19182 | 21854 | 21180 | 20844 | 9125 | 11064 |
+
+---
+
+### Dos hallazgos NUEVOS de Industria, sin arreglar
+
+Salieron al medir Industria a fondo después de los tres arreglos. **No entraban
+en el encargo y no se han tocado.**
+
+**S7 · Los bloques del cuerpo son FILAS de una sección, no secciones sueltas.**
+`SectorBody` mete cada bloque en su propia `<section>` con su ritmo (sección
+`pb-14` + fila `py-2%`). El original agrupa o separa según le conviene: en
+**Urbano** el CTA y las listas están en **dos secciones** distintas (S4 y S5) y
+por eso las cuentas encajaban; en **Industria** los cinco bloques son **cinco
+filas de la MISMA sección** (S4), donde entre fila y fila solo hay el
+`padding-bottom` de la anterior.
+
+Medido a 1440: el bloque de listas coincide **al píxel** (h3 175/120, ul
+363.5/332.9, fin 2016.3) y aun así el CTA cae a 2128.9 frente a 2086.1 del
+original. El +42.8 es exactamente **14** (el `pb` de sección de
+`BeneficiosAplicaciones`) **+ 28.797** (el `pt` de fila de `CtaDescarga`), que
+en el original no existen porque las dos filas comparten sección. De ahí baja
+todo ~+70 hasta el pie.
+
+Arreglarlo bien pide que el modelo sepa si un bloque **abre sección o continúa
+la anterior** — es un cambio de diseño del content type, no un retoque. Es la
+misma lección que las dos pieles: el ritmo se calibró con una instancia.
+
+**S8 · `MapaProyectos` no fija altura en móvil.** El contenedor lleva
+`md:h-[570px]`, así que a 390 los 41 pines se despliegan enteros: **1632.9** de
+alto frente a los **570** del original (que mide 570 en los dos anchos). Es
++1062.9, y explica por sí solo el grueso del desfase móvil de Industria
+(docH 13689 vs 12530). Un `h-[570px]` sin prefijo lo cerraría, pero conviene
+decidirlo junto con S3 (el mapa es un placeholder deliberado: no se clona el
+mapa de Google).
