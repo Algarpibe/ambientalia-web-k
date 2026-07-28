@@ -396,6 +396,289 @@ export const SECTOR_URBANO: SectorPage = {
   footerStripImage: "/images/uploads/2023/01/urban-1920.jpg",
 };
 
+/* ──────────────────── datos: Industria y olores ─────────────────────────── */
+
+/**
+ * Segundo sector, poblado el 2026-07-28 SOLO con datos para probar que la
+ * plantilla aguanta otra composición. Su cuerpo son **5 bloques en otro orden**
+ * que Urbano y estrena los dos tipos que aquél no usa: `listaSimple2Col` y
+ * `mapaProyectos` (41 pines).
+ *
+ * Dos desviaciones conocidas respecto al original, las dos por límites del
+ * COMPONENTE y no del modelo de datos — informe en PENDIENTES-QA.md:
+ *   · su CTA de descarga usa la 2ª piel del shortcode `calls`: la foto va de
+ *     `background-image` de la caja y el texto se desplaza a la derecha, en vez
+ *     de la foto como `<img>` a la izquierda que pinta `CtaDescarga`;
+ *   · el azul del titular del hero es `#0c71c3` (azul por defecto de Divi), no
+ *     el `#0075C9` de marca que `SectorHero` tiene cableado.
+ */
+export const SECTOR_INDUSTRIA: SectorPage = {
+  slug: "control-de-emisiones-industriales",
+
+  seo: {
+    title: "Control de emisiones industriales y malos olores | Kunak AIR",
+    description:
+      "Medición y control de la calidad del aire en emisiones industriales mediante estaciones basadas en sensores. Mejora tu impacto ambiental.",
+    ogImage: "/images/uploads/2023/01/industry-1920x1024-1.jpg",
+    canonical: "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+  },
+
+  breadcrumb: [
+    // ruta local: esta página ya está clonada (src/app/page.tsx)
+    { label: "Inicio", href: "/" },
+    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    { label: "Control de emisiones industriales" },
+  ],
+
+  header: {
+    kicker: "Industria y olores",
+    title: "Control de emisiones industriales",
+    image: "/images/uploads/2023/01/industry-1920x1024-1.jpg",
+  },
+
+  hero: {
+    image: { src: "/images/uploads/2023/02/industry-perimeter.jpg", alt: "control de emisiones industriales" },
+    ctas: [
+      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
+      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+    ],
+    heading:
+      "Mide el impacto de las emisiones industriales con datos fiables sobre múltiples contaminantes.",
+    paragraphs: [
+      "El crecimiento de las ciudades hace que a menudo la gente acabe viviendo junto a industrias dando lugar a quejas y molestias por la contaminación o los olores que desprenden.",
+      "El control y la monitorización de emisiones industriales ayuda a minimizar estos problemas.",
+      "Identifica qué operaciones o procesos producen más gases y partículas y detecta emisiones fugitivas que de otro modo pasarían desapercibidas mediante el despliegue de una red perimetral de sensores de calidad del aire.",
+      "Conecta sondas como anemómetros o pluviómetros para recopilar información sobre meteorología y analiza así su efecto en los niveles de contaminación y la percepción de olores.",
+      "Ayuda a crear un futuro más sostenible a través de la medición del impacto en la calidad del aire de las emisiones industriales.",
+    ],
+  },
+
+  body: [
+    {
+      kind: "beneficiosAplicaciones",
+      left: {
+        title: "Beneficios del control de las emisiones industriales:",
+        items: [
+          "Protección de la salud de los trabajadores.",
+          "Fortalecimiento de la imagen pública y la reputación de la empresa.",
+          "Evaluación de las acciones realizadas para minimizar el impacto de las operaciones.",
+          "Adaptación a las normativas medioambientales.",
+          "Planificar las operaciones en base a datos fiables.",
+          "Aumento de la protección y conservación medioambiental.",
+          "Mayor ahorro económico al reducirse el riesgo de sanciones.",
+          "Oportunidad para implementar sistemas y tecnologías más eficientes.",
+          "Alertas por superación de umbrales.",
+        ],
+      },
+      right: {
+        title: "Aplicaciones en las industrias:",
+        items: [
+          "Detección de fugas y emisiones fugitivas.",
+          "Monitorización en tiempo real, fiable y precisa de la contaminación.",
+          "Salud e higiene industrial.",
+          "Optimización de procesos.",
+          "Limitación del impacto de las operaciones sobre la calidad del aire.",
+          "Reducción de los costes de mantenimiento.",
+          "Evaluación de las mejoras u obras realizadas.",
+          "Identificación de puntos calientes.",
+          "Detección de fuentes de emisión.",
+        ],
+      },
+    },
+    {
+      kind: "ctaDescarga",
+      title: "¿Quieres controlar el impacto de tus procesos en la calidad del aire?",
+      body: [
+        "Descarga el informe técnico [PDF] sobre la red de control de la calidad del aire desplegada en la planta de Cemex.",
+        "Descubre cómo Cemex ha conseguido controlar las emisiones y tener bajo control el impacto ambiental de la producción de cemento.",
+      ],
+      cta: {
+        label: "Descargar informe",
+        href: "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+        external: true,
+      },
+      image: "/images/uploads/2024/11/cta-informe-tecnico-industria-scaled.jpg",
+    },
+    {
+      kind: "listaSimple2Col",
+      intro: "Algunos de las aplicaciones donde desplegar sistemas de monitorización ambiental son:",
+      left: [
+        "Industria cementera",
+        "Metalurgia y minería",
+        "Pasta y papel",
+        "Extracción de combustibles fósiles",
+        "Tratamiento de aguas residuales (PTAR y EDAR)",
+        "Vertederos y estiércol",
+      ],
+      right: [
+        "Gestión del compost",
+        "Espacios agrícolas y ganaderos",
+        "Industria del gas y del petróleo",
+        "Petroquímica",
+        "Plantas de fertilizantes",
+        "Empresas farmacéuticas",
+      ],
+    },
+    {
+      kind: "claimConFoto",
+      claim:
+        "Identifica qué operaciones o procesos producen más gases y partículas en industrias.",
+      image: {
+        src: "/images/uploads/2023/05/Identify-which-operations-or-processes-produce-the-most-gases-and-particulates-in-industries.jpg",
+        alt: "control emisiones industriales y olores",
+      },
+    },
+    {
+      kind: "mapaProyectos",
+      title: "Proyectos por todo el mundo",
+      intro: "Algunos de los proyectos de monitorización medioambiental en diferentes industrias.",
+      pins: [
+        { title: "MCP", lat: 42.8166478, lng: -1.7295503 },
+        { title: "Planta de fertilizantes Lifeco", lat: 30.4098125, lng: 19.6144375 },
+        { title: "Vertedero Cerro Patacón", lat: 9.0552719, lng: -79.5587616 },
+        { title: "EDAR (Confidencial)", lat: 43.3614375, lng: -5.8504375 },
+        { title: "Empresa de petróleo y gas (Confidencial)", lat: 37.9479375, lng: 23.6174375 },
+        { title: "EDAR (Confidencial)", lat: 50.9991875, lng: -0.1451875 },
+        { title: "Empresa de petróleo y gas (Confidencial)", lat: 40.6831875, lng: 22.8850625 },
+        { title: "Centro de Tratamiento de Aguas Residuales (Confidencial)", lat: 31.9565625, lng: 34.7335625 },
+        { title: "Empresa cementera (Confidencial)", lat: 53.0033369, lng: -2.1827408 },
+        { title: "Estación depuradora de aguas residuales (Confidencial)", lat: 39.9215625, lng: -105.0244375 },
+        { title: "Empresa de petróleo y gas (Confidencial)", lat: 29.0908125, lng: 48.0873125 },
+        { title: "Petrobras", lat: -22.4363125, lng: -45.1090625 },
+        { title: "Granja (Confidencial)", lat: 26.7432875, lng: 38.0525469 },
+        { title: "Empresa de petróleo y gas (Confidencial)", lat: 24.6171375, lng: 54.6672031 },
+        { title: "Planta de residuos y reciclaje (Confidencial)", lat: -27.6689375, lng: 152.8154375 },
+        { title: "EDAR (Confidencial)", lat: -27.3810625, lng: 153.1473125 },
+        { title: "Planta de reciclaje y vertedero (Confidencial)", lat: -33.7994375, lng: 150.8316875 },
+        { title: "Canal de Isabel II", lat: 40.4134375, lng: -3.5180625 },
+        { title: "Canal de Isabel II", lat: 40.4148125, lng: -3.4091875 },
+        { title: "ArcelorMittal", lat: -22.6983125, lng: -47.6550625 },
+        { title: "ArcelorMittal", lat: 36.5216875, lng: -118.7329375 },
+        { title: "ArcelorMittal", lat: 50.0317625, lng: 72.9927031 },
+        { title: "ArcelorMittal", lat: 43.4328125, lng: 4.8873125 },
+        { title: "SAMAE WWTP", lat: -26.5069375, lng: -49.1201875 },
+        { title: "Titan Pneus Do Brasil Ltda", lat: -23.5338125, lng: -46.5988125 },
+        { title: "Vigilancia en zonas remotas - Punta Arenas", lat: -52.8857375, lng: -70.1813281 },
+        { title: "Calidad del aire en Islandia", lat: 64.0438984, lng: -21.3994694 },
+        { title: "Galvani Fábrica de fertilizantes", lat: -12.0871875, lng: -45.7730625 },
+        { title: "Inerco", lat: -32.7755625, lng: -71.4914375 },
+        { title: "Ternium", lat: 25.7456875, lng: -99.9668125 },
+        { title: "Cemex", lat: 25.4890625, lng: -103.3991875 },
+        { title: "Cemex", lat: 25.7004375, lng: -100.2985625 },
+        { title: "EDAR Torredembarra", lat: 41.1461625, lng: 1.4132656 },
+        { title: "Fábrica de aluminio (Confidencial)", lat: 23.5684125, lng: 58.3744219 },
+        { title: "ALBA Fábrica de aluminio", lat: 26.0948125, lng: 50.6071875 },
+        { title: "Ubicación confidencial", lat: 66.3869742, lng: -106.7458395 },
+        { title: "Vertedero de Valdemingómez", lat: 40.3360625, lng: -3.5919219 },
+        { title: "Planta de petróleo y gas (Confidencial)", lat: -10.8166875, lng: 40.5666875 },
+        { title: "Industria alimentaria (Confidencial)", lat: -34.2075625, lng: -70.8961875 },
+        { title: "Fábrica de papel (Confidencial)", lat: 46.3271875, lng: -72.5574375 },
+        { title: "Planta de gestión de residuos sólidos (Confidencial)", lat: 47.6611875, lng: -122.1835625 },
+      ],
+    },
+  ],
+
+  ctaSlides: [
+    {
+      heading:
+        "Reduce el impacto ambiental midiendo las inisiones industriales",
+      cta: { label: "Podemos ayudarte", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/Limitation-of-the-environmental-impact-of-industrial-activity.jpg",
+    },
+    {
+      heading:
+        "Mejora la calidad del aire y la salud de tus trabajadores con la monitorización ambiental",
+      cta: { label: "Protege a tus trabajadores", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/industry-worker.jpg",
+    },
+    {
+      heading:
+        "Mide el impacto de tu actividad industrial en la calidad del aire",
+      cta: { label: "Obtén información fiable", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/inudstry-operator.jpg",
+    },
+  ],
+
+  soluciones: SECTOR_SOLUCIONES,
+
+  proyectos: {
+    title: "Últimos proyectos",
+    cta: {
+      label: "Ver todos los casos de éxito",
+      href: "https://kunakair.com/case-studies/",
+      external: true,
+    },
+    posts: [
+      {
+        client: "Virginia Department of Environmental Quality (DEQ)",
+        sector: "Industria",
+        sectorHref: "https://kunakair.com/es/sector/industria/",
+        title:
+          "Monitorización de la calidad del aire en el mayor corredor de centros de datos de EE.UU",
+        image:
+          "/images/uploads/2026/05/639130508516830000.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      },
+      {
+        client: "BASF SE",
+        sector: "Industria",
+        sectorHref: "https://kunakair.com/es/sector/industria/",
+        title:
+          "Monitorización de la calidad del aire en la planta petroquímica de BASF en Ludwigshafen (Alemania)",
+        image:
+          "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+      },
+      {
+        client: "Planta de procesamiento de alimentos",
+        sector: "Industria",
+        sectorHref: "https://kunakair.com/es/sector/industria/",
+        title:
+          "Análisis de la calidad del aire en una planta de procesamiento de alimentos en Singapur",
+        image:
+          "/images/uploads/2025/01/food-processing-plant-in-Singapore-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+      },
+    ],
+  },
+
+  articulos: {
+    title: "Artículos y Guías",
+    cta: {
+      label: "Amplia tus conocimientos con nuestras guías",
+      href: "https://kunakair.com/es/recursos/guias/",
+    },
+    /** P4: el original sortea los 3 posts en cada carga; trío congelado el 2026-07-28. */
+    posts: [
+      {
+        title:
+          "El impacto del humo de incendios forestales en la calidad del aire",
+        date: "Mar 3, 2021",
+        image: "/images/uploads/2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg",
+        href: "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+      },
+      {
+        title:
+          "Medición de gases en los vertederos de basura",
+        date: "Abr 4, 2023",
+        image: "/images/uploads/2023/04/gases-en-los-vertederos-de-basura.png",
+        href: "https://kunakair.com/es/medicion-de-gases-en-los-vertederos-de-basura/",
+      },
+      {
+        title:
+          "¿Cómo afecta la contaminación del aire en el deporte practicado al aire libre?",
+        date: "Sep 24, 2020",
+        image: "/images/uploads/2020/09/contaminacion-del-aire-en-el-deporte_.jpg",
+        href: "https://kunakair.com/es/contaminacion-aire-deporte/",
+      },
+    ],
+  },
+
+  taxonomy: { label: "Industria", href: "https://kunakair.com/es/sector/industria/" },
+
+  footerStripImage: "/images/uploads/2023/01/industry-1920x1024-1.jpg",
+};
+
 /* ────────────────────── registro para la ruta dinámica ─────────────────── */
 
 /**
@@ -407,7 +690,7 @@ export const SECTOR_URBANO: SectorPage = {
  * URL del original; según se vayan poblando, pasan de allí a aquí y su `href`
  * del índice se cambia por la ruta local.
  */
-export const SECTORES_PUBLICADOS: SectorPage[] = [SECTOR_URBANO];
+export const SECTORES_PUBLICADOS: SectorPage[] = [SECTOR_URBANO, SECTOR_INDUSTRIA];
 
 export function getSector(slug: string): SectorPage | undefined {
   return SECTORES_PUBLICADOS.find((s) => s.slug === slug);
