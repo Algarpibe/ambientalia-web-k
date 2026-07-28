@@ -112,9 +112,13 @@ Estas se pagaron con horas de depuración. No las reinventes:
   `resize_window` de la extensión de Chrome **no sirve**: informa éxito pero el
   viewport se queda en 1280. Y sin override, Chrome headless fuerza un ancho
   mínimo de 500px, así que el "móvil" que salga será falso.
-- **Capturas con `setViewport`, nunca con `fullPage`.** La captura full-page
-  reflowea la página y falsea geometría y sticky. Captura por viewport y
-  compón las tiras después.
+- **Capturas con `setViewport`, nunca con `fullPage: true`.** `fullPage`
+  **reinicia el override de device metrics**. A 1440 la página pasaba a
+  maquetar como si el viewport midiera ~800; y con
+  `Emulation.setDeviceMetricsOverride` puesto por CDP, el screenshot captura
+  **la ventana real (800×600) en vez del viewport emulado**. O sea: la captura
+  no es de lo que acabas de medir. Captura por viewport y compón las tiras
+  después. (Hallazgo del recon de /kunak-api, 2026-07-27.)
 - Anota en el doc de cada medida **viewport, DPR y fecha**. Los deltas solo se
   comparan entre medidas del mismo día y la misma configuración; el original es
   un sitio vivo.
