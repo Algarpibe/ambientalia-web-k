@@ -907,3 +907,69 @@ antes de anotarlo como hallazgo hay que reproducirlo con un criterio
 independiente (aquí bastaba contar `h3` dentro de la sección, sin filtro de
 posición). El coste de no hacerlo fue anotar en el QA un defecto de contenido
 que no existía.
+
+## Dos defectos transversales del recon de /sectores (2026-07-28)
+
+> Salieron del recon del arquetipo SECTOR (`docs/research/sectores/`) al medir
+> el original con el mismo arnés de siempre (puppeteer-core, Chrome del
+> sistema, headless, perfil limpio, Cookiebot bloqueado). Afectan a las 5
+> páginas ya clonadas, no solo a la nueva. **Los dos corregidos en esta tanda.**
+
+### K11 · `nav.ts` — el href de EDAR daba 404 · RESUELTO
+
+`SECTORS[2]` guardaba
+`…/sectores/monitorizacion-ambiental-y-control-de-olores-en-plantas-de-aguas-residuales/`,
+que devuelve **404**. El menú vivo del original usa
+`…/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/` (**200**).
+Comprobado con `fetch` a los dos.
+
+Era un desajuste **interno del propio clon**: `footer.ts:29` ya tenía el bueno,
+así que el mega-menú y el pie enlazaban a sitios distintos con la misma
+etiqueta. Verificado en el DOM: antes del arreglo las 5 páginas servían **los
+dos** hrefs; después, solo el correcto.
+
+### K12 · `ScrollToTop` — caja 44×44 sin radio · RESUELTO
+
+Medido en el original **en las 5 páginas** a 1440 (y confirmado a 390), con el
+botón ya asentado:
+
+| | Original | Clon (antes) | Clon (después) |
+|---|---|---|---|
+| Caja | **40×40** | 44×44 | **40×40** |
+| `border-radius` | **5px 0 0 5px** | 6px 0 0 6px | **5px 0 0 5px** |
+| `right` / `bottom` | 0 / 125 | 0 / 125 | 0 / 125 |
+| `background` | rgba(0,0,0,.4) | ídem | ídem |
+| `z-index` | 99999 | ídem | ídem |
+| Chevron (tinta medida) | **14×8 centrado** | 14×8 centrado | **14×8 centrado** |
+
+**El icono no se tocó, y es deliberado.** El original encaja un glifo de fuente
+ETmodules ("2") de 30px en la caja de 40 con `padding: 5px`; el clon usa un SVG.
+Midiendo la tinta blanca sobre capturas ampliadas ×5, el chevron visible mide
+**14×8 px en ambos**, así que reproducir el `padding: 5px` con un SVG de 30×30
+habría **agrandado** el chevron respecto al original. Se replica el resultado,
+no la implementación. Residuo: el glifo del original va 1px más a la derecha
+dentro de la caja (centro x 20.9 vs 19.9) — es el side bearing de la fuente.
+
+**Sin regresión, verificado por medición y no por razonamiento** (el botón es
+`position: fixed`, pero el baseline se midió de verdad haciendo `git stash` +
+build): alturas de documento idénticas antes y después en las 5 páginas y en
+los dos anchos.
+
+| | home | monitor | accesorios | software | api |
+|---|---|---|---|---|---|
+| @1440 antes / después | 11870 / **11870** | 12410 / **12410** | 10863 / **10863** | 11711 / **11711** | 5289 / **5289** |
+| @390 antes / después | 19182 / **19182** | 21854 / **21854** | 21180 / **21180** | 20844 / **20844** | 9125 / **9125** |
+
+### Lo que NO se ha tocado del mismo botón (decisión pendiente)
+
+Al medirlo salieron otras dos diferencias que **no** entraban en el encargo y
+quedan aquí para decidirlas aparte:
+
+- **Umbral de aparición.** El clon usa 500px fijos. El original aparece al
+  pasar **una pantalla completa**: a 1440 (`innerHeight` 900) está apagado en
+  y800 y encendido en y900; a 390 (`innerHeight` 844), lo mismo. O sea, la
+  regla parece ser `scrollY > innerHeight`, no una constante. Muestreo en pasos
+  de 100px: si se aborda, conviene afinarlo en pasos de 25.
+- **Color del hover.** El original pinta el fondo de **`#0075C9`** (azul de
+  marca) al pasar el ratón; el clon oscurece a `bg-black/60`. Medido a 1440;
+  a 390 no hay hover.

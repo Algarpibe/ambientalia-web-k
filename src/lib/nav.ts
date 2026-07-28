@@ -105,7 +105,10 @@ export const PRODUCTS: NavProductItem[] = [
 export const SECTORS: NavSectorItem[] = [
   { label: "Urbano", href: "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/", icon: "/images/uploads/2023/01/urban-2.svg" },
   { label: "Industria y olores", href: "https://kunakair.com/es/sectores/control-de-emisiones-industriales/", icon: "/images/uploads/2023/01/industry.svg" },
-  { label: "EDAR", href: "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-plantas-de-aguas-residuales/", icon: "/images/uploads/2026/04/wastewater-treatment-plant.svg" },
+  // El href que tenía aquí (…-en-plantas-de-aguas-residuales/) devuelve 404;
+  // el del menú vivo del original es …-en-edar/ (verificado 2026-07-28: 200 vs
+  // 404). `footer.ts` ya usaba el bueno. Recon: docs/research/sectores/.
+  { label: "EDAR", href: "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/", icon: "/images/uploads/2026/04/wastewater-treatment-plant.svg" },
   { label: "Petróleo y gas", href: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/", icon: "/images/uploads/2026/04/oil-and-gas.svg" },
   { label: "Puertos y aeropuertos", href: "https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/", icon: "/images/uploads/2023/02/ports-airports-2.svg" },
   { label: "Construcción", href: "https://kunakair.com/es/sectores/contaminacion-por-construccion/", icon: "/images/uploads/2023/01/construction.svg" },
