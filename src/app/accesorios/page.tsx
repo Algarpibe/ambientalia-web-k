@@ -245,7 +245,7 @@ export default function AccesoriosPage() {
         />
 
         {/* --- S3 · Preguntas frecuentes (19 toggles, idénticas al monitor) --- */}
-        <FaqAcordeon />
+        <FaqAcordeon tituloCompacto />
       </main>
 
       <Footer template="tb" />

@@ -32,15 +32,35 @@ export function FaqAcordeon({
   /**
    * Desfase en desktop del techo de la columna de toggles respecto al `<h2>`
    * (el `margin-top` de módulo Divi). Medido en los originales el 2026-07-28:
-   * `/accesorios` **0**, `/software` **10**, `/kunak-api` **10**. En móvil las
-   * columnas se apilan y el desfase es el mismo en todas (145.5 medido), así
-   * que solo se aplica desde `md`.
+   * `/monitor-calidad-aire` **0**, `/accesorios` **0**, `/software` **10**,
+   * `/kunak-api` **10**. En móvil las columnas se apilan, así que solo se
+   * aplica desde `md`.
    *
-   * /monitor-calidad-aire mide 12.7, pero su FAQ además arranca por otra
-   * pregunta y lista 18 en vez de 19 — necesita su propio QA antes de tocarlo.
+   * (El "12.7" que se anotó para /monitor el 2026-07-28 era un artefacto: la
+   * sonda medía desde el h2, que allí va 50.2px más abajo por el punteado en
+   * flujo. Medido desde el techo de la columna, el desfase es 0.)
    */
   desfaseColumna = 0,
-}: { desfaseColumna?: 0 | 10 } = {}) {
+  /**
+   * Calibración del rótulo. El set de 19 preguntas es el MISMO en las cuatro
+   * páginas (verificado bloque a bloque el 2026-07-28), pero el titular no:
+   * `/monitor-calidad-aire` y `/accesorios` lo pintan a **23px/23px** y
+   * `/software` y `/kunak-api` a la escala de sección (44/55 desktop,
+   * 35/43.75 móvil). Medido a 1280 y a 390 en los cuatro originales.
+   */
+  tituloCompacto = false,
+  /**
+   * En `/monitor-calidad-aire` el módulo del punteado va **EN FLUJO**
+   * (`position: relative`, 22px de alto + `margin-bottom: 28.16`), así que
+   * empuja el rótulo 50.2px hacia abajo y se alinea con el borde izquierdo de
+   * la columna. En las otras tres es absoluto y cuelga 65px a la izquierda.
+   */
+  punteadoEnFlujo = false,
+}: {
+  desfaseColumna?: 0 | 10;
+  tituloCompacto?: boolean;
+  punteadoEnFlujo?: boolean;
+} = {}) {
   const [open, setOpen] = useState<ReadonlySet<number>>(new Set());
   const contents = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -85,19 +105,40 @@ export function FaqAcordeon({
             aria-hidden
             width={60}
             height={22}
-            className="pointer-events-none absolute -left-[65px] -top-[40px]"
+            className={
+              punteadoEnFlujo
+                // el margen del módulo es 30 en móvil y 28.1562 desde md
+                ? "pointer-events-none mb-[30px] block md:mb-[28.1562px]"
+                : "pointer-events-none absolute -left-[65px] -top-[40px]"
+            }
             style={{ width: 60, height: 22 }}
           />
-          <SectionTitle>Preguntas frecuentes</SectionTitle>
+          {tituloCompacto ? (
+            // 23/23 fw300 ls −0.5 pb 10, igual en 1280 y en 390 (medido).
+            <h2 className="pb-[10px] text-[23px] font-light leading-[23px] tracking-[-0.5px] text-[#333]">
+              Preguntas frecuentes
+            </h2>
+          ) : (
+            <SectionTitle>Preguntas frecuentes</SectionTitle>
+          )}
         </div>
 
         {/* ---------- Columna derecha (3/4) — los 19 toggles ----------
             QA 2026-07-26: cada toggle lleva border ARRIBA y ABAJO (1px 0px) y el
             módulo remata con mb 30. */}
+        {/* El remate inferior de la columna de toggles NO es 30 (QA 2026-07-28,
+            medido a 1280 y a 390 en los cuatro originales): va emparejado con
+            `desfaseColumna`, porque son los dos márgenes del mismo módulo Divi.
+              · desfase 0  (/monitor-calidad-aire, /accesorios) → remate **0**
+                columna = 1176.6 = el bloque de toggles, sin nada debajo
+              · desfase 10 (/software, /kunak-api)              → remate **40**
+                columna = 1226.6 = 10 + 1176.6 + 40
+            Con los 30 fijos de antes la sección salía +30 en las dos primeras y
+            −10 en las dos últimas (este era el residuo K10 de la Fase 5). */}
         <div
           className={
-            "w-full min-w-0 pb-[30px] md:flex-1 " +
-            (desfaseColumna === 10 ? "md:pt-[10px]" : "")
+            "w-full min-w-0 md:flex-1 " +
+            (desfaseColumna === 10 ? "pb-[40px] md:pt-[10px]" : "pb-0")
           }
         >
           {FAQ_ITEMS.map((item, i) => {

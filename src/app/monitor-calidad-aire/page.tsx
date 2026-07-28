@@ -139,7 +139,7 @@ export default function MonitorCalidadAirePage() {
         <UltimosArticulos title="Artículos y Guías" posts={MONITOR_ARTICLES} variant="monitor" />
 
         {/* S5 — Preguntas frecuentes (19 toggles acordeón) */}
-        <FaqAcordeon />
+        <FaqAcordeon tituloCompacto punteadoEnFlujo />
       </main>
 
       <Footer template="tb" />

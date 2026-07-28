@@ -741,9 +741,11 @@ con las dos secciones muy desviadas. Lo que cuenta es la tabla por sección.
   desktop. Antes se anotó "~2.7px"; el valor medido es **3.3 por fila**. Se
   mantiene la decisión de /software: **no se fuerza**. Si algún día se quisiera,
   el arreglo es sumar 3.3 al `mb` de la fila de blurbs en `BlurbsIconos`.
-- **K10 · −10 de alto en la sección del FAQ.** Los 19 toggles ya casan al píxel
-  (q1 a 0.0 y el último a +0.1 del original, a 1280 y a 390); el residuo está en
-  el relleno de la sección, no en el acordeón.
+- ~~**K10 · −10 de alto en la sección del FAQ.**~~ → **CERRADO el 2026-07-28**:
+  era el remate inferior de la columna de toggles, que el clon fijaba en 30
+  cuando el original usa **0** (/monitor, /accesorios) o **40** (/software,
+  /kunak-api). Sección del FAQ ahora a **Δ 0.0** a 1280 y **+0.5** a 390 en las
+  cuatro páginas. Ver "FAQ de las 4 páginas" al final del archivo.
 - **P4 (heredado)**: el original **sortea** los 3 posts en cada carga. S2 no es
   comparable px a px y la altura de documento varía entre cargas (medido en el
   original: 5331 / 5358 a 1280). Los ±3…18 que quedan en S2 son eso.
@@ -796,12 +798,12 @@ las otras páginas.
 
 ### Hallazgos de otras páginas (fuera de este QA, sin tocar)
 
-- **`/monitor-calidad-aire` · el FAQ del original tiene 18 preguntas y arranca
-  por "¿Qué área cubre cada dispositivo?"**, mientras el clon monta las 19 de
-  `FAQ_ITEMS` empezando por "¿Los equipos Kunak son certificados ATEX?". Es una
-  discrepancia de **contenido**, no de maquetación (el paso por toggle ya casa:
-  61.88 en ambos). Por eso su `desfaseColumna` se ha dejado a 0 pese a medir
-  12.7 en el original: primero hay que resolver qué preguntas van.
+- ~~**`/monitor-calidad-aire` · el FAQ del original tiene 18 preguntas y arranca
+  por "¿Qué área cubre cada dispositivo?"**~~ → **FALSO, retractado el
+  2026-07-28.** Era un artefacto de sonda: el filtro descartaba los `h3` por
+  encima del techo del `<h2>`, y en /monitor el primer toggle queda ARRIBA de
+  ese techo. Las 19 preguntas están, y son las mismas. Ver la sección
+  "FAQ de las 4 páginas" al final del archivo.
 - **El punteado con `z-[-1]` (K4) está en otros 5 componentes**:
   `SectionRow`, `HeroProducto`, `InformacionProducto`, `InfoProductoSoftware`,
   `UltimosProyectos` (y `TrustBar`, con otro patrón). Casi seguro invisibles por
@@ -820,3 +822,88 @@ y una verificación dio por bueno un cambio que no estaba aplicado. `CLAUDE.md`
 ya avisa ("parar el proceso, `npm run build` y relanzar") — cúmplase al pie, y
 ante la duda `rm -rf .next`. Comprobación barata: `curl` a la página y buscar la
 clase que se acaba de tocar antes de medir nada.
+
+## FAQ de las 4 páginas — contenido compartido, presentación por página (2026-07-28)
+
+> Arranca de una retractación: la Fase 5 de /kunak-api anotó que "/monitor tiene
+> 18 preguntas y empieza por otra distinta". **Es falso.** Las sondas de aquel
+> día filtraban los `h3` con `Y > techo del <h2>`, y en /monitor el primer
+> toggle queda **por encima** de ese techo (el rótulo va 50.2px más abajo, ver
+> abajo), así que se perdía la primera pregunta y el recuento salía 18.
+>
+> Metodología: puppeteer-core, perfil limpio, Cookiebot bloqueado, 1280×900 y
+> 390×844 reales. Comparación **bloque a bloque sobre el DOM vivo** (párrafos,
+> listas, `<br>` y enlaces), no por `textContent` concatenado.
+> Sondas: `faqdump2.mjs`, `diff19.mjs`, `colfaq.mjs`, `detalle.mjs`,
+> `verif4.mjs`, `secfaq.mjs`, `pad.mjs`.
+
+### (1) Contenido: las 4 páginas comparten EL MISMO set
+
+**19 preguntas, mismo orden, mismas respuestas** en /monitor-calidad-aire,
+/accesorios, /software-de-medicion-calidad-del-aire y /kunak-api. El diff entre
+las cuatro da **idéntico**: mismas preguntas, mismos párrafos, mismas listas,
+mismos enlaces. La primera es "¿Los equipos Kunak son certificados ATEX?" en
+las cuatro y la última "¿Cuál es la diferencia entre calibración y corrección?".
+
+Y el `FAQ_ITEMS` del clon **ya los reproduce verbatim**: 0 preguntas distintas y
+0 respuestas distintas contra el original. **No hace falta parametrizar el
+dataset ni crear un set por página**: `FAQ_ITEMS` en `lib/monitor.ts` es
+correcto donde está.
+
+Tres diferencias que aparecieron en el primer diff eran **artefactos del
+extractor**, no del clon (comprobadas una a una):
+
+| Aparente | Realidad |
+|---|---|
+| El `<li>` del clon empieza por "•" | El original lo pinta con `li::before { content: "•"; color: #0075C9; font-size: 22.4px }`, que `textContent` no ve. El clon usa un `<span aria-hidden>•</span>` con esos mismos valores. **Misma pintura.** |
+| "…del equipo.Esto permite…" sin espacio | Los dos tienen **1 `<br>`** en ese punto. El espacio extra del original es whitespace de fuente, invisible al renderizar. |
+| Bloques de la respuesta 6 en distinto orden | El extractor leía un nodo clonado y sin layout. Sobre el DOM vivo coinciden. |
+
+### (2) Presentación: eso SÍ cambia por página
+
+Lo que difiere no es el contenido, sino tres valores de la plantilla. Medidos en
+los cuatro originales a 1280 y a 390:
+
+| | Rótulo | Punteado | Desfase de la columna | Remate inferior |
+|---|---|---|---|---|
+| /monitor-calidad-aire | **23px/23px** | **EN FLUJO** (`position: relative`, 22 alto + mb 28.16 desktop / 30 móvil) → empuja el rótulo **+50.2** | 0 | **0** |
+| /accesorios | **23px/23px** | absoluto (−65 x, −40 y) | 0 | **0** |
+| /software | 44/55 desktop · 35/43.75 móvil | absoluto | **10** | **40** |
+| /kunak-api | 44/55 desktop · 35/43.75 móvil | absoluto | **10** | **40** |
+
+El clon pintaba **44px en las cuatro**, el punteado **absoluto en las cuatro** y
+un remate fijo de **30**. De ahí salían tres defectos:
+
+- **K11 · Rótulo del FAQ a 44px en /monitor y /accesorios** donde el original usa
+  23px: un titular de 3 líneas en vez de 2, muy visible.
+- **K12 · Punteado absoluto en /monitor**: el rótulo quedaba 50.2px demasiado
+  alto y el punteado colgado 65px a la izquierda en vez de alineado con la
+  columna.
+- **K13 (= K10 de la Fase 5) · Remate inferior fijo de 30**: sobraban 30 en
+  /monitor y /accesorios y faltaban 10 en /software y /kunak-api.
+
+`FaqAcordeon` recibe ahora `tituloCompacto` y `punteadoEnFlujo`; el remate se
+deriva de `desfaseColumna`, porque son los dos márgenes del mismo módulo Divi y
+van siempre emparejados (0+0 / 10+40).
+
+### (3) Verificación en las 4 páginas, a 1280 y a 390
+
+| | Rótulo | Rótulo sobre la columna | x del punteado | 1.er toggle | **Sección FAQ** |
+|---|---|---|---|---|---|
+| /monitor-calidad-aire | ✔ | ✔ 50.1 vs 50.2 · 52 vs 52 | ✔ 128 · 39 | ✔ 0 · 115 | **Δ 0.0 · +0.5** |
+| /accesorios | ✔ | ✔ 0 · 0 | ✔ 63 · −26 | ✔ 0 · 63 | **Δ 0.0 · +0.5** |
+| /software | ✔ | ✔ 0 · 0 | ✔ 63 · −26 | ✔ 10 · 127.5 | **Δ 0.0 · +0.5** |
+| /kunak-api | ✔ | ✔ 0 · 0 | ✔ 63 · −26 | ✔ 10 · 127.5 | **Δ 0.0 · +0.5** |
+
+La sección del FAQ pasa a coincidir **al píxel en las cuatro**, en los dos
+anchos. Antes iba +30 en /monitor y /accesorios y −10 en /software y /kunak-api.
+
+### Lección de método
+
+Dos sondas distintas dieron "18 preguntas" y "otra primera pregunta" porque
+ambas heredaban el mismo filtro `Y > y(h2)`. **Un filtro geométrico no sirve
+para contar contenido**: si el recuento de una sonda no cuadra con lo esperado,
+antes de anotarlo como hallazgo hay que reproducirlo con un criterio
+independiente (aquí bastaba contar `h3` dentro de la sección, sin filtro de
+posición). El coste de no hacerlo fue anotar en el QA un defecto de contenido
+que no existía.
