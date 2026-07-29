@@ -124,11 +124,13 @@ con excepciones.
 | claim | 2946.6 / 2946.6 → **Δ0** | −47.5 relativo (S9b) |
 | mapa | 3254.8 / 3254.8 → **Δ0** | −47.5 relativo (S9b) |
 
-> A 390 esa corrida leyó todas las anclas del **original** 30px más abajo que la
-> corrida de control del día siguiente (h1 a 219.4 frente a 189.4), así que la
-> columna da el valor **relativo a esa base de −30**. No es residuo del clon:
-> contra la lectura de 189.4 el h1 del clon da **Δ0 exacto**. Es deriva del
-> original — ver el aviso de más abajo.
+> A 390 esa corrida leyó todas las anclas del **original** 30px más abajo (h1 a
+> 219.4 frente a los 189.4 de todas las demás), así que la columna da el valor
+> **relativo a esa base de −30**. No es residuo del clon: contra la lectura de
+> 189.4 el h1 del clon da **Δ0 exacto**. Aquello se atribuyó a "deriva del
+> original", pero la medida de ruido posterior **no lo sostiene**: el `h1` dio
+> dispersión 0 en 42 cargas y la anomalía no se reprodujo en 6 intentos. Queda
+> como **anomalía de origen no determinado** — ver el aviso de más abajo.
 
 Urbano queda con **un único residuo** que arrastra por igual de la cabecera al
 pie: **−8.6** a 1440 y **−8.5** a 390, que es el alto de la caja del CTA de
@@ -137,14 +139,23 @@ descarga en su piel `"foto"` (S9b). Ni una ancla se sale de ese valor.
 ## Ojo con la base al comparar
 
 Dos corridas del **mismo día** leyeron el original de Industria a 1440 en
-**7117** y **7144**. A 390 la deriva fue mayor y sistemática: una corrida leyó
-**todas** las anclas 30px más abajo que otra (h1 219.4 vs 189.4). Es un sitio
-vivo: los residuos solo valen contra la lectura de su propia corrida, y **el h1
-sirve de base** — si el h1 va a −30, ese −30 hay que descontarlo de todo lo
-demás antes de leer nada.
+**7117** y **7144**, y una lo leyó a 390 con todas las anclas 30px más abajo
+(h1 219.4 vs 189.4).
+
+Esto motivó medir el **suelo de ruido del original** (`scripts/qa/ruido.mjs`,
+3 corridas × 7 páginas × 2 anchos, 2026-07-29). Lo que salió:
+
+- Los ±27 del `docH` son **el módulo "Artículos y Guías"**, que el original
+  sortea en cada carga (P4): 27/54/81 son uno, dos o tres renglones de titular.
+  En cada página varía esa fila y **solo** esa.
+- Fuera de ella, **dispersión 0**. El `h1`, 0 en las 14 combinaciones.
+- El +30 de aquella corrida **no se reprodujo en 6 intentos**. Queda como
+  anomalía de **origen no determinado**, sin Cookiebot en el DOM.
 
 Por eso arriba se da el **adelgazamiento del clon**, que sí es estable, y no un
-"residuo contra el original" que cambia según la corrida.
+"residuo contra el original" que cambia según la corrida. Y por eso los residuos
+del cuerpo se juzgan contra **dispersión 0**, no contra 81 — protocolo completo
+en `scripts/qa/README.md`.
 
 ## Origen del −47.5 a 390: preexistente, no regresión
 

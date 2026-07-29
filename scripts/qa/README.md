@@ -30,6 +30,7 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 
 | sonda | qué compara | cuándo usarla |
 |---|---|---|
+| `ruido.mjs [corridas]` | el original **consigo mismo**, N veces | **primero de todo**: fijar el suelo de ruido antes de juzgar un Δ |
 | `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |
 | `tree-cmp.mjs <sector> [ancho]` | original vs clon, **árbol sección→fila** del cuerpo | distinguir "la fila está mal colocada" de "el contenido mide otra cosa" |
 | `cmp-sector.mjs <sector> [ancho]` | original vs clon, **anclas de texto** | ver de un vistazo dónde empieza a acumularse el desfase |
@@ -78,37 +79,91 @@ Diseñar el content type contra 2 instancias en vez de contra los 8 fue el error
 de la tanda anterior: Urbano y Construcción comparten forma, y las otras cuatro
 de plantilla clásica no.
 
+## PROTOCOLO DE MEDICIÓN
+
+**Antes de llamar defecto a nada, lee esto.** Medido el **2026-07-29** con
+`ruido.mjs`: 3 corridas × 7 páginas × 2 anchos = 42 cargas del original.
+
+### 1 · Tres corridas, no una
+
+El original no es un objetivo de medición estable. Una corrida sola no permite
+distinguir un defecto del clon de una carga distinta del original. **Tres es el
+mínimo**: con tres se ve si un valor se repite o baila. `node ruido.mjs 3`.
+
+### 2 · La base de lectura es el `h1`
+
+Se compara el `h1` del clon con el del original **antes que nada**. Si difieren,
+ese desplazamiento es la base y **hay que restarlo de todo lo demás** — si no,
+se leen +30 en veinte anclas y parecen veinte defectos cuando son uno solo, o
+ninguno.
+
+Es el `h1` y no otra cosa porque en las 42 cargas su dispersión fue **0 en las
+14 combinaciones de página y ancho**, sin una sola excepción. Es el elemento más
+estable que hay medido, y va lo bastante arriba como para capturar cualquier
+deriva de la cabecera.
+
+### 3 · El suelo de ruido NO es un número, son dos regiones
+
+Éste es el hallazgo que hace útil la corrida. La dispersión no está repartida:
+
+| región | dispersión medida en 3 corridas |
+|---|---|
+| **el módulo "Artículos y Guías" y todo lo que va debajo** | hasta **81** |
+| **todo lo demás** | **0** |
+
+En cada página varía **exactamente una fila**, y siempre la misma: la de
+"Artículos y Guías". Los saltos son 27, 54 u 81 — uno, dos o tres renglones de
+27px. La causa está identificada y es de diseño: el original **sortea los 3
+posts en cada carga** (P4 en `docs/PENDIENTES-QA.md`), así que los titulares
+envuelven distinto. Fuera de ese módulo, tres corridas dieron el mismo valor al
+céntimo.
+
+Por tanto:
+
+- **Un Δ por debajo de la dispersión de SU región no es un defecto.** En el
+  bloque de artículos y en el pie, eso significa hasta 81. En el cuerpo de la
+  página significa **cero**: ahí un Δ de 8.6 es tan real como uno de 100.
+- Aplicar un suelo global de 81 sería el error contrario al que se quería
+  evitar: descartaría defectos reales del cuerpo por ruido que solo existe en
+  otro sitio.
+
+### 4 · Reproducirse entre anchos pesa más que el tamaño
+
+Un residuo que sale **igual a 1440 y a 390** no puede ser ruido: son dos
+maquetaciones distintas del mismo componente. Es un discriminador más fuerte que
+la magnitud. Por eso sobreviven residuos pequeños como el −8.6 de la caja del
+CTA (−8.6 a 1440 y −8.5 a 390) y el +13 de la cabecera del mapa (+13 en los
+dos).
+
+### 5 · Anomalía conocida, sin origen determinado
+
+Una corrida del 2026-07-29 leyó **todas** las anclas del original de Industria a
+390 con +30 (h1 a 219.4 en vez de 189.4). **No se ha reproducido en 6 intentos
+posteriores** — 3 de `ruido.mjs` y 3 con perfil nuevo cargando esa página la
+primera, que era la hipótesis obvia. Sin Cookiebot en el DOM en ninguno.
+
+**Origen no determinado.** Guarda práctica: es justo lo que detecta la regla 2 —
+si el `h1` del original no coincide con el de otra corrida del mismo día,
+descarta la corrida y repítela.
+
 ## `medidas/`
 
-Salidas congeladas de la sonda. **Son la prueba, no un caché**: el original es
-un sitio vivo y los deltas solo se comparan entre medidas del mismo día y la
-misma configuración.
+Salidas congeladas de las sondas. **Son la prueba, no un caché.**
 
 | fichero | qué es |
 |---|---|
-| `tree-todos-1440.json` | 8 sectores a 1440×900, DPR 1 — **2026-07-28** |
+| `tree-todos-1440.json` | 8 sectores a 1440×900, DPR 1 — **2026-07-29** |
 | `tree-todos-390.json` | 8 sectores a 390×844, DPR 1 — **2026-07-29** |
+| `ruido.json` | dispersión en 3 corridas, 7 páginas × 2 anchos — **2026-07-29** |
 
-El de **390 es el bueno de los dos**, y conviene saber por qué: la sonda
-reconocía el hero por su `padding-bottom`, que **cambia con el ancho** (60 a
-1440, 20 a 390). Buscando solo el 60, a 390 no encontraba el hero y el volcado
-se comía las filas de menú y breadcrumb como si fueran cuerpo. Arreglado al
-congelar esta medida (prueba 60 y, si no, 20).
+Los dos árboles **coinciden en estructura**: los 8 sectores dan el mismo reparto
+de secciones y filas a 1440 y a 390, con `filaPegada` a `pt 0` en ambos. Los 4
+valores de `flujo` son la misma regla en los dos anchos, no una de desktop con
+excepciones.
 
-Consecuencias, por orden de lo que te va a morder:
-
-- El **1440 conserva el defecto en EDAR y Petróleo y gas**: como tampoco tienen
-  un hero con `pb 60`, sus entradas de ese fichero arrancan en el menú. No se
-  ha regenerado: es evidencia fechada que respalda la tabla de `flujo`, y los
-  6 sectores que importan salen bien. Para ver el cuerpo real de esos dos a
-  1440, vuelve a correr la sonda.
-- A **390 los 8 salen limpios**, incluidos EDAR y Petróleo, que se ven por
-  primera vez: 3 secciones cada uno, con la última repitiendo el patrón clásico
-  (`beneficios seccion · claim filaPegada · cta filaPegada [· mapa fila]`).
-- El 390 **reproduce la tabla de `flujo` entera** en los 6 de plantilla clásica,
-  con `filaPegada` a `pt 0` también en móvil. O sea que los 4 valores no son una
-  regla de desktop con excepciones: son la misma en los dos anchos.
-
-Recordatorio: son la prueba, no un caché. El original es un sitio vivo y los
-deltas solo se comparan entre medidas del mismo día y la misma configuración —
-a 390 dos corridas del mismo día llegaron a diferir 30px en TODAS las anclas.
+**El histórico vive en git, no en el árbol.** Estos ficheros son siempre la
+referencia vigente y no pueden llevar un defecto conocido dentro: la próxima
+sesión los consultará sin preguntar. Las versiones anteriores son recuperables
+por commit —la primera del 1440, con el recorte de cabecera defectuoso, está en
+`26c74dd`— y ahí se quedan. Si regeneras, sustituye; no acumules variantes con
+sufijo.

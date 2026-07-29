@@ -1,0 +1,170 @@
+{
+  "home@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 22,
+    "mismoNumeroDeFilas": true
+  },
+  "monitor@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "accesorios@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 15,
+    "mismoNumeroDeFilas": true
+  },
+  "software@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 54,
+      "h1": 0,
+      "pie": 54
+    },
+    "posicionalMax": 54,
+    "dimensionalMax": 54,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "api@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "urbano@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 18,
+    "mismoNumeroDeFilas": true
+  },
+  "industria@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "filas": 20,
+    "mismoNumeroDeFilas": true
+  },
+  "home@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 22,
+    "mismoNumeroDeFilas": true
+  },
+  "monitor@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 81,
+      "h1": 0,
+      "pie": 81
+    },
+    "posicionalMax": 81,
+    "dimensionalMax": 81,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "accesorios@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 81,
+      "h1": 0,
+      "pie": 81
+    },
+    "posicionalMax": 81,
+    "dimensionalMax": 81,
+    "filas": 15,
+    "mismoNumeroDeFilas": true
+  },
+  "software@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "api@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 54,
+      "h1": 0,
+      "pie": 54
+    },
+    "posicionalMax": 54,
+    "dimensionalMax": 54,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "urbano@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "filas": 18,
+    "mismoNumeroDeFilas": true
+  },
+  "industria@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "filas": 20,
+    "mismoNumeroDeFilas": true
+  }
+}

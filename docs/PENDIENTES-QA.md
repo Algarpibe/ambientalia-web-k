@@ -1287,6 +1287,9 @@ propia); el bloque pinta titular, intro y la lista de pines en la caja de 570.
 
 ### S9 · Tres residuos que destapó la medida de S7, sin arreglar (2026-07-29)
 
+> **Reclasificados contra el suelo de ruido el 2026-07-29. Los cuatro
+> sobreviven** — ninguno es ruido. Ver el cuadro al final de la sección.
+
 Con el ritmo de secciones ya exacto, lo que queda del desfase de los dos
 sectores es **contenido dentro de la fila**, no la fila. Son tres cosas
 distintas y ninguna entraba en el encargo de S7. Medido con
@@ -1344,3 +1347,33 @@ pb 10 + intro 30.6 + mt 30` = 695.6 y el original mide 682.6. Recordatorio de
 que `MapaProyectos` es un **placeholder deliberado** (el mapa de Google no se
 clona), así que afinar su cabecera solo tiene sentido cuando se decida qué se
 pinta dentro.
+
+### Reclasificación contra el suelo de ruido (2026-07-29)
+
+Medido con `scripts/qa/ruido.mjs`: 3 corridas × 7 páginas × 2 anchos del
+original. Protocolo en `scripts/qa/README.md`; salida en
+`scripts/qa/medidas/ruido.json`.
+
+El resultado hace innecesario el umbral que se temía: **la dispersión no está
+repartida por la página**. En cada página varía **exactamente una fila** —
+siempre la de "Artículos y Guías", porque el original sortea los 3 posts en cada
+carga (P4)— con saltos de 27, 54 u 81 (uno, dos o tres renglones). **En todo lo
+demás, tres corridas dieron el mismo valor al céntimo: dispersión 0.** El `h1`
+dio 0 en las 14 combinaciones de página y ancho.
+
+| residuo | magnitud | región | dispersión de su región | veredicto |
+|---|---|---|---|---|
+| S9a · intro en la fila del CTA | ±61.78 @390 · ±30.6 @1440 | cuerpo | **0** | **defecto** |
+| S9b · caja CTA piel `"fondo"` | −47.5 @390 | cuerpo | **0** | **defecto** |
+| S9b · caja CTA piel `"foto"` | −8.6 @1440 · −8.5 @390 | cuerpo | **0** | **defecto** |
+| S9c · cabecera de `mapaProyectos` | +13 @1440 · +13 @390 | cuerpo | **0** | **defecto** |
+
+Los dos pequeños —el −8.6 y el +13, que eran los sospechosos— **no caen por
+debajo del ruido: caen en una región donde el ruido medido es cero**. Y los dos
+se reproducen entre anchos, el +13 al píxel exacto, lo que por sí solo descarta
+que sean jitter: son dos maquetaciones distintas del mismo componente.
+
+La lección de método, que vale para el resto del proyecto: **un suelo de ruido
+global habría sido peor que no tener ninguno.** Con un umbral de 81 aplicado a
+toda la página se habrían archivado como ruido dos defectos reales del cuerpo,
+por variación que solo existe en el bloque de artículos.

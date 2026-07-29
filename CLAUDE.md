@@ -159,6 +159,29 @@ Estas se pagaron con horas de depuración. No las reinventes:
   **la ventana real (800×600) en vez del viewport emulado**. O sea: la captura
   no es de lo que acabas de medir. Captura por viewport y compón las tiras
   después. (Hallazgo del recon de /kunak-api, 2026-07-27.)
+- **El original no es un objetivo de medición estable: mide 3 veces.** Protocolo
+  completo en `scripts/qa/README.md`; sonda `ruido.mjs`. Lo esencial:
+  - **La base de lectura es el `h1`.** Se compara primero con el del original y,
+    si difiere, ese desplazamiento se resta de todo lo demás. Es el `h1` porque
+    en 42 cargas medidas su dispersión fue **0 en las 14 combinaciones** de
+    página y ancho. Si el `h1` del original no cuadra entre dos corridas del
+    mismo día, la corrida se descarta y se repite.
+  - **Un Δ por debajo de la dispersión observada NO es un defecto** — pero la
+    dispersión **no es un número único, son dos regiones**: hasta **81** en el
+    módulo "Artículos y Guías" y de ahí abajo (el original **sortea los 3 posts
+    en cada carga**, P4, y los titulares envuelven distinto: 27/54/81 son uno,
+    dos o tres renglones), y **0 en todo lo demás**. En el cuerpo de la página
+    un Δ de 8.6 es tan real como uno de 100. Aplicar un suelo global sería el
+    error contrario: descartar defectos por ruido que solo existe en otro sitio.
+  - **Reproducirse entre anchos pesa más que el tamaño.** Un residuo idéntico a
+    1440 y a 390 no puede ser ruido: son dos maquetaciones distintas.
+- **Un Δ de cero puede ser dos errores que se anulan.** El caso, medido: la fila
+  del CTA de Industria a 390 iba con un déficit de −47.5 de contenido y, encima,
+  con +74 de ritmo que no le tocaba; el total daba **+26.5** y parecía un fleco.
+  Al corregir el ritmo (S7) apareció el −47.5 entero, que llevaba ahí desde el
+  principio. Consecuencia práctica: **medir por composición, no por el total de
+  la fila** — `padding-top`, contenido y `padding-bottom` por separado. El total
+  solo dice que algo cuadra o no cuadra; la composición dice qué.
 - Anota en el doc de cada medida **viewport, DPR y fecha**. Los deltas solo se
   comparan entre medidas del mismo día y la misma configuración; el original es
   un sitio vivo.

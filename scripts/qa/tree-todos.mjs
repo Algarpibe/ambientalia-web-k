@@ -37,14 +37,21 @@ for (const [nombre, slug] of SECTORES) {
       const r = (n) => Math.round(n * 100) / 100;
       const txt = (el) => (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 48);
       const secs = [...document.querySelectorAll(".et_pb_section")];
-      // El cuerpo va entre la sección del hero y el slider. El hero se reconoce
-      // por su `padding-bottom`, que **cambia con el ancho**: 60 a 1440 y 20 a
-      // 390. Buscando solo el 60, a 390 no encontraba nada (iHero −1) y el
-      // volcado se comía las filas de menú y breadcrumb como si fueran cuerpo.
-      // Se prueba 60 primero para no alterar el desktop, ya medido.
-      const buscaHero = (pb) =>
-        secs.findIndex((s) => getComputedStyle(s).paddingBottom === pb);
-      const iHero = buscaHero("60px") !== -1 ? buscaHero("60px") : buscaHero("20px");
+
+      // El cuerpo va entre el hero y el slider. Localizar el hero **por su
+      // `padding-bottom` no funciona**: es 60 en la plantilla clásica a 1440,
+      // 20 a 390, y 39 en EDAR y Petróleo y gas, que van con otra plantilla.
+      // Dos versiones de esta sonda se comieron las filas de menú y breadcrumb
+      // como si fueran cuerpo por fiarse de ese número.
+      //
+      // El ancla estable es el BREADCRUMB, que existe en los 8 sectores y en
+      // los dos anchos: su sección es la única cuyo texto empieza por
+      // "InicioSectores" (concatenado, sin espacios). El hero es la siguiente
+      // y el cuerpo empieza dos más allá. La fila de menú del header también
+      // lleva "Inicio" y "Sectores", pero no en ese orden ni al principio.
+      const sinEspacios = (el) => (el.textContent || "").replace(/\s+/g, "");
+      const iMigas = secs.findIndex((s) => sinEspacios(s).startsWith("InicioSectores"));
+      const iHero = iMigas !== -1 ? iMigas + 1 : secs.findIndex((s) => getComputedStyle(s).paddingBottom === "60px");
       const iSlider = secs.findIndex((s) => s.classList.contains("et_pb_fullwidth_section"));
       return secs.slice(iHero + 1, iSlider).map((sec) => {
         const s = getComputedStyle(sec);
