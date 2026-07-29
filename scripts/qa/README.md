@@ -117,6 +117,18 @@ de plantilla clásica no.
 **Antes de llamar defecto a nada, lee esto.** Medido el **2026-07-29** con
 `ruido.mjs`: 3 corridas × 7 páginas × 2 anchos = 42 cargas del original.
 
+### 0 · Antes de creerte un "limpio", prueba que la sonda sabe fallar
+
+**Una sonda que no encuentra nada y una que no mira nada dan la misma salida.**
+Rompe algo a propósito, comprueba que lo caza y que sale con código ≠ 0, y
+revierte. Cuesta tres minutos y es lo único que convierte un "limpio" en un dato.
+
+Y **asegúrate de que la salida servida es la que crees**: el test en negativo de
+`enlaces.mjs` dio "limpio" en falso a la primera porque `next start` seguía con
+el build anterior — el enlace roto estaba en `.next` y no en el HTML. **Mata por
+puerto**, no con `pkill`, y verifica un marcador del cambio antes de medir.
+(Pendiente de automatizar: ver la tarea mecánica en `docs/HANDOFF.md`.)
+
 ### 1 · Tres corridas, no una
 
 El original no es un objetivo de medición estable. Una corrida sola no permite

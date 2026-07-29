@@ -51,6 +51,55 @@ en "Artículos y Guías", **0 en el resto**).
    cambia: MONOGRÁFICO deja de ser "el raro que falta" y pasa a ser hacia dónde
    va el sitio.
 
+## Tres decisiones que van ARGUMENTADAS en las specs, antes de una línea de código
+
+No son detalles de implementación: las tres condicionan el esquema del CMS, y
+las tres tienen una respuesta cómoda que probablemente es la equivocada.
+
+### a) La `<table>` de "Tabla resumen: procesos y emisiones"
+
+**La decisión de modelado de más consecuencia del proyecto hasta hoy.** Dos
+salidas:
+
+- **Filas estructuradas con columnas tipadas**, poblables campo a campo desde el
+  CMS. Caro de construir, y obliga a decidir el esquema de la tabla (¿cuántas
+  columnas?, ¿son las mismas en toda instancia?, ¿alguna es enumerada?).
+- **Bloque de texto rico** con el HTML de la tabla dentro. Trivial de construir
+  y **tira por tierra la regla 2 del proyecto**: la estructura se vuelve opaca,
+  no se puede consultar, ordenar ni reutilizar, y el CMS pasa a guardar
+  presentación en vez de datos.
+
+Es **la primera vez que "estructura = contenido" se pone de verdad difícil**.
+Hasta ahora la separación salía casi gratis. Aquí cuesta, y por eso hay que
+resolverla mirando el original —¿qué columnas tiene?, ¿se repite el patrón en
+Petróleo y gas o es única de EDAR?— y **no por comodidad de construcción**.
+Decisión escrita, con el argumento, antes de tocar nada.
+
+### b) ¿Reutiliza `CabeceraSector` y `CtaBannerSlider`, o tiene los suyos?
+
+Si los reutiliza, **hereda S10 y S11** (alto fijo del slider, kicker que no
+envuelve). Eso **no es malo**: suma dos instancias más a la tanda de
+variabilidad, que es justo lo que esa tanda necesita para conocer el rango real.
+
+Lo que no vale es heredarlos **por descuido**. Quiero decisión escrita y
+**medida**: comprobar que la cabecera y el slider del monográfico tienen la
+misma geometría que los de SECTOR, no suponerlo porque se parezcan. Ojo con un
+dato ya conocido: **el hero de estas dos páginas lleva `padding-bottom: 39`**,
+ni 60 (clásico a 1440) ni 20 (clásico a 390) — ya costó dos versiones de sonda.
+Si el hero difiere, la cabecera puede diferir también.
+
+### c) ¿Dónde vive el `pb` de fila como dato, y por qué eso no contamina SECTOR?
+
+En los 6 sectores clásicos el `padding-bottom` de fila es **siempre**
+28.7969/30, sin una excepción, y por eso hoy está cableado en `SectorBody` como
+plantilla. En el monográfico vale 2, 36, 40, 60 y 72: ahí **es dato editorial**.
+
+La decisión no es "si se sube a campo", sino **dónde**: en el content type del
+monográfico, sin tocar `SectorBlock`. Escribir por qué esa frontera se sostiene
+—y qué pasaría si mañana un sector clásico necesitara un `pb` distinto— es parte
+de la spec. Si la respuesta acaba siendo "hay que unificarlos", **eso lo decide
+el experimento de abajo, no esta decisión**.
+
 ## El experimento que cierra el recon
 
 **Al terminar de construir MONOGRÁFICO, y no antes: intentar expresar el cuerpo
@@ -97,6 +146,29 @@ ninguna medida de altura ve). Verificada en negativo. Sale con código 0 limpia 
 Al medir contra ella, **mata el servidor por puerto, no con `pkill`**: la
 primera pasada del test en negativo salió "limpia" porque `next start` seguía
 sirviendo el build anterior.
+
+## Tarea para una sesión MECÁNICA (no para la de specs)
+
+**Que las sondas sean dueñas de su ciclo de servidor.** Hoy todas asumen que hay
+un `localhost:3000` levantado y **confían en que sirve el build actual**. Debería
+ser: matar por puerto → `npm run build` → arrancar → esperar a listo → medir →
+parar. Unas 20 líneas en `lib.mjs`, reutilizables por las cuatro sondas.
+
+**Por qué merece una tarea propia, con el caso de hoy:** el test en negativo de
+`enlaces.mjs` salió **"limpio" en falso**. El enlace roto estaba en `.next` y no
+en el HTML servido, porque `next start` seguía corriendo con el build anterior y
+un `pkill -f "next start"` no lo mató. Se descubrió por casualidad, al grepear el
+HTML por otro motivo.
+
+El fallo **no fue de disciplina** — el paso "parar, rebuild, relanzar" está en
+`CLAUDE.md` desde hace tandas y aun así se coló. Fue que **la frescura del build
+dependía de que alguien se acordara**, y eso acaba fallando justo en la corrida
+en la que más importa: la que dice "no se mueve nada". Un "18 lecturas
+idénticas" es exactamente el resultado que un build viejo falsifica sin dejar
+rastro.
+
+Mientras no esté hecho: **matar por puerto, nunca con `pkill`**, y verificar un
+marcador del cambio en el HTML servido antes de dar una medida por buena.
 
 ## Cómo levantar y comparar
 

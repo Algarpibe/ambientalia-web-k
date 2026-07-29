@@ -217,9 +217,18 @@ De ahí las dos formas de aplicarlo, que son la misma:
   `scripts/qa/enlaces.mjs`. Correrla después de clonar cualquier página: las
   rutas nuevas entran solas y sus enlaces pasan a ser fallo sin tocar la sonda.
 
-El corolario práctico: **cuando arregles algo transversal, no des por cerrada la
-clase hasta que una sonda recorra la salida y salga limpia.** Arreglar la
-instancia que tienes delante es cómo se llega a la tercera tanda del mismo bug.
+El corolario práctico, en dos mitades — la segunda se aprendió cazando la
+primera:
+
+1. **Cuando arregles algo transversal, no des por cerrada la clase hasta que una
+   sonda recorra la salida y salga limpia.** Arreglar la instancia que tienes
+   delante es cómo se llega a la tercera tanda del mismo bug.
+2. **Y no te creas un "limpio" hasta haber probado en negativo que la sonda sabe
+   fallar.** Una sonda que no encuentra nada y una que no mira nada dan la misma
+   salida. El test en negativo de `enlaces.mjs` dio **"limpio" en falso** a la
+   primera: el enlace roto estaba en `.next` pero no en el HTML servido, porque
+   `next start` seguía con el build anterior y `pkill` no lo mató. **Mata por
+   puerto**, y verifica un marcador del cambio en la salida antes de medir.
 
 ## Comandos
 
