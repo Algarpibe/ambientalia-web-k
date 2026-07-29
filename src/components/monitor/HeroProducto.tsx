@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Product360Viewer } from "@/components/Product360Viewer";
 import { VideoLightbox } from "@/components/VideoLightbox";
 import { BlueButton } from "@/components/SectionRow";
@@ -22,9 +24,11 @@ export function HeroProducto() {
         <div className="mx-auto w-[80%] max-w-[1380px] py-[12px] text-[12px] leading-[26px]">
           <ol className="kunak-breadcrumbs flex flex-wrap items-center gap-1 text-[#0075C9]">
             <li>
-              <a href="https://kunakair.com/es/" className="text-[#0075C9] hover:underline">
+              {/* ruta local: la home ya está clonada (src/app/page.tsx).
+                  original: https://kunakair.com/es/ */}
+              <Link href="/" className="text-[#0075C9] hover:underline">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li aria-hidden>/</li>
             <li>

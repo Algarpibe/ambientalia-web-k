@@ -24,14 +24,20 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "SECTORES",
     links: [
-      { label: "Urbano", href: `${BASE}/es/sectores/calidad-del-aire-en-las-ciudades/` },
-      { label: "Industria y olores", href: `${BASE}/es/sectores/control-de-emisiones-industriales/` },
+      // Mismo criterio que `SECTORS` en nav.ts: clonado → ruta local, no
+      // clonado → original. Los hrefs originales quedan anotados al lado.
+      // original: ${BASE}/es/sectores/calidad-del-aire-en-las-ciudades/
+      { label: "Urbano", href: "/sectores/calidad-del-aire-en-las-ciudades" },
+      // original: ${BASE}/es/sectores/control-de-emisiones-industriales/
+      { label: "Industria y olores", href: "/sectores/control-de-emisiones-industriales" },
       { label: "EDAR", href: `${BASE}/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/` },
       { label: "Petróleo y gas", href: `${BASE}/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/` },
       { label: "Puertos y aeropuertos", href: `${BASE}/es/sectores/contaminacion-del-transporte-maritimo/` },
-      { label: "Construcción", href: `${BASE}/es/sectores/contaminacion-por-construccion/` },
+      // original: ${BASE}/es/sectores/contaminacion-por-construccion/
+      { label: "Construcción", href: "/sectores/contaminacion-por-construccion" },
       { label: "Minería", href: `${BASE}/es/sectores/contaminacion-del-aire-por-la-mineria/` },
-      { label: "Investigación y consultoría", href: `${BASE}/es/sectores/estudio-de-la-contaminacion-atmosferica/` },
+      // original: ${BASE}/es/sectores/estudio-de-la-contaminacion-atmosferica/
+      { label: "Investigación y consultoría", href: "/sectores/estudio-de-la-contaminacion-atmosferica" },
     ],
   },
   {

@@ -71,7 +71,8 @@ export interface Herramienta {
  * ------------------------------------------------------------------------ */
 
 export const BREADCRUMB: { label: string; href?: string }[] = [
-  { label: "Inicio", href: "https://kunakair.com/es/" },
+  // ruta local: la home ya está clonada — original: https://kunakair.com/es/
+  { label: "Inicio", href: "/" },
   { label: "Productos", href: "https://kunakair.com/es/productos/" },
   { label: "AIR Cloud" },
 ];

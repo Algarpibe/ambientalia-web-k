@@ -37,7 +37,8 @@ export const UTILITY_MENU: UtilityMenuItem[] = [
 ];
 
 export const LANGUAGES: NavLink[] = [
-  { label: "Español", href: "https://kunakair.com/es/" },
+  // ruta local: el idioma actual ES nuestra home — original: https://kunakair.com/es/
+  { label: "Español", href: "/" },
   { label: "English", href: "https://kunakair.com/" },
   { label: "Français", href: "https://kunakair.com/fr/" },
   { label: "العربية", href: "https://kunakair.com/ar/" },

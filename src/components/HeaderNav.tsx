@@ -148,7 +148,9 @@ export function HeaderNav() {
                 className="flex flex-wrap items-center"
                 aria-label="Menú principal"
               >
-                <MainLink label="Inicio" href="https://kunakair.com/es/" sticky={sticky} />
+                {/* ruta local: la home ya está clonada (src/app/page.tsx).
+                    original: https://kunakair.com/es/ */}
+                <MainLink label="Inicio" href="/" sticky={sticky} />
                 <MegaMenuProducts sticky={sticky} />
                 <SectorsDropdown sticky={sticky} />
                 <MainDropdown
@@ -524,7 +526,8 @@ const soporteLink = (label: string): NavLink =>
 /** 11 items verbatim de #mobile_menu2 en /es/ (sin selector de idioma;
     "¿Cómo podemos ayudarte?" lleva visible-escritorio y NO aparece). */
 const MOBILE_MENU: MobileNavItemData[] = [
-  { label: "Inicio", href: "https://kunakair.com/es/", current: true },
+  // ruta local: la home ya está clonada — original: https://kunakair.com/es/
+  { label: "Inicio", href: "/", current: true },
   {
     label: "Productos",
     href: "https://kunakair.com/es/productos/",

@@ -15,7 +15,7 @@ export const SECTOR_SLIDES: SectorSlide[] = [
     description: "Crea espacios donde la gente quiera vivir controlando la calidad del aire.",
     bg: "/images/uploads/2023/01/urban-1920-1024x546.jpg",
     icon: "/images/uploads/2023/01/urban-2.svg",
-    href: "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+    href: "/sectores/calidad-del-aire-en-las-ciudades",
   },
   {
     slug: "industria",
@@ -23,7 +23,7 @@ export const SECTOR_SLIDES: SectorSlide[] = [
     description: "Ayuda a crear un futuro más limpio vigilando las inmisiones industriales.",
     bg: "/images/uploads/2023/01/industry-1920x1024-1-1024x546.jpg",
     icon: "/images/uploads/2023/01/industry.svg",
-    href: "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+    href: "/sectores/control-de-emisiones-industriales",
   },
   {
     slug: "puertos",
@@ -39,7 +39,7 @@ export const SECTOR_SLIDES: SectorSlide[] = [
     description: "Reduce el impacto ambiental de tus obras midiendo la contaminación que generan.",
     bg: "/images/uploads/2023/01/construction-1920x1024-1-1024x546.jpg",
     icon: "/images/uploads/2023/01/construction.svg",
-    href: "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+    href: "/sectores/contaminacion-por-construccion",
   },
   {
     slug: "mineria",
@@ -55,6 +55,6 @@ export const SECTOR_SLIDES: SectorSlide[] = [
     description: "Estudia la contaminación atmosférica combinando tecnología punta y conocimiento.",
     bg: "/images/uploads/2023/01/research-1920-1024x546.jpg",
     icon: "/images/uploads/2023/01/research.svg",
-    href: "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+    href: "/sectores/estudio-de-la-contaminacion-atmosferica",
   },
 ];
