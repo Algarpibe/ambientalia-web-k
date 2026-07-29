@@ -1458,6 +1458,26 @@ falla el día que alguien escribe un titular de tres líneas. Los cuatro son
 **defectos de contrato**, no de píxel: el componente promete servir al arquetipo
 y solo sirve a la instancia que se midió.
 
+### El catálogo de instancias, ampliado por el recon del MONOGRÁFICO (2026-07-29)
+
+La precondición de la tanda es "tener el rango real". EDAR y Petróleo y gas
+**reutilizan la cabecera y el slider tal cual** (medido original contra original,
+`docs/research/monografico-tecnico/components/cabecera-hero-cola.spec.md`), así
+que suman dos instancias a cada uno — y de paso fijan los extremos:
+
+| | valor medido | dónde |
+|---|---|---|
+| **S10** · alto del slider @390 | 265.06 · **300.14** · **300.14** · 300.16 | Urbano · EDAR · Petróleo · Investigación |
+| S10 · alto del slider @1440 | **401.56 en las cuatro** — a desktop es constante | — |
+| S10 · lo que hay cableado en el clon | **345.1**, que no coincide con ninguna | `CtaBannerSlider` |
+| **S11** · líneas del `h1` @390 | 2 · **4** · 3 · 3 | Urbano · **EDAR (máximo del sitio)** · Petróleo · Investigación |
+| S11 · kicker que envuelve a 2 líneas | "Investigación y consultoría" | el más largo de los 8 |
+
+O sea: el alto del slider a 390 **no es un número, es el máximo de sus 3
+diapositivas**, y a 1440 sí es constante. Cuando se aborde la tanda, el criterio
+*"el alto lo pone el contenido"* tiene aquí sus dos regímenes ya medidos y no
+hay que volver a buscarlos.
+
 ### Cómo se resuelve: una tanda única, y no ahora
 
 **No se arreglan de uno en uno según van saliendo.** Eso reproduce el error que

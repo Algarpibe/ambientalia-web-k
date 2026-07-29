@@ -1,0 +1,1004 @@
+{
+  "edar": {
+    "cabMods": [
+      {
+        "clases": "et_pb_text_align_right",
+        "h": 30,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 30,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Soporte Centro de ayuda Servicio de reparación"
+        },
+        "txt": "Soporte Centro de ayuda Servicio de reparación"
+      },
+      {
+        "clases": "",
+        "h": 76.58,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 76.58,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+        },
+        "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+      },
+      {
+        "clases": "et_pb_text_align_left",
+        "h": 113,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 113,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "8px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+        },
+        "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+      },
+      {
+        "clases": "et_pb_text et_pb_text_0_tb_header et_pb_text_align_left",
+        "h": 41.8,
+        "mt": "-13px",
+        "mb": "18.5625px",
+        "inner": {
+          "h": 30.59,
+          "tag": "div",
+          "fs": "40px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "EDAR"
+        },
+        "txt": "EDAR"
+      },
+      {
+        "clases": "et_pb_text et_pb_text_1_tb_header et_pb_text_align_left",
+        "h": 82,
+        "mt": "0px",
+        "mb": "21.6562px",
+        "inner": {
+          "h": 82,
+          "tag": "div",
+          "fs": "30px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Monitorización ambiental en EDAR para el contr"
+        },
+        "txt": "Monitorización ambiental en EDAR para el contr"
+      }
+    ],
+    "hero": [
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_image et_pb_image_0",
+            "esq": "img",
+            "h": 22,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_image et_pb_image_1",
+            "esq": "img",
+            "h": 312.06,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+            "esq": "btn",
+            "h": 74,
+            "mb": "16px",
+            "primero": null,
+            "txt": "Solicita una demo técnica"
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+            "esq": "btn",
+            "h": 74,
+            "mb": "0px",
+            "primero": null,
+            "txt": "Descargar catálogo"
+          }
+        ]
+      },
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+            "esq": "h2 span·rgb(12, 113, 195)",
+            "h": 47,
+            "mb": "16px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 47,
+              "txt": "Olores bajo control en EDAR"
+            },
+            "txt": "Olores bajo control en EDAR"
+          },
+          {
+            "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+            "esq": "h2 span·rgb(0, 117, 201) p",
+            "h": 153.19,
+            "mb": "34.0469px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 92,
+              "txt": "Monitorización continua de emisiones para una "
+            },
+            "txt": "Monitorización continua de emisiones para una gestión "
+          },
+          {
+            "clases": "et_pb_text et_pb_text_4 et_pb_text_align_left",
+            "esq": "h2 span·rgb(0, 117, 201) p p p",
+            "h": 362.34,
+            "mb": "0px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 51,
+              "txt": "Medir puntualmente no es gestionar"
+            },
+            "txt": "Medir puntualmente no es gestionar Las emisiones de ga"
+          }
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "clases": "calls one-column call-fondo-blanco espacio-blanco-derecha",
+        "pad": "40px 60px 40px 60px",
+        "bg": "url(\"https://kunakair.com/wp-content/uploads/2024/11/cta-informe-tecnico-industria-scaled.",
+        "h": 419.97,
+        "w": 1238.39,
+        "img": null,
+        "inner": {
+          "cls": "calls-content",
+          "w": 1116.39,
+          "pl": "0px",
+          "pad": "0px"
+        },
+        "txt": "¿Quieres controlar el impacto de tus procesos en la calidad "
+      }
+    ],
+    "h4s": [],
+    "nH4": 0,
+    "puntMapa": [
+      "S0F0C0:punt(¿Qué cambia con monitori)",
+      "S0F0C1:—()",
+      "S0F1C0:punt(¿Qué gases se deben medi)",
+      "S0F2C0:punt(¿Dónde se generan las em)",
+      "S0F3C0:punt(Tabla resumen: procesos )",
+      "S0F4C0:punt()",
+      "S0F4C1:—(Alertas y toma de decisi)",
+      "S1F0C0:punt(Control perimetral y ges)",
+      "S1F0C1:punt(Seguridad y prevención e)",
+      "S2F0C0:punt(Beneficios clave para la)",
+      "S2F0C1:punt(Aplicaciones reales de l)",
+      "S2F1C0:—(Da el siguiente paso Act)",
+      "S2F1C1:—()",
+      "S2F2C0:—(¿Quieres controlar el im)",
+      "S2F3C0:punt(Proyectos por todo el mu)"
+    ],
+    "h5": {
+      "tag": "h5",
+      "fs": "23px",
+      "lh": "23px",
+      "fw": "300",
+      "color": "rgb(51, 51, 51)",
+      "pad": "0px 0px 10px 0px",
+      "mt": "0px",
+      "mb": "0px",
+      "h": 33,
+      "txt": "Fase del proceso"
+    }
+  },
+  "petroleo": {
+    "cabMods": [
+      {
+        "clases": "et_pb_text_align_right",
+        "h": 30,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 30,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Soporte Centro de ayuda Servicio de reparación"
+        },
+        "txt": "Soporte Centro de ayuda Servicio de reparación"
+      },
+      {
+        "clases": "",
+        "h": 76.58,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 76.58,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+        },
+        "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+      },
+      {
+        "clases": "et_pb_text_align_left",
+        "h": 113,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 113,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "8px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+        },
+        "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+      },
+      {
+        "clases": "et_pb_text et_pb_text_0_tb_header et_pb_text_align_left",
+        "h": 41.8,
+        "mt": "-13px",
+        "mb": "18.5625px",
+        "inner": {
+          "h": 30.59,
+          "tag": "div",
+          "fs": "40px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Petróleo y Gas"
+        },
+        "txt": "Petróleo y Gas"
+      },
+      {
+        "clases": "et_pb_text et_pb_text_1_tb_header et_pb_text_align_left",
+        "h": 82,
+        "mt": "0px",
+        "mb": "21.6562px",
+        "inner": {
+          "h": 82,
+          "tag": "div",
+          "fs": "30px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Monitorización de emisiones en el sector del p"
+        },
+        "txt": "Monitorización de emisiones en el sector del p"
+      }
+    ],
+    "hero": [
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_image et_pb_image_0",
+            "esq": "img",
+            "h": 22,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_image et_pb_image_1",
+            "esq": "img",
+            "h": 390.08,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+            "esq": "btn",
+            "h": 74,
+            "mb": "16px",
+            "primero": null,
+            "txt": "Solicita una demo técnica"
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+            "esq": "btn",
+            "h": 74,
+            "mb": "0px",
+            "primero": null,
+            "txt": "Descargar catálogo"
+          }
+        ]
+      },
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+            "esq": "",
+            "h": 0,
+            "mb": "16px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+            "esq": "h2 span·rgb(0, 117, 201) p p p",
+            "h": 364.75,
+            "mb": "28px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 84,
+              "txt": "Control continuo de emisiones en instalaciones"
+            },
+            "txt": "Control continuo de emisiones en instalaciones Oil & G"
+          },
+          {
+            "clases": "et_pb_text et_pb_text_4 et_pb_text_align_left",
+            "esq": "h2 span·rgb(0, 117, 201) p p p",
+            "h": 364.75,
+            "mb": "0px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 84,
+              "txt": "El problema real: emisiones que no se ven"
+            },
+            "txt": "El problema real: emisiones que no se ven Las emisione"
+          }
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "clases": "calls one-column call-fondo-blanco espacio-blanco-derecha",
+        "pad": "40px 60px 40px 60px",
+        "bg": "url(\"https://kunakair.com/wp-content/uploads/2024/11/cta-informe-tecnico-industria-scaled.",
+        "h": 419.97,
+        "w": 1238.39,
+        "img": null,
+        "inner": {
+          "cls": "calls-content",
+          "w": 1116.39,
+          "pl": "0px",
+          "pad": "0px"
+        },
+        "txt": "¿Quieres controlar el impacto de tus procesos en la calidad "
+      }
+    ],
+    "h4s": [
+      {
+        "tag": "h4",
+        "fs": "26px",
+        "lh": "26px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 40px",
+        "mt": "0px",
+        "mb": "0px",
+        "h": 36,
+        "txt": "Detecta fugas de forma temprana",
+        "before": {
+          "content": "none",
+          "bg": "none",
+          "w": "auto",
+          "h": "auto",
+          "pos": "static",
+          "left": "auto"
+        },
+        "sig": "P",
+        "sigTipo": {
+          "tag": "p",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 18px 40px",
+          "mt": "0px",
+          "mb": "0px",
+          "h": 48.59,
+          "txt": "Reduce el tiempo que las emisiones permanecen "
+        }
+      },
+      {
+        "tag": "h4",
+        "fs": "26px",
+        "lh": "26px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 40px",
+        "mt": "0px",
+        "mb": "0px",
+        "h": 36,
+        "txt": "Identifica patrones de emisión",
+        "before": {
+          "content": "none",
+          "bg": "none",
+          "w": "auto",
+          "h": "auto",
+          "pos": "static",
+          "left": "auto"
+        },
+        "sig": "P",
+        "sigTipo": {
+          "tag": "p",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 18px 40px",
+          "mt": "0px",
+          "mb": "0px",
+          "h": 48.59,
+          "txt": "Relaciona emisiones con procesos y condiciones"
+        }
+      },
+      {
+        "tag": "h4",
+        "fs": "26px",
+        "lh": "26px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 40px",
+        "mt": "0px",
+        "mb": "0px",
+        "h": 36,
+        "txt": "Optimiza campañas LDAR",
+        "before": {
+          "content": "none",
+          "bg": "none",
+          "w": "auto",
+          "h": "auto",
+          "pos": "static",
+          "left": "auto"
+        },
+        "sig": "P",
+        "sigTipo": {
+          "tag": "p",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 18px 40px",
+          "mt": "0px",
+          "mb": "0px",
+          "h": 48.59,
+          "txt": "Prioriza inspecciones donde y cuando realmente"
+        }
+      }
+    ],
+    "nH4": 13,
+    "puntMapa": [
+      "S0F0C0:punt()",
+      "S0F0C1:—(De inspecciones puntuale)",
+      "S0F1C0:punt(Qué necesitas para contr)",
+      "S0F1C1:—()",
+      "S1F0C0:punt(La solución de Kunak Mon)",
+      "S1F0C1:—()",
+      "S1F1C0:punt(Contaminantes que pueden)",
+      "S1F1C1:—()",
+      "S1F2C0:punt(Solicita una demo técnic)",
+      "S1F2C1:—(Aplicaciones en petróleo)",
+      "S1F3C0:punt(Monitorización de metano)",
+      "S1F3C1:—()",
+      "S1F4C0:punt(Cómo funciona la solució)",
+      "S2F0C0:—(Controla tus emisiones y)",
+      "S2F0C1:—()",
+      "S2F1C0:—(¿Quieres controlar el im)"
+    ],
+    "h5": null
+  },
+  "urbano": {
+    "cabMods": [
+      {
+        "clases": "et_pb_text_align_right",
+        "h": 30,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 30,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Soporte Centro de ayuda Servicio de reparación"
+        },
+        "txt": "Soporte Centro de ayuda Servicio de reparación"
+      },
+      {
+        "clases": "",
+        "h": 76.58,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 76.58,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+        },
+        "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+      },
+      {
+        "clases": "et_pb_text_align_left",
+        "h": 113,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 113,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "8px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+        },
+        "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+      },
+      {
+        "clases": "et_pb_text et_pb_text_0_tb_header et_pb_text_align_left",
+        "h": 41.8,
+        "mt": "-13px",
+        "mb": "18.5625px",
+        "inner": {
+          "h": 30.59,
+          "tag": "div",
+          "fs": "40px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Urbano"
+        },
+        "txt": "Urbano"
+      },
+      {
+        "clases": "et_pb_text et_pb_text_1_tb_header et_pb_text_align_left",
+        "h": 46,
+        "mt": "0px",
+        "mb": "21.6562px",
+        "inner": {
+          "h": 46,
+          "tag": "div",
+          "fs": "30px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Calidad del aire en las ciudades"
+        },
+        "txt": "Calidad del aire en las ciudades"
+      }
+    ],
+    "hero": [
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_image et_pb_image_0",
+            "esq": "img",
+            "h": 22,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_image et_pb_image_1",
+            "esq": "img",
+            "h": 312.06,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+            "esq": "btn",
+            "h": 74,
+            "mb": "16px",
+            "primero": null,
+            "txt": "Quiero saber más"
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+            "esq": "btn",
+            "h": 74,
+            "mb": "0px",
+            "primero": null,
+            "txt": "Descargar catálogo"
+          }
+        ]
+      },
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+            "esq": "h2 span·rgb(0, 117, 201)",
+            "h": 121,
+            "mb": "34.0469px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 121,
+              "txt": "Conoce la calidad del aire que respiran tus ci"
+            },
+            "txt": "Conoce la calidad del aire que respiran tus ciudadanos"
+          },
+          {
+            "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+            "esq": "p p p span·rgb(0, 117, 201) p p",
+            "h": 592.09,
+            "mb": "0px",
+            "primero": {
+              "tag": "p",
+              "fs": "18px",
+              "lh": "30.6px",
+              "fw": "400",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 18px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 109.78,
+              "txt": "Más del 50 % de la población mundial reside y "
+            },
+            "txt": "Más del 50 % de la población mundial reside y trabaja "
+          }
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "clases": "calls one-column espacio-derecha call-fondo-blanco espacio-blanco-derecha call-con-foto",
+        "pad": "40px 50px 40px 50px",
+        "bg": "none",
+        "h": 336.98,
+        "w": 1238.39,
+        "img": "https://kunakair.com/wp-content/uploads/2024/11/cta-informe-tecnico-urban-ES.png",
+        "inner": {
+          "cls": "calls-content",
+          "w": 1136.39,
+          "pl": "0px",
+          "pad": "0px"
+        },
+        "txt": "¿Necesitas medir la contaminación en tu ciudad? Descarga aho"
+      }
+    ],
+    "h4s": [],
+    "nH4": 0,
+    "puntMapa": [
+      "S0F0C0:—(¿Necesitas medir la cont)",
+      "S1F0C0:punt(Beneficios de monitoriza)",
+      "S1F0C1:punt(Aplicaciones en las ciud)",
+      "S1F1C0:—(Protege la salud de tus )",
+      "S1F1C1:—()"
+    ],
+    "h5": null
+  },
+  "industria": {
+    "cabMods": [
+      {
+        "clases": "et_pb_text_align_right",
+        "h": 30,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 30,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Soporte Centro de ayuda Servicio de reparación"
+        },
+        "txt": "Soporte Centro de ayuda Servicio de reparación"
+      },
+      {
+        "clases": "",
+        "h": 76.58,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 76.58,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+        },
+        "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;}"
+      },
+      {
+        "clases": "et_pb_text_align_left",
+        "h": 113,
+        "mt": "0px",
+        "mb": "0px",
+        "inner": {
+          "h": 113,
+          "tag": "div",
+          "fs": "18px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "8px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+        },
+        "txt": "Inicio Productos Kunak AIR Pro Kunak AIR Lite "
+      },
+      {
+        "clases": "et_pb_text et_pb_text_0_tb_header et_pb_text_align_left",
+        "h": 41.8,
+        "mt": "-13px",
+        "mb": "18.5625px",
+        "inner": {
+          "h": 30.59,
+          "tag": "div",
+          "fs": "40px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Industria y olores"
+        },
+        "txt": "Industria y olores"
+      },
+      {
+        "clases": "et_pb_text et_pb_text_1_tb_header et_pb_text_align_left",
+        "h": 46,
+        "mt": "0px",
+        "mb": "21.6562px",
+        "inner": {
+          "h": 46,
+          "tag": "div",
+          "fs": "30px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(255, 255, 255)",
+          "pad": "0px 0px 0px 0px",
+          "mt": "0px",
+          "mb": "0px",
+          "txt": "Control de emisiones industriales"
+        },
+        "txt": "Control de emisiones industriales"
+      }
+    ],
+    "hero": [
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_image et_pb_image_0",
+            "esq": "img",
+            "h": 22,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_image et_pb_image_1",
+            "esq": "img",
+            "h": 312.06,
+            "mb": "34.0469px",
+            "primero": null,
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+            "esq": "btn",
+            "h": 74,
+            "mb": "16px",
+            "primero": null,
+            "txt": "¿Quieres saber más?"
+          },
+          {
+            "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+            "esq": "btn",
+            "h": 74,
+            "mb": "0px",
+            "primero": null,
+            "txt": "Descargar catálogo"
+          }
+        ]
+      },
+      {
+        "clases": "et_pb_column_1_2",
+        "w": 585.13,
+        "mods": [
+          {
+            "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+            "esq": "h2 span·rgb(12, 113, 195)",
+            "h": 121,
+            "mb": "34.0469px",
+            "primero": {
+              "tag": "h2",
+              "fs": "37px",
+              "lh": "37px",
+              "fw": "300",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 10px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 121,
+              "txt": "Mide el impacto de las emisiones industriales "
+            },
+            "txt": "Mide el impacto de las emisiones industriales con dato"
+          },
+          {
+            "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+            "esq": "p p p span·rgb(0, 117, 201) p p",
+            "h": 500.31,
+            "mb": "0px",
+            "primero": {
+              "tag": "p",
+              "fs": "18px",
+              "lh": "30.6px",
+              "fw": "400",
+              "color": "rgb(51, 51, 51)",
+              "pad": "0px 0px 18px 0px",
+              "mt": "0px",
+              "mb": "0px",
+              "h": 109.78,
+              "txt": "El crecimiento de las ciudades hace que a menu"
+            },
+            "txt": "El crecimiento de las ciudades hace que a menudo la ge"
+          }
+        ]
+      }
+    ],
+    "calls": [
+      {
+        "clases": "calls one-column call-fondo-blanco espacio-blanco-derecha",
+        "pad": "40px 60px 40px 60px",
+        "bg": "url(\"https://kunakair.com/wp-content/uploads/2024/11/cta-informe-tecnico-industria-scaled.",
+        "h": 419.97,
+        "w": 1238.39,
+        "img": null,
+        "inner": {
+          "cls": "calls-content",
+          "w": 1116.39,
+          "pl": "0px",
+          "pad": "0px"
+        },
+        "txt": "¿Quieres controlar el impacto de tus procesos en la calidad "
+      }
+    ],
+    "h4s": [],
+    "nH4": 0,
+    "puntMapa": [
+      "S0F0C0:punt(Beneficios del control d)",
+      "S0F0C1:punt(Aplicaciones en las indu)",
+      "S0F1C0:—(¿Quieres controlar el im)",
+      "S0F2C0:—(Industria cementera Meta)",
+      "S0F2C1:—(Gestión del compost Espa)",
+      "S0F3C0:—(Identifica qué operacion)",
+      "S0F3C1:—()",
+      "S0F4C0:punt(Proyectos por todo el mu)"
+    ],
+    "h5": null
+  }
+}

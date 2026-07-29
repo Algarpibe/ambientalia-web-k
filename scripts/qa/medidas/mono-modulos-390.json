@@ -1,0 +1,1464 @@
+{
+  "edar": [
+    {
+      "clases": "et_pb_section et_pb_section_3 et_section_regular",
+      "h": 6853.64,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_3",
+          "pt": "30px",
+          "pb": "60px",
+          "w": 335.39,
+          "h": 947.19,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_4",
+              "w": 335.39,
+              "h": 603.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_2",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_5",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Qué cambia con monitorización continua?"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_6",
+                  "esq": "h2×2 ul",
+                  "h": 391.34,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "De reaccionar tarde a tener control Visibilidad real de lo q"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_5 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_3",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_4",
+          "pt": "30px",
+          "pb": "72px",
+          "w": 335.39,
+          "h": 1412.25,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_6 et-last-child",
+              "w": 335.39,
+              "h": 1310.25,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_4",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_7",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Qué gases se deben medir en una EDAR?"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_8",
+                  "esq": "h2 p ul",
+                  "h": 1139,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Los gases clave que puedes controlar en continuo Las solucio"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_5",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 586.3,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_7 et-last-child",
+              "w": 335.39,
+              "h": 526.3,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_5",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_9",
+                  "esq": "h3",
+                  "h": 185,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Dónde se generan las emisiones en la planta?"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_10",
+                  "esq": "h2",
+                  "h": 84,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Cada fase, gases y riesgos distintos"
+                },
+                {
+                  "clases": "et_pb_image et_pb_image_6",
+                  "esq": "img",
+                  "h": 187.25,
+                  "mb": "10.0469px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_6",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 2460.81,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_8 et-last-child",
+              "w": 335.39,
+              "h": 2400.81,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_7",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_11",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Tabla resumen: procesos y emisiones"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_12",
+                  "esq": "table h5×4",
+                  "h": 2201.81,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "tabla": {
+                    "filas": 9,
+                    "cols": [
+                      4,
+                      4,
+                      4,
+                      4,
+                      4,
+                      4,
+                      4,
+                      4,
+                      4
+                    ],
+                    "thead": true,
+                    "th": 4,
+                    "cab": [
+                      "Fase del proceso",
+                      "Gases generados",
+                      "Nivel de olor y riesgo",
+                      "Valor operativo del control"
+                    ]
+                  },
+                  "txt": "Fase del proceso Gases generados Nivel de olor y riesgo Valo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_7 et_pb_row_1-4_3-4",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 1347.09,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_4 et_pb_column_9",
+              "w": 335.39,
+              "h": 492.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_8",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_image et_pb_image_9",
+                  "esq": "img",
+                  "h": 492.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_3_4 et_pb_column_10 et-last-child",
+              "w": 335.39,
+              "h": 764.5,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_13",
+                  "esq": "h3",
+                  "h": 112.5,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 15px 0px",
+                  "txt": "Alertas y toma de decisiones"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_14",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Actúa antes de que el problema sea una realidad"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_15",
+                  "esq": "ul p",
+                  "h": 381,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Umbrales configurables por gas y zona. Alertas automáticas a"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_2_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clases": "et_pb_section et_pb_section_4 et_section_regular",
+      "h": 1196.97,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_8",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 1096.97,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_11",
+              "w": 335.39,
+              "h": 598.75,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_10",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_16",
+                  "esq": "h3",
+                  "h": 185,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Control perimetral y gestión de quejas"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_17",
+                  "esq": "h2 p×2",
+                  "h": 383.75,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Responder con hechos,no con suposiciones La correlación entr"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_12 et-last-child",
+              "w": 335.39,
+              "h": 408.22,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_11",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_18",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Seguridad y prevención en planta"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_19",
+                  "esq": "h2 p",
+                  "h": 236.97,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Una capa adicional de protección La monitorización continua "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clases": "et_pb_section et_pb_section_5 et_section_regular",
+      "h": 4135.75,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_9",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 1789.25,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_13",
+              "w": 335.39,
+              "h": 882.25,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_12",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_20",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Beneficios clave para la operación de una EDAR"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_21",
+                  "esq": "ul",
+                  "h": 711,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Controla e identifica las fuentes de olores. Detecta anomalí"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_14 et-last-child",
+              "w": 335.39,
+              "h": 817,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_13",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_22",
+                  "esq": "h3",
+                  "h": 185,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Aplicaciones reales de la monitorización ambiental"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_23",
+                  "esq": "ul",
+                  "h": 602,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Control continuo de olores en zonas críticas. Detección temp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_10 et_pb_equal_columns",
+          "pt": "0px",
+          "pb": "60px",
+          "w": 335.39,
+          "h": 825.06,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_15",
+              "w": 335.39,
+              "h": 541.47,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_24",
+                  "esq": "h3",
+                  "h": 97.5,
+                  "mb": "20px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Da el siguiente paso"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_25",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 25px 0px 0px",
+                  "txt": "Actúa antes de que el problema escale"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_26",
+                  "esq": "p",
+                  "h": 152.97,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Descubre cómo la monitorización ambiental continua puede ayu"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_3_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_16 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_14",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_11",
+          "pt": "0px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 621.16,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_17 et-last-child",
+              "w": 335.39,
+              "h": 591.16,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_code et_pb_code_0",
+                  "esq": "p×3 btn",
+                  "h": 578.64,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Quieres controlar el impacto de tus procesos en la calidad "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_12",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 836.28,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_18 et-last-child",
+              "w": 335.39,
+              "h": 776.28,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_15",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_27",
+                  "esq": "h2 p",
+                  "h": 189.28,
+                  "mb": "17px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Proyectos por todo el mundo Algunos de los proyectos de moni"
+                },
+                {
+                  "clases": "et_pb_map_0 et_pb_map_container",
+                  "esq": "table img×62 p ul×2 img×45 h3×27",
+                  "h": 570,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "tabla": {
+                    "filas": 10,
+                    "cols": [
+                      2,
+                      2,
+                      2,
+                      2,
+                      2,
+                      2,
+                      2,
+                      2,
+                      2,
+                      2
+                    ],
+                    "thead": false,
+                    "th": 0,
+                    "cab": [
+                      "←",
+                      "Mover a la izquierda"
+                    ]
+                  },
+                  "txt": "Para navegar por el mapa con gestos táctiles, tócalo dos vec"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "petroleo": [
+    {
+      "clases": "et_pb_section et_pb_section_4 et_section_regular",
+      "h": 3253,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "40px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_3",
+          "pt": "30px",
+          "pb": "40px",
+          "w": 335.39,
+          "h": 1752.16,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_3 et_pb_column_4",
+              "w": 335.39,
+              "h": 492.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_2",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_image et_pb_image_3",
+                  "esq": "img",
+                  "h": 492.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_2_3 et_pb_column_5 et-last-child",
+              "w": 335.39,
+              "h": 1159.56,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_5",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "De inspecciones puntuales a control continuo"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_6",
+                  "esq": "h2 p",
+                  "h": 333.97,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 23px 0px",
+                  "txt": "No puedes gestionar lo que no mides de forma continua. Las r"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_7",
+                  "esq": "h4 p h4 p h4 p h4 p h4 p",
+                  "h": 654.34,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 23px 0px",
+                  "txt": "Detecta fugas de forma temprana Reduce el tiempo que las emi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_4",
+          "pt": "30px",
+          "pb": "2px",
+          "w": 335.39,
+          "h": 1410.84,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_6",
+              "w": 335.39,
+              "h": 1125.25,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_4",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_8",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Qué necesitas para controlar las emisiones"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_9",
+                  "esq": "h3",
+                  "h": 234,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Una red de sensores distribuidos convierte las emisiones en "
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_10",
+                  "esq": "ul",
+                  "h": 419,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "monitorización continua en tiempo real cobertura espacial su"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_11",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Actúa antes de que el problema sea una realidad"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_2_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Saber más"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_7 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_5",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clases": "et_pb_section et_pb_section_5 et_section_regular",
+      "h": 7739.42,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_5",
+          "pt": "30px",
+          "pb": "60px",
+          "w": 335.39,
+          "h": 1400.19,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_8",
+              "w": 335.39,
+              "h": 1056.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_6",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_12",
+                  "esq": "h3",
+                  "h": 97.5,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "La solución de Kunak"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_13",
+                  "esq": "h2",
+                  "h": 195,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Monitorización continua diseñada para entornos industriales "
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_14",
+                  "esq": "p ul p",
+                  "h": 562.09,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Las estaciones Kunak AIR permiten desplegar redes multiparám"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_3_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Más información"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_9 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_7",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_6",
+          "pt": "30px",
+          "pb": "36px",
+          "w": 335.39,
+          "h": 1318.73,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_3_5 et_pb_column_10",
+              "w": 335.39,
+              "h": 887.34,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_8",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_15",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "26px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Contaminantes que pueden monitorizarse"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_16",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Configuración flexible según la instalación"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_17",
+                  "esq": "p ul p",
+                  "h": 558.09,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Las estaciones Kunak AIR pueden configurarse para medir dist"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_2_5 et_pb_column_11 et-last-child",
+              "w": 335.39,
+              "h": 335.39,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_9",
+                  "esq": "img",
+                  "h": 335.39,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_7",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 1992.5,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_3 et_pb_column_12",
+              "w": 335.39,
+              "h": 567.19,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_10",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_image et_pb_image_11",
+                  "esq": "img",
+                  "h": 447.19,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_4_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_2_3 et_pb_column_13 et-last-child",
+              "w": 335.39,
+              "h": 1335.31,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_18",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Aplicaciones en petróleo y gas"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_19",
+                  "esq": "p",
+                  "h": 122.38,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Las redes de sensores Kunak permiten monitorizar emisiones a"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_20",
+                  "esq": "h4 p h4 p h4 p h4 p h4 p h4 p h4 p",
+                  "h": 1011.69,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 23px 0px",
+                  "txt": "Refinerías Control de emisiones en unidades de proceso, tanq"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_8",
+          "pt": "30px",
+          "pb": "60px",
+          "w": 335.39,
+          "h": 2231.56,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_2_3 et_pb_column_14",
+              "w": 335.39,
+              "h": 1618.97,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_12",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_21",
+                  "esq": "h3",
+                  "h": 228.75,
+                  "mb": "23px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Monitorización de metano y detección temprana de fugas"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_22",
+                  "esq": "h2",
+                  "h": 232,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Detectar las fugas a tiempo permite actuar antes de que se c"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_23",
+                  "esq": "p×2 ul p×2",
+                  "h": 963.22,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "El metano (CH4) es uno de los principales gases de efecto in"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_5_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Quieres más información?"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_3 et_pb_column_15 et-last-child",
+              "w": 335.39,
+              "h": 492.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_13",
+                  "esq": "img",
+                  "h": 492.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_9",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 696.44,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_16 et-last-child",
+              "w": 335.39,
+              "h": 636.44,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_14",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_24",
+                  "esq": "h3",
+                  "h": 97.5,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Cómo funciona la solución"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_25",
+                  "esq": "h4",
+                  "h": 114,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Red de sensores → Red de comunicaciones → Plataforma de anál"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_26",
+                  "esq": "p×2",
+                  "h": 323.94,
+                  "mb": "41px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Las estaciones multiparámetro miden gases, partículas y vari"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clases": "et_pb_section et_pb_section_6 et_section_regular",
+      "h": 1602.56,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_10 et_pb_equal_columns",
+          "pt": "0px",
+          "pb": "60px",
+          "w": 335.39,
+          "h": 917.41,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_17",
+              "w": 335.39,
+              "h": 633.81,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_27",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "20px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Controla tus emisiones y detecta fugas en tiempo real"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_28",
+                  "esq": "h2",
+                  "h": 121,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 25px 0px 0px",
+                  "txt": "Actúa antes de que el problema escale"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_29",
+                  "esq": "p×2",
+                  "h": 201.56,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Detectar una fuga a tiempo marca la diferencia entre una cor"
+                },
+                {
+                  "clases": "et_pb_button_module_wrapper et_pb_button_6_wrapper",
+                  "esq": "btn",
+                  "h": 74,
+                  "mb": "16px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_18 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_15",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_11",
+          "pt": "0px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 621.16,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_19 et-last-child",
+              "w": 335.39,
+              "h": 591.16,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_code et_pb_code_0",
+                  "esq": "p×3 btn",
+                  "h": 578.64,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Quieres controlar el impacto de tus procesos en la calidad "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "urbano": [
+    {
+      "clases": "et_pb_section et_pb_section_3 et_section_regular",
+      "h": 593.39,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_3",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 593.39,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_4_4 et_pb_column_4 et-last-child",
+              "w": 335.39,
+              "h": 533.39,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_code et_pb_code_0",
+                  "esq": "img p×2 btn",
+                  "h": 520.88,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "¿Necesitas medir la contaminación en tu ciudad? Descarga aho"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clases": "et_pb_section et_pb_section_4 et_section_regular",
+      "h": 1970.16,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "clases": "et_pb_row et_pb_row_4",
+          "pt": "30px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 1356.56,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_5",
+              "w": 335.39,
+              "h": 655.16,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_2",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_4",
+                  "esq": "h3",
+                  "h": 141.25,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Beneficios de monitorizar la calidad del aire:"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_5",
+                  "esq": "ul",
+                  "h": 483.91,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Permite tomar medidas para mejorar la calidad de vida y la s"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_6 et-last-child",
+              "w": 335.39,
+              "h": 611.41,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_3",
+                  "esq": "img",
+                  "h": 22,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_6",
+                  "esq": "h3",
+                  "h": 97.5,
+                  "mb": "30px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Aplicaciones en las ciudades:"
+                },
+                {
+                  "clases": "et_pb_text et_pb_text_7",
+                  "esq": "ul",
+                  "h": 483.91,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": "Monitorización de la contaminación de forma fiable y precisa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_row et_pb_row_5 et_pb_equal_columns",
+          "pt": "0px",
+          "pb": "30px",
+          "w": 335.39,
+          "h": 549.59,
+          "cols": [
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_7",
+              "w": 335.39,
+              "h": 296,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_text et_pb_text_8",
+                  "esq": "p",
+                  "h": 296,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 25px 0px 0px",
+                  "txt": "Protege la salud de tus ciudadanos tomando las mejores decis"
+                }
+              ]
+            },
+            {
+              "clases": "et_pb_column et_pb_column_1_2 et_pb_column_8 et-last-child",
+              "w": 335.39,
+              "h": 223.59,
+              "mr": "0px",
+              "mods": [
+                {
+                  "clases": "et_pb_image et_pb_image_4",
+                  "esq": "img",
+                  "h": 223.59,
+                  "mb": "0px",
+                  "mt": "0px",
+                  "pad": "0px 0px 0px 0px",
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

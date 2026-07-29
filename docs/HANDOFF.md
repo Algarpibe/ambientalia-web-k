@@ -1,7 +1,32 @@
-# HANDOFF — arranque del arquetipo MONOGRÁFICO TÉCNICO
+# HANDOFF — MONOGRÁFICO TÉCNICO: specs cerradas, falta construir
 
-> Escrito al cerrar la sesión del **2026-07-29**.
+> Escrito al cerrar la sesión del **2026-07-29** (recon) y **actualizado el mismo
+> día** al cerrar la sesión de specs.
 > Para arrancar sesión limpia. Léelo entero antes de tocar nada: son 5 minutos.
+
+## Lo primero: en qué punto está
+
+**Recon y specs de MONOGRÁFICO están HECHOS. No se ha escrito código, a
+propósito.** La próxima sesión es de **build** (fase 3 del flujo), y entra por
+`docs/research/monografico-tecnico/MODELO.md`.
+
+| documento | qué trae |
+|---|---|
+| `PAGE_TOPOLOGY.md` | recon medido, con **tres correcciones marcadas `⚠ CORRIGE`** sobre la versión en frío |
+| `DECISIONES.md` | **las tres decisiones, argumentadas y cerradas** |
+| `MODELO.md` | el content type, escrito desde EDAR y **validado contra Petróleo sobre el papel**: 4 campos que EDAR sola habría fallado |
+| `BEHAVIORS.md` | el cuerpo es estático; lo único propio es el desbordamiento de la tabla a 390 |
+| `components/seccion-editorial.spec.md` | el cuerpo: ritmo, retícula, punteado, tipografía, los 3 payloads, objetivos numéricos |
+| `components/tabla-resumen.spec.md` | la tabla, con su contenido **verbatim** |
+| `components/cabecera-hero-cola.spec.md` | qué se reutiliza de SECTOR, medido original contra original |
+| `EXPERIMENTO-URBANO.md` | el experimento **pre-registrado**: hipótesis, criterio, predicciones y regla de decisión |
+
+**El hallazgo transversal de la tanda**, que vale para todo el proyecto y no solo
+para este arquetipo: **en Divi, lo que el editor no toca es responsive (un % del
+padre); lo que toca queda en px absolutos, iguales a 1440 y a 390.** Es un
+discriminador **objetivo** entre plantilla y contenido — se mide a dos anchos y
+se mira si el número se mueve — y es lo que resuelve la decisión (c) sin tener
+que argumentar de oído.
 
 ## Estado
 
@@ -15,7 +40,7 @@
 | SOFTWARE/PLATAFORMA | `/software-de-medicion-calidad-del-aire` | `docs/research/software/` |
 | — (variante corta del anterior) | `/kunak-api` | `docs/research/kunak-api/` |
 | SECTOR / SOLUCIÓN VERTICAL | `/sectores/[slug]` | `docs/research/sectores/` |
-| **MONOGRÁFICO TÉCNICO** | *sin construir* | `docs/research/monografico-tecnico/` |
+| **MONOGRÁFICO TÉCNICO** | *sin construir — **specs cerradas*** | `docs/research/monografico-tecnico/` |
 
 **SECTOR: 4 instancias de una sola plantilla** (Urbano · Industria ·
 Construcción · Investigación), y el **test de aceptación está pasado**: las dos
@@ -27,94 +52,54 @@ moverse un píxel.
 Puertos y Minería se dejaron fuera **a propósito** (permutaciones de una
 topología ya validada; razón en `docs/PENDIENTES-QA.md`).
 
-## Por dónde entrar
+## Por dónde entrar a construir
 
-**`docs/research/monografico-tecnico/PAGE_TOPOLOGY.md`** — recon en frío de
-EDAR y Petróleo y gas, hecho sin escribir código. Trae las tres roturas medidas
-(la sección editorial que cubre 13 de 19 filas, las dos formas de sección que le
-faltan a `flujo`, y el `padding-bottom` de fila que deja de ser plantilla) y su
-§4 lista lo que **no** resolvió y hay que medir en la fase de specs.
+1. **`MODELO.md`** — el content type y sus cuatro puntos abiertos (§4).
+2. **`components/seccion-editorial.spec.md`** — es el 68% del trabajo: el cuerpo.
+   Trae los objetivos numéricos por sección y fila de las dos páginas.
+3. `components/cabecera-hero-cola.spec.md` — lo que **no** hay que construir.
 
 Antes de medir nada, `scripts/qa/README.md` §PROTOCOLO DE MEDICIÓN: 3 corridas,
 el `h1` como base de lectura, y el suelo de ruido en **dos regiones** (hasta 81
 en "Artículos y Guías", **0 en el resto**).
 
+Las sondas del arquetipo ya existen y su salida está congelada: `mono-modulos`,
+`mono-cabecera`, `mono-detalle` y `mono-inline` en `scripts/qa/`. **Se
+reutilizan, no se rehacen.**
+
 ## Dos observaciones que pueden cambiar la prioridad
 
-1. **El arquetipo SECTOR está contenido dentro de MONOGRÁFICO.** La última
-   sección del cuerpo de EDAR y de Petróleo es un cuerpo de sector completo, con
-   el mismo ritmo (`mt −14 · pt 57.5938/50 · pb 14`) y los mismos tipos de
-   bloque. Lo nuevo es todo lo que va antes.
+1. ~~**El arquetipo SECTOR está contenido dentro de MONOGRÁFICO.**~~ **Corregida
+   al medir**: la última sección de EDAR y Petróleo *no* es un cuerpo de sector.
+   Lo que el heurístico etiquetaba `claimConFoto` es una sección editorial más,
+   y `claimConFoto` **no aparece en ninguna de las dos**. La contención va en el
+   otro sentido: el cuerpo de SECTOR parece un **subconjunto** del de
+   MONOGRÁFICO — `beneficiosAplicaciones` es literalmente `punt · h3 · ul` en
+   dos columnas. Eso es lo que somete a prueba el experimento.
 2. **Son las dos páginas más recientes del sitio.** 2 de 8, y las dos últimas
    publicadas — lo que sugiere que ésta es la plantilla nueva y que los otros 6
-   sectores son el legado. Si se confirma, el orden de prioridad del proyecto
-   cambia: MONOGRÁFICO deja de ser "el raro que falta" y pasa a ser hacia dónde
-   va el sitio.
+   sectores son el legado. Sin resolver: no hay dato público que lo confirme.
 
-## Tres decisiones que van ARGUMENTADAS en las specs, antes de una línea de código
+## Las tres decisiones: CERRADAS (2026-07-29)
 
-No son detalles de implementación: las tres condicionan el esquema del CMS, y
-las tres tienen una respuesta cómoda que probablemente es la equivocada.
+Argumentadas en **`docs/research/monografico-tecnico/DECISIONES.md`**. Resumen,
+para no reabrirlas:
 
-### a) La `<table>` de "Tabla resumen: procesos y emisiones"
-
-**La decisión de modelado de más consecuencia del proyecto hasta hoy.** Dos
-salidas:
-
-- **Filas estructuradas con columnas tipadas**, poblables campo a campo desde el
-  CMS. Caro de construir, y obliga a decidir el esquema de la tabla (¿cuántas
-  columnas?, ¿son las mismas en toda instancia?, ¿alguna es enumerada?).
-- **Bloque de texto rico** con el HTML de la tabla dentro. Trivial de construir
-  y **tira por tierra la regla 2 del proyecto**: la estructura se vuelve opaca,
-  no se puede consultar, ordenar ni reutilizar, y el CMS pasa a guardar
-  presentación en vez de datos.
-
-Es **la primera vez que "estructura = contenido" se pone de verdad difícil**.
-Hasta ahora la separación salía casi gratis. Aquí cuesta, y por eso hay que
-resolverla mirando el original —¿qué columnas tiene?, ¿se repite el patrón en
-Petróleo y gas o es única de EDAR?— y **no por comodidad de construcción**.
-Decisión escrita, con el argumento, antes de tocar nada.
-
-### b) ¿Reutiliza `CabeceraSector` y `CtaBannerSlider`, o tiene los suyos?
-
-Si los reutiliza, **hereda S10 y S11** (alto fijo del slider, kicker que no
-envuelve). Eso **no es malo**: suma dos instancias más a la tanda de
-variabilidad, que es justo lo que esa tanda necesita para conocer el rango real.
-
-Lo que no vale es heredarlos **por descuido**. Quiero decisión escrita y
-**medida**: comprobar que la cabecera y el slider del monográfico tienen la
-misma geometría que los de SECTOR, no suponerlo porque se parezcan. Ojo con un
-dato ya conocido: **el hero de estas dos páginas lleva `padding-bottom: 39`**,
-ni 60 (clásico a 1440) ni 20 (clásico a 390) — ya costó dos versiones de sonda.
-Si el hero difiere, la cabecera puede diferir también.
-
-### c) ¿Dónde vive el `pb` de fila como dato, y por qué eso no contamina SECTOR?
-
-En los 6 sectores clásicos el `padding-bottom` de fila es **siempre**
-28.7969/30, sin una excepción, y por eso hoy está cableado en `SectorBody` como
-plantilla. En el monográfico vale 2, 36, 40, 60 y 72: ahí **es dato editorial**.
-
-La decisión no es "si se sube a campo", sino **dónde**: en el content type del
-monográfico, sin tocar `SectorBlock`. Escribir por qué esa frontera se sostiene
-—y qué pasaría si mañana un sector clásico necesitara un `pb` distinto— es parte
-de la spec. Si la respuesta acaba siendo "hay que unificarlos", **eso lo decide
-el experimento de abajo, no esta decisión**.
+| | decisión | en una línea |
+|---|---|---|
+| **a** | la `<table>` | **filas estructuradas, tabla genérica** (`cabeceras[]` + `filas[][]`), **no** cuatro columnas con nombre: Petróleo no tiene tabla, así que n = 1 y un esquema con nombres sería S9–S11 aplicado al esquema del CMS |
+| **b** | cabecera y slider | **se reutilizan los dos, medido original contra original**. El hero también, con **dos campos nuevos**: el `pb` de desktop (39 vs 60) y que su columna derecha es una **lista** de módulos con **un color por titular** |
+| **c** | el `pb` de fila | vive en el content type del monográfico, **en los tres niveles** (sección, fila, módulo) porque son el mismo mecanismo. **No se toca `SectorBlock`**: en los 6 sectores clásicos ese valor es un invariante medido, y abrir un campo que ninguna instancia usa degrada su modelo |
 
 ## El experimento que cierra el recon
 
-**Al terminar de construir MONOGRÁFICO, y no antes: intentar expresar el cuerpo
-de Urbano con su modelo.**
+**Diseñado y pre-registrado**:
+`docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md` — hipótesis, criterio
+de éxito con umbral **cero** (clon contra clon, sin ruido), **cuatro
+predicciones registradas** y regla de decisión para cada resultado.
 
-- **Si entra sin pérdida** → la contención de la observación 1 queda probada
-  **por construcción**, no por parecido. El esquema del CMS se deriva de ahí: un
-  solo content type con SECTOR como caso degenerado.
-- **Si no entra** → se documenta **dónde está la frontera**, que es un resultado
-  igual de valioso y deja los dos arquetipos separados con una razón medida.
-
-**No unificar nada antes de ese resultado.** Ni tocar `SectorBlock`, ni ampliar
-`flujo`, ni mover el `pb` de fila a dato. Hoy el modelo de SECTOR está ajustado
-a sus 6 instancias y funciona; ampliarlo "por si acaso" lo degrada para las 4
-que ya sirven — el argumento está desarrollado en la §3 del recon.
+Se corre **al terminar de construir MONOGRÁFICO, y no antes**. Hasta entonces:
+ni tocar `SectorBlock`, ni ampliar `flujo`, ni mover el `pb` de fila a dato.
 
 ## Lo que NO hay que hacer al empezar
 

@@ -67,6 +67,19 @@ el segundo sector (Industria) sobre una plantilla calibrada con el primero:
 La segunda costaba +42.8 en el CTA de Industria y ~+70 de ahí al pie, y se
 intentó primero como retoque de `padding`. No lo era.
 
+**Hay un discriminador objetivo, y no hace falta discutirlo de oído.** Sale del
+recon del monográfico (2026-07-29, `docs/research/monografico-tecnico/`), medido
+en 19 filas, 6 secciones y ~60 módulos sin una excepción:
+
+> **En Divi, lo que el editor NO toca es responsive (un % del padre); lo que
+> toca queda en px absolutos, iguales a 1440 y a 390.**
+
+Así que: **se mide a dos anchos y se mira si el número se mueve.** Si cambia con
+el ancho, lo pone la plantilla y vive en el componente. Si es el mismo a 1440 y
+a 390, lo escribió una persona en el builder y **es un campo**. Los defaults
+medidos: sección `pt/pb` 4% (57.5938/50) · fila `pt/pb` 2% (28.7969/30) ·
+módulo `mb` 2.75% (34.0469/30), 3% si es imagen, 0 si es el último de su columna.
+
 **Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
 existan**. El campo `flujo` salió de barrer los 8 sectores vivos con
 `scripts/qa/tree-todos.mjs` y ver que solo hay dos formas de sección y dos de

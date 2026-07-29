@@ -35,6 +35,23 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 | `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |
 | `tree-cmp.mjs <sector> [ancho]` | original vs clon, **árbol sección→fila** del cuerpo | distinguir "la fila está mal colocada" de "el contenido mide otra cosa" |
 | `cmp-sector.mjs <sector> [ancho]` | original vs clon, **anclas de texto** | ver de un vistazo dónde empieza a acumularse el desfase |
+| `mono-modulos.mjs [ancho]` | el original: árbol **sección→fila→columna→MÓDULO** | cuando la fila no basta: clases Divi, esqueleto de etiquetas y reparto de columnas |
+| `mono-cabecera.mjs [ancho]` | el original **contra sí mismo**: 2 monográficos vs 2 sectores | decidir si dos páginas comparten componente, midiendo en vez de suponer |
+| `mono-detalle.mjs [ancho]` | kicker, módulos del hero, piel de `calls`, `h4`, mapa de punteados | los cabos sueltos que el árbol no ve |
+| `mono-inline.mjs [ancho]` | los atributos `style` **que escribió el editor** + desbordamiento de la tabla | separar estilo de tema, de módulo y de editor |
+
+### Las cuatro `mono-*`: para qué se escribieron
+
+Recon del arquetipo MONOGRÁFICO TÉCNICO (`docs/research/monografico-tecnico/`).
+`tree-todos.mjs` **se para en la fila** y adivina el tipo de bloque por una
+huella; en esas dos páginas eso etiqueta `claimConFoto` 13 filas que no lo son.
+Para decidir un content type hay que bajar al módulo.
+
+De ellas sale el hallazgo que gobierna aquel modelo, y que sirve para todo el
+proyecto: **en Divi, lo que el editor no toca es responsive (un % del padre) y
+lo que toca queda en px absolutos, iguales a 1440 y a 390.** Es un
+discriminador objetivo entre plantilla y contenido: se mide a dos anchos y se
+mira si el número se mueve.
 
 `<sector>` es `urbano` o `industria`; para dar de alta otro, añádelo a la tabla
 de URLs de cada sonda.
@@ -200,6 +217,14 @@ Salidas congeladas de las sondas. **Son la prueba, no un caché.**
 | `tree-todos-1440.json` | 8 sectores a 1440×900, DPR 1 — **2026-07-29** |
 | `tree-todos-390.json` | 8 sectores a 390×844, DPR 1 — **2026-07-29** |
 | `ruido.json` | dispersión en 3 corridas, 7 páginas × 2 anchos — **2026-07-29** |
+| `mono-modulos-{1440,390}.json` | árbol hasta el módulo de EDAR, Petróleo y Urbano — **2026-07-29** |
+| `mono-cabecera-{1440,390}.json` | cabecera/hero/slider/tipografía/tabla de 4 páginas — **2026-07-29** |
+| `mono-detalle-{1440,390}.json` | kicker, hero módulo a módulo, `calls`, `h4`, punteados — **2026-07-29** |
+| `mono-inline-{1440,390}.json` | `style` inline del cuerpo + desbordamiento de la tabla — **2026-07-29** |
+
+Las `mono-*` de 1440 se tomaron en **dos corridas con dispersión 0** (`docH`
+11136 / 11303, `h1` en y 261.16 en las cuatro páginas): la regla 2 del protocolo
+se cumple y las medidas valen.
 
 Los dos árboles **coinciden en estructura**: los 8 sectores dan el mismo reparto
 de secciones y filas a 1440 y a 390, con `filaPegada` a `pt 0` en ambos. Los 4

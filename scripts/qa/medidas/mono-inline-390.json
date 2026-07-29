@@ -1,0 +1,553 @@
+{
+  "edar": {
+    "mods": [
+      {
+        "id": "S0F0C0",
+        "clase": "et_pb_text_5",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "¿Qué cambia con monitorización continua?"
+      },
+      {
+        "id": "S0F0C0",
+        "clase": "et_pb_text_6",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩",
+          "h2",
+          "ul"
+        ],
+        "txt": "De reaccionar tarde a tener control Visi"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_7",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "¿Qué gases se deben medir en una EDAR?"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_8",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩",
+          "p",
+          "ul"
+        ],
+        "txt": "Los gases clave que puedes controlar en "
+      },
+      {
+        "id": "S0F2C0",
+        "clase": "et_pb_text_9",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "¿Dónde se generan las emisiones en la pl"
+      },
+      {
+        "id": "S0F2C0",
+        "clase": "et_pb_text_10",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Cada fase, gases y riesgos distintos"
+      },
+      {
+        "id": "S0F3C0",
+        "clase": "et_pb_text_11",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Tabla resumen: procesos y emisiones"
+      },
+      {
+        "id": "S0F3C0",
+        "clase": "et_pb_text_12",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "table{width: 100%; border-collapse: collapse;} ⟨tr[background-color: #f2f2f2;] th[padding: 12px 10px; text-align: left;] th[padding: 12px 10px; text-align: left;] th[padding: 12px 10px; text-align: left;]⟩"
+        ],
+        "txt": "Fase del proceso Gases generados Nivel d"
+      },
+      {
+        "id": "S0F4C1",
+        "clase": "et_pb_text_13",
+        "mb": "0px",
+        "pb": "15px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Alertas y toma de decisiones"
+      },
+      {
+        "id": "S0F4C1",
+        "clase": "et_pb_text_14",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Actúa antes de que el problema sea una r"
+      },
+      {
+        "id": "S0F4C1",
+        "clase": "et_pb_text_15",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "ul",
+          "p"
+        ],
+        "txt": "Umbrales configurables por gas y zona. A"
+      },
+      {
+        "id": "S1F0C0",
+        "clase": "et_pb_text_16",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Control perimetral y gestión de quejas"
+      },
+      {
+        "id": "S1F0C0",
+        "clase": "et_pb_text_17",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩",
+          "p",
+          "p"
+        ],
+        "txt": "Responder con hechos,no con suposiciones"
+      },
+      {
+        "id": "S1F0C1",
+        "clase": "et_pb_text_18",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Seguridad y prevención en planta"
+      },
+      {
+        "id": "S1F0C1",
+        "clase": "et_pb_text_19",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩",
+          "p"
+        ],
+        "txt": "Una capa adicional de protección La moni"
+      },
+      {
+        "id": "S2F0C0",
+        "clase": "et_pb_text_20",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Beneficios clave para la operación de un"
+      },
+      {
+        "id": "S2F0C0",
+        "clase": "et_pb_text_21",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "ul"
+        ],
+        "txt": "Controla e identifica las fuentes de olo"
+      },
+      {
+        "id": "S2F0C1",
+        "clase": "et_pb_text_22",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Aplicaciones reales de la monitorización"
+      },
+      {
+        "id": "S2F0C1",
+        "clase": "et_pb_text_23",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "ul"
+        ],
+        "txt": "Control continuo de olores en zonas crít"
+      },
+      {
+        "id": "S2F1C0",
+        "clase": "et_pb_text_24",
+        "mb": "20px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Da el siguiente paso"
+      },
+      {
+        "id": "S2F1C0",
+        "clase": "et_pb_text_25",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Actúa antes de que el problema escale"
+      },
+      {
+        "id": "S2F1C0",
+        "clase": "et_pb_text_26",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "p"
+        ],
+        "txt": "Descubre cómo la monitorización ambienta"
+      },
+      {
+        "id": "S2F3C0",
+        "clase": "et_pb_text_27",
+        "mb": "17px",
+        "pb": "0px",
+        "hijos": [
+          "h2",
+          "p"
+        ],
+        "txt": "Proyectos por todo el mundo Algunos de l"
+      }
+    ],
+    "overflow": {
+      "scrollW": 390,
+      "clientW": 390,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible",
+      "tabla": {
+        "w": 524.39,
+        "right": 551.69,
+        "padreW": 335.39,
+        "padreOverflow": "visible",
+        "minW": "0px",
+        "html": "<table style=\"width: 100%; border-collapse: collapse;\">\n<thead>\n<tr style=\"background-color: #f2f2f2;\">\n<th style=\"padding: 12px 10px; text-align: left;\">\n<h5>Fase del proceso</h5>\n</th>\n<th style=\"padding: 12px 10px; text-align: left;\">\n<h5>Gases generados</h5>\n</th>\n<th style=\"padding: 12px 10px; "
+      }
+    }
+  },
+  "petroleo": {
+    "mods": [
+      {
+        "id": "S0F0C1",
+        "clase": "et_pb_text_5",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "De inspecciones puntuales a control cont"
+      },
+      {
+        "id": "S0F0C1",
+        "clase": "et_pb_text_6",
+        "mb": "0px",
+        "pb": "23px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩",
+          "p"
+        ],
+        "txt": "No puedes gestionar lo que no mides de f"
+      },
+      {
+        "id": "S0F0C1",
+        "clase": "et_pb_text_7",
+        "mb": "0px",
+        "pb": "23px",
+        "hijos": [
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}"
+        ],
+        "txt": "Detecta fugas de forma temprana Reduce e"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_8",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Qué necesitas para controlar las emision"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_9",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Una red de sensores distribuidos convier"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_10",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "ul ⟨span[font-weight: 400;] span[font-weight: 400;] span[font-weight: 400;] span[font-weight: 400;]⟩"
+        ],
+        "txt": "monitorización continua en tiempo real c"
+      },
+      {
+        "id": "S0F1C0",
+        "clase": "et_pb_text_11",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Actúa antes de que el problema sea una r"
+      },
+      {
+        "id": "S1F0C0",
+        "clase": "et_pb_text_12",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "La solución de Kunak"
+      },
+      {
+        "id": "S1F0C0",
+        "clase": "et_pb_text_13",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Monitorización continua diseñada para en"
+      },
+      {
+        "id": "S1F0C0",
+        "clase": "et_pb_text_14",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "p",
+          "ul",
+          "p"
+        ],
+        "txt": "Las estaciones Kunak AIR permiten desple"
+      },
+      {
+        "id": "S1F1C0",
+        "clase": "et_pb_text_15",
+        "mb": "26px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Contaminantes que pueden monitorizarse"
+      },
+      {
+        "id": "S1F1C0",
+        "clase": "et_pb_text_16",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Configuración flexible según la instalac"
+      },
+      {
+        "id": "S1F1C0",
+        "clase": "et_pb_text_17",
+        "mb": "0px",
+        "pb": "0px",
+        "hijos": [
+          "p",
+          "ul",
+          "p"
+        ],
+        "txt": "Las estaciones Kunak AIR pueden configur"
+      },
+      {
+        "id": "S1F2C1",
+        "clase": "et_pb_text_18",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Aplicaciones en petróleo y gas"
+      },
+      {
+        "id": "S1F2C1",
+        "clase": "et_pb_text_19",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "p"
+        ],
+        "txt": "Las redes de sensores Kunak permiten mon"
+      },
+      {
+        "id": "S1F2C1",
+        "clase": "et_pb_text_20",
+        "mb": "0px",
+        "pb": "23px",
+        "hijos": [
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}",
+          "h4{padding-left: 40px;} ⟨span[color: #0075c9;]⟩",
+          "p{padding-left: 40px;}"
+        ],
+        "txt": "Refinerías Control de emisiones en unida"
+      },
+      {
+        "id": "S1F3C0",
+        "clase": "et_pb_text_21",
+        "mb": "23px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Monitorización de metano y detección tem"
+      },
+      {
+        "id": "S1F3C0",
+        "clase": "et_pb_text_22",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Detectar las fugas a tiempo permite actu"
+      },
+      {
+        "id": "S1F3C0",
+        "clase": "et_pb_text_23",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "p",
+          "p",
+          "ul",
+          "p",
+          "p"
+        ],
+        "txt": "El metano (CH4) es uno de los principale"
+      },
+      {
+        "id": "S1F4C0",
+        "clase": "et_pb_text_24",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Cómo funciona la solución"
+      },
+      {
+        "id": "S1F4C0",
+        "clase": "et_pb_text_25",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h4 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Red de sensores → Red de comunicaciones "
+      },
+      {
+        "id": "S1F4C0",
+        "clase": "et_pb_text_26",
+        "mb": "41px",
+        "pb": "0px",
+        "hijos": [
+          "p",
+          "p"
+        ],
+        "txt": "Las estaciones multiparámetro miden gase"
+      },
+      {
+        "id": "S2F0C0",
+        "clase": "et_pb_text_27",
+        "mb": "20px",
+        "pb": "0px",
+        "hijos": [
+          "h3"
+        ],
+        "txt": "Controla tus emisiones y detecta fugas e"
+      },
+      {
+        "id": "S2F0C0",
+        "clase": "et_pb_text_28",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "h2 ⟨span[color: #0075c9;]⟩"
+        ],
+        "txt": "Actúa antes de que el problema escale"
+      },
+      {
+        "id": "S2F0C0",
+        "clase": "et_pb_text_29",
+        "mb": "30px",
+        "pb": "0px",
+        "hijos": [
+          "p",
+          "p"
+        ],
+        "txt": "Detectar una fuga a tiempo marca la dife"
+      }
+    ],
+    "overflow": {
+      "scrollW": 390,
+      "clientW": 390,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible",
+      "tabla": null
+    }
+  }
+}

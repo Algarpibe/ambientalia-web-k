@@ -1,0 +1,1041 @@
+{
+  "edar": {
+    "docH": 20580,
+    "cabecera": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "h": 419.25,
+      "clases": "et_pb_section et_pb_section_0_tb_header cabecera cabecera-sectores et_pb_with_background et_section_regular et_pb_section--with-menu",
+      "img": "https://kunakair.com/wp-content/uploads/2026/04/WWTP.jpg",
+      "fila": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "kicker": null,
+      "h1": {
+        "fs": "30px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 154,
+        "txt": "Monitorización ambiental en EDAR para el con",
+        "x": 27.3,
+        "y": 189.39,
+        "w": 335.39
+      }
+    },
+    "hero": {
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "20px",
+      "h": 1475.16,
+      "fila": {
+        "x": 27.3,
+        "y": 667.25,
+        "w": 335.39,
+        "h": 1405.16,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "30px"
+      },
+      "cols": [
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 667.25,
+          "w": 335.39,
+          "h": 372.88,
+          "mods": [
+            {
+              "clases": "et_pb_image et_pb_image_0",
+              "h": 22,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_image et_pb_image_1",
+              "h": 178.88,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+              "h": 74,
+              "mb": "16px",
+              "txt": "Solicita una demo técnica"
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+              "h": 74,
+              "mb": "0px",
+              "txt": "Descargar catálogo"
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 1070.13,
+          "w": 335.39,
+          "h": 972.28,
+          "mods": [
+            {
+              "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+              "h": 84,
+              "mb": "16px",
+              "txt": "Olores bajo control en EDAR"
+            },
+            {
+              "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+              "h": 255.38,
+              "mb": "30px",
+              "txt": "Monitorización continua de emision"
+            },
+            {
+              "clases": "et_pb_text et_pb_text_4 et_pb_text_align_left",
+              "h": 586.91,
+              "mb": "0px",
+              "txt": "Medir puntualmente no es gestionar"
+            }
+          ]
+        }
+      ],
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 84,
+        "txt": "Olores bajo control en EDAR"
+      },
+      "h2color": "rgb(12, 113, 195)"
+    },
+    "slider": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "h": 300.14,
+      "n": 3,
+      "slide0": {
+        "x": 0,
+        "y": 14264.77,
+        "w": 390,
+        "h": 300.14
+      },
+      "h2": {
+        "fs": "27px",
+        "lh": "35.1px",
+        "fw": "300",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 115.28,
+        "txt": "Reduce el impacto ambiental midiendo las inm"
+      }
+    },
+    "tipografia": {
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 84,
+        "txt": "De reaccionar tarde a tener control"
+      },
+      "h3": {
+        "fs": "35px",
+        "lh": "43.75px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 141.25,
+        "txt": "¿Qué cambia con monitorización continua?"
+      },
+      "h4": null,
+      "p": {
+        "fs": "18px",
+        "lh": "45px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 180,
+        "txt": "Las soluciones de Kunak permiten monitorizar"
+      },
+      "li": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 62.19,
+        "txt": "Visibilidad real de lo que ocurre en cada fa"
+      },
+      "ul": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 18px 36px",
+        "mb": "0px",
+        "h": 297.34,
+        "txt": "Visibilidad real de lo que ocurre en cada fa"
+      }
+    },
+    "punteado": {
+      "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+      "x": -37.7,
+      "y": 2132.41,
+      "w": 60,
+      "h": 22,
+      "modulo": {
+        "x": -37.7,
+        "y": 2132.41,
+        "w": 60,
+        "h": 22
+      },
+      "align": "left",
+      "mb": "30px",
+      "n": 10
+    },
+    "tabla": {
+      "x": 27.3,
+      "y": 5269.14,
+      "w": 524.39,
+      "h": 2201.81,
+      "layout": "auto",
+      "borderCollapse": "collapse",
+      "wrap": {
+        "x": 27.3,
+        "y": 5269.14,
+        "w": 335.39,
+        "h": 2201.81
+      },
+      "wrapOverflow": "visible",
+      "th": [
+        {
+          "x": 27.8,
+          "y": 5269.64,
+          "w": 143.36,
+          "h": 104,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(85, 85, 85)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Fase del proceso",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px rgb(85, 85, 85)",
+          "inner": "H5"
+        },
+        {
+          "x": 171.16,
+          "y": 5269.64,
+          "w": 127.45,
+          "h": 104,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(85, 85, 85)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Gases generados",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px rgb(85, 85, 85)",
+          "inner": "H5"
+        },
+        {
+          "x": 298.61,
+          "y": 5269.64,
+          "w": 117.06,
+          "h": 104,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(85, 85, 85)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Nivel de olor y riesgo",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px rgb(85, 85, 85)",
+          "inner": "H5"
+        },
+        {
+          "x": 415.67,
+          "y": 5269.64,
+          "w": 135.52,
+          "h": 104,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "700",
+          "color": "rgb(85, 85, 85)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Valor operativo del control",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px rgb(85, 85, 85)",
+          "inner": "H5"
+        }
+      ],
+      "td0": [
+        {
+          "x": 27.8,
+          "y": 5373.64,
+          "w": 143.36,
+          "h": 300.34,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Llegada e impulsión",
+          "bg": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "x": 171.16,
+          "y": 5373.64,
+          "w": 127.45,
+          "h": 300.34,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "H2S, CH4, CO2",
+          "bg": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "x": 298.61,
+          "y": 5373.64,
+          "w": 117.06,
+          "h": 300.34,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Olor muy alto. Zona crítica con picos repent",
+          "bg": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "x": 415.67,
+          "y": 5373.64,
+          "w": 135.52,
+          "h": 300.34,
+          "fs": "15px",
+          "lh": "30.6px",
+          "fw": "400",
+          "color": "rgb(51, 51, 51)",
+          "pad": "12px 10px 12px 10px",
+          "mb": "0px",
+          "txt": "Detectar influente séptico y acumulaciones. ",
+          "bg": "rgba(0, 0, 0, 0)"
+        }
+      ],
+      "filas": [
+        {
+          "h": 300.34,
+          "celdas": [
+            "Llegada e impulsión",
+            "H2S, CH4, CO2",
+            "Olor muy alto. Zona crítica con picos repentinos y riesgo para la seguridad.",
+            "Detectar influente séptico y acumulaciones. Anticipar picos súbitos y reducir riesgos en puntos cerrados."
+          ]
+        },
+        {
+          "h": 239.16,
+          "celdas": [
+            "Tratamiento preliminar",
+            "H2S, NH3, CO2",
+            "Olor alto. Principal foco de quejas si hay retenciones o mala ventilación.",
+            "Identificar acumulación de sólidos, fallos de ventilación y actuar antes de que el olor salga al exterior."
+          ]
+        },
+        {
+          "h": 208.56,
+          "celdas": [
+            "Decantación primaria",
+            "H2S, CH4 (bajo), CO2",
+            "Olor alto si no hay cubrición o purgas eficientes.",
+            "Detectar fermentación de lodos y validar la eficacia de purgas y cubiertas."
+          ]
+        },
+        {
+          "h": 269.75,
+          "celdas": [
+            "Tratamiento biológico",
+            "NH3, CO2, N2O",
+            "Olor bajo en operación normal. Riesgo operativo por desequilibrios del proceso.",
+            "Detectar desviaciones del proceso biológico. El N2O actúa como indicador de eficiencia y sostenibilidad."
+          ]
+        },
+        {
+          "h": 239.16,
+          "celdas": [
+            "Tratamiento terciario (si aplica)",
+            "Cl2, O3 (puntual)",
+            "Olor bajo. Riesgo químico puntual por dosificación incorrecta.",
+            "Controlar episodios localizados y verificar la correcta dosificación de reactivos."
+          ]
+        },
+        {
+          "h": 300.34,
+          "celdas": [
+            "Línea de fangos",
+            "H2S, NH3, CO2, CH4",
+            "Olor muy alto. Principal fuente de olor persistente en la EDAR.",
+            "Identificar digestión inestable, fugas y almacenamiento prolongado. Justificar mejoras e inversiones."
+          ]
+        },
+        {
+          "h": 269.75,
+          "celdas": [
+            "Almacenamiento y carga de lodos",
+            "H2S, NH3",
+            "Olor alto e intenso, episodios cortos y localizados.",
+            "Controlar operaciones de carga y descarga y prevenir episodios críticos puntuales."
+          ]
+        },
+        {
+          "h": 269.75,
+          "celdas": [
+            "Perímetro de la planta",
+            "Mezcla global de gases según viento",
+            "Olor percibido por terceros. Riesgo reputacional y de quejas.",
+            "Atribuir correctamente episodios con datos y meteorología. Responder a quejas con evidencias."
+          ]
+        }
+      ]
+    }
+  },
+  "petroleo": {
+    "docH": 21188,
+    "cabecera": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "h": 383.25,
+      "clases": "et_pb_section et_pb_section_0_tb_header cabecera cabecera-sectores et_pb_with_background et_section_regular et_pb_section--with-menu",
+      "img": "https://kunakair.com/wp-content/uploads/2026/04/Monitorizacion-de-emisiones-en-el-sector-del-petroleo-y-gas-Kunak-1.jpg",
+      "fila": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "kicker": null,
+      "h1": {
+        "fs": "30px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 118,
+        "txt": "Monitorización de emisiones en el sector del",
+        "x": 27.3,
+        "y": 189.39,
+        "w": 335.39
+      }
+    },
+    "hero": {
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "20px",
+      "h": 1738.03,
+      "fila": {
+        "x": 27.3,
+        "y": 631.25,
+        "w": 335.39,
+        "h": 1668.03,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "30px"
+      },
+      "cols": [
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 631.25,
+          "w": 335.39,
+          "h": 417.59,
+          "mods": [
+            {
+              "clases": "et_pb_image et_pb_image_0",
+              "h": 22,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_image et_pb_image_1",
+              "h": 223.59,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+              "h": 74,
+              "mb": "16px",
+              "txt": "Solicita una demo técnica"
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+              "h": 74,
+              "mb": "0px",
+              "txt": "Descargar catálogo"
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 1078.84,
+          "w": 335.39,
+          "h": 1190.44,
+          "mods": [
+            {
+              "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+              "h": 0,
+              "mb": "16px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+              "h": 591.72,
+              "mb": "28px",
+              "txt": "Control continuo de emisiones en i"
+            },
+            {
+              "clases": "et_pb_text et_pb_text_4 et_pb_text_align_left",
+              "h": 554.72,
+              "mb": "0px",
+              "txt": "El problema real: emisiones que no"
+            }
+          ]
+        }
+      ],
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 158,
+        "txt": "Control continuo de emisiones en instalacion"
+      },
+      "h2color": "rgb(0, 117, 201)"
+    },
+    "slider": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "h": 300.14,
+      "n": 3,
+      "slide0": {
+        "x": 0,
+        "y": 14900.27,
+        "w": 390,
+        "h": 300.14
+      },
+      "h2": {
+        "fs": "27px",
+        "lh": "35.1px",
+        "fw": "300",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 115.28,
+        "txt": "Reduce el impacto ambiental midiendo las inm"
+      }
+    },
+    "tipografia": {
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 158,
+        "txt": "No puedes gestionar lo que no mides de forma"
+      },
+      "h3": {
+        "fs": "35px",
+        "lh": "43.75px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 141.25,
+        "txt": "De inspecciones puntuales a control continuo"
+      },
+      "h4": {
+        "fs": "26px",
+        "lh": "26px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 40px",
+        "mb": "0px",
+        "h": 62,
+        "txt": "Detecta fugas de forma temprana"
+      },
+      "p": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 152.97,
+        "txt": "Las redes de sensores permiten detectar emis"
+      },
+      "li": {
+        "fs": "18px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 73,
+        "txt": "monitorización continua en tiempo real"
+      },
+      "ul": {
+        "fs": "18px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 18px 36px",
+        "mb": "0px",
+        "h": 419,
+        "txt": "monitorización continua en tiempo real cober"
+      }
+    },
+    "punteado": {
+      "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+      "x": -37.7,
+      "y": 2359.28,
+      "w": 60,
+      "h": 22,
+      "modulo": {
+        "x": -37.7,
+        "y": 2359.28,
+        "w": 60,
+        "h": 22
+      },
+      "align": "left",
+      "mb": "30px",
+      "n": 7
+    },
+    "tabla": null
+  },
+  "urbano": {
+    "docH": 10913,
+    "cabecera": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "h": 347.25,
+      "clases": "et_pb_section et_pb_section_0_tb_header cabecera cabecera-sectores et_pb_with_background et_section_regular et_pb_section--with-menu",
+      "img": "https://kunakair.com/wp-content/uploads/2023/01/urban-1920.jpg",
+      "fila": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "kicker": null,
+      "h1": {
+        "fs": "30px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 82,
+        "txt": "Calidad del aire en las ciudades",
+        "x": 27.3,
+        "y": 189.39,
+        "w": 335.39
+      }
+    },
+    "hero": {
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "20px",
+      "h": 1564.72,
+      "fila": {
+        "x": 27.3,
+        "y": 569.25,
+        "w": 335.39,
+        "h": 1494.72,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "30px"
+      },
+      "cols": [
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 569.25,
+          "w": 335.39,
+          "h": 372.88,
+          "mods": [
+            {
+              "clases": "et_pb_image et_pb_image_0",
+              "h": 22,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_image et_pb_image_1",
+              "h": 178.88,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+              "h": 74,
+              "mb": "16px",
+              "txt": "Quiero saber más"
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+              "h": 74,
+              "mb": "0px",
+              "txt": "Descargar catálogo"
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 972.13,
+          "w": 335.39,
+          "h": 1061.84,
+          "mods": [
+            {
+              "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+              "h": 195,
+              "mb": "30px",
+              "txt": "Conoce la calidad del aire que res"
+            },
+            {
+              "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+              "h": 836.84,
+              "mb": "0px",
+              "txt": "Más del 50 % de la población mundi"
+            }
+          ]
+        }
+      ],
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 195,
+        "txt": "Conoce la calidad del aire que respiran tus "
+      },
+      "h2color": "rgb(0, 117, 201)"
+    },
+    "slider": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "h": 265.06,
+      "n": 3,
+      "slide0": {
+        "x": 0,
+        "y": 4633.52,
+        "w": 390,
+        "h": 265.06
+      },
+      "h2": {
+        "fs": "27px",
+        "lh": "35.1px",
+        "fw": "300",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 115.28,
+        "txt": "Obtén datos fiables y precisos sobre la cont"
+      }
+    },
+    "tipografia": {
+      "h2": null,
+      "h3": {
+        "fs": "35px",
+        "lh": "43.75px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 141.25,
+        "txt": "Beneficios de monitorizar la calidad del air"
+      },
+      "h4": null,
+      "p": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 296,
+        "txt": "Protege la salud de tus ciudadanos tomando l"
+      },
+      "li": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 92.78,
+        "txt": "Permite tomar medidas para mejorar la calida"
+      },
+      "ul": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 18px 36px",
+        "mb": "0px",
+        "h": 483.91,
+        "txt": "Permite tomar medidas para mejorar la calida"
+      }
+    },
+    "punteado": {
+      "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+      "x": -37.7,
+      "y": 2703.36,
+      "w": 60,
+      "h": 22,
+      "modulo": {
+        "x": -37.7,
+        "y": 2703.36,
+        "w": 60,
+        "h": 22
+      },
+      "align": "left",
+      "mb": "30px",
+      "n": 2
+    },
+    "tabla": null
+  },
+  "investigacion": {
+    "docH": 10763,
+    "cabecera": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "h": 402.64,
+      "clases": "et_pb_section et_pb_section_0_tb_header cabecera cabecera-sectores et_pb_with_background et_section_regular et_pb_section--with-menu",
+      "img": "https://kunakair.com/wp-content/uploads/2023/01/research-1920.jpg",
+      "fila": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "kicker": null,
+      "h1": {
+        "fs": "30px",
+        "lh": "36px",
+        "fw": "400",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 118,
+        "txt": "Estudio de la contaminación atmosférica",
+        "x": 27.3,
+        "y": 208.78,
+        "w": 335.39
+      }
+    },
+    "hero": {
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "20px",
+      "h": 1601.72,
+      "fila": {
+        "x": 27.3,
+        "y": 650.64,
+        "w": 335.39,
+        "h": 1531.72,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "30px"
+      },
+      "cols": [
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 650.64,
+          "w": 335.39,
+          "h": 372.88,
+          "mods": [
+            {
+              "clases": "et_pb_image et_pb_image_0",
+              "h": 22,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_image et_pb_image_1",
+              "h": 178.88,
+              "mb": "30px",
+              "txt": ""
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+              "h": 74,
+              "mb": "16px",
+              "txt": "¿Quieres saber más?"
+            },
+            {
+              "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left",
+              "h": 74,
+              "mb": "0px",
+              "txt": "Descargar catálogo"
+            }
+          ]
+        },
+        {
+          "clases": "et_pb_column_1_2",
+          "x": 27.3,
+          "y": 1053.52,
+          "w": 335.39,
+          "h": 1098.84,
+          "mods": [
+            {
+              "clases": "et_pb_text et_pb_text_2 et_pb_text_align_left",
+              "h": 232,
+              "mb": "30px",
+              "txt": "Realiza mediciones útiles y precis"
+            },
+            {
+              "clases": "et_pb_text et_pb_text_3 et_pb_text_align_left",
+              "h": 836.84,
+              "mb": "0px",
+              "txt": "La elaboración de estudios sobre l"
+            }
+          ]
+        }
+      ],
+      "h2": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 232,
+        "txt": "Realiza mediciones útiles y precisas para in"
+      },
+      "h2color": "rgb(12, 113, 195)"
+    },
+    "slider": {
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "h": 300.16,
+      "n": 3,
+      "slide0": {
+        "x": 0,
+        "y": 4474.55,
+        "w": 390,
+        "h": 300.16
+      },
+      "h2": {
+        "fs": "27px",
+        "lh": "35.1px",
+        "fw": "300",
+        "color": "rgb(255, 255, 255)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 150.38,
+        "txt": "Haz que tus estudios ambientales sean más co"
+      }
+    },
+    "tipografia": {
+      "h2": null,
+      "h3": {
+        "fs": "35px",
+        "lh": "43.75px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 10px 0px",
+        "mb": "0px",
+        "h": 185,
+        "txt": "Beneficios en estudios de contaminación atmo"
+      },
+      "h4": null,
+      "p": {
+        "fs": "37px",
+        "lh": "37px",
+        "fw": "300",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 185,
+        "txt": "Elabora estudios más completos gracias a la "
+      },
+      "li": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 0px 0px",
+        "mb": "0px",
+        "h": 92.78,
+        "txt": "Complemento para comprobar la eficacia de la"
+      },
+      "ul": {
+        "fs": "18px",
+        "lh": "30.6px",
+        "fw": "400",
+        "color": "rgb(51, 51, 51)",
+        "pad": "0px 0px 18px 36px",
+        "mb": "0px",
+        "h": 699.06,
+        "txt": "Complemento para comprobar la eficacia de la"
+      }
+    },
+    "punteado": {
+      "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+      "x": -37.7,
+      "y": 2228.36,
+      "w": 60,
+      "h": 22,
+      "modulo": {
+        "x": -37.7,
+        "y": 2228.36,
+        "w": 60,
+        "h": 22
+      },
+      "align": "left",
+      "mb": "30px",
+      "n": 2
+    },
+    "tabla": null
+  }
+}
