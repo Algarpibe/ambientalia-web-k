@@ -1,0 +1,558 @@
+{
+  "urbano": [
+    {
+      "h": 440.83,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 440.83,
+          "tipo": "ctaDescarga",
+          "txt": "¿Necesitas medir la contaminación en tu ciudad? "
+        }
+      ]
+    },
+    {
+      "h": 1057.45,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 566.98,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios de monitorizar la calidad del aire: P"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Protege la salud de tus ciudadanos tomando las m"
+        }
+      ]
+    }
+  ],
+  "industria": [
+    {
+      "h": 2622.8,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 630.17,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios del control de las emisiones industri"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 525.61,
+          "tipo": "ctaDescarga",
+          "txt": "¿Quieres controlar el impacto de tus procesos en"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 236.36,
+          "tipo": "listaSimple2Col",
+          "txt": "Industria cementera Metalurgia y minería Pasta y"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Identifica qué operaciones o procesos producen m"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 740.19,
+          "tipo": "mapaProyectos",
+          "txt": "Proyectos por todo el mundo Algunos de los proye"
+        }
+      ]
+    }
+  ],
+  "edar": [
+    {
+      "h": 433.61,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "filas": [
+        {
+          "pt": "5px",
+          "pb": "5px",
+          "h": 41,
+          "tipo": "listaSimple2Col",
+          "txt": "Soporte Centro de ayuda Servicio de reparación ("
+        },
+        {
+          "pt": "19px",
+          "pb": "12px",
+          "h": 144,
+          "tipo": "listaSimple2Col",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;} Inicio P"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 208.61,
+          "tipo": "?",
+          "txt": "EDAR Monitorización ambiental en EDAR para el co"
+        }
+      ]
+    },
+    {
+      "h": 122,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "20px",
+          "pb": "20px",
+          "h": 122,
+          "tipo": "claimConFoto",
+          "txt": ""
+        }
+      ]
+    },
+    {
+      "h": 50,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "12px",
+          "pb": "12px",
+          "h": 50,
+          "tipo": "?",
+          "txt": "InicioSectoresMonitorización ambiental y control"
+        }
+      ]
+    },
+    {
+      "h": 737.97,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "39px",
+      "filas": [
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 641.38,
+          "tipo": "?",
+          "txt": "Solicita una demo técnica Descargar catálogo Olo"
+        }
+      ]
+    },
+    {
+      "h": 3675.81,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "57.5938px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "60px",
+          "h": 570.81,
+          "tipo": "claimConFoto",
+          "txt": "¿Qué cambia con monitorización continua? De reac"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "72px",
+          "h": 544.84,
+          "tipo": "claimConFoto",
+          "txt": "¿Qué gases se deben medir en una EDAR? Los gases"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 966.14,
+          "tipo": "claimConFoto",
+          "txt": "¿Dónde se generan las emisiones en la planta? Ca"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 935.14,
+          "tipo": "claimConFoto",
+          "txt": "Tabla resumen: procesos y emisiones Fase del pro"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 543.69,
+          "tipo": "claimConFoto",
+          "txt": "Alertas y toma de decisiones Actúa antes de que "
+        }
+      ]
+    },
+    {
+      "h": 581.8,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "57.5938px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 466.61,
+          "tipo": "claimConFoto",
+          "txt": "Control perimetral y gestión de quejas Responder"
+        }
+      ]
+    },
+    {
+      "h": 2384.31,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 598.64,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios clave para la operación de una EDAR C"
+        },
+        {
+          "pt": "0px",
+          "pb": "60px",
+          "h": 478.88,
+          "tipo": "claimConFoto",
+          "txt": "Da el siguiente paso Actúa antes de que el probl"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 495.02,
+          "tipo": "ctaDescarga",
+          "txt": "¿Quieres controlar el impacto de tus procesos en"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 740.19,
+          "tipo": "mapaProyectos",
+          "txt": "Proyectos por todo el mundo Algunos de los proye"
+        }
+      ]
+    }
+  ],
+  "petroleo": [
+    {
+      "h": 433.61,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "40px",
+      "filas": [
+        {
+          "pt": "5px",
+          "pb": "5px",
+          "h": 41,
+          "tipo": "listaSimple2Col",
+          "txt": "Soporte Centro de ayuda Servicio de reparación ("
+        },
+        {
+          "pt": "19px",
+          "pb": "12px",
+          "h": 144,
+          "tipo": "listaSimple2Col",
+          "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;} Inicio P"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 208.61,
+          "tipo": "?",
+          "txt": "Petróleo y Gas Monitorización de emisiones en el"
+        }
+      ]
+    },
+    {
+      "h": 122,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "20px",
+          "pb": "20px",
+          "h": 122,
+          "tipo": "claimConFoto",
+          "txt": ""
+        }
+      ]
+    },
+    {
+      "h": 50,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "12px",
+          "pb": "12px",
+          "h": 50,
+          "tipo": "?",
+          "txt": "InicioSectoresMonitorización de emisiones en el "
+        }
+      ]
+    },
+    {
+      "h": 898.89,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "39px",
+      "filas": [
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 802.3,
+          "tipo": "?",
+          "txt": "Solicita una demo técnica Descargar catálogo Con"
+        }
+      ]
+    },
+    {
+      "h": 1758.58,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "40px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "40px",
+          "h": 819,
+          "tipo": "?",
+          "txt": "De inspecciones puntuales a control continuo No "
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "2px",
+          "h": 841.98,
+          "tipo": "claimConFoto",
+          "txt": "Qué necesitas para controlar las emisiones Una r"
+        }
+      ]
+    },
+    {
+      "h": 3740.3,
+      "mt": "0px",
+      "pt": "57.5938px",
+      "pb": "57.5938px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "60px",
+          "h": 798.19,
+          "tipo": "claimConFoto",
+          "txt": "La solución de Kunak Monitorización continua dis"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "36px",
+          "h": 550.95,
+          "tipo": "claimConFoto",
+          "txt": "Contaminantes que pueden monitorizarse Configura"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 899.98,
+          "tipo": "?",
+          "txt": "Solicita una demo técnica Aplicaciones en petról"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "60px",
+          "h": 998.52,
+          "tipo": "?",
+          "txt": "Monitorización de metano y detección temprana de"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 377.47,
+          "tipo": "claimConFoto",
+          "txt": "Cómo funciona la solución Red de sensores → Red "
+        }
+      ]
+    },
+    {
+      "h": 1149.08,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "0px",
+          "pb": "60px",
+          "h": 582.47,
+          "tipo": "claimConFoto",
+          "txt": "Controla tus emisiones y detecta fugas en tiempo"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 495.02,
+          "tipo": "ctaDescarga",
+          "txt": "¿Quieres controlar el impacto de tus procesos en"
+        }
+      ]
+    }
+  ],
+  "puertos": [
+    {
+      "h": 2393.5,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 622.98,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios de la medición de las emisiones del t"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 539.86,
+          "tipo": "ctaDescarga",
+          "txt": "Una red de monitorización de la calidad del aire"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Monitoriza tanto los gases contaminantes y las p"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 740.19,
+          "tipo": "mapaProyectos",
+          "txt": "Proyectos por todo el mundo Monitorización medio"
+        }
+      ]
+    }
+  ],
+  "construccion": [
+    {
+      "h": 475.22,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 475.22,
+          "tipo": "ctaDescarga",
+          "txt": "¿Necesitas controlar el impacto ambiental de tu "
+        }
+      ]
+    },
+    {
+      "h": 1034.05,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 543.58,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios del control ambiental en la construcc"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Accede a datos ambientales de forma continua y t"
+        }
+      ]
+    }
+  ],
+  "mineria": [
+    {
+      "h": 2274.66,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 628.17,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios del control de la calidad del aire en"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Evalúa en tiempo real el impacto ambiental de tu"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 415.83,
+          "tipo": "ctaDescarga",
+          "txt": "¿Necesitas controlar la contaminación en tu mina"
+        },
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 740.19,
+          "tipo": "mapaProyectos",
+          "txt": "Proyectos por todo el mundo Monitorización medio"
+        }
+      ]
+    }
+  ],
+  "investigacion": [
+    {
+      "h": 1180.83,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "h": 690.36,
+          "tipo": "beneficiosAplicaciones",
+          "txt": "Beneficios en estudios de contaminación atmosfér"
+        },
+        {
+          "pt": "0px",
+          "pb": "28.7969px",
+          "h": 418.88,
+          "tipo": "claimConFoto",
+          "txt": "Elabora estudios más completos gracias a la tecn"
+        }
+      ]
+    }
+  ]
+}
