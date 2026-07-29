@@ -7,9 +7,10 @@
  * Ruta destino: src/app/sectores/calidad-del-aire-en-las-ciudades/page.tsx
  * Capturas: docs/design-references/sectores/urbano-{desktop-1440,movil-390}-full.jpg
  *
- * ⚠️ NO CONFUNDIR con `src/lib/sectors.ts`, que es otra cosa: las **6
- * diapositivas del carrusel de sectores de la home** (`SECTOR_SLIDES`). Este
- * fichero es el modelo de la PÁGINA de sector.
+ * El carrusel de sectores de la home es otra cosa y vive en
+ * `src/lib/home-carrusel-sectores.ts` (`SECTOR_SLIDES`). Se llamaba `sectors.ts`
+ * y este aviso decía "NO CONFUNDIR"; se renombró el 2026-07-29 para que no haga
+ * falta el aviso.
  *
  * ── Por qué el cuerpo es una lista de bloques y no campos fijos ────────────
  * Los 7 sectores vivos comparten plantilla PHP (`page-template-sectors`) y por

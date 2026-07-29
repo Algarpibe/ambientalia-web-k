@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { SECTOR_SLIDES } from "@/lib/sectors";
+import { SECTOR_SLIDES } from "@/lib/home-carrusel-sectores";
 
 /**
  * `et_pb_section_4` — SectoresSwiper.

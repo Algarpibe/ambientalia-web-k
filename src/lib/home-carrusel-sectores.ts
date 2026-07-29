@@ -1,3 +1,18 @@
+/**
+ * Las 6 diapositivas del **carrusel de sectores de la HOME**.
+ * Componente: `src/components/SectoresCarousel.tsx`.
+ *
+ * Se llamaba `sectors.ts` y convivía con `sectores.ts` —el content type de la
+ * PÁGINA de sector—, con significados distintos y a una letra de distancia. La
+ * confusión llegó a costar un aviso escrito en la cabecera del otro fichero;
+ * renombrado el 2026-07-29 para que el nombre haga el trabajo que hacía el
+ * aviso.
+ *
+ * Ojo con el `href` de cada diapositiva: le aplica la **regla de rutas locales**
+ * y lo vigila `scripts/qa/enlaces.mjs`. Al clonar un sector nuevo hay que
+ * tocarlo aquí, en `nav.ts` y en `footer.ts` — los tres pintan enlaces a
+ * sectores y ninguno se entera de lo que hacen los otros.
+ */
 export interface SectorSlide {
   slug: string;
   title: string;
