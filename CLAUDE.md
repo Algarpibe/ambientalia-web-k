@@ -40,6 +40,46 @@ página original no sufre regresión.
 Cada `page.tsx` y cada `src/lib/*.ts` llevan una cabecera que enlaza su recon y
 sus specs. Mantén esa costumbre: es lo que hace navegable el trabajo previo.
 
+## Estructura que en realidad es contenido
+
+**El patrón más caro del proyecto, y el que más condiciona el esquema del CMS.**
+
+La regla 2 dice que estructura y contenido no se mezclan. La trampa es que
+**parte de lo que parece estructura es contenido modelado**: lo escribe quien
+edita la página en WordPress, cambia de una instancia a otra del mismo
+arquetipo, y por tanto **tiene que ser un campo, no una clase de Tailwind**.
+
+Cuando una segunda instancia de un arquetipo no cuadra, la pregunta correcta no
+es *"¿qué CSS le falta al componente?"* sino **"¿esto lo decidió quien maquetó
+la plantilla, o quien editó esta página?"**. Si lo decidió quien editó, es un
+campo. Tratarlo como CSS produce **arreglos falsos**: cablear el valor de la
+primera instancia, que sigue funcionando hasta que llega la tercera.
+
+Tres instancias, las tres del arquetipo SECTOR, las tres descubiertas al poblar
+el segundo sector (Industria) sobre una plantilla calibrada con el primero:
+
+| Parecía | Era | Campo |
+|---|---|---|
+| Dos diseños distintos del bloque de descarga | El shortcode `calls` tiene **dos pieles** y el editor elige | `variante: "foto" \| "fondo"` |
+| El ritmo vertical entre bloques del cuerpo | En Divi son **secciones con filas dentro**, y el editor decide en cuál cae cada bloque | `flujo: "seccion" \| "seccionRasa" \| "fila" \| "filaPegada"` |
+| Un párrafo de entrada del bloque de listas | Un módulo de texto que en el original **cuelga de la fila anterior** | pendiente (§S9a de `PENDIENTES-QA.md`) |
+
+La segunda costaba +42.8 en el CTA de Industria y ~+70 de ahí al pie, y se
+intentó primero como retoque de `padding`. No lo era.
+
+**Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
+existan**. El campo `flujo` salió de barrer los 8 sectores vivos con
+`scripts/qa/tree-todos.mjs` y ver que solo hay dos formas de sección y dos de
+fila; con dos sectores a la vista se habrían inventado los valores equivocados.
+Las sondas viven en `scripts/qa/` con su salida congelada en `medidas/` — se
+reutilizan, no se rehacen.
+
+**Consecuencia para el CMS.** El content type de un arquetipo no es solo "los
+textos". Cada bloque de un *flexible content* necesita además sus campos de
+presentación editorial (qué piel, dónde corta la sección), con un valor por
+defecto explícito y omitido en el dato cuando coincide con él. Ese default es
+también la decisión de diseño que hereda quien dé de alta un contenido nuevo.
+
 ## Páginas clonadas
 
 | Ruta | Arquetipo | Recon/specs |

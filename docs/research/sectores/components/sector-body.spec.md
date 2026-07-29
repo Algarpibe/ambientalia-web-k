@@ -24,6 +24,49 @@ recorre `body: SectorBlock[]` y despacha por `kind` cubre los tres casos con la
 que **añadir un tipo al modelo sin pintarlo rompe el typecheck** en vez de
 fallar en silencio.
 
+## La gramática sección → fila (S7, 2026-07-29)
+
+El cuerpo **no es una pila de secciones**. En Divi son SECCIONES con FILAS
+dentro, y quien edita decide en cuál cae cada bloque: un mismo `kind` va en su
+propia sección en un sector y como fila pegada a la anterior en el siguiente.
+Medido con `scripts/qa/tree-todos.mjs` sobre los **8 sectores vivos** (salida en
+`scripts/qa/medidas/tree-todos-1440.json`) aparecen solo dos formas de sección y
+dos de fila:
+
+| forma | `margin-top` | `padding-top` | `padding-bottom` |
+|---|---|---|---|
+| sección con ritmo | −14 | 57.5938 / 50 | 14 |
+| sección rasa | 0 | 0 | 0 |
+| fila normal | — | 2% (28.7969 a 1440) / 30 | 2% / 30 |
+| fila pegada | — | **0** | 2% / 30 |
+
+**Todas** las filas cierran igual, así que el `padding-bottom` no depende de
+nada y se queda en el componente. Lo único editorial es dónde corta la sección,
+y eso es el campo `flujo` del content type (`SectorBlockFlujo`), con los 4
+valores que salen de combinar las dos tablas: `seccion`, `seccionRasa`, `fila`,
+`filaPegada`. Por defecto `seccion`, y el primer bloque del cuerpo abre sección
+siempre, lo declare o no — una fila necesita una sección que la contenga.
+
+Reparto en los 6 sectores de plantilla clásica (EDAR y Petróleo y gas van con
+otra plantilla y quedan fuera):
+
+| sector | cuerpo |
+|---|---|
+| Urbano | cta `seccionRasa` · beneficios `seccion` · claim `filaPegada` |
+| Construcción | igual que Urbano |
+| Industria | beneficios `seccion` · cta · lista · claim `filaPegada` · mapa `fila` |
+| Puertos | beneficios `seccion` · cta `fila` · claim `filaPegada` · mapa `fila` |
+| Minería | beneficios `seccion` · claim · cta `filaPegada` · mapa `fila` |
+| Investigación | beneficios `seccion` · claim `filaPegada` |
+
+**Reparto de responsabilidades.** `SectorBody` monta la `<section>` y la
+retícula de fila; los 5 componentes de bloque pintan **solo el contenido de su
+fila** y no llevan ni `<section>` ni `mx-auto w-[86%]`. Antes cada bloque se
+envolvía a sí mismo, que es lo que hace Urbano por casualidad — allí el CTA y
+las listas sí caen en dos secciones del original — y en Industria metía de más
+el `pb 14` de sección + el `pt 2%` de fila en cada junta: el CTA caía +42.8 y de
+ahí abajo todo ~+70. Detalle y números en `docs/PENDIENTES-QA.md` §S7.
+
 ## Los 5 tipos
 
 | `kind` | Spec | ¿Lo usa Urbano? |
@@ -46,6 +89,13 @@ Medido en `…/sectores/control-de-emisiones-industriales/` a 1440.
 Un párrafo de entrada a ancho completo y, debajo, **una lista repartida en dos
 columnas 1/2** (no es una lista con `columns: 2` — son dos `<ul>` en dos
 columnas Divi, cada uno con sus propios ítems).
+
+⚠️ **El párrafo de entrada NO está en esta fila en el original.** Medido en S7
+(2026-07-29): en Industria cuelga del final de la fila del CTA, y la fila de las
+listas contiene solo los dos `<ul>` (207.56 de contenido a 1440). El clon lo
+pinta arriba de las listas, 30.6 más abajo de donde va. Efecto vertical neto
+cero — la fila siguiente arranca al píxel — y sin arreglar a propósito: ver
+`docs/PENDIENTES-QA.md` §S9a, que explica por qué el arreglo es de modelo.
 
 - Fila del párrafo: columna 4/4, módulo de texto `18px/30.6` — alto 30.6.
 - Fila de las listas: 2 × 1/2, cada `<ul>` de **207.6** de alto con 6 ítems.

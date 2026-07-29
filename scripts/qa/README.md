@@ -22,6 +22,31 @@ node tree-todos.mjs 390            # móvil (device metrics 390×844)
 `C:\Program Files\Google\Chrome\Application\chrome.exe`; cámbialo ahí si tu
 instalación está en otro sitio.
 
+Las sondas que comparan contra el clon (`tree-cmp`, `cmp-sector`) necesitan el
+clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
+`next start`, tras editar hay que **parar, `npm run build` y relanzar**.
+
+## Las sondas
+
+| sonda | qué compara | cuándo usarla |
+|---|---|---|
+| `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |
+| `tree-cmp.mjs <sector> [ancho]` | original vs clon, **árbol sección→fila** del cuerpo | distinguir "la fila está mal colocada" de "el contenido mide otra cosa" |
+| `cmp-sector.mjs <sector> [ancho]` | original vs clon, **anclas de texto** | ver de un vistazo dónde empieza a acumularse el desfase |
+
+`<sector>` es `urbano` o `industria`; para dar de alta otro, añádelo a la tabla
+de URLs de cada sonda.
+
+### Dos trampas ya pagadas
+
+- **La función de `page.evaluate()` se serializa al navegador**, así que un
+  `const` del módulo NO viaja: el flag va por argumento o salta un
+  `ReferenceError` dentro de la página.
+- **Las anclas de texto por cabeza engañan.** El ancla del claim de Industria
+  ("Identifica qué operaciones o procesos…") enganchaba un párrafo del hero que
+  empieza con las mismas 8 palabras, y daba Δ0 falsos. Va por la cola
+  ("partículas en industrias").
+
 ## `tree-todos.mjs`
 
 Recorre los **8 sectores vivos** del original y vuelca, del cuerpo de cada uno

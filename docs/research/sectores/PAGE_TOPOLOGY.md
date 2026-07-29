@@ -220,6 +220,58 @@ tipos ya identificados: `ctaDescarga`, `listasBeneficiosAplicaciones`,
 `claimConFoto`, `listaSimple2Col`, `mapaProyectos`. Así está modelado en
 `src/lib/sectores.ts`.
 
+#### 2.3.1 El orden no basta: hace falta saber DÓNDE CORTA la sección
+
+Ampliación de 2026-07-29 (S7), medida sobre los **8 sectores vivos** con
+`scripts/qa/tree-todos.mjs` — no sobre 2, que fue el error de la primera pasada.
+Informe: `MEDICION-S7.md`.
+
+El cuerpo no es una pila de secciones. En Divi son **SECCIONES con FILAS
+dentro**, y quien edita decide en cuál cae cada bloque: el mismo `kind` abre
+sección en un sector y va pegado a la fila anterior en el siguiente. Solo
+aparecen dos formas de sección y dos de fila, y de su combinación salen los
+**4 valores** del campo `flujo`:
+
+| valor | qué monta | ritmo medido (1440 / 390) |
+|---|---|---|
+| `seccion` | abre `<section>` con el ritmo del cuerpo | `mt −14` · `pt 57.5938 / 50` · `pb 14`; su fila con `pt 2% / 30` |
+| `seccionRasa` | abre `<section>` **sin** ritmo | `mt 0` · `pt 0` · `pb 0`; su fila con `pt 2% / 30` |
+| `fila` | una fila más de la sección abierta | `pt 2% / 30` |
+| `filaPegada` | una fila más, pegada a la de arriba | **`pt 0`** (en los DOS anchos) |
+
+**El valor omitido por defecto es `seccion`**, que es el comportamiento seguro:
+un bloque sin declarar abre su propia sección. Se escribe en el dato solo cuando
+difiere — misma convención que `variante` en `ctaDescarga`.
+
+**Regla de agrupación de `SectorBody`**, que es quien monta la `<section>` y la
+retícula de fila (los componentes de bloque pintan solo el contenido de su fila):
+
+1. Abre `<section>` si el bloque es `seccion` o `seccionRasa`, **o si es el
+   primero del cuerpo** — una fila necesita una sección que la contenga, lo
+   declare o no.
+2. La sección lleva ritmo salvo que sea `seccionRasa`.
+3. La fila pierde el `padding-top` solo si es `filaPegada`.
+4. **Todas** las filas cierran igual (`padding-bottom 2% / 30`), así que el `pb`
+   no depende de nada y se queda cableado en la plantilla.
+
+Reparto real en los 6 sectores de plantilla clásica (EDAR y Petróleo y gas están
+rehechos con otra plantilla y quedan fuera):
+
+| sector | cuerpo |
+|---|---|
+| Urbano | cta `seccionRasa` · beneficios `seccion` · claim `filaPegada` |
+| Construcción | igual que Urbano |
+| Industria | beneficios `seccion` · cta · lista · claim `filaPegada` · mapa `fila` |
+| Puertos | beneficios `seccion` · cta `fila` · claim `filaPegada` · mapa `fila` |
+| Minería | beneficios `seccion` · claim · cta `filaPegada` · mapa `fila` |
+| Investigación | beneficios `seccion` · claim `filaPegada` |
+
+**Consecuencia para el CMS**: cada bloque del *flexible content* necesita, además
+de sus campos propios, un campo de flujo con estos 4 valores y `seccion` por
+defecto. Sin él, el ritmo se cuela o se pierde en cada junta entre bloques y la
+página se desplaza acumulativamente — en Industria eran +42.8 en el CTA y ~+70
+de ahí hasta el pie.
+
 ### 2.4 Inventario de los 8 sectores
 
 | Sector | Ruta | Taxonomía | CTA descarga | Mapa | Casos | Arts |

@@ -1187,29 +1187,86 @@ Las 6 páginas anteriores mantienen su altura exacta en los 2 anchos:
 
 ---
 
-### Dos hallazgos NUEVOS de Industria, sin arreglar
+### Dos hallazgos NUEVOS de Industria
 
-Salieron al medir Industria a fondo después de los tres arreglos. **No entraban
-en el encargo y no se han tocado.**
+Salieron al medir Industria a fondo después de los tres arreglos.
 
-**S7 · Los bloques del cuerpo son FILAS de una sección, no secciones sueltas.**
-`SectorBody` mete cada bloque en su propia `<section>` con su ritmo (sección
+**S7 · Los bloques del cuerpo son FILAS de una sección, no secciones sueltas ·
+RESUELTO (2026-07-29).**
+`SectorBody` metía cada bloque en su propia `<section>` con su ritmo (sección
 `pb-14` + fila `py-2%`). El original agrupa o separa según le conviene: en
 **Urbano** el CTA y las listas están en **dos secciones** distintas (S4 y S5) y
 por eso las cuentas encajaban; en **Industria** los cinco bloques son **cinco
 filas de la MISMA sección** (S4), donde entre fila y fila solo hay el
 `padding-bottom` de la anterior.
 
-Medido a 1440: el bloque de listas coincide **al píxel** (h3 175/120, ul
-363.5/332.9, fin 2016.3) y aun así el CTA cae a 2128.9 frente a 2086.1 del
-original. El +42.8 es exactamente **14** (el `pb` de sección de
+Medido a 1440: el bloque de listas coincidía **al píxel** (h3 175/120, ul
+363.5/332.9, fin 2016.3) y aun así el CTA caía a 2128.9 frente a 2086.1 del
+original. El +42.8 era exactamente **14** (el `pb` de sección de
 `BeneficiosAplicaciones`) **+ 28.797** (el `pt` de fila de `CtaDescarga`), que
-en el original no existen porque las dos filas comparten sección. De ahí baja
+en el original no existen porque las dos filas comparten sección. De ahí bajaba
 todo ~+70 hasta el pie.
 
-Arreglarlo bien pide que el modelo sepa si un bloque **abre sección o continúa
-la anterior** — es un cambio de diseño del content type, no un retoque. Es la
-misma lección que las dos pieles: el ritmo se calibró con una instancia.
+*Cómo se arregló.* No con CSS: **le faltaba un campo al content type**. Se midió
+con `scripts/qa/tree-todos.mjs` el árbol sección→fila de los **8 sectores
+vivos** (no de 2 — ése fue el error original), y salieron solo dos formas de
+sección y dos de fila. De su combinación sale `SectorBlockFlujo`, con 4 valores:
+
+| valor | qué monta | ritmo medido (1440 / 390) |
+|---|---|---|
+| `seccion` | abre `<section>` con ritmo | `mt −14` · `pt 57.5938 / 50` · `pb 14`; fila `pt 2% / 30` |
+| `seccionRasa` | abre `<section>` sin ritmo | `mt 0` · `pt 0` · `pb 0`; fila `pt 2% / 30` |
+| `fila` | otra fila de la sección abierta | `pt 2% / 30` |
+| `filaPegada` | otra fila, pegada a la de arriba | **`pt 0`** |
+
+Reparto en los 6 de plantilla clásica: Urbano y Construcción `cta seccionRasa ·
+beneficios seccion · claim filaPegada`; Industria `beneficios seccion · cta ·
+lista · claim filaPegada · mapa fila`; Puertos `… cta fila · claim filaPegada ·
+mapa fila`; Minería `… claim · cta filaPegada · mapa fila`; Investigación
+`beneficios seccion · claim filaPegada`. (EDAR y Petróleo y gas van con otra
+plantilla y quedan fuera.)
+
+Los 5 componentes de bloque dejan de envolverse a sí mismos y pintan **solo el
+contenido de su fila**; `SectorBody` monta la `<section>` y la retícula. El
+ritmo es plantilla y vive en el componente; **dónde corta** es editorial y vive
+en el dato.
+
+Resultado medido (2026-07-29, original vs clon, mismo día y configuración).
+Informe completo, con el árbol sección→fila y el Antes/Después de las 7 páginas:
+**`docs/research/sectores/MEDICION-S7.md`**.
+
+| | Industria @1440 | Industria @390 | Urbano @1440 | Urbano @390 |
+|---|---|---|---|---|
+| fila del CTA (top) | **2086.1 / 2086.1 → Δ0** (antes +42.8) | **3653.06 / 3653.06 → Δ0** | 1532.9 / 1532.9 → Δ0 | −8.4 |
+| fila del claim | Δ0 | −47.5 (ver S9) | −8.6 | −8.5 |
+| fila del mapa | Δ0 | −47.5 | — | — |
+| alto de la sección | — | — | **1057.45 / 1057.45** | **1970.16 / 1970.16** |
+
+Las cinco filas de Industria comparten ya una sola `<section>` con los mismos
+`pt/pb` que el original, y sus cuatro primeras filas arrancan **al píxel**.
+Urbano, cuya sección de listas+claim ahora clava el alto en los dos anchos, ve
+además corregido un error propio de +14 que tenía el claim: antes caía tras el
+`pb` de sección de las listas, y en el original va **antes** de ese `pb`.
+
+Alturas de documento tras S7:
+
+| | home | monitor | accesorios | software | api | urbano | industria |
+|---|---|---|---|---|---|---|---|
+| @1440 | 11870 | 12410 | 10863 | 11711 | 5289 | **6122** | 7229 → **7171** |
+| @390 | 19182 | 21854 | 21180 | 20844 | 9125 | **11064** | 12626 → **12566** |
+
+Las 6 páginas anteriores no se mueven ni un píxel, **Urbano incluido** (su
+cuerpo pesa lo mismo: los 14px solo cambian de sitio dentro de la sección).
+Industria adelgaza **−58 a 1440 y −60 a 390**, que es justo lo que sobraba: a
+1440, `14` (pb de sección) + `28.797` (pt de fila del CTA) + `28.797` (pt de
+fila de las listas); a 390, `14 + 30 + 30` menos el `pt` de sección que ya no se
+duplica. Contra el original medido en la misma corrida queda en **+27** (7144) y
+**+41** (12525).
+
+⚠️ Al comparar con la tabla del 2026-07-28, ojo con la base: dos corridas de hoy
+leyeron el original a 7117 y a 7144 a 1440. Es sitio vivo — los residuos solo
+valen contra la lectura de su propia corrida, y por eso arriba se da el
+adelgazamiento del clon, que sí es estable.
 
 **S8 · `MapaProyectos` no fijaba altura en móvil · RESUELTO (2026-07-28).**
 El contenedor llevaba `md:h-[570px]`, así que a 390 los 41 pines se desplegaban
@@ -1225,3 +1282,54 @@ mueve (ya iba a 570). Sin regresión en las 6 páginas anteriores.
 
 Sigue en pie lo de S3: el mapa de Google **no se clona** (haría falta clave
 propia); el bloque pinta titular, intro y la lista de pines en la caja de 570.
+
+---
+
+### S9 · Tres residuos que destapó la medida de S7, sin arreglar (2026-07-29)
+
+Con el ritmo de secciones ya exacto, lo que queda del desfase de los dos
+sectores es **contenido dentro de la fila**, no la fila. Son tres cosas
+distintas y ninguna entraba en el encargo de S7. Medido con
+`qa/tree-cmp.mjs` (fila a fila, original vs clon).
+
+**S9a · La `intro` de `listaSimple2Col` está en la fila equivocada.** En el
+original de Industria el párrafo *"Algunos de las aplicaciones donde desplegar
+sistemas de monitorización ambiental son:"* es un módulo de texto **al final de
+la fila del CTA**, no la cabecera de la fila de las listas:
+
+| fila @1440 | original | clon | Δ |
+|---|---|---|---|
+| CTA | 525.61 | 495.02 | **−30.6** |
+| listas | 236.36 | 266.95 | **+30.6** |
+
+Los 30.6 son exactamente el párrafo (18/30.6). A 390 son 61.78 (envuelve a dos
+líneas), con el mismo trasvase. **Efecto vertical neto: cero** — la fila
+siguiente arranca al píxel en los dos anchos —, así que se ve solo como que la
+intro cae 30.6 más abajo de lo que debe.
+
+No se toca porque el arreglo honesto es de modelo, no de CSS: si la intro
+pertenece a la fila del CTA, entonces **no es un campo de `listaSimple2Col`**
+sino un módulo de texto suelto que Divi deja colgar de cualquier fila. Antes de
+inventar un `SectorBloqueTexto` conviene ver si se repite en Puertos y Minería o
+es una excentricidad de quien editó Industria.
+
+**S9b · La caja del CTA de descarga es más baja que la del original, y por
+motivos distintos en cada piel.**
+
+| | @1440 | @390 |
+|---|---|---|
+| piel `"foto"` (Urbano) | −8.6 | −8.4 |
+| piel `"fondo"` (Industria) | 0 (una vez descontada S9a) | −47.5 |
+
+La piel `"fondo"` **clava el desktop** y se queda corta solo en móvil. La piel
+`"foto"` va −8.5 en los dos anchos, y ese −8.6 es el ÚNICO residuo de Urbano:
+todas sus anclas, de la cabecera al pie, van desplazadas ese mismo valor y ni
+una más. Es un interior de caja (padding o alto de la foto de 280), no ritmo.
+
+**S9c · La fila del mapa es +13 en los dos anchos** (740.19 → 753.19 a 1440;
+836.28 → 849.28 a 390). El contenedor de 570 es exacto desde S8, así que los 13
+están en el bloque de titular + intro que va encima: el clon monta `h2 55 +
+pb 10 + intro 30.6 + mt 30` = 695.6 y el original mide 682.6. Recordatorio de
+que `MapaProyectos` es un **placeholder deliberado** (el mapa de Google no se
+clona), así que afinar su cabecera solo tiene sentido cuando se decida qué se
+pinta dentro.
