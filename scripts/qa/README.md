@@ -87,11 +87,28 @@ misma configuración.
 | fichero | qué es |
 |---|---|
 | `tree-todos-1440.json` | 8 sectores a 1440×900, DPR 1 — **2026-07-28** |
+| `tree-todos-390.json` | 8 sectores a 390×844, DPR 1 — **2026-07-29** |
 
-Notas de esa medida:
+El de **390 es el bueno de los dos**, y conviene saber por qué: la sonda
+reconocía el hero por su `padding-bottom`, que **cambia con el ancho** (60 a
+1440, 20 a 390). Buscando solo el 60, a 390 no encontraba el hero y el volcado
+se comía las filas de menú y breadcrumb como si fueran cuerpo. Arreglado al
+congelar esta medida (prueba 60 y, si no, 20).
 
-- **EDAR** y **Petróleo y gas** salen con otra estructura (7 y 7 secciones, con
-  filas de menú y breadcrumb dentro del rango): están rehechos con una plantilla
-  nueva y **no** son los 6 de plantilla clásica sobre los que se diseñó `flujo`.
-- La medida a 390 se corrió el mismo día pero su JSON no se conservó; se
-  reproduce con `node tree-todos.mjs 390`.
+Consecuencias, por orden de lo que te va a morder:
+
+- El **1440 conserva el defecto en EDAR y Petróleo y gas**: como tampoco tienen
+  un hero con `pb 60`, sus entradas de ese fichero arrancan en el menú. No se
+  ha regenerado: es evidencia fechada que respalda la tabla de `flujo`, y los
+  6 sectores que importan salen bien. Para ver el cuerpo real de esos dos a
+  1440, vuelve a correr la sonda.
+- A **390 los 8 salen limpios**, incluidos EDAR y Petróleo, que se ven por
+  primera vez: 3 secciones cada uno, con la última repitiendo el patrón clásico
+  (`beneficios seccion · claim filaPegada · cta filaPegada [· mapa fila]`).
+- El 390 **reproduce la tabla de `flujo` entera** en los 6 de plantilla clásica,
+  con `filaPegada` a `pt 0` también en móvil. O sea que los 4 valores no son una
+  regla de desktop con excepciones: son la misma en los dos anchos.
+
+Recordatorio: son la prueba, no un caché. El original es un sitio vivo y los
+deltas solo se comparan entre medidas del mismo día y la misma configuración —
+a 390 dos corridas del mismo día llegaron a diferir 30px en TODAS las anclas.

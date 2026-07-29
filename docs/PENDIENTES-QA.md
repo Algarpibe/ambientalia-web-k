@@ -1326,6 +1326,17 @@ La piel `"fondo"` **clava el desktop** y se queda corta solo en móvil. La piel
 todas sus anclas, de la cabecera al pie, van desplazadas ese mismo valor y ni
 una más. Es un interior de caja (padding o alto de la foto de 280), no ritmo.
 
+**Origen del −47.5 a 390: PREEXISTENTE, verificado — no es regresión de S7.**
+Comprobado con `git checkout` al commit anterior a S7 (`5db79ee`), `npm run
+build` y la misma sonda; clon contra clon, que es determinista. La fila del CTA
+mide **591.14 de contenido antes y después** de S7 (651.14 con `pt 30` →  621.14
+con `pt 0`): S7 solo tocó el `padding`. El original mide 700.42 de contenido, y
+esos 109.28 de déficit son 61.78 del párrafo mal colocado de S9a más **47.5 de
+la caja**. Antes de S7 el claim daba **+26.5** contra el original de su corrida;
+S7 retira 74 de ritmo sobrante (`14 + 30 + 30`, todos `pt 0` en el original) y
+`26.5 − 74 = −47.5` — el déficit estaba **tapado** por un sobrante que lo
+compensaba de más. Detalle en `docs/research/sectores/MEDICION-S7.md`.
+
 **S9c · La fila del mapa es +13 en los dos anchos** (740.19 → 753.19 a 1440;
 836.28 → 849.28 a 390). El contenedor de 570 es exacto desde S8, así que los 13
 están en el bloque de titular + intro que va encima: el clon monta `h2 55 +

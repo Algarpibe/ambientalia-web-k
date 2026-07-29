@@ -107,7 +107,10 @@ vertical neto es cero — la fila 3 vuelve a arrancar al píxel.
 | fila claim · h (pt 0) | 549.59 | 549.59 | **0** |
 
 Confirma de paso que `filaPegada` es **`pt 0` en los dos anchos**, no solo en
-desktop.
+desktop. Barrido después sobre los 8 sectores del original a 390
+(`scripts/qa/medidas/tree-todos-390.json`), que reproduce la tabla de `flujo`
+entera: los 4 valores son la misma regla en los dos anchos, no una de desktop
+con excepciones.
 
 ## Anclas: el objetivo de S7
 
@@ -121,9 +124,11 @@ desktop.
 | claim | 2946.6 / 2946.6 → **Δ0** | −47.5 relativo (S9b) |
 | mapa | 3254.8 / 3254.8 → **Δ0** | −47.5 relativo (S9b) |
 
-> A 390 todas las anclas de Industria llevan una base de **−30** heredada del
-> `padding-top` de la cabecera en móvil, que es residuo previo y ajeno a S7; la
-> columna da el valor **relativo a esa base**.
+> A 390 esa corrida leyó todas las anclas del **original** 30px más abajo que la
+> corrida de control del día siguiente (h1 a 219.4 frente a 189.4), así que la
+> columna da el valor **relativo a esa base de −30**. No es residuo del clon:
+> contra la lectura de 189.4 el h1 del clon da **Δ0 exacto**. Es deriva del
+> original — ver el aviso de más abajo.
 
 Urbano queda con **un único residuo** que arrastra por igual de la cabecera al
 pie: **−8.6** a 1440 y **−8.5** a 390, que es el alto de la caja del CTA de
@@ -132,9 +137,50 @@ descarga en su piel `"foto"` (S9b). Ni una ancla se sale de ese valor.
 ## Ojo con la base al comparar
 
 Dos corridas del **mismo día** leyeron el original de Industria a 1440 en
-**7117** y **7144**. Es un sitio vivo: los residuos solo valen contra la lectura
-de su propia corrida. Por eso arriba se da el **adelgazamiento del clon**, que sí
-es estable, y no un "residuo contra el original" que cambia según la corrida.
+**7117** y **7144**. A 390 la deriva fue mayor y sistemática: una corrida leyó
+**todas** las anclas 30px más abajo que otra (h1 219.4 vs 189.4). Es un sitio
+vivo: los residuos solo valen contra la lectura de su propia corrida, y **el h1
+sirve de base** — si el h1 va a −30, ese −30 hay que descontarlo de todo lo
+demás antes de leer nada.
+
+Por eso arriba se da el **adelgazamiento del clon**, que sí es estable, y no un
+"residuo contra el original" que cambia según la corrida.
+
+## Origen del −47.5 a 390: preexistente, no regresión
+
+Comprobado el 2026-07-29 tras cerrar los commits, con `git checkout` al commit
+**anterior** a S7 (`5db79ee`, que ya lleva las sondas), `npm run build` y la
+misma medida. Clon contra clon, que es determinista.
+
+| ancla @390 | clon pre-S7 | clon post-S7 | Δ que introduce S7 |
+|---|---|---|---|
+| h1 | 189.4 | 189.4 | 0 |
+| beneficios | 2125.8 | 2125.8 | 0 |
+| cta | 3737.1 | 3693.1 | **−44** |
+| listas | 4348.2 | 4274.2 | **−74** |
+| claim | 4915.7 | 4841.7 | **−74** |
+| mapa | 5421.3 | 5347.3 | **−74** |
+
+S7 quita **exactamente** el ritmo que sobraba y ni un píxel más: 44 antes del
+CTA (`14` de `pb` de sección + `30` de `pt` de fila) y 30 más antes de las
+listas, o sea 74 acumulados de ahí abajo. Todos ellos son `pt 0` en el original.
+
+Contra el original **de su propia corrida**, la fila del claim iba a **+26.5**
+antes de S7. `26.5 − 74 = −47.5`: el déficit ya estaba, **tapado** por un
+sobrante de ritmo que lo compensaba de más.
+
+La prueba directa es el alto de la fila del CTA, sin depender de esa aritmética:
+
+| fila del CTA @390 | alto | `pt` | `pb` | **contenido** |
+|---|---|---|---|---|
+| original | 730.42 | 0 | 30 | **700.42** |
+| clon pre-S7 | 651.14 | 30 | 30 | **591.14** |
+| clon post-S7 | 621.14 | 0 | 30 | **591.14** |
+
+El contenido de la fila es **idéntico antes y después** — S7 solo tocó el
+`padding`. El déficit de 109.28 se reparte en 61.78 del párrafo de entrada mal
+colocado (que reaparece en la fila de las listas, S9a) y **47.5 de la caja del
+CTA en su piel `"fondo"`**, que es S9b y viene de antes.
 
 ## Lo que NO arregló S7
 
