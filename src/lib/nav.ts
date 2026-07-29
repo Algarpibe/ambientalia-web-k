@@ -102,18 +102,48 @@ export const PRODUCTS: NavProductItem[] = [
   },
 ];
 
+/**
+ * Los 8 sectores del mega-menú.
+ *
+ * ── CRITERIO AL AÑADIR O CLONAR UNO (léelo antes de tocar un href) ──────────
+ *
+ *   sector CLONADO      → ruta local, sin barra final, sin `target="_blank"`
+ *   sector NO clonado   → URL del original, tal cual
+ *
+ * Es la regla de rutas locales de `CLAUDE.md`. Cuando se pueble un sector nuevo
+ * en `src/lib/sectores.ts`, **este fichero hay que tocarlo también**: son los
+ * dos sitios donde vive un sector, y `sectores.ts` no alimenta este menú.
+ * Chivato: `SECTORES_INDICE` en `sectores.ts` lleva un `clonado: boolean` que
+ * debe coincidir con lo que haya aquí.
+ *
+ * Al localizar un href, deja anotado el original al lado — hace falta para
+ * rehacer la comparación A/B.
+ */
 export const SECTORS: NavSectorItem[] = [
-  { label: "Urbano", href: "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/", icon: "/images/uploads/2023/01/urban-2.svg" },
-  { label: "Industria y olores", href: "https://kunakair.com/es/sectores/control-de-emisiones-industriales/", icon: "/images/uploads/2023/01/industry.svg" },
+  // ruta local: clonado (src/app/sectores/[slug]) — original:
+  // https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/
+  { label: "Urbano", href: "/sectores/calidad-del-aire-en-las-ciudades", icon: "/images/uploads/2023/01/urban-2.svg" },
+  // ruta local: clonado — original:
+  // https://kunakair.com/es/sectores/control-de-emisiones-industriales/
+  { label: "Industria y olores", href: "/sectores/control-de-emisiones-industriales", icon: "/images/uploads/2023/01/industry.svg" },
   // El href que tenía aquí (…-en-plantas-de-aguas-residuales/) devuelve 404;
   // el del menú vivo del original es …-en-edar/ (verificado 2026-07-28: 200 vs
   // 404). `footer.ts` ya usaba el bueno. Recon: docs/research/sectores/.
+  // NO clonado — y no es arquetipo SECTOR: docs/research/monografico-tecnico/.
   { label: "EDAR", href: "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/", icon: "/images/uploads/2026/04/wastewater-treatment-plant.svg" },
+  // NO clonado — tampoco es arquetipo SECTOR (ver monografico-tecnico/).
   { label: "Petróleo y gas", href: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/", icon: "/images/uploads/2026/04/oil-and-gas.svg" },
+  // NO clonado, por decisión: permutación de una topología ya validada
+  // (razón en docs/PENDIENTES-QA.md).
   { label: "Puertos y aeropuertos", href: "https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/", icon: "/images/uploads/2023/02/ports-airports-2.svg" },
-  { label: "Construcción", href: "https://kunakair.com/es/sectores/contaminacion-por-construccion/", icon: "/images/uploads/2023/01/construction.svg" },
+  // ruta local: clonado — original:
+  // https://kunakair.com/es/sectores/contaminacion-por-construccion/
+  { label: "Construcción", href: "/sectores/contaminacion-por-construccion", icon: "/images/uploads/2023/01/construction.svg" },
+  // NO clonado, por la misma decisión que Puertos.
   { label: "Minería", href: "https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/", icon: "/images/uploads/2023/01/mining.svg" },
-  { label: "Investigación y consultoría", href: "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/", icon: "/images/uploads/2023/01/research.svg" },
+  // ruta local: clonado — original:
+  // https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/
+  { label: "Investigación y consultoría", href: "/sectores/estudio-de-la-contaminacion-atmosferica", icon: "/images/uploads/2023/01/research.svg" },
 ];
 
 export const COMPANY: NavLink[] = [

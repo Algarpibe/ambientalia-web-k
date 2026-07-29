@@ -1371,13 +1371,78 @@ sectores sin una línea de componente.
 
 ### Lo que queda incumplido y no entraba en el encargo
 
-**`nav.ts` apunta los 8 sectores al original**, incluidos los 4 ya clonados, así
-que la **regla de rutas locales de `CLAUDE.md` está incumplida** para Urbano,
-Industria, Construcción e Investigación. **Es anterior a esta tanda** — ya
-pasaba con Urbano e Industria desde que se clonaron. `SECTORES_INDICE` sí se ha
-actualizado (`clonado: true` + href local en los 4). Arreglar `nav.ts` es
-cambiar 4 hrefs y no mueve un píxel, pero toca el menú de todas las páginas y
-quedaba fuera de "solo datos en sectores.ts".
+**`nav.ts` apuntaba los 8 sectores al original** — **RESUELTO el 2026-07-29**:
+los 4 clonados pasan a ruta local y los 4 no clonados se quedan en el original,
+con el criterio escrito en la cabecera de `SECTORS` para quien añada el
+siguiente. Medidas las 9 páginas a 1440 y 390 antes y después: **las 18 lecturas
+idénticas**, sin regresión (un href no mueve layout, pero `nav` lo comparten
+todas las páginas y era justo el caso donde uno sustituye medición por
+confianza).
+
+⚠️ **Al arreglarlo salió que la regla estaba rota en TRES ficheros, no en uno.**
+El HTML servido seguía trayendo los hrefs originales de los 4 clonados desde:
+
+| fichero | qué pinta | estado |
+|---|---|---|
+| `src/lib/nav.ts` | mega-menú de Sectores | ✅ 2026-07-29 |
+| `src/lib/footer.ts` | columna de Sectores del pie | **pendiente** (Urbano, Construcción y los demás) |
+| `src/lib/sectors.ts` | `SECTOR_SLIDES`, el carrusel de la home | **pendiente** |
+
+Los dos pendientes son el mismo cambio de una línea por sector y tampoco mueven
+layout. No se tocaron porque el encargo nombraba `nav.ts`. Se cierran en dos
+minutos y conviene hacerlo con la misma medida de las 9 páginas.
+
+Lección de método: **buscar el href, no el fichero.** `grep -rn "sectores/<slug>/" src/lib`
+antes de dar por cerrada una localización de rutas.
+
+---
+
+## CLASE · S9, S10 y S11 son el mismo hallazgo cuatro veces
+
+> **Léelo antes que los cuatro apartados que vienen debajo.** Por separado
+> parecen flecos de pulido. Juntos son una sola cosa, y esa cosa es deuda de
+> **CMS-readiness**, no de acabado.
+
+Los cuatro residuos vivos del arquetipo SECTOR tienen la misma causa raíz: **un
+componente construido para el contenido de UNA instancia, no para un rango de
+contenidos.**
+
+| | qué se cableó | qué lo destapó |
+|---|---|---|
+| **S9b** · caja del CTA | el alto que daba el texto de Urbano | Industria, con dos párrafos y otra piel |
+| **S9c** · cabecera del mapa | la del primer sector con mapa | el mismo bloque en otro sector |
+| **S10** · `CtaBannerSlider` | **alto fijo** (345.1 a 390) | Construcción, con titulares que envuelven más |
+| **S11** · `CabeceraSector` | un kicker que **no envuelve** | "Investigación y consultoría", el más largo de los 8 |
+
+Y una quinta de la misma familia, ya resuelta, que sirve de patrón: **S9a**, la
+intro de `listaSimple2Col`, donde el clon monta **una** maquetación y el
+original tiene **dos** (la intro cuelga de la fila anterior).
+
+El síntoma siempre es el mismo: el original **crece con su contenido** y el clon
+**no**, porque se midió una instancia y se cableó el número. Por eso ninguno
+apareció en QA de la página para la que se construyó el componente: **solo se
+ven al poblar la segunda, la tercera o la cuarta**.
+
+### Por qué es CMS-readiness y no pulido
+
+Un CMS no da un rango de contenido: da **cualquier** contenido. Un componente
+con alto fijo o con una sola maquetación no falla el día que se despliega —
+falla el día que alguien escribe un titular de tres líneas. Los cuatro son
+**defectos de contrato**, no de píxel: el componente promete servir al arquetipo
+y solo sirve a la instancia que se midió.
+
+### Cómo se resuelve: una tanda única, y no ahora
+
+**No se arreglan de uno en uno según van saliendo.** Eso reproduce el error que
+los causó: calibrar contra la instancia que se tiene delante.
+
+Se resuelven en **una sola tanda, con criterio común** —*el alto lo pone el
+contenido, no el componente*— y **con el catálogo de instancias ya completo**,
+es decir cuando estén medidos los 8 sectores (o los que se decidan clonar). Solo
+entonces se conoce el rango real: el kicker más largo, el titular de slider que
+más envuelve, el CTA con más párrafos.
+
+Hacerlo antes es adivinar el rango. Hacerlo por separado es cablear otra vez.
 
 ---
 
@@ -1385,6 +1450,7 @@ quedaba fuera de "solo datos en sectores.ts".
 
 > **Reclasificados contra el suelo de ruido el 2026-07-29. Los cuatro
 > sobreviven** — ninguno es ruido. Ver el cuadro al final de la sección.
+> Y ver la **nota de CLASE** de arriba: no se arreglan sueltos.
 
 Con el ritmo de secciones ya exacto, lo que queda del desfase de los dos
 sectores es **contenido dentro de la fila**, no la fila. Son tres cosas
