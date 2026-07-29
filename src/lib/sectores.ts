@@ -32,6 +32,49 @@ import { PRODUCTS_TABS } from "./products";
 
 /* ────────────────────────────── content type ───────────────────────────── */
 
+/**
+ * **Dónde corta la sección** — el campo que faltaba (S7, 2026-07-28).
+ *
+ * El cuerpo de un sector no es una pila de secciones: en Divi son SECCIONES con
+ * FILAS dentro, y quien edita decide en cuál cae cada bloque. Medido en los 6
+ * sectores de la plantilla clásica (`qa/tree-todos.mjs`, 1440 y 390) solo
+ * aparecen **dos formas de sección** y **dos de fila**, y de su combinación
+ * salen los 4 valores de este campo:
+ *
+ * | valor | qué monta | ritmo medido (1440 / 390) |
+ * |---|---|---|
+ * | `"seccion"` | abre `<section>` con el ritmo del cuerpo | `mt −14` · `pt 57.5938 / 50` · `pb 14`; su fila con `pt 2% / 30` |
+ * | `"seccionRasa"` | abre `<section>` **sin** ritmo | `mt 0` · `pt 0` · `pb 0`; su fila con `pt 2% / 30` |
+ * | `"fila"` | una fila más de la sección abierta | `pt 2% / 30` |
+ * | `"filaPegada"` | una fila más, pegada a la de arriba | **`pt 0`** |
+ *
+ * Todas las filas cierran igual (`padding-bottom 2% / 30`), así que eso se
+ * queda en el componente: aquí solo va el corte, que es lo editorial.
+ *
+ * Reparto real en los 6 sectores (así se eligieron los 4 valores, no viendo una
+ * instancia — que fue justo el error de la tanda anterior):
+ *
+ * | sector | cuerpo |
+ * |---|---|
+ * | Urbano | cta `seccionRasa` · beneficios `seccion` · claim `filaPegada` |
+ * | Construcción | igual que Urbano |
+ * | Industria | beneficios `seccion` · cta · lista · claim `filaPegada` · mapa `fila` |
+ * | Puertos | beneficios `seccion` · cta `fila` · claim `filaPegada` · mapa `fila` |
+ * | Minería | beneficios `seccion` · claim · cta `filaPegada` · mapa `fila` |
+ * | Investigación | beneficios `seccion` · claim `filaPegada` |
+ *
+ * Por defecto `"seccion"`: un bloque sin declarar abre su propia sección, que
+ * es el comportamiento seguro (y el primero del cuerpo abre una siempre, lo
+ * diga o no — una fila necesita sección que la contenga).
+ */
+export type SectorBlockFlujo = "seccion" | "seccionRasa" | "fila" | "filaPegada";
+
+/** Lo que comparten los 5 tipos de bloque: dónde caen en el flujo de secciones. */
+interface SectorBloqueBase {
+  /** Ver `SectorBlockFlujo`. Por defecto `"seccion"`. */
+  flujo?: SectorBlockFlujo;
+}
+
 export interface SectorLink {
   label: string;
   href: string;
@@ -97,7 +140,7 @@ export interface SectorHero {
  * Lo descubrió poblar Industria (2026-07-28): el componente solo sabía pintar
  * la primera y la página salía +53 desplazada de ahí abajo.
  */
-export interface SectorBloqueCtaDescarga {
+export interface SectorBloqueCtaDescarga extends SectorBloqueBase {
   kind: "ctaDescarga";
   title: string;
   body: string[];
@@ -108,7 +151,7 @@ export interface SectorBloqueCtaDescarga {
 }
 
 /** Las dos listas con viñeta azul: "Beneficios de…" | "Aplicaciones en…". */
-export interface SectorBloqueBeneficiosAplicaciones {
+export interface SectorBloqueBeneficiosAplicaciones extends SectorBloqueBase {
   kind: "beneficiosAplicaciones";
   left: { title: string; items: string[] };
   right: { title: string; items: string[] };
