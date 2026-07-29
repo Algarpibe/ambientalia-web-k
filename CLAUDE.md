@@ -187,15 +187,39 @@ Estas se pagaron con horas de depuración. No las reinventes:
   del CTA de Industria a 390 iba con un déficit de −47.5 de contenido y, encima,
   con +74 de ritmo que no le tocaba; el total daba **+26.5** y parecía un fleco.
   Al corregir el ritmo (S7) apareció el −47.5 entero, que llevaba ahí desde el
-  principio. Consecuencia práctica: **medir por composición, no por el total de
-  la fila** — `padding-top`, contenido y `padding-bottom` por separado. El total
-  solo dice que algo cuadra o no cuadra; la composición dice qué.
+  principio. Ver «El principio» más abajo.
 - Anota en el doc de cada medida **viewport, DPR y fecha**. Los deltas solo se
   comparan entre medidas del mismo día y la misma configuración; el original es
   un sitio vivo.
 - Ojo con el servidor del clon al comparar: si corre con `next start`, tras
   editar hay que **parar, `npm run build` y relanzar**. Una página sin estilos
   (CSS 500) es un `next start` desincronizado de `.next`.
+
+## El principio: verificar contra la salida servida
+
+**Nunca contra la fuente que uno supone responsable.** Es la regla que gobierna
+las notas de método de arriba, y las tres veces que se ha aprendido en este
+proyecto costaron una tanda cada una:
+
+| se supuso | la salida servida decía |
+|---|---|
+| «el ritmo lo pone el componente del bloque» | lo ponía la SECCIÓN, y cada sector la corta donde quiere (S7) |
+| «el desfase del claim es +26.5» | eran **−47.5 de contenido tapados por +74 de ritmo** — dos errores anulándose |
+| «los enlaces a sectores los pinta `nav.ts`» | los pintaban **tres** ficheros, y dos ni se sospechaban |
+
+De ahí las dos formas de aplicarlo, que son la misma:
+
+- **Alturas** — se mide el DOM renderizado, y **por composición**: `padding-top`,
+  contenido y `padding-bottom` por separado. El total solo dice si cuadra o no;
+  la composición dice qué. Un Δ de cero puede ser dos errores que se anulan.
+- **Enlaces** — se recorre el HTML servido y se compara contra **las rutas que
+  emite el build**, no contra una lista escrita a mano. Guarda automática:
+  `scripts/qa/enlaces.mjs`. Correrla después de clonar cualquier página: las
+  rutas nuevas entran solas y sus enlaces pasan a ser fallo sin tocar la sonda.
+
+El corolario práctico: **cuando arregles algo transversal, no des por cerrada la
+clase hasta que una sonda recorra la salida y salga limpia.** Arreglar la
+instancia que tienes delante es cómo se llega a la tercera tanda del mismo bug.
 
 ## Comandos
 

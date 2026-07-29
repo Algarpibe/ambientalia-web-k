@@ -1,6 +1,6 @@
 # HANDOFF — arranque del arquetipo MONOGRÁFICO TÉCNICO
 
-> Escrito al cerrar la sesión del **2026-07-29**. Último commit: `6a481a4`.
+> Escrito al cerrar la sesión del **2026-07-29**.
 > Para arrancar sesión limpia. Léelo entero antes de tocar nada: son 5 minutos.
 
 ## Estado
@@ -73,20 +73,39 @@ que ya sirven — el argumento está desarrollado en la §3 del recon.
   de `docs/PENDIENTES-QA.md`: son el mismo hallazgo cuatro veces (componente
   calibrado contra una instancia, no contra un rango) y se resuelven en **una
   tanda única con criterio común**, con el catálogo de instancias ya completo.
-- **No dar por buena una localización de rutas sin `grep`.** La regla de rutas
-  locales estaba rota en **tres** ficheros y solo se arregló `nav.ts`. Quedan
-  `src/lib/footer.ts` y `src/lib/sectors.ts` (el carrusel de la home) — dos
-  minutos, misma medida de las 9 páginas.
+- **La regla de rutas locales ya está cerrada, y con guarda.** No la vuelvas a
+  cerrar a mano. Se creía rota en un fichero, resultó estarlo en **seis**
+  (`nav.ts`, `footer.ts`, el carrusel de la home, `HeaderNav`, el hero de
+  monitor y tres breadcrumbs). Ahora la vigila `scripts/qa/enlaces.mjs`.
+
+## Al terminar el monográfico: correr la guarda
+
+**`cd scripts/qa && node enlaces.mjs`** — con el clon servido y **después de
+`npm run build`**, que es de donde saca las rutas publicadas.
+
+En cuanto el monográfico emita sus rutas, los enlaces a EDAR y a Petróleo y gas
+que hoy son correctos **pasan a ser fallo automáticamente**, sin tocar la sonda:
+la regla se deriva de `.next/prerender-manifest.json`. Hay que localizarlos en
+los tres sitios donde vive un enlace a sector —`nav.ts`, `footer.ts` y
+`home-carrusel-sectores.ts`— y volver a correrla hasta que salga limpia.
+
+Sale con código 0 limpia y 1 sucia, así que se puede encadenar a `npm run check`
+si algún día interesa.
 
 ## Cómo levantar y comparar
 
 ```bash
 npm run build && npm run start          # standalone: tras editar, parar y rehacer
 cd scripts/qa && npm i --no-save puppeteer-core
+node enlaces.mjs                        # guarda de rutas locales (solo clon)
 node ruido.mjs 3                        # suelo de ruido, antes de juzgar nada
 node tree-cmp.mjs <sector> [ancho]      # árbol sección→fila, original vs clon
 node cmp-sector.mjs <sector> [ancho]    # anclas de texto
 ```
+
+El principio que las gobierna está en `CLAUDE.md` §«El principio»: **verificar
+contra la salida servida, nunca contra la fuente que uno supone responsable.**
+Se ha aprendido tres veces en este proyecto, una tanda cada una.
 
 Móvil **solo** con device metrics 390×844. Medidas congeladas en
 `scripts/qa/medidas/` — son la referencia vigente; el histórico está en git.

@@ -1382,18 +1382,45 @@ confianza).
 ⚠️ **Al arreglarlo salió que la regla estaba rota en TRES ficheros, no en uno.**
 El HTML servido seguía trayendo los hrefs originales de los 4 clonados desde:
 
+**Y al cerrarla por clase salieron dos más**, que ni el grep de sectores habría
+encontrado. Estado final, **todo resuelto el 2026-07-29**:
+
 | fichero | qué pinta | estado |
 |---|---|---|
-| `src/lib/nav.ts` | mega-menú de Sectores | ✅ 2026-07-29 |
-| `src/lib/footer.ts` | columna de Sectores del pie | **pendiente** (Urbano, Construcción y los demás) |
-| `src/lib/sectors.ts` | `SECTOR_SLIDES`, el carrusel de la home | **pendiente** |
+| `src/lib/nav.ts` | mega-menú de Sectores + "Inicio" + selector de idioma | ✅ |
+| `src/lib/footer.ts` | columna de Sectores del pie | ✅ |
+| `src/lib/home-carrusel-sectores.ts` | `SECTOR_SLIDES` (era `sectors.ts`) | ✅ |
+| `src/components/HeaderNav.tsx` | "Inicio" del menú principal y del móvil | ✅ |
+| `src/components/monitor/HeroProducto.tsx` | breadcrumb del hero → pasa a `Link` | ✅ |
+| `accesorios.ts` · `api.ts` · `software.ts` | breadcrumb "Inicio" ×3 | ✅ |
 
-Los dos pendientes son el mismo cambio de una línea por sector y tampoco mueven
-layout. No se tocaron porque el encargo nombraba `nav.ts`. Se cierran en dos
-minutos y conviene hacerlo con la misma medida de las 9 páginas.
+### La guarda: `scripts/qa/enlaces.mjs`
 
-Lección de método: **buscar el href, no el fichero.** `grep -rn "sectores/<slug>/" src/lib`
-antes de dar por cerrada una localización de rutas.
+Se cierra **por clase, no por instancia**. La sonda recorre el HTML **servido**
+de las páginas publicadas y compara cada href al original contra **las rutas que
+emite el build** (`.next/prerender-manifest.json`). Publicado → fallo; no
+publicado → correcto. **Sin lista manual**: cuando se clone el monográfico, sus
+enlaces pasan a ser fallo sin que nadie toque la sonda.
+
+Tres afinados que costaron una corrida cada uno y están en su cabecera:
+
+- **Solo anclas.** `<link rel="canonical">` y `og:url` **deben** apuntar al
+  original — declaran cuál es la página buena para los buscadores. Mirándolos,
+  la guarda pedía romper el SEO.
+- **Solo la rama `/es`.** El clon reproduce ese árbol. "Quitar el prefijo de
+  idioma, sea cual sea" daba la home francesa y la raíz como si fueran la
+  nuestra.
+- El localizador de origen exige que la cola **cierre el literal**: como
+  subcadena, el href de la home (`/es/`) casaba con toda línea que tuviera
+  cualquier URL del original.
+
+Verificación: **limpia** (1000 hrefs al original, 545 destinos externos
+distintos, ninguno con ruta local) y **las 18 lecturas de altura idénticas**.
+
+Lección de método, ya generalizada en `CLAUDE.md`: **verificar contra la salida
+servida, nunca contra la fuente que uno supone responsable.** Se arregló
+`nav.ts` dando por hecho que era el responsable, y el menú seguía trayendo
+hrefs del original desde otros dos ficheros.
 
 ---
 

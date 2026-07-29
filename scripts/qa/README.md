@@ -30,6 +30,7 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 
 | sonda | qué compara | cuándo usarla |
 |---|---|---|
+| `enlaces.mjs` | el HTML **servido** contra las rutas que emite el build | **después de clonar cualquier página**: cierra la regla de rutas locales |
 | `ruido.mjs [corridas]` | el original **consigo mismo**, N veces | **primero de todo**: fijar el suelo de ruido antes de juzgar un Δ |
 | `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |
 | `tree-cmp.mjs <sector> [ancho]` | original vs clon, **árbol sección→fila** del cuerpo | distinguir "la fila está mal colocada" de "el contenido mide otra cosa" |
@@ -37,6 +38,20 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 
 `<sector>` es `urbano` o `industria`; para dar de alta otro, añádelo a la tabla
 de URLs de cada sonda.
+
+### `enlaces.mjs` — la guarda de la regla de rutas locales
+
+Único caso que **no necesita el original**: solo el clon servido y el build.
+Sale con código 0 si está limpia y 1 si no, así que sirve de check.
+
+La regla, exacta: un href al dominio original cuyo path, quitado el prefijo
+`/es` y la barra final, **coincida con una ruta publicada** es un fallo. Si no
+coincide, es correcto y **debe pasar** — los sectores sin clonar tienen que
+seguir apuntando fuera. Las rutas salen de `.next/prerender-manifest.json`: sin
+lista manual, se automantiene.
+
+Mira **solo anclas**: `<link rel="canonical">` y `og:url` deben apuntar al
+original a propósito. Y solo la rama `/es`: la raíz y `/fr/` son otras páginas.
 
 ### Dos trampas ya pagadas
 
