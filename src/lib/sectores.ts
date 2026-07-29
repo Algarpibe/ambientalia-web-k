@@ -37,9 +37,10 @@ import { PRODUCTS_TABS } from "./products";
  *
  * El cuerpo de un sector no es una pila de secciones: en Divi son SECCIONES con
  * FILAS dentro, y quien edita decide en cuál cae cada bloque. Medido en los 6
- * sectores de la plantilla clásica (`qa/tree-todos.mjs`, 1440 y 390) solo
- * aparecen **dos formas de sección** y **dos de fila**, y de su combinación
- * salen los 4 valores de este campo:
+ * sectores de la plantilla clásica (`scripts/qa/tree-todos.mjs`, 1440 y 390;
+ * salida congelada en `scripts/qa/medidas/tree-todos-1440.json`) solo aparecen
+ * **dos formas de sección** y **dos de fila**, y de su combinación salen los 4
+ * valores de este campo:
  *
  * | valor | qué monta | ritmo medido (1440 / 390) |
  * |---|---|---|
@@ -158,7 +159,7 @@ export interface SectorBloqueBeneficiosAplicaciones extends SectorBloqueBase {
 }
 
 /** Claim azul de 37px a la izquierda + foto a la derecha. */
-export interface SectorBloqueClaimConFoto {
+export interface SectorBloqueClaimConFoto extends SectorBloqueBase {
   kind: "claimConFoto";
   claim: string;
   image: SectorImage;
@@ -170,7 +171,7 @@ export interface SectorBloqueClaimConFoto {
  * desplegar sistemas de monitorización ambiental son:"). Se declara aquí
  * porque forma parte del arquetipo.
  */
-export interface SectorBloqueListaSimple2Col {
+export interface SectorBloqueListaSimple2Col extends SectorBloqueBase {
   kind: "listaSimple2Col";
   intro?: string;
   left: string[];
@@ -182,7 +183,7 @@ export interface SectorBloqueListaSimple2Col {
  * Tampoco la usa Urbano. Sin construir: cuando toque, medir antes el módulo
  * `et_pb_map` — lleva API key de Google y no se puede clonar tal cual.
  */
-export interface SectorBloqueMapaProyectos {
+export interface SectorBloqueMapaProyectos extends SectorBloqueBase {
   kind: "mapaProyectos";
   title: string;
   intro?: string;
@@ -295,9 +296,13 @@ export const SECTOR_URBANO: SectorPage = {
     ],
   },
 
+  // flujo medido: cta `seccionRasa` · beneficios `seccion` · claim `filaPegada`
+  // (el CTA va en su propia sección sin ritmo; las listas abren la segunda y el
+  //  claim es otra fila de ESA, pegada — el `pb 14` cierra tras el claim)
   body: [
     {
       kind: "ctaDescarga",
+      flujo: "seccionRasa",
       title: "¿Necesitas medir la contaminación en tu ciudad?",
       body: [
         "Descarga ahora el informe completo y descubre cómo Bilbao ha reducido la contaminación atmosférica y creado una ciudad más sostenible.",
@@ -338,6 +343,7 @@ export const SECTOR_URBANO: SectorPage = {
     },
     {
       kind: "claimConFoto",
+      flujo: "filaPegada",
       claim:
         "Protege la salud de tus ciudadanos tomando las mejores decisiones basadas en datos fiables, precisos y en tiempo real.",
       image: {
@@ -471,13 +477,13 @@ export const SECTOR_URBANO: SectorPage = {
  * que Urbano y estrena los dos tipos que aquél no usa: `listaSimple2Col` y
  * `mapaProyectos` (41 pines).
  *
- * Dos desviaciones conocidas respecto al original, las dos por límites del
- * COMPONENTE y no del modelo de datos — informe en PENDIENTES-QA.md:
- *   · su CTA de descarga usa la 2ª piel del shortcode `calls`: la foto va de
- *     `background-image` de la caja y el texto se desplaza a la derecha, en vez
- *     de la foto como `<img>` a la izquierda que pinta `CtaDescarga`;
- *   · el azul del titular del hero es `#0c71c3` (azul por defecto de Divi), no
- *     el `#0075C9` de marca que `SectorHero` tiene cableado.
+ * Poblarlo destapó **cuatro** cosas que el arquetipo no sabía, y las cuatro
+ * resultaron ser campos que le faltaban al content type, no retoques de CSS
+ * (informe en PENDIENTES-QA.md). Ya están las cuatro:
+ *   · `variante: "fondo"` — la 2ª piel del shortcode `calls`;
+ *   · `headingColor` — su hero usa `#0c71c3`, no el `#0075C9` de marca;
+ *   · la rítmica Divi de párrafos del `.calls-text` (se veía con dos, no con uno);
+ *   · `flujo` — sus cinco bloques son cinco FILAS de la misma sección (S7).
  */
 export const SECTOR_INDUSTRIA: SectorPage = {
   slug: "control-de-emisiones-industriales",
@@ -522,6 +528,9 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     ],
   },
 
+  // flujo medido: los CINCO bloques son cinco filas de la MISMA sección, y solo
+  // el mapa vuelve a separarse con el `pt` de fila. Entre las tres primeras y el
+  // claim no hay más que el `pb` de la fila de arriba (`filaPegada`).
   body: [
     {
       kind: "beneficiosAplicaciones",
@@ -556,6 +565,7 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     },
     {
       kind: "ctaDescarga",
+      flujo: "filaPegada",
       title: "¿Quieres controlar el impacto de tus procesos en la calidad del aire?",
       body: [
         "Descarga el informe técnico [PDF] sobre la red de control de la calidad del aire desplegada en la planta de Cemex.",
@@ -572,6 +582,7 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     },
     {
       kind: "listaSimple2Col",
+      flujo: "filaPegada",
       intro: "Algunos de las aplicaciones donde desplegar sistemas de monitorización ambiental son:",
       left: [
         "Industria cementera",
@@ -592,6 +603,7 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     },
     {
       kind: "claimConFoto",
+      flujo: "filaPegada",
       claim:
         "Identifica qué operaciones o procesos producen más gases y partículas en industrias.",
       image: {
@@ -601,6 +613,7 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     },
     {
       kind: "mapaProyectos",
+      flujo: "fila",
       title: "Proyectos por todo el mundo",
       intro: "Algunos de los proyectos de monitorización medioambiental en diferentes industrias.",
       pins: [

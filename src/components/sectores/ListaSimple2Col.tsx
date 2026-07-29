@@ -26,23 +26,22 @@ function Lista({ items }: { items: string[] }) {
   );
 }
 
+/** Pinta solo el contenido de su fila; `SectorBody` monta sección y retícula. */
 export function ListaSimple2Col({ block }: { block: SectorBloqueListaSimple2Col }) {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]">
-        {block.intro ? (
-          <p className="text-[18px] leading-[30.6px] text-[#333]">{block.intro}</p>
-        ) : null}
+    <>
+      {block.intro ? (
+        <p className="text-[18px] leading-[30.6px] text-[#333]">{block.intro}</p>
+      ) : null}
 
-        <div className="flex flex-col md:flex-row md:gap-[5.5%]">
-          <div className="w-full md:w-[47.25%]">
-            <Lista items={block.left} />
-          </div>
-          <div className="w-full md:w-[47.25%]">
-            <Lista items={block.right} />
-          </div>
+      <div className="flex flex-col md:flex-row md:gap-[5.5%]">
+        <div className="w-full md:w-[47.25%]">
+          <Lista items={block.left} />
+        </div>
+        <div className="w-full md:w-[47.25%]">
+          <Lista items={block.right} />
         </div>
       </div>
-    </section>
+    </>
   );
 }

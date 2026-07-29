@@ -9,7 +9,11 @@ import type { SectorBloqueBeneficiosAplicaciones } from "@/lib/sectores";
  *
  * El `<h3>` lleva **tamaño de h2 de sección** (44/55 desktop, 35/43.75 móvil)
  * y va al 80% del ancho de la columna, que es lo que hace que envuelva como en
- * el original. La sección tiene `margin-top: -14` (Divi custom, medido).
+ * el original.
+ *
+ * El bloque pinta **solo el contenido de su fila**: la `<section>` y la retícula
+ * las monta `SectorBody` a partir del `flujo` del bloque (S7). Aquí la sección
+ * llevaba `-mt-14 / pt 57.59 / pb 14` cableados, que es el ritmo de `"seccion"`.
  */
 function ListaConVinetas({ items }: { items: string[] }) {
   return (
@@ -65,13 +69,9 @@ export function BeneficiosAplicaciones({
   block: SectorBloqueBeneficiosAplicaciones;
 }) {
   return (
-    <section className="-mt-[14px] w-full bg-white pb-[14px] pt-[50px] md:pt-[57.5938px]">
-      <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]">
-        <div className="flex flex-col md:flex-row md:gap-[5.5%]">
-          <Columna titulo={block.left.title} items={block.left.items} />
-          <Columna titulo={block.right.title} items={block.right.items} ultima />
-        </div>
-      </div>
-    </section>
+    <div className="flex flex-col md:flex-row md:gap-[5.5%]">
+      <Columna titulo={block.left.title} items={block.left.items} />
+      <Columna titulo={block.right.title} items={block.right.items} ultima />
+    </div>
   );
 }
