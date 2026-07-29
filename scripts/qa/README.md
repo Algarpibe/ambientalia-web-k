@@ -30,7 +30,7 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 
 | sonda | qué compara | cuándo usarla |
 |---|---|---|
-| `enlaces.mjs` | el HTML **servido** contra las rutas que emite el build | **después de clonar cualquier página**: cierra la regla de rutas locales |
+| `enlaces.mjs` | el HTML **servido** contra las rutas que emite el build, **en las dos direcciones** | **después de clonar cualquier página**: cierra la regla de rutas locales y caza los 404 internos |
 | `ruido.mjs [corridas]` | el original **consigo mismo**, N veces | **primero de todo**: fijar el suelo de ruido antes de juzgar un Δ |
 | `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |
 | `tree-cmp.mjs <sector> [ancho]` | original vs clon, **árbol sección→fila** del cuerpo | distinguir "la fila está mal colocada" de "el contenido mide otra cosa" |
@@ -52,6 +52,24 @@ lista manual, se automantiene.
 
 Mira **solo anclas**: `<link rel="canonical">` y `og:url` deben apuntar al
 original a propósito. Y solo la rama `/es`: la raíz y `/fr/` son otras páginas.
+
+**Cubre las dos direcciones.** La segunda: un href **interno** que no
+corresponda a ruta emitida es un 404, y eso **ninguna medida de altura lo ve** —
+la página que enlaza sigue midiendo lo mismo. Qué se descarta de antemano, para
+que el informe no se llene de ruido: anclas puras (`#x`), esquemas (`mailto:`,
+`tel:`…), y las rutas con extensión, que son ficheros de `public/` y se cuentan
+aparte. La query y el hash se recortan antes de comparar. La **barra final** se
+recorta también, pero va a **AVISOS y no a fallos**: con `trailingSlash`
+desactivado, `/x/` redirige a `/x` — infringe la regla del proyecto, no rompe.
+
+Verificada **en negativo** (2026-07-29): con un href interno inventado, la
+guarda lo caza, da su `fichero:línea` y sale con código 1. Sin esa prueba,
+"limpio" solo significaba que la sonda no hacía nada.
+
+⚠️ **Solo ve lo que llega al HTML servido.** Un enlace que se pinte únicamente
+en cliente es invisible para ella. Y ojo con medir contra un servidor viejo: la
+primera pasada del test en negativo salió "limpia" porque `next start` seguía
+sirviendo el build anterior. Se mata **por puerto**, no con `pkill`.
 
 ### Dos trampas ya pagadas
 

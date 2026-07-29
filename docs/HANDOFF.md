@@ -89,8 +89,14 @@ la regla se deriva de `.next/prerender-manifest.json`. Hay que localizarlos en
 los tres sitios donde vive un enlace a sector —`nav.ts`, `footer.ts` y
 `home-carrusel-sectores.ts`— y volver a correrla hasta que salga limpia.
 
-Sale con código 0 limpia y 1 sucia, así que se puede encadenar a `npm run check`
-si algún día interesa.
+La guarda cubre **las dos direcciones**: un href que va al original teniendo
+copia local, y un href interno que no corresponde a ruta emitida (un 404, que
+ninguna medida de altura ve). Verificada en negativo. Sale con código 0 limpia y
+1 sucia, así que se puede encadenar a `npm run check` si algún día interesa.
+
+Al medir contra ella, **mata el servidor por puerto, no con `pkill`**: la
+primera pasada del test en negativo salió "limpia" porque `next start` seguía
+sirviendo el build anterior.
 
 ## Cómo levantar y comparar
 

@@ -97,12 +97,55 @@ function origen(href) {
   return golpes.size ? [...golpes].join(" · ") : "(no está en src/ literal — plantilla o dato derivado)";
 }
 
+/* ─────────── dirección 2: el href interno, ¿existe como ruta? ───────────── */
+
+/**
+ * Un typo en un href interno da 404 y **ninguna medida de altura lo ve**: la
+ * página que enlaza sigue midiendo lo mismo. Por eso la guarda mira las dos
+ * direcciones.
+ *
+ * Qué se descarta de antemano, para que el informe no se llene de ruido —
+ * decidido antes de correrla, no después de ver la salida:
+ *   · **anclas puras** (`#seccion`) → misma página, no son navegación;
+ *   · **esquemas** `mailto:` `tel:` `javascript:` `data:` → no son rutas;
+ *   · **query y hash** se recortan antes de comparar (`/x?a=1#b` → `/x`);
+ *   · **barra final** se recorta para la comparación. `trailingSlash` está
+ *     desactivado, así que `/x/` redirige a `/x`: no está roto, pero infringe
+ *     la regla del proyecto → va a AVISOS, no a fallos;
+ *   · **rutas con extensión** (`.pdf`, `.svg`…) son ficheros de `public/`, no
+ *     rutas emitidas: se cuentan aparte y no se juzgan aquí.
+ *
+ * La comparación es **exacta contra el conjunto de rutas publicadas**, nunca
+ * por subcadena — mismo tropiezo que ya costó una corrida en la otra dirección.
+ */
+function clasificaInterno(href) {
+  if (/^[a-z][a-z0-9+.-]*:/i.test(href)) return null; // http:, mailto:, tel:…
+  if (href.startsWith("//")) return null; // protocol-relative → externo
+  if (href.startsWith("#")) return null; // ancla pura
+  if (!href.startsWith("/")) return null; // relativo al documento: no se usa
+  const sinHash = href.split("#")[0].split("?")[0];
+  if (sinHash === "") return null; // era solo query/hash
+  if (/\.[a-z0-9]{2,5}$/i.test(sinHash)) return { activo: false }; // fichero
+  const ruta = sinHash.replace(/\/+$/, "") || "/";
+  return {
+    ruta,
+    roto: !PUBLICADAS.has(ruta),
+    aviso: sinHash !== "/" && sinHash.endsWith("/") ? "barra final" : null,
+  };
+}
+
 /* ──────────────────────────── recorrido ────────────────────────────────── */
 
 const PAGINAS = ["/", ...[...PUBLICADAS].filter((r) => r !== "/")].sort();
 const fallos = [];
+const rotos = [];
+const avisos = [];
+const vistosRotos = new Set();
+const vistosAvisos = new Set();
 let totalHrefs = 0;
 let externosOk = 0;
+let internos = 0;
+let ficheros = 0;
 
 for (const ruta of PAGINAS) {
   const res = await fetch(BASE + ruta);
@@ -132,18 +175,62 @@ for (const ruta of PAGINAS) {
       fallos.push({ pagina: ruta, href, local, origen: origen(href) });
     else externosOk++;
   }
+
+  /* ── dirección 2: hrefs INTERNOS que no corresponden a ruta emitida ────── */
+  for (const m of html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
+    const href = m[1];
+    const r = clasificaInterno(href);
+    if (!r) continue;
+    if (r.activo === false) {
+      ficheros++;
+      continue;
+    }
+    internos++;
+    if (r.aviso && !vistosAvisos.has(href)) {
+      vistosAvisos.add(href);
+      avisos.push({ href, ruta: r.ruta, motivo: r.aviso, origen: origen(href) });
+    }
+    if (r.roto && !vistosRotos.has(href)) {
+      vistosRotos.add(href);
+      rotos.push({ pagina: ruta, href, ruta: r.ruta, origen: origen(href) });
+    }
+  }
 }
 
 /* ──────────────────────────── informe ──────────────────────────────────── */
 
 console.log(`\nRutas publicadas (del build): ${[...PUBLICADAS].sort().join(" · ")}`);
-console.log(`Páginas recorridas: ${PAGINAS.length}  ·  hrefs al original: ${totalHrefs}`);
+console.log(
+  `Páginas recorridas: ${PAGINAS.length}  ·  hrefs al original: ${totalHrefs}` +
+    `  ·  hrefs internos: ${internos}  ·  a ficheros: ${ficheros}`,
+);
 
-if (!fallos.length) {
-  console.log(`\n✅ LIMPIO — ningún enlace apunta fuera a una ruta ya publicada.`);
-  console.log(`   (${externosOk} destinos externos distintos, correctos: no están clonados)`);
-  process.exit(0);
+/* ── dirección 2 primero: un interno roto es un 404, más grave que un href
+      que va al original teniendo copia ────────────────────────────────────── */
+if (rotos.length) {
+  console.log(`\n❌ ${rotos.length} href interno(s) NO corresponden a ruta emitida (404):\n`);
+  for (const r of rotos) {
+    console.log(`  ${r.href}`);
+    console.log(`      normaliza a  : ${r.ruta}`);
+    console.log(`      origen       : ${r.origen}`);
+    console.log();
+  }
 }
+
+if (avisos.length) {
+  console.log(`\n⚠ ${avisos.length} href interno(s) con barra final (redirigen, no rompen):`);
+  for (const a of avisos) console.log(`  ${a.href}  →  ${a.ruta}   ${a.origen}`);
+  console.log();
+}
+
+if (!fallos.length && !rotos.length) {
+  console.log(`\n✅ LIMPIO en las dos direcciones.`);
+  console.log(`   · saliente: ningún enlace apunta fuera a una ruta ya publicada`);
+  console.log(`     (${externosOk} destinos externos distintos, correctos: no están clonados)`);
+  console.log(`   · entrante: los ${internos} hrefs internos corresponden a rutas emitidas`);
+  process.exit(avisos.length ? 1 : 0);
+}
+if (!fallos.length) process.exit(1);
 
 // agrupado por HREF distinto, que es la unidad que se arregla
 const porHref = new Map();
