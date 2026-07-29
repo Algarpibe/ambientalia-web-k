@@ -114,7 +114,7 @@
 | P1 | ~~Footer TB (esta página)~~ | ✅ 2026-07-27 | Resuelto — ver «Footer TB» en la lista de corregidos: `template="tb"` con secciones a ancho completo, fila 80%, li 30.6+7, paddings % del padre. Desktop exacto, móvil +0.6. |
 | P2 | ~~Header a <~1330px~~ | ✅ 2026-07-27 | Resuelto — régimen responsive ≤1379px en `HeaderNav` (ver «Header P2» en corregidos). No era un wrap del texto: el original tiene TRES regímenes de fila por ancho y a ≤1379 mete todo el menú en UNA fila. M4 re-verificada sin regresión. |
 | P3 | Fila 2 móvil | −209 | Ritmo de módulos móvil de la col derecha (space-y 28 vs mezcla Divi 18/30). Desktop quedó −90. |
-| P4 | Artículos y Guías | −55 d / −194 m | Alturas dependientes del CONTENIDO: los 3 posts van congelados (decisión §4) y el original los sortea — no comparable px a px. |
+| P4 | Artículos y Guías | −55 d / −194 m | **La ÚNICA fuente conocida de dispersión de todo el sitio** — ver «P4, ascendido» más abajo. Alturas dependientes del CONTENIDO: los 3 posts van congelados (decisión §4) y el original los sortea — no comparable px a px. |
 | P5 | Sondas/Paquetes móvil | −94 / −43 | Acordeón inline `lista-contenido` algo compacto vs original. |
 | P6 | Especificaciones móvil | +74 | Wraps residuales de la tabla (original trunca labels con overflow). |
 | P7 | Chips fila 1 | 10 vs 9 | A 1280 el clon mete NMHC en la 1ª fila (geometría de chip idéntica; es el whitespace inline de li del original). |
@@ -1285,6 +1285,102 @@ propia); el bloque pinta titular, intro y la lista de pines en la caja de 570.
 
 ---
 
+---
+
+## /sectores — 3º y 4º sector, solo datos (2026-07-29)
+
+> **Construcción** (`contaminacion-por-construccion`) e **Investigación y
+> consultoría** (`estudio-de-la-contaminacion-atmosferica`), poblados **sin
+> tocar una sola línea de componente**. `npm run check`: 0 errores.
+
+Elegidos por lo que ejercitan, no por completar la lista:
+
+- **Construcción** es el único de los 8 que pone el CTA de descarga **por
+  delante** de las listas (`cta seccionRasa · beneficios seccion · claim
+  filaPegada`). Invierte el orden respecto a Industria y es el que de verdad
+  prueba la regla de agrupación de `SectorBody`: dos secciones, la primera rasa.
+- **Investigación** es el **caso mínimo**: dos bloques, una sección, y el único
+  sector **sin CTA de descarga** (0 `.calls`). Prueba que el cuerpo es libre de
+  verdad y no una plantilla con huecos opcionales.
+
+### Por qué Puertos y Minería quedan fuera
+
+**Decisión deliberada, no un pendiente.** Los dos son **permutaciones de una
+topología ya validada**: Puertos es `beneficios seccion · cta fila · claim
+filaPegada · mapa fila` y Minería `beneficios seccion · claim · cta filaPegada ·
+mapa fila` — las mismas piezas que Industria en otro orden, sin un solo tipo de
+bloque ni valor de `flujo` que no esté ya ejercitado.
+
+Su único aporte diferencial son **30 y 32 pines** de datos para `mapaProyectos`,
+que es un **placeholder deliberado** (S3: el mapa de Google no se clona, haría
+falta clave propia de GCP). O sea: coste de transcripción real, información
+nueva **cero**.
+
+Para una **biblioteca de arquetipos**, que es lo que se está construyendo, no
+aportan. Si algún día el objetivo cambia a clonar el sitio entero, entran — los
+datos están inventariados y las sondas los miden sin tocar nada.
+
+### Medición (2026-07-29, original vs clon, misma corrida)
+
+**Cuerpo exacto en los dos sectores y en los dos anchos.** Todas las anclas del
+cuerpo a Δ0:
+
+| ancla | Construcción @1440 | Construcción @390 | Investigación @1440 | Investigación @390 † |
+|---|---|---|---|---|
+| cta | **−0.1** | **0** | (no tiene) | (no tiene) |
+| beneficios | **0** | **0** | **0** | **0** |
+| aplicaciones | **0** | **0** | **0** | **0** |
+| claim | **0** | **0** | **0** | **0** |
+| soluciones | −0.1 | −35.1 (S10) | **0** | **0** |
+| proyectos | **0** | −45.3 | −0.1 | −10.2 |
+
+† Investigación @390 lleva una base de **+11.2** en el `h1` (S11); la columna da
+el valor **relativo a esa base**, según la regla 2 del protocolo.
+
+Sin regresión: las 7 páginas anteriores mantienen su altura **al píxel** en los
+dos anchos (home 11870/19182 · monitor 12410/21854 · accesorios 10863/21180 ·
+software 11711/20844 · api 5289/9125 · urbano 6122/11064 · industria
+7171/12566). `/sectores` da **404** — el índice no está clonado, así que pasar
+`SECTORES_PUBLICADOS` de 2 a 4 entradas solo emite rutas nuevas y no cambia
+ninguna página existente.
+
+### Dos hallazgos NUEVOS, sin arreglar (son de componente)
+
+Los dos salieron **porque estos dos sectores tienen textos que los anteriores no
+tenían**. Es justo para lo que sirve poblar más instancias.
+
+**S10 · `CtaBannerSlider` tiene alto fijo a 390 y el original crece con el
+titular.** Medido: el slider del clon mide **345.1 en Construcción y 345.1 en
+Urbano** — el mismo. El del original no: en Urbano coincide (Δ0 antes y después
+del slider) y en Construcción es ~35 más alto, porque su primera diapositiva
+—*"Controla la calidad del aire en las obras y contribuye al bienestar de las
+personas"*— envuelve a más líneas. De ahí el **−35.1** que aparece de golpe
+entre el claim y "Nuestras soluciones", y que arrastra el resto de la página.
+No afecta a 1440 (Δ−0.1).
+
+**S11 · `CabeceraSector` crece de más cuando el kicker envuelve a dos líneas.**
+Investigación tiene el kicker más largo de los 8 ("Investigación y consultoría")
+y a 390 envuelve. El original lo absorbe con **+19.4** sobre la posición del
+`h1` de los demás sectores (189.4 → 208.8); el clon con **+30.6**, que es su
+`line-height` completo. De ahí los **+11.2** de base, que arrastran toda la
+página. A 1440 no envuelve y el Δ es 0.
+
+Ninguno de los dos se toca en esta tanda: el encargo era **solo datos**, y
+tocarlos habría ocultado precisamente el dato de que la plantilla aguanta 4
+sectores sin una línea de componente.
+
+### Lo que queda incumplido y no entraba en el encargo
+
+**`nav.ts` apunta los 8 sectores al original**, incluidos los 4 ya clonados, así
+que la **regla de rutas locales de `CLAUDE.md` está incumplida** para Urbano,
+Industria, Construcción e Investigación. **Es anterior a esta tanda** — ya
+pasaba con Urbano e Industria desde que se clonaron. `SECTORES_INDICE` sí se ha
+actualizado (`clonado: true` + href local en los 4). Arreglar `nav.ts` es
+cambiar 4 hrefs y no mueve un píxel, pero toca el menú de todas las páginas y
+quedaba fuera de "solo datos en sectores.ts".
+
+---
+
 ### S9 · Tres residuos que destapó la medida de S7, sin arreglar (2026-07-29)
 
 > **Reclasificados contra el suelo de ruido el 2026-07-29. Los cuatro
@@ -1347,6 +1443,35 @@ pb 10 + intro 30.6 + mt 30` = 695.6 y el original mide 682.6. Recordatorio de
 que `MapaProyectos` es un **placeholder deliberado** (el mapa de Google no se
 clona), así que afinar su cabecera solo tiene sentido cuando se decida qué se
 pinta dentro.
+
+### P4, ascendido: de fleco heredado a suelo de ruido del proyecto (2026-07-29)
+
+P4 llevaba desde la Fase 5 anotado como "heredado, no es defecto, no comparable
+px a px". **Eso se queda corto y hay que leerlo al revés.** Medido con
+`scripts/qa/ruido.mjs` (3 corridas × 7 páginas × 2 anchos = 42 cargas del
+original), P4 no es un fleco de una página: es **la única fuente conocida de
+dispersión de todo el sitio**.
+
+| | antes | ahora |
+|---|---|---|
+| qué es | un residuo heredado de una zona | **el suelo de ruido del proyecto** |
+| dónde | "Artículos y Guías" | **exactamente una fila por página**, siempre ésa |
+| cuánto | "no comparable" | **27, 54 u 81** — uno, dos o tres renglones de 27px |
+| causa | "el original los sortea" | la misma, **y ya está confirmada como la única** |
+| fuera de ahí | sin medir | **dispersión 0**, tres corridas al céntimo |
+
+Consecuencias prácticas, que es lo que lo hace un ascenso y no una nota:
+
+1. **Es la magnitud contra la que se juzga cualquier Δ.** Un residuo del cuerpo
+   no se compara contra 81: se compara contra **0**.
+2. **Acota dónde NO mirar.** Si un desfase aparece por primera vez en el bloque
+   de artículos o de ahí abajo y vale ≤81, no se investiga.
+3. **Explica retroactivamente medidas viejas.** Los `9176 / 9203 / 9230` de tres
+   cargas del original en la QA de /accesorios son exactamente 27 y 27: era esto,
+   ya visible entonces sin que se le pusiera nombre.
+4. **No se puede arreglar y no se intenta.** El módulo es aleatorio en origen;
+   los 3 posts van congelados por decisión §4. Lo que cambia es que ahora está
+   *cuantificado*, y por eso sirve de instrumento.
 
 ### Reclasificación contra el suelo de ruido (2026-07-29)
 

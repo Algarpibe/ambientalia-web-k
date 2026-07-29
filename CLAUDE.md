@@ -89,6 +89,14 @@ también la decisión de diseño que hereda quien dé de alta un contenido nuevo
 | `/accesorios` | CATÁLOGO (CPT `solutions`) | `docs/research/accesorios/` |
 | `/software-de-medicion-calidad-del-aire` | SOFTWARE/PLATAFORMA | `docs/research/software/` |
 | `/kunak-api` | Variante **corta** del anterior — no es arquetipo nuevo | `docs/research/kunak-api/` |
+| `/sectores/[slug]` | SECTOR / SOLUCIÓN VERTICAL — **ruta dinámica, 4 de los 8 poblados** | `docs/research/sectores/` |
+
+Los 4 sectores vivos (Urbano · Industria · Construcción · Investigación) salen
+de **una sola plantilla**: dar de alta uno es añadir un `SectorPage` a
+`SECTORES_PUBLICADOS` en `src/lib/sectores.ts`, **sin tocar código**. Puertos y
+Minería se dejan fuera a propósito (son permutaciones de una topología ya
+validada — razón en `docs/PENDIENTES-QA.md`), y EDAR y Petróleo y gas **no son
+este arquetipo**: ver `docs/research/monografico-tecnico/`.
 
 ## Regla de rutas locales
 

@@ -763,6 +763,405 @@ export const SECTOR_INDUSTRIA: SectorPage = {
   footerStripImage: "/images/uploads/2023/01/industry-1920x1024-1.jpg",
 };
 
+/* ───────────────────────── datos: Construcción ─────────────────────────── */
+
+/**
+ * Tercer sector, 2026-07-29, **solo datos**. Es el único de los 8 que pone el
+ * CTA de descarga POR DELANTE de las listas, así que su cuerpo es
+ * `cta seccionRasa · beneficios seccion · claim filaPegada`: invierte el orden
+ * respecto a Industria y es el que de verdad ejercita la regla de agrupación de
+ * `SectorBody` — dos secciones, y la primera rasa.
+ *
+ * Comparte forma con Urbano pero **no** su piel de CTA: aquí el shortcode
+ * `calls` va con `one-column call-fondo-blanco espacio-blanco-derecha`, o sea
+ * `variante: "fondo"`, como Industria. Y el azul del hero es el `#0c71c3` de
+ * Divi, no el de marca — el claim sí usa el de marca.
+ *
+ * Un solo caso de éxito (los demás sectores traen 3): no es un recorte, es lo
+ * que publica el original.
+ */
+export const SECTOR_CONSTRUCCION: SectorPage = {
+  slug: "contaminacion-por-construccion",
+
+  seo: {
+    title: "Medición de contaminación por construcción | Kunak AIR",
+    description:
+      "Mide de forma precisa el impacto en la calidad del aire o la contaminación por construcción y haz tus obras más sostenibles.",
+    ogImage: "/images/uploads/2023/01/construction-1920x1024-1.jpg",
+    canonical: "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+  },
+
+  breadcrumb: [
+    // ruta local: esta página ya está clonada (src/app/page.tsx)
+    { label: "Inicio", href: "/" },
+    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    { label: "Contaminación por construcción" },
+  ],
+
+  header: {
+    kicker: "Construcción",
+    title: "Contaminación por construcción",
+    image: "/images/uploads/2023/01/construction-1920x1024-1.jpg",
+  },
+
+  hero: {
+    image: {
+      src: "/images/uploads/2023/02/works-demolitions.jpg",
+      alt: "contaminación por construcción",
+    },
+    ctas: [
+      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
+      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+    ],
+    heading:
+      "Controla la calidad del aire en obras de construcción y demolición con datos de alta precisión.",
+    headingColor: "#0c71c3",
+    paragraphs: [
+      "La construcción representa uno de los principales sectores económicos, exponente del grado de progreso de las sociedades.",
+      "Sin embargo, su desarrollo no está exento de generar inconvenientes siendo necesario medir la contaminación que genera mediante sistemas de control ambiental.",
+      "Esto es especialmente notable en el caso de los trabajos de demolición (emisiones de polvo) o la presencia de maquinaria pesada (gases contaminantes, partículas en suspensión y ruido).",
+      "Monitoriza el impacto de tus obras en la calidad del aire de forma continua y toma decisiones que protejan la salud de las personas.",
+      "Los productos y servicios de Kunak responden plenamente a los requisitos solicitados por las empresas constructoras o las administraciones mediante planes de control medioambiental en las obras.",
+    ],
+  },
+
+  // flujo medido: cta `seccionRasa` · beneficios `seccion` · claim `filaPegada`
+  body: [
+    {
+      kind: "ctaDescarga",
+      flujo: "seccionRasa",
+      title: "¿Necesitas controlar el impacto ambiental de tu obra?",
+      body: [
+        "Descarga ahora el informe completo y descubre cómo redujeron la contaminación del aire y cumplieron la normativa ambiental durante la demolición del estadio Vicente Calderón.",
+      ],
+      cta: {
+        label: "Descargar informe",
+        href: "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+        external: true,
+      },
+      image: "/images/uploads/2024/11/cta-informe-tecnico-works.jpg",
+      variante: "fondo",
+    },
+    {
+      kind: "beneficiosAplicaciones",
+      left: {
+        title: "Beneficios del control ambiental en la construcción:",
+        items: [
+          "Prevención de posibles problemas y quejas.",
+          "Protección de la salud pública.",
+          "Cumplimiento de la normativa ambiental.",
+          "Aumento del prestigio de las constructoras.",
+          "Fomento de prácticas sostenibles.",
+          "Mayor bienestar y seguridad de los trabajadores y poblaciones cercanas.",
+          "Protección de los hábitats naturales y los espacios verdes.",
+        ],
+      },
+      right: {
+        title: "Aplicaciones en las obras y demoliciones:",
+        items: [
+          "Evaluación del impacto ambiental.",
+          "Cumplimiento normativo.",
+          "Identificación y control de los contaminantes.",
+          "Optimización de operaciones.",
+          "Limitación del impacto sobre la calidad del aire de la actividad constructiva.",
+          "Identificación de operaciones potencialmente problemáticas.",
+          "Detección de fuentes de emisión atmosférica y acústica.",
+          "Certificación de proyectos sostenibles (por ejemplo Certificado BREEAM®).",
+        ],
+      },
+    },
+    {
+      kind: "claimConFoto",
+      flujo: "filaPegada",
+      claim:
+        "Accede a datos ambientales de forma continua y toma decisiones basadas en datos fiables.",
+      image: {
+        src: "/images/uploads/2023/05/Accede-a-datos-medioambientales-en-obras-de-forma-continua.jpg",
+        alt: "medición contaminación por construcción",
+      },
+    },
+  ],
+
+  ctaSlides: [
+    {
+      heading:
+        "Controla la calidad del aire en las obras y contribuye al bienestar de las personas",
+      cta: { label: "Cuéntanos tu caso", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/air-quality-at-construction-sites.jpg",
+    },
+    {
+      heading: "Minimiza los riesgos desplegando una red de control del polvo en suspensión",
+      cta: { label: "Mide tus emisiones", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/road-works.jpg",
+    },
+    {
+      heading: "Controla tus obras con datos precisos en tiempo real",
+      cta: { label: "Optimiza tus operaciones", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/Control-the-impact-of-your-operations.jpg",
+    },
+  ],
+
+  soluciones: SECTOR_SOLUCIONES,
+
+  proyectos: {
+    title: "Últimos proyectos",
+    cta: {
+      label: "Ver todos los casos de éxito",
+      href: "https://kunakair.com/case-studies/",
+      external: true,
+    },
+    /** UNO solo: es lo que publica el original en este sector. */
+    posts: [
+      {
+        client: "AFC Ingenieros",
+        sector: "Obras",
+        sectorHref: "https://kunakair.com/es/sector/obras/",
+        title: "Vigilancia ambiental en la demolición del estadio Vicente Calderón",
+        image:
+          "/images/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+      },
+    ],
+  },
+
+  articulos: {
+    title: "Artículos y Guías",
+    cta: {
+      label: "Amplia tus conocimientos con nuestras guías",
+      href: "https://kunakair.com/es/recursos/guias/",
+    },
+    /** P4: el original sortea los 3 posts en cada carga; trío congelado el 2026-07-29. */
+    posts: [
+      {
+        title:
+          "Contaminación del aire por obras, analizando el impacto ambiental de la construcción",
+        date: "Ago 31, 2023",
+        image: "/images/uploads/2023/08/contaminacion-del-aire-por-obras-1024x683.jpg",
+        href: "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+      },
+      {
+        title:
+          "Monitorización del aire en proyectos de remediación: control de emisiones y cumplimiento ambiental",
+        date: "Abr 28, 2026",
+        image: "/images/uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak-1024x683.jpeg",
+        href: "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+      },
+      {
+        title:
+          "Impacto ambiental de la industria cementera: desafíos y soluciones tecnológicas",
+        date: "Feb 21, 2022",
+        image:
+          "/images/uploads/2022/02/the-cement-industry-and-the-environment-air-quality-monitoring.jpg",
+        href: "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+      },
+    ],
+  },
+
+  taxonomy: { label: "Obras", href: "https://kunakair.com/es/sector/obras/" },
+
+  footerStripImage: "/images/uploads/2023/01/construction-1920x1024-1.jpg",
+};
+
+/* ────────────── datos: Investigación y consultoría (caso mínimo) ────────── */
+
+/**
+ * Cuarto sector, 2026-07-29, **solo datos**. Es el **caso mínimo del
+ * arquetipo**: dos bloques y una sola sección
+ * (`beneficios seccion · claim filaPegada`), y el único de los 8 **sin CTA de
+ * descarga** — 0 `.calls` en el original. Sirve de prueba de que el cuerpo es
+ * de verdad libre y no una plantilla con huecos opcionales.
+ *
+ * ⚠️ TEXTO VERBATIM: el 2º párrafo del hero dice "datos fiales" en el original.
+ * Es una errata suya y **no se corrige** (misma regla que `src/lib/software.ts`).
+ */
+export const SECTOR_INVESTIGACION: SectorPage = {
+  slug: "estudio-de-la-contaminacion-atmosferica",
+
+  seo: {
+    title: "Estudio de la contaminación atmosférica | Kunak AIR",
+    description:
+      "Realiza un estudio de la contaminación atmosférica más completo y accede a nuevas financiaciones aprovechando la tecnología de sensores.",
+    ogImage: "/images/uploads/2023/01/research-1920.jpg",
+    canonical: "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+  },
+
+  breadcrumb: [
+    // ruta local: esta página ya está clonada (src/app/page.tsx)
+    { label: "Inicio", href: "/" },
+    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    { label: "Estudio de la contaminación atmosférica" },
+  ],
+
+  header: {
+    kicker: "Investigación y consultoría",
+    title: "Estudio de la contaminación atmosférica",
+    image: "/images/uploads/2023/01/research-1920.jpg",
+  },
+
+  hero: {
+    image: {
+      src: "/images/uploads/2023/02/air-quality-report.jpg",
+      alt: "tecnología para el estudio de la contaminación atmosférica",
+    },
+    ctas: [
+      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
+      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+    ],
+    heading:
+      "Realiza mediciones útiles y precisas para investigaciones con la mejor tecnología disponible.",
+    headingColor: "#0c71c3",
+    paragraphs: [
+      "La elaboración de estudios sobre la contaminación atmosférica es, en ocasiones, una condición indispensable para la concesión de ayudas y de autorizaciones ambientales o su renovación.",
+      // "fiales" es errata DEL ORIGINAL — no tocar
+      "La tecnología de Kunak complementa las mediciones que efectúan las estaciones de referencia oficiales proporcionando datos fiales y precisos que enriquecen los informes elaborados por empresas del sector ambiental y que ayudan a las autoridades en la toma de decisiones.",
+      "Los proyectos de investigación promovidos por universidades, centros de investigación o administraciones públicas también pueden requerir estudios de contaminación atmosférica.",
+      "Elabora estudios más completos y accede a nuevas fuentes de financiación aprovechando las ventajas que ofrece la tecnología de sensores.",
+      "Mejorar la calidad del aire es necesario para hacer frente a la crisis medioambiental.",
+    ],
+  },
+
+  // flujo medido: beneficios `seccion` · claim `filaPegada`. Sin ctaDescarga.
+  body: [
+    {
+      kind: "beneficiosAplicaciones",
+      left: {
+        title: "Beneficios en estudios de contaminación atmosférica:",
+        items: [
+          "Complemento para comprobar la eficacia de las Mejores Técnicas Disponibles (MTD).",
+          "Aumento del prestigio y la credibilidad de los investigadores.",
+          "Más colaboraciones y propuestas de estudios.",
+          "Reconocimiento público de la importancia de la calidad del aire en el bienestar de las personas y el medio ambiente.",
+          "Identificación de tendencias y dinámicas de la contaminación del aire.",
+          "Aumento en la comprensión del impacto que generan los diferentes agentes contaminantes.",
+          "Mejora de la salud pública (bienestar humano y conservación ambiental).",
+          "Fortalecimiento de los mecanismos de detección y respuesta.",
+        ],
+      },
+      right: {
+        title: "Aplicaciones en los estudios ambientales:",
+        items: [
+          "Medición en tiempo real, fiable y precisa de diferentes contaminantes.",
+          "Elaboración de estudios de salud pública y de cambio climático.",
+          "Desarrollo de políticas públicas de control de la contaminación.",
+          "Toma de decisiones informadas sobre el transporte, la industria y la energía.",
+          "Acceso a nuevas fuentes de datos.",
+          "Posibilidad de acceder a financiación y ayudas adicionales.",
+          "Realización de estudios sobre la calidad del aire.",
+          "Detección de fuentes de emisión atmosférica y acústica.",
+          "Elaboración de informes con analíticas avanzadas.",
+        ],
+      },
+    },
+    {
+      kind: "claimConFoto",
+      flujo: "filaPegada",
+      claim: "Elabora estudios más completos gracias a la tecnología de sensores.",
+      image: {
+        src: "/images/uploads/2023/05/Realiza-estudios-mas-detallados-gracias-a-la-tecnologia-de-sensores.jpg",
+        alt: "investigaciones contaminación atmosférica",
+      },
+    },
+  ],
+
+  ctaSlides: [
+    {
+      heading:
+        "Haz que tus estudios ambientales sean más completos gracias a las nuevas fuentes de datos",
+      cta: { label: "Descubre cómo", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/environmental-studies-with-new-data-sources.jpg",
+    },
+    {
+      heading: "Integra múltiples fuentes de datos y realiza análisis avanzados",
+      cta: { label: "Realiza análisis avanzados", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/Perform-advanced-analysis.jpg",
+    },
+    {
+      heading:
+        "Añade valor a tus estudios científicos gracias a los nuevos sensores de calidad del aire homologados",
+      cta: { label: "Accede a datos de referencia", href: "https://kunakair.com/es/contacto/" },
+      image: "/images/uploads/2023/02/near-reference-data-1.jpg",
+    },
+  ],
+
+  soluciones: SECTOR_SOLUCIONES,
+
+  proyectos: {
+    title: "Últimos proyectos",
+    cta: {
+      label: "Ver todos los casos de éxito",
+      href: "https://kunakair.com/case-studies/",
+      external: true,
+    },
+    posts: [
+      {
+        client: "Ministerio del Ambiente y Desarrollo Sostenible (MADES)",
+        sector: "Investigación y consultoría",
+        sectorHref: "https://kunakair.com/es/sector/investigacion-consultoria/",
+        title: "Modernización de la red de monitorización ambiental del MADES de Paraguay",
+        image: "/images/uploads/2026/05/MADES-1-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay/",
+      },
+      {
+        client: "Associação Bora Ambientar",
+        sector: "Investigación y consultoría",
+        sectorHref: "https://kunakair.com/es/sector/investigacion-consultoria/",
+        title:
+          "Respirar Fundo, el proyecto que revela qué aire respiran los escolares portugueses",
+        image:
+          "/images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas/",
+      },
+      {
+        client: "Instituto Politécnico Nacional",
+        sector: "Investigación y consultoría",
+        sectorHref: "https://kunakair.com/es/sector/investigacion-consultoria/",
+        title:
+          "Monitorización de gases tóxicos por sargazo en el Caribe para protección ambiental y turística",
+        image: "/images/uploads/2025/06/sargazo-cancun-repmex-1024x683.jpg",
+        href: "https://kunakair.com/es/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe/",
+      },
+    ],
+  },
+
+  articulos: {
+    title: "Artículos y Guías",
+    cta: {
+      label: "Amplia tus conocimientos con nuestras guías",
+      href: "https://kunakair.com/es/recursos/guias/",
+    },
+    /** P4: el original sortea los 3 posts en cada carga; trío congelado el 2026-07-29. */
+    posts: [
+      {
+        title: "¿Qué está pasando con la calidad del aire en Ciudad de México?",
+        date: "May 15, 2019",
+        image: "/images/uploads/2019/05/calidad-del-aire-ciudad-de-mexico-1024x682.jpeg",
+        href: "https://kunakair.com/es/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico/",
+      },
+      {
+        title:
+          "Quemas controladas de cultivos, conciliando práctica agrícola y calidad del aire",
+        date: "Abr 27, 2022",
+        image: "/images/uploads/2022/04/quemas-prescritas-agricolas-calidad-aire-1.jpg",
+        href: "https://kunakair.com/es/quemas-prescritas-agricolas-calidad-aire/",
+      },
+      {
+        title:
+          "Conferencia sobre el Cambio Climático COP26, una cita ineludible para una humanidad en la encrucijada",
+        date: "Sep 21, 2021",
+        image: "/images/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+        href: "https://kunakair.com/es/conferencia-partes-cop26-incendios/",
+      },
+    ],
+  },
+
+  taxonomy: {
+    label: "Investigación y consultoría",
+    href: "https://kunakair.com/es/sector/investigacion-consultoria/",
+  },
+
+  footerStripImage: "/images/uploads/2023/01/research-1920.jpg",
+};
+
 /* ────────────────────── registro para la ruta dinámica ─────────────────── */
 
 /**
@@ -770,11 +1169,20 @@ export const SECTOR_INDUSTRIA: SectorPage = {
  * estática por cada entrada con `generateStaticParams()`, así que añadir un
  * sector nuevo es añadir un `SectorPage` a esta lista — **sin tocar código**.
  *
- * Hoy solo Urbano. Los otros 7 están inventariados en `SECTORES_INDICE` con su
- * URL del original; según se vayan poblando, pasan de allí a aquí y su `href`
- * del índice se cambia por la ruta local.
+ * Hoy 4 de los 8. Los otros están inventariados en `SECTORES_INDICE` con su URL
+ * del original; según se vayan poblando, pasan de allí a aquí y su `href` del
+ * índice se cambia por la ruta local.
+ *
+ * Nada renderiza esta lista todavía: `/sectores` (el índice) no está clonado,
+ * así que añadir entradas solo emite rutas estáticas nuevas. Los enlaces del
+ * mega-menú viven en `nav.ts` y se localizan allí.
  */
-export const SECTORES_PUBLICADOS: SectorPage[] = [SECTOR_URBANO, SECTOR_INDUSTRIA];
+export const SECTORES_PUBLICADOS: SectorPage[] = [
+  SECTOR_URBANO,
+  SECTOR_INDUSTRIA,
+  SECTOR_CONSTRUCCION,
+  SECTOR_INVESTIGACION,
+];
 
 export function getSector(slug: string): SectorPage | undefined {
   return SECTORES_PUBLICADOS.find((s) => s.slug === slug);
@@ -810,9 +1218,11 @@ export const SECTORES_INDICE: {
   {
     kicker: "Industria y olores",
     slug: "control-de-emisiones-industriales",
-    href: "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+    // ruta local: esta página ya está clonada (src/app/sectores/control-de-emisiones-industriales)
+    // original: https://kunakair.com/es/sectores/control-de-emisiones-industriales/
+    href: "/sectores/control-de-emisiones-industriales",
     taxonomy: "industria",
-    clonado: false,
+    clonado: true,
   },
   {
     kicker: "EDAR",
@@ -838,9 +1248,11 @@ export const SECTORES_INDICE: {
   {
     kicker: "Construcción",
     slug: "contaminacion-por-construccion",
-    href: "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+    // ruta local: esta página ya está clonada (src/app/sectores/contaminacion-por-construccion)
+    // original: https://kunakair.com/es/sectores/contaminacion-por-construccion/
+    href: "/sectores/contaminacion-por-construccion",
     taxonomy: "obras",
-    clonado: false,
+    clonado: true,
   },
   {
     kicker: "Minería",
@@ -852,8 +1264,10 @@ export const SECTORES_INDICE: {
   {
     kicker: "Investigación y consultoría",
     slug: "estudio-de-la-contaminacion-atmosferica",
-    href: "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+    // ruta local: esta página ya está clonada (src/app/sectores/estudio-de-la-contaminacion-atmosferica)
+    // original: https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/
+    href: "/sectores/estudio-de-la-contaminacion-atmosferica",
     taxonomy: "investigacion-consultoria",
-    clonado: false,
+    clonado: true,
   },
 ];
