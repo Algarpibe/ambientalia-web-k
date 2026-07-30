@@ -1916,3 +1916,90 @@ tanda de CLASE, con el criterio común, no de paso.
 1440 son 11 columnas de 16 a **421.11** — el margen de error real del árbol de
 filas en esa página. Un defecto de 400px en la columna corta de S1F3 no habría
 movido un solo número del árbol.
+
+---
+
+## GRUPO C — la entrada de C-3, medida (2026-07-30)
+
+**Nada de esto es un defecto del clon**: son las predicciones pre-registradas de
+`docs/research/grupo-C/DECISIONES.md` cobradas antes de construir, más lo que la
+medición destapó. El acta completa, con los números y los defectos de sonda, en
+`docs/research/grupo-C/MEDICION.md`.
+
+### C-SP1 / D5 · CERRADA — la 4ª sección del pie no lleva campos
+
+**P-C3-1 se sostiene.** La sección que el caso tiene y la FAQ no —identificada
+midiendo, no por su índice: pie del caso 4 secciones, pie de la FAQ 3— es el
+**slider CTA de ancho completo**, y su HTML normalizado es **idéntico byte a
+byte en los 6 pares** de los 4 casos medidos. Nada derivado del post.
+**D5 queda como se decidió: cero campos.** No hay que volver a abrirla.
+
+Lo que sí difiere entre casos es **otra** sección, `footer-legal`: el conmutador
+de idioma de **WPML**, cuyo `href` apunta a la URL de la página actual. **No es
+campo del caso** —es mecanismo de servicio del original— y el clon ya no lo
+reproduce: `LANGUAGES` (`src/lib/nav.ts`) es constante fija para las 11 páginas
+ya clonadas. **Desviación deliberada, coste 0**, en la misma línea que el resto
+del pie.
+
+### C-SP7 · CERRADA — el cascarón del grupo C no esconde ningún campo
+
+**P-C3-2 se sostiene a los dos anchos**: 10 instancias adversarias (6 casos con
+los dos prefijos, 4 FAQ), **131 ejes** de ritmo, tipografía y retícula por
+ancho, **0 con varianza**. Sonda `npm run qa:c-cascaron`, salida congelada,
+test en negativo corrido entero después del arreglo.
+
+### C-SP8 · C-SP9 · C-SP10 · C-SP12 · CERRADAS
+
+Salen del mismo HTML servido que la transcripción (`npm run qa:c-spec`):
+
+- **C-SP8** — migas `Inicio > Casos de éxito > <título>`; el último nivel sin
+  enlace; **la del prefijo inglés apunta al índice ESPAÑOL**. La FAQ no tiene.
+- **C-SP9** — `destacado` **lleva marcado inline** (`<strong>`, `<br>`) y vive
+  **dentro del contenedor del bloque `necesidad`, como su último hijo**.
+- **C-SP10** — **cero leyendas** en las 22 imágenes de galería medidas; el `alt`
+  es **constante dentro de cada caso**, o sea del caso y no de la imagen.
+- **C-SP12** — el chip del detalle **sí enlaza** a `/es/sector/<slug>/`, un `<a>`
+  por término, y la fila de detalles lleva los mismos con `rel="tag"`.
+
+### C-SP6 · sigue abierta, y ahora con muestra
+
+En las instancias medidas: `www.youtube.com` ×2 · `player.vimeo.com` ×1 ·
+**`kunakcloud.com` ×1** (dominio propio, un widget de datos). **No es el
+censo** — los 11 casos con `iframe` hay que barrerlos por host antes del import,
+como dice §2b del esquema.
+
+### C-SP13 (nuevo) · la barra lateral de la FAQ
+
+`MODELO.md` §2 describe el cascarón de la FAQ como «cabecera + `h1` + cuerpo +
+pie estándar». La salida servida trae además `et_right_sidebar` y un `#sidebar`
+con **4 widgets** (Buscar · un `widget_text` vacío · Categorías · «¡Suscríbete a
+nuestra newsletter!» con el enlace ofuscado en base64).
+
+**No añade campo** —P-C3-7 aguanta— pero **sí es pieza de plantilla que
+construir**, y hay que decidir si el enlace ofuscado se reproduce o se sirve
+decodificado (el clon ya tiene `SUBSCRIBE_HREF` en `src/lib/footer.ts`). Va a
+`C-SP13` porque nadie ha medido si las 19 lo llevan idéntico: se midieron 4.
+
+### C-SP14 (nuevo) · `bulletsTitulo` del producto
+
+`ProductPanel` (`src/components/ProductosTabs.tsx`) tiene **«Ventajas» cableado
+en el componente**. Los 4 productos de cartucho que usan los casos titulan esa
+misma lista **«Especificaciones»**. Dos valores en el corpus → **es un campo**,
+con defecto explícito `"Ventajas"`.
+
+Es `CLAUDE.md` §Estructura que en realidad es contenido, otra instancia:
+calibrado con la primera página (los 5 productos de la home), la segunda lo
+desmiente. **No se cablea el valor de la primera.** Dos flecos del mismo sitio:
+las viñetas de cartucho llevan marcado inline (`R<sup>2</sup>`, `μg/m<sup>3</sup>`)
+y **`amoniaco` no tiene imagen** (el panel sin foto ya está contemplado).
+
+### C-SP15 (nuevo) · la alineación en línea deja de ser SIN PROBAR
+
+`ESQUEMA-CMS.md` §3.1 tiene «alineación e indentación | no medidas; SIN PROBAR,
+no se habilitan a ciegas». **Ya están medidas** en el grupo C: `text-align`
+aparece **24 veces** en las 10 instancias, con **tres valores** (`justify`,
+`left`, `center`) y en **cuatro etiquetas** (`p`, `li`, `ul`, `div`).
+
+Sigue siendo decisión abierta —qué hace el CMS con ella: conservar, normalizar o
+descartar como T2— pero ya **no por falta de datos**. La decisión es del §3, no
+de la construcción del grupo C.

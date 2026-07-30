@@ -34,8 +34,12 @@ interface CasoDeExito {
   solucion: CampoRico;
   resultados: CampoRico;
 
-  /** 49/57. Texto verbatim: las comillas, cuando las hay (3/49), son contenido. */
-  destacado?: string;
+  /** 49/57. Texto verbatim: las comillas, cuando las hay (3/49), son contenido.
+   *  ⚠ CORREGIDO por la medición de C-3 (`MEDICION.md` §5.1): C-SP9 está
+   *  cerrada y `destacado` **lleva marcado inline** (`<strong>`, `<br>`) →
+   *  campo rico restringido a LÍNEA, no `string`. Y vive como ÚLTIMO HIJO del
+   *  contenedor de `necesidad`, que es donde hay que renderizarlo. */
+  destacado?: CampoRicoEnLinea;
   /** 48/57; 3–15 imágenes, mediana 7. El carrusel es plantilla. */
   galeria?: Media[];
 
@@ -43,7 +47,11 @@ interface CasoDeExito {
     usuario: string;                    // 57/57
     ubicacion: string;                  // 57/57
     anyo: string;                       // 57/57 — string, no number: formato sin censar
-    parametros?: string;                // 56/57
+    /** ⚠ CORREGIDO por C-3 (`MEDICION.md` §5.2): NO es texto plano — trae
+     *  `ul li sub b p` dentro → campo RICO, contrato del §3.1. Y su HTML de
+     *  origen es inválido (`<ul>` dentro de `<p>`): el importador recompone la
+     *  fila hasta el siguiente rótulo, no hasta el fin del `<p>`. */
+    parametros?: CampoRico;             // 56/57
     // Cliente y Sector NO están aquí: se proyectan de `cliente` y `sectores`.
   };
 
@@ -78,9 +86,19 @@ interface Faq {
 }
 ```
 
-Cascarón: cabecera compartida + `h1` + cuerpo + **pie estándar de 3 secciones**
-(el que el clon ya monta). Sin migas, sin sección propia. Es el arquetipo más
-barato del proyecto, y esa asimetría con el caso es la frontera de D1.
+Cascarón: cabecera compartida + `h1` + cuerpo + **la barra lateral estándar del
+sitio** + **pie estándar de 3 secciones** (el que el clon ya monta). Sin migas,
+sin sección propia. Sigue siendo el arquetipo más barato del proyecto **en
+campos**, y esa asimetría con el caso es la frontera de D1.
+
+⚠ **CORREGIDO por la medición de C-3** (`MEDICION.md` §5.3): la barra lateral no
+estaba en esta descripción **y existe** — `et_right_sidebar` con 4 widgets
+(Buscar · un `widget_text` vacío · Categorías · «¡Suscríbete a nuestra
+newsletter!» con el enlace ofuscado en base64). **No añade ningún campo**, así
+que **P-C3-7 aguanta** y D4 sigue en pie; pero es pieza de plantilla que hay que
+construir, y el modelo la daba por inexistente. Es barato en campos, no en
+cascarón. Cuánto varía entre las 19 es **C-SP13**: se midieron 4, con varianza
+cero en los 64 ejes.
 
 ## 3 · `TerminoSector` — colección `taxonomia-sectores`
 
@@ -108,6 +126,15 @@ dos, 4 sin ninguno.)
   El grupo C aporta su inventario de arranque: los 17 títulos de ficha del
   censo, con `data-id` = slug del CPT `solutions`. Dato sucio para el import:
   1 ficha en inglés («Air quality software») se normaliza a su producto ES.
+
+  ⚠ **Pero sí le añade un campo** (`MEDICION.md` §5.4): el título de la lista de
+  viñetas de la ficha. El clon lo tiene **cableado a «Ventajas»** en
+  `ProductPanel`, y los 4 productos de cartucho que usan los casos lo titulan
+  **«Especificaciones»** → **`bulletsTitulo` con defecto explícito `"Ventajas"`**.
+  Es el patrón de `CLAUDE.md` §Estructura que en realidad es contenido: la
+  primera instancia calibró el componente, la segunda lo desmiente. Con dos
+  flecos del mismo sitio: las viñetas de cartucho llevan **marcado inline**
+  (`R<sup>2</sup>`, `μg/m<sup>3</sup>`) y **`amoniaco` no tiene imagen**.
 - **El campo rico.** Los tres bloques del caso y el cuerpo de la FAQ usan el
   contrato del §3 tal cual — el censo del grupo C no añadió ni una construcción
   (§3 del recon). Los `iframe` del caso entran por el nodo-embed con URL

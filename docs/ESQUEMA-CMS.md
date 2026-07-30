@@ -469,6 +469,56 @@ de caso (11 páginas, C-SP6) **antes** del import del grupo — van a la misma
 allowlist del §3.3b. Y las predicciones P-C3-1…7 de `DECISIONES.md` son la
 condición de entrada de la construcción C-3.
 
+### 2b.1 · ⚠ CORRIGE al modelo — lo que midió la entrada de C-3 (2026-07-30)
+
+Acta completa en `docs/research/grupo-C/MEDICION.md`; sondas `qa:c-cascaron` y
+`qa:c-spec`, salidas congeladas. **Ninguna de estas cuatro contradice una
+decisión de C-2**: tres resuelven condiciones que C-2 dejó escritas, y la cuarta
+es un campo que el corpus del grupo C descubre en una colección ajena. Van aquí
+porque cambian el esquema, y **se dicen en voz alta, no en silencio**.
+
+| # | el modelo decía | la salida servida dice |
+|---|---|---|
+| **1** | `destacado` **texto plano** («si lleva marcado inline no se sabe — C-SP9; **mientras**, texto plano») | **lleva marcado**: `<strong>…</strong><br>` → **campo rico restringido a LÍNEA** (`strong`, `br`, texto). La condición la escribió C-2; esto la resuelve |
+| **2** | `detalles.parametros?: string` | trae `<ul> <li> <sub> <b> <p>` dentro → **campo rico**, contrato del §3.1 (el `sub` ya está: 139 páginas del grupo A lo usan para fórmulas) |
+| **3** | la FAQ es «cabecera + `h1` + cuerpo + pie estándar», el arquetipo más barato | además **`et_right_sidebar` con 4 widgets** (Buscar · texto vacío · Categorías · Suscríbete con enlace ofuscado en base64). **No añade campo** —P-C3-7 aguanta— pero sí pieza de plantilla. Es barato en CAMPOS, no en cascarón |
+| **4** | la ficha del producto titula sus viñetas «Ventajas» (cableado en `ProductPanel`) | **dos valores en el corpus**: «Ventajas» (equipos) y **«Especificaciones»** (cartuchos) → **campo `bulletsTitulo` con defecto explícito `"Ventajas"`**, omitido cuando coincide |
+
+**La 2 trae además una trampa de migración**, y es de las que no dan error: el
+original escribe `<p><span>Parámetros:</span><br><ul>…</ul></p>`, y `<ul>`
+dentro de `<p>` es HTML inválido — **el parser cierra el `<p>` antes del
+`<ul>`**, así que la lista queda de **hermana** y un extractor ingenuo
+(`.case-detalles-txt > p`) devuelve el campo **vacío**. El importador tiene que
+recomponer la fila **hasta el siguiente rótulo**, no hasta el fin del `<p>`.
+
+**La 4 es `CLAUDE.md` §Estructura que en realidad es contenido, otra vez**: el
+componente se calibró con la primera instancia (los 5 productos de la home) y la
+segunda lo desmiente. Se anota el campo con defecto; **no se cablea el valor de
+la primera**, que es como se produce el arreglo falso.
+
+**Y §3.1 pierde un SIN PROBAR**: «alineación e indentación | no medidas» ya
+están medidas — `text-align` aparece **24 veces** en las 10 instancias, con
+**tres valores** (`justify`, `left`, `center`) y en **cuatro etiquetas**
+(`p`, `li`, `ul`, `div`). La decisión de qué hace el CMS con ella (conservar,
+normalizar, o descartar como T2) sigue abierta, pero **ya no por falta de
+datos**. Los `padding-top` en porcentaje que salen en el mismo inventario **no
+son estilo de autor**: son el envoltorio de proporción de los `iframe`, y van
+con el nodo-embed del §3.3b.
+
+**Lo que la entrada CONFIRMÓ, y no hay que volver a preguntar:**
+
+- **P-C3-1** — la 4ª sección del pie (el slider CTA de ancho completo) es
+  **idéntica byte a byte en los 6 pares**. **D5 cerrada con cero campos.**
+- **P-C3-2** — el cascarón no esconde ningún campo: **131 ejes × 2 anchos, 0 con
+  varianza**, en 10 instancias adversarias.
+- **P-C3-4, en lo comparable** — los 2 `data-id` que salen en más de un caso dan
+  la ficha idéntica: la ficha **es** proyección del producto. 0 choques.
+- **C-SP12** — el chip del detalle **enlaza** a `/es/sector/<slug>/`: la
+  proyección única de `sectores` queda confirmada en las dos caras.
+- **C-SP8** — las migas del **prefijo inglés apuntan al índice ESPAÑOL**
+  (`/es/casos-de-exito/`). Es evidencia nueva **a favor de D2**: ni el propio
+  original trata los 4 ingleses como una colección aparte.
+
 ---
 
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
