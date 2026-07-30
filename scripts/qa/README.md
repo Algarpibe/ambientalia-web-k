@@ -418,7 +418,7 @@ por commit —la primera del 1440, con el recorte de cabecera defectuoso, está 
 `26c74dd`— y ahí se quedan. Si regeneras, sustituye; no acumules variantes con
 sufijo.
 
-### Las cuatro `a-*` — el recon del arquetipo A
+### Las `a-*` — el recon del arquetipo A
 
 `docs/research/arquetipo-A/`. Miden el **original**, no el clon.
 
@@ -428,6 +428,17 @@ sufijo.
 | `a-muestra.mjs` | aplica la **regla de selección pre-registrada** sobre el censo: la más larga, la más corta, una por payload raro, la de más variedad, y relleno aleatorio con semilla fija |
 | `a-cascaron.mjs [ancho] [--muestra]` | los módulos del `tb_body` con su ritmo y tipografía. Con `--muestra`, las 24 seleccionadas |
 | `a-behaviors.mjs [ancho]` | índice del artículo, `iframe`, relacionados |
+| `a-scripts.mjs` | los `<script>` dentro del contenido, clasificados uno a uno (§3.3 del esquema) |
+| `a-lexical.mjs` | **piloto de CMS-0e**: convierte el cuerpo a una estructura de nodos y compara **invariantes** entre origen y árbol. `PROBETA=1` corre la probeta sintética; `SABOTAJE=sub\|hid\|leyenda`, el test en negativo |
+
+⚠ **`a-lexical` compara contra una representación PROPIA, no contra Lexical de
+Payload** (no está instalado). Sirve para inventariar qué del corpus se resiste a
+una estructura de nodos; **no prueba que Payload acepte el resultado**. El acta,
+con esa separación escrita, en `docs/ESQUEMA-CMS.md` §CMS-0e.
+
+Y su regla de oro, que se pagó con cinco defectos en la propia sonda: **la
+probeta sin sabotaje TIENE que salir limpia y cada sabotaje TIENE que caer por su
+propio invariante.** Los cinco defectos daban números plausibles, no errores.
 
 Tres cosas que costaron una corrida cada una y están anotadas en el código:
 

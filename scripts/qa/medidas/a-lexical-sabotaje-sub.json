@@ -1,0 +1,1373 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "fuente": "HTML servido del original",
+    "muestra": "medidas/a-muestra.json (adversaria, 24)",
+    "sabotaje": "sub"
+  },
+  "paginas": [
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-por-metano/",
+      "chars": 69784,
+      "razones": [
+        "la más larga (69784 chars)",
+        "payload «embebido» (50/149 páginas lo llevan)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 69784,
+      "charsAhora": 69784,
+      "charsDom": 69503,
+      "origen": {
+        "chars": 69503,
+        "palabras": 10847,
+        "enlaces": 45,
+        "botones": 1,
+        "encabezados": 61,
+        "conId": 0,
+        "formatos": {
+          "bold": 10379,
+          "subscript": 38,
+          "italic": 231
+        },
+        "sub": 38,
+        "sup": 0,
+        "imagenes": 9,
+        "conLeyenda": 8,
+        "listas": 3,
+        "citas": 7,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 124398,
+        "embeds": [
+          {
+            "proveedor": "youtube",
+            "id": "https://www.youtube.com/embed/tdqh7Jy-AKE?si=3pP7eA-xWBI3Jydq"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/per-capita-methane-sector?tab=chart"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/methane-emissions-by-sector?tab=chart"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/methane-emissions?time=2023&tab=map"
+          }
+        ],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 38,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «44222222244222222102,522242244» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas",
+        "T1 enlace→botón"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+      "chars": 275,
+      "razones": [
+        "la más corta (275 chars)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 275,
+      "charsAhora": 275,
+      "charsDom": 275,
+      "origen": {
+        "chars": 275,
+        "palabras": 49,
+        "enlaces": 1,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {},
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 556,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "chars": 52579,
+      "razones": [
+        "payload «tabla» (17/149 páginas lo llevan)",
+        "payload «cita» (48/149 páginas lo llevan)"
+      ],
+      "veredicto": "IRRECUPERABLE",
+      "charsCenso": 52579,
+      "charsAhora": 52579,
+      "charsDom": 52263,
+      "origen": {
+        "chars": 52263,
+        "palabras": 7910,
+        "enlaces": 88,
+        "botones": 0,
+        "encabezados": 24,
+        "conId": 0,
+        "formatos": {
+          "subscript": 133,
+          "bold": 7956,
+          "italic": 3011,
+          "superscript": 4
+        },
+        "sub": 133,
+        "sup": 4,
+        "imagenes": 7,
+        "conLeyenda": 7,
+        "listas": 13,
+        "citas": 13,
+        "tablas": 7
+      },
+      "convertido": {
+        "nodos": 110236,
+        "embeds": [],
+        "huecos": [
+          "iframe-no-listado",
+          "reproductor-nbc"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 133,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «22,522,5322,522,51032x2,5102,5» vs convertido «»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 4,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «3333» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "iframe de storymaps.arcgis.com",
+          "clase": "irrecuperable",
+          "detalle": "proveedor fuera de la lista cerrada de 5 (§3.3): o se amplía la lista, o se decide caso a caso"
+        },
+        {
+          "que": "script reproductor-nbc",
+          "clase": "irrecuperable",
+          "detalle": "§3.3 lo elimina y exige sustituto: un enlace a la noticia. El importador no lo puede fabricar"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+      "chars": 6347,
+      "razones": [
+        "payload «galeria» (9/149 páginas lo llevan)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 6347,
+      "charsAhora": 6347,
+      "charsDom": 6299,
+      "origen": {
+        "chars": 6299,
+        "palabras": 992,
+        "enlaces": 11,
+        "botones": 0,
+        "encabezados": 3,
+        "conId": 0,
+        "formatos": {
+          "bold": 55,
+          "subscript": 33,
+          "italic": 256
+        },
+        "sub": 33,
+        "sup": 0,
+        "imagenes": 6,
+        "conLeyenda": 0,
+        "listas": 1,
+        "citas": 0,
+        "tablas": 1
+      },
+      "convertido": {
+        "nodos": 17894,
+        "embeds": [],
+        "huecos": [
+          "video"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 33,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2,5103232.5103212.51032332212,» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "<video>",
+          "clase": "recuperable",
+          "detalle": "§3.1 no tiene nodo de vídeo: hace falta uno (upload o embed propio). Es hueco de esquema, no de dato"
+        }
+      ],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "chars": 62200,
+      "razones": [
+        "payload «audio/vídeo» (7/149 páginas lo llevan)"
+      ],
+      "veredicto": "IRRECUPERABLE",
+      "charsCenso": 62200,
+      "charsAhora": 62200,
+      "charsDom": 61917,
+      "origen": {
+        "chars": 61917,
+        "palabras": 9328,
+        "enlaces": 50,
+        "botones": 0,
+        "encabezados": 35,
+        "conId": 0,
+        "formatos": {
+          "subscript": 115,
+          "bold": 10788,
+          "italic": 1954,
+          "superscript": 13
+        },
+        "sub": 115,
+        "sup": 13,
+        "imagenes": 14,
+        "conLeyenda": 14,
+        "listas": 9,
+        "citas": 7,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 120604,
+        "embeds": [],
+        "huecos": [
+          "flipbook-fb3d",
+          "video"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 115,
+          "convertido": 1,
+          "ejemplo": "diverge en 1: origen «22,5322,532,52222222,52,52,52,5» vs convertido «2»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 13,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «3332333233333» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "script flipbook-fb3d",
+          "clase": "irrecuperable",
+          "detalle": "§3.3 lo elimina y exige sustituto: el PDF, como relación a media. El importador no lo puede fabricar"
+        },
+        {
+          "que": "<video>",
+          "clase": "recuperable",
+          "detalle": "§3.1 no tiene nodo de vídeo: hace falta uno (upload o embed propio). Es hueco de esquema, no de dato"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "chars": 21111,
+      "razones": [
+        "payload «script en el cuerpo» (15/149 páginas lo llevan)"
+      ],
+      "veredicto": "IRRECUPERABLE",
+      "charsCenso": 21111,
+      "charsAhora": 21111,
+      "charsDom": 20998,
+      "origen": {
+        "chars": 20998,
+        "palabras": 3309,
+        "enlaces": 45,
+        "botones": 0,
+        "encabezados": 7,
+        "conId": 0,
+        "formatos": {
+          "bold": 2897,
+          "italic": 364,
+          "subscript": 24
+        },
+        "sub": 24,
+        "sup": 0,
+        "imagenes": 9,
+        "conLeyenda": 8,
+        "listas": 3,
+        "citas": 2,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 45083,
+        "embeds": [
+          {
+            "proveedor": "youtube",
+            "id": "https://www.youtube.com/embed/0AmzdyB5Jl4?si=s6gphm5rBGdofyaH"
+          },
+          {
+            "proveedor": "youtube",
+            "id": "https://www.youtube.com/embed/unTd9kIHrgs?si=kwgpRXAJlHFWbqYd"
+          },
+          {
+            "proveedor": "instagram",
+            "id": "//www.instagram.com/embed.js"
+          }
+        ],
+        "huecos": [
+          "iframe-no-listado",
+          "video",
+          "flipbook-fb3d"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 24,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «10102,52.51023222332.510» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "iframe de www.linkedin.com",
+          "clase": "irrecuperable",
+          "detalle": "proveedor fuera de la lista cerrada de 5 (§3.3): o se amplía la lista, o se decide caso a caso"
+        },
+        {
+          "que": "<video>",
+          "clase": "recuperable",
+          "detalle": "§3.1 no tiene nodo de vídeo: hace falta uno (upload o embed propio). Es hueco de esquema, no de dato"
+        },
+        {
+          "que": "script flipbook-fb3d",
+          "clase": "irrecuperable",
+          "detalle": "§3.3 lo elimina y exige sustituto: el PDF, como relación a media. El importador no lo puede fabricar"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas",
+        "T4 script→embed instagram"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "chars": 15168,
+      "razones": [
+        "más variedad interna (26 etiquetas distintas)"
+      ],
+      "veredicto": "IRRECUPERABLE",
+      "charsCenso": 15168,
+      "charsAhora": 15168,
+      "charsDom": 15099,
+      "origen": {
+        "chars": 15099,
+        "palabras": 2300,
+        "enlaces": 13,
+        "botones": 0,
+        "encabezados": 20,
+        "conId": 0,
+        "formatos": {
+          "bold": 838,
+          "subscript": 44,
+          "italic": 151,
+          "superscript": 1,
+          "small": 329
+        },
+        "sub": 44,
+        "sup": 1,
+        "imagenes": 2,
+        "conLeyenda": 1,
+        "listas": 3,
+        "citas": 5,
+        "tablas": 1
+      },
+      "convertido": {
+        "nodos": 28708,
+        "embeds": [],
+        "huecos": [
+          "flipbook-fb3d"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 44,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2.52.52.52.5222.52.5232.5x2.52» vs convertido «»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 1,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «3» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "script flipbook-fb3d",
+          "clase": "irrecuperable",
+          "detalle": "§3.3 lo elimina y exige sustituto: el PDF, como relación a media. El importador no lo puede fabricar"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T3 clases wp-* eliminadas",
+        "T2 style width px eliminado"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-air-pro-certificado-mcerts/",
+      "chars": 2997,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 2997,
+      "charsAhora": 2997,
+      "charsDom": 2984,
+      "origen": {
+        "chars": 2984,
+        "palabras": 468,
+        "enlaces": 6,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {
+          "subscript": 10
+        },
+        "sub": 10,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 5881,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 10,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2.510102.5» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente/",
+      "chars": 2142,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 2142,
+      "charsAhora": 2142,
+      "charsDom": 2138,
+      "origen": {
+        "chars": 2138,
+        "palabras": 328,
+        "enlaces": 3,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {
+          "bold": 440
+        },
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 4618,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/entrevista-agustin-torres-product-manager-suez/",
+      "chars": 8371,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 8371,
+      "charsAhora": 8371,
+      "charsDom": 8341,
+      "origen": {
+        "chars": 8341,
+        "palabras": 1311,
+        "enlaces": 4,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {
+          "italic": 1320,
+          "bold": 1703
+        },
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 2,
+        "conLeyenda": 2,
+        "listas": 0,
+        "citas": 4,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 14199,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/justicia-climatica-financiacion-climatica-y-seguridad-climatica/",
+      "chars": 44502,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 44502,
+      "charsAhora": 44502,
+      "charsDom": 44399,
+      "origen": {
+        "chars": 44399,
+        "palabras": 6402,
+        "enlaces": 34,
+        "botones": 0,
+        "encabezados": 23,
+        "conId": 0,
+        "formatos": {
+          "bold": 6578,
+          "italic": 3029,
+          "subscript": 3
+        },
+        "sub": 3,
+        "sup": 0,
+        "imagenes": 10,
+        "conLeyenda": 9,
+        "listas": 10,
+        "citas": 10,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 77977,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 3,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2.5» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/participamos-con-suez-en-el-4yfn-del-mobile-world-congress/",
+      "chars": 494,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 494,
+      "charsAhora": 494,
+      "charsDom": 494,
+      "origen": {
+        "chars": 494,
+        "palabras": 68,
+        "enlaces": 1,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {},
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 1,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 1070,
+        "embeds": [],
+        "huecos": [
+          "video"
+        ]
+      },
+      "difs": [],
+      "perdidas": [
+        {
+          "que": "<video>",
+          "clase": "recuperable",
+          "detalle": "§3.1 no tiene nodo de vídeo: hace falta uno (upload o embed propio). Es hueco de esquema, no de dato"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+      "chars": 50640,
+      "razones": [
+        "la más larga (50640 chars)",
+        "payload «tabla» (18/37 páginas lo llevan)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 50640,
+      "charsAhora": 50640,
+      "charsDom": 50482,
+      "origen": {
+        "chars": 50482,
+        "palabras": 7600,
+        "enlaces": 27,
+        "botones": 0,
+        "encabezados": 38,
+        "conId": 0,
+        "formatos": {
+          "bold": 7376,
+          "italic": 259,
+          "subscript": 15,
+          "superscript": 7
+        },
+        "sub": 15,
+        "sup": 7,
+        "imagenes": 11,
+        "conLeyenda": 11,
+        "listas": 12,
+        "citas": 1,
+        "tablas": 5
+      },
+      "convertido": {
+        "nodos": 96451,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 15,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2x2242232222223» vs convertido «»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 7,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «3333333» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/emisiones-atmosfericas/",
+      "chars": 5651,
+      "razones": [
+        "la más corta (5651 chars)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 5651,
+      "charsAhora": 5651,
+      "charsDom": 5638,
+      "origen": {
+        "chars": 5638,
+        "palabras": 821,
+        "enlaces": 14,
+        "botones": 0,
+        "encabezados": 3,
+        "conId": 0,
+        "formatos": {
+          "italic": 627
+        },
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 4,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 10895,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/metano/",
+      "chars": 16998,
+      "razones": [
+        "payload «embebido» (6/37 páginas lo llevan)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 16998,
+      "charsAhora": 16998,
+      "charsDom": 16943,
+      "origen": {
+        "chars": 16943,
+        "palabras": 2651,
+        "enlaces": 18,
+        "botones": 0,
+        "encabezados": 17,
+        "conId": 0,
+        "formatos": {
+          "subscript": 5,
+          "bold": 3018,
+          "italic": 1199
+        },
+        "sub": 5,
+        "sup": 0,
+        "imagenes": 1,
+        "conLeyenda": 1,
+        "listas": 1,
+        "citas": 5,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 34316,
+        "embeds": [
+          {
+            "proveedor": "youtube",
+            "id": "//www.youtube.com/embed/2rdEjFn_7jg?si=fKirbuJTRuyAJUbv"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/ghg-emissions-by-gas?tab=chart"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/methane-emissions-by-sector?tab=chart"
+          }
+        ],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 5,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «42242» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/dioxido-de-carbono/",
+      "chars": 18050,
+      "razones": [
+        "payload «cita» (25/37 páginas lo llevan)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 18050,
+      "charsAhora": 18050,
+      "charsDom": 17995,
+      "origen": {
+        "chars": 17995,
+        "palabras": 2882,
+        "enlaces": 16,
+        "botones": 0,
+        "encabezados": 8,
+        "conId": 0,
+        "formatos": {
+          "subscript": 32,
+          "italic": 1107,
+          "bold": 140
+        },
+        "sub": 32,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 6,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 29339,
+        "embeds": [
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/global-co2-concentration?tab=chart"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country?tab=chart"
+          },
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/grapher/co2-income-level?tab=chart"
+          }
+        ],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 32,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «222222222222222222222222222222» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/huella-de-carbono/",
+      "chars": 24053,
+      "razones": [
+        "payload «audio/vídeo» (1/37 páginas lo llevan)"
+      ],
+      "veredicto": "IRRECUPERABLE",
+      "charsCenso": 24053,
+      "charsAhora": 24053,
+      "charsDom": 23936,
+      "origen": {
+        "chars": 23936,
+        "palabras": 3561,
+        "enlaces": 15,
+        "botones": 0,
+        "encabezados": 24,
+        "conId": 0,
+        "formatos": {
+          "bold": 4588,
+          "subscript": 24,
+          "italic": 45
+        },
+        "sub": 24,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 10,
+        "citas": 5,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 49029,
+        "embeds": [
+          {
+            "proveedor": "ourworldindata",
+            "id": "https://ourworldindata.org/explorers/co2?facet=none&country=ESP~OWID_EUR~OWID_WRL~CHN~USA~OWID_SAM&hideControls=true&Gas+or+Warming=CO%E2%82%82&Accounting=Production-based&Fuel+or+Land+Use+Change=All+fossil+emissions&Count=Per+capita&tab=chart"
+          }
+        ],
+        "huecos": [
+          "iframe-no-listado",
+          "video"
+        ]
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 24,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «224422222224222222222422» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "iframe de real-decreto-2142025-un--0qvqhh6.gamma.site",
+          "clase": "irrecuperable",
+          "detalle": "proveedor fuera de la lista cerrada de 5 (§3.3): o se amplía la lista, o se decide caso a caso"
+        },
+        {
+          "que": "<video>",
+          "clase": "recuperable",
+          "detalle": "§3.1 no tiene nodo de vídeo: hace falta uno (upload o embed propio). Es hueco de esquema, no de dato"
+        }
+      ],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/sulfuro-de-hidrogeno/",
+      "chars": 31756,
+      "razones": [
+        "más variedad interna (24 etiquetas distintas)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 31756,
+      "charsAhora": 31756,
+      "charsDom": 31478,
+      "origen": {
+        "chars": 31478,
+        "palabras": 4734,
+        "enlaces": 18,
+        "botones": 0,
+        "encabezados": 32,
+        "conId": 0,
+        "formatos": {
+          "subscript": 67,
+          "bold": 4082,
+          "italic": 273,
+          "superscript": 4
+        },
+        "sub": 67,
+        "sup": 4,
+        "imagenes": 3,
+        "conLeyenda": 3,
+        "listas": 8,
+        "citas": 2,
+        "tablas": 2
+      },
+      "convertido": {
+        "nodos": 64996,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "encabezados",
+          "origen": 32,
+          "convertido": 32,
+          "ejemplo": "#9 {\"nivel\":5,\"txt\":\"▸ Olfatometría dinámica\",\"id\":\"\"} → {\"nivel\":4,\"txt\":\"▸ Olfatometría dinámica\",\"id\":\"\"}"
+        },
+        {
+          "invariante": "formato:subscript",
+          "origen": 67,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «222222222222222222222222222222» vs convertido «»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 4,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «3333» vs convertido «»"
+        }
+      ],
+      "perdidas": [
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        },
+        {
+          "que": "<h5>",
+          "clase": "recuperable",
+          "detalle": "fuera de la whitelist §3.1; degradado a h4 al importar"
+        }
+      ],
+      "sinMapear": {},
+      "notas": [
+        "T2 style width px eliminado",
+        "T3 clases wp-* eliminadas"
+      ]
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+      "chars": 2646,
+      "razones": [
+        "la más larga (2646 chars)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 2646,
+      "charsAhora": 2646,
+      "charsDom": 2643,
+      "origen": {
+        "chars": 2643,
+        "palabras": 372,
+        "enlaces": 0,
+        "botones": 0,
+        "encabezados": 1,
+        "conId": 0,
+        "formatos": {
+          "subscript": 1,
+          "superscript": 2
+        },
+        "sub": 1,
+        "sup": 2,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 2889,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 1,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «2» vs convertido «»"
+        },
+        {
+          "invariante": "formato:superscript",
+          "origen": 2,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «-3» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+      "chars": 675,
+      "razones": [
+        "la más corta (675 chars)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 675,
+      "charsAhora": 675,
+      "charsDom": 675,
+      "origen": {
+        "chars": 675,
+        "palabras": 104,
+        "enlaces": 0,
+        "botones": 0,
+        "encabezados": 1,
+        "conId": 0,
+        "formatos": {},
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 805,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas/",
+      "chars": 2118,
+      "razones": [
+        "más variedad interna (6 etiquetas distintas)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 2118,
+      "charsAhora": 2118,
+      "charsDom": 2107,
+      "origen": {
+        "chars": 2107,
+        "palabras": 320,
+        "enlaces": 0,
+        "botones": 0,
+        "encabezados": 1,
+        "conId": 0,
+        "formatos": {
+          "bold": 51,
+          "italic": 12,
+          "subscript": 5
+        },
+        "sub": 5,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 3169,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 5,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «exp22» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana/",
+      "chars": 2185,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 2185,
+      "charsAhora": 2185,
+      "charsDom": 2164,
+      "origen": {
+        "chars": 2164,
+        "palabras": 340,
+        "enlaces": 0,
+        "botones": 0,
+        "encabezados": 1,
+        "conId": 0,
+        "formatos": {
+          "subscript": 10
+        },
+        "sub": 10,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 2642,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 10,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «1025322Aeq» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+      "chars": 1678,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "CON PÉRDIDA",
+      "charsCenso": 1678,
+      "charsAhora": 1678,
+      "charsDom": 1670,
+      "origen": {
+        "chars": 1670,
+        "palabras": 239,
+        "enlaces": 1,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {
+          "subscript": 4,
+          "bold": 13
+        },
+        "sub": 4,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 2248,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [
+        {
+          "invariante": "formato:subscript",
+          "origen": 4,
+          "convertido": 0,
+          "ejemplo": "diverge en 0: origen «24x2» vs convertido «»"
+        }
+      ],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+      "chars": 937,
+      "razones": [
+        "aleatoria (control anti-sesgo)"
+      ],
+      "veredicto": "LIMPIA",
+      "charsCenso": 937,
+      "charsAhora": 937,
+      "charsDom": 931,
+      "origen": {
+        "chars": 931,
+        "palabras": 132,
+        "enlaces": 0,
+        "botones": 0,
+        "encabezados": 0,
+        "conId": 0,
+        "formatos": {
+          "bold": 322
+        },
+        "sub": 0,
+        "sup": 0,
+        "imagenes": 0,
+        "conLeyenda": 0,
+        "listas": 0,
+        "citas": 0,
+        "tablas": 0
+      },
+      "convertido": {
+        "nodos": 1805,
+        "embeds": [],
+        "huecos": []
+      },
+      "difs": [],
+      "perdidas": [],
+      "sinMapear": {},
+      "notas": []
+    }
+  ],
+  "resumen": {
+    "juzgadas": 24,
+    "limpias": 6,
+    "conPerdida": 13,
+    "irrecuperables": 5,
+    "deriva": 0,
+    "fallos": 0
+  },
+  "perdidasAgregadas": {
+    "irrecuperable · iframe de storymaps.arcgis.com": 1,
+    "irrecuperable · script reproductor-nbc": 1,
+    "recuperable · <video>": 5,
+    "irrecuperable · script flipbook-fb3d": 3,
+    "irrecuperable · iframe de www.linkedin.com": 1,
+    "irrecuperable · iframe de real-decreto-2142025-un--0qvqhh6.gamma.site": 1,
+    "recuperable · <h5>": 7
+  }
+}

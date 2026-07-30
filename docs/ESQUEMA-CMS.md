@@ -33,7 +33,7 @@ aceptación del §8.
 | **CMS-0a** | **whitelist de nodos** de Lexical | **✅ resuelto** en §3 con el censo de 209 páginas |
 | **CMS-0b** | **media uploads**: volumen persistente vs S3-compatible | **✅ resuelto (2026-07-30): volumen persistente**, abajo |
 | **CMS-0c** | **modelo de publicación**: rebuild por webhook vs ISR | **✅ resuelto (2026-07-30): rebuild por webhook**, abajo |
-| **CMS-0e** | **conversión del cuerpo**: HTML del editor clásico → Lexical **al importar**, o **HTML crudo primero** (render idéntico al actual) y conversión por entrada después | la conversión no es 1:1 (T5: estructura suelta que se normaliza) y hacerla de golpe en 209 documentos **sin pérdida** es una afirmación sin probar. Se decide con un **piloto sobre la muestra adversaria de 24** |
+| **CMS-0e** | **conversión del cuerpo**: HTML del editor clásico → Lexical **al importar**, o **HTML crudo primero** (render idéntico al actual) y conversión por entrada después | **✅ resuelto (2026-07-30): HTML crudo primero**, abajo |
 
 ### ✅ CMS-0c · Publicación por REBUILD CON WEBHOOK (2026-07-30)
 
@@ -105,6 +105,132 @@ puerto, `.next` borrado, build desde HEAD, marcador de frescura por `BUILD_ID`
 pagó en la tanda: `puppeteer-core` va con `--no-save`, así que **cualquier
 `npm install` lo poda** — tras tocar dependencias hay que rehacer
 `npm i --no-save puppeteer-core` antes de correr sondas.
+
+---
+
+### ✅ CMS-0e · HTML CRUDO PRIMERO, conversión por entrada (2026-07-30)
+
+**Decidido: el cuerpo entra como HTML crudo y se convierte por entrada, no de
+golpe al importar.** El acta se separa en dos mitades **porque valen cosas
+distintas**, y mezclarlas es lo que haría parecer probado lo que no lo está.
+
+Sonda: `scripts/qa/a-lexical.mjs` (`npm run qa:a-lexical`), salida congelada en
+`medidas/a-lexical.json` y la del test en negativo en
+`medidas/a-lexical-sabotaje-sub.json`.
+
+#### ⚠ Qué NO prueba este piloto, dicho antes que los números
+
+**El destino Lexical del piloto es mi propia representación, no la de Payload.**
+No se validó contra `@payloadcms/richtext-lexical` ni contra `lexical` —no están
+instalados; el `package-lock.json` no se movió— ni contra un esquema JSON escrito
+a partir de la documentación. El convertidor y el árbol contra el que se compara
+**los escribí en la misma sonda**.
+
+De donde la consecuencia, sin suavizar: **el veredicto «sin pérdida» describe mi
+convertidor contra mi propio destino, y eso no puede probar que Payload lo
+acepte.** El piloto se corrió **antes de instalar Payload**, fuera del orden
+previsto, y eso acota su alcance a lo que se puede afirmar sin la librería
+delante: qué construcciones del corpus se resisten a una estructura de nodos
+—sea cual sea— y por qué.
+
+#### A · INVENTARIO de construcciones difíciles — vale con cualquier convertidor
+
+Esto es la evidencia real de CMS-0e: **son propiedades del material de origen**,
+no de la librería de destino. Ninguna cambia por instalar Payload.
+
+| construcción | instancias / 24 | por qué se resiste |
+|---|---|---|
+| **`<script>` que ES contenido** | 4 en 4 pág. | flipbook de PDF (×3) y reproductor de NBC (×1). §3.3 los elimina y **exige un sustituto que el importador no puede fabricar**: el PDF como relación a media, el enlace a la noticia |
+| **`iframe` de proveedor fuera de la lista cerrada de 5** | 3 en 3 pág. | `storymaps.arcgis.com`, `www.linkedin.com`, `…gamma.site`. En 24 páginas aparecen **tres proveedores nuevos**: la lista cerrada del §3.3 no cubre el corpus |
+| **`<video>` sin nodo en la whitelist** | 5 en 4 pág. | hueco **de esquema, no de dato**: §3.1 no tiene nodo de vídeo. Se cierra añadiéndolo, no pidiéndole nada a una persona |
+| **`<h5>` fuera de la whitelist** | 7 en 1 pág. | §3.1 habilita h2·h3·h4; degradan a h4. Los 7 están en una sola página, que los usa como sub-epígrafes |
+| **`<iframe>` mal cerrado por quien editó** | 2 pág. | el parser de HTML5 trata el interior de `iframe` como RAWTEXT, así que `&nbsp;</p><p>` y `<br/>Ver Real Decreto 214/2025` **acaban siendo texto del documento**. No es prosa de nadie: es resto de parser sobre HTML roto |
+| **imagen enlazada con leyenda** | 2 pág. | la leyenda es **hermana** del `<a>`, no descendiente. Al modelarla como campo del `upload` —que sí cuelga del enlace— el texto **cruza la frontera del enlace**. Es una consecuencia del modelo, y hay que saberla antes de escribirlo |
+| **lista anidada dentro de un `<li>`** | 1 pág. | el árbol concatena los bloques anidados sin separador; el origen los trae separados por el espacio de formato del fuente |
+
+**Lo que el inventario decide por sí solo, sin necesitar la validación.** Hay una
+clase **no vacía** de documentos cuyo contenido **no tiene representación sin que
+una persona aporte lo que falta** —el PDF, el enlace a la noticia, la decisión
+sobre tres proveedores de `iframe`—. Esa clase **no depende del convertidor**:
+existe igual con el de Payload, con el mío o con cualquier otro, porque está en
+el material de origen.
+
+Y una importación masiva es exactamente el momento en el que **no se pueden tomar
+esas decisiones**: son una por documento y las toma una persona mirando la página.
+Por eso el cuerpo **entra crudo y se convierte por entrada**, con el HTML como
+fuente de verdad hasta que cada entrada esté dada por buena. Convertir al importar
+obligaría a elegir entre parar la migración en el primer flipbook o dejar que
+tire contenido en silencio.
+
+⚠ **La muestra es ADVERSARIA, elegida por difícil.** El 5/24 de abajo **no es la
+tasa del corpus** de 209 y no debe citarse como tal. El inventario establece que
+**las clases existen**, no con qué frecuencia.
+
+#### B · RECUENTO — provisional mientras el destino no esté validado
+
+**24 juzgadas de 24** · **16 limpias · 3 con pérdida recuperable · 5
+irrecuperables**. El único diff que queda es una transformación **declarada**
+(un `<h5>` degradado a h4); no hay ninguna discrepancia sin explicar.
+
+**Provisional, y por dos razones distintas:** el destino no es el de Payload
+(arriba), y los números se movieron **cuatro veces durante la propia auditoría**
+sin que el corpus cambiara ni un carácter — cada vez por un defecto de la sonda,
+no del material. Un recuento que se mueve al arreglar quien mide es un recuento
+que todavía mide a quien mide.
+
+Se cita como provisional hasta que se rehaga con `@payloadcms/richtext-lexical`
+instalado. **Esa validación es condición escrita del recuento, no de la
+decisión** — la decisión ya la sostiene el inventario.
+
+#### C · El test en negativo, que es lo que hace legible el recuento
+
+Un «limpio» sin haber probado que la sonda sabe fallar no es un dato. Tres
+sabotajes, cada uno tiene que caer **por un invariante distinto**:
+
+| sabotaje | cae por | comprobado |
+|---|---|---|
+| `sub` — el convertidor no emite sub/sup | `formato:subscript` · `superscript` | ✅ |
+| `hid` — el encabezado pierde su `id` | `encabezados` | ✅ |
+| `leyenda` — el `upload` no absorbe la leyenda | `imagenes` | ✅ |
+
+El de `leyenda` es el que importa: **el texto no se pierde** —cae como párrafo
+suelto— así que el invariante `texto` sigue cuadrando y solo se rompe la
+asociación. Una sonda que solo mirase texto habría dicho «limpio».
+
+Sobre las 24 reales, `SABOTAJE=sub` baja las limpias de **16 a 6**, y la
+correspondencia es exacta: **cae toda página con sub/sup y resiste toda página sin
+ellos, sin una sola excepción**. Ninguna pasa desapercibida.
+
+⚠ **El `id` de encabezado (T6) NO lo ejercita el corpus.** Las 24 páginas traen
+**299 encabezados en el cuerpo y ninguno con `id`** (verificado sobre el HTML
+servido). Por eso el sabotaje `hid` se prueba contra una **probeta sintética**
+(`PROBETA=1`): sin ella, «no cae» sería indistinguible de «no hay nada que
+perder», que son las dos cosas que un test en negativo existe para separar.
+**Esto es dato para T6/A-SP9**, que sigue abierta: si en las 209 no hay `id`, la
+decisión «conservar o regenerar» no tiene nada que conservar.
+
+#### D · Los cinco defectos de la sonda, porque el recuento se movió con cada uno
+
+La auditoría de esta tanda encontró **cinco defectos en el instrumento**, no en el
+material. Van escritos porque el recuento cambió con cada uno y sin la lista los
+números de arriba no se pueden auditar:
+
+| defecto | efecto en el recuento |
+|---|---|
+| `charsCenso()` **definida y nunca llamada** — la guarda comparaba `textContent` normalizado contra la definición etiqueta→espacio del censo | **21 de 24 páginas marcadas DERIVA sin haber derivado**; solo 3 juzgadas. El recuento original no existía |
+| un `<a>` **suelto a nivel de bloque** se desenvolvía y el nodo `link` no se emitía | 6 páginas con enlaces «perdidos» que no faltaban |
+| un inline suelto a nivel de bloque **perdía su propio formato** | `formato:small` de 329 caracteres a 0 |
+| el arreglo del `<a>` **estrenó su propio defecto**: clonaba el nodo y sacaba al `<img>` de su `.wp-caption`, así que `closest()` ya no hallaba la leyenda | 2 páginas con la leyenda vacía |
+| ítems de lista y citas comparados con `norm` en vez de flujo | 1 falso positivo en una lista anidada |
+
+Más dos de impresión que no alteraban el veredicto pero sí el informe: `fmt
+[object Object]`, y diffs que imprimían `listas: 10 → 10` **sin decir qué
+cambiaba** — un descuadre anunciado y no contado, que es el primero de los que
+`CLAUDE.md` §«Dos reglas sobre las sondas» pone por escrito.
+
+**La moraleja operativa, que es la que se lleva la tanda siguiente:** los cuatro
+primeros defectos daban **números plausibles**, no errores. Ninguno habría
+levantado una ceja leyendo solo el resumen.
 
 ---
 
@@ -217,6 +343,18 @@ deshace mejor**.
 build— es justamente el mecanismo que hace seguro que dos colecciones compartan
 un espacio de nombres plano. La decisión no estrena problema: usa una guarda que
 ya hacía falta.
+
+**Ni duplicación de campos, que es la otra objeción obvia.** Lo común —cabecera,
+breadcrumb, hero, slider, bloque K y cola comercial— se declara **una sola vez**
+como array de campos exportado y se esparce en las dos colecciones. Lo que se
+duplica es el **documento**, no la **definición**: cambiar un campo común sigue
+siendo un cambio en un solo sitio, exactamente igual que con una colección única.
+
+**Y hay cómo apuntar a «una página de sector» sin saber de cuál de las dos es.**
+Payload soporta **relación polimórfica** —`relationTo: ['sectores',
+'monograficos']`—, así que un enlace destacado, un menú o un bloque relacionado
+referencian las dos familias con un solo campo. Separar las colecciones no obliga
+a duplicar tampoco las relaciones que las apuntan.
 
 **Condición de reapertura, explícita.** Esta decisión se reevalúa **gratis** el
 día que **los tres campos del §1.3 se hayan añadido al monográfico por una razón
@@ -335,7 +473,7 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 | **T3** | `class="wp-image-<id>"`, `wp-caption`, `aligncenter` | se descartan; la relación con el media pasa a ser **relación a la colección**, no una clase con un id de otro sistema |
 | **T4** | `<script>` — 17 en 15 páginas | **ninguno sobrevive como script**. Detalle en §3.3 |
 | **T5** | `<div>`/`<span>`/`<section>` sueltos del editor clásico | se normalizan; no hay estructura que preservar |
-| **T6** | `id` de los `h2` | **A-SP9**: si los pone el tema, se regeneran; si vienen en el contenido, se conservan. **No decidido** |
+| **T6** | `id` de los `h2` | **A-SP9**: si los pone el tema, se regeneran; si vienen en el contenido, se conservan. **No decidido** — pero el piloto de CMS-0e midió **299 encabezados en las 24 y ninguno con `id`**: si el censo de las 209 lo confirma, no hay nada que conservar y la decisión se cae sola |
 
 ### 3.3 · Los `<script>`, clasificados uno a uno
 
@@ -375,6 +513,23 @@ Y el nodo-embed tipado no es libre: **proveedor de una lista cerrada** —
 `youtube`, `ourworldindata`, `flourish`, `twitter`, `instagram`— más su
 identificador. Los `iframe` ya censados (55/209: YouTube **y** gráficos
 interactivos) entran por el mismo nodo, no por HTML crudo.
+
+⚠ **La lista de cinco NO cubre el corpus, y el piloto de CMS-0e lo midió.** En
+**24 páginas** aparecieron **tres proveedores que no están en ella**:
+`storymaps.arcgis.com`, `www.linkedin.com` y un `…gamma.site`. Es una por cada
+ocho páginas de la muestra adversaria, así que en las 209 habrá más y **no se
+sabe cuántos**: el censo de `iframe` contó cuántos hay, no de quién son.
+
+Eso deja el §3.3 con **un fleco que antes no se veía**: o la lista deja de ser
+cerrada, o se acepta que una fracción del corpus caiga en «decidir caso a caso» al
+importar. **No se decide aquí** —hace falta el censo de proveedores sobre las
+209, que es una sonda que no existe—, pero se anota ahora porque cambia el
+tamaño de lo que §3.3 daba por resuelto. Y refuerza CMS-0e: es otra decisión
+**por documento**, de las que no se pueden tomar en una importación masiva.
+
+⚠ **Y falta un nodo de vídeo en §3.1.** El piloto halló **5 `<video>` en 4 de las
+24**, sin nodo que los represente. Es hueco **de esquema, no de dato**: se cierra
+añadiendo el nodo (upload de vídeo o embed propio), no pidiéndole nada a nadie.
 
 ### 3.4 · ABIERTA · la tabla: ¿nodo de Lexical o block?
 
@@ -472,22 +627,33 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 
 | # | decisión | bloquea |
 |---|---|---|
-| CMS-0e | cuerpo: convertir al importar vs HTML crudo primero | la migración de las 209 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | T6 / A-SP9 | los `id` de los `h2`: conservar o regenerar | índice del artículo |
 | CMS-1 | prefijo de ruta del caso de éxito | grupo C |
 
+**Y una condición escrita, que no es decisión abierta pero se cobra igual:** el
+**recuento** de CMS-0e (16 · 3 · 5) es **provisional** hasta rehacerlo con
+`@payloadcms/richtext-lexical` instalado. La decisión no depende de ello —la
+sostiene el inventario—, pero **ningún número del §CMS-0e·B se cita como firme**
+antes de esa corrida.
+
 **Cerradas el 2026-07-30**, y dónde vive cada acta: **CMS-0d** (Next 16.2.12,
 §CMS-0d) · **CMS-0c** (rebuild por webhook, §CMS-0c) · **CMS-0b** (volumen
-persistente, §CMS-0b) · **§3.3** (el reproductor de NBC: eliminación con enlace a
-la noticia) · **§1.5** (dos colecciones, no una con discriminante — §1.5b, con
-condición de reapertura escrita). De las cinco, **la única que tocaba a otro §
-era CMS-0c**, y lo hizo confirmando el §4 en vez de cambiarlo.
+persistente, §CMS-0b) · **CMS-0e** (HTML crudo primero, §CMS-0e) · **§3.3** (el
+reproductor de NBC: eliminación con enlace a la noticia) · **§1.5** (dos
+colecciones, no una con discriminante — §1.5b, con condición de reapertura
+escrita). De las seis, **la única que tocaba a otro § era CMS-0c**, y lo hizo
+confirmando el §4 en vez de cambiarlo.
 
-De las cuatro que quedan, **ninguna bloquea ya instalar Payload**: son decisiones
-de contenido (cómo entra el cuerpo, cómo se modela la tabla, qué pasa con los
-`id`) y una de modelado (el prefijo del caso de éxito). El camino de
-infraestructura está despejado.
+De las tres que quedan, **ninguna bloquea ya instalar Payload**: dos son
+decisiones de contenido (cómo se modela la tabla, qué pasa con los `id`) y una de
+modelado (el prefijo del caso de éxito). El camino de infraestructura está
+despejado.
+
+⚠ **T6 tiene dato nuevo y no se ha usado todavía:** las 24 páginas de la muestra
+traen **299 encabezados en el cuerpo y ninguno con `id`** (§CMS-0e·C). Si el censo
+de las 209 lo confirma, «conservar o regenerar» se queda sin nada que conservar y
+deja de ser una decisión.
 
 ---
 
