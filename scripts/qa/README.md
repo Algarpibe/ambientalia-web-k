@@ -430,6 +430,8 @@ sufijo.
 | `a-behaviors.mjs [ancho]` | índice del artículo, `iframe`, relacionados |
 | `a-scripts.mjs` | los `<script>` dentro del contenido, clasificados uno a uno (§3.3 del esquema) |
 | `a-lexical.mjs` | **piloto de CMS-0e**: convierte el cuerpo a una estructura de nodos y compara **invariantes** entre origen y árbol. `PROBETA=1` corre la probeta sintética; `SABOTAJE=sub\|hid\|leyenda`, el test en negativo |
+| `a-ids.mjs` | **A-SP9**: origen de los `id` de encabezado. Mide los **dos ejes a la vez** —ámbito (documento vs `post_content`) × momento (HTML servido vs DOM tras settle)— porque las dos medidas que se contradecían diferían en los dos. `PAGINA=<url>` para otra página |
+| `a-embeds.mjs` | **censo de proveedores de `iframe` en las 209** + inventario de `video`/`audio`/`embed`. Mide contra la lista cerrada de §3.3 **tal como está escrita**, que es lo que permite ver que no cubre |
 
 ⚠ **`a-lexical` compara contra una representación PROPIA, no contra Lexical de
 Payload** (no está instalado). Sirve para inventariar qué del corpus se resiste a

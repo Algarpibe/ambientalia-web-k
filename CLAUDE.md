@@ -415,10 +415,11 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
-### Dos reglas sobre las sondas mismas
+### Tres reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un
-defecto en ellas no se ve: se cree. Las dos reglas salieron de arreglar E1 y E3.
+defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
+E3; la tercera, de auditar el piloto de CMS-0e.
 
 **1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
 
@@ -451,6 +452,35 @@ nada **exigió volver a medir** en vez de diffear un fichero — con el original
 vivo por medio, que es la peor forma de tener que probar algo. Corregido: las dos
 congelan, y `w()` resuelve contra `scripts/qa/` para que el `cwd` no parta las
 salidas en dos árboles.
+
+**3 · DOCUMENTADO NO ES CONECTADO.**
+
+> **Un comentario que afirma un arreglo no prueba que el arreglo esté cableado.**
+> `charsCenso()` estaba definida, documentada como resuelta y **nunca llamada**:
+> 21 de 24 páginas salieron marcadas sin haberse medido, y el recuento del
+> informe no existía.
+
+El comentario de la función describía el fallo con precisión —dos definiciones de
+«lo mismo», el censo mete un espacio por etiqueta— y decía que estaba corregido.
+Lo único que faltaba era **la llamada**. Un lector del código veía un problema
+documentado y resuelto; el intérprete veía código muerto. Y la salida no
+protestaba: **21 DERIVA es una cifra plausible** para un sitio vivo.
+
+Lo caza gratis el linter —`'charsCenso' is declared but its value is never
+read`— y lo caza siempre el test en negativo. Lo que no lo caza nunca es leer el
+comentario.
+
+**Su corolario, que se pagó en la misma tanda:**
+
+> **Cada arreglo de una sonda vuelve a correr el test en negativo, entero.**
+
+El arreglo del `<a>` suelto **estrenó su propio defecto**: clonaba el nodo para
+envolverlo y con eso sacaba al `<img>` de su `.wp-caption`, así que `closest()`
+dejaba de encontrar la leyenda y dos páginas la perdieron. El arreglo era correcto
+en el invariante que atacaba —`enlaces`— y rompía otro distinto —`imagenes`—. Un
+test en negativo que solo cubra lo que acabas de tocar no lo habría visto: por eso
+se corre entero, y por eso cada sabotaje tiene que caer **por su propio
+invariante** y no por otro.
 
 El corolario práctico, en dos mitades — la segunda se aprendió cazando la
 primera:

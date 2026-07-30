@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "pregunta": "A-SP9: origen de los `id` de encabezado",
+    "ejes": "ÁMBITO (documento entero vs post_content) × MOMENTO (HTML servido vs DOM tras settle)",
+    "viewport": "1440x900 · DPR 1"
+  },
+  "paginas": [
+    {
+      "url": "https://kunakair.com/es/contaminacion-por-metano/",
+      "servidoDoc": {
+        "total": 68,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 61,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 68,
+          "conId": 16,
+          "ejemplos": [
+            "que-es-el-metano-y-por-que-es-tan-importante",
+            "conceptos-basicos-sobre-el-metano-composicion-y-caracteristicas",
+            "datos-sobre-la-contaminacion-por-metano"
+          ]
+        },
+        "post": {
+          "total": 61,
+          "conId": 16,
+          "ejemplos": [
+            "que-es-el-metano-y-por-que-es-tan-importante",
+            "conceptos-basicos-sobre-el-metano-composicion-y-caracteristicas",
+            "datos-sobre-la-contaminacion-por-metano"
+          ]
+        },
+        "anclasIndice": 38
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+      "servidoDoc": {
+        "total": 1,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 0,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 1,
+          "conId": 0,
+          "ejemplos": []
+        },
+        "post": {
+          "total": 0,
+          "conId": 0,
+          "ejemplos": []
+        },
+        "anclasIndice": 6
+      },
+      "veredicto": "no hay id en ninguno de los dos"
+    },
+    {
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "servidoDoc": {
+        "total": 31,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 24,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 31,
+          "conId": 9,
+          "ejemplos": [
+            "por-que-los-centros-de-datos-generan-preocupaciones-sobre-la-calidad-del-aire",
+            "aplicacion-1-monitorizacion-de-emisiones-de-generadores-de-respaldo",
+            "aplicacion-2-calidad-del-aire-interior-y-control-del-ozono"
+          ]
+        },
+        "post": {
+          "total": 24,
+          "conId": 9,
+          "ejemplos": [
+            "por-que-los-centros-de-datos-generan-preocupaciones-sobre-la-calidad-del-aire",
+            "aplicacion-1-monitorizacion-de-emisiones-de-generadores-de-respaldo",
+            "aplicacion-2-calidad-del-aire-interior-y-control-del-ozono"
+          ]
+        },
+        "anclasIndice": 24
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+      "servidoDoc": {
+        "total": 10,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 3,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 10,
+          "conId": 3,
+          "ejemplos": [
+            "la-contribucion-del-trafico-a-la-contaminacion-atmosferica-de-las-ciudades",
+            "la-colaboracion-de-kunak",
+            "conclusion"
+          ]
+        },
+        "post": {
+          "total": 3,
+          "conId": 3,
+          "ejemplos": [
+            "la-contribucion-del-trafico-a-la-contaminacion-atmosferica-de-las-ciudades",
+            "la-colaboracion-de-kunak",
+            "conclusion"
+          ]
+        },
+        "anclasIndice": 12
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "servidoDoc": {
+        "total": 42,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 35,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 42,
+          "conId": 11,
+          "ejemplos": [
+            "por-que-el-trafico-urbano-es-una-fuente-critica-de-contaminacion-atmosferica",
+            "que-es-la-monitorizacion-de-emisiones-del-trafico-urbano-y-como-funciona",
+            "redes-de-sensores-de-calidad-del-aire-para-ciudades"
+          ]
+        },
+        "post": {
+          "total": 35,
+          "conId": 11,
+          "ejemplos": [
+            "por-que-el-trafico-urbano-es-una-fuente-critica-de-contaminacion-atmosferica",
+            "que-es-la-monitorizacion-de-emisiones-del-trafico-urbano-y-como-funciona",
+            "redes-de-sensores-de-calidad-del-aire-para-ciudades"
+          ]
+        },
+        "anclasIndice": 28
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "servidoDoc": {
+        "total": 14,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 7,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 14,
+          "conId": 7,
+          "ejemplos": [
+            "world-athletics-y-su-compromiso-con-el-aire-limpio",
+            "las-metas-de-world-athletics-en-la-lucha-por-un-aire-limpio",
+            "world-athletics-y-las-ciudades-del-futuro"
+          ]
+        },
+        "post": {
+          "total": 7,
+          "conId": 7,
+          "ejemplos": [
+            "world-athletics-y-su-compromiso-con-el-aire-limpio",
+            "las-metas-de-world-athletics-en-la-lucha-por-un-aire-limpio",
+            "world-athletics-y-las-ciudades-del-futuro"
+          ]
+        },
+        "anclasIndice": 20
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "servidoDoc": {
+        "total": 27,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 20,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 27,
+          "conId": 8,
+          "ejemplos": [
+            "comprender-el-impacto-de-la-contaminacion-del-aire",
+            "revision-de-la-directiva-de-calidad-del-aire-un-paso-adelante",
+            "midiendo-la-carga-ambiental-de-enfermedades-una-perspectiva-critica"
+          ]
+        },
+        "post": {
+          "total": 20,
+          "conId": 8,
+          "ejemplos": [
+            "comprender-el-impacto-de-la-contaminacion-del-aire",
+            "revision-de-la-directiva-de-calidad-del-aire-un-paso-adelante",
+            "midiendo-la-carga-ambiental-de-enfermedades-una-perspectiva-critica"
+          ]
+        },
+        "anclasIndice": 22
+      },
+      "veredicto": "LOS PONE EL TEMA"
+    },
+    {
+      "url": "https://kunakair.com/es/kunak-air-pro-certificado-mcerts/",
+      "servidoDoc": {
+        "total": 1,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "servidoPost": {
+        "total": 0,
+        "conId": 0,
+        "ejemplos": []
+      },
+      "dom": {
+        "doc": {
+          "total": 1,
+          "conId": 0,
+          "ejemplos": []
+        },
+        "post": {
+          "total": 0,
+          "conId": 0,
+          "ejemplos": []
+        },
+        "anclasIndice": 6
+      },
+      "veredicto": "no hay id en ninguno de los dos"
+    }
+  ],
+  "resumen": {
+    "juzgadas": 8,
+    "losPoneElTema": 6,
+    "vienenEnElContenido": 0,
+    "sinIdEnNinguno": 2
+  }
+}

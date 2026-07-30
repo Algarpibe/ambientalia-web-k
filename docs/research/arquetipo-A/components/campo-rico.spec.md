@@ -131,13 +131,43 @@ No son etiquetas, son acuerdos que el contenido da por hechos:
 | convención | páginas | qué es |
 |---|---|---|
 | **`<a class="et_pb_button">`** | **168 (80 %)** | CTA con la piel de botón de Divi, escrito en el contenido. Verificado: `<a href="…/descarga-catalogo/" class="et_pb_button calls-button" target="_blank" rel="nofollow">` |
-| `id` en los `h2` | 16 de 61 encabezados en la página medida | anclas que consume el índice (`BEHAVIORS.md` §2) |
+| ~~`id` en los `h2`~~ | ~~16 de 61 encabezados en la página medida~~ | ⚠ **NO es una convención del contenido — corregido 2026-07-30.** Ver abajo |
 | `srcset` en las `img` | 8 de 9 en la página medida | responsive de WordPress |
 
 **El `et_pb_button` es el hallazgo incómodo:** el 80 % de los documentos depende
 de **una clase CSS del tema** para que un enlace se vea como botón. En el CMS eso
 es acoplamiento entre contenido y tema, y hay dos salidas —convertirlo a un nodo
 tipado al migrar, o replicar la clase—; **no se elige aquí**, se deja medido.
+
+### ⚠ Los `id` de los `h2` NO viven en el contenido — corregido (2026-07-30)
+
+**La medida era correcta; su sitio no.** «16 de 61» es real, pero es del **DOM
+tras settle**, y esta tabla es de **convenciones que viven dentro del contenido**.
+En el contenido no hay ni uno.
+
+Medido en la misma página —`/es/contaminacion-por-metano/`, la que produjo el «16
+de 61»— con `npm run qa:a-ids`, salida congelada en `medidas/a-ids.json`:
+
+| | HTML servido | DOM tras settle |
+|---|---|---|
+| encabezados del documento | 68 · **0 con `id`** | 68 · **16 con `id`** |
+| dentro de `post_content` | 61 · **0 con `id`** | 61 · **16 con `id`** |
+
+**Los pone el JS del tema al cargar.** Confirmado en **8 páginas**: en las 6 con
+encabezados, cero `id` en el HTML servido y `id` en el DOM; en las otras 2 no hay
+`id` en ninguno de los dos. **Ninguna los trae en el contenido.**
+
+Y explica la contradicción con el piloto de CMS-0e —«299 encabezados en 24
+páginas, ninguno con `id`»—: **las dos medidas eran ciertas.** Diferían en **dos**
+ejes a la vez, ámbito (documento entero vs `post_content`) y momento (DOM vs HTML
+servido), y por eso ninguna era comprobable contra la otra. Es `CLAUDE.md` §«El
+NIVEL al que se mide» aplicado al eje del tiempo: **dos medidas que difieren en
+dos variables no deciden ninguna.**
+
+**Cierra A-SP9**, y la consecuencia va a `ESQUEMA-CMS.md` §T6: el `id` **se
+regenera, no se conserva**, y el índice del artículo es **derivable** del propio
+texto rico. No hay nada que guardar, así que el `id` tampoco entra en la
+whitelist del campo.
 
 ## 5 · Las tres formas NO piden el mismo campo rico
 
@@ -199,6 +229,6 @@ están. Las dos son legítimas y ninguna es de maquetación:
 | # | qué | por qué |
 |---|---|---|
 | **A-SP8** | qué hacen exactamente los 15 `script` | contados, no leídos |
-| **A-SP9** | si los `id` de los `h2` los genera el tema o vienen en el contenido | se ve el resultado, no el origen. Decide si el índice es derivable o hay que guardar el `id` |
+| ~~**A-SP9**~~ | ~~si los `id` de los `h2` los genera el tema o vienen en el contenido~~ | **✅ CERRADA (2026-07-30): los genera el tema.** 0 en el HTML servido, 16 en el DOM, misma página; 8 páginas sin una excepción. El índice **es derivable** y el `id` no se guarda — §4 |
 | **A-SP10** | si el `style="width:1210px"` de `wp-caption` aparece en las 83 o solo en algunas | medido en una |
 | **A-SP11** | si hay `srcset` en las 123 páginas con imagen | medido en una |

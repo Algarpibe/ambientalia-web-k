@@ -45,6 +45,8 @@
     "qa:a-behaviors": "node scripts/qa/a-behaviors.mjs",
     "qa:a-scripts": "node scripts/qa/a-scripts.mjs",
     "qa:a-lexical": "node scripts/qa/a-lexical.mjs",
+    "qa:a-ids": "node scripts/qa/a-ids.mjs",
+    "qa:a-embeds": "node scripts/qa/a-embeds.mjs",
     "qa:mono": "node scripts/qa/mono-cmp.mjs",
     "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
     "qa:clon-base": "node scripts/qa/clon-base.mjs",

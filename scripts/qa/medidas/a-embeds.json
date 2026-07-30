@@ -1,0 +1,2001 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "fuente": "HTML servido del original",
+    "alcance": "censo 209/209, no muestra",
+    "listaCerrada": [
+      "youtube",
+      "ourworldindata",
+      "flourish",
+      "twitter",
+      "instagram"
+    ]
+  },
+  "paginas": [
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/estamos-listos-para-ayudarle/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/nos-hemos-mudado/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/aHlsyzC3_iI?si=No96iVtUSltiivkn&amp;t=1563"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/covid-19-calidad-del-aire/",
+      "iframes": [
+        {
+          "host": "docs.google.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJGUs79_kZfAm1a_kHJ5_EQn5OmkHX0zIMotgp9ax70NazD_g6TPONHtQqsnU9JljZPMxNS"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/detectores-emisiones-coronavirus-contaminacion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/webinar-redes-hibridas-monitorizacion-ambiental/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/webinar-como-controlar-las-emisiones-en-mineria-junio-2025/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/FmIWDJltqTc?si=qzsKQw4zwqQtqjma"
+        },
+        {
+          "host": "canva.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.canva.com/design/DAGDP9EZ_GA/Te4zaL3RIT9lUZaNHOJN3g/view?embed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/proyecto-simgo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/el-sensor-de-calidad-del-aire-mas-preciso/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "iframes": [
+        {
+          "host": "storymaps.arcgis.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://storymaps.arcgis.com/stories/4b236ba9837a455890bbcd8a16fde8a1?cover=false"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/particulas-ultrafinas-puf/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/emisiones-ganaderas-y-calidad-del-aire/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/total-ghg-emissions?tab=line&amp;country=~OWID_WRL"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/methane-emissions-by-sector?tab=line"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-olores-en-edar/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-en-islas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/corrosion-ambiental-causas-factores-y-como-prevenirla/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/biometano-y-biogas/",
+      "iframes": [
+        {
+          "host": "europeanbiogas.clicdata.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://europeanbiogas.clicdata.com/v/jcn6CnV0CVTa"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/global-methane-concentrations?tab=line"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/justicia-climatica-financiacion-climatica-y-seguridad-climatica/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sargazo-problemas-ambientales-y-monitorizacion-del-impacto/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/qFcrIfDoYXw?feature=oembed"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/fXU7obo2wK0?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calibracion-de-sensores-de-calidad-del-aire/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-acustica/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/nueva-directiva-de-calidad-del-aire-ue-2024-2881/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-de-la-industria-petroquimica/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/0AmzdyB5Jl4?si=s6gphm5rBGdofyaH"
+        },
+        {
+          "host": "linkedin.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7294325724709052416"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/unTd9kIHrgs?si=kwgpRXAJlHFWbqYd"
+        }
+      ],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-vertederos/",
+      "iframes": [
+        {
+          "host": "experience.arcgis.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://experience.arcgis.com/experience/cfb50984b19d463f89082489a1a61558"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-por-produccion-de-energia/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/webinar-control-de-olores-en-vertederos-y-edar/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/proyecto-pure-cities/",
+      "iframes": [
+        {
+          "host": "google.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.google.com/maps/d/embed?mid=1tvfi2qVgTyG6IsFTI7SvWQV44LnHZLo&amp;ehbc=2E312F"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/uDXVFFYdxa8?si=NTrmTFQ5PdYaGvIO"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-por-metano/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/tdqh7Jy-AKE?si=3pP7eA-xWBI3Jydq"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/per-capita-methane-sector?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/methane-emissions-by-sector?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/methane-emissions?time=2023&amp;tab=map"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-del-acero-en-la-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/gases-de-efecto-invernadero-y-accion-climatica/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/microsensores-de-calidad-del-aire/",
+      "iframes": [
+        {
+          "host": "canva.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.canva.com/design/DAFw2DzIlL4/watch?embed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/justicia-ambiental-el-derecho-a-respirar-aire-limpio/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-juegos-olimpicos-de-paris-2024/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/_EQgUqwE0vk?si=l373VU4WrSMkWDuq"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-nueva-york/",
+      "iframes": [],
+      "medios": {
+        "embed": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/carbon-footprint-travel-mode?tab=chart"
+        },
+        {
+          "host": "google.es",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.google.es/maps/d/embed?mid=13O5oZEMi_8GWZQm4vcGEA3SIfszJT4w&amp;ehbc=2E312F"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-en-las-comunidades/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/number-of-deaths-by-risk-factor?tab=chart"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-industria-papelera/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-en-puertos/",
+      "iframes": [
+        {
+          "host": "shipmap.org",
+          "proveedor": null,
+          "enLista": false,
+          "src": "//www.shipmap.org"
+        },
+        {
+          "host": "elliotcloud.portsdebalears.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://elliotcloud.portsdebalears.com/grafana/d/kf1KZEwVk/aqi-dashboard_interno?orgId=1&amp;var-Puerto=M&amp;kiosk"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire/",
+      "iframes": [
+        {
+          "host": "flo.uri.sh",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://flo.uri.sh/visualisation/15668216/embed?auto=1"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-en-los-aeropuertos/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-madrid/",
+      "iframes": [
+        {
+          "host": "geoportal.madrid.es",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://geoportal.madrid.es/IDEAM_WBGEOPORTAL/visor_ide.iam?ArcGIS=https://sigma.madrid.es/hosted/rest/services/GEOPORTA"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/guia-sobre-la-contaminacion-urbana/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/vdhDnYdBDhQ"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-air-pro-certificado-mcerts/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/ehs-industrial/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-en-los-asentamientos-informales/",
+      "iframes": [
+        {
+          "host": "data.worldbank.org",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://data.worldbank.org/share/widget?indicators=EN.POP.SLUM.UR.ZS&amp;type=shaded&amp;view=map&amp;year=2020"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/JHVc9dQgypA"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/medicion-de-gases-en-los-vertederos-de-basura/",
+      "iframes": [
+        {
+          "host": "experience.arcgis.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://experience.arcgis.com/experience/cfb50984b19d463f89082489a1a61558"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/My5oX8fqHk8"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-mal-olor-industrial/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": " https://www.youtube.com/embed/e1hsaYHRGD8?si=3wxMQkt7vGmneJ_N"
+        }
+      ],
+      "medios": {
+        "embed": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-del-aire-alrededor-de-los-colegios/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/despliegue-estaciones-kunak-air-pro-filipinas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/redes-hibridas-vigilancia-calidad-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-cloud-plataforma-web-calidad-aire/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/XZTQYQF-bT0"
+        },
+        {
+          "host": "docs.google.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSASfj5Hw4it0b6PH6pgZtWR_KNe1BbVJi3RyObIXWogFPQ4Yki-s9C0x0HvVx0z5dAdIyRU"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sensores-calidad-aire-volcanes/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/JBIRA6i8zcw"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-air-pro-sensor-multi-contaminante-preciso-airlab/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/V5SlMvVoiEw?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/directrices-oms-calidad-aire-innovacion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/conferencia-partes-cop26-incendios/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/WOjY4bwRiMA?start=150&#038;feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/estres-por-calor-bienestar/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/zonas-bajas-emisiones-monitorizacion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitores-calidad-aire-moviles/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/boZ-3GuD6WM?feature=oembed"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/Y9wTuLQkLzc?start=17&#038;feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/entrevista-jelle-hofman-investigador-calidad-del-aire-imec/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+      "iframes": [
+        {
+          "host": "essic.umd.edu",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://essic.umd.edu/wp-content/uploads/2020/09/smokemap.gif"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/WzwIQyZ64jk"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/entrevista-agustin-torres-product-manager-suez/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/detectores-calidad-aire-movilidad/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/GiuFle3rARA?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/comparativa-de-los-informes-de-evaluacion-de-aqspec/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-aire-deporte/",
+      "iframes": [
+        {
+          "host": "facebook.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FWorldAthletics%2Fvideos%2F1065363600311"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/rvPds6yUQDI?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-mal-olor-sensores/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/ALml-qVFzUU"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/detectores-emisiones-proyecto-trafair/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/dCcyfpaXjf8?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/efectos-de-la-contaminacion-en-la-salud/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/YAaKtROsjPY?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sensores-calidad-aire-exterior-rendimiento-uso/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/necesidad-estandares-y-programas-certificacion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/webinar-calidad-del-aire-en-europa/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/premios-pyme-2024-kunak/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/premios-aqe-2024/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-transporte-urbano/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/co2-emissions-and-gdp?country=GBR~USA~FRA~DEU~OWID_EU27~ESP&amp;tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/carbon-footprint-travel-mode?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/share-with-convenient-access-to-public-transport?tab=map"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-referente-en-medicion-de-calidad-del-aire/",
+      "iframes": [
+        {
+          "host": "canva.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.canva.com/design/DAFXcQtGL6k/view?embed"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/FFoVbEFtUWg"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/medicion-de-la-calidad-del-aire-en-puertos-maritimos/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/x_wG4brx2_I"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/plan-recuperacion-transformacion-resiliencia-zbe/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-aire-tiempo-real-kunak-air-lite/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/C3l8sW7qLzA?clip=UgkxjTxmfGP4_AlDgbSWq7M5zcrHfe_OIVHl&amp;clipt=EN-hMhjOrDU"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/medir-calidad-aire-asic-2022/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/fondos-nextgen-eu-zonas-bajas-emisiones/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/lanzamiento-kunak-air-pro/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/RJk3fM8W0Ko?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sensores-calidad-aire-exterior-pamplona/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/iU1_as-Kz8E?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-proveedor-sensores-calidad-aire-brightsites-signify/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/hP5JHEvqSz4?feature=oembed"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/vigilancia-calidad-aire-maraton-valencia-2019/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/OyANflGxUgI"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/calidad-aire-paises-sanos/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/por-que-es-importante-monitorizar-en-tiempo-real/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/workshop-sensores-ambientales-bajo-coste/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/eugreenweek-we-have-gone-green/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/fourth-session-of-the-united-nations-environment-assembly-2/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/0AmzdyB5Jl4"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia/",
+      "iframes": [
+        {
+          "host": "facebook.com",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FWorldAthleticsClub%2Fvideos%2F274964676"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/additive-presenta-sistema-kunak-air-en-sensortest-2018/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/ZRrw05wUxVI?rel=0"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/exponemos-en-greencities-malaga-2018/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/participamos-con-suez-en-el-4yfn-del-mobile-world-congress/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-oem-industrial-iot-en-el-basque-industry-4-0/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/exponemos-en-la-smart-city-expo-world-congress-2017/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/exponemos-en-la-feria-sensortest-2017-con-alphasense/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-participa-en-aqemission-monitoring-2017-con-alphasense/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/quemas-prescritas-agricolas-calidad-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/medidores-de-calidad-del-aire-mediciones-indicativas/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/DjXY6nD_kyI"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-aire-urbano/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/PBEmePP-XU4?si=-kGXo6JH9UK1DiFQ"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/woFlJx7Rv78?si=OODhi4PJrZ4VLGRs"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/PnQ4m-qMx_Q?si=uQURFHTAS3WfgrsJ"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sensores-calidad-aire-urbano-donostia/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/control-emisiones-industriales/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/emisiones-de-las-refinerias-de-petroleo/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/oil-production-by-country?tab=chart"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-en-refinerias/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-aire-obras-demoliciones-derribos/",
+      "iframes": [],
+      "medios": {
+        "video": 1,
+        "source": 1
+      }
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-mineria-calidad-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-near-reference/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-perimetral/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/sensor-calidad-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/redes-de-vigilancia-de-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/particulas-ultrafinas/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/tuTfw6KIvd4?start=79&amp;end=93&amp;autoplay=1&amp;mute=1&amp;loop=1"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/metano/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "//www.youtube.com/embed/2rdEjFn_7jg?si=fKirbuJTRuyAJUbv"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/ghg-emissions-by-gas?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/methane-emissions-by-sector?tab=chart"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/sulfuro-de-hidrogeno/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/ruido/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/aaqms-estaciones-de-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/cianuro-de-hidrogeno-hcn/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/amoniaco-nh3/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/hidrocarburos-no-metanicos-nmhc/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/cloro-cl2-dioxido-de-cloro-clo2/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/gases-de-efecto-invernadero/",
+      "iframes": [
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/CWFOHAbDh68?si=7s_JRI-jpKNHdoqe"
+        },
+        {
+          "host": "youtube.com",
+          "proveedor": "youtube",
+          "enLista": true,
+          "src": "https://www.youtube.com/embed/4ofqzVW0mwM?si=H8u31IPrWhPo2wFF"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/explorers/co2?Gas+or+Warming=CO%E2%82%82&amp;Accounting=Territorial&amp;Fuel+or+Land+Use+Chan"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/compuestos-organicos-volatiles/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/esmog/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/estaciones-de-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/inmisiones-atmosfericas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/justicia-ambiental/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/fluoruro-de-hidrogeno-hf/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/oxido-nitrico-no/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/oxigeno/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/ozono-troposferico/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/dioxido-de-carbono/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/global-co2-concentration?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country?tab=chart"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/co2-income-level?tab=chart"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/dioxido-de-nitrogeno/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/particulas-en-suspension/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/indice-de-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/dioxido-de-azufre/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/emisiones-atmosfericas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/huella-de-carbono/",
+      "iframes": [
+        {
+          "host": "real-decreto-2142025-un--0qvqhh6.gamma.site",
+          "proveedor": null,
+          "enLista": false,
+          "src": "https://real-decreto-2142025-un--0qvqhh6.gamma.site/"
+        },
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/explorers/co2?facet=none&amp;country=ESP~OWID_EUR~OWID_WRL~CHN~USA~OWID_SAM&amp;hideControls="
+        }
+      ],
+      "medios": {
+        "video": 1
+      }
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/monoxido-de-carbono/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/contaminantes-atmosfericos/",
+      "iframes": [
+        {
+          "host": "ourworldindata.org",
+          "proveedor": "ourworldindata",
+          "enLista": true,
+          "src": "https://ourworldindata.org/grapher/number-of-deaths-by-risk-factor?tab=discrete-bar"
+        }
+      ],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/ldar/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/oxidos-de-nitrogeno-nox/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/vigilancia-perimetral-industrial/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "termino",
+      "url": "https://kunakair.com/es/emisiones-por-chimenea/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-pro-informe-de-evaluacion-en-campo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-lite-informe-de-evaluacion-en-campo/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+      "iframes": [],
+      "medios": {}
+    },
+    {
+      "forma": "doc-cientifico",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico/",
+      "iframes": [],
+      "medios": {}
+    }
+  ],
+  "hosts": [
+    {
+      "host": "youtube.com",
+      "n": 42,
+      "paginas": 36,
+      "enLista": true,
+      "proveedor": "youtube"
+    },
+    {
+      "host": "ourworldindata.org",
+      "n": 20,
+      "paginas": 12,
+      "enLista": true,
+      "proveedor": "ourworldindata"
+    },
+    {
+      "host": "canva.com",
+      "n": 3,
+      "paginas": 3,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "docs.google.com",
+      "n": 2,
+      "paginas": 2,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "experience.arcgis.com",
+      "n": 2,
+      "paginas": 2,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "facebook.com",
+      "n": 2,
+      "paginas": 2,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "storymaps.arcgis.com",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "europeanbiogas.clicdata.com",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "linkedin.com",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "google.com",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "google.es",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "shipmap.org",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "elliotcloud.portsdebalears.com",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "flo.uri.sh",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "geoportal.madrid.es",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "data.worldbank.org",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "essic.umd.edu",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    },
+    {
+      "host": "real-decreto-2142025-un--0qvqhh6.gamma.site",
+      "n": 1,
+      "paginas": 1,
+      "enLista": false,
+      "proveedor": null
+    }
+  ],
+  "medios": {
+    "video": {
+      "apariciones": 8,
+      "paginas": 8
+    },
+    "source": {
+      "apariciones": 7,
+      "paginas": 7
+    },
+    "embed": {
+      "apariciones": 2,
+      "paginas": 2
+    }
+  },
+  "resumen": {
+    "paginas": 209,
+    "fallos": 0,
+    "iframesTotales": 83,
+    "hostsDistintos": 18,
+    "hostsEnLaLista": 2,
+    "hostsFueraDeLaLista": 16,
+    "iframesFueraDeLaLista": 21
+  }
+}

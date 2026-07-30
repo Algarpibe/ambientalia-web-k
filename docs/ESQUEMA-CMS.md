@@ -448,8 +448,10 @@ Del censo de **209/209 páginas**. Los nombres de feature son los de Payload;
 | **enlace**, con `target` y `rel` | 181 |
 | **cita** | 73 |
 | **upload / imagen**, con `srcset`, `width`, `height` y **leyenda** | 123, y 83 con `wp-caption` |
+| **upload / vídeo** | **8 `<video>` en 8 páginas** (+2 `<embed>`) — censado 2026-07-30, ver §3.1b |
 | **regla horizontal** | 5 |
 | **bloques** (`BlocksFeature`) | el vehículo de los nodos tipados de §3.3 |
+| **embed**, con **URL** (no `enum` de proveedor) | **83 `iframe` · 18 hosts** — censado 2026-07-30, ver §3.3b |
 | **tabla** | 35 — **ABIERTA, ver §3.4** |
 
 **Fuera de la whitelist, con evidencia:**
@@ -473,7 +475,7 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 | **T3** | `class="wp-image-<id>"`, `wp-caption`, `aligncenter` | se descartan; la relación con el media pasa a ser **relación a la colección**, no una clase con un id de otro sistema |
 | **T4** | `<script>` — 17 en 15 páginas | **ninguno sobrevive como script**. Detalle en §3.3 |
 | **T5** | `<div>`/`<span>`/`<section>` sueltos del editor clásico | se normalizan; no hay estructura que preservar |
-| **T6** | `id` de los `h2` | **A-SP9**: si los pone el tema, se regeneran; si vienen en el contenido, se conservan. **No decidido** — pero el piloto de CMS-0e midió **299 encabezados en las 24 y ninguno con `id`**: si el censo de las 209 lo confirma, no hay nada que conservar y la decisión se cae sola |
+| **T6** | `id` de los `h2` | **✅ REGENERAR, no conservar (2026-07-30).** A-SP9 cerrada: **los pone el JS del tema**, no el contenido — 0 `id` en el HTML servido y 16 en el DOM **en la misma página**, y 8 páginas sin excepción (`npm run qa:a-ids`, `medidas/a-ids.json`). No hay nada que migrar: el `id` **no entra en el campo** y el índice del artículo se **deriva** de los encabezados |
 
 ### 3.3 · Los `<script>`, clasificados uno a uno
 
@@ -514,22 +516,66 @@ Y el nodo-embed tipado no es libre: **proveedor de una lista cerrada** —
 identificador. Los `iframe` ya censados (55/209: YouTube **y** gráficos
 interactivos) entran por el mismo nodo, no por HTML crudo.
 
-⚠ **La lista de cinco NO cubre el corpus, y el piloto de CMS-0e lo midió.** En
-**24 páginas** aparecieron **tres proveedores que no están en ella**:
-`storymaps.arcgis.com`, `www.linkedin.com` y un `…gamma.site`. Es una por cada
-ocho páginas de la muestra adversaria, así que en las 209 habrá más y **no se
-sabe cuántos**: el censo de `iframe` contó cuántos hay, no de quién son.
+### ⚠ 3.3b · La lista cerrada de 5 NO es un modelo viable — CENSADO (2026-07-30)
 
-Eso deja el §3.3 con **un fleco que antes no se veía**: o la lista deja de ser
-cerrada, o se acepta que una fracción del corpus caiga en «decidir caso a caso» al
-importar. **No se decide aquí** —hace falta el censo de proveedores sobre las
-209, que es una sonda que no existe—, pero se anota ahora porque cambia el
-tamaño de lo que §3.3 daba por resuelto. Y refuerza CMS-0e: es otra decisión
-**por documento**, de las que no se pueden tomar en una importación masiva.
+El piloto de CMS-0e vio 3 proveedores fuera de la lista en 24 páginas. Ahora está
+**censado en las 209**, con el mismo argumento que escribió `campo-rico.spec.md`
+para las etiquetas: **contar dentro de un contenedor es `fetch` + parseo, así que
+muestrear sería aceptar incertidumbre a cambio de nada.** Sonda
+`npm run qa:a-embeds`, salida congelada en `medidas/a-embeds.json`.
 
-⚠ **Y falta un nodo de vídeo en §3.1.** El piloto halló **5 `<video>` en 4 de las
-24**, sin nodo que los represente. Es hueco **de esquema, no de dato**: se cierra
-añadiendo el nodo (upload de vídeo o embed propio), no pidiéndole nada a nadie.
+**83 `iframe` · 18 hosts distintos.** Y el reparto es el que decide:
+
+| | hosts | iframes |
+|---|---|---|
+| **en la lista cerrada** | **2** — `youtube.com` (42 en 36 pág.) · `ourworldindata.org` (20 en 12 pág.) | 62 (75 %) |
+| **fuera de ella** | **16** | 21 (25 %) |
+
+**La lista falla de tres formas distintas, y conviene no contarlas como una:**
+
+1. **Tres de los cinco listados no aparecen nunca como `iframe`** —flourish,
+   twitter, instagram entran por `<script>` (§3.3)—. La lista describe scripts y
+   se estaba aplicando a iframes.
+2. **El patrón está incompleto para un proveedor que SÍ está listado:**
+   `flo.uri.sh` **es Flourish** por su acortador, y el regex solo casaba
+   `flourish.studio`. Habría contado como «proveedor nuevo» algo ya decidido.
+3. **La cola es larga y no se repite: 12 de los 16 hosts aparecen UNA sola vez.**
+   Canva, Google Sheets, Google Maps (con dos TLD), ArcGIS (con dos hosts),
+   Facebook, LinkedIn, un Grafana de Ports de Balears, el geoportal de Madrid, el
+   Banco Mundial, `shipmap.org`, un `clicdata`, un `gamma.site`… y un `iframe`
+   que apunta a **un `.gif`** (`essic.umd.edu`), que no es un embebido de nada.
+
+**Es la misma forma de dato que produjo la decisión del campo rico**, y merece la
+misma respuesta. Un `enum` cerrado sobre una cola donde 12 de 16 valores aparecen
+una vez no es un modelo: es una lista de excepciones esperando a la número 17.
+
+> **El nodo-embed lleva URL, no un `enum` de proveedores.** El proveedor pasa a
+> ser **derivado** (para elegir cómo se renderiza y qué se permite), y la lista
+> cerrada baja de **tipo** a **política de validación**: una allowlist editable
+> que se comprueba al guardar, no un tipo que hay que migrar cada vez que alguien
+> embebe un Canva.
+
+Con eso, los 21 de la cola dejan de ser 16 decisiones de esquema y pasan a ser
+**una decisión de política** —qué hosts se admiten— más los casos que haya que
+rechazar a mano. **Y no rebaja CMS-0e:** el que apunta a un `.gif` y el
+`gamma.site` siguen necesitando que una persona mire, que es exactamente el
+argumento de que el cuerpo entre crudo.
+
+⚠ **Lo que queda SIN DECIDIR** es el contenido de esa allowlist inicial. Se
+propone arrancar con los 18 hosts censados y exigir alta explícita para
+cualquiera nuevo; **no se cierra aquí** porque es una decisión de política de
+seguridad (un `iframe` de terceros ejecuta código de terceros), no de modelado.
+
+### ⚠ 3.1b · Falta el nodo de vídeo — CENSADO (2026-07-30)
+
+Del mismo censo: **8 `<video>` en 8 páginas**, con 7 `<source>`, más **2
+`<embed>` en 2 páginas**. §3.1 no tiene nodo que los represente.
+
+Es hueco **de esquema, no de dato**: se cierra **añadiendo el nodo** —upload de
+vídeo, que es lo que son (`.mp4` en `wp-content/uploads`)— y no pidiéndole nada a
+nadie. Va a la whitelist del §3.1 como `upload` de tipo vídeo, con `<source>`
+resuelto a la relación de media y el contenido de reserva —texto y enlace— como
+hijos, que es lo que el piloto ya hace.
 
 ### 3.4 · ABIERTA · la tabla: ¿nodo de Lexical o block?
 
@@ -628,7 +674,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | # | decisión | bloquea |
 |---|---|---|
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
-| T6 / A-SP9 | los `id` de los `h2`: conservar o regenerar | índice del artículo |
+| §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados | política, no modelado: el nodo ya lleva URL |
 | CMS-1 | prefijo de ruta del caso de éxito | grupo C |
 
 **Y una condición escrita, que no es decisión abierta pero se cobra igual:** el
@@ -639,21 +685,22 @@ antes de esa corrida.
 
 **Cerradas el 2026-07-30**, y dónde vive cada acta: **CMS-0d** (Next 16.2.12,
 §CMS-0d) · **CMS-0c** (rebuild por webhook, §CMS-0c) · **CMS-0b** (volumen
-persistente, §CMS-0b) · **CMS-0e** (HTML crudo primero, §CMS-0e) · **§3.3** (el
-reproductor de NBC: eliminación con enlace a la noticia) · **§1.5** (dos
+persistente, §CMS-0b) · **CMS-0e** (HTML crudo primero, §CMS-0e) · **T6/A-SP9**
+(el `id` se regenera: lo pone el tema — §3.2 y `campo-rico.spec.md` §4) · **§3.3**
+(el reproductor de NBC: eliminación con enlace a la noticia) · **§1.5** (dos
 colecciones, no una con discriminante — §1.5b, con condición de reapertura
-escrita). De las seis, **la única que tocaba a otro § era CMS-0c**, y lo hizo
+escrita). De las siete, **la única que tocaba a otro § era CMS-0c**, y lo hizo
 confirmando el §4 en vez de cambiarlo.
 
-De las tres que quedan, **ninguna bloquea ya instalar Payload**: dos son
-decisiones de contenido (cómo se modela la tabla, qué pasa con los `id`) y una de
-modelado (el prefijo del caso de éxito). El camino de infraestructura está
-despejado.
+De las tres que quedan, **ninguna bloquea ya instalar Payload**: una es de
+contenido (cómo se modela la tabla), una de política (qué hosts de embebido se
+admiten) y una de modelado (el prefijo del caso de éxito). El camino de
+infraestructura está despejado.
 
-⚠ **T6 tiene dato nuevo y no se ha usado todavía:** las 24 páginas de la muestra
-traen **299 encabezados en el cuerpo y ninguno con `id`** (§CMS-0e·C). Si el censo
-de las 209 lo confirma, «conservar o regenerar» se queda sin nada que conservar y
-deja de ser una decisión.
+⚠ **Y dos cosas que el censo de embebidos cambió, no añadió:** el nodo-embed pasa
+a llevar **URL en vez de `enum` de proveedor** (§3.3b: 18 hosts, 12 de ellos una
+sola vez) y **§3.1 estrena nodo de vídeo** (§3.1b: 8 `<video>` en 8 páginas). Las
+dos estaban dadas por resueltas y no lo estaban.
 
 ---
 
