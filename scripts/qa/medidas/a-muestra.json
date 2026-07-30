@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "semilla": 20260730,
+    "cupo": {
+      "blog": 12,
+      "termino": 6,
+      "doc-cientifico": 6
+    }
+  },
+  "formas": {
+    "blog": {
+      "poblacion": 149,
+      "cupo": 12,
+      "payloadsAusentes": [
+        "codigo",
+        "lista de definición",
+        "formulario"
+      ],
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/contaminacion-por-metano/",
+          "chars": 69784,
+          "nEtiquetas": 16,
+          "razones": [
+            "la más larga (69784 chars)",
+            "payload «embebido» (50/149 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+          "chars": 275,
+          "nEtiquetas": 2,
+          "razones": [
+            "la más corta (275 chars)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+          "chars": 52579,
+          "nEtiquetas": 21,
+          "razones": [
+            "payload «tabla» (17/149 páginas lo llevan)",
+            "payload «cita» (48/149 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+          "chars": 6347,
+          "nEtiquetas": 22,
+          "razones": [
+            "payload «galeria» (9/149 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+          "chars": 62200,
+          "nEtiquetas": 18,
+          "razones": [
+            "payload «audio/vídeo» (7/149 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/running-for-clean-air/",
+          "chars": 21111,
+          "nEtiquetas": 19,
+          "razones": [
+            "payload «script en el cuerpo» (15/149 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+          "chars": 15168,
+          "nEtiquetas": 26,
+          "razones": [
+            "más variedad interna (26 etiquetas distintas)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/kunak-air-pro-certificado-mcerts/",
+          "chars": 2997,
+          "nEtiquetas": 6,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente/",
+          "chars": 2142,
+          "nEtiquetas": 7,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/entrevista-agustin-torres-product-manager-suez/",
+          "chars": 8371,
+          "nEtiquetas": 9,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/justicia-climatica-financiacion-climatica-y-seguridad-climatica/",
+          "chars": 44502,
+          "nEtiquetas": 14,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/participamos-con-suez-en-el-4yfn-del-mobile-world-congress/",
+          "chars": 494,
+          "nEtiquetas": 6,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        }
+      ]
+    },
+    "termino": {
+      "poblacion": 37,
+      "cupo": 6,
+      "payloadsAusentes": [
+        "galeria",
+        "codigo",
+        "lista de definición",
+        "formulario",
+        "script en el cuerpo"
+      ],
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+          "chars": 50640,
+          "nEtiquetas": 20,
+          "razones": [
+            "la más larga (50640 chars)",
+            "payload «tabla» (18/37 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/emisiones-atmosfericas/",
+          "chars": 5651,
+          "nEtiquetas": 8,
+          "razones": [
+            "la más corta (5651 chars)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/metano/",
+          "chars": 16998,
+          "nEtiquetas": 15,
+          "razones": [
+            "payload «embebido» (6/37 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/dioxido-de-carbono/",
+          "chars": 18050,
+          "nEtiquetas": 12,
+          "razones": [
+            "payload «cita» (25/37 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/huella-de-carbono/",
+          "chars": 24053,
+          "nEtiquetas": 16,
+          "razones": [
+            "payload «audio/vídeo» (1/37 páginas lo llevan)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/sulfuro-de-hidrogeno/",
+          "chars": 31756,
+          "nEtiquetas": 24,
+          "razones": [
+            "más variedad interna (24 etiquetas distintas)"
+          ]
+        }
+      ]
+    },
+    "doc-cientifico": {
+      "poblacion": 23,
+      "cupo": 6,
+      "payloadsAusentes": [
+        "tabla",
+        "galeria",
+        "embebido",
+        "codigo",
+        "cita",
+        "lista de definición",
+        "formulario",
+        "audio/vídeo",
+        "script en el cuerpo"
+      ],
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+          "chars": 2646,
+          "nEtiquetas": 4,
+          "razones": [
+            "la más larga (2646 chars)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+          "chars": 675,
+          "nEtiquetas": 2,
+          "razones": [
+            "la más corta (675 chars)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas/",
+          "chars": 2118,
+          "nEtiquetas": 6,
+          "razones": [
+            "más variedad interna (6 etiquetas distintas)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana/",
+          "chars": 2185,
+          "nEtiquetas": 3,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+          "chars": 1678,
+          "nEtiquetas": 5,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        },
+        {
+          "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+          "chars": 937,
+          "nEtiquetas": 2,
+          "razones": [
+            "aleatoria (control anti-sesgo)"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -140,6 +140,48 @@ presentación editorial (qué piel, dónde corta la sección), con un valor por
 defecto explícito y omitido en el dato cuando coincide con él. Ese default es
 también la decisión de diseño que hereda quien dé de alta un contenido nuevo.
 
+## Dónde para el modelado de estructura
+
+Todo lo de arriba empuja en una dirección —**cuando algo varía, hazlo campo**— y
+llevado al límite lleva a modelar cada `<p>` del sitio. **No es lo que hay que
+hacer, y la frontera se puede escribir:**
+
+> **Hasta el contenedor de contenido, la estructura se modela.** Sección, fila,
+> columna, módulo, piel, ritmo: eso es plantilla y campos, y se separa como dice
+> la regla 2.
+>
+> **A partir del contenedor de contenido, el contenido lleva su propia estructura
+> dentro y se declara RICO.** Un solo campo HTML, con un contrato de qué tiene
+> que admitir — no un árbol de bloques tipados.
+
+**No es una comodidad, es lo que dijo el censo.** Las 209 páginas del arquetipo A
+(`docs/research/arquetipo-A/components/campo-rico.spec.md`, censo de 209/209):
+
+- **43 etiquetas HTML distintas**, con cola larga real (`mark`, `center`,
+  `noscript`, `tfoot`, `embed`, `hr`, `u`, `section`…);
+- **ninguna estructura se repite** lo bastante como para merecer tipo propio: lo
+  más frecuente tras el párrafo son encabezados y listas, que son texto rico de
+  manual;
+- **`script` ejecutable dentro del contenido** en 15 páginas, que ningún modelo
+  de bloques tipado va a representar;
+- **el rango de longitud es de 254×** (275 a 69 784 caracteres en blog).
+
+Modelar eso como bloques sería inventar un esquema para documentos que ya tienen
+uno: HTML del editor clásico de WordPress (**cero `wp-block-*` en las 209**).
+
+**Y «rico» no quiere decir «cualquier cosa».** La contrapartida de no modelar es
+que **el contrato se escribe y se mide**: qué etiquetas, con qué frecuencia, qué
+convenciones viven dentro (el 80 % del corpus depende de `<a class="et_pb_button">`
+para que un enlace se vea como botón) y qué **no** aparece —código, `dl`,
+formularios: ausentes en las 209—. Ese inventario **es** el contrato del campo, y
+sin él «texto rico» es una excusa para no haber mirado.
+
+La prueba de que la frontera está en el sitio correcto: **por encima del
+contenedor, cero varianza**. En las 24 instancias muestreadas del arquetipo A, el
+ritmo, la tipografía y la retícula del cascarón son idénticos dentro de cada
+forma. Por debajo, 43 etiquetas y 254× de rango. La frontera no la elegí: está
+donde el dato cambia de régimen.
+
 ## Páginas clonadas
 
 | Ruta | Arquetipo | Recon/specs |

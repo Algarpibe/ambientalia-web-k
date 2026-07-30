@@ -1,0 +1,84 @@
+{
+  "sidebars": [
+    {
+      "id": "sidebar#0",
+      "visible": false,
+      "position": "relative",
+      "top": "auto",
+      "w": 0,
+      "h": 0,
+      "nEnlaces": 16,
+      "anclas": 16,
+      "muestraAncla": "#que-es-el-metano-y-por-que-es-tan-importante"
+    },
+    {
+      "id": "sidebar#2",
+      "visible": true,
+      "position": "relative",
+      "top": "0px",
+      "w": 259,
+      "h": 1435,
+      "nEnlaces": 21,
+      "anclas": 16,
+      "muestraAncla": "#que-es-el-metano-y-por-que-es-tan-importante"
+    }
+  ],
+  "iframes": [
+    {
+      "loading": null,
+      "origen": "www.youtube.com",
+      "w": 912,
+      "h": 513
+    },
+    {
+      "loading": null,
+      "origen": "ourworldindata.org",
+      "w": 912,
+      "h": 600
+    },
+    {
+      "loading": null,
+      "origen": "ourworldindata.org",
+      "w": 912,
+      "h": 600
+    },
+    {
+      "loading": null,
+      "origen": "ourworldindata.org",
+      "w": 912,
+      "h": 600
+    }
+  ],
+  "headingsConId": 16,
+  "headingsTotal": 61,
+  "primerosHeadings": [
+    {
+      "tag": "H2",
+      "id": "que-es-el-metano-y-por-que-es-tan-importante",
+      "txt": "¿Qué es el metano y por qué es tan impor"
+    },
+    {
+      "tag": "H2",
+      "id": "conceptos-basicos-sobre-el-metano-composicion-y-caracteristicas",
+      "txt": "Conceptos básicos sobre el metano: compo"
+    },
+    {
+      "tag": "H2",
+      "id": "datos-sobre-la-contaminacion-por-metano",
+      "txt": "Datos sobre la contaminación por metano"
+    },
+    {
+      "tag": "H2",
+      "id": "como-contribuye-el-metano-al-cambio-climatico",
+      "txt": "Cómo contribuye el metano al cambio clim"
+    }
+  ],
+  "relacionados": {
+    "nArticulos": 3,
+    "clases": [
+      "et_pb_blog_0_tb_body"
+    ]
+  },
+  "imgLazy": 0,
+  "imgTotal": 9
+}

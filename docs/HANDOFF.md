@@ -28,6 +28,7 @@ fusión (si se hace) es tanda propia.
 | `docs/PENDIENTES-QA.md` §MONOGRÁFICO | el acta de QA: qué cuadra, qué no y por qué |
 | `docs/research/CENSO-ARQUETIPOS.md` | **cuánto le falta a la biblioteca**: 7 formas cubiertas de 23, y las 14 que no |
 | `docs/research/RECON-LISTADOS.md` | las 7 formas que suman 321 páginas **son 4 arquetipos**, medido por el esqueleto. Con pre-registro, y con las 2 notas de esquema para el CMS |
+| `docs/research/arquetipo-A/` | recon del grupo A (209 pg): plan de muestreo, topología, behaviors, **la spec del campo rico censada en 209/209**, el enrutado resuelto con prueba, y la hipótesis del grupo D encolada |
 
 ## Estado
 
@@ -184,9 +185,35 @@ Y dos **notas de esquema para el CMS** (no son pendientes de QA, no hay nada que
 arreglar): el caso de éxito tiene **dos patrones de ruta** (`/es/casos-de-exito/`
 y 4 en `/es/case-studies/`), y **202 slugs de cinco familias comparten el espacio
 de nombres plano de `/es/`** —150 entradas de blog, 38 términos, 7 páginas, 6 del
-CPT `solutions`—, incluidas las cuatro rutas que el clon ya sirve. Cualquier
-`[slug]` a nivel raíz captura las cinco a la vez. Hay que decidirlo **antes** de
-modelar.
+CPT `solutions`—, incluidas las cuatro rutas que el clon ya sirve.
+
+### El grupo A, reconocido (2026-07-30)
+
+`docs/research/arquetipo-A/`. Muestreo pre-registrado; **inventario del cuerpo
+censado en las 209/209**, no muestreado.
+
+- **El cascarón no tiene ni un campo por instancia.** Cero varianza en las 24
+  instancias muestreadas (ritmo, tipografía, retícula). **Son tres plantillas**,
+  que difieren entre sí (`post_content mb` 72 en blog vs 0 en las otras dos).
+- **Los dos tests de plantilla-o-campo NO se aplican al grupo A**, y hay que
+  saberlo: ambos infieren «lo escribió alguien editando ESTA página», y en un
+  `tb_body` **esa persona no existe**. La huella sale igual; **la interpretación
+  se invierte**. Detalle y prueba en `PAGE_TOPOLOGY.md` §5.
+- **El `post_content` se declara campo RICO y no se parsea a bloques**: 43
+  etiquetas distintas, `script` ejecutable en 15 páginas, rango de longitud de
+  **254×**, y **cero `wp-block-*`** — es HTML del editor clásico. El contrato
+  medido está en `components/campo-rico.spec.md`, y la postura general en
+  `CLAUDE.md` §«Dónde para el modelado de estructura».
+- **Enrutado resuelto con una prueba** (`ENRUTADO.md`): en Next **la ruta
+  estática gana** a un `[slug]` dinámico de raíz — verificado con una colisión
+  deliberada en `/accesorios`. Pero un `[slug]` de raíz **se traga todos los 404
+  de un segmento** (`/slug-inventado` → 200), así que la recomendación es
+  replicar el plano **con `dynamicParams = false`**, unicidad **entre familias**
+  en el esquema y una guarda que falle en build — porque **el build no avisa de
+  la colisión**.
+- **Hipótesis del grupo D encolada** con su pre-registro y sus 4 predicciones
+  (`HIPOTESIS-GRUPO-D.md`). No se ejecuta, y **no se toca `MonoSeccion[]`**
+  mientras tanto.
 
 ## Lo que NO hay que hacer al empezar
 

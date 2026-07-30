@@ -416,3 +416,28 @@ sesión los consultará sin preguntar. Las versiones anteriores son recuperables
 por commit —la primera del 1440, con el recorte de cabecera defectuoso, está en
 `26c74dd`— y ahí se quedan. Si regeneras, sustituye; no acumules variantes con
 sufijo.
+
+### Las cuatro `a-*` — el recon del arquetipo A
+
+`docs/research/arquetipo-A/`. Miden el **original**, no el clon.
+
+| sonda | qué hace |
+|---|---|
+| `a-censo.mjs` | **las 209 páginas del grupo A** por `fetch`: inventario de etiquetas dentro del `post_content` + esqueleto `tb_body`. Sin navegador |
+| `a-muestra.mjs` | aplica la **regla de selección pre-registrada** sobre el censo: la más larga, la más corta, una por payload raro, la de más variedad, y relleno aleatorio con semilla fija |
+| `a-cascaron.mjs [ancho] [--muestra]` | los módulos del `tb_body` con su ritmo y tipografía. Con `--muestra`, las 24 seleccionadas |
+| `a-behaviors.mjs [ancho]` | índice del artículo, `iframe`, relacionados |
+
+Tres cosas que costaron una corrida cada una y están anotadas en el código:
+
+- **El `post_content` se extrae por emparejamiento equilibrado de `<div>`**, no
+  por «hasta el próximo `</div>`»: el contenido lleva divs dentro y un corte
+  ingenuo se come la mitad del inventario **sin dar ningún error**.
+- **El esqueleto `tb_body` NO se saca con un regex sobre el HTML entero.** Divi
+  emite en un `<style>` en línea una regla CSS por módulo, con esas mismas
+  clases: la primera versión mezclaba reglas con elementos y devolvía **tres
+  esqueletos donde había uno**. Se recorta a `#main-content` y se leen solo
+  atributos `class`.
+- **El atributo `loading` de las imágenes no se mide con el navegador.**
+  `settle()` pone `loading="eager"` en todas antes de medir, así que cualquier
+  conteo de perezosas sale **0 por construcción**. Se lee del HTML servido.
