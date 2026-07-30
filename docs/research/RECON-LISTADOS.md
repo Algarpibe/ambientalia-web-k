@@ -253,6 +253,16 @@ las 57 fichas ya cargadas. Y en el clon significa que la ruta dinámica del futu
 arquetipo **no es un patrón, son dos** — con `enlaces.mjs` exigiéndolo en cuanto
 se emitan.
 
+> ✅ **MEDIDO en C-1 (2026-07-30)** — `docs/research/grupo-C/PAGE_TOPOLOGY.md` §4,
+> sonda `npm run qa:c-rutas`, salida en `medidas/c-rutas.json`. Lo que ya no hay
+> que suponer: **es una sola plantilla** (`case-studies-template-default` en las
+> 57, con reparto de secciones y bloques de cuerpo idénticos); los 4 son
+> **contenido propio en español**, no traducciones ni alias (0 títulos o clientes
+> repetidos, **0 `hreflang`** en las 57, `canonical` propio en cada uno); el
+> prefijo cruzado **redirige 301 en 7 de 9 comprobados, con 2 excepciones 404 sin
+> explicar** (C-SP2); y el índice `/es/casos-de-exito/` **lista las 57 mezclando
+> ambos prefijos**. La decisión sigue siendo de C-2.
+
 ### CMS-2 · Los 37 términos de Kunakpedia cuelgan de la raíz de `/es/`
 
 Sin prefijo: `/es/sensor-calidad-aire`, `/es/redes-de-vigilancia-de-calidad-del-aire`,

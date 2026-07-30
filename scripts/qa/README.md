@@ -455,3 +455,28 @@ Tres cosas que costaron una corrida cada una y están anotadas en el código:
 - **El atributo `loading` de las imágenes no se mide con el navegador.**
   `settle()` pone `loading="eager"` en todas antes de medir, así que cualquier
   conteo de perezosas sale **0 por construcción**. Se lee del HTML servido.
+
+### Las `c-*` — el recon del grupo C (caso de éxito + FAQ)
+
+`docs/research/grupo-C/`. Miden el **original**. Plan de muestreo pre-registrado
+en `PLAN-MUESTREO.md`.
+
+| sonda | qué hace |
+|---|---|
+| `c-censo.mjs` | **las 76/76** por `fetch`: régimen del `<body>`, cascarón por origen de sección, campos visibles, cuerpo y etiquetas, SEO. El navegador se usa **solo como `DOMParser`** |
+| `c-muestra.mjs` | muestra adversaria con **semilla fija** (`20260730`) e informe de **cobertura de payloads raros**, que cierra el código de salida |
+| `c-rutas.mjs` | **CMS-1**: resolución del prefijo cruzado sin seguir redirección, `canonical`, `hreflang` y si los 4 ingleses duplican a alguno de los 53 |
+| `c-behaviors.mjs [ancho]` | galería, pestañas de soluciones, mapa y acordeón, con `settle` |
+
+Tres cosas que costaron una corrida cada una y están anotadas en el código:
+
+- **El grupo C no está en ninguno de los dos regímenes de `CLAUDE.md`**: sin
+  `et_pb_pagebuilder_layout` y sin `et-tb-has-body`. Cabecera y pie por Divi
+  Theme Builder, **cuerpo por plantilla PHP del tema**. Se aplica la lectura de
+  «plantillado» —varianza entre instancias—, no la del test A.
+- **`elemento.click()` no dispara las pestañas de soluciones**; hace falta
+  `page.mouse.click()` sobre coordenadas reales. El click que no llega y la
+  pestaña rota dan la misma salida.
+- **Swiper clona slides y marca originales**: contar `.swiper-slide` da 17 donde
+  hay 11, y filtrar por `includes("duplicate")` da 10 porque
+  `swiper-slide-duplicate-prev` va sobre un **original**. Clase exacta.

@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "pregunta": "CMS-1: ¿un arquetipo con dos prefijos, o dos cosas?",
+    "fuente": "cabeceras HTTP sin seguir redirección + censo c-censo.json"
+  },
+  "cruzados": [
+    {
+      "origen": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "alterna": "https://kunakair.com/es/casos-de-exito/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "status": 301,
+      "location": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "direccion": "en→es"
+    },
+    {
+      "origen": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "alterna": "https://kunakair.com/es/casos-de-exito/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "status": 301,
+      "location": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "direccion": "en→es"
+    },
+    {
+      "origen": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "alterna": "https://kunakair.com/es/casos-de-exito/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "status": 404,
+      "location": null,
+      "direccion": "en→es"
+    },
+    {
+      "origen": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "alterna": "https://kunakair.com/es/casos-de-exito/distrito-baja-emision-rio-de-janeiro/",
+      "status": 301,
+      "location": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "direccion": "en→es"
+    },
+    {
+      "origen": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "alterna": "https://kunakair.com/es/case-studies/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "status": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "direccion": "es→en"
+    },
+    {
+      "origen": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+      "alterna": "https://kunakair.com/es/case-studies/red-calidad-de-aire-para-world-athletics/",
+      "status": 404,
+      "location": null,
+      "direccion": "es→en"
+    },
+    {
+      "origen": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "alterna": "https://kunakair.com/es/case-studies/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "status": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "direccion": "es→en"
+    },
+    {
+      "origen": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "alterna": "https://kunakair.com/es/case-studies/control-quemas-controladas-cana-azucar/",
+      "status": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "direccion": "es→en"
+    },
+    {
+      "origen": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "alterna": "https://kunakair.com/es/case-studies/red-hibrida-calidad-aire-atmo-france/",
+      "status": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "direccion": "es→en"
+    }
+  ],
+  "canonical": [
+    {
+      "url": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "forma": "caso-en",
+      "canonical": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "forma": "caso-en",
+      "canonical": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "forma": "caso-en",
+      "canonical": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "forma": "caso-en",
+      "canonical": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "forma": "caso-es",
+      "canonical": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+      "forma": "caso-es",
+      "canonical": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "forma": "caso-es",
+      "canonical": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "forma": "caso-es",
+      "canonical": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "coincideConSuUrl": true
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "forma": "caso-es",
+      "canonical": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "coincideConSuUrl": true
+    }
+  ],
+  "fichasEn": [
+    {
+      "url": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "titulo": "Red de monitorización de la calidad del aire en la planta de fertilizantes de Lifeco en Libia",
+      "sobretitulo": "Caso de éxito",
+      "cliente": "Compañía Libia de Fertilizantes (Lifeco)",
+      "sectores": "Sector: Industria",
+      "chars": 11120,
+      "hreflang": []
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "titulo": "Monitoreo ambiental en el puerto de Cotonú mediante una red de estaciones Kunak AIR Pro",
+      "sobretitulo": "Caso de éxito",
+      "cliente": "Puerto de Cotonú",
+      "sectores": "Sector: Puertos y aeropuertos",
+      "chars": 7527,
+      "hreflang": []
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "titulo": "Integración avanzada para el monitoreo del tráfico y la calidad del aire en Castel D’Ario (Italia)",
+      "sobretitulo": "Caso de éxito",
+      "cliente": "Ayuntamiento de Castel D’Ario",
+      "sectores": "Sector: Urbano",
+      "chars": 6374,
+      "hreflang": []
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "titulo": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
+      "sobretitulo": "Caso de éxito",
+      "cliente": "Secretaria Municipal do Ambiente e Clima (SMAC)",
+      "sectores": "Sector: Urbano",
+      "chars": 10136,
+      "hreflang": []
+    }
+  ],
+  "duplicadosConEs": [],
+  "hreflang": {
+    "conHreflang": 0,
+    "de": 57
+  },
+  "resumen": {
+    "es": 53,
+    "en": 4,
+    "cruzado_en_a_es": {
+      "ok200": 0,
+      "redirige": 3,
+      "noExiste": 1
+    },
+    "canonicalSiempreProio": true,
+    "duplicados": 0,
+    "hreflang": 0
+  }
+}

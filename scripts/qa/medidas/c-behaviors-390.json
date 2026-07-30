@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "viewport": "390x844 (device metrics) · DPR 1",
+    "metodo": "settle: pase de scroll + espera; lazy→eager"
+  },
+  "paginas": [
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "tipo": "caso",
+      "galeria": {
+        "slidesReales": 11,
+        "clones": 2,
+        "visibles": 13,
+        "inicializado": true,
+        "botones": {
+          "prev": true,
+          "next": true
+        },
+        "lightbox": true
+      },
+      "pestanas": {
+        "solucionesDistintas": 4,
+        "itemsEnElDom": 8,
+        "duplicado": true,
+        "copias": {
+          "enElLi": 4,
+          "enElPanel": 4
+        },
+        "etiquetas": [
+          {
+            "id": "monitor-calidad-aire",
+            "texto": "AIR Pro"
+          },
+          {
+            "id": "particulas-en-suspension",
+            "texto": "Partículas en suspensión"
+          },
+          {
+            "id": "dioxido-de-nitrogeno",
+            "texto": "Dióxido de nitrógeno"
+          },
+          {
+            "id": "monoxido-de-carbono",
+            "texto": "Monóxido de carbono"
+          }
+        ],
+        "activaEtiqueta": 1,
+        "panelesVisibles": 1
+      },
+      "mapa": {
+        "visible": true,
+        "alto": 290,
+        "marcadores": 0,
+        "hijos": 1,
+        "proveedor": "maps.googleapis.com",
+        "gmStyle": true
+      },
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 4,
+        "titulos": [
+          "Monitorización de la calidad del aire en el mayor corredor d",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 27,
+        "faqs": 0
+      },
+      "interaccion": {
+        "pulsable": true,
+        "idPulsado": "particulas-en-suspension",
+        "antes": {
+          "etiquetaActiva": "monitor-calidad-aire",
+          "panelesVisibles": [
+            "item-monitor-calidad-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "despues": {
+          "etiquetaActiva": "particulas-en-suspension",
+          "panelesVisibles": [
+            "item-particulas-en-suspension"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "cambiaEtiqueta": true,
+        "muestraSuPanel": true,
+        "unSoloPanelALaVez": true
+      }
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+      "tipo": "caso",
+      "galeria": null,
+      "pestanas": null,
+      "mapa": {
+        "visible": true,
+        "alto": 290,
+        "marcadores": 0,
+        "hijos": 1,
+        "proveedor": "maps.googleapis.com",
+        "gmStyle": true
+      },
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 4,
+        "titulos": [
+          "Vigilancia ambiental en la demolición del estadio Vicente Ca",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 19,
+        "faqs": 0
+      },
+      "interaccion": null
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico/",
+      "tipo": "caso",
+      "galeria": {
+        "slidesReales": 8,
+        "clones": 2,
+        "visibles": 10,
+        "inicializado": true,
+        "botones": {
+          "prev": true,
+          "next": true
+        },
+        "lightbox": true
+      },
+      "pestanas": {
+        "solucionesDistintas": 8,
+        "itemsEnElDom": 16,
+        "duplicado": true,
+        "copias": {
+          "enElLi": 8,
+          "enElPanel": 8
+        },
+        "etiquetas": [
+          {
+            "id": "monitor-calidad-aire",
+            "texto": "AIR Pro"
+          },
+          {
+            "id": "estacion-de-monitoreo-de-calidad-del-aire",
+            "texto": "AIR Lite"
+          },
+          {
+            "id": "particulas-en-suspension",
+            "texto": "Partículas en suspensión"
+          },
+          {
+            "id": "dioxido-de-azufre",
+            "texto": "Dióxido de azufre"
+          },
+          {
+            "id": "dioxido-de-nitrogeno",
+            "texto": "Dióxido de nitrógeno"
+          },
+          {
+            "id": "monoxido-de-carbono",
+            "texto": "Monóxido de carbono"
+          },
+          {
+            "id": "ozono",
+            "texto": "Ozono"
+          },
+          {
+            "id": "software-de-medicion-calidad-del-aire",
+            "texto": "AIR Cloud"
+          }
+        ],
+        "activaEtiqueta": 1,
+        "panelesVisibles": 1
+      },
+      "mapa": {
+        "visible": true,
+        "alto": 290,
+        "marcadores": 0,
+        "hijos": 1,
+        "proveedor": "maps.googleapis.com",
+        "gmStyle": true
+      },
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 4,
+        "titulos": [
+          "Control de emisiones con datos en tiempo real en las plantas",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 27,
+        "faqs": 0
+      },
+      "interaccion": {
+        "pulsable": true,
+        "idPulsado": "estacion-de-monitoreo-de-calidad-del-aire",
+        "antes": {
+          "etiquetaActiva": "monitor-calidad-aire",
+          "panelesVisibles": [
+            "item-monitor-calidad-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "despues": {
+          "etiquetaActiva": "estacion-de-monitoreo-de-calidad-del-aire",
+          "panelesVisibles": [
+            "item-estacion-de-monitoreo-de-calidad-del-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "cambiaEtiqueta": true,
+        "muestraSuPanel": true,
+        "unSoloPanelALaVez": true
+      }
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/running-for-clean-air-ciudades-saludables/",
+      "tipo": "caso",
+      "galeria": {
+        "slidesReales": 11,
+        "clones": 2,
+        "visibles": 13,
+        "inicializado": true,
+        "botones": {
+          "prev": true,
+          "next": true
+        },
+        "lightbox": true
+      },
+      "pestanas": {
+        "solucionesDistintas": 8,
+        "itemsEnElDom": 16,
+        "duplicado": true,
+        "copias": {
+          "enElLi": 8,
+          "enElPanel": 8
+        },
+        "etiquetas": [
+          {
+            "id": "monitor-calidad-aire",
+            "texto": "AIR Pro"
+          },
+          {
+            "id": "software-de-medicion-calidad-del-aire",
+            "texto": "AIR Cloud"
+          },
+          {
+            "id": "oxido-nitrico",
+            "texto": "Óxido nítrico"
+          },
+          {
+            "id": "dioxido-de-nitrogeno",
+            "texto": "Dióxido de nitrógeno"
+          },
+          {
+            "id": "monoxido-de-carbono",
+            "texto": "Monóxido de carbono"
+          },
+          {
+            "id": "dioxido-de-carbono",
+            "texto": "Dióxido de carbono"
+          },
+          {
+            "id": "ozono",
+            "texto": "Ozono"
+          },
+          {
+            "id": "particulas-en-suspension",
+            "texto": "Partículas en suspensión"
+          }
+        ],
+        "activaEtiqueta": 1,
+        "panelesVisibles": 1
+      },
+      "mapa": {
+        "visible": true,
+        "alto": 290,
+        "marcadores": 0,
+        "hijos": 1,
+        "proveedor": "maps.googleapis.com",
+        "gmStyle": true
+      },
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 4,
+        "titulos": [
+          "Running for Clean Air: ciudades más saludables a través del ",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 28,
+        "faqs": 0
+      },
+      "interaccion": {
+        "pulsable": true,
+        "idPulsado": "software-de-medicion-calidad-del-aire",
+        "antes": {
+          "etiquetaActiva": "monitor-calidad-aire",
+          "panelesVisibles": [
+            "item-monitor-calidad-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "despues": {
+          "etiquetaActiva": "software-de-medicion-calidad-del-aire",
+          "panelesVisibles": [
+            "item-software-de-medicion-calidad-del-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "cambiaEtiqueta": true,
+        "muestraSuPanel": true,
+        "unSoloPanelALaVez": true
+      }
+    },
+    {
+      "url": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "tipo": "caso",
+      "galeria": {
+        "slidesReales": 7,
+        "clones": 2,
+        "visibles": 9,
+        "inicializado": true,
+        "botones": {
+          "prev": true,
+          "next": true
+        },
+        "lightbox": true
+      },
+      "pestanas": {
+        "solucionesDistintas": 10,
+        "itemsEnElDom": 20,
+        "duplicado": true,
+        "copias": {
+          "enElLi": 10,
+          "enElPanel": 10
+        },
+        "etiquetas": [
+          {
+            "id": "monitor-calidad-aire",
+            "texto": "AIR Pro"
+          },
+          {
+            "id": "software-de-medicion-calidad-del-aire",
+            "texto": "AIR Cloud"
+          },
+          {
+            "id": "amoniaco",
+            "texto": "Amoniaco"
+          },
+          {
+            "id": "monoxido-de-carbono",
+            "texto": "Monóxido de carbono"
+          },
+          {
+            "id": "dioxido-de-nitrogeno",
+            "texto": "Dióxido de nitrógeno"
+          },
+          {
+            "id": "oxido-nitrico",
+            "texto": "Óxido nítrico"
+          },
+          {
+            "id": "sulfuro-de-hidrogeno",
+            "texto": "Sulfuro de hidrógeno"
+          },
+          {
+            "id": "dioxido-de-azufre",
+            "texto": "Dióxido de azufre"
+          },
+          {
+            "id": "compuestos-organicos-volatiles",
+            "texto": "Compuestos orgánicos volátiles"
+          },
+          {
+            "id": "particulas-en-suspension",
+            "texto": "Partículas en suspensión"
+          }
+        ],
+        "activaEtiqueta": 1,
+        "panelesVisibles": 1
+      },
+      "mapa": {
+        "visible": true,
+        "alto": 290,
+        "marcadores": 0,
+        "hijos": 1,
+        "proveedor": "maps.googleapis.com",
+        "gmStyle": true
+      },
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 4,
+        "titulos": [
+          "Red de monitorización de la calidad del aire en la planta de",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 23,
+        "faqs": 0
+      },
+      "interaccion": {
+        "pulsable": true,
+        "idPulsado": "software-de-medicion-calidad-del-aire",
+        "antes": {
+          "etiquetaActiva": "monitor-calidad-aire",
+          "panelesVisibles": [
+            "item-monitor-calidad-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "despues": {
+          "etiquetaActiva": "software-de-medicion-calidad-del-aire",
+          "panelesVisibles": [
+            "item-software-de-medicion-calidad-del-aire"
+          ],
+          "dondeSeVe": "dentro del li"
+        },
+        "cambiaEtiqueta": true,
+        "muestraSuPanel": true,
+        "unSoloPanelALaVez": true
+      }
+    },
+    {
+      "url": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/",
+      "tipo": "faq-detalle",
+      "galeria": null,
+      "pestanas": null,
+      "mapa": null,
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 1,
+        "titulos": [
+          "¿Cuál es la diferencia entre calibración y corrección?"
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 1
+      },
+      "enlacesADetalle": {
+        "casos": 3,
+        "faqs": 16
+      },
+      "interaccion": null
+    },
+    {
+      "url": "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/",
+      "tipo": "faq-detalle",
+      "galeria": null,
+      "pestanas": null,
+      "mapa": null,
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 1,
+        "titulos": [
+          "¿Puedo instalarlo en un vehículo o en un dron para monitoreo"
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 0
+      },
+      "enlacesADetalle": {
+        "casos": 3,
+        "faqs": 16
+      },
+      "interaccion": null
+    },
+    {
+      "url": "https://kunakair.com/es/preguntas-frecuentes/",
+      "tipo": "indice",
+      "galeria": null,
+      "pestanas": null,
+      "mapa": null,
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 5,
+        "titulos": [
+          "¿Qué área cubre cada dispositivo?",
+          "¿Los equipos Kunak son certificados ATEX?",
+          "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva",
+          "¿El equipo es portátil o fijo?",
+          "¿Cada cuánto se calibra el equipo?"
+        ],
+        "paginacion": 1,
+        "conCuerpoEnLista": 2
+      },
+      "enlacesADetalle": {
+        "casos": 3,
+        "faqs": 13
+      },
+      "interaccion": null
+    },
+    {
+      "url": "https://kunakair.com/es/casos-de-exito/",
+      "tipo": "indice",
+      "galeria": null,
+      "pestanas": null,
+      "mapa": null,
+      "acordeon": {
+        "selectores": {},
+        "panelesColapsados": 0
+      },
+      "archivo": {
+        "articulos": 57,
+        "titulos": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "paginacion": 0,
+        "conCuerpoEnLista": 0
+      },
+      "enlacesADetalle": {
+        "casos": 129,
+        "faqs": 0
+      },
+      "interaccion": null
+    }
+  ]
+}

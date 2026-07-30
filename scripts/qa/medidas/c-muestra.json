@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "semilla": 20260730,
+    "regla": "pre-registrada en docs/research/grupo-C/PLAN-MUESTREO.md §3",
+    "base": "medidas/c-censo.json (censo 76/76)",
+    "nota": "caso-en entra entero (4): son la evidencia de CMS-1, muestrearlos no ahorra nada"
+  },
+  "formas": {
+    "caso-es": {
+      "total": 53,
+      "cupo": 8,
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+          "razones": [
+            "la más larga"
+          ],
+          "chars": 9509,
+          "variedad": 12,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+          "razones": [
+            "la más corta"
+          ],
+          "chars": 1234,
+          "variedad": 6,
+          "opcionales": 1
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico/",
+          "razones": [
+            "payload raro: video"
+          ],
+          "chars": 4858,
+          "variedad": 14,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/running-for-clean-air-ciudades-saludables/",
+          "razones": [
+            "payload raro: iframe"
+          ],
+          "chars": 8586,
+          "variedad": 10,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/pure-cities/",
+          "razones": [
+            "payload raro: table"
+          ],
+          "chars": 4307,
+          "variedad": 13,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom/",
+          "razones": [
+            "payload raro: sup"
+          ],
+          "chars": 4164,
+          "variedad": 9,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas/",
+          "razones": [
+            "más variedad de etiquetas"
+          ],
+          "chars": 3025,
+          "variedad": 12,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/",
+          "razones": [
+            "menos campos opcionales"
+          ],
+          "chars": 1348,
+          "variedad": 6,
+          "opcionales": 1
+        }
+      ]
+    },
+    "caso-en": {
+      "total": 4,
+      "cupo": 4,
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+          "razones": [
+            "entera: son 4"
+          ],
+          "chars": 6104,
+          "variedad": 9,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+          "razones": [
+            "entera: son 4"
+          ],
+          "chars": 4173,
+          "variedad": 12,
+          "opcionales": 4
+        },
+        {
+          "url": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+          "razones": [
+            "entera: son 4"
+          ],
+          "chars": 3962,
+          "variedad": 7,
+          "opcionales": 3
+        },
+        {
+          "url": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+          "razones": [
+            "entera: son 4"
+          ],
+          "chars": 8592,
+          "variedad": 17,
+          "opcionales": 3
+        }
+      ]
+    },
+    "faq": {
+      "total": 19,
+      "cupo": 4,
+      "muestra": [
+        {
+          "url": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/",
+          "razones": [
+            "la más larga"
+          ],
+          "chars": 539,
+          "variedad": 4,
+          "opcionales": 0
+        },
+        {
+          "url": "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/",
+          "razones": [
+            "la más corta"
+          ],
+          "chars": 151,
+          "variedad": 1,
+          "opcionales": 0
+        },
+        {
+          "url": "https://kunakair.com/es/faqs/que-opciones-de-calibracion-existen/",
+          "razones": [
+            "más variedad de etiquetas"
+          ],
+          "chars": 293,
+          "variedad": 3,
+          "opcionales": 0
+        },
+        {
+          "url": "https://kunakair.com/es/faqs/el-equipo-tiene-memoria-interna/",
+          "razones": [
+            "menos campos opcionales"
+          ],
+          "chars": 160,
+          "variedad": 1,
+          "opcionales": 0
+        }
+      ]
+    }
+  },
+  "cobertura": {
+    "script": {
+      "paginasConEl": 1,
+      "enLaMuestra": 1
+    },
+    "video": {
+      "paginasConEl": 3,
+      "enLaMuestra": 2
+    },
+    "iframe": {
+      "paginasConEl": 11,
+      "enLaMuestra": 5
+    },
+    "table": {
+      "paginasConEl": 2,
+      "enLaMuestra": 2
+    },
+    "sup": {
+      "paginasConEl": 4,
+      "enLaMuestra": 2
+    }
+  },
+  "resumen": {
+    "total": 16,
+    "de": 76,
+    "payloadsSinCubrir": []
+  }
+}
