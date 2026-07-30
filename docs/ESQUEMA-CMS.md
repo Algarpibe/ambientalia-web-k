@@ -145,7 +145,8 @@ C1: hacen falta tres campos.**
 en el ritmo ni en la retícula.**
 
 **Decisión vigente: dos content types**, con la frontera escrita. Los tres campos
-**no se han añadido**.
+**no se han añadido**. Y en Payload eso se traduce en **dos colecciones** —
+ratificado y cerrado en §1.5b, con su condición de reapertura.
 
 ### 1.4 · Traducción a Payload — SECTOR
 
@@ -166,7 +167,7 @@ en el ritmo ni en la retícula.**
 
 | pieza | en Payload |
 |---|---|
-| `MonograficoPage` | **colección** `monograficos` (o la misma que sectores con un discriminante — decisión abierta, ver §7) |
+| `MonograficoPage` | **colección** `monograficos`, **separada de `sectores`** — cerrado abajo |
 | `cuerpo: MonoSeccion[]` | **`blocks` anidados**: sección → fila → columna → módulo |
 | `MonoRitmo` (`mt`/`pt`/`pb`) | **campos numéricos opcionales**, omitidos cuando valen el defecto |
 | **el `pb` de fila** | **campo con defecto** — 2 % (28.7969 @1440 / 30 @390). Omitido en el dato cuando coincide |
@@ -178,6 +179,55 @@ en el ritmo ni en la retícula.**
 **un defecto explícito** y se **omite del dato cuando coincide** con él. Ese
 defecto es también la decisión de diseño que hereda quien dé de alta un contenido
 nuevo.
+
+### ✅ 1.5b · DOS COLECCIONES, no una con discriminante — CERRADA (2026-07-30)
+
+**`sectores` y `monograficos` son dos colecciones de Payload.** No se
+re-investiga nada: es la ratificación de la decisión que el experimento ya dejó
+tomada, escrita aquí para que deje de figurar como abierta.
+
+**Razón 1 · la fricción está medida, no supuesta.** El experimento pre-registrado
+(`EXPERIMENTO-URBANO.md` §8) transcribió el cuerpo de Urbano al modelo del
+monográfico con umbral cero: **H1 rechazada por C1**, y la frontera son los
+**tres campos del §1.3** con su coste cuantificado (+12.39/−90.58 · +10 · offset
+121.03). Unir hoy las dos colecciones obliga a añadir esos tres campos al
+monográfico **para nada más que la unión** — que es exactamente el arreglo falso
+que este proyecto ya sabe reconocer: un campo que existe porque el modelo lo
+necesita, no porque el contenido lo tenga.
+
+**Razón 2 · el admin y la validación salen más limpios con dos.** Una colección
+por arquetipo permite que cada campo obligatorio **sea obligatorio de verdad**.
+Con una sola colección y un discriminante, todo campo que solo aplique a una de
+las dos formas tiene que declararse opcional y volverse condicional en el admin:
+la obligatoriedad deja de vivir en el esquema y pasa a vivir en la lógica de
+presentación, que es el sitio donde no se puede comprobar. Quien da de alta un
+monográfico tampoco ve un formulario con los campos de SECTOR apagados.
+
+**Razón 3 · la asimetría de coste: fusionar luego es más barato que separar
+luego.** Fusionar es añadir un discriminante y mover filas a un esquema que ya
+las admite. Separar es lo contrario, y es caro porque para entonces ya se habrá
+escrito contenido en la forma mixta: hay que decidir **fila por fila** de qué
+tipo era, y las relaciones que apunten a la colección única sobreviven al corte
+sólo si se reescriben. Entre dos opciones reversibles se toma **la que se
+deshace mejor**.
+
+**Y no hay coste de enrutado en tenerlas separadas**, que es la objeción obvia:
+`/sectores/[slug]` **ya despacha dos catálogos por slug** en el código actual
+(§5), y la unicidad **entre familias** del §4 —hook `beforeValidate` + guarda de
+build— es justamente el mecanismo que hace seguro que dos colecciones compartan
+un espacio de nombres plano. La decisión no estrena problema: usa una guarda que
+ya hacía falta.
+
+**Condición de reapertura, explícita.** Esta decisión se reevalúa **gratis** el
+día que **los tres campos del §1.3 se hayan añadido al monográfico por una razón
+independiente** —porque una tercera instancia los pida, o porque otro arquetipo
+los traiga—. En ese momento la fricción medida vale cero y la fusión pasa a ser
+sólo una cuestión de esquema, que se decide con el mismo umbral de entonces.
+
+⚠ **Lo que la reapertura NO autoriza, y es la mitad que se olvida:** añadir esos
+tres campos **para poder fusionar** es circular, y sigue prohibido sin una tanda
+de fusión con su plan (`HANDOFF.md`). La condición es que los campos aparezcan
+**por su cuenta**; si aparecen para justificar la unión, no se ha probado nada.
 
 ---
 
@@ -425,19 +475,19 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | CMS-0e | cuerpo: convertir al importar vs HTML crudo primero | la migración de las 209 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | T6 / A-SP9 | los `id` de los `h2`: conservar o regenerar | índice del artículo |
-| §1.5 | ¿SECTOR y MONOGRÁFICO son dos colecciones o una con discriminante? | la frontera de 3 campos sigue vigente: **dos** |
 | CMS-1 | prefijo de ruta del caso de éxito | grupo C |
 
 **Cerradas el 2026-07-30**, y dónde vive cada acta: **CMS-0d** (Next 16.2.12,
 §CMS-0d) · **CMS-0c** (rebuild por webhook, §CMS-0c) · **CMS-0b** (volumen
 persistente, §CMS-0b) · **§3.3** (el reproductor de NBC: eliminación con enlace a
-la noticia). De las cuatro, **la única que tocaba a otro § era CMS-0c**, y lo
-hizo confirmando el §4 en vez de cambiarlo.
+la noticia) · **§1.5** (dos colecciones, no una con discriminante — §1.5b, con
+condición de reapertura escrita). De las cinco, **la única que tocaba a otro §
+era CMS-0c**, y lo hizo confirmando el §4 en vez de cambiarlo.
 
-De las cinco que quedan, **ninguna bloquea ya instalar Payload**: son decisiones
+De las cuatro que quedan, **ninguna bloquea ya instalar Payload**: son decisiones
 de contenido (cómo entra el cuerpo, cómo se modela la tabla, qué pasa con los
-`id`) y de modelado (una colección o dos, el prefijo del caso de éxito). El
-camino de infraestructura está despejado.
+`id`) y una de modelado (el prefijo del caso de éxito). El camino de
+infraestructura está despejado.
 
 ---
 
