@@ -1,0 +1,735 @@
+{
+  "meta": {
+    "ruta": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+    "width": 1440
+  },
+  "A": {
+    "aviso": null,
+    "secciones": [
+      {
+        "i": 0,
+        "h": 1758.58,
+        "filas": [
+          {
+            "j": 0,
+            "h": 819,
+            "txt": "De inspecciones puntuales a contro",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 750.2,
+                "off": 0,
+                "hContenido": 539.45,
+                "absorbe": 210.75,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 539.45,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 750.2,
+                "off": 0,
+                "hContenido": 750.2,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "De inspecciones puntuales a co"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 168.19,
+                    "off": 154.05,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "No puedes gestionar lo que no "
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 427.97,
+                    "off": 322.23,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Detecta fugas de forma tempran"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 841.98,
+            "txt": "Qué necesitas para controlar las e",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 811.19,
+                "off": 0,
+                "hContenido": 795.19,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Qué necesitas para controlar l"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H3",
+                    "h": 106,
+                    "off": 154.05,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 32,
+                    "lh": 32,
+                    "txt": "Una red de sensores distribuid"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 275,
+                    "off": 294.09,
+                    "mb": 34.05,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 36,
+                    "txt": "monitorización continua en tie"
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>H2",
+                    "h": 84,
+                    "off": 603.14,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Actúa antes de que el problema"
+                  },
+                  {
+                    "l": 4,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 721.19,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Saber más→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 811.19,
+                "off": 0,
+                "hContenido": 390.08,
+                "absorbe": 421.11,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 390.08,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "i": 1,
+        "h": 3740.3,
+        "filas": [
+          {
+            "j": 0,
+            "h": 798.19,
+            "txt": "La solución de KunakMonitorización",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 709.39,
+                "off": 0,
+                "hContenido": 693.39,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 65,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "La solución de Kunak"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 121,
+                    "off": 99.05,
+                    "mb": 41,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Monitorización continua diseña"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 317.34,
+                    "off": 261.05,
+                    "mb": 41,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Las estaciones Kunak AIR permi"
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 619.39,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Más información→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 709.39,
+                "off": 0,
+                "hContenido": 390.08,
+                "absorbe": 319.31,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 390.08,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 550.95,
+            "txt": "Contaminantes que pueden monitoriz",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 486.16,
+                "off": 0,
+                "hContenido": 486.16,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 26,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Contaminantes que pueden monit"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 47,
+                    "off": 146,
+                    "mb": 41,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Configuración flexible según l"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 252.16,
+                    "off": 234,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Las estaciones Kunak AIR puede"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 486.16,
+                "off": 0,
+                "hContenido": 454.48,
+                "absorbe": 31.68,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 454.48,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 2,
+            "h": 899.98,
+            "txt": "Solicita una demo técnica→Aplicaci",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 842.39,
+                "off": 0,
+                "hContenido": 597.88,
+                "absorbe": 244.51,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 489.83,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 523.88,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Solicita una demo técnica→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 842.39,
+                "off": 0,
+                "hContenido": 842.39,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Aplicaciones en petróleo y gas"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 61.19,
+                    "off": 154.05,
+                    "mb": 30,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Las redes de sensores Kunak pe"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 597.16,
+                    "off": 245.23,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "RefineríasControl de emisiones"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 3,
+            "h": 998.52,
+            "txt": "Monitorización de metano y detecci",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 909.72,
+                "off": 0,
+                "hContenido": 893.72,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 23,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Monitorización de metano y det"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 121,
+                    "off": 143,
+                    "mb": 41,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Detectar las fugas a tiempo pe"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 473.72,
+                    "off": 305,
+                    "mb": 41,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "El metano (CH4) es uno de los "
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 819.72,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "¿Quieres más información?→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 909.72,
+                "off": 0,
+                "hContenido": 539.45,
+                "absorbe": 370.27,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 539.45,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 4,
+            "h": 377.47,
+            "txt": "Cómo funciona la soluciónRed de se",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 319.88,
+                "off": 0,
+                "hContenido": 278.88,
+                "absorbe": 41,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 65,
+                    "off": 0,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Cómo funciona la solución"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H4",
+                    "h": 36,
+                    "off": 99.05,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 26,
+                    "lh": 26,
+                    "txt": "Red de sensores → Red de comun"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 109.78,
+                    "off": 169.09,
+                    "mb": 41,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Las estaciones multiparámetro "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "i": 2,
+        "h": 1149.08,
+        "filas": [
+          {
+            "j": 0,
+            "h": 582.47,
+            "txt": "Controla tus emisiones y detecta f",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 522.47,
+                "off": 0,
+                "hContenido": 506.47,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 120,
+                    "off": 0,
+                    "mb": 20,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 44,
+                    "lh": 55,
+                    "txt": "Controla tus emisiones y detec"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 84,
+                    "off": 140,
+                    "mb": 34.05,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Actúa antes de que el problema"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 140.38,
+                    "off": 258.05,
+                    "mb": 34.05,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Detectar una fuga a tiempo mar"
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 432.47,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Solicita una demo técnica→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 522.47,
+                "off": 0,
+                "hContenido": 390.08,
+                "absorbe": 132.39,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 390.08,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 495.02,
+            "txt": "¿Quieres controlar el impacto de t",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "row",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 466.22,
+                "off": 0,
+                "hContenido": 419.97,
+                "absorbe": 46.25,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>DIV",
+                    "h": 419.97,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 40,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "¿Quieres controlar el impacto "
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

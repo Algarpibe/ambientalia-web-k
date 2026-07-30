@@ -11,7 +11,7 @@
  * localiza por la sección del breadcrumb, que es estructural y vale para los
  * dos arquetipos: hero = la siguiente, cuerpo = de la de después al slider.
  */
-import { launch, openPage, settle } from "./lib.mjs";
+import { launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   urbano: [
@@ -65,13 +65,19 @@ const extraer = function (esOriginal) {
     };
 
     let secs, filaSel;
+    let avisoCorte = null;
     const sinEsp = (el) => (el.textContent || "").replace(/\s+/g, "");
     if (esOriginal) {
-      secs = [...document.querySelectorAll(".et_pb_section")];
+      const todas = [...document.querySelectorAll(".et_pb_section")];
       // el breadcrumb, no el `pb` del hero: sirve para los dos arquetipos
-      const iMigas = secs.findIndex((s) => sinEsp(s).startsWith("InicioSectores"));
-      const iSlider = secs.findIndex((s) => s.classList.contains("et_pb_fullwidth_section"));
-      secs = secs.slice(iMigas + 2, iSlider);
+      const iMigas = todas.findIndex((s) => sinEsp(s).startsWith("InicioSectores"));
+      const iSlider = todas.findIndex((s) => s.classList.contains("et_pb_fullwidth_section"));
+      // El mismo aviso que en el lado del clon, y por la misma razón: un `-1`
+      // aquí rebana desde el principio o hasta el final y el árbol sale mal
+      // **sin decirlo**.
+      if (iMigas < 0) avisoCorte = "no se localizó el breadcrumb en el ORIGINAL";
+      else if (iSlider < 0) avisoCorte = "no se localizó el slider en el ORIGINAL";
+      secs = todas.slice(iMigas + 2, iSlider);
       filaSel = ":scope > .et_pb_row";
     } else {
       const todas = [...document.querySelectorAll("main > section")];
@@ -79,21 +85,41 @@ const extraer = function (esOriginal) {
       // el resto no lleva esa clase. Vale para los dos arquetipos, porque lo
       // que cambia entre ellos es el `pb` de DESKTOP (39 vs 60), no el móvil.
       const iHero = todas.findIndex((s) => /pb-\[20px\]/.test(s.className));
-      // El slider es la ÚLTIMA sección con `.swiper`: la banda de clientes
-      // también lleva uno, y va ANTES del hero. Buscando el primero, el corte
-      // caía en la banda y el cuerpo del clon salía vacío.
+      // ── E1, corregido (2026-07-30) ─────────────────────────────────────────
+      // El cierre era «la ÚLTIMA sección con `.swiper`», y eso **no encuentra
+      // el slider**: `CtaBannerSlider` es un fundido escrito a mano
+      // (`aria-roledescription="carrusel"`), sin Swiper. Los únicos `.swiper` de
+      // la página los pone `TrustBar`, que va **antes** del hero. Medido en las
+      // 6 rutas × 2 anchos: `iSwiper` 1 · `iHero` 2, así que `iSlider > iHero`
+      // salía falso, la rebanada se iba al final de `main` y el árbol del clon
+      // arrastraba **la sección del slider** como si fuera una fila del cuerpo.
+      //
+      // El corte correcto es la PRIMERA sección después del hero que contenga
+      // el carrusel por su rol ARIA — el mismo ancla que ya usa
+      // `cmp-sector.mjs`. Se deja `.swiper` en el selector para el día que
+      // alguna sección de abajo vuelva a montar Swiper.
       let iSlider = -1;
-      todas.forEach((s, i) => {
-        if (s.querySelector(".swiper")) iSlider = i;
-      });
+      for (let i = iHero + 1; i < todas.length; i++) {
+        if (todas[i].querySelector("[aria-roledescription='carrusel'], .swiper")) {
+          iSlider = i;
+          break;
+        }
+      }
+      // Y si no lo encuentra, lo DICE. Rebanar hasta el final en silencio es
+      // exactamente cómo E1 sobrevivió sin que nadie lo viera.
+      if (iHero < 0) avisoCorte = "no se localizó el hero en el CLON";
+      else if (iSlider <= iHero) avisoCorte = "no se localizó la sección del slider en el CLON";
       secs = todas.slice(iHero + 1, iSlider > iHero ? iSlider : undefined);
       filaSel = ":scope > div";
     }
 
-    return secs.map((sec) => ({
-      ...geo(sec),
-      filas: [...sec.querySelectorAll(filaSel)].map((f) => ({ ...geo(f), txt: t(f) })),
-    }));
+    return {
+      aviso: avisoCorte,
+      secs: secs.map((sec) => ({
+        ...geo(sec),
+        filas: [...sec.querySelectorAll(filaSel)].map((f) => ({ ...geo(f), txt: t(f) })),
+      })),
+    };
   };
 
 async function medir(url, esOriginal) {
@@ -104,8 +130,23 @@ async function medir(url, esOriginal) {
   return out;
 }
 
-const o = await medir(ORIG, true);
-const c = await medir(CLON, false);
+const medidaO = await medir(ORIG, true);
+const medidaC = await medir(CLON, false);
+const o = medidaO.secs;
+const c = medidaC.secs;
+
+/**
+ * El corte, en voz alta. Un `-1` en cualquiera de los dos lados produce un árbol
+ * plausible y equivocado, que es lo que pasó con E1 durante toda una tanda.
+ */
+let corteRoto = false;
+for (const [lado, m] of [["ORIGINAL", medidaO], ["CLON", medidaC]]) {
+  if (m.aviso) {
+    console.error(`\n❌ CORTE ROTO en el ${lado}: ${m.aviso}`);
+    console.error(`   El árbol de abajo NO es el cuerpo. No se juzga nada con esto.`);
+    corteRoto = true;
+  }
+}
 
 const pinta = (etiqueta, secs) => {
   console.log(`\n--- ${etiqueta} ---`);
@@ -130,10 +171,17 @@ const plano = (secs) => secs.flatMap((s) => s.filas);
 const fo = plano(o),
   fc = plano(c);
 console.log(`\n--- filas en orden (Δ top / Δ h) ---`);
+/**
+ * Filas que sobran o faltan. **Se cuentan**, no solo se imprimen: E1 vivió una
+ * tanda entera como un `SOBRA en clon` suelto en la última línea, y una sonda
+ * que imprime un descuadre sin contarlo da el mismo informe que una que no lo ve.
+ */
+let descuadres = 0;
 for (let i = 0; i < Math.max(fo.length, fc.length); i++) {
   const a = fo[i],
     b = fc[i];
   if (!a || !b) {
+    descuadres++;
     console.log(`fila ${i}  ${!a ? "SOBRA en clon" : "FALTA en clon"}  | ${(a || b).txt}`);
     continue;
   }
@@ -145,4 +193,25 @@ for (let i = 0; i < Math.max(fo.length, fc.length); i++) {
   );
 }
 
+console.log(
+  `\n${descuadres === 0 && !corteRoto ? "✅" : "❌"} filas: ${fo.length} en el original · ` +
+    `${fc.length} en el clon · **${descuadres} sin pareja**` +
+    (corteRoto ? " · CORTE ROTO" : ""),
+);
+
+/**
+ * Salida congelada. La sonda no la escribía, así que sus conclusiones —las que
+ * cita el acta del monográfico— no tenían artefacto que auditar: la única copia
+ * era la consola de quien la corrió. Ahora sí, y por eso E1 se pudo demostrar
+ * con un diff en vez de con un argumento.
+ */
+w(process.env.SALIDA || `medidas/tree-cmp-${cual}-${width}.json`, {
+  meta: { cual, width, orig: ORIG, clon: CLON },
+  original: o,
+  clon: c,
+  avisos: { original: medidaO.aviso, clon: medidaC.aviso },
+  resumen: { filasOriginal: fo.length, filasClon: fc.length, descuadres },
+});
+
 await browser.close();
+process.exit(descuadres === 0 && !corteRoto ? 0 : 1);

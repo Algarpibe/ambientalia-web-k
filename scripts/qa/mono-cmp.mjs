@@ -11,7 +11,7 @@
  * Así el informe separa **contenido** (el alto) de **ritmo** (el margen), que
  * son dos defectos distintos con dos arreglos distintos.
  */
-import { launch, openPage, settle } from "./lib.mjs";
+import { launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   edar: [
@@ -37,10 +37,13 @@ const extraer = function (esOriginal) {
   const px = (v) => Math.round(parseFloat(v) * 100) / 100;
 
   let secs, filaSel, colSel, modSel;
+  let avisoCorte = null;
   if (esOriginal) {
     const todas = [...document.querySelectorAll(".et_pb_section")];
     const iMigas = todas.findIndex((s) => sinEsp(s).startsWith("InicioSectores"));
     const iSlider = todas.findIndex((s) => s.classList.contains("et_pb_fullwidth_section"));
+    if (iMigas < 0) avisoCorte = "no se localizó el breadcrumb en el ORIGINAL";
+    else if (iSlider < 0) avisoCorte = "no se localizó el slider en el ORIGINAL";
     secs = todas.slice(iMigas + 2, iSlider);
     filaSel = ":scope > .et_pb_row";
     colSel = ":scope > .et_pb_column";
@@ -48,17 +51,29 @@ const extraer = function (esOriginal) {
   } else {
     const todas = [...document.querySelectorAll("main > section")];
     const iHero = todas.findIndex((s) => /pb-\[20px\]/.test(s.className));
+    // ── E1, corregido (2026-07-30) — misma causa y mismo arreglo que en
+    // `tree-cmp.mjs`, que es el punto: el fallo estaba en DOS sondas y la nota
+    // de E1 solo nombraba una. `CtaBannerSlider` es un fundido escrito a mano
+    // (`aria-roledescription="carrusel"`), sin Swiper; los `.swiper` los pone
+    // `TrustBar`, ANTES del hero. Así que «la última sección con `.swiper`»
+    // daba un índice por detrás del corte, la rebanada se iba al final de
+    // `main` y el clon aportaba **la sección del slider** como sección de más.
     let iSlider = -1;
-    todas.forEach((s, i) => {
-      if (s.querySelector(".swiper")) iSlider = i;
-    });
+    for (let i = iHero + 1; i < todas.length; i++) {
+      if (todas[i].querySelector("[aria-roledescription='carrusel'], .swiper")) {
+        iSlider = i;
+        break;
+      }
+    }
+    if (iHero < 0) avisoCorte = "no se localizó el hero en el CLON";
+    else if (iSlider <= iHero) avisoCorte = "no se localizó la sección del slider en el CLON";
     secs = todas.slice(iHero + 1, iSlider > iHero ? iSlider : undefined);
     filaSel = ":scope > div";
     colSel = ":scope > div > div"; // fila → flex → columna
     modSel = ":scope > div";
   }
 
-  return secs.map((sec, i) => ({
+  return { aviso: avisoCorte, secs: secs.map((sec, i) => ({
     i,
     h: r(sec.getBoundingClientRect().height),
     filas: [...sec.querySelectorAll(filaSel)].map((f, j) => ({
@@ -81,7 +96,7 @@ const extraer = function (esOriginal) {
           })),
       })),
     })),
-  }));
+  })) };
 };
 
 async function medir(url, esOriginal) {
@@ -92,9 +107,21 @@ async function medir(url, esOriginal) {
   return out;
 }
 
-const o = await medir(ORIG, true);
-const c = await medir(CLON, false);
+const medidaO = await medir(ORIG, true);
+const medidaC = await medir(CLON, false);
 await browser.close();
+const o = medidaO.secs;
+const c = medidaC.secs;
+
+/** El corte, en voz alta. Un `-1` da un árbol plausible y equivocado (E1). */
+let corteRoto = false;
+for (const [lado, m] of [["ORIGINAL", medidaO], ["CLON", medidaC]]) {
+  if (m.aviso) {
+    console.error(`\n❌ CORTE ROTO en el ${lado}: ${m.aviso}`);
+    console.error(`   El árbol de abajo NO es el cuerpo. No se juzga nada con esto.`);
+    corteRoto = true;
+  }
+}
 
 const d = (a, b) => {
   const v = Math.round((b - a) * 100) / 100;
@@ -114,11 +141,25 @@ let malRitmo = 0;
  * "limpio" que una que no encuentra nada.
  */
 let malEstructura = 0;
+/**
+ * Nodos sin pareja, a cualquier nivel. **Contarlos era el agujero que dejó vivir
+ * a E1 una tanda entera**: con el corte roto, el clon aportaba una sección de
+ * más, la sonda escribía `SEC 3 SOBRA en clon`… y acto seguido
+ * `✅ 0 · 0 · 0` **con código 0**, porque ningún `continue` incrementaba nada.
+ *
+ * Es el mismo fallo que ya avisa la cabecera de `malEstructura` —una sonda que
+ * no mira un nivel del árbol da el mismo "limpio" que una que no encuentra
+ * nada—, una vuelta más arriba: aquí sí lo miraba, lo imprimía, y no lo contaba.
+ */
+let sinPareja = 0;
+/** Columnas con el alto distinto — ver E3. Se informa; no cierra el código. */
+let malColumna = 0;
 
 for (let i = 0; i < Math.max(o.length, c.length); i++) {
   const so = o[i];
   const sc = c[i];
   if (!so || !sc) {
+    sinPareja++;
     console.log(`SEC ${i}  ${so ? "FALTA en clon" : "SOBRA en clon"}`);
     continue;
   }
@@ -128,6 +169,7 @@ for (let i = 0; i < Math.max(o.length, c.length); i++) {
     const fo = so.filas[j];
     const fc = sc.filas[j];
     if (!fo || !fc) {
+      sinPareja++;
       console.log(`  F${j}  ${fo ? "FALTA en clon" : "SOBRA en clon"}`);
       continue;
     }
@@ -137,12 +179,21 @@ for (let i = 0; i < Math.max(o.length, c.length); i++) {
       const co = fo.cols[k];
       const cc = fc.cols[k];
       if (!co || !cc) {
+        sinPareja++;
         console.log(`    C${k}  ${co ? "FALTA en clon" : "SOBRA en clon"}`);
         continue;
       }
       const dif = co.h !== cc.h;
       // el hueco entre columnas apiladas a 390 no es de ningún módulo
       if (co.mb !== cc.mb) malEstructura++;
+      // El ALTO de la columna se imprimía y no se contaba (ver E3 en
+      // PENDIENTES-QA). Se cuenta aparte y **no cierra el código de salida**,
+      // porque las instancias medidas son columnas del clon que ESTIRAN por ser
+      // hijas de un flex (Divi las deja a la altura del contenido) y eso es
+      // geométricamente inerte: los módulos de dentro cuadran y la fila también.
+      // Contarlo aparte y decirlo es lo contrario de lo que hacía antes, que era
+      // imprimirlo y callarse.
+      if (dif) malColumna++;
       console.log(
         `    C${k}  h ${co.h} → ${cc.h}   Δ${d(co.h, cc.h)}` +
           (co.mb !== cc.mb ? `   ❌ mb ${co.mb} → ${cc.mb}` : "") +
@@ -153,6 +204,7 @@ for (let i = 0; i < Math.max(o.length, c.length); i++) {
         const mo = co.mods[l];
         const mc = cc.mods[l];
         if (!mo || !mc) {
+          sinPareja++;
           console.log(`      M${l}  ${mo ? "FALTA en clon" : "SOBRA en clon"}  "${(mo || mc).txt}"`);
           continue;
         }
@@ -169,12 +221,41 @@ for (let i = 0; i < Math.max(o.length, c.length); i++) {
   }
 }
 
-const total = malContenido + malRitmo + malEstructura;
+const total = malContenido + malRitmo + malEstructura + sinPareja + (corteRoto ? 1 : 0);
 console.log(
   `\n${total === 0 ? "✅" : "❌"} módulos con el ALTO distinto: ${malContenido}` +
     `  ·  con el MARGEN distinto: ${malRitmo}` +
-    `  ·  secciones/filas/columnas que no cuadran: ${malEstructura}`,
+    `  ·  secciones/filas/columnas que no cuadran: ${malEstructura}` +
+    `  ·  nodos SIN PAREJA: ${sinPareja}` +
+    (corteRoto ? `  ·  CORTE ROTO` : ""),
 );
 console.log("   (el alto es contenido; el margen es ritmo — son dos defectos distintos,");
 console.log("    y lo que no cae en ningún módulo se cuenta como estructura)");
+console.log(
+  `   secciones: ${o.length} original · ${c.length} clon` +
+    `   ·   columnas con el ALTO distinto: ${malColumna} (informativo, ver E3: el clon` +
+    ` estira las columnas por ser hijas de un flex; no cierra el código de salida)`,
+);
+
+/**
+ * Salida congelada — la sonda no la escribía. Sus números están citados en el
+ * acta del monográfico y en `HANDOFF.md`, y la única copia era la consola de
+ * quien la corrió: por eso E1 hubo que demostrarlo re-midiendo en vez de
+ * diffeando. Ahora queda artefacto.
+ */
+w(process.env.SALIDA || `medidas/mono-cmp-${cual}-${width}.json`, {
+  meta: { cual, width, orig: ORIG, clon: CLON },
+  original: o,
+  clon: c,
+  avisos: { original: medidaO.aviso, clon: medidaC.aviso },
+  resumen: {
+    malContenido,
+    malRitmo,
+    malEstructura,
+    sinPareja,
+    malColumna,
+    secciones: { original: o.length, clon: c.length },
+  },
+});
+
 process.exit(total === 0 ? 0 : 1);

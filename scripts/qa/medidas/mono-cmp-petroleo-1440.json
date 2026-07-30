@@ -1,0 +1,851 @@
+{
+  "meta": {
+    "cual": "petroleo",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+    "clon": "http://localhost:3000/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+  },
+  "original": [
+    {
+      "i": 0,
+      "h": 1758.58,
+      "filas": [
+        {
+          "j": 0,
+          "h": 819,
+          "cols": [
+            {
+              "k": 0,
+              "h": 539.45,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 539.45,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 750.2,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "De inspecciones puntuales a co"
+                },
+                {
+                  "h": 168.19,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "No puedes gestionar lo que no "
+                },
+                {
+                  "h": 427.97,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "Detecta fugas de forma tempran"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 841.98,
+          "cols": [
+            {
+              "k": 0,
+              "h": 811.19,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Qué necesitas para controlar l"
+                },
+                {
+                  "h": 106,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Una red de sensores distribuid"
+                },
+                {
+                  "h": 275,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "monitorización continua en tie"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Saber más"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 390.08,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "h": 3740.3,
+      "filas": [
+        {
+          "j": 0,
+          "h": 798.19,
+          "cols": [
+            {
+              "k": 0,
+              "h": 709.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "La solución de Kunak"
+                },
+                {
+                  "h": 121,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Monitorización continua diseña"
+                },
+                {
+                  "h": 317.34,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Las estaciones Kunak AIR permi"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Más información"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 390.08,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 550.95,
+          "cols": [
+            {
+              "k": 0,
+              "h": 486.16,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 26,
+                  "pb": 0,
+                  "txt": "Contaminantes que pueden monit"
+                },
+                {
+                  "h": 47,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Configuración flexible según l"
+                },
+                {
+                  "h": 252.16,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Las estaciones Kunak AIR puede"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 454.48,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 454.48,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 899.98,
+          "cols": [
+            {
+              "k": 0,
+              "h": 613.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 489.83,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": ""
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 842.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Aplicaciones en petróleo y gas"
+                },
+                {
+                  "h": 61.19,
+                  "mb": 30,
+                  "pb": 0,
+                  "txt": "Las redes de sensores Kunak pe"
+                },
+                {
+                  "h": 597.16,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "Refinerías Control de emisione"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 998.52,
+          "cols": [
+            {
+              "k": 0,
+              "h": 909.72,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 23,
+                  "pb": 0,
+                  "txt": "Monitorización de metano y det"
+                },
+                {
+                  "h": 121,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Detectar las fugas a tiempo pe"
+                },
+                {
+                  "h": 473.72,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "El metano (CH4) es uno de los "
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "¿Quieres más información?"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 539.45,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 539.45,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 4,
+          "h": 377.47,
+          "cols": [
+            {
+              "k": 0,
+              "h": 319.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Cómo funciona la solución"
+                },
+                {
+                  "h": 36,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Red de sensores → Red de comun"
+                },
+                {
+                  "h": 109.78,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Las estaciones multiparámetro "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "h": 1149.08,
+      "filas": [
+        {
+          "j": 0,
+          "h": 582.47,
+          "cols": [
+            {
+              "k": 0,
+              "h": 522.47,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 20,
+                  "pb": 0,
+                  "txt": "Controla tus emisiones y detec"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 140.38,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Detectar una fuga a tiempo mar"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 522.47,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 495.02,
+          "cols": [
+            {
+              "k": 0,
+              "h": 466.22,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 419.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "¿Quieres controlar el impacto "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "i": 0,
+      "h": 1758.58,
+      "filas": [
+        {
+          "j": 0,
+          "h": 819,
+          "cols": [
+            {
+              "k": 0,
+              "h": 750.2,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 539.45,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 750.2,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "De inspecciones puntuales a co"
+                },
+                {
+                  "h": 168.19,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "No puedes gestionar lo que no "
+                },
+                {
+                  "h": 427.97,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "Detecta fugas de forma tempran"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 841.98,
+          "cols": [
+            {
+              "k": 0,
+              "h": 811.19,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Qué necesitas para controlar l"
+                },
+                {
+                  "h": 106,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Una red de sensores distribuid"
+                },
+                {
+                  "h": 275,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "monitorización continua en tie"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Saber más→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 811.19,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "h": 3740.3,
+      "filas": [
+        {
+          "j": 0,
+          "h": 798.19,
+          "cols": [
+            {
+              "k": 0,
+              "h": 709.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "La solución de Kunak"
+                },
+                {
+                  "h": 121,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Monitorización continua diseña"
+                },
+                {
+                  "h": 317.34,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Las estaciones Kunak AIR permi"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Más información→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 709.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 550.95,
+          "cols": [
+            {
+              "k": 0,
+              "h": 486.16,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 26,
+                  "pb": 0,
+                  "txt": "Contaminantes que pueden monit"
+                },
+                {
+                  "h": 47,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Configuración flexible según l"
+                },
+                {
+                  "h": 252.16,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Las estaciones Kunak AIR puede"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 486.16,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 454.48,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 899.98,
+          "cols": [
+            {
+              "k": 0,
+              "h": 842.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 489.83,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": ""
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 842.39,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Aplicaciones en petróleo y gas"
+                },
+                {
+                  "h": 61.19,
+                  "mb": 30,
+                  "pb": 0,
+                  "txt": "Las redes de sensores Kunak pe"
+                },
+                {
+                  "h": 597.16,
+                  "mb": 0,
+                  "pb": 23,
+                  "txt": "RefineríasControl de emisiones"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 998.52,
+          "cols": [
+            {
+              "k": 0,
+              "h": 909.72,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 23,
+                  "pb": 0,
+                  "txt": "Monitorización de metano y det"
+                },
+                {
+                  "h": 121,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Detectar las fugas a tiempo pe"
+                },
+                {
+                  "h": 473.72,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "El metano (CH4) es uno de los "
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "¿Quieres más información?→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 909.72,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 539.45,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 4,
+          "h": 377.47,
+          "cols": [
+            {
+              "k": 0,
+              "h": 319.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Cómo funciona la solución"
+                },
+                {
+                  "h": 36,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Red de sensores → Red de comun"
+                },
+                {
+                  "h": 109.78,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "Las estaciones multiparámetro "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "h": 1149.08,
+      "filas": [
+        {
+          "j": 0,
+          "h": 582.47,
+          "cols": [
+            {
+              "k": 0,
+              "h": 522.47,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 20,
+                  "pb": 0,
+                  "txt": "Controla tus emisiones y detec"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 140.38,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Detectar una fuga a tiempo mar"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 522.47,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 495.02,
+          "cols": [
+            {
+              "k": 0,
+              "h": 466.22,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 419.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "¿Quieres controlar el impacto "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "malContenido": 0,
+    "malRitmo": 0,
+    "malEstructura": 0,
+    "sinPareja": 0,
+    "malColumna": 6,
+    "secciones": {
+      "original": 3,
+      "clon": 3
+    }
+  }
+}

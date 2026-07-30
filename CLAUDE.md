@@ -249,7 +249,9 @@ Estas se pagaron con horas de depuración. No las reinventes:
     un Δ de 8.6 es tan real como uno de 100. Aplicar un suelo global sería el
     error contrario: descartar defectos por ruido que solo existe en otro sitio.
   - **Reproducirse entre anchos pesa más que el tamaño.** Un residuo idéntico a
-    1440 y a 390 no puede ser ruido: son dos maquetaciones distintas.
+    1440 y a 390 no puede ser ruido: son dos maquetaciones distintas. Y al revés:
+    un residuo que **aparece solo en un ancho** es un contenedor que en el otro lo
+    tapaba — ver «La causa común: el NIVEL al que se mide» más abajo.
 - **Un Δ de cero puede ser dos errores que se anulan.** El caso, medido: la fila
   del CTA de Industria a 390 iba con un déficit de −47.5 de contenido y, encima,
   con +74 de ritmo que no le tocaba; el total daba **+26.5** y parecía un fleco.
@@ -283,6 +285,44 @@ De ahí las dos formas de aplicarlo, que son la misma:
   emite el build**, no contra una lista escrita a mano. Guarda automática:
   `scripts/qa/enlaces.mjs`. Correrla después de clonar cualquier página: las
   rutas nuevas entran solas y sus enlaces pasan a ser fallo sin tocar la sonda.
+
+### La causa común: el NIVEL al que se mide
+
+Las dos formas de arriba, las tres suposiciones de la tabla y media docena de
+hallazgos sueltos son **el mismo error**, y conviene enunciarlo una vez:
+
+> **Una medición tomada a un nivel que puede absorber el error no es una
+> medición.** Se mide **al nivel donde vive la propiedad**, no al que la
+> contiene. Todo contenedor con holgura —una fila más alta que su columna, un
+> total que suma con signos, un servidor que decide qué HTML sale— es un sitio
+> donde el defecto cabe sin dejar rastro en el número que estás mirando.
+
+Las cuatro instancias medidas en este proyecto, cada una con su contenedor:
+
+| se midió | el contenedor absorbió | había dentro |
+|---|---|---|
+| el **total** de la fila del CTA de Industria: `+26.5` | la suma: contenido y ritmo con signos opuestos | **−47.5 de contenido tapados por +74 de ritmo** |
+| el **alto de la caja** del CTA de Urbano: `+12.39` | la caja: el texto se reacomoda dentro | una **piel entera distinta** — el título pierde **151.89** de ancho y gana **51.79** de alto |
+| el **alto de la fila** del claim de Urbano: `Δ0` a 1440 | la columna hermana, **390.08** contra 148 | **+10** de `padding-bottom` y **121.03** de centrado vertical perdido |
+| el **HTML de `.next`**, en el test en negativo de `enlaces.mjs` | `next start` sirviendo el build anterior | el enlace roto — la sonda dio **«limpio» en falso** |
+
+Los cuatro contenedores son distintos y el error es el mismo: se leyó el número
+del nivel de arriba porque estaba a mano.
+
+**La regla espejo es un caso particular de ésta.** Un Δ0 en un ancho con Δ≠0 en el
+otro no es «casi cuadra»: es una **medida tapada**, porque la holgura del
+contenedor no es la misma a 1440 que a 390 —a 1440 las columnas van en fila y la
+más alta manda; a 390 apilan y no hay dónde absorber—. Es el complemento de
+«reproducirse entre anchos pesa más que el tamaño» (§Notas de método): si un
+residuo que se repite en los dos anchos no puede ser ruido, un residuo que
+**aparece solo en uno** es un contenedor que en el otro lo estaba tapando.
+
+**Y hay instrumento, no solo regla.** `scripts/qa/offsets.mjs` mide, por columna,
+cuánto puede fallar dentro sin que la fila se mueva (`absorbe`), y el offset de
+cada nodo dentro de su padre —que es lo único que ve el centrado vertical—. En
+Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el margen
+de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
+holgura**, entonces sí: el alto de la fila es concluyente.
 
 El corolario práctico, en dos mitades — la segunda se aprendió cazando la
 primera:

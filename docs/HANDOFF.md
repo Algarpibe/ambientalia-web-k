@@ -26,6 +26,7 @@ fusión (si se hace) es tanda propia.
 | `…/components/seccion-editorial.spec.md` | el cuerpo. **Empieza con un `⚠ CORRIGE` de seis puntos**: léelo antes que el resto |
 | `…/EXPERIMENTO-URBANO.md` | el experimento pre-registrado + **el ACTA (§8)**: H1 rechazada por C1, la frontera son 3 campos |
 | `docs/PENDIENTES-QA.md` §MONOGRÁFICO | el acta de QA: qué cuadra, qué no y por qué |
+| `docs/research/CENSO-ARQUETIPOS.md` | **cuánto le falta a la biblioteca**: 7 formas cubiertas de 23, y las 14 que no |
 
 ## Estado
 
@@ -123,6 +124,37 @@ de `mb` de imagen, la regla del último módulo, el `<strong>` en línea y el hu
 entre columnas apiladas. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 `seccion-editorial.spec.md`.
 
+## Cuánto le falta a la biblioteca (censo del 2026-07-30)
+
+`docs/research/CENSO-ARQUETIPOS.md`, contra el sitemap completo del original.
+**380 páginas conocidas en la rama `/es`**, y el reparto:
+
+| cubo | páginas | formas |
+|---|---|---|
+| cubiertas por un arquetipo | **13** | 7 |
+| dudosas (mismo CPT `solutions`, plantilla sin medir) | **20** | 2 |
+| **sin cubrir** | **347** | **14** |
+
+**Por formas de página vamos por el 30 %**, que es la cifra que cuenta — un
+arquetipo se paga una vez y sirve para todas sus instancias. Y las 14 que faltan
+**no son variantes de las que hay**: los 7 arquetipos actuales son páginas de
+venta; lo que falta es contenido editorial y listados (fecha, autor, taxonomía,
+paginación).
+
+**7 de esas 14 formas se comen 321 de las 347 páginas** (blog, caso de éxito,
+término de Kunakpedia, documento científico, FAQ, archivo de taxonomía, artículo
+de KB). Las otras 7 formas son 26 páginas de cola larga. O sea que la deuda no
+son 347 páginas: son **7 plantillas de listado y 7 páginas casi sueltas**.
+
+Dato que cambia cómo se lee: el clon **ya pinta** tarjetas de caso de éxito y de
+entrada de blog (`UltimosProyectos`, `UltimosArticulos`, con datos a mano en
+`projects.ts` y `articles.ts`). El modelo de las dos formas más numerosas está a
+medias por el lado de la tarjeta; falta la página de destino.
+
+El censo **no decide construir nada**. Y ojo con su §0: el sitemap omite los
+`noindex`, y las 10 páginas de esa familia que están contadas se encontraron
+porque el clon ya enlazaba a ellas. **380 es un suelo.**
+
 ## Lo que NO hay que hacer al empezar
 
 - **No arreglar S9, S10 ni S11 sueltos.** Ver la nota de **CLASE** en
@@ -141,12 +173,19 @@ entre columnas apiladas. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 | `clon-base.mjs [ancho] [--cmp antes.json]` | **el clon contra sí mismo**, antes/después de tocar algo compartido. Rutas del `prerender-manifest`, umbral cero, y exige un `MARCADOR` en el HTML servido antes de medir nada |
 | `mono-cmp.mjs <edar\|petroleo> [ancho]` | original vs clon **módulo a módulo**, separando alto (contenido) de margen (ritmo) |
 | `dos-rutas.mjs <rutaA> <rutaB> [ancho]` | **dos rutas del MISMO build, cara a cara**: árbol sección→fila + `docH` + anclas de la cola, umbral cero. Del experimento Urbano. Exige `MARCADOR` igual que `clon-base.mjs` |
-| `exp-detalle.mjs [ancho]` | la **composición** del experimento: el CTA y el claim módulo a módulo, con el offset del claim **dentro** de su fila — que es lo único que delata el centrado vertical |
+| **`offsets.mjs <ruta> [ancho] [--cmp otra]`** | **el offset de cada nodo dentro de su padre** y la **holgura** de cada columna: cuánto puede fallar ahí sin que la fila se mueva. Instrumental estándar — era `exp-detalle.mjs` |
+| `corte-cuerpo.mjs` | guarda de E1: que la rebanada del cuerpo del clon **acabe en el slider**, 6 rutas × 2 anchos |
 
-`tree-cmp.mjs` acepta ahora los 6 slugs y localiza el hero **por el breadcrumb**
-y no por su `padding-bottom`: el del monográfico cierra a 39 y la heurística
-vieja se quedaba sin cuerpo. **Su cierre del cuerpo en el lado del clon sigue
-mal** y ahora está medido: ver **E1** en `PENDIENTES-QA.md`.
+`tree-cmp.mjs` acepta los 6 slugs y localiza el hero **por el breadcrumb** y no
+por su `padding-bottom`: el del monográfico cierra a 39 y la heurística vieja se
+quedaba sin cuerpo.
+
+**E1 RESUELTO (2026-07-30).** El cierre del cuerpo en el lado del clon estaba mal
+en **dos** sondas —`tree-cmp.mjs` y `mono-cmp.mjs`, que es la de los números del
+acta— y ahora corta por `[aria-roledescription='carrusel']`, falla en voz alta si
+no lo encuentra, cuenta los nodos sin pareja y **congela su salida** (antes no
+escribían nada: sus conclusiones vivían en la consola de quien las corría).
+Probado que no falseó nada: ver **E1** en `PENDIENTES-QA.md`.
 
 ## Comandos
 

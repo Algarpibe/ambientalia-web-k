@@ -1,0 +1,765 @@
+{
+  "meta": {
+    "cual": "edar",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+    "clon": "http://localhost:3000/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar"
+  },
+  "original": [
+    {
+      "i": 0,
+      "h": 3675.81,
+      "filas": [
+        {
+          "j": 0,
+          "h": 570.81,
+          "cols": [
+            {
+              "k": 0,
+              "h": 482.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 175,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Qué cambia con monitorización"
+                },
+                {
+                  "h": 231.97,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "De reaccionar tarde a tener co"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 390.08,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 544.84,
+          "cols": [
+            {
+              "k": 0,
+              "h": 444.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Qué gases se deben medir en u"
+                },
+                {
+                  "h": 345,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Los gases clave que puedes con"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 966.14,
+          "cols": [
+            {
+              "k": 0,
+              "h": 908.55,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Dónde se generan las emisione"
+                },
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Cada fase, gases y riesgos dis"
+                },
+                {
+                  "h": 691.31,
+                  "mb": 37.14,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 935.14,
+          "cols": [
+            {
+              "k": 0,
+              "h": 877.55,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Tabla resumen: procesos y emis"
+                },
+                {
+                  "h": 748.5,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Fase del proceso Gases generad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 4,
+          "h": 543.69,
+          "cols": [
+            {
+              "k": 0,
+              "h": 379.58,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 379.58,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 486.09,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 80,
+                  "mb": 0,
+                  "pb": 15,
+                  "txt": "Alertas y toma de decisiones"
+                },
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 201,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Umbrales configurables por gas"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "h": 581.8,
+      "filas": [
+        {
+          "j": 0,
+          "h": 466.61,
+          "cols": [
+            {
+              "k": 0,
+              "h": 409.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Control perimetral y gestión d"
+                },
+                {
+                  "h": 254.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Responder con hechos,no con su"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 292.83,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Seguridad y prevención en plan"
+                },
+                {
+                  "h": 138.78,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Una capa adicional de protecci"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "h": 2384.31,
+      "filas": [
+        {
+          "j": 0,
+          "h": 598.64,
+          "cols": [
+            {
+              "k": 0,
+              "h": 541.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Beneficios clave para la opera"
+                },
+                {
+                  "h": 387,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Controla e identifica las fuen"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 523.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 175,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Aplicaciones reales de la moni"
+                },
+                {
+                  "h": 314,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Control continuo de olores en "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 478.88,
+          "cols": [
+            {
+              "k": 0,
+              "h": 418.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 20,
+                  "pb": 0,
+                  "txt": "Da el siguiente paso"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 91.78,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Descubre cómo la monitorizació"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 418.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 495.02,
+          "cols": [
+            {
+              "k": 0,
+              "h": 466.22,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 419.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "¿Quieres controlar el impacto "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 740.19,
+          "cols": [
+            {
+              "k": 0,
+              "h": 682.59,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 95.59,
+                  "mb": 17,
+                  "pb": 0,
+                  "txt": "Proyectos por todo el mundo Al"
+                },
+                {
+                  "h": 570,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Para navegar por el mapa con g"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "i": 0,
+      "h": 3675.8,
+      "filas": [
+        {
+          "j": 0,
+          "h": 570.81,
+          "cols": [
+            {
+              "k": 0,
+              "h": 482.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 175,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Qué cambia con monitorización"
+                },
+                {
+                  "h": 231.97,
+                  "mb": 41,
+                  "pb": 0,
+                  "txt": "De reaccionar tarde a tener co"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 482.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 544.84,
+          "cols": [
+            {
+              "k": 0,
+              "h": 444.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Qué gases se deben medir en u"
+                },
+                {
+                  "h": 345,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Los gases clave que puedes con"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 966.13,
+          "cols": [
+            {
+              "k": 0,
+              "h": 908.53,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "¿Dónde se generan las emisione"
+                },
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Cada fase, gases y riesgos dis"
+                },
+                {
+                  "h": 691.31,
+                  "mb": 37.14,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 935.14,
+          "cols": [
+            {
+              "k": 0,
+              "h": 877.55,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Tabla resumen: procesos y emis"
+                },
+                {
+                  "h": 748.5,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Fase del procesoGases generado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 4,
+          "h": 543.69,
+          "cols": [
+            {
+              "k": 0,
+              "h": 486.09,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 379.58,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 486.09,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 80,
+                  "mb": 0,
+                  "pb": 15,
+                  "txt": "Alertas y toma de decisiones"
+                },
+                {
+                  "h": 47,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 201,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Umbrales configurables por gas"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica→"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "h": 581.8,
+      "filas": [
+        {
+          "j": 0,
+          "h": 466.61,
+          "cols": [
+            {
+              "k": 0,
+              "h": 409.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Control perimetral y gestión d"
+                },
+                {
+                  "h": 254.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Responder con hechos,no con su"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 409.02,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Seguridad y prevención en plan"
+                },
+                {
+                  "h": 138.78,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Una capa adicional de protecci"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "h": 2384.31,
+      "filas": [
+        {
+          "j": 0,
+          "h": 598.64,
+          "cols": [
+            {
+              "k": 0,
+              "h": 541.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 120,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Beneficios clave para la opera"
+                },
+                {
+                  "h": 387,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Controla e identifica las fuen"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 541.05,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 175,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Aplicaciones reales de la moni"
+                },
+                {
+                  "h": 314,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "Control continuo de olores en "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 1,
+          "h": 478.88,
+          "cols": [
+            {
+              "k": 0,
+              "h": 418.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 65,
+                  "mb": 20,
+                  "pb": 0,
+                  "txt": "Da el siguiente paso"
+                },
+                {
+                  "h": 84,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Actúa antes de que el problema"
+                },
+                {
+                  "h": 91.78,
+                  "mb": 34.05,
+                  "pb": 0,
+                  "txt": "Descubre cómo la monitorizació"
+                },
+                {
+                  "h": 74,
+                  "mb": 16,
+                  "pb": 0,
+                  "txt": "Solicita una demo técnica→"
+                }
+              ]
+            },
+            {
+              "k": 1,
+              "h": 418.88,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 390.08,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 2,
+          "h": 495.02,
+          "cols": [
+            {
+              "k": 0,
+              "h": 466.22,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 419.97,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "¿Quieres controlar el impacto "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "j": 3,
+          "h": 740.19,
+          "cols": [
+            {
+              "k": 0,
+              "h": 682.59,
+              "mb": 0,
+              "mods": [
+                {
+                  "h": 95.59,
+                  "mb": 17,
+                  "pb": 0,
+                  "txt": "Proyectos por todo el mundoAlg"
+                },
+                {
+                  "h": 570,
+                  "mb": 0,
+                  "pb": 0,
+                  "txt": "MCP - EDAR ArazuriEDAR (Estaci"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "malContenido": 0,
+    "malRitmo": 0,
+    "malEstructura": 2,
+    "sinPareja": 0,
+    "malColumna": 5,
+    "secciones": {
+      "original": 3,
+      "clon": 3
+    }
+  }
+}

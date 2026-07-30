@@ -1747,29 +1747,76 @@ de decisión pre-registrada prohíbe añadir esos campos "de paso": **no se han
 añadido**. Nada del clon cambió — las 11 páginas a Δ0 en los dos anchos y
 `enlaces.mjs` limpia.
 
-### E1 · `tree-cmp.mjs` no localiza el slider en el lado del CLON
+### E1 · El corte del cuerpo del CLON no localizaba el slider · **RESUELTO (2026-07-30)**
 
-**Hallazgo de la corrida, no arreglado.** El cierre del cuerpo en el lado del
-clon es *«el slider es la ÚLTIMA sección con `.swiper`»*, y eso **no lo
-encuentra**: `CtaBannerSlider` es un fundido escrito a mano
-(`aria-roledescription="carrusel"`), sin Swiper. Los únicos `.swiper` de la
-página los pone `TrustBar`, que va **antes** del hero, así que el índice cae por
-detrás del corte, `iSlider > iHero` sale falso y la rebanada se va **al final de
-`main`**: la última entrada del árbol del clon es **la sección del slider**, no
-una fila del cuerpo.
+El cierre del cuerpo en el lado del clon era *«el slider es la ÚLTIMA sección con
+`.swiper`»*, y eso **no lo encuentra**: `CtaBannerSlider` es un fundido escrito a
+mano (`aria-roledescription="carrusel"`), sin Swiper. Los únicos `.swiper` de la
+página los pone `TrustBar`, que va **antes** del hero, así que el índice caía por
+detrás del corte, `iSlider > iHero` salía falso y la rebanada se iba **al final de
+`main`** con la sección del slider dentro.
 
-Consecuencia en las corridas pasadas: en el diff plano por índice, el clon
-aportaba **una fila de más al final**. No falseó ninguna conclusión —el desfase
-se lee por `top` y las filas del cuerpo van antes—, pero la última línea de
-`tree-cmp.mjs` comparaba peras con manzanas.
+**Estaba en DOS sondas, no en una.** La nota original solo nombraba
+`tree-cmp.mjs`; `mono-cmp.mjs` llevaba el mismo bloque copiado — y es la sonda
+cuyos números cita el acta del monográfico. Se encontró grepando `swiper` en
+`scripts/qa/` en vez de arreglar la que se tenía delante, que es el corolario 1
+de `CLAUDE.md` aplicado a la propia herramienta.
 
-Por qué no se arregla aquí: el corte correcto es por
-`[aria-roledescription='carrusel']`, que es lo que ya usa `cmp-sector.mjs`, y
-tocarlo invalida la salida congelada de `medidas/tree-todos-{1440,390}.json`.
-Va con la tanda mecánica pendiente de `scripts/qa/` (que las sondas sean dueñas
-de su ciclo de servidor). `dos-rutas.mjs` lo lleva **anotado en su cabecera** y
-usa la sección extra a favor: si el slider no sale Δ0, lo que cambió no era el
-cuerpo.
+**Y un segundo agujero, en `mono-cmp.mjs`, que es la razón de que E1 viviera una
+tanda entera sin verse:** con el corte roto el clon aportaba una sección de más,
+la sonda escribía `SEC 3 SOBRA en clon`… y a continuación
+`✅ 0 · 0 · 0` **con código 0**, porque ningún `continue` incrementaba ningún
+contador. Un descuadre impreso y no contado da el mismo informe que un descuadre
+no visto.
+
+#### Qué se arregló
+
+| | |
+|---|---|
+| el corte | la **primera** sección después del hero con `[aria-roledescription='carrusel'], .swiper`, en `tree-cmp.mjs` y `mono-cmp.mjs` |
+| fallar en voz alta | si no lo encuentra: `❌ CORTE ROTO`, «el árbol de abajo NO es el cuerpo», y **código 1**. Antes rebanaba hasta el final en silencio |
+| nodos sin pareja | se **cuentan** en los cuatro niveles de `mono-cmp` (sección/fila/columna/módulo) y en las filas de `tree-cmp` |
+| salida congelada | las dos sondas **no escribían nada**: sus conclusiones vivían en la consola de quien las corría. Ahora `medidas/tree-cmp-*.json` y `medidas/mono-cmp-*.json` |
+| la guarda | `scripts/qa/corte-cuerpo.mjs`, 6 rutas × 2 anchos, comprueba que el corte cae **en el slider** y que no queda ninguno dentro del cuerpo. **12 de 12 limpios** |
+
+#### La prueba de que no falseó conclusiones pasadas
+
+No se afirma: se midió, y de dos formas.
+
+**1 · Determinista, sin el sitio vivo.** Las dos rebanadas —vieja y nueva—
+calculadas **en la misma carga de página**, para las 6 rutas y los 2 anchos.
+Diffear dos corridas end-to-end no habría servido: el lado del original es un
+sitio vivo y cualquier diferencia quedaría contaminada. Resultado, **12 de 12**:
+la rebanada nueva es **prefijo exacto** de la vieja, y lo único que la vieja
+añadía era **una** sección, verificada como el slider por su rol ARIA. Con el
+lado del original intacto y la rebanada siendo un prefijo, todo lo que viene
+después —que es función pura de ella— solo puede perder esas líneas.
+
+**2 · End-to-end, mismo build, antes y después.** El diff completo de las cuatro
+corridas:
+
+| sonda | lo único que cambió |
+|---|---|
+| `tree-cmp urbano 1440` | desaparecen `SEC 2` (el slider) y `fila 3 SOBRA en clon`. Las 3 filas del cuerpo, **idénticas** (Δ+0 / −8.6 / −8.6) |
+| `tree-cmp edar 1440` | desaparecen `SEC 3` y `fila 10 SOBRA en clon`. **10 filas en los dos lados** |
+| `mono-cmp petroleo 1440` | desaparece `SEC 3 SOBRA en clon`. Veredicto **`0 · 0 · 0` sin cambio** — la afirmación «Petróleo exacto» se sostiene |
+| `mono-cmp edar 390` | desaparece `SEC 3 SOBRA en clon`. Veredicto **`2 · 0 · 5` sin cambio** (los residuos M-IMG conocidos) |
+
+Y un control que salió gratis: **el lado del original no se movió un céntimo
+entre las dos corridas**, así que el diff es atribuible al arreglo y a nada más.
+Dispersión 0 en el cuerpo, como dice el protocolo.
+
+**3 · Test en negativo.** Con el ancla cambiada por una que no existe, la sonda
+canta `CORTE ROTO en el CLON` y sale con **1** — y reproduce exactamente el
+síntoma viejo (`fila 3 SOBRA en clon`, 3 filas contra 4). Restaurada después.
+
+#### Lo que NO se tocó, y por qué
+
+`dos-rutas.mjs` sigue metiendo la sección del slider en su rebanada, **a
+propósito y dicho en su cabecera**: la usa como control del cascarón (si el
+slider no sale Δ0, lo que cambió no era el cuerpo) y el §8.0 del acta cita ese
+número. Cambiarlo invalidaría la evidencia congelada de un experimento cuyo
+andamio ya está borrado y no se puede rehacer.
 
 ### E2 · Un Δ0 que no se reproduce entre anchos es una medida TAPADA
 
@@ -1786,4 +1833,44 @@ bajar a la composición.
 
 Y el corolario duro: **la alineación vertical no la ve NINGÚN alto de fila.**
 Centrado o pegado arriba, la fila mide lo mismo. Se ve solo midiendo el módulo
-**dentro** de su fila, que es lo que hace `exp-detalle.mjs`.
+**dentro** de su fila.
+
+**Promovido a regla general el 2026-07-30**, con su causa común y sus cuatro
+instancias, en `CLAUDE.md` §«La causa común: el NIVEL al que se mide». La regla
+espejo pasa a ser un caso particular: la holgura del contenedor no es la misma a
+1440 (columnas en fila, manda la más alta) que a 390 (apilan, no hay dónde
+absorber), y de ahí que el defecto aparezca en un ancho y no en el otro.
+
+Instrumento: `scripts/qa/offsets.mjs` (era `exp-detalle.mjs`, generalizada).
+Reporta por columna cuánto puede fallar dentro sin que la fila se mueva
+(`absorbe`) y el offset de cada nodo dentro de su padre. Documentada en
+`scripts/qa/README.md`.
+
+### E3 · El ALTO de la columna se imprimía y no se contaba
+
+**Hallazgo del arreglo de E1, no arreglado — y ahora visible.** `mono-cmp.mjs`
+contaba como estructura el alto de sección, el alto de fila y el `margin-bottom`
+de columna, pero **no el alto de columna**: lo imprimía y seguía. Con `SEC1/F3/C1
+h 539.45 → 909.72 Δ+370.27` en pantalla, el veredicto era `0 · 0 · 0`.
+
+Medido en las 4 combinaciones: **6 columnas** en Petróleo @1440, **5** en EDAR
+@1440, **3** en cada uno a 390.
+
+**Qué son, medido con `offsets.mjs`:** columnas que en el clon **estiran** por ser
+hijas de un flex, mientras Divi las deja a la altura de su contenido. Es inerte —
+los módulos de dentro cuadran, el `top` de cada uno cuadra y la fila cuadra—,
+porque en las dos maquetaciones el alto de la fila lo fija la columna más alta.
+
+**Qué se hizo:** contarlas **aparte**, informarlas en la salida con su razón
+escrita, y **no** cerrar el código de salida con ellas. Que es lo contrario de lo
+que hacía antes, que era imprimirlas y callarse.
+
+**Qué queda por decidir, y no aquí:** si el clon debe dejar de estirar las
+columnas para ser fiel al DOM del original. Es cambio de componente compartido
+(`MonoCuerpo`), inerte a la vista, y toca `SectorBlock` por vecindad. Va a la
+tanda de CLASE, con el criterio común, no de paso.
+
+**Y lo que sí deja escrito:** esas columnas son **holgura medida**. En Petróleo a
+1440 son 11 columnas de 16 a **421.11** — el margen de error real del árbol de
+filas en esa página. Un defecto de 400px en la columna corta de S1F3 no habría
+movido un solo número del árbol.

@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "ruta": "/sectores/calidad-del-aire-en-las-ciudades",
+    "width": 390
+  },
+  "A": {
+    "aviso": null,
+    "secciones": [
+      {
+        "i": 0,
+        "h": 584.91,
+        "filas": [
+          {
+            "j": 0,
+            "h": 584.91,
+            "txt": "¿Necesitas medir la contaminación ",
+            "nivel": "directo",
+            "alignItems": "normal",
+            "flexDirection": "apilado",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 512.41,
+                "off": 0,
+                "hContenido": 442.41,
+                "absorbe": 0,
+                "mb": 12.52,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 442.41,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "¿Necesitas medir la contaminac"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "i": 1,
+        "h": 1970.16,
+        "filas": [
+          {
+            "j": 0,
+            "h": 1356.56,
+            "txt": "Beneficios de monitorizar la calid",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 655.16,
+                "off": 0,
+                "hContenido": 655.16,
+                "absorbe": 0,
+                "mb": 30,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "H3",
+                    "h": 141.25,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Beneficios de monitorizar la c"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "UL>LI",
+                    "h": 483.91,
+                    "off": 171.25,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Permite tomar medidas para mej"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 611.41,
+                "off": 685.16,
+                "hContenido": 611.41,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "H3",
+                    "h": 97.5,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Aplicaciones en las ciudades:"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "UL>LI",
+                    "h": 483.91,
+                    "off": 127.5,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Monitorización de la contamina"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 549.59,
+            "txt": "Protege la salud de tus ciudadanos",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 296,
+                "off": 0,
+                "hContenido": 296,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "P>SPAN",
+                    "h": 296,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Protege la salud de tus ciudad"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 223.59,
+                "off": 296,
+                "hContenido": 223.59,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "IMG",
+                    "h": 223.59,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

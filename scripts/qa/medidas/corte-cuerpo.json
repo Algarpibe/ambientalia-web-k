@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "base": "http://localhost:3000",
+    "rutas": 6,
+    "anchos": [
+      1440,
+      390
+    ]
+  },
+  "casos": {
+    "1440 /sectores/calidad-del-aire-en-las-ciudades": {
+      "nSecciones": 6,
+      "iHero": 2,
+      "iCorte": 5,
+      "corteEsSlider": true,
+      "txtCorte": "Obtén datos fiables y precisos sob",
+      "nCuerpo": 2,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Necesitas medir la contaminación ",
+        "Beneficios de monitorizar la calid"
+      ]
+    },
+    "1440 /sectores/contaminacion-por-construccion": {
+      "nSecciones": 6,
+      "iHero": 2,
+      "iCorte": 5,
+      "corteEsSlider": true,
+      "txtCorte": "Controla la calidad del aire en la",
+      "nCuerpo": 2,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Necesitas controlar el impacto am",
+        "Beneficios del control ambiental e"
+      ]
+    },
+    "1440 /sectores/control-de-emisiones-industriales": {
+      "nSecciones": 5,
+      "iHero": 2,
+      "iCorte": 4,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 1,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "Beneficios del control de las emis"
+      ]
+    },
+    "1440 /sectores/estudio-de-la-contaminacion-atmosferica": {
+      "nSecciones": 5,
+      "iHero": 2,
+      "iCorte": 4,
+      "corteEsSlider": true,
+      "txtCorte": "Haz que tus estudios ambientales s",
+      "nCuerpo": 1,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "Beneficios en estudios de contamin"
+      ]
+    },
+    "1440 /sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "nSecciones": 7,
+      "iHero": 2,
+      "iCorte": 6,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 3,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Qué cambia con monitorización con",
+        "Control perimetral y gestión de qu",
+        "Beneficios clave para la operación"
+      ]
+    },
+    "1440 /sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "nSecciones": 7,
+      "iHero": 2,
+      "iCorte": 6,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 3,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "De inspecciones puntuales a contro",
+        "La solución de KunakMonitorización",
+        "Controla tus emisiones y detecta f"
+      ]
+    },
+    "390 /sectores/calidad-del-aire-en-las-ciudades": {
+      "nSecciones": 6,
+      "iHero": 2,
+      "iCorte": 5,
+      "corteEsSlider": true,
+      "txtCorte": "Obtén datos fiables y precisos sob",
+      "nCuerpo": 2,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Necesitas medir la contaminación ",
+        "Beneficios de monitorizar la calid"
+      ]
+    },
+    "390 /sectores/contaminacion-por-construccion": {
+      "nSecciones": 6,
+      "iHero": 2,
+      "iCorte": 5,
+      "corteEsSlider": true,
+      "txtCorte": "Controla la calidad del aire en la",
+      "nCuerpo": 2,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Necesitas controlar el impacto am",
+        "Beneficios del control ambiental e"
+      ]
+    },
+    "390 /sectores/control-de-emisiones-industriales": {
+      "nSecciones": 5,
+      "iHero": 2,
+      "iCorte": 4,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 1,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "Beneficios del control de las emis"
+      ]
+    },
+    "390 /sectores/estudio-de-la-contaminacion-atmosferica": {
+      "nSecciones": 5,
+      "iHero": 2,
+      "iCorte": 4,
+      "corteEsSlider": true,
+      "txtCorte": "Haz que tus estudios ambientales s",
+      "nCuerpo": 1,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "Beneficios en estudios de contamin"
+      ]
+    },
+    "390 /sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "nSecciones": 7,
+      "iHero": 2,
+      "iCorte": 6,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 3,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "¿Qué cambia con monitorización con",
+        "Control perimetral y gestión de qu",
+        "Beneficios clave para la operación"
+      ]
+    },
+    "390 /sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "nSecciones": 7,
+      "iHero": 2,
+      "iCorte": 6,
+      "corteEsSlider": true,
+      "txtCorte": "Reduce el impacto ambiental midien",
+      "nCuerpo": 3,
+      "sliderDentro": [],
+      "cuerpoTxt": [
+        "De inspecciones puntuales a contro",
+        "La solución de KunakMonitorización",
+        "Controla tus emisiones y detecta f"
+      ]
+    }
+  }
+}

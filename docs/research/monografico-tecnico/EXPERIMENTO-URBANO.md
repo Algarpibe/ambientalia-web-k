@@ -157,8 +157,14 @@ código 0 limpia y 1 sucia.
 > **Clon contra clon, mismo build, misma corrida.** Umbral **cero**.
 >
 > Sondas: `scripts/qa/dos-rutas.mjs` (árbol + `docH` + anclas de la cola) y
-> `scripts/qa/exp-detalle.mjs` (la composición, módulo a módulo). Salida
-> congelada en `scripts/qa/medidas/exp-{urbano,detalle}-{1440,390}.json`.
+> `exp-detalle.mjs` (la composición, módulo a módulo). Salida congelada en
+> `scripts/qa/medidas/exp-{urbano,detalle}-{1440,390}.json`.
+>
+> **`exp-detalle.mjs` es hoy `scripts/qa/offsets.mjs`**: se generalizó el
+> 2026-07-30 al promoverla a instrumental estándar, porque el hallazgo del §8.3
+> no era de este experimento sino del método (`CLAUDE.md` §«La causa común: el
+> NIVEL al que se mide»). Los `medidas/exp-detalle-*.json` se quedan tal cual:
+> son la evidencia de esta corrida.
 >
 > El andamio (`/sectores/urbano-mono` + `src/lib/_andamio-urbano-mono.ts`) **se
 > borró al terminar**, según §3.5. Lo que queda es esta acta y las sondas.

@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "cual": "urbano",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+    "clon": "http://localhost:3000/sectores/calidad-del-aire-en-las-ciudades"
+  },
+  "original": [
+    {
+      "top": 1463.14,
+      "h": 440.83,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "top": 1463.14,
+          "h": 440.83,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "¿Necesitas medir la contaminación en tu "
+        }
+      ]
+    },
+    {
+      "top": 1889.97,
+      "h": 1057.45,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1947.56,
+          "h": 566.98,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios de monitorizar la calidad del"
+        },
+        {
+          "top": 2514.55,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Protege la salud de tus ciudadanos toman"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 1463.13,
+      "h": 432.23,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "top": 1463.13,
+          "h": 432.23,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "¿Necesitas medir la contaminación en tu "
+        }
+      ]
+    },
+    {
+      "top": 1881.36,
+      "h": 1057.45,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1938.95,
+          "h": 566.98,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios de monitorizar la calidad del"
+        },
+        {
+          "top": 2505.94,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Protege la salud de tus ciudadanos toman"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 3,
+    "filasClon": 3,
+    "descuadres": 0
+  }
+}
