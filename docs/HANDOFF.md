@@ -4,6 +4,23 @@
 > actualizado el **2026-07-30** al correr el experimento. Para arrancar sesión
 > limpia: son 5 minutos.
 
+## El destino ya está decidido: Payload (CMS-0, 2026-07-30)
+
+**Payload self-hosted** en VPS Hostinger + Easypanel, sobre Postgres propio,
+**embebido en la propia app Next**, editor **Lexical**. Todo el esquema —qué es
+colección, qué es block, qué es campo con defecto, la whitelist del campo rico y
+las transformaciones de migración— vive en **`docs/ESQUEMA-CMS.md`**, que es
+registro vivo como `PENDIENTES-QA.md`.
+
+⚠ **Bloqueo conocido: `next` está en `16.2.1` y Payload exige ≥ 16.2.6.** Es un
+salto de parche dentro de 16.2, no de minor — barato, pero **tanda propia** con
+línea base y sondas. No se cuela en otra.
+
+Flecos abiertos que condicionan trabajo: **media** (volumen vs S3) y sobre todo
+**modelo de publicación** (rebuild por webhook vs ISR) — este último decide si la
+app necesita la DB en runtime, y **si se elige ISR hay que releer el enrutado
+entero**.
+
 ## Lo primero: en qué punto está
 
 **MONOGRÁFICO TÉCNICO está construido y medido**, y **el experimento
@@ -29,6 +46,7 @@ fusión (si se hace) es tanda propia.
 | `docs/research/CENSO-ARQUETIPOS.md` | **cuánto le falta a la biblioteca**: 7 formas cubiertas de 23, y las 14 que no |
 | `docs/research/RECON-LISTADOS.md` | las 7 formas que suman 321 páginas **son 4 arquetipos**, medido por el esqueleto. Con pre-registro, y con las 2 notas de esquema para el CMS |
 | `docs/research/arquetipo-A/` | recon del grupo A (209 pg): plan de muestreo, topología, behaviors, **la spec del campo rico censada en 209/209**, el enrutado resuelto con prueba, y la hipótesis del grupo D encolada |
+| **`docs/ESQUEMA-CMS.md`** | **el destino**: Payload self-hosted, la traducción de cada content type, la whitelist del campo rico, las transformaciones de migración y el criterio de aceptación. **Registro vivo — cada tanda lo actualiza** |
 
 ## Estado
 

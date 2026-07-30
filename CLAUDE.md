@@ -127,6 +127,47 @@ un módulo), tamaño del claim (−12), bordes de la tabla (**−58**), default 
 apiladas a 390. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 `docs/research/monografico-tecnico/components/seccion-editorial.spec.md`.
 
+### ⚠ Antes de aplicar ningún test: identifica el RÉGIMEN de la página
+
+**Los dos tests de arriba solo valen en uno de los dos regímenes que tiene este
+sitio**, y aplicarlos en el otro da la respuesta invertida. Lo demostró el recon
+del arquetipo A (`docs/research/arquetipo-A/PAGE_TOPOLOGY.md` §5).
+
+| régimen | cómo se reconoce | quién decidió los valores |
+|---|---|---|
+| **página de BUILDER** | `et_pb_pagebuilder_layout` en el `<body>`; secciones **propias** de la instancia | **quien editó ESTA página** |
+| **página PLANTILLADA** | `et-tb-has-body`; secciones `…_tb_body`; el contenido entra por un módulo `post_content` | **quien construyó la plantilla**, para todas las instancias a la vez |
+
+**En régimen de builder** —SECTOR, MONOGRÁFICO, artículo de KB— los dos tests
+valen tal como están escritos: existe una persona que editó esta página, y px
+absolutos son su huella.
+
+**En régimen plantillado** —el arquetipo A, 209 páginas— **esa persona no
+existe**. Una plantilla renderiza 149 entradas de blog; quien escribe una entrada
+rellena el `post_content` y nada más. Por tanto:
+
+> **La lectura del px absoluto se invierte.** En builder, «px iguales a 1440 y a
+> 390» = lo tocó un editor = **campo**. En plantillado, lo mismo significa que **lo
+> fijó quien construyó la plantilla** = **plantilla**, para las 149 a la vez.
+
+Y el discriminador que sí vale en plantillado es otro:
+
+> **La varianza entre instancias.** Cero varianza entre instancias de la misma
+> forma = **plantilla**, aunque la huella diga px absolutos. Lo que varía entre
+> **formas** distingue plantillas, no campos.
+
+Medido: `post_content margin-bottom` vale **72 en las 12 instancias de blog** y
+**0 en las 12 de término y documento científico**, a los dos anchos. Por el
+enunciado literal del test A eso sería «campo»; **no lo es** — es el valor que el
+constructor de cada plantilla fijó. En las 24 instancias muestreadas, **el ritmo,
+la tipografía y la retícula del cascarón tienen varianza cero dentro de cada
+forma**.
+
+**Consecuencia operativa: identifica el régimen ANTES de aplicar el test.** Se
+mira el `<body>` —una línea de HTML servido— y ya sabes cuál de las dos lecturas
+toca. Aplicar el test sin mirarlo es cómo se convierte una plantilla en ocho
+campos inventados, o al revés.
+
 **Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
 existan**. El campo `flujo` salió de barrer los 8 sectores vivos con
 `scripts/qa/tree-todos.mjs` y ver que solo hay dos formas de sección y dos de
@@ -253,6 +294,14 @@ Una página completa antes de empezar la siguiente. Por página:
 una. `docs/PENDIENTES-QA.md` es el registro vivo de QA — **léelo antes de tocar
 una página ya clonada**: incluye objetivos numéricos por sección y hallazgos
 cerrados que no hay que reinvestigar.
+
+**`docs/ESQUEMA-CMS.md` es el registro vivo del destino**, y se mantiene igual
+que `PENDIENTES-QA.md`: **cada tanda lo actualiza**. Ahí vive la decisión de
+plataforma (Payload self-hosted sobre Postgres, embebido en la app, editor
+Lexical), la traducción de cada content type medido a colecciones/blocks/campos
+con defecto, la whitelist del campo rico con su evidencia, las transformaciones
+de migración, el enrutado decidido y el criterio de aceptación. **Si una tanda
+mide algo que cambia el esquema, se anota ahí en la misma tanda** — no después.
 
 ## Notas de método (medición y capturas)
 

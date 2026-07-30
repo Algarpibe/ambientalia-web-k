@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "fecha": "2026-07-30",
+    "paginas": 15
+  },
+  "scripts": [
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "src": "https://nbcwashington.com/portableplayer/?CID=1:14:4097589&#038;videoID=2498115139860&#038;origin=nbcwashington.com&#038;fullWidth=y&#038;autoplay=true",
+      "tipoAttr": "58b81e7246a3302fc8fd6305-text/javascript",
+      "bytes": 0,
+      "clase": "OTRO — leer a mano",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "src": null,
+      "tipoAttr": "0be5294e881e0691fd0185df-text/javascript",
+      "bytes": 3284,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyI2ODk0MyI6eyJJRCI6Njg5NDMsI"
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "src": "//www.instagram.com/embed.js",
+      "tipoAttr": "8b7cf0bc081ae930b959e3b0-text/javascript",
+      "bytes": 0,
+      "clase": "widget de red social",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "src": null,
+      "tipoAttr": "8b7cf0bc081ae930b959e3b0-text/javascript",
+      "bytes": 3352,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyI2MTQzNSI6eyJJRCI6NjE0MzUsI"
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/proyecto-pure-cities/",
+      "src": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
+      "tipoAttr": "5116243be018e2c7f2c7450c-text/javascript",
+      "bytes": 0,
+      "clase": "OTRO — leer a mano",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "src": null,
+      "tipoAttr": "ef0ccb9e7d8b1c7dd0c8cba7-text/javascript",
+      "bytes": 3180,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyI2MDIyNSI6eyJJRCI6NjAyMjUsI"
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/contaminacion-juegos-olimpicos-de-paris-2024/",
+      "src": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
+      "tipoAttr": "41bbb6a307202606c6786f8b-text/javascript",
+      "bytes": 0,
+      "clase": "OTRO — leer a mano",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/guia-sobre-la-contaminacion-urbana/",
+      "src": null,
+      "tipoAttr": "fd4f0330c52df8ec245ff978-text/javascript",
+      "bytes": 3460,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyI1OTg5OCI6eyJJRCI6NTk4OTgsI"
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+      "src": "https://public.flourish.studio/resources/embed.js",
+      "tipoAttr": "e90e4e9e2edcb34162de1d2a-text/javascript",
+      "bytes": 0,
+      "clase": "widget de datos de terceros",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-cloud-plataforma-web-calidad-aire/",
+      "src": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
+      "tipoAttr": "890288cf15214c6c1e394974-text/javascript",
+      "bytes": 0,
+      "clase": "OTRO — leer a mano",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sensores-calidad-aire-volcanes/",
+      "src": "https://platform.twitter.com/widgets.js",
+      "tipoAttr": "ae1dac106aa9246d9ef664f0-text/javascript",
+      "bytes": 0,
+      "clase": "widget de red social",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/zonas-bajas-emisiones-monitorizacion/",
+      "src": "https://public.flourish.studio/resources/embed.js",
+      "tipoAttr": "4f171ceaf76be49b2e5ce984-text/javascript",
+      "bytes": 0,
+      "clase": "widget de datos de terceros",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/premios-pyme-2024-kunak/",
+      "src": "https://platform.twitter.com/widgets.js",
+      "tipoAttr": "eaef858bf671de016f7385ce-text/javascript",
+      "bytes": 0,
+      "clase": "widget de red social",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades/",
+      "src": "https://public.flourish.studio/resources/embed.js",
+      "tipoAttr": "aebfe715b1975b16d68eaa66-text/javascript",
+      "bytes": 0,
+      "clase": "widget de datos de terceros",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades/",
+      "src": "https://public.flourish.studio/resources/embed.js",
+      "tipoAttr": "aebfe715b1975b16d68eaa66-text/javascript",
+      "bytes": 0,
+      "clase": "widget de datos de terceros",
+      "inicio": ""
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra/",
+      "src": null,
+      "tipoAttr": "aedfee4776bf53fcd2d008fe-text/javascript",
+      "bytes": 3084,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyIzMDY5NSI6eyJJRCI6MzA2OTUsI"
+    },
+    {
+      "forma": "blog",
+      "url": "https://kunakair.com/es/monitorizacion-near-reference/",
+      "src": null,
+      "tipoAttr": "216355a19e5bce4670d67d5b-text/javascript",
+      "bytes": 3284,
+      "clase": "OTRO — leer a mano",
+      "inicio": "window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cyI6eyI2OTgyMiI6eyJJRCI6Njk4MjIsI"
+    }
+  ]
+}
