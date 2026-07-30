@@ -113,14 +113,18 @@ function Fila({ rotulo, children }: { rotulo: string; children: React.ReactNode 
  */
 function MapaPunto({ punto }: { punto: { lat: number; lng: number } }) {
   return (
-    <div
-      className="acf-map flex h-[290px] items-center justify-center bg-[#e9eef2] md:h-[330px]"
-      data-lat={punto.lat}
-      data-lng={punto.lng}
-    >
-      <span className="text-[13px] text-[#666]">
-        {punto.lat.toFixed(4)}, {punto.lng.toFixed(4)}
-      </span>
+    <div className="acf-map flex h-[290px] items-center justify-center bg-[#e9eef2] md:h-[330px]">
+      {/* El marcador replica la estructura del original —`.acf-map > .marker`
+          con `data-lat`/`data-lng`— y no las coordenadas sueltas en el padre.
+          No es cosmética: es el gancho por el que el mapa real se inicializa el
+          día que haya clave, y es lo que una sonda va a contar. La primera
+          versión las colgaba del `.acf-map` y `qa:c-cmp` leyó **0 marcadores**
+          en el clon con 1 en el original. */}
+      <div className="marker" data-lat={punto.lat} data-lng={punto.lng}>
+        <span className="text-[13px] text-[#666]">
+          {punto.lat.toFixed(4)}, {punto.lng.toFixed(4)}
+        </span>
+      </div>
     </div>
   );
 }

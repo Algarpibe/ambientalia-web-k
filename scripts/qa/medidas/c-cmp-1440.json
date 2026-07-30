@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-07-30"
+  },
+  "paginas": {
+    "des-moines": {
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 38,
+          "p": 42,
+          "a": 15,
+          "br": 1,
+          "iframe": 1,
+          "strong": 13,
+          "sub": 2,
+          "img": 8,
+          "h4": 10,
+          "ul": 10,
+          "li": 50,
+          "sup": 4
+        },
+        "iframes": [
+          "kunakair.com",
+          "www.youtube.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 5920
+      },
+      "clon": {
+        "h1y": 140.59,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 8,
+          "p": 14,
+          "a": 5,
+          "br": 1,
+          "iframe": 1,
+          "strong": 3,
+          "sub": 2
+        },
+        "iframes": [
+          "localhost:3000",
+          "www.youtube.com",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 4637
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "world-athletics": {
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 24,
+          "p": 27,
+          "a": 9,
+          "iframe": 3,
+          "ul": 8,
+          "li": 37,
+          "img": 6,
+          "h4": 6,
+          "strong": 6
+        },
+        "iframes": [
+          "kunakair.com",
+          "player.vimeo.com",
+          "kunakair.com",
+          "www.youtube.com",
+          "kunakair.com",
+          "kunakcloud.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 4970
+      },
+      "clon": {
+        "h1y": 140.59,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 7,
+          "p": 11,
+          "a": 3,
+          "iframe": 3,
+          "ul": 2,
+          "li": 7
+        },
+        "iframes": [
+          "localhost:3000",
+          "player.vimeo.com",
+          "localhost:3000",
+          "www.youtube.com",
+          "localhost:3000",
+          "kunakcloud.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 3970
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "rio-de-janeiro": {
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 209.38
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 3,
+          "div": 24,
+          "p": 40,
+          "b": 58,
+          "a": 11,
+          "strong": 7,
+          "br": 2,
+          "ul": 10,
+          "li": 45,
+          "i": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 11,
+          "th": 3,
+          "tbody": 1,
+          "td": 30,
+          "blockquote": 1,
+          "img": 6,
+          "h4": 6,
+          "sup": 4
+        },
+        "iframes": [
+          "kunakair.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 7770
+      },
+      "clon": {
+        "h1y": 140.59,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 3,
+          "div": 7,
+          "p": 24,
+          "b": 58,
+          "a": 5,
+          "strong": 1,
+          "br": 2,
+          "ul": 4,
+          "li": 15,
+          "i": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 11,
+          "th": 3,
+          "tbody": 1,
+          "td": 30,
+          "blockquote": 1
+        },
+        "iframes": [
+          "localhost:3000",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 6179
+      },
+      "marcadoresServidos": {
+        "orig": 0,
+        "clon": 0
+      }
+    },
+    "lindano": {
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 3,
+          "p": 3,
+          "span": 1,
+          "ul": 2,
+          "li": 8
+        },
+        "iframes": [
+          "kunakair.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 3790
+      },
+      "clon": {
+        "h1y": 140.59,
+        "h1": {
+          "w": 1152,
+          "h": 57.59
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 6,
+          "p": 3,
+          "span": 1,
+          "ul": 2,
+          "li": 8
+        },
+        "iframes": [
+          "localhost:3000",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 2613
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "faq-dron": {
+      "forma": "faq",
+      "orig": {
+        "h1y": 283,
+        "h1": {
+          "w": 848.16,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1303
+      },
+      "clon": {
+        "h1y": 58,
+        "h1": {
+          "w": 846.72,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1101
+      },
+      "marcadoresServidos": {
+        "orig": 0,
+        "clon": 0
+      }
+    },
+    "faq-calibracion": {
+      "forma": "faq",
+      "orig": {
+        "h1y": 283,
+        "h1": {
+          "w": 848.16,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "ul": 1,
+          "li": 2,
+          "p": 2,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1307
+      },
+      "clon": {
+        "h1y": 58,
+        "h1": {
+          "w": 846.72,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "ul": 1,
+          "li": 2,
+          "p": 2,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1135
+      },
+      "marcadoresServidos": {
+        "orig": 0,
+        "clon": 0
+      }
+    }
+  }
+}

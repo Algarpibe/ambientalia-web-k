@@ -34,8 +34,13 @@ dos términos de sector y sin ninguno, con soluciones y sin, con mapa y sin.
 
 | ancho | ejes comparados | con varianza | veredicto |
 |---|---|---|---|
-| **1440** | 131 (67 caso · 64 FAQ) | **0** | ✅ |
-| **390** | 131 | **0** | ✅ |
+| **1440** | ~~131~~ → **81** (56 caso · 21 FAQ · 4 opcionales) | **0** | ✅ |
+| **390** | ~~131~~ → **81** | **0** | ✅ |
+
+> ⚠ **La cifra de 131 estaba inflada y se corrige en el §8**: la sonda contaba
+> entre los limpios los ejes que no medían nada. El veredicto no cambia —0 con
+> varianza en los 81 que sí miden— pero **la cabecera queda fuera**: su selector
+> estaba muerto, así que está **SIN PROBAR**, no probada.
 
 Los ejes son **ritmo** (margin/padding), **tipografía** (familia, tamaño, peso,
 interlínea, `letter-spacing`, color, `text-transform`, `text-align`) y
@@ -241,3 +246,91 @@ normalizar o descartar como T2) es del §3, no de esta construcción.
 Los `padding-top` en porcentaje son el envoltorio de proporción de los `iframe`
 (el truco del *aspect ratio*), no estilo de autor: van con el nodo-embed
 (§3.3b), no con la alineación.
+
+---
+
+# PARTE 2 — la construcción (mismo día)
+
+Construidos los dos arquetipos (`src/lib/{casos,faqs,taxonomia-sectores}.ts`,
+`src/components/{caso,faq}/`, tres rutas). **6 rutas nuevas**, 17 en total.
+
+## 7 · Las siete predicciones, cobradas
+
+| # | veredicto | cómo |
+|---|---|---|
+| **P-C3-1** | ✅ | la 4ª sección del pie, idéntica byte a byte en los 6 pares (parte 1) |
+| **P-C3-2** | ✅ | **81 ejes** × 2 anchos, 0 con varianza — ver el ⚠ de abajo sobre esa cifra |
+| **P-C3-3** | ✅ | `qa:c-cmp`: **ninguna** etiqueta fuera de §3.1 + vídeo + embed + tabla, en las 6. Río lleva la tabla (§3.4 abierta); hosts `youtube ×2 · vimeo ×1 · kunakcloud ×1` |
+| **P-C3-4** | ✅ | los 2 `data-id` repetidos dan ficha idéntica; el bloque se renderiza **desde `products.ts`** |
+| **P-C3-5** | ✅ | **falló como predecía**: 3 href convertidos en fallo al emitir las rutas. Corregidos → limpia en las dos direcciones |
+| **P-C3-6** | ✅ | mapa **330 a 1440 / 290 a 390** y **1 marcador servido** en las 3 que lo llevan; Río no lo lleva ni en el original ni en el clon |
+| **P-C3-7** | ✅ | las 2 FAQ entran con `titulo + cuerpo`; **cero** piezas de caso en el original. La barra lateral no es campo |
+
+**Sin regresión**: las 11 páginas anteriores, `qa:clon-base` con **umbral cero**
+y `MARCADOR` verificado, **0 con regresión a 1440 y a 390** — incluido el cambio
+de `ProductPanel`, que era el riesgo real.
+
+## 8 · ⚠ CORRIGE a la parte 1: no eran 131 ejes, eran 81
+
+`c-cascaron` **contaba entre los ejes limpios los que no medían nada**. Un eje
+`null` en **todas** las instancias es un selector que no existe: no prueba
+varianza cero, no prueba nada. La sonda lo saltaba en silencio y lo sumaba
+igual al total.
+
+| forma | ejes de verdad | muertos |
+|---|---|---|
+| caso | **56** | 7 (los 5 de `bloque.faq`, que es de la otra forma, + 2 de cabecera) |
+| FAQ | **21** | 43 (los del caso — que la FAQ no los tenga **es** la evidencia de D1) |
+
+**La mayoría de los muertos son inocuos y hasta informativos**: que los ejes del
+caso salgan nulos en la FAQ es exactamente lo que D1 dice. **Pero dos no lo
+son**: `header·ritmo` y `header·ancho` están muertos en **las dos** formas —
+`#main-header` no existe en el original—, así que **la cabecera nunca se midió**.
+No es «plantilla probada»: es **SIN PROBAR**, y no se cablea nada apoyándose en
+ella.
+
+Y esos dos conectan con el hallazgo de QA de abajo, que es lo que hace que la
+corrección importe en vez de ser un tecnicismo.
+
+## 9 · QA visual, primera pasada: el desfase de base está en la CABECERA
+
+`qa:c-cmp` mide con el protocolo del `h1` (README §2), y el `h1` no cuadra:
+
+| ancho | `h1.y` original | `h1.y` clon | base |
+|---|---|---|---|
+| 1440 | 532.19 (caso) · 283 (FAQ) | 140.59 · 58 | **−391.6** · **−225** |
+| 390 | 511.69 (caso) · 223.58 (FAQ) | 139.59–191.59 · 58 | **−320 a −372** · **−165.58** |
+
+**El desfase es de la cabecera, no del cuerpo**, y las dos formas lo tienen: la
+cabecera del clon no ocupa el hueco que ocupa la del original en estas páginas.
+Las 11 páginas ya clonadas no lo sufren porque **todas** meten algo entre la
+cabecera y el `h1` (`CabeceraSector`, el hero de producto…) que absorbe la
+diferencia; el caso y la FAQ arrancan directas y **destapan la medida**.
+
+Es literalmente la regla del contenedor de `CLAUDE.md`: *todo contenedor con
+holgura es un sitio donde el defecto cabe sin dejar rastro*. Aquí no hay holgura
+y por eso se ve.
+
+**No se corrige a ojo**, y por eso se deja abierto con su medición escrita: hay
+que medir la composición de la cabecera del original —el selector bueno, no
+`#main-header`— a los dos anchos, y comparar con lo que emite `HeaderNav`. El
+`docH` de las páginas nuevas (Δ de −1000 a −2900) **no se puede leer** hasta que
+la base cuadre: mientras la base sea −391, todo lo demás son dos errores
+posiblemente anulándose. Va a `docs/PENDIENTES-QA.md` como **C-QA1**.
+
+## 10 · Y una tercera sonda que llegó con un defecto que daba lo contrario
+
+`c-cmp` contaba los marcadores del mapa **en el DOM asentado**, y dio
+«original 0 / clon 1» en las tres — o sea, el informe decía lo contrario de la
+verdad. La causa: en el original **el JS de Google Maps consume los `.marker`**
+al inicializar el mapa, así que tras `settle()` ya no están. El HTML servido
+trae 1.
+
+Es la regla del NIVEL aplicada al **tiempo**: la propiedad vive en el HTML
+servido y ahí es donde se mide. Corregido con un `fetch` aparte, y de paso
+destapó un defecto real del clon — las coordenadas colgaban del `.acf-map` en
+vez de un `.marker` dentro, como el original.
+
+**Tres sondas nuevas, tres defectos, ninguno daba error.** El recuento de la
+casa sigue subiendo por la misma razón de siempre: una sonda es código sin
+tests.

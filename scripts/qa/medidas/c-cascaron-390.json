@@ -866,15 +866,69 @@
   "veredicto": {
     "caso": {
       "instancias": 6,
-      "ejesJuzgados": 67,
+      "ejesJuzgados": 60,
       "conVarianza": 0,
-      "ausenciasDeclaradas": 4
+      "ausenciasDeclaradas": 4,
+      "ejesMuertos": [
+        "bloque.faq.contenedor·ritmo",
+        "bloque.faq.contenedor·tipo",
+        "bloque.faq.h2·tipo",
+        "bloque.faq·ancho",
+        "bloque.faq·ritmo",
+        "header·ancho",
+        "header·ritmo"
+      ]
     },
     "faq": {
       "instancias": 4,
-      "ejesJuzgados": 64,
+      "ejesJuzgados": 21,
       "conVarianza": 0,
-      "ausenciasDeclaradas": 0
+      "ausenciasDeclaradas": 0,
+      "ejesMuertos": [
+        "bloque.faq.h2·tipo",
+        "bloque.need.contenedor·ritmo",
+        "bloque.need.contenedor·tipo",
+        "bloque.need.h2·tipo",
+        "bloque.need·ancho",
+        "bloque.need·ritmo",
+        "bloque.results.contenedor·ritmo",
+        "bloque.results.contenedor·tipo",
+        "bloque.results.h2·tipo",
+        "bloque.results·ancho",
+        "bloque.results·ritmo",
+        "bloque.solution.contenedor·ritmo",
+        "bloque.solution.contenedor·tipo",
+        "bloque.solution.h2·tipo",
+        "bloque.solution·ancho",
+        "bloque.solution·ritmo",
+        "chipSector·tipo",
+        "cliente·ritmo",
+        "cliente·tipo",
+        "detalles.h2·tipo",
+        "detalles.mapa·ancho",
+        "detalles.seccion·ancho",
+        "detalles.seccion·ritmo",
+        "detalles.txt·ancho",
+        "detalles.txt·tipo",
+        "header·ancho",
+        "header·ritmo",
+        "mainTitle·ancho",
+        "mainTitle·ritmo",
+        "migas.fila·ancho",
+        "migas.fila·ritmo",
+        "migas.ol·tipo",
+        "migas.seccion·ancho",
+        "migas.seccion·ritmo",
+        "migas.texto·ancho",
+        "migas.texto·ritmo",
+        "migas.texto·tipo",
+        "sobretitulo·ritmo",
+        "sobretitulo·tipo",
+        "soluciones.h2·tipo",
+        "soluciones.seccion·ancho",
+        "soluciones.seccion·ritmo",
+        "soluciones.ul·ancho"
+      ]
     }
   }
 }

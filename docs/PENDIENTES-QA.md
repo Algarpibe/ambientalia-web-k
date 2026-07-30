@@ -2003,3 +2003,39 @@ aparece **24 veces** en las 10 instancias, con **tres valores** (`justify`,
 Sigue siendo decisión abierta —qué hace el CMS con ella: conservar, normalizar o
 descartar como T2— pero ya **no por falta de datos**. La decisión es del §3, no
 de la construcción del grupo C.
+
+### C-QA1 (nuevo, ABIERTO) · el desfase de base de las 6 rutas nuevas está en la CABECERA
+
+Primera pasada de QA visual del grupo C (`npm run qa:c-cmp`, 2026-07-30). El
+`h1` —la base de lectura del protocolo— **no cuadra**, y el desfase es de la
+cabecera, no del cuerpo:
+
+| ancho | `h1.y` original | `h1.y` clon | base |
+|---|---|---|---|
+| 1440 | 532.19 caso · 283 FAQ | 140.59 · 58 | **−391.6** · **−225** |
+| 390 | 511.69 caso · 223.58 FAQ | 139.59–191.59 · 58 | **−320 a −372** · **−165.58** |
+
+Lo tienen **las dos formas**, así que no es del arquetipo: es que la cabecera del
+clon no ocupa el hueco que ocupa la del original **cuando no hay nada entre ella
+y el `h1`**. Las 11 páginas ya clonadas no lo sufren porque todas meten algo en
+medio (`CabeceraSector`, el hero de producto) que **absorbe** la diferencia. El
+caso y la FAQ arrancan directas y destapan la medida — la regla del contenedor
+con holgura de `CLAUDE.md`, otra instancia.
+
+**Hasta que la base cuadre, el `docH` de las 6 rutas nuevas no se puede leer**
+(Δ de −1000 a −2900 a 1440): con la base a −391, cualquier lectura del cuerpo
+puede ser dos errores anulándose.
+
+**Cómo se cierra, escrito y no corrido**: medir la composición de la cabecera del
+original a los dos anchos —**con el selector bueno**: `#main-header` NO existe,
+que es justo por lo que el eje salió muerto en `c-cascaron`— y compararla con lo
+que emite `HeaderNav`. No se toca nada a ojo.
+
+### C-SP16 (nuevo) · la cabecera del grupo C está SIN PROBAR, no probada
+
+`c-cascaron` daba `header·ritmo` y `header·ancho` como ejes limpios y **estaban
+muertos**: el selector `#main-header` no existe en el original, así que nunca
+midieron nada. Corregido —la sonda ahora los separa y los dice— y el recuento
+honesto de P-C3-2 baja de **131 a 81 ejes**. La predicción **sigue en pie** con
+los 81; lo que cambia es que **la cabecera no está entre ellos**. No se cablea
+nada apoyándose en ella.

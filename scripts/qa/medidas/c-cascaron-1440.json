@@ -128,13 +128,13 @@
         "bloque.need.h2·tipo": "Manrope | 20px | 700 | 20px | -0.5px | rgb(51, 51, 51) | none | start",
         "bloque.need.contenedor·tipo": "Manrope | 18px | 400 | 30.6px | normal | rgb(51, 51, 51) | none | start",
         "bloque.need.contenedor·ritmo": "0px | 0px | 0px | 0px | 0px | 0px",
-        "bloque.need·alto": 493.95,
+        "bloque.need·alto": 487.72,
         "bloque.solution·ritmo": "0px | 0px | 0px | 0px | 0px | 0px",
         "bloque.solution·ancho": 541.44,
         "bloque.solution.h2·tipo": "Manrope | 20px | 700 | 20px | -0.5px | rgb(51, 51, 51) | none | start",
         "bloque.solution.contenedor·tipo": "Manrope | 18px | 400 | 30.6px | normal | rgb(51, 51, 51) | none | start",
         "bloque.solution.contenedor·ritmo": "0px | 0px | 0px | 0px | 0px | 0px",
-        "bloque.solution·alto": 664.33,
+        "bloque.solution·alto": 570.75,
         "bloque.results·ritmo": "0px | 0px | 0px | 0px | 0px | 0px",
         "bloque.results·ancho": 541.44,
         "bloque.results.h2·tipo": "Manrope | 20px | 700 | 20px | -0.5px | rgb(51, 51, 51) | none | start",
@@ -177,11 +177,9 @@
         "pie.S3·alto": 41
       },
       "estiloEnLinea": {
-        "div padding-top: 35.2941%;": 1,
         "p text-align: justify;": 3,
         "ul text-align: justify;": 1,
         "p text-align: left;": 2,
-        "div padding-top: 56.0714%;": 1,
         "li text-align: justify;": 4
       }
     },
@@ -858,8 +856,7 @@
   },
   "estiloEnLineaTotal": {
     "div text-align: center;": 1,
-    "div padding-top: 56.0714%;": 2,
-    "div padding-top: 35.2941%;": 1,
+    "div padding-top: 56.0714%;": 1,
     "p text-align: justify;": 9,
     "ul text-align: justify;": 2,
     "p text-align: left;": 2,
@@ -869,15 +866,69 @@
   "veredicto": {
     "caso": {
       "instancias": 6,
-      "ejesJuzgados": 67,
+      "ejesJuzgados": 60,
       "conVarianza": 0,
-      "ausenciasDeclaradas": 4
+      "ausenciasDeclaradas": 4,
+      "ejesMuertos": [
+        "bloque.faq.contenedor·ritmo",
+        "bloque.faq.contenedor·tipo",
+        "bloque.faq.h2·tipo",
+        "bloque.faq·ancho",
+        "bloque.faq·ritmo",
+        "header·ancho",
+        "header·ritmo"
+      ]
     },
     "faq": {
       "instancias": 4,
-      "ejesJuzgados": 64,
+      "ejesJuzgados": 21,
       "conVarianza": 0,
-      "ausenciasDeclaradas": 0
+      "ausenciasDeclaradas": 0,
+      "ejesMuertos": [
+        "bloque.faq.h2·tipo",
+        "bloque.need.contenedor·ritmo",
+        "bloque.need.contenedor·tipo",
+        "bloque.need.h2·tipo",
+        "bloque.need·ancho",
+        "bloque.need·ritmo",
+        "bloque.results.contenedor·ritmo",
+        "bloque.results.contenedor·tipo",
+        "bloque.results.h2·tipo",
+        "bloque.results·ancho",
+        "bloque.results·ritmo",
+        "bloque.solution.contenedor·ritmo",
+        "bloque.solution.contenedor·tipo",
+        "bloque.solution.h2·tipo",
+        "bloque.solution·ancho",
+        "bloque.solution·ritmo",
+        "chipSector·tipo",
+        "cliente·ritmo",
+        "cliente·tipo",
+        "detalles.h2·tipo",
+        "detalles.mapa·ancho",
+        "detalles.seccion·ancho",
+        "detalles.seccion·ritmo",
+        "detalles.txt·ancho",
+        "detalles.txt·tipo",
+        "header·ancho",
+        "header·ritmo",
+        "mainTitle·ancho",
+        "mainTitle·ritmo",
+        "migas.fila·ancho",
+        "migas.fila·ritmo",
+        "migas.ol·tipo",
+        "migas.seccion·ancho",
+        "migas.seccion·ritmo",
+        "migas.texto·ancho",
+        "migas.texto·ritmo",
+        "migas.texto·tipo",
+        "sobretitulo·ritmo",
+        "sobretitulo·tipo",
+        "soluciones.h2·tipo",
+        "soluciones.seccion·ancho",
+        "soluciones.seccion·ritmo",
+        "soluciones.ul·ancho"
+      ]
     }
   }
 }

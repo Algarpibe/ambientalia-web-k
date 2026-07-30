@@ -264,16 +264,23 @@ for (const forma of ["caso", "faq"]) {
   const todosEjes = [...new Set(insts.flatMap(([, v]) => Object.keys(v.ejes)))].sort();
   const varia = [];
   const ausentes = [];
+  const muertos = [];
   const juzgados = [];
   for (const eje of todosEjes) {
     if (NO_JUZGA(eje)) continue;
-    juzgados.push(eje);
     const vals = insts.map(([id, v]) => [id, v.ejes[eje] ?? null]);
     const conValor = vals.filter(([, x]) => x !== null);
     const distintos = [...new Set(conValor.map(([, x]) => JSON.stringify(x)))];
-    // Un eje null en TODAS: selector que no existe en esta forma. No prueba nada
-    // y se dice — un eje muerto no es un eje limpio.
-    if (conValor.length === 0) continue;
+    // ⚠ Un eje `null` en TODAS las instancias es un **selector que no existe**:
+    // no mide nada, y por tanto **no puede contarse entre los ejes juzgados**.
+    // La primera versión lo saltaba en silencio y lo sumaba igual al total, así
+    // que el informe decía «131 ejes con varianza cero» incluyendo tres que
+    // nunca miraron nada (`header·*`: el original no tiene `#main-header`).
+    // Un eje muerto y un eje limpio daban el mismo número — que es exactamente
+    // la regla 1 de `CLAUDE.md` §Tres reglas: lo que imprime y lo que cuenta no
+    // pueden discrepar.
+    if (conValor.length === 0) { muertos.push(eje); continue; }
+    juzgados.push(eje);
 
     // (1) dos valores distintos entre las que SÍ lo tienen: eso es varianza y
     //     refuta, venga de donde venga.
@@ -294,6 +301,7 @@ for (const forma of ["caso", "faq"]) {
   informe[forma] = {
     instancias: insts.length, ejesJuzgados: juzgados.length,
     conVarianza: varia.length, ausenciasDeclaradas: ausentes.length,
+    ejesMuertos: muertos,
   };
 
   console.log(`\n═══ ${forma.toUpperCase()} · ${insts.length} instancias @${width} · ${juzgados.length} ejes juzgados`);
@@ -309,6 +317,10 @@ for (const forma of ["caso", "faq"]) {
     console.log(`  · ${ausentes.length} ejes de sección OPCIONAL (mismo valor donde existe; el modelo ya los declara):`);
     for (const { eje, razon, faltaEn } of ausentes)
       console.log(`      ${eje.padEnd(28)} falta en ${faltaEn.length} → ${razon}`);
+  }
+  if (muertos.length) {
+    console.log(`  ⚠ ${muertos.length} ejes MUERTOS (selector inexistente en esta forma — NO cuentan como limpios):`);
+    console.log(`      ${muertos.join(" · ")}`);
   }
 }
 
