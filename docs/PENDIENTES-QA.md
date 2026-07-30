@@ -1615,3 +1615,120 @@ La lección de método, que vale para el resto del proyecto: **un suelo de ruido
 global habría sido peor que no tener ninguno.** Con un umbral de 81 aplicado a
 toda la página se habrían archivado como ruido dos defectos reales del cuerpo,
 por variación que solo existe en el bloque de artículos.
+
+---
+
+## MONOGRÁFICO TÉCNICO — construido (2026-07-29)
+
+> `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` y
+> `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas`. Séptimo arquetipo.
+> Recon y specs: `docs/research/monografico-tecnico/`. Modelo y datos:
+> `src/lib/monografico.ts`. Sonda propia: `scripts/qa/mono-cmp.mjs`.
+
+### Resultado, por composición y no por total
+
+Medido original vs clon **módulo a módulo** a 1440 y 390, la misma corrida:
+
+| | @1440 | @390 |
+|---|---|---|
+| Petróleo y gas | **exacto** (0 módulos · 0 filas · 0 secciones) | −0.23 en total |
+| EDAR | −0.01 | −0.16 en total |
+
+**Todo el residuo que queda son tres módulos de imagen**, y la causa está
+identificada (abajo, M-IMG). El cuerpo —ritmo de sección, de fila y de módulo,
+retícula, tipografía, tabla, series, listas y CTA— cuadra al céntimo.
+
+Y las **9 páginas anteriores no se movieron un píxel** en los dos anchos, con
+`CabeceraSector`, `SectorHero` y `MapaProyectos` tocados. La sonda que lo dice
+(`clon-base.mjs`) se probó **en negativo** en la misma sesión: con un `pb` de
+hero cambiado en 1px cazó las 4 páginas afectadas, nombró la sección y salió
+con código 1.
+
+### Lo que enseñó construirlo: la spec medía el ritmo y extendió la conclusión
+
+El discriminador de Divi —"lo que el editor no toca es responsive; lo que toca
+queda en px iguales a 1440 y a 390"— es correcto **para el ritmo**, que es donde
+se descubrió. La spec lo aplicó de rebote a la tipografía y a la caja, y ahí no
+vale: en Divi el ancho de módulo se escribe en **%**, igual que su default, así
+que el número se mueve con el ancho en los dos casos.
+
+**Lo que delata a estas propiedades como campo es lo de siempre: varían de un
+módulo a otro dentro de la misma página.** Seis correcciones, con su coste si se
+hubiera construido leyendo la spec — tabla completa en el `⚠ CORRIGE` de
+`components/seccion-editorial.spec.md`:
+
+| propiedad | la spec decía | mide la salida servida | coste |
+|---|---|---|---|
+| ancho de módulo | (no existía) | **70 · 80 · 90 · 100 %** | −55 × 10 instancias |
+| `line-height` de p/li | 30.6 fijo | **30.6 · 36 · 45**, por módulo | hasta −77 |
+| `claim` h3 | 44/55 | **32/32** | −12 |
+| bordes de la tabla | sin bordes | `1px solid #333` + `mb 48` | −58 |
+| default `mb` de imagen | 3% | **2.75%**; el 3% es una excepción | ±37 |
+| último módulo → `mb 0` | regla | **la rompen 12** (7 botones) | +16 × 7 |
+
+Más dos que nadie había buscado: **56 bloques con `<strong>` en línea** (y no
+solo al principio de la frase) y el **hueco entre columnas apiladas a 390**, que
+no es "30 salvo la última".
+
+**El patrón es el de siempre**: cada una de las ocho se descubrió al medir la
+*segunda* página, no la primera. Y ninguna se veía en el total de la fila: la
+del `<strong>` costaba −30.59 **solo a 390** y cero a 1440.
+
+### M-IMG · Residuo abierto: la variante de imagen (≤0.14 por página)
+
+**No arreglado, y con causa medida.** El original sirve por `srcset` una
+variante redimensionada; el clon sirve el fichero completo. Cuando el recorte
+redondea a otra proporción, el alto sale distinto por décimas:
+
+| | fichero | natural | alto @390 |
+|---|---|---|---|
+| original | `alert-cloud-vertical-web-3-480x705.jpg` | 480×705 (1.46875) | **492.59** |
+| clon | `alert-cloud-vertical-web-3.jpg` | 681×1000 (1.46843) | **492.48** |
+
+Afecta a **3 imágenes** de las 11 del cuerpo (las que tienen la proporción
+redonda dan Δ0). Cerrarlo es implementar `srcset` con las mismas variantes que
+elige el original — es una tanda de **assets**, transversal a todas las páginas,
+y no de este arquetipo. Anotado aquí para que la próxima medida no lo persiga.
+
+### M-TAB · La tabla a 390: desviación deliberada que cuesta 0
+
+Se replica la decisión de `/accesorios` (A4): el original deja desbordar la
+tabla 189px fuera de su columna y **pierde la 4ª columna**; el clon la envuelve
+en `overflow-x: auto`. Medido: **el alto es el mismo** (2201.81 en los dos), así
+que la desviación no mueve la página — solo hace alcanzable lo que el original
+esconde.
+
+El envoltorio va con `md:overflow-x-visible`: a 1440 el `margin-bottom: 48px` de
+la tabla tiene que **escaparse del módulo** hacia la columna, como en el
+original, y un contenedor con `overflow` lo encerraría.
+
+### M-COMP · Desviación deliberada de la regla de componentes
+
+`CLAUDE.md` dice que un componente reutilizado por una segunda página se extrae
+a la raíz de `src/components/`. `CabeceraSector`, `SectorHero`, `CtaDescarga` y
+`MapaProyectos` se quedan en `components/sectores/` **a propósito**: son las
+piezas del arquetipo SECTOR reutilizadas por un arquetipo que vive en el mismo
+subárbol de URLs, y moverlas rompería los enlaces de sus specs sin cambiar un
+píxel. Si el experimento de `EXPERIMENTO-URBANO.md` acaba fusionando los dos
+content types, este reparto se rehace entero y entonces sí toca moverlas.
+
+### La guarda de enlaces corrigió al HANDOFF sobre quién pinta qué
+
+`enlaces.mjs` hizo lo que estaba previsto: en cuanto el build emitió las dos
+rutas nuevas, los 22 enlaces a EDAR y Petróleo pasaron a fallo **sin tocar la
+sonda**. Pero los sitios reales eran `nav.ts` · `footer.ts` · **`sectores.ts`**,
+y el HANDOFF apostaba por `nav.ts` · `footer.ts` · `home-carrusel-sectores.ts`
+— el carrusel de la home **no lleva** ni EDAR ni Petróleo. Tercera vez en el
+proyecto que la lista de responsables escrita de memoria falla y la salida
+servida acierta.
+
+De rebote se cerró el 404 conocido de `nav.ts` (apuntaba a
+`…-en-plantas-de-aguas-residuales/`): al localizar el href dejó de existir.
+
+### Un dato que copiar habría estropeado
+
+El slider de las dos páginas es el de la taxonomía *industria*, **igual que el
+de `/sectores/control-de-emisiones-industriales`… salvo una palabra**: aquí dice
+`inmisiones` y allí `inisiones`. Comprobado contra el HTML servido de las tres
+páginas. La errata vive **solo** en Industria; reutilizar sus datos "porque el
+slider es el mismo" la habría traído a dos páginas donde no está.

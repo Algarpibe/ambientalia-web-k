@@ -39,6 +39,8 @@ clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
 | `mono-cabecera.mjs [ancho]` | el original **contra sí mismo**: 2 monográficos vs 2 sectores | decidir si dos páginas comparten componente, midiendo en vez de suponer |
 | `mono-detalle.mjs [ancho]` | kicker, módulos del hero, piel de `calls`, `h4`, mapa de punteados | los cabos sueltos que el árbol no ve |
 | `mono-inline.mjs [ancho]` | los atributos `style` **que escribió el editor** + desbordamiento de la tabla | separar estilo de tema, de módulo y de editor |
+| `clon-base.mjs [ancho] [etiq] [--cmp f.json]` | **el clon contra sí mismo**, todas sus rutas | antes/después de tocar un componente compartido |
+| `mono-cmp.mjs <edar\|petroleo> [ancho]` | original vs clon **módulo a módulo**, alto y margen aparte | cuando la fila no basta para saber *dónde* falta |
 
 ### Las cuatro `mono-*`: para qué se escribieron
 
@@ -55,6 +57,40 @@ mira si el número se mueve.
 
 `<sector>` es `urbano` o `industria`; para dar de alta otro, añádelo a la tabla
 de URLs de cada sonda.
+
+### `clon-base.mjs` — el clon contra sí mismo, con umbral CERO
+
+Las demás sondas comparan contra el original y arrastran su ruido. Ésta compara
+**dos builds del mismo clon**, que es determinista: aquí no hay tolerancia que
+discutir, un Δ de 0.01 es un Δ.
+
+Dos cosas la hacen fiable, y las dos se pagaron antes:
+
+- **Las rutas salen del `prerender-manifest.json`**, como en `enlaces.mjs`. Con
+  una lista a mano habría medido 9 páginas antes y 9 después del monográfico y
+  habría dado "sin regresión" sin mirar las dos nuevas; así las marca como
+  NUEVAS.
+- **Exige un marcador del build servido antes de medir.** `MARCADOR="texto que
+  solo existe en el build nuevo"` (y `MARCADOR_RUTA` si no está en la home). Si
+  no lo encuentra **sale con 2 y no mide**: la corrida que más importa es
+  justamente la que dice "no se movió nada", y es la que un `next start` viejo
+  falsifica sin dejar rastro.
+
+Verificada **en negativo** (2026-07-29): con 1px de más en el `padding-bottom`
+del hero cazó las 4 páginas que comparten el componente, nombró la sección, dio
+el cambio de ritmo y salió con código 1.
+
+### `mono-cmp.mjs` — módulo a módulo, separando contenido de ritmo
+
+Con ~60 módulos por página, saber *cuánto* falta en una fila no dice *dónde*.
+Ésta baja al módulo y reporta el **alto** (contenido) y el **margen** (ritmo) por
+separado, porque son dos defectos con dos arreglos distintos.
+
+⚠️ **Cuenta también secciones, filas y columnas, y hace falta.** Su primera
+versión solo contaba módulos y sacó un "✅ 0 módulos distintos" con la sección 0
+de EDAR a **−48**: el desfase estaba en el `margin-bottom` de la `<table>`, que
+no pertenece a ningún módulo. Una sonda que no mira un nivel del árbol da el
+mismo "limpio" que una que no encuentra nada.
 
 ### `enlaces.mjs` — la guarda de la regla de rutas locales
 
@@ -221,6 +257,7 @@ Salidas congeladas de las sondas. **Son la prueba, no un caché.**
 | `mono-cabecera-{1440,390}.json` | cabecera/hero/slider/tipografía/tabla de 4 páginas — **2026-07-29** |
 | `mono-detalle-{1440,390}.json` | kicker, hero módulo a módulo, `calls`, `h4`, punteados — **2026-07-29** |
 | `mono-inline-{1440,390}.json` | `style` inline del cuerpo + desbordamiento de la tabla — **2026-07-29** |
+| `clon-base-{1440,390}.json` | **el clon**, sus 11 rutas: `docH`, `h1` y árbol de secciones — **2026-07-29** |
 
 Las `mono-*` de 1440 se tomaron en **dos corridas con dispersión 0** (`docH`
 11136 / 11303, `h1` en y 261.16 en las cuatro páginas): la regla 2 del protocolo

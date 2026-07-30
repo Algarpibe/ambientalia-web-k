@@ -1193,11 +1193,18 @@ export function getSector(slug: string): SectorPage | undefined {
  * Índice de los 8 sectores del sitio (el orden es el del mega-menú).
  * `href` local solo para los ya clonados.
  *
- * ⚠️ El href de EDAR que guarda `nav.ts` da **404**: apunta a
- * `…/monitorizacion-ambiental-y-control-de-olores-en-plantas-de-aguas-residuales/`
- * cuando el menú vivo del original usa
- * `…/monitorizacion-ambiental-y-control-de-olores-en-edar/`. Aquí va el bueno;
- * corregir `nav.ts` cuando toque tocar ese fichero.
+ * **`clonado` NO quiere decir "es un SectorPage".** EDAR y Petróleo y gas están
+ * clonados desde el 2026-07-29 pero como arquetipo **MONOGRÁFICO TÉCNICO**: sus
+ * datos viven en `src/lib/monografico.ts` y la ruta `/sectores/[slug]` despacha
+ * entre los dos catálogos. Este índice es de URLs, no de arquetipos.
+ *
+ * ✅ Cerrado: el href de EDAR de `nav.ts` apuntaba a
+ * `…-en-plantas-de-aguas-residuales/` y daba 404. Al localizarlo (2026-07-29)
+ * dejó de existir el problema. Lo encontró `scripts/qa/enlaces.mjs`, que además
+ * corrigió de dónde se creía que salían estos enlaces: el HANDOFF apostaba por
+ * `nav.ts` · `footer.ts` · `home-carrusel-sectores.ts`, y los tres sitios
+ * reales eran `nav.ts` · `footer.ts` · **este fichero** — el carrusel de la home
+ * no lleva ni EDAR ni Petróleo.
  */
 export const SECTORES_INDICE: {
   kicker: string;
@@ -1228,16 +1235,21 @@ export const SECTORES_INDICE: {
   {
     kicker: "EDAR",
     slug: "monitorizacion-ambiental-y-control-de-olores-en-edar",
-    href: "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+    // ruta local: clonado 2026-07-29, pero como arquetipo MONOGRÁFICO TÉCNICO
+    // y no como SECTOR — sus datos viven en `src/lib/monografico.ts`.
+    // original: https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/
+    href: "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
     taxonomy: "edar",
-    clonado: false,
+    clonado: true,
   },
   {
     kicker: "Petróleo y gas",
     slug: "monitorizacion-de-emisiones-en-petroleo-y-gas",
-    href: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+    // ruta local: clonado 2026-07-29, mismo arquetipo — original:
+    // https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/
+    href: "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
     taxonomy: "industria",
-    clonado: false,
+    clonado: true,
   },
   {
     kicker: "Puertos y aeropuertos",

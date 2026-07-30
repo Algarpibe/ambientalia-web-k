@@ -1,174 +1,128 @@
-# HANDOFF — MONOGRÁFICO TÉCNICO: specs cerradas, falta construir
+# HANDOFF — MONOGRÁFICO construido; queda el EXPERIMENTO
 
-> Escrito al cerrar la sesión del **2026-07-29** (recon) y **actualizado el mismo
-> día** al cerrar la sesión de specs.
-> Para arrancar sesión limpia. Léelo entero antes de tocar nada: son 5 minutos.
+> Reescrito el **2026-07-29** al terminar la fase de build del arquetipo
+> MONOGRÁFICO TÉCNICO. Para arrancar sesión limpia: son 5 minutos.
 
 ## Lo primero: en qué punto está
 
-**Recon y specs de MONOGRÁFICO están HECHOS. No se ha escrito código, a
-propósito.** La próxima sesión es de **build** (fase 3 del flujo), y entra por
-`docs/research/monografico-tecnico/MODELO.md`.
+**MONOGRÁFICO TÉCNICO está construido y medido.** Las dos páginas vivas del
+original están clonadas y el cuerpo cuadra al céntimo salvo un residuo de
+décimas con causa identificada. Lo que queda pendiente es **correr el
+experimento pre-registrado**, que era el paso siguiente por diseño.
 
 | documento | qué trae |
 |---|---|
-| `PAGE_TOPOLOGY.md` | recon medido, con **tres correcciones marcadas `⚠ CORRIGE`** sobre la versión en frío |
-| `DECISIONES.md` | **las tres decisiones, argumentadas y cerradas** |
-| `MODELO.md` | el content type, escrito desde EDAR y **validado contra Petróleo sobre el papel**: 4 campos que EDAR sola habría fallado |
-| `BEHAVIORS.md` | el cuerpo es estático; lo único propio es el desbordamiento de la tabla a 390 |
-| `components/seccion-editorial.spec.md` | el cuerpo: ritmo, retícula, punteado, tipografía, los 3 payloads, objetivos numéricos |
-| `components/tabla-resumen.spec.md` | la tabla, con su contenido **verbatim** |
-| `components/cabecera-hero-cola.spec.md` | qué se reutiliza de SECTOR, medido original contra original |
-| `EXPERIMENTO-URBANO.md` | el experimento **pre-registrado**: hipótesis, criterio, predicciones y regla de decisión |
-
-**El hallazgo transversal de la tanda**, que vale para todo el proyecto y no solo
-para este arquetipo: **en Divi, lo que el editor no toca es responsive (un % del
-padre); lo que toca queda en px absolutos, iguales a 1440 y a 390.** Es un
-discriminador **objetivo** entre plantilla y contenido — se mide a dos anchos y
-se mira si el número se mueve — y es lo que resuelve la decisión (c) sin tener
-que argumentar de oído.
+| `docs/research/monografico-tecnico/PAGE_TOPOLOGY.md` | recon medido, con tres `⚠ CORRIGE` sobre la versión en frío |
+| `…/DECISIONES.md` | las tres decisiones, argumentadas y cerradas — **las tres se sostuvieron al construir** |
+| `…/MODELO.md` | el content type de la fase de specs. **Le faltaban campos**: el vigente es `src/lib/monografico.ts` |
+| `…/components/seccion-editorial.spec.md` | el cuerpo. **Empieza con un `⚠ CORRIGE` de seis puntos**: léelo antes que el resto |
+| `…/EXPERIMENTO-URBANO.md` | el experimento pre-registrado — **sin correr todavía** |
+| `docs/PENDIENTES-QA.md` §MONOGRÁFICO | el acta de QA: qué cuadra, qué no y por qué |
 
 ## Estado
 
-**7 arquetipos** en la biblioteca:
+**7 arquetipos**, 11 rutas emitidas:
 
-| arquetipo | ruta | recon |
+| arquetipo | ruta | estado |
 |---|---|---|
-| HOME | `/` | `docs/research/` (raíz) |
-| PRODUCTO | `/monitor-calidad-aire` | `docs/research/monitor-calidad-aire/` |
-| CATÁLOGO | `/accesorios` | `docs/research/accesorios/` |
-| SOFTWARE/PLATAFORMA | `/software-de-medicion-calidad-del-aire` | `docs/research/software/` |
-| — (variante corta del anterior) | `/kunak-api` | `docs/research/kunak-api/` |
-| SECTOR / SOLUCIÓN VERTICAL | `/sectores/[slug]` | `docs/research/sectores/` |
-| **MONOGRÁFICO TÉCNICO** | *sin construir — **specs cerradas*** | `docs/research/monografico-tecnico/` |
+| HOME | `/` | clonado |
+| PRODUCTO | `/monitor-calidad-aire` | clonado |
+| CATÁLOGO | `/accesorios` | clonado |
+| SOFTWARE/PLATAFORMA | `/software-de-medicion-calidad-del-aire` | clonado |
+| — (variante corta) | `/kunak-api` | clonado |
+| SECTOR | `/sectores/[slug]` | 4 de 8 poblados |
+| **MONOGRÁFICO TÉCNICO** | `/sectores/…-en-edar` · `/sectores/…-petroleo-y-gas` | **2 de 2 — completo** |
 
-**SECTOR: 4 instancias de una sola plantilla** (Urbano · Industria ·
-Construcción · Investigación), y el **test de aceptación está pasado**: las dos
-últimas se poblaron con **cero líneas de componente**, solo añadiendo un
-`SectorPage` a `SECTORES_PUBLICADOS` en `src/lib/sectores.ts`. Cuerpo exacto
-contra el original (Δ0) en los dos anchos, y las 7 páginas anteriores sin
-moverse un píxel.
+`/sectores/[slug]` **despacha dos arquetipos por slug**. Dar de alta una
+instancia de cualquiera de los dos sigue siendo añadir datos: un `SectorPage` a
+`SECTORES_PUBLICADOS` o un `MonograficoPage` a `MONOGRAFICOS_PUBLICADOS`.
 
-Puertos y Minería se dejaron fuera **a propósito** (permutaciones de una
-topología ya validada; razón en `docs/PENDIENTES-QA.md`).
+## El resultado, medido
 
-## Por dónde entrar a construir
+Original vs clon **módulo a módulo** (`scripts/qa/mono-cmp.mjs`), 1440 y 390:
 
-1. **`MODELO.md`** — el content type y sus cuatro puntos abiertos (§4).
-2. **`components/seccion-editorial.spec.md`** — es el 68% del trabajo: el cuerpo.
-   Trae los objetivos numéricos por sección y fila de las dos páginas.
-3. `components/cabecera-hero-cola.spec.md` — lo que **no** hay que construir.
-
-Antes de medir nada, `scripts/qa/README.md` §PROTOCOLO DE MEDICIÓN: 3 corridas,
-el `h1` como base de lectura, y el suelo de ruido en **dos regiones** (hasta 81
-en "Artículos y Guías", **0 en el resto**).
-
-Las sondas del arquetipo ya existen y su salida está congelada: `mono-modulos`,
-`mono-cabecera`, `mono-detalle` y `mono-inline` en `scripts/qa/`. **Se
-reutilizan, no se rehacen.**
-
-## Dos observaciones que pueden cambiar la prioridad
-
-1. ~~**El arquetipo SECTOR está contenido dentro de MONOGRÁFICO.**~~ **Corregida
-   al medir**: la última sección de EDAR y Petróleo *no* es un cuerpo de sector.
-   Lo que el heurístico etiquetaba `claimConFoto` es una sección editorial más,
-   y `claimConFoto` **no aparece en ninguna de las dos**. La contención va en el
-   otro sentido: el cuerpo de SECTOR parece un **subconjunto** del de
-   MONOGRÁFICO — `beneficiosAplicaciones` es literalmente `punt · h3 · ul` en
-   dos columnas. Eso es lo que somete a prueba el experimento.
-2. **Son las dos páginas más recientes del sitio.** 2 de 8, y las dos últimas
-   publicadas — lo que sugiere que ésta es la plantilla nueva y que los otros 6
-   sectores son el legado. Sin resolver: no hay dato público que lo confirme.
-
-## Las tres decisiones: CERRADAS (2026-07-29)
-
-Argumentadas en **`docs/research/monografico-tecnico/DECISIONES.md`**. Resumen,
-para no reabrirlas:
-
-| | decisión | en una línea |
+| | @1440 | @390 |
 |---|---|---|
-| **a** | la `<table>` | **filas estructuradas, tabla genérica** (`cabeceras[]` + `filas[][]`), **no** cuatro columnas con nombre: Petróleo no tiene tabla, así que n = 1 y un esquema con nombres sería S9–S11 aplicado al esquema del CMS |
-| **b** | cabecera y slider | **se reutilizan los dos, medido original contra original**. El hero también, con **dos campos nuevos**: el `pb` de desktop (39 vs 60) y que su columna derecha es una **lista** de módulos con **un color por titular** |
-| **c** | el `pb` de fila | vive en el content type del monográfico, **en los tres niveles** (sección, fila, módulo) porque son el mismo mecanismo. **No se toca `SectorBlock`**: en los 6 sectores clásicos ese valor es un invariante medido, y abrir un campo que ninguna instancia usa degrada su modelo |
+| Petróleo y gas | **exacto**: 0 módulos · 0 filas · 0 secciones | −0.23 total |
+| EDAR | −0.01 | −0.16 total |
 
-## El experimento que cierra el recon
+Y **las 9 páginas anteriores sin moverse un píxel** en los dos anchos, habiendo
+tocado tres componentes compartidos. Lo dice `scripts/qa/clon-base.mjs`, que se
+probó **en negativo** en la misma sesión: con 1px de más en el `pb` del hero
+cazó las 4 páginas afectadas, nombró la sección y salió con código 1.
 
-**Diseñado y pre-registrado**:
-`docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md` — hipótesis, criterio
-de éxito con umbral **cero** (clon contra clon, sin ruido), **cuatro
-predicciones registradas** y regla de decisión para cada resultado.
+Todo el residuo que queda son **tres módulos de imagen** y la causa está medida:
+el original sirve por `srcset` una variante redimensionada cuya proporción
+redondea distinto (M-IMG en `PENDIENTES-QA.md`). Es tanda de **assets**,
+transversal, no de este arquetipo.
 
-Se corre **al terminar de construir MONOGRÁFICO, y no antes**. Hasta entonces:
-ni tocar `SectorBlock`, ni ampliar `flujo`, ni mover el `pb` de fila a dato.
+## Lo siguiente: el experimento, y nada antes
+
+**`docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md`.** Está
+pre-registrado: hipótesis, criterio con umbral **cero**, cuatro predicciones y
+regla de decisión. Se corre **ahora**, que es cuando toca — al terminar de
+construir MONOGRÁFICO.
+
+Decide si SECTOR y MONOGRÁFICO son un content type o dos, y por tanto si el CMS
+lleva uno o dos. Hasta que se corra: **ni tocar `SectorBlock`, ni ampliar
+`flujo`, ni subir el `pb` de fila a dato.**
+
+Cuando se corra, el acta se escribe **en ese mismo fichero**, con fecha, gane o
+pierda H1. Ojo con el §4: **C1 manda sobre C2 y C3** — un cuerpo idéntico al
+píxel *después* de añadir campos no prueba nada.
+
+## Lo que enseñó construirlo, y que cambia cómo se leen las specs
+
+**El discriminador de Divi tiene alcance.** Vale para el ritmo, que es donde se
+descubrió; no para la tipografía ni para la caja. En Divi el ancho de módulo se
+escribe en % igual que su default, así que el número se mueve con el ancho
+aunque lo haya escrito una persona.
+
+Cuando no aplica, vale el test general: **¿varía de una instancia a otra del
+mismo hueco dentro de la misma página?** Ampliado en `CLAUDE.md`.
+
+Ocho propiedades salieron de ahí, y **ninguna se veía en la primera página**:
+ancho de módulo, `line-height`, tamaño del claim, bordes de la tabla, default
+de `mb` de imagen, la regla del último módulo, el `<strong>` en línea y el hueco
+entre columnas apiladas. Tabla con el coste de cada una en el `⚠ CORRIGE` de
+`seccion-editorial.spec.md`.
 
 ## Lo que NO hay que hacer al empezar
 
-- **No arreglar S9, S10 ni S11 sueltos.** Ver la nota de **CLASE** al principio
-  de `docs/PENDIENTES-QA.md`: son el mismo hallazgo cuatro veces (componente
-  calibrado contra una instancia, no contra un rango) y se resuelven en **una
-  tanda única con criterio común**, con el catálogo de instancias ya completo.
-- **La regla de rutas locales ya está cerrada, y con guarda.** No la vuelvas a
-  cerrar a mano. Se creía rota en un fichero, resultó estarlo en **seis**
-  (`nav.ts`, `footer.ts`, el carrusel de la home, `HeaderNav`, el hero de
-  monitor y tres breadcrumbs). Ahora la vigila `scripts/qa/enlaces.mjs`.
+- **No arreglar S9, S10 ni S11 sueltos.** Ver la nota de **CLASE** en
+  `PENDIENTES-QA.md`: son el mismo hallazgo cuatro veces y se resuelven en una
+  tanda única con criterio común. El monográfico **añadió instancias al
+  catálogo**, que era lo que faltaba.
+- **No perseguir el residuo de las imágenes** (M-IMG): son décimas, la causa
+  está escrita y se cierra con `srcset`, no con maquetación.
+- **No re-medir el original a mano.** Las sondas están en `scripts/qa/` con su
+  salida congelada en `medidas/`. Se reutilizan.
 
-## Al terminar el monográfico: correr la guarda
+## Sondas nuevas de esta tanda
 
-**`cd scripts/qa && node enlaces.mjs`** — con el clon servido y **después de
-`npm run build`**, que es de donde saca las rutas publicadas.
+| sonda | qué hace |
+|---|---|
+| `clon-base.mjs [ancho] [--cmp antes.json]` | **el clon contra sí mismo**, antes/después de tocar algo compartido. Rutas del `prerender-manifest`, umbral cero, y exige un `MARCADOR` en el HTML servido antes de medir nada |
+| `mono-cmp.mjs <edar\|petroleo> [ancho]` | original vs clon **módulo a módulo**, separando alto (contenido) de margen (ritmo) |
 
-En cuanto el monográfico emita sus rutas, los enlaces a EDAR y a Petróleo y gas
-que hoy son correctos **pasan a ser fallo automáticamente**, sin tocar la sonda:
-la regla se deriva de `.next/prerender-manifest.json`. Hay que localizarlos en
-los tres sitios donde vive un enlace a sector —`nav.ts`, `footer.ts` y
-`home-carrusel-sectores.ts`— y volver a correrla hasta que salga limpia.
+`tree-cmp.mjs` acepta ahora los 6 slugs y localiza el hero **por el breadcrumb**
+y no por su `padding-bottom`: el del monográfico cierra a 39 y la heurística
+vieja se quedaba sin cuerpo.
 
-La guarda cubre **las dos direcciones**: un href que va al original teniendo
-copia local, y un href interno que no corresponde a ruta emitida (un 404, que
-ninguna medida de altura ve). Verificada en negativo. Sale con código 0 limpia y
-1 sucia, así que se puede encadenar a `npm run check` si algún día interesa.
-
-Al medir contra ella, **mata el servidor por puerto, no con `pkill`**: la
-primera pasada del test en negativo salió "limpia" porque `next start` seguía
-sirviendo el build anterior.
-
-## Tarea para una sesión MECÁNICA (no para la de specs)
-
-**Que las sondas sean dueñas de su ciclo de servidor.** Hoy todas asumen que hay
-un `localhost:3000` levantado y **confían en que sirve el build actual**. Debería
-ser: matar por puerto → `npm run build` → arrancar → esperar a listo → medir →
-parar. Unas 20 líneas en `lib.mjs`, reutilizables por las cuatro sondas.
-
-**Por qué merece una tarea propia, con el caso de hoy:** el test en negativo de
-`enlaces.mjs` salió **"limpio" en falso**. El enlace roto estaba en `.next` y no
-en el HTML servido, porque `next start` seguía corriendo con el build anterior y
-un `pkill -f "next start"` no lo mató. Se descubrió por casualidad, al grepear el
-HTML por otro motivo.
-
-El fallo **no fue de disciplina** — el paso "parar, rebuild, relanzar" está en
-`CLAUDE.md` desde hace tandas y aun así se coló. Fue que **la frescura del build
-dependía de que alguien se acordara**, y eso acaba fallando justo en la corrida
-en la que más importa: la que dice "no se mueve nada". Un "18 lecturas
-idénticas" es exactamente el resultado que un build viejo falsifica sin dejar
-rastro.
-
-Mientras no esté hecho: **matar por puerto, nunca con `pkill`**, y verificar un
-marcador del cambio en el HTML servido antes de dar una medida por buena.
-
-## Cómo levantar y comparar
+## Comandos
 
 ```bash
-npm run build && npm run start          # standalone: tras editar, parar y rehacer
+npm run check                            # lint + typecheck + build
+npm run build && npm run start           # tras editar: parar, rehacer, relanzar
 cd scripts/qa && npm i --no-save puppeteer-core
-node enlaces.mjs                        # guarda de rutas locales (solo clon)
-node ruido.mjs 3                        # suelo de ruido, antes de juzgar nada
-node tree-cmp.mjs <sector> [ancho]      # árbol sección→fila, original vs clon
-node cmp-sector.mjs <sector> [ancho]    # anclas de texto
+node enlaces.mjs                         # guarda de rutas locales — limpia hoy
+MARCADOR="…" node clon-base.mjs 1440 --cmp antes.json
+node mono-cmp.mjs edar 1440
+node ruido.mjs 3                         # suelo de ruido, antes de juzgar nada
 ```
 
-El principio que las gobierna está en `CLAUDE.md` §«El principio»: **verificar
-contra la salida servida, nunca contra la fuente que uno supone responsable.**
-Se ha aprendido tres veces en este proyecto, una tanda cada una.
-
-Móvil **solo** con device metrics 390×844. Medidas congeladas en
-`scripts/qa/medidas/` — son la referencia vigente; el histórico está en git.
+Y lo de siempre, que sigue costando cuando se olvida: **matar el servidor por
+puerto**, nunca con `pkill`, y **verificar un marcador del cambio en el HTML
+servido** antes de dar una medida por buena. `clon-base.mjs` ya lo exige por
+`MARCADOR`; las demás sondas todavía no (tarea mecánica pendiente: que sean
+dueñas de su ciclo de servidor, ~20 líneas en `lib.mjs`).

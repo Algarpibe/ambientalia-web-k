@@ -1,5 +1,41 @@
 # SecciónEditorial — el cuerpo del MONOGRÁFICO
 
+> ## ⚠ CORRIGE — seis cosas que esta spec daba por plantilla y son CAMPO
+>
+> **Escrito al construir (2026-07-29), midiendo el clon contra el original
+> módulo a módulo con `scripts/qa/mono-cmp.mjs`.** Se dejan arriba y no al final
+> porque quien abra este fichero para construir una tercera instancia leería
+> primero lo viejo.
+>
+> La spec se escribió mirando **el ritmo** —donde el discriminador de Divi
+> funciona— y extendió esa conclusión a **la tipografía y la caja**, donde no
+> aplica. El discriminador separa *ritmo por defecto* de *ritmo escrito*; no
+> clasifica cualquier propiedad. Lo que delata a estas seis es lo de siempre:
+> **varían de un módulo a otro dentro de la misma página**.
+>
+> | decía la spec | mide la salida servida | coste de creerla |
+> |---|---|---|
+> | el `titular` ocupa el ancho de su columna | **ancho de módulo: 70 · 80 · 90 · 100 %** — los `titular` van al 80 y envuelven a 3 renglones | **−55 por instancia**, 10 instancias |
+> | `p` y `li` a 18/**30.6** | `line-height` **por módulo**: 30.6 · 36 · **45** | hasta −77 en un módulo |
+> | `claim` h3 a **44/55** | **32/32** | −12 de cuerpo en esa fila |
+> | la tabla va **sin bordes** (`border-bottom-width: 0`) | `border: 1px solid #333` + `border-top` en `th`/`td`, y `margin-bottom: 48px` | **−58** en la fila de la tabla |
+> | módulo de imagen: `mb` **3%** | el default es **2.75%**, como todo lo demás; el 3% lo lleva **una** imagen | ±37 |
+> | último módulo de la columna → `mb 0` | **la rompen 12 módulos**, 7 de ellos botones | +16 en siete filas |
+>
+> Y dos que la spec no menciona porque no se buscaron:
+>
+> - **`<strong>` en línea, 56 bloques**, y no siempre al principio de la frase.
+>   La negrita es más ancha: sin ella un `li` de Petróleo salía a 3 renglones
+>   donde el original va a 4 (**−30.59 a 390**, invisible a 1440).
+> - **El hueco entre columnas apiladas a 390** no es "30 salvo la última": la
+>   primera columna de la fila de cierre comercial va a **0** en las dos
+>   páginas.
+>
+> El modelo resultante, con cada campo y su medida, está en
+> `src/lib/monografico.ts`. Lo demás de esta spec —retícula, punteado, ritmo de
+> sección y fila, los tres payloads— se confirmó exacto.
+
+
 > Medido el **2026-07-29** en EDAR y Petróleo y gas a **1440×900** y **390×844**
 > (device metrics), DPR 1, perfil limpio, Cookiebot bloqueado, lazy→eager +
 > scroll/settle. Sondas `scripts/qa/mono-modulos.mjs` y `mono-inline.mjs`;

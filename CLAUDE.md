@@ -63,6 +63,9 @@ el segundo sector (Industria) sobre una plantilla calibrada con el primero:
 | Dos diseños distintos del bloque de descarga | El shortcode `calls` tiene **dos pieles** y el editor elige | `variante: "foto" \| "fondo"` |
 | El ritmo vertical entre bloques del cuerpo | En Divi son **secciones con filas dentro**, y el editor decide en cuál cae cada bloque | `flujo: "seccion" \| "seccionRasa" \| "fila" \| "filaPegada"` |
 | Un párrafo de entrada del bloque de listas | Un módulo de texto que en el original **cuelga de la fila anterior** | pendiente (§S9a de `PENDIENTES-QA.md`) |
+| Que un titular ocupe su columna | El editor le pone **ancho de módulo**: 70 · 80 · 90 · 100 % | `anchoPct` |
+| La interlínea del cuerpo | Un ajuste **por módulo**: 30.6 · 36 · 45 | `lh` |
+| Negrita como adorno | 56 `<strong>` **en medio de la frase**, que cambian dónde envuelve | `MonoInline` |
 
 La segunda costaba +42.8 en el CTA de Industria y ~+70 de ahí al pie, y se
 intentó primero como retoque de `padding`. No lo era.
@@ -78,7 +81,24 @@ Así que: **se mide a dos anchos y se mira si el número se mueve.** Si cambia c
 el ancho, lo pone la plantilla y vive en el componente. Si es el mismo a 1440 y
 a 390, lo escribió una persona en el builder y **es un campo**. Los defaults
 medidos: sección `pt/pb` 4% (57.5938/50) · fila `pt/pb` 2% (28.7969/30) ·
-módulo `mb` 2.75% (34.0469/30), 3% si es imagen, 0 si es el último de su columna.
+módulo `mb` 2.75% (34.0469/30).
+
+**⚠ El discriminador tiene alcance, y construir el monográfico lo delimitó.**
+Vale para el **ritmo**, que es donde se descubrió. No vale para todo: en Divi el
+**ancho de módulo** se escribe en % igual que su default, así que el número se
+mueve con el ancho lo escriba quien lo escriba, y sin embargo es un campo —
+70 · 80 · 90 · 100 % en la misma página. Otro tanto con el `line-height` de los
+párrafos (30.6 · 36 · 45) y el tamaño del claim.
+
+Cuando el discriminador no aplica, sigue valiendo **el test de siempre, que es
+el más general de los dos**: *¿varía de una instancia a otra del mismo hueco?*
+Si dos módulos hermanos de la misma página traen valores distintos, lo escribió
+una persona. El discriminador de los dos anchos es un atajo cómodo para el
+ritmo; el test de la variación es la regla.
+
+Las ocho propiedades que esto destapó, con el coste de haberlas dado por
+plantilla, están en el `⚠ CORRIGE` de
+`docs/research/monografico-tecnico/components/seccion-editorial.spec.md`.
 
 **Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
 existan**. El campo `flujo` salió de barrer los 8 sectores vivos con
@@ -103,13 +123,20 @@ también la decisión de diseño que hereda quien dé de alta un contenido nuevo
 | `/software-de-medicion-calidad-del-aire` | SOFTWARE/PLATAFORMA | `docs/research/software/` |
 | `/kunak-api` | Variante **corta** del anterior — no es arquetipo nuevo | `docs/research/kunak-api/` |
 | `/sectores/[slug]` | SECTOR / SOLUCIÓN VERTICAL — **ruta dinámica, 4 de los 8 poblados** | `docs/research/sectores/` |
+| `/sectores/…-en-edar` · `/sectores/…-petroleo-y-gas` | MONOGRÁFICO TÉCNICO — **misma ruta dinámica, otro arquetipo** | `docs/research/monografico-tecnico/` |
 
 Los 4 sectores vivos (Urbano · Industria · Construcción · Investigación) salen
 de **una sola plantilla**: dar de alta uno es añadir un `SectorPage` a
 `SECTORES_PUBLICADOS` en `src/lib/sectores.ts`, **sin tocar código**. Puertos y
 Minería se dejan fuera a propósito (son permutaciones de una topología ya
-validada — razón en `docs/PENDIENTES-QA.md`), y EDAR y Petróleo y gas **no son
-este arquetipo**: ver `docs/research/monografico-tecnico/`.
+validada — razón en `docs/PENDIENTES-QA.md`).
+
+**`/sectores/[slug]` sirve DOS arquetipos**, y eso es fidelidad, no atajo: en el
+original los ocho cuelgan de `/es/sectores/` y comparten cabecera, banda de
+clientes, breadcrumb, hero, slider, bloque K y pie — medido original contra
+original. Lo único que cambia de forma es el cuerpo. El despacho es por slug
+contra los dos catálogos (`SECTORES_PUBLICADOS` y `MONOGRAFICOS_PUBLICADOS`);
+partirlo en dos carpetas de `app/` habría duplicado el 80% de la página.
 
 ## Regla de rutas locales
 

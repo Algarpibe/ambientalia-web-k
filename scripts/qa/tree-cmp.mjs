@@ -1,10 +1,15 @@
 /**
  * S7 (2/2) — árbol de secciones/filas del CUERPO, original vs clon, lado a lado.
- * Uso: node tree-cmp.mjs <urbano|industria> [ancho]
+ * Uso: node tree-cmp.mjs <urbano|industria|construccion|investigacion|edar|petroleo> [ancho]
  *
- * En el original el cuerpo son las `.et_pb_section` entre el hero (pb 60) y el
- * slider fullwidth. En el clon son las `<section>` de `main` entre la del hero
- * (la que lleva pb 60 / pb 20) y la del slider.
+ * El cuerpo es lo que va **entre el hero y el slider de ancho completo**, en los
+ * dos lados.
+ *
+ * ⚠ **El hero NO se localiza por su `padding-bottom`.** Se localizaba por
+ * `pb === 60px`, y eso dejó de valer al entrar el arquetipo MONOGRÁFICO, cuyo
+ * hero cierra a **39** en desktop (y a 20 en móvil, como todos). Ahora se
+ * localiza por la sección del breadcrumb, que es estructural y vale para los
+ * dos arquetipos: hero = la siguiente, cuerpo = de la de después al slider.
  */
 import { launch, openPage, settle } from "./lib.mjs";
 
@@ -16,6 +21,23 @@ const URLS = {
   industria: [
     "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
     "http://localhost:3000/sectores/control-de-emisiones-industriales",
+  ],
+  construccion: [
+    "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+    "http://localhost:3000/sectores/contaminacion-por-construccion",
+  ],
+  investigacion: [
+    "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+    "http://localhost:3000/sectores/estudio-de-la-contaminacion-atmosferica",
+  ],
+  // arquetipo MONOGRÁFICO TÉCNICO
+  edar: [
+    "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+    "http://localhost:3000/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+  ],
+  petroleo: [
+    "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+    "http://localhost:3000/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
   ],
 };
 
@@ -43,17 +65,28 @@ const extraer = function (esOriginal) {
     };
 
     let secs, filaSel;
+    const sinEsp = (el) => (el.textContent || "").replace(/\s+/g, "");
     if (esOriginal) {
       secs = [...document.querySelectorAll(".et_pb_section")];
-      const iHero = secs.findIndex((s) => getComputedStyle(s).paddingBottom === "60px");
+      // el breadcrumb, no el `pb` del hero: sirve para los dos arquetipos
+      const iMigas = secs.findIndex((s) => sinEsp(s).startsWith("InicioSectores"));
       const iSlider = secs.findIndex((s) => s.classList.contains("et_pb_fullwidth_section"));
-      secs = secs.slice(iHero + 1, iSlider);
+      secs = secs.slice(iMigas + 2, iSlider);
       filaSel = ":scope > .et_pb_row";
     } else {
       const todas = [...document.querySelectorAll("main > section")];
-      // la del hero es la única con dos botones azules y pb 60/20
-      const iHero = todas.findIndex((s) => /pb-\[60px\]|pb-\[20px\]/.test(s.className));
-      secs = todas.slice(iHero + 1);
+      // El hero es la única sección con `pb-[20px]`: la cabecera cierra a 40 y
+      // el resto no lleva esa clase. Vale para los dos arquetipos, porque lo
+      // que cambia entre ellos es el `pb` de DESKTOP (39 vs 60), no el móvil.
+      const iHero = todas.findIndex((s) => /pb-\[20px\]/.test(s.className));
+      // El slider es la ÚLTIMA sección con `.swiper`: la banda de clientes
+      // también lleva uno, y va ANTES del hero. Buscando el primero, el corte
+      // caía en la banda y el cuerpo del clon salía vacío.
+      let iSlider = -1;
+      todas.forEach((s, i) => {
+        if (s.querySelector(".swiper")) iSlider = i;
+      });
+      secs = todas.slice(iHero + 1, iSlider > iHero ? iSlider : undefined);
       filaSel = ":scope > div";
     }
 

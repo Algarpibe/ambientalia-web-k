@@ -30,8 +30,10 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Urbano", href: "/sectores/calidad-del-aire-en-las-ciudades" },
       // original: ${BASE}/es/sectores/control-de-emisiones-industriales/
       { label: "Industria y olores", href: "/sectores/control-de-emisiones-industriales" },
-      { label: "EDAR", href: `${BASE}/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/` },
-      { label: "Petróleo y gas", href: `${BASE}/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/` },
+      // original: ${BASE}/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/
+      { label: "EDAR", href: "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar" },
+      // original: ${BASE}/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/
+      { label: "Petróleo y gas", href: "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas" },
       { label: "Puertos y aeropuertos", href: `${BASE}/es/sectores/contaminacion-del-transporte-maritimo/` },
       // original: ${BASE}/es/sectores/contaminacion-por-construccion/
       { label: "Construcción", href: "/sectores/contaminacion-por-construccion" },

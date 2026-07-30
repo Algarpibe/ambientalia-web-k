@@ -130,10 +130,13 @@ export const SECTORS: NavSectorItem[] = [
   // El href que tenía aquí (…-en-plantas-de-aguas-residuales/) devuelve 404;
   // el del menú vivo del original es …-en-edar/ (verificado 2026-07-28: 200 vs
   // 404). `footer.ts` ya usaba el bueno. Recon: docs/research/sectores/.
-  // NO clonado — y no es arquetipo SECTOR: docs/research/monografico-tecnico/.
-  { label: "EDAR", href: "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/", icon: "/images/uploads/2026/04/wastewater-treatment-plant.svg" },
-  // NO clonado — tampoco es arquetipo SECTOR (ver monografico-tecnico/).
-  { label: "Petróleo y gas", href: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/", icon: "/images/uploads/2026/04/oil-and-gas.svg" },
+  // ruta local: clonado 2026-07-29 como arquetipo MONOGRÁFICO TÉCNICO
+  // (docs/research/monografico-tecnico/) — original:
+  // https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/
+  { label: "EDAR", href: "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar", icon: "/images/uploads/2026/04/wastewater-treatment-plant.svg" },
+  // ruta local: clonado 2026-07-29, mismo arquetipo — original:
+  // https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/
+  { label: "Petróleo y gas", href: "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas", icon: "/images/uploads/2026/04/oil-and-gas.svg" },
   // NO clonado, por decisión: permutación de una topología ya validada
   // (razón en docs/PENDIENTES-QA.md).
   { label: "Puertos y aeropuertos", href: "https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/", icon: "/images/uploads/2023/02/ports-airports-2.svg" },

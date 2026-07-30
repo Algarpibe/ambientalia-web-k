@@ -15,29 +15,40 @@ import { SectionTitle } from "@/components/SectionRow";
 import { CabeceraSector } from "@/components/sectores/CabeceraSector";
 import { SectorHero } from "@/components/sectores/SectorHero";
 import { SectorBody } from "@/components/sectores/SectorBody";
+import { MonoCuerpo } from "@/components/monografico/MonoCuerpo";
 
 import { SECTORES_PUBLICADOS, getSector } from "@/lib/sectores";
+import { MONOGRAFICOS_PUBLICADOS, getMonografico } from "@/lib/monografico";
 
 /**
- * /sectores/[slug] — arquetipo **SECTOR / SOLUCIÓN VERTICAL**.
- * Topología: docs/research/sectores/PAGE_TOPOLOGY.md
- * Comportamientos: docs/research/sectores/BEHAVIORS.md
- * Specs de bloque: docs/research/sectores/components/*.spec.md
+ * /sectores/[slug] — **DOS arquetipos en la misma ruta**:
  *
- * **Primera ruta anidada y primera ruta dinámica del proyecto.** Una sola
- * plantilla para los 8 sectores del sitio: `generateStaticParams()` emite una
- * ruta estática por cada `SectorPage` de `SECTORES_PUBLICADOS`, así que dar de
- * alta un sector es añadir sus datos a `src/lib/sectores.ts` — sin tocar código.
+ * | arquetipo | recon | cuerpo |
+ * |---|---|---|
+ * | SECTOR / SOLUCIÓN VERTICAL | `docs/research/sectores/` | `SectorBlock[]` → `SectorBody` |
+ * | MONOGRÁFICO TÉCNICO | `docs/research/monografico-tecnico/` | `MonoSeccion[]` → `MonoCuerpo` |
  *
- * La cabecera, la banda de clientes, el breadcrumb, el hero, el CTA de ancho
- * completo y el bloque K son FIJOS (la plantilla). Lo único variable en forma
- * —no solo en texto— es el cuerpo, que va como `SectorBlock[]` y lo pinta
- * `SectorBody`: Urbano monta 3 bloques, Industria 5 y en otro orden.
+ * **No es una ruta con dos plantillas: es una plantilla con dos cuerpos.** En
+ * el original los seis sectores clásicos y los dos monográficos cuelgan de
+ * `/es/sectores/` y comparten cabecera, banda de clientes, breadcrumb, hero,
+ * CTA de ancho completo, bloque K y franja del pie — medido original contra
+ * original en la misma corrida (`components/cabecera-hero-cola.spec.md`). Lo
+ * único que cambia de forma es lo que va entre el hero y el slider.
+ *
+ * Por eso el despacho es por slug y no por subruta: replicar la topología de
+ * URLs del original es parte de la fidelidad, y partirla en dos carpetas
+ * `app/` habría duplicado el 80% de esta página para no ganar nada.
+ *
+ * `generateStaticParams()` emite una ruta por instancia publicada de cada uno,
+ * así que dar de alta cualquiera de los dos sigue siendo **añadir datos**:
+ * un `SectorPage` a `SECTORES_PUBLICADOS` o un `MonograficoPage` a
+ * `MONOGRAFICOS_PUBLICADOS`, sin tocar código.
  *
  * Reutiliza sin tocar: HeaderNav · ScrollToTop · ProductosTabs (con `items`) ·
- * UltimosProyectos · UltimosArticulos (variante "monitor") · SectionTitle ·
- * BlueButton/OutlineButton/LightButton.
- * Variantes nuevas: TrustBar `variant="sectores"` · Footer `stripImage`.
+ * UltimosProyectos · UltimosArticulos · SectionTitle · CabeceraSector ·
+ * CtaBannerSlider · CtaDescarga · BlueButton/OutlineButton/LightButton.
+ * Con campos nuevos: `SectorHero` (`modulos` + `pb`) · `MapaProyectos`
+ * (`soloCaja`).
  */
 
 /**
@@ -70,7 +81,18 @@ function TituloK({ children }: { children: React.ReactNode }) {
 }
 
 export function generateStaticParams() {
-  return SECTORES_PUBLICADOS.map((s) => ({ slug: s.slug }));
+  return [...SECTORES_PUBLICADOS, ...MONOGRAFICOS_PUBLICADOS].map((p) => ({
+    slug: p.slug,
+  }));
+}
+
+/** Resuelve el slug contra los dos catálogos. Los slugs no se solapan. */
+function getPagina(slug: string) {
+  const monografico = getMonografico(slug);
+  if (monografico) return { monografico, sector: undefined, comun: monografico };
+  const sector = getSector(slug);
+  if (sector) return { monografico: undefined, sector, comun: sector };
+  return null;
 }
 
 export async function generateMetadata({
@@ -79,16 +101,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const sector = getSector(slug);
-  if (!sector) return {};
+  const pagina = getPagina(slug);
+  if (!pagina) return {};
+  const { seo } = pagina.comun;
   return {
-    title: sector.seo.title,
-    description: sector.seo.description,
-    alternates: { canonical: sector.seo.canonical },
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical },
     openGraph: {
-      title: sector.seo.title,
-      description: sector.seo.description,
-      images: [sector.seo.ogImage],
+      title: seo.title,
+      description: seo.description,
+      images: [seo.ogImage],
     },
   };
 }
@@ -99,8 +122,10 @@ export default async function SectorPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const sector = getSector(slug);
-  if (!sector) notFound();
+  const pagina = getPagina(slug);
+  if (!pagina) notFound();
+  const { monografico, sector: sectorClasico } = pagina;
+  const sector = pagina.comun;
 
   return (
     <>
@@ -119,11 +144,22 @@ export default async function SectorPage({
           rowClassName="mx-auto w-[86%] max-w-[1380px]"
         />
 
-        {/* --- S3 · hero 1/2 + 1/2 --- */}
-        <SectorHero hero={sector.hero} />
+        {/* --- S3 · hero 1/2 + 1/2 ---
+            El monográfico aporta los dos campos que difieren entre arquetipos:
+            `pb` de desktop (39 vs 60) y la LISTA de módulos de la columna
+            derecha (3 vs 2, con un color por titular). */}
+        <SectorHero
+          hero={sector.hero}
+          modulos={monografico?.hero.modulos}
+          pb={monografico?.hero.pb}
+        />
 
-        {/* --- Cuerpo: flexible content (los 5 tipos de SectorBlock) --- */}
-        <SectorBody body={sector.body} />
+        {/* --- Cuerpo: el flexible content de cada arquetipo --- */}
+        {monografico ? (
+          <MonoCuerpo cuerpo={monografico.cuerpo} />
+        ) : (
+          <SectorBody body={sectorClasico!.body} />
+        )}
 
         {/* --- CTA de ancho completo: 3 diapositivas, autoplay 7 s --- */}
         <CtaBannerSlider slides={sector.ctaSlides} label={`Kunak para ${sector.header.kicker}`} />
