@@ -18,6 +18,13 @@
 | base de datos | **Postgres propio** |
 | despliegue | **embebido en la propia app Next** (no headless separado) |
 | editor | **Lexical** |
+| lectura de datos | **Local API**: `generateStaticParams()` y las páginas leen de la DB sin HTTP — el SSG actual se conserva |
+
+**Por qué Payload, en términos de este repo:** sus *blocks* son uniones
+discriminadas — `SectorBlock[]` y `MonoSeccion[]` se traducen casi literales
+(§1.4–1.5) —; su editor es Lexical con features activables — el contrato censado
+del §3 **es** esa configuración —; y la Local API conserva el SSG, y con él la
+aceptación del §8.
 
 ### Flecos abiertos de CMS-0
 
@@ -26,6 +33,7 @@
 | **CMS-0a** | **whitelist de nodos** de Lexical | resuelto en §3 con el censo de 209 páginas |
 | **CMS-0b** | **media uploads**: volumen persistente vs S3-compatible | el clon sirve hoy de `public/`; 123 de 209 páginas del grupo A llevan imagen, con `srcset` |
 | **CMS-0c** | **modelo de publicación**: rebuild por webhook vs ISR | **condiciona si la app necesita la DB en runtime o solo en build** — y eso cambia el enrutado del §4 |
+| **CMS-0e** | **conversión del cuerpo**: HTML del editor clásico → Lexical **al importar**, o **HTML crudo primero** (render idéntico al actual) y conversión por entrada después | la conversión no es 1:1 (T5: estructura suelta que se normaliza) y hacerla de golpe en 209 documentos **sin pérdida** es una afirmación sin probar. Se decide con un **piloto sobre la muestra adversaria de 24** |
 
 **CMS-0c no es un detalle de despliegue.** Con rebuild-por-webhook, las rutas se
 emiten en build y `dynamicParams = false` es gratis; con ISR hay render en
@@ -301,6 +309,12 @@ colisión deliberada en `/accesorios`, medido y borrado.
 **Requisito, no recomendación:** sin (3), la colisión es silenciosa y solo se ve
 sirviendo la página equivocada.
 
+**Traducción a Payload de (2):** la unicidad **entre** colecciones no es nativa.
+Un hook `beforeValidate` que consulte las demás familias planas (o una
+colección-índice de slugs) protege **el alta**; la guarda de build protege **el
+conjunto**. Son complementarias, no alternativas: el hook avisa a quien edita,
+la guarda caza lo que entre por cualquier otra vía.
+
 ⚠ **Depende de CMS-0c.** Todo esto asume **rebuild por webhook**. Con ISR hay
 render en caliente y el §4 se relee entero.
 
@@ -342,6 +356,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | CMS-0b | media: volumen persistente vs S3 | migración de imágenes · M-IMG |
 | CMS-0c | publicación: rebuild vs ISR | **el §4 entero** |
 | CMS-0d | subir Next a ≥ 16.2.6 | instalar Payload |
+| CMS-0e | cuerpo: convertir al importar vs HTML crudo primero | la migración de las 209 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | §3.3 | el reproductor de NBC: embed o eliminación | migración |
 | T6 / A-SP9 | los `id` de los `h2`: conservar o regenerar | índice del artículo |
@@ -365,6 +380,18 @@ que es determinista:
 | `npm run qa:enlaces` | limpia en las dos direcciones, código 0 |
 | `npm run qa:corte` | 12/12 |
 | `npm run check` | verde |
+
+**El camino de los datos, para que el listón sea alcanzable:**
+
+- las páginas construidas tienen sus seeds ya escritos: **`src/lib/*.ts` son los
+  datos** — un script los inserta por la Local API, mecánico;
+- las 321 de listados entran por **extractor desde el original** (las sondas de
+  `scripts/qa/` ya leen su DOM: está medio hecho), con las transformaciones
+  **T1–T6** aplicadas al importar.
+
+**Y hay una segunda prueba, además del Δ0:** la de SECTOR elevada al CMS —
+**dar de alta una página nueva desde el admin, sin tocar código**, y que las
+guardas (`qa:enlaces`, la de slugs del §4) la acojan sin editarlas.
 
 **La línea base se toma ANTES de tocar nada** y se congela en
 `scripts/qa/medidas/`. Es el mismo protocolo del experimento Urbano, que ya
