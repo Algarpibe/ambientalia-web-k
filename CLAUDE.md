@@ -70,34 +70,61 @@ el segundo sector (Industria) sobre una plantilla calibrada con el primero:
 La segunda costaba +42.8 en el CTA de Industria y ~+70 de ahí al pie, y se
 intentó primero como retoque de `padding`. No lo era.
 
-**Hay un discriminador objetivo, y no hace falta discutirlo de oído.** Sale del
-recon del monográfico (2026-07-29, `docs/research/monografico-tecnico/`), medido
-en 19 filas, 6 secciones y ~60 módulos sin una excepción:
+### Cómo se decide si algo es plantilla o campo: dos tests, cada uno con su alcance
 
-> **En Divi, lo que el editor NO toca es responsive (un % del padre); lo que
-> toca queda en px absolutos, iguales a 1440 y a 390.**
+No es un discriminador, son **dos**, y confundir sus alcances da respuestas
+**invertidas**. Se aplican en este orden.
 
-Así que: **se mide a dos anchos y se mira si el número se mueve.** Si cambia con
-el ancho, lo pone la plantilla y vive en el componente. Si es el mismo a 1440 y
-a 390, lo escribió una persona en el builder y **es un campo**. Los defaults
-medidos: sección `pt/pb` 4% (57.5938/50) · fila `pt/pb` 2% (28.7969/30) ·
-módulo `mb` 2.75% (34.0469/30).
+**Test A — el de Divi (los dos anchos).** Del recon del monográfico
+(2026-07-29, `docs/research/monografico-tecnico/`), medido en 19 filas, 6
+secciones y ~60 módulos sin una excepción:
 
-**⚠ El discriminador tiene alcance, y construir el monográfico lo delimitó.**
-Vale para el **ritmo**, que es donde se descubrió. No vale para todo: en Divi el
-**ancho de módulo** se escribe en % igual que su default, así que el número se
-mueve con el ancho lo escriba quien lo escriba, y sin embargo es un campo —
-70 · 80 · 90 · 100 % en la misma página. Otro tanto con el `line-height` de los
-párrafos (30.6 · 36 · 45) y el tamaño del claim.
+> **Lo que el editor NO toca es responsive (un % del padre); lo que toca queda
+> en px absolutos, iguales a 1440 y a 390.**
 
-Cuando el discriminador no aplica, sigue valiendo **el test de siempre, que es
-el más general de los dos**: *¿varía de una instancia a otra del mismo hueco?*
-Si dos módulos hermanos de la misma página traen valores distintos, lo escribió
-una persona. El discriminador de los dos anchos es un atajo cómodo para el
-ritmo; el test de la variación es la regla.
+Se mide a dos anchos y se mira si el número se mueve. Se mueve → lo pone la
+plantilla, vive en el componente. Igual a 1440 y a 390 → lo escribió una persona
+en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
+(57.5938/50) · fila `pt/pb` 2% (28.7969/30) · módulo `mb` 2.75% (34.0469/30).
 
-Las ocho propiedades que esto destapó, con el coste de haberlas dado por
-plantilla, están en el `⚠ CORRIGE` de
+> **⚠ Alcance: vale para el RITMO, que es donde se descubrió — `margin` y
+> `padding` de sección, fila y módulo. NO vale para la caja ni para la
+> tipografía.** En Divi el **ancho de módulo** se escribe en % igual que su
+> default, así que el número se mueve con el ancho **lo escriba quien lo
+> escriba**; y sin embargo es un campo — 70 · 80 · 90 · 100 % en la misma
+> página. Igual el `line-height` de los párrafos (30.6 · 36 · 45) y el tamaño
+> del claim. Aplicado ahí, el test A responde "plantilla" a cosas que son campo:
+> **da la respuesta al revés.**
+
+**Test B — el general (la variación intra-página).** Es la regla, no el atajo:
+
+> **¿Varía de un módulo a otro dentro de la misma página?** Si dos hermanos del
+> mismo hueco traen valores distintos, lo escribió una persona: **es un campo.**
+
+Sin restricción de alcance: sirve para el ritmo, la caja, la tipografía y
+cualquier otra propiedad.
+
+**El matiz que cierra la regla: los dos tienen falsos negativos, y distintos.**
+
+| test | no ve | ejemplo medido |
+|---|---|---|
+| A (Divi) | un campo **escrito en % igual que su default** — se mueve con el ancho y parece plantilla | `anchoPct` 70/80/90/100; `lh` 30.6/36/45 |
+| B (general) | un campo que el editor puso **uniforme en toda la página** — no varía y parece plantilla | `mb 3%` de imagen: uniforme en la primera página, lo lleva **una** imagen en la segunda |
+
+De donde la conclusión operativa, que es lo único que hay que recordar:
+
+> **Una propiedad que no pasa NINGUNO de los dos tests no está probada como
+> plantilla: está SIN PROBAR.** Y "sin probar" no se cablea en el componente —
+> se deja anotado como pendiente de medir en una segunda instancia, porque
+> cablearlo es exactamente cómo se produce el arreglo falso.
+
+**La evidencia son las ocho propiedades de esta tanda**, ninguna visible en la
+primera página, todas dadas por plantilla sin haber pasado ningún test — y todas
+campo: ancho de módulo (**−55 por instancia, ×10**), `line-height` (hasta −77 en
+un módulo), tamaño del claim (−12), bordes de la tabla (**−58**), default de
+`mb` de imagen (±37), la regla del último módulo (+16 en siete filas), el
+`<strong>` en línea (−30.59 a 390, invisible a 1440) y el hueco entre columnas
+apiladas a 390. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 `docs/research/monografico-tecnico/components/seccion-editorial.spec.md`.
 
 **Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
