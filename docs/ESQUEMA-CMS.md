@@ -40,17 +40,33 @@ emiten en build y `dynamicParams = false` es gratis; con ISR hay render en
 caliente y la app necesita Postgres vivo. La recomendación del §4 asume el
 primero; si se elige ISR, **hay que releer el §4 entero**.
 
-### ⚠ CMS-0d · La versión de Next no llega
+### ✅ CMS-0d · Next subido a 16.2.12 — EJECUTADA (2026-07-30)
 
 | | |
 |---|---|
 | exigido por Payload | **≥ 16.2.6** (16.0 y 16.1 no soportadas) |
-| en `package.json` | **`16.2.1`** |
+| instalado | **`16.2.12`** — último parche de la línea 16.2 y `latest` de npm (publicado 2026-07-25) |
 
-**Falta un salto de parche dentro de 16.2**, no de minor: mucho más barato que
-subir de línea, pero **no es cero**. Va como **tanda propia**, con línea base
-(`npm run qa:clon-base` a 1440 y 390 antes de tocar) y las sondas al terminar.
-No se cuela en otra tanda.
+Fue tanda propia, como estaba escrito. El salto `16.2.1 → 16.2.12` arrastró
+solo `next`, `@next/env` y los binarios `@next/swc-*`: **ni una dependencia
+nueva, ni un cambio de código o de config**. Verificación con el protocolo
+completo — línea base congelada ANTES
+(`scripts/qa/medidas/clon-base-{1440,390}-cms0d-antes.json`), matar por
+puerto, `.next` borrado, build desde HEAD, marcador de frescura por `BUILD_ID`
+(presente en el HTML servido nuevo, ausente del viejo) y umbral cero:
+
+| comprobación | resultado |
+|---|---|
+| `qa:clon-base` @1440 vs base | **Δ0** · 11 páginas · 0 regresiones |
+| `qa:clon-base` @390 vs base | **Δ0** · 11 páginas · 0 regresiones |
+| `qa:enlaces` | limpia en las dos direcciones (1180 externos · 315 internos) |
+| `qa:corte` | 12/12 |
+| lint + typecheck | verdes (`eslint-config-next` queda en `16.2.1`, funciona con next 16.2.12) |
+
+**Payload ya no está bloqueado por la versión de Next.** Ojo operativo que se
+pagó en la tanda: `puppeteer-core` va con `--no-save`, así que **cualquier
+`npm install` lo poda** — tras tocar dependencias hay que rehacer
+`npm i --no-save puppeteer-core` antes de correr sondas.
 
 ---
 
@@ -355,7 +371,6 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 |---|---|---|
 | CMS-0b | media: volumen persistente vs S3 | migración de imágenes · M-IMG |
 | CMS-0c | publicación: rebuild vs ISR | **el §4 entero** |
-| CMS-0d | subir Next a ≥ 16.2.6 | instalar Payload |
 | CMS-0e | cuerpo: convertir al importar vs HTML crudo primero | la migración de las 209 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | §3.3 | el reproductor de NBC: embed o eliminación | migración |

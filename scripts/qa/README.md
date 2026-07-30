@@ -400,6 +400,7 @@ Salidas congeladas de las sondas. **Son la prueba, no un caché.**
 | `mono-cmp-{edar,petroleo}-{1440,390}.json` | módulo a módulo original vs clon, las 4 combinaciones que cita el acta — **2026-07-30** |
 | `offsets-<ruta>-<ancho>.json` | offsets y holgura por columna y módulo — **2026-07-30** |
 | `corte-cuerpo.json` | la guarda de E1: 6 rutas × 2 anchos, corte en el slider — **2026-07-30** |
+| `clon-base-{1440,390}-cms0d-{antes,despues}.json` | línea base y verificación del salto de next `16.2.1 → 16.2.12` (CMS-0d): Δ0 en 11 páginas × 2 anchos — **2026-07-30** |
 
 Las `mono-*` de 1440 se tomaron en **dos corridas con dispersión 0** (`docH`
 11136 / 11303, `h1` en y 261.16 en las cuatro páginas): la regla 2 del protocolo

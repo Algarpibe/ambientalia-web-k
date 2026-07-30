@@ -12,9 +12,10 @@ colección, qué es block, qué es campo con defecto, la whitelist del campo ric
 las transformaciones de migración— vive en **`docs/ESQUEMA-CMS.md`**, que es
 registro vivo como `PENDIENTES-QA.md`.
 
-⚠ **Bloqueo conocido: `next` está en `16.2.1` y Payload exige ≥ 16.2.6.** Es un
-salto de parche dentro de 16.2, no de minor — barato, pero **tanda propia** con
-línea base y sondas. No se cuela en otra.
+**CMS-0d ejecutada (2026-07-30): `next` subido a `16.2.12`**, que cumple el
+≥ 16.2.6 de Payload. Tanda propia con su línea base: **Δ0 en las 11 páginas a
+1440 y a 390**, `qa:enlaces` limpia y `qa:corte` 12/12. Acta y detalle en
+`ESQUEMA-CMS.md` §CMS-0d. **Payload ya no está bloqueado por Next.**
 
 Flecos abiertos que condicionan trabajo: **media** (volumen vs S3) y sobre todo
 **modelo de publicación** (rebuild por webhook vs ISR) — este último decide si la
