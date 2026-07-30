@@ -17,10 +17,22 @@ registro vivo como `PENDIENTES-QA.md`.
 1440 y a 390**, `qa:enlaces` limpia y `qa:corte` 12/12. Acta y detalle en
 `ESQUEMA-CMS.md` §CMS-0d. **Payload ya no está bloqueado por Next.**
 
-Flecos abiertos que condicionan trabajo: **media** (volumen vs S3) y sobre todo
-**modelo de publicación** (rebuild por webhook vs ISR) — este último decide si la
-app necesita la DB en runtime, y **si se elige ISR hay que releer el enrutado
-entero**.
+**Los dos flecos de infraestructura también están cerrados (2026-07-30)**, y con
+ellos se acabó el condicional que arrastraba el enrutado:
+
+- **CMS-0c · publicación por rebuild con webhook**, no ISR. La app **necesita
+  Postgres en build, no en runtime**, y **el §4 de `ESQUEMA-CMS.md` queda
+  vigente tal cual — no hay que releerlo**. De paso salva la aceptación del §8:
+  el umbral cero exige salida determinista, y con ISR una regeneración entre dos
+  corridas movería el número sola.
+- **CMS-0b · media en volumen persistente** del VPS (adaptador de storage local),
+  **reversible**: pasar a S3 si crece es cambiar el adaptador y mover ficheros,
+  no rehacer el modelo — la relación con el media ya es relación a la colección
+  (T3).
+
+**Ya no queda nada de infraestructura bloqueando instalar Payload.** Lo abierto
+(§7) es de contenido y modelado: CMS-0e, la tabla, los `id` de los `h2`, una
+colección o dos, y el prefijo del caso de éxito.
 
 ## Lo primero: en qué punto está
 

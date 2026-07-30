@@ -30,15 +30,53 @@ aceptación del §8.
 
 | # | fleco | por qué importa aquí |
 |---|---|---|
-| **CMS-0a** | **whitelist de nodos** de Lexical | resuelto en §3 con el censo de 209 páginas |
-| **CMS-0b** | **media uploads**: volumen persistente vs S3-compatible | el clon sirve hoy de `public/`; 123 de 209 páginas del grupo A llevan imagen, con `srcset` |
-| **CMS-0c** | **modelo de publicación**: rebuild por webhook vs ISR | **condiciona si la app necesita la DB en runtime o solo en build** — y eso cambia el enrutado del §4 |
+| **CMS-0a** | **whitelist de nodos** de Lexical | **✅ resuelto** en §3 con el censo de 209 páginas |
+| **CMS-0b** | **media uploads**: volumen persistente vs S3-compatible | **✅ resuelto (2026-07-30): volumen persistente**, abajo |
+| **CMS-0c** | **modelo de publicación**: rebuild por webhook vs ISR | **✅ resuelto (2026-07-30): rebuild por webhook**, abajo |
 | **CMS-0e** | **conversión del cuerpo**: HTML del editor clásico → Lexical **al importar**, o **HTML crudo primero** (render idéntico al actual) y conversión por entrada después | la conversión no es 1:1 (T5: estructura suelta que se normaliza) y hacerla de golpe en 209 documentos **sin pérdida** es una afirmación sin probar. Se decide con un **piloto sobre la muestra adversaria de 24** |
 
-**CMS-0c no es un detalle de despliegue.** Con rebuild-por-webhook, las rutas se
-emiten en build y `dynamicParams = false` es gratis; con ISR hay render en
-caliente y la app necesita Postgres vivo. La recomendación del §4 asume el
-primero; si se elige ISR, **hay que releer el §4 entero**.
+### ✅ CMS-0c · Publicación por REBUILD CON WEBHOOK (2026-07-30)
+
+**Decidido: rebuild por webhook. No hay ISR.** Publicar dispara una
+reconstrucción; las rutas se emiten en build, como hoy.
+
+Las tres consecuencias, y son las que se venían asumiendo:
+
+1. **La app NO necesita Postgres en runtime, solo en build.** La DB es una
+   dependencia del proceso de construcción, no del que sirve. Lo que se sirve
+   sigue siendo HTML estático.
+2. **El §4 queda vigente tal cual está escrito** — era la rama que ya asumía, y
+   **no hay que releerlo**. `dynamicParams = false` es gratis, y la guarda de
+   build del §4 (3) es el sitio correcto para cazar la colisión de slugs porque
+   **el build es el único momento en que se decide qué rutas existen**.
+3. **La aceptación del §8 sigue siendo alcanzable, y por eso mismo.** El listón
+   es Δ0 con umbral cero, y eso **exige salida determinista**: dos cargas de la
+   misma página tienen que dar el mismo número al céntimo. Con ISR, una página
+   regenerada entre dos corridas de `clon-base` movería el número sin que nadie
+   hubiera tocado nada — el ruido del original, importado al clon. Rebuild por
+   webhook lo evita por construcción.
+
+**SIN MEDIR, y es operativo, no de esquema:** quién dispara el webhook, cuánto
+tarda el rebuild con las 209 del grupo A dentro (**A-SP13**) y qué ve el editor
+mientras tanto. Nada de eso cambia el modelo de datos; se mide cuando haya
+instancia.
+
+### ✅ CMS-0b · Media en VOLUMEN PERSISTENTE del VPS (2026-07-30)
+
+**Decidido: volumen persistente**, con el adaptador de **storage local** de
+Payload. No se estrena S3.
+
+**Lo que hay medido del tamaño:** el clon sirve hoy `public/` con **473 ficheros
+y 37.4 MB**, de los que **452 ficheros y 36.1 MB son imágenes** — y eso son las
+11 páginas construidas. **SIN MEDIR:** cuánto suma el corpus entero (123 de las
+209 del grupo A llevan imagen, con `srcset`). El orden de magnitud conocido son
+decenas de MB, no GB, y a esa escala un volumen es más simple que un bucket.
+
+**Y es reversible, que es la mitad que importa de la decisión.** Migrar a S3 si
+crece es **cambiar el adaptador de storage y mover los ficheros**: no rehace el
+modelo de datos, porque la relación con el media ya es **relación a la colección**
+y no una clase con el id de otro sistema (**T3**, §3.2). Se toma la opción simple
+sabiendo el coste de deshacerla, no por no haber mirado la otra.
 
 ### ✅ CMS-0d · Next subido a 16.2.12 — EJECUTADA (2026-07-30)
 
@@ -262,13 +300,26 @@ analítica** — nada de seguimiento vive dentro del contenido:
 | **Swiper 8 desde jsDelivr** (`cdn.jsdelivr.net`) | 3 | 3 | **eliminación + sustitución**: es una galería montada a mano cargando una librería de terceros → **galería nativa** |
 | **Twitter/X** (`platform.twitter.com/widgets.js`) | 2 | 2 | **nodo-embed tipado** `proveedor: twitter` |
 | **Instagram** (`www.instagram.com/embed.js`) | 1 | 1 | **nodo-embed tipado** `proveedor: instagram` |
-| **Reproductor de NBC Washington** (`nbcwashington.com/portableplayer/?CID=…&autoplay=true`) | 1 | 1 | **decisión abierta**: embed de origen permitido, o **eliminación** — lleva `autoplay` y un `CID` que caducará |
+| **Reproductor de NBC Washington** (`nbcwashington.com/portableplayer/?CID=…&autoplay=true`) | 1 | 1 | **✅ resuelto (2026-07-30): eliminación + sustitución** → **enlace a la noticia**. Ver abajo |
+
+**El reproductor de NBC, decidido: se elimina y se sustituye por un enlace a la
+noticia.** Las dos razones ya estaban medidas y solo faltaba resolver: lleva
+`autoplay` —que un CMS propio no debería heredar de un tercero— y un `CID` que
+**caduca**, así que un embed convierte un documento del corpus en algo que se
+rompe solo el día que la cadena rote el identificador. Un enlace se degrada a
+enlace muerto; un embed se degrada a hueco. Y no cuesta un proveedor nuevo: la
+lista cerrada de abajo **se queda en cinco**.
 
 **Regla que sale de esto, y va a la whitelist:**
 
 > **`script` no entra.** En un CMS propio, script arbitrario dentro del contenido
-> no debe existir. Los 17 acaban en **nodo-embed tipado (8)** o en **eliminación
-> documentada con sustitución (9)**.
+> no debe existir. Los 17 acaban en **nodo-embed tipado (7)** o en **eliminación
+> documentada con sustitución (10)**.
+
+⚠ **Ese reparto era 8 · 9 hasta hoy, y estaba mal contado**: daba el de NBC por
+embed cuando su fila decía «decisión abierta». Con la decisión tomada el reparto
+real es **7 · 10** — Flourish 4 + Twitter 2 + Instagram 1 por un lado; FB3D 6 +
+Swiper 3 + NBC 1 por el otro. Suman 17 igual, y ahora por las razones ciertas.
 
 Y el nodo-embed tipado no es libre: **proveedor de una lista cerrada** —
 `youtube`, `ourworldindata`, `flourish`, `twitter`, `instagram`— más su
@@ -331,8 +382,10 @@ colección-índice de slugs) protege **el alta**; la guarda de build protege **e
 conjunto**. Son complementarias, no alternativas: el hook avisa a quien edita,
 la guarda caza lo que entre por cualquier otra vía.
 
-⚠ **Depende de CMS-0c.** Todo esto asume **rebuild por webhook**. Con ISR hay
-render en caliente y el §4 se relee entero.
+✅ **CMS-0c resuelta, y por la rama que este § asumía: rebuild por webhook.** Ya
+no hay condicional que arrastrar — **el §4 queda vigente tal como está escrito**,
+sin releer. La guarda de build de (3) es además la que corresponde: si las rutas
+se deciden en build, ahí es donde tiene que fallar la colisión.
 
 ---
 
@@ -360,7 +413,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 |---|---|---|
 | **CMS-1** | el caso de éxito tiene **dos patrones de ruta**: 53 en `/es/casos-de-exito/` y **4 en `/es/case-studies/`** (slug inglés) | un content type cuyo slug no determina su ruta necesita **el prefijo como campo** o una tabla de excepciones. **Abierta** |
 | **CLASE (S9–S11)** | 4 residuos de SECTOR con una causa: **componente calibrado con UNA instancia** | **es deuda de CMS-readiness, no de acabado**: un CMS no da un rango de contenido, da cualquiera. Los extremos ya están medidos (alto del slider @390: 265.06 · 300.14 · 300.16; `h1` de EDAR a 4 líneas) |
-| **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **Toca a CMS-0b**: la estrategia de media decide si reaparece |
+| **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **CMS-0b ya está decidida** (volumen persistente) y **no lo cierra ni lo reabre**: dónde viven los ficheros no decide qué variantes se generan. Lo que queda es el juego de tamaños que emita el CMS y su redondeo — **SIN MEDIR**, y es lo mismo con volumen que con S3, así que la reversibilidad de CMS-0b no lo toca |
 | **S1** | tarjetas de caso y de artículo: **la mitad construida del par listado→detalle** (206 páginas) | los modelos `CaseStudy`/`BlogPost` son la **proyección de teaser**: falta cuerpo, slug (hoy `href` absoluto al original), taxonomía y SEO |
 
 ---
@@ -369,14 +422,22 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 
 | # | decisión | bloquea |
 |---|---|---|
-| CMS-0b | media: volumen persistente vs S3 | migración de imágenes · M-IMG |
-| CMS-0c | publicación: rebuild vs ISR | **el §4 entero** |
 | CMS-0e | cuerpo: convertir al importar vs HTML crudo primero | la migración de las 209 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
-| §3.3 | el reproductor de NBC: embed o eliminación | migración |
 | T6 / A-SP9 | los `id` de los `h2`: conservar o regenerar | índice del artículo |
 | §1.5 | ¿SECTOR y MONOGRÁFICO son dos colecciones o una con discriminante? | la frontera de 3 campos sigue vigente: **dos** |
 | CMS-1 | prefijo de ruta del caso de éxito | grupo C |
+
+**Cerradas el 2026-07-30**, y dónde vive cada acta: **CMS-0d** (Next 16.2.12,
+§CMS-0d) · **CMS-0c** (rebuild por webhook, §CMS-0c) · **CMS-0b** (volumen
+persistente, §CMS-0b) · **§3.3** (el reproductor de NBC: eliminación con enlace a
+la noticia). De las cuatro, **la única que tocaba a otro § era CMS-0c**, y lo
+hizo confirmando el §4 en vez de cambiarlo.
+
+De las cinco que quedan, **ninguna bloquea ya instalar Payload**: son decisiones
+de contenido (cómo entra el cuerpo, cómo se modela la tabla, qué pasa con los
+`id`) y de modelado (una colección o dos, el prefijo del caso de éxito). El
+camino de infraestructura está despejado.
 
 ---
 
