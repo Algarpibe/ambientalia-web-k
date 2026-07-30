@@ -51,6 +51,8 @@
     "qa:c-rutas": "node scripts/qa/c-rutas.mjs",
     "qa:c-muestra": "node scripts/qa/c-muestra.mjs",
     "qa:c-behaviors": "node scripts/qa/c-behaviors.mjs",
+    "qa:c-cascaron": "node scripts/qa/c-cascaron.mjs",
+    "qa:c-spec": "node scripts/qa/c-spec.mjs",
     "qa:mono": "node scripts/qa/mono-cmp.mjs",
     "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
     "qa:clon-base": "node scripts/qa/clon-base.mjs",

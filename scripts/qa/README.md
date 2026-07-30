@@ -480,3 +480,27 @@ Tres cosas que costaron una corrida cada una y están anotadas en el código:
 - **Swiper clona slides y marca originales**: contar `.swiper-slide` da 17 donde
   hay 11, y filtrar por `includes("duplicate")` da 10 porque
   `swiper-slide-duplicate-prev` va sobre un **original**. Clase exacta.
+
+### Las dos `c-*` nuevas de C-3 (2026-07-30)
+
+| sonda | qué hace |
+|---|---|
+| `c-cascaron.mjs [ancho]` | **P-C3-2**: ritmo, tipografía y retícula del cascarón en 10 instancias (6 casos, 4 FAQ) elegidas adversarias. Juzga la **varianza entre instancias** —el discriminador del régimen plantillado—, nunca el test A. `SABOTAJE=forma`, el test en negativo, **escribe en otro fichero** |
+| `c-spec.mjs` | **transcribe** el contenido verbatim de las instancias que puebla C-3, y de paso cierra C-SP6/8/9/10/12. Cobra **P-C3-1** comparando el pie par a par |
+
+Tres cosas que costaron una corrida cada una y están anotadas en el código:
+
+- **`c-cascaron` medía un nodo de DENTRO del contenido rico** (`… > p`) y sacaba
+  varianza en tres ejes: era el `style="text-align: justify"` que escribe el
+  editor, por debajo de la frontera del contenedor de contenido. **Medir más
+  abajo de donde vive la propiedad invalida la medida igual que medir más
+  arriba**. El eje bueno es el contenedor.
+- **`c-spec` comparaba el pie ENTERO** y refutaba P-C3-1 por una diferencia de
+  `footer-legal`, que es otra sección — habría reabierto D5 sin motivo. El
+  veredicto tiene que cubrir exactamente la propiedad de la que habla la
+  predicción, y la sección se identifica **midiendo** (pie del caso menos pie de
+  la FAQ), no por su índice.
+- **`.case-detalles-txt > p` se deja el contenido de «Parámetros» fuera.** El
+  original escribe `<p><span>Parámetros:</span><br><ul>…</ul></p>`, y `<ul>`
+  dentro de `<p>` es inválido: el parser cierra el `<p>` antes, así que la lista
+  queda de **hermana**. El campo salía vacío — un dato plausible, no un error.
