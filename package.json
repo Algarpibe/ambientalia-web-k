@@ -32,7 +32,18 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "qa:offsets": "node scripts/qa/offsets.mjs",
+    "qa:tree": "node scripts/qa/tree-cmp.mjs",
+    "qa:cmp-sector": "node scripts/qa/cmp-sector.mjs",
+    "qa:enlaces": "node scripts/qa/enlaces.mjs",
+    "qa:corte": "node scripts/qa/corte-cuerpo.mjs",
+    "qa:esqueleto": "node scripts/qa/esqueleto.mjs",
+    "qa:mono": "node scripts/qa/mono-cmp.mjs",
+    "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
+    "qa:clon-base": "node scripts/qa/clon-base.mjs",
+    "qa:ruido": "node scripts/qa/ruido.mjs",
+    "qa:arbol-todos": "node scripts/qa/tree-todos.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

@@ -1123,7 +1123,9 @@ páginas no cambia.
 
 ### Pendientes
 
-- **S1 · Interiores de tarjeta** (−16.2 caso / −18.9 artículo). Ver arriba.
+- **S1 · RECLASIFICADO (2026-07-30): no es «interiores de tarjeta», es la mitad
+  construida de la mayor deuda del sitio.** Sigue midiendo −16.2 (caso) y −18.9
+  (artículo), pero eso ya no es lo que decide su prioridad. Ver **§S1** abajo.
 - **S2 · `ProductosTabs` en la home**: el original le da al panel
   `height: 500px` y `margin-bottom: 32`; el clon va a 497.5 con `mb 0`. En el
   sector se aplica (la lista de 3 ítems deja mandar al panel y sin los 500 el
@@ -1845,6 +1847,46 @@ Instrumento: `scripts/qa/offsets.mjs` (era `exp-detalle.mjs`, generalizada).
 Reporta por columna cuánto puede fallar dentro sin que la fila se mueva
 (`absorbe`) y el offset de cada nodo dentro de su padre. Documentada en
 `scripts/qa/README.md`.
+
+### S1 · RECLASIFICADO — la mitad construida del par listado→detalle (2026-07-30)
+
+**Estaba clasificado como residuo cosmético** —«interiores de tarjeta, −16.2 caso
+/ −18.9 artículo»—, en la lista de flecos de una página ya verificada. La
+reclasificación no viene de una medida nueva: **viene de saber qué hay al otro
+lado**, que es lo que aportó el censo y confirmó `docs/research/RECON-LISTADOS.md`.
+
+**La justificación, en tres datos medidos:**
+
+1. **Las dos formas que esas tarjetas pintan son las dos más numerosas del
+   original**: caso de éxito **57** páginas y entrada de blog **149**. Son **206
+   páginas**, el 59 % de las 347 que ningún arquetipo cubre.
+2. **`UltimosProyectos` y `UltimosArticulos` son la mitad *listado* de ese par, y
+   están construidos, verificados y reutilizados en 6 páginas.** La otra mitad
+   —la página de detalle— está al **0 %**.
+3. **Y los modelos que ya existen son la proyección de teaser, no el content
+   type.** `CaseStudy` y `BlogPost` (`src/types/kunak.ts`) tienen lo que necesita
+   un listado y nada de lo que necesita un detalle: **falta el cuerpo, el slug**
+   (guardan un `href` absoluto al original, así que no hay de dónde sacar la ruta
+   local), **la taxonomía** (el `<body>` de una entrada trae `tax-resource`), **el
+   SEO por instancia** y, en el caso de éxito, **su pie propio** (`tb_footer` 4
+   frente a 3). Cobertura de instancias: **3 de 149** y **3 de 57**.
+
+**Por qué el cambio de etiqueta importa y no es burocracia.** Como «fleco de
+tarjeta», S1 competía con residuos de décimas y se aplazaba por tamaño: −16.2 es
+pequeño. Como **mitad construida del par que cubre 206 páginas**, lo que se juega
+no es el Δ: es que **la geometría interior de esas dos tarjetas es la parte del
+arquetipo de detalle que ya está pagada**, y arreglarla es trabajo del arquetipo,
+no pulido de una página. Medirlo bien ahora evita calibrar el detalle contra un
+teaser que no cuadra.
+
+**Lo que NO cambia:** no se construye nada, no se toca el componente y el Δ sigue
+abierto con su número. Solo cambia de qué tanda es.
+
+**Y una consecuencia que llega sola**, para no descubrirla: el día que exista el
+arquetipo de detalle, los **6 `href`** de esas tarjetas pasan a ser fallo de
+`enlaces.mjs` **sin tocar la sonda** — la regla se deriva del
+`prerender-manifest`. Es el mismo mecanismo que convirtió 22 enlaces en fallo
+cuando el monográfico emitió sus rutas.
 
 ### E3 · El ALTO de la columna se imprimía y no se contaba
 

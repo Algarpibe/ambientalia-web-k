@@ -324,6 +324,43 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
+### Dos reglas sobre las sondas mismas
+
+Las sondas son el único sitio donde este proyecto mira la realidad, así que un
+defecto en ellas no se ve: se cree. Las dos reglas salieron de arreglar E1 y E3.
+
+**1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
+
+> **Toda sonda tiene UN solo canal de verdad: lo que imprime y lo que cuenta no
+> pueden discrepar.** Si un nivel del árbol se mira, se cuenta; si se cuenta y no
+> cierra el código de salida, se dice en la propia salida y por qué.
+
+Tres instancias, todas del 2026-07-30:
+
+| la sonda imprimía | y contaba | consecuencia |
+|---|---|---|
+| `SEC 3 SOBRA en clon` en `mono-cmp` | **nada** — ningún `continue` incrementaba | acto seguido `✅ 0 · 0 · 0` **con código 0**. Así vivió E1 una tanda entera |
+| `C1 h 539.45 → 909.72 Δ+370.27` (alto de columna) | **nada** | veredicto «exacto» con 6 columnas descuadradas en pantalla (E3) |
+| `offsets.mjs`, recién escrita: `OFFSET 28.8` en cinco filas intactas, `SPAN` donde el original tiene `<p>`, y el interior de un `CtaDescarga` como si fuera una columna | lo que le habían dicho | **tres defectos en mi propia sonda**, cazados antes de documentarla. El `28.8` era el `padding` de la fila; el nivel de columna no es el mismo en los dos cuerpos del clon |
+
+La tercera es la que importa: **la sonda nueva llegó con tres defectos**, y
+ninguno habría dado error — habrían dado números plausibles. Una sonda es código
+sin tests; el único control es mirar su salida contra algo que ya sabes.
+
+**2 · Una sonda que no congela su salida produce afirmaciones que no se pueden
+auditar después.**
+
+> **Todas escriben en `medidas/`.** Si una conclusión se cita en un doc, tiene que
+> existir el fichero del que salió.
+
+`tree-cmp.mjs` y `mono-cmp.mjs` **no escribían nada**: sus números están citados
+en el acta del monográfico y en `HANDOFF.md`, y la única copia era la consola de
+quien las corrió. Por eso, cuando apareció E1, demostrar que no había falseado
+nada **exigió volver a medir** en vez de diffear un fichero — con el original
+vivo por medio, que es la peor forma de tener que probar algo. Corregido: las dos
+congelan, y `w()` resuelve contra `scripts/qa/` para que el `cwd` no parta las
+salidas en dos árboles.
+
 El corolario práctico, en dos mitades — la segunda se aprendió cazando la
 primera:
 

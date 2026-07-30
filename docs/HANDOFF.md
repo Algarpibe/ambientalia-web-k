@@ -27,6 +27,7 @@ fusión (si se hace) es tanda propia.
 | `…/EXPERIMENTO-URBANO.md` | el experimento pre-registrado + **el ACTA (§8)**: H1 rechazada por C1, la frontera son 3 campos |
 | `docs/PENDIENTES-QA.md` §MONOGRÁFICO | el acta de QA: qué cuadra, qué no y por qué |
 | `docs/research/CENSO-ARQUETIPOS.md` | **cuánto le falta a la biblioteca**: 7 formas cubiertas de 23, y las 14 que no |
+| `docs/research/RECON-LISTADOS.md` | las 7 formas que suman 321 páginas **son 4 arquetipos**, medido por el esqueleto. Con pre-registro, y con las 2 notas de esquema para el CMS |
 
 ## Estado
 
@@ -155,6 +156,38 @@ El censo **no decide construir nada**. Y ojo con su §0: el sitemap omite los
 `noindex`, y las 10 páginas de esa familia que están contadas se encontraron
 porque el clon ya enlazaba a ellas. **380 es un suelo.**
 
+### Y esas 7 formas son 4 arquetipos, no 1 (recon del 2026-07-30)
+
+`docs/research/RECON-LISTADOS.md`, con pre-registro y por el **esqueleto**. La
+medida decisiva no fue geométrica: Divi sufija cada sección con la plantilla del
+Theme Builder que la emite (`_tb_body`, `_tb_footer`) y marca `et-tb-has-body` en
+el `<body>`.
+
+| grupo | formas | páginas | qué lo separa |
+|---|---|---|---|
+| **A · detalle plantillado** | blog · término · doc. científico | **209** | `tb_body` de 2 secciones + módulo `post_content` |
+| **B · listado plantillado** | archivo de taxonomía | **23** | mismo `tb_body`, **sin** `post_content`: el medio es una consulta con paginación |
+| **C · detalle sin plantilla de cuerpo** | caso de éxito · FAQ | **76** | **sin `et-tb-has-body`**: el cuerpo lo emite la plantilla del tema. Y su pie es otro (`tb_footer` 4 vs 3) |
+| **D · página del builder** | artículo de KB | **13** | lo compone el editor, **como SECTOR y MONOGRÁFICO** |
+
+**El mayor cubre 209 de 321 páginas (65 %) con un solo esqueleto**, tres formas
+que coinciden en las seis medidas. «Varios» es firme (basta una diferencia
+estructural y hay tres); la composición **interna** de cada grupo es
+**provisional**: 2 instancias por forma no prueban una plantilla.
+
+Pista anotada y **no perseguida**: el grupo D es una página del builder, o sea del
+tipo que ya sabemos construir, y su cuerpo es lo que `MonoSeccion[]` modela. Si lo
+expresa, esas 13 no cuestan arquetipo nuevo — **hipótesis**, se prueba con un
+experimento pre-registrado, no de oído.
+
+Y dos **notas de esquema para el CMS** (no son pendientes de QA, no hay nada que
+arreglar): el caso de éxito tiene **dos patrones de ruta** (`/es/casos-de-exito/`
+y 4 en `/es/case-studies/`), y **202 slugs de cinco familias comparten el espacio
+de nombres plano de `/es/`** —150 entradas de blog, 38 términos, 7 páginas, 6 del
+CPT `solutions`—, incluidas las cuatro rutas que el clon ya sirve. Cualquier
+`[slug]` a nivel raíz captura las cinco a la vez. Hay que decidirlo **antes** de
+modelar.
+
 ## Lo que NO hay que hacer al empezar
 
 - **No arreglar S9, S10 ni S11 sueltos.** Ver la nota de **CLASE** en
@@ -189,20 +222,34 @@ Probado que no falseó nada: ver **E1** en `PENDIENTES-QA.md`.
 
 ## Comandos
 
+**Las sondas se lanzan por `npm run qa:*`, desde la raíz. No hace falta `cd`.**
+
 ```bash
 npm run check                            # lint + typecheck + build
 npm run build && npm run start           # tras editar: parar, rehacer, relanzar
-cd scripts/qa && npm i --no-save puppeteer-core
-node enlaces.mjs                         # guarda de rutas locales — limpia hoy
-MARCADOR="…" node clon-base.mjs 1440 --cmp antes.json
-node mono-cmp.mjs edar 1440
-node dos-rutas.mjs /sectores/a /sectores/b 1440
-node ruido.mjs 3                         # suelo de ruido, antes de juzgar nada
+npm i --no-save puppeteer-core           # una vez
+
+npm run qa:enlaces                       # guarda de rutas locales — limpia hoy
+npm run qa:corte                         # guarda del corte del cuerpo — 12/12
+npm run qa:esqueleto                     # topología del original por forma
+npm run qa:offsets -- /sectores/calidad-del-aire-en-las-ciudades 1440
+npm run qa:mono -- edar 1440
+npm run qa:dos-rutas -- /sectores/a /sectores/b 1440
+npm run qa:ruido -- 3                    # suelo de ruido, antes de juzgar nada
 ```
 
-⚠ En Git Bash, `MARCADOR_RUTA=/sectores/x` **se corrompe**: MSYS lo traduce a
-`C:/Program Files/Git/sectores/x`. Las sondas con rutas en variables de entorno
-o en `argv` se lanzan desde **PowerShell**.
+El `--` es obligatorio para que npm pase los argumentos al script. El catálogo
+completo está en `scripts/qa/README.md`.
+
+**Por qué envueltas:** dan un prefijo estable que se autoriza **una vez** en
+`.claude/settings.json` y vale para cualquier argumento. A pelo, cada invocación
+nueva era un comando distinto y pedía permiso — **360 reglas de un solo uso**
+acumuladas antes de arreglarlo.
+
+Dos trampas del entorno, ya muertas en `lib.mjs` y no en la documentación:
+`w()` resuelve contra `scripts/qa/` y no contra el `cwd` (si no, lanzarlas desde
+la raíz partía `medidas/` en dos árboles **sin dar error**), y `ruta()` deshace la
+traducción de MSYS, así que `/sectores/x` funciona **también desde Git Bash**.
 
 Y lo de siempre, que sigue costando cuando se olvida: **matar el servidor por
 puerto**, nunca con `pkill`, y **verificar un marcador del cambio en el HTML

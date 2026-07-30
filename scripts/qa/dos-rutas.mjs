@@ -39,10 +39,12 @@
  * slider no sale Δ0, lo que cambió no era el cuerpo). Quien reutilice la sonda
  * tiene que saber que esa fila de la salida es el slider.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { launch, openPage, settle, w, ruta } from "./lib.mjs";
 
 const BASE = process.env.CLON || "http://localhost:3000";
-const [rutaA, rutaB] = process.argv.slice(2, 4);
+// `ruta()` deshace la traducción de MSYS (`/sectores/x` →
+// `C:/Program Files/Git/sectores/x`) y acepta la ruta con o sin barra inicial.
+const [rutaA, rutaB] = process.argv.slice(2, 4).map(ruta);
 const width = Number(process.argv[4] || 1440);
 const etiqueta = process.argv[5] ? `-${process.argv[5]}` : "";
 const mobile = width <= 500;
@@ -56,18 +58,19 @@ if (!rutaA || !rutaB) {
 
 const marcador = process.env.MARCADOR || null;
 if (marcador) {
-  const ruta = process.env.MARCADOR_RUTA || rutaB;
-  const res = await fetch(BASE + ruta);
+  // También por `ruta()`: MARCADOR_RUTA es la variable que MSYS corrompía.
+  const rutaMarcador = process.env.MARCADOR_RUTA ? ruta(process.env.MARCADOR_RUTA) : rutaB;
+  const res = await fetch(BASE + rutaMarcador);
   const html = res.ok ? await res.text() : "";
   if (!html.includes(marcador)) {
     console.error(
-      `\n❌ MARCADOR no encontrado en ${BASE + ruta} (HTTP ${res.status}).\n` +
+      `\n❌ MARCADOR no encontrado en ${BASE + rutaMarcador} (HTTP ${res.status}).\n` +
         `   El servidor NO sirve el build que crees. Mátalo POR PUERTO, rehaz\n` +
         `   \`npm run build\`, relánzalo y repite. No se mide nada.\n`,
     );
     process.exit(2);
   }
-  console.log(`✓ marcador presente en ${ruta} — el build servido es el nuevo`);
+  console.log(`✓ marcador presente en ${rutaMarcador} — el build servido es el nuevo`);
 } else {
   console.log("⚠ sin MARCADOR: no se ha discriminado el build servido");
 }
@@ -128,8 +131,9 @@ const extraer = function () {
 };
 
 const { browser } = await launch();
-async function medir(ruta) {
-  const { page } = await openPage(browser, BASE + ruta, {
+// el parámetro NO se llama `ruta`: taparía el import del mismo nombre
+async function medir(destino) {
+  const { page } = await openPage(browser, BASE + destino, {
     width,
     height: mobile ? 844 : 900,
     mobile,

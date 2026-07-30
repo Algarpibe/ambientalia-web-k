@@ -70,7 +70,53 @@ export async function settle(page) {
   await new Promise((r) => setTimeout(r, 800));
 }
 
+/** Directorio de las sondas. Todo lo relativo se resuelve contra AQUÍ. */
+export const QA = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
+
+/**
+ * Normaliza una ruta de página recibida por `argv` o por variable de entorno.
+ *
+ * ── El problema, que ya costó dos sesiones ─────────────────────────────────
+ * **Git Bash (MSYS) traduce cualquier argumento que empiece por `/` a una ruta
+ * de Windows.** `/sectores/x` llega al script como
+ * `C:/Program Files/Git/sectores/x`, y la sonda muere con `Invalid URL` o
+ * —peor— navega a algo que no es lo que pediste. El apaño documentado era
+ * "lánzalo desde PowerShell", que es una regla que hay que recordar: la clase de
+ * fallo seguía viva.
+ *
+ * Aquí se corta en el origen. Acepta las tres formas y devuelve siempre
+ * `/sectores/x`:
+ *
+ *   /sectores/x                              (PowerShell, o Bash con MSYS2_ARG_CONV_EXCL)
+ *   sectores/x                               (sin barra, inmune a MSYS)
+ *   C:/Program Files/Git/sectores/x          (lo que MSYS hace con la primera)
+ *
+ * El prefijo de MSYS se detecta por el directorio de instalación de Git, no por
+ * una lista de rutas del sitio: así no hay que mantenerla.
+ */
+export function ruta(arg) {
+  if (!arg) return arg;
+  let r = String(arg).replace(/\\/g, "/");
+  // deshacer la traducción de MSYS: .../Git/<lo que yo escribí>
+  const msys = r.match(/^[A-Za-z]:\/.*?\/Git(\/.*)$/);
+  if (msys) r = msys[1];
+  if (!r.startsWith("/")) r = "/" + r;
+  return r.replace(/\/+$/, "") || "/";
+}
+
+/**
+ * Congela una salida. **La ruta relativa se resuelve contra `scripts/qa/`, no
+ * contra el `cwd`.**
+ *
+ * Antes iba contra el `cwd`, así que la sonda solo escribía en el sitio correcto
+ * si la lanzabas desde `scripts/qa/`. Desde la raíz —que es como las invocan los
+ * `npm run qa:*`— habría creado un `medidas/` paralelo en la raíz del repo y las
+ * salidas congeladas se habrían partido en dos árboles sin que nadie lo notara.
+ * Un fallo de esa forma no da error: da dos verdades.
+ */
 export function w(file, data) {
-  fs.writeFileSync(file, typeof data === "string" ? data : JSON.stringify(data, null, 2));
-  console.log("→", file);
+  const destino = path.isAbsolute(file) ? file : path.join(QA, file);
+  fs.mkdirSync(path.dirname(destino), { recursive: true });
+  fs.writeFileSync(destino, typeof data === "string" ? data : JSON.stringify(data, null, 2));
+  console.log("→", path.relative(QA, destino).replace(/\\/g, "/"));
 }

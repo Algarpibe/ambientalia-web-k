@@ -11,27 +11,56 @@ navegador en las dependencias de la app.
 
 ## Cómo correrlas
 
+**La forma canónica son los `npm run qa:*`, desde la raíz del repo.** No hace
+falta `cd`: cada sonda resuelve sus rutas contra su propio directorio, no contra
+el `cwd`.
+
 ```bash
-cd scripts/qa
-npm i --no-save puppeteer-core     # ~1 MB: usa el Chrome ya instalado
-node tree-todos.mjs 1440           # desktop
-node tree-todos.mjs 390            # móvil (device metrics 390×844)
+npm i --no-save puppeteer-core          # ~1 MB: usa el Chrome ya instalado
+
+npm run qa:enlaces                      # guarda de rutas locales, las dos direcciones
+npm run qa:corte                        # guarda del corte del cuerpo, 6 rutas × 2 anchos
+npm run qa:offsets -- /sectores/calidad-del-aire-en-las-ciudades 1440
+npm run qa:tree -- urbano 1440          # original vs clon, árbol sección→fila
+npm run qa:cmp-sector -- industria 390  # original vs clon, anclas de texto
+npm run qa:mono -- edar 1440            # original vs clon, módulo a módulo
+npm run qa:dos-rutas -- /sectores/a /sectores/b 1440
+npm run qa:clon-base -- 1440 --cmp medidas/clon-base-1440.json
+npm run qa:ruido -- 3                   # suelo de ruido, antes de juzgar nada
+npm run qa:arbol-todos -- 1440          # los 8 sectores del original entre sí
 ```
+
+**El `--` es obligatorio** para que npm pase los argumentos al script en vez de
+comérselos.
+
+Por qué envueltas en `npm run` y no `node scripts/qa/x.mjs` a pelo: da un
+**prefijo estable** (`npm run qa:…`) que se autoriza una vez en
+`.claude/settings.json` y vale para cualquier combinación de argumentos. A pelo,
+cada invocación nueva era un comando distinto y pedía permiso otra vez — 360
+reglas de un solo uso acumuladas antes de arreglarlo.
 
 `lib.mjs` asume el Chrome de Windows en
 `C:\Program Files\Google\Chrome\Application\chrome.exe`; cámbialo ahí si tu
 instalación está en otro sitio.
 
-Las sondas que comparan contra el clon (`tree-cmp`, `cmp-sector`) necesitan el
-clon servido en `localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con
-`next start`, tras editar hay que **parar, `npm run build` y relanzar**, y el
-servidor se mata **por puerto**.
+Las sondas que comparan contra el clon necesitan el clon servido en
+`localhost:3000`. Ojo con lo que avisa `CLAUDE.md`: con `next start`, tras editar
+hay que **parar, `npm run build` y relanzar**, y el servidor se mata **por
+puerto**.
 
-⚠ **Las sondas que reciben una ruta se lanzan desde PowerShell, no desde Git
-Bash.** MSYS traduce cualquier cosa que empiece por `/` a una ruta de Windows, así
-que `MARCADOR_RUTA=/sectores/x` llega como `C:/Program Files/Git/sectores/x` y la
-sonda revienta con `Invalid URL`. Afecta a `offsets.mjs`, `dos-rutas.mjs` y a
-`clon-base.mjs` con `MARCADOR_RUTA`.
+### Dos cosas que el `cwd` y Git Bash rompían, ya arregladas en `lib.mjs`
+
+- **`w()` resuelve contra `scripts/qa/`, no contra el `cwd`.** Antes escribía
+  donde estuvieras: lanzada desde la raíz habría creado un `medidas/` paralelo y
+  las salidas congeladas se habrían partido en dos árboles **sin dar ningún
+  error**. Un fallo de esa forma no falla: da dos verdades.
+- **`ruta()` deshace la traducción de MSYS.** Git Bash convierte cualquier
+  argumento que empiece por `/` en una ruta de Windows, así que `/sectores/x`
+  llegaba como `C:/Program Files/Git/sectores/x` y la sonda moría con
+  `Invalid URL`. El apaño era «lánzalo desde PowerShell», que hay que recordar.
+  Ahora las tres formas valen y dan lo mismo: `/sectores/x`, `sectores/x` y el
+  `C:/Program Files/Git/sectores/x` que MSYS fabrica. Cubre `argv` y
+  `MARCADOR_RUTA`.
 
 ## Las sondas
 

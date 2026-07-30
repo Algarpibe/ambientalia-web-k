@@ -1,0 +1,651 @@
+{
+  "meta": {
+    "ruta": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+    "width": 390
+  },
+  "A": {
+    "aviso": null,
+    "secciones": [
+      {
+        "i": 0,
+        "h": 6853.5,
+        "filas": [
+          {
+            "j": 0,
+            "h": 947.19,
+            "txt": "¿Qué cambia con monitorización con",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 603.59,
+                "off": 0,
+                "hContenido": 562.59,
+                "absorbe": 41,
+                "mb": 30,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 141.25,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "¿Qué cambia con monitorización"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 391.34,
+                    "off": 171.25,
+                    "mb": 41,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "De reaccionar tarde a tener co"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 223.59,
+                "off": 633.59,
+                "hContenido": 223.59,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 223.59,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 1412.25,
+            "txt": "¿Qué gases se deben medir en una E",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 1310.25,
+                "off": 0,
+                "hContenido": 1310.25,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 141.25,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "¿Qué gases se deben medir en u"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 1139,
+                    "off": 171.25,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 45,
+                    "txt": "Los gases clave que puedes con"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 2,
+            "h": 586.27,
+            "txt": "¿Dónde se generan las emisiones en",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 526.27,
+                "off": 0,
+                "hContenido": 516.22,
+                "absorbe": 10.05,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 185,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "¿Dónde se generan las emisione"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 84,
+                    "off": 215,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Cada fase, gases y riesgos dis"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>IMG",
+                    "h": 187.22,
+                    "off": 329,
+                    "mb": 10.05,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 3,
+            "h": 2460.81,
+            "txt": "Tabla resumen: procesos y emisione",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 2400.81,
+                "off": 0,
+                "hContenido": 2400.81,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H2",
+                    "h": 121,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Tabla resumen: procesos y emis"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 2249.81,
+                    "off": 151,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Fase del procesoGases generado"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 4,
+            "h": 1346.98,
+            "txt": "Alertas y toma de decisionesActúa ",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 492.48,
+                "off": 0,
+                "hContenido": 492.48,
+                "absorbe": 0,
+                "mb": 30,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 492.48,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 764.5,
+                "off": 522.48,
+                "hContenido": 748.5,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 112.5,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Alertas y toma de decisiones"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 121,
+                    "off": 112.5,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Actúa antes de que el problema"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 381,
+                    "off": 263.5,
+                    "mb": 30,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 36,
+                    "txt": "Umbrales configurables por gas"
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 674.5,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Solicita una demo técnica→"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "i": 1,
+        "h": 1196.97,
+        "filas": [
+          {
+            "j": 0,
+            "h": 1096.97,
+            "txt": "Control perimetral y gestión de qu",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 598.75,
+                "off": 0,
+                "hContenido": 598.75,
+                "absorbe": 0,
+                "mb": 30,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 185,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Control perimetral y gestión d"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 383.75,
+                    "off": 215,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Responder con hechos,no con su"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 408.22,
+                "off": 628.75,
+                "hContenido": 408.22,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 141.25,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Seguridad y prevención en plan"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 236.97,
+                    "off": 171.25,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Una capa adicional de protecci"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "i": 2,
+        "h": 4135.73,
+        "filas": [
+          {
+            "j": 0,
+            "h": 1789.25,
+            "txt": "Beneficios clave para la operación",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 882.25,
+                "off": 0,
+                "hContenido": 882.25,
+                "absorbe": 0,
+                "mb": 30,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 141.25,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Beneficios clave para la opera"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 711,
+                    "off": 171.25,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 36,
+                    "txt": "Controla e identifica las fuen"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 817,
+                "off": 912.25,
+                "hContenido": 817,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 185,
+                    "off": 0,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Aplicaciones reales de la moni"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 602,
+                    "off": 215,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 36,
+                    "txt": "Control continuo de olores en "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 1,
+            "h": 825.06,
+            "txt": "Da el siguiente pasoActúa antes de",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 541.47,
+                "off": 0,
+                "hContenido": 525.47,
+                "absorbe": 16,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>H3",
+                    "h": 97.5,
+                    "off": 0,
+                    "mb": 20,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 35,
+                    "lh": 43.75,
+                    "txt": "Da el siguiente paso"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>H2",
+                    "h": 121,
+                    "off": 117.5,
+                    "mb": 30,
+                    "pb": 10,
+                    "ls": "-0.5px",
+                    "fs": 37,
+                    "lh": 37,
+                    "txt": "Actúa antes de que el problema"
+                  },
+                  {
+                    "l": 2,
+                    "tag": "DIV>DIV",
+                    "h": 152.97,
+                    "off": 268.5,
+                    "mb": 30,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Descubre cómo la monitorizació"
+                  },
+                  {
+                    "l": 3,
+                    "tag": "DIV>A",
+                    "h": 74,
+                    "off": 451.47,
+                    "mb": 16,
+                    "pb": 9,
+                    "ls": "normal",
+                    "fs": 15,
+                    "lh": 25.5,
+                    "txt": "Solicita una demo técnica→"
+                  }
+                ]
+              },
+              {
+                "k": 1,
+                "h": 223.59,
+                "off": 541.47,
+                "hContenido": 223.59,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>IMG",
+                    "h": 223.59,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 2,
+            "h": 621.14,
+            "txt": "¿Quieres controlar el impacto de t",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 591.14,
+                "off": 0,
+                "hContenido": 578.64,
+                "absorbe": 12.5,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>DIV",
+                    "h": 578.64,
+                    "off": 0,
+                    "mb": 0,
+                    "pb": 40,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "¿Quieres controlar el impacto "
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "j": 3,
+            "h": 836.28,
+            "txt": "Proyectos por todo el mundoAlgunos",
+            "nivel": "flex",
+            "alignItems": "normal",
+            "flexDirection": "column",
+            "columnas": [
+              {
+                "k": 0,
+                "h": 776.28,
+                "off": 0,
+                "hContenido": 776.28,
+                "absorbe": 0,
+                "mb": 0,
+                "modulos": [
+                  {
+                    "l": 0,
+                    "tag": "DIV>DIV",
+                    "h": 189.28,
+                    "off": 0,
+                    "mb": 17,
+                    "pb": 0,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "Proyectos por todo el mundoAlg"
+                  },
+                  {
+                    "l": 1,
+                    "tag": "DIV>DIV",
+                    "h": 570,
+                    "off": 206.28,
+                    "mb": 0,
+                    "pb": 20,
+                    "ls": "normal",
+                    "fs": 18,
+                    "lh": 30.6,
+                    "txt": "MCP - EDAR ArazuriEDAR (Estaci"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

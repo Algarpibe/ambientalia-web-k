@@ -1,0 +1,988 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-07-30"
+  },
+  "formas": {
+    "ENTRADA DE BLOG": [
+      {
+        "url": "https://kunakair.com/es/nos-hemos-mudado/",
+        "bodyClases": [
+          "single",
+          "single-post",
+          "postid-5456",
+          "single-format-standard",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioBlog¡Nos hemos mudado!"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "image",
+              "post_content",
+              "with_border"
+            ],
+            "txt": "¡Nos hemos mudado! 24 mayo 2019 - "
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "¡Nos hemos mudado!",
+        "nSecciones": 2
+      },
+      {
+        "url": "https://kunakair.com/es/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar/",
+        "bodyClases": [
+          "single",
+          "single-post",
+          "postid-33587",
+          "single-format-standard",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer",
+          "tax-resource"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 3,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 3,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioRecursosSeminarios WebWebina"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "image",
+              "with_border",
+              "post_content"
+            ],
+            "txt": "Webinar: Detección temprana de epi"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_2_tb_body et_pb_with_background",
+            "modulos": [
+              "text",
+              "blog_",
+              "button_module_wrapper",
+              "button"
+            ],
+            "txt": "También te puede interesar Related"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 3,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Webinar: Detección temprana de episodios de contaminación po",
+        "nSecciones": 3
+      }
+    ],
+    "CASO DE EXITO": [
+      {
+        "url": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+        "bodyClases": [
+          "single",
+          "single-case-studies",
+          "postid-11609",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 4,
+            "propia": 1
+          },
+          "nSeccionesDivi": 1,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioCasos de éxitoAnálisis de la"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": true,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Análisis de la calidad del aire mediante estaciones móviles ",
+        "nSecciones": 1
+      },
+      {
+        "url": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+        "bodyClases": [
+          "single",
+          "single-case-studies",
+          "postid-29107",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 4,
+            "propia": 1
+          },
+          "nSeccionesDivi": 1,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioCasos de éxitoRed global de "
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": true,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Red global de calidad de aire en pistas de atletismo de Worl",
+        "nSecciones": 1
+      }
+    ],
+    "TERMINO KUNAKPEDIA": [
+      {
+        "url": "https://kunakair.com/es/sensor-calidad-aire/",
+        "bodyClases": [
+          "single",
+          "single-glossary",
+          "postid-52148",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioRecursosKunakpediaSensor de "
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "with_border",
+              "post_content"
+            ],
+            "txt": "Sensor de calidad del aire, vigila"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Sensor de calidad del aire, vigilante de la atmósfera",
+        "nSecciones": 2
+      },
+      {
+        "url": "https://kunakair.com/es/redes-de-vigilancia-de-calidad-del-aire/",
+        "bodyClases": [
+          "single",
+          "single-glossary",
+          "postid-58822",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioRecursosKunakpediaRedes de v"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "with_border",
+              "post_content"
+            ],
+            "txt": "Redes de vigilancia de calidad del"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Redes de vigilancia de calidad del aire: clave para la monit",
+        "nSecciones": 2
+      }
+    ],
+    "DOCUMENTO CIENTIFICO": [
+      {
+        "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones/",
+        "bodyClases": [
+          "single",
+          "single-scientific-docs",
+          "postid-61981",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "with_border",
+              "post_content",
+              "button_module_wrapper",
+              "button"
+            ],
+            "txt": "Uso de un sistema basado en sensor"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Uso de un sistema basado en sensores para medir con precisió",
+        "nSecciones": 2
+      },
+      {
+        "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal/",
+        "bodyClases": [
+          "single",
+          "single-scientific-docs",
+          "postid-61986",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "with_border",
+              "post_content",
+              "button_module_wrapper",
+              "button"
+            ],
+            "txt": "Cartografía móvil de la calidad de"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Cartografía móvil de la calidad del aire mediante sensores i",
+        "nSecciones": 2
+      }
+    ],
+    "FAQ SUELTA": [
+      {
+        "url": "https://kunakair.com/es/faqs/el-equipo-tiene-memoria-interna/",
+        "bodyClases": [
+          "single",
+          "single-faqs",
+          "postid-65794",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 0,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 1,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "¿El equipo tiene memoria interna?",
+        "nSecciones": 0
+      },
+      {
+        "url": "https://kunakair.com/es/faqs/a-que-altura-debe-instalarse-el-equipo/",
+        "bodyClases": [
+          "single",
+          "single-faqs",
+          "postid-65796",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 0,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 1,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "¿A qué altura debe instalarse el equipo?",
+        "nSecciones": 0
+      }
+    ],
+    "ARCHIVO DE TAXONOMIA": [
+      {
+        "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+        "bodyClases": [
+          "archive",
+          "tag",
+          "tag-calidad-del-aire",
+          "tag-411",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioBlogCalidad del aire"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "blog_",
+              "post",
+              "sidebar_"
+            ],
+            "txt": "TagEtiquetaÉtiquette Calidad del a"
+          }
+        ],
+        "propios": {
+          "paginacion": true,
+          "rejillaEntradas": 9,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Calidad del aire",
+        "nSecciones": 2
+      },
+      {
+        "url": "https://kunakair.com/es/etiqueta/co2-es/",
+        "bodyClases": [
+          "archive",
+          "tag",
+          "tag-co2-es",
+          "tag-618",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ],
+        "cuerpo": {
+          "esBuilder": false,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 2,
+            "tb_footer": 3,
+            "propia": 0
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioBlogCO2"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1_tb_body",
+            "modulos": [
+              "text",
+              "blog_",
+              "post",
+              "sidebar_"
+            ],
+            "txt": "TagEtiquetaÉtiquette CO2 El dióxid"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 7,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "CO2",
+        "nSecciones": 2
+      }
+    ],
+    "ARTICULO DE KB": [
+      {
+        "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "bodyClases": [
+          "page-template-default",
+          "page",
+          "page-id-25859",
+          "page-child",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ],
+        "cuerpo": {
+          "esBuilder": true,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 1,
+            "tb_footer": 3,
+            "propia": 1
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "sticky_module",
+              "sidebar_",
+              "text",
+              "post_content",
+              "image",
+              "blurb"
+            ],
+            "txt": "Kunak AIR Artículos de ayuda ¿Qué "
+          },
+          {
+            "clases": "et_pb_section et_pb_section_0",
+            "modulos": [
+              "text",
+              "image",
+              "blurb"
+            ],
+            "txt": "Kunak Help Center ¿Qué es Kunak AI"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Kunak Help Center",
+        "nSecciones": 2
+      },
+      {
+        "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "bodyClases": [
+          "page-template-default",
+          "page",
+          "page-id-25881",
+          "page-child",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ],
+        "cuerpo": {
+          "esBuilder": true,
+          "tieneTbBody": true,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 1,
+            "tb_footer": 3,
+            "propia": 1
+          },
+          "nSeccionesDivi": 2,
+          "tieneEntryContent": true,
+          "tienePostContentModule": true
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0_tb_body",
+            "modulos": [
+              "sticky_module",
+              "sidebar_",
+              "text",
+              "post_content",
+              "image",
+              "blurb"
+            ],
+            "txt": "Kunak AIR Artículos de ayuda ¿Qué "
+          },
+          {
+            "clases": "et_pb_section et_pb_section_0",
+            "modulos": [
+              "text",
+              "image",
+              "blurb"
+            ],
+            "txt": "Kunak Help Center ¿Qué puedes hace"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 0,
+          "barraLateralContenido": true
+        },
+        "cola": {
+          "sliderAncho": false,
+          "bloqueK": false,
+          "newsletter": false
+        },
+        "h1": "Kunak Help Center",
+        "nSecciones": 2
+      }
+    ],
+    "· control SECTOR": [
+      {
+        "url": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+        "bodyClases": [
+          "page-template",
+          "page-template-sectors",
+          "page-template-sectors-php",
+          "page",
+          "page-id-24961",
+          "page-child",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ],
+        "cuerpo": {
+          "esBuilder": true,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 3,
+            "propia": 7
+          },
+          "nSeccionesDivi": 7,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0 et_pb_with_background",
+            "modulos": [
+              "text"
+            ],
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "clases": "et_pb_section et_pb_section_2",
+            "modulos": [
+              "image",
+              "button_module_wrapper",
+              "button",
+              "text"
+            ],
+            "txt": "Quiero saber más Descargar catálog"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_3",
+            "modulos": [
+              "code"
+            ],
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "clases": "et_pb_section et_pb_section_4",
+            "modulos": [
+              "image",
+              "text"
+            ],
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_5 et_pb_fullwidth_section",
+            "modulos": [
+              "fullwidth_slider_",
+              "slide"
+            ],
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_6 et_pb_with_background",
+            "modulos": [
+              "image",
+              "text",
+              "button_module_wrapper",
+              "blog_"
+            ],
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 3,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": true,
+          "bloqueK": true,
+          "newsletter": false
+        },
+        "h1": "Calidad del aire en las ciudades",
+        "nSecciones": 7
+      }
+    ],
+    "· control MONOGRAFICO": [
+      {
+        "url": "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+        "bodyClases": [
+          "page-template",
+          "page-template-sectors",
+          "page-template-sectors-php",
+          "page",
+          "page-id-67817",
+          "page-child",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ],
+        "cuerpo": {
+          "esBuilder": true,
+          "tieneTbBody": false,
+          "porOrigen": {
+            "tb_header": 1,
+            "tb_body": 0,
+            "tb_footer": 3,
+            "propia": 8
+          },
+          "nSeccionesDivi": 8,
+          "tieneEntryContent": true,
+          "tienePostContentModule": false
+        },
+        "esqueleto": [
+          {
+            "clases": "et_pb_section et_pb_section_0 et_pb_with_background",
+            "modulos": [
+              "text"
+            ],
+            "txt": ""
+          },
+          {
+            "clases": "et_pb_section et_pb_section_1",
+            "modulos": [
+              "text"
+            ],
+            "txt": "InicioSectoresMonitorización ambie"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_2",
+            "modulos": [
+              "image",
+              "button_module_wrapper",
+              "button",
+              "text"
+            ],
+            "txt": "Solicita una demo técnica Descarga"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_3",
+            "modulos": [
+              "image",
+              "text",
+              "button_module_wrapper"
+            ],
+            "txt": "¿Qué cambia con monitorización con"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_4",
+            "modulos": [
+              "image",
+              "text"
+            ],
+            "txt": "Control perimetral y gestión de qu"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_5",
+            "modulos": [
+              "image",
+              "text",
+              "button_module_wrapper",
+              "code",
+              "map_"
+            ],
+            "txt": "Beneficios clave para la operación"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_6 et_pb_fullwidth_section",
+            "modulos": [
+              "fullwidth_slider_",
+              "slide"
+            ],
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "clases": "et_pb_section et_pb_section_7 et_pb_with_background",
+            "modulos": [
+              "image",
+              "text",
+              "button_module_wrapper",
+              "blog_"
+            ],
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ],
+        "propios": {
+          "paginacion": false,
+          "rejillaEntradas": 3,
+          "barraLateralContenido": false
+        },
+        "cola": {
+          "sliderAncho": true,
+          "bloqueK": true,
+          "newsletter": false
+        },
+        "h1": "Monitorización ambiental en EDAR para el control de emisione",
+        "nSecciones": 8
+      }
+    ]
+  }
+}

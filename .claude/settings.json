@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(npm run qa:*)",
+      "PowerShell(npm run qa:*)",
+      "Bash(npm run build)",
+      "PowerShell(npm run build)",
+      "Bash(npm run check)",
+      "PowerShell(npm run check)",
+      "Bash(npm run start)",
+      "PowerShell(npm run start)",
+      "Bash(npm run lint)",
+      "PowerShell(npm run lint)",
+      "Bash(npm run typecheck)",
+      "PowerShell(npm run typecheck)"
+    ]
+  }
+}

@@ -35,14 +35,17 @@
  *
  * Solo necesita el clon servido: es determinista y no toca el original.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { launch, openPage, settle, w, ruta } from "./lib.mjs";
 
 const BASE = process.env.CLON || "http://localhost:3000";
 const args = process.argv.slice(2);
 const iCmp = args.indexOf("--cmp");
-const rutaB = iCmp >= 0 ? args[iCmp + 1] : null;
+// `ruta()` deshace la traducción de MSYS y acepta la ruta con o sin barra
+// inicial: `/sectores/x`, `sectores/x` o el `C:/Program Files/Git/sectores/x`
+// que Git Bash fabrica a partir de la primera. Ver `lib.mjs`.
+const rutaB = iCmp >= 0 ? ruta(args[iCmp + 1]) : null;
 const libres = (iCmp >= 0 ? args.slice(0, iCmp) : args).filter(Boolean);
-const rutaA = libres[0];
+const rutaA = ruta(libres[0]);
 const width = Number(libres[1] || 1440);
 const mobile = width <= 500;
 
@@ -204,8 +207,9 @@ const extraer = function () {
 };
 
 const { browser } = await launch();
-async function medir(ruta) {
-  const { page } = await openPage(browser, BASE + ruta, {
+// el parámetro NO se llama `ruta`: taparía el import del mismo nombre
+async function medir(destino) {
+  const { page } = await openPage(browser, BASE + destino, {
     width,
     height: mobile ? 844 : 900,
     mobile,
