@@ -183,17 +183,26 @@ function ProductPanel({ product, alto = false }: { product: Product; alto?: bool
         <p className="pb-[18px] text-[18px] leading-[1.5] text-[#333] sm:mt-4 sm:pb-0 sm:leading-[1.45]">
           {product.highlight}
         </p>
-        <p className="text-[18px] font-bold leading-[1.5] text-[#333] sm:mt-4 sm:leading-[1.45]">Ventajas</p>
+        {/* El título de la lista es CAMPO, con defecto explícito: los 5
+            productos de la home dicen "Ventajas" y los 4 cartuchos que usan los
+            casos de éxito dicen "Especificaciones". Estuvo cableado hasta que
+            el grupo C pobló la segunda instancia (C-SP14). */}
+        <p className="text-[18px] font-bold leading-[1.5] text-[#333] sm:mt-4 sm:leading-[1.45]">
+          {product.bulletsTitulo ?? "Ventajas"}
+        </p>
         {/* Móvil: sin viñetas y con divisor #999 por li (regla
             .lista-contenido-ul li del tema); bullets azules solo en sm+ */}
         <ul className="list-none pb-[10px] pl-0 pt-[10px] text-[18px] leading-[1.5] text-[#333] marker:text-[22px] marker:text-[#0075C9] sm:mt-2 sm:list-disc sm:pb-0 sm:pl-[28px] sm:pt-0">
+          {/* Las viñetas admiten marcado en LÍNEA: los cartuchos traen
+              `R<sup>2</sup>` y `μg/m<sup>3</sup>`, que son fórmulas y no
+              adorno. Las de los 5 productos de la home son texto plano y salen
+              byte a byte igual — lo prueba `qa:clon-base` con umbral cero. */}
           {product.bullets.map((b) => (
             <li
               key={b}
               className="mb-[10px] border-b border-[#999] pb-[10px] last:border-b-0 sm:mb-0 sm:border-b-0 sm:pb-0"
-            >
-              {b}
-            </li>
+              dangerouslySetInnerHTML={{ __html: b }}
+            />
           ))}
         </ul>
         <div className="mt-[20px] sm:mt-6">

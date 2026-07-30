@@ -33,7 +33,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { launch, openPage, ruta, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -63,18 +63,25 @@ if (RUTAS.length === 0) {
 
 const marcador = process.env.MARCADOR || null;
 if (marcador) {
-  const ruta = process.env.MARCADOR_RUTA || "/";
-  const res = await fetch(BASE + ruta);
+  // `ruta()` deshace la traducción de MSYS. Git Bash convierte cualquier valor
+  // que empiece por `/` en una ruta de Windows, así que `MARCADOR_RUTA=/x`
+  // llegaba como `C:/Program Files/Git/x` y la sonda moría con `Invalid URL`.
+  // El README decía que `ruta()` cubría `MARCADOR_RUTA` **y aquí no se
+  // llamaba**: el corolario de `CLAUDE.md` §DOCUMENTADO NO ES CONECTADO, en la
+  // propia sonda. Aquí falla ruidosamente; en un caso menos afortunado habría
+  // medido otra página.
+  const rutaMarcador = ruta(process.env.MARCADOR_RUTA || "/");
+  const res = await fetch(BASE + rutaMarcador);
   const html = res.ok ? await res.text() : "";
   if (!html.includes(marcador)) {
     console.error(
-      `\n❌ MARCADOR no encontrado en ${BASE + ruta} (HTTP ${res.status}).\n` +
+      `\n❌ MARCADOR no encontrado en ${BASE + rutaMarcador} (HTTP ${res.status}).\n` +
         `   El servidor NO está sirviendo el build que crees. Mátalo POR PUERTO,\n` +
         `   rehaz \`npm run build\`, relánzalo y repite. No se mide nada.\n`,
     );
     process.exit(2);
   }
-  console.log(`✓ marcador presente en ${ruta} — el build servido es el nuevo`);
+  console.log(`✓ marcador presente en ${rutaMarcador} — el build servido es el nuevo`);
 } else {
   console.log("⚠ sin MARCADOR: no se ha discriminado el build servido (ver cabecera)");
 }

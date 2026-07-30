@@ -2,7 +2,7 @@
   "meta": {
     "width": 390,
     "base": "http://localhost:3000",
-    "rutas": 11
+    "rutas": 17
   },
   "paginas": {
     "/": {
@@ -168,6 +168,138 @@
       ],
       "nAnclas": 137,
       "nImgs": 37
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "docH": 14590,
+      "h1": {
+        "x": 39,
+        "y": 191.59,
+        "w": 312,
+        "h": 462.34,
+        "txt": "El primer distrito de bajas emisiones (DBE) en Río de Janeir"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 265.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "¿Necesitas información fiable para"
+        }
+      ],
+      "nAnclas": 143,
+      "nImgs": 32
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "docH": 10047,
+      "h1": {
+        "x": 39,
+        "y": 165.59,
+        "w": 312,
+        "h": 310.56,
+        "txt": "Red de control de la contaminación por malos olores en Des M"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 265.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "¿Necesitas información fiable para"
+        }
+      ],
+      "nAnclas": 137,
+      "nImgs": 24
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "docH": 7879,
+      "h1": {
+        "x": 39,
+        "y": 165.59,
+        "w": 312,
+        "h": 259.97,
+        "txt": "Red global de calidad de aire en pistas de atletismo de Worl"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 265.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "¿Necesitas información fiable para"
+        }
+      ],
+      "nAnclas": 124,
+      "nImgs": 17
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "docH": 5036,
+      "h1": {
+        "x": 39,
+        "y": 139.59,
+        "w": 312,
+        "h": 209.38,
+        "txt": "Alerta de contaminación de acuífero por lindano"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 265.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "¿Necesitas información fiable para"
+        }
+      ],
+      "nAnclas": 121,
+      "nImgs": 15
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "docH": 3296,
+      "h1": {
+        "x": 39,
+        "y": 58,
+        "w": 312,
+        "h": 186,
+        "txt": "¿Cuál es la diferencia entre calibración y corrección?"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 1242.03,
+          "mt": "0px",
+          "pt": "58px",
+          "pb": "0px",
+          "txt": "¿Cuál es la diferencia entre calib"
+        }
+      ],
+      "nAnclas": 119,
+      "nImgs": 15
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "docH": 2950,
+      "h1": {
+        "x": 39,
+        "y": 58,
+        "w": 312,
+        "h": 274,
+        "txt": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 896.31,
+          "mt": "0px",
+          "pt": "58px",
+          "pb": "0px",
+          "txt": "¿Puedo instalarlo en un vehículo o"
+        }
+      ],
+      "nAnclas": 118,
+      "nImgs": 15
     },
     "/kunak-api": {
       "docH": 9125,

@@ -402,7 +402,9 @@ export const SECTOR_URBANO: SectorPage = {
           "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
         image:
           "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg",
-        href: "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+        // ruta local: este caso ya está clonado (src/app/case-studies/[slug])
+        // original: https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/
+        href: "/case-studies/distrito-baja-emision-rio-de-janeiro",
       },
       {
         client: "CityTRAQ",
