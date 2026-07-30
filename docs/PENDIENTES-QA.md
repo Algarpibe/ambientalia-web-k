@@ -1732,3 +1732,58 @@ de `/sectores/control-de-emisiones-industriales`… salvo una palabra**: aquí d
 `inmisiones` y allí `inisiones`. Comprobado contra el HTML servido de las tres
 páginas. La errata vive **solo** en Industria; reutilizar sus datos "porque el
 slider es el mismo" la habría traído a dos páginas donde no está.
+
+## EXPERIMENTO URBANO — corrido (2026-07-30)
+
+Acta completa, con la composición de cada Δ, en
+`docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md` §8. Aquí solo lo que
+es QA.
+
+**Veredicto: H1 rechazada por C1** — el content type de MONOGRÁFICO necesita
+**tres campos nuevos** para expresar el cuerpo de Urbano (`variante` de la piel
+del `ctaDescarga`, nivel semántico `<p>` del `claim`, alineación vertical de las
+columnas de una fila). Los dos content types se quedan **separados**, y la regla
+de decisión pre-registrada prohíbe añadir esos campos "de paso": **no se han
+añadido**. Nada del clon cambió — las 11 páginas a Δ0 en los dos anchos y
+`enlaces.mjs` limpia.
+
+### E1 · `tree-cmp.mjs` no localiza el slider en el lado del CLON
+
+**Hallazgo de la corrida, no arreglado.** El cierre del cuerpo en el lado del
+clon es *«el slider es la ÚLTIMA sección con `.swiper`»*, y eso **no lo
+encuentra**: `CtaBannerSlider` es un fundido escrito a mano
+(`aria-roledescription="carrusel"`), sin Swiper. Los únicos `.swiper` de la
+página los pone `TrustBar`, que va **antes** del hero, así que el índice cae por
+detrás del corte, `iSlider > iHero` sale falso y la rebanada se va **al final de
+`main`**: la última entrada del árbol del clon es **la sección del slider**, no
+una fila del cuerpo.
+
+Consecuencia en las corridas pasadas: en el diff plano por índice, el clon
+aportaba **una fila de más al final**. No falseó ninguna conclusión —el desfase
+se lee por `top` y las filas del cuerpo van antes—, pero la última línea de
+`tree-cmp.mjs` comparaba peras con manzanas.
+
+Por qué no se arregla aquí: el corte correcto es por
+`[aria-roledescription='carrusel']`, que es lo que ya usa `cmp-sector.mjs`, y
+tocarlo invalida la salida congelada de `medidas/tree-todos-{1440,390}.json`.
+Va con la tanda mecánica pendiente de `scripts/qa/` (que las sondas sean dueñas
+de su ciclo de servidor). `dos-rutas.mjs` lo lleva **anotado en su cabecera** y
+usa la sección extra a favor: si el slider no sale Δ0, lo que cambió no era el
+cuerpo.
+
+### E2 · Un Δ0 que no se reproduce entre anchos es una medida TAPADA
+
+La fila del claim de Urbano salió **Δ0 a 1440** y **+10 a 390**. No cuadraba a
+1440: cuadraba por accidente — la columna de la foto mide 390.08 y la del claim
+148, así que **+10 de claim y 121.03 de centrado perdido caben dentro de la fila
+sin mover su alto**.
+
+`CLAUDE.md` ya dice que *reproducirse entre anchos pesa más que el tamaño*, y lo
+aplica a los residuos: un Δ idéntico a 1440 y a 390 no puede ser ruido. **El
+lado espejo, que faltaba:** un Δ0 en un ancho con Δ≠0 en el otro no es "casi
+cuadra", es un defecto que la columna hermana más alta está tapando. Ahí hay que
+bajar a la composición.
+
+Y el corolario duro: **la alineación vertical no la ve NINGÚN alto de fila.**
+Centrado o pegado arriba, la fila mide lo mismo. Se ve solo midiendo el módulo
+**dentro** de su fila, que es lo que hace `exp-detalle.mjs`.

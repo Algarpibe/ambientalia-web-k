@@ -1,14 +1,22 @@
-# HANDOFF — MONOGRÁFICO construido; queda el EXPERIMENTO
+# HANDOFF — MONOGRÁFICO construido y EXPERIMENTO corrido
 
-> Reescrito el **2026-07-29** al terminar la fase de build del arquetipo
-> MONOGRÁFICO TÉCNICO. Para arrancar sesión limpia: son 5 minutos.
+> Reescrito el **2026-07-29** al terminar el build de MONOGRÁFICO TÉCNICO;
+> actualizado el **2026-07-30** al correr el experimento. Para arrancar sesión
+> limpia: son 5 minutos.
 
 ## Lo primero: en qué punto está
 
-**MONOGRÁFICO TÉCNICO está construido y medido.** Las dos páginas vivas del
-original están clonadas y el cuerpo cuadra al céntimo salvo un residuo de
-décimas con causa identificada. Lo que queda pendiente es **correr el
-experimento pre-registrado**, que era el paso siguiente por diseño.
+**MONOGRÁFICO TÉCNICO está construido y medido**, y **el experimento
+pre-registrado está corrido**. Las dos páginas vivas del original están clonadas
+y el cuerpo cuadra al céntimo salvo un residuo de décimas con causa
+identificada.
+
+**El experimento decidió: H1 rechazada por C1.** El content type de MONOGRÁFICO
+necesita **tres campos** para expresar el cuerpo de Urbano, así que **el CMS
+lleva dos content types** — ya no por falta de datos, sino con la frontera
+medida. Acta en `docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md` §8.
+Los tres campos **no se han añadido**: la regla de decisión lo prohíbe, y la
+fusión (si se hace) es tanda propia.
 
 | documento | qué trae |
 |---|---|
@@ -16,7 +24,7 @@ experimento pre-registrado**, que era el paso siguiente por diseño.
 | `…/DECISIONES.md` | las tres decisiones, argumentadas y cerradas — **las tres se sostuvieron al construir** |
 | `…/MODELO.md` | el content type de la fase de specs. **Le faltaban campos**: el vigente es `src/lib/monografico.ts` |
 | `…/components/seccion-editorial.spec.md` | el cuerpo. **Empieza con un `⚠ CORRIGE` de seis puntos**: léelo antes que el resto |
-| `…/EXPERIMENTO-URBANO.md` | el experimento pre-registrado — **sin correr todavía** |
+| `…/EXPERIMENTO-URBANO.md` | el experimento pre-registrado + **el ACTA (§8)**: H1 rechazada por C1, la frontera son 3 campos |
 | `docs/PENDIENTES-QA.md` §MONOGRÁFICO | el acta de QA: qué cuadra, qué no y por qué |
 
 ## Estado
@@ -56,30 +64,58 @@ el original sirve por `srcset` una variante redimensionada cuya proporción
 redondea distinto (M-IMG en `PENDIENTES-QA.md`). Es tanda de **assets**,
 transversal, no de este arquetipo.
 
-## Lo siguiente: el experimento, y nada antes
+## El experimento, ya corrido (2026-07-30) — lo que dejó decidido
 
-**`docs/research/monografico-tecnico/EXPERIMENTO-URBANO.md`.** Está
-pre-registrado: hipótesis, criterio con umbral **cero**, cuatro predicciones y
-regla de decisión. Se corre **ahora**, que es cuando toca — al terminar de
-construir MONOGRÁFICO.
+Acta en `…/EXPERIMENTO-URBANO.md` §8. El resumen que hace falta para trabajar:
 
-Decide si SECTOR y MONOGRÁFICO son un content type o dos, y por tanto si el CMS
-lleva uno o dos. Hasta que se corra: **ni tocar `SectorBlock`, ni ampliar
-`flujo`, ni subir el `pb` de fila a dato.**
+| criterio | resultado |
+|---|---|
+| **C1** · ningún campo nuevo | ❌ **3 campos** |
+| **C2** · árbol sección→fila Δ0 en los dos anchos | ❌ 2 de las 3 filas del cuerpo |
+| **C3** · `docH` Δ0 | ❌ +12 @1440 · −80 @390 |
 
-Cuando se corra, el acta se escribe **en ese mismo fichero**, con fecha, gane o
-pierda H1. Ojo con el §4: **C1 manda sobre C2 y C3** — un cuerpo idéntico al
-píxel *después* de añadir campos no prueba nada.
+**C1 manda**, así que: **H1 rechazada, dos content types, frontera escrita.** La
+frontera son tres campos, y **ninguno es de ritmo**:
+
+1. la **piel** del módulo `ctaDescarga` (`variante: "foto" | "fondo"` — el
+   monográfico la cablea a `"fondo"` en el `.tsx`);
+2. el **nivel semántico** del `claim` (en Urbano es un `<p>` de 37px, y
+   `MonoNivel` solo da `h2`/`h3`/`h4`);
+3. la **alineación vertical** de las columnas de una fila (el claim va centrado
+   respecto a la foto; las 31 columnas del monográfico apilan desde arriba).
+
+Lo que el experimento dejó **probado a favor** de fusionar algún día: los 4
+valores de `SectorBlockFlujo` son azúcar sobre `MonoRitmo` (P2, Δ0 en los dos
+anchos) y `beneficiosAplicaciones` entra sin un solo campo nuevo (P1, Δ0). **El
+desacuerdo no está en el ritmo ni en la retícula.**
+
+De las 4 predicciones acertaron 3; **falló P3**, que daba el `variante` por
+existente en el módulo del monográfico. Existía en el modelo de SECTOR y se
+perdió al pasar el dato al componente — el mismo error de la tanda, en el sitio
+menos esperado.
+
+**Lo que sigue prohibido hasta que haya una tanda de fusión con su plan:**
+añadir esos tres campos "de paso", ampliar `flujo`, o subir el `pb` de fila a
+dato. La regla de decisión pre-registrada lo dice y se ha cumplido.
 
 ## Lo que enseñó construirlo, y que cambia cómo se leen las specs
 
-**El discriminador de Divi tiene alcance.** Vale para el ritmo, que es donde se
-descubrió; no para la tipografía ni para la caja. En Divi el ancho de módulo se
-escribe en % igual que su default, así que el número se mueve con el ancho
-aunque lo haya escrito una persona.
+**No hay un discriminador: hay dos tests, y cada uno con su alcance.** Reescrito
+en `CLAUDE.md` el 2026-07-30, porque escrito como uno solo daba respuestas
+**invertidas** fuera de su alcance:
 
-Cuando no aplica, vale el test general: **¿varía de una instancia a otra del
-mismo hueco dentro de la misma página?** Ampliado en `CLAUDE.md`.
+- **Test A (Divi, los dos anchos)** — responsive = plantilla; px absolutos
+  iguales a 1440 y a 390 = tocado por el editor. **Vale para el RITMO.** No vale
+  para la caja ni la tipografía: el ancho de módulo se escribe en % igual que su
+  default, así que se mueve con el ancho lo escriba quien lo escriba.
+- **Test B (general)** — ¿varía de un módulo a otro dentro de la misma página?
+  Si varía, es campo. Sin restricción de alcance. **Es la regla**; A es el atajo.
+
+Y el matiz, que P3 acaba de cobrar: **los dos tienen falsos negativos
+distintos** —A no ve un campo escrito en % como su default; B no ve un campo que
+el editor puso uniforme en toda la página—, así que **una propiedad que no pasa
+ninguno de los dos no está probada como plantilla: está sin probar.** Y sin
+probar **no se cablea**, se anota. `variante` no pasaba ninguno de los dos.
 
 Ocho propiedades salieron de ahí, y **ninguna se veía en la primera página**:
 ancho de módulo, `line-height`, tamaño del claim, bordes de la tabla, default
@@ -104,10 +140,13 @@ entre columnas apiladas. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 |---|---|
 | `clon-base.mjs [ancho] [--cmp antes.json]` | **el clon contra sí mismo**, antes/después de tocar algo compartido. Rutas del `prerender-manifest`, umbral cero, y exige un `MARCADOR` en el HTML servido antes de medir nada |
 | `mono-cmp.mjs <edar\|petroleo> [ancho]` | original vs clon **módulo a módulo**, separando alto (contenido) de margen (ritmo) |
+| `dos-rutas.mjs <rutaA> <rutaB> [ancho]` | **dos rutas del MISMO build, cara a cara**: árbol sección→fila + `docH` + anclas de la cola, umbral cero. Del experimento Urbano. Exige `MARCADOR` igual que `clon-base.mjs` |
+| `exp-detalle.mjs [ancho]` | la **composición** del experimento: el CTA y el claim módulo a módulo, con el offset del claim **dentro** de su fila — que es lo único que delata el centrado vertical |
 
 `tree-cmp.mjs` acepta ahora los 6 slugs y localiza el hero **por el breadcrumb**
 y no por su `padding-bottom`: el del monográfico cierra a 39 y la heurística
-vieja se quedaba sin cuerpo.
+vieja se quedaba sin cuerpo. **Su cierre del cuerpo en el lado del clon sigue
+mal** y ahora está medido: ver **E1** en `PENDIENTES-QA.md`.
 
 ## Comandos
 
@@ -118,8 +157,13 @@ cd scripts/qa && npm i --no-save puppeteer-core
 node enlaces.mjs                         # guarda de rutas locales — limpia hoy
 MARCADOR="…" node clon-base.mjs 1440 --cmp antes.json
 node mono-cmp.mjs edar 1440
+node dos-rutas.mjs /sectores/a /sectores/b 1440
 node ruido.mjs 3                         # suelo de ruido, antes de juzgar nada
 ```
+
+⚠ En Git Bash, `MARCADOR_RUTA=/sectores/x` **se corrompe**: MSYS lo traduce a
+`C:/Program Files/Git/sectores/x`. Las sondas con rutas en variables de entorno
+o en `argv` se lanzan desde **PowerShell**.
 
 Y lo de siempre, que sigue costando cuando se olvida: **matar el servidor por
 puerto**, nunca con `pkill`, y **verificar un marcador del cambio en el HTML

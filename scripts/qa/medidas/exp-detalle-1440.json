@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "A": "/sectores/calidad-del-aire-en-las-ciudades",
+    "B": "/sectores/urbano-mono",
+    "width": 1440
+  },
+  "A": {
+    "cta": {
+      "titulo": {
+        "tag": "P",
+        "y": 1532.92,
+        "h": 61.8,
+        "w": 866.39,
+        "pb": "10px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "37px",
+        "lh": "51.8px"
+      },
+      "caja": {
+        "tag": "DIV",
+        "y": 1491.92,
+        "h": 328.39,
+        "w": 1238.39,
+        "pb": "40px",
+        "pr": "50px",
+        "mb": "46.25px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "imgFoto": {
+        "tag": "IMG",
+        "y": 1532.92,
+        "h": 246.39,
+        "w": 280,
+        "pb": "0px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "bgFondo": "none"
+    },
+    "claim": {
+      "el": {
+        "tag": "P",
+        "y": 2626.97,
+        "h": 148,
+        "w": 560.13,
+        "pb": "0px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "37px",
+        "lh": "37px"
+      },
+      "columna": {
+        "tag": "DIV",
+        "y": 2626.97,
+        "h": 148,
+        "w": 585.13,
+        "pb": "0px",
+        "pr": "25px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "fila": {
+        "tag": "DIV",
+        "y": 2505.94,
+        "h": 418.88,
+        "w": 1238.39,
+        "pb": "28.7969px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "img": {
+        "tag": "IMG",
+        "y": 2505.94,
+        "h": 390.08,
+        "w": 585.13,
+        "pb": "0px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "offsetEnFila": 121.03
+    },
+    "foto": null
+  },
+  "B": {
+    "cta": {
+      "titulo": {
+        "tag": "P",
+        "y": 1532.92,
+        "h": 113.59,
+        "w": 714.5,
+        "pb": "10px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "37px",
+        "lh": "51.8px"
+      },
+      "caja": {
+        "tag": "DIV",
+        "y": 1491.92,
+        "h": 340.78,
+        "w": 1238.39,
+        "pb": "40px",
+        "pr": "60px",
+        "mb": "46.25px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "imgFoto": null,
+      "bgFondo": "url(\"http://localhost:3000/images/uploads/2024/11/cta-inform"
+    },
+    "claim": {
+      "el": {
+        "tag": "H2",
+        "y": 2518.33,
+        "h": 158,
+        "w": 560.13,
+        "pb": "10px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "-0.5px",
+        "fs": "37px",
+        "lh": "37px"
+      },
+      "columna": {
+        "tag": "DIV",
+        "y": 2518.33,
+        "h": 390.08,
+        "w": 585.13,
+        "pb": "0px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "fila": {
+        "tag": "DIV",
+        "y": 2518.33,
+        "h": 418.88,
+        "w": 1238.39,
+        "pb": "28.7969px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "img": {
+        "tag": "IMG",
+        "y": 2518.33,
+        "h": 390.08,
+        "w": 585.13,
+        "pb": "0px",
+        "pr": "0px",
+        "mb": "0px",
+        "ls": "normal",
+        "fs": "18px",
+        "lh": "30.6px"
+      },
+      "offsetEnFila": 0
+    },
+    "foto": null
+  }
+}

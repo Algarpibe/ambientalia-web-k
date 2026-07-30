@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "rutaA": "/sectores/calidad-del-aire-en-las-ciudades",
+    "rutaB": "/sectores/urbano-mono",
+    "width": 390,
+    "base": "http://localhost:3000"
+  },
+  "A": {
+    "docH": 11064,
+    "h1y": 189.39,
+    "heroFin": 2083.97,
+    "cuerpo": [
+      {
+        "top": 2083.97,
+        "h": 584.91,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "¿Necesitas medir la contaminación ",
+        "filas": [
+          {
+            "top": 2083.97,
+            "h": 584.91,
+            "mt": "0px",
+            "pt": "30px",
+            "pb": "30px",
+            "txt": "¿Necesitas medir la contaminación en tu ciud"
+          }
+        ]
+      },
+      {
+        "top": 2654.88,
+        "h": 1970.16,
+        "mt": "-14px",
+        "pt": "50px",
+        "pb": "14px",
+        "txt": "Beneficios de monitorizar la calid",
+        "filas": [
+          {
+            "top": 2704.88,
+            "h": 1356.56,
+            "mt": "0px",
+            "pt": "30px",
+            "pb": "30px",
+            "txt": "Beneficios de monitorizar la calidad del air"
+          },
+          {
+            "top": 4061.44,
+            "h": 549.59,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "30px",
+            "txt": "Protege la salud de tus ciudadanos tomando l"
+          }
+        ]
+      },
+      {
+        "top": 4625.03,
+        "h": 265.06,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "Obtén datos fiables y precisos sob",
+        "filas": [
+          {
+            "top": 4625.03,
+            "h": 265.06,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Obtén datos fiables y precisos sobre la cont"
+          }
+        ]
+      }
+    ],
+    "anclas": {
+      "slider": 4625.03,
+      "soluciones": 4970.09,
+      "proyectos": 6230.52,
+      "articulos": 7687.63,
+      "footer": 9010.77
+    }
+  },
+  "B": {
+    "docH": 10984,
+    "h1y": 189.39,
+    "heroFin": 2083.97,
+    "cuerpo": [
+      {
+        "top": 2083.97,
+        "h": 494.33,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "¿Necesitas medir la contaminación ",
+        "filas": [
+          {
+            "top": 2083.97,
+            "h": 494.33,
+            "mt": "0px",
+            "pt": "30px",
+            "pb": "30px",
+            "txt": "¿Necesitas medir la contaminación en tu ciud"
+          }
+        ]
+      },
+      {
+        "top": 2564.3,
+        "h": 1980.16,
+        "mt": "-14px",
+        "pt": "50px",
+        "pb": "14px",
+        "txt": "Beneficios de monitorizar la calid",
+        "filas": [
+          {
+            "top": 2614.3,
+            "h": 1356.56,
+            "mt": "0px",
+            "pt": "30px",
+            "pb": "30px",
+            "txt": "Beneficios de monitorizar la calidad del air"
+          },
+          {
+            "top": 3970.86,
+            "h": 559.59,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "30px",
+            "txt": "Protege la salud de tus ciudadanos tomando l"
+          }
+        ]
+      },
+      {
+        "top": 4544.45,
+        "h": 265.06,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "Obtén datos fiables y precisos sob",
+        "filas": [
+          {
+            "top": 4544.45,
+            "h": 265.06,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Obtén datos fiables y precisos sobre la cont"
+          }
+        ]
+      }
+    ],
+    "anclas": {
+      "slider": 4544.45,
+      "soluciones": 4889.52,
+      "proyectos": 6149.94,
+      "articulos": 7607.05,
+      "footer": 8930.19
+    }
+  }
+}
