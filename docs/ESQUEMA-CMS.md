@@ -426,6 +426,51 @@ medido · `A-SP13` coste de emitir 209 rutas.
 
 ---
 
+## 2b · El grupo C — dos arquetipos, tres colecciones (2026-07-30)
+
+76 páginas: caso de éxito 57 (53 `/casos-de-exito/` + 4 `/case-studies/`) ·
+FAQ 19. Recon censado 76/76 en `docs/research/grupo-C/`; decisiones en su
+`DECISIONES.md`, tipos completos en su `MODELO.md`. Régimen **tercero**:
+cabecera y pie por Theme Builder, cuerpo por PHP del tema hijo — se aplica la
+lectura plantillada (varianza entre instancias), y el cascarón dio varianza
+cero en las 76.
+
+**D1: caso y FAQ son DOS arquetipos** (firma de secciones, pie 4 vs 3, cuerpo
+estructurado vs `entry-content` único — tres criterios F cuando bastaba uno).
+
+| pieza | en Payload |
+|---|---|
+| `CasoDeExito` | **colección `casos`**, slug único a través de ambos prefijos |
+| **`prefijo`** (CMS-1) | **campo `select`** con defecto `"casos-de-exito"`, omitido cuando coincide — solo los 4 ingleses lo escriben |
+| `necesidad · solucion · resultados` | **tres campos ricos** obligatorios (títulos «Necesidad · Solución · Resultados» = plantilla, 57/57). Contrato §3.1 **sin construcción nueva** |
+| `sectores` | **relación 0..n** a la colección nueva **`taxonomia-sectores`** (11 términos medidos; 4 casos con dos; 4 sin ninguno). El término lleva relación polimórfica *opcional* a `sectores`/`monograficos` — 11 términos, 8 páginas |
+| `soluciones` | **relación 0..n a la colección de productos** (la del §1.4). Probado que la ficha es proyección del producto: 640 nodos de panel, **18 fichas, 17 títulos** en todo el corpus |
+| `galeria` | **array de relaciones a media** (48/57; 3–15, mediana 7). El carrusel es plantilla |
+| `destacado` | texto plano opcional (49/57), verbatim — las comillas son contenido |
+| `detalles` | grupo `usuario · ubicacion · anyo · parametros?` — las filas «Cliente» y «Sector» se **proyectan** de `cliente` y `sectores` (igualdad 57/57 y 53/53; ausencia conjunta 4/4) |
+| `ubicacionMapa` | `{lat, lng}` opcional (56/57) — **un punto**: 1 marcador exacto en las 56. El render (mapa real o placeholder tipo S3) lo decide la construcción **en voz alta** |
+| `Faq` | **colección `faqs`**: `slug · seo.title · titulo · cuerpo` — la más simple del proyecto; su cuerpo (151–539 chars, `p ul li a span br sub`) entra entero en §3.1 |
+| sobretítulo «Caso de éxito», «Detalles del proyecto», «Soluciones», rótulos | **plantilla** — un solo valor en 57/57; no se promocionan a campo |
+
+**Corrección medida al recon (importa al SEO de todos los grupos):**
+`seo.description` es **opcional** — falta en 4 casos y en las 19 FAQ; `ogImage`
+falta en las 19 FAQ. `title` y `canonical` sí están en las 76, y el canonical
+**se deriva** de prefijo + slug, no se guarda.
+
+**Enrutado:** rutas prefijadas — **no tocan el plano de 202 slugs del §4** ni
+su guarda; unicidad por colección (nativa) a través de ambos prefijos. Las
+rutas cruzadas del original (301 en 7 de 9, 2 404 — C-SP2) son comportamiento
+de servicio, **no se emiten ni se modelan**; si algún día se quieren, la
+medición que cierra C-SP2 está escrita en `DECISIONES.md` D2 (barrer las 57 con
+`X-Redirect-By`).
+
+**Pendiente que este § deja armado:** censar por host los `iframe` del cuerpo
+de caso (11 páginas, C-SP6) **antes** del import del grupo — van a la misma
+allowlist del §3.3b. Y las predicciones P-C3-1…7 de `DECISIONES.md` son la
+condición de entrada de la construcción C-3.
+
+---
+
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
 
 **Son DOS listas distintas y conviene no mezclarlas:** lo que el editor permite
@@ -596,6 +641,10 @@ deliberada a 390** (`overflow-x` frente al desbordamiento del original). Una
 tabla con requisitos de render propios encaja mejor como **block**. **No es la
 decisión, es la evidencia.**
 
+El grupo C añade evidencia sin cambiar el dilema: **2 `table` más** en 57 casos
+(1 es + 1 en, con `thead`/`th` la inglesa), censadas en `c-censo.json`. La
+decisión sigue abierta y sigue siendo la misma para los dos grupos.
+
 ---
 
 ## 4 · Enrutado — resuelto
@@ -662,7 +711,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 
 | # | qué | estado |
 |---|---|---|
-| **CMS-1** | el caso de éxito tiene **dos patrones de ruta**: 53 en `/es/casos-de-exito/` y **4 en `/es/case-studies/`** (slug inglés) | un content type cuyo slug no determina su ruta necesita **el prefijo como campo** o una tabla de excepciones. **Abierta** |
+| **CMS-1** | el caso de éxito tiene **dos patrones de ruta**: 53 en `/es/casos-de-exito/` y **4 en `/es/case-studies/`** | **✅ resuelta (2026-07-30, C-2): el prefijo como campo con defecto** en la colección única `casos` — §2b y `grupo-C/DECISIONES.md` D2. Los 4 son contenido propio en español sobre la misma plantilla; el modelo es robusto a C-SP2 (las rutas cruzadas no se emiten) |
 | **CLASE (S9–S11)** | 4 residuos de SECTOR con una causa: **componente calibrado con UNA instancia** | **es deuda de CMS-readiness, no de acabado**: un CMS no da un rango de contenido, da cualquiera. Los extremos ya están medidos (alto del slider @390: 265.06 · 300.14 · 300.16; `h1` de EDAR a 4 líneas) |
 | **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **CMS-0b ya está decidida** (volumen persistente) y **no lo cierra ni lo reabre**: dónde viven los ficheros no decide qué variantes se generan. Lo que queda es el juego de tamaños que emita el CMS y su redondeo — **SIN MEDIR**, y es lo mismo con volumen que con S3, así que la reversibilidad de CMS-0b no lo toca |
 | **S1** | tarjetas de caso y de artículo: **la mitad construida del par listado→detalle** (206 páginas) | los modelos `CaseStudy`/`BlogPost` son la **proyección de teaser**: falta cuerpo, slug (hoy `href` absoluto al original), taxonomía y SEO |
@@ -674,8 +723,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | # | decisión | bloquea |
 |---|---|---|
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
-| §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados | política, no modelado: el nodo ya lleva URL |
-| CMS-1 | prefijo de ruta del caso de éxito | grupo C |
+| §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
 
 **Y una condición escrita, que no es decisión abierta pero se cobra igual:** el
 **recuento** de CMS-0e (16 · 3 · 5) es **provisional** hasta rehacerlo con
@@ -689,13 +737,14 @@ persistente, §CMS-0b) · **CMS-0e** (HTML crudo primero, §CMS-0e) · **T6/A-SP
 (el `id` se regenera: lo pone el tema — §3.2 y `campo-rico.spec.md` §4) · **§3.3**
 (el reproductor de NBC: eliminación con enlace a la noticia) · **§1.5** (dos
 colecciones, no una con discriminante — §1.5b, con condición de reapertura
-escrita). De las siete, **la única que tocaba a otro § era CMS-0c**, y lo hizo
-confirmando el §4 en vez de cambiarlo.
+escrita) · **CMS-1** (el prefijo del caso como campo con defecto — §2b y
+`grupo-C/DECISIONES.md` D2, en la tanda C-2 que también dejó decidido el grupo
+entero: D1–D5). De las ocho, las únicas que tocaban a otro § eran CMS-0c (que
+confirmó el §4) y CMS-1 (que entra al §6 como resuelta).
 
-De las tres que quedan, **ninguna bloquea ya instalar Payload**: una es de
-contenido (cómo se modela la tabla), una de política (qué hosts de embebido se
-admiten) y una de modelado (el prefijo del caso de éxito). El camino de
-infraestructura está despejado.
+De las dos que quedan, **ninguna bloquea instalar Payload ni construir C-3**:
+una es de contenido (cómo se modela la tabla) y una de política (qué hosts de
+embebido se admiten). El camino de infraestructura está despejado.
 
 ⚠ **Y dos cosas que el censo de embebidos cambió, no añadió:** el nodo-embed pasa
 a llevar **URL en vez de `enum` de proveedor** (§3.3b: 18 hosts, 12 de ellos una
