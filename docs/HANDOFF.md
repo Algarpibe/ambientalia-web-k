@@ -1,4 +1,49 @@
-# HANDOFF — C-3 construida; lo siguiente es la CABECERA, con plan propio
+# HANDOFF — C-QA1 CERRADA; lo siguiente es PASO 2, y es una MEDICIÓN
+
+> ⚠ **Actualización 2026-07-30, cerrando el bloque 2 de la cabecera.** Lo de
+> abajo sigue siendo contexto válido. Esto es lo que cambia.
+>
+> ## Hecho y verificado
+>
+> - **PASO 0a · custodia.** El congelado  **no estaba
+>   pisado** (17 rutas en los dos commits). Y la traducción de MSYS se deshace
+>   ahora **en la LECTURA** — /  /  en
+>   —, no en cada punto de uso: era la segunda vez que mordía por la
+>   misma puerta. Test en negativo: ****, 14 aserciones, sin
+>   navegador.
+> - **PASO 0b · auditoría de bases.**  (nueva, deriva del
+>   congelado). **16 de 17 rutas con base válida** a los dos anchos; la única sin
+>   ella es , que ya era C-QA3. **No hay ninguna más** — por eso no se paró.
+>   Salió de regalo **C-QA5**: en 4 rutas el  envuelve distinto **solo a
+>   1440**; base válida, ancho del contenedor no. ABIERTA, sin tocar.
+> - **PASO 1 · C-QA1 CERRADA.** Las 6 rutas nuevas a **Δ0 a los dos anchos**; las
+>   11 anteriores **sin mover un píxel**. Eran **dos** cosas: la banda en flujo
+>   (, alto plantilla +  campo) y **las migas
+>   del caso, que no son las de producto** (interlínea 30.6 y último >   truncado a 350 → ). Detalle en .
+>
+> ## Lo siguiente, literal: PASO 2, y es MEDIR, no arreglar
+>
+> **¿el −21.41 de la home (C-QA3) y el desfase de las 4 de producto (C-QA2) son
+> el mismo mecanismo?** Se mide **por composición qué está dimensionado contra el
+> alto de la cabecera** en los dos sitios, y **el resultado se enseña antes de
+> arreglar nada**: si es una causa el arreglo es uno; si son dos, van separados.
+>
+> Ya hay medio camino hecho y está congelado: > trae  con su cadena entera. De ahí sale que **el espaciador del
+> clon mide 177 donde el original pone 225** (−48 exacto a 1440) y que el offset
+> del  bajo el espaciador **coincide al céntimo** (167.59 en los dos): en
+> producto el defecto es **el espaciador y nada más**. Falta la home.
+>
+> ⚠ **Y antes de fijar objetivos numéricos para C-QA2: C-QA6.**  y
+> los dos monográficos dieron −32.28 en una corrida y volvieron en la siguiente,
+> **el mismo día**. Necesitan las 3 corridas del protocolo antes de que su Δ
+> valga. Sin eso, C-QA2 se arreglaría contra un objetivo que se mueve.
+>
+> **Sondas nuevas:**  ·  · . Y  **ya
+> no pisa** una salida congelada (escribe con fecha al lado;  fuerza).
+>
+> ---
+>
+# (bloque anterior) HANDOFF — C-3 construida; lo siguiente es la CABECERA
 
 > ⚠ **Actualización 2026-07-30, al cerrar el diagnóstico de C-QA1.** El cuerpo
 > de este documento (abajo) describe el estado **antes** de construir C-3 y
