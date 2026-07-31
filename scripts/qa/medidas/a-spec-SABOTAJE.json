@@ -1,0 +1,935 @@
+{
+  "meta": {
+    "fecha": "2026-07-31",
+    "fuente": "HTML servido del original (no el DOM: los `id` de los h2 los pone el tema)",
+    "muestra": "14 de las 24 de a-muestra.json",
+    "sabotaje": true
+  },
+  "censo": {
+    "post_content#0": {
+      "casó": 0,
+      "de": 14,
+      "max": null
+    },
+    "text#0 (migas)": {
+      "casó": 14,
+      "de": 14,
+      "max": null
+    },
+    "text#1 (título)": {
+      "casó": 14,
+      "de": 14,
+      "max": null
+    },
+    "text#2 (fecha)": {
+      "casó": 7,
+      "de": 7,
+      "max": null
+    },
+    "text#3 (taxonomías)": {
+      "casó": 7,
+      "de": 7,
+      "max": null
+    },
+    "image#0 (destacada)": {
+      "casó": 7,
+      "de": 7,
+      "max": null
+    },
+    "text#4 (autoría)": {
+      "casó": 7,
+      "de": 7,
+      "max": null
+    },
+    "blog#0 (relacionados) — DISCRIMINANTE": {
+      "casó": 6,
+      "de": 14,
+      "max": 13
+    },
+    "image#0 (portada PDF)": {
+      "casó": 4,
+      "de": 4,
+      "max": null
+    },
+    "button#0 (descarga PDF)": {
+      "casó": 4,
+      "de": 4,
+      "max": null
+    }
+  },
+  "fallos": [],
+  "paginas": [
+    {
+      "forma": "blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": null,
+      "url": "https://kunakair.com/es/contaminacion-por-metano/",
+      "eje": "la MÁS LARGA de las 209 (69 784 ch) · embebido · firma CON relacionados",
+      "seo": {
+        "title": "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones - Kunak",
+        "description": "Conocido como el asesino silencioso, el gas metano de la atmósfera es un contaminante que pone el riesgo la salud y un entorno saludable.",
+        "canonical": "https://kunakair.com/es/contaminacion-por-metano/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/\"><span itemprop=\"name\">Industria y contaminación por olores</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Contaminación por metano: impacto en el medio ambiente, la salud y soluciones</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Industria y contaminación por olores Contaminación por metano: impacto en el medio ambiente, la salud y soluciones",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+            "label": "Industria y contaminación por olores"
+          }
+        ]
+      },
+      "titulo": "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">7 enero 2025</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "7 enero 2025 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/\">Contaminantes atmosféricos</a>, <a href=\"https://kunakair.com/es/etiqueta/emisiones-industriales/\">Emisiones industriales</a>, <a href=\"https://kunakair.com/es/etiqueta/gases-de-efecto-invernadero/\">Gases de efecto invernadero</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Contaminantes atmosféricos , Emisiones industriales , Gases de efecto invernadero",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/",
+            "label": "Contaminantes atmosféricos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/emisiones-industriales/",
+            "label": "Emisiones industriales"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/gases-de-efecto-invernadero/",
+            "label": "Gases de efecto invernadero"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-980x549.jpg 980w, https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-480x269.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw",
+        "width": "1200",
+        "height": "672",
+        "alt": "Ganaderia extensiva y emisiones de metano - crédito imagen Green Habitat - Kunak",
+        "clase": "wp-image-60503"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": null,
+      "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+      "eje": "la MÁS CORTA de las 209 (275 ch) · firma SIN relacionados",
+      "seo": {
+        "title": "Kunak presenta sus soluciones en el IOTSWC 2018 | Kunak",
+        "description": "Ven a descubrir nuestras soluciones para Medioambiente, Smart Cities, Agua y Utilities, Industria 4.0 y Máquinas Inteligentes al stand de ICEX España E541.",
+        "canonical": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+        "ogImage": null
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/blog/\"><span itemprop=\"name\">Blog</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Todas nuestras soluciones en el IOTSWC</span><meta itemprop=\"position\" content=\"3\"></li></ol>",
+        "texto": "Inicio Blog Todas nuestras soluciones en el IOTSWC",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/blog/",
+            "label": "Blog"
+          }
+        ]
+      },
+      "titulo": "Todas nuestras soluciones en el IOTSWC",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">17 octubre 2018</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "17 octubre 2018 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categorías: </span><a href=\"https://kunakair.com/es/categoria/eventos/\">Eventos</a>, <a href=\"https://kunakair.com/es/categoria/noticias/\">Noticias</a></span><span class=\"case-tags\"><span>Etiqueta: </span><a href=\"https://kunakair.com/es/etiqueta/monitorizacion-ambiental/\">Monitorización ambiental</a></span></div>",
+        "texto": "Categorías: Eventos , Noticias Etiqueta: Monitorización ambiental",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/eventos/",
+            "label": "Eventos"
+          },
+          {
+            "href": "https://kunakair.com/es/categoria/noticias/",
+            "label": "Noticias"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/",
+            "label": "Monitorización ambiental"
+          }
+        ]
+      },
+      "imagenDestacada": null,
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": null,
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "eje": "tabla (§3.4 abierta) + cita",
+      "seo": {
+        "title": "Monitorización de la calidad del aire en centros de datos - Kunak",
+        "description": "Monitorizar centros de datos: ozono interior, emisiones de generadores y impacto comunitario. Qué medir, por qué y con qué sensores.",
+        "canonical": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1024x631.png"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/contaminacion-urbana/\"><span itemprop=\"name\">Contaminación urbana</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Contaminación urbana Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+            "label": "Contaminación urbana"
+          }
+        ]
+      },
+      "titulo": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">25 mayo 2026</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "25 mayo 2026 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/calidad-del-aire/\">Calidad del aire</a>, <a href=\"https://kunakair.com/es/etiqueta/emisiones-industriales/\">Emisiones industriales</a>, <a href=\"https://kunakair.com/es/etiqueta/monitorizacion-ambiental/\">Monitorización ambiental</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Calidad del aire , Emisiones industriales , Monitorización ambiental",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+            "label": "Calidad del aire"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/emisiones-industriales/",
+            "label": "Emisiones industriales"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/",
+            "label": "Monitorización ambiental"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-scaled.png",
+        "srcset": "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-scaled.png 2560w, https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1280x789.png 1280w, https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-980x604.png 980w, https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-480x296.png 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 2560px, 100vw",
+        "width": "2560",
+        "height": "1578",
+        "alt": "Centro de datos en Wisconsin, EE. UU. - Kunak",
+        "clase": "wp-image-69110"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": null,
+      "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+      "eje": "galería · y es la MEDIANA exacta de blog (6 347 ch)",
+      "seo": {
+        "title": "¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?",
+        "description": "La Semana Europea de la Movilidad ha permitido mostrar qué utilidad tiene un contador de partículas en suspensión cuando se usa para mejorar la movilidad",
+        "canonical": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/contaminacion-urbana/\"><span itemprop=\"name\">Contaminación urbana</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Contaminación urbana ¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+            "label": "Contaminación urbana"
+          }
+        ]
+      },
+      "titulo": "¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">22 septiembre 2020</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "22 septiembre 2020 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/particulas-en-suspension/\">Partículas en suspensión</a>, <a href=\"https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/\">Sensor de calidad del aire</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Partículas en suspensión , Sensor de calidad del aire",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/particulas-en-suspension/",
+            "label": "Partículas en suspensión"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/",
+            "label": "Sensor de calidad del aire"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg 900w, https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europea-particulas-y-gases-480x267.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw",
+        "width": "900",
+        "height": "500",
+        "alt": "",
+        "clase": "wp-image-22415"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": null,
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "eje": "vídeo (§3.1b: el nodo que a la whitelist le faltaba)",
+      "seo": {
+        "title": "Monitorización de emisiones del tráfico urbano - Kunak",
+        "description": "Descubre cómo el control avanzado de NO2 y PM2,5 con redes de sensores permite medir el impacto ambiental real del transporte urbano.",
+        "canonical": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/contaminacion-urbana/\"><span itemprop=\"name\">Contaminación urbana</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Contaminación urbana Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+            "label": "Contaminación urbana"
+          }
+        ]
+      },
+      "titulo": "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">25 marzo 2026</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "25 marzo 2026 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/calidad-del-aire/\">Calidad del aire</a>, <a href=\"https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/\">Contaminantes atmosféricos</a>, <a href=\"https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/\">Normativa de calidad del aire</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Calidad del aire , Contaminantes atmosféricos , Normativa de calidad del aire",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+            "label": "Calidad del aire"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/",
+            "label": "Contaminantes atmosféricos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/",
+            "label": "Normativa de calidad del aire"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg 1800w, https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1280x853.jpg 1280w, https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+        "width": "1800",
+        "height": "1200",
+        "alt": "El tráfico urbano no solo deteriora la calidad del aire, también genera contaminación acústica crónica cuyos efectos sobre la salud van mucho más allá de la molestia auditiva. - Kunak",
+        "clase": "wp-image-68280"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "running-for-clean-air",
+      "ruta": null,
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "eje": "`<script>` DENTRO del cuerpo (15/209) — el payload que §3.3 prohíbe",
+      "seo": {
+        "title": "Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte - Kunak",
+        "description": "La monitorización y control del aire es esencial para el deporte de alto rendimiento como demuestra el proyecto Clean Air de World Athletics.",
+        "canonical": "https://kunakair.com/es/running-for-clean-air/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/\"><span itemprop=\"name\">Contaminación y salud</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Contaminación y salud Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/",
+            "label": "Contaminación y salud"
+          }
+        ]
+      },
+      "titulo": "Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">28 febrero 2025</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "28 febrero 2025 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/calidad-del-aire/\">Calidad del aire</a>, <a href=\"https://kunakair.com/es/etiqueta/monitorizacion-ambiental/\">Monitorización ambiental</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Calidad del aire , Monitorización ambiental",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+            "label": "Calidad del aire"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/",
+            "label": "Monitorización ambiental"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg 1800w, https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1280x853.jpg 1280w, https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-480x320.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+        "width": "1800",
+        "height": "1200",
+        "alt": "Control de la contaminación del aire en los JJOO de París 2024 - Kunak",
+        "clase": "wp-image-61442"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": null,
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "eje": "más variedad interna: 26 etiquetas distintas",
+      "seo": {
+        "title": "La contaminación del aire: el asesino silencioso de Europa - Kunak",
+        "description": "La contaminación del aire causa más de 240.000 muertes al año en Europa. Descubre cómo podemos construir un futuro más limpio y saludable.",
+        "canonical": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/\"><span itemprop=\"name\">Artículos y Guías</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/articulos/contaminacion-urbana/\"><span itemprop=\"name\">Contaminación urbana</span></a><meta itemprop=\"position\" content=\"4\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">La contaminación del aire: el asesino silencioso de Europa</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Artículos y Guías Contaminación urbana La contaminación del aire: el asesino silencioso de Europa",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/",
+            "label": "Artículos y Guías"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+            "label": "Contaminación urbana"
+          }
+        ]
+      },
+      "titulo": "La contaminación del aire: el asesino silencioso de Europa",
+      "fecha": {
+        "html": "<span class=\"fecha-publicacion\">13 diciembre 2024</span> - <span class=\"fecha-actualizacion\">Actualizado 15 junio 2026</span>",
+        "texto": "13 diciembre 2024 - Actualizado 15 junio 2026"
+      },
+      "taxonomias": {
+        "html": "<div class=\"case-taxonomies\"><span class=\"case-categorias\"><span>Categoría: </span><a href=\"https://kunakair.com/es/categoria/articulos/\">Artículos</a></span><span class=\"case-tags\"><span>Etiquetas: </span><a href=\"https://kunakair.com/es/etiqueta/calidad-del-aire/\">Calidad del aire</a>, <a href=\"https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/\">Normativa de calidad del aire</a>, <a href=\"https://kunakair.com/es/etiqueta/particulas-en-suspension/\">Partículas en suspensión</a></span></div>",
+        "texto": "Categoría: Artículos Etiquetas: Calidad del aire , Normativa de calidad del aire , Partículas en suspensión",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/categoria/articulos/",
+            "label": "Artículos"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+            "label": "Calidad del aire"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/",
+            "label": "Normativa de calidad del aire"
+          },
+          {
+            "href": "https://kunakair.com/es/etiqueta/particulas-en-suspension/",
+            "label": "Partículas en suspensión"
+          }
+        ]
+      },
+      "imagenDestacada": {
+        "src": "https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg 1800w, https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-1280x853.jpg 1280w, https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-480x320.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+        "width": "1800",
+        "height": "1200",
+        "alt": "Air Pollution: Europe’s Silent Killer and the Call for Cleaner Air",
+        "clase": "wp-image-60231"
+      },
+      "autoria": "Escrito por el Equipo de marketing y comunicación",
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": true,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "termino",
+      "slug": "cloruro-de-hidrogeno-hcl",
+      "ruta": null,
+      "url": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+      "eje": "la más larga del glosario (50 640) · tabla (49 % de los términos)",
+      "seo": {
+        "title": "Cloruro de hidrógeno (HCl): emisiones, riesgos y monitorización - Kunak",
+        "description": "Controlar emisiones de cloruro de hidrógeno es contar con herramienta estratégtca contra riesgos, mejorar eficiencia y proteger trabajadores.",
+        "canonical": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2026/05/produccion-plasticos-clorados_cloruro-de-hidrogeno_Kunak-1.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/kunakpedia/\"><span itemprop=\"name\">Kunakpedia</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Cloruro de hidrógeno (HCl)</span><meta itemprop=\"position\" content=\"4\"></li></ol>",
+        "texto": "Inicio Recursos Kunakpedia Cloruro de hidrógeno (HCl)",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/kunakpedia/",
+            "label": "Kunakpedia"
+          }
+        ]
+      },
+      "titulo": "Cloruro de hidrógeno (HCl): emisiones, riesgos y monitorización en calidad del aire",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "termino",
+      "slug": "emisiones-atmosfericas",
+      "ruta": null,
+      "url": "https://kunakair.com/es/emisiones-atmosfericas/",
+      "eje": "la más corta del glosario (5 651)",
+      "seo": {
+        "title": "Emisiones atmosféricas, contaminantes del aire para nuestra salud",
+        "description": "Las emisiones atmosféricas alteran la calidad del aire. Controlar estas emisiones es proteger la salud humana y el medioambiente.",
+        "canonical": "https://kunakair.com/es/emisiones-atmosfericas/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2024/02/atmospheric-emissions-web.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/kunakpedia/\"><span itemprop=\"name\">Kunakpedia</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Emisiones atmosféricas</span><meta itemprop=\"position\" content=\"4\"></li></ol>",
+        "texto": "Inicio Recursos Kunakpedia Emisiones atmosféricas",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/kunakpedia/",
+            "label": "Kunakpedia"
+          }
+        ]
+      },
+      "titulo": "Emisiones atmosféricas y su impacto en el medioambiente",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "termino",
+      "slug": "metano",
+      "ruta": null,
+      "url": "https://kunakair.com/es/metano/",
+      "eje": "embebido · y comprueba que `metano` NO colisiona con `contaminacion-por-metano`",
+      "seo": {
+        "title": "Metano (CH4) - Kunak",
+        "description": "Conoce las razones por las que el metano, aunque presente en la atmósfera de manera natural, se ha convertido en un gas dañino para la vida.",
+        "canonical": "https://kunakair.com/es/metano/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/main-sources-methane.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/kunakpedia/\"><span itemprop=\"name\">Kunakpedia</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Metano (CH<sub>4</sub>)</span><meta itemprop=\"position\" content=\"4\"></li></ol>",
+        "texto": "Inicio Recursos Kunakpedia Metano (CH 4 )",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/kunakpedia/",
+            "label": "Kunakpedia"
+          }
+        ]
+      },
+      "titulo": "Metano, un desafío para la estabilidad climática global",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": null,
+      "descargaPdf": null,
+      "intro": null,
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "doc-cientifico",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+      "eje": "la más larga de la forma (2 646) · prefijo mayoritario (14/23)",
+      "seo": {
+        "title": "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/documentos-cientificos/\"><span itemprop=\"name\">Documentos científicos</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\">\n\t\t                <a itemprop=\"item\" href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\">\n\t\t                    <span itemprop=\"name\">Artículos científicos y estudios</span>\n\t\t                </a>\n\t\t                <meta itemprop=\"position\" content=\"4\">\n\t\t              </li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Documentos científicos Artículos científicos y estudios Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/documentos-cientificos/",
+            "label": "Documentos científicos"
+          },
+          {
+            "href": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+            "label": "Artículos científicos y estudios"
+          }
+        ]
+      },
+      "titulo": "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": {
+        "src": "https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+        "width": "848",
+        "height": "1200",
+        "alt": "Athletes&#039; exposure to air pollution during World Athletics Relays: A Pilot Study",
+        "clase": "wp-image-61668"
+      },
+      "descargaPdf": {
+        "href": "https://pubmed.ncbi.nlm.nih.gov/32065890/",
+        "label": "View document"
+      },
+      "intro": "Escrito por el Equipo de marketing y comunicación",
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "doc-cientifico",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+      "eje": "la más corta de la forma (675)",
+      "seo": {
+        "title": "Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/documentos-cientificos/\"><span itemprop=\"name\">Documentos científicos</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\">\n\t\t                <a itemprop=\"item\" href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\">\n\t\t                    <span itemprop=\"name\">Artículos científicos y estudios</span>\n\t\t                </a>\n\t\t                <meta itemprop=\"position\" content=\"4\">\n\t\t              </li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Documentos científicos Artículos científicos y estudios Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/documentos-cientificos/",
+            "label": "Documentos científicos"
+          },
+          {
+            "href": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+            "label": "Artículos científicos y estudios"
+          }
+        ]
+      },
+      "titulo": "Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": {
+        "src": "https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg 848w, https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-480x679.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+        "width": "848",
+        "height": "1200",
+        "alt": "The suitability of a mobile communications network to deliver high-resolution air quality measurements",
+        "clase": "wp-image-61720"
+      },
+      "descargaPdf": {
+        "href": "https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344",
+        "label": "View document"
+      },
+      "intro": "Escrito por el Equipo de marketing y comunicación",
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "doc-cientifico",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+      "eje": "SEGUNDO prefijo (8/23) — `evaluaciones-independientes`",
+      "seo": {
+        "title": "Desafío AIRLAB de microsensores 2023 - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/documentos-cientificos/\"><span itemprop=\"name\">Documentos científicos</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\">\n\t\t                <a itemprop=\"item\" href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\">\n\t\t                    <span itemprop=\"name\">Evaluaciones independientes</span>\n\t\t                </a>\n\t\t                <meta itemprop=\"position\" content=\"4\">\n\t\t              </li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Desafío AIRLAB de microsensores 2023</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Documentos científicos Evaluaciones independientes Desafío AIRLAB de microsensores 2023",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/documentos-cientificos/",
+            "label": "Documentos científicos"
+          },
+          {
+            "href": "https://kunakair.com/es/scientific-category/evaluaciones-independientes/",
+            "label": "Evaluaciones independientes"
+          }
+        ]
+      },
+      "titulo": "Desafío AIRLAB de microsensores 2023",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": {
+        "src": "https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg 848w, https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak-480x679.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+        "width": "848",
+        "height": "1200",
+        "alt": "AIRLAB Micro Sensors Challenge 2023",
+        "clase": "wp-image-61797"
+      },
+      "descargaPdf": {
+        "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf",
+        "label": "View document"
+      },
+      "intro": "Escrito por el Equipo de marketing y comunicación",
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    },
+    {
+      "forma": "doc-cientifico",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "url": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+      "eje": "TERCER prefijo, y es 1 de 23: `estudios-cientificos/articulos-tecnicos` — la que rompe «un prefijo fijo, una plantilla»",
+      "seo": {
+        "title": "Soluciones avanzadas de monitorización - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg"
+      },
+      "migas": {
+        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/documentos-cientificos/\"><span itemprop=\"name\">Documentos científicos</span></a><meta itemprop=\"position\" content=\"3\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\">\n\t\t                <a itemprop=\"item\" href=\"https://kunakair.com/es/scientific-category/articulos-tecnicos/\">\n\t\t                    <span itemprop=\"name\">Artículos técnicos</span>\n\t\t                </a>\n\t\t                <meta itemprop=\"position\" content=\"4\">\n\t\t              </li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">Soluciones avanzadas de monitorización</span><meta itemprop=\"position\" content=\"5\"></li></ol>",
+        "texto": "Inicio Recursos Documentos científicos Artículos técnicos Soluciones avanzadas de monitorización",
+        "enlaces": [
+          {
+            "href": "https://kunakair.com/es/",
+            "label": "Inicio"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/",
+            "label": "Recursos"
+          },
+          {
+            "href": "https://kunakair.com/es/recursos/documentos-cientificos/",
+            "label": "Documentos científicos"
+          },
+          {
+            "href": "https://kunakair.com/es/scientific-category/articulos-tecnicos/",
+            "label": "Artículos técnicos"
+          }
+        ]
+      },
+      "titulo": "Soluciones avanzadas de monitorización",
+      "fecha": null,
+      "taxonomias": null,
+      "imagenDestacada": null,
+      "autoria": null,
+      "portada": {
+        "src": "https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg",
+        "srcset": "https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg 848w, https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering-480x679.jpg 480w",
+        "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+        "width": "848",
+        "height": "1200",
+        "alt": "",
+        "clase": "wp-image-71042"
+      },
+      "descargaPdf": {
+        "href": "https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf",
+        "label": "View document"
+      },
+      "intro": "Escrito por el Equipo de marketing y comunicación",
+      "relacionados": false,
+      "cuerpo": null,
+      "cuerpoChars": 0
+    }
+  ]
+}
