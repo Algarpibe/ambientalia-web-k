@@ -2699,3 +2699,24 @@ estilo inline a las mismas clases). Commits `0ce6e00` y `2c2432e`.
 3. **El −19.2 de `/accesorios` entra al catálogo de compensaciones de
    `CLAUDE.md`** (sexta instancia): −48 de espaciador tapando +28.8 propios.
    Un número pequeño no es un defecto pequeño: era el residuo de dos grandes.
+
+### ⚠ Custodia · la línea base 390 post-C-QA2 CANÓNICA es el build roto
+
+La verificación de esta tanda comparó contra `clon-base-390-cqa2-despues.json`
+y salieron **10 «regresiones» falsas de +136.58 en S0**: ese fichero es el
+congelado del build con el **comentario CSS mal cerrado** (la banda a 0 a 390 —
+la lección del HANDOFF). La línea **sana** post-C-QA2 vive en
+**`clon-base-390-cqa2-despues-2026-07-31.json`**: la guarda de `w()` la mandó
+ahí al negarse a pisar la rota, y nadie reconcilió el nombre. Las dos están en
+git (`aa8541a`); no se pisa ninguna.
+
+> **Consecuencia operativa: cualquier `--cmp` futuro a 390 contra el estado
+> post-C-QA2 usa el fichero FECHADO.** A 1440 no hay ambigüedad (el bug era
+> solo móvil; no existe variante fechada). Verificado hoy contra el fechado:
+> `/accesorios` −48 y `/monitor` −78 exactos, las otras 15 sin mover un píxel
+> (`clon-base-390-cqa7-despues.json`).
+
+Es el **primer disparo real de la guarda de `w()` protegiendo evidencia** — el
+ruido fuerte era la señal. Y deja la moraleja espejo de la regla 5: congelar y
+commitear no basta si **el nombre canónico queda apuntando a la medida mala**;
+la reconciliación es parte de la tanda que descubre el defecto.
