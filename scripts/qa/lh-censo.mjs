@@ -58,22 +58,65 @@ const HUBS = [
   "/es/recursos/preguntas-frecuentes/",
 ];
 
-/* ── Patrones censados (regla 4: 0 en TODAS las páginas = sonda rota) ────────
- * `min` es en cuántas páginas COMO POCO tiene que casar para que la sonda se
- * crea a sí misma. El sabotaje estropea el primero. */
+/* ── Patrones censados ───────────────────────────────────────────────────────
+ * `min` = en cuántas páginas COMO POCO tiene que casar (regla 4: 0 en todas =
+ * sonda rota). `max` = en cuántas COMO MUCHO puede casar un patrón cuyo
+ * trabajo es DISCRIMINAR.
+ *
+ * ⚠ **`max` existe porque la regla 4 tiene un complementario que costó dos
+ * medidas falsas en esta misma sonda (2026-07-31).** Un patrón que casa en
+ * NINGUNA página no mide nada — eso lo cubre `min`. Pero **uno que casa en
+ * TODAS tampoco mide nada**, y encima parece un dato: `postContentMod` daba
+ * «sí» en las 35 porque buscaba `et_pb_post_content` en el HTML entero y lo
+ * encontraba **dentro de `<style>`** (las 2 apariciones de un archivo de
+ * etiqueta son CSS de Divi). Contradecía una medida previa buena —
+ * `RECON-LISTADOS.md` midió ese módulo sobre el DOM y dio «no» en archivo de
+ * taxonomía— y esa contradicción fue lo único que lo delató.
+ *
+ * De ahí las dos correcciones: **el markup se busca sobre el HTML SIN
+ * `<style>` ni `<script>`**, y todo patrón discriminante declara su `max`. */
 const PATRONES = {
   bodyTag: { re: /<body[^>]*class="([^"]*)"/, min: 35 },
-  tbBody: { re: /et_pb_section_\d+_tb_body/g, min: 1 },
+  tbBody: { re: /class="[^"]*et_pb_section_\d+_tb_body/g, min: 1, max: 34 },
   seccion: { re: /class="[^"]*\bet_pb_section\b/g, min: 1 },
-  postContentMod: { re: /et_pb_post_content/g, min: 0 },
+  /** El MÓDULO, o sea una clase de un elemento — no el selector del CSS. */
+  postContentMod: { re: /class="[^"]*\bet_pb_post_content\b/g, min: 0, max: 34 },
   pageNumbers: { re: /class="[^"]*page-numbers[^"]*"/g, min: 1 },
   pagina2: { re: /href="[^"]*\/page\/(\d+)\/"/g, min: 1 },
-  tarjeta: { re: /<article[^>]*class="[^"]*\bet_pb_post\b/g, min: 1 },
+  /**
+   * ⚠ **Dos markups, no uno — y un tercer error dentro de la corrección.**
+   *
+   * (1) Las entradas listadas salen del módulo blog de Divi (`<article
+   * class="et_pb_post …">`) en el régimen `tb_body`, y del **loop del tema**
+   * (`<article class="post-71039 scientific-docs type-scientific-docs …">`) en
+   * los archivos sin `tb_body`. Contar solo el primero daba **0 tarjetas** en
+   * los 3 `scientific-category`: la sonda sin mirar, no el sitio sin listar.
+   *
+   * (2) Y al ampliar a `type-*` entró un falso positivo: WordPress envuelve el
+   * contenido de una PÁGINA en `<article class="post-26358 page type-page …">`.
+   * Eso daba **exactamente 1 tarjeta** en las 6 páginas de builder —un número
+   * plausible, que es como se cuela— y **4 en `/es/recursos/`**, que lista 3.
+   * `type-page` es el continente, nunca una entrada listada: se excluye.
+   */
+  tarjeta: { re: /<article[^>]*class="[^"]*(?:\bet_pb_post\b|\btype-(?!page\b)[a-z-]+)/g, min: 1 },
   tituloTarjeta: { re: /<h2 class="entry-title"><a href="([^"]+)"[^>]*>(.*?)<\/a>/g, min: 1 },
   fechaTarjeta: { re: /class="published"[^>]*>([^<]+)</g, min: 0 },
   h1: { re: /<h1[^>]*>([\s\S]*?)<\/h1>/, min: 1 },
 };
-if (SABOTAJE) PATRONES.bodyTag.re = /<cuerpo[^>]*clase="([^"]*)"/;
+/**
+ * El test en negativo cubre **las dos** guardas, porque son dos fallos
+ * distintos: `bodyTag` con un selector inventado (→ MUERTO, casa en 0) y
+ * `postContentMod` con el máximo a 0 (→ UBICUO, casa en más de las que puede).
+ * Una sola corrida `SABOTAJE=1` tiene que sacar los dos mensajes y salir con 2.
+ */
+if (SABOTAJE) {
+  PATRONES.bodyTag.re = /<cuerpo[^>]*clase="([^"]*)"/;
+  PATRONES.postContentMod.max = 0;
+}
+
+/** Fuera CSS y JS: ahí viven los selectores que se hacen pasar por markup. */
+const soloMarkup = (html) =>
+  html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
 
 const usoPatron = Object.fromEntries(Object.keys(PATRONES).map((k) => [k, 0]));
 const casa = (nombre, html) => {
@@ -138,7 +181,9 @@ const PAGINAS = [
 ];
 
 /* ── 2 · el censo 35/35 ── */
-const leer = (html) => {
+const leer = (crudo) => {
+  /** Todo lo que sigue mira MARKUP. El CSS de Divi nombra sus propias clases. */
+  const html = soloMarkup(crudo);
   const bodyCls = (casa("bodyTag", html)[0]?.[1] || "").split(/\s+/).filter(Boolean);
   const interesantes = bodyCls.filter((c) =>
     /^(home|blog|archive|search|tax-|term-|category|tag-|page-template|page-id|postid|single|et-tb|et_pb_pagebuilder|et_pb_page)/.test(c),
@@ -160,7 +205,7 @@ const leer = (html) => {
     esqueleto: {
       seccionesDivi: secciones,
       seccionesTbBody: tbBody,
-      postContentModule: /et_pb_post_content/.test(html),
+      postContentModule: /class="[^"]*\bet_pb_post_content\b/.test(html),
     },
     paginacion: {
       tiene: /class="[^"]*page-numbers[^"]*"/.test(html),
@@ -234,8 +279,19 @@ if (muertos.length) {
   console.error(`\n❌ ${muertos.length} PATRÓN(ES) MUERTO(S) — casaron en menos páginas que su mínimo:`);
   for (const [k, p] of muertos) console.error(`   · ${k}: ${usoPatron[k]} < ${p.min}. Un cero así es la sonda rota, no el sitio.`);
 }
+/** El complementario: un discriminante que casa en TODAS no discrimina nada. */
+const ubicuos = Object.entries(PATRONES).filter(([k, p]) => p.max !== undefined && usoPatron[k] > p.max);
+if (ubicuos.length) {
+  console.error(`\n❌ ${ubicuos.length} PATRÓN(ES) UBICUO(S) — casaron en MÁS páginas que su máximo:`);
+  for (const [k, p] of ubicuos)
+    console.error(
+      `   · ${k}: ${usoPatron[k]} > ${p.max}. Su trabajo es SEPARAR, y casa en todas:\n` +
+        `     eso no es «esta propiedad la tienen todas», es el patrón mirando otra cosa\n` +
+        `     (mira si está casando dentro de <style>).`,
+    );
+}
 if (fallos) console.error(`\n⚠ ${fallos} página(s) sin leer (fetch fallido) — el censo NO es 35/35 hasta que lean.`);
 
 const nombre = MODO === "regimen" ? "lh-regimen" : "lh-censo";
 w(`medidas/${nombre}${SABOTAJE ? "-SABOTAJE" : ""}.json`, salida);
-process.exit(muertos.length || fallos ? 2 : 0);
+process.exit(muertos.length || ubicuos.length || fallos ? 2 : 0);

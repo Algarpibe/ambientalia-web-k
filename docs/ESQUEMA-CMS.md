@@ -743,6 +743,42 @@ colisión deliberada en `/accesorios`, medido y borrado.
 **Requisito, no recomendación:** sin (3), la colisión es silenciosa y solo se ve
 sirviendo la página equivocada.
 
+### ⚠ 4b · La PAGINACIÓN son 107 rutas más, medidas (2026-07-31)
+
+Del recon de listados y hubs (`docs/research/listados-hubs/PAGE_TOPOLOGY.md`
+§5, sonda `qa:lh-paginas`, congelado en `medidas/lh-paginas.json`). **Dato de
+enrutado, no de modelado**, y por eso entra aquí:
+
+| | |
+|---|---|
+| patrón | **`/page/N/`**, sin excepción en las 35 |
+| listados que paginan | **21** de 35 |
+| **rutas extra** además de las 35 primeras | **107** (total **142**) |
+| mayores | `etiqueta/monitorizacion-ambiental` 19 · `blog` 17 · `recursos/articulos` 16 |
+
+Tres consecuencias para este §:
+
+1. **El plano de slugs crece**: a los **202** ya censados se suman **107 rutas
+   de paginación** cuando esos listados se emitan. La guarda de build de (3) las
+   cubre por construcción —se deriva del `prerender-manifest`— pero conviene
+   saber el volumen antes, no después.
+2. **`dynamicParams = false` obliga a emitirlas todas en build**, así que las
+   107 son coste de rebuild: entra en **A-SP13** (§2.3), que ya estaba abierta
+   por las 209 del grupo A.
+3. **Y 7 páginas del original NO paginan aunque respondan 200 a cualquier
+   `/page/N/`** (los 6 hubs de builder y `casos-de-exito`): su canonical apunta
+   a la primera, o sea que es **contenido duplicado infinito del original**. **No
+   se replica** — son 1 ruta cada una. Contarlas por su HTTP 200 habría metido
+   **441 rutas inexistentes** en este cálculo.
+
+**Y un campo que el recon deja medido, sin modelar:** el **número de entradas
+por página no es constante entre familias** — 9 (blog y etiquetas) · 15
+(`recursos/articulos`) · 5 (glosario y FAQ) · 3 (seminarios web). Por el test B
+de `CLAUDE.md` eso es **campo del listado**, no plantilla. Se anota aquí para
+que el content type de LISTADO nazca con él; **la decisión de si los 23
+archivos son uno o tres content types es de la fase de decisión**, no de este
+registro.
+
 **Traducción a Payload de (2):** la unicidad **entre** colecciones no es nativa.
 Un hook `beforeValidate` que consulte las demás familias planas (o una
 colección-índice de slugs) protege **el alta**; la guarda de build protege **el

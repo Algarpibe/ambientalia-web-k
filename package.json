@@ -63,7 +63,8 @@
     "qa:lib": "node scripts/qa/lib.test.mjs",
     "qa:bases": "node scripts/qa/c-bases.mjs",
     "qa:banda": "node scripts/qa/c-banda.mjs",
-    "qa:lh": "node scripts/qa/lh-censo.mjs"
+    "qa:lh": "node scripts/qa/lh-censo.mjs",
+    "qa:lh-paginas": "node scripts/qa/lh-paginas.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

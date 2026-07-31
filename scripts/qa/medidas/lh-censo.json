@@ -1,0 +1,1403 @@
+{
+  "meta": {
+    "fecha": "2026-07-31",
+    "modo": "censo",
+    "sabotaje": false,
+    "paginas": 35
+  },
+  "paginas": {
+    "/es/productos/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1742,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-26358",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 0,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Sistemas de sensores de calidad del aire"
+    },
+    "/es/sectores/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 2311,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-24963",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 7,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 0,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Soluciones líderes de control del aire"
+    },
+    "/es/recursos/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1917,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-33166",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 8,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 3,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Centro de recursos sobre la calidad del aire"
+    },
+    "/es/casos-de-exito/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1881,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": false,
+        "clases": [
+          "page-template",
+          "page-template-case-studies",
+          "page-template-case-studies-php",
+          "page-id-26987",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 57,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Casos de éxito"
+    },
+    "/es/blog/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1534,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "blog",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": true,
+        "maxPagina": 8,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/proyecto-simgo/",
+            "titulo": "Proyecto SIMGO"
+          },
+          {
+            "href": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/",
+            "titulo": "Kunak AIR Pro logra la certificación Grado 1 para PM2.5 en C"
+          },
+          {
+            "href": "https://kunakair.com/es/kunak-obtiene-el-sello-reconcilia/",
+            "titulo": "Kunak obtiene el Sello Reconcilia por su compromiso con la c"
+          }
+        ]
+      },
+      "h1": "Blog"
+    },
+    "/es/glosario/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1616,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 4,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 8,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 5,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/emisiones-por-chimenea/",
+            "titulo": "Emisiones por chimenea"
+          },
+          {
+            "href": "https://kunakair.com/es/oxidos-de-nitrogeno-nox/",
+            "titulo": "Óxidos de nitrógeno (NOx)"
+          },
+          {
+            "href": "https://kunakair.com/es/ldar/",
+            "titulo": "LDAR (Detección y reparación de fugas)"
+          }
+        ]
+      },
+      "h1": ""
+    },
+    "/es/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 2815,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 4,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 4,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 5,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/faqs/que-area-cubre-cada-dispositivo/",
+            "titulo": "¿Qué área cubre cada dispositivo?"
+          },
+          {
+            "href": "https://kunakair.com/es/faqs/los-equipos-kunak-son-certificados-atex/",
+            "titulo": "¿Los equipos Kunak son certificados ATEX?"
+          },
+          {
+            "href": "https://kunakair.com/es/faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software/",
+            "titulo": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva"
+          }
+        ]
+      },
+      "h1": ""
+    },
+    "/es/recursos/articulos/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 2638,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-articulos",
+          "term-379",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": true,
+        "maxPagina": 6,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 15,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+            "titulo": "Monitorización de emisiones fugitivas: detección y control d"
+          },
+          {
+            "href": "https://kunakair.com/es/monitorizacion-perimetral/",
+            "titulo": "Monitorización perimetral en instalaciones industriales: con"
+          },
+          {
+            "href": "https://kunakair.com/es/monitorizacion-near-reference/",
+            "titulo": "Monitorización near-reference: precisión avanzada en la medi"
+          }
+        ]
+      },
+      "h1": "Artículos y Guías"
+    },
+    "/es/recursos/seminarios-web/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1706,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-seminarios-web",
+          "term-384",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 3,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/webinar-control-de-la-contaminacion-del-aire-en-la-industria/",
+            "titulo": "Webinar: Control de la contaminación atmosférica en la indus"
+          },
+          {
+            "href": "https://kunakair.com/es/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web/",
+            "titulo": "Control de la contaminación del aire en la industria &#8211;"
+          },
+          {
+            "href": "https://kunakair.com/es/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar/",
+            "titulo": "Webinar: Detección temprana de episodios de contaminación po"
+          }
+        ]
+      },
+      "h1": "Seminarios Web"
+    },
+    "/es/recursos/kunakpedia/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1803,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-33769",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 0,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Kunakpedia"
+    },
+    "/es/recursos/documentos-cientificos/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 2269,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-61902",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 7,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 0,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Precisión validada por organismos independientes"
+    },
+    "/es/recursos/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "status": 200,
+      "cargaMs": 1612,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": true,
+        "esArchivo": false,
+        "clases": [
+          "page-template-default",
+          "page-id-65877",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 0,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Preguntas frecuentes"
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1884,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-calidad-del-aire",
+          "tag-411",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 4,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Calidad del aire"
+    },
+    "/es/etiqueta/co2-es/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1778,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-co2-es",
+          "tag-618",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 7,
+        "conFecha": 7,
+        "muestra": []
+      },
+      "h1": "CO2"
+    },
+    "/es/etiqueta/contaminantes-atmosfericos/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1882,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-contaminantes-atmosfericos",
+          "tag-205",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 4,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Contaminantes atmosféricos"
+    },
+    "/es/etiqueta/cov/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1916,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-cov",
+          "tag-620",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 6,
+        "conFecha": 6,
+        "muestra": []
+      },
+      "h1": "COV"
+    },
+    "/es/etiqueta/emisiones-industriales/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 2064,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-emisiones-industriales",
+          "tag-614",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 3,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Emisiones industriales"
+    },
+    "/es/etiqueta/gases-de-efecto-invernadero/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 2051,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-gases-de-efecto-invernadero",
+          "tag-617",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Gases de efecto invernadero"
+    },
+    "/es/etiqueta/h2s-es/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1852,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-h2s-es",
+          "tag-619",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 4,
+        "conFecha": 4,
+        "muestra": []
+      },
+      "h1": "H2S"
+    },
+    "/es/etiqueta/malos-olores/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1949,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-malos-olores",
+          "tag-615",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 8,
+        "conFecha": 8,
+        "muestra": []
+      },
+      "h1": "Malos olores"
+    },
+    "/es/etiqueta/monitorizacion-ambiental/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1982,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-monitorizacion-ambiental",
+          "tag-359",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 11,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Monitorización ambiental"
+    },
+    "/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1830,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-normativa-de-calidad-del-aire",
+          "tag-621",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 3,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Normativa de calidad del aire"
+    },
+    "/es/etiqueta/particulas-en-suspension/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 1929,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-particulas-en-suspension",
+          "tag-616",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Partículas en suspensión"
+    },
+    "/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "status": 200,
+      "cargaMs": 2530,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tag-sensor-de-calidad-del-aire",
+          "tag-360",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 4,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 9,
+        "conFecha": 9,
+        "muestra": []
+      },
+      "h1": "Sensor de calidad del aire"
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "grupo": "scientific-category",
+      "status": 200,
+      "cargaMs": 1933,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-scientific-category",
+          "term-articulos-cientificos-y-estudios",
+          "term-529",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 5,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 14,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Artículos científicos y estudios"
+    },
+    "/es/scientific-category/articulos-tecnicos/": {
+      "grupo": "scientific-category",
+      "status": 200,
+      "cargaMs": 1427,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-scientific-category",
+          "term-articulos-tecnicos",
+          "term-673",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 5,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 1,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Artículos técnicos"
+    },
+    "/es/scientific-category/evaluaciones-independientes/": {
+      "grupo": "scientific-category",
+      "status": 200,
+      "cargaMs": 1897,
+      "regimen": {
+        "tieneTbBody": false,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-scientific-category",
+          "term-evaluaciones-independientes",
+          "term-528",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 5,
+        "seccionesTbBody": 0,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 8,
+        "conFecha": 0,
+        "muestra": []
+      },
+      "h1": "Evaluaciones independientes"
+    },
+    "/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1688,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-en-la-construccion",
+          "term-399",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 4,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+            "titulo": "Monitorización del aire en proyectos de remediación: control"
+          },
+          {
+            "href": "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+            "titulo": "Contaminación del aire por obras, analizando el impacto ambi"
+          },
+          {
+            "href": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+            "titulo": "Impacto ambiental de la industria cementera: desafíos y solu"
+          }
+        ]
+      },
+      "h1": "Contaminación en la construcción"
+    },
+    "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1612,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-en-puertos-y-aeropuertos",
+          "term-400",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 1,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/calidad-del-aire-en-los-aeropuertos/",
+            "titulo": "Calidad del aire en los aeropuertos, un desafío para la salu"
+          }
+        ]
+      },
+      "h1": "Contaminación en puertos y aeropuertos"
+    },
+    "/es/recursos/articulos/contaminacion-minera/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1491,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-minera",
+          "term-395",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 1,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/impacto-ambiental-mineria-calidad-aire/",
+            "titulo": "¿Cómo podemos medir el impacto ambiental de la minería en la"
+          }
+        ]
+      },
+      "h1": "Contaminación minera"
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1743,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-urbana",
+          "term-393",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": true,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 15,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+            "titulo": "Monitorización de la calidad del aire en centros de datos: a"
+          },
+          {
+            "href": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+            "titulo": "Monitorización de emisiones del tráfico urbano: control avan"
+          },
+          {
+            "href": "https://kunakair.com/es/nueva-directiva-de-calidad-del-aire-ue-2024-2881/",
+            "titulo": "Análisis de la Nueva Directiva de Calidad del Aire (UE) 2024"
+          }
+        ]
+      },
+      "h1": "Contaminación urbana"
+    },
+    "/es/recursos/articulos/contaminacion-y-salud/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 2334,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-y-salud",
+          "term-394",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": true,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 15,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-near-reference/",
+            "titulo": "Monitorización near-reference: precisión avanzada en la medi"
+          },
+          {
+            "href": "https://kunakair.com/es/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas/",
+            "titulo": "Medición de PM10 en entornos con alta presencia de partícula"
+          },
+          {
+            "href": "https://kunakair.com/es/particulas-ultrafinas-puf/",
+            "titulo": "Partículas ultrafinas (PUF): el contaminante invisible que a"
+          }
+        ]
+      },
+      "h1": "Contaminación y salud"
+    },
+    "/es/recursos/articulos/petroleo-y-gas/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1497,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-petroleo-y-gas",
+          "term-607",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 1,
+        "patron": null
+      },
+      "tarjetas": {
+        "n": 3,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-perimetral/",
+            "titulo": "Monitorización perimetral en instalaciones industriales: con"
+          },
+          {
+            "href": "https://kunakair.com/es/emisiones-de-las-refinerias-de-petroleo/",
+            "titulo": "Emisiones de las refinerías de petróleo: fuentes, impacto y "
+          },
+          {
+            "href": "https://kunakair.com/es/monitorizacion-de-emisiones-en-refinerias/",
+            "titulo": "Monitorización de emisiones en refinerías: control continuo,"
+          }
+        ]
+      },
+      "h1": "Emisiones del petróleo y gas"
+    },
+    "/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 2785,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-industria-y-contaminacion-por-olores",
+          "term-397",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": true,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 15,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+            "titulo": "Monitorización de emisiones fugitivas: detección y control d"
+          },
+          {
+            "href": "https://kunakair.com/es/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales/",
+            "titulo": "LDAR: detección y reparación inteligente de fugas industrial"
+          },
+          {
+            "href": "https://kunakair.com/es/emisiones-ganaderas-y-calidad-del-aire/",
+            "titulo": "Impacto de la agricultura y la ganadería en la calidad del a"
+          }
+        ]
+      },
+      "h1": "Industria y contaminación por olores"
+    },
+    "/es/recursos/articulos/productos-kunak/": {
+      "grupo": "resources",
+      "status": 200,
+      "cargaMs": 1875,
+      "regimen": {
+        "tieneTbBody": true,
+        "esBuilder": false,
+        "esArchivo": true,
+        "clases": [
+          "archive",
+          "tax-resources",
+          "term-productos-kunak",
+          "term-396",
+          "et-tb-has-template",
+          "et-tb-has-header",
+          "et-tb-has-body",
+          "et-tb-has-footer"
+        ]
+      },
+      "esqueleto": {
+        "seccionesDivi": 6,
+        "seccionesTbBody": 2,
+        "postContentModule": false
+      },
+      "paginacion": {
+        "tiene": false,
+        "maxPagina": 2,
+        "patron": "/page/N/"
+      },
+      "tarjetas": {
+        "n": 7,
+        "conFecha": 0,
+        "muestra": [
+          {
+            "href": "https://kunakair.com/es/calibracion-de-sensores-de-calidad-del-aire/",
+            "titulo": "Calibración de sensores de calidad del aire: precisión, fiab"
+          },
+          {
+            "href": "https://kunakair.com/es/medidores-de-calidad-del-aire-mediciones-indicativas/",
+            "titulo": "Medidores de calidad del aire made in Kunak, innovación al s"
+          },
+          {
+            "href": "https://kunakair.com/es/calidad-aire-tiempo-real-kunak-air-lite/",
+            "titulo": "Kunak AIR Lite: la estación basada en sensores para medir la"
+          }
+        ]
+      },
+      "h1": "Productos Kunak"
+    }
+  },
+  "muestra": {
+    "semilla": 1440,
+    "regla": "4 hub · 3 post_tag · 3 resources · 2 sci-cat + min/max tarjetas",
+    "rutas": [
+      "/es/recursos/seminarios-web/",
+      "/es/recursos/preguntas-frecuentes/",
+      "/es/preguntas-frecuentes/",
+      "/es/recursos/",
+      "/es/etiqueta/emisiones-industriales/",
+      "/es/etiqueta/contaminantes-atmosfericos/",
+      "/es/etiqueta/co2-es/",
+      "/es/recursos/articulos/contaminacion-urbana/",
+      "/es/recursos/articulos/petroleo-y-gas/",
+      "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "/es/scientific-category/articulos-tecnicos/",
+      "/es/casos-de-exito/"
+    ]
+  }
+}
