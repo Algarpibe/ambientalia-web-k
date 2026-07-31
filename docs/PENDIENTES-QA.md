@@ -2129,3 +2129,49 @@ Arreglar la cabecera sola **movería las 4 de producto**, que hoy pasan `qa:enla
 y `clon-base` porque nadie compara su base en crudo. Por eso el arreglo va con
 **plan propio y en sesión limpia**, contra la base congelada de las 17
 (`medidas/clon-base-{1440,390}-cqa1-antes.json`, umbral cero).
+
+### C-QA3 (nuevo, ABIERTO) · la HOME nunca tuvo una base de lectura válida
+
+PASO 2 del plan de la cabecera: mirar la home aparte, porque su `h1` sale a
+**y=0** en el original. Medido con `npm run qa:c-cabecera` (`SOLO=/`), congelado.
+
+**El `h1` de la home mide 0 px de alto en el original y 1 px en el clon**: los
+dos son títulos **ocultos para SEO**, no el titular de la página. Su `y` no
+guarda ninguna relación con la maquetación, así que el `Δ +289.91` de la tabla
+de C-QA1 **no es un defecto y nunca lo fue**.
+
+Pero la conclusión no es tranquilizadora, es la contraria:
+
+> **La base de lectura de la home no estaba movida: no era una base.** Y como el
+> protocolo *resta* la base antes de comparar, cualquier lectura del cuerpo de
+> la home se hizo contra un punto de apoyo arbitrario.
+
+**Medido contra un ancla VÁLIDA** —el primer encabezado con caja real, que es el
+**mismo `h2`** en los dos lados («La solución profesional para la monitoriza…»):
+
+| ancho | original | clon | Δ |
+|---|---|---|---|
+| **1440** | 279.88 | 300.91 | **+21.03** |
+| 390 | 120.23 | 120 | −0.23 |
+
+**El Δ0 de la home no se sostiene a 1440.** Y el número no es casual: la
+cabecera del original mide **225** a 1440 y la del clon **203.59** —
+**−21.41**—, que es el mismo desfase con signo contrario en el contenido. Las
+dos cabeceras están **fuera de flujo** en la home, así que lo que lo transmite
+no es el flujo sino algo dimensionado contra el alto de la cabecera. Falta
+medirlo por composición.
+
+**Y ese −21.41 es el mismo que ya asoma en C-QA2**: la cabecera del clon es
+21.41 más baja a 1440 y 10.58 más baja a 390 que la del original en las
+plantillas de producto. Puede que C-QA2 y C-QA3 sean **una sola causa** con dos
+síntomas — pero eso **no se afirma sin medirlo**, y por eso van separados.
+
+**Se decide aparte, como estaba pactado**: la home es la primera página clonada
+y la más verificada del proyecto, y un cambio ahí no entra de rebote en una
+tanda de cabecera. Lo que esta anotación fija es que su «verificada con Δ0»
+**tenía una base inválida debajo**, y que a 1440 hay +21.03 reales.
+
+⚠ **Consecuencia de método, ya escrita en `CLAUDE.md`**: un `h1` oculto es una
+base inválida, y el protocolo no lo detecta solo. `qa:c-cabecera` ahora
+comprueba **que el `h1` tenga caja real en los dos lados** y, si no, mide contra
+el primer encabezado visible y **dice que lo está haciendo**.

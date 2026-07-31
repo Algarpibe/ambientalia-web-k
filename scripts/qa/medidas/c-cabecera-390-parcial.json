@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-07-31",
+    "rutas": 1
+  },
+  "paginas": {
+    "/": {
+      "orig": {
+        "cabecera": {
+          "alto": 165.58,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 0,
+        "h1alto": 0,
+        "h1txt": "Monitoreo de la calidad del aire",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h2",
+          "y": 120.23,
+          "alto": 192.38,
+          "txt": "La solución profesional para la monitoriza"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "div",
+            "clase": "",
+            "alto": 17459.86,
+            "y": 0,
+            "position": "static",
+            "contieneH1": true
+          }
+        ],
+        "docH": 19221
+      },
+      "clon": {
+        "cabecera": {
+          "alto": 126,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 119,
+        "h1alto": 1,
+        "h1txt": "Monitoreo de la calidad del aire",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h2",
+          "y": 120,
+          "alto": 192.38,
+          "txt": "La solución profesional para la monitoriza"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "section",
+            "clase": "banner-home relative overflow-hidden",
+            "alto": 833.73,
+            "y": 0,
+            "position": "relative",
+            "contieneH1": true
+          }
+        ],
+        "docH": 19182
+      }
+    }
+  }
+}

@@ -22,6 +22,12 @@
         "h1txt": "Monitoreo de la calidad del aire",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h2",
+          "y": 120.23,
+          "alto": 192.38,
+          "txt": "La solución profesional para la monitoriza"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -51,6 +57,12 @@
         "h1txt": "Monitoreo de la calidad del aire",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h2",
+          "y": 120,
+          "alto": 192.38,
+          "txt": "La solución profesional para la monitoriza"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -82,6 +94,12 @@
         "h1txt": "Accesorios para sensores de calidad del ai",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 278.58,
+          "alto": 79,
+          "txt": "Accesorios para sensores de calidad del ai"
+        },
         "yAreaPrincipal": 136.58,
         "entre": [
           {
@@ -111,6 +129,12 @@
         "h1txt": "Accesorios para sensores de calidad del ai",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 327,
+          "alto": 79,
+          "txt": "Accesorios para sensores de calidad del ai"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -158,6 +182,12 @@
         "h1txt": "El primer distrito de bajas emisiones (DBE",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 511.69,
+          "alto": 462.34,
+          "txt": "El primer distrito de bajas emisiones (DBE"
+        },
         "yAreaPrincipal": 362.91,
         "entre": [
           {
@@ -187,6 +217,12 @@
         "h1txt": "El primer distrito de bajas emisiones (DBE",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 191.59,
+          "alto": 462.34,
+          "txt": "El primer distrito de bajas emisiones (DBE"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -226,6 +262,12 @@
         "h1txt": "Red de control de la contaminación por mal",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 511.69,
+          "alto": 310.56,
+          "txt": "Red de control de la contaminación por mal"
+        },
         "yAreaPrincipal": 362.91,
         "entre": [
           {
@@ -255,6 +297,12 @@
         "h1txt": "Red de control de la contaminación por mal",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 165.59,
+          "alto": 310.56,
+          "txt": "Red de control de la contaminación por mal"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -294,18 +342,24 @@
         "h1txt": "Red global de calidad de aire en pistas de",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 511.69,
+          "alto": 259.97,
+          "txt": "Red global de calidad de aire en pistas de"
+        },
         "yAreaPrincipal": 362.91,
         "entre": [
           {
             "tag": "div",
             "clase": "",
-            "alto": 7500.28,
+            "alto": 7557.23,
             "y": 362.91,
             "position": "static",
             "contieneH1": true
           }
         ],
-        "docH": 9889
+        "docH": 9946
       },
       "clon": {
         "cabecera": {
@@ -323,6 +377,12 @@
         "h1txt": "Red global de calidad de aire en pistas de",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 165.59,
+          "alto": 259.97,
+          "txt": "Red global de calidad de aire en pistas de"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -362,6 +422,12 @@
         "h1txt": "Alerta de contaminación de acuífero por li",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 511.69,
+          "alto": 209.38,
+          "txt": "Alerta de contaminación de acuífero por li"
+        },
         "yAreaPrincipal": 362.91,
         "entre": [
           {
@@ -391,6 +457,12 @@
         "h1txt": "Alerta de contaminación de acuífero por li",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 139.59,
+          "alto": 209.38,
+          "txt": "Alerta de contaminación de acuífero por li"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -430,6 +502,12 @@
         "h1txt": "¿Cuál es la diferencia entre calibración y",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 223.58,
+          "alto": 186,
+          "txt": "¿Cuál es la diferencia entre calibración y"
+        },
         "yAreaPrincipal": 165.58,
         "entre": [
           {
@@ -459,6 +537,12 @@
         "h1txt": "¿Cuál es la diferencia entre calibración y",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 58,
+          "alto": 186,
+          "txt": "¿Cuál es la diferencia entre calibración y"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -490,6 +574,12 @@
         "h1txt": "¿Puedo instalarlo en un vehículo o en un d",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 223.58,
+          "alto": 274,
+          "txt": "¿Puedo instalarlo en un vehículo o en un d"
+        },
         "yAreaPrincipal": 165.58,
         "entre": [
           {
@@ -519,6 +609,12 @@
         "h1txt": "¿Puedo instalarlo en un vehículo o en un d",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 58,
+          "alto": 274,
+          "txt": "¿Puedo instalarlo en un vehículo o en un d"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -550,18 +646,24 @@
         "h1txt": "Integración de datos más allá de la soluci",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 278.58,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la soluci"
+        },
         "yAreaPrincipal": 136.58,
         "entre": [
           {
             "tag": "div",
             "clase": "",
-            "alto": 7040.95,
+            "alto": 7013.95,
             "y": 136.58,
             "position": "static",
             "contieneH1": true
           }
         ],
-        "docH": 9230
+        "docH": 9203
       },
       "clon": {
         "cabecera": {
@@ -579,6 +681,12 @@
         "h1txt": "Integración de datos más allá de la soluci",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 279,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la soluci"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -626,18 +734,24 @@
         "h1txt": "Monitor de calidad del aire",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 308.58,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire"
+        },
         "yAreaPrincipal": 136.58,
         "entre": [
           {
             "tag": "div",
             "clase": "",
-            "alto": 21201.94,
+            "alto": 21255.94,
             "y": 136.58,
             "position": "static",
             "contieneH1": true
           }
         ],
-        "docH": 23703
+        "docH": 23757
       },
       "clon": {
         "cabecera": {
@@ -655,6 +769,12 @@
         "h1txt": "Monitor de calidad del aire",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 387,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -702,9 +822,15 @@
         "h1txt": "Calidad del aire en las ciudades",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Calidad del aire en las ciudades"
+        },
         "yAreaPrincipal": 347.25,
         "entre": [],
-        "docH": 10859
+        "docH": 10886
       },
       "clon": {
         "cabecera": {
@@ -722,6 +848,12 @@
         "h1txt": "Calidad del aire en las ciudades",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Calidad del aire en las ciudades"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -753,6 +885,12 @@
         "h1txt": "Contaminación por construcción",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Contaminación por construcción"
+        },
         "yAreaPrincipal": 347.25,
         "entre": [],
         "docH": 10070
@@ -773,6 +911,12 @@
         "h1txt": "Contaminación por construcción",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Contaminación por construcción"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -804,9 +948,15 @@
         "h1txt": "Control de emisiones industriales",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Control de emisiones industriales"
+        },
         "yAreaPrincipal": 347.25,
         "entre": [],
-        "docH": 12530
+        "docH": 12503
       },
       "clon": {
         "cabecera": {
@@ -824,6 +974,12 @@
         "h1txt": "Control de emisiones industriales",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 82,
+          "txt": "Control de emisiones industriales"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -855,6 +1011,12 @@
         "h1txt": "Estudio de la contaminación atmosférica",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 208.78,
+          "alto": 118,
+          "txt": "Estudio de la contaminación atmosférica"
+        },
         "yAreaPrincipal": 402.64,
         "entre": [],
         "docH": 10817
@@ -875,6 +1037,12 @@
         "h1txt": "Estudio de la contaminación atmosférica",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 219.98,
+          "alto": 118,
+          "txt": "Estudio de la contaminación atmosférica"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -906,9 +1074,15 @@
         "h1txt": "Monitorización ambiental en EDAR para el c",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 154,
+          "txt": "Monitorización ambiental en EDAR para el c"
+        },
         "yAreaPrincipal": 419.25,
         "entre": [],
-        "docH": 20607
+        "docH": 20580
       },
       "clon": {
         "cabecera": {
@@ -926,6 +1100,12 @@
         "h1txt": "Monitorización ambiental en EDAR para el c",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 154,
+          "txt": "Monitorización ambiental en EDAR para el c"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -957,9 +1137,15 @@
         "h1txt": "Monitorización de emisiones en el sector d",
         "h1dentroDeCabecera": true,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 118,
+          "txt": "Monitorización de emisiones en el sector d"
+        },
         "yAreaPrincipal": 383.25,
         "entre": [],
-        "docH": 21242
+        "docH": 21188
       },
       "clon": {
         "cabecera": {
@@ -977,6 +1163,12 @@
         "h1txt": "Monitorización de emisiones en el sector d",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 189.39,
+          "alto": 118,
+          "txt": "Monitorización de emisiones en el sector d"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {
@@ -994,7 +1186,7 @@
     "/software-de-medicion-calidad-del-aire": {
       "orig": {
         "cabecera": {
-          "alto": 136.58,
+          "alto": 166.58,
           "y": 0,
           "position": "relative",
           "mt": "0px",
@@ -1003,23 +1195,29 @@
           "pb": "0px",
           "enFlujo": true
         },
-        "h1yCrudo": 308.58,
+        "h1yCrudo": 338.58,
         "h1alto": 56,
         "h1txt": "Software de medición de la calidad del air",
         "h1dentroDeCabecera": false,
         "nH1": 1,
-        "yAreaPrincipal": 136.58,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 338.58,
+          "alto": 56,
+          "txt": "Software de medición de la calidad del air"
+        },
+        "yAreaPrincipal": 166.58,
         "entre": [
           {
             "tag": "div",
             "clase": "",
-            "alto": 18726.53,
-            "y": 136.58,
+            "alto": 18780.53,
+            "y": 166.58,
             "position": "static",
             "contieneH1": true
           }
         ],
-        "docH": 20916
+        "docH": 21000
       },
       "clon": {
         "cabecera": {
@@ -1037,6 +1235,12 @@
         "h1txt": "Software de medición de la calidad del air",
         "h1dentroDeCabecera": false,
         "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 309,
+          "alto": 56,
+          "txt": "Software de medición de la calidad del air"
+        },
         "yAreaPrincipal": 0,
         "entre": [
           {

@@ -332,6 +332,25 @@ Estas se pagaron con horas de depuración. No las reinventes:
     en 42 cargas medidas su dispersión fue **0 en las 14 combinaciones** de
     página y ancho. Si el `h1` del original no cuadra entre dos corridas del
     mismo día, la corrida se descarta y se repite.
+  - ⚠ **Y la regla es CIEGA A SU PROPIO PUNTO DE APOYO.** Restar la base *antes*
+    de comparar significa que **un desfase que está EN LA BASE se normaliza a
+    cero por construcción**: la cabecera puede estar a −48 y todas las anclas
+    del cuerpo salen limpias. Sigue siendo la forma correcta de leer el
+    **cuerpo** —para eso se escribió— pero no puede auditarse a sí misma. Por
+    eso:
+
+    > **Cada arquetipo nuevo mide su base EN CRUDO una vez** —la `y` absoluta
+    > del `h1` en original y clon, **sin corrección**— **antes de fiarse de sus
+    > deltas de cuerpo.** Una sola corrida, y queda hecho para siempre en ese
+    > arquetipo.
+
+    Se pagó con **cuatro páginas que llevaban meses dadas por verificadas con
+    Δ0** y tenían −48 y −19.2 a 1440 (y **+78.42 y +48.42 a 390**: el signo se
+    invierte, que es la firma de una medida tapada). Nadie las había mirado en
+    crudo porque el protocolo nunca lo pide. Instrumento: `qa:c-cabecera`, que
+    reporta la `y` cruda de las 17 rutas y **verifica además que el primer `h1`
+    sea el MISMO elemento en los dos lados** — un selector que casa en ambos
+    pero apunta a cosas distintas no lo caza ningún censo.
   - **Un Δ por debajo de la dispersión observada NO es un defecto** — pero la
     dispersión **no es un número único, son dos regiones**: hasta **81** en el
     módulo "Artículos y Guías" y de ahí abajo (el original **sortea los 3 posts
@@ -388,7 +407,7 @@ hallazgos sueltos son **el mismo error**, y conviene enunciarlo una vez:
 > total que suma con signos, un servidor que decide qué HTML sale— es un sitio
 > donde el defecto cabe sin dejar rastro en el número que estás mirando.
 
-Las cuatro instancias medidas en este proyecto, cada una con su contenedor:
+Las cinco instancias medidas en este proyecto, cada una con su contenedor:
 
 | se midió | el contenedor absorbió | había dentro |
 |---|---|---|
@@ -396,9 +415,18 @@ Las cuatro instancias medidas en este proyecto, cada una con su contenedor:
 | el **alto de la caja** del CTA de Urbano: `+12.39` | la caja: el texto se reacomoda dentro | una **piel entera distinta** — el título pierde **151.89** de ancho y gana **51.79** de alto |
 | el **alto de la fila** del claim de Urbano: `Δ0` a 1440 | la columna hermana, **390.08** contra 148 | **+10** de `padding-bottom` y **121.03** de centrado vertical perdido |
 | el **HTML de `.next`**, en el test en negativo de `enlaces.mjs` | `next start` sirviendo el build anterior | el enlace roto — la sonda dio **«limpio» en falso** |
+| **todo el cuerpo de 4 páginas de producto**, relativo al `h1`: `Δ0` | **el propio PROTOCOLO** — la regla del `h1` resta la base antes de comparar | **−48 y −19.2 de cabecera a 1440**, y **+78.42 y +48.42 a 390**: el signo se invierte |
 
-Los cuatro contenedores son distintos y el error es el mismo: se leyó el número
+Los cinco contenedores son distintos y el error es el mismo: se leyó el número
 del nivel de arriba porque estaba a mano.
+
+**La quinta es la más antigua del proyecto y la que más costó ver**, porque el
+contenedor no era una fila, ni una caja, ni un servidor: era **el instrumento de
+medida**. Un protocolo que normaliza contra un punto de apoyo no puede detectar
+que el punto de apoyo esté movido, y por eso la única salida es **mirarlo en
+crudo una vez por arquetipo** (§Notas de método). Estuvo invisible desde el
+primer clon y salió sola cuando el grupo C estrenó dos arquetipos que **no
+tienen nada entre la cabecera y el `h1`** que lo absorbiera.
 
 **La regla espejo es un caso particular de ésta.** Un Δ0 en un ancho con Δ≠0 en el
 otro no es «casi cuadra»: es una **medida tapada**, porque la holgura del

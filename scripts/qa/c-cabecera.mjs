@@ -29,7 +29,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, launch, openPage, ruta, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -41,10 +41,36 @@ const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/
  * 11 cuando hay 17. La derivación es mecánica —`/x` → `/es/x/`— porque el clon
  * espeja la rama `/es` del original. */
 const manifiesto = JSON.parse(readFileSync(join(RAIZ, ".next/prerender-manifest.json"), "utf8"));
+/**
+ * `SOLO=/ ,/kunak-api` acota la corrida. Pasa por `ruta()` porque **MSYS
+ * traduce cualquier valor que empiece por `/`**: `SOLO=/` llegaba como
+ * `C:/Program Files/Git/` y no casaba con nada.
+ */
+const SOLO = process.env.SOLO ? process.env.SOLO.split(",").map((s) => ruta(s.trim())) : null;
 const RUTAS = Object.keys(manifiesto.routes || {})
   .filter((r) => !r.startsWith("/_") && !r.includes("."))
+  .filter((r) => !SOLO || SOLO.includes(r))
   .sort()
   .map((r) => ({ clon: r, orig: `https://kunakair.com/es${r === "/" ? "" : r}/` }));
+
+/**
+ * ⚠ **Medir CERO rutas no es un limpio: es un defecto.** La primera versión con
+ * `SOLO` filtró a nada por la traducción de MSYS, midió 0 páginas y **imprimió
+ * “✅ la cabecera mide lo mismo… no hay nada que compensar”** — el veredicto
+ * verde de una sonda que no miró nada, que es la regla de `CLAUDE.md` otra vez
+ * y **en el código escrito para cazarla**. Y de paso pisó la salida congelada
+ * con la vacía.
+ */
+if (RUTAS.length === 0) {
+  console.error(
+    `\n❌ 0 rutas que medir.` +
+      (SOLO ? ` \`SOLO\` no casó con ninguna ruta del build: ${SOLO.join(" · ")}` : " ¿falta `npm run build`?") +
+      `\n   No se mide, no se escribe y no se da ningún veredicto.\n`,
+  );
+  process.exit(2);
+}
+/** Con `SOLO` la salida NO pisa la congelada: es una corrida parcial. */
+const SUFIJO = SOLO ? "-parcial" : "";
 
 /** Lo que se lee, idéntico en original y clon. Usa `__q`/`__qa` del Censo. */
 const LECTOR = () => {
@@ -103,6 +129,27 @@ const LECTOR = () => {
     h1txt: h1 ? (h1.textContent || "").replace(/\s+/g, " ").trim().slice(0, 42) : null,
     h1dentroDeCabecera: !!(cab && h1 && cab.contains(h1)),
     nH1: __qa("h1").length,
+
+    /**
+     * ⚠ **El `h1` puede no ser un ancla visible**, y entonces su `y` no es la
+     * base que la regla supone. En la home, el `h1` del original mide **alto
+     * 0** y el del clon **alto 1**: los dos son títulos ocultos para SEO, no el
+     * titular de la página. Comparar sus `y` no dice nada de la maquetación.
+     *
+     * Por eso se lee además un **ancla VISIBLE**: el primer encabezado con caja
+     * real. Es contra eso contra lo que se juzga si el cuerpo cuadra cuando el
+     * `h1` no sirve de apoyo.
+     */
+    anclaVisible: (() => {
+      for (const el of __qa("h1, h2, h3")) {
+        const b = rect(el);
+        const t = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (b.height > 4 && t) {
+          return { tag: el.tagName.toLowerCase(), y: r(b.top + window.scrollY), alto: r(b.height), txt: t.slice(0, 42) };
+        }
+      }
+      return null;
+    })(),
     // Referencia estable e independiente de la cabecera: dónde empieza el área
     // principal. Si la cabecera está fuera de flujo, esto vale 0 en ese lado.
     yAreaPrincipal: (() => {
@@ -183,6 +230,26 @@ for (const [ruta, v] of Object.entries(salida.paginas)) {
 }
 console.log(`  → ${distintos} rutas donde el primer \`h1\` NO es el mismo elemento: su Δ NO es comparable`);
 
+/* ── ¿Sirve el `h1` como base? Solo si es VISIBLE en los dos lados ── */
+console.log(`\n═══ (b·ter) ¿es el \`h1\` un ancla VISIBLE? — si no, su \`y\` no es la base que la regla supone`);
+let ocultos = 0;
+for (const [ruta, v] of Object.entries(salida.paginas)) {
+  if (v.error) continue;
+  const oculto = (v.orig.h1alto ?? 0) <= 4 || (v.clon.h1alto ?? 0) <= 4;
+  if (!oculto) continue;
+  ocultos++;
+  const a = v.orig.anclaVisible, b = v.clon.anclaVisible;
+  const d = a && b ? +(b.y - a.y).toFixed(2) : null;
+  console.log(
+    `  ⚠ ${ruta}: el \`h1\` mide ${v.orig.h1alto}/${v.clon.h1alto} de alto → OCULTO, no es base.\n` +
+      `      ancla visible orig: ${a ? `${a.tag} y=${a.y} "${a.txt}"` : "—"}\n` +
+      `      ancla visible clon: ${b ? `${b.tag} y=${b.y} "${b.txt}"` : "—"}\n` +
+      `      Δ contra el ancla visible: ${d === null ? "—" : (d > 0 ? "+" : "") + d}` +
+      `${a && b && a.txt !== b.txt ? "   ❌ ¡anclas DISTINTAS: el Δ no vale!" : ""}`,
+  );
+}
+if (!ocultos) console.log(`  ✅ el \`h1\` es visible en los dos lados en las ${Object.keys(salida.paginas).length} rutas`);
+
 /* ────────── (c) qué hay entre la cabecera y el `h1`, y cuánto mide ────────── */
 console.log(`\n═══ (c) LO QUE VA ENTRE LA CABECERA Y EL \`h1\` @${width}`);
 for (const [ruta, v] of Object.entries(salida.paginas)) {
@@ -193,7 +260,7 @@ for (const [ruta, v] of Object.entries(salida.paginas)) {
   console.log(`      clon: ${pinta(v.clon).slice(0, 190)}`);
 }
 
-w(`medidas/c-cabecera-${width}.json`, salida);
+w(`medidas/c-cabecera-${width}${SUFIJO}.json`, salida);
 
 /* ── El veredicto de la pregunta que motivó la corrida ── */
 console.log(`\n═══ ¿LAS 11 ANTIGUAS ESTÁN BIEN, O COMPENSADAS?`);
