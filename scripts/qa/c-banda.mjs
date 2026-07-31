@@ -108,6 +108,16 @@ const LECTOR = () => {
      * coincide, hay algo más debajo y el hueco lo taparía.
      */
     h1DentroDelCuerpo: h1 && cuerpo ? r(y(h1) - y(cuerpo)) : null,
+
+    /** El ancla REAL de lectura, que en la home no es el `h1`. */
+
+    ancla: (() => {
+
+      const a = h1 && rect(h1).height > 4 ? h1 : __qa("h1, h2, h3").find((e) => rect(e).height > 4 && (e.textContent || "").trim());
+
+      return a ? { tag: a.tagName.toLowerCase(), y: y(a), alto: r(rect(a).height), txt: txt(a, 40), esH1: a === h1, dentroDelCuerpo: cuerpo ? r(y(a) - y(cuerpo)) : null } : null;
+
+    })(),
     yCuerpo: cuerpo ? y(cuerpo) : null,
 
     /**
@@ -121,9 +131,17 @@ const LECTOR = () => {
      * en el número de arriba.
      */
     cadena: (() => {
-      if (!h1 || !cuerpo) return null;
+      /**
+       * ⚠ **La cadena se recorre desde el ANCLA DE LECTURA, no desde el `h1`.**
+       * En la home el `h1` mide 0 px en el original y 1 en el clon —títulos
+       * ocultos para SEO— y su `y` no guarda relación con la maquetación
+       * (C-QA3). Colgar la cadena de él daría una composición de un elemento
+       * que no se ve, con números plausibles y sin sentido.
+       */
+      const ancla = h1 && rect(h1).height > 4 ? h1 : __qa("h1, h2, h3").find((e) => rect(e).height > 4 && (e.textContent || "").trim());
+      if (!ancla || !cuerpo) return null;
       const escalones = [];
-      let el = h1;
+      let el = ancla;
       while (el && el !== cuerpo && el !== document.body) {
         const padre = el.parentElement;
         if (!padre) break;

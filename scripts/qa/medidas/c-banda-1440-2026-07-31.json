@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-07-31",
+    "rutas": 1
+  },
+  "paginas": {
+    "/": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 225,
+          "y": 0,
+          "position": "absolute",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "id": null,
+          "alto": 0,
+          "y": 0,
+          "position": "static",
+          "txt": "Monitoreo de la calidad del aire",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 11929.67,
+          "y": 0,
+          "position": "static",
+          "txt": "Monitoreo de la calidad del aire La solución p",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 11335.92,
+              "y": 0,
+              "position": "static",
+              "txt": "Monitoreo de la calidad del aire La solución p"
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 593.75,
+              "y": 11335.92,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 0,
+        "ancla": {
+          "tag": "h2",
+          "y": 279.88,
+          "alto": 161.22,
+          "txt": "La solución profesional para la monitori",
+          "esH1": false,
+          "dentroDelCuerpo": 279.88
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 0,
+            "padreAlto": 11929.67,
+            "hijo": "div.—",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 0,
+            "padreAlto": 11335.92,
+            "hijo": "article.post-24305",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.post-24305",
+            "padreY": 0,
+            "padreAlto": 11335.92,
+            "hijo": "div.entry-content",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.entry-content",
+            "padreY": 0,
+            "padreAlto": 11335.92,
+            "hijo": "div.et-l",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et-l",
+            "padreY": 0,
+            "padreAlto": 11335.92,
+            "hijo": "div.et_builder_inner_content",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_builder_inner_content",
+            "padreY": 0,
+            "padreAlto": 11335.92,
+            "hijo": "div.et_pb_section",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_section",
+            "padreY": 0,
+            "padreAlto": 900,
+            "hijo": "div.et_pb_row",
+            "hijoY": 180,
+            "sangria": 180,
+            "pt": "180px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_row",
+            "padreY": 180,
+            "padreAlto": 720,
+            "hijo": "div.et_pb_column",
+            "hijoY": 279.88,
+            "sangria": 99.88,
+            "pt": "28.7969px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_column et_pb_column_2_5 et_pb_column_0 banner-home-col-izda  et_",
+                "alto": 656.98,
+                "display": "flex",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_column",
+            "padreY": 279.88,
+            "padreAlto": 549.03,
+            "hijo": "div.et_pb_module",
+            "hijoY": 279.88,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_module et_pb_text et_pb_text_0 none  et_pb_text_align_left et_pb",
+                "alto": 0,
+                "display": "none",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Monitoreo de la calidad del aire"
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_module",
+            "padreY": 279.88,
+            "padreAlto": 161.22,
+            "hijo": "div.et_pb_text_inner",
+            "hijoY": 279.88,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_text_inner",
+            "padreY": 279.88,
+            "padreAlto": 161.22,
+            "hijo": "h2.—",
+            "hijoY": 279.88,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          }
+        ],
+        "migas": null,
+        "docH": 11930
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "sr-only",
+          "id": null,
+          "alto": 1,
+          "y": 289.91,
+          "position": "absolute",
+          "txt": "Monitoreo de la calidad del aire",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 11277.44,
+          "y": 0,
+          "position": "static",
+          "txt": "Monitoreo de la calidad del aireLa solución pr",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banner-home relative overflow-hidden",
+              "id": null,
+              "alto": 900,
+              "y": 0,
+              "position": "relative",
+              "txt": "Monitoreo de la calidad del aireLa solución pr"
+            },
+            {
+              "tag": "section",
+              "clase": "banda-clientes relative",
+              "id": null,
+              "alto": 153,
+              "y": 900,
+              "position": "relative",
+              "txt": "Con la confianza de empresas líderes"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-white pb-[59px]",
+              "id": "home-content",
+              "alto": 2410.28,
+              "y": 1053,
+              "position": "relative",
+              "txt": "La solución profesional para la monitorización"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-white pb-[89px]",
+              "id": null,
+              "alto": 534.25,
+              "y": 3463.28,
+              "position": "relative",
+              "txt": "SectoresDescargar catálogo→Controla la contami"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 289.91,
+        "ancla": {
+          "tag": "h2",
+          "y": 300.91,
+          "alto": 151.22,
+          "txt": "La solución profesional para la monitori",
+          "esH1": false,
+          "dentroDelCuerpo": 300.91
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 11277.44,
+            "hijo": "section.banner-home",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "section.banner-home",
+            "padreY": 0,
+            "padreAlto": 900,
+            "hijo": "div.relative",
+            "hijoY": 180,
+            "sangria": 180,
+            "pt": "180px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "pointer-events-none absolute inset-x-0 z-[1] hidden w-full md:block",
+                "alto": 900,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.relative",
+            "padreY": 180,
+            "padreAlto": 720,
+            "hijo": "div.banner-home-col-dcha",
+            "hijoY": 290.91,
+            "sangria": 110.91,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "banner-home-col-izda hidden w-[36.7%] shrink-0 flex-col items-end self",
+                "alto": 657,
+                "display": "flex",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.banner-home-col-dcha",
+            "padreY": 290.91,
+            "padreAlto": 498.19,
+            "hijo": "div.w-full",
+            "hijoY": 290.91,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.w-full",
+            "padreY": 290.91,
+            "padreAlto": 248,
+            "hijo": "h2.mt-0",
+            "hijoY": 300.91,
+            "sangria": 10,
+            "pt": "0px",
+            "mt": "10px",
+            "antes": [
+              {
+                "tag": "h1",
+                "clase": "sr-only",
+                "alto": 1,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Monitoreo de la calidad del aire"
+              }
+            ]
+          }
+        ],
+        "migas": null,
+        "docH": 11870
+      }
+    }
+  }
+}

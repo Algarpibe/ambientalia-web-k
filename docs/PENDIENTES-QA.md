@@ -2432,3 +2432,83 @@ exige.
 La guarda de `w()` —escrita ese mismo día— **no protege de esto**: protege de que
 una sonda pise su salida, no de que una persona la borre. Anotado como lo que es,
 un fallo de operación y no del instrumento.
+
+---
+
+## C-QA2 vs C-QA3 · NO son la misma causa — medido (2026-07-30)
+
+`npm run qa:banda`, congelado en `medidas/c-banda-{1440,390}-2026-07-31.json`.
+Medido **antes de arreglar nada**, que era la condición.
+
+### La home, por composición — y el dato que lo cierra
+
+Las dos cabeceras van **fuera de flujo** (225 el original, 203.59 el clon), así
+que el cuerpo empieza en `y=0` en los dos lados. El ancla es el **mismo `h2`**
+(«La solución profesional…»); el `h1` no sirve, es el oculto de SEO (C-QA3).
+
+| @1440 | orig | clon |
+|---|---|---|
+| `section` del hero, `padding-top` | **180px** | **180px** |
+| `padding-top` de la fila | 28.80 | 0 |
+| centrado vertical de la columna | 71.08 | 110.91 |
+| `margin-top` del `h2` | 0 | 10 |
+| **`y` del ancla** | **279.88** | **300.91** |
+
+> **El `padding-top` del hero es 180 en los dos lados, y es una constante.**
+> Nada de la home está dimensionado contra el alto de la cabecera — ni en el
+> original ni en el clon. Ésa es la respuesta a la pregunta de causa común.
+
+Lo que sí difiere está **dentro** del hero: la columna del texto mide **549.03
+en el original y 498.19 en el clon (−50.84)** y va **centrada verticalmente**
+contra una hermana de ~657, así que parte de ese déficit reaparece arriba como
+offset. Es el patrón del claim de Urbano otra vez —«+10 de `padding-bottom` y
+121.03 de centrado vertical perdido»—, no un problema de cabecera.
+
+### Por qué 21.41 y 21.03 son una COINCIDENCIA
+
+Tres pruebas, y cualquiera basta:
+
+1. **El signo es el contrario.** La cabecera del clon es **21.41 más BAJA**; si
+   eso se transmitiera, el contenido subiría. El ancla del clon está **21.03 más
+   ABAJO**.
+2. **El mecanismo no existe.** Para transmitirse haría falta algo dimensionado
+   contra el alto de la cabecera. En la home no lo hay: el hero abre con `pt`
+   **180 fijo** en los dos lados.
+3. **A 390 se comportan al revés.** C-QA2 crece (**+78.42** en monitor, **+48.42**
+   en accesorios); C-QA3 **desaparece** (−0.23), porque a 390 las columnas apilan
+   y no hay centrado que amplifique nada.
+
+| | C-QA2 · producto | C-QA3 · home |
+|---|---|---|
+| cabecera | el clon **reserva flujo**: 177 donde el original pone 225 | las dos **fuera de flujo**; nadie reserva nada |
+| mecanismo | **espaciador** de alto equivocado | **centrado vertical** de una columna 50.84 corta |
+| @1440 | −48 exacto | +21.03 |
+| @390 | +0.42 · +48.42 · **+78.42** | **−0.23** |
+| ¿lo mueve arreglar la cabecera? | **sí, es el arreglo** | **no**, su `pt` es constante |
+
+> **Son dos defectos con dos causas y van con dos arreglos y dos mediciones.**
+> Unificarlos habría cableado el espaciador de producto usando el número de la
+> home, que es la definición de arreglo falso.
+
+### Lo que queda para el arreglo (PASO 3), con su objetivo
+
+- **C-QA2 · producto** — el espaciador pasa de **177 a 225** (@1440) y de **137 a
+  136.58** (@390). El offset del `h1` por debajo del espaciador **ya coincide al
+  céntimo** (167.59 en los dos lados en `/kunak-api`), así que es un solo cambio.
+  ⚠ **`/software` no tiene objetivo verificable** hasta cerrar C-QA6: su residuo
+  (−15.72) está por debajo del episodio de ±32.28.
+- **C-QA3 · home** — es un déficit de **contenido** dentro de la columna del
+  hero, no de cabecera. **No entra en la tanda de cabecera**: se decide aparte,
+  como estaba pactado, y con su propia medición de qué falta en esos 50.84.
+
+### ⚠ Y lo que hay que escribir sin suavizar
+
+**Las 4 páginas de producto y la home figuraban como «verificadas con Δ0», y ese
+estado era un artefacto del protocolo, no una corrección.** La regla del `h1`
+resta la base de lectura antes de comparar, así que un desfase que vive **en** la
+base se normaliza a cero por construcción. Nadie las miró en crudo hasta C-QA1.
+
+En la home fue peor que un desfase tapado: **su `h1` es el oculto de SEO**, de 0
+px en el original y 1 en el clon, así que **no había base** — todas sus lecturas
+de cuerpo se hicieron contra un origen arbitrario. La home es la primera página
+clonada y la más verificada del proyecto.
