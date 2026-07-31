@@ -443,6 +443,11 @@ Estas se pagaron con horas de depuración. No las reinventes:
     1440 y a 390 no puede ser ruido: son dos maquetaciones distintas. Y al revés:
     un residuo que **aparece solo en un ancho** es un contenedor que en el otro lo
     tapaba — ver «La causa común: el NIVEL al que se mide» más abajo.
+  - **Un comentario CSS no puede contener `*/`, ni siquiera entre comillas** — el
+    token de cierre no se puede citar; lo que sigue pasa a ser selector y el
+    parser se come la regla base. El fallo solo lo vio la medición a dos anchos
+    (bandas de 0 a 390 con 1440 intacto): es el argumento operativo de la regla
+    «siempre dos anchos».
 - **Un Δ de cero puede ser dos errores que se anulan.** El caso, medido: la fila
   del CTA de Industria a 390 iba con un déficit de −47.5 de contenido y, encima,
   con +74 de ritmo que no le tocaba; el total daba **+26.5** y parecía un fleco.

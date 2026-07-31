@@ -76,6 +76,11 @@
 > faltan**. Ráfaga 1 fue la **tercera observación independiente** del episodio de
 > ±32.28 y la primera que lo ve en las tres rutas a la vez: ya no es un fleco.
 >
+> **Pista de mecanismo (solo anotada — no perseguir):** el ±32.28 de la ráfaga 1
+> apareció **en las tres rutas A LA VEZ**. Movimiento sincronizado sugiere una
+> causa global compartida, no aleatoriedad por página. Las ráfagas 2 y 3 deben
+> anotar si la sincronía se repite.
+>
 > ⚠ **Hasta cerrarla, `/software` NO se da por verificado** aunque dé Δ0 a los
 > dos anchos: un Δ0 leído en una corrida puede ser el episodio y no el arreglo.
 > Y una combinación a 0 se lee **«no se observó ruido en estos episodios»**,
