@@ -19,6 +19,8 @@ el `cwd`.
 npm i --no-save puppeteer-core          # ~1 MB: usa el Chrome ya instalado
 
 npm run qa:enlaces                      # guarda de rutas locales, las dos direcciones
+npm run qa:slugs                        # guarda de unicidad de slug ENTRE familias del plano
+SABOTAJE=accesorios npm run qa:slugs    #   ↑ su test en negativo: DEBE salir con ≠ 0
 npm run qa:corte                        # guarda del corte del cuerpo, 6 rutas × 2 anchos
 npm run qa:offsets -- /sectores/calidad-del-aire-en-las-ciudades 1440
 npm run qa:tree -- urbano 1440          # original vs clon, árbol sección→fila
@@ -285,6 +287,48 @@ guarda lo caza, da su `fichero:línea` y sale con código 1. Sin esa prueba,
 en cliente es invisible para ella. Y ojo con medir contra un servidor viejo: la
 primera pasada del test en negativo salió "limpia" porque `next start` seguía
 sirviendo el build anterior. Se mata **por puerto**, no con `pkill`.
+
+### `slugs.mjs` — la guarda de unicidad de slug ENTRE familias del plano
+
+Hermana de `enlaces.mjs` y con su misma forma: **sin navegador**, sin original,
+derivada del `prerender-manifest`, código 0/≠0. Cubre la otra mitad del enrutado
+—que dos familias no se peleen por la misma URL— y existe porque **el build no
+avisa**: el andamio del ENRUTADO declaró `accesorios` a propósito desde un
+`[slug]` de raíz y Next **compiló sin error**, emitiendo la ruta por las dos vías
+y dejando ganar a la estática.
+
+Cuatro comprobaciones, y ninguna es redundante:
+
+| | qué caza | por qué las otras no lo ven |
+|---|---|---|
+| **A** colisión | un slug declarado por dos familias | Next **deduplica en silencio**: el manifiesto no recuerda que hubo dos |
+| **B** sombra | un slug del catálogo cuya ruta emite **otra cosa** | pregunta `srcRoute`, o sea **quién emite de verdad** |
+| **C** huérfana | una ruta de `/[slug]` que ningún catálogo declara | es la dirección contraria: catálogo y servido desincronizados |
+| **D** la sonda | conjunto comparado vacío → **error, no «0 colisiones»** | regla 4 de `CLAUDE.md`: no mirar nada y no encontrar nada dan la misma salida |
+
+La familia de **rutas estáticas de un segmento** (`page`/`solutions`) sale del
+propio manifiesto, así que el conjunto comparado nunca está vacío por
+construcción y **D no es decorativa**: se dispara si esa lectura se rompe.
+
+Los catálogos se leen con `import()` **directo sobre el `.ts`** —Node borra los
+tipos y `src/lib/` solo importa tipos—: la guarda mira **el catálogo que usa el
+build**, no un espejo que se pueda quedar viejo.
+
+**Alcance declarado:** solo el plano de un segmento de `/es/`. Las familias
+prefijadas (casos, FAQ, sectores, documentos científicos) tienen unicidad *por
+colección*, que es nativa, y **no entran**. Que no estén no es un hueco: es el
+alcance.
+
+Test en negativo, **re-runnable** y escribiendo en `medidas/slugs-SABOTAJE.json`
+para no pisar la medida buena:
+
+```bash
+SABOTAJE=accesorios npm run qa:slugs                    # → A y B disparan, exit 1
+SABOTAJE=slug-que-no-existe npm run qa:slugs            # → control: exit 0
+```
+
+El control importa tanto como el sabotaje: una guarda que fallara con cualquier
+slug tampoco estaría midiendo nada.
 
 ### Dos trampas ya pagadas
 

@@ -32,7 +32,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build",
+    "check": "npm run lint && npm run typecheck && npm run build && npm run qa:slugs",
     "qa:offsets": "node scripts/qa/offsets.mjs",
     "qa:tree": "node scripts/qa/tree-cmp.mjs",
     "qa:cmp-sector": "node scripts/qa/cmp-sector.mjs",
@@ -65,7 +65,8 @@
     "qa:banda": "node scripts/qa/c-banda.mjs",
     "qa:lh": "node scripts/qa/lh-censo.mjs",
     "qa:lh-paginas": "node scripts/qa/lh-paginas.mjs",
-    "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs"
+    "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs",
+    "qa:slugs": "node scripts/qa/slugs.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

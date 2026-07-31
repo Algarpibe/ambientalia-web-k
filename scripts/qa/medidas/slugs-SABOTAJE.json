@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "fecha": "2026-07-31",
+    "sabotaje": "accesorios"
+  },
+  "familias": [
+    {
+      "familia": "estáticas (page · solutions)",
+      "n": 4,
+      "fuente": "prerender-manifest"
+    },
+    {
+      "familia": "SABOTAJE",
+      "n": 1,
+      "fuente": "env SABOTAJE"
+    }
+  ],
+  "noConstruidas": [
+    {
+      "familia": "blog",
+      "modulo": "src/lib/arquetipo-a.ts",
+      "razon": "el módulo no existe todavía"
+    },
+    {
+      "familia": "termino",
+      "modulo": "src/lib/arquetipo-a.ts",
+      "razon": "el módulo no existe todavía"
+    }
+  ],
+  "emitidas": 17,
+  "estaticasDeUnSegmento": [
+    "accesorios",
+    "kunak-api",
+    "monitor-calidad-aire",
+    "software-de-medicion-calidad-del-aire"
+  ],
+  "emitidasPorPlano": 0,
+  "colisiones": [
+    {
+      "slug": "accesorios",
+      "familias": [
+        "estáticas (page · solutions)",
+        "SABOTAJE"
+      ]
+    }
+  ],
+  "sombras": [
+    {
+      "slug": "accesorios",
+      "familia": "SABOTAJE",
+      "emisor": "/accesorios"
+    }
+  ],
+  "huerfanas": [],
+  "declaradosSinEmitir": []
+}
