@@ -1,4 +1,65 @@
-# HANDOFF — C-QA2 aplicada; quedan C-QA7, la home y una CAMPAÑA con fechas
+# HANDOFF — C-QA7 cerrado; quedan la CAMPAÑA (2 ráfagas), la home y C-QA5
+
+> ⚠ **Actualización 2026-07-31, cerrando el bloque 5 de la cabecera.** El bloque
+> anterior (abajo) sigue siendo contexto válido; esto es lo que cambia.
+>
+> ## Estado del clon, medido al cerrar — 17 rutas × 2 anchos
+>
+> | ancho | a Δ0 | desplazadas, TODAS con nombre y ficha |
+> |---|---|---|
+> | **1440** | **16 de 17** | `/` (+289.91 · C-QA3, sin base válida) |
+> | **390** | **15 de 17** | `/` (+119 · C-QA3) · `estudio` (+11.2 · en el diagnóstico congelado) |
+>
+> Nada anónimo — el objetivo de la tanda de cabecera entera. Con la reserva de
+> C-QA6 en pie: los Δ0 de `/software` y los 2 monográficos se leen **«sin
+> episodio observado»**, no «verificados», hasta cerrar la campaña.
+> `qa:enlaces` (dos direcciones), `qa:corte` (12/12) y `qa:bases` limpias;
+> `clon-base` contra la línea post-C-QA2: solo se movieron los dos arreglos,
+> las otras 15 sin un píxel (`clon-base-{1440,390}-cqa7-despues.json`).
+>
+> ## Hecho en este bloque
+>
+> - **PASO 0** · dos registros: la lección del comentario CSS en `CLAUDE.md`
+>   (§Notas de método — es el argumento operativo de «siempre dos anchos») y la
+>   **pista de sincronía** de la campaña (abajo, en su tabla).
+> - **C-QA7 · CERRADO** (acta en `PENDIENTES-QA.md`). Los dos residuos eran
+>   **tres defectos, y dos son el mismo**:
+>   - `/accesorios` (+28.8·+48): un **`pt` de fila que el original no tiene**
+>     (el default Divi cableado sin medir: +28.8/+30) **más** el kicker sin la
+>     regla móvil 35px/42 (+18 a 390). La composición cuadra al céntimo.
+>   - `/monitor` (+78 solo a 390): el **mismo kicker**, pero con estilo inline
+>     que no puede ser responsive — «Kunak AIR Pro» a 2 líneas: 120−42=78.
+>     La firma espejo en su forma pura: a 1440 el no-wrap lo tapaba entero.
+>   - Resultado: **Δ0 exacto en crudo, dos rutas × dos anchos**, contra el
+>     original en vivo. Commits `0ce6e00` · `2c2432e`.
+> - **Docs en la misma tanda**: sexta instancia del catálogo de compensaciones
+>   (`CLAUDE.md`: el −19.2 = −48+28.8) y **el `pt` de fila al esquema como
+>   CAMPO** (`ESQUEMA-CMS.md` §6: test A — 0 px en 3 de 4 hermanas, default
+>   2%/30 intacto en monitor). Regla nueva vigente: lo que un diagnóstico
+>   revele como campo va al esquema en la tanda que lo mide.
+>
+> ## ⚠ Custodia — la línea base 390 post-C-QA2 CANÓNICA es el build roto
+>
+> `clon-base-390-cqa2-despues.json` congeló el build del comentario CSS roto
+> (S0=0 a 390): comparar contra él da **10 falsas regresiones de +136.58**. La
+> línea **sana** es **`clon-base-390-cqa2-despues-2026-07-31.json`** (la guarda
+> de `w()` la apartó ahí — su primer disparo real protegiendo evidencia).
+> **Cualquier `--cmp` a 390 contra el estado post-C-QA2 usa la FECHADA.** A
+> 1440 no hay ambigüedad. Detalle en `PENDIENTES-QA.md` §C-QA7 · Custodia.
+>
+> ## Abiertas, por orden
+>
+> - **C-QA6 · la campaña de ruido** — 1 de 3 ráfagas; faltan 2, ≥2 h de
+>   separación y ≥1 día distinto. Cómo correrla y la pista de sincronía: abajo,
+>   §CAMPAÑA. **Hasta cerrarla, `/software` no se da por verificado.**
+> - **C-QA3 · la home** — déficit de **contenido** en la columna del hero
+>   (−50.84 amplificado por centrado), no de cabecera. Se decide aparte.
+> - **C-QA5** — el `h1` envuelve distinto en 4 rutas, solo a 1440: es el
+>   **ancho** del contenedor del título, base válida.
+>
+> ---
+>
+# (bloque anterior) HANDOFF — C-QA2 aplicada; quedan C-QA7, la home y una CAMPAÑA con fechas
 
 > ⚠ **Actualización 2026-07-30, cerrando el bloque 4 de la cabecera.** El cuerpo
 > de este documento (abajo) sigue siendo contexto válido. Esto es lo que cambia.
