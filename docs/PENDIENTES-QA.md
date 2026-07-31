@@ -2700,23 +2700,29 @@ estilo inline a las mismas clases). Commits `0ce6e00` y `2c2432e`.
    `CLAUDE.md`** (sexta instancia): −48 de espaciador tapando +28.8 propios.
    Un número pequeño no es un defecto pequeño: era el residuo de dos grandes.
 
-### ⚠ Custodia · la línea base 390 post-C-QA2 CANÓNICA es el build roto
+### ⚠ Custodia · la línea base 390 post-C-QA2 canónica ERA el build roto — RECONCILIADO (2026-07-31)
 
 La verificación de esta tanda comparó contra `clon-base-390-cqa2-despues.json`
-y salieron **10 «regresiones» falsas de +136.58 en S0**: ese fichero es el
+y salieron **10 «regresiones» falsas de +136.58 en S0**: ese fichero era el
 congelado del build con el **comentario CSS mal cerrado** (la banda a 0 a 390 —
-la lección del HANDOFF). La línea **sana** post-C-QA2 vive en
-**`clon-base-390-cqa2-despues-2026-07-31.json`**: la guarda de `w()` la mandó
-ahí al negarse a pisar la rota, y nadie reconcilió el nombre. Las dos están en
-git (`aa8541a`); no se pisa ninguna.
+la lección del HANDOFF). La línea **sana** post-C-QA2 vivía en la variante
+fechada: la guarda de `w()` la mandó ahí al negarse a pisar la rota — su
+**primer disparo real protegiendo evidencia** — y nadie reconcilió el nombre.
 
-> **Consecuencia operativa: cualquier `--cmp` futuro a 390 contra el estado
-> post-C-QA2 usa el fichero FECHADO.** A 1440 no hay ambigüedad (el bug era
-> solo móvil; no existe variante fechada). Verificado hoy contra el fechado:
-> `/accesorios` −48 y `/monitor` −78 exactos, las otras 15 sin mover un píxel
-> (`clon-base-390-cqa7-despues.json`).
+**Reconciliado en la tanda siguiente (2026-07-31), invirtiendo los nombres:**
 
-Es el **primer disparo real de la guarda de `w()` protegiendo evidencia** — el
-ruido fuerte era la señal. Y deja la moraleja espejo de la regla 5: congelar y
-commitear no basta si **el nombre canónico queda apuntando a la medida mala**;
-la reconciliación es parte de la tanda que descubre el defecto.
+| fichero | contiene |
+|---|---|
+| `clon-base-390-cqa2-despues.json` (canónico) | la medida **SANA** post-C-QA2 (`/kunak-api` h1y 278.58 · S0 136.58) |
+| `clon-base-390-cqa2-despues-BUILD-ROTO-comentario-css.json` | el congelado del **build roto** (S0=0), conservado como evidencia |
+
+Git conserva las dos historias (`aa8541a` y el rename). Verificado contra la
+sana: `/accesorios` −48 y `/monitor` −78 exactos, las otras 15 sin mover un
+píxel (`clon-base-390-cqa7-despues.json`). A 1440 nunca hubo ambigüedad (el
+bug era solo móvil).
+
+La moraleja, que sustituye al aviso que hubo aquí 24 horas: **documentado no
+es conectado — un aviso de «usa el otro fichero» que se puede eliminar
+arreglando el nombre es un nombre mal puesto.** El próximo `--cmp` habría usado
+el nombre obvio; ahora el nombre obvio es el correcto y el peligroso dice en el
+nombre lo que es.

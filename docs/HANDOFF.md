@@ -38,14 +38,15 @@
 >   2%/30 intacto en monitor). Regla nueva vigente: lo que un diagnóstico
 >   revele como campo va al esquema en la tanda que lo mide.
 >
-> ## ⚠ Custodia — la línea base 390 post-C-QA2 CANÓNICA es el build roto
+> ## ✅ Custodia — RECONCILIADA (2026-07-31): el nombre canónico vuelve a ser la medida sana
 >
-> `clon-base-390-cqa2-despues.json` congeló el build del comentario CSS roto
-> (S0=0 a 390): comparar contra él da **10 falsas regresiones de +136.58**. La
-> línea **sana** es **`clon-base-390-cqa2-despues-2026-07-31.json`** (la guarda
-> de `w()` la apartó ahí — su primer disparo real protegiendo evidencia).
-> **Cualquier `--cmp` a 390 contra el estado post-C-QA2 usa la FECHADA.** A
-> 1440 no hay ambigüedad. Detalle en `PENDIENTES-QA.md` §C-QA7 · Custodia.
+> `clon-base-390-cqa2-despues.json` contenía el build roto por el comentario
+> CSS (S0=0: 10 falsas regresiones de +136.58 al comparar). **Los nombres se
+> invirtieron**: el canónico contiene ahora la medida **SANA**, y el build roto
+> se llama `clon-base-390-cqa2-despues-BUILD-ROTO-comentario-css.json` —
+> conservado como evidencia, git guarda las dos historias. Ya no hay aviso que
+> recordar: el nombre obvio es el correcto. Detalle y moraleja en
+> `PENDIENTES-QA.md` §C-QA7 · Custodia.
 >
 > ## Abiertas, por orden
 >
@@ -141,6 +142,16 @@
 > apareció **en las tres rutas A LA VEZ**. Movimiento sincronizado sugiere una
 > causa global compartida, no aleatoriedad por página. Las ráfagas 2 y 3 deben
 > anotar si la sincronía se repite.
+>
+> **Y la ráfaga 2 anota EL TIEMPO DE CARGA junto a cada medida.** Hipótesis a
+> confirmar o descartar: el ±32.28 sincronizado **correlaciona con la latencia
+> del original** (cargas lentas → fuentes/imágenes sin asentar → el `h1`
+> envuelve distinto). Coste cero y puede dar el mecanismo. El episodio de
+> latencia existe: la noche del 2026-07-31 el original dio cargas de >120 s
+> (documentado en `c-banda-1440-2026-07-31-2.json`). ⚠ `ruido.mjs` **no
+> congela tiempos hoy**: anotarlos a mano junto a la ráfaga, o añadirlos a la
+> sonda ANTES de correrla — y ese cambio re-corre el test en negativo entero,
+> como manda la regla 3.
 >
 > ⚠ **Hasta cerrarla, `/software` NO se da por verificado** aunque dé Δ0 a los
 > dos anchos: un Δ0 leído en una corrida puede ser el episodio y no el arreglo.
