@@ -523,6 +523,17 @@ más alta manda; a 390 apilan y no hay dónde absorber—. Es el complemento de
 residuo que se repite en los dos anchos no puede ser ruido, un residuo que
 **aparece solo en uno** es un contenedor que en el otro lo estaba tapando.
 
+**Pero el contenedor con holgura no es el único mecanismo que tapa: el NO-WRAP
+es otro, y se caza distinto.** Un contenedor que absorbe se encuentra con
+`offsets.mjs` (holguras por columna). Un **texto que no envuelve** no tiene
+holgura que mirar: a 1440 la línea cabe y el defecto **no deja ni rastro** —
+solo aparece midiendo al ancho estrecho, por composición de la cadena. Caso
+medido (C-QA7): el kicker de `/monitor` con estilo inline a 50px — **120 de
+alto contra 42** a 390, los +78 exactos, con Δ0 perfecto a 1440. Cuando la
+regla espejo dispare, las dos hipótesis se comprueban cada una con su
+instrumento: la holgura con `offsets`, el no-wrap con la cadena al ancho que
+falla.
+
 **Y hay instrumento, no solo regla.** `scripts/qa/offsets.mjs` mide, por columna,
 cuánto puede fallar dentro sin que la fila se mueva (`absorbe`), y el offset de
 cada nodo dentro de su padre —que es lo único que ve el centrado vertical—. En
