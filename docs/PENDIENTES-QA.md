@@ -2512,3 +2512,75 @@ En la home fue peor que un desfase tapado: **su `h1` es el oculto de SEO**, de 0
 px en el original y 1 en el clon, así que **no había base** — todas sus lecturas
 de cuerpo se hicieron contra un origen arbitrario. La home es la primera página
 clonada y la más verificada del proyecto.
+
+---
+
+## C-QA2 · APLICADO — el espaciador, y lo que destapó (2026-07-30)
+
+El espaciador de las 4 de producto pasa de `137 / lg:177` a **225 a 1440** y
+**136.58 a 390**, medidos contra la cabecera del original. Los 4 `page.tsx`
+tenían el `div` copiado a mano; ahora usan **`BandaCabecera`**, el componente que
+salió de C-QA1 — extraído a la raíz al usarlo la segunda página, como manda
+`CLAUDE.md` §Arquitectura.
+
+`qa:clon-base` (umbral cero, con marcador): **+48 a 1440 y −0.42 a 390 en las 4,
+y las otras 13 rutas sin mover un píxel.**
+
+### Contra el original: el cambio hace EXACTAMENTE lo previsto
+
+| ruta | @1440 antes→después | @390 antes→después |
+|---|---|---|
+| `/kunak-api` | −48 → **0** ✅ | +0.42 → **0** ✅ |
+| `/software-…` | −48 → **0** ✅ | +0.42 → **0** ✅ |
+| `/monitor-calidad-aire` | −48 → **0** ✅ | +78.42 → **+78** |
+| `/accesorios` | −19.2 → **+28.8** | +48.42 → **+48** |
+
+El espaciador mueve **+48 exactos** en las cuatro: `−19.2 + 48 = 28.8` cuadra al
+céntimo igual que los tres `−48 + 48 = 0`. **El defecto del espaciador está
+cerrado y era uno solo.**
+
+### C-QA7 (nuevo, ABIERTO) · dos residuos propios que el espaciador tapaba
+
+Lo que queda **no es del espaciador**: son defectos **de cada página**, debajo de
+él, que el error del espaciador venía compensando en parte.
+
+| ruta | residuo | qué se sabe |
+|---|---|---|
+| `/accesorios` | **+28.8** @1440 · **+48** @390 | su original mide **392.59**, igual que `/kunak-api`, que ahora da Δ0 → la cabecera es la misma y el sobrante está **en su cuerpo** |
+| `/monitor-calidad-aire` | **+78** @390 (0 a 1440) | su original mide **308.58**, igual que `/software-…`, que da Δ0 a los dos anchos → mismo caso, y **solo a 390** |
+
+Los dos se localizan igual: **midiendo por composición la cadena del `h1` desde
+el espaciador hacia abajo** en la página que falla y en la que cuadra, que tienen
+la misma cabecera. `qa:banda` ya sabe hacerlo (`cadena`).
+
+> **`/accesorios` es el caso de libro de «un Δ de cero puede ser dos errores que
+> se anulan», y aquí ni siquiera daba cero: daba −19.2** — un número pequeño,
+> fácil de leer como fleco, que era **−48 de espaciador más +28.8 propios**.
+
+### ⚠ Y una lección sobre el veredicto de la tanda anterior
+
+El acta de C-QA2 decía que era **«un solo cambio, sin segundo defecto debajo»**,
+y lo fundaba en que el offset del `h1` por debajo del espaciador **coincidía al
+céntimo (167.59)**. Era verdad — **y estaba medido en `/kunak-api` y solo ahí**.
+Para 2 de las 4 no valía.
+
+> Es la regla de `CLAUDE.md` otra vez: **el veredicto tiene que cubrir
+> exactamente la propiedad de la que habla.** «El offset coincide en la página
+> que miré» no es «el offset coincide en las cuatro», y la diferencia entre las
+> dos frases son los dos residuos de C-QA7.
+
+No cambia la decisión —el arreglo del espaciador era correcto y había que
+hacerlo— pero sí lo que se podía prometer antes de correrlo.
+
+### El estado de `/software`, que NO se da por bueno
+
+Da **Δ0 a los dos anchos**, que es el mejor resultado posible. **Y su
+verificación sigue pendiente del suelo real (C-QA6)**: esa ruta presenta
+episodios de **±32.28** en la base, así que un Δ0 leído en una corrida puede ser
+el episodio y no el arreglo. Se cierra cuando cierre la campaña de ráfagas.
+
+### Nota suelta · `/` a 390 con `docH +8`
+
+Aparece en la comparación clon-contra-clon y **no es de este cambio**: la home no
+usa `BandaCabecera` y la regla CSS nueva solo casa con `.banda-cabecera*`. No
+mueve ningún ancla (`h1.y` sin cambio). Queda anotado como no reproducido.

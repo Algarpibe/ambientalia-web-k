@@ -401,13 +401,35 @@
    Tailwind porque los valores son dinámicos —dos por plantilla— y Tailwind no
    genera clases a partir de valores que no estén escritos en el código.
 
-   El corte en 768px es el `md` de Tailwind, el mismo que ya usa la banda de
-   sector (`CabeceraSector`, `md:pt-[185px]`). */
-.banda-cabecera {
+   El corte de 768px es el `md` de Tailwind, el mismo que ya usa la banda de
+   sector (`CabeceraSector`, `md:pt-[185px]`).
+
+   ⚠ Y el corte NO es el mismo en todas las plantillas: producto cambia en
+   1024 —va con el menú de hamburguesa, medido en su QA del 2026-07-26— y
+   caso/FAQ en 768, heredado de `CabeceraSector`. Son dos clases y no una
+   parametrizada porque una media query no admite un valor de `var()`.
+
+   ⚠ La regla base (sin media query) es la que sirve el ancho MÓVIL, así que
+   perderla no rompe nada a 1440 y lo rompe todo a 390. Pasó: un cierre de
+   comentario de más dejó cuatro líneas de prosa haciendo de selector, y el
+   parser se comió esta regla —solo ésta— dando bandas de 0 a 390 con 1440
+   intacto. Lo cazó la corrida a los dos anchos; a 1440 sola habría pasado por
+   buena.
+
+   Y pasó DOS veces: la segunda, dentro del comentario que lo explicaba, por
+   escribir el token de cierre entre comillas. En CSS no hay forma de citarlo
+   —no existe el escape—, así que aquí se nombra y no se escribe. */
+.banda-cabecera,
+.banda-cabecera-lg {
   min-height: var(--banda-alto);
 }
 @media (min-width: 768px) {
   .banda-cabecera {
+    min-height: var(--banda-alto-md);
+  }
+}
+@media (min-width: 1024px) {
+  .banda-cabecera-lg {
     min-height: var(--banda-alto-md);
   }
 }

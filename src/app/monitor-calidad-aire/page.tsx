@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeaderNav } from "@/components/HeaderNav";
+import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -46,14 +47,7 @@ export default function MonitorCalidadAirePage() {
         {/* QA 2026-07-26: el original sirve cabecera-construccion.jpg (vista aérea
             de ciudad) y la banda mide 137px (móvil/hamburguesa) / 177px (menú
             desktop ≥1024) hasta el breadcrumb — medido por CDP a 390 y 1280. */}
-        <div
-          aria-hidden
-          className="h-[137px] w-full bg-cover bg-center lg:h-[177px]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(71,71,71,0.17), rgba(71,71,71,0)), url('/images/uploads/2023/10/cabecera-construccion.jpg')",
-          }}
-        />
+        <BandaCabecera {...BANDA.producto} foto="/images/uploads/2023/10/cabecera-construccion.jpg" />
 
         {/* S0 breadcrumb + S1 fila 1 (hero con visor 360°) */}
         <HeroProducto />

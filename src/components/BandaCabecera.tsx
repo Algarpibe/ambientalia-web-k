@@ -43,21 +43,34 @@ export function BandaCabecera({
   alto,
   altoMovil,
   foto,
+  corte = 768,
   className = "",
 }: {
-  /** `min-height` a partir de 768px. Medido en el original. */
+  /** `min-height` a partir de `corte`. Medido en el original. */
   alto: number;
-  /** `min-height` por debajo de 768px. Medido en el original. */
+  /** `min-height` por debajo de `corte`. Medido en el original. */
   altoMovil: number;
   /** La foto de fondo, cuando la plantilla la tiene. El caso sí; la FAQ no. */
   foto?: string;
+  /**
+   * Dónde cambia de alto. **No es el mismo en todas las plantillas y no se
+   * unifica sin medirlo**: producto lleva **1024** desde su QA del 2026-07-26
+   * (el cambio va con el menú de hamburguesa), y caso/FAQ heredaron **768** de
+   * `CabeceraSector`.
+   *
+   * ⚠ El de caso y FAQ está **SIN PROBAR**: sus altos se midieron a 1440 y a
+   * 390, y entre esos dos anchos hay sitio para los dos cortes. Ponerlos a 1024
+   * «para que cuadren con producto» sería inventar; dejarlos en 768 es lo que
+   * ya se sirvió y verificó a los dos anchos medidos. Se anota, no se adivina.
+   */
+  corte?: 768 | 1024;
   className?: string;
 }) {
   const DEGRADADO = "linear-gradient(rgba(71,71,71,0.17) 0%, rgba(0,0,0,0) 100%)";
   return (
     <section
       aria-hidden
-      className={`banda-cabecera w-full bg-cover bg-center ${className}`}
+      className={`${corte === 1024 ? "banda-cabecera-lg" : "banda-cabecera"} w-full bg-cover bg-center ${className}`}
       style={
         {
           "--banda-alto": `${altoMovil}px`,
@@ -85,4 +98,19 @@ export const BANDA = {
   caso: { alto: 387, altoMovil: 362.91 },
   /** `/faqs/*` — sin foto. */
   faq: { alto: 225, altoMovil: 165.58 },
+  /**
+   * Las 4 de producto (`/accesorios`, `/kunak-api`, `/monitor-calidad-aire`,
+   * `/software-…`), con su foto por página. **C-QA2**, corregido 2026-07-30.
+   *
+   * Antes valía `137 / lg:177`, escrito a ojo contra la cabecera **del clon**
+   * en vez de contra la del original. De ahí el **−48 exacto a 1440** de tres
+   * de las cuatro, invisible durante meses porque la regla del `h1` resta la
+   * base antes de comparar y el desfase vivía **en** la base.
+   *
+   * Medido por composición (`medidas/c-banda-{1440,390}.json`): la cabecera del
+   * original mide **225** a 1440 y **136.58** a 390, y el offset del `h1` por
+   * debajo del espaciador **ya coincidía al céntimo** (167.59 en los dos lados
+   * en `/kunak-api`). O sea: **un solo cambio, sin segundo defecto debajo**.
+   */
+  producto: { alto: 225, altoMovil: 136.58, corte: 1024 },
 } as const;

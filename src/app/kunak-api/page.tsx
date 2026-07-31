@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeaderNav } from "@/components/HeaderNav";
+import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -50,14 +51,7 @@ export default function KunakApiPage() {
         {/* Cabecera TB: franja foto tras el header transparente. El recon
             capturó `cabecera-urbana.jpg`; la imagen VARÍA entre visitas —
             no re-investigar (nota de PENDIENTES-QA, P2). */}
-        <div
-          aria-hidden
-          className="h-[137px] w-full bg-cover bg-center lg:h-[177px]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(71,71,71,0.17), rgba(71,71,71,0)), url('/images/uploads/2023/10/cabecera-urbana.jpg')",
-          }}
-        />
+        <BandaCabecera {...BANDA.producto} foto="/images/uploads/2023/10/cabecera-urbana.jpg" />
 
         {/* --- S0 · Breadcrumb (3 niveles, el último sin enlace) --- */}
         <nav aria-label="Migas de pan" className="bg-white">

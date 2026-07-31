@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-07-31",
+    "rutas": 4
+  },
+  "paginas": {
+    "/accesorios": {
+      "orig": {
+        "cabecera": {
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": true
+        },
+        "h1yCrudo": 392.59,
+        "h1alto": 56,
+        "h1txt": "Accesorios para sensores de calidad del ai",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 392.59,
+          "alto": 56,
+          "txt": "Accesorios para sensores de calidad del ai"
+        },
+        "yAreaPrincipal": 225,
+        "entre": [
+          {
+            "tag": "div",
+            "clase": "",
+            "alto": 10045.7,
+            "y": 225,
+            "position": "static",
+            "contieneH1": true
+          }
+        ],
+        "docH": 11319
+      },
+      "clon": {
+        "cabecera": {
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 421.39,
+        "h1alto": 56,
+        "h1txt": "Accesorios para sensores de calidad del ai",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 421.39,
+          "alto": 56,
+          "txt": "Accesorios para sensores de calidad del ai"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "section",
+            "clase": "banda-cabecera-lg w-full bg-cover",
+            "alto": 225,
+            "y": 0,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "nav",
+            "clase": "bg-white",
+            "alto": 50,
+            "y": 225,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "section",
+            "clase": "relative bg-white bg-no-repeat",
+            "alto": 7700.53,
+            "y": 275,
+            "position": "relative",
+            "contieneH1": true
+          }
+        ],
+        "docH": 10911
+      }
+    },
+    "/kunak-api": {
+      "orig": {
+        "cabecera": {
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": true
+        },
+        "h1yCrudo": 392.59,
+        "h1alto": 56,
+        "h1txt": "Integración de datos más allá de la soluci",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 392.59,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la soluci"
+        },
+        "yAreaPrincipal": 225,
+        "entre": [
+          {
+            "tag": "div",
+            "clase": "",
+            "alto": 4514.63,
+            "y": 225,
+            "position": "static",
+            "contieneH1": true
+          }
+        ],
+        "docH": 5421
+      },
+      "clon": {
+        "cabecera": {
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 392.59,
+        "h1alto": 56,
+        "h1txt": "Integración de datos más allá de la soluci",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 392.59,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la soluci"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "section",
+            "clase": "banda-cabecera-lg w-full bg-cover",
+            "alto": 225,
+            "y": 0,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "nav",
+            "clase": "bg-white",
+            "alto": 50,
+            "y": 225,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "section",
+            "clase": "relative bg-white bg-no-repeat",
+            "alto": 1928.92,
+            "y": 275,
+            "position": "relative",
+            "contieneH1": true
+          }
+        ],
+        "docH": 5337
+      }
+    },
+    "/monitor-calidad-aire": {
+      "orig": {
+        "cabecera": {
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": true
+        },
+        "h1yCrudo": 421.39,
+        "h1alto": 33,
+        "h1txt": "Monitor de calidad del aire",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 421.39,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire"
+        },
+        "yAreaPrincipal": 225,
+        "entre": [
+          {
+            "tag": "div",
+            "clase": "",
+            "alto": 12337.5,
+            "y": 225,
+            "position": "static",
+            "contieneH1": true
+          }
+        ],
+        "docH": 13611
+      },
+      "clon": {
+        "cabecera": {
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 421.39,
+        "h1alto": 33,
+        "h1txt": "Monitor de calidad del aire",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 421.39,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "section",
+            "clase": "banda-cabecera-lg w-full bg-cover",
+            "alto": 225,
+            "y": 0,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "nav",
+            "clase": "bg-white",
+            "alto": 50,
+            "y": 225,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "section",
+            "clase": "relative bg-white bg-no-repeat",
+            "alto": 772.7,
+            "y": 275,
+            "position": "relative",
+            "contieneH1": true
+          }
+        ],
+        "docH": 12458
+      }
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "orig": {
+        "cabecera": {
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": true
+        },
+        "h1yCrudo": 421.39,
+        "h1alto": 33,
+        "h1txt": "Software de medición de la calidad del air",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 421.39,
+          "alto": 33,
+          "txt": "Software de medición de la calidad del air"
+        },
+        "yAreaPrincipal": 225,
+        "entre": [
+          {
+            "tag": "div",
+            "clase": "",
+            "alto": 10957.42,
+            "y": 225,
+            "position": "static",
+            "contieneH1": true
+          }
+        ],
+        "docH": 11864
+      },
+      "clon": {
+        "cabecera": {
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "enFlujo": false
+        },
+        "h1yCrudo": 421.39,
+        "h1alto": 33,
+        "h1txt": "Software de medición de la calidad del air",
+        "h1dentroDeCabecera": false,
+        "nH1": 1,
+        "anclaVisible": {
+          "tag": "h1",
+          "y": 421.39,
+          "alto": 33,
+          "txt": "Software de medición de la calidad del air"
+        },
+        "yAreaPrincipal": 0,
+        "entre": [
+          {
+            "tag": "section",
+            "clase": "banda-cabecera-lg w-full bg-cover",
+            "alto": 225,
+            "y": 0,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "nav",
+            "clase": "bg-white",
+            "alto": 50,
+            "y": 225,
+            "position": "static",
+            "contieneH1": false
+          },
+          {
+            "tag": "section",
+            "clase": "relative bg-white bg-no-repeat",
+            "alto": 2505.95,
+            "y": 275,
+            "position": "relative",
+            "contieneH1": true
+          }
+        ],
+        "docH": 11759
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeaderNav } from "@/components/HeaderNav";
+import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { UltimosArticulos } from "@/components/UltimosArticulos";
@@ -51,14 +52,7 @@ export default function AccesoriosPage() {
       <main className="flex flex-1 flex-col">
         {/* Cabecera TB: franja foto tras el header transparente (mismo patrón
             que /monitor-calidad-aire: 137px con hamburguesa, 177 desde lg). */}
-        <div
-          aria-hidden
-          className="h-[137px] w-full bg-cover bg-center lg:h-[177px]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(71,71,71,0.17), rgba(71,71,71,0)), url('/images/uploads/2023/10/cabecera-puerto.jpg')",
-          }}
-        />
+        <BandaCabecera {...BANDA.producto} foto="/images/uploads/2023/10/cabecera-puerto.jpg" />
 
         {/* --- S0 · Breadcrumb --- */}
         <nav aria-label="Migas de pan" className="bg-white">
