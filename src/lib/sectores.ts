@@ -455,7 +455,9 @@ export const SECTOR_URBANO: SectorPage = {
         date: "Mar 25, 2026",
         image:
           "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
-        href: "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+        // ruta local: esta página ya está clonada (src/app/[slug]) — grupo A.
+        //   original: https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/
+        href: "/monitorizacion-de-emisiones-del-trafico-urbano",
       },
       {
         title:

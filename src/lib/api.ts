@@ -171,7 +171,9 @@ export const API_ARTICLES: BlogPost[] = [
     title: "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones",
     date: "Ene 7, 2025",
     image: `${U25_01}/Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg`,
-    href: "https://kunakair.com/es/contaminacion-por-metano/",
+    // ruta local: esta página ya está clonada (src/app/[slug]) — grupo A.
+    //   original: https://kunakair.com/es/contaminacion-por-metano/
+    href: "/contaminacion-por-metano",
   },
   {
     title: "Contaminación por malos olores: Qué es, causas, efectos y soluciones",

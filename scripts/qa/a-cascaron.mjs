@@ -56,6 +56,19 @@ const extraer = function () {
       pr: px(s.paddingRight),
       fs: px(s.fontSize),
       lh: px(s.lineHeight),
+      // ── Añadido al CONSTRUIR el grupo A (2026-07-31) ──────────────────────
+      // El recon medía caja y ritmo, que es lo que hacía falta para aplicar los
+      // dos tests. Para *maquetar* hace falta además la tipografía completa, y
+      // sin ella el constructor la inventa a ojo o la copia de otro arquetipo —
+      // que es exactamente cómo el kicker de `/monitor` acabó con 50 px en
+      // línea (C-QA7). Se mide, no se deduce.
+      col: s.color,
+      fw: s.fontWeight,
+      ls: s.letterSpacing,
+      ff: (s.fontFamily || "").split(",")[0].replace(/["']/g, ""),
+      ta: s.textAlign,
+      tt: s.textTransform,
+      bg: s.backgroundColor,
       txt: t(el),
     };
   });
@@ -71,8 +84,67 @@ const extraer = function () {
     return { w: r(b.width), h: r(b.height), pl: px(s.paddingLeft), pr: px(s.paddingRight) };
   };
 
+  /**
+   * ⚠ **El módulo NO es el titular.** `text#1` es el `<div>` del módulo y su
+   * `color` computado sale `rgb(255,255,255)` en las tres formas — blanco sobre
+   * blanco, o sea que **no es el color que se ve**: el `h1` de dentro lo pisa.
+   * Maquetar con el número del módulo habría dado un titular invisible.
+   *
+   * Es `CLAUDE.md` §El NIVEL al que se mide, en su versión «medir más ARRIBA»:
+   * el contenedor absorbe —aquí, tapa— la propiedad que se estaba preguntando.
+   * Añadido al construir (2026-07-31).
+   */
+  const tipo = (el) => {
+    if (!el) return null;
+    const s = getComputedStyle(el);
+    const b = el.getBoundingClientRect();
+    return {
+      etiqueta: el.tagName.toLowerCase(),
+      w: r(b.width), h: r(b.height),
+      // `y` ABSOLUTA: la base de lectura EN CRUDO que `CLAUDE.md` §Notas de método
+      // exige medir una vez por arquetipo nuevo, antes de fiarse de ningún Δ de
+      // cuerpo. Sin ella, un desfase que esté EN la base se normaliza a cero por
+      // construcción — y así vivieron 4 páginas con −48 dadas por verificadas.
+      y: r(b.top + window.scrollY),
+      fs: px(s.fontSize), lh: px(s.lineHeight), fw: s.fontWeight,
+      col: s.color, ls: s.letterSpacing, ff: (s.fontFamily || "").split(",")[0].replace(/["']/g, ""),
+      mt: px(s.marginTop), mb: px(s.marginBottom),
+      pt: px(s.paddingTop), pb: px(s.paddingBottom),
+      txt: t(el, 40),
+    };
+  };
+  const modTitulo = main.querySelector("[class*='et_pb_text_1_tb_body']");
+
+  /**
+   * El ÍNDICE DEL ARTÍCULO (los módulos `sidebar`). No es un campo —§2.2: es
+   * una proyección de los `h2` del cuerpo— pero hay que maquetarlo, así que hay
+   * que medirlo. Se mide el que se VE: a 1440 el de la columna lateral, a 390
+   * el que va dentro de la principal (el otro está a w 0 · h 0).
+   */
+  const indices = [...main.querySelectorAll("[class*='et_pb_sidebar']")]
+    .filter((el) => el.getBoundingClientRect().width > 0);
+  const ix = indices[0];
+  const indice = ix
+    ? {
+        caja: tipo(ix),
+        titulo: tipo(ix.querySelector("h1,h2,h3,h4,h5,.widgettitle")),
+        lista: tipo(ix.querySelector("ul,ol")),
+        item: tipo(ix.querySelector("li")),
+        enlace: tipo(ix.querySelector("li a")),
+        nItems: ix.querySelectorAll("li").length,
+        html: ix.innerHTML.replace(/\s+/g, " ").slice(0, 700),
+      }
+    : null;
+
   return {
     nodos,
+    /** El titular de verdad, y el primer `h2` del cuerpo (que es campo rico). */
+    h1: tipo(main.querySelector("h1")),
+    tituloInterno: tipo(modTitulo?.querySelector("h1, h2, h3, p")),
+    indice,
+    h2Cuerpo: tipo(pc?.querySelector("h2")),
+    pCuerpo: tipo(pc?.querySelector("p")),
+    aCuerpo: tipo(pc?.querySelector("a")),
     postContent: caja(pc),
     columna: caja(col),
     fila: caja(fila),

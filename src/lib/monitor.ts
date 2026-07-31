@@ -641,7 +641,9 @@ export const MONITOR_ARTICLES: BlogPost[] = [
     date: "Feb 28, 2025",
     image:
       "/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg",
-    href: "https://kunakair.com/es/running-for-clean-air/",
+    // ruta local: esta página ya está clonada (src/app/[slug]) — grupo A.
+    //   original: https://kunakair.com/es/running-for-clean-air/
+    href: "/running-for-clean-air",
   },
   {
     title: "Detectores de calidad del aire y movilidad, ¿qué nos cuentan los sistemas de monitorización?",

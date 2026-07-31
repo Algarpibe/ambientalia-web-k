@@ -302,3 +302,121 @@ export interface CTABanner {
   bgImage: string;
   variant?: "light" | "dark";
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ARQUETIPO A — detalle plantillado. 209 páginas, TRES plantillas.
+ *
+ * Recon en `docs/research/arquetipo-A/`, esquema en `ESQUEMA-CMS.md` §2 y §2c,
+ * enrutado en §4. Lo que gobierna estos tipos, y que no es evidente:
+ *
+ * ── El cascarón no tiene NI UN campo por instancia ────────────────────────
+ * Cero varianza en 24 instancias (ritmo, tipografía, retícula). Todo lo que
+ * aparece aquí es contenido de la entrada; nada es presentación. Es lo
+ * contrario de SECTOR, donde media docena de propiedades resultaron ser campos
+ * editoriales — y la razón es el RÉGIMEN: A es **plantillado**, así que la
+ * persona que decide el ritmo no existe (`CLAUDE.md` §régimen).
+ *
+ * ── Son TRES tipos y no uno con discriminante ─────────────────────────────
+ * Difieren en estructura (`row#2` ausente en término), en ritmo
+ * (`post_content mb` 72 en blog · 0 en las otras dos) y en campos: el blog
+ * tiene fecha, taxonomías, destacada y bloque de relacionados; el término no
+ * tiene ninguno; el documento científico tiene portada, PDF, autores y año.
+ * Mismo criterio que cerró §1.5b para sector/monográfico.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Término de taxonomía citado por una entrada. El archivo aún no está clonado. */
+export interface TerminoA {
+  slug: string;
+  nombre: string;
+}
+
+/**
+ * Imagen de WordPress con su `srcset`. **`srcset` es campo, no adorno**: es la
+ * causa medida de M-IMG (los tres módulos de imagen con residuo de décimas) y
+ * la entrada de los *image sizes* que hay que declarar en Payload (CMS-0b).
+ */
+export interface ImagenA {
+  src: string;
+  srcset?: string;
+  sizes?: string;
+  width?: string;
+  height?: string;
+  alt?: string;
+}
+
+/** SEO del grupo A. `description` falta en los 23 documentos científicos. */
+export interface SeoA {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+/**
+ * ENTRADA DE BLOG — 149 de las 209, y la forma de la que se escribe el modelo.
+ *
+ * El «contrato de nacimiento» de LH-2 D3 vive aquí entero: `fechaPublicacion`,
+ * `imagenDestacada` opcional con sus sizes, relaciones a las taxonomías, y
+ * **sin `autor`** — no lo pide ningún listado (0/9 formas) y el rótulo
+ * «Escrito por el Equipo de marketing y comunicación» salió **idéntico en las
+ * 11 instancias medidas que lo llevan**, o sea plantilla.
+ */
+export interface EntradaBlog {
+  slug: string;
+  seo: SeoA;
+  titulo: string;
+  /** Verbatim, como lo escribe el original: «7 enero 2025». */
+  fechaPublicacion: string;
+  /** «15 junio 2026» — presente en las 7 medidas, con el MISMO valor. */
+  fechaActualizacion?: string;
+  imagenDestacada?: ImagenA;
+  /** `category` — 1..n. El rótulo singular/plural se deriva del número. */
+  categorias: TerminoA[];
+  /** `post_tag` — 0..n. */
+  etiquetas: TerminoA[];
+  /**
+   * `resources` — la categoría del hub de Recursos. **Decide la miga de pan**:
+   * con ella, `Inicio › Recursos › Artículos y Guías › <hija> › título`; sin
+   * ella, `Inicio › Blog › título`. Medido en 7 instancias, 6 con y 1 sin.
+   */
+  recurso?: TerminoA;
+  cuerpo: CampoRico;
+  /**
+   * El bloque «También te puede interesar». **83 de 149 lo llevan y no se sabe
+   * qué lo decide** (A-SP1/A-SP2, sin causa identificada). Hasta que se sepa es
+   * un campo: es lo único que varía entre instancias de la misma forma.
+   */
+  relacionados: boolean;
+}
+
+/** TÉRMINO DE KUNAKPEDIA — 37 de las 209. La forma más plana: 4 campos. */
+export interface TerminoKunakpedia {
+  slug: string;
+  seo: SeoA;
+  titulo: string;
+  cuerpo: CampoRico;
+}
+
+/**
+ * DOCUMENTO CIENTÍFICO — 23 de las 209, y la única forma con prefijo de ruta.
+ *
+ * ⚠ **No es UN prefijo: son tres**, y el modelo del recon decía uno. Medido en
+ * las 23: `documentos-cientificos/<categoría>` en 22 y
+ * `estudios-cientificos/articulos-tecnicos` en 1. Se modela como CMS-1 modeló
+ * el prefijo del caso de éxito: **campo con defecto, omitido cuando coincide**.
+ */
+export interface DocumentoCientifico {
+  slug: string;
+  /** Defecto `"documentos-cientificos"`; 1 de 23 escribe `"estudios-cientificos"`. */
+  prefijo?: "documentos-cientificos" | "estudios-cientificos";
+  /** `scientific-category` — 3 términos. Es el segmento que va antes del slug. */
+  categoria: TerminoA;
+  seo: SeoA;
+  titulo: string;
+  /** «Reche et al.» · «Airparif» · «Revista Hydrocarbon Engineering». */
+  autores: string;
+  anyo: string;
+  portada: ImagenA;
+  /** El PDF o la publicación externa. El rótulo va **en inglés en el original**. */
+  descarga: { href: string; label: string };
+  cuerpo: CampoRico;
+}

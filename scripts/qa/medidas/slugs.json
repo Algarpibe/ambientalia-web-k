@@ -8,28 +8,27 @@
       "familia": "estáticas (page · solutions)",
       "n": 4,
       "fuente": "prerender-manifest"
-    }
-  ],
-  "noConstruidas": [
+    },
     {
       "familia": "blog",
-      "modulo": "src/lib/arquetipo-a.ts",
-      "razon": "el módulo no existe todavía"
+      "n": 7,
+      "fuente": "src/lib/arquetipo-a.ts › ENTRADAS_BLOG"
     },
     {
       "familia": "termino",
-      "modulo": "src/lib/arquetipo-a.ts",
-      "razon": "el módulo no existe todavía"
+      "n": 3,
+      "fuente": "src/lib/arquetipo-a.ts › TERMINOS_KUNAKPEDIA"
     }
   ],
-  "emitidas": 17,
+  "noConstruidas": [],
+  "emitidas": 31,
   "estaticasDeUnSegmento": [
     "accesorios",
     "kunak-api",
     "monitor-calidad-aire",
     "software-de-medicion-calidad-del-aire"
   ],
-  "emitidasPorPlano": 0,
+  "emitidasPorPlano": 10,
   "colisiones": [],
   "sombras": [],
   "huerfanas": [],

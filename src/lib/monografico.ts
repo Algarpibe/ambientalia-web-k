@@ -1386,7 +1386,9 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
         date: "Ene 7, 2025",
         image:
           "/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
-        href: "https://kunakair.com/es/contaminacion-por-metano/",
+        // ruta local: esta página ya está clonada (src/app/[slug]) — grupo A.
+        //   original: https://kunakair.com/es/contaminacion-por-metano/
+        href: "/contaminacion-por-metano",
       },
       {
         title:

@@ -239,15 +239,51 @@ for (const m of MUESTRA) {
        /<a\b[^>]*\bhref="([^"]*)"[^>]*\bclass="[^"]*\bet_pb_button_0_tb_body\b[^"]*"[^>]*>([\s\S]*?)<\/a>/i.exec(z))
     : null;
   const intro = esDoc ? textoInterno(modulo(z, "text", 3)) : null;
+  // ⚠ `text#2` del documento científico NO estaba en §2.2: trae **autores y
+  // año** («Reche et al. | 2020») más el nombre de su categoría científica.
+  // Son campos, y el modelo del recon no los tenía. Se transcribe en crudo.
+  const referencia = esDoc ? textoInterno(modulo(z, "text", 2)) : null;
   if (esDoc) {
     anota("image#0 (portada PDF)", portadaHtml != null);
     anota("button#0 (descarga PDF)", botonDoc != null);
+    anota("text#2 (autores · año · categoría)", referencia != null);
   }
 
   // ── la firma: ¿lleva el bloque de relacionados? (83/149 · §2, A-SP1) ──
   // Patrón DISCRIMINANTE: si casara en las 13 no estaría midiendo la firma.
   const relacionados = /\bet_pb_blog_0_tb_body\b/.test(z);
   anota("blog#0 (relacionados) — DISCRIMINANTE", relacionados, MUESTRA.length - 1);
+
+  /**
+   * La `section#2` del blog: «También te puede interesar» + 3 botones. Es
+   * PLANTILLA —sus textos no dependen de la entrada— pero hay que transcribirla
+   * igual: sin ella el cascarón de 83 de las 149 está incompleto.
+   *
+   * Los 3 posts que lista NO se transcriben a propósito: el original **los
+   * sortea en cada carga** (P4), y es la región de ruido de hasta 81 px que
+   * `CLAUDE.md` §ruido documenta. Congelar un sorteo sería congelar ruido.
+   */
+  const bloqueRel = relacionados
+    ? {
+        textos: [6, 7, 8, 9].map((n) => texto(textoInterno(modulo(z, "text", n)))).filter(Boolean),
+        botones: [0, 1, 2]
+          .map((n) => {
+            const re = new RegExp(
+              `<a\\b[^>]*\\bclass="[^"]*\\bet_pb_button_${n}_tb_body\\b[^"]*"[^>]*>([\\s\\S]*?)</a>`,
+              "i",
+            );
+            const mm = re.exec(z);
+            if (!mm) return null;
+            const href = (/\bhref="([^"]*)"/i.exec(mm[0]) || [])[1] ?? null;
+            return { href, label: texto(mm[1]) };
+          })
+          .filter(Boolean),
+      }
+    : null;
+  if (relacionados) {
+    anota("text#6..#9 (rótulos del bloque)", (bloqueRel?.textos.length ?? 0) > 0);
+    anota("button#0..#2 (botones del bloque)", (bloqueRel?.botones.length ?? 0) > 0);
+  }
 
   salida.push({
     forma: m.forma,
@@ -271,7 +307,12 @@ for (const m of MUESTRA) {
     portada: imagen(portadaHtml),
     descargaPdf: botonDoc ? { href: botonDoc[1], label: texto(botonDoc[2]) } : null,
     intro: texto(intro),
+    referencia:
+      referencia == null
+        ? null
+        : { html: referencia, texto: texto(referencia), enlaces: enlaces(referencia) },
     relacionados,
+    bloqueRelacionados: bloqueRel,
     cuerpo, // ← VERBATIM, del HTML servido. Ni un `id` de `h2` inventado.
     cuerpoChars: cuerpo ? cuerpo.length : 0,
   });

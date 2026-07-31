@@ -434,7 +434,9 @@ export const SOFTWARE_ARTICLES: BlogPost[] = [
     date: "Dic 13, 2024",
     image:
       "/images/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-1024x683.jpg",
-    href: "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+    // ruta local: esta página ya está clonada (src/app/[slug]) — grupo A.
+    //   original: https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/
+    href: "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
   },
   {
     title:

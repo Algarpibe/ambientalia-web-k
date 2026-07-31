@@ -113,4 +113,25 @@ export const BANDA = {
    * en `/kunak-api`). O sea: **un solo cambio, sin segundo defecto debajo**.
    */
   producto: { alto: 225, altoMovil: 136.58, corte: 1024 },
+  /**
+   * ARQUETIPO A — las tres plantillas (blog, término, documento científico).
+   *
+   * **225 / 165.58**, y no se copiaron de la FAQ: se **dedujeron por
+   * composición** de la `y` cruda del `h1` del original, que es la medida que
+   * `CLAUDE.md` §Notas de método manda tomar **una vez por arquetipo nuevo**
+   * antes de fiarse de ningún Δ de cuerpo (`a-cascaron-*-2026-07-31-4.json`):
+   *
+   *   @1440  332.59 − 50 (`section#0`) − 57.59 (`section#1 pt`) = **225**
+   *   @390   317.58 − 102 (`section#0`) − 50 (`section#1 pt`)   = **165.58**
+   *
+   * Y cuadra en las tres formas: el término da 346.98 porque su `row#1` añade
+   * `pt 14.39` (225 + 50 + 57.59 + 14.39 = 346.98 ✓).
+   *
+   * ⚠ Coincide con la FAQ **en los dos anchos**, que es justo lo que el aviso de
+   * arriba dice que hace falta: producto y FAQ comparten el 225 de 1440 y
+   * difieren a 390, así que coincidir en uno solo no habría probado nada.
+   * Aun así va con entrada propia y no reusando `faq`: son plantillas distintas
+   * y que hoy midan igual no es una razón para acoplarlas.
+   */
+  grupoA: { alto: 225, altoMovil: 165.58 },
 } as const;
