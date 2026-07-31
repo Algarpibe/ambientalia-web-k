@@ -102,8 +102,8 @@ for (const [clave, corridas] of Object.entries(crudo)) {
   };
 }
 
-w("ruido-crudo.json", crudo);
-w("ruido.json", resumen);
+w("medidas/ruido-crudo.json", crudo);
+w("medidas/ruido.json", resumen);
 
 console.log(`\n===== SUELO DE RUIDO DEL ORIGINAL · ${CORRIDAS} corridas =====`);
 console.log(

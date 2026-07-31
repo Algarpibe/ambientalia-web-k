@@ -262,19 +262,86 @@ export function envRutas(nombre) {
   return v.split(",").map((s) => s.trim()).filter(Boolean).map(ruta);
 }
 
-/**
- * Congela una salida. **La ruta relativa se resuelve contra `scripts/qa/`, no
- * contra el `cwd`.**
+/* ══════════════════════════════════════════════════════════════════════════
+ * CONGELAR UNA SALIDA — y la guarda de que no se descongele sola.
  *
- * Antes iba contra el `cwd`, así que la sonda solo escribía en el sitio correcto
- * si la lanzabas desde `scripts/qa/`. Desde la raíz —que es como las invocan los
- * `npm run qa:*`— habría creado un `medidas/` paralelo en la raíz del repo y las
- * salidas congeladas se habrían partido en dos árboles sin que nadie lo notara.
- * Un fallo de esa forma no da error: da dos verdades.
- */
-export function w(file, data) {
+ * ── Dos fallos, y el segundo es el que obliga a la guarda ─────────────────
+ *
+ * **(1) La ruta se resuelve contra `scripts/qa/`, no contra el `cwd`.** Antes
+ * iba contra el `cwd`, así que la sonda solo escribía en el sitio correcto si la
+ * lanzabas desde `scripts/qa/`. Desde la raíz —que es como las invocan los
+ * `npm run qa:*`— habría creado un `medidas/` paralelo y las salidas congeladas
+ * se habrían partido en dos árboles sin dar ningún error: dos verdades.
+ *
+ * **(2) Congelar no sirve de nada si la siguiente corrida descongela sin
+ * avisar.** La regla 2 de `CLAUDE.md` §sondas dice que toda sonda congela su
+ * salida *para que una conclusión citada en un doc tenga su fichero*. Pero el
+ * fichero se llama igual corrida tras corrida, así que **la corrida de
+ * verificación machaca el diagnóstico** — que es justo la foto del defecto y la
+ * única prueba de que existía.
+ *
+ * Pasó esta semana, y en la sonda escrita para diagnosticar: al comprobar que
+ * C-QA1 estaba arreglada, `c-cabecera` reescribió
+ * `medidas/c-cabecera-{1440,390}.json` con el clon **ya corregido**. Hubo que
+ * recuperarlos de git. Si no hubieran estado commiteados, la evidencia del
+ * defecto habría desaparecido en el acto de arreglarlo.
+ *
+ * `c-cabecera` se parcheó a mano, y eso es media corrección de las de
+ * `CLAUDE.md`: la instancia y no la CLASE. **La guarda vive aquí**, en el único
+ * sitio por el que escriben todas.
+ *
+ * ── La regla ──────────────────────────────────────────────────────────────
+ *
+ *   · el fichero no existe            → se escribe;
+ *   · existe con contenido IDÉNTICO   → se reescribe, no se pierde nada;
+ *   · existe con contenido DISTINTO   → **no se pisa**: se escribe al lado con
+ *                                       la fecha, y se dice en voz alta;
+ *   · `PISAR=1` (o `{pisar:true}`)    → se pisa a propósito, y se dice.
+ *
+ * Es hermana de la guarda de selectores (`Censo`): las dos convierten en ruido
+ * visible algo que por defecto pasaba en silencio. La diferencia es que aquélla
+ * protege la MEDIDA y ésta protege la EVIDENCIA.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Sufijo con fecha, evitando colisión si ya hay una corrida de hoy. */
+function alLado(destino) {
+  const dir = path.dirname(destino);
+  const ext = path.extname(destino);
+  const base = path.basename(destino, ext);
+  const hoy = new Date().toISOString().slice(0, 10);
+  let cand = path.join(dir, `${base}-${hoy}${ext}`);
+  for (let n = 2; fs.existsSync(cand); n++) cand = path.join(dir, `${base}-${hoy}-${n}${ext}`);
+  return cand;
+}
+
+export function w(file, data, { pisar = false } = {}) {
   const destino = path.isAbsolute(file) ? file : path.join(QA, file);
+  const cuerpo = typeof data === "string" ? data : JSON.stringify(data, null, 2);
+  const rel = (p) => path.relative(QA, p).replace(/\\/g, "/");
   fs.mkdirSync(path.dirname(destino), { recursive: true });
-  fs.writeFileSync(destino, typeof data === "string" ? data : JSON.stringify(data, null, 2));
-  console.log("→", path.relative(QA, destino).replace(/\\/g, "/"));
+
+  const forzar = pisar || !!process.env.PISAR;
+  if (fs.existsSync(destino) && !forzar) {
+    // Idéntico ⇒ reescribir no destruye ninguna evidencia, y no ensucia con
+    // duplicados fechados cada vez que una corrida reproduce su resultado.
+    if (fs.readFileSync(destino, "utf8") === cuerpo) {
+      fs.writeFileSync(destino, cuerpo);
+      console.log("→", rel(destino), "(idéntica a la congelada)");
+      return destino;
+    }
+    const alt = alLado(destino);
+    console.log(
+      `\n⚠ ${rel(destino)} ya existe y NO coincide: es una salida CONGELADA y no se pisa.\n` +
+        `   Esta corrida va a ${rel(alt)}.\n` +
+        `   Si de verdad quieres re-congelar: PISAR=1 npm run <la sonda>\n`,
+    );
+    fs.writeFileSync(alt, cuerpo);
+    console.log("→", rel(alt));
+    return alt;
+  }
+
+  if (fs.existsSync(destino) && forzar) console.log(`⚠ PISAR: se re-congela ${rel(destino)}`);
+  fs.writeFileSync(destino, cuerpo);
+  console.log("→", rel(destino));
+  return destino;
 }

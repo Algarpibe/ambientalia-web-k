@@ -25,7 +25,10 @@
  * fuerza una barra inicial y la convierte en absoluta. Por eso hay dos lecturas
  * distintas —`env()` y `envRuta()`— y por eso se prueban las dos.
  */
-import { desMsys, env, envRuta, envRutas, ruta } from "./lib.mjs";
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { desMsys, env, envRuta, envRutas, ruta, w } from "./lib.mjs";
 
 /** Lo que Git Bash hace con un valor que empieza por `/`. */
 const MSYS = "C:/Program Files/Git";
@@ -68,11 +71,65 @@ eq("URL entera", desMsys("https://kunakair.com/es/"), "https://kunakair.com/es/"
 eq("ruta de página ya limpia", ruta("/sectores/x"), "/sectores/x");
 eq("sin barra inicial (inmune a MSYS)", ruta("sectores/x"), "/sectores/x");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * `w()` — LA GUARDA DE CONGELADO
+ *
+ * Lo que se prueba es exactamente el fallo de la semana: la corrida de
+ * verificación de C-QA1 machacó `c-cabecera-{1440,390}.json`, que era el
+ * DIAGNÓSTICO, con el clon ya arreglado. Hubo que recuperarlo de git; si no
+ * hubiera estado commiteado, la evidencia del defecto habría desaparecido en el
+ * acto de arreglarlo.
+ *
+ * ⚠ Y se prueba **en negativo**: no basta con ver que escribe donde toca. Hay
+ * que ver que **se NIEGA a pisar** — que es lo que no hacía.
+ * ═════════════════════════════════════════════════════════════════════════ */
+console.log("\n── `w()`: una salida congelada no se descongela sola ──");
+{
+  const tmp = mkdtempSync(join(tmpdir(), "kq-w-"));
+  const f = join(tmp, "medida.json");
+  const leer = (p) => readFileSync(p, "utf8");
+  const silencio = console.log;
+  const callado = (fn) => { console.log = () => {}; try { return fn(); } finally { console.log = silencio; } };
+
+  const p1 = callado(() => w(f, { v: 1 }));
+  eq("primera escritura → va al destino", p1 === f, true);
+  eq("…y con el contenido pedido", JSON.parse(leer(f)).v, 1);
+
+  // idéntico: reescribir no destruye nada, y no debe ensuciar con duplicados
+  const p2 = callado(() => w(f, { v: 1 }));
+  eq("mismo contenido → mismo fichero, sin duplicar", p2 === f, true);
+  eq("…y sigue habiendo 1 solo fichero", readdirSync(tmp).length, 1);
+
+  // DISTINTO: aquí es donde antes se perdía la evidencia
+  const p3 = callado(() => w(f, { v: 2 }));
+  eq("contenido DISTINTO → NO pisa", p3 !== f, true);
+  eq("…la congelada sigue intacta", JSON.parse(leer(f)).v, 1);
+  eq("…y la nueva está al lado, fechada", JSON.parse(leer(p3)).v, 2);
+  eq("…dos ficheros, ninguno perdido", readdirSync(tmp).length, 2);
+
+  // dos veces el mismo día no se pisan entre sí
+  const p4 = callado(() => w(f, { v: 3 }));
+  eq("otra corrida el mismo día → tampoco colisiona", p4 !== p3, true);
+  eq("…tres ficheros", readdirSync(tmp).length, 3);
+
+  // la bandera explícita, que es la única forma de re-congelar
+  const p5 = callado(() => w(f, { v: 9 }, { pisar: true }));
+  eq("con `{pisar:true}` sí pisa", p5 === f && JSON.parse(leer(f)).v === 9, true);
+  process.env.PISAR = "1";
+  const p6 = callado(() => w(f, { v: 10 }));
+  eq("y `PISAR=1` por entorno también", p6 === f && JSON.parse(leer(f)).v === 10, true);
+  delete process.env.PISAR;
+
+  rmSync(tmp, { recursive: true, force: true });
+}
+
 /* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ── */
-const total = 14;
+const total = 26;
 console.log(
   fallos
-    ? `\n❌ ${fallos} de ${total} aserciones fallidas — la normalización NO está conectada.\n`
-    : `\n✅ ${total}/${total} — la traducción de MSYS se deshace en la LECTURA, argumentos y entorno.\n`,
+    ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las dos cosas que\n` +
+        `   prueba esto fallan EN SILENCIO, con números plausibles y código 0.\n`
+    : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno)\n` +
+        `        y una salida congelada NO se descongela sola.\n`,
 );
 process.exit(fallos ? 1 : 0);

@@ -443,11 +443,12 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
-### Cuatro reglas sobre las sondas mismas
+### Cinco reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un
 defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
-E3; la tercera, de auditar el piloto de CMS-0e; la cuarta, de C-SP16.
+E3; la tercera, de auditar el piloto de CMS-0e; la cuarta, de C-SP16; la quinta,
+de que la corrida que verificaba C-QA1 se comiera el diagnóstico de C-QA1.
 
 **1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
 
@@ -550,6 +551,39 @@ primera:
    primera: el enlace roto estaba en `.next` pero no en el HTML servido, porque
    `next start` seguía con el build anterior y `pkill` no lo mató. **Mata por
    puerto**, y verifica un marcador del cambio en la salida antes de medir.
+
+**5 · CONGELAR NO SIRVE DE NADA SI LA SIGUIENTE CORRIDA DESCONGELA SIN AVISAR.**
+
+La regla 2 dice que toda sonda congela su salida *para que una conclusión citada
+en un doc tenga su fichero*. Pero el fichero se llama igual corrida tras corrida,
+y de ahí sale el agujero:
+
+> **La corrida que VERIFICA un arreglo escribe en el mismo nombre que la que
+> DIAGNOSTICÓ el defecto.** O sea que el acto de arreglar algo borra la prueba de
+> que estaba mal — y la borra en silencio, porque sobrescribir un fichero no da
+> error.
+
+Medido: al comprobar que C-QA1 estaba cerrada, `c-cabecera` reescribió
+`medidas/c-cabecera-{1440,390}.json` con el clon **ya corregido**. Se recuperó de
+git. Si no hubieran estado commiteados, la evidencia del defecto habría
+desaparecido en el acto de arreglarlo, y las tablas de `PENDIENTES-QA.md` que
+citan esos números se habrían quedado sin respaldo.
+
+La regla, que vale para **todas** las sondas porque vive en `w()` de `lib.mjs`:
+
+> **Ninguna sonda pisa una salida existente cuyo contenido difiera.** Escribe al
+> lado con la fecha y lo dice en voz alta. Idéntica se reescribe —no se pierde
+> nada—. Para re-congelar a propósito, **`PISAR=1`**.
+
+**Es hermana de la guarda de selectores, y por la misma razón**: las dos
+convierten en ruido visible algo que por defecto pasaba en silencio. La
+diferencia es el objeto — el `Censo` protege **la medida**, ésta protege **la
+evidencia**.
+
+⚠ **Y su moraleja es la de la regla 4, otra vez:** `c-cabecera` se parcheó a mano
+primero. Eso es arreglar **la instancia y no la CLASE**, que es exactamente cómo
+se llega a la tercera tanda del mismo bug. La guarda solo cuenta cuando está en
+el sitio por el que escriben todas. Test en negativo: **`npm run qa:lib`**.
 
 ## Comandos
 
