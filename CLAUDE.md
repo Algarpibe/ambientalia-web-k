@@ -332,6 +332,49 @@ Estas se pagaron con horas de depuración. No las reinventes:
     en 42 cargas medidas su dispersión fue **0 en las 14 combinaciones** de
     página y ancho. Si el `h1` del original no cuadra entre dos corridas del
     mismo día, la corrida se descarta y se repite.
+
+    > ⚠ **CORREGIDO 2026-07-30 (C-QA6). La frase de arriba es cierta y está
+    > INCOMPLETA en dos ejes, y de los dos el segundo invalida el método de
+    > comprobación, no solo el alcance.**
+    >
+    > **(a) Alcance.** Las «14 combinaciones» son **7 páginas × 2 anchos**, y las
+    > 7 son las que había clonadas en julio de 2026 (`PORDEFECTO` en
+    > `ruido.mjs`): home · monitor · accesorios · software · api · urbano ·
+    > industria. **No incluyen los dos monográficos, ni el caso, ni la FAQ.** La
+    > afirmación se venía citando como si fuera una propiedad del sitio; es una
+    > propiedad **de las rutas medidas**.
+    >
+    > **(b) Alcance temporal, que es el grave.** Correr el protocolo de 3
+    > corridas **no establece** que una base sea estable. Medido hoy sobre
+    > `/software` y los dos monográficos, dos ráfagas separadas por ~6 minutos:
+    >
+    > | ráfaga | `h1` |
+    > |---|---|
+    > | A | **±32.28** en petróleo@1440 · **±30** en las tres @390 · nº de filas variable en 3 |
+    > | B | **0 en las 6** · nº de filas estable |
+    >
+    > La misma sonda, las mismas rutas, el mismo día. **Una ráfaga limpia no
+    > prueba estabilidad: prueba que en esos minutos no hubo episodio.** Y como
+    > el protocolo dice «3 corridas», una ráfaga B se lee como «suelo 0» y cierra
+    > la pregunta en falso — que es lo que llevaba pasando.
+    >
+    > **Lo medido, sin redondear:** `/software`, EDAR y petróleo presentan
+    > episodios de hasta **±32.28** en la base, **no reproducibles a demanda**.
+    > Se ha visto tres veces: dos lecturas separadas por horas durante C-QA1
+    > (421.39→389.11 en software; 261.16→228.88 en los dos monográficos) y la
+    > ráfaga A de hoy.
+    >
+    > **Consecuencia, y es de las que hay que decir en voz alta:** en esas 3
+    > rutas, **todo residuo por debajo de ~32.28 está SIN PROBAR** — ni defecto
+    > ni limpio. Eso incluye el **−15.72 de `/software`** con el que se iba a
+    > fijar el objetivo de C-QA2. Para las otras 14 combinaciones la frase
+    > original sigue en pie **con su fecha**: es lo que se midió el 2026-07-29,
+    > no una garantía permanente.
+    >
+    > **Y `±30` / `±32.28` no son de la familia conocida.** El ruido documentado
+    > abajo (27 · 54 · 81) son renglones del módulo «Artículos y Guías». Estos
+    > números no son múltiplos de 27 y aparecen en el `h1`, que va **por encima**
+    > de ese módulo: es **otro mecanismo, sin identificar**.
   - ⚠ **Y la regla es CIEGA A SU PROPIO PUNTO DE APOYO.** Restar la base *antes*
     de comparar significa que **un desfase que está EN LA BASE se normaliza a
     cero por construcción**: la cabecera puede estar a −48 y todas las anclas
@@ -358,6 +401,14 @@ Estas se pagaron con horas de depuración. No las reinventes:
     dos o tres renglones), y **0 en todo lo demás**. En el cuerpo de la página
     un Δ de 8.6 es tan real como uno de 100. Aplicar un suelo global sería el
     error contrario: descartar defectos por ruido que solo existe en otro sitio.
+
+    > ⚠ **«0 en todo lo demás» hereda las dos correcciones de C-QA6** (arriba,
+    > §La base de lectura): se midió sobre 7 páginas, y una ráfaga limpia no
+    > prueba estabilidad. Hay una **tercera región medida** que no está en la
+    > frase: `/software` y los dos monográficos, con episodios de hasta **±32.28
+    > en la propia base de lectura**. Son **tres** regiones, no dos — y la
+    > tercera no se identifica por el módulo, como la de 81, sino **por la ruta y
+    > por el momento**, que es lo que la hace difícil de ver.
   - **Reproducirse entre anchos pesa más que el tamaño.** Un residuo idéntico a
     1440 y a 390 no puede ser ruido: son dos maquetaciones distintas. Y al revés:
     un residuo que **aparece solo en un ancho** es un contenedor que en el otro lo

@@ -1,0 +1,80 @@
+{
+  "software-de-medi@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "monitorizacion-a@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "dimensionalNoMedible": null,
+    "filas": 25,
+    "mismoNumeroDeFilas": true
+  },
+  "monitorizacion-d@1440": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "dimensionalNoMedible": null,
+    "filas": 24,
+    "mismoNumeroDeFilas": true
+  },
+  "software-de-medi@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "monitorizacion-a@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "dimensionalNoMedible": null,
+    "filas": 25,
+    "mismoNumeroDeFilas": true
+  },
+  "monitorizacion-d@390": {
+    "corridas": 3,
+    "posicional": {
+      "docH": 54,
+      "h1": 0,
+      "pie": 54
+    },
+    "posicionalMax": 54,
+    "dimensionalMax": 54,
+    "dimensionalNoMedible": null,
+    "filas": 24,
+    "mismoNumeroDeFilas": true
+  }
+}

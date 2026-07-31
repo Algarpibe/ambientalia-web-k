@@ -2351,3 +2351,84 @@ la ruta contra el `cwd`**, no contra `scripts/qa/`. `w()` se arregló en su día
 que ella misma había escrito: el `--cmp medidas/x.json` de su propia
 documentación moría con ENOENT lanzado desde la raíz. Media corrección de las de
 `CLAUDE.md`: la instancia y no la CLASE.
+
+---
+
+## C-QA6 · MEDIDA — la base de lectura NO es estable en 3 rutas (2026-07-30)
+
+Protocolo de 3 corridas (`npm run qa:ruido`, ahora con `RUTAS=` y `ETIQUETA=`)
+sobre `/software-de-medicion-calidad-del-aire` y los dos monográficos, a los dos
+anchos. Congelado en `medidas/ruido-cqa6.json` y `ruido-crudo-cqa6.json`.
+
+### El resultado, que no es el que se buscaba
+
+**Dos ráfagas de 3 corridas, separadas por ~6 minutos, dan cosas distintas:**
+
+| ráfaga | `h1` | nº de `.et_pb_row` |
+|---|---|---|
+| **A** | **±32.28** en petróleo@1440 · **±30** en las tres @390 | **variable** en 3 de 6 |
+| **B** | **0 en las 6** | estable |
+
+> **Una ráfaga limpia no prueba estabilidad: prueba que en esos minutos no hubo
+> episodio.** Y como el protocolo pide «3 corridas», la ráfaga B se lee como
+> «suelo 0» y cierra la pregunta en falso. Es lo que llevaba pasando.
+
+El episodio se ha visto **tres veces**: las dos lecturas separadas por horas
+durante C-QA1 (`/software` 421.39→389.11; los monográficos 261.16→228.88) y la
+ráfaga A. Magnitud **~30–32.28**, **no reproducible a demanda**.
+
+**Y no es el ruido conocido.** El documentado (27 · 54 · 81) son renglones del
+módulo «Artículos y Guías»; estos números no son múltiplos de 27 y aparecen en
+el `h1`, que va **por encima** de ese módulo. **Mecanismo sin identificar.**
+
+### Consecuencia, y bloquea a C-QA2
+
+> En `/software`, EDAR y petróleo, **todo residuo por debajo de ~32.28 está SIN
+> PROBAR** — ni defecto ni limpio. Eso incluye el **−15.72 de `/software`**, que
+> era el objetivo con el que se iba a verificar su arreglo.
+
+`/software` es a la vez ruta inestable y una de las 4 de producto de C-QA2, así
+que **su arreglo se hace pero su verificación queda anotada como pendiente del
+suelo real**, no dada por buena. Las otras tres de producto (`/accesorios`,
+`/kunak-api`, `/monitor-calidad-aire`) **no están afectadas**: no aparecen en las
+rutas con episodio.
+
+### Lo que se corrigió en `CLAUDE.md`, sin suavizar
+
+La frase fundacional —«en 42 cargas su dispersión fue 0 en las 14
+combinaciones»— es **cierta e incompleta en dos ejes**:
+
+- **alcance**: las 14 son **7 páginas × 2 anchos**, las clonadas en julio de
+  2026. **No incluyen los monográficos, ni el caso, ni la FAQ.** Se citaba como
+  propiedad del sitio y es propiedad **de las rutas medidas**;
+- **alcance temporal**: el propio método de comprobación no distingue «estable»
+  de «sin episodio ahora». Ése es el eje que invalida la comprobación, no solo
+  su cobertura.
+
+También hereda la corrección «0 en todo lo demás»: son **tres** regiones de
+ruido, no dos, y la tercera se identifica **por ruta y por momento**, no por
+módulo.
+
+### ⚠ Dos defectos de instrumento salidos de esta misma medición
+
+1. **`ruido.mjs` calculaba la dispersión dimensional comparando filas por
+   índice, incluso cuando el nº de filas cambiaba entre corridas.** La ráfaga A
+   reportó **`SUELO DIMENSIONAL = 8950.73`**, que parece «el sitio es un caos» y
+   en realidad es la fila 7 de una carga menos la fila 7 de otra que no es la
+   misma fila. La sonda **imprimía** «⚠ nº de filas variable» y **contaba igual
+   el número**: la regla 1 rota dentro del propio informe. Corregido — si el nº
+   de filas varía, el dimensional vale `null` y se dice por qué.
+2. **Escribía `ruido.json` y `ruido-crudo.json` FUERA de `medidas/`**, contra la
+   regla 2. Corregido antes de usarla.
+
+### ⚠ Y una pérdida de evidencia que hay que anotar
+
+**La salida congelada de la ráfaga A ya no existe: la borré yo a mano** (`rm`)
+antes de re-correr con la sonda corregida, para que la ráfaga B escribiera con
+el nombre limpio. Sus números están arriba y en el acta de esta sesión, pero **el
+fichero del que salieron no se puede exhibir**, que es justo lo que la regla 2
+exige.
+
+La guarda de `w()` —escrita ese mismo día— **no protege de esto**: protege de que
+una sonda pise su salida, no de que una persona la borre. Anotado como lo que es,
+un fallo de operación y no del instrumento.
