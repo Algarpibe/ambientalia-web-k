@@ -2539,7 +2539,7 @@ El espaciador mueve **+48 exactos** en las cuatro: `−19.2 + 48 = 28.8` cuadra 
 céntimo igual que los tres `−48 + 48 = 0`. **El defecto del espaciador está
 cerrado y era uno solo.**
 
-### C-QA7 (nuevo, ABIERTO) · dos residuos propios que el espaciador tapaba
+### C-QA7 (nuevo, ABIERTO → ✅ cerrado 2026-07-31, ver §C-QA7 · CERRADO al final) · dos residuos propios que el espaciador tapaba
 
 Lo que queda **no es del espaciador**: son defectos **de cada página**, debajo de
 él, que el error del espaciador venía compensando en parte.
@@ -2635,3 +2635,67 @@ episodio. Se cierra cuando cierre la campaña.
 estable**, así que esta vez **no es el artefacto de índices** que se corrigió: es
 una fila que de verdad cambia de alto entre cargas. Anotado; no se persigue en
 esta tanda.
+
+---
+
+## C-QA7 · CERRADO — los dos residuos eran TRES defectos, y dos son el mismo (2026-07-31)
+
+Diagnóstico por composición con `qa:banda` (la cadena del `h1`, eslabón a
+eslabón), **antes de tocar nada**, contra el original en vivo. Congelado en
+`medidas/c-banda-1440-2026-07-31-{3,4,5}.json` y `c-banda-390-2026-07-31-{2,3,4,5}.json`
+(el sufijo más bajo de cada ancho es el diagnóstico; el más alto, la
+verificación — el `-2` de 1440 es una corrida fallida: el original tardó >120 s
+y sirvió selectores muertos, documentada y descartada).
+
+### `/accesorios` (+28.8 @1440 · +48 @390) — dos defectos que suman
+
+| defecto | @1440 | @390 |
+|---|---|---|
+| la fila del hero llevaba `pt-[30px] lg:pt-[2vw]` — **el default Divi cableado sin medir**; en el original esa fila va a **pt 0 en los dos anchos** (sangría fila→columna 0 medida; el aire lo pone la sección, 50/4vw, ya replicada) | **+28.8** | **+30** |
+| el kicker «Accesorios» a `text-[50px]/60` fijo, **sin la regla móvil 35px/42** de ≤767 que ya llevaban `HeroApi` y `HeroSoftware` | 0 (60=60) | **+18** (60 vs 42) |
+| **total** | **+28.8** ✓ | **+48** ✓ |
+
+La composición cuadra al céntimo en los dos anchos, sin resto.
+
+### `/monitor-calidad-aire` (+78 @390 · 0 @1440) — un defecto, y es el mismo §2
+
+La cadena del clon es **idéntica a la del original eslabón a eslabón** —fila
+`pt` 30 incluida, que en esta página **sí existe**— hasta el kicker «Kunak AIR
+Pro»: **120 de alto contra 42**. Iba con **estilo inline**
+(`fontSize: 50, lineHeight: "60px"`), que no puede ser responsive, así que
+nunca bajó a 35px/42 y a 390 envolvía a **2 líneas**: 60×2 = 120, y
+120 − 42 = **78** — el residuo entero.
+
+**La firma espejo, confirmada en su forma pura:** a 1440 «Kunak AIR Pro» cabe
+en una línea a 50px y el defecto no deja ni rastro (Δ0 antes y después). No lo
+tapaba un contenedor con holgura: **lo tapaba el no-wrap** — la holgura era el
+ancho de la línea.
+
+### Resultado — Δ0 exacto en crudo, los dos anchos, las dos rutas
+
+| ruta | @1440 (orig = clon) | @390 (orig = clon) |
+|---|---|---|
+| `/accesorios` | **392.59 = 392.59** ✅ | **278.58 = 278.58** ✅ |
+| `/monitor-calidad-aire` | **421.39 = 421.39** ✅ | **308.58 = 308.58** ✅ |
+
+Arreglos: `src/app/accesorios/page.tsx` (quitar el `pt` de fila; kicker a las
+clases responsive) y `src/components/monitor/HeroProducto.tsx` (kicker de
+estilo inline a las mismas clases). Commits `0ce6e00` y `2c2432e`.
+
+### ⚠ Lo que el diagnóstico enseñó, más allá del arreglo
+
+1. **El `pt` de la primera fila del cuerpo es CAMPO, no plantilla** — la huella
+   del test A en las 4 páginas de producto del régimen builder: **0 px a los
+   dos anchos** en accesorios/api/software (el editor lo anuló) y **2 %/30**
+   (el default intacto) en monitor. Cuatro páginas hermanas, dos valores. Es la
+   familia de `flujo` otra vez, ahora en la entrada del cuerpo. Anotado en
+   `ESQUEMA-CMS.md` §6 en esta misma tanda — regla nueva: **lo que un
+   diagnóstico revele como campo va al esquema en la tanda que lo mide.**
+2. **La regla móvil del kicker (35px/42 en ≤767) es plantilla** — cero varianza
+   en los 4 originales de producto. El clon la tenía en 2 de 4: las otras dos
+   la perdieron por escribirla a mano (una con clases fijas, otra con estilo
+   inline). Tercera vez que un valor compartido se cablea por instancia;
+   cuando estos arquetipos se modelen, el kicker es UN componente.
+3. **El −19.2 de `/accesorios` entra al catálogo de compensaciones de
+   `CLAUDE.md`** (sexta instancia): −48 de espaciador tapando +28.8 propios.
+   Un número pequeño no es un defecto pequeño: era el residuo de dos grandes.
