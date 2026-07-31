@@ -1,0 +1,41 @@
+
+> ai-website-clone-template@0.3.1 qa:a-spec
+> node scripts/qa/a-spec.mjs
+
+  blog           contaminacion-por-metano                          91727 ch  rel
+  blog           todas-nuestras-soluciones-en-el-iotswc              384 ch     
+  blog           monitorizacion-de-la-calidad-del-aire-en-centr    82460 ch  rel
+  blog           contador-particulas-suspension-movilidad-soste    12039 ch  rel
+  blog           monitorizacion-de-emisiones-del-trafico-urbano    89082 ch  rel
+  blog           running-for-clean-air                             46350 ch  rel
+  blog           la-contaminacion-del-aire-el-asesino-silencios    24284 ch  rel
+  termino        cloruro-de-hidrogeno-hcl                          71591 ch     
+  termino        emisiones-atmosfericas                             9078 ch     
+  termino        metano                                            22892 ch     
+  doc-cientifico exposicion-de-los-atletas-a-la-contaminacion-a     2711 ch     
+  doc-cientifico idoneidad-de-una-red-de-comunicaciones-moviles      794 ch     
+  doc-cientifico desafio-airlab-de-microsensores-2023               1169 ch     
+  doc-cientifico soluciones-avanzadas-de-monitorizacion             1911 ch     
+
+Censo de patrones (14 páginas leídas):
+  post_content#0                              14/14 
+  text#0 (migas)                              14/14 
+  text#1 (título)                             14/14 
+  text#2 (fecha)                               7/7  
+  text#3 (taxonomías)                          7/7  
+  image#0 (destacada)                          7/7  
+  text#4 (autoría)                             7/7  
+  blog#0 (relacionados) — DISCRIMINANTE        6/14 
+  text#6..#9 (rótulos del bloque)              6/6  
+  button#0..#2 (botones del bloque)            6/6  
+  image#0 (portada PDF)                        4/4  
+  button#0 (descarga PDF)                      4/4  
+  text#2 (autores · año · categoría)           4/4  
+
+⚠ medidas/a-spec.json ya existe y NO coincide: es una salida CONGELADA y no se pisa.
+   Esta corrida va a medidas/a-spec-2026-07-31.json.
+   Si de verdad quieres re-congelar: PISAR=1 npm run <la sonda>
+
+→ medidas/a-spec-2026-07-31.json
+
+✅ 14 instancias transcritas · 0 patrones muertos · 0 ubicuos.

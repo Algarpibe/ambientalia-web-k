@@ -2726,3 +2726,80 @@ es conectado — un aviso de «usa el otro fichero» que se puede eliminar
 arreglando el nombre es un nombre mal puesto.** El próximo `--cmp` habría usado
 el nombre obvio; ahora el nombre obvio es el correcto y el peligroso dice en el
 nombre lo que es.
+
+---
+
+## A-QA1 · ABIERTO — la miga del grupo A envuelve de más a 390 (2026-07-31)
+
+> Acta completa de la construcción en `docs/research/arquetipo-A/MEDICION.md`.
+> Medida congelada: `medidas/clon-base-{1440,390}-grupoA-base26.json` contra la
+> `y` cruda del original en `medidas/a-cascaron-{1440,390}-2026-07-31-4.json`.
+
+**Base en crudo del arquetipo nuevo** — la medida que `CLAUDE.md` §Notas de
+método exige una vez por arquetipo, antes de fiarse de ningún Δ de cuerpo:
+
+| forma | @1440 | @390 |
+|---|---|---|
+| blog CON relacionados | **−0.01** ✅ | **+26.00** |
+| blog SIN relacionados | **−0.01** ✅ | **0.00** ✅ |
+| término | **−0.03** ✅ | **−0.02** ✅ |
+| documento científico | **−0.01** ✅ | **+52.00** |
+
+**El residuo está CUANTIZADO en renglones de 26**: son 1 y 2 renglones de miga
+de más, no un desfase continuo. O sea que la maqueta vertical es correcta y lo
+que sobra es **ancho de la miga**, que empuja el envolvimiento.
+
+**Causa candidata, sin medir:** el separador. El clon pinta `›` con `mx-[6px]`
+—12 px de aire por separador, y la miga de blog tiene 4— y en el original lo
+genera el CSS del tema. ~48 px de más bastan para forzar un renglón.
+
+⚠ **No se toca hasta medirlo.** Ajustar el margen a ojo hasta que cuadre es
+exactamente el arreglo falso que el §«Estructura que en realidad es contenido»
+describe: cablear el valor que hace cuadrar la instancia que tienes delante.
+
+**Cómo se cierra:** medir en el original el `::before`/`::after` del `li` de
+`ol.kunak-breadcrumbs` (contenido, `margin`, `padding`) y el `display` del `li`,
+a 390. Es una corrida de `a-cascaron` con un selector más.
+
+**Lo que este defecto NO es:** no es la banda de cabecera —**225 / 165.58**,
+deducidos por composición y verificados en las tres formas— ni el ritmo de
+`section#0`, que da 50 y 102 exactos. Las dos mitades ya están cuadradas.
+
+## Desviaciones deliberadas del grupo A (2026-07-31)
+
+### 1 · El bloque de relacionados se emite SOLO EN ESPAÑOL
+
+El original sirve el rótulo («También te puede interesar» · «Related content» ·
+«قد يهمك أيضًا») y **tres botones**, uno por idioma, y esconde dos por CSS.
+Medido: `text#7`, `text#8`, `button#0` y `button#2` dan **w 0 · h 0 a los dos
+anchos**.
+
+**Razón:** reproducir dos módulos invisibles no mueve un píxel y sí mete texto
+inglés y árabe en el HTML de una página española. El coste de la desviación es
+**cero en geometría** y el beneficio es un HTML que dice lo que la página es.
+
+### 2 · Los 7 listados con 200-para-todo servirán 404 — decidido en LH-2 D2
+
+**Se registra aquí porque no tenía sitio y la tanda que lo construya no debe
+redescubrirlo.** Del recon de listados (`listados-hubs/PAGE_TOPOLOGY.md` §5,
+`medidas/lh-paginas.json`): **7 páginas del original responden HTTP 200 a
+cualquier `/page/N/`** —los 6 hubs de builder y `casos-de-exito`— pero **su
+`canonical` apunta a la primera**, o sea que el propio original las declara
+no-rutas.
+
+> **El clon servirá 404.** Replicarlas sería clonar **contenido duplicado
+> infinito**, y contarlas por su HTTP 200 habría metido **441 rutas
+> inexistentes** en el cálculo de enrutado del §4b.
+
+Es desviación deliberada porque el clon devuelve algo distinto del original en
+esas URLs, y por tanto va aquí y no en el esquema. **Aplica cuando se construyan
+los listados** (LISTADO-B / LISTADO-TEMA), no antes: hoy ninguno está emitido.
+
+### 3 · `no-html-link-for-pages` desactivada, con la razón medida
+
+Ver `eslint.config.mjs`. Con el `[slug]` de raíz emitido, **cualquier href
+literal de un segmento casa con `/[slug]`** y la regla empezó a disparar sobre
+enlaces servidos y verificados desde hace meses. Se comprobó moviendo las dos
+rutas nuevas fuera de `src/app`: el error desaparece — lo produce el enrutado,
+no el enlace. La guarda que sí importa aquí es **`qa:enlaces`**, que compara
+contra las rutas que emite el build y en las dos direcciones.

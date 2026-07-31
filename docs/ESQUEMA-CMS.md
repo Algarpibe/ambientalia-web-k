@@ -84,6 +84,37 @@ modelo de datos, porque la relación con el media ya es **relación a la colecci
 y no una clase con el id de otro sistema (**T3**, §3.2). Se toma la opción simple
 sabiendo el coste de deshacerla, no por no haber mirado la otra.
 
+#### Los IMAGE SIZES que Payload tiene que declarar — medidos, y cierran M-IMG
+
+**Se registra aquí porque no tenía sitio**, y es la entrada de la decisión que
+cierra **M-IMG** en F2-2 (los tres módulos de imagen con residuo de décimas,
+cuya causa medida es el `srcset`).
+
+Un `srcset` que no se pueda regenerar obliga a servir el original a todos los
+anchos, y eso **es** M-IMG. Payload genera las variantes que se le declaren, así
+que la lista tiene que salir de lo que el corpus usa hoy — no de un criterio
+nuevo.
+
+| fuente | anchos observados |
+|---|---|
+| **detalle del grupo A** (destacadas, portadas y cuerpo de las 14 instancias transcritas — `medidas/a-spec.json`) | **480** ×33 · **980** ×27 · **1280** ×19 · 848 ×4 · 1800 ×6 · y la original sin recortar |
+| **tarjetas de listado** (LH-2 D3, `medidas/lh-tarjetas.json`) | **1080×675** · **1024×683** · **980** · **480** |
+
+De donde el conjunto mínimo, que es la unión y no la intersección:
+
+> **`480` · `980` · `1024×683` · `1080×675` · `1280`**, más el original.
+> Los `848` y `1800` que aparecen son **el tamaño nativo de esa imagen**, no una
+> variante generada: no se declaran.
+
+Y el atributo `sizes` que WordPress emite tampoco es libre — hay **5 formas
+distintas** en las 14 instancias, todas del patrón
+`(max-width:480px) 480px, (max-width:980px) 980px, …`. Es plantilla del tema, no
+dato del autor: **se regenera al servir**, no se migra.
+
+⚠ **Alcance declarado:** 14 instancias de 209 y las 9 formas de listado. No es
+un censo de las 209 — se anota como lo que es, la entrada de la decisión, no la
+decisión.
+
 ### ✅ CMS-0d · Next subido a 16.2.12 — EJECUTADA (2026-07-30)
 
 | | |
@@ -437,8 +468,50 @@ compuesto · `A-SP4` ritmo de la lateral · `A-SP5` Test A sobre las 24 a 390 ·
 `A-SP6` contenido de `sidebar#1` vs `#2` · `A-SP7` si el bloque de relacionados
 sortea (heredaría el ruido de hasta 81 px de P4) · `A-SP8` **cerrado en §3** ·
 `A-SP9` si los `id` de los `h2` los pone el tema o el contenido · `A-SP10`/`A-SP11`
-alcance de `style` en línea y de `srcset` · `A-SP12` `dynamicParams=false` no
-medido · `A-SP13` coste de emitir 209 rutas.
+alcance de `style` en línea y de `srcset` · ~~`A-SP12` `dynamicParams=false` no
+medido~~ **cerrada en §2.4** · `A-SP13` coste de emitir 209 rutas.
+
+### 2.4 · ⚠ CORRIGE al modelo — lo que midió la CONSTRUCCIÓN (2026-07-31)
+
+Acta en `docs/research/arquetipo-A/MEDICION.md`. **Ninguna contradice una
+decisión**: tres corrigen un número del recon y una añade campos. Van aquí en la
+misma tanda que las midió, que es la regla.
+
+| # | el recon decía | la salida servida dice |
+|---|---|---|
+| **1** | «solo los 23 documentos científicos tienen **prefijo** propio» (singular) | son **TRES**: `documentos-cientificos/articulos-cientificos-y-estudios` (14) · `…/evaluaciones-independientes` (8) · **`estudios-cientificos/articulos-tecnicos` (1)**. La ruta es `recursos/<prefijo>/<categoría>/<slug>` |
+| **2** | el documento tiene «portada + PDF» | `text#2` trae además **`autores` y `anyo`** («Reche et al.» \| 2020), que varían en las 4 instancias → **campos** |
+| **3** | `text#1 font-size` del término = **18** (vs 44 en blog y doc) | el **18 es del MÓDULO**; el `h1` de dentro mide **44 / 52.8** — y **no reduce a 390**, al revés que blog y doc (35/42). Además lleva `mb 44` |
+| **4** | «autoría: sí (`text#4`/`text#5`)» como campo de entrada | **idéntica en las 11 instancias que la llevan** → **plantilla**. Confirma por el otro lado la decisión de LH-2 D3 (**sin `autor`**) |
+
+**Traducción a Payload de la 1**, y es el precedente exacto de CMS-1: el prefijo
+es un **campo `select` con defecto `"documentos-cientificos"`, omitido cuando
+coincide** — solo 1 de 23 lo escribe. La **categoría** es relación a
+`categoriasCientificas` (§2c, 3 términos confirmados), y es el segmento anterior
+al slug.
+
+⚠ La 3 no cambia el veredicto —sigue habiendo varianza cero entre instancias, o
+sea plantilla— pero **sí el número**, y por la razón de siempre: se leyó el
+contenedor. El `color` computado de ese mismo módulo sale **blanco** en las tres
+formas; maquetar con él habría dado un titular invisible.
+
+**✅ A-SP12 CERRADA por medición.** `dynamicParams = false` **sí** devuelve los
+404: `/slug-inventado` → 404, `/acesorios` → 404, `/recursos/inventado/x/y` →
+404, mientras las 14 declaradas dan 200 y `/accesorios` la sigue sirviendo la
+ruta estática. Las dos mitades de la salida (a) del §4 quedan verificadas **en
+ejecución**, no deducidas.
+
+**Y la guarda del §4 (3) existe, y está probada con una colisión REAL**:
+`scripts/qa/slugs.mjs` · `npm run qa:slugs`, dentro de `npm run check`. Se
+inyectó `slug: "accesorios"` en el catálogo de términos y **el build volvió a
+compilar sin un aviso** —tercera confirmación de que la colisión es silenciosa—;
+la sonda la cazó por A y por B con exit 1
+(`medidas/slugs-COLISION-DELIBERADA-catalogo.json`).
+
+**SIN PROBAR nuevos**: `A-SP14` (el índice de escritorio trae 21 ítems y el
+móvil 16 en la misma página, sin causa medida) · `A-SP15` (geometría interior de
+la tarjeta de relacionados; el original **sortea** los 3 posts, P4) · `A-SP16`
+(que la autoría sea constante en las **209** — medida en 11).
 
 ---
 

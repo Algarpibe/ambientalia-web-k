@@ -234,12 +234,22 @@ donde el dato cambia de régimen.
 | `/kunak-api` | Variante **corta** del anterior — no es arquetipo nuevo | `docs/research/kunak-api/` |
 | `/sectores/[slug]` | SECTOR / SOLUCIÓN VERTICAL — **ruta dinámica, 4 de los 8 poblados** | `docs/research/sectores/` |
 | `/sectores/…-en-edar` · `/sectores/…-petroleo-y-gas` | MONOGRÁFICO TÉCNICO — **misma ruta dinámica, otro arquetipo** | `docs/research/monografico-tecnico/` |
+| `/[slug]` | GRUPO A — **el plano de raíz**, sirviendo DOS formas: entrada de blog y término de Kunakpedia | `docs/research/arquetipo-A/` + su `MEDICION.md` |
+| `/recursos/[...ruta]` | GRUPO A — DOCUMENTO CIENTÍFICO, la tercera forma. Catch-all porque **el prefijo tiene tres valores**, no uno | idem, §1.1 del `MEDICION.md` |
 
 Los 4 sectores vivos (Urbano · Industria · Construcción · Investigación) salen
 de **una sola plantilla**: dar de alta uno es añadir un `SectorPage` a
 `SECTORES_PUBLICADOS` en `src/lib/sectores.ts`, **sin tocar código**. Puertos y
 Minería se dejan fuera a propósito (son permutaciones de una topología ya
 validada — razón en `docs/PENDIENTES-QA.md`).
+
+**El plano de raíz `/[slug]` lleva una guarda propia, y es obligatoria.** 202
+slugs de cinco familias comparten el espacio de nombres de `/es/`, y **una
+colisión no da error**: el build compila, emite la ruta por las dos vías y sirve
+la página equivocada con HTTP 200 (medido tres veces). `npm run qa:slugs` la
+caza y entra en `npm run check`. La unicidad que hay que imponer es **ENTRE
+familias**, no dentro de cada una — en WordPress cada CPT la garantiza dentro de
+sí y eso no basta.
 
 **`/sectores/[slug]` sirve DOS arquetipos**, y eso es fidelidad, no atajo: en el
 original los ocho cuelgan de `/es/sectores/` y comparten cabecera, banda de

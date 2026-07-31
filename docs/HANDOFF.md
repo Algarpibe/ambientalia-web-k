@@ -1,4 +1,107 @@
-# HANDOFF — LH-2 decidido: los listados ya tienen modelo; quedan la CAMPAÑA, la home y C-QA5
+# HANDOFF — el GRUPO A está CONSTRUIDO; queda A-QA1 (la miga a 390), la CAMPAÑA y la home
+
+> ⚠ **Tanda 2026-07-31 (5.ª del día) — CONSTRUCCIÓN DEL GRUPO A.** Acta en
+> **`docs/research/arquetipo-A/MEDICION.md`**; el ESQUEMA gana **§2.4** (cuatro
+> correcciones al recon) y los **image sizes** bajo §CMS-0b; `PENDIENTES-QA.md`
+> gana **A-QA1** y tres desviaciones deliberadas.
+>
+> ## Estado del clon: **31 rutas** (17 + 14), 0 regresión
+>
+> | ruta nueva | forma | instancias |
+> |---|---|---|
+> | `/[slug]` | entrada de blog · término de Kunakpedia | 7 + 3 |
+> | `/recursos/[...ruta]` | documento científico | 4 |
+>
+> **14 de 209 a propósito**: las 209 van en F2-2 con el extractor. Lo que sí
+> está es cada eje capaz de romper la plantilla — los dos extremos de longitud
+> de las 209 (275 y 69 784 ch), las **dos firmas de blog**, tabla, cita,
+> galería, vídeo, embebido, `<script>` en el cuerpo, la de 26 etiquetas y **los
+> tres prefijos** de documento científico.
+>
+> ## Lo verificado
+>
+> - **0 regresión** en las 17 anteriores, **umbral cero, a los dos anchos**, con
+>   marcador de frescura comprobado en el HTML servido.
+> - **Base EN CRUDO** contra el original (la medida que se hace una vez por
+>   arquetipo, antes de fiarse de ningún Δ de cuerpo): **−0.01 · −0.01 · −0.03 a
+>   1440 en las tres formas.** La banda de cabecera —**225 / 165.58**— no se
+>   copió de ninguna plantilla: se dedujo por composición de esa `y` cruda.
+> - `qa:enlaces` limpia en las dos direcciones · `qa:corte` 12/12 · `qa:slugs`
+>   limpia · lint · typecheck · build.
+> - **✅ A-SP12 cerrada por medición**: `dynamicParams = false` devuelve los 404
+>   (`/slug-inventado`, `/acesorios`, `/recursos/inventado/x/y`) y la ruta
+>   estática sigue ganando.
+> - **La guarda de slugs, probada con una colisión REAL** en el catálogo: el
+>   build **volvió a compilar sin un aviso** (tercera confirmación de que es
+>   silenciosa) y la sonda la cazó por A y por B, exit 1.
+>
+> ## ⏳ LO SIGUIENTE, y ya está diagnosticado: **A-QA1**
+>
+> La miga envuelve **un renglón de más** a 390 en blog-con-relacionados
+> (**+26.00**) y **dos** en documento (**+52.00**); las otras dos formas dan
+> **0.00** y **−0.02**. El residuo está **cuantizado en renglones de 26**: la
+> maqueta vertical es correcta y lo que sobra es **ancho de la miga**.
+>
+> Causa candidata sin medir: el separador — el clon pinta `›` con `mx-[6px]` (12
+> px de aire, y la miga de blog tiene 4) y en el original lo genera el CSS del
+> tema. **Se cierra midiendo** el `::before`/`::after` del `li` de
+> `ol.kunak-breadcrumbs` a 390: una corrida de `a-cascaron` con un selector más.
+> **No se ajusta a ojo** — eso es el arreglo falso de manual.
+>
+> ## Las cuatro correcciones al recon (§2.4 del ESQUEMA)
+>
+> 1. **El documento científico no tiene UN prefijo: tiene TRES**
+>    (`documentos-cientificos/articulos-cientificos-y-estudios` 14 ·
+>    `…/evaluaciones-independientes` 8 · **`estudios-cientificos/articulos-tecnicos`
+>    1**). Se modela como CMS-1 modeló el del caso: campo con defecto. De ahí el
+>    catch-all — un segmento fijo se habría comido esa instancia de 23.
+> 2. **`text#2` del documento trae `autores` y `anyo`**, que el modelo no tenía.
+> 3. **El `h1` del término mide 44/52.8, no 18** (el 18 era del MÓDULO) y **no
+>    reduce a 390**, al revés que blog y documento.
+> 4. **La autoría es PLANTILLA**: idéntica en las 11 instancias que la llevan.
+>
+> Las tres primeras son la misma lección: **se había leído el contenedor**. El
+> `color` de ese módulo sale **blanco** en las tres formas — maquetar con él
+> habría dado un titular invisible.
+>
+> ## Sondas y comandos nuevos
+>
+> ```bash
+> npm run qa:slugs                       # unicidad de slug ENTRE familias del plano
+> SABOTAJE=accesorios npm run qa:slugs   #   su test en negativo (exit 1)
+> SABOTAJE=inexistente npm run qa:slugs  #   su control     (exit 0)
+> npm run qa:a-spec                      # transcripción verbatim del mínimo adversario
+> SABOTAJE=1 npm run qa:a-spec           #   test en negativo: patrón muerto, exit 2
+> node scripts/gen-arquetipo-a.mjs       # regenera src/lib/arquetipo-a.ts
+> node scripts/download-grupo-a.mjs      # baja sus assets a public/
+> ```
+>
+> `npm run check` ahora es **lint → typecheck → build → qa:slugs**.
+>
+> ## Lo que NO hay que rehacer al empezar
+>
+> - **No re-medir el original a mano.** El contenido verbatim de las 14
+>   instancias está en `medidas/a-spec.json` y el cascarón en
+>   `a-cascaron-{1440,390}-2026-07-31-4.json`, ya con tipografía, `y` cruda e
+>   índice.
+> - **No editar `src/lib/arquetipo-a.ts` a mano**: está generado. Se toca la
+>   sonda o el generador y se regenera.
+> - **No aplicar T1–T7.** Siguen sin aplicar a propósito: son transformaciones
+>   de migración y su sitio es F2-2. El generador hace solo las dos reescrituras
+>   que el CLON obliga (assets a `public/`, `<a>` a rutas locales).
+> - **No cablear A-SP14 ni A-SP15**: anotados, no resueltos.
+>
+> ## Sigue abierto, sin cambios
+>
+> **C-QA6** (campaña de ruido: 1 de 3 ráfagas; faltan 2, ≥2 h y ≥1 día distinto)
+> · **C-QA3** (la home: +289.91 a 1440 · +119 a 390) · **C-QA5** · y la **Fase
+> 2** con sus dos precondiciones. La biblioteca avanza de verdad: el grupo A
+> pasa de «reconocido» a **construido**, y con él dejan de estar bloqueados los
+> **26 de los 35 listados** que dependían de él.
+>
+> ---
+>
+# (bloque anterior) HANDOFF — LH-2 decidido: los listados ya tienen modelo; quedan la CAMPAÑA, la home y C-QA5
 
 > ⚠ **Tanda LH-2, 2026-07-31 (4.ª del día) — DECISIONES DE MODELADO de
 > listados y hubs.** Actas: **`listados-hubs/DECISIONES.md`** (D1–D5, con
