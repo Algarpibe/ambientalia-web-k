@@ -1,5 +1,19 @@
 # HANDOFF — C-QA7 cerrado; quedan la CAMPAÑA (2 ráfagas), la home y C-QA5
 
+> ⚠ **Tanda corta 2026-07-31, después del cierre de abajo — HAY PLAN DE FASE 2:**
+> **`docs/PLAN-FASE-2.md`**, las cinco fases de la migración a Payload
+> (F2-1 esquema · F2-2 datos · F2-3 lectura · F2-4 publicación · F2-5 admin y
+> traspaso), cada una con sus decisiones enlazadas, su incógnita y su criterio
+> de «hecho», más las **dos precondiciones de arranque** (biblioteca cerrada y
+> tanda CLASE). Convención nueva en el ESQUEMA: **`CMS-n` = decisión ·
+> `F2-n` = fase**. La primera decisión de F2-1 es **CMS-0f** (app única vs dos
+> apps en monorepo; el evaluador externo recomienda dos — costes de ambas ya
+> escritos en el plan). En la misma tanda: la mina de custodia **desactivada
+> con el rename** (✅ abajo), la ráfaga 2 con **tiempos de carga** (§CAMPAÑA),
+> el **no-wrap como mecanismo propio** en `CLAUDE.md`, y el §1 del ESQUEMA
+> deja explícito que **el régimen builder entra en Payload** (la «frontera de
+> regímenes» era mitigación del M2A de Directus y no aplica).
+>
 > ⚠ **Actualización 2026-07-31, cerrando el bloque 5 de la cabecera.** El bloque
 > anterior (abajo) sigue siendo contexto válido; esto es lo que cambia.
 >

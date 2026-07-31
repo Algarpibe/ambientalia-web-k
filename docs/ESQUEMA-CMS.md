@@ -6,6 +6,12 @@
 >
 > El clon existe para levantar una **biblioteca de arquetipos** que se traslada a
 > un CMS (`CLAUDE.md` §Qué es esto). Esto es ese traslado.
+>
+> ⚠ **Convención de nombres, para que no se mezclen:** `CMS-0a…0f`, `CMS-1`,
+> `CMS-2`… son **IDs de DECISIÓN** de este registro. Las **FASES de la
+> migración** se llaman **F2-1…F2-5** y viven en `docs/PLAN-FASE-2.md`. Un
+> `CMS-n` no es una fase y un `F2-n` no es una decisión: la fase consume
+> decisiones y las decisiones se toman y se actúan aquí.
 
 ## CMS-0 · La decisión de plataforma
 
@@ -235,6 +241,16 @@ levantado una ceja leyendo solo el resumen.
 ---
 
 ## 1 · Los dos content types medidos, y su frontera
+
+> **El régimen BUILDER también entra en Payload — explícito para que no se
+> relea.** El cuerpo de MONOGRÁFICO es el árbol de Divi (`MonoSeccion[]`,
+> §1.2) y los *blocks* de Payload lo expresan de forma **nativa** — blocks
+> anidados sección → fila → columna → módulo (§1.5); si el anidamiento pesa en
+> el admin, `blocksAsJSON` lo simplifica sin cambiar el modelo. La «frontera
+> de regímenes» que se discutió en la evaluación externa —dejar el régimen
+> builder fuera del CMS— era una **mitigación del M2A de Directus** (la
+> junction table que degenera con uniones anidadas) y **no aplica a Payload**:
+> aquí la unión discriminada es el tipo del campo, no una tabla puente.
 
 ### 1.1 · SECTOR (`src/lib/sectores.ts`)
 

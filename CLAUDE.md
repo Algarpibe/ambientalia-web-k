@@ -303,6 +303,13 @@ con defecto, la whitelist del campo rico con su evidencia, las transformaciones
 de migración, el enrutado decidido y el criterio de aceptación. **Si una tanda
 mide algo que cambia el esquema, se anota ahí en la misma tanda** — no después.
 
+**El camino hacia ese destino está en `docs/PLAN-FASE-2.md`**: cinco fases
+F2-1…F2-5 (esquema · datos · lectura · publicación · admin y traspaso), cada
+una con las decisiones del ESQUEMA que la alimentan, su incógnita y su criterio
+de «hecho», más las dos precondiciones de arranque. Ojo a la convención: los
+`CMS-n` son **decisiones** (viven en el ESQUEMA), los `F2-n` son **fases** —
+no se mezclan.
+
 ## Notas de método (medición y capturas)
 
 Estas se pagaron con horas de depuración. No las reinventes:
