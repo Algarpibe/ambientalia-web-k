@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { HeaderNav } from "@/components/HeaderNav";
+import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { FaqSidebar } from "@/components/faq/FaqSidebar";
@@ -73,6 +74,16 @@ export default async function FaqPage({
       <HeaderNav />
 
       <main className="flex flex-1 flex-col">
+        {/* La banda que ocupa el hueco de la cabecera (C-QA1). En el original la
+            cabecera está EN FLUJO y mide 225 a 1440; aquí `HeaderNav` es
+            absoluto y no ocupa nada, así que sin esto el `h1` caía a −225.
+
+            Sin foto: el `min-height` de la sección es **0** en las dos FAQ y la
+            llenan las filas del menú, al revés que el caso. Y el alto de 390
+            (165.58) NO es el de producto (136.58) aunque a 1440 los dos midan
+            225 — ver el ⚠ de `BandaCabecera`. */}
+        <BandaCabecera {...BANDA.faq} />
+
         <div className="container mx-auto w-[80%] max-w-[1152px] pt-[58px]">
           <div id="content-area" className="md:flex md:justify-between">
             <div id="left-area" className="md:w-[73.5%]">

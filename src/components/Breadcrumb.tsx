@@ -20,26 +20,64 @@ export interface BreadcrumbItem {
   href?: string;
 }
 
+/**
+ * ── Y NO son las mismas migas en las dos plantillas (C-QA1, 2026-07-30) ─────
+ * En el original el caso las trae en `div.migas` (sección del tema) y producto
+ * en un `et_pb_section` del builder. **En el clon las pinta este componente
+ * para las dos**, y ahí es donde el parecido engañaba:
+ *
+ *   producto  original 50    · clon 50     → cuadra
+ *   caso      original 54.59 · clon 50     → **−4.59** a 1440
+ *             original 85.19 · clon 102    → **+16.81** a 390 — cambia de signo
+ *
+ * Un residuo que cambia de signo entre anchos no es un `padding`. Medido por
+ * composición (`npm run qa:banda`), con la fila, el ancho, el tamaño, el peso y
+ * el espaciado **idénticos** en los dos lados, salen dos diferencias y solo dos:
+ *
+ *  1. **interlínea 30.6 contra 26** → 54.59 = 30.6 + 24 · 85.19 = 2×30.6 + 24;
+ *  2. **el último `li` va truncado**: `max-width 350px · nowrap · overflow
+ *     hidden · text-overflow ellipsis`. Los otros dos miden **exactamente** lo
+ *     mismo en ambos lados (52.36 y 107.53); el tercero medía 350 en el
+ *     original y 425.06 en el clon **con el mismo texto**. Sin el truncado, a
+ *     390 el titular envuelve en 3 renglones donde el original hace 2.
+ *
+ * Las dos son de la plantilla del CASO, así que van en una variante y **no en
+ * el defecto**: cambiarlas para todos movería producto y los 6 sectores, que
+ * hoy cuadran.
+ */
 export function Breadcrumb({
   items,
   rowClassName = "mx-auto w-[80%] max-w-[1380px]",
+  variante = "producto",
 }: {
   items: BreadcrumbItem[];
   /** Retícula de la fila. Por defecto la de las páginas de producto (80%). */
   rowClassName?: string;
+  /** Qué plantilla las pinta. Cambia interlínea y truncado del último. */
+  variante?: "producto" | "caso";
 }) {
+  const esCaso = variante === "caso";
   return (
     <nav aria-label="Migas de pan" className="bg-white">
       <div className={rowClassName + " py-[12px]"}>
         <ol
-          className="kunak-breadcrumbs text-[12px] font-semibold leading-[26px] tracking-[0.3px] text-[#0075C9]"
+          className={
+            "kunak-breadcrumbs text-[12px] font-semibold tracking-[0.3px] text-[#0075C9] " +
+            (esCaso ? "leading-[30.6px]" : "leading-[26px]")
+          }
           itemScope
           itemType="https://schema.org/BreadcrumbList"
         >
           {items.map((item, i) => (
             <li
               key={item.label}
-              className="inline-block pr-[7.2px] after:pl-[7.2px] after:content-['/'] last:after:content-none"
+              className={
+                "inline-block pr-[7.2px] after:pl-[7.2px] after:content-['/'] last:after:content-none " +
+                // El truncado es del ÚLTIMO, que es el título del contenido.
+                (esCaso && i === items.length - 1
+                  ? "max-w-[350px] overflow-hidden text-ellipsis whitespace-nowrap align-bottom"
+                  : "")
+              }
               itemProp="itemListElement"
               itemScope
               itemType="https://schema.org/ListItem"

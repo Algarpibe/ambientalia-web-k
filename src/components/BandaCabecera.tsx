@@ -1,0 +1,88 @@
+import type { CSSProperties } from "react";
+
+/**
+ * `.banda-cabecera` — el hueco EN FLUJO que ocupa la cabecera del original.
+ *
+ * Diagnóstico C-QA1 en `docs/PENDIENTES-QA.md`; medición congelada en
+ * `scripts/qa/medidas/c-banda-{1440,390}.json` (`npm run qa:banda`).
+ *
+ * ── Qué arregla ────────────────────────────────────────────────────────────
+ * En el original **la cabecera está EN FLUJO** y su alto depende de la
+ * plantilla; en el clon `HeaderNav` es `absolute` y no ocupa nada. Las 11 rutas
+ * anteriores no lo notaban porque todas meten algo en medio que **absorbe** la
+ * diferencia. El caso y la FAQ arrancan directas y la destaparon: el `h1` caía
+ * **−391.6** y **−225** a 1440.
+ *
+ * Esto es el mismo patrón que ya usan los 6 sectores —`HeaderNav` absoluto +
+ * una sección en flujo con el alto de la cabecera del original— extraído para
+ * las plantillas cuyo `h1` va **en el cuerpo** y no dentro de la banda. Por eso
+ * no lleva texto: es la banda, y el titular lo pone quien la usa, debajo.
+ *
+ * ── Lo que se midió, y por qué el alto es plantilla y la foto es campo ──────
+ * `min-height` del `et_pb_section` de la cabecera, en las 6 instancias:
+ *
+ *   caso  387px  · 4 de 4, con **foto distinta en las 4** → alto plantilla, foto CAMPO
+ *   FAQ     0px  · 2 de 2, **sin foto** → la banda la llenan las filas del menú
+ *
+ * Es el discriminador de `CLAUDE.md` en su forma de régimen plantillado: **cero
+ * varianza entre instancias = plantilla; lo que varía = campo.** El alto no lo
+ * escribió nadie por instancia; la foto sí, una por caso.
+ *
+ * ── El degradado va aquí, como en `CabeceraSector` ─────────────────────────
+ * `linear-gradient(rgba(71,71,71,0.17) 0%, rgba(0,0,0,0) 100%)` es el que el
+ * original pone en la sección, y se replica igual que ya hace la banda de
+ * sector. `HeaderNav` conserva su propia veladura de 200px encima: la
+ * duplicidad ya existía en sector y está verificada, así que no se toca aquí —
+ * cambiar `HeaderNav` movería las 17 rutas y eso es otra tanda.
+ *
+ * ── Los altos van por variable CSS, no por clase de Tailwind ───────────────
+ * Tailwind no genera clases a partir de valores dinámicos, y estos son dos por
+ * plantilla (móvil y ≥768). La regla vive en `globals.css`; aquí solo el dato.
+ */
+export function BandaCabecera({
+  alto,
+  altoMovil,
+  foto,
+  className = "",
+}: {
+  /** `min-height` a partir de 768px. Medido en el original. */
+  alto: number;
+  /** `min-height` por debajo de 768px. Medido en el original. */
+  altoMovil: number;
+  /** La foto de fondo, cuando la plantilla la tiene. El caso sí; la FAQ no. */
+  foto?: string;
+  className?: string;
+}) {
+  const DEGRADADO = "linear-gradient(rgba(71,71,71,0.17) 0%, rgba(0,0,0,0) 100%)";
+  return (
+    <section
+      aria-hidden
+      className={`banda-cabecera w-full bg-cover bg-center ${className}`}
+      style={
+        {
+          "--banda-alto": `${altoMovil}px`,
+          "--banda-alto-md": `${alto}px`,
+          backgroundImage: foto ? `${DEGRADADO}, url('${foto}')` : DEGRADADO,
+        } as CSSProperties
+      }
+    />
+  );
+}
+
+/**
+ * Los altos medidos, en un sitio. Se exportan para que la banda de cada
+ * plantilla no los reescriba a mano en cada `page.tsx` — y para que se vea de
+ * un vistazo qué plantillas los comparten y cuáles no.
+ *
+ * ⚠ A 1440 el caso mide 387 y la FAQ 225, **igual que producto**; a 390 la FAQ
+ * mide 165.58 y producto 136.58. Comparten el número en un ancho y no en el
+ * otro, así que **no son la misma banda**: la fila del menú lleva `pt/pb 30/30`
+ * en la FAQ y `19/12` en producto. Dar por buena la coincidencia de 1440
+ * habría metido −29 en las dos FAQ a 390.
+ */
+export const BANDA = {
+  /** `/casos-de-exito/*` y `/case-studies/*` — con foto por instancia. */
+  caso: { alto: 387, altoMovil: 362.91 },
+  /** `/faqs/*` — sin foto. */
+  faq: { alto: 225, altoMovil: 165.58 },
+} as const;

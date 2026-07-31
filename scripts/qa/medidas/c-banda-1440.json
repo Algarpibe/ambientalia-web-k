@@ -1,0 +1,744 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-07-31",
+    "rutas": 2
+  },
+  "paginas": {
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 387,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 387,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title",
+          "id": null,
+          "alto": 108.19,
+          "y": 532.19,
+          "position": "static",
+          "txt": "Red global de calidad de aire en pistas de atl",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 3721.84,
+          "y": 387,
+          "position": "static",
+          "txt": "InicioCasos de éxitoRed global de calidad de a",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 3721.84,
+              "y": 387,
+              "position": "static",
+              "txt": "InicioCasos de éxitoRed global de calidad de a"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 145.19,
+        "yCuerpo": 387,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 3721.84,
+            "hijo": "div.—",
+            "hijoY": 387,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 3721.84,
+            "hijo": "article.post-29107",
+            "hijoY": 441.59,
+            "sangria": 54.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et-l",
+                "alto": 54.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoRed global de calida"
+              }
+            ]
+          },
+          {
+            "padre": "article.post-29107",
+            "padreY": 441.59,
+            "padreAlto": 2938.16,
+            "hijo": "div.container",
+            "hijoY": 441.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 441.59,
+            "padreAlto": 821.83,
+            "hijo": "div.main-title",
+            "hijoY": 501.59,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 501.59,
+            "padreAlto": 217.88,
+            "hijo": "h1.entry-title",
+            "hijoY": 532.19,
+            "sangria": 30.6,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 54.59,
+          "clase": "migas et_pb_section et_pb_section_0 et_section_regular",
+          "texto": {
+            "alto": 30.59,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "30.6px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 5046
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title pb-[7px] text-[44px]",
+          "id": null,
+          "alto": 108.19,
+          "y": 140.59,
+          "position": "static",
+          "txt": "Red global de calidad de aire en pistas de atl",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 3288.78,
+          "y": 0,
+          "position": "static",
+          "txt": "InicioCasos de éxitoRed global de calidad de a",
+          "hijos": [
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 50,
+              "y": 0,
+              "position": "static",
+              "txt": "InicioCasos de éxitoRed global de calidad de a"
+            },
+            {
+              "tag": "article",
+              "clase": "",
+              "id": null,
+              "alto": 2837.25,
+              "y": 50,
+              "position": "static",
+              "txt": "Caso de éxitoRed global de calidad de aire en "
+            },
+            {
+              "tag": "section",
+              "clase": "w-full bg-white",
+              "id": null,
+              "alto": 401.53,
+              "y": 2887.25,
+              "position": "static",
+              "txt": "¿Necesitas información fiable para tu proyecto"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 140.59,
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 3288.78,
+            "hijo": "article.—",
+            "hijoY": 50,
+            "sangria": 50,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoRed global de calida"
+              }
+            ]
+          },
+          {
+            "padre": "article.—",
+            "padreY": 50,
+            "padreAlto": 2837.25,
+            "hijo": "div.container",
+            "hijoY": 50,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 50,
+            "padreAlto": 768.31,
+            "hijo": "div.main-title",
+            "hijoY": 110,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 110,
+            "padreAlto": 160.38,
+            "hijo": "h1.entry-title",
+            "hijoY": 140.59,
+            "sangria": 30.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo text-[15px] font-extrabold uppercase leading-[30.6px] trac",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 50,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 26,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "26px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 3970
+      }
+    },
+    "/kunak-api": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "id": null,
+          "alto": 56,
+          "y": 392.59,
+          "position": "static",
+          "txt": "Integración de datos más allá de la solución K",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 5168.72,
+          "y": 225,
+          "position": "static",
+          "txt": "InicioProductosKunak API Kunak API Integración",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 4487.63,
+              "y": 225,
+              "position": "static",
+              "txt": "InicioProductosKunak API Kunak API Integración"
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 681.09,
+              "y": 4712.63,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 167.59,
+        "yCuerpo": 225,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 5168.72,
+            "hijo": "div.—",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 4487.63,
+            "hijo": "article.post-27049",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.post-27049",
+            "padreY": 225,
+            "padreAlto": 4445.63,
+            "hijo": "div.entry-content",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.entry-content",
+            "padreY": 225,
+            "padreAlto": 4445.63,
+            "hijo": "div.et-l",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et-l",
+            "padreY": 225,
+            "padreAlto": 4445.63,
+            "hijo": "div.et_builder_inner_content",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_builder_inner_content",
+            "padreY": 225,
+            "padreAlto": 4445.63,
+            "hijo": "div.et_pb_section",
+            "hijoY": 275,
+            "sangria": 50,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_section et_pb_section_0 et_section_regular",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioProductosKunak API"
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_section",
+            "padreY": 275,
+            "padreAlto": 1947.66,
+            "hijo": "div.et_pb_row",
+            "hijoY": 332.59,
+            "sangria": 57.59,
+            "pt": "57.5938px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_row",
+            "padreY": 332.59,
+            "padreAlto": 544.2,
+            "hijo": "div.et_pb_column",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_column",
+            "padreY": 332.59,
+            "padreAlto": 529.81,
+            "hijo": "div.et_pb_module",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_module et_pb_image et_pb_image_0",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_module",
+            "padreY": 332.59,
+            "padreAlto": 126.88,
+            "hijo": "div.et_pb_text_inner",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_text_inner",
+            "padreY": 332.59,
+            "padreAlto": 116,
+            "hijo": "h1.—",
+            "hijoY": 392.59,
+            "sangria": 60,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "",
+                "alto": 60,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak API"
+              }
+            ]
+          }
+        ],
+        "migas": null,
+        "docH": 5394
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "pb-[10px] text-[23px] font-light",
+          "id": null,
+          "alto": 56,
+          "y": 344.59,
+          "position": "static",
+          "txt": "Integración de datos más allá de la solución K",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 4608.27,
+          "y": 0,
+          "position": "static",
+          "txt": "Inicio/Productos/Kunak APIKunak APIIntegración",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "h-[137px] w-full bg-cover",
+              "id": null,
+              "alto": 177,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 50,
+              "y": 177,
+              "position": "static",
+              "txt": "Inicio/Productos/Kunak API"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-white bg-no-repeat",
+              "id": null,
+              "alto": 1928.92,
+              "y": 227,
+              "position": "relative",
+              "txt": "Kunak APIIntegración de datos más allá de la s"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-no-repeat bg-white",
+              "id": null,
+              "alto": 735.31,
+              "y": 2155.92,
+              "position": "relative",
+              "txt": "Artículos y GuíasContaminación por metano: imp"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 344.59,
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 4608.27,
+            "hijo": "section.relative",
+            "hijoY": 227,
+            "sangria": 227,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "h-[137px] w-full bg-cover bg-center lg:h-[177px]",
+                "alto": 177,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Inicio/Productos/Kunak API"
+              }
+            ]
+          },
+          {
+            "padre": "section.relative",
+            "padreY": 227,
+            "padreAlto": 1928.92,
+            "hijo": "div.mx-auto",
+            "hijoY": 284.59,
+            "sangria": 57.59,
+            "pt": "57.6px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.mx-auto",
+            "padreY": 284.59,
+            "padreAlto": 535.17,
+            "hijo": "div.relative",
+            "hijoY": 284.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.relative",
+            "padreY": 284.59,
+            "padreAlto": 520.78,
+            "hijo": "h1.pb-[10px]",
+            "hijoY": 344.59,
+            "sangria": 60,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "img",
+                "clase": "absolute -top-[26px] -left-[65px]",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "p",
+                "clase": "text-[35px] font-extrabold leading-[42px] text-[#333] md:text-[50px] m",
+                "alto": 60,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak API"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 50,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 26,
+            "ancho": 1152,
+            "fontSize": "12px",
+            "lineHeight": "26px",
+            "fontWeight": "400",
+            "letterSpacing": "normal"
+          },
+          "fila": {
+            "ancho": 1152,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 5289
+      }
+    }
+  }
+}

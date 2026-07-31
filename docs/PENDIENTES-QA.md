@@ -2238,3 +2238,116 @@ primer día. Río y lindano ya lo tienen — y son dos de las seis.
 **No se arregla en la tanda de C-QA1**: son cuatro rutas, dos de ellas de un
 arquetipo ya verificado, y el orden pactado es una cosa cada vez. Queda abierta
 con su medición hecha.
+
+---
+
+## C-QA1 · CERRADA — la banda de cabecera de caso y FAQ (2026-07-30)
+
+Las **6 rutas nuevas** están a **Δ0 en el `h1` en crudo, a los dos anchos**, y
+las **11 anteriores no se han movido un píxel** (`qa:clon-base`, umbral cero,
+contra `medidas/clon-base-{1440,390}-cqa1-antes.json`, con `MARCADOR`).
+`qa:enlaces` limpia en las dos direcciones.
+
+### Lo que se midió antes de tocar nada — `npm run qa:banda`
+
+Salida congelada en `medidas/c-banda-{1440,390}.json`. El total de la cabecera
+(387 · 225) decía que había un defecto y **no bastaba para arreglarlo**: un
+total es el nivel donde caben dos errores anulándose. Por composición salieron
+**dos** cosas, no una.
+
+**(1) El hueco en flujo.** El original mete la cabecera EN FLUJO; el clon la
+tiene `absolute` y no ocupa nada. Es un `et_pb_section` con degradado y:
+
+| plantilla | `min-height` | @1440 | @390 | foto |
+|---|---|---|---|---|
+| **caso** | **387px** en 4 de 4 | 387 | 362.91 | **distinta en las 4** |
+| **FAQ** | 0 — la llenan las filas del menú | 225 | 165.58 | ninguna en 2 de 2 |
+
+> **El alto es plantilla y la foto es campo**, por el discriminador de régimen
+> plantillado de `CLAUDE.md`: cero varianza entre instancias = plantilla, lo que
+> varía = campo. De ahí `imagenCabecera` en `CasoDeExito` — un campo nuevo, con
+> su medición, no «de paso».
+
+⚠ **Y a 1440 la FAQ mide 225, igual que producto — pero a 390 mide 165.58 y
+producto 136.58.** Coinciden en un ancho y no en el otro: la fila del menú lleva
+`pt/pb 30/30` en la FAQ y `19/12` en producto. Dar por buena la coincidencia de
+1440 habría metido **−29 en las dos FAQ a 390**, que es la regla espejo otra vez.
+
+**(2) Las migas del caso NO son las de producto.** En el clon las pintaba el
+mismo componente; en el original el caso las trae en `div.migas` (sección del
+tema) y producto en un `et_pb_section` del builder:
+
+| | original | clon | Δ |
+|---|---|---|---|
+| producto | 50 | 50 | 0 |
+| **caso @1440** | 54.59 | 50 | **−4.59** |
+| **caso @390** | 85.19 | 102 | **+16.81** |
+
+Cambia de signo entre anchos, así que no es un `padding`. Con fila, ancho,
+tamaño, peso y espaciado **idénticos**, quedan dos diferencias y solo dos:
+
+- **interlínea 30.6 contra 26** → 54.59 = 30.6 + 24 · 85.19 = 2×30.6 + 24;
+- **el último `li` va truncado**: `max-width 350px · nowrap · overflow hidden ·
+  text-overflow ellipsis`. Los otros dos miden **exactamente** lo mismo en los
+  dos lados (52.36 y 107.53); el tercero medía 350 en el original y 425.06 en el
+  clon **con el mismo texto**. Sin truncar, a 390 el titular envuelve en 3
+  renglones donde el original hace 2.
+
+Las dos son de la plantilla del CASO → `variante="caso"` en `Breadcrumb`, **no**
+el defecto: cambiarlas para todos habría movido producto y los 6 sectores.
+
+### El desglose, que cuadra al céntimo
+
+`387 + 54.59 (migas) + 60 (pt) + 30.6 (sobretítulo) = 532.19` — la `y` del `h1`
+del original. A 390: `362.91 + 85.19 + 33 + 30.6 = 511.70` contra 511.69.
+
+### ⚠ El ORIGINAL se movió 32.28 en tres rutas durante la tanda
+
+Entre el congelado (`c-cabecera-*.json`) y la corrida de verificación, el `h1`
+**del original** cambió en `/software-de-medicion-calidad-del-aire` (421.39 →
+389.11) y en los dos monográficos (261.16 → 228.88): **−32.28 en las tres**. El
+lado del CLON no se movió en ninguna, y `qa:clon-base` las da «sin mover un
+píxel», así que **no es de este cambio** — el clon no puede mover el original.
+
+Es la nota de método de `CLAUDE.md` cobrándose: *el original no es un objetivo
+de medición estable*. Queda anotado como **C-QA6** porque cambia los objetivos
+de C-QA2: el −48 de `/software` es hoy **−15.72** contra un original distinto, y
+los dos monográficos, que estaban a Δ0, salen a **+32.28**. **Antes de tocar
+nada de eso hay que re-medir el original tres veces** y quedarse con el valor
+estable, no con el de una corrida.
+
+### C-QA6 (nuevo, ABIERTO) · re-medir la base de las 3 rutas que movió el original
+
+`/software-de-medicion-calidad-del-aire` y los dos monográficos. Tres corridas
+del original, mismo día, y congelar. Hasta entonces sus Δ **no se leen**.
+
+> **Corrección del mismo día, y refuerza el diagnóstico:** al re-correr para
+> congelar la verificación, los dos monográficos **habían vuelto a 261.16** y
+> `/software` a su valor previo. O sea que el 32.28 **iba y venía entre corridas
+> del mismo día**, que es la firma de la inestabilidad del sitio vivo y no de un
+> cambio del original. Congelado en `medidas/c-cabecera-{1440,390}-2026-07-31.json`:
+> 1440 da **5 de 17** desplazadas y 390 **6 de 17**, y **ninguna de las 6 nuevas
+> está entre ellas** a ninguno de los dos anchos.
+>
+> C-QA6 sigue abierta pero cambia de forma: no es «el original se movió», es
+> **«estas 3 rutas necesitan las 3 corridas del protocolo antes de que su Δ
+> valga»**. Es exactamente lo que `CLAUDE.md` §Notas de método manda hacer y lo
+> que nadie había hecho con ellas.
+
+### La custodia, que falló durante esta misma tanda
+
+La corrida de verificación **pisó `c-cabecera-{1440,390}.json`**, que es el
+DIAGNÓSTICO congelado y la única prueba de que el defecto existía. Se recuperó
+de git. El `SUFIJO` de `SOLO` cubría la corrida parcial y dejaba abierta la
+puerta grande: la corrida entera.
+
+> **Congelar no sirve de nada si la siguiente corrida descongela sin avisar.**
+> `c-cabecera` ahora **no pisa** una salida que ya exista: escribe al lado con la
+> fecha y lo dice. `PISAR=1` fuerza el re-congelado a propósito.
+
+Y de paso salió la otra mitad de un arreglo viejo: **`clon-base --cmp` resolvía
+la ruta contra el `cwd`**, no contra `scripts/qa/`. `w()` se arregló en su día y
+**el lado de LECTURA se quedó sin arreglar**, así que la sonda no sabía leer lo
+que ella misma había escrito: el `--cmp medidas/x.json` de su propia
+documentación moría con ENOENT lanzado desde la raíz. Media corrección de las de
+`CLAUDE.md`: la instancia y no la CLASE.

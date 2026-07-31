@@ -73,6 +73,9 @@ export const CASOS_PUBLICADOS: CasoDeExito[] = [
       ogImage: "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
     },
     titulo: "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+    // Banda de cabecera (C-QA1): `min-height` 387 es plantilla en las 4;
+    // la foto cambia en las 4 → campo. Medida en `medidas/c-banda-1440.json`.
+    imagenCabecera: "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
     cliente: "Ayuntamiento de Des Moines",
     sectores: [getTermino("olores"), getTermino("urbano")],
 
@@ -130,6 +133,9 @@ export const CASOS_PUBLICADOS: CasoDeExito[] = [
       ogImage: "/images/uploads/2019/05/sports.jpg",
     },
     titulo: "Red global de calidad de aire en pistas de atletismo de World Athletics",
+    // Banda de cabecera (C-QA1): `min-height` 387 es plantilla en las 4;
+    // la foto cambia en las 4 → campo. Medida en `medidas/c-banda-1440.json`.
+    imagenCabecera: "/images/uploads/2019/05/sports.jpg",
     cliente: "World Athletics",
 
     necesidad: `<p><a href="https://worldathletics.org/" target="_blank" rel="noopener">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>
@@ -182,6 +188,9 @@ export const CASOS_PUBLICADOS: CasoDeExito[] = [
       ogImage: "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
     },
     titulo: "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
+    // Banda de cabecera (C-QA1): `min-height` 387 es plantilla en las 4;
+    // la foto cambia en las 4 → campo. Medida en `medidas/c-banda-1440.json`.
+    imagenCabecera: "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
     cliente: "Secretaria Municipal do Ambiente e Clima (SMAC)",
     sectores: [getTermino("urbano")],
 
@@ -339,6 +348,9 @@ export const CASOS_PUBLICADOS: CasoDeExito[] = [
       ogImage: "/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
     },
     titulo: "Alerta de contaminación de acuífero por lindano",
+    // Banda de cabecera (C-QA1): `min-height` 387 es plantilla en las 4;
+    // la foto cambia en las 4 → campo. Medida en `medidas/c-banda-1440.json`.
+    imagenCabecera: "/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
     cliente: "SICE",
     sectores: [getTermino("industria")],
 

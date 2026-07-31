@@ -32,8 +32,8 @@
  * movió nada".
  */
 import { readFileSync } from "node:fs";
-import { join } from "node:path";
-import { env, envRuta, launch, openPage, settle, w } from "./lib.mjs";
+import { isAbsolute, join } from "node:path";
+import { QA, env, envRuta, launch, openPage, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -155,13 +155,25 @@ for (const [ruta, d] of Object.entries(todo.paginas)) {
 
 if (!ficheroCmp) process.exit(0);
 
-const antes = JSON.parse(readFileSync(ficheroCmp, "utf8"));
+/**
+ * ⚠ **La ruta del `--cmp` se resuelve contra `scripts/qa/`, no contra el `cwd`
+ * — igual que `w()`.** `w()` se arregló en su día y **el lado de LECTURA se
+ * quedó sin arreglar**: la sonda escribía en `scripts/qa/medidas/` y luego no
+ * sabía leer de ahí lo que ella misma había escrito. Lanzada desde la raíz
+ * —que es como la invoca `npm run qa:clon-base`— el `--cmp medidas/x.json` de
+ * la propia documentación moría con ENOENT.
+ *
+ * Es media corrección de las de `CLAUDE.md`: se arregló la instancia que había
+ * delante y no la CLASE. Aquí se cierra la otra mitad.
+ */
+const rutaCmp = isAbsolute(ficheroCmp) ? ficheroCmp : join(QA, ficheroCmp);
+const antes = JSON.parse(readFileSync(rutaCmp, "utf8"));
 if (antes.meta.width !== width) {
-  console.error(`\n❌ ${ficheroCmp} se midió a ${antes.meta.width}, no a ${width}.`);
+  console.error(`\n❌ ${rutaCmp} se midió a ${antes.meta.width}, no a ${width}.`);
   process.exit(2);
 }
 
-console.log(`\n═══ ANTES (${ficheroCmp}) vs DESPUÉS @${width}\n`);
+console.log(`\n═══ ANTES (${rutaCmp}) vs DESPUÉS @${width}\n`);
 const rutasAntes = Object.keys(antes.paginas);
 const nuevas = RUTAS.filter((r) => !rutasAntes.includes(r));
 const idas = rutasAntes.filter((r) => !RUTAS.includes(r));

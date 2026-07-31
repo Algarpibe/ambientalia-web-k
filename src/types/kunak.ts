@@ -170,6 +170,20 @@ export interface CasoDeExito {
   };
 
   titulo: string;
+  /**
+   * La foto de la **banda de cabecera** (C-QA1, medida 2026-07-30).
+   *
+   * El original la pone como `background-image` del `et_pb_section` de
+   * `header.et-l--header`, junto al degradado de la plantilla. El **alto** de
+   * esa sección es `min-height: 387px` en **4 de 4** instancias → plantilla; la
+   * **foto es distinta en las 4** → campo. Es el discriminador de `CLAUDE.md`
+   * en régimen plantillado: cero varianza = plantilla, lo que varía = campo.
+   *
+   * Obligatoria: las 4 medidas la traen. Si apareciera un caso sin ella, la
+   * banda quedaría con el degradado sobre transparente —que es lo que hace la
+   * FAQ— y habría que medirlo antes de darlo por bueno.
+   */
+  imagenCabecera: string;
   /** 55 valores distintos en 57 → texto, no relación. */
   cliente: string;
   /**

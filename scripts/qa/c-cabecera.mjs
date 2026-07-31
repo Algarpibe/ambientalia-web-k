@@ -27,9 +27,9 @@
  * comprobado en el HTML servido de los dos, y **la sonda sale con error si
  * cualquier selector no casa en ninguna página** (`Censo` de `lib.mjs`).
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, envRutas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, QA, envRutas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -262,7 +262,35 @@ for (const [ruta, v] of Object.entries(salida.paginas)) {
   console.log(`      clon: ${pinta(v.clon).slice(0, 190)}`);
 }
 
-w(`medidas/c-cabecera-${width}${SUFIJO}.json`, salida);
+/**
+ * ⚠ **Una salida congelada no se pisa por volver a correr la sonda.**
+ *
+ * El `SUFIJO` de `SOLO` cubría la corrida PARCIAL, y dejaba abierta la puerta
+ * grande: la corrida ENTERA de verificación —la de después del arreglo— escribe
+ * en el mismo nombre que el DIAGNÓSTICO, que es la foto del defecto y la única
+ * prueba de que existía. Pasó en esta tanda: la corrida de comprobación de
+ * C-QA1 machacó `c-cabecera-{1440,390}.json` con el clon ya arreglado, y hubo
+ * que recuperarlos de git.
+ *
+ * Es la regla 2 de `CLAUDE.md` §sondas llevada a su consecuencia: congelar no
+ * sirve de nada si la siguiente corrida descongela sin avisar. Así que:
+ *
+ *   · si el fichero no existe → se escribe;
+ *   · si existe → **se escribe al lado, con la fecha**, y se dice;
+ *   · `PISAR=1` fuerza el pisado, para cuando de verdad quieres re-congelar.
+ */
+const destino = `medidas/c-cabecera-${width}${SUFIJO}.json`;
+const yaEsta = existsSync(join(QA, destino));
+if (yaEsta && !process.env.PISAR) {
+  const alt = `medidas/c-cabecera-${width}${SUFIJO}-${salida.meta.fecha}.json`;
+  console.log(
+    `\n⚠ ${destino} ya existe y es una salida CONGELADA: no se pisa.\n` +
+      `   Esta corrida va a ${alt}. Para re-congelar a propósito: PISAR=1`,
+  );
+  w(alt, salida);
+} else {
+  w(destino, salida);
+}
 
 /* ── El veredicto de la pregunta que motivó la corrida ── */
 console.log(`\n═══ ¿LAS 11 ANTIGUAS ESTÁN BIEN, O COMPENSADAS?`);

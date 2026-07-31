@@ -1,4 +1,5 @@
 import { HeaderNav } from "@/components/HeaderNav";
+import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -55,11 +56,23 @@ export function CasoPagina({ caso }: { caso: CasoDeExito }) {
       <HeaderNav />
 
       <main className="flex flex-1 flex-col">
+        {/* La banda que ocupa el hueco de la cabecera (C-QA1). En el original
+            la cabecera está EN FLUJO y mide 387; aquí `HeaderNav` es absoluto y
+            no ocupa nada, así que sin esto el `h1` caía a −391.6. Mismo patrón
+            que los 6 sectores, extraído a componente al usarlo la segunda
+            página — la regla de `CLAUDE.md` §Arquitectura. */}
+        <BandaCabecera {...BANDA.caso} foto={caso.imagenCabecera} />
+
         {/* Migas — sección propia del arquetipo, fila al 86 % con `py 12`.
             C-SP8: `Inicio > Casos de éxito > <título>`, y el índice es el
             ESPAÑOL incluso para los 4 del prefijo inglés. Ninguno de los dos
-            destinos está clonado, así que apuntan al original. */}
+            destinos está clonado, así que apuntan al original.
+
+            `variante="caso"`: interlínea 30.6 y último truncado a 350 con
+            elipsis. Las dos medidas, y las dos SOLO de esta plantilla — ver la
+            cabecera de `Breadcrumb`. */}
         <Breadcrumb
+          variante="caso"
           items={[
             // ruta local: la home ya está clonada — original: https://kunakair.com/es/
             { label: "Inicio", href: "/" },

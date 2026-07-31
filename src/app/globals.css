@@ -394,3 +394,20 @@
   }
 }
 
+
+/* ── `.banda-cabecera` — el hueco EN FLUJO de la cabecera (C-QA1) ───────────
+   El componente (`src/components/BandaCabecera.tsx`) trae los dos altos
+   medidos como variables; la regla solo los aplica. Va aquí y no en clases de
+   Tailwind porque los valores son dinámicos —dos por plantilla— y Tailwind no
+   genera clases a partir de valores que no estén escritos en el código.
+
+   El corte en 768px es el `md` de Tailwind, el mismo que ya usa la banda de
+   sector (`CabeceraSector`, `md:pt-[185px]`). */
+.banda-cabecera {
+  min-height: var(--banda-alto);
+}
+@media (min-width: 768px) {
+  .banda-cabecera {
+    min-height: var(--banda-alto-md);
+  }
+}
