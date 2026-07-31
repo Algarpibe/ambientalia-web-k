@@ -35,7 +35,7 @@
  *
  * Solo necesita el clon servido: es determinista y no toca el original.
  */
-import { launch, openPage, settle, w, ruta } from "./lib.mjs";
+import { env, launch, openPage, settle, w, ruta } from "./lib.mjs";
 
 const BASE = process.env.CLON || "http://localhost:3000";
 const args = process.argv.slice(2);
@@ -345,7 +345,7 @@ if (B) {
   console.log(
     `\n${dif === 0 ? "✅ IDÉNTICAS al nivel del módulo" : `❌ ${dif} diferencia(s)`} · umbral CERO (clon contra clon)`,
   );
-  w(process.env.SALIDA || `medidas/offsets-cmp-${width}.json`, {
+  w(env("SALIDA") || `medidas/offsets-cmp-${width}.json`, {
     meta: { rutaA, rutaB, width },
     A,
     B,
@@ -354,7 +354,7 @@ if (B) {
 }
 
 w(
-  process.env.SALIDA ||
+  env("SALIDA") ||
     `medidas/offsets-${rutaA.replace(/^\/|\/$/g, "").replace(/\//g, "-")}-${width}.json`,
   { meta: { ruta: rutaA, width }, A },
 );

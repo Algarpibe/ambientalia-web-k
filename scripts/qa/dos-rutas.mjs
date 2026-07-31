@@ -39,7 +39,7 @@
  * slider no sale Δ0, lo que cambió no era el cuerpo). Quien reutilice la sonda
  * tiene que saber que esa fila de la salida es el slider.
  */
-import { launch, openPage, settle, w, ruta } from "./lib.mjs";
+import { env, envRuta, launch, openPage, settle, w, ruta } from "./lib.mjs";
 
 const BASE = process.env.CLON || "http://localhost:3000";
 // `ruta()` deshace la traducción de MSYS (`/sectores/x` →
@@ -58,8 +58,9 @@ if (!rutaA || !rutaB) {
 
 const marcador = process.env.MARCADOR || null;
 if (marcador) {
-  // También por `ruta()`: MARCADOR_RUTA es la variable que MSYS corrompía.
-  const rutaMarcador = process.env.MARCADOR_RUTA ? ruta(process.env.MARCADOR_RUTA) : rutaB;
+  // Por `envRuta()`: MARCADOR_RUTA es la variable que MSYS corrompía, y la
+  // normalización va en la lectura para que no haya que acordarse de ella.
+  const rutaMarcador = envRuta("MARCADOR_RUTA", rutaB);
   const res = await fetch(BASE + rutaMarcador);
   const html = res.ok ? await res.text() : "";
   if (!html.includes(marcador)) {
@@ -232,7 +233,7 @@ for (const k of Object.keys(a.anclas)) {
   if (dd !== 0) fallos++;
 }
 
-w(process.env.SALIDA || `medidas/dos-rutas-${width}${etiqueta}.json`, {
+w(env("SALIDA") || `medidas/dos-rutas-${width}${etiqueta}.json`, {
   meta: { rutaA, rutaB, width, base: BASE },
   A: a,
   B: b,

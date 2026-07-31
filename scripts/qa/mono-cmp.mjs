@@ -11,7 +11,7 @@
  * Así el informe separa **contenido** (el alto) de **ritmo** (el margen), que
  * son dos defectos distintos con dos arreglos distintos.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { env, launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   edar: [
@@ -243,7 +243,7 @@ console.log(
  * quien la corrió: por eso E1 hubo que demostrarlo re-midiendo en vez de
  * diffeando. Ahora queda artefacto.
  */
-w(process.env.SALIDA || `medidas/mono-cmp-${cual}-${width}.json`, {
+w(env("SALIDA") || `medidas/mono-cmp-${cual}-${width}.json`, {
   meta: { cual, width, orig: ORIG, clon: CLON },
   original: o,
   clon: c,

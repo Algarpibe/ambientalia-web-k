@@ -59,7 +59,9 @@
     "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
     "qa:clon-base": "node scripts/qa/clon-base.mjs",
     "qa:ruido": "node scripts/qa/ruido.mjs",
-    "qa:arbol-todos": "node scripts/qa/tree-todos.mjs"
+    "qa:arbol-todos": "node scripts/qa/tree-todos.mjs",
+    "qa:lib": "node scripts/qa/lib.test.mjs",
+    "qa:bases": "node scripts/qa/c-bases.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

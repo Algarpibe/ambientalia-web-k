@@ -2175,3 +2175,66 @@ tanda de cabecera. Lo que esta anotación fija es que su «verificada con Δ0»
 base inválida, y el protocolo no lo detecta solo. `qa:c-cabecera` ahora
 comprueba **que el `h1` tenga caja real en los dos lados** y, si no, mide contra
 el primer encabezado visible y **dice que lo está haciendo**.
+
+---
+
+## C-QA4 · AUDITORÍA DE BASES — las 17 rutas, los dos anchos (2026-07-30)
+
+La pregunta que el arreglo de C-QA3 implica y **nadie había corrido**: si la
+home no tenía base de lectura válida, ¿a cuántas rutas más les pasa? Sonda
+`npm run qa:bases`, salida congelada en `medidas/c-bases.json`.
+
+**No mide el original otra vez**: deriva del congelado
+`medidas/c-cabecera-{1440,390}.json`, que ya trae `h1alto` de los dos lados en
+las 17 desde `82142e2`. Re-medir el original sería re-medirlo a mano —lo que el
+HANDOFF prohíbe— y meter el ruido de un sitio vivo en una pregunta que el
+fichero ya contesta.
+
+### El resultado: la home y solo la home
+
+**16 de 17 rutas tienen base válida** a 1440 y a 390 — `h1` con caja real
+(`alto > 4`) en original y clon. La única sin base es **`/`** (0 px en el
+original, 1 px en el clon), que es **C-QA3, ya registrada**, con su ancla
+alternativa medida: el `h2` «La solución profesional para la monitoriza…».
+
+Y las 17 pasan la comprobación de que el `h1` es **el mismo elemento** en los
+dos lados (`h1txt` coincide), así que sus Δ son legítimos.
+
+> **No aparece ninguna ruta sin base además de la home.** Los deltas de cuerpo
+> de las otras 16 se apoyan en un punto de apoyo real.
+
+### Pero sí aparece otra cosa, y es un defecto nuevo: C-QA5
+
+### C-QA5 (nuevo, ABIERTO) · el `h1` ENVUELVE distinto en 4 rutas, solo a 1440
+
+Base válida y `y` comparable, pero **la caja del `h1` no mide lo mismo**:
+
+| ruta | @1440 orig→clon | @390 |
+|---|---|---|
+| `/sectores/…-en-edar` | **82 → 46** | 154 = 154 |
+| `/sectores/…-petroleo-y-gas` | **82 → 46** | 118 = 118 |
+| `/case-studies/…-rio-de-janeiro` | **209.38 → 108.19** | 462.34 = 462.34 |
+| `/casos-de-exito/…-por-lindano` | **108.19 → 57.59** | 209.38 = 209.38 |
+
+Los cuatro son el mismo hecho: **el título del original envuelve en más
+renglones que el del clon**, o sea que **el contenedor del `h1` es más ancho en
+el clon**. A 390 no pasa en ninguna — las cuatro cuadran exactamente.
+
+**Se cuenta aparte de «sin base» a propósito.** El borde superior del `h1` sigue
+siendo comparable, así que la base vale; lo que no cuadra es el **ancho** del
+contenedor del título. Mezclarlo con C-QA3 sería medir al nivel equivocado.
+
+**Y explica por qué llevaba invisible**, que es la regla de siempre: los dos
+monográficos tienen el `h1` con `y = 261.16` **en los dos lados** y aparecen como
+Δ0 en el diagnóstico de C-QA1. La banda de título tiene alto propio, así que
+**absorbe** que el titular ocupe uno o dos renglones sin mover nada de lo que
+viene debajo. Un contenedor con holgura más.
+
+⚠ **Es el aviso que hay que leer antes de construir la banda de caso y FAQ**
+(C-QA1, PASO 1): replicar el **alto** de la cabecera del original y no su
+**ancho de columna** deja este defecto dentro de las rutas nuevas desde el
+primer día. Río y lindano ya lo tienen — y son dos de las seis.
+
+**No se arregla en la tanda de C-QA1**: son cuatro rutas, dos de ellas de un
+arquetipo ya verificado, y el orden pactado es una cosa cada vez. Queda abierta
+con su medición hecha.

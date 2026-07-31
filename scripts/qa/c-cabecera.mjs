@@ -29,7 +29,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, launch, openPage, ruta, settle, w } from "./lib.mjs";
+import { Censo, envRutas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -42,11 +42,13 @@ const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/
  * espeja la rama `/es` del original. */
 const manifiesto = JSON.parse(readFileSync(join(RAIZ, ".next/prerender-manifest.json"), "utf8"));
 /**
- * `SOLO=/ ,/kunak-api` acota la corrida. Pasa por `ruta()` porque **MSYS
- * traduce cualquier valor que empiece por `/`**: `SOLO=/` llegaba como
- * `C:/Program Files/Git/` y no casaba con nada.
+ * `SOLO=/,/kunak-api` acota la corrida. Se lee con `envRutas()` porque **MSYS
+ * traduce cualquier valor que empiece por `/`**, también en variables de
+ * entorno: `SOLO=/` llegaba como `C:/Program Files/Git/` y no casaba con nada.
+ * La normalización vive ahora en la lectura (`lib.mjs`), no en esta línea —
+ * era la segunda sonda que la olvidaba.
  */
-const SOLO = process.env.SOLO ? process.env.SOLO.split(",").map((s) => ruta(s.trim())) : null;
+const SOLO = envRutas("SOLO");
 const RUTAS = Object.keys(manifiesto.routes || {})
   .filter((r) => !r.startsWith("/_") && !r.includes("."))
   .filter((r) => !SOLO || SOLO.includes(r))

@@ -188,12 +188,78 @@ export const QA = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)
  */
 export function ruta(arg) {
   if (!arg) return arg;
-  let r = String(arg).replace(/\\/g, "/");
-  // deshacer la traducción de MSYS: .../Git/<lo que yo escribí>
-  const msys = r.match(/^[A-Za-z]:\/.*?\/Git(\/.*)$/);
-  if (msys) r = msys[1];
+  let r = desMsys(arg);
   if (!r.startsWith("/")) r = "/" + r;
   return r.replace(/\/+$/, "") || "/";
+}
+
+/**
+ * Deshace la traducción de MSYS sobre **un valor cualquiera**, sin forzar barra
+ * inicial. Es la mitad reutilizable de `ruta()`: vale para rutas de página
+ * (`/kunak-api`) y para rutas de fichero (`SALIDA=/tmp/x.json`), que `ruta()`
+ * estropearía al normalizarlas como rutas de página.
+ *
+ * El prefijo se detecta por el directorio de instalación de Git, no por una
+ * lista de rutas del sitio: así no hay que mantenerla.
+ */
+export function desMsys(v) {
+  if (!v) return v;
+  const s = String(v).replace(/\\/g, "/");
+  const msys = s.match(/^[A-Za-z]:\/.*?\/Git(\/.*)$/);
+  return msys ? msys[1] : s;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LECTURA DE VARIABLES DE ENTORNO — la segunda puerta de la misma mordedura.
+ *
+ * ── Por qué existe ────────────────────────────────────────────────────────
+ * MSYS no traduce solo los **argumentos**: traduce igual el valor de una
+ * variable de entorno que empiece por `/`. `SOLO=/` llega como
+ * `C:/Program Files/Git/`, y `MARCADOR_RUTA=/x` como
+ * `C:/Program Files/Git/x`.
+ *
+ * `ruta()` ya sabía deshacerlo, pero **había que acordarse de llamarla en cada
+ * puerta**, y eso es exactamente el corolario *DOCUMENTADO NO ES CONECTADO* de
+ * `CLAUDE.md`: en `clon-base.mjs` el README afirmaba que `MARCADOR_RUTA` pasaba
+ * por `ruta()` y la llamada **no estaba**. Se arregló allí, y la misma clase
+ * volvió a morder en `SOLO` de `c-cabecera.mjs` — dos veces por la misma puerta.
+ *
+ * ── La corrección, que es de sitio y no de texto ──────────────────────────
+ * La normalización deja de vivir en el punto de uso y pasa a vivir en **la
+ * lectura**. Una sonda nueva que haga `envRuta("SOLO")` la hereda; una que haga
+ * `process.env.SOLO` se ve a simple vista que no.
+ *
+ * Y el fallo que esto evita **no da error**: una ruta mal traducida no casa con
+ * ninguna página, la sonda mide cero y —si nadie la ha instrumentado— imprime
+ * un veredicto verde. Es la regla del selector muerto (`Censo`, arriba) con
+ * otra forma: *no encontrar nada y no mirar nada dan la misma salida.*
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Variable de entorno cualquiera, con la traducción de MSYS deshecha. */
+export function env(nombre, porDefecto = undefined) {
+  const v = process.env[nombre];
+  return v === undefined || v === "" ? porDefecto : desMsys(v);
+}
+
+/** Variable de entorno que contiene una RUTA DE PÁGINA (`/kunak-api`). */
+export function envRuta(nombre, porDefecto = undefined) {
+  const v = process.env[nombre];
+  return v === undefined || v === "" ? porDefecto : ruta(v);
+}
+
+/**
+ * Variable de entorno con una LISTA de rutas de página separadas por coma.
+ * Devuelve `null` si no está puesta — que es «todas», no «ninguna».
+ *
+ * ⚠ La distinción importa: `null` (no acotar) y `[]` (acotar a nada) llevan a
+ * sitios opuestos, y es `[]` el que produce la corrida vacía con veredicto
+ * verde. Quien la use tiene que tratar la lista vacía como defecto, no como
+ * limpio — ver la guarda de `RUTAS.length === 0` en `c-cabecera.mjs`.
+ */
+export function envRutas(nombre) {
+  const v = process.env[nombre];
+  if (v === undefined || v === "") return null;
+  return v.split(",").map((s) => s.trim()).filter(Boolean).map(ruta);
 }
 
 /**

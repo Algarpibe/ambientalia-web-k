@@ -11,7 +11,7 @@
  * localiza por la sección del breadcrumb, que es estructural y vale para los
  * dos arquetipos: hero = la siguiente, cuerpo = de la de después al slider.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { env, launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   urbano: [
@@ -205,7 +205,7 @@ console.log(
  * era la consola de quien la corrió. Ahora sí, y por eso E1 se pudo demostrar
  * con un diff en vez de con un argumento.
  */
-w(process.env.SALIDA || `medidas/tree-cmp-${cual}-${width}.json`, {
+w(env("SALIDA") || `medidas/tree-cmp-${cual}-${width}.json`, {
   meta: { cual, width, orig: ORIG, clon: CLON },
   original: o,
   clon: c,

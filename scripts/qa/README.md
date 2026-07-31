@@ -28,6 +28,9 @@ npm run qa:dos-rutas -- /sectores/a /sectores/b 1440
 npm run qa:clon-base -- 1440 --cmp medidas/clon-base-1440.json
 npm run qa:ruido -- 3                   # suelo de ruido, antes de juzgar nada
 npm run qa:arbol-todos -- 1440          # los 8 sectores del original entre sí
+
+npm run qa:lib                          # test en negativo de lib.mjs — sin navegador
+npm run qa:bases                        # ¿tiene cada ruta base de lectura VÁLIDA?
 ```
 
 **El `--` es obligatorio** para que npm pase los argumentos al script en vez de
@@ -54,18 +57,42 @@ puerto**.
   donde estuvieras: lanzada desde la raíz habría creado un `medidas/` paralelo y
   las salidas congeladas se habrían partido en dos árboles **sin dar ningún
   error**. Un fallo de esa forma no falla: da dos verdades.
-- **`ruta()` deshace la traducción de MSYS.** Git Bash convierte cualquier
-  argumento que empiece por `/` en una ruta de Windows, así que `/sectores/x`
-  llegaba como `C:/Program Files/Git/sectores/x` y la sonda moría con
-  `Invalid URL`. El apaño era «lánzalo desde PowerShell», que hay que recordar.
-  Ahora las tres formas valen y dan lo mismo: `/sectores/x`, `sectores/x` y el
-  `C:/Program Files/Git/sectores/x` que MSYS fabrica. Cubre `argv` y
-  `MARCADOR_RUTA`.
+- **La traducción de MSYS se deshace en la LECTURA, no en el punto de uso.** Git
+  Bash convierte cualquier valor que empiece por `/` en una ruta de Windows, así
+  que `/sectores/x` llegaba como `C:/Program Files/Git/sectores/x` y la sonda
+  moría con `Invalid URL`. Las tres formas valen y dan lo mismo: `/sectores/x`,
+  `sectores/x` y el `C:/Program Files/Git/sectores/x` que MSYS fabrica.
+
+  > ⚠ **Y muerde igual en variables de entorno.** Eso costó dos sesiones **por
+  > la misma puerta**: se arregló `MARCADOR_RUTA` en `clon-base.mjs` —donde este
+  > README ya afirmaba que `ruta()` lo cubría y **la llamada no estaba**, el
+  > corolario *DOCUMENTADO NO ES CONECTADO*— y la misma clase reapareció en
+  > `SOLO` de `c-cabecera.mjs`, con `SOLO=/` llegando como
+  > `C:/Program Files/Git/`, casando con **cero** rutas y dando un veredicto
+  > verde de una corrida que no midió nada.
+
+  Por eso ya no hay nada de lo que acordarse: **se lee con `env()`,
+  `envRuta()` o `envRutas()`**, nunca con `process.env.X` a pelo.
+
+  | lectura | para qué | ejemplo |
+  |---|---|---|
+  | `envRuta(n, def)` | una ruta de **página** | `MARCADOR_RUTA` |
+  | `envRutas(n)` | **lista** de rutas de página, coma; `null` si no está | `SOLO` |
+  | `env(n, def)` | valor cualquiera, incl. ruta de **fichero** | `SALIDA` |
+
+  `SALIDA` va por `env()` **a propósito**: es una ruta de fichero, y `ruta()` le
+  forzaría una barra inicial convirtiéndola en absoluta.
+
+  Lo prueba **`npm run qa:lib`**, 14 aserciones sin navegador. Es el test en
+  negativo de una función pura: barato de correr, y lo que impide que la tercera
+  puerta vuelva a abrirse.
 
 ## Las sondas
 
 | sonda | qué compara | cuándo usarla |
 |---|---|---|
+| `lib.test.mjs` | las funciones **puras** de `lib.mjs` contra lo que ya sabes | **tras tocar `lib.mjs`**: no necesita navegador ni servidor, así que no hay excusa |
+| `c-bases.mjs` | del congelado de `c-cabecera`: **¿tiene cada ruta un `h1` con caja real en los dos lados?** | **antes de leer un Δ de cuerpo de un arquetipo nuevo**: sin base válida, el Δ no significa nada |
 | `enlaces.mjs` | el HTML **servido** contra las rutas que emite el build, **en las dos direcciones** | **después de clonar cualquier página**: cierra la regla de rutas locales y caza los 404 internos |
 | `ruido.mjs [corridas]` | el original **consigo mismo**, N veces | **primero de todo**: fijar el suelo de ruido antes de juzgar un Δ |
 | `tree-todos.mjs [ancho]` | el original, los 8 sectores entre sí | diseñar el content type contra la distribución real |

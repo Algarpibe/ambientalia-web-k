@@ -34,7 +34,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { env, launch, openPage, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -121,7 +121,7 @@ for (const width of [1440, 390]) {
 }
 await browser.close();
 
-w(process.env.SALIDA || "medidas/corte-cuerpo.json", {
+w(env("SALIDA") || "medidas/corte-cuerpo.json", {
   meta: { base: BASE, rutas: RUTAS.length, anchos: [1440, 390] },
   casos: todo,
 });

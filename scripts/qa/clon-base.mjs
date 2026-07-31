@@ -33,7 +33,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, openPage, ruta, settle, w } from "./lib.mjs";
+import { env, envRuta, launch, openPage, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -63,14 +63,15 @@ if (RUTAS.length === 0) {
 
 const marcador = process.env.MARCADOR || null;
 if (marcador) {
-  // `ruta()` deshace la traducción de MSYS. Git Bash convierte cualquier valor
-  // que empiece por `/` en una ruta de Windows, así que `MARCADOR_RUTA=/x`
-  // llegaba como `C:/Program Files/Git/x` y la sonda moría con `Invalid URL`.
-  // El README decía que `ruta()` cubría `MARCADOR_RUTA` **y aquí no se
-  // llamaba**: el corolario de `CLAUDE.md` §DOCUMENTADO NO ES CONECTADO, en la
-  // propia sonda. Aquí falla ruidosamente; en un caso menos afortunado habría
-  // medido otra página.
-  const rutaMarcador = ruta(process.env.MARCADOR_RUTA || "/");
+  // `envRuta()` deshace la traducción de MSYS **en la lectura**. Git Bash
+  // convierte cualquier valor que empiece por `/` en una ruta de Windows, así
+  // que `MARCADOR_RUTA=/x` llegaba como `C:/Program Files/Git/x` y la sonda
+  // moría con `Invalid URL`. El README decía que `ruta()` cubría
+  // `MARCADOR_RUTA` **y aquí no se llamaba**: el corolario de `CLAUDE.md`
+  // §DOCUMENTADO NO ES CONECTADO, en la propia sonda. Aquí falló ruidosamente;
+  // en un caso menos afortunado habría medido otra página. Ahora no hay nada
+  // que acordarse de llamar.
+  const rutaMarcador = envRuta("MARCADOR_RUTA", "/");
   const res = await fetch(BASE + rutaMarcador);
   const html = res.ok ? await res.text() : "";
   if (!html.includes(marcador)) {
@@ -137,7 +138,7 @@ for (const ruta of RUTAS) {
 await browser.close();
 
 const salida = `clon-base-${width}${etiqueta}.json`;
-w(process.env.SALIDA || `medidas/${salida}`, todo);
+w(env("SALIDA") || `medidas/${salida}`, todo);
 
 for (const [ruta, d] of Object.entries(todo.paginas)) {
   if (d.error) {
