@@ -82,8 +82,12 @@ export default function AccesoriosPage() {
             backgroundPosition: "0% 50%",
           }}
         >
-          {/* Fila 1 — hero. Columnas Divi 3/5 + 2/5 con gutter 5.5%. */}
-          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pt-[30px] md:flex-row md:items-start md:gap-[5.5%] lg:pt-[2vw]">
+          {/* Fila 1 — hero. Columnas Divi 3/5 + 2/5 con gutter 5.5%.
+              Sin pt propio: en el original esta fila va a pt 0 en ambos anchos
+              (sangría fila→columna 0 medida, C-QA7) — el aire lo pone la
+              sección (50/4vw), que ya está arriba. El pt-[30px]/2vw previo era
+              el default Divi cableado sin medir: +28.8 @1440 · +30 @390. */}
+          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] md:flex-row md:items-start md:gap-[5.5%]">
             <div className="relative w-full md:w-[57.75%]">
               <img
                 src="/images/uploads/2022/12/punteado.svg"
@@ -97,8 +101,10 @@ export default function AccesoriosPage() {
                 className="absolute -top-[26px] -left-[65px]"
               />
               {/* Inversión tipográfica del original: el <p> es el titular
-                  visual (50px/fw800) y el <h1> va debajo a 23px/fw300. */}
-              <p className="text-[50px] font-extrabold leading-[60px] text-[#333]">{HERO.kicker}</p>
+                  visual (50px/fw800) y el <h1> va debajo a 23px/fw300.
+                  35px/42 en ≤767 (C-QA7): la regla móvil del kicker, la misma
+                  que ya llevan HeroApi y HeroSoftware — faltaba aquí (+18 a 390). */}
+              <p className="text-[35px] font-extrabold leading-[42px] text-[#333] md:text-[50px] md:leading-[60px]">{HERO.kicker}</p>
               {/* pb-[10px]: regla Divi de titulares, presente en TODOS los h1/h2
                   del original (QA 2026-07-27; ya la tenían el h3 de ficha y el FAQ). */}
               <h1 className="pb-[10px] text-[23px] font-light leading-[23px] text-[#333]">
