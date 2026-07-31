@@ -1,45 +1,83 @@
 # HANDOFF — C-QA1 CERRADA; lo siguiente es PASO 2, y es una MEDICIÓN
 
-> ⚠ **Actualización 2026-07-30, cerrando el bloque 2 de la cabecera.** Lo de
-> abajo sigue siendo contexto válido. Esto es lo que cambia.
+> ⚠ **Actualización 2026-07-30, cerrando el bloque 2 de la cabecera.** El cuerpo
+> de este documento (abajo) sigue siendo contexto válido. Esto es lo que cambia.
 >
 > ## Hecho y verificado
 >
-> - **PASO 0a · custodia.** El congelado  **no estaba
->   pisado** (17 rutas en los dos commits). Y la traducción de MSYS se deshace
->   ahora **en la LECTURA** — /  /  en
->   —, no en cada punto de uso: era la segunda vez que mordía por la
->   misma puerta. Test en negativo: ****, 14 aserciones, sin
->   navegador.
-> - **PASO 0b · auditoría de bases.**  (nueva, deriva del
->   congelado). **16 de 17 rutas con base válida** a los dos anchos; la única sin
->   ella es , que ya era C-QA3. **No hay ninguna más** — por eso no se paró.
->   Salió de regalo **C-QA5**: en 4 rutas el  envuelve distinto **solo a
->   1440**; base válida, ancho del contenedor no. ABIERTA, sin tocar.
-> - **PASO 1 · C-QA1 CERRADA.** Las 6 rutas nuevas a **Δ0 a los dos anchos**; las
->   11 anteriores **sin mover un píxel**. Eran **dos** cosas: la banda en flujo
->   (, alto plantilla +  campo) y **las migas
->   del caso, que no son las de producto** (interlínea 30.6 y último >   truncado a 350 → ). Detalle en .
+> - **PASO 0a · custodia.** El congelado `c-cabecera-{1440,390}.json` **no estaba
+>   pisado**: 17 rutas en los dos commits (`77010a9` y `82142e2`), y la corrida
+>   vacía de `SOLO=/` nunca llegó a escribir. No había nada que recuperar, y
+>   ahora está comprobado en vez de supuesto.
+>
+>   Lo que sí seguía abierto: **la traducción de MSYS se deshace ahora en la
+>   LECTURA** —`env()` / `envRuta()` / `envRutas()` en `lib.mjs`—, no en cada
+>   punto de uso. Era la segunda vez que mordía por la misma puerta: se arregló
+>   `MARCADOR_RUTA` en `clon-base.mjs` y reapareció en `SOLO` de `c-cabecera.mjs`.
+>   Test en negativo: **`npm run qa:lib`**, 14 aserciones, sin navegador.
+>
+> - **PASO 0b · auditoría de bases.** **`npm run qa:bases`** (nueva; deriva del
+>   congelado, no vuelve a medir el original). **16 de 17 rutas con base válida**
+>   a los dos anchos; la única sin ella es **`/`**, que ya era C-QA3 y tiene su
+>   ancla alternativa medida. **No aparece ninguna más, por eso no se paró.**
+>
+>   Salió de regalo **C-QA5** (ABIERTA, sin tocar): en 4 rutas el `h1` **envuelve
+>   en más renglones en el original que en el clon, solo a 1440** (EDAR y
+>   petróleo 82→46; Río 209.38→108.19; lindano 108.19→57.59). La base sigue
+>   valiendo —el borde superior es comparable—; lo que no cuadra es el **ancho**
+>   del contenedor del título, y la banda lo absorbe sin mover nada de abajo.
+>
+> - **PASO 1 · C-QA1 CERRADA.** Las 6 rutas nuevas a **Δ0 en el `h1` en crudo a
+>   los dos anchos**; las 11 anteriores **sin mover un píxel** (`qa:clon-base`,
+>   umbral cero, con `MARCADOR`). `qa:enlaces` limpia en las dos direcciones.
+>
+>   Eran **dos** cosas, no una, y el total no lo decía:
+>   1. **la banda en flujo** — `BandaCabecera`, con el alto como plantilla
+>      (`min-height` 387 en 4 de 4 casos, 0 en las 2 FAQ) y la foto como campo
+>      (`imagenCabecera`, distinta en las 4);
+>   2. **las migas del caso, que NO son las de producto** — mismo componente en
+>      el clon, `div.migas` del tema contra `et_pb_section` del builder en el
+>      original. Interlínea **30.6 contra 26** y **último `li` truncado a 350**
+>      con elipsis → `variante="caso"` en `Breadcrumb`.
+>
+>   Detalle y desglose al céntimo en `docs/PENDIENTES-QA.md` §C-QA1 CERRADA.
 >
 > ## Lo siguiente, literal: PASO 2, y es MEDIR, no arreglar
 >
-> **¿el −21.41 de la home (C-QA3) y el desfase de las 4 de producto (C-QA2) son
+> **¿El −21.41 de la home (C-QA3) y el desfase de las 4 de producto (C-QA2) son
 > el mismo mecanismo?** Se mide **por composición qué está dimensionado contra el
 > alto de la cabecera** en los dos sitios, y **el resultado se enseña antes de
-> arreglar nada**: si es una causa el arreglo es uno; si son dos, van separados.
+> arreglar nada**: si es una causa, el arreglo es uno; si son dos, van separados
+> y con su medición cada uno.
 >
-> Ya hay medio camino hecho y está congelado: > trae  con su cadena entera. De ahí sale que **el espaciador del
-> clon mide 177 donde el original pone 225** (−48 exacto a 1440) y que el offset
-> del  bajo el espaciador **coincide al céntimo** (167.59 en los dos): en
-> producto el defecto es **el espaciador y nada más**. Falta la home.
+> **Ya hay medio camino hecho y congelado.** `medidas/c-banda-{1440,390}.json`
+> trae `/kunak-api` con su cadena entera, y de ahí sale que:
 >
-> ⚠ **Y antes de fijar objetivos numéricos para C-QA2: C-QA6.**  y
-> los dos monográficos dieron −32.28 en una corrida y volvieron en la siguiente,
-> **el mismo día**. Necesitan las 3 corridas del protocolo antes de que su Δ
-> valga. Sin eso, C-QA2 se arreglaría contra un objetivo que se mueve.
+> - el espaciador del clon mide **177** donde el original pone **225** → los −48
+>   exactos de 1440, y **137 contra 136.58** a 390 → los +0.42;
+> - el offset del `h1` **por debajo del espaciador coincide al céntimo** (167.59
+>   en los dos lados).
 >
-> **Sondas nuevas:**  ·  · . Y  **ya
-> no pisa** una salida congelada (escribe con fecha al lado;  fuerza).
+> O sea que **en producto el defecto es el espaciador y nada más**. Falta la
+> home, que es la mitad que decide si la causa es una o dos.
+>
+> ⚠ **Y antes de fijar objetivos numéricos para C-QA2, C-QA6.** `/software` y los
+> dos monográficos dieron **−32.28 en una corrida y volvieron en la siguiente, el
+> mismo día**. No es un cambio del original: es su inestabilidad, y necesitan las
+> **3 corridas del protocolo** antes de que su Δ valga. Sin eso, C-QA2 se
+> arreglaría contra un objetivo que se mueve.
+>
+> ## Sondas y custodia
+>
+> Nuevas: **`qa:lib`** · **`qa:bases`** · **`qa:banda`**. Y dos defectos de
+> custodia cazados durante la tanda, los dos ya corregidos:
+>
+> - **`c-cabecera` pisó su propio diagnóstico congelado** al correr la
+>   verificación (se recuperó de git). Ya **no pisa** una salida existente:
+>   escribe al lado con la fecha y lo dice; `PISAR=1` fuerza el re-congelado.
+> - **`clon-base --cmp` resolvía la ruta contra el `cwd`**, no contra
+>   `scripts/qa/`: `w()` se arregló en su día y **el lado de LECTURA no**, así
+>   que la sonda no sabía leer lo que ella misma escribía.
 >
 > ---
 >
