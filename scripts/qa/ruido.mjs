@@ -17,7 +17,9 @@
  *     la fila, así que es mucho más estable. Un Δ de alto de caja NO se juzga
  *     contra el suelo posicional.
  */
-import { env, envRutas, launch, openPage, settle, w } from "./lib.mjs";
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import { QA, env, envRutas, launch, openPage, settle, w } from "./lib.mjs";
 
 /**
  * ⚠ **LA LISTA ES EL ALCANCE DE LA AFIRMACIÓN, y durante meses no se leyó así.**
@@ -146,8 +148,84 @@ for (const [clave, corridas] of Object.entries(crudo)) {
   };
 }
 
-w(`medidas/ruido-crudo${ETIQUETA}.json`, crudo);
-w(`medidas/ruido${ETIQUETA}.json`, resumen);
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA CAMPAÑA — porque una ráfaga no es un suelo.
+ *
+ * `CAMPANA=<nombre>` guarda esta ráfaga como **un fichero propio con su sello
+ * de tiempo** dentro de `medidas/campana/<nombre>/`, y después lee **todas** las
+ * ráfagas de esa campaña para dar el estado.
+ *
+ * Por qué un fichero por ráfaga y no uno que se actualiza: porque el suelo es el
+ * **máximo entre ráfagas separadas en el tiempo**, así que cada ráfaga es un
+ * dato independiente que hay que poder exhibir. Y porque la guarda de `w()`
+ * impide (con razón) reescribir una salida congelada — una campaña que
+ * acumulara en un solo fichero pelearía con ella en cada sesión.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const CAMPANA = env("CAMPANA");
+if (!CAMPANA) {
+  w(`medidas/ruido-crudo${ETIQUETA}.json`, crudo);
+  w(`medidas/ruido${ETIQUETA}.json`, resumen);
+} else {
+  const sello = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  const dir = `medidas/campana/${CAMPANA}`;
+  w(`${dir}/rafaga-${sello}.json`, {
+    meta: { campana: CAMPANA, sello, corridas: CORRIDAS, rutas: PAGINAS.map(([n]) => n), anchos: [1440, 390] },
+    resumen,
+    crudo,
+  });
+
+  /* ── El estado de la campaña, leyendo TODAS las ráfagas ── */
+  const abs = join(QA, dir);
+  const ficheros = readdirSync(abs).filter((f) => f.startsWith("rafaga-") && f.endsWith(".json")).sort();
+  const rafagas = ficheros.map((f) => JSON.parse(readFileSync(join(abs, f), "utf8")));
+
+  /** Requisitos del protocolo (`CLAUDE.md` §Notas de método). */
+  const MIN_RAFAGAS = 3;
+  const MIN_DIAS = 2;
+  const MIN_SEP_H = 2;
+
+  const sellos = rafagas.map((r) => new Date(r.meta.sello.slice(0, 10) + "T" + r.meta.sello.slice(11).replace(/-/g, ":") + "Z"));
+  const dias = new Set(rafagas.map((r) => r.meta.sello.slice(0, 10)));
+  const ordenados = [...sellos].sort((a, b) => a - b);
+  const separaciones = ordenados.slice(1).map((t, i) => (t - ordenados[i]) / 3600000);
+  const bienSeparadas = separaciones.filter((h) => h >= MIN_SEP_H).length + 1;
+
+  /** El suelo por combinación: el MÁXIMO entre ráfagas, no dentro de una. */
+  const suelo = {};
+  for (const r of rafagas) {
+    for (const [clave, v] of Object.entries(r.resumen)) {
+      if (v.error) continue;
+      suelo[clave] ||= { h1: 0, pos: 0, rafagas: 0 };
+      suelo[clave].h1 = Math.max(suelo[clave].h1, v.posicional.h1 ?? 0);
+      suelo[clave].pos = Math.max(suelo[clave].pos, v.posicionalMax ?? 0);
+      suelo[clave].rafagas++;
+    }
+  }
+
+  console.log(`\n═══ CAMPAÑA «${CAMPANA}» — ${rafagas.length} ráfaga(s), ${dias.size} día(s)`);
+  console.log(`  ${"combinación".padEnd(24)}${"h1 (máx entre ráfagas)".padStart(24)}${"posicional".padStart(13)}`);
+  for (const [k, v] of Object.entries(suelo)) {
+    console.log(`  ${k.padEnd(24)}${String(v.h1).padStart(24)}${String(v.pos).padStart(13)}`);
+  }
+
+  const completa = rafagas.length >= MIN_RAFAGAS && dias.size >= MIN_DIAS && bienSeparadas >= MIN_RAFAGAS;
+  console.log(
+    `\n  requisitos: ≥${MIN_RAFAGAS} ráfagas (${rafagas.length}) · ≥${MIN_DIAS} días (${dias.size}) ·` +
+      ` separadas ≥${MIN_SEP_H}h (${bienSeparadas})`,
+  );
+  if (completa) {
+    console.log(`  ✅ CAMPAÑA COMPLETA: el suelo de arriba ya se puede citar, con su fecha.`);
+  } else {
+    console.log(
+      `  ⏳ CAMPAÑA ABIERTA — faltan ${Math.max(0, MIN_RAFAGAS - rafagas.length)} ráfaga(s) y` +
+        ` ${Math.max(0, MIN_DIAS - dias.size)} día(s).\n` +
+        `     Lo de arriba NO es un suelo: es «lo máximo observado hasta ahora».\n` +
+        `     Una combinación a 0 significa «no se observó ruido en estos episodios»,\n` +
+        `     NO «su suelo es 0». Hasta cerrar, todo residuo pequeño en estas rutas\n` +
+        `     queda SIN PROBAR.`,
+    );
+  }
+}
 
 console.log(`\n===== SUELO DE RUIDO DEL ORIGINAL · ${CORRIDAS} corridas =====`);
 console.log(

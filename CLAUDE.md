@@ -325,8 +325,38 @@ Estas se pagaron con horas de depuración. No las reinventes:
   **la ventana real (800×600) en vez del viewport emulado**. O sea: la captura
   no es de lo que acabas de medir. Captura por viewport y compón las tiras
   después. (Hallazgo del recon de /kunak-api, 2026-07-27.)
-- **El original no es un objetivo de medición estable: mide 3 veces.** Protocolo
-  completo en `scripts/qa/README.md`; sonda `ruido.mjs`. Lo esencial:
+- **El original no es un objetivo de medición estable.** Protocolo completo en
+  `scripts/qa/README.md`; sonda `ruido.mjs`.
+
+  > ⚠ **REDISEÑADO 2026-07-30 (C-QA6). «Mide 3 veces» era el protocolo entero y
+  > medía lo que no había que medir**: tres cargas seguidas miden **el temblor
+  > dentro de un episodio**, y lo que mueve al original son **los episodios**.
+  > Una ráfaga limpia se estaba leyendo como «suelo 0», que es un veredicto
+  > verde de una comprobación que no puede ver el fenómeno.
+
+  Las tres reglas que lo sustituyen:
+
+  1. **El suelo NO es el máximo dentro de una ráfaga, sino el máximo ENTRE
+     ráfagas separadas en el tiempo.** Una *ráfaga* son 3 cargas seguidas; hacen
+     falta **≥3 ráfagas separadas por ≥2 horas, y en al menos 2 días distintos**.
+     El suelo de una ruta es el **máximo de los máximos**, y **no está fijado
+     hasta completar la campaña**. Medido: dos ráfagas a ~6 minutos dieron
+     `±32.28` y `0` en las mismas 3 rutas.
+  2. **Una ráfaga limpia se reporta como «no se observó ruido en este
+     episodio», nunca como «el suelo es 0».** Son afirmaciones distintas y solo
+     la primera está respaldada. La segunda **solo** puede escribirla una
+     campaña completa, y aun así con su fecha.
+  3. **El alcance se declara siempre: qué rutas y qué anchos entraron.** Un
+     suelo es una propiedad **de las rutas medidas**, no del sitio. Si una ruta
+     no está en la lista, no tiene suelo — tiene un hueco.
+
+  De ahí la consecuencia que gobierna la lectura de cualquier Δ:
+
+  > **Sin campaña cerrada para esa ruta, un residuo pequeño no es «limpio»: es
+  > SIN PROBAR.** Y «pequeño» significa *por debajo del mayor episodio observado
+  > en esa ruta*, no por debajo de un número global.
+
+  Lo esencial del resto:
   - **La base de lectura es el `h1`.** Se compara primero con el del original y,
     si difiere, ese desplazamiento se resta de todo lo demás. Es el `h1` porque
     en 42 cargas medidas su dispersión fue **0 en las 14 combinaciones** de

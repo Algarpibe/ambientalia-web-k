@@ -2584,3 +2584,54 @@ el episodio y no el arreglo. Se cierra cuando cierre la campaña de ráfagas.
 Aparece en la comparación clon-contra-clon y **no es de este cambio**: la home no
 usa `BandaCabecera` y la regla CSS nueva solo casa con `.banda-cabecera*`. No
 mueve ningún ancla (`h1.y` sin cambio). Queda anotado como no reproducido.
+
+---
+
+## C-QA6 · CAMPAÑA ABIERTA — el protocolo de ruido, rediseñado (2026-07-30)
+
+`CLAUDE.md` §Notas de método sustituye «mide 3 veces» por tres reglas, porque lo
+viejo **medía el temblor dentro de un episodio** y lo que mueve al original son
+**los episodios**:
+
+1. **el suelo es el máximo ENTRE ráfagas separadas**, no dentro de una. Una
+   ráfaga = 3 cargas seguidas; hacen falta **≥3 ráfagas, ≥2h de separación, ≥2
+   días distintos**;
+2. **una ráfaga limpia se reporta como «no se observó ruido en este episodio»**,
+   nunca como «el suelo es 0»;
+3. **el alcance se declara siempre**: qué rutas y qué anchos entraron.
+
+`ruido.mjs` lo implementa con `CAMPANA=<nombre>`: cada ráfaga se congela en su
+propio fichero con sello de tiempo bajo `medidas/campana/<nombre>/`, y la sonda
+lee todas y dice si la campaña está cerrada. Un fichero por ráfaga porque cada
+una es un dato independiente que hay que poder exhibir — y porque una campaña
+que acumulara en un solo fichero pelearía con la guarda de `w()` cada sesión.
+
+### Estado: 1 de 3 ráfagas · faltan 2 y ≥1 día
+
+**Ráfaga 1 — 2026-07-31T03:14Z** (`campana/cqa6/rafaga-2026-07-31T03-14-57.json`):
+
+| combinación | `h1` | posicional |
+|---|---|---|
+| `software@1440` · `edar@1440` · `petroleo@1440` | **±32.28** las tres | 33 |
+| las tres @390 | 0 | 81 · 27 · 27 |
+
+> **Tercera observación independiente del episodio de ±32.28**, y la primera que
+> lo ve en las **tres rutas a la vez** a 1440. Ya no es un fleco de una corrida.
+
+**Lo máximo observado hasta ahora es ±32.28; no es todavía «el suelo»** — la
+campaña está abierta y el máximo solo puede subir. Las tres combinaciones @390
+están a 0, que se lee **«no se observó ruido en estos episodios»**, no «su suelo
+es 0».
+
+### Consecuencia vigente
+
+`/software` da **Δ0 a los dos anchos** tras C-QA2, que es el mejor resultado
+posible, **y no se da por verificado**: un Δ0 leído en una corrida podría ser el
+episodio. Se cierra cuando cierre la campaña.
+
+### Nota suelta, sin perseguir
+
+`software@1440` da **dispersión dimensional de 4862.67 con el nº de filas
+estable**, así que esta vez **no es el artefacto de índices** que se corrigió: es
+una fila que de verdad cambia de alto entre cargas. Anotado; no se persigue en
+esta tanda.
