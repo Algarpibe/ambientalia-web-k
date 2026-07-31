@@ -64,6 +64,15 @@ for (const ancho of [1440, 390]) {
   for (let corrida = 0; corrida < CORRIDAS; corrida++) {
     for (const [nombre, url] of PAGINAS) {
       const clave = `${nombre}@${ancho}`;
+      /**
+       * ⚠ El TIEMPO DE CARGA se congela junto a cada medida (2026-07-31, para
+       * la ráfaga 2 de cqa6). La hipótesis que debe poder contestarse desde el
+       * fichero: el ±32.28 sincronizado correlaciona con la latencia del
+       * original (carga lenta → fuentes/imágenes sin asentar → el `h1` envuelve
+       * distinto). Cubre navegación + settle —todo lo que ve la medida— y se
+       * guarda también en el error: un timeout ES un dato de latencia.
+       */
+      const t0 = Date.now();
       try {
         const { page } = await openPage(browser, url, {
           width: ancho,
@@ -83,10 +92,11 @@ for (const ancho of [1440, 390]) {
             ),
           };
         });
+        m.cargaMs = Date.now() - t0;
         (crudo[clave] ||= []).push(m);
         await page.close();
       } catch (e) {
-        (crudo[clave] ||= []).push({ error: String(e).slice(0, 80) });
+        (crudo[clave] ||= []).push({ error: String(e).slice(0, 80), cargaMs: Date.now() - t0 });
       }
     }
   }
@@ -136,11 +146,15 @@ for (const [clave, corridas] of Object.entries(crudo)) {
     for (let i = 0; i < nFilas; i++) porFila.push(disp(ok.map((c) => c.filas[i])));
     dimMax = porFila.length ? Math.max(...porFila.filter((n) => n !== null)) : null;
   }
+  /** El tiempo de carga de la combinación: min/max entre corridas. La
+   *  correlación latencia↔episodio se lee de aquí y del crudo. */
+  const cargas = corridas.map((c) => c.cargaMs).filter((n) => typeof n === "number");
   resumen[clave] = {
     corridas: ok.length,
     posicional: pos,
     posicionalMax: Math.max(...Object.values(pos).filter((n) => n !== null)),
     dimensionalMax: dimMax,
+    cargaMs: cargas.length ? { min: Math.min(...cargas), max: Math.max(...cargas) } : null,
     /** Por qué no hay dimensional, cuando no lo hay. */
     dimensionalNoMedible: mismasFilas ? null : `el nº de .et_pb_row varía entre corridas (${ok.map((c) => c.filas.length).join("/")}): comparar por índice compararía filas distintas`,
     filas: nFilas,
@@ -234,7 +248,8 @@ console.log(
     "h1".padStart(8) +
     "pie".padStart(9) +
     "POS max".padStart(10) +
-    "DIM max".padStart(10),
+    "DIM max".padStart(10) +
+    "carga".padStart(14),
 );
 for (const [clave, r] of Object.entries(resumen)) {
   if (r.error) {
@@ -248,6 +263,7 @@ for (const [clave, r] of Object.entries(resumen)) {
       String(r.posicional.pie).padStart(9) +
       String(r.posicionalMax).padStart(10) +
       String(r.dimensionalMax ?? "—").padStart(10) +
+      String(r.cargaMs ? `${(r.cargaMs.min / 1000).toFixed(1)}–${(r.cargaMs.max / 1000).toFixed(1)}s` : "—").padStart(14) +
       (r.mismoNumeroDeFilas ? "" : "   ⚠ nº de filas VARIABLE: dimensional no medible"),
   );
 }

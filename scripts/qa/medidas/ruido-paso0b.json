@@ -1,0 +1,36 @@
+{
+  "kunak-api@1440": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "cargaMs": {
+      "min": 7715,
+      "max": 7981
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  },
+  "kunak-api@390": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "cargaMs": {
+      "min": 7267,
+      "max": 7517
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true
+  }
+}

@@ -604,6 +604,18 @@ Lo caza gratis el linter —`'charsCenso' is declared but its value is never
 read`— y lo caza siempre el test en negativo. Lo que no lo caza nunca es leer el
 comentario.
 
+**Y su hermana, pagada con T7 (2026-07-31): MENCIONADO NO ES DOCUMENTADO.**
+
+> **Un hallazgo citado en un informe de sesión no existe hasta que está en su
+> documento.** T7 —la reescritura de enlaces internos del cuerpo rico al
+> importar— nació en la sesión de C-3 y vivió solo en su informe; el registro
+> (`ESQUEMA-CMS.md` §3.2) decía T1–T6, y una tanda posterior llegó a
+> **«corregir» un plan que citaba T1-T7**, comprobando contra el registro.
+> **Comprobar el destino no distingue «nunca existió» de «no se escribió»**:
+> la comprobación da exactamente lo mismo en los dos casos. Lo que se decide
+> en una sesión se escribe en su documento EN esa sesión, o la siguiente lo
+> desharía con toda la razón aparente del mundo.
+
 **Su corolario, que se pagó en la misma tanda:**
 
 > **Cada arreglo de una sonda vuelve a correr el test en negativo, entero.**

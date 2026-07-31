@@ -160,12 +160,14 @@
 > **Y la ráfaga 2 anota EL TIEMPO DE CARGA junto a cada medida.** Hipótesis a
 > confirmar o descartar: el ±32.28 sincronizado **correlaciona con la latencia
 > del original** (cargas lentas → fuentes/imágenes sin asentar → el `h1`
-> envuelve distinto). Coste cero y puede dar el mecanismo. El episodio de
-> latencia existe: la noche del 2026-07-31 el original dio cargas de >120 s
-> (documentado en `c-banda-1440-2026-07-31-2.json`). ⚠ `ruido.mjs` **no
-> congela tiempos hoy**: anotarlos a mano junto a la ráfaga, o añadirlos a la
-> sonda ANTES de correrla — y ese cambio re-corre el test en negativo entero,
-> como manda la regla 3.
+> envuelve distinto). El episodio de latencia existe: la noche del 2026-07-31
+> el original dio cargas de >120 s (documentado en
+> `c-banda-1440-2026-07-31-2.json`). ✅ **`ruido.mjs` ya congela `cargaMs`
+> junto a cada medida** (2026-07-31, editada ANTES de la ráfaga 2, con
+> `qa:lib` 26/26 y corrida instrumental congelada en
+> `medidas/ruido{,-crudo}-paso0b.json` — cargas de 7.3–8.0 s esa corrida, y
+> el timeout también se cronometra: un error trae su latencia). Las ráfagas
+> 2 y 3 no necesitan nada a mano.
 >
 > ⚠ **Hasta cerrarla, `/software` NO se da por verificado** aunque dé Δ0 a los
 > dos anchos: un Δ0 leído en una corrida puede ser el episodio y no el arreglo.
