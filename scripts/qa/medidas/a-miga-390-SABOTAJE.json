@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-07-31",
+    "sabotaje": true
+  },
+  "pares": {
+    "blog CON relacionados": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "blog SIN relacionados": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "termino": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "doc-cientifico": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    }
+  }
+}

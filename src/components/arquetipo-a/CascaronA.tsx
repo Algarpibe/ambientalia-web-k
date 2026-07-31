@@ -69,7 +69,7 @@ export function MigasA({ migas }: { migas: { label: string; href?: string }[] })
   return (
     <section className="w-full bg-white">
       <FilaA className="py-[12px]">
-        <div className="text-[12px] font-semibold leading-[26px] tracking-[0.3px] text-[#0075C9]">
+        <div className="kunak-breadcrumbs text-[12px] font-semibold leading-[26px] tracking-[0.3px] text-[#0075C9]">
           {migas.map((m, i) => (
             <span key={`${m.label}-${i}`}>
               {i > 0 && <span className="mx-[6px]">›</span>}
