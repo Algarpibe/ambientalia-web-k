@@ -66,7 +66,11 @@ export function HeroProducto() {
               style={{ width: 60, height: 22 }}
             />
 
-            <p style={{ fontSize: 50, lineHeight: "60px", fontWeight: 800, color: "#333" }}>
+            {/* 35px/42 en ≤767 (C-QA7): la regla móvil del kicker, la misma de
+                HeroApi/HeroSoftware/accesorios. Con 50px fijo (estilo inline,
+                no responsive) «Kunak AIR Pro» envolvía a 2 líneas a 390:
+                120 de alto donde el original mide 42 — el +78 entero. */}
+            <p className="text-[35px] font-extrabold leading-[42px] text-[#333] md:text-[50px] md:leading-[60px]">
               Kunak AIR Pro
             </p>
             <h1

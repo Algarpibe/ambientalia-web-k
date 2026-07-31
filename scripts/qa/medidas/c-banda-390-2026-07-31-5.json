@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-07-31",
+    "rutas": 1
+  },
+  "paginas": {
+    "/monitor-calidad-aire": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 136.58,
+          "y": 0,
+          "position": "relative",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 136.58,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "id": null,
+          "alto": 33,
+          "y": 308.58,
+          "position": "static",
+          "txt": "Monitor de calidad del aire",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 23539.33,
+          "y": 136.58,
+          "position": "static",
+          "txt": "InicioProductosAIR Pro Kunak AIR Pro Monitor d",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 21174.94,
+              "y": 136.58,
+              "position": "static",
+              "txt": "InicioProductosAIR Pro Kunak AIR Pro Monitor d"
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 2364.39,
+              "y": 21311.52,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 172,
+        "ancla": {
+          "tag": "h1",
+          "y": 308.58,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire",
+          "esH1": true,
+          "dentroDelCuerpo": 172
+        },
+        "yCuerpo": 136.58,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 136.58,
+            "padreAlto": 23539.33,
+            "hijo": "div.—",
+            "hijoY": 136.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 136.58,
+            "padreAlto": 21174.94,
+            "hijo": "article.post-768",
+            "hijoY": 136.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.post-768",
+            "padreY": 136.58,
+            "padreAlto": 21132.94,
+            "hijo": "div.entry-content",
+            "hijoY": 136.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.entry-content",
+            "padreY": 136.58,
+            "padreAlto": 21132.94,
+            "hijo": "div.et-l",
+            "hijoY": 136.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et-l",
+            "padreY": 136.58,
+            "padreAlto": 21132.94,
+            "hijo": "div.et_builder_inner_content",
+            "hijoY": 136.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_builder_inner_content",
+            "padreY": 136.58,
+            "padreAlto": 21132.94,
+            "hijo": "div.et_pb_section",
+            "hijoY": 186.58,
+            "sangria": 50,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_section et_pb_section_0 et_section_regular",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioProductosAIR Pro"
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_section",
+            "padreY": 186.58,
+            "padreAlto": 6582.47,
+            "hijo": "div.et_pb_row",
+            "hijoY": 236.58,
+            "sangria": 50,
+            "pt": "50px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_row",
+            "padreY": 236.58,
+            "padreAlto": 1387.88,
+            "hijo": "div.et_pb_column",
+            "hijoY": 266.58,
+            "sangria": 30,
+            "pt": "30px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_column",
+            "padreY": 266.58,
+            "padreAlto": 907.09,
+            "hijo": "div.et_pb_module",
+            "hijoY": 266.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_module et_pb_image et_pb_image_0",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_module",
+            "padreY": 266.58,
+            "padreAlto": 81.23,
+            "hijo": "div.et_pb_text_inner",
+            "hijoY": 266.58,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_text_inner",
+            "padreY": 266.58,
+            "padreAlto": 75,
+            "hijo": "h1.—",
+            "hijoY": 308.58,
+            "sangria": 42,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "",
+                "alto": 42,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak AIR Pro"
+              }
+            ]
+          }
+        ],
+        "migas": null,
+        "docH": 23676
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 126,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 126,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "pb-[10px]",
+          "id": null,
+          "alto": 33,
+          "y": 308.58,
+          "position": "static",
+          "txt": "Monitor de calidad del aire",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 19721.83,
+          "y": 0,
+          "position": "static",
+          "txt": "Inicio/Productos/AIR ProKunak AIR ProMonitor d",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banda-cabecera-lg w-full bg-cover",
+              "id": null,
+              "alto": 136.58,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 50,
+              "y": 136.58,
+              "position": "static",
+              "txt": "Inicio/Productos/AIR Pro"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-white bg-no-repeat",
+              "id": null,
+              "alto": 1371.88,
+              "y": 186.58,
+              "position": "relative",
+              "txt": "Kunak AIR ProMonitor de calidad del aireMonito"
+            },
+            {
+              "tag": "section",
+              "clase": "bg-white pb-[50px] lg:pb-[4vw]",
+              "id": null,
+              "alto": 4784.89,
+              "y": 1558.45,
+              "position": "static",
+              "txt": "Información del productoDescargar ficha técnic"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 308.58,
+        "ancla": {
+          "tag": "h1",
+          "y": 308.58,
+          "alto": 33,
+          "txt": "Monitor de calidad del aire",
+          "esH1": true,
+          "dentroDelCuerpo": 308.58
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 19721.83,
+            "hijo": "section.relative",
+            "hijoY": 186.58,
+            "sangria": 186.58,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "section",
+                "clase": "banda-cabecera-lg w-full bg-cover bg-center ",
+                "alto": 136.58,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Inicio/Productos/AIR Pro"
+              }
+            ]
+          },
+          {
+            "padre": "section.relative",
+            "padreY": 186.58,
+            "padreAlto": 1371.88,
+            "hijo": "div.mx-auto",
+            "hijoY": 236.58,
+            "sangria": 50,
+            "pt": "50px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.mx-auto",
+            "padreY": 236.58,
+            "padreAlto": 1321.88,
+            "hijo": "div.relative",
+            "hijoY": 266.58,
+            "sangria": 30,
+            "pt": "30px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.relative",
+            "padreY": 266.58,
+            "padreAlto": 860.38,
+            "hijo": "h1.pb-[10px]",
+            "hijoY": 308.58,
+            "sangria": 42,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "img",
+                "clase": "pointer-events-none absolute -left-[65px] -top-[30px] z-[-1]",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "p",
+                "clase": "text-[35px] font-extrabold leading-[42px] text-[#333] md:text-[50px] m",
+                "alto": 42,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak AIR Pro"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 50,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 26,
+            "ancho": 312,
+            "fontSize": "12px",
+            "lineHeight": "26px",
+            "fontWeight": "400",
+            "letterSpacing": "normal"
+          },
+          "fila": {
+            "ancho": 312,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 21776
+      }
+    }
+  }
+}
