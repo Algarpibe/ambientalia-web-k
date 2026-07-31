@@ -650,6 +650,29 @@ absorba.
 selector no case en una página concreta es legítimo —la FAQ no tiene migas y el
 caso sí—. Lo que no puede pasar es que no case en ninguna.
 
+**Y su COMPLEMENTARIO, que cuesta lo mismo y se ve menos (2026-07-31):**
+
+> **Un patrón que casa en TODAS tampoco mide nada — y encima parece un dato.**
+> La regla de arriba protege del cero; ésta, del pleno. Si el trabajo de un
+> selector es **discriminar**, casar en el 100 % no es «esta propiedad la tienen
+> todas»: casi siempre es que está mirando otra cosa.
+
+Medido en el recon de listados: `post_content` daba **«sí» en las 35** porque
+buscaba `et_pb_post_content` en el HTML entero y lo encontraba **dentro de
+`<style>`** — el CSS de Divi nombra sus propias clases. Un cero habría saltado
+por la regla 4; el pleno no saltaba por ninguna. **Lo delató que contradecía una
+medida buena anterior** (`RECON-LISTADOS.md` midió ese módulo sobre el DOM y dio
+«no» en archivo de taxonomía), que es un control que no siempre se tiene.
+
+De donde las dos mitades operativas:
+
+1. **El markup se busca sobre el HTML sin `<style>` ni `<script>`.** Ahí viven
+   los selectores que se hacen pasar por marcado.
+2. **Todo patrón discriminante declara su máximo**, y superarlo cierra el código
+   de salida igual que un patrón muerto. Implementado en `lh-censo.mjs`, cuyo
+   test en negativo cubre **las dos guardas en una corrida**: un selector
+   inventado (→ MUERTO) y un máximo a 0 (→ UBICUO).
+
 Está resuelto en el sitio común, no sonda a sonda: **`Censo` en
 `scripts/qa/lib.mjs`**. Inyecta `__q`/`__qa` en la página, cuenta cuántos nodos
 casó cada selector sumando todas las páginas, y `censo.informe()` devuelve el nº

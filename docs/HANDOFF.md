@@ -1,4 +1,77 @@
-# HANDOFF — C-QA7 cerrado; quedan la CAMPAÑA (2 ráfagas), la home y C-QA5
+# HANDOFF — recon de listados+hubs hecho; quedan la CAMPAÑA, la home y C-QA5
+
+> ⚠ **Tanda 2026-07-31 (3.ª del día) — RECON LISTADOS + HUBS.** Acta completa
+> en **`docs/research/listados-hubs/PAGE_TOPOLOGY.md`**. Solo datos: cero
+> construcción y cero decisiones de modelado (van a su tanda, y las preguntas
+> están escritas sin contestar en su §9).
+>
+> ## Lo que contestó
+>
+> **Las 35 no son un arquetipo: son CINCO formas**, y el reparto lo dio el
+> **régimen del `<body>` servido**, mirado antes que nada:
+>
+> | forma | pág. | qué es |
+> |---|---|---|
+> | **L1** ARCHIVO PLANTILLADO | **23** | `tb_body` de 2 secciones — **6 secciones y 2 `tb_body` en las 23, sin una excepción** |
+> | **L2** ARCHIVO DE CPT (tema) | 2 | `glosario` · `preguntas-frecuentes`, 4 secciones |
+> | **L3** ARCHIVO DE TAXONOMÍA (tema) | 3 | los `scientific-category/*`, 5 secciones |
+> | **L4** HUB DE BUILDER | 6 | compuestos por instancia (6·7·8·6·7·6) |
+> | **L5** HUB CON PLANTILLA PHP | 1 | `casos-de-exito`: lista **las 57 sin paginar** |
+>
+> **Tres correcciones a lo que el censo anterior daba por sabido:** «hub» era
+> una etiqueta, no un régimen (3 de los 12 son archivos de término); los 3
+> `scientific-category` **no son del grupo B** (otro régimen); y **PL-F3 se
+> disparó** — `/es/recursos/` es builder **con listado dentro**.
+>
+> **Paginación (nadie la había mirado):** patrón **`/page/N/`**, 21 de 35
+> paginan, **107 rutas extra** (total 142). La ventana de `paginate_links` decía
+> 56 — **subestimaba en 51**, porque imprime `1 2 3 … 8` y no la lista. Y **7
+> páginas NO paginan aunque devuelvan 200 a cualquier N**: su canonical apunta a
+> la primera. Va al **ESQUEMA §4b**, con el nº de entradas por página (9·15·5·3)
+> anotado como **campo**.
+>
+> **Estado del clon frente a los 35:** **ninguno de los 12 hubs existe**
+> (verificado contra el `prerender-manifest`). **25 href** del clon apuntan a 8
+> de ellos y **pasarán a ser fallo de `qa:enlaces` solos** al emitir el primero.
+> **Solo `/productos` y `/sectores` son construibles hoy**; **26 de 35 dependen
+> del grupo A**, sin construir.
+>
+> ## ⚠ Lo que hay que saber antes de fiarse de estos números
+>
+> **La sonda llegó con CUATRO defectos y los cuatro daban cifras plausibles.**
+> Están contados uno a uno en el §6 del acta. El cuarto es el que más enseña:
+> `lh-paginas` **imprimía «⚠ TOPE» y sumaba el número igual** —la regla 1 rota
+> dentro de mi propio informe, como le pasó a `ruido.mjs`— e inventaba **441
+> rutas** que no existen.
+>
+> De ahí una **guarda nueva en `CLAUDE.md`, hermana de la regla 4**: *un patrón
+> que casa en TODAS tampoco mide nada*. `max` por patrón discriminante, markup
+> buscado sin `<style>`, y **test en negativo que cubre las dos guardas en una
+> corrida**.
+>
+> ## Sondas nuevas
+>
+> ```bash
+> npm run qa:lh                 # censo 35/35 (MODO=rutas|regimen|censo)
+> npm run qa:lh-paginas         # el final real de cada paginación, por 404
+> SABOTAJE=1 npm run qa:lh      # test en negativo: MUERTO + UBICUO, exit 2
+> ```
+>
+> Congeladas en `medidas/lh-{regimen,censo,paginas}.json`, con las defectuosas
+> conservadas bajo `…-SONDA-DEFECTUOSA-*` / `…-SONDA-CONTABA-EL-TOPE`.
+>
+> ## Sigue abierto, sin cambios
+>
+> **C-QA6** (campaña de ruido: 1 de 3 ráfagas; `ruido.mjs` ya congela `cargaMs`)
+> · **C-QA3** (la home) · **C-QA5** · y la **Fase 2** con sus dos precondiciones
+> (`docs/PLAN-FASE-2.md`). El recon de hoy **avanza la primera**: la biblioteca
+> está más cerca de cerrada, pero **falta la cola larga** (empresa, legales,
+> contacto, soporte, landings) y **el grupo A sin construir bloquea 26 de estos
+> 35**.
+>
+> ---
+>
+# (bloque anterior) HANDOFF — C-QA7 cerrado; quedan la CAMPAÑA (2 ráfagas), la home y C-QA5
 
 > ⚠ **Tanda corta 2026-07-31, después del cierre de abajo — HAY PLAN DE FASE 2:**
 > **`docs/PLAN-FASE-2.md`**, las cinco fases de la migración a Payload
