@@ -197,3 +197,35 @@ Ficha en `PENDIENTES-QA.md`.
    un segmento casa con `/[slug]` y la regla dispara sobre enlaces verificados
    desde hace meses. La guarda que importa aquí es `qa:enlaces`, que compara
    contra las rutas que emite el build.
+
+## 8 · ⚠ El corpus NO es byte-estable entre cargas — hallazgo de la limpieza
+
+Salió al comparar dos congelaciones de `a-spec` del **mismo día**: **misma
+longitud, contenido distinto** en 4 de las 14 instancias.
+
+```
+… <script type="f1647b948470883fc1a5f3e3-text/javascript">   ← carga 1
+… <script type="8211bb7fddbaf4eb525ec1ce-text/javascript">   ← carga 2
+```
+
+Es **Rocket Loader de Cloudflare**, que reescribe `type="text/javascript"`
+poniéndole delante un token de 24 hex **distinto en cada petición**, para
+aplazar la ejecución. **5 ocurrencias en 4 de las 14 páginas** — las que llevan
+`<script>` dentro del cuerpo.
+
+**Tres consecuencias, y ninguna es cosmética:**
+
+1. **`ESQUEMA-CMS.md` §3.3 no cambia** —«`script` no entra», los 17 acaban en
+   nodo-embed tipado o en eliminación documentada— pero gana un argumento que no
+   tenía: ese `type` **no lo escribió nadie**, lo inyecta el CDN. Migrarlo
+   verbatim sería importar como contenido un artefacto de la capa de entrega.
+2. **El extractor de F2-2 tiene que normalizarlo**, o dos corridas de import no
+   diffearán limpio nunca y cada re-import marcará 4 páginas como cambiadas sin
+   que haya cambiado nada. Es ruido que se propaga al historial del CMS.
+3. **`CLAUDE.md` §«el original no es un objetivo de medición estable» vale
+   también para el CONTENIDO**, no solo para la geometría. La regla se escribió
+   para alturas; esto es la misma clase de problema un nivel más abajo, y la
+   detectó **congelar dos veces y comparar** — que es exactamente para lo que
+   sirve la guarda de `w()`.
+
+Evidencia conservada: `medidas/a-spec-SEGUNDA-CARGA-token-cloudflare.json`.
