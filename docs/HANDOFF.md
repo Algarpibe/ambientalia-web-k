@@ -1,4 +1,38 @@
-# HANDOFF — recon de listados+hubs hecho; quedan la CAMPAÑA, la home y C-QA5
+# HANDOFF — LH-2 decidido: los listados ya tienen modelo; quedan la CAMPAÑA, la home y C-QA5
+
+> ⚠ **Tanda LH-2, 2026-07-31 (4.ª del día) — DECISIONES DE MODELADO de
+> listados y hubs.** Actas: **`listados-hubs/DECISIONES.md`** (D1–D5, con
+> reaperturas) y **`MODELO.md`** (content types con defaults); el ESQUEMA gana
+> **§2c** (colecciones de términos + contrato del grupo A) y **§4b corregido**.
+> Nada construido.
+>
+> - **D1**: las 35 cuestan **2 arquetipos nuevos (quizá 3)** — LISTADO-B (23,
+>   una plantilla, tres variantes de tarjeta) y LISTADO-TEMA (L2/L3 separados
+>   con reapertura) — más una **página índice** (`casos-de-exito`, sin paginar,
+>   sobre la colección `casos`) y **cero arquetipos por los 6 hubs de builder**.
+> - **D2**: `/page/N/` plantilla; **`entradasPorPagina` es parámetro de
+>   plantilla por variante (9·15·5), NO campo** — ⚠ corrige la nota que el
+>   recon dejó en §4b con la lente del builder. Rutas derivadas en build; los
+>   7 con 200-para-todo sirven 404 (desviación deliberada, a PENDIENTES al
+>   construir); re-correr `qa:lh-paginas` el día que se emita.
+> - **D3 — la que condiciona el grupo A**: sus entradas nacen con
+>   `fechaPublicacion`, `imagenDestacada` (sizes 1080×675·1024×683·980·480),
+>   `extracto` derivado por defecto y **TRES taxonomías**
+>   (`category`+`post_tag`+`resources`) — y **sin `autor`** (0/9 formas lo
+>   piden). Evidencia nueva: **`qa:lh-tarjetas`** (lectura fina, 9 formas,
+>   congelada). `BlogPost`/`CaseStudy` (S1) = proyección canónica verificada.
+> - **D5**: 7 de las 8 preguntas contestadas; la 8.ª (orden de resolución de
+>   la raíz) es CMS-2 y se decide en F2-1. **LH-SP5 decidido: hace falta una
+>   pasada de COMPORTAMIENTO antes de construir L1** (hover · AJAX · lazy ·
+>   orden entre cargas) — pre-registrada como P-LH-C6.
+> - **Pre-registro de construcción P-LH-C1…C6** al final de DECISIONES.md.
+> - ⚠ **Hallazgo fuera de alcance: `/es/categoria/*` existe** (200, archivo,
+>   fuera de sitemap) — familia **SIN CENSAR (LH-SP8)**; los 35 no eran el
+>   universo. Y quedan LH-SP9 (por-página de L3) y LH-SP10 (¿extracto manual?).
+>
+> ---
+>
+# (bloque anterior) HANDOFF — recon de listados+hubs hecho; quedan la CAMPAÑA, la home y C-QA5
 
 > ⚠ **Tanda 2026-07-31 (3.ª del día) — RECON LISTADOS + HUBS.** Acta completa
 > en **`docs/research/listados-hubs/PAGE_TOPOLOGY.md`**. Solo datos: cero

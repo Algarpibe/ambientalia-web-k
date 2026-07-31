@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "fecha": "2026-07-31",
+    "sabotaje": true,
+    "paginas": 9
+  },
+  "paginas": {
+    "/es/blog/": {
+      "forma": "L1-blog",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "forma": "L1-etiqueta",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "forma": "L1-resources-hijo",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/recursos/seminarios-web/": {
+      "forma": "L1-resources-padre",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/glosario/": {
+      "forma": "L2-glosario",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/preguntas-frecuentes/": {
+      "forma": "L2-faqs",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "forma": "L3-sci",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/recursos/": {
+      "forma": "L4-listado-embebido",
+      "nTarjetas": 0,
+      "tarjetas": []
+    },
+    "/es/casos-de-exito/": {
+      "forma": "L5-casos",
+      "nTarjetas": 0,
+      "tarjetas": []
+    }
+  },
+  "categoriaArticulos": {
+    "status": 200,
+    "esArchivo": true
+  }
+}

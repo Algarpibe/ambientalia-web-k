@@ -537,6 +537,41 @@ con el nodo-embed del §3.3b.
 
 ---
 
+## 2c · Los listados y hubs — decidido en LH-2 (2026-07-31)
+
+Actas en `docs/research/listados-hubs/DECISIONES.md` y `MODELO.md`; evidencia
+congelada en `medidas/lh-{regimen,censo,paginas,tarjetas}.json`. Lo que entra
+al esquema:
+
+**Colecciones nuevas — términos de taxonomía** (un listado no es un content
+type: es una consulta; el contenido son los términos):
+
+| colección | fuente | docs | campos |
+|---|---|---|---|
+| `etiquetas` | `post_tag` | 12 | `nombre` · `slug` |
+| `categoriasRecursos` | `resources`, **jerárquica** | 10 (2 padres + 8 hijas) | `nombre` · `slug` · `padre?` |
+| `categoriasCientificas` | `scientific-category` | 3 | `nombre` · `slug` |
+| `categorias` | `category` | **SIN CENSAR** (LH-SP8: viva y fuera de sitemap) | se censa antes de modelar |
+
+**El contrato de nacimiento del grupo A** (D3 — lo caro de re-migrar si
+falta): `fechaPublicacion` · `imagenDestacada` opcional con sizes
+**1080×675 · 1024×683 · 980 · 480** (amarra CMS-0b/M-IMG) · `extracto`
+opcional con **derivación por defecto** (~267c del arranque + «…»; LH-SP10
+decide si alguno es manual) · **relaciones a las TRES taxonomías** · y **sin
+`autor`**: no lo exige ningún listado (0/9 formas, 0 URLs de author en `/es`).
+
+**Arquetipos**: LISTADO-B (23 instancias, **una plantilla con tres variantes
+de tarjeta** — config uniforme al 100 % dentro de cada familia) ·
+LISTADO-TEMA-CPT (2) · LISTADO-TEMA-TAX (3, separado **con reapertura
+escrita**). Los 6 hubs de builder **no estrenan arquetipo** (cola larga /
+hipótesis grupo D), y `/es/casos-de-exito/` es una **página índice** sobre la
+colección `casos`: lista las 57, ambos prefijos, **sin paginar** (fidelidad).
+
+**La proyección de teaser pertenece al content type** y los listados la
+consumen: `BlogPost`/`CaseStudy` (S1) quedan **verificadas contra 9 formas**
+(`lh-tarjetas`). El listado embebido en páginas de builder es un **bloque de
+consulta** que el clon ya tiene (`UltimosArticulos`, h3 medido).
+
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
 
 **Son DOS listas distintas y conviene no mezclarlas:** lo que el editor permite
@@ -771,13 +806,34 @@ Tres consecuencias para este §:
    se replica** — son 1 ruta cada una. Contarlas por su HTTP 200 habría metido
    **441 rutas inexistentes** en este cálculo.
 
-**Y un campo que el recon deja medido, sin modelar:** el **número de entradas
-por página no es constante entre familias** — 9 (blog y etiquetas) · 15
-(`recursos/articulos`) · 5 (glosario y FAQ) · 3 (seminarios web). Por el test B
-de `CLAUDE.md` eso es **campo del listado**, no plantilla. Se anota aquí para
-que el content type de LISTADO nazca con él; **la decisión de si los 23
-archivos son uno o tres content types es de la fase de decisión**, no de este
-registro.
+~~**Y un campo que el recon deja medido, sin modelar:** el número de entradas
+por página no es constante entre familias — por el test B eso es campo del
+listado.~~
+
+> ⚠ **CORREGIDO en LH-2 (2026-07-31), y la corrección es de LENTE, no de
+> dato.** El párrafo tachado aplicó el test B con la lectura del régimen
+> BUILDER a páginas PLANTILLADAS — exactamente el error contra el que avisa
+> `CLAUDE.md` §régimen. Con la lente correcta: dentro de cada familia la
+> varianza es **cero** (todas las etiquetas a 9; los resources a 15; los dos
+> L2 a 5), y varianza cero entre instancias = **plantilla**. Lo que varía
+> **entre** familias distingue plantillas (las tres variantes de LISTADO-B),
+> no campos. El «3» de seminarios-web no era config sino contenido (solo hay
+> 3 seminarios).
+>
+> **`entradasPorPagina` es PARÁMETRO DE PLANTILLA por variante: 9
+> (blog/etiqueta) · 15 (resources) · 5 (L2) · L3 SIN PROBAR (LH-SP9).**
+
+**Y las decisiones de D2 (LH-2) que este § hereda:**
+
+1. las rutas `/page/N/` se **derivan en build** (`⌈entradas/porPagina⌉`), no se
+   almacenan; con `dynamicParams = false` se emiten todas y la guarda de (3)
+   las cubre sola. Publicar o despublicar una entrada **puede crear o destruir
+   rutas** — el rebuild por webhook lo absorbe por construcción;
+2. los **7 que responden 200 a cualquier N no se replican**: el clon sirve 404
+   (su canonical ya los declara no-rutas). Desviación deliberada → a
+   `PENDIENTES-QA.md` en la tanda que construya;
+3. el 107/142 es **una foto del 2026-07-31**: la tanda que construya re-corre
+   `qa:lh-paginas` ese día y verifica contra esa corrida (P-LH-C3).
 
 **Traducción a Payload de (2):** la unicidad **entre** colecciones no es nativa.
 Un hook `beforeValidate` que consulte las demás familias planas (o una

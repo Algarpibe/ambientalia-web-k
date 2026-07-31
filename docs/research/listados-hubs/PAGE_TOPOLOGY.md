@@ -305,19 +305,65 @@ De ahí el reparto operativo, que es el dato útil de este paso:
 sin construir. Es la respuesta concreta a «qué hubs no pueden construirse hasta
 que exista su detalle».
 
+## 7b · LECTURA FINA DE TARJETAS (añadido en LH-2, 2026-07-31)
+
+> Sonda `scripts/qa/lh-tarjetas.mjs` (`npm run qa:lh-tarjetas`), congelada en
+> `medidas/lh-tarjetas.json`. Una página por forma (9), primeras 3 tarjetas,
+> campos del HTML servido sin `<style>`/`<script>`. **Cierra la mitad «campos
+> por tarjeta» de LH-SP1**; el esqueleto sección a sección sigue pendiente.
+
+**Los campos por familia, y su uniformidad — cruzada con el censo 35/35:**
+
+| familia | imagen | título | fecha | categoría | extracto | uniformidad |
+|---|---|---|---|---|---|---|
+| **L1-etiqueta** | 1080×675 + srcset 980/480 | h2 | `.published` («May 25, 2026») | enlace a `/es/categoria/*` | **~267c terminando en «…»** — el arranque literal del cuerpo | **fecha en 76/76 tarjetas de las 12 páginas** |
+| **L1-resources** (padre e hijos) | 1024×683 · 1024×631 | h2 | como **texto suelto**, sin `.published` | no | no | **0/79 con `.published` en las 10 páginas** |
+| **L1-blog** | 1024×683 (t0 sin imagen) | h2 | no | enlace a `/es/categoria/noticias/` | no | 0/9 |
+| **L2** (glosario · faqs) | no | h2 | no | no | no | 5+5 tarjetas solo-título |
+| **L3-sci** | no | **otro markup** (sin `entry-title`) | no | enlace a su `scientific-category` | no | — |
+| **L4 listado embebido** | 1024×683 | **h3** (baja un nivel dentro de página) | texto suelto | no | no | — |
+| **L5-casos** | `background-image` (no `<img>` — el markup de `CaseStudy`/S1) | otro markup | no | no | no | 57 tarjetas |
+
+Tres lecturas:
+
+1. **Mismo esqueleto (6/2), TRES configuraciones de tarjeta** — y cada una
+   uniforme en el 100 % de sus instancias. En régimen plantillado eso se lee:
+   varianza cero dentro de la familia = **plantilla (de la variante)**;
+   varianza entre familias = **distingue plantillas, no campos**.
+2. **El extracto de etiqueta es el arranque del cuerpo recortado** (~267c,
+   termina en «…», arranca idéntico al primer párrafo del post): compatible
+   con auto-excerpt, no con texto editorial. SIN PROBAR si existe alguno
+   manual (LH-SP10).
+3. **La huella de taxonomías vive en las clases del `<article>`**: las
+   entradas llevan `category-*` + `tag-*` + `resources-*` (tres taxonomías), y
+   **los casos de éxito llevan `tag-*` también** (cov · h2s-es · malos-olores)
+   — aunque ningún archivo de etiqueta medido lista casos (las 12 listan solo
+   `type-post`).
+
+### ⚠ Y un hallazgo fuera del alcance declarado: `/es/categoria/*` EXISTE
+
+La meta de las tarjetas enlaza a `/es/categoria/articulos/` y
+`/es/categoria/noticias/`; comprobado: **HTTP 200 y con clase `archive`**. Es
+una **familia de archivos viva que no está en ningún sub-sitemap** (Yoast la
+omite — presumiblemente `noindex`, como los legales). El alcance del recon eran
+las 35 del censo; esta familia queda **descubierta y SIN CENSAR** (LH-SP8).
+
 ## 8 · SIN PROBAR — lo que esta tanda NO midió
 
 Explícito, para que nadie lo dé por medido:
 
 | # | qué | por qué importa |
 |---|---|---|
-| **LH-SP1** | **La lectura fina de la muestra adversaria** (13 páginas, semilla 1440) — esqueleto sección a sección y campos por tarjeta | es lo que haría firme el «L1 es UNA plantilla». Hoy L1 está medido al **primer nivel de secciones** en 23/23, que es fuerte pero no es lo mismo |
+| **LH-SP1** | ~~La lectura fina de la muestra adversaria~~ → **la mitad «campos por tarjeta» quedó cerrada en §7b (LH-2)**; el **esqueleto sección a sección** de la muestra sigue sin leer | es lo que haría firme el «L1 es UNA plantilla». Hoy L1 está medido al **primer nivel de secciones** en 23/23 + la config de tarjeta por familia |
 | **LH-SP2** | **La geometría**: ni un píxel medido en esta tanda | el recon es de topología. Cuando se construya, hará falta el pase de `qa:banda`/`clon-base` como en los demás arquetipos |
 | **LH-SP3** | **Qué ordena cada listado** y si el orden es estable entre cargas | si sortea como «Artículos y Guías» (P4), las tarjetas no son comparables px a px |
 | **LH-SP4** | **La cola comercial** de cada forma (qué hay entre el listado y el pie) | el censo cuenta secciones, no las identifica una a una |
 | **LH-SP5** | **Comportamiento**: filtros, buscador, carga por AJAX | no se abrió navegador. Si algún listado filtra en cliente, no se ha visto |
 | **LH-SP6** | **Los 3 `scientific-category`** salen del sitemap, pero el censo de arquetipos los contaba en el grupo B junto a las etiquetas: **su régimen es otro** (L3) | el recuento «23 archivos de taxonomía = grupo B» del censo anterior **mezcla dos formas** |
 | **LH-SP7** | Si los **7 que ignoran `/page/N/`** hacen lo mismo con otros sufijos | solo se probó `/page/N/` |
+| **LH-SP8** | **La familia `/es/categoria/*`** (§7b): existe, es archivo, y no está en ningún sitemap. Ni censo ni recuento | los 35 de este recon **no son el universo de listados**; antes de dar la biblioteca por cerrada hay que censarla (¿cuántos términos? ¿`noindex`?) |
+| **LH-SP9** | **Entradas por página de L3** (`scientific-category`): primeras páginas 14 · 1 · 8 con 2 · 1 · 2 páginas — no sale un divisor limpio | sin él, el nº de rutas `/page/N/` de L3 no se puede derivar. Medición: contar tarjetas en una `page/2/` |
+| **LH-SP10** | Si algún **extracto** del corpus es manual (lo medido es compatible con auto-excerpt: ~267c = arranque del cuerpo + «…») | decide si `extracto` es campo con contenido que migrar o solo derivación. Medición: comparar extracto de tarjeta contra arranque del cuerpo en N entradas |
 
 **No hay `BEHAVIORS.md` en esta tanda**, y es deliberado: no se abrió navegador,
 así que no hay ni una interacción observada. Escribir el fichero con lo que
