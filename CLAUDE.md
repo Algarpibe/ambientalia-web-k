@@ -636,6 +636,32 @@ primero. Eso es arreglar **la instancia y no la CLASE**, que es exactamente cóm
 se llega a la tercera tanda del mismo bug. La guarda solo cuenta cuando está en
 el sitio por el que escriben todas. Test en negativo: **`npm run qa:lib`**.
 
+**Y su otra mitad, que la guarda NO cubre y hay que hacer a mano:**
+
+> **Congelar y COMMITEAR van en la misma tanda, antes de re-correr nada contra
+> ese fichero.** La guarda de `w()` protege de que **una sonda** pise su salida.
+> De un **borrado manual** —o de un `rm` para «dejar sitio», o de un `git
+> checkout` distraído— no protege nada excepto que el fichero ya esté en git.
+
+Se pagó en la tanda siguiente a escribir la guarda, y **lo hizo quien la había
+escrito**: la ráfaga A de C-QA6 midió `h1 ±32.28` en tres rutas —el episodio que
+justifica toda la corrección del protocolo de ruido— y su salida se borró **a
+mano** para que la ráfaga B, con la sonda ya corregida, escribiera con el nombre
+limpio. Los números sobrevivieron en `PENDIENTES-QA.md`; **el fichero del que
+salieron, no.** O sea que la afirmación mejor pagada de esa tanda es hoy la única
+que no se puede exhibir.
+
+La forma correcta era commitear la ráfaga A **antes** de tocar la sonda, y dejar
+que la guarda mandara la ráfaga B a su fichero fechado. Dos órdenes de git, y
+ninguna se dio.
+
+⚠ **El caso general, porque `rm` no es la única puerta:** cualquier cosa que
+devuelva el árbol a un estado anterior —`git checkout --`, `git reset --hard`,
+descartar cambios en el IDE— **se lleva por delante las medidas no commiteadas**,
+y las medidas son el producto de la sesión tanto como el código. Si acabas de
+medir algo que vas a citar, **commitéalo antes de la siguiente orden que toque el
+árbol.**
+
 ## Comandos
 
 ```bash
