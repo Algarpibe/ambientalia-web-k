@@ -70,6 +70,98 @@ export async function settle(page) {
   await new Promise((r) => setTimeout(r, 800));
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * CENSO DE SELECTORES — la guarda estructural común a TODAS las sondas.
+ *
+ * ── El fallo que la obliga a existir ──────────────────────────────────────
+ * **Un selector que no casa con nada devuelve `null`, y `null` se lee como
+ * «esta propiedad no varía».** Una sonda que no encuentra nada y una que no
+ * mira nada dan la misma salida — la regla de `CLAUDE.md`, por cuarta vez, y
+ * ésta costó **391 px sin dar un solo error**: `c-cascaron` daba
+ * `header·ritmo` y `header·ancho` por ejes limpios con `#main-header`, que en
+ * el original **no existe**. La cabecera nunca se midió y el informe decía
+ * «varianza cero en 131 ejes».
+ *
+ * ── La regla, y por qué el ámbito es «todas las páginas» ──────────────────
+ * Un selector puede casar en unas páginas y no en otras legítimamente: la FAQ
+ * no tiene migas y el caso sí. Eso **no** es un defecto. Lo que no puede pasar
+ * es que un selector no case **en ninguna** de las páginas medidas: eso ya no
+ * es una ausencia, es un selector equivocado.
+ *
+ * > **Un selector que no casa en NINGUNA página medida es un defecto de la
+ * > sonda y sale por error, nunca por cero.**
+ *
+ * ── Cómo se usa ──────────────────────────────────────────────────────────
+ *   const censo = new Censo();
+ *   const { datos } = await censo.medir(page, () => ({
+ *     alto: __q("header.et-l--header")?.getBoundingClientRect().height ?? null,
+ *   }));
+ *   ...
+ *   if (censo.informe()) process.exit(2);   // ← muertos ⇒ código ≠ 0
+ *
+ * Dentro del `evaluate` se usan `__q` / `__qa` en vez de `querySelector(All)`.
+ * Son los mismos, más el apunte de cuántos nodos casaron.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Se inyecta en la página antes de cada medida. */
+const CENSO_JS = `
+  window.__censo = window.__censo || {};
+  window.__q = function (sel, raiz) {
+    const el = (raiz || document).querySelector(sel);
+    window.__censo[sel] = (window.__censo[sel] || 0) + (el ? 1 : 0);
+    return el;
+  };
+  window.__qa = function (sel, raiz) {
+    const els = [...(raiz || document).querySelectorAll(sel)];
+    window.__censo[sel] = (window.__censo[sel] || 0) + els.length;
+    return els;
+  };
+`;
+
+export class Censo {
+  constructor() {
+    /** selector → nº de nodos casados sumando TODAS las páginas medidas */
+    this.total = {};
+    this.paginas = 0;
+  }
+
+  /** Inyecta `__q`/`__qa`, corre `fn` y acumula el censo de esta página. */
+  async medir(page, fn, ...args) {
+    await page.evaluate(CENSO_JS);
+    const datos = await page.evaluate(fn, ...args);
+    const censo = await page.evaluate(() => window.__censo);
+    for (const [sel, n] of Object.entries(censo)) this.total[sel] = (this.total[sel] || 0) + n;
+    this.paginas++;
+    return { datos, censo };
+  }
+
+  /** Selectores que no casaron ni una vez en ninguna página. */
+  muertos() {
+    return Object.entries(this.total).filter(([, n]) => n === 0).map(([s]) => s);
+  }
+
+  /**
+   * Imprime el veredicto y devuelve el nº de selectores muertos. **Lo que
+   * imprime y lo que devuelve es lo mismo**: quien la llama cierra su código de
+   * salida con esto, no con «no encontré diferencias».
+   */
+  informe(etiqueta = "") {
+    const m = this.muertos();
+    const vivos = Object.keys(this.total).length - m.length;
+    if (!m.length) {
+      console.log(`  ✓ censo de selectores${etiqueta ? " " + etiqueta : ""}: ${vivos} vivos, 0 muertos (${this.paginas} páginas)`);
+      return 0;
+    }
+    console.error(
+      `\n❌ ${m.length} SELECTOR(ES) MUERTO(S) — no casaron en NINGUNA de las ${this.paginas} páginas.\n` +
+        `   Eso no es «esta propiedad no varía»: es un selector equivocado, y su\n` +
+        `   \`null\` se estaba leyendo como dato. Arréglalo antes de creerte nada:\n` +
+        m.map((s) => `     · ${s}`).join("\n") + "\n",
+    );
+    return m.length;
+  }
+}
+
 /** Directorio de las sondas. Todo lo relativo se resuelve contra AQUÍ. */
 export const QA = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 

@@ -415,11 +415,11 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
-### Tres reglas sobre las sondas mismas
+### Cuatro reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un
 defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
-E3; la tercera, de auditar el piloto de CMS-0e.
+E3; la tercera, de auditar el piloto de CMS-0e; la cuarta, de C-SP16.
 
 **1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
 
@@ -481,6 +481,34 @@ en el invariante que atacaba —`enlaces`— y rompía otro distinto —`imagene
 test en negativo que solo cubra lo que acabas de tocar no lo habría visto: por eso
 se corre entero, y por eso cada sabotaje tiene que caer **por su propio
 invariante** y no por otro.
+
+**4 · UN SELECTOR QUE NO CASA CON NADA NO ES UN CERO: ES UN DEFECTO.**
+
+> **`querySelector` devuelve `null` cuando el selector está mal exactamente
+> igual que cuando la propiedad no está.** Un `null` se lee como «esta
+> propiedad no varía», así que un selector equivocado **no da error: da
+> varianza cero**. Un selector que no casa en **ninguna** de las páginas
+> medidas sale por **error**, nunca por cero.
+
+Es la tercera regla una vuelta más abajo —*documentado no es conectado* llega
+hasta el `evaluate`; esto pasa dentro de él— y es la cuarta instancia de «una
+sonda que no encuentra nada y una que no mira nada dan la misma salida». Ésta
+costó **391 px sin dar un solo error**: `c-cascaron` daba `header·ritmo` y
+`header·ancho` por ejes limpios usando `#main-header`, que **no existe en el
+original** (es `header.et-l--header`). El informe dijo «varianza cero en 131
+ejes» y la cabecera **no se había medido**; el desfase apareció luego, en QA, y
+solo porque el caso y la FAQ no tienen nada entre la cabecera y el `h1` que lo
+absorba.
+
+**El ámbito importa y es «todas las páginas», no «cada página».** Que un
+selector no case en una página concreta es legítimo —la FAQ no tiene migas y el
+caso sí—. Lo que no puede pasar es que no case en ninguna.
+
+Está resuelto en el sitio común, no sonda a sonda: **`Censo` en
+`scripts/qa/lib.mjs`**. Inyecta `__q`/`__qa` en la página, cuenta cuántos nodos
+casó cada selector sumando todas las páginas, y `censo.informe()` devuelve el nº
+de muertos para que quien la llama **cierre su código de salida con eso**. Las
+sondas usan `__q(sel)` en vez de `document.querySelector(sel)`.
 
 El corolario práctico, en dos mitades — la segunda se aprendió cazando la
 primera:

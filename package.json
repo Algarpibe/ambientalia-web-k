@@ -54,6 +54,7 @@
     "qa:c-cascaron": "node scripts/qa/c-cascaron.mjs",
     "qa:c-spec": "node scripts/qa/c-spec.mjs",
     "qa:c-cmp": "node scripts/qa/c-cmp.mjs",
+    "qa:c-cabecera": "node scripts/qa/c-cabecera.mjs",
     "qa:mono": "node scripts/qa/mono-cmp.mjs",
     "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
     "qa:clon-base": "node scripts/qa/clon-base.mjs",

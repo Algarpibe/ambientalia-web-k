@@ -2039,3 +2039,93 @@ midieron nada. Corregido —la sonda ahora los separa y los dice— y el recuent
 honesto de P-C3-2 baja de **131 a 81 ejes**. La predicción **sigue en pie** con
 los 81; lo que cambia es que **la cabecera no está entre ellos**. No se cablea
 nada apoyándose en ella.
+
+---
+
+## C-QA1 · DIAGNÓSTICO de la cabecera — y son DOS defectos, no uno (2026-07-30)
+
+Sonda `npm run qa:c-cabecera -- <ancho>`, las **17 rutas** contra su original,
+salida congelada en `medidas/c-cabecera-{1440,390}.json`. **Medido antes de
+arreglar nada**, porque el arreglo toca componente compartido en 17 rutas.
+
+### Lo primero: el selector, verificado en los dos lados
+
+`header.et-l--header` — comprobado en el HTML servido del original **y** del
+clon. No se repite el error de C-SP16: la sonda usa el `Censo` de `lib.mjs` y
+**sale con 2 si algún selector no casa en ninguna página**. Corrida limpia:
+`4 vivos, 0 muertos` en 34 páginas.
+
+Y una verificación que el censo **no** da y hacía falta: que el primer `h1` sea
+**el mismo elemento** en los dos lados. Lo es en las 17 (mismo texto), así que
+los Δ son comparables. Un selector que casa en ambos lados pero apunta a cosas
+distintas es el primo hermano de C-SP16, y no lo caza ningún censo.
+
+### (a) La cabecera del original NO es una sola cosa
+
+Su alto **depende de la plantilla**, y está **EN FLUJO en todas menos la home**:
+
+| plantilla | @1440 | @390 |
+|---|---|---|
+| producto · accesorios · software · API | **225** | 136.58 |
+| home *(fuera de flujo)* · **FAQ** | **225** | 165.58 |
+| **caso de éxito** | **387** | 362.91 |
+| sector | 397.61 | 347.25 · 402.64 |
+| monográfico | 433.61 | 419.25 · 383.25 |
+
+**El clon sirve siempre la misma: 203.59 / 126, y siempre FUERA DE FLUJO.**
+
+La causa está clara: **el original mete la banda de título DENTRO de
+`header.et-l--header`** —en sector el `h1` está *dentro de la cabecera*, medido—
+y el clon la descompone en `HeaderNav` (absoluto) + una sección en `main`.
+
+### (b) La respuesta a la pregunta: las 11 antiguas NO están todas a Δ0
+
+Con el `h1` **en crudo**, sin restar la base de lectura:
+
+| ruta | Δ @1440 | Δ @390 |
+|---|---|---|
+| los **6 sectores** | **0** (los 6) | **0** en 5 · **+11.2** en `estudio-de-la-contaminacion-atmosferica` |
+| `/accesorios` | **−19.2** | **+48.42** |
+| `/kunak-api` | **−48** | +0.42 |
+| `/monitor-calidad-aire` | **−48** | **+78.42** |
+| `/software-de-medicion-calidad-del-aire` | **−48** | +0.42 |
+| `/` | +289.91 | +119 — **no concluyente**, ver abajo |
+| las **6 nuevas** del grupo C | **−391.6** caso · **−225** FAQ | −320 a −372 · −165.58 |
+
+> **Los 6 sectores están CORRECTOS, no compensados.** El original mide 397.61 de
+> cabecera con el `h1` dentro; el clon mide 203.59 de `HeaderNav` fuera de flujo
+> **más** `section.cabecera-sectores` de 397.59 en flujo, y el `h1` cae en
+> 261.16 **en los dos**. Es una descomposición fiel con el mismo total, no dos
+> errores anulándose.
+
+> **Pero 4 páginas de producto SÍ tienen un desfase real que nadie había
+> visto**, y **cambia de signo entre anchos** (−19.2 → +48.42 en accesorios;
+> −48 → +78.42 en monitor). Un residuo que cambia de signo entre dos
+> maquetaciones no es ruido: es una medida tapada.
+
+**Por qué llevaba invisible desde el principio:** la regla del `h1` de
+`CLAUDE.md` §Protocolo **resta la base de lectura antes de comparar nada**, así
+que un desfase que está *en* la base se normaliza a cero por construcción. Es la
+instancia más antigua del contenedor con holgura de este proyecto, y el
+contenedor es **el propio protocolo de medición**. La regla sigue siendo
+correcta para leer el CUERPO; lo que faltaba era **alguien que mirara la base en
+crudo alguna vez**.
+
+⚠ **`/` no es concluyente y no se cuenta como defecto todavía**: el `h1` del
+original sale a **y=0 a los dos anchos**, que es la firma de un `h1` dentro de
+una diapositiva posicionada en absoluto. Su Δ no se compara igual que el de un
+`h1` en flujo. Mirarlo aparte antes de tocarlo.
+
+### Consecuencia para el plan: la tanda NO es «cabecera sola»
+
+Son **dos defectos con dos causas distintas**:
+
+| # | qué | dónde |
+|---|---|---|
+| **C-QA1** | el clon **no pone nada** donde el original pone la cabecera en flujo; el caso y la FAQ arrancan **debajo** de una cabecera absoluta | las **6 rutas nuevas** |
+| **C-QA2** *(nuevo)* | el espaciador que compensa la cabecera absoluta **no vale lo que la cabecera del original**, y el error **cambia de signo entre anchos** | **4 páginas de producto** (`/accesorios`, `/kunak-api`, `/monitor-calidad-aire`, `/software-…`) |
+
+Arreglar la cabecera sola **movería las 4 de producto**, que hoy pasan `qa:enlaces`
+y `clon-base` porque nadie compara su base en crudo. Por eso el arreglo va con
+**plan propio y en sesión limpia**, contra la base congelada de las 17
+(`medidas/clon-base-{1440,390}-cqa1-antes.json`, umbral cero).
