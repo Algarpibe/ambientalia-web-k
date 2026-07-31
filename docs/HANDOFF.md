@@ -1,93 +1,109 @@
-# HANDOFF — medido que C-QA2 y C-QA3 son DOS causas; falta aplicarlas
+# HANDOFF — C-QA2 aplicada; quedan C-QA7, la home y una CAMPAÑA con fechas
 
-> ⚠ **Actualización 2026-07-30, cerrando el bloque 3 de la cabecera.** El cuerpo
+> ⚠ **Actualización 2026-07-30, cerrando el bloque 4 de la cabecera.** El cuerpo
 > de este documento (abajo) sigue siendo contexto válido. Esto es lo que cambia.
 >
-> **Este bloque no arregló nada a propósito**: los tres pasos hechos eran
-> estructurales o de medición, y el PASO 3 (los arreglos) queda entero, ya con
-> sus objetivos numéricos escritos.
+> ## Estado del clon, medido al cerrar — 17 rutas × 2 anchos
 >
-> ## Hecho
+> | ancho | a Δ0 | desplazadas |
+> |---|---|---|
+> | **1440** | **15 de 17** | `/` (+289.91) · `/accesorios` (+28.8) |
+> | **390** | **13 de 17** | `/` (+119) · `/accesorios` (+48) · `/monitor` (+78) · `estudio` (+11.2) |
 >
-> - **PASO 0 · la guarda de congelado sube a `w()` de `lib.mjs`**, así que la
->   heredan **todas** las sondas; el parche a mano de `c-cabecera` se ha quitado.
->   No existe → escribe · idéntico → reescribe · **distinto → NO pisa**, va al
->   lado con la fecha y lo dice · `PISAR=1` fuerza. Es la **quinta regla** de
->   `CLAUDE.md` §sondas, con su caso: la corrida que verificaba C-QA1 se comió el
->   diagnóstico de C-QA1. `qa:lib` sube de 14 a 26 aserciones y prueba lo que
->   fallaba —que se **niegue** a pisar—, no solo que escriba donde toca.
+> **Ninguna es una regresión**: `/` no tiene base válida (C-QA3), `estudio`
+> +11.2 ya estaba en el diagnóstico congelado, y las otras dos son **C-QA7**,
+> abierto abajo. `qa:enlaces`, `qa:corte` y `qa:bases` limpias.
 >
-> - **PASO 1 · C-QA6 medida, y corrige una afirmación fundacional.** Dos ráfagas
->   de 3 corridas sobre `/software` y los dos monográficos, separadas por ~6 min:
->   la primera da `h1` **±32.28** y **±30**, la segunda **0 en las 6**. Misma
->   sonda, mismas rutas, mismo día.
+> ## Hecho en este bloque
 >
->   > **Una ráfaga limpia no prueba estabilidad: prueba que en esos minutos no
->   > hubo episodio.** Y el protocolo pide «3 corridas», así que una ráfaga
->   > limpia cerraba la pregunta en falso.
+> - **PASO 0 · la otra mitad de la custodia**, en `CLAUDE.md` junto a la guarda
+>   de `w()`: **congelar y COMMITEAR van en la misma tanda**. La guarda protege
+>   de que una **sonda** pise su salida; de un `rm`, un `git checkout --` o un
+>   descarte en el IDE protege **git y solo git**. Se cita el fallo de la ráfaga
+>   A de C-QA6, que fue exactamente eso.
 >
->   `CLAUDE.md` corregido en los dos ejes, sin suavizar: **alcance** (las 14
->   combinaciones son 7 páginas × 2 anchos, las clonadas en julio de 2026 — sin
->   monográficos, sin caso, sin FAQ) y **alcance temporal** (el método no
->   distingue «estable» de «sin episodio ahora», que es el eje que invalida la
->   comprobación). Y son **tres** regiones de ruido, no dos.
+> - **PASO 1 · C-QA2 aplicada.** El espaciador de las 4 de producto pasa de
+>   `137 / lg:177` a **225 / 136.58**, y los 4 `page.tsx` dejan de llevar el
+>   `div` copiado a mano: usan **`BandaCabecera`**. `qa:clon-base` con umbral
+>   cero: **+48 a 1440 y −0.42 a 390 en las 4, las otras 13 sin mover un píxel**.
 >
-> - **PASO 2 · C-QA2 y C-QA3 NO son la misma causa.** Medido por composición y
->   congelado en `medidas/c-banda-{1440,390}-2026-07-31.json`.
+>   Contra el original el cambio hace **exactamente** lo previsto —mueve +48
+>   exactos en las cuatro— y ahí aparece lo que tapaba:
 >
-> ## El resultado del PASO 2, que es lo que gobierna el PASO 3
+>   | ruta | @1440 | @390 |
+>   |---|---|---|
+>   | `/kunak-api` · `/software-…` | **0** ✅ | **0** ✅ |
+>   | `/monitor-calidad-aire` | **0** ✅ | **+78** |
+>   | `/accesorios` | **+28.8** | **+48** |
 >
-> En la home las dos cabeceras van **fuera de flujo** y el `padding-top` del hero
-> vale **180px en los dos lados**: una constante. **Nada de la home está
-> dimensionado contra el alto de la cabecera.** Lo que difiere está *dentro* del
-> hero — la columna del texto mide **549.03 contra 498.19 (−50.84)** y va
-> **centrada verticalmente** contra una hermana de ~657, así que parte del
-> déficit reaparece arriba. Es el patrón del claim de Urbano.
+> - **PASO 2 · el protocolo de ruido, rediseñado**, y la campaña arrancada.
 >
-> Que 21.41 y 21.03 se parezcan es coincidencia, y hay tres pruebas: el **signo
-> es el contrario**, el **mecanismo no existe**, y **a 390 se comportan al revés**
-> (C-QA2 crece a +78.42; C-QA3 desaparece a −0.23).
+> ## C-QA7 (ABIERTO) — lo siguiente, y ya sabe por dónde empezar
 >
-> ## Lo siguiente: PASO 3, los arreglos — uno por commit, midiendo antes y después
+> Los residuos de `/accesorios` y `/monitor` **no son del espaciador**: son de
+> cada página, debajo de él, y el error del espaciador los venía compensando.
 >
-> 1. **C-QA2 · producto** (`/accesorios`, `/kunak-api`, `/monitor-calidad-aire`,
->    `/software-…`). El espaciador del clon pasa de **177 → 225** a 1440 y de
->    **137 → 136.58** a 390. El offset del `h1` por debajo del espaciador **ya
->    coincide al céntimo** (167.59 en los dos lados en `/kunak-api`), así que es
->    **un solo cambio** y no hay segundo defecto debajo.
+> **La pista está medida y es fuerte:** sus originales miden **392.59** y
+> **308.58**, *idénticos* a los de `/kunak-api` y `/software-…`, que ahora dan
+> **Δ0 a los dos anchos**. Misma cabecera, mismo espaciador, distinto resultado
+> → el sobrante está **en el cuerpo**. Se localiza comparando **la cadena del
+> `h1` de la página que falla contra la de la que cuadra**, que `qa:banda` ya
+> sabe sacar (`cadena`).
 >
->    ⚠ **`/software` se arregla igual pero su verificación NO se da por buena**:
->    su residuo (−15.72) está por debajo del episodio de ±32.28 de C-QA6. Queda
->    anotado como pendiente del suelo real.
+> `/accesorios` es el caso de libro de dos errores que se anulan, y ni siquiera
+> daba cero: daba **−19.2**, un número pequeño y fácil de leer como fleco, que
+> era **−48 de espaciador más +28.8 propios**.
 >
-> 2. **C-QA3 · home** — **no entra en la tanda de cabecera.** Es un déficit de
->    **contenido** en la columna del hero (50.84), no de cabecera, y se decide
->    aparte con su propia medición de qué falta ahí.
+> ## ⏳ CAMPAÑA DE RUIDO `cqa6` — 1 de 3 ráfagas. NO SE PIERDA ENTRE TANDAS
 >
-> 3. **Regenerar las líneas base congeladas** de las 4 de producto y la home, y
->    dejar escrito —ya está en `PENDIENTES-QA.md`— que figuraban como verificadas
->    y que ese estado era **artefacto del protocolo**, no corrección.
+> El protocolo nuevo: **el suelo es el máximo ENTRE ráfagas separadas**, no
+> dentro de una. Requisitos: **≥3 ráfagas · ≥2 h de separación · ≥2 días
+> distintos**.
 >
-> ## Abiertas, por orden de lo que bloquea
+> | ráfaga | cuándo | resultado |
+> |---|---|---|
+> | **1 ✅** | 2026-07-31T03:14Z | **±32.28** en el `h1` de las **tres** rutas a 1440 |
+> | **2 ⏳** | **otro día**, ≥2 h de separación | pendiente |
+> | **3 ⏳** | **otro día** | pendiente |
 >
-> - **C-QA6** — bloquea la verificación de `/software`. Episodios de ~30–32.28 en
->   la base, no reproducibles a demanda, **mecanismo sin identificar** (no son
->   múltiplos de 27, así que no es el ruido conocido del módulo de artículos).
+> **Cómo se corre la siguiente** (una línea, ~6 min):
+>
+> ```bash
+> CAMPANA=cqa6 RUTAS="/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas" npm run qa:ruido -- 3
+> ```
+>
+> Congela sola en `medidas/campana/cqa6/rafaga-<sello>.json` y **dice cuántas
+> faltan**. Ráfaga 1 fue la **tercera observación independiente** del episodio de
+> ±32.28 y la primera que lo ve en las tres rutas a la vez: ya no es un fleco.
+>
+> ⚠ **Hasta cerrarla, `/software` NO se da por verificado** aunque dé Δ0 a los
+> dos anchos: un Δ0 leído en una corrida puede ser el episodio y no el arreglo.
+> Y una combinación a 0 se lee **«no se observó ruido en estos episodios»**,
+> nunca «su suelo es 0».
+>
+> ## Abiertas, por orden
+>
+> - **C-QA7** — `/accesorios` (+28.8 · +48) y `/monitor` (+78 solo a 390). Con
+>   pista medida, arriba.
+> - **C-QA6** — la campaña, 2 ráfagas y ≥1 día.
+> - **C-QA3 · la home** — es un déficit de **contenido** en la columna del hero
+>   (**−50.84**, amplificado por centrado vertical), **no de cabecera**: el `pt`
+>   del hero vale 180 en los dos lados. Se decide aparte.
 > - **C-QA5** — el `h1` envuelve distinto en 4 rutas, **solo a 1440**. Base
 >   válida; lo que no cuadra es el **ancho** del contenedor del título.
-> - **C-QA3** — la home, arriba.
 >
-> ## Sondas
+> ## Dos cosas que este bloque enseñó y conviene no repetir
 >
-> `qa:lib` · `qa:bases` · `qa:banda` · `qa:ruido` (ahora con `RUTAS=` y
-> `ETIQUETA=`, y **el dimensional vale `null` si el nº de filas varía** — antes
-> comparaba filas por índice y reportó un «suelo» de 8950.73 que no era ruido
-> sino filas distintas restadas entre sí).
->
-> ⚠ **Y una pérdida de evidencia anotada**: borré a mano la salida congelada de
-> la ráfaga A de C-QA6 antes de re-correr. Sus números están en
-> `PENDIENTES-QA.md`, pero el fichero no se puede exhibir. La guarda de `w()`
-> protege de que una **sonda** pise su salida, no de que una **persona** la borre.
+> 1. **Un veredicto medido en una página no cubre las cuatro.** El acta anterior
+>    decía «un solo cambio, sin segundo defecto debajo» apoyándose en que el
+>    offset coincidía al céntimo — **en `/kunak-api` y solo ahí**. Para 2 de 4 no
+>    valía, y esa diferencia es C-QA7.
+> 2. **Medir a los dos anchos no es opcional.** Un comentario CSS mal cerrado
+>    dejó cuatro líneas de prosa haciendo de selector y el parser se comió **la
+>    regla base** —la que sirve el ancho móvil—: bandas de 0 a 390 con **1440
+>    intacto**. A 1440 solo, habría pasado por buena. (Y pasó dos veces: la
+>    explicación del fallo llevaba el token de cierre entre comillas, que en CSS
+>    no se puede citar.)
 >
 > ---
 >
