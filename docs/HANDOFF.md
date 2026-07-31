@@ -1,4 +1,56 @@
-# HANDOFF — la entrada de C-3 está COBRADA; lo que queda es construir
+# HANDOFF — C-3 construida; lo siguiente es la CABECERA, con plan propio
+
+> ⚠ **Actualización 2026-07-30, al cerrar el diagnóstico de C-QA1.** El cuerpo
+> de este documento (abajo) describe el estado **antes** de construir C-3 y
+> sigue siendo válido como contexto. Lo que cambia es qué toca ahora.
+>
+> **C-3 está construida y verificada**: 17 rutas (11 + 6), las **siete
+> predicciones P-C3-1…7 se sostienen**, `qa:enlaces` limpia en las dos
+> direcciones y **0 regresión** en las 11 anteriores a los dos anchos. Acta en
+> `docs/research/grupo-C/MEDICION.md` (partes 1 y 2).
+>
+> ## Lo siguiente: la cabecera, y son DOS defectos
+>
+> Diagnóstico completo en `docs/PENDIENTES-QA.md` §C-QA1, medido con
+> `npm run qa:c-cabecera` sobre las 17 rutas y **congelado**. En corto:
+>
+> - **La cabecera del original no es una sola cosa.** Su alto depende de la
+>   plantilla (**225** producto · **387** caso · **397.61** sector · **433.61**
+>   monográfico a 1440) y está **EN FLUJO** en todas menos la home, porque el
+>   original mete la banda de título **dentro** de `header.et-l--header`. El
+>   clon sirve siempre **203.59** y siempre **fuera de flujo**.
+> - **Los 6 sectores están CORRECTOS, no compensados**: el clon los descompone
+>   en `HeaderNav` absoluto + `section.cabecera-sectores` en flujo y el `h1` cae
+>   en 261.16 en los dos lados. Descomposición fiel, mismo total.
+> - **Pero 4 páginas de producto tienen un desfase real que nadie había visto**
+>   (`/accesorios`, `/kunak-api`, `/monitor-calidad-aire`, `/software-…`), y
+>   **cambia de signo entre anchos**: −19.2 → **+48.42** en accesorios, −48 →
+>   **+78.42** en monitor. Un residuo que cambia de signo entre dos maquetaciones
+>   no es ruido.
+> - **Por qué llevaba invisible**: la regla del `h1` **resta la base de lectura
+>   antes de comparar**, así que un desfase que está *en* la base se normaliza a
+>   cero por construcción. El contenedor con holgura es **el propio protocolo**.
+>
+> **Por tanto la tanda NO es «cabecera sola»**: es **C-QA1** (las 6 nuevas) +
+> **C-QA2** (el espaciador de las 4 de producto), y arreglar la primera sin la
+> segunda movería 4 páginas hoy verdes. **Va con plan propio y en sesión
+> limpia** — es cambio de componente compartido en 17 rutas.
+>
+> **Lo que ya está listo para esa sesión:** la base congelada de las 17
+> (`medidas/clon-base-{1440,390}-cqa1-antes.json`, umbral cero), el diagnóstico
+> (`medidas/c-cabecera-{1440,390}.json`) y la guarda nueva de `lib.mjs`.
+>
+> ⚠ **`/` no cuenta como defecto todavía**: su `h1` sale a **y=0 a los dos
+> anchos** en el original, la firma de un `h1` dentro de una diapositiva
+> absoluta. Mirarlo aparte antes de tocarlo.
+>
+> **Y una regla nueva en `CLAUDE.md`**, la cuarta sobre sondas: *un selector que
+> no casa con nada no es un cero, es un defecto*. Resuelta en el sitio común
+> (`Censo` en `scripts/qa/lib.mjs`); las sondas usan `__q`/`__qa`.
+
+---
+
+# (contexto previo) la entrada de C-3 está COBRADA
 
 > Reescrito el **2026-07-30** al cerrar el bloque de medición de **C-3**. Para
 > arrancar sesión limpia: son 5 minutos. Lo anterior (grupo C decidido en C-2,
