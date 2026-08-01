@@ -40,12 +40,13 @@ const SABOTAJE = !!process.env.SABOTAJE;
 
 /** Las tres presentaciones medidas, más una de control por grupo. */
 const RUTAS = [
-  ["A · blog   86/0", "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/"],
-  ["SECTOR     86/0", "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/"],
-  ["SOFTWARE   80/0", "https://kunakair.com/es/kunak-api/"],
-  ["CATÁLOGO   80/4", "https://kunakair.com/es/accesorios/"],
-  ["PRODUCTO   80/4", "https://kunakair.com/es/monitor-calidad-aire/"],
+  ["A · blog   86/0", "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/", "/todas-nuestras-soluciones-en-el-iotswc"],
+  ["SECTOR     86/0", "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/", "/sectores/calidad-del-aire-en-las-ciudades"],
+  ["SOFTWARE   80/0", "https://kunakair.com/es/kunak-api/", "/kunak-api"],
+  ["CATÁLOGO   80/4", "https://kunakair.com/es/accesorios/", "/accesorios"],
+  ["PRODUCTO   80/4", "https://kunakair.com/es/monitor-calidad-aire/", "/monitor-calidad-aire"],
 ];
+const CLON = process.env.CLON || "http://localhost:3000";
 
 const LECTOR = (sabotaje) => {
   const r = (n) => Math.round(n * 100) / 100;
@@ -60,11 +61,11 @@ const LECTOR = (sabotaje) => {
 
   if (sabotaje) __q(".d4-tipo-selector-que-no-existe");
 
-  const pie = __q("footer.et-l--footer, #main-footer");
+  const pie = __q("footer.et-l--footer, #main-footer") || __q("footer");
   if (!pie) return { ausente: true };
 
-  const links = __q(".footer-links", pie);
-  const legal = __q(".footer-legal", pie);
+  const links = __q(".footer-links", pie) || pie.children[pie.children.length - 3];
+  const legal = __q(".footer-legal", pie) || pie.children[pie.children.length - 2];
   const col0 = links ? __q(".et_pb_column", links) : null;
 
   return {
@@ -95,6 +96,53 @@ const LECTOR = (sabotaje) => {
       const el = legal ? __q(".et_pb_column", legal) : null;
       return el && { h: H(el), ...cs(el, "width", "paddingRight") };
     })(),
+    /* ── El detalle de `footer-legal`, que es donde vive el residuo de 390 ────
+     * A 390 las columnas apilan y el residuo NO está en su alto —las del clon
+     * son más CORTAS— sino en lo que hay ENTRE ellas. Un alto de columna no lo
+     * ve; hay que leer las tres cajas con sus márgenes y la fila que las
+     * contiene. Regla del NIVEL: se mide donde vive la propiedad. */
+    legalFila: (() => {
+      const fila = legal ? __q(".et_pb_row, [class*='et_pb_row']", legal) || legal.firstElementChild : null;
+      if (!fila) return null;
+      const cols = __qa(".et_pb_column", legal).length
+        ? __qa(".et_pb_column", legal)
+        : [...fila.children];
+      return {
+        filaH: H(fila),
+        ...cs(fila, "paddingTop", "paddingBottom", "display", "flexDirection", "gap"),
+        cols: cols.slice(0, 4).map((c) => {
+          const s = getComputedStyle(c);
+          return { h: H(c), mt: s.marginTop, mb: s.marginBottom, y: r(c.getBoundingClientRect().y + window.scrollY) };
+        }),
+        /* Los `<p>` del bloque legal, uno a uno: el clon sale 31 más corto que
+         * el original y hay que saber en cuál. */
+        parrafos: [...(cols[0]?.querySelectorAll("p") || [])].slice(0, 3).map((p2) => {
+          const s = getComputedStyle(p2);
+          return { h: H(p2), fs: s.fontSize, lh: s.lineHeight, mb: s.marginBottom, txt: (p2.textContent || "").replace(/\s+/g, " ").trim().slice(0, 26) };
+        }),
+      };
+    })(),
+    /* ── La columna EMPRESA y su botón «¡Suscríbete!» ────────────────────────
+     * De las 5 columnas de `footer-links`, cuatro cuadran al céntimo en las tres
+     * presentaciones y **toda la diferencia está en ésta** (−6.9 ancha · −0.01
+     * software · +25.1 catálogo a 390). Es la única con un módulo de botón, y
+     * sus márgenes están cableados en el clon con el valor de SOFTWARE — que es
+     * justo la familia donde da 0. */
+    suscribete: (() => {
+      const cols = __qa(".et_pb_column", links).length ? __qa(".et_pb_column", links) : [...(links?.children || [])];
+      const col = cols.find((c) => /suscr[íi]bete/i.test(c.textContent || ""));
+      if (!col) return null;
+      const a = [...col.querySelectorAll("a")].find((x) => /suscr[íi]bete/i.test(x.textContent || ""));
+      const caja = a?.parentElement;
+      const s = (el) => { const g = getComputedStyle(el); return { mt: g.marginTop, mb: g.marginBottom, pt: g.paddingTop, pb: g.paddingBottom, fs: g.fontSize, lh: g.lineHeight }; };
+      return {
+        colH: H(col),
+        nLi: col.querySelectorAll("li").length,
+        ulH: col.querySelector("ul") ? H(col.querySelector("ul")) : null,
+        boton: a && { h: H(a), ...s(a) },
+        caja: caja && { h: H(caja), ...s(caja) },
+      };
+    })(),
     // El contexto que podría estar moviéndolo por herencia
     raiz: cs(document.documentElement, "fontSize"),
     cuerpo: cs(document.body, "fontSize", "lineHeight", "fontFamily"),
@@ -108,14 +156,24 @@ const censo = new Censo();
 const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10) }, familias: {} };
 let muertas = 0;
 
-for (const [fam, url] of RUTAS) {
+/** Lee una URL cualquiera con el mismo lector: un selector por lado, dentro. */
+const lee = async (url) => {
+  const { page, status } = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
+  if (status !== 200) { await page.close(); throw new Error("HTTP " + status); }
+  await settle(page);
+  const { datos } = await censo.medir(page, LECTOR, SABOTAJE);
+  await page.close();
+  return datos;
+};
+
+for (const [fam, url, rutaClon] of RUTAS) {
   try {
-    const { page, status } = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
-    if (status !== 200) { await page.close(); throw new Error("HTTP " + status); }
-    await settle(page);
-    const { datos } = await censo.medir(page, LECTOR, SABOTAJE);
-    await page.close();
-    salida.familias[fam] = datos;
+    const datos = await lee(url);
+    // ⚠ El residuo se adjudica contra el ORIGINAL, así que la sonda tiene que
+    // abrir los dos lados. Mientras solo leía el original podía decir QUÉ varía
+    // entre formas, pero no si el clon lo reproduce — que es la pregunta.
+    const clon = rutaClon ? await lee(CLON + rutaClon) : null;
+    salida.familias[fam] = { ...datos, clon };
     console.log(`\n█ ${fam}`);
     console.log(`   li      h=${String(datos.li?.h).padStart(7)}  fs=${datos.li?.fontSize}  lh=${datos.li?.lineHeight}  mb=${datos.li?.marginBottom}`);
     console.log(`   li>a    h=${String(datos.liA?.h).padStart(7)}  fs=${datos.liA?.fontSize}  lh=${datos.liA?.lineHeight}`);

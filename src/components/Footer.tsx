@@ -89,6 +89,19 @@ type Presentacion = {
   ul: string;
   titulo: string;
   legal: string;
+  /**
+   * Segundo `<p>` del bloque legal («Página web diseñada con…»). Escala con la
+   * presentación igual que el primero: **9.6px** donde el legal es de 12 y
+   * **14.4px** donde es de 18 (0.8× en los dos casos).
+   */
+  legal2: string;
+  /**
+   * Alto del bloque de iconos sociales (solo móvil; en `sm:` pasa a `auto`).
+   * Cuarto eje de presentación, medido a
+   * 390 en la columna 2 de `footer-legal`: **31.59 en `ancha`** y **61.59 en las
+   * dos estrechas** — exactamente +30. El clon servía 31.59 en las tres.
+   */
+  social: string;
 };
 
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
@@ -103,6 +116,8 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     ul: "pb-[46px] text-[14px] leading-[26px]",
     titulo: "text-[14px]",
     legal: "text-[12px]",
+    legal2: "text-[9.6px]",
+    social: "h-[31.6px]",
   },
   estrecha: {
     fila: ESTRECHA_FILA,
@@ -112,6 +127,8 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     ul: "pb-[32px] text-[14px] leading-[30.6px]",
     titulo: "text-[14px]",
     legal: "text-[12px]",
+    legal2: "text-[9.6px]",
+    social: "h-[61.59px]",
   },
   estrechaPad: {
     fila: ESTRECHA_FILA,
@@ -121,6 +138,8 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     ul: "pb-[32px] text-[18px] leading-[30.6px]",
     titulo: "text-[18px]",
     legal: "text-[18px]",
+    legal2: "text-[14.4px]",
+    social: "h-[61.59px]",
   },
 };
 
@@ -283,11 +302,17 @@ export function Footer({
       <div
         className={
           tb
-            ? `mb-[62px] ${p.legal} leading-[30.6px] text-[#333] sm:mb-8 md:w-3/5`
+            ? // Margen de columna medido en el original: **30 a 390**, no 62.
+              // El 62 del clon compensaba que le faltaban los 32 de separación
+              // entre los dos `<p>` (abajo): dos errores que casi se anulaban.
+              `mb-[30px] ${p.legal} leading-[30.6px] text-[#333] sm:mb-0 md:w-3/5`
             : "mb-[62px] text-[12px] leading-[30.6px] text-[#333] sm:mb-0 sm:space-y-1 sm:leading-[1.6] md:w-3/5"
         }
       >
-        <p>
+        {/* Los dos `<p>` del bloque legal van separados por 32 en el original
+            (col 93.19 = 30.59 + 32 + 30.59 a 1440). El clon no los separaba y
+            lo compensaba con el mb 62 de la columna. */}
+        <p className={tb ? "mb-[32px]" : undefined}>
           2026 © KUNAK TECHNOLOGIES SL ·{" "}
           {LEGAL_LINKS.map((l, i) => (
             <span key={l.label}>
@@ -309,7 +334,7 @@ export function Footer({
         <p
           className={
             tb
-              ? "inline-flex items-center gap-1 text-[9.6px]"
+              ? `inline-flex items-center gap-1 ${p.legal2}`
               : "inline-flex items-center gap-1"
           }
         >
@@ -333,7 +358,7 @@ export function Footer({
       <div
         className={
           tb
-            ? "mb-[60px] flex h-[31.6px] items-center gap-[38px] pl-[19px] text-[#333] sm:mb-0 sm:h-auto sm:gap-[9px] sm:pl-0"
+            ? `mb-[30px] ${p.social} flex items-center gap-[38px] pl-[19px] text-[#333] sm:mb-0 sm:h-auto sm:gap-[9px] sm:pl-0`
             : "mb-[38px] flex items-center gap-[42.7px] pl-[9px] text-[#333] sm:mb-0 sm:gap-[9px] sm:pl-0"
         }
       >
