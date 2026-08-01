@@ -305,6 +305,14 @@ una. `docs/PENDIENTES-QA.md` es el registro vivo de QA — **léelo antes de toc
 una página ya clonada**: incluye objetivos numéricos por sección y hallazgos
 cerrados que no hay que reinvestigar.
 
+**`docs/research/COBERTURA-MEDICION.md` dice qué se ha comparado contra el
+original y qué no** — 31 rutas × 9 ejes, con tres estados: comparado contra el
+original · solo clon-contra-clon · nunca. **Consúltalo antes de leer un verde
+como una verificación**, porque la diferencia entre «no hay defecto conocido» y
+«no se ha mirado» no está en ningún otro sitio del repo. Hoy: el ancho del
+**cuerpo** está a **0/31**, el comportamiento a **0/31**, y de las 41 sondas
+**solo 9 abren los dos lados**.
+
 **`docs/ESQUEMA-CMS.md` es el registro vivo del destino**, y se mantiene igual
 que `PENDIENTES-QA.md`: **cada tanda lo actualiza**. Ahí vive la decisión de
 plataforma (Payload self-hosted sobre Postgres, embebido en la app, editor
@@ -784,6 +792,28 @@ Está resuelto en el sitio común, no sonda a sonda: **`Censo` en
 casó cada selector sumando todas las páginas, y `censo.informe()` devuelve el nº
 de muertos para que quien la llama **cierre su código de salida con eso**. Las
 sondas usan `__q(sel)` en vez de `document.querySelector(sel)`.
+
+**Y el caso particular que más aparece al buscar duplicación (2026-08-01): para
+identificar un COMPONENTE, el literal de `className` no discrimina.**
+
+> **Las clases de este proyecto son TOKENS DEL TEMA, no identidad de módulo.** Se
+> repiten por diseño —es lo que significa que haya sistema de diseño—, así que
+> buscar «quién más escribe estas clases» devuelve el catálogo entero y **parece
+> un hallazgo**. Lo que identifica un módulo es el marcador **semántico**:
+> `aria-label`, `itemType` de schema.org, `role`, `id`, o la clase **del tema
+> original** (`kunak-*`, `et_pb_*`). Esos nombran **una cosa**; una clase de
+> Tailwind nombra **un aspecto**.
+
+Medido al barrer las copias a mano de la miga: la primera versión buscó literales
+de `className` compartidos y casó con `text-[18px] leading-[30.6px] text-[#333]`
+en **16 ficheros** — cero señal. La segunda, sobre marcadores semánticos, dio
+**45 marcadores, 9 en más de un fichero**, y el único que delataba una copia real
+fue `aria-label="Migas de pan"` en **5**. Mismo corpus, misma pregunta: la
+diferencia entera estaba en qué se tomó como identidad.
+
+Es el **pleno** de la regla de arriba con nombre y apellidos: un patrón que casa
+en 16 de 74 no está midiendo duplicación, está midiendo que existe una hoja de
+estilos.
 
 El corolario práctico, en dos mitades — la segunda se aprendió cazando la
 primera:

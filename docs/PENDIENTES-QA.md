@@ -2913,7 +2913,34 @@ pan"` en **5**.
   registrada, que es lo contrario del problema de aquí;
 - `icons.tsx` exporta un `KunakLogo` que **no importa nadie** (el que se usa es
   `KunakLogoBrand` de `KunakLogo.tsx`). Es código muerto, no una copia en uso —
-  y un `export` no lo caza el linter. Anotado, sin tocar.
+  y un `export` no lo caza el linter. Ver §CLASE · el `export` que esconde
+  código muerto, abajo.
+
+### ⚠ CLASE · el `export` que esconde código muerto (abierto, 2026-08-01)
+
+**Se registra como CLASE y no como instancia, porque el mecanismo es general y
+el linter no lo cubre.**
+
+> **`noUnusedLocals` caza una función local que nadie llama. Una función
+> **exportada** que nadie importa no la caza nadie**: desde el punto de vista
+> del módulo, el `export` *es* su uso. O sea que **exportar convierte código
+> muerto en código invisible.**
+
+Es la misma familia que la regla 3 de §sondas —*documentado no es conectado*—,
+que se pagó con `charsCenso()`: allí la función estaba definida, documentada
+como resuelta y **nunca llamada**, y lo habría cazado el linter precisamente
+porque era **local**. Un `export` le quita esa red.
+
+**Instancia conocida:** `KunakLogo` en `src/components/icons.tsx:348`. Hay dos
+implementaciones del logo y solo una viva; quien vaya a tocar el logo puede
+editar la muerta y ver que no pasa nada — que es el coste real, no los bytes.
+
+**Por qué está abierto y no cerrado:** no se ha barrido la clase. El barrido de
+A-QA1b buscaba **copias a mano**, no **exports huérfanos**; son dos preguntas
+distintas y solo se hizo la primera. Cerrarlo es derivar, para cada `export` de
+`src/`, si alguien lo importa — el mismo grep que ya se usa para consumidores,
+al revés. **No se arregla la instancia antes de barrer la clase**: es
+exactamente cómo se llegó a la tercera tanda de la miga.
 
 ### La adjudicación de las cuatro, CONTRA EL ORIGINAL
 
