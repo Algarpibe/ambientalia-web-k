@@ -5,6 +5,17 @@
 import type { ReactNode } from "react";
 import type { AccesorioItem, BlogPost } from "@/types/kunak";
 
+/* --- S0 · Miga de pan (3 niveles, el último sin enlace) ---
+ * Estaba escrita a mano dentro de `HeroProducto.tsx`, marcado y textos
+ * incrustados; sale al dato en A-QA1b (2026-08-01) como en accesorios, api y
+ * software. */
+export const BREADCRUMB: { label: string; href?: string }[] = [
+  // ruta local: la home ya está clonada — original: https://kunakair.com/es/
+  { label: "Inicio", href: "/" },
+  { label: "Productos", href: "https://kunakair.com/es/productos/" },
+  { label: "AIR Pro" },
+];
+
 /* --- Visor 360° del hero: 35 frames kunak360_IMG_01..35.jpg (2023/03) --- */
 export const FRAMES_360: string[] = Array.from({ length: 35 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");

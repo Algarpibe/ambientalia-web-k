@@ -2729,11 +2729,70 @@ nombre lo que es.
 
 ---
 
-## A-QA1 · CERRADO — era el TOPE DE 350 DEL TEMA, no el separador (2026-07-31)
+## A-QA1 · ~~CERRADO~~ → **CERRADO DE VERDAD 2026-08-01** — era el TOPE DE 350 DEL TEMA, no el separador (2026-07-31)
 
 > Acta completa de la construcción en `docs/research/arquetipo-A/MEDICION.md`.
 > Medida congelada: `medidas/clon-base-{1440,390}-grupoA-base26.json` contra la
 > `y` cruda del original en `medidas/a-cascaron-{1440,390}-2026-07-31-4.json`.
+
+### ⚠ ACTA DE CORRECCIÓN (2026-08-01) — se declaró CERRADA una clase que llegaba a 3 de 7
+
+**No se reescribe lo de abajo: se tacha y se anota.** El diagnóstico del
+2026-07-31 es correcto —el tope de 350 es del tema, el separador no era la
+causa— y **el cierre no lo era**.
+
+**Qué se creyó.** Que bajar el truncado al defecto de `Breadcrumb.tsx` lo
+repartía a todas las migas del clon, y por tanto que la CLASE quedaba cerrada.
+El commit `072d9f1` lo dice, y la §«Y es CLASE, no instancia» de abajo también.
+
+**Por qué se creyó.** Por la **cabecera del propio componente**
+(`src/components/Breadcrumb.tsx:2-5`), que afirmaba:
+
+> «Migas de pan `ol.kunak-breadcrumbs` — compartidas por /monitor-calidad-aire,
+> /accesorios, /software-de-medicion-calidad-del-aire, /kunak-api y las páginas
+> de sector.»
+
+**Falso.** Quien lo importa de verdad, derivado con un grep, son **tres**:
+`sectores/[slug]/page.tsx`, `arquetipo-a/CascaronA.tsx` y `caso/CasoPagina.tsx`.
+Las cuatro páginas que la cabecera nombraba **tienen su propia copia escrita a
+mano** y no importan nada. Se leyó la cabecera en vez de derivar los
+consumidores, que es la tercera regla de sondas (**documentado no es
+conectado**) aplicada a un comentario en vez de a una función.
+
+**Estado real:** el arreglo llegó a **3 de las 7** migas que pinta el clon.
+
+| implementación | pinta | ¿le llegó el tope de 350? |
+|---|---|---|
+| `Breadcrumb.tsx` ← `sectores/[slug]` | 6 sectores + 2 monográficos | ✅ |
+| `Breadcrumb.tsx` ← `CascaronA` | las 4 formas del grupo A | ✅ |
+| `Breadcrumb.tsx` ← `CasoPagina` | el caso de éxito | ✅ |
+| `monitor/HeroProducto.tsx` a mano | `/monitor-calidad-aire` | ❌ |
+| `accesorios/page.tsx` a mano | `/accesorios` | ❌ |
+| `kunak-api/page.tsx` a mano | `/kunak-api` | ❌ |
+| `software-…/page.tsx` a mano | `/software-de-medicion-calidad-del-aire` | ❌ |
+
+### ⚠ Y la segunda corrección: `49.94` se citó como medida DEL PAR, y es un solo lado
+
+La §«Y es CLASE» de abajo dice «producto (**49.94**) … daba Δ0 porque sus
+rótulos no llegan a 350». **49.94 es el ancho del original.** El clon leía
+**38.94** en el mismo fichero congelado, `medidas/a-miga-1440-2026-08-01.json`.
+La miga entera de producto mide **183.95 en el original contra 150.70 en el
+clon — −33.25, idéntico a 1440 y a 390**, o sea que por la regla de los dos
+anchos no puede ser ruido. Las cuatro copias a mano no llevan `font-semibold`
+ni `tracking-[0.3px]` ni el tope, y ponen el separador como `<li aria-hidden>/</li>`
+con `gap-1` en vez del `li::after` con `pl/pr 7.2` del original.
+
+> **La sonda lo imprimió. El informe no lo contó.** Es la **regla 1** de
+> §Cinco reglas sobre las sondas —*un descuadre impreso y no contado da el mismo
+> informe que uno no visto*— cometida **en un informe y no en una sonda**. De ahí
+> la extensión de la regla, anotada en `CLAUDE.md`: el canal único de verdad
+> obliga igual a lo que escribe la sonda y a **lo que escribe quien la lee**.
+> Copiar un número de una tabla de pares sin decir de qué lado es, es exactamente
+> el mismo fallo un nivel más arriba.
+
+**Se cierra de verdad en la tanda del 2026-08-01** (§CLASE · la miga, más
+abajo), con las cuatro copias unificadas sobre el base y las cuatro rutas
+adjudicadas contra el original una por una.
 
 **Base en crudo del arquetipo nuevo** — la medida que `CLAUDE.md` §Notas de
 método exige una vez por arquetipo, antes de fiarse de ningún Δ de cuerpo:
@@ -2774,12 +2833,17 @@ y 0.00 · 0.00 · −0.02 a 390** en las cuatro formas.
 
 ### ⚠ Y es CLASE, no instancia — con una víctima ya cobrada
 
+> ⚠ **Esta sección se dejó como se escribió; sus dos erratas están tachadas
+> abajo y explicadas en el ACTA DE CORRECCIÓN de arriba.**
+
 `variante="caso"` de `Breadcrumb` llevaba el truncado como si fuera del caso.
 Al ser del tema:
 
-- **producto (49.94) y sectores (194.52) daban Δ0 porque sus rótulos no llegan a
-  350**, no porque estuvieran bien. Es **corrección aparente por contenido
-  corto**: el Δ0 no verificaba la regla, la esquivaba;
+- ~~**producto (49.94) y sectores (194.52) daban Δ0 porque sus rótulos no llegan
+  a 350**~~ → **sectores (194.52) sí**; **producto NO daba Δ0**: 49.94 es el
+  original y el clon medía **38.94**, con la miga entera a **−33.25**. El número
+  se copió de un solo lado de una tabla de pares. Es **corrección aparente por
+  contenido corto** en sectores, y en producto era un descuadre sin contar;
 - **el monográfico de petróleo ya estaba roto**: su rótulo mide **436.97**, sí
   pasa de 350, y el clon envolvía en 3 renglones donde el original hace 2
   (**−26 de `docH` a 390**). Invisible porque en sector la miga va **debajo**
@@ -2791,11 +2855,135 @@ Al ser del tema:
 ### Un duplicado que no hacía falta
 
 `MigasA` reimplementó la miga en `CascaronA` cuando `Breadcrumb.tsx` ya la
-pintaba para producto, caso y los 6 sectores. El coste no fue el duplicado: fue
-que **divergió** (75.89 contra 75.72). Ahora es un envoltorio del base.
+pintaba para ~~producto,~~ caso y los 6 sectores — **producto no: también era
+una copia a mano, y no se vio** (ACTA DE CORRECCIÓN). El coste no fue el
+duplicado: fue que **divergió** (75.89 contra 75.72). Ahora es un envoltorio del
+base.
+
+> Y el duplicado **no era uno, eran cinco**: `MigasA` más las cuatro copias de
+> producto, accesorios, api y software. Se arregló el que la medición del grupo A
+> puso delante y se dio la clase por cerrada — *arreglar la instancia y no la
+> CLASE*, el mismo fallo que `CLAUDE.md` documenta dos veces.
 
 **Lo que este defecto NO era:** la banda de cabecera —**225 / 165.58**, deducidos
 por composición— ni el ritmo de `section#0`, que da 50 y 102 exactos.
+
+## CLASE · la miga — CERRADA de verdad (A-QA1b, 2026-08-01)
+
+> Congelado: `medidas/a-miga-{1440,390}-2026-08-01-{2,3}.json` ·
+> `medidas/clon-base-{1440,390}-aqa1b.json`.
+
+Cierre de la clase que A-QA1 dio por cerrada llegando a 3 de 7 (ACTA DE
+CORRECCIÓN, arriba). **Las cuatro copias a mano se unifican sobre
+`Breadcrumb.tsx`** y la miga pasa a tener **una sola implementación en el clon**.
+
+### El barrido acotado que se hizo ANTES de tocar
+
+Porque ya iban dos instancias (`MigasA` y estas cuatro), tocaba preguntar si
+había una tercera clase antes de arreglar la segunda.
+
+**(a) ¿Copiaron algo más esos 4 ficheros?** **No.** Importan todo lo demás
+—`HeaderNav`, `BandaCabecera`, `Footer`, `ScrollToTop`, `UltimosArticulos`,
+`FaqAcordeon`, `CtaBanner`, los heros…—. Lo único escrito a mano era la miga, y
+con ella su envoltorio `<nav>` + fila. El **dato** (`BREADCRUMB`) ya estaba bien
+puesto en `lib/` en tres de los cuatro; el cuarto lo tenía incrustado en
+`HeroProducto.tsx` y sale a `lib/monitor.ts` en esta tanda.
+
+**(b) ¿Qué componentes afirman en su cabecera quién los usa?** Barridos los
+**74** `.tsx` de `src/components`: **uno solo**, y era el falso —
+`Breadcrumb.tsx`. Otros dos nombran rutas en su cabecera sin afirmar
+consumidores (`BlurbsIconos`, que nombra `/kunak-api` y `/software` como las dos
+**calibraciones** del módulo; `CtaNewsletter`, que nombra el destino de su botón).
+Ninguno miente.
+
+**Y una nota de método sobre el barrido mismo.** La primera versión buscó
+literales de `className` compartidos y **casó en 16 ficheros** con
+`text-[18px] leading-[30.6px] text-[#333]` — que no es identidad de componente
+sino un **token del tema**, legítimamente repetido. Es el falso positivo de
+*«un patrón que casa en todas no mide nada»*. Lo que sí discrimina es el
+marcador **semántico** —`aria-label`, `itemType`, `role`, clase `kunak-*`/`et_pb_*`—:
+nombra una **cosa**, no un aspecto. Con ese criterio salen 45 marcadores, 9 en
+más de un fichero, y el único que delata una copia es `aria-label="Migas de
+pan"` en **5**.
+
+**No aparece una tercera clase.** Dos hallazgos adyacentes, ninguno de ellos una:
+
+- `CtaBannerSlider` reutiliza el **motor** de `software/CarruselCapturas` — y lo
+  **declara en su propia cabecera**, con su spec. Duplicación deliberada y
+  registrada, que es lo contrario del problema de aquí;
+- `icons.tsx` exporta un `KunakLogo` que **no importa nadie** (el que se usa es
+  `KunakLogoBrand` de `KunakLogo.tsx`). Es código muerto, no una copia en uso —
+  y un `export` no lo caza el linter. Anotado, sin tocar.
+
+### La adjudicación de las cuatro, CONTRA EL ORIGINAL
+
+`npm run qa:a-miga -- 1440|390`. Las tres rutas que faltaban —accesorios,
+software, api— **se añaden a la sonda**: `producto` ya estaba y por eso se vio;
+las otras tres no las miraba nadie contra el original.
+
+| ruta | antes (orig → clon) | después | veredicto |
+|---|---|---|---|
+| `/monitor-calidad-aire` | 183.95 → **150.70** (**−33.25**) | 183.95 → **183.95** | **CORRECCIÓN** |
+| `/accesorios` | sin medir nunca | 207.73 → **207.73** | **CORRECCIÓN** (último 73.72 = 73.72) |
+| `/software-…` | sin medir nunca | 199.13 → **199.13** | **CORRECCIÓN** (último 65.11 = 65.11) |
+| `/kunak-api` | sin medir nunca | 199.92 → **199.92** | **CORRECCIÓN** (último 65.91 = 65.91) |
+
+**Δ 0.00 en las cuatro, a 1440 y a 390**, con `eslabones 3/3 · renglones 1/1 ·
+alto 26/26` y el último `li` a `max-width 350 · nowrap · hidden · ellipsis` en
+los dos lados. Las **11 formas** que mide hoy la sonda cierran a Δ0.
+
+Las tres «sin medir nunca» son el punto: su Δ0 de hoy es la **primera vez** que
+esas migas se comparan con el original. Antes no estaban bien, estaban **sin
+mirar** — y habrían dado verde en cualquier informe que se fiara de producto por
+analogía.
+
+### ⚠ Y `clon-base` NO marcó las cuatro — la lección de la tanda, sobre la guarda
+
+Se esperaba que el guardián clon-contra-clon señalara cuatro diferencias que
+adjudicar. Marcó **cero**: `31 páginas · 0 con regresión` a 1440 y a 390.
+
+**No es que el cambio no hiciera nada** —`a-miga` acaba de medir +33.25 en
+producto—. Es que **`clon-base` mide `docH`, `h1.y`, nº de secciones y nº de
+enlaces: todo vertical y estructural.** El defecto era de **ancho**, y como las
+cuatro migas caben en un renglón antes y después, no movió un píxel de alto.
+
+> **La guarda de no-regresión es CIEGA a la clase de defecto que esta tanda
+> arregla**, y lo es por la misma razón que el defecto sobrevivió meses: se mide
+> el nivel que está a mano, y el nivel que estaba a mano era el vertical.
+> `CLAUDE.md` §EL NIVEL NO ES SOLO VERTICAL, aplicado esta vez **al
+> instrumento**.
+
+Consecuencia operativa, y es la que hay que recordar: **un `clon-base` limpio
+dice «no hay regresión vertical», no «el cambio no tuvo efecto».** Para un
+cambio horizontal la adjudicación **tiene** que venir de una sonda que mida
+ancho contra el original — aquí, `a-miga`. Las 27 rutas restantes sin mover un
+píxel siguen valiendo como lo que son: no hay regresión vertical en ninguna.
+
+### Verificación
+
+- `qa:a-miga` **11 formas × 2 anchos**, Δ0 · test en negativo **exit 2**, exit 0
+  limpio (22 páginas, 1 selector muerto detectado).
+- `qa:clon-base` 1440 y 390 con `MARCADOR=max-w-[350px]` verificado en el HTML
+  servido: **31 páginas · 0 regresión**.
+- `qa:enlaces` limpia en las dos direcciones (31 páginas, 868 hrefs internos) ·
+  `qa:slugs` limpia · `qa:lib` 26/26 · lint 0 errores · typecheck · build.
+
+### Lo que queda ABIERTO, y se dice porque la sonda lo imprime
+
+**`doc-cientifico` · −2.70 en la suma de textos a 1440.** El eslabón 3
+(«Artículos científicos y estudios») mide **208.19 en el original contra 205.48
+en el clon**; los otros cuatro dan Δ0 exacto.
+
+- **Es anterior a esta tanda**: idéntico en la congelación de antes del cambio y
+  en la de después. No lo causa la unificación.
+- **No mueve maqueta**: 1 renglón / 1 renglón y alto 26/26 a 1440; a 390 la miga
+  va capada a 350 y da `renglones 3/3 · alto 78/78`. O sea que **a 390 está
+  tapado por el tope**, y solo es observable a 1440 — otra vez el corolario del
+  ancho.
+- **Descartado**: el texto es **idéntico byte a byte** (32 cp, mismos
+  codepoints), y el HTML del original no trae `&nbsp;` ni espacio de cola.
+- **Sin identificar**, y se deja así en vez de inventarle una causa. No se cablea
+  nada: sería exactamente el arreglo falso que esta tanda documenta.
 
 ## Desviaciones deliberadas del grupo A (2026-07-31)
 

@@ -1,9 +1,8 @@
-import Link from "next/link";
-
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Product360Viewer } from "@/components/Product360Viewer";
 import { VideoLightbox } from "@/components/VideoLightbox";
 import { BlueButton } from "@/components/SectionRow";
-import { FRAMES_360, VALIDATOR_LOGOS, CONTACT_HREF } from "@/lib/monitor";
+import { BREADCRUMB, FRAMES_360, VALIDATOR_LOGOS, CONTACT_HREF } from "@/lib/monitor";
 
 /**
  * S0 (breadcrumb) + S1 · fila 1 (hero) de /monitor-calidad-aire.
@@ -19,28 +18,11 @@ export function HeroProducto() {
     <>
       {/* --- S0 · Breadcrumb --- */}
       {/* QA 2026-07-26: fila Divi 80%/máx 1380 con py 12 (alto total 50) y TODO
-          el texto en azul #0075C9 (color del módulo, enlaces incluidos). */}
-      <nav aria-label="Migas de pan" className="bg-white">
-        <div className="mx-auto w-[80%] max-w-[1380px] py-[12px] text-[12px] leading-[26px]">
-          <ol className="kunak-breadcrumbs flex flex-wrap items-center gap-1 text-[#0075C9]">
-            <li>
-              {/* ruta local: la home ya está clonada (src/app/page.tsx).
-                  original: https://kunakair.com/es/ */}
-              <Link href="/" className="text-[#0075C9] hover:underline">
-                Inicio
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <a href="https://kunakair.com/es/productos/" className="text-[#0075C9] hover:underline">
-                Productos
-              </a>
-            </li>
-            <li aria-hidden>/</li>
-            <li aria-current="page">AIR Pro</li>
-          </ol>
-        </div>
-      </nav>
+          el texto en azul #0075C9 (color del módulo, enlaces incluidos).
+          Unificada sobre el componente base en A-QA1b (2026-08-01): era una
+          copia a mano sin `font-semibold`, sin `tracking-[0.3px]` y **sin el
+          tope de 350** del tema. */}
+      <Breadcrumb items={BREADCRUMB} />
 
       {/* --- S1 · fila 1 · Hero --- */}
       {/* Geometría Divi medida (QA 2026-07-26): sección pt 4vw (50 móvil); fila

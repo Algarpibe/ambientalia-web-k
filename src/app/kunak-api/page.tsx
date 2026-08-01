@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeaderNav } from "@/components/HeaderNav";
 import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -54,24 +55,10 @@ export default function KunakApiPage() {
         <BandaCabecera {...BANDA.producto} foto="/images/uploads/2023/10/cabecera-urbana.jpg" />
 
         {/* --- S0 · Breadcrumb (3 niveles, el último sin enlace) --- */}
-        <nav aria-label="Migas de pan" className="bg-white">
-          <div className="mx-auto w-[80%] max-w-[1380px] py-[12px] text-[12px] leading-[26px]">
-            <ol className="kunak-breadcrumbs flex flex-wrap items-center gap-1 text-[#0075C9]">
-              {BREADCRUMB.map((b, i) => (
-                <li key={b.label} className="contents">
-                  {i > 0 ? <span aria-hidden>/</span> : null}
-                  {b.href ? (
-                    <a href={b.href} className="text-[#0075C9] hover:underline">
-                      {b.label}
-                    </a>
-                  ) : (
-                    <span aria-current="page">{b.label}</span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </nav>
+        {/* Unificada sobre el componente base en A-QA1b (2026-08-01): esta
+            página tenía una copia a mano sin `font-semibold`, sin
+            `tracking-[0.3px]` y **sin el tope de 350** del tema. */}
+        <Breadcrumb items={BREADCRUMB} />
 
         {/* --- S1 · hero + información del producto + beneficios ---
             Una sola sección con las 3 filas, watermark K a 0% 50% y

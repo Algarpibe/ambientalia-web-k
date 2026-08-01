@@ -1,8 +1,15 @@
 /**
- * Migas de pan `ol.kunak-breadcrumbs` — compartidas por /monitor-calidad-aire,
- * /accesorios, /software-de-medicion-calidad-del-aire, /kunak-api y las páginas
- * de sector. Estaban escritas a mano en cada `page.tsx`; con 8 sectores por
- * delante tocaba extraerlas.
+ * Migas de pan `ol.kunak-breadcrumbs`. **La ÚNICA implementación del clon** —
+ * si hace falta saber quién la usa, se deriva:
+ *
+ *     grep -rn "components/Breadcrumb" src/
+ *
+ * ⚠ Aquí había una lista de consumidores escrita a mano, y **era falsa**:
+ * nombraba cuatro páginas que no importaban nada y tenían su propia copia. Se
+ * leyó como si fuera cierta y con ella se dio por CERRADA la clase del tope de
+ * 350, que en realidad llegaba a 3 de 7 (A-QA1b, `PENDIENTES-QA.md`). No se
+ * vuelve a poner: una lista a mano se pudre en el primer refactor y no hay
+ * nada que la verifique; el grep no puede mentir.
  *
  * Medido 2026-07-28 en el original (idéntico a 1440 y 390):
  *   sección sin padding · fila `padding: 12px 0` con la retícula de la página

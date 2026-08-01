@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-01",
+    "sabotaje": true
+  },
+  "pares": {
+    "blog CON relacionados": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "blog SIN relacionados": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "termino": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "doc-cientifico": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "caso de éxito": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "producto": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "sector": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "monográfico (petróleo)": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "accesorios": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "software": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    },
+    "kunak-api": {
+      "original": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      },
+      "clon": {
+        "error": "sin contenedor de miga: .kunak-migas-de-pan"
+      }
+    }
+  }
+}

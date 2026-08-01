@@ -103,6 +103,26 @@ const PARES_TEMA = [
     original: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
     clon: "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
   },
+  // ── Añadidas en A-QA1b (2026-08-01) ────────────────────────────────────────
+  // Las otras TRES rutas que tenían la miga escrita a mano. `producto` ya
+  // estaba y por eso se vio; éstas no, así que su copia a mano no la miraba
+  // NADIE contra el original. Se meten aquí para que la adjudicación de las
+  // cuatro salga de la sonda y no de un razonamiento por analogía con producto.
+  {
+    forma: "accesorios",
+    original: "https://kunakair.com/es/accesorios/",
+    clon: "/accesorios",
+  },
+  {
+    forma: "software",
+    original: "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+    clon: "/software-de-medicion-calidad-del-aire",
+  },
+  {
+    forma: "kunak-api",
+    original: "https://kunakair.com/es/kunak-api/",
+    clon: "/kunak-api",
+  },
 ];
 if (!process.env.SOLO_A) PARES.push(...PARES_TEMA);
 

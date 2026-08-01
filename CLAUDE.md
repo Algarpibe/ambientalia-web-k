@@ -554,6 +554,27 @@ De donde el corolario operativo: **cuando el síntoma sea de envolvimiento, mide
 al ancho donde NO envuelve.** El ancho estrecho da el efecto; el ancho donde
 cabe da la causa.
 
+**Y la vuelta que le faltaba: LA GUARDA TAMBIÉN TIENE UN NIVEL, y el suyo es
+vertical (2026-08-01).** Al unificar las cuatro migas copiadas a mano se esperaba
+que `clon-base` —el guardián clon-contra-clon, umbral cero— marcase las cuatro
+rutas para adjudicarlas. Marcó **cero: `31 páginas · 0 con regresión` a 1440 y a
+390**, con el cambio verificado en el HTML servido y `a-miga` midiendo **+33.25**
+en una de ellas.
+
+> **`clon-base` mide `docH`, `h1.y`, nº de secciones y nº de enlaces: todo alto y
+> estructura.** Un defecto de **ancho** que no llega a cambiar el nº de renglones
+> **no le mueve un solo píxel**. La guarda no falló: estaba mirando otro eje.
+
+De ahí la lectura correcta de un verde suyo, que no es la que invita a dar:
+
+> **Un `clon-base` limpio dice «no hay regresión VERTICAL», nunca «el cambio no
+> tuvo efecto».** Para un cambio horizontal, la adjudicación tiene que venir de
+> una sonda que mida **ancho contra el original** — que es justo lo que la regla
+> de arriba pide, aplicada al instrumento en vez de al síntoma.
+
+Es la sexta instancia del catálogo de abajo con un contenedor nuevo: no una fila,
+ni una caja, ni un servidor, ni el protocolo — **el eje que la guarda no mide**.
+
 **La regla espejo es un caso particular de ésta.** Un Δ0 en un ancho con Δ≠0 en el
 otro no es «casi cuadra»: es una **medida tapada**, porque la holgura del
 contenedor no es la misma a 1440 que a 390 —a 1440 las columnas van en fila y la
@@ -605,6 +626,26 @@ La tercera es la que importa: **la sonda nueva llegó con tres defectos**, y
 ninguno habría dado error — habrían dado números plausibles. Una sonda es código
 sin tests; el único control es mirar su salida contra algo que ya sabes.
 
+**Y la regla NO acaba en la sonda: vale igual para quien la lee (2026-08-01).**
+
+> **El canal único de verdad cubre los dos extremos — lo que escribe la sonda y
+> lo que escribe quien la interpreta.** Un descuadre que la sonda imprime y el
+> informe no recoge produce exactamente el mismo daño que uno que la sonda nunca
+> contó: el lector del informe queda igual de ciego, y encima con una cita que
+> parece respaldada por una medida congelada.
+
+Su forma concreta, que es la que hay que saber reconocer: **citar un número de
+una tabla de PARES sin decir de qué lado es.** Medido — el acta de A-QA1 escribió
+«producto (**49.94**) daba Δ0 porque su rótulo no llega a 350». `49.94` es el
+**original**; el clon leía **38.94** dos columnas más allá en el mismo fichero
+congelado, y la miga entera iba a **−33.25 a los dos anchos**. La frase es
+verdadera del original, falsa del par, y **se usó para cerrar una clase** —
+que llegó a 3 de 7 implementaciones.
+
+La guarda es de redacción, no de código, y por eso hay que enunciarla: **un
+número de un par se cita con sus dos lados o no se cita.** `orig 49.94 → clon
+38.94` no se puede leer mal; `49.94`, sí.
+
 **2 · Una sonda que no congela su salida produce afirmaciones que no se pueden
 auditar después.**
 
@@ -647,6 +688,39 @@ comentario.
 > la comprobación da exactamente lo mismo en los dos casos. Lo que se decide
 > en una sesión se escribe en su documento EN esa sesión, o la siguiente lo
 > desharía con toda la razón aparente del mundo.
+
+**Y su TERCERA hermana, pagada con la miga (2026-08-01): UN COMENTARIO QUE
+AFIRMA CONSUMIDORES ES UN DATO SIN FUENTE.**
+
+> **Ningún comentario declara quién usa un componente.** Quién lo importa se
+> **deriva** —`grep -rn "components/X" src/`— y por tanto una lista escrita a
+> mano es, en el mejor caso, una copia desactualizada de algo que se puede
+> calcular. En el peor, y es el que pasó, **se lee como verdad y decide una
+> conclusión.**
+
+Medido: la cabecera de `Breadcrumb.tsx` afirmaba que la compartían
+`/monitor-calidad-aire`, `/accesorios`, `/software-…` y `/kunak-api`. **Las
+cuatro tenían su propia copia a mano y no importaban nada** — los importadores
+reales eran otros tres. Con esa cabecera por única evidencia se dio por **CERRADA
+la clase** del tope de 350, que llegó a **3 de 7** implementaciones; y una de las
+cuatro (`producto`) llevaba **−33.25 px** de miga a los dos anchos.
+
+Es la regla 3 —*documentado no es conectado*— aplicada al revés: allí el
+comentario prometía una **llamada** que no existía; aquí promete unos
+**consumidores** que no existen. Los dos fallan igual, porque en los dos casos
+**el comentario es la única cosa del repo que nadie ejecuta ni verifica.**
+
+La forma operativa, en dos mitades:
+
+1. **No se escribe la lista: se borra.** Actualizarla sólo reinicia el reloj
+   hasta el siguiente refactor. En su lugar, el comando que la deriva.
+2. **Y se barre**, porque si hay una hay más: los **74** `.tsx` de
+   `src/components` se revisaron en esa tanda y sólo mentía **ése** — pero eso
+   es un resultado, no un supuesto. El barrido discrimina por marcador
+   **semántico** (`aria-label`, `itemType`, `role`, clases `kunak-*`/`et_pb_*`),
+   nunca por literal de `className`: los tokens del tema se repiten por diseño y
+   casan en 16 ficheros a la vez, que es el falso positivo de *«un patrón que
+   casa en todas no mide nada»*.
 
 **Su corolario, que se pagó en la misma tanda:**
 
