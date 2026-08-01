@@ -1,4 +1,118 @@
-# HANDOFF — D4 con el MODELO resuelto y el arreglo listo para escribir; D2/D3/D1 sin tocar
+# HANDOFF — D4 ARREGLADO (3 partes, con residuo fichado); D2/D3/D1 sin tocar
+
+> ⚠ **Tanda 2026-08-01 (3.ª) · EL ARREGLO DE D4.** Tres commits, cada uno con su
+> medición antes/después y su adjudicación contra el original. **D2, D3 y D1 NO
+> se han tocado** — no cabían, y D1 sigue bloqueada por su condición.
+
+## 1 · Lo que se arregló, y contra qué se adjudicó
+
+El clon servía **681.09 de pie SIEMPRE** —el valor de SOFTWARE, la familia con
+la que se calibró—. Ahora cada tipo de página hereda su presentación.
+
+| forma | @1440 antes | @1440 ahora | @390 antes | @390 ahora |
+|---|---|---|---|---|
+| ancha (A×3 · sector · monográfico · faq) | +87.34 | **−3** | +292.52 | **+23.89** |
+| CASO | −255.72 | **−3** | +27.46 | **+23.9** |
+| catálogo · producto | −367.16 | **+3** | −310.70 | **+28.89** |
+| **software** | **0** | **0** ✅ | +0.78 | +0.78 ✅ |
+| home (sin tocar, a propósito) | −1.58 | −1.58 | +0.42 | +0.42 |
+
+- **La 4ª sección del CASO cierra a Δ 0.00 a los dos anchos** (343.06 y 265.06).
+- **`footer-background` cierra a 0 exacto** en las tres presentaciones y los dos
+  anchos: el eje del `padding` está cerrado.
+- **SOFTWARE no se movió un píxel**: no es una recalibración global disfrazada.
+
+**Adjudicación en las 31 rutas** (`c-cmp`, los dos anchos, congelado): el clon se
+movió en **28 de 31**, y las 3 que no son exactamente las que no debían (home
+intacta, las 2 de software sin cambio). El movimiento es **exactamente el Δ del
+pie** en cada familia: −90.34 ancha · +370.16 catálogo/producto · +252.72 caso
+@1440; −268.63 · +339.59 · −3.56 @390.
+
+**Y la reconstrucción cierra al céntimo**, que es lo que prueba que no se movió
+nada más: A·blog predicho `docH` 1400.66, medido **1401** (scrollHeight es
+entero); por causas, `D1 −225 + D2 +50 + D3 0 + D4 −3 + cuerpo −193.21 =
+−371.34` contra **−371** medido.
+
+## 2 · ⚠ El modelo del §6b tenía DOS ejes y son TRES (y hay un cuarto anotado)
+
+Corregido en `ESQUEMA-CMS.md` **§6b.1**. La decisión de modelo NO cambia —sigue
+siendo plantilla por tipo de página—; cambia de cuántos ejes consta.
+
+1. **Faltaban 4 formas, 9 rutas** (FAQ, HOME, A·documento, MONOGRÁFICO). Las 4
+   son `ancha`. La que importa: **el pie del original en la HOME es idéntico al
+   de grupo A**, no una maquetación propia.
+2. **El tercer eje es TIPOGRAFÍA** (`li` 14/26/mb0 · 14/30.6/mb7 ·
+   **18**/30.6/mb9; legal 12 · 12 · **18**). Con solo los dos primeros,
+   catálogo/producto se quedaban a **−79.19**. **No es responsive**: idéntico a
+   1280, 1440 y 390.
+3. **Cuarto eje, medido y NO cableado:** el bloque de **iconos sociales** vale
+   **31.59 en ancha** y **61.59 en estrecha**. Es el **+31.59** que queda en
+   `ancha` a 390.
+
+> **Por qué se escondía:** los dos ejes reproducen el total de
+> `footer-background`, que **no tiene texto**. Lo que no cuadraba vivía en el
+> **renglón**, dos niveles más abajo. Regla del NIVEL, aplicada al pie.
+
+## 3 · ⚠ Una medida del repo era falsa
+
+La cabecera de `Footer.tsx` atribuía `li 14px/30.6 mb 7` a
+**/monitor-calidad-aire** medido a 1280 (P1, 2026-07-27). /monitor da hoy
+**18px/30.6 mb 9** a ese mismo ancho — esos eran los valores de SOFTWARE.
+Corregida. **No se ha investigado** si el original cambió o si P1 midió otra
+cosa; se cableó lo medido hoy, reproducido a tres anchos y congelado.
+
+## 4 · El residuo — está FICHADO, no está limpio
+
+Composición en `PENDIENTES-QA.md` §D4. En corto:
+
+| @1440 | links | legal | fondo | | @390 | links | legal | fondo |
+|---|---|---|---|---|---|---|---|---|
+| ancha | −4 | +1 | 0 | | ancha | −7.7 | **+31.59** | 0 |
+| software | −1 | +1 | 0 | | software | −0.82 | +1.59 | 0 |
+| estrechaPad | +1 | +2 | 0 | | estrechaPad | **+26.29** | +2.6 | 0 |
+
+- El **+1 de `footer-legal` es ANTERIOR a esta tanda**: software ya lo tenía y se
+  anulaba contra el −1 de `footer-links`. Δ0 por compensación, dentro del único
+  Δ0 que el pie tenía.
+- El **+31.59 de ancha @390** tiene dueño medido (iconos sociales, arriba).
+- El **+26.29 de estrechaPad @390** NO está atribuido.
+
+## 5 · Lo que NO se tocó
+
+- **D2** (+50 de huecos entre secciones) y **D3** (−42 entre última sección y
+  pie): **sin diagnosticar y sin tocar.** No cabían en la tanda.
+- **D1** (−225 antes de la 1ª sección): **sigue bloqueada.** La condición no ha
+  cambiado — hay que demostrar primero que mueve `docH` y no solo la partición.
+- **`/` conserva su pie propio a propósito.** Su pie original es idéntico al de
+  grupo A, pero el clon lo construye aparte (`w-[85%]`, 1 bloque en vez de 3) y
+  totaliza −1.58/+0.42: partición distinta con total casi igual. **Va con C-QA3**
+  (+289.91 abierto); con los dos cambios a la vez no se adjudica ninguno.
+- **C3** (cuerpo de A·blog), **C5**, **C6**: sin cambios.
+
+## 6 · Sondas y verificación
+
+Nuevas: **`qa:d4-tipo`** (varianza tipográfica del pie) · **`qa:d4-cta`** (spec de
+la 4ª sección). `qa:d4` ampliada: **11 formas**, lee la fila **de los dos lados**
+(antes `null` en el clon — un `null` leído como dato), abre la composición
+(`fila`/`cols`/`mods`), estrena `Censo` y **código de salida** (antes devolvía 0
+pasara lo que pasara), y `SOLO=` para acotar.
+
+Las tres con **test en negativo comprobado en las dos direcciones** antes de
+creerse ningún limpio.
+
+`qa:enlaces` **limpia** · `qa:slugs` **limpia** · typecheck · lint 0 errores ·
+build · marcador verificado en el HTML servido en cada parte.
+
+⚠ **`c-cmp` sale con código 1 a los dos anchos, y ya lo hacía ANTES de esta
+tanda** (la corrida de línea base también). Es `P-C3-3`: su selector
+`.entry-content` se escribió para las 6 rutas del grupo C y hoy barre las 31, así
+que marca `<h1>`, `<article>`, `<header>` y `<meta>` en páginas que no son casos.
+**No es regresión y no se tocó** — pero es una sonda que no puede dar verde, o
+sea una guarda apagada.
+
+---
+
+# (anterior) HANDOFF — D4 con el MODELO resuelto y el arreglo listo para escribir; D2/D3/D1 sin tocar
 
 > ⚠ **Tanda 2026-08-01 (2.ª) · DIAGNÓSTICO de D4.** No se ha tocado ni un
 > componente. Se cierra aquí a propósito: el arreglo de D4 toca **las 31 rutas**

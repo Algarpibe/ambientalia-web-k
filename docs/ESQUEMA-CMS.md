@@ -1038,6 +1038,53 @@ falla en las demás. El arreglo **no es un campo por página**: es que el pie to
 ancho de fila y padding **del tipo de página**, y que CASO reciba su cuarta
 sección. Registro del defecto en `PENDIENTES-QA.md` §COBERTURA C1/D4.
 
+### ⚠⚠ 6b.1 · CORRIGE al §6b — son TRES ejes, y las formas son ONCE (2026-08-01)
+
+El §6b de arriba se escribió con **7 familias medidas y dos ejes**. Al escribir
+el arreglo, ampliar la sonda a **las 11 formas que el clon emite** y bajar al
+nivel del renglón cambió dos cosas. La decisión de modelo **no se mueve** —sigue
+siendo plantilla por tipo de página, no campo por instancia—; lo que se corrige
+es **cuántos ejes tiene esa plantilla** y **a cuántas formas se aplica**.
+
+**(1) Faltaban 4 formas — 9 de las 31 rutas.** FAQ, HOME, A·documento y
+MONOGRÁFICO no estaban medidas. Las cuatro caen en la presentación **ancha**, y
+la que importa es **HOME**: su pie en el original es **idéntico al de grupo A**
+(593.75 / 1761.17, fila 86 %, 3 secciones), no una maquetación propia.
+
+**(2) El tercer eje es TIPOGRAFÍA.** Con solo ancho de fila y `padding`,
+`footer-background` cuadra al céntimo y **catálogo/producto se quedan a −79.19**.
+Medido con `qa:d4-tipo` (5 formas, **idéntico a 1280, 1440 y 390** → no es un
+breakpoint):
+
+| eje | ancha | estrecha | estrecha+pad |
+|---|---|---|---|
+| `li` font-size | 14px | 14px | **18px** |
+| `li` line-height | **26px** | 30.6px | 30.6px |
+| `li` margin-bottom | **0** | 7px | **9px** |
+| `ul` padding-bottom | **14px** | 0 | 0 |
+| legal `<p>` font-size | 12px | 12px | **18px** |
+
+El legal a 18px envuelve a **2 renglones (61.19)** en vez de 1 (30.59): son los
+**+32.59** de `footer-legal`, al céntimo. La firma que lo delató es que crecen
+las columnas de **texto** y la de la **imagen** no se mueve (0).
+
+**(3) Y hay un cuarto eje anotado, sin cerrar:** el bloque de **iconos sociales**
+vale **31.59 en ancha** y **61.59 en estrecha** (columna 2 de `footer-legal`).
+Sale como **+31.59 en `ancha` a 390**. Medido, no modelado — **SIN PROBAR** para
+las formas que no se midieron.
+
+> **La lección, que es la de `CLAUDE.md` §El NIVEL aplicada al pie:** el alto de
+> una sección es un contenedor con holgura. Los dos ejes reproducían el TOTAL de
+> `footer-background` —que no tiene texto— y por eso parecían el modelo entero.
+> Lo que no cuadraba vivía **en el renglón**, dos niveles más abajo, y solo
+> aparece midiendo por composición: fila → columna → `li`.
+
+**Consecuencia para el content type:** la presentación del pie es un **preset de
+tres valores** (`fila`, `padSeccion`, `tipografía`) que el tipo de página hereda
+entero, no tres campos sueltos que un editor combine. Las tres combinaciones
+observadas son las tres que existen: no hay ninguna forma con fila ancha y
+tipografía de 18px, ni con `padding` y fila ancha.
+
 ---
 
 ## 7 · Decisiones abiertas, en un sitio

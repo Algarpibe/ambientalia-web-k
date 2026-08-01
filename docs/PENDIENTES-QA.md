@@ -3310,3 +3310,89 @@ enlaces servidos y verificados desde hace meses. Se comprobó moviendo las dos
 rutas nuevas fuera de `src/app`: el error desaparece — lo produce el enrutado,
 no el enlace. La guarda que sí importa aquí es **`qa:enlaces`**, que compara
 contra las rutas que emite el build y en las dos direcciones.
+
+---
+
+## D4 · EL PIE — arreglado en tres partes (2026-08-01)
+
+Cuarta de las cuatro causas de C1, y la única que **diferenciaba familias**: el
+clon servía **681.09 siempre**, el alto del pie de SOFTWARE, que es la familia
+con la que se calibró. Diagnóstico y modelo en `3a737c8`; el arreglo, aquí.
+
+### Lo que se hizo, y en qué orden
+
+1. **Congelar antes de tocar** (`32cceb0`) — `d4-pie-{1440,390}-antes.json` y
+   `c-cmp-{1440,390}-d4-antes.json`. Al tocar el pie se mueven las 31 rutas a la
+   vez y `clon-base` no puede decir si el cambio es correcto.
+2. **Ancho, `padding` y tipografía desde el TIPO DE PÁGINA** (`2da4491`).
+3. **La 4ª sección del CASO** (`61c0286`) — Δ **0.00** a los dos anchos.
+
+### El resultado, adjudicado contra el original
+
+| forma | @1440 antes | @1440 ahora | @390 antes | @390 ahora |
+|---|---|---|---|---|
+| ancha (A×3 · sector · monográfico · faq) | +87.34 | **−3** | +292.52 | **+23.89** |
+| CASO | −255.72 | **−3** | +27.46 | **+23.9** |
+| catálogo · producto | −367.16 | **+3** | −310.70 | **+28.89** |
+| **software** | **0** | **0** ✅ | +0.78 | +0.78 ✅ |
+| home (sin tocar) | −1.58 | −1.58 | +0.42 | +0.42 |
+
+**SOFTWARE no se movió un píxel**: el cambio no es una recalibración global.
+
+`footer-background` cierra a **0 exacto en las tres presentaciones y los dos
+anchos** — el eje del `padding` está cerrado.
+
+### ⚠ Tres cosas que la tanda descubrió y hay que no reinvestigar
+
+**1 · El modelo tenía DOS ejes y son TRES.** Ver `ESQUEMA-CMS.md` §6b.1. El
+tercero es tipografía (`li` 14/26/mb0 · 14/30.6/mb7 · **18**/30.6/mb9; legal 12 ·
+12 · **18**). Con solo los dos primeros, catálogo/producto se quedaban a
+**−79.19**, y el arreglo se habría dado por bueno porque «el modelo dice dos
+ejes». Lo tapaba el nivel: los dos ejes reproducen el total de
+`footer-background`, que **no tiene texto**.
+
+**2 · Una medida del repo era falsa.** La cabecera de `Footer.tsx` atribuía
+`li 14px/30.6 mb 7` a **/monitor-calidad-aire** medido a 1280 (P1, 2026-07-27).
+/monitor da hoy **18px/30.6 mb 9** a ese mismo ancho; esos valores son los de
+SOFTWARE. Corregida en el componente. No se ha investigado si el original cambió
+o si P1 midió otra cosa — lo que se cablea es lo medido hoy, reproducido a
+**tres anchos** (1280, 1440, 390) y congelado.
+
+**3 · La sonda `d4` era ciega del lado del clon** en el eje que se iba a tocar
+(`filaW` salía de `.et_pb_row`, que el clon no tiene → `null` en las 7). Un
+`null` leído como dato, otra vez. Corregido: un selector por lado y la salida
+dice **cuál** (`via`).
+
+### ABIERTO · el residuo, con su composición — NO es «limpio»
+
+| @1440 | links | legal | fondo |
+|---|---|---|---|
+| ancha | −4 | +1 | 0 |
+| software | −1 | +1 | 0 |
+| estrechaPad | +1 | +2 | 0 |
+
+| @390 | links | legal | fondo |
+|---|---|---|---|
+| ancha | −7.7 | **+31.59** | 0 |
+| software | −0.82 | +1.59 | 0 |
+| estrechaPad | **+26.29** | +2.6 | 0 |
+
+- **El +1 de `footer-legal` es ANTERIOR a esta tanda**: software ya lo tenía y se
+  anulaba contra el −1 de `footer-links` — Δ0 por compensación, no por acierto.
+  Es la firma que `CLAUDE.md` describe, y estaba dentro del único Δ0 del pie.
+- **El +31.59 de `ancha` a 390 tiene dueño medido: el bloque de iconos
+  sociales**, que vale **31.59 en ancha** y **61.59 en estrecha** (columna 2 de
+  `footer-legal`). El clon sirve el de estrecha en las dos. **Cuarto eje de
+  presentación, medido y NO cableado.**
+- **El +26.29 de `estrechaPad` a 390** no está atribuido: sin descomponer.
+
+### ABIERTO · `/` sigue con su pie propio, a propósito
+
+Medido: el pie del original en la home es **idéntico al de grupo A** (593.75 /
+1761.17, fila 86 %, 3 secciones). El clon lo construye aparte —`w-[85%]`, **1
+solo bloque de nivel 1** en vez de 3, espaciador de 40— y aun así totaliza
+**−1.58 / +0.42**: partición distinta con total casi igual, o sea una
+compensación, no un acierto.
+
+**No se cambia en esta tanda** porque la home tiene **C-QA3 abierto (+289.91)** y
+con los dos cambios a la vez no se adjudica ninguno de los dos. Va con C-QA3.
