@@ -41,10 +41,17 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.
 > **No se edita a mano**: se recomputa de las salidas de `medidas/`.
 
+> ⚠ **`/` — base `h1` NO VÁLIDA. Ancla alternativa: el `h2`.** Su `h1` es un
+> título oculto para SEO en los dos lados y **no empuja nada**: original
+> `static` pero **0×0**, clon `absolute` (fuera de flujo) 1×1. Medido
+> 2026-08-01, `medidas/c-cabecera-{1440,390}-parcial-2026-08-01.json`. Su celda
+> `O` en «base» significa *comparada*, **no** *verificada*: el número que vale
+> es el del `h2` — **+21.03 a 1440 · −0.23 a 390**, abierto en C-QA3.
+
 | ruta | docH | base cruda (h1.y) | árbol secciones | filas | módulos | offsets/holgura | anchos horiz. | enlaces | comportamiento |
 |---|---|---|---|---|---|---|---|---|---|
 | **HOME** ||||||||||
-| `/` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/` ⚠ | **O** | **O**⚠ | **O** | · | · | · | **O** | **O** | · |
 | **PRODUCTO** ||||||||||
 | `/monitor-calidad-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | **CATÁLOGO** ||||||||||

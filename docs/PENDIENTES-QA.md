@@ -3022,6 +3022,67 @@ en el clon**; los otros cuatro dan Δ0 exacto.
 > alimenta la tanda CLASE. Es la **primera vez** que 31 rutas se comparan con el
 > original en `docH` y árbol — antes 23 de ellas solo tenían `clon-base`.
 
+### ⚠ C1 · LOCALIZADO (2026-08-01) — no es UN desfase, son CUATRO que se suman
+
+> Sonda: `node scripts/qa/c1-localiza.mjs 1440|390`, una ruta por familia.
+> Congelado: `medidas/c1-localizacion-{1440,390}.json`. **Diagnóstico: no se ha
+> arreglado nada.**
+
+El «resto» se abre por composición en cuatro piezas, y **las cuatro sumadas
+reconstruyen el número de cada familia al céntimo**:
+
+| pieza | A · blog | CATÁLOGO | SOFTWARE |
+|---|---|---|---|
+| **D1 · antes de la 1ª sección** | −225 | −225 | −225 |
+| **D2 · Σ huecos entre secciones** | +50 | +50 | +50.01 |
+| **D3 · entre última sección y pie** | 0 | −42 | −42 |
+| **D4 · alto del PIE** | **+87.34** | **−367.16** | **0** |
+| resto (después del pie) | −0.13 | +0.19 | −0.64 |
+| **suma** | **−87.79** | **−583.97** | **−217.63** |
+| medido en C1 | −87.79 | −583.97 | −217.63 |
+
+**Cuadra exacto en las tres.** Y a 390 también: A da
+`−165.58 + 76 + 0 + 292.52 + 0.42 = **+203.36**`, que es el valor medido.
+
+**Qué es cada una:**
+
+- **D1 — la cabecera del clon está FUERA DE FLUJO.** Original `position: static`
+  (`relative` a 390) y **en flujo**, 225 de alto: empuja la primera sección 225
+  hacia abajo. El clon la pone `absolute`, así que su primera sección arranca en
+  **y = 0**. ⚠ **No está probado que esto sea defecto de `docH`**: si el clon
+  mete esos 225 dentro de su primera sección, la partición cambia pero el total
+  no. Es la misma trampa de C4 — mientras la partición no sea equivalente, el
+  reparto resto/secciones no se puede leer. **Se mide antes de tocar.**
+- **D2 — el clon mete 50 px de hueco entre secciones que el original no tiene**
+  (76 a 390 en grupo A). Constante en las tres familias.
+- **D3 — el original tiene 42 px entre la última sección y el pie** que el clon
+  no tiene. En catálogo y software; en grupo A no existe (0 en los dos).
+- **D4 — el pie del clon es de ALTO FIJO y el del original VARÍA por página.**
+  Ésta es la que explica que el número sea *distinto por familia*:
+
+| | pie original @1440 | pie clon @1440 |
+|---|---|---|
+| A · blog | **593.75** | 681.09 |
+| CATÁLOGO | **1048.25** | 681.09 |
+| SOFTWARE | **681.09** | 681.09 |
+
+  El clon sirve **siempre 681.09**; el original va de 593.75 a 1048.25. Por eso
+  SOFTWARE daba Δ0 en esta pieza y las otras dos no: **el clon acertó en la
+  familia con la que se calibró el pie, y las demás heredaron su altura.** Es
+  otra vez «corrección aparente por contenido corto», ahora en el pie.
+
+**Sobre la inversión de signo, que era el riesgo del encargo:** las cuatro causas
+son las mismas a los dos anchos, con magnitudes distintas (D1 −225→−165.58, D2
++50→+76, D4 +87.34→+292.52). **No hacen falta dos explicaciones**, pero tampoco
+vale una sola: son cuatro sumandos con signos opuestos, que es exactamente la
+forma «dos errores que se anulan» del catálogo del NIVEL, aquí con cuatro.
+
+**Orden para la tanda de arreglo:** D4 primero (es la que diferencia familias y
+la de mayor magnitud), luego D2 y D3 (constantes y localizadas), y **D1 la
+última y solo si se demuestra que mueve `docH`** — tocar el flujo de la cabecera
+en 31 rutas por un número que quizá sea de partición es el arreglo falso de
+manual.
+
 ### ⚠ C1 · CLASE — el cascarón fuera de sección difiere por FAMILIA, y el signo se invierte
 
 Descomponiendo `docH` en **Σ secciones** (cuerpo) y **resto** (cabecera + pie +
@@ -3051,7 +3112,43 @@ coincide en los dos lados y la partición es por tanto equivalente:
 y `c-cabecera` mide **por encima del `h1`** — que en grupo A cuadra a −0.01. El
 residuo vive **por debajo**, o sea en el pie o en el hueco que lo precede.
 
-### C2 · DEFECTO — la HOME tiene la base desplazada +289.91, y nunca se había mirado
+### ~~C2 · DEFECTO — la HOME tiene la base desplazada +289.91~~ → **NO ES DEFECTO. Anulada el 2026-08-01**
+
+> ⚠ **La ficha de abajo estaba MAL y contradecía a C-QA3**, que ya lo había
+> resuelto el 2026-07-31. Se tacha ésta, no aquélla. Se deja escrita porque el
+> error es instructivo.
+>
+> **Qué falló:** leí `h1.y` original = 0 y concluí «el original pone el `h1`
+> arriba con la cabecera transparente encima». **Nunca miré si el `h1` tenía
+> caja.** No la tiene: es un título oculto para SEO en los dos lados, y su `y`
+> no guarda relación con la maquetación. Es exactamente lo que dice C-QA3.
+>
+> **Medido ahora, que es lo que faltaba** (`c-cabecera` mide ya `h1caja`,
+> congelado en `medidas/c-cabecera-{1440,390}-parcial-2026-08-01.json`):
+>
+> | | `position` | ¿en flujo? | caja | ¿empuja algo? |
+> |---|---|---|---|---|
+> | original | `static` | sí | **0 × 0** | **nada** |
+> | clon | `absolute` | **no** | 1 × 1 | **nada** |
+>
+> Los dos tienen **consecuencia visual cero**, por caminos distintos: el original
+> ocupa 0 px estando en flujo, el clon está fuera de flujo. Así que **el +289.91
+> no desplaza ni un píxel de nada** y no es un defecto.
+>
+> **Lo que sí hay en la home es el +21.03 de C-QA3**, medido contra el ancla
+> válida (el `h2`, el mismo elemento en los dos lados) y **reproducido hoy al
+> céntimo**: `+21.03` a 1440 y `−0.23` a 390. Sigue **ABIERTO** ahí, no aquí.
+>
+> **Y la consecuencia de método, que es lo que hay que llevarse:** «alto 0 o 1
+> px» dice que no se ve; **no** dice que no tenga consecuencia. Un elemento de
+> 1 px **en flujo** desplaza 1 px. Lo que decide si su `y` importa es
+> `position`, y eso hay que **medirlo** — no deducirlo de la clase (`sr-only`),
+> que es la fuente que uno supone responsable.
+>
+> **En la matriz de cobertura la home queda marcada `base h1 NO VÁLIDA — ancla
+> alternativa: h2`**, para que su celda `O` no se lea como «base verificada».
+
+### ~~C2~~ (texto original, anulado)
 
 | | original | clon | Δ |
 |---|---|---|---|

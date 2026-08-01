@@ -121,6 +121,31 @@ const LECTOR = () => {
     h1yCrudo: yH1,
     h1alto: h1 ? r(rect(h1).height) : null,
     /**
+     * ⚠ ¿El `h1` EMPUJA algo? (2026-08-01, para cerrar C2 contra C-QA3)
+     *
+     * «Alto 0/1 px» dice que no se ve, pero **no** dice que no tenga
+     * consecuencia: un elemento de 1 px EN FLUJO desplaza 1 px lo que va
+     * detrás. Lo que decide si su `y` importa es si está **fuera de flujo**.
+     * Se lee del estilo COMPUTADO y no de la clase (`sr-only` de Tailwind es
+     * `position:absolute`, pero el principio del proyecto es verificar contra
+     * la salida servida, no contra la fuente que uno supone responsable).
+     */
+    h1caja: h1
+      ? (() => {
+          const s = getComputedStyle(h1);
+          return {
+            position: s.position,
+            enFlujo: s.position !== "absolute" && s.position !== "fixed",
+            display: s.display,
+            visibility: s.visibility,
+            clip: s.clip,
+            clipPath: s.clipPath,
+            overflow: s.overflow,
+            w: r(rect(h1).width),
+          };
+        })()
+      : null,
+    /**
      * ⚠ El primo hermano de C-SP16: un selector que **casa en los dos lados
      * pero apunta a cosas distintas**. `document.querySelector("h1")` devuelve
      * el PRIMER `h1`, y si el original tiene uno dentro de la cabecera que el

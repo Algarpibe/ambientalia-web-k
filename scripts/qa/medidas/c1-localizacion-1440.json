@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-01"
+  },
+  "familias": {
+    "A · blog": {
+      "orig": {
+        "docH": 1772,
+        "nSecs": 2,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 225,
+            "h": 50,
+            "txt": "InicioBlogTodas nuestras soluc"
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 903.27,
+            "txt": "Todas nuestras soluciones en e"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 225,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Soporte Centro de ayuda Servic"
+          },
+          {
+            "nombre": "pie",
+            "y": 1178.27,
+            "h": 593.75,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak "
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 0
+          }
+        ],
+        "antesDePrimeraSeccion": 225,
+        "entreUltimaSeccionYPie": 0,
+        "altoPie": 593.75,
+        "despuesDelPie": -0.02,
+        "sumaSecciones": 953.27
+      },
+      "clon": {
+        "docH": 1491,
+        "nSecs": 2,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 535.06,
+            "txt": "Todas nuestras soluciones en e"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 203.59,
+            "position": "absolute",
+            "enFlujo": false,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "SoporteCentro de ayudaServicio"
+          },
+          {
+            "nombre": "pie",
+            "y": 810.06,
+            "h": 681.09,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKunak AI"
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 50
+          }
+        ],
+        "antesDePrimeraSeccion": 0,
+        "entreUltimaSeccionYPie": 0,
+        "altoPie": 681.09,
+        "despuesDelPie": -0.15,
+        "sumaSecciones": 760.06
+      }
+    },
+    "CATÁLOGO": {
+      "orig": {
+        "docH": 11319,
+        "nSecs": 4,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 225,
+            "h": 50,
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 7611.56,
+            "txt": "Accesorios Accesorios para sen"
+          },
+          {
+            "i": 2,
+            "y": 7886.56,
+            "h": 958.33,
+            "txt": "Artículos y Guías Efectos de l"
+          },
+          {
+            "i": 3,
+            "y": 8844.89,
+            "h": 1383.81,
+            "txt": "Preguntas frecuentes ¿Los equi"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 225,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Soporte Centro de ayuda Servic"
+          },
+          {
+            "nombre": "pie",
+            "y": 10270.7,
+            "h": 1048.25,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak "
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 0
+          },
+          {
+            "entre": "1→2",
+            "hueco": 0
+          },
+          {
+            "entre": "2→3",
+            "hueco": 0
+          }
+        ],
+        "antesDePrimeraSeccion": 225,
+        "entreUltimaSeccionYPie": 42,
+        "altoPie": 1048.25,
+        "despuesDelPie": 0.05,
+        "sumaSecciones": 10003.7
+      },
+      "clon": {
+        "docH": 10882,
+        "nSecs": 4,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 7671.73,
+            "txt": "AccesoriosAccesorios para sens"
+          },
+          {
+            "i": 2,
+            "y": 7946.73,
+            "h": 878.13,
+            "txt": "Artículos y GuíasEHS industria"
+          },
+          {
+            "i": 3,
+            "y": 8824.86,
+            "h": 1375.81,
+            "txt": "Preguntas frecuentes¿Los equip"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 203.59,
+            "position": "absolute",
+            "enFlujo": false,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "SoporteCentro de ayudaServicio"
+          },
+          {
+            "nombre": "pie",
+            "y": 10200.67,
+            "h": 681.09,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKunak AI"
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 50
+          },
+          {
+            "entre": "1→2",
+            "hueco": 0
+          },
+          {
+            "entre": "2→3",
+            "hueco": 0
+          }
+        ],
+        "antesDePrimeraSeccion": 0,
+        "entreUltimaSeccionYPie": 0,
+        "altoPie": 681.09,
+        "despuesDelPie": 0.24,
+        "sumaSecciones": 10150.67
+      }
+    },
+    "SOFTWARE": {
+      "orig": {
+        "docH": 5421,
+        "nSecs": 5,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 225,
+            "h": 50,
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 1947.66,
+            "txt": "Kunak API Integración de datos"
+          },
+          {
+            "i": 2,
+            "y": 2222.66,
+            "h": 749.94,
+            "txt": "Artículos y Guías Monitorizaci"
+          },
+          {
+            "i": 3,
+            "y": 2972.59,
+            "h": 1433.81,
+            "txt": "Preguntas frecuentes ¿Los equi"
+          },
+          {
+            "i": 4,
+            "y": 4406.41,
+            "h": 291.22,
+            "txt": "Saca el máximo partido a los d"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 225,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Soporte Centro de ayuda Servic"
+          },
+          {
+            "nombre": "pie",
+            "y": 4739.63,
+            "h": 681.09,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak "
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 0
+          },
+          {
+            "entre": "1→2",
+            "hueco": 0
+          },
+          {
+            "entre": "2→3",
+            "hueco": -0.01
+          },
+          {
+            "entre": "3→4",
+            "hueco": 0.01
+          }
+        ],
+        "antesDePrimeraSeccion": 225,
+        "entreUltimaSeccionYPie": 42,
+        "altoPie": 681.09,
+        "despuesDelPie": 0.28,
+        "sumaSecciones": 4472.63
+      },
+      "clon": {
+        "docH": 5337,
+        "nSecs": 5,
+        "secciones": [
+          {
+            "i": 0,
+            "y": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "y": 275,
+            "h": 1928.92,
+            "txt": "Kunak APIIntegración de datos "
+          },
+          {
+            "i": 2,
+            "y": 2203.92,
+            "h": 735.31,
+            "txt": "Artículos y GuíasContaminación"
+          },
+          {
+            "i": 3,
+            "y": 2939.23,
+            "h": 1425.81,
+            "txt": "Preguntas frecuentes¿Los equip"
+          },
+          {
+            "i": 4,
+            "y": 4365.05,
+            "h": 291.22,
+            "txt": "Saca el máximo partido a los d"
+          }
+        ],
+        "piezas": [
+          {
+            "nombre": "cabecera",
+            "y": 0,
+            "h": 203.59,
+            "position": "absolute",
+            "enFlujo": false,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "SoporteCentro de ayudaServicio"
+          },
+          {
+            "nombre": "pie",
+            "y": 4656.27,
+            "h": 681.09,
+            "position": "static",
+            "enFlujo": true,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKunak AI"
+          }
+        ],
+        "huecos": [
+          {
+            "entre": "0→1",
+            "hueco": 50
+          },
+          {
+            "entre": "1→2",
+            "hueco": 0
+          },
+          {
+            "entre": "2→3",
+            "hueco": 0
+          },
+          {
+            "entre": "3→4",
+            "hueco": 0.01
+          }
+        ],
+        "antesDePrimeraSeccion": 0,
+        "entreUltimaSeccionYPie": 0,
+        "altoPie": 681.09,
+        "despuesDelPie": -0.36,
+        "sumaSecciones": 4606.26
+      }
+    }
+  }
+}

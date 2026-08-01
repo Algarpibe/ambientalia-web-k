@@ -804,6 +804,23 @@ caso sí—. Lo que no puede pasar es que no case en ninguna.
 > selector es **discriminar**, casar en el 100 % no es «esta propiedad la tienen
 > todas»: casi siempre es que está mirando otra cosa.
 
+**Y vale igual para una COMPARACIÓN, no solo para un selector (2026-08-01):**
+
+> **31 de 31 rutas distintas no es un hallazgo: es el instrumento.** Un
+> comparador que encuentra defecto en el 100 % de lo que mira está, casi
+> siempre, comparando dos cosas que no son la misma.
+
+Medido: la primera versión del árbol de `c-cmp` dio **las 31 rutas con el árbol
+distinto**. Cero defectos — Divi mete **la cabecera y el pie del theme builder**
+dentro de `.et_pb_section`, y el clon no los emite en `main`. Contra
+`esqueleto.json`: sector `{tb_header:1, tb_footer:3, propia:7}` = 11 contra los
+**7** del clon, y los 7 **eran exactos**. Dos selectores que no denotan el mismo
+conjunto.
+
+De donde la comprobación que cuesta un minuto y hay que hacer siempre: **antes
+de creerse un pleno, reconstruye UN caso a mano contra una medida buena
+anterior.** Si el clon «falla» en todo, empieza por dudar del comparador.
+
 Medido en el recon de listados: `post_content` daba **«sí» en las 35** porque
 buscaba `et_pb_post_content` en el HTML entero y lo encontraba **dentro de
 `<style>`** — el CSS de Divi nombra sus propias clases. Un cero habría saltado

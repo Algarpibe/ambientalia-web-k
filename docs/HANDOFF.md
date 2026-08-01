@@ -1,4 +1,103 @@
-# HANDOFF — grupo A construido y A-QA1 CERRADO; quedan la CAMPAÑA, la home y C-QA5
+# HANDOFF — C2 resuelta (no era defecto), C1 LOCALIZADA en cuatro causas; falta arreglarlas
+
+> ⚠ **Tanda 2026-08-01 · DIAGNÓSTICO.** No se ha tocado ni un componente. Lo que
+> hay es una contradicción del repo resuelta y una causa raíz abierta en cuatro
+> piezas, listas para arreglar. Registro en `PENDIENTES-QA.md` §COBERTURA;
+> matriz en `docs/research/COBERTURA-MEDICION.md`.
+
+## 1 · C2 estaba MAL y contradecía a C-QA3. Se anula C2
+
+El repo afirmaba dos cosas incompatibles sobre la home: C-QA3 (2026-07-31) decía
+que el `+289.91` **no es un defecto y nunca lo fue**; C2 (2026-08-01) lo fichaba
+como DEFECTO. **La que se tacha es C2**, y la medición que lo decide es la que
+faltaba — si el `h1` **empuja** algo:
+
+| | `position` | ¿en flujo? | caja | ¿empuja? |
+|---|---|---|---|---|
+| original | `static` | sí | **0 × 0** | **nada** |
+| clon | `absolute` | **no** | 1 × 1 | **nada** |
+
+Consecuencia visual **cero por los dos lados**, por caminos distintos. El error
+de C2 fue leer `h1.y = 0` y deducir una maquetación sin comprobar que el `h1`
+tuviera caja.
+
+> **Lo que hay que llevarse:** «alto 0 o 1 px» dice que no se ve; **no** dice que
+> no tenga consecuencia. Un elemento de 1 px **en flujo** desplaza 1 px. Lo
+> decide `position`, y hay que **medirlo** — no deducirlo de la clase (`sr-only`).
+
+`c-cabecera` mide ya `h1caja` (position · enFlujo · clip · w). La home queda
+marcada en la matriz como **base `h1` NO VÁLIDA — ancla alternativa: `h2`**.
+
+**Lo que sí sigue abierto en la home es C-QA3: +21.03 a 1440 · −0.23 a 390**
+contra el `h2`, reproducido hoy al céntimo. No es esta tanda.
+
+## 2 · C1 LOCALIZADA: no es un desfase, son CUATRO que se suman
+
+`npm run qa:c1 -- 1440|390` (sonda nueva, congela). Una ruta por familia. **Las
+cuatro piezas reconstruyen el número de cada familia al céntimo:**
+
+| pieza | A · blog | CATÁLOGO | SOFTWARE |
+|---|---|---|---|
+| **D1 · antes de la 1ª sección** | −225 | −225 | −225 |
+| **D2 · Σ huecos entre secciones** | +50 | +50 | +50.01 |
+| **D3 · entre última sección y pie** | 0 | −42 | −42 |
+| **D4 · alto del PIE** | **+87.34** | **−367.16** | **0** |
+| **suma** | **−87.79** | **−583.97** | **−217.63** |
+| medido | −87.79 | −583.97 | −217.63 |
+
+Y a 390 cuadra igual: A da `−165.58 + 76 + 292.52 + 0.42 = +203.36`, el valor
+medido. **La inversión de signo no necesita dos explicaciones**: son las mismas
+cuatro causas con magnitudes distintas por ancho.
+
+**D4 es la que explica que el número sea distinto por familia** — el pie del clon
+es de **alto fijo (681.09)** y el del original **varía por página**: 593.75 en
+blog, 1048.25 en catálogo, 681.09 en software. O sea que **el clon acertó en la
+familia con la que se calibró el pie y las demás heredaron su altura**: otra
+«corrección aparente por contenido corto», ahora en el pie.
+
+## 3 · Por dónde seguir — el orden importa y está razonado
+
+1. **D4 primero** — la de mayor magnitud y la única que diferencia familias.
+   Hay que averiguar **qué** hace variar el pie del original (¿widgets por tipo
+   de página? ¿un módulo extra en catálogo?) y modelarlo. Es candidato a
+   **campo**, así que puede tocar `ESQUEMA-CMS.md`.
+2. **D2 y D3** — constantes (+50 / −42) y localizadas; deberían ser baratas.
+3. **D1 la ÚLTIMA, y solo si se demuestra que mueve `docH`.** ⚠ La cabecera del
+   clon está fuera de flujo y la del original en flujo, pero **si el clon mete
+   esos 225 dentro de su primera sección, la partición cambia y el total no**.
+   Mientras no se pruebe, tocar el flujo de la cabecera en 31 rutas es el
+   arreglo falso de manual. **Medir antes de tocar.**
+
+**Cada arreglo: un commit, medición antes/después, y adjudicación contra el
+original de todo lo que se mueva** (regla de petróleo: qué cambió nunca dice si
+el cambio es correcto).
+
+## 4 · Lo que también queda abierto, sin tocar
+
+- **C3** — el cuerpo de A·blog va de −2 941.74 a **+1 111.92**, signos en los dos
+  sentidos: no hay causa única. Pendiente de descomponer por módulo.
+- **C4** — 14 rutas con distinto nº de secciones. La FAQ es **incomparable por
+  construcción** (el original no mete su cuerpo en ninguna `.et_pb_section`).
+- **C5** — industria fila 4 **+13 a los dos anchos** (reproduce → defecto);
+  investigación **+11.2 a 390**; edar **−30 a 390**, dentro del suelo NO probado
+  de ±32.28 → **SIN PROBAR**, no se toca.
+- **C6** — el estado HTTP solo lo mira `c-cmp`; `lib.mjs` ya lo expone. Falta en
+  las demás sondas.
+- **La matriz**: ancho del **cuerpo** sigue a **0/31** de verdad (los 13 son de
+  un elemento) y comportamiento a **0/31**.
+
+## 5 · Estado de la cobertura
+
+`npm run qa:cobertura` — docH **31/31** · base **31/31** · árbol **31/31** ·
+enlaces **31/31** (ya congela) · anchos 13 · filas 6 · módulos 2 · offsets 0 ·
+comportamiento 0. **Cero celdas `c`** en los cuatro primeros.
+
+Verificación de esta tanda: `qa:enlaces` limpia · `qa:slugs` limpia · `qa:lib`
+26/26 · lint 0 errores · typecheck · build.
+
+---
+
+# (anterior) HANDOFF — grupo A construido y A-QA1 CERRADO; quedan la CAMPAÑA, la home y C-QA5
 
 > ⚠ **Tanda 2026-07-31 (5.ª del día) — CONSTRUCCIÓN DEL GRUPO A.** Acta en
 > **`docs/research/arquetipo-A/MEDICION.md`**; el ESQUEMA gana **§2.4** (cuatro
