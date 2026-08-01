@@ -388,11 +388,31 @@ export interface EntradaBlog {
   relacionados: boolean;
 }
 
-/** TÉRMINO DE KUNAKPEDIA — 37 de las 209. La forma más plana: 4 campos. */
+/**
+ * TÉRMINO DE KUNAKPEDIA — 37 de las 209. La forma más plana.
+ *
+ * ⚠ **Y tiene un campo que el resto del grupo A no tiene**, destapado al medir
+ * A-QA1: el rótulo de la miga de pan **no es el `h1`**. Medido en las 14
+ * instancias transcritas, **3 de 3 términos difieren** y **11 de 11** entradas
+ * de blog y documentos coinciden:
+ *
+ *   miga «Emisiones atmosféricas»  ·  h1 «Emisiones atmosféricas y su impacto…»
+ *   miga «Cloruro de hidrógeno (HCl)» · h1 «…: emisiones, riesgos y monitorización…»
+ *   miga «Metano (CH4)»            ·  h1 «Metano, un desafío para la estabilidad…»
+ *
+ * No es una excepción: es la **regla de esta forma**. El `h1` es el titular
+ * largo y el rótulo es el nombre corto del término.
+ */
 export interface TerminoKunakpedia {
   slug: string;
   seo: SeoA;
   titulo: string;
+  /**
+   * Rótulo corto para la miga (y para cualquier listado que lo use). **Opcional
+   * con defecto «el título», omitido cuando coinciden** — el mismo patrón que
+   * `prefijo` (CMS-1), `headingColor` y `variante`.
+   */
+  tituloMiga?: string;
   cuerpo: CampoRico;
 }
 

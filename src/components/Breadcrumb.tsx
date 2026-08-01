@@ -41,9 +41,31 @@ export interface BreadcrumbItem {
  *     original y 425.06 en el clon **con el mismo texto**. Sin el truncado, a
  *     390 el titular envuelve en 3 renglones donde el original hace 2.
  *
- * Las dos son de la plantilla del CASO, así que van en una variante y **no en
+ * ~~Las dos son de la plantilla del CASO, así que van en una variante y **no en
  * el defecto**: cambiarlas para todos movería producto y los 6 sectores, que
- * hoy cuadran.
+ * hoy cuadran.~~
+ *
+ * ── ⚠ CORREGIDO 2026-07-31 (A-QA1): la 2 NO es del caso, es del TEMA ────────
+ * La conclusión de arriba es la mitad correcta: la **interlínea** sí es del
+ * caso. **El truncado no.** Medido con `npm run qa:a-miga` en las **siete
+ * formas** del original —blog, término, documento científico, caso, producto,
+ * sector— el último `li` trae `max-width: 350px · white-space: nowrap ·
+ * overflow: hidden · text-overflow: ellipsis` **sin una excepción**.
+ *
+ * Y las tres consecuencias, que valen más que el arreglo:
+ *
+ *  · **la variante estaba mal delimitada**: metió una regla general entre las
+ *    específicas. El truncado baja aquí, al defecto;
+ *  · **producto y sectores daban Δ0 porque sus rótulos no llegan a 350**
+ *    —49.94 y 194.52 medidos—, no porque estuvieran bien. Es corrección
+ *    aparente **por contenido corto**: el Δ0 no verificaba la regla, la
+ *    esquivaba;
+ *  · y por eso es **CLASE, no instancia**: el día que alguien escriba un título
+ *    largo en un sector o en un producto, el clon envolverá donde el original
+ *    trunca, y el defecto aparecerá en una página que llevaba meses verde.
+ *
+ * Lo destapó el grupo A porque **sus títulos sí pasan de 350** (498.97 y 681.77
+ * medidos a 1440): el corpus nuevo ejercitó una regla que el viejo no tocaba.
  */
 export function Breadcrumb({
   items,
@@ -53,7 +75,10 @@ export function Breadcrumb({
   items: BreadcrumbItem[];
   /** Retícula de la fila. Por defecto la de las páginas de producto (80%). */
   rowClassName?: string;
-  /** Qué plantilla las pinta. Cambia interlínea y truncado del último. */
+  /**
+   * Qué plantilla las pinta. **Solo cambia la interlínea** — el truncado del
+   * último eslabón bajó al defecto en A-QA1, porque está en las 7 formas.
+   */
   variante?: "producto" | "caso";
 }) {
   const esCaso = variante === "caso";
@@ -73,8 +98,11 @@ export function Breadcrumb({
               key={item.label}
               className={
                 "inline-block pr-[7.2px] after:pl-[7.2px] after:content-['/'] last:after:content-none " +
-                // El truncado es del ÚLTIMO, que es el título del contenido.
-                (esCaso && i === items.length - 1
+                // El truncado es del ÚLTIMO, que es el título del contenido — y
+                // va **en el defecto**: medido en las 7 formas del original, sin
+                // una excepción (A-QA1). Antes vivía en `variante="caso"` y eso
+                // era una regla general disfrazada de específica.
+                (i === items.length - 1
                   ? "max-w-[350px] overflow-hidden text-ellipsis whitespace-nowrap align-bottom"
                   : "")
               }

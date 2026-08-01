@@ -114,7 +114,13 @@ function migasDe(p: Pagina) {
     { label: "Recursos", href: `${O}/recursos/` },
   ];
   if (p.forma === "termino")
-    return [...base, { label: "Kunakpedia", href: `${O}/recursos/kunakpedia/` }, { label: p.datos.titulo }];
+    // ⚠ El rótulo de la miga **no es el `h1`** en esta forma (3 de 3 medidos):
+    // es el nombre corto del término. Campo opcional con defecto «el título».
+    return [
+      ...base,
+      { label: "Kunakpedia", href: `${O}/recursos/kunakpedia/` },
+      { label: p.datos.tituloMiga ?? p.datos.titulo },
+    ];
   const { recurso, titulo } = p.datos;
   if (!recurso)
     return [

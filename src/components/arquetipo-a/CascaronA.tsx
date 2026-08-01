@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { Breadcrumb } from "@/components/Breadcrumb";
+
 /**
  * EL CASCARÓN DEL ARQUETIPO A — las piezas comunes a las tres plantillas.
  *
@@ -44,47 +46,32 @@ export function FilaA({
 }
 
 /**
- * `section#0` — la sección de las migas. **50 px de alto a 1440** (fila
- * `pt/pb 12` + texto de 26) y 102 a 390 cuando la miga envuelve a 3 renglones.
+ * `section#0` — la sección de las migas del grupo A.
  *
- * El texto va a **12 px / 600 / `#0075C9` / `letter-spacing: .3px`**, que no es
- * el gris del resto del sitio: la miga del arquetipo A es azul y semibold.
- * Medido, no heredado del caso — ahí es otra cosa.
+ * ⚠ **Esto era un componente DUPLICADO, y lo era sin necesidad.** La primera
+ * versión reimplementó la miga aquí —con el separador escrito como `›` en el
+ * marcado y `mx-[6px]`— cuando `src/components/Breadcrumb.tsx` ya la pintaba
+ * para producto, caso y los 6 sectores. La regla del proyecto dice extraer a la
+ * raíz cuando un componente se reutiliza; aquí el de la raíz **ya existía** y se
+ * escribió otro al lado.
  *
- * ── ⚠ La interlínea es 26, y el módulo dice 30.6 ─────────────────────────
- * La primera versión puso `leading-[30.6px]`, que es el `line-height` computado
- * de `text#0`, y salió **+4.58 en las tres formas a 1440** — un residuo
- * constante, o sea una sola causa por encima del `h1`. La composición la señala
- * sin ambigüedad:
+ * El coste no fue el duplicado: fue que el duplicado **divergió**. El original
+ * no escribe el separador en el marcado —lo pinta un `::after` del `li` con
+ * `content: "/"`, `padding-left: 7.2`— y el eslabón lleva `padding-right: 7.2`.
+ * Reimplementarlo a mano dio `75.89` donde el original mide `75.72`.
  *
- *   original @1440   12 + **26** + 12 = **50**  = `section#0` ✓
- *   original @390    12 + 3×**26** + 12 = **102** = `section#0` con 3 renglones ✓
- *   clon con 30.6    12 + 30.6 + 12 = 54.6  →  **+4.6**, que es el +4.58 medido
- *
- * Es `CLAUDE.md` §El NIVEL al que se mide otra vez, y por tercera vez en este
- * arquetipo: el `line-height` del **módulo** no es el del elemento que ocupa
- * sitio. El alto real del elemento —26— es el dato; 30.6 es el del contenedor.
+ * Ahora es lo que tenía que haber sido: **el componente base, con la retícula
+ * del arquetipo A**. Lo único propio de A es el ancho de fila (86 %, frente al
+ * 80 % de producto); la interlínea de 26 y el truncado del último eslabón son
+ * del defecto porque están medidos en las 7 formas.
  */
 export function MigasA({ migas }: { migas: { label: string; href?: string }[] }) {
   return (
-    <section className="w-full bg-white">
-      <FilaA className="py-[12px]">
-        <div className="kunak-breadcrumbs text-[12px] font-semibold leading-[26px] tracking-[0.3px] text-[#0075C9]">
-          {migas.map((m, i) => (
-            <span key={`${m.label}-${i}`}>
-              {i > 0 && <span className="mx-[6px]">›</span>}
-              {m.href ? (
-                <a href={m.href} className="hover:underline">
-                  {m.label}
-                </a>
-              ) : (
-                <span>{m.label}</span>
-              )}
-            </span>
-          ))}
-        </div>
-      </FilaA>
-    </section>
+    <Breadcrumb
+      items={migas}
+      rowClassName="mx-auto w-[86%] max-w-[1380px]"
+      variante="producto"
+    />
   );
 }
 

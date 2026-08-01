@@ -61,6 +61,51 @@ const PARES = [
   },
 ];
 
+/**
+ * ── (1b·b) La hipótesis que estos tres pares ponen a prueba ────────────────
+ * El recon de C-1 midió «el último `li` truncado a 350 con elipsis» **en el
+ * caso de éxito**, y así se construyó: dentro de `variante="caso"` de
+ * `Breadcrumb`. Si el tope resulta ser una regla **del TEMA** y no del caso,
+ * entonces:
+ *
+ *   · la variante está **mal delimitada** —mezcló una regla general con las
+ *     específicas— y el tope baja al componente base;
+ *   · producto y sectores dan Δ0 **porque sus rótulos no llegan a 350**, no
+ *     porque estén bien: corrección aparente por contenido corto;
+ *   · y eso es **CLASE**: el día que un editor escriba un título largo, el clon
+ *     envolverá donde el original trunca.
+ *
+ * Por eso se miden aunque hoy cuadren. Un Δ0 obtenido con contenido que no
+ * ejercita la regla no es una verificación de la regla.
+ */
+const PARES_TEMA = [
+  {
+    forma: "caso de éxito",
+    original: "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/",
+    clon: "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+  },
+  {
+    forma: "producto",
+    original: "https://kunakair.com/es/monitor-calidad-aire/",
+    clon: "/monitor-calidad-aire",
+  },
+  {
+    forma: "sector",
+    original: "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+    clon: "/sectores/calidad-del-aire-en-las-ciudades",
+  },
+  // Añadido al aplicar el arreglo: es la ÚNICA de las 17 que se movió (−26 de
+  //  a 390), así que hay que preguntarle al original si se movió hacia
+  // él o en contra. Un guardián clon-contra-clon dice QUÉ cambió, nunca si el
+  // cambio es correcto.
+  {
+    forma: "monográfico (petróleo)",
+    original: "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+    clon: "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+  },
+];
+if (!process.env.SOLO_A) PARES.push(...PARES_TEMA);
+
 const extraer = function (sel) {
   const r = (n) => Math.round(n * 100) / 100;
   const px = (v) => {
@@ -110,6 +155,16 @@ const extraer = function (sel) {
       pl: px(s.paddingLeft),
       pr: px(s.paddingRight),
       textoW: r(bd.width),
+      // ── (1b·a) La IMPLEMENTACIÓN del acotado, no su efecto ────────────────
+      // El efecto ya estaba medido (350.00 clavado a 1440 y a 390). Esto lee
+      // CON QUÉ lo consigue el original, para que el arreglo sea exacto y no
+      // escrito por parecido. Se lee en TODOS los eslabones, no solo en el
+      // último: si apareciera en los intermedios, «es del último» sería falso.
+      maxW: px(s.maxWidth),
+      ws: s.whiteSpace,
+      ov: s.overflow,
+      to: s.textOverflow,
+      va: s.verticalAlign,
       antes: pseudo("::before"),
       despues: pseudo("::after"),
       txt: t(el),
@@ -193,6 +248,13 @@ for (const p of PARES) {
   );
   for (const lado of ["original", "clon"]) {
     const d = fila[lado];
+    const u = d.hijos.at(-1);
+    if (u)
+      console.log(
+        `   ${lado.padEnd(8)} ÚLTIMO    w ${String(u.w).padStart(7)}` +
+          `  max-width ${String(u.maxW).padStart(7)}  white-space ${u.ws.padEnd(8)}` +
+          `  overflow ${u.ov.padEnd(8)}  text-overflow ${u.to}`,
+      );
     const h = d.hijos[1] ?? d.hijos[0];
     if (!h) continue;
     const sep = h.antes ?? h.despues;

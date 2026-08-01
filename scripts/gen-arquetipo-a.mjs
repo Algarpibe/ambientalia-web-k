@@ -161,12 +161,29 @@ const entradaBlog = (p) => {
   },`;
 };
 
-const terminoKp = (p) => `  {
+/**
+ * El rótulo del último eslabón de la miga: el texto de la miga menos el de los
+ * eslabones enlazados. En el término NO coincide con el `h1` (3 de 3), y en
+ * blog y documento sí (11 de 11) — por eso solo se emite cuando difiere.
+ */
+function rotuloMiga(p) {
+  const prefijo = p.migas.enlaces.map((e) => e.label).join(" ");
+  const cola = p.migas.texto.startsWith(prefijo)
+    ? p.migas.texto.slice(prefijo.length).trim()
+    : null;
+  return cola || null;
+}
+
+const terminoKp = (p) => {
+  const rotulo = rotuloMiga(p);
+  return `  {
     slug: ${q(p.slug)},
     seo: ${seo(p.seo)},
-    titulo: ${q(p.titulo)},
+    titulo: ${q(p.titulo)},${rotulo && rotulo !== p.titulo ? `
+    tituloMiga: ${q(rotulo)},` : ""}
     cuerpo: ${tpl(cuerpoLocal(p.cuerpo, `termino/${p.slug}`))},
   },`;
+};
 
 const docCientifico = (p) => {
   const prefijo = p.ruta.split("/")[1];
