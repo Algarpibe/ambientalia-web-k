@@ -4,6 +4,29 @@
 > medición antes/después y su adjudicación contra el original. **D2, D3 y D1 NO
 > se han tocado** — no cabían, y D1 sigue bloqueada por su condición.
 
+## ⚠⚠ LÉEME ANTES DE ADJUDICAR NADA CONTRA `docH`
+
+> **Con D4 arreglado, muchos `docH` se ALEJAN de 0, y eso es CORRECTO.**
+>
+> `docH` carga **las cuatro causas de C1 a la vez**. Mientras el pie estuvo mal,
+> su error **compensaba** a D1/D2/D3; al arreglarlo, la compensación desaparece
+> y el residuo de las otras tres sale a la superficie. Ejemplo medido:
+> `/sectores/calidad-del-aire-en-las-ciudades` pasa de **+41 a −23**.
+>
+> **Quien mida el PIE contra el original ve la mejora; quien mire solo `docH`
+> leerá como regresión lo que es descompensación esperada.** El eje en el que se
+> adjudica D4 es `qa:d4`, no `qa:c-cmp`.
+
+Es el mismo mecanismo del catálogo de compensaciones de `CLAUDE.md` —«un Δ de
+cero puede ser dos errores que se anulan»—, pero visto **desde el otro lado**:
+aquí no se descubre una compensación al medir, se **fabrica** una al arreglar
+una de las dos mitades. Un arreglo correcto de una causa de una suma **tiene**
+que empeorar el total mientras las demás sigan abiertas.
+
+⚠ Este aviso vivió una tanda **solo en el mensaje del commit `fd3de61`** y no en
+ningún documento. Es *MENCIONADO NO ES DOCUMENTADO* (`CLAUDE.md` §sondas, regla
+3): un mensaje de commit lo lee menos gente todavía que un informe de sesión.
+
 ## 1 · Lo que se arregló, y contra qué se adjudicó
 
 El clon servía **681.09 de pie SIEMPRE** —el valor de SOFTWARE, la familia con

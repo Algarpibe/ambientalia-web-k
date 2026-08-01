@@ -22,12 +22,21 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { QA, launch, openPage, settle, w } from "./lib.mjs";
+import { QA, env, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
 const CLON = process.env.CLON || "http://localhost:3000";
-const SABOTAJE = !!process.env.SABOTAJE;
+/**
+ * Dos sabotajes DISTINTOS, y separados a propósito: si los dos se dispararan
+ * con la misma variable, un exit≠0 no diría cuál de las dos guardas saltó — que
+ * es justo lo que un test en negativo tiene que distinguir.
+ *   SABOTAJE=1|ruta   → una ruta inventada  ⇒ tiene que salir por ERROR
+ *   SABOTAJE=cauces   → `p` fuera de cauces ⇒ P-C3-3 tiene que salir REFUTADA
+ */
+const SABOTAJE = process.env.SABOTAJE === "1" || process.env.SABOTAJE === "ruta";
+/** `SOLO=faq` acota por forma o por ruta: probar una guarda no puede costar 62 cargas. */
+const SOLO = env("SOLO");
 
 /* ── Las rutas salen del BUILD, no de una lista (generalizada 2026-08-01) ───
  * Nació con las 6 del grupo C cableadas a mano, y por eso las otras 25 rutas
@@ -64,27 +73,49 @@ const RUTAS = Object.keys(manifiesto.routes || {})
     clon: r,
     orig: `https://kunakair.com/es${r === "/" ? "" : r}/`,
     forma: formaDe(r),
-  }));
+  }))
+  .filter((R) => !SOLO || R.forma === SOLO || R.clave.includes(SOLO));
 
 if (RUTAS.length === 0) {
-  console.error("❌ el manifiesto no trae rutas — corre `npm run build` antes.");
+  console.error(SOLO ? `❌ SOLO=${SOLO} no casa con ninguna ruta — filtro equivocado, no corrida limpia.` : "❌ el manifiesto no trae rutas — corre `npm run build` antes.");
   process.exit(2);
 }
 // Test en negativo: una ruta inventada tiene que salir por ERROR, no por Δ0.
 if (SABOTAJE) RUTAS.push({ clave: "/RUTA-INVENTADA", clon: "/RUTA-INVENTADA", orig: "https://kunakair.com/es/RUTA-INVENTADA/", forma: "faq" });
 
+/** Formas para las que P-C3-3 fue escrita: las del grupo C y solo ésas. */
+const FORMAS_C = new Set(["caso", "faq"]);
+
 /** Lo que se lee de cada página, sea original o clon. */
-const LECTOR = () => {
+const LECTOR = (forma) => {
   const r = (n) => Math.round(n * 100) / 100;
   const q = (s) => document.querySelector(s);
   const caja = (el) => (el ? { w: r(el.getBoundingClientRect().width), h: r(el.getBoundingClientRect().height) } : null);
   const y = (el) => (el ? r(el.getBoundingClientRect().y + window.scrollY) : null);
+  /* ── El ámbito de las «zonas» es el GRUPO C, no las 31 rutas ──────────────
+   * `.entry-content` es el contenedor del cuerpo del caso y de la FAQ. En las
+   * otras 25 rutas la misma clase envuelve **otra cosa** —entre otras, las
+   * tarjetas de «Artículos y Guías», que traen `<article>` y `<header>`—, así
+   * que barrerlas metía en el inventario etiquetas que P-C3-3 nunca afirmó
+   * nada sobre ellas y la predicción salía REFUTADA en todas las corridas.
+   *
+   * ⚠ Y una sonda que no puede dar verde es peor que ninguna: entrena a
+   * ignorar su código de salida, que es la lección que ya se pagó con la barra
+   * final de `enlaces`. El arreglo NO es bajar el listón: es medir donde la
+   * afirmación aplica. Fuera del grupo C no se lee zona ninguna —lista vacía,
+   * y el recuento de abajo se encarga de que «vacía» no pueda pasar por buena.
+   * -------------------------------------------------------------------- */
+  const enGrupoC = forma === "caso" || forma === "faq";
   const zonas = ".entry-content-need, .entry-content-solution, .entry-content-results, .entry-content";
   const etiquetas = {};
-  for (const z of document.querySelectorAll(zonas))
-    for (const el of z.querySelectorAll("*")) {
-      const t = el.tagName.toLowerCase();
-      etiquetas[t] = (etiquetas[t] || 0) + 1;
+  let nodosZona = 0;
+  if (enGrupoC)
+    for (const z of document.querySelectorAll(zonas)) {
+      nodosZona++;
+      for (const el of z.querySelectorAll("*")) {
+        const t = el.tagName.toLowerCase();
+        etiquetas[t] = (etiquetas[t] || 0) + 1;
+      }
     }
   return {
     h1y: y(q("h1")),
@@ -94,7 +125,10 @@ const LECTOR = () => {
     mapa: caja(q(".acf-map")),
     // P-C3-3 / P-C3-7 — el inventario del cuerpo
     etiquetas,
-    iframes: [...document.querySelectorAll(zonas + " iframe")].map((f) => {
+    // Cuántas zonas casaron: sin esto, «no encontré etiquetas» y «no miré
+    // ninguna zona» dan exactamente la misma salida (regla 4 de §sondas).
+    nodosZona,
+    iframes: (enGrupoC ? [...document.querySelectorAll(zonas + " iframe")] : []).map((f) => {
       try { return new URL(f.getAttribute("src"), location.href).host; } catch { return "?"; }
     }),
     // piezas del CASO, para P-C3-7: en la FAQ tienen que ser 0 en los dos lados
@@ -162,7 +196,7 @@ for (const R of RUTAS) {
       throw new Error(`HTTP ${status} en ${url}`);
     }
     await settle(page);
-    const d = await page.evaluate(LECTOR);
+    const d = await page.evaluate(LECTOR, R.forma);
     await page.close();
     return d;
   };
@@ -243,17 +277,40 @@ console.log(`\n═══ P-C3-3 · el cuerpo, contra los cauces abiertos`);
 const CAUCES = new Set(["p", "a", "strong", "b", "em", "i", "u", "sub", "sup", "br", "span", "div",
   "ul", "ol", "li", "h2", "h3", "h4", "img", "figure", "figcaption", "blockquote", "hr", "small", "mark",
   "iframe", "video", "source", "table", "thead", "tbody", "tfoot", "tr", "th", "td"]);
+/* Test en negativo de ESTE veredicto: `SABOTAJE=cauces` quita `p` de los cauces
+ * abiertos, así que P-C3-3 TIENE que salir REFUTADA. Sin él, acotar el ámbito
+ * (arriba) podría haber dejado la predicción incapaz de fallar y no habría forma
+ * de notarlo: verde por no mirar y verde por estar bien se leen igual. */
+if (process.env.SABOTAJE === "cauces") CAUCES.delete("p");
 const fuera = {};
 const tablas = [];
-for (const [k, v] of Object.entries(salida.paginas)) {
+/* ⚠ Solo las formas del grupo C: es de ellas de quien P-C3-3 afirma algo. Y
+ * sobre `vivas`, no sobre `salida.paginas` — una ruta con error no tiene
+ * `orig` y se llevaba la sonda por delante. */
+const deC = vivas.filter(([, v]) => FORMAS_C.has(v.forma));
+for (const [k, v] of deC) {
   for (const [t, n] of Object.entries(v.orig.etiquetas)) if (!CAUCES.has(t)) (fuera[t] ??= []).push(`${k}×${n}`);
   if (v.orig.etiquetas.table) tablas.push(k);
 }
+/* La guarda del ámbito acotado: acotar un selector es la forma más fácil de
+ * convertir una sonda en rojo en una sonda que no mira nada. Si NINGUNA página
+ * del grupo C casó una zona, o el inventario sale vacío, eso es defecto de
+ * sonda y sale por error — nunca por «✅ ninguna construcción fuera». */
+const zonasCasadas = deC.reduce((a, [, v]) => a + (v.orig.nodosZona || 0), 0);
+const etiquetasVistas = deC.reduce((a, [, v]) => a + Object.keys(v.orig.etiquetas).length, 0);
 const hosts = {};
-for (const v of Object.values(salida.paginas)) for (const h of v.orig.iframes) hosts[h] = (hosts[h] || 0) + 1;
+for (const [, v] of deC) for (const h of v.orig.iframes) hosts[h] = (hosts[h] || 0) + 1;
+console.log(`  · ámbito: ${deC.length} rutas del grupo C (${[...FORMAS_C].join(" · ")}) de ${vivas.length} medidas`);
+console.log(`  · zonas casadas: ${zonasCasadas} · etiquetas distintas inventariadas: ${etiquetasVistas}`);
 console.log(`  · tablas en el original: ${tablas.length ? tablas.join(" · ") : "ninguna"} (§3.4 sigue abierta)`);
 console.log(`  · hosts de iframe: ${Object.entries(hosts).map(([h, n]) => `${h}×${n}`).join(" · ") || "ninguno"}`);
-if (Object.keys(fuera).length) {
+if (!deC.length || !zonasCasadas || !etiquetasVistas) {
+  fallos++;
+  console.log(
+    `  ❌ P-C3-3 NO SE PUDO EVALUAR — ${!deC.length ? "ninguna ruta del grupo C" : !zonasCasadas ? "las zonas no casaron en ninguna" : "el inventario salió vacío"}.\n` +
+      `     Eso NO es «ninguna construcción fuera de los cauces»: es que no se miró nada.`,
+  );
+} else if (Object.keys(fuera).length) {
   fallos++;
   console.log(`  ❌ P-C3-3 REFUTADA · etiquetas FUERA de los cauces abiertos:`);
   for (const [t, d] of Object.entries(fuera)) console.log(`       <${t}>  ${d.join(" ")}`);
@@ -298,7 +355,7 @@ for (const [k, v] of vivas) {
   );
 }
 
-w(`medidas/c-cmp-${width}.json`, salida);
+w(env("SALIDA") || `medidas/c-cmp-${width}${SOLO ? `-solo-${SOLO.replace(/[^a-zA-Z0-9]+/g, "-")}` : ""}.json`, salida);
 
 console.log(
   `\n─── PARA ADJUDICAR @${width} · ${vivas.length} rutas medidas contra el original\n` +
