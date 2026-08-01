@@ -3396,3 +3396,54 @@ compensación, no un acierto.
 
 **No se cambia en esta tanda** porque la home tiene **C-QA3 abierto (+289.91)** y
 con los dos cambios a la vez no se adjudica ninguno de los dos. Va con C-QA3.
+
+---
+
+## CLASE · LA FAMILIA DE CALIBRACIÓN (2026-08-01)
+
+> **Cuando un componente compartido se construye midiendo UNA página, hereda los
+> valores de la familia de esa página. Después acierta en ella y falla en todas
+> las demás — y el acierto se lee como verificación.**
+
+No es un defecto: es un **generador de defectos**, y el clon lleva al menos tres.
+Se reconoce por una firma muy concreta: **una familia da Δ≈0 exacto y las otras
+dan residuos con signos distintos**. Ese 0 no es un acierto, es el punto donde se
+tomó la medida.
+
+### Las instancias medidas
+
+| # | qué | familia de calibración | coste |
+|---|---|---|---|
+| 1 | **alto del pie**: 681.09 fijo | SOFTWARE | +87.34 a −367.16 en 10 de 11 formas |
+| 2 | **tipografía del pie** (`li 14/30.6 mb 7`), documentada como medida en **/monitor** | SOFTWARE | −79.19 en catálogo y producto |
+| 3 | **bloque «¡Suscríbete!»** (`mt 16 · mb 46 · pb 3.1`) | SOFTWARE | −6.9 ancha · **−0.01 software** · +25.1 catálogo (@390) |
+
+La 2 es la más instructiva: **el comentario decía /monitor y los valores eran de
+software**, así que ni siquiera la atribución escrita servía para detectarlo. La
+3 sigue **abierta** — es el residuo entero de `footer-links`.
+
+### Barrido de candidatos — LISTADO, NO ARREGLADO
+
+Componentes compartidos (importados por ≥2 páginas) que cablean constantes de la
+familia software. **Ninguno está verificado como defecto**: son candidatos con
+motivo, y el motivo es que el ESQUEMA §6b registra que los mismos dos anchos
+(**86 % grupo A y sector · 80 % producto, catálogo y software**) gobiernan
+**también la retícula del cuerpo**, no solo el pie.
+
+| componente | importado por | constante | por qué es candidato |
+|---|---|---|---|
+| `Breadcrumb.tsx:79` | **8** | `rowClassName = "mx-auto w-[80%] max-w-[1380px]"` | el 80 % **por defecto**, o sea que grupo A · sector · caso · faq lo reciben aunque su retícula sea 86 % |
+| `UltimosArticulos.tsx:72` | **6** | `"mx-auto w-[80%] max-w-[1380px] …"` | idem, sin variante por tipo |
+
+⚠ **Y el que NO aparece en el grep importa igual**: `SectionRow` lo importan
+**15** ficheros y `HeaderNav` **10**. No cablean `w-[80%]`, pero **no se ha
+comprobado** que sus valores no vengan de una sola familia. Un grep por
+constantes conocidas encuentra lo que ya sabes buscar; **es un cribado, no un
+censo**.
+
+### Cómo se cierra de verdad (pendiente)
+
+Midiendo el ancho de fila del **cuerpo** en las 31 rutas contra el original. Hoy
+ese eje está a **0/31** en `COBERTURA-MEDICION.md` — nunca se ha comparado—, así
+que la clase **no se puede cerrar con lo que hay medido**: haría falta la sonda
+de anchos de cuerpo, que no existe.
