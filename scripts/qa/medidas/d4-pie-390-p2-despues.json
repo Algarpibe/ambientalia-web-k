@@ -1,0 +1,453 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-01",
+    "solo": "CASO"
+  },
+  "familias": {
+    "CASO": {
+      "orig": {
+        "alto": 2026.23,
+        "nSecciones": 4,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 265.06,
+            "clase": "et_pb_section_0_tb_footer",
+            "nFilas": 0,
+            "nModulos": 4,
+            "caja": {
+              "secW": 390,
+              "filaW": 0,
+              "nCols": 1,
+              "colsW": [
+                0
+              ],
+              "colsY": [
+                0
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "primer hijo",
+              "w": 0,
+              "h": 0,
+              "pt": "0px",
+              "pb": "0px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 0,
+                "h": 0
+              }
+            ],
+            "mods": [
+              {
+                "h": 0,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 265.06,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 0,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 0,
+                "mt": "0px",
+                "mb": "0px"
+              }
+            ],
+            "txt": "Do you need to control the environmental i"
+          },
+          {
+            "i": 1,
+            "h": 1437.42,
+            "clase": "et_pb_section_1_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 390,
+              "filaW": 335.39,
+              "nCols": 5,
+              "colsW": [
+                335.39,
+                335.39,
+                335.39,
+                335.39,
+                335.39
+              ],
+              "colsY": [
+                8209.25,
+                8441.84,
+                8726.44,
+                9040.03,
+                9350.63
+              ],
+              "pt": "50px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "et_pb_row",
+              "w": 335.39,
+              "h": 1387.42,
+              "pt": "30px",
+              "pb": "30px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 335.39,
+                "h": 232.59
+              },
+              {
+                "w": 335.39,
+                "h": 284.59
+              },
+              {
+                "w": 335.39,
+                "h": 313.59
+              },
+              {
+                "w": 335.39,
+                "h": 310.59
+              },
+              {
+                "w": 335.39,
+                "h": 184.05
+              }
+            ],
+            "mods": [
+              {
+                "h": 232.59,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 284.59,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 206.59,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 0,
+                "mt": "0px",
+                "mb": "16px"
+              }
+            ],
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 2,
+            "h": 283.75,
+            "clase": "et_pb_section_2_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 390,
+              "filaW": 335.39,
+              "nCols": 3,
+              "colsW": [
+                335.39,
+                335.39,
+                59.02
+              ],
+              "colsY": [
+                9569.56,
+                9753.94,
+                9815.53
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "et_pb_row",
+              "w": 335.39,
+              "h": 283.75,
+              "pt": "3.89062px",
+              "pb": "3.89062px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 335.39,
+                "h": 154.38
+              },
+              {
+                "w": 335.39,
+                "h": 31.59
+              },
+              {
+                "w": 59.02,
+                "h": 30
+              }
+            ],
+            "mods": [
+              {
+                "h": 154.38,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 31.59,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 31.59,
+                "mt": "0px",
+                "mb": "0px"
+              },
+              {
+                "h": 31.59,
+                "mt": "0px",
+                "mb": "0px"
+              }
+            ],
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 3,
+            "h": 40,
+            "clase": "et_pb_section_3_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 390,
+              "filaW": 335.39,
+              "nCols": 1,
+              "colsW": [
+                0
+              ],
+              "colsY": [
+                0
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "et_pb_row",
+              "w": 335.39,
+              "h": 40,
+              "pt": "20px",
+              "pb": "20px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 0,
+                "h": 0
+              }
+            ],
+            "mods": [],
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 52,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 2050.13,
+        "nSecciones": 4,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 265.06,
+            "clase": "w-full bg-white",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 390,
+              "filaW": 390,
+              "nCols": 1,
+              "colsW": [
+                343.22
+              ],
+              "colsY": [
+                6171.53
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "primer hijo",
+              "w": 390,
+              "h": 265.06,
+              "pt": "0px",
+              "pb": "0px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 343.22,
+                "h": 265.06
+              }
+            ],
+            "mods": [],
+            "txt": "¿Necesitas información fiable para tu proy"
+          },
+          {
+            "i": 1,
+            "h": 1429.72,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 390,
+              "filaW": 335.39,
+              "nCols": 5,
+              "colsW": [
+                335.39,
+                335.39,
+                335.39,
+                335.39,
+                335.39
+              ],
+              "colsY": [
+                6517.59,
+                6750.19,
+                7034.78,
+                7341.47,
+                7652.06
+              ],
+              "pt": "50px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "primer hijo",
+              "w": 335.39,
+              "h": 1379.72,
+              "pt": "30px",
+              "pb": "30px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 335.39,
+                "h": 232.59
+              },
+              {
+                "w": 335.39,
+                "h": 284.59
+              },
+              {
+                "w": 335.39,
+                "h": 306.69
+              },
+              {
+                "w": 335.39,
+                "h": 310.59
+              },
+              {
+                "w": 335.39,
+                "h": 184.25
+              }
+            ],
+            "mods": [],
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 2,
+            "h": 315.34,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 390,
+              "filaW": 335.39,
+              "nCols": 3,
+              "colsW": [
+                335.39,
+                335.39,
+                335.39
+              ],
+              "colsY": [
+                7870.2,
+                8055.58,
+                8147.17
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "primer hijo",
+              "w": 335.39,
+              "h": 315.34,
+              "pt": "3.89062px",
+              "pb": "3.89062px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [
+              {
+                "w": 335.39,
+                "h": 123.38
+              },
+              {
+                "w": 335.39,
+                "h": 31.59
+              },
+              {
+                "w": 335.39,
+                "h": 30.59
+              }
+            ],
+            "mods": [],
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 3,
+            "h": 40,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 390,
+              "filaW": 390,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "fila": {
+              "via": "primer hijo",
+              "w": 390,
+              "h": 40,
+              "pt": "0px",
+              "pb": "0px",
+              "mt": "0px",
+              "mb": "0px"
+            },
+            "cols": [],
+            "mods": [],
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 45,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    }
+  }
+}

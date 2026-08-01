@@ -32,6 +32,9 @@ export function CtaBanner({
   headingHref,
   buttonVariant = "light",
   padYClassName,
+  descPadClassName,
+  headingPbClassName,
+  buttonMtClassName,
 }: {
   image: string;
   heading: string;
@@ -52,6 +55,26 @@ export function CtaBanner({
    * que necesita decirlo explícitamente.
    */
   padYClassName?: string;
+  /**
+   * Reemplaza ENTERO el `padding` de la descripción (vertical móvil, vertical
+   * desktop y el sangrado lateral). Lo pide la 4ª sección del pie del CASO, que
+   * es el mismo módulo Divi con otra caja: medido 2026-08-01 sobre el original,
+   * contenedor al **88 %** y descripción a **`py` 6 % · `pl` 10 %** en desktop y
+   * **`pt` 10 % · `pb` 15 %** en móvil — todo porcentajes del contenedor, no px.
+   * Los `pl-[49%]` / `pr-[31%]` de la home y del monitor no valen aquí.
+   */
+  descPadClassName?: string;
+  /**
+   * El REMATE entre el título y el botón. La home y el monitor lo tienen
+   * medido en `pb 0 + mt 32` en desktop (de ahí los defectos); la 4ª sección
+   * del pie del CASO es **`pb 10 + mt 20`**, o sea 30 en vez de 32.
+   *
+   * Son 2 px y se cierran porque están MEDIDOS y atribuidos, no porque sean
+   * grandes: dejarlos convertiría un Δ exacto en «casi». Con estos dos por
+   * defecto, ningún llamador anterior cambia.
+   */
+  headingPbClassName?: string;
+  buttonMtClassName?: string;
 }) {
   const isLeft = align === "left";
   const padY = padYClassName ?? (body ? "md:py-[5%]" : "md:py-[74px]");
@@ -72,10 +95,12 @@ export function CtaBanner({
             (S2 de monitor) usa el 5% global de Divi (56.3 a 1280 — QA 26-07). */}
         <div
           className={
-            "mx-auto max-w-[1380px] pb-[51px] pt-[34px] text-left " +
-            padY +
-            " " +
-            (isLeft ? "min-[981px]:pr-[31%]" : "md:pl-[49%]")
+            "mx-auto max-w-[1380px] text-left " +
+            (descPadClassName ??
+              "pb-[51px] pt-[34px] " +
+                padY +
+                " " +
+                (isLeft ? "min-[981px]:pr-[31%]" : "md:pl-[49%]"))
           }
         >
           {/* Peso responsive Divi: 500 en móvil, 300 en desktop */}
@@ -83,7 +108,7 @@ export function CtaBanner({
             className={
               "text-[27px] font-medium text-white md:text-[45px] md:font-light " +
               // el pb 10 del h3 solo se ve cuando hay párrafo debajo
-              (body ? "pb-[10px]" : "pb-[10px] md:pb-0")
+              (headingPbClassName ?? (body ? "pb-[10px]" : "pb-[10px] md:pb-0"))
             }
             style={{
               lineHeight: 1.3,
@@ -113,7 +138,10 @@ export function CtaBanner({
               {buttonLabel}
             </OutlineButton>
           ) : (
-            <LightButton href={buttonHref} className={body ? "mt-[20px]" : "mt-[20px] md:mt-8"}>
+            <LightButton
+              href={buttonHref}
+              className={buttonMtClassName ?? (body ? "mt-[20px]" : "mt-[20px] md:mt-8")}
+            >
               {buttonLabel}
             </LightButton>
           )}

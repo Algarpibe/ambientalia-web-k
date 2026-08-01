@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "width": 1440,
+    "url": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+    "fecha": "2026-08-01"
+  },
+  "datos": {
+    "seccion": {
+      "h": 343.06,
+      "w": 1440,
+      "paddingTop": "0px",
+      "paddingBottom": "0px",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    "modulos": [
+      {
+        "clase": "ocultar-en",
+        "h": 0,
+        "display": "none",
+        "txt": "Do you need to control the environmental impac"
+      },
+      {
+        "clase": "ocultar-es",
+        "h": 343.06,
+        "display": "block",
+        "txt": "¿Necesitas información fiable para tu proyecto"
+      },
+      {
+        "clase": "ocultar-fr",
+        "h": 0,
+        "display": "none",
+        "txt": "Avez-vous besoin d’informations fiables pour v"
+      },
+      {
+        "clase": "ocultar-ar",
+        "h": 0,
+        "display": "none",
+        "txt": "هل تحتاج إلى التحكم في الأثر البيئي لعملياتك؟ "
+      }
+    ],
+    "vivoClase": "ocultar-es",
+    "slide": {
+      "h": 343.06,
+      "backgroundImage": "url(\"https://kunakair.com/wp-content/uploads/2023/03/air-pollution-control.jpg\")",
+      "backgroundColor": "rgba(0, 0, 0, 0.33)",
+      "backgroundSize": "cover",
+      "backgroundPosition": "50% 50%",
+      "backgroundBlendMode": "multiply",
+      "paddingTop": "0px",
+      "paddingBottom": "0px"
+    },
+    "contenedor": {
+      "h": 343.06,
+      "w": 1267.22,
+      "paddingTop": "0px",
+      "paddingBottom": "0px",
+      "width": "1267.22px",
+      "maxWidth": "1380px",
+      "marginLeft": "0px"
+    },
+    "desc": {
+      "h": 343.06,
+      "w": 1267.22,
+      "paddingTop": "76.0312px",
+      "paddingBottom": "76.0312px",
+      "paddingLeft": "126.719px",
+      "textAlign": "left"
+    },
+    "h2": {
+      "h": 127,
+      "w": 1013.78,
+      "txt": "¿Necesitas información fiable para tu proyecto de calidad del aire?",
+      "href": "https://kunakair.com/es/contacto",
+      "fontSize": "45px",
+      "lineHeight": "58.5px",
+      "fontWeight": "300",
+      "color": "rgb(255, 255, 255)",
+      "letterSpacing": "-0.5px",
+      "paddingBottom": "10px",
+      "marginBottom": "0px"
+    },
+    "boton": {
+      "h": 44,
+      "w": 200.31,
+      "txt": "Podemos ayudarte",
+      "href": "https://kunakair.com/es/contacto",
+      "fontSize": "15px",
+      "lineHeight": "25.5px",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0.15)",
+      "borderWidth": "1px",
+      "borderColor": "rgb(255, 255, 255)",
+      "borderRadius": "30px",
+      "paddingTop": "7.5px",
+      "paddingBottom": "9px",
+      "paddingLeft": "22.5px",
+      "paddingRight": "40.5px",
+      "marginTop": "20px",
+      "letterSpacing": "normal"
+    }
+  }
+}

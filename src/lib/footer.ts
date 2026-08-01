@@ -94,3 +94,26 @@ export const SOCIALS: SocialLink[] = [
   { network: "facebook", href: "https://www.facebook.com/KunakTechnologies/" },
   { network: "youtube", href: "https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg" },
 ];
+
+/**
+ * 4ª sección del pie — **solo el CASO DE ÉXITO** (`tb_footer` 4 vs 3, medido en
+ * C-1 y confirmado por `qa:d4`). Es un `et_pb_fullwidth_slider` de una sola
+ * diapositiva, repetido **una vez por idioma** en el original
+ * (`ocultar-en|es|fr|ar`); en `/es/` solo el español tiene caja —los otros tres
+ * salen a `display:none`, **medido, no deducido de la clase**: `ocultar-es` es
+ * justamente el que SE VE—. El clon emite solo el español, que es el idioma que
+ * clona.
+ *
+ * P-C3-1 lo dio por PLANTILLA sin campos: **idéntico byte a byte en los 4
+ * casos** (`c-spec.json`, 3134 ch cada uno). Por eso es constante y no dato de
+ * instancia.
+ *
+ * Spec de caja: `medidas/d4-cta-{1440,390}.json`. Destino sin clonar todavía
+ * → href al original. No lleva `target="_blank"`: el original tampoco.
+ */
+export const PIE_CTA_CASO = {
+  image: "/images/uploads/2023/03/air-pollution-control.jpg",
+  heading: "¿Necesitas información fiable para tu proyecto de calidad del aire?",
+  buttonLabel: "Podemos ayudarte",
+  href: `${BASE}/es/contacto`,
+};

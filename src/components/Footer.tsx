@@ -1,4 +1,5 @@
 import { BlueButton } from "./SectionRow";
+import { CtaBanner } from "./CtaBanner";
 import { CookiePreferencesButton } from "./CookiePreferencesButton";
 import {
   LinkedInIcon,
@@ -18,6 +19,7 @@ import {
   LEGAL_LINKS,
   DESIGNER,
   SOCIALS,
+  PIE_CTA_CASO,
 } from "@/lib/footer";
 import type { SocialLink } from "@/types/kunak";
 
@@ -380,6 +382,22 @@ export function Footer({
   if (tb) {
     return (
       <footer className="et-l--footer bg-white">
+        {/* 4ª sección, y va PRIMERA: solo el CASO la lleva (343.06 / 265.06).
+            Caja medida en `d4-cta`: contenedor 88 %, descripción `py` 6 % ·
+            `pl` 10 % desktop y `pt` 10 % · `pb` 15 % móvil — porcentajes del
+            contenedor, que es como Divi la escribe. */}
+        {tipo === "caso" ? (
+          <CtaBanner
+            image={PIE_CTA_CASO.image}
+            heading={PIE_CTA_CASO.heading}
+            headingHref={PIE_CTA_CASO.href}
+            buttonLabel={PIE_CTA_CASO.buttonLabel}
+            buttonHref={PIE_CTA_CASO.href}
+            descPadClassName="pb-[15%] pt-[10%] md:py-[6%] md:pl-[10%]"
+            headingPbClassName="pb-[10px]"
+            buttonMtClassName="mt-[20px]"
+          />
+        ) : null}
         {/* Sección links: pt 4% desktop (57.5938 a 1440) / 50px móvil. El `pb`
             solo lo llevan catálogo y producto — `padSeccion`. */}
         <div className={p.padSeccion ? padSec : "pt-[50px] sm:pt-[4%]"}>{linksGrid}</div>
