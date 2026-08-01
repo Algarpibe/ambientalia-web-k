@@ -532,6 +532,28 @@ crudo una vez por arquetipo** (§Notas de método). Estuvo invisible desde el
 primer clon y salió sola cuando el grupo C estrenó dos arquetipos que **no
 tienen nada entre la cabecera y el `h1`** que lo absorbiera.
 
+**Y EL NIVEL NO ES SOLO VERTICAL.** Las seis instancias de arriba son de alto,
+y por eso la regla se lee como si fuera de alturas. No lo es:
+
+> **El ancho de un elemento ENVUELTO es el de su contenedor, no el de su
+> contenido.** Así que un ancho medido al ancho estrecho puede estar **tapado
+> por el wrap** exactamente igual que un alto lo está por una fila con holgura:
+> el elemento ya llena la línea, y lo que sobra se fue a la línea siguiente en
+> vez de aparecer en el número.
+
+Caso medido (A-QA1, 2026-07-31): la miga del grupo A envolvía un renglón de más
+a 390 y la sospecha era el separador. **A 390 los dos separadores son
+inobservables** —la miga llena el contenedor en los dos lados—, así que la
+medida se tomó **a 1440**, donde cabe en un renglón: original **75.72** por
+eslabón contra **75.89** del clon, o sea **+0.17**, tres órdenes por debajo del
+renglón de 26. El separador quedó descartado con un número en vez de con una
+corazonada, y la causa real —el último eslabón, `max-width: 350` en el
+original— apareció en la misma corrida.
+
+De donde el corolario operativo: **cuando el síntoma sea de envolvimiento, mide
+al ancho donde NO envuelve.** El ancho estrecho da el efecto; el ancho donde
+cabe da la causa.
+
 **La regla espejo es un caso particular de ésta.** Un Δ0 en un ancho con Δ≠0 en el
 otro no es «casi cuadra»: es una **medida tapada**, porque la holgura del
 contenedor no es la misma a 1440 que a 390 —a 1440 las columnas van en fila y la

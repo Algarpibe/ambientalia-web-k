@@ -640,6 +640,37 @@ escrita**). Los 6 hubs de builder **no estrenan arquetipo** (cola larga /
 hipótesis grupo D), y `/es/casos-de-exito/` es una **página índice** sobre la
 colección `casos`: lista las 57, ambos prefijos, **sin paginar** (fidelidad).
 
+### ⚠ 2c.1 · `tituloMiga` — el rótulo NO es el titular (2026-07-31)
+
+**Campo nuevo del content type, medido al cerrar A-QA1.** El rótulo del último
+eslabón de la miga de pan **no es el `h1`** en el término de Kunakpedia:
+
+| slug | miga | `h1` |
+|---|---|---|
+| `emisiones-atmosfericas` | «Emisiones atmosféricas» | «Emisiones atmosféricas y su impacto en el medioambiente» |
+| `cloruro-de-hidrogeno-hcl` | «Cloruro de hidrógeno (HCl)» | «…: emisiones, riesgos y monitorización en calidad del aire» |
+| `metano` | «Metano (CH4)» | «Metano, un desafío para la estabilidad climática global» |
+
+**No es una excepción, es la regla de esa forma**: de las 14 instancias
+transcritas, **3 de 3 términos difieren** y **11 de 11** entradas de blog y
+documentos científicos coinciden. El `h1` es el titular largo y el rótulo es el
+nombre corto del término.
+
+> **`tituloMiga`: opcional, con defecto «el título», omitido en el dato cuando
+> coinciden.** Es el mismo patrón que `prefijo` (CMS-1), `headingColor` y
+> `variante`: un defecto explícito, que es además la decisión de diseño que
+> hereda quien dé de alta un contenido nuevo.
+
+**Y por qué no salió en la base de lectura, que es la parte que enseña.** El
+término daba **−0.02** en el residuo del `h1`, o sea «limpio». No lo estaba: a
+390 el rótulo corto y el largo **caen en 2 renglones igualmente**, así que la
+diferencia —218.47 px de ancho a 1440— **no producía ni un píxel de alto**. Era
+una **medida tapada**, no un acierto; y lo destapó preguntar por el ancho, no
+por el alto.
+
+⚠ Alcance: **3 términos de 37**. Que los 3 difieran es fuerte, pero el campo se
+declara opcional precisamente porque no se ha censado la forma entera.
+
 **La proyección de teaser pertenece al content type** y los listados la
 consumen: `BlogPost`/`CaseStudy` (S1) quedan **verificadas contra 9 formas**
 (`lh-tarjetas`). El listado embebido en páginas de builder es un **bloque de
@@ -696,6 +727,7 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 | **T5** | `<div>`/`<span>`/`<section>` sueltos del editor clásico | se normalizan; no hay estructura que preservar |
 | **T6** | `id` de los `h2` | **✅ REGENERAR, no conservar (2026-07-30).** A-SP9 cerrada: **los pone el JS del tema**, no el contenido — 0 `id` en el HTML servido y 16 en el DOM **en la misma página**, y 8 páginas sin excepción (`npm run qa:a-ids`, `medidas/a-ids.json`). No hay nada que migrar: el `id` **no entra en el campo** y el índice del artículo se **deriva** de los encabezados |
 | **T7** | **enlaces internos DENTRO del cuerpo rico** — **181/209** páginas del grupo A llevan enlaces | al importar, **los enlaces cuyo destino sea una ruta que publicamos se reescriben a ruta local; los que apunten fuera se dejan** (la regla de rutas locales de `CLAUDE.md`, aplicada al contenido y no solo a los datos). Nació en la sesión de C-3: dos enlaces dentro del campo rico apuntaban al original y `qa:enlaces` los convirtió en fallo al emitir las rutas nuevas — la sonda vigila la **salida**; T7 es la mitad de **entrada**, para que la guarda no cace uno a uno lo que el import puede reescribir en bloque. ⚠ Vivió solo en el informe de sesión hasta el 2026-07-31 (**mencionado no es documentado**, `CLAUDE.md` §sondas regla 3): una tanda llegó a «corregir» un plan de T1-T7 a T1–T6 comprobando este registro — la comprobación no distingue «nunca existió» de «no se escribió» |
+| **T8** | el **token de Cloudflare Rocket Loader** en el `type` de los `<script>` del cuerpo | **se normaliza a `text/javascript` al importar** (y después T4 decide qué pasa con el script). Rocket Loader reescribe `type="text/javascript"` poniéndole delante un token de 24 hex **distinto en cada petición**, para aplazar la ejecución. Medido al comparar **dos congelaciones de `a-spec` del mismo día**: misma longitud, contenido distinto en **4 de las 14** instancias, y la única diferencia era ese token (evidencia en `medidas/a-spec-SEGUNDA-CARGA-token-cloudflare.json`). Sin T8, **cada re-import marcará esas páginas como cambiadas sin que haya cambiado nada**, y el historial del CMS se llena de ruido que nadie puede explicar. Y hay un argumento de fondo además del operativo: ese `type` **no lo escribió nadie**, lo inyecta la capa de entrega — migrarlo verbatim sería importar un artefacto del CDN como si fuera contenido |
 
 ### 3.3 · Los `<script>`, clasificados uno a uno
 

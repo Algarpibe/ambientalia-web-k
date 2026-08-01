@@ -1,4 +1,4 @@
-# HANDOFF — el GRUPO A está CONSTRUIDO; queda A-QA1 (la miga a 390), la CAMPAÑA y la home
+# HANDOFF — grupo A construido y A-QA1 CERRADO; quedan la CAMPAÑA, la home y C-QA5
 
 > ⚠ **Tanda 2026-07-31 (5.ª del día) — CONSTRUCCIÓN DEL GRUPO A.** Acta en
 > **`docs/research/arquetipo-A/MEDICION.md`**; el ESQUEMA gana **§2.4** (cuatro
@@ -35,18 +35,40 @@
 >   build **volvió a compilar sin un aviso** (tercera confirmación de que es
 >   silenciosa) y la sonda la cazó por A y por B, exit 1.
 >
-> ## ⏳ LO SIGUIENTE, y ya está diagnosticado: **A-QA1**
+> ## ✅ A-QA1 · CERRADO (2026-07-31) — y el tope de 350 era del TEMA
 >
-> La miga envuelve **un renglón de más** a 390 en blog-con-relacionados
-> (**+26.00**) y **dos** en documento (**+52.00**); las otras dos formas dan
-> **0.00** y **−0.02**. El residuo está **cuantizado en renglones de 26**: la
-> maqueta vertical es correcta y lo que sobra es **ancho de la miga**.
+> Las 4 formas a **Δ0 a los dos anchos**: −0.01 · −0.01 · −0.03 a 1440 y
+> **0.00 · 0.00 · −0.02 a 390**.
 >
-> Causa candidata sin medir: el separador — el clon pinta `›` con `mx-[6px]` (12
-> px de aire, y la miga de blog tiene 4) y en el original lo genera el CSS del
-> tema. **Se cierra midiendo** el `::before`/`::after` del `li` de
-> `ol.kunak-breadcrumbs` a 390: una corrida de `a-cascaron` con un selector más.
-> **No se ajusta a ojo** — eso es el arreglo falso de manual.
+> **El separador no era la causa**, y la medida lo dijo antes del arreglo: el
+> clon medía **75.89** por eslabón contra **75.72** del original, o sea **+0.17**
+> — tres órdenes por debajo de un renglón de 26. Lo era el **último eslabón**,
+> que el original acota a `max-width: 350px · nowrap · overflow hidden ·
+> text-overflow ellipsis`.
+>
+> Y ese tope está en las **siete formas medidas** del original, no solo en el
+> caso, así que:
+>
+> - **`variante="caso"` de `Breadcrumb` estaba mal delimitada** — mezclaba una
+>   regla general con las específicas. El truncado bajó al **defecto**; la
+>   variante se queda con la interlínea 30.6, que sí es del caso;
+> - **producto y sectores daban Δ0 porque sus rótulos no llegan a 350**, no
+>   porque estuvieran bien: **corrección aparente por contenido corto**;
+> - y el cambio **destapó una víctima**: el monográfico de petróleo envolvía en 3
+>   renglones donde el original hace 2 (**−26 de `docH`**), invisible porque en
+>   sector la miga va **debajo** del `h1` y la base no se movía. Comprobado
+>   contra el original tras el arreglo: **Δ 0.00**.
+>
+> Instrumento nuevo: **`npm run qa:a-miga -- 1440|390`**, que mide la miga
+> original contra clon con **el mismo selector en los dos lados** y lee el
+> separador del pseudoelemento. Su lección va a `CLAUDE.md`: **el nivel al que
+> se mide no es solo vertical** — un ancho medido al ancho estrecho está tapado
+> por el wrap.
+>
+> **Campo nuevo de esquema (§2c.1): `tituloMiga`.** El rótulo de la miga del
+> término **no es el `h1`** (3 de 3 términos difieren, 11 de 11 blog y doc
+> coinciden). Opcional con defecto «el título». No salía en la base porque a 390
+> los dos rótulos caen en 2 renglones igualmente: **medida tapada, no acierto**.
 >
 > ## Las cuatro correcciones al recon (§2.4 del ESQUEMA)
 >
@@ -362,7 +384,27 @@
 > faltan**. Ráfaga 1 fue la **tercera observación independiente** del episodio de
 > ±32.28 y la primera que lo ve en las tres rutas a la vez: ya no es un fleco.
 >
-> **Pista de mecanismo (solo anotada — no perseguir):** el ±32.28 de la ráfaga 1
+> **⚠ HIPÓTESIS DE MECANISMO añadida el 2026-07-31 — solo se anota.**
+> **Cloudflare Rocket Loader** está activo en el original: reescribe
+> `type="text/javascript"` con un token de 24 hex **distinto en cada petición**
+> para **aplazar la ejecución de los scripts**. Se descubrió midiendo el grupo A
+> —dos congelaciones de `a-spec` del mismo día difieren **solo** en ese token, en
+> 4 de 14 páginas— y encaja con lo que la campaña observa:
+>
+> | lo observado en C-QA6 | lo que Rocket Loader hace |
+> |---|---|
+> | el `h1` **envuelve distinto** entre cargas | aplazar scripts desplaza **cuándo asientan fuentes y maquetación** |
+> | el movimiento aparece **sincronizado en varias rutas a la vez** | es una capa **global** del sitio, no algo por página |
+> | correlaciona con la **latencia** | cuanto más tarda la carga, más tarde se ejecuta lo aplazado |
+>
+> **No es una explicación y no se persigue ahora.** Es un candidato con tres
+> coincidencias, que es más de lo que había. Lo que sí se hace es **registrarlo
+> sin coste**: `ruido.mjs` anota ya, junto a cada medida, `rocketToken` (si el
+> token por petición está presente) y `rocketLoader` (si el script del propio
+> Rocket Loader está en la página) — editada **antes** de la ráfaga 2, como se
+> hizo con `cargaMs`. **Las ráfagas 2 y 3 no necesitan nada a mano.**
+>
+> > **Pista de mecanismo (solo anotada — no perseguir):** el ±32.28 de la ráfaga 1
 > apareció **en las tres rutas A LA VEZ**. Movimiento sincronizado sugiere una
 > causa global compartida, no aleatoriedad por página. Las ráfagas 2 y 3 deben
 > anotar si la sincronía se repite.

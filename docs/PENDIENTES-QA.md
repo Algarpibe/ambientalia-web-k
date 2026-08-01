@@ -2729,7 +2729,7 @@ nombre lo que es.
 
 ---
 
-## A-QA1 · ABIERTO — la miga del grupo A envuelve de más a 390 (2026-07-31)
+## A-QA1 · CERRADO — era el TOPE DE 350 DEL TEMA, no el separador (2026-07-31)
 
 > Acta completa de la construcción en `docs/research/arquetipo-A/MEDICION.md`.
 > Medida congelada: `medidas/clon-base-{1440,390}-grupoA-base26.json` contra la
@@ -2749,21 +2749,53 @@ método exige una vez por arquetipo, antes de fiarse de ningún Δ de cuerpo:
 de más, no un desfase continuo. O sea que la maqueta vertical es correcta y lo
 que sobra es **ancho de la miga**, que empuja el envolvimiento.
 
-**Causa candidata, sin medir:** el separador. El clon pinta `›` con `mx-[6px]`
-—12 px de aire por separador, y la miga de blog tiene 4— y en el original lo
-genera el CSS del tema. ~48 px de más bastan para forzar un renglón.
+### El separador era la sospecha, y la medición lo descartó
 
-⚠ **No se toca hasta medirlo.** Ajustar el margen a ojo hasta que cuadre es
-exactamente el arreglo falso que el §«Estructura que en realidad es contenido»
-describe: cablear el valor que hace cuadrar la instancia que tienes delante.
+`npm run qa:a-miga`, **a 1440 y no solo a 390**: a 390 la miga llena el
+contenedor en los dos lados y el ancho está **tapado por el wrap**.
 
-**Cómo se cierra:** medir en el original el `::before`/`::after` del `li` de
-`ol.kunak-breadcrumbs` (contenido, `margin`, `padding`) y el `display` del `li`,
-a 390. Es una corrida de `a-cascaron` con un selector más.
+| | original | clon |
+|---|---|---|
+| separador | `"/"` en un `::after` del `li`, **w 5.31** + `pl 7.2`, con el `li` a `pr 7.2` | `›` con `mx-[6px]` |
+| eslabón intermedio | **75.72** | **75.89** |
 
-**Lo que este defecto NO es:** no es la banda de cabecera —**225 / 165.58**,
-deducidos por composición y verificados en las tres formas— ni el ritmo de
-`section#0`, que da 50 y 102 exactos. Las dos mitades ya están cuadradas.
+**+0.17 px por eslabón**, o +0.68 con cuatro. Frente a renglones de 26. Ajustar
+el separador habría sido el arreglo falso.
+
+### Lo que era: el ÚLTIMO eslabón, y el tope es del TEMA
+
+El original acota el último a `max-width: 350px · white-space: nowrap ·
+overflow: hidden · text-overflow: ellipsis`, medido en **siete formas** —blog,
+término, documento científico, caso, producto, sector— y luego también en
+monográfico. El clon lo dejaba envolver: **498.97** y **681.77** contra 350.
+
+Resultado tras bajar el tope al componente base: **−0.01 · −0.01 · −0.03 a 1440
+y 0.00 · 0.00 · −0.02 a 390** en las cuatro formas.
+
+### ⚠ Y es CLASE, no instancia — con una víctima ya cobrada
+
+`variante="caso"` de `Breadcrumb` llevaba el truncado como si fuera del caso.
+Al ser del tema:
+
+- **producto (49.94) y sectores (194.52) daban Δ0 porque sus rótulos no llegan a
+  350**, no porque estuvieran bien. Es **corrección aparente por contenido
+  corto**: el Δ0 no verificaba la regla, la esquivaba;
+- **el monográfico de petróleo ya estaba roto**: su rótulo mide **436.97**, sí
+  pasa de 350, y el clon envolvía en 3 renglones donde el original hace 2
+  (**−26 de `docH` a 390**). Invisible porque en sector la miga va **debajo**
+  del `h1`, así que la base de lectura no se movía y solo asomaba en `docH`,
+  que nadie comparaba contra el original. Verificado tras el arreglo: **Δ 0.00**;
+- y el día que un editor escriba un título largo en cualquier otra plantilla,
+  habría pasado lo mismo en una página verde.
+
+### Un duplicado que no hacía falta
+
+`MigasA` reimplementó la miga en `CascaronA` cuando `Breadcrumb.tsx` ya la
+pintaba para producto, caso y los 6 sectores. El coste no fue el duplicado: fue
+que **divergió** (75.89 contra 75.72). Ahora es un envoltorio del base.
+
+**Lo que este defecto NO era:** la banda de cabecera —**225 / 165.58**, deducidos
+por composición— ni el ritmo de `section#0`, que da 50 y 102 exactos.
 
 ## Desviaciones deliberadas del grupo A (2026-07-31)
 

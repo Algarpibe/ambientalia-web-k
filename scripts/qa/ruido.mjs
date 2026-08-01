@@ -90,6 +90,29 @@ for (const ancho of [1440, 390]) {
             filas: [...document.querySelectorAll(".et_pb_row")].map((f) =>
               r(f.getBoundingClientRect().height),
             ),
+            /* ── HIPÓTESIS DE MECANISMO de C-QA6 — SOLO SE ANOTA ────────────
+             * Rocket Loader de Cloudflare **aplaza la ejecución de los
+             * scripts**, y eso desplaza cuándo asientan fuentes y maquetación.
+             * Es compatible con lo observado: un `h1` que envuelve distinto,
+             * **sincronizado en varias rutas a la vez** y correlacionado con la
+             * latencia del original.
+             *
+             * No es una explicación: es un dato que las ráfagas 2 y 3 pueden
+             * registrar sin coste, para que el día que alguien mire el
+             * mecanismo tenga con qué. **No se persigue ahora.**
+             *
+             * Se registra lo mismo que se midió al construir el grupo A: si el
+             * token por petición está presente, y si el script del propio
+             * Rocket Loader está en la página. */
+            // Sin regex a propósito: el token siempre lleva un guion delante de
+            // `-text/javascript`, y `type="text/javascript"` a secas no lo tiene.
+            // Un `includes` no hay que escaparlo y no se puede romper al editarlo.
+            rocketToken: document.documentElement.innerHTML.includes(
+              '-text/javascript"',
+            ),
+            rocketLoader: !!document.querySelector(
+              'script[src*="rocket-loader"], script[data-cf-settings]',
+            ),
           };
         });
         m.cargaMs = Date.now() - t0;
