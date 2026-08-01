@@ -71,7 +71,8 @@
     "qa:a-miga": "node scripts/qa/a-miga.mjs",
     "qa:cobertura": "node scripts/qa/cobertura.mjs",
     "qa:c1": "node scripts/qa/c1-localiza.mjs",
-    "qa:d4": "node scripts/qa/d4-pie.mjs"
+    "qa:d4": "node scripts/qa/d4-pie.mjs",
+    "qa:d4-tipo": "node scripts/qa/d4-tipografia.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-01"
+  },
+  "familias": {
+    "A · blog   86/0": {
+      "li": {
+        "h": 26,
+        "fontSize": "14px",
+        "lineHeight": "26px",
+        "marginBottom": "0px",
+        "paddingBottom": "0px"
+      },
+      "liA": {
+        "h": 19,
+        "fontSize": "14px",
+        "lineHeight": "26px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "ul": {
+        "h": 170,
+        "n": 6,
+        "paddingBottom": "14px",
+        "marginBottom": "0px",
+        "lineHeight": "26px"
+      },
+      "titulo": {
+        "h": 30.59,
+        "txt": "PRODUCTOS",
+        "fontSize": "14px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px"
+      },
+      "legalP": {
+        "h": 30.59,
+        "fontSize": "12px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px",
+        "width": "728.172px"
+      },
+      "legalCol": {
+        "h": 93.19,
+        "width": "728.172px",
+        "paddingRight": "0px"
+      },
+      "raiz": {
+        "fontSize": "16px"
+      },
+      "cuerpo": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "pieCs": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px"
+      },
+      "bodyClases": [
+        "single",
+        "single-post",
+        "postid-4597",
+        "single-format-standard",
+        "et-tb-has-template",
+        "et-tb-has-header",
+        "et-tb-has-body",
+        "et-tb-has-footer"
+      ]
+    },
+    "SECTOR     86/0": {
+      "li": {
+        "h": 26,
+        "fontSize": "14px",
+        "lineHeight": "26px",
+        "marginBottom": "0px",
+        "paddingBottom": "0px"
+      },
+      "liA": {
+        "h": 19,
+        "fontSize": "14px",
+        "lineHeight": "26px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "ul": {
+        "h": 170,
+        "n": 6,
+        "paddingBottom": "14px",
+        "marginBottom": "0px",
+        "lineHeight": "26px"
+      },
+      "titulo": {
+        "h": 30.59,
+        "txt": "PRODUCTOS",
+        "fontSize": "14px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px"
+      },
+      "legalP": {
+        "h": 30.59,
+        "fontSize": "12px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px",
+        "width": "728.172px"
+      },
+      "legalCol": {
+        "h": 93.19,
+        "width": "728.172px",
+        "paddingRight": "0px"
+      },
+      "raiz": {
+        "fontSize": "16px"
+      },
+      "cuerpo": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "pieCs": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px"
+      },
+      "bodyClases": [
+        "page-template",
+        "page-template-sectors",
+        "page-template-sectors-php",
+        "page",
+        "page-id-24961",
+        "page-child",
+        "et-tb-has-template",
+        "et-tb-has-header"
+      ]
+    },
+    "SOFTWARE   80/0": {
+      "li": {
+        "h": 30.59,
+        "fontSize": "14px",
+        "lineHeight": "30.6px",
+        "marginBottom": "7px",
+        "paddingBottom": "0px"
+      },
+      "liA": {
+        "h": 19,
+        "fontSize": "14px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "ul": {
+        "h": 218.56,
+        "n": 6,
+        "paddingBottom": "0px",
+        "marginBottom": "0px",
+        "lineHeight": "30.6px"
+      },
+      "titulo": {
+        "h": 30.59,
+        "txt": "PRODUCTOS",
+        "fontSize": "14px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px"
+      },
+      "legalP": {
+        "h": 30.59,
+        "fontSize": "12px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px",
+        "width": "677.375px"
+      },
+      "legalCol": {
+        "h": 93.19,
+        "width": "677.375px",
+        "paddingRight": "0px"
+      },
+      "raiz": {
+        "fontSize": "16px"
+      },
+      "cuerpo": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "pieCs": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px"
+      },
+      "bodyClases": [
+        "single",
+        "single-solutions",
+        "postid-27049",
+        "et-tb-has-template",
+        "et-tb-has-header",
+        "et-tb-has-footer",
+        "et_button_icon_visible",
+        "et_button_custom_icon"
+      ]
+    },
+    "CATÁLOGO   80/4": {
+      "li": {
+        "h": 30.59,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "9px",
+        "paddingBottom": "0px"
+      },
+      "liA": {
+        "h": 24,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "ul": {
+        "h": 228.56,
+        "n": 6,
+        "paddingBottom": "0px",
+        "marginBottom": "0px",
+        "lineHeight": "30.6px"
+      },
+      "titulo": {
+        "h": 30.59,
+        "txt": "PRODUCTOS",
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px"
+      },
+      "legalP": {
+        "h": 61.19,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px",
+        "width": "677.375px"
+      },
+      "legalCol": {
+        "h": 125.78,
+        "width": "677.375px",
+        "paddingRight": "0px"
+      },
+      "raiz": {
+        "fontSize": "16px"
+      },
+      "cuerpo": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "pieCs": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px"
+      },
+      "bodyClases": [
+        "single",
+        "single-solutions",
+        "postid-26481",
+        "et-tb-has-template",
+        "et-tb-has-header",
+        "et-tb-has-footer",
+        "et_button_icon_visible",
+        "et_button_custom_icon"
+      ]
+    },
+    "PRODUCTO   80/4": {
+      "li": {
+        "h": 30.59,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "9px",
+        "paddingBottom": "0px"
+      },
+      "liA": {
+        "h": 24,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "ul": {
+        "h": 228.56,
+        "n": 6,
+        "paddingBottom": "0px",
+        "marginBottom": "0px",
+        "lineHeight": "30.6px"
+      },
+      "titulo": {
+        "h": 30.59,
+        "txt": "PRODUCTOS",
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px"
+      },
+      "legalP": {
+        "h": 61.19,
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "marginBottom": "0px",
+        "width": "677.375px"
+      },
+      "legalCol": {
+        "h": 125.78,
+        "width": "677.375px",
+        "paddingRight": "0px"
+      },
+      "raiz": {
+        "fontSize": "16px"
+      },
+      "cuerpo": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px",
+        "fontFamily": "Manrope, sans-serif"
+      },
+      "pieCs": {
+        "fontSize": "18px",
+        "lineHeight": "30.6px"
+      },
+      "bodyClases": [
+        "single",
+        "single-solutions",
+        "postid-768",
+        "et-tb-has-template",
+        "et-tb-has-header",
+        "et-tb-has-footer",
+        "et_button_icon_visible",
+        "et_button_custom_icon"
+      ]
+    }
+  }
+}
