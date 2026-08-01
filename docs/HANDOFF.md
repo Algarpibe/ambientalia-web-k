@@ -1,3 +1,102 @@
+# HANDOFF — `footer-legal` cerrado y la CLASE nombrada; D2/D3/D1 SIGUEN SIN TOCAR
+
+> ⚠ **Tanda 2026-08-01 (4.ª).** Se hicieron los PASOS 0, 1 y 4 del encargo.
+> **Los PASOS 2 (D2/D3) y 3 (D1) NO se alcanzaron** — no es que se descartaran:
+> no se llegó. Siguen exactamente como estaban.
+
+## ⚠⚠ LÉEME ANTES DE ADJUDICAR NADA CONTRA `docH`
+
+> **Con D4 arreglado, muchos `docH` se ALEJAN de 0, y eso es CORRECTO.**
+>
+> `docH` carga **las cuatro causas de C1 a la vez**. Mientras el pie estuvo mal,
+> su error **compensaba** a D1/D2/D3; al arreglarlo, la compensación desaparece.
+> Medido: `/sectores/calidad-del-aire-en-las-ciudades` pasa de **+41 a −23**.
+>
+> **El eje en el que se adjudica D4 es `qa:d4`, no `qa:c-cmp`.**
+
+Es el catálogo de compensaciones de `CLAUDE.md` **visto desde el otro lado**: no
+se descubre una compensación al medir, se **fabrica** una al arreglar una de las
+dos mitades. Un arreglo correcto de una causa de una suma **tiene** que empeorar
+el total mientras las demás sigan abiertas.
+
+## 1 · Estado del pie, medido contra el original
+
+| forma | @1440 links · legal · fondo | @390 links · legal · fondo |
+|---|---|---|
+| ancha (A×3 · sector · monográfico · caso · faq) | −4 · +1 · **0** | **−7.7** · +1.59 · **0** |
+| software | −1 · +1 · **0** | −0.82 · +1.58 · **0** |
+| catálogo · producto | +1 · **0** · **0** | **+26.29** · +0.58 · **0** |
+
+**`footer-legal` y `footer-background` están CERRADOS.** El legal pasó de
+**+31.59 / +1.59 / +2.6** a **+1.59 / +1.58 / +0.58**.
+
+**Todo lo que queda vive en `footer-links`, y dentro de él en UNA columna.** De
+las cinco, cuatro cuadran al céntimo en las tres presentaciones; el residuo
+entero está en **EMPRESA**, la única con el botón «¡Suscríbete!».
+
+## 2 · Lo siguiente, y por qué en ese orden
+
+1. **El bloque «¡Suscríbete!»** — cierra `footer-links` y con él D4 entero. Sus
+   márgenes (`mt 16 · mb 46 · pb 3.1`) están cableados con el valor de SOFTWARE:
+   **−0.01 ahí y +25.1 en catálogo**. ⚠ **Dos intentos de medir su caja dieron
+   nodos equivocados** (el lado del clon casó la rejilla entera, 28 enlaces): la
+   sonda necesita bajar un nivel más en el clon —la fila es la REJILLA, y las
+   columnas son sus hijos— antes de fiarse de ningún número suyo.
+2. **D2** (+50 de huecos entre secciones) y **D3** (−42 entre última sección y
+   pie): **sin diagnosticar y sin tocar.**
+3. **D1** (−225): **sigue bloqueada**, con la misma condición — solo si se
+   demuestra que mueve `docH` y no solo la partición.
+
+## 3 · CLASE nueva: LA FAMILIA DE CALIBRACIÓN (`PENDIENTES-QA.md`)
+
+> Un componente compartido construido midiendo **UNA** página hereda los valores
+> de esa familia, acierta en ella y falla en las demás — y **el acierto se lee
+> como verificación**.
+
+Firma: **una familia a Δ≈0 exacto y las otras con residuos de signos distintos**.
+Tres instancias, las tres con familia SOFTWARE: alto del pie · tipografía del pie
+· bloque Suscríbete (abierta).
+
+**Candidatos listados y NO arreglados**: `Breadcrumb` (8 importadores) y
+`UltimosArticulos` (6) cablean `w-[80%]` **por defecto**, y el ESQUEMA §6b dice
+que los mismos anchos gobiernan la retícula del **cuerpo**. Y lo que el barrido
+no cubre: `SectionRow` (15) y `HeaderNav` (10) — **un grep por constantes
+conocidas es un cribado, no un censo**. La clase no se cierra sin medir el ancho
+del cuerpo, hoy a **0/31**.
+
+## 4 · Dos correcciones a lo que este mismo HANDOFF decía
+
+**(a) La atribución del bloque social estaba invertida.** El acta de D4 decía que
+el clon servía el valor de `estrecha` en las dos; **servía el de `ancha` en las
+tres**. El error de método es el que `CLAUDE.md` nombra: citar un número de una
+tabla de pares **sin decir de qué lado es**. `d4-tipo` solo abría el original;
+ahora abre los dos.
+
+**(b) El primer arreglo del bloque social NO FUNCIONÓ, y en silencio.** Se cableó
+como `pb-[30px]` sobre una caja de **alto fijo**: con `box-sizing: border-box` el
+`padding` se absorbe. La clase **estaba en el HTML servido** y era **inerte** —
+el marcador dio verde y el cambio no existía—. Lo cazó medir después, no leer el
+diff.
+
+## 5 · Sondas
+
+- **`c-cmp` vuelve a poder dar VERDE.** `P-C3-3` barría las 31 rutas con
+  `.entry-content`, un selector escrito para 6 → REFUTADA en toda corrida. Ahora
+  su ámbito es `caso` + `faq`, **con guarda de que acotar no se vuelva no
+  mirar** (cuenta zonas casadas y etiquetas; 0 ⇒ NO SE PUDO EVALUAR).
+  Negativos: `SABOTAJE=cauces` → refuta · `SABOTAJE=ruta` → error · control →
+  **exit 0**. `SOLO=` y `SALIDA=` nuevos.
+- `qa:d4-tipo` abre ya **los dos lados** y lee la composición de `footer-legal`.
+- ⚠ **MONOGRÁFICO no se pudo medir a 390** (timeout de 120 s en el original, que
+  tiene episodios de latencia documentados). La sonda lo registra como **error**,
+  no como «sin diferencia».
+
+`qa:enlaces` limpia · `qa:slugs` limpia · typecheck · lint 0 errores · build.
+⚠ **La adjudicación de las 31 rutas NO se re-corrió tras el PASO 1** — el estado
+de `c-cmp` es el de la tanda anterior.
+
+---
+
 # HANDOFF — D4 ARREGLADO (3 partes, con residuo fichado); D2/D3/D1 sin tocar
 
 > ⚠ **Tanda 2026-08-01 (3.ª) · EL ARREGLO DE D4.** Tres commits, cada uno con su
