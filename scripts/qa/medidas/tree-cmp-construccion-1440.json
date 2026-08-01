@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "cual": "construccion",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+    "clon": "http://localhost:3000/sectores/contaminacion-por-construccion"
+  },
+  "original": [
+    {
+      "top": 1371.36,
+      "h": 475.22,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "top": 1371.36,
+          "h": 475.22,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "¿Necesitas controlar el impacto ambienta"
+        }
+      ]
+    },
+    {
+      "top": 1832.58,
+      "h": 1034.05,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1890.17,
+          "h": 543.58,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios del control ambiental en la c"
+        },
+        {
+          "top": 2433.75,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Accede a datos ambientales de forma cont"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 1371.34,
+      "h": 475.22,
+      "mt": "0px",
+      "pt": "0px",
+      "pb": "0px",
+      "filas": [
+        {
+          "top": 1371.34,
+          "h": 475.22,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "¿Necesitas controlar el impacto ambienta"
+        }
+      ]
+    },
+    {
+      "top": 1832.56,
+      "h": 1034.05,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1890.16,
+          "h": 543.58,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios del control ambiental en la c"
+        },
+        {
+          "top": 2433.73,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Accede a datos ambientales de forma cont"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 3,
+    "filasClon": 3,
+    "descuadres": 0
+  }
+}

@@ -1,0 +1,3306 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-01"
+  },
+  "paginas": {
+    "/": {
+      "ruta": "/",
+      "forma": "home",
+      "orig": {
+        "h1y": 0,
+        "h1": {
+          "w": 0,
+          "h": 0
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 481,
+          "span": 116,
+          "img": 118,
+          "h1": 1,
+          "h2": 29,
+          "a": 85,
+          "svg": 2,
+          "path": 4,
+          "p": 63,
+          "strong": 22,
+          "sub": 5,
+          "h3": 39,
+          "br": 1,
+          "ul": 11,
+          "li": 55,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 11930,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 900,
+            "txt": "Monitoreo de la calidad del aire L"
+          },
+          {
+            "i": 1,
+            "h": 153.19,
+            "txt": "Con la confianza de empresas líder"
+          },
+          {
+            "i": 2,
+            "h": 2419.72,
+            "txt": "La solución profesional para la mo"
+          },
+          {
+            "i": 3,
+            "h": 547.84,
+            "txt": "Sectores Descargar catálogo Contro"
+          },
+          {
+            "i": 4,
+            "h": 620,
+            "txt": "ConstrucciónReduce el impacto ambi"
+          },
+          {
+            "i": 5,
+            "h": 57.59,
+            "txt": ""
+          },
+          {
+            "i": 6,
+            "h": 473.56,
+            "txt": "¿Estás inmerso en un proyecto de c"
+          },
+          {
+            "i": 7,
+            "h": 3162.88,
+            "txt": "Presencia mundial Las estaciones K"
+          },
+          {
+            "i": 8,
+            "h": 410.78,
+            "txt": "Innovación en calidad del aire a 1"
+          },
+          {
+            "i": 9,
+            "h": 798.34,
+            "txt": "Últimos artículos Monitorización d"
+          },
+          {
+            "i": 10,
+            "h": 827.14,
+            "txt": "Últimos proyectos Sector: EDAR / P"
+          },
+          {
+            "i": 11,
+            "h": 343.06,
+            "txt": "¿Te preocupa la calidad del aire q"
+          },
+          {
+            "i": 12,
+            "h": 568.03,
+            "txt": "Comprometidos con la sostenibilida"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 289.91,
+        "h1": {
+          "w": 1,
+          "h": 1
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 11870,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 900,
+            "txt": "Monitoreo de la calidad del aireLa"
+          },
+          {
+            "i": 1,
+            "h": 153,
+            "txt": "Con la confianza de empresas líder"
+          },
+          {
+            "i": 2,
+            "h": 2410.28,
+            "txt": "La solución profesional para la mo"
+          },
+          {
+            "i": 3,
+            "h": 534.25,
+            "txt": "SectoresDescargar catálogo→Control"
+          },
+          {
+            "i": 4,
+            "h": 619,
+            "txt": "ConstrucciónReduce el impacto ambi"
+          },
+          {
+            "i": 5,
+            "h": 470.5,
+            "txt": "¿Estás inmerso en un proyecto de c"
+          },
+          {
+            "i": 6,
+            "h": 410.78,
+            "txt": "Innovación en calidad del aire a 1"
+          },
+          {
+            "i": 7,
+            "h": 799.33,
+            "txt": "Últimos artículosMonitorización de"
+          },
+          {
+            "i": 8,
+            "h": 822.08,
+            "txt": "Últimos proyectosSector: EDAR / PT"
+          },
+          {
+            "i": 9,
+            "h": 341,
+            "txt": "¿Te preocupa la calidad del aire q"
+          },
+          {
+            "i": 10,
+            "h": 566.31,
+            "txt": "Comprometidos con la sostenibilida"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/accesorios": {
+      "ruta": "/accesorios",
+      "forma": "catalogo",
+      "orig": {
+        "h1y": 392.59,
+        "h1": {
+          "w": 665.84,
+          "h": 56
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 165,
+          "ol": 1,
+          "li": 24,
+          "a": 22,
+          "span": 12,
+          "meta": 3,
+          "img": 22,
+          "p": 41,
+          "h1": 1,
+          "h2": 6,
+          "ul": 6,
+          "h3": 33,
+          "table": 10,
+          "tbody": 10,
+          "tr": 58,
+          "td": 82,
+          "strong": 12,
+          "br": 3,
+          "th": 49,
+          "sup": 1,
+          "article": 3,
+          "sub": 3,
+          "style": 1,
+          "script": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11319,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 1,
+            "h": 7611.56,
+            "txt": "Accesorios Accesorios para sensore"
+          },
+          {
+            "i": 2,
+            "h": 958.33,
+            "txt": "Artículos y Guías Justicia ambient"
+          },
+          {
+            "i": 3,
+            "h": 1383.81,
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 392.59,
+        "h1": {
+          "w": 665.27,
+          "h": 56
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 10882,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 7671.73,
+            "txt": "AccesoriosAccesorios para sensores"
+          },
+          {
+            "i": 2,
+            "h": 878.13,
+            "txt": "Artículos y GuíasEHS industrial, t"
+          },
+          {
+            "i": 3,
+            "h": 1375.81,
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 209.38
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 3,
+          "div": 24,
+          "p": 40,
+          "b": 58,
+          "a": 11,
+          "strong": 7,
+          "br": 2,
+          "ul": 10,
+          "li": 45,
+          "i": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 11,
+          "th": 3,
+          "tbody": 1,
+          "td": 30,
+          "blockquote": 1,
+          "img": 6,
+          "h4": 6,
+          "sup": 4
+        },
+        "iframes": [
+          "kunakair.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 7770,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 54.59,
+            "txt": "InicioCasos de éxitoEl primer dist"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 3,
+          "div": 7,
+          "p": 24,
+          "b": 58,
+          "a": 5,
+          "strong": 1,
+          "br": 2,
+          "ul": 4,
+          "li": 15,
+          "i": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 11,
+          "th": 3,
+          "tbody": 1,
+          "td": 30,
+          "blockquote": 1
+        },
+        "iframes": [
+          "localhost:3000",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 6571,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 387,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 401.53,
+            "txt": "¿Necesitas información fiable para"
+          }
+        ]
+      },
+      "marcadoresServidos": {
+        "orig": 0,
+        "clon": 0
+      }
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 38,
+          "p": 42,
+          "a": 15,
+          "br": 1,
+          "iframe": 1,
+          "strong": 13,
+          "sub": 2,
+          "img": 8,
+          "h4": 10,
+          "ul": 10,
+          "li": 50,
+          "sup": 4
+        },
+        "iframes": [
+          "kunakair.com",
+          "www.youtube.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 5920,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 54.59,
+            "txt": "InicioCasos de éxitoRed de control"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 8,
+          "p": 14,
+          "a": 5,
+          "br": 1,
+          "iframe": 1,
+          "strong": 3,
+          "sub": 2
+        },
+        "iframes": [
+          "localhost:3000",
+          "www.youtube.com",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 1,
+          "migas": 1
+        },
+        "docH": 5028,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 387,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 401.53,
+            "txt": "¿Necesitas información fiable para"
+          }
+        ]
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 26,
+          "p": 27,
+          "a": 9,
+          "iframe": 3,
+          "ul": 8,
+          "li": 37,
+          "img": 6,
+          "h4": 6,
+          "strong": 6
+        },
+        "iframes": [
+          "kunakair.com",
+          "player.vimeo.com",
+          "kunakair.com",
+          "www.youtube.com",
+          "kunakair.com",
+          "kunakcloud.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5046,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 54.59,
+            "txt": "InicioCasos de éxitoRed global de "
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 1152,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 7,
+          "p": 11,
+          "a": 3,
+          "iframe": 3,
+          "ul": 2,
+          "li": 7
+        },
+        "iframes": [
+          "localhost:3000",
+          "player.vimeo.com",
+          "localhost:3000",
+          "www.youtube.com",
+          "localhost:3000",
+          "kunakcloud.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 1,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 4361,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 387,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 401.53,
+            "txt": "¿Necesitas información fiable para"
+          }
+        ]
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "ruta": "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "forma": "caso",
+      "orig": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 767.98,
+          "h": 108.19
+        },
+        "mapa": {
+          "w": 581.78,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 3,
+          "p": 3,
+          "span": 1,
+          "ul": 2,
+          "li": 8
+        },
+        "iframes": [
+          "kunakair.com",
+          "kunakair.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 4,
+          "chip": 4,
+          "detalles": 1,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 3790,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 54.59,
+            "txt": "InicioCasos de éxitoAlerta de cont"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 532.19,
+        "h1": {
+          "w": 1152,
+          "h": 57.59
+        },
+        "mapa": {
+          "w": 581.75,
+          "h": 330
+        },
+        "etiquetas": {
+          "h2": 3,
+          "div": 6,
+          "p": 3,
+          "span": 1,
+          "ul": 2,
+          "li": 8
+        },
+        "iframes": [
+          "localhost:3000",
+          "localhost:3000",
+          "localhost:3000"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 1,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 1,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 3004,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 387,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 401.53,
+            "txt": "¿Necesitas información fiable para"
+          }
+        ]
+      },
+      "marcadoresServidos": {
+        "orig": 1,
+        "clon": 1
+      }
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 346.98,
+        "h1": {
+          "w": 911.75,
+          "h": 115.59
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 19,
+          "h1": 1,
+          "p": 105,
+          "a": 27,
+          "strong": 321,
+          "img": 11,
+          "h2": 10,
+          "span": 7,
+          "ul": 12,
+          "li": 35,
+          "h3": 16,
+          "blockquote": 1,
+          "em": 3,
+          "table": 5,
+          "tbody": 5,
+          "tr": 41,
+          "td": 142,
+          "sub": 15,
+          "sup": 7,
+          "h4": 12,
+          "br": 3
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 32644,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosKunakpediaCloruro de"
+          },
+          {
+            "i": 1,
+            "h": 31775.38,
+            "txt": "Cloruro de hidrógeno (HCl): emisio"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 346.95,
+        "h1": {
+          "w": 911.7,
+          "h": 105.59
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 31091,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 30135.02,
+            "txt": "Cloruro de hidrógeno (HCl): emisio"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 115.84
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 19,
+          "a": 12,
+          "span": 26,
+          "br": 5,
+          "b": 1,
+          "img": 6,
+          "h2": 3,
+          "sub": 21,
+          "div": 27,
+          "table": 1,
+          "thead": 1,
+          "tr": 19,
+          "th": 5,
+          "tbody": 1,
+          "td": 90,
+          "em": 1,
+          "ul": 1,
+          "li": 3,
+          "strong": 3,
+          "mediaelementwrapper": 1,
+          "video": 1,
+          "source": 1,
+          "button": 3,
+          "figure": 5
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 8969,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasCon"
+          },
+          {
+            "i": 1,
+            "h": 7228.08,
+            "txt": "¿Cómo beneficia a la movilidad dis"
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 105.84
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 8768,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 7124.48,
+            "txt": "¿Cómo beneficia a la movilidad dis"
+          },
+          {
+            "i": 2,
+            "h": 687.33,
+            "txt": "También te puede interesarContamin"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/contaminacion-por-metano": {
+      "ruta": "/contaminacion-por-metano",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 115.84
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 198,
+          "b": 275,
+          "a": 45,
+          "sub": 35,
+          "span": 33,
+          "br": 11,
+          "div": 20,
+          "iframe": 4,
+          "h2": 16,
+          "blockquote": 7,
+          "img": 9,
+          "h3": 45,
+          "i": 2,
+          "ul": 3,
+          "li": 3,
+          "strong": 112
+        },
+        "iframes": [
+          "www.youtube.com",
+          "ourworldindata.org",
+          "ourworldindata.org",
+          "ourworldindata.org"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 42557,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasInd"
+          },
+          {
+            "i": 1,
+            "h": 40815.45,
+            "txt": "Contaminación por metano: impacto "
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 105.84
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 42201,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 40557.7,
+            "txt": "Contaminación por metano: impacto "
+          },
+          {
+            "i": 2,
+            "h": 687.33,
+            "txt": "También te puede interesarTodas nu"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/emisiones-atmosfericas": {
+      "ruta": "/emisiones-atmosfericas",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 346.98,
+        "h1": {
+          "w": 911.75,
+          "h": 115.59
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 6,
+          "h1": 1,
+          "p": 23,
+          "span": 25,
+          "blockquote": 4,
+          "i": 5,
+          "a": 14,
+          "h2": 3,
+          "br": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 4365,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosKunakpediaEmisiones "
+          },
+          {
+            "i": 1,
+            "h": 3496.23,
+            "txt": "Emisiones atmosféricas y su impact"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 346.95,
+        "h1": {
+          "w": 911.7,
+          "h": 105.59
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 4146,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 3189.72,
+            "txt": "Emisiones atmosféricas y su impact"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "ruta": "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
+      "forma": "faq",
+      "orig": {
+        "h1y": 283,
+        "h1": {
+          "w": 848.16,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "ul": 1,
+          "li": 2,
+          "p": 2,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1307,
+        "secciones": []
+      },
+      "clon": {
+        "h1y": 283,
+        "h1": {
+          "w": 846.72,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "ul": 1,
+          "li": 2,
+          "p": 2,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1360,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "ruta": "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+      "forma": "faq",
+      "orig": {
+        "h1y": 283,
+        "h1": {
+          "w": 848.16,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1303,
+        "secciones": []
+      },
+      "clon": {
+        "h1y": 283,
+        "h1": {
+          "w": 846.72,
+          "h": 98
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 1326,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/kunak-api": {
+      "ruta": "/kunak-api",
+      "forma": "software",
+      "orig": {
+        "h1y": 392.59,
+        "h1": {
+          "w": 544.31,
+          "h": 56
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 161,
+          "ol": 1,
+          "li": 8,
+          "a": 14,
+          "span": 40,
+          "meta": 3,
+          "img": 21,
+          "p": 37,
+          "h1": 1,
+          "h2": 7,
+          "h4": 12,
+          "article": 3,
+          "h3": 22,
+          "ul": 2,
+          "br": 1,
+          "sub": 3,
+          "style": 1,
+          "script": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5421,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 1,
+            "h": 1947.66,
+            "txt": "Kunak API Integración de datos más"
+          },
+          {
+            "i": 2,
+            "h": 749.94,
+            "txt": "Artículos y Guías Emisiones de las"
+          },
+          {
+            "i": 3,
+            "h": 1433.81,
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          },
+          {
+            "i": 4,
+            "h": 291.22,
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 392.59,
+        "h1": {
+          "w": 544.31,
+          "h": 56
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5337,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 1928.92,
+            "txt": "Kunak APIIntegración de datos más "
+          },
+          {
+            "i": 2,
+            "h": 735.31,
+            "txt": "Artículos y GuíasContaminación por"
+          },
+          {
+            "i": 3,
+            "h": 1425.81,
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          },
+          {
+            "i": 4,
+            "h": 291.22,
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 115.84
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 53,
+          "strong": 17,
+          "a": 13,
+          "sub": 20,
+          "blockquote": 5,
+          "span": 8,
+          "br": 3,
+          "h2": 8,
+          "h3": 12,
+          "i": 4,
+          "img": 2,
+          "div": 14,
+          "ul": 2,
+          "li": 10,
+          "b": 9,
+          "ol": 1,
+          "sup": 1,
+          "iframe": 1,
+          "script": 1,
+          "table": 1,
+          "thead": 1,
+          "tr": 5,
+          "th": 4,
+          "tbody": 1,
+          "td": 16,
+          "small": 1,
+          "em": 1
+        },
+        "iframes": [
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 13107,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasCon"
+          },
+          {
+            "i": 1,
+            "h": 11365.39,
+            "txt": "La contaminación del aire: el ases"
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 105.84
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 12326,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 10682.34,
+            "txt": "La contaminación del aire: el ases"
+          },
+          {
+            "i": 2,
+            "h": 687.33,
+            "txt": "También te puede interesarContamin"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/metano": {
+      "ruta": "/metano",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 346.98,
+        "h1": {
+          "w": 911.75,
+          "h": 115.59
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 8,
+          "h1": 1,
+          "p": 65,
+          "a": 18,
+          "sub": 5,
+          "b": 107,
+          "span": 7,
+          "br": 3,
+          "iframe": 3,
+          "blockquote": 5,
+          "i": 12,
+          "h2": 6,
+          "img": 1,
+          "h3": 11,
+          "ul": 1,
+          "li": 6
+        },
+        "iframes": [
+          "www.youtube.com",
+          "ourworldindata.org",
+          "ourworldindata.org"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 13097,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosKunakpediaMetano (CH"
+          },
+          {
+            "i": 1,
+            "h": 12228.53,
+            "txt": "Metano, un desafío para la estabil"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 346.95,
+        "h1": {
+          "w": 911.7,
+          "h": 105.59
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 12676,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 11720.13,
+            "txt": "Metano, un desafío para la estabil"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/monitor-calidad-aire": {
+      "ruta": "/monitor-calidad-aire",
+      "forma": "producto",
+      "orig": {
+        "h1y": 421.39,
+        "h1": {
+          "w": 544.31,
+          "h": 33
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 537,
+          "ol": 1,
+          "li": 49,
+          "a": 145,
+          "span": 114,
+          "meta": 3,
+          "img": 115,
+          "p": 93,
+          "h1": 1,
+          "h2": 11,
+          "svg": 1,
+          "defs": 1,
+          "clippath": 1,
+          "path": 9,
+          "g": 13,
+          "circle": 1,
+          "strong": 14,
+          "h3": 60,
+          "em": 1,
+          "h4": 7,
+          "sub": 23,
+          "b": 2,
+          "ul": 7,
+          "br": 9,
+          "article": 6,
+          "header": 3,
+          "style": 1,
+          "script": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 13611,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioProductosAIR Pro"
+          },
+          {
+            "i": 1,
+            "h": 3243.5,
+            "txt": "Kunak AIR Pro Monitor de calidad d"
+          },
+          {
+            "i": 2,
+            "h": 741.69,
+            "txt": "No se puede mejorar lo que no se p"
+          },
+          {
+            "i": 3,
+            "h": 5918.17,
+            "txt": "Beneficios Aplicaciones Software E"
+          },
+          {
+            "i": 4,
+            "h": 958.33,
+            "txt": "Artículos y Guías ¿Cómo beneficia "
+          },
+          {
+            "i": 5,
+            "h": 1383.81,
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 421.39,
+        "h1": {
+          "w": 544.31,
+          "h": 33
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 12458,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 772.7,
+            "txt": "Kunak AIR ProMonitor de calidad de"
+          },
+          {
+            "i": 2,
+            "h": 2347.56,
+            "txt": "Información del productoDescargar "
+          },
+          {
+            "i": 3,
+            "h": 413.72,
+            "txt": "No se puede mejorar lo que no se p"
+          },
+          {
+            "i": 4,
+            "h": 5713.75,
+            "txt": "BeneficiosAplicacionesSoftwareEspe"
+          },
+          {
+            "i": 5,
+            "h": 878.11,
+            "txt": "Artículos y GuíasRunning for Clean"
+          },
+          {
+            "i": 6,
+            "h": 1375.81,
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 168.77
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 140,
+          "sub": 73,
+          "strong": 351,
+          "span": 17,
+          "br": 8,
+          "a": 50,
+          "div": 39,
+          "img": 14,
+          "h2": 11,
+          "blockquote": 7,
+          "em": 19,
+          "h3": 24,
+          "sup": 13,
+          "ul": 9,
+          "li": 31,
+          "iframe": 1,
+          "script": 1,
+          "video": 1,
+          "source": 1
+        },
+        "iframes": [
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 41427,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasCon"
+          },
+          {
+            "i": 1,
+            "h": 39686.19,
+            "txt": "Monitorización de emisiones del tr"
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 158.77
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 38626,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 36982.42,
+            "txt": "Monitorización de emisiones del tr"
+          },
+          {
+            "i": 2,
+            "h": 687.33,
+            "txt": "También te puede interesarContamin"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 115.84
+        },
+        "mapa": null,
+        "etiquetas": {
+          "blockquote": 13,
+          "p": 102,
+          "span": 15,
+          "br": 7,
+          "a": 88,
+          "sub": 80,
+          "strong": 306,
+          "em": 25,
+          "div": 23,
+          "ul": 13,
+          "li": 39,
+          "table": 7,
+          "tbody": 7,
+          "tr": 36,
+          "td": 105,
+          "img": 7,
+          "h2": 9,
+          "h3": 15,
+          "iframe": 2,
+          "sup": 4,
+          "script": 1
+        },
+        "iframes": [
+          "storymaps.arcgis.com",
+          "nbcwashington.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 33309,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasCon"
+          },
+          {
+            "i": 1,
+            "h": 31567.92,
+            "txt": "Monitorización de la calidad del a"
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 105.84
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 30280,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 28658.45,
+            "txt": "Monitorización de la calidad del a"
+          },
+          {
+            "i": 2,
+            "h": 665.17,
+            "txt": "También te puede interesarContamin"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "forma": "A-documento",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 168.77
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 1,
+          "p": 1,
+          "sub": 1,
+          "sup": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 2089,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 1,
+            "h": 1219.77,
+            "txt": "Exposición de los atletas a la con"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 158.77
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 2258,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 1301.66,
+            "txt": "Exposición de los atletas a la con"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "forma": "A-documento",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 168.77
+        },
+        "mapa": null,
+        "etiquetas": {
+          "h2": 1,
+          "p": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1962,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 1,
+            "h": 1093.36,
+            "txt": "Idoneidad de una red de comunicaci"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 158.77
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1909,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 952.64,
+            "txt": "Idoneidad de una red de comunicaci"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+      "forma": "A-documento",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 62.92
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 3,
+          "strong": 11
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1856,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 1,
+            "h": 987.52,
+            "txt": "Desafío AIRLAB de microsensores 20"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 52.92
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1733,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 777.03,
+            "txt": "Desafío AIRLAB de microsensores 20"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "ruta": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "A-documento",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 62.92
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 3,
+          "sub": 4,
+          "strong": 1,
+          "span": 1,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1856,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 1,
+            "h": 987.52,
+            "txt": "Soluciones avanzadas de monitoriza"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 52.92
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1831,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 875.33,
+            "txt": "Soluciones avanzadas de monitoriza"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/running-for-clean-air": {
+      "ruta": "/running-for-clean-air",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 115.84
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 57,
+          "span": 32,
+          "br": 10,
+          "a": 45,
+          "b": 82,
+          "strong": 4,
+          "h2": 7,
+          "div": 44,
+          "img": 9,
+          "iframe": 5,
+          "ul": 1,
+          "li": 6,
+          "blockquote": 1,
+          "i": 2,
+          "sub": 14,
+          "mediaelementwrapper": 1,
+          "video": 1,
+          "source": 1,
+          "button": 3,
+          "script": 2,
+          "ol": 2
+        },
+        "iframes": [
+          "www.youtube.com",
+          "www.linkedin.com",
+          "www.youtube.com",
+          "www.instagram.com",
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 18457,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioRecursosArtículos y GuíasCon"
+          },
+          {
+            "i": 1,
+            "h": 16716.05,
+            "txt": "Running for Clean Air: midiendo el"
+          },
+          {
+            "i": 2,
+            "h": 872.44,
+            "txt": "También te puede interesar Related"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 105.84
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 19482,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 17838.08,
+            "txt": "Running for Clean Air: midiendo el"
+          },
+          {
+            "i": 2,
+            "h": 687.33,
+            "txt": "También te puede interesarContamin"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "ruta": "/sectores/calidad-del-aire-en-las-ciudades",
+      "forma": "sector",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 172,
+          "img": 44,
+          "span": 43,
+          "ol": 1,
+          "li": 50,
+          "a": 39,
+          "meta": 3,
+          "h2": 4,
+          "p": 29,
+          "h3": 14,
+          "ul": 9,
+          "h4": 3,
+          "strong": 9,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 6054,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "i": 2,
+            "h": 893.53,
+            "txt": "Quiero saber más Descargar catálog"
+          },
+          {
+            "i": 3,
+            "h": 440.83,
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 4,
+            "h": 1057.45,
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 5,
+            "h": 401.56,
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "i": 6,
+            "h": 2111.19,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 6122,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "UrbanoCalidad del aire en las ciud"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 893.53,
+            "txt": "Quiero saber más→Descargar catálog"
+          },
+          {
+            "i": 3,
+            "h": 432.23,
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 4,
+            "h": 1057.45,
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 5,
+            "h": 401.53,
+            "txt": "Obtén datos fiables y precisos sob"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "ruta": "/sectores/contaminacion-por-construccion",
+      "forma": "sector",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 159,
+          "img": 37,
+          "span": 42,
+          "ol": 1,
+          "li": 51,
+          "a": 33,
+          "meta": 3,
+          "h2": 4,
+          "p": 29,
+          "h3": 12,
+          "ul": 9,
+          "h4": 3,
+          "strong": 9,
+          "article": 4,
+          "header": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 1,
+          "chip": 1,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5973,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresContaminación por co"
+          },
+          {
+            "i": 2,
+            "h": 801.75,
+            "txt": "¿Quieres saber más? Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 475.22,
+            "txt": "¿Necesitas controlar el impacto am"
+          },
+          {
+            "i": 4,
+            "h": 1034.05,
+            "txt": "Beneficios del control ambiental e"
+          },
+          {
+            "i": 5,
+            "h": 401.56,
+            "txt": "Controla la calidad del aire en la"
+          },
+          {
+            "i": 6,
+            "h": 2111.19,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 6022,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "ConstrucciónContaminación por cons"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 801.75,
+            "txt": "¿Quieres saber más?→Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 475.22,
+            "txt": "¿Necesitas controlar el impacto am"
+          },
+          {
+            "i": 4,
+            "h": 1034.05,
+            "txt": "Beneficios del control ambiental e"
+          },
+          {
+            "i": 5,
+            "h": 401.53,
+            "txt": "Controla la calidad del aire en la"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "ruta": "/sectores/control-de-emisiones-industriales",
+      "forma": "sector",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 536,
+          "img": 197,
+          "span": 72,
+          "ol": 1,
+          "li": 74,
+          "a": 42,
+          "meta": 3,
+          "h2": 5,
+          "p": 33,
+          "h3": 55,
+          "ul": 13,
+          "br": 1,
+          "button": 18,
+          "table": 1,
+          "tbody": 1,
+          "tr": 10,
+          "td": 20,
+          "kbd": 10,
+          "slot": 1,
+          "iframe": 1,
+          "label": 2,
+          "gmp-internal-camera-control": 1,
+          "menu": 1,
+          "h4": 3,
+          "strong": 9,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 7144,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresControl de emisiones"
+          },
+          {
+            "i": 2,
+            "h": 801.75,
+            "txt": "¿Quieres saber más? Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 2622.8,
+            "txt": "Beneficios del control de las emis"
+          },
+          {
+            "i": 4,
+            "h": 401.56,
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "i": 5,
+            "h": 2168.78,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 7171,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "Industria y oloresControl de emisi"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 801.75,
+            "txt": "¿Quieres saber más?→Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 2635.8,
+            "txt": "Beneficios del control de las emis"
+          },
+          {
+            "i": 4,
+            "h": 401.53,
+            "txt": "Reduce el impacto ambiental midien"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "ruta": "/sectores/estudio-de-la-contaminacion-atmosferica",
+      "forma": "sector",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 161,
+          "img": 43,
+          "span": 44,
+          "ol": 1,
+          "li": 53,
+          "a": 38,
+          "meta": 3,
+          "h2": 4,
+          "p": 27,
+          "h3": 14,
+          "ul": 9,
+          "h4": 3,
+          "strong": 9,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5795,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresEstudio de la contam"
+          },
+          {
+            "i": 2,
+            "h": 862.94,
+            "txt": "¿Quieres saber más? Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 1180.83,
+            "txt": "Beneficios en estudios de contamin"
+          },
+          {
+            "i": 4,
+            "h": 460.06,
+            "txt": "Haz que tus estudios ambientales s"
+          },
+          {
+            "i": 5,
+            "h": 2141.78,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 5841,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "Investigación y consultoríaEstudio"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 862.94,
+            "txt": "¿Quieres saber más?→Descargar catá"
+          },
+          {
+            "i": 3,
+            "h": 1180.83,
+            "txt": "Beneficios en estudios de contamin"
+          },
+          {
+            "i": 4,
+            "h": 460.03,
+            "txt": "Haz que tus estudios ambientales s"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "ruta": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "monografico",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 82
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 538,
+          "img": 179,
+          "span": 61,
+          "ol": 1,
+          "li": 73,
+          "a": 44,
+          "meta": 3,
+          "h2": 16,
+          "p": 34,
+          "strong": 66,
+          "br": 2,
+          "h3": 48,
+          "ul": 14,
+          "sub": 31,
+          "table": 2,
+          "thead": 1,
+          "tr": 19,
+          "th": 4,
+          "h5": 4,
+          "tbody": 2,
+          "td": 52,
+          "button": 18,
+          "kbd": 10,
+          "slot": 1,
+          "iframe": 1,
+          "label": 2,
+          "gmp-internal-camera-control": 1,
+          "menu": 1,
+          "h4": 3,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [
+          "kunakair.com"
+        ],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11109,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresMonitorización ambie"
+          },
+          {
+            "i": 2,
+            "h": 737.97,
+            "txt": "Solicita una demo técnica Descarga"
+          },
+          {
+            "i": 3,
+            "h": 3675.81,
+            "txt": "¿Qué cambia con monitorización con"
+          },
+          {
+            "i": 4,
+            "h": 581.8,
+            "txt": "Control perimetral y gestión de qu"
+          },
+          {
+            "i": 5,
+            "h": 2384.31,
+            "txt": "Beneficios clave para la operación"
+          },
+          {
+            "i": 6,
+            "h": 401.56,
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "i": 7,
+            "h": 2141.78,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11203,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "EDARMonitorización ambiental en ED"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 799.97,
+            "txt": "Solicita una demo técnica→Descarga"
+          },
+          {
+            "i": 3,
+            "h": 3675.8,
+            "txt": "¿Qué cambia con monitorización con"
+          },
+          {
+            "i": 4,
+            "h": 581.8,
+            "txt": "Control perimetral y gestión de qu"
+          },
+          {
+            "i": 5,
+            "h": 2384.31,
+            "txt": "Beneficios clave para la operación"
+          },
+          {
+            "i": 6,
+            "h": 401.53,
+            "txt": "Reduce el impacto ambiental midien"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "ruta": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "monografico",
+      "orig": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 619.19,
+          "h": 82
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 244,
+          "img": 50,
+          "span": 62,
+          "ol": 1,
+          "li": 53,
+          "a": 44,
+          "meta": 3,
+          "h2": 11,
+          "p": 54,
+          "strong": 36,
+          "sub": 21,
+          "h3": 21,
+          "h4": 16,
+          "ul": 11,
+          "b": 7,
+          "article": 6,
+          "header": 3
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11303,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 50,
+            "txt": "InicioSectoresMonitorización de em"
+          },
+          {
+            "i": 2,
+            "h": 898.89,
+            "txt": "Solicita una demo técnica Descarga"
+          },
+          {
+            "i": 3,
+            "h": 1758.58,
+            "txt": "De inspecciones puntuales a contro"
+          },
+          {
+            "i": 4,
+            "h": 3740.3,
+            "txt": "La solución de Kunak Monitorizació"
+          },
+          {
+            "i": 5,
+            "h": 1149.08,
+            "txt": "Controla tus emisiones y detecta f"
+          },
+          {
+            "i": 6,
+            "h": 401.56,
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "i": 7,
+            "h": 2168.78,
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 261.16,
+        "h1": {
+          "w": 1238.39,
+          "h": 46
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11281,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 397.59,
+            "txt": "Petróleo y GasMonitorización de em"
+          },
+          {
+            "i": 1,
+            "h": 122,
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "h": 898.89,
+            "txt": "Solicita una demo técnica→Descarga"
+          },
+          {
+            "i": 3,
+            "h": 1758.58,
+            "txt": "De inspecciones puntuales a contro"
+          },
+          {
+            "i": 4,
+            "h": 3740.3,
+            "txt": "La solución de KunakMonitorización"
+          },
+          {
+            "i": 5,
+            "h": 1149.08,
+            "txt": "Controla tus emisiones y detecta f"
+          },
+          {
+            "i": 6,
+            "h": 401.53,
+            "txt": "Reduce el impacto ambiental midien"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "forma": "software",
+      "orig": {
+        "h1y": 421.39,
+        "h1": {
+          "w": 544.31,
+          "h": 33
+        },
+        "mapa": null,
+        "etiquetas": {
+          "div": 341,
+          "ol": 1,
+          "li": 11,
+          "a": 42,
+          "span": 94,
+          "meta": 3,
+          "img": 41,
+          "p": 47,
+          "h1": 1,
+          "h2": 8,
+          "b": 1,
+          "h4": 6,
+          "h3": 60,
+          "ul": 3,
+          "article": 6,
+          "header": 3,
+          "br": 1,
+          "sub": 3,
+          "style": 1,
+          "script": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 3,
+          "chip": 3,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11837,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioProductosAIR Cloud"
+          },
+          {
+            "i": 1,
+            "h": 2544.44,
+            "txt": "Kunak AIR Cloud Software de medici"
+          },
+          {
+            "i": 2,
+            "h": 376.22,
+            "txt": "Una completa suite de herramientas"
+          },
+          {
+            "i": 3,
+            "h": 5649.81,
+            "txt": "Beneficios Herramientas Casos de é"
+          },
+          {
+            "i": 4,
+            "h": 834.14,
+            "txt": "Artículos y Guías Estrés por calor"
+          },
+          {
+            "i": 5,
+            "h": 1433.81,
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 421.39,
+        "h1": {
+          "w": 544.31,
+          "h": 33
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 11759,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 2505.95,
+            "txt": "Kunak AIR CloudSoftware de medició"
+          },
+          {
+            "i": 2,
+            "h": 378.22,
+            "txt": "Una completa suite de herramientas"
+          },
+          {
+            "i": 3,
+            "h": 5615.16,
+            "txt": "BeneficiosHerramientasCasos de éxi"
+          },
+          {
+            "i": 4,
+            "h": 878.13,
+            "txt": "Artículos y GuíasControl de las em"
+          },
+          {
+            "i": 5,
+            "h": 1425.81,
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+      "forma": "A-blog",
+      "orig": {
+        "h1y": 332.59,
+        "h1": {
+          "w": 911.75,
+          "h": 62.92
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 2,
+          "a": 1
+        },
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1772,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 50,
+            "txt": "InicioBlogTodas nuestras solucione"
+          },
+          {
+            "i": 1,
+            "h": 903.27,
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ]
+      },
+      "clon": {
+        "h1y": 332.58,
+        "h1": {
+          "w": 911.7,
+          "h": 52.92
+        },
+        "mapa": null,
+        "etiquetas": {},
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 1
+        },
+        "docH": 1491,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 225,
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "h": 535.06,
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "cual": "industria",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+    "clon": "http://localhost:3000/sectores/control-de-emisiones-industriales"
+  },
+  "original": [
+    {
+      "top": 1357.36,
+      "h": 2622.8,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1414.95,
+          "h": 630.17,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios del control de las emisiones "
+        },
+        {
+          "top": 2045.13,
+          "h": 525.61,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 2570.73,
+          "h": 236.36,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Industria cementera Metalurgia y minería"
+        },
+        {
+          "top": 2807.09,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Identifica qué operaciones o procesos pr"
+        },
+        {
+          "top": 3225.97,
+          "h": 740.19,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Proyectos por todo el mundo Algunos de l"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 1357.34,
+      "h": 2635.8,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1414.94,
+          "h": 630.17,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios del control de las emisiones "
+        },
+        {
+          "top": 2045.11,
+          "h": 495.02,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 2540.13,
+          "h": 266.95,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Algunos de las aplicaciones donde desple"
+        },
+        {
+          "top": 2807.08,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Identifica qué operaciones o procesos pr"
+        },
+        {
+          "top": 3225.95,
+          "h": 753.19,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Proyectos por todo el mundoAlgunos de lo"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 5,
+    "filasClon": 5,
+    "descuadres": 0
+  }
+}

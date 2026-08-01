@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "cual": "investigacion",
+    "width": 1440,
+    "orig": "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+    "clon": "http://localhost:3000/sectores/estudio-de-la-contaminacion-atmosferica"
+  },
+  "original": [
+    {
+      "top": 1418.55,
+      "h": 1180.83,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1476.14,
+          "h": 690.36,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios en estudios de contaminación "
+        },
+        {
+          "top": 2166.5,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Elabora estudios más completos gracias a"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 1418.53,
+      "h": 1180.83,
+      "mt": "-14px",
+      "pt": "57.5938px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 1476.13,
+          "h": 690.36,
+          "mt": "0px",
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "txt": "Beneficios en estudios de contaminación "
+        },
+        {
+          "top": 2166.48,
+          "h": 418.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "28.7969px",
+          "txt": "Elabora estudios más completos gracias a"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 2,
+    "filasClon": 2,
+    "descuadres": 0
+  }
+}

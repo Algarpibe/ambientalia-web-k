@@ -46,8 +46,12 @@ export async function openPage(browser, url, { width, height, mobile = false, ds
   } else {
     await page.setViewport({ width, height, deviceScaleFactor: dsf });
   }
-  await page.goto(url, { waitUntil: "networkidle2", timeout: 120000 });
-  return { page, client };
+  const respuesta = await page.goto(url, { waitUntil: "networkidle2", timeout: 120000 });
+  // El estado HTTP se devuelve porque una 404 CARGA BIEN: `goto` no lanza, la
+  // página renderiza, y una sonda que no lo mire mide el 404 y publica deltas
+  // plausibles. Lo cazó el test en negativo de `c-cmp` (2026-08-01): una ruta
+  // inventada salió con `base +142.5 · docH 1300→900` y un ✓.
+  return { page, client, status: respuesta?.status() ?? 0 };
 }
 
 /** Divi recalcula alturas por JS tras el load: pase de scroll + settle + lazy→eager. */

@@ -1,0 +1,1036 @@
+{
+  "meta": {
+    "fecha": "2026-08-01",
+    "rutas": 31,
+    "sabotaje": true
+  },
+  "recuento": [
+    {
+      "eje": "docH",
+      "nombre": "docH",
+      "O": 2,
+      "c": 29,
+      "nunca": 0,
+      "sondas": [
+        "clon-base",
+        "mono-cmp"
+      ]
+    },
+    {
+      "eje": "base",
+      "nombre": "base cruda (h1.y)",
+      "O": 21,
+      "c": 10,
+      "nunca": 0,
+      "sondas": [
+        "c-cabecera",
+        "clon-base",
+        "a-cascaron×clon-base (a mano)"
+      ]
+    },
+    {
+      "eje": "secciones",
+      "nombre": "árbol secciones",
+      "O": 6,
+      "c": 25,
+      "nunca": 0,
+      "sondas": [
+        "clon-base",
+        "tree-cmp",
+        "mono-cmp"
+      ]
+    },
+    {
+      "eje": "filas",
+      "nombre": "filas",
+      "O": 6,
+      "c": 0,
+      "nunca": 25,
+      "sondas": [
+        "tree-cmp",
+        "mono-cmp"
+      ]
+    },
+    {
+      "eje": "modulos",
+      "nombre": "módulos",
+      "O": 2,
+      "c": 0,
+      "nunca": 29,
+      "sondas": [
+        "mono-cmp"
+      ]
+    },
+    {
+      "eje": "offsets",
+      "nombre": "offsets/holgura",
+      "O": 0,
+      "c": 3,
+      "nunca": 28,
+      "sondas": [
+        "offsets"
+      ]
+    },
+    {
+      "eje": "anchos",
+      "nombre": "anchos horiz.",
+      "O": 12,
+      "c": 0,
+      "nunca": 19,
+      "sondas": [
+        "a-miga",
+        "c-banda"
+      ]
+    },
+    {
+      "eje": "enlaces",
+      "nombre": "enlaces",
+      "O": 31,
+      "c": 0,
+      "nunca": 0,
+      "sondas": [
+        "enlaces"
+      ]
+    },
+    {
+      "eje": "comport",
+      "nombre": "comportamiento",
+      "O": 0,
+      "c": 0,
+      "nunca": 31,
+      "sondas": []
+    }
+  ],
+  "matriz": {
+    "/": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/accesorios": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "c-banda",
+        "fichero": "c-banda-1440"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/contaminacion-por-metano": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "a-cascaron×clon-base (a mano)",
+        "fichero": "a-cascaron-{1440,390}-2026-07-31-4"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/emisiones-atmosfericas": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "a-cascaron×clon-base (a mano)",
+        "fichero": "a-cascaron-{1440,390}-2026-07-31-4"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/kunak-api": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/metano": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/monitor-calidad-aire": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "a-cascaron×clon-base (a mano)",
+        "fichero": "a-cascaron-{1440,390}-2026-07-31-4"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/running-for-clean-air": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-urbano-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-urbano-1440"
+      },
+      "modulos": null,
+      "offsets": {
+        "nivel": "c",
+        "sonda": "offsets",
+        "fichero": "offsets-sectores-calidad-del-aire-en-las-ciudades-1440"
+      },
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-construccion-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-construccion-1440"
+      },
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-industria-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-industria-1440"
+      },
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-investigacion-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "tree-cmp",
+        "fichero": "tree-cmp-investigacion-1440"
+      },
+      "modulos": null,
+      "offsets": null,
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "docH": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-edar-1440"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-edar-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-edar-1440"
+      },
+      "modulos": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-edar-1440"
+      },
+      "offsets": {
+        "nivel": "c",
+        "sonda": "offsets",
+        "fichero": "offsets-sectores-monitorizacion-ambiental-y-control-de-olores-en-edar-390"
+      },
+      "anchos": null,
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "docH": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-petroleo-1440"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-petroleo-1440"
+      },
+      "filas": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-petroleo-1440"
+      },
+      "modulos": {
+        "nivel": "O",
+        "sonda": "mono-cmp",
+        "fichero": "mono-cmp-petroleo-1440"
+      },
+      "offsets": {
+        "nivel": "c",
+        "sonda": "offsets",
+        "fichero": "offsets-sectores-monitorizacion-de-emisiones-en-petroleo-y-gas-1440"
+      },
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "c-cabecera",
+        "fichero": "c-cabecera-1440"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "docH": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "base": {
+        "nivel": "O",
+        "sonda": "a-cascaron×clon-base (a mano)",
+        "fichero": "a-cascaron-{1440,390}-2026-07-31-4"
+      },
+      "secciones": {
+        "nivel": "c",
+        "sonda": "clon-base",
+        "fichero": "clon-base-1440-aqa1b"
+      },
+      "filas": null,
+      "modulos": null,
+      "offsets": null,
+      "anchos": {
+        "nivel": "O",
+        "sonda": "a-miga",
+        "fichero": "a-miga-1440-2026-08-01-4"
+      },
+      "enlaces": {
+        "nivel": "O",
+        "sonda": "enlaces",
+        "fichero": "enlaces"
+      },
+      "comport": null
+    }
+  },
+  "tablaMarkdown": "| ruta | docH | base cruda (h1.y) | árbol secciones | filas | módulos | offsets/holgura | anchos horiz. | enlaces | comportamiento |\n|---|---|---|---|---|---|---|---|---|---|\n| **HOME** ||||||||||\n| `/` | c | **O** | c | · | · | · | · | **O** | · |\n| **PRODUCTO** ||||||||||\n| `/monitor-calidad-aire` | c | **O** | c | · | · | · | **O** | **O** | · |\n| **CATÁLOGO** ||||||||||\n| `/accesorios` | c | **O** | c | · | · | · | **O** | **O** | · |\n| **SOFTWARE** ||||||||||\n| `/kunak-api` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/software-de-medicion-calidad-del-aire` | c | **O** | c | · | · | · | **O** | **O** | · |\n| **MONOGRÁFICO** ||||||||||\n| `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | · |\n| `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | · |\n| **SECTOR** ||||||||||\n| `/sectores/calidad-del-aire-en-las-ciudades` | c | **O** | **O** | **O** | · | c | **O** | **O** | · |\n| `/sectores/contaminacion-por-construccion` | c | **O** | **O** | **O** | · | · | · | **O** | · |\n| `/sectores/control-de-emisiones-industriales` | c | **O** | **O** | **O** | · | · | · | **O** | · |\n| `/sectores/estudio-de-la-contaminacion-atmosferica` | c | **O** | **O** | **O** | · | · | · | **O** | · |\n| **CASO** ||||||||||\n| `/case-studies/distrito-baja-emision-rio-de-janeiro` | c | **O** | c | · | · | · | · | **O** | · |\n| `/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/casos-de-exito/red-calidad-de-aire-para-world-athletics` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano` | c | **O** | c | · | · | · | · | **O** | · |\n| **FAQ** ||||||||||\n| `/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion` | c | **O** | c | · | · | · | · | **O** | · |\n| `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento` | c | **O** | c | · | · | · | · | **O** | · |\n| **A · documento científico** ||||||||||\n| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion` | c | c | c | · | · | · | · | **O** | · |\n| `/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023` | c | c | c | · | · | · | · | **O** | · |\n| `/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion` | c | c | c | · | · | · | · | **O** | · |\n| **A · blog / término** ||||||||||\n| `/cloruro-de-hidrogeno-hcl` | c | c | c | · | · | · | · | **O** | · |\n| `/contador-particulas-suspension-movilidad-sostenible` | c | c | c | · | · | · | · | **O** | · |\n| `/contaminacion-por-metano` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/emisiones-atmosfericas` | c | **O** | c | · | · | · | **O** | **O** | · |\n| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | c | c | c | · | · | · | · | **O** | · |\n| `/metano` | c | c | c | · | · | · | · | **O** | · |\n| `/monitorizacion-de-emisiones-del-trafico-urbano` | c | c | c | · | · | · | · | **O** | · |\n| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | c | c | c | · | · | · | · | **O** | · |\n| `/running-for-clean-air` | c | c | c | · | · | · | · | **O** | · |\n| `/todas-nuestras-soluciones-en-el-iotswc` | c | **O** | c | · | · | · | **O** | **O** | · |"
+}

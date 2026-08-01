@@ -300,6 +300,39 @@ Una página completa antes de empezar la siguiente. Por página:
    (`monitor: …`, `software: …`). Cuerpo explicando el porqué y lo que queda
    pendiente.
 
+### ⚠ UN ARQUETIPO NUEVO NO HEREDA COBERTURA
+
+> **Toda tanda de construcción cierra con una sonda comparadora DE DOS LADOS
+> sobre los ejes estándar.** Si para ese arquetipo no existe, **construirla es
+> parte de la tanda, no un extra.** Una guarda solo-clon —`clon-base`,
+> `offsets`— se lee como verde y **no mide fidelidad**: compara el clon con el
+> clon de ayer, y ayer podía estar mal.
+
+**El dato que lo sostiene** (auditoría de cobertura, `docs/research/COBERTURA-MEDICION.md`):
+
+| arquetipo | construido | cobertura antes de la auditoría |
+|---|---|---|
+| HOME · PRODUCTO · CATÁLOGO · SOFTWARE | el más temprano | `docH` y árbol en `c` |
+| MONOGRÁFICO | en medio | **el mejor cubierto: `O` en docH, árbol, filas y módulos** |
+| CASO · FAQ | tardío | `O` en docH y árbol |
+| **GRUPO A** | **el más reciente** | **`docH` y árbol en `c`** |
+
+**La cobertura no crece con el tiempo**: el más nuevo estaba tan descubierto como
+el más viejo. La única variable es **qué sonda tenía delante la tanda que lo
+construyó** — el monográfico nació con `mono-cmp` y `tree-cmp` hechos para él;
+grupo A se apoyó en `clon-base` (guarda del clon) y `a-cascaron` (censo del
+original), **dos sondas que nunca se tocan**.
+
+Y lo que costó saltárselo: al cerrar el hueco, las 31 rutas comparadas por
+primera vez en `docH` sacaron **un desfase de cascarón por familia** —−87.5 en
+las 14 de grupo A, con el signo invertido a 390— y **+289.91 de base en la
+HOME**, el arquetipo más antiguo. Ninguno de los dos podía verlo una guarda
+solo-clon. Registro en `PENDIENTES-QA.md` §COBERTURA.
+
+**En la práctica:** `npm run qa:cobertura` dice en qué estado queda cada eje.
+Una tanda de construcción no está cerrada mientras su arquetipo tenga celdas en
+`c` o en `·` en los ejes que esa página sí tiene.
+
 `docs/PLAN-CLONADO.md` tiene el detalle de fases y qué modelo conviene en cada
 una. `docs/PENDIENTES-QA.md` es el registro vivo de QA — **léelo antes de tocar
 una página ya clonada**: incluye objetivos numéricos por sección y hallazgos

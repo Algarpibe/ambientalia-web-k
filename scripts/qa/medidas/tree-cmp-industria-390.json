@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "cual": "industria",
+    "width": 390,
+    "orig": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+    "clon": "http://localhost:3000/sectores/control-de-emisiones-industriales"
+  },
+  "original": [
+    {
+      "top": 2045.78,
+      "h": 4169.3,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 2095.78,
+          "h": 1557.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Beneficios del control de las emisiones "
+        },
+        {
+          "top": 3653.06,
+          "h": 730.42,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 4383.48,
+          "h": 505.72,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "Industria cementera Metalurgia y minería"
+        },
+        {
+          "top": 4889.2,
+          "h": 475.59,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "Identifica qué operaciones o procesos pr"
+        },
+        {
+          "top": 5364.8,
+          "h": 836.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Proyectos por todo el mundo Algunos de l"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 2045.78,
+      "h": 4134.8,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 2095.78,
+          "h": 1557.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Beneficios del control de las emisiones "
+        },
+        {
+          "top": 3653.06,
+          "h": 621.14,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 4274.2,
+          "h": 567.5,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "Algunos de las aplicaciones donde desple"
+        },
+        {
+          "top": 4841.7,
+          "h": 475.59,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "Identifica qué operaciones o procesos pr"
+        },
+        {
+          "top": 5317.3,
+          "h": 849.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Proyectos por todo el mundoAlgunos de lo"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 5,
+    "filasClon": 5,
+    "descuadres": 0
+  }
+}

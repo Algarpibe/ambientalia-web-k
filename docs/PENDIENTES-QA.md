@@ -3012,6 +3012,123 @@ en el clon**; los otros cuatro dan Δ0 exacto.
 - **Sin identificar**, y se deja así en vez de inventarle una causa. No se cablea
   nada: sería exactamente el arreglo falso que esta tanda documenta.
 
+## COBERTURA · lo que apareció al comparar 31 rutas contra el original (2026-08-01)
+
+> Congelado: `medidas/c-cmp-{1440,390}-2026-08-01*.json` ·
+> `medidas/c-cabecera-{1440,390}-2026-08-01.json` · `medidas/tree-cmp-*` ·
+> `medidas/enlaces.json` · `medidas/cobertura.json`. Matriz: `npm run qa:cobertura`.
+>
+> **Tanda de diagnóstico: nada de esto se arregla aquí.** Es el inventario que
+> alimenta la tanda CLASE. Es la **primera vez** que 31 rutas se comparan con el
+> original en `docH` y árbol — antes 23 de ellas solo tenían `clon-base`.
+
+### ⚠ C1 · CLASE — el cascarón fuera de sección difiere por FAMILIA, y el signo se invierte
+
+Descomponiendo `docH` en **Σ secciones** (cuerpo) y **resto** (cabecera + pie +
+lo que no cae en ninguna sección), sobre las 17 rutas donde el nº de secciones
+coincide en los dos lados y la partición es por tanto equivalente:
+
+| familia | rutas | resto Δ @1440 | resto Δ @390 |
+|---|---|---|---|
+| **A · blog + documento** | **14** | **−87.5** (rango −86.92…−88.14) | **+228.5** (subgrupos en 203 y 176.6) |
+| CATÁLOGO `/accesorios` | 1 | **−583.97** | −440.03 |
+| SOFTWARE (`/kunak-api`, `/software-…`) | 2 | **−217.63 / −217.85** | −127.85 / −127.29 |
+| PRODUCTO `/monitor-calidad-aire` | 1 | −584.15 | *(partición no equivalente)* |
+
+**Por qué es CLASE y no ruido, con las tres señales del criterio:**
+
+1. **Constante dentro de la familia.** Las 14 rutas de grupo A dan −87.5 **±0.6**
+   en páginas que van de 1 772 a 42 557 px de alto. Un residuo que no escala con
+   el contenido es del cascarón.
+2. **Las familias coinciden consigo mismas y no entre sí.** `/accesorios`
+   (−583.97) y `/monitor` (−584.15) dan **el mismo número**; `/kunak-api` y
+   `/software` dan **el mismo número** (−217.6/−217.9). Es por plantilla.
+3. **El signo se invierte entre anchos** en grupo A: −87.5 a 1440, **+228.5** a
+   390. `CLAUDE.md` §Notas de método: *el signo se invierte, que es la firma de
+   una medida tapada*. Es la misma firma que destapó C-QA7.
+
+**Invisible para todo lo que había:** `clon-base` compara el clon consigo mismo,
+y `c-cabecera` mide **por encima del `h1`** — que en grupo A cuadra a −0.01. El
+residuo vive **por debajo**, o sea en el pie o en el hueco que lo precede.
+
+### C2 · DEFECTO — la HOME tiene la base desplazada +289.91, y nunca se había mirado
+
+| | original | clon | Δ |
+|---|---|---|---|
+| `h1.y` crudo @1440 | **0** | 289.91 | **+289.91** |
+| `h1.y` crudo @390 | **0** | 119 | **+119** |
+| alto de cabecera @1440 | 225 | 203.59 | −21.41 |
+
+Mismo `h1` en los dos lados («Monitoreo de la calidad del aire»). El original lo
+pone en **y = 0**: el hero arranca arriba del todo y la cabecera va **encima**,
+transparente. El clon lo baja debajo de la cabecera.
+
+**Es el arquetipo más antiguo del proyecto y es la primera vez que se mide su
+base en crudo** — `c-cabecera` no existía cuando se construyó, y hasta esta
+tanda solo cubría 17 rutas. Ejemplifica exactamente la regla C4.
+
+### C3 · ABIERTO — el cuerpo de A·blog varía sin patrón
+
+Con el cascarón ya descontado (C1), Σ secciones @1440 va de **−2 941.74**
+(`/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos`) a **+1 111.92**
+(`/running-for-clean-air`). **No es sistemático**: hay signos en los dos
+sentidos, así que no es una causa única. Son las páginas de cuerpo rico, con
+imágenes perezosas y embebidos. **Pendiente de descomponer por módulo**; no se
+toca nada hasta saber qué es.
+
+### C4 · ABIERTO — 14 rutas con distinto nº de secciones: la partición no es equivalente
+
+| familia | orig → clon | lectura |
+|---|---|---|
+| CASO (4) | 1 → 2 | el clon parte el cuerpo en dos donde el original trae una |
+| FAQ (2) | **0** → 1 | el original **no mete el cuerpo en ninguna `.et_pb_section`**: incomparable por construcción, no es defecto |
+| SECTOR (4) + MONOGRÁFICO (2) | 7→6 · 6→5 · 8→7 | el original trae **una sección más** |
+| HOME | 13 → 11 | dos menos |
+| PRODUCTO | 6 → 7 | una más |
+
+**No se adjudica con estos datos**: mientras el nº difiera, el reparto
+cuerpo/resto de C1 no es comparable en estas familias. `tree-cmp` sí cierra
+**0 filas sin pareja** en los 6 sectores a los dos anchos, así que el −1 de
+SECTOR es de agrupación, no de contenido perdido.
+
+### C5 · Hallazgos sueltos, con su encuadre
+
+- **`/sectores/control-de-emisiones-industriales`, fila 4 «Proyectos por todo el
+  mundo»: h Δ+13 a 1440 Y a 390.** Reproduce en los dos anchos → **no es ruido**.
+  Defecto de fidelidad, pequeño y localizado.
+- **`/sectores/estudio-de-la-contaminacion-atmosferica`: +11.2 a 390**, en la
+  base y en el `top` de la fila 1 — el mismo número por las dos vías.
+- **`/sectores/…-en-edar`: −30 en la base a 390.** Cae dentro del suelo **no
+  probado** de ±32.28 que C-QA6 midió para los monográficos: **SIN PROBAR**, ni
+  defecto ni limpio. No se toca hasta cerrar la campaña de ruido.
+
+### C6 · CLASE de SONDA — una 404 carga bien y se deja medir
+
+El test en negativo de la `c-cmp` generalizada metió una ruta inventada y la
+sonda **no dio error: dio números**. `base +142.5 · docH 1300→900 · ✓`.
+
+> **`page.goto` no lanza en 404.** La página de error carga, renderiza y se
+> mide. Una sonda que no mire el estado HTTP publica los deltas de una página de
+> error como si fueran de la página — y son plausibles.
+
+Arreglado **en el sitio común**, no en la sonda: `openPage` de `lib.mjs`
+devuelve ya `status`, y `c-cmp` aborta la ruta si no es 200. **Comprobado
+después: las 31 rutas dan 200 en los dos lados**, así que ningún número de esta
+tanda sale de una 404. Queda **abierto para las demás sondas**: ninguna otra
+mira el estado todavía.
+
+### C7 · CLASE de SONDA — dos selectores que no denotan el mismo conjunto
+
+La primera versión del árbol de `c-cmp` comparaba `.et_pb_section` (original)
+contra `main > section, main > div` (clon) y dio **31 de 31 rutas con el árbol
+distinto**. Cero defectos: Divi mete en `.et_pb_section` **la cabecera y el pie
+del theme builder**. Contra `esqueleto.json`: sector
+`{tb_header:1, tb_footer:3, propia:7}` = 11 contra los 7 del clon — y los **7
+del clon eran exactos**.
+
+> **Un pleno en una comparación es tan sospechoso como un cero** (§sondas regla
+> 4, la mitad del pleno). 31 de 31 no era un hallazgo: era el selector.
+
 ## Desviaciones deliberadas del grupo A (2026-07-31)
 
 ### 1 · El bloque de relacionados se emite SOLO EN ESPAÑOL

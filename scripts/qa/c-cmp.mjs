@@ -20,26 +20,58 @@
  * código de salida**, y el Δ de alturas se informa aparte porque el original es
  * un sitio vivo y su suelo de ruido no es cero en todas las regiones.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { QA, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
 const CLON = process.env.CLON || "http://localhost:3000";
+const SABOTAJE = !!process.env.SABOTAJE;
 
-const RUTAS = [
-  { clave: "des-moines", clon: "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
-    orig: "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/", forma: "caso" },
-  { clave: "world-athletics", clon: "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
-    orig: "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/", forma: "caso" },
-  { clave: "rio-de-janeiro", clon: "/case-studies/distrito-baja-emision-rio-de-janeiro",
-    orig: "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/", forma: "caso" },
-  { clave: "lindano", clon: "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
-    orig: "https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/", forma: "caso" },
-  { clave: "faq-dron", clon: "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
-    orig: "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/", forma: "faq" },
-  { clave: "faq-calibracion", clon: "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
-    orig: "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/", forma: "faq" },
-];
+/* ── Las rutas salen del BUILD, no de una lista (generalizada 2026-08-01) ───
+ * Nació con las 6 del grupo C cableadas a mano, y por eso las otras 25 rutas
+ * emitidas **nunca tuvieron su `docH` ni su árbol comparados con el original**:
+ * la auditoría de cobertura las encontró en «c», o sea vigiladas por
+ * `clon-base` —clon contra clon— y por nadie más.
+ *
+ * Ahora deriva del manifiesto como `c-cabecera` y `enlaces`: cuando se emita
+ * una ruta nueva **entra sola**, y su hueco de cobertura se cierra sin que
+ * nadie tenga que acordarse. La derivación del original es mecánica —`/x` →
+ * `/es/x/`— porque el clon reproduce el árbol de rutas del original.
+ * ------------------------------------------------------------------------ */
+const manifiesto = JSON.parse(readFileSync(join(QA, "../../.next/prerender-manifest.json"), "utf8"));
+
+/** Forma de la página, que decide qué predicciones aplican. */
+const formaDe = (r) => {
+  if (r.startsWith("/casos-de-exito/") || r.startsWith("/case-studies/")) return "caso";
+  if (r.startsWith("/faqs/")) return "faq";
+  if (/^\/sectores\/(monitorizacion-ambiental|monitorizacion-de-emisiones-en-petroleo)/.test(r)) return "monografico";
+  if (r.startsWith("/sectores/")) return "sector";
+  if (r.startsWith("/recursos/")) return "A-documento";
+  if (r === "/") return "home";
+  if (r === "/monitor-calidad-aire") return "producto";
+  if (r === "/accesorios") return "catalogo";
+  if (r === "/kunak-api" || r === "/software-de-medicion-calidad-del-aire") return "software";
+  return "A-blog";
+};
+
+const RUTAS = Object.keys(manifiesto.routes || {})
+  .filter((r) => !r.startsWith("/_") && r !== "/favicon.ico")
+  .sort()
+  .map((r) => ({
+    clave: r,
+    clon: r,
+    orig: `https://kunakair.com/es${r === "/" ? "" : r}/`,
+    forma: formaDe(r),
+  }));
+
+if (RUTAS.length === 0) {
+  console.error("❌ el manifiesto no trae rutas — corre `npm run build` antes.");
+  process.exit(2);
+}
+// Test en negativo: una ruta inventada tiene que salir por ERROR, no por Δ0.
+if (SABOTAJE) RUTAS.push({ clave: "/RUTA-INVENTADA", clon: "/RUTA-INVENTADA", orig: "https://kunakair.com/es/RUTA-INVENTADA/", forma: "faq" });
 
 /** Lo que se lee de cada página, sea original o clon. */
 const LECTOR = () => {
@@ -76,6 +108,44 @@ const LECTOR = () => {
       migas: document.querySelectorAll("ol.kunak-breadcrumbs").length,
     },
     docH: r(document.documentElement.scrollHeight),
+    /* ── Árbol de secciones · UN SELECTOR POR LADO ──────────────────────────
+     * Los dos cuerpos NO tienen la misma forma: el original es Divi
+     * (`.et_pb_section`) y el clon emite `main > section`. Es el mismo criterio
+     * que ya usa `tree-cmp` (líneas 71 y 83), y el motivo por el que no existía
+     * una comparación general de árbol: no hay un selector único que valga
+     * para los dos lados.
+     *
+     * ⚠ Por eso este eje se lee como **correspondencia estructural**, no como
+     * identidad: que los números coincidan dice que el clon partió el documento
+     * donde lo parte el original. Que difieran es una PREGUNTA, no un veredicto
+     * — y por eso se adjudica a mano, ruta por ruta.
+     *
+     * ⚠⚠ Y la primera versión de esto MEDÍA UN ARTEFACTO: comparaba
+     * `.et_pb_section` (original) contra `main > section, main > div` (clon) y
+     * daba **31 de 31 rutas con el árbol distinto** — un pleno, que por la regla
+     * del pleno ya es sospechoso. No había ni un defecto: en el original Divi
+     * mete en `.et_pb_section` **la cabecera y el pie del theme builder**
+     * (`…_tb_header`, `…_tb_footer`), que el clon no emite dentro de `main`.
+     * Contra `esqueleto.json`: sector `{tb_header:1, tb_footer:3, propia:7}` = 11
+     * contra los 7 del clon, y blog `{tb_header:1, tb_body:2, tb_footer:3}` = 6
+     * contra 2. Los 7 y los 2 del clon eran **exactos**.
+     *
+     * O sea: dos selectores que no denotan el mismo conjunto. Se descuenta
+     * cabecera y pie, y del lado del clon se quita `main > div` —que inflaba
+     * caso y FAQ—. `clon-base` sí puede usar `main > div` porque compara el clon
+     * consigo mismo y solo necesita ser consistente; aquí hay que ser EQUIVALENTE.
+     */
+    secciones: (() => {
+      const divi = [...document.querySelectorAll(".et_pb_section")];
+      const lista = divi.length
+        ? divi.filter((s) => !/_tb_(header|footer)\b/.test(s.className))
+        : [...document.querySelectorAll("main > section")];
+      return lista.map((s, i) => ({
+        i,
+        h: r(s.getBoundingClientRect().height),
+        txt: (s.textContent || "").replace(/\s+/g, " ").trim().slice(0, 34),
+      }));
+    })(),
   };
 };
 
@@ -84,7 +154,13 @@ const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10) }, 
 
 for (const R of RUTAS) {
   const lee = async (url) => {
-    const { page } = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
+    const { page, status } = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
+    // Una 404 carga bien y se deja medir: sin esta guarda la sonda publica los
+    // deltas de una página de error como si fueran de la página. Ver lib.mjs.
+    if (status !== 200) {
+      await page.close();
+      throw new Error(`HTTP ${status} en ${url}`);
+    }
     await settle(page);
     const d = await page.evaluate(LECTOR);
     await page.close();
@@ -103,20 +179,43 @@ for (const R of RUTAS) {
     const html = await (await fetch(url)).text();
     return (html.match(/class="marker"/g) || []).length;
   };
-  salida.paginas[R.clave] = {
-    forma: R.forma,
-    orig: await lee(R.orig), clon: await lee(CLON + R.clon),
-    marcadoresServidos: { orig: await servidos(R.orig), clon: await servidos(CLON + R.clon) },
-  };
-  console.log(`  ✓ ${R.clave}`);
+  try {
+    salida.paginas[R.clave] = {
+      // `ruta` explícita: `cobertura.mjs` la deriva de aquí en vez de tener un
+      // mapa clave→ruta a mano, que es justo lo que se pudre.
+      ruta: R.clon,
+      forma: R.forma,
+      orig: await lee(R.orig), clon: await lee(CLON + R.clon),
+      // El mapa solo existe en el caso: pedir el HTML de las 31 sería 31
+      // peticiones extra para contar ceros.
+      marcadoresServidos:
+        R.forma === "caso"
+          ? { orig: await servidos(R.orig), clon: await servidos(CLON + R.clon) }
+          : null,
+    };
+    console.log(`  ✓ ${R.clave}`);
+  } catch (e) {
+    // Una carga que falla NO puede quedarse en «sin datos»: sería una celda
+    // vacía leída como «no hay diferencia» (regla 4 de §sondas).
+    salida.paginas[R.clave] = { ruta: R.clon, forma: R.forma, error: String(e).slice(0, 200) };
+    console.log(`  ✗ ${R.clave}  ERROR ${String(e).slice(0, 120)}`);
+  }
 }
 await browser.close();
 
 /* ───────────────────────── los veredictos ───────────────────────── */
 
 let fallos = 0;
-const casos = Object.entries(salida.paginas).filter(([, v]) => v.forma === "caso");
-const faqs = Object.entries(salida.paginas).filter(([, v]) => v.forma === "faq");
+const vivas = Object.entries(salida.paginas).filter(([, v]) => !v.error);
+const muertas = Object.entries(salida.paginas).filter(([, v]) => v.error);
+const casos = vivas.filter(([, v]) => v.forma === "caso");
+const faqs = vivas.filter(([, v]) => v.forma === "faq");
+
+if (muertas.length) {
+  fallos += muertas.length;
+  console.log(`\n❌ ${muertas.length} ruta(s) no se pudieron medir — NO son «sin diferencia»:`);
+  for (const [k, v] of muertas) console.log(`     · ${k}  ${v.error}`);
+}
 
 /* P-C3-6 · el mapa */
 console.log(`\n═══ P-C3-6 · el mapa a ${width}`);
@@ -174,15 +273,42 @@ for (const [k, v] of faqs) {
 fallos += malFaq;
 console.log(`  ${malFaq === 0 ? "✅ P-C3-7 SE SOSTIENE" : "❌ P-C3-7 REFUTADA"} · la FAQ entra con \`titulo + cuerpo\``);
 
-/* Δ de alturas — se INFORMA, no cierra el código: el original es un sitio vivo
- * y esto es la primera corrida de QA visual, no su cierre. */
-console.log(`\n─── Δ de alturas @${width} (informativo — QA visual pendiente)`);
-for (const [k, v] of Object.entries(salida.paginas)) {
+/* ── Δ de docH, base y árbol · SE INFORMA Y SE CUENTA ──────────────────────
+ * No cierra el código de salida —el original es un sitio vivo y estos Δ hay
+ * que **adjudicarlos** contra él uno a uno, no cobrarlos— pero **el recuento
+ * se imprime**: lo que la sonda ve y lo que dice no pueden discrepar (regla 1
+ * de §sondas). Un listado sin total es exactamente cómo un descuadre impreso
+ * pasa por no visto.
+ */
+console.log(`\n─── docH · base · árbol @${width}   (Δ = clon − original)`);
+const pend = { base: [], docH: [], sec: [] };
+for (const [k, v] of vivas) {
   const base = +(v.clon.h1y - v.orig.h1y).toFixed(2);
-  console.log(`  ${k.padEnd(16)} h1.y orig ${String(v.orig.h1y).padStart(7)} · clon ${String(v.clon.h1y).padStart(7)} · base ${base > 0 ? "+" : ""}${base}` +
-    `   docH ${String(v.orig.docH).padStart(6)} → ${String(v.clon.docH).padStart(6)}  Δ${(v.clon.docH - v.orig.docH > 0 ? "+" : "")}${+(v.clon.docH - v.orig.docH).toFixed(2)}`);
+  const dDoc = +(v.clon.docH - v.orig.docH).toFixed(2);
+  const nO = v.orig.secciones?.length ?? 0;
+  const nC = v.clon.secciones?.length ?? 0;
+  if (base !== 0) pend.base.push([k, base]);
+  if (dDoc !== 0) pend.docH.push([k, dDoc]);
+  if (nO !== nC) pend.sec.push([k, `${nO}→${nC}`]);
+  const sig = (n) => (n > 0 ? "+" : "") + n;
+  console.log(
+    `  ${(base === 0 && dDoc === 0 && nO === nC ? "·" : "▲")} ${k.slice(0, 52).padEnd(54)}` +
+      ` base ${sig(base).padStart(9)}   docH ${String(v.orig.docH).padStart(6)}→${String(v.clon.docH).padStart(6)} ${sig(dDoc).padStart(10)}` +
+      `   sec ${String(nO).padStart(2)}→${String(nC).padStart(2)}${nO !== nC ? " ▲" : ""}`,
+  );
 }
 
 w(`medidas/c-cmp-${width}.json`, salida);
+
+console.log(
+  `\n─── PARA ADJUDICAR @${width} · ${vivas.length} rutas medidas contra el original\n` +
+    `      base  ≠0 : ${String(pend.base.length).padStart(2)} de ${vivas.length}\n` +
+    `      docH  ≠0 : ${String(pend.docH.length).padStart(2)} de ${vivas.length}\n` +
+    `      nº sec ≠ : ${String(pend.sec.length).padStart(2)} de ${vivas.length}\n` +
+    `   ⚠ Esto NO es un veredicto: un Δ solo es defecto o corrección cuando se\n` +
+    `     adjudica CONTRA EL ORIGINAL (regla de petróleo). Y el árbol se compara\n` +
+    `     con un selector por lado, así que un nº distinto es una PREGUNTA.`,
+);
+
 console.log(`\n${fallos === 0 ? "✅ las tres predicciones SE SOSTIENEN" : `❌ ${fallos} discrepancias`} @${width}`);
 process.exit(fallos === 0 ? 0 : 1);

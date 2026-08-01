@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "cual": "edar",
+    "width": 390,
+    "orig": "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+    "clon": "http://localhost:3000/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar"
+  },
+  "original": [
+    {
+      "top": 2092.41,
+      "h": 6853.64,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "top": 2142.41,
+          "h": 947.19,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "60px",
+          "txt": "¿Qué cambia con monitorización continua?"
+        },
+        {
+          "top": 3089.59,
+          "h": 1412.25,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "72px",
+          "txt": "¿Qué gases se deben medir en una EDAR? L"
+        },
+        {
+          "top": 4501.84,
+          "h": 586.3,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "¿Dónde se generan las emisiones en la pl"
+        },
+        {
+          "top": 5088.14,
+          "h": 2460.81,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Tabla resumen: procesos y emisiones Fase"
+        },
+        {
+          "top": 7548.95,
+          "h": 1347.09,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Alertas y toma de decisiones Actúa antes"
+        }
+      ]
+    },
+    {
+      "top": 8946.05,
+      "h": 1196.97,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "top": 8996.05,
+          "h": 1096.97,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Control perimetral y gestión de quejas R"
+        }
+      ]
+    },
+    {
+      "top": 10129.02,
+      "h": 4135.75,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 10179.02,
+          "h": 1789.25,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Beneficios clave para la operación de un"
+        },
+        {
+          "top": 11968.27,
+          "h": 825.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "60px",
+          "txt": "Da el siguiente paso Actúa antes de que "
+        },
+        {
+          "top": 12793.33,
+          "h": 621.16,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 13414.48,
+          "h": 836.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Proyectos por todo el mundo Algunos de l"
+        }
+      ]
+    }
+  ],
+  "clon": [
+    {
+      "top": 2183.41,
+      "h": 6853.5,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "top": 2233.41,
+          "h": 947.19,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "60px",
+          "txt": "¿Qué cambia con monitorización continua?"
+        },
+        {
+          "top": 3180.59,
+          "h": 1412.25,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "72px",
+          "txt": "¿Qué gases se deben medir en una EDAR?Lo"
+        },
+        {
+          "top": 4592.84,
+          "h": 586.27,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "¿Dónde se generan las emisiones en la pl"
+        },
+        {
+          "top": 5179.11,
+          "h": 2460.81,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Tabla resumen: procesos y emisionesFase "
+        },
+        {
+          "top": 7639.92,
+          "h": 1346.98,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Alertas y toma de decisionesActúa antes "
+        }
+      ]
+    },
+    {
+      "top": 9036.91,
+      "h": 1196.97,
+      "mt": "0px",
+      "pt": "50px",
+      "pb": "50px",
+      "filas": [
+        {
+          "top": 9086.91,
+          "h": 1096.97,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Control perimetral y gestión de quejasRe"
+        }
+      ]
+    },
+    {
+      "top": 10219.88,
+      "h": 4135.73,
+      "mt": "-14px",
+      "pt": "50px",
+      "pb": "14px",
+      "filas": [
+        {
+          "top": 10269.88,
+          "h": 1789.25,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Beneficios clave para la operación de un"
+        },
+        {
+          "top": 12059.13,
+          "h": 825.06,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "60px",
+          "txt": "Da el siguiente pasoActúa antes de que e"
+        },
+        {
+          "top": 12884.19,
+          "h": 621.14,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "30px",
+          "txt": "¿Quieres controlar el impacto de tus pro"
+        },
+        {
+          "top": 13505.33,
+          "h": 836.28,
+          "mt": "0px",
+          "pt": "30px",
+          "pb": "30px",
+          "txt": "Proyectos por todo el mundoAlgunos de lo"
+        }
+      ]
+    }
+  ],
+  "avisos": {
+    "original": null,
+    "clon": null
+  },
+  "resumen": {
+    "filasOriginal": 10,
+    "filasClon": 10,
+    "descuadres": 0
+  }
+}

@@ -38,63 +38,77 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 
 ## La matriz · 31 rutas × 9 ejes
 
+> Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.
+> **No se edita a mano**: se recomputa de las salidas de `medidas/`.
+
 | ruta | docH | base cruda (h1.y) | árbol secciones | filas | módulos | offsets/holgura | anchos horiz. | enlaces | comportamiento |
 |---|---|---|---|---|---|---|---|---|---|
 | **HOME** ||||||||||
-| `/` | c | **O** | c | · | · | · | · | **O** | · |
+| `/` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | **PRODUCTO** ||||||||||
-| `/monitor-calidad-aire` | c | **O** | c | · | · | · | **O** | **O** | · |
+| `/monitor-calidad-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | **CATÁLOGO** ||||||||||
-| `/accesorios` | c | **O** | c | · | · | · | **O** | **O** | · |
+| `/accesorios` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | **SOFTWARE** ||||||||||
-| `/kunak-api` | c | **O** | c | · | · | · | **O** | **O** | · |
-| `/software-de-medicion-calidad-del-aire` | c | **O** | c | · | · | · | **O** | **O** | · |
-| **SECTOR** ||||||||||
-| `/sectores/calidad-del-aire-en-las-ciudades` | c | **O** | **O** | **O** | · | c | **O** | **O** | · |
-| `/sectores/contaminacion-por-construccion` | c | **O** | c | · | · | · | · | **O** | · |
-| `/sectores/control-de-emisiones-industriales` | c | **O** | c | · | · | · | · | **O** | · |
-| `/sectores/estudio-de-la-contaminacion-atmosferica` | c | **O** | c | · | · | · | · | **O** | · |
+| `/kunak-api` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | **MONOGRÁFICO** ||||||||||
-| `/sectores/…-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | · |
-| `/sectores/…-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | · |
+| `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | · |
+| `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | · |
+| **SECTOR** ||||||||||
+| `/sectores/calidad-del-aire-en-las-ciudades` | **O** | **O** | **O** | **O** | · | c | **O** | **O** | · |
+| `/sectores/contaminacion-por-construccion` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
+| `/sectores/control-de-emisiones-industriales` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
+| `/sectores/estudio-de-la-contaminacion-atmosferica` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
 | **CASO** ||||||||||
 | `/case-studies/distrito-baja-emision-rio-de-janeiro` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/casos-de-exito/…-des-moines-iowa` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 | `/casos-de-exito/red-calidad-de-aire-para-world-athletics` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/casos-de-exito/…-acuifero-por-lindano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
 | **FAQ** ||||||||||
 | `/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-…` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| **A · blog / término** ||||||||||
-| `/contaminacion-por-metano` | c | **O** | c | · | · | · | **O** | **O** | · |
-| `/emisiones-atmosfericas` | c | **O** | c | · | · | · | **O** | **O** | · |
-| `/todas-nuestras-soluciones-en-el-iotswc` | c | **O** | c | · | · | · | **O** | **O** | · |
-| `/cloruro-de-hidrogeno-hcl` | c | c | c | · | · | · | · | **O** | · |
-| `/contador-particulas-suspension-movilidad-sostenible` | c | c | c | · | · | · | · | **O** | · |
-| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | c | c | c | · | · | · | · | **O** | · |
-| `/metano` | c | c | c | · | · | · | · | **O** | · |
-| `/monitorizacion-de-emisiones-del-trafico-urbano` | c | c | c | · | · | · | · | **O** | · |
-| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | c | c | c | · | · | · | · | **O** | · |
-| `/running-for-clean-air` | c | c | c | · | · | · | · | **O** | · |
+| `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento` | **O** | **O** | **O** | · | · | · | · | **O** | · |
 | **A · documento científico** ||||||||||
-| `/recursos/…/exposicion-de-los-atletas-…` | c | **O** | c | · | · | · | **O** | **O** | · |
-| `/recursos/…/idoneidad-de-una-red-…` | c | c | c | · | · | · | · | **O** | · |
-| `/recursos/…/desafio-airlab-de-microsensores-2023` | c | c | c | · | · | · | · | **O** | · |
-| `/recursos/estudios-cientificos/…/soluciones-avanzadas-…` | c | c | c | · | · | · | · | **O** | · |
+| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| **A · blog / término** ||||||||||
+| `/cloruro-de-hidrogeno-hcl` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/contador-particulas-suspension-movilidad-sostenible` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/contaminacion-por-metano` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/emisiones-atmosfericas` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/metano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/monitorizacion-de-emisiones-del-trafico-urbano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/running-for-clean-air` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/todas-nuestras-soluciones-en-el-iotswc` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
 
-### Recuento
+### Recuento · DESPUÉS de la tanda de cierre (2026-08-01)
 
-| eje | **O** | `c` | `·` | sonda que lo compara | congelado en |
+| eje | **O** | `c` | `·` | sonda que lo compara | antes |
 |---|---|---|---|---|---|
-| enlaces | **31** | 0 | 0 | `enlaces` | *no congela* ⚠ |
-| base cruda (h1.y) | **21** | 10 | 0 | `c-cabecera` (17) + `a-cascaron`×`clon-base` a mano (4) | `c-cabecera-{1440,390}` · `a-cascaron-…-4` |
-| anchos horizontales | **12** | 0 | 19 | `a-miga` (11) · `c-banda` (2) | `a-miga-…-2026-08-01-{3,4}` · `c-banda-{1440,390}` |
-| árbol de secciones | **9** | 22 | 0 | `c-cmp` · `mono-cmp` · `tree-cmp` | `c-cmp-{1440,390}` · `mono-cmp-*` · `tree-cmp-*` |
-| docH | **8** | 23 | 0 | `c-cmp` · `mono-cmp` | idem |
-| filas | **3** | 0 | 28 | `tree-cmp` · `mono-cmp` | `tree-cmp-{edar,urbano}-1440` |
-| módulos | **2** | 0 | 29 | `mono-cmp` | `mono-cmp-{edar,petroleo}-{1440,390}` |
-| offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | `offsets-sectores-*` (solo clon) |
-| comportamiento | **0** | 0 | **31** | — *(ninguna)* | — |
+| **docH** | **31** | 0 | 0 | `c-cmp` — deriva del build | 8 |
+| **base cruda (h1.y)** | **31** | 0 | 0 | `c-cabecera` — deriva del build | 21 |
+| **árbol de secciones** | **31** | 0 | 0 | `c-cmp` | 9 |
+| enlaces | **31** | 0 | 0 | `enlaces` — **ya congela** | 31 *(sin evidencia)* |
+| anchos horizontales | **13** | 0 | 18 | `a-miga` · `c-banda` | 12 |
+| filas | **6** | 0 | 25 | `tree-cmp` · `mono-cmp` | 3 |
+| módulos | **2** | 0 | 29 | `mono-cmp` | 2 |
+| offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
+| comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
+
+**No queda ni una celda `c` en docH, base y árbol.** Se cerraron generalizando
+dos sondas para que **deriven sus rutas del build**, como ya hacía `enlaces`: a
+partir de ahora **una ruta nueva entra sola** y su hueco se cierra sin que nadie
+tenga que acordarse. Ése es el cierre que importa — no las 23 celdas de hoy,
+sino que la matriz no vuelva a abrirse por olvido.
+
+**Lo que la primera corrida encontró está en `PENDIENTES-QA.md` §COBERTURA:** un
+desfase de cascarón **por familia** (−87.5 en las 14 rutas de grupo A, con el
+signo invertido a 390), **+289.91 de base en la HOME**, y dos defectos de sonda
+cazados por sus tests en negativo. Ninguno era visible para una guarda solo-clon.
 
 ### Tres cosas que el recuento esconde y hay que decir
 
@@ -116,96 +130,47 @@ cuadro y su evidencia **no existe en `medidas/`** — contradice la regla 2 de
 §sondas (*una sonda que no congela produce afirmaciones que no se pueden
 auditar*). Es un hueco de otra clase: no de cobertura, de trazabilidad.
 
-## PASO 2 · Coste de cerrar cada hueco
+## Lo que queda abierto, y su coste
 
-### Baratos — una corrida de una sonda que ya existe
+La tanda de cierre gastó lo barato. Queda:
 
-| hueco | cómo | coste |
-|---|---|---|
-| **base cruda de las 10 rutas de grupo A que faltan** | `npm run qa:c-cabecera` a 1440 y 390. **Deriva las rutas del build**, así que las 14 nuevas entran solas: hoy está congelada a 17 porque se corrió antes de que grupo A emitiera | **2 corridas.** El mejor ratio del cuadro |
-| **filas de los 3 sectores restantes** | `tree-cmp` acepta cualquier sector; hay 2 congelados de 6 | 3 corridas ×2 anchos |
-| **filas/secciones a 390 de los sectores ya medidos** | `tree-cmp` solo tiene congelado **1440** | 2 corridas |
-| **anchos de miga**: ya está a 11/11 formas | — | hecho en A-QA1b |
-
-### Piden sonda nueva o generalizar una existente
-
-| hueco | por qué no es barato | coste estimado |
-|---|---|---|
-| **docH + árbol de las 23 rutas en `c`** | `c-cmp` tiene **las 6 rutas del grupo C cableadas** y `mono-cmp` las 2 del monográfico. No hay ninguna sonda general de *docH+árbol original-vs-clon*. Lo barato es **generalizar `c-cmp` para que derive rutas del build**, como ya hace `c-cabecera` | **editar 1 sonda** + 2 corridas. Alto valor |
-| **offsets/holgura contra el original** | `offsets.mjs` es clon-only **por construcción**: toma una ruta del clon y mide holguras dentro. Compararla exige abrir el par y casar árboles | sonda nueva, o modo `--orig` |
-| **anchos horizontales del CUERPO** | no existe nada. `a-miga` y `c-banda` son de un elemento cada una. Hace falta una sonda de **composición horizontal** (ancho de fila, de columna, de módulo, y el *wrap* de cada bloque de texto) | **sonda nueva.** La más cara y la que más tapa |
-| **comportamiento** | `a-behaviors` y `c-behaviors` **solo abren el original**: son recon de fase 1, no comparación. Comparar exige guionizar la interacción en los dos lados | sonda nueva |
-| **congelar `enlaces`** | trivial: `w()` ya existe | 1 línea |
-
-## PASO 3 · Prioridad, con el criterio escrito
-
-**Criterio.** Se prioriza por `P(defecto oculto)`, y se estima con tres señales
-que el proyecto ya ha pagado por conocer:
-
-1. **¿El eje puede ser absorbido?** (`CLAUDE.md` §El NIVEL). Un eje que un
-   contenedor tapa esconde defectos aunque haya medidas cerca. Los horizontales
-   los tapa el *wrap*; los verticales, la fila con holgura.
-2. **¿Hubo una sonda comparadora apuntándole cuando se construyó?** Si no, su
-   verde nunca significó nada.
-3. **¿Hay precedente medido?** Un eje que ya escondió un defecto real vuelve a
-   hacerlo.
-
-### Tu apuesta, contrastada
-
-> *«Los ejes HORIZONTALES y los arquetipos construidos temprano, porque el
-> instrumental creció con el proyecto.»*
-
-**La primera mitad: CONFIRMADA, y más fuerte de lo que la formulaste.** No es
-que los ejes horizontales estén poco medidos: **el ancho del cuerpo está a cero
-en las 31 rutas.** Lo único horizontal que existe son dos sondas de un elemento
-cada una, y las dos nacieron **reaccionando a un defecto ya encontrado**
-(`c-banda` en C-QA1, `a-miga` en A-QA1) — nunca preventivamente. Y las tres
-señales del criterio apuntan a la vez: el *wrap* absorbe (1), no hubo sonda (2),
-y ya escondió dos defectos —el kicker de `/monitor` a 50px y la miga— (3).
-
-**La segunda mitad: PARCIALMENTE DESMENTIDA, y la corrección es útil.** Si la
-causa fuera la edad, la cobertura crecería con el tiempo. No lo hace:
-
-| arquetipo | construido | docH | árbol | filas | módulos |
-|---|---|---|---|---|---|
-| HOME · PRODUCTO · CATÁLOGO · SOFTWARE | **el más temprano** | `c` | `c` | · | · |
-| SECTOR | medio | `c` | 1 de 4 | 1 de 4 | · |
-| MONOGRÁFICO | medio | **O** | **O** | **O** | **O** |
-| CASO · FAQ | tardío | **O** | **O** | · | · |
-| **GRUPO A** | **el más reciente** | **`c`** | **`c`** | **·** | **·** |
-
-**Grupo A es el más nuevo y está tan descubierto como el más viejo.** Así que la
-variable no es la edad:
-
-> **Lo que predice la cobertura no es cuándo se construyó un arquetipo, sino si
-> la tanda que lo construyó tenía una sonda comparadora apuntándole.** El
-> monográfico es el mejor cubierto porque nació con `mono-cmp` y `tree-cmp`
-> hechos para él. Grupo A es el peor porque su tanda se apoyó en `clon-base` —
-> un guardián clon-contra-clon— y en `a-cascaron`, un censo del original: dos
-> sondas que **nunca se tocan**, salvo en las 4 formas que se emparejaron a mano.
-
-Corolario operativo, que es el que vale para la siguiente tanda: **un arquetipo
-nuevo no hereda cobertura.** Si su tanda no estrena o reutiliza una sonda de dos
-lados, nace en `c` y ahí se queda — y `c` se lee como verde.
-
-### Orden propuesto
-
-| # | qué | por qué | coste |
+| # | hueco | estado | coste |
 |---|---|---|---|
-| **1** | **`c-cabecera` a 1440 y 390** | cierra 10 rutas del eje **base**, que es el punto de apoyo del que cuelgan todos los demás Δ. La sonda ya deriva del build: las 14 de grupo A entran solas | 2 corridas |
-| **2** | **generalizar `c-cmp` a las rutas del build** + correrla | convierte 23 `c` en O en **docH y árbol** de golpe. Es el mayor salto de cobertura por unidad de trabajo | 1 edición + 2 corridas |
-| **3** | **sonda de composición horizontal del cuerpo** | eje a **0/31** con dos defectos ya cobrados y el mecanismo (*wrap*) que los esconde a 1440 | sonda nueva |
-| **4** | **`tree-cmp` a los 3 sectores restantes y a 390** | SECTOR tiene 4 instancias de una plantilla y solo 1 medida; es exactamente la forma «corrección aparente por contenido corto» de A-QA1b | 5 corridas |
-| **5** | congelar la salida de `enlaces` | regla 2 de §sondas, y cuesta una línea | 1 línea |
-| **6** | comportamiento | 0/31, pero es el eje **menos** propenso a defecto silencioso: una interacción rota se ve al usarla, no se esconde en un píxel | sonda nueva |
+| 1 | **anchos horizontales del CUERPO** | **0/31 de verdad** — los 13 de la tabla son de UN elemento (11 de la miga, 2 de la banda) | **sonda nueva.** La prioritaria |
+| 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
+| 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
+| 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
+| 5 | **comportamiento** | **0/31** — `a-behaviors` y `c-behaviors` solo abren el original | sonda nueva |
+| 6 | **estado HTTP en las demás sondas** | solo `c-cmp` lo mira; `lib.mjs` ya lo expone | 1 línea por sonda |
 
-**Lo que NO recomiendo priorizar:** `offsets` contra el original. Es caro y su
-valor está acotado — `offsets` sirve para **diagnosticar** cuando ya sabes que
-algo no cuadra, no para **detectar**. Como red de detección, la composición
-horizontal (#3) cubre más por menos.
+### Por qué el ancho del cuerpo sigue siendo el número 1
 
-## Qué decidir con esto
+No ha cambiado desde la auditoría, y ahora hay una razón más:
 
-Los huecos #1, #2 y #4 son **corridas de sondas existentes**: caben en la tanda
-CLASE sin abrir nada. El #3 es una sonda nueva y **es el que justifica una tanda
-de cobertura propia** — es también el que la evidencia señala con más fuerza.
+1. **El eje puede ser absorbido.** El *wrap* tapa un ancho igual que una fila con
+   holgura tapa un alto, y a 1440 no deja ni rastro.
+2. **Nunca hubo sonda apuntándole.** Las dos que existen —`a-miga`, `c-banda`—
+   nacieron **reaccionando a un defecto ya encontrado**, nunca antes.
+3. **Precedente medido, ya tres veces**: el kicker de `/monitor` a 50 px, la miga
+   del grupo A, y las cuatro copias a mano de A-QA1b.
+4. **Y ahora un cuarto**: el desfase de cascarón de C1 aparece a −87.5 a 1440 y
+   **+228.5 a 390**. Un residuo que cambia de signo entre anchos es, por la regla
+   espejo, un contenedor que en un ancho tapaba algo — y eso es geometría
+   horizontal.
+
+### Lo que NO recomiendo priorizar
+
+**`offsets` contra el original.** Sirve para **diagnosticar** cuando ya sabes que
+algo no cuadra, no para **detectar**. Como red, el ancho del cuerpo (#1) cubre
+más por menos.
+
+## Cómo se refresca
+
+```bash
+npm run qa:cobertura      # recomputa la matriz de medidas/ y la congela
+```
+
+La sonda **exige que exista toda fuente que declara**: si un fichero de
+`medidas/` desaparece, la celda saldría `·` —indistinguible de «nunca se
+midió»— así que sale por **error** y cierra el código de salida. Test en
+negativo: `SABOTAJE=1 npm run qa:cobertura` → exit 2.

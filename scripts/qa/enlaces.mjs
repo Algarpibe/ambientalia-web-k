@@ -27,6 +27,7 @@
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -222,6 +223,33 @@ if (avisos.length) {
   for (const a of avisos) console.log(`  ${a.href}  →  ${a.ruta}   ${a.origen}`);
   console.log();
 }
+
+/* ── Congelado (regla 2 de §sondas) ────────────────────────────────────────
+ * Era la ÚNICA sonda con cobertura completa cuya evidencia no existía en
+ * `medidas/`: sus «31/31 limpio» se citaban en actas y la única copia era la
+ * consola de quien la corrió. Ahora se puede diffear qué enlaces había el día
+ * que se afirmó algo. Lo detectó la auditoría de cobertura (2026-08-01).
+ * ------------------------------------------------------------------------ */
+w("medidas/enlaces.json", {
+  meta: {
+    fecha: new Date().toISOString().slice(0, 10),
+    paginas: PAGINAS.length,
+    publicadas: PUBLICADAS.size,
+    totalHrefs,
+    internos,
+    externosOk,
+    ficheros,
+    fallos: fallos.length,
+    rotos: rotos.length,
+    avisos: avisos.length,
+  },
+  // las rutas que la sonda considera emitidas: si el build cambia, se ve aquí
+  publicadas: [...PUBLICADAS].sort(),
+  // el detalle de lo que NO cerró, que es lo que hay que poder auditar después
+  fallos,
+  rotos,
+  avisos,
+});
 
 if (!fallos.length && !rotos.length) {
   console.log(`\n✅ LIMPIO en las dos direcciones.`);

@@ -68,7 +68,8 @@
     "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs",
     "qa:slugs": "node scripts/qa/slugs.mjs",
     "qa:a-spec": "node scripts/qa/a-spec.mjs",
-    "qa:a-miga": "node scripts/qa/a-miga.mjs"
+    "qa:a-miga": "node scripts/qa/a-miga.mjs",
+    "qa:cobertura": "node scripts/qa/cobertura.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
