@@ -281,7 +281,7 @@ export default async function PaginaPlana({
         {esBlog && p.datos.relacionados && <RelacionadosA excluir={slug} />}
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="grupoA" />
       <ScrollToTop />
     </>
   );

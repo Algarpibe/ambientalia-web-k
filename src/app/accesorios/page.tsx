@@ -235,7 +235,7 @@ export default function AccesoriosPage() {
         <FaqAcordeon tituloCompacto />
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="catalogo" />
       <ScrollToTop />
     </>
   );

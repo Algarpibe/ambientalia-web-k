@@ -99,7 +99,7 @@ export default function KunakApiPage() {
         />
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="software" />
       <ScrollToTop />
     </>
   );

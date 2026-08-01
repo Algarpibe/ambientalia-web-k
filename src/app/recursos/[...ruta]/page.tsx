@@ -179,7 +179,7 @@ export default async function PaginaDocumento({
         </SeccionCuerpoA>
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="grupoA" />
       <ScrollToTop />
     </>
   );

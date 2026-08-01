@@ -136,7 +136,7 @@ export default function MonitorCalidadAirePage() {
         <FaqAcordeon tituloCompacto punteadoEnFlujo />
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="producto" />
       <ScrollToTop />
     </>
   );

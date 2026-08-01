@@ -141,7 +141,7 @@ export function CasoPagina({ caso }: { caso: CasoDeExito }) {
         <CtaBannerSlider slides={CASO_CTA_PIE} label="Kunak para tu proyecto" />
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="caso" />
       <ScrollToTop />
     </>
   );

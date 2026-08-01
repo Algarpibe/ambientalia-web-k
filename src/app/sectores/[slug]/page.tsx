@@ -210,7 +210,7 @@ export default async function SectorPage({
         </div>
       </main>
 
-      <Footer template="tb" stripImage={sector.footerStripImage} />
+      <Footer tipo="sector" stripImage={sector.footerStripImage} />
       <ScrollToTop />
     </>
   );

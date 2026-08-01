@@ -113,7 +113,7 @@ export default async function FaqPage({
 
       {/* Pie de 3 secciones: la FAQ NO lleva el slider CTA del caso. Es uno de
           los tres criterios que separaron los dos arquetipos (D1). */}
-      <Footer template="tb" />
+      <Footer tipo="faq" />
       <ScrollToTop />
     </>
   );

@@ -27,16 +27,111 @@ import type { SocialLink } from "@/types/kunak";
  * the others are dark. Language switcher opens upward.
  * Spec: docs/research/components/footer.spec.md
  *
- * template="tb" — la plantilla TB de /monitor-calidad-aire (P1, QA 2026-07-27,
- * qa/p1-probe.mjs a 1280/390 reales): filas al 80% dentro de secciones a ancho
- * completo (los paddings Divi son % del ancho del PADRE: sección pt 4% desktop
- * / 50px móvil, fila links py 2% / 30px, fila legal py 1% ambos), columnas SIN
- * gutter (5×20%), li 14px/30.6 con mb 7 (stride 37.6) y ul pb32 (mb widget),
- * Suscríbete pb 2 desktop / 3.1 móvil (h37/38.1) con mt16+mb46, CERT img+32,
- * legal 12px/30.6 también desktop (p2 9.6px) con mb 32/62, iconos móvil gap 38
- * pl 19 caja 31.6 + 60 hasta idioma, sin espaciador de 40 y franja
- * `footer-background` de 41/40. Medido: 694.2/2053.1 (links+legal 653.2/2013.1).
+ * ══════════════════════════════════════════════════════════════════════════
+ * D4 · EL PIE TIENE TRES PRESENTACIONES, Y LAS ELIGE EL TIPO DE PÁGINA
+ * (medido 2026-08-01 · `qa:d4` + `qa:d4-tipo` · ESQUEMA-CMS §6b)
+ *
+ * El contenido del pie es el MISMO en las 11 formas medidas —mismas secciones,
+ * mismos módulos, mismos enlaces—. Lo que cambia es **presentación**, y es
+ * constante dentro de cada familia y distinta entre familias: la firma de una
+ * decisión de PLANTILLA, no de un campo por instancia. Nadie editó el pie de
+ * /accesorios; lo heredó su tipo de página.
+ *
+ * | presentación | formas | fila | `pad` secc. | alto @1440 |
+ * |---|---|---|---|---|
+ * | `ancha`       | grupo A · sector · monográfico · caso · faq · home | 86 % | 0 | 593.75 |
+ * | `estrecha`    | software | 80 % | 0 | 681.09 |
+ * | `estrechaPad` | catálogo · producto | 80 % | 4 % | 1048.25 |
+ *
+ * ⚠ **Son TRES ejes, no dos.** El ESQUEMA §6b registró el ancho de fila y el
+ * `padding`; con esos dos, `footer-background` cuadra al céntimo y catálogo se
+ * queda a **−79.19**. El que faltaba es **TIPOGRAFÍA**, y se ve en que las
+ * columnas de texto crecen mientras la de la imagen no se mueve:
+ *
+ *   li      fs 14 lh 26   mb 0  ·  fs 14 lh 30.6 mb 7  ·  fs 18 lh 30.6 mb 9
+ *   legal   fs 12         ·        fs 12              ·  fs 18 → 2 renglones
+ *
+ * El legal a 18px envuelve a 61.19 en vez de 30.59: ahí están los +32.59 de
+ * `footer-legal`, al céntimo. **No es responsive** (idéntico a 1280, 1440 y 390).
+ *
+ * ⚠ La cabecera anterior atribuía `li 14px/30.6 mb 7` a /monitor-calidad-aire
+ * medido a 1280. Es incorrecto: esos son los valores de SOFTWARE, y /monitor da
+ * **18px/30.6 mb 9** a ese mismo ancho. El clon entero estaba calibrado con
+ * SOFTWARE —por eso acertaba ahí y fallaba en las otras diez—.
+ *
+ * `ulPb` del clon = (pb del `ul` del original) + 32 del margen de widget: el
+ * clon mete el `mb` del último `li` DENTRO del `ul` y el original no, así que la
+ * partición difiere y el total no. Comprobado: ancha 30.59 + (156 + 46) = 232.59,
+ * el alto exacto de la primera columna del original.
+ * ══════════════════════════════════════════════════════════════════════════
  */
+
+/** Tipo de página, que es quien decide la presentación del pie (ESQUEMA §6b). */
+export type TipoPagina =
+  | "grupoA"
+  | "sector"
+  | "caso"
+  | "faq"
+  | "software"
+  | "catalogo"
+  | "producto"
+  | "home";
+
+type Presentacion = {
+  /** Ancho de fila. Literal completo: Tailwind no compone clases en runtime. */
+  fila: string;
+  /** `padding` vertical de sección: 4 % desktop / 50px móvil, o nada. */
+  padSeccion: boolean;
+  liA: string;
+  li: string;
+  ul: string;
+  titulo: string;
+  legal: string;
+};
+
+const ANCHA_FILA = "w-[86%] max-w-[1380px]";
+const ESTRECHA_FILA = "w-[80%] max-w-[1380px]";
+
+const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> = {
+  ancha: {
+    fila: ANCHA_FILA,
+    padSeccion: false,
+    li: "",
+    liA: "text-[14px]",
+    ul: "pb-[46px] text-[14px] leading-[26px]",
+    titulo: "text-[14px]",
+    legal: "text-[12px]",
+  },
+  estrecha: {
+    fila: ESTRECHA_FILA,
+    padSeccion: false,
+    li: "mb-[7px]",
+    liA: "text-[14px]",
+    ul: "pb-[32px] text-[14px] leading-[30.6px]",
+    titulo: "text-[14px]",
+    legal: "text-[12px]",
+  },
+  estrechaPad: {
+    fila: ESTRECHA_FILA,
+    padSeccion: true,
+    li: "mb-[9px]",
+    liA: "text-[18px]",
+    ul: "pb-[32px] text-[18px] leading-[30.6px]",
+    titulo: "text-[18px]",
+    legal: "text-[18px]",
+  },
+};
+
+/** Qué presentación hereda cada tipo de página. Una tabla, un sitio. */
+const DE_TIPO: Record<Exclude<TipoPagina, "home">, keyof typeof PRESENTACION> = {
+  grupoA: "ancha",
+  sector: "ancha",
+  caso: "ancha",
+  faq: "ancha",
+  software: "estrecha",
+  catalogo: "estrechaPad",
+  producto: "estrechaPad",
+};
 const SOCIAL_ICON: Record<SocialLink["network"], typeof LinkedInIcon> = {
   linkedin: LinkedInIcon,
   x: XIcon,
@@ -46,19 +141,37 @@ const SOCIAL_ICON: Record<SocialLink["network"], typeof LinkedInIcon> = {
 };
 
 export function Footer({
-  template = "home",
+  tipo = "home",
   stripImage = "/images/uploads/2022/12/cabecera-puerto-1.jpg",
 }: {
-  template?: "home" | "tb";
   /**
-   * Foto de la franja `footer-background` (solo `template="tb"`). Las 4
+   * Tipo de página. Decide ancho de fila, `padding` de sección y tipografía
+   * (ESQUEMA §6b). `"home"` conserva su maquetación propia — ver abajo.
+   */
+  tipo?: TipoPagina;
+  /**
+   * Foto de la franja `footer-background` (todos menos `home`). Las 4
    * páginas de producto sirven la del puerto; **cada sector sirve la SUYA**,
    * la misma de su cabecera (medido 2026-07-28: urbano → `urban-1920.jpg`,
    * industria → `industry-1920x1024-1.jpg`).
    */
   stripImage?: string;
 } = {}) {
-  const tb = template === "tb";
+  const tb = tipo !== "home";
+  /**
+   * ⚠ `home` sigue por su camino antiguo A PROPÓSITO, y está fichado.
+   * Medido 2026-08-01: el pie del original en la home es **idéntico al de
+   * grupo A** (593.75 / 1761.17, fila 86 %, 3 secciones), pero el clon lo
+   * construye aparte —`w-[85%]`, 1 solo bloque de nivel 1, espaciador de 40—
+   * y aun así totaliza **−1.58 @1440 / +0.42 @390**. O sea: partición distinta
+   * con total casi igual, que es la firma de una compensación, no de un
+   * acierto. Cambiarlo entra en la misma tanda que C-QA3 (la home tiene
+   * +289.91 abierto); mezclarlo aquí impediría adjudicar ninguno de los dos.
+   * Ficha: `PENDIENTES-QA.md` §D4.
+   */
+  const p = PRESENTACION[DE_TIPO[(tipo === "home" ? "grupoA" : tipo) as Exclude<TipoPagina, "home">]];
+  /** `padding` de sección: 4 % desktop / 50px móvil, en las TRES secciones. */
+  const padSec = p.padSeccion ? "py-[50px] sm:py-[4%]" : "";
 
   /* Ritmo móvil home (<640) medido en vivo B4 (qa/b4-probe.mjs, 390 real):
      sección pt 50, fila pt 30, headings p de 30.6 SIN margen (lh 30.6px
@@ -70,7 +183,7 @@ export function Footer({
     <div
       className={
         tb
-          ? "mx-auto grid w-[80%] max-w-[1380px] grid-cols-1 border-t border-[#333] pb-[30px] pt-[30px] sm:grid-cols-3 sm:py-[2%] lg:grid-cols-5"
+          ? `mx-auto grid ${p.fila} grid-cols-1 border-t border-[#333] pb-[30px] pt-[30px] sm:grid-cols-3 sm:py-[2%] lg:grid-cols-5`
           : "grid grid-cols-1 gap-8 border-t border-[#333] pb-[62px] pt-[30px] sm:grid-cols-3 sm:pb-[55px] sm:pt-[28px] lg:grid-cols-5"
       }
     >
@@ -79,7 +192,7 @@ export function Footer({
           <p
             className={
               tb
-                ? "mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]"
+                ? `mb-0 ${p.titulo} font-bold leading-[30.6px] text-[#333]`
                 : "mb-0 text-[14px] font-bold leading-[30.6px] text-[#333] sm:mb-4 sm:leading-[1.7]"
             }
           >
@@ -87,16 +200,14 @@ export function Footer({
           </p>
           <ul
             className={
-              tb
-                ? "pb-[32px] text-[14px] leading-[30.6px]"
-                : "pb-[14px] text-[14px] leading-[26px] sm:pb-[18px] sm:text-[18px]"
+              tb ? p.ul : "pb-[14px] text-[14px] leading-[26px] sm:pb-[18px] sm:text-[18px]"
             }
           >
             {col.links.map((l) => (
-              <li key={l.label} className={tb ? "mb-[7px]" : undefined}>
+              <li key={l.label} className={tb ? p.li : undefined}>
                 <a
                   href={l.href}
-                  className="text-[14px] text-[#333] transition-colors duration-300 hover:text-[#0075C9]"
+                  className={`${tb ? p.liA : "text-[14px]"} text-[#333] transition-colors duration-300 hover:text-[#0075C9]`}
                 >
                   {l.label}
                 </a>
@@ -128,7 +239,7 @@ export function Footer({
         <p
           className={
             tb
-              ? "mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]"
+              ? `mb-0 ${p.titulo} font-bold leading-[30.6px] text-[#333]`
               : "mb-0 text-[14px] font-bold leading-[30.6px] text-[#333] sm:mb-2 sm:leading-[1.7]"
           }
         >
@@ -162,7 +273,7 @@ export function Footer({
     <div
       className={
         tb
-          ? "mx-auto flex w-[80%] max-w-[1380px] flex-col py-[1%] md:flex-row md:items-start md:justify-between"
+          ? `mx-auto flex ${p.fila} flex-col py-[1%] md:flex-row md:items-start md:justify-between`
           : "flex flex-col pb-[4px] pt-[4px] sm:gap-6 sm:pb-[32px] sm:pt-[28px] md:flex-row md:items-start md:justify-between"
       }
     >
@@ -170,7 +281,7 @@ export function Footer({
       <div
         className={
           tb
-            ? "mb-[62px] text-[12px] leading-[30.6px] text-[#333] sm:mb-8 md:w-3/5"
+            ? `mb-[62px] ${p.legal} leading-[30.6px] text-[#333] sm:mb-8 md:w-3/5`
             : "mb-[62px] text-[12px] leading-[30.6px] text-[#333] sm:mb-0 sm:space-y-1 sm:leading-[1.6] md:w-3/5"
         }
       >
@@ -269,20 +380,26 @@ export function Footer({
   if (tb) {
     return (
       <footer className="et-l--footer bg-white">
-        {/* Sección links: pt 4% desktop (50.6 a 1280) / 50px móvil, pb 0 */}
-        <div className="pt-[50px] sm:pt-[4%]">{linksGrid}</div>
-        {/* Sección legal: sin padding propio (la fila lleva el 1%) */}
-        <div>{legalRow}</div>
+        {/* Sección links: pt 4% desktop (57.5938 a 1440) / 50px móvil. El `pb`
+            solo lo llevan catálogo y producto — `padSeccion`. */}
+        <div className={p.padSeccion ? padSec : "pt-[50px] sm:pt-[4%]"}>{linksGrid}</div>
+        {/* Sección legal: sin padding propio salvo en `estrechaPad` (la fila
+            lleva su 1% en todos los casos). */}
+        <div className={padSec}>{legalRow}</div>
         {/* `footer-background` — franja foto del puerto. QA 2026-07-26:
-            41px desktop / 40px móvil, cover 50% 0%. */}
-        <div
-          aria-hidden
-          className="h-[40px] w-full bg-cover lg:h-[41px]"
-          style={{
-            backgroundImage: `url('${stripImage}')`,
-            backgroundPosition: "50% 0%",
-          }}
-        />
+            41px desktop / 40px móvil, cover 50% 0%. La franja mide siempre lo
+            mismo; lo que crece en catálogo/producto es el `padding` de SU
+            sección: 41 → 156.19 = 41 + 57.5938×2, al céntimo. */}
+        <div className={padSec}>
+          <div
+            aria-hidden
+            className="h-[40px] w-full bg-cover lg:h-[41px]"
+            style={{
+              backgroundImage: `url('${stripImage}')`,
+              backgroundPosition: "50% 0%",
+            }}
+          />
+        </div>
       </footer>
     );
   }

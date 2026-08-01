@@ -173,7 +173,7 @@ export default function SoftwareMedicionCalidadDelAirePage() {
         <FaqAcordeon desfaseColumna={10} />
       </main>
 
-      <Footer template="tb" />
+      <Footer tipo="software" />
       <ScrollToTop />
     </>
   );
