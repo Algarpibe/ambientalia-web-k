@@ -1,4 +1,95 @@
-# HANDOFF — C2 resuelta (no era defecto), C1 LOCALIZADA en cuatro causas; falta arreglarlas
+# HANDOFF — D4 con el MODELO resuelto y el arreglo listo para escribir; D2/D3/D1 sin tocar
+
+> ⚠ **Tanda 2026-08-01 (2.ª) · DIAGNÓSTICO de D4.** No se ha tocado ni un
+> componente. Se cierra aquí a propósito: el arreglo de D4 toca **las 31 rutas**
+> y exige el ciclo de adjudicación completo, que no cabía. Lo que queda hecho es
+> **la pregunta de modelo, contestada y escrita en el ESQUEMA** — que era la
+> condición del encargo antes de arreglar nada.
+
+## 1 · D4 · el pie: una plantilla, una variante, y dos ejes de presentación
+
+`npm run qa:d4 -- 1440` · congelado en `medidas/d4-pie-1440*.json` · 7 familias,
+sobre el ORIGINAL.
+
+| familia | secs | ancho de fila | `pt/pb` sección | alto |
+|---|---|---|---|---|
+| A·blog · A·término · SECTOR | 3 | **1238.39** (86 %) | 0 | 593.75 |
+| SOFTWARE | 3 | **1152** (80 %) | 0 | 681.09 |
+| CATÁLOGO · PRODUCTO | 3 | **1152** | **57.5938** | 1048.25 |
+| **CASO** | **4** | 1238.39 | 0 | 936.81 |
+
+**La respuesta a «¿mismo pie o plantillas distintas?» son las dos cosas:**
+
+1. **El contenido del pie es el mismo en las 7** — `footer-links` (8 módulos, 5
+   columnas), `footer-legal` (7, 3), `footer-background` (1), mismas clases
+   `_tb_footer`, 46–48 enlaces. **No es otro pie.**
+2. **CASO añade una 4ª sección**, un CTA de 343.06 con 4 módulos. **Eso sí es
+   otra plantilla**, y confirma el `tb_footer` 4 vs 3 que midió C-1.
+3. **Lo que varía entre las otras seis es PRESENTACIÓN**, en dos ejes
+   independientes: el **ancho de fila** (1152 estrecha las columnas a 230.39 y
+   los enlaces envuelven más → `footer-links` 430.78 → 518.13) y el **`padding`
+   de sección** (0 vs 57.5938, el default Divi del 4 %), que explica
+   `footer-background` **al céntimo**: 41 → 156.19 = **57.5938 × 2**.
+
+**Decisión de modelo, ya en `ESQUEMA-CMS.md` §6b:** firma «constante dentro de la
+familia, distinta entre familias» = **decisión de PLANTILLA, no campo por
+instancia**. Nadie editó el pie de `/accesorios`; lo heredó su tipo de página. Y
+los mismos dos valores gobiernan la retícula del cuerpo (86 % en grupo A y
+sector, 80 % en producto/catálogo/software) → **van en la plantilla de tipo, no
+en el dato del pie.**
+
+## 2 · El defecto del clon, localizado — y por qué NO lo arreglé
+
+`src/components/Footer.tsx` escribe **`w-[80%] max-w-[1380px]` fijo** → 1152
+siempre, que es el valor de **SOFTWARE**. Por eso acierta en esa familia y falla
+en las demás: **la familia con la que se calibró.** Lo importan **10 ficheros**.
+
+**Lo que hay que hacer, en orden:**
+
+1. el **ancho de fila** y el **`padding`** salen del **tipo de página** (86 %/0
+   para grupo A y sector; 80 %/0 para software; 80 %/4 % para catálogo y
+   producto). **No se cablean por página** — sería repetir el error que lo causó;
+2. **CASO recibe su 4ª sección** (el CTA), que hoy no existe en el clon;
+3. medición antes/después y **adjudicación contra el original una a una** de todo
+   lo que se mueva. `qa:d4` ya mide los dos lados, así que sirve de verificación.
+
+⚠ **Aviso para quien lo coja:** al cambiar el pie se mueven las 31 rutas a la
+vez. `clon-base` marcará todo y **no puede decir si el cambio es correcto** —
+hay que preguntarle al original (regla de petróleo). Y `docH` cambiará en las 31,
+así que conviene congelar `c-cmp` **antes** de tocar.
+
+## 3 · Lo que sigue sin tocar
+
+- **D2** · +50 de huecos entre secciones, igual en las tres familias (76 a 390 en
+  grupo A). Sin diagnosticar dónde vive.
+- **D3** · −42 entre la última sección y el pie, solo en catálogo y software.
+  Sin diagnosticar.
+- **D1** · −225 antes de la primera sección, constante en las tres. **NO se toca
+  hasta demostrar que mueve `docH`**: la cabecera del clon está fuera de flujo y
+  la del original en flujo, pero si el clon mete esos 225 dentro de su primera
+  sección, **la partición cambia y el total no**. Es la trampa de C4 y el aviso
+  del encargo. Comprobación pendiente: comparar `docH` con y sin el cambio, no
+  el reparto resto/secciones.
+- **C3** · el cuerpo de A·blog, de −2 941.74 a +1 111.92, sin causa única.
+- **C5** · industria fila 4 **+13 a los dos anchos**; investigación **+11.2 a
+  390**; edar **−30 a 390** → dentro del suelo NO probado de ±32.28, **SIN
+  PROBAR**.
+- **C6** · el estado HTTP solo lo mira `c-cmp`; `lib.mjs` ya lo expone.
+
+## 4 · Estado
+
+Cobertura sin cambios respecto a la tanda anterior: docH · base · árbol ·
+enlaces **31/31**, anchos 13, filas 6, módulos 2, offsets 0, comportamiento 0.
+
+Sondas nuevas: **`npm run qa:d4`** (composición del pie, los dos lados) además de
+`qa:c1` y `qa:cobertura`.
+
+Verificación: `qa:enlaces` limpia · `qa:slugs` limpia · lint 0 errores ·
+typecheck · build.
+
+---
+
+# (anterior) HANDOFF — C2 resuelta (no era defecto), C1 LOCALIZADA en cuatro causas; falta arreglarlas
 
 > ⚠ **Tanda 2026-08-01 · DIAGNÓSTICO.** No se ha tocado ni un componente. Lo que
 > hay es una contradicción del repo resuelta y una causa raíz abierta en cuatro

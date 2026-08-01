@@ -3022,6 +3022,52 @@ en el clon**; los otros cuatro dan Δ0 exacto.
 > alimenta la tanda CLASE. Es la **primera vez** que 31 rutas se comparan con el
 > original en `docH` y árbol — antes 23 de ellas solo tenían `clon-base`.
 
+### ⚠ D4 · RESUELTO EL MODELO, PENDIENTE EL ARREGLO (2026-08-01)
+
+> Sonda: `npm run qa:d4 -- 1440`. Congelado: `medidas/d4-pie-1440*.json`.
+> Decisión de modelo escrita en `ESQUEMA-CMS.md` **§6b**, en esta misma tanda.
+
+**La pregunta era si el pie del original es el mismo con otro contenido o son
+plantillas distintas. Son las dos cosas, y hay que separarlas:**
+
+| familia | secs | ancho de fila | `pt/pb` sección | alto |
+|---|---|---|---|---|
+| A·blog · A·término · SECTOR | 3 | **1238.39** (86 %) | 0 | 593.75 |
+| SOFTWARE | 3 | **1152** (80 %) | 0 | 681.09 |
+| CATÁLOGO · PRODUCTO | 3 | **1152** | **57.5938** | 1048.25 |
+| **CASO** | **4** | 1238.39 | 0 | 936.81 |
+
+1. **El contenido del pie es el MISMO en las 7**: `footer-links` (8 módulos, 5
+   columnas), `footer-legal` (7 módulos, 3), `footer-background` (1), mismas
+   clases `_tb_footer`, 46–48 enlaces.
+2. **CASO añade una 4ª sección** —un CTA de 343.06— que las otras seis no
+   tienen. **Eso sí es otra plantilla**, y confirma el `tb_footer` 4 vs 3 de C-1.
+3. **Lo que varía entre las otras seis es PRESENTACIÓN, no contenido**, en dos
+   ejes independientes:
+   - **ancho de fila**: 1152 estrecha las columnas a 230.39 (contra 247.67), los
+     enlaces envuelven más y `footer-links` pasa de 430.78 a 518.13. La regla del
+     ancho, en el pie;
+   - **`padding` de sección**: 0 contra **57.5938** (el default Divi del 4 %).
+     Explica `footer-background` **al céntimo**: 41 → 156.19 = **57.5938 × 2**.
+
+**Firma «constante dentro de la familia, distinta entre familias» = decisión de
+PLANTILLA, no campo por instancia.** Nadie editó a mano el pie de `/accesorios`:
+lo heredó su tipo de página. Y los mismos dos valores gobiernan la retícula del
+cuerpo (86 % en grupo A y sector, 80 % en producto/catálogo/software), así que
+**van en la plantilla de tipo, no en el dato del pie**.
+
+**El defecto del clon, ya localizado:** `Footer.tsx` escribe `w-[80%]
+max-w-[1380px]` fijo → **1152 siempre**, que es el valor de SOFTWARE. Por eso
+acierta ahí y falla en las demás — **la familia con la que se calibró**. Lo
+importan **10 ficheros**.
+
+**Pendiente de arreglar** (no entra en esta tanda: toca las 31 rutas y exige el
+ciclo de adjudicación completo):
+- el ancho de fila y el `padding` salen del **tipo de página**, no se cablean;
+- **CASO recibe su 4ª sección** (CTA), que hoy no existe en el clon;
+- y después, medición antes/después y adjudicación **contra el original** de todo
+  lo que se mueva, una a una.
+
 ### ⚠ C1 · LOCALIZADO (2026-08-01) — no es UN desfase, son CUATRO que se suman
 
 > Sonda: `node scripts/qa/c1-localiza.mjs 1440|390`, una ruta por familia.

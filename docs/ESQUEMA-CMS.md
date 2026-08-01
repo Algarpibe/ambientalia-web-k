@@ -981,6 +981,63 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | **S1** | tarjetas de caso y de artículo: **la mitad construida del par listado→detalle** (206 páginas) | los modelos `CaseStudy`/`BlogPost` son la **proyección de teaser**: falta cuerpo, slug (hoy `href` absoluto al original), taxonomía y SEO |
 | **C-QA7** (2026-07-31) | el **`pt` de la primera fila del cuerpo** en las 4 páginas de producto (régimen builder) es **campo, no plantilla**: huella test A medida con `qa:banda` — **0 px a los dos anchos** en accesorios/api/software (el editor lo anuló) y **2 %/30 (default intacto)** en monitor. Cuatro hermanas, dos valores | cuando PRODUCTO/CATÁLOGO/SOFTWARE se modelen, la fila del hero lleva su ajuste de ritmo como **campo con defecto 2 %/30** (la familia de `flujo` de SECTOR, en la entrada del cuerpo). Hoy resuelto en plantilla por página, cada una con su valor **medido**. Y el kicker (35px/42 ≤767, 50/60 desde 768) es **plantilla con varianza cero en los 4**: al modelar, UN componente — cablearlo por instancia ya costó dos defectos (C-QA7) |
 
+### ⚠ 6b · EL PIE — una plantilla con variante de CTA, y su presentación por TIPO DE PÁGINA (2026-08-01)
+
+**Pregunta del encargo de D4:** el pie del original mide distinto por familia
+—593.75 blog · 1048.25 catálogo · 681.09 software— y es constante dentro de cada
+una. ¿Mismo pie con contenido distinto, o **plantillas distintas** del Theme
+Builder, como el `tb_footer` 4 vs 3 que midió C-1?
+
+**Medido** (`npm run qa:d4 -- 1440`, congelado en `medidas/d4-pie-1440*.json`),
+7 familias, sobre el ORIGINAL:
+
+| familia | secs | ancho de fila | `pt/pb` de sección | alto |
+|---|---|---|---|---|
+| A · blog · A · término · SECTOR | 3 | **1238.39** | 0 | 593.75 |
+| SOFTWARE | 3 | **1152** | 0 | 681.09 |
+| CATÁLOGO · PRODUCTO | 3 | **1152** | **57.5938** | 1048.25 |
+| **CASO** | **4** | 1238.39 | 0 | 936.81 |
+
+**La respuesta son las dos cosas, y hay que separarlas:**
+
+1. **El CONTENIDO del pie es el mismo en las 7.** Las tres secciones son las
+   mismas —`footer-links` (8 módulos, 5 columnas), `footer-legal` (7 módulos, 3
+   columnas), `footer-background` (1 columna)— con las mismas clases
+   `et_pb_section_N_tb_footer` y prácticamente los mismos enlaces (46–48).
+   **No es un pie distinto: es el mismo pie.**
+2. **CASO añade una CUARTA sección** —un CTA, «Do you need to control the
+   environmental i…», 343.06 de alto, 4 módulos y ninguna fila Divi— que las
+   otras seis no tienen. Eso **sí** es otra plantilla, y confirma el `tb_footer`
+   4 vs 3 de C-1 con su contenido a la vista.
+3. **Lo que hace variar el alto entre las seis restantes NO es contenido: es
+   presentación**, y son **dos ejes independientes**:
+   - **ancho de fila** 1238.39 (86 %) contra 1152 (80 % de 1440). Más estrecho →
+     columnas de 230.39 en vez de 247.67 → los enlaces envuelven más →
+     `footer-links` pasa de 430.78 a 518.13. **Es la regla del ancho, en el pie.**
+   - **`padding` vertical de sección** 0 contra **57.5938** (el default Divi del
+     4 %, ya documentado). Solo catálogo y producto lo llevan, y explica
+     `footer-background` **al céntimo**: 41 → 156.19 = **+115.19 = 57.5938 × 2**.
+
+**Decisión de modelo, que es lo que pedía el encargo:**
+
+> **El pie es UNA plantilla con una variante (`conCta`), no un content type con
+> campos por instancia.** La firma lo dice: **constante dentro de cada familia y
+> distinta entre familias** es la firma de una decisión de PLANTILLA — nadie
+> editó el pie de `/accesorios` a mano; lo heredó de su tipo de página. Es la
+> misma lectura de régimen de `CLAUDE.md`: en plantillado, cero varianza entre
+> instancias = plantilla, aunque el número sea px absoluto.
+>
+> Y la presentación —ancho de fila y `padding`— **no es un campo del pie**: es un
+> **ajuste del tipo de página**, porque los mismos valores gobiernan la retícula
+> del cuerpo (86 % en grupo A y sector, 80 % en producto/catálogo/software). Al
+> modelar, va en la **plantilla de tipo**, no en el dato del pie.
+
+**Consecuencia para el clon (D4, abierta):** hoy el clon sirve **681.09 siempre**
+—el valor de SOFTWARE, con el que se calibró— y por eso acierta en esa familia y
+falla en las demás. El arreglo **no es un campo por página**: es que el pie tome
+ancho de fila y padding **del tipo de página**, y que CASO reciba su cuarta
+sección. Registro del defecto en `PENDIENTES-QA.md` §COBERTURA C1/D4.
+
 ---
 
 ## 7 · Decisiones abiertas, en un sitio

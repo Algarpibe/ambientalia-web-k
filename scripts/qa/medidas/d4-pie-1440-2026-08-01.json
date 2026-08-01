@@ -1,0 +1,1061 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-01"
+  },
+  "familias": {
+    "A · blog": {
+      "orig": {
+        "alto": 593.75,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 430.78,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 5,
+              "colsW": [
+                247.67,
+                247.67,
+                247.67,
+                247.67,
+                247.67
+              ],
+              "colsY": [
+                1265.66,
+                1265.66,
+                1265.66,
+                1265.66,
+                1265.66
+              ],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 121.97,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 3,
+              "colsW": [
+                728.17,
+                217.95,
+                217.95
+              ],
+              "colsY": [
+                1623.44,
+                1623.44,
+                1623.44
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 1,
+              "colsW": [
+                1238.39
+              ],
+              "colsY": [
+                1751.02
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 44,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "A · término": {
+      "orig": {
+        "alto": 593.75,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 430.78,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 5,
+              "colsW": [
+                247.67,
+                247.67,
+                247.67,
+                247.67,
+                247.67
+              ],
+              "colsY": [
+                3858.63,
+                3858.63,
+                3858.63,
+                3858.63,
+                3858.63
+              ],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 121.97,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 3,
+              "colsW": [
+                728.17,
+                217.95,
+                217.95
+              ],
+              "colsY": [
+                4216.41,
+                4216.41,
+                4216.41
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 1,
+              "colsW": [
+                1238.39
+              ],
+              "colsY": [
+                4343.98
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 46,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "CATÁLOGO": {
+      "orig": {
+        "alto": 1048.25,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 622.31,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 5,
+              "colsW": [
+                230.39,
+                230.39,
+                230.39,
+                230.39,
+                230.39
+              ],
+              "colsY": [
+                10357.09,
+                10357.09,
+                10357.09,
+                10357.09,
+                10357.09
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 269.75,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 3,
+              "colsW": [
+                677.38,
+                202.75,
+                202.75
+              ],
+              "colsY": [
+                10965,
+                10965,
+                10965
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 156.19,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 1,
+              "colsW": [
+                1152
+              ],
+              "colsY": [
+                11240.36
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 48,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "SOFTWARE": {
+      "orig": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 518.13,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 5,
+              "colsW": [
+                230.39,
+                230.39,
+                230.39,
+                230.39,
+                230.39
+              ],
+              "colsY": [
+                4827.02,
+                4827.02,
+                4827.02,
+                4827.02,
+                4827.02
+              ],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 121.97,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 3,
+              "colsW": [
+                677.38,
+                202.75,
+                202.75
+              ],
+              "colsY": [
+                5272.14,
+                5272.14,
+                5272.14
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 1,
+              "colsW": [
+                1152
+              ],
+              "colsY": [
+                5399.72
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 48,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "PRODUCTO": {
+      "orig": {
+        "alto": 1048.25,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 622.31,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 5,
+              "colsW": [
+                230.39,
+                230.39,
+                230.39,
+                230.39,
+                230.39
+              ],
+              "colsY": [
+                12675.89,
+                12675.89,
+                12675.89,
+                12675.89,
+                12675.89
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 269.75,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 3,
+              "colsW": [
+                677.38,
+                202.75,
+                202.75
+              ],
+              "colsY": [
+                13283.8,
+                13283.8,
+                13283.8
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 156.19,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1152,
+              "nCols": 1,
+              "colsW": [
+                1152
+              ],
+              "colsY": [
+                13559.16
+              ],
+              "pt": "57.5938px",
+              "pb": "57.5938px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 48,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "SECTOR": {
+      "orig": {
+        "alto": 593.75,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 430.78,
+            "clase": "et_pb_section_0_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 8,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 5,
+              "colsW": [
+                247.67,
+                247.67,
+                247.67,
+                247.67,
+                247.67
+              ],
+              "colsY": [
+                5601.56,
+                5601.56,
+                5601.56,
+                5601.56,
+                5601.56
+              ],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 1,
+            "h": 121.97,
+            "clase": "et_pb_section_1_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 3,
+              "colsW": [
+                728.17,
+                217.95,
+                217.95
+              ],
+              "colsY": [
+                5959.34,
+                5959.34,
+                5959.34
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "et_pb_section_2_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 1,
+              "colsW": [
+                1238.39
+              ],
+              "colsY": [
+                6086.92
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 48,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    },
+    "CASO": {
+      "orig": {
+        "alto": 936.81,
+        "nSecciones": 4,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 343.06,
+            "clase": "et_pb_section_0_tb_footer",
+            "nFilas": 0,
+            "nModulos": 4,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "Do you need to control the environmental i"
+          },
+          {
+            "i": 1,
+            "h": 430.78,
+            "clase": "et_pb_section_1_tb_footer footer-links",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 5,
+              "colsW": [
+                247.67,
+                247.67,
+                247.67,
+                247.67,
+                247.67
+              ],
+              "colsY": [
+                4539.3,
+                4539.3,
+                4539.3,
+                4539.3,
+                4539.3
+              ],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kun"
+          },
+          {
+            "i": 2,
+            "h": 121.97,
+            "clase": "et_pb_section_2_tb_footer footer-legal",
+            "nFilas": 1,
+            "nModulos": 7,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 3,
+              "colsW": [
+                728.17,
+                217.95,
+                217.95
+              ],
+              "colsY": [
+                4897.08,
+                4897.08,
+                4897.08
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 3,
+            "h": 41,
+            "clase": "et_pb_section_3_tb_footer footer-background",
+            "nFilas": 1,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": 1238.39,
+              "nCols": 1,
+              "colsW": [
+                1238.39
+              ],
+              "colsY": [
+                5024.66
+              ],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 52,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 6
+      },
+      "clon": {
+        "alto": 681.09,
+        "nSecciones": 3,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 517.13,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "57.5938px",
+              "pb": "0px"
+            },
+            "txt": "PRODUCTOSKunak AIR ProKunak AIR LiteKunak "
+          },
+          {
+            "i": 1,
+            "h": 122.97,
+            "clase": "",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": "2026 © KUNAK TECHNOLOGIES SL · Aviso legal"
+          },
+          {
+            "i": 2,
+            "h": 41,
+            "clase": "w-full bg-cover",
+            "nFilas": 0,
+            "nModulos": 0,
+            "caja": {
+              "secW": 1440,
+              "filaW": null,
+              "nCols": 0,
+              "colsW": [],
+              "colsY": [],
+              "pt": "0px",
+              "pb": "0px"
+            },
+            "txt": ""
+          }
+        ],
+        "nEnlaces": 43,
+        "nImgs": 1,
+        "nForm": 0,
+        "nWidgets": 0
+      }
+    }
+  }
+}
