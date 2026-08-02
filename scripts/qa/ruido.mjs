@@ -198,6 +198,10 @@ for (const [clave, corridas] of Object.entries(crudo)) {
  * impide (con razón) reescribir una salida congelada — una campaña que
  * acumulara en un solo fichero pelearía con ella en cada sesión.
  * ═════════════════════════════════════════════════════════════════════════ */
+/* Esta sonda SOLO abre el original: un  del clon no la afecta, así que
+ * no debe dispararle la guarda de BUILD_ID de  (ver ). */
+process.env.SIN_CLON = "1";
+
 const CAMPANA = env("CAMPANA");
 if (!CAMPANA) {
   w(`medidas/ruido-crudo${ETIQUETA}.json`, crudo);

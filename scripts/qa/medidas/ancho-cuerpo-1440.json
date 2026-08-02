@@ -1,0 +1,737 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": null,
+    "sabotaje": null
+  },
+  "rutas": {
+    "/": {
+      "nFilas": {
+        "orig": 16,
+        "clon": 18
+      },
+      "nSecciones": {
+        "orig": 13,
+        "clon": 13
+      },
+      "huerfanas": {
+        "orig": 4,
+        "clon": 6,
+        "firmasClon": [
+          "",
+          "SectoresDescargarcatálogo→Controlalacontaminació",
+          "¿Estásinmersoenunproyectodecalidaddelaireynecesi",
+          "HazvisiblelacontaminaciónDescargarcatálogo→Simpl",
+          "Innovaciónencalidaddelairea1clic¡Mantenteinforma",
+          "¿Tepreocupalacalidaddelairequerespiras?Sí,quiero"
+        ]
+      },
+      "difs": [
+        {
+          "firma": "MonitoreodelacalidaddelaireLasoluciónprofesional",
+          "orig": 1238.39,
+          "clon": 1224,
+          "d": -14.39,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "Conlaconfianzadeempresaslíderes",
+          "orig": 1238.39,
+          "clon": 1224,
+          "d": -14.39,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "Lasoluciónprofesionalparalamonitorizaciónambient",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "SoluciónvalidadaNuestrasoluciónhasidoevaluadapor",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "ReconocimientosConfíaenlasoluciónpremiadayrecono",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "PresenciamundialLasestacionesKunakAIRhansidoprob",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "Testimonios",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "JérômeDeWaeleDirectorgeneral-AIRSCANValoramosesp",
+          "orig": 1238.39,
+          "clon": 1080,
+          "d": -158.39,
+          "dPct": -11,
+          "pctO": 86,
+          "pctC": 75,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "NuestrosproductosAIRProMonitordecalidaddeairepar",
+          "orig": 1238.39,
+          "clon": 1224,
+          "d": -14.39,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ÚltimosartículosMonitorizacióndeemisionesfugitiv",
+          "orig": 1238.39,
+          "clon": 1224,
+          "d": -14.39,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ÚltimosproyectosSector:EDAR/PTARNamaWaterService",
+          "orig": 1238.39,
+          "clon": 1224,
+          "d": -14.39,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ComprometidosconlasostenibilidadLasestacionesdem",
+          "orig": 1238.39,
+          "clon": 1243.44,
+          "d": 5.05,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        }
+      ]
+    },
+    "/_global-error": {
+      "error": "Error: HTTP 404 https://kunakair.com/es/_global-error/"
+    },
+    "/_not-found": {
+      "error": "Error: HTTP 404 https://kunakair.com/es/_not-found/"
+    },
+    "/accesorios": {
+      "nFilas": {
+        "orig": 9,
+        "clon": 7
+      },
+      "nSecciones": {
+        "orig": 4,
+        "clon": 4
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 1,
+        "firmasClon": [
+          "ArtículosyGuíasEHSindustrial,transformandoelento"
+        ]
+      },
+      "difs": []
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "firmasClon": [
+          "¿Necesitasinformaciónfiableparatuproyectodecalid"
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "firmasClon": [
+          "¿Necesitasinformaciónfiableparatuproyectodecalid"
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "firmasClon": [
+          "¿Necesitasinformaciónfiableparatuproyectodecalid"
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "firmasClon": [
+          "¿Necesitasinformaciónfiableparatuproyectodecalid"
+        ]
+      },
+      "difs": []
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarContaminaciónpormetano:im",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/contaminacion-por-metano": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarTodasnuestrassolucionesen",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/emisiones-atmosfericas": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "nFilas": {
+        "orig": 0,
+        "clon": 0
+      },
+      "nSecciones": {
+        "orig": 0,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "nFilas": {
+        "orig": 0,
+        "clon": 0
+      },
+      "nSecciones": {
+        "orig": 0,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/kunak-api": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 5,
+        "clon": 5
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "ArtículosyGuíasContaminaciónpormetano:impactoene",
+          "SacaelmáximopartidoalosdatosIntegralosdatosdelar"
+        ]
+      },
+      "difs": []
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarContaminaciónpormetano:im",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/metano": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/monitor-calidad-aire": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 7
+      },
+      "huerfanas": {
+        "orig": 4,
+        "clon": 3,
+        "firmasClon": [
+          "InformacióndelproductoDescargarfichatécnica→Soli",
+          "Nosepuedemejorarloquenosepuedemedirdeformaprecis",
+          "ArtículosyGuíasRunningforCleanAir:midiendoelimpa"
+        ]
+      },
+      "difs": []
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarContaminaciónpormetano:im",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarContaminaciónpormetano:im",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 1,
+        "firmasClon": [
+          "EscritoporelEquipodemarketingycomunicaciónÍndice"
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 1,
+        "firmasClon": [
+          "EscritoporelEquipodemarketingycomunicaciónÍndice"
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    },
+    "/running-for-clean-air": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "TambiéntepuedeinteresarContaminaciónpormetano:im",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 16
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "huerfanas": {
+        "orig": 5,
+        "clon": 10,
+        "firmasClon": [
+          "UrbanoCalidaddelaireenlasciudades",
+          "",
+          "Quierosabermás→Descargarcatálogo→Conocelacalidad",
+          "Obténdatosfiablesyprecisossobrelacontaminaciónca",
+          "MejoradelniveldevidaprotegiendoelmedioambientePo",
+          "Complementalasredesoficialesconinformaciónfiable"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 16
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "huerfanas": {
+        "orig": 5,
+        "clon": 10,
+        "firmasClon": [
+          "ConstrucciónContaminaciónporconstrucción",
+          "",
+          "¿Quieressabermás?→Descargarcatálogo→Controlalaca",
+          "Controlalacalidaddelaireenlasobrasycontribuyealb",
+          "Minimizalosriesgosdesplegandounareddecontroldelp",
+          "ControlatusobrascondatosprecisosentiemporealOpti"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "nFilas": {
+        "orig": 13,
+        "clon": 18
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "huerfanas": {
+        "orig": 6,
+        "clon": 11,
+        "firmasClon": [
+          "IndustriayoloresControldeemisionesindustriales",
+          "",
+          "¿Quieressabermás?→Descargarcatálogo→Mideelimpact",
+          "Algunosdelasaplicacionesdondedesplegarsistemasde",
+          "Reduceelimpactoambientalmidiendolasinisionesindu",
+          "Mejoralacalidaddelaireylasaluddetustrabajadoresc"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "nFilas": {
+        "orig": 10,
+        "clon": 15
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "huerfanas": {
+        "orig": 5,
+        "clon": 10,
+        "firmasClon": [
+          "InvestigaciónyconsultoríaEstudiodelacontaminació",
+          "",
+          "¿Quieressabermás?→Descargarcatálogo→Realizamedic",
+          "Hazquetusestudiosambientalesseanmáscompletosgrac",
+          "Integramúltiplesfuentesdedatosyrealizaanálisisav",
+          "Añadevaloratusestudioscientíficosgraciasalosnuev"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "nFilas": {
+        "orig": 18,
+        "clon": 23
+      },
+      "nSecciones": {
+        "orig": 8,
+        "clon": 8
+      },
+      "huerfanas": {
+        "orig": 5,
+        "clon": 10,
+        "firmasClon": [
+          "EDARMonitorizaciónambientalenEDARparaelcontrolde",
+          "",
+          "Solicitaunademotécnica→Descargarcatálogo→Oloresb",
+          "Reduceelimpactoambientalmidiendolasinmisionesind",
+          "Mejoralacalidaddelaireylasaluddetustrabajadoresc",
+          "Mideelimpactodetuactividadindustrialenlacalidadd"
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "nFilas": {
+        "orig": 17,
+        "clon": 22
+      },
+      "nSecciones": {
+        "orig": 8,
+        "clon": 8
+      },
+      "huerfanas": {
+        "orig": 6,
+        "clon": 11,
+        "firmasClon": [
+          "PetróleoyGasMonitorizacióndeemisionesenelsectord",
+          "",
+          "Solicitaunademotécnica→Descargarcatálogo→Control",
+          "Solicitaunademotécnica→Aplicacionesenpetróleoyga",
+          "Reduceelimpactoambientalmidiendolasinmisionesind",
+          "Mejoralacalidaddelaireylasaluddetustrabajadoresc"
+        ]
+      },
+      "difs": []
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "huerfanas": {
+        "orig": 4,
+        "clon": 3,
+        "firmasClon": [
+          "InformacióndelproductoVervídeodelproducto→Softwa",
+          "Unacompletasuitedeherramientasparasacarelmáximop",
+          "ArtículosyGuíasControldelasemisionesindustriales"
+        ]
+      },
+      "difs": []
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "firmasClon": []
+      },
+      "difs": []
+    }
+  }
+}

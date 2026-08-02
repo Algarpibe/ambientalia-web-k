@@ -100,7 +100,7 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | **base cruda (h1.y)** | **31** | 0 | 0 | `c-cabecera` — deriva del build | 21 |
 | **árbol de secciones** | **31** | 0 | 0 | `c-cmp` | 9 |
 | enlaces | **31** | 0 | 0 | `enlaces` — **ya congela** | 31 *(sin evidencia)* |
-| anchos horizontales | **13** | 0 | 18 | `a-miga` · `c-banda` | 12 |
+| anchos horizontales | **31** | 0 | 0 | **`ancho-cuerpo`** — deriva del build | 31 |
 | filas | **6** | 0 | 25 | `tree-cmp` · `mono-cmp` | 3 |
 | módulos | **2** | 0 | 29 | `mono-cmp` | 2 |
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
@@ -143,7 +143,7 @@ La tanda de cierre gastó lo barato. Queda:
 
 | # | hueco | estado | coste |
 |---|---|---|---|
-| 1 | **anchos horizontales del CUERPO** | **0/31 de verdad** — los 13 de la tabla son de UN elemento (11 de la miga, 2 de la banda) | **sonda nueva.** La prioritaria |
+| 1 | ~~anchos horizontales del CUERPO~~ | **CERRADO 2026-08-02 · 31/31 a los dos anchos** con `qa:ancho`. ⚠ Con cobertura PARCIAL declarada: **99 filas emparejadas de 276** (el resto, huérfanas) | hecho |
 | 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
 | 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
@@ -181,3 +181,40 @@ La sonda **exige que exista toda fuente que declara**: si un fichero de
 `medidas/` desaparece, la celda saldría `·` —indistinguible de «nunca se
 midió»— así que sale por **error** y cierra el código de salida. Test en
 negativo: `SABOTAJE=1 npm run qa:cobertura` → exit 2.
+
+---
+
+## ⚠ El hueco nº 1 se cierra, y con su letra pequeña (2026-08-02)
+
+**`qa:ancho` (`ancho-cuerpo.mjs`) compara el ancho de la retícula del cuerpo
+contra el original en las 31 rutas y los dos anchos.** El eje pasa de **0/31 de
+verdad** a **31/31 rutas**, y la primera cosecha ya está fichada en
+`PENDIENTES-QA.md` (§HOME · la retícula del cuerpo).
+
+**Pero «31/31 rutas» NO es «31/31 filas», y la diferencia hay que decirla:**
+
+| | @1440 | @390 |
+|---|---|---|
+| filas emparejadas por firma | **99** | **99** |
+| filas huérfanas (sin pareja) | **177** | **176** |
+| filas con Δ ≠ 0 | 12 (todas en `/`) | 12 (todas en `/`) |
+
+> **Las huérfanas son PREGUNTAS, no defectos ni verdes.** Una fila que no casa
+> por firma de texto no se ha comparado: no se sabe si su ancho cuadra. Contarlas
+> como cubiertas sería exactamente el error que este documento existe para
+> evitar — «no hay defecto conocido» leído como «se ha mirado».
+
+**De dónde salen las huérfanas, medido:** el detector de fila del clon es
+*conductual* (bloque centrado más estrecho que su sección) y **sobre-casa** en
+las páginas de sector — 11 filas en el original contra **16** en el clon—, porque
+casa también bloques centrados anidados que en Divi no son filas. Y en las demás
+formas ocurre lo contrario: el original trae filas que el clon reparte de otro
+modo. Las dos cosas son de PARTICIÓN, la misma clase que D1/D2.
+
+**Cómo se estrecha el hueco restante:** dando al clon un marcador semántico de
+fila —como el `data-kunak` del pie— en vez de deducirla por comportamiento. Eso
+convierte las huérfanas en emparejadas sin tocar una sola medida.
+
+**Lo que sí está probado hoy:** de las 99 comparadas, **87 dan Δ0 y 12 dan Δ≠0,
+las 12 en `/`**, y el censo de selectores sale limpio en los dos lados con sus
+dos negativos (selector muerto → error, patrón ubicuo → error).

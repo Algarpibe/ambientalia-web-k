@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "kunak-api",
+    "sabotaje": "pleno"
+  },
+  "rutas": {
+    "/kunak-api": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 5,
+        "clon": 5
+      },
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "firmasClon": [
+          "ArtículosyGuíasContaminaciónpormetano:impactoene",
+          "SacaelmáximopartidoalosdatosIntegralosdatosdelar"
+        ]
+      },
+      "difs": []
+    }
+  }
+}

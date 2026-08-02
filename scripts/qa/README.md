@@ -671,3 +671,35 @@ esperando un `next start` ajeno; es mecánico y está pendiente.
 Test en negativo: **`npm run qa:lib`** (31/31) — con `CLON` puesta no gestiona
 servidor · contra un puerto vacío **falla** en vez de medir · un clon que no
 levanta **tira** diciendo el puerto.
+
+### `ancho-cuerpo.mjs` — el eje horizontal del CUERPO, los dos lados
+
+```bash
+npm run qa:ancho -- 1440|390        # SOLO=<txt> · SALIDA=… · SABOTAJE=1|pleno
+```
+
+Cierra el hueco nº 1 de `COBERTURA-MEDICION.md`. Deriva sus rutas del build,
+arranca **su propio clon** (`iniciarClon`) y congela salida.
+
+**Las cuatro decisiones de diseño, cada una pagada antes:**
+
+1. **`informativo`.** El ancho de un bloque que **llena** su contenedor repite el
+   del padre: su Δ0 **no verifica nada**. Cada medida lleva la marca y el resumen
+   cuenta aparte las no informativas — sin eso, este eje seguiría pareciendo
+   verde.
+2. **Identidad por marcador semántico.** En el original, `et_pb_row`/`et_pb_column`
+   (clases del tema) sí nombran una cosa. En el clon **no hay equivalente**, así
+   que la fila se detecta por **comportamiento** (centrada y más estrecha que su
+   sección) y se declara. ⚠ **Sobre-casa en los sectores** (11 filas contra 16):
+   la salida lo enseña como huérfanas, no lo esconde.
+3. **Emparejar por CONTENIDO, no por índice** — el nº de secciones ya difiere por
+   partición. Y **la firma va SIN ESPACIOS**: el original separa nodos en línea
+   con espacios y el clon no, así que colapsar a uno casó **0 de 13 filas** en la
+   primera corrida. Es la trampa de `charsCenso()`.
+4. **Acotar no puede volverse verde por vaciado.** Esa primera corrida, con 0
+   filas comparadas, imprimió **✅ y código 0**. Ahora `comparadas === 0` cierra
+   el código de salida: *una sonda que no compara nada y una que compara y no
+   encuentra nada dan la misma salida*.
+
+Negativos: `SABOTAJE=1` → selector muerto ⇒ error · `SABOTAJE=pleno` → patrón
+ubicuo ⇒ error · control ⇒ exit 0.

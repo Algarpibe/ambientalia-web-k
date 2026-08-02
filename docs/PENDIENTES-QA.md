@@ -3996,3 +3996,158 @@ línea de `import`, una de arranque y una de parada— y queda pendiente.
 `CLON` puesta la sonda **no** gestione servidor, que medir contra un **puerto
 vacío falle** en vez de devolver vacío, y que un clon que no llega a levantar
 **tire** diciendo el puerto en vez de seguir midiendo.
+
+---
+
+## C-QA6 · RÁFAGA 2 de la campaña de ruido (2026-08-02, 17:33)
+
+Congelada en `medidas/campana/cqa6/rafaga-2026-08-02T17-33-41.json`. Mismas 3
+rutas y mismos 2 anchos que la ráfaga 1, que es la condición para comparar.
+
+### Estado de la campaña: **2 de 3 ráfagas · 2 días · ABIERTA**
+
+| combinación | h1 (máx entre ráfagas) | posicional |
+|---|---|---|
+| software · edar · petróleo @1440 | **32.28** | 33 |
+| software @390 | 0 | **81** |
+| edar @390 | 0 | 54 |
+| petróleo @390 | 0 | 27 |
+
+> **Esto NO es un suelo todavía**: es «lo máximo observado hasta ahora». Falta
+> **1 ráfaga**, y hasta cerrarla todo residuo pequeño en estas rutas sigue **SIN
+> PROBAR**.
+
+### Lo que la ráfaga 2 añade, que es lo interesante
+
+**1 · El `h1` tiene DOS ESTADOS DISCRETOS, no temblor.** Los valores crudos son
+siempre los mismos dos, y la diferencia es exactamente 32.28 en las tres rutas:
+
+| ruta | estado bajo | estado alto |
+|---|---|---|
+| software @1440 | 389.11 | **421.39** |
+| edar @1440 | 228.88 | **261.16** |
+| petróleo @1440 | 228.88 | **261.16** |
+
+**Ráfaga 2 cayó entera en el estado ALTO** (9/9 cargas @1440). Ráfaga 1 pilló una
+transición. Y el valor alto es **idéntico en las dos ráfagas separadas por dos
+días**: el estado es estable y reproducible, no ruido gaussiano.
+
+**2 · La sincronía entre rutas NO es total, y la ráfaga 1 ya lo decía.** Mirando
+sus tres cargas @1440:
+
+| corrida | software | edar | petróleo |
+|---|---|---|---|
+| 1 | bajo | bajo | bajo |
+| 2 | **bajo** | **alto** | **alto** |
+| 3 | alto | alto | alto |
+
+**Los dos monográficos se mueven juntos; software va por su cuenta.** O sea que
+hay **al menos dos grupos**, no un interruptor global. En la ráfaga 2 no hubo
+transición, así que **no confirma ni refuta** la sincronía — solo dice que en ese
+episodio no hubo cambio de estado.
+
+**3 · Latencia: NO SE PUEDE EVALUAR TODAVÍA, y no por falta de instrumento.**
+La ráfaga 2 sí trae cronómetro (6.9–12.1 s, con un pico de 12.1 s en software) y
+**no hubo ningún cambio de estado**, ni siquiera en la carga lenta. La ráfaga 1,
+que sí tuvo transición, es **anterior al cronómetro** (`carga=undefined`). Así
+que hay latencia sin transición y transición sin latencia: **cero pares
+útiles**. Se resuelve solo con la ráfaga 3, si trae transición.
+
+**4 · ⚠ `rocketToken` dio `N` en las 12 cargas de la ráfaga 2.** Eso **no
+significa «el token no interviene»**: significa que el detector **no ha
+discriminado nunca**. Por la regla 4 de §sondas —*un patrón que no casa en
+ninguna observación es sospechoso, no un cero*— se anota como **detector sin
+validar**, no como evidencia de ausencia. Antes de concluir nada con él hay que
+comprobar que sabe dar `S` en alguna página.
+
+### Cuándo toca la ráfaga 3
+
+**A partir del 2026-08-03**, con ≥2 h de separación de la última (17:33 del
+2026-08-02) y **preferiblemente en un tercer día**, que da un día más de los dos
+que el protocolo exige. Cierra la campaña y fija el suelo de estas 3 rutas.
+
+---
+
+## HOME · la retícula del CUERPO — primera cosecha del eje horizontal (2026-08-02)
+
+**Sonda nueva `qa:ancho`**, congelada en `medidas/ancho-cuerpo-{1440,390}.json`.
+Es la primera vez que este eje se mide: `COBERTURA-MEDICION.md` lo tenía a
+**0/31 de verdad**.
+
+**De las 31 rutas, 30 salen limpias y toda la cosecha está en `/`.** El original
+usa **86 % uniforme** en todas sus filas de cuerpo; el clon sirve **tres anchos
+distintos**:
+
+| el clon sirve | Δ @1440 | Δ @390 | filas |
+|---|---|---|---|
+| **86.35 %** (1243.44 / 336.75) | **+5.05** | **+1.36** | 6 · 10 |
+| **85 %** (1224 / 331.5) | **−14.39** | **−3.89** | 5 · 2 |
+| **75 %** (1080) | **−158.39** | — | 1 (solo @1440) |
+
+**Encuadre: FIDELIDAD, no rango.** Se reproduce en los **dos anchos del contrato**
+y además con **el mismo porcentaje**, no con el mismo píxel — que es una firma más
+fuerte todavía que la de la regla «reproducirse entre anchos pesa más que el
+tamaño»: no es un residuo que sobrevive a dos maquetaciones, es **el mismo valor
+equivocado escrito en la hoja de estilos**.
+
+**Y es la FAMILIA DE CALIBRACIÓN otra vez**, con su firma completa: el `w-[85%]`
+de la home ya estaba anotado en la cabecera de `Footer.tsx` como «la home lo
+construye aparte», y nadie lo había comparado con el original porque **este eje
+no se medía**.
+
+**NO se arregla en esta tanda** (era diagnóstico puro) y **va con C-QA3**: la home
+tiene +289.91 abierto y dos cambios a la vez no se adjudican.
+
+### ⚠ La letra pequeña de la cobertura
+
+**99 filas emparejadas de 276.** Las **177 huérfanas** son filas que la sonda **no
+comparó** — preguntas, no verdes. Detalle y cómo se estrechan, en
+`COBERTURA-MEDICION.md` §El hueco nº 1 se cierra.
+
+---
+
+## CLASE MAYOR · el hueco de la barra de navegación, cableado en 31 rutas
+
+> **Prioridad ALTA para la tanda de CLASE.** No es una instancia: es un valor
+> cableado que gobierna **las 31 rutas del clon** y que **ninguna constante puede
+> arreglar**.
+
+### Lo medido
+
+| | @1440 | @1280 |
+|---|---|---|
+| barra del original (`/sectores/*`) | 41 + 144 = **185** | 41 + 95.52 = **136.52** |
+| hueco cableado en el clon | **185** | **185** |
+| Δ | 0 | **+48.69** |
+
+Y el clon **ya varía por su cuenta**: su propio `<header>` mide **203.59 a 1440 y
+157.89 a 1280**. Lo congelado es solo el HUECO que le reserva el cuerpo.
+
+### Por qué no hay constante que sirva
+
+**185/1440 = 12.85 % pero 136.52/1280 = 10.67 %.** La altura de la barra **no
+varía proporcionalmente al ancho** — la mueve la maquetación del menú, que
+reflota—, así que ni un px ni un % reproducen la curva. Cualquier valor que se
+elija acierta en el ancho donde se midió: **es un generador de familias de
+calibración**, no un número que esté mal.
+
+### Alcance: 31 rutas, dos componentes
+
+| componente | rutas | qué cablea |
+|---|---|---|
+| `CabeceraSector` | 6 (`/sectores/*`) | `pt-[125.58px] md:pt-[185px]` |
+| `BandaCabecera` | **29** | `--banda-alto: 165.58px` · `--banda-alto-md: 225px` |
+
+### Encuadre y arreglo
+
+**Defecto de RANGO** (`CLAUDE.md` §El contrato no es el mismo a todos los
+anchos): a 1440 y 390 cuadra, y solo se ve en medio. **Su arreglo es
+estructural** —la barra **en flujo**, que es exactamente la partición **D1**
+fichada como deliberada— y de **ámbito proyecto**, con adjudicación en las 31
+rutas.
+
+> ⚠ **Y ojo con la tentación:** D1 está fichada como partición deliberada
+> **porque no mueve `docH`**, y eso sigue siendo cierto. Meter la barra en flujo
+> **no es «reabrir D1 como defecto»**: es elegir la otra partición porque la
+> actual obliga a cablear un hueco. Son dos afirmaciones distintas y la ficha de
+> D1 no se toca.

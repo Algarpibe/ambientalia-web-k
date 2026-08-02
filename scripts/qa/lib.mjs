@@ -359,12 +359,31 @@ export function buildCambiado() {
   return ahora !== null && ahora !== BUILD_ID_INICIAL;
 }
 
+/**
+ * ⚠ La guarda es CONSERVADORA, y eso tiene un falso positivo propio: hay sondas
+ * que **solo abren el original** —`ruido`, `mono-cabecera`, los censos— y a las
+ * que un `build` del clon no les afecta en nada. Marcarlas `-CONTAMINADA` sería
+ * una alarma falsa, y una guarda que grita sin motivo se acaba ignorando, que es
+ * exactamente lo que no puede pasarle a ésta.
+ *
+ * `SIN_CLON=1` la desactiva, y **es la sonda quien lo declara**, no quien la
+ * lanza a mano: si una sonda mide el clon, no debe llevarlo nunca.
+ *
+ * ⚠ Se lee EN CADA LLAMADA, no al cargar el módulo. La primera versión era
+ * `const SIN_CLON = !!process.env.SIN_CLON` a nivel de módulo, y la sonda lo
+ * pone **después** del `import` — o sea que la constante ya estaba evaluada a
+ * `false` y **la bandera no hacía nada**. Es *documentado no es conectado*
+ * (`CLAUDE.md` §sondas, regla 3) cometido dentro de la propia guarda: el flag
+ * existía, estaba documentado, y era inerte.
+ */
+const sinClon = () => !!process.env.SIN_CLON;
+
 export function w(file, data, { pisar = false } = {}) {
   /* La corrida se contaminó a mitad: se congela igual —tirar la medida sería
    * peor— pero **con nombre de contaminada y gritando**, para que nadie la cite
    * como buena. Un fichero que no se distingue de uno limpio es exactamente el
    * agujero que esta guarda viene a tapar. */
-  if (buildCambiado() === true) {
+  if (!sinClon() && buildCambiado() === true) {
     const ext = path.extname(file);
     file = `${file.slice(0, file.length - ext.length)}-CONTAMINADA${ext}`;
     console.error(
