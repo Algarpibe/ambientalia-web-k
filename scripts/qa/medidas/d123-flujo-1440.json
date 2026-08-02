@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": null
+  },
+  "familias": {
+    "A · blog": {
+      "orig": {
+        "docH": 1772,
+        "cabecera": {
+          "y": 0,
+          "h": 225,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 953.27,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 1178.27,
+          "h": 593.75
+        },
+        "nHijos": 2,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0_tb_body et_section_regular",
+            "txt": "InicioBlogTodas nuestras solucione"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 275,
+            "h": 903.27,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "57.5938px",
+            "clase": "et_pb_section et_pb_section_1_tb_body et_section_regular",
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 1404,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 810.06,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 810.06,
+          "h": 593.75
+        },
+        "nHijos": 3,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 225,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioBlogTodas nuestras solucione"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 275,
+            "h": 535.06,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.59px",
+            "pb": "57.59px",
+            "clase": "w-full bg-white pt-[50px] pb-[50px]",
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "CATÁLOGO": {
+      "orig": {
+        "docH": 11319,
+        "cabecera": {
+          "y": 0,
+          "h": 225,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 10003.7,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 10270.7,
+          "h": 1048.25
+        },
+        "nHijos": 4,
+        "nSecciones": 4,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 275,
+            "h": 7611.56,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Accesorios Accesorios para sensore"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 7886.56,
+            "h": 958.33,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "57.5938px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Artículos y Guías Coronavirus, una"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 8844.89,
+            "h": 1383.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "57.5938px",
+            "clase": "et_pb_section et_pb_section_3 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 11250,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 10200.67,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 10200.67,
+          "h": 1049.25
+        },
+        "nHijos": 5,
+        "nSecciones": 4,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 225,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 275,
+            "h": 7671.73,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.6px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "AccesoriosAccesorios para sensores"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 7946.73,
+            "h": 878.13,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasEHS industrial, t"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 8824.86,
+            "h": 1375.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "SOFTWARE": {
+      "orig": {
+        "docH": 5421,
+        "cabecera": {
+          "y": 0,
+          "h": 225,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 4472.63,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 4739.63,
+          "h": 681.09
+        },
+        "nHijos": 5,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 275,
+            "h": 1947.66,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Kunak API Integración de datos más"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2222.66,
+            "h": 749.94,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Artículos y Guías Rendimiento y us"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2972.59,
+            "h": 1433.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "57.5938px",
+            "clase": "et_pb_section et_pb_section_3 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 4406.41,
+            "h": 291.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_4 et_pb_fullwidth_section et_section_regul",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 5337,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 4656.27,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 4656.27,
+          "h": 681.09
+        },
+        "nHijos": 6,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 225,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 275,
+            "h": 1928.92,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.6px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Kunak APIIntegración de datos más "
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2203.92,
+            "h": 735.31,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasContaminación por"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2939.23,
+            "h": 1425.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 4365.05,
+            "h": 291.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "SECTOR": {
+      "orig": {
+        "docH": 6054,
+        "cabecera": {
+          "y": 0,
+          "h": 397.61,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 397.61,
+          "h": 5062.56,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 5460.17,
+          "h": 593.75
+        },
+        "nHijos": 7,
+        "nSecciones": 7,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 397.61,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 banda-clientes et_pb_with_background",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 519.61,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_section_regular",
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 569.61,
+            "h": 893.53,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "60px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Quiero saber más Descargar catálog"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 1463.14,
+            "h": 440.83,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_3 et_section_regular",
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 1889.97,
+            "h": 1057.45,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "14px",
+            "clase": "et_pb_section et_pb_section_4 et_section_regular",
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2947.42,
+            "h": 401.56,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_5 et_pb_fullwidth_section et_section_regul",
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "i": 6,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 3348.98,
+            "h": 2111.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_6 et_pb_with_background et_section_regular",
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 6034,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 5440.44,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 5440.44,
+          "h": 593.75
+        },
+        "nHijos": 8,
+        "nSecciones": 6,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 397.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "185px",
+            "pb": "40px",
+            "clase": "cabecera-sectores w-full bg-cover bg-center",
+            "txt": "UrbanoCalidad del aire en las ciud"
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 397.59,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-clientes relative",
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 519.59,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 569.59,
+            "h": 893.53,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "60px",
+            "clase": "w-full bg-white pb-[20px] pt-[50px]",
+            "txt": "Quiero saber más→Descargar catálog"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 1463.13,
+            "h": 432.23,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 1881.36,
+            "h": 1057.45,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "14px",
+            "clase": "w-full bg-white -mt-[14px] pb-[14px]",
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 6,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2938.81,
+            "h": 401.53,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "i": 7,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 3340.34,
+            "h": 2100.09,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Nuestras solucionesAIR ProMonitor "
+          }
+        ],
+        "entreUltimoHijoYPie": 0.01
+      }
+    }
+  }
+}

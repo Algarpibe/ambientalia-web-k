@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "FAQ"
+  },
+  "familias": {
+    "FAQ": {
+      "orig": {
+        "docH": 1307,
+        "cabecera": {
+          "y": 0,
+          "h": 225,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "#main-content .entry-content",
+          "tag": "div",
+          "clase": "entry-content",
+          "y": 381,
+          "h": 266.78,
+          "pt": "30px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 712.78,
+          "h": 593.75
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 381,
+            "h": 266.78,
+            "pt": "30px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-65776",
+            "clase": "et_pb_post post-65776 faqs",
+            "y": 283,
+            "h": 364.78,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "left-area",
+            "clase": "",
+            "y": 283,
+            "h": 429.78,
+            "pt": "0px",
+            "pb": "23px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "content-area",
+            "clase": "clearfix",
+            "y": 283,
+            "h": 429.78,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "container",
+            "y": 225,
+            "h": 487.78,
+            "pt": "58px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 225,
+            "h": 487.78,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 225,
+            "h": 1081.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 1306.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 1306.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "div",
+            "clase": "et_post_meta_wrapper",
+            "y": 647.78,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 3,
+        "nSecciones": 0,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "ul",
+            "esSeccion": false,
+            "y": 411,
+            "h": 127,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "23px",
+            "clase": "",
+            "txt": "La calibración ajusta la respuesta"
+          },
+          {
+            "i": 1,
+            "tag": "p",
+            "esSeccion": false,
+            "y": 538,
+            "h": 79.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "18px",
+            "clase": "",
+            "txt": "En síntesis, la calibración usa un"
+          },
+          {
+            "i": 2,
+            "tag": "p",
+            "esSeccion": false,
+            "y": 617.19,
+            "h": 30.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "",
+            "txt": "Más info en la página 35 del catál"
+          }
+        ],
+        "entreUltimoHijoYPie": 65
+      },
+      "clon": {
+        "docH": 1273,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 679.16,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 679.16,
+          "h": 593.75
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 679.16,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 679.16,
+            "h": 593.75,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 735,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 2,
+        "nSecciones": 1,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 225,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 225,
+            "h": 454.16,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "58px",
+            "pb": "0px",
+            "clase": "container mx-auto w-[80%] max-w-[1152px]",
+            "txt": "¿Cuál es la diferencia entre calib"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    }
+  }
+}

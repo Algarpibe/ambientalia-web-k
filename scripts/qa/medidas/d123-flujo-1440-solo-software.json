@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "SOFTWARE"
+  },
+  "familias": {
+    "SOFTWARE": {
+      "orig": {
+        "docH": 5421,
+        "cabecera": {
+          "y": 0,
+          "h": 225,
+          "position": "static",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 4472.63,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 4739.63,
+          "h": 681.09
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 225,
+            "h": 4472.63,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 225,
+            "h": 4472.63,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 225,
+            "h": 4472.63,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-27049",
+            "clase": "post-27049 solutions type-solutions",
+            "y": 225,
+            "h": 4472.63,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 225,
+            "h": 4514.63,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 225,
+            "h": 5195.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 5420.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 5420.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 5,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 275,
+            "h": 1947.66,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Kunak API Integración de datos más"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2222.66,
+            "h": 749.94,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Artículos y Guías Guía sobre la co"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2972.59,
+            "h": 1433.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.5938px",
+            "pb": "57.5938px",
+            "clase": "et_pb_section et_pb_section_3 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 4406.41,
+            "h": 291.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_4 et_pb_fullwidth_section et_section_regul",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 5337,
+        "cabecera": {
+          "y": 0,
+          "h": 203.59,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 4656.27,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 4656.27,
+          "h": 681.09
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 4656.27,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white",
+            "y": 4656.27,
+            "h": 681.09,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 735,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 6,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 225,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 225,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 275,
+            "h": 1928.92,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "57.6px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Kunak APIIntegración de datos más "
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2203.92,
+            "h": 735.31,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasContaminación por"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2939.23,
+            "h": 1425.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 4365.05,
+            "h": 291.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    }
+  }
+}

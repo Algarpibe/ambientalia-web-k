@@ -130,6 +130,30 @@ type Presentacion = {
    * El `pb` del botón es el único que cambia con el ancho, y solo en `estrecha`.
    */
   sus: string;
+  /**
+   * SEXTO eje — **D3**, los 42 px entre el cuerpo y el pie. Y no es un eje del
+   * pie: es el `margin-bottom` del `<article>` del CPT en el original, medido
+   * con `qa:d123` sobre **11 formas** (2026-08-02):
+   *
+   * | forma | `<article>` | `mb` |
+   * |---|---|---|
+   * | catálogo · software · producto | `post-N solutions type-solutions` | **42px** |
+   * | sector · monográfico · home | `post-N page type-page` | 0 |
+   * | A·blog · A·término · A·documento | (no hay `<article>` en la cadena) | 0 |
+   *
+   * O sea que la frontera es el **tipo de contenido de WordPress**, y resulta
+   * ser **la misma** que ya parte `ancha` de las dos estrechas: las tres formas
+   * con 42 son exactamente las tres del CPT `solutions`. Por eso vive en esta
+   * tabla y no en cuatro `page.tsx` copiados a mano.
+   *
+   * ⚠ **Dónde se cablea no es dónde vive en el original.** Allí el margen es del
+   * `<article>`, lo contiene `#main-content` y empuja al pie; el clon no tiene
+   * envoltorio de artículo, así que se expresa como espacio ANTES del pie. La
+   * geometría es la misma —`body` es contenedor flex, o sea que el margen no
+   * colapsa— pero la atribución no: si algún día el clon estrena `<article>`,
+   * esto se mueve allí. Queda dicho para que nadie lo lea como un margen del pie.
+   */
+  antesDelPie: string;
 };
 
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
@@ -147,6 +171,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal2: "text-[9.6px]",
     social: "h-[31.6px]",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[10px]",
+    antesDelPie: "",
   },
   estrecha: {
     fila: ESTRECHA_FILA,
@@ -159,6 +184,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal2: "text-[9.6px]",
     social: "h-[61.59px]",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
+    antesDelPie: "mt-[42px]",
   },
   estrechaPad: {
     fila: ESTRECHA_FILA,
@@ -171,6 +197,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal2: "text-[14.4px]",
     social: "h-[61.59px]",
     sus: "mb-[30px] [&>a]:pb-[10px]",
+    antesDelPie: "mt-[42px]",
   },
 };
 
@@ -443,7 +470,7 @@ export function Footer({
 
   if (tb) {
     return (
-      <footer className="et-l--footer bg-white">
+      <footer className={`et-l--footer bg-white ${p.antesDelPie}`}>
         {/* 4ª sección, y va PRIMERA: solo el CASO la lleva (343.06 / 265.06).
             Caja medida en `d4-cta`: contenedor 88 %, descripción `py` 6 % ·
             `pl` 10 % desktop y `pt` 10 % · `pb` 15 % móvil — porcentajes del
