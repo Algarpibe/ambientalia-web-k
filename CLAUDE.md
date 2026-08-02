@@ -518,6 +518,21 @@ Estas se pagaron con horas de depuración. No las reinventes:
   editar hay que **parar, `npm run build` y relanzar**. Una página sin estilos
   (CSS 500) es un `next start` desincronizado de `.next`.
 
+  > ⚠ **Y la vuelta que cuesta una corrida entera (2026-08-02): `npm run check`
+  > CONSTRUYE.** Lanzarlo —o cualquier `build`— **mientras una sonda está
+  > midiendo** le cambia el `.next` al servidor vivo por debajo, y lo que sale no
+  > es un error del clon: son **404 en rutas que existen**. Pasó con las 4 de
+  > `/recursos/…` en mitad de una adjudicación de 31 rutas; con el servidor
+  > relanzado dan 200 las cuatro.
+  >
+  > **Lo grave no es el 404, es que NO SE SABE DÓNDE CAYÓ EL CORTE:** las rutas
+  > medidas antes del cambiazo son buenas y las de después no, y el fichero no
+  > distingue unas de otras. **La corrida entera se descarta y se repite** — no se
+  > salvan las que «parecen bien».
+  >
+  > Regla: **mientras haya una sonda en vuelo, nada de `build`, `check` ni
+  > `dev`.** Si hay que verificar código, se espera o se hace en otra copia.
+
 ## El principio: verificar contra la salida servida
 
 **Nunca contra la fuente que uno supone responsable.** Es la regla que gobierna

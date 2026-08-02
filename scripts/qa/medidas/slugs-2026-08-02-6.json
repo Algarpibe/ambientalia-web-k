@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "fecha": "2026-08-02",
+    "sabotaje": null
+  },
+  "familias": [
+    {
+      "familia": "estáticas (page · solutions)",
+      "n": 4,
+      "fuente": "prerender-manifest"
+    },
+    {
+      "familia": "blog",
+      "n": 7,
+      "fuente": "src/lib/arquetipo-a.ts › ENTRADAS_BLOG"
+    },
+    {
+      "familia": "termino",
+      "n": 3,
+      "fuente": "src/lib/arquetipo-a.ts › TERMINOS_KUNAKPEDIA"
+    }
+  ],
+  "noConstruidas": [],
+  "emitidas": 31,
+  "estaticasDeUnSegmento": [
+    "accesorios",
+    "kunak-api",
+    "monitor-calidad-aire",
+    "software-de-medicion-calidad-del-aire"
+  ],
+  "emitidasPorPlano": 10,
+  "colisiones": [],
+  "sombras": [],
+  "huerfanas": [],
+  "declaradosSinEmitir": []
+}

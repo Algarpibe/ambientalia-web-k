@@ -3766,7 +3766,31 @@ Tres cosas que los cinco anchos deciden y dos no podrían:
 | SECTOR · urbano | −0.02 | −0.02 | 0 | 0 |
 | SECTOR · investigación | −0.02 | −0.02 | +11.2 | +11.2 |
 
-**Se movieron las 2 rutas del monográfico y ninguna más**, que era la condición.
+**En la propiedad medida —la sección de cabecera— se movieron las 2 rutas del
+monográfico y ninguna más**, que era la condición.
+
+#### ⚠ Y a nivel de `docH` se movieron CINCO, que no es lo mismo y hay que decirlo
+
+Comparando `c-cmp-1440-tras-d3` con `c-cmp-1440-tras-cabecera` (31 rutas, las dos
+corridas limpias): **26 quietas** y **5 movidas**.
+
+| ruta | movió | qué es |
+|---|---|---|
+| MONOGRÁFICO · petróleo | **+36** | el arreglo, exacto |
+| MONOGRÁFICO · edar | **+9** | el arreglo **−27** de ruido (+36 − 27) |
+| SECTOR · urbano | +27 | ruido: su cabecera mide **−0.02 antes y después** |
+| SECTOR · industria | −27 | ruido: ídem |
+| CASO · world athletics | +76 | **fuera del alcance del cambio** |
+
+**El alcance no se afirma, se deriva:** `grep -rn CabeceraSector src/` da **un
+solo importador**, `src/app/sectores/[slug]/page.tsx`. El caso **no puede** haber
+sido tocado por esto — su +76 es de otra causa, y las dos de ±27 caen en la
+familia de ruido documentada, con la cabecera medida sin moverse.
+
+> **La lección de redacción, que es la de `CLAUDE.md` §canal único de verdad:**
+> «se movieron 2 y ninguna más» es **verdad de la sección de cabecera y falsa de
+> `docH`**. Un alcance se cita **con el nivel al que se midió**, igual que un
+> número de un par se cita con sus dos lados.
 
 ⚠ **El +11.2 de investigación a 390 es ANTERIOR y ajeno**: está congelado como
 `base +11.2` en `medidas/c-cmp-390-tras-d3.json`, medido antes de tocar nada.

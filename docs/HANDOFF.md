@@ -1,3 +1,158 @@
+# HANDOFF — C1 SALDADO: 2 causas arregladas, 2 particiones fichadas
+
+> ⚠ **Tanda 2026-08-02 (6.ª).** Los cuatro pasos del encargo, hechos. **C1 se
+> cierra como capítulo**, y con él la cuarta de sus causas y una quinta
+> instancia de la FAMILIA DE CALIBRACIÓN que llegó de fuera.
+
+## 1 · El balance de C1, que es lo que hay que llevarse
+
+| | era | veredicto |
+|---|---|---|
+| **D1** −225 | la cabecera del clon va **dentro** de `main` como `section.banda-cabecera` | **PARTICIÓN DELIBERADA** · fichada |
+| **D2** +50 | las migas del clon son un `<nav>`, no una `<section>` | **PARTICIÓN DELIBERADA** · fichada |
+| **D3** −42 | `margin-bottom` del `<article>` del CPT `solutions` | **arreglado** |
+| **D4** | el pie: **5 ejes** de presentación por tipo de página | **arreglado** |
+
+**Dos de cuatro no eran defectos.** `c1-localiza` los reconstruía al céntimo, y
+reconstruir no es explicar: eran la misma altura contada de otra forma.
+
+La prueba está congelada y es la que impide que alguien los «arregle» dentro de
+tres tandas: **11 formas × 2 anchos**, la banda del clon igualando al céntimo la
+cabecera del original (1440: **225** · 397.59/**397.61**; 390: 165.58 · 136.58 ·
+347.25 · 419.25 · 362.91) y las migas **50 = 50**.
+
+## 2 · ⚠⚠ LO QUE HAY QUE LEER ANTES DE `c-cmp` Y DE `COBERTURA`
+
+> **La métrica RESTO (`docH` − Σsecciones) cuenta todo lo que vive FUERA de
+> sección: migas, bandas, envoltorios. Una diferencia de RESTO puede ser
+> PARTICIÓN y no defecto, y desde el número no hay forma de saberlo.**
+
+RESTO es un **contenedor con holgura** —cabe dentro un nodo entero sin dejar
+rastro— y además su frontera **la define el selector de sección de cada lado**:
+`.et_pb_section` en el original, `main > section` en el clon. Dos selectores que
+no denotan el mismo conjunto.
+
+**Un Δ de RESTO se adjudica POR COMPOSICIÓN antes de tocar nada:** se enumeran
+los hijos en flujo de los dos lados y se emparejan **por lo que son** —cabecera
+con banda, migas con migas—, no por si casan con el selector. Instrumento:
+`qa:d123`. Lo mismo vale para el **`nº de secciones ≠`** que `c-cmp` ya imprime
+como **PREGUNTA**.
+
+Coste de no haberlo tenido escrito: D1 y D2 vivieron una tanda entera como
+causas pendientes, con orden de ataque y condición de bloqueo.
+
+## 3 · La cabecera del monográfico: ancho de módulo, y la clase cambia
+
+Era **−36.02 a 1440 y 0 a 390**. `36` es el `line-height` del `h1`: **un
+renglón**, o sea envolvimiento, o sea que la causa es un **ancho**.
+
+El original le da al `h1` el **50 %** de la fila; el clon le daba el **100 %**.
+Medido a **cinco anchos** con `qa:cabecera` (los dos lados): 390 y 800 → 100 % ·
+1000, 1280 y 1440 → 50 %. Cinco y no dos porque con 1440 y 390 «50 % de la fila»
+y «un ancho fijo en px» **predicen lo mismo**; 1280 las separa y 800/1000 sitúan
+el corte (el de Divi, 980) en vez de suponerlo.
+
+**Adjudicado en la propiedad medida** —la sección de cabecera, `qa:cabecera`—:
+edar y petróleo **−36.02 → −0.02** a 1440, sin moverse a 390; los dos sectores
+intactos. Ahí sí se movieron **las 2 del monográfico y ninguna más**.
+
+⚠ **A nivel de `docH` se movieron CINCO de 31**, y decir «2 y ninguna más» a
+secas sería falso: petróleo **+36** (exacto), edar **+9** (+36 −27 de ruido), dos
+sectores **±27** con su cabecera medida **sin moverse**, y un CASO **+76** que
+está **fuera del alcance del cambio** — `grep -rn CabeceraSector src/` da **un
+solo importador**, `sectores/[slug]/page.tsx`, así que el caso no puede haber
+sido tocado. **Un alcance se cita con el NIVEL al que se midió**, igual que un
+número de un par se cita con sus dos lados.
+
+### Lo que esta instancia cambia de la CLASE — y es lo más útil de la tanda
+
+Las cuatro instancias anteriores heredaban valores de SOFTWARE, hasta parecer que
+la clase era «todo se calibró con software». **No lo es.** La clase es *un
+componente compartido hereda la familia sobre la que se midió*, y aquí esa
+familia es un **ARQUETIPO**: `CabeceraSector`, medido sobre SECTOR y reutilizado
+por MONOGRÁFICO.
+
+Y el defecto **es invisible en las 4 instancias de su propio arquetipo, a los
+cinco anchos**: los titulares de los sectores caben en un renglón con 619 px y
+con 1238.
+
+> **Un ancho mal no cuesta un píxel hasta que el texto envuelve. Así que el
+> detector de un defecto de ancho no siempre es OTRO ANCHO: a veces es OTRO
+> CONTENIDO.** Barrer «las N instancias del arquetipo a dos anchos» no habría
+> encontrado ésta. La encontró medir **el arquetipo vecino que comparte el
+> componente**.
+
+En `CLAUDE.md`, como segunda cara del NO-WRAP.
+
+## 4 · Dos trampas de operación que se cobraron en esta tanda
+
+**(a) `npm run check` CONSTRUYE.** Lanzarlo mientras una sonda mide le cambia el
+`.next` al servidor vivo y salen **404 en rutas que existen** — pasó con las 4 de
+`/recursos/…` en mitad de la adjudicación. Con el servidor relanzado dan 200 las
+cuatro. **Lo grave no es el 404: es que no se sabe dónde cayó el corte**, así que
+la corrida entera se descarta y se repite. Regla nueva en `CLAUDE.md`: **con una
+sonda en vuelo, nada de `build`, `check` ni `dev`.**
+
+**(b) La sonda nueva llegó con dos defectos, los dos «plausibles».**
+`getClientRects().length` **no cuenta renglones** en un elemento de bloque —da 1
+siempre—, así que la 1.ª versión publicaba «Δ renglones 0» **al lado** de «Δ alto
+−36», dos números suyos contradiciéndose. Y el kicker se buscaba como `<p>`, que
+en el original no lo es → `null` en las 4. Corregidos: `Range` agrupado por `top`
+y búsqueda por posición.
+
+## 5 · Estado de las sondas
+
+```bash
+npm run qa:cabecera -- 1440|1280|1000|800|390   # la cabecera de /sectores/*, los dos lados
+npm run qa:d123     -- 1440|390                 # hijos EN FLUJO: distingue partición de defecto
+npm run qa:d4-sus   -- 1440|390                 # el «¡Suscríbete!», por composición
+```
+
+`qa:enlaces` limpio en las dos direcciones (1725 salientes · 868 entrantes) ·
+`qa:slugs` limpio (A, B y C) · `npm run check` **0 errores**.
+
+**`c-cmp` en VERDE de verdad a los dos anchos**, cada uno con su corrida limpia y
+congelada:
+
+| ancho | resultado | salida |
+|---|---|---|
+| 1440 | **exit 0** · 31/31 · las 3 predicciones en pie | `c-cmp-1440-tras-cabecera.json` |
+| 390 | **exit 0** · 31/31 · las 3 predicciones en pie | `c-cmp-390-tras-cabecera.json` |
+
+A 390 **no se repitió el episodio de latencia**: las 31 rutas cargaron, incluida
+la FAQ que el 2026-08-02 dio timeout de 120 s. Queda confirmado lo que decía el
+reintento — era un episodio del original, no un defecto del clon ni de la sonda.
+
+## 6 · Lo que queda abierto
+
+1. **El alto de la cabecera a 1280**: el original varía entre 1280 y 1440
+   (338.25 → 397.61) y el clon no (397.59 en los dos) → **+59.34**. Salió de paso
+   al buscar el corte. **1280 no es uno de los dos anchos del proyecto**, así que
+   se ficha; lo que deja escrito es que **el ritmo vertical de esa cabecera no
+   está verificado fuera de 1440 y 390**.
+2. **El residuo de ~1 px del pie** en las tres presentaciones (fila ~1 + columna
+   CERTIFICACIONES +0.2). Sin descomponer.
+3. **`+11.2` de base en `/sectores/estudio-de-la-contaminacion-atmosferica` a
+   390**, anterior a esta tanda y congelado en `c-cmp-390-tras-d3.json`.
+4. **La FAMILIA DE CALIBRACIÓN no se cierra como clase**: falta medir el **ancho
+   del cuerpo** en las 31 rutas, hoy **0/31** en `COBERTURA-MEDICION.md`. La
+   sonda no existe. **Y ahora se sabe además que el barrido tiene que incluir los
+   arquetipos VECINOS que comparten componente**, no solo las instancias propias.
+5. **La ráfaga 2 de la campaña de ruido**, pendiente de su día. El timeout de 120 s
+   del 2026-08-02 está registrado como episodio, **pero no la sustituye**.
+6. **`/` con su pie propio**, a propósito, y va con C-QA3 (+289.91).
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No reabrir D1 ni D2.** Están medidas en 11 formas y dos anchos.
+- **No leer un Δ de RESTO ni un `nº secciones ≠` como defecto** sin componer.
+- **No dar por barrido un componente compartido** habiendo mirado solo las
+  instancias de su arquetipo: si lo usa un segundo arquetipo con contenidos más
+  largos, **ahí es donde vive el defecto**.
+- **No construir mientras se mide.**
+
+---
+
 # HANDOFF — `footer-links` cerrado, D3 cerrado, D1 y D2 NO EXISTEN
 
 > ⚠ **Tanda 2026-08-02 (5.ª).** Se hicieron los PASOS 0 a 5 del encargo y el 6
