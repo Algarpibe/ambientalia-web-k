@@ -1,7 +1,7 @@
 # HANDOFF — `footer-links` cerrado, D3 cerrado, D1 y D2 NO EXISTEN
 
 > ⚠ **Tanda 2026-08-02 (5.ª).** Se hicieron los PASOS 0 a 5 del encargo y el 6
-> salvo la última corrida de adjudicación a 1440, que quedó lanzada. **D4 está
+> incluida la corrida final de adjudicación a los dos anchos. **D4 está
 > cerrado entero**; de las cuatro causas de C1 ya no queda ninguna abierta —
 > pero **dos de ellas se cerraron demostrando que no eran defectos**.
 
@@ -99,10 +99,21 @@ fila delante, dos de tres arreglos parecerían inertes.**
 
 ## 5 · Lo que queda abierto, en orden
 
-1. **La última corrida de adjudicación a 1440 quedó lanzada** (`c-cmp
-   -- 1440`, salida `medidas/c-cmp-1440-tras-d3.json`). La de 1440 que está
-   congelada —`c-cmp-1440-tras-suscribete.json`— es **anterior a D3**, así que
-   sus tres rutas `solutions` le faltan **+42**. A 390 sí está todo aplicado.
+1. ~~La corrida de adjudicación a 1440~~ **HECHA · exit 0 · 31/31**
+   (`medidas/c-cmp-1440-tras-d3.json`), y es la mejor prueba de la tanda:
+
+   | familia | rutas | movió total | de ese total, **por D3** |
+   |---|---|---|---|
+   | **ancha** | 22 | −87 / −88 | **0** en 19 de 22 |
+   | **caso** | 4 | +256 | **0** |
+   | **home** | 1 | 0 | **0** |
+   | **estrechaPad** | 2 | +410 | **+42** |
+   | **software** | 2 | +42 | **+42** |
+
+   **D3 movió las cuatro rutas del CPT `solutions` y dejó las otras 27 en
+   cero.** Un arreglo cuyo alcance medido y cuyo alcance servido coinciden
+   ruta a ruta no necesita más adjudicación. Las tres excepciones de `ancha`
+   son **±27** —la familia de ruido documentada—, no D3.
 2. **La cabecera del MONOGRÁFICO: −36.02 a 1440 y 0 a 390.** Salió de paso en
    `qa:d123`. El clon sirve al monográfico **el valor del sector** a 1440 y el
    suyo a 390. Es la **regla espejo** con firma de **familia de calibración**.
