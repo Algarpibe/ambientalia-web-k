@@ -102,6 +102,34 @@ type Presentacion = {
    * dos estrechas** — exactamente +30. El clon servía 31.59 en las tres.
    */
   social: string;
+  /**
+   * QUINTO eje: el bloque «¡Suscríbete!» de la columna EMPRESA — el residuo
+   * entero de `footer-links`, y la 3.ª instancia de LA FAMILIA DE CALIBRACIÓN.
+   * De las cinco columnas, cuatro cuadran al céntimo en las tres presentaciones;
+   * ésta llevaba `mt 16 · mb 46 · pb 3.1`, que son los valores de SOFTWARE.
+   *
+   * Medido 2026-08-02 con `qa:d4-sus` (los dos lados, los dos anchos,
+   * `medidas/d4-suscribete-{390,1440}-antes.json`). Lo que hay que igualar es la
+   * **caja** de la columna del original, no su contenido:
+   *
+   * | | caja orig @1440 | @390 | `mt` | `mb` | `pb` del botón |
+   * |---|---|---|---|---|---|
+   * | ancha       | 313.59 | 313.59 | 16 | 46 | **10** |
+   * | estrecha    | 349.86 | 350.67 | 16 | 46 | **2.297 / 3.109** |
+   * | estrechaPad | 366.16 | 335.56 | **0** | **30** | **10** |
+   *
+   * ⚠ **El original y el clon parten la misma altura de forma distinta, y por eso
+   * el nivel importa.** En el original el `mb` del envoltorio del botón SE
+   * ESCAPA de la columna (margen del último hijo, sin `padding` que lo pare):
+   * su contenido mide 329.59 y su caja 313.59. La columna del clon es un ítem de
+   * rejilla —o sea un contexto de formato propio— y **contiene** su margen. Lo
+   * que suma en la fila es la CAJA en los dos lados; comprobado con la Σ de las
+   * cinco columnas a 390 (1325.41 orig contra 1318.71 clon, y la fila −7.7).
+   * Cablear contra el contenido habría metido 16 px de más en las tres.
+   *
+   * El `pb` del botón es el único que cambia con el ancho, y solo en `estrecha`.
+   */
+  sus: string;
 };
 
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
@@ -118,6 +146,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal: "text-[12px]",
     legal2: "text-[9.6px]",
     social: "h-[31.6px]",
+    sus: "mb-[46px] mt-[16px] [&>a]:pb-[10px]",
   },
   estrecha: {
     fila: ESTRECHA_FILA,
@@ -129,6 +158,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal: "text-[12px]",
     legal2: "text-[9.6px]",
     social: "h-[61.59px]",
+    sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
   },
   estrechaPad: {
     fila: ESTRECHA_FILA,
@@ -140,6 +170,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     legal: "text-[18px]",
     legal2: "text-[14.4px]",
     social: "h-[61.59px]",
+    sus: "mb-[30px] [&>a]:pb-[10px]",
   },
 };
 
@@ -209,7 +240,12 @@ export function Footer({
       }
     >
       {FOOTER_COLUMNS.map((col) => (
-        <div key={col.title}>
+        // `data-kunak` es MARCADOR DE SONDA, no estilo. Dos intentos de medir el
+        // bloque «¡Suscríbete!» dieron nodos equivocados porque el lado del clon
+        // no tiene `.et_pb_column`: `closest()` subía hasta la rejilla entera (28
+        // enlaces). Lo que identifica un módulo es el marcador semántico, no el
+        // literal de `className` (`CLAUDE.md` §sondas, regla 4).
+        <div key={col.title} data-kunak="footer-col">
           <p
             className={
               tb
@@ -243,9 +279,10 @@ export function Footer({
             // TB: ul ya lleva el mb32 del widget → +16 wrapper, botón
             // h37/38.1 (pb 2 desktop / 3.1 móvil), después 30+16=46.
             <div
+              data-kunak="footer-suscribete"
               className={
                 tb
-                  ? "mb-[46px] mt-[16px] [&>a]:pb-[3.1px] sm:[&>a]:pb-[2px]"
+                  ? p.sus
                   : "mb-[14px] mt-[48px] max-sm:[&>a]:pb-[10px] sm:mb-0 sm:mt-6"
               }
             >
@@ -256,7 +293,7 @@ export function Footer({
       ))}
 
       {/* Certificaciones column */}
-      <div>
+      <div data-kunak="footer-col">
         <p
           className={
             tb

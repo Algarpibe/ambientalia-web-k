@@ -1,0 +1,1054 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-02",
+    "solo": null
+  },
+  "formas": {
+    "ancha · A·blog": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 2257.3,
+          "h": 313.59,
+          "w": 335.39,
+          "bottom": 2570.89,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 2257.3,
+              "h": 206.59,
+              "w": 335.39,
+              "bottom": 2463.89,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 2463.89,
+              "h": 0,
+              "w": 335.39,
+              "bottom": 2463.89,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 2570.89,
+              "h": 0,
+              "w": 335.39,
+              "bottom": 2570.89,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 2287.89,
+            "h": 144,
+            "w": 335.39,
+            "bottom": 2431.89,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "14px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 48,
+          "boton": {
+            "tag": "span",
+            "y": 2479.89,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 2524.89,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 2479.89,
+            "h": 75,
+            "w": 335.39,
+            "bottom": 2554.89,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 1725.36,
+          "h": 306.69,
+          "w": 335.39,
+          "bottom": 2032.05,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 1725.36,
+              "h": 30.59,
+              "w": 335.39,
+              "bottom": 1755.95,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 1755.95,
+              "h": 176,
+              "w": 335.39,
+              "bottom": 1931.95,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 1755.95,
+            "h": 176,
+            "w": 335.39,
+            "bottom": 1931.95,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 1947.95,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 1986.05,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 1947.95,
+            "h": 38.09,
+            "w": 335.39,
+            "bottom": 1986.05,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "ancha · SECTOR": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 9777.39,
+          "h": 313.59,
+          "w": 335.39,
+          "bottom": 10090.98,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 9777.39,
+              "h": 206.59,
+              "w": 335.39,
+              "bottom": 9983.98,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 9983.98,
+              "h": 0,
+              "w": 335.39,
+              "bottom": 9983.98,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 10090.98,
+              "h": 0,
+              "w": 335.39,
+              "bottom": 10090.98,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 9807.98,
+            "h": 144,
+            "w": 335.39,
+            "bottom": 9951.98,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "14px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 48,
+          "boton": {
+            "tag": "span",
+            "y": 9999.98,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 10044.98,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 9999.98,
+            "h": 75,
+            "w": 335.39,
+            "bottom": 10074.98,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 9608.95,
+          "h": 306.69,
+          "w": 335.39,
+          "bottom": 9915.64,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 9608.95,
+              "h": 30.59,
+              "w": 335.39,
+              "bottom": 9639.55,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 9639.55,
+              "h": 176,
+              "w": 335.39,
+              "bottom": 9815.55,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 9639.55,
+            "h": 176,
+            "w": 335.39,
+            "bottom": 9815.55,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 9831.55,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 9869.64,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 9831.55,
+            "h": 38.09,
+            "w": 335.39,
+            "bottom": 9869.64,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrecha · SOFTWARE": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 7856.03,
+          "h": 350.67,
+          "w": 312,
+          "bottom": 8206.7,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 7856.03,
+              "h": 250.56,
+              "w": 312,
+              "bottom": 8106.59,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 8106.59,
+              "h": 0,
+              "w": 312,
+              "bottom": 8106.59,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 8206.7,
+              "h": 0,
+              "w": 312,
+              "bottom": 8206.7,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 7886.63,
+            "h": 180.97,
+            "w": 312,
+            "bottom": 8067.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "14px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 55,
+          "boton": {
+            "tag": "span",
+            "y": 8122.59,
+            "h": 38.11,
+            "w": 155.39,
+            "bottom": 8160.7,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "3.10938px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 8122.59,
+            "h": 68.11,
+            "w": 312,
+            "bottom": 8190.7,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 7803.3,
+          "h": 350.66,
+          "w": 312,
+          "bottom": 8153.95,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 7803.3,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 7833.89,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 7833.89,
+              "h": 219.97,
+              "w": 312,
+              "bottom": 8053.86,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "14px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 7833.89,
+            "h": 219.97,
+            "w": 312,
+            "bottom": 8053.86,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "14px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 8069.86,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 8107.95,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 8069.86,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 8107.95,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrechaPad · CATÁLOGO": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 19050.8,
+          "h": 335.56,
+          "w": 312,
+          "bottom": 19386.36,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 19050.8,
+              "h": 260.56,
+              "w": 312,
+              "bottom": 19311.36,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 19311.36,
+              "h": 0,
+              "w": 312,
+              "bottom": 19311.36,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 19386.36,
+              "h": 0,
+              "w": 312,
+              "bottom": 19386.36,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 19081.39,
+            "h": 188.97,
+            "w": 312,
+            "bottom": 19270.36,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 41,
+          "boton": {
+            "tag": "span",
+            "y": 19311.36,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 19356.36,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 19311.36,
+            "h": 75,
+            "w": 312,
+            "bottom": 19386.36,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 30
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 19838.25,
+          "h": 360.66,
+          "w": 312,
+          "bottom": 20198.91,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 19838.25,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 19868.84,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 19868.84,
+              "h": 229.97,
+              "w": 312,
+              "bottom": 20098.81,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 19868.84,
+            "h": 229.97,
+            "w": 312,
+            "bottom": 20098.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 20114.81,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 20152.91,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 20114.81,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 20152.91,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrechaPad · PRODUCTO": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 22071.02,
+          "h": 335.56,
+          "w": 312,
+          "bottom": 22406.58,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 22071.02,
+              "h": 260.56,
+              "w": 312,
+              "bottom": 22331.58,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 22331.58,
+              "h": 0,
+              "w": 312,
+              "bottom": 22331.58,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 22406.58,
+              "h": 0,
+              "w": 312,
+              "bottom": 22406.58,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 22101.61,
+            "h": 188.97,
+            "w": 312,
+            "bottom": 22290.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 41,
+          "boton": {
+            "tag": "span",
+            "y": 22331.58,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 22376.58,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 22331.58,
+            "h": 75,
+            "w": 312,
+            "bottom": 22406.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 30
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 20482.33,
+          "h": 360.66,
+          "w": 312,
+          "bottom": 20842.98,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 20482.33,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 20512.92,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 20512.92,
+              "h": 229.97,
+              "w": 312,
+              "bottom": 20742.89,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 20512.92,
+            "h": 229.97,
+            "w": 312,
+            "bottom": 20742.89,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 20758.89,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 20796.98,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 20758.89,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 20796.98,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    }
+  }
+}

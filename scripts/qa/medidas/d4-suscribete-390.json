@@ -1,0 +1,509 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-02",
+    "solo": null
+  },
+  "formas": {
+    "ancha · A·blog": {
+      "orig": {
+        "ausente": true,
+        "motivo": "0 anclas «¡Suscríbete!»"
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1
+        },
+        "col": {
+          "tag": "div",
+          "y": 1725.36,
+          "h": 306.69,
+          "w": 335.39,
+          "bottom": 2032.05,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 1725.36,
+              "h": 30.59,
+              "w": 335.39,
+              "bottom": 1755.95,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 1755.95,
+              "h": 176,
+              "w": 335.39,
+              "bottom": 1931.95,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 1755.95,
+            "h": 176,
+            "w": 335.39,
+            "bottom": 1931.95,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 1947.95,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 1986.05,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 1947.95,
+            "h": 38.09,
+            "w": 335.39,
+            "bottom": 1986.05,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "ancha · SECTOR": {
+      "orig": {
+        "ausente": true,
+        "motivo": "0 anclas «¡Suscríbete!»"
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1
+        },
+        "col": {
+          "tag": "div",
+          "y": 9608.95,
+          "h": 306.69,
+          "w": 335.39,
+          "bottom": 9915.64,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 9608.95,
+              "h": 30.59,
+              "w": 335.39,
+              "bottom": 9639.55,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 9639.55,
+              "h": 176,
+              "w": 335.39,
+              "bottom": 9815.55,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 9639.55,
+            "h": 176,
+            "w": 335.39,
+            "bottom": 9815.55,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 9831.55,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 9869.64,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 9831.55,
+            "h": 38.09,
+            "w": 335.39,
+            "bottom": 9869.64,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrecha · SOFTWARE": {
+      "orig": {
+        "ausente": true,
+        "motivo": "0 anclas «¡Suscríbete!»"
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1
+        },
+        "col": {
+          "tag": "div",
+          "y": 7803.3,
+          "h": 350.66,
+          "w": 312,
+          "bottom": 8153.95,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 7803.3,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 7833.89,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 7833.89,
+              "h": 219.97,
+              "w": 312,
+              "bottom": 8053.86,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "14px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 7833.89,
+            "h": 219.97,
+            "w": 312,
+            "bottom": 8053.86,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "14px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 8069.86,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 8107.95,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 8069.86,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 8107.95,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrechaPad · CATÁLOGO": {
+      "orig": {
+        "ausente": true,
+        "motivo": "0 anclas «¡Suscríbete!»"
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1
+        },
+        "col": {
+          "tag": "div",
+          "y": 19838.25,
+          "h": 360.66,
+          "w": 312,
+          "bottom": 20198.91,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 19838.25,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 19868.84,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 19868.84,
+              "h": 229.97,
+              "w": 312,
+              "bottom": 20098.81,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 19868.84,
+            "h": 229.97,
+            "w": 312,
+            "bottom": 20098.81,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 20114.81,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 20152.91,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 20114.81,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 20152.91,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    },
+    "estrechaPad · PRODUCTO": {
+      "orig": {
+        "ausente": true,
+        "motivo": "0 anclas «¡Suscríbete!»"
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 4
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1
+        },
+        "col": {
+          "tag": "div",
+          "y": 20482.33,
+          "h": 360.66,
+          "w": 312,
+          "bottom": 20842.98,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 20482.33,
+              "h": 30.59,
+              "w": 312,
+              "bottom": 20512.92,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 20512.92,
+              "h": 229.97,
+              "w": 312,
+              "bottom": 20742.89,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 20512.92,
+            "h": 229.97,
+            "w": 312,
+            "bottom": 20742.89,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 20758.89,
+            "h": 38.09,
+            "w": 155.39,
+            "bottom": 20796.98,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "3.1px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 20758.89,
+            "h": 38.09,
+            "w": 312,
+            "bottom": 20796.98,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46
+        }
+      }
+    }
+  }
+}
