@@ -878,6 +878,35 @@ primera:
    `next start` seguía con el build anterior y `pkill` no lo mató. **Mata por
    puerto**, y verifica un marcador del cambio en la salida antes de medir.
 
+⚠ **Y la mitad que falta, que es la que engaña (2026-08-02): EL MARCADOR PRUEBA
+QUE EL BUILD ES NUEVO, NO QUE EL CAMBIO TENGA EFECTO.**
+
+> Un marcador de frescura contesta *«¿estoy midiendo el HTML que acabo de
+> generar?»* — y **solo** eso. La pregunta siguiente —*«¿el cambio hace algo?»*—
+> es otra, y **ningún marcador la responde**: un arreglo puede estar en el HTML
+> servido, ser exactamente el que se escribió, y ser **INERTE**.
+
+Medido en D4: el bloque de iconos sociales se cableó como `pb-[30px]` sobre una
+caja de **alto fijo**. Con `box-sizing: border-box` el `padding` se absorbe
+dentro del alto declarado y no empuja nada. La clase **estaba en el HTML
+servido**, el marcador dio verde, el diff se leía correcto — y el cambio **no
+existía**. Lo cazó **medir después**; no lo habría cazado ninguna cantidad de
+leer el diff, porque el diff era el correcto.
+
+De donde el protocolo de verificación tiene **dos pasos y no uno**, y no se
+pueden fusionar:
+
+| paso | pregunta | instrumento | qué NO prueba |
+|---|---|---|---|
+| 1 · frescura | ¿mido el build de ahora? | marcador en el HTML servido | que el cambio tenga efecto |
+| 2 · **efecto** | ¿el número se movió? | **la medida antes/después** | nada más: es la única que cierra |
+
+Es la regla 3 —*documentado no es conectado*— una vuelta más abajo: allí el
+comentario prometía una llamada que no existía; aquí **el HTML sirve una clase
+que no hace nada**. En los dos casos lo servido es exactamente lo escrito, y en
+los dos casos lo escrito no llega a la propiedad. **Ningún arreglo se da por
+hecho sin su medición posterior**, ni siquiera cuando se ve en la salida.
+
 **5 · CONGELAR NO SIRVE DE NADA SI LA SIGUIENTE CORRIDA DESCONGELA SIN AVISAR.**
 
 La regla 2 dice que toda sonda congela su salida *para que una conclusión citada
