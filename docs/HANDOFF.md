@@ -1,3 +1,151 @@
+# HANDOFF — `footer-links` cerrado, D3 cerrado, D1 y D2 NO EXISTEN
+
+> ⚠ **Tanda 2026-08-02 (5.ª).** Se hicieron los PASOS 0 a 5 del encargo y el 6
+> salvo la última corrida de adjudicación a 1440, que quedó lanzada. **D4 está
+> cerrado entero**; de las cuatro causas de C1 ya no queda ninguna abierta —
+> pero **dos de ellas se cerraron demostrando que no eran defectos**.
+
+## 1 · El titular: de las cuatro causas de C1, dos no existían
+
+`c1-localiza` descompuso el desfase del cascarón en cuatro sumandos que
+reconstruían el total al céntimo. Reconstruir no es explicar: **dos de los cuatro
+eran la misma altura contada de otra forma.**
+
+| | qué decía | qué es | estado |
+|---|---|---|---|
+| **D1** | −225 antes de la 1.ª sección | la cabecera del clon está dentro de `main` como `section.banda-cabecera`, y **mide 225 igual que la del original** | **partición · fichada, no se toca** |
+| **D2** | +50 de hueco entre secciones | las migas del clon son un `<nav>`, y `main > section` no las cuenta. **50 = 50** | **partición · fichada, no se toca** |
+| **D3** | −42 entre última sección y pie | el `margin-bottom` del `<article>` del CPT `solutions` | **CERRADO** |
+| **D4** | el alto del pie | tres presentaciones por tipo de página | **CERRADO** (5 ejes) |
+
+**Lo que lo hizo visible fue bajar un nivel.** Un hueco de 50 px puede ser aire
+que sobra o un nodo que el censo no cuenta, y **los dos dan el mismo número**.
+`c1-localiza` medía huecos entre secciones sin mirar dentro del hueco. La sonda
+nueva —`qa:d123`— **enumera los hijos en flujo del contenedor, casen o no con el
+selector de sección**, y con las dos listas delante la pregunta se contesta sola.
+
+Comprobado en **11 formas y los dos anchos**: la banda del clon iguala al
+céntimo la cabecera del original (1440: 225 · 397.59/397.61; 390: 165.58 ·
+136.58 · 347.25 · 419.25 · 362.91).
+
+## 2 · ⚠⚠ LÉEME ANTES DE ADJUDICAR NADA CONTRA `docH` (sigue vigente)
+
+> **Muchos `docH` se ALEJAN de 0, y eso es CORRECTO.** `docH` carga todas las
+> causas a la vez; mientras el pie estuvo mal, su error **compensaba** al del
+> cuerpo. Al arreglarlo la compensación desaparece y el residuo del cuerpo sale
+> a la superficie.
+
+**Y ahora hay número para exhibirlo.** A 390, de 30 rutas, **15 se alejan de 0** —
+y no de cualquier manera:
+
+| familia | movió | predicho por las piezas |
+|---|---|---|
+| **ancha** (grupo A · sector · monográfico · FAQ), 19 rutas | **−292 / −291** | −268.63 (D4) − 30 (legal) + 6.9 (Suscríbete) = **−291.73** |
+| **estrechaPad** · `/monitor-calidad-aire` | **+354** | +339.59 (D4) − 2 (legal) − 25.09 (Suscríbete) + 42 (D3) = **+354.5** |
+| **caso**, 4 rutas | −26 / −27 | D4 del caso |
+
+**Diecinueve rutas moviéndose el mismo número, y ese número predicho por la suma
+de las piezas, es la adjudicación.** No lo es que el total se acerque a cero.
+
+**Dos residuos que NO cuadran, y los dos caen en la familia de ruido documentada
+(27 · 54 · 81):** `/accesorios` mueve **+274** donde su hermano de familia mueve
++354 —**−80**, y `/accesorios` lleva el módulo «Artículos y Guías», que el
+original **baraja en cada carga**—; y `/kunak-api` mueve **+69** donde D3
+predice +42 (**+27**). No se persiguen: están por debajo del suelo conocido de
+ese módulo.
+
+## 3 · El «¡Suscríbete!» — y por qué dos intentos midieron el nodo equivocado
+
+Era el residuo **entero** de `footer-links`: de las cinco columnas, cuatro
+cuadraban al céntimo en las tres presentaciones.
+
+**No fue un descuido de la sonda anterior: era la identidad.** `.et_pb_column`
+identifica la columna en el original y **no existe en el clon**, así que
+`closest()` subía hasta la rejilla (28 enlaces). Ahora el ancla se busca **por
+texto**, la columna por `.et_pb_column` / `data-kunak`, y lo demás se **deriva**.
+
+Dos supuestos que el HTML servido desmintió, **los dos habrían dado «0 anclas»**:
+
+1. En el original el botón **no es un `<a>`**: es `<span role="link">` con el
+   destino en **base64**, resuelto por JS.
+2. **Hay uno por idioma** en el DOM, todos servidos y todos menos uno ocultos por
+   CSS. «Cuántos casan» y «cuántos se ven» son preguntas distintas.
+
+| `footer-links` | @1440 antes | ahora | @390 antes | ahora |
+|---|---|---|---|---|
+| ancha | −4 | **−1** | −7.7 | **−0.79** |
+| software | −1 | −1 | −0.82 | −0.82 |
+| estrechaPad | +1 | +1 | **+26.29** | **+1.2** |
+
+La columna EMPRESA queda a **0.00 contra la caja del original** en las tres
+presentaciones y los dos anchos.
+
+## 4 · El NIVEL, en los dos sentidos, dentro de una misma sonda
+
+Es el hallazgo de método de la tanda, y conviene no volver a pagarlo:
+
+| sentido | qué pasaba | qué habría producido |
+|---|---|---|
+| **arriba** | la columna del clon es un **ítem de rejilla** y va `stretch`: a 1440 su caja es la de la columna más alta | Δ **+51** y **+83** leídos como defecto, siendo sobrante |
+| **abajo** | en el original el `mb` del envoltorio **se escapa** de la columna (contenido 329.59, caja 313.59); el clon, contexto de formato propio, **lo contiene** | **16 px de más** cableados en las tres |
+
+Lo que suma en la fila es **la caja**, en los dos lados — comprobado con la Σ de
+las cinco columnas a 390 (orig 1325.41 · clon 1318.71 · fila −7.7).
+
+Y su corolario, que ya está en `CLAUDE.md`: **a 1440 la fila no se movió en dos
+de las tres presentaciones, y el arreglo era correcto.** Ahí EMPRESA no es la
+columna más alta, así que su error estaba tapado por la holgura. **Con solo la
+fila delante, dos de tres arreglos parecerían inertes.**
+
+## 5 · Lo que queda abierto, en orden
+
+1. **La última corrida de adjudicación a 1440 quedó lanzada** (`c-cmp
+   -- 1440`, salida `medidas/c-cmp-1440-tras-d3.json`). La de 1440 que está
+   congelada —`c-cmp-1440-tras-suscribete.json`— es **anterior a D3**, así que
+   sus tres rutas `solutions` le faltan **+42**. A 390 sí está todo aplicado.
+2. **La cabecera del MONOGRÁFICO: −36.02 a 1440 y 0 a 390.** Salió de paso en
+   `qa:d123`. El clon sirve al monográfico **el valor del sector** a 1440 y el
+   suyo a 390. Es la **regla espejo** con firma de **familia de calibración**.
+   Fichada en `PENDIENTES-QA.md`, sin perseguir.
+3. **El residuo de ~1 px del pie** en las tres presentaciones (fila ~1 + columna
+   CERTIFICACIONES **+0.2**). Sin descomponer.
+4. **La FAMILIA DE CALIBRACIÓN sigue sin cerrarse como clase**: hace falta medir
+   el **ancho del cuerpo** en las 31 rutas, hoy a **0/31** en
+   `COBERTURA-MEDICION.md`. La sonda no existe.
+5. **`/` con su pie propio**, a propósito, y va con C-QA3 (+289.91).
+
+## 6 · Lo que NO hay que hacer al empezar
+
+- **No leer «se aleja de 0» como regresión** sin mirar de qué familia es y
+  cuánto movió. Diecinueve rutas moviendo −292 es la prueba, no el problema.
+- **No reabrir D1 ni D2.** Están medidas en 11 formas y dos anchos: son
+  partición. Tocar el flujo de la cabecera en 31 rutas por un número de
+  partición es el arreglo falso de manual, y ahora hay fichero para probarlo.
+- **No citar el 1440 congelado como si incluyera D3.** No lo incluye.
+- **No leer el `último→pie` de CASO ni de FAQ en `qa:d123`** como defecto: su
+  contenedor se elige por una cadena distinta a la del clon y la sonda lo dice
+  en `via`. Son dos niveles comparados, no un hueco.
+- **No perseguir ±27 ni ±81** en rutas con el módulo «Artículos y Guías».
+
+## 7 · Sondas nuevas de esta tanda
+
+```bash
+npm run qa:d4-sus -- 390|1440     # el bloque «¡Suscríbete!», por composición y con la FILA
+npm run qa:d123   -- 390|1440     # los hijos EN FLUJO del contenedor, 11 formas + cadena de antepasados
+```
+
+Las dos con `Censo`, `SOLO=`, `SALIDA=`, salida congelada y **test en negativo
+que escribe en otro fichero**. Catálogo y las dos trampas que existen para no
+repetir, en `scripts/qa/README.md` §«Las sondas de C1».
+
+`qa:enlaces` **limpio en las dos direcciones** (1725 salientes · 868 entrantes) ·
+`qa:slugs` limpio (A, B y C) · `npm run check` **0 errores** · `c-cmp` **exit 0 a
+1440**; a 390 exit 1 por **un timeout de 120 s del ORIGINAL** en una FAQ —
+reintentada suelta, mide bien (`base 0 · docH −86`), o sea episodio de latencia,
+no defecto del clon.
+
+---
+
 # HANDOFF — `footer-legal` cerrado y la CLASE nombrada; D2/D3/D1 SIGUEN SIN TOCAR
 
 > ⚠ **Tanda 2026-08-01 (4.ª).** Se hicieron los PASOS 0, 1 y 4 del encargo.

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-02"
+  },
+  "paginas": {
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "ruta": "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+      "forma": "faq",
+      "orig": {
+        "h1y": 223.58,
+        "h1": {
+          "w": 312,
+          "h": 274
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "nodosZona": 1,
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 2910,
+        "secciones": []
+      },
+      "clon": {
+        "h1y": 223.58,
+        "h1": {
+          "w": 312,
+          "h": 274
+        },
+        "mapa": null,
+        "etiquetas": {
+          "p": 1
+        },
+        "nodosZona": 1,
+        "iframes": [],
+        "piezasDeCaso": {
+          "sobretitulo": 0,
+          "cliente": 0,
+          "chip": 0,
+          "detalles": 0,
+          "soluciones": 0,
+          "galeria": 0,
+          "migas": 0
+        },
+        "docH": 2824,
+        "secciones": [
+          {
+            "i": 0,
+            "h": 165.58,
+            "txt": ""
+          }
+        ]
+      },
+      "marcadoresServidos": null
+    }
+  }
+}
