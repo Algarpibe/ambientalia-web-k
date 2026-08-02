@@ -119,8 +119,30 @@ const LECTOR = (sabotaje) => {
   );
   const kicker = previos.at(-1) ?? null;
 
+  /* ── Los hijos EN FLUJO de la sección ─────────────────────────────────────
+   * Para el contrato de RANGO no basta el alto de la sección: hay que saber QUÉ
+   * pieza varía con el ancho. El alto es un contenedor con holgura — la regla
+   * del NIVEL— y aquí dentro hay al menos dos cosas distintas: el hueco que deja
+   * la barra de navegación y la fila del título. */
+  const hijosSeccion = [...seccion.children]
+    .filter((el) => {
+      const cs = getComputedStyle(el);
+      return cs.display !== "none" && cs.position !== "absolute" && cs.position !== "fixed";
+    })
+    .map(caja);
+
+  /* La BARRA DE NAVEGACIÓN: en el original va dentro de la sección de cabecera
+   * y en el clon es `absolute` con un hueco cableado. Si su alto varía con el
+   * ancho, el hueco cableado es un defecto de RANGO. */
+  const nav = __q(esOriginal ? "header.et-l--header, #main-header" : "header");
+
   return {
     seccion: caja(seccion),
+    nav: caja(nav),
+    hijosSeccion,
+    // El alto de la sección MENOS el del `h1`: aísla lo que no depende del
+    // envolvimiento del titular, que es lo que tiene que variar con el ancho.
+    sinH1: r(caja(seccion).h - caja(h1).h),
     h1: { ...caja(h1), nLineas: renglones(h1), txt: (h1.textContent || "").replace(/\s+/g, " ").trim().slice(0, 60) },
     kicker: kicker ? { ...caja(kicker), nLineas: renglones(kicker), txt: (kicker.textContent || "").replace(/\s+/g, " ").trim().slice(0, 30) } : null,
     cadena,
@@ -167,6 +189,8 @@ for (const [fam, slug] of LISTA) {
     console.log(`   h1 renglones ${n(o.h1.nLineas)} ${n(c.h1.nLineas)} ${d(o.h1.nLineas, c.h1.nLineas)}`);
     console.log(`   kicker alto  ${n(o.kicker?.h)} ${n(c.kicker?.h)} ${d(o.kicker?.h, c.kicker?.h)}`);
     console.log(`   h1 / padre   orig ${o.fraccion?.h1w} / ${o.fraccion?.padreW} = ${o.fraccion?.pct}%   ·   clon ${c.fraccion?.h1w} / ${c.fraccion?.padreW} = ${c.fraccion?.pct}%`);
+    const pintaHijos = (lado, x) => console.log(`     ${lado} sinH1=${x.sinH1} · hijos: ` + x.hijosSeccion.map((n2) => `<${n2.tag}${n2.clase ? "." + n2.clase.split(" ")[0] : ""} h=${n2.h} pt=${n2.pt} pb=${n2.pb}>`).join(" "));
+    pintaHijos("orig", o); pintaHijos("clon", c);
     const pinta = (lado, x) => console.log(`     ${lado} ` + x.cadena.map((n2) => `<${n2.tag}${n2.clase ? "." + n2.clase.split(" ")[0] : ""} ${n2.w}>`).join(" ← "));
     pinta("orig", o); pinta("clon", c);
   } catch (e) {

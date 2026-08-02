@@ -25,12 +25,29 @@ export function CabeceraSector({ header }: { header: SectorHeader }) {
       {/* Fila Divi: **86% máx 1380** en los dos anchos (medido a 1280/1440/
           1600/1800: 1100.8 · 1238.39 · 1376 · 1380 — el máximo entra a ~1605).
           NO es el 80% de las páginas de producto. py 30 móvil / 2% desktop. */}
-      <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]">
+      {/* `py` de fila: **2 % en desktop, no 28.7969px**. Es el default de fila de
+          Divi, y en CSS un `padding` en % resuelve contra el ancho del bloque
+          contenedor —la sección, que mide el viewport—, o sea exactamente lo que
+          hace el original. Medido: `pt` 28.7969 a 1440 y **25.5938 a 1280**, que
+          son 2 % de 1440 y de 1280.
+
+          Cablear 28.7969 daba el valor correcto a 1440 y **congelaba el de 1280**:
+          defecto de RANGO, no de fidelidad (`CLAUDE.md` §El contrato no es el
+          mismo a todos los anchos). El móvil sigue en 30px porque ahí el original
+          también da 30 fijo. */}
+      <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[2%]">
         {/* Kicker: 40px sobre una caja de línea de 30.6 y `margin-top: -13`.
             El hueco hasta el h1 (29.77 desktop / 16.22 móvil) incluye los
             11.21px de alto del módulo original que no supimos atribuir a
             ninguna regla Divi — ver la spec. */}
-        <p className="-mt-[13px] mb-[16.22px] text-[40px] font-bold leading-[30.6px] text-white md:mb-[29.77px]">
+        {/* Los márgenes de módulo de Divi son PORCENTAJES del ancho de la
+            columna, y en desktop se escriben así para que varíen como el
+            original (contrato de RANGO). Medidos a 1440 y 1280, con la columna a
+            1238.39 y 1100.8:
+              kicker `mt` −13 → −11.55   = **−1.0498 %**
+              kicker `mb`  29.77 → 26.46 = **2.4039 %**
+            El móvil queda en px: ahí el original también da valores fijos. */}
+        <p className="mb-[16.22px] -mt-[13px] text-[40px] font-bold leading-[30.6px] text-white md:mb-[2.4039%] md:mt-[-1.0498%]">
           {header.kicker}
         </p>
 
@@ -59,12 +76,14 @@ export function CabeceraSector({ header }: { header: SectorHeader }) {
             entre 800 y 1000 — el de Divi (980), que este repo ya escribe como
             `min-[981px]:`. Los cinco anchos dan el mismo valor en las 4
             instancias vivas: es plantilla, no campo por instancia. */}
-        <h1 className="w-full pb-[10px] text-[30px] font-normal leading-[36px] tracking-[-0.5px] text-white min-[981px]:w-1/2">
+        {/* El `margin-bottom` del módulo del `h1` iba en un div espaciador con
+            **21.6562px** cableados. Medido: **19.25 a 1280** — o sea **1.7488 %**
+            de la columna en los dos anchos. Pasa a `margin` del propio `h1`
+            (un `height` en % no resuelve sin alto definido del padre) y el div
+            desaparece; a 390 el total no cambia, eran los mismos 5.8594. */}
+        <h1 className="mb-[5.8594px] w-full pb-[10px] text-[30px] font-normal leading-[36px] tracking-[-0.5px] text-white min-[981px]:w-1/2 md:mb-[1.7488%]">
           {header.title}
         </h1>
-
-        {/* margin-bottom del módulo del h1 (21.6562 desktop / 5.8594 móvil) */}
-        <div aria-hidden className="h-[5.8594px] md:h-[21.6562px]" />
       </div>
     </section>
   );

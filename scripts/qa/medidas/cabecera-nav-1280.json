@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "width": 1280,
+    "fecha": "2026-08-02",
+    "solo": "investigación"
+  },
+  "rutas": {
+    "SECTOR · investigación": {
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "orig": {
+        "seccion": {
+          "tag": "div",
+          "clase": "et_pb_section et_pb_section_0_tb_header cabecera",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 338.25,
+          "pt": "0px",
+          "pb": "40px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "nav": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 338.25,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "hijosSeccion": [
+          {
+            "tag": "div",
+            "clase": "et_pb_with_border et_pb_row et_pb_row_0_tb_heade",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 41,
+            "pt": "5px",
+            "pb": "5px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_row et_pb_row_1_tb_header fila-menu-princi",
+            "x": 0,
+            "y": 41,
+            "w": 1280,
+            "h": 95.52,
+            "pt": "19px",
+            "pb": "12px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_row et_pb_row_2_tb_header",
+            "x": 89.59,
+            "y": 136.52,
+            "w": 1100.8,
+            "h": 161.73,
+            "pt": "25.5938px",
+            "pb": "25.5938px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "sinH1": 292.25,
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "x": 89.59,
+          "y": 207.41,
+          "w": 550.39,
+          "h": 46,
+          "pt": "0px",
+          "pb": "10px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "30px",
+          "lh": "36px",
+          "nLineas": 1,
+          "txt": "Estudio de la contaminación atmosférica"
+        },
+        "kicker": {
+          "tag": "div",
+          "clase": "et_pb_text_inner",
+          "x": 89.59,
+          "y": 149.11,
+          "w": 1100.8,
+          "h": 30.59,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "40px",
+          "lh": "30.6px",
+          "nLineas": 1,
+          "txt": "Investigación y consultoría"
+        },
+        "cadena": [
+          {
+            "tag": "h1",
+            "clase": "",
+            "x": 89.59,
+            "y": 207.41,
+            "w": 550.39,
+            "h": 46,
+            "pt": "0px",
+            "pb": "10px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "36px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_text_inner",
+            "x": 89.59,
+            "y": 207.41,
+            "w": 1100.8,
+            "h": 46,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_module et_pb_text et_pb_text_1_tb_header",
+            "x": 89.59,
+            "y": 207.41,
+            "w": 1100.8,
+            "h": 46,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "19.25px",
+            "fs": "30px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_column et_pb_column_4_4 et_pb_column_3_tb_",
+            "x": 89.59,
+            "y": 162.11,
+            "w": 1100.8,
+            "h": 110.55,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_row et_pb_row_2_tb_header",
+            "x": 89.59,
+            "y": 136.52,
+            "w": 1100.8,
+            "h": 161.73,
+            "pt": "25.5938px",
+            "pb": "25.5938px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_section et_pb_section_0_tb_header cabecera",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 338.25,
+            "pt": "0px",
+            "pb": "40px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "fraccion": {
+          "h1w": 550.39,
+          "padreW": 1100.8,
+          "pct": 50
+        }
+      },
+      "clon": {
+        "seccion": {
+          "tag": "section",
+          "clase": "cabecera-sectores w-full bg-cover",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 397.59,
+          "pt": "185px",
+          "pb": "40px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "nav": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 157.89,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "hijosSeccion": [
+          {
+            "tag": "div",
+            "clase": "mx-auto w-[86%] max-w-[1380px]",
+            "x": 89.59,
+            "y": 185,
+            "w": 1100.8,
+            "h": 172.59,
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "sinH1": 351.59,
+        "h1": {
+          "tag": "h1",
+          "clase": "w-full pb-[10px] text-[30px]",
+          "x": 89.59,
+          "y": 261.16,
+          "w": 550.39,
+          "h": 46,
+          "pt": "0px",
+          "pb": "10px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "30px",
+          "lh": "36px",
+          "nLineas": 1,
+          "txt": "Estudio de la contaminación atmosférica"
+        },
+        "kicker": {
+          "tag": "p",
+          "clase": "-mt-[13px] mb-[16.22px] text-[40px]",
+          "x": 89.59,
+          "y": 200.8,
+          "w": 1100.8,
+          "h": 30.59,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "-13px",
+          "mb": "29.77px",
+          "fs": "40px",
+          "lh": "30.6px",
+          "nLineas": 1,
+          "txt": "Investigación y consultoría"
+        },
+        "cadena": [
+          {
+            "tag": "h1",
+            "clase": "w-full pb-[10px] text-[30px]",
+            "x": 89.59,
+            "y": 261.16,
+            "w": 550.39,
+            "h": 46,
+            "pt": "0px",
+            "pb": "10px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "36px"
+          },
+          {
+            "tag": "div",
+            "clase": "mx-auto w-[86%] max-w-[1380px]",
+            "x": 89.59,
+            "y": 185,
+            "w": 1100.8,
+            "h": 172.59,
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "section",
+            "clase": "cabecera-sectores w-full bg-cover",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 397.59,
+            "pt": "185px",
+            "pb": "40px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "fraccion": {
+          "h1w": 550.39,
+          "padreW": 1100.8,
+          "pct": 50
+        }
+      }
+    }
+  }
+}
