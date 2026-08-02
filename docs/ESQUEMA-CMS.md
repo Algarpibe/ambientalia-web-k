@@ -1079,6 +1079,55 @@ las formas que no se midieron.
 > Lo que no cuadraba vivía **en el renglón**, dos niveles más abajo, y solo
 > aparece midiendo por composición: fila → columna → `li`.
 
+### ⚠⚠ 6b.2 · CORRIGE al §6b.1 — son SEIS ejes, y el sexto no es del pie (2026-08-02)
+
+El §6b.1 cerró con **tres ejes y un cuarto anotado**. Al cerrar el residuo
+aparecieron **dos más**, y el segundo obliga a decir del preset algo que no
+estaba dicho.
+
+**(5) El bloque «¡Suscríbete!»**, medido con `qa:d4-sus` en los dos lados y los
+dos anchos. Era el residuo ENTERO de `footer-links`: de las cinco columnas del
+pie, cuatro cuadran al céntimo en las tres presentaciones.
+
+| eje | ancha | estrecha | estrecha+pad |
+|---|---|---|---|
+| `margin-top` del envoltorio | 16 | 16 | **0** |
+| `margin-bottom` del envoltorio | 46 | 46 | **30** |
+| `padding-bottom` del botón | **10** | 3.109 / 2.297 | **10** |
+
+El `padding-bottom` del botón es **el único valor de todo el preset que cambia
+con el ancho**, y solo en `estrecha`. Los demás son idénticos a 1440 y a 390.
+
+**(6) Los 42 px entre el cuerpo y el pie — y NO son un eje del pie.** Son el
+`margin-bottom` del `<article>` del CPT en el original, medido sobre 11 formas
+con `qa:d123`:
+
+| formas | `<article>` | `margin-bottom` |
+|---|---|---|
+| catálogo · software · producto | `type-solutions` | **42** |
+| sector · monográfico · home | `type-page` | 0 |
+| A·blog · A·término · A·documento | no hay `<article>` en la cadena | 0 |
+
+> **Lo que esto cambia del modelo:** el preset **no es «la presentación del
+> pie»**. Es **la presentación que hereda un TIPO DE CONTENIDO**, y el pie es
+> solo donde se vio primero. La frontera de los 42 px es el CPT de WordPress, y
+> resulta ser **exactamente la misma** que separa `ancha` de las dos estrechas.
+> Dos propiedades que no se tocan —una del envoltorio del post, otra del ancho de
+> la fila del pie— caen del mismo lado de la misma raya **porque las dos las fija
+> el tipo de contenido**.
+
+**Consecuencia para el content type:** el preset se nombra por lo que es
+—herencia del tipo de contenido— y puede llevar campos que no pinten en el pie.
+Al migrar, `antesDelPie` es un valor del **tipo**, no del documento, y su defecto
+es 0.
+
+⚠ **Y una advertencia de atribución que hay que arrastrar:** el clon cablea esos
+42 px como espacio antes del pie porque **no tiene envoltorio `<article>`**. La
+geometría es la misma; el dueño no. Quien modele esto en el CMS lo pone en el
+tipo de contenido, no en el componente de pie.
+
+---
+
 **Consecuencia para el content type:** la presentación del pie es un **preset de
 tres valores** (`fila`, `padSeccion`, `tipografía`) que el tipo de página hereda
 entero, no tres campos sueltos que un editor combine. Las tres combinaciones

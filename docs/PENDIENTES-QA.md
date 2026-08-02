@@ -3447,3 +3447,162 @@ Midiendo el ancho de fila del **cuerpo** en las 31 rutas contra el original. Hoy
 ese eje está a **0/31** en `COBERTURA-MEDICION.md` — nunca se ha comparado—, así
 que la clase **no se puede cerrar con lo que hay medido**: haría falta la sonda
 de anchos de cuerpo, que no existe.
+
+---
+
+## D4 · CERRADO el «¡Suscríbete!», y con él `footer-links` (2026-08-02)
+
+Cuarta y última instancia del residuo del pie. Sonda nueva: **`qa:d4-sus`**,
+congelada en `medidas/d4-suscribete-{390,1440}-{antes,despues}.json`.
+
+### Por qué dos intentos anteriores midieron el nodo equivocado
+
+No fue un descuido: **`.et_pb_column` identifica la columna en el original y no
+existe en el clon**, así que cualquier `closest()` subía hasta la rejilla entera
+(28 enlaces). Es la regla de `CLAUDE.md` §sondas — *para identificar un
+componente, el literal de `className` no discrimina*. La identidad ahora es
+semántica y la misma en los dos lados: **el ancla por TEXTO**, la columna por
+`.et_pb_column` / `data-kunak="footer-col"`, y todo lo demás **derivado** de esos
+dos.
+
+Y dos supuestos que el HTML servido desmintió, **los dos habrían dado «0 anclas»
+—un AUSENTE que se lee como «no hay bloque» cuando lo que no hay es la
+suposición**:
+
+1. **En el original el botón no es un `<a>`**: es
+   `<span class="et_pb_button … kunak-obfuscated-link" role="link" tabindex="0"
+   data-url="<base64>">`. El destino va ofuscado y lo resuelve JS.
+2. **Hay uno por IDIOMA en el DOM** (`ocultar-en` · `ocultar-es` · `ocultar-fr`…),
+   todos servidos y todos menos uno ocultos por CSS. «Cuántos casan» y «cuántos
+   se ven» son preguntas distintas; se cuentan las dos y se mide el visible.
+
+### El NIVEL, otra vez, y en los dos sentidos
+
+| | qué pasaba | consecuencia si se ignora |
+|---|---|---|
+| **hacia arriba** | la columna del clon es un **ítem de rejilla** y va `stretch`: a 1440 su caja es la de la columna más alta del pie | Δ **+51** y **+83** que no son defecto, sino sobrante de estirado |
+| **hacia abajo** | en el original el `mb` del envoltorio del botón **se escapa** de la columna (contenido 329.59, caja 313.59); en el clon —contexto de formato propio— **se contiene** | cablear contra el contenido mete **16 px de más** en las tres presentaciones |
+
+Lo que suma en la fila es **la caja**, en los dos lados. Comprobado con la Σ de
+las cinco columnas a 390: orig **1325.41** contra clon **1318.71**, y la fila
+**−7.7** — los tres números encajan.
+
+Por eso la sonda devuelve `altoContenido` **y** `col.h`, y avisa del sobrante.
+
+### El resultado, adjudicado contra el original
+
+`footer-links`, alto de fila:
+
+| presentación | @1440 antes | @1440 ahora | @390 antes | @390 ahora |
+|---|---|---|---|---|
+| ancha | −4 | **−1** | −7.7 | **−0.79** |
+| software | −1 | −1 | −0.82 | −0.82 |
+| estrechaPad | +1 | +1 | **+26.29** | **+1.2** |
+
+Y la columna EMPRESA queda a **0.00 contra la caja del original** en las tres
+presentaciones y los dos anchos.
+
+⚠ **A 1440 la fila NO se mueve en software ni en estrechaPad, y eso es
+correcto**: ahí EMPRESA no es la columna más alta, así que su error estaba
+**tapado por la holgura** de la que sí lo es. Por eso se adjudica **por columna
+además de por fila** — con solo la fila delante, dos de los tres arreglos
+parecerían no haber hecho nada.
+
+### ABIERTO · el residuo que queda, y no es «limpio»
+
+**~1 px en las tres presentaciones**, constante: la fila del clon tiene ~1 menos
+de sobrante propio y la columna CERTIFICACIONES **+0.2** (184.25 contra 184.05).
+Sin descomponer. No se toca.
+
+---
+
+## D1 y D2 · NO EXISTEN — son PARTICIÓN (2026-08-02)
+
+Sonda: **`qa:d123`**, congelada en `medidas/d123-flujo-{390,1440}-*.json`.
+
+`c1-localiza` medía huecos entre secciones **sin mirar qué hay dentro del
+hueco**, y un hueco de 50 px puede ser dos cosas que dan **el mismo número**:
+aire que sobra (defecto) o **un nodo que el censo no cuenta como sección**
+(partición, y el total no se mueve). La única forma de distinguirlas es bajar un
+nivel: enumerar los hijos **en flujo** del contenedor, casen o no con el selector.
+
+| | original | clon | veredicto |
+|---|---|---|---|
+| **D1** −225 | cabecera **en flujo**, 225 | `section.banda-cabecera`, **225** | 225 = 225 |
+| **D2** +50 | `et_pb_section_0`, 50 | **`<nav>`** de migas, **50** | 50 = 50 |
+
+El clon mete la banda de cabecera y las migas **dentro de `main`**; el original
+tiene la cabecera fuera del contenedor y las migas como sección. Mismos píxeles,
+otra caja. `main > section` no cuenta un `<nav>` → los +50; y
+`antesDePrimeraSeccion` vale 0 cuando la primera sección empieza en y=0 → los
+−225.
+
+Comprobado a los dos anchos y en las 11 formas: la banda del clon **iguala al
+céntimo** el alto de la cabecera del original (1440: 225 · 397.59/397.61; 390:
+165.58 · 136.58 · 347.25 · 419.25 · 362.91).
+
+> **Se fichan como desviación deliberada y NO se tocan.** La condición que
+> `PENDIENTES` le había puesto a D1 —«solo si se demuestra que mueve `docH`»— no
+> se cumple; y **nadie se la había puesto a D2**, que resultó ser lo mismo.
+
+---
+
+## D3 · CERRADO — es el `margin-bottom` del `<article>` del CPT (2026-08-02)
+
+Los 42 px viven **fuera** del contenedor, que declara `mb: 0` — desde dentro no
+se ven. Subiendo la cadena de antepasados aparece el dueño:
+
+```
+<article id="post-27049" class="post-27049 solutions type-solutions">
+    margin-bottom: 42px
+```
+
+**Medido sobre 11 formas, no sobre las 3 de C1**, porque el alcance de esto es
+«qué tipos de página lo llevan» y con tres familias eso se supone, no se sabe —
+el error que D4 ya había cometido con 7 de 11:
+
+| formas | `<article>` | `mb` |
+|---|---|---|
+| catálogo · software · producto | `type-solutions` | **42** |
+| sector · monográfico · home | `type-page` | 0 |
+| A·blog · A·término · A·documento | no hay `<article>` en la cadena | 0 |
+
+La frontera es el **CPT de WordPress**, y es **la misma** que ya separa `ancha`
+de las dos estrechas en el pie. Por eso el arreglo entra en esa tabla —un sitio,
+la misma clave— y no en cuatro `page.tsx` copiados a mano.
+
+⚠ **Dónde se cablea no es dónde vive.** En el original el margen es del
+`<article>`; el clon no tiene ese envoltorio y lo expresa como espacio **antes
+del pie** (`antesDelPie`). La geometría coincide —`body` es contenedor flex, el
+margen no colapsa—; la atribución no. Si el clon estrena `<article>`, esto se
+mueve allí.
+
+**Adjudicado contra el original**, `docH` antes → ahora: catálogo **−69 → −27** ·
+software **−84 → −42** · producto **−785 → −743**. Exactamente **+42** en las
+tres y **cero movimiento en las otras ocho formas**. Confirmado a 390: el
+original trae 42 y el clon ahora también.
+
+### ⚠ Dos números de esta sonda que NO son D3
+
+**CASO (7415.09 a 390) y FAQ (468.19)** no tienen cuerpo de Divi, así que su
+contenedor se elige por una **cadena de respaldo distinta a la del clon** — la
+sonda lo dice en `via`. Son dos niveles distintos comparados, no un hueco. **No
+se leen como defecto**; para adjudicar esas dos formas hace falta igualar el
+contenedor primero.
+
+---
+
+## ABIERTO · la cabecera del MONOGRÁFICO, −36.02 y solo a 1440 (2026-08-02)
+
+Salió de paso en `qa:d123` y **no se ha perseguido**. La banda de cabecera:
+
+| | @1440 orig | @1440 clon | @390 orig | @390 clon |
+|---|---|---|---|---|
+| SECTOR | 397.61 | 397.59 | 347.25 | 347.25 |
+| **MONOGRÁFICO** | **433.61** | **397.59** | 419.25 | 419.25 |
+
+A 1440 el clon sirve al monográfico **el valor del sector**; a 390 sirve el suyo
+y cuadra. Es **la regla espejo** —Δ≠0 en un ancho y 0 en el otro no es «casi
+cuadra», es una medida tapada— con la firma de la **FAMILIA DE CALIBRACIÓN**: un
+valor heredado de la familia con la que se midió. Se ficha; no se toca en esta
+tanda, que ya movía el pie de las 31 rutas.

@@ -1,0 +1,5306 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-02",
+    "solo": null
+  },
+  "familias": {
+    "A · blog": {
+      "orig": {
+        "docH": 3420,
+        "cabecera": {
+          "y": 0,
+          "h": 165.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 165.58,
+          "h": 1493.53,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 1659.11,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 165.58,
+            "h": 1493.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--body",
+            "y": 165.58,
+            "h": 1493.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 165.58,
+            "h": 1493.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 165.58,
+            "h": 3254.7,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 3420.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 3420.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 2,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 165.58,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0_tb_body et_section_regular",
+            "txt": "InicioBlogTodas nuestras solucione"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 241.58,
+            "h": 1417.53,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_1_tb_body et_section_regular",
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 2889,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 1127.17,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 1127.17,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 1127.17,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 1127.17,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 3,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 165.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 165.58,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioBlogTodas nuestras solucione"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 241.58,
+            "h": 885.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "w-full bg-white pt-[50px] pb-[50px]",
+            "txt": "Todas nuestras soluciones en el IO"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "A · término": {
+      "orig": {
+        "docH": 9161,
+        "cabecera": {
+          "y": 0,
+          "h": 165.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 165.58,
+          "h": 7234.22,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 7399.8,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 165.58,
+            "h": 7234.22,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--body",
+            "y": 165.58,
+            "h": 7234.22,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 165.58,
+            "h": 7234.22,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 165.58,
+            "h": 8995.39,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 9160.97,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 9160.97,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 2,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 165.58,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0_tb_body et_section_regular",
+            "txt": "InicioRecursosKunakpediaEmisiones "
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 241.58,
+            "h": 7158.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_1_tb_body et_section_regular",
+            "txt": "Emisiones atmosféricas y su impact"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 8819,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 7056.56,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 7056.56,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 7056.56,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 7056.56,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 3,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 165.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 165.58,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioRecursosKunakpediaEmisiones "
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 241.58,
+            "h": 6814.98,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "w-full bg-white pt-[50px] pb-[50px]",
+            "txt": "Emisiones atmosféricas y su impact"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "A · documento": {
+      "orig": {
+        "docH": 4043,
+        "cabecera": {
+          "y": 0,
+          "h": 165.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 165.58,
+          "h": 2116.5,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 2282.08,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 165.58,
+            "h": 2116.5,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--body",
+            "y": 165.58,
+            "h": 2116.5,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 165.58,
+            "h": 2116.5,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 165.58,
+            "h": 3877.67,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 4043.25,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 4043.25,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 2,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 165.58,
+            "h": 102,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0_tb_body et_section_regular",
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 267.58,
+            "h": 2014.5,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_1_tb_body et_section_regular",
+            "txt": "Desafío AIRLAB de microsensores 20"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 3946,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 2184.3,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 2184.3,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 2184.3,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 2184.3,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 3,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 165.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 165.58,
+            "h": 102,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioRecursosDocumentos científic"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 267.58,
+            "h": 1916.72,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "w-full bg-white pt-[50px] pb-[50px]",
+            "txt": "Desafío AIRLAB de microsensores 20"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "CATÁLOGO": {
+      "orig": {
+        "docH": 20629,
+        "cabecera": {
+          "y": 0,
+          "h": 136.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 18085.72,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 18264.3,
+          "h": 2364.39
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 136.58,
+            "h": 18085.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 136.58,
+            "h": 18085.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 136.58,
+            "h": 18085.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-26481",
+            "clase": "post-26481 solutions type-solutions",
+            "y": 136.58,
+            "h": 18085.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 136.58,
+            "h": 18127.72,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 136.58,
+            "h": 20492.11,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 20628.69,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 20628.69,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 4,
+        "nSecciones": 4,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 14459.66,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Accesorios Accesorios para sensore"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 14646.23,
+            "h": 1659.44,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Artículos y Guías Medición de gase"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 16305.67,
+            "h": 1916.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_3 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 21486,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 19077.75,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 19119.75,
+          "h": 2366.17
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 19077.75,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white mt-[42px]",
+            "y": 19119.75,
+            "h": 2366.17,
+            "mt": "42px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 5,
+        "nSecciones": 4,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 136.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosAccesorios"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 15473.25,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "AccesoriosAccesorios para sensores"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 15659.83,
+            "h": 1500.8,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasEHS industrial, t"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 17160.63,
+            "h": 1917.13,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ],
+        "entreUltimoHijoYPie": 41.99
+      }
+    },
+    "SOFTWARE": {
+      "orig": {
+        "docH": 9176,
+        "cabecera": {
+          "y": 0,
+          "h": 136.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 6944.95,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 7123.53,
+          "h": 2052.91
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 136.58,
+            "h": 6944.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 136.58,
+            "h": 6944.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 136.58,
+            "h": 6944.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-27049",
+            "clase": "post-27049 solutions type-solutions",
+            "y": 136.58,
+            "h": 6944.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 136.58,
+            "h": 6986.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 136.58,
+            "h": 9039.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 9176.44,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 9176.44,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 5,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 3162.86,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Kunak API Integración de datos más"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 3349.44,
+            "h": 1436.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Artículos y Guías Impacto ambienta"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 4785.63,
+            "h": 2021.13,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_3 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 6806.75,
+            "h": 274.78,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_4 et_pb_fullwidth_section et_section_regul",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 9166,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 7070.8,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 7112.8,
+          "h": 2053.67
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 7070.8,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white mt-[42px]",
+            "y": 7112.8,
+            "h": 2053.67,
+            "mt": "42px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 6,
+        "nSecciones": 5,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 136.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosKunak API"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 3170.8,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Kunak APIIntegración de datos más "
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 3357.38,
+            "h": 1417.8,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasContaminación por"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 4775.17,
+            "h": 2021.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 6796.8,
+            "h": 274,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Saca el máximo partido a los datos"
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      }
+    },
+    "PRODUCTO": {
+      "orig": {
+        "docH": 23730,
+        "cabecera": {
+          "y": 0,
+          "h": 136.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 21186.94,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 21365.52,
+          "h": 2364.39
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 136.58,
+            "h": 21186.94,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 136.58,
+            "h": 21186.94,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 136.58,
+            "h": 21186.94,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-768",
+            "clase": "post-768 solutions type-solutions",
+            "y": 136.58,
+            "h": 21186.94,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 136.58,
+            "h": 21228.94,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 136.58,
+            "h": 23593.33,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 23729.91,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 23729.91,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 6,
+        "nSecciones": 6,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioProductosAIR Pro"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 6582.47,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_1 et_pb_with_background et_section_regular",
+            "txt": "Kunak AIR Pro Monitor de calidad d"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 6769.05,
+            "h": 965.28,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_2 et_pb_fullwidth_section et_section_regul",
+            "txt": "No se puede mejorar lo que no se p"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 7734.33,
+            "h": 9907.13,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_3 et_section_regular",
+            "txt": "Beneficios Aplicaciones Software E"
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 17641.45,
+            "h": 1713.44,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_4 et_section_regular",
+            "txt": "Artículos y Guías La exposición de"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 19354.89,
+            "h": 1968.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_5 et_pb_with_background et_section_regular",
+            "txt": "Preguntas frecuentes ¿Los equipos "
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      },
+      "clon": {
+        "docH": 22130,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 19721.83,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 19763.83,
+          "h": 2366.17
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 19721.83,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white mt-[42px]",
+            "y": 19763.83,
+            "h": 2366.17,
+            "mt": "42px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 8,
+        "nSecciones": 7,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 136.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera-lg w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 136.58,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioProductosAIR Pro"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 186.58,
+            "h": 1371.88,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Kunak AIR ProMonitor de calidad de"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 1558.45,
+            "h": 4784.89,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "50px",
+            "clase": "bg-white pb-[50px] lg:pb-[4vw]",
+            "txt": "Información del productoDescargar "
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 6343.34,
+            "h": 376.31,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "No se puede mejorar lo que no se p"
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 6719.66,
+            "h": 9532.25,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "50px",
+            "clase": "bg-white pb-[50px] lg:pb-[4vw]",
+            "txt": "BeneficiosAplicacionesSoftwareEspe"
+          },
+          {
+            "i": 6,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 16251.91,
+            "h": 1500.8,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "relative bg-no-repeat bg-white",
+            "txt": "Artículos y GuíasRunning for Clean"
+          },
+          {
+            "i": 7,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 17752.7,
+            "h": 1969.13,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-left-top bg-no-repeat",
+            "txt": "Preguntas frecuentes¿Los equipos K"
+          }
+        ],
+        "entreUltimoHijoYPie": 42
+      }
+    },
+    "SECTOR": {
+      "orig": {
+        "docH": 10940,
+        "cabecera": {
+          "y": 0,
+          "h": 347.25,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 347.25,
+          "h": 8831.95,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 9179.2,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 347.25,
+            "h": 8831.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 347.25,
+            "h": 8831.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 347.25,
+            "h": 8831.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-24961",
+            "clase": "post-24961 page type-page",
+            "y": 347.25,
+            "h": 8831.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 347.25,
+            "h": 8831.95,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 347.25,
+            "h": 10593.13,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 10940.38,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 10940.38,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 7,
+        "nSecciones": 7,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 347.25,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 banda-clientes et_pb_with_background",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 469.25,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_section_regular",
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 519.25,
+            "h": 1564.72,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "20px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Quiero saber más Descargar catálog"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2083.97,
+            "h": 593.39,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_3 et_section_regular",
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2663.36,
+            "h": 1970.16,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "14px",
+            "clase": "et_pb_section et_pb_section_4 et_section_regular",
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 4633.52,
+            "h": 265.06,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_5 et_pb_fullwidth_section et_section_regul",
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "i": 6,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 4898.58,
+            "h": 4280.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_6 et_pb_with_background et_section_regular",
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ],
+        "entreUltimoHijoYPie": -0.01
+      },
+      "clon": {
+        "docH": 10773,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 9010.77,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 9010.77,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 9010.77,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 9010.77,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 8,
+        "nSecciones": 6,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 347.25,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "125.58px",
+            "pb": "40px",
+            "clase": "cabecera-sectores w-full bg-cover bg-center",
+            "txt": "UrbanoCalidad del aire en las ciud"
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 347.25,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-clientes relative",
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 469.25,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioSectoresCalidad del aire en "
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 519.25,
+            "h": 1564.72,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "20px",
+            "clase": "w-full bg-white pb-[20px] pt-[50px]",
+            "txt": "Quiero saber más→Descargar catálog"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2083.97,
+            "h": 584.91,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "¿Necesitas medir la contaminación "
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2654.88,
+            "h": 1970.16,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "14px",
+            "clase": "w-full bg-white -mt-[14px] pb-[14px]",
+            "txt": "Beneficios de monitorizar la calid"
+          },
+          {
+            "i": 6,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 4625.03,
+            "h": 265.06,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Obtén datos fiables y precisos sob"
+          },
+          {
+            "i": 7,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 4890.09,
+            "h": 4120.67,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Nuestras solucionesAIR ProMonitor "
+          }
+        ],
+        "entreUltimoHijoYPie": 0.01
+      }
+    },
+    "MONOGRÁFICO": {
+      "orig": {
+        "docH": 20553,
+        "cabecera": {
+          "y": 0,
+          "h": 419.25,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 419.25,
+          "h": 18372.28,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 18791.53,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 419.25,
+            "h": 18372.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 419.25,
+            "h": 18372.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 419.25,
+            "h": 18372.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-67817",
+            "clase": "post-67817 page type-page",
+            "y": 419.25,
+            "h": 18372.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 419.25,
+            "h": 18372.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 419.25,
+            "h": 20133.45,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 20552.7,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 20552.7,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 8,
+        "nSecciones": 8,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 419.25,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 banda-clientes et_pb_with_background",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 541.25,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 et_section_regular",
+            "txt": "InicioSectoresMonitorización ambie"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 617.25,
+            "h": 1475.16,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "20px",
+            "clase": "et_pb_section et_pb_section_2 et_section_regular",
+            "txt": "Solicita una demo técnica Descarga"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 2092.41,
+            "h": 6853.64,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_3 et_section_regular",
+            "txt": "¿Qué cambia con monitorización con"
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 8946.05,
+            "h": 1196.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "et_pb_section et_pb_section_4 et_section_regular",
+            "txt": "Control perimetral y gestión de qu"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 10129.02,
+            "h": 4135.75,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "14px",
+            "clase": "et_pb_section et_pb_section_5 et_section_regular",
+            "txt": "Beneficios clave para la operación"
+          },
+          {
+            "i": 6,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 14264.77,
+            "h": 300.14,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_6 et_pb_fullwidth_section et_section_regul",
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "i": 7,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 14564.91,
+            "h": 4226.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_7 et_pb_with_background et_section_regular",
+            "txt": "Nuestras soluciones AIR ProMonitor"
+          }
+        ],
+        "entreUltimoHijoYPie": -0.01
+      },
+      "clon": {
+        "docH": 20476,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 18714.34,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 18714.34,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 18714.34,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 18714.34,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 9,
+        "nSecciones": 7,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 419.25,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "125.58px",
+            "pb": "40px",
+            "clase": "cabecera-sectores w-full bg-cover bg-center",
+            "txt": "EDARMonitorización ambiental en ED"
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 419.25,
+            "h": 122,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-clientes relative",
+            "txt": ""
+          },
+          {
+            "i": 2,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 541.25,
+            "h": 76,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioSectoresMonitorización ambie"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 617.25,
+            "h": 1566.16,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "20px",
+            "clase": "w-full bg-white pb-[20px] pt-[50px]",
+            "txt": "Solicita una demo técnica→Descarga"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 2183.41,
+            "h": 6853.5,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "w-full bg-white pb-[50px] pt-[50px]",
+            "txt": "¿Qué cambia con monitorización con"
+          },
+          {
+            "i": 5,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 9036.91,
+            "h": 1196.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "50px",
+            "clase": "w-full bg-white pb-[50px] pt-[50px]",
+            "txt": "Control perimetral y gestión de qu"
+          },
+          {
+            "i": 6,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 10219.88,
+            "h": 4135.73,
+            "mt": "-14px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "14px",
+            "clase": "w-full bg-white pb-[50px] pt-[50px]",
+            "txt": "Beneficios clave para la operación"
+          },
+          {
+            "i": 7,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 14355.61,
+            "h": 265.06,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "Reduce el impacto ambiental midien"
+          },
+          {
+            "i": 8,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 14620.67,
+            "h": 4093.67,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "relative bg-white bg-no-repeat pt-[50px]",
+            "txt": "Nuestras solucionesAIR ProMonitor "
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "CASO": {
+      "orig": {
+        "docH": 9889,
+        "cabecera": {
+          "y": 0,
+          "h": 362.91,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et-l",
+          "y": 362.91,
+          "h": 85.19,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 7863.19,
+          "h": 2026.23
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l",
+            "y": 362.91,
+            "h": 85.19,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 362.91,
+            "h": 7500.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 362.91,
+            "h": 7500.28,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 9889.42,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 9889.42,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "article",
+            "clase": "post-29107 case-studies type-case-studie",
+            "y": 448.09,
+            "h": 5823.59,
+            "mt": "0px",
+            "mb": "64px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Caso de éxito Red global"
+          },
+          {
+            "tag": "aside",
+            "clase": "container case-list",
+            "y": 6335.69,
+            "h": 1463.5,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "33px",
+            "pb": "0px",
+            "txt": "Otros casos Ver todos lo"
+          }
+        ],
+        "nHijos": 1,
+        "nSecciones": 1,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 362.91,
+            "h": 85.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "migas et_pb_section et_pb_section_0 et_section_regular",
+            "txt": "InicioCasos de éxitoRed global de "
+          }
+        ],
+        "entreUltimoHijoYPie": 7415.09
+      },
+      "clon": {
+        "docH": 8199,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 6171.53,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 6171.53,
+          "h": 2027.03
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 6171.53,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 6171.53,
+            "h": 2027.03,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "¿Necesitas información f"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 4,
+        "nSecciones": 2,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 362.91,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "nav",
+            "esSeccion": false,
+            "y": 362.91,
+            "h": 85.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white",
+            "txt": "InicioCasos de éxitoRed global de "
+          },
+          {
+            "i": 2,
+            "tag": "article",
+            "esSeccion": false,
+            "y": 448.09,
+            "h": 5458.38,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "",
+            "txt": "Caso de éxitoRed global de calidad"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 5906.47,
+            "h": 265.06,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "¿Necesitas información fiable para"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "FAQ": {
+      "orig": {
+        "docH": 3175,
+        "cabecera": {
+          "y": 0,
+          "h": 165.58,
+          "position": "relative",
+          "enFlujo": true
+        },
+        "contenedor": {
+          "via": "#main-content .entry-content",
+          "tag": "div",
+          "clase": "entry-content",
+          "y": 409.58,
+          "h": 535.97,
+          "pt": "30px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 1413.73,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 409.58,
+            "h": 535.97,
+            "pt": "30px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-65776",
+            "clase": "et_pb_post post-65776 faqs",
+            "y": 223.58,
+            "h": 721.97,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "42px"
+          },
+          {
+            "tag": "div",
+            "id": "left-area",
+            "clase": "",
+            "y": 223.58,
+            "h": 721.97,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "content-area",
+            "clase": "clearfix",
+            "y": 223.58,
+            "h": 1190.16,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "container",
+            "y": 165.58,
+            "h": 1248.16,
+            "pt": "58px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 165.58,
+            "h": 1248.16,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 165.58,
+            "h": 3009.33,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 3174.91,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 3174.91,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "div",
+            "clase": "et_post_meta_wrapper",
+            "y": 945.55,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 3,
+        "nSecciones": 0,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "ul",
+            "esSeccion": false,
+            "y": 439.58,
+            "h": 335,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "23px",
+            "clase": "",
+            "txt": "La calibración ajusta la respuesta"
+          },
+          {
+            "i": 1,
+            "tag": "p",
+            "esSeccion": false,
+            "y": 774.58,
+            "h": 140.38,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "18px",
+            "clase": "",
+            "txt": "En síntesis, la calibración usa un"
+          },
+          {
+            "i": 2,
+            "tag": "p",
+            "esSeccion": false,
+            "y": 914.95,
+            "h": 30.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "",
+            "txt": "Más info en la página 35 del catál"
+          }
+        ],
+        "entreUltimoHijoYPie": 468.19
+      },
+      "clon": {
+        "docH": 3170,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 1407.61,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 1407.61,
+          "h": 1761.97
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 1407.61,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white ",
+            "y": 1407.61,
+            "h": 1761.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 2,
+        "nSecciones": 1,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 165.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-cabecera w-full bg-cover bg-center",
+            "txt": ""
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 165.58,
+            "h": 1242.03,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "58px",
+            "pb": "0px",
+            "clase": "container mx-auto w-[80%] max-w-[1152px]",
+            "txt": "¿Cuál es la diferencia entre calib"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    },
+    "HOME": {
+      "orig": {
+        "docH": 19221,
+        "cabecera": {
+          "y": 0,
+          "h": 165.58,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "seccion.parentElement",
+          "tag": "div",
+          "clase": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 17459.86,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 17459.86,
+          "h": 1761.17
+        },
+        "cadena": [
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et_builder_inner_content et_pb_gutters3",
+            "y": 0,
+            "h": 17459.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "et-l et-l--post",
+            "y": 0,
+            "h": 17459.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": null,
+            "clase": "entry-content",
+            "y": 0,
+            "h": 17459.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "article",
+            "id": "post-24305",
+            "clase": "post-24305 page type-page",
+            "y": 0,
+            "h": 17459.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "main-content",
+            "clase": "",
+            "y": 0,
+            "h": 17459.86,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-main-area",
+            "clase": "",
+            "y": 0,
+            "h": 19221.03,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "et-boc",
+            "clase": "et-boc",
+            "y": 0,
+            "h": 19221.03,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          },
+          {
+            "tag": "div",
+            "id": "page-container",
+            "clase": "",
+            "y": 0,
+            "h": 19221.03,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [],
+        "nHijos": 13,
+        "nSecciones": 13,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 0,
+            "h": 836.48,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_0 banner-home et_pb_with_background",
+            "txt": "Monitoreo de la calidad del aire L"
+          },
+          {
+            "i": 1,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 836.48,
+            "h": 265.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_1 banda-clientes et_pb_with_background",
+            "txt": "Con la confianza de empresas líder"
+          },
+          {
+            "i": 2,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 1101.67,
+            "h": 4883.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "59px",
+            "clase": "et_pb_section et_pb_section_2 et_pb_with_background et_section_regular",
+            "txt": "La solución profesional para la mo"
+          },
+          {
+            "i": 3,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 5985.64,
+            "h": 964.88,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "59px",
+            "clase": "et_pb_section et_pb_section_3 et_section_regular",
+            "txt": "Sectores Descargar catálogo Contro"
+          },
+          {
+            "i": 4,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 6950.52,
+            "h": 567.5,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "19.5px",
+            "clase": "et_pb_section et_pb_section_4 et_pb_fullwidth_section et_section_regul",
+            "txt": "Investigación y consultoría Estudi"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 7518.02,
+            "h": 50,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_5 et_section_regular",
+            "txt": ""
+          },
+          {
+            "i": 6,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 7568.02,
+            "h": 319.66,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "19.5px",
+            "clase": "et_pb_section et_pb_section_6 et_pb_fullwidth_section et_section_regul",
+            "txt": "¿Estás inmerso en un proyecto de c"
+          },
+          {
+            "i": 7,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 7887.67,
+            "h": 5167.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_7 et_pb_with_background et_section_regular",
+            "txt": "Presencia mundial Las estaciones K"
+          },
+          {
+            "i": 8,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 13054.89,
+            "h": 312.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_8 et_pb_fullwidth_section et_section_regul",
+            "txt": "Innovación en calidad del aire a 1"
+          },
+          {
+            "i": 9,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 13381.67,
+            "h": 1422.53,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_9 et_pb_with_background et_section_regular",
+            "txt": "Últimos artículos Monitorización d"
+          },
+          {
+            "i": 10,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 14804.2,
+            "h": 1473.42,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_10 et_section_regular",
+            "txt": "Últimos proyectos Sector: EDAR / P"
+          },
+          {
+            "i": 11,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 16277.63,
+            "h": 229.97,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "et_pb_section et_pb_section_11 et_pb_fullwidth_section et_section_regu",
+            "txt": "¿Te preocupa la calidad del aire q"
+          },
+          {
+            "i": 12,
+            "tag": "div",
+            "esSeccion": true,
+            "y": 16507.59,
+            "h": 952.27,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "59px",
+            "clase": "et_pb_section et_pb_section_12 et_section_regular",
+            "txt": "Comprometidos con la sostenibilida"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      },
+      "clon": {
+        "docH": 19182,
+        "cabecera": {
+          "y": 0,
+          "h": 126,
+          "position": "absolute",
+          "enFlujo": false
+        },
+        "contenedor": {
+          "via": "main",
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "y": 0,
+          "h": 17420.27,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px"
+        },
+        "pie": {
+          "y": 17420.27,
+          "h": 1761.59
+        },
+        "cadena": [
+          {
+            "tag": "main",
+            "id": null,
+            "clase": "flex flex-1 flex-col",
+            "y": 0,
+            "h": 17420.27,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px"
+          }
+        ],
+        "despuesDelContenedor": [
+          {
+            "tag": "footer",
+            "clase": "et-l--footer bg-white",
+            "y": 17420.27,
+            "h": 1761.59,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "PRODUCTOSKunak AIR ProKu"
+          },
+          {
+            "tag": "button",
+            "clase": "fixed right-0 z-[99999] flex h-[40px] w-",
+            "y": 679,
+            "h": 40,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "script",
+            "clase": "",
+            "oculto": true
+          },
+          {
+            "tag": "next-route-announcer",
+            "clase": "",
+            "y": 0,
+            "h": 0,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": ""
+          }
+        ],
+        "nHijos": 13,
+        "nSecciones": 11,
+        "hijos": [
+          {
+            "i": 0,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 0,
+            "h": 833.73,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "120px",
+            "pb": "70px",
+            "clase": "banner-home relative overflow-hidden pb-[70px]",
+            "txt": "Monitoreo de la calidad del aireLa"
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 833.73,
+            "h": 237,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "banda-clientes relative",
+            "txt": "Con la confianza de empresas líder"
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 1070.73,
+            "h": 4883.78,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "50px",
+            "pb": "59px",
+            "clase": "relative bg-white pb-[59px] pt-[50px]",
+            "txt": "La solución profesional para la mo"
+          },
+          {
+            "i": 3,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 5954.52,
+            "h": 964.88,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "80px",
+            "pb": "89px",
+            "clase": "relative bg-white pb-[89px] pt-[80px]",
+            "txt": "SectoresDescargar catálogo→Control"
+          },
+          {
+            "i": 4,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 6919.39,
+            "h": 569,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "40px",
+            "clase": "jsx-52f612d58784b7b sectoresSwiper-wrapper relative w-full",
+            "txt": "Investigación y consultoríaEstudia"
+          },
+          {
+            "i": 5,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 7488.39,
+            "h": 56,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "",
+            "txt": ""
+          },
+          {
+            "i": 6,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 7544.39,
+            "h": 319.38,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "20px",
+            "clase": "w-full bg-white pb-[20px] md:pb-[71px]",
+            "txt": "¿Estás inmerso en un proyecto de c"
+          },
+          {
+            "i": 7,
+            "tag": "div",
+            "esSeccion": false,
+            "y": 7863.77,
+            "h": 5154.39,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "bg-white bg-no-repeat",
+            "txt": "Presencia mundialLas estaciones Ku"
+          },
+          {
+            "i": 8,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 13018.16,
+            "h": 312.16,
+            "mt": "0px",
+            "mb": "15px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "mb-[15px] w-full bg-white md:mb-[53px]",
+            "txt": "Innovación en calidad del aire a 1"
+          },
+          {
+            "i": 9,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 13345.31,
+            "h": 1425.91,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "80px",
+            "pb": "50px",
+            "clase": "relative bg-no-repeat bg-white pb-[50px]",
+            "txt": "Últimos artículosMonitorización de"
+          },
+          {
+            "i": 10,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 14771.22,
+            "h": 1466.23,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "56px",
+            "pb": "50px",
+            "clase": "relative bg-white pb-[50px] pt-[56px]",
+            "txt": "Últimos proyectosSector: EDAR / PT"
+          },
+          {
+            "i": 11,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 16237.45,
+            "h": 229.19,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "clase": "w-full bg-white",
+            "txt": "¿Te preocupa la calidad del aire q"
+          },
+          {
+            "i": 12,
+            "tag": "section",
+            "esSeccion": true,
+            "y": 16466.64,
+            "h": 953.63,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "70px",
+            "pb": "80px",
+            "clase": "relative bg-white pb-[80px] pt-[70px]",
+            "txt": "Comprometidos con la sostenibilida"
+          }
+        ],
+        "entreUltimoHijoYPie": 0
+      }
+    }
+  }
+}

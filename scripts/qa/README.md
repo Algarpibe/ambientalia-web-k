@@ -575,3 +575,40 @@ Tres cosas que costaron una corrida cada una y están anotadas en el código:
   original escribe `<p><span>Parámetros:</span><br><ul>…</ul></p>`, y `<ul>`
   dentro de `<p>` es inválido: el parser cierra el `<p>` antes, así que la lista
   queda de **hermana**. El campo salía vacío — un dato plausible, no un error.
+
+---
+
+## Las sondas de C1 — el cascarón fuera de sección (D1…D4)
+
+`c1-localiza` abrió el «resto» de `docH` en cuatro piezas que suman al céntimo.
+Cada una tiene después su sonda, porque **una descomposición dice cuánto, no
+qué**.
+
+| sonda | qué mide |
+|---|---|
+| `c1-localiza.mjs [ancho]` | la descomposición: antes de la 1.ª sección · Σ huecos · última→pie · alto del pie. **Diagnóstico, no arregla** |
+| `d4-pie.mjs [ancho]` | el pie por composición en **11 formas**, un selector por lado y diciendo cuál (`via`). `SOLO=` acota, `SALIDA=` nombra la corrida |
+| `d4-tipografia.mjs` | el tercer eje del pie: `li`, `ul` y legal, renglón a renglón, **los dos lados** |
+| `d4-cta.mjs` | la 4.ª sección del pie, que solo lleva el CASO |
+| `d4-suscribete.mjs [ancho]` | **el bloque «¡Suscríbete!»** de la columna EMPRESA, por composición (título · `ul` · hueco · botón · hueco) y con la FILA y sus cinco columnas. Devuelve `altoContenido` **y** `col.h`, y avisa del sobrante de estirado |
+| `d123-flujo.mjs [ancho]` | **enumera los hijos en flujo** del contenedor de cuerpo en 11 formas, más la cadena de antepasados y lo que va después. Es la que distingue partición de defecto |
+
+**Las dos trampas que estas sondas existen para no repetir:**
+
+1. **Un hueco no es aire hasta que miras dentro.** `main > section` no cuenta un
+   `<nav>`; `antesDePrimeraSeccion` vale 0 si la primera sección empieza en y=0.
+   Así nacieron D1 (−225) y D2 (+50), que **no existen**: son la misma altura
+   partida de otra forma. Se ven enumerando **todos** los hijos en flujo, no solo
+   los que casan con el selector de sección.
+2. **La columna del clon es un ítem de rejilla.** Va `stretch`, así que su caja es
+   la de la columna más alta del pie y a 1440 daba Δ +51 y +83 que eran sobrante,
+   no defecto. Y en el original el margen del último hijo **se escapa** de la
+   columna. Lo que suma en la fila es **la caja**, en los dos lados: se adjudica
+   contra `altoContenido`, y `col.h` queda en la salida para poder exhibir la
+   diferencia.
+
+**Y una de alcance, que ya se pagó dos veces:** el pie se midió primero con **7
+familias de 11** y D3 con **3**. Las dos veces el número que faltaba era de una
+forma no medida. Cuando lo que se busca es *«qué tipos de página llevan esto»*,
+**la lista de formas es el experimento** — recortarla no ahorra, decide el
+resultado.
