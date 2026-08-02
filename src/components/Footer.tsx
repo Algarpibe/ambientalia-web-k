@@ -154,6 +154,29 @@ type Presentacion = {
    * esto se mueve allí. Queda dicho para que nadie lo lea como un margen del pie.
    */
   antesDelPie: string;
+  /**
+   * SÉPTIMO eje — los BORDES de la fila de enlaces. Cerraba el residuo de ~1 px
+   * que quedó fichado sin descomponer el 2026-08-02, y no era ruido:
+   *
+   * | presentación | `border-top` | `border-bottom` |
+   * |---|---|---|
+   * | ancha | 1px | **1px** |
+   * | estrecha | 1px | **1px** |
+   * | estrechaPad | **0** | **0** |
+   *
+   * El clon servía `border-top: 1px` y nada abajo **en las tres**: −1 en ancha y
+   * estrecha (le falta el de abajo) y **+1 en estrechaPad** (le sobra el de
+   * arriba). Los dos signos del mismo cableado, que es la firma de siempre.
+   *
+   * ⚠ Y no es solo 1 px de alto: en catálogo y producto el clon **pinta una
+   * línea de `#333` cruzando el pie que el original no tiene**. Se veía.
+   *
+   * Se descubrió midiendo `pt + pb + Σcolumnas` contra el alto de la fila: el
+   * original sobraba **2.01** y el clon **1.01**, constante en los dos anchos y
+   * en las tres presentaciones. Un residuo constante no es ruido — el ruido no
+   * se repite igual a 1440 y a 390.
+   */
+  borde: string;
 };
 
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
@@ -172,6 +195,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     social: "h-[31.6px]",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[10px]",
     antesDelPie: "",
+    borde: "border-y border-[#333]",
   },
   estrecha: {
     fila: ESTRECHA_FILA,
@@ -185,6 +209,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     social: "h-[61.59px]",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
     antesDelPie: "mt-[42px]",
+    borde: "border-y border-[#333]",
   },
   estrechaPad: {
     fila: ESTRECHA_FILA,
@@ -198,6 +223,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     social: "h-[61.59px]",
     sus: "mb-[30px] [&>a]:pb-[10px]",
     antesDelPie: "mt-[42px]",
+    borde: "",
   },
 };
 
@@ -262,7 +288,7 @@ export function Footer({
     <div
       className={
         tb
-          ? `mx-auto grid ${p.fila} grid-cols-1 border-t border-[#333] pb-[30px] pt-[30px] sm:grid-cols-3 sm:py-[2%] lg:grid-cols-5`
+          ? `mx-auto grid ${p.fila} ${p.borde} grid-cols-1 pb-[30px] pt-[30px] sm:grid-cols-3 sm:py-[2%] lg:grid-cols-5`
           : "grid grid-cols-1 gap-8 border-t border-[#333] pb-[62px] pt-[30px] sm:grid-cols-3 sm:pb-[55px] sm:pt-[28px] lg:grid-cols-5"
       }
     >

@@ -1,0 +1,547 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "ancha"
+  },
+  "formas": {
+    "ancha · A·blog": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "fila": {
+          "y": 1235.86,
+          "h": 373.19,
+          "w": 1238.39,
+          "bottom": 1609.05,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "1px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            232.59,
+            284.59,
+            313.59,
+            310.59,
+            184.05
+          ],
+          "colsContenido": [
+            232.59,
+            284.59,
+            329.59,
+            310.59,
+            184.05
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 1265.66,
+          "h": 313.59,
+          "w": 247.67,
+          "bottom": 1579.25,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 329.59,
+        "estirada": -16,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 1265.66,
+              "h": 206.59,
+              "w": 247.67,
+              "bottom": 1472.25,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 1472.25,
+              "h": 0,
+              "w": 247.67,
+              "bottom": 1472.25,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 1579.25,
+              "h": 0,
+              "w": 247.67,
+              "bottom": 1579.25,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 1296.25,
+            "h": 144,
+            "w": 247.67,
+            "bottom": 1440.25,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "14px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 48,
+          "boton": {
+            "tag": "span",
+            "y": 1488.25,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 1533.25,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 1488.25,
+            "h": 75,
+            "w": 247.67,
+            "bottom": 1563.25,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 62,
+          "gapDespuesCaja": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 5
+        },
+        "fila": {
+          "y": 867.66,
+          "h": 372.19,
+          "w": 1238.39,
+          "bottom": 1239.84,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "0px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            313.59,
+            313.59,
+            313.59,
+            313.59,
+            313.59
+          ],
+          "colsContenido": [
+            232.59,
+            284.59,
+            313.59,
+            310.59,
+            184.25
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 897.45,
+          "h": 313.59,
+          "w": 247.69,
+          "bottom": 1211.05,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 313.6,
+        "estirada": 0,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 897.45,
+              "h": 30.59,
+              "w": 247.69,
+              "bottom": 928.05,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 928.05,
+              "h": 176,
+              "w": 247.69,
+              "bottom": 1104.05,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 928.05,
+            "h": 176,
+            "w": 247.69,
+            "bottom": 1104.05,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 1120.05,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 1165.05,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 1120.05,
+            "h": 45,
+            "w": 247.69,
+            "bottom": 1165.05,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46,
+          "gapDespuesCaja": 46
+        }
+      }
+    },
+    "ancha · SECTOR": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "fila": {
+          "y": 5517.77,
+          "h": 373.19,
+          "w": 1238.39,
+          "bottom": 5890.95,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "1px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            232.59,
+            284.59,
+            313.59,
+            310.59,
+            184.05
+          ],
+          "colsContenido": [
+            232.59,
+            284.59,
+            329.59,
+            310.59,
+            184.05
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 5547.56,
+          "h": 313.59,
+          "w": 247.67,
+          "bottom": 5861.16,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 329.6,
+        "estirada": -16,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 5547.56,
+              "h": 206.59,
+              "w": 247.67,
+              "bottom": 5754.16,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 5754.16,
+              "h": 0,
+              "w": 247.67,
+              "bottom": 5754.16,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 5861.16,
+              "h": 0,
+              "w": 247.67,
+              "bottom": 5861.16,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 5578.16,
+            "h": 144,
+            "w": 247.67,
+            "bottom": 5722.16,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "14px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 48,
+          "boton": {
+            "tag": "span",
+            "y": 5770.16,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 5815.16,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 5770.16,
+            "h": 75,
+            "w": 247.67,
+            "bottom": 5845.16,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 62,
+          "gapDespuesCaja": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 5
+        },
+        "fila": {
+          "y": 5498.05,
+          "h": 372.19,
+          "w": 1238.39,
+          "bottom": 5870.23,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "0px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            313.59,
+            313.59,
+            313.59,
+            313.59,
+            313.59
+          ],
+          "colsContenido": [
+            232.59,
+            284.59,
+            313.59,
+            310.59,
+            184.25
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 5527.84,
+          "h": 313.59,
+          "w": 247.69,
+          "bottom": 5841.44,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 313.6,
+        "estirada": 0,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 5527.84,
+              "h": 30.59,
+              "w": 247.69,
+              "bottom": 5558.44,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 5558.44,
+              "h": 176,
+              "w": 247.69,
+              "bottom": 5734.44,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "46px",
+              "fs": "14px",
+              "lh": "26px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 5558.44,
+            "h": 176,
+            "w": 247.69,
+            "bottom": 5734.44,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "46px",
+            "fs": "14px",
+            "lh": "26px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 5750.44,
+            "h": 45,
+            "w": 155.39,
+            "bottom": 5795.44,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "10px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 5750.44,
+            "h": 45,
+            "w": 247.69,
+            "bottom": 5795.44,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46,
+          "gapDespuesCaja": 46
+        }
+      }
+    }
+  }
+}

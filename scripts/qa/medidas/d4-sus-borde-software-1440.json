@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "SOFTWARE"
+  },
+  "formas": {
+    "estrecha · SOFTWARE": {
+      "orig": {
+        "via": {
+          "col": "et_pb_column",
+          "nColsPie": 9
+        },
+        "fila": {
+          "y": 4797.22,
+          "h": 460.53,
+          "w": 1152,
+          "bottom": 5257.75,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "1px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            288.16,
+            363.34,
+            349.86,
+            400.94,
+            184.05
+          ],
+          "colsContenido": [
+            288.16,
+            363.34,
+            365.86,
+            400.94,
+            184.05
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 5,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "span[role=link]",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 4827.02,
+          "h": 349.86,
+          "w": 230.39,
+          "bottom": 5176.88,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 365.85,
+        "estirada": -15.99,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "div",
+              "y": 4827.02,
+              "h": 250.56,
+              "w": 230.39,
+              "bottom": 5077.58,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 5077.58,
+              "h": 0,
+              "w": 230.39,
+              "bottom": 5077.58,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "div",
+              "y": 5176.88,
+              "h": 0,
+              "w": 230.39,
+              "bottom": 5176.88,
+              "mt": "0px",
+              "mb": "16px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "18px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 4857.61,
+            "h": 180.97,
+            "w": 230.39,
+            "bottom": 5038.58,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "14px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 55,
+          "boton": {
+            "tag": "span",
+            "y": 5093.58,
+            "h": 37.3,
+            "w": 155.39,
+            "bottom": 5130.88,
+            "mt": "0px",
+            "mb": "30px",
+            "pt": "7.5px",
+            "pb": "2.29688px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 5093.58,
+            "h": 67.3,
+            "w": 230.39,
+            "bottom": 5160.88,
+            "mt": "0px",
+            "mb": "16px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 61.99,
+          "gapDespuesCaja": 46
+        }
+      },
+      "clon": {
+        "via": {
+          "col": "data-kunak",
+          "nColsPie": 5
+        },
+        "fila": {
+          "y": 4755.86,
+          "h": 459.53,
+          "w": 1152,
+          "bottom": 5215.39,
+          "pt": "28.7969px",
+          "pb": "28.7969px",
+          "bt": "1px",
+          "bb": "0px",
+          "boxSizing": "border-box",
+          "nCols": 5,
+          "colsCaja": [
+            400.94,
+            400.94,
+            400.94,
+            400.94,
+            400.94
+          ],
+          "colsContenido": [
+            288.16,
+            363.34,
+            349.86,
+            400.94,
+            184.25
+          ],
+          "iEmpresa": 2
+        },
+        "control": {
+          "nEnlacesCol": 6,
+          "nUls": 1,
+          "nCandidatos": 1,
+          "tagAncla": "a",
+          "hOcultos": []
+        },
+        "col": {
+          "tag": "div",
+          "y": 4785.66,
+          "h": 400.94,
+          "w": 230.39,
+          "bottom": 5186.59,
+          "mt": "0px",
+          "mb": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "altoContenido": 349.86,
+        "estirada": 51.07,
+        "piezas": {
+          "antesDelUl": [
+            {
+              "tag": "p",
+              "y": 4785.66,
+              "h": 30.59,
+              "w": 230.39,
+              "bottom": 4816.25,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "0px",
+              "fs": "14px",
+              "lh": "30.6px"
+            },
+            {
+              "tag": "ul",
+              "y": 4816.25,
+              "h": 219.97,
+              "w": 230.39,
+              "bottom": 5036.22,
+              "mt": "0px",
+              "mb": "0px",
+              "pt": "0px",
+              "pb": "32px",
+              "fs": "14px",
+              "lh": "30.6px"
+            }
+          ],
+          "ul": {
+            "tag": "ul",
+            "y": 4816.25,
+            "h": 219.97,
+            "w": 230.39,
+            "bottom": 5036.22,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "0px",
+            "pb": "32px",
+            "fs": "14px",
+            "lh": "30.6px"
+          },
+          "gapAntes": 16,
+          "boton": {
+            "tag": "a",
+            "y": 5052.22,
+            "h": 37.3,
+            "w": 155.39,
+            "bottom": 5089.52,
+            "mt": "0px",
+            "mb": "0px",
+            "pt": "7.5px",
+            "pb": "2.297px",
+            "fs": "15px",
+            "lh": "25.5px"
+          },
+          "wrapper": {
+            "tag": "div",
+            "y": 5052.22,
+            "h": 37.3,
+            "w": 230.39,
+            "bottom": 5089.52,
+            "mt": "16px",
+            "mb": "46px",
+            "pt": "0px",
+            "pb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          "gapDespues": 46,
+          "gapDespuesCaja": 97.07
+        }
+      }
+    }
+  }
+}

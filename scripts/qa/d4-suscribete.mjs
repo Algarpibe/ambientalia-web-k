@@ -158,6 +158,8 @@ const LECTOR = (sabotaje) => {
       ? {
           ...R(filaEl),
           pt: csFila.paddingTop, pb: csFila.paddingBottom,
+          bt: csFila.borderTopWidth, bb: csFila.borderBottomWidth,
+          boxSizing: csFila.boxSizing,
           nCols: filaCols.length,
           colsCaja: filaCols.map((c) => r(c.getBoundingClientRect().height)),
           colsContenido: filaCols.map(contenidoDe),
