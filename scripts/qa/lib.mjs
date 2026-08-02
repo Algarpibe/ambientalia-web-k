@@ -318,7 +318,63 @@ function alLado(destino) {
   return cand;
 }
 
+/* ═════════════════════════════════════════════════════════════════════════
+ * GUARDA DE INTEGRIDAD DE BUILD — que un `build` concurrente no pueda
+ * invalidar una corrida EN SILENCIO
+ *
+ * Se pagó dos veces, la segunda el 2026-08-02: `npm run check` construye, y
+ * lanzarlo con una sonda en vuelo le cambia el `.next` al servidor vivo. Salieron
+ * **404 en 4 rutas que existen**, y lo grave no fue el 404:
+ *
+ *   > **no se sabía dónde había caído el corte.** Las rutas medidas antes del
+ *   > cambiazo eran buenas y las de después no, y el fichero no las distingue.
+ *
+ * Next escribe un identificador por build en `.next/BUILD_ID`. Se lee al cargar
+ * `lib.mjs` —o sea al arrancar la sonda— y se vuelve a leer al congelar. Si
+ * cambió, **la corrida entera está contaminada** y no puede pasar por buena.
+ *
+ * Vive en `w()` y no en cada sonda **a propósito**: es el sitio por el que
+ * escriben las 19, así que la guarda las cubre todas sin tocar ninguna. Es la
+ * misma decisión que la guarda de sobrescritura y que `Censo` — *arreglar la
+ * CLASE y no la instancia* (`CLAUDE.md` §sondas, regla 5).
+ * ═════════════════════════════════════════════════════════════════════════ */
+const RUTA_BUILD_ID = path.join(QA, "../../.next/BUILD_ID");
+const leeBuildId = () => {
+  try {
+    return fs.readFileSync(RUTA_BUILD_ID, "utf8").trim();
+  } catch {
+    return null; // sin `.next`: la sonda puede estar midiendo solo el original
+  }
+};
+/** El build con el que arrancó esta sonda. `null` si no había `.next`. */
+export const BUILD_ID_INICIAL = leeBuildId();
+
+/**
+ * ¿Se reconstruyó el clon mientras esta sonda medía? Devuelve `null` si no se
+ * puede saber (no había `.next` al arrancar), que **no es lo mismo que «no»**.
+ */
+export function buildCambiado() {
+  if (BUILD_ID_INICIAL === null) return null;
+  const ahora = leeBuildId();
+  return ahora !== null && ahora !== BUILD_ID_INICIAL;
+}
+
 export function w(file, data, { pisar = false } = {}) {
+  /* La corrida se contaminó a mitad: se congela igual —tirar la medida sería
+   * peor— pero **con nombre de contaminada y gritando**, para que nadie la cite
+   * como buena. Un fichero que no se distingue de uno limpio es exactamente el
+   * agujero que esta guarda viene a tapar. */
+  if (buildCambiado() === true) {
+    const ext = path.extname(file);
+    file = `${file.slice(0, file.length - ext.length)}-CONTAMINADA${ext}`;
+    console.error(
+      `\n❌❌ EL CLON SE RECONSTRUYÓ DURANTE ESTA CORRIDA (BUILD_ID cambió).\n` +
+        `   Las rutas medidas antes del cambio y las de después NO son comparables,\n` +
+        `   y no se sabe dónde cayó el corte: LA CORRIDA ENTERA SE DESCARTA.\n` +
+        `   Se congela como …-CONTAMINADA para que no se confunda con una buena.\n` +
+        `   Relanza el servidor y repite. Y no construyas con una sonda en vuelo.\n`,
+    );
+  }
   const destino = path.isAbsolute(file) ? file : path.join(QA, file);
   const cuerpo = typeof data === "string" ? data : JSON.stringify(data, null, 2);
   const rel = (p) => path.relative(QA, p).replace(/\\/g, "/");
@@ -348,4 +404,105 @@ export function w(file, data, { pisar = false } = {}) {
   fs.writeFileSync(destino, cuerpo);
   console.log("→", rel(destino));
   return destino;
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+ * LA SONDA, DUEÑA DE SU CICLO DE SERVIDOR
+ *
+ * Deuda mecánica anotada en el HANDOFF desde hace semanas y cobrada dos veces.
+ * Hasta ahora toda sonda daba por hecho un `next start` ajeno en el 3000: si no
+ * estaba, medía contra un puerto vacío; si alguien lo reiniciaba o reconstruía,
+ * medía dos builds distintos en la misma corrida.
+ *
+ * `iniciarClon()` arranca **su propio** servidor en un puerto libre, espera a que
+ * responda, y lo mata al terminar el proceso —pase lo que pase, incluidas
+ * excepciones y Ctrl-C—. Dos sondas pueden correr a la vez sin pisarse, y nadie
+ * puede pararle el servidor a una corrida en vuelo.
+ *
+ * ⚠ **LO QUE ESTA FUNCIÓN NO PROTEGE, y hay que decirlo:** el servidor propio
+ * sigue leyendo el MISMO `.next` del proyecto, así que un `next build`
+ * concurrente le cambia el contenido igual. De eso protege la otra mitad —la
+ * guarda de `BUILD_ID` en `w()`—, que no lo impide pero lo **detecta** y marca la
+ * salida como contaminada. Aislamiento donde se puede, detección donde no.
+ *
+ * `CLON=<url>` sigue mandando: si está puesta, la sonda mide contra esa URL y no
+ * gestiona nada. Es lo que permite apuntar a un despliegue.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Un puerto libre de verdad, pedido al sistema. */
+async function puertoLibre() {
+  const net = await import("node:net");
+  return new Promise((res, rej) => {
+    const s = net.createServer();
+    s.once("error", rej);
+    s.listen(0, "127.0.0.1", () => {
+      const { port } = s.address();
+      s.close(() => res(port));
+    });
+  });
+}
+
+/**
+ * Arranca el clon y devuelve `{ base, propio, parar }`.
+ *   · `base`   — la URL contra la que medir
+ *   · `propio` — si lo arrancó esta sonda (false si vino por `CLON`)
+ *   · `parar()` — idempotente; también se llama sola al salir el proceso
+ */
+export async function iniciarClon({ timeoutMs = 90_000 } = {}) {
+  if (process.env.CLON) {
+    console.log(`· clon EXTERNO por CLON=${process.env.CLON} — esta sonda no gestiona el servidor`);
+    return { base: process.env.CLON, propio: false, parar: async () => {} };
+  }
+
+  const { spawn } = await import("node:child_process");
+  const puerto = await puertoLibre();
+  const base = `http://127.0.0.1:${puerto}`;
+  const raiz = path.join(QA, "../..");
+
+  // Con `shell` no se pasan argumentos sueltos —Node avisa de que no los escapa—:
+  // se arma la orden entera. `puerto` es un entero que hemos generado nosotros.
+  const hijo = spawn(`npm run start -- -p ${puerto}`, {
+    cwd: raiz,
+    stdio: "ignore",
+    shell: true,
+    // En POSIX hace falta el grupo propio para poder matar el ÁRBOL: `npm`
+    // lanza `next`, y matar solo al padre deja el puerto ocupado.
+    detached: process.platform !== "win32",
+  });
+
+  let parado = false;
+  const parar = async () => {
+    if (parado) return;
+    parado = true;
+    try {
+      if (process.platform === "win32") {
+        const { spawnSync } = await import("node:child_process");
+        // El árbol entero: `npm` lanza `next`, y matar solo al padre deja el puerto ocupado.
+        spawnSync("taskkill", ["/PID", String(hijo.pid), "/T", "/F"], { stdio: "ignore" });
+      } else {
+        process.kill(-hijo.pid, "SIGKILL");
+      }
+    } catch { /* ya estaba muerto */ }
+  };
+  // Que no sobreviva a la sonda por ninguna vía: salida normal, Ctrl-C o
+  // excepción sin capturar. Sin esto, una sonda que revienta deja el puerto y el
+  // proceso vivos, que es la mitad del problema que esto viene a resolver.
+  for (const ev of ["exit", "SIGINT", "SIGTERM", "uncaughtException"]) {
+    process.on(ev, () => { void parar(); });
+  }
+
+  const t0 = Date.now();
+  for (;;) {
+    if (Date.now() - t0 > timeoutMs) {
+      await parar();
+      throw new Error(`el clon no respondió en ${timeoutMs / 1000}s (puerto ${puerto}). ¿Falta 'npm run build'?`);
+    }
+    try {
+      const r = await fetch(base + "/", { redirect: "manual" });
+      if (r.status > 0) break;
+    } catch { /* aún no escucha */ }
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  console.log(`· clon PROPIO en ${base} (listo en ${((Date.now() - t0) / 1000).toFixed(1)}s)`);
+  return { base, propio: true, parar };
 }

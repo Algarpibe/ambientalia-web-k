@@ -3421,6 +3421,12 @@ tomó la medida.
 La 2 es la más instructiva: **el comentario decía /monitor y los valores eran de
 software**, así que ni siquiera la atribución escrita servía para detectarlo.
 
+> ⚠ **ACTUALIZADO 2026-08-02 (2).** La DEFINICIÓN de esta clase era demasiado
+> estrecha y está corregida al final del documento (§CLASE · la definición,
+> corregida): no es «los valores de SOFTWARE» sino **los del PRIMER CONTEXTO
+> medido**, que puede ser una familia, un ARQUETIPO o hasta un ANCHO. Son **7**
+> instancias, todas cerradas, y **el barrido pendiente cambia de criterio**.
+>
 > ⚠ **ACTUALIZADO 2026-08-02.** La 3 está **cerrada**, y el inventario tiene ya
 > **cinco** instancias — la 5.ª rompe el patrón por dos sitios y cambia lo que
 > es la clase. Tabla al día en §CLASE · 5.ª y 6.ª instancia, al final de este
@@ -3859,3 +3865,134 @@ correcto.
 > tiene las 3 cargas seguidas ni el alcance declarado. El suelo de estas rutas
 > **sigue sin fijar**, y hasta que se fije, **todo residuo pequeño en ellas está
 > SIN PROBAR** — ni defecto ni limpio.
+
+---
+
+## CLASE · LA FAMILIA DE CALIBRACIÓN — la definición, corregida (2026-08-02)
+
+> ⚠ **La definición que este documento traía era demasiado estrecha, y se notó
+> al llegar la quinta instancia.** Decía «hereda los valores de la familia de esa
+> página», y las cuatro primeras heredaban de SOFTWARE — tanto que «todo se
+> calibró con software» parecía ser el hallazgo. **No lo es.**
+
+**La clase, enunciada bien:**
+
+> **Un componente compartido cablea los valores del PRIMER CONTEXTO en que se
+> midió. Después acierta en ese contexto y falla en todos los demás — y el
+> acierto se lee como verificación.**
+
+«Contexto» es lo que cambia entre consumidores, y **puede ser de dos tipos**:
+
+| tipo de contexto | instancias | ejemplo |
+|---|---|---|
+| **familia de páginas** | 1 · 2 · 3 · 4 | el pie, calibrado con SOFTWARE |
+| **ARQUETIPO** | **5** | `CabeceraSector`, calibrado con SECTOR y reutilizado por MONOGRÁFICO |
+
+### El inventario
+
+| # | qué | primer contexto medido | coste | estado |
+|---|---|---|---|---|
+| 1 | alto del pie: 681.09 fijo | SOFTWARE | +87.34 a −367.16 en 10 de 11 formas | cerrada |
+| 2 | tipografía del pie | SOFTWARE | −79.19 en catálogo y producto | cerrada |
+| 3 | bloque «¡Suscríbete!» | SOFTWARE | −6.9 · −0.01 · +25.1 (@390) | cerrada |
+| 4 | bloque de iconos sociales | ESTRECHA | +31.59 en `ancha` a 390 | cerrada |
+| 5 | **ancho de módulo del `h1` de la cabecera** | **SECTOR** (arquetipo) | **−36.02 en las 2 del monográfico** | cerrada |
+| 6 | **bordes de la fila del pie** | ancha/estrecha | **−1 en dos, +1 en la otra** | cerrada |
+| 7 | **`py` de fila, `mb` de módulo y del kicker en px** | **1440** (¡un ANCHO!) | **+59.34 a 1280**, Δ0 a 1440 y 390 | cerrada |
+
+**La 7 estira la definición una vez más y conviene verla:** el «primer contexto»
+no fue una familia ni un arquetipo, sino **el primer ANCHO medido**. Se cablearon
+28.7969 · 21.6562 · 29.77 px donde Divi escribe **2 % · 1.7488 % · 2.4039 %**.
+Δ0 a 1440 y a 390 —los dos anchos del contrato de fidelidad— y **congelado en todo
+lo de en medio**. Es la misma clase con el eje cambiado, y es exactamente lo que
+el §8.1 del ESQUEMA avisa que puede pasar al migrar: **un campo con el valor de
+1440 dentro pasa el listón y rompe el rango.**
+
+### ⚠ El barrido pendiente CAMBIA DE CRITERIO
+
+El barrido anterior buscaba *«componentes compartidos que cablean constantes de
+la familia software»*. Con la definición corregida, eso busca una instancia, no
+la clase. El criterio correcto:
+
+> **Componentes compartidos con valores fijos que UN SOLO contexto consumidor ha
+> ejercitado.** Da igual cuál sea el contexto —familia, arquetipo o ancho—: lo
+> que hace peligroso a un valor es que **nadie lo haya puesto a prueba desde
+> fuera del sitio donde se midió.**
+
+Y de ahí las tres preguntas del barrido, en este orden:
+
+1. **¿Cuántos contextos DISTINTOS consumen este componente?** Se deriva
+   (`grep -rn "components/X" src/`), no se afirma — la cabecera de
+   `Breadcrumb.tsx` ya mintió una vez sobre esto.
+2. **¿Alguno de ellos ejercita el valor de forma distinta?** Un titular largo
+   ejercita un ancho; uno corto no. **Si todos los consumidores lo ejercitan
+   igual, el valor está SIN PROBAR**, aunque haya ocho consumidores.
+3. **¿El valor está en px donde el original usa %?** Entonces está calibrado con
+   un ancho, y los dos anchos del contrato no lo pueden ver.
+
+### La nota de método: el detector no fue otro ancho, fue otro CONTENIDO
+
+La 5 se descubrió así, y es lo más reutilizable de la tanda:
+
+> **La reutilización de un componente por un SEGUNDO ARQUETIPO es un test del
+> primero.** Y a veces es el único que existe: el `h1` a 100 % en vez de 50 %
+> daba **Δ0 en las 4 instancias del arquetipo SECTOR a los cinco anchos
+> medidos**, porque sus titulares caben en un renglón con 619 px y con 1238. No
+> lo tapaba un ancho — lo tapaba el contenido.
+
+Corolario operativo: **cuando un arquetipo nuevo estrena un componente
+compartido, medir el arquetipo VIEJO no es redundante: es la única cobertura que
+el componente ha tenido nunca.**
+
+---
+
+## La sonda, dueña de su ciclo de servidor (2026-08-02)
+
+Deuda mecánica anotada en el HANDOFF desde hacía semanas. **Mordió dos veces**, la
+segunda el 2026-08-02: `npm run check` construye, y lanzarlo con una sonda en
+vuelo le cambió el `.next` al servidor vivo → **404 en 4 rutas que existen**, y la
+corrida de 31 rutas se descartó entera.
+
+Se resuelve en **dos mitades**, porque una sola no bastaba:
+
+### 1 · `iniciarClon()` — aislamiento donde se puede
+
+Arranca **su propio** servidor en un puerto libre pedido al sistema, espera a que
+responda, y lo mata al terminar el proceso —salida normal, `SIGINT` o excepción
+sin capturar—. Dos sondas pueden correr a la vez sin pisarse, y nadie puede
+pararle el servidor a una corrida en vuelo. `CLON=<url>` sigue mandando, para
+apuntar a un despliegue.
+
+⚠ **Lo que NO protege, y hay que decirlo:** el servidor propio lee el **mismo
+`.next`**, así que un `next build` concurrente le cambia el contenido igual.
+
+### 2 · La guarda de `BUILD_ID` — detección donde no se puede
+
+Next escribe un identificador por build en `.next/BUILD_ID`. Se lee al arrancar la
+sonda y se relee al congelar. Si cambió, **la corrida entera está contaminada** y
+la salida se congela con el sufijo **`-CONTAMINADA`** y un error a voz en grito.
+
+> **Lo grave nunca fue el 404: era que no se sabía dónde había caído el corte.**
+> Las rutas medidas antes del cambiazo eran buenas y las de después no, y el
+> fichero no las distinguía. Ahora el fichero lo dice en el nombre.
+
+**Vive en `w()` a propósito**, que es el sitio por el que escriben las 19 sondas:
+las cubre **todas sin tocar ninguna**. Es la decisión de la regla 5 —arreglar la
+CLASE y no la instancia— aplicada por tercera vez en `lib.mjs`, junto a la guarda
+de sobrescritura y a `Censo`.
+
+### Estado de la migración — parcial y declarado
+
+| sonda | ciclo de servidor |
+|---|---|
+| `cabecera-cmp` | **propio** (migrada y verificada: arranca en puerto libre, mide, cierra) |
+| las otras 18 | siguen esperando un `next start` ajeno en el 3000 |
+
+**Las 19 están cubiertas por la guarda de `BUILD_ID`**, que es la que ataja el
+fallo que se cobró las dos corridas. La migración del resto es mecánica —una
+línea de `import`, una de arranque y una de parada— y queda pendiente.
+
+**Test en negativo: `npm run qa:lib`, 31/31.** Cubre las tres cosas: que con
+`CLON` puesta la sonda **no** gestione servidor, que medir contra un **puerto
+vacío falle** en vez de devolver vacío, y que un clon que no llega a levantar
+**tire** diciendo el puerto en vez de seguir midiendo.

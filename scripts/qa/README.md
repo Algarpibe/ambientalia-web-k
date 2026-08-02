@@ -639,3 +639,35 @@ auditoría de cobertura cuenta como `c`.
    devuelve la caja de borde, 1 siempre. Se cuentan con un `Range` sobre el
    contenido, agrupando por `top`. La 1.ª versión publicaba «Δ renglones 0» junto
    a «Δ alto −36» — las dos de la misma sonda, contradiciéndose.
+
+### La sonda, dueña de su ciclo de servidor — `iniciarClon()` + guarda de `BUILD_ID`
+
+```js
+import { iniciarClon } from "./lib.mjs";
+const { base: CLON, parar: pararClon } = await iniciarClon();   // puerto propio
+...
+await pararClon();                                              // y al salir, sola
+```
+
+**Dos mitades, porque una no basta:**
+
+1. **`iniciarClon()` aísla lo que se puede.** Puerto libre pedido al sistema,
+   espera activa a que responda, y muerte del árbol al terminar el proceso
+   —salida normal, `SIGINT` o excepción—. Dos sondas pueden medir a la vez.
+   `CLON=<url>` sigue mandando y entonces no gestiona nada.
+2. **La guarda de `BUILD_ID` detecta lo que no se puede aislar.** El servidor
+   propio lee el mismo `.next`, así que un `build` concurrente le cambia el
+   contenido igual. `w()` compara `.next/BUILD_ID` al arrancar y al congelar; si
+   cambió, la salida se escribe como **`…-CONTAMINADA.json`** y sale por error.
+
+> **Lo grave de un build a mitad de corrida nunca fue el 404: era que no se sabía
+> DÓNDE CAYÓ EL CORTE.** Las rutas medidas antes eran buenas y las de después no,
+> y el fichero no las distinguía. Ahora lo dice en el nombre.
+
+La guarda vive en `w()` —por donde escriben las 19— así que **las cubre todas sin
+tocar ninguna**. Migradas a servidor propio: **`cabecera-cmp`**. El resto sigue
+esperando un `next start` ajeno; es mecánico y está pendiente.
+
+Test en negativo: **`npm run qa:lib`** (31/31) — con `CLON` puesta no gestiona
+servidor · contra un puerto vacío **falla** en vez de medir · un clon que no
+levanta **tira** diciendo el puerto.

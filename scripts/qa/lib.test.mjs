@@ -28,7 +28,7 @@
 import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { desMsys, env, envRuta, envRutas, ruta, w } from "./lib.mjs";
+import { desMsys, env, envRuta, envRutas, iniciarClon, ruta, w } from "./lib.mjs";
 
 /** Lo que Git Bash hace con un valor que empieza por `/`. */
 const MSYS = "C:/Program Files/Git";
@@ -123,13 +123,64 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   rmSync(tmp, { recursive: true, force: true });
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * 3 · LA SONDA ES DUEÑA DE SU CICLO DE SERVIDOR
+ *
+ * Lo que hay que probar NO es que sepa arrancar un servidor —eso se ve a la
+ * primera— sino que **sepa fallar**: una sonda apuntada a un puerto vacío tiene
+ * que reventar en voz alta, nunca medir. Es la regla de siempre: *una sonda que
+ * no encuentra nada y una que no mira nada dan la misma salida*.
+ * ══════════════════════════════════════════════════════════════════════ */
+{
+  const net = await import("node:net");
+  /** Silenciador propio: el de arriba vive en otro bloque y no es asíncrono. */
+  const orig = console.log;
+  const mudo = async (fn) => { console.log = () => {}; try { return await fn(); } finally { console.log = orig; } };
+  /** Un puerto que estuvo libre y se cierra: nadie escucha ahí. */
+  const puertoMuerto = await new Promise((res) => {
+    const srv = net.createServer();
+    srv.listen(0, "127.0.0.1", () => {
+      const { port } = srv.address();
+      srv.close(() => res(port));
+    });
+  });
+
+  // `CLON` apuntando a la nada: `iniciarClon` NO gestiona servidor, devuelve esa
+  // URL, y quien mida contra ella tiene que fallar al conectar.
+  process.env.CLON = `http://127.0.0.1:${puertoMuerto}`;
+  const externo = await mudo(() => iniciarClon());
+  eq("con CLON puesta, la sonda NO arranca servidor propio", externo.propio, false);
+  eq("…y usa exactamente esa URL", externo.base, process.env.CLON);
+
+  let fallo = null;
+  try {
+    await fetch(externo.base + "/");
+  } catch (e) {
+    fallo = e;
+  }
+  eq("medir contra un puerto vacío FALLA, no devuelve vacío", fallo !== null, true);
+  delete process.env.CLON;
+
+  // Y el arranque propio con un timeout imposible tiene que TIRAR, no seguir
+  // adelante con una base a la que nadie responde.
+  let arranqueFallido = null;
+  try {
+    await mudo(() => iniciarClon({ timeoutMs: 1 }));
+  } catch (e) {
+    arranqueFallido = e;
+  }
+  eq("un clon que no llega a levantar TIRA en vez de medir", arranqueFallido !== null, true);
+  eq("…y lo dice con el puerto", /puerto \d+/.test(String(arranqueFallido)), true);
+}
 /* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ── */
-const total = 26;
+const total = 31;
 console.log(
   fallos
     ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las dos cosas que\n` +
         `   prueba esto fallan EN SILENCIO, con números plausibles y código 0.\n`
-    : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno)\n` +
-        `        y una salida congelada NO se descongela sola.\n`,
+    : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno),\n` +
+        `        una salida congelada NO se descongela sola, y una sonda contra un\n` +
+        `        puerto vacío FALLA en voz alta en vez de medir.\n`,
 );
 process.exit(fallos ? 1 : 0);

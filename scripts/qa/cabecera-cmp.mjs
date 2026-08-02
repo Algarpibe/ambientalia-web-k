@@ -30,11 +30,14 @@
  * hipótesis predicen lo mismo en esos dos puntos. El tercero las separa.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { Censo, env, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, env, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
-const CLON = process.env.CLON || "http://localhost:3000";
+/* Esta sonda es DUEÑA de su servidor: lo arranca en un puerto propio, espera a
+ * que responda y lo mata al salir. Nadie puede pararle el clon a mitad de
+ * corrida, y dos sondas pueden medir a la vez. `CLON=<url>` sigue mandando. */
+const { base: CLON, parar: pararClon } = await iniciarClon();
 const SABOTAJE = !!process.env.SABOTAJE;
 const SOLO = env("SOLO");
 
@@ -200,6 +203,7 @@ for (const [fam, slug] of LISTA) {
   }
 }
 await browser.close();
+await pararClon();
 w(env("SALIDA") || `medidas/cabecera-cmp-${width}${SOLO ? `-solo-${SOLO.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` : ""}.json`, salida);
 
 const muertos = censo.informe(`@${width}`);
