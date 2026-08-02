@@ -1031,6 +1031,43 @@ que no hace nada**. En los dos casos lo servido es exactamente lo escrito, y en
 los dos casos lo escrito no llega a la propiedad. **Ningún arreglo se da por
 hecho sin su medición posterior**, ni siquiera cuando se ve en la salida.
 
+**4bis · «0 COMPARADO = VERDE» APARECIÓ CINCO VECES. LA SEXTA LA IMPIDE EL
+CONTRATO, NO LA ATENCIÓN.**
+
+Las reglas de arriba se arreglaron **instancia a instancia**, y por eso la misma
+clase volvió cinco veces:
+
+| # | sonda | qué pasó |
+|---|---|---|
+| 1 | `mono-cmp` | imprimía «SEC 3 SOBRA» y no lo contaba → `✅ 0·0·0`, código 0 |
+| 2 | `charsCenso()` | definida, documentada y **nunca llamada**: 21 de 24 páginas sin medir |
+| 3 | `ancho-cuerpo` | comparó **0 filas de 13** y sacó ✅ con código 0 |
+| 4 | `ruido` | sin combinaciones válidas imprimía `SUELO = -Infinity` como dato |
+| 5 | **`clon-base`** | con el puerto vacío: **31 `ERR_CONNECTION_REFUSED` y código 0** |
+
+> **Toda sonda DECLARA —o deriva del build— su mínimo de unidades evaluadas, y
+> por debajo de él el resultado es NO SE PUDO EVALUAR con código ≠ 0. Nunca
+> verde.** Vive en `Evaluadas`, en `lib.mjs`.
+
+Y lo que lo hace **estructural** y no una función más que se puede olvidar:
+
+- el veredicto lo fuerza un gancho de `process.on("exit")`, así que una sonda que
+  declare su mínimo **no puede salir con 0 por debajo de él aunque nunca mire su
+  propio contador** — ni con un `process.exit(0)` explícito;
+- una sonda que **congela una medida sin haber declarado nada** sale por error
+  con «SIN CONTRATO»: el olvido tampoco es verde;
+- `minimo` es obligatorio y ≥ 1 —**una sonda que no sabe cuántas unidades
+  debería evaluar no puede afirmar que las evaluó**— y derivarlo (`RUTAS.length`)
+  es mejor que escribirlo, porque una ruta nueva sube el listón sola;
+- las páginas las cuenta `openPage`, por donde pasan todas: no hay un `ok()` que
+  se pueda olvidar.
+
+⚠ **Y la comprobación de que el contrato está PUESTO también tiene su trampa.**
+El barrido que verifica que las 47 lo declaran es una expresión regular, y dio
+verde sobre un fichero **con dos `const ev` que no compilaba**. Miraba el texto,
+no el programa. Ahora `qa:lib` hace además un `--check` por sonda: *mirar una
+cosa y creer que has mirado otra*, cometido en el test del propio contrato.
+
 **5 · CONGELAR NO SIRVE DE NADA SI LA SIGUIENTE CORRIDA DESCONGELA SIN AVISAR.**
 
 La regla 2 dice que toda sonda congela su salida *para que una conclusión citada

@@ -33,10 +33,23 @@
  */
 import { readFileSync } from "node:fs";
 import { isAbsolute, join } from "node:path";
-import { QA, env, envRuta, launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, QA, env, envRuta, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-const BASE = process.env.CLON || "http://localhost:3000";
+
+/**
+ * ── DUEÑA DE SU SERVIDOR desde el 2026-08-02 ──────────────────────────────
+ * Antes daba por hecho un `next start` ajeno en el 3000, y ése era el terreno
+ * en el que se cultivó su peor fallo: **con el puerto vacío medía 31 errores y
+ * salía con código 0**. Ahora arranca el suyo en un puerto libre, espera a que
+ * responda y lo mata al salir — así el modo de fallo no se detecta, **no
+ * existe**. `CLON=<url>` sigue mandando para apuntar a un despliegue.
+ *
+ * Y la otra mitad la pone `w()`: si el `.next` cambia a mitad de corrida, la
+ * salida se congela como `-CONTAMINADA` y sale por error. Aislamiento donde se
+ * puede, detección donde no.
+ */
+const { base: BASE, parar: pararClon } = await iniciarClon();
 
 const args = process.argv.slice(2);
 const iCmp = args.indexOf("--cmp");
@@ -92,6 +105,14 @@ if (marcador) {
 const { browser } = await launch();
 const todo = { meta: { width, base: BASE, rutas: RUTAS.length }, paginas: {} };
 
+/**
+ * El contrato de `Evaluadas`: el mínimo se DERIVA DEL BUILD, así que una ruta
+ * nueva sube el listón sola. Por debajo de él el veredicto no es «sin
+ * regresión» — es NO SE PUDO EVALUAR, y lo cierra el gancho de salida de
+ * `lib.mjs` aunque esta sonda no vuelva a mirarlo.
+ */
+const ev = new Evaluadas({ nombre: `clon-base @${width}`, unidad: "rutas", minimo: RUTAS.length });
+
 for (const ruta of RUTAS) {
   try {
     const { page } = await openPage(browser, BASE + ruta, {
@@ -131,8 +152,10 @@ for (const ruta of RUTAS) {
       };
     });
     await page.close();
+    ev.ok();
   } catch (e) {
     todo.paginas[ruta] = { error: String(e).slice(0, 200) };
+    ev.fallo(ruta, e);
   }
 }
 await browser.close();
@@ -140,10 +163,8 @@ await browser.close();
 const salida = `clon-base-${width}${etiqueta}.json`;
 w(env("SALIDA") || `medidas/${salida}`, todo);
 
-let noMedidas = 0;
 for (const [ruta, d] of Object.entries(todo.paginas)) {
   if (d.error) {
-    noMedidas++;
     console.log(`  ⚠ ${ruta}  ${d.error}`);
     continue;
   }
@@ -154,34 +175,22 @@ for (const [ruta, d] of Object.entries(todo.paginas)) {
 }
 
 /**
- * ⚠ **UNA RUTA QUE NO SE PUDO MEDIR NO ES UNA RUTA SIN REGRESIÓN, y hasta hoy
- * esta sonda no las distinguía.** Medido el 2026-08-02, corriéndola con el 3000
- * vacío: imprimió **31 `ERR_CONNECTION_REFUSED`** —una por ruta— y **salió con
- * código 0**. O sea que la GUARDA DE REGRESIÓN del clon daba verde midiendo
- * exactamente nada.
+ * ⚠ **UNA RUTA QUE NO SE PUDO MEDIR NO ES UNA RUTA SIN REGRESIÓN, y durante
+ * meses esta sonda no las distinguía.** Medido el 2026-08-02 con el 3000 vacío:
+ * imprimió **31 `ERR_CONNECTION_REFUSED`** y **salió con código 0**. La guarda
+ * de regresión del clon daba verde midiendo exactamente nada.
  *
- * Son las dos reglas de `CLAUDE.md` §sondas a la vez, en la sonda que más se
- * corre: *un descuadre impreso y no contado da el mismo informe que uno no
- * visto* (regla 1) y *acotar no puede volverse verde por vaciado*. El aviso
- * estaba ahí desde el principio; lo que faltaba era que contase.
- *
- * ⚠ Y el arreglo de fondo es OTRO: esta sonda sigue esperando un `next start`
- * ajeno en el 3000 en vez de arrancar el suyo con `iniciarClon()`. Es una de
- * las 18 pendientes de migrar. Esto no la migra — cierra el agujero de que el
- * fallo pase en silencio, que es lo que la hacía peligrosa.
+ * Hoy eso no depende de estas líneas: **el veredicto lo cierra el contrato de
+ * `Evaluadas`** desde el gancho de salida de `lib.mjs`, aunque nadie vuelva a
+ * mirarlo aquí. Y el modo de fallo que lo originó ya no existe — la sonda
+ * arranca su propio servidor. Se deja el informe explícito porque un código de
+ * salida no explica nada al que lo lee en consola.
  */
-if (noMedidas) {
-  console.error(
-    `\n❌ ${noMedidas} de ${RUTAS.length} rutas NO SE PUDIERON MEDIR.\n` +
-      `   Eso NO es «sin regresión»: es que no hubo medida. ¿Está el clon sirviendo\n` +
-      `   en ${BASE}? (esta sonda todavía espera un \`next start\` ajeno).`,
-  );
-  process.exit(2);
-}
+const fallosEv = ev.informe();
 
 /* ─────────────────────────── comparación ─────────────────────────── */
 
-if (!ficheroCmp) process.exit(0);
+if (!ficheroCmp) process.exit(fallosEv ? 2 : 0);
 
 /**
  * ⚠ **La ruta del `--cmp` se resuelve contra `scripts/qa/`, no contra el `cwd`
@@ -250,9 +259,25 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
  * intentaron: contar las que fallaron como comparadas es la misma mentira que
  * darles verde, solo que en la cifra del titular. */
 const comparadas = rutasAntes.length - idas.length - sinComparar;
+/**
+ * ⚠ **Y la comparación tiene su propio «verde por vaciado», distinto del de la
+ * medida.** Se puede medir las 31 rutas perfectamente y comparar CERO — basta
+ * con una línea base cuyas rutas ya no existan. Antes eso imprimía
+ * «0 páginas comparadas · 0 con regresión» y salía con **0**.
+ *
+ * El contrato se aplica al segundo nivel con su propio mínimo: **al menos una
+ * ruta en común**. No se deriva del build porque el listón aquí lo pone el
+ * fichero de comparación, no el build.
+ */
+const evCmp = new Evaluadas({ nombre: `clon-base cmp @${width}`, unidad: "rutas comparadas", minimo: 1 });
+evCmp.ok(comparadas);
 console.log(
-  `\n${regresiones === 0 && sinComparar === 0 ? "✅" : "❌"} ${comparadas} páginas comparadas · ` +
+  `\n${regresiones === 0 && sinComparar === 0 && comparadas > 0 ? "✅" : "❌"} ${comparadas} páginas comparadas · ` +
     `${regresiones} con regresión · umbral CERO (clon contra clon)` +
     (sinComparar ? `\n   ⚠ ${sinComparar} NO comparada(s) por error: no son «sin regresión», son SIN MEDIR.` : ""),
 );
-process.exit(regresiones === 0 && idas.length === 0 && sinComparar === 0 ? 0 : 1);
+const fallosCmp = evCmp.informe();
+await pararClon();
+process.exit(
+  regresiones === 0 && idas.length === 0 && sinComparar === 0 && fallosEv === 0 && fallosCmp === 0 ? 0 : 1,
+);

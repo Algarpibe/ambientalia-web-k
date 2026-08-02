@@ -33,7 +33,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { QA, w } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const M = path.join(QA, "medidas");
 const SABOTAJE = !!process.env.SABOTAJE;
@@ -81,9 +81,13 @@ if (!fs.existsSync(MANIFIESTO)) {
   console.error("❌ no hay .next/prerender-manifest.json — corre `npm run build` antes.");
   process.exit(2);
 }
+/* Contrato de `Evaluadas` (lib.mjs): la unidad es una RUTA de la matriz. Si el
+ * manifiesto no da rutas no hay matriz que computar, y eso no es «matriz
+ * limpia»: es NO SE PUDO EVALUAR. */
 const RUTAS = Object.keys(JSON.parse(fs.readFileSync(MANIFIESTO, "utf8")).routes)
   .filter((r) => !r.startsWith("/_") && r !== "/favicon.ico")
   .sort();
+const ev = new Evaluadas({ nombre: "cobertura", unidad: "rutas de la matriz", minimo: RUTAS.length });
 
 /* ───────────────────────────── ejes y familias ───────────────────────────── */
 
@@ -257,6 +261,7 @@ lineas.push("|---|" + EJES.map(() => "---").join("|") + "|");
 const orden = FAMILIAS.map(([n]) => n);
 let ultimaFam = "";
 for (const r of [...RUTAS].sort((a, b) => orden.indexOf(familia(a)) - orden.indexOf(familia(b)) || a.localeCompare(b))) {
+  ev.ok();
   if (familia(r) !== ultimaFam) {
     ultimaFam = familia(r);
     lineas.push(`| **${ultimaFam}** |` + EJES.map(() => "").join("|") + "|");

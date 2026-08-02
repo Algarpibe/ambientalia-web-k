@@ -11,7 +11,7 @@
  * Cuatro páginas: las dos variantes de blog (con y sin bloque de relacionados),
  * un término y un documento científico. A 1440 y a 390.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -175,6 +175,7 @@ if (process.argv.includes("--muestra")) {
     });
 }
 
+const ev = new Evaluadas({ nombre: `a-cascaron @${width}`, unidad: "páginas", minimo: Object.keys(PAGINAS).length });
 const { browser } = await launch();
 const todo = { meta: { width } , paginas: {} };
 for (const [etq, url] of Object.entries(PAGINAS)) {
@@ -182,6 +183,7 @@ for (const [etq, url] of Object.entries(PAGINAS)) {
   await settle(page);
   todo.paginas[etq] = { url, ...(await page.evaluate(extraer)) };
   await page.close();
+  ev.ok();
 }
 await browser.close();
 

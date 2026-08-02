@@ -11,7 +11,7 @@
  * localiza por la sección del breadcrumb, que es estructural y vale para los
  * dos arquetipos: hero = la siguiente, cuerpo = de la de después al slider.
  */
-import { env, launch, openPage, settle, w } from "./lib.mjs";
+import { env, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   urbano: [
@@ -45,6 +45,12 @@ const cual = process.argv[2] || "industria";
 const width = Number(process.argv[3] || 1440);
 const mobile = width <= 500;
 const [ORIG, CLON] = URLS[cual];
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "tree-cmp", unidad: "páginas", minimo: 1, porPaginas: true });
+
 const { browser } = await launch();
 
 // ojo: se serializa al navegador, así que el flag va por ARGUMENTO, no por

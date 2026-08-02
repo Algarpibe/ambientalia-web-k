@@ -19,7 +19,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, QA, env, envRutas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, env, envRutas, Evaluadas, launch, openPage, QA, settle, w } from "./lib.mjs";
 
 /* Esta sonda SOLO abre el original: un `build` del clon no la afecta, así que
  * no debe dispararle la guarda de `BUILD_ID` de `w()` (ver `lib.mjs`).
@@ -78,6 +78,12 @@ const CORRIDAS = Number(process.argv[2] || 3);
 const { browser } = await launch();
 const censo = new Censo();
 const crudo = {};
+/**
+ * Contrato de `Evaluadas` (lib.mjs). La unidad es una CARGA: rutas × 2 anchos ×
+ * corridas. Es exacto, no un suelo — y sustituye a la guarda ad-hoc de «ninguna
+ * combinación válida», que era la 4.ª instancia local de esta misma clase.
+ */
+const ev = new Evaluadas({ nombre: "ruido", unidad: "cargas", minimo: PAGINAS.length * 2 * CORRIDAS, porPaginas: true });
 
 /* ══════════════════════════════════════════════════════════════════════════
  * EL OBSERVABLE DISCRIMINANTE — por qué una ráfaga que solo mide `h1.y` ya no

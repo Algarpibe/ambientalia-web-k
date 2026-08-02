@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "width": 1440,
+    "base": "http://127.0.0.1:9",
+    "rutas": 31
+  },
+  "paginas": {
+    "/": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/"
+    },
+    "/accesorios": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/accesorios"
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/case-studies/distrito-baja-emision-rio-de-janeiro"
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa"
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/casos-de-exito/red-calidad-de-aire-para-world-athletics"
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano"
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/cloruro-de-hidrogeno-hcl"
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/contador-particulas-suspension-movilidad-sostenible"
+    },
+    "/contaminacion-por-metano": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/contaminacion-por-metano"
+    },
+    "/emisiones-atmosfericas": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/emisiones-atmosfericas"
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion"
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento"
+    },
+    "/kunak-api": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/kunak-api"
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/la-contaminacion-del-aire-el-asesino-silencioso-de-europa"
+    },
+    "/metano": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/metano"
+    },
+    "/monitor-calidad-aire": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/monitor-calidad-aire"
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/monitorizacion-de-emisiones-del-trafico-urbano"
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos"
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atl"
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad"
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023"
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion"
+    },
+    "/running-for-clean-air": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/running-for-clean-air"
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/calidad-del-aire-en-las-ciudades"
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/contaminacion-por-construccion"
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/control-de-emisiones-industriales"
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/estudio-de-la-contaminacion-atmosferica"
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar"
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/software-de-medicion-calidad-del-aire"
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "error": "Error: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/todas-nuestras-soluciones-en-el-iotswc"
+    }
+  }
+}

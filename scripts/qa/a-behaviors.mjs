@@ -11,12 +11,13 @@
  *   · los `iframe`: ¿cargan perezosos? ¿de qué orígenes?
  *   · el bloque de relacionados: ¿es estático o pide datos?
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
 const URL_BLOG = "https://kunakair.com/es/contaminacion-por-metano/";
 
+const ev = new Evaluadas({ nombre: "a-behaviors", unidad: "páginas", minimo: 1 });
 const { browser } = await launch();
 const { page } = await openPage(browser, URL_BLOG, {
   width,
@@ -90,6 +91,7 @@ const d = await page.evaluate(() => {
     imgTotal: pc?.querySelectorAll("img").length || 0,
   };
 });
+ev.ok();
 await page.close();
 await browser.close();
 

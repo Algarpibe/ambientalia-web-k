@@ -26,7 +26,7 @@
  * (`et_pb_section_0_tb_footer` es el mismo módulo aunque cambie el ordinal) y
  * nada más: si se normalizara el texto, la prueba dejaría de poder fallar.
  */
-import { launch, w } from "./lib.mjs";
+import { Evaluadas, launch, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 150); // cortesía con el sitio vivo
 
@@ -72,6 +72,10 @@ await page.goto("about:blank");
 
 const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), n: PAGINAS.length }, paginas: {} };
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "c-spec", unidad: "páginas", minimo: PAGINAS.length });
 for (const p of PAGINAS) {
   const { http, html } = await get(p.url);
   salida.paginas[p.clave] = {
@@ -237,6 +241,7 @@ for (const p of PAGINAS) {
   };
   console.log(`  ✓ ${p.forma.padEnd(4)} ${p.clave.padEnd(24)} http ${http}  ${p.porque}`);
   await new Promise((r) => setTimeout(r, DORMIR));
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 await browser.close();
 

@@ -36,7 +36,7 @@
  * listado con MÁS entradas y con MENOS). La muestra se imprime y se congela
  * con el resto.
  */
-import { env, w } from "./lib.mjs";
+import { env, Evaluadas, w } from "./lib.mjs";
 
 const ORIGEN = "https://kunakair.com";
 const MODO = env("MODO") || "censo";
@@ -179,6 +179,8 @@ const PAGINAS = [
   ...HUBS.map((r) => ({ ruta: r, grupo: "hub" })),
   ...archivos.map((a) => ({ ruta: a.ruta, grupo: a.familia })),
 ];
+/* Contrato de `Evaluadas` (lib.mjs): una unidad = una página del censo. */
+const ev = new Evaluadas({ nombre: "lh-censo", unidad: "páginas", minimo: PAGINAS.length });
 
 /* ── 2 · el censo 35/35 ── */
 const leer = (crudo) => {
@@ -228,6 +230,7 @@ for (const p of PAGINAS) {
     continue;
   }
   salida.paginas[p.ruta] = { grupo: p.grupo, status: r.status, cargaMs: r.cargaMs, ...leer(r.html) };
+  ev.ok();
   console.log(`  ✓ ${p.ruta}`);
 }
 

@@ -9,7 +9,7 @@
  * Uso: node mono-detalle.mjs [ancho]
  * Salida congelada: scripts/qa/medidas/mono-detalle-<ancho>.json
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const PAGINAS = [
   ["edar", "monitorizacion-ambiental-y-control-de-olores-en-edar"],
@@ -22,6 +22,12 @@ const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
 const { browser } = await launch();
 const todo = {};
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "mono-detalle", unidad: "páginas", minimo: PAGINAS.length, porPaginas: true });
 
 for (const [nombre, slug] of PAGINAS) {
   try {

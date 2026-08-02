@@ -1,0 +1,13 @@
+{
+  "_que_es": "FIXTURE del test en negativo de clon-base, no una medida. Línea base cuyas rutas NO existen en el build: la intersección con las rutas emitidas es VACÍA, así que la comparación tiene 0 páginas. Antes eso imprimía «0 páginas comparadas · 0 con regresión» y salía con código 0 — el mismo verde-por-vaciado de la medida, pero un nivel más abajo.",
+  "meta": { "width": 1440, "base": "fixture", "rutas": 1 },
+  "paginas": {
+    "/ruta-que-no-existe-en-ningun-build": {
+      "docH": 1000,
+      "h1": { "x": 0, "y": 100, "w": 100, "h": 50, "txt": "fixture" },
+      "secciones": [],
+      "nAnclas": 0,
+      "nImgs": 0
+    }
+  }
+}

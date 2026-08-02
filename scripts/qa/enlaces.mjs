@@ -27,7 +27,7 @@
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
-import { w } from "./lib.mjs";
+import { Evaluadas, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -148,6 +148,10 @@ let externosOk = 0;
 let internos = 0;
 let ficheros = 0;
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "enlaces", unidad: "páginas servidas", minimo: PAGINAS.length });
 for (const ruta of PAGINAS) {
   const res = await fetch(BASE + ruta);
   if (!res.ok) {
@@ -196,6 +200,7 @@ for (const ruta of PAGINAS) {
       rotos.push({ pagina: ruta, href, ruta: r.ruta, origen: origen(href) });
     }
   }
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ──────────────────────────── informe ──────────────────────────────────── */

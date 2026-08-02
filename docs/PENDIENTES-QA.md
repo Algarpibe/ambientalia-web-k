@@ -4260,3 +4260,47 @@ sin explicar.**
   adjudican**: este barrido llega al nivel de FILA.
 - **Ningún ancho intermedio.** El contrato de rango de este eje está **sin
   probar**: `qa:ancho` solo se ha corrido a 1440 y a 390.
+
+---
+
+## AUDITORÍA · ¿algún veredicto pasado de `clon-base` fue verde-sin-medir? (2026-08-02)
+
+**Contestada LEYENDO `medidas/`, sin re-medir.** La pregunta la deja abierta el
+defecto de la sonda: con el puerto vacío imprimía 31 errores y salía con código 0,
+así que un acta pudo haber citado un «0 regresiones» que no midió nada.
+
+### Lo que dicen los ficheros
+
+**31 corridas congeladas de `clon-base`. En 30, TODAS sus páginas tienen dato.**
+Los dos ficheros con **cero** unidades medidas son de hoy y son la evidencia del
+propio defecto: `clon-base-1440-2026-08-02-2.json` (el diagnóstico) y
+`clon-base-neg-puerto-muerto.json` (la pata 1 del negativo).
+
+**Una sola corrida quedó a medias:** `clon-base-1440-cqa1-despues.json`, **16 de
+17** — `/casos-de-exito/red-calidad-de-aire-para-world-athletics` dio *Navigation
+timeout of 120000 ms*.
+
+### El veredicto, con su alcance
+
+| afirmación | estado |
+|---|---|
+| el acta de C-QA1: «las **11 anteriores** no se han movido un píxel» | **RESPALDADA** — las 11 están medidas en ese mismo fichero |
+| el titular de esa corrida: «17 páginas comparadas · 0 con regresión» | **NO CONCLUYENTE en 1 de 17**: se compararon 16 |
+| la ruta que faltó, a 1440 | **sin comparar** en esa corrida |
+| la misma ruta, a 390 | **medida y comparada** en la misma tanda (`clon-base-390-cqa1-despues.json`, `docH 8225`) |
+
+**Ninguna conclusión del proyecto se cae.** La que faltó es de grupo C —no de las
+11 que el acta afirma— y su otro ancho sí se midió. Lo que se corrige es una
+**cifra de titular**, no un hallazgo.
+
+> **Y la razón de que sea «pocas o ninguna» no es suerte: es que el modo de fallo
+> necesitaba el puerto vacío**, y una corrida contra un puerto vacío se nota
+> enseguida por lo que tarda y por lo que imprime. El agujero era real y estaba
+> abierto; lo que no hubo fue una corrida que lo atravesara y se citara. Eso se
+> puede afirmar hoy porque **las 31 congelaron su contenido** — sin los ficheros,
+> la pregunta no tendría respuesta.
+
+### Lo que queda anotado
+
+`clon-base-1440-cqa1-despues.json` lleva una ruta sin medir. Si alguien vuelve a
+citarlo, **su cifra de páginas comparadas es 16, no 17**.

@@ -5,7 +5,7 @@
  * Las anclas son el arranque de cada bloque del cuerpo (que es lo que S7 mueve)
  * más las secciones de abajo, que sirven de acumulador del desfase.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const SECTORES = {
   urbano: {
@@ -77,6 +77,7 @@ const c = await medir(cfg.clon);
 
 console.log(`\n======== ${cual} @${width} ========`);
 console.log("ancla".padEnd(14) + "original".padEnd(12) + "clon".padEnd(12) + "Δ");
+const ev = new Evaluadas({ nombre: "cmp-sector", unidad: "filas comparadas", minimo: 1 });
 const filas = {};
 for (const k of Object.keys(o)) {
   const a = o[k],
@@ -93,5 +94,6 @@ for (const k of Object.keys(o)) {
       (d === null ? "≠" : (d >= 0 ? "+" : "") + d),
   );
 }
+ev.ok(filas.length);
 w(`cmp-${cual}-${width}.json`, filas);
 await browser.close();

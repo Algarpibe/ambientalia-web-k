@@ -25,10 +25,15 @@
  * fuerza una barra inicial y la convierte en absoluta. Por eso hay dos lecturas
  * distintas —`env()` y `envRuta()`— y por eso se prueban las dos.
  */
-import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { desMsys, env, envRuta, envRutas, iniciarClon, ruta, w } from "./lib.mjs";
+import { desMsys, env, envRuta, envRutas, Evaluadas, iniciarClon, ruta, w } from "./lib.mjs";
+
+/* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
+ * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
+ * lanza, que es como se llega a una bandera que nadie pone. */
+process.env.SIN_CONTRATO = "1";
 
 /** Lo que Git Bash hace con un valor que empieza por `/`. */
 const MSYS = "C:/Program Files/Git";
@@ -173,8 +178,130 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   eq("un clon que no llega a levantar TIRA en vez de medir", arranqueFallido !== null, true);
   eq("…y lo dice con el puerto", /puerto \d+/.test(String(arranqueFallido)), true);
 }
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CONTRATO DE `Evaluadas` — «0 comparado = verde», la sexta vez no
+ *
+ * Se prueba en SUBPROCESO porque lo que hay que demostrar es el **código de
+ * salida**, y eso no se puede afirmar desde dentro del mismo proceso: el gancho
+ * de `process.on("exit")` es justamente lo que se está probando.
+ * ═════════════════════════════════════════════════════════════════════════ */
+{
+  const { spawnSync } = await import("node:child_process");
+  const tmpEv = mkdtempSync(join(tmpdir(), "kq-ev-"));
+  let iCaso = 0;
+  const corre = (cuerpo, entorno = {}) => {
+    const f = join(tmpEv, `caso-${++iCaso}.mjs`);
+    writeFileSync(f, cuerpo);
+    const r = spawnSync(process.execPath, [f], { encoding: "utf8", env: { ...process.env, ...entorno } });
+    return { code: r.status, out: (r.stdout || "") + (r.stderr || "") };
+  };
+  const LIB = JSON.stringify(new URL("./lib.mjs", import.meta.url).href);
+
+  // 1 · Por debajo del mínimo NO se puede salir con 0, ni con `exit(0)` explícito.
+  let r = corre(
+    `import { Evaluadas } from ${LIB};\n` +
+      `const ev = new Evaluadas({ unidad: "rutas", minimo: 3 });\n` +
+      `ev.ok(); ev.fallo("/x", "ERR");\n` +
+      `console.log("la sonda cree que ha terminado bien");\n` +
+      `process.exit(0);\n`,
+  );
+  eq("bajo el mínimo, un exit(0) explícito se convierte en ≠0", r.code !== 0, true);
+  eq("…y lo dice con las palabras exactas", /NO SE PUDO EVALUAR/.test(r.out), true);
+  eq("…y nombra la unidad que faltó", /1 de 3 rutas/.test(r.out), true);
+
+  // 2 · Al alcanzar el mínimo, verde de verdad.
+  r = corre(
+    `import { Evaluadas } from ${LIB};\n` +
+      `const ev = new Evaluadas({ unidad: "rutas", minimo: 2 });\n` +
+      `ev.ok(); ev.ok();\n` +
+      `process.exit(0);\n`,
+  );
+  eq("alcanzado el mínimo, sale 0", r.code, 0);
+
+  // 3 · Congelar una medida SIN declarar nada es error: el olvido no es verde.
+  //     El subproceso NO hereda la exención del propio test — aquí se prueba
+  //     justamente la sonda que se olvidó de declarar.
+  r = corre(
+    `import { w } from ${LIB};\n` +
+      `w(${JSON.stringify(join(tmpEv, "sin-contrato.json"))}, { a: 1 });\n` +
+      `process.exit(0);\n`,
+    { SIN_CONTRATO: "" },
+  );
+  eq("congelar sin declarar el mínimo sale ≠0", r.code !== 0, true);
+  eq("…y se llama SIN CONTRATO", /SIN CONTRATO DE EVALUACIÓN/.test(r.out), true);
+
+  // 4 · …salvo que la sonda declare que no mide (y entonces lo dice ella).
+  r = corre(
+    `import { w } from ${LIB};\n` +
+      `w(${JSON.stringify(join(tmpEv, "exenta.json"))}, { a: 1 });\n` +
+      `process.exit(0);\n`,
+    { SIN_CONTRATO: "1" },
+  );
+  eq("con SIN_CONTRATO=1 declarado, no molesta", r.code, 0);
+
+  // 5 · Un mínimo que no se declara es un defecto de la sonda, no un 0 tácito.
+  r = corre(
+    `import { Evaluadas } from ${LIB};\n` +
+      `try { new Evaluadas({ unidad: "rutas" }); console.log("NO TIRÓ"); }\n` +
+      `catch (e) { console.log("TIRÓ:", e.message.split("\\n")[0]); }\n`,
+  );
+  eq("sin 'minimo' TIRA en vez de asumir 0", /TIRÓ:/.test(r.out), true);
+  r = corre(
+    `import { Evaluadas } from ${LIB};\n` +
+      `try { new Evaluadas({ unidad: "rutas", minimo: 0 }); console.log("NO TIRÓ"); }\n` +
+      `catch (e) { console.log("TIRÓ"); }\n`,
+  );
+  eq("un mínimo de 0 TIRA: sería el agujero otra vez", /TIRÓ/.test(r.out) && !/NO TIRÓ/.test(r.out), true);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * Y LA MITAD QUE NINGÚN TEST DE COMPORTAMIENTO CUBRE: que TODAS lo usen.
+ *
+ * El contrato solo cierra la clase si está **conectado en las 47 sondas**. Una
+ * que no lo declare vuelve a poder dar verde midiendo nada, y eso no lo detecta
+ * ningún test de `lib.mjs` — es *documentado no es conectado* a escala de
+ * directorio. Por eso se comprueba por barrido, que además es gratis.
+ * ═════════════════════════════════════════════════════════════════════════ */
+{
+  const aqui = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
+  const sondas = readdirSync(aqui).filter((f) => f.endsWith(".mjs") && f !== "lib.mjs" && f !== "lib.test.mjs");
+  const sinContrato = [];
+  for (const f of sondas) {
+    const src = readFileSync(join(aqui, f), "utf8");
+    const declara = /new Evaluadas\(/.test(src) || /SIN_CONTRATO\s*=\s*["']1["']/.test(src);
+    if (!declara) sinContrato.push(f);
+  }
+  eq(
+    `las ${sondas.length} sondas declaran su mínimo de unidades` +
+      (sinContrato.length ? ` — SIN DECLARAR: ${sinContrato.join(" · ")}` : ""),
+    sinContrato.length,
+    0,
+  );
+
+  /**
+   * ⚠ **Y que PARSEEN, porque el barrido de arriba es una expresión regular.**
+   * Al migrar las 47 en esta tanda, `c-censo.mjs` quedó con **dos `const ev`**
+   * —una inserción duplicada— y el barrido lo dio por bueno: el texto contenía
+   * `new Evaluadas(`, que es lo único que miraba. O sea que la comprobación de
+   * que el contrato está puesto **daba verde sobre un fichero que no arranca**.
+   *
+   * Es la misma clase que viene a cerrar todo este contrato, cometida en su
+   * propio test: *mirar una cosa y creer que has mirado otra*. Un `--check` por
+   * sonda cuesta milisegundos y lo cierra.
+   */
+  const { spawnSync: sp } = await import("node:child_process");
+  const noCompilan = sondas.filter(
+    (f) => sp(process.execPath, ["--check", join(aqui, f)], { encoding: "utf8" }).status !== 0,
+  );
+  eq(
+    `las ${sondas.length} sondas COMPILAN` + (noCompilan.length ? ` — ROTAS: ${noCompilan.join(" · ")}` : ""),
+    noCompilan.length,
+    0,
+  );
+}
+
 /* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ── */
-const total = 31;
+const total = 42;
 console.log(
   fallos
     ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las dos cosas que\n` +

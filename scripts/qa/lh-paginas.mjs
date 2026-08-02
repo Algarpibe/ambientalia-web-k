@@ -21,7 +21,7 @@
  * para cualquier N (paginación infinita), esta sonda daría el tope y hay que
  * verlo: por eso imprime cuándo ha topado con `MAX`.
  */
-import { w } from "./lib.mjs";
+import { Evaluadas, w } from "./lib.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -84,6 +84,10 @@ const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), rutas: RU
 let peticiones = 0;
 let topes = 0;
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "lh-paginas", unidad: "rutas", minimo: RUTAS.length });
 for (const R of RUTAS) {
   /* ¿pagina siquiera? */
   const dos = await hay(R.ruta, 2);
@@ -134,6 +138,7 @@ for (const R of RUTAS) {
   salida.paginas[R.ruta] = { grupo: R.grupo, paginas: lo, paginaDeVerdad: true, segunLaVentana: R.segunLaVentana };
   const marca = lo > R.segunLaVentana ? `  ⚠ la ventana decía ${R.segunLaVentana}` : "";
   console.log(`  ${R.ruta.padEnd(58)} ${String(lo).padStart(3)} páginas${marca}`);
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 const vivas = Object.values(salida.paginas);

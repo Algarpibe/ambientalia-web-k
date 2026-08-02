@@ -16,7 +16,7 @@
  * de lo que parece. Se mide el alto de cada uno: el que no es 0 es el que sale.
  * Es la regla de C2 — «alto 0 no se deduce de la clase, se mide».
  */
-import { Censo, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -86,6 +86,12 @@ const LECTOR = (sabotaje) => {
     },
   };
 };
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "d4-cta", unidad: "páginas", minimo: 1, porPaginas: true });
 
 const { browser } = await launch();
 const censo = new Censo();

@@ -16,7 +16,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { w, QA } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const censo = JSON.parse(readFileSync(join(QA, "medidas", "a-censo.json"), "utf8"));
 
@@ -51,8 +51,11 @@ const PAYLOADS = {
 };
 
 const salida = { meta: { semilla: 20260730, cupo: CUPO }, formas: {} };
+/* Contrato de `Evaluadas` (lib.mjs): una unidad = una FORMA muestreada. */
+const ev = new Evaluadas({ nombre: "a-muestra", unidad: "formas", minimo: Object.keys(censo.formas).length });
 
 for (const [forma, d] of Object.entries(censo.formas)) {
+  ev.ok();
   const ok = d.paginas.filter((p) => !p.error);
   const cupo = CUPO[forma];
   const elegidas = new Map(); // url → razones

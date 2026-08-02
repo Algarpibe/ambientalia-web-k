@@ -24,6 +24,12 @@ export async function launch() {
   return { browser, userDataDir };
 }
 
+/**
+ * Suma una unidad a las evaluaciones que cuentan PÁGINAS. Se define aquí arriba
+ * porque `openPage` la llama; el registro vive con `Evaluadas`, más abajo.
+ */
+let contarPagina = () => {};
+
 /** Abre una página con viewport dado. mobile=true → device metrics 390x844 por CDP. */
 export async function openPage(browser, url, { width, height, mobile = false, dsf = 1 } = {}) {
   const page = await browser.newPage();
@@ -47,6 +53,11 @@ export async function openPage(browser, url, { width, height, mobile = false, ds
     await page.setViewport({ width, height, deviceScaleFactor: dsf });
   }
   const respuesta = await page.goto(url, { waitUntil: "networkidle2", timeout: 120000 });
+  /* Una página que carga es una UNIDAD EVALUADA. Se cuenta aquí —el sitio por
+   * el que pasan todas— y no en cada sonda, por lo mismo que la guarda de
+   * `BUILD_ID` vive en `w()`: lo que hay que acordarse de poner se olvida. La
+   * sonda solo declara su MÍNIMO; el recuento no es cosa suya. */
+  contarPagina();
   // El estado HTTP se devuelve porque una 404 CARGA BIEN: `goto` no lanza, la
   // página renderiza, y una sonda que no lo mire mide el 404 y publica deltas
   // plausibles. Lo cazó el test en negativo de `c-cmp` (2026-08-01): una ruta
@@ -163,6 +174,199 @@ export class Censo {
         m.map((s) => `     · ${s}`).join("\n") + "\n",
     );
     return m.length;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL MÍNIMO DE UNIDADES EVALUADAS — «0 comparado = verde», cerrado por fin
+ * en el sitio común
+ *
+ * ── Por qué esto no podía seguir arreglándose sonda a sonda ────────────────
+ * El mismo fallo ha aparecido **cinco veces**, cada una con su arreglo local, y
+ * ninguno impidió el siguiente:
+ *
+ *   1. `mono-cmp` imprimía «SEC 3 SOBRA en clon» y **no lo contaba** → `✅ 0·0·0`
+ *      con código 0. Vivió una tanda entera (E1).
+ *   2. `charsCenso()` estaba definida, documentada y **nunca llamada**: 21 de 24
+ *      páginas «medidas» sin medir.
+ *   3. `ancho-cuerpo`, al nacer, comparó **0 filas de 13** y sacó ✅ con código 0.
+ *   4. `ruido` podía quedarse sin ninguna combinación válida e imprimir
+ *      `SUELO POSICIONAL = -Infinity` como si fuera un dato.
+ *   5. `clon-base` —**la guarda insignia del clon**— con el puerto vacío imprimía
+ *      **31 `ERR_CONNECTION_REFUSED`** y salía con **código 0**.
+ *
+ * Cinco arreglos locales, cinco veces la misma clase. La conclusión es la misma
+ * que con *avisar = contar* y con el `Censo`: **mientras la guarda sea algo que
+ * cada sonda tiene que acordarse de poner, la sexta instancia está garantizada.**
+ *
+ * ── El contrato ───────────────────────────────────────────────────────────
+ *
+ *   > **Toda sonda declara —o deriva del build— su MÍNIMO de unidades
+ *   > evaluadas. Por debajo de ese mínimo el resultado no es «sin
+ *   > diferencias»: es NO SE PUDO EVALUAR, y sale con código ≠ 0.**
+ *
+ * Y lo que lo hace **estructural** y no una función más que se puede olvidar:
+ *
+ *   · el veredicto lo fuerza un gancho de `process.on("exit")`, así que una
+ *     sonda que declare su mínimo **no puede salir con 0 por debajo de él
+ *     aunque nunca llame a `informe()`** — ni aunque haga `process.exit(0)`
+ *     explícito (comprobado: el gancho sobrescribe el código);
+ *   · y una sonda que **congela una medida sin haber declarado nada** sale por
+ *     error con «SIN CONTRATO». O sea que el olvido tampoco es verde.
+ *
+ * ── Cómo se usa ───────────────────────────────────────────────────────────
+ *
+ *     const ev = new Evaluadas({ unidad: "rutas", minimo: RUTAS.length });
+ *     for (const r of RUTAS) {
+ *       try { ...medir...; ev.ok(); }
+ *       catch (e) { ev.fallo(r, e); }
+ *     }
+ *     const fallos = ev.informe() + otrosFallosDeLaSonda;
+ *     process.exit(fallos ? 2 : 0);
+ *
+ * `minimo` es obligatorio y ≥ 1: **una sonda que no sabe cuántas unidades
+ * debería evaluar no puede decir que las evaluó todas.** Derivarlo del build
+ * —`RUTAS.length`— es mejor que escribirlo, porque así una ruta nueva sube el
+ * listón sola.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Registro de módulo: lo lee el gancho de salida y lo consulta `w()`. */
+const _evaluaciones = [];
+let _congelo = false;
+let _ganchoPuesto = false;
+/**
+ * ⚠ **SEXTA instancia de la misma clase, y dentro de otra guarda (2026-08-02).**
+ * La guarda de `BUILD_ID` renombraba la salida a `-CONTAMINADA` y gritaba… **y
+ * no tocaba el código de salida**. El HANDOFF que la estrenó decía «sale por
+ * error»: no salía. Es *documentado no es conectado* cometido por segunda vez en
+ * `lib.mjs` —la primera fue la bandera `SIN_CLON`, inerte— y lo destapó pedirle
+ * a `clon-base` el negativo de «build viejo», que habría dado verde.
+ *
+ * Ahora la contaminación va por el MISMO gancho que el mínimo de unidades: un
+ * solo sitio decide si una corrida puede salir con 0.
+ */
+let _contaminada = false;
+
+/** Sondas que NO miden nada y solo orquestan (el propio test de `lib`). */
+const sinContrato = () => !!process.env.SIN_CONTRATO;
+
+function ponGancho() {
+  if (_ganchoPuesto) return;
+  _ganchoPuesto = true;
+  process.on("exit", () => {
+    // Nada que decir si la sonda ya sale mal: no se pisa un código peor.
+    const yaMal = process.exitCode !== undefined && process.exitCode !== 0;
+    if (_contaminada) {
+      console.error(
+        `\n❌ CORRIDA CONTAMINADA: el \`.next\` cambió mientras se medía. La salida\n` +
+          `   está congelada como …-CONTAMINADA y NO se puede citar. Repite entera.`,
+      );
+      if (!yaMal) process.exitCode = 2;
+      return;
+    }
+    const cortas = _evaluaciones.filter((e) => !e.suficiente());
+    if (cortas.length) {
+      for (const e of cortas) e.grito();
+      if (!yaMal) process.exitCode = 2;
+      return;
+    }
+    if (_congelo && _evaluaciones.length === 0 && !sinContrato()) {
+      console.error(
+        `\n❌ SIN CONTRATO DE EVALUACIÓN — esta sonda ha congelado una medida sin\n` +
+          `   declarar cuántas unidades debía evaluar, así que NO SE PUEDE SABER si\n` +
+          `   midió algo o nada. Las dos cosas dan la misma salida, y por eso el\n` +
+          `   verde no vale. Declara el mínimo:\n\n` +
+          `     const ev = new Evaluadas({ unidad: "rutas", minimo: RUTAS.length });\n\n` +
+          `   (ver \`Evaluadas\` en lib.mjs). Si de verdad no mide nada: SIN_CONTRATO=1.\n`,
+      );
+      if (!yaMal) process.exitCode = 2;
+    }
+  });
+}
+
+export class Evaluadas {
+  /**
+   * @param {object} o
+   * @param {string} o.unidad  qué se cuenta: "rutas", "filas", "páginas", "pares"…
+   * @param {number} o.minimo  cuántas hay que evaluar para que el veredicto valga
+   * @param {string} [o.nombre] etiqueta para el informe
+   */
+  /**
+   * @param {boolean} [o.porPaginas] cuenta sola cada página que carga en
+   *   `openPage`. Es el caso normal: la mayoría de las sondas tienen una unidad
+   *   = una página abierta, y así **no hay un `ev.ok()` que se pueda olvidar**.
+   *   Se pone a `false` cuando la unidad es otra cosa —un PAR de páginas, una
+   *   fila, una comparación— y entonces la sonda cuenta a mano.
+   */
+  constructor({ unidad, minimo, nombre = "", porPaginas = false } = {}) {
+    if (typeof minimo !== "number" || !Number.isFinite(minimo) || minimo < 1)
+      throw new Error(
+        `Evaluadas: 'minimo' es obligatorio y ≥ 1 (llegó ${JSON.stringify(minimo)}).\n` +
+          `  Una sonda que no sabe cuántas unidades DEBERÍA evaluar no puede afirmar\n` +
+          `  que las evaluó. Derívalo del build (RUTAS.length) en vez de escribirlo.`,
+      );
+    if (!unidad) throw new Error("Evaluadas: falta 'unidad' (qué se está contando).");
+    this.unidad = unidad;
+    this.minimo = minimo;
+    this.nombre = nombre;
+    this.porPaginas = porPaginas;
+    this.n = 0;
+    this.fallos = [];
+    _evaluaciones.push(this);
+    contarPagina = () => {
+      for (const e of _evaluaciones) if (e.porPaginas) e.n++;
+    };
+    ponGancho();
+  }
+
+  /** Una unidad evaluada DE VERDAD. */
+  ok(n = 1) {
+    this.n += n;
+    return this;
+  }
+
+  /** Una unidad que no se pudo evaluar. Se cuenta y se nombra: no desaparece. */
+  fallo(que, motivo) {
+    this.fallos.push(`${que}${motivo ? ` — ${String(motivo).slice(0, 120)}` : ""}`);
+    return this;
+  }
+
+  suficiente() {
+    return this.n >= this.minimo;
+  }
+
+  /** El grito del gancho de salida. Idempotente: solo la primera vez. */
+  grito() {
+    if (this._gritado) return;
+    this._gritado = true;
+    console.error(
+      `\n❌ NO SE PUDO EVALUAR${this.nombre ? ` · ${this.nombre}` : ""} — ` +
+        `${this.n} de ${this.minimo} ${this.unidad}.\n` +
+        `   Esto NO es «no hay diferencias»: es que no hubo medida en ` +
+        `${this.minimo - this.n} ${this.unidad}.\n` +
+        (this.fallos.length
+          ? `   Las que fallaron:\n` +
+            this.fallos.slice(0, 8).map((f) => `     · ${f}`).join("\n") +
+            (this.fallos.length > 8 ? `\n     … y ${this.fallos.length - 8} más` : "") + "\n"
+          : `   Y ni siquiera se registró el motivo: mira si el bucle llegó a correr.\n`),
+    );
+  }
+
+  /**
+   * Imprime el veredicto y devuelve el nº de fallos (0 = se puede dar verde).
+   * Llamarla es lo recomendable —deja la línea en el informe— pero **no es
+   * necesario para la guarda**: el gancho de salida cierra el código igual.
+   */
+  informe() {
+    if (this.suficiente()) {
+      console.log(
+        `  ✓ evaluadas ${this.n}/${this.minimo} ${this.unidad}` +
+          (this.fallos.length ? `  ⚠ ${this.fallos.length} con error, contadas aparte` : ""),
+      );
+      return this.fallos.length ? 1 : 0;
+    }
+    this.grito();
+    return 1;
   }
 }
 
@@ -379,6 +583,11 @@ export function buildCambiado() {
 const sinClon = () => !!process.env.SIN_CLON;
 
 export function w(file, data, { pisar = false } = {}) {
+  /* Congelar una medida es la señal de que esta sonda MIDE, y por tanto de que
+   * le toca el contrato de `Evaluadas`. Se apunta aquí —el sitio por el que
+   * pasan todas— y el gancho de salida lo cobra. */
+  _congelo = true;
+  ponGancho();
   /* La corrida se contaminó a mitad: se congela igual —tirar la medida sería
    * peor— pero **con nombre de contaminada y gritando**, para que nadie la cite
    * como buena. Un fichero que no se distingue de uno limpio es exactamente el
@@ -386,6 +595,7 @@ export function w(file, data, { pisar = false } = {}) {
   if (!sinClon() && buildCambiado() === true) {
     const ext = path.extname(file);
     file = `${file.slice(0, file.length - ext.length)}-CONTAMINADA${ext}`;
+    _contaminada = true; // y ahora sí cierra el código, desde el gancho
     console.error(
       `\n❌❌ EL CLON SE RECONSTRUYÓ DURANTE ESTA CORRIDA (BUILD_ID cambió).\n` +
         `   Las rutas medidas antes del cambio y las de después NO son comparables,\n` +

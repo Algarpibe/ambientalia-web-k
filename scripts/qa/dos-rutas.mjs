@@ -39,7 +39,7 @@
  * slider no sale Δ0, lo que cambió no era el cuerpo). Quien reutilice la sonda
  * tiene que saber que esa fila de la salida es el slider.
  */
-import { env, envRuta, launch, openPage, settle, w, ruta } from "./lib.mjs";
+import { env, envRuta, Evaluadas, launch, openPage, ruta, settle, w } from "./lib.mjs";
 
 const BASE = process.env.CLON || "http://localhost:3000";
 // `ruta()` deshace la traducción de MSYS (`/sectores/x` →
@@ -130,6 +130,12 @@ const extraer = function () {
     },
   };
 };
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "dos-rutas", unidad: "páginas", minimo: 1, porPaginas: true });
 
 const { browser } = await launch();
 // el parámetro NO se llama `ruta`: taparía el import del mismo nombre

@@ -11,7 +11,7 @@
  * Así el informe separa **contenido** (el alto) de **ritmo** (el margen), que
  * son dos defectos distintos con dos arreglos distintos.
  */
-import { env, launch, openPage, settle, w } from "./lib.mjs";
+import { env, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const URLS = {
   edar: [
@@ -28,6 +28,12 @@ const cual = process.argv[2] || "edar";
 const width = Number(process.argv[3] || 1440);
 const mobile = width <= 500;
 const [ORIG, CLON] = URLS[cual];
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "mono-cmp", unidad: "páginas", minimo: 1, porPaginas: true });
+
 const { browser } = await launch();
 
 const extraer = function (esOriginal) {

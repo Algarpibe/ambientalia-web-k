@@ -21,7 +21,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { w, QA } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const censo = JSON.parse(readFileSync(join(QA, "medidas/c-censo.json"), "utf8"));
 const casos = censo.paginas.filter((p) => !p.error && p.forma.startsWith("caso"));
@@ -60,12 +60,17 @@ const salida = {
 
 console.log(`  ── ¿resuelve el prefijo CRUZADO? ──`);
 const cruzados = [];
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "c-rutas", unidad: "rutas EN", minimo: EN.length });
 for (const p of EN) {
   const s = slug(p.url);
   const alterna = `https://kunakair.com/es/casos-de-exito/${s}/`;
   const r = await sonda(alterna);
   cruzados.push({ origen: p.url, alterna, ...r, direccion: "en→es" });
   console.log(`    en→es  ${String(r.status).padStart(3)}${r.location ? ` → ${r.location.slice(0, 62)}` : ""}  ${s.slice(0, 44)}`);
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 // y al revés, con una muestra de los españoles (los 53 no aportan más que 5)
 for (const p of ES.slice(0, 5)) {

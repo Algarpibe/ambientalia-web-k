@@ -21,7 +21,7 @@
  * 2 (regla 4 con `min`), y SABOTAJE=1 que rompe el patrón de <article> y tiene
  * que salir 2 escribiendo en su propio fichero.
  */
-import { env, w } from "./lib.mjs";
+import { env, Evaluadas, w } from "./lib.mjs";
 
 const ORIGEN = "https://kunakair.com";
 const SABOTAJE = !!env("SABOTAJE");
@@ -90,6 +90,10 @@ const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), sabotaje:
 let sinArticulos = 0;
 let fallos = 0;
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "lh-tarjetas", unidad: "páginas", minimo: PAGINAS.length });
 for (const P of PAGINAS) {
   const r = await baja(ORIGEN + P.ruta);
   if (r.status !== 200) {
@@ -108,6 +112,7 @@ for (const P of PAGINAS) {
     tarjetas: articulos.slice(0, 3).map(([, cls, cuerpo]) => leerTarjeta(cls, cuerpo)),
   };
   console.log(`  ✓ ${P.forma.padEnd(20)} ${P.ruta} → ${articulos.length} tarjetas`);
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ── ¿La taxonomía `category` tiene archivo vivo? No está en ningún sitemap ── */

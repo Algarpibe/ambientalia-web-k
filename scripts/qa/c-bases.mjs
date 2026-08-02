@@ -38,7 +38,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { QA, w } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const ANCHOS = [1440, 390];
 
@@ -65,6 +65,10 @@ const datos = Object.fromEntries(ANCHOS.map((a) => [a, leer(a)]));
 const rutas = Object.keys(datos[ANCHOS[0]].paginas);
 
 /* ── Guarda de FORMATO: sin `h1alto` esta sonda no mide, adivina ── */
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "c-bases", unidad: "anchos", minimo: ANCHOS.length });
 for (const a of ANCHOS) {
   for (const [r, v] of Object.entries(datos[a].paginas)) {
     if (v.error) continue;
@@ -77,6 +81,7 @@ for (const a of ANCHOS) {
       process.exit(2);
     }
   }
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ─────────────────────────────── el barrido ─────────────────────────────── */

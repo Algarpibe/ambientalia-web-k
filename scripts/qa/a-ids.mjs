@@ -27,7 +27,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, openPage, settle, w, QA } from "./lib.mjs";
+import { Evaluadas, launch, openPage, QA, settle, w } from "./lib.mjs";
 
 /* La página del spec, identificada por sus anclas en `a-behaviors-1440.json`:
  * es la que produjo el «16 de 61», y además está en la muestra de 24, así que es
@@ -82,6 +82,12 @@ function headingsCrudos(blob) {
 /* ═══════════════════════════════ recorrido ═══════════════════════════════ */
 
 console.log(`\n════════ A-SP9 · ¿el \`id\` lo trae el contenido o lo pone el tema? ════════`);
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "a-ids", unidad: "páginas", minimo: 1, porPaginas: true });
 
 const { browser } = await launch();
 const salida = {

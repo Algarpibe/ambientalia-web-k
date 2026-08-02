@@ -34,7 +34,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { env, launch, openPage, settle, w } from "./lib.mjs";
+import { env, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -84,6 +84,12 @@ const extraer = function () {
     cuerpoTxt: cuerpo.map((s) => t(s)),
   };
 };
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "corte-cuerpo", unidad: "páginas", minimo: 1, porPaginas: true });
 
 const { browser } = await launch();
 const todo = {};

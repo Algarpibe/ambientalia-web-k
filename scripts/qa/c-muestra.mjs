@@ -26,7 +26,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { w, QA } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const SEMILLA = 20260730; // constante: la muestra tiene que ser reproducible
 const CUPO = { "caso-es": 8, faq: 4 }; // los 4 de caso-en van enteros
@@ -157,6 +157,19 @@ for (const [raro, c] of Object.entries(cobertura)) {
 const sinCubrir = Object.entries(cobertura).filter(([, c]) => c.paginasConEl > 0 && c.enLaMuestra === 0);
 
 const total = Object.values(salida.formas).reduce((a, f) => a + f.muestra.length, 0);
+/**
+ * Contrato de `Evaluadas` (lib.mjs). Aquí la unidad es **una página elegida para
+ * la muestra**, y el mínimo es **una por forma**: una muestra adversaria que se
+ * quede sin páginas en alguna forma no es «una muestra pequeña», es una muestra
+ * que no cubre lo que dice cubrir. Por debajo sale NO SE PUDO EVALUAR.
+ *
+ * ⚠ Se declara a mano y no con el barrido automático de la tanda: aquí el bucle
+ * de nivel 0 que parecía el bueno estaba **anidado**, y meter la declaración
+ * dentro habría dado un fichero que compila y una `ev` fuera de alcance. Es la
+ * automatización produciendo algo plausible; lo cazó revisar el diff.
+ */
+const ev = new Evaluadas({ nombre: "c-muestra", unidad: "páginas de la muestra", minimo: Object.keys(salida.formas).length });
+ev.ok(total);
 salida.resumen = { total, de: ok.length, payloadsSinCubrir: sinCubrir.map(([r]) => r) };
 console.log(`\n════════ ${total} páginas para lectura fina, de ${ok.length} censadas ════════`);
 

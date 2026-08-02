@@ -71,7 +71,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { w } from "./lib.mjs";
+import { Evaluadas, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 
@@ -123,6 +123,10 @@ const estaticas = emitidas
 const porFamilia = [{ familia: "estáticas (page · solutions)", slugs: estaticas, fuente: "prerender-manifest" }];
 const noConstruidas = [];
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "slugs", unidad: "familias de slug", minimo: FAMILIAS.length });
 for (const { familia, modulo, exportado } of FAMILIAS) {
   const abs = join(RAIZ, modulo);
   if (!existsSync(abs)) {
@@ -140,6 +144,7 @@ for (const { familia, modulo, exportado } of FAMILIAS) {
     process.exit(2);
   }
   porFamilia.push({ familia, slugs: datos.map((d) => d.slug), fuente: `${modulo} › ${exportado}` });
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /** Test en negativo: una familia postiza con el slug que se pida. */

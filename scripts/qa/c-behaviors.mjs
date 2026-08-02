@@ -21,7 +21,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, openPage, settle, w, QA } from "./lib.mjs";
+import { Evaluadas, launch, openPage, QA, settle, w } from "./lib.mjs";
 
 const ANCHO = Number(process.argv[2] || 1440);
 const MOVIL = ANCHO <= 500;
@@ -38,6 +38,12 @@ const INDICES = [
 ];
 
 console.log(`\n════════ COMPORTAMIENTOS DEL GRUPO C · ${ANCHO}px ════════`);
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "c-behaviors", unidad: "páginas", minimo: 1, porPaginas: true });
 
 const { browser } = await launch();
 const salida = {

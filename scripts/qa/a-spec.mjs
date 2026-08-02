@@ -39,7 +39,7 @@
  * **dentro** del contenido (15/209, §3.3) y es justo el payload que se quiere
  * transcribir.
  */
-import { w } from "./lib.mjs";
+import { Evaluadas, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 400); // cortesía con el sitio vivo
 const SABOTAJE = !!process.env.SABOTAJE;
@@ -190,6 +190,10 @@ function anota(patron, casó, max = null) {
 const salida = [];
 const fallos = [];
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "a-spec", unidad: "páginas de la muestra", minimo: MUESTRA.length });
 for (const m of MUESTRA) {
   const u = url(m);
   const res = await fetch(u);
@@ -322,6 +326,7 @@ for (const m of MUESTRA) {
       ` ${String(cuerpo ? cuerpo.length : 0).padStart(6)} ch  ${relacionados ? "rel" : "   "}`,
   );
   await new Promise((r) => setTimeout(r, DORMIR));
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ═════════════════════════════ veredicto ══════════════════════════════════ */

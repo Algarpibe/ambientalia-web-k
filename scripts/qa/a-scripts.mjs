@@ -16,7 +16,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { w, QA } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const censo = JSON.parse(readFileSync(join(QA, "medidas", "a-censo.json"), "utf8"));
 
@@ -63,6 +63,10 @@ function clasificar(tag, cuerpo, src) {
 
 const salida = { meta: { fecha: "2026-07-30", paginas: objetivo.length }, scripts: [] };
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "a-scripts", unidad: "páginas", minimo: objetivo.length });
 for (const o of objetivo) {
   const html = await (await fetch(o.url)).text();
   const i = html.search(/<div[^>]*\bclass="[^"]*\bet_pb_post_content\b[^"]*"/i);
@@ -83,6 +87,7 @@ for (const o of objetivo) {
     });
   }
   await new Promise((r) => setTimeout(r, 120));
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ─────────────────────────────── informe ───────────────────────────────── */

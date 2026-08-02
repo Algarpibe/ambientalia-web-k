@@ -29,7 +29,7 @@
  * `::before`/`::after` del `li`. `getComputedStyle(el, "::after")` lo lee —
  * contenido, ancho, márgenes— y sin eso la comparación se hace a ojo.
  */
-import { Censo, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -229,12 +229,14 @@ const SEL = SABOTAJE ? ".kunak-migas-de-pan" : ".kunak-breadcrumbs";
 const SEL_ORIGINAL = SEL;
 const SEL_CLON = SEL;
 
+const ev = new Evaluadas({ nombre: `a-miga @${width}`, unidad: "pares", minimo: PARES.length });
 const { browser } = await launch();
 const censo = new Censo();
 const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), sabotaje: SABOTAJE }, pares: {} };
 
 for (const p of PARES) {
   const fila = {};
+  // una unidad = un PAR (los dos lados): media pareja no es una comparación
   for (const [lado, url, sel] of [
     ["original", p.original, SEL_ORIGINAL],
     ["clon", CLON + p.clon, SEL_CLON],
@@ -246,6 +248,7 @@ for (const p of PARES) {
     await page.close();
   }
   salida.pares[p.forma] = fila;
+  ev.ok();
 
   const o = fila.original;
   const c = fila.clon;

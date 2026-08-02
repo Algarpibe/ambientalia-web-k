@@ -32,7 +32,7 @@
  * varianza = plantilla; lo que varía entre formas distingue plantillas.
  * No decide nada por sí solo — dice **qué propiedad** hay que llevar al modelo.
  */
-import { Censo, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -165,6 +165,12 @@ const lee = async (url) => {
   await page.close();
   return datos;
 };
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "d4-tipografia", unidad: "páginas (2 por unidad: los dos lados)", minimo: (RUTAS.length) * 2, porPaginas: true });
 
 for (const [fam, url, rutaClon] of RUTAS) {
   try {

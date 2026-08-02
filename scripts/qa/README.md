@@ -791,3 +791,62 @@ Negativos, los cuatro congelados en `medidas/ancho-neg-*.json`:
 `SABOTAJE=muerto` → selector muerto ⇒ exit 2 · `pleno` → patrón ubicuo ⇒ exit 2 ·
 `sinmarcador` → cae al respaldo conductual **y lo declara** ⇒ exit 0 ·
 `anidado` → un `data-fila` dentro de otro ⇒ exit 2 · control ⇒ exit 0.
+
+---
+
+## EL CONTRATO DE `Evaluadas` — el mínimo de unidades, en `lib.mjs`
+
+> **Toda sonda declara —o deriva del build— su mínimo de unidades evaluadas. Por
+> debajo, el resultado es NO SE PUDO EVALUAR con código ≠ 0. Nunca verde.**
+
+```js
+const ev = new Evaluadas({ unidad: "rutas", minimo: RUTAS.length, porPaginas: true });
+```
+
+- `minimo` **obligatorio y ≥ 1**: una sonda que no sabe cuántas unidades debería
+  evaluar no puede afirmar que las evaluó. Derivarlo (`RUTAS.length`) es mejor que
+  escribirlo — una ruta nueva sube el listón sola.
+- `porPaginas: true` → las cuenta `openPage`, por donde pasan todas. No hay un
+  `ok()` que se pueda olvidar. Se pone a `false` cuando la unidad es otra cosa
+  (un PAR de páginas, una fila, una comparación) y entonces la sonda cuenta.
+- **Dos lados = dos páginas por unidad**: en las comparadoras el mínimo va
+  `× 2`, porque media pareja no es una comparación.
+- El veredicto lo fuerza un gancho de `process.on("exit")`: **no se puede salir
+  con 0 por debajo del mínimo ni con un `process.exit(0)` explícito**, y congelar
+  una medida sin declarar nada sale con «SIN CONTRATO».
+
+Estado tras la migración: **47 sondas, 39 con el mínimo derivado de su lista** y
+**8 con suelo declarado de 1** (`a-ids` · `c-behaviors` · `corte-cuerpo` ·
+`d4-cta` · `dos-rutas` · `mono-cmp` · `offsets` · `tree-cmp`). El suelo cierra el
+agujero de «0 = verde» pero **no** detecta una corrida parcial: apretar esos ocho
+a su lista real es trabajo pendiente y está anotado como tal.
+
+Negativos, en `qa:lib`: bajo el mínimo con `exit(0)` ⇒ ≠0 · alcanzado ⇒ 0 ·
+congelar sin declarar ⇒ «SIN CONTRATO» ⇒ ≠0 · `SIN_CONTRATO=1` ⇒ 0 · `minimo`
+ausente o 0 ⇒ **tira** · las 47 declaran ⇒ barrido · **y las 47 compilan**, que
+es la trampa que el barrido de texto no veía.
+
+### `clon-base` — dueña de su servidor, y las cuatro patas
+
+```bash
+npm run qa:clon-base -- 1440 [etiqueta] [--cmp medidas/base.json]
+```
+
+Arranca **su propio** clon con `iniciarClon()`: el modo de fallo que la hizo dar
+verde midiendo nada —el 3000 vacío— **ya no existe**, no se detecta. Y lleva DOS
+contratos, porque tiene dos niveles y cada uno se puede vaciar por su cuenta:
+las **rutas medidas** (mínimo derivado del build) y las **rutas comparadas**
+(mínimo 1: una línea base sin rutas en común compara cero y antes salía con 0).
+
+| pata | cómo | resultado |
+|---|---|---|
+| puerto muerto | `CLON=http://127.0.0.1:9` | **exit 2** · «NO SE PUDO EVALUAR — 0 de 31 rutas» |
+| build viejo | cambiar `.next/BUILD_ID` a mitad | **exit 2** · salida `-CONTAMINADA`, 31/31 medidas |
+| 0 comparadas | `--cmp medidas/clon-base-neg-baseline-fantasma.json` | **exit 1** · «0 de 1 rutas comparadas» |
+| control | normal, con línea base real | **exit 0** · 31 comparadas · 0 regresiones |
+
+⚠ **La pata del build viejo destapó la sexta instancia de la clase, dentro de otra
+guarda:** la de `BUILD_ID` renombraba la salida a `-CONTAMINADA`, gritaba **y no
+tocaba el código de salida**. El HANDOFF que la estrenó decía «sale por error»:
+no salía. Ahora va por el mismo gancho que el mínimo — un solo sitio decide si
+una corrida puede salir con 0.

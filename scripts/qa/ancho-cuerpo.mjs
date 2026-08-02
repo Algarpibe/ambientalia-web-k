@@ -39,7 +39,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, QA, env, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, env, Evaluadas, iniciarClon, launch, openPage, QA, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -278,6 +278,12 @@ let parejasTot = 0, filasOrigTot = 0, filasClonTot = 0;
 const viasTot = {};
 const porMetodo = {};
 const sinMarcar = [];
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "ancho-cuerpo", unidad: "páginas (2 por unidad: los dos lados)", minimo: (RUTAS.length) * 2, porPaginas: true });
 
 for (const ruta of RUTAS) {
   const lee = async (url) => {

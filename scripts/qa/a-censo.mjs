@@ -25,7 +25,7 @@
  */
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { w, QA } from "./lib.mjs";
+import { Evaluadas, QA, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 150); // cortesía con el sitio vivo
 const LIMITE = Number(process.env.LIMITE || 0); // 0 = todas
@@ -125,6 +125,10 @@ const censo = { meta: { fecha: "2026-07-30", fuente: "HTML servido del original"
 let n = 0;
 let fallos = 0;
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "a-censo", unidad: "formas", minimo: Object.keys(FORMAS).length });
 for (const [forma, urls] of Object.entries(FORMAS)) {
   const lista = LIMITE ? urls.slice(0, LIMITE) : urls;
   censo.formas[forma] = { total: lista.length, paginas: [] };
@@ -175,6 +179,7 @@ for (const [forma, urls] of Object.entries(FORMAS)) {
     if (n % 25 === 0) console.log(`  … ${n} páginas`);
     if (DORMIR) await new Promise((r) => setTimeout(r, DORMIR));
   }
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 /* ─────────────────────────────── informe ───────────────────────────────── */

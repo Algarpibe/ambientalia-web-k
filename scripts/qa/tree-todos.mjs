@@ -7,7 +7,7 @@
  * De aquí sale el campo `flujo` de `SectorBlock` (src/lib/sectores.ts).
  * Salida congelada del 2026-07-28: scripts/qa/medidas/tree-todos-1440.json
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const SECTORES = [
   ["urbano", "calidad-del-aire-en-las-ciudades"],
@@ -24,6 +24,12 @@ const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
 const { browser } = await launch();
 const todo = {};
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "tree-todos", unidad: "páginas", minimo: SECTORES.length, porPaginas: true });
 
 for (const [nombre, slug] of SECTORES) {
   try {

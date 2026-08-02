@@ -21,7 +21,7 @@
  */
 import { readFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, w, QA } from "./lib.mjs";
+import { Evaluadas, launch, QA, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 120); // cortesía con el sitio vivo
 
@@ -83,6 +83,9 @@ const PAGINAS = [
 
 console.log(`\n════════ CENSO DEL GRUPO C · ${PAGINAS.length} páginas ════════`);
 const porForma = {};
+/* Contrato de `Evaluadas` (lib.mjs): una unidad = una página censada de verdad
+ * (las que fallaron el `fetch` llevan `error` y no cuentan). */
+const ev = new Evaluadas({ nombre: "c-censo", unidad: "páginas censadas", minimo: PAGINAS.length });
 for (const p of PAGINAS) porForma[p.forma] = (porForma[p.forma] || 0) + 1;
 console.log(`  ${JSON.stringify(porForma)}\n`);
 
@@ -255,6 +258,7 @@ await browser.close();
 /* ════════════════════════════════ informe ════════════════════════════════ */
 
 const ok = salida.paginas.filter((p) => !p.error);
+ev.ok(ok.length);
 const formas = [...new Set(ok.map((p) => p.forma))];
 
 /** El discriminador de plantillado: ¿cuánto varía esto entre instancias? */

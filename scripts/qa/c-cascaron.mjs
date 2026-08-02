@@ -34,7 +34,7 @@
  * fallan: una sonda que no mira nada y una que no encuentra nada dan la misma
  * salida.
  */
-import { launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -92,6 +92,12 @@ if (process.env.SABOTAJE === "forma") {
 
 const { browser } = await launch();
 const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), n: INSTANCIAS.length }, instancias: {} };
+
+/* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
+ * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
+ * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
+ * pueda olvidar. */
+const ev = new Evaluadas({ nombre: "c-cascaron", unidad: "páginas", minimo: INSTANCIAS.length, porPaginas: true });
 
 for (const inst of INSTANCIAS) {
   try {

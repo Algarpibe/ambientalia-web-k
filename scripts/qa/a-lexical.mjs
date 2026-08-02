@@ -61,7 +61,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { launch, w, QA } from "./lib.mjs";
+import { Evaluadas, launch, QA, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 150); // cortesía con el sitio vivo
 const SABOTAJE = process.env.SABOTAJE || "";
@@ -916,6 +916,10 @@ const salida = {
 
 let limpias = 0, conPerdida = 0, irrecuperables = 0, deriva = 0, fallos = 0;
 
+/* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
+ * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
+ * `openPage`, así que cuenta ella misma cada unidad completada. */
+const ev = new Evaluadas({ nombre: "a-lexical", unidad: "páginas", minimo: PAGINAS.length });
 for (const p of PAGINAS) {
   const corto = p.url.replace("https://kunakair.com/es/", "").replace(/\/$/, "").slice(-58);
   try {
@@ -1002,6 +1006,7 @@ for (const p of PAGINAS) {
     console.log(`  ⚠ ${corto}  ${String(e).slice(0, 120)}`);
   }
   if (DORMIR) await new Promise((r) => setTimeout(r, DORMIR));
+  ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 
 await browser.close();
