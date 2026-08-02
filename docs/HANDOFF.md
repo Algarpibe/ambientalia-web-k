@@ -1,3 +1,125 @@
+# HANDOFF — «0 comparado = verde» deja de depender de la atención
+
+> ⚠ **Tanda 2026-08-02 (10.ª).** Los cuatro pasos del encargo. Tanda de
+> **INSTRUMENTO**: no se midió fidelidad y no se tocó el clon. Lo que cambia es
+> qué puede y qué no puede salir verde.
+
+## 1 · El contrato, y por qué esta vez sí cierra la clase
+
+La misma clase había aparecido **cinco veces**, cada una con su arreglo local:
+`mono-cmp` (E1) · `charsCenso()` · `ancho-cuerpo` al nacer · `ruido` ·
+**`clon-base`** con 31 `ERR_CONNECTION_REFUSED` y código 0. Cinco arreglos no
+impidieron el sexto, así que el arreglo no era el arreglo.
+
+> **Toda sonda DECLARA —o deriva del build— su mínimo de unidades evaluadas, y
+> por debajo el resultado es NO SE PUDO EVALUAR con código ≠ 0. Nunca verde.**
+
+`Evaluadas`, en `lib.mjs`. Lo que lo hace **estructural** y no una función más
+que se puede olvidar:
+
+- el veredicto lo fuerza un gancho de `process.on("exit")`: una sonda que declare
+  su mínimo **no puede salir con 0 por debajo de él aunque nunca mire su propio
+  contador**, ni con un `process.exit(0)` explícito;
+- **congelar una medida sin declarar nada sale por «SIN CONTRATO»**: el olvido
+  tampoco es verde;
+- `minimo` es obligatorio y ≥ 1, y `new Evaluadas()` **tira** si falta o es 0 —
+  una sonda que no sabe cuántas unidades debería evaluar no puede afirmar que las
+  evaluó;
+- las páginas las cuenta **`openPage`**, por donde pasan todas: no hay un `ok()`
+  que se pueda olvidar.
+
+**Migradas las 47.** 39 con el mínimo derivado de su lista (`× 2` en las
+comparadoras: media pareja no es una comparación) y **8 con suelo declarado de
+1** — `a-ids` · `c-behaviors` · `corte-cuerpo` · `d4-cta` · `dos-rutas` ·
+`mono-cmp` · `offsets` · `tree-cmp`. El suelo cierra «0 = verde» pero **no
+detecta una corrida parcial**: apretarlas a su lista real está anotado como
+pendiente, no dado por hecho.
+
+## 2 · `clon-base` a servidor propio, y las cuatro patas
+
+Ya no espera un `next start` ajeno. El modo de fallo que la hizo dar verde
+midiendo nada **no se detecta: no existe**. Y lleva **dos** contratos, porque
+tiene dos niveles que se vacían por separado — rutas medidas y rutas
+**comparadas** (una línea base sin rutas en común comparaba cero y salía con 0).
+
+| pata | resultado |
+|---|---|
+| puerto muerto (`CLON=…:9`) | **exit 2** · «NO SE PUDO EVALUAR — 0 de 31 rutas» |
+| build viejo (`BUILD_ID` a mitad) | **exit 2** · salida `-CONTAMINADA`, 31/31 medidas |
+| 0 páginas comparadas | **exit 1** · «0 de 1 rutas comparadas» |
+| control | **exit 0** · 31 comparadas · 0 con regresión |
+
+## 3 · Dos instancias más, destapadas por el propio trabajo
+
+**La SEXTA, dentro de otra guarda.** La de `BUILD_ID` renombraba la salida a
+`-CONTAMINADA`, gritaba **y no tocaba el código de salida**. El HANDOFF que la
+estrenó decía «sale por error»: no salía. Es *documentado no es conectado* por
+segunda vez en `lib.mjs` —la primera fue `SIN_CLON`, inerte—. La destapó pedirle
+a `clon-base` la pata de «build viejo», que habría dado verde.
+
+**La SÉPTIMA, en el test del contrato.** El barrido que comprueba que las 47 lo
+declaran es una expresión regular, y dio verde sobre `c-censo.mjs` **con dos
+`const ev` y sin compilar**: miraba el texto, no el programa. `qa:lib` hace ahora
+un `--check` por sonda.
+
+Y una tercera cosa que conviene no olvidar: la migración automática produjo en
+`c-muestra` un fichero **que compila** con la `ev` **fuera de alcance**, porque
+el `for` de nivel 0 que parecía el bueno estaba anidado. Lo cazó revisar el diff,
+no ejecutar nada.
+
+## 4 · La auditoría: ¿hubo algún verde-sin-medir citado?
+
+Contestada **leyendo `medidas/`**, sin re-medir. **31 corridas congeladas de
+`clon-base`; en 30 todas sus páginas tienen dato.** Los dos ficheros con cero
+unidades son de hoy: el diagnóstico y la pata 1 del negativo.
+
+**Una quedó a medias:** `clon-base-1440-cqa1-despues.json`, **16 de 17** —
+`/casos-de-exito/red-calidad-de-aire-para-world-athletics`, timeout de 120 s.
+
+| afirmación | estado |
+|---|---|
+| acta de C-QA1: «las **11 anteriores** no se han movido un píxel» | **RESPALDADA** — las 11 están medidas |
+| titular de esa corrida: «17 páginas comparadas» | **fueron 16** |
+| esa ruta a 390, misma tanda | **medida y comparada** |
+
+**Ninguna conclusión del proyecto se cae**; se corrige una cifra de titular. Y
+que la respuesta exista es mérito de la regla de congelar: sin los 31 ficheros,
+la pregunta no se podría contestar hoy.
+
+## 5 · Verificación
+
+`qa:lib` **42/42** (6 casos del contrato + barrido de declaración + barrido de
+compilación) · `npm run check` **0 errores** · `qa:slugs` limpio ·
+`qa:cobertura` limpio · `qa:ancho` acotada exit 0 · `clon-base` las cuatro patas.
+
+⚠ **Lo que NO se ha corrido**: las 47 sondas enteras. Se verificó que **las 47
+compilan y declaran**, y se corrieron en vivo `slugs`, `cobertura`, `ancho`,
+`clon-base` y `lib`. Las demás llevan una línea insertada por barrido revisado a
+mano; si alguna falla, fallará **en voz alta** — que es exactamente lo que esta
+tanda instala.
+
+## 6 · Lo que queda abierto
+
+1. **Ráfaga 3** de C-QA6, con el observable puesto. **Desde hoy mismo** (el
+   2026-08-03 ya cumple ≥2 h y tercer día).
+2. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+3. **La retícula de la HOME** — 86.35/85 % contra 86 %. Va con C-QA3.
+4. **Los 8 mínimos de suelo**, a su lista real.
+5. **Las 17 filas sin emparejar** del eje horizontal y su **RANGO, sin probar**.
+6. **Migrar a `iniciarClon()` las 17 sondas** que aún esperan un 3000 ajeno
+   (`clon-base` ya no está en la lista).
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No leer un verde de sonda como «midió»** sin la línea de unidades: ahora la
+  imprime, pero el hábito viene de antes.
+- **No añadir una sonda nueva sin `Evaluadas`**: `qa:lib` la caza, y por eso el
+  barrido tiene que seguir en verde.
+- **No citar el titular de `clon-base-1440-cqa1-despues`**: son 16, no 17.
+- **No dar por apretados los 8 mínimos de 1.**
+
+---
+
 # HANDOFF — el marcador de fila, las 177 huérfanas resueltas y el observable de la ráfaga 3
 
 > ⚠ **Tanda 2026-08-02 (9.ª).** Los cuatro pasos del encargo. **Tanda de
