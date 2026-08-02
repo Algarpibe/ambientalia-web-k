@@ -153,6 +153,19 @@ Verificada **en negativo** (2026-07-29): con 1px de más en el `padding-bottom`
 del hero cazó las 4 páginas que comparten el componente, nombró la sección, dio
 el cambio de ritmo y salió con código 1.
 
+> ⚠ **Y un tercer fallo suyo, cazado el 2026-08-02 al usarla como guarda:** con
+> el 3000 vacío imprimía **31 `ERR_CONNECTION_REFUSED`** —uno por ruta— y salía
+> con **código 0**. O sea que **la guarda de regresión del clon daba verde
+> midiendo exactamente nada.** El aviso estaba impreso desde el principio; lo que
+> faltaba era que **contase**: regla 1 de §sondas —*impreso y no contado*— y
+> *verde por vaciado*, las dos en la sonda que más se corre.
+>
+> Ahora las rutas no medidas cierran el código de salida, y «páginas comparadas»
+> cuenta **las que se compararon**, no las que se intentaron. Lo que **no**
+> arregla: sigue esperando un `next start` ajeno en el 3000 en vez de
+> `iniciarClon()` — es una de las 18 pendientes de migrar, y hasta que se migre
+> este modo de fallo se detecta, no se evita.
+
 ### `offsets.mjs` — medir al nivel donde vive la propiedad
 
 **Instrumental estándar, no sonda de un experimento.** Es la contrapartida de
@@ -450,6 +463,51 @@ primera, que era la hipótesis obvia. Sin Cookiebot en el DOM en ninguno.
 si el `h1` del original no coincide con el de otra corrida del mismo día,
 descarta la corrida y repítela.
 
+#### El OBSERVABLE de mecanismo (2026-08-02, para la ráfaga 3 de C-QA6)
+
+Las ráfagas 1 y 2 dejaron establecido que el `h1` es **bimodal**: dos estados
+discretos separados por **32.28 exactos**, con el valor alto idéntico en dos días
+distintos. Una condición binaria **no se explica midiendo más veces la misma
+magnitud** —eso vuelve a contar cuánto mueve—: se explica registrando, en la
+misma carga, algo que cambie con ella. Desde hoy `ruido.mjs` anota por carga
+`document.fonts.status`, el `font-family` computado del `h1`, **qué familias
+dice `fonts.check()` que están de verdad disponibles**, los **renglones y el
+ancho RENDERIZADOS** del titular, y la **cadena `h1`→raíz** con el
+desplazamiento de cada nivel dentro de su padre.
+
+Dos avisos que hacen falta para leer el fichero sin engañarse:
+
+- **`getComputedStyle(h1).fontFamily` devuelve la LISTA DECLARADA, no la fuente
+  con la que se pintó.** Si la webfont no llegó, ese valor **no cambia**: él solo
+  no puede discriminar el fenómeno que se le pide discriminar. Quien discrimina
+  son `fonts.status`/`check()` y, sobre todo, el ancho y los renglones
+  renderizados.
+- **El ±32.28 no está DENTRO del `h1`: está en su `y`.** Lo que crece está por
+  encima, y por eso la cadena — el nivel cuyo desplazamiento cambia entre dos
+  cargas es el nivel donde nace la diferencia.
+
+El informe distingue **tres** respuestas y no dos: *acompaña* · *no acompaña* ·
+**«no se puede evaluar aquí»** (el `h1` no cambió de estado en esta ráfaga).
+Confundir las dos últimas es el fallo entero de C-QA6.
+
+Y los **detectores binarios** llevan veredicto propio: `rocketToken` dio `N` en
+las **36 cargas** de las ráfagas 1 y 2, y `rocketLoader` también. Eso **no es
+«el token no interviene»** — es un detector que **nunca ha discriminado**, la
+regla del cero/pleno. Sale impreso como **NO VALIDADO** y **no se cita como
+evidencia** hasta que se le vea cambiar. No cierra el código de salida a
+propósito: es una observación sobre el original, no un defecto de la sonda.
+
+```bash
+# Ráfaga 3 (desde el 2026-08-03, ≥2 h de la última y mejor en un tercer día):
+RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
+  CAMPANA=cqa6 npm run qa:ruido -- 3
+```
+
+Negativos: `SABOTAJE=muerto` → ancla inventada ⇒ censo ⇒ exit 2 ·
+`SABOTAJE=detector` → un detector que nunca dispara y otro que dispara siempre
+⇒ los **dos** salen NO VALIDADOS (el cero y el pleno en la misma corrida) ·
+control ⇒ exit 0. Congelados en `medidas/ruido-*neg-*.json`.
+
 ## `medidas/`
 
 Salidas congeladas de las sondas. **Son la prueba, no un caché.**
@@ -675,11 +733,16 @@ levanta **tira** diciendo el puerto.
 ### `ancho-cuerpo.mjs` — el eje horizontal del CUERPO, los dos lados
 
 ```bash
-npm run qa:ancho -- 1440|390        # SOLO=<txt> · SALIDA=… · SABOTAJE=1|pleno
+npm run qa:ancho -- 1440|390        # SOLO=<txt> · SALIDA=…
+                                    # SABOTAJE=muerto|pleno|sinmarcador|anidado
 ```
 
 Cierra el hueco nº 1 de `COBERTURA-MEDICION.md`. Deriva sus rutas del build,
 arranca **su propio clon** (`iniciarClon`) y congela salida.
+
+**Cobertura 2026-08-02: 164 de 181 filas del original, a 1440 y a 390, con el
+MISMO recuento en las 31 rutas.** Y se declara en filas, no en rutas: *una ruta
+contaba como cubierta con una sola de sus doce filas emparejada.*
 
 **Las cuatro decisiones de diseño, cada una pagada antes:**
 
@@ -688,10 +751,13 @@ arranca **su propio clon** (`iniciarClon`) y congela salida.
    cuenta aparte las no informativas — sin eso, este eje seguiría pareciendo
    verde.
 2. **Identidad por marcador semántico.** En el original, `et_pb_row`/`et_pb_column`
-   (clases del tema) sí nombran una cosa. En el clon **no hay equivalente**, así
-   que la fila se detecta por **comportamiento** (centrada y más estrecha que su
-   sección) y se declara. ⚠ **Sobre-casa en los sectores** (11 filas contra 16):
-   la salida lo enseña como huérfanas, no lo esconde.
+   (clases del tema) sí nombran una cosa. En el clon no había equivalente, así
+   que la fila se deducía por **comportamiento** (centrada y más estrecha que su
+   sección) y **sobre-casaba**: 16 filas donde el sector tiene 11 — bajaba a las
+   diapositivas de un slider y a sus puntos de paginación (12 · 12 · 7 px).
+   **Desde 2026-08-02 el clon lo dice: `data-fila`.** El conductual se queda de
+   respaldo y la salida declara por cuál entró (`via`), para que una página sin
+   marcar no desaparezca en silencio.
 3. **Emparejar por CONTENIDO, no por índice** — el nº de secciones ya difiere por
    partición. Y **la firma va SIN ESPACIOS**: el original separa nodos en línea
    con espacios y el clon no, así que colapsar a uno casó **0 de 13 filas** en la
@@ -701,5 +767,27 @@ arranca **su propio clon** (`iniciarClon`) y congela salida.
    el código de salida: *una sonda que no compara nada y una que compara y no
    encuentra nada dan la misma salida*.
 
-Negativos: `SABOTAJE=1` → selector muerto ⇒ error · `SABOTAJE=pleno` → patrón
-ubicuo ⇒ error · control ⇒ exit 0.
+### ⚠ La quinta, que se pagó entera: TRES definiciones de «el mismo texto»
+
+El marcador arregló **un tercio** de las huérfanas. Las otras dos terceras partes
+estaban dentro del emparejador, y son la trampa de `charsCenso()` **tres veces
+seguidas en la misma función**:
+
+| lo que leía | por qué | arreglo |
+|---|---|---|
+| «TambiéntepuedeinteresarRelatedcontentقديهمكأيضًا» | el original **sirve todos los idiomas en el DOM** y oculta por CSS todos menos uno | `innerText`, no `textContent` |
+| «Descargarcatálogo→» contra «Descargarcatálogo» | la flecha es `::after` en el original y un `<span>` en el clon | se quita de los DOS |
+| textos distintos en cada carga | «Artículos y Guías» **se baraja**; la banda de clientes es un **carrusel de 2.5 s** | pasada por prefijo (12 car.) y por **conjunto** de nombres de imagen, las dos con unicidad exigida en los dos lados |
+
+Cada pareja lleva en el fichero **cómo** se emparejó (`texto` · `prefijo` ·
+`imagenes`): un Δ sacado de un emparejamiento flojo no vale lo que uno sacado de
+la firma entera, y el lector tiene que poder distinguirlos sin preguntar.
+
+**Regla que se lleva a la próxima sonda:** cuando un emparejador por texto falla,
+la hipótesis por defecto no es «el clon está partido distinto» — es **«mi
+definición de *el mismo texto* no es la misma en los dos lados»**.
+
+Negativos, los cuatro congelados en `medidas/ancho-neg-*.json`:
+`SABOTAJE=muerto` → selector muerto ⇒ exit 2 · `pleno` → patrón ubicuo ⇒ exit 2 ·
+`sinmarcador` → cae al respaldo conductual **y lo declara** ⇒ exit 0 ·
+`anidado` → un `data-fila` dentro de otro ⇒ exit 2 · control ⇒ exit 0.

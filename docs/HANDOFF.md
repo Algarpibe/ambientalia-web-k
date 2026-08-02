@@ -1,3 +1,169 @@
+# HANDOFF — el marcador de fila, las 177 huérfanas resueltas y el observable de la ráfaga 3
+
+> ⚠ **Tanda 2026-08-02 (9.ª).** Los cuatro pasos del encargo. **Tanda de
+> INSTRUMENTO y ADJUDICACIÓN**: se arregló cómo se mide y se adjudicó todo lo
+> medido; **no se tocó ni un ancho del clon**, a propósito.
+
+## 1 · Lo primero, porque tiene fecha: la ráfaga 3 ya tiene con qué explicar
+
+`ruido.mjs` anota ahora, **por carga y junto al `h1`**, un observable
+discriminante. La campaña llegaba a su última ráfaga sabiendo que el `h1` es
+**bimodal** —dos estados a 32.28 exactos, el alto idéntico en dos días— y sin
+nada con que atribuirlo, y **una condición binaria no se explica midiendo más
+veces la misma magnitud.**
+
+```bash
+# desde el 2026-08-03, ≥2 h de la última (17:33 del 2026-08-02), mejor en un 3.er día
+RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
+  CAMPANA=cqa6 npm run qa:ruido -- 3
+```
+
+Lo que registra: `document.fonts.status` · el `font-family` computado · **qué
+familias están de verdad disponibles** (`fonts.check`) · los **renglones y el
+ancho RENDERIZADOS** del titular · y la **cadena `h1`→raíz** con el
+desplazamiento de cada nivel dentro de su padre.
+
+**Los dos avisos que hacen falta para no leerlo mal, y el segundo cambia dónde
+hay que mirar:**
+
+1. **`getComputedStyle(h1).fontFamily` devuelve la lista DECLARADA, no la fuente
+   con la que se pintó.** Si la webfont no llegó y se usó la de reserva, ese
+   valor **no cambia**: él solo es un detector que no puede ver el fenómeno. Se
+   registra igual —descarta que el CSS servido cambie— pero quien discrimina son
+   `fonts.status`/`check()` y el **ancho y los renglones renderizados**.
+2. **El ±32.28 no está DENTRO del `h1`: está en su `y`**, o sea que lo que crece
+   está **por encima**. La cadena existe por eso: el nivel cuyo desplazamiento
+   cambia entre dos cargas es **el nivel donde nace el 32.28**.
+
+El informe distingue **tres** respuestas y no dos: *acompaña* · *no acompaña* ·
+**«no se puede evaluar aquí»** (el `h1` no cambió de estado en esta ráfaga).
+Confundir las dos últimas es el fallo entero de C-QA6.
+
+**`rocketToken`: NO VALIDADO, y con número.** `N` en las **36 cargas** de las
+ráfagas 1 y 2 — y `rocketLoader` igual. Eso no es «el token no interviene»: es un
+detector que **nunca ha discriminado**. Sale impreso como NO VALIDADO y **no se
+cita** hasta que se le vea cambiar. Si la ráfaga 3 tampoco le saca un `S`, se
+retira del observable.
+
+## 2 · El marcador de fila: 99 parejas de 181 pasan a 164 — y la hipótesis era un tercio
+
+`data-fila` en 23 contenedores del clon. **Es identidad, no medida, y está
+probado**: `clon-base` con el mismo original y el mismo día, build sin marcador
+contra build con marcador, da **31 páginas · 0 con regresión · umbral CERO**.
+
+> ⚠ **Pero el HANDOFF anterior decía que el marcador «convierte huérfanas en
+> emparejadas sin tocar una medida», y medido es UN TERCIO.** Las otras dos
+> terceras partes estaban **dentro del emparejador**: tenía **tres definiciones
+> distintas de «el mismo texto»**, la trampa de `charsCenso()` tres veces
+> seguidas en la misma función.
+
+| causa de las 177 | qué era | lo arregla |
+|---|---|---|
+| filas **fantasma** del clon | el conductual bajaba a las diapositivas de un slider y a sus puntos (12 · 12 · 7 px) | el marcador |
+| el original sirve **todos los idiomas** | «Related content قد يهمك أيضًا» contra el español solo | `innerText` |
+| la **flecha** de los botones | `::after` en el original, `<span>` en el clon | quitarla de los dos |
+| contenido que **rota** | «Artículos y Guías» se baraja; la banda de clientes es un carrusel de 2.5 s | pasada por prefijo y por **conjunto** de imágenes |
+
+|  | antes | ahora |
+|---|---|---|
+| filas del original emparejadas | 99 / 181 (54.7 %) | **164 / 181 (90.6 %)** |
+| huérfanas | 177 | **27** |
+| filas del clon | 194 (con fantasmas) | **174, todas por marcador** |
+
+**Las 31 rutas dan el MISMO recuento a 1440 y a 390.** No es cobertura: es el
+control de que el emparejador no está inventando.
+
+## 3 · La adjudicación — y una corrección a la cosecha de ayer
+
+### ⚠ El «75 % → −158.39» de la HOME NO EXISTE
+
+Era una **fila fantasma**: un bloque centrado dentro de `Testimonios` que el
+detector conductual tomó por fila. Con el marcador desaparece y la fila real
+empareja a **86.35 %, +5.05**, como sus siete hermanas. **El clon sirve DOS
+valores de retícula, no tres**, y el peor Δ de la home es **−14.39**.
+
+> Es la regla del pleno aplicada a un heurístico: **uno que encuentra MÁS de lo
+> que hay no da error — da un número plausible de más.**
+
+### La ficha buena de `/` (FIDELIDAD, va con C-QA3)
+
+El original usa **86 % en sus 16 filas, sin excepción, a los dos anchos**.
+
+| el clon | filas | Δ@1440 | Δ@390 | quién |
+|---|---|---|---|---|
+| fijo **86.35 %** | 8 | +5.05 | +1.36 | `SectionRow` |
+| fijo **85 %** | 2 | −14.39 | −3.89 | `TrustBar` · `UltimosProyectos` |
+| **cambia** 86.35→85 en `md` | 3 | −14.39 | +1.36 | `HeroSection` · `ProductosTabs` · `UltimosArticulos` |
+
+**FAMILIA DE CALIBRACIÓN de manual:** los cinco componentes tienen variante por
+familia y **las de las otras familias están a Δ0** en las 30 rutas restantes
+—`TrustBar` sirve 95 % al sector, `UltimosArticulos` 86 % al sector y 80 % a
+producto—. La única variante que nadie había comparado es la de la home.
+
+### Las otras 30 rutas: **152 filas informativas a Δ0**, los dos anchos
+
+Primera verificación real de la retícula del cuerpo del proyecto. Incluye la
+**miga de pan de las 29 rutas** que la llevan, que hasta hoy solo había mirado
+`a-miga` y solo el eslabón.
+
+### Las 27 huérfanas: ninguna es un ancho
+
+12 son **PARTICIÓN** (el clon funde en una fila lo que el original parte en dos,
+o al revés) · 6 de ellas son **D1**, ya fichada · 2 son un límite del
+emparejador (el carrusel de logos) · 1 es el artefacto del `h1` oculto de `/` ·
+**1 es S9a, que este eje redescubrió solo** — dos instrumentos independientes
+señalando el mismo párrafo. Tabla completa en `PENDIENTES-QA.md`.
+
+⚠ **Y una medida que la tabla de Δ no cuenta:** la fila del hero de `/` mide
+**1224 contra 1238.39** y no empareja (por el `h1` oculto). Serían **13** filas
+con Δ≠0, no 12.
+
+## 4 · `clon-base` daba VERDE midiendo nada
+
+Cazado al usarla como guarda de esta tanda: **con el 3000 vacío imprimía 31
+`ERR_CONNECTION_REFUSED` y salía con código 0.** La guarda de regresión del clon,
+la que más se corre, no distinguía «sin regresión» de «sin medir».
+
+Son las dos reglas de §sondas a la vez: *impreso y no contado* y *verde por
+vaciado*. El aviso llevaba ahí desde el principio; lo que faltaba era que
+**contase**. Arreglado —las rutas no medidas cierran el código de salida— pero
+**no migrada**: sigue esperando un `next start` ajeno, y es una de las 18.
+
+## 5 · Verificación
+
+`npm run check` **0 errores** · `qa:enlaces` limpio en las dos direcciones
+(1725 · 868) · `qa:slugs` limpio (A, B y C) · `qa:lib` **31/31** ·
+`qa:ancho` **exit 0 a 1440 y a 390**, con sus cuatro negativos ·
+`qa:ruido` con sus tres negativos · `clon-base` **31 páginas · 0 regresión**
+antes/después del marcador.
+
+## 6 · Lo que queda abierto, por prioridad
+
+1. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO,
+   arreglo estructural. Sin tocar.
+2. **La retícula de la HOME** — 86.35/85 % contra 86 %. **Va con C-QA3.**
+3. **Ráfaga 3** de la campaña, **con el observable puesto**. Desde mañana.
+4. **Las 17 filas sin emparejar**: 12 son partición ya nombrada; lo que no se
+   puede cerrar por esta vía son las de contenido barajado.
+5. **El RANGO del eje horizontal: sin probar.** `qa:ancho` solo se ha corrido a
+   1440 y a 390.
+6. **Migrar las 18 sondas** a servidor propio — con `clon-base` la primera, que
+   ya ha demostrado el modo de fallo.
+7. **Los huecos 2–5 de cobertura**: filas 6/31 · módulos 2/31 · offsets 0/31 ·
+   **comportamiento 0/31**.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No citar el −158.39 de la home.** No existe: era una fila fantasma.
+- **No leer «164/181» como el eje cerrado.** Y no leer «31/31 rutas» como nada:
+  la unidad de este eje es la FILA.
+- **No usar `rocketToken` como evidencia** hasta que dé `S` alguna vez.
+- **No arreglar la home por partes**: la retícula va con C-QA3.
+- **No fiarse de un `clon-base` verde sin mirar que haya medido.** Ya lo dice él,
+  pero la costumbre de leerlo como «todo bien» viene de antes del arreglo.
+
+---
+
 # HANDOFF — el eje horizontal, medido por primera vez; y la campaña de ruido a 2/3
 
 > ⚠ **Tanda 2026-08-02 (8.ª).** Los cinco pasos del encargo. **Tanda de

@@ -623,6 +623,21 @@ Las seis instancias medidas en este proyecto, cada una con su contenedor:
 Los seis contenedores son distintos y el error es el mismo: se leyó el número
 del nivel de arriba porque estaba a mano.
 
+**Y hay un séptimo contenedor, que no contiene píxeles sino AFIRMACIONES: la
+unidad en la que se declara la COBERTURA (2026-08-02).**
+
+> **Una cobertura declarada al nivel de arriba absorbe todo lo que no se midió
+> abajo.** «31/31 rutas» del eje horizontal era verdad **y una ruta contaba como
+> cubierta con UNA de sus doce filas emparejada**. Medido en filas, el mismo eje
+> daba **99 de 181**. El mismo número, dos unidades, y solo una de las dos es
+> auditable.
+
+La regla operativa es la de siempre, aplicada al informe: **la cobertura se
+declara en la unidad que la sonda compara** —filas si compara filas, módulos si
+compara módulos— y el recuento por ruta va al lado, porque el reparto nunca es
+uniforme. Contar al nivel que hace la cifra bonita es el mismo error que medir la
+fila cuando el defecto está en la columna.
+
 **La quinta es la más antigua del proyecto y la que más costó ver**, porque el
 contenedor no era una fila, ni una caja, ni un servidor: era **el instrumento de
 medida**. Un protocolo que normaliza contra un punto de apoyo no puede detectar
@@ -910,6 +925,25 @@ conjunto.
 De donde la comprobación que cuesta un minuto y hay que hacer siempre: **antes
 de creerse un pleno, reconstruye UN caso a mano contra una medida buena
 anterior.** Si el clon «falla» en todo, empieza por dudar del comparador.
+
+**Y su TERCERA cara, que no es un selector sino un HEURÍSTICO (2026-08-02):**
+
+> **Un detector que encuentra MÁS de lo que hay tampoco da error: da un número
+> plausible de más.** El cero se lee como «esta propiedad no varía» y el pleno
+> como «la tienen todas»; el **sobre-casado** se lee como **un dato nuevo**, que
+> es peor porque invita a explicarlo.
+
+Medido: `ancho-cuerpo` deducía la fila del clon **por comportamiento** —bloque
+centrado más estrecho que su sección— y bajaba a las diapositivas de un slider y
+a sus puntos de paginación. De ahí salió un **«el clon sirve la retícula al
+75 %, Δ −158.39»** que se fichó como cosecha y **no existía**: era un bloque
+dentro de `Testimonios`. La fila real está a 86.35 %, como sus siete hermanas.
+
+La guarda es la misma que para el cero: **que el objeto medido diga qué es**. El
+original lo dice con `.et_pb_row`; el clon no tenía equivalente y ahora lleva
+`data-fila` — **marcador de sonda, no estilo**, con su antes/después a umbral
+cero para probar que no mueve un píxel. Un heurístico se queda de respaldo
+**declarado** (`via` en la salida), nunca como identidad.
 
 Medido en el recon de listados: `post_content` daba **«sí» en las 35** porque
 buscaba `et_pb_post_content` en el HTML entero y lo encontraba **dentro de

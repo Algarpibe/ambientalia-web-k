@@ -4070,6 +4070,12 @@ que el protocolo exige. Cierra la campaña y fija el suelo de estas 3 rutas.
 
 ## HOME · la retícula del CUERPO — primera cosecha del eje horizontal (2026-08-02)
 
+> ⚠⚠ **CORREGIDA el mismo día por §Eje horizontal · ADJUDICACIÓN (más abajo).**
+> La tabla de esta ficha lista **tres** anchos y son **dos**: el `75 % → −158.39`
+> era una **fila fantasma** del detector conductual, no una fila del clon. Lee
+> aquélla; ésta se conserva porque es la evidencia de qué se creía antes del
+> marcador.
+
 **Sonda nueva `qa:ancho`**, congelada en `medidas/ancho-cuerpo-{1440,390}.json`.
 Es la primera vez que este eje se mide: `COBERTURA-MEDICION.md` lo tenía a
 **0/31 de verdad**.
@@ -4151,3 +4157,106 @@ rutas.
 > **no es «reabrir D1 como defecto»**: es elegir la otra partición porque la
 > actual obliga a cablear un hueco. Son dos afirmaciones distintas y la ficha de
 > D1 no se toca.
+
+---
+
+## Eje horizontal · ADJUDICACIÓN de la cosecha completa (2026-08-02, 9.ª tanda)
+
+**Corridas:** `medidas/ancho-cuerpo-{1440,390}-2026-08-02.json`, las dos con el
+marcador de fila puesto. Las anteriores (`ancho-cuerpo-{1440,390}.json`, mismo
+día, detector conductual) **se conservan** porque son la evidencia de la
+corrección de más abajo.
+
+**Cobertura, declarada al nivel al que se mide:** **164 de 181 filas del
+original** (90.6 %), **idéntica a 1440 y a 390** — mismas filas, mismas parejas,
+mismas huérfanas en las 31 rutas. Antes eran 99.
+
+> **Y lo que este eje verifica, dicho con precisión:** de las 164 parejas,
+> **152 dan Δ0 y son informativas** —o sea que su ancho DICE algo, no repite el
+> del padre—. Ésa es la primera verificación real de la retícula del cuerpo del
+> proyecto. Las 12 restantes están todas en `/`.
+
+### Ficha 1 · `/` — la retícula del cuerpo · **FIDELIDAD** · va con C-QA3
+
+El original usa **86 % en sus 16 filas, sin una excepción, a los dos anchos**
+(1238.39 · 335.39). El clon sirve **dos** valores, y tres comportamientos:
+
+| lo que hace el clon | filas | @1440 | @390 | Δ@1440 | Δ@390 | quién |
+|---|---|---|---|---|---|---|
+| **fijo 86.35 %** | 8 | 1243.44 | 336.75 | **+5.05** | **+1.36** | `SectionRow` |
+| **fijo 85 %** | 2 | 1224 | 331.5 | **−14.39** | **−3.89** | `TrustBar` · `UltimosProyectos` |
+| **cambia 86.35 → 85** en `md` | 3 | 1224 | 336.75 | **−14.39** | **+1.36** | `HeroSection` · `ProductosTabs` · `UltimosArticulos` |
+
+**Encuadre: FIDELIDAD.** Falla en los dos anchos del contrato y **con el mismo
+porcentaje**, no con el mismo píxel: no es un residuo que sobrevive a dos
+maquetaciones, es el valor equivocado escrito en la hoja de estilos. La tercera
+fila de la tabla es además **defecto de RANGO por el otro lado**: el clon
+**varía donde el original no varía** (86 % constante), que es la regla del
+contrato leída al revés.
+
+**Por qué solo aquí, y por qué es FAMILIA DE CALIBRACIÓN de manual:** los cinco
+componentes tienen **variante por familia**, y las variantes de las otras
+familias están a Δ0 en las 30 rutas restantes. `TrustBar` sirve 95 % al sector
+—medido Δ0— y 85 % a la home; `UltimosArticulos` sirve 86 % al sector y 80 % a
+producto —los dos Δ0— y 86.35/85 % a la home. **La única variante que nadie
+había comparado con el original es la de la home**, y es la única mal.
+
+**No se toca aquí.** La home tiene **+289.91** de base abierto en C-QA3 y dos
+cambios a la vez no se adjudican.
+
+> ⚠ **CORRECCIÓN de la ficha del 2026-08-02 (8.ª tanda), §HOME · la retícula del
+> CUERPO: el tercer valor no existe.** Aquella tabla anotaba **75 % → −158.39** a
+> 1440. Era una **fila FANTASMA**: un bloque centrado dentro de `Testimonios` que
+> el detector conductual tomó por fila. Con el marcador desaparece y la fila real
+> de Testimonios empareja a **86.35 %, +5.05**, como sus siete hermanas. El clon
+> sirve **dos** valores de retícula, no tres, y el peor Δ de la home es **−14.39**,
+> no −158.39.
+>
+> Es la regla del pleno aplicada a un detector conductual: **un heurístico que
+> encuentra MÁS de lo que hay no da error, da un número plausible de más.**
+
+### Ficha 2 · las otras 30 rutas — **152 filas informativas a Δ0**
+
+Sin ninguna excepción y a los dos anchos. Eso incluye, por primera vez medidos
+contra el original: la retícula de sector (86 %), monográfico (86 %), grupo A
+(86 %), producto y catálogo (80 %), la banda de clientes (95 % en sector, 85 %
+en home) y **la miga de pan de las 29 rutas que la llevan** — que hasta hoy solo
+había mirado `a-miga`, y solo el eslabón, no la fila.
+
+### Ficha 3 · las 27 huérfanas, con su encuadre — ninguna es un ancho
+
+**17 del original y 10 del clon**, y las cuatro clases están cerradas como
+PARTICIÓN o como límite declarado del método. **Ninguna es un defecto de ancho
+sin explicar.**
+
+| # | clase | rutas | qué es | encuadre |
+|---|---|---|---|---|
+| 1 | «Amplía tus conocimientos con nuestras guías» | 5 (`/` · accesorios · api · monitor · software) | el original le da **fila propia**; el clon lo pinta **dentro** de la fila de `UltimosArticulos` | **PARTICIÓN** (el clon funde 2 filas en 1) |
+| 2 | el kicker + `h1` de sector/monográfico | 6 | fila del clon cuyo equivalente vive en el `_tb_header` del original, que este eje excluye | **PARTICIÓN D1**, ya medida y fichada |
+| 3 | la 2.ª fila de «Artículos y Guías» | 6 (sectores + monográficos) | el original la parte en dos filas y el clon monta una; encima el módulo **se baraja en cada carga** | **PARTICIÓN** + ruido conocido (27·54·81) |
+| 4 | «Cuéntanos tus necesidades» | 1 (`/`) | fila propia en el original, dentro de `ProductosTabs` en el clon | **PARTICIÓN** |
+| 5 | el testimonio «Jérôme De Waele…» | 1 (`/`) | fila propia en el original, dentro de la fila `Testimonios` del clon | **PARTICIÓN** |
+| 6 | la fila del hero de `/` | 1 (`/`) | no empareja porque el `h1` oculto de SEO **se renderiza en el clon** (`absolute` 1×1) y **no en el original** (0×0), así que el texto visible difiere | artefacto del **`h1` de `/`**, ya fichado en `COBERTURA-MEDICION.md` |
+| 7 | la fila de listas de Industria | 1 | el original **no** lleva la intro en esa fila; el clon sí | **S9a**, ya fichado y abierto |
+| 8 | dos filas **sin texto** | 2 (construcción · petróleo) | banda de clientes: carrusel de 2.5 s, y en esa carga los dos lados no compartían ni un logo | **límite del emparejador**, no diferencia entre lados |
+
+> **La 6 esconde una medida, y hay que decirlo:** la fila del hero de `/` mide
+> **1224 (85 %)** en el clon contra **1238.39 (86 %)** en el original. Si
+> emparejara sería un **−14.39 más**, o sea 13 filas con Δ≠0 en vez de 12. No se
+> cuenta como Δ porque la sonda no la emparejó; se anota para que nadie lea «12»
+> como el total.
+
+> **La 7 es la mejor noticia de la tanda y conviene verla como tal:** un eje que
+> se estrena **redescubrió solo** un defecto que otra sonda había fichado por su
+> cuenta hace tandas. Dos instrumentos independientes señalando el mismo párrafo
+> es lo más parecido a una confirmación que hay aquí.
+
+### Lo que esta corrida NO verifica
+
+- **17 filas del original siguen sin comparar** (9.4 %), y las de la clase 3 son
+  filas de contenido barajado: mientras el módulo rote, su firma no puede casar
+  y su ancho seguirá sin medirse por esta vía.
+- **Las columnas dentro de la fila** se miden (`cols` en el fichero) pero **no se
+  adjudican**: este barrido llega al nivel de FILA.
+- **Ningún ancho intermedio.** El contrato de rango de este eje está **sin
+  probar**: `qa:ancho` solo se ha corrido a 1440 y a 390.

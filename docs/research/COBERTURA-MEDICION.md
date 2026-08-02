@@ -100,11 +100,19 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | **base cruda (h1.y)** | **31** | 0 | 0 | `c-cabecera` — deriva del build | 21 |
 | **árbol de secciones** | **31** | 0 | 0 | `c-cmp` | 9 |
 | enlaces | **31** | 0 | 0 | `enlaces` — **ya congela** | 31 *(sin evidencia)* |
-| anchos horizontales | **31** | 0 | 0 | **`ancho-cuerpo`** — deriva del build | 31 |
+| anchos horizontales | **31**⚠ | 0 | 0 | **`ancho-cuerpo`** — deriva del build | 31 |
 | filas | **6** | 0 | 25 | `tree-cmp` · `mono-cmp` | 3 |
 | módulos | **2** | 0 | 29 | `mono-cmp` | 2 |
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
 | comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
+
+> ⚠ **La celda de «anchos horizontales» es de RUTAS y su unidad son FILAS.** 31/31
+> rutas, sí — pero **164 de 181 filas** (2026-08-02). Una ruta entra en la
+> columna **O** con una sola de sus doce filas emparejada, así que ese 31 es
+> **la cota superior optimista** del eje. El desglose por arquetipo, con las 17
+> filas que faltan clasificadas una a una, está en §El eje horizontal, al final
+> de este documento. **Es el mismo error que este documento existe para evitar,
+> cometido dentro de él**: contar al nivel que hace la cifra bonita.
 
 **No queda ni una celda `c` en docH, base y árbol.** Se cerraron generalizando
 dos sondas para que **deriven sus rutas del build**, como ya hacía `enlaces`: a
@@ -143,7 +151,7 @@ La tanda de cierre gastó lo barato. Queda:
 
 | # | hueco | estado | coste |
 |---|---|---|---|
-| 1 | ~~anchos horizontales del CUERPO~~ | **CERRADO 2026-08-02 · 31/31 a los dos anchos** con `qa:ancho`. ⚠ Con cobertura PARCIAL declarada: **99 filas emparejadas de 276** (el resto, huérfanas) | hecho |
+| 1 | ~~anchos horizontales del CUERPO~~ | **CERRADO 2026-08-02 · 31/31 rutas y 164/181 FILAS** a los dos anchos, con `qa:ancho`. Cobertura por ruta en §El eje horizontal, al nivel al que se mide | hecho |
 | 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
 | 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
@@ -218,3 +226,64 @@ convierte las huérfanas en emparejadas sin tocar una sola medida.
 **Lo que sí está probado hoy:** de las 99 comparadas, **87 dan Δ0 y 12 dan Δ≠0,
 las 12 en `/`**, y el censo de selectores sale limpio en los dos lados con sus
 dos negativos (selector muerto → error, patrón ubicuo → error).
+
+---
+
+## El eje horizontal, declarado AL NIVEL AL QUE SE MIDE (2026-08-02, 9.ª tanda)
+
+> **`31/31 rutas` era verdad y era la cifra equivocada.** Una ruta contaba como
+> cubierta con **una sola** de sus doce filas emparejada. La unidad de este eje
+> es la **FILA**, así que su cobertura se declara en filas — y por ruta, porque
+> el reparto no es uniforme.
+
+**Corridas:** `medidas/ancho-cuerpo-{1440,390}-2026-08-02.json`.
+**Las 31 rutas dan el MISMO recuento a los dos anchos** — mismas filas, mismas
+parejas, mismas huérfanas. Eso no es cobertura, es control de que el
+emparejador no está inventando.
+
+| arquetipo | filas del original | emparejadas | cobertura |
+|---|---|---|---|
+| **HOME** (1 ruta) | 16 | 12 | 75 % |
+| **PRODUCTO** (1) | 7 | 6 | 86 % |
+| **CATÁLOGO** (1) | 9 | 8 | 89 % |
+| **SOFTWARE** (2) | 14 | 12 | 86 % |
+| **SECTOR** (4) | 45 | 39 | 87 % |
+| **MONOGRÁFICO** (2) | 35 | 32 | 91 % |
+| **CASO** (4) | 4 | 4 | 100 % |
+| **FAQ** (2) | 0 | 0 | *(no tiene filas de cuerpo en ninguno de los dos lados)* |
+| **A · blog / término** (10) | 39 | 39 | 100 % |
+| **A · documento científico** (4) | 12 | 12 | 100 % |
+| **TOTAL** | **181** | **164** | **90.6 %** |
+
+**Y de las 164, 152 son informativas y dan Δ0.** Las 12 restantes están todas en
+`/` y están adjudicadas en `PENDIENTES-QA.md` §Eje horizontal · ADJUDICACIÓN.
+
+### Las 17 filas que faltan no son un hueco de la misma clase
+
+Están clasificadas una a una, y **ninguna es un ancho sin medir**: 12 son
+**PARTICIÓN** —el clon funde en una fila lo que el original parte en dos, o al
+revés—, 2 son un **límite del emparejador** (banda de clientes: carrusel de
+2.5 s, y en esa carga los dos lados no compartían logo), 1 es el artefacto del
+`h1` oculto de `/`, 1 es **S9a** —ya fichado y abierto— y 1 es la fila del
+hero de `/`, que esconde un **−14.39** que no se cuenta como Δ porque no
+emparejó. Tabla completa en `PENDIENTES-QA.md`.
+
+> **Por eso «90.6 %» no se redondea a «cerrado».** El 9.4 % que falta tiene
+> nombre y causa, que es exactamente la diferencia entre un hueco y una lista de
+> respuestas. Lo que sí sigue abierto de verdad es que **este eje solo se ha
+> corrido a 1440 y a 390**: su comportamiento de RANGO está sin probar.
+
+### Cómo se llegó aquí — y qué de esto NO fue el marcador
+
+La tanda anterior dejó 99/181 y la hipótesis de que un marcador semántico de
+fila en el clon las recuperaría. Medido: **el marcador es un tercio.** Las otras
+dos terceras partes eran **tres definiciones distintas de «el mismo texto»**
+dentro del propio emparejador —el original sirve todos los idiomas en el DOM, la
+flecha de los botones es `::after` en un lado y `<span>` en el otro, y dos
+módulos rotan su contenido en cada carga—. Detalle en el commit del marcador y
+en la cabecera de `scripts/qa/ancho-cuerpo.mjs`.
+
+**La lección que se lleva a la próxima sonda:** cuando un emparejador por texto
+falla, la hipótesis por defecto no debe ser «el clon está partido distinto» sino
+**«mi definición de “el mismo texto” no es la misma en los dos lados»** — que es
+la trampa de `charsCenso()` otra vez, y aquí estaba tres veces seguidas.
