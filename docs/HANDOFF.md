@@ -1,3 +1,135 @@
+# HANDOFF — el eje horizontal, medido por primera vez; y la campaña de ruido a 2/3
+
+> ⚠ **Tanda 2026-08-02 (8.ª).** Los cinco pasos del encargo. **Tanda de
+> DIAGNÓSTICO**: se midió un eje que nunca se había mirado y **no se arregló
+> nada de lo que salió**, a propósito.
+
+## 1 · El hueco nº 1 de cobertura, cerrado — y lo que había debajo
+
+**`qa:ancho`** compara el ancho de la retícula del cuerpo contra el original en
+**31 rutas × 2 anchos**. Era el **0/31 de verdad** de `COBERTURA-MEDICION.md`.
+
+**Toda la cosecha está en `/`.** Las otras 30 rutas salen limpias. El original usa
+**86 % uniforme**; el clon sirve tres anchos distintos:
+
+| el clon sirve | Δ @1440 | Δ @390 | filas |
+|---|---|---|---|
+| **86.35 %** | +5.05 | +1.36 | 6 · 10 |
+| **85 %** | −14.39 | −3.89 | 5 · 2 |
+| **75 %** | **−158.39** | — | 1 (solo @1440) |
+
+**Encuadre: FIDELIDAD.** Se reproduce en los dos anchos del contrato **y con el
+mismo porcentaje**, no con el mismo píxel — firma más fuerte todavía que la de
+«reproducirse entre anchos»: no es un residuo que sobrevive a dos maquetaciones,
+es **el mismo valor equivocado escrito en la hoja de estilos**. Familia de
+calibración, con el `w-[85%]` de la home ya anotado en `Footer.tsx` desde hace
+tandas y nunca comparado, **porque este eje no se medía**.
+
+**No se arregla aquí y va con C-QA3** (+289.91 abierto en la home): dos cambios a
+la vez en la misma página no se adjudican.
+
+### ⚠⚠ Y la letra pequeña, que vale tanto como la cosecha
+
+> **«31/31 rutas» NO es «31/31 filas».** Se emparejaron **99 filas de 276**; las
+> **177 huérfanas NO se compararon**. Son preguntas, no verdes.
+
+El detector de fila del clon es **conductual** (bloque centrado más estrecho que
+su sección) y **sobre-casa en los sectores**: 11 filas en el original contra
+**16** en el clon. Se estrecha dando al clon un **marcador semántico de fila**
+—como el `data-kunak` del pie— en vez de deducirla. Eso convierte huérfanas en
+emparejadas sin tocar una medida.
+
+## 2 · Campaña de ruido: 2 de 3 ráfagas, y tres cosas nuevas
+
+**1 · El `h1` tiene DOS ESTADOS DISCRETOS**, separados por **32.28 exactos**, no
+temblor continuo. El valor alto es **idéntico en dos ráfagas separadas por dos
+días**: estable y reproducible.
+
+**2 · La sincronía entre rutas NO es total.** En la ráfaga 1, corrida 2: los dos
+monográficos ya estaban en alto y **software seguía en bajo**. Son **al menos dos
+grupos**, no un interruptor global. La ráfaga 2 cayó entera en el estado alto, así
+que **no confirma ni refuta**.
+
+**3 · Latencia: cero pares útiles, y no por falta de instrumento.** La ráfaga 2
+trae cronómetro (6.9–12.1 s, con un pico de 12.1 s) **y no tuvo transición**; la
+ráfaga 1 tuvo transición y **es anterior al cronómetro**. Hay latencia sin
+transición y transición sin latencia.
+
+**4 · ⚠ `rocketToken` dio `N` en las 12 cargas.** Eso **no es «el token no
+interviene»**: es un detector que **nunca ha discriminado**. Por la regla del
+cero/pleno se anota como **sin validar**; antes de concluir con él hay que
+comprobar que sabe dar `S` en alguna página.
+
+**Ráfaga 3: a partir del 2026-08-03**, ≥2 h de la última (17:33 del 2026-08-02) y
+**mejor en un tercer día**. Cierra la campaña.
+
+## 3 · CLASE MAYOR fichada, sin tocar: el hueco de la barra en 31 rutas
+
+| | @1440 | @1280 |
+|---|---|---|
+| barra del original | **185** | **136.52** |
+| hueco cableado en el clon | 185 | **185** |
+
+**No hay constante que sirva:** 185/1440 = 12.85 % pero 136.52/1280 = **10.67 %**.
+La barra **no varía proporcionalmente al ancho** — la mueve el reflote del menú—,
+así que ni px ni % reproducen la curva: **cualquier valor acierta solo en el ancho
+donde se midió**. Es un **generador de familias de calibración**, no un número mal.
+
+**Ámbito 31 rutas**: `CabeceraSector` (6) y **`BandaCabecera` (29)**. Defecto de
+**RANGO**; arreglo **estructural** (la barra en flujo), prioridad **alta**.
+
+> ⚠ **Y el matiz que evita un malentendido caro:** meter la barra en flujo **no es
+> reabrir D1 como defecto**. D1 sigue siendo partición deliberada y sigue sin
+> mover `docH`. Es **elegir la otra partición** porque la actual obliga a cablear
+> un hueco. La ficha de D1 no se toca.
+
+## 4 · Las sondas: dos defectos propios cazados antes de creerles nada
+
+**En `ancho-cuerpo`, la primera corrida comparó 0 filas de 13 y aun así imprimió
+✅ con código 0.** Dos causas, las dos de manual:
+
+1. **La firma emparejaba con espacios normalizados.** El original separa los nodos
+   en línea con espacios y el clon no: «Inicio Productos» contra
+   «InicioProductos». Es la trampa de `charsCenso()` —dos definiciones de «lo
+   mismo»—. Ahora la firma va **sin espacios**.
+2. **Acotar se volvía verde por vaciado.** Ahora `comparadas === 0` **cierra el
+   código de salida**: *una sonda que no compara nada y una que compara y no
+   encuentra nada dan la misma salida*.
+
+**Y en `lib.mjs`, la bandera `SIN_CLON` era INERTE**: se leía al cargar el módulo
+y la sonda la pone **después** del `import`, así que la constante ya valía
+`false`. *Documentado no es conectado*, cometido **dentro de la propia guarda**.
+Ahora se lee en cada llamada.
+
+## 5 · Verificación
+
+`npm run check` **0 errores** · `qa:enlaces` limpio en las dos direcciones ·
+`qa:slugs` limpio · `qa:lib` **31/31** · `qa:ancho` con sus dos negativos
+(selector muerto ⇒ error · patrón ubicuo ⇒ error · control ⇒ 0) · `c-cmp`
+**exit 0 a 1440 y a 390**.
+
+## 6 · Lo que queda abierto, por prioridad
+
+1. **La barra de navegación (CLASE MAYOR)** — 31 rutas, arreglo estructural.
+2. **La retícula de la HOME** — 86.35/85/75 % contra 86 %. **Va con C-QA3.**
+3. **Las 177 filas huérfanas** del eje horizontal: marcador semántico de fila en
+   el clon y vuelven a la comparación.
+4. **Ráfaga 3** de la campaña, para fijar el suelo.
+5. **Validar el detector `rocketToken`** antes de usarlo como evidencia.
+6. **Migrar las 18 sondas restantes** a servidor propio (cubiertas por BUILD_ID).
+7. **Los huecos 2–5 de cobertura**: filas 6/31 · módulos 2/31 · offsets 0/31 ·
+   **comportamiento 0/31**.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No leer «30 de 31 rutas limpias» como el eje verificado.** Son 99 filas de
+  276; el resto **no se ha mirado**.
+- **No arreglar la home por partes**: la retícula va con C-QA3.
+- **No usar `rocketToken` como evidencia** hasta que se le vea dar `S`.
+- **No tratar el hueco de la barra como un número que ajustar.** No lo es.
+
+---
+
 # HANDOFF — el contrato de RANGO, el pie a Δ0 exacto, y las sondas dueñas de su servidor
 
 > ⚠ **Tanda 2026-08-02 (7.ª).** Los cinco pasos del encargo, hechos. Lo que más
