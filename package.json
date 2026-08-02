@@ -75,7 +75,8 @@
     "qa:d4-tipo": "node scripts/qa/d4-tipografia.mjs",
     "qa:d4-cta": "node scripts/qa/d4-cta.mjs",
     "qa:d4-sus": "node scripts/qa/d4-suscribete.mjs",
-    "qa:d123": "node scripts/qa/d123-flujo.mjs"
+    "qa:d123": "node scripts/qa/d123-flujo.mjs",
+    "qa:cabecera": "node scripts/qa/cabecera-cmp.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

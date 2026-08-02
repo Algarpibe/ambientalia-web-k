@@ -612,3 +612,30 @@ familias de 11** y D3 con **3**. Las dos veces el número que faltaba era de una
 forma no medida. Cuando lo que se busca es *«qué tipos de página llevan esto»*,
 **la lista de formas es el experimento** — recortarla no ahorra, decide el
 resultado.
+
+### `cabecera-cmp.mjs` — la cabecera de `/sectores/*`, los DOS lados
+
+```bash
+npm run qa:cabecera -- 1440|1280|1000|800|390     # SOLO=edar acota · SABOTAJE=1 en negativo
+```
+
+Ancla en el **`h1`** —semántico, uno por página, el mismo objeto en los dos
+lados— y sube **la cadena entera de anchos hasta la sección**. Devuelve la
+fracción `h1 / padre` **con sus dos operandos**, nunca solo el cociente.
+
+**Por qué existiendo `mono-cabecera.mjs`:** aquélla compara **original contra
+original** (nació para decidir si el monográfico estrenaba arquetipo) y por tanto
+**no puede adjudicar nada del clon**. Es una de las sondas de un solo lado que la
+auditoría de cobertura cuenta como `c`.
+
+**Las tres cosas que enseñó, y que se pagan si se olvidan:**
+
+1. **Un Δ de alto igual al `line-height` es ENVOLVIMIENTO, y su causa es un
+   ANCHO.** −36.02 con `line-height: 36` = un renglón. No se busca en el ritmo.
+2. **Tres anchos, no dos.** Con 1440 y 390 «50 % de la fila» y «un ancho fijo en
+   px» predicen lo mismo. El tercero (1280 → 550.39) las separa, y dos más
+   (800 → 100 %, 1000 → 50 %) localizan el corte sin suponerlo.
+3. **`getClientRects().length` NO cuenta renglones** en un elemento de bloque:
+   devuelve la caja de borde, 1 siempre. Se cuentan con un `Range` sobre el
+   contenido, agrupando por `top`. La 1.ª versión publicaba «Δ renglones 0» junto
+   a «Δ alto −36» — las dos de la misma sonda, contradiciéndose.

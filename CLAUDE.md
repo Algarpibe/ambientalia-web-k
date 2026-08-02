@@ -635,6 +635,38 @@ regla espejo dispare, las dos hipótesis se comprueban cada una con su
 instrumento: la holgura con `offsets`, el no-wrap con la cadena al ancho que
 falla.
 
+⚠ **Y el no-wrap tiene una segunda cara, que es peor porque NINGÚN ancho la
+enseña (2026-08-02).** En C-QA7 el defecto se veía a 390 y no a 1440: bastaba
+medir al otro ancho. Pero si **el texto de todas las instancias que tienes
+delante es corto**, un ancho de contenedor equivocado no envuelve en **ninguno**,
+y entonces no hay ancho al que ir:
+
+> **Un ancho mal no cuesta un solo píxel hasta que el texto envuelve. Así que el
+> detector de un defecto de ancho no siempre es OTRO ANCHO — a veces es OTRO
+> CONTENIDO.**
+
+Medido: el `h1` de la cabecera de `/sectores/*` iba al **100 %** de la fila donde
+el original le da el **50 %**. Los **4 sectores vivos** tienen titulares que caben
+en un renglón con 619 px y con 1238, así que el defecto da **Δ0 a los cinco anchos
+medidos** en las cuatro. Apareció en el **MONOGRÁFICO**, que comparte el
+componente y trae titulares largos: **−36.02**, o sea un renglón de 36 exacto.
+
+De donde la comprobación que hay que añadir al barrido de un componente
+compartido: **no basta con recorrer las N instancias de su arquetipo a dos
+anchos.** Si el componente lo usa un segundo arquetipo, **ése es parte del
+barrido**, y si sus contenidos son más largos, es el único sitio donde el defecto
+existe. Es también por lo que la **FAMILIA DE CALIBRACIÓN** no siempre es una
+familia de páginas: aquí lo era de **arquetipos**.
+
+**Y su corolario de instrumento, pagado en la misma corrida:** para afirmar
+«envuelve un renglón más» hace falta **contar renglones**, y
+`elemento.getClientRects().length` **no los cuenta** — en un elemento de bloque
+devuelve la caja de borde, o sea **1 siempre**. La primera versión de
+`cabecera-cmp` informaba «1 renglón» de un `h1` de 82 px con `line-height: 36`:
+un número plausible, sin error, y falso, **justo al lado del Δ de alto de −36 que
+lo contradecía**. Se cuentan con un `Range` sobre el contenido, agrupando las
+cajas por su `top`.
+
 **Y hay instrumento, no solo regla.** `scripts/qa/offsets.mjs` mide, por columna,
 cuánto puede fallar dentro sin que la fila se mueva (`absorbe`), y el offset de
 cada nodo dentro de su padre —que es lo único que ve el centrado vertical—. En

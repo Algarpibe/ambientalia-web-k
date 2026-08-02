@@ -34,7 +34,32 @@ export function CabeceraSector({ header }: { header: SectorHeader }) {
           {header.kicker}
         </p>
 
-        <h1 className="pb-[10px] text-[30px] font-normal leading-[36px] tracking-[-0.5px] text-white">
+        {/* ⚠ ANCHO DE MÓDULO: 50 % en desktop, 100 % por debajo del corte de Divi.
+            No es decoración — es lo que decide DÓNDE ENVUELVE el titular, y por
+            tanto el alto de toda la cabecera.
+
+            Medido 2026-08-02 con `qa:cabecera` (los dos lados, 5 anchos):
+
+            | ancho | h1 / fila del original | renglones del monográfico |
+            |---|---|---|
+            | 390  | 335.39 / 335.39 = **100 %** | 4 |
+            | 800  | 688 / 688 = **100 %**       | 2 |
+            | 1000 | 430 / 860 = **50 %**        | 3 |
+            | 1280 | 550.39 / 1100.8 = **50 %**  | 2 |
+            | 1440 | 619.19 / 1238.39 = **50 %** | 2 |
+
+            El clon daba **100 % en los cinco**. Con el titular corto de los 4
+            sectores eso no deja rastro —cabe en un renglón con 619 y con 1238—,
+            y por eso el defecto vivió invisible hasta que un titular largo lo
+            destapó: es el mecanismo del NO-WRAP de `CLAUDE.md`, que solo aparece
+            al ancho donde el texto SÍ envuelve.
+
+            El 50 % es **porcentaje, no px**: se separó de «un ancho fijo» con el
+            tercer ancho (550.39 a 1280 contra 619.19 a 1440). Y el corte está
+            entre 800 y 1000 — el de Divi (980), que este repo ya escribe como
+            `min-[981px]:`. Los cinco anchos dan el mismo valor en las 4
+            instancias vivas: es plantilla, no campo por instancia. */}
+        <h1 className="w-full pb-[10px] text-[30px] font-normal leading-[36px] tracking-[-0.5px] text-white min-[981px]:w-1/2">
           {header.title}
         </h1>
 

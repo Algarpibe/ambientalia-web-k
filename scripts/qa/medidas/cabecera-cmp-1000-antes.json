@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "width": 1000,
+    "fecha": "2026-08-02",
+    "solo": "edar"
+  },
+  "rutas": {
+    "MONOGRÁFICO · edar": {
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "orig": {
+        "seccion": {
+          "tag": "div",
+          "clase": "et_pb_section et_pb_section_0_tb_header cabecera",
+          "x": 0,
+          "y": 0,
+          "w": 1000,
+          "h": 400.31,
+          "pt": "0px",
+          "pb": "40px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "x": 70,
+          "y": 197.27,
+          "w": 430,
+          "h": 118,
+          "pt": "0px",
+          "pb": "10px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "30px",
+          "lh": "36px",
+          "nLineas": 3,
+          "txt": "Monitorización ambiental en EDAR para el control de emisione"
+        },
+        "kicker": {
+          "tag": "div",
+          "clase": "et_pb_text_inner",
+          "x": 70,
+          "y": 142.58,
+          "w": 860,
+          "h": 30.59,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "40px",
+          "lh": "30.6px",
+          "nLineas": 1,
+          "txt": "EDAR"
+        },
+        "cadena": [
+          {
+            "tag": "h1",
+            "clase": "",
+            "x": 70,
+            "y": 197.27,
+            "w": 430,
+            "h": 118,
+            "pt": "0px",
+            "pb": "10px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "36px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_text_inner",
+            "x": 70,
+            "y": 197.27,
+            "w": 860,
+            "h": 118,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_module et_pb_text et_pb_text_1_tb_header",
+            "x": 70,
+            "y": 197.27,
+            "w": 860,
+            "h": 118,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "15.0469px",
+            "fs": "30px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_column et_pb_column_4_4 et_pb_column_3_tb_",
+            "x": 70,
+            "y": 155.58,
+            "w": 860,
+            "h": 174.73,
+            "pt": "0px",
+            "pb": "0px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_row et_pb_row_2_tb_header",
+            "x": 70,
+            "y": 125.58,
+            "w": 860,
+            "h": 234.73,
+            "pt": "30px",
+            "pb": "30px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "div",
+            "clase": "et_pb_section et_pb_section_0_tb_header cabecera",
+            "x": 0,
+            "y": 0,
+            "w": 1000,
+            "h": 400.31,
+            "pt": "0px",
+            "pb": "40px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "fraccion": {
+          "h1w": 430,
+          "padreW": 860,
+          "pct": 50
+        }
+      },
+      "clon": {
+        "seccion": {
+          "tag": "section",
+          "clase": "cabecera-sectores w-full bg-cover",
+          "x": 0,
+          "y": 0,
+          "w": 1000,
+          "h": 433.59,
+          "pt": "185px",
+          "pb": "40px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "18px",
+          "lh": "30.6px"
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "pb-[10px] text-[30px] font-normal",
+          "x": 70,
+          "y": 261.16,
+          "w": 860,
+          "h": 82,
+          "pt": "0px",
+          "pb": "10px",
+          "mt": "0px",
+          "mb": "0px",
+          "fs": "30px",
+          "lh": "36px",
+          "nLineas": 2,
+          "txt": "Monitorización ambiental en EDAR para el control de emisione"
+        },
+        "kicker": {
+          "tag": "p",
+          "clase": "-mt-[13px] mb-[16.22px] text-[40px]",
+          "x": 70,
+          "y": 200.8,
+          "w": 860,
+          "h": 30.59,
+          "pt": "0px",
+          "pb": "0px",
+          "mt": "-13px",
+          "mb": "29.77px",
+          "fs": "40px",
+          "lh": "30.6px",
+          "nLineas": 1,
+          "txt": "EDAR"
+        },
+        "cadena": [
+          {
+            "tag": "h1",
+            "clase": "pb-[10px] text-[30px] font-normal",
+            "x": 70,
+            "y": 261.16,
+            "w": 860,
+            "h": 82,
+            "pt": "0px",
+            "pb": "10px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "30px",
+            "lh": "36px"
+          },
+          {
+            "tag": "div",
+            "clase": "mx-auto w-[86%] max-w-[1380px]",
+            "x": 70,
+            "y": 185,
+            "w": 860,
+            "h": 208.59,
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          },
+          {
+            "tag": "section",
+            "clase": "cabecera-sectores w-full bg-cover",
+            "x": 0,
+            "y": 0,
+            "w": 1000,
+            "h": 433.59,
+            "pt": "185px",
+            "pb": "40px",
+            "mt": "0px",
+            "mb": "0px",
+            "fs": "18px",
+            "lh": "30.6px"
+          }
+        ],
+        "fraccion": {
+          "h1w": 860,
+          "padreW": 860,
+          "pct": 100
+        }
+      }
+    }
+  }
+}

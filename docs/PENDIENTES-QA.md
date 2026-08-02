@@ -3419,8 +3419,12 @@ tomó la medida.
 | 3 | **bloque «¡Suscríbete!»** (`mt 16 · mb 46 · pb 3.1`) | SOFTWARE | −6.9 ancha · **−0.01 software** · +25.1 catálogo (@390) |
 
 La 2 es la más instructiva: **el comentario decía /monitor y los valores eran de
-software**, así que ni siquiera la atribución escrita servía para detectarlo. La
-3 sigue **abierta** — es el residuo entero de `footer-links`.
+software**, así que ni siquiera la atribución escrita servía para detectarlo.
+
+> ⚠ **ACTUALIZADO 2026-08-02.** La 3 está **cerrada**, y el inventario tiene ya
+> **cinco** instancias — la 5.ª rompe el patrón por dos sitios y cambia lo que
+> es la clase. Tabla al día en §CLASE · 5.ª y 6.ª instancia, al final de este
+> documento.
 
 ### Barrido de candidatos — LISTADO, NO ARREGLADO
 
@@ -3606,3 +3610,228 @@ y cuadra. Es **la regla espejo** —Δ≠0 en un ancho y 0 en el otro no es «ca
 cuadra», es una medida tapada— con la firma de la **FAMILIA DE CALIBRACIÓN**: un
 valor heredado de la familia con la que se midió. Se ficha; no se toca en esta
 tanda, que ya movía el pie de las 31 rutas.
+
+---
+
+## ⚠ C1 · SALDADO — 2 causas reales arregladas, 2 particiones fichadas (2026-08-02)
+
+`c1-localiza` abrió el desfase del cascarón en cuatro sumandos que reconstruían
+el total al céntimo. **Reconstruir no es explicar**: dos de los cuatro eran la
+misma altura contada de otra forma.
+
+| | era | veredicto |
+|---|---|---|
+| **D1** −225 | la cabecera del clon va dentro de `main` como `section.banda-cabecera` | **PARTICIÓN DELIBERADA** |
+| **D2** +50 | las migas del clon son un `<nav>`, no una `<section>` | **PARTICIÓN DELIBERADA** |
+| **D3** −42 | `margin-bottom` del `<article>` del CPT `solutions` | arreglado |
+| **D4** | el pie, con 5 ejes de presentación por tipo de página | arreglado |
+
+### D1 y D2 · PARTICIÓN DELIBERADA — con su prueba, para que nadie las «arregle»
+
+> **No se tocan. Y la prueba de por qué no se tocan es ésta, no un argumento.**
+
+`qa:d123` enumera los hijos **en flujo** del contenedor de cuerpo —casen o no
+con el selector de sección— en **11 formas × 2 anchos**. La banda del clon
+iguala **al céntimo** la cabecera del original:
+
+| ancho | valores medidos (orig = clon) |
+|---|---|
+| 1440 | **225** (grupo A · catálogo · software · producto · FAQ · home) · **397.59 / 397.61** (sector) |
+| 390 | **165.58** · **136.58** · **347.25** · **419.25** · **362.91** |
+
+Y las migas: **50 = 50** en los dos lados.
+
+**De dónde salían los números, que es lo que hay que entender para no repetirlo:**
+
+- los **+50** de D2 salen de que `main > section` **no cuenta un `<nav>`**, así
+  que las migas del clon caen en el hueco entre secciones en vez de en una;
+- los **−225** de D1 salen de que `antesDePrimeraSeccion` vale **0** cuando la
+  primera sección empieza en `y=0`, que es lo que pasa cuando la cabecera va
+  **dentro** del contenedor.
+
+Ninguna de las dos mueve `docH`. La condición que este documento le había puesto
+a D1 —«solo si se demuestra que mueve `docH`»— **no se cumple**; y a D2 **nadie
+se la había puesto**, que es cómo estuvo un mes en la lista de defectos.
+
+### ⚠⚠ Y el matiz del INSTRUMENTO, que es lo que hay que leer antes de `c-cmp`
+
+> **La métrica RESTO —`docH` − Σsecciones— cuenta todo lo que vive FUERA de
+> sección: migas, bandas de cabecera, envoltorios. Así que una diferencia de
+> RESTO puede ser PARTICIÓN y no defecto, y no hay forma de distinguirlo desde
+> el propio número.**
+
+Es la regla del NIVEL aplicada a la métrica en vez de al elemento: RESTO es un
+**contenedor con holgura** —cabe dentro un nodo entero sin dejar rastro— y
+además su frontera **depende del selector de sección de cada lado**, que en el
+original es `.et_pb_section` y en el clon `main > section`. Dos selectores que
+**no denotan el mismo conjunto** (la clase C7 de este documento).
+
+**Consecuencia operativa, y vale para `c-cmp` y para
+`COBERTURA-MEDICION.md` igual:**
+
+> **Un Δ de RESTO se adjudica POR COMPOSICIÓN antes de tocar nada.** Se enumeran
+> los hijos en flujo de los dos lados y se emparejan por lo que son —cabecera con
+> banda, migas con migas—, no por si casan con el selector. Si cada pieza cuadra
+> y el RESTO no, el defecto está en la partición, no en la página.
+>
+> Lo mismo vale para **`nº de secciones ≠`**, que `c-cmp` ya imprime como
+> **PREGUNTA y no como defecto**: las 14 rutas que a 1440 traen un número
+> distinto lo traen por esto.
+
+Coste de no haberlo escrito antes: **D1 y D2 vivieron una tanda entera como
+«causas de C1 pendientes de arreglar»**, con un orden de ataque asignado y una
+condición de bloqueo, cuando no eran defectos.
+
+---
+
+## CLASE · el inventario al día — 5 instancias, y la 5.ª cambia la clase (2026-08-02)
+
+Actualiza el inventario del §CLASE. La 3 pasa a **cerrada** y entran dos más:
+
+| # | qué | familia de calibración | coste | estado |
+|---|---|---|---|---|
+| 1 | alto del pie: 681.09 fijo | SOFTWARE | +87.34 a −367.16 en 10 de 11 formas | cerrada |
+| 2 | tipografía del pie | SOFTWARE | −79.19 en catálogo y producto | cerrada |
+| 3 | bloque «¡Suscríbete!» | SOFTWARE | −6.9 · −0.01 · +25.1 (@390) | **cerrada 2026-08-02** |
+| 4 | bloque de iconos sociales | ESTRECHA | +31.59 en `ancha` a 390 | cerrada |
+| **5** | **ancho de módulo del `h1` de la cabecera de `/sectores/*`** | **SECTOR** | **−36.02 en las 2 rutas del monográfico, solo ≥981px** | **cerrada 2026-08-02** |
+
+### Por qué la 5 no es una más: rompe el patrón por dos sitios
+
+**(a) Su familia de calibración NO es software.** Las cuatro primeras heredaban
+valores de SOFTWARE, hasta el punto de que «todo se calibró con software» parecía
+ser la clase. No lo es: la clase es **«un componente compartido hereda la familia
+sobre la que se midió»**, y aquí ese componente es `CabeceraSector`, medido sobre
+**SECTOR** y reutilizado por **MONOGRÁFICO** — dos arquetipos que comparten ruta
+y comparten cabecera.
+
+**(b) El defecto es INVISIBLE en las 4 instancias de su propio arquetipo, a los
+cinco anchos medidos.** No lo tapaba un ancho: lo tapaba el **contenido**. Los
+cuatro sectores tienen titulares cortos que caben en un renglón con 619 px y con
+1238, así que el ancho de módulo equivocado **no deja rastro en ningún ancho**.
+Solo aparece con un titular largo, o sea en el otro arquetipo.
+
+> **De donde la lección que faltaba: el detector de una familia de calibración no
+> siempre es otra FAMILIA — puede ser otro CONTENIDO.** Barrer «las N instancias
+> del arquetipo» no habría encontrado ésta ni midiendo las cuatro a cinco anchos.
+> Lo que la encontró fue medir **el arquetipo vecino que comparte el componente**.
+
+Es el mecanismo del **NO-WRAP** de `CLAUDE.md` §El NIVEL en su forma más pura: un
+ancho equivocado en un texto que no envuelve **no cuesta un solo píxel** hasta que
+el texto envuelve.
+
+---
+
+## La cabecera de `/sectores/*` · CERRADA — era ANCHO DE MÓDULO (2026-08-02)
+
+Sonda nueva: **`qa:cabecera`**, los dos lados, congelada en
+`medidas/cabecera-cmp-{390,800,1000,1280,1440}-*.json`.
+
+`mono-cabecera.mjs` compara **original contra original** —nació para decidir si
+el monográfico estrenaba arquetipo— y por eso no podía adjudicar nada del clon.
+
+### Lo medido
+
+El síntoma era **−36.02 a 1440 y 0 a 390**: la regla espejo. Y `36` es exacta­
+mente el `line-height` del `h1`, o sea **un renglón** — señal de envolvimiento,
+no de ritmo. La causa está en el **ancho**, y por eso se mide al ancho donde el
+texto SÍ envuelve:
+
+| ancho | `h1` / fila en el ORIGINAL | | renglones del monográfico |
+|---|---|---|---|
+| 390 | 335.39 / 335.39 | **100 %** | 4 |
+| 800 | 688 / 688 | **100 %** | 2 |
+| 1000 | 430 / 860 | **50 %** | 3 |
+| 1280 | 550.39 / 1100.8 | **50 %** | 2 |
+| 1440 | 619.19 / 1238.39 | **50 %** | 2 |
+
+**El clon daba 100 % en los cinco.**
+
+Tres cosas que los cinco anchos deciden y dos no podrían:
+
+1. **Es porcentaje, no px.** 550.39 a 1280 contra 619.19 a 1440. Con solo 1440 y
+   390 las dos hipótesis —«50 % de la fila» y «un ancho fijo que a 390 no cabe»—
+   predicen lo mismo.
+2. **El corte está entre 800 y 1000**, o sea el de Divi (980), que el repo ya
+   escribe como `min-[981px]:`.
+3. **Los cinco anchos dan el mismo valor en las 4 instancias vivas** → es
+   plantilla, no campo por instancia.
+
+### Adjudicado contra el original
+
+| ruta | @1440 antes | @1440 ahora | @390 antes | @390 ahora |
+|---|---|---|---|---|
+| MONOGRÁFICO · edar | **−36.02** | **−0.02** | 0 | 0 |
+| MONOGRÁFICO · petróleo | **−36.02** | **−0.02** | 0 | 0 |
+| SECTOR · urbano | −0.02 | −0.02 | 0 | 0 |
+| SECTOR · investigación | −0.02 | −0.02 | +11.2 | +11.2 |
+
+**Se movieron las 2 rutas del monográfico y ninguna más**, que era la condición.
+
+⚠ **El +11.2 de investigación a 390 es ANTERIOR y ajeno**: está congelado como
+`base +11.2` en `medidas/c-cmp-390-tras-d3.json`, medido antes de tocar nada.
+No se toca en esta tanda.
+
+### ⚠ Y un hallazgo de paso, NO perseguido: el alto de la cabecera a 1280
+
+A 1280 el original da **338.25** (sector) y **374.25** (monográfico); el clon da
+**397.59** en los dos → **+59.34 / +23.34**. Es decir: **el alto de la cabecera
+del original varía entre 1280 y 1440 y el del clon no.** No es lo mismo que se ha
+arreglado aquí —el ancho de módulo ya cuadra a 1280— y **1280 no es uno de los
+dos anchos de medición del proyecto**, así que se ficha y no se persigue. Lo que
+sí deja escrito es que **el ritmo vertical de esta cabecera no está verificado
+fuera de 1440 y 390**.
+
+---
+
+## Desviación deliberada · el botón «¡Suscríbete!» del pie (2026-08-02)
+
+**El original sirve un `<span>`, el clon sirve un `<a>`.** Registrado aquí porque
+el clon devuelve markup distinto del original, igual que las del grupo A.
+
+| | original | clon |
+|---|---|---|
+| etiqueta | `<span class="et_pb_button … kunak-obfuscated-link" role="link" tabindex="0" data-url="<base64>">` | `<a href="…">` |
+| destino | **ofuscado en base64**, lo resuelve JS al hacer clic | literal en el `href` |
+| idiomas | **uno por idioma en el DOM** (`ocultar-en` · `ocultar-es` · `ocultar-fr`…), todos servidos, todos menos uno ocultos por CSS | solo el del idioma servido |
+
+**Por qué se mantiene la desviación:** el clon no reproduce la ofuscación
+antispam —es una decisión de la instalación de WordPress, no de la maquetación— y
+emitir los cuatro idiomas ocultos para tapar tres de ellos con CSS sería copiar
+un coste sin la razón que lo justifica.
+
+**Lo que sí obliga:** cualquier sonda que busque este botón tiene que aceptar
+**`a` y `[role=link]`**, y contar **candidatos y visibles por separado** — buscar
+`<a>` da **cero** en el original, y un cero se lee como «no hay bloque» cuando lo
+que no hay es la suposición. Implementado en `qa:d4-sus`.
+
+Emparejada con **C-SP13** (la barra lateral de la FAQ) en el sentido de que las
+dos son diferencias de **salida servida**, no de medida.
+
+---
+
+## Campaña de ruido · episodio del 2026-08-02 (registro, ráfaga 2 pendiente)
+
+Al protocolo de `CLAUDE.md` §Notas de método —«el suelo es el máximo ENTRE
+ráfagas separadas en el tiempo, ≥3 ráfagas, ≥2 horas, ≥2 días»—:
+
+| fecha | ruta | ancho | episodio |
+|---|---|---|---|
+| **2026-08-02**, corrida de adjudicación de las 31 rutas | `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento` | 390 | **timeout de navegación de 120 s en el ORIGINAL** |
+
+**Reintentada suelta minutos después, la misma ruta mide bien** (`base 0 · docH
+−86`), o sea que fue un **episodio de latencia**, no un fallo del clon ni de la
+sonda. Congelado en `medidas/c-cmp-390-faq-reintento.json`.
+
+**Qué añade al registro:** el ruido del original **no es solo desplazamiento de
+píxeles** —la familia 27/54/81 del módulo barajado, y los ±32.28 de base en 3
+rutas—: también se manifiesta como **la página no llega a cargar en 120 s**. Una
+sonda que trate eso como «sin diferencia» publica un cero falso; `c-cmp` lo
+cuenta como ruta no medida y cierra su código de salida con ello, que es lo
+correcto.
+
+> ⚠ **La ráfaga 2 de la campaña SIGUE PENDIENTE, y este episodio no la
+> sustituye.** Una observación suelta durante otra medición no es una ráfaga: no
+> tiene las 3 cargas seguidas ni el alcance declarado. El suelo de estas rutas
+> **sigue sin fijar**, y hasta que se fije, **todo residuo pequeño en ellas está
+> SIN PROBAR** — ni defecto ni limpio.
