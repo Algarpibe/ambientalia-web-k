@@ -1,3 +1,154 @@
+# HANDOFF — el contrato de RANGO, el pie a Δ0 exacto, y las sondas dueñas de su servidor
+
+> ⚠ **Tanda 2026-08-02 (7.ª).** Los cinco pasos del encargo, hechos. Lo que más
+> se va a usar de aquí no es un arreglo: es **la distinción de contrato**, porque
+> decide qué cuenta como defecto en todo lo que venga.
+
+## 1 · EL CONTRATO NO ES EL MISMO A TODOS LOS ANCHOS
+
+| dónde | contrato | qué es defecto |
+|---|---|---|
+| **1440 y 390** | **FIDELIDAD** | cualquier Δ ≠ 0 sobre el suelo de ruido |
+| **anchos intermedios** | **COMPORTAMIENTO DE RANGO** | un valor **cableado** donde el original **varía** |
+
+El original es **Divi fluido** y el clon es Tailwind con cortes declarados: las
+dos curvas pasan por 1440 y por 390 y **no coinciden entre medias**. Igualarlas
+punto a punto sería reproducir el motor de Divi, y como no hay un ancho
+«siguiente» que fijar, **no termina**.
+
+**En intermedios no se exige Δ0: se exige que el clon VARÍE donde el original
+varía.** Y se arregla haciendo que dependa de lo que el original hace que
+dependa — **nunca cableando el valor del ancho medido**, que es exactamente cómo
+se fabrica una familia de calibración.
+
+En `CLAUDE.md` (antes de las notas de método) y en `ESQUEMA-CMS.md` §8.1, que
+añade lo que el listón de aceptación no cubría: **al migrar, una presentación
+puede volverse un CAMPO, y un campo con el valor de 1440 dentro pasa el listón y
+rompe el rango.**
+
+## 2 · La cabecera a 1280: eran tres valores cableados donde Divi usa %
+
+Descompuesta por composición — la sección del original tiene **tres** hijos y el
+clon uno más un `pt` cableado:
+
+| qué | 1440 | 1280 | era |
+|---|---|---|---|
+| `py` de fila | 28.7969 | 25.5938 | **2 %** |
+| `mb` del módulo del `h1` | 21.6562 | 19.25 | **1.7488 %** |
+| `mb` / `mt` del kicker | 29.77 / −13 | 26.46 / −11.55 | **2.4039 % / −1.0498 %** |
+
+**Medido:** 1440 pasa a **Δ 0.00 exacto en las cuatro rutas** —mejor que con los
+px, que daban −0.02—, 390 sin cambio, y 1280 de **59.34 a 48.69**.
+
+### Lo que queda a 1280 tiene un nombre y NO se arregla con una constante
+
+Los **48.69** son el hueco de la barra de navegación: el original vale
+41 + 95.52 = **136.52** y el clon cablea **185**. Y no hay porcentaje que sirva:
+185/1440 = 12.85 % pero 136.52/1280 = **10.67 %**, o sea que la altura de la barra
+**no varía proporcionalmente al ancho** — la mueve la maquetación del menú. El
+clon lo sabe: **su propio `header` mide 203.59 a 1440 y 157.89 a 1280**, varía
+igual. Lo congelado es solo el HUECO.
+
+> **Su arreglo es estructural —la barra en flujo, que es la partición D1— y es de
+> ámbito PROYECTO, no de esta cabecera:** `BandaCabecera` cablea lo mismo para las
+> otras 29 rutas (`--banda-alto` 165.58/225).
+
+## 3 · El residuo de ~1 px del pie: era un BORDE, y es el 7.º eje
+
+Estaba fichado como «~1 px sin descomponer». **Un residuo que se repite igual a
+1440 y a 390 no puede ser ruido.** Midiendo `pt + pb + Σcolumnas` contra el alto
+de la fila: el original sobraba **2.01** y el clon **1.01**, constante en los dos
+anchos y en las tres presentaciones.
+
+| presentación | orig `border-top` | orig `border-bottom` | clon |
+|---|---|---|---|
+| ancha · estrecha | 1px | **1px** | 1px / 0 |
+| estrechaPad | **0** | **0** | 1px / 0 |
+
+El clon servía `border-top: 1px` y nada abajo **en las tres**: −1 donde falta el
+de abajo y **+1 donde sobra el de arriba**. Y no era solo alto: **en catálogo y
+producto pintaba una línea de `#333` cruzando el pie que el original no tiene.**
+
+**`footer-links` queda a Δ 0.00 exacto a 1440** en las cinco rutas y **+0.20 a
+390**, con un solo dueño con nombre: la columna CERTIFICACIONES (184.25 contra
+184.05).
+
+## 4 · Las sondas, dueñas de su servidor — dos mitades
+
+**`iniciarClon()`** arranca su servidor en un puerto libre, espera a que
+responda y mata el árbol al salir (incluida excepción sin capturar). Dos sondas
+pueden medir a la vez.
+
+⚠ **No basta, y decirlo importa:** el servidor propio lee el **mismo `.next`**,
+así que un build concurrente le cambia el contenido igual. De eso protege la
+segunda mitad:
+
+**La guarda de `BUILD_ID` en `w()`.** Se lee al arrancar la sonda y al congelar;
+si cambió, la salida va a **`…-CONTAMINADA.json`** y sale por error.
+
+> **Lo grave de un build a mitad de corrida nunca fue el 404: era no saber DÓNDE
+> CAYÓ EL CORTE.** Ahora el fichero lo dice en el nombre.
+
+Vive en `w()` —por donde escriben las 19— así que **las cubre todas sin tocar
+ninguna**. Migrada a servidor propio: **`cabecera-cmp`**, verificada con el 3000
+muerto (arranca en puerto propio, mide Δ0, deja el puerto cerrado). **Las otras
+18 siguen esperando un `next start` ajeno** — mecánico y pendiente.
+
+`npm run qa:lib` **31/31**, con los tres negativos nuevos.
+
+## 5 · La CLASE, redefinida
+
+> **Un componente compartido cablea los valores del PRIMER CONTEXTO en que se
+> midió** — y «contexto» puede ser una **familia** (instancias 1–4), un
+> **ARQUETIPO** (la 5) o hasta un **ANCHO** (la 7).
+
+Siete instancias, **todas cerradas**. La 7 es la que estira la definición: px
+donde Divi escribe %, con **Δ0 en los dos anchos del contrato** y congelado en
+todo lo de en medio.
+
+**El barrido pendiente cambia de criterio:** no «componentes que cablean
+constantes de software» —eso busca una instancia— sino **componentes compartidos
+con valores fijos que UN SOLO contexto consumidor ha ejercitado**. Con la
+pregunta que faltaba: **si todos los consumidores ejercitan el valor IGUAL, está
+sin probar aunque haya ocho.**
+
+Y la nota de método: **la reutilización por un segundo arquetipo es un test del
+primero, y a veces el único.** El `h1` al 100 % daba Δ0 en las 4 instancias de
+SECTOR **a los cinco anchos** porque sus titulares son cortos.
+
+## 6 · Verificación
+
+`npm run check` **0 errores** · `qa:enlaces` limpio en las dos direcciones
+(1725 salientes · 868 entrantes) · `qa:slugs` limpio (A, B y C) · `qa:lib`
+**31/31** · `c-cmp` **exit 0 a 1440 y a 390**, 31/31 cada uno, las tres
+predicciones en pie.
+
+## 7 · Lo que queda abierto
+
+1. **El hueco de la barra de navegación**, de ámbito proyecto: **48.69 a 1280** en
+   `/sectores/*` y el equivalente en `BandaCabecera` para las otras 29. **Defecto
+   de RANGO**, no de fidelidad. Arreglo estructural (la barra en flujo = D1), con
+   adjudicación en 31 rutas.
+2. **La columna CERTIFICACIONES, +0.20 a 390.** Sub-píxel, con nombre.
+3. **Migrar las 18 sondas restantes** a servidor propio. Mecánico.
+4. **El barrido de la FAMILIA DE CALIBRACIÓN con el criterio nuevo** — sigue
+   necesitando el ancho del cuerpo en las 31 rutas, hoy **0/31**.
+5. **La ráfaga 2 de la campaña de ruido**, pendiente de su día.
+6. **`/` con su pie propio**, con C-QA3 (+289.91).
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No perseguir Δ0 en un ancho intermedio.** Comprueba si VARÍA; si varía,
+  cumple. Un «se ficha, no se persigue» ahí **no es deuda, es el contrato**.
+- **No reabrir D1 ni D2** como defectos de fidelidad: son partición. (Pero D1 sí
+  es el camino del arreglo de rango del punto 7.1 — no es lo mismo.)
+- **No construir con una sonda en vuelo.** Ahora se detecta, pero detectar
+  significa **descartar la corrida**, no salvarla.
+- **No dar por barrido un componente** porque tenga muchos consumidores: lo que
+  cuenta es cuántos **ejercitan el valor de forma distinta**.
+
+---
+
 # HANDOFF — C1 SALDADO: 2 causas arregladas, 2 particiones fichadas
 
 > ⚠ **Tanda 2026-08-02 (6.ª).** Los cuatro pasos del encargo, hechos. **C1 se
