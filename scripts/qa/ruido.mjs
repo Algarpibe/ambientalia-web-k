@@ -19,7 +19,14 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { QA, env, envRutas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, QA, env, envRutas, launch, openPage, settle, w } from "./lib.mjs";
+
+/* Esta sonda SOLO abre el original: un `build` del clon no la afecta, así que
+ * no debe dispararle la guarda de `BUILD_ID` de `w()` (ver `lib.mjs`).
+ * Se pone ARRIBA, junto al `import`, y no a media página: la bandera se lee en
+ * cada llamada, pero dejarla lejos de su motivo es cómo se llegó a la versión
+ * en que era inerte. */
+process.env.SIN_CLON = "1";
 
 /**
  * ⚠ **LA LISTA ES EL ALCANCE DE LA AFIRMACIÓN, y durante meses no se leyó así.**
@@ -55,9 +62,174 @@ const PAGINAS = PEDIDAS
 /** Sufijo de la salida, para no mezclar el suelo general con el de una tanda. */
 const ETIQUETA = env("ETIQUETA") ? `-${env("ETIQUETA")}` : "";
 
+/**
+ * Negativos (`SABOTAJE=`), porque una sonda a la que no se le ha visto fallar no
+ * es una sonda:
+ *   · `muerto`   — el ancla del `h1` pasa a ser un selector inventado ⇒ el censo
+ *                  tiene que sacarla por ERROR, no medir 0 y dar verde.
+ *   · `detector` — se inyectan dos detectores binarios de mentira, uno que nunca
+ *                  dispara y otro que dispara siempre ⇒ los DOS tienen que salir
+ *                  como NO VALIDADOS. Es la regla del cero **y** la del pleno en
+ *                  la misma corrida.
+ */
+const SABOTAJE = env("SABOTAJE");
+
 const CORRIDAS = Number(process.argv[2] || 3);
 const { browser } = await launch();
+const censo = new Censo();
 const crudo = {};
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL OBSERVABLE DISCRIMINANTE — por qué una ráfaga que solo mide `h1.y` ya no
+ * puede cerrar esta campaña
+ *
+ * Las ráfagas 1 y 2 dejaron establecido que el `h1` tiene **dos estados
+ * discretos separados por 32.28 exactos**, con el valor alto idéntico en dos
+ * días distintos. Eso ya no es temblor continuo: es una **condición binaria**
+ * del original. Y una condición binaria no se explica midiendo más veces la
+ * misma magnitud —eso solo vuelve a contar CUÁNTO mueve—, sino registrando en
+ * **la misma carga** algo que cambie con ella.
+ *
+ * Por eso cada carga anota ahora, junto al `h1.y`:
+ *
+ *   · `fuentes`       — `document.fonts.status` y cuántas caras hay cargadas
+ *   · `h1Familia`     — el `font-family` COMPUTADO del `h1`
+ *   · `h1Disponibles` — cuáles de esas familias dice `document.fonts.check()`
+ *                       que están de verdad disponibles al pintar
+ *   · `h1Renglones` / `h1AnchoTexto` — la caja RENDERIZADA del texto
+ *   · `cadena`        — dónde entra el desplazamiento, nivel a nivel
+ *
+ * ⚠ **La trampa, dicha antes de que nadie lea el fichero:
+ * `getComputedStyle(h1).fontFamily` devuelve la LISTA DECLARADA, no la fuente
+ * con la que se pintó.** Si la webfont no ha llegado y el navegador usa la de
+ * reserva, ese valor **no cambia**: es un detector que, él solo, no puede
+ * discriminar el fenómeno que se le pide discriminar — la regla del selector
+ * muerto con otra cara. Se registra igual, porque descarta que el CSS servido
+ * cambie entre cargas, pero **quien discrimina son los otros tres**:
+ * `fonts.status` y `check()` dicen qué hay cargado, y el ancho y los renglones
+ * del texto dicen con qué se pintó de verdad.
+ *
+ * ⚠ **Y la `cadena`, porque el ±32.28 NO está DENTRO del `h1`: está en su `y`.**
+ * Lo que crece está POR ENCIMA. Un observable que solo mire el titular podría
+ * decir «no fue su tipografía» y no podría decir qué fue. La cadena anota, del
+ * `h1` hacia arriba, la `y` de cada antepasado y el desplazamiento del hijo
+ * dentro de él: **el nivel en el que ese desplazamiento cambia entre dos cargas
+ * es el nivel donde nace el 32.28.** Es la regla del NIVEL de `CLAUDE.md`
+ * aplicada al ruido en vez de a un defecto.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const LECTOR = (sabotaje) => {
+  const r = (n) => Math.round(n * 100) / 100;
+  const y = (el) => (el ? r(el.getBoundingClientRect().top + scrollY) : null);
+
+  /**
+   * Renglones RENDERIZADOS. `el.getClientRects().length` **no los cuenta** en un
+   * elemento de bloque —devuelve la caja de borde, o sea 1 siempre—; un `Range`
+   * sí da una caja por línea. Se agrupan por `top` porque un renglón partido en
+   * varios nodos de texto produce varias cajas con el mismo `top`.
+   */
+  const renglones = (el) => {
+    if (!el) return null;
+    const rango = document.createRange();
+    rango.selectNodeContents(el);
+    const cajas = [...rango.getClientRects()].filter((b) => b.height > 0);
+    const tops = new Set(cajas.map((b) => Math.round(b.top)));
+    const ancho = cajas.length ? r(Math.max(...cajas.map((b) => b.width))) : null;
+    rango.detach?.();
+    return { n: tops.size || null, anchoTexto: ancho };
+  };
+
+  /* El ancla de todo el protocolo. `SABOTAJE=muerto` la cambia por un selector
+   * inventado: tiene que salir por el censo, no por un 0 silencioso. */
+  const h1 = sabotaje === "muerto" ? __q("h1.no-existe-este-ancla") : __q("h1");
+  const cs = h1 ? getComputedStyle(h1) : null;
+
+  /** Las familias declaradas, y cuáles de ellas están de verdad disponibles. */
+  const familias = cs
+    ? cs.fontFamily.split(",").map((f) => f.trim().replace(/^["']|["']$/g, ""))
+    : [];
+  const disponibles = familias.filter((f) => {
+    try {
+      return document.fonts.check(`${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} "${f}"`);
+    } catch {
+      return false;
+    }
+  });
+
+  /**
+   * La CADENA hasta el `h1`: por cada antepasado, su `y` y el desplazamiento del
+   * hijo dentro de él. Dos cargas con `h1.y` distinto se diffean por aquí y el
+   * nivel donde el desplazamiento cambia es el nivel donde nace la diferencia.
+   */
+  const cadena = [];
+  for (let el = h1, prof = 0; el && el !== document.documentElement && prof < 12; el = el.parentElement, prof++) {
+    const p = el.parentElement;
+    cadena.push({
+      tag: el.tagName.toLowerCase(),
+      cls: (el.className || "").toString().trim().split(/\s+/).slice(0, 2).join(" ").slice(0, 40),
+      y: y(el),
+      h: r(el.getBoundingClientRect().height),
+      // Desplazamiento del hijo dentro del padre: lo único que ve el nivel.
+      dentro: p ? r(el.getBoundingClientRect().top - p.getBoundingClientRect().top) : null,
+    });
+  }
+
+  return {
+    docH: document.documentElement.scrollHeight,
+    h1: y(h1),
+    pie: y(__q("footer, .et_pb_section_0_tb_footer")),
+    filas: __qa(".et_pb_row").map((f) => r(f.getBoundingClientRect().height)),
+
+    /* ── El observable discriminante, por carga ─────────────────────────── */
+    fuentes: document.fonts?.status ?? null,
+    fuentesCargadas: document.fonts?.size ?? null,
+    h1Familia: cs?.fontFamily ?? null,
+    h1Disponibles: disponibles.join(" | ") || null,
+    h1Tam: cs ? `${cs.fontSize}/${cs.lineHeight}/${cs.fontWeight}` : null,
+    h1Renglones: renglones(h1)?.n ?? null,
+    h1AnchoTexto: renglones(h1)?.anchoTexto ?? null,
+    cadena,
+
+    /**
+     * ── DETECTORES BINARIOS ────────────────────────────────────────────────
+     * HIPÓTESIS DE MECANISMO de C-QA6 — **solo se anota**. Rocket Loader de
+     * Cloudflare aplaza la ejecución de los scripts, y eso desplaza cuándo
+     * asientan fuentes y maquetación: compatible con un `h1` que envuelve
+     * distinto, sincronizado en varias rutas y correlacionado con la latencia.
+     *
+     * ⚠ Un detector que devuelve **lo mismo en el 100 % de las cargas no es un
+     * dato**: no ha discriminado nunca, ni en el sentido del cero ni en el del
+     * pleno. El informe de abajo lo declara NO VALIDADO y **no se puede citar
+     * como evidencia** hasta que se le vea cambiar.
+     */
+    detectores: {
+      // Sin regex a propósito: el token siempre lleva un guion delante de
+      // `-text/javascript`, y `type="text/javascript"` a secas no lo tiene.
+      rocketToken: document.documentElement.innerHTML.includes('-text/javascript"'),
+      /**
+       * ⚠ **Este va con `querySelector` a pelo, FUERA del censo, y es una
+       * excepción con motivo — no un descuido.** El censo declara defecto todo
+       * selector que no casa en ninguna página, porque en una MEDIDA el `null`
+       * se lee como dato. Aquí el `null` **es** el dato: el trabajo de un
+       * detector de presencia es poder decir «no está».
+       *
+       * Metido en el censo, la primera corrida sacó `rocket-loader` como
+       * selector muerto y cerró el código a 2 — o sea que una sonda de ruido no
+       * podría volver a dar verde mientras Cloudflare no sirviera el script.
+       *
+       * Lo que NO se pierde por sacarlo de ahí: un detector con el selector mal
+       * escrito y uno que mide una ausencia real dan lo mismo, y esa
+       * indistinguibilidad es exactamente lo que el informe de detectores de
+       * abajo declara como **NO VALIDADO**. La guarda no desaparece: cambia de
+       * sitio, del censo al veredicto — y con ella la consecuencia, que es que
+       * el detector no se puede citar.
+       */
+      rocketLoader: !!document.querySelector('script[src*="rocket-loader"], script[data-cf-settings]'),
+      ...(sabotaje === "detector"
+        ? { sabotajeNunca: false, sabotajeSiempre: true }
+        : {}),
+    },
+  };
+};
 
 for (const ancho of [1440, 390]) {
   const mobile = ancho <= 500;
@@ -80,41 +252,7 @@ for (const ancho of [1440, 390]) {
           mobile,
         });
         await settle(page);
-        const m = await page.evaluate(() => {
-          const r = (n) => Math.round(n * 100) / 100;
-          const y = (el) => (el ? r(el.getBoundingClientRect().top + scrollY) : null);
-          return {
-            docH: document.documentElement.scrollHeight,
-            h1: y(document.querySelector("h1")),
-            pie: y(document.querySelector("footer, .et_pb_section_0_tb_footer")),
-            filas: [...document.querySelectorAll(".et_pb_row")].map((f) =>
-              r(f.getBoundingClientRect().height),
-            ),
-            /* ── HIPÓTESIS DE MECANISMO de C-QA6 — SOLO SE ANOTA ────────────
-             * Rocket Loader de Cloudflare **aplaza la ejecución de los
-             * scripts**, y eso desplaza cuándo asientan fuentes y maquetación.
-             * Es compatible con lo observado: un `h1` que envuelve distinto,
-             * **sincronizado en varias rutas a la vez** y correlacionado con la
-             * latencia del original.
-             *
-             * No es una explicación: es un dato que las ráfagas 2 y 3 pueden
-             * registrar sin coste, para que el día que alguien mire el
-             * mecanismo tenga con qué. **No se persigue ahora.**
-             *
-             * Se registra lo mismo que se midió al construir el grupo A: si el
-             * token por petición está presente, y si el script del propio
-             * Rocket Loader está en la página. */
-            // Sin regex a propósito: el token siempre lleva un guion delante de
-            // `-text/javascript`, y `type="text/javascript"` a secas no lo tiene.
-            // Un `includes` no hay que escaparlo y no se puede romper al editarlo.
-            rocketToken: document.documentElement.innerHTML.includes(
-              '-text/javascript"',
-            ),
-            rocketLoader: !!document.querySelector(
-              'script[src*="rocket-loader"], script[data-cf-settings]',
-            ),
-          };
-        });
+        const { datos: m } = await censo.medir(page, LECTOR, SABOTAJE);
         m.cargaMs = Date.now() - t0;
         (crudo[clave] ||= []).push(m);
         await page.close();
@@ -133,11 +271,67 @@ const disp = (xs) => {
   return Math.round((Math.max(...v) - Math.min(...v)) * 100) / 100;
 };
 
+/**
+ * ── ¿EL OBSERVABLE ACOMPAÑA AL ESTADO DEL `h1`? ───────────────────────────
+ *
+ * El `h1` es **bimodal**: dos valores discretos a 32.28. Así que la pregunta que
+ * cierra el mecanismo no es «¿cuánto varía el observable?» sino **«¿parte las
+ * cargas en los mismos dos grupos que el `h1`?»**. Eso es lo que se calcula
+ * aquí, y las tres respuestas posibles son distintas y hay que decirlas
+ * distintas:
+ *
+ *   · `sí`      — cada estado del `h1` trae UN valor del observable, y estados
+ *                 distintos traen valores distintos. **Es un candidato a causa.**
+ *   · `no`      — el observable no distingue los estados: **descartado**.
+ *   · `null`    — **en esta ráfaga el `h1` no cambió de estado**, así que no hay
+ *                 nada contra lo que correlacionar. No es «no discrimina»: es
+ *                 «aquí no se puede evaluar». Confundirlos sería cerrar la
+ *                 pregunta en falso, que es el fallo entero de C-QA6.
+ */
+const OBSERVABLES = ["fuentes", "fuentesCargadas", "h1Familia", "h1Disponibles", "h1Tam", "h1Renglones", "h1AnchoTexto"];
+
+const analizaObservable = (ok) => {
+  const estados = [...new Set(ok.map((c) => c.h1).filter((v) => v !== null))];
+  const porObs = {};
+  for (const obs of OBSERVABLES) {
+    const valores = [...new Set(ok.map((c) => JSON.stringify(c[obs] ?? null)))];
+    let acompana = null;
+    if (estados.length >= 2) {
+      // Un valor por estado, y distinto entre estados: eso es acompañar.
+      const mapa = estados.map((e) => [...new Set(ok.filter((c) => c.h1 === e).map((c) => JSON.stringify(c[obs] ?? null)))]);
+      const constantePorEstado = mapa.every((v) => v.length === 1);
+      const distintoEntreEstados = new Set(mapa.map((v) => v[0])).size === estados.length;
+      acompana = constantePorEstado && distintoEntreEstados;
+    }
+    porObs[obs] = { nValores: valores.length, valores: valores.slice(0, 4).map((v) => JSON.parse(v)), acompana };
+  }
+
+  /**
+   * Y el NIVEL en el que nace la diferencia. Con dos estados delante, se diffea
+   * la cadena `h1`→raíz y se listan los niveles cuyo desplazamiento dentro del
+   * padre cambió: **ahí es donde entran los 32.28**, y no en el `h1`.
+   */
+  let cadena = null;
+  if (estados.length >= 2) {
+    const a = ok.find((c) => c.h1 === estados[0])?.cadena || [];
+    const b = ok.find((c) => c.h1 === estados[1])?.cadena || [];
+    const niveles = [];
+    for (let i = 0; i < Math.min(a.length, b.length); i++) {
+      const d = +(b[i].dentro - a[i].dentro).toFixed(2);
+      const dh = +(b[i].h - a[i].h).toFixed(2);
+      if (Math.abs(d) > 0.5 || Math.abs(dh) > 0.5)
+        niveles.push({ nivel: i, tag: a[i].tag, cls: a[i].cls, dentroA: a[i].dentro, dentroB: b[i].dentro, dDentro: d, dAlto: dh });
+    }
+    cadena = { entreEstados: [estados[0], estados[1]], mismaProfundidad: a.length === b.length, niveles };
+  }
+  return { estadosH1: estados, transicion: estados.length >= 2, porObservable: porObs, cadena };
+};
+
 const resumen = {};
 for (const [clave, corridas] of Object.entries(crudo)) {
   const ok = corridas.filter((c) => !c.error);
   if (ok.length < 2) {
-    resumen[clave] = { error: `solo ${ok.length} corrida(s) válida(s)` };
+    resumen[clave] = { error: `solo ${ok.length} corrida(s) válida(s)`, observable: ok.length ? analizaObservable(ok) : null };
     continue;
   }
   // posicional
@@ -182,6 +376,8 @@ for (const [clave, corridas] of Object.entries(crudo)) {
     dimensionalNoMedible: mismasFilas ? null : `el nº de .et_pb_row varía entre corridas (${ok.map((c) => c.filas.length).join("/")}): comparar por índice compararía filas distintas`,
     filas: nFilas,
     mismoNumeroDeFilas: mismasFilas,
+    /** El observable discriminante, congelado junto a la dispersión que explica. */
+    observable: analizaObservable(ok),
   };
 }
 
@@ -243,11 +439,34 @@ if (!CAMPANA) {
     }
   }
 
+  /**
+   * ⚠ **El observable llegó tarde a la campaña, y eso hay que decirlo en la
+   * propia campaña.** Las ráfagas anteriores a hoy midieron el `h1` sin nada al
+   * lado, así que sus estados no se pueden atribuir a nada: no son ráfagas
+   * peores, son ráfagas **ciegas a la pregunta del mecanismo**. Contarlas como
+   * si aportaran evidencia de causa sería leer «no hay dato» como «no hay
+   * relación» — el mismo fallo que la regla del cero.
+   */
+  const conObs = rafagas.filter((r) => Object.values(r.resumen).some((v) => v.observable)).length;
+  const transiciones = rafagas.flatMap((r) =>
+    Object.entries(r.resumen).filter(([, v]) => v.observable?.transicion).map(([k]) => `${r.meta.sello.slice(0, 10)}·${k}`),
+  );
+
   console.log(`\n═══ CAMPAÑA «${CAMPANA}» — ${rafagas.length} ráfaga(s), ${dias.size} día(s)`);
   console.log(`  ${"combinación".padEnd(24)}${"h1 (máx entre ráfagas)".padStart(24)}${"posicional".padStart(13)}`);
   for (const [k, v] of Object.entries(suelo)) {
     console.log(`  ${k.padEnd(24)}${String(v.h1).padStart(24)}${String(v.pos).padStart(13)}`);
   }
+
+  console.log(
+    `\n  observable de mecanismo: presente en ${conObs}/${rafagas.length} ráfaga(s)` +
+      ` · transiciones registradas CON observable: ${transiciones.length}` +
+      (transiciones.length ? `\n     ${transiciones.slice(0, 8).join(" · ")}` : "") +
+      (conObs < rafagas.length
+        ? `\n     ⚠ las ${rafagas.length - conObs} ráfaga(s) anteriores midieron el \`h1\` SIN observable al lado:\n` +
+          `        sus estados están registrados, pero no se pueden atribuir a nada.`
+        : ""),
+  );
 
   const completa = rafagas.length >= MIN_RAFAGAS && dias.size >= MIN_DIAS && bienSeparadas >= MIN_RAFAGAS;
   console.log(
@@ -296,10 +515,22 @@ for (const [clave, r] of Object.entries(resumen)) {
 }
 
 const vivos = Object.values(resumen).filter((r) => !r.error);
+/**
+ * ⚠ **UNA CORRIDA QUE NO MIDIÓ NADA NO PUEDE IMPRIMIR UN SUELO.** Sin esta
+ * guarda, `Math.max()` de una lista vacía da `-Infinity` y el informe habría
+ * escrito «SUELO POSICIONAL = -Infinity» como si fuera un dato. Es la misma
+ * regla que cerró `ancho-cuerpo`: *acotar no puede volverse verde por vaciado*.
+ */
+const sinNada = vivos.length === 0;
+if (sinNada)
+  console.error(
+    `\n❌ NINGUNA combinación con ≥2 corridas válidas: esta corrida NO midió el suelo.\n` +
+      `   Eso no es «el original no se movió», es que no hay con qué comparar.`,
+  );
 const todosPos = vivos.map((r) => r.posicionalMax);
 const todosDim = vivos.map((r) => r.dimensionalMax).filter((n) => n !== null);
 const sinDim = vivos.filter((r) => r.dimensionalMax === null).length;
-console.log(
+if (!sinNada) console.log(
   `\nSUELO POSICIONAL  = ${Math.max(...todosPos)}   (peor página)` +
     `\nSUELO DIMENSIONAL = ${todosDim.length ? Math.max(...todosDim) : "—"}` +
     (sinDim
@@ -344,4 +575,101 @@ console.log(
     `  La deriva de horas —la de C-QA6— es otra magnitud y no se ve aquí.`,
 );
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL OBSERVABLE, LEÍDO — y la única lectura honesta de cada caso
+ * ═════════════════════════════════════════════════════════════════════════ */
+console.log(`\n═══ EL OBSERVABLE DISCRIMINANTE — ¿acompaña al estado del \`h1\`?`);
+let conTransicion = 0;
+for (const [clave, r] of Object.entries(resumen)) {
+  const o = r.observable;
+  if (!o) {
+    console.log(`  ${clave.padEnd(22)} — sin cargas válidas`);
+    continue;
+  }
+  if (!o.transicion) {
+    console.log(
+      `  ${clave.padEnd(22)} ` +
+        (o.estadosH1.length
+          ? `h1 en UN solo estado (${o.estadosH1[0]}) — el observable NO SE PUEDE EVALUAR aquí`
+          : `⚠ SIN \`h1\` en ninguna carga — no hay ancla: esto no es «un solo estado», es que no se midió`),
+    );
+    continue;
+  }
+  conTransicion++;
+  console.log(`  ${clave.padEnd(22)} ⚡ TRANSICIÓN: h1 ${o.estadosH1.join(" ↔ ")}  (Δ ${(Math.max(...o.estadosH1) - Math.min(...o.estadosH1)).toFixed(2)})`);
+  for (const [obs, v] of Object.entries(o.porObservable)) {
+    const marca = v.acompana === true ? "✅ ACOMPAÑA" : v.acompana === false ? "·  no" : "?  —";
+    console.log(`      ${marca}  ${obs.padEnd(16)} ${v.nValores} valor(es): ${JSON.stringify(v.valores).slice(0, 90)}`);
+  }
+  if (o.cadena?.niveles.length) {
+    console.log(`      NIVEL donde nace la diferencia (cadena h1→raíz):`);
+    for (const n of o.cadena.niveles)
+      console.log(`         [${n.nivel}] ${(n.tag + " " + n.cls).padEnd(30).slice(0, 30)} dentro ${n.dentroA} → ${n.dentroB}  Δ ${n.dDentro}   (Δalto ${n.dAlto})`);
+  } else if (o.cadena) {
+    console.log(`      ⚠ la cadena h1→raíz NO cambia en ningún nivel: el desplazamiento entra por ENCIMA de ella.`);
+  }
+}
+if (!conTransicion)
+  console.log(
+    `\n  Ninguna combinación cambió de estado en esta ráfaga.\n` +
+      `  Eso NO dice que el observable no sirva: dice que aquí no hubo episodio y\n` +
+      `  no había nada contra lo que correlacionar. Se registra y se espera a una\n` +
+      `  ráfaga con transición — que es exactamente lo que la campaña busca.`,
+  );
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS DETECTORES BINARIOS — un valor constante NO es una respuesta
+ *
+ * `rocketToken` dio `N` en las 12 cargas de las ráfagas 1 y 2, y eso se estuvo a
+ * punto de leer como «el token no interviene». No lo es: es un detector que
+ * **nunca ha discriminado**, y por la regla del cero/pleno de `CLAUDE.md`
+ * (§sondas, regla 4) eso no es un dato en ninguna de las dos direcciones —
+ * ni casar en ninguna, ni casar en todas.
+ *
+ * Por eso el veredicto se imprime aquí y no lo tiene que recordar nadie:
+ *
+ *   · **NO VALIDADO** — mismo valor en el 100 % de las cargas. **No se cita como
+ *     evidencia.** Si sigue así al cerrar la campaña, se retira del observable:
+ *     un detector que no ha discriminado nunca ocupa sitio y sugiere respuesta.
+ *   · **VALIDADO** — se le ha visto cambiar, así que su valor significa algo.
+ *
+ * ⚠ **Y no cierra el código de salida, a propósito.** Un detector sin validar es
+ * una observación sobre el ORIGINAL, no un defecto de la sonda: hacerlo fallar
+ * convertiría cada ráfaga en roja y la guarda acabaría ignorada. Lo que sí cierra
+ * el código es el censo de selectores —eso sí es defecto de la sonda—. Se dice
+ * aquí porque *lo que una sonda imprime y lo que cuenta no pueden discrepar sin
+ * que se explique por qué*.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const cargas = Object.values(crudo).flat().filter((c) => !c.error && c.detectores);
+const nombresDet = [...new Set(cargas.flatMap((c) => Object.keys(c.detectores)))];
+console.log(`\n═══ DETECTORES BINARIOS — ¿han discriminado ALGUNA VEZ? (${cargas.length} cargas)`);
+const sinValidar = [];
+for (const d of nombresDet) {
+  const s = cargas.filter((c) => c.detectores[d] === true).length;
+  const n = cargas.length - s;
+  const validado = s > 0 && n > 0;
+  if (!validado) sinValidar.push(d);
+  console.log(
+    `  ${d.padEnd(18)} S ${String(s).padStart(3)} / N ${String(n).padStart(3)}   ` +
+      (validado
+        ? "✅ VALIDADO — se le ha visto cambiar"
+        : `❌ NO VALIDADO — ${s === 0 ? "nunca ha dado S" : "da S en el 100 %"}: no se cita como evidencia`),
+  );
+}
+if (sinValidar.length)
+  console.log(
+    `\n  ${sinValidar.length} detector(es) sin validar: ${sinValidar.join(" · ")}.\n` +
+      `  Un valor constante no contesta la pregunta que se le hizo. Hasta que cambie,\n` +
+      `  cualquier frase del tipo «X no interviene» carece de respaldo.`,
+  );
+
 await browser.close();
+
+/* ── Un canal de verdad: lo que se imprime es lo que cierra el código ────── */
+const muertos = censo.informe();
+const fallos = muertos + (sinNada ? 1 : 0);
+console.log(
+  `${fallos === 0 ? "✅" : "❌"} ruido · ${muertos} selector(es) muerto(s) · ${vivos.length} combinación(es) medida(s)` +
+    `${sinValidar.length ? ` · ${sinValidar.length} detector(es) NO VALIDADO(S) (no cierran el código: ver arriba)` : ""}`,
+);
+process.exit(fallos === 0 ? 0 : 2);

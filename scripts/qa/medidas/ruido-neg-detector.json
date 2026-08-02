@@ -1,0 +1,152 @@
+{
+  "kunak-api@1440": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 0,
+      "h1": 0,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "cargaMs": {
+      "min": 6368,
+      "max": 7564
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true,
+    "observable": {
+      "estadosH1": [
+        392.59
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            526.73
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "kunak-api@390": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 27,
+      "h1": 0,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "cargaMs": {
+      "min": 6982,
+      "max": 7157
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true,
+    "observable": {
+      "estadosH1": [
+        278.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            298.34
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  }
+}

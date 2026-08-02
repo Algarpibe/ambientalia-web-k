@@ -1,0 +1,148 @@
+{
+  "kunak-api@1440": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 27,
+      "h1": null,
+      "pie": 27
+    },
+    "posicionalMax": 27,
+    "dimensionalMax": 27,
+    "cargaMs": {
+      "min": 6504,
+      "max": 8914
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true,
+    "observable": {
+      "estadosH1": [],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "kunak-api@390": {
+    "corridas": 2,
+    "posicional": {
+      "docH": 0,
+      "h1": null,
+      "pie": 0
+    },
+    "posicionalMax": 0,
+    "dimensionalMax": 0,
+    "cargaMs": {
+      "min": 6540,
+      "max": 6654
+    },
+    "dimensionalNoMedible": null,
+    "filas": 13,
+    "mismoNumeroDeFilas": true,
+    "observable": {
+      "estadosH1": [],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  }
+}

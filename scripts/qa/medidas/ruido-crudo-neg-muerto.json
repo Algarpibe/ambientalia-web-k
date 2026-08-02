@@ -1,0 +1,138 @@
+{
+  "kunak-api@1440": [
+    {
+      "docH": 5421,
+      "h1": null,
+      "pie": 4739.63,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        544.2,
+        775.36,
+        570.5,
+        603.94,
+        146,
+        1318.63,
+        460.53,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": null,
+      "h1Disponibles": null,
+      "h1Tam": null,
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 8914
+    },
+    {
+      "docH": 5394,
+      "h1": null,
+      "pie": 4712.63,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        544.2,
+        775.36,
+        570.5,
+        576.94,
+        146,
+        1318.63,
+        460.53,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": null,
+      "h1Disponibles": null,
+      "h1Tam": null,
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6504
+    }
+  ],
+  "kunak-api@390": [
+    {
+      "docH": 9230,
+      "h1": null,
+      "pie": 7177.53,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        859.13,
+        1293.13,
+        960.61,
+        1391.19,
+        99,
+        1921.13,
+        1649.16,
+        313.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": null,
+      "h1Disponibles": null,
+      "h1Tam": null,
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6540
+    },
+    {
+      "docH": 9230,
+      "h1": null,
+      "pie": 7177.53,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        859.13,
+        1293.13,
+        960.61,
+        1391.19,
+        99,
+        1921.13,
+        1649.16,
+        313.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": null,
+      "h1Disponibles": null,
+      "h1Tam": null,
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6654
+    }
+  ]
+}
