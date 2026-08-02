@@ -1,0 +1,6183 @@
+{
+  "meta": {
+    "width": 390,
+    "fecha": "2026-08-02",
+    "solo": null,
+    "sabotaje": null
+  },
+  "rutas": {
+    "/": {
+      "nFilas": {
+        "orig": 16,
+        "clon": 13
+      },
+      "nSecciones": {
+        "orig": 13,
+        "clon": 13
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 13
+        }
+      },
+      "emparejadas": 12,
+      "metodos": {
+        "texto": 12
+      },
+      "huerfanas": {
+        "orig": 4,
+        "clon": 1,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 4
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "Lasoluciónprofesionalparalamonitorizacióndelacal",
+          "JérômeDeWaeleDirectorgeneral-AIRSCANValoramosesp",
+          "Cuéntanostusnecesidades",
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": [
+          "MonitoreodelacalidaddelaireLasoluciónprofesional"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "Lasoluciónprofesionalparalamonitorizacióndelacal",
+            "img": [
+              "kunak-air-pro-aislado.png",
+              "logos-banner-home-epa.svg",
+              "logos-banner-home-mcerts.svg",
+              "logos-banner-home-airlab.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "Conlaconfianzadeempresaslíderes",
+            "img": [
+              "punteado.svg",
+              "world-athletics.svg",
+              "riotinto.svg",
+              "repsol.svg",
+              "ternium.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "port-of-zeebrugge.svg",
+              "south-coast-aqmd.svg",
+              "first-quantum.svg",
+              "us-epa.svg",
+              "arcelor-mital.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Lasoluciónprofesionalparalamonitorizaciónambient",
+            "img": [
+              "punteado.svg",
+              "real-time.svg",
+              "Mcerts.svg",
+              "data-quality-1.svg",
+              "global-presence.svg",
+              "years-of-experience-1.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "SoluciónvalidadaNuestrasoluciónhasidoevaluadapor",
+            "img": [
+              "punteado.svg",
+              "US-EPA-united-states-environmental-protection-agency.svg",
+              "Mcerts.svg",
+              "AQ-SPEC.svg",
+              "airparif.svg",
+              "SEDEMA_CDMX.svg",
+              "Ricardo_logo.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "ReconocimientosConfíaenlasoluciónpremiadayrecono",
+            "img": [
+              "punteado.svg",
+              "wildland-fire-sensors-challenge.svg",
+              "AIRLAB-challenge-awards.svg",
+              "AQE-awards.svg",
+              "banner-winner-airlab-ES.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "SectoresDescargarcatálogoControlalacontaminación",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "PresenciamundialLasestacionesKunakAIRhansidoprob",
+            "img": [
+              "punteado.svg",
+              "world.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Testimonios",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "JérômeDeWaeleDirectorgeneral-AIRSCANValoramosesp",
+            "img": [
+              "jerome-airscan-480x480.jpg",
+              "Cristobal-Hernandez-480x480.jpg",
+              "bachir-kerkache-1-480x480.jpg",
+              "Jelle-Hofman-480x480.jpg",
+              "Ibai-Uria-Gaztelu-Iturri-480x480.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 7,
+            "firma": "HazvisiblelacontaminaciónDescargarcatálogoSimpli",
+            "img": [
+              "punteado.svg",
+              "cartridge-system.svg",
+              "multi-pollutant-1.svg",
+              "flexible-scalable.svg",
+              "reduced-maintenance.svg",
+              "remote-calibration.svg",
+              "advanced-software-1.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "NuestrosproductosAIRProMonitordecalidaddeairepar",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "cartridges-300.jpg",
+              "air-cloud-480x480.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Cuéntanostusnecesidades",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 9,
+            "firma": "ÚltimosartículosMonitorizacióndeemisionesfugitiv",
+            "img": [
+              "punteado.svg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-480x320.jpg",
+              "monitorizacion-perimetral_Kunak-480x320.jpg",
+              "aaqms-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 9,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 10,
+            "firma": "ÚltimosproyectosSector:EDAR/PTARNamaWaterService",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 12,
+            "firma": "ComprometidosconlasostenibilidadLasestacionesdem",
+            "img": [
+              "punteado.svg",
+              "ecology.svg",
+              "waste-reduction.svg",
+              "energy-efficiency.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "MonitoreodelacalidaddelaireLasoluciónprofesional",
+            "img": [
+              "kunak-air-pro-aislado.png",
+              "logos-banner-home-epa.svg",
+              "logos-banner-home-mcerts.svg",
+              "logos-banner-home-airlab.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Conlaconfianzadeempresaslíderes",
+            "img": [
+              "punteado.svg",
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg"
+            ],
+            "w": 331.5,
+            "pct": 85,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Lasoluciónprofesionalparalamonitorizaciónambient",
+            "img": [
+              "punteado.svg",
+              "real-time.svg",
+              "Mcerts.svg",
+              "data-quality-1.svg",
+              "global-presence.svg",
+              "years-of-experience-1.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "SoluciónvalidadaNuestrasoluciónhasidoevaluadapor",
+            "img": [
+              "punteado.svg",
+              "US-EPA-united-states-environmental-protection-agency.svg",
+              "Mcerts.svg",
+              "AQ-SPEC.svg",
+              "airparif.svg",
+              "SEDEMA_CDMX.svg",
+              "Ricardo_logo.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "ReconocimientosConfíaenlasoluciónpremiadayrecono",
+            "img": [
+              "punteado.svg",
+              "wildland-fire-sensors-challenge.svg",
+              "AIRLAB-challenge-awards.svg",
+              "AQE-awards.svg",
+              "banner-winner-airlab-ES.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "SectoresDescargarcatálogoControlalacontaminación",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "PresenciamundialLasestacionesKunakAIRhansidoprob",
+            "img": [
+              "punteado.svg",
+              "world.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "Testimonios",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "HazvisiblelacontaminaciónDescargarcatálogoSimpli",
+            "img": [
+              "punteado.svg",
+              "cartridge-system.svg",
+              "multi-pollutant-1.svg",
+              "flexible-scalable.svg",
+              "reduced-maintenance.svg",
+              "remote-calibration.svg",
+              "advanced-software-1.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 9,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "NuestrosproductosAIRProMonitordecalidaddeairepar",
+            "img": [
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 10,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 9,
+            "via": "marcador",
+            "firma": "ÚltimosartículosMonitorizacióndeemisionesfugitiv",
+            "img": [
+              "punteado.svg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-1024x683.jpg",
+              "monitorizacion-perimetral_Kunak-1024x683.jpg",
+              "aaqms-1024x683.jpg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 12,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 10,
+            "via": "marcador",
+            "firma": "ÚltimosproyectosSector:EDAR/PTARNamaWaterService",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 331.5,
+            "pct": 85,
+            "inf": true,
+            "par": 14,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 12,
+            "via": "marcador",
+            "firma": "ComprometidosconlasostenibilidadLasestacionesdem",
+            "img": [
+              "punteado.svg",
+              "ecology.svg",
+              "waste-reduction.svg",
+              "energy-efficiency.svg"
+            ],
+            "w": 336.75,
+            "pct": 86.35,
+            "inf": true,
+            "par": 15,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": [
+        {
+          "firma": "Conlaconfianzadeempresaslíderes",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 331.5,
+          "d": -3.89,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "Lasoluciónprofesionalparalamonitorizaciónambient",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "SoluciónvalidadaNuestrasoluciónhasidoevaluadapor",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "ReconocimientosConfíaenlasoluciónpremiadayrecono",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "SectoresDescargarcatálogoControlalacontaminación",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "PresenciamundialLasestacionesKunakAIRhansidoprob",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "Testimonios",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "HazvisiblelacontaminaciónDescargarcatálogoSimpli",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        },
+        {
+          "firma": "NuestrosproductosAIRProMonitordecalidaddeairepar",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ÚltimosartículosMonitorizacióndeemisionesfugitiv",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ÚltimosproyectosSector:EDAR/PTARNamaWaterService",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 331.5,
+          "d": -3.89,
+          "dPct": -1,
+          "pctO": 86,
+          "pctC": 85,
+          "nColsO": 1,
+          "nColsC": 3
+        },
+        {
+          "firma": "ComprometidosconlasostenibilidadLasestacionesdem",
+          "metodo": "texto",
+          "orig": 335.39,
+          "clon": 336.75,
+          "d": 1.36,
+          "dPct": 0.35,
+          "pctO": 86,
+          "pctC": 86.35,
+          "nColsO": 2,
+          "nColsC": 2
+        }
+      ]
+    },
+    "/accesorios": {
+      "nFilas": {
+        "orig": 9,
+        "clon": 8
+      },
+      "nSecciones": {
+        "orig": 4,
+        "clon": 4
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 8
+        }
+      },
+      "emparejadas": 8,
+      "metodos": {
+        "texto": 7,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosAccesorios",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "AccesoriosAccesoriosparasensoresdecalidaddelaire",
+            "img": [
+              "punteado.svg",
+              "kunak-air-accessories.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Informaciónsobreelproducto",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Losaccesoriosparasensoresdecalidaddelairemaximiz",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "OpcionesdealimentaciónLasestacionesKunakAIRestán",
+            "img": [
+              "punteado.svg",
+              "kunak_IMG_0017-300x300-2.jpg",
+              "kunak_IMG_0015-300x300-1.jpg",
+              "kunak-air-indoor-charger-480x480.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "SondasadicionalesAnemómetroMecánicoIncluyesensor",
+            "img": [
+              "punteado.svg",
+              "kunak_IMG_0047-copia-300x300-1.jpg",
+              "kunak_IMG_0061-copia-300X300.jpg",
+              "rain-gauge-480x480.jpg",
+              "Sound-level-meter.jpg",
+              "pyranometer-480x480.jpg",
+              "apogee-su-202-ultraviolet-A-sensor-480x260.jpg",
+              "WBGT-300x300-1.jpg",
+              "gashood-air-pro-480x480.jpg",
+              "gashood-air-pro-lite-480x160.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "ArtículosyGuíasCalidaddelaireenlosaeropuertos,un",
+            "img": [
+              "punteado.svg",
+              "calidad-del-aire-ena-aeropuertos-Kunak-480x320.jpg",
+              "barriada-urbana-y-calidad-del-aire-480x321.jpg",
+              "hawaii-archipielago_contaminacion-aire_Kunak-480x374.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioProductosAccesorios",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "AccesoriosAccesoriosparasensoresdecalidaddelaire",
+            "img": [
+              "punteado.svg",
+              "kunak-air-accessories.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Informaciónsobreelproducto",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Losaccesoriosparasensoresdecalidaddelairemaximiz",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "OpcionesdealimentaciónLasestacionesKunakAIRestán",
+            "img": [
+              "punteado.svg",
+              "kunak_IMG_0017-300x300-2.jpg",
+              "kunak_IMG_0015-300x300-1.jpg",
+              "kunak-air-indoor-charger.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "SondasadicionalesAnemómetroMecánicoIncluyesensor",
+            "img": [
+              "punteado.svg",
+              "kunak_IMG_0047-copia-300x300-1.jpg",
+              "kunak_IMG_0061-copia-300X300.jpg",
+              "rain-gauge.jpg",
+              "Sound-level-meter.jpg",
+              "pyranometer.jpg",
+              "apogee-su-202-ultraviolet-A-sensor.jpg",
+              "WBGT-300x300-1.jpg",
+              "gashood-air-pro.jpg",
+              "gashood-air-pro-lite.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasEHSindustrial,transformandoelento",
+            "img": [
+              "punteado.svg",
+              "EHS-industrial-1024x683.webp",
+              "Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg",
+              "Industria-petroquimica-1024x686.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 1
+        }
+      },
+      "emparejadas": 1,
+      "metodos": {
+        "texto": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioCasosdeéxitoElprimerdistritodebajasemision",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioCasosdeéxitoElprimerdistritodebajasemision",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 1
+        }
+      },
+      "emparejadas": 1,
+      "metodos": {
+        "texto": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioCasosdeéxitoReddecontroldelacontaminaciónp",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioCasosdeéxitoReddecontroldelacontaminaciónp",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 1
+        }
+      },
+      "emparejadas": 1,
+      "metodos": {
+        "texto": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioCasosdeéxitoRedglobaldecalidaddeaireenpist",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioCasosdeéxitoRedglobaldecalidaddeaireenpist",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "nFilas": {
+        "orig": 1,
+        "clon": 1
+      },
+      "nSecciones": {
+        "orig": 1,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 1
+        }
+      },
+      "emparejadas": 1,
+      "metodos": {
+        "texto": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioCasosdeéxitoAlertadecontaminacióndeacuífer",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioCasosdeéxitoAlertadecontaminacióndeacuífer",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 2
+        }
+      },
+      "emparejadas": 2,
+      "metodos": {
+        "texto": 2
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosKunakpediaClorurodehidrógeno(HCl)",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Clorurodehidrógeno(HCl):emisiones,riesgosymonito",
+            "img": [
+              "emision-de-cloruro-de-hidrogeno.jpeg",
+              "haluros-de-hidrogeno-en-el-ambiente_Kunak.jpg",
+              "industria-quimica-y-petroquimica-y-emisiones-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "Camion-accidente-transporte-acido-clorhidrico_Kunak.jpeg",
+              "Cloruro-de-hidrogeno-es-precursor-de-lluvia-acida_Kunak.jpg",
+              "tendido-electrico-y-cloruro-de-hidrogeno_Kunak.jpg",
+              "pvc-y-produccion-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "cloruro-de-hidrogeno-en-sanidad_Kunak.jpg",
+              "origen-antropogenico-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "emisiones-antropogenicas-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "emisiones-de-cloruro-de-hidrogeno-acidifican-suelo-y-agua_Kunak.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosKunakpediaClorurodehidrógeno(HCl)",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Clorurodehidrógeno(HCl):emisiones,riesgosymonito",
+            "img": [
+              "emision-de-cloruro-de-hidrogeno.jpeg",
+              "haluros-de-hidrogeno-en-el-ambiente_Kunak.jpg",
+              "industria-quimica-y-petroquimica-y-emisiones-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "Camion-accidente-transporte-acido-clorhidrico_Kunak.jpeg",
+              "Cloruro-de-hidrogeno-es-precursor-de-lluvia-acida_Kunak.jpg",
+              "tendido-electrico-y-cloruro-de-hidrogeno_Kunak.jpg",
+              "pvc-y-produccion-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "cloruro-de-hidrogeno-en-sanidad_Kunak.jpg",
+              "origen-antropogenico-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "emisiones-antropogenicas-de-cloruro-de-hidrogeno_Kunak.jpg",
+              "emisiones-de-cloruro-de-hidrogeno-acidifican-suelo-y-agua_Kunak.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "¿Cómobeneficiaalamovilidaddisponerdeuncontadorde",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "semana-movilidad-europea-particulas-y-gases-480x267.jpg",
+              "Kunak_K_Logo_Cuadrado.png",
+              "sem2020.png",
+              "sem2020-kunak-air-mobile.jpg",
+              "SEM2020_2.jpg",
+              "SEM2020_4.jpg",
+              "SEM2020_3.jpg",
+              "SEM2020_1.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg",
+              "aaqms-150x150.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-150x150.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizacióndelacalidad",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-480x296.png",
+              "Movilidad-urbana-sostenible_Kunak-480x320.jpg",
+              "nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "¿Cómobeneficiaalamovilidaddisponerdeuncontadorde",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "semana-movilidad-europea-particulas-y-gases-480x267.jpg",
+              "sem2020.png",
+              "sem2020-kunak-air-mobile.jpg",
+              "SEM2020_2.jpg",
+              "SEM2020_4.jpg",
+              "SEM2020_3.jpg",
+              "SEM2020_1.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarContaminaciónpormetano:im",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-scaled.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/contaminacion-por-metano": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasIndustriaycontamina",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-480x269.jpg",
+              "Kunak_K_Logo_Cuadrado.png",
+              "Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-480x404.png",
+              "Gestion-vertedero-480x320.jpg",
+              "Metano_Britannica-480x339.jpg",
+              "emisiones-de-metano-teheran-nasa-480x257.jpg",
+              "Antorcha-de-gas-en-un-pozo-petrolifero-Foto-credito-Andrew-BurtonGetty-Images-480x320.jpg",
+              "Vertedero_credit-medianews-480x269.jpg",
+              "Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-480x320.jpg",
+              "landfill-480x320.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizacióndeemisiones",
+            "img": [
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-480x320.jpg",
+              "LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak-480x320.jpg",
+              "Ganaderia-y-agricultura_calidad-del-aire_Kunak-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasIndustriaycontamina",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-480x269.jpg",
+              "Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-480x404.png",
+              "Gestion-vertedero-480x320.jpg",
+              "Metano_Britannica-480x339.jpg",
+              "emisiones-de-metano-teheran-nasa-480x257.jpg",
+              "Antorcha-de-gas-en-un-pozo-petrolifero-Foto-credito-Andrew-BurtonGetty-Images-480x320.jpg",
+              "Vertedero_credit-medianews-480x269.jpg",
+              "Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-480x320.jpg",
+              "landfill-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarTodasnuestrassolucionesen",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-scaled.png",
+              "semana-movilidad-europea-particulas-y-gases.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/emisiones-atmosfericas": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 2
+        }
+      },
+      "emparejadas": 2,
+      "metodos": {
+        "texto": 2
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosKunakpediaEmisionesatmosféricas",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Emisionesatmosféricasysuimpactoenelmedioambiente",
+            "img": [
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg",
+              "aaqms-150x150.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-150x150.png",
+              "Trabajos-de-remediacion-ambiental_Kunak-150x150.jpeg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosKunakpediaEmisionesatmosféricas",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Emisionesatmosféricasysuimpactoenelmedioambiente",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "nFilas": {
+        "orig": 0,
+        "clon": 0
+      },
+      "nSecciones": {
+        "orig": 0,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {}
+      },
+      "emparejadas": 0,
+      "metodos": {},
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [],
+        "clon": []
+      },
+      "difs": []
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "nFilas": {
+        "orig": 0,
+        "clon": 0
+      },
+      "nSecciones": {
+        "orig": 0,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {}
+      },
+      "emparejadas": 0,
+      "metodos": {},
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [],
+        "clon": []
+      },
+      "difs": []
+    },
+    "/kunak-api": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 5,
+        "clon": 5
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 6
+        }
+      },
+      "emparejadas": 6,
+      "metodos": {
+        "texto": 5,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosKunakAPI",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api-480x480.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "ArtículosyGuíasContaminaciónenlosJuegosOlímpicos",
+            "img": [
+              "punteado.svg",
+              "Sin-titulo-1-480x320.jpg",
+              "planta-biogas_biometano-480x320.jpg",
+              "contaminacion-por-incendios-forestales-monitorizacion-aire-480x267.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioProductosKunakAPI",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasContaminaciónpormetano:impactoene",
+            "img": [
+              "punteado.svg",
+              "Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
+              "contaminaci%C3%B3n-por-mal-olor-problemas-ambientales.jpg",
+              "kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Lacontaminacióndelaire:elasesinosilenciosodeEuro",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-480x320.jpg",
+              "Kunak_K_Logo_Cuadrado.png",
+              "preview_image-2752-fc32442475ad733ec8c432255f6f986c.png",
+              "preview_image-3751-94ca653b5c5dfcff2f282d3710aceeb0.png",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg",
+              "aaqms-150x150.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-150x150.png",
+              "Trabajos-de-remediacion-ambiental_Kunak-150x150.jpeg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizacióndelacalidad",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-480x296.png",
+              "Movilidad-urbana-sostenible_Kunak-480x320.jpg",
+              "nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Lacontaminacióndelaire:elasesinosilenciosodeEuro",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-480x320.jpg",
+              "preview_image-2752-fc32442475ad733ec8c432255f6f986c.png",
+              "preview_image-3751-94ca653b5c5dfcff2f282d3710aceeb0.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarContaminaciónpormetano:im",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-scaled.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/metano": {
+      "nFilas": {
+        "orig": 2,
+        "clon": 2
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 2
+        }
+      },
+      "emparejadas": 2,
+      "metodos": {
+        "texto": 2
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosKunakpediaMetano(CH4)",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Metano,undesafíoparalaestabilidadclimáticaglobal",
+            "img": [
+              "science-of-methane-kunak.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg",
+              "aaqms-150x150.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-150x150.png",
+              "Trabajos-de-remediacion-ambiental_Kunak-150x150.jpeg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosKunakpediaMetano(CH4)",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Metano,undesafíoparalaestabilidadclimáticaglobal",
+            "img": [
+              "science-of-methane-kunak.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/monitor-calidad-aire": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 6
+        }
+      },
+      "emparejadas": 6,
+      "metodos": {
+        "texto": 5,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosAIRPro",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAIRProMonitordecalidaddelaireMonitorizalaca",
+            "img": [
+              "punteado.svg",
+              "US-EPA-united-states-environmental-protection-agency-1.svg",
+              "Mcerts.svg",
+              "airparif.svg",
+              "AQ-SPEC.svg",
+              "SEDEMA_CDMX.svg",
+              "Ricardo_logo.svg",
+              "kunak360_IMG_01.jpg",
+              "kunak360_IMG_21.jpg",
+              "kunak360_IMG_22.jpg",
+              "kunak360_IMG_23.jpg",
+              "kunak360_IMG_24.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoDescargarfichatécnicaSolic",
+            "img": [
+              "punteado.svg",
+              "kunak_air_pro_completo-isolated-2.png",
+              "cartridge-system.svg",
+              "multi-pollutant-1.svg",
+              "accuracy.svg",
+              "high-reliability.svg",
+              "easy-fast-installation.svg",
+              "IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+              "US-EPA-united-states-environmental-protection-agency-1.svg",
+              "Mcerts.svg",
+              "AQ-SPEC.svg",
+              "airparif.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "DescargarfichatécnicaSolicitamásinformaciónDesca",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cartridge-system.svg",
+              "accuracy.svg",
+              "easy-calibration.svg",
+              "cloud-platform.svg",
+              "multi-pollutant-1.svg",
+              "IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+              "real-time.svg",
+              "additional-probes.svg",
+              "research.svg",
+              "urban-2.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "ArtículosyGuíasContaminaciónpormetano:impactoene",
+            "img": [
+              "punteado.svg",
+              "Ganaderia-extensiva-y-emisiones-de-metano-480x269.jpg",
+              "contaminacion-del-aire-por-obras-480x320.jpg",
+              "efectos-de-la-contaminacion-en-la-salud-e1592810048430-480x270.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioProductosAIRPro",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "KunakAIRProMonitordecalidaddelaireMonitorizalaca",
+            "img": [
+              "punteado.svg",
+              "US-EPA-united-states-environmental-protection-agency-1.svg",
+              "Mcerts.svg",
+              "airparif.svg",
+              "AQ-SPEC.svg",
+              "SEDEMA_CDMX.svg",
+              "Ricardo_logo.svg",
+              "kunak360_IMG_01.jpg",
+              "ganador-airlab-2021-2023-2.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "InformacióndelproductoDescargarfichatécnicaSolic",
+            "img": [
+              "punteado.svg",
+              "kunak_air_pro_completo-isolated-2.png",
+              "cartridge-system.svg",
+              "multi-pollutant-1.svg",
+              "accuracy.svg",
+              "high-reliability.svg",
+              "easy-fast-installation.svg",
+              "IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+              "US-EPA-united-states-environmental-protection-agency-1.svg",
+              "Mcerts.svg",
+              "airparif.svg",
+              "AQ-SPEC.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "DescargarfichatécnicaSolicitamásinformaciónDesca",
+            "img": [
+              "easy-fast-installation.svg",
+              "cartridge-system.svg",
+              "accuracy.svg",
+              "easy-calibration.svg",
+              "cloud-platform.svg",
+              "multi-pollutant-1.svg",
+              "IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+              "real-time.svg",
+              "additional-probes.svg",
+              "research.svg",
+              "urban-2.svg",
+              "industry.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasRunningforCleanAir:midiendoelimpa",
+            "img": [
+              "punteado.svg",
+              "Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg",
+              "detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
+              "Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Monitorizacióndeemisionesdeltráficourbano:contro",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Movilidad-urbana-sostenible_Kunak-480x320.jpg",
+              "Kunak_K_Logo_Cuadrado.png",
+              "Poblacion-y-movilidad-en-areas-urbanas_Kunak.jpg",
+              "Trafico-diario_Bangkok_Kunak.jpg",
+              "Contaminacion-del-aire-por-trafico_Kunak-scaled.jpg",
+              "castel-d-ario-Kunak.jpg",
+              "air-quality-sensor-network-map.jpg",
+              "calle-30-natura-Kunak.jpg",
+              "Panel-acustico-en-carretera_Kunak.jpg",
+              "Control-de-zonas-de-bajas-emisiones_Kunak.jpg",
+              "Areas-urbanas-y-trafico_Kunak.jpg",
+              "Implementacion-politicas-movilidad-sostenible-en-ciudades_Kunak-scaled.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizacióndelacalidad",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-480x296.png",
+              "nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg",
+              "Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Monitorizacióndeemisionesdeltráficourbano:contro",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Movilidad-urbana-sostenible_Kunak-480x320.jpg",
+              "Poblacion-y-movilidad-en-areas-urbanas_Kunak.jpg",
+              "Trafico-diario_Bangkok_Kunak.jpg",
+              "Contaminacion-del-aire-por-trafico_Kunak-scaled.jpg",
+              "castel-d-ario-Kunak.jpg",
+              "air-quality-sensor-network-map.jpg",
+              "calle-30-natura-Kunak.jpg",
+              "Panel-acustico-en-carretera_Kunak.jpg",
+              "Control-de-zonas-de-bajas-emisiones_Kunak.jpg",
+              "Areas-urbanas-y-trafico_Kunak.jpg",
+              "Implementacion-politicas-movilidad-sostenible-en-ciudades_Kunak-scaled.jpg",
+              "tunel-y-trafico_Kunak.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarContaminaciónpormetano:im",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-scaled.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Monitorizacióndelacalidaddelaireencentrosdedatos",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-480x296.png",
+              "Kunak_K_Logo_Cuadrado.png",
+              "microchip-y-centros-de-datos_Kunak-480x320.jpg",
+              "centros-de-datos-y-contaminacion-atmosferica-Kunak-480x276.jpg",
+              "contaminacion-interiores-por-ozono_centros-de-datos_Kunak-480x320.jpg",
+              "Loudoun-County-Data-Centers-480x306.jpg",
+              "Medicion-impacto-centros-de-datos-digitales-Kunak-480x320.jpg",
+              "Medicion-emisiones-centros-de-datos-Kunak-480x320.jpg",
+              "corrosion-y-conexiones-digitales_centros-de-datos_Kunak-480x320.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg",
+              "monitorizacion-perimetral_Kunak-150x150.jpg",
+              "aaqms-150x150.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizacióndeemisiones",
+            "img": [
+              "Movilidad-urbana-sostenible_Kunak-480x320.jpg",
+              "nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg",
+              "Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónurbana",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Monitorizacióndelacalidaddelaireencentrosdedatos",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Centro-de-datos_Wisconsin_EE-UU-480x296.png",
+              "microchip-y-centros-de-datos_Kunak-480x320.jpg",
+              "centros-de-datos-y-contaminacion-atmosferica-Kunak-480x276.jpg",
+              "contaminacion-interiores-por-ozono_centros-de-datos_Kunak-480x320.jpg",
+              "Loudoun-County-Data-Centers-480x306.jpg",
+              "Medicion-impacto-centros-de-datos-digitales-Kunak-480x320.jpg",
+              "Medicion-emisiones-centros-de-datos-Kunak-480x320.jpg",
+              "corrosion-y-conexiones-digitales_centros-de-datos_Kunak-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarContaminaciónpormetano:im",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+              "semana-movilidad-europea-particulas-y-gases.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 3
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 3
+        }
+      },
+      "emparejadas": 3,
+      "metodos": {
+        "texto": 2,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosDocumentoscientíficosArtículoscien",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Exposicióndelosatletasalacontaminaciónatmosféric",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónResume",
+            "img": [
+              "Kunak_K_Logo_Cuadrado.png",
+              "Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosDocumentoscientíficosArtículoscien",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Exposicióndelosatletasalacontaminaciónatmosféric",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 3
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 3
+        }
+      },
+      "emparejadas": 3,
+      "metodos": {
+        "texto": 2,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosDocumentoscientíficosArtículoscien",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "Idoneidaddeunareddecomunicacionesmóvilesparareal",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónResume",
+            "img": [
+              "Kunak_K_Logo_Cuadrado.png",
+              "The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosDocumentoscientíficosArtículoscien",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "Idoneidaddeunareddecomunicacionesmóvilesparareal",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 3
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 3
+        }
+      },
+      "emparejadas": 3,
+      "metodos": {
+        "texto": 3
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosDocumentoscientíficosEvaluacionesi",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "DesafíoAIRLABdemicrosensores2023Airparif|2023Eva",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónEl«Cha",
+            "img": [
+              "Kunak_K_Logo_Cuadrado.png",
+              "airlab-microsensors-challenge-2023-kunak-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosDocumentoscientíficosEvaluacionesi",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "DesafíoAIRLABdemicrosensores2023Airparif|2023Eva",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónEl«Cha",
+            "img": [
+              "airlab-microsensors-challenge-2023-kunak-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 3
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 3
+        }
+      },
+      "emparejadas": 3,
+      "metodos": {
+        "texto": 3
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosDocumentoscientíficosArtículostécn",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "SolucionesavanzadasdemonitorizaciónRevistaHydroc",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónPublic",
+            "img": [
+              "Kunak_K_Logo_Cuadrado.png",
+              "February_2026_Kunak_Hydrocarbon_engineering-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosDocumentoscientíficosArtículostécn",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "SolucionesavanzadasdemonitorizaciónRevistaHydroc",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónPublic",
+            "img": [
+              "February_2026_Kunak_Hydrocarbon_engineering-480x679.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/running-for-clean-air": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 5
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 5
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónysalud",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "RunningforCleanAir:midiendoelimpactodelacalidadd",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-480x320.jpg",
+              "Kunak_K_Logo_Cuadrado.png",
+              "World-Athletics-Running-for-Clean-Air-project-launch-480x227.jpg",
+              "Sin-titulo-1-480x320.jpg",
+              "Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw-480x320.jpg",
+              "Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-480x270.png",
+              "air-quality-monitoring-in-paris-2024-olympic-games-480x288.jpg",
+              "air_pollution_filtration_process-300x188.png",
+              "Campeon-olimpico-Haile-Gebrselassie-en-lanzamiento-Running-for-Clean-Air-World-Athletics-480x319.jpg",
+              "Principe-Alberto-II-de-Monaco-en-la-instalacion-de-sensores-Kunak-por-World-Athletics-480x320.jpg",
+              "Lagos-Running-for-clean-air-World-Athletics-kunak-480x480.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-150x150.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarMonitorizaciónnear-refere",
+            "img": [
+              "aaqms-480x320.jpg",
+              "PM10-measurement-in-coarse-particle-environments-480x320.jpg",
+              "Beam-Beijing-Pollution_UFP_Kunak-480x320.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioRecursosArtículosyGuíasContaminaciónysalud",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "RunningforCleanAir:midiendoelimpactodelacalidadd",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "img": [
+              "Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-480x320.jpg",
+              "World-Athletics-Running-for-Clean-Air-project-launch-480x227.jpg",
+              "Sin-titulo-1-480x320.jpg",
+              "Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw-480x320.jpg",
+              "Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-480x270.png",
+              "air-quality-monitoring-in-paris-2024-olympic-games-480x288.jpg",
+              "air_pollution_filtration_process-300x188.png",
+              "Campeon-olimpico-Haile-Gebrselassie-en-lanzamiento-Running-for-Clean-Air-World-Athletics-480x319.jpg",
+              "Principe-Alberto-II-de-Monaco-en-la-instalacion-de-sensores-Kunak-por-World-Athletics-480x320.jpg",
+              "Lagos-Running-for-clean-air-World-Athletics-kunak-480x480.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "TambiéntepuedeinteresarContaminaciónpormetano:im",
+            "img": [
+              "Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg",
+              "Centro-de-datos_Wisconsin_EE-UU-scaled.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 11
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 11
+        }
+      },
+      "emparejadas": 10,
+      "metodos": {
+        "imagenes": 1,
+        "texto": 8,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "ContaminacióndelaireenNuevaYork,elretoderespirar"
+        ],
+        "firmasClon": [
+          "UrbanoCalidaddelaireenlasciudades"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "AMB.svg",
+              "RATP.svg",
+              "cartajena-de-indias.svg",
+              "bilbao.svg",
+              "efe-chile.svg",
+              "abertis.svg",
+              "ATMO.svg",
+              "world-health-organization.svg",
+              "madrid.svg",
+              "acoem.svg",
+              "UNEP.svg",
+              "emt-madrid.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "img": [
+              "punteado.svg",
+              "urban-air-quality-1-480x256.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "img": [
+              "cta-informe-tecnico-urban-ES-480x422.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "img": [
+              "control-de-la-calidad-del-aire-en-ciudades-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ContaminacióndelaireenNuevaYork,elretoderespirar",
+            "img": [
+              "Contaminacion_del_aire_en_Nueva_York-480x320.jpg",
+              "SEVESO-1976-480x384.jpg",
+              "Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "UrbanoCalidaddelaireenlasciudades",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": 0,
+            "comoPar": "imagenes"
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "img": [
+              "punteado.svg",
+              "urban-air-quality-1.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "img": [
+              "cta-informe-tecnico-urban-ES.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "img": [
+              "control-de-la-calidad-del-aire-en-ciudades.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasNormativaSeveso,elcontrolderiesgo",
+            "img": [
+              "punteado.svg",
+              "SEVESO-1976-1024x819.jpg",
+              "Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
+              "Air_pollution_in_Madrid.webp"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 11
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 11
+        }
+      },
+      "emparejadas": 9,
+      "metodos": {
+        "texto": 8,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 1,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 1,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "(sin texto)",
+          "Monitorizacióndelaireenproyectosderemediación:co"
+        ],
+        "firmasClon": [
+          "ConstrucciónContaminaciónporconstrucción",
+          "(sin texto)"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "real-madrid.svg",
+              "igb.svg",
+              "iberia.svg",
+              "erri-berri.svg",
+              "coca-cola.svg",
+              "atletico-madrid.svg",
+              "afc-ingenieros.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresContaminaciónporconstrucción",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "¿Quieressabermás?DescargarcatálogoControlalacali",
+            "img": [
+              "punteado.svg",
+              "works-demolitions-480x256.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Necesitascontrolarelimpactoambientaldetuobra?De",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Beneficiosdelcontrolambientalenlaconstrucción:Pr",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Accedeadatosambientalesdeformacontinuaytomadecis",
+            "img": [
+              "Accede-a-datos-medioambientales-en-obras-de-forma-continua-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sector:ObrasAFCIngenierosVigilanciaambientalenla",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Monitorizacióndelaireenproyectosderemediación:co",
+            "img": [
+              "Trabajos-de-remediacion-ambiental_Kunak-480x320.jpeg",
+              "contaminacion-del-aire-por-obras-480x320.jpg",
+              "demolicion-estadio-vicente-calderon-0-480x270.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "ConstrucciónContaminaciónporconstrucción",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresContaminaciónporconstrucción",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "¿Quieressabermás?DescargarcatálogoControlalacali",
+            "img": [
+              "punteado.svg",
+              "works-demolitions.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Necesitascontrolarelimpactoambientaldetuobra?De",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Beneficiosdelcontrolambientalenlaconstrucción:Pr",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Accedeadatosambientalesdeformacontinuaytomadecis",
+            "img": [
+              "Accede-a-datos-medioambientales-en-obras-de-forma-continua.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Sector:ObrasAFCIngenierosVigilanciaambientalenla",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasContaminacióndelaireporobras,anal",
+            "img": [
+              "punteado.svg",
+              "contaminacion-del-aire-por-obras-1024x683.jpg",
+              "Trabajos-de-remediacion-ambiental_Kunak-1024x683.jpeg",
+              "the-cement-industry-and-the-environment-air-quality-monitoring.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "nFilas": {
+        "orig": 13,
+        "clon": 13
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 13
+        }
+      },
+      "emparejadas": 11,
+      "metodos": {
+        "imagenes": 1,
+        "texto": 9,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 2
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 2
+          }
+        },
+        "firmasOrig": [
+          "IndustriacementeraMetalurgiaymineríaPastaypapelE",
+          "Biometanoybiogás:producción,usosymonitorizacióna"
+        ],
+        "firmasClon": [
+          "IndustriayoloresControldeemisionesindustriales",
+          "Algunosdelasaplicacionesdondedesplegarsistemasde"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "titan.svg",
+              "acoem.svg",
+              "ternium.svg",
+              "HELLENiQ-ENERGY.svg",
+              "canal-isabel-ii.svg",
+              "ence.svg",
+              "saneago.svg",
+              "repsol.svg",
+              "petrobras.svg",
+              "galvani.svg",
+              "total_energies.svg",
+              "arcelor-mital.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresControldeemisionesindustriales",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "¿Quieressabermás?DescargarcatálogoMideelimpactod",
+            "img": [
+              "punteado.svg",
+              "industry-perimeter-480x256.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "Beneficiosdelcontroldelasemisionesindustriales:P",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "IndustriacementeraMetalurgiaymineríaPastaypapelE",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "Identificaquéoperacionesoprocesosproducenmásgase",
+            "img": [
+              "Identify-which-operations-or-processes-produce-the-most-gases-and-particulates-in-industries-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "ProyectosportodoelmundoAlgunosdelosproyectosdemo",
+            "img": [
+              "punteado.svg",
+              "marker.png",
+              "vt",
+              "transparent.png",
+              "svg%3E"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Biometanoybiogás:producción,usosymonitorizacióna",
+            "img": [
+              "planta-biogas_biometano-480x320.jpg",
+              "contaminacion-del-aire-en-el-deporte_-480x267.jpg",
+              "lamina-acero-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "IndustriayoloresControldeemisionesindustriales",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": 0,
+            "comoPar": "imagenes"
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresControldeemisionesindustriales",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "¿Quieressabermás?DescargarcatálogoMideelimpactod",
+            "img": [
+              "punteado.svg",
+              "industry-perimeter.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Beneficiosdelcontroldelasemisionesindustriales:P",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Algunosdelasaplicacionesdondedesplegarsistemasde",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Identificaquéoperacionesoprocesosproducenmásgase",
+            "img": [
+              "Identify-which-operations-or-processes-produce-the-most-gases-and-particulates-in-industries.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "ProyectosportodoelmundoAlgunosdelosproyectosdemo",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 10,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasElimpactodelhumodeincendiosforest",
+            "img": [
+              "punteado.svg",
+              "contaminacion-por-incendios-forestales-monitorizacion-aire.jpg",
+              "gases-en-los-vertederos-de-basura.png",
+              "contaminacion-del-aire-en-el-deporte_.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 11,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "nFilas": {
+        "orig": 10,
+        "clon": 10
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 10
+        }
+      },
+      "emparejadas": 9,
+      "metodos": {
+        "imagenes": 1,
+        "texto": 7,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "Sargazo:problemasambientalesymonitorizacióndelim"
+        ],
+        "firmasClon": [
+          "InvestigaciónyconsultoríaEstudiodelacontaminació"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "ricardo.svg",
+              "south-coast-aqmd.svg",
+              "South-African-Weather-Service.svg",
+              "world-athletics.svg",
+              "university-of-montenegro.svg",
+              "imec.svg",
+              "university-of-brunei-darussalam.svg",
+              "suez.svg",
+              "us-epa.svg",
+              "vito.svg",
+              "eutm-mali.svg",
+              "Helmholtz-Zentrum-Hereon.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresEstudiodelacontaminaciónatmosféric",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "¿Quieressabermás?DescargarcatálogoRealizamedicio",
+            "img": [
+              "punteado.svg",
+              "air-quality-report-480x256.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "Beneficiosenestudiosdecontaminaciónatmosférica:C",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "Elaboraestudiosmáscompletosgraciasalatecnologíad",
+            "img": [
+              "Realiza-estudios-mas-detallados-gracias-a-la-tecnologia-de-sensores-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Sector:InvestigaciónyconsultoríaMinisteriodelAmb",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "Sargazo:problemasambientalesymonitorizacióndelim",
+            "img": [
+              "litoral-con-sargazo-y-vida-marina-480x320.jpg",
+              "calidad-del-aire-ciudad-de-mexico-480x320.jpeg",
+              "contaminacion_acustica-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "InvestigaciónyconsultoríaEstudiodelacontaminació",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": 0,
+            "comoPar": "imagenes"
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresEstudiodelacontaminaciónatmosféric",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "¿Quieressabermás?DescargarcatálogoRealizamedicio",
+            "img": [
+              "punteado.svg",
+              "air-quality-report.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Beneficiosenestudiosdecontaminaciónatmosférica:C",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Elaboraestudiosmáscompletosgraciasalatecnologíad",
+            "img": [
+              "Realiza-estudios-mas-detallados-gracias-a-la-tecnologia-de-sensores.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "Sector:InvestigaciónyconsultoríaMinisteriodelAmb",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "ArtículosyGuías¿Quéestápasandoconlacalidaddelair",
+            "img": [
+              "punteado.svg",
+              "calidad-del-aire-ciudad-de-mexico-1024x682.jpeg",
+              "quemas-prescritas-agricolas-calidad-aire-1.jpg",
+              "conferencia-de-las-partes-cop26-cita-ineludible.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "nFilas": {
+        "orig": 18,
+        "clon": 18
+      },
+      "nSecciones": {
+        "orig": 8,
+        "clon": 8
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 18
+        }
+      },
+      "emparejadas": 17,
+      "metodos": {
+        "imagenes": 1,
+        "texto": 15,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 1,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "Corrosiónambiental:causas,factoresycómoprevenirl"
+        ],
+        "firmasClon": [
+          "EDARMonitorizaciónambientalenEDARparaelcontrolde"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "repsol.svg",
+              "HELLENiQ-ENERGY.svg",
+              "petrobras.svg",
+              "suez.svg",
+              "galvani.svg",
+              "acoem.svg",
+              "ternium.svg",
+              "inpex.svg",
+              "saneago.svg",
+              "cemex.svg",
+              "lifeco-logo.svg",
+              "canal-isabel-ii.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresMonitorizaciónambientalycontroldeo",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "SolicitaunademotécnicaDescargarcatálogoOloresbaj",
+            "img": [
+              "punteado.svg",
+              "10-480x256.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Quécambiaconmonitorizacióncontinua?Dereaccionar",
+            "img": [
+              "punteado.svg",
+              "red-de-monitorizacion-ambiental-edar-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿QuégasessedebenmedirenunaEDAR?Losgasesclavequep",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Dóndesegeneranlasemisionesenlaplanta?Cadafase,g",
+            "img": [
+              "punteado.svg",
+              "EDAR-Flujo-de-procesos-gases-y-riesgos-de-olor-480x268.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "Tablaresumen:procesosyemisionesFasedelprocesoGas",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "AlertasytomadedecisionesActúaantesdequeelproblem",
+            "img": [
+              "punteado.svg",
+              "alert-cloud-vertical-web-3-480x705.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "ControlperimetralygestióndequejasResponderconhec",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "BeneficiosclaveparalaoperacióndeunaEDARControlae",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "DaelsiguientepasoActúaantesdequeelproblemaescale",
+            "img": [
+              "edar-monitorizacion-ambiental-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "ProyectosportodoelmundoAlgunosdelosproyectosdemo",
+            "img": [
+              "punteado.svg",
+              "marker.png",
+              "vt",
+              "transparent.png",
+              "svg%3E"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Corrosiónambiental:causas,factoresycómoprevenirl",
+            "img": [
+              "Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak-480x324.jpg",
+              "movimiento-de-residuos-en-vertedero-Kunak-480x318.jpg",
+              "contaminacion-produccion-energia-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "EDARMonitorizaciónambientalenEDARparaelcontrolde",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": 0,
+            "comoPar": "imagenes"
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresMonitorizaciónambientalycontroldeo",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "SolicitaunademotécnicaDescargarcatálogoOloresbaj",
+            "img": [
+              "punteado.svg",
+              "10.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Quécambiaconmonitorizacióncontinua?Dereaccionar",
+            "img": [
+              "punteado.svg",
+              "red-de-monitorizacion-ambiental-edar.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿QuégasessedebenmedirenunaEDAR?Losgasesclavequep",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Dóndesegeneranlasemisionesenlaplanta?Cadafase,g",
+            "img": [
+              "punteado.svg",
+              "EDAR-Flujo-de-procesos-gases-y-riesgos-de-olor.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Tablaresumen:procesosyemisionesFasedelprocesoGas",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "AlertasytomadedecisionesActúaantesdequeelproblem",
+            "img": [
+              "punteado.svg",
+              "alert-cloud-vertical-web-3.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "ControlperimetralygestióndequejasResponderconhec",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "BeneficiosclaveparalaoperacióndeunaEDARControlae",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "DaelsiguientepasoActúaantesdequeelproblemaescale",
+            "img": [
+              "edar-monitorizacion-ambiental.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 10,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 11,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "ProyectosportodoelmundoAlgunosdelosproyectosdemo",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 12,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 13,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 14,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 15,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasControldemalosoloresindustriales,",
+            "img": [
+              "punteado.svg",
+              "industrial-odour-control.jpg",
+              "airplane-465619_1280-1024x680.jpeg",
+              "contaminacion-por-incendios-forestales-monitorizacion-aire.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 16,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "nFilas": {
+        "orig": 17,
+        "clon": 17
+      },
+      "nSecciones": {
+        "orig": 8,
+        "clon": 8
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 17
+        }
+      },
+      "emparejadas": 15,
+      "metodos": {
+        "texto": 14,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 1,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 1,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "(sin texto)",
+          "Corrosiónambiental:causas,factoresycómoprevenirl"
+        ],
+        "firmasClon": [
+          "PetróleoyGasMonitorizacióndeemisionesenelsectord",
+          "(sin texto)"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": [
+              "Copec-1.svg",
+              "repsol.svg",
+              "petrobras.svg",
+              "adnoc-1.svg",
+              "Dragon_oil-1.svg",
+              "inpex.svg",
+              "kuwait-energy-1.svg",
+              "HELLENiQ-ENERGY.svg",
+              "total_energies.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresMonitorizacióndeemisionesenelsecto",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "SolicitaunademotécnicaDescargarcatálogoControlco",
+            "img": [
+              "punteado.svg",
+              "Monitorizacion-de-emisiones-en-el-sector-del-petroleo-y-gas-Kunak-3-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "DeinspeccionespuntualesacontrolcontinuoNopuedesg",
+            "img": [
+              "punteado.svg",
+              "monitorizacion-continua-sector-oil-gas-2-2-480x705.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "QuénecesitasparacontrolarlasemisionesUnareddesen",
+            "img": [
+              "punteado.svg",
+              "seguridad-cumplimiento-y-eficiencia-operativa-en-la-industria-del-petroleo-y-gas-2-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "LasolucióndeKunakMonitorizacióncontinuadiseñadap",
+            "img": [
+              "punteado.svg",
+              "Contaminantes-que-pueden-monitorizarse-en-una-instalacion-de-petroleo-y-gas-Kunak-2-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "ContaminantesquepuedenmonitorizarseConfiguración",
+            "img": [
+              "punteado.svg",
+              "kunak-smart-cartridges-2-480x480.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "SolicitaunademotécnicaAplicacionesenpetróleoygas",
+            "img": [
+              "punteado.svg",
+              "METHANE-REFINERY-2-2-480x640.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "MonitorizacióndemetanoydeteccióntempranadefugasD",
+            "img": [
+              "punteado.svg",
+              "alert-cloud-vertical-web-2-480x705.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "CómofuncionalasoluciónReddesensoresReddecomunica",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "ControlatusemisionesydetectafugasentiemporealAct",
+            "img": [
+              "Controla-tus-emisiones-y-detecta-fugas-en-tiempo-real-2-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 5,
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024-480x428.jpg",
+              "Kunak_AIR_Lite-300.jpg",
+              "air-cloud.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "ArtículosyGuías",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 7,
+            "firma": "Corrosiónambiental:causas,factoresycómoprevenirl",
+            "img": [
+              "Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak-480x324.jpg",
+              "Ganaderia-y-agricultura_calidad-del-aire_Kunak-480x320.jpg",
+              "lamina-acero-480x320.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "PetróleoyGasMonitorizacióndeemisionesenelsectord",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": [
+              "world-health-organization.svg",
+              "teck.svg",
+              "apm-terminals.svg",
+              "envirosuite.svg",
+              "lifeco-logo.svg",
+              "world-athletics.svg",
+              "gent.svg",
+              "university-of-brunei-darussalam.svg",
+              "arcelor-mital.svg",
+              "barrick.svg",
+              "ricardo.svg",
+              "cemex.svg"
+            ],
+            "w": 370.5,
+            "pct": 95,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresMonitorizacióndeemisionesenelsecto",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "SolicitaunademotécnicaDescargarcatálogoControlco",
+            "img": [
+              "punteado.svg",
+              "Monitorizacion-de-emisiones-en-el-sector-del-petroleo-y-gas-Kunak-3.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "DeinspeccionespuntualesacontrolcontinuoNopuedesg",
+            "img": [
+              "punteado.svg",
+              "monitorizacion-continua-sector-oil-gas-2-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "QuénecesitasparacontrolarlasemisionesUnareddesen",
+            "img": [
+              "punteado.svg",
+              "seguridad-cumplimiento-y-eficiencia-operativa-en-la-industria-del-petroleo-y-gas-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "LasolucióndeKunakMonitorizacióncontinuadiseñadap",
+            "img": [
+              "punteado.svg",
+              "Contaminantes-que-pueden-monitorizarse-en-una-instalacion-de-petroleo-y-gas-Kunak-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "ContaminantesquepuedenmonitorizarseConfiguración",
+            "img": [
+              "punteado.svg",
+              "kunak-smart-cartridges-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "SolicitaunademotécnicaAplicacionesenpetróleoygas",
+            "img": [
+              "punteado.svg",
+              "METHANE-REFINERY-2-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "MonitorizacióndemetanoydeteccióntempranadefugasD",
+            "img": [
+              "punteado.svg",
+              "alert-cloud-vertical-web-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "CómofuncionalasoluciónReddesensoresReddecomunica",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "ControlatusemisionesydetectafugasentiemporealAct",
+            "img": [
+              "Controla-tus-emisiones-y-detecta-fugas-en-tiempo-real-2.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 10,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "¿Quierescontrolarelimpactodetusprocesosenlacalid",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 11,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": [
+              "punteado.svg",
+              "Kunak-AIR-Pro-1024.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 12,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 13,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 14,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 7,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasContaminaciónporproduccióndeenerg",
+            "img": [
+              "punteado.svg",
+              "contaminacion-produccion-energia-1024x683.jpg",
+              "Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
+              "Deteccion-temprana-emisiones-fugitivas_Kunak-1024x683.jpg"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 15,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 6
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 6
+        }
+      },
+      "emparejadas": 6,
+      "metodos": {
+        "texto": 5,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosAIRCloud",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAIRCloudSoftwaredemedicióndelacalidaddelair",
+            "img": [
+              "punteado.svg",
+              "industrial-woman-engineer-using-the-cloud-480x320.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoVervídeodelproductoSoftwar",
+            "img": [
+              "punteado.svg",
+              "kunak-cloud-dispositivos-480x613.png",
+              "cloud-based-1.svg",
+              "reliable-data.svg",
+              "flexible-scalable-1.svg",
+              "multiple-users.svg",
+              "data-integration.svg",
+              "advanced-tools.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "SolicitamásinformaciónDescargaelcatálogoBenefici",
+            "img": [
+              "punteado.svg",
+              "secure-confidential.svg",
+              "continuous-updates.svg",
+              "reports.svg",
+              "automatic-supervision-1.svg",
+              "reliable-data.svg",
+              "pollution-sources.svg",
+              "remote-troubleshooting.svg",
+              "data-sharing.svg",
+              "public-aq-data.svg",
+              "Control-panel-480x320.jpg",
+              "Dashboard-480x320.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "ArtículosyGuíasLanecesidaddeestándaresyprogramas",
+            "img": [
+              "punteado.svg",
+              "The-necessity-of-standards-and-certification-programs-480x318.jpg",
+              "EHS-industrial-480x320.webp",
+              "Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak-480x324.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioProductosAIRCloud",
+            "img": [],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "KunakAIRCloudSoftwaredemedicióndelacalidaddelair",
+            "img": [
+              "punteado.svg",
+              "industrial-woman-engineer-using-the-cloud.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "InformacióndelproductoVervídeodelproductoSoftwar",
+            "img": [
+              "punteado.svg",
+              "kunak-cloud-dispositivos.png",
+              "cloud-based-1.svg",
+              "reliable-data.svg",
+              "flexible-scalable-1.svg",
+              "multiple-users.svg",
+              "data-integration.svg",
+              "advanced-tools.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "SolicitamásinformaciónDescargaelcatálogoBenefici",
+            "img": [
+              "punteado.svg",
+              "secure-confidential.svg",
+              "continuous-updates.svg",
+              "reports.svg",
+              "automatic-supervision-1.svg",
+              "reliable-data.svg",
+              "pollution-sources.svg",
+              "remote-troubleshooting.svg",
+              "data-sharing.svg",
+              "public-aq-data.svg",
+              "Control-panel.jpg",
+              "Dashboard.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasControldelasemisionesindustriales",
+            "img": [
+              "punteado.svg",
+              "control-de-emisiones-industriales.jpg",
+              "Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-1024x683.jpg",
+              "lamina-acero-1024x683.jpg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 5,
+            "via": "marcador",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 312,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "nFilas": {
+        "orig": 3,
+        "clon": 3
+      },
+      "nSecciones": {
+        "orig": 2,
+        "clon": 2
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 3
+        }
+      },
+      "emparejadas": 3,
+      "metodos": {
+        "texto": 3
+      },
+      "huerfanas": {
+        "orig": 0,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 0
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioBlogTodasnuestrassolucionesenelIOTSWC",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "TodasnuestrassolucionesenelIOTSWC17octubre2018-A",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónDescub",
+            "img": [
+              "Kunak_K_Logo_Cuadrado.png"
+            ],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioBlogTodasnuestrassolucionesenelIOTSWC",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "TodasnuestrassolucionesenelIOTSWC17octubre2018-A",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónDescub",
+            "img": [],
+            "w": 335.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

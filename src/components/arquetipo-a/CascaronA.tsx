@@ -41,7 +41,7 @@ export function FilaA({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-[86%] max-w-[1380px] ${className}`}>{children}</div>
+    <div data-fila="" className={`mx-auto w-[86%] max-w-[1380px] ${className}`}>{children}</div>
   );
 }
 

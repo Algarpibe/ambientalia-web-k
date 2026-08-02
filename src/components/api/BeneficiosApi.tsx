@@ -19,7 +19,7 @@ import { BENEFICIOS, BENEFICIOS_HEADING, BENEFICIOS_INTRO } from "@/lib/api";
  */
 export function BeneficiosApi() {
   return (
-    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[20px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw]">
+    <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[20px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw]">
       {/* ---------- Columna 1/4 — solo el titular ---------- */}
       <div className="relative w-full md:w-[20.875%] md:shrink-0">
         <img

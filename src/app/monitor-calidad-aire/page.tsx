@@ -74,7 +74,7 @@ export default function MonitorCalidadAirePage() {
         {/* Geometría Divi medida: sección pb 4vw (50 móvil), fila 80% máx 1380
             con pt 4vw / pb 2vw (30 móvil) y gutter 5.5% entre columnas 1/4-3/4. */}
         <section className="bg-white pb-[50px] lg:pb-[4vw]">
-          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[4vw] md:flex-row md:gap-[5.5%] lg:pb-[2vw]">
+          <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[4vw] md:flex-row md:gap-[5.5%] lg:pb-[2vw]">
             <SubNavAnclas />
 
             {/* `min-w-0` es imprescindible: sin él, el `min-width:auto` por

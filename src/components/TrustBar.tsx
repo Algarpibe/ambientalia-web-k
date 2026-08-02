@@ -45,6 +45,7 @@ export function TrustBar({ variant = "home" }: { variant?: "home" | "sectores" }
       style={{ backgroundColor: "#e4e5e5" }}
     >
       <div
+        data-fila=""
         className={
           sectores
             ? "mx-auto flex w-[95%] flex-col items-center md:flex-row"

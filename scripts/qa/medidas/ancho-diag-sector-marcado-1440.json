@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "calidad-del-aire-en-las-ciudades",
+    "sabotaje": null
+  },
+  "rutas": {
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 11
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 11
+        }
+      },
+      "emparejadas": 9,
+      "metodos": {
+        "texto": 8,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 1,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 1,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "(sin texto)",
+          "SebastianCoedeWorldAthletics:«Lacalidaddelairese"
+        ],
+        "firmasClon": [
+          "UrbanoCalidaddelaireenlasciudades",
+          "(sin texto)"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Últimosproyectos",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ArtículosyGuías",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "SebastianCoedeWorldAthletics:«Lacalidaddelairese",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "UrbanoCalidaddelaireenlasciudades",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasNormativaSeveso,elcontrolderiesgo",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

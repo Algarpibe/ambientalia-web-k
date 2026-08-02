@@ -35,7 +35,7 @@ export function HeroProducto() {
           backgroundPosition: "0% 50%",
         }}
       >
-        <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[5vw] pt-[30px] md:flex-row md:items-start md:gap-[5.5%] lg:pt-[2vw]">
+        <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[5vw] pt-[30px] md:flex-row md:items-start md:gap-[5.5%] lg:pt-[2vw]">
           {/* Columna izquierda — texto */}
           <div className="relative w-full md:w-[47.25%]">
             <img

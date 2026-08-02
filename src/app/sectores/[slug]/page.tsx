@@ -58,7 +58,7 @@ import { MONOGRAFICOS_PUBLICADOS, getMonografico } from "@/lib/monografico";
  */
 function FilaK({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]">{children}</div>
+    <div data-fila="" className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[28.7969px]">{children}</div>
   );
 }
 

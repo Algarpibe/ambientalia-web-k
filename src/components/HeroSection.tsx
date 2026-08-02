@@ -38,7 +38,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-[2] mx-auto flex w-[86.35%] max-w-[1380px] items-stretch gap-[5.5%] md:w-[85%] lg:min-h-[80vh]">
+      <div data-fila="" className="relative z-[2] mx-auto flex w-[86.35%] max-w-[1380px] items-stretch gap-[5.5%] md:w-[85%] lg:min-h-[80vh]">
         {/* Left column — the AIR Pro sensor pinned to the bottom edge */}
         <div className="banner-home-col-izda hidden w-[36.7%] shrink-0 flex-col items-end self-end lg:flex">
           <img

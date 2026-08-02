@@ -74,7 +74,7 @@ export default function AccesoriosPage() {
               (sangría fila→columna 0 medida, C-QA7) — el aire lo pone la
               sección (50/4vw), que ya está arriba. El pt-[30px]/2vw previo era
               el default Divi cableado sin medir: +28.8 @1440 · +30 @390. */}
-          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] md:flex-row md:items-start md:gap-[5.5%]">
+          <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] md:flex-row md:items-start md:gap-[5.5%]">
             <div className="relative w-full md:w-[57.75%]">
               <img
                 src="/images/uploads/2022/12/punteado.svg"
@@ -125,7 +125,7 @@ export default function AccesoriosPage() {
           </div>
 
           {/* Fila 2 — "Información sobre el producto" */}
-          <div className="relative mx-auto w-[80%] max-w-[1380px] pt-[64px]">
+          <div data-fila="" className="relative mx-auto w-[80%] max-w-[1380px] pt-[64px]">
             <img
               src="/images/uploads/2022/12/punteado.svg"
               alt=""
@@ -143,7 +143,7 @@ export default function AccesoriosPage() {
           </div>
 
           {/* Fila 3 — intro a dos columnas 1/2 + 1/2 */}
-          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pt-[32px] md:flex-row md:items-start md:gap-[5.5%]">
+          <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pt-[32px] md:flex-row md:items-start md:gap-[5.5%]">
             <div className="w-full text-[18px] leading-[30.6px] text-[#333] md:w-[47.25%]">
               {INTRO_LEFT.map((p) => (
                 <p key={p.slice(0, 40)} className="pb-[18px]">
@@ -167,6 +167,7 @@ export default function AccesoriosPage() {
           {ACCESORIO_CATEGORIAS.map((cat) => (
             <div
               key={cat.heading}
+              data-fila=""
               className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pt-[64px] md:flex-row md:gap-[5.5%]"
             >
               {/* Columna 1/4 — título de categoría + caja de anclas sticky.

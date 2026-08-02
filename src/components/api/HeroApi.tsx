@@ -23,7 +23,7 @@ export function HeroApi() {
     // del botón a la foto es 88.8 (no 120) y el de la foto al rótulo de la fila
     // siguiente 23.9 (no 50): los 30 de aquí se sumaban al `pt` de
     // `InfoProductoApi`, que ahora carga el valor entero.
-    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-0 md:flex-row md:items-start md:gap-[5.5%] md:pb-[1vw]">
+    <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-0 md:flex-row md:items-start md:gap-[5.5%] md:pb-[1vw]">
       <div className="relative w-full md:w-[47.25%]">
         <img
           src="/images/uploads/2022/12/punteado.svg"

@@ -99,6 +99,7 @@ export function SectorBody({ body }: { body: SectorBlock[] }) {
           {seccion.filas.map(({ block, i }) => (
             <div
               key={`${block.kind}-${i}`}
+              data-fila=""
               className={
                 FILA + (block.flujo === "filaPegada" ? "" : ` ${FILA_PT}`)
               }

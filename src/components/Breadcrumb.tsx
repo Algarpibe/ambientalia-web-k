@@ -91,7 +91,11 @@ export function Breadcrumb({
   const esCaso = variante === "caso";
   return (
     <nav aria-label="Migas de pan" className="bg-white">
-      <div className={rowClassName + " py-[12px]"}>
+      {/* `data-fila`: en el original la miga ES una `.et_pb_row` dentro de una
+          sección; en el clon vive en un `<nav>` fuera de `main > section` (la
+          partición D2). Sin marcador, `ancho-cuerpo` no podía verla por ningún
+          lado y la miga del original salía huérfana en ~29 rutas. */}
+      <div data-fila="" className={rowClassName + " py-[12px]"}>
         <ol
           className={
             "kunak-breadcrumbs text-[12px] font-semibold tracking-[0.3px] text-[#0075C9] " +

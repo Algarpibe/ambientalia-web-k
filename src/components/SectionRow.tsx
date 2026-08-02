@@ -18,6 +18,13 @@ export function SectionRow({
 }) {
   return (
     <div
+      // `data-fila` es MARCADOR DE SONDA, no estilo: no cambia un píxel, dice
+      // QUÉ ES este nodo. El original lo dice con `.et_pb_row` y el clon no
+      // tenía equivalente, así que `ancho-cuerpo` deducía la fila por
+      // comportamiento —bloque centrado más estrecho que su sección— y
+      // **sobre-casaba**: 16 filas donde el original tiene 11. Ver la cabecera
+      // de `scripts/qa/ancho-cuerpo.mjs`.
+      data-fila=""
       className={
         // Divi: .et_pb_row width 86.35% max 1380; cols 29.6667% + 64.833%,
         // gutter 5.5% (valores exactos del CSS inline de la página original)

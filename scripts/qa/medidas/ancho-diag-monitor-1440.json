@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "/monitor-calidad-aire",
+    "sabotaje": null
+  },
+  "rutas": {
+    "/monitor-calidad-aire": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 6,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "conductual": 6
+        }
+      },
+      "emparejadas": 3,
+      "huerfanas": {
+        "orig": 4,
+        "clon": 3,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 4
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 3
+          }
+        },
+        "firmasOrig": [
+          "InicioProductosAIRPro",
+          "InformacióndelproductoDescargarfichatécnicaSolic",
+          "ArtículosyGuíasMonitorizacióndeemisionesdeltráfi",
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": [
+          "InformacióndelproductoDescargarfichatécnica→Soli",
+          "Nosepuedemejorarloquenosepuedemedirdeformaprecis",
+          "ArtículosyGuíasRunningforCleanAir:midiendoelimpa"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosAIRPro",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAIRProMonitordecalidaddelaireMonitorizalaca",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoDescargarfichatécnicaSolic",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "BeneficiosAplicacionesSoftwareEspecificacionesEn",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "ArtículosyGuíasMonitorizacióndeemisionesdeltráfi",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 4,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "KunakAIRProMonitordecalidaddelaireMonitorizalaca",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 1
+          },
+          {
+            "sec": 2,
+            "via": "conductual",
+            "firma": "InformacióndelproductoDescargarfichatécnica→Soli",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "via": "conductual",
+            "firma": "Nosepuedemejorarloquenosepuedemedirdeformaprecis",
+            "w": 1267.22,
+            "pct": 88,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 4,
+            "via": "conductual",
+            "firma": "BeneficiosAplicacionesSoftwareEspecificacionesEn",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 3
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "ArtículosyGuíasRunningforCleanAir:midiendoelimpa",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 6,
+            "via": "conductual",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 6
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "contaminacion-por-metano",
+    "sabotaje": null
+  },
+  "rutas": {
+    "/contaminacion-por-metano": {
+      "nFilas": {
+        "orig": 5,
+        "clon": 4
+      },
+      "nSecciones": {
+        "orig": 3,
+        "clon": 3
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "conductual": 4
+        }
+      },
+      "emparejadas": 2,
+      "huerfanas": {
+        "orig": 3,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 3
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 2
+          }
+        },
+        "firmasOrig": [
+          "InicioRecursosArtículosyGuíasIndustriaycontamina",
+          "TambiéntepuedeinteresarRelatedcontentقديهمكأيضًا",
+          "EnhanceyourknowledgewithourguidesAmpliatusconoci"
+        ],
+        "firmasClon": [
+          "TambiéntepuedeinteresarTodasnuestrassolucionesen",
+          "Ampliatusconocimientosconnuestrasguías"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioRecursosArtículosyGuíasIndustriaycontamina",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "TambiéntepuedeinteresarRelatedcontentقديهمكأيضًا",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 2,
+            "firma": "EnhanceyourknowledgewithourguidesAmpliatusconoci",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1
+          },
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "EscritoporelEquipodemarketingycomunicaciónÍndice",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2
+          },
+          {
+            "sec": 2,
+            "via": "conductual",
+            "firma": "TambiéntepuedeinteresarTodasnuestrassolucionesen",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 2,
+            "via": "conductual",
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

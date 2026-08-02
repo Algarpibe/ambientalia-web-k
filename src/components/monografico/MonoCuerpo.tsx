@@ -412,6 +412,7 @@ export function MonoCuerpo({ cuerpo }: { cuerpo: MonoSeccion[] }) {
           {sec.filas.map((fila, j) => (
             <div
               key={j}
+              data-fila=""
               className={FILA}
               style={{
                 ...(fila.pt !== undefined ? { paddingTop: fila.pt } : {}),

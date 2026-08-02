@@ -25,7 +25,7 @@ export function InfoProductoApi() {
     // QA Fase 5 (2026-07-28): el `pt` móvil pasa a 23.9 — es el hueco entero
     // medido de la foto del hero a este rótulo, que antes salía a 50 porque se
     // sumaba con el `pb-[30px]` de `HeroApi` (ya retirado en móvil).
-    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[23.9px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw] md:pt-[20px]">
+    <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[23.9px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw] md:pt-[20px]">
       {/* ---------- Columna 1/3 ---------- */}
       <div className="relative w-full md:w-[29.6667%] md:shrink-0">
         <img

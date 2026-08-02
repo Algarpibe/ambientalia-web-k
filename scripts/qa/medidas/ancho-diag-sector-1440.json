@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "calidad-del-aire-en-las-ciudades",
+    "sabotaje": null
+  },
+  "rutas": {
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 16
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "conductual": 16
+        }
+      },
+      "emparejadas": 6,
+      "huerfanas": {
+        "orig": 5,
+        "clon": 10,
+        "porQue": {
+          "orig": {
+            "sinTexto": 1,
+            "conTexto": 4
+          },
+          "clon": {
+            "sinTexto": 4,
+            "conTexto": 6
+          }
+        },
+        "firmasOrig": [
+          "(sin texto)",
+          "InicioSectoresCalidaddelaireenlasciudades",
+          "QuierosabermásDescargarcatálogoConocelacalidadde",
+          "ArtículosyGuías",
+          "Contaminacióndeltransporteurbano:causas,efectosy"
+        ],
+        "firmasClon": [
+          "UrbanoCalidaddelaireenlasciudades",
+          "(sin texto)",
+          "Quierosabermás→Descargarcatálogo→Conocelacalidad",
+          "Obténdatosfiablesyprecisossobrelacontaminaciónca",
+          "MejoradelniveldevidaprotegiendoelmedioambientePo",
+          "Complementalasredesoficialesconinformaciónfiable",
+          "(sin texto)",
+          "(sin texto)",
+          "(sin texto)",
+          "ArtículosyGuíasNormativaSeveso,elcontrolderiesgo"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 2,
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Últimosproyectos",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ArtículosyGuías",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 6,
+            "firma": "Contaminacióndeltransporteurbano:causas,efectosy",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "conductual",
+            "firma": "UrbanoCalidaddelaireenlasciudades",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 2,
+            "via": "conductual",
+            "firma": "Quierosabermás→Descargarcatálogo→Conocelacalidad",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "via": "conductual",
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3
+          },
+          {
+            "sec": 4,
+            "via": "conductual",
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4
+          },
+          {
+            "sec": 4,
+            "via": "conductual",
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "Obténdatosfiablesyprecisossobrelacontaminaciónca",
+            "w": 1267.22,
+            "pct": 88,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "MejoradelniveldevidaprotegiendoelmedioambientePo",
+            "w": 1267.22,
+            "pct": 88,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "Complementalasredesoficialesconinformaciónfiable",
+            "w": 1267.22,
+            "pct": 88,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "",
+            "w": 12,
+            "pct": 0.83,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "",
+            "w": 12,
+            "pct": 0.83,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 5,
+            "via": "conductual",
+            "firma": "",
+            "w": 7,
+            "pct": 0.49,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 6,
+            "via": "conductual",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6
+          },
+          {
+            "sec": 6,
+            "via": "conductual",
+            "firma": "Últimosproyectos",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7
+          },
+          {
+            "sec": 6,
+            "via": "conductual",
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8
+          },
+          {
+            "sec": 6,
+            "via": "conductual",
+            "firma": "ArtículosyGuíasNormativaSeveso,elcontrolderiesgo",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

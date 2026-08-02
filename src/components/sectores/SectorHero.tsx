@@ -106,7 +106,7 @@ export function SectorHero({
         (pb === 39 ? "md:pb-[39px]" : "md:pb-[60px]")
       }
     >
-      <div className="mx-auto w-[86%] max-w-[1380px] pb-[30px] md:pb-[28.7969px]">
+      <div data-fila="" className="mx-auto w-[86%] max-w-[1380px] pb-[30px] md:pb-[28.7969px]">
         <div className="flex flex-col md:flex-row md:gap-[5.5%]">
           {/* ── columna izquierda ───────────────────────────────── */}
           <div className="relative mb-[30px] w-full md:mb-0 md:w-[47.25%]">

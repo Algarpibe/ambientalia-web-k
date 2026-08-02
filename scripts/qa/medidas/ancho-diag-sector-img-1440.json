@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "calidad-del-aire-en-las-ciudades",
+    "sabotaje": null
+  },
+  "rutas": {
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "nFilas": {
+        "orig": 11,
+        "clon": 11
+      },
+      "nSecciones": {
+        "orig": 7,
+        "clon": 7
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcador": 11
+        }
+      },
+      "emparejadas": 9,
+      "metodos": {
+        "texto": 8,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 2,
+        "porQue": {
+          "orig": {
+            "sinTexto": 1,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 1,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "(sin texto)",
+          "Sensoresdecalidaddelaireurbano:másinformación,me"
+        ],
+        "firmasClon": [
+          "UrbanoCalidaddelaireenlasciudades",
+          "(sin texto)"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "",
+            "img": "world-health-organization.svg|emt-madrid.svg|gent.svg",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "img": "",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "img": "punteado.svg|urban-air-quality-1.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 3,
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "img": "cta-informe-tecnico-urban-ES.png",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "img": "punteado.svg|punteado.svg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 4,
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "img": "control-de-la-calidad-del-aire-en-ciudades.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": "punteado.svg|punteado.svg|Kunak-AIR-Pro-1024.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Últimosproyectos",
+            "img": "punteado.svg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "img": "",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "ArtículosyGuías",
+            "img": "punteado.svg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 6,
+            "firma": "Sensoresdecalidaddelaireurbano:másinformación,me",
+            "img": "donostia-urban-air-quality-1-980x653.jpg|SEVESO-1976-1024x819.jpg|The-necessity-of-standards-and-certification-programs.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null
+          }
+        ],
+        "clon": [
+          {
+            "sec": 0,
+            "via": "marcador",
+            "firma": "UrbanoCalidaddelaireenlasciudades",
+            "img": "",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "",
+            "img": "world-health-organization.svg|teck.svg|apm-terminals.svg",
+            "w": 1368,
+            "pct": 95,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          },
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioSectoresCalidaddelaireenlasciudades",
+            "img": "",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "QuierosabermásDescargarcatálogoConocelacalidadde",
+            "img": "punteado.svg|urban-air-quality-1.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "¿Necesitasmedirlacontaminaciónentuciudad?Descarg",
+            "img": "cta-informe-tecnico-urban-ES.png",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Beneficiosdemonitorizarlacalidaddelaire:Permitet",
+            "img": "punteado.svg|punteado.svg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 4,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "marcador",
+            "firma": "Protegelasaluddetusciudadanostomandolasmejoresde",
+            "img": "control-de-la-calidad-del-aire-en-ciudades.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 5,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "NuestrassolucionesAIRProMonitordecalidaddeairepa",
+            "img": "punteado.svg|Kunak-AIR-Pro-1024.jpg|Kunak-AIR-Pro-1024.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Últimosproyectos",
+            "img": "punteado.svg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 7,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "Sector:UrbanoSecretariaMunicipaldoAmbienteeClima",
+            "img": "",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 8,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 6,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasNormativaSeveso,elcontrolderiesgo",
+            "img": "punteado.svg|SEVESO-1976-1024x819.jpg|Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
+            "w": 1238.39,
+            "pct": 86,
+            "inf": true,
+            "par": 9,
+            "comoPar": "prefijo"
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

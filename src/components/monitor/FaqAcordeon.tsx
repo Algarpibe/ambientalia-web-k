@@ -93,7 +93,7 @@ export function FaqAcordeon({
     >
       {/* QA 2026-07-26 (CDP): sección py 4vw (50 móvil) + fila pt 20 / pb 64
           (19.5 móvil); fila 80%/máx 1380, columnas 1/4-3/4 con gutter 5.5%. */}
-      <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[70px] pt-[70px] md:flex-row md:gap-[5.5%] lg:pb-[calc(4vw+64px)] lg:pt-[calc(4vw+20px)]">
+      <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[70px] pt-[70px] md:flex-row md:gap-[5.5%] lg:pb-[calc(4vw+64px)] lg:pt-[calc(4vw+20px)]">
         {/* ---------- Columna izquierda (1/4) ---------- */}
         <div className="relative w-full md:w-[20.875%] md:shrink-0">
           {/* QA Fase 5 de /kunak-api (2026-07-28): sin `z-[-1]`. Con z-index

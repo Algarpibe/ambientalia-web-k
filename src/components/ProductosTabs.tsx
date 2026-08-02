@@ -51,6 +51,10 @@ export function ProductosTabs({
       }
     >
       <div
+        // Marcador de fila SOLO cuando esta es la fila: con `sinTitulo` la pone
+        // la página que envuelve el bloque, y marcar las dos declararía dos
+        // filas anidadas donde el original tiene una.
+        data-fila={sinTitulo ? undefined : ""}
         className={
           // Con `sinTitulo` la FILA la pone la página (el sector ya envuelve
           // este bloque en su retícula del 86%): aquí solo el ancho completo,

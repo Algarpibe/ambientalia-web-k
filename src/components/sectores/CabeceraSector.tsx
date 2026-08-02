@@ -35,7 +35,12 @@ export function CabeceraSector({ header }: { header: SectorHeader }) {
           defecto de RANGO, no de fidelidad (`CLAUDE.md` §El contrato no es el
           mismo a todos los anchos). El móvil sigue en 30px porque ahí el original
           también da 30 fijo. */}
-      <div className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[2%]">
+      {/* `data-fila`: es fila del CLON. Su equivalente en el original vive en
+          el `_tb_header` del theme builder, que `ancho-cuerpo` excluye — o sea
+          que va a salir HUÉRFANA, y eso es correcto: es la partición D1, que
+          está medida y fichada. Marcarla la hace visible como partición en vez
+          de invisible como ausencia. */}
+      <div data-fila="" className="mx-auto w-[86%] max-w-[1380px] py-[30px] md:py-[2%]">
         {/* Kicker: 40px sobre una caja de línea de 30.6 y `margin-top: -13`.
             El hueco hasta el h1 (29.77 desktop / 16.22 móvil) incluye los
             11.21px de alto del módulo original que no supimos atribuir a

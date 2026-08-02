@@ -102,7 +102,7 @@ export default function SoftwareMedicionCalidadDelAirePage() {
         {/* Geometría medida: sección pb 5%, fila 80% máx 1380 con pt 4% y pb 2%,
             columnas 20.875% / 73.625% y gutter 5.5%. */}
         <section className="bg-white pb-[50px] lg:pb-[5%]">
-          <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[50px] md:pt-[4vw] lg:pb-[2vw] md:flex-row md:gap-[5.5%]">
+          <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[50px] md:pt-[4vw] lg:pb-[2vw] md:flex-row md:gap-[5.5%]">
             {/* Columna 1/4 — `self-start` es imprescindible: si el flex item se
                 estira a la altura de la fila, el sticky nunca llega a pegarse. */}
             <aside className="columna-lista-anclas w-full pt-[32px] md:w-[20.875%] md:shrink-0 md:self-start md:sticky md:top-[70px]">

@@ -20,7 +20,7 @@ export function HeroSoftware() {
     // fila Divi (25.29 a cw 1264.7), ADEMÁS de los dos paddings de 2vw
     // En móvil Divi fija las filas a 30px (no al 2% del ancho), tanto en el
     // padding como en el margin-bottom de la fila.
-    <div className="mx-auto mb-[30px] flex w-[80%] max-w-[1380px] flex-col gap-[30px] py-[30px] md:mb-[2vw] md:flex-row md:items-start md:gap-[5.5%] md:py-[2vw]">
+    <div data-fila="" className="mx-auto mb-[30px] flex w-[80%] max-w-[1380px] flex-col gap-[30px] py-[30px] md:mb-[2vw] md:flex-row md:items-start md:gap-[5.5%] md:py-[2vw]">
       <div className="relative w-full md:w-[47.25%]">
         <img
           src="/images/uploads/2022/12/punteado.svg"

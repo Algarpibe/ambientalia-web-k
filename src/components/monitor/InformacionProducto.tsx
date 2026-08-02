@@ -52,7 +52,7 @@ export function InformacionProducto() {
        80%/máx 1380 con py 2vw (pt 30 móvil); columnas 29.6667% / 64.833% con
        gutter 5.5%. */
     <section className="bg-white pb-[50px] lg:pb-[4vw]">
-      <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[2vw] pt-[30px] md:flex-row md:gap-[5.5%] lg:py-[2vw]">
+      <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[2vw] pt-[30px] md:flex-row md:gap-[5.5%] lg:py-[2vw]">
         {/* ---------- Columna izquierda (1/3) ---------- */}
         <div className="relative w-full md:w-[29.6667%] md:shrink-0">
           <img

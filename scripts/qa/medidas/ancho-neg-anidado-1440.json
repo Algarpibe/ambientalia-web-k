@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "/kunak-api",
+    "sabotaje": "anidado"
+  },
+  "rutas": {
+    "/kunak-api": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 5,
+        "clon": 5
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "marcadorAnidado": 1,
+          "marcador": 6
+        }
+      },
+      "emparejadas": 6,
+      "metodos": {
+        "texto": 5,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 1,
+        "clon": 0,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 1
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 0
+          }
+        },
+        "firmasOrig": [
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": []
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosKunakAPI",
+            "img": [],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "ArtículosyGuíasMonitorizacióndeemisionesenrefine",
+            "img": [
+              "punteado.svg",
+              "monitorizacion-emision-de-gases-y-particulas-en-refinerias-yacimientos-gas.jpg",
+              "quemas-prescritas-agricolas-calidad-aire-1.jpg",
+              "Beam-Beijing-Pollution_UFP_Kunak-980x654.png"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": -1,
+            "via": "marcador",
+            "firma": "InicioProductosKunakAPI",
+            "img": [],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 0,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "marcador",
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "marcador",
+            "firma": "ArtículosyGuíasContaminaciónpormetano:impactoene",
+            "img": [
+              "punteado.svg",
+              "Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
+              "contaminaci%C3%B3n-por-mal-olor-problemas-ambientales.jpg",
+              "kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 3,
+            "via": "marcador",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

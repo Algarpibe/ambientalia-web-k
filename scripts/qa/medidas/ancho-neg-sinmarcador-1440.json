@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-02",
+    "solo": "/kunak-api",
+    "sabotaje": "sinmarcador"
+  },
+  "rutas": {
+    "/kunak-api": {
+      "nFilas": {
+        "orig": 7,
+        "clon": 6
+      },
+      "nSecciones": {
+        "orig": 5,
+        "clon": 5
+      },
+      "via": {
+        "orig": "et_pb_row",
+        "clon": {
+          "conductual": 6
+        }
+      },
+      "emparejadas": 5,
+      "metodos": {
+        "texto": 4,
+        "prefijo": 1
+      },
+      "huerfanas": {
+        "orig": 2,
+        "clon": 1,
+        "porQue": {
+          "orig": {
+            "sinTexto": 0,
+            "conTexto": 2
+          },
+          "clon": {
+            "sinTexto": 0,
+            "conTexto": 1
+          }
+        },
+        "firmasOrig": [
+          "InicioProductosKunakAPI",
+          "Ampliatusconocimientosconnuestrasguías"
+        ],
+        "firmasClon": [
+          "SacaelmáximopartidoalosdatosIntegralosdatosdelar"
+        ]
+      },
+      "inventario": {
+        "orig": [
+          {
+            "sec": 0,
+            "firma": "InicioProductosKunakAPI",
+            "img": [],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 1,
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 1,
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "ArtículosyGuíasSensoresdecalidaddelaireurbano:má",
+            "img": [
+              "punteado.svg",
+              "donostia-urban-air-quality-1-980x653.jpg",
+              "detectores-de-emisiones-coronavirus-contaminacion-1024x576.jpg",
+              "efectos-de-la-contaminacion-en-la-salud-e1592810048430-1024x576.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          },
+          {
+            "sec": 2,
+            "firma": "Ampliatusconocimientosconnuestrasguías",
+            "img": [],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": null
+          },
+          {
+            "sec": 3,
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": "sí"
+          }
+        ],
+        "clon": [
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "KunakAPIIntegracióndedatosmásalládelasoluciónKun",
+            "img": [
+              "punteado.svg",
+              "kunak-api.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 1,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "InformacióndelproductoKunakAPIesunpotentesistema",
+            "img": [
+              "punteado.svg",
+              "api-rest.svg",
+              "json-format.svg",
+              "call-limit.svg",
+              "size-limit.svg",
+              "data-export.svg",
+              "cloud-based-1.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 2,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 1,
+            "via": "conductual",
+            "firma": "BeneficiosAutomatizaprocesoscomolaextraccióndele",
+            "img": [
+              "punteado.svg",
+              "easy-fast-installation.svg",
+              "cloud-platform.svg",
+              "process-automation.svg",
+              "new-tools.svg",
+              "data-analytics.svg",
+              "external-data-integration.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 3,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 2,
+            "via": "conductual",
+            "firma": "ArtículosyGuíasContaminaciónpormetano:impactoene",
+            "img": [
+              "punteado.svg",
+              "Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
+              "contaminaci%C3%B3n-por-mal-olor-problemas-ambientales.jpg",
+              "kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 4,
+            "comoPar": "prefijo"
+          },
+          {
+            "sec": 3,
+            "via": "conductual",
+            "firma": "Preguntasfrecuentes¿LosequiposKunaksoncertificad",
+            "img": [
+              "punteado.svg"
+            ],
+            "w": 1152,
+            "pct": 80,
+            "inf": true,
+            "par": 6,
+            "comoPar": "texto"
+          },
+          {
+            "sec": 4,
+            "via": "conductual",
+            "firma": "SacaelmáximopartidoalosdatosIntegralosdatosdelar",
+            "img": [],
+            "w": 1267.22,
+            "pct": 88,
+            "inf": true,
+            "par": null,
+            "comoPar": null
+          }
+        ]
+      },
+      "difs": []
+    }
+  }
+}

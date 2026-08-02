@@ -140,8 +140,10 @@ await browser.close();
 const salida = `clon-base-${width}${etiqueta}.json`;
 w(env("SALIDA") || `medidas/${salida}`, todo);
 
+let noMedidas = 0;
 for (const [ruta, d] of Object.entries(todo.paginas)) {
   if (d.error) {
+    noMedidas++;
     console.log(`  ⚠ ${ruta}  ${d.error}`);
     continue;
   }
@@ -149,6 +151,32 @@ for (const [ruta, d] of Object.entries(todo.paginas)) {
     `  ${ruta.padEnd(52)} docH ${String(d.docH).padStart(8)}  h1.y ${String(d.h1?.y ?? "—").padStart(8)}` +
       `  secciones ${String(d.secciones.length).padStart(2)}  a ${String(d.nAnclas).padStart(3)}`,
   );
+}
+
+/**
+ * ⚠ **UNA RUTA QUE NO SE PUDO MEDIR NO ES UNA RUTA SIN REGRESIÓN, y hasta hoy
+ * esta sonda no las distinguía.** Medido el 2026-08-02, corriéndola con el 3000
+ * vacío: imprimió **31 `ERR_CONNECTION_REFUSED`** —una por ruta— y **salió con
+ * código 0**. O sea que la GUARDA DE REGRESIÓN del clon daba verde midiendo
+ * exactamente nada.
+ *
+ * Son las dos reglas de `CLAUDE.md` §sondas a la vez, en la sonda que más se
+ * corre: *un descuadre impreso y no contado da el mismo informe que uno no
+ * visto* (regla 1) y *acotar no puede volverse verde por vaciado*. El aviso
+ * estaba ahí desde el principio; lo que faltaba era que contase.
+ *
+ * ⚠ Y el arreglo de fondo es OTRO: esta sonda sigue esperando un `next start`
+ * ajeno en el 3000 en vez de arrancar el suyo con `iniciarClon()`. Es una de
+ * las 18 pendientes de migrar. Esto no la migra — cierra el agujero de que el
+ * fallo pase en silencio, que es lo que la hacía peligrosa.
+ */
+if (noMedidas) {
+  console.error(
+    `\n❌ ${noMedidas} de ${RUTAS.length} rutas NO SE PUDIERON MEDIR.\n` +
+      `   Eso NO es «sin regresión»: es que no hubo medida. ¿Está el clon sirviendo\n` +
+      `   en ${BASE}? (esta sonda todavía espera un \`next start\` ajeno).`,
+  );
+  process.exit(2);
 }
 
 /* ─────────────────────────── comparación ─────────────────────────── */
@@ -181,11 +209,15 @@ if (nuevas.length) console.log(`  NUEVAS (no había línea base): ${nuevas.join(
 if (idas.length) console.log(`  ❌ DESAPARECIDAS del build: ${idas.join(" · ")}`);
 
 let regresiones = 0;
+let sinComparar = 0;
 for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
   const a = antes.paginas[ruta];
   const b = todo.paginas[ruta];
   if (a.error || b.error) {
-    console.log(`  ⚠ ${ruta}: error en una de las dos corridas`);
+    // Impreso Y CONTADO: un `continue` que no incrementa nada es exactamente
+    // cómo E1 vivió una tanda entera (`CLAUDE.md` §sondas, regla 1).
+    sinComparar++;
+    console.log(`  ⚠ ${ruta}: error en una de las dos corridas — NO comparada`);
     continue;
   }
   const deltas = [];
@@ -214,8 +246,13 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
   }
 }
 
+/* `páginas comparadas` es ahora las que SE COMPARARON, no las que se
+ * intentaron: contar las que fallaron como comparadas es la misma mentira que
+ * darles verde, solo que en la cifra del titular. */
+const comparadas = rutasAntes.length - idas.length - sinComparar;
 console.log(
-  `\n${regresiones === 0 ? "✅" : "❌"} ${rutasAntes.length - idas.length} páginas comparadas · ` +
-    `${regresiones} con regresión · umbral CERO (clon contra clon)`,
+  `\n${regresiones === 0 && sinComparar === 0 ? "✅" : "❌"} ${comparadas} páginas comparadas · ` +
+    `${regresiones} con regresión · umbral CERO (clon contra clon)` +
+    (sinComparar ? `\n   ⚠ ${sinComparar} NO comparada(s) por error: no son «sin regresión», son SIN MEDIR.` : ""),
 );
-process.exit(regresiones === 0 && idas.length === 0 ? 0 : 1);
+process.exit(regresiones === 0 && idas.length === 0 && sinComparar === 0 ? 0 : 1);

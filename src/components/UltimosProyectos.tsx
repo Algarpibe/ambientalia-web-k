@@ -127,7 +127,7 @@ export function UltimosProyectos({
 
   return (
     <section className="relative bg-white pb-[50px] pt-[56px] md:pb-[71px] md:pt-[84px]">
-      <div className="mx-auto w-[85%] max-w-[1380px]">
+      <div data-fila="" className="mx-auto w-[85%] max-w-[1380px]">
         <div className="relative">
           <img
             src="/images/uploads/2022/12/punteado.svg"

@@ -71,7 +71,7 @@ function BloqueAzul({ heading, lead }: { heading: string; lead: string }) {
 
 export function InfoProductoSoftware() {
   return (
-    <div className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] py-[30px] md:flex-row md:items-start md:gap-[5.5%] md:py-[2vw]">
+    <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] py-[30px] md:flex-row md:items-start md:gap-[5.5%] md:py-[2vw]">
       {/* ---------- Columna 1/3 ---------- */}
       <div className="relative w-full md:w-[29.6667%] md:shrink-0">
         <img
