@@ -1187,6 +1187,45 @@ que es determinista:
 | `npm run qa:corte` | 12/12 |
 | `npm run check` | verde |
 
+### 8.1 · ⚠ El contrato NO es el mismo a todos los anchos (2026-08-02)
+
+El listón de arriba dice **«umbral CERO, 11 páginas, 2 anchos»**, y hay que leer
+las tres palabras juntas: **el umbral cero vale EN esos dos anchos**. Fuera de
+ellos el contrato es otro, y confundirlos genera trabajo sin final.
+
+| dónde | contrato | qué es un defecto |
+|---|---|---|
+| **1440 y 390** | **FIDELIDAD** | cualquier Δ ≠ 0 por encima del suelo de ruido |
+| **cualquier ancho intermedio** | **COMPORTAMIENTO DE RANGO** | un valor **cableado** donde el original **varía** |
+
+**Por qué:** el original es **Divi fluido** —porcentajes, filas que reflotan,
+`max-width` que entra a un ancho que nadie eligió— y el clon es Tailwind con
+cortes declarados. Las dos curvas pasan por 1440 y por 390 y **no coinciden entre
+medias**. Igualarlas punto a punto sería reproducir el motor de Divi, no la
+página.
+
+**Consecuencia para la aceptación de la migración:** el criterio de §8 **no
+cambia** —sigue siendo Δ0 a 1440 y 390—, pero se le añade una comprobación que
+antes no estaba escrita y que el CMS puede romper sin que el listón se entere:
+
+> **Lo que a 1440 y 390 es un número, en el CMS puede volverse un campo.** Si al
+> migrar una presentación se convierte en un valor guardado, hay que comprobar
+> que **sigue variando donde el original varía**, no solo que coincide en los dos
+> anchos del listón. Un campo con el valor de 1440 dentro **pasa el listón y
+> rompe el rango**.
+
+Es la misma trampa que la **FAMILIA DE CALIBRACIÓN** (`PENDIENTES-QA.md`
+§CLASE), una vuelta más arriba: allí un componente hereda los valores del primer
+contexto medido; aquí un **campo** heredaría los valores del primer *ancho*
+medido.
+
+**Cómo se comprueba, en dos preguntas:** ¿el original varía en ese tramo? Si sí,
+¿el clon también? Si el clon devuelve una constante donde el original se mueve,
+es **defecto de rango** — se arregla haciendo que dependa de lo que el original
+hace que dependa, **nunca cableando el valor del ancho medido**.
+
+---
+
 **El camino de los datos, para que el listón sea alcanzable:**
 
 - las páginas construidas tienen sus seeds ya escritos: **`src/lib/*.ts` son los

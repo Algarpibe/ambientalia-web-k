@@ -361,6 +361,49 @@ de «hecho», más las dos precondiciones de arranque. Ojo a la convención: los
 `CMS-n` son **decisiones** (viven en el ESQUEMA), los `F2-n` son **fases** —
 no se mezclan.
 
+## ⚠ EL CONTRATO NO ES EL MISMO A TODOS LOS ANCHOS
+
+**Antes que cualquier nota de método, porque decide qué cuenta como defecto.**
+Este proyecto mide a **1440 y 390**, y esos dos anchos tienen un contrato
+distinto del resto:
+
+| dónde | contrato | qué es un defecto |
+|---|---|---|
+| **1440 y 390** | **FIDELIDAD** | cualquier Δ ≠ 0 por encima del suelo de ruido |
+| **cualquier ancho intermedio** | **COMPORTAMIENTO DE RANGO** | un valor **cableado** donde el original **varía** |
+
+> **En los anchos intermedios NO se exige Δ0, se exige que el clon VARÍE como
+> varía el original.** Si el original se mueve con el ancho y el clon devuelve
+> una constante, eso es defecto —de rango— aunque a 1440 y a 390 cuadre al
+> céntimo. Y al revés: **una diferencia de píxeles a 1280 entre dos cosas que
+> las dos varían no es defecto**, y perseguirla no termina.
+
+**Por qué, y no es pereza:** el original es **Divi fluido** —porcentajes, filas
+que reflotan, `max-width` que entra a un ancho que nadie eligió— y el clon es
+Tailwind con cortes declarados. **Las dos curvas pasan por 1440 y por 390 y no
+coinciden entre medias.** Igualarlas punto a punto exigiría reproducir el motor
+de maquetación de Divi, no la página; y como no hay ancho «siguiente» que fijar,
+el trabajo no tiene final.
+
+**Cómo se usa, en dos preguntas:**
+
+1. ¿El original **varía** en ese tramo? Si no varía y el clon tampoco, no hay
+   nada que mirar.
+2. Si varía: ¿el clon **también varía**? Si sí → cumple, aunque el número
+   difiera. Si devuelve una constante → **defecto de rango**, y se arregla
+   haciendo que dependa de lo que el original hace que dependa (el contenido, el
+   ancho disponible), **no cableando el valor del ancho que tengas medido** —
+   eso es exactamente cómo se fabrica una FAMILIA DE CALIBRACIÓN.
+
+**Caso medido (2026-08-02):** la cabecera de `/sectores/*` a 1280 daba el
+original **338.25** y el clon **397.59**. A 1440 y 390 estaba a Δ0. Diagnóstico
+correcto: **defecto de RANGO** —el clon no variaba— y no defecto de fidelidad.
+Se arregla haciendo variar, y **no se le exige Δ0 a 1280**.
+
+> **Y el corolario que evita el trabajo infinito: un «se ficha, no se persigue»
+> en un ancho intermedio no es deuda.** Es el contrato. Lo que sí es deuda es no
+> haber comprobado **si varía**.
+
 ## Notas de método (medición y capturas)
 
 Estas se pagaron con horas de depuración. No las reinventes:
