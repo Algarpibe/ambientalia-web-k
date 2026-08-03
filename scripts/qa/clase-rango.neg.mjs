@@ -29,7 +29,7 @@
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { QA } from "./lib.mjs";
+import { Evaluadas, QA } from "./lib.mjs";
 
 /* Una sola ruta, y **tiene que ser un monográfico**: es la única familia con
  * respuesta conocida (CAMPO, `anchoPct` 70·80·90), o sea la única donde el
@@ -71,6 +71,14 @@ const casos = [
 console.log(`\n════════ TEST EN NEGATIVO · clase-rango ════════`);
 console.log(`  ruta: ${SOLO} (monográfico — el único con varianza CONOCIDA en el original)\n`);
 
+/* Contrato de `Evaluadas`, y aquí NO se exime con `SIN_CONTRATO` aunque este
+ * fichero solo orqueste: la unidad es **el sabotaje**, y un sabotaje que no
+ * llegó a correr —un `spawn` que revienta, un timeout— dejaría un eje sin
+ * probar. Que la lista se recorra entera es justo lo que hay que garantizar:
+ * *una sonda que solo sabe fallar por uno de los dos ejes no está probada*, y
+ * eso incluye el caso de que el segundo sabotaje ni se ejecute. */
+const ev = new Evaluadas({ nombre: "clase-rango-neg", unidad: "sabotajes", minimo: casos.length });
+
 let fallos = 0;
 for (const c of casos) {
   const fichero = join(QA, `medidas/clase-rango-1440-neg-${c.sabotaje}${SUF}.json`);
@@ -85,6 +93,11 @@ for (const c of casos) {
   });
   const out = (res.stdout || "") + (res.stderr || "");
   const seg = ((Date.now() - t0) / 1000).toFixed(0);
+  /* «Corrió» ≠ «pasó»: el contrato cuenta unidades EVALUADAS, y el veredicto de
+   * cada una lo lleva `fallos` más abajo. Un sabotaje que ni arrancó no es una
+   * aserción que falla — es una que no se hizo, y son cosas distintas. */
+  if (res.error || res.status === null) ev.fallo(c.sabotaje, res.error || "no llegó a correr");
+  else ev.ok();
 
   let mal = null;
   if (c.exit !== undefined && res.status !== c.exit) mal = `esperaba exit ${c.exit}, salió ${res.status}`;
@@ -102,7 +115,6 @@ for (const c of casos) {
  * son la prueba de que la sonda sabe fallar, no medidas del sitio. */
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} clase-rango · test en negativo: ${casos.length - fallos}/${casos.length}\n` +
-    `   ✓ evaluadas ${casos.length}/${casos.length} sabotajes · clase-rango-neg\n` +
     (fallos === 0
       ? `   Los DOS ejes disparan por separado: ① sin ② y ② sin ①. No son el mismo\n` +
         `   número escrito dos veces, así que un limpio de esta sonda se puede leer.\n`

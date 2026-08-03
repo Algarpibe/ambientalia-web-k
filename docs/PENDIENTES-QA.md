@@ -5153,3 +5153,78 @@ cayó el corte.
 `/…-en-edar` a 390**, que sigue **SIN PROBAR** — ni defecto ni limpio. Recordar
 que **no lo resuelven más cargas**: `estados-390` ya puso 180 sin ver un segundo
 estado (cota <5 % por carga). Lo que falta es el eje de los **días**.
+
+## CLASE · el ancho de MÓDULO — CAMPO en SECTOR, y dos defectos con número (2026-08-03)
+
+Medición de desbloqueo de la precondición 2 de F2-1. Pre-registro
+`clase/PRE-REGISTRO-ANCHO-MODULO.md` (`61a9e78`, **anterior a la sonda y a
+medir**) · acta `clase/DECISION-ANCHO-MODULO.md` · evidencia
+`medidas/clase-rango-{1440,390}.json` (`226c30f`) · esquema en `ESQUEMA-CMS.md`
+§6c.1. Sonda nueva `clase-rango`, negativo entero 4/4 (`02d806d`).
+
+**Alcance:** 12 rutas (4 SECTOR · 4 CASO · 2 FAQ · **2 MONOGRÁFICO de control**)
+× 2 lados × 2 anchos = 48 cargas. 24/24 páginas por ancho · 0 selectores muertos
+· control con varianza 2/2.
+
+### Los DOS defectos, con su número
+
+| # | ítem | original | clon | Δ @1440 | Δ @390 | dónde |
+|---|---|---|---|---|---|---|
+| **CL-1** | **`MapaProyectos`** — no cablea ancho, así que da 100 % | `90 %` · 1114.55 | `100 %` · 1238.39 | **+123.84** | **+33.55** (301.84→335.39) | **solo Industria** de los 4 sectores vivos |
+| **CL-2** | `BeneficiosAplicaciones` `w-[80%]` en el `<h3>` | `80 %` | `80 %` | **0** | **0** | las 4 |
+
+> **CL-2 no es defecto de píxel: es un CAMPO QUE FALTA.** El valor cableado es el
+> correcto en 4/4, y por eso no se ve. Lo que está mal es que sea una clase de
+> Tailwind en vez de un dato — se arregla en F2-1 declarando el campo, no
+> tocando el componente.
+
+**CL-1 es el que hay que arreglar, y es Bloque A** (después de F2-1). Existe solo
+en Industria: *el detector de un ancho mal no fue otro ancho, fue otra
+**INSTANCIA***. MONOGRÁFICO ya modela ese módulo con `anchoPct: 90`.
+
+### ⚠ Un fleco del EMPAREJADOR, y es el que casi tapa CL-1
+
+La pareja de `MapaProyectos` **no la casó la firma de texto por UN carácter**:
+el original da `ProyectosportodoelmundoA…` (48 car. truncados, arrastra el texto
+del módulo siguiente) y el clon `Proyectosportodoelmundo`. O sea que **el eje de
+fidelidad no lo habría cantado ni con veredicto en ese nivel**; salió de leer el
+lado del original. Es la clase C7 —emparejar por contenido con una definición de
+«lo mismo» que no coincide— en su tercera forma. **Ficha abierta**: la firma
+truncada a 48 caracteres cruza la frontera del módulo.
+
+### Lo que queda SIN VEREDICTO, con esa etiqueta literal
+
+**El nivel de MÓDULO y el de COLUMNA no tienen veredicto en el lado del CLON.**
+El clon solo marca la **fila** (`data-fila`); en los otros dos su identidad es un
+heurístico que **sobre-casa**: **66 «columnas» contra 27** y **102 «módulos»
+contra 66** en el control. Consecuencia en los dos ejes de `clase-rango`:
+
+- **fidelidad** — empareja el texto correcto en el **elemento equivocado**
+  (`pctO 100 → pctC 31.18`, `wO 1238 → wC 386`): eso es *el NIVEL al que se
+  mide*, no un defecto del clon;
+- **rango** — un clon sobre-casado tiene **siempre** muchos valores distintos,
+  así que `distintos.clon === 1` **no se cumple nunca** y el eje **no puede
+  disparar**. Eso no es limpio: es **CIEGO**.
+
+La sonda lo cuenta y lo grita: **26 celdas ruta×nivel SIN VEREDICTO**. Se cierra
+marcando esos niveles en el clon (**`data-col` / `data-mod`**, los caminos ya
+están puestos en la sonda), igual que `data-fila` cerró el nivel de fila para
+`ancho-cuerpo`.
+
+> ⚠ **Los `Δ0` de esta corrida son del nivel de FILA, 65 pares, y solo de ahí.**
+> No se pueden citar como «el cuerpo de SECTOR está a Δ0».
+
+### Lo que sí quedó cerrado, y no hay que reinvestigar
+
+- **Los `4.84 / 10.25 / 16.33 / 17.89 %` NO son varianza de módulo**: son
+  separadores de **`w = 60 px` exactos y sin texto**. Una sola decisión leída
+  contra columnas de anchos distintos. **No los toques como si fueran anchos.**
+- **La columna de SECTOR es la rejilla de Divi** (`29.67 · 47.25 · 64.83 · 100`):
+  derivable del nº de columnas, **plantilla**.
+- **La fila de SECTOR es `86 %`, más `95 %` en UNA**: la banda de clientes (firma
+  vacía), idéntica en las 4 instancias y en los dos anchos. **Plantilla.**
+- **Grupo C no tiene capa de builder.** FAQ trae **0** secciones propias
+  (`faqs-template-default` · `et-tb-has-template`); CASO trae **1**, con 1 fila /
+  1 columna / 1 módulo al valor por defecto. **No es un cero de instrumento**: el
+  mismo código, en la misma pasada, devolvió 7 secciones en SECTOR y 8 en el
+  control.

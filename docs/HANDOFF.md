@@ -1,3 +1,154 @@
+# HANDOFF — el ancho de módulo es CAMPO en SECTOR: los 10 se parten 9/1 y F2-1 puede arrancar
+
+> ⚠ **Tanda 2026-08-03 (18.ª).** Cinco pasos. Tanda de **MEDICIÓN**: no se
+> arregló ningún componente y no se tocó `src/`. El entregable son **una sonda
+> que no existía, dos números y una línea de esquema**. Pre-registro commiteado
+> **antes** de construir la sonda y de medir (`61a9e78`); medidas commiteadas
+> **antes** del acta (`226c30f`).
+
+## 0 · El titular
+
+> **MIXTO, y no era la rama cómoda. El ancho de MÓDULO en SECTOR es CAMPO**
+> —`80 · 90 · 100`, idénticos a 1440 y a 390—; **en grupo C no hay nada que sea
+> campo porque no hay capa de builder que medir**.
+>
+> **De los 10 bloqueadores, NUEVE se abren y UNO se convierte en trabajo.** Y la
+> misma corrida destapó **uno nuevo que ningún inventario podía ver**:
+> `MapaProyectos`, **+123.84 px** a 1440 y **+33.55** a 390, **solo en
+> Industria**.
+
+## 1 · El hallazgo que reencuadró la pregunta, y es de LECTURA
+
+Antes de medir se leyó a qué **nivel** vive cada valor cableado de los 10:
+
+> **NUEVE cablean retícula** —fila (`86 %`/`80 %`) o columna (`47.25 · 47 · 32 ·
+> 50.5 · 25 %`)— **y solo UNO está al nivel de módulo** (el `<h3>` de
+> `BeneficiosAplicaciones`).
+
+`DECISION.md` los agrupó a los diez bajo *«cablean ancho de MÓDULO»*. Era
+**confusión de NIVEL**: el precedente de MONOGRÁFICO es del nivel de módulo y a
+nueve no les aplicaba. La pregunta se abrió en **tres**, una por nivel.
+
+**Y lo que el fuente no puede contestar:** un módulo **sin** clase de ancho *es*
+un módulo al 100 %. Si el original le da 90 %, no hay valor cableado que
+encontrar — hay uno **ausente**. Ningún `grep` lo ve. Es exactamente CL-1.
+
+## 2 · El discriminador NO fue el que pedía el encargo, y está medido
+
+El encargo decía *«px absolutos iguales a 1440 y a 390 significan CAMPO»*. Es el
+**test A**, y `CLAUDE.md` declara **esta propiedad exacta** como su excepción: el
+ancho de módulo se escribe en % igual que su default, así que **da la respuesta
+al revés**. Se usó el **test B** (varianza intra-página), y el pre-registro lo
+dejó escrito antes de medir.
+
+**Medido, con los dos lados de la inversión:**
+
+| | huella | qué es |
+|---|---|---|
+| separadores | **`60 px` iguales a los dos anchos** ← la huella de «campo» del test A | **NO son campo**: una decisión leída contra columnas distintas |
+| ancho de módulo | **`%` igual, px distinto** (`468.09`/`268.31`) ← la huella de «plantilla» | **SÍ es campo** |
+
+Con el test A esta tanda habría abierto los 10 **por el motivo equivocado**.
+
+## 3 · Y los dos discriminadores coinciden, así que el veredicto es robusto
+
+| | ¿varía? |
+|---|---|
+| intra-página (test B, régimen builder) | **SÍ** — Industria trae `80`, `90` y `100` |
+| entre instancias (el de régimen plantillado) | **SÍ** — el `90` existe **solo en Industria** |
+| a los dos anchos | **SÍ** — idénticos |
+
+**No depende de qué régimen se le suponga a SECTOR.** Es la lectura más robusta
+que podía salir.
+
+## 4 · `clase-rango`, y por qué su segundo número no es adorno
+
+Sonda nueva. Los dos ejes se calculan de **datos distintos** —la fidelidad de
+**pares**, el rango de **conjuntos por lado**— y por eso el rango sobrevive donde
+la fidelidad muere. **Test en negativo entero, 4/4, asertando sobre los
+CONTADORES** y no sobre el código de salida (que es UN número para DOS ejes):
+
+- `fidelidad` → ① sube y ② **se queda a 0**;
+- `rango` → ② sube y ① **se queda sin pares**.
+
+**Validada contra una medida buena anterior antes de creerle nada:** en el
+control, el módulo del original da `70×1 · 80×7 · 90×1 · 100×45` — **exactamente**
+los `anchoPct` de `monografico.ts`.
+
+**Y trajo un defecto propio, cazado por esa misma corrida:** el clon solo marca
+la **fila**. Por heurístico daba **66 «columnas» contra 27** y **102 «módulos»
+contra 66**. Sin guarda, el eje de rango **no podía disparar nunca** ahí y habría
+salido verde. Ahora un nivel solo tiene veredicto si la identidad es del tema en
+el original **y** de marcador en el clon; el resto se cuenta y se grita: **26
+celdas SIN VEREDICTO**.
+
+## 5 · Lo que le hace a F2-1 — **puede arrancar**
+
+| | antes | ahora |
+|---|---|---|
+| ítems que bloquean | **10, «sin probar»** | **1, probado** (+1 nuevo) |
+| qué hay que hacer | desconocido | **una línea de esquema** |
+| grupo C | bloqueaba | **no bloquea** |
+
+`SectorBlock` gana **`anchoPct?: number`, defecto `100`**. Es **el mismo campo,
+con el mismo nombre y el mismo defecto** que `MonoModuloBase.anchoPct`: no un
+campo nuevo, el mismo en una segunda colección. Por eso **no fuerza a fusionar
+colecciones** ni contradice §1.5b — *lo que se duplica es el documento, no la
+definición*. Escrito en `ESQUEMA-CMS.md` §1.4 y §6c.1, y `PLAN-FASE-2.md`
+precondición 2 **cerrada**.
+
+**La precondición 1 (biblioteca) sigue abierta y es hoy la única de las dos que
+gobierna el arranque.**
+
+## 6 · LO SIGUIENTE, nombrado
+
+**AHORA · CMS-0f — tanda corta, en Fable.** *App única (Payload embebido en el
+Next del clon) vs dos apps en monorepo, misma DB.* Es **decisión, no fase**: su
+acta va a `ESQUEMA-CMS.md` §CMS-0. Los costes de las dos ya están escritos en
+`PLAN-FASE-2.md` §F2-1, y el evaluador independiente recomienda **dos apps**
+para no tocar el artefacto verificado. **Es corta porque no hay que medir nada:
+la información ya está escrita; falta elegir.**
+
+**DESPUÉS, con CMS-0f decidida · F2-1 (esquema).** Con `anchoPct` en `sectores`
+**desde el primer día** — que es la única pieza donde equivocarse era cara de
+deshacer, y ya no lo es.
+
+**Y en paralelo, sin prisa · Bloque A** (arreglos CLASE), empezando por los dos
+con número: **CL-1 `MapaProyectos`** (+123.84 / +33.55, solo Industria) y
+`Breadcrumb max-w-[350px]` (28 rutas, −33.25).
+
+## 7 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — a partir de HOY+1 (≥2026-08-04), OBLIGATORIO otro
+   día.** No se pudo lanzar en esta tanda: es del 08-03 y las dos que hay también.
+   Cierra el −30 de EDAR@390, que sigue **SIN PROBAR**. Con ella en vuelo: **nada
+   de `check` ni `build`**.
+2. **CMS-0f** (arriba) y, con ella, **F2-1**.
+3. **`data-col` / `data-mod` en el clon** — cierra las 26 celdas SIN VEREDICTO de
+   `clase-rango`. Los caminos ya están puestos en la sonda.
+4. **Bloque A** (CL-1, `Breadcrumb`) y **Bloque B** (`articulos-kb`).
+5. **La firma del emparejador cruza la frontera del módulo** — 48 car. truncados
+   arrastran el texto del siguiente; casi tapa CL-1.
+6. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+7. **Comportamiento a 0/31** en la matriz de cobertura.
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No leer los `Δ0` de `clase-rango` como «el cuerpo de SECTOR está a Δ0».** Son
+  **del nivel de FILA**, 65 pares, y solo de ahí. Columna y módulo están
+  **CIEGOS** en el lado del clon, no limpios.
+- **No tratar los `4.84 / 10.25 / 16.33 / 17.89 %` como anchos de módulo.** Son
+  separadores de **60 px exactos**: una decisión, no cuatro.
+- **No arreglar `BeneficiosAplicaciones` como defecto de píxel.** Su `80 %` es el
+  valor **correcto** en 4/4: lo que falta es el campo, y eso se arregla en F2-1.
+- **No aplicar el test A al ancho de módulo.** Da la respuesta al revés, y ahora
+  está medido en los dos sentidos.
+- **No dar grupo C por «no varía».** Es que **no tiene capa de builder**: FAQ, 0
+  secciones propias; CASO, 1. Y no es cero de instrumento — el mismo código dio 7
+  en SECTOR y 8 en el control.
+
+---
+
 # HANDOFF — CLASE clasificada: la precondición de F2-1 deja de ser una frase y es 10
 
 > ⚠ **Tanda 2026-08-03 (17.ª).** Seis pasos. **Mitad de decisión: no se arregló

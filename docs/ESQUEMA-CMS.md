@@ -335,6 +335,7 @@ ratificado y cerrado en §1.5b, con su condición de reapertura.
 | `soluciones` | **relación** a la colección de productos, no texto |
 | `proyectos`, `articulos` | **relación** a casos y entradas (ver §3) |
 | `ctaSlides` | **array** |
+| **`anchoPct`** (nivel de MÓDULO) | **campo numérico con defecto `100`**, omitido cuando coincide. **Medido 2026-08-03**: `80 · 90 · 100` en las 4 instancias, a 1440 y a 390 — ver §6c.1. Es **el mismo campo** que `MonoModuloBase.anchoPct` de §1.5, en una segunda colección |
 
 ### 1.5 · Traducción a Payload — MONOGRÁFICO
 
@@ -1269,6 +1270,85 @@ Construirla es parte del coste de esa tanda, y está dicho de antemano.
 
 El más urgente de los 21: **`Breadcrumb max-w-[350px]`**, 28 rutas y ya cobrado
 (−33.25 en producto). Que no bloquee el esquema no lo hace menos defecto.
+
+### ✅ 6c.1 · MEDIDO — el ancho de módulo es CAMPO en SECTOR, y los 10 se PARTEN 9/1 (2026-08-03)
+
+**La medición de desbloqueo que pedía el §6c, hecha.** Pre-registro
+`clase/PRE-REGISTRO-ANCHO-MODULO.md` (`61a9e78`, anterior a la sonda) · acta
+`clase/DECISION-ANCHO-MODULO.md` · evidencia
+`medidas/clase-rango-{1440,390}.json` (`226c30f`, anterior al acta) · sonda
+`clase-rango` con negativo entero en verde (`02d806d`).
+
+> ⚠ **CORRIGE al §6c en su premisa, no en su criterio.** La tabla de arriba dice
+> que los 10 *«cablean ancho de MÓDULO»*. **Leído el fuente, NUEVE cablean
+> retícula** —fila (`86 %`/`80 %`) o columna (`47.25` · `47` · `32` · `50.5` ·
+> `25 %`)— **y solo UNO está al nivel de módulo** (el `<h3>` de
+> `BeneficiosAplicaciones`, `w-[80%]`). Era **confusión de NIVEL**: el precedente
+> de MONOGRÁFICO es del nivel de módulo y a nueve no les aplicaba.
+
+**Lo medido** — 12 rutas × 2 lados × 2 anchos, 24/24 páginas por ancho, control
+con varianza 2/2:
+
+| nivel | SECTOR (4) | CASO (4) | FAQ (2) | veredicto |
+|---|---|---|---|---|
+| fila | `86`×10–12 + `95`×1 (banda de clientes, **sin texto**, igual en las 4) | `86`×1 | — | **plantilla** |
+| columna | `29.67 · 47.25 · 64.83 · 100` | `100`×1 | — | **rejilla de Divi**, derivable del nº de columnas |
+| **módulo** | **`80 · 90 · 100`** | `100`×1 | — | **CAMPO en SECTOR · plantilla en grupo C** |
+
+**Los dos discriminadores coinciden**, así que el veredicto no depende del
+régimen que se le suponga a SECTOR: **intra-página** (Industria trae los tres
+valores) **y entre instancias** (el `90` existe **solo en Industria**), y
+**idénticos a 1440 y a 390**.
+
+**Grupo C no bloquea, y no por «no varía»: porque NO TIENE CAPA DE BUILDER.**
+FAQ trae **0** secciones propias (`faqs-template-default` · `et-tb-has-template`);
+CASO trae **1**, con 1 fila / 1 columna / 1 módulo al valor por defecto. No es un
+cero de instrumento — **el mismo código en la misma pasada devolvió 7 secciones
+en SECTOR y 8 en el control**.
+
+#### La consecuencia sobre el modelo — **`anchoPct` entra en SECTOR**
+
+> **`SectorBlock` gana un campo de presentación editorial al nivel de MÓDULO:
+> `anchoPct?: number`, defecto `100`, omitido en el dato cuando coincide.**
+> Es **el mismo campo, con el mismo nombre y el mismo defecto** que
+> `MonoModuloBase.anchoPct` (§1.5): valores observados `80 · 90 · 100` en SECTOR
+> contra `70 · 80 · 90 · 100` en MONOGRÁFICO. **No es un campo nuevo: es el
+> mismo campo, en una segunda colección.**
+
+Y por eso **no fuerza a fusionar las colecciones** ni contradice §1.5b: lo que se
+comparte es **la definición del campo**, no el documento — la misma decisión que
+el grupo D tomó para `blurb`/`gallery` en §2d.1 (*lo que se duplica es el
+documento, no la definición*).
+
+#### Los 10, repartidos
+
+| | n | cuáles |
+|---|---|---|
+| ✅ **SE ABREN** (cablean fila o columna = plantilla) | **9** | `SectorBody` `SectorHero` `ClaimConFoto` `ListaSimple2Col` `CabeceraSector` `CasoPagina` `CasoDetalles` `CasoGaleria` `FaqSidebar` |
+| ❌ **TRABAJO** (cablea módulo = campo) | **1** | `BeneficiosAplicaciones` — y **con el valor correcto** (`80 %` en 4/4): no es defecto de píxel hoy, es un campo que falta |
+
+#### ⚠ Y uno NUEVO, que el inventario derivado no podía ver
+
+**El inventario buscaba «medida absoluta cableada». Un módulo sin clase de ancho
+no cablea nada — y ése es justo el defecto:**
+
+| `MapaProyectos` | original | clon | Δ |
+|---|---|---|---|
+| @1440 | `90 %` · 1114.55 | `100 %` · 1238.39 | **+123.84** |
+| @390 | `90 %` · 301.84 | `100 %` · 335.39 | **+33.55** |
+
+Medido en los dos lados y los dos anchos; **existe solo en Industria** de los 4
+sectores vivos. MONOGRÁFICO ya le da `anchoPct: 90` al mismo módulo. **El detector
+de un ancho mal no fue otro ancho: fue otra INSTANCIA.**
+
+#### Lo que sigue sin veredicto, con su etiqueta
+
+**El nivel de módulo NO tiene veredicto en el lado del CLON.** El clon solo marca
+la FILA (`data-fila`); en columna y módulo su identidad es un heurístico que
+sobre-casa (**66 «columnas» contra 27**, **102 «módulos» contra 66**), así que
+los dos ejes están **CIEGOS ahí, no limpios** — la sonda cuenta y grita **26
+celdas SIN VEREDICTO**. Se cierra con `data-col`/`data-mod`. Los `Δ0` de la
+corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 
 ## 7 · Decisiones abiertas, en un sitio
 

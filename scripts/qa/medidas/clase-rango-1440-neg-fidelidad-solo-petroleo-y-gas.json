@@ -376,7 +376,7 @@
                 "pct": 86,
                 "w": 1238.39,
                 "h": 559.11,
-                "firma": "Controldemalosoloresindu"
+                "firma": "Contaminaciónpormetano:i"
               }
             ],
             "clon": [
@@ -924,7 +924,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 501.52,
-                "firma": "Controldemalosoloresindu"
+                "firma": "Contaminaciónpormetano:i"
               }
             ],
             "clon": [
@@ -1504,7 +1504,7 @@
           },
           "varianzaOrig": true,
           "defectoRango": false,
-          "pares": 36,
+          "pares": 37,
           "difs": [
             {
               "firma": "Quénecesitasparacontrolarlasemisiones",
@@ -1648,6 +1648,19 @@
               "wO": 1238.39,
               "wC": 224.31,
               "dW": -1014.08
+            },
+            {
+              "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
+              "i": {
+                "o": "16.0.0",
+                "c": "16.1.1"
+              },
+              "pctO": 100,
+              "pctC": 28.88,
+              "d": -71.12,
+              "wO": 1238.39,
+              "wC": 346.13,
+              "dW": -892.26
             },
             {
               "firma": "Ampliatusconocimientosconnuestrasguías",
@@ -2118,7 +2131,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 427.52,
-                "firma": "Controldemalosoloresindu"
+                "firma": "Contaminaciónpormetano:i"
               },
               {
                 "i": "16.0.1",

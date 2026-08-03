@@ -52,6 +52,45 @@ criterios de `docs/research/clase/PRE-REGISTRO.md` §PASO 3. El más urgente de
 ellos —`Breadcrumb max-w-[350px]`, **28 rutas y ya cobrado en −33.25**— es
 defecto de fidelidad, no de esquema.
 
+### ✅ Precondición 2 · **MEDIDA Y CERRADA** (2026-08-03)
+
+La medición existe. Acta `clase/DECISION-ANCHO-MODULO.md` · pre-registro
+`clase/PRE-REGISTRO-ANCHO-MODULO.md` (`61a9e78`, anterior a medir) · evidencia
+`medidas/clase-rango-{1440,390}.json` (`226c30f`) · registro en `ESQUEMA-CMS.md`
+**§6c.1**.
+
+> **Salió MIXTO. El ancho de MÓDULO es CAMPO en SECTOR** —`80 · 90 · 100`,
+> idénticos a 1440 y a 390, con varianza intra-página **y** entre instancias— **y
+> grupo C no bloquea porque no tiene capa de builder** (FAQ: 0 secciones propias;
+> CASO: 1, con todo al valor por defecto).
+
+**Estado real de la precondición: NO queda limpia, queda ACOTADA y barata.**
+
+| | antes | ahora |
+|---|---|---|
+| ítems que bloquean | **10, «sin probar»** | **1, probado** (+1 nuevo que el inventario no podía ver) |
+| qué hay que hacer | desconocido | **una línea de esquema**: `anchoPct?: number` con defecto `100` en el módulo de SECTOR |
+| grupo C | bloqueaba | **no bloquea** |
+
+**Y es una línea de esquema, no una tanda de arreglos:** es **el mismo campo**
+que `MonoModuloBase.anchoPct`, con el mismo nombre y el mismo defecto, en una
+segunda colección. Ya está escrito en `ESQUEMA-CMS.md` §1.4.
+
+> **Consecuencia operativa: F2-1 puede arrancar.** La precondición 2 ya no exige
+> ningún arreglo de componente — exige que el esquema de `sectores` **lleve el
+> campo desde el primer día**, que es exactamente lo que F2-1 hace. Lo que
+> quedaría sin hacer si se arrancase sin esto es lo caro (añadir un campo con
+> contenido ya escrito); con el campo declarado, **no queda nada caro pendiente**.
+
+**Lo que NO cierra, y no es precondición:** los dos defectos de píxel que la
+medición destapó —`BeneficiosAplicaciones` (cableado con el valor correcto) y
+**`MapaProyectos`, +123.84 px a 1440 y +33.55 a 390, solo en Industria**— son
+**Bloque A**, después de F2-1. No tocan el esquema: el campo que necesitan es el
+que se acaba de declarar.
+
+**La precondición 1 sigue abierta** (biblioteca: `articulos-kb`, listados, cola
+larga) y es hoy **la única de las dos** que gobierna el arranque.
+
 ---
 
 ## F2-1 · Esquema
