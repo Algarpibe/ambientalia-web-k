@@ -38,7 +38,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA, w } from "./lib.mjs";
+import { Evaluadas, QA, hoy, w } from "./lib.mjs";
 
 const ANCHOS = [1440, 390];
 
@@ -88,7 +88,7 @@ for (const a of ANCHOS) {
 
 const salida = {
   meta: {
-    fecha: new Date().toISOString().slice(0, 10),
+    fecha: hoy(),
     origen: ANCHOS.map((a) => `medidas/c-cabecera-${a}.json`),
     anchos: ANCHOS,
     rutas: rutas.length,

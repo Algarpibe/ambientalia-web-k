@@ -39,7 +39,7 @@
  * **dentro** del contenido (15/209, §3.3) y es justo el payload que se quiere
  * transcribir.
  */
-import { Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, hoy, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 400); // cortesía con el sitio vivo
 const SABOTAJE = !!process.env.SABOTAJE;
@@ -346,7 +346,7 @@ if (fallos.length) console.log(`\n⚠ ${fallos.length} página(s) no leídas:`, 
 
 w(SABOTAJE ? "medidas/a-spec-SABOTAJE.json" : "medidas/a-spec.json", {
   meta: {
-    fecha: new Date().toISOString().slice(0, 10),
+    fecha: hoy(),
     fuente: "HTML servido del original (no el DOM: los `id` de los h2 los pone el tema)",
     muestra: `${salida.length} de las 24 de a-muestra.json`,
     sabotaje: SABOTAJE,

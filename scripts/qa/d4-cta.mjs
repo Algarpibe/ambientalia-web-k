@@ -16,7 +16,7 @@
  * de lo que parece. Se mide el alto de cada uno: el que no es 0 es el que sale.
  * Es la regla de C2 — «alto 0 no se deduce de la clase, se mide».
  */
-import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -104,7 +104,7 @@ await browser.close();
 
 console.log(`\n█ 4ª sección del pie del CASO @${width}`);
 console.log(JSON.stringify(datos, null, 2));
-w(`medidas/d4-cta-${width}.json`, { meta: { width, url: URL, fecha: new Date().toISOString().slice(0, 10) }, datos });
+w(`medidas/d4-cta-${width}.json`, { meta: { width, url: URL, fecha: hoy() }, datos });
 
 const muertos = censo.informe(`@${width}`);
 const roto = datos.ausente || datos.sinCta ? 1 : 0;

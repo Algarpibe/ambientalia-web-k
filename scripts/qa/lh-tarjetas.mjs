@@ -21,7 +21,7 @@
  * 2 (regla 4 con `min`), y SABOTAJE=1 que rompe el patrón de <article> y tiene
  * que salir 2 escribiendo en su propio fichero.
  */
-import { env, Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, env, hoy, w } from "./lib.mjs";
 
 const ORIGEN = "https://kunakair.com";
 const SABOTAJE = !!env("SABOTAJE");
@@ -86,7 +86,7 @@ const leerTarjeta = (clases, cuerpo) => {
   };
 };
 
-const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), sabotaje: SABOTAJE, paginas: PAGINAS.length }, paginas: {} };
+const salida = { meta: { fecha: hoy(), sabotaje: SABOTAJE, paginas: PAGINAS.length }, paginas: {} };
 let sinArticulos = 0;
 let fallos = 0;
 

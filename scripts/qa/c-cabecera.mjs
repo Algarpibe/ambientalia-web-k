@@ -29,7 +29,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, envRutas, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, envRutas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -190,7 +190,7 @@ const LECTOR = () => {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), rutas: RUTAS.length }, paginas: {} };
+const salida = { meta: { width, fecha: hoy(), rutas: RUTAS.length }, paginas: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
@@ -297,7 +297,7 @@ for (const [ruta, v] of Object.entries(salida.paginas)) {
  * La guarda de «una salida congelada no se pisa» **ya no está aquí**: vive en
  * `w()` de `lib.mjs` y la heredan todas las sondas. Estaba parcheada a mano en
  * esta sonda —la instancia y no la CLASE— y ése es exactamente el error que
- * `CLAUDE.md` §sondas lleva cuatro reglas señalando.
+ * `CLAUDE.md` §sondas lleva varias reglas señalando.
  */
 w(`medidas/c-cabecera-${width}${SUFIJO}.json`, salida);
 

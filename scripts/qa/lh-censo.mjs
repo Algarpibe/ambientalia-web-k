@@ -36,7 +36,7 @@
  * listado con MÁS entradas y con MENOS). La muestra se imprime y se congela
  * con el resto.
  */
-import { env, Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, env, hoy, w } from "./lib.mjs";
 
 const ORIGEN = "https://kunakair.com";
 const MODO = env("MODO") || "censo";
@@ -219,7 +219,7 @@ const leer = (crudo) => {
   };
 };
 
-const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), modo: MODO, sabotaje: SABOTAJE, paginas: PAGINAS.length }, paginas: {} };
+const salida = { meta: { fecha: hoy(), modo: MODO, sabotaje: SABOTAJE, paginas: PAGINAS.length }, paginas: {} };
 let fallos = 0;
 for (const p of PAGINAS) {
   const r = await baja(ORIGEN + p.ruta);

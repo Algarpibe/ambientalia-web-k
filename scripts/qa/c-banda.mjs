@@ -34,7 +34,7 @@
  * se supone nada: se vuelca el árbol somero con tag/clase/alto y se lee. Un
  * selector inventado para «las migas» sería C-SP16 otra vez.
  */
-import { Censo, envRutas, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, envRutas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -227,7 +227,7 @@ const LECTOR = () => {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), rutas: RUTAS.length }, paginas: {} };
+const salida = { meta: { width, fecha: hoy(), rutas: RUTAS.length }, paginas: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.

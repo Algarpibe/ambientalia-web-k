@@ -22,7 +22,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { env, Evaluadas, launch, openPage, QA, settle, w } from "./lib.mjs";
+import { Evaluadas, QA, env, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -184,7 +184,7 @@ const LECTOR = (forma) => {
 };
 
 const { browser } = await launch();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10) }, paginas: {} };
+const salida = { meta: { width, fecha: hoy() }, paginas: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.

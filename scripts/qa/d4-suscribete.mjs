@@ -34,7 +34,7 @@
  * atribuir` que esta sonda viene a atribuir.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { Censo, env, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, env, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -214,7 +214,7 @@ if (LISTA.length === 0) {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), solo: SOLO ?? null }, formas: {} };
+const salida = { meta: { width, fecha: hoy(), solo: SOLO ?? null }, formas: {} };
 let muertas = 0;
 
 const num = (v, n = 8) => String(v ?? "—").padStart(n);

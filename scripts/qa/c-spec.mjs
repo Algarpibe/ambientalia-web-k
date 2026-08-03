@@ -26,7 +26,7 @@
  * (`et_pb_section_0_tb_footer` es el mismo módulo aunque cambie el ordinal) y
  * nada más: si se normalizara el texto, la prueba dejaría de poder fallar.
  */
-import { Evaluadas, launch, w } from "./lib.mjs";
+import { Evaluadas, hoy, launch, w } from "./lib.mjs";
 
 const DORMIR = Number(process.env.DORMIR || 150); // cortesía con el sitio vivo
 
@@ -70,7 +70,7 @@ const { browser } = await launch();
 const page = await browser.newPage();
 await page.goto("about:blank");
 
-const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), n: PAGINAS.length }, paginas: {} };
+const salida = { meta: { fecha: hoy(), n: PAGINAS.length }, paginas: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
  * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa

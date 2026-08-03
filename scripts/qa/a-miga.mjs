@@ -29,7 +29,7 @@
  * `::before`/`::after` del `li`. `getComputedStyle(el, "::after")` lo lee —
  * contenido, ancho, márgenes— y sin eso la comparación se hace a ojo.
  */
-import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -232,7 +232,7 @@ const SEL_CLON = SEL;
 const ev = new Evaluadas({ nombre: `a-miga @${width}`, unidad: "pares", minimo: PARES.length });
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), sabotaje: SABOTAJE }, pares: {} };
+const salida = { meta: { width, fecha: hoy(), sabotaje: SABOTAJE }, pares: {} };
 
 for (const p of PARES) {
   const fila = {};

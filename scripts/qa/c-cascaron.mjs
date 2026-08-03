@@ -26,7 +26,7 @@
  * construcción — se vuelcan al JSON como contexto, y el informe lo dice.
  *
  * ── Un canal de verdad ─────────────────────────────────────────────────────
- * Regla 1 de `CLAUDE.md` §Tres reglas sobre las sondas: lo que imprime y lo que
+ * Regla 1 de `CLAUDE.md` §Reglas sobre las sondas: lo que imprime y lo que
  * cuenta no pueden discrepar. Aquí, **todo eje con varianza se cuenta y cierra
  * el código de salida**; y un eje que falta en una instancia (`null`) también
  * cuenta — «ausente en una y presente en otra» ES varianza, no un hueco que
@@ -34,7 +34,7 @@
  * fallan: una sonda que no mira nada y una que no encuentra nada dan la misma
  * salida.
  */
-import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -69,7 +69,7 @@ const INSTANCIAS = [
 ];
 
 /* ── TEST EN NEGATIVO ───────────────────────────────────────────────────────
- * `CLAUDE.md` §Tres reglas, corolario: *no te creas un «limpio» hasta haber
+ * `CLAUDE.md` §Reglas sobre las sondas, corolario: *no te creas un «limpio» hasta haber
  * probado que la sonda sabe fallar*, y **cada arreglo de la sonda vuelve a
  * correrlo entero**. Éste ya se cobró una vez aquí: la primera versión medía el
  * `<p>` de dentro del contenido rico y daba varianza donde no la había.
@@ -91,7 +91,7 @@ if (process.env.SABOTAJE === "forma") {
 }
 
 const { browser } = await launch();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), n: INSTANCIAS.length }, instancias: {} };
+const salida = { meta: { width, fecha: hoy(), n: INSTANCIAS.length }, instancias: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
@@ -283,7 +283,7 @@ for (const forma of ["caso", "faq"]) {
     // que el informe decía «131 ejes con varianza cero» incluyendo tres que
     // nunca miraron nada (`header·*`: el original no tiene `#main-header`).
     // Un eje muerto y un eje limpio daban el mismo número — que es exactamente
-    // la regla 1 de `CLAUDE.md` §Tres reglas: lo que imprime y lo que cuenta no
+    // la regla 1 de `CLAUDE.md` §Reglas sobre las sondas: lo que imprime y lo que cuenta no
     // pueden discrepar.
     if (conValor.length === 0) { muertos.push(eje); continue; }
     juzgados.push(eje);

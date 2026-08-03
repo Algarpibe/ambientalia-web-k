@@ -71,7 +71,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, hoy, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 
@@ -239,7 +239,7 @@ if (sinEmitir.length) {
 // pisaba la medida buena con la falsa, y eso convierte el test en negativo en
 // destructor de evidencia (`CLAUDE.md` §sondas, reglas 2 y 5).
 w(sabotaje ? "medidas/slugs-SABOTAJE.json" : "medidas/slugs.json", {
-  meta: { fecha: new Date().toISOString().slice(0, 10), sabotaje: sabotaje ?? null },
+  meta: { fecha: hoy(), sabotaje: sabotaje ?? null },
   familias: porFamilia.map(({ familia, slugs, fuente }) => ({ familia, n: slugs.length, fuente })),
   noConstruidas,
   emitidas: emitidas.length,

@@ -9,7 +9,7 @@
  *   · cada hueco entre secciones consecutivas
  *   · el pie, y lo que va entre la última sección y el pie
  */
-import { Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -85,7 +85,7 @@ const LECTOR = () => {
 };
 
 const { browser } = await launch();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10) }, familias: {} };
+const salida = { meta: { width, fecha: hoy() }, familias: {} };
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.

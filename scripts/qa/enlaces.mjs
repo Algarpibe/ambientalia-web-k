@@ -27,7 +27,7 @@
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
-import { Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, hoy, w } from "./lib.mjs";
 
 const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 const BASE = process.env.CLON || "http://localhost:3000";
@@ -237,7 +237,7 @@ if (avisos.length) {
  * ------------------------------------------------------------------------ */
 w("medidas/enlaces.json", {
   meta: {
-    fecha: new Date().toISOString().slice(0, 10),
+    fecha: hoy(),
     paginas: PAGINAS.length,
     publicadas: PUBLICADAS.size,
     totalHrefs,

@@ -19,7 +19,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, env, envRutas, Evaluadas, launch, openPage, QA, settle, w } from "./lib.mjs";
+import { Censo, env, envRutas, Evaluadas, launch, openPage, QA, sello, settle, w } from "./lib.mjs";
 
 /* Esta sonda SOLO abre el original: un `build` del clon no la afecta, así que
  * no debe dispararle la guarda de `BUILD_ID` de `w()` (ver `lib.mjs`).
@@ -409,10 +409,20 @@ if (!CAMPANA) {
   w(`medidas/ruido-crudo${ETIQUETA}.json`, crudo);
   w(`medidas/ruido${ETIQUETA}.json`, resumen);
 } else {
-  const sello = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  /* ⚠ Hora LOCAL, y no es cosmético: el criterio de la campaña —«≥2 h de
+   * separación y al menos 2 DÍAS distintos»— se comprueba leyendo estos
+   * nombres. Con el sello en UTC y la máquina en −05:00, una ráfaga de las
+   * 19:03 del día 2 se archivaba como `2026-08-03T00-03`: dos ráfagas de la
+   * MISMA tarde salían con días distintos y daban el criterio por cumplido. */
+  const marca = sello();
+  /* Y se guarda además el instante ABSOLUTO con su desfase. `sello` sirve para
+   * el nombre y para el DÍA; para restar horas hace falta algo sin ambigüedad,
+   * porque las ráfagas 1 y 2 de cqa6 se escribieron con sello UTC y las nuevas
+   * son locales: restarlas como si fueran lo mismo da 5 h de error. */
+  const ts = new Date().toISOString();
   const dir = `medidas/campana/${CAMPANA}`;
-  w(`${dir}/rafaga-${sello}.json`, {
-    meta: { campana: CAMPANA, sello, corridas: CORRIDAS, rutas: PAGINAS.map(([n]) => n), anchos: [1440, 390] },
+  w(`${dir}/rafaga-${marca}.json`, {
+    meta: { campana: CAMPANA, sello: marca, ts, corridas: CORRIDAS, rutas: PAGINAS.map(([n]) => n), anchos: [1440, 390] },
     resumen,
     crudo,
   });
@@ -427,7 +437,14 @@ if (!CAMPANA) {
   const MIN_DIAS = 2;
   const MIN_SEP_H = 2;
 
-  const sellos = rafagas.map((r) => new Date(r.meta.sello.slice(0, 10) + "T" + r.meta.sello.slice(11).replace(/-/g, ":") + "Z"));
+  /* `ts` cuando está (instante absoluto, sin ambigüedad); si no, el sello
+   * antiguo, que era UTC. Mezclar los dos sin distinguirlos metía 5 h de error
+   * en las separaciones justo en la campaña que las usa como criterio. */
+  const sellos = rafagas.map((r) =>
+    r.meta.ts
+      ? new Date(r.meta.ts)
+      : new Date(r.meta.sello.slice(0, 10) + "T" + r.meta.sello.slice(11).replace(/-/g, ":") + "Z"),
+  );
   const dias = new Set(rafagas.map((r) => r.meta.sello.slice(0, 10)));
   const ordenados = [...sellos].sort((a, b) => a - b);
   const separaciones = ordenados.slice(1).map((t, i) => (t - ordenados[i]) / 3600000);

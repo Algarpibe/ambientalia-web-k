@@ -39,7 +39,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, env, Evaluadas, iniciarClon, launch, openPage, QA, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, QA, env, hoy, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -271,7 +271,7 @@ const LECTOR = (sabotaje) => {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), solo: SOLO ?? null, sabotaje: SABOTAJE ?? null }, rutas: {} };
+const salida = { meta: { width, fecha: hoy(), solo: SOLO ?? null, sabotaje: SABOTAJE ?? null }, rutas: {} };
 let muertas = 0, conDelta = 0, huerfanasTot = 0, noInformativas = 0, comparadas = 0;
 /** Cobertura AL NIVEL EN QUE SE MIDE: filas, no rutas. Ver el informe final. */
 let parejasTot = 0, filasOrigTot = 0, filasClonTot = 0;

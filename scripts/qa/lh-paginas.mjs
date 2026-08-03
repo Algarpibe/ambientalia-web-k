@@ -21,7 +21,7 @@
  * para cualquier N (paginación infinita), esta sonda daría el tope y hay que
  * verlo: por eso imprime cuándo ha topado con `MAX`.
  */
-import { Evaluadas, w } from "./lib.mjs";
+import { Evaluadas, hoy, w } from "./lib.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -80,7 +80,7 @@ const hay = async (ruta, n) => {
   return { ok: s === 200, status: s };
 };
 
-const salida = { meta: { fecha: new Date().toISOString().slice(0, 10), rutas: RUTAS.length, criterio: "último N con HTTP 200; parada por 404", MAX }, paginas: {} };
+const salida = { meta: { fecha: hoy(), rutas: RUTAS.length, criterio: "último N con HTTP 200; parada por 404", MAX }, paginas: {} };
 let peticiones = 0;
 let topes = 0;
 

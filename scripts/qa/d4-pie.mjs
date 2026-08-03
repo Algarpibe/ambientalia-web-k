@@ -43,7 +43,7 @@
  * 0 pasara lo que pasara, que es un verde que no significa nada.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { Censo, env, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, env, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -180,7 +180,7 @@ if (LISTA.length === 0) {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10), solo: SOLO ?? null }, familias: {} };
+const salida = { meta: { width, fecha: hoy(), solo: SOLO ?? null }, familias: {} };
 let muertas = 0;
 
 /* Contrato de `Evaluadas` (lib.mjs): la sonda DECLARA su mínimo de unidades y,

@@ -32,7 +32,7 @@
  * varianza = plantilla; lo que varía entre formas distingue plantillas.
  * No decide nada por sí solo — dice **qué propiedad** hay que llevar al modelo.
  */
-import { Censo, Evaluadas, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, hoy, launch, openPage, settle, w } from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -153,7 +153,7 @@ const LECTOR = (sabotaje) => {
 
 const { browser } = await launch();
 const censo = new Censo();
-const salida = { meta: { width, fecha: new Date().toISOString().slice(0, 10) }, familias: {} };
+const salida = { meta: { width, fecha: hoy() }, familias: {} };
 let muertas = 0;
 
 /** Lee una URL cualquiera con el mismo lector: un selector por lado, dentro. */

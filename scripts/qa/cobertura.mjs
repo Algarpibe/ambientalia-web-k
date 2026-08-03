@@ -33,7 +33,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { Evaluadas, QA, w } from "./lib.mjs";
+import { Evaluadas, QA, hoy, w } from "./lib.mjs";
 
 const M = path.join(QA, "medidas");
 const SABOTAJE = !!process.env.SABOTAJE;
@@ -289,7 +289,7 @@ for (const x of [...recuento].sort((a, b) => b.O - a.O))
 console.log("\ntotal rutas emitidas:", RUTAS.length);
 
 w("medidas/cobertura.json", {
-  meta: { fecha: new Date().toISOString().slice(0, 10), rutas: RUTAS.length, sabotaje: SABOTAJE },
+  meta: { fecha: hoy(), rutas: RUTAS.length, sabotaje: SABOTAJE },
   recuento,
   matriz: Object.fromEntries(RUTAS.map((r) => [r, Object.fromEntries(EJES.map(([e]) => [e, cov[e]?.[r] ?? null]))])),
   tablaMarkdown: lineas.join("\n"),

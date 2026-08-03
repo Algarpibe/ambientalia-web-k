@@ -542,14 +542,76 @@ export function envRutas(nombre) {
  * protege la MEDIDA y ésta protege la EVIDENCIA.
  * ═════════════════════════════════════════════════════════════════════════ */
 
-/** Sufijo con fecha, evitando colisión si ya hay una corrida de hoy. */
-function alLado(destino) {
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA FECHA DE UNA MEDIDA — local, y en UN SOLO SITIO
+ *
+ * ── El defecto, medido en disco (2026-08-02) ──────────────────────────────
+ * `new Date().toISOString().slice(0, 10)` es **UTC**. Con la máquina en −05:00,
+ * toda corrida entre las 19:00 y medianoche se sella **con el día siguiente**:
+ * cuatro medidas escritas a las 19:03 del **02** se llaman `-2026-08-03`.
+ *
+ * ── Por qué no es cosmético, y va en los DOS sentidos ─────────────────────
+ * En este proyecto el día es un operador: *«los deltas solo se comparan entre
+ * medidas del mismo día»*, y el día se lee del nombre del fichero.
+ *
+ *   · **dos ráfagas del MISMO día pueden salir con fechas distintas** — una a
+ *     las 18:00 y otra a las 20:00 quedan como 02 y 03. La campaña C-QA6 exige
+ *     ráfagas «en al menos 2 días distintos»: eso es un **verde falso** del
+ *     criterio, comprado con dos horas en vez de con un día;
+ *   · **y dos de días distintos pueden colapsar en la misma** — la del 02 a las
+ *     20:00 y la del 03 a las 10:00 son ambas `-08-03`, y la segunda va a
+ *     `…-2`, como si fueran dos corridas de una jornada.
+ *
+ * Estaba escrito a pelo en `lib.mjs` **y en 22 sondas más**. Vive aquí y se
+ * importa: es la misma decisión que `w()`, `Censo` y `Evaluadas` — *lo que hay
+ * que acordarse de escribir bien en 23 sitios se escribe mal en alguno*.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** El día de HOY en hora local, `YYYY-MM-DD`. Nunca `toISOString()`. */
+export function hoy(d = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/**
+ * Sello local con hora, `YYYY-MM-DDTHH-MM-SS`. Misma FORMA que el
+ * `toISOString().replace(/[:.]/g,"-").slice(0,19)` que sustituye —los ficheros
+ * de campaña ya escritos siguen ordenando igual— y hora **local**.
+ *
+ * Es el caso que más duele del sello en UTC: las ráfagas de la campaña C-QA6 se
+ * nombran con él, y una corrida de las 19:03 del día 2 se archivaba como
+ * `…2026-08-03T00-03-…`. El criterio de la campaña es «≥2 h de separación y al
+ * menos 2 días distintos», y se comprueba **leyendo esos nombres**.
+ */
+export function sello(d = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${hoy(d)}T${p(d.getHours())}-${p(d.getMinutes())}-${p(d.getSeconds())}`;
+}
+
+/**
+ * Sufijo con fecha, evitando colisión si ya hay una corrida de hoy.
+ *
+ * ⚠ **Y el segundo defecto de esta función, que la hacía fabricar basura:** la
+ * comprobación de *«idéntico ⇒ no dupliques»* de `w()` mira **solo el destino
+ * canónico**, no los ficheros fechados que ESTA función crea. Así que dos
+ * corridas cuya salida difiere del congelado producían `-fecha.json` y
+ * `-fecha-2.json` **byte a byte iguales** — comprobado en `slugs`, `cobertura`,
+ * `enlaces` y `c-bases`, los cuatro diffs vacíos.
+ *
+ * Es la misma idempotencia que `w()` ya tenía, sin aplicar al camino
+ * alternativo: se guarda evidencia nueva, no copias de la de hace un minuto.
+ */
+function alLado(destino, cuerpo) {
   const dir = path.dirname(destino);
   const ext = path.extname(destino);
   const base = path.basename(destino, ext);
-  const hoy = new Date().toISOString().slice(0, 10);
-  let cand = path.join(dir, `${base}-${hoy}${ext}`);
-  for (let n = 2; fs.existsSync(cand); n++) cand = path.join(dir, `${base}-${hoy}-${n}${ext}`);
+  const dia = hoy();
+  let cand = path.join(dir, `${base}-${dia}${ext}`);
+  for (let n = 2; fs.existsSync(cand); n++) {
+    // idéntico a una corrida ya fechada ⇒ ése es el fichero, no uno nuevo
+    if (cuerpo !== undefined && fs.readFileSync(cand, "utf8") === cuerpo) return cand;
+    cand = path.join(dir, `${base}-${dia}-${n}${ext}`);
+  }
   return cand;
 }
 
@@ -649,10 +711,13 @@ export function w(file, data, { pisar = false } = {}) {
       console.log("→", rel(destino), "(idéntica a la congelada)");
       return destino;
     }
-    const alt = alLado(destino);
+    const alt = alLado(destino, cuerpo);
+    const yaEstaba = fs.existsSync(alt) && fs.readFileSync(alt, "utf8") === cuerpo;
     console.log(
       `\n⚠ ${rel(destino)} ya existe y NO coincide: es una salida CONGELADA y no se pisa.\n` +
-        `   Esta corrida va a ${rel(alt)}.\n` +
+        (yaEstaba
+          ? `   Esta corrida es IDÉNTICA a ${rel(alt)}, que ya está: no se duplica.\n`
+          : `   Esta corrida va a ${rel(alt)}.\n`) +
         `   Si de verdad quieres re-congelar: PISAR=1 npm run <la sonda>\n`,
     );
     fs.writeFileSync(alt, cuerpo);
