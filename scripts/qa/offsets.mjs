@@ -210,7 +210,19 @@ const extraer = function () {
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "offsets", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El «a medias» de la lista: `1` es CORRECTO sin `--cmp` y FLOJO con él.**
+ * Sin `--cmp` la sonda mide **una** ruta y su invariante es esa; con `--cmp`
+ * mide `rutaA` **contra** `rutaB`, y entonces el veredicto —holguras
+ * comparadas, offsets enfrentados— **no existe con un solo lado**.
+ *
+ * O sea que el mínimo **no es una constante de la sonda: es una constante del
+ * MODO**. Escribir `1` a secas hacía que el modo comparador heredara el listón
+ * del modo simple, que es la misma clase que `dos-rutas`, `mono-cmp` y
+ * `tree-cmp` — con el agravante de que aquí **la mitad de las corridas sí
+ * estaban bien**, y eso es justo lo que impide ver el defecto.
+ */
+const ev = new Evaluadas({ nombre: "offsets", unidad: rutaB ? "páginas (las 2 que compara)" : "páginas", minimo: rutaB ? 2 : 1, porPaginas: true });
 
 const { browser } = await launch();
 // el parámetro NO se llama `ruta`: taparía el import del mismo nombre
