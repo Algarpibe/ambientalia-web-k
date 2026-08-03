@@ -32,7 +32,17 @@ const [ORIG, CLON] = URLS[cual];
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "mono-cmp", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1` y esta sonda es un COMPARADOR: necesita los dos lados.**
+ * `URLS[clave]` es siempre `[original, clon]`, así que el invariante es «he
+ * abierto el original **y** el clon». Con `1`, una corrida que sacara el
+ * original y se dejara el clon —o al revés— salía verde **habiendo comparado
+ * nada**, que es la familia entera de «0 comparado = verde».
+ *
+ * Se **deriva**, no se escribe: si un día se compara más de un monográfico por
+ * corrida, el listón sube solo.
+ */
+const ev = new Evaluadas({ nombre: "mono-cmp", unidad: "páginas (2 por monográfico: original y clon)", minimo: 2, porPaginas: true });
 
 const { browser } = await launch();
 
