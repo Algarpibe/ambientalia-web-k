@@ -1,3 +1,144 @@
+# HANDOFF — CLASE clasificada: la precondición de F2-1 deja de ser una frase y es 10
+
+> ⚠ **Tanda 2026-08-03 (17.ª).** Seis pasos. **Mitad de decisión: no se arregló
+> ni un componente.** El entregable es el plan que ejecuta la siguiente, más un
+> número que hoy no existía. PASOS 1–3 commiteados (`e6c9cb3`) **antes** de
+> clasificar y de recomendar — el orden de grupo D, porque *una tanda que decide
+> y arregla a la vez escribe el criterio que su arreglo cumple*.
+
+## 0 · El titular
+
+> **«CLASE es precondición de F2-1» = 10 de 31 ítems. Y esos 10 se desbloquean
+> con UNA MEDICIÓN, no con diez arreglos.**
+
+Los otros **21 son trabajo de plantilla que no toca el esquema**, así que no
+tienen por qué preceder a F2-1.
+
+## 1 · El inventario crece ×3.9 — y era de esperar
+
+Sonda nueva `qa:clase-censo` (`medidas/clase-censo.json`): 74 componentes → 58
+con medida absoluta → 41 con alcance ≥2 **rutas** → 33 candidatos → **31 reales**.
+**El inventario a mano tenía ~8.**
+
+**Tres defectos de la lista a mano, dos míos y cazados contra casos conocidos:**
+
+1. **`BandaCabecera` no salía**: su `165.58` no es clase Tailwind sino literal de
+   objeto. El detector medía *«medida absoluta escrita en Tailwind»*, no *«medida
+   absoluta cableada»*.
+2. **Contar IMPORTADORES subcuenta justo donde duele.** `CabeceraSector` lo
+   importa **1** fichero — que sirve **6 rutas**. Y 6 de las 11 páginas son
+   dinámicas. Corregido a **alcance transitivo en rutas emitidas**: con
+   importadores, 27 compartidos; con rutas, **41**. `RelacionadosA` pasa de «1
+   importador» a **10 rutas**.
+3. **El `345.1` que S10 cita como cableado ya no existe en `src/`.** La lista
+   citaba un valor muerto.
+
+## 2 · El criterio de bloqueo, que es lo reutilizable
+
+> **BLOQUEA = el esquema quedaría MAL si se migra así.** Y se resuelve en una
+> pregunta: **¿el valor cableado lo elige EL EDITOR (campo) o se deriva del
+> CONTENIDO (lo calcula la plantilla)?**
+
+- **derivado del contenido** → alto que sale del texto: lo calcula la plantilla,
+  **cero campos**. Rompe la página hoy; **no rompe el esquema**. → NO BLOQUEA.
+- **elegido por el editor** → si el esquema no tiene el campo, **va mal a
+  Payload**. → BLOQUEA.
+
+**Y la duda cuenta como bloqueo** por la Razón 3 de §1.5b: **añadir un campo
+después de que haya contenido escrito es la dirección cara.**
+
+## 3 · Los 10 que bloquean: no por rotos, por SIN PROBAR
+
+Cablean **ancho de MÓDULO** en SECTOR (`SectorBody` `SectorHero` `ClaimConFoto`
+`ListaSimple2Col` `BeneficiosAplicaciones` `CabeceraSector`) y grupo C
+(`CasoPagina` `CasoDetalles` `CasoGaleria` `FaqSidebar`).
+
+**`anchoPct` existe SOLO en `src/lib/monografico.ts`** — y ahí, donde se miró,
+**resultó campo** (70·80·90·100 en la misma página, −55 por instancia ×10).
+Fuera de MONOGRÁFICO nadie lo ha mirado: **SIN PROBAR**, y *sin probar no se
+cablea* — pero está cableado.
+
+> **Lo que los desbloquea: la varianza intra-página del ancho de módulo en
+> SECTOR y grupo C, contra el original, a 1440.** Un sí o un no. Sonda:
+> extensión de `ancho-cuerpo` al nivel de **módulo** (hoy mide fila).
+
+## 4 · Los 21 que no bloquean, y la sonda que les falta
+
+Altos derivados del contenido · retícula de fila por familia (86 %/80 % = la
+colección) · cajas de icono y separadores · `Footer` (ficha propia).
+
+> **No existe hoy sonda que mida «el alto lo pone el contenido».** Todas comparan
+> **un** contenido contra **un** original; esta clase necesita **el mismo
+> componente con N contenidos** y que el alto **varíe** como varía el del
+> original. `clase-rango` cierra con **dos** números: fidelidad (Δ0 por
+> instancia) **y rango** (varianza>0 donde el original varía). **Sin el segundo
+> no sirve, porque el defecto es precisamente «no varía».** Construirla es coste
+> de esa tanda, dicho de antemano.
+
+Más urgente de los 21: **`Breadcrumb max-w-[350px]`** — 28 rutas, ya cobrado en
+**−33.25**. Que no bloquee el esquema no lo hace menos defecto.
+
+## 5 · Recomendación de rumbo (la decisión es del propietario)
+
+> **F2-1 arranca EN PARALELO, precedido de la medición corta de desbloqueo.**
+
+1. **AHORA** · medición del ancho de módulo en SECTOR y grupo C. Corta, no
+   construye nada, sale con un sí o un no.
+2. **EN PARALELO** · F2-1 (esquema) con los content types ya decididos.
+3. **DESPUÉS y sin prisa** · los arreglos CLASE contra los criterios del
+   pre-registro, construyendo `clase-rango`.
+
+**El riesgo mayor y el menos visible es NO arrancar**: el proyecto sigue puliendo
+píxeles mientras el objetivo de negocio —salir de WordPress— no avanza, y **cada
+ítem de CLASE parece justificado por sí solo**. La biblioteca es el instrumento
+que prueba el modelo, no el entregable.
+
+**Lo que NO se recomienda:** arrancar F2-1 **sin** la medición previa. Es la
+única pieza donde equivocarse es cara de deshacer.
+
+**ESCALÓN DECLARADO: no se disparó.** La única frontera que apareció (¿es
+`anchoPct` campo fuera de MONOGRÁFICO?) falla dos de las tres condiciones —**la
+arbitra una medición concreta** y **tiene precedente directo y medido**. Así que
+no es decisión aplazada: es medición pendiente, y va de paso 1.
+
+## 6 · LOS DOS BLOQUES SIGUIENTES
+
+**Bloque A · ejecución de los arreglos CLASE.** Contra los criterios de
+`docs/research/clase/PRE-REGISTRO.md` §PASO 3 —cada ítem con su sonda, sus
+anchos, su instancia y su número—. Incluye **construir `clase-rango`**, que no
+existe. Empezar por `Breadcrumb max-w-[350px]` (28 rutas).
+
+**Bloque B · construir `articulos-kb`** (6 instancias, decidido en
+`ESQUEMA-CMS.md` §2d.1): content type propio con `blurb`/`gallery` más las
+definiciones comunes exportadas, y **su propia sonda comparadora de dos lados
+desde la primera tanda** — *un arquetipo nuevo no hereda cobertura*, y el
+arquetipo más reciente estaba tan descubierto como el más viejo.
+
+## 7 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — 2026-08-04 o después, OBLIGATORIO otro día.** Las
+   dos que hay son ambas del 08-03. Con ella en vuelo: **nada de `check` ni
+   `build`**.
+2. **Medición de desbloqueo** del ancho de módulo (§3) — precondición real de F2-1.
+3. **Bloque A** (arreglos CLASE) y **Bloque B** (`articulos-kb`).
+4. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+5. **Las 17 filas sin emparejar** de `ancho-cuerpo` — bloquean cerrar el grupo B.
+6. **Comportamiento a 0/31** en la matriz de cobertura.
+7. **La cola larga de páginas compuestas** (13 hubs) — `MonoSeccion[]` no la cubre.
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No tratar los 31 como precondición de F2-1.** Son **10**, y se desbloquean
+  con una medición.
+- **No arreglar los 10 antes de medirlos.** Si el ancho de módulo no varía, son
+  plantilla y no hay nada que arreglar — arreglar primero es cablear otra vez.
+- **No construir `clase-rango` con un solo número.** Sin el eje de rango mide
+  fidelidad y **se le escapa el defecto de esta clase**.
+- **No leer el inventario a mano** (~8 ítems): está superado y contiene al menos
+  un valor muerto. El bueno es `medidas/clase-censo.json`, derivado.
+
+---
+
 # HANDOFF — grupo D decidido: cinco preguntas, cinco predicados, cero argumentos
 
 > ⚠ **Tanda 2026-08-03 (16.ª).** Siete pasos. Tanda de **DECISIÓN**: no se

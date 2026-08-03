@@ -5123,3 +5123,33 @@ renglones del módulo «Artículos y Guías» (27 · 54 · 81), no la base de le
 
 **Hasta que cierre, el −30 de `/…-en-edar` a 390 sigue SIN PROBAR**, con esa
 etiqueta: ni defecto ni limpio.
+
+---
+
+## 📅 PROGRAMADA · ráfaga 3 de `cqa6-390` — fecha mínima 2026-08-04
+
+**NO se lanzó el 2026-08-03 aunque había hueco de sobra**, y la razón es el
+criterio, no la agenda:
+
+> Las ráfagas 1 y 2 son **las dos del 08-03** (09:39 y 11:58, separadas 2.31 h).
+> Así que **el segundo día de la campaña depende ENTERA de la ráfaga 3**. Si
+> cayera también el 08-03, la campaña tendría 3 ráfagas y **UN solo día**: no
+> cierra, por muy separadas que estén.
+
+Es la diferencia con `cqa6`, donde las ráfagas 1 y 2 ya aportaban dos días
+(07-30 y 08-02) y la 3 podía caer donde quisiera.
+
+```bash
+# ≥2026-08-04, y ≥2 h de la última (11:58 local del 08-03 — sobra con el cambio de día)
+RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
+  CAMPANA=cqa6-390 npm run qa:ruido -- 3
+```
+
+**Con ella en vuelo: nada de `check` ni `build`** — le cambian el `.next` al
+servidor por debajo y la corrida entera se descarta, porque no se sabe dónde
+cayó el corte.
+
+**Qué cierra:** el suelo de `h1` a 390 en esas 3 rutas, y con él el **−30 de
+`/…-en-edar` a 390**, que sigue **SIN PROBAR** — ni defecto ni limpio. Recordar
+que **no lo resuelven más cargas**: `estados-390` ya puso 180 sin ver un segundo
+estado (cota <5 % por carga). Lo que falta es el eje de los **días**.

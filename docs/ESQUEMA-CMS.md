@@ -1067,7 +1067,7 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 | # | qué | estado |
 |---|---|---|
 | **CMS-1** | el caso de éxito tiene **dos patrones de ruta**: 53 en `/es/casos-de-exito/` y **4 en `/es/case-studies/`** | **✅ resuelta (2026-07-30, C-2): el prefijo como campo con defecto** en la colección única `casos` — §2b y `grupo-C/DECISIONES.md` D2. Los 4 son contenido propio en español sobre la misma plantilla; el modelo es robusto a C-SP2 (las rutas cruzadas no se emiten) |
-| **CLASE (S9–S11)** | 4 residuos de SECTOR con una causa: **componente calibrado con UNA instancia** | **es deuda de CMS-readiness, no de acabado**: un CMS no da un rango de contenido, da cualquiera. Los extremos ya están medidos (alto del slider @390: 265.06 · 300.14 · 300.16; `h1` de EDAR a 4 líneas) |
+| **CLASE (S9–S11)** | ~~4 residuos de SECTOR~~ → **31 ítems derivados** con una causa: **componente calibrado con UNA instancia** | **✅ CLASIFICADA (2026-08-03, `docs/research/clase/`)** — ver §6c. El inventario a mano tenía ~8; el derivado tiene **31** (`medidas/clase-censo.json`). **10 BLOQUEAN F2-1 · 21 no.** Y los 10 se desbloquean con **UNA medición**, no con 10 arreglos |
 | **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **CMS-0b ya está decidida** (volumen persistente) y **no lo cierra ni lo reabre**: dónde viven los ficheros no decide qué variantes se generan. Lo que queda es el juego de tamaños que emita el CMS y su redondeo — **SIN MEDIR**, y es lo mismo con volumen que con S3, así que la reversibilidad de CMS-0b no lo toca |
 | **S1** | tarjetas de caso y de artículo: **la mitad construida del par listado→detalle** (206 páginas) | los modelos `CaseStudy`/`BlogPost` son la **proyección de teaser**: falta cuerpo, slug (hoy `href` absoluto al original), taxonomía y SEO |
 | **C-QA7** (2026-07-31) | el **`pt` de la primera fila del cuerpo** en las 4 páginas de producto (régimen builder) es **campo, no plantilla**: huella test A medida con `qa:banda` — **0 px a los dos anchos** en accesorios/api/software (el editor lo anuló) y **2 %/30 (default intacto)** en monitor. Cuatro hermanas, dos valores | cuando PRODUCTO/CATÁLOGO/SOFTWARE se modelen, la fila del hero lleva su ajuste de ritmo como **campo con defecto 2 %/30** (la familia de `flujo` de SECTOR, en la entrada del cuerpo). Hoy resuelto en plantilla por página, cada una con su valor **medido**. Y el kicker (35px/42 ≤767, 50/60 desde 768) es **plantilla con varianza cero en los 4**: al modelar, UN componente — cablearlo por instancia ya costó dos defectos (C-QA7) |
@@ -1226,6 +1226,49 @@ observadas son las tres que existen: no hay ninguna forma con fila ancha y
 tipografía de 18px, ni con `padding` y fila ancha.
 
 ---
+
+## 6c · CLASE, clasificada: 10 bloquean F2-1 y 21 no (2026-08-03)
+
+Acta: `docs/research/clase/` (`PRE-REGISTRO.md` commiteado antes de clasificar;
+`DECISION.md` con los PASOS 4 y 5). Evidencia derivada: `medidas/clase-censo.json`.
+
+**El inventario estaba escrito a mano y era ~8. Derivado son 31** — 74
+componentes, 58 con medida absoluta, 41 con alcance ≥2 **rutas**, 33 candidatos,
+−2 falsos positivos. Crece **×3.9**.
+
+### El criterio de bloqueo, que es lo reutilizable
+
+> **BLOQUEA = el esquema quedaría MAL si se migra con el componente como está.**
+> Y se resuelve en una pregunta: **¿el valor cableado lo elige EL EDITOR (campo)
+> o se deriva del CONTENIDO (lo calcula la plantilla)?**
+
+| | ítems | por qué |
+|---|---|---|
+| **BLOQUEAN** | **10** | cablean **ancho de MÓDULO** en SECTOR (`SectorBody` `SectorHero` `ClaimConFoto` `ListaSimple2Col` `BeneficiosAplicaciones` `CabeceraSector`) y grupo C (`CasoPagina` `CasoDetalles` `CasoGaleria` `FaqSidebar`). **`anchoPct` existe SOLO en `monografico.ts`**, y donde se midió resultó **campo** (70·80·90·100, −55 ×10). Fuera de ahí: **SIN PROBAR** |
+| **NO bloquean** | **21** | altos derivados del contenido (los calcula la plantilla, cero campos), retícula de fila **por familia** (86 %/80 % = la colección, derivable), cajas de icono y separadores |
+
+**Por qué la duda cuenta como bloqueo:** Razón 3 de §1.5b — **añadir un campo
+después de que haya contenido escrito es la dirección cara**.
+
+### Lo que desbloquea F2-1: una MEDICIÓN, no diez arreglos
+
+> **La varianza intra-página del ancho de módulo en SECTOR y grupo C, contra el
+> original, a 1440.** Sale con un sí o un no. Si varía → `anchoPct` (o
+> equivalente) entra en esos content types **antes** de congelar el esquema. Si
+> no varía en ninguna instancia → los 10 pasan a NO BLOQUEA sin tocar una línea.
+
+Sonda: extensión de `ancho-cuerpo` al nivel de **módulo** (hoy mide fila).
+
+### Los 21 no son precondición
+
+Se hacen después, contra los criterios de `clase/PRE-REGISTRO.md` §PASO 3, y
+necesitan **una sonda que no existe**: `clase-rango`, que cierra con **dos**
+números —fidelidad (Δ0 por instancia) **y rango** (varianza>0 donde el original
+varía)—. Sin el segundo no sirve: **el defecto de esta clase es «no varía»**.
+Construirla es parte del coste de esa tanda, y está dicho de antemano.
+
+El más urgente de los 21: **`Breadcrumb max-w-[350px]`**, 28 rutas y ya cobrado
+(−33.25 en producto). Que no bloquee el esquema no lo hace menos defecto.
 
 ## 7 · Decisiones abiertas, en un sitio
 

@@ -19,11 +19,38 @@ migrar una vez y migrar dos.
    (`docs/research/CENSO-ARQUETIPOS.md` es el censo; hoy la biblioteca va por
    el ~30 % de formas). El esquema se congela con el último arquetipo: abrir
    colecciones antes es re-migrar, y re-migrar con contenido dentro es lo caro.
-2. **Tanda CLASE hecha** (S9–S11, `ESQUEMA-CMS.md` §6): **un CMS no da *un*
-   contenido, da *cualquiera*.** Los componentes calibrados con una instancia
-   están medidos y los extremos anotados (slider @390: 265.06 · 300.14 ·
-   300.16; el `h1` de EDAR a 4 líneas); con el CMS delante, esa deuda deja de
-   ser residuo de QA y pasa a ser un formulario que rompe la página.
+2. ~~**Tanda CLASE hecha**~~ ⚠ **REFORMULADA con número el 2026-08-03** — ver
+   abajo. Enunciado anterior: *«la tanda CLASE hecha (S9–S11), porque un CMS no
+   da un contenido, da cualquiera»*. Sigue siendo cierto **y era demasiado
+   grueso como precondición**: exigía 31 arreglos cuando el esquema solo depende
+   de 10, y de esos 10 depende **por una medición, no por un arreglo**.
+
+### ⚠ Precondición 2, REFORMULADA — de «tanda CLASE hecha» a un número
+
+La tanda de decisión CLASE (`docs/research/clase/`, 2026-08-03) derivó el
+inventario —**31 ítems reales, no los ~8 escritos a mano**— y lo clasificó con
+el criterio *«¿el esquema quedaría MAL si se migra así?»*:
+
+| | ítems | qué son |
+|---|---|---|
+| **BLOQUEAN** | **10** | cablean **ancho de MÓDULO** en SECTOR y grupo C, y `anchoPct` **solo existe en `monografico.ts`** — donde se midió, resultó **campo** (70·80·90·100, coste −55 ×10). Fuera de ahí está **SIN PROBAR** |
+| **NO bloquean** | **21** | altos derivados del contenido (los calcula la plantilla), retícula de fila por familia (derivable de la colección), cajas de icono y separadores. **Cero campos nuevos** |
+
+> **La precondición real de F2-1 no son 31 arreglos: es UNA medición** — la
+> varianza intra-página del ancho de módulo en SECTOR y grupo C contra el
+> original. Sale con un sí o un no. Si varía, `anchoPct` (o su equivalente) entra
+> en esos content types **antes** de congelar el esquema; si no varía, los 10
+> pasan a NO BLOQUEA sin tocar una línea.
+
+**Por qué la duda cuenta como bloqueo y no se despacha con «ya se verá»:** es la
+Razón 3 de §1.5b — **añadir un campo después de que haya contenido escrito es la
+dirección cara**. Un campo que falta se descubre cuando alguien ya editó 40
+páginas.
+
+**Los 21 restantes NO son precondición de F2-1** y se hacen después, contra los
+criterios de `docs/research/clase/PRE-REGISTRO.md` §PASO 3. El más urgente de
+ellos —`Breadcrumb max-w-[350px]`, **28 rutas y ya cobrado en −33.25**— es
+defecto de fidelidad, no de esquema.
 
 ---
 
