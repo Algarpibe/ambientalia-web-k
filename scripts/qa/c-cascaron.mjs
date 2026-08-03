@@ -230,7 +230,16 @@ for (const inst of INSTANCIAS) {
 }
 await browser.close();
 
-w(`medidas/c-cascaron-${width}${SUFIJO}.json`, salida);
+/* ⚠ Aquí había un `w()` — el MISMO fichero que se escribe al final, pero SIN
+ * `veredicto` ni `estiloEnLineaTotal`, que se calculan más abajo. O sea que cada
+ * corrida dejaba en `medidas/` **dos ficheros**: uno completo y otro que es un
+ * prefijo estricto suyo, con el mismo nombre salvo el `-2` y **sin nada que
+ * indique que está a medias**.
+ *
+ * Es la regla 7 de `CLAUDE.md` §sondas por la puerta de atrás: no es un
+ * artefacto de test, pero tampoco es una medida — es media. Y la próxima sesión
+ * consulta `medidas/` sin preguntar. Se quita: el que vale es el del final.
+ * (Detectado al correr el lote C de la validación en vivo, 2026-08-02.) */
 
 /* ─────────────────────── el veredicto, por forma ─────────────────────── */
 
