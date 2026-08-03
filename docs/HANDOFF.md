@@ -1,3 +1,191 @@
+# HANDOFF — grupo D: HD1 rechazada, y la frontera sale doble
+
+> ⚠ **Tanda 2026-08-03 (15.ª).** Cinco pasos. Tanda de **RECON**: no se escribió
+> código, no se construyó nada, no se tocó `MonoSeccion[]`. El §6 del
+> pre-registro lo prohibía hasta tener la respuesta, **y la respuesta llegó en
+> D1**.
+
+## 0 · El veredicto
+
+> ❌ **HD1 RECHAZADA por D1.** `MonoSeccion[]` **no** expresa el cuerpo del grupo
+> D: faltan **4 kinds de módulo** —`blurb` · `video` · `toggle` · `gallery`— y
+> los necesitan **10 de las 13** páginas. **El grupo D cuesta arquetipo.**
+
+D1 mandaba sobre D2 y D3 por el propio pre-registro (*«un cuerpo idéntico al
+píxel después de añadir campos no prueba nada»*), así que **D2/D3 no se evalúan**:
+medirlos exigiría construir, que es lo que D1 acaba de declarar caro.
+
+## 1 · Lo primero que salió, y no estaba en el enunciado
+
+**«13 páginas» no son 13 artículos.** Son 13 URLs, y la cuenta de secciones
+propias las parte sin ambigüedad:
+
+| forma | n | secciones propias | varianza |
+|---|---|---|---|
+| **artículo de KB** | **6** | **1** en las 6 | **cero** ⇒ plantilla |
+| **hub / índice** | **7** | 1 · 1 · 5 · 5 · 7 · 7 · 11 | **1 → 11** ⇒ campo |
+
+Son **dos formas**, y probablemente dos colecciones. Meterlas en el mismo saco
+era un supuesto del enunciado, no una medida.
+
+## 2 · PASO 1 · Régimen, verificado en las 13
+
+**13 de 13: `page-template-default` + `et_pb_pagebuilder_layout` ⇒ BUILDER.**
+Leído en el `<body>` servido de cada una, no heredado de la familia.
+
+Pero llevan **además** `et-tb-has-body`, así que contra los controles:
+
+| | tpl | secc. `_tb_body` | propias |
+|---|---|---|---|
+| SECTOR · MONOGRÁFICO | `sectors` | **0** | 7 · 8 |
+| grupo A (blog) | `single-post` | **3** | **0** |
+| **grupo D** | `default` | **1** | 1 … 11 |
+
+> **El grupo D es HÍBRIDO y no cae en ninguno de los dos casilleros de
+> `CLAUDE.md`**: plantilla de theme-builder que pone cascarón **más** una sección
+> propia del builder dentro. La lectura de builder vale **para la sección
+> propia**; el resto lo fijó quien construyó la plantilla.
+
+## 3 · PASO 2 · El criterio en el instrumento, y lo que costó
+
+`mono-cmp` corta el cuerpo del original entre la miga «InicioSectores» y el
+`et_pb_fullwidth_section`. Medido, con el control discriminando:
+
+| | miga «InicioSectores» | `fullwidth_section` |
+|---|---|---|
+| KB artículo · KB hub | **NO** | **NO** |
+| CONTROL monográfico | **SÍ** | **SÍ** |
+
+**Coste contado ANTES de tocar nada, y no se tocó:**
+
+| # | modificación necesaria |
+|---|---|
+| 1 | otro ancla de miga (la del KB dice «Soporte / Centro de ayuda») |
+| 2 | otro ancla de cierre (no hay slider de ancho completo) |
+| 3 | otro `+2` en la rebanada (salta banda de clientes + hero **de SECTOR**) |
+| — | **y el lado del CLON no existe**: son comparadores de dos lados |
+
+**Tres modificaciones del corte y un lado ausente**, todo antes de mirar un píxel
+de contenido. Por el contrapositivo del criterio, eso **es** coste de arquetipo.
+
+> **Y una nota honrada sobre el criterio:** no se puede evaluar **entero** sin
+> construir, porque falta el lado del clon. Lo que sí se evalúa sin construir es
+> el lado del original, y ahí ya falla. No se forzó el resto — D1 ya había
+> cerrado.
+
+Las sondas **fallan en voz alta** (`avisoCorte`): no habrían dado verde falso.
+
+## 4 · PASO 3 · 13 instancias, y qué decide la comparación
+
+Inventario acotado a las **secciones propias**.
+
+> ⚠ **El selector se validó contra los controles primero.** La primera versión
+> buscaba `<section>` y dio **0 propias en el control**, donde hay 8 — **selector
+> muerto, no un cero** (regla 4). Divi las emite como `<div class="et_pb_section">`.
+> Corregido, el control da **8 y 7**: los valores conocidos.
+
+Y la comparación de 13 —la lección de Industria, *una sola no distingue plantilla
+de campo*— decide esto:
+
+| propiedad | varianza intra-forma | veredicto |
+|---|---|---|
+| secciones propias en artículos | **0** | plantilla |
+| secciones propias en hubs | 1 → 11 | **campo** |
+| barra lateral pegajosa | **0** (13/13) | plantilla |
+
+## 5 · PD3 acertó en el QUÉ y falló en el DÓNDE — y eso la mejora
+
+PD3 predijo que la barra lateral sería la frontera. **Lo es.** Pero:
+
+```
+et_pb_section_0_tb_body   ← PLANTILLA: sidebar SÍ · sticky SÍ · post_content SÍ
+  └── et_pb_section_0     ← PROPIA: sidebar ·  · sticky ·
+```
+
+> **Está en 13 de 13 y siempre en la PLANTILLA, nunca en la sección propia.** No
+> es un campo de `MonoColumna`: es **cascarón**, como la cabecera y el pie.
+
+**Y es mejor noticia que la prevista:** una barra lateral que fuera campo de
+columna **contaminaría el content type de MONOGRÁFICO**. Siendo cascarón, el
+content type se salva y lo que cuesta es **una plantilla de página**.
+
+El aviso del recon de listados quedó atendido de paso: `barraLateral` daba falsos
+positivos cazando el área de widgets **del pie**. Medido por sección, **el control
+monográfico da NINGUNO en el cuerpo teniendo sidebar en el pie** — discrimina.
+
+| | predicción | resultado |
+|---|---|---|
+| PD1 · retícula y ritmo | entran | ✅ acierta |
+| PD2 · texto/imagen/botón | entran | ✅ acierta — 3 de 6 artículos solo usan eso |
+| PD3 · la barra lateral falla | falla | ✅ acierta, **un nivel más arriba** |
+| PD4 · el `blurb` | «según qué sea» | ❌ **falla** — 36 · 18 · 18 |
+
+## 6 · PASO 4 · La familia de calibración, ESPERADA
+
+**No hay Δ que adjudicar: no se construyó nada.** Lo que se deja escrito es la
+expectativa, para que no se lea al revés cuando llegue:
+
+> El grupo D sería el **TERCER cuerpo** sobre cascarón compartido. Así apareció
+> el **−36.02**: un ancho mal que **ningún ancho enseñaba** porque los titulares
+> de las 4 instancias vivas eran cortos, y que solo salió cuando el MONOGRÁFICO
+> trajo titulares largos.
+
+1. **Cualquier Δ es candidato a defecto DEL COMPONENTE COMPARTIDO** antes que del
+   grupo D. Se adjudica contra el original **una a una**.
+2. **Los títulos del grupo D son largos** (`por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire`):
+   es justo el contenido que destapa anchos mal puestos.
+3. Su cascarón es **distinto** del de SECTOR (sin banda de clientes ni slider),
+   así que **no hereda su calibración**.
+
+## 7 · PASO 5 · Esquema actualizado EN esta tanda
+
+`ESQUEMA-CMS.md` **§2d** nuevo. Ojo a la dirección, que es la contraria a la
+prevista: **HD1 rechazada significa que `MonoSeccion[]` NO gana un consumidor** —
+el grupo D es arquetipo propio, previsiblemente **dos colecciones** (artículo y
+hub), por la misma razón que §1.5b separó SECTOR de MONOGRÁFICO.
+
+**Los 4 kinds NO se han añadido**, igual que los tres campos de §1.3 siguen sin
+añadirse: **la frontera se documenta, no se borra.**
+
+## 8 · Campaña `cqa6-390` · ráfaga 2 hecha
+
+`rafaga-2026-08-03T11-58-27.json`, **2.31 h** de separación, `✓ 18/18 cargas`.
+`h1` a **0** en las tres @390 otra vez — sigue sin verse el ±30.
+
+> ⚠ **Estado: 2 de 3 · UN solo día.** **La ráfaga 3 tiene que caer OTRO DÍA
+> (≥2026-08-04).** Aquí los dos días **no venían dados** como en `cqa6`: con las
+> tres del 08-03 la campaña **no cierra**, por muy separadas que estén.
+
+El `docH`/`pie` sí se movió (27 · 54): familia conocida de «Artículos y Guías»,
+no la base.
+
+## 9 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390`, otro día.** Cierra el −30 de EDAR@390, que sigue
+   **SIN PROBAR**.
+2. **Decidir el grupo D**: construirlo como arquetipo (2 formas) o aplazarlo con
+   acta. La frontera ya está medida, así que **la decisión es de prioridad, no de
+   información**.
+3. **¿El hub de KB es un listado de §2c** o una tercera cosa? Es lo único que el
+   recon deja sin cerrar del grupo D.
+4. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+5. **La retícula de la HOME** — 86.35/85 % contra 86 %.
+6. **El mecanismo del ±32.28** — sin identificar; Rocket Loader descartado.
+7. **Comportamiento a 0/31** en la matriz de cobertura.
+
+## 10 · Lo que NO hay que hacer al empezar
+
+- **No añadir los 4 kinds a `MonoSeccion[]`** «ya que sabemos que faltan». Eso es
+  exactamente lo que §6 del pre-registro prohibía, y el motivo sigue vivo: el
+  modelo de MONOGRÁFICO está medido contra 2 instancias y no debe crecer por una
+  hipótesis de otro grupo.
+- **No leer «grupo D = 13 páginas» como una forma.** Son **dos**: 6 artículos y
+  7 hubs, con varianza de secciones 0 y 1→11.
+- **No tratar la barra lateral como campo de columna.** Es cascarón.
+- **No dar `cqa6-390` por cerrable hoy**: le falta un DÍA, no una ráfaga.
+
+---
+
 # HANDOFF — el instrumento cerrado: la escala del fenómeno, 180 cargas y los 9 mínimos
 
 > ⚠ **Tanda 2026-08-03 (14.ª).** Cinco pasos. Tanda de **INSTRUMENTO**: no se

@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "que": "Inventario de módulos por SECCIÓN PROPIA de las 13 URLs del grupo D (centro de ayuda), medido sobre el HTML servido del original.",
+    "fecha": "2026-08-03",
+    "contesta": "docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md · criterio D1",
+    "acta": "docs/research/grupo-D/RECON.md",
+    "metodo": "HTML servido sin <style> ni <script>; secciones = <div class=\"et_pb_section\">; se excluyen las _tb_header/_tb_body/_tb_footer; el corte de cada sección es hasta la siguiente sección o el <footer>.",
+    "selectorValidado": "El control (monográfico EDAR / sector urbano) da 8 y 7 secciones propias, que son los valores conocidos. La primera versión buscaba <section> y daba 0 en el control: selector muerto, no un cero.",
+    "kindsDelModelo": [
+      "titular",
+      "claim",
+      "texto",
+      "serie",
+      "tabla",
+      "imagen",
+      "boton"
+    ],
+    "kindsEnHTML": [
+      "text",
+      "image",
+      "button"
+    ],
+    "veredictoD1": {
+      "kindsNuevos": [
+        "toggle",
+        "video",
+        "blurb",
+        "gallery"
+      ],
+      "paginasQueLosNecesitan": 10,
+      "total": 13
+    },
+    "barraLateral": "en la PLANTILLA (_tb_body) en 13/13; NUNCA en la sección propia. El control monográfico da NINGUNO en el cuerpo teniendo sidebar en el pie."
+  },
+  "paginas": [
+    {
+      "u": "centro-de-ayuda/kunak-air",
+      "propias": 7,
+      "cuenta": {
+        "text": 1,
+        "toggle": 4,
+        "image": 1,
+        "video": 12
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "toggle",
+        "video"
+      ]
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "propias": 1,
+      "cuenta": {
+        "text": 1,
+        "toggle": 2,
+        "image": 1
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "toggle"
+      ]
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+      "propias": 1,
+      "cuenta": {
+        "text": 14,
+        "image": 4
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": []
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+      "propias": 1,
+      "cuenta": {
+        "text": 15,
+        "image": 4,
+        "button": 3
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": []
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "propias": 1,
+      "cuenta": {
+        "text": 11,
+        "image": 2,
+        "button": 2
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": []
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air",
+      "propias": 1,
+      "cuenta": {
+        "text": 13,
+        "image": 3,
+        "blurb": 36
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "blurb"
+      ]
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air",
+      "propias": 1,
+      "cuenta": {
+        "text": 8,
+        "image": 1,
+        "blurb": 18
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "blurb"
+      ]
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/video-tutoriales",
+      "propias": 7,
+      "cuenta": {
+        "text": 9,
+        "image": 6,
+        "video": 12
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "video"
+      ]
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air-cloud",
+      "propias": 5,
+      "cuenta": {
+        "text": 1,
+        "toggle": 4,
+        "image": 1,
+        "video": 8
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "toggle",
+        "video"
+      ]
+    },
+    {
+      "u": "soporte/centro-de-ayuda",
+      "propias": 11,
+      "cuenta": {
+        "text": 3,
+        "image": 2,
+        "button": 2,
+        "toggle": 8,
+        "video": 20
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "toggle",
+        "video"
+      ]
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+      "propias": 1,
+      "cuenta": {
+        "text": 1,
+        "toggle": 2,
+        "image": 1
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "toggle"
+      ]
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud",
+      "propias": 1,
+      "cuenta": {
+        "text": 24,
+        "image": 7,
+        "button": 1,
+        "blurb": 18,
+        "gallery": 2
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "blurb",
+        "gallery"
+      ]
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+      "propias": 5,
+      "cuenta": {
+        "text": 7,
+        "image": 4,
+        "video": 8
+      },
+      "plantillaSidebar": true,
+      "plantillaSticky": true,
+      "nuevos": [
+        "video"
+      ]
+    }
+  ]
+}

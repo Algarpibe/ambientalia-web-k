@@ -676,6 +676,75 @@ consumen: `BlogPost`/`CaseStudy` (S1) quedan **verificadas contra 9 formas**
 (`lh-tarjetas`). El listado embebido en páginas de builder es un **bloque de
 consulta** que el clon ya tiene (`UltimosArticulos`, h3 medido).
 
+## 2d · El grupo D — HD1 RECHAZADA, y la frontera medida (2026-08-03)
+
+Contesta la hipótesis pre-registrada `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md`.
+Acta completa en `docs/research/grupo-D/RECON.md`; evidencia congelada en
+`medidas/grupo-d-inventario.json` (13 páginas).
+
+**HD1 preguntaba si `MonoSeccion[]` expresa el cuerpo del grupo D sin campos
+nuevos —o sea, si esas páginas cuestan datos en vez de arquetipo—.**
+
+> ❌ **RECHAZADA por D1**, que era el criterio que mandaba: **4 kinds de módulo
+> que el modelo no tiene**, necesarios en **10 de las 13** páginas.
+
+| kind ausente en `MonoModulo` | dónde |
+|---|---|
+| `blurb` | 3 artículos (×36, ×18, ×18) |
+| `video` | 5 hubs (hasta ×20) |
+| `toggle` | 5 hubs (hasta ×8) |
+| `gallery` | 1 artículo (×2) |
+
+**D2 y D3 no se evalúan**: D1 manda por el propio pre-registro —*«un cuerpo
+idéntico al píxel después de añadir campos no prueba nada»*— y medirlos exigiría
+construir, que es justo lo que D1 acaba de declarar caro.
+
+### La frontera, en dos piezas y las dos medidas
+
+**1 · Los módulos.** Lo dicho arriba: 4 kinds. Pero la mitad útil de HD1 **sí se
+confirma** y hay que anotarla porque decide qué se reutiliza: **`MonoRitmo` y los
+kinds de texto/imagen/botón sirven** — 3 de los 6 artículos se expresarían solo
+con ellos (PD1 y PD2 acertaron).
+
+**2 · El cascarón, que es el hallazgo que cambia el esquema.** PD3 predijo que la
+barra lateral sería la frontera. **Acertó, y está un nivel MÁS ARRIBA de lo
+previsto:**
+
+```
+et_pb_section_0_tb_body   ← PLANTILLA: sidebar SÍ · sticky SÍ · post_content SÍ
+  └── et_pb_section_0     ← PROPIA de la instancia (aquí vive el cuerpo)
+```
+
+> **La barra lateral pegajosa está en 13 de 13 y siempre en la PLANTILLA, nunca
+> en la sección propia.** O sea que **no es un campo de `MonoColumna`**: es
+> **cascarón**, como la cabecera y el pie.
+
+**Y eso es mejor noticia para el esquema que la predicción original:** una barra
+lateral que fuera campo de columna **contaminaría el content type de
+MONOGRÁFICO**. Siendo cascarón, el content type se salva y lo que cuesta es una
+**plantilla de página**. La frontera queda más limpia y más barata de enunciar.
+
+### Consecuencia para las colecciones: **son DOS formas, no una**
+
+El enunciado hablaba de «13 páginas». **No son 13 artículos**, y la cuenta de
+secciones propias las parte sin ambigüedad:
+
+| forma | n | secciones propias | varianza |
+|---|---|---|---|
+| **artículo de KB** | 6 | **1** en las 6 | **cero** ⇒ plantilla |
+| **hub / índice de KB** | 7 | 1 · 1 · 5 · 5 · 7 · 7 · 11 | **de 1 a 11** ⇒ campo |
+
+**Decisión: el grupo D es arquetipo propio, y previsiblemente DOS colecciones**
+—artículo y hub—, por la misma razón que §1.5b separó SECTOR de MONOGRÁFICO:
+formas con estructura distinta no comparten colección solo porque compartan
+cascarón. **No se cierra aquí**: el hub tiene pinta de listado y §2c ya decidió
+cómo se modelan los listados; queda por comprobar si el hub de KB **es** uno de
+ésos o una tercera cosa.
+
+**Lo que NO se hizo, y es deliberado:** no se ha tocado `MonoSeccion[]`, no se ha
+construido nada y **no se han añadido los 4 kinds**. Igual que los tres campos de
+§1.3 siguen sin añadirse: la frontera se documenta, no se borra.
+
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
 
 **Son DOS listas distintas y conviene no mezclarlas:** lo que el editor permite

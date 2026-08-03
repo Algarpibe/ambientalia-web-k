@@ -603,18 +603,25 @@ antes de fiarte del veredicto de separación.**
 > 343 medidas congeladas dio **cero 404 accidentales**. **A partir de aquí lo que
 > viene es CONSTRUCCIÓN**, y el frente es el 3.
 
-3. ⭐ **SIGUIENTE FRENTE · Hipótesis del grupo D** — ejecutar el pre-registro de
-   `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md` (**ojo: en `arquetipo-A/`**;
-   el traspaso lo citaba en `monografico-tecnico/` y esa ruta no existe).
-   **Pre-registrada el 2026-07-30, sin ejecutar, con `PD1`–`PD3` escritas antes
-   de mirar.** Son **13 páginas** de artículo de centro de ayuda, y
-   `RECON-LISTADOS.md` §3 ya midió que **son página de BUILDER** —
-   `et_pb_pagebuilder_layout`, secciones propias, cuerpo compuesto por el
-   editor—, o sea de la misma familia que SECTOR y MONOGRÁFICO.
-   **HD1: si `MonoSeccion[]` expresa su cuerpo sin campos nuevos, las 13 no
-   cuestan arquetipo — cuestan datos.** HD0: hacen falta campos, y entonces es
-   arquetipo propio **con su razón escrita**. Protocolo en su §3, el mismo que
-   ya funcionó en `EXPERIMENTO-URBANO.md`.
+3. ~~**Hipótesis del grupo D**~~ **EJECUTADA (2026-08-03) · HD1 RECHAZADA.**
+   Acta: `docs/research/grupo-D/RECON.md` · esquema: `ESQUEMA-CMS.md` §2d ·
+   evidencia: `medidas/grupo-d-inventario.json`.
+
+   > **El grupo D CUESTA ARQUETIPO.** D1 falló con número: **4 kinds** que
+   > `MonoModulo` no tiene —`blurb` · `video` · `toggle` · `gallery`— necesarios
+   > en **10 de 13** páginas. D2/D3 no se evalúan: D1 mandaba.
+
+   Y tres cosas que el enunciado no anticipaba: **no son 13 artículos** sino **6
+   artículos + 7 hubs** (secciones propias: 1 en los 6, de 1 a 11 en los hubs);
+   el régimen es **híbrido** —plantilla de theme-builder **más** una sección
+   propia—, que no cae en ninguno de los dos casilleros de `CLAUDE.md`; y la
+   barra lateral pegajosa de PD3 está en **13/13 pero en la PLANTILLA**, o sea
+   es **cascarón, no campo de `MonoColumna`** — lo que **salva** el content type
+   de MONOGRÁFICO.
+
+   **Lo que queda es decisión de prioridad, no de información:** construirlo
+   como arquetipo (2 formas) o aplazarlo con acta. Único fleco del recon:
+   **¿el hub de KB es un listado de §2c o una tercera cosa?**
 4. **Pasada de comportamiento con navegador** (P-LH-C6) sobre los listados, antes
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
 5. **Construir LISTADO-B + L2/L3 + el índice de casos** según

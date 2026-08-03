@@ -5096,3 +5096,30 @@ suficiente para dejar de tratar el −30 como candidato a suelo y pasarlo a
 defecto con su ficha. **Esa decisión NO se toma hoy**: se toma con las dos
 ráfagas hechas, y se deja escrito aquí para que se tome por el criterio
 pre-registrado y no por cansancio.
+
+---
+
+## `cqa6-390` · ráfaga 2 de 3 (2026-08-03, 11:58 local)
+
+`medidas/campana/cqa6-390/rafaga-2026-08-03T11-58-27.json`, `✓ evaluadas 18/18 cargas`.
+Separación con la ráfaga 1: **2.31 h** (calculada del `ts` absoluto).
+
+| combinación @390 | `h1` | estado único |
+|---|---|---|
+| `software` · `edar` · `petroleo` | **0** | 308.58 · 189.39 · 189.39 |
+
+**Sigue sin observarse el ±30.** Con las 180 cargas de `estados-390` y estas 2
+ráfagas, van **36 cargas de campaña + 180 de sentada** a 390 sin un segundo
+estado — y aun así **no se escribe «no existe»**, se escribe la cota.
+
+> ⚠ **Estado: 2 de 3 ráfagas · UN SOLO DÍA. La ráfaga 3 tiene que caer OTRO DÍA
+> (≥2026-08-04).** Aquí los dos días **no venían dados de antemano** como en
+> `cqa6` —donde las ráfagas 1 y 2 ya aportaban 07-30 y 08-02—: si las tres caen
+> el 08-03, **la campaña no cierra por muy separadas que estén**.
+
+El `docH` y el `pie` sí se movieron (27 · 54). Es la familia **conocida** de
+renglones del módulo «Artículos y Guías» (27 · 54 · 81), no la base de lectura:
+**el `h1` dio 0 en las 6 combinaciones.**
+
+**Hasta que cierre, el −30 de `/…-en-edar` a 390 sigue SIN PROBAR**, con esa
+etiqueta: ni defecto ni limpio.
