@@ -1,0 +1,1176 @@
+{
+  "meta": {
+    "fecha": "2026-08-02",
+    "n": 6
+  },
+  "paginas": {
+    "des-moines": {
+      "forma": "caso",
+      "clave": "des-moines",
+      "porque": "DOS términos de sector · galería 7 · soluciones · mapa",
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/",
+      "http": 200,
+      "bodyClass": "wp-singular case-studies-template-default single single-case-studies postid-58490 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [
+        {
+          "texto": "Inicio",
+          "href": "https://kunakair.com/es/"
+        },
+        {
+          "texto": "Casos de éxito",
+          "href": "https://kunakair.com/es/casos-de-exito/"
+        },
+        {
+          "texto": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+          "href": null
+        }
+      ],
+      "campos": {
+        "sobretitulo": "Caso de éxito",
+        "titulo": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+        "cliente": "Ayuntamiento de Des Moines",
+        "chips": {
+          "html": "<span>Sectores: </span><a href=\"https://kunakair.com/es/sector/olores/\" rel=\"tag\">Olores</a>, <a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>",
+          "texto": "Sectores: Olores, Urbano",
+          "enlaces": [
+            {
+              "texto": "Olores",
+              "href": "https://kunakair.com/es/sector/olores/"
+            },
+            {
+              "texto": "Urbano",
+              "href": "https://kunakair.com/es/sector/urbano/"
+            }
+          ]
+        },
+        "necesidad": {
+          "h2": "Necesidad",
+          "html": "<p>La ciudad de <a href=\"https://www.dsm.city/\" target=\"_blank\" rel=\"noopener\">Des Moines</a> es la capital de Iowa y sus 17 departamentos prestan servicio a más de 214.000 residentes y 49 asociaciones de vecinos. Des Moines es líder en sostenibilidad y ofrece a sus residentes barrios vibrantes, un centro vivo y activo y abundantes oportunidades de ocio.</p>\n<p>La gente que vive y trabaja en el centro de Des Moines llevaba mucho tiempo quejándose de los malos olores, y la ciudad había tenido poco éxito a la hora de controlar el problema.<br>\nEl personal municipal recibía unas 200 quejas por olores al año, y la mayoría de los olores se describían como «olor putrefacto, a carne cocinándose y a aguas residuales». La metodología empleada hasta el momento para el control de los episodios de malos olores resultaba subjetivo y poco científico.</p>\n<p>En 2022, las autoridades de Des Moines contrataron a una consultora de calidad del aire para que realizara un estudio en el que se analizasen las quejas por malos olores de la última década y se identificaran las posibles fuentes del problema. Tras el estudio, se determinó que eran tres empresas cárnicas industriales de la zona este de Des Moines las fuentes de los malos olores.</p>\n<p>El estudio también recomendaba a la ciudad soluciones como la compra de dispositivos para el seguimiento de los olores y la implantación de un umbral de olor que incitara a las empresas a tomar medidas si los olores alcanzan un determinado nivel.</p>\n<p>La ciudad de Des Moines está adoptando un enfoque basado en datos para reducir los continuos problemas de olores y establecer umbrales con la ayuda de la tecnología de detección y control de olores de Kunak de la mano de <a href=\"https://envirosuite.com/es/\" target=\"_blank\" rel=\"noopener\">Envirosuite</a>.</p>\n<div style=\"text-align: center;\"><iframe src=\"//www.youtube.com/embed/e1hsaYHRGD8?si=ynkxE4PWmUs_Jaw_\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></div>\n<div class=\"texto-destacado\">El nuevo sistema de control de olores de la ciudad utiliza múltiples puntos de datos en tiempo real para medir los niveles de compuestos químicos en el aire.</div>",
+          "destacadoDentro": true,
+          "destacadoEsUltimo": true
+        },
+        "solucion": {
+          "h2": "Solución",
+          "html": "<p>Tras identificar los tres principales emisores de olores, en octubre de 2023, el equipo de Inspecciones Vecinales encargó a Envirosuite, líder mundial en servicios de consultoría medioambiental, la <strong>instalación de 10 monitores de olores Kunak <a href=\"https://kunakair.com/es/monitor-calidad-aire/\" target=\"_blank\">AIR Pro</a></strong> en varios lugares alrededor de los tres principales emisores de olores identificados por el estudio y la instalación de una estación meteorológica en la azotea del Centro Municipal de Servicios 2 (MSC 2) situado en Maury Street.</p>\n<p>Esta red de dispositivos de monitorización mide y registra de forma precisa datos basados en las sustancias químicas productoras de olores (H<sub>2</sub>S, NH<sub>3</sub>, y VOCs).</p>\n<p>Una vez calibrados, los monitores de olores empezaron inmediatamente a suministrar al panel Envirosuite de la ciudad datos en tiempo real que miden los niveles de los compuestos químicos. Los datos meteorológicos se recogen en el centro de cada monitor y se comunican a la estación meteorológica.</p>\n<p>Estos datos también se comunican a la plataforma Envirosuite y permiten modelizar las plumas de olor.</p>\n<p>Desde el panel de control, los usuarios pueden ver por dónde se desplaza el olor y detectar la fuente más probable de emisión.</p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "resultados": {
+          "h2": "Resultados",
+          "html": "<p>Los monitores de olores miden los niveles de compuestos químicos en el aire, como amoníaco, <a href=\"https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/\" target=\"_blank\">sulfuro de hidrógeno</a> y <a href=\"https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/\" target=\"_blank\">compuestos orgánicos volátiles</a>. La información recopilada por los monitores se envía a una base de datos, donde se combina con los datos meteorológicos y de quejas por olores de la ciudad, proporcionando <strong>información más precisa sobre aspectos como de dónde proceden los olores y hacia dónde se dirigen</strong>.</p>\n<p>Se trata de un método más proactivo y basado en datos que un escentómetro (olfatómetro de campo), un aparato que mide los olores en función del número de veces que habría que diluir el aire para que oliera como si no hubiera olor.</p>\n<p>Los dispositivos de control de olores, que funcionan mediante panel solar, proporcionan datos en tiempo real sobre los olores procedentes de los emisores de olores y se conectan a la plataforma Envirosuite a través de una conexión celular 5G.</p>\n<p>Según Dalton Jacobus, administrador de inspecciones de barrio de Des Moines, los datos obtenidos con la tecnología en los próximos seis meses se utilizarán para orientar futuras <strong>políticas en materia de olores y fijar umbrales para las emisiones de olor</strong> de las instalaciones industriales, así como lograr un cumplimiento voluntario de la normativa vigente por aquellas empresas causantes de los episodios de malos olores.</p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "destacado": {
+          "html": "El nuevo sistema de control de olores de la ciudad utiliza múltiples puntos de datos en tiempo real para medir los niveles de compuestos químicos en el aire.",
+          "texto": "El nuevo sistema de control de olores de la ciudad utiliza múltiples puntos de datos en tiempo real para medir los niveles de compuestos químicos en el aire.",
+          "tieneMarcado": false
+        },
+        "galeria": [
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-1-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-1-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-2-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-2-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-8-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-8-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-5-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-5-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-3-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-3-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-6-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-6-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-4-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-4-600x600.jpg",
+            "alt": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          }
+        ],
+        "detallesTitulo": "Detalles del proyecto",
+        "detalles": [
+          {
+            "rotulo": "Cliente:",
+            "html": "Ayuntamiento de Des Moines",
+            "texto": "Ayuntamiento de Des Moines"
+          },
+          {
+            "rotulo": "Usuario:",
+            "html": "Ayuntamiento de Des Moines",
+            "texto": "Ayuntamiento de Des Moines"
+          },
+          {
+            "rotulo": "Ubicación:",
+            "html": "Des Moines, Iowa (EE. UU.)",
+            "texto": "Des Moines, Iowa (EE. UU.)"
+          },
+          {
+            "rotulo": "Sectores:",
+            "html": "<a href=\"https://kunakair.com/es/sector/olores/\" rel=\"tag\">Olores</a>, <a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>",
+            "texto": "Olores, Urbano"
+          },
+          {
+            "rotulo": "Año:",
+            "html": "2024",
+            "texto": "2024"
+          },
+          {
+            "rotulo": "Parámetros:",
+            "html": "<br>\n<ul>\n<li>Sulfuro de hidrógeno</li>\n<li>Amoniaco</li>\n<li>Compuestos orgánicos volátiles</li>\n<li>Velocidad y dirección del viento</li>\n</ul>\n<p></p>",
+            "texto": "Sulfuro de hidrógeno Amoniaco Compuestos orgánicos volátiles Velocidad y dirección del viento"
+          }
+        ],
+        "detallesCrudo": "<p><span>Cliente:</span> Ayuntamiento de Des Moines</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Usuario:</span> Ayuntamiento de Des Moines</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Ubicación:</span> Des Moines, Iowa (EE. UU.)</p>\n\t\t\t\t\t\t\t\n \n\t\t\t\t\t\t\t<p> <span>Sectores: </span><a href=\"https://kunakair.com/es/sector/olores/\" rel=\"tag\">Olores</a>, <a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Año:</span> 2024</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<p><span>Parámetros:</span><br></p><ul>\n<li>Sulfuro de hidrógeno</li>\n<li>Amoniaco</li>\n<li>Compuestos orgánicos volátiles</li>\n<li>Velocidad y dirección del viento</li>\n</ul>\n<p></p>",
+        "marcadores": [
+          {
+            "lat": "41.5868417",
+            "lng": "-93.6249522"
+          }
+        ],
+        "solucionesTitulo": "Soluciones",
+        "soluciones": [
+          {
+            "dataId": "monitor-calidad-aire",
+            "etiqueta": "AIR Pro",
+            "subtitulo": "Monitor de calidad de aire para profesionales",
+            "panel": {
+              "h4": "AIR Pro",
+              "img": "https://kunakair.com/wp-content/uploads/2022/12/Kunak-AIR-Pro-1024.jpg",
+              "alt": "monitor de calidad del aire",
+              "intro": "<p>Estación de monitorización de la calidad del aire para profesionales.</p>\n<p>BASADA EN SENSORES | LA MAYOR PRECISIÓN</p>\n<p><strong>Ventajas</strong></p>\n<ul>\n<li>Multi-contaminante</li>\n<li>Sistema de cartuchos</li>\n<li>Totalmente autónomo</li>\n<li>Datos en tiempo real</li>\n<li>Precisión probada</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/monitor-calidad-aire/"
+              }
+            }
+          },
+          {
+            "dataId": "software-de-medicion-calidad-del-aire",
+            "etiqueta": "AIR Cloud",
+            "subtitulo": "Software de calidad del aire",
+            "panel": {
+              "h4": "AIR Cloud",
+              "img": "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg",
+              "alt": "software medición calidad del aire",
+              "intro": "<p>Software profesional de calidad del aire para el análisis de datos.</p>\n<p>DATOS EN TIEMPO REAL | ACTUALIZACIONES CONTINUAS</p>\n<div><strong>Ventajas</strong></div>\n<ul>\n<li>Seguro y confidencial</li>\n<li>Informes de calidad del aire</li>\n<li>Visualización y análisis avanzado de datos</li>\n<li>Datos fiables garantizados</li>\n<li>Integración y envío de datos</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+              }
+            }
+          },
+          {
+            "dataId": "sulfuro-de-hidrogeno",
+            "etiqueta": "Sulfuro de hidrógeno",
+            "subtitulo": "Datos fiables sobre el H2S",
+            "panel": {
+              "h4": "Sulfuro de hidrógeno",
+              "img": "https://kunakair.com/wp-content/uploads/2023/02/Hydrogen-sulfide.jpg",
+              "alt": "Ácido sulfhídrico",
+              "intro": "<p>Datos fiables sobre el sulfuro de hidrógeno</p>\n<p>TECNOLOGÍA GASPLUG | DISEÑO PATENTADO</p>\n<p><strong>Especificaciones</strong></p>\n<ul>\n<li>Electroquímico</li>\n<li>R<sup>2</sup> &gt;0,8</li>\n<li>Rango de medición: 0-2.000 ppb (Tipo A) | 0-20 ppm (Tipo B)</li>\n<li>Resolución: 1 ppb (Tipo A) | 0,01 ppm (Tipo B)</li>\n<li>24 meses de vida útil</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/"
+              }
+            }
+          },
+          {
+            "dataId": "amoniaco",
+            "etiqueta": "Amoniaco",
+            "subtitulo": "Datos fiables sobre el NH3",
+            "panel": {
+              "h4": "Amoniaco",
+              "img": null,
+              "alt": null,
+              "intro": "<p>Datos fiables sobre el amoniaco</p>\n<p>TECNOLOGÍA GASPLUG | DISEÑO PATENTADO</p>\n<p><strong>Especificaciones</strong></p>\n<ul>\n<li>Electroquímico</li>\n<li>Precisión típica (MAE): ±0,3 ppm</li>\n<li>Rango de medición: 0-50 ppm</li>\n<li>Resolución: 0,01 ppm</li>\n<li>24 meses de vida útil</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/"
+              }
+            }
+          },
+          {
+            "dataId": "compuestos-organicos-volatiles",
+            "etiqueta": "Compuestos orgánicos volátiles",
+            "subtitulo": "Datos fiables sobre los COVs",
+            "panel": {
+              "h4": "Compuestos orgánicos volátiles",
+              "img": "https://kunakair.com/wp-content/uploads/2023/02/Volatile_organic_compounds.jpg",
+              "alt": "Compuestos orgánicos volátiles",
+              "intro": "<p>Datos fiables sobre los compuestos orgánicos volátiles</p>\n<p>TECNOLOGÍA GASPLUG | DISEÑO PATENTADO</p>\n<p><strong>Especificaciones</strong></p>\n<ul>\n<li>Detector de fotoionización</li>\n<li>R<sup>2</sup> &gt;0,99</li>\n<li>Rango de medición: 0-3.000 ppb (Tipo A) | 0-40 ppm (Tipo B)</li>\n<li>Resolución: 1 ppb (Tipo A) | 0,01 ppm (Tipo B)</li>\n<li>10.000 horas de vida útil</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/"
+              }
+            }
+          }
+        ]
+      },
+      "iframes": [
+        {
+          "src": "//www.youtube.com/embed/e1hsaYHRGD8?si=ynkxE4PWmUs_Jaw_",
+          "host": "www.youtube.com"
+        }
+      ],
+      "seo": {
+        "title": "Control de la contaminación por malos olores en Des Moines, Iowa - Kunak",
+        "description": "Descubre cómo Des Moines implementó soluciones avanzadas de monitoreo de calidad del aire para controlar la contaminación por malos olores.",
+        "canonical": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg"
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section et_pb_fullwidth_section et_section_regular",
+          "chars": 3134,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer et_pb_fullwidth_section et_section_regular\"> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-en et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/contact\">Do you need to control the environmental impact of your operations?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/contact\">We can help you</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-es et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/es/contacto\">¿Necesitas información fiable para tu proyecto de calidad del aire?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/es/contacto\">Podemos ayudarte</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-fr et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/fr/contact\">Avez-vous besoin d’informations fiables pour votre projet de qualité de l’air ?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/fr/contact\">Nous pouvons t'aider</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-ar et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/ar/contact\">هل تحتاج إلى التحكم في الأثر البيئي لعملياتك؟</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/ar/contact\">يمكننا مساعدتك</a></div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6150,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 5782,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/case-studies/odor-pollution-control-network-in-des-moines-iowa/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> <li id=\"menu-item-wpml-ls-338-fr\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-fr\"><a href=\"https://kunakair.com/fr/etudes-de-cas/controle-de-la-pollution-olfactive-a-des-moines/\" title=\"Cambiar a Français\" aria-label=\"Cambiar a Français\"><span class=\"wpml-ls-native\" lang=\"fr\">Français</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 3,
+          "clase": "et_pb_section footer-background et_pb_with_background et_section_regular",
+          "chars": 318,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_pb_with_background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    },
+    "world-athletics": {
+      "forma": "caso",
+      "clave": "world-athletics",
+      "porque": "SIN término de sector (chips vacíos) · SIN galería · destacado",
+      "url": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+      "http": 200,
+      "bodyClass": "wp-singular case-studies-template-default single single-case-studies postid-29107 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [
+        {
+          "texto": "Inicio",
+          "href": "https://kunakair.com/es/"
+        },
+        {
+          "texto": "Casos de éxito",
+          "href": "https://kunakair.com/es/casos-de-exito/"
+        },
+        {
+          "texto": "Red global de calidad de aire en pistas de atletismo de World Athletics",
+          "href": null
+        }
+      ],
+      "campos": {
+        "sobretitulo": "Caso de éxito",
+        "titulo": "Red global de calidad de aire en pistas de atletismo de World Athletics",
+        "cliente": "World Athletics",
+        "chips": {
+          "html": "",
+          "texto": "",
+          "enlaces": []
+        },
+        "necesidad": {
+          "h2": "Necesidad",
+          "html": "<p><a href=\"https://worldathletics.org/\" target=\"_blank\" rel=\"noopener\">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>\n<p>World Athletics, en colaboración con el Programa de las Naciones Unidas para el Medio Ambiente, tiene como objetivo abordar el problema de la contaminación del aire que contribuye a 7 millones de muertes al año en todo el mundo. Al crear una red de monitoreo de la calidad del aire en 1.000 pistas de atletismo en todo el mundo, brinda una oportunidad de primera para proporcionar evidencias que mejoren la salud de los ciudadanos y futuros atletas.</p>\n<p><a href=\"https://worldathletics.org/athletics-better-world/air-quality\" target=\"_blank\" rel=\"noopener\">https://worldathletics.org/athletics-better-world/air-quality</a></p>\n<p><iframe src=\"//player.vimeo.com/video/722223811?title=0&amp;byline=0&amp;portrait=0&amp;color=8dc7dc\" width=\"425\" height=\"auto\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<div class=\"texto-destacado\">El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.</div>",
+          "destacadoDentro": true,
+          "destacadoEsUltimo": true
+        },
+        "solucion": {
+          "h2": "Solución",
+          "html": "<p style=\"text-align: justify;\">Suministro e instalación a demanda de estaciones Kunak <a href=\"https://kunakair.com/es/monitor-calidad-aire/\" target=\"_blank\">AIR Pro</a> para la monitorización de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\">Acciones realizadas:</p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Desarrollo de aplicación móvil.</li>\n<li>Informe mensual de los datos obtenidos.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"//www.youtube.com/embed/0AmzdyB5Jl4\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "resultados": {
+          "h2": "Resultados",
+          "html": "<p style=\"text-align: justify;\">Desarrollo de una solución de monitorización ambiental calibrada con las siguientes funcionalidades:</p>\n<ul>\n<li style=\"text-align: justify;\">Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n<li style=\"text-align: justify;\">Detección de episodios de aumento de la contaminación.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de los equipos.</li>\n<li style=\"text-align: justify;\">Desarrollo de protocolos estadísticos avanzados para la obtención de datos de alta calidad y fiabilidad que aportan altas&nbsp;correlaciones con estaciones oficiales y equipos de referencia.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"https://kunakcloud.com/widgets/wa/widget.html\" width=\"800\" height=\"400\"></iframe></p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "destacado": {
+          "html": "El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.",
+          "texto": "El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.",
+          "tieneMarcado": false
+        },
+        "galeria": [],
+        "detallesTitulo": "Detalles del proyecto",
+        "detalles": [
+          {
+            "rotulo": "Cliente:",
+            "html": "World Athletics",
+            "texto": "World Athletics"
+          },
+          {
+            "rotulo": "Usuario:",
+            "html": "World Athletics",
+            "texto": "World Athletics"
+          },
+          {
+            "rotulo": "Ubicación:",
+            "html": "Mundial (Mónaco, México, Japón, Etiopía, Australia)\n<p> \t\t\t\t\t\t\t</p>",
+            "texto": "Mundial (Mónaco, México, Japón, Etiopía, Australia)"
+          },
+          {
+            "rotulo": "Año:",
+            "html": "2018",
+            "texto": "2018"
+          },
+          {
+            "rotulo": "Parámetros:",
+            "html": "<br>\n<ul>\n<li>CO, NO<sub>2</sub>, NO and O<sub>3</sub>.</li>\n<li>PM<sub>1</sub>, PM<sub>2.5</sub>, PM<sub>4</sub> and PM<sub>10.</sub></li>\n<li>Temperature, humidity, pressure and dew point.</li>\n</ul>\n<p></p>",
+            "texto": "CO, NO2, NO and O3. PM1, PM2.5, PM4 and PM10. Temperature, humidity, pressure and dew point."
+          }
+        ],
+        "detallesCrudo": "<p><span>Cliente:</span> World Athletics</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Usuario:</span> World Athletics</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Ubicación:</span> Mundial (Mónaco, México, Japón, Etiopía, Australia)</p>\n\t\t\t\t\t\t\t\n \n\t\t\t\t\t\t\t<p> \t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Año:</span> 2018</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<p><span>Parámetros:</span><br></p><ul>\n<li>CO, NO<sub>2</sub>, NO and O<sub>3</sub>.</li>\n<li>PM<sub>1</sub>, PM<sub>2.5</sub>, PM<sub>4</sub> and PM<sub>10.</sub></li>\n<li>Temperature, humidity, pressure and dew point.</li>\n</ul>\n<p></p>",
+        "marcadores": [
+          {
+            "lat": "43.7275817",
+            "lng": "7.4156038"
+          }
+        ],
+        "solucionesTitulo": "Soluciones",
+        "soluciones": [
+          {
+            "dataId": "monitor-calidad-aire",
+            "etiqueta": "AIR Pro",
+            "subtitulo": "Monitor de calidad de aire para profesionales",
+            "panel": {
+              "h4": "AIR Pro",
+              "img": "https://kunakair.com/wp-content/uploads/2022/12/Kunak-AIR-Pro-1024.jpg",
+              "alt": "monitor de calidad del aire",
+              "intro": "<p>Estación de monitorización de la calidad del aire para profesionales.</p>\n<p>BASADA EN SENSORES | LA MAYOR PRECISIÓN</p>\n<p><strong>Ventajas</strong></p>\n<ul>\n<li>Multi-contaminante</li>\n<li>Sistema de cartuchos</li>\n<li>Totalmente autónomo</li>\n<li>Datos en tiempo real</li>\n<li>Precisión probada</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/monitor-calidad-aire/"
+              }
+            }
+          },
+          {
+            "dataId": "software-de-medicion-calidad-del-aire",
+            "etiqueta": "AIR Cloud",
+            "subtitulo": "Software de calidad del aire",
+            "panel": {
+              "h4": "AIR Cloud",
+              "img": "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg",
+              "alt": "software medición calidad del aire",
+              "intro": "<p>Software profesional de calidad del aire para el análisis de datos.</p>\n<p>DATOS EN TIEMPO REAL | ACTUALIZACIONES CONTINUAS</p>\n<div><strong>Ventajas</strong></div>\n<ul>\n<li>Seguro y confidencial</li>\n<li>Informes de calidad del aire</li>\n<li>Visualización y análisis avanzado de datos</li>\n<li>Datos fiables garantizados</li>\n<li>Integración y envío de datos</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+              }
+            }
+          },
+          {
+            "dataId": "sensor-de-calidad-del-aire",
+            "etiqueta": "Cartuchos inteligentes",
+            "subtitulo": "Sistema plug & play",
+            "panel": {
+              "h4": "Cartuchos inteligentes",
+              "img": "https://kunakair.com/wp-content/uploads/2023/01/cartridges-300.jpg",
+              "alt": "sensor de calidad del aire",
+              "intro": "<p>El sistema plug &amp; play para una medición precisa de los principales contaminantes.</p>\n<p>BASADO EN SENSORES | SUSTITUCIÓN FÁCIL Y RÁPIDA</p>\n<p><strong>Ventajas</strong></p>\n<ul>\n<li>Plug &amp; Play (detección automática)</li>\n<li>Calibración y validación individuales</li>\n<li>Control y garantía de calidad trazables</li>\n<li>Diseño patentado</li>\n<li>Sostenible</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/sensor-de-calidad-del-aire/"
+              }
+            }
+          }
+        ]
+      },
+      "iframes": [
+        {
+          "src": "//player.vimeo.com/video/722223811?title=0&byline=0&portrait=0&color=8dc7dc",
+          "host": "player.vimeo.com"
+        },
+        {
+          "src": "//www.youtube.com/embed/0AmzdyB5Jl4",
+          "host": "www.youtube.com"
+        },
+        {
+          "src": "https://kunakcloud.com/widgets/wa/widget.html",
+          "host": "kunakcloud.com"
+        }
+      ],
+      "seo": {
+        "title": "Red global de calidad de aire en pistas de atletismo de World Athletics - Kunak",
+        "description": "Caso de éxito sobre la instalación de redes de calidad del aire en pistas de atletismo para World Athletics (Asociación Internacional de Federaciones de Atletismo).",
+        "canonical": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2019/05/sports.jpg"
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section et_pb_fullwidth_section et_section_regular",
+          "chars": 3134,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer et_pb_fullwidth_section et_section_regular\"> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-en et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/contact\">Do you need to control the environmental impact of your operations?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/contact\">We can help you</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-es et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/es/contacto\">¿Necesitas información fiable para tu proyecto de calidad del aire?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/es/contacto\">Podemos ayudarte</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-fr et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/fr/contact\">Avez-vous besoin d’informations fiables pour votre projet de qualité de l’air ?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/fr/contact\">Nous pouvons t'aider</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-ar et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/ar/contact\">هل تحتاج إلى التحكم في الأثر البيئي لعملياتك؟</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/ar/contact\">يمكننا مساعدتك</a></div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6150,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 5320,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/case-studies/air-quality-network-for-world-athletics/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 3,
+          "clase": "et_pb_section footer-background et_pb_with_background et_section_regular",
+          "chars": 318,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_pb_with_background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    },
+    "rio-de-janeiro": {
+      "forma": "caso",
+      "clave": "rio-de-janeiro",
+      "porque": "prefijo INGLÉS · SIN mapa (el único de 57) · galería 15 (la mayor)",
+      "url": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "http": 200,
+      "bodyClass": "wp-singular case-studies-template-default single single-case-studies postid-65816 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [
+        {
+          "texto": "Inicio",
+          "href": "https://kunakair.com/es/"
+        },
+        {
+          "texto": "Casos de éxito",
+          "href": "https://kunakair.com/es/casos-de-exito/"
+        },
+        {
+          "texto": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
+          "href": null
+        }
+      ],
+      "campos": {
+        "sobretitulo": "Caso de éxito",
+        "titulo": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
+        "cliente": "Secretaria Municipal do Ambiente e Clima (SMAC)",
+        "chips": {
+          "html": "<span>Sector: </span><a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>",
+          "texto": "Sector: Urbano",
+          "enlaces": [
+            {
+              "texto": "Urbano",
+              "href": "https://kunakair.com/es/sector/urbano/"
+            }
+          ]
+        },
+        "necesidad": {
+          "h2": "Necesidad",
+          "html": "<p>Río de Janeiro avanza hacia una nueva etapa de liderazgo climático con la creación del <b>primer Distrito de Baja Emisión (DBE) de Brasil</b>, una iniciativa destinada a reducir la contaminación atmosférica y transformar el centro de la ciudad en un entorno más saludable, seguro y sostenible.</p>\n<p>El proyecto conectará las zonas norte y sur, y contempla la ampliación de áreas verdes, la creación de ciclovías, la priorización de la movilidad peatonal y un impulso decidido al uso de vehículos eléctricos. Su implementación se desarrollará por fases hasta 2030 y abarcará <b>2,3 km²</b> del corazón histórico de Río.</p>\n<p>El <b>Festival Respira Rio</b>, celebrado el 1 de noviembre de 2025 en la Avenida República do Chile, permitió a los ciudadanos experimentar por primera vez cómo será este nuevo modelo urbano. La avenida, transformada con <b>árboles, arte urbano, zonas verdes y espacios de participación ciudadana</b>, se convirtió en una <b>versión a escala del futuro Distrito de Baja Emisión (DBE)</b>, el primero del país.</p>\n<p>El evento, organizado por <a href=\"https://breathecities.org/\"><b>Breathe Cities</b></a> y la <b>Prefeitura de Río</b>, tuvo lugar en la víspera de la <b>Cumbre mundial de alcaldes de C40</b> y del <a href=\"https://www.bloomberg.org/cop30-local-leaders-forum/\"><b>Foro de Líderes Locales de la COP30</b></a>, lo que consolidó a Río como un ejemplo internacional de cómo las ciudades pueden liderar soluciones climáticas desde lo local.</p>\n<p>Río forma parte activa de <a href=\"https://www.c40.org/\"><b>C40 Cities</b></a>, una red global de urbes comprometidas con la <b>reducción de emisiones y la resiliencia climática</b>. Ciudades como Londres, París, Barcelona, Johannesburgo, Melbourne, Tokio o Lagos comparten con Río una visión común basada en <b>políticas urbanas fundamentadas en datos, innovación tecnológica y colaboración institucional</b>. La red desempeña un papel clave en la aceleración de iniciativas como el DBE, impulsando la transición hacia <b>entornos urbanos más sostenibles, inclusivos y saludables</b>.</p>\n<p>El principal desafío de Río es <b>combatir la contaminación del aire mediante datos precisos y accesibles</b>. Para lograrlo se requiere una <b>red de monitorización continua</b> que permita identificar zonas críticas, evaluar políticas públicas y proteger a las comunidades más expuestas.</p>\n<p>La ciudad también avanza en la <b>electrificación del transporte público</b>, con la llegada de los primeros autobuses eléctricos en 2026. La integración de estas políticas de movilidad con una red sólida de monitorización convierte al DBE en un <b>proyecto estratégico para la salud urbana</b>.</p>\n<p>Dentro de este marco, surgió la necesidad de desplegar una <b>infraestructura de sensores ambientales robusta</b>, trazable a estándares internacionales y capaz de operar en entornos urbanos complejos.</p>\n<div class=\"texto-destacado\"><strong>Eduardo Paes, alcalde de Río de Janeiro:</strong><br>\n“Con esta iniciativa, Río demuestra liderazgo en la lucha contra la contaminación del aire. Estamos creando el primer distrito de baja emisión del país y ampliando el monitoreo de la calidad del aire, lo cual mejorará la salud y la calidad de vida de todos los cariocas.” </div>",
+          "destacadoDentro": true,
+          "destacadoEsUltimo": true
+        },
+        "solucion": {
+          "h2": "Solución",
+          "html": "<p>La estrategia de Río parte de un principio básico. <b>Sin datos no hay acción climática efectiva</b>. Para ello se desplegó una red de <b>10 estaciones de calidad del aire Kunak <a href=\"https://kunakair.com/es/monitor-calidad-aire/\" target=\"_blank\">AIR Pro</a></b>, suministradas, instaladas y mantenidas por <a href=\"https://www.acoem.com/brasil/pt-br/\"><b>Acoem Brasil</b></a>.</p>\n<ul>\n<li><b>9 estaciones permanentes</b> adquiridas por Secretaria Municipal do Ambiente e Clima (SMAC) como parte del proyecto principal del distrito de baja emisión.</li>\n<li><b>1 estación adicional temporal</b> instalada en la <b>Avenida República do Chile</b> durante dos semanas para el Festival Respira Rio.</li>\n</ul>\n<p>Las estaciones Kunak AIR Pro destacan por su precisión <i>near-reference</i>, su capacidad para calibración remota, su conectividad continua y la fiabilidad necesaria para proyectos de salud pública. Su despliegue permite ampliar la <b>cobertura y mejorar la resolución espacial de los datos</b>, algo esencial para zonas densamente pobladas y con patrones de contaminación cambiantes.</p>\n<p>Estas estaciones equipadas con sensores de alta precisión ofrecerán <b>datos trazables y comparables con estándares internacionales</b>, posibilitando una <b>evaluación continua</b> de la eficacia de las políticas públicas y una respuesta más rápida ante episodios de contaminación.</p>\n<p>El proyecto se enmarca en la iniciativa <b>Breathe Cities</b>, cuyo objetivo es reducir la contaminación y las emisiones en un <b>30% para 2030</b> respecto a los niveles de 2019. Según las estimaciones de la iniciativa, estas medidas podrían:</p>\n<ul>\n<li>Evitar <b>55.000 muertes prematuras</b></li>\n<li>Reducir <b>111.000 casos nuevos de asma infantil</b></li>\n<li>Evitar <b>394 megatoneladas de CO₂ equivalente</b></li>\n<li>Ahorrar <b>147.000 millones de dólares</b> en costes sanitarios</li>\n</ul>\n<p>Las diez estaciones fueron instaladas en puntos estratégicos de la ciudad para proporcionar una lectura representativa y diversa del entorno urbano.</p>\n<table style=\"width: 100%; border-collapse: collapse;\">\n<thead>\n<tr>\n<th>Nº</th>\n<th>Ubicación</th>\n<th>Tipo de lugar</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Campinho. CF Mario P. Silva</td>\n<td>Centro médico público</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Cascadura. CMS Mário Olinto de Oliveira</td>\n<td>Centro médico público</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Centro. EM C. Salles</td>\n<td>Escuela pública</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Centro. Museu de Arte Moderna</td>\n<td>Museo de arte moderno</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Centro. Praça XV</td>\n<td>Plaza pública</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Centro. Av. Chile. Festival Respira Rio</td>\n<td>Evento DBE. unidad temporal</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Engenheiro Leal. EM Cinco de Julho</td>\n<td>Escuela pública</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Madureira. CMS Alberto B.</td>\n<td>Centro médico público</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Madureira. Parque Madureira</td>\n<td>Parque público</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Presidente Vargas. EM Rivadávia Corrêa</td>\n<td>Escuela pública</td>\n</tr>\n</tbody>\n</table>\n<p>Esta red permitirá evaluar la evolución del aire en el centro de Río, identificar mejoras, detectar episodios críticos y orientar las medidas de movilidad y espacio público en el DBE.</p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "resultados": {
+          "h2": "Resultados",
+          "html": "<p>La creación del distrito de baja emisión (DBE) marca un antes y un después en la planificación urbana de Brasil. El despliegue de las estaciones Kunak AIR Pro ha permitido a la ciudad:</p>\n<ul>\n<li><b>Reducir emisiones contaminantes</b> en el centro de la ciudad.</li>\n<li><b>Tomar decisiones urbanas</b> con base en indicadores fiables.</li>\n<li><b>Aumentar la conciencia ciudadana</b> sobre la contaminación y sus efectos en la salud.</li>\n<li><b>Promover políticas sostenibles</b> con impacto positivo en la movilidad, el bienestar y la resiliencia urbana.</li>\n<li>Planificar un <b>centro urbano más seguro, saludable y atractivo</b>.</li>\n</ul>\n<p>Este proyecto convierte a Río en un <b>laboratorio de innovación climática urbana</b> dentro de la red global C40 Cities. Las ciudades de esta red representan algunos de los centros urbanos más influyentes del mundo. Esto incluye Ámsterdam, Londres, París, Tokio, Sídney, Johannesburgo, Lagos y Seúl. La incorporación de Río refuerza su papel como ciudad global comprometida con <b>un futuro de cero emisiones</b>.</p>\n<p>Durante el <b>Festival Respira Rio</b> se organizaron actividades educativas, talleres y consultas públicas para sensibilizar a la ciudadanía sobre la calidad del aire y recoger opiniones sobre el futuro <b>Distrito de Baja Emisión (DBE)</b>. Este ejercicio de participación refuerza el vínculo entre tecnología, comunidad y políticas públicas.</p>\n<p><b>Leonora Bedoya, gerente comercial y de negocios de Acoem Brasil:</b></p>\n<blockquote><p>“El mayor legado de este proyecto es la mejora de la salud pública y la creación de un entorno urbano más sostenible y resiliente. El monitoreo preciso de la calidad del aire es un pilar esencial para una gestión climática proactiva. Nos enorgullece apoyar a Río en su camino hacia un futuro más limpio y saludable.”</p></blockquote>\n<p>Gracias a esta cooperación, el futuro <b>DBE de Río</b> se convertirá en un <b>laboratorio urbano de innovación climática</b>, donde los datos ambientales en tiempo real permitirán:</p>\n<ul>\n<li><b>Reducir emisiones contaminantes</b> en el centro de la ciudad.</li>\n<li><b>Optimizar decisiones urbanas</b> con base en indicadores fiables.</li>\n<li><b>Aumentar la conciencia ciudadana</b> sobre la contaminación y sus efectos en la salud.</li>\n<li><b>Promover políticas sostenibles</b> con impacto positivo en la movilidad, el bienestar y la resiliencia urbana.</li>\n</ul>\n<p>El <b>Distrito de Baja Emisión de Río de Janeiro</b> representa un modelo pionero de transformación urbana impulsado por datos, ciencia y participación ciudadana.<br>\nA través del <b>Festival Respira Rio</b>, la ciudad ha demostrado que la combinación de <b>tecnología de monitorización ambiental, políticas sostenibles y compromiso comunitario</b> puede traducirse en acciones concretas para mejorar la calidad del aire y la salud pública.</p>\n<p>Este proyecto refuerza el liderazgo de <b>Acoem Brasil</b> en el desarrollo de <b>soluciones tecnológicas para la gestión ambiental urbana</b>, y consolida a Río de Janeiro como <b>referente latinoamericano en innovación climática</b>.</p>\n<p>El camino iniciado en la Avenida Chile sienta las bases de una <b>nueva generación de ciudades más sostenibles, seguras y saludables</b>, donde <b>respirar aire limpio deje de ser un privilegio y se convierta en un derecho universal</b>.</p>\n<p>Río abre así la puerta para que otras urbes de la región impulsen sus propias zonas de bajas emisiones, integrando la <b>monitorización avanzada de la calidad del aire</b> como herramienta clave para la acción climática y la mejora de la calidad de vida.</p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "destacado": {
+          "html": "<strong>Eduardo Paes, alcalde de Río de Janeiro:</strong><br>\n“Con esta iniciativa, Río demuestra liderazgo en la lucha contra la contaminación del aire. Estamos creando el primer distrito de baja emisión del país y ampliando el monitoreo de la calidad del aire, lo cual mejorará la salud y la calidad de vida de todos los cariocas.”",
+          "texto": "Eduardo Paes, alcalde de Río de Janeiro: “Con esta iniciativa, Río demuestra liderazgo en la lucha contra la contaminación del aire. Estamos creando el primer distrito de baja emisión del país y ampliando el monitoreo de la calidad del aire, lo cual mejorará la salud y la calidad de vida de todos los cariocas.”",
+          "tieneMarcado": true
+        },
+        "galeria": [
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-1-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-1-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-2-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-2-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-3-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-3-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-4-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-4-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-5-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-5-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-6-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-6-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-7-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-7-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-9-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-9-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-10-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-10-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-8-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-8-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-11-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-11-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-13-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-13-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-14-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-14-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-12-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-12-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          },
+          {
+            "src": "https://kunakair.com/wp-content/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-600x600.jpg",
+            "alt": "Distrito de bajas emisiones en Rio de Janeiro - Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+            "width": "600",
+            "height": "600",
+            "leyenda": null
+          }
+        ],
+        "detallesTitulo": "Detalles del proyecto",
+        "detalles": [
+          {
+            "rotulo": "Cliente:",
+            "html": "Secretaria Municipal do Ambiente e Clima (SMAC)",
+            "texto": "Secretaria Municipal do Ambiente e Clima (SMAC)"
+          },
+          {
+            "rotulo": "Usuario:",
+            "html": "Prefeitura de Río de Janeiro",
+            "texto": "Prefeitura de Río de Janeiro"
+          },
+          {
+            "rotulo": "Ubicación:",
+            "html": "Río de Janeiro, Brasil",
+            "texto": "Río de Janeiro, Brasil"
+          },
+          {
+            "rotulo": "Sector:",
+            "html": "<a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>",
+            "texto": "Urbano"
+          },
+          {
+            "rotulo": "Año:",
+            "html": "2025",
+            "texto": "2025"
+          },
+          {
+            "rotulo": "Parámetros:",
+            "html": "<br>\n<p>La red de estaciones desplegadas proporcionan datos hiperlocales y en tiempo real sobre:</p>\n<ul>\n<li><b>Material particulado</b>: PM<sub>10</sub> y PM<sub>2,5</sub>, PTS (partículas totales suspendidas) y RTP (recuento total de partículas).</li>\n<li><b>Condiciones meteorológicas</b>: velocidad del viento y dirección del viento, temperatura, humedad, presión y punto de rocío.</li>\n</ul>\n<p></p>",
+            "texto": "La red de estaciones desplegadas proporcionan datos hiperlocales y en tiempo real sobre: Material particulado: PM10 y PM2,5, PTS (partículas totales suspendidas) y RTP (recuento total de partículas). Condiciones meteorológicas: velocidad del viento y dirección del viento, temperatura, humedad, presión y punto de rocío."
+          }
+        ],
+        "detallesCrudo": "<p><span>Cliente:</span> Secretaria Municipal do Ambiente e Clima (SMAC)</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Usuario:</span> Prefeitura de Río de Janeiro</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Ubicación:</span> Río de Janeiro, Brasil</p>\n\t\t\t\t\t\t\t\n \n\t\t\t\t\t\t\t<p> <span>Sector: </span><a href=\"https://kunakair.com/es/sector/urbano/\" rel=\"tag\">Urbano</a>\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Año:</span> 2025</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<p><span>Parámetros:</span><br></p><p>La red de estaciones desplegadas proporcionan datos hiperlocales y en tiempo real sobre:</p>\n<ul>\n<li><b>Material particulado</b>: PM<sub>10</sub> y PM<sub>2,5</sub>, PTS (partículas totales suspendidas) y RTP (recuento total de partículas).</li>\n<li><b>Condiciones meteorológicas</b>: velocidad del viento y dirección del viento, temperatura, humedad, presión y punto de rocío.</li>\n</ul>\n<p></p>",
+        "marcadores": [],
+        "solucionesTitulo": "Soluciones",
+        "soluciones": [
+          {
+            "dataId": "monitor-calidad-aire",
+            "etiqueta": "AIR Pro",
+            "subtitulo": "Monitor de calidad de aire para profesionales",
+            "panel": {
+              "h4": "AIR Pro",
+              "img": "https://kunakair.com/wp-content/uploads/2022/12/Kunak-AIR-Pro-1024.jpg",
+              "alt": "monitor de calidad del aire",
+              "intro": "<p>Estación de monitorización de la calidad del aire para profesionales.</p>\n<p>BASADA EN SENSORES | LA MAYOR PRECISIÓN</p>\n<p><strong>Ventajas</strong></p>\n<ul>\n<li>Multi-contaminante</li>\n<li>Sistema de cartuchos</li>\n<li>Totalmente autónomo</li>\n<li>Datos en tiempo real</li>\n<li>Precisión probada</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/monitor-calidad-aire/"
+              }
+            }
+          },
+          {
+            "dataId": "particulas-en-suspension",
+            "etiqueta": "Partículas en suspensión",
+            "subtitulo": "Medición precisa de material particulado",
+            "panel": {
+              "h4": "Partículas en suspensión",
+              "img": "https://kunakair.com/wp-content/uploads/2023/02/particulate-matter-sensor.jpg",
+              "alt": "",
+              "intro": "<p>Información fiable sobre partículas</p>\n<p>TECNOLOGÍA GASPLUG | DISEÑO PATENTADO</p>\n<p><strong>Especificaciones</strong></p>\n<ul>\n<li>Contador óptico de partículas</li>\n<li>Hasta R<sup>2</sup> &gt;0.9</li>\n<li>Rango: 0-1.000 | 0-2.000 | 0-10.000 ppb</li>\n<li>Resolución: 1 μg/m<sup>3</sup></li>\n<li>24 meses de vida útil</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/"
+              }
+            }
+          },
+          {
+            "dataId": "software-de-medicion-calidad-del-aire",
+            "etiqueta": "AIR Cloud",
+            "subtitulo": "Software de calidad del aire",
+            "panel": {
+              "h4": "AIR Cloud",
+              "img": "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg",
+              "alt": "software medición calidad del aire",
+              "intro": "<p>Software profesional de calidad del aire para el análisis de datos.</p>\n<p>DATOS EN TIEMPO REAL | ACTUALIZACIONES CONTINUAS</p>\n<div><strong>Ventajas</strong></div>\n<ul>\n<li>Seguro y confidencial</li>\n<li>Informes de calidad del aire</li>\n<li>Visualización y análisis avanzado de datos</li>\n<li>Datos fiables garantizados</li>\n<li>Integración y envío de datos</li>\n</ul>",
+              "cta": {
+                "texto": "Ver más",
+                "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+              }
+            }
+          }
+        ]
+      },
+      "iframes": [],
+      "seo": {
+        "title": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana - Kunak",
+        "description": "Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
+        "canonical": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg"
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section et_pb_fullwidth_section et_section_regular",
+          "chars": 3134,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer et_pb_fullwidth_section et_section_regular\"> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-en et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/contact\">Do you need to control the environmental impact of your operations?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/contact\">We can help you</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-es et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/es/contacto\">¿Necesitas información fiable para tu proyecto de calidad del aire?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/es/contacto\">Podemos ayudarte</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-fr et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/fr/contact\">Avez-vous besoin d’informations fiables pour votre projet de qualité de l’air ?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/fr/contact\">Nous pouvons t'aider</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-ar et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/ar/contact\">هل تحتاج إلى التحكم في الأثر البيئي لعملياتك؟</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/ar/contact\">يمكننا مساعدتك</a></div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6150,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 6158,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/case-studies/low-emission-district-in-rio-de-janeiro/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> <li id=\"menu-item-wpml-ls-338-fr\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-fr\"><a href=\"https://kunakair.com/fr/case-studies/district-a-faibles-emissions-de-rio-de-janeiro/\" title=\"Cambiar a Français\" aria-label=\"Cambiar a Français\"><span class=\"wpml-ls-native\" lang=\"fr\">Français</span></a></li> <li id=\"menu-item-wpml-ls-338-ar\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-ar wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-ar\"><a href=\"https://kunakair.com/ar/case-studies/low-emission-district-in-rio-de-janeiro/\" title=\"Cambiar a العربية\" aria-label=\"Cambiar a العربية\"><span class=\"wpml-ls-native\" lang=\"ar\">العربية</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 3,
+          "clase": "et_pb_section footer-background et_pb_with_background et_section_regular",
+          "chars": 318,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_pb_with_background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    },
+    "lindano": {
+      "forma": "caso",
+      "clave": "lindano",
+      "porque": "SIN soluciones · SIN parámetros (el único de 57) · SIN galería",
+      "url": "https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/",
+      "http": 200,
+      "bodyClass": "wp-singular case-studies-template-default single single-case-studies postid-29097 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [
+        {
+          "texto": "Inicio",
+          "href": "https://kunakair.com/es/"
+        },
+        {
+          "texto": "Casos de éxito",
+          "href": "https://kunakair.com/es/casos-de-exito/"
+        },
+        {
+          "texto": "Alerta de contaminación de acuífero por lindano",
+          "href": null
+        }
+      ],
+      "campos": {
+        "sobretitulo": "Caso de éxito",
+        "titulo": "Alerta de contaminación de acuífero por lindano",
+        "cliente": "SICE",
+        "chips": {
+          "html": "<span>Sector: </span><a href=\"https://kunakair.com/es/sector/industria/\" rel=\"tag\">Industria</a>",
+          "texto": "Sector: Industria",
+          "enlaces": [
+            {
+              "texto": "Industria",
+              "href": "https://kunakair.com/es/sector/industria/"
+            }
+          ]
+        },
+        "necesidad": {
+          "h2": "Necesidad",
+          "html": "<p>La Confederación Hidrográfica del Ebro, necesitaba detectar episodios de contaminación de un río por vertidos de lindano en una zona de montaña.</p>\n<p>La Confederación Hidrográfica del Ebro, en colaboración con la empresa integradora de sistemas para las infraestructuras públicas,&nbsp;<span class=\"il\">SICE,</span>&nbsp;necesitaba un sistema de alerta temprana para detectar los vertidos procedentes de unas minas que estaban contaminando de lindano un río en una zona rural, por ser un agente dañino para la salud humana y el medio ambiente.</p>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "solucion": {
+          "h2": "Solución",
+          "html": "<p>Desarrollo de un sistema autónomo de bajo consumo en una zona rural sin cobertura para detectar emisiones de aguas contaminadas al río. El proyecto consistió en el desarrollo de dispositivos hardware para la detección de presencia de aguas contaminadas con envío de datos inalámbrico hasta la Cloud y la integración de los datos en el SCADA de la Confederación Hodrográfica del Ebro.</p>\n<ul>\n<li>Estudio de cobertura para la transmisión vía GPRS.</li>\n<li>Equipos remotos K-111 GPRS, 4 I/O, con protección para exteriores&nbsp;(IP67).</li>\n<li>Sondas de presencia de líquidos.</li>\n<li>Parametrización del Software para integración en SCADA vía API Rest.</li>\n</ul>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "resultados": {
+          "h2": "Resultados",
+          "html": "<ul>\n<li>Detección de vertidos contaminantes.</li>\n<li>Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n<li>Cuantificación de aguas contaminadas que se emiten al río.</li>\n<li>Telecontrol de un parámetro crítico desde el SCADA.</li>\n</ul>",
+          "destacadoDentro": false,
+          "destacadoEsUltimo": false
+        },
+        "destacado": null,
+        "galeria": [],
+        "detallesTitulo": "Detalles del proyecto",
+        "detalles": [
+          {
+            "rotulo": "Cliente:",
+            "html": "SICE",
+            "texto": "SICE"
+          },
+          {
+            "rotulo": "Usuario:",
+            "html": "Confederación Hidrográfica del Ebro",
+            "texto": "Confederación Hidrográfica del Ebro"
+          },
+          {
+            "rotulo": "Ubicación:",
+            "html": "Sabiñánigo, España",
+            "texto": "Sabiñánigo, España"
+          },
+          {
+            "rotulo": "Sector:",
+            "html": "<a href=\"https://kunakair.com/es/sector/industria/\" rel=\"tag\">Industria</a>",
+            "texto": "Industria"
+          },
+          {
+            "rotulo": "Año:",
+            "html": "2017",
+            "texto": "2017"
+          }
+        ],
+        "detallesCrudo": "<p><span>Cliente:</span> SICE</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Usuario:</span> Confederación Hidrográfica del Ebro</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Ubicación:</span> Sabiñánigo, España</p>\n\t\t\t\t\t\t\t\n \n\t\t\t\t\t\t\t<p> <span>Sector: </span><a href=\"https://kunakair.com/es/sector/industria/\" rel=\"tag\">Industria</a>\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><span>Año:</span> 2017</p>",
+        "marcadores": [
+          {
+            "lat": "42.51935940000001",
+            "lng": "-0.3638114000000314"
+          }
+        ],
+        "solucionesTitulo": null,
+        "soluciones": []
+      },
+      "iframes": [],
+      "seo": {
+        "title": "Sistema de detección de emisiones de lindano | Kunak",
+        "description": "Sistema de alerta temprana para la deteccion de episodios de emisiones de aguas contaminadas al río en una zona rural sin cobertura.",
+        "canonical": "https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2018/06/IMG-20160729-WA0013-sice.jpg"
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section et_pb_fullwidth_section et_section_regular",
+          "chars": 3134,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer et_pb_fullwidth_section et_section_regular\"> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-en et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/contact\">Do you need to control the environmental impact of your operations?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/contact\">We can help you</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-es et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/es/contacto\">¿Necesitas información fiable para tu proyecto de calidad del aire?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/es/contacto\">Podemos ayudarte</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-fr et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/fr/contact\">Avez-vous besoin d’informations fiables pour votre projet de qualité de l’air ?</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/fr/contact\">Nous pouvons t'aider</a></div> </div> </div> </div> </div> </div> </div> <div class=\"et_pb_module et_pb_fullwidth_slider_N_tb_footer ocultar-ar et_pb_slider et_slider_auto et_slider_speed_7000\"> <div class=\"et_pb_slides\"> <div class=\"et_pb_slide et_pb_slide_N_tb_footer et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide\" data-slide-id=\"et_pb_slide_N_tb_footer\"> <div class=\"et_pb_container clearfix\"> <div class=\"et_pb_slider_container_inner\"> <div class=\"et_pb_slide_description\"> <h2 class=\"et_pb_slide_title\"><a href=\"https://kunakair.com/ar/contact\">هل تحتاج إلى التحكم في الأثر البيئي لعملياتك؟</a></h2> <div class=\"et_pb_button_wrapper\"><a class=\"et_pb_button et_pb_more_button\" href=\"https://kunakair.com/ar/contact\">يمكننا مساعدتك</a></div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6150,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 5340,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/case-studies/contamination-alert-of-aquifer-by-lindane/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 3,
+          "clase": "et_pb_section footer-background et_pb_with_background et_section_regular",
+          "chars": 318,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_pb_with_background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    },
+    "dron": {
+      "forma": "faq",
+      "clave": "dron",
+      "porque": "la más corta (151)",
+      "url": "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/",
+      "http": 200,
+      "bodyClass": "wp-singular faqs-template-default single single-faqs postid-65789 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [],
+      "campos": {
+        "html": "<p>Sí, siempre que la velocidad no supere los 20 km/h. De este modo se garantiza la estabilidad de la medición y la correcta captura de datos ambientales.</p>",
+        "h1": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimiento?"
+      },
+      "iframes": [],
+      "seo": {
+        "title": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimiento? - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/",
+        "ogImage": null
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6477,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-fr et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZnIvbmV3c2xldHRlci8=\">S'abonner</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 6232,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/faqs/can-it-be-installed-on-a-vehicle-or-drone-for-mobile-monitoring/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> <li id=\"menu-item-wpml-ls-338-fr\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-fr\"><a href=\"https://kunakair.com/fr/faqs/peut-on-linstaller-sur-un-vehicule-ou-un-drone-pour-un-suivi-mobile/\" title=\"Cambiar a Français\" aria-label=\"Cambiar a Français\"><span class=\"wpml-ls-native\" lang=\"fr\">Français</span></a></li> <li id=\"menu-item-wpml-ls-338-ar\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-ar wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-ar\"><a href=\"https://kunakair.com/ar/faqs/can-it-be-installed-on-a-vehicle-or-drone-for-mobile-monitoring/\" title=\"Cambiar a العربية\" aria-label=\"Cambiar a العربية\"><span class=\"wpml-ls-native\" lang=\"ar\">العربية</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-background et_section_regular",
+          "chars": 296,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    },
+    "calibracion-correccion": {
+      "forma": "faq",
+      "clave": "calibracion-correccion",
+      "porque": "la más larga (539) y la de más etiquetas (ul li a)",
+      "url": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/",
+      "http": 200,
+      "bodyClass": "wp-singular faqs-template-default single single-faqs postid-65776 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon_visible et_button_custom_icon et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db",
+      "migas": [],
+      "campos": {
+        "html": "<ul>\n<li>La calibración ajusta la respuesta del sensor comparando sus datos con una referencia trazable (como una estación de referencia o gas certificado) para determinar su incertidumbre exacta.</li>\n<li>La corrección modifica la respuesta del sensor sin referencia externa para reducir errores y compensar la deriva natural, aunque no permite calcular la incertidumbre con precisión.</li>\n</ul>\n<p>En síntesis, la calibración usa una referencia externa y la corrección es un ajuste interno para mantener la fiabilidad del sensor.</p>\n<p>Más info en la página 35 del <a target=\"_blank\" href=\"https://kunakair.com/es/descarga-catalogo/\">catálogo</a>.</p>",
+        "h1": "¿Cuál es la diferencia entre calibración y corrección?"
+      },
+      "iframes": [],
+      "seo": {
+        "title": "¿Cuál es la diferencia entre calibración y corrección? - Kunak",
+        "description": null,
+        "canonical": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/",
+        "ogImage": null
+      },
+      "pie": [
+        {
+          "i": 0,
+          "clase": "et_pb_section footer-links et_section_regular",
+          "chars": 6477,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-links et_section_regular\"> <div class=\"et_pb_with_border et_pb_row et_pb_row_N_tb_footer et_pb_gutters1\"> <div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-10\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>PRODUCTOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/monitor-calidad-aire/\">Kunak AIR Pro</a></li> <li><a href=\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\">Kunak AIR Lite</a></li> <li><a href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a></li> <li><a href=\"https://kunakair.com/es/kunak-api/\">Kunak API</a></li> <li><a href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">Cartuchos inteligentes</a></li> <li><a href=\"https://kunakair.com/es/accesorios/\">Accesorios</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-13\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>SECTORES</strong></p> <ul> <li><a href=\"https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/\">Urbano</a></li> <li><a href=\"https://kunakair.com/es/sectores/control-de-emisiones-industriales/\">Industria y olores</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/\">EDAR</a></li> <li><a href=\"https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/\">Petróleo y gas</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/\">Puertos y aeropuertos</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\">Construcción</a></li> <li><a href=\"https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/\">Minería</a></li> <li><a href=\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/\">Investigación y consultoría</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-16\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>EMPRESA</strong></p> <ul> <li><a href=\"https://kunakair.com/es/empresa/\">Sobre Kunak</a></li> <li><a href=\"https://kunakair.com/es/empresa/premios-y-reconocimientos/\">Premios y reconocimientos</a></li> <li><a href=\"https://kunakair.com/es/contacto/\">Contacto</a></li> <li><a href=\"https://kunakair.com/es/politica-de-seguridad-de-la-informacion/\">Política de seguridad</a></li> <li><a href=\"https://kunakair.com/es/sistema-interno-de-informacion/\">Sistema interno de información</a></li> </ul> </div> </div> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-en et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vc3Vic2NyaWJlLw==\">Subscribe!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-es et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\">¡Suscríbete!</span> </div><div class=\"et_pb_button_module_wrapper et_pb_button_N_tb_footer_wrapper et_pb_module \"> <span class=\"et_pb_button et_pb_button_N_tb_footer boton-azul ocultar-fr et_pb_bg_layout_light kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZnIvbmV3c2xldHRlci8=\">S'abonner</span> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-22\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>RECURSOS</strong></p> <ul> <li><a href=\"https://kunakair.com/es/recursos/guias/\">Artículos y guías</a></li> <li><a href=\"https://kunakair.com/es/casos-de-exito/\">Casos de éxito</a></li> <li><a href=\"https://kunakair.com/es/blog/\">Blog</a></li> <li class=\"pagina\"><a href=\"https://kunakair.com/es/recursos/documentos-cientificos/\">Documentos científicos</a></li> <li><a href=\"https://kunakair.com/es/recursos/kunakpedia/\">Kunakpedia</a></li> <li><a href=\"https://kunakair.com/es/recursos/preguntas-frecuentes/\">Preguntas frecuentes</a></li> <li><a href=\"https://kunakair.com/es/soporte/centro-de-ayuda/\">Centro de ayuda</a></li> <li><a href=\"https://kunakair.com/es/soporte/servicio-de-reparacion/\">Servicio de reparación (RMA)</a></li> <li><a href=\"https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50\">Soporte técnico</a></li> </ul> </div> </div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"text-19\" class=\"fwidget et_pb_widget widget_text\"> <div class=\"textwidget\"><p><strong>CERTIFICACIONES</strong><br> <a href=\"https://kunakair.com/doc/11.Certificates/Certificado_ENS_-_Kunak_Technologies.pdf\" target=\"_blank\"><img loading=\"lazy\" decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png\" alt=\"Certificación de conformidad con el ENS\" width=\"100\" height=\"122\" class=\"alignleft size-full wp-image-71468\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png 300w, https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens-247x300.png 247w\" sizes=\"(max-width: 100px) 100vw, 100px\"></a></p> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 1,
+          "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+          "chars": 6191,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-legal et_section_regular et_pb_section--with-menu\"> <div class=\"et_pb_row et_pb_row_N_tb_footer et_pb_gutters2 et_pb_row--with-menu\"> <div class=\"et_pb_column et_pb_column_3_5 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_sidebar_N_tb_footer et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light et_pb_sidebar_no_border\"> <div id=\"custom_html-29\" class=\"widget_text fwidget et_pb_widget widget_custom_html\"><div class=\"textwidget custom-html-widget\"><div class=\"et_pb_text_inner\"><p>2026 © KUNAK TECHNOLOGIES SL · <a href=\"https://kunakair.com/es/aviso-legal/\" title=\"Aviso legal\" rel=\"nofollow\">Aviso legal</a> – <a href=\"https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/\" title=\"Política de privacidad\" rel=\"nofollow\">Política de privacidad</a> – <a href=\"https://kunakair.com/es/politica-de-cookies/\" title=\"Política de cookies\" rel=\"nofollow\">Política de cookies</a> – <a class=\"mgbutton moove-gdpr-infobar-settings-btn change-settings-button\" data-href=\"#moove_gdpr_cookie_modal\" aria-label=\"Ajustes\" role=\"link\">Editar preferencias de cookies</a><br> </p> <p style=\"font-size: 80%;\"><span>Página web diseñada con </span><svg version=\"1.1\" id=\"corazon\" alt=\"corazón\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 14\" xml:space=\"preserve\"><path fill=\"#333\" d=\"M8,1.7l0.4-0.4c1-1,2.5-1.5,3.9-1.2C14.4,0.4,16,2.3,16,4.5v0.2c0,1.3-0.5,2.5-1.5,3.4l-5.6,5.3 c-0.2,0.2-0.5,0.3-0.9,0.3c-0.3,0-0.6-0.1-0.9-0.3L1.5,8.1C0.5,7.2,0,5.9,0,4.6V4.5c0-2.2,1.6-4,3.7-4.4c1.4-0.2,2.9,0.2,3.9,1.2 L8,1.7z M8,3.1L6.9,2C6.1,1.2,5,0.9,3.9,1C2.2,1.3,1,2.8,1,4.5v0.2c0,1,0.5,2,1.2,2.7l5.6,5.3c0,0,0.1,0.1,0.2,0.1 c0.1,0,0.2,0,0.2-0.1l5.6-5.3C14.6,6.6,15,5.7,15,4.6V4.5c0-1.7-1.2-3.1-2.9-3.4c-1.1-0.2-2.2,0.2-3,1L8,3.1z\"></path></svg><span>&nbsp;por&nbsp;</span> <a href=\"https://digitaldesign.es/\" target=\"_blank\" rel=\"noopener\" title=\"Hacemos páginas web con cabeza y corazón\" style=\"font-size: 9.6px;\">Digital Design</a></p></div></div></div> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-redes et_pb_css_mix_blend_mode_passthrough\"> <div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.linkedin.com/company/kunak/\" target=\"_blank\" title=\"Linkedin\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://twitter.com/KunaK_sensing\" target=\"_blank\" title=\"Twitter\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.instagram.com/kunak_technologies/\" target=\"_blank\" title=\"Instagram\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.facebook.com/KunakTechnologies/\" target=\"_blank\" title=\"Facebook\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div><div class=\"et_pb_module et_pb_icon et_pb_icon_N_tb_footer\"> <a href=\"https://www.youtube.com/channel/UC-suigTybwCW50od_rhTZxg\" target=\"_blank\" title=\"Youtube\"><span class=\"et_pb_icon_wrap \"><span class=\"et-pb-icon\"></span></span></a> </div> </div><div class=\"et_pb_column et_pb_column_1_5 et_pb_column_N_tb_footer footer-idioma et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu\"> <div class=\"et_pb_module et_pb_menu et_pb_menu_N_tb_footer et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned\"> <div class=\"et_pb_menu_inner_container clearfix\"> <div class=\"et_pb_menu__wrap\"> <div class=\"et_pb_menu__menu\"> <nav class=\"et-menu-nav\"><ul id=\"menu-language-switcher\" class=\"et-menu nav\"><li id=\"menu-item-61587\" class=\"none et_pb_menu_page_id-home menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61587\"><a href=\"https://kunakair.com/es/\">Inicio</a></li> <li id=\"menu-item-wpml-ls-338-es\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"wpml-ls-submenu-wpml-ls-338-es\"><span class=\"wpml-ls-native\" lang=\"es\">Español</span></a> <ul class=\"sub-menu\"> <li id=\"menu-item-wpml-ls-338-en\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-en\"><a href=\"https://kunakair.com/faqs/what-is-the-difference-between-calibration-and-correction/\" title=\"Cambiar a English\" aria-label=\"Cambiar a English\"><span class=\"wpml-ls-native\" lang=\"en\">English</span></a></li> <li id=\"menu-item-wpml-ls-338-fr\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-fr\"><a href=\"https://kunakair.com/fr/faqs/quelle-est-la-difference-entre-letalonnage-et-la-correction/\" title=\"Cambiar a Français\" aria-label=\"Cambiar a Français\"><span class=\"wpml-ls-native\" lang=\"fr\">Français</span></a></li> <li id=\"menu-item-wpml-ls-338-ar\" class=\"menu-item wpml-ls-slot-338 wpml-ls-item wpml-ls-item-ar wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-338-ar\"><a href=\"https://kunakair.com/ar/faqs/what-is-the-difference-between-calibration-and-correction/\" title=\"Cambiar a العربية\" aria-label=\"Cambiar a العربية\"><span class=\"wpml-ls-native\" lang=\"ar\">العربية</span></a></li> </ul> </li> </ul></nav> </div> <div class=\"et_mobile_nav_menu\"> <div class=\"mobile_nav closed\"> <span class=\"mobile_menu_bar\"></span> </div> </div> </div> </div> </div> </div> </div> </div>"
+        },
+        {
+          "i": 2,
+          "clase": "et_pb_section footer-background et_section_regular",
+          "chars": 296,
+          "html": "<div class=\"et_pb_section et_pb_section_N_tb_footer footer-background et_section_regular\"> <div class=\"et_pb_row et_pb_row_N_tb_footer\"> <div class=\"et_pb_column et_pb_column_4_4 et_pb_column_N_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty\"> </div> </div> </div>"
+        }
+      ]
+    }
+  },
+  "pieOtrasSecciones": [
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "des-moines",
+      "b": "world-athletics",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre des-moines y world-athletics",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_me",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item"
+      ]
+    },
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "des-moines",
+      "b": "rio-de-janeiro",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre des-moines y rio-de-janeiro",
+        "     …nu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-",
+        "     …nu-item-wpml-ls-338-es\"><a href=\"https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/\" aria-curren"
+      ]
+    },
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "des-moines",
+      "b": "lindano",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre des-moines y lindano",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_me",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item"
+      ]
+    },
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "world-athletics",
+      "b": "rio-de-janeiro",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre world-athletics y rio-de-janeiro",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_me"
+      ]
+    },
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "world-athletics",
+      "b": "lindano",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre world-athletics y lindano",
+        "     …-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/\" aria-current=\"pag",
+        "     …-ls-338-es\"><a href=\"https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/\""
+      ]
+    },
+    {
+      "seccion": 2,
+      "clase": "et_pb_section footer-legal et_section_regular et_pb_section--with-menu",
+      "a": "rio-de-janeiro",
+      "b": "lindano",
+      "detalle": [
+        "S2 (et_pb_section footer-legal et_section_regular et_pb_section--with-menu) difiere entre rio-de-janeiro y lindano",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_me",
+        "     … wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item"
+      ]
+    }
+  ]
+}

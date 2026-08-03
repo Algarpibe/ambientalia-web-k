@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "fecha": "2026-08-02",
+    "rutas": 35,
+    "criterio": "último N con HTTP 200; parada por 404",
+    "MAX": 64,
+    "total": 142,
+    "extra": 107,
+    "extraSegunLaVentana": 56,
+    "subestimadas": 13,
+    "paginan": 21,
+    "noPaginan": 14
+  },
+  "paginas": {
+    "/es/productos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/productos/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/sectores/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/sectores/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/recursos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/recursos/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/casos-de-exito/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/casos-de-exito/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/blog/": {
+      "grupo": "hub",
+      "paginas": 17,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 8
+    },
+    "/es/glosario/": {
+      "grupo": "hub",
+      "paginas": 8,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 8
+    },
+    "/es/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "paginas": 4,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 4
+    },
+    "/es/recursos/articulos/": {
+      "grupo": "hub",
+      "paginas": 16,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 6
+    },
+    "/es/recursos/seminarios-web/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/recursos/kunakpedia/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/recursos/kunakpedia/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/recursos/documentos-cientificos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/recursos/documentos-cientificos/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/recursos/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "sirve 200 hasta N=64 sin 404; canonical de /page/64/ → https://kunakair.com/es/recursos/preguntas-frecuentes/",
+      "canonicalConfirmaMismaPagina": true,
+      "segunLaVentana": 1
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 7,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 4
+    },
+    "/es/etiqueta/co2-es/": {
+      "grupo": "post_tag",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/etiqueta/contaminantes-atmosfericos/": {
+      "grupo": "post_tag",
+      "paginas": 8,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 4
+    },
+    "/es/etiqueta/cov/": {
+      "grupo": "post_tag",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/etiqueta/emisiones-industriales/": {
+      "grupo": "post_tag",
+      "paginas": 5,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 3
+    },
+    "/es/etiqueta/gases-de-efecto-invernadero/": {
+      "grupo": "post_tag",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/etiqueta/h2s-es/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/etiqueta/malos-olores/": {
+      "grupo": "post_tag",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/etiqueta/monitorizacion-ambiental/": {
+      "grupo": "post_tag",
+      "paginas": 19,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 11
+    },
+    "/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 4,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 3
+    },
+    "/es/etiqueta/particulas-en-suspension/": {
+      "grupo": "post_tag",
+      "paginas": 4,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 7,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 4
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "grupo": "scientific-category",
+      "paginas": 3,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/scientific-category/articulos-tecnicos/": {
+      "grupo": "scientific-category",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/scientific-category/evaluaciones-independientes/": {
+      "grupo": "scientific-category",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/recursos/articulos/contaminacion-minera/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "grupo": "resources",
+      "paginas": 5,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/recursos/articulos/contaminacion-y-salud/": {
+      "grupo": "resources",
+      "paginas": 4,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/recursos/articulos/petroleo-y-gas/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunLaVentana": 1,
+      "status2": 404
+    },
+    "/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "grupo": "resources",
+      "paginas": 5,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    },
+    "/es/recursos/articulos/productos-kunak/": {
+      "grupo": "resources",
+      "paginas": 2,
+      "paginaDeVerdad": true,
+      "segunLaVentana": 2
+    }
+  }
+}

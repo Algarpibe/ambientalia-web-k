@@ -1,0 +1,685 @@
+{
+  "meta": {
+    "fecha": "2026-08-02",
+    "sabotaje": false,
+    "paginas": 9
+  },
+  "paginas": {
+    "/es/blog/": {
+      "forma": "L1-blog",
+      "nTarjetas": 9,
+      "tarjetas": [
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "Proyecto SIMGO",
+            "href": "/es/proyecto-simgo/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/categoria/noticias/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "noticias"
+            ],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Kunak AIR Pro logra la certificación Grado 1 para PM2.5 en C",
+            "href": "/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/categoria/noticias/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "noticias"
+            ],
+            "tag": [
+              "monitorizacion-ambiental",
+              "particulas-en-suspension",
+              "sensor-de-calidad-del-aire"
+            ],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Kunak obtiene el Sello Reconcilia por su compromiso con la c",
+            "href": "/es/kunak-obtiene-el-sello-reconcilia/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/categoria/noticias/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "noticias"
+            ],
+            "tag": [
+              "monitorizacion-ambiental"
+            ],
+            "resources": [],
+            "type": "post"
+          }
+        }
+      ]
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "forma": "L1-etiqueta",
+      "nTarjetas": 9,
+      "tarjetas": [
+        {
+          "imagen": {
+            "variante": "1080x675"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Monitorización de la calidad del aire en centros de datos: a",
+            "href": "/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/"
+          },
+          "fecha": "May 25, 2026",
+          "taxEnMeta": [
+            "/es/categoria/articulos/"
+          ],
+          "extracto": {
+            "chars": 267,
+            "terminaEnPuntos": true,
+            "arranque": "La monitorización de la calidad del aire en centros de datos"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos"
+            ],
+            "tag": [
+              "calidad-del-aire",
+              "emisiones-industriales",
+              "monitorizacion-ambiental"
+            ],
+            "resources": [
+              "contaminacion-urbana"
+            ],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1080x675"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Monitorización de emisiones del tráfico urbano: control avan",
+            "href": "/es/monitorizacion-de-emisiones-del-trafico-urbano/"
+          },
+          "fecha": "Mar 25, 2026",
+          "taxEnMeta": [
+            "/es/categoria/articulos/"
+          ],
+          "extracto": {
+            "chars": 270,
+            "terminaEnPuntos": true,
+            "arranque": "La monitorización de emisiones del tráfico urbano permite me"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos"
+            ],
+            "tag": [
+              "calidad-del-aire",
+              "contaminantes-atmosfericos",
+              "normativa-de-calidad-del-aire"
+            ],
+            "resources": [
+              "contaminacion-urbana"
+            ],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1080x675"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Calidad del aire en islas: un desafío oculto para el paraíso",
+            "href": "/es/calidad-del-aire-en-islas/"
+          },
+          "fecha": "Oct 28, 2025",
+          "taxEnMeta": [
+            "/es/categoria/articulos/"
+          ],
+          "extracto": {
+            "chars": 267,
+            "terminaEnPuntos": true,
+            "arranque": "Pese a ser lugares con fama de prístinos, las islas del mund"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos"
+            ],
+            "tag": [
+              "calidad-del-aire",
+              "contaminantes-atmosfericos",
+              "monitorizacion-ambiental"
+            ],
+            "resources": [
+              "articulos",
+              "contaminacion-y-salud"
+            ],
+            "type": "post"
+          }
+        }
+      ]
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "forma": "L1-resources-hijo",
+      "nTarjetas": 15,
+      "tarjetas": [
+        {
+          "imagen": {
+            "variante": "1024x631"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Monitorización de la calidad del aire en centros de datos: a",
+            "href": "/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/recursos/articulos/contaminacion-urbana/"
+          ],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "May 25, 2026"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Monitorización de emisiones del tráfico urbano: control avan",
+            "href": "/es/monitorizacion-de-emisiones-del-trafico-urbano/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/recursos/articulos/contaminacion-urbana/"
+          ],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Mar 25, 2026"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Análisis de la Nueva Directiva de Calidad del Aire (UE) 2024",
+            "href": "/es/nueva-directiva-de-calidad-del-aire-ue-2024-2881/"
+          },
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/recursos/articulos/contaminacion-urbana/"
+          ],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Abr 11, 2025"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        }
+      ]
+    },
+    "/es/recursos/seminarios-web/": {
+      "forma": "L1-resources-padre",
+      "nTarjetas": 3,
+      "tarjetas": [
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Webinar: Control de la contaminación atmosférica en la indus",
+            "href": "/es/webinar-control-de-la-contaminacion-del-aire-en-la-industria/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Jun 16, 2023"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x576"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Control de la contaminación del aire en la industria &#8211;",
+            "href": "/es/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Nov 25, 2022"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "original"
+          },
+          "titulo": {
+            "tag": "h2",
+            "txt": "Webinar: Detección temprana de episodios de contaminación po",
+            "href": "/es/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": {
+            "chars": 11,
+            "terminaEnPuntos": false,
+            "arranque": "Dic 2, 2021"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        }
+      ]
+    },
+    "/es/glosario/": {
+      "forma": "L2-glosario",
+      "nTarjetas": 5,
+      "tarjetas": [
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "Emisiones por chimenea",
+            "href": "/es/emisiones-por-chimenea/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "glossary"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "Óxidos de nitrógeno (NOx)",
+            "href": "/es/oxidos-de-nitrogeno-nox/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "glossary"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "LDAR (Detección y reparación de fugas)",
+            "href": "/es/ldar/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "glossary"
+          }
+        }
+      ]
+    },
+    "/es/preguntas-frecuentes/": {
+      "forma": "L2-faqs",
+      "nTarjetas": 5,
+      "tarjetas": [
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "¿Qué área cubre cada dispositivo?",
+            "href": "/es/faqs/que-area-cubre-cada-dispositivo/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "faqs"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "¿Los equipos Kunak son certificados ATEX?",
+            "href": "/es/faqs/los-equipos-kunak-son-certificados-atex/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "faqs"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": {
+            "tag": "h2",
+            "txt": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva",
+            "href": "/es/faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "faqs"
+          }
+        }
+      ]
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "forma": "L3-sci",
+      "nTarjetas": 14,
+      "tarjetas": [
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/scientific-category/articulos-cientificos-y-estudios/",
+            "/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos-cientificos-y-estudios"
+            ],
+            "tag": [],
+            "resources": [],
+            "type": "scientific-docs"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/scientific-category/articulos-cientificos-y-estudios/",
+            "/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos-cientificos-y-estudios"
+            ],
+            "tag": [],
+            "resources": [],
+            "type": "scientific-docs"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [
+            "/es/scientific-category/articulos-cientificos-y-estudios/",
+            "/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/"
+          ],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [
+              "articulos-cientificos-y-estudios"
+            ],
+            "tag": [],
+            "resources": [],
+            "type": "scientific-docs"
+          }
+        }
+      ]
+    },
+    "/es/recursos/": {
+      "forma": "L4-listado-embebido",
+      "nTarjetas": 2,
+      "tarjetas": [
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h3",
+            "txt": "Monitorización perimetral en instalaciones industriales: con",
+            "href": "/es/monitorizacion-perimetral/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Jun 25, 2026"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        },
+        {
+          "imagen": {
+            "variante": "1024x683"
+          },
+          "titulo": {
+            "tag": "h3",
+            "txt": "Monitorización near-reference: precisión avanzada en la medi",
+            "href": "/es/monitorizacion-near-reference/"
+          },
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": {
+            "chars": 12,
+            "terminaEnPuntos": false,
+            "arranque": "Jun 18, 2026"
+          },
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "post"
+          }
+        }
+      ]
+    },
+    "/es/casos-de-exito/": {
+      "forma": "L5-casos",
+      "nTarjetas": 57,
+      "tarjetas": [
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [
+              "cov",
+              "h2s-es",
+              "malos-olores"
+            ],
+            "resources": [],
+            "type": "case-studies"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [
+              "cov",
+              "h2s-es",
+              "malos-olores"
+            ],
+            "resources": [],
+            "type": "case-studies"
+          }
+        },
+        {
+          "imagen": null,
+          "titulo": null,
+          "fecha": null,
+          "taxEnMeta": [],
+          "extracto": null,
+          "autor": false,
+          "leerMas": null,
+          "taxEnClases": {
+            "category": [],
+            "tag": [],
+            "resources": [],
+            "type": "case-studies"
+          }
+        }
+      ]
+    }
+  },
+  "categoriaArticulos": {
+    "status": 200,
+    "esArchivo": true
+  }
+}
