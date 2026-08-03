@@ -270,6 +270,23 @@ function ponGancho() {
       if (!yaMal) process.exitCode = 2;
       return;
     }
+    /* ── La OTRA mitad del contrato, y hasta hoy no estaba conectada ──────────
+     * El gancho cerraba el código de salida por debajo del mínimo, y con eso
+     * «0 comparado = verde» quedaba cerrado **para la máquina**. Para el LECTOR
+     * no: un verde sigue siendo un `✅` sin decir sobre cuántas unidades, y el
+     * HANDOFF que estrenó el contrato afirmaba «ahora la imprime».
+     *
+     * **Medido al validarlas en vivo: la imprimía 1 sonda de 48.** Las otras 47
+     * declaran, cuentan y cierran bien el código —la guarda funciona— pero
+     * salen con un `✅` mudo, que es exactamente el hábito de lectura que el
+     * contrato venía a romper. Es *documentado no es conectado* (`CLAUDE.md`
+     * §sondas, regla 3) sobre la mitad legible de la propia guarda.
+     *
+     * Se arregla aquí y no en 47 ficheros por lo de siempre: **lo que hay que
+     * acordarse de llamar se olvida.** `informe()` sigue existiendo para dejar
+     * la línea en su sitio dentro del informe; si no se llamó, la pone el
+     * gancho al final. Un verde sin línea de unidades deja de ser posible. */
+    for (const e of _evaluaciones) if (!e._informado) e.linea();
     if (_congelo && _evaluaciones.length === 0 && !sinContrato()) {
       console.error(
         `\n❌ SIN CONTRATO DE EVALUACIÓN — esta sonda ha congelado una medida sin\n` +
@@ -353,16 +370,30 @@ export class Evaluadas {
   }
 
   /**
+   * La línea de unidades. Idempotente: la escribe quien llegue primero
+   * —`informe()` si la sonda la llama, el gancho de salida si no—, y nunca dos
+   * veces. **Es la mitad legible del contrato**: sin ella, un `✅` no distingue
+   * «no hay diferencias» de «no se midió», que es la pregunta entera.
+   */
+  linea() {
+    if (this._informado) return;
+    this._informado = true;
+    console.log(
+      `  ✓ evaluadas ${this.n}/${this.minimo} ${this.unidad}` +
+        (this.nombre ? ` · ${this.nombre}` : "") +
+        (this.fallos.length ? `  ⚠ ${this.fallos.length} con error, contadas aparte` : ""),
+    );
+  }
+
+  /**
    * Imprime el veredicto y devuelve el nº de fallos (0 = se puede dar verde).
-   * Llamarla es lo recomendable —deja la línea en el informe— pero **no es
-   * necesario para la guarda**: el gancho de salida cierra el código igual.
+   * Llamarla es lo recomendable —deja la línea DENTRO del informe, en su
+   * sitio— pero **no es necesario**: ni para la guarda (el gancho cierra el
+   * código igual) ni para la línea (el gancho la pone al final si falta).
    */
   informe() {
     if (this.suficiente()) {
-      console.log(
-        `  ✓ evaluadas ${this.n}/${this.minimo} ${this.unidad}` +
-          (this.fallos.length ? `  ⚠ ${this.fallos.length} con error, contadas aparte` : ""),
-      );
+      this.linea();
       return this.fallos.length ? 1 : 0;
     }
     this.grito();
@@ -633,6 +664,140 @@ export function w(file, data, { pisar = false } = {}) {
   fs.writeFileSync(destino, cuerpo);
   console.log("→", rel(destino));
   return destino;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA AUDITORÍA DEL CONTRATO — «¿lo declaran las N?», contestada EJECUTANDO
+ *
+ * ── La SÉPTIMA instancia de la misma clase, y en el test del contrato ──────
+ * El barrido que comprobaba que las sondas declaran su mínimo era **una
+ * expresión regular sobre el texto del fichero**, y dio verde sobre
+ * `c-censo.mjs` **con dos `const ev` y sin compilar**. O sea que la
+ * comprobación de que la guarda está puesta miraba **el texto y no el
+ * programa** — *mirar una cosa y creer que has mirado otra*, cometido dentro de
+ * la comprobación que cierra esa misma clase.
+ *
+ * El primer parche añadió un `node --check` **al lado**, como segunda
+ * aserción. No basta, y la razón es exactamente la regla 1 de `CLAUDE.md`
+ * §sondas —*un canal de verdad*—: con dos aserciones independientes, un fichero
+ * roto dejaba la primera **en verde**. El informe seguía pudiendo decir
+ * «las 48 declaran su mínimo» de un directorio que no arranca.
+ *
+ * ── La regla ──────────────────────────────────────────────────────────────
+ *
+ *   > **Una sonda solo cuenta como conforme si COMPILA y declara. Lo que no
+ *   > compila no es «sin veredicto»: es NO CONFORME.** Un solo veredicto por
+ *   > sonda, y un fichero roto lo tumba.
+ *
+ * Y la detección de la declaración deja de ser un `grep`: se busca sobre el
+ * fuente **sin comentarios y sin literales**, porque `new Evaluadas(` dentro de
+ * un comentario o de una cadena es exactamente lo que un `grep` no distingue de
+ * una declaración de verdad. Los dos casos tienen fixture en `qa:lib`.
+ *
+ * ── Lo que esta auditoría NO discrimina, dicho aquí y no en un acta ────────
+ * Que la `ev` esté **en el ámbito correcto**. `c-muestra.mjs` estuvo a punto de
+ * quedar con la declaración dentro de un `for` anidado: **compila, declara, y
+ * no cuenta nada.** Eso no lo ve ni el texto ni el parser — lo ve **correr la
+ * sonda**, que es el paso 1 de la validación en vivo. Esta función cubre el
+ * fichero; el contrato lo cobra la corrida.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** ¿Puede un `/` en esta posición abrir un literal de expresión regular? */
+function abreRegex(previo) {
+  const t = previo.trimEnd();
+  if (!t) return true;
+  if (/(?:^|[^\w$.])(return|typeof|instanceof|in|of|new|delete|void|case|do|else|yield|await)$/.test(t)) return true;
+  return !/[\w$)\]]$/.test(t);
+}
+
+/**
+ * El fuente **sin comentarios, sin cadenas y sin expresiones regulares**: lo
+ * que queda es código, y solo ahí cuenta encontrar una declaración.
+ *
+ * Es un escáner y no un regex a propósito. Un `grep` no distingue
+ * `new Evaluadas(` de `// new Evaluadas(`, y esa diferencia es justo la que
+ * separa una guarda puesta de una guarda contada dos veces en la documentación.
+ */
+export function sinLiterales(src) {
+  let out = "";
+  for (let i = 0; i < src.length; ) {
+    const c = src[i];
+    const d = src[i + 1];
+    if (c === "/" && d === "/") {
+      while (i < src.length && src[i] !== "\n") i++;
+      continue;
+    }
+    if (c === "/" && d === "*") {
+      i += 2;
+      while (i < src.length && !(src[i] === "*" && src[i + 1] === "/")) i++;
+      i += 2;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") {
+      i++;
+      while (i < src.length) {
+        if (src[i] === "\\") { i += 2; continue; }
+        if (src[i] === c) { i++; break; }
+        i++;
+      }
+      out += '""';
+      continue;
+    }
+    if (c === "/" && abreRegex(out)) {
+      i++;
+      let clase = false;
+      while (i < src.length) {
+        if (src[i] === "\\") { i += 2; continue; }
+        if (src[i] === "\n") break; // no era un literal: se corta y punto
+        if (src[i] === "[") clase = true;
+        else if (src[i] === "]") clase = false;
+        else if (src[i] === "/" && !clase) { i++; break; }
+        i++;
+      }
+      while (i < src.length && /[dgimsuvy]/.test(src[i])) i++;
+      out += "/RE/";
+      continue;
+    }
+    out += c;
+    i++;
+  }
+  return out;
+}
+
+/**
+ * Audita un directorio de sondas contra el contrato de `Evaluadas`.
+ *
+ * Devuelve UN veredicto por sonda —`ok` · `rota` · `sinDeclarar`— porque un
+ * fichero que no compila tiene que tumbar la afirmación «declaran», no
+ * convivir con ella en verde.
+ *
+ * @param {string} dir  directorio con las sondas (por defecto, `scripts/qa`)
+ * @param {string[]} [excluir]  ficheros que no son sondas
+ */
+export async function auditarSondas(dir = QA, excluir = ["lib.mjs", "lib.test.mjs"]) {
+  const { spawnSync } = await import("node:child_process");
+  const ficheros = fs.readdirSync(dir).filter((f) => f.endsWith(".mjs") && !excluir.includes(f)).sort();
+  const rotas = [];
+  const sinDeclarar = [];
+  const conformes = [];
+
+  for (const f of ficheros) {
+    const ruta = path.join(dir, f);
+    // 1 · COMPILAR. Es el paso que ejecuta un parser de verdad, y es el que
+    //     manda: si no compila, no hay nada más que preguntarle al fichero.
+    const chk = spawnSync(process.execPath, ["--check", ruta], { encoding: "utf8" });
+    if (chk.status !== 0) {
+      rotas.push({ fichero: f, error: (chk.stderr || "").split("\n").find((l) => /Error|error/.test(l))?.trim() || "no compila" });
+      continue;
+    }
+    // 2 · DECLARAR, sobre el código y no sobre el texto.
+    const codigo = sinLiterales(fs.readFileSync(ruta, "utf8"));
+    const declara = /new\s+Evaluadas\s*\(/.test(codigo) || /SIN_CONTRATO\s*\]?\s*=\s*""/.test(codigo);
+    if (declara) conformes.push(f);
+    else sinDeclarar.push(f);
+  }
+
+  return { total: ficheros.length, conformes, rotas, sinDeclarar };
 }
 
 /* ═════════════════════════════════════════════════════════════════════════
