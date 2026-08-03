@@ -1,0 +1,856 @@
+{
+  "home@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        0
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "20px/26px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "monitor@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        421.39
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            257.83
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "accesorios@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        392.59
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            597.05
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "software@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        421.39
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            416.47
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "api@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        392.59
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            526.73
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "urbano@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        261.16
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "30px/36px/400"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            413.2
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "industria@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        261.16
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            201
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "30px/36px/400"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            445.02
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "home@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        0
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "12px/15px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            null
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "monitor@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        308.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            257.83
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "accesorios@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        278.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            19
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            3
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            307.27
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "software@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        308.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            266.05
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "api@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        278.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            298.34
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "urbano@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        189.39
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "30px/36px/400"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            285.22
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "industria@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        189.39
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            201
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "30px/36px/400"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            282.66
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  }
+}

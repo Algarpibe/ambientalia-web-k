@@ -1,0 +1,1700 @@
+{
+  "home@1440": [
+    {
+      "docH": 11930,
+      "h1": 0,
+      "pie": 11335.92,
+      "filas": [
+        41,
+        144,
+        113,
+        720,
+        153.19,
+        824.05,
+        669.77,
+        809.31,
+        431.25,
+        634.8,
+        172.22,
+        401.41,
+        1041.88,
+        680.19,
+        174.8,
+        569.75,
+        171,
+        769.55,
+        451.44,
+        373.19,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "20px/26px/300",
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 0,
+          "h": 0,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 0,
+          "h": 0,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 0,
+          "h": 0,
+          "dentro": -279.87
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_3_5",
+          "y": 279.88,
+          "h": 549.03,
+          "dentro": 99.88
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_0",
+          "y": 180,
+          "h": 720,
+          "dentro": 180
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0",
+          "y": 0,
+          "h": 900,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 11335.92,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 0,
+          "h": 11335.92,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 0,
+          "h": 11335.92,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-24305 page",
+          "y": 0,
+          "h": 11335.92,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 11335.92,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 11929.67,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 10316
+    }
+  ],
+  "monitor@1440": [
+    {
+      "docH": 13611,
+      "h1": 421.39,
+      "pie": 12562.5,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        640.56,
+        2487.75,
+        5802.98,
+        697.14,
+        146,
+        1268.63,
+        507.13,
+        154.56,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 257.83,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 421.39,
+          "h": 33,
+          "dentro": 60
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 361.39,
+          "h": 93,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 361.39,
+          "h": 103.88,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 361.39,
+          "h": 539.77,
+          "dentro": 28.8
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 332.59,
+          "h": 640.56,
+          "dentro": 57.59
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 275,
+          "h": 3243.5,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 12295.5,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 225,
+          "h": 12295.5,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 225,
+          "h": 12295.5,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-768 solutions",
+          "y": 225,
+          "h": 12295.5,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 12337.5,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 13385.75,
+          "dentro": 225
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 8502
+    }
+  ],
+  "accesorios@1440": [
+    {
+      "docH": 11319,
+      "h1": 392.59,
+      "pie": 10270.7,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        437.98,
+        313,
+        360.14,
+        1476.47,
+        5126.38,
+        697.14,
+        146,
+        1268.63,
+        507.13,
+        154.56,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 597.05,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 392.59,
+          "h": 56,
+          "dentro": 60
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 332.59,
+          "h": 116,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 332.59,
+          "h": 129.31,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_3_5",
+          "y": 332.59,
+          "h": 429.98,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 332.59,
+          "h": 437.98,
+          "dentro": 57.59
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 275,
+          "h": 7611.56,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 10003.7,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 225,
+          "h": 10003.7,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 225,
+          "h": 10003.7,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-26481 solutions",
+          "y": 225,
+          "h": 10003.7,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 10045.7,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 11093.95,
+          "dentro": 225
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6678
+    }
+  ],
+  "software@1440": [
+    {
+      "docH": 11864,
+      "h1": 421.39,
+      "pie": 11182.42,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        656.53,
+        1801.52,
+        5577.81,
+        715.14,
+        146,
+        1318.63,
+        460.53,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 416.47,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 421.39,
+          "h": 33,
+          "dentro": 60
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 361.39,
+          "h": 93,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 361.39,
+          "h": 103.88,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 361.39,
+          "h": 598.94,
+          "dentro": 28.8
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 332.59,
+          "h": 656.53,
+          "dentro": 57.59
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 275,
+          "h": 2544.44,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 10915.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 225,
+          "h": 10915.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 225,
+          "h": 10915.42,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27164 solutions",
+          "y": 225,
+          "h": 10915.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 10957.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 11638.52,
+          "dentro": 225
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 7286
+    }
+  ],
+  "api@1440": [
+    {
+      "docH": 5421,
+      "h1": 392.59,
+      "pie": 4739.63,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        544.2,
+        775.36,
+        570.5,
+        603.94,
+        146,
+        1318.63,
+        460.53,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 526.73,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 392.59,
+          "h": 56,
+          "dentro": 60
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 332.59,
+          "h": 116,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 332.59,
+          "h": 126.88,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 332.59,
+          "h": 529.81,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 332.59,
+          "h": 544.2,
+          "dentro": 57.59
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 275,
+          "h": 1947.66,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 4472.63,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 225,
+          "h": 4472.63,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 225,
+          "h": 4472.63,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27049 solutions",
+          "y": 225,
+          "h": 4472.63,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 4514.63,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 5195.72,
+          "dentro": 225
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6123
+    }
+  ],
+  "urbano@1440": [
+    {
+      "docH": 6054,
+      "h1": 261.16,
+      "pie": 5460.17,
+      "filas": [
+        41,
+        144,
+        113,
+        172.61,
+        122,
+        50,
+        775.94,
+        440.83,
+        566.98,
+        418.88,
+        688.64,
+        122.59,
+        587.66,
+        122.59,
+        532.11,
+        373.19,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "30px/36px/400",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 413.2,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 47.36
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_4_4",
+          "y": 213.8,
+          "h": 115.02,
+          "dentro": 28.8
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_2_tb_header",
+          "y": 185,
+          "h": 172.61,
+          "dentro": 185
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0_tb_header",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "header",
+          "cls": "et-l et-l--header",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-boc",
+          "y": 0,
+          "h": 6053.92,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 6053.92,
+          "dentro": 0
+        },
+        {
+          "tag": "body",
+          "cls": "wp-singular page-template",
+          "y": 0,
+          "h": 6053.92,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 5812
+    }
+  ],
+  "industria@1440": [
+    {
+      "docH": 7144,
+      "h1": 261.16,
+      "pie": 6550.5,
+      "filas": [
+        41,
+        144,
+        113,
+        172.61,
+        122,
+        50,
+        684.16,
+        630.17,
+        525.61,
+        236.36,
+        418.88,
+        740.19,
+        688.64,
+        122.59,
+        618.25,
+        122.59,
+        559.11,
+        373.19,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 201,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "30px/36px/400",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 445.02,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 261.16,
+          "h": 46,
+          "dentro": 47.36
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_4_4",
+          "y": 213.8,
+          "h": 115.02,
+          "dentro": 28.8
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_2_tb_header",
+          "y": 185,
+          "h": 172.61,
+          "dentro": 185
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0_tb_header",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "header",
+          "cls": "et-l et-l--header",
+          "y": 0,
+          "h": 397.61,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-boc",
+          "y": 0,
+          "h": 7144.25,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 7144.25,
+          "dentro": 0
+        },
+        {
+          "tag": "body",
+          "cls": "wp-singular page-template",
+          "y": 0,
+          "h": 7144.25,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 8717
+    }
+  ],
+  "home@390": [
+    {
+      "docH": 19221,
+      "h1": 0,
+      "pie": 17459.86,
+      "filas": [
+        0,
+        125.58,
+        65.58,
+        786.48,
+        265.19,
+        1998.8,
+        1252.81,
+        1523.36,
+        855.88,
+        845.09,
+        153.25,
+        770.13,
+        1814.61,
+        1410.64,
+        123.5,
+        1273.53,
+        99,
+        1423.42,
+        843.27,
+        1387.42,
+        283.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "12px/15px/300",
+      "h1Renglones": null,
+      "h1AnchoTexto": null,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 0,
+          "h": 0,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 0,
+          "h": 0,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 0,
+          "h": 0,
+          "dentro": -80
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_3_5",
+          "y": 80,
+          "h": 756.48,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_0",
+          "y": 50,
+          "h": 786.48,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0",
+          "y": 0,
+          "h": 836.48,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 17459.86,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 0,
+          "h": 17459.86,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 0,
+          "h": 17459.86,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-24305 page",
+          "y": 0,
+          "h": 17459.86,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 17459.86,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 19221.03,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 9667
+    }
+  ],
+  "monitor@390": [
+    {
+      "docH": 23676,
+      "h1": 308.58,
+      "pie": 21311.52,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        1387.88,
+        5094.59,
+        9807.13,
+        1440.44,
+        119,
+        1868.63,
+        1678.05,
+        346.34,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 257.83,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 308.58,
+          "h": 33,
+          "dentro": 42
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 266.58,
+          "h": 75,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 266.58,
+          "h": 81.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 266.58,
+          "h": 907.09,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 236.58,
+          "h": 1387.88,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 186.58,
+          "h": 6582.47,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 21132.94,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 136.58,
+          "h": 21132.94,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 136.58,
+          "h": 21132.94,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-768 solutions",
+          "y": 136.58,
+          "h": 21132.94,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 21174.94,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 23539.33,
+          "dentro": 136.58
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 9661
+    }
+  ],
+  "accesorios@390": [
+    {
+      "docH": 20683,
+      "h1": 278.58,
+      "pie": 18318.3,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        899.23,
+        345.5,
+        1143.39,
+        3398.84,
+        8782.69,
+        1494.44,
+        119,
+        1816.63,
+        1678.05,
+        346.34,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 19,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 3,
+      "h1AnchoTexto": 307.27,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 278.58,
+          "h": 79,
+          "dentro": 42
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 236.58,
+          "h": 121,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 236.58,
+          "h": 127.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_3_5",
+          "y": 236.58,
+          "h": 549.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 236.58,
+          "h": 899.23,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 186.58,
+          "h": 14459.66,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 18139.72,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 136.58,
+          "h": 18139.72,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 136.58,
+          "h": 18139.72,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-26481 solutions",
+          "y": 136.58,
+          "h": 18139.72,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 18181.72,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 20546.11,
+          "dentro": 136.58
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 7998
+    }
+  ],
+  "software@390": [
+    {
+      "docH": 20889,
+      "h1": 308.58,
+      "pie": 18836.11,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        950.2,
+        3314.64,
+        10397.92,
+        1447.19,
+        99,
+        1921.13,
+        1649.16,
+        313.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 266.05,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 308.58,
+          "h": 56,
+          "dentro": 42
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 266.58,
+          "h": 98,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 266.58,
+          "h": 104.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 266.58,
+          "h": 620.61,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 236.58,
+          "h": 950.2,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 186.58,
+          "h": 4322.64,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 18657.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 136.58,
+          "h": 18657.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 136.58,
+          "h": 18657.53,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27164 solutions",
+          "y": 136.58,
+          "h": 18657.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 18699.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 20752.44,
+          "dentro": 136.58
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 9228
+    }
+  ],
+  "api@390": [
+    {
+      "docH": 9149,
+      "h1": 278.58,
+      "pie": 7096.53,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        859.13,
+        1293.13,
+        960.61,
+        1310.19,
+        99,
+        1921.13,
+        1649.16,
+        313.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 298.34,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 278.58,
+          "h": 56,
+          "dentro": 42
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 236.58,
+          "h": 98,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 236.58,
+          "h": 104.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 236.58,
+          "h": 544.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 236.58,
+          "h": 859.13,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 186.58,
+          "h": 3162.86,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 6917.95,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 136.58,
+          "h": 6917.95,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 136.58,
+          "h": 6917.95,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27049 solutions",
+          "y": 136.58,
+          "h": 6917.95,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 6959.95,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 9012.86,
+          "dentro": 136.58
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6378
+    }
+  ],
+  "urbano@390": [
+    {
+      "docH": 10913,
+      "h1": 189.39,
+      "pie": 9152.2,
+      "filas": [
+        0,
+        125.58,
+        65.58,
+        181.67,
+        122,
+        50,
+        1494.72,
+        593.39,
+        1356.56,
+        549.59,
+        1270.56,
+        143.75,
+        1377.17,
+        143.75,
+        1268.39,
+        1387.42,
+        283.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "30px/36px/400",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 285.22,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 33.81
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_4_4",
+          "y": 155.58,
+          "h": 121.67,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_2_tb_header",
+          "y": 125.58,
+          "h": 181.67,
+          "dentro": 125.58
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0_tb_header",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "header",
+          "cls": "et-l et-l--header",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-boc",
+          "y": 0,
+          "h": 10913.38,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 10913.38,
+          "dentro": 0
+        },
+        {
+          "tag": "body",
+          "cls": "wp-singular page-template",
+          "y": 0,
+          "h": 10913.38,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 6523
+    }
+  ],
+  "industria@390": [
+    {
+      "docH": 12557,
+      "h1": 189.39,
+      "pie": 10795.84,
+      "filas": [
+        0,
+        125.58,
+        65.58,
+        181.67,
+        122,
+        50,
+        1470.53,
+        1557.28,
+        730.42,
+        505.72,
+        475.59,
+        836.28,
+        1270.56,
+        143.75,
+        1377.17,
+        143.75,
+        1295.39,
+        1387.42,
+        283.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 201,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "30px/36px/400",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 282.66,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 189.39,
+          "h": 82,
+          "dentro": 33.81
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_4_4",
+          "y": 155.58,
+          "h": 121.67,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_2_tb_header",
+          "y": 125.58,
+          "h": 181.67,
+          "dentro": 125.58
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_0_tb_header",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "header",
+          "cls": "et-l et-l--header",
+          "y": 0,
+          "h": 347.25,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-boc",
+          "y": 0,
+          "h": 12557.02,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 0,
+          "h": 12557.02,
+          "dentro": 0
+        },
+        {
+          "tag": "body",
+          "cls": "wp-singular page-template",
+          "y": 0,
+          "h": 12557.02,
+          "dentro": 0
+        }
+      ],
+      "detectores": {
+        "rocketToken": false,
+        "rocketLoader": false
+      },
+      "cargaMs": 7139
+    }
+  ]
+}
