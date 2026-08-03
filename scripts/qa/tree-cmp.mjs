@@ -49,7 +49,13 @@ const [ORIG, CLON] = URLS[cual];
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "tree-cmp", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1` y esta sonda es un COMPARADOR de árboles: sin los dos
+ * lados no hay árbol que comparar.** `URLS[clave]` es `[original, clon]`, y el
+ * veredicto que imprime —`filas: N en el original · M en el clon · K sin
+ * pareja`— **no existe** con un solo lado. Con `1`, media corrida salía verde.
+ */
+const ev = new Evaluadas({ nombre: "tree-cmp", unidad: "páginas (2 por sector: original y clon)", minimo: 2, porPaginas: true });
 
 const { browser } = await launch();
 
