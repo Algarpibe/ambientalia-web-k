@@ -1,3 +1,175 @@
+# HANDOFF — C-QA6 cierra a 1440, el −15.72 se disuelve, y un `rm` deja un cabo que no se puede atar
+
+> ⚠ **Tanda 2026-08-03 (12.ª).** Los cuatro pasos del encargo. Tanda de
+> **MEDICIÓN Y REGISTRO**: no se tocó el clon. Lo que cambia es qué Δ se pueden
+> leer en 3 rutas, y qué dos afirmaciones dejan de estar pendientes.
+
+## 0 · El titular
+
+C-QA6 pedía **fijar el suelo de ruido** de `/software` y los dos monográficos, y
+con él resolver el **−15.72 de `/software`**, que llevaba semanas SIN PROBAR por
+debajo del episodio de ±32.28. La campaña cierra, y la respuesta es mejor que la
+que se buscaba:
+
+> **El −15.72 no era un residuo pendiente de medir: era el −48 leído contra el
+> otro estado de un original BIMODAL.** El clon valía 373.39 y el original
+> oscila entre 389.11 y 421.39. `389.11 − 373.39 = 15.72`;
+> `421.39 − 373.39 = 48`; y **la diferencia entre los dos «defectos» es
+> exactamente el suelo, 32.28**. Un clon, un defecto, dos números según qué
+> estado pillara la corrida.
+
+Y ese defecto **ya estaba arreglado**: el clon pasó a 421.39 y las 4 corridas
+posteriores de `c-cabecera` lo dan a Δ0. C-QA2 · `/software` no necesitaba un
+objetivo nuevo; necesitaba saber que sus dos candidatos eran el mismo.
+
+## 1 · Antes de medir: las 3 ráfagas, en UNA escala
+
+Las ráfagas 1 y 2 se archivaron con sello **UTC**; la 3 salía en **local**. Como
+el criterio de la campaña —«≥2 h y ≥2 **días** distintos»— se comprueba
+**leyendo esos nombres**, mezclarlas habría metido **5 h de error en el propio
+veredicto de separación**. Re-etiquetadas **antes** de correr la 3 (`9787f68`):
+
+| se archivó como | pasa a llamarse | día |
+|---|---|---|
+| `rafaga-2026-07-31T03-14-57.json` | `rafaga-2026-07-30T22-14-57.json` | 07-31 → **07-30** |
+| `rafaga-2026-08-02T17-33-41.json` | `rafaga-2026-08-02T12-33-41.json` | 08-02 (igual) |
+
+**RE-ETIQUETADO, no re-medición — y probado, no afirmado.** Contra lo que git
+guarda del fichero viejo: `resumen` y `crudo` con el **mismo sha256**, el resto
+del `meta` idéntico, y el instante conservado (el sello viejo en UTC **es** el
+`ts` nuevo). Dos fuentes independientes concuerdan en el −5 h: el `mtime` y la
+fecha del commit que congeló cada uno. Con `git mv`. El nombre viejo va **dentro
+del fichero** (`meta.reetiquetado`) porque **tres** documentos lo citaban.
+
+> **El barrido de citas encontró 8, no las 2 que se sabían** — en
+> `PENDIENTES-QA`, `HANDOFF` y `TRASPASO`. Todas actualizadas.
+
+Y desde esta tanda el fichero lleva **`meta.escala`**: la escala se **declara**,
+no se deduce del nombre. Mientras no lo llevó, la única forma de saber en qué
+escala estaba un sello era mirar el `mtime` — **un dato que vive fuera de la
+medida y que un `git clone` reescribe**.
+
+## 2 · La campaña: COMPLETA
+
+```
+RUTAS=/software…,/…-en-edar,/…-petroleo-y-gas CAMPANA=cqa6 npm run qa:ruido -- 3
+→ medidas/campana/cqa6/rafaga-2026-08-03T08-28-44.json
+✓ evaluadas 18/18 cargas · ruido · 0 selectores muertos
+```
+
+`3 ráfagas · 3 días · separadas ≥2h (3)`. Separaciones **calculadas del `ts`
+absoluto**, no estimadas: **62.31 h** (1→2) y **19.92 h** (2→3).
+
+> **Cómo cierran 3 ráfagas, que es lo que se va a preguntar.** Los ≥2 días son
+> un **mínimo**, no un reparto de una ráfaga por día: las ráfagas 1 y 2 ya
+> aportaban los dos (30 jul · 2 ago), así que **la 3 podía caer el mismo día que
+> la 2 y habría cerrado igual**. Cayó en un tercero (08-03) y salieron 3, pero
+> eso es holgura. Y **el re-etiquetado no regaló el día**: movió la 1 de 07-31 a
+> 07-30, que sigue siendo distinto de 08-02.
+
+## 3 · El hallazgo: el `h1` es BIMODAL, no tembloroso
+
+54 cargas dan **exactamente dos estados** por combinación, a 32.28 clavados:
+
+| ruta @1440 | bajo | alto | Δ |
+|---|---|---|---|
+| `software` | 389.11 | 421.39 | 32.28 |
+| `edar` · `petroleo` | 228.88 | 261.16 | 32.28 |
+
+**El estado bajo se vio SOLO en la ráfaga 1.** Las ráfagas 2 y 3 y las **6**
+corridas de `c-cabecera` cayeron todas en el alto.
+
+> ⚠ **La consecuencia que hay que leer antes de tocar estas 3 rutas: el clon
+> tiene UN valor fijo y el original tiene DOS.** No existe un valor fijo que case
+> con los dos, así que su «Δ0» es **Δ0 contra el estado dominante**. **Si una
+> corrida futura pilla el estado bajo, las tres marcarán +32.28 y eso NO es una
+> regresión.** Recalibrar entonces sería fabricar la FAMILIA DE CALIBRACIÓN
+> contra la que avisa `CLAUDE.md`.
+
+## 4 · Lo que la campaña NO cierra, y por qué
+
+**(a) El ancho de 390 — y no lo impidió la medición, lo impidió un `rm`.**
+Las 3 ráfagas exhibibles dan **0** a 390 en las tres rutas (9 cargas cada una).
+Pero la **ráfaga A** del 2026-07-30 midió **±30 en las tres @390**, y **su
+fichero se borró a mano**. El suelo es «el máximo ENTRE ráfagas»: si la A
+contara, sería **30**, no 0.
+
+> Consecuencia concreta: el **−30 de `/…-en-edar` a 390** es «defecto claro» o
+> «exactamente el suelo» según cuente o no esa ráfaga, y **no hay forma de
+> dirimirlo**. `±30` contra `−30` es demasiada coincidencia para descartarla a
+> ojo.
+>
+> **El borrado a mano se cobra por segunda vez, y más caro.** Hasta hoy era *«el
+> número mejor pagado de la tanda es el único que no se puede exhibir»*. Ahora
+> es **una decisión que no se puede tomar.** Lo cierra una ráfaga más a 390.
+
+**(b) El MECANISMO.** La campaña fija el suelo; el *por qué* sigue abierto, y la
+sonda lo imprime sola:
+
+```
+observable de mecanismo: presente en 1/3 ráfaga(s) · transiciones registradas CON observable: 0
+```
+
+Es un desencuentro de calendario: **el observable se añadió DESPUÉS de la ráfaga
+1**, que es **la única con transición**. Las ráfagas 2 y 3 lo llevan pero no
+cambiaron de estado — y eso se reporta *«aquí no se puede evaluar»*, no *«el
+observable no sirve»*. Hace falta **una ráfaga con transición Y con observable**,
+y no se provoca a demanda.
+
+**Los dos detectores siguen NO VALIDADOS** tras 18 cargas más (54 en total):
+`rocketToken` y `rocketLoader`, S 0 / N 18. No se citan en ninguna dirección.
+
+> **Fichado, no hecho:** la propia sonda tiene escrito que un detector sin
+> validar **al cerrar la campaña se retira**. La campaña ya cerró, así que toca
+> retirarlos o reescribirlos — decisión sobre la sonda, no parte del cierre de
+> C-QA6, y no se hace de tapadillo.
+
+## 5 · Verificación
+
+- `qa:lib` **69/69** · las **48 sondas compilan y declaran su mínimo** (0 sin
+  contrato).
+- Ráfaga 3 con `✓ evaluadas 18/18 cargas`, **0 selectores muertos**, y
+  `meta.ts` + `meta.escala` comprobados **antes** de leer nada.
+- Re-etiquetado probado por hash contra `git show HEAD:<fichero viejo>`.
+- **Ningún `build` en vuelo** mientras la sonda medía.
+- Las tres ráfagas commiteadas **antes** de escribir el acta.
+
+## 6 · Lo que queda abierto, por prioridad
+
+1. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+2. **La retícula de la HOME** — 86.35/85 % contra 86 %. Va con C-QA3.
+3. **El −30 de `/…-en-edar` a 390** — SIN PROBAR y **no dirimible** hasta otra
+   ráfaga a 390 (§4a). No es un arreglo pendiente: es una medición pendiente.
+4. **Los mínimos que no expresan su invariante**: **6** (`a-ids` · `c-behaviors`
+   · `corte-cuerpo` · `dos-rutas` · `mono-cmp` · `tree-cmp`) **+1 a medias**
+   (`offsets --cmp`) **+2 con denominador en otra unidad** (`c-muestra` 16/3,
+   `esqueleto` 16/9). **Vivo y sin tocar en esta tanda.**
+5. **`openPage` no cubre las 6 sondas que cuentan a mano** (`a-behaviors` ·
+   `a-cascaron` · `a-miga` · `c-bases` · `clon-base` · `cmp-sector`): pueden
+   sumar tras una 404. Para ésas el aviso es la línea gritada, no el contrato.
+   **Vivo y sin tocar en esta tanda.**
+6. **Las 17 filas sin emparejar** del eje horizontal, y su RANGO sin probar.
+7. **Migrar a `iniciarClon()` las 45** que aún esperan un 3000 ajeno.
+8. **Los 2 detectores sin validar** de `ruido` (§4b).
+9. **El comportamiento sigue a 0/31** en la matriz de cobertura — el hueco mayor.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No leer el «Δ0» de estas 3 rutas como incondicional.** Es Δ0 **contra el
+  estado dominante**; un +32.28 futuro es el original, no una regresión.
+- **No escribir «el suelo a 390 es 0».** Es 0 **entre las ráfagas exhibibles**,
+  con un ±30 documentado que lo contradice y no tiene fichero.
+- **No reabrir el −15.72 de `/software`.** No es un residuo: es el −48 medido
+  contra el otro estado, y el −48 ya está arreglado.
+- **No citar `rocketToken`/`rocketLoader`**: 0 de 54 cargas en `S`.
+- **No restar sellos de ráfaga sin mirar `meta.escala`.** Las tres están en local
+  desde `9787f68`, pero cualquier fichero anterior a esa fecha en otra campaña
+  puede seguir en UTC.
+- **No borrar una medida a mano para dejar sitio a otra.** Es la segunda vez que
+  se paga en este mismo expediente, y esta vez costó una decisión, no un número.
+
+---
+
 # HANDOFF — las 48 sondas corridas en vivo: el verde era MUDO en 47
 
 > ⚠ **Tanda 2026-08-02 (11.ª).** Los cinco pasos del encargo. Tanda de

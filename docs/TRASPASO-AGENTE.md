@@ -529,29 +529,61 @@ guarda de `w()` protege de que una sonda pise su salida, no de un borrado a mano
 
 </details>
 
-### Acción 1 (antes 2) — Ráfaga 3 de la campaña C-QA6 (tiene fecha)
+### ~~Acción 1 (antes 2) — Ráfaga 3 de la campaña C-QA6~~ **HECHA (2026-08-03)**
 
-Requiere **≥2 h desde la última** (**12:33 local** del 2026-08-02 — se archivó
-con sello UTC como «17:33», que es el mismo instante) **y preferentemente un
-tercer día distinto** (2026-08-03). Comando exacto:
+<details><summary>Cerrada: la campaña fija el suelo y disuelve el −15.72. Se
+conserva porque la lectura de la ESCALA vale para cualquier campaña futura.</summary>
 
-```bash
-RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
-  CAMPANA=cqa6 npm run qa:ruido -- 3
-```
+Corrida el **2026-08-03 a las 08:28:44 local** →
+`medidas/campana/cqa6/rafaga-2026-08-03T08-28-44.json`, `✓ evaluadas 18/18 cargas`.
 
-Cierra la campaña y **fija el suelo de ruido** de esas tres rutas. Hasta
-entonces, **todo residuo por debajo de ~32.28 en ellas está SIN PROBAR** —
-incluido el −15.72 de `/software`.
+**Campaña COMPLETA:** 3 ráfagas · **3 días locales** (07-30 · 08-02 · 08-03) ·
+las 3 separadas ≥2 h. Separaciones **calculadas del `ts` absoluto**: **62.31 h**
+(1→2) y **19.92 h** (2→3).
 
-> ⚠ **Antes de leer las separaciones, ojo con la fecha (2026-08-02).** Las
-> ráfagas 1 y 2 se sellaron con `toISOString()`, o sea **en UTC**; desde esta
-> tanda el sello es **local**. Restar una contra otra como si fueran la misma
-> escala mete **5 h de error** justo en el criterio de «≥2 h de separación y ≥2
-> días distintos». Por eso el fichero de ráfaga guarda ahora `meta.ts` —el
-> instante absoluto— y el lector lo prefiere, cayendo al sello viejo solo si
-> falta. **Comprueba que la ráfaga 3 trae `meta.ts` antes de fiarte del
-> veredicto de la campaña.**
+**Suelo fijado (2026-08-03), alcance = estas 3 rutas:**
+
+| combinación | `h1` | posicional |
+|---|---|---|
+| las tres **@1440** | **32.28** ✅ cerrado | 33 |
+| las tres **@390** | **0 entre las ráfagas exhibibles** ⚠ NO cerrado | 81 · 54 · 27 |
+
+> ⚠ **A 390 no cierra, y no por la medición.** La **ráfaga A** del 2026-07-30
+> midió **±30 en las tres @390** y **su fichero se borró a mano**. El suelo es
+> «el máximo ENTRE ráfagas»; si la A contara sería 30, no 0. Consecuencia
+> concreta: el **−30 de `/…-en-edar` a 390** es «defecto claro» o «exactamente
+> el suelo» según cuente o no esa ráfaga, y **no hay forma de dirimirlo**. Lo
+> cierra **una ráfaga más a 390**, no un arreglo.
+
+**El `h1` es BIMODAL, no tembloroso:** exactamente dos estados a 32.28 —
+`software` 389.11 ↔ 421.39, los dos monográficos 228.88 ↔ 261.16. El estado
+BAJO se vio **solo en la ráfaga 1**; las ráfagas 2 y 3 y las **6** corridas de
+`c-cabecera` cayeron todas en el ALTO.
+
+**El −15.72 de `/software` NO era un residuo pendiente: era el −48 leído contra
+el estado BAJO.** El clon valía 373.39, y `389.11 − 373.39 = 15.72` mientras
+`421.39 − 373.39 = 48`. Un clon, un defecto, dos números según qué estado
+pillara la corrida. **Y el −48 ya está arreglado**: el clon pasó a 421.39 y las
+**4** corridas de `c-cabecera` posteriores lo dan a Δ0.
+
+> ⚠ **Consecuencia que hay que leer antes de tocar estas 3 rutas: el clon tiene
+> UN valor fijo y el original tiene DOS.** Así que su «Δ0» significa **Δ0 contra
+> el estado dominante**. Si una corrida futura pilla el original en su estado
+> bajo, las tres marcarán **+32.28** y **eso no es una regresión**: es el
+> original en su otro estado. «Arreglarlo» sería fabricar la familia de
+> calibración contra la que avisa `CLAUDE.md`.
+
+**Y la escala, que es lo reutilizable.** Las ráfagas 1 y 2 se sellaron con
+`toISOString()`, o sea **en UTC**; desde el 2026-08-02 el sello es **local**.
+Restarlas como si fueran la misma escala mete **5 h de error** justo en el
+criterio de «≥2 h y ≥2 días distintos». Se re-etiquetaron las dos el 2026-08-03
+(commit `9787f68`) y **toda la campaña quedó en una sola escala** antes de leer
+el veredicto. Hoy el fichero guarda `meta.ts` —el instante absoluto— y
+`meta.escala`, que **declara** la escala en vez de dejar que se deduzca del
+nombre. **En cualquier campaña futura, comprueba que la ráfaga trae `meta.ts`
+antes de fiarte del veredicto de separación.**
+
+</details>
 
 ### Pasos siguientes, en orden
 

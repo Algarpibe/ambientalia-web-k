@@ -510,6 +510,36 @@ Estas se pagaron con horas de depuración. No las reinventes:
     > original sigue en pie **con su fecha**: es lo que se midió el 2026-07-29,
     > no una garantía permanente.
     >
+    > ✅ **CERRADO 2026-08-03 (C-QA6, campaña completa: 3 ráfagas · 3 días ·
+    > separadas 62.31 h y 19.92 h).** Suelo `h1` **a 1440 = 32.28** en las 3
+    > rutas. **Y el −15.72 no quedó pendiente: se disolvió**, con una lección que
+    > vale más que el número —
+    >
+    > > **El `h1` de esas rutas no tiembla: es BIMODAL**, dos estados discretos a
+    > > 32.28 clavados (`software` 389.11 ↔ 421.39; los monográficos 228.88 ↔
+    > > 261.16). Así que **el −15.72 y el −48 nunca fueron dos candidatos a
+    > > objetivo: eran EL MISMO defecto medido contra los dos estados.** El clon
+    > > valía 373.39; `389.11−373.39 = 15.72` y `421.39−373.39 = 48`, y **la
+    > > diferencia entre los dos «defectos» ES el suelo.** El −48 ya está
+    > > arreglado (clon a 421.39, Δ0 en 4 corridas de `c-cabecera`).
+    >
+    > **De donde la regla nueva, que es lo reutilizable:** cuando el original sea
+    > bimodal, **el clon tiene UN valor fijo y el original DOS**, así que su «Δ0»
+    > es **Δ0 contra el estado dominante**. Un **+32.28** en una corrida futura
+    > **no es una regresión**: es el otro estado. Recalibrar ahí fabrica una
+    > FAMILIA DE CALIBRACIÓN. Y el corolario de método: **antes de leer un
+    > residuo pequeño contra un suelo, mira contra QUÉ ESTADO se midió** — es lo
+    > que disolvió éste, no medir más veces.
+    >
+    > ⚠ **Lo que NO cerró, y no fue por la medición:** a **390** las 3 ráfagas
+    > exhibibles dan **0**, pero la **ráfaga A** midió **±30 en las tres @390** y
+    > **su fichero se borró a mano**. Si contara, el suelo a 390 sería 30. O sea
+    > que el **−30 de EDAR@390** es «defecto claro» o «exactamente el suelo»
+    > según cuente o no, y **no hay forma de dirimirlo**. Es la §regla 5 (*el
+    > borrado a mano*) cobrándose por **segunda** vez y más caro: la primera
+    > costó un número que no se puede exhibir; ésta, **una decisión que no se
+    > puede tomar**.
+    >
     > **Y `±30` / `±32.28` no son de la familia conocida.** El ruido documentado
     > abajo (27 · 54 · 81) son renglones del módulo «Artículos y Guías». Estos
     > números no son múltiplos de 27 y aparecen en el `h1`, que va **por encima**

@@ -2316,7 +2316,13 @@ los dos monográficos, que estaban a Δ0, salen a **+32.28**. **Antes de tocar
 nada de eso hay que re-medir el original tres veces** y quedarse con el valor
 estable, no con el de una corrida.
 
-### C-QA6 (nuevo, ABIERTO) · re-medir la base de las 3 rutas que movió el original
+### ~~C-QA6 (nuevo, ABIERTO)~~ **CERRADA (2026-08-03)** · re-medir la base de las 3 rutas que movió el original
+
+> **→ Veredicto en §C-QA6 · CIERRE, al final del documento.** Suelo `h1` fijado
+> **a 1440: 32.28** en estas 3 rutas. **A 390 no cierra** — 0 entre las ráfagas
+> exhibibles contra un ±30 sin fichero. Y el **−15.72 de `/software` no queda
+> pendiente: se disuelve** — era el −48 leído contra el estado bajo de un
+> original **bimodal**, y ese −48 ya está arreglado.
 
 `/software-de-medicion-calidad-del-aire` y los dos monográficos. Tres corridas
 del original, mismo día, y congelar. Hasta entonces sus Δ **no se leen**.
@@ -2495,8 +2501,12 @@ Tres pruebas, y cualquiera basta:
 - **C-QA2 · producto** — el espaciador pasa de **177 a 225** (@1440) y de **137 a
   136.58** (@390). El offset del `h1` por debajo del espaciador **ya coincide al
   céntimo** (167.59 en los dos lados en `/kunak-api`), así que es un solo cambio.
-  ⚠ **`/software` no tiene objetivo verificable** hasta cerrar C-QA6: su residuo
-  (−15.72) está por debajo del episodio de ±32.28.
+  ⚠ ~~**`/software` no tiene objetivo verificable** hasta cerrar C-QA6: su
+  residuo (−15.72) está por debajo del episodio de ±32.28.~~ **RESUELTO
+  (2026-08-03, §C-QA6 · CIERRE):** el −15.72 y el −48 eran **el mismo defecto**
+  medido contra los dos estados de un original bimodal (clon 373.39; orig
+  389.11 ↔ 421.39). El objetivo era −48, **ya aplicado**: clon a 421.39 y Δ0 en
+  las 4 corridas posteriores de `c-cabecera`.
 - **C-QA3 · home** — es un déficit de **contenido** dentro de la columna del
   hero, no de cabecera. **No entra en la tanda de cabecera**: se decide aparte,
   como estaba pactado, y con su propia medición de qué falta en esos 50.84.
@@ -2579,6 +2589,13 @@ verificación sigue pendiente del suelo real (C-QA6)**: esa ruta presenta
 episodios de **±32.28** en la base, así que un Δ0 leído en una corrida puede ser
 el episodio y no el arreglo. Se cierra cuando cierre la campaña de ráfagas.
 
+> **CERRADO (2026-08-03, §C-QA6 · CIERRE).** El Δ0 **es el arreglo, no el
+> episodio**: el original salió en su estado alto en 2 de 3 ráfagas y en **6 de
+> 6** corridas de `c-cabecera`, y el clon casa con él al céntimo. Con la letra
+> pequeña que ahora sí se puede escribir: es **Δ0 contra el estado dominante**,
+> y si una corrida futura pilla el estado bajo saldrá **+32.28** sin que haya
+> regresión.
+
 ### Nota suelta · `/` a 390 con `docH +8`
 
 Aparece en la comparación clon-contra-clon y **no es de este cambio**: la home no
@@ -2587,7 +2604,10 @@ mueve ningún ancla (`h1.y` sin cambio). Queda anotado como no reproducido.
 
 ---
 
-## C-QA6 · CAMPAÑA ABIERTA — el protocolo de ruido, rediseñado (2026-07-30)
+## ~~C-QA6 · CAMPAÑA ABIERTA~~ **CERRADA (2026-08-03)** — el protocolo de ruido, rediseñado (2026-07-30)
+
+> **→ §C-QA6 · CIERRE, al final del documento.** Lo de abajo es el rediseño del
+> protocolo, que sigue vigente; el estado de la campaña ya no.
 
 `CLAUDE.md` §Notas de método sustituye «mide 3 veces» por tres reglas, porque lo
 viejo **medía el temblor dentro de un episodio** y lo que mueve al original son
@@ -3246,6 +3266,24 @@ SECTOR es de agrupación, no de contenido perdido.
 - **`/sectores/…-en-edar`: −30 en la base a 390.** Cae dentro del suelo **no
   probado** de ±32.28 que C-QA6 midió para los monográficos: **SIN PROBAR**, ni
   defecto ni limpio. No se toca hasta cerrar la campaña de ruido.
+
+  > ⚠ **REVISADO al cerrar la campaña (2026-08-03, §C-QA6 · CIERRE): sigue SIN
+  > PROBAR, pero por una razón distinta y peor.** Primero, la ficha citaba mal el
+  > ancho: el **±32.28 es de @1440**, y a 390 las **3 ráfagas exhibibles** dan un
+  > solo estado (189.39) en 9 cargas — o sea suelo **0**, que convertiría el −30
+  > en defecto de pleno derecho.
+  >
+  > **Pero la ráfaga A del 2026-07-30 midió `±30` en las tres rutas @390**
+  > (§C-QA6 · MEDIDA, tabla de ráfagas), y **su fichero se borró a mano**. Si
+  > contara, el suelo a 390 sería **30** y el −30 caería justo dentro. O sea que
+  > las dos lecturas posibles son «defecto claro» y «exactamente el suelo», y
+  > **la medida que las separa es la única que no existe**. El `±30` contra un
+  > `−30` es demasiada coincidencia para descartarla a ojo.
+  >
+  > **Se queda SIN PROBAR y no se toca.** Es el coste del borrado a mano,
+  > cobrado por primera vez como una **decisión que no se puede tomar** — hasta
+  > hoy solo se había pagado como «un número que no se puede exhibir». Lo
+  > resuelve una ráfaga más a 390 que reproduzca (o no) el ±30, no un arreglo.
 
 ### C6 · CLASE de SONDA — una 404 carga bien y se deja medir
 
@@ -4545,3 +4583,186 @@ lanzarlas `node scripts/qa/x.mjs`. El README dice que la forma canónica es
 `npm run qa:*` y da la razón (**prefijo estable** que se autoriza una vez; a pelo
 cada invocación pedía permiso otra vez, 360 reglas de un solo uso). **Fichado, no
 arreglado**: es una línea de `package.json` por sonda y no es de esta tanda.
+
+---
+
+## C-QA6 · CIERRE — la campaña completa, el suelo fijado y el −15.72 disuelto (2026-08-03)
+
+**C-QA6 queda CERRADA.** Ráfaga 3 corrida el **2026-08-03 a las 08:28:44 local**
+→ `medidas/campana/cqa6/rafaga-2026-08-03T08-28-44.json`, con
+`✓ evaluadas 18/18 cargas · ruido · 0 selectores muertos`.
+
+### Antes de nada: las tres ráfagas están en UNA escala
+
+Las ráfagas 1 y 2 se archivaron con sello **UTC** (`toISOString()`); desde el
+2026-08-02 el sello es **local**. Como el criterio de la campaña —«≥2 h de
+separación y ≥2 **días** distintos»— se comprueba **leyendo esos nombres**, con
+la máquina en −05:00 mezclarlas habría metido **5 h de error en el propio
+veredicto**. Se re-etiquetaron las dos **antes** de correr la 3 (commit
+`9787f68`):
+
+| se archivó como | pasa a llamarse | día |
+|---|---|---|
+| `rafaga-2026-07-31T03-14-57.json` | `rafaga-2026-07-30T22-14-57.json` | 07-31 → **07-30** |
+| `rafaga-2026-08-02T17-33-41.json` | `rafaga-2026-08-02T12-33-41.json` | 08-02 (igual) |
+
+**Fue RE-ETIQUETADO, no re-medición, y está probado en vez de afirmado:** contra
+lo que git guarda del fichero viejo, `resumen` y `crudo` dan el **mismo sha256**
+en los dos, el resto del `meta` es idéntico y el instante se conserva (el sello
+viejo en UTC **es** el `ts` nuevo). La conversión tiene **dos fuentes
+independientes que concuerdan**: el `mtime` en disco y la fecha del commit que
+congeló cada uno (`b3a5ca5` 22:15:52 −0500; `a089ba2` 13:11:16 −0500). El nombre
+viejo vive dentro del fichero, en `meta.reetiquetado`, porque tres documentos lo
+citaban y **una cita cuyo fichero desaparece queda huérfana**.
+
+Desde esta tanda el fichero lleva además **`meta.escala`**: la escala se
+**declara**, no se deduce del nombre. Mientras no lo llevó, la única forma de
+saber en qué escala estaba un sello era mirar el `mtime` — un dato que vive
+**fuera de la medida** y que un `git clone` reescribe.
+
+### Estado de la campaña: **COMPLETA**
+
+`3 ráfagas · 3 días · separadas ≥2h (3)`. Separaciones **calculadas del `ts`
+absoluto**, no estimadas: **62.31 h** (1→2) y **19.92 h** (2→3).
+
+> **Cómo cierran tres ráfagas, que es lo que un lector va a preguntar.** El
+> protocolo pide **≥3 ráfagas, ≥2 h de separación y ≥2 días distintos** — los
+> días son un **mínimo**, no un reparto de una ráfaga por día. Las ráfagas 1 y 2
+> ya aportaban los dos días exigidos (30 jul y 2 ago), así que **la 3 podía caer
+> el mismo día que la 2 y la campaña habría cerrado igual**. De hecho cayó en un
+> tercer día (08-03) y salieron **3**, pero eso es holgura, no requisito. Nótese
+> que **el re-etiquetado no regaló el día**: movió la ráfaga 1 de 07-31 a 07-30,
+> que sigue siendo un día distinto de 08-02.
+
+### El suelo, con su alcance declarado
+
+> **Alcance: 3 rutas × 2 anchos, medidas el 2026-07-30, 08-02 y 08-03.**
+> `/software-de-medicion-calidad-del-aire` ·
+> `/sectores/…-en-edar` · `/sectores/…-petroleo-y-gas`.
+> Un suelo es propiedad **de las rutas medidas**, no del sitio: para cualquier
+> otra ruta esto no es un suelo, es un hueco.
+
+| combinación | `h1` (máx ENTRE ráfagas) | posicional |
+|---|---|---|
+| `software@1440` · `edar@1440` · `petroleo@1440` | **32.28** | 33 |
+| `software@390` | **0** | 81 |
+| `edar@390` | **0** | 54 |
+| `petroleo@390` | **0** | 27 |
+
+**Los ceros de @390 casi se pueden escribir como suelo — y no se van a
+escribir.** La regla dice que «el suelo es 0» **solo** puede escribirlo una
+campaña completa y aun así con su fecha, y ésta lo está: 9 cargas por
+combinación en 3 episodios separados, un solo estado en las tres rutas. Con eso
+bastaría… si las 3 ráfagas fueran todo lo que se ha medido a 390.
+
+> ⚠ **No lo son, y esto es lo que impide cerrar el ancho de 390.** La **ráfaga
+> A** del 2026-07-30 midió **`±30` en las tres rutas @390** (§C-QA6 · MEDIDA), y
+> **su fichero se borró a mano** — el episodio está en prosa y la medida no
+> existe. Por el enunciado del protocolo el suelo es **el máximo ENTRE
+> ráfagas**; si la A contara, el suelo a 390 sería **30**, no 0.
+>
+> **Así que a 390 el resultado es: 0 entre las ráfagas EXHIBIBLES, con una
+> observación de ±30 documentada y no exhibible que lo contradice.** No se
+> escribe «suelo 0» porque una campaña no puede cerrar un ancho ignorando la
+> única medida que la contradice, por más que esa medida ya no tenga fichero.
+>
+> **Y aquí es donde el borrado a mano deja de ser una anécdota.** Hasta hoy se
+> había pagado como *«el número mejor pagado de la tanda es el único que no se
+> puede exhibir»*. Ahora se paga como algo peor: **una decisión que no se puede
+> tomar** — el −30 de `/…-en-edar` a 390 es «defecto claro» o «exactamente el
+> suelo» según cuente o no la ráfaga A, y no hay forma de dirimirlo. Se cierra
+> con **una ráfaga más a 390**, no con un arreglo.
+
+**A 1440 sí cierra**, que es donde estaba la pregunta de C-QA6: suelo `h1`
+**32.28**, a fecha 2026-08-03. No es una propiedad permanente ni del sitio.
+
+### El hallazgo: el `h1` es BIMODAL, no tembloroso
+
+Los valores absolutos de las 18 cargas de la ráfaga 3, más las 36 anteriores,
+dan **exactamente dos estados por combinación**, separados por 32.28 clavados:
+
+| ruta @1440 | estado bajo | estado alto | Δ |
+|---|---|---|---|
+| `software` | 389.11 | 421.39 | 32.28 |
+| `edar` · `petroleo` | 228.88 | 261.16 | 32.28 |
+
+**El estado bajo se vio SOLO en la ráfaga 1** (2026-07-30). Las ráfagas 2 y 3 —y
+las **6** corridas de `c-cabecera` que hay congeladas— cayeron todas en el alto.
+
+### Qué pasa con el −15.72 de `/software`: **se disuelve, no queda pendiente**
+
+Era lo que quedaba SIN PROBAR por debajo de ~32.28, y la campaña contesta algo
+mejor que «sigue sin probarse»: **nunca fue un residuo aparte.** Es **el −48
+leído contra el estado bajo del original**. El clon valía **373.39**, fijo:
+
+```text
+389.11 (orig, estado bajo)  − 373.39 (clon)  =  −15.72
+421.39 (orig, estado alto)  − 373.39 (clon)  =  −48.00
+421.39 − 389.11 = 32.28   ← la diferencia entre los dos «defectos» ES el suelo
+```
+
+Un clon, **un** defecto, dos números según qué estado pillara la corrida. Los
+«dos candidatos a objetivo» de C-QA2 eran el mismo.
+
+**Y ese defecto ya está arreglado:** el clon pasó de **373.39 a 421.39**, y las
+**4** corridas de `c-cabecera` posteriores al arreglo lo dan a **Δ0**
+(`c-cabecera-1440-2026-08-03.json`). Los dos monográficos, igual: clon 261.16
+contra orig 261.16, Δ0 en las mismas corridas.
+
+> ⚠ **La consecuencia que hay que dejar escrita, porque si no alguien «arregla»
+> un clon correcto.** El clon tiene **UN** valor fijo; el original tiene **DOS**.
+> No existe un valor fijo que case con los dos, así que el «Δ0» de estas 3 rutas
+> significa **Δ0 contra el estado DOMINANTE** (421.39 · 261.16 · 261.16), que es
+> el que salió en 2 de 3 ráfagas y en 6 de 6 corridas de `c-cabecera`.
+>
+> **Si una corrida futura pilla el original en su estado bajo, las tres marcarán
+> +32.28, y eso NO es una regresión.** Es el original en su otro estado.
+> Recalibrar entonces sería fabricar exactamente la FAMILIA DE CALIBRACIÓN
+> contra la que avisa `CLAUDE.md`: cablear el valor de la instancia que tienes
+> delante.
+
+### Lo que C-QA6 **no** cierra: el MECANISMO
+
+La campaña fija el **suelo**. La pregunta de **por qué** el original tiene dos
+estados sigue abierta, y la propia sonda lo imprime:
+
+```text
+observable de mecanismo: presente en 1/3 ráfaga(s) · transiciones registradas CON observable: 0
+```
+
+Es un desencuentro de calendario, y conviene nombrarlo porque no se arregla
+midiendo más de lo mismo: **el observable discriminante se añadió DESPUÉS de la
+ráfaga 1**, que es **la única que tuvo transición**. Las ráfagas 2 y 3 llevan el
+observable pero **no cambiaron de estado**, así que no había nada contra lo que
+correlacionar — y eso se reporta como *«aquí no se puede evaluar»*, no como
+*«el observable no sirve»*.
+
+**Los dos detectores siguen NO VALIDADOS** tras **18** cargas más (54 en total):
+`rocketToken` S 0 / N 18 y `rocketLoader` S 0 / N 18. Por la regla del cero/pleno
+**no se pueden citar en ninguna dirección**: «Rocket Loader no interviene» sigue
+sin respaldo, porque un detector que nunca ha discriminado no distingue *«no está
+presente»* de *«el selector está mal escrito»*.
+
+> **Fichado, no hecho:** la propia sonda tiene escrito que un detector que siga
+> sin validar **al cerrar la campaña se retira del observable** («ocupa sitio y
+> sugiere respuesta»). La campaña ya está cerrada, así que **toca retirarlos o
+> reescribirlos** — pero eso es una decisión sobre la sonda, no el cierre de
+> C-QA6, y no se hace de tapadillo en esta tanda.
+
+**Para atacar el mecanismo hace falta una ráfaga CON transición Y con
+observable**, y no se puede provocar a demanda: el estado bajo apareció una vez
+en tres episodios repartidos en cinco días. Queda como pregunta abierta de coste
+bajo — cada ráfaga futura de `cqa6` la contesta gratis si el original coopera.
+
+### Consecuencia práctica para leer Δ en estas 3 rutas
+
+- **@1440** — todo residuo **< 32.28** en el `h1` es **indistinguible del
+  estado** del original. No es defecto ni es limpio: es **inmedible con este
+  instrumento**, y medir más veces igual no lo resuelve. Lo que sí resuelve es
+  mirar **contra qué estado** se midió, que es como se disolvió el −15.72.
+- **@390** — **sin cerrar.** 0 entre las 3 ráfagas exhibibles, contra un `±30`
+  documentado y sin fichero (ráfaga A). Un Δ **muy por debajo de 30** es
+  defecto; un Δ **de ~30** queda SIN PROBAR hasta que otra ráfaga a 390
+  reproduzca el episodio o no. Es el único cabo que C-QA6 deja suelto, y no lo
+  dejó la medición: lo dejó un `rm`.
+- **Cualquier otra ruta** — no tiene suelo. Tiene un hueco.
