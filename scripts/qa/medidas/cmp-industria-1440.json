@@ -1,0 +1,67 @@
+{
+  "h1": {
+    "orig": 261.2,
+    "clon": 261.2,
+    "delta": 0
+  },
+  "beneficios": {
+    "orig": 1443.8,
+    "clon": 1443.8,
+    "delta": 0
+  },
+  "aplicaciones": {
+    "orig": 1443.8,
+    "clon": 1443.8,
+    "delta": 0
+  },
+  "cta": {
+    "orig": 2086.1,
+    "clon": 2086.1,
+    "delta": 0
+  },
+  "lista": {
+    "orig": 2511.3,
+    "clon": 2540.1,
+    "delta": 28.8
+  },
+  "claim": {
+    "orig": 2946.6,
+    "clon": 2946.6,
+    "delta": 0
+  },
+  "mapa": {
+    "orig": 3254.8,
+    "clon": 3254.8,
+    "delta": 0
+  },
+  "slider": {
+    "orig": null,
+    "clon": 3993.2,
+    "delta": null
+  },
+  "soluciones": {
+    "orig": 4468.1,
+    "clon": 4481.1,
+    "delta": 13
+  },
+  "proyectos": {
+    "orig": 5156.8,
+    "clon": 5169.7,
+    "delta": 12.9
+  },
+  "articulos": {
+    "orig": 5897.6,
+    "clon": 5886.2,
+    "delta": -11.4
+  },
+  "footer": {
+    "orig": 6523.5,
+    "clon": 6490.2,
+    "delta": -33.3
+  },
+  "docH": {
+    "orig": 7117,
+    "clon": 7085,
+    "delta": -32
+  }
+}

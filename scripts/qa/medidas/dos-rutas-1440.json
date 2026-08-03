@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "rutaA": "/sectores/calidad-del-aire-en-las-ciudades",
+    "rutaB": "/sectores/control-de-emisiones-industriales",
+    "width": 1440,
+    "base": "http://localhost:3000"
+  },
+  "A": {
+    "docH": 6035,
+    "h1y": 261.16,
+    "heroFin": 1463.14,
+    "cuerpo": [
+      {
+        "top": 1463.14,
+        "h": 432.23,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "¿Necesitas medir la contaminación ",
+        "filas": [
+          {
+            "top": 1463.14,
+            "h": 432.23,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "¿Necesitas medir la contaminación en tu ciud"
+          }
+        ]
+      },
+      {
+        "top": 1881.38,
+        "h": 1057.45,
+        "mt": "-14px",
+        "pt": "57.5938px",
+        "pb": "14px",
+        "txt": "Beneficios de monitorizar la calid",
+        "filas": [
+          {
+            "top": 1938.97,
+            "h": 566.98,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "Beneficios de monitorizar la calidad del air"
+          },
+          {
+            "top": 2505.95,
+            "h": 418.88,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "28.7969px",
+            "txt": "Protege la salud de tus ciudadanos tomando l"
+          }
+        ]
+      },
+      {
+        "top": 2938.83,
+        "h": 401.53,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "Obtén datos fiables y precisos sob",
+        "filas": [
+          {
+            "top": 2938.83,
+            "h": 401.53,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Obtén datos fiables y precisos sobre la cont"
+          }
+        ]
+      }
+    ],
+    "anclas": {
+      "slider": 2938.83,
+      "soluciones": 3426.75,
+      "proyectos": 4115.39,
+      "articulos": 4809.5,
+      "footer": 5440.45
+    }
+  },
+  "B": {
+    "docH": 7085,
+    "h1y": 261.16,
+    "heroFin": 1371.36,
+    "cuerpo": [
+      {
+        "top": 1357.36,
+        "h": 2635.8,
+        "mt": "-14px",
+        "pt": "57.5938px",
+        "pb": "14px",
+        "txt": "Beneficios del control de las emis",
+        "filas": [
+          {
+            "top": 1414.95,
+            "h": 630.17,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "Beneficios del control de las emisiones indu"
+          },
+          {
+            "top": 2045.13,
+            "h": 495.02,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "28.7969px",
+            "txt": "¿Quieres controlar el impacto de tus proceso"
+          },
+          {
+            "top": 2540.14,
+            "h": 266.95,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "28.7969px",
+            "txt": "Algunos de las aplicaciones donde desplegar "
+          },
+          {
+            "top": 2807.09,
+            "h": 418.88,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "28.7969px",
+            "txt": "Identifica qué operaciones o procesos produc"
+          },
+          {
+            "top": 3225.97,
+            "h": 753.19,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "Proyectos por todo el mundoAlgunos de los pr"
+          }
+        ]
+      },
+      {
+        "top": 3993.16,
+        "h": 401.53,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "Reduce el impacto ambiental midien",
+        "filas": [
+          {
+            "top": 3993.16,
+            "h": 401.53,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Reduce el impacto ambiental midiendo las ini"
+          }
+        ]
+      }
+    ],
+    "anclas": {
+      "slider": 3993.16,
+      "soluciones": 4481.08,
+      "proyectos": 5169.72,
+      "articulos": 5886.2,
+      "footer": 6490.16
+    }
+  }
+}
