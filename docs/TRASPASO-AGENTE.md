@@ -415,7 +415,7 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 ### No empezado
 
 - **Grupo D** (centro de ayuda / KB, 13 páginas): hipótesis pre-registrada en
-  `docs/research/monografico-tecnico/HIPOTESIS-GRUPO-D.md` —si `MonoSeccion[]`
+  `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md` —si `MonoSeccion[]`
   expresa su cuerpo, no cuesta arquetipo—. **Sin ejecutar.**
 - **Listados y hubs** (35 páginas + 107 rutas de paginación): **modelo decidido**
   en `docs/research/listados-hubs/DECISIONES.md` (LISTADO-B con tres variantes de
@@ -598,7 +598,7 @@ antes de fiarte del veredicto de separación.**
 ### Pasos siguientes, en orden
 
 3. **Hipótesis del grupo D** — ejecutar el pre-registro de
-   `docs/research/monografico-tecnico/HIPOTESIS-GRUPO-D.md`. Si `MonoSeccion[]`
+   `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md`. Si `MonoSeccion[]`
    expresa el cuerpo del artículo de KB, esas 13 páginas no cuestan arquetipo.
 4. **Pasada de comportamiento con navegador** (P-LH-C6) sobre los listados, antes
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
