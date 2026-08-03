@@ -619,9 +619,26 @@ antes de fiarte del veredicto de separación.**
    es **cascarón, no campo de `MonoColumna`** — lo que **salva** el content type
    de MONOGRÁFICO.
 
-   **Lo que queda es decisión de prioridad, no de información:** construirlo
-   como arquetipo (2 formas) o aplazarlo con acta. Único fleco del recon:
-   **¿el hub de KB es un listado de §2c o una tercera cosa?**
+   **Y la tanda de DECISIÓN del mismo día cerró las cinco preguntas por
+   predicado pre-registrado** (`PRE-REGISTRO-DECISION.md`, commit `effb473`
+   anterior a toda evaluación; acta en `DECISION.md`; registro en
+   `ESQUEMA-CMS.md` §2d.1):
+
+   - **régimen**: no hay tercero — es propiedad de la **CAPA** (capa `_tb_`
+     plantillada a varianza cero en 13/13 + capa propia de builder).
+     `CLAUDE.md` §Régimen corregido.
+   - **hub de KB**: casillero **L4 de LH-2** — página compuesta, **cola larga,
+     cero arquetipos**. No es LISTADO-B (cero módulos de consulta).
+   - **colecciones**: **UNA nueva, `articulos-kb`** (6 instancias); los 7 hubs
+     fuera de colección, con los 6 de LH-2.
+   - **los 4 kinds**: tipo propio por arquetipo; **`MonoSeccion[]` intacto**
+     (`blurb`/`gallery` → `articulos-kb`; `video`/`toggle` → con la cola larga).
+   - **D2/D3**: **SIN OBJETO** — D1 bastó; el píxel vuelve con la sonda de dos
+     lados propia del arquetipo al construirlo.
+
+   **Lo que queda es prioridad, no información:** cuándo construir
+   `articulos-kb`, y el modelo de la cola larga de páginas compuestas (6 hubs
+   LH-2 + 7 KB), que **ya se sabe** que `MonoSeccion[]` solo no cubre.
 4. **Pasada de comportamiento con navegador** (P-LH-C6) sobre los listados, antes
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
 5. **Construir LISTADO-B + L2/L3 + el índice de casos** según

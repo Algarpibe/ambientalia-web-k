@@ -734,16 +734,38 @@ secciones propias las parte sin ambigüedad:
 | **artículo de KB** | 6 | **1** en las 6 | **cero** ⇒ plantilla |
 | **hub / índice de KB** | 7 | 1 · 1 · 5 · 5 · 7 · 7 · 11 | **de 1 a 11** ⇒ campo |
 
-**Decisión: el grupo D es arquetipo propio, y previsiblemente DOS colecciones**
-—artículo y hub—, por la misma razón que §1.5b separó SECTOR de MONOGRÁFICO:
-formas con estructura distinta no comparten colección solo porque compartan
-cascarón. **No se cierra aquí**: el hub tiene pinta de listado y §2c ya decidió
-cómo se modelan los listados; queda por comprobar si el hub de KB **es** uno de
-ésos o una tercera cosa.
+~~**Decisión: el grupo D es arquetipo propio, y previsiblemente DOS
+colecciones** —artículo y hub—.~~ **CERRADO en la tanda de decisión del mismo
+día — y el «previsiblemente» estaba a medias:** ver §2d.1.
 
 **Lo que NO se hizo, y es deliberado:** no se ha tocado `MonoSeccion[]`, no se ha
 construido nada y **no se han añadido los 4 kinds**. Igual que los tres campos de
 §1.3 siguen sin añadirse: la frontera se documenta, no se borra.
+
+### ✅ 2d.1 · Las cinco decisiones del grupo D — CERRADAS (2026-08-03)
+
+Por predicados pre-registrados **antes de evaluarse** (commit `effb473`):
+`docs/research/grupo-D/PRE-REGISTRO-DECISION.md` fija la función de decisión,
+`DECISION.md` la evalúa. Evidencia: `medidas/grupo-d-inventario.json` +
+`medidas/grupo-d-plantilla.json` (censo `_tb_`, varianza cero en las 13).
+
+| pregunta | decisión | predicado |
+|---|---|---|
+| **régimen** | **no hay tercero: el régimen es propiedad de la CAPA.** Grupo D = capa `_tb_` plantillada (1 firma en 13/13) + capa propia de builder (varía 1→11). `CLAUDE.md` corregido, no ampliado | P-R1 ∧ P-R2 |
+| **hub de KB** | **casillero L4 de LH-2**: página compuesta por instancia → **cola larga, cero arquetipos**. NO es LISTADO-B (cero módulos de consulta; el instrumento los ve — el control EDAR trae `blog`) | ¬P-H1 ∧ P-H2 |
+| **colecciones** | **UNA nueva: `articulos-kb`** (6 instancias, 1 sección propia las 6). Los 7 hubs, fuera de colección, con los 6 de LH-2. La pregunta «¿dos?» se disolvió al caer el hub en L4 | P-C1 ∧ P-C2 + dependencia declarada |
+| **los 4 kinds** | **tipo propio por arquetipo; `MonoModulo` intacto.** `blurb`/`gallery` → unión propia de `articulos-kb` cuando se construya; `video`/`toggle` → con la cola larga, cuando se decida. Ninguno aparece en SECTOR/MONOGRÁFICO medidos (P-K1 ❌): añadirlos a `MonoSeccion[]` sería el arreglo falso de §1.5b Razón 1 | ¬P-K1 ∧ P-K2 |
+| **D2/D3** | **SIN OBJETO, no «no se pudo»**: eran confirmatorios de HD1 y su pregunta desapareció con ella. Construcción-instrumento **no autorizada**. El píxel vuelve por la vía estándar (sonda de dos lados propia del arquetipo) al construir | P-M1 |
+
+**Común compartido, no duplicado:** las definiciones de texto/imagen/botón y el
+ritmo se exportan una vez y las consumen `MonoModulo` y la futura unión de
+`articulos-kb` — *lo que se duplica es el documento, no la definición* (§1.5b).
+
+**Consecuencia nueva para la cola larga, que antes no estaba escrita:** la cola
+de páginas compuestas (6 hubs LH-2 + 7 hubs KB) **ya se sabe que `MonoSeccion[]`
+solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
+hipótesis del grupo D; la hipótesis cayó, así que la cola larga necesitará su
+propia decisión de modelo cuando toque.
 
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
 

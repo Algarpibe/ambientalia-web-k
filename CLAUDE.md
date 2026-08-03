@@ -168,6 +168,24 @@ mira el `<body>` —una línea de HTML servido— y ya sabes cuál de las dos le
 toca. Aplicar el test sin mirarlo es cómo se convierte una plantilla en ocho
 campos inventados, o al revés.
 
+> ⚠ **CORREGIDO 2026-08-03 (grupo D, por predicado pre-registrado): el régimen
+> es propiedad de la CAPA, no de la página — y el `<body>` puede llevar LOS DOS
+> marcadores a la vez.** Las 13 páginas del centro de ayuda traen
+> `et_pb_pagebuilder_layout` **y** `et-tb-has-body` juntos, y no son un tercer
+> régimen: son **los dos existentes conviviendo en capas** — una plantilla de
+> theme-builder que pone cascarón (con el `post_content` dentro) **más** las
+> secciones propias del builder de la instancia inyectadas por él.
+>
+> Cómo se lee un híbrido, medido y no supuesto: **la capa que tiene varianza
+> CERO entre instancias la fijó quien construyó la plantilla** (capa `_tb_`:
+> una sola firma en 13/13, sidebar y sticky en 13/13 → lectura plantillada);
+> **la capa que varía la compuso quien editó la instancia** (secciones propias:
+> composición variable en artículos, 1→11 secciones en hubs → lectura de
+> builder). El marcador del `<body>` **anuncia qué mecanismos están presentes**;
+> quién decidió cada valor lo dice **la varianza de su capa**. Evidencia:
+> `medidas/grupo-d-plantilla.json` + `grupo-d-inventario.json`; predicados en
+> `docs/research/grupo-D/PRE-REGISTRO-DECISION.md` (P-R).
+
 **Cómo se decide bien.** No mirando una instancia: **midiendo todas las que
 existan**. El campo `flujo` salió de barrer los 8 sectores vivos con
 `scripts/qa/tree-todos.mjs` y ver que solo hay dos formas de sección y dos de

@@ -1,3 +1,127 @@
+# HANDOFF — grupo D decidido: cinco preguntas, cinco predicados, cero argumentos
+
+> ⚠ **Tanda 2026-08-03 (16.ª).** Siete pasos. Tanda de **DECISIÓN**: no se
+> construyó nada, no se tocó `MonoSeccion[]`, y la única medida nueva es la que
+> el propio pre-registro declaró pendiente. El método es el de
+> `EXPERIMENTO-URBANO` y LH-2: **los predicados se commitearon ANTES de
+> evaluarse** (`effb473`) y cada decisión es la rama que el pre-registro asignó
+> al resultado que salió.
+
+## 0 · Las cinco decisiones
+
+| pregunta | decisión | predicado |
+|---|---|---|
+| **régimen** | **no hay tercero: es propiedad de la CAPA.** Capa `_tb_` plantillada (1 firma en 13/13) + capa propia de builder (varía). `CLAUDE.md` **corregido, no ampliado** | P-R1 ∧ P-R2 |
+| **hub de KB** | **L4 de LH-2**: página compuesta por instancia → cola larga, **cero arquetipos**. No es LISTADO-B | ¬P-H1 ∧ P-H2 |
+| **colecciones** | **UNA nueva: `articulos-kb`.** Los 7 hubs, fuera de colección | P-C + dependencia |
+| **los 4 kinds** | tipo propio por arquetipo; **`MonoModulo` intacto** | ¬P-K1 ∧ P-K2 |
+| **D2/D3** | **SIN OBJETO** — D1 bastó; no se autoriza construcción-instrumento | P-M1 |
+
+Registro canónico: `ESQUEMA-CMS.md` **§2d.1** · acta: `docs/research/grupo-D/DECISION.md`.
+
+## 1 · El hallazgo que paga la tanda: el régimen por CAPAS
+
+La medida nueva (censo `_tb_` de las 13, congelada en
+`medidas/grupo-d-plantilla.json`) dio **varianza CERO en la capa de plantilla**:
+una sola firma (`header · body · footer×3`), sidebar 13/13, sticky 13/13,
+`post_content` 13/13. Y la capa propia **varía** (composición en artículos,
+1→11 secciones en hubs).
+
+> **Los dos marcadores del `<body>` conviven porque los dos MECANISMOS
+> conviven.** El marcador anuncia qué mecanismos hay; **quién decidió cada valor
+> lo dice la varianza de su capa.** «Identifica el régimen de la página» pasa a
+> «identifica el régimen de **cada capa**» — corrección aplicada en `CLAUDE.md`
+> §Régimen con su evidencia.
+
+Verificación cruzada: la re-derivación de `propias` del censo nuevo coincide con
+el inventario congelado **en las 13** (0 desacuerdos).
+
+## 2 · El hub no estrena nada — y lo dice un criterio de hace tres días
+
+P-H1 falló limpio: **cero módulos de consulta** en los 7 hubs (y el instrumento
+los ve: el control EDAR trae el kind `blog`). P-H2 se cumplió: oscilan
+**1·1·5·5·7·7·11**. Eso es, literal, el casillero **L4 que LH-2 D1 ya había
+decidido** para sus 6 hubs de builder: *página compuesta por instancia = cola
+larga, cero arquetipos*. El matiz pre-registrado se respetó: las parejas casi
+calcadas (`articulos-de-ayuda` ×2) son sub-formas de página compuesta, **no una
+colección por parecido**.
+
+## 3 · Colecciones: la pregunta «¿dos?» se disolvió
+
+Con el hub en L4, queda **UNA colección nueva: `articulos-kb`** — 6 instancias,
+forma uniforme (1 sección propia las 6), cuerpo de
+texto/imagen/botón/`blurb`/`gallery`. El criterio de §1.5b aplicó tal cual
+(fricción en las dos direcciones + separar-después-es-más-caro); no hubo que
+argumentar por qué no valía.
+
+## 4 · Los 4 kinds: dónde vive cada uno, y dónde NO
+
+P-K1 falló (ninguno de los 4 aparece en SECTOR/MONOGRÁFICO medidos), así que:
+
+- `blurb` · `gallery` → **unión propia de `articulos-kb`** cuando se construya,
+  reutilizando por **definición exportada** lo común con `MonoModulo` (texto,
+  imagen, botón, ritmo) — *lo que se duplica es el documento, no la definición*.
+- `video` · `toggle` → pertenecen a los hubs = **cola larga**: su modelo se
+  decide cuando se decida la cola larga. Modelarlos hoy sería modelar páginas
+  que no se ha decidido construir.
+- **Ninguno entra a `MonoSeccion[]`.** La prohibición del §6 pasa de cautela a
+  **decisión ratificada** (sería el arreglo falso de §1.5b Razón 1).
+
+## 5 · D2/D3, cerrados con la palabra correcta
+
+**SIN OBJETO**, no «no se pudo»: eran confirmatorios de HD1 y su pregunta
+desapareció con ella — medirlos exigiría construir con los kinds añadidos, o sea
+medir **otro modelo**. La construcción mínima como instrumento **no se
+autoriza**: no compraba información para ninguna decisión de esta tanda. Y la
+vuelta del píxel queda dicha por la vía estándar: **un arquetipo nuevo no hereda
+cobertura** — cuando `articulos-kb` se construya, sonda comparadora de dos lados
+propia.
+
+## 6 · Consecuencia nueva que antes no estaba escrita
+
+La **cola larga de páginas compuestas** ahora son 6 hubs LH-2 + 7 hubs KB, y
+**ya se sabe que `MonoSeccion[]` solo no la cubre** (usan `video`/`toggle`).
+LH-2 la dejó apuntando a la hipótesis del grupo D; la hipótesis cayó. La cola
+larga necesitará su propia decisión de modelo cuando toque — está anotado en
+§2d.1.
+
+## 7 · Verificación
+
+- Pre-registro commiteado **antes** de evaluar (`effb473`); medida nueva
+  congelada y commiteada **antes** de decidir (`982d9dc`).
+- Consistencia cruzada censo nuevo ↔ inventario: **13/13, 0 desacuerdos**.
+- `npm run check` 0 errores · `qa:lib` en verde · árbol limpio tras push.
+- El servidor `next start` de la sesión de enlaces se **paró antes** del
+  `check` (un build le cambiaría el `.next` por debajo).
+
+## 8 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — OTRO DÍA (≥2026-08-04), obligatorio.** Cierra el
+   −30 de EDAR@390, que sigue **SIN PROBAR**. Con ella en vuelo: nada de
+   `check` ni `build`.
+2. **Construir `articulos-kb`** cuando su prioridad llegue — con recon fino a
+   dos anchos, content type propio (`blurb`/`gallery` + comunes exportados) y
+   **su propia sonda de dos lados** desde la primera tanda.
+3. **La cola larga de páginas compuestas** (13 hubs) — necesita decisión de
+   modelo propia; `MonoSeccion[]` solo no la cubre.
+4. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+5. **La retícula de la HOME** — va con C-QA3.
+6. **El mecanismo del ±32.28** — sin identificar.
+7. **Comportamiento a 0/31** en la matriz de cobertura.
+
+## 9 · Lo que NO hay que hacer al empezar
+
+- **No añadir `blurb`/`video`/`toggle`/`gallery` a `MonoSeccion[]`.** Ya no es
+  cautela: es decisión con predicado (P-K, §2d.1).
+- **No tratar los 7 hubs de KB como colección** por mucho que las parejas se
+  parezcan — es el mismo veredicto L4 de los 6 de LH-2.
+- **No leer el `<body>` como si el régimen fuera de la página.** Es de la capa;
+  con los dos marcadores presentes, la varianza de cada capa dice quién decidió
+  qué.
+- **No correr `check` ni `build` mañana con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — grupo D: HD1 rechazada, y la frontera sale doble
 
 > ⚠ **Tanda 2026-08-03 (15.ª).** Cinco pasos. Tanda de **RECON**: no se escribió
