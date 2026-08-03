@@ -3,7 +3,7 @@
  * Uso: npm run qa:lib          (código 1 si alguna aserción falla)
  *
  * ── Por qué existe ─────────────────────────────────────────────────────────
- * `CLAUDE.md` §Cuatro reglas sobre las sondas: *una sonda es código sin tests, y
+ * `CLAUDE.md` §Reglas sobre las sondas: *una sonda es código sin tests, y
  * el único control es mirar su salida contra algo que ya sabes.* De las cuatro
  * reglas, dos se aplican aquí literalmente:
  *
@@ -28,7 +28,7 @@
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { desMsys, env, envRuta, envRutas, Evaluadas, iniciarClon, ruta, w } from "./lib.mjs";
+import { auditarSondas, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, ruta, sello, sinLiterales, w } from "./lib.mjs";
 
 /* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
  * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
@@ -39,7 +39,14 @@ process.env.SIN_CONTRATO = "1";
 const MSYS = "C:/Program Files/Git";
 
 let fallos = 0;
+/* Se CUENTAN, no se escriben. El total llevaba tres tandas escrito a mano
+ * («42/42», «31/31») y el criterio de aceptación de `TRASPASO-AGENTE.md` citaba
+ * un número que dejó de ser cierto en cuanto alguien añadió una aserción. Es la
+ * misma clase que la lista de «8 sondas con suelo 1»: un recuento a mano es una
+ * copia desactualizada de algo que se puede derivar. */
+let corridas = 0;
 const eq = (nombre, real, esperado) => {
+  corridas++;
   const ok = JSON.stringify(real) === JSON.stringify(esperado);
   if (!ok) fallos++;
   console.log(
@@ -116,6 +123,18 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   const p4 = callado(() => w(f, { v: 3 }));
   eq("otra corrida el mismo día → tampoco colisiona", p4 !== p3, true);
   eq("…tres ficheros", readdirSync(tmp).length, 3);
+
+  /* ⚠ EL SEGUNDO DEFECTO DE `alLado()`, y fabricaba basura: la idempotencia de
+   * `w()` mira **solo el destino canónico**, no los ficheros fechados que ella
+   * misma crea. Así que re-correr una sonda cuya salida difiere del congelado
+   * producía `-fecha.json` y `-fecha-2.json` BYTE A BYTE IGUALES — medido en
+   * `slugs`, `cobertura`, `enlaces` y `c-bases`, los cuatro diffs vacíos. */
+  const antes = readdirSync(tmp).length;
+  const p4b = callado(() => w(f, { v: 3 }));
+  eq("re-correr con salida IDÉNTICA a una fechada → no duplica", p4b, p4);
+  eq("…y no aparece un fichero nuevo", readdirSync(tmp).length, antes);
+  const p4c = callado(() => w(f, { v: 4 }));
+  eq("…pero una salida NUEVA sí se guarda aparte", p4c !== p4 && readdirSync(tmp).length === antes + 1, true);
 
   // la bandera explícita, que es la única forma de re-congelar
   const p5 = callado(() => w(f, { v: 9 }, { pisar: true }));
@@ -217,6 +236,17 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
       `process.exit(0);\n`,
   );
   eq("alcanzado el mínimo, sale 0", r.code, 0);
+  /* ⚠ La MITAD LEGIBLE, que estaba sin conectar: el contrato cerraba el código
+   * pero el verde salía MUDO. Validando las 48 en vivo, la línea de unidades la
+   * imprimía **1**; el HANDOFF decía «ahora la imprime». Ahora la pone el
+   * gancho aunque la sonda no llame a `informe()`. */
+  eq("…y el verde NO es mudo: lleva su línea de unidades", /evaluadas 2\/2 rutas/.test(r.out), true);
+  r = corre(
+    `import { Evaluadas } from ${LIB};\n` +
+      `const ev = new Evaluadas({ unidad: "rutas", minimo: 2 });\n` +
+      `ev.ok(); ev.ok(); ev.informe();\n`,
+  );
+  eq("…y si la sonda SÍ llama a informe(), no sale dos veces", (r.out.match(/evaluadas 2\/2 rutas/g) || []).length, 1);
 
   // 3 · Congelar una medida SIN declarar nada es error: el olvido no es verde.
   //     El subproceso NO hereda la exención del propio test — aquí se prueba
@@ -257,57 +287,129 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
 /* ══════════════════════════════════════════════════════════════════════════
  * Y LA MITAD QUE NINGÚN TEST DE COMPORTAMIENTO CUBRE: que TODAS lo usen.
  *
- * El contrato solo cierra la clase si está **conectado en las 47 sondas**. Una
- * que no lo declare vuelve a poder dar verde midiendo nada, y eso no lo detecta
- * ningún test de `lib.mjs` — es *documentado no es conectado* a escala de
- * directorio. Por eso se comprueba por barrido, que además es gratis.
+ * El contrato solo cierra la clase si está **conectado en todas las sondas**.
+ * Una que no lo declare vuelve a poder dar verde midiendo nada, y eso no lo
+ * detecta ningún test de `lib.mjs` — es *documentado no es conectado* a escala
+ * de directorio.
+ *
+ * ⚠ **SÉPTIMA instancia, y aquí dentro: el barrido era un `grep`.** Daba verde
+ * sobre `c-censo.mjs` con dos `const ev` y **sin compilar**, porque el texto
+ * contenía `new Evaluadas(` y eso era lo único que miraba. El primer parche
+ * puso el `node --check` **como segunda aserción**, y eso deja la primera
+ * —«las N declaran»— **en verde sobre un directorio roto**: dos canales de
+ * verdad para una sola pregunta, que es la regla 1 de `CLAUDE.md` §sondas.
+ *
+ * Ahora hay **un veredicto por sonda** (`auditarSondas` en `lib.mjs`): compila
+ * **y** declara, o no es conforme. Y se prueba EN NEGATIVO con ficheros rotos a
+ * propósito, porque un barrido que no sabe fallar da la misma salida que uno
+ * que no mira nada.
  * ═════════════════════════════════════════════════════════════════════════ */
+/* El escáner que separa código de texto. Se prueba aparte porque un fallo suyo
+ * no da error: da una sonda conforme marcada como SIN DECLARAR, o al revés. El
+ * caso peligroso es el literal de expresión regular con comillas dentro
+ * —`.replace(/"/g, "")`— que a un escáner ingenuo le abre una cadena y le deja
+ * el resto del fichero ciego. */
+/* La fecha, en un solo sitio y LOCAL. El defecto que sustituye estaba escrito a
+ * pelo en `lib.mjs` y en 22 sondas: `toISOString()` es UTC, así que con la
+ * máquina en −05:00 toda corrida entre las 19:00 y medianoche quedaba fechada al
+ * día siguiente — comprobado en disco. Y va en los dos sentidos: dos ráfagas de
+ * la misma tarde con días distintos, o dos de días distintos colapsadas. */
+console.log("\n── `hoy()` / `sello()`: hora LOCAL, nunca UTC ──");
 {
-  const aqui = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-  const sondas = readdirSync(aqui).filter((f) => f.endsWith(".mjs") && f !== "lib.mjs" && f !== "lib.test.mjs");
-  const sinContrato = [];
-  for (const f of sondas) {
-    const src = readFileSync(join(aqui, f), "utf8");
-    const declara = /new Evaluadas\(/.test(src) || /SIN_CONTRATO\s*=\s*["']1["']/.test(src);
-    if (!declara) sinContrato.push(f);
-  }
+  // 2026-08-02 19:03 locales. En UTC−05:00 eso es el 03 a las 00:03.
+  const tarde = new Date(2026, 7, 2, 19, 3, 12);
+  eq("una corrida de las 19:03 del 02 se fecha el 02", hoy(tarde), "2026-08-02");
+  eq("…y su sello conserva la FORMA del que sustituye", sello(tarde), "2026-08-02T19-03-12");
+  eq("medianoche justa no se va al día anterior", hoy(new Date(2026, 7, 2, 0, 0, 0)), "2026-08-02");
+  eq("un día de un dígito va con cero delante", hoy(new Date(2026, 0, 5, 12, 0, 0)), "2026-01-05");
+  /* El control que hace que el test valga: si `hoy()` volviera a UTC, esta
+   * aserción es la única que lo caza — las otras pasan en una máquina en UTC. */
   eq(
-    `las ${sondas.length} sondas declaran su mínimo de unidades` +
-      (sinContrato.length ? ` — SIN DECLARAR: ${sinContrato.join(" · ")}` : ""),
-    sinContrato.length,
-    0,
+    "y NO coincide con toISOString() a esa hora (que es el fallo)",
+    hoy(tarde) === tarde.toISOString().slice(0, 10),
+    false,
   );
+}
 
-  /**
-   * ⚠ **Y que PARSEEN, porque el barrido de arriba es una expresión regular.**
-   * Al migrar las 47 en esta tanda, `c-censo.mjs` quedó con **dos `const ev`**
-   * —una inserción duplicada— y el barrido lo dio por bueno: el texto contenía
-   * `new Evaluadas(`, que es lo único que miraba. O sea que la comprobación de
-   * que el contrato está puesto **daba verde sobre un fichero que no arranca**.
-   *
-   * Es la misma clase que viene a cerrar todo este contrato, cometida en su
-   * propio test: *mirar una cosa y creer que has mirado otra*. Un `--check` por
-   * sonda cuesta milisegundos y lo cierra.
-   */
-  const { spawnSync: sp } = await import("node:child_process");
-  const noCompilan = sondas.filter(
-    (f) => sp(process.execPath, ["--check", join(aqui, f)], { encoding: "utf8" }).status !== 0,
-  );
+/* `ok()` no puede traducir «no lo sé» a «está bien» (CLAUDE.md §sondas, 6). */
+console.log("\n── `Evaluadas.ok()`: un defecto no rescata un cálculo fallido ──");
+{
+  const ev = new Evaluadas({ unidad: "filas", minimo: 1 });
+  eq("ok() sin argumento sigue sumando 1", ev.ok().n, 1);
+  eq("ok(13) suma 13", ev.ok(13).n, 14);
+  const tira = (fn) => { try { fn(); return false; } catch { return true; } };
+  // el caso exacto de `cmp-sector`: `.length` sobre un objeto
+  eq("ok(undefined) TIRA — era el 1 falso de cmp-sector", tira(() => ev.ok({}.length)), true);
+  eq("ok(NaN) TIRA", tira(() => ev.ok(NaN)), true);
+  eq("ok(null) TIRA", tira(() => ev.ok(null)), true);
+  eq("…y el contador no se movió con ninguno", ev.n, 14);
+  ev.ok(ev.minimo); // que no dispare el gancho al salir
+}
+
+console.log("\n── `sinLiterales()`: qué es código y qué es texto ──");
+{
+  const hay = (s) => /new\s+Evaluadas\s*\(/.test(sinLiterales(s));
+  eq("declaración de verdad → se ve", hay(`const ev = new Evaluadas({minimo:1});`), true);
+  eq("en comentario de línea → NO", hay(`// const ev = new Evaluadas({minimo:1});`), false);
+  eq("en comentario de bloque → NO", hay(`/* new Evaluadas({minimo:1}) */`), false);
+  eq("dentro de una cadena → NO", hay(`const s = "new Evaluadas({minimo:1})";`), false);
+  eq("dentro de una plantilla → NO", hay("const s = `new Evaluadas({minimo:1})`;"), false);
   eq(
-    `las ${sondas.length} sondas COMPILAN` + (noCompilan.length ? ` — ROTAS: ${noCompilan.join(" · ")}` : ""),
-    noCompilan.length,
+    "una regex con comillas NO ciega el resto",
+    hay(`const t = x.replace(/"/g, "'");\nconst ev = new Evaluadas({minimo:1});`),
+    true,
+  );
+  eq("y una división no se come el código", hay(`const r = a / b; const ev = new Evaluadas({minimo:1});`), true);
+}
+
+console.log("\n── el barrido del contrato: EJECUTAR, no casar texto ──");
+{
+  /* ── (a) EN NEGATIVO, primero: cuatro fixtures con veredicto conocido ── */
+  const tmpA = mkdtempSync(join(tmpdir(), "kq-aud-"));
+  const poner = (n, s) => writeFileSync(join(tmpA, n), s);
+
+  // 1 · conforme de verdad
+  poner("buena.mjs", `import { Evaluadas } from "./lib.mjs";\nconst ev = new Evaluadas({ unidad: "rutas", minimo: 2 });\nev.ok();\n`);
+  // 2 · NO COMPILA — y encima contiene el texto que el grep buscaba. Es
+  //     literalmente el caso `c-censo`: el barrido viejo lo daba por bueno.
+  poner("rota.mjs", `const ev = new Evaluadas({ minimo: 1 });\nconst ev = new Evaluadas({ minimo: 1 });\nfunction (\n`);
+  // 3 · compila y no declara nada
+  poner("muda.mjs", `console.log("no declaro nada");\n`);
+  // 4 · la declaración vive en un COMENTARIO y en una CADENA. Un `grep` la
+  //     cuenta; el código no la tiene.
+  poner("fantasma.mjs", `// const ev = new Evaluadas({ unidad: "x", minimo: 1 });\nconst ayuda = "usa new Evaluadas({ minimo: 1 })";\nconsole.log(ayuda);\n`);
+
+  const neg = await auditarSondas(tmpA, []);
+  eq("negativo · 4 ficheros auditados", neg.total, 4);
+  eq("negativo · la buena es la ÚNICA conforme", neg.conformes, ["buena.mjs"]);
+  eq("negativo · la que no compila sale ROTA…", neg.rotas.map((r) => r.fichero), ["rota.mjs"]);
+  eq("…y NO cuenta como declarante pese al texto", neg.conformes.includes("rota.mjs"), false);
+  eq("negativo · muda y fantasma, SIN DECLARAR", neg.sinDeclarar, ["fantasma.mjs", "muda.mjs"]);
+  rmSync(tmpA, { recursive: true, force: true });
+
+  /* ── (b) el barrido de verdad, con UN solo veredicto ── */
+  const a = await auditarSondas();
+  const noConformes = [
+    ...a.rotas.map((r) => `${r.fichero} (NO COMPILA: ${r.error})`),
+    ...a.sinDeclarar.map((f) => `${f} (sin declarar)`),
+  ];
+  eq(
+    `las ${a.total} sondas COMPILAN y declaran su mínimo` +
+      (noConformes.length ? ` — NO CONFORMES: ${noConformes.join(" · ")}` : ""),
+    noConformes.length,
     0,
   );
 }
 
 /* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ── */
-const total = 42;
+const total = corridas;
 console.log(
   fallos
-    ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las dos cosas que\n` +
+    ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las cosas que\n` +
         `   prueba esto fallan EN SILENCIO, con números plausibles y código 0.\n`
     : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno),\n` +
-        `        una salida congelada NO se descongela sola, y una sonda contra un\n` +
-        `        puerto vacío FALLA en voz alta en vez de medir.\n`,
+        `        una salida congelada NO se descongela sola, una sonda contra un\n` +
+        `        puerto vacío FALLA en voz alta en vez de medir, y el barrido del\n` +
+        `        contrato tumba un fichero que no compila en vez de convivir con él.\n`,
 );
 process.exit(fallos ? 1 : 0);

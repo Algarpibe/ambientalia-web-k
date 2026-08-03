@@ -53,16 +53,40 @@ export async function openPage(browser, url, { width, height, mobile = false, ds
     await page.setViewport({ width, height, deviceScaleFactor: dsf });
   }
   const respuesta = await page.goto(url, { waitUntil: "networkidle2", timeout: 120000 });
-  /* Una página que carga es una UNIDAD EVALUADA. Se cuenta aquí —el sitio por
-   * el que pasan todas— y no en cada sonda, por lo mismo que la guarda de
-   * `BUILD_ID` vive en `w()`: lo que hay que acordarse de poner se olvida. La
-   * sonda solo declara su MÍNIMO; el recuento no es cosa suya. */
-  contarPagina();
-  // El estado HTTP se devuelve porque una 404 CARGA BIEN: `goto` no lanza, la
-  // página renderiza, y una sonda que no lo mire mide el 404 y publica deltas
-  // plausibles. Lo cazó el test en negativo de `c-cmp` (2026-08-01): una ruta
-  // inventada salió con `base +142.5 · docH 1300→900` y un ✓.
-  return { page, client, status: respuesta?.status() ?? 0 };
+  const estado = respuesta?.status() ?? 0;
+  /* ── Una 404 NO es una unidad evaluada ────────────────────────────────────
+   * El estado se devolvía ya, y el comentario de aquí decía por qué: *una 404
+   * CARGA BIEN, `goto` no lanza, la página renderiza, y una sonda que no lo
+   * mire mide el 404 y publica deltas plausibles*. **Medido el 2026-08-02: de
+   * las 31 sondas que usan `openPage`, 22 NO lo miraban** — `clon-base` entre
+   * ellas, que es la guarda que más se corre. El dato estaba y la conexión no:
+   * *documentado no es conectado* a escala de directorio.
+   *
+   * Visto en vivo y por accidente: `dos-rutas` con un slug inventado devolvió
+   * `docH 6035 → 900` y `null` en todas las anclas, y lo informó como «el
+   * cascarón NO es el mismo». Rojo, sí, **pero por el motivo equivocado** — y
+   * un motivo equivocado es lo que se cita después.
+   *
+   * Arreglado donde pasan todas: **una respuesta ≥ 400 no cuenta como página
+   * evaluada** y se grita. Como la mayoría declara `porPaginas: true`, el
+   * recuento se queda corto y el contrato la pone roja sola.
+   *
+   * ⚠ Lo que NO cubre: las sondas que cuentan a mano con `ev.ok()` pueden
+   * seguir sumando tras una 404. Para ésas el aviso es la línea gritada. */
+  if (estado >= 400 || estado === 0) {
+    console.error(
+      `\n❌ HTTP ${estado} — ${url}\n` +
+        `   Una 404 CARGA BIEN y se mide como una página buena: ésta NO se cuenta\n` +
+        `   como unidad evaluada. Si la sonda declara su mínimo, saldrá roja sola.`,
+    );
+  } else {
+    /* Una página que carga es una UNIDAD EVALUADA. Se cuenta aquí —el sitio por
+     * el que pasan todas— y no en cada sonda, por lo mismo que la guarda de
+     * `BUILD_ID` vive en `w()`: lo que hay que acordarse de poner se olvida. La
+     * sonda solo declara su MÍNIMO; el recuento no es cosa suya. */
+    contarPagina();
+  }
+  return { page, client, status: estado };
 }
 
 /** Divi recalcula alturas por JS tras el load: pase de scroll + settle + lazy→eager. */
