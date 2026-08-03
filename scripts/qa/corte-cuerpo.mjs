@@ -89,7 +89,16 @@ const extraer = function () {
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "corte-cuerpo", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1` y el universo lo DERIVA la propia sonda del manifiesto**
+ * (`RUTAS`, arriba: todas las `/sectores/`). Escribir `1` es exactamente el caso
+ * que el HANDOFF fichó como *«suelo flojo»*: imprimía `evaluadas 12/1 páginas`
+ * —midió doce, se exigía una— y ese verde no dice nada sobre las once restantes.
+ *
+ * Con el mínimo derivado, **una ruta nueva de sector sube el listón sola** y una
+ * ruta caída pone la sonda roja, que es lo que se le pide a una guarda.
+ */
+const ev = new Evaluadas({ nombre: "corte-cuerpo", unidad: "páginas", minimo: RUTAS.length, porPaginas: true });
 
 const { browser } = await launch();
 const todo = {};
