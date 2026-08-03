@@ -135,7 +135,13 @@ const extraer = function () {
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "dos-rutas", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1`, y el invariante de esta sonda es que compara DOS.**
+ * Con `1`, medir una ruta y fallar la otra salía **verde**: el nombre de la
+ * sonda es `dos-rutas` y su veredicto entero —secciones, filas, columnas— es un
+ * `A` contra `B`. Una sola no es media comparación, es **ninguna**.
+ */
+const ev = new Evaluadas({ nombre: "dos-rutas", unidad: "páginas (las 2 rutas que compara)", minimo: 2, porPaginas: true });
 
 const { browser } = await launch();
 // el parámetro NO se llama `ruta`: taparía el import del mismo nombre
