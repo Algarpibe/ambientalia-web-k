@@ -145,7 +145,7 @@ for (const [nombre, slug] of PAGINAS) {
   }
 }
 
-w(`mono-detalle-${width}.json`, todo);
+w(`medidas/mono-detalle-${width}.json`, todo);
 
 for (const [n, d] of Object.entries(todo)) {
   console.log(`\n═══ ${n} @${width}`);

@@ -104,7 +104,7 @@ for (const [nombre, slug] of PAGINAS) {
   await page.close();
 }
 
-w(`mono-inline-${width}.json`, todo);
+w(`medidas/mono-inline-${width}.json`, todo);
 
 for (const [n, d] of Object.entries(todo)) {
   console.log(`\n═══ ${n} @${width}`);

@@ -197,7 +197,7 @@ for (const [nombre, slug] of PAGINAS) {
   }
 }
 
-w(`mono-cabecera-${width}.json`, todo);
+w(`medidas/mono-cabecera-${width}.json`, todo);
 
 const linea = (k, o) => console.log(`  ${k.padEnd(12)} ${JSON.stringify(o)}`);
 for (const [n, d] of Object.entries(todo)) {

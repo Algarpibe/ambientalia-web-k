@@ -98,7 +98,7 @@ for (const [nombre, slug] of SECTORES) {
   }
 }
 
-w(`tree-todos-${width}.json`, todo);
+w(`medidas/tree-todos-${width}.json`, todo);
 
 for (const [nombre, secs] of Object.entries(todo)) {
   console.log(`\n### ${nombre}`);
