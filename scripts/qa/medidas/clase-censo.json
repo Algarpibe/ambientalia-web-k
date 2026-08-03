@@ -1,0 +1,4209 @@
+{
+  "meta": {
+    "que": "Censo DERIVADO de componentes compartidos que cablean medidas absolutas — los candidatos de la clase «componente calibrado con UNA instancia».",
+    "fecha": "2026-08-03",
+    "criterio": "candidato = (≥2 importadores) ∧ (cablea h-[px] / var alto px / w-[%] / w-[px] / line-clamp)",
+    "porQueNoElPadding": "El padding es ritmo y no depende del largo del texto; contarlo marcaría los 74 y un patrón que casa en todas no mide nada.",
+    "identidad": "Marcador semántico (aria-label, itemType, role, id, kunak-*, et_pb_*), NUNCA literal de className: los tokens del tema casan en 16 de 74.",
+    "importadores": "DERIVADOS por import real, no por comentario de cabecera."
+  },
+  "resumen": {
+    "componentes": 74,
+    "conAlcance2Rutas": 41,
+    "compartidosPorImportadores": 27,
+    "conAbsolutas": 58,
+    "candidatos": 33,
+    "conMarcadorSemantico": 20
+  },
+  "candidatos": [
+    {
+      "rel": "src/components/HeaderNav.tsx",
+      "nombre": "HeaderNav",
+      "marcadores": [
+        "aria-label:Kunak",
+        "aria-label:Menú principal",
+        "aria-label:mobileOpen ? ",
+        "id:mobile-menu",
+        "kunak-*:kunak-main-nav"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[200px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[41px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[52px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[2px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[2px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[47px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[92%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[15.87%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[11.87%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[15%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[104px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[120px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[104px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[170px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[48px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[220px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[140px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[240px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[200px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[130px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[150px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[500px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[240px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[34px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[28px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[28px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 127"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/Footer.tsx",
+      "nombre": "Footer",
+      "marcadores": [
+        "aria-label:s.network"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[31.6px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[61.59px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[61.59px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[40px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[41px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[132px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 40"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/SectionRow.tsx",
+      "nombre": "SectionRow",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.833%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/api/HeroApi.tsx",
+        "src/components/Beneficios.tsx",
+        "src/components/CtaBanner.tsx",
+        "src/components/CtaBannerSlider.tsx",
+        "src/components/Footer.tsx",
+        "src/components/HazVisible.tsx",
+        "src/components/ListaContenido.tsx",
+        "src/components/monitor/Aplicaciones.tsx",
+        "src/components/monitor/CtaGuiaProyecto.tsx",
+        "src/components/monitor/FaqAcordeon.tsx",
+        "src/components/monitor/GaleriaEnsayos.tsx",
+        "src/components/monitor/HeroProducto.tsx",
+        "src/components/monitor/InformacionProducto.tsx",
+        "src/components/monitor/PaquetesEnergia.tsx",
+        "src/components/monitor/Software.tsx",
+        "src/components/monitor/SondasMeteorologicas.tsx",
+        "src/components/monitor/SubNavAnclas.tsx",
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/PresenciaMundial.tsx",
+        "src/components/ProductosTabs.tsx",
+        "src/components/sectores/SectorHero.tsx",
+        "src/components/SectoresIntro.tsx",
+        "src/components/software/HeroSoftware.tsx",
+        "src/components/SolucionProfesional.tsx",
+        "src/components/Sostenibilidad.tsx",
+        "src/components/Testimonios.tsx",
+        "src/components/UltimosArticulos.tsx",
+        "src/components/UltimosProyectos.tsx"
+      ],
+      "nImport": 31,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/ScrollToTop.tsx",
+      "nombre": "ScrollToTop",
+      "marcadores": [
+        "aria-label:Volver arriba"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[40px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[40px]"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/CtaBanner.tsx",
+      "nombre": "CtaBanner",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/CtaInmerso.tsx",
+        "src/components/CtaPreocupa.tsx",
+        "src/components/Footer.tsx"
+      ],
+      "nImport": 6,
+      "paginas": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/Breadcrumb.tsx",
+      "nombre": "Breadcrumb",
+      "marcadores": [
+        "aria-label:Migas de pan",
+        "itemType:BreadcrumbList",
+        "itemType:ListItem",
+        "kunak-*:kunak-breadcrumbs"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[350px]"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/arquetipo-a/CascaronA.tsx",
+        "src/components/caso/CasoPagina.tsx",
+        "src/components/monitor/HeroProducto.tsx"
+      ],
+      "nImport": 7,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 28
+    },
+    {
+      "rel": "src/components/BandaCabecera.tsx",
+      "nombre": "BandaCabecera",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 387"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 362.91"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 165.58"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 136.58"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 165.58"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 8,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 24
+    },
+    {
+      "rel": "src/components/arquetipo-a/CascaronA.tsx",
+      "nombre": "CascaronA",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[73.62%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.87%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/arquetipo-a/RelacionadosA.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 14
+    },
+    {
+      "rel": "src/components/UltimosArticulos.tsx",
+      "nombre": "UltimosArticulos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 6,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 11
+    },
+    {
+      "rel": "src/components/ProductosTabs.tsx",
+      "nombre": "ProductosTabs",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[63%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[250px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 11
+    },
+    {
+      "rel": "src/components/CtaBannerSlider.tsx",
+      "nombre": "CtaBannerSlider",
+      "marcadores": [
+        "aria-label:label",
+        "aria-label:Diapositiva anterior",
+        "aria-label:Diapositiva siguiente",
+        "aria-label:`Ir a la diapositiva ${i + 1",
+        "role:region"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[7px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[7px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 10
+    },
+    {
+      "rel": "src/components/arquetipo-a/RelacionadosA.tsx",
+      "nombre": "RelacionadosA",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.66%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.84%]"
+        }
+      ],
+      "importadores": [
+        "src/app/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 10
+    },
+    {
+      "rel": "src/components/UltimosProyectos.tsx",
+      "nombre": "UltimosProyectos",
+      "marcadores": [
+        "aria-label:c.title"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 9
+    },
+    {
+      "rel": "src/components/TrustBar.tsx",
+      "nombre": "TrustBar",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[95%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "minHeight: 122"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "minHeight: 153"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "maxHeight: 80"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 7
+    },
+    {
+      "rel": "src/components/monografico/MonoCuerpo.tsx",
+      "nombre": "MonoCuerpo",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[30px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[36.7%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[57.8%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.8333%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[73.625%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/SectorHero.tsx",
+      "nombre": "SectorHero",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[30px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/BeneficiosAplicaciones.tsx",
+      "nombre": "BeneficiosAplicaciones",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/ListaSimple2Col.tsx",
+      "nombre": "ListaSimple2Col",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/MapaProyectos.tsx",
+      "nombre": "MapaProyectos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[570px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/CabeceraSector.tsx",
+      "nombre": "CabeceraSector",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/ClaimConFoto.tsx",
+      "nombre": "ClaimConFoto",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/CtaDescarga.tsx",
+      "nombre": "CtaDescarga",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "w-[165.23px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[280px]"
+        }
+      ],
+      "importadores": [
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/SectorBody.tsx",
+      "nombre": "SectorBody",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/caso/CasoPagina.tsx",
+      "nombre": "CasoPagina",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/monitor/FaqAcordeon.tsx",
+      "nombre": "FaqAcordeon",
+      "marcadores": [
+        "id:faq"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[24px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[24px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[24px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[24px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoDetalles.tsx",
+      "nombre": "CasoDetalles",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[290px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[330px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[32%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[50.5%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoGaleria.tsx",
+      "nombre": "CasoGaleria",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/VideoLightbox.tsx",
+      "nombre": "VideoLightbox",
+      "marcadores": [
+        "aria-label:ariaLabel",
+        "aria-label:Cerrar vídeo",
+        "role:dialog"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[960px]"
+        }
+      ],
+      "importadores": [
+        "src/components/HeroSection.tsx",
+        "src/components/monitor/HeroProducto.tsx",
+        "src/components/software/InfoProductoSoftware.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 3
+    },
+    {
+      "rel": "src/components/SectoresCarousel.tsx",
+      "nombre": "SectoresCarousel",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[450px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[450px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 60"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/components/monitor/Aplicaciones.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/BlurbsIconos.tsx",
+      "nombre": "BlurbsIconos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[48%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[31%]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        }
+      ],
+      "importadores": [
+        "src/components/api/BeneficiosApi.tsx",
+        "src/components/api/InfoProductoApi.tsx",
+        "src/components/software/InfoProductoSoftware.tsx",
+        "src/lib/api.ts"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/monitor/Beneficios.tsx",
+      "nombre": "Beneficios",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[31%]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 40"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 40"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/components/HazVisible.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/Beneficios.tsx",
+      "nombre": "Beneficios",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/components/HazVisible.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/faq/FaqSidebar.tsx",
+      "nombre": "FaqSidebar",
+      "marcadores": [
+        "role:search",
+        "id:sidebar",
+        "id:searchsubmit",
+        "et_pb_*:et_pb_widget"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[25%]"
+        }
+      ],
+      "importadores": [
+        "src/app/faqs/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/faqs/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 2
+    }
+  ],
+  "censo": [
+    {
+      "rel": "src/components/AccesorioCard.tsx",
+      "nombre": "AccesorioCard",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "w-[260px]"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/accesorios/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/AnchorNav.tsx",
+      "nombre": "AnchorNav",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/monitor/SubNavAnclas.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 3
+    },
+    {
+      "rel": "src/components/api/BeneficiosApi.tsx",
+      "nombre": "BeneficiosApi",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[73.625%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/api/HeroApi.tsx",
+      "nombre": "HeroApi",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/api/InfoProductoApi.tsx",
+      "nombre": "InfoProductoApi",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.833%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/kunak-api/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/arquetipo-a/CascaronA.tsx",
+      "nombre": "CascaronA",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[73.62%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.87%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/arquetipo-a/RelacionadosA.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 14
+    },
+    {
+      "rel": "src/components/arquetipo-a/CuerpoRicoA.tsx",
+      "nombre": "CuerpoRicoA",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/arquetipo-a/IndiceArticulo.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 14
+    },
+    {
+      "rel": "src/components/arquetipo-a/IndiceArticulo.tsx",
+      "nombre": "IndiceArticulo",
+      "marcadores": [
+        "id:indice"
+      ],
+      "absolutas": [],
+      "importadores": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 14
+    },
+    {
+      "rel": "src/components/arquetipo-a/RelacionadosA.tsx",
+      "nombre": "RelacionadosA",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.66%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.84%]"
+        }
+      ],
+      "importadores": [
+        "src/app/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 10
+    },
+    {
+      "rel": "src/components/BandaCabecera.tsx",
+      "nombre": "BandaCabecera",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 387"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 362.91"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 165.58"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 136.58"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "alto: 225"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "altoMovil: 165.58"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 8,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 24
+    },
+    {
+      "rel": "src/components/Beneficios.tsx",
+      "nombre": "Beneficios",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/components/HazVisible.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/BlurbsIconos.tsx",
+      "nombre": "BlurbsIconos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[48%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[31%]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        }
+      ],
+      "importadores": [
+        "src/components/api/BeneficiosApi.tsx",
+        "src/components/api/InfoProductoApi.tsx",
+        "src/components/software/InfoProductoSoftware.tsx",
+        "src/lib/api.ts"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/Breadcrumb.tsx",
+      "nombre": "Breadcrumb",
+      "marcadores": [
+        "aria-label:Migas de pan",
+        "itemType:BreadcrumbList",
+        "itemType:ListItem",
+        "kunak-*:kunak-breadcrumbs"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[350px]"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/arquetipo-a/CascaronA.tsx",
+        "src/components/caso/CasoPagina.tsx",
+        "src/components/monitor/HeroProducto.tsx"
+      ],
+      "nImport": 7,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 28
+    },
+    {
+      "rel": "src/components/caso/CasoBloque.tsx",
+      "nombre": "CasoBloque",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoCabecera.tsx",
+      "nombre": "CasoCabecera",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoDetalles.tsx",
+      "nombre": "CasoDetalles",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[290px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[330px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[32%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[50.5%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoGaleria.tsx",
+      "nombre": "CasoGaleria",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/caso/CasoPagina.tsx",
+      "nombre": "CasoPagina",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1152px]"
+        }
+      ],
+      "importadores": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/CookiePreferencesButton.tsx",
+      "nombre": "CookiePreferencesButton",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/components/Footer.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/CtaBanner.tsx",
+      "nombre": "CtaBanner",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/CtaInmerso.tsx",
+        "src/components/CtaPreocupa.tsx",
+        "src/components/Footer.tsx"
+      ],
+      "nImport": 6,
+      "paginas": [
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/CtaBannerSlider.tsx",
+      "nombre": "CtaBannerSlider",
+      "marcadores": [
+        "aria-label:label",
+        "aria-label:Diapositiva anterior",
+        "aria-label:Diapositiva siguiente",
+        "aria-label:`Ir a la diapositiva ${i + 1",
+        "role:region"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[7px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[7px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 10
+    },
+    {
+      "rel": "src/components/CtaInmerso.tsx",
+      "nombre": "CtaInmerso",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/CtaNewsletter.tsx",
+      "nombre": "CtaNewsletter",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/CtaPreocupa.tsx",
+      "nombre": "CtaPreocupa",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/faq/FaqSidebar.tsx",
+      "nombre": "FaqSidebar",
+      "marcadores": [
+        "role:search",
+        "id:sidebar",
+        "id:searchsubmit",
+        "et_pb_*:et_pb_widget"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[25%]"
+        }
+      ],
+      "importadores": [
+        "src/app/faqs/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/faqs/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/Footer.tsx",
+      "nombre": "Footer",
+      "marcadores": [
+        "aria-label:s.network"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[31.6px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[61.59px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[61.59px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[40px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[41px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[132px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 40"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/HazVisible.tsx",
+      "nombre": "HazVisible",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[335px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/HeaderNav.tsx",
+      "nombre": "HeaderNav",
+      "marcadores": [
+        "aria-label:Kunak",
+        "aria-label:Menú principal",
+        "aria-label:mobileOpen ? ",
+        "id:mobile-menu",
+        "kunak-*:kunak-main-nav"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[200px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[41px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[52px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[2px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[2px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[20px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[47px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[92%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[15.87%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[11.87%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[15%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[104px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[120px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[104px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[170px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[48px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[220px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[140px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[240px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[200px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[130px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[150px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[500px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[240px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[34px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[28px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[28px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 127"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/HeroSection.tsx",
+      "nombre": "HeroSection",
+      "marcadores": [
+        "kunak-*:kunak-air-pro-aislado",
+        "kunak-*:kunak-scroll-dot"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[60px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[64px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[38px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[6px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[36.7%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[57.8%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[90%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[90%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[50px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[50px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[134px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[143px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[40px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[24px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[6px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 63"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 64"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 90"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 64"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/icons.tsx",
+      "nombre": "icons",
+      "marcadores": [
+        "aria-label:Kunak",
+        "role:img"
+      ],
+      "absolutas": [],
+      "importadores": [
+        "src/components/Footer.tsx",
+        "src/components/HeaderNav.tsx",
+        "src/components/ScrollToTop.tsx",
+        "src/components/Testimonios.tsx"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/KunakLogo.tsx",
+      "nombre": "KunakLogo",
+      "marcadores": [
+        "aria-label:Kunak",
+        "role:img"
+      ],
+      "absolutas": [],
+      "importadores": [
+        "src/components/HeaderNav.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/ListaContenido.tsx",
+      "nombre": "ListaContenido",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[60%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[239px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[250px]"
+        }
+      ],
+      "importadores": [
+        "src/components/monitor/PaquetesEnergia.tsx",
+        "src/components/monitor/SondasMeteorologicas.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/Aplicaciones.tsx",
+      "nombre": "Aplicaciones",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/Beneficios.tsx",
+      "nombre": "Beneficios",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[31%]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 40"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 40"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/components/HazVisible.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/monitor/CtaGuiaProyecto.tsx",
+      "nombre": "CtaGuiaProyecto",
+      "marcadores": [
+        "aria-label:GUIA_HEADING",
+        "aria-label:Cerrar",
+        "role:dialog",
+        "id:guia-fullname",
+        "id:guia-email",
+        "id:guia-empresa",
+        "id:guia-pais",
+        "id:guia-sector"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[30px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[400px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[30px]"
+        }
+      ],
+      "importadores": [
+        "src/components/monitor/Aplicaciones.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/Especificaciones.tsx",
+      "nombre": "Especificaciones",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "max-h-[40px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "min-h-[35px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[880px]"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/FaqAcordeon.tsx",
+      "nombre": "FaqAcordeon",
+      "marcadores": [
+        "id:faq"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[24px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[24px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[24px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[24px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 4
+    },
+    {
+      "rel": "src/components/monitor/GaleriaEnsayos.tsx",
+      "nombre": "GaleriaEnsayos",
+      "marcadores": [
+        "aria-label:Gráfica anterior",
+        "aria-label:Gráfica siguiente",
+        "aria-label:`Ver gráfica ${i + 1"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[48px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[48px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[7px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[46px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[660px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[48px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[48px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[7px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[46px]"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/HeroProducto.tsx",
+      "nombre": "HeroProducto",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[90px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[69px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[100px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[49px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[105px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/InformacionProducto.tsx",
+      "nombre": "InformacionProducto",
+      "marcadores": [
+        "aria-label:chip.label"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[94px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[50px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.833%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[220px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[50px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[50px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/PaquetesEnergia.tsx",
+      "nombre": "PaquetesEnergia",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/Software.tsx",
+      "nombre": "Software",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/SondasMeteorologicas.tsx",
+      "nombre": "SondasMeteorologicas",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monitor/SubNavAnclas.tsx",
+      "nombre": "SubNavAnclas",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/monografico/MonoCuerpo.tsx",
+      "nombre": "MonoCuerpo",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[30px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[20.875%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[36.7%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[57.8%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.8333%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[73.625%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/PresenciaMundial.tsx",
+      "nombre": "PresenciaMundial",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[363px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/Product360Viewer.tsx",
+      "nombre": "Product360Viewer",
+      "marcadores": [
+        "aria-label:ariaLabel",
+        "role:img"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[5px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        }
+      ],
+      "importadores": [
+        "src/components/monitor/HeroProducto.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/ProductosTabs.tsx",
+      "nombre": "ProductosTabs",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[30%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[63%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[250px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 11
+    },
+    {
+      "rel": "src/components/ScrollToTop.tsx",
+      "nombre": "ScrollToTop",
+      "marcadores": [
+        "aria-label:Volver arriba"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[40px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[40px]"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/components/caso/CasoPagina.tsx"
+      ],
+      "nImport": 10,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/SectionRow.tsx",
+      "nombre": "SectionRow",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.833%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/components/api/HeroApi.tsx",
+        "src/components/Beneficios.tsx",
+        "src/components/CtaBanner.tsx",
+        "src/components/CtaBannerSlider.tsx",
+        "src/components/Footer.tsx",
+        "src/components/HazVisible.tsx",
+        "src/components/ListaContenido.tsx",
+        "src/components/monitor/Aplicaciones.tsx",
+        "src/components/monitor/CtaGuiaProyecto.tsx",
+        "src/components/monitor/FaqAcordeon.tsx",
+        "src/components/monitor/GaleriaEnsayos.tsx",
+        "src/components/monitor/HeroProducto.tsx",
+        "src/components/monitor/InformacionProducto.tsx",
+        "src/components/monitor/PaquetesEnergia.tsx",
+        "src/components/monitor/Software.tsx",
+        "src/components/monitor/SondasMeteorologicas.tsx",
+        "src/components/monitor/SubNavAnclas.tsx",
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/PresenciaMundial.tsx",
+        "src/components/ProductosTabs.tsx",
+        "src/components/sectores/SectorHero.tsx",
+        "src/components/SectoresIntro.tsx",
+        "src/components/software/HeroSoftware.tsx",
+        "src/components/SolucionProfesional.tsx",
+        "src/components/Sostenibilidad.tsx",
+        "src/components/Testimonios.tsx",
+        "src/components/UltimosArticulos.tsx",
+        "src/components/UltimosProyectos.tsx"
+      ],
+      "nImport": 31,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/faqs/[slug]/page.tsx",
+        "src/app/page.tsx",
+        "src/app/recursos/[...ruta]/page.tsx",
+        "src/app/[slug]/page.tsx",
+        "src/app/case-studies/[slug]/page.tsx",
+        "src/app/casos-de-exito/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 31
+    },
+    {
+      "rel": "src/components/sectores/BeneficiosAplicaciones.tsx",
+      "nombre": "BeneficiosAplicaciones",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/CabeceraSector.tsx",
+      "nombre": "CabeceraSector",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/ClaimConFoto.tsx",
+      "nombre": "ClaimConFoto",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/CtaDescarga.tsx",
+      "nombre": "CtaDescarga",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "w-[165.23px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[280px]"
+        }
+      ],
+      "importadores": [
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/ListaSimple2Col.tsx",
+      "nombre": "ListaSimple2Col",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[20.1562px]"
+        }
+      ],
+      "importadores": [
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/MapaProyectos.tsx",
+      "nombre": "MapaProyectos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[570px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/components/monografico/MonoCuerpo.tsx",
+        "src/components/sectores/SectorBody.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/SectorBody.tsx",
+      "nombre": "SectorBody",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/sectores/SectorHero.tsx",
+      "nombre": "SectorHero",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[30px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 6
+    },
+    {
+      "rel": "src/components/SectoresCarousel.tsx",
+      "nombre": "SectoresCarousel",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[450px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[450px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 60"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/components/monitor/Aplicaciones.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx"
+      ],
+      "alcanceRutas": 2
+    },
+    {
+      "rel": "src/components/SectoresIntro.tsx",
+      "nombre": "SectoresIntro",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/software/CarruselCapturas.tsx",
+      "nombre": "CarruselCapturas",
+      "marcadores": [
+        "aria-label:Qué permite hacer Kunak AIR Cloud",
+        "aria-label:Diapositiva anterior",
+        "aria-label:Diapositiva siguiente",
+        "aria-label:`Ir a la diapositiva ${i + 1",
+        "role:region"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[500px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[7px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[7px]"
+        }
+      ],
+      "importadores": [
+        "src/components/software/InfoProductoSoftware.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/software/HeroSoftware.tsx",
+      "nombre": "HeroSoftware",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47.25%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        }
+      ],
+      "importadores": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/software/InfoProductoSoftware.tsx",
+      "nombre": "InfoProductoSoftware",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[29.6667%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[64.833%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/software/ListaBeneficios.tsx",
+      "nombre": "ListaBeneficios",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 40"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 40"
+        }
+      ],
+      "importadores": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/software/RejillaHerramientas.tsx",
+      "nombre": "RejillaHerramientas",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[47%]"
+        }
+      ],
+      "importadores": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/SolucionProfesional.tsx",
+      "nombre": "SolucionProfesional",
+      "marcadores": [
+        "id:home-content",
+        "kunak-*:kunak-air-pro---field-evaluation"
+      ],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 150"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 120"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 0"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 100"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/Sostenibilidad.tsx",
+      "nombre": "Sostenibilidad",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 50"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 50"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/SpecTable.tsx",
+      "nombre": "SpecTable",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[55.4054%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[420px]"
+        }
+      ],
+      "importadores": [
+        "src/components/AccesorioCard.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/accesorios/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/Testimonios.tsx",
+      "nombre": "Testimonios",
+      "marcadores": [
+        "aria-label:Testimonio anterior",
+        "aria-label:Testimonio siguiente"
+      ],
+      "absolutas": [
+        {
+          "tipo": "alto px",
+          "valor": "min-h-[400px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[177px]"
+        },
+        {
+          "tipo": "alto px",
+          "valor": "h-[180px]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[28%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[70%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1080px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "min-w-[180px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[177px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "w-[180px]"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx"
+      ],
+      "nImport": 1,
+      "paginas": [
+        "src/app/page.tsx"
+      ],
+      "alcanceRutas": 1
+    },
+    {
+      "rel": "src/components/TrustBar.tsx",
+      "nombre": "TrustBar",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[95%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "minHeight: 122"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "minHeight: 153"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "maxHeight: 80"
+        }
+      ],
+      "importadores": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "nImport": 2,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx"
+      ],
+      "alcanceRutas": 7
+    },
+    {
+      "rel": "src/components/ui/button.tsx",
+      "nombre": "button",
+      "marcadores": [],
+      "absolutas": [],
+      "importadores": [],
+      "nImport": 0,
+      "paginas": [],
+      "alcanceRutas": 0
+    },
+    {
+      "rel": "src/components/UltimosArticulos.tsx",
+      "nombre": "UltimosArticulos",
+      "marcadores": [],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[80%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[86.35%]"
+        },
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 6,
+      "paginas": [
+        "src/app/accesorios/page.tsx",
+        "src/app/kunak-api/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 11
+    },
+    {
+      "rel": "src/components/UltimosProyectos.tsx",
+      "nombre": "UltimosProyectos",
+      "marcadores": [
+        "aria-label:c.title"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho %",
+          "valor": "w-[85%]"
+        },
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[1380px]"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "width: 60"
+        },
+        {
+          "tipo": "literal de objeto",
+          "valor": "height: 22"
+        }
+      ],
+      "importadores": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "nImport": 4,
+      "paginas": [
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/page.tsx",
+        "src/app/sectores/[slug]/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 9
+    },
+    {
+      "rel": "src/components/VideoLightbox.tsx",
+      "nombre": "VideoLightbox",
+      "marcadores": [
+        "aria-label:ariaLabel",
+        "aria-label:Cerrar vídeo",
+        "role:dialog"
+      ],
+      "absolutas": [
+        {
+          "tipo": "ancho px",
+          "valor": "max-w-[960px]"
+        }
+      ],
+      "importadores": [
+        "src/components/HeroSection.tsx",
+        "src/components/monitor/HeroProducto.tsx",
+        "src/components/software/InfoProductoSoftware.tsx"
+      ],
+      "nImport": 3,
+      "paginas": [
+        "src/app/page.tsx",
+        "src/app/monitor-calidad-aire/page.tsx",
+        "src/app/software-de-medicion-calidad-del-aire/page.tsx"
+      ],
+      "alcanceRutas": 3
+    }
+  ]
+}

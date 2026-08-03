@@ -60,6 +60,7 @@
     "qa:clon-base": "node scripts/qa/clon-base.mjs",
     "qa:ruido": "node scripts/qa/ruido.mjs",
     "qa:estados-390": "node scripts/qa/estados-390.mjs",
+    "qa:clase-censo": "node scripts/qa/clase-censo.mjs",
     "qa:arbol-todos": "node scripts/qa/tree-todos.mjs",
     "qa:lib": "node scripts/qa/lib.test.mjs",
     "qa:bases": "node scripts/qa/c-bases.mjs",
