@@ -1,8 +1,108 @@
+# HANDOFF — los flecos de C-QA6: el suelo bimodal NO es un umbral
+
+> ⚠ **Tanda 2026-08-03 (13.ª), continuación de la 12.ª.** Cuatro pasos. Tanda de
+> **LECTURA**: no se tocó el clon y solo se midió una ráfaga. Lo que cambia es
+> **cómo se lee** un suelo que ya estaba medido — y de paso corrige el acta de
+> la tanda anterior, que lo escribió como umbral.
+
+## 0 · El titular, y corrige a la tanda de esta misma mañana
+
+El acta del cierre escribió: *«todo residuo < 32.28 es indistinguible del estado
+del original»*. **Eso es leer el suelo como un umbral, y el propio hallazgo
+bimodal lo desmiente:**
+
+> **No es una banda de 0 a 32.28: son DOS PICOS separados por 32.28 exactos, y
+> entre ellos NO HAY MASA** — en las 27 cargas @1440 de `cqa6` no salió ni un
+> solo valor intermedio.
+
+| Δ | lectura |
+|---|---|
+| **≈ 0** | original en estado alto, el clon casa. **Limpio.** |
+| **≈ 32.28** | original en estado bajo, casa con el otro pico. **Limpio.** |
+| **cualquier otro** | **DEFECTO — incluidos los MENORES que 32.28.** |
+
+**Leerlo como umbral habría tapado defectos de hasta 32 px en las rutas peor
+conocidas del proyecto.** Un Δ de 12 no es «ruido pequeño»: es un valor que el
+original **nunca ha producido**.
+
+> **Forma general, que es lo reutilizable:** *un suelo acota solo si la
+> distribución es UNIMODAL; si tiene picos, **discrimina**.* Por eso un suelo se
+> publica con **su forma**, no solo con su número — «32.28» a secas invita
+> justo a la lectura equivocada.
+
+## 0bis · Y el Δ0 estaba redactado sin su condición
+
+Las medidas congeladas dicen algo que el acta anterior no recogió: en **las 6**
+corridas de `c-cabecera` que midieron `/software` el original salió **siempre**
+en 421.39, y en **las 5** que midieron los monográficos, siempre en 261.16. **El
+estado bajo nunca se dejó ver por `c-cabecera`**, y el clon se calibró contra lo
+único que había delante:
+
+```text
+ANTES    clon 373.39  →  vs bajo 389.11 = −15.72  ·  vs alto 421.39 = −48.00
+DESPUÉS  clon 421.39  →  vs bajo 389.11 = +32.28  ·  vs alto 421.39 =   0.00
+```
+
+> **El −15.72 no desapareció: hoy es +32.28.** Mover el clon no quitó la
+> discrepancia contra el estado bajo — **cambió contra cuál de los dos estados
+> el clon es exacto**. Ningún valor fijo da 0 contra los dos.
+
+Así que **«Δ0» aquí es una afirmación CONDICIONADA AL ESTADO** y se redacta
+así: *Δ0 **contra el estado alto***. Calibrar contra el alto fue deliberado —es
+el dominante: 6/6 en `c-cabecera`, 2/3 en ráfagas, **23 de 27** cargas— y el
+punto medio habría dado ±16.14 contra los dos, **fallando los dos**.
+
+## 0ter · Predicción PRE-REGISTRADA, con falsador
+
+Escrita **antes** de observarla, que es lo que la separa de un relato. Cuando el
+original caiga en el estado bajo, `c-cabecera` imprimirá **+32.28 exactos**, de
+forma **simultánea dentro de cada grupo**, y los grupos son **dos** —`/software`
+por un lado; EDAR y petróleo por otro—. Que van por separado **está medido**,
+carga a carga en la ráfaga 1 de `cqa6`:
+
+| carga | `/software` | EDAR | petróleo |
+|---|---|---|---|
+| #1 | 389.11 **bajo** | 228.88 **bajo** | 228.88 **bajo** |
+| #2 | 389.11 **bajo** | 261.16 **ALTO** | 261.16 **ALTO** |
+| #3 | 421.39 **ALTO** | 261.16 alto | 261.16 alto |
+
+El hueco es **32.28 en los dos grupos** pese a bases distintas
+(`421.39−389.11` y `261.16−228.88`): **un solo mecanismo, sin identificar**.
+
+> **FALSADOR:** cualquier lectura que **no sea ni ≈0 ni ≈32.28** tumba el modelo
+> y reabre el mecanismo. También lo tumbaría un tercer estado, o que los dos
+> monográficos dejaran de ir clavados.
+
+**Sin contrastar todavía:** las 9 cargas @1440 de `cqa6-390` salieron las 9 en
+alto. Consistente, **y no es evidencia a favor** — para eso hay que ver el bajo.
+
+## 0quater · Rocket Loader: DESCARTADA, y la campaña de 390 en marcha
+
+- **Detectores retirados** (`rocketToken`, `rocketLoader`), que es la cláusula
+  que `ruido.mjs` tenía **pre-registrada** para el cierre de campaña. **No
+  borrados en silencio:** `S 0 / N 54` queda escrito como hipótesis
+  **DESCARTADA** con su recuento y sus fechas. ⚠ **Lo cerrado es el detector, no
+  la pregunta:** el mecanismo sigue **sin identificar**. Test en negativo
+  re-corrido: `SABOTAJE=detector` saca los dos sabotajes NO VALIDADOS — la regla
+  del cero y la del pleno en una corrida.
+- **Campaña `cqa6-390` arrancada**, porque *«no hay forma de dirimirlo»* no es un
+  estado en el que este proyecto se quede. Ráfaga 1 hecha
+  (`rafaga-2026-08-03T09-39-47.json`, `✓ 18/18 cargas`): `h1` a **0** en las
+  tres @390. **Faltan 2**, y aquí **la 3 tiene que caer otro día
+  obligatoriamente** — la ráfaga 1 es del 08-03 y no regala días como en `cqa6`.
+  **Hasta que cierre, el −30 de EDAR@390 sigue SIN PROBAR**, con esa etiqueta.
+
+---
+
 # HANDOFF — C-QA6 cierra a 1440, el −15.72 se disuelve, y un `rm` deja un cabo que no se puede atar
 
 > ⚠ **Tanda 2026-08-03 (12.ª).** Los cuatro pasos del encargo. Tanda de
 > **MEDICIÓN Y REGISTRO**: no se tocó el clon. Lo que cambia es qué Δ se pueden
 > leer en 3 rutas, y qué dos afirmaciones dejan de estar pendientes.
+>
+> ⚠ **CORREGIDA por la tanda 13.ª, arriba**, en dos puntos: su §4 leyó el suelo
+> como **umbral** (no lo es, son dos picos) y su «Δ0» va **condicionado al
+> estado**. Lo demás sigue en pie.
 
 ## 0 · El titular
 

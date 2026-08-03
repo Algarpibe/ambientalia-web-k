@@ -552,8 +552,18 @@ las 3 separadas ≥2 h. Separaciones **calculadas del `ts` absoluto**: **62.31 h
 > midió **±30 en las tres @390** y **su fichero se borró a mano**. El suelo es
 > «el máximo ENTRE ráfagas»; si la A contara sería 30, no 0. Consecuencia
 > concreta: el **−30 de `/…-en-edar` a 390** es «defecto claro» o «exactamente
-> el suelo» según cuente o no esa ráfaga, y **no hay forma de dirimirlo**. Lo
-> cierra **una ráfaga más a 390**, no un arreglo.
+> el suelo» según cuente o no esa ráfaga. Lo cierra **medir otra vez**, no un
+> arreglo — **campaña `cqa6-390` arrancada el 2026-08-03**, ráfaga 1 hecha y 2
+> pendientes (la 3, **en otro día obligatoriamente**). Hasta entonces el −30
+> queda **SIN PROBAR**, con esa etiqueta: ni defecto ni limpio.
+
+> ⚠ **Y EL SUELO DE 32.28 NO ES UN UMBRAL — es la lectura que más fácil se hace
+> mal.** Son **dos picos** separados por 32.28 exactos, sin masa entre medias.
+> Se lee así: **≈0 limpio · ≈32.28 limpio · cualquier otro valor DEFECTO,
+> incluidos los menores que 32.28.** Tratarlo como banda taparía defectos de
+> hasta 32 px. Y el «Δ0» de estas 3 rutas va **condicionado**: es Δ0 **contra el
+> estado alto**, y +32.28 contra el bajo. Detalle y predicción pre-registrada en
+> `PENDIENTES-QA.md` §C-QA6 · flecos.
 
 **El `h1` es BIMODAL, no tembloroso:** exactamente dos estados a 32.28 —
 `software` 389.11 ↔ 421.39, los dos monográficos 228.88 ↔ 261.16. El estado

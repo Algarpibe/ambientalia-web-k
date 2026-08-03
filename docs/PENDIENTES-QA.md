@@ -2393,6 +2393,16 @@ el `h1`, que va **por encima** de ese módulo. **Mecanismo sin identificar.**
 > PROBAR** — ni defecto ni limpio. Eso incluye el **−15.72 de `/software`**, que
 > era el objetivo con el que se iba a verificar su arreglo.
 
+> ⚠ **SUPERADO dos veces (2026-08-03). Esta frase es la lectura de UMBRAL, y es
+> la que hay que dejar de usar.**
+>
+> 1. **El suelo no es una banda, son dos picos** (§La regla de lectura de un
+>    suelo BIMODAL): se lee **≈0 limpio · ≈32.28 limpio · cualquier otro valor
+>    DEFECTO, incluidos los menores que 32.28**. Como umbral, esta frase tapaba
+>    defectos de hasta 32 px.
+> 2. **El −15.72 ni siquiera era un residuo aparte**: era el −48 medido contra
+>    el otro pico, y ya está arreglado (§C-QA6 · CIERRE).
+
 `/software` es a la vez ruta inestable y una de las 4 de producto de C-QA2, así
 que **su arreglo se hace pero su verificación queda anotada como pendiente del
 suelo real**, no dada por buena. Las otras tres de producto (`/accesorios`,
@@ -4756,13 +4766,181 @@ bajo — cada ráfaga futura de `cqa6` la contesta gratis si el original coopera
 
 ### Consecuencia práctica para leer Δ en estas 3 rutas
 
-- **@1440** — todo residuo **< 32.28** en el `h1` es **indistinguible del
-  estado** del original. No es defecto ni es limpio: es **inmedible con este
-  instrumento**, y medir más veces igual no lo resuelve. Lo que sí resuelve es
-  mirar **contra qué estado** se midió, que es como se disolvió el −15.72.
+- **@1440** — ⚠ **NO es un umbral, y así estaba mal escrito aquí.** Se compara
+  contra **dos valores admisibles** (≈0 y ≈32.28); **cualquier otro valor es
+  defecto, incluidos los menores que 32.28.** Ver §La regla de lectura de un
+  suelo BIMODAL, abajo.
 - **@390** — **sin cerrar.** 0 entre las 3 ráfagas exhibibles, contra un `±30`
   documentado y sin fichero (ráfaga A). Un Δ **muy por debajo de 30** es
   defecto; un Δ **de ~30** queda SIN PROBAR hasta que otra ráfaga a 390
   reproduzca el episodio o no. Es el único cabo que C-QA6 deja suelto, y no lo
   dejó la medición: lo dejó un `rm`.
 - **Cualquier otra ruta** — no tiene suelo. Tiene un hueco.
+
+---
+
+## C-QA6 · flecos — la regla bimodal, la predicción pre-registrada y la campaña de 390 (2026-08-03)
+
+### ⚠ La regla de lectura de un suelo BIMODAL — y por qué NO es un umbral
+
+**Corrige lo que este mismo documento escribió horas antes**, que decía *«todo
+residuo < 32.28 es indistinguible del estado del original»*. **Eso es leer el
+suelo como un umbral, y es exactamente el error que el hallazgo bimodal
+desmiente.**
+
+> **La distribución no es una dispersión de 0 a 32.28: son DOS PICOS separados
+> por 32.28 exactos.** Entre pico y pico **no hay masa** — en las 27 cargas
+> @1440 de la campaña no apareció ni un solo valor intermedio.
+
+De donde la regla, que es la que hay que aplicar:
+
+| Δ observado | lectura |
+|---|---|
+| **≈ 0** | el original está en el estado **alto**: el clon casa. **Limpio.** |
+| **≈ 32.28** | el original está en el estado **bajo**: el clon casa con el otro pico. **Limpio.** |
+| **cualquier otro valor** | **DEFECTO — incluidos los MENORES que 32.28.** |
+
+**Un umbral de 32.28 taparía defectos de hasta 32 px**, y precisamente en las
+rutas peor conocidas del proyecto. Un Δ de 12, o de 20, o de 31 **no es «ruido
+pequeño»**: es un valor que el original **nunca ha producido**, así que solo
+puede venir del clon.
+
+> **El suelo de una distribución bimodal no acota: DISCRIMINA.** Se compara
+> contra **dos valores admisibles**, no contra un máximo. La pregunta correcta
+> no es *«¿cabe dentro del suelo?»* sino **«¿cae en uno de los dos picos?»**.
+
+### Lo que las medidas congeladas dicen y el acta anterior no
+
+El acta anterior cerró con *«el −48 ya está arreglado, Δ0 en las corridas
+posteriores»*. Es verdad **y está incompleto en el eje que importa**, porque ese
+Δ0 es contra **un solo** estado:
+
+| corridas exhibibles de `c-cabecera` @1440 | qué salió |
+|---|---|
+| **6** que midieron `/software` | el original en **421.39 — el estado ALTO — en las 6** |
+| **5** que midieron los dos monográficos | el original en **261.16 — el ALTO — en las 5** |
+
+**El original nunca se dejó ver en su estado bajo por `c-cabecera`.** Y el clon
+se calibró contra lo único que había delante:
+
+```text
+ANTES    clon 373.39  →  vs bajo 389.11 = −15.72  ·  vs alto 421.39 = −48.00
+DESPUÉS  clon 421.39  →  vs bajo 389.11 = +32.28  ·  vs alto 421.39 =   0.00
+```
+
+> **O sea que el −15.72 no desapareció: se convirtió en +32.28.** Mover el clon
+> no eliminó la discrepancia contra el estado bajo — **cambió contra cuál de los
+> dos estados el clon es exacto**. No existe ningún valor fijo que dé 0 contra
+> los dos, porque **el clon tiene UN valor y el original tiene DOS**.
+
+**Por tanto el «Δ0» de estas 3 rutas es una afirmación CONDICIONADA AL ESTADO, y
+así hay que escribirla y así hay que leerla:**
+
+> **`/software`, EDAR y petróleo están a Δ0 CONTRA EL ESTADO ALTO** (421.39 ·
+> 261.16 · 261.16), que es el único que han visto las 6 corridas de
+> `c-cabecera` y 2 de las 3 ráfagas de `cqa6`. **Contra el estado bajo están a
+> +32.28.** No es un defecto pendiente: es que la pregunta *«¿cuánto se desvía
+> el clon?»* **no tiene una sola respuesta** mientras el original sea bimodal.
+
+Calibrar contra el pico alto **fue deliberado y se deja razonado**: es el estado
+dominante en todo lo observado (**6/6** en `c-cabecera`, **2/3** en ráfagas,
+**23 de 27** cargas @1440 de `cqa6`). Calibrar contra el punto medio daría
+±16.14 contra los dos y **no acertaría ninguno** — peor, porque convertiría los
+**dos** estados en defecto en vez de uno.
+
+---
+
+### PREDICCIÓN PRE-REGISTRADA — lo que convierte esto en modelo y no en relato
+
+Se escribe **antes** de observarla, con su falsador, y se fecha. Si el modelo
+bimodal es correcto, cuando el original caiga en el estado bajo:
+
+1. **`c-cabecera` imprimirá `+32.28` EXACTOS.** No «unos 32», no «entre 30 y 33».
+2. **De forma SIMULTÁNEA dentro de cada grupo**, y los grupos son **dos**:
+   - **grupo A** — `/software` (sola);
+   - **grupo B** — EDAR y petróleo (**siempre idénticas entre sí**).
+3. **Los dos grupos pueden estar en estados DISTINTOS a la vez.** No es una
+   conjetura: está medido en la ráfaga 1 de `cqa6`, carga a carga —
+
+   | carga | `/software` | EDAR | petróleo |
+   |---|---|---|---|
+   | #1 | 389.11 **bajo** | 228.88 **bajo** | 228.88 **bajo** |
+   | #2 | 389.11 **bajo** | 261.16 **ALTO** | 261.16 **ALTO** |
+   | #3 | 421.39 **ALTO** | 261.16 alto | 261.16 alto |
+
+   Los monográficos saltaron entre #1 y #2; `/software`, entre #2 y #3. **Momentos
+   distintos, y los dos monográficos clavados el uno al otro en las tres cargas.**
+
+4. **El hueco es 32.28 en los DOS grupos** —`421.39 − 389.11` y
+   `261.16 − 228.88`— pese a partir de bases distintas. Eso apunta a **un solo
+   mecanismo**, todavía **sin identificar**.
+
+> **FALSADOR, declarado:** **cualquier lectura que no sea ni ≈0 ni ≈32.28 tumba
+> el modelo** y vuelve a abrir la pregunta del mecanismo. También lo tumbaría un
+> tercer estado, o que los dos monográficos se separaran entre sí.
+
+**Estado de la predicción a 2026-08-03:** *sin contrastar todavía* — desde que
+se escribió, las 9 cargas @1440 de `cqa6-390` salieron **las 9 en el estado
+alto**. Consistente, y **no es evidencia a favor**: para eso hace falta ver el
+estado bajo.
+
+**Observación adicional, con su límite dicho:** en la ráfaga 1 la transición fue
+**monótona bajo→alto** a lo largo de cargas consecutivas, y las ráfagas 2 y 3 y
+la de `cqa6-390` salieron enteras en alto. Es **compatible** con algo que se
+calienta —caché del origen, por ejemplo— pero es **una sola ráfaga de 3 cargas**:
+se anota como pista, **no como mecanismo**, y no se cita como explicación.
+
+---
+
+### CAMPAÑA `cqa6-390` — porque «no hay forma de dirimirlo» no es un estado final
+
+El −30 de EDAR@390 es «defecto claro» o «exactamente el suelo» según cuente o no
+la ráfaga A, cuyo fichero se borró a mano. **Eso lo dirime una campaña, no un
+argumento.** Arrancada hoy, mismas 3 rutas:
+
+```bash
+RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
+  CAMPANA=cqa6-390 npm run qa:ruido -- 3
+```
+
+**Ráfaga 1 — 2026-08-03 09:39:47 local**
+(`medidas/campana/cqa6-390/rafaga-2026-08-03T09-39-47.json`, `✓ evaluadas 18/18 cargas`):
+
+| combinación @390 | `h1` | estado único |
+|---|---|---|
+| `software` | 0 | 308.58 |
+| `edar` | 0 | 189.39 |
+| `petroleo` | 0 | 189.39 |
+
+**No se observó el ±30 en este episodio.** Que es distinto de decir que no
+exista, y la sonda lo imprime así sola: `⏳ CAMPAÑA ABIERTA`.
+
+**Cuándo tocan las siguientes**, que es lo que hay que dejar escrito:
+
+| ráfaga | cuándo | por qué |
+|---|---|---|
+| **1 ✅** | 2026-08-03 09:39 local | hecha |
+| **2 ⏳** | **≥2 h después** — o sea a partir de las **11:39 del 2026-08-03** | separación mínima del protocolo |
+| **3 ⏳** | **en OTRO DÍA** (≥2026-08-04), ≥2 h de la 2 | los ≥2 días distintos los tiene que aportar ésta |
+
+> ⚠ **Aquí los dos días NO están cubiertos de antemano**, al revés que en `cqa6`:
+> la ráfaga 1 es del 08-03, así que **la 3 tiene que caer otro día
+> obligatoriamente**. Si las tres cayeran el mismo día la campaña **no cierra**,
+> por muy separadas que estén.
+
+**Se corrió DESPUÉS de retirar los detectores, a propósito:** así las 3 ráfagas
+de esta campaña son **homogéneas**. Es justo lo que le faltó a `cqa6`, donde el
+observable llegó tras la ráfaga 1 y dejó **la única con transición** sin nada al
+lado.
+
+**Y de regalo mide 1440**, así que **cada ráfaga de esta campaña es también un
+test de la predicción bimodal** de arriba. Sale gratis.
+
+#### Hasta que cierre
+
+> **El −30 de `/sectores/…-en-edar` a 390 se queda SIN PROBAR**, con esa
+> etiqueta literal: **ni defecto ni limpio**. No se toca, no se «arregla» y no se
+> cita como resuelto.
+
+Y arrastra la corrección que ya está hecha arriba: **un suelo es propiedad de
+las rutas Y LOS ANCHOS medidos.** El ±32.28 es de 1440 y no ampara nada a 390.

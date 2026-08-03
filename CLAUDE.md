@@ -531,14 +531,54 @@ Estas se pagaron con horas de depuración. No las reinventes:
     > residuo pequeño contra un suelo, mira contra QUÉ ESTADO se midió** — es lo
     > que disolvió éste, no medir más veces.
     >
+    > ⚠ **Y AHORA LA PARTE QUE SE ESCRIBIÓ MAL A LA PRIMERA, porque es la que
+    > tapa defectos: UN SUELO BIMODAL NO ES UN UMBRAL.** El acta de cierre dijo
+    > *«todo residuo < 32.28 es indistinguible del estado»*, y eso es leerlo como
+    > una banda de 0 a 32.28. **No lo es: son dos picos, y entre pico y pico no
+    > hay masa** — en 27 cargas @1440 no salió ni un valor intermedio.
+    >
+    > | Δ | lectura |
+    > |---|---|
+    > | **≈ 0** | el original en su estado alto: el clon casa. **Limpio.** |
+    > | **≈ 32.28** | el original en su estado bajo: casa con el otro pico. **Limpio.** |
+    > | **cualquier otro** | **DEFECTO — incluidos los MENORES que 32.28.** |
+    >
+    > **Leerlo como umbral taparía defectos de hasta 32 px en las rutas peor
+    > conocidas del proyecto.** Un Δ de 12 o de 31 no es «ruido pequeño»: es un
+    > valor que el original **nunca ha producido**, así que solo puede venir del
+    > clon.
+    >
+    > > **La forma general, que vale para cualquier suelo futuro: un suelo acota
+    > > solo si la distribución es UNIMODAL. Si tiene picos, DISCRIMINA — se
+    > > compara contra los valores admisibles, no contra el máximo.** La pregunta
+    > > no es *«¿cabe dentro del suelo?»* sino *«¿cae en uno de los picos?»*. Y
+    > > por eso un suelo se publica con **su forma**, no solo con su número: «32.28»
+    > > a secas invita justo a la lectura equivocada.
+    >
+    > **Y el «Δ0» hay que redactarlo condicionado**, porque el clon está cableado
+    > a **un** pico: `/software`, EDAR y petróleo están a **Δ0 contra el estado
+    > ALTO** —el único que vieron las 6 corridas de `c-cabecera`— y a **+32.28
+    > contra el bajo**. El −15.72 de antes del arreglo **no desapareció: es hoy
+    > ese +32.28**. Mover el clon no quitó la discrepancia, **cambió contra cuál
+    > de los dos estados es exacto**.
+    >
     > ⚠ **Lo que NO cerró, y no fue por la medición:** a **390** las 3 ráfagas
     > exhibibles dan **0**, pero la **ráfaga A** midió **±30 en las tres @390** y
     > **su fichero se borró a mano**. Si contara, el suelo a 390 sería 30. O sea
     > que el **−30 de EDAR@390** es «defecto claro» o «exactamente el suelo»
-    > según cuente o no, y **no hay forma de dirimirlo**. Es la §regla 5 (*el
-    > borrado a mano*) cobrándose por **segunda** vez y más caro: la primera
-    > costó un número que no se puede exhibir; ésta, **una decisión que no se
-    > puede tomar**.
+    > según cuente o no, y **con lo medido hasta hoy no se puede dirimir**. Es la
+    > §regla 5 (*el borrado a mano*) cobrándose por **segunda** vez y más caro: la
+    > primera costó un número que no se puede exhibir; ésta, **una decisión que
+    > no se puede tomar**.
+    >
+    > **Pero «no se puede dirimir» NO es un estado en el que este proyecto se
+    > quede, y ésa es la lección operativa**: cuando la evidencia que falta es
+    > *medible*, la salida es **medirla otra vez**, no argumentar sobre la que se
+    > perdió. Campaña **`cqa6-390`** arrancada el 2026-08-03 sobre las mismas 3
+    > rutas — ráfaga 1 hecha (`h1` a 0 en las tres @390), faltan 2 y **la 3 tiene
+    > que caer otro día obligatoriamente**, porque aquí la 1 no regala días como
+    > en `cqa6`. **Hasta que cierre, el −30 se queda SIN PROBAR con esa etiqueta
+    > literal: ni defecto ni limpio.**
     >
     > **Y `±30` / `±32.28` no son de la familia conocida.** El ruido documentado
     > abajo (27 · 54 · 81) son renglones del módulo «Artículos y Guías». Estos
