@@ -43,7 +43,14 @@ console.log(`\n════════ COMPORTAMIENTOS DEL GRUPO C · ${ANCHO}p
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "c-behaviors", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1` y esta sonda recorre tres listas declaradas arriba**
+ * —`CASOS` (5), `FAQS` (2) e `INDICES` (2)—, así que su universo es **derivable
+ * y exacto**. Con `1`, ocho páginas caídas de nueve daban verde en la sonda del
+ * eje **comportamiento**, que es justo el que está a 0/31 en la matriz de
+ * cobertura: el hueco peor cubierto, protegido por el contrato más flojo.
+ */
+const ev = new Evaluadas({ nombre: "c-behaviors", unidad: "páginas", minimo: CASOS.length + FAQS.length + INDICES.length, porPaginas: true });
 
 const { browser } = await launch();
 const salida = {
