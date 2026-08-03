@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "fecha": "2026-08-03",
+    "width": 1440,
+    "sabotaje": "pleno",
+    "preRegistro": "docs/research/productos/PRE-REGISTRO.md",
+    "fuente": "solutions-sitemap.xml filtrado a /es — DERIVADO, no citado",
+    "control": [
+      "monitor-calidad-aire",
+      "accesorios",
+      "software-de-medicion-calidad-del-aire",
+      "kunak-api"
+    ]
+  },
+  "paginas": {
+    "monitor-calidad-aire": {
+      "forma": "producto",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-768 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon",
+      "nSecciones": 6,
+      "nModulos": 106,
+      "kinds": {
+        "text": 36,
+        "image": 7,
+        "blurb": 27,
+        "button_module_wrapper": 13,
+        "fullwidth_slider": 1,
+        "cta": 1,
+        "gallery": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 1,
+        "video": 0,
+        "slider": 2,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 21,
+        "botones": 45,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Monitor de calidad del aire"
+    }
+  },
+  "formas": {
+    "producto": {
+      "n": 1,
+      "instancias": [
+        "monitor-calidad-aire"
+      ],
+      "kinds": {
+        "text": 1,
+        "image": 1,
+        "blurb": 1,
+        "button_module_wrapper": 1,
+        "fullwidth_slider": 1,
+        "cta": 1,
+        "gallery": 1,
+        "posts": 1,
+        "toggle": 1
+      },
+      "estructuras": {
+        "toggle": 1,
+        "galeria": 1,
+        "slider": 1,
+        "descargaPdf": 1,
+        "botones": 1
+      }
+    }
+  },
+  "universales": {
+    "producto": [
+      "blurb",
+      "botones",
+      "button_module_wrapper",
+      "cta",
+      "descargaPdf",
+      "fullwidth_slider",
+      "galeria",
+      "gallery",
+      "image",
+      "posts",
+      "slider",
+      "text",
+      "toggle"
+    ]
+  },
+  "frontera": {}
+}

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "fecha": "2026-08-03",
+    "width": 1440,
+    "sabotaje": "control",
+    "preRegistro": "docs/research/productos/PRE-REGISTRO.md",
+    "fuente": "solutions-sitemap.xml filtrado a /es — DERIVADO, no citado",
+    "control": [
+      "monitor-calidad-aire",
+      "accesorios",
+      "software-de-medicion-calidad-del-aire",
+      "kunak-api"
+    ]
+  },
+  "paginas": {
+    "monitor-calidad-aire": {
+      "forma": "producto",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-768 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon",
+      "nSecciones": 6,
+      "nModulos": 0,
+      "kinds": {},
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 0,
+        "galeria": 0,
+        "video": 0,
+        "slider": 0,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 0,
+        "botones": 0,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Monitor de calidad del aire"
+    }
+  },
+  "formas": {
+    "producto": {
+      "n": 1,
+      "instancias": [
+        "monitor-calidad-aire"
+      ],
+      "kinds": {},
+      "estructuras": {}
+    }
+  },
+  "universales": {
+    "producto": []
+  },
+  "frontera": {}
+}

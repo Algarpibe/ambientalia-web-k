@@ -1,0 +1,1069 @@
+{
+  "meta": {
+    "fecha": "2026-08-03",
+    "width": 1440,
+    "sabotaje": null,
+    "preRegistro": "docs/research/productos/PRE-REGISTRO.md",
+    "fuente": "solutions-sitemap.xml filtrado a /es — DERIVADO, no citado",
+    "control": [
+      "monitor-calidad-aire",
+      "accesorios",
+      "software-de-medicion-calidad-del-aire",
+      "kunak-api"
+    ]
+  },
+  "paginas": {
+    "accesorios": {
+      "forma": "catalogo",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-26481 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 4,
+      "nModulos": 55,
+      "kinds": {
+        "text": 26,
+        "image": 7,
+        "button_module_wrapper": 2,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 10,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 0,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 0,
+        "botones": 2,
+        "filasTabla": 58
+      },
+      "h1": 56,
+      "titulo": "Accesorios para sensores de calidad del aire, más datos para decidir m"
+    },
+    "cartuchos-inteligentes/amoniaco": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24268 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Amoniaco"
+    },
+    "cartuchos-inteligentes/cianuro-de-hidrogeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-64123 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Cianuro de hidrógeno"
+    },
+    "cartuchos-inteligentes/cloro-dioxido-de-cloro": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-65253 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Cloro – Dióxido de cloro"
+    },
+    "cartuchos-inteligentes/cloruro-de-hidrogeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-32322 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Cloruro de hidrógeno"
+    },
+    "cartuchos-inteligentes/compuestos-organicos-volatiles": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24273 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Compuestos orgánicos volátiles"
+    },
+    "cartuchos-inteligentes/dioxido-de-azufre": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24254 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Dióxido de azufre"
+    },
+    "cartuchos-inteligentes/dioxido-de-carbono": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24108 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Dióxido de carbono"
+    },
+    "cartuchos-inteligentes/dioxido-de-nitrogeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24183 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Dióxido de nitrógeno"
+    },
+    "cartuchos-inteligentes/fluoruro-de-hidrogeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-64587 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Fluoruro de hidrógeno"
+    },
+    "cartuchos-inteligentes/hidrocarburos-no-metanicos": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-65375 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Hidrocarburos no metánicos"
+    },
+    "cartuchos-inteligentes/monoxido-de-carbono": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24086 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Monóxido de carbono"
+    },
+    "cartuchos-inteligentes/oxido-nitrico": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24155 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Óxido nítrico"
+    },
+    "cartuchos-inteligentes/oxigeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-62934 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 46,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Oxígeno"
+    },
+    "cartuchos-inteligentes/ozono": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24217 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Ozono"
+    },
+    "cartuchos-inteligentes/particulas-en-suspension": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-26768 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 50,
+      "kinds": {
+        "text": 18,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "code": 1,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 110,
+      "titulo": "Sensor de partículas PM1, PM2.5, PM4, PM10, TSP y TPC"
+    },
+    "cartuchos-inteligentes/sensor-particulas-ultrafinas": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-64958 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 48,
+      "kinds": {
+        "text": 18,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Partículas ultrafinas"
+    },
+    "cartuchos-inteligentes/sulfuro-de-hidrogeno": {
+      "forma": "cartucho",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-24239 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 47,
+      "kinds": {
+        "text": 16,
+        "image": 6,
+        "button_module_wrapper": 4,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 2,
+        "botones": 4,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Sulfuro de hidrógeno"
+    },
+    "estacion-de-monitoreo-de-calidad-del-aire": {
+      "forma": "ficha",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-18251 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 104,
+      "kinds": {
+        "text": 35,
+        "image": 9,
+        "blurb": 25,
+        "button_module_wrapper": 13,
+        "fullwidth_slider": 1,
+        "gallery": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 1,
+        "video": 0,
+        "slider": 2,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 19,
+        "botones": 46,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Estación de monitoreo de calidad del aire compacta"
+    },
+    "kunak-api": {
+      "forma": "software",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-27049 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 5,
+      "nModulos": 56,
+      "kinds": {
+        "text": 15,
+        "image": 6,
+        "button_module_wrapper": 2,
+        "blurb": 12,
+        "posts": 1,
+        "toggle": 19,
+        "fullwidth_slider": 1
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 0,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 56,
+      "titulo": "Integración de datos más allá de la solución Kunak AIR Cloud"
+    },
+    "monitor-calidad-aire": {
+      "forma": "producto",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-768 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon",
+      "nSecciones": 6,
+      "nModulos": 106,
+      "kinds": {
+        "text": 36,
+        "image": 7,
+        "blurb": 27,
+        "button_module_wrapper": 13,
+        "fullwidth_slider": 1,
+        "cta": 1,
+        "gallery": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 1,
+        "video": 0,
+        "slider": 2,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 21,
+        "botones": 45,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Monitor de calidad del aire"
+    },
+    "sensor-de-calidad-del-aire": {
+      "forma": "ficha",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-772 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_icon",
+      "nSecciones": 6,
+      "nModulos": 102,
+      "kinds": {
+        "text": 33,
+        "image": 9,
+        "blurb": 34,
+        "button_module_wrapper": 4,
+        "video": 1,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 1,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 5,
+        "botones": 5,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Sensor de calidad del aire"
+    },
+    "sensor-de-calidad-del-aire/metano": {
+      "forma": "ficha",
+      "control": false,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-26643 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 7,
+      "nModulos": 47,
+      "kinds": {
+        "text": 17,
+        "image": 6,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 1,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 1,
+        "botones": 3,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Metano"
+    },
+    "software-de-medicion-calidad-del-aire": {
+      "forma": "software",
+      "control": true,
+      "tpl": "solutions-template-default et-tb-has-template",
+      "body": "wp-singular solutions-template-default single single-solutions postid-27164 custom-background wp-theme-Divi wp-child-theme-KunakAir et-tb-has-template et-tb-has-header et-tb-has-footer es et_button_ic",
+      "nSecciones": 6,
+      "nModulos": 89,
+      "kinds": {
+        "text": 22,
+        "image": 7,
+        "button_module_wrapper": 7,
+        "blurb": 31,
+        "slider": 1,
+        "fullwidth_slider": 1,
+        "posts": 1,
+        "toggle": 19
+      },
+      "estructuras": {
+        "tabla": 0,
+        "tabs": 0,
+        "toggle": 19,
+        "galeria": 0,
+        "video": 0,
+        "slider": 2,
+        "mapa": 0,
+        "formulario": 0,
+        "descargaPdf": 0,
+        "botones": 8,
+        "filasTabla": 0
+      },
+      "h1": 33,
+      "titulo": "Software de medición de la calidad del aire"
+    }
+  },
+  "formas": {
+    "catalogo": {
+      "n": 1,
+      "instancias": [
+        "accesorios"
+      ],
+      "kinds": {
+        "text": 1,
+        "image": 1,
+        "button_module_wrapper": 1,
+        "posts": 1,
+        "toggle": 1
+      },
+      "estructuras": {
+        "tabla": 1,
+        "toggle": 1,
+        "botones": 1,
+        "filasTabla": 1
+      }
+    },
+    "cartucho": {
+      "n": 17,
+      "instancias": [
+        "cartuchos-inteligentes/amoniaco",
+        "cartuchos-inteligentes/cianuro-de-hidrogeno",
+        "cartuchos-inteligentes/cloro-dioxido-de-cloro",
+        "cartuchos-inteligentes/cloruro-de-hidrogeno",
+        "cartuchos-inteligentes/compuestos-organicos-volatiles",
+        "cartuchos-inteligentes/dioxido-de-azufre",
+        "cartuchos-inteligentes/dioxido-de-carbono",
+        "cartuchos-inteligentes/dioxido-de-nitrogeno",
+        "cartuchos-inteligentes/fluoruro-de-hidrogeno",
+        "cartuchos-inteligentes/hidrocarburos-no-metanicos",
+        "cartuchos-inteligentes/monoxido-de-carbono",
+        "cartuchos-inteligentes/oxido-nitrico",
+        "cartuchos-inteligentes/oxigeno",
+        "cartuchos-inteligentes/ozono",
+        "cartuchos-inteligentes/particulas-en-suspension",
+        "cartuchos-inteligentes/sensor-particulas-ultrafinas",
+        "cartuchos-inteligentes/sulfuro-de-hidrogeno"
+      ],
+      "kinds": {
+        "text": 17,
+        "image": 17,
+        "button_module_wrapper": 17,
+        "fullwidth_slider": 17,
+        "posts": 17,
+        "toggle": 17,
+        "code": 1
+      },
+      "estructuras": {
+        "toggle": 17,
+        "slider": 17,
+        "descargaPdf": 17,
+        "botones": 17
+      }
+    },
+    "ficha": {
+      "n": 3,
+      "instancias": [
+        "estacion-de-monitoreo-de-calidad-del-aire",
+        "sensor-de-calidad-del-aire",
+        "sensor-de-calidad-del-aire/metano"
+      ],
+      "kinds": {
+        "text": 3,
+        "image": 3,
+        "blurb": 2,
+        "button_module_wrapper": 3,
+        "fullwidth_slider": 3,
+        "gallery": 1,
+        "posts": 3,
+        "toggle": 3,
+        "video": 1
+      },
+      "estructuras": {
+        "toggle": 3,
+        "galeria": 1,
+        "slider": 3,
+        "descargaPdf": 3,
+        "botones": 3,
+        "video": 1
+      }
+    },
+    "software": {
+      "n": 2,
+      "instancias": [
+        "kunak-api",
+        "software-de-medicion-calidad-del-aire"
+      ],
+      "kinds": {
+        "text": 2,
+        "image": 2,
+        "button_module_wrapper": 2,
+        "blurb": 2,
+        "posts": 2,
+        "toggle": 2,
+        "fullwidth_slider": 2,
+        "slider": 1
+      },
+      "estructuras": {
+        "toggle": 2,
+        "slider": 2,
+        "botones": 2
+      }
+    },
+    "producto": {
+      "n": 1,
+      "instancias": [
+        "monitor-calidad-aire"
+      ],
+      "kinds": {
+        "text": 1,
+        "image": 1,
+        "blurb": 1,
+        "button_module_wrapper": 1,
+        "fullwidth_slider": 1,
+        "cta": 1,
+        "gallery": 1,
+        "posts": 1,
+        "toggle": 1
+      },
+      "estructuras": {
+        "toggle": 1,
+        "galeria": 1,
+        "slider": 1,
+        "descargaPdf": 1,
+        "botones": 1
+      }
+    }
+  },
+  "universales": {
+    "catalogo": [
+      "botones",
+      "button_module_wrapper",
+      "filasTabla",
+      "image",
+      "posts",
+      "tabla",
+      "text",
+      "toggle"
+    ],
+    "cartucho": [
+      "botones",
+      "button_module_wrapper",
+      "descargaPdf",
+      "fullwidth_slider",
+      "image",
+      "posts",
+      "slider",
+      "text",
+      "toggle"
+    ],
+    "ficha": [
+      "botones",
+      "button_module_wrapper",
+      "descargaPdf",
+      "fullwidth_slider",
+      "image",
+      "posts",
+      "slider",
+      "text",
+      "toggle"
+    ],
+    "software": [
+      "blurb",
+      "botones",
+      "button_module_wrapper",
+      "fullwidth_slider",
+      "image",
+      "posts",
+      "slider",
+      "text",
+      "toggle"
+    ],
+    "producto": [
+      "blurb",
+      "botones",
+      "button_module_wrapper",
+      "cta",
+      "descargaPdf",
+      "fullwidth_slider",
+      "galeria",
+      "gallery",
+      "image",
+      "posts",
+      "slider",
+      "text",
+      "toggle"
+    ]
+  },
+  "frontera": {
+    "catalogo ↔ ficha": {
+      "soloA": [
+        "filasTabla",
+        "tabla"
+      ],
+      "soloB": [
+        "descargaPdf",
+        "fullwidth_slider",
+        "slider"
+      ],
+      "n": 5
+    },
+    "catalogo ↔ software": {
+      "soloA": [
+        "filasTabla",
+        "tabla"
+      ],
+      "soloB": [
+        "blurb",
+        "fullwidth_slider",
+        "slider"
+      ],
+      "n": 5
+    },
+    "catalogo ↔ producto": {
+      "soloA": [
+        "filasTabla",
+        "tabla"
+      ],
+      "soloB": [
+        "blurb",
+        "cta",
+        "descargaPdf",
+        "fullwidth_slider",
+        "galeria",
+        "gallery",
+        "slider"
+      ],
+      "n": 9
+    },
+    "cartucho ↔ catalogo": {
+      "soloA": [
+        "descargaPdf",
+        "fullwidth_slider",
+        "slider"
+      ],
+      "soloB": [
+        "filasTabla",
+        "tabla"
+      ],
+      "n": 5
+    },
+    "cartucho ↔ ficha": {
+      "soloA": [],
+      "soloB": [],
+      "n": 0
+    },
+    "cartucho ↔ software": {
+      "soloA": [
+        "descargaPdf"
+      ],
+      "soloB": [
+        "blurb"
+      ],
+      "n": 2
+    },
+    "cartucho ↔ producto": {
+      "soloA": [],
+      "soloB": [
+        "blurb",
+        "cta",
+        "galeria",
+        "gallery"
+      ],
+      "n": 4
+    },
+    "ficha ↔ software": {
+      "soloA": [
+        "descargaPdf"
+      ],
+      "soloB": [
+        "blurb"
+      ],
+      "n": 2
+    },
+    "ficha ↔ producto": {
+      "soloA": [],
+      "soloB": [
+        "blurb",
+        "cta",
+        "galeria",
+        "gallery"
+      ],
+      "n": 4
+    },
+    "producto ↔ software": {
+      "soloA": [
+        "cta",
+        "descargaPdf",
+        "galeria",
+        "gallery"
+      ],
+      "soloB": [],
+      "n": 4
+    }
+  }
+}
