@@ -197,39 +197,42 @@ const LECTOR = (sabotaje) => {
 
     /**
      * ── DETECTORES BINARIOS ────────────────────────────────────────────────
-     * HIPÓTESIS DE MECANISMO de C-QA6 — **solo se anota**. Rocket Loader de
-     * Cloudflare aplaza la ejecución de los scripts, y eso desplaza cuándo
-     * asientan fuentes y maquetación: compatible con un `h1` que envuelve
-     * distinto, sincronizado en varias rutas y correlacionado con la latencia.
      *
-     * ⚠ Un detector que devuelve **lo mismo en el 100 % de las cargas no es un
-     * dato**: no ha discriminado nunca, ni en el sentido del cero ni en el del
-     * pleno. El informe de abajo lo declara NO VALIDADO y **no se puede citar
-     * como evidencia** hasta que se le vea cambiar.
+     * ⚠ **HIPÓTESIS «ROCKET LOADER»: DESCARTADA Y RETIRADA (2026-08-03), no
+     * borrada.** Se deja escrito el resultado porque **la evidencia negativa ES
+     * un resultado**, y sin él dentro de seis meses alguien vuelve a proponer
+     * Cloudflare Rocket Loader como explicación del ±32.28 y se paga otra vez.
+     *
+     * La hipótesis era razonable: Rocket Loader aplaza la ejecución de los
+     * scripts, y eso desplaza cuándo asientan fuentes y maquetación — compatible
+     * con un `h1` bimodal, sincronizado por grupos y correlacionado con la
+     * latencia. Se instrumentó con dos detectores:
+     *
+     *   · `rocketToken`  — el token `-text/javascript"` en el HTML servido
+     *   · `rocketLoader` — `script[src*="rocket-loader"], script[data-cf-settings]`
+     *
+     * **Recuento final, en la campaña `cqa6` completa (3 ráfagas, 2026-07-30 ·
+     * 08-02 · 08-03): `S 0 / N 54` los dos.** Ninguno disparó nunca.
+     *
+     * **Y por eso se retiran, que es lo pre-registrado**: por la regla del
+     * cero/pleno (`CLAUDE.md` §sondas, regla 4) un detector que **nunca ha
+     * discriminado** no distingue *«no está presente»* de *«el selector está mal
+     * escrito»*, así que **no se puede citar en ninguna dirección** — ni como
+     * «Rocket Loader interviene» ni como «no interviene». Mantenerlo un ciclo
+     * más solo añade cargas a un `N` que ya no informa, y **ocupa sitio
+     * sugiriendo una respuesta que no ha dado**.
+     *
+     * > **Lo que se cierra es el DETECTOR, no la pregunta.** El mecanismo del
+     * > ±32.28 sigue **sin identificar**. Lo que queda registrado es que estas
+     * > dos sondas de presencia no lo explican, con su recuento y sus fechas.
+     *
+     * La maquinaria de informe se queda **entera y viva** —es la guarda del
+     * cero/pleno, no un adorno— y sigue teniendo su test en negativo:
+     * `SABOTAJE=detector` inyecta uno que nunca dispara y otro que dispara
+     * siempre, y los DOS tienen que salir NO VALIDADOS en la misma corrida.
+     * Cualquier hipótesis futura entra aquí y hereda la guarda.
      */
     detectores: {
-      // Sin regex a propósito: el token siempre lleva un guion delante de
-      // `-text/javascript`, y `type="text/javascript"` a secas no lo tiene.
-      rocketToken: document.documentElement.innerHTML.includes('-text/javascript"'),
-      /**
-       * ⚠ **Este va con `querySelector` a pelo, FUERA del censo, y es una
-       * excepción con motivo — no un descuido.** El censo declara defecto todo
-       * selector que no casa en ninguna página, porque en una MEDIDA el `null`
-       * se lee como dato. Aquí el `null` **es** el dato: el trabajo de un
-       * detector de presencia es poder decir «no está».
-       *
-       * Metido en el censo, la primera corrida sacó `rocket-loader` como
-       * selector muerto y cerró el código a 2 — o sea que una sonda de ruido no
-       * podría volver a dar verde mientras Cloudflare no sirviera el script.
-       *
-       * Lo que NO se pierde por sacarlo de ahí: un detector con el selector mal
-       * escrito y uno que mide una ausencia real dan lo mismo, y esa
-       * indistinguibilidad es exactamente lo que el informe de detectores de
-       * abajo declara como **NO VALIDADO**. La guarda no desaparece: cambia de
-       * sitio, del censo al veredicto — y con ella la consecuencia, que es que
-       * el detector no se puede citar.
-       */
-      rocketLoader: !!document.querySelector('script[src*="rocket-loader"], script[data-cf-settings]'),
       ...(sabotaje === "detector"
         ? { sabotajeNunca: false, sabotajeSiempre: true }
         : {}),
@@ -681,6 +684,17 @@ if (!conTransicion)
  *     un detector que no ha discriminado nunca ocupa sitio y sugiere respuesta.
  *   · **VALIDADO** — se le ha visto cambiar, así que su valor significa algo.
  *
+ * ✅ **Y esa cláusula SE EJECUTÓ (2026-08-03).** `rocketToken` y `rocketLoader`
+ * cerraron `cqa6` con `S 0 / N 54` y se retiraron — hipótesis **DESCARTADA**,
+ * con su recuento escrito arriba, en el `LECTOR`. Es la primera vez que este
+ * bloque se cobra su propia regla, y conviene decirlo: **una cláusula
+ * pre-registrada que no se ejecuta al vencer es peor que no haberla escrito**,
+ * porque deja el detector dentro con aire de estar bajo vigilancia.
+ *
+ * Hoy la lista de detectores está **vacía a propósito**, y el informe de abajo
+ * lo dice en vez de callar — un bloque que no imprime nada es indistinguible de
+ * un bloque que no se ejecutó.
+ *
  * ⚠ **Y no cierra el código de salida, a propósito.** Un detector sin validar es
  * una observación sobre el ORIGINAL, no un defecto de la sonda: hacerlo fallar
  * convertiría cada ráfaga en roja y la guarda acabaría ignorada. Lo que sí cierra
@@ -709,6 +723,18 @@ if (sinValidar.length)
     `\n  ${sinValidar.length} detector(es) sin validar: ${sinValidar.join(" · ")}.\n` +
       `  Un valor constante no contesta la pregunta que se le hizo. Hasta que cambie,\n` +
       `  cualquier frase del tipo «X no interviene» carece de respaldo.`,
+  );
+/* ⚠ **Un bloque que no imprime nada no se distingue de uno que no se ejecutó.**
+ * La lista vacía es hoy el estado correcto —los dos detectores de Rocket Loader
+ * se retiraron al cerrar `cqa6` con S 0 / N 54— y por eso se DICE, con el
+ * recordatorio de que lo cerrado es el detector y no la pregunta. */
+if (!nombresDet.length)
+  console.log(
+    `  (ninguno declarado — estado correcto desde 2026-08-03)\n` +
+      `  \`rocketToken\` y \`rocketLoader\` se RETIRARON al cerrar la campaña cqa6 con\n` +
+      `  S 0 / N 54: hipótesis «Rocket Loader» DESCARTADA. Ver el bloque del LECTOR.\n` +
+      `  ⚠ Lo cerrado es el DETECTOR, no la pregunta: el mecanismo del ±32.28 sigue\n` +
+      `     SIN IDENTIFICAR. Una hipótesis nueva entra aquí y hereda la guarda.`,
   );
 
 await browser.close();

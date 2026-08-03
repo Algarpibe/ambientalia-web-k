@@ -1,0 +1,124 @@
+{
+  "software-de-medi@1440": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        421.39
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            1
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            416.47
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  },
+  "software-de-medi@390": {
+    "error": "solo 1 corrida(s) válida(s)",
+    "observable": {
+      "estadosH1": [
+        308.58
+      ],
+      "transicion": false,
+      "porObservable": {
+        "fuentes": {
+          "nValores": 1,
+          "valores": [
+            "loaded"
+          ],
+          "acompana": null
+        },
+        "fuentesCargadas": {
+          "nValores": 1,
+          "valores": [
+            11
+          ],
+          "acompana": null
+        },
+        "h1Familia": {
+          "nValores": 1,
+          "valores": [
+            "Manrope, sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Disponibles": {
+          "nValores": 1,
+          "valores": [
+            "Manrope | sans-serif"
+          ],
+          "acompana": null
+        },
+        "h1Tam": {
+          "nValores": 1,
+          "valores": [
+            "23px/23px/300"
+          ],
+          "acompana": null
+        },
+        "h1Renglones": {
+          "nValores": 1,
+          "valores": [
+            2
+          ],
+          "acompana": null
+        },
+        "h1AnchoTexto": {
+          "nValores": 1,
+          "valores": [
+            266.05
+          ],
+          "acompana": null
+        }
+      },
+      "cadena": null
+    }
+  }
+}

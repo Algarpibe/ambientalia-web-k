@@ -1,0 +1,242 @@
+{
+  "software-de-medi@1440": [
+    {
+      "docH": 11837,
+      "h1": 421.39,
+      "pie": 11155.42,
+      "filas": [
+        41,
+        144,
+        113,
+        50,
+        656.53,
+        1801.52,
+        5577.81,
+        688.14,
+        146,
+        1318.63,
+        460.53,
+        121.97,
+        41
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 1,
+      "h1AnchoTexto": 416.47,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 421.39,
+          "h": 33,
+          "dentro": 60
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 361.39,
+          "h": 93,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 361.39,
+          "h": 103.88,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 361.39,
+          "h": 598.94,
+          "dentro": 28.8
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 332.59,
+          "h": 656.53,
+          "dentro": 57.59
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 275,
+          "h": 2544.44,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 225,
+          "h": 10888.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 225,
+          "h": 10888.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 225,
+          "h": 10888.42,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27164 solutions",
+          "y": 225,
+          "h": 10888.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 10930.42,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 225,
+          "h": 11611.52,
+          "dentro": 225
+        }
+      ],
+      "detectores": {
+        "sabotajeNunca": false,
+        "sabotajeSiempre": true
+      },
+      "cargaMs": 18845
+    }
+  ],
+  "software-de-medi@390": [
+    {
+      "docH": 20997,
+      "h1": 308.58,
+      "pie": 18944.11,
+      "filas": [
+        0,
+        96.58,
+        65.58,
+        50,
+        950.2,
+        3314.64,
+        10397.92,
+        1555.19,
+        99,
+        1921.13,
+        1649.16,
+        313.75,
+        40
+      ],
+      "fuentes": "loaded",
+      "fuentesCargadas": 11,
+      "h1Familia": "Manrope, sans-serif",
+      "h1Disponibles": "Manrope | sans-serif",
+      "h1Tam": "23px/23px/300",
+      "h1Renglones": 2,
+      "h1AnchoTexto": 266.05,
+      "cadena": [
+        {
+          "tag": "h1",
+          "cls": "",
+          "y": 308.58,
+          "h": 56,
+          "dentro": 42
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_text_inner",
+          "y": 266.58,
+          "h": 98,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_module et_pb_text",
+          "y": 266.58,
+          "h": 104.23,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_column et_pb_column_1_2",
+          "y": 266.58,
+          "h": 620.61,
+          "dentro": 30
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_row et_pb_row_1",
+          "y": 236.58,
+          "h": 950.2,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_pb_section et_pb_section_1",
+          "y": 186.58,
+          "h": 4322.64,
+          "dentro": 50
+        },
+        {
+          "tag": "div",
+          "cls": "et_builder_inner_content et_pb_gutters3",
+          "y": 136.58,
+          "h": 18765.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "et-l et-l--post",
+          "y": 136.58,
+          "h": 18765.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "entry-content",
+          "y": 136.58,
+          "h": 18765.53,
+          "dentro": 0
+        },
+        {
+          "tag": "article",
+          "cls": "post-27164 solutions",
+          "y": 136.58,
+          "h": 18765.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 18807.53,
+          "dentro": 0
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "y": 136.58,
+          "h": 20860.44,
+          "dentro": 136.58
+        }
+      ],
+      "detectores": {
+        "sabotajeNunca": false,
+        "sabotajeSiempre": true
+      },
+      "cargaMs": 9973
+    }
+  ]
+}
