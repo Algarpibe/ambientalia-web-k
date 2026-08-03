@@ -137,7 +137,7 @@ for (const forma of ["caso-es", "caso-en", "faq"]) {
  * las páginas aún libres, así que si la única con `<script>` ya entró como «la
  * más larga», no se imprime ninguna línea de `script` — y eso se lee como «no
  * está cubierto» cuando sí lo está. Un elemento que se mira y no se cuenta da el
- * mismo informe que uno que no se ha mirado (`CLAUDE.md` §Tres reglas, 1).
+ * mismo informe que uno que no se ha mirado (`CLAUDE.md` §Reglas sobre las sondas, 1).
  */
 const seleccionadas = new Set(Object.values(salida.formas).flatMap((f) => f.muestra.map((m) => m.url)));
 const cobertura = {};

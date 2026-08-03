@@ -287,7 +287,7 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
     *plantillada* (`et-tb-has-body`) significan **plantilla**. La lectura se
     invierte.
 
-### Sondas — las cinco reglas (`CLAUDE.md` §Cinco reglas sobre las sondas)
+### Sondas — las cinco reglas (`CLAUDE.md` §Reglas sobre las sondas)
 
 12. **Un descuadre impreso y no contado da el mismo informe que uno no visto.**
     Un solo canal de verdad. Y vale también **para quien lee la sonda**: *un
@@ -355,7 +355,8 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 
 - **31 rutas emitidas**, 12 `page.tsx`. `npm run check` **0 errores**.
 - `qa:enlaces` limpio en las dos direcciones · `qa:slugs` limpio ·
-  `qa:cobertura` limpio · `qa:lib` **42/42** · `qa:ancho` acotada exit 0 ·
+  `qa:cobertura` limpio · `qa:lib` **en verde, 69 aserciones contadas por el
+  propio test** (ya no hay cifra escrita a mano) · `qa:ancho` acotada exit 0 ·
   `clon-base` con sus **cuatro patas** del test en negativo (puerto muerto →
   exit 2 · build viejo → exit 2 y salida `-CONTAMINADA` · 0 comparadas → exit 1 ·
   control → exit 0 con 31 comparadas).
@@ -365,21 +366,29 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
   GRUPO A (blog, término, doc. científico).
 - **Prueba de CMS-readiness pasada**: los 4 sectores salen de una sola plantilla;
   dar de alta uno es añadir datos, cero código.
-- **Contrato de sondas instalado**: las 47 declaran y compilan.
-- **303 medidas congeladas** en `scripts/qa/medidas/`.
+- **Contrato de sondas instalado Y VALIDADO EN VIVO**: las **48** compilan,
+  declaran y **se han corrido**. Un solo veredicto por sonda lo comprueba
+  `auditarSondas()`, y **todo verde lleva su línea de unidades**
+  (`✓ evaluadas 31/31 rutas · enlaces`).
+- **~340 medidas congeladas** en `scripts/qa/medidas/`.
 
 ### A medias
 
-- **Las 47 sondas NO se han corrido enteras.** Se verificó que **compilan y
-  declaran**, y se corrieron en vivo solo cinco: `slugs`, `cobertura`, `ancho`,
-  `clon-base` y `lib`. Las demás llevan una línea insertada por barrido revisado
-  a mano. **Es el trabajo inmediato (§9).**
-- **8 sondas con suelo declarado de 1** (`a-ids`, `c-behaviors`, `corte-cuerpo`,
-  `d4-cta`, `dos-rutas`, `mono-cmp`, `offsets`, `tree-cmp`): cierran «0 = verde»
-  pero **no detectan una corrida parcial**. Apretarlas a su lista real está
-  pendiente.
-- **17 sondas** siguen esperando un `next start` ajeno; falta migrarlas a
-  `iniciarClon()`. `clon-base` y `cabecera-cmp` ya están migradas.
+- ~~Las 47 sondas NO se han corrido enteras.~~ **HECHO (2026-08-02): las 48
+  corridas en vivo**, en tres lotes por consecuencia. Resultado: **42 verdes · 3
+  rojos legítimos · 1 contrato bien disparado · 3 defectos**, más 4 defectos en
+  `lib.mjs` que afectaban a las 48 a la vez. Todos arreglados a mano y
+  re-corridos. Acta en `docs/HANDOFF.md` (tanda 11) y detalle en
+  `PENDIENTES-QA.md` §VALIDACIÓN EN VIVO.
+- **El pendiente de los mínimos cambia de enunciado.** Ya no es «apretar los 8
+  suelos de 1»: la lista de 8 estaba escrita a mano y era de 10, y para cuatro de
+  ellas el mínimo correcto **es** 1. El criterio nuevo es **todo mínimo tiene que
+  expresar el invariante que la sonda afirma**, y por él fallan **6** (`a-ids`,
+  `c-behaviors`, `corte-cuerpo`, `dos-rutas`, `mono-cmp`, `tree-cmp`), **1 a
+  medias** (`offsets`) y **2 que sí derivan** su mínimo pero cuentan en otra
+  unidad (`c-muestra` `16/3`, `esqueleto` `16/9`).
+- **45 sondas** siguen esperando un `next start` ajeno; falta migrarlas a
+  `iniciarClon()`. Migradas: `clon-base`, `cabecera-cmp` y `ancho-cuerpo`.
 - **Campaña de ruido C-QA6: 2 de 3 ráfagas.** Hallazgo: el `h1` es **bimodal**,
   dos estados separados por **32.28 exactos**, el alto idéntico en dos días, y
   **al menos dos grupos de rutas** que cambian de estado en momentos distintos.
@@ -434,9 +443,12 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
    `docs/research/CENSO-ARQUETIPOS.md` antes de citarlo.
 3. **`scripts/qa/ruido.mjs` línea 43** documenta `ETIQUETA=cqa6` en un comentario,
    pero el código lee **`CAMPANA`** (línea 407). Usa `CAMPANA`.
-4. **Recuento de sondas**: `scripts/qa/` tiene **48 ficheros de sonda** + `lib.mjs`
-   + `lib.test.mjs`. El HANDOFF declara **47 migradas al contrato**. Confirmar
-   cuál queda fuera al hacer la validación en vivo del §9.
+4. ~~**Recuento de sondas**: el HANDOFF declara **47 migradas** y hay 48.~~
+   **RESUELTA (2026-08-02): son 48 y no queda ninguna fuera.** El «47» era un
+   recuento a mano equivocado, no una sonda sin migrar. Ya no hay que confirmarlo
+   nunca más porque **el número lo deriva `auditarSondas()`** y `qa:lib` lo
+   imprime: *«las 48 sondas COMPILAN y declaran su mínimo»*. Añadir una sonda
+   sube el listón sola.
 5. **`docs/research/COBERTURA-MEDICION.md` lleva fecha 2026-08-01** pero la matriz
    se recomputó en el commit `4a36bbb`. Recomputar con `npm run qa:cobertura` en
    vez de leer la fecha.
@@ -448,24 +460,39 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 **No aplica: no hay bug ni bloqueo vivo.** El árbol está limpio, `main`
 sincronizado, `npm run check` en 0 errores y las guardas en verde.
 
-El único riesgo activo es de cobertura, no de ejecución: **las 47 sondas llevan
-una línea de contrato insertada por barrido y solo cinco se han corrido en
-vivo.** Si alguna quedó mal migrada, fallará **en voz alta** —que es lo que el
-contrato instala—, pero fallará en la tanda que la use. De ahí el §9.
+~~El único riesgo activo es de cobertura: las 47 sondas llevan una línea de
+contrato insertada por barrido y solo cinco se han corrido en vivo.~~
+**CERRADO el 2026-08-02: se corrieron las 48.**
 
-Caso conocido de mala migración ya corregido a mano, que es el patrón a buscar:
-en `c-muestra.mjs` el barrido automático produjo un fichero **que compila** con
-la `ev` (instancia de `Evaluadas`) **fuera de alcance**, porque el `for` de nivel
-0 que parecía el bueno estaba anidado. Lo cazó **revisar el diff**, no ejecutar.
+Y la sospecha estaba justificada — **tres estaban mal migradas**, y ninguna de
+las tres la habría cazado revisar el diff:
+
+| sonda | qué hacía | cómo se vio |
+|---|---|---|
+| `cmp-sector` | **verde falso**: contaba 1 de 13 filas | la línea de unidades decía `1/1` con 13 en pantalla |
+| `lh-paginas` | **rojo falso**: dos `continue` esquivaban el recuento | `21 de 35` tras informar de las 35 |
+| `c-cascaron` | dejaba **media medida** en `medidas/` cada corrida | el `-2` en `git status` |
+
+Más **cuatro defectos en `lib.mjs`**, o sea en las 48 a la vez: la línea de
+unidades no se imprimía (47 de 48), la fecha se sellaba en UTC, `alLado()`
+duplicaba evidencia idéntica y `openPage` no cerraba el paso a una 404.
+
+> **La lección para la próxima migración automática:** el barrido revisado a mano
+> y el `--check` cubren *el fichero*; lo que estaba mal era **el recuento**, y eso
+> solo lo enseña correr la sonda y mirar el denominador.
 
 ---
 
 ## 9 · Siguiente paso inmediato
 
-### Acción 1 — Validación en vivo de las sondas migradas, por lotes
+### ~~Acción 1 — Validación en vivo de las sondas migradas~~ **HECHA (2026-08-02)**
 
-**Fichero de entrada:** `docs/HANDOFF.md` (relevo de la tanda 10, arriba del
-todo) y `scripts/qa/lib.mjs` (clase `Evaluadas`).
+Las 48 corridas en tres lotes. Acta en `docs/HANDOFF.md` (tanda 11). **La acción
+inmediata pasa a ser la 2 (ráfaga 3 de C-QA6).** Se conserva el método porque
+vale para la próxima migración:
+
+<details>
+<summary>el método de lotes, que sigue siendo el correcto</summary>
 
 Corre las sondas **en lotes ordenados por consecuencia, no por alfabeto**:
 
@@ -479,20 +506,30 @@ Corre las sondas **en lotes ordenados por consecuencia, no por alfabeto**:
    `qa:esqueleto`, `qa:a-*`): **pegan al sitio vivo — espácialos y no los corras
    en paralelo.**
 
-Por cada sonda, clasifica en tres:
+Por cada sonda, clasifica en **cuatro** —el triaje original tenía tres y la
+corrida de 2026-08-02 demostró que faltaba el segundo—:
 
 - **verde legítimo**;
-- **contrato bien disparado** (esperado donde falte servidor o insumo);
-- **defecto de migración** (el caso `c-muestra`: compila con la `ev` fuera de
-  alcance). Los defectos **se arreglan A MANO y se re-corren**; nada de segunda
-  pasada automática.
+- **ROJO legítimo**: la sonda emite un veredicto **de diseño** sobre un hallazgo
+  ya fichado y su salida coincide con el congelado. Pasó en 3 (`mono-cmp`,
+  `a-embeds`, `a-lexical`). **No se tocan**, y confundirlas con un defecto es la
+  forma más rápida de «arreglar» un hallazgo bueno;
+- **contrato bien disparado** (esperado donde falte servidor o insumo — p. ej.
+  `ruido` con una sola corrida no puede medir dispersión);
+- **defecto**. Los defectos **se arreglan A MANO y se re-corren**; nada de
+  segunda pasada automática.
 
-Y documenta en `scripts/qa/README.md` que **las 8 sondas con suelo declarado de 1**
-(`a-ids`, `c-behaviors`, `corte-cuerpo`, `d4-cta`, `dos-rutas`, `mono-cmp`,
-`offsets`, `tree-cmp`) cierran «0 = verde» pero **no detectan una corrida
-parcial**.
+> ⚠ **Y el defecto no siempre es un verde falso.** De los tres de aquella tanda,
+> uno era un **rojo falso** (`lh-paginas`) y otro no salía en el código de salida
+> sino en el **fichero** (`c-cascaron` dejaba media medida en `medidas/`). Mirar
+> solo el `exit` habría cazado uno de tres.
 
-### Acción 2 — Ráfaga 3 de la campaña C-QA6 (tiene fecha)
+Y **al cerrar cada lote, commitea sus medidas antes de empezar el siguiente**: la
+guarda de `w()` protege de que una sonda pise su salida, no de un borrado a mano.
+
+</details>
+
+### Acción 1 (antes 2) — Ráfaga 3 de la campaña C-QA6 (tiene fecha)
 
 Requiere **≥2 h desde la última** (17:33 del 2026-08-02) **y preferentemente un
 tercer día distinto** (2026-08-03). Comando exacto:
@@ -505,6 +542,15 @@ RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-
 Cierra la campaña y **fija el suelo de ruido** de esas tres rutas. Hasta
 entonces, **todo residuo por debajo de ~32.28 en ellas está SIN PROBAR** —
 incluido el −15.72 de `/software`.
+
+> ⚠ **Antes de leer las separaciones, ojo con la fecha (2026-08-02).** Las
+> ráfagas 1 y 2 se sellaron con `toISOString()`, o sea **en UTC**; desde esta
+> tanda el sello es **local**. Restar una contra otra como si fueran la misma
+> escala mete **5 h de error** justo en el criterio de «≥2 h de separación y ≥2
+> días distintos». Por eso el fichero de ráfaga guarda ahora `meta.ts` —el
+> instante absoluto— y el lector lo prefiere, cayendo al sello viejo solo si
+> falta. **Comprueba que la ráfaga 3 trae `meta.ts` antes de fiarte del
+> veredicto de la campaña.**
 
 ### Pasos siguientes, en orden
 
@@ -526,10 +572,21 @@ incluido el −15.72 de `/software`.
 
 ### De la acción inmediata (§9.1)
 
-- Las 47 sondas corridas en vivo y clasificadas en los tres cubos.
+- Las **48** sondas corridas en vivo y clasificadas en los tres cubos.
 - Cero defectos de migración sin arreglar; cada arreglo **a mano** y re-corrido.
-- `npm run qa:lib` sigue en **42/42** (o más) y `npm run check` en **0 errores**.
-- `scripts/qa/README.md` documenta la limitación de los 8 suelos de 1.
+- `npm run qa:lib` **en verde** y `npm run check` en **0 errores**.
+
+  > ⚠ **Sin cifra, a propósito.** Este criterio decía «sigue en 42/42» y era ya
+  > falso: el test se amplía cada vez que se le añade un negativo, así que un
+  > número escrito aquí caduca al primer cambio y convierte el criterio en una
+  > pregunta sobre la documentación en vez de sobre el código. **El total lo
+  > cuenta ahora el propio test** (`corridas`, no una constante), y lo que se
+  > exige es que **no falle ninguna** — que es la afirmación que interesa. Es la
+  > misma clase que la lista de «8 sondas con suelo 1»: un recuento a mano es
+  > una copia desactualizada de algo que se puede derivar.
+
+- `scripts/qa/README.md` documenta la limitación de los suelos de 1 —**derivada
+  ejecutando, no leída de una lista**.
 - `docs/HANDOFF.md` actualizado con el relevo, y todo commiteado y empujado.
 
 ### De cualquier tanda que toque el clon

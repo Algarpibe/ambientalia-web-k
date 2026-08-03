@@ -342,9 +342,17 @@ cerrados que no hay que reinvestigar.
 original y qué no** — 31 rutas × 9 ejes, con tres estados: comparado contra el
 original · solo clon-contra-clon · nunca. **Consúltalo antes de leer un verde
 como una verificación**, porque la diferencia entre «no hay defecto conocido» y
-«no se ha mirado» no está en ningún otro sitio del repo. Hoy: el ancho del
-**cuerpo** está a **0/31**, el comportamiento a **0/31**, y de las 41 sondas
-**solo 9 abren los dos lados**.
+«no se ha mirado» no está en ningún otro sitio del repo. Hoy (2026-08-02): el
+ancho del **cuerpo** ya no está a 0 —se midió, **164 de 181 filas**, y su unidad
+es la FILA, no la ruta— y el **comportamiento sigue a 0/31**, que es el hueco
+mayor que queda. Son **48 sondas**.
+
+> ⚠ **Y desde esta fecha hay una lectura más barata que abrir el documento:
+> toda sonda imprime su LÍNEA DE UNIDADES** (`✓ evaluadas 31/31 rutas · enlaces`).
+> El primer número es lo que midió; el segundo, lo que debía medir. **Un verde
+> sin esa línea no es de este contrato**, y un denominador en otra unidad que el
+> numerador —`16/9 páginas` sobre nueve *formas*— es un mínimo que no expresa lo
+> que la sonda afirma.
 
 **`docs/ESQUEMA-CMS.md` es el registro vivo del destino**, y se mantiene igual
 que `PENDIENTES-QA.md`: **cada tanda lo actualiza**. Ahí vive la decisión de
@@ -747,7 +755,7 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
-### Cinco reglas sobre las sondas mismas
+### Reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un
 defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
@@ -1126,6 +1134,66 @@ descartar cambios en el IDE— **se lleva por delante las medidas no commiteadas
 y las medidas son el producto de la sesión tanto como el código. Si acabas de
 medir algo que vas a citar, **commitéalo antes de la siguiente orden que toque el
 árbol.**
+
+**6 · UN PARÁMETRO POR DEFECTO CONVIERTE «NO LO SÉ» EN «ESTÁ BIEN».**
+
+Las cinco reglas de arriba persiguen el mismo animal: *no encontrar nada y no
+mirar nada dan la misma salida*. Ésta nombra **el mecanismo que lo produce**, y
+por eso vale para código que no es una sonda:
+
+> **Todo código que traduce una AUSENCIA a un valor benigno —un parámetro por
+> defecto, un `?? 0`, un `|| []`, un `catch {}`— borra la diferencia entre «esto
+> no se pudo calcular» y «esto salió bien».** Y la borra **en el sitio donde
+> todavía se sabía**, que es lo que la hace irrecuperable aguas abajo.
+
+**Caso medido (2026-08-02), y es de manual porque son tres capas tapándose:**
+`cmp-sector` imprimía en pantalla sus **13 filas comparadas** y su contrato decía
+`evaluadas 1/1` — verde.
+
+| capa | qué tenía | qué hizo |
+|---|---|---|
+| el recuento | `ev.ok(filas.length)` | `filas` es un **objeto** ⇒ `filas.length` es `undefined` |
+| la firma | `ok(n = 1)` | el parámetro por defecto **convirtió `undefined` en 1** |
+| la declaración | `minimo: 1` | **1 ≥ 1 ⇒ verde** |
+
+Quítese cualquiera de las tres y sale roja. Y la del medio es la que importa:
+**`ok()` y `ok(undefined)` no significan lo mismo y no pueden dar lo mismo.** El
+primero es «una unidad»; el segundo es «te paso el resultado de un cálculo que
+falló». Un parámetro por defecto no los distingue — hay que mirar
+`arguments.length`.
+
+Lo más caro es dónde ocurrió: **dentro del contrato escrito para cerrar esta
+misma familia.** La guarda contaba mal por el mismo mecanismo del que protege.
+
+Operativamente: **en el código de las guardas, una ausencia se rechaza, no se
+sustituye.** Si un valor puede no existir, el defecto seguro es tirar; el valor
+benigno es el que fabrica el verde falso.
+
+**7 · UN ARTEFACTO DE TEST EN NEGATIVO NO PUEDE PARECER UNA MEDIDA.**
+
+> **Todo fichero de `medidas/` que NO sea una medida del sitio lo dice en el
+> nombre.** Sabotajes, controles, salidas de un fallo provocado y las de un fallo
+> accidental que se conserva como evidencia.
+
+Marcadores en uso —**`-neg-` es el preferido** para lo nuevo, los otros dos son
+prior art y no se renombran porque hay actas que los citan—: `-neg-` ·
+`SABOTAJE` · `SONDA-` (un defecto de la propia sonda, p. ej.
+`lh-paginas-SONDA-CONTABA-EL-TOPE.json`). **31 de los 324 ficheros congelados
+llevan uno.**
+
+`medidas/` es *la prueba, no un caché*, y la próxima sesión lo consulta **sin
+preguntar**. Un fichero con nombre de medida y contenido de sabotaje es una
+medida falsa con la autoridad de una congelada.
+
+**Caso medido (2026-08-02):** una corrida de `dos-rutas` con un slug inventado
+congeló `medidas/dos-rutas-1440.json` con `docH 6035 → 900` y `null` en todas las
+anclas — o sea **la medida de una 404**, indistinguible por el nombre de una
+comparación buena. Renombrada a `dos-rutas-1440-neg-404.json`.
+
+La convención ya existía de hecho —`ancho-neg-*`, `ruido-*neg-*`,
+`slugs-SABOTAJE`— pero **no estaba escrita**, así que no se aplicó al caso que
+no venía de un sabotaje deliberado. Que el fallo sea accidental no cambia lo que
+el fichero contiene.
 
 ## Comandos
 

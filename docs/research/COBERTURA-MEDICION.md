@@ -2,7 +2,8 @@
 
 **Fecha: 2026-08-01.** Diagnóstico puro: no se arregló nada y no se midió nada
 nuevo. Todo sale de leer las salidas congeladas de `scripts/qa/medidas/` y el
-código de las 41 sondas.
+código de las 41 sondas. ⚠ **Actualizado 2026-08-02: son 48**, y el
+recuento de «los dos lados» de §2 estaba mal en los dos sentidos — ver ahí.
 
 ## Por qué existe este documento
 
@@ -133,9 +134,25 @@ la banda de título**. **Ninguna ruta del proyecto tiene su ancho de cuerpo
 comparado con el original.** Leído bien, el eje horizontal está a **0 en lo que
 importa** — que es justo donde apareció el defecto de la tanda anterior.
 
-**2 · De las 41 sondas, solo 9 abren los dos lados.** `a-miga`, `c-banda`,
-`c-cabecera`, `c-cmp`, `cmp-sector`, `mono-cmp`, `tree-cmp`, `enlaces` y
-`ruido`. Las otras 32 son **censos del original** (recon: `a-spec`, `c-censo`,
+**2 · De las 48 sondas, 14 abren los dos lados.**
+
+> ⚠ **Corregido el 2026-08-02.** Esta línea decía «de las 41, solo 9», y la lista
+> de 9 tenía **dos errores en sentidos opuestos**: incluía `enlaces` —documentada
+> como *«el único caso que no necesita el original»*— y `ruido`, que declara
+> `SIN_CLON = "1"` porque solo abre el original; y **le faltaban siete**.
+>
+> Derivado ahora de lo que cada sonda **declara en su propia unidad**
+> (`"páginas (2 por unidad: los dos lados)"`), que es un marcador semántico y no
+> una coincidencia de texto: `ancho-cuerpo` · `c-banda` · `c-cabecera` · `c-cmp` ·
+> `c1-localiza` · `cabecera-cmp` · `d123-flujo` · `d4-pie` · `d4-suscribete` ·
+> `d4-tipografia` — más `a-miga`, `cmp-sector`, `mono-cmp` y `tree-cmp`, que
+> comparan los dos lados sin decirlo en la unidad.
+>
+> **Y cómo NO derivarlo, porque se intentó dos veces:** buscar menciones a
+> `kunakair.com` sobre-casa (`enlaces` la nombra en los `href` que audita, sin
+> abrirla nunca); exigir `openPage(...kunakair…)` literal da **cero**, y un cero
+> no es un hallazgo sino un detector roto (regla 4 de §sondas). Las URLs viven en
+> tablas (`{orig, clon}`) y no en la llamada. Las otras 32 son **censos del original** (recon: `a-spec`, `c-censo`,
 `lh-*`, `esqueleto`…) o **guardas del clon** (`clon-base`, `offsets`,
 `corte-cuerpo`, `dos-rutas`, `c-bases`). Ambas cosas son útiles y **ninguna
 mide fidelidad**.
@@ -287,3 +304,72 @@ en la cabecera de `scripts/qa/ancho-cuerpo.mjs`.
 falla, la hipótesis por defecto no debe ser «el clon está partido distinto» sino
 **«mi definición de “el mismo texto” no es la misma en los dos lados»** — que es
 la trampa de `charsCenso()` otra vez, y aquí estaba tres veces seguidas.
+
+---
+
+## La cobertura, ahora AUDITABLE POR CORRIDA (2026-08-02, 11.ª tanda)
+
+**Esta tanda no añade una sola celda a la matriz.** Cambia otra cosa, y es la que
+este documento existe para vigilar: **cuándo se puede leer un verde como una
+medición.**
+
+### El verde era mudo en 47 de 48 sondas
+
+El contrato de `Evaluadas` cerraba «0 comparado = verde» **para la máquina** —por
+debajo del mínimo, código ≠ 0—. Para el lector no: la sonda imprimía un `✅` sin
+decir sobre cuántas unidades. El HANDOFF que lo estrenó afirmaba que ya imprimía
+la línea; **medido corriéndolas, la imprimía una** (`clon-base`).
+
+Desde hoy la pone el gancho de salida si la sonda no llama a `informe()`:
+
+```
+✓ evaluadas 31/31 rutas · enlaces
+```
+
+> **Cómo se lee esta matriz a partir de ahora.** Un `O` de una celda sigue
+> queriendo decir «se comparó contra el original». Lo que la línea de unidades
+> añade es la pregunta anterior, que antes no tenía respuesta sin abrir el JSON:
+> **¿cuántas unidades entraron en esa comparación?** Un `31/31` y un `12/1` son
+> los dos verdes, y no valen lo mismo.
+
+### Y la unidad del denominador puede no ser la del numerador
+
+Dos sondas **derivan** su mínimo y aun así no expresan lo que afirman, porque
+cuentan en una unidad y pisan en otra. Las delató la línea nueva:
+
+| sonda | imprime | numerador | denominador |
+|---|---|---|---|
+| `c-muestra` | `evaluadas 16/3` | páginas | **formas** |
+| `esqueleto` | `evaluadas 16/9` | páginas | **formas** |
+
+Enunciado que sustituye al viejo «apretar los 8 suelos de 1»: **todo mínimo tiene
+que expresar el invariante que la sonda afirma.** Detalle y la lista derivada
+—10 declaraciones con mínimo literal, de las que **6 no lo cumplen y 1 a
+medias**— en `PENDIENTES-QA.md` §VALIDACIÓN EN VIVO.
+
+### Auditoría retrospectiva: ¿alguna medida congelada es de una 404?
+
+De las 31 sondas que usan `openPage`, **22 ignoraban el estado HTTP**, y una 404
+carga bien y se mide como una página buena. La pregunta obligada es si eso ya
+contaminó evidencia. **Contestada leyendo los 324 ficheros de `medidas/`, sin
+re-medir:**
+
+| | |
+|---|---|
+| ficheros congelados | **324** |
+| campos de estado HTTP registrados | 515, en **14** ficheros |
+| ficheros que **no registran ningún estado** | **310** |
+| estados ≥ 400 encontrados | **4, y los 4 legítimos** |
+
+Los cuatro: dos en `a-spec-SONDA-DOS-RUTAS-INVENTADAS.json` —un negativo, lo dice
+el nombre— y dos en `c-rutas.json`, donde **el 404 ES la medida** (CMS-1 resuelve
+el prefijo cruzado, y que una ruta no exista es el hallazgo).
+
+> **Conclusión, con su límite dicho:** no hay ninguna contaminación conocida por
+> 404. Pero **310 de 324 ficheros no registran el estado**, así que para ellos la
+> pregunta **no se puede contestar retrospectivamente** — no es «están limpios»,
+> es «no se puede saber». Hacia adelante sí: `openPage` ya no cuenta una
+> respuesta ≥ 400 como página evaluada, y el contrato pone la corrida en rojo.
+
+Es la misma forma que la auditoría de `clon-base` de la tanda anterior, y tiene
+el mismo mérito prestado: **la respuesta existe porque las sondas congelan.**

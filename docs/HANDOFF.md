@@ -1,3 +1,173 @@
+# HANDOFF — las 48 sondas corridas en vivo: el verde era MUDO en 47
+
+> ⚠ **Tanda 2026-08-02 (11.ª).** Los cinco pasos del encargo. Tanda de
+> **INSTRUMENTO**: no se midió fidelidad y **no se tocó el clon**. Lo que cambia
+> es qué puede salir verde, dónde se congela la evidencia y con qué fecha.
+
+## 0 · El titular, y es el que cambia cómo se lee todo lo demás
+
+La tanda anterior migró las 48 sondas al contrato de `Evaluadas` y cerró
+diciendo: *«las 47 compilan y declaran; si alguna falla, fallará en voz alta»*.
+**Correrlas era la comprobación que faltaba**, y lo primero que sacó fue esto:
+
+> **El HANDOFF anterior escribió «no leer un verde sin la línea de unidades:
+> ahora la imprime». Medido corriéndolas: la imprimía UNA de 48.**
+
+Las otras 47 declaraban, contaban y cerraban bien el código de salida —la guarda
+funcionaba— y salían con un `✅` **sin decir sobre cuántas unidades**. El
+contrato estaba cerrado **para la máquina** y abierto **para el lector**, que es
+quien firma las actas. Es *documentado no es conectado* por **tercera vez en
+`lib.mjs`** (tras `SIN_CLON` inerte y `BUILD_ID` sin cerrar el código).
+
+Arreglado en el gancho de salida, no en 47 ficheros. Y todo lo demás que
+encontró esta tanda **estaba en esa línea desde el momento en que existió**:
+
+| lo que imprime | qué significaba |
+|---|---|
+| `evaluadas 1/1 filas comparadas` en `cmp-sector` | **verde falso**: contaba 1 de 13 |
+| `evaluadas 12/1 páginas` en `corte-cuerpo` | suelo flojo: midió doce, se exigía una |
+| `evaluadas 16/9 páginas` en `esqueleto` | el denominador cuenta **formas**, no páginas |
+| `evaluadas 21/35 rutas` en `lh-paginas` | **rojo falso**: dos `continue` esquivaban el recuento |
+
+## 1 · Las 48, corridas y clasificadas
+
+**48 de 48**, en tres lotes por consecuencia. Servidor propio en el 3000 durante
+toda la corrida y **ningún `build` en vuelo**.
+
+| lote | sondas | verde | rojo legítimo | contrato bien disparado | **defecto** |
+|---|---|---|---|---|---|
+| **A** guardas y comparadoras | 23 | 21 | 1 | 0 | **1** |
+| **B** identidad e infraestructura | 12 | 9 | 2 | 0 | **1** |
+| **C** censos del original | 13 | 12 | 0 | 1 | **1**\* |
+
+\* el de C no sale en el código de salida sino en el **fichero**: `c-cascaron`
+salía verde y dejaba media medida en `medidas/`.
+
+**Rojos legítimos** —veredictos de diseño sobre hallazgos ya fichados, y las tres
+salidas **idénticas byte a byte a su congelado**—: `mono-cmp` (E3) · `a-embeds`
+(16 proveedores fuera de la lista de 5) · `a-lexical` (CMS-0e, 16/24 sin
+pérdida). **No se tocan.**
+
+**Contrato bien disparado:** `ruido` con una sola corrida no puede medir
+dispersión y lo dice —*«NINGUNA combinación con ≥2 corridas válidas: esta corrida
+NO midió el suelo»*—. Es el 4.º arreglo de la tanda anterior funcionando.
+
+## 2 · Los tres defectos de sonda
+
+**`cmp-sector` — verde falso, con TRES capas tapándose.** Imprimía sus 13 filas
+en pantalla y declaraba `1/1`:
+
+| capa | qué tenía | qué hizo |
+|---|---|---|
+| recuento | `ev.ok(filas.length)` | `filas` es un **objeto** ⇒ `undefined` |
+| firma | `ok(n = 1)` | el defecto lo convirtió en **1** |
+| declaración | `minimo: 1` | 1 ≥ 1 ⇒ **verde** |
+
+Quítese cualquiera de las tres y sale roja. Estaban las tres. **Es la regla 6
+nueva de `CLAUDE.md`**: *un parámetro por defecto convierte «no lo sé» en «está
+bien»*. `ok()` ya distingue «sin argumento» de «argumento `undefined`» y tira en
+el segundo caso.
+
+**`lh-paginas` — ROJO falso.** Medía las 35 rutas, informaba de las 35 y salía
+con `21 de 35`. El bucle tiene **dos salidas tempranas** —«1 página» y «NO
+PAGINA»— y las dos son **resultados**, no rutas sin medir. La migración puso el
+`ev.ok()` al final del cuerpo y los `continue` lo esquivaban.
+
+> **Un rojo que nadie sabe explicar se acaba ignorando.** Un falso positivo
+> desactiva una alarma igual de bien que un falso negativo, solo que más despacio.
+
+Barrida la clase: 8 sondas tienen un salto por delante de su `ev.ok()`, y **solo
+ésta estaba mal**. Discriminador: *¿el camino que salta dejó un DATO o dejó un
+ERROR?*
+
+**`c-cascaron` — media medida en `medidas/`, cada corrida.** Escribía **dos veces
+el mismo fichero**: una antes del veredicto y otra al final. La primera es un
+prefijo estricto de la segunda y **nada en el nombre decía que estaba
+incompleta**. Barrida la clase: ninguna otra escribe dos veces el mismo destino.
+
+## 3 · Cuatro defectos más, todos en `lib.mjs` — o sea en las 48 a la vez
+
+| | qué pasaba | alcance |
+|---|---|---|
+| **la línea de unidades** | la imprimía 1 sonda de 48 | 47 |
+| **`w()` fechaba en UTC** | a las 19:03 del **02** congelaba como **`-08-03`** | `lib.mjs` + **22 sondas** |
+| **`alLado()` duplicaba** | la idempotencia miraba solo el destino canónico ⇒ `-fecha.json` y `-fecha-2.json` **byte a byte iguales** | todas |
+| **`openPage` ignoraba el HTTP** | **22 de 31** usuarias no miraban el estado; una 404 se mide como página buena | 22 |
+
+**La fecha va en los DOS sentidos y por eso importa:** dos ráfagas de la misma
+tarde pueden salir con días distintos —**verde falso del «≥2 días distintos» de
+C-QA6**— y dos de días distintos pueden colapsar en la misma. `ruido` nombra sus
+ráfagas con ese sello. Ahora `hoy()`/`sello()` viven en `lib.mjs` y las importan
+las 22; el fichero de ráfaga añade `meta.ts` (instante absoluto) porque las
+ráfagas 1 y 2 de cqa6 llevan sello UTC y restarlas contra una local mete 5 h.
+
+**Y el 404, auditado hacia atrás:** de los **324** ficheros de `medidas/`, solo
+**14 registran el estado** y los 4 valores ≥ 400 son legítimos (un negativo con
+su nombre, y `c-rutas`, donde el 404 **es** la medida). **No hay contaminación
+conocida — pero 310 de 324 no registran el estado, así que para ésos la pregunta
+no se puede contestar**, que no es lo mismo que «están limpios».
+
+## 4 · Y seis sondas congelaban FUERA de `medidas/`
+
+`cmp-sector` · `mono-cabecera` · `mono-detalle` · `mono-inline` · `mono-modulos`
+· `tree-todos` escribían en la raíz de `scripts/qa/`, con su congelado en
+`medidas/`. **La guarda de sobrescritura compara contra el destino, y el destino
+no existía: nunca disparaba.** En el lote C se la vio disparar por primera vez en
+`mono-cabecera`.
+
+## 5 · El pendiente de los mínimos CAMBIA DE ENUNCIADO
+
+Era *«apretar los 8 suelos de 1»*. Las dos mitades estaban mal:
+
+- **la lista de 8 estaba escrita a mano** y le faltaban `a-behaviors`,
+  `cmp-sector` y el 2.º contrato de `clon-base`. **Derivada ejecutando**: 49
+  declaraciones en 48 sondas, **39 derivadas** y **10 literales**;
+- **el criterio no es «que no sea 1»**: para cuatro de esas diez el mínimo
+  correcto **es** 1.
+
+> **TODO MÍNIMO TIENE QUE EXPRESAR EL INVARIANTE QUE LA SONDA AFIRMA.**
+
+**No lo cumplen 6** (`a-ids` · `c-behaviors` · `corte-cuerpo` · `dos-rutas` ·
+`mono-cmp` · `tree-cmp`) **y 1 a medias** (`offsets`, con `--cmp`). **Y no se
+agota ahí**: `c-muestra` (`16/3`) y `esqueleto` (`16/9`) **derivan** su mínimo y
+tampoco lo cumplen, porque el denominador cuenta **formas** y el numerador
+**páginas**. Nombrados, no arreglados.
+
+## 6 · Verificación
+
+`npm run check` **0 errores** · `qa:lib` **69/69** (el total lo **cuenta** el
+test, ya no está escrito) · las **48 compilan y declaran**, con un solo veredicto
+por sonda · `qa:slugs` limpio · `cmp-sector` **13/13** y `lh-paginas` **35/35**
+re-corridas tras su arreglo · `c-cascaron` con **un** fichero por corrida.
+
+## 7 · Lo que queda abierto
+
+1. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+2. **La retícula de la HOME** — 86.35/85 % contra 86 %. Va con C-QA3.
+3. **Ráfaga 3 de C-QA6**, con el observable puesto. **Ojo: las ráfagas 1 y 2
+   están fechadas en UTC**; la 3 saldrá en local y el `meta.ts` es lo que
+   permite restarlas bien.
+4. **Los mínimos que no expresan su invariante**: 6 + 1 + 2 (§5).
+5. **Las 17 filas sin emparejar** del eje horizontal, y su RANGO sin probar.
+6. **Migrar a `iniciarClon()` las 45** que aún esperan un 3000 ajeno.
+7. **`openPage` no cubre las 6 sondas que cuentan a mano**: pueden sumar tras
+   una 404. Para ésas el aviso es la línea gritada, no el contrato.
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No leer un `✅` sin su línea de unidades.** Ahora la lleva siempre; si falta,
+  esa sonda no es de este contrato.
+- **No leer `12/1` ni `16/9` como verdes equivalentes a `31/31`.** El primero es
+  un suelo flojo y el segundo un denominador en otra unidad.
+- **No citar los `-2026-08-03` del lote A como del día 3**: son del 2 por la
+  tarde, con el sello en UTC. Se dejan con su nombre a propósito, porque
+  renombrarlos sería reescribir la evidencia del fallo que los produjo.
+- **No tocar los tres rojos legítimos** (`mono-cmp`, `a-embeds`, `a-lexical`):
+  son veredictos de diseño, idénticos a su congelado.
+- **No usar `rocketToken`/`rocketLoader` como evidencia**: 0 de 50 cargas en `S`.
+
+---
+
 # HANDOFF — «0 comparado = verde» deja de depender de la atención
 
 > ⚠ **Tanda 2026-08-02 (10.ª).** Los cuatro pasos del encargo. Tanda de

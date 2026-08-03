@@ -814,17 +814,105 @@ const ev = new Evaluadas({ unidad: "rutas", minimo: RUTAS.length, porPaginas: tr
 - El veredicto lo fuerza un gancho de `process.on("exit")`: **no se puede salir
   con 0 por debajo del mínimo ni con un `process.exit(0)` explícito**, y congelar
   una medida sin declarar nada sale con «SIN CONTRATO».
+- **Y todo verde lleva su línea de unidades**, la ponga la sonda con
+  `ev.informe()` o el gancho al final. Ver abajo: es la mitad que estuvo sin
+  conectar.
 
-Estado tras la migración: **47 sondas, 39 con el mínimo derivado de su lista** y
-**8 con suelo declarado de 1** (`a-ids` · `c-behaviors` · `corte-cuerpo` ·
-`d4-cta` · `dos-rutas` · `mono-cmp` · `offsets` · `tree-cmp`). El suelo cierra el
-agujero de «0 = verde» pero **no** detecta una corrida parcial: apretar esos ocho
-a su lista real es trabajo pendiente y está anotado como tal.
+### ⚠ La mitad LEGIBLE del contrato, conectada el 2026-08-02
 
-Negativos, en `qa:lib`: bajo el mínimo con `exit(0)` ⇒ ≠0 · alcanzado ⇒ 0 ·
-congelar sin declarar ⇒ «SIN CONTRATO» ⇒ ≠0 · `SIN_CONTRATO=1` ⇒ 0 · `minimo`
-ausente o 0 ⇒ **tira** · las 47 declaran ⇒ barrido · **y las 47 compilan**, que
-es la trampa que el barrido de texto no veía.
+El contrato cerraba el código de salida —«0 comparado = verde» resuelto **para la
+máquina**— y el HANDOFF que lo estrenó escribió que un verde ya llevaba su línea
+de unidades. **Al validar las 48 en vivo: la imprimía UNA.** Las otras 47
+declaraban, contaban y cerraban bien el código, y salían con un `✅` mudo — que
+es exactamente el hábito de lectura que el contrato venía a romper.
+
+Es *documentado no es conectado* sobre la propia guarda, y la corrección es la de
+siempre: **no se pide a 47 sondas que se acuerden de llamar a `informe()`**, la
+pone el gancho de salida si falta. Un verde sin línea de unidades ya no existe.
+
+> **Cómo se lee un verde:** `✓ evaluadas 31/31 rutas · enlaces`. El primer número
+> es lo que se midió; el segundo, lo que había que medir. **Si no ves esa línea,
+> la sonda no es de este contrato** y su verde no dice cuántas unidades miró.
+
+### El SUELO 1 cierra «0 = verde», no la corrida parcial
+
+**Es la letra pequeña al elegir instrumento, y no está en ningún otro sitio.**
+
+| | qué garantiza | qué NO garantiza |
+|---|---|---|
+| mínimo **derivado** (`RUTAS.length`) | se midió **todo** lo que había | — |
+| **suelo 1** | se midió **algo**: no hay verde por vaciado | **que se midiera todo**. Una corrida que muere en la ruta 2 de 12 sale **verde** |
+
+⚠ **Y no es teoría: ya había firmado un verde falso.** `cmp-sector` imprimía sus
+13 filas en pantalla y declaraba `evaluadas 1/1` — `ev.ok(filas.length)` sobre un
+objeto daba `undefined`, el parámetro por defecto lo volvía 1, y el suelo de 1 lo
+dio por bueno. Arreglado (mínimo derivado + `Object.keys`), y `ok()` ya no acepta
+un `undefined`.
+
+**El conjunto se DERIVA, no se lee de aquí.** La lista anterior estaba escrita a
+mano y decía «8»; le faltaban `a-behaviors`, `cmp-sector` y el segundo contrato
+de `clon-base`. Hoy (2026-08-02), ejecutando: **49 declaraciones en 48 sondas**
+—`clon-base` lleva dos—, **39 con mínimo derivado** y **10 con literal**.
+
+**Y el criterio no es «que no sea 1»**, porque para cuatro de las diez el mínimo
+correcto **es** 1:
+
+> **TODO MÍNIMO TIENE QUE EXPRESAR EL INVARIANTE QUE LA SONDA AFIRMA.**
+
+| | sondas | ¿lo expresa? |
+|---|---|---|
+| mide **una** cosa, elegida por quien lanza | `a-behaviors` · `d4-cta` | **sí** |
+| guarda de vaciado de un segundo nivel | `clon-base`/`evCmp` | **sí**, deliberado |
+| 1 ruta, **o 2 con `--cmp`** | `offsets` | **a medias** |
+| **la lista existe y el suelo no la usa** | `a-ids` · `c-behaviors` · `corte-cuerpo` · `dos-rutas` · `mono-cmp` · `tree-cmp` | **NO** |
+
+Las cuatro últimas de la fila NO son «suelos flojos por pereza»: `dos-rutas`,
+`mono-cmp` y `tree-cmp` comparan **dos** páginas por construcción y declaran 1;
+`corte-cuerpo` recorre `RUTAS` del manifiesto × 2 anchos y **midió 12**.
+
+**Y el criterio no se agota en las de mínimo literal.** Dos sondas derivan su
+mínimo y tampoco lo cumplen, porque **el denominador está en otra unidad que el
+numerador**: `c-muestra` imprime `16/3` y `esqueleto` `16/9` — páginas arriba,
+**formas** abajo. `esqueleto` acepta nueve páginas de una sola forma.
+
+La línea de unidades es lo que hace visible todo esto de un vistazo: `12/1` es la
+firma de un suelo flojo, `16/9` la de un denominador en otra unidad, y `31/31` la
+de un mínimo que sí expresa lo que la sonda afirma.
+
+Negativos, en `qa:lib` (**55 aserciones**): bajo el mínimo con `exit(0)` ⇒ ≠0 ·
+alcanzado ⇒ 0 **y con su línea de unidades**, sin duplicarla si la sonda llamó a
+`informe()` · congelar sin declarar ⇒ «SIN CONTRATO» ⇒ ≠0 · `SIN_CONTRATO=1` ⇒ 0
+· `minimo` ausente o 0 ⇒ **tira**.
+
+### El barrido del contrato: EJECUTAR, no casar texto
+
+**Séptima instancia de la clase, y dentro del test que la cierra.** El barrido que
+comprobaba que las sondas declaran su mínimo era un `grep`, y dio verde sobre
+`c-censo.mjs` con dos `const ev` y **sin compilar**. El primer parche añadió un
+`node --check` **como segunda aserción**, y eso no basta: con dos aserciones
+independientes, un fichero roto deja la primera —«las N declaran»— **en verde**.
+Dos canales de verdad para una sola pregunta.
+
+`auditarSondas()` (en `lib.mjs`) da **un veredicto por sonda**:
+
+> **Compila **y** declara, o NO ES CONFORME. Lo que no compila no es «sin
+> veredicto»: tumba la afirmación.**
+
+Y la declaración se busca sobre el fuente **sin comentarios y sin literales**
+(`sinLiterales()`), porque `// new Evaluadas(` y `"new Evaluadas("` son lo que un
+`grep` no distingue de una declaración de verdad.
+
+Test en negativo con **ficheros rotos a propósito**, en un directorio temporal
+para que sea re-runnable: uno que **no compila y contiene el texto** que el grep
+buscaba (el caso `c-censo` exacto) ⇒ ROTA y no conforme · uno mudo ⇒ SIN DECLARAR
+· uno con la declaración **en un comentario y en una cadena** ⇒ SIN DECLARAR ·
+uno bueno ⇒ conforme.
+
+⚠ **Lo que este barrido NO discrimina, y hay que saberlo:** que la `ev` esté **en
+el ámbito correcto**. `c-muestra.mjs` estuvo a punto de quedar con la declaración
+dentro de un `for` anidado — **compila, declara, y no cuenta nada**. Eso no lo ve
+ni el texto ni el parser: lo ve **correr la sonda**. El fichero lo cubre el
+barrido; el contrato lo cobra la corrida.
 
 ### `clon-base` — dueña de su servidor, y las cuatro patas
 

@@ -2783,7 +2783,7 @@ ni `tracking-[0.3px]` ni el tope, y ponen el separador como `<li aria-hidden>/</
 con `gap-1` en vez del `li::after` con `pl/pr 7.2` del original.
 
 > **La sonda lo imprimió. El informe no lo contó.** Es la **regla 1** de
-> §Cinco reglas sobre las sondas —*un descuadre impreso y no contado da el mismo
+> §Reglas sobre las sondas —*un descuadre impreso y no contado da el mismo
 > informe que uno no visto*— cometida **en un informe y no en una sonda**. De ahí
 > la extensión de la regla, anotada en `CLAUDE.md`: el canal único de verdad
 > obliga igual a lo que escribe la sonda y a **lo que escribe quien la lee**.
@@ -4304,3 +4304,237 @@ timeout of 120000 ms*.
 
 `clon-base-1440-cqa1-despues.json` lleva una ruta sin medir. Si alguien vuelve a
 citarlo, **su cifra de páginas comparadas es 16, no 17**.
+
+---
+
+## VALIDACIÓN EN VIVO DE LAS 48 SONDAS — lo que el barrido estático no podía ver (2026-08-02, 11.ª tanda)
+
+> **Tanda de INSTRUMENTO.** No se midió fidelidad y no se tocó el clon. Lo que
+> cambia es qué puede salir verde y dónde se congela la evidencia.
+
+La tanda anterior migró las sondas al contrato de `Evaluadas` y cerró con esta
+frase: *«las 47 compilan y declaran; las demás llevan una línea insertada por
+barrido revisado a mano; si alguna falla, fallará en voz alta»*. Correrlas era la
+comprobación que faltaba, y sacó **seis defectos que ningún barrido estático
+podía ver** — cinco de ellos anteriores a la migración.
+
+### 0 · El barrido del contrato era la SÉPTIMA instancia, y su parche no cerraba
+
+`qa:lib` comprobaba con un `grep` que las sondas declaran su mínimo, y el parche
+de la tanda anterior añadió `node --check` **como segunda aserción**. Con dos
+aserciones independientes para una sola pregunta, **un fichero roto deja la
+primera en verde**: el informe podía decir «las 48 declaran su mínimo» de un
+directorio que no arranca. Es la regla 1 de `CLAUDE.md` §sondas —*un solo canal
+de verdad*— incumplida dentro del test que cierra esa misma clase.
+
+Ahora `auditarSondas()` da **un veredicto por sonda**: compila **y** declara, o
+**no es conforme**. La declaración se busca sobre el fuente **sin comentarios y
+sin literales**, porque `// new Evaluadas(` es justo lo que un `grep` no
+distingue. Test en negativo con ficheros rotos a propósito, en directorio
+temporal y por tanto re-runnable.
+
+> ⚠ **Y lo que sigue sin discriminar, dicho aquí:** que la `ev` esté en el
+> **ámbito** correcto. Compila, declara y no cuenta nada — el caso `c-muestra`.
+> Eso solo lo ve **correr la sonda**.
+
+### 1 · ⚠ EL VERDE ERA MUDO EN 47 DE 48 — y el HANDOFF decía lo contrario
+
+**El hallazgo de la tanda.** El HANDOFF §7 de la 10.ª decía: *«No leer un verde
+de sonda como «midió» sin la línea de unidades: **ahora la imprime**»*.
+
+**Medido corriéndolas: la imprimía UNA (`clon-base`).** Las otras 47 declaraban,
+contaban y cerraban bien el código de salida —la guarda funcionaba— y salían con
+un `✅` **sin decir sobre cuántas unidades**. O sea: el contrato estaba cerrado
+para la máquina y **abierto para el lector**, que es quien firma las actas.
+
+Es *documentado no es conectado* sobre la mitad legible de la propia guarda, y
+van **tres veces en `lib.mjs`** (`SIN_CLON` inerte · `BUILD_ID` sin cerrar el
+código · esto).
+
+**Arreglado donde pasan todas:** la línea la pone el gancho de salida si la sonda
+no llamó a `informe()`. No se le pide a 47 ficheros que se acuerden.
+
+| antes | ahora |
+|---|---|
+| `✅ 0 discrepancias` | `✅ 0 discrepancias` + `✓ evaluadas 31/31 rutas · enlaces` |
+
+### 2 · EL PENDIENTE DE LOS MÍNIMOS CAMBIA DE ENUNCIADO
+
+Venía escrito como *«apretar los 8 suelos de 1 a su lista real»*. Las dos mitades
+de esa frase estaban mal.
+
+**(a) La lista de 8 estaba escrita a mano, y por tanto caducada.** Faltaban
+`a-behaviors`, el segundo contrato de `clon-base` (`evCmp`) y **`cmp-sector`, que
+es el que ya había firmado un verde falso**. Cerrar la clase sobre esos 8 es el
+caso de la miga otra vez, que llegó a **3 de 7** implementaciones.
+
+**Derivado ejecutando** (`auditarSondas()` + lectura del argumento `minimo` sobre
+el código sin literales), tras arreglar `cmp-sector`: **49 declaraciones en 48
+sondas** —`clon-base` lleva dos—, de ellas **39 derivan su mínimo de una lista** y
+**10 declaran un literal**, todos `1`.
+
+**(b) Y el criterio no es «que no sea 1»**, porque para cinco de esas diez el
+mínimo correcto **es** 1. El enunciado bueno es otro:
+
+> **TODO MÍNIMO TIENE QUE EXPRESAR EL INVARIANTE QUE LA SONDA AFIRMA.** No que
+> sea grande, ni que venga de una lista: que diga **lo que la sonda promete
+> haber mirado**.
+
+Aplicado a las diez, ejecutando y mirando qué recorre cada una:
+
+| sonda | qué recorre de verdad | mínimo | ¿expresa el invariante? |
+|---|---|---|---|
+| `a-behaviors` | **1 URL fija** (`URL_BLOG`) | 1 | **sí** |
+| `d4-cta` | **1 página** (la 4.ª sección del pie, solo el CASO) | 1 | **sí** |
+| `clon-base`/`evCmp` | rutas comparadas contra la línea base | 1 | **sí**, deliberado: es la guarda de vaciado |
+| `offsets` | 1 ruta, **o 2 con `--cmp`** | 1 | **parcial**: con `--cmp` debería ser 2 |
+| `a-ids` | `[PAGINA, ...OTRAS]`, lista derivada de la muestra | 1 | **NO** |
+| `c-behaviors` | `CASOS(5) + FAQS(2) + INDICES(n)`, de la muestra | 1 | **NO** |
+| `corte-cuerpo` | `RUTAS` del manifiesto × 2 anchos — **midió 12** | 1 | **NO** |
+| `dos-rutas` | rutaA + rutaB = **2 por construcción** | 1 | **NO** |
+| `mono-cmp` | original + clon = **2** — midió 2 | 1 | **NO** |
+| `tree-cmp` | original + clon = **2** — midió 2 | 1 | **NO** |
+
+**Seis no lo cumplen** (`a-ids`, `c-behaviors`, `corte-cuerpo`, `dos-rutas`,
+`mono-cmp`, `tree-cmp`) **y una a medias** (`offsets`). No se arreglan en esta
+tanda: se dejan nombradas.
+
+**(c) Y el criterio NO se agota en las de mínimo literal**, que es lo que hacía
+engañosa la formulación vieja. Hay **dos sondas que DERIVAN su mínimo y tampoco
+lo cumplen**, las dos por la misma confusión —contar en una unidad y pisar en
+otra—:
+
+| sonda | imprime | unidad declarada | mínimo derivado de | qué acepta de más |
+|---|---|---|---|---|
+| `c-muestra` | `evaluadas 16/3` | páginas de la muestra | `Object.keys(salida.formas).length` = **formas** | 3 páginas **de la misma forma**, mientras su comentario promete «una por forma» |
+| `esqueleto` | `evaluadas 16/9` | páginas | `Object.keys(FORMAS).length` = **formas** | 9 páginas de una sola forma |
+
+**La línea de unidades es lo que las delató.** Un `16/3` y un `16/9` saltan a la
+vista precisamente porque numerador y denominador cuentan cosas distintas; antes
+de esta tanda ninguna de las dos imprimía nada.
+
+Derivar el mínimo no garantiza que exprese el invariante: solo que no es un
+número suelto. Lo que hay que mirar es si **el denominador está en la misma
+unidad que el numerador**.
+
+La línea de unidades lo deja ver de un vistazo: `corte-cuerpo` imprime
+**`evaluadas 12/1 páginas`**. Un `12/1` es la firma de un suelo flojo; un
+`31/31`, la de un mínimo derivado. **Antes esto no se veía en ningún sitio.**
+
+### 2bis · ⚠ Y el suelo de 1 YA HABÍA TAPADO UNA CORRIDA PARCIAL: `cmp-sector`
+
+**Es el defecto de migración de la tanda, y son DOS defectos que se tapaban el
+uno al otro.** `cmp-sector` imprimía en pantalla sus **13 filas comparadas** y la
+línea de unidades decía **`evaluadas 1/1 filas comparadas`** — verde.
+
+| pieza | qué tenía | qué pasaba |
+|---|---|---|
+| el recuento | `ev.ok(filas.length)` | **`filas` es un OBJETO**, así que `filas.length` es `undefined` |
+| `Evaluadas.ok(n = 1)` | parámetro por defecto | el `undefined` **se convertía en 1** en vez de dar error |
+| la declaración | `minimo: 1` | **1 ≥ 1 ⇒ verde** |
+
+Quítese cualquiera de las tres y la sonda sale roja. Estaban las tres.
+
+> **El parámetro por defecto es el mecanismo, y es de la familia de siempre:
+> convierte un cálculo equivocado en un número plausible.** `ok(undefined)` y
+> `ok()` no significan lo mismo y no pueden dar lo mismo — es el
+> *cero/pleno* aplicado al recuento en vez de al selector.
+
+**Arreglado a mano, las tres:** el mínimo se **deriva** (`cfg.anclas.length +
+COLAS`), el recuento usa `Object.keys(filas).length`, y `ok()` ahora **distingue
+«sin argumento» de «argumento undefined»** y tira en el segundo caso — la guarda
+va en `lib.mjs`, que es por donde cuentan todas.
+
+Y es la respuesta empírica a la pregunta de PASO 3: **el suelo de 1 no es una
+formalidad pendiente de apretar. Ya había firmado un verde sobre 1 de 13.**
+
+### 2ter · ⚠ Y el contrato también puede dar un ROJO FALSO: `lh-paginas`
+
+**El triaje de la tanda tenía tres cubos —verde legítimo · contrato bien
+disparado · defecto de migración— y le faltaba éste.** `lh-paginas` medía sus 35
+rutas, informaba de las 35 —«paginan de verdad: 21 · NO paginan: 14»— y
+terminaba con `❌ NO SE PUDO EVALUAR — 21 de 35 rutas`.
+
+El bucle tiene **dos salidas tempranas** y el `ev.ok()` estaba solo al final:
+
+| camino | qué deja | ¿es una medida? |
+|---|---|---|
+| `!dos.ok` | «este listado tiene **1 página**» | **sí** |
+| `alto > MAX` | «**NO PAGINA**»: sirve 200 para cualquier N y el canonical confirma la 1.ª. **Cuesta una petición MÁS** que las demás | **sí** |
+
+Los dos `continue` esquivaban la línea que la migración automática había puesto
+al final del cuerpo. Es la trampa de `c-muestra` **por el otro lado** —allí la
+`ev` quedaba fuera de alcance y el verde era falso; aquí el rojo lo es— y no es
+menos grave:
+
+> **Un rojo que nadie sabe explicar se acaba ignorando, y entonces la guarda ya
+> no guarda nada.** Un falso positivo repetido desactiva una alarma igual de
+> bien que un falso negativo, solo que más despacio.
+
+**Barrida la clase en las 48**: 8 sondas tienen un salto por delante de su
+`ev.ok()`, y revisadas una a una **solo ésta estaba mal**. En `a-censo`,
+`lh-censo` y `lh-tarjetas` el `continue` sigue a un **fallo real** (`fallos++`,
+HTTP ≠ 200) y no contar es lo correcto. El discriminador es simple y conviene
+tenerlo escrito:
+
+> **¿el camino que salta dejó un DATO o dejó un ERROR?** Si dejó un dato, cuenta.
+
+### 3 · Seis sondas congelaban FUERA de `medidas/`, con su evidencia dentro
+
+`cmp-sector` · `mono-cabecera` · `mono-detalle` · `mono-inline` · `mono-modulos`
+· `tree-todos` escribían en la **raíz de `scripts/qa/`**, mientras sus ficheros
+congelados —los que cita el README y están commiteados— viven en `medidas/`.
+
+**Consecuencia, y es la regla 5 de §sondas anulada en seis sitios:** la guarda de
+sobrescritura de `w()` compara contra el destino, y el destino no existía. O sea
+que **nunca disparaba**: cada corrida escribía limpio en la raíz y el congelado
+de `medidas/` quedaba intacto **sin compararse con nada**. Un «→ fichero
+escrito» idéntico al de una corrida que sí ha pasado la guarda.
+
+Lo destapó ver aparecer `scripts/qa/cmp-industria-1440.json` en `git status`.
+**Arreglado**: las seis apuntan a `medidas/`.
+
+### 4 · `w()` fecha en UTC, y eso adelanta el día a partir de las 19:00 locales
+
+Las salidas de esta tanda, tomadas el **2026-08-02 a las 19:16 −0500**, se
+congelaron como **`…-2026-08-03.json`**. `alLado()` usa
+`new Date().toISOString()`, que es UTC.
+
+No es cosmético en este proyecto:
+
+- la regla de método dice que **los deltas solo se comparan entre medidas del
+  mismo día**, y el nombre del fichero es de dónde se lee ese día;
+- la campaña C-QA6 exige que la ráfaga 3 caiga **en un tercer día**. Un fichero
+  fechado 08-03 tomado el 08-02 por la tarde **parece cumplirlo y no lo cumple**.
+
+**Arreglado**: fecha local.
+
+### 5 · 22 de 31 sondas que usan `openPage` IGNORAN el estado HTTP
+
+`lib.mjs` devuelve el estado desde hace tandas, y su propio comentario dice por
+qué: *«una 404 CARGA BIEN: `goto` no lanza, la página renderiza, y una sonda que
+no lo mire mide el 404 y publica deltas plausibles»*. **Nueve lo miran. Veintidós
+no** — entre ellas `clon-base`, la guarda que más se corre.
+
+Visto en vivo, y por accidente: `dos-rutas` con un slug inventado devolvió
+`docH 6035 → 900` y `null` en todas las anclas, y lo informó como **«el cascarón
+NO es el mismo»** en vez de «404». Dio rojo, sí, pero por el motivo equivocado —
+y un motivo equivocado en un informe es lo que se cita después.
+
+**Arreglado en el sitio común**, no en 22 ficheros: `openPage` **no cuenta como
+página evaluada** una respuesta ≥ 400 y lo grita. Como la mayoría declara
+`porPaginas: true`, el recuento se queda corto **y el contrato la pone roja
+sola**.
+
+> ⚠ **Lo que este arreglo NO cubre**, y por eso se escribe: las 6 sondas que
+> cuentan a mano (`a-behaviors` `a-cascaron` `a-miga` `c-bases` `clon-base`
+> `cmp-sector`) siguen pudiendo llamar a `ev.ok()` tras una 404. Para ellas el
+> aviso es la línea gritada, no el contrato.
+
+### 6 · Cuatro sondas sin `npm run qa:*`
+
+`mono-cabecera` · `mono-detalle` · `mono-inline` · `mono-modulos` — hay que
+lanzarlas `node scripts/qa/x.mjs`. El README dice que la forma canónica es
+`npm run qa:*` y da la razón (**prefijo estable** que se autoriza una vez; a pelo
+cada invocación pedía permiso otra vez, 360 reglas de un solo uso). **Fichado, no
+arreglado**: es una línea de `package.json` por sonda y no es de esta tanda.
