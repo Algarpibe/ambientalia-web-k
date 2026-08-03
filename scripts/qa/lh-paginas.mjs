@@ -95,6 +95,7 @@ for (const R of RUTAS) {
   if (!dos.ok) {
     salida.paginas[R.ruta] = { grupo: R.grupo, paginas: 1, segunLaVentana: R.segunLaVentana, status2: dos.status };
     console.log(`  ${R.ruta.padEnd(58)} 1 página`);
+    ev.ok(); // «tiene 1 página» es una MEDIDA, no una ruta que se quedó sin medir
     continue;
   }
   /* exponencial hasta el primer fallo */
@@ -124,6 +125,16 @@ for (const R of RUTAS) {
       `  ${R.ruta.padEnd(58)}  NO PAGINA  (200 hasta ${MAX};` +
         ` canonical ${mismaPagina ? "→ la misma página ✓" : `= ${can} ⚠ NO confirma`})`,
     );
+    /* ⚠ «NO PAGINA» es un RESULTADO, no una ruta sin medir — de hecho cuesta una
+     * petición más que las otras (la del canonical). La migración al contrato
+     * puso el `ev.ok()` al final del cuerpo del bucle y este `continue` lo
+     * saltaba, así que las 14 que no paginan no se contaban: la sonda medía las
+     * 35, informaba de las 35, y salía con «NO SE PUDO EVALUAR — 21 de 35».
+     *
+     * Es la trampa de `c-muestra` por el otro lado: allí la `ev` quedaba fuera
+     * de alcance y el verde era falso; aquí el ROJO es falso. Y un rojo que
+     * nadie sabe explicar se acaba ignorando, que es como se pierde una guarda. */
+    ev.ok();
     continue;
   }
   /* binaria en (bajo, alto) */
