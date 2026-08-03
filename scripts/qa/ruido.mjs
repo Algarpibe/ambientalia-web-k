@@ -420,9 +420,34 @@ if (!CAMPANA) {
    * porque las ráfagas 1 y 2 de cqa6 se escribieron con sello UTC y las nuevas
    * son locales: restarlas como si fueran lo mismo da 5 h de error. */
   const ts = new Date().toISOString();
+  /**
+   * ⚠ **Y la ESCALA se DECLARA, no se deduce del nombre.** Un sello sin escala
+   * lo lee cada quien con la suya, y ahí es donde el fichero deja de poder
+   * auditarse: las ráfagas 1 y 2 de cqa6 se archivaron con sello **UTC**, se
+   * re-etiquetaron a local el 2026-08-03, y mientras no llevaron este campo la
+   * única forma de saber en qué escala estaba un nombre era **mirar el `mtime`
+   * del fichero** — un dato que vive fuera de la medida y que un `git clone`
+   * reescribe. Una campaña cuyo criterio es «≥2 h de separación» no puede tener
+   * su eje de tiempo en los metadatos del sistema de ficheros.
+   */
+  const off = new Date().getTimezoneOffset(); // 300 ⇒ −05:00
+  const desfaseUTC =
+    (off <= 0 ? "+" : "-") +
+    String(Math.floor(Math.abs(off) / 60)).padStart(2, "0") +
+    ":" +
+    String(Math.abs(off) % 60).padStart(2, "0");
   const dir = `medidas/campana/${CAMPANA}`;
   w(`${dir}/rafaga-${marca}.json`, {
-    meta: { campana: CAMPANA, sello: marca, ts, corridas: CORRIDAS, rutas: PAGINAS.map(([n]) => n), anchos: [1440, 390] },
+    meta: {
+      campana: CAMPANA,
+      sello: marca,
+      ts,
+      /** `sello` (y por tanto el NOMBRE y el DÍA) es local; `ts` es absoluto. */
+      escala: { sello: "local", desfaseUTC, ts: "UTC" },
+      corridas: CORRIDAS,
+      rutas: PAGINAS.map(([n]) => n),
+      anchos: [1440, 390],
+    },
     resumen,
     crudo,
   });

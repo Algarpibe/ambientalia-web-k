@@ -2608,7 +2608,9 @@ que acumulara en un solo fichero pelearía con la guarda de `w()` cada sesión.
 
 ### Estado: 1 de 3 ráfagas · faltan 2 y ≥1 día
 
-**Ráfaga 1 — 2026-07-31T03:14Z** (`campana/cqa6/rafaga-2026-07-31T03-14-57.json`):
+**Ráfaga 1 — 2026-07-30 22:14:57 local** (`campana/cqa6/rafaga-2026-07-30T22-14-57.json`;
+re-etiquetada el 2026-08-03 — se archivó como `rafaga-2026-07-31T03-14-57.json`,
+sello **UTC**, que es **el mismo instante**):
 
 | combinación | `h1` | posicional |
 |---|---|---|
@@ -3999,10 +4001,15 @@ vacío falle** en vez de devolver vacío, y que un clon que no llega a levantar
 
 ---
 
-## C-QA6 · RÁFAGA 2 de la campaña de ruido (2026-08-02, 17:33)
+## C-QA6 · RÁFAGA 2 de la campaña de ruido (2026-08-02, 12:33 local)
 
-Congelada en `medidas/campana/cqa6/rafaga-2026-08-02T17-33-41.json`. Mismas 3
+Congelada en `medidas/campana/cqa6/rafaga-2026-08-02T12-33-41.json`. Mismas 3
 rutas y mismos 2 anchos que la ráfaga 1, que es la condición para comparar.
+
+> **Re-etiquetada el 2026-08-03.** Se archivó como
+> `rafaga-2026-08-02T17-33-41.json`, con sello **UTC**; «17:33 UTC» y «12:33
+> local» son **el mismo instante**. El contenido medido no se tocó — ver
+> §C-QA6 · CIERRE.
 
 ### Estado de la campaña: **2 de 3 ráfagas · 2 días · ABIERTA**
 
@@ -4062,9 +4069,9 @@ comprobar que sabe dar `S` en alguna página.
 
 ### Cuándo toca la ráfaga 3
 
-**A partir del 2026-08-03**, con ≥2 h de separación de la última (17:33 del
-2026-08-02) y **preferiblemente en un tercer día**, que da un día más de los dos
-que el protocolo exige. Cierra la campaña y fija el suelo de estas 3 rutas.
+**A partir del 2026-08-03**, con ≥2 h de separación de la última (**12:33 local**
+del 2026-08-02) y **preferiblemente en un tercer día**, que da un día más de los
+dos que el protocolo exige. Cierra la campaña y fija el suelo de estas 3 rutas.
 
 ---
 

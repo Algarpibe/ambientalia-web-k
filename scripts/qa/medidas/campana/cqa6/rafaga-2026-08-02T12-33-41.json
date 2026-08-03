@@ -1,7 +1,26 @@
 {
   "meta": {
     "campana": "cqa6",
-    "sello": "2026-08-02T17-33-41",
+    "sello": "2026-08-02T12-33-41",
+    "ts": "2026-08-02T17:33:41.000Z",
+    "escala": {
+      "sello": "local",
+      "desfaseUTC": "-05:00",
+      "ts": "UTC"
+    },
+    "reetiquetado": {
+      "fecha": "2026-08-03",
+      "queEs": "RE-ETIQUETADO, no re-medición: el contenido medido (resumen y crudo) NO se ha tocado. Solo cambian el nombre del fichero y este bloque meta.",
+      "nombreAnterior": "rafaga-2026-08-02T17-33-41.json",
+      "selloAnterior": "2026-08-02T17-33-41",
+      "escalaAnterior": "UTC",
+      "porQue": "El criterio de la campana —≥2 h de separacion y ≥2 DIAS distintos— se comprueba leyendo estos nombres. Con la maquina en −05:00, un sello UTC parte la misma tarde en dos dias y da el criterio por cumplido sin estarlo. La rafaga 3 sale con sello local, asi que dejar estas dos en UTC habria hecho leer el veredicto de separacion sobre DOS ESCALAS MEZCLADAS.",
+      "fuentes": [
+        "mtime del fichero en disco: 2026-08-02 12:33 local",
+        "fecha del commit a089ba2 que lo congelo: 2026-08-02 13:11:16 -0500"
+      ],
+      "citadoComo": "PENDIENTES-QA.md, HANDOFF.md y TRASPASO-AGENTE.md lo citaban como «17:33 del 2026-08-02», que es el MISMO INSTANTE en la otra escala."
+    },
     "corridas": 3,
     "rutas": [
       "software-de-medi",

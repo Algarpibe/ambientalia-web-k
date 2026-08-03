@@ -305,7 +305,7 @@ nada con que atribuirlo, y **una condición binaria no se explica midiendo más
 veces la misma magnitud.**
 
 ```bash
-# desde el 2026-08-03, ≥2 h de la última (17:33 del 2026-08-02), mejor en un 3.er día
+# desde el 2026-08-03, ≥2 h de la última (12:33 local del 2026-08-02), mejor en un 3.er día
 RUTAS=/software-de-medicion-calidad-del-aire,/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar,/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas \
   CAMPANA=cqa6 npm run qa:ruido -- 3
 ```
@@ -518,8 +518,8 @@ interviene»**: es un detector que **nunca ha discriminado**. Por la regla del
 cero/pleno se anota como **sin validar**; antes de concluir con él hay que
 comprobar que sabe dar `S` en alguna página.
 
-**Ráfaga 3: a partir del 2026-08-03**, ≥2 h de la última (17:33 del 2026-08-02) y
-**mejor en un tercer día**. Cierra la campaña.
+**Ráfaga 3: a partir del 2026-08-03**, ≥2 h de la última (12:33 local del
+2026-08-02) y **mejor en un tercer día**. Cierra la campaña.
 
 ## 3 · CLASE MAYOR fichada, sin tocar: el hueco de la barra en 31 rutas
 
@@ -1851,7 +1851,7 @@ Verificación de esta tanda: `qa:enlaces` limpia · `qa:slugs` limpia · `qa:lib
 >
 > | ráfaga | cuándo | resultado |
 > |---|---|---|
-> | **1 ✅** | 2026-07-31T03:14Z | **±32.28** en el `h1` de las **tres** rutas a 1440 |
+> | **1 ✅** | 2026-07-30 22:14 local | **±32.28** en el `h1` de las **tres** rutas a 1440 |
 > | **2 ⏳** | **otro día**, ≥2 h de separación | pendiente |
 > | **3 ⏳** | **otro día** | pendiente |
 >

@@ -531,7 +531,8 @@ guarda de `w()` protege de que una sonda pise su salida, no de un borrado a mano
 
 ### Acción 1 (antes 2) — Ráfaga 3 de la campaña C-QA6 (tiene fecha)
 
-Requiere **≥2 h desde la última** (17:33 del 2026-08-02) **y preferentemente un
+Requiere **≥2 h desde la última** (**12:33 local** del 2026-08-02 — se archivó
+con sello UTC como «17:33», que es el mismo instante) **y preferentemente un
 tercer día distinto** (2026-08-03). Comando exacto:
 
 ```bash
