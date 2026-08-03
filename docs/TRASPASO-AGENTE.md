@@ -75,7 +75,7 @@ npm run lint
 npm run typecheck
 npm run check                # lint + typecheck + build + qa:slugs  ← antes de commitear
 npm i --no-save puppeteer-core   # OBLIGATORIO antes de correr sondas (ver §5)
-npm run qa:lib               # test de lib.mjs y del contrato de sondas (42/42 en la última verificación)
+npm run qa:lib               # test de lib.mjs y del contrato de sondas (el total lo cuenta el test)
 ```
 
 Las sondas se invocan siempre por `npm run qa:*`. El catálogo completo está en
@@ -135,16 +135,17 @@ software.ts  taxonomia-sectores.ts  testimonials.ts  utils.ts
 - `home-carrusel-sectores.ts` — **NO confundir con `sectores.ts`**: es el
   carrusel de la home (se llamaba `sectors.ts` y se renombró por eso).
 
-### `scripts/qa/` — 50 ficheros `.mjs`
+### `scripts/qa/` — 51 ficheros `.mjs`
 
 - `lib.mjs` — **el punto común**. Ahí viven todas las guardas estructurales
   (`Evaluadas`, `Censo`, `w()`, `openPage`, `iniciarClon()`, `env()`/`envRuta()`/
   `envRutas()`). **Cualquier guarda nueva va aquí, nunca sonda a sonda.**
-- `lib.test.mjs` — `npm run qa:lib`, **42/42**. Prueba el contrato y hace un
+- `lib.test.mjs` — `npm run qa:lib`, **69/69** (el total lo cuenta el test, no una constante). Prueba el contrato y hace un
   `--check` de compilación por sonda.
-- `medidas/` — **303 ficheros JSON** de salida congelada. Son la cadena de
+- `medidas/` — **344 ficheros JSON** de salida congelada. Son la cadena de
   custodia del proyecto: toda cifra citada en un doc tiene que tener su fichero.
-- `medidas/campana/cqa6/` — ráfagas de la campaña de ruido.
+- `medidas/campana/cqa6/` — ráfagas de la campaña de ruido (CERRADA 2026-08-03).
+- `medidas/campana/cqa6-390/` — campaña ABIERTA del ancho 390: 1 de 3 ráfagas.
 
 Sondas principales (el resto en `package.json`):
 
