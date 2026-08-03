@@ -1,3 +1,139 @@
+# HANDOFF — la precondición 1, de frase a número: C = 1, y es `productos`
+
+> ⚠ **Tanda 2026-08-03 (20.ª).** Cinco pasos. Tanda de **LECTURA**: no se midió,
+> no se construyó, no se abrió el navegador, no se tocó `src/` ni `scripts/`.
+> Pre-registro commiteado **antes** de clasificar (`cf25baf`).
+
+## 0 · El titular
+
+> **CUBO C = 1 · INCÓGNITAS = 2 acotadas.** El ítem de C **no es ninguno de los
+> candidatos que se sospechaban**: es **`productos`**, una colección que **dos
+> colecciones ya decididas apuntan como destino de relación** y que **no está
+> modelada en ninguna parte del esquema**.
+>
+> **F2-1 no congela todavía** — y lo que lo cierra es **recon, no build**.
+
+## 1 · La reformulación, que es la mitad del entregable
+
+«Biblioteca cerrada» es binaria; **su razón escrita no lo es**. Distingue dos
+cosas que la frase junta y **solo una es cara**:
+
+| | coste | ¿es lo que teme? |
+|---|---|---|
+| **AÑADIR** una colección o block nuevos | barato | **NO** |
+| **CAMBIAR** una colección o block **ya poblados** | caro (§1.5b R3) | **SÍ** |
+
+> **La pregunta que gobierna F2-1: ¿queda algo sin construir que pueda FORZAR un
+> campo o una variante dentro de una colección o un block YA DECIDIDOS?**
+> **A** lee sin cambiar · **B** añade lo suyo · **C** fuerza algo decidido.
+> Solo **C** bloquea, y una **INCÓGNITA no cuenta como «no bloquea»**.
+
+## 2 · La sospecha pre-registrada FALLÓ, y falló limpio
+
+El pre-registro apostó por las **variantes de tarjeta de LISTADO-B** como el
+candidato más probable a C. **No lo son.** El contrato que exigen ya está escrito
+en §2c desde LH-2 —`fechaPublicacion`, `imagenDestacada` opcional, `extracto`, y
+**las TRES taxonomías**, que era *«lo más caro de re-migrar si falta»*—, y
+`EntradaBlog` los tiene todos.
+
+> **El mecanismo que lo evitó no fue la suerte: LH-2 se hizo ANTES de construir
+> el grupo A, exactamente por esto. La precondición ya funcionó una vez.**
+
+Se anota como **predicción fallada**, no se reescribe.
+
+## 3 · El segundo objeto —las definiciones compartidas— está contestado por MEDICIÓN
+
+Era el que el pre-registro declaró que se olvida. `grupo-D/RECON.md` §5 y §7:
+**PD1 «nada obligó a tocar `MonoRitmo`»** y **PD2 texto/imagen/botón entran**.
+
+> `articulos-kb` **consume** las definiciones compartidas **sin cambiarlas** y
+> **añade** su propia unión (`blurb`/`gallery`) ⇒ **cubo B**.
+
+Y la cola larga tampoco las toca: §2d.1 ya decidió que `video`/`toggle` **no**
+entran en `MonoSeccion[]`.
+
+## 4 · El ítem de C, y por qué el enunciado viejo era CIEGO a él
+
+> **`productos` se cita DOS veces en `ESQUEMA-CMS.md` y las dos como destino de
+> relación** —`sectores.soluciones` §1.4 y `casos.soluciones` §2b— **y no tiene
+> ni un campo escrito.** Sus **20 instancias sin medir** (17 cartuchos + 3
+> fichas) pueden decidir si es **una** colección o **dos**, y eso cambiaría un
+> campo decidido en **dos** colecciones.
+
+**Faltan CINCO arquetipos construidos** del esquema: HOME · **PRODUCTO** ·
+**CATÁLOGO** · SOFTWARE · API. El §1 lo dice en su propio título desde el primer
+día («los **dos** content types medidos») y nunca se completó.
+
+> **«Biblioteca cerrada» pregunta si la página está CONSTRUIDA — y PRODUCTO lo
+> está, desde julio. Lo que falta no es la página: es su CONTENT TYPE. Un
+> criterio que mide construcción no puede ver un hueco de modelado.**
+
+**Solo uno de los cinco bloquea**, y por una razón concreta: HOME, SOFTWARE y API
+son singleton y **nada decidido las apunta** ⇒ B. PRODUCTO/CATÁLOGO tienen la
+relación encima ⇒ **C**.
+
+## 5 · Una corrección al criterio, pagada por este caso
+
+El pre-registro declaró **dos** objetos (campos de colección · definiciones de
+block compartidas). C llegó por un **tercero**:
+
+> **El DESTINO DE UNA RELACIÓN.** `soluciones` es un campo decidido, pero lo que
+> la forma nueva cambia no es *ese campo*: es **la identidad de la colección a la
+> que apunta**. Se escribe igual y significa otra cosa.
+
+Queda cubierto por la letra del criterio, pero **no lo sugería**. Para el
+siguiente uso: **al clasificar, recorre también los destinos de relación y
+pregúntate si la forma nueva puede PARTIR el destino.**
+
+## 6 · LO SIGUIENTE, nombrado
+
+**AHORA · recon de las 20 dudosas del CPT `solutions`** (17 `cartuchos-inteligentes/*`
++ 3 fichas). El censo ya dijo lo que cuesta: *«recon, no build: un barrido de
+topología por página y comparar. **Barato**»*. Sale con **una colección o dos**.
+
+**DESPUÉS · escribir el content type de `productos`** en `ESQUEMA-CMS.md` §2e.
+
+**ENTONCES · F2-1** congela y arranca (CMS-0f ya decidida; precondición 2 ya
+cerrada).
+
+⚠ **Lo que NO vale: modelar `productos` desde la única instancia construida.** Es
+la FAMILIA DE CALIBRACIÓN, y se pagó el mismo día: con **cuatro** instancias de
+SECTOR, el `anchoPct: 90` vivía en **una sola**.
+
+## 7 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — ≥2026-08-04, OBLIGATORIO otro día.** Hoy sigue
+   siendo 08-03: no se pudo lanzar. Cierra el −30 de EDAR@390, **SIN PROBAR**.
+   Con ella en vuelo: **nada de `check` ni `build`**.
+2. **Recon de las 20 dudosas** → `productos` → **F2-1**.
+3. **Columna y módulo CIEGOS en el lado del clon** — `clase-rango` declara **26
+   celdas SIN VEREDICTO** porque el clon solo marca la fila (`data-fila`). Se
+   cierra con **`data-col` / `data-mod`**; los caminos **ya están puestos** en la
+   sonda. Hasta entonces, sus `Δ0` son **solo del nivel de fila**, 65 pares.
+4. **Los 6 SIN PROBAR abiertos** — `LH-SP3` (qué ordena cada listado) · `LH-SP8`
+   (censo de `/es/categoria/*`) · `LH-SP9` (entradas/página de L3) · `LH-SP10`
+   (¿algún extracto es manual?) · `A-SP14` · `A-SP15`. **`LH-SP10` es de F2-2, no
+   de F2-1**: el campo ya está declarado; lo que decide es si el importador
+   **pierde contenido en silencio** derivándolos todos.
+5. **`Breadcrumb max-w-[350px]` — 28 rutas**, ya cobrado en **−33.25**. El más
+   urgente de los 21 que no bloquean.
+6. **Bloque A** (CL-1 `MapaProyectos` +123.84/+33.55) y **Bloque B**
+   (`articulos-kb`).
+7. **Las 14 páginas sueltas** de la cola larga y la **barra de navegación**
+   (CLASE MAYOR, 31 rutas, defecto de RANGO).
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No leer «C = 1» como «casi listo».** Ese 1 tiene **20 páginas sin medir**
+  debajo y decide la forma de una colección que dos ya apuntan.
+- **No tratar las incógnitas como cubo B.** Son **2 acotadas** (LH-SP8 y las 14
+  sueltas): su peor caso es B, pero eso es una **cota**, no una clasificación.
+- **No dar el grupo A por «lo caro» de la precondición.** Su contrato se cerró en
+  LH-2 y esta tanda lo verificó campo a campo: **cubo A**.
+- **No correr `check` ni `build` mañana con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — CMS-0f decidida: dos apps en monorepo, y la infraestructura queda sin decisiones abiertas
 
 > ⚠ **Tanda 2026-08-03 (19.ª).** Cinco pasos, en Fable. Tanda de **DECISIÓN

@@ -14,16 +14,68 @@
 **F2-1 no arranca sin estas dos.** No son burocracia: son la diferencia entre
 migrar una vez y migrar dos.
 
-1. **Biblioteca cerrada.** Los hubs, el grupo D, el grupo A, el grupo B y la
-   cola larga, **decididos** — construidos o descartados con acta
-   (`docs/research/CENSO-ARQUETIPOS.md` es el censo; hoy la biblioteca va por
-   el ~30 % de formas). El esquema se congela con el último arquetipo: abrir
-   colecciones antes es re-migrar, y re-migrar con contenido dentro es lo caro.
+1. ~~**Biblioteca cerrada.**~~ ⚠ **REFORMULADA con número el 2026-08-03** — ver
+   abajo. Enunciado anterior: *«los hubs, el grupo D, el grupo A, el grupo B y
+   la cola larga, decididos … el esquema se congela con el último arquetipo:
+   abrir colecciones antes es re-migrar, y re-migrar con contenido dentro es lo
+   caro»*. La **razón** sigue intacta y es la que manda; **el enunciado era
+   binario y la razón no lo es**.
 2. ~~**Tanda CLASE hecha**~~ ⚠ **REFORMULADA con número el 2026-08-03** — ver
    abajo. Enunciado anterior: *«la tanda CLASE hecha (S9–S11), porque un CMS no
    da un contenido, da cualquiera»*. Sigue siendo cierto **y era demasiado
    grueso como precondición**: exigía 31 arreglos cuando el esquema solo depende
    de 10, y de esos 10 depende **por una medición, no por un arreglo**.
+
+### ⚠ Precondición 1, REFORMULADA — de «biblioteca cerrada» a un número
+
+Acta: `docs/research/precondicion-1/` (`PRE-REGISTRO.md` commiteado antes de
+clasificar, `cf25baf`; `DECISION.md` con el veredicto).
+
+**Por qué el enunciado viejo no servía.** Su propia razón distingue dos cosas
+que la frase junta, y **solo una es cara**:
+
+| | coste | ¿es lo que la precondición teme? |
+|---|---|---|
+| **AÑADIR** una colección o un block nuevos después | **barato** — no toca lo poblado | **NO** |
+| **CAMBIAR** una colección o un block **ya poblados** | **caro** (§1.5b Razón 3) | **SÍ** |
+
+> **La pregunta que de verdad gobierna F2-1: ¿QUEDA ALGO SIN CONSTRUIR QUE PUEDA
+> FORZAR UN CAMPO O UNA VARIANTE DENTRO DE UNA COLECCIÓN O UN BLOCK YA
+> DECIDIDOS?** Tres cubos: **A** lee sin cambiar · **B** añade lo suyo · **C**
+> fuerza algo decidido. Solo **C** bloquea. Una **INCÓGNITA no cuenta como «no
+> bloquea»**.
+
+**El veredicto (2026-08-03): C = 1 · INCÓGNITAS = 2 acotadas.**
+
+| cubo | qué cayó ahí |
+|---|---|
+| **A** | L1 (LISTADO-B y sus 3 variantes de tarjeta) · L2 · L3 · L5. **El contrato que exigen ya está escrito** en §2c desde LH-2 — la sospecha pre-registrada de que las tarjetas serían C **falló** |
+| **B** | `articulos-kb` (consume las definiciones compartidas **sin cambiarlas** — medido: PD1/PD2 de grupo D) · los 13 hubs de cola larga (§2d.1 ya decidió que `video`/`toggle` **no** entran en `MonoSeccion[]`) · HOME · SOFTWARE · API |
+| **C = 1** | **`productos`** (CPT `solutions`) |
+| **incógnitas acotadas** | LH-SP8 (`/es/categoria/*`) · las 14 páginas sueltas de la cola larga |
+
+#### El ítem de C, y por qué el enunciado viejo era ciego a él
+
+> **`productos` no está modelada en ninguna parte de `ESQUEMA-CMS.md`** — se cita
+> **dos veces y las dos como destino de relación** (`sectores.soluciones` §1.4 ·
+> `casos.soluciones` §2b). Y sus **20 instancias sin medir** (17 cartuchos + 3
+> fichas) pueden decidir si es **una** colección o **dos** — lo que cambiaría un
+> campo decidido en **dos** colecciones.
+
+**«Biblioteca cerrada» pregunta si la página está CONSTRUIDA, y PRODUCTO lo
+está** (clonado en julio). Lo que falta no es la página: **es su content type.**
+Un enunciado que mide construcción no puede ver un hueco de modelado.
+
+**Consecuencia: F2-1 NO congela todavía.** Lo que lo cierra está acotado y el
+censo ya lo dijo — *«resolverlas es **recon, no build** … barato»*:
+
+1. **recon de las 20 dudosas** del CPT `solutions` → ¿una colección o dos?
+2. **escribir el content type de `productos`** en `ESQUEMA-CMS.md`;
+3. **entonces F2-1** congela y arranca.
+
+⚠ **Lo que NO vale: modelar `productos` desde la única instancia construida.** Es
+la FAMILIA DE CALIBRACIÓN, y esta semana se pagó — con **cuatro** instancias de
+SECTOR, el `anchoPct: 90` vivía en **una sola**.
 
 ### ⚠ Precondición 2, REFORMULADA — de «tanda CLASE hecha» a un número
 
@@ -88,8 +140,10 @@ medición destapó —`BeneficiosAplicaciones` (cableado con el valor correcto) 
 **Bloque A**, después de F2-1. No tocan el esquema: el campo que necesitan es el
 que se acaba de declarar.
 
-**La precondición 1 sigue abierta** (biblioteca: `articulos-kb`, listados, cola
-larga) y es hoy **la única de las dos** que gobierna el arranque.
+**La precondición 1 es hoy la única de las dos que gobierna el arranque** — y
+desde el 2026-08-03 ya no es «la biblioteca»: es **un ítem nombrado**,
+`productos` (arriba). `articulos-kb`, los listados y la cola larga **quedaron en
+cubo B**: se pueden construir después de F2-1 sin re-migrar.
 
 ---
 

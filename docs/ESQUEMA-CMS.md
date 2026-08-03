@@ -875,6 +875,49 @@ solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
 hipótesis del grupo D; la hipótesis cayó, así que la cola larga necesitará su
 propia decisión de modelo cuando toque.
 
+## ⚠ 2e · EL AGUJERO: `productos` no está modelada, y dos colecciones la apuntan (2026-08-03)
+
+Acta: `docs/research/precondicion-1/DECISION.md` (pre-registro `cf25baf`,
+anterior a clasificar). Salió de reformular la **precondición 1 de F2-1** de
+frase binaria a la pregunta que de verdad gobierna: *¿queda algo sin construir
+que pueda **forzar** un campo dentro de una colección ya decidida?*
+
+> **`productos` se cita DOS veces en este documento y las dos como DESTINO DE
+> RELACIÓN. No tiene ni un campo escrito en ninguna parte.**
+
+| dónde | qué dice |
+|---|---|
+| **§1.4 · SECTOR** | `soluciones` → **relación a la colección de productos** |
+| **§2b · grupo C** | `soluciones` → **relación 0..n a la colección de productos (la del §1.4)** |
+
+**Los content types escritos son seis** —§1.4 SECTOR · §1.5 MONOGRÁFICO · §2
+grupo A · §2b grupo C · §2c términos · §2d.1 `articulos-kb`— y **faltan cinco
+arquetipos CONSTRUIDOS**: HOME · **PRODUCTO** · **CATÁLOGO** · SOFTWARE · API.
+El §1 lo dice desde el primer día en su propio título («los **dos** content
+types medidos») y nunca se completó.
+
+**El reparto no es uniforme, y es lo que hace que solo uno bloquee:**
+
+| arquetipo | veredicto | por qué |
+|---|---|---|
+| **PRODUCTO / CATÁLOGO** (CPT `solutions`) | **BLOQUEA F2-1** | hay **relación decidida apuntándolo** desde dos colecciones, y **20 instancias sin medir** (17 cartuchos + 3 fichas) que pueden **partirlo en dos colecciones** — con lo que el campo `soluciones` cambiaría en las dos |
+| HOME · SOFTWARE · API | **no bloquea** | páginas singleton; **nada decidido las apunta**. Modelarlas después es **añadir**, no cambiar |
+
+**Por qué no se vio antes, y es la lección:** la precondición decía «biblioteca
+cerrada», y **PRODUCTO está construido** desde julio. Lo que falta no es la
+página: es su content type. **Un criterio que mide construcción no puede ver un
+hueco de modelado.**
+
+**Y por qué no vale modelarlo desde la instancia que hay** —`CENSO-ARQUETIPOS.md`
+§2 ya lo escribió—: *«los otros seis tienen **una instancia cada uno**, así que
+de ellos todavía no se sabe qué es plantilla y qué es campo»*. Es la FAMILIA DE
+CALIBRACIÓN, y **`anchoPct` la cobró el mismo día**: con **cuatro** instancias de
+SECTOR, el `90 %` vivía en **una sola**.
+
+**Lo que lo cierra, acotado:** recon de las 20 dudosas (*«recon, no build …
+barato»*, censo §3) → decidir si `productos` es una o dos colecciones → escribir
+el content type aquí → F2-1 congela.
+
 ## 3 · El campo rico: whitelist de Lexical y transformaciones de migración
 
 **Son DOS listas distintas y conviene no mezclarlas:** lo que el editor permite
@@ -1461,6 +1504,7 @@ corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 
 | # | decisión | bloquea |
 |---|---|---|
+| **§2e** | **`productos`: ¿UNA colección o DOS?** — 20 instancias del CPT `solutions` sin medir, y dos colecciones ya la apuntan | **F2-1** — es el único ítem del cubo C de la precondición 1 |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
 
@@ -1484,9 +1528,11 @@ confirmó el §4) y CMS-1 (que entra al §6 como resuelta).
 **Cerrada el 2026-08-03: CMS-0f** (dos apps en monorepo + Local API por paquete
 compartido, §CMS-0f) — **la última decisión de infraestructura que quedaba**.
 
-De las dos que quedan, **ninguna bloquea instalar Payload ni construir C-3**:
-una es de contenido (cómo se modela la tabla) y una de política (qué hosts de
-embebido se admiten). El camino de infraestructura está despejado.
+De las tres que quedan, **ninguna bloquea instalar Payload ni construir C-3**:
+una es de contenido (cómo se modela la tabla), una de política (qué hosts de
+embebido se admiten) y la tercera —**§2e, `productos`**— bloquea **congelar el
+esquema**, no la instalación. El camino de infraestructura está despejado; el de
+modelado tiene un ítem con nombre.
 
 ⚠ **Y dos cosas que el censo de embebidos cambió, no añadió:** el nodo-embed pasa
 a llevar **URL en vez de `enum` de proveedor** (§3.3b: 18 hosts, 12 de ellos una

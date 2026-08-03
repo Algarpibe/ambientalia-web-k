@@ -439,9 +439,12 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 1. **`CLAUDE.md` §COBERTURA dice «el ancho del cuerpo está a 0/31 […] de las 41
    sondas solo 9 abren los dos lados».** Está **desactualizado**: el eje
    horizontal se midió (164/181 filas) y hay ~48 sondas. Corregir al pasar por ahí.
-2. **`docs/PLAN-FASE-2.md` §Precondiciones dice «hoy la biblioteca va por el
-   ~30 % de formas».** Desactualizado: son **12 de 23 formas**. Verificar contra
-   `docs/research/CENSO-ARQUETIPOS.md` antes de citarlo.
+2. ~~**`docs/PLAN-FASE-2.md` §Precondiciones dice «hoy la biblioteca va por el
+   ~30 % de formas».**~~ **RESUELTA (2026-08-03): la frase ya no existe.** La
+   precondición 1 se reformuló de «biblioteca cerrada» a un número —el cubo C de
+   `docs/research/precondicion-1/DECISION.md`— y con ella desapareció el
+   porcentaje. **El % de biblioteca ya no es un criterio de arranque de F2-1**:
+   lo es el cubo C, hoy **= 1** (`productos`).
 3. **`scripts/qa/ruido.mjs` línea 43** documenta `ETIQUETA=cqa6` en un comentario,
    pero el código lee **`CAMPANA`** (línea 407). Usa `CAMPANA`.
 4. ~~**Recuento de sondas**: el HANDOFF declara **47 migradas** y hay 48.~~
@@ -643,11 +646,18 @@ antes de fiarte del veredicto de separación.**
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
 5. **Construir LISTADO-B + L2/L3 + el índice de casos** según
    `docs/research/listados-hubs/MODELO.md`.
-6. **Mini-recon de la cola larga y de las 20 dudosas del CPT `solutions`**;
-   decidir qué merece arquetipo y qué se excluye **con acta escrita**.
-7. **Tanda CLASE** — precondición de F2-1.
+6. ⚠ **Recon de las 20 dudosas del CPT `solutions`** — **subió a PRECONDICIÓN
+   REAL de F2-1** (2026-08-03): son el único ítem del **cubo C**
+   (`docs/research/precondicion-1/DECISION.md`). Deciden si **`productos`** es
+   una colección o dos, y **dos colecciones decididas la apuntan**
+   (`sectores.soluciones` · `casos.soluciones`). La cola larga, en cambio, quedó
+   en **cubo B**: no bloquea. Ver `ESQUEMA-CMS.md` **§2e**.
+7. ~~**Tanda CLASE** — precondición de F2-1.~~ **CERRADA (2026-08-03)**: la
+   precondición 2 es hoy **una línea de esquema** (`anchoPct` en SECTOR), no 31
+   arreglos. Ver `PLAN-FASE-2.md` §Precondición 2.
 8. **F2-1** (`docs/PLAN-FASE-2.md`) — CMS-0f **ya decidida** (2026-08-03, §CMS-0f):
    su primera tarea es el layout del monorepo bajo la restricción del acta.
+   **Arranca después del punto 6**, no antes.
 
 ---
 
