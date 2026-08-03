@@ -1,3 +1,124 @@
+# HANDOFF — CMS-0f decidida: dos apps en monorepo, y la infraestructura queda sin decisiones abiertas
+
+> ⚠ **Tanda 2026-08-03 (19.ª).** Cinco pasos, en Fable. Tanda de **DECISIÓN
+> PURA**: no se midió nada, no se construyó nada, no se tocó `src/` ni
+> `scripts/`. El entregable es un acta — la última decisión de infraestructura
+> del esquema, con su criterio escrito antes de la elección.
+
+## 0 · El titular
+
+> **CMS-0f: DOS APPS en el mismo monorepo** —el clon intacto + una app CMS
+> (admin de Payload), misma DB— **y la lectura en build por LOCAL API
+> COMPARTIDA** (paquete del monorepo con config + tipos). **El endpoint interno
+> queda descartado. Con esto el §CMS-0 no tiene ya ninguna decisión abierta**:
+> las dos que quedan en §7 (tabla §3.4, allowlist §3.3b) son de contenido y de
+> política, y ninguna bloquea instalar Payload.
+
+Acta completa: `ESQUEMA-CMS.md` **§CMS-0f** (es DECISIÓN, no fase — vive con
+CMS-0b/0c/0d/0e). `PLAN-FASE-2.md` §F2-1 ya no dice «se decide al arrancar».
+
+## 1 · El criterio, y se escribió ANTES de elegir
+
+Ninguna medida arbitra esto — las dos opciones funcionan. Cuando ninguna medida
+arbitra, **decide la asimetría de deshacer** (la maquinaria de §1.5b Razón 3):
+
+| dirección | qué cuesta |
+|---|---|
+| **única → dos** (separar después) | **desenredar el artefacto verificado** — extraer config, rutas y dependencias de un `package.json`/`next.config` entrelazados, con re-aceptación completa a umbral cero sobre el manifest de ese momento (~220 rutas tras el grupo A, no 31) — y llega **forzado en el momento caro**: cuando el churn de Payload ya duele, o sea después de F2-3, con editores dentro |
+| **dos → una** (colapsar después) | las piezas ya están **aisladas por construcción**: montar las rutas del admin y fusionar dependencias. **Mecánico, electivo**, una corrida de re-aceptación, sin mover datos ni esquema |
+
+> **Enredar→desenredar es caro y forzado; aislado→fusionar es mecánico y
+> electivo.** Esa asimetría toma la decisión — coincide con la recomendación del
+> evaluador independiente, pero lo que decide es el criterio.
+
+## 2 · La frontera de la lectura, cerrada en la misma acta
+
+Elegir «dos apps» sin cerrar por dónde lee el build era dejarla a medias. Cerrado:
+
+> **Local API por paquete compartido del monorepo** — config de colecciones +
+> tipos generados + defaults, **nada de componentes de admin**. La app de render
+> gana `payload` y el adaptador de Postgres como dependencias **de build**
+> (CMS-0c: la DB es dependencia del build, no del runtime) y **no emite jamás
+> `/admin` ni `/api`**.
+
+**Por qué no el endpoint interno**, en tres: (1) **reabriría CMS-0**, que dice
+literal *«leen de la DB sin HTTP»*; (2) convierte una dependencia de biblioteca
+en una de **servicio** en build — el build del clon fallaría con la app CMS
+caída, y mete HTTP donde la aceptación exige salida determinista (CMS-0c,
+consecuencia 3); (3) **no ahorra el paquete compartido** — con endpoint también
+habría que compartir `payload-types.ts`; solo añade HTTP encima.
+
+## 3 · Lo que la decisión protege, con la vara ya medida
+
+El activo: **31 rutas a Δ0 con línea base congelada** y la aceptación de F2-3 a
+**umbral CERO sobre todo el `prerender-manifest`**. La vara de qué cuesta
+re-verificar existe: **CMS-0d pagó el protocolo completo por un parche de Next**.
+
+- Con app única, **cada release de Payload** aterriza en el `package.json` y el
+  `next.config` de la app de render ⇒ protocolo completo cada vez — o la presión
+  de saltárselo, que es cómo se fabrica un verde falso.
+- Con dos apps, el churn del admin se queda en la app CMS; los insumos del
+  render cambian **solo** cuando cambia el paquete compartido — evento
+  **elegido y agrupable**, acotable por diff de lockfile.
+
+**Y el acoplamiento que QUEDA, dicho en el acta para que no sea sorpresa:** las
+dos apps comparten el núcleo de Payload a través del paquete y del esquema de la
+DB. Una subida del núcleo en el paquete **sí** paga el protocolo completo. Dos
+apps no compra inmunidad: compra que ese pago sea **por lotes y elegido**.
+
+## 4 · Qué tendría que pasar para revisarla
+
+1. **La frontera** cae a endpoint interno solo si la Local API compartida
+   resulta inviable entre dos apps (la config deja de poder cargarse desde dos
+   procesos). Revisaría la frontera, **no** la decisión de dos apps.
+2. **La decisión** se colapsa a única si operar dos apps cuesta más de lo que
+   evita — **contado en corridas de re-aceptación forzadas**, número y no
+   impresión. El colapso es la dirección barata por construcción: poder pagarlo
+   es lo que esta decisión compra.
+
+## 5 · LO SIGUIENTE, nombrado
+
+**F2-1 (esquema) — ya sin incógnitas previas.** Su primera tarea es la mecánica
+del layout del monorepo (raíz-como-app vs `apps/`), **bajo la restricción
+heredada de CMS-0f**:
+
+> **La conversión no toca el artefacto verificado en silencio.** Si el layout
+> mueve o modifica la app de render —aunque sea una línea de `workspaces` en su
+> `package.json`— paga **UNA corrida de re-aceptación Δ0 contra la línea base
+> congelada ANTES de cualquier otro cambio**, con el protocolo de CMS-0d.
+
+Y el resto de F2-1 como está escrito: colecciones con los defectos explícitos
+(incluido el `anchoPct` de SECTOR de la 18.ª), migraciones versionadas con
+`push: false`, colección-registro `slugs`, y la guarda de colisión **probada en
+negativo**.
+
+## 6 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — ≥2026-08-04, OBLIGATORIO otro día.** Hoy sigue
+   siendo 08-03: no se pudo lanzar en esta tanda. Cierra el −30 de EDAR@390, que
+   sigue **SIN PROBAR**. Con ella en vuelo: **nada de `check` ni `build`**.
+2. **F2-1**, con la restricción del §5. (La precondición 2 quedó cerrada en la
+   18.ª; la 1 —biblioteca— sigue abierta y es la que gobierna.)
+3. **`data-col` / `data-mod` en el clon** — cierra las 26 celdas SIN VEREDICTO
+   de `clase-rango`.
+4. **Bloque A** (CL-1 `MapaProyectos` +123.84/+33.55 · `Breadcrumb` −33.25) y
+   **Bloque B** (`articulos-kb`).
+5. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+6. **Comportamiento a 0/31** en la matriz de cobertura.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No leer «dos apps» como headless por HTTP.** La lectura sigue siendo Local
+  API sin HTTP — es la letra de CMS-0, conservada a propósito; lo que cae es la
+  letra «embebido» de la tabla de plataforma (anotada, no borrada).
+- **No convertir el repo a monorepo moviendo el artefacto sin pagar la corrida
+  Δ0 previa.** Es la restricción del acta, no una sugerencia.
+- **No meter nada de admin en el paquete compartido.** Config + tipos +
+  defaults; el contrato de la frontera está en el acta.
+- **No correr `check` ni `build` mañana con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — el ancho de módulo es CAMPO en SECTOR: los 10 se parten 9/1 y F2-1 puede arrancar
 
 > ⚠ **Tanda 2026-08-03 (18.ª).** Cinco pasos. Tanda de **MEDICIÓN**: no se

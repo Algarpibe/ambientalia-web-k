@@ -229,7 +229,7 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 | **CMS-0c** publicación | **rebuild por webhook**, no ISR | La app no necesita Postgres en runtime, solo en build; garantiza salida determinista, que es lo que hace alcanzable el Δ0 de aceptación |
 | **CMS-0d** Next | **subido a 16.2.12** (ejecutado, Δ0 verificado) | Payload exige ≥ 16.2.6 |
 | **CMS-0e** cuerpo rico | **HTML crudo primero**, conversión por entrada | Hay documentos que necesitan aporte humano (PDF de flipbook, enlace de noticia); una importación masiva es justo cuando no se pueden tomar esas decisiones |
-| **CMS-0f** | **ABIERTA**: app única vs dos apps en monorepo | Se decide al arrancar F2-1. Costes de ambas escritos en `PLAN-FASE-2.md` |
+| **CMS-0f** | **✅ CERRADA (2026-08-03): DOS APPS en monorepo + Local API por paquete compartido** (config + tipos, nada de admin) | Decidió la **asimetría de deshacer**: separar después es desenredar el artefacto verificado en el momento caro; colapsar después es mecánico y electivo. Acta en `ESQUEMA-CMS.md` §CMS-0f |
 | **CMS-1** ruta del caso | **prefijo como campo con defecto** `"casos-de-exito"` | Los 4 ingleses son contenido propio en español, no alias |
 | **CMS-2** slugs | plano replicado + `dynamicParams=false` + unicidad **entre** familias + **guarda de build** | Medido: una colisión compila sin aviso y sirve la página equivocada con HTTP 200 |
 | **§1.5b** | **dos colecciones** (`sectores`, `monograficos`), no una con discriminante | El experimento pre-registrado rechazó la fusión: la frontera son 3 campos. Y separar después es mucho más caro que fusionar después |
@@ -432,7 +432,7 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
   `w-[80%]` en `Breadcrumb` y `UltimosArticulos`). **Sin ejecutar.** Es
   **precondición de F2-1**.
 - **Fase 2 completa** (F2-1…F2-5): **0 % de ejecución**. Todas las decisiones
-  tomadas salvo CMS-0f.
+  tomadas — la última, CMS-0f, cerrada el 2026-08-03 (`ESQUEMA-CMS.md` §CMS-0f).
 
 ### ⚠ Discrepancias entre documentación y disco (manda el disco)
 
@@ -646,7 +646,8 @@ antes de fiarte del veredicto de separación.**
 6. **Mini-recon de la cola larga y de las 20 dudosas del CPT `solutions`**;
    decidir qué merece arquetipo y qué se excluye **con acta escrita**.
 7. **Tanda CLASE** — precondición de F2-1.
-8. **F2-1** (`docs/PLAN-FASE-2.md`), decidiendo **CMS-0f** al arrancar.
+8. **F2-1** (`docs/PLAN-FASE-2.md`) — CMS-0f **ya decidida** (2026-08-03, §CMS-0f):
+   su primera tarea es el layout del monorepo bajo la restricción del acta.
 
 ---
 

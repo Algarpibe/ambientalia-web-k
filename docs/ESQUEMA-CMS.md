@@ -22,7 +22,7 @@
 | CMS | **Payload**, self-hosted |
 | infra | **VPS Hostinger + Easypanel** |
 | base de datos | **Postgres propio** |
-| despliegue | **embebido en la propia app Next** (no headless separado) |
+| despliegue | ~~embebido en la propia app Next~~ ⚠ **revisado por CMS-0f (2026-08-03): DOS APPS en monorepo, misma DB** — la letra «embebido» cae; la intención (self-hosted, sin headless SaaS, lectura sin HTTP) se conserva entera |
 | editor | **Lexical** |
 | lectura de datos | **Local API**: `generateStaticParams()` y las páginas leen de la DB sin HTTP — el SSG actual se conserva |
 
@@ -40,6 +40,7 @@ aceptación del §8.
 | **CMS-0b** | **media uploads**: volumen persistente vs S3-compatible | **✅ resuelto (2026-07-30): volumen persistente**, abajo |
 | **CMS-0c** | **modelo de publicación**: rebuild por webhook vs ISR | **✅ resuelto (2026-07-30): rebuild por webhook**, abajo |
 | **CMS-0e** | **conversión del cuerpo**: HTML del editor clásico → Lexical **al importar**, o **HTML crudo primero** (render idéntico al actual) y conversión por entrada después | **✅ resuelto (2026-07-30): HTML crudo primero**, abajo |
+| **CMS-0f** | **app única vs dos apps en monorepo**, y la frontera de la lectura en build | **✅ resuelto (2026-08-03): DOS APPS + Local API por paquete compartido**, abajo |
 
 ### ✅ CMS-0c · Publicación por REBUILD CON WEBHOOK (2026-07-30)
 
@@ -268,6 +269,112 @@ cambiaba** — un descuadre anunciado y no contado, que es el primero de los que
 **La moraleja operativa, que es la que se lleva la tanda siguiente:** los cuatro
 primeros defectos daban **números plausibles**, no errores. Ninguno habría
 levantado una ceja leyendo solo el resumen.
+
+### ✅ CMS-0f · DOS APPS EN MONOREPO, con la lectura por LOCAL API COMPARTIDA (2026-08-03)
+
+**La última decisión abierta del esquema, y son dos piezas que van juntas:**
+cómo se reparte el código (app única vs dos apps) **y por dónde lee el build**
+(Local API por paquete compartido vs endpoint interno del CMS). Elegir la
+primera sin la segunda era dejarla a medias — la propia tabla de costes de
+`PLAN-FASE-2.md` §F2-1 lo tenía anotado.
+
+> **Decidido: DOS APPS en el mismo monorepo** — el clon intacto + una app CMS
+> (admin de Payload), **misma DB** — **y la lectura en build por LOCAL API,
+> compartiendo la config y los tipos por un paquete del monorepo.** No hay HTTP
+> en el camino de los datos: CMS-0 queda como está.
+
+#### El criterio, escrito ANTES de la elección
+
+Ninguna medida arbitra esto — no hay nada que medir: las dos opciones funcionan.
+Cuando ninguna medida arbitra, **decide la asimetría de deshacer** (la misma
+maquinaria de §1.5b Razón 3). Las dos direcciones, costadas:
+
+| dirección | qué cuesta |
+|---|---|
+| **de app ÚNICA a dos** (separar después) | **desenredar el artefacto verificado**: extraer config, rutas `/admin`+`/api` y dependencias de un `package.json` y un `next.config` ya entrelazados. Cada paso de la extracción toca la app que sirve las rutas a Δ0 ⇒ **re-aceptación completa a umbral cero** — y sobre el manifest de ese momento, que tras el grupo A son ~220 rutas, no 31. Y ocurre **en el momento caro por construcción**: la razón para separar sería que el churn de subidas de Payload ya duele, o sea **después** de F2-3, con editores dentro y contenido escrito |
+| **de DOS apps a una** (colapsar después) | las piezas del CMS ya están **aisladas por construcción** (app propia + paquete compartido): colapsar es montar las rutas del admin en la app de render y fusionar dependencias. **Mecánico, en un momento elegido**, una sola corrida de re-aceptación, invisible para los editores, sin mover datos ni esquema (misma DB, mismo paquete de config) |
+
+> **Enredar→desenredar es caro y llega forzado en el peor momento;
+> aislado→fusionar es mecánico y electivo. Esa asimetría toma la decisión** —
+> coincide con la recomendación del evaluador independiente, pero lo que decide
+> es el criterio, no la recomendación.
+
+#### Lo que la decisión protege, que es el activo del proyecto
+
+**31 rutas a Δ0 con línea base congelada, y la aceptación de F2-3 a umbral CERO
+sobre todo el `prerender-manifest`** (§8). La vara de qué cuesta re-verificar ya
+está medida: **CMS-0d pagó el protocolo completo por un parche de Next** —
+línea base antes, matar por puerto, `.next` borrado, marcador de frescura,
+umbral cero a dos anchos.
+
+- **Con app única**, cada release de Payload aterriza en el `package.json` y el
+  `next.config` (`withPayload`) de la app de render ⇒ por el propio estándar del
+  proyecto, **cada release fuerza el protocolo completo**. Y el riesgo mayor no
+  es el coste: es la presión de saltárselo («este parche seguro que no toca
+  nada»), que es exactamente cómo se fabrica un verde falso.
+- **Con dos apps**, el churn del admin se queda en la app CMS. Los insumos de la
+  app de render cambian **solo** cuando cambia el paquete compartido o su
+  dependencia de build de Payload — un evento **elegido y agrupable**, no
+  forzado por cada parche, y acotable por diff de lockfile y config: si los
+  insumos no cambiaron, el artefacto no cambió.
+
+#### La frontera de la lectura: LOCAL API COMPARTIDA, no endpoint — y por qué
+
+1. **CMS-0 ya lo decidió**: *«`generateStaticParams()` y las páginas leen de la
+   DB sin HTTP — el SSG actual se conserva»*. El endpoint interno **reabriría
+   una decisión cerrada**; el paquete compartido la conserva en el mundo de dos
+   apps. La Local API no es un servidor: es una biblioteca que habla con
+   Postgres, y funciona desde cualquier proceso con acceso a la DB.
+2. **Un endpoint convierte una dependencia de biblioteca en una de SERVICIO en
+   build**: el build del clon fallaría con la app CMS caída, y mete HTTP —red,
+   reintentos, orden— justo donde la aceptación exige **salida determinista**
+   (CMS-0c, consecuencia 3: dos cargas, el mismo número al céntimo).
+3. **El paquete compartido no es un sobrecoste del Local API: hace falta en las
+   dos variantes.** Con endpoint también habría que compartir
+   `payload-types.ts` para que el clon compile tipado — el endpoint no ahorra el
+   paquete, solo añade HTTP encima.
+
+**El contrato de la frontera, para que F2-1 no lo difumine:** el paquete
+compartido contiene **la config de colecciones, los tipos generados y los
+defaults — nada de componentes de admin**. La app de render gana `payload` y el
+adaptador de Postgres como dependencias **de build** (CMS-0c: la DB es
+dependencia del build, no del runtime) y **no emite jamás rutas `/admin` ni
+`/api`**.
+
+**Y el acoplamiento que QUEDA, dicho para que no se descubra como sorpresa:**
+las dos apps comparten la versión de núcleo de Payload **a través del paquete y
+del esquema de la DB** — una subida del núcleo en el paquete compartido toca el
+build del clon y **paga el protocolo completo**. Dos apps no compra inmunidad:
+compra que ese pago sea **un evento elegido y por lotes** en vez de uno forzado
+por cada parche del admin.
+
+#### Lo que se descarta, con su porqué
+
+| descartado | por qué |
+|---|---|
+| **app única** | es la letra de CMS-0 («embebido») y un solo deploy — pero convierte cada release de Payload en una re-aceptación completa del artefacto, o en la erosión del estándar que la evita. La letra de CMS-0 se **revisa** (tabla de plataforma, anotada); la intención —self-hosted, sin headless SaaS externo, lectura sin HTTP, SSG conservado— **se conserva entera** |
+| **endpoint interno del CMS** | reabre CMS-0, mete una dependencia de servicio y HTTP en el build, y no ahorra el paquete compartido |
+
+#### La restricción que hereda F2-1 (la conversión a monorepo)
+
+> **La conversión no mueve los ficheros del artefacto verificado en silencio.**
+> Si el layout elegido toca la app de render —aunque sea una línea de
+> `workspaces` en su `package.json`— **paga UNA corrida de re-aceptación Δ0
+> contra la línea base congelada ANTES de cualquier otro cambio**, con el
+> protocolo de CMS-0d. La mecánica del layout (raíz-como-app vs `apps/`) es la
+> primera tarea de F2-1, **bajo esa restricción** — no se decide aquí porque no
+> cambia el modelo ni la frontera.
+
+#### Qué tendría que pasar para revisarla
+
+1. **La frontera** cae a endpoint interno **solo si** la Local API compartida
+   resulta inviable entre dos apps con versiones acopladas por el paquete
+   (p. ej. la config deja de poder cargarse desde dos procesos). Eso revisaría
+   **la frontera, no la decisión de dos apps**.
+2. **La decisión** se colapsa a app única si operar dos apps en el VPS cuesta
+   más de lo que evita — **contado en corridas de re-aceptación forzadas**, un
+   número y no una impresión. El colapso es la dirección barata por
+   construcción: poder pagarlo es exactamente lo que esta decisión compra.
 
 ---
 
@@ -1373,6 +1480,9 @@ escrita) · **CMS-1** (el prefijo del caso como campo con defecto — §2b y
 `grupo-C/DECISIONES.md` D2, en la tanda C-2 que también dejó decidido el grupo
 entero: D1–D5). De las ocho, las únicas que tocaban a otro § eran CMS-0c (que
 confirmó el §4) y CMS-1 (que entra al §6 como resuelta).
+
+**Cerrada el 2026-08-03: CMS-0f** (dos apps en monorepo + Local API por paquete
+compartido, §CMS-0f) — **la última decisión de infraestructura que quedaba**.
 
 De las dos que quedan, **ninguna bloquea instalar Payload ni construir C-3**:
 una es de contenido (cómo se modela la tabla) y una de política (qué hosts de

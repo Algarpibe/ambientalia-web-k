@@ -104,10 +104,16 @@ las colecciones de contenido **pasando `req`** (misma transacción: el alta y su
 registro de slug entran o fallan juntos); y la **guarda de build de colisión**
 del §4.
 
-**La decisión que se toma aquí: CMS-0f — app única vs dos apps en monorepo.**
-El evaluador independiente recomienda **dos**, para no tocar el artefacto
-verificado. Se decide al arrancar F2-1 y **su acta va a `ESQUEMA-CMS.md`
-§CMS-0** (es decisión, no fase). Los costes de ambas, escritos antes de elegir:
+**✅ CMS-0f — DECIDIDA (2026-08-03), antes de arrancar: DOS APPS en monorepo,
+con la lectura en build por LOCAL API COMPARTIDA (paquete del monorepo con
+config + tipos; nada de componentes de admin).** Acta completa en
+`ESQUEMA-CMS.md` **§CMS-0f**: el criterio fue la **asimetría de deshacer**
+—separar después es desenredar el artefacto verificado en el momento caro;
+colapsar después es fusionar piezas ya aisladas, mecánico y electivo—, no la
+recomendación del evaluador (que coincidía). El endpoint interno queda
+**descartado**: reabría CMS-0 («leen de la DB sin HTTP») y metía una
+dependencia de servicio en el build. La tabla de costes de abajo se conserva
+como el registro escrito **antes** de elegir:
 
 | | **app única** (Payload embebido en el Next del clon) | **dos apps en monorepo** (clon intacto + app CMS, misma DB) |
 |---|---|---|
@@ -123,9 +129,17 @@ forma del grupo A) · §4 (enrutado: `dynamicParams = false`, unicidad **entre**
 familias, guarda de build) · §6 C-QA7 (el `pt` de fila del hero es campo con
 defecto 2 %/30).
 
-**Incógnita que le queda.** CMS-0f (arriba). Y la mecánica fina de la unicidad
-entre colecciones: hook `beforeValidate` contra la colección-registro con `req`
-— el §4 la da por complementaria de la guarda de build, no alternativa.
+**La primera tarea de F2-1, con su restricción heredada de CMS-0f:** la
+mecánica del layout del monorepo (raíz-como-app vs `apps/`), bajo la regla de
+que **la conversión no toca el artefacto verificado en silencio** — si el layout
+mueve o modifica la app de render (aunque sea una línea de `workspaces` en su
+`package.json`), paga **UNA corrida de re-aceptación Δ0 contra la línea base
+congelada ANTES de cualquier otro cambio**, con el protocolo de CMS-0d.
+
+**Incógnita que le queda.** La mecánica fina de la unicidad entre colecciones:
+hook `beforeValidate` contra la colección-registro con `req` — el §4 la da por
+complementaria de la guarda de build, no alternativa. (CMS-0f ya no es
+incógnita: decidida arriba.)
 
 **Hecho cuando:** `payload-types.ts` compila y las colecciones expresan todos
 los campos de §1.4/§1.5/§2b con sus defectos; la migración inicial versionada
