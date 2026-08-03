@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "ancho": 390,
+    "cargasPorRuta": 2,
+    "rutas": [
+      "software-de-medi"
+    ],
+    "ts": "2026-08-03T15:29:28.006Z",
+    "escala": {
+      "ts": "UTC"
+    },
+    "queEs": "UNA SOLA SENTADA, muchas cargas. NO es una ráfaga de campaña: la unidad es la CARGA, no el episodio. No pertenece a cqa6-390 y no la altera."
+  },
+  "resumen": {
+    "software-de-medi": {
+      "cargasValidas": 0,
+      "cargasConError": 2,
+      "nEstados": 0,
+      "estados": [],
+      "huecos": [],
+      "coincideCon3228": false,
+      "cargaMs": null
+    }
+  },
+  "crudo": {
+    "software-de-medi": [
+      {
+        "h1": null,
+        "docH": 20916,
+        "fuentes": "loaded",
+        "fuentesCargadas": 11,
+        "h1Ancho": null,
+        "h1Alto": null,
+        "cargaMs": 11529,
+        "i": 0
+      },
+      {
+        "h1": null,
+        "docH": 20916,
+        "fuentes": "loaded",
+        "fuentesCargadas": 11,
+        "h1Ancho": null,
+        "h1Alto": null,
+        "cargaMs": 9811,
+        "i": 1
+      }
+    ]
+  }
+}

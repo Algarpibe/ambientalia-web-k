@@ -1,7 +1,16 @@
 {
   "meta": {
     "width": 1440,
-    "fecha": "2026-08-01"
+    "fecha": "2026-08-01",
+    "neg": {
+      "fecha": "2026-08-03",
+      "queEs": "ARTEFACTO DE TEST EN NEGATIVO (regla 7). Salida de una corrida con SABOTAJE=ruta: c-cmp.mjs:84 anade /RUTA-INVENTADA, que da 404 y TIENE que sacar la sonda por ERROR.",
+      "nombreAnterior": "c-cmp-1440-2026-08-01-3.json",
+      "porQue": "El nombre no declaraba nada y el fichero contiene una fila con la firma de una 404 (clon.docH=900, la altura del viewport). Un fichero con nombre de medida y una fila de sabotaje dentro es una medida falsa con la autoridad de una congelada.",
+      "matiz": "SABOTAJE=ruta solo ANADE la ruta inventada; no perturba las otras 31, que son medidas genuinas. Por eso el marcador va en el nombre por PROCEDENCIA (la corrida fue un negativo), no porque las 31 filas sean malas.",
+      "filaSaboteada": "/RUTA-INVENTADA",
+      "filasGenuinas": 31
+    }
   },
   "paginas": {
     "/": {
