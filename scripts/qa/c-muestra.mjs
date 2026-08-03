@@ -168,7 +168,36 @@ const total = Object.values(salida.formas).reduce((a, f) => a + f.muestra.length
  * dentro habría dado un fichero que compila y una `ev` fuera de alcance. Es la
  * automatización produciendo algo plausible; lo cazó revisar el diff.
  */
-const ev = new Evaluadas({ nombre: "c-muestra", unidad: "páginas de la muestra", minimo: Object.keys(salida.formas).length });
+/**
+ * ⚠ **NUMERADOR Y DENOMINADOR EN UNIDADES DISTINTAS — imprimía `16/3`.**
+ * `ev.ok(total)` cuenta **páginas de la muestra** (16) y el mínimo contaba
+ * **FORMAS** (3). Un `16/3` verde no expresa nada: no es «midió 16 de 3», es
+ * que **los dos números no son de la misma magnitud**, y el cociente que
+ * cualquiera lee como cobertura no lo es.
+ *
+ * Es la instancia de contrato de la regla que `CLAUDE.md` fijó para los
+ * informes: *la cobertura se declara en la unidad que la sonda compara*. Aquí
+ * la sonda entrega **páginas**, así que el listón se cuenta en páginas.
+ *
+ * **Derivado**: la muestra es «un cupo por forma», así que el mínimo es la suma
+ * de los cupos. Si mañana el cupo sube, el listón sube solo — y si una forma se
+ * queda sin páginas, la resta y la sonda lo dice en vez de aprobarse sola.
+ */
+/**
+ * ⚠⚠ **Y la trampa de arreglarlo mal, que casi cuela: el mínimo NO puede salir
+ * de `muestra.length`.** `total` ya se define como esa misma suma (línea 159),
+ * así que `minimo = Σ muestra.length` da `ok(total)` contra un listón idéntico
+ * **por construcción**: un contrato que **no puede fallar nunca**. Sería
+ * cambiar un verde que no expresa nada por otro que tampoco, y encima con
+ * pinta de arreglado.
+ *
+ * El listón sale de las **ENTRADAS** —`cupo` (la cuota pre-registrada) y
+ * `total` (cuántas hay censadas de esa forma)—, nunca de la salida. Así, si
+ * `elegir()` devuelve de menos o una forma se queda vacía, **la cuenta no
+ * llega y la sonda lo dice**.
+ */
+const minimoPaginas = Object.values(salida.formas).reduce((a, f) => a + Math.min(f.cupo, f.total), 0);
+const ev = new Evaluadas({ nombre: "c-muestra", unidad: "páginas de la muestra", minimo: Math.max(1, minimoPaginas) });
 ev.ok(total);
 salida.resumen = { total, de: ok.length, payloadsSinCubrir: sinCubrir.map(([r]) => r) };
 console.log(`\n════════ ${total} páginas para lectura fina, de ${ok.length} censadas ════════`);
