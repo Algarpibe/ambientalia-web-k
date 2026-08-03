@@ -1,0 +1,1833 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-03",
+    "rutas": 5
+  },
+  "paginas": {
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 387,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 387,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title",
+          "id": null,
+          "alto": 108.19,
+          "y": 532.19,
+          "position": "static",
+          "txt": "Red global de calidad de aire en pistas de atl",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 3721.84,
+          "y": 387,
+          "position": "static",
+          "txt": "InicioCasos de éxitoRed global de calidad de a",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 3721.84,
+              "y": 387,
+              "position": "static",
+              "txt": "InicioCasos de éxitoRed global de calidad de a"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 145.19,
+        "ancla": {
+          "tag": "h1",
+          "y": 532.19,
+          "alto": 108.19,
+          "txt": "Red global de calidad de aire en pistas ",
+          "esH1": true,
+          "dentroDelCuerpo": 145.19
+        },
+        "yCuerpo": 387,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 3721.84,
+            "hijo": "div.—",
+            "hijoY": 387,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 3721.84,
+            "hijo": "article.post-29107",
+            "hijoY": 441.59,
+            "sangria": 54.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et-l",
+                "alto": 54.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoRed global de calida"
+              }
+            ]
+          },
+          {
+            "padre": "article.post-29107",
+            "padreY": 441.59,
+            "padreAlto": 2938.16,
+            "hijo": "div.container",
+            "hijoY": 441.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 441.59,
+            "padreAlto": 821.83,
+            "hijo": "div.main-title",
+            "hijoY": 501.59,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 501.59,
+            "padreAlto": 217.88,
+            "hijo": "h1.entry-title",
+            "hijoY": 532.19,
+            "sangria": 30.6,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 54.59,
+          "clase": "migas et_pb_section et_pb_section_0 et_section_regular",
+          "texto": {
+            "alto": 30.59,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "30.6px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 5046
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title pb-[7px] text-[44px]",
+          "id": null,
+          "alto": 108.19,
+          "y": 532.19,
+          "position": "static",
+          "txt": "Red global de calidad de aire en pistas de atl",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 3680.38,
+          "y": 0,
+          "position": "static",
+          "txt": "InicioCasos de éxitoRed global de calidad de a",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banda-cabecera w-full bg-cover",
+              "id": null,
+              "alto": 387,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 54.59,
+              "y": 387,
+              "position": "static",
+              "txt": "InicioCasos de éxitoRed global de calidad de a"
+            },
+            {
+              "tag": "article",
+              "clase": "",
+              "id": null,
+              "alto": 2837.25,
+              "y": 441.59,
+              "position": "static",
+              "txt": "Caso de éxitoRed global de calidad de aire en "
+            },
+            {
+              "tag": "section",
+              "clase": "w-full bg-white",
+              "id": null,
+              "alto": 401.53,
+              "y": 3278.84,
+              "position": "static",
+              "txt": "¿Necesitas información fiable para tu proyecto"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 532.19,
+        "ancla": {
+          "tag": "h1",
+          "y": 532.19,
+          "alto": 108.19,
+          "txt": "Red global de calidad de aire en pistas ",
+          "esH1": true,
+          "dentroDelCuerpo": 532.19
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 3680.38,
+            "hijo": "article.—",
+            "hijoY": 441.59,
+            "sangria": 441.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "section",
+                "clase": "banda-cabecera w-full bg-cover bg-center ",
+                "alto": 387,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 54.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoRed global de calida"
+              }
+            ]
+          },
+          {
+            "padre": "article.—",
+            "padreY": 441.59,
+            "padreAlto": 2837.25,
+            "hijo": "div.container",
+            "hijoY": 441.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 441.59,
+            "padreAlto": 768.31,
+            "hijo": "div.main-title",
+            "hijoY": 501.59,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 501.59,
+            "padreAlto": 160.38,
+            "hijo": "h1.entry-title",
+            "hijoY": 532.19,
+            "sangria": 30.6,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo text-[15px] font-extrabold uppercase leading-[30.6px] trac",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 54.59,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 30.59,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "30.6px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 4618
+      }
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 387,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 387,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title",
+          "id": null,
+          "alto": 209.38,
+          "y": 532.19,
+          "position": "static",
+          "txt": "El primer distrito de bajas emisiones (DBE) en",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 6446.28,
+          "y": 387,
+          "position": "static",
+          "txt": "InicioCasos de éxitoEl primer distrito de baja",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 6446.28,
+              "y": 387,
+              "position": "static",
+              "txt": "InicioCasos de éxitoEl primer distrito de baja"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 145.19,
+        "ancla": {
+          "tag": "h1",
+          "y": 532.19,
+          "alto": 209.38,
+          "txt": "El primer distrito de bajas emisiones (D",
+          "esH1": true,
+          "dentroDelCuerpo": 145.19
+        },
+        "yCuerpo": 387,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 6446.28,
+            "hijo": "div.—",
+            "hijoY": 387,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 387,
+            "padreAlto": 6446.28,
+            "hijo": "article.post-65816",
+            "hijoY": 441.59,
+            "sangria": 54.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et-l",
+                "alto": 54.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoEl primer distrito d"
+              }
+            ]
+          },
+          {
+            "padre": "article.post-65816",
+            "padreY": 441.59,
+            "padreAlto": 5662.59,
+            "hijo": "div.container",
+            "hijoY": 441.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 441.59,
+            "padreAlto": 1354.75,
+            "hijo": "div.main-title",
+            "hijoY": 501.59,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 501.59,
+            "padreAlto": 319.06,
+            "hijo": "h1.entry-title",
+            "hijoY": 532.19,
+            "sangria": 30.6,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 54.59,
+          "clase": "migas et_pb_section et_pb_section_0 et_section_regular",
+          "texto": {
+            "alto": 30.59,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "30.6px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 7770
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title pb-[7px] text-[44px]",
+          "id": null,
+          "alto": 108.19,
+          "y": 532.19,
+          "position": "static",
+          "txt": "El primer distrito de bajas emisiones (DBE) en",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 5889.84,
+          "y": 0,
+          "position": "static",
+          "txt": "InicioCasos de éxitoEl primer distrito de baja",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banda-cabecera w-full bg-cover",
+              "id": null,
+              "alto": 387,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 54.59,
+              "y": 387,
+              "position": "static",
+              "txt": "InicioCasos de éxitoEl primer distrito de baja"
+            },
+            {
+              "tag": "article",
+              "clase": "",
+              "id": null,
+              "alto": 5046.72,
+              "y": 441.59,
+              "position": "static",
+              "txt": "Caso de éxitoEl primer distrito de bajas emisi"
+            },
+            {
+              "tag": "section",
+              "clase": "w-full bg-white",
+              "id": null,
+              "alto": 401.53,
+              "y": 5488.31,
+              "position": "static",
+              "txt": "¿Necesitas información fiable para tu proyecto"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 532.19,
+        "ancla": {
+          "tag": "h1",
+          "y": 532.19,
+          "alto": 108.19,
+          "txt": "El primer distrito de bajas emisiones (D",
+          "esH1": true,
+          "dentroDelCuerpo": 532.19
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 5889.84,
+            "hijo": "article.—",
+            "hijoY": 441.59,
+            "sangria": 441.59,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "section",
+                "clase": "banda-cabecera w-full bg-cover bg-center ",
+                "alto": 387,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 54.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioCasos de éxitoEl primer distrito d"
+              }
+            ]
+          },
+          {
+            "padre": "article.—",
+            "padreY": 441.59,
+            "padreAlto": 5046.72,
+            "hijo": "div.container",
+            "hijoY": 441.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 441.59,
+            "padreAlto": 1210.41,
+            "hijo": "div.main-title",
+            "hijoY": 501.59,
+            "sangria": 60,
+            "pt": "60px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.main-title",
+            "padreY": 501.59,
+            "padreAlto": 190.97,
+            "hijo": "h1.entry-title",
+            "hijoY": 532.19,
+            "sangria": 30.6,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "sobretitulo text-[15px] font-extrabold uppercase leading-[30.6px] trac",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Caso de éxito"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 54.59,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 30.59,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "30.6px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 6828
+      }
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title",
+          "id": null,
+          "alto": 98,
+          "y": 283,
+          "position": "static",
+          "txt": "¿Puedo instalarlo en un vehículo o en un dron ",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 1077.94,
+          "y": 225,
+          "position": "static",
+          "txt": "¿Puedo instalarlo en un vehículo o en un dron ",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 484.19,
+              "y": 225,
+              "position": "static",
+              "txt": "¿Puedo instalarlo en un vehículo o en un dron "
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 593.75,
+              "y": 709.19,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 58,
+        "ancla": {
+          "tag": "h1",
+          "y": 283,
+          "alto": 98,
+          "txt": "¿Puedo instalarlo en un vehículo o en un",
+          "esH1": true,
+          "dentroDelCuerpo": 58
+        },
+        "yCuerpo": 225,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 1077.94,
+            "hijo": "div.—",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 484.19,
+            "hijo": "div.container",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.container",
+            "padreY": 225,
+            "padreAlto": 484.19,
+            "hijo": "div.clearfix",
+            "hijoY": 283,
+            "sangria": 58,
+            "pt": "58px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.clearfix",
+            "padreY": 283,
+            "padreAlto": 426.19,
+            "hijo": "div.—",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 283,
+            "padreAlto": 254.19,
+            "hijo": "article.et_pb_post",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.et_pb_post",
+            "padreY": 283,
+            "padreAlto": 189.19,
+            "hijo": "div.et_post_meta_wrapper",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_post_meta_wrapper",
+            "padreY": 283,
+            "padreAlto": 98,
+            "hijo": "h1.entry-title",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          }
+        ],
+        "migas": null,
+        "docH": 1303
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "entry-title pb-[10px] text-[44px]",
+          "id": null,
+          "alto": 98,
+          "y": 283,
+          "position": "static",
+          "txt": "¿Puedo instalarlo en un vehículo o en un dron ",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 644.94,
+          "y": 0,
+          "position": "static",
+          "txt": "¿Puedo instalarlo en un vehículo o en un dron ",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banda-cabecera w-full bg-cover",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "container mx-auto w-[80%]",
+              "id": null,
+              "alto": 419.94,
+              "y": 225,
+              "position": "static",
+              "txt": "¿Puedo instalarlo en un vehículo o en un dron "
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 283,
+        "ancla": {
+          "tag": "h1",
+          "y": 283,
+          "alto": 98,
+          "txt": "¿Puedo instalarlo en un vehículo o en un",
+          "esH1": true,
+          "dentroDelCuerpo": 283
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 644.94,
+            "hijo": "div.container",
+            "hijoY": 225,
+            "sangria": 225,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "section",
+                "clase": "banda-cabecera w-full bg-cover bg-center ",
+                "alto": 225,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.container",
+            "padreY": 225,
+            "padreAlto": 419.94,
+            "hijo": "div.md:flex",
+            "hijoY": 283,
+            "sangria": 58,
+            "pt": "58px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.md:flex",
+            "padreY": 283,
+            "padreAlto": 361.94,
+            "hijo": "div.md:w-[73.5%]",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.md:w-[73.5%]",
+            "padreY": 283,
+            "padreAlto": 361.94,
+            "hijo": "article.faqs",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.faqs",
+            "padreY": 283,
+            "padreAlto": 189.19,
+            "hijo": "h1.entry-title",
+            "hijoY": 283,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          }
+        ],
+        "migas": null,
+        "docH": 1240
+      }
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 397.61,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 397.61,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "id": null,
+          "alto": 46,
+          "y": 261.16,
+          "position": "static",
+          "txt": "Calidad del aire en las ciudades",
+          "dentroDeCabecera": true
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 5656.31,
+          "y": 397.61,
+          "position": "static",
+          "txt": "InicioSectoresCalidad del aire en las ciudades",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 5062.56,
+              "y": 397.61,
+              "position": "static",
+              "txt": "InicioSectoresCalidad del aire en las ciudades"
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 593.75,
+              "y": 5460.17,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": -136.45,
+        "ancla": {
+          "tag": "h1",
+          "y": 261.16,
+          "alto": 46,
+          "txt": "Calidad del aire en las ciudades",
+          "esH1": true,
+          "dentroDelCuerpo": -136.45
+        },
+        "yCuerpo": 397.61,
+        "cadena": [
+          {
+            "padre": "body.wp-singular",
+            "padreY": 0,
+            "padreAlto": 6053.92,
+            "hijo": "div.—",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 0,
+            "padreAlto": 6053.92,
+            "hijo": "div.et-boc",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et-boc",
+            "padreY": 0,
+            "padreAlto": 6053.92,
+            "hijo": "header.et-l",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "header.et-l",
+            "padreY": 0,
+            "padreAlto": 397.61,
+            "hijo": "div.et_builder_inner_content",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_builder_inner_content",
+            "padreY": 0,
+            "padreAlto": 397.61,
+            "hijo": "div.et_pb_section",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_section",
+            "padreY": 0,
+            "padreAlto": 397.61,
+            "hijo": "div.et_pb_row",
+            "hijoY": 185,
+            "sangria": 185,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_with_border et_pb_row et_pb_row_0_tb_header et_pb_row--with-menu",
+                "alto": 41,
+                "display": "block",
+                "pt": "5px",
+                "pb": "5px",
+                "txt": "Soporte Centro de ayuda Servicio de repa"
+              },
+              {
+                "tag": "div",
+                "clase": "et_pb_row et_pb_row_1_tb_header fila-menu-principal et_pb_row--with-me",
+                "alto": 144,
+                "display": "block",
+                "pt": "19px",
+                "pb": "12px",
+                "txt": ".st0{fill:#ffffff;} .st1{fill:#ffffff;} "
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_row",
+            "padreY": 185,
+            "padreAlto": 172.61,
+            "hijo": "div.et_pb_column",
+            "hijoY": 213.8,
+            "sangria": 28.8,
+            "pt": "28.7969px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_column",
+            "padreY": 213.8,
+            "padreAlto": 115.02,
+            "hijo": "div.et_pb_module",
+            "hijoY": 261.16,
+            "sangria": 47.36,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_module et_pb_text et_pb_text_0_tb_header  et_pb_text_align_left ",
+                "alto": 41.8,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Urbano"
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_module",
+            "padreY": 261.16,
+            "padreAlto": 46,
+            "hijo": "div.et_pb_text_inner",
+            "hijoY": 261.16,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_text_inner",
+            "padreY": 261.16,
+            "padreAlto": 46,
+            "hijo": "h1.—",
+            "hijoY": 261.16,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          }
+        ],
+        "migas": null,
+        "docH": 6054
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "mb-[5.8594px] w-full pb-[10px]",
+          "id": null,
+          "alto": 46,
+          "y": 261.16,
+          "position": "static",
+          "txt": "Calidad del aire en las ciudades",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 5440.45,
+          "y": 0,
+          "position": "static",
+          "txt": "UrbanoCalidad del aire en las ciudadesInicioSe",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "cabecera-sectores w-full bg-cover",
+              "id": null,
+              "alto": 397.61,
+              "y": 0,
+              "position": "static",
+              "txt": "UrbanoCalidad del aire en las ciudades"
+            },
+            {
+              "tag": "section",
+              "clase": "banda-clientes relative",
+              "id": null,
+              "alto": 122,
+              "y": 397.61,
+              "position": "relative",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 50,
+              "y": 519.61,
+              "position": "static",
+              "txt": "InicioSectoresCalidad del aire en las ciudades"
+            },
+            {
+              "tag": "section",
+              "clase": "w-full bg-white pb-[20px]",
+              "id": null,
+              "alto": 893.53,
+              "y": 569.61,
+              "position": "static",
+              "txt": "Quiero saber más→Descargar catálogo→Conoce la "
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 261.16,
+        "ancla": {
+          "tag": "h1",
+          "y": 261.16,
+          "alto": 46,
+          "txt": "Calidad del aire en las ciudades",
+          "esH1": true,
+          "dentroDelCuerpo": 261.16
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 5440.45,
+            "hijo": "section.cabecera-sectores",
+            "hijoY": 0,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "section.cabecera-sectores",
+            "padreY": 0,
+            "padreAlto": 397.61,
+            "hijo": "div.mx-auto",
+            "hijoY": 185,
+            "sangria": 185,
+            "pt": "185px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.mx-auto",
+            "padreY": 185,
+            "padreAlto": 172.61,
+            "hijo": "h1.mb-[5.8594px]",
+            "hijoY": 261.16,
+            "sangria": 76.16,
+            "pt": "28.7969px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "mb-[16.22px] -mt-[13px] text-[40px] font-bold leading-[30.6px] text-wh",
+                "alto": 30.59,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Urbano"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 50,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 26,
+            "ancho": 1238.39,
+            "fontSize": "12px",
+            "lineHeight": "26px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1238.39,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 6035
+      }
+    },
+    "/kunak-api": {
+      "orig": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header",
+          "id": null,
+          "alto": 225,
+          "y": 0,
+          "position": "static",
+          "txt": "Soporte Centro de ayuda Servicio de reparación",
+          "enFlujo": true,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "et_builder_inner_content et_pb_gutters3",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "relative",
+              "txt": "Soporte Centro de ayuda Servicio de reparación"
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "",
+          "id": null,
+          "alto": 56,
+          "y": 392.59,
+          "position": "static",
+          "txt": "Integración de datos más allá de la solución K",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "div",
+          "clase": "",
+          "id": "et-main-area",
+          "alto": 5195.72,
+          "y": 225,
+          "position": "static",
+          "txt": "InicioProductosKunak API Kunak API Integración",
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "",
+              "id": "main-content",
+              "alto": 4514.63,
+              "y": 225,
+              "position": "static",
+              "txt": "InicioProductosKunak API Kunak API Integración"
+            },
+            {
+              "tag": "footer",
+              "clase": "et-l et-l--footer",
+              "id": null,
+              "alto": 681.09,
+              "y": 4739.63,
+              "position": "static",
+              "txt": "PRODUCTOS Kunak AIR Pro Kunak AIR Lite Kunak A"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 167.59,
+        "ancla": {
+          "tag": "h1",
+          "y": 392.59,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la solu",
+          "esH1": true,
+          "dentroDelCuerpo": 167.59
+        },
+        "yCuerpo": 225,
+        "cadena": [
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 5195.72,
+            "hijo": "div.—",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.—",
+            "padreY": 225,
+            "padreAlto": 4514.63,
+            "hijo": "article.post-27049",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "article.post-27049",
+            "padreY": 225,
+            "padreAlto": 4472.63,
+            "hijo": "div.entry-content",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.entry-content",
+            "padreY": 225,
+            "padreAlto": 4472.63,
+            "hijo": "div.et-l",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et-l",
+            "padreY": 225,
+            "padreAlto": 4472.63,
+            "hijo": "div.et_builder_inner_content",
+            "hijoY": 225,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_builder_inner_content",
+            "padreY": 225,
+            "padreAlto": 4472.63,
+            "hijo": "div.et_pb_section",
+            "hijoY": 275,
+            "sangria": 50,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_section et_pb_section_0 et_section_regular",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioProductosKunak API"
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_section",
+            "padreY": 275,
+            "padreAlto": 1947.66,
+            "hijo": "div.et_pb_row",
+            "hijoY": 332.59,
+            "sangria": 57.59,
+            "pt": "57.5938px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_row",
+            "padreY": 332.59,
+            "padreAlto": 544.2,
+            "hijo": "div.et_pb_column",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_column",
+            "padreY": 332.59,
+            "padreAlto": 529.81,
+            "hijo": "div.et_pb_module",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "div",
+                "clase": "et_pb_module et_pb_image et_pb_image_0",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              }
+            ]
+          },
+          {
+            "padre": "div.et_pb_module",
+            "padreY": 332.59,
+            "padreAlto": 126.88,
+            "hijo": "div.et_pb_text_inner",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.et_pb_text_inner",
+            "padreY": 332.59,
+            "padreAlto": 116,
+            "hijo": "h1.—",
+            "hijoY": 392.59,
+            "sangria": 60,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "p",
+                "clase": "",
+                "alto": 60,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak API"
+              }
+            ]
+          }
+        ],
+        "migas": null,
+        "docH": 5421
+      },
+      "clon": {
+        "cabecera": {
+          "tag": "header",
+          "clase": "et-l et-l--header absolute",
+          "id": null,
+          "alto": 203.59,
+          "y": 0,
+          "position": "absolute",
+          "txt": "SoporteCentro de ayudaServicio de reparación (",
+          "enFlujo": false,
+          "hijos": [
+            {
+              "tag": "div",
+              "clase": "pointer-events-none absolute inset-x-0",
+              "id": null,
+              "alto": 200,
+              "y": 0,
+              "position": "absolute",
+              "txt": ""
+            },
+            {
+              "tag": "div",
+              "clase": "relative",
+              "id": null,
+              "alto": 203.59,
+              "y": 0,
+              "position": "relative",
+              "txt": "SoporteCentro de ayudaServicio de reparación ("
+            }
+          ]
+        },
+        "h1": {
+          "tag": "h1",
+          "clase": "pb-[10px] text-[23px] font-light",
+          "id": null,
+          "alto": 56,
+          "y": 392.59,
+          "position": "static",
+          "txt": "Integración de datos más allá de la solución K",
+          "dentroDeCabecera": false
+        },
+        "cuerpo": {
+          "tag": "main",
+          "clase": "flex flex-1 flex-col",
+          "id": null,
+          "alto": 4656.27,
+          "y": 0,
+          "position": "static",
+          "txt": "InicioProductosKunak APIKunak APIIntegración d",
+          "hijos": [
+            {
+              "tag": "section",
+              "clase": "banda-cabecera-lg w-full bg-cover",
+              "id": null,
+              "alto": 225,
+              "y": 0,
+              "position": "static",
+              "txt": ""
+            },
+            {
+              "tag": "nav",
+              "clase": "bg-white",
+              "id": null,
+              "alto": 50,
+              "y": 225,
+              "position": "static",
+              "txt": "InicioProductosKunak API"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-white bg-no-repeat",
+              "id": null,
+              "alto": 1928.92,
+              "y": 275,
+              "position": "relative",
+              "txt": "Kunak APIIntegración de datos más allá de la s"
+            },
+            {
+              "tag": "section",
+              "clase": "relative bg-no-repeat bg-white",
+              "id": null,
+              "alto": 735.31,
+              "y": 2203.92,
+              "position": "relative",
+              "txt": "Artículos y GuíasContaminación por metano: imp"
+            }
+          ]
+        },
+        "h1DentroDelCuerpo": 392.59,
+        "ancla": {
+          "tag": "h1",
+          "y": 392.59,
+          "alto": 56,
+          "txt": "Integración de datos más allá de la solu",
+          "esH1": true,
+          "dentroDelCuerpo": 392.59
+        },
+        "yCuerpo": 0,
+        "cadena": [
+          {
+            "padre": "main.flex",
+            "padreY": 0,
+            "padreAlto": 4656.27,
+            "hijo": "section.relative",
+            "hijoY": 275,
+            "sangria": 275,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "section",
+                "clase": "banda-cabecera-lg w-full bg-cover bg-center ",
+                "alto": 225,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "nav",
+                "clase": "bg-white",
+                "alto": 50,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "InicioProductosKunak API"
+              }
+            ]
+          },
+          {
+            "padre": "section.relative",
+            "padreY": 275,
+            "padreAlto": 1928.92,
+            "hijo": "div.mx-auto",
+            "hijoY": 332.59,
+            "sangria": 57.59,
+            "pt": "57.6px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.mx-auto",
+            "padreY": 332.59,
+            "padreAlto": 535.17,
+            "hijo": "div.relative",
+            "hijoY": 332.59,
+            "sangria": 0,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": []
+          },
+          {
+            "padre": "div.relative",
+            "padreY": 332.59,
+            "padreAlto": 520.78,
+            "hijo": "h1.pb-[10px]",
+            "hijoY": 392.59,
+            "sangria": 60,
+            "pt": "0px",
+            "mt": "0px",
+            "antes": [
+              {
+                "tag": "img",
+                "clase": "absolute -top-[26px] -left-[65px]",
+                "alto": 22,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": ""
+              },
+              {
+                "tag": "p",
+                "clase": "text-[35px] font-extrabold leading-[42px] text-[#333] md:text-[50px] m",
+                "alto": 60,
+                "display": "block",
+                "pt": "0px",
+                "pb": "0px",
+                "txt": "Kunak API"
+              }
+            ]
+          }
+        ],
+        "migas": {
+          "alto": 50,
+          "clase": "bg-white",
+          "texto": {
+            "alto": 26,
+            "ancho": 1152,
+            "fontSize": "12px",
+            "lineHeight": "26px",
+            "fontWeight": "600",
+            "letterSpacing": "0.3px"
+          },
+          "fila": {
+            "ancho": 1152,
+            "pt": "12px",
+            "pb": "12px"
+          },
+          "renglones": 1
+        },
+        "docH": 5380
+      }
+    }
+  }
+}

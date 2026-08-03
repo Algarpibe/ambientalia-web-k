@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "rutaA": "/sectores/calidad-del-aire-en-las-ciudades",
+    "rutaB": "/sectores/monitorizacion-de-calidad-del-aire-en-industria",
+    "width": 1440,
+    "base": "http://localhost:3000"
+  },
+  "A": {
+    "docH": 6035,
+    "h1y": 261.16,
+    "heroFin": 1463.14,
+    "cuerpo": [
+      {
+        "top": 1463.14,
+        "h": 432.23,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "¿Necesitas medir la contaminación ",
+        "filas": [
+          {
+            "top": 1463.14,
+            "h": 432.23,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "¿Necesitas medir la contaminación en tu ciud"
+          }
+        ]
+      },
+      {
+        "top": 1881.38,
+        "h": 1057.45,
+        "mt": "-14px",
+        "pt": "57.5938px",
+        "pb": "14px",
+        "txt": "Beneficios de monitorizar la calid",
+        "filas": [
+          {
+            "top": 1938.97,
+            "h": 566.98,
+            "mt": "0px",
+            "pt": "28.7969px",
+            "pb": "28.7969px",
+            "txt": "Beneficios de monitorizar la calidad del air"
+          },
+          {
+            "top": 2505.95,
+            "h": 418.88,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "28.7969px",
+            "txt": "Protege la salud de tus ciudadanos tomando l"
+          }
+        ]
+      },
+      {
+        "top": 2938.83,
+        "h": 401.53,
+        "mt": "0px",
+        "pt": "0px",
+        "pb": "0px",
+        "txt": "Obtén datos fiables y precisos sob",
+        "filas": [
+          {
+            "top": 2938.83,
+            "h": 401.53,
+            "mt": "0px",
+            "pt": "0px",
+            "pb": "0px",
+            "txt": "Obtén datos fiables y precisos sobre la cont"
+          }
+        ]
+      }
+    ],
+    "anclas": {
+      "slider": 2938.83,
+      "soluciones": 3426.75,
+      "proyectos": 4115.39,
+      "articulos": 4809.5,
+      "footer": 5440.45
+    }
+  },
+  "B": {
+    "docH": 900,
+    "h1y": 425.5,
+    "heroFin": null,
+    "cuerpo": [],
+    "anclas": {
+      "slider": null,
+      "soluciones": null,
+      "proyectos": null,
+      "articulos": null,
+      "footer": null
+    }
+  }
+}

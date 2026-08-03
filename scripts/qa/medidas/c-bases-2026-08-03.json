@@ -1,0 +1,938 @@
+{
+  "meta": {
+    "fecha": "2026-08-03",
+    "origen": [
+      "medidas/c-cabecera-1440.json",
+      "medidas/c-cabecera-390.json"
+    ],
+    "anchos": [
+      1440,
+      390
+    ],
+    "rutas": 17,
+    "sinBase": 1,
+    "sinBaseNuevas": 0,
+    "distintoAlto": 4,
+    "distintoElemento": 0
+  },
+  "bases": {
+    "/": {
+      "anchos": {
+        "390": {
+          "origAlto": 0,
+          "clonAlto": 1,
+          "caja": false,
+          "mismoElemento": true,
+          "origY": 0,
+          "clonY": 119,
+          "dY": 119,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h2",
+              "y": 120.23,
+              "alto": 192.38,
+              "txt": "La solución profesional para la monitoriza"
+            },
+            "clon": {
+              "tag": "h2",
+              "y": 120,
+              "alto": 192.38,
+              "txt": "La solución profesional para la monitoriza"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 0,
+          "clonAlto": 1,
+          "caja": false,
+          "mismoElemento": true,
+          "origY": 0,
+          "clonY": 289.91,
+          "dY": 289.91,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h2",
+              "y": 279.88,
+              "alto": 161.22,
+              "txt": "La solución profesional para la monitoriza"
+            },
+            "clon": {
+              "tag": "h2",
+              "y": 300.91,
+              "alto": 151.22,
+              "txt": "La solución profesional para la monitoriza"
+            }
+          }
+        }
+      },
+      "base": false,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": "C-QA3 · `h1` oculto para SEO (0/1 px). Ancla alternativa medida: el `h2` «La solución profesional…»"
+    },
+    "/accesorios": {
+      "anchos": {
+        "390": {
+          "origAlto": 79,
+          "clonAlto": 79,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 278.58,
+          "clonY": 327,
+          "dY": 48.42,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 278.58,
+              "alto": 79,
+              "txt": "Accesorios para sensores de calidad del ai"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 327,
+              "alto": 79,
+              "txt": "Accesorios para sensores de calidad del ai"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 56,
+          "clonAlto": 56,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 392.59,
+          "clonY": 373.39,
+          "dY": -19.2,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 392.59,
+              "alto": 56,
+              "txt": "Accesorios para sensores de calidad del ai"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 373.39,
+              "alto": 56,
+              "txt": "Accesorios para sensores de calidad del ai"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "anchos": {
+        "390": {
+          "origAlto": 462.34,
+          "clonAlto": 462.34,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 511.69,
+          "clonY": 191.59,
+          "dY": -320.1,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 511.69,
+              "alto": 462.34,
+              "txt": "El primer distrito de bajas emisiones (DBE"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 191.59,
+              "alto": 462.34,
+              "txt": "El primer distrito de bajas emisiones (DBE"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 209.38,
+          "clonAlto": 108.19,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 532.19,
+          "clonY": 140.59,
+          "dY": -391.6,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 532.19,
+              "alto": 209.38,
+              "txt": "El primer distrito de bajas emisiones (DBE"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 140.59,
+              "alto": 108.19,
+              "txt": "El primer distrito de bajas emisiones (DBE"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": false,
+      "registrada": null
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "anchos": {
+        "390": {
+          "origAlto": 310.56,
+          "clonAlto": 310.56,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 511.69,
+          "clonY": 165.59,
+          "dY": -346.1,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 511.69,
+              "alto": 310.56,
+              "txt": "Red de control de la contaminación por mal"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 165.59,
+              "alto": 310.56,
+              "txt": "Red de control de la contaminación por mal"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 108.19,
+          "clonAlto": 108.19,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 532.19,
+          "clonY": 140.59,
+          "dY": -391.6,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 532.19,
+              "alto": 108.19,
+              "txt": "Red de control de la contaminación por mal"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 140.59,
+              "alto": 108.19,
+              "txt": "Red de control de la contaminación por mal"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "anchos": {
+        "390": {
+          "origAlto": 259.97,
+          "clonAlto": 259.97,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 511.69,
+          "clonY": 165.59,
+          "dY": -346.1,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 511.69,
+              "alto": 259.97,
+              "txt": "Red global de calidad de aire en pistas de"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 165.59,
+              "alto": 259.97,
+              "txt": "Red global de calidad de aire en pistas de"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 108.19,
+          "clonAlto": 108.19,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 532.19,
+          "clonY": 140.59,
+          "dY": -391.6,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 532.19,
+              "alto": 108.19,
+              "txt": "Red global de calidad de aire en pistas de"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 140.59,
+              "alto": 108.19,
+              "txt": "Red global de calidad de aire en pistas de"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "anchos": {
+        "390": {
+          "origAlto": 209.38,
+          "clonAlto": 209.38,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 511.69,
+          "clonY": 139.59,
+          "dY": -372.1,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 511.69,
+              "alto": 209.38,
+              "txt": "Alerta de contaminación de acuífero por li"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 139.59,
+              "alto": 209.38,
+              "txt": "Alerta de contaminación de acuífero por li"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 108.19,
+          "clonAlto": 57.59,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 532.19,
+          "clonY": 140.59,
+          "dY": -391.6,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 532.19,
+              "alto": 108.19,
+              "txt": "Alerta de contaminación de acuífero por li"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 140.59,
+              "alto": 57.59,
+              "txt": "Alerta de contaminación de acuífero por li"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": false,
+      "registrada": null
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "anchos": {
+        "390": {
+          "origAlto": 186,
+          "clonAlto": 186,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 223.58,
+          "clonY": 58,
+          "dY": -165.58,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 223.58,
+              "alto": 186,
+              "txt": "¿Cuál es la diferencia entre calibración y"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 58,
+              "alto": 186,
+              "txt": "¿Cuál es la diferencia entre calibración y"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 98,
+          "clonAlto": 98,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 283,
+          "clonY": 58,
+          "dY": -225,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 283,
+              "alto": 98,
+              "txt": "¿Cuál es la diferencia entre calibración y"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 58,
+              "alto": 98,
+              "txt": "¿Cuál es la diferencia entre calibración y"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "anchos": {
+        "390": {
+          "origAlto": 274,
+          "clonAlto": 274,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 223.58,
+          "clonY": 58,
+          "dY": -165.58,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 223.58,
+              "alto": 274,
+              "txt": "¿Puedo instalarlo en un vehículo o en un d"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 58,
+              "alto": 274,
+              "txt": "¿Puedo instalarlo en un vehículo o en un d"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 98,
+          "clonAlto": 98,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 283,
+          "clonY": 58,
+          "dY": -225,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 283,
+              "alto": 98,
+              "txt": "¿Puedo instalarlo en un vehículo o en un d"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 58,
+              "alto": 98,
+              "txt": "¿Puedo instalarlo en un vehículo o en un d"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/kunak-api": {
+      "anchos": {
+        "390": {
+          "origAlto": 56,
+          "clonAlto": 56,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 278.58,
+          "clonY": 279,
+          "dY": 0.42,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 278.58,
+              "alto": 56,
+              "txt": "Integración de datos más allá de la soluci"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 279,
+              "alto": 56,
+              "txt": "Integración de datos más allá de la soluci"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 56,
+          "clonAlto": 56,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 392.59,
+          "clonY": 344.59,
+          "dY": -48,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 392.59,
+              "alto": 56,
+              "txt": "Integración de datos más allá de la soluci"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 344.59,
+              "alto": 56,
+              "txt": "Integración de datos más allá de la soluci"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/monitor-calidad-aire": {
+      "anchos": {
+        "390": {
+          "origAlto": 33,
+          "clonAlto": 33,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 308.58,
+          "clonY": 387,
+          "dY": 78.42,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 308.58,
+              "alto": 33,
+              "txt": "Monitor de calidad del aire"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 387,
+              "alto": 33,
+              "txt": "Monitor de calidad del aire"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 33,
+          "clonAlto": 33,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 421.39,
+          "clonY": 373.39,
+          "dY": -48,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 421.39,
+              "alto": 33,
+              "txt": "Monitor de calidad del aire"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 373.39,
+              "alto": 33,
+              "txt": "Monitor de calidad del aire"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "anchos": {
+        "390": {
+          "origAlto": 82,
+          "clonAlto": 82,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 189.39,
+          "clonY": 189.39,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Calidad del aire en las ciudades"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Calidad del aire en las ciudades"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 46,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Calidad del aire en las ciudades"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Calidad del aire en las ciudades"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "anchos": {
+        "390": {
+          "origAlto": 82,
+          "clonAlto": 82,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 189.39,
+          "clonY": 189.39,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Contaminación por construcción"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Contaminación por construcción"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 46,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Contaminación por construcción"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Contaminación por construcción"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "anchos": {
+        "390": {
+          "origAlto": 82,
+          "clonAlto": 82,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 189.39,
+          "clonY": 189.39,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Control de emisiones industriales"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 82,
+              "txt": "Control de emisiones industriales"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 46,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Control de emisiones industriales"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Control de emisiones industriales"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "anchos": {
+        "390": {
+          "origAlto": 118,
+          "clonAlto": 118,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 208.78,
+          "clonY": 219.98,
+          "dY": 11.2,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 208.78,
+              "alto": 118,
+              "txt": "Estudio de la contaminación atmosférica"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 219.98,
+              "alto": 118,
+              "txt": "Estudio de la contaminación atmosférica"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 46,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Estudio de la contaminación atmosférica"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Estudio de la contaminación atmosférica"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "anchos": {
+        "390": {
+          "origAlto": 154,
+          "clonAlto": 154,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 189.39,
+          "clonY": 189.39,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 154,
+              "txt": "Monitorización ambiental en EDAR para el c"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 154,
+              "txt": "Monitorización ambiental en EDAR para el c"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 82,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 82,
+              "txt": "Monitorización ambiental en EDAR para el c"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Monitorización ambiental en EDAR para el c"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": false,
+      "registrada": null
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "anchos": {
+        "390": {
+          "origAlto": 118,
+          "clonAlto": 118,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 189.39,
+          "clonY": 189.39,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 118,
+              "txt": "Monitorización de emisiones en el sector d"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 189.39,
+              "alto": 118,
+              "txt": "Monitorización de emisiones en el sector d"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 82,
+          "clonAlto": 46,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 261.16,
+          "clonY": 261.16,
+          "dY": 0,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 82,
+              "txt": "Monitorización de emisiones en el sector d"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 261.16,
+              "alto": 46,
+              "txt": "Monitorización de emisiones en el sector d"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": false,
+      "registrada": null
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "anchos": {
+        "390": {
+          "origAlto": 56,
+          "clonAlto": 56,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 338.58,
+          "clonY": 309,
+          "dY": -29.58,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 338.58,
+              "alto": 56,
+              "txt": "Software de medición de la calidad del air"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 309,
+              "alto": 56,
+              "txt": "Software de medición de la calidad del air"
+            }
+          }
+        },
+        "1440": {
+          "origAlto": 33,
+          "clonAlto": 33,
+          "caja": true,
+          "mismoElemento": true,
+          "origY": 421.39,
+          "clonY": 373.39,
+          "dY": -48,
+          "anclaVisible": {
+            "orig": {
+              "tag": "h1",
+              "y": 421.39,
+              "alto": 33,
+              "txt": "Software de medición de la calidad del air"
+            },
+            "clon": {
+              "tag": "h1",
+              "y": 373.39,
+              "alto": 33,
+              "txt": "Software de medición de la calidad del air"
+            }
+          }
+        }
+      },
+      "base": true,
+      "mismoElemento": true,
+      "mismoAlto": true,
+      "registrada": null
+    }
+  }
+}
