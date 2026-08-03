@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "que": "Censo de la CAPA DE PLANTILLA (_tb_header/_tb_body/_tb_footer, sidebar, sticky, post_content) de las 13 URLs del grupo D, sobre el HTML servido del original.",
+    "fecha": "2026-08-03",
+    "contesta": "docs/research/grupo-D/PRE-REGISTRO-DECISION.md · predicado P-R1 (medida declarada pendiente en el pre-registro y tomada DESPUÉS de commitearlo)",
+    "metodo": "Mismo corte lineal que grupo-d-inventario.json; la firma _tb_ es la secuencia de ids de sección _tb_ en orden de aparición.",
+    "consistencia": "La re-derivación de `propias` por página coincide con grupo-d-inventario.json en las 13 (desacuerdos: 0).",
+    "veredictoP_R1": {
+      "firmasDistintas": 1,
+      "firma": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": "13/13",
+      "stickyEnBody": "13/13",
+      "postContentEnBody": "13/13"
+    }
+  },
+  "paginas": [
+    {
+      "u": "centro-de-ayuda/kunak-air",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 7
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air/video-tutoriales",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 7
+    },
+    {
+      "u": "centro-de-ayuda/kunak-air-cloud",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 5
+    },
+    {
+      "u": "soporte/centro-de-ayuda",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 11
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 1
+    },
+    {
+      "u": "soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+      "tb": [
+        "et_pb_section_0_tb_header",
+        "et_pb_section_0_tb_body",
+        "et_pb_section_0_tb_footer",
+        "et_pb_section_1_tb_footer",
+        "et_pb_section_2_tb_footer"
+      ],
+      "nTb": 5,
+      "firmaTb": "et_pb_section_0_tb_header · et_pb_section_0_tb_body · et_pb_section_0_tb_footer · et_pb_section_1_tb_footer · et_pb_section_2_tb_footer",
+      "sidebarEnBody": true,
+      "stickyEnBody": true,
+      "postContentEnBody": true,
+      "propias": 5
+    }
+  ]
+}
