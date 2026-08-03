@@ -1,3 +1,187 @@
+# HANDOFF — el instrumento cerrado: la escala del fenómeno, 180 cargas y los 9 mínimos
+
+> ⚠ **Tanda 2026-08-03 (14.ª).** Cinco pasos. Tanda de **INSTRUMENTO**: no se
+> tocó el clon. Con esto **el instrumento queda cerrado** y lo que venga después
+> es construcción.
+
+## 0 · El titular: el protocolo medía en días y el fenómeno pasa en segundos
+
+Lo dicen los datos de la campaña que cerró C-QA6. La ráfaga 1 tiene las
+transiciones medidas **carga a carga**:
+
+| carga | `/software` | EDAR | petróleo |
+|---|---|---|---|
+| #1 | 389.11 **bajo** | 228.88 **bajo** | 228.88 **bajo** |
+| #2 | 389.11 **bajo** | 261.16 **ALTO** | 261.16 **ALTO** |
+| #3 | 421.39 **ALTO** | 261.16 alto | 261.16 alto |
+
+**Los monográficos saltan entre #1 y #2; `/software` entre #2 y #3.** Cargas
+consecutivas: **segundos**.
+
+> **La variable que discrimina es el NÚMERO DE CARGAS, no el reparto en días.**
+> 3 ráfagas en 3 días dan **9 cargas** por combinación; una sentada de 60 da
+> siete veces más muestreo **en una tarde**. El protocolo gastaba días para
+> comprar algo que se compra con cargas.
+
+**No se deroga: se le añade la regla 4.** Los dos ejes compran cosas distintas y
+ninguno sustituye al otro — los días protegen de leer una tarde rara como suelo
+permanente; **las cargas muestrean los estados**. Una campaña con 3 días y 9
+cargas está **bien separada y mal muestreada**, y hasta hoy eso no se podía ni
+enunciar.
+
+## 1 · Y por eso «un solo estado a 390» no era una conclusión
+
+`estados-390`, sonda nueva: **60 cargas × 3 rutas = 180, una sentada**.
+Resultado: **un solo estado en las tres** (`308.58` · `189.39` · `189.39`), cero
+variación.
+
+**Cómo se reporta un cero de muestreo sin convertirlo en prueba de ausencia** —
+se escribe **la cota**, no la conclusión:
+
+| | 1440 | 390 |
+|---|---|---|
+| estados | **2** | **1** |
+| tasa del raro | **4/27 ≈ 15 %** | **0/60 por ruta** |
+| cota 95 % (regla de tres) | — | **< 5 % por carga** |
+
+> Si a 390 hubiera un segundo estado con la tasa de 1440, no verlo en 60 cargas
+> tendría probabilidad **6.6 × 10⁻⁵**. **390 no se comporta como 1440 — medido,
+> no supuesto.** Pero una tasa mucho menor sigue cabiendo: esto **acota**, no
+> cierra.
+
+**Y el reparto de ejes que deja, que es lo reutilizable:** un cero en el eje de
+las cargas **no puede** contestar una hipótesis **episódica**. Si la condición va
+ligada a un momento y no a una carga, 180 cargas de una tarde no la ven **por
+construcción**. Para eso está la separación en días.
+
+| eje | instrumento | estado |
+|---|---|---|
+| **cargas** — ¿hay un segundo estado FRECUENTE? | `estados-390` (180) | ✅ **cerrado**: no lo hay |
+| **días** — ¿hay una condición EPISÓDICA? | `cqa6-390` (1 de 3) | ⏳ **abierto** |
+
+**`cqa6-390` queda CONFIRMADA, no sustituida.** Su pre-registro decía que si
+aparecía un segundo estado cambiaría de sentido; no apareció, así que sigue en
+pie con sus ráfagas 2 y 3.
+
+## 2 · La cadena de custodia, cerrada con un número
+
+Barrido de **343 ficheros** congelados buscando la firma de una 404 contada como
+página: **2795 valores `docH`**, de los que **52 eran dispersiones** de `ruido`
+(no alturas — descartadas), **2743 alturas absolutas**.
+
+> **404 accidentales colocadas como página: CERO.**
+
+La firma aparece **3 veces, las 3 negativos deliberados**. Dos estaban bien
+marcadas; la tercera no, y es un caso que la regla 7 no contemplaba:
+
+> **Un fichero que es medida Y artefacto A LA VEZ.** `c-cmp-1440-2026-08-01-3`
+> tiene **31 filas genuinas + `/RUTA-INVENTADA`**, que `c-cmp.mjs:84` solo añade
+> bajo `SABOTAJE`. Renombrado a `…-neg-ruta` **por procedencia** (la corrida fue
+> un negativo), con `meta.neg` dentro diciendo que las 31 son buenas — si no, el
+> marcador se leería como que todo el fichero es basura.
+
+Hallazgo adicional: **12 ficheros llevan errores congelados y 8 no lo declaran
+en el nombre**. Ninguno es una 404 contada como página: son timeouts, red caída
+y el `ERR_CONNECTION_REFUSED` ya documentado, **todos registrados COMO error**,
+que es el comportamiento correcto. Los dos 404 reales (`_global-error`,
+`_not-found` en `ancho-cuerpo-1440.json`) son **historia ya arreglada** — el
+filtro está en `ancho-cuerpo.mjs:55` desde `a089ba2` y solo el fichero más viejo
+los tiene.
+
+## 3 · Los 9 mínimos, uno por commit
+
+| sonda | antes | ahora | invariante que ahora sí expresa |
+|---|---|---|---|
+| `dos-rutas` | 1 | **2** | se llama *dos*-rutas: una sola no es media comparación |
+| `mono-cmp` | 1 | **2** | `[original, clon]`: sin los dos lados no compara |
+| `tree-cmp` | 1 | **2** | su veredicto es «N en el original · M en el clon» |
+| `a-ids` | 1 | **`1+OTRAS.length`** | recorre `[PAGINA, ...OTRAS]` (8) |
+| `c-behaviors` | 1 | **`CASOS+FAQS+INDICES`** | itera las tres listas (9) |
+| `corte-cuerpo` | 1 | **`RUTAS.length`** | el «suelo flojo» del `12/1` |
+| `offsets` | 1 | **`rutaB ? 2 : 1`** | el mínimo es del **MODO**, no de la sonda |
+| `c-muestra` | 3 (formas) | **16 (páginas)** | numerador y denominador en la misma unidad |
+| `esqueleto` | 9 (formas) | **16 (páginas)** | idem |
+
+**El que casi cuela, y merece leerse:** en `c-muestra` la corrección obvia era
+`minimo = Σ muestra.length`… y `total` **ya se define como esa misma suma**. Eso
+habría dado un listón idéntico **por construcción**: un contrato que **no puede
+fallar nunca**, o sea cambiar un verde vacío por otro **con pinta de arreglado**.
+El listón sale de las **ENTRADAS** (`Σ min(cupo, total)`), nunca de la salida.
+
+Y `c-behaviors` es el que más importaba: es la sonda del eje **comportamiento**,
+el que está a **0/31** en la matriz de cobertura. **El hueco peor cubierto tenía
+el contrato más flojo.**
+
+## 4 · Dos defectos encontrados en lo que escribí, no en lo heredado
+
+- **`estados-390`, en su propio test en negativo:** con 0 cargas válidas
+  imprimía igualmente el párrafo de «un solo estado» — la **6.ª instancia de
+  «0 comparado = verde»**, dentro de la sonda escrita para medir un muestreo
+  insuficiente. Corregido antes de la corrida buena.
+- **La hipótesis del grupo D estaba citada en una ruta que no existe.** El
+  TRASPASO apuntaba a `monografico-tecnico/HIPOTESIS-GRUPO-D.md` y vive en
+  `arquetipo-A/`. Quien siguiera el traspaso abriría una ruta muerta y concluiría
+  que el pre-registro nunca se escribió — **comprobar el destino no distingue
+  «nunca existió» de «está en otro sitio»**.
+
+## 5 · Verificación
+
+`qa:lib` **69/69** · **las 49 sondas compilan y declaran su mínimo (0 sin
+contrato)** · `c-muestra` re-corrida en vivo → `✓ evaluadas 16/16` **y salida
+congelada idéntica** (el arreglo es de contrato, no de medida) · `estados-390`
+→ `✓ 180/180 cargas, 0 selectores muertos` · negativo de `estados-390` → **exit
+2** con el ancla saboteada · `npm run check` **0 errores**.
+
+**Ningún `build` en vuelo mientras una sonda medía**, y las medidas commiteadas
+antes de escribir las actas.
+
+## 6 · SIGUIENTE FRENTE — la hipótesis del grupo D
+
+**Con el instrumento cerrado, lo que viene es construcción.** El frente es
+`docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md` (⚠ **en `arquetipo-A/`**, no en
+`monografico-tecnico/` como decía el traspaso):
+
+- **Pre-registrada el 2026-07-30, sin ejecutar**, con `PD1`–`PD3` escritas
+  **antes de mirar** — por la misma razón que `EXPERIMENTO-URBANO.md`, que ya se
+  corrió una vez y dio resultado limpio.
+- **13 páginas** (artículo de centro de ayuda). `RECON-LISTADOS.md` §3 ya midió
+  que **no es de la familia editorial**: lleva `et_pb_pagebuilder_layout`, tiene
+  **secciones propias de la instancia** y su cuerpo lo **compone el editor** —
+  o sea es **página de BUILDER**, del mismo tipo que SECTOR y MONOGRÁFICO.
+- **`HD1`: si `MonoSeccion[]` expresa el cuerpo de las 13 sin campos nuevos,
+  esas 13 páginas NO cuestan un arquetipo: cuestan datos.** `HD0`: hacen falta
+  campos, y entonces el grupo D es arquetipo propio **con su razón escrita**.
+- El protocolo está en su §3 y es el que ya funcionó: recon primero, transcribir
+  **una** solo con campos existentes, criterios con orden de mando.
+
+## 7 · Lo que queda abierto, por prioridad
+
+1. **La barra de navegación (CLASE MAYOR)** — 31 rutas, defecto de RANGO.
+2. **La retícula de la HOME** — 86.35/85 % contra 86 %. Va con C-QA3.
+3. **Ráfagas 2 y 3 de `cqa6-390`** — la 2 a ≥2 h de la 1 (09:39 del 08-03); **la
+   3 en OTRO DÍA obligatoriamente**. Hasta que cierren, el **−30 de EDAR@390
+   sigue SIN PROBAR**, y ya se sabe que **no** lo resuelven más cargas.
+4. **El mecanismo del ±32.28** — sin identificar. Rocket Loader **descartado**
+   (`S 0 / N 54`). Hace falta una ráfaga **con transición Y con observable**.
+5. **Las 17 filas sin emparejar** del eje horizontal, y su RANGO sin probar.
+6. **Migrar a `iniciarClon()` las 45** que aún esperan un 3000 ajeno.
+7. **Comportamiento a 0/31** en la matriz — el hueco mayor, y ahora con
+   `c-behaviors` bien acotada para atacarlo.
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No leer el suelo de 32.28 como un umbral.** Son **dos picos**: `≈0` limpio,
+  `≈32.28` limpio, **cualquier otro valor defecto — incluidos los menores**.
+- **No escribir «390 es unimodal».** Se escribe la **cota**: `< 5 %` por carga.
+- **No pedirle al eje de las cargas que conteste una hipótesis episódica**, ni al
+  revés. Cada uno contesta lo suyo y hay que decir cuál se está contestando.
+- **No dar por resuelto el −30** ni tratarlo como defecto: sigue **SIN PROBAR**,
+  y la decisión se toma **con las dos ráfagas hechas**, por el criterio
+  pre-registrado y no por cansancio.
+- **No correr `check` ni `build` con una sonda en vuelo.**
+
+---
+
 # HANDOFF — los flecos de C-QA6: el suelo bimodal NO es un umbral
 
 > ⚠ **Tanda 2026-08-03 (13.ª), continuación de la 12.ª.** Cuatro pasos. Tanda de

@@ -598,9 +598,23 @@ antes de fiarte del veredicto de separación.**
 
 ### Pasos siguientes, en orden
 
-3. **Hipótesis del grupo D** — ejecutar el pre-registro de
-   `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md`. Si `MonoSeccion[]`
-   expresa el cuerpo del artículo de KB, esas 13 páginas no cuestan arquetipo.
+> ✅ **El INSTRUMENTO quedó cerrado el 2026-08-03** (tanda 14.ª): los 9 mínimos
+> expresan ya su invariante, `openPage` no cuenta una 404 y el barrido de las
+> 343 medidas congeladas dio **cero 404 accidentales**. **A partir de aquí lo que
+> viene es CONSTRUCCIÓN**, y el frente es el 3.
+
+3. ⭐ **SIGUIENTE FRENTE · Hipótesis del grupo D** — ejecutar el pre-registro de
+   `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md` (**ojo: en `arquetipo-A/`**;
+   el traspaso lo citaba en `monografico-tecnico/` y esa ruta no existe).
+   **Pre-registrada el 2026-07-30, sin ejecutar, con `PD1`–`PD3` escritas antes
+   de mirar.** Son **13 páginas** de artículo de centro de ayuda, y
+   `RECON-LISTADOS.md` §3 ya midió que **son página de BUILDER** —
+   `et_pb_pagebuilder_layout`, secciones propias, cuerpo compuesto por el
+   editor—, o sea de la misma familia que SECTOR y MONOGRÁFICO.
+   **HD1: si `MonoSeccion[]` expresa su cuerpo sin campos nuevos, las 13 no
+   cuestan arquetipo — cuestan datos.** HD0: hacen falta campos, y entonces es
+   arquetipo propio **con su razón escrita**. Protocolo en su §3, el mismo que
+   ya funcionó en `EXPERIMENTO-URBANO.md`.
 4. **Pasada de comportamiento con navegador** (P-LH-C6) sobre los listados, antes
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
 5. **Construir LISTADO-B + L2/L3 + el índice de casos** según

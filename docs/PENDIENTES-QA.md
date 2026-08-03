@@ -5018,3 +5018,81 @@ pregunta**, y hasta hoy se estaba leyendo como si lo fuera.
 en la escala del fenómeno: **muchas cargas, una sentada**. Y de ahí que **no** se
 le toque el tamaño a `cqa6-390`: esa campaña contesta el eje de los días y vale
 por tener sus 3 ráfagas homogéneas.
+
+### `estados-390` · el eje de las CARGAS, contestado (2026-08-03)
+
+La pregunta era **«¿390 es unimodal, o está poco muestreado?»**, y se contesta en
+la escala del fenómeno —**cargas**, no días—. Una sentada, 60 cargas por ruta:
+
+```bash
+npm run qa:estados-390 -- 60      # → medidas/estados-390.json · ✓ 180/180 cargas
+```
+
+| ruta @390 | cargas válidas | estados | valores |
+|---|---|---|---|
+| `software` | 60 | **1** | `308.58 ×60` |
+| `edar` | 60 | **1** | `189.39 ×60` |
+| `petroleo` | 60 | **1** | `189.39 ×60` |
+
+**Cero variación en 180 cargas.**
+
+#### Qué se puede afirmar con eso, y qué no
+
+> **No es «390 es unimodal».** La sonda lo imprime ella misma, y es la regla del
+> cero: **180 cargas sin ver algo acotan su frecuencia, no prueban su ausencia.**
+
+Lo que sí se puede escribir, con el número:
+
+| | 1440 | 390 |
+|---|---|---|
+| estados vistos | **2** | **1** |
+| tasa del estado raro | **4 de 27 ≈ 15 %** | **0 de 60 por ruta** |
+| cota al 95 % (regla de tres, `3/n`) | — | **< 5 % por carga y ruta** |
+
+Y el contraste que cierra la pregunta que se hizo:
+
+> **Si a 390 hubiera un segundo estado con la tasa de 1440 (≈15 %), la
+> probabilidad de no verlo en 60 cargas sería `6.6 × 10⁻⁵`; en las 180,
+> `2.9 × 10⁻¹³`.** O sea: **390 NO se comporta como 1440.** Eso ya no es una
+> suposición ni un «no se vio»: está medido y acotado.
+
+**Pero una tasa mucho menor sigue cabiendo**, y por eso el −30 no se cierra
+aquí: un estado que apareciera en el 1 % de las cargas daría `0.99⁶⁰ ≈ 0.55` de
+no salir — más probable que salir.
+
+#### Lo que esto le hace a `cqa6-390`: **la confirma, no la sustituye**
+
+El pre-registro decía: *«si aparece un segundo estado, `cqa6-390` cambia de
+sentido antes de gastar dos días en ella»*. **No apareció**, así que la campaña
+**mantiene su sentido y sigue en pie con sus ráfagas 2 y 3.**
+
+Y de paso los dos ejes quedan repartidos limpiamente, que es la confirmación
+práctica de §La escala del fenómeno:
+
+| eje | instrumento | estado |
+|---|---|---|
+| **cargas** — ¿hay un segundo estado FRECUENTE? | `estados-390`, 180 cargas | ✅ **CERRADO**: no lo hay (< 5 %) |
+| **días** — ¿hay una condición EPISÓDICA que reaparezca? | `cqa6-390`, 3 ráfagas | ⏳ **abierto**: 1 de 3 |
+
+> **Y esa división explica por qué el ±30 de la ráfaga A no lo contesta esta
+> sonda.** Si aquello fue un episodio —una condición ligada a un momento, no a
+> una carga— entonces 180 cargas de una sola tarde **no pueden verlo por
+> construcción**, por muchas que sean. Es exactamente el eje que compra la
+> separación en días, y para eso está `cqa6-390`.
+
+#### El −30 de EDAR@390, tras esto
+
+**Sigue SIN PROBAR**, con esa etiqueta. Lo que cambia es que ahora se sabe **por
+qué vía puede resolverse y por cuál no**:
+
+- **no** por más cargas: 180 ya dicen que no hay estado frecuente;
+- **sí** por las ráfagas 2 y 3 de `cqa6-390`, que es donde vive la hipótesis
+  episódica.
+
+Si esas dos cierran sin ver el ±30, el balance de evidencia queda: **un ±30
+observado una vez, sin fichero, no reproducido en 180 cargas ni en 3 episodios
+separados.** Eso seguirá sin ser una prueba de ausencia —nada lo es— pero será
+suficiente para dejar de tratar el −30 como candidato a suelo y pasarlo a
+defecto con su ficha. **Esa decisión NO se toma hoy**: se toma con las dos
+ráfagas hechas, y se deja escrito aquí para que se tome por el criterio
+pre-registrado y no por cansancio.

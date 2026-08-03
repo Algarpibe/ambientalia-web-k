@@ -496,6 +496,24 @@ Estas se pagaron con horas de depuración. No las reinventes:
      cargas, una sentada, unidad = la carga—, deliberadamente **fuera** de la
      campaña para no romperle la homogeneidad a sus ráfagas.
 
+     **Corrido el 2026-08-03: 60 cargas × 3 rutas = 180, UN SOLO ESTADO en las
+     tres** (`308.58` · `189.39` · `189.39`, cero variación). Y así es como se
+     reporta un cero de muestreo **sin convertirlo en prueba de ausencia**:
+
+     > **No se escribe «390 es unimodal». Se escribe la COTA.** Regla de tres
+     > (0 eventos en n ⇒ cota al 95 % = `3/n`): **< 5 % por carga y ruta**. Y el
+     > contraste: si a 390 hubiera un segundo estado con la tasa de 1440,
+     > no verlo en 60 cargas tendría probabilidad `6.6 × 10⁻⁵`. **390 no se
+     > comporta como 1440 — medido, no supuesto.** Una tasa mucho menor sigue
+     > cabiendo, y por eso esto acota en vez de cerrar.
+
+     **Y el reparto de ejes que deja, que es lo reutilizable:** un cero en el eje
+     de las cargas **no puede** contestar una hipótesis **episódica** —si la
+     condición va ligada a un momento y no a una carga, 180 cargas de una tarde
+     no la ven **por construcción**—. Para eso está la separación en días. **Los
+     dos ejes no compiten: contestan preguntas distintas, y hay que decir cuál se
+     está contestando.**
+
   De ahí la consecuencia que gobierna la lectura de cualquier Δ:
 
   > **Sin campaña cerrada para esa ruta, un residuo pequeño no es «limpio»: es
