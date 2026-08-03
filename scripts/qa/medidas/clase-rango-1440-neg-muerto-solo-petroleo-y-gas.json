@@ -1,0 +1,2479 @@
+{
+  "meta": {
+    "width": 1440,
+    "fecha": "2026-08-03",
+    "sabotaje": "muerto",
+    "solo": "petroleo-y-gas",
+    "preRegistro": "docs/research/clase/PRE-REGISTRO-ANCHO-MODULO.md",
+    "tolerancia": 0.5,
+    "control": [
+      "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+    ]
+  },
+  "rutas": {
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "familia": "MONOGRAFICO",
+      "vias": {
+        "orig": {
+          "fila": {
+            "et_pb_row": 17
+          },
+          "columna": {
+            "et_pb_column": 27
+          },
+          "modulo": {
+            "et_pb_module": 66
+          }
+        },
+        "clon": {
+          "fila": {
+            "marcador": 17
+          },
+          "columna": {
+            "hijos": 12,
+            "horizontal": 54
+          },
+          "modulo": {
+            "hijos": 102
+          }
+        }
+      },
+      "niveles": {
+        "fila": {
+          "n": {
+            "orig": 17,
+            "clon": 17
+          },
+          "conVeredicto": true,
+          "viaClon": {
+            "marcador": 17
+          },
+          "distintos": {
+            "orig": [
+              {
+                "valor": 86,
+                "n": 16
+              },
+              {
+                "valor": 95,
+                "n": 1
+              }
+            ],
+            "clon": [
+              {
+                "valor": 86,
+                "n": 16
+              },
+              {
+                "valor": 95,
+                "n": 1
+              }
+            ]
+          },
+          "varianzaOrig": true,
+          "defectoRango": false,
+          "pares": 14,
+          "difs": [],
+          "valores": {
+            "orig": [
+              {
+                "i": 0,
+                "pct": 95,
+                "w": 1368,
+                "h": 122,
+                "firma": ""
+              },
+              {
+                "i": 1,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 50,
+                "firma": "InicioSectoresMonitoriza"
+              },
+              {
+                "i": 2,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 802.3,
+                "firma": "SolicitaunademotécnicaDe"
+              },
+              {
+                "i": 3,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 819,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": 4,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 841.98,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": 5,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 798.19,
+                "firma": "LasolucióndeKunakMonitor"
+              },
+              {
+                "i": 6,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 550.95,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": 7,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 899.98,
+                "firma": "SolicitaunademotécnicaAp"
+              },
+              {
+                "i": 8,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 998.52,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": 9,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 377.47,
+                "firma": "CómofuncionalasoluciónRe"
+              },
+              {
+                "i": 10,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 582.47,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": 11,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 495.02,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": 12,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 688.64,
+                "firma": "NuestrassolucionesAIRPro"
+              },
+              {
+                "i": 13,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 122.59,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": 14,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 618.25,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": 15,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 122.59,
+                "firma": "ArtículosyGuías"
+              },
+              {
+                "i": 16,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 559.11,
+                "firma": "Corrosiónambiental:causa"
+              }
+            ],
+            "clon": [
+              {
+                "i": 0,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 208.61,
+                "firma": "PetróleoyGasMonitorizaci"
+              },
+              {
+                "i": 1,
+                "pct": 95,
+                "w": 1368,
+                "h": 122,
+                "firma": ""
+              },
+              {
+                "i": 2,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 50,
+                "firma": "InicioSectoresMonitoriza"
+              },
+              {
+                "i": 3,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 802.3,
+                "firma": "SolicitaunademotécnicaDe"
+              },
+              {
+                "i": 4,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 819,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": 5,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 841.98,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": 6,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 798.19,
+                "firma": "LasolucióndeKunakMonitor"
+              },
+              {
+                "i": 7,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 550.95,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": 8,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 899.98,
+                "firma": "SolicitaunademotécnicaAp"
+              },
+              {
+                "i": 9,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 998.52,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": 10,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 377.47,
+                "firma": "CómofuncionalasoluciónRe"
+              },
+              {
+                "i": 11,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 582.47,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": 12,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 495.02,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": 13,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 688.64,
+                "firma": "NuestrassolucionesAIRPro"
+              },
+              {
+                "i": 14,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 122.59,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": 15,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 593.89,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": 16,
+                "pct": 86,
+                "w": 1238.39,
+                "h": 632.75,
+                "firma": "ArtículosyGuíasContamina"
+              }
+            ]
+          }
+        },
+        "columna": {
+          "n": {
+            "orig": 27,
+            "clon": 66
+          },
+          "conVeredicto": false,
+          "viaClon": {
+            "hijos": 12,
+            "horizontal": 54
+          },
+          "distintos": {
+            "orig": [
+              {
+                "valor": 29.67,
+                "n": 5
+              },
+              {
+                "valor": 36.7,
+                "n": 1
+              },
+              {
+                "valor": 47.25,
+                "n": 8
+              },
+              {
+                "valor": 57.8,
+                "n": 1
+              },
+              {
+                "valor": 64.83,
+                "n": 5
+              },
+              {
+                "valor": 100,
+                "n": 7
+              }
+            ],
+            "clon": [
+              {
+                "valor": 4.23,
+                "n": 1
+              },
+              {
+                "valor": 5.97,
+                "n": 1
+              },
+              {
+                "valor": 13.62,
+                "n": 35
+              },
+              {
+                "valor": 28.26,
+                "n": 1
+              },
+              {
+                "valor": 29.67,
+                "n": 3
+              },
+              {
+                "valor": 36.7,
+                "n": 1
+              },
+              {
+                "valor": 47.25,
+                "n": 8
+              },
+              {
+                "valor": 50,
+                "n": 1
+              },
+              {
+                "valor": 57.8,
+                "n": 1
+              },
+              {
+                "valor": 64.83,
+                "n": 3
+              },
+              {
+                "valor": 100,
+                "n": 11
+              }
+            ]
+          },
+          "varianzaOrig": true,
+          "defectoRango": false,
+          "pares": 15,
+          "difs": [
+            {
+              "firma": "Últimosproyectos",
+              "i": {
+                "o": "13.0",
+                "c": "14.0"
+              },
+              "pctO": 29.67,
+              "pctC": 100,
+              "d": 70.33,
+              "wO": 367.38,
+              "wC": 1238.39,
+              "dW": 871.01
+            },
+            {
+              "firma": "ArtículosyGuías",
+              "i": {
+                "o": "15.0",
+                "c": "16.0"
+              },
+              "pctO": 29.67,
+              "pctC": 100,
+              "d": 70.33,
+              "wO": 367.38,
+              "wC": 1238.39,
+              "dW": 871.01
+            }
+          ],
+          "valores": {
+            "orig": [
+              {
+                "i": "0.0",
+                "pct": 100,
+                "w": 1368,
+                "h": 82,
+                "firma": ""
+              },
+              {
+                "i": "1.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 26,
+                "firma": "InicioSectoresMonitoriza"
+              },
+              {
+                "i": "2.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 588.13,
+                "firma": "SolicitaunademotécnicaDe"
+              },
+              {
+                "i": "2.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 773.5,
+                "firma": "Controlcontinuodeemision"
+              },
+              {
+                "i": "3.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "3.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 750.2,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": "4.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 811.19,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": "4.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "5.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 709.39,
+                "firma": "LasolucióndeKunakMonitor"
+              },
+              {
+                "i": "5.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "6.0",
+                "pct": 57.8,
+                "w": 715.78,
+                "h": 486.16,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": "6.1",
+                "pct": 36.7,
+                "w": 454.48,
+                "h": 454.48,
+                "firma": ""
+              },
+              {
+                "i": "7.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 613.88,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "7.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 842.39,
+                "firma": "Aplicacionesenpetróleoyg"
+              },
+              {
+                "i": "8.0",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 909.72,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": "8.1",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "9.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 319.88,
+                "firma": "CómofuncionalasoluciónRe"
+              },
+              {
+                "i": "10.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 522.47,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": "10.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 522.47,
+                "firma": ""
+              },
+              {
+                "i": "11.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 466.22,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": "12.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 631.05,
+                "firma": "NuestrassolucionesAIRPro"
+              },
+              {
+                "i": "13.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 65,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": "13.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 65,
+                "firma": ""
+              },
+              {
+                "i": "14.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 560.66,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": "15.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 65,
+                "firma": "ArtículosyGuías"
+              },
+              {
+                "i": "15.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 65,
+                "firma": ""
+              },
+              {
+                "i": "16.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 501.52,
+                "firma": "Corrosiónambiental:causa"
+              }
+            ],
+            "clon": [
+              {
+                "i": "0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 30.59,
+                "firma": "PetróleoyGas"
+              },
+              {
+                "i": "0.1",
+                "pct": 50,
+                "w": 619.19,
+                "h": 82,
+                "firma": "Monitorizacióndeemisione"
+              },
+              {
+                "i": "1.0",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 79.97,
+                "firma": ""
+              },
+              {
+                "i": "1.1",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.2",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.3",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.4",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.5",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.6",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.7",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.8",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.9",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.10",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.11",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.12",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.13",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.14",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.15",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.16",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.17",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.18",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.19",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.20",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.21",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.22",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.23",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.24",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.25",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.26",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.27",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.28",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.29",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.30",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.31",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 79.98,
+                "firma": ""
+              },
+              {
+                "i": "1.32",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.33",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.34",
+                "pct": 13.62,
+                "w": 186.33,
+                "h": 79.98,
+                "firma": ""
+              },
+              {
+                "i": "2.0",
+                "pct": 4.23,
+                "w": 52.36,
+                "h": 26,
+                "firma": "Inicio"
+              },
+              {
+                "i": "2.1",
+                "pct": 5.97,
+                "w": 73.98,
+                "h": 26,
+                "firma": "Sectores"
+              },
+              {
+                "i": "2.2",
+                "pct": 28.26,
+                "w": 350,
+                "h": 26,
+                "firma": "Monitorizacióndeemisione"
+              },
+              {
+                "i": "3.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 773.5,
+                "firma": "SolicitaunademotécnicaDe"
+              },
+              {
+                "i": "3.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 773.5,
+                "firma": "Controlcontinuodeemision"
+              },
+              {
+                "i": "4.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 750.2,
+                "firma": ""
+              },
+              {
+                "i": "4.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 750.2,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": "5.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 811.19,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": "5.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 811.19,
+                "firma": ""
+              },
+              {
+                "i": "6.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 709.39,
+                "firma": "LasolucióndeKunakMonitor"
+              },
+              {
+                "i": "6.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 709.39,
+                "firma": ""
+              },
+              {
+                "i": "7.0",
+                "pct": 57.8,
+                "w": 715.78,
+                "h": 486.16,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": "7.1",
+                "pct": 36.7,
+                "w": 454.48,
+                "h": 486.16,
+                "firma": ""
+              },
+              {
+                "i": "8.0",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 842.39,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "8.1",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 842.39,
+                "firma": "Aplicacionesenpetróleoyg"
+              },
+              {
+                "i": "9.0",
+                "pct": 64.83,
+                "w": 802.88,
+                "h": 909.72,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": "9.1",
+                "pct": 29.67,
+                "w": 367.38,
+                "h": 909.72,
+                "firma": ""
+              },
+              {
+                "i": "10.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 319.88,
+                "firma": "CómofuncionalasoluciónRe"
+              },
+              {
+                "i": "11.0",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 522.47,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": "11.1",
+                "pct": 47.25,
+                "w": 585.13,
+                "h": 522.47,
+                "firma": ""
+              },
+              {
+                "i": "12.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 466.22,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": "13.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Nuestrassoluciones"
+              },
+              {
+                "i": "13.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 532,
+                "firma": "AIRProMonitordecalidadde"
+              },
+              {
+                "i": "14.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": "15.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 467.3,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": "15.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 44,
+                "firma": "Vertodosloscasosdeéxito"
+              },
+              {
+                "i": "16.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "ArtículosyGuías"
+              },
+              {
+                "i": "16.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 408.56,
+                "firma": "Contaminaciónporproducci"
+              },
+              {
+                "i": "16.2",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 44,
+                "firma": "Ampliatusconocimientosco"
+              }
+            ]
+          }
+        },
+        "modulo": {
+          "n": {
+            "orig": 66,
+            "clon": 102
+          },
+          "conVeredicto": false,
+          "viaClon": {
+            "hijos": 102
+          },
+          "distintos": {
+            "orig": [
+              {
+                "valor": 4.84,
+                "n": 3
+              },
+              {
+                "valor": 7.47,
+                "n": 1
+              },
+              {
+                "valor": 8.38,
+                "n": 1
+              },
+              {
+                "valor": 10.25,
+                "n": 3
+              },
+              {
+                "valor": 16.33,
+                "n": 4
+              },
+              {
+                "valor": 70,
+                "n": 1
+              },
+              {
+                "valor": 80,
+                "n": 7
+              },
+              {
+                "valor": 90,
+                "n": 1
+              },
+              {
+                "valor": 100,
+                "n": 45
+              }
+            ],
+            "clon": [
+              {
+                "valor": 4.84,
+                "n": 3
+              },
+              {
+                "valor": 7.47,
+                "n": 1
+              },
+              {
+                "valor": 8.38,
+                "n": 1
+              },
+              {
+                "valor": 10.25,
+                "n": 3
+              },
+              {
+                "valor": 16.33,
+                "n": 2
+              },
+              {
+                "valor": 21.34,
+                "n": 1
+              },
+              {
+                "valor": 31.18,
+                "n": 6
+              },
+              {
+                "valor": 31.77,
+                "n": 1
+              },
+              {
+                "valor": 36.31,
+                "n": 1
+              },
+              {
+                "valor": 41.84,
+                "n": 1
+              },
+              {
+                "valor": 42.94,
+                "n": 13
+              },
+              {
+                "valor": 53.67,
+                "n": 9
+              },
+              {
+                "valor": 60.11,
+                "n": 4
+              },
+              {
+                "valor": 62.4,
+                "n": 1
+              },
+              {
+                "valor": 64.4,
+                "n": 3
+              },
+              {
+                "valor": 68.7,
+                "n": 2
+              },
+              {
+                "valor": 70,
+                "n": 1
+              },
+              {
+                "valor": 73.39,
+                "n": 1
+              },
+              {
+                "valor": 75.14,
+                "n": 1
+              },
+              {
+                "valor": 80,
+                "n": 7
+              },
+              {
+                "valor": 90,
+                "n": 1
+              },
+              {
+                "valor": 99.38,
+                "n": 1
+              },
+              {
+                "valor": 100,
+                "n": 37
+              },
+              {
+                "valor": 100.93,
+                "n": 1
+              }
+            ]
+          },
+          "varianzaOrig": true,
+          "defectoRango": false,
+          "pares": 36,
+          "difs": [
+            {
+              "firma": "Sector:IndustriaVirginiaDepartmentofEnvironmenta",
+              "i": {
+                "o": "14.0.0",
+                "c": "15.0.0"
+              },
+              "pctO": 100,
+              "pctC": 31.18,
+              "d": -68.82,
+              "wO": 1238.39,
+              "wC": 386.13,
+              "dW": -852.26
+            },
+            {
+              "firma": "Vertodosloscasosdeéxito",
+              "i": {
+                "o": "14.0.1",
+                "c": "15.1.0"
+              },
+              "pctO": 100,
+              "pctC": 21.34,
+              "d": -78.66,
+              "wO": 1238.39,
+              "wC": 264.31,
+              "dW": -974.08
+            },
+            {
+              "firma": "Ampliatusconocimientosconnuestrasguías",
+              "i": {
+                "o": "16.0.1",
+                "c": "16.2.0"
+              },
+              "pctO": 100,
+              "pctC": 31.77,
+              "d": -68.23,
+              "wO": 1238.39,
+              "wC": 393.45,
+              "dW": -844.94
+            }
+          ],
+          "valores": {
+            "orig": [
+              {
+                "i": "0.0.0",
+                "pct": 100,
+                "w": 1368,
+                "h": 82,
+                "firma": ""
+              },
+              {
+                "i": "1.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 26,
+                "firma": "InicioSectoresMonitoriza"
+              },
+              {
+                "i": "2.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "2.0.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "2.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "2.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Descargarcatálogo"
+              },
+              {
+                "i": "2.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 0,
+                "firma": ""
+              },
+              {
+                "i": "2.1.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 364.75,
+                "firma": "Controlcontinuodeemision"
+              },
+              {
+                "i": "2.1.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 364.75,
+                "firma": "Elproblemareal:emisiones"
+              },
+              {
+                "i": "3.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "3.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "3.1.0",
+                "pct": 100,
+                "w": 802.88,
+                "h": 120,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": "3.1.1",
+                "pct": 100,
+                "w": 802.88,
+                "h": 168.19,
+                "firma": "Nopuedesgestionarloqueno"
+              },
+              {
+                "i": "3.1.2",
+                "pct": 100,
+                "w": 802.88,
+                "h": 427.97,
+                "firma": "Detectafugasdeformatempr"
+              },
+              {
+                "i": "4.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "4.0.1",
+                "pct": 80,
+                "w": 468.09,
+                "h": 120,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": "4.0.2",
+                "pct": 80,
+                "w": 468.09,
+                "h": 106,
+                "firma": "Unareddesensoresdistribu"
+              },
+              {
+                "i": "4.0.3",
+                "pct": 90,
+                "w": 526.61,
+                "h": 275,
+                "firma": "monitorizacióncontinuaen"
+              },
+              {
+                "i": "4.0.4",
+                "pct": 80,
+                "w": 468.09,
+                "h": 84,
+                "firma": "Actúaantesdequeelproblem"
+              },
+              {
+                "i": "4.0.5",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Sabermás"
+              },
+              {
+                "i": "4.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "5.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "5.0.1",
+                "pct": 80,
+                "w": 468.09,
+                "h": 65,
+                "firma": "LasolucióndeKunak"
+              },
+              {
+                "i": "5.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 121,
+                "firma": "Monitorizacióncontinuadi"
+              },
+              {
+                "i": "5.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 317.34,
+                "firma": "LasestacionesKunakAIRper"
+              },
+              {
+                "i": "5.0.4",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Másinformación"
+              },
+              {
+                "i": "5.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "6.0.0",
+                "pct": 8.38,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "6.0.1",
+                "pct": 100,
+                "w": 715.78,
+                "h": 120,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": "6.0.2",
+                "pct": 100,
+                "w": 715.78,
+                "h": 47,
+                "firma": "Configuraciónflexibleseg"
+              },
+              {
+                "i": "6.0.3",
+                "pct": 80,
+                "w": 572.63,
+                "h": 252.16,
+                "firma": "LasestacionesKunakAIRpue"
+              },
+              {
+                "i": "6.1.0",
+                "pct": 100,
+                "w": 454.48,
+                "h": 454.48,
+                "firma": ""
+              },
+              {
+                "i": "7.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "7.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 489.83,
+                "firma": ""
+              },
+              {
+                "i": "7.0.2",
+                "pct": 100,
+                "w": 367.38,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "7.1.0",
+                "pct": 70,
+                "w": 562,
+                "h": 120,
+                "firma": "Aplicacionesenpetróleoyg"
+              },
+              {
+                "i": "7.1.1",
+                "pct": 100,
+                "w": 802.88,
+                "h": 61.19,
+                "firma": "LasredesdesensoresKunakp"
+              },
+              {
+                "i": "7.1.2",
+                "pct": 100,
+                "w": 802.88,
+                "h": 597.16,
+                "firma": "RefineríasControldeemisi"
+              },
+              {
+                "i": "8.0.0",
+                "pct": 7.47,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "8.0.1",
+                "pct": 80,
+                "w": 642.3,
+                "h": 120,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": "8.0.2",
+                "pct": 80,
+                "w": 642.3,
+                "h": 121,
+                "firma": "Detectarlasfugasatiempop"
+              },
+              {
+                "i": "8.0.3",
+                "pct": 100,
+                "w": 802.88,
+                "h": 473.72,
+                "firma": "Elmetano(CH4)esunodelosp"
+              },
+              {
+                "i": "8.0.4",
+                "pct": 100,
+                "w": 802.88,
+                "h": 74,
+                "firma": "¿Quieresmásinformación?"
+              },
+              {
+                "i": "8.1.0",
+                "pct": 100,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "9.0.0",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "9.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Cómofuncionalasolución"
+              },
+              {
+                "i": "9.0.2",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 36,
+                "firma": "ReddesensoresReddecomuni"
+              },
+              {
+                "i": "9.0.3",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 109.78,
+                "firma": "Lasestacionesmultiparáme"
+              },
+              {
+                "i": "10.0.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 120,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": "10.0.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 84,
+                "firma": "Actúaantesdequeelproblem"
+              },
+              {
+                "i": "10.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 140.38,
+                "firma": "Detectarunafugaatiempoma"
+              },
+              {
+                "i": "10.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "10.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "11.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 419.97,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": "12.0.0",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "12.0.1",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "12.0.2",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Nuestrassoluciones"
+              },
+              {
+                "i": "12.0.3",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 532,
+                "firma": "AIRProMonitordecalidadde"
+              },
+              {
+                "i": "13.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "13.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 65,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": "14.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 491.66,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": "14.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 44,
+                "firma": "Vertodosloscasosdeéxito"
+              },
+              {
+                "i": "15.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "15.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 65,
+                "firma": "ArtículosyGuías"
+              },
+              {
+                "i": "16.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 427.52,
+                "firma": "Corrosiónambiental:causa"
+              },
+              {
+                "i": "16.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 74,
+                "firma": "Ampliatusconocimientosco"
+              }
+            ],
+            "clon": [
+              {
+                "i": "1.0.0",
+                "pct": 41.84,
+                "w": 77.97,
+                "h": 79.97,
+                "firma": ""
+              },
+              {
+                "i": "1.1.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.2.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.3.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.4.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.5.0",
+                "pct": 42.93,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.6.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.7.0",
+                "pct": 68.7,
+                "w": 128,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.8.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.9.0",
+                "pct": 60.11,
+                "w": 112,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.10.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.11.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.12.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.13.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.14.0",
+                "pct": 64.4,
+                "w": 120,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.15.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.16.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.17.0",
+                "pct": 75.14,
+                "w": 140,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.18.0",
+                "pct": 42.93,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.19.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.20.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.21.0",
+                "pct": 64.4,
+                "w": 120,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.22.0",
+                "pct": 60.11,
+                "w": 112,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.23.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.24.0",
+                "pct": 64.4,
+                "w": 120,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.25.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.26.0",
+                "pct": 42.94,
+                "w": 80,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.27.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.28.0",
+                "pct": 60.11,
+                "w": 112,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.29.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.30.0",
+                "pct": 68.7,
+                "w": 128,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.31.0",
+                "pct": 36.31,
+                "w": 67.66,
+                "h": 79.98,
+                "firma": ""
+              },
+              {
+                "i": "1.32.0",
+                "pct": 60.11,
+                "w": 112,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.33.0",
+                "pct": 53.67,
+                "w": 100,
+                "h": 80,
+                "firma": ""
+              },
+              {
+                "i": "1.34.0",
+                "pct": 99.38,
+                "w": 185.17,
+                "h": 79.98,
+                "firma": ""
+              },
+              {
+                "i": "2.0.0",
+                "pct": 62.4,
+                "w": 32.67,
+                "h": 17,
+                "firma": "Inicio"
+              },
+              {
+                "i": "2.1.0",
+                "pct": 73.39,
+                "w": 54.3,
+                "h": 17,
+                "firma": "Sectores"
+              },
+              {
+                "i": "2.2.0",
+                "pct": 100.93,
+                "w": 353.27,
+                "h": 17,
+                "firma": "Monitorizacióndeemisione"
+              },
+              {
+                "i": "3.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "3.0.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "3.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "3.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Descargarcatálogo"
+              },
+              {
+                "i": "3.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 0,
+                "firma": ""
+              },
+              {
+                "i": "3.1.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 364.75,
+                "firma": "Controlcontinuodeemision"
+              },
+              {
+                "i": "3.1.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 364.75,
+                "firma": "Elproblemareal:emisiones"
+              },
+              {
+                "i": "4.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "4.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "4.1.0",
+                "pct": 100,
+                "w": 802.88,
+                "h": 120,
+                "firma": "Deinspeccionespuntualesa"
+              },
+              {
+                "i": "4.1.1",
+                "pct": 100,
+                "w": 802.88,
+                "h": 168.19,
+                "firma": "Nopuedesgestionarloqueno"
+              },
+              {
+                "i": "4.1.2",
+                "pct": 100,
+                "w": 802.88,
+                "h": 427.97,
+                "firma": "Detectafugasdeformatempr"
+              },
+              {
+                "i": "5.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "5.0.1",
+                "pct": 80,
+                "w": 468.09,
+                "h": 120,
+                "firma": "Quénecesitasparacontrola"
+              },
+              {
+                "i": "5.0.2",
+                "pct": 80,
+                "w": 468.09,
+                "h": 106,
+                "firma": "Unareddesensoresdistribu"
+              },
+              {
+                "i": "5.0.3",
+                "pct": 90,
+                "w": 526.61,
+                "h": 275,
+                "firma": "monitorizacióncontinuaen"
+              },
+              {
+                "i": "5.0.4",
+                "pct": 80,
+                "w": 468.09,
+                "h": 84,
+                "firma": "Actúaantesdequeelproblem"
+              },
+              {
+                "i": "5.0.5",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Sabermás"
+              },
+              {
+                "i": "5.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "6.0.0",
+                "pct": 10.25,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "6.0.1",
+                "pct": 80,
+                "w": 468.09,
+                "h": 65,
+                "firma": "LasolucióndeKunak"
+              },
+              {
+                "i": "6.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 121,
+                "firma": "Monitorizacióncontinuadi"
+              },
+              {
+                "i": "6.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 317.34,
+                "firma": "LasestacionesKunakAIRper"
+              },
+              {
+                "i": "6.0.4",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Másinformación"
+              },
+              {
+                "i": "6.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "7.0.0",
+                "pct": 8.38,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "7.0.1",
+                "pct": 100,
+                "w": 715.78,
+                "h": 120,
+                "firma": "Contaminantesquepuedenmo"
+              },
+              {
+                "i": "7.0.2",
+                "pct": 100,
+                "w": 715.78,
+                "h": 47,
+                "firma": "Configuraciónflexibleseg"
+              },
+              {
+                "i": "7.0.3",
+                "pct": 80,
+                "w": 572.63,
+                "h": 252.16,
+                "firma": "LasestacionesKunakAIRpue"
+              },
+              {
+                "i": "7.1.0",
+                "pct": 100,
+                "w": 454.48,
+                "h": 454.48,
+                "firma": ""
+              },
+              {
+                "i": "8.0.0",
+                "pct": 16.33,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "8.0.1",
+                "pct": 100,
+                "w": 367.38,
+                "h": 489.83,
+                "firma": ""
+              },
+              {
+                "i": "8.0.2",
+                "pct": 100,
+                "w": 367.38,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "8.1.0",
+                "pct": 70,
+                "w": 562,
+                "h": 120,
+                "firma": "Aplicacionesenpetróleoyg"
+              },
+              {
+                "i": "8.1.1",
+                "pct": 100,
+                "w": 802.88,
+                "h": 61.19,
+                "firma": "LasredesdesensoresKunakp"
+              },
+              {
+                "i": "8.1.2",
+                "pct": 100,
+                "w": 802.88,
+                "h": 597.16,
+                "firma": "RefineríasControldeemisi"
+              },
+              {
+                "i": "9.0.0",
+                "pct": 7.47,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "9.0.1",
+                "pct": 80,
+                "w": 642.3,
+                "h": 120,
+                "firma": "Monitorizacióndemetanoyd"
+              },
+              {
+                "i": "9.0.2",
+                "pct": 80,
+                "w": 642.3,
+                "h": 121,
+                "firma": "Detectarlasfugasatiempop"
+              },
+              {
+                "i": "9.0.3",
+                "pct": 100,
+                "w": 802.88,
+                "h": 473.72,
+                "firma": "Elmetano(CH4)esunodelosp"
+              },
+              {
+                "i": "9.0.4",
+                "pct": 100,
+                "w": 802.88,
+                "h": 74,
+                "firma": "¿Quieresmásinformación?"
+              },
+              {
+                "i": "9.1.0",
+                "pct": 100,
+                "w": 367.38,
+                "h": 539.45,
+                "firma": ""
+              },
+              {
+                "i": "10.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 319.88,
+                "firma": "CómofuncionalasoluciónRe"
+              },
+              {
+                "i": "11.0.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 120,
+                "firma": "Controlatusemisionesydet"
+              },
+              {
+                "i": "11.0.1",
+                "pct": 100,
+                "w": 585.13,
+                "h": 84,
+                "firma": "Actúaantesdequeelproblem"
+              },
+              {
+                "i": "11.0.2",
+                "pct": 100,
+                "w": 585.13,
+                "h": 140.38,
+                "firma": "Detectarunafugaatiempoma"
+              },
+              {
+                "i": "11.0.3",
+                "pct": 100,
+                "w": 585.13,
+                "h": 74,
+                "firma": "Solicitaunademotécnica"
+              },
+              {
+                "i": "11.1.0",
+                "pct": 100,
+                "w": 585.13,
+                "h": 390.08,
+                "firma": ""
+              },
+              {
+                "i": "12.0.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 466.22,
+                "firma": "¿Quierescontrolarelimpac"
+              },
+              {
+                "i": "13.0.0",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "13.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Nuestrassoluciones"
+              },
+              {
+                "i": "13.1.0",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 532,
+                "firma": "AIRProMonitordecalidadde"
+              },
+              {
+                "i": "14.0.0",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "14.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "Últimosproyectos"
+              },
+              {
+                "i": "15.0.0",
+                "pct": 31.18,
+                "w": 386.13,
+                "h": 427.3,
+                "firma": "Sector:IndustriaVirginia"
+              },
+              {
+                "i": "15.0.1",
+                "pct": 31.18,
+                "w": 386.13,
+                "h": 427.3,
+                "firma": "Sector:IndustriaBASFSEMo"
+              },
+              {
+                "i": "15.0.2",
+                "pct": 31.18,
+                "w": 386.14,
+                "h": 427.3,
+                "firma": "Sector:IndustriaPlantade"
+              },
+              {
+                "i": "15.1.0",
+                "pct": 21.34,
+                "w": 264.31,
+                "h": 44,
+                "firma": "Vertodosloscasosdeéxito"
+              },
+              {
+                "i": "16.0.0",
+                "pct": 4.84,
+                "w": 60,
+                "h": 22,
+                "firma": ""
+              },
+              {
+                "i": "16.0.1",
+                "pct": 100,
+                "w": 1238.39,
+                "h": 65,
+                "firma": "ArtículosyGuías"
+              },
+              {
+                "i": "16.1.0",
+                "pct": 31.18,
+                "w": 386.13,
+                "h": 368.56,
+                "firma": "Contaminaciónporproducci"
+              },
+              {
+                "i": "16.1.1",
+                "pct": 31.18,
+                "w": 386.13,
+                "h": 368.56,
+                "firma": "Contaminaciónpormetano:i"
+              },
+              {
+                "i": "16.1.2",
+                "pct": 31.18,
+                "w": 386.14,
+                "h": 368.56,
+                "firma": "Monitorizacióndeemisione"
+              },
+              {
+                "i": "16.2.0",
+                "pct": 31.77,
+                "w": 393.45,
+                "h": 44,
+                "firma": "Ampliatusconocimientosco"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "veredicto": {
+    "fidelidad": 0,
+    "rango": 0,
+    "pares": 14,
+    "muertas": 0,
+    "sinVeredicto": 2
+  }
+}

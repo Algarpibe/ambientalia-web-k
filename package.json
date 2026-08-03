@@ -79,7 +79,9 @@
     "qa:d4-sus": "node scripts/qa/d4-suscribete.mjs",
     "qa:d123": "node scripts/qa/d123-flujo.mjs",
     "qa:cabecera": "node scripts/qa/cabecera-cmp.mjs",
-    "qa:ancho": "node scripts/qa/ancho-cuerpo.mjs"
+    "qa:ancho": "node scripts/qa/ancho-cuerpo.mjs",
+    "qa:clase-rango": "node scripts/qa/clase-rango.mjs",
+    "qa:clase-rango-neg": "node scripts/qa/clase-rango.neg.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
