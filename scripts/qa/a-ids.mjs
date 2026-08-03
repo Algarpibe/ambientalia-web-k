@@ -87,7 +87,16 @@ console.log(`\n════════ A-SP9 · ¿el \`id\` lo trae el contenid
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "a-ids", unidad: "páginas", minimo: 1, porPaginas: true });
+/**
+ * ⚠ **El mínimo era `1` y el universo de esta sonda está a la vista: recorre
+ * `[PAGINA, ...OTRAS]`.** Escribir `1` decía «con que mire una, me vale», y lo
+ * que la sonda **afirma** es un censo de anclas sobre las 8 páginas de la
+ * muestra. Con `1`, siete fallos seguidos salían verdes.
+ *
+ * **Derivado, no escrito** (`CLAUDE.md` §sondas): si la muestra crece, el listón
+ * sube solo, que es la diferencia entre un contrato y una copia desactualizada.
+ */
+const ev = new Evaluadas({ nombre: "a-ids", unidad: "páginas", minimo: 1 + OTRAS.length, porPaginas: true });
 
 const { browser } = await launch();
 const salida = {
