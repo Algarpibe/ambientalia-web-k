@@ -1,3 +1,121 @@
+# HANDOFF — F2-1 bloque 1: monorepo convertido, Δ0 en los dos anchos
+
+> ⚠ **Tanda 2026-08-03 (22.ª).** Seis pasos. **Primera tanda de F2-1 que toca
+> código de infraestructura** — y a propósito **NO instala Payload**: si la
+> conversión y la instalación van juntas y el Δ0 se rompe, no se sabe cuál de
+> las dos fue. Línea base congelada y commiteada (`5bfb944`) **antes de mover un
+> fichero**.
+
+## 0 · El titular
+
+> **La conversión a monorepo está hecha y el artefacto sigue a Δ0: 31 rutas
+> comparadas, 0 regresiones, a 1440 y a 390**, con marcador de frescura
+> verificado y las **cuatro patas** del negativo de `clon-base` cayendo cada una
+> por su invariante.
+
+```
+apps/web/             ← la app de render
+apps/cms/             ← vacía a propósito: Payload es el bloque 2
+packages/cms-config/  ← config + tipos + defaults. NADA de admin (CMS-0f)
+scripts/  docs/       ← se quedan en la RAÍZ
+```
+
+## 1 · El hallazgo del bloque, y sale VERDE si no se busca
+
+`scripts/` **no bajó** con la app —las sondas miden el original tanto como el
+clon, y bajarlas invalidaría los cientos de `scripts/qa/…` citados en `docs/`—.
+El precio: **`scripts/qa/../..` dejó de ser la raíz de la app**, y **12 sitios lo
+daban por hecho**.
+
+> ⚠ **Un `prerender-manifest.json` que no existe deja la lista de rutas VACÍA, y
+> una sonda que no mide ninguna ruta NO DA ERROR: da verde.** Habría sido verde
+> **justo sobre la corrida que autoriza la conversión.**
+
+Es la regla del cero de `CLAUDE.md` §sondas —*no encontrar nada y no mirar nada
+dan la misma salida*— aplicada **a la raíz** en vez de a un selector.
+
+**Arreglado en el sitio común y no en 12**: `APP` en `lib.mjs` **busca la app
+hacia arriba y la VERIFICA** (un `package.json` que declare `next`) y **tira** si
+no la encuentra. Un `join()` silencioso es lo que fabrica el verde vacío.
+
+## 2 · La aceptación, con el protocolo de CMS-0d
+
+| comprobación | resultado |
+|---|---|
+| `clon-base` @1440 vs base | **31 comparadas · 0 regresiones** |
+| `clon-base` @390 vs base | **31 comparadas · 0 regresiones** |
+| marcador de frescura | presente — **y su negativo falla** |
+| `qa:enlaces` · `qa:slugs` · `qa:corte` | 31/31 · limpio · 12/12 |
+| `npm run check` · `qa:lib` | exit 0 · **69/69, las 54 compilan** |
+
+**Y el instrumento se re-probó ANTES de creerle el Δ0** — cuatro patas, cada una
+por lo suyo: **puerto muerto → exit 2** · **build viejo → exit 2 y salida
+`-CONTAMINADA`** · **0 comparadas → exit 1** · **control → exit 0 con sus 31**.
+
+**`medidas/` sigue siendo UN árbol** (360 ficheros): la mudanza no abrió un
+segundo.
+
+## 3 · Dos cosas que la conversión destapó y no eran suyas
+
+1. **`npm install` en la raíz podó `puppeteer-core`** y las sondas dejaron de
+   arrancar. Es la trampa que **§CMS-0d ya tenía escrita**. **Cerrada de raíz**:
+   ahora es `devDependency` del `package.json` de la RAÍZ — que es nuevo y **no
+   es el artefacto**; `apps/web/package.json` no la lleva.
+2. **`qa:enlaces` y `qa:corte` esperan un `3000` ajeno.** **Preexistente,
+   verificado contra HEAD** — es el pendiente *«migrar a `iniciarClon()` las
+   45»*. Con el 3000 levantado, las dos verdes.
+
+## 4 · LOS DOS BLOQUES SIGUIENTES DE F2-1
+
+**Bloque 2 · Payload + colecciones/tipos.** Instalar Payload **en `apps/cms`**,
+y las **colecciones y `payload-types.ts` en `packages/cms-config`** — no en la app
+de render: es lo que permite que el build lea por **Local API sin HTTP** y que el
+churn del admin no toque el artefacto. Los content types ya están escritos:
+§1.4 SECTOR (con `anchoPct`) · §1.5 MONOGRÁFICO · §2 grupo A · §2b grupo C ·
+§2c términos · §2d.1 `articulos-kb` · **§2e `productos`**.
+
+> **Y su restricción, la misma que ésta cumplió:** si el bloque 2 toca
+> `apps/web`, paga **su propia corrida Δ0** contra la línea base — que ya existe
+> y está commiteada.
+
+**Bloque 3 · migraciones + slugs + guarda de colisión.** Migraciones
+**versionadas** desde el día uno con **`push: false`** en producción; la
+colección-registro **`slugs`** con `unique: true` y los hooks **pasando `req`**
+(misma transacción); y la **guarda de build de colisión** del §4 — **probada en
+NEGATIVO**: un slug duplicado a propósito entre familias tumba el build, y pasa
+en limpio al quitarlo. *Guarda probada en negativo o no hay guarda.*
+
+## 5 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — ≥2026-08-04, OBLIGATORIO otro día.** Hoy sigue
+   siendo 08-03. Cierra el −30 de EDAR@390, **SIN PROBAR**. Con ella en vuelo:
+   **nada de `check` ni `build`**.
+2. **F2-1 bloque 2** (Payload + colecciones).
+3. **`data-col` / `data-mod` en el clon** — cierra las **26 celdas SIN VEREDICTO**
+   de `clase-rango`; los caminos ya están puestos en la sonda. Hasta entonces sus
+   `Δ0` son **solo del nivel de fila**, 65 pares.
+4. **Migrar a `iniciarClon()` las que aún esperan un 3000 ajeno** — `qa:enlaces`
+   y `qa:corte` confirmadas hoy entre ellas.
+5. **`Breadcrumb max-w-[350px]` — 28 rutas**, ya cobrado en −33.25.
+6. **Bloque A** (CL-1 `MapaProyectos` +123.84/+33.55) y **Bloque B**
+   (`articulos-kb`).
+7. **El `Dockerfile` reapuntado pero SIN CONSTRUIR** — el contrato de F2-1 es el
+   Δ0 del HTML servido, no el despliegue. Se prueba en una tanda de despliegue.
+
+## 6 · Lo que NO hay que hacer al empezar
+
+- **No dar por buena una sonda tras un cambio de layout sin correr su negativo.**
+  El modo de fallo de esta mudanza es **verde vacío**, no rojo.
+- **No meter Payload en `apps/web`.** El aislamiento es el motivo entero de
+  CMS-0f: el churn del admin no puede tocar el artefacto verificado.
+- **No poner colecciones ni tipos en la app de render.** Van en
+  `packages/cms-config`, que es lo que hace posible la Local API sin HTTP.
+- **No reinstalar `puppeteer-core` con `--no-save`.** Ya es `devDependency` de la
+  raíz; volver al `--no-save` reabre la trampa de CMS-0d.
+- **No correr `check` ni `build` mañana con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — `productos` es UNA colección: cubo C vacío, y F2-1 arranca
 
 > ⚠ **Tanda 2026-08-03 (21.ª).** Seis pasos. Tanda de **RECON + DECISIÓN**: se

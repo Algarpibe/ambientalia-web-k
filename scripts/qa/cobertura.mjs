@@ -33,7 +33,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { Evaluadas, QA, hoy, w } from "./lib.mjs";
+import { Evaluadas, QA, hoy, w, enApp} from "./lib.mjs";
 
 const M = path.join(QA, "medidas");
 const SABOTAJE = !!process.env.SABOTAJE;
@@ -76,7 +76,7 @@ const congeladas = (base) => {
  */
 const ultima = (base) => congeladas(base).pop();
 
-const MANIFIESTO = path.join(QA, "../../.next/prerender-manifest.json");
+const MANIFIESTO = path.enApp(".next/prerender-manifest.json");
 if (!fs.existsSync(MANIFIESTO)) {
   console.error("❌ no hay .next/prerender-manifest.json — corre `npm run build` antes.");
   process.exit(2);

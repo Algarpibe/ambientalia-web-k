@@ -39,7 +39,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, Evaluadas, QA, env, hoy, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, QA, env, hoy, iniciarClon, launch, openPage, settle, w, enApp} from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -49,7 +49,7 @@ const SOLO = env("SOLO");
 const { base: CLON, parar: pararClon } = await iniciarClon();
 
 /* Las rutas salen del BUILD, como en `c-cmp`: una ruta nueva entra sola. */
-const manifiesto = JSON.parse(readFileSync(join(QA, "../../.next/prerender-manifest.json"), "utf8"));
+const manifiesto = JSON.parse(readFileSync(enApp(".next/prerender-manifest.json"), "utf8"));
 const RUTAS = Object.keys(manifiesto.routes || {})
   // Rutas internas de Next: no existen en el original y solo aportan 404.
   .filter((r) => !/^\/(_not-found|_global-error|favicon)/.test(r))

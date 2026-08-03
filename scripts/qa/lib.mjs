@@ -448,6 +448,60 @@ export class Evaluadas {
 /** Directorio de las sondas. Todo lo relativo se resuelve contra AQUÍ. */
 export const QA = new URL(".", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * DÓNDE VIVE LA APP DE RENDER — un solo sitio, desde la conversión a monorepo
+ *
+ * ── El fallo del que protege, y es de los que salen VERDES ────────────────
+ * Hasta la conversión (F2-1, 2026-08-03) `scripts/qa/../..` era **a la vez** la
+ * raíz del repo y la raíz de la app: ahí estaban `.next`, `src/` y el
+ * `package.json` con `start`. **12 sitios lo daban por hecho** —el manifiesto de
+ * rutas en 4 sondas, el `BUILD_ID`, el `cwd` de `iniciarClon`, y 5 `RAIZ`
+ * sueltas—.
+ *
+ * Con la app en `apps/web/` y las sondas en la raíz, esa igualdad se rompe. Y lo
+ * grave es **cómo** se rompe:
+ *
+ *   > un `prerender-manifest.json` que no existe hace que `RUTAS` sea **vacío**,
+ *   > y una sonda que no mide ninguna ruta **no da error: da verde**. Sería
+ *   > verde justo sobre la corrida que autoriza la conversión.
+ *
+ * Es la regla del cero de `CLAUDE.md` §sondas —*no encontrar nada y no mirar
+ * nada dan la misma salida*— aplicada a la raíz en vez de a un selector. Por eso
+ * **`APP` no devuelve una ruta a la buena de Dios: la VERIFICA** y muere en voz
+ * alta si no encuentra la app. Un `join()` silencioso es exactamente lo que
+ * fabrica el verde vacío.
+ *
+ * Se resuelve **buscando hacia arriba** el `package.json` que declara `next`,
+ * así que un cambio de layout futuro no vuelve a tocar 12 ficheros.
+ * ═════════════════════════════════════════════════════════════════════════ */
+function buscaApp() {
+  // Candidatas, de la más específica a la más general.
+  const cands = [
+    path.join(QA, "../../apps/web"), // monorepo: sondas en la raíz
+    path.join(QA, "../.."), // layout anterior: la app ES la raíz
+    path.join(QA, "../../.."), // sondas dentro de la app
+  ];
+  for (const c of cands) {
+    try {
+      const p = JSON.parse(fs.readFileSync(path.join(c, "package.json"), "utf8"));
+      if (p.dependencies?.next || p.devDependencies?.next) return path.resolve(c);
+    } catch { /* siguiente */ }
+  }
+  throw new Error(
+    "no se encuentra la app de render (ningún package.json con `next` en " +
+      cands.map((c) => path.resolve(c)).join(", ") +
+      ").\n  Una sonda que no la encuentra mediría CERO rutas y saldría VERDE: por eso esto tira.",
+  );
+}
+
+/**
+ * Raíz de la app de render — donde viven `.next`, `src/` y el `package.json`
+ * con `start`. **No es la raíz del repo** desde la conversión a monorepo.
+ */
+export const APP = buscaApp();
+/** Fichero dentro de la app de render. Sustituye a los `join(QA, "../../…")`. */
+export const enApp = (...partes) => path.join(APP, ...partes);
+
 /**
  * Normaliza una ruta de página recibida por `argv` o por variable de entorno.
  *
@@ -679,7 +733,7 @@ function alLado(destino, cuerpo) {
  * misma decisión que la guarda de sobrescritura y que `Censo` — *arreglar la
  * CLASE y no la instancia* (`CLAUDE.md` §sondas, regla 5).
  * ═════════════════════════════════════════════════════════════════════════ */
-const RUTA_BUILD_ID = path.join(QA, "../../.next/BUILD_ID");
+const RUTA_BUILD_ID = enApp(".next/BUILD_ID");
 const leeBuildId = () => {
   try {
     return fs.readFileSync(RUTA_BUILD_ID, "utf8").trim();
@@ -960,7 +1014,7 @@ export async function iniciarClon({ timeoutMs = 90_000 } = {}) {
   const { spawn } = await import("node:child_process");
   const puerto = await puertoLibre();
   const base = `http://127.0.0.1:${puerto}`;
-  const raiz = path.join(QA, "../..");
+  const raiz = APP;
 
   // Con `shell` no se pasan argumentos sueltos —Node avisa de que no los escapa—:
   // se arma la orden entera. `puerto` es un entero que hemos generado nosotros.

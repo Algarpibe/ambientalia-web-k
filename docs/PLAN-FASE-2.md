@@ -229,12 +229,89 @@ forma del grupo A) · §4 (enrutado: `dynamicParams = false`, unicidad **entre**
 familias, guarda de build) · §6 C-QA7 (el `pt` de fila del hero es campo con
 defecto 2 %/30).
 
-**La primera tarea de F2-1, con su restricción heredada de CMS-0f:** la
-mecánica del layout del monorepo (raíz-como-app vs `apps/`), bajo la regla de
-que **la conversión no toca el artefacto verificado en silencio** — si el layout
-mueve o modifica la app de render (aunque sea una línea de `workspaces` en su
-`package.json`), paga **UNA corrida de re-aceptación Δ0 contra la línea base
-congelada ANTES de cualquier otro cambio**, con el protocolo de CMS-0d.
+### ✅ F2-1 · BLOQUE 1 — la conversión a monorepo, HECHA y a Δ0 (2026-08-03)
+
+**Aislada a propósito: NO se instaló Payload.** Si la conversión y la
+instalación van juntas y el Δ0 se rompe, **no se sabe cuál de las dos fue**.
+
+**El layout elegido**, de las dos que el acta dejó abiertas:
+
+```
+apps/web/          ← la app de render (src · public · next.config · tsconfig)
+apps/cms/          ← vacía a propósito: Payload es el bloque 2
+packages/cms-config/  ← config + tipos + defaults. NADA de admin (CMS-0f)
+scripts/  docs/    ← se quedan en la RAÍZ: las sondas también miden el original
+```
+
+**Por qué `scripts/` NO bajó con la app:** las sondas miden el original tanto
+como el clon —son herramienta del repo, no código de la app— y bajarlas habría
+invalidado los cientos de `scripts/qa/…` citados en `docs/`.
+
+**El precio de esa decisión, y es el hallazgo del bloque:** `scripts/qa/../..`
+dejó de ser la raíz de la app. **12 sitios lo daban por hecho** (el manifiesto de
+rutas en 4 sondas, el `BUILD_ID`, el `cwd` de `iniciarClon` y 5 `RAIZ` sueltas).
+
+> ⚠ **Y ese fallo sale VERDE, no rojo:** un `prerender-manifest.json` que no
+> existe deja la lista de rutas **vacía**, y una sonda que no mide ninguna ruta
+> **no da error**. Habría sido verde **justo sobre la corrida que autoriza la
+> conversión**.
+
+Arreglado **en el sitio común y no en 12**: `APP` en `lib.mjs`, que **busca la
+app hacia arriba y la VERIFICA** (un `package.json` que declare `next`), y
+**tira** si no la encuentra. Un `join()` silencioso es lo que fabrica el verde
+vacío.
+
+#### La aceptación, con el protocolo de CMS-0d
+
+Línea base congelada y **commiteada ANTES** de mover un fichero (`5bfb944`).
+
+| comprobación | resultado |
+|---|---|
+| `qa:clon-base` @1440 vs base | **31 comparadas · 0 regresiones** · exit 0 |
+| `qa:clon-base` @390 vs base | **31 comparadas · 0 regresiones** · exit 0 |
+| marcador de frescura | **presente** en el HTML servido — y su negativo **falla** |
+| `qa:enlaces` | 31/31 · 868 internos, 1725 externos · exit 0 |
+| `qa:slugs` · `qa:corte` | limpio · 12/12 · exit 0 |
+| `npm run check` | **exit 0** |
+| `qa:lib` | **69/69 · las 54 sondas compilan y declaran** |
+
+**Y el instrumento se re-probó ANTES de creerle el Δ0** — las cuatro patas del
+negativo de `clon-base`, cada una por su invariante:
+
+| pata | resultado |
+|---|---|
+| puerto muerto | **exit 2** · «NO SE PUDO EVALUAR — 0 de 31 rutas» |
+| build viejo (BUILD_ID cambia a mitad) | **exit 2** + salida **`-CONTAMINADA`** |
+| 0 comparadas | **exit 1** · «esto NO es *no hay diferencias*» |
+| control | **exit 0** con sus **31 comparadas** |
+
+**`medidas/` sigue siendo UN solo árbol** (360 ficheros, misma ruta): la mudanza
+no abrió un segundo.
+
+#### Lo que la conversión destapó, y no era suyo
+
+**`npm install` en la raíz podó `puppeteer-core`** y las sondas dejaron de
+arrancar. Es la trampa que **§CMS-0d ya tenía escrita** (*«va con `--no-save`,
+así que cualquier `npm install` lo poda»*). **Cerrada de raíz**: ahora es
+`devDependency` **del `package.json` de la RAÍZ**, que es nuevo y **no es el
+artefacto** — `apps/web/package.json` no la lleva.
+
+**`qa:enlaces` y `qa:corte` esperan un `3000` ajeno** (no usan `iniciarClon`).
+**Preexistente, verificado contra HEAD**, no efecto de la mudanza: es el pendiente
+conocido *«migrar a `iniciarClon()` las 45»*. Con el 3000 levantado, las dos en
+verde.
+
+**Sin verificar en esta tanda:** el `Dockerfile` se reapuntó a `apps/web` pero
+**no se construyó la imagen**. El contrato de aceptación de F2-1 es el Δ0 del
+HTML servido por `next start`, no el despliegue.
+
+---
+
+**La primera tarea de F2-1, con su restricción heredada de CMS-0f** *(cumplida
+arriba)*: la mecánica del layout del monorepo, bajo la regla de que **la
+conversión no toca el artefacto verificado en silencio** — si el layout mueve o
+modifica la app de render, paga **UNA corrida de re-aceptación Δ0 contra la línea
+base congelada ANTES de cualquier otro cambio**, con el protocolo de CMS-0d.
 
 **Incógnita que le queda.** La mecánica fina de la unicidad entre colecciones:
 hook `beforeValidate` contra la colección-registro con `req` — el §4 la da por

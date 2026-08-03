@@ -22,7 +22,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA, env, hoy, launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, QA, env, hoy, launch, openPage, settle, w, enApp} from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -49,7 +49,7 @@ const SOLO = env("SOLO");
  * nadie tenga que acordarse. La derivación del original es mecánica —`/x` →
  * `/es/x/`— porque el clon reproduce el árbol de rutas del original.
  * ------------------------------------------------------------------------ */
-const manifiesto = JSON.parse(readFileSync(join(QA, "../../.next/prerender-manifest.json"), "utf8"));
+const manifiesto = JSON.parse(readFileSync(enApp(".next/prerender-manifest.json"), "utf8"));
 
 /** Forma de la página, que decide qué predicciones aplican. */
 const formaDe = (r) => {

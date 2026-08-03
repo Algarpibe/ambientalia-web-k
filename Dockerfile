@@ -89,7 +89,7 @@ ENV HOSTNAME="0.0.0.0"
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 # Copy production assets
-COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/apps/web/public ./public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next
@@ -97,12 +97,12 @@ RUN chown node:node .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=node:node /app/.next/standalone ./
-COPY --from=builder --chown=node:node /app/.next/static ./.next/static
+COPY --from=builder --chown=node:node /app/apps/web/.next/standalone ./
+COPY --from=builder --chown=node:node /app/apps/web/.next/static ./apps/web/.next/static
 
 # If you want to persist the fetch cache generated during the build so that
 # cached responses are available immediately on startup, uncomment this line:
-# COPY --from=builder --chown=node:node /app/.next/cache ./.next/cache
+# COPY --from=builder --chown=node:node /app/apps/web/.next/cache ./apps/web/.next/cache
 
 # Switch to non-root user for security best practices
 USER node

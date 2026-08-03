@@ -44,7 +44,7 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Censo, Evaluadas, QA, env, hoy, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
+import { Censo, Evaluadas, QA, env, hoy, iniciarClon, launch, openPage, settle, w, enApp} from "./lib.mjs";
 
 const width = Number(process.argv[2] || 1440);
 const mobile = width <= 500;
@@ -57,8 +57,8 @@ const SOLO = env("SOLO");
  * slugs de `/sectores/` son MONOGRÁFICO, porque ésos son el CONTROL —su
  * respuesta ya está medida— y mezclarlos con la muestra sería preguntarle a la
  * sonda algo que ya se sabe y contarlo como hallazgo. */
-const manifiesto = JSON.parse(readFileSync(join(QA, "../../.next/prerender-manifest.json"), "utf8"));
-const SLUGS_MONO = [...readFileSync(join(QA, "../../src/lib/monografico.ts"), "utf8").matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
+const manifiesto = JSON.parse(readFileSync(enApp(".next/prerender-manifest.json"), "utf8"));
+const SLUGS_MONO = [...readFileSync(enApp("src/lib/monografico.ts"), "utf8").matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
 if (SLUGS_MONO.length === 0)
   throw new Error("0 slugs de monográfico leídos de src/lib/monografico.ts — el CONTROL se habría quedado vacío en silencio.");
 

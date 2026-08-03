@@ -33,9 +33,18 @@
  */
 import { readFileSync } from "node:fs";
 import { isAbsolute, join } from "node:path";
-import { Evaluadas, QA, env, envRuta, iniciarClon, launch, openPage, settle, w } from "./lib.mjs";
+import { Evaluadas, QA, env, envRuta, iniciarClon, launch, openPage, settle, w, APP} from "./lib.mjs";
 
-const RAIZ = new URL("../..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
+/**
+ * Raíz de la APP de render — donde viven `.next` y `src/`.
+ *
+ * ⚠ Desde la conversión a monorepo (F2-1, 2026-08-03) **NO es la raíz del
+ * repo**: las sondas se quedaron arriba y la app bajó a `apps/web/`. Antes
+ * esto era `new URL("../..")`, que ahora apuntaría al repo — y un
+ * `prerender-manifest.json` que no existe deja `RUTAS` vacío, o sea **verde
+ * sin medir**. Lo resuelve y lo VERIFICA `APP` en `lib.mjs`.
+ */
+const RAIZ = APP;
 
 /**
  * ── DUEÑA DE SU SERVIDOR desde el 2026-08-02 ──────────────────────────────
