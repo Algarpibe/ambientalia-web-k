@@ -77,7 +77,27 @@ const c = await medir(cfg.clon);
 
 console.log(`\n======== ${cual} @${width} ========`);
 console.log("ancla".padEnd(14) + "original".padEnd(12) + "clon".padEnd(12) + "Δ");
-const ev = new Evaluadas({ nombre: "cmp-sector", unidad: "filas comparadas", minimo: 1 });
+/**
+ * Contrato de `Evaluadas`. El mínimo se DERIVA: las anclas que declara el sector
+ * más las colas comunes que añade `medir()`.
+ *
+ * ⚠ **Aquí vivía un defecto de la migración, y era doble** (2026-08-02). La
+ * declaración era `minimo: 1` y el recuento `ev.ok(filas.length)` — pero `filas`
+ * es un **objeto**, así que `filas.length` es `undefined`, el parámetro por
+ * defecto de `ok(n = 1)` lo convertía en **1**, y con suelo 1 la sonda salía
+ * VERDE habiendo contado **1 de 13**.
+ *
+ * Los dos defectos se tapaban el uno al otro: con el mínimo derivado habría
+ * salido roja aun contando mal, y con un `ok()` que rechazara el `undefined`
+ * habría salido roja aun con suelo 1. Es exactamente lo que el suelo de 1 **no**
+ * detecta: la corrida parcial.
+ */
+const COLAS = 6; // slider · soluciones · proyectos · articulos · footer · docH
+const ev = new Evaluadas({
+  nombre: "cmp-sector",
+  unidad: "filas comparadas",
+  minimo: cfg.anclas.length + COLAS,
+});
 const filas = {};
 for (const k of Object.keys(o)) {
   const a = o[k],
@@ -94,6 +114,6 @@ for (const k of Object.keys(o)) {
       (d === null ? "≠" : (d >= 0 ? "+" : "") + d),
   );
 }
-ev.ok(filas.length);
-w(`cmp-${cual}-${width}.json`, filas);
+ev.ok(Object.keys(filas).length); // `filas` es un objeto: `.length` sería undefined
+w(`medidas/cmp-${cual}-${width}.json`, filas);
 await browser.close();

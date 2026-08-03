@@ -336,8 +336,28 @@ export class Evaluadas {
     ponGancho();
   }
 
-  /** Una unidad evaluada DE VERDAD. */
-  ok(n = 1) {
+  /**
+   * Una unidad evaluada DE VERDAD.
+   *
+   * ⚠ **`ok()` y `ok(undefined)` NO significan lo mismo, y por eso no puede
+   * haber parámetro por defecto** (`CLAUDE.md` §Reglas sobre las sondas, 6).
+   * El primero es «una unidad»; el segundo es «te paso el resultado de un
+   * cálculo que falló». Un `n = 1` los confunde, y eso **fabrica un verde**.
+   *
+   * Medido: `cmp-sector` hacía `ev.ok(filas.length)` sobre un **objeto**, o sea
+   * `ok(undefined)`; el defecto lo volvía **1**; y con `minimo: 1` la sonda
+   * salía verde habiendo contado **1 de 13** filas que tenía impresas en
+   * pantalla. Tres capas tapándose, y ésta es la del medio.
+   */
+  ok(...args) {
+    const n = args.length === 0 ? 1 : args[0];
+    if (typeof n !== "number" || !Number.isFinite(n) || n < 0)
+      throw new Error(
+        `Evaluadas.ok(): recibió ${JSON.stringify(args[0])}, que no es un número de unidades.\n` +
+          `  Casi siempre es un cálculo que falló —\`.length\` sobre un objeto, un índice\n` +
+          `  fuera de rango— y aceptarlo como 1 convierte «no lo sé» en «está bien».\n` +
+          `  Si querías sumar UNA unidad, llama a ok() sin argumento.`,
+      );
     this.n += n;
     return this;
   }
