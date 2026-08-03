@@ -458,6 +458,43 @@ Estas se pagaron con horas de depuración. No las reinventes:
   3. **El alcance se declara siempre: qué rutas y qué anchos entraron.** Un
      suelo es una propiedad **de las rutas medidas**, no del sitio. Si una ruta
      no está en la lista, no tiene suelo — tiene un hueco.
+  4. ⚠ **AÑADIDA 2026-08-03, y corrige a las tres de arriba en su punto ciego:
+     LAS TRES MIDEN EN DÍAS Y EL FENÓMENO PASA EN SEGUNDOS.**
+
+     Las reglas 1–3 se calibraron con los **episodios largos** —las dos lecturas
+     separadas por horas de C-QA1— y para eso siguen valiendo. Pero la campaña
+     que cerró C-QA6 midió las transiciones **carga a carga**, y salió otra cosa:
+     en la ráfaga 1, **los monográficos saltaron entre la carga #1 y la #2, y
+     `/software` entre la #2 y la #3**. Cargas consecutivas: **segundos**.
+
+     > **La variable que discrimina es el NÚMERO DE CARGAS, no el reparto en
+     > días.** El protocolo gasta días para comprar algo que se compra con
+     > cargas: 3 ráfagas en 3 días dan **9 cargas** por combinación, y una sola
+     > sentada de 60 da casi siete veces más muestreo **en una tarde**.
+
+     **Los dos ejes no se sustituyen, y hay que saber qué compra cada uno:**
+
+     | eje | qué compra | sigue haciendo falta porque |
+     |---|---|---|
+     | días / separación | protege de que una condición **persistente** (un despliegue, una caché fría) se lea como suelo permanente | es lo que impide llamar «suelo» a una tarde rara |
+     | **nº de cargas** | **muestrea los estados** — la escala a la que ocurre el cambio | es el que decide si un «un solo estado» significa algo |
+
+     **El protocolo no se deroga: se le añade el eje que no tenía.** Una campaña
+     con 3 días y 9 cargas está **bien separada y mal muestreada**, y hasta hoy
+     eso no se podía ni enunciar.
+
+     **Y de ahí la regla de lectura, que es la que evita la conclusión falsa:**
+
+     > **«No se observó un segundo estado en N cargas» NO es «esa combinación es
+     > unimodal».** Es la **regla del cero** —*no encontrar nada y no mirar nada
+     > dan la misma salida*— aplicada al **muestreo** en vez de a un selector.
+
+     Medido, con sus dos lados: **a 1440, DOS estados en 27 cargas; a 390, UNO
+     en 18.** Y a 1440 el estado raro salió en **4 de 27** (~15 %), una tasa que
+     18 cargas pierden por azar sin nada de extraordinario. **18 no es un tamaño
+     que pueda contestar la pregunta.** Instrumento: `qa:estados-390` —muchas
+     cargas, una sentada, unidad = la carga—, deliberadamente **fuera** de la
+     campaña para no romperle la homogeneidad a sus ráfagas.
 
   De ahí la consecuencia que gobierna la lectura de cualquier Δ:
 

@@ -4944,3 +4944,77 @@ test de la predicción bimodal** de arriba. Sale gratis.
 
 Y arrastra la corrección que ya está hecha arriba: **un suelo es propiedad de
 las rutas Y LOS ANCHOS medidos.** El ±32.28 es de 1440 y no ampara nada a 390.
+
+---
+
+## C-QA6 · LA ESCALA DEL FENÓMENO — el protocolo mide en días y la cosa pasa en segundos (2026-08-03)
+
+**Corrige el protocolo que la propia §C-QA6 instaló**, y lo corrige con los datos
+de la campaña que lo cerró. No es un matiz: cambia **qué variable hay que subir**
+para volver a ver el fenómeno.
+
+### El dato: las transiciones están medidas CARGA A CARGA
+
+La ráfaga 1 de `cqa6` son 3 cargas consecutivas, en minutos. Los estados
+cambiaron **dentro de la ráfaga**:
+
+| carga | `/software` | EDAR | petróleo |
+|---|---|---|---|
+| #1 | 389.11 **bajo** | 228.88 **bajo** | 228.88 **bajo** |
+| #2 | 389.11 **bajo** | 261.16 **ALTO** | 261.16 **ALTO** |
+| #3 | 421.39 **ALTO** | 261.16 alto | 261.16 alto |
+
+**Los monográficos saltaron entre la #1 y la #2. `/software`, entre la #2 y la
+#3.** Cargas consecutivas: **segundos de separación, no horas.**
+
+### La consecuencia, y es sobre el protocolo
+
+El protocolo vigente —**«≥3 ráfagas, ≥2 h de separación, ≥2 días distintos»**—
+se escribió para los **episodios largos**: las dos lecturas separadas por horas
+de C-QA1, en las que el original «se movía» de un rato a otro. Esa calibración
+es correcta **para lo que se observó entonces**. Pero la campaña que cerró la
+pregunta midió algo distinto:
+
+> **El estado cambia entre cargas consecutivas. La variable que discrimina es el
+> NÚMERO DE CARGAS, no el reparto en días.**
+
+Dicho de otro modo: **el protocolo gasta días para comprar algo que se compra
+con cargas.** Tres ráfagas repartidas en tres días dan 9 cargas por combinación;
+una sola sentada de 60 da casi siete veces más muestreo del fenómeno **en una
+tarde**, y ninguna cantidad de días compensa un muestreo corto si lo que
+discrimina es la carga.
+
+**Los dos ejes no son intercambiables y hay que decir para qué sirve cada uno:**
+
+| eje | qué compra | cuándo hace falta |
+|---|---|---|
+| **días / separación** | protege de que una condición **persistente** (un despliegue, una caché fría, un incidente) se lea como el suelo permanente | **sigue haciendo falta**: es lo que impide llamar «suelo» a una tarde rara |
+| **nº de cargas** | **muestrea los estados** — es la escala a la que ocurre el cambio | **es el que faltaba**, y el que decide si un «un solo estado» significa algo |
+
+> **Ninguno sustituye al otro.** El protocolo no se deroga: **se le añade el eje
+> que no tenía.** Una campaña con 3 días y 9 cargas está bien separada **y mal
+> muestreada**, y eso hasta hoy no se podía ni enunciar.
+
+### Y por eso «un solo estado a 390» no es una conclusión
+
+Aquí está el asunto, con sus dos lados puestos uno al lado del otro:
+
+| ancho | cargas | estados vistos |
+|---|---|---|
+| **1440** | **27** (cqa6) | **DOS** — 389.11 ↔ 421.39 y 228.88 ↔ 261.16 |
+| **390** | **18** (cqa6 + ráfaga 1 de cqa6-390) | **UNO** — 308.58 · 189.39 · 189.39 |
+
+> ⚠ **«No se vio un segundo estado en 18 cargas» NO es «390 es unimodal».** Son
+> dos afirmaciones distintas y solo la primera está respaldada. Es **la regla del
+> cero** —*no encontrar nada y no mirar nada dan la misma salida*— aplicada al
+> **muestreo** en vez de a un selector.
+
+Y no es escrúpulo retórico: a 1440 el estado raro salió en **4 de 27 cargas**,
+o sea alrededor del **15 %**. Con 18 cargas, una tasa así se puede perder por
+azar sin nada de extraordinario. **18 no es un tamaño que pueda contestar la
+pregunta**, y hasta hoy se estaba leyendo como si lo fuera.
+
+**De ahí `estados-390`** (§siguiente), que es exactamente esa pregunta contestada
+en la escala del fenómeno: **muchas cargas, una sentada**. Y de ahí que **no** se
+le toque el tamaño a `cqa6-390`: esa campaña contesta el eje de los días y vale
+por tener sus 3 ráfagas homogéneas.
