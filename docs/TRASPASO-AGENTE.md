@@ -444,7 +444,8 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
    precondición 1 se reformuló de «biblioteca cerrada» a un número —el cubo C de
    `docs/research/precondicion-1/DECISION.md`— y con ella desapareció el
    porcentaje. **El % de biblioteca ya no es un criterio de arranque de F2-1**:
-   lo es el cubo C, hoy **= 1** (`productos`).
+   lo es el cubo C, **VACÍO desde el 2026-08-03** (`productos` medida y escrita en
+   `ESQUEMA-CMS.md` §2e). **Las dos precondiciones están cerradas.**
 3. **`scripts/qa/ruido.mjs` línea 43** documenta `ETIQUETA=cqa6` en un comentario,
    pero el código lee **`CAMPANA`** (línea 407). Usa `CAMPANA`.
 4. ~~**Recuento de sondas**: el HANDOFF declara **47 migradas** y hay 48.~~
@@ -646,18 +647,20 @@ antes de fiarte del veredicto de separación.**
    de construirlos. El eje «comportamiento» está a **0/31** en la matriz.
 5. **Construir LISTADO-B + L2/L3 + el índice de casos** según
    `docs/research/listados-hubs/MODELO.md`.
-6. ⚠ **Recon de las 20 dudosas del CPT `solutions`** — **subió a PRECONDICIÓN
-   REAL de F2-1** (2026-08-03): son el único ítem del **cubo C**
-   (`docs/research/precondicion-1/DECISION.md`). Deciden si **`productos`** es
-   una colección o dos, y **dos colecciones decididas la apuntan**
-   (`sectores.soluciones` · `casos.soluciones`). La cola larga, en cambio, quedó
-   en **cubo B**: no bloquea. Ver `ESQUEMA-CMS.md` **§2e**.
+6. ~~**Recon de las 20 dudosas del CPT `solutions`**~~ **✅ HECHO (2026-08-03)**:
+   son **24**, no 20 —el alcance se derivó del sitemap del CPT, y `software-…` y
+   `kunak-api` también son de él— y el veredicto es **UNA colección `productos`**
+   (frontera medida = **1**, opcional). Las dos relaciones quedan
+   `relationTo: 'productos'`, sin polimorfismo. `ESQUEMA-CMS.md` **§2e** · acta
+   `docs/research/productos/DECISION.md`. **Con esto el cubo C queda VACÍO.**
 7. ~~**Tanda CLASE** — precondición de F2-1.~~ **CERRADA (2026-08-03)**: la
    precondición 2 es hoy **una línea de esquema** (`anchoPct` en SECTOR), no 31
    arreglos. Ver `PLAN-FASE-2.md` §Precondición 2.
-8. **F2-1** (`docs/PLAN-FASE-2.md`) — CMS-0f **ya decidida** (2026-08-03, §CMS-0f):
-   su primera tarea es el layout del monorepo bajo la restricción del acta.
-   **Arranca después del punto 6**, no antes.
+8. **F2-1** (`docs/PLAN-FASE-2.md`) — **DESBLOQUEADA (2026-08-03): las DOS
+   precondiciones están cerradas** (la 1 con el cubo C vacío, la 2 con `anchoPct`
+   declarado) y **CMS-0f ya decidida** (§CMS-0f). Su primera tarea es el layout
+   del monorepo bajo la restricción del acta: **si toca la app de render, paga
+   UNA corrida de re-aceptación Δ0 contra la línea base antes de nada más.**
 
 ---
 

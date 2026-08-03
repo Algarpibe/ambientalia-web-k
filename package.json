@@ -81,7 +81,9 @@
     "qa:cabecera": "node scripts/qa/cabecera-cmp.mjs",
     "qa:ancho": "node scripts/qa/ancho-cuerpo.mjs",
     "qa:clase-rango": "node scripts/qa/clase-rango.mjs",
-    "qa:clase-rango-neg": "node scripts/qa/clase-rango.neg.mjs"
+    "qa:clase-rango-neg": "node scripts/qa/clase-rango.neg.mjs",
+    "qa:solutions": "node scripts/qa/solutions-campos.mjs",
+    "qa:solutions-neg": "node scripts/qa/solutions-campos.neg.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

@@ -45,7 +45,12 @@ Cada forma sin construir cae en **uno** de estos tres:
 | **B** | **AÑADE** colección o block **propios**, sin tocar los existentes | **NO** |
 | **C** | **FUERZA** un campo, una variante o un cambio de forma en algo **ya decidido** | **SÍ — y entra en el esquema ANTES de congelarlo** |
 
-### 1.1 · La pregunta cubre DOS objetos, no uno
+### 1.1 · La pregunta cubre **TRES** objetos, no uno
+
+> ⚠ **AMPLIADO 2026-08-03, por el caso que casi se cuela.** El pre-registro
+> declaró **dos** objetos. El único ítem que cayó en cubo C llegó por un
+> **tercero**, y no lo sugería ninguno de los dos — se anota aquí para el
+> siguiente uso del criterio, que es donde sirve.
 
 Declararlo importa porque el segundo es el que se olvida:
 
@@ -63,6 +68,30 @@ Declararlo importa porque el segundo es el que se olvida:
    Es la misma trampa que `anchoPct`, un nivel más arriba: allí el campo faltaba
    en una colección; aquí faltaría en una definición que varias colecciones
    comparten — y por tanto se cobra en todas a la vez.
+
+3. ⚠ **LA IDENTIDAD DE LA COLECCIÓN DESTINO DE UNA RELACIÓN.** El tercero, y el
+   que de verdad cobró:
+
+   > **Un campo de relación se escribe igual y significa otra cosa si su destino
+   > cambia de forma.** `soluciones` está decidido en **dos** colecciones
+   > (`sectores` §1.4 · `casos` §2b) y apunta a `productos`. Lo que una forma
+   > nueva puede cambiar **no es ese campo**: es **cuántas colecciones es su
+   > destino** — y con ello, si la relación sigue siendo simple o tiene que
+   > volverse polimórfica.
+
+   **Por qué se escapa a los otros dos objetos:** la mirada va a los campos
+   *propios* de cada colección y a las definiciones *compartidas*, no a **con qué
+   se casan**. El campo no cambia de nombre, ni de tipo, ni de obligatoriedad —
+   cambia el conjunto al que apunta, que no se ve mirando la colección que lo
+   declara.
+
+   **Regla operativa que deja:** al clasificar, **recorre también los destinos de
+   relación** y pregúntate si la forma nueva puede **PARTIR el destino**. Si
+   puede, es cubo C aunque el campo se escriba igual.
+
+   *(Caso: `docs/research/productos/` — el CPT `solutions`. Salió **una** sola
+   colección, así que la relación se queda simple; pero eso **se supo midiendo**,
+   y hasta entonces bloqueaba.)*
 
 ### 1.2 · La regla del INCÓGNITA, que es la que impide el verde fácil
 

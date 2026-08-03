@@ -54,7 +54,48 @@ que la frase junta, y **solo una es cara**:
 | **C = 1** | **`productos`** (CPT `solutions`) |
 | **incógnitas acotadas** | LH-SP8 (`/es/categoria/*`) · las 14 páginas sueltas de la cola larga |
 
-#### El ítem de C, y por qué el enunciado viejo era ciego a él
+#### ✅ CERRADO el 2026-08-03 · **el cubo C queda VACÍO**
+
+Acta `docs/research/productos/DECISION.md` · pre-registro `3af483c` (anterior a
+medir) · evidencia `medidas/solutions-campos.json` · registro **`ESQUEMA-CMS.md`
+§2e**.
+
+> **El CPT `solutions` es UNA colección `productos` con discriminante.** Campos
+> de frontera medidos: **1** (`padre`, y opcional). Ni U1 (obligatoriedad) ni U2
+> (≥3 o >25 %) disparan — y el precedente cuadra: §1.5b separó con **3**, grupo D
+> declaró arquetipo con **4**.
+
+**Las dos relaciones quedan cerradas**: `sectores.soluciones` y `casos.soluciones`
+→ **`relationTo: 'productos'`**, sin polimorfismo.
+
+> ⚠ **Y corrigió al recuento de esta misma sección:** el alcance derivado del
+> sitemap del CPT trae **24** URLs, no 22, e incluye `software-…` y `kunak-api`.
+> **SOFTWARE y API no eran «singleton fuera del agujero»: son del mismo CPT.** El
+> error fue citar el censo en vez de derivarlo. Arquetipos construidos sin
+> content type: **4, no 5** (API es *variante*), y **solo HOME queda fuera** —
+> singleton, nada decidido la apunta ⇒ **cubo B**.
+
+| cubo | estado |
+|---|---|
+| **C** | **VACÍO** |
+| **incógnitas acotadas** | **2**, sin cambio — y **NO se cuentan como «no bloquean»** |
+
+**Las dos incógnitas, con su cota escrita:**
+
+1. **LH-SP8 · `/es/categoria/*`** — peor caso: `padre?` sobre una colección
+   **nueva y vacía** ⇒ B. Lo que mueve es el **nº de rutas** ⇒ F2-4 / A-SP13.
+2. **Las 14 páginas sueltas de la cola larga** (legal · landing · empresa ·
+   suscripción · soporte · contacto) — autónomas, **ninguna colección decidida
+   las apunta ni proyecta** ⇒ peor caso B.
+
+> **Que su peor caso sea B es una COTA, no una clasificación.** Siguen siendo
+> incógnitas y se nombran como tales; lo que autorizan es arrancar, no darlas por
+> resueltas.
+
+> **⇒ F2-1 PUEDE CONGELAR EL ESQUEMA Y ARRANCAR.** Las dos precondiciones están
+> cerradas: la 1 con el cubo C vacío, la 2 con `anchoPct` declarado.
+
+#### El ítem de C, y por qué el enunciado viejo era ciego a él *(histórico — cerrado arriba)*
 
 > **`productos` no está modelada en ninguna parte de `ESQUEMA-CMS.md`** — se cita
 > **dos veces y las dos como destino de relación** (`sectores.soluciones` §1.4 ·
@@ -140,10 +181,15 @@ medición destapó —`BeneficiosAplicaciones` (cableado con el valor correcto) 
 **Bloque A**, después de F2-1. No tocan el esquema: el campo que necesitan es el
 que se acaba de declarar.
 
-**La precondición 1 es hoy la única de las dos que gobierna el arranque** — y
-desde el 2026-08-03 ya no es «la biblioteca»: es **un ítem nombrado**,
-`productos` (arriba). `articulos-kb`, los listados y la cola larga **quedaron en
-cubo B**: se pueden construir después de F2-1 sin re-migrar.
+**✅ Las DOS precondiciones están cerradas (2026-08-03).** La 1 con el **cubo C
+vacío** (`productos` medida y escrita en §2e); la 2 con **`anchoPct` declarado**
+en el módulo de SECTOR. `articulos-kb`, los listados y la cola larga quedaron en
+**cubo B**: se construyen después de F2-1 sin re-migrar.
+
+> **F2-1 arranca.** Lo que queda abierto son **2 incógnitas acotadas** (LH-SP8 y
+> las 14 sueltas), que **no se cuentan como «no bloquean»**: su peor caso es B, y
+> eso es una cota que autoriza arrancar — no un permiso para darlas por
+> resueltas.
 
 ---
 

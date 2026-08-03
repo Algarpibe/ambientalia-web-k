@@ -1,3 +1,144 @@
+# HANDOFF — `productos` es UNA colección: cubo C vacío, y F2-1 arranca
+
+> ⚠ **Tanda 2026-08-03 (21.ª).** Seis pasos. Tanda de **RECON + DECISIÓN**: se
+> midió el original, no se construyó ninguna página, no se tocó `src/`.
+> Pre-registro commiteado **antes** de la sonda y de medir (`3af483c`); medida
+> congelada y commiteada **antes** del acta (`3039996`).
+
+## 0 · El titular
+
+> **El CPT `solutions` es UNA colección `productos` con discriminante.** Campos
+> de frontera medidos: **1** (`padre`, opcional). Ni U1 ni U2 disparan.
+>
+> **⇒ El cubo C queda VACÍO. Las dos precondiciones de F2-1 están cerradas.
+> F2-1 ARRANCA.**
+
+## 1 · Lo primero que salió, y fue antes de medir: el alcance estaba mal
+
+Derivado del `solutions-sitemap.xml` en vez de citado del censo: **24 URLs, no
+22**, y dos de ellas el proyecto no las contaba como de este CPT —
+`software-de-medicion-calidad-del-aire` y `kunak-api`.
+
+> ⚠ **CORRIGE a la tanda 20.ª:** dijo *«HOME · SOFTWARE · API son singleton,
+> nada decidido las apunta ⇒ cubo B»*. **Falso para dos de los tres.** SOFTWARE y
+> API son **del mismo CPT** que PRODUCTO y CATÁLOGO, o sea de la colección que
+> las dos relaciones apuntaban. **El error fue citar el censo en vez de derivar
+> el CPT** — la misma clase que la 20.ª acababa de documentar.
+
+Y el recuento correcto: **4 arquetipos construidos sin content type**, no 5 —
+`kunak-api` es **variante**, no arquetipo (`CLAUDE.md` §Páginas clonadas). De los
+4, **tres eran del agujero** y **solo HOME queda fuera**.
+
+## 2 · La calibración que decidió el número — y sin ella la respuesta se invierte
+
+El criterio de §1.5b es «campos nuevos que solo una forma usa». **Qué cuenta como
+«campo» no es libre: lo fija el precedente.** §1.3, literal:
+
+> *«`beneficiosAplicaciones` **entra sin un solo campo nuevo**»*
+
+Es **un bloque entero que SECTOR tiene y MONOGRÁFICO no**, y quedó **fuera** de
+los 3 campos de frontera. Los 3 que sí contó son **propiedades**.
+
+> **Un KIND DE BLOQUE que una forma usa y otra no NO es campo de frontera. Lo son
+> las PROPIEDADES.**
+
+Por eso `blurb`, `galeria`, `video`, `cta`, `tabla` y `slider` **no cuentan**.
+**Sin esta calibración el recuento sale ×5 y la decisión se invierte.**
+
+## 3 · Lo medido — 24/24, 0 muertos, control 4/4
+
+| | |
+|---|---|
+| **plantilla** | **`solutions-template-default` en 24 de 24** — un solo cascarón |
+| **secciones propias** | 4 · 5 · 6 (×21) · 7 ⇒ composición **por instancia** |
+| **frontera de propiedades** | **1**: la ruta con **padre** (18 de 24), y **opcional** |
+
+**La agrupación por ruta era una hipótesis y los datos la tumbaron:**
+`sensor-de-calidad-del-aire/metano` tiene la firma de un **cartucho** (47 mod, 0
+`blurb`), no la de su padre; y `software-…`/`kunak-api` tienen la de
+`monitor-calidad-aire`. **El eje real es volumen de contenido, no forma**: 18
+páginas de 46–50 módulos sin `blurb` contra 5 de 56–106 con él, **mismo nº de
+secciones y misma plantilla**.
+
+## 4 · El content type, en §2e
+
+`productos` · `tipo` (**`select`, defecto `"ficha"`**; `catalogo` solo lo usa
+`accesorios`) · **`padre` opcional** · `seo` · `titulo` · `slug` · **`cuerpo` =
+`blocks`** con la unión de kinds del CPT. Ritmo y retícula por **definición
+compartida**, la misma de `MonoModulo` y `articulos-kb`.
+
+**Las dos relaciones, cerradas**: `sectores.soluciones` y `casos.soluciones` →
+**`relationTo: 'productos'`**, **sin polimorfismo** — al ser una sola colección
+no hace falta.
+
+## 5 · El TERCER OBJETO del criterio de precondición, añadido
+
+El pre-registro de la 20.ª declaró **dos** objetos y el ítem de C llegó por un
+tercero. Escrito ya en `precondicion-1/PRE-REGISTRO.md` §1.1:
+
+> **LA IDENTIDAD DE LA COLECCIÓN DESTINO DE UNA RELACIÓN.** Un campo de relación
+> **se escribe igual y significa otra cosa** si su destino cambia de forma. Lo
+> que la forma nueva cambia no es el campo: es **cuántas colecciones es su
+> destino**.
+
+**Por qué se escapa:** la mirada va a los campos *propios* y a las definiciones
+*compartidas*, no a **con qué se casan**. **Regla: al clasificar, recorre también
+los destinos de relación y pregúntate si la forma nueva puede PARTIR el destino.**
+
+## 6 · SIN PROBAR, anotado y no cableado
+
+- **PR-SP1 · `accesorios`** (n=**1**): única con tablas y sin slider. Con n=1 **no
+  se separa «catálogo es otra forma» de «un autor que maquetó con tablas»**. Entra
+  con `tipo: "catalogo"`; **una segunda página de catálogo reabre la pregunta**.
+- **PR-SP2 · el padre**: categoría en 17 casos, **otro producto** en 1.
+- **PR-SP3** · `producto` y `catalogo` tienen **n=1**: su «universal» es
+  «presente». **Ninguna afirmación de plantilla sale de ellas.**
+
+## 7 · LO SIGUIENTE — **F2-1**
+
+**Las dos precondiciones están cerradas**: la 1 con el cubo C vacío, la 2 con
+`anchoPct` declarado. Su primera tarea es el **layout del monorepo** (CMS-0f),
+bajo la restricción del acta: **si toca la app de render, paga UNA corrida de
+re-aceptación Δ0 contra la línea base ANTES de cualquier otro cambio**.
+
+**Las 2 incógnitas acotadas siguen ahí y NO se cuentan como «no bloquean»**:
+LH-SP8 (`/es/categoria/*`) y las 14 páginas sueltas de la cola larga. Su peor
+caso es B — **eso es una cota que autoriza arrancar, no un permiso para darlas
+por resueltas**.
+
+## 8 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — ≥2026-08-04, OBLIGATORIO otro día.** Hoy sigue
+   siendo 08-03: tampoco se pudo lanzar en esta tanda. Cierra el −30 de
+   EDAR@390, **SIN PROBAR**. Con ella en vuelo: **nada de `check` ni `build`**.
+2. **F2-1** (esquema), con la restricción de CMS-0f.
+3. **Columna y módulo CIEGOS en el lado del clon** — `clase-rango` declara **26
+   celdas SIN VEREDICTO** porque el clon solo marca la fila (`data-fila`). Se
+   cierra con **`data-col` / `data-mod`**; **los caminos ya están puestos** en la
+   sonda. Hasta entonces sus `Δ0` son **solo del nivel de fila**, 65 pares.
+4. **Los 6 SIN PROBAR** — `LH-SP3` · `LH-SP8` · `LH-SP9` · **`LH-SP10` (ya
+   reclasificado a F2-2**: el campo está declarado; lo que decide es si el
+   importador **pierde extractos manuales en silencio**) · `A-SP14` · `A-SP15`.
+   Y los tres nuevos **PR-SP1/2/3**.
+5. **`Breadcrumb max-w-[350px]` — 28 rutas**, ya cobrado en **−33.25**. El más
+   urgente de los 21 que no bloquean.
+6. **Bloque A** (CL-1 `MapaProyectos` +123.84/+33.55) y **Bloque B**
+   (`articulos-kb`).
+7. **HOME sin content type** — singleton, nada la apunta ⇒ cubo B, no bloquea.
+
+## 9 · Lo que NO hay que hacer al empezar
+
+- **No contar un KIND DE BLOQUE como campo de frontera.** La calibración es
+  `beneficiosAplicaciones` en §1.3, y con ella el recuento se multiplica por 5.
+- **No tratar `simple` y `rica` como dos content types.** Misma plantilla, mismo
+  nº de secciones: lo único que las separa es cuántos bloques puso el editor.
+- **No dar `accesorios` por «otra forma».** Es **n=1** y está SIN PROBAR.
+- **No citar un censo donde se puede derivar el CPT.** Costó dos páginas en la
+  tanda anterior y una corrección en ésta.
+- **No correr `check` ni `build` mañana con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — la precondición 1, de frase a número: C = 1, y es `productos`
 
 > ⚠ **Tanda 2026-08-03 (20.ª).** Cinco pasos. Tanda de **LECTURA**: no se midió,

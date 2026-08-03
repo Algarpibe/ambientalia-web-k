@@ -439,7 +439,7 @@ ratificado y cerrado en §1.5b, con su condición de reapertura.
 | `flujo` | **campo `select`** dentro de cada block, **con defecto `"seccion"`** |
 | `variante` del `ctaDescarga` | **campo `select`**, defecto `"foto"` |
 | `hero.headingColor` | **campo con defecto** `#0075c9` (el de marca). Se guarda solo cuando difiere — Industria y EDAR usan `#0c71c3`, el azul de serie de Divi, y eso es **error del original replicado a propósito** |
-| `soluciones` | **relación** a la colección de productos, no texto |
+| `soluciones` | **`relationTo: 'productos'`** — la colección cerrada en **§2e** (2026-08-03), filtrable por su `tipo`. No texto, y **no polimórfica**: el CPT `solutions` resultó ser **una** colección |
 | `proyectos`, `articulos` | **relación** a casos y entradas (ver §3) |
 | `ctaSlides` | **array** |
 | **`anchoPct`** (nivel de MÓDULO) | **campo numérico con defecto `100`**, omitido cuando coincide. **Medido 2026-08-03**: `80 · 90 · 100` en las 4 instancias, a 1440 y a 390 — ver §6c.1. Es **el mismo campo** que `MonoModuloBase.anchoPct` de §1.5, en una segunda colección |
@@ -641,7 +641,7 @@ estructurado vs `entry-content` único — tres criterios F cuando bastaba uno).
 | **`prefijo`** (CMS-1) | **campo `select`** con defecto `"casos-de-exito"`, omitido cuando coincide — solo los 4 ingleses lo escriben |
 | `necesidad · solucion · resultados` | **tres campos ricos** obligatorios (títulos «Necesidad · Solución · Resultados» = plantilla, 57/57). Contrato §3.1 **sin construcción nueva** |
 | `sectores` | **relación 0..n** a la colección nueva **`taxonomia-sectores`** (11 términos medidos; 4 casos con dos; 4 sin ninguno). El término lleva relación polimórfica *opcional* a `sectores`/`monograficos` — 11 términos, 8 páginas |
-| `soluciones` | **relación 0..n a la colección de productos** (la del §1.4). Probado que la ficha es proyección del producto: 640 nodos de panel, **18 fichas, 17 títulos** en todo el corpus |
+| `soluciones` | **relación 0..n, `relationTo: 'productos'`** — la colección cerrada en **§2e** (2026-08-03), la misma que apunta §1.4. Probado que la ficha es proyección del producto: 640 nodos de panel, **18 fichas, 17 títulos** en todo el corpus |
 | `galeria` | **array de relaciones a media** (48/57; 3–15, mediana 7). El carrusel es plantilla |
 | `destacado` | texto plano opcional (49/57), verbatim — las comillas son contenido |
 | `detalles` | grupo `usuario · ubicacion · anyo · parametros?` — las filas «Cliente» y «Sector» se **proyectan** de `cliente` y `sectores` (igualdad 57/57 y 53/53; ausencia conjunta 4/4) |
@@ -875,7 +875,91 @@ solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
 hipótesis del grupo D; la hipótesis cayó, así que la cola larga necesitará su
 propia decisión de modelo cuando toque.
 
-## ⚠ 2e · EL AGUJERO: `productos` no está modelada, y dos colecciones la apuntan (2026-08-03)
+## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
+
+Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`
+(`3af483c`, **anterior a la sonda y a medir**) · evidencia
+`medidas/solutions-campos.json` (`3039996`) · sonda `solutions-campos` con
+negativo 3/3.
+
+> **El CPT `solutions` es UNA colección `productos` con discriminante.** Campos
+> de frontera medidos: **1**, y opcional. Ni U1 (obligatoriedad) ni U2 (≥3 o
+> >25 %) disparan.
+
+### El alcance, DERIVADO — y corrige a la sección anterior
+
+`solutions-sitemap.xml` filtrado a `/es`: **24 URLs**, no 22. **Dos páginas que
+el proyecto no contaba como de este CPT**: `software-de-medicion-calidad-del-aire`
+y `kunak-api`.
+
+> ⚠ **CORRIGE al §2e anterior y a `precondicion-1/DECISION.md`:** decían que
+> «HOME · SOFTWARE · API son singleton, nada decidido las apunta ⇒ cubo B».
+> **Falso para dos de los tres** — SOFTWARE y API son **del mismo CPT** que
+> PRODUCTO y CATÁLOGO, o sea de la colección que las dos relaciones apuntan. El
+> error fue **citar el censo en vez de derivar el CPT**. Los arquetipos
+> construidos sin content type eran **4, no 5** (API es *variante*, no
+> arquetipo — `CLAUDE.md` §Páginas clonadas), y **HOME es el único genuinamente
+> fuera**.
+
+### Lo medido — 24/24, 0 selectores muertos, control 4/4
+
+| | |
+|---|---|
+| **plantilla** | **`solutions-template-default et-tb-has-template` en 24 de 24** — **un solo cascarón**, no hay frontera ahí |
+| **secciones propias** | **4 · 5 · 6 (×21) · 7** ⇒ composición **por instancia** ⇒ el cuerpo es `blocks` |
+| **eje real** | **volumen de contenido, no forma**: 18 páginas de 46–50 módulos sin `blurb` y 5 de 56–106 con `blurb` — **mismo nº de secciones y misma plantilla** |
+
+**La calibración que fija el recuento** (y sin ella sale ×5): §1.3 dejó
+**`beneficiosAplicaciones` —un bloque entero que solo SECTOR usa— FUERA** de sus
+3 campos de frontera. ⇒ **un kind de bloque no es campo de frontera; lo son las
+propiedades.** Por eso `blurb`, `galeria`, `video`, `cta`, `tabla` y `slider` **no
+cuentan**, y `descargaPdf` tampoco (es el `href` de un botón que las dos formas
+ya tienen).
+
+### El content type
+
+| pieza | en Payload |
+|---|---|
+| `productos` | **colección**, `slug` único (entra en la guarda del §4 con las demás) |
+| **`tipo`** | **`select` con defecto `"ficha"`** · valores `ficha` · `catalogo`. Omitido en el dato cuando coincide. Es el **discriminante**, y su único uso hoy es `accesorios` |
+| **`padre`** | **opcional** — el único campo de frontera medido. Lo traen **18 de 24**: `cartuchos-inteligentes/*` (categoría) y `…/metano` (**otro producto**). Relación vs `select` lo decide F2-1 con el enrutado del §4 delante (**PR-SP2**) |
+| `seo` | grupo, como en las demás |
+| `titulo` · `slug` | obligatorios |
+| **`cuerpo`** | **`blocks`** — la unión de kinds del CPT: `text` · `image` · `button` · `toggle` · `blurb` · `slider` · `gallery` · `video` · `cta` · `table`. **Cada instancia usa su subconjunto**; que 18 no usen `blurb` es contenido, no esquema |
+| ritmo y retícula de bloque | **definición compartida**, la misma que consumen `MonoModulo` y `articulos-kb` (§2d.1) — *lo que se duplica es el documento, no la definición* |
+
+**El patrón de la casa, aplicado:** cada campo de presentación lleva **defecto
+explícito** y se **omite del dato cuando coincide** — `tipo` por defecto
+`"ficha"` (23 de 24), `padre` ausente por defecto (6 de 24 lo omiten).
+
+### Las dos relaciones que la apuntan, cerradas
+
+| dónde | antes | **ahora** |
+|---|---|---|
+| **§1.4 · SECTOR** | `soluciones` → «la colección de productos» (sin modelar) | **`relationTo: 'productos'`**, filtrable por `tipo` |
+| **§2b · grupo C** | `soluciones` → «la colección de productos (la del §1.4)» | **`relationTo: 'productos'`** |
+
+**No hacen falta relaciones polimórficas** —el mecanismo que §1.5b reserva para
+`sectores`/`monograficos`—: al ser **una** colección, las dos apuntan al mismo
+sitio y el `tipo` acota si hace falta.
+
+### SIN PROBAR, anotado y no cableado
+
+- **PR-SP1 · `accesorios`** (n=**1**): única con tablas (10) y única sin slider.
+  Con n=1 **no se separa «catálogo es otra forma» de «un autor que maquetó con
+  tablas»**. Entra con `tipo: "catalogo"`; **una segunda página de catálogo
+  reabre la pregunta**.
+- **PR-SP2 · el padre**: categoría en 17 casos, **otro producto** en 1.
+- **PR-SP3** · `producto` y `catalogo` tienen **n=1**: su «universal» es
+  «presente». **Ninguna afirmación de plantilla sale de ellas.**
+
+### ⚠ El agujero que esta sección cierra, y el que deja abierto
+
+**Cerrado**: `productos` ya no es una incógnita con dos relaciones apuntándola.
+**Abierto y NO bloqueante**: **HOME** sigue sin content type — es singleton, nada
+decidido la apunta, y modelarla después es **añadir** (cubo B).
+
+## ~~⚠ 2e-bis · EL AGUJERO (histórico, cerrado arriba)~~ (2026-08-03)
 
 Acta: `docs/research/precondicion-1/DECISION.md` (pre-registro `cf25baf`,
 anterior a clasificar). Salió de reformular la **precondición 1 de F2-1** de
@@ -1504,7 +1588,7 @@ corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 
 | # | decisión | bloquea |
 |---|---|---|
-| **§2e** | **`productos`: ¿UNA colección o DOS?** — 20 instancias del CPT `solutions` sin medir, y dos colecciones ya la apuntan | **F2-1** — es el único ítem del cubo C de la precondición 1 |
+| ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | whitelist |
 | §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
 
@@ -1528,11 +1612,13 @@ confirmó el §4) y CMS-1 (que entra al §6 como resuelta).
 **Cerrada el 2026-08-03: CMS-0f** (dos apps en monorepo + Local API por paquete
 compartido, §CMS-0f) — **la última decisión de infraestructura que quedaba**.
 
-De las tres que quedan, **ninguna bloquea instalar Payload ni construir C-3**:
-una es de contenido (cómo se modela la tabla), una de política (qué hosts de
-embebido se admiten) y la tercera —**§2e, `productos`**— bloquea **congelar el
-esquema**, no la instalación. El camino de infraestructura está despejado; el de
-modelado tiene un ítem con nombre.
+**Cerrada el 2026-08-03: §2e** (`productos` es UNA colección — frontera medida =
+1 y opcional). Con ella **el cubo C de la precondición 1 queda vacío y F2-1 puede
+congelar el esquema**.
+
+De las **dos** que quedan, **ninguna bloquea nada de F2-1**: una es de contenido
+(cómo se modela la tabla) y otra de política (qué hosts de embebido se admiten).
+**El camino está despejado en los dos ejes**, infraestructura y modelado.
 
 ⚠ **Y dos cosas que el censo de embebidos cambió, no añadió:** el nodo-embed pasa
 a llevar **URL en vez de `enum` de proveedor** (§3.3b: 18 hosts, 12 de ellos una
