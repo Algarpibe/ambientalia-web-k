@@ -200,7 +200,18 @@ const todo = { meta: { width, fecha: "2026-07-30" }, formas: {} };
  * por debajo, el veredicto es NO SE PUDO EVALUAR con código ≠ 0 — nunca verde.
  * Las páginas las cuenta `openPage`, así que aquí no hay ningún `ok()` que se
  * pueda olvidar. */
-const ev = new Evaluadas({ nombre: "esqueleto", unidad: "páginas", minimo: Object.keys(FORMAS).length, porPaginas: true });
+/**
+ * ⚠ **NUMERADOR Y DENOMINADOR EN UNIDADES DISTINTAS — imprimía `16/9`.**
+ * `porPaginas` hace que cuente `openPage`, o sea **páginas** (16), y el mínimo
+ * contaba **FORMAS** (9). Con eso, **siete páginas caídas seguían dando verde**:
+ * basta con que llegue una por forma… y ni eso, porque nueve páginas cualesquiera
+ * bastan aunque siete formas se queden sin ninguna.
+ *
+ * El bucle de abajo es `for (forma of FORMAS) for (url of urls)`, así que el
+ * universo en páginas es **la suma de las urls**, y se deriva: añadir una url a
+ * una forma sube el listón sola.
+ */
+const ev = new Evaluadas({ nombre: "esqueleto", unidad: "páginas", minimo: Object.values(FORMAS).reduce((a, u) => a + u.length, 0), porPaginas: true });
 
 for (const [forma, urls] of Object.entries(FORMAS)) {
   todo.formas[forma] = [];
