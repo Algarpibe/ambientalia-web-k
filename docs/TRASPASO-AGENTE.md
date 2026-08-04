@@ -74,8 +74,16 @@ npm run start
 npm run lint
 npm run typecheck
 npm run check                # lint + typecheck + build + qa:slugs  ← antes de commitear
-npm i --no-save puppeteer-core   # OBLIGATORIO antes de correr sondas (ver §5)
+npm install                  # instala TODO, puppeteer-core incluido (ver §5)
 npm run qa:lib               # test de lib.mjs y del contrato de sondas (el total lo cuenta el test)
+
+# CMS (F2-1 bloque 2). Necesita el Postgres local:
+#   docker run -d --name kunak-cms-pg -e POSTGRES_USER=kunak -e POSTGRES_PASSWORD=kunak \
+#     -e POSTGRES_DB=kunak_cms -p 55432:5432 postgres:17-alpine
+npm run cms:dev              # admin de Payload en :3001  (app aparte — NO es el artefacto)
+npm run cms:types            # regenera packages/cms-config/src/payload-types.ts
+npm run qa:cms-campos        # ¿expresan las colecciones lo medido? (dentro de `check`)
+npm run qa:cms-campos-neg    #   ↑ su negativo: 4 sabotajes + control
 ```
 
 Las sondas se invocan siempre por `npm run qa:*`. El catálogo completo está en
@@ -252,8 +260,15 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 
 ### Operación
 
-1. **`npm i --no-save puppeteer-core` antes de correr sondas.** Va con
-   `--no-save` a propósito, así que **cualquier `npm install` lo poda**.
+1. **`puppeteer-core` es `devDependency` del `package.json` de la RAÍZ** —el del
+   monorepo, que **no es el artefacto**; `apps/web/package.json` no la lleva. Un
+   `npm install` normal la instala y **ya no la poda**.
+
+   > ⚠ **CORREGIDO en F2-1 bloque 2 (2026-08-03).** Hasta la conversión a
+   > monorepo esto decía *«`npm i --no-save puppeteer-core` antes de correr
+   > sondas»* y estaba marcado como innegociable. **Ya no aplica**, y volver al
+   > `--no-save` **reabre** la trampa que costó la tanda de CMS-0d (un
+   > `npm install` podaba la sonda y dejaba de arrancar).
 2. **Con una sonda en vuelo: nada de `build`, `check` ni `dev`.** `npm run check`
    construye, le cambia el `.next` al servidor vivo y salen 404 en rutas que
    existen. Lo grave no es el 404: es que **no se sabe dónde cayó el corte**, así

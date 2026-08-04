@@ -305,6 +305,78 @@ verde.
 **no se construyó la imagen**. El contrato de aceptación de F2-1 es el Δ0 del
 HTML servido por `next start`, no el despliegue.
 
+### ✅ F2-1 · BLOQUE 2 — Payload andando y las colecciones traducidas (2026-08-03)
+
+**Aislado igual que el 1, y por la misma razón:** aquí se instala Payload y se
+traduce el modelo, pero **no se siembra nada** (F2-2) **ni se versionan
+migraciones** (bloque 3).
+
+#### El titular
+
+> **Payload 3.87.0 sirve `/admin` con HTTP 200 contra un Postgres local, las 16
+> colecciones están traducidas de lo ya medido, `payload-types.ts` compila — y
+> hay una comprobación que DERIVA los campos de `apps/web/src` y verifica uno a
+> uno que tienen contraparte: `qa:cms-campos`, 10 tipos · 298 rutas de campo ·
+> 0 sin contraparte, con su negativo 5/5.**
+>
+> **Y `apps/web` no se ha tocado: `git diff HEAD -- apps/web` está VACÍO**, sin
+> un solo fichero nuevo. Por eso esta tanda **no paga corrida Δ0** — la
+> restricción de CMS-0f se cumple por no haber cruzado la frontera, no por
+> haberla cruzado y medido.
+
+| dónde | qué |
+|---|---|
+| `apps/cms` | app Next 16.2.12 con el andamio de `@payloadcms/next` (admin + `/api` + graphql), `sharp`, y una config **delgada**: solo `admin.user`, el `importMap` y el binario |
+| `packages/cms-config` | **todo el modelo** — `campos/` · `bloques/` · `colecciones/` · `payload.config.ts` · `payload-types.ts`. Cero componentes de admin |
+| Postgres | contenedor `kunak-cms-pg` (`postgres:17-alpine`, puerto **55432**), esquema creado y verificado con `\dt` |
+
+#### La comprobación, que es el entregable que hace auditable lo demás
+
+**`payload-types.ts` compila ⇏ las colecciones expresan lo medido.** Los tipos
+se generan **desde** las colecciones, así que un campo que se cae en la
+traducción produce unos tipos perfectamente consistentes con el esquema
+equivocado. Es la clase de *«un `join()` silencioso fabrica el verde vacío»*
+aplicada al esquema: **no encontrar un campo y no buscarlo dan la misma
+salida.**
+
+`scripts/qa/cms-campos.mjs` compara **dos lados derivados**, ninguno escrito a
+mano:
+
+| lado | de dónde sale |
+|---|---|
+| **A · lo medido** | el compilador de TypeScript sobre `types/kunak.ts` y `lib/{sectores,monografico}.ts` — no una lista, que sería una copia desactualizada de algo calculable |
+| **B · Payload** | la **config resuelta**: se empaqueta `colecciones.ts` con esbuild y se importa el objeto. *Verificar contra la salida servida, no contra la fuente que uno supone responsable* |
+
+Lo único declarado es el **mapa** (qué tipo es qué colección) y las
+**excepciones** — 1 hoja, 5 relaciones, 4 alias — y **todas se imprimen**. Una
+excepción que nadie usa sale por `DECLARACIÓN MUERTA`, para que no envejezca
+tapando campos futuros.
+
+**Negativo, 5/5, cada uno por SU invariante:** `campo` (se quita
+`casos.cliente` ⇒ sale nombrado) · `alias` (destino inexistente ⇒ `ALIAS ROTO`,
+para que un alias no pueda tapar un hueco) · `hoja` (⇒ `DECLARACIÓN MUERTA`) ·
+`tipo` (⇒ `TIPO MEDIDO NO ENCONTRADO`, **nunca cero campos**) · **CONTROL**
+(sin sabotaje, exit 0 — sin él una sonda que fallara siempre pasaría los cuatro).
+
+Entra en `npm run check`: es estática, no necesita navegador ni servidor.
+
+#### Lo que la traducción descubrió — todo escrito en `ESQUEMA-CMS.md` en ESTA tanda
+
+| # | hallazgo | dónde |
+|---|---|---|
+| 1 | **`padre`: la binaria de §2e no contenía la respuesta.** `cartuchos-inteligentes` **no es una URL del CPT**, así que 17 de 18 hijos apuntarían a un documento inexistente ⇒ relación pura no vale. Decidido `select` por el precedente de `prefijo` | §2e.1 |
+| 2 | **Tres features de la whitelist §3.1 no existen** en `richtext-lexical@3.87.0`: `table` (35 páginas), `mark`, `small` | §3.1c |
+| 3 | **CMS-0e necesita dónde aterrizar el HTML crudo** — un `richText` guarda Lexical, no HTML. Es de F2-2, pero el esquema tiene que preverlo | §3.1d |
+| 4 | **«omitido cuando coincide» no es gratis en Payload**: `defaultValue` escribe el valor; hace falta un hook `beforeChange`. Implementado en `conDefecto` | §1.5c |
+| 5 | `MonoInline` → **texto rico acotado a negrita**, una de las dos formas que §1.5 ya autorizaba | §1.5c |
+| 6 | **`anchoPct` está en el ESQUEMA de SECTOR y NO en `SectorBloqueBase`** de `src/lib` — el hueco va del esquema al código, no al revés | §6c.1 |
+| 7 | `usuarios` — colección de **infraestructura**, sin lado medido y sin poder tenerlo | §CMS-0f |
+
+**Hecho cuando** *(la parte del bloque 2)*: ✅ `payload-types.ts` compila · ✅
+las colecciones expresan los campos de §1.4/§1.5/§2b/§2.2/§2c/§2d.1/§2e con sus
+defectos, **verificado y no afirmado**. Queda la mitad del bloque 3:
+migraciones versionadas con `push: false` y la guarda de colisión en negativo.
+
 ---
 
 **La primera tarea de F2-1, con su restricción heredada de CMS-0f** *(cumplida

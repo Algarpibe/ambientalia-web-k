@@ -1,3 +1,134 @@
+# HANDOFF — F2-1 bloque 2: Payload andando, 16 colecciones, y una comprobación que las audita
+
+> ⚠ **Tanda 2026-08-03 (23.ª).** Seis pasos. Instala Payload y traduce el modelo.
+> **NO siembra datos** (F2-2) **ni versiona migraciones** (bloque 3). Y **no toca
+> `apps/web`** — por eso no paga corrida Δ0: la restricción de CMS-0f se cumple
+> por no haber cruzado la frontera, no por cruzarla y medirla.
+
+## 0 · El titular
+
+> **Payload 3.87.0 sirve `/admin` con HTTP 200 contra un Postgres local, las 16
+> colecciones están traducidas de lo YA medido y `payload-types.ts` compila.**
+>
+> **Y lo que hace auditable todo lo demás: `qa:cms-campos` DERIVA los campos de
+> `apps/web/src` y verifica uno a uno que tienen contraparte — 10 tipos · 298
+> rutas de campo · 0 sin contraparte**, con negativo **5/5**.
+>
+> **`git diff HEAD -- apps/web` está VACÍO**, sin un fichero nuevo.
+
+```
+apps/cms/              ← app Next con el admin. Config de 13 líneas
+packages/cms-config/   ← TODO el modelo: campos · bloques · 16 colecciones · tipos
+scripts/qa/cms-campos.mjs (+ .neg.mjs)  ← la comprobación y su negativo
+```
+
+## 1 · Por qué la comprobación es el entregable, y no `payload-types.ts`
+
+**Que `payload-types.ts` compile NO es que las colecciones expresen los campos.**
+Los tipos se generan **desde** las colecciones: un campo que se cae en la
+traducción produce unos tipos perfectamente consistentes **con el esquema
+equivocado**. Es *«un `join()` silencioso fabrica el verde vacío»* aplicado al
+esquema — **no encontrar un campo y no buscarlo dan la misma salida**.
+
+`cms-campos` compara **dos lados derivados**, ninguno escrito a mano:
+
+| lado | de dónde sale |
+|---|---|
+| **A · lo medido** | el compilador de TypeScript sobre `types/kunak.ts` y `lib/{sectores,monografico}.ts` |
+| **B · Payload** | la **config resuelta** (esbuild + import del objeto), no el texto del fichero |
+
+Declarado sólo el **mapa** y las **excepciones** —1 hoja · 5 relaciones · 4
+alias—, y **todas se imprimen**. Una excepción que nadie usa sale por
+`DECLARACIÓN MUERTA`: sin eso, las exclusiones envejecen tapando campos futuros.
+
+**La guarda se cobró tres declaraciones en su primera corrida** —`CampoRico`,
+`CampoRicoEnLinea`, `MonoTrozo`, las tres innecesarias— y **un falso positivo
+propio**: pedía el `kind` de cada bloque como campo, cuando en Payload la
+identidad de un bloque **es su `slug`**. Las dos cosas salieron por correr la
+sonda, no por leerla.
+
+**Negativo 5/5, cada uno por SU invariante:** `campo` · `alias` · `hoja` ·
+`tipo` · **CONTROL** (sin él, una sonda que fallara siempre pasaría los cuatro).
+
+## 2 · Los 7 hallazgos, todos escritos en `ESQUEMA-CMS.md` EN esta tanda
+
+El que más pesa, porque es de método:
+
+> **`padre` (§2e.1): una pregunta pre-registrada como binaria puede no contener
+> su respuesta.** §2e decía «relación vs `select`, lo decide F2-1». Con la medida
+> delante: **`cartuchos-inteligentes` NO es una URL del CPT**, así que **17 de 18
+> hijos apuntarían a un documento inexistente** — relación pura no vale, y la
+> polimórfica exigiría inventar una colección de un término que ningún censo
+> respalda. Decidido **`select`** por el precedente de `prefijo` (§2b · §2.4).
+> PR-SP2 no se cierra: **se afila**.
+
+Los otros seis: `table`/`mark`/`small` **no existen** en `richtext-lexical@3.87.0`
+(§3.1c) · CMS-0e **necesita dónde aterrizar el HTML crudo** y un `richText` no es
+ese sitio, con las dos formas costadas para F2-2 (§3.1d) · «omitido cuando
+coincide» **no es gratis**: `defaultValue` es media mitad, hace falta un hook, y
+está en `conDefecto` (§1.5c) · `MonoInline` → texto rico acotado a negrita
+(§1.5c) · **`anchoPct` está en el esquema de SECTOR y NO en `SectorBloqueBase`**
+del código —el hueco va del esquema al código— (§1.5c) · `usuarios` es
+infraestructura sin lado medido (§CMS-0f).
+
+## 3 · EL BLOQUE 3, que es lo siguiente de F2-1
+
+**Migraciones + slugs + guarda de colisión.** Las tres piezas, y la tercera manda:
+
+1. **Migraciones versionadas desde el día uno, con `push: false` en producción** —
+   el esquema de la DB solo cambia por migración, nunca por sync implícito. Hoy
+   `postgresAdapter` va con su `push` por defecto **a propósito y anotado en
+   `payload.config.ts`**: adelantarlo sin la carpeta de migraciones dejaría el
+   esquema sin forma de avanzar.
+2. **La colección-registro `slugs`** con `unique: true` y los hooks de las
+   colecciones de contenido **pasando `req`** — misma transacción: el alta y su
+   registro de slug entran o fallan juntos. **No se ha creado en esta tanda**: es
+   del bloque 3, y hoy cada colección lleva sólo la unicidad **nativa por
+   colección**, que §4 ya dijo que **no basta**.
+3. **La guarda de build de colisión del §4, PROBADA EN NEGATIVO**: un slug
+   duplicado a propósito **entre familias** tumba el build, y pasa en limpio al
+   quitarlo. *Guarda probada en negativo o no hay guarda.* El precedente está
+   hecho: `qa:slugs` ya se probó con una colisión real
+   (`medidas/slugs-COLISION-DELIBERADA-catalogo.json`).
+
+## 4 · Lo que queda abierto, por prioridad
+
+1. **Ráfaga 3 de `cqa6-390` — ≥2026-08-04, OBLIGATORIO otro día.** Hoy sigue
+   siendo 08-03. Cierra el **−30 de EDAR@390, SIN PROBAR**. Con ella en vuelo:
+   **nada de `check` ni `build`** (y `check` ahora construye Y corre
+   `qa:cms-campos`).
+2. **F2-1 bloque 3** (arriba).
+3. **`data-col` / `data-mod` en el clon** — cierra las **26 celdas SIN VEREDICTO**
+   de `clase-rango`; los caminos ya están en la sonda. Hasta entonces sus `Δ0`
+   son **solo del nivel de fila**, 65 pares.
+4. **Los 6 mínimos** de sondas que aún declaran un mínimo escrito en vez de
+   derivado del build — una ruta nueva no les sube el listón sola.
+5. **Migrar a `iniciarClon()` las que esperan un 3000 ajeno** — `qa:enlaces` y
+   `qa:corte` confirmadas entre ellas.
+6. **`Breadcrumb max-w-[350px]` — 28 rutas**, ya cobrado en −33.25.
+7. **El `Dockerfile` reapuntado a `apps/web` pero SIN CONSTRUIR** — y ahora
+   además **sin cubrir `apps/cms`**: son dos apps y el compose sigue teniendo
+   una. El contrato de F2-1 es el Δ0 del HTML servido, no el despliegue; se
+   prueba en una tanda de despliegue.
+8. **Bloque A** (CL-1 `MapaProyectos` +123.84/+33.55) y **Bloque B**
+   (`articulos-kb`, que hoy es la única colección con content type decidido y
+   **sin instancias transcritas** a `src/lib`).
+
+## 5 · Lo que NO hay que hacer al empezar
+
+- **No leer un `payload-types.ts` que compila como una verificación del esquema.**
+  Para eso está `qa:cms-campos`, y su verde sólo vale porque su negativo pasa.
+- **No añadir un campo a una colección sin mirar si tiene lado medido.** Si lo
+  tiene y no lo pones, `cms-campos` lo nombra; si no lo tiene, la colección sale
+  en «SIN lado medido» y eso es una afirmación más débil de lo que parece.
+- **No meter nada de admin en `packages/cms-config`.** Es la frontera entera de
+  CMS-0f: lo que entre ahí lo hereda el build del artefacto verificado.
+- **No poner `push: false` sin la carpeta de migraciones** — dejaría el esquema
+  sin forma de avanzar.
+- **No correr `check` ni `build` con la ráfaga 3 en vuelo.**
+
+---
+
 # HANDOFF — F2-1 bloque 1: monorepo convertido, Δ0 en los dos anchos
 
 > ⚠ **Tanda 2026-08-03 (22.ª).** Seis pasos. **Primera tanda de F2-1 que toca

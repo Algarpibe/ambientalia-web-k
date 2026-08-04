@@ -15,7 +15,7 @@
     "start": "npm run start -w web",
     "lint": "npm run lint -w web",
     "typecheck": "npm run typecheck -w web",
-    "check": "npm run check -w web && npm run typecheck -w @kunak/cms-config && npm run qa:slugs",
+    "check": "npm run check -w web && npm run typecheck -w @kunak/cms-config && npm run typecheck -w cms && npm run qa:slugs && npm run qa:cms-campos",
     "qa:offsets": "node scripts/qa/offsets.mjs",
     "qa:tree": "node scripts/qa/tree-cmp.mjs",
     "qa:cmp-sector": "node scripts/qa/cmp-sector.mjs",
@@ -67,9 +67,17 @@
     "qa:clase-rango-neg": "node scripts/qa/clase-rango.neg.mjs",
     "qa:solutions": "node scripts/qa/solutions-campos.mjs",
     "qa:solutions-neg": "node scripts/qa/solutions-campos.neg.mjs",
-    "typecheck:cms": "npm run typecheck -w @kunak/cms-config"
+    "typecheck:cms": "npm run typecheck -w @kunak/cms-config",
+    "qa:cms-campos": "node scripts/qa/cms-campos.mjs",
+    "qa:cms-campos-neg": "node scripts/qa/cms-campos.neg.mjs",
+    "cms:dev": "npm run dev -w cms",
+    "cms:types": "npm run generate:types -w cms",
+    "typecheck:cms-app": "npm run typecheck -w cms"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true
   }
 }

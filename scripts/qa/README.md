@@ -6,8 +6,9 @@ puppeteer-core sobre el Chrome del sistema, siguiendo las **notas de método** d
 pase de scroll + settle antes de medir y móvil solo por device metrics.
 
 Estas sondas **no forman parte del build**: `npm run check` no las toca y
-`puppeteer-core` no está en `package.json` a propósito, para no meter un
-navegador en las dependencias de la app.
+`puppeteer-core` **no está en las dependencias de la app** a propósito, para no
+meter un navegador en el artefacto. Vive como `devDependency` del
+`package.json` de la **raíz** del monorepo, que no se despliega.
 
 ## Cómo correrlas
 
@@ -16,7 +17,7 @@ falta `cd`: cada sonda resuelve sus rutas contra su propio directorio, no contra
 el `cwd`.
 
 ```bash
-npm i --no-save puppeteer-core          # ~1 MB: usa el Chrome ya instalado
+npm install                             # puppeteer-core ya es devDep de la raíz
 
 npm run qa:enlaces                      # guarda de rutas locales, las dos direcciones
 npm run qa:slugs                        # guarda de unicidad de slug ENTRE familias del plano
@@ -33,7 +34,19 @@ npm run qa:arbol-todos -- 1440          # los 8 sectores del original entre sí
 
 npm run qa:lib                          # test en negativo de lib.mjs — sin navegador
 npm run qa:bases                        # ¿tiene cada ruta base de lectura VÁLIDA?
+
+npm run qa:cms-campos                   # ¿expresan las colecciones de Payload lo medido?
+npm run qa:cms-campos-neg               #   ↑ su test en negativo: 4 sabotajes + control
 ```
+
+> **`cms-campos` no mide el original: compara dos DERIVACIONES** — los campos que
+> el compilador de TypeScript saca de `apps/web/src` contra la config **resuelta**
+> de Payload (esbuild + import del objeto, no el texto del fichero). Es estática,
+> no necesita navegador ni servidor, y por eso entra en `npm run check`.
+>
+> Existe porque **que `payload-types.ts` compile no prueba nada**: los tipos se
+> generan *desde* las colecciones, así que un campo que se cae en la traducción
+> da unos tipos consistentes con el esquema equivocado.
 
 **El `--` es obligatorio** para que npm pase los argumentos al script en vez de
 comérselos.

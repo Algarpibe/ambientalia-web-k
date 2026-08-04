@@ -140,9 +140,15 @@ puerto, `.next` borrado, build desde HEAD, marcador de frescura por `BUILD_ID`
 | lint + typecheck | verdes (`eslint-config-next` queda en `16.2.1`, funciona con next 16.2.12) |
 
 **Payload ya no está bloqueado por la versión de Next.** Ojo operativo que se
-pagó en la tanda: `puppeteer-core` va con `--no-save`, así que **cualquier
-`npm install` lo poda** — tras tocar dependencias hay que rehacer
-`npm i --no-save puppeteer-core` antes de correr sondas.
+pagó en la tanda: `puppeteer-core` iba con `--no-save`, así que **cualquier
+`npm install` lo podaba** — tras tocar dependencias había que rehacerlo antes de
+correr sondas.
+
+> ✅ **CERRADO DE RAÍZ en F2-1 bloque 1 (2026-08-03).** `puppeteer-core` es hoy
+> `devDependency` del `package.json` de la **raíz** del monorepo —que **no es el
+> artefacto**: `apps/web/package.json` no la lleva—, así que un `npm install`
+> normal la instala. **El `--no-save` ya no aplica y volver a él reabre la
+> trampa.**
 
 ---
 
@@ -376,6 +382,33 @@ por cada parche del admin.
    número y no una impresión. El colapso es la dirección barata por
    construcción: poder pagarlo es exactamente lo que esta decisión compra.
 
+#### ✅ CONSTRUIDA (2026-08-03, F2-1 bloque 2) — y la frontera aguantó
+
+Payload **3.87.0** (peer `next >=16.2.6 <17`, que CMS-0d ya había dejado
+satisfecho con 16.2.12) sirviendo `/admin` con **HTTP 200** contra Postgres 17
+local. El reparto quedó así, y **`apps/web` no se tocó: `git diff HEAD --
+apps/web` vacío**, ni un fichero nuevo.
+
+| en `packages/cms-config` | en `apps/cms` |
+|---|---|
+| `campos/` · `bloques/` · `colecciones/` · `colecciones.ts` · `payload.config.ts` · `payload-types.ts` · `defaults.ts` | el andamio de `@payloadcms/next` (admin, `/api`, graphql), `next.config.mjs` con `withPayload`, y una config de **13 líneas** |
+
+**Lo que la frontera obligó a repartir, y no era obvio:** `sharp` se queda en
+`apps/cms` **aunque los `imageSizes` vivan en el paquete compartido** (CMS-0b).
+El binario sólo hace falta para **subir** medios y la app de render no sube nada
+—leerá por Local API—: meterlo en el paquete le colgaría un binario nativo al
+build del artefacto verificado a cambio de nada.
+
+**Y una colección que hay que declarar como lo que es: `usuarios`.** Payload
+exige **una** colección con `auth: true`. No tiene lado medido y **no puede
+tenerlo** —el original es WordPress y sus usuarios no son contenido del sitio—,
+así que `qa:cms-campos` la lista entre las «colecciones SIN lado medido» junto a
+`media` y `articulos-kb` en vez de dejarla pasar como si estuviera verificada.
+Vive en el paquete compartido y no en `apps/cms` porque **es esquema de la base
+de datos**, que las dos apps comparten — no un componente de admin, que es lo que
+el acta prohíbe cruzar. Roles y control de acceso son **F2-5**: aquí está el
+mínimo para que el admin arranque y nada más.
+
 ---
 
 ## 1 · Los dos content types medidos, y su frontera
@@ -460,6 +493,45 @@ ratificado y cerrado en §1.5b, con su condición de reapertura.
 **un defecto explícito** y se **omite del dato cuando coincide** con él. Ese
 defecto es también la decisión de diseño que hereda quien dé de alta un contenido
 nuevo.
+
+### ⚠ 1.5c · Lo que la TRADUCCIÓN a Payload descubrió del patrón (2026-08-03, F2-1 bloque 2)
+
+**(a) «Omitido cuando coincide» NO es gratis en Payload, y creerlo gratis rompe
+el patrón en silencio.**
+
+`defaultValue` hace **la primera mitad** —rellenar al dar de alta— y sólo esa.
+Con `defaultValue` a secas **el valor se escribe en la fila**, y a partir de ahí
+el dato ya no distingue *«el editor eligió esto»* de *«nadie tocó nada»*: las dos
+instancias guardan `"seccion"`. La segunda mitad del patrón es un hook
+`beforeChange` **por campo** que devuelve `null` cuando el valor entrante coincide
+con el defecto.
+
+> **Está implementado en `conDefecto` (`packages/cms-config/src/campos/comunes.ts`)
+> y las dos mitades van juntas por construcción**, precisamente para que no pase
+> lo de siempre: escribir el `defaultValue`, dar el patrón por aplicado, y que
+> «omitido cuando coincide» quede como una frase de este documento que ningún
+> código ejecuta (*documentado no es conectado*, `CLAUDE.md` §sondas regla 3).
+
+Y su corolario, que además es una comprobación del modelo: **`conDefecto` TIRA si
+el campo es `required`.** Un defecto que no se puede omitir no distingue nada —
+o el campo es opcional, o el valor es **plantilla** y no es un campo.
+
+**(b) `MonoInline` — elegida la primera de las dos formas que §1.5 autoriza.**
+
+§1.5 dice *«texto rico acotado a negrita, **o** un array tipado»*. Se elige
+**texto rico acotado a negrita** (`editorNegrita`: párrafo + negrita, nada más).
+La razón es la misma que hizo existir el tipo: son **56 `<strong>` a mitad de
+frase**, y lo que importa es dónde envuelve el texto. Un array de trozos obliga a
+quien edita a **partir la frase a mano** para poner una negrita; el editor rico
+lo hace seleccionando. **No es una decisión nueva** — es una de las dos que este
+documento ya había autorizado, y se registra para que no se relea como abierta.
+
+**(c) Y un hueco que va del ESQUEMA al CÓDIGO, no al revés.** `anchoPct` entra en
+SECTOR por §6c.1 y está en las colecciones; **`SectorBloqueBase` de
+`apps/web/src/lib/sectores.ts` sólo declara `flujo`**. La dirección importa: no es
+un campo medido que se cayó en la traducción —eso lo cazaría `qa:cms-campos`—
+sino un campo **decidido** que el clon todavía no consume. Se cierra al poblar,
+no aquí.
 
 ### ✅ 1.5b · DOS COLECCIONES, no una con discriminante — CERRADA (2026-07-30)
 
@@ -943,6 +1015,46 @@ explícito** y se **omite del dato cuando coincide** — `tipo` por defecto
 `sectores`/`monograficos`—: al ser **una** colección, las dos apuntan al mismo
 sitio y el `tipo` acota si hace falta.
 
+### ✅ 2e.1 · `padre` — DECIDIDO `select`, y la binaria que §2e escribió NO contenía la respuesta (2026-08-03, F2-1 bloque 2)
+
+§2e dejó escrito: *«Relación vs `select` lo decide F2-1 con el enrutado del §4
+delante (PR-SP2)»*. Al ir a decidirlo con la medida delante apareció que **las
+dos opciones que la frase ofrece fallan las dos**, y eso es lo primero que hay
+que decir:
+
+| padre medido | n | ¿es un documento de `productos`? |
+|---|---|---|
+| `sensor-de-calidad-del-aire` | 1 | **SÍ** — es una de las 24 URLs del CPT |
+| `cartuchos-inteligentes` | **17** | **NO** — no aparece como URL propia en `solutions-sitemap.xml` |
+
+> **Una relación pura dejaría 17 de 18 hijos apuntando a un documento que no
+> existe.** Y una relación polimórfica exigiría **inventar una colección
+> `categorias-productos` con un solo término que ningún censo respalda** — que es
+> literalmente el arreglo falso de §1.5b Razón 1: *un campo (aquí, una colección)
+> que existe porque el modelo lo necesita, no porque el contenido lo tenga*.
+
+**Decidido: `select` con los dos valores medidos, opcional y sin defecto**
+(6 de 24 no lo traen: **la ausencia ES el valor por defecto**).
+
+**Por el precedente de la casa, no por comodidad.** Un **segmento de ruta** ya se
+modela así dos veces en este documento —`prefijo` del caso (§2b · CMS-1, 2
+valores) y del documento científico (§2.4, **tres**)—, siempre como campo con
+defecto explícito omitido cuando coincide. `padre` es estructuralmente lo mismo:
+el segmento anterior al slug. Y la asimetría de deshacer va a favor: `select` →
+relación es añadir la colección y mapear **2** valores; relación → `select` sería
+borrar una colección con contenido ya escrito.
+
+**PR-SP2 no se cierra: se afila.** Reapertura escrita — **si aparece un segundo
+padre que sea categoría, o si `cartuchos-inteligentes` estrena página propia,
+esto pasa a relación (polimórfica)**, y la migración es de dos valores.
+
+⚠ Y la lección de método, que vale más que el campo: **una pregunta
+pre-registrada como binaria puede no contener su respuesta.** Aquí la binaria era
+«relación vs select» y la medida decía «los dos padres no son del mismo tipo» —
+un tercer eje que ninguna de las dos opciones nombraba. Escribir la binaria
+estuvo bien; **cerrarla sin volver a mirar el dato** habría dado una relación rota
+en 17 documentos.
+
 ### SIN PROBAR, anotado y no cableado
 
 - **PR-SP1 · `accesorios`** (n=**1**): única con tablas (10) y única sin slider.
@@ -1039,6 +1151,61 @@ Del censo de **209/209 páginas**. Los nombres de feature son los de Payload;
 | **formularios** | `form`/`input` **ausentes** |
 | **HTML arbitrario / `script`** | **prohibido** — ver §3.3 |
 | alineación e indentación | no medidas; **SIN PROBAR**, no se habilitan a ciegas |
+
+### ⚠ 3.1c · TRES features de la whitelist NO EXISTEN en la versión instalada (2026-08-03)
+
+§3.1 lo pedía por escrito —*«los identificadores exactos hay que confirmarlos
+contra la versión instalada»*— y al confirmarlos contra
+**`@payloadcms/richtext-lexical@3.87.0`** salieron tres huecos. El inventario de
+features de esa versión es: `Paragraph · Bold · Italic · Underline ·
+Strikethrough · Subscript · Superscript · Heading · UnorderedList · OrderedList ·
+Checklist · Link · Blockquote · Upload · HorizontalRule · Blocks · Align ·
+Indent · InlineCode · Relationship · TextState`.
+
+| feature de §3.1 | evidencia | qué pasa |
+|---|---|---|
+| **tabla** | **35 páginas** | **no hay `TableFeature`.** §3.4 ya estaba ABIERTA; ahora además se sabe que la opción «nodo de Lexical» **no está disponible de serie** — lo que empuja la respuesta hacia el `block`, pero **no la cierra**: eso es una decisión, no un hallazgo |
+| **`mark`** | 1 página | sin feature. Lo más cercano es `TextState`, que no es lo mismo |
+| **`small`** | 1 página | sin feature |
+
+> ⚠ **Y la razón de escribirlo en vez de habilitar lo que hay:** una ausencia
+> **por decisión** y una ausencia **por inexistencia** se leen igual en el código
+> —el feature no está en la lista— y **no significan lo mismo**. §3.1 tiene su
+> propia tabla de *«fuera de la whitelist, con evidencia»* (código, `dl`,
+> formularios): éstas **no** pertenecen ahí. Están dentro de la whitelist y sin
+> vehículo.
+
+**Los otros dos que parecían huecos y no lo son:** `embed` y `video` **sí** están
+expresados —como **bloques tipados** dentro del campo rico (`BLOQUE_EMBED`,
+`BLOQUE_VIDEO`), que es exactamente lo que §3.1 dice de `BlocksFeature`: *«el
+vehículo de los nodos tipados de §3.3»*. Y **T1 está implementado**: el nodo
+enlace lleva `variante: "texto" | "boton"` con defecto, que es lo que corta el
+acoplamiento con `<a class="et_pb_button">` en el 80 % del corpus.
+
+### ⚠ 3.1d · CMS-0e necesita DÓNDE aterrizar el HTML crudo, y un `richText` no es ese sitio (2026-08-03)
+
+CMS-0e decidió: *«el cuerpo entra como **HTML crudo** y se convierte por entrada,
+no de golpe al importar»*. La traducción a Payload deja ver que esa frase
+**necesita un campo que hoy no existe**:
+
+> Un campo `richText` de Payload guarda **JSON de Lexical**, no HTML. Así que el
+> importador no tiene dónde dejar el HTML crudo mientras espera su conversión —
+> y el tipo medido (`CampoRico = string`, o sea HTML) no tiene, hoy, expresión
+> donde vivir sin convertir.
+
+**No bloquea el bloque 2 y no se resuelve aquí:** el esquema del cuerpo es
+`richText` con la whitelist del §3.1, que es lo decidido, y eso está construido.
+Lo que falta es **de migración**, o sea **F2-2**, y ahí se decide entre las dos
+formas — anotadas con lo que cuesta cada una para que la tanda que las mire no
+empiece de cero:
+
+| forma | a favor | en contra |
+|---|---|---|
+| campo hermano `cuerpoHtml` **temporal** en las colecciones con cuerpo | el documento existe en Payload desde el minuto uno y se convierte entrada a entrada, que es la letra de CMS-0e | mete en el esquema un campo que hay que quitar después, y mientras esté hay **dos fuentes de verdad** para el mismo cuerpo |
+| **staging fuera de Payload** (tabla propia o ficheros) y alta solo al convertir | el esquema queda limpio y sin campo que retirar | las entradas no existen en el CMS hasta convertirse, así que **las relaciones que las apunten** no se pueden crear en el mismo paso |
+
+⚠ Lo que **no** vale es dejarlo sin decidir y empezar a importar: la primera
+entrada importada fija la respuesta de facto.
 
 ### 3.2 · TRANSFORMACIONES DE MIGRACIÓN
 
