@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": null,
+    "filas": 46,
+    "alcance": "los 9 catálogos de CATALOGOS contra la config RESUELTA, sin escribir en la DB. Las taxonomías derivadas entran como destino de relación, no como origen."
+  },
+  "grafo": {
+    "podadas": [
+      "proyectos.posts",
+      "articulos.posts"
+    ],
+    "orden": [
+      "categorias",
+      "etiquetas",
+      "categorias-recursos",
+      "categorias-cientificas",
+      "productos",
+      "sectores",
+      "monograficos",
+      "taxonomia-sectores",
+      "casos",
+      "faqs",
+      "entradas-blog",
+      "terminos-kunakpedia",
+      "documentos-cientificos"
+    ],
+    "aristas": [
+      {
+        "origen": "categorias-recursos",
+        "destino": "categorias-recursos",
+        "rutas": [
+          "padre"
+        ]
+      },
+      {
+        "origen": "sectores",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "monograficos",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "taxonomia-sectores",
+        "destino": "sectores",
+        "rutas": [
+          "pagina"
+        ]
+      },
+      {
+        "origen": "taxonomia-sectores",
+        "destino": "monograficos",
+        "rutas": [
+          "pagina"
+        ]
+      },
+      {
+        "origen": "casos",
+        "destino": "taxonomia-sectores",
+        "rutas": [
+          "sectores"
+        ]
+      },
+      {
+        "origen": "casos",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "categorias",
+        "rutas": [
+          "categorias"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "etiquetas",
+        "rutas": [
+          "etiquetas"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "categorias-recursos",
+        "rutas": [
+          "recurso"
+        ]
+      },
+      {
+        "origen": "documentos-cientificos",
+        "destino": "categorias-cientificas",
+        "rutas": [
+          "categoria"
+        ]
+      }
+    ],
+    "ciclos": [],
+    "autoRelaciones": [
+      {
+        "coleccion": "categorias-recursos",
+        "rutas": [
+          "padre"
+        ],
+        "filas": 3,
+        "usada": 0
+      }
+    ],
+    "violaciones": []
+  },
+  "huerfanas": {
+    "porColeccion": {
+      "productos": 0,
+      "sectores": 20,
+      "monograficos": 11,
+      "taxonomia-sectores": 0,
+      "casos": 0,
+      "faqs": 0,
+      "entradas-blog": 0,
+      "terminos-kunakpedia": 0,
+      "documentos-cientificos": 0
+    },
+    "porDestino": {
+      "sectores → casos": [
+        "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+        "citytraq-calidad-del-aire-urbano",
+        "demolicion-estadio-vicente-calderon",
+        "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+        "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+        "red-de-monitorizacion-ambiental-mades-paraguay",
+        "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
+      ],
+      "sectores → entradas-blog": [
+        "conferencia-partes-cop26-incendios",
+        "contaminacion-aire-deporte",
+        "contaminacion-del-aire-en-madrid",
+        "contaminacion-del-aire-por-obras",
+        "contaminacion-incendios-forestales-aire",
+        "impacto-ambiental-industria-cementera",
+        "medicion-de-gases-en-los-vertederos-de-basura",
+        "monitorizacion-aire-remediacion-suelos-contaminados",
+        "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+        "quemas-prescritas-agricolas-calidad-aire"
+      ],
+      "monograficos → casos": [
+        "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania"
+      ],
+      "monograficos → entradas-blog": [
+        "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "contaminacion-incendios-forestales-aire",
+        "contaminacion-por-produccion-de-energia",
+        "monitorizacion-de-emisiones-fugitivas",
+        "monitorizacion-mal-olor-industrial"
+      ]
+    },
+    "total": 31
+  },
+  "required": {
+    "delEsquema": 69,
+    "cubiertas": 69,
+    "extra": 50,
+    "sinAuditar": [],
+    "sinDato": {
+      "productos · seo.title": 9
+    }
+  },
+  "validate": {
+    "rechazos": [
+      {
+        "col": "entradas-blog",
+        "ruta": "cuerpo",
+        "motivo": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+        "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos"
+      },
+      {
+        "col": "entradas-blog",
+        "ruta": "cuerpo",
+        "motivo": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+        "slug": "monitorizacion-de-emisiones-del-trafico-urbano"
+      },
+      {
+        "col": "entradas-blog",
+        "ruta": "cuerpo",
+        "motivo": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+        "slug": "running-for-clean-air"
+      },
+      {
+        "col": "entradas-blog",
+        "ruta": "cuerpo",
+        "motivo": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+        "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa"
+      }
+    ],
+    "porRuta": {
+      "entradas-blog · cuerpo": [
+        "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "monitorizacion-de-emisiones-del-trafico-urbano",
+        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "running-for-clean-air"
+      ]
+    },
+    "noEvaluables": 795
+  },
+  "instrumento": {
+    "sinLlave": [],
+    "erroresDeMapeo": [],
+    "podasMuertas": []
+  }
+}

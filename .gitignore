@@ -50,3 +50,8 @@ temp/
 
 # Artefactos temporales de sondas (bundle de esbuild de qa:cms-campos)
 scripts/qa/.tmp/
+
+# Media del CMS: SALIDA del seed, no fuente. `cms:reset` lo vacía en cada
+# corrida (determinismo, §F2-2) y en producción es el volumen persistente de
+# CMS-0b. Tenerlo en git haría que cada seed ensuciara el árbol con binarios.
+media/

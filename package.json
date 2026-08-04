@@ -78,7 +78,9 @@
     "cms:reset": "node --env-file=apps/cms/.env scripts/seed/reset.mjs",
     "cms:seed": "node --env-file=apps/cms/.env scripts/seed/cli.mjs",
     "qa:cms-roundtrip": "node --env-file=apps/cms/.env scripts/qa/cms-roundtrip.mjs",
-    "qa:cms-roundtrip-neg": "node --env-file=apps/cms/.env scripts/qa/cms-roundtrip.neg.mjs"
+    "qa:cms-roundtrip-neg": "node --env-file=apps/cms/.env scripts/qa/cms-roundtrip.neg.mjs",
+    "cms:sondeo": "node --env-file=apps/cms/.env scripts/seed/sondeo.mjs",
+    "cms:sondeo-neg": "node scripts/seed/sondeo.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

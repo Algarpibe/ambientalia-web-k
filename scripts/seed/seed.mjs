@@ -95,7 +95,7 @@ const PUBLICO = path.join(APP, "public");
  * CONTEXTO — lo que el walker no puede derivar de la forma
  * ═════════════════════════════════════════════════════════════════════════ */
 
-export function creaContexto(payload, { sondeo = false } = {}) {
+export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
   const mediaPorRuta = new Map();
   const idsPorColeccion = new Map(); // coleccion → Map(slug → id)
 
@@ -131,10 +131,62 @@ export function creaContexto(payload, { sondeo = false } = {}) {
    *   · **slug de página** para la relación polimórfica de `taxonomia-sectores`.
    */
   const huerfanas = [];
+  /**
+   * ⚠ **LA LLAVE NO DERIVABLE ES UN DEFECTO DEL INSTRUMENTO, NO UN DATO.**
+   *
+   * Éste es el defecto 1 de la tanda anterior, convertido en guarda. `esSlug`
+   * no leía el `href` de los teasers, así que devolvía `undefined` para los 31;
+   * `idsPorColeccion.get(d)?.get(undefined)` da `undefined` **igual que un slug
+   * que de verdad falta**, y las 31 se apuntaron como huérfanas con la misma
+   * llave. De ahí el informe *«34 huérfanas, 1 slug distinto»* — un número
+   * plausible que sólo delató ser **aritméticamente imposible**.
+   *
+   * Ahora se separan las dos cosas en el sitio donde todavía se distinguen: un
+   * valor no nulo del que no sale llave **no es una relación huérfana**, es que
+   * la sonda no sabe leer ese valor. Es la regla 6 —una ausencia se rechaza, no
+   * se sustituye por un valor benigno— aplicada a la llave.
+   */
+  const sinLlave = [];
+
+  /**
+   * ⚠ **LA FORMA CON QUE EL DATO MEDIDO ESCRIBE UNA RELACIÓN, POR RUTA DE
+   * CAMPO — y se DERIVA de la ida, no se declara.**
+   *
+   * §2c convierte el **término embebido** en relación (`categoria:
+   * {slug, nombre}` ⇒ id), y §2b escribe otras relaciones como **slug pelado**
+   * (`casos.soluciones: string[]`). Las dos entran igual —un id— así que **la
+   * ida es la misma y la VUELTA no puede serlo**: devolver siempre el slug
+   * pierde el término, y devolver siempre el objeto lo inventa donde no estaba.
+   *
+   * Es exactamente el problema de `MonoInline` (`"hola"` vs `[{b:"hola"}]`) en
+   * otro campo, y se resuelve igual: **la forma la dice el dato**, y quien la
+   * ve es la ida. Una lista escrita a mano de «qué relaciones llevan objeto»
+   * sería una copia desactualizada de algo derivable — regla 9.
+   *
+   * Lo destapó la PRIMERA corrida del proyector (2026-08-04): 4 de 12
+   * documentos con `categoria` proyectada como cadena donde el dato medido
+   * tiene `{slug, nombre}`.
+   */
+  const formaDeRel = new Map(); // ruta sin índices → "objeto" | "slug"
+  const rutaLimpia = (r) => r.replace(/\[\d+\]/g, "");
 
   const rel = async (relationTo, valor, donde) => {
     const destinos = Array.isArray(relationTo) ? relationTo : [relationTo];
-    const slug = esSlug(valor);
+    formaDeRel.set(rutaLimpia(donde), valor !== null && typeof valor === "object" ? "objeto" : "slug");
+    const slug = llave(valor);
+    if (slug === undefined || slug === null || slug === "") {
+      const detalle = { donde, valor: JSON.stringify(valor)?.slice(0, 120), destinos };
+      if (sondeo) {
+        sinLlave.push(detalle);
+        return undefined;
+      }
+      throw new Error(
+        `LLAVE NO DERIVABLE: de ${detalle.valor} (en ${donde}) no sale ningún slug.\n` +
+          `  Eso NO es «esta relación apunta a un documento que falta»: es que el\n` +
+          `  lector de llaves no sabe leer esta forma de valor. Las dos dan el mismo\n` +
+          `  \`undefined\`, y confundirlas fue el defecto de instrumento del 2026-08-04.`,
+      );
+    }
     for (const d of destinos) {
       const id = idsPorColeccion.get(d)?.get(slug);
       if (id !== undefined) return destinos.length > 1 ? { relationTo: d, value: id } : id;
@@ -157,7 +209,95 @@ export function creaContexto(payload, { sondeo = false } = {}) {
     );
   };
 
-  return { media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas };
+  /* ════════════════════════════════════════════════════════════════════════
+   * LA VUELTA — lo que `aMedido` necesita y hasta hoy no existía
+   *
+   * El proyector de `mapeo.mjs` llamaba a `ctx.rutaDeMedia`, `ctx.deRel` y
+   * `ctx.conKind`, y **ninguna de las tres estaba escrita**: por eso «escrito y
+   * nunca corrido» no era una etiqueta prudente, era literal — la primera
+   * llamada habría muerto con `ctx.rutaDeMedia is not a function`.
+   *
+   * Las tres son la INVERSA de la ida y se construyen con los mismos mapas que
+   * la ida llenó, no con una segunda lista: si fueran independientes, un mismo
+   * olvido en las dos daría Δ0 en falso, que es justo lo que el walker único
+   * evita.
+   * ══════════════════════════════════════════════════════════════════════ */
+
+  /** id de `media` → la ruta `"/images/…"` con la que se subió. */
+  const porId = new Map();
+  const rutaDeMedia = (id, donde) => {
+    if (!porId.size) for (const [ruta, i] of mediaPorRuta) porId.set(i, ruta);
+    const v = typeof id === "object" && id !== null ? id.id : id;
+    const r = porId.get(v);
+    if (r === undefined)
+      throw new Error(
+        `MEDIA SIN RUTA: el id ${JSON.stringify(v)} (en ${donde}) no lo subió esta corrida.\n` +
+          `  No se devuelve \`undefined\`: eso lo leería el comparador como «este campo\n` +
+          `  no estaba», que es un Δ0 en falso justo donde hay un dato perdido.`,
+      );
+    return r;
+  };
+
+  /** id de documento → el slug con el que se registró (la inversa de `rel`). */
+  const slugPorId = new Map(); // "coleccion\0id" → slug
+  const indexaSlugs = () => {
+    if (slugPorId.size) return;
+    for (const [col, m] of idsPorColeccion) for (const [slug, id] of m) slugPorId.set(`${col}\0${id}`, slug);
+  };
+
+  /**
+   * Lo pone el comparador: `(coleccion, docPoblado) → objeto medido`. Sin él,
+   * una relación cuya forma medida es OBJETO no se puede reconstruir, y esto
+   * **tira en vez de devolver el slug** — devolver el slug sería sustituir «no
+   * puedo reconstruirlo» por «esto es lo que había», que es la regla 6 otra vez.
+   */
+  let proyectaDoc = null;
+  const declaraProyector = (fn) => { proyectaDoc = fn; };
+
+  const deRel = (relationTo, valor, donde) => {
+    indexaSlugs();
+    const destinos = Array.isArray(relationTo) ? relationTo : [relationTo];
+    /* Payload devuelve `{relationTo, value}` en las polimórficas y el id (o el
+     * documento poblado, si se leyó con `depth ≥ 1`) en las demás. */
+    const col = valor?.relationTo ?? destinos[0];
+    const bruto = valor?.value !== undefined ? valor.value : valor;
+    const poblado = bruto !== null && typeof bruto === "object" ? bruto : null;
+    const crudo = poblado ? poblado.id : bruto;
+    const slug = slugPorId.get(`${col}\0${crudo}`);
+    if (slug === undefined)
+      throw new Error(
+        `RELACIÓN SIN SLUG: el id ${JSON.stringify(crudo)} de '${col}' (en ${donde}) no está registrado.`,
+      );
+    if (formaDeRel.get(rutaLimpia(donde)) !== "objeto") return slug;
+    if (!poblado)
+      throw new Error(
+        `RELACIÓN EMBEBIDA SIN POBLAR: ${donde} se midió como término embebido y el\n` +
+          `  documento llegó con el id pelado. Léelo con \`depth: 1\` — reconstruirlo\n` +
+          `  desde el catálogo medido sería comparar el dato consigo mismo.`,
+      );
+    if (!proyectaDoc)
+      throw new Error(`RELACIÓN EMBEBIDA SIN PROYECTOR: ${donde}. Llama a \`ctx.declaraProyector()\`.`);
+    return proyectaDoc(col, poblado, donde);
+  };
+
+  /**
+   * ⚠ **El `kind` vuelve SÓLO si el dato medido lo llevaba**, y eso no lo sabe
+   * el esquema: en Payload la identidad del bloque **es** `blockType`, y el
+   * dato medido la expresa de **dos** maneras —`kind: "…"` en `MonoModulo`, y
+   * **la clave presente** en `MonoBloqueTexto` (`{p} | {ul} | {claim}`)—.
+   *
+   * Devolverlo siempre inventaría un `kind` donde el original no lo tiene;
+   * omitirlo siempre lo perdería donde sí. Lo decide **el bloque**, que es
+   * donde está escrito, y por eso esto no es una excepción del comparador.
+   */
+  const CON_KIND = new Set();
+  const declaraKinds = (slugs) => { for (const s of slugs) CON_KIND.add(s); };
+  const conKind = (slug, cuerpo) => (CON_KIND.has(slug) ? { kind: slug, ...cuerpo } : cuerpo);
+
+  return {
+    media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas, sinLlave, formaDeRel,
+    rutaDeMedia, deRel, conKind, declaraKinds, declaraProyector,
+  };
 }
 
 /**

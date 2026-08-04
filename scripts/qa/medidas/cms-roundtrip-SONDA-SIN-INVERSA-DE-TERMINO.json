@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias-cientificas",
+        "faqs",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 12,
+      "fuera": {
+        "entradas-blog": "FRONTERA — 4 de 7 cuerpos traen `<script>` del corpus (NBC x1 · FB3D x2 · Instagram x1). El `validate` de §3.3/T4 los rechaza, así que el SEED necesita T4 — que el PLAN puso en el bloque 2",
+        "productos": "FRONTERA — `seo.title` es `required` en el esquema (§2e: «seo, grupo como en las demás») y NO está medido en ningún sitio del repo: ni en `src/lib/products.ts` (que es la proyección de PESTAÑA) ni en `medidas/solutions-campos.json`. 9 de 9 instancias",
+        "sectores": "FRONTERA — 20 relaciones de teaser sin documento, y el `date` del teaser no es derivable del documento real",
+        "monograficos": "FRONTERA — ídem, 11 relaciones (comparte `colaComercial` con SECTOR)",
+        "casos": "arrastrada: `soluciones` → `productos`, que está en frontera",
+        "taxonomia-sectores": "arrastrada: `pagina` → `sectores`/`monograficos`, que están en frontera",
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": [
+        "proyectos.posts",
+        "articulos.posts"
+      ]
+    }
+  },
+  "porColeccion": {
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "faqs": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 4,
+      "conDiferencia": 4
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "categoria",
+      "clase": "FORMA",
+      "esperado": "{\"slug\":\"articulos-cientificos-y-estudios\",\"nombre\":\"Artículos científicos y estudios\"}",
+      "real": "\"articulos-cientificos-y-estudios\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "categoria",
+      "clase": "FORMA",
+      "esperado": "{\"slug\":\"articulos-cientificos-y-estudios\",\"nombre\":\"Artículos científicos y estudios\"}",
+      "real": "\"articulos-cientificos-y-estudios\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "categoria",
+      "clase": "FORMA",
+      "esperado": "{\"slug\":\"evaluaciones-independientes\",\"nombre\":\"Evaluaciones independientes\"}",
+      "real": "\"evaluaciones-independientes\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "categoria",
+      "clase": "FORMA",
+      "esperado": "{\"slug\":\"articulos-tecnicos\",\"nombre\":\"Artículos técnicos\"}",
+      "real": "\"articulos-tecnicos\""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias-cientificas",
+        "faqs",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 12,
+      "fuera": {
+        "entradas-blog": "FRONTERA — 4 de 7 cuerpos traen `<script>` del corpus (NBC x1 · FB3D x2 · Instagram x1). El `validate` de §3.3/T4 los rechaza, así que el SEED necesita T4 — que el PLAN puso en el bloque 2",
+        "productos": "FRONTERA — `seo.title` es `required` en el esquema (§2e: «seo, grupo como en las demás») y NO está medido en ningún sitio del repo: ni en `src/lib/products.ts` (que es la proyección de PESTAÑA) ni en `medidas/solutions-campos.json`. 9 de 9 instancias",
+        "sectores": "FRONTERA — 20 relaciones de teaser sin documento, y el `date` del teaser no es derivable del documento real",
+        "monograficos": "FRONTERA — ídem, 11 relaciones (comparte `colaComercial` con SECTOR)",
+        "casos": "arrastrada: `soluciones` → `productos`, que está en frontera",
+        "taxonomia-sectores": "arrastrada: `pagina` → `sectores`/`monograficos`, que están en frontera",
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": [
+        "proyectos.posts",
+        "articulos.posts"
+      ]
+    }
+  },
+  "porColeccion": {
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "faqs": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 4,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": []
+}

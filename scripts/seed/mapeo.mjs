@@ -59,6 +59,58 @@ export const IGNORADOS = {
 };
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * LOS CAMPOS QUE PAYLOAD AÑADE SOLO — y por qué esto no es cosmética
+ *
+ * ⚠ **DEFECTO DE INSTRUMENTO Nº 4, cazado el 2026-08-04 por el sondeo nuevo y
+ * NO por leer el código: la regla del envoltorio transparente NUNCA LLEGÓ A
+ * DISPARARSE.**
+ *
+ * El walker va dirigido por la config **resuelta**, que es lo correcto —
+ * *verificar contra la salida servida*—, y `buildConfig` **inyecta campos que
+ * nadie escribió**: un `id` oculto en cada `array`, un `id` + `blockName` en
+ * cada `block`, y `createdAt`/`updatedAt` en cada colección.
+ *
+ * Consecuencia, y es de las que no dan error:
+ *
+ *   · la ida decidía «array de UN campo ⇒ envoltorio transparente» con
+ *     `hijos.length === 1`, y con el `id` inyectado **la longitud es 2**. La
+ *     rama nunca se ejecutó. `bullets: string[]` habría entrado como
+ *     `[{}, {}, {}, {}, {}]` — **cinco filas vacías, cero error**;
+ *   · y la vuelta habría devuelto `id`, `blockName` y las dos fechas como si
+ *     fueran dato medido, o sea **Δ ≠ 0 en cada array y cada bloque del
+ *     modelo**, con la causa a tres saltos del síntoma.
+ *
+ * **Alcance medido: 17 arrays de un solo campo propio**, en `sectores`,
+ * `monograficos`, `productos` y `articulos-kb`. **Ninguno en las tres
+ * colecciones sembradas hasta hoy** (`faqs` · `terminos-kunakpedia` ·
+ * `documentos-cientificos`), y por eso los 12 documentos del bloque 1 no
+ * perdieron nada: el defecto estaba **fuera de la muestra que se sembró**, que
+ * es la definición de FAMILIA DE CALIBRACIÓN.
+ *
+ * ── Cómo se reconocen, y por qué NO por el nombre ─────────────────────────
+ * Un `SINTETICOS = ["id", "blockName", …]` por nombre es una lista a mano que
+ * se pudre y que además **borraría un campo medido que se llamara igual**. Se
+ * reconocen por su **forma**, que es lo que Payload garantiza: el `id` de array
+ * es `text` + `admin.hidden`; `blockName` es `text` + `admin.disabled`; las dos
+ * fechas son `date` + `admin.hidden`. Y `esSintetico` se comprueba en negativo
+ * (`sondeo.neg.mjs` no lo cubre; lo cubre el round-trip, que sin esto no da Δ0).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** ¿Lo puso `buildConfig` o lo escribió el esquema? */
+export function esSintetico(campo) {
+  if (!campo?.name) return false;
+  const a = campo.admin ?? {};
+  if (campo.name === "id" && campo.type === "text" && a.hidden === true) return true;
+  if (campo.name === "blockName" && campo.type === "text" && a.disabled === true) return true;
+  if ((campo.name === "createdAt" || campo.name === "updatedAt") && campo.type === "date" && a.hidden === true)
+    return true;
+  return false;
+}
+
+/** Los campos del esquema, sin los que Payload se inventa. */
+export const camposPropios = (campos) => (campos ?? []).filter((c) => !esSintetico(c));
+
+/* ══════════════════════════════════════════════════════════════════════════
  * `MonoInline` ↔ Lexical — la ida y la vuelta, y tienen que ser inversas
  * ═════════════════════════════════════════════════════════════════════════ */
 
@@ -132,10 +184,18 @@ const esObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
  * Si ninguno resuelve, **tira**: un bloque que no se sabe qué es no se puede
  * meter «por defecto» en el primero de la lista (regla 6).
  */
-function eligeBloque(bloques, item, ruta) {
+function eligeBloque(bloques, item, ruta, ctx) {
   if (item?.kind) {
     const b = bloques.find((x) => x.slug === item.kind);
-    if (b) return b;
+    /**
+     * ⚠ **Aquí es donde se DERIVA si el `kind` vuelve, y por eso no hay lista.**
+     * Que un bloque lo lleve o no es una propiedad **del dato medido**, no del
+     * esquema: `MonoModulo` lo trae y `MonoBloqueTexto` (`{p} | {ul} | {claim}`)
+     * discrimina por la clave presente. Una lista escrita a mano de «cuáles
+     * llevan kind» sería una copia desactualizada de algo que este `if` ya sabe
+     * — que es literalmente la regla 9 de `CLAUDE.md` §sondas.
+     */
+    if (b) { ctx?.declaraKinds?.([b.slug]); return b; }
     throw new Error(`BLOQUE DESCONOCIDO en ${ruta}: kind='${item.kind}' no está entre [${bloques.map((x) => x.slug).join(", ")}]`);
   }
   const candidatos = bloques.filter((b) => Object.hasOwn(item ?? {}, b.slug));
@@ -155,7 +215,7 @@ function eligeBloque(bloques, item, ruta) {
 export async function aPayload(campos, dato, ctx, ruta = "") {
   if (dato === undefined || dato === null) return dato;
   const out = {};
-  for (const campo of campos) {
+  for (const campo of camposPropios(campos)) {
     if (!campo?.name) {
       /* Presentacional sin nombre: sus hijos son hermanos del padre. */
       if (Array.isArray(campo?.fields)) Object.assign(out, await aPayload(campo.fields, dato, ctx, ruta));
@@ -188,19 +248,24 @@ async function valorDe(campo, dato, ctx, aqui) {
     case "blocks": {
       const salida = [];
       for (const [i, item] of bruto.entries()) {
-        const b = eligeBloque(campo.blocks, item, `${aqui}[${i}]`);
+        const b = eligeBloque(campo.blocks, item, `${aqui}[${i}]`, ctx);
         salida.push({ blockType: b.slug, ...(await aPayload(b.fields, item, ctx, `${aqui}[${i}]`)) });
       }
       return salida;
     }
 
     case "array": {
-      const hijos = campo.fields ?? [];
+      const hijos = camposPropios(campo.fields);
       /**
        * ⚠ **El envoltorio de un array de UN campo es transparente en el dato
        * medido**: `bullets: string[]` en vez de `[{texto}]`. Es la misma regla
        * que `qa:cms-campos` aplica al derivar rutas de campo, y por eso las dos
        * ven el mismo modelo.
+       *
+       * ⚠⚠ **`hijos` es `camposPropios(...)` y no `campo.fields`, y ésa es la
+       * diferencia entre que esta rama corra y que no corra nunca.** Ver el
+       * bloque de `esSintetico` arriba: con el `id` inyectado la longitud era 2
+       * en los 17 arrays de un solo campo del modelo.
        */
       if (hijos.length === 1 && !esObj(bruto[0])) {
         const h = hijos[0];
@@ -219,6 +284,13 @@ async function valorDe(campo, dato, ctx, aqui) {
   }
 }
 
+/** El bloque de la config que corresponde a un `blockType`. */
+function bloqueDe(campo, blockType, aqui, i) {
+  const b = campo.blocks?.find((x) => x.slug === blockType);
+  if (!b) throw new Error(`BLOQUE DESCONOCIDO al proyectar ${aqui}[${i}]: '${blockType}'`);
+  return b;
+}
+
 /* ══════════════════════════════════════════════════════════════════════════
  * VUELTA: documento de Payload → la forma de `src/lib`
  *
@@ -230,22 +302,29 @@ async function valorDe(campo, dato, ctx, aqui) {
  * ═════════════════════════════════════════════════════════════════════════ */
 
 /**
- * ⚠⚠ **SIN EJERCITAR — escrito y NUNCA CORRIDO (2026-08-04).** El escalón de
- * F2-2 disparó en el PASO 1, así que el PASO 2 (la igualdad mecánica) no llegó a
- * correr y **esta mitad no tiene ni una corrida detrás**.
+ * ✅ **EJERCITADA el 2026-08-04 por `qa:cms-roundtrip`**, que la estrenó. La
+ * etiqueta anterior decía «escrita y nunca corrida», y era literal en un
+ * sentido que ni ella misma se atribuía: **llamaba a tres métodos de `ctx` que
+ * no existían** (`rutaDeMedia`, `deRel`, `conKind`). La primera llamada habría
+ * muerto con `is not a function`.
  *
- * Se deja escrita a propósito, con esta etiqueta encima, porque la alternativa
- * —borrarla— perdería el diseño; pero **no se puede citar como que funciona**:
- * es exactamente la situación de la regla 3 (*documentado no es conectado*), y
- * la única defensa es decirlo aquí en vez de que alguien lo deduzca.
+ * Lo que la primera corrida le encontró, ninguno visible leyendo el código:
  *
- * **La tanda que la estrene tiene que probarla en negativo antes de creerle
- * nada**, empezando por el invariante del defecto omitido de abajo.
+ *   1. los tres métodos de contexto ausentes (arriba);
+ *   2. **los campos sintéticos de `buildConfig`** —`id`, `blockName`,
+ *      `createdAt`, `updatedAt`— proyectados como si fueran dato medido;
+ *   3. el envoltorio transparente de array, roto en las **dos** direcciones por
+ *      la misma causa (ver `esSintetico`).
+ *
+ * **Su negativo entero es `qa:cms-roundtrip-neg`**, y el invariante que manda es
+ * el del **defecto omitido** de aquí abajo: `conDefecto` omite al escribir, así
+ * que un campo que coincide con su defecto **no está en el dato medido**. Si el
+ * proyector lo devolviera explícito, la comparación tiene que FALLAR.
  */
 export function aMedido(campos, doc, ctx, ruta = "") {
   if (doc === undefined || doc === null) return doc;
   const out = {};
-  for (const campo of campos) {
+  for (const campo of camposPropios(campos)) {
     if (!campo?.name) {
       if (Array.isArray(campo?.fields)) Object.assign(out, aMedido(campo.fields, doc, ctx, ruta));
       continue;
@@ -277,16 +356,17 @@ function proyecta(campo, doc, ctx, aqui) {
 
     case "blocks":
       return bruto.map((item, i) => {
-        const b = campo.blocks.find((x) => x.slug === item.blockType);
-        if (!b) throw new Error(`BLOQUE DESCONOCIDO al proyectar ${aqui}[${i}]: '${item.blockType}'`);
+        const b = bloqueDe(campo, item.blockType, aqui, i);
         const cuerpo = aMedido(b.fields, item, ctx, `${aqui}[${i}]`);
-        /* El `kind` vuelve sólo si el dato medido lo llevaba: lo decide quien
-         * compara, con `conKind` — ver `cms-roundtrip.mjs`. */
+        /* El `kind` vuelve sólo si el dato medido lo llevaba: lo decide el
+         * BLOQUE, no el comparador — ver `conKind`/`declaraKinds` en `seed.mjs`. */
         return ctx.conKind(b.slug, cuerpo);
       });
 
     case "array": {
-      const hijos = campo.fields ?? [];
+      const hijos = camposPropios(campo.fields);
+      /* Espejo exacto de la ida: un array de UN campo propio es transparente,
+       * así que vuelve como lista de valores y no como lista de objetos. */
       if (hijos.length === 1) {
         const h = hijos[0];
         return bruto.map((v, i) => proyecta(h, v, ctx, `${aqui}[${i}]`));
