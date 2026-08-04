@@ -63,12 +63,29 @@ export function construyeConfig(opciones: OpcionesConfig = {}) {
     db: postgresAdapter({
       pool: { connectionString: dbUrl },
       /**
-       * ⚠ **`push` se queda en su valor por defecto en ESTE bloque.** Las
-       * migraciones **versionadas con `push: false`** son el bloque 3 de F2-1
-       * (`PLAN-FASE-2.md` §F2-1), y adelantarlo aquí sin la carpeta de
-       * migraciones dejaría el esquema sin forma de avanzar. Se cambia allí,
-       * con su guarda.
+       * ⚠ **`false` SIEMPRE, no solo en producción — y la diferencia importa.**
+       *
+       * `PLAN-FASE-2.md` §F2-1 lo pide *«con `push: false` en producción (el
+       * esquema de la DB solo cambia por migración, nunca por sync implícito)»*.
+       * Ponerlo condicional cumpliría la letra y **rompería el motivo**: con
+       * `push` vivo en desarrollo, la DB local deriva del esquema versionado, y
+       * `migrate:create` **diffea contra esa DB derivada**. O sea que la
+       * migración que se genera describe *«de mi DB torcida a la config»*, no
+       * *«de vacío a la config»* — y en producción aplica sobre otra cosa.
+       *
+       * Es la regla de la casa aplicada al esquema: **verificar contra la salida
+       * servida, no contra la fuente que uno supone responsable.** La salida
+       * servida aquí es la migración, y sólo es fiel si nadie ha tocado la DB
+       * por debajo.
        */
+      push: false,
+      /**
+       * Las migraciones viven en el **paquete compartido**, con la config de la
+       * que se derivan. No en `apps/cms`: el esquema no es del admin, es del
+       * modelo, y CMS-0f dice que el modelo entero vive aquí. El `payload` que
+       * las crea y las aplica corre desde `apps/cms`, pero escribe aquí.
+       */
+      migrationDir: path.resolve(dirname, "migrations"),
     }),
     typescript: {
       /* ⚠ `path.resolve(dirname, …)` y NO `new URL("./payload-types.ts", …)`:
