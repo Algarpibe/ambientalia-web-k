@@ -1338,6 +1338,53 @@ La convención ya existía de hecho —`ancho-neg-*`, `ruido-*neg-*`,
 no venía de un sabotaje deliberado. Que el fallo sea accidental no cambia lo que
 el fichero contiene.
 
+**8 · UN NEGATIVO SIN CONTROL NO ES UN NEGATIVO — y `medidas/` ES UNA MUESTRA
+DEL ORIGINAL QUE NADIE INTERROGA.** (2026-08-04)
+
+Dos mitades de la misma tanda, y las dos son la regla del cero otra vez.
+
+**(a) El control es lo que decide si el negativo significa algo.** Se probó
+`push: false` inyectando un campo de sabotaje y viendo que no llegaba a la DB —
+verde. **Falso:** con `push: true` tampoco llegaba, porque el arranque usado
+(`migrate:status`) no dispara el push. El 0 no era *«la guarda lo paró»*, era
+*«nadie miró»*.
+
+| | guarda | arranque | resultado |
+|---|---|---|---|
+| intento fallido | `true` **y** `false` | `migrate:status` | **0 en los dos** — no medía nada |
+| control | `true` | `getPayload()` real | **1** — aparece |
+| negativo | `false` | `getPayload()` real | **0** — para |
+
+> **Un sabotaje que no cambia el resultado no ha probado la guarda: ha probado
+> que el instrumento no la ejercita.** Es la regla del cero cobrada **dentro de
+> la verificación de una guarda**, que es donde más caro sale.
+
+**(b) Toda medida congelada de un PAR contiene una muestra del ORIGINAL.** La
+regla 7 dice que `medidas/` es *la prueba, no un caché*. Le faltaba la vuelta:
+
+> **El suelo de ruido de una ruta no vive sólo en los ficheros de la campaña de
+> ruido — vive en las 324 congeladas**, porque cada comparación guardó el lado
+> del original en esa ruta y ese ancho. Preguntarle *«¿cuántos estados ha tenido
+> esto?»* es un `grep` sobre lo que ya está en git.
+
+Medido: la campaña `cqa6-390` se pagó con dos días para dirimir si el ±30 de
+EDAR@390 era suelo o defecto, **y la respuesta llevaba meses commiteada** en
+`c-cabecera-390*.json` — el original a **189.39 ↔ 219.39** y `/software` a
+**308.58 ↔ 338.58**, Δ **30.00** exacto, con el clon inmóvil. O sea **bimodal a
+390**, como a 1440 lo es con 32.28.
+
+**Y el corolario, que es el que muerde:** el criterio **pre-registrado** de esa
+campaña afirmaba *«un ±30 observado una vez, **sin fichero**»*. Era falso, y de
+haberse aplicado habría convertido un **no-defecto en «defecto con su ficha»**,
+mandando a la tanda siguiente a mover el clon del estado dominante al raro — una
+FAMILIA DE CALIBRACIÓN fabricada a mano.
+
+> **Un pre-registro protege de decidir por cansancio; NO protege de partir de una
+> premisa falsa** — y ahí llega blindada contra la revisión, porque cuestionarla
+> parece justo lo que el pre-registro prohíbe. Los hechos negativos que un
+> pre-registro afirme (*«no existe», «no hay fichero», «no se ha visto»*) **se
+> comprueban al escribirlo**, contra el archivo, no de memoria.
+
 ## Comandos
 
 ```bash

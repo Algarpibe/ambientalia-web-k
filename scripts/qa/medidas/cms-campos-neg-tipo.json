@@ -81,6 +81,7 @@
   "sinContraparte": [
     "articulos-kb",
     "media",
+    "slugs",
     "usuarios"
   ],
   "alcance": [

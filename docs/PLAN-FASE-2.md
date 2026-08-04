@@ -396,6 +396,55 @@ aplica en limpio con `push: false`; y la guarda de colisión **falla en
 negativo** (un slug duplicado a propósito entre familias tumba el build) y pasa
 en limpio al quitarlo. Guarda probada en negativo o no hay guarda.
 
+### ✅ F2-1 · BLOQUE 3 — migraciones, registro de slugs y la guarda (2026-08-04)
+
+Cinco pasos, y el primero **no estaba en el guion**: §3.1d se resolvió aquí y no
+en F2-2 porque **el punto de congelación no es la primera entrada importada, es
+la primera MIGRACIÓN** — es la que escribe las columnas y va antes que cualquier
+entrada. Acta completa en `ESQUEMA-CMS.md` §3.1d.
+
+`apps/web` **intacto**: `git diff c9f7eec HEAD -- apps/web` **vacío**, cero
+ficheros. La restricción de CMS-0f se cumple **por no haber cruzado la
+frontera**, así que esta tanda tampoco paga corrida Δ0.
+
+#### ✅ F2-1 · HECHO — el criterio, punto a punto y con su evidencia
+
+| # | criterio literal | evidencia | veredicto |
+|---|---|---|---|
+| 1 | `payload-types.ts` **compila** | `typecheck` de `@kunak/cms-config` y de `cms` dentro de `npm run check` — **exit 0** | ✅ |
+| 2 | las colecciones **expresan todos los campos con sus defectos** | `qa:cms-campos` **10/10 tipos · 0 sin contraparte · 0 problemas**; negativo **5/5**, cada sabotaje por su invariante | ✅ |
+| 3 | la migración inicial versionada **aplica en limpio con `push: false`** | esquema dropeado ⇒ `payload migrate` ⇒ **106 tablas, batch 1**. `push: false` **probado en negativo CON CONTROL** | ✅ |
+| 4 | la guarda de colisión **falla en negativo y pasa en limpio** | **las dos**, porque §4 dice que son complementarias — build: `SABOTAJE=accesorios` **exit 1**, limpio **exit 0**; hook: negativo **4/4**, control **5/5** | ✅ |
+
+> **F2-1 queda HECHA.** Lo que la fase entregaba —esquema congelado, traducido,
+> verificado, versionado y con su guarda— está entero y **medido, no afirmado**.
+
+#### Lo que el bloque descubrió, y ninguno daba error
+
+| # | hallazgo | dónde |
+|---|---|---|
+| 1 | **`productos.bullets[].texto` no podía expresar `<sup>`** — estaba en `editorNegrita` (Párrafo + Negrita) y el corpus trae `R<sup>2</sup>`. Pasaban `payload-types` **y** `qa:cms-campos`: ninguno mira el TIPO de la hoja, sólo su ruta | §3.1d · ficha **CMS-SP-TIPO** en §7 |
+| 2 | **el primer negativo de `push: false` no medía nada** — `migrate:status` no dispara el push, así que daba 0 con `push:true` **y** con `push:false`. Lo cazó el control | abajo |
+| 3 | `migrate:create` emite `MigrateUpArgs`/`MigrateDownArgs` como **import de valor**, y el paquete compila con `verbatimModuleSyntax`. **Hay que rehacerlo en cada migración nueva**; lo caza el typecheck de `check`, así que el olvido sale rojo | nota en las dos migraciones |
+| 4 | el HTML crudo aterriza en **`varchar` SIN longitud** — verificado insertando los **69 784 caracteres** del máximo medido y leyéndolos de vuelta, no leyendo el catálogo | PASO 2 |
+
+#### ⚠ La lección del bloque: un negativo sin control no es un negativo
+
+Es la regla del cero, cobrada **dentro de la verificación de una guarda**:
+
+> Se inyectó un campo de sabotaje y no llegó a la DB ⇒ *«`push: false` funciona»*.
+> **Falso.** Con `push: true` tampoco llegaba: `migrate:status` no inicializa el
+> push. El 0 no era «la guarda lo paró», era «nadie miró».
+
+| | `push` | arranque | columna en la DB |
+|---|---|---|---|
+| intento fallido | `true` **y** `false` | `migrate:status` | **0 en los dos** — no medía nada |
+| control | `true` | `getPayload()` real | **1** — aparece |
+| negativo | `false` | `getPayload()` real | **0** — la guarda para |
+
+**El control no es la mitad opcional del negativo: es la que decide si el
+negativo significa algo.**
+
 ---
 
 ## F2-2 · Datos
@@ -404,7 +453,7 @@ en limpio al quitarlo. Guarda probada en negativo o no hay guarda.
 datos** (§8) y un script los inserta por la **Local API**, mecánico. El
 **extractor del corpus** para las páginas de listado (las sondas de
 `scripts/qa/` ya leen el DOM del original — está medio hecho), aplicando las
-transformaciones **T1–T6** del §3.2 al importar — ninguna es opcional. El
+transformaciones **T1–T8** del §3.2 al importar — ninguna es opcional. El
 **saneador en escritura** con la whitelist del censo (§3.1 · §3.3b ·
 `campo-rico.spec.md`, censo 209/209): lo que no está en la whitelist no entra,
 y **`script` no entra** (§3.3). Y el **media al volumen persistente** (CMS-0b)
@@ -412,16 +461,52 @@ con los *image sizes* de Payload **replicando el `srcset` del original** — que
 es lo que **cierra M-IMG** (§6: el residuo de décimas es la variante servida
 por `srcset`, no la maquetación).
 
+> ⚠ **CORREGIDO 2026-08-04: eran T1–T8, no T1–T6, y el error tiene historia.**
+> §3.2 lista **ocho** transformaciones: **T7** (reescribir a ruta local los
+> enlaces internos del cuerpo rico, 181/209) y **T8** (normalizar el token de
+> Rocket Loader en el `type` de los `<script>`; sin él **cada re-import marca
+> como cambiadas** páginas que no cambiaron). El «T1–T6» de aquí es **el residuo
+> exacto** del episodio que `CLAUDE.md` §sondas regla 3 narra: una tanda
+> «corrigió» un plan que citaba T1–T7 comprobándolo contra un registro donde T7
+> aún no estaba escrito, y *comprobar el destino no distingue «nunca existió» de
+> «no se escribió»*. El registro se arregló entonces; **esta cita se quedó
+> arrastrando la corrección equivocada** hasta hoy.
+
 **Decisiones que la alimentan:** CMS-0e (HTML crudo primero, conversión por
-entrada) · §3.2 (T1–T6) · §3.1/§3.1b (whitelist + nodo de vídeo) · §3.3/§3.3b
+entrada) **— y su aterrizaje ya está construido: §3.1d, campo HTML** ·
+§3.2 (T1–T8) · §3.1/§3.1b (whitelist + nodo de vídeo) · §3.3/§3.3b
 (scripts clasificados; nodo-embed por URL) · CMS-0b (volumen persistente) · §6
 M-IMG · §8 (el camino de los datos).
+
+> ✅ **Lo que §3.1d le quita de encima a esta fase**, y conviene saberlo antes de
+> planificarla:
+>
+> - **el aterrizaje del HTML crudo ya no es una decisión de F2-2**: el campo
+>   existe, el tipo medido es el definitivo y no hay campo temporal que retirar;
+> - **el saneador cambia de forma.** Con el corpus fuera del editor Lexical, la
+>   whitelist del §3.1 es **lo que hay que ADMITIR** (las 43 censadas), no un
+>   filtro que imponer — el spec lo dice de las ausentes y vale igual del otro
+>   lado. La **única prohibición es `<script>`**, y **ya está puesta** como
+>   `validate` del campo, así que T4 tiene quien lo cace si se olvida;
+> - **§3.1c deja de bloquear**: `table` (35 páginas), `mark` y `small` eran
+>   huecos del editor del corpus. **§3.4 sigue abierta como decisión de
+>   producto, pero ya no es precondición de importar.**
 
 **Incógnita que le queda.** El recuento de CMS-0e sigue **provisional** hasta
 la corrida con `@payloadcms/richtext-lexical` instalado (§7 — aquí es donde por
 fin se hace); el tamaño del corpus completo está **SIN MEDIR** (CMS-0b: 123 de
 209 con imagen); la **tabla** (§3.4) y la **allowlist de hosts** (§3.3b)
-siguen abiertas — la primera bloquea la whitelist, la segunda es política.
+siguen abiertas — ~~la primera bloquea la whitelist~~, **ninguna de las dos
+bloquea ya**: §3.1d sacó el corpus del editor, así que §3.4 es decisión de
+producto y §3.3b es política.
+
+> ⚠ **Y una que se estrena aquí, barata pero real:** los `<script>` del corpus
+> **ya no pueden entrar** —el `validate` del campo los rechaza (§3.3 · T4)— así
+> que **una entrada de las 15 con script FALLA al importar si T4 no se aplica
+> antes**. Es deliberado (regla 6: una ausencia de transformación se rechaza, no
+> se sustituye), pero el importador tiene que aplicar T4 **antes** del alta, no
+> después. Sin esa nota, F2-2 se encuentra el fallo y lo lee como defecto del
+> esquema.
 
 **Hecho cuando:** los seeds insertados se re-leen y proyectan **idénticos** a
 `src/lib` (igualdad mecánica, no de ojo); el extractor y el saneador tienen

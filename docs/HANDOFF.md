@@ -1,3 +1,180 @@
+# HANDOFF — F2-1 CERRADA: el esquema queda congelado, versionado y con su guarda
+
+> ⚠ **Tanda 2026-08-04 (24.ª).** Cinco pasos + la ráfaga 3 de `cqa6-390`. Cierra
+> **F2-1**. **No toca `apps/web`**: `git diff c9f7eec HEAD -- apps/web` está
+> **vacío**, cero ficheros, así que —como el bloque 2— **no paga corrida Δ0**.
+> La restricción de CMS-0f se cumple por no haber cruzado la frontera.
+
+## 0 · Los dos titulares
+
+> **1 · F2-1 está HECHA**, contra su criterio literal y con evidencia por punto:
+> tipos que compilan · colecciones verificadas (`qa:cms-campos` 10/10, negativo
+> 5/5) · migración inicial **en limpio sobre Postgres vacío con `push: false`**
+> (106 tablas, batch 1) · **la guarda de colisión probada en negativo por las dos
+> mitades**, la del build y la del alta.
+>
+> **2 · El −30 de EDAR@390 nunca fue un defecto del clon.** La campaña
+> `cqa6-390` cerró (3 ráfagas · 2 días) y el archivo dio la respuesta que la
+> campaña no podía dar: **a 390 el original es BIMODAL con Δ = 30 exactos**, con
+> fichero congelado y commiteado de los dos estados en dos rutas. El clon no se
+> movió nunca.
+
+## 1 · Lo que se construyó, en un vistazo
+
+```
+packages/cms-config/src/
+  campos/comunes.ts        ← campoHtml · htmlLinea · ETIQUETAS_CENSADAS (43)
+  colecciones/slugs.ts     ← el registro del plano de /es/, unique: true
+  hooks/registro-slug.ts   ← reclama y suelta, pasando `req` (misma transacción)
+  migrations/              ← 2 migraciones versionadas, aplicadas en limpio
+scripts/qa/cms-slugs.mjs (+ .neg.mjs)   ← la guarda de ENTRADA y su negativo
+```
+
+## 2 · PASO 1 · §3.1d — el corpus entra como HTML, no como Lexical
+
+**No se decidió nada: se APLICÓ CMS-0e**, que estaba vigente desde el
+2026-07-30 y a la que el bloque 2 se le había desviado. Se hizo aquí y no en
+F2-2 porque **el punto de congelación no es la primera entrada importada, es la
+primera MIGRACIÓN** — es la que escribe las columnas.
+
+**El discriminador no fue criterio mío: fue el tipo medido**, y estaba escrito en
+`types/kunak.ts` desde antes de traducir.
+
+| tipo medido | destino |
+|---|---|
+| `CampoRico = string` · `CampoRicoEnLinea = string` | **HTML crudo** (11 campos) |
+| `MonoInline = string \| MonoTrozo[]` | **sigue Lexical** — dato tipado del clon, no corpus |
+
+**Las dos formas que §3.1d dejaba abiertas caen enteras.** Las dos daban por
+hecho que el destino final es Lexical y el HTML un tránsito. No lo es: el tipo
+medido **ya es `string`**, así que el campo definitivo y el sitio de aterrizaje
+son el mismo objeto — ni dos fuentes de verdad, ni entradas que no existen hasta
+convertirse.
+
+Acta campo a campo (los 12), contrato y evidencia: `ESQUEMA-CMS.md` **§3.1d**.
+
+## 3 · Los cuatro hallazgos, y ninguno daba error
+
+| # | qué | dónde |
+|---|---|---|
+| 1 | **`productos.bullets[].texto` no podía expresar `<sup>`.** Estaba en `editorNegrita` (Párrafo + Negrita) y el corpus trae `R<sup>2</sup> >0,8`. Pasaban `payload-types` **y** `qa:cms-campos` — **ninguno mira el TIPO de la hoja, sólo su ruta** | ficha **CMS-SP-TIPO**, §7 del ESQUEMA |
+| 2 | **El primer negativo de `push: false` no medía nada.** `migrate:status` no dispara el push, así que daba 0 con `push:true` **y** con `push:false`. Lo cazó el control | §5 |
+| 3 | `migrate:create` emite `MigrateUpArgs`/`MigrateDownArgs` como **import de valor** y el paquete usa `verbatimModuleSyntax`. **Hay que rehacerlo en CADA migración nueva**; lo caza el typecheck de `check` | nota en las 2 migraciones |
+| 4 | El HTML crudo aterriza en **`varchar` SIN longitud** — verificado **insertando los 69 784 caracteres** del máximo medido y leyéndolos de vuelta, no leyendo el catálogo | PASO 2 |
+
+## 4 · La guarda de slug: DOS mitades, las dos probadas
+
+§4 dice que son **complementarias, no alternativas**, y ven cosas distintas:
+
+| | qué ve | qué NO puede ver | negativo |
+|---|---|---|---|
+| `qa:slugs` (**build**) | sombras y huérfanas, contra el `prerender-manifest` | un alta rechazada — no llega al build | `SABOTAJE=accesorios` → **exit 1**; limpio → **exit 0** |
+| `qa:cms-slugs` (**alta**) | el rechazo, contra la DB real | que una ruta estática sombree un slug del catálogo | **4/4**, cada sabotaje por su invariante; control **5/5** |
+
+**El alcance de los dos es EL MISMO, y eso es requisito, no coincidencia:** sólo
+el plano de un segmento de `/es/` — `entradas-blog`, `terminos-kunakpedia` y
+`productos` **sin `padre`** (6 de 24, §2e). Dos definiciones distintas de «lo
+mismo» son la clase C7 de este repo, y aquí darían un hook que rechaza altas que
+el build considera legítimas. **Si una familia baja al plano, se añade en LOS DOS
+sitios.**
+
+`qa:cms-slugs` **no entra en `npm run check`**: necesita Postgres, y meterle una
+dependencia de servicio convertiría «la DB está apagada» en «el código está mal».
+
+## 5 · ⚠ LA LECCIÓN: un negativo sin control no es un negativo
+
+La regla del cero, cobrada **dentro de la verificación de una guarda**:
+
+| | `push` | arranque | columna en la DB |
+|---|---|---|---|
+| intento fallido | `true` **y** `false` | `migrate:status` | **0 en los dos** — no medía nada |
+| control | `true` | `getPayload()` real | **1** — aparece |
+| negativo | `false` | `getPayload()` real | **0** — la guarda para |
+
+> **El control no es la mitad opcional del negativo: es la que decide si el
+> negativo significa algo.** Sin él, ese 0 se lee como «la guarda funciona».
+
+## 6 · La campaña `cqa6-390`, y la lección que vale más que el número
+
+Cerró: **3 ráfagas · 2 días · ≥2 h**, `h1` **0 en las 6 combinaciones**. Pero el
+criterio pre-registrado **no se aplicó, porque su premisa era falsa**: decía *«un
+±30 observado una vez, SIN FICHERO»*, y hay **dos**, congelados y commiteados, de
+otra sonda:
+
+| ruta @390 | estado A | estado B | Δ |
+|---|---|---|---|
+| `/software…` | 308.58 | **338.58** | **30.00** |
+| `…-en-edar` | 189.39 | **219.39** | **30.00** |
+
+El clon vale **189.39 en las dos corridas**. Lo único que cambia es el original.
+
+> **El −30 sale de SIN PROBAR y NO entra en defecto**: es el original en su
+> segundo estado. Un **+30** futuro en EDAR@390 **no es regresión**, es el otro
+> pico; **cualquier otro valor sí lo es**, incluidos los menores de 30 — un suelo
+> bimodal DISCRIMINA, no acota.
+
+**La lección, que es de método y le faltaba a la regla 7:**
+
+> **Toda medida congelada de un PAR contiene una muestra del original.** El suelo
+> de ruido **no vive sólo en los ficheros de la campaña de ruido**: vive en las
+> 324 congeladas, y preguntarles es un `grep` sobre git. Nadie lo hizo — ni al
+> declarar el −30 SIN PROBAR, ni al escribir el pre-registro que afirmaba «sin
+> fichero». **Un pre-registro protege de decidir por cansancio; no protege de
+> partir de una premisa falsa**, y ahí llega blindada contra la revisión.
+
+## 7 · LO SIGUIENTE: F2-2 · Datos
+
+**Entrega** (`PLAN-FASE-2.md` §F2-2, actualizado hoy):
+
+1. **Seeds mecánicos por Local API** — `src/lib/*.ts` **son** los datos (§8).
+2. **Extractor del corpus** con las transformaciones **T1–T8** del §3.2.
+3. **Saneador** con la whitelist censada (§3.1 · §3.3b).
+4. **Media al volumen persistente** (CMS-0b) con los *image sizes* que **cierran
+   M-IMG**.
+
+> ⚠ **Y tres cosas que §3.1d le cambia a F2-2, escritas para que no se
+> redescubran:**
+>
+> - **eran T1–T8, no T1–T6.** El «T1–T6» del PLAN era **el residuo exacto** del
+>   episodio de `CLAUDE.md` §sondas regla 3: una tanda «corrigió» T1–T7 → T1–T6
+>   comprobándolo contra un registro donde T7 aún no estaba escrito. El registro
+>   se arregló entonces; **la cita se quedó arrastrando la corrección
+>   equivocada** hasta hoy. Corregido en el PLAN;
+> - **el saneador cambia de forma**: con el corpus fuera del editor, la whitelist
+>   es **lo que hay que ADMITIR** (43 etiquetas), no un filtro que imponer. La
+>   única prohibición es `<script>`, y **ya está puesta** como `validate`;
+> - **T4 va ANTES del alta.** Las 15 páginas con script **fallan al importar** si
+>   no se aplica primero. Es deliberado (regla 6), pero hay que saberlo o se lee
+>   como defecto del esquema.
+
+## 8 · Pendientes que NO bloquean F2-2
+
+| # | pendiente | por qué no bloquea |
+|---|---|---|
+| 1 | **La HOME sigue sin content type** — el único arquetipo genuinamente sin él | es el **cubo B**: modelarla después es **AÑADIR**, no re-migrar (§2e, y `qa:cms-campos` lo declara fuera de alcance con esa razón) |
+| 2 | **El `Dockerfile` sin verificar** — se reapuntó a `apps/web` en el bloque 1 y **no se construyó la imagen** | el contrato de aceptación de F2-1 es el Δ0 del HTML servido por `next start`, no el despliegue. Lo cobra F2-4 |
+| 3 | **Las 26 celdas ciegas** de `docs/research/COBERTURA-MEDICION.md`, con **comportamiento a 0/31** | es deuda de medición del CLON, no del CMS |
+| 4 | **Los 6 mínimos** de sondas todavía flojos | ídem |
+| 5 | **El `Breadcrumb` de 28 rutas** | ídem — y es de ancho, así que `clon-base` no lo ve (§la guarda también tiene un nivel) |
+| 6 | **CMS-SP-TIPO** (nueva hoy): ninguna guarda mira el **tipo** de la hoja, sólo su nombre | es deuda de **instrumento**; la paga la tanda que escriba la sonda |
+| 7 | **§3.4** (tabla: nodo o block) y **§3.3b** (allowlist de hosts) | ya **no bloquean**: §3.1d sacó el corpus del editor |
+
+## 9 · Lo que NO hay que hacer al empezar
+
+- **No volver a poner el corpus en `richText`.** Es CMS-0e, decidida el
+  2026-07-30 y aplicada el 2026-08-04, y el tipo medido es `string`.
+- **No hacer condicional el `push: false`.** Cumpliría la letra del PLAN y
+  rompería el motivo: con `push` vivo en desarrollo, `migrate:create` diffea
+  contra una DB derivada y la migración describe «de mi DB torcida a la config».
+- **No leer el `+30` de EDAR@390 como regresión.** Es el otro estado del
+  original (§6).
+- **No dar por buena una guarda con negativo y sin control.** Es la lección de
+  esta tanda y se pagó dentro de la propia verificación (§5).
+- **No añadir familias al registro de slugs sin añadirlas también a `FAMILIAS`
+  de `scripts/qa/slugs.mjs`.** Los dos alcances tienen que ser el mismo.
+
+---
+
 # HANDOFF — F2-1 bloque 2: Payload andando, 16 colecciones, y una comprobación que las audita
 
 > ⚠ **Tanda 2026-08-03 (23.ª).** Seis pasos. Instala Payload y traduce el modelo.

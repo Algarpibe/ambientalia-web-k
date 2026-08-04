@@ -14,7 +14,7 @@
     {
       "paso": "2 · MISMO slug, otra familia ⇒ el alta CAE",
       "esperado": "cae",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-40224-accesorios» ya está en el plano",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-17596-accesorios» ya está en el plano",
       "ok": true
     },
     {
@@ -26,7 +26,7 @@
     {
       "paso": "4 · producto CON `padre` repite slug ⇒ PASA (fuera del plano)",
       "esperado": "pasa",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-40224-accesorios» ya está en el plano",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-17596-accesorios» ya está en el plano",
       "ok": false
     },
     {
