@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "pregunta": "¿es `CaseStudy`/`BlogPost` una proyección derivable del documento destino?",
+    "alcance": "3 pares comparables de 34 teasers — el resto no tiene destino transcrito",
+    "asimetria": "un DISTINTO basta para falsar la derivación; un IDÉNTICO en estos pares NO prueba derivabilidad universal",
+    "equivalencias": {
+      "casos": {
+        "title": "titulo",
+        "client": "cliente",
+        "image": "imagen",
+        "href": "slug",
+        "sector": null,
+        "sectorHref": null
+      },
+      "entradas-blog": {
+        "title": "titulo",
+        "date": "fechaPublicacion",
+        "image": "imagenDestacada",
+        "href": "slug",
+        "excerpt": "extracto"
+      }
+    }
+  },
+  "porCampo": {
+    "casos.title": {
+      "IDÉNTICO": 1,
+      "DISTINTO": 0,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": null
+    },
+    "casos.client": {
+      "IDÉNTICO": 1,
+      "DISTINTO": 0,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": null
+    },
+    "casos.image": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 0,
+      "AUSENTE": 1,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": {
+        "estado": "AUSENTE",
+        "teaser": "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg"
+      }
+    },
+    "casos.href": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 1,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": {
+        "estado": "DISTINTO",
+        "teaser": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+        "documento": "distrito-baja-emision-rio-de-janeiro"
+      }
+    },
+    "casos.sector": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 0,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 1,
+      "ejemplo": {
+        "estado": "SIN EQUIVALENTE",
+        "teaser": "Urbano"
+      }
+    },
+    "casos.sectorHref": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 0,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 1,
+      "ejemplo": {
+        "estado": "SIN EQUIVALENTE",
+        "teaser": "https://kunakair.com/es/sector/urbano/"
+      }
+    },
+    "entradas-blog.title": {
+      "IDÉNTICO": 2,
+      "DISTINTO": 0,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": null
+    },
+    "entradas-blog.date": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 2,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": {
+        "estado": "DISTINTO",
+        "teaser": "Mar 25, 2026",
+        "documento": "25 marzo 2026"
+      }
+    },
+    "entradas-blog.image": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 2,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": {
+        "estado": "DISTINTO",
+        "teaser": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
+        "documento": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg"
+      }
+    },
+    "entradas-blog.href": {
+      "IDÉNTICO": 0,
+      "DISTINTO": 2,
+      "AUSENTE": 0,
+      "SIN EQUIVALENTE": 0,
+      "ejemplo": {
+        "estado": "DISTINTO",
+        "teaser": "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "documento": "monitorizacion-de-emisiones-del-trafico-urbano"
+      }
+    }
+  },
+  "pares": [
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "proyectos",
+      "destino": "casos/distrito-baja-emision-rio-de-janeiro",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Secretaria Municipal do Ambiente e Clima (SMAC)"
+        },
+        "image": {
+          "estado": "AUSENTE",
+          "teaser": "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg"
+        },
+        "href": {
+          "estado": "DISTINTO",
+          "teaser": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+          "documento": "distrito-baja-emision-rio-de-janeiro"
+        },
+        "sector": {
+          "estado": "SIN EQUIVALENTE",
+          "teaser": "Urbano"
+        },
+        "sectorHref": {
+          "estado": "SIN EQUIVALENTE",
+          "teaser": "https://kunakair.com/es/sector/urbano/"
+        }
+      }
+    },
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "articulos",
+      "destino": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Mar 25, 2026",
+          "documento": "25 marzo 2026"
+        },
+        "image": {
+          "estado": "DISTINTO",
+          "teaser": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
+          "documento": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg"
+        },
+        "href": {
+          "estado": "DISTINTO",
+          "teaser": "/monitorizacion-de-emisiones-del-trafico-urbano",
+          "documento": "monitorizacion-de-emisiones-del-trafico-urbano"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-por-metano",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Ene 7, 2025",
+          "documento": "7 enero 2025"
+        },
+        "image": {
+          "estado": "DISTINTO",
+          "teaser": "/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-1024x573.jpg",
+          "documento": "/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg"
+        },
+        "href": {
+          "estado": "DISTINTO",
+          "teaser": "/contaminacion-por-metano",
+          "documento": "contaminacion-por-metano"
+        }
+      }
+    }
+  ]
+}

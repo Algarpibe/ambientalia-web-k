@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "pregunta": "¿de qué colecciones es cierta la premisa «src/lib/*.ts son los datos»?",
+    "fuentes": {
+      "rutas": ".next/prerender-manifest.json (el build, no una lista)",
+      "filas": "src/lib/*.ts cargados como módulo",
+      "colgantes": "medidas/sondeo-frontera.json (congelada, verificada limpia)"
+    },
+    "rutasEmitidas": 34,
+    "ejeB": "ESTA SONDA NO MIDE EL EJE B (cuántas filas hay de las que existen en el original). El corpus completo son 57 casos y 149 entradas; aquí sólo se cuenta lo transcrito."
+  },
+  "colecciones": [
+    {
+      "coleccion": "productos",
+      "filas": 9,
+      "conRuta": 3,
+      "sinRuta": [
+        "estacion-de-monitoreo-de-calidad-del-aire",
+        "sensor-de-calidad-del-aire",
+        "sulfuro-de-hidrogeno",
+        "amoniaco",
+        "compuestos-organicos-volatiles",
+        "particulas-en-suspension"
+      ],
+      "colganteDesde": 0,
+      "colganteHacia": 0,
+      "clase": "MIXTA"
+    },
+    {
+      "coleccion": "sectores",
+      "filas": 4,
+      "conRuta": 4,
+      "sinRuta": [],
+      "colganteDesde": 20,
+      "colganteHacia": 0,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "monograficos",
+      "filas": 2,
+      "conRuta": 2,
+      "sinRuta": [],
+      "colganteDesde": 11,
+      "colganteHacia": 0,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "filas": 11,
+      "conRuta": 0,
+      "sinRuta": [
+        "urbano",
+        "industria",
+        "investigacion-consultoria",
+        "puertos",
+        "mineria",
+        "olores",
+        "edar",
+        "metalurgia",
+        "obras",
+        "oil-gas-es",
+        "sports"
+      ],
+      "colganteDesde": 0,
+      "colganteHacia": 0,
+      "clase": "REFERENCIADA"
+    },
+    {
+      "coleccion": "casos",
+      "filas": 4,
+      "conRuta": 4,
+      "sinRuta": [],
+      "colganteDesde": 0,
+      "colganteHacia": 9,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "faqs",
+      "filas": 2,
+      "conRuta": 2,
+      "sinRuta": [],
+      "colganteDesde": 0,
+      "colganteHacia": 0,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "filas": 7,
+      "conRuta": 7,
+      "sinRuta": [],
+      "colganteDesde": 0,
+      "colganteHacia": 15,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "filas": 3,
+      "conRuta": 3,
+      "sinRuta": [],
+      "colganteDesde": 0,
+      "colganteHacia": 0,
+      "clase": "CONSTRUIDA"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "filas": 4,
+      "conRuta": 4,
+      "sinRuta": [],
+      "colganteDesde": 0,
+      "colganteHacia": 0,
+      "clase": "CONSTRUIDA"
+    }
+  ],
+  "colgantesPorDestino": {
+    "casos": [
+      "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "citytraq-calidad-del-aire-urbano",
+      "demolicion-estadio-vicente-calderon",
+      "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+      "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "red-de-monitorizacion-ambiental-mades-paraguay",
+      "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
+    ],
+    "entradas-blog": [
+      "conferencia-partes-cop26-incendios",
+      "contaminacion-aire-deporte",
+      "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "contaminacion-del-aire-en-madrid",
+      "contaminacion-del-aire-por-obras",
+      "contaminacion-incendios-forestales-aire",
+      "contaminacion-por-produccion-de-energia",
+      "impacto-ambiental-industria-cementera",
+      "medicion-de-gases-en-los-vertederos-de-basura",
+      "monitorizacion-aire-remediacion-suelos-contaminados",
+      "monitorizacion-de-emisiones-fugitivas",
+      "monitorizacion-mal-olor-industrial",
+      "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "quemas-prescritas-agricolas-calidad-aire"
+    ]
+  }
+}

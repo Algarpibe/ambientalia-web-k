@@ -32,23 +32,29 @@ import { aPayload } from "./mapeo.mjs";
  * como omisión silenciosa: `SEMBRADAS` es lo que la comprobación del PASO 2
  * usa de denominador, así que el alcance viaja con el dato.
  */
+/**
+ * ✅ **LAS 9, desde el 2026-08-04.** Las tres fronteras que pararon el bloque 1
+ * están decididas y aplicadas —teaser como dato propio · `seo` medido en el
+ * original · T4a antes del alta— así que el alcance es **el catálogo entero**:
+ * **46 filas** en 9 colecciones, más las 4 taxonomías derivadas.
+ *
+ * El orden **NO es estético y ya no se afirma**: `scripts/seed/grafo.mjs` lo
+ * deriva de la config resuelta y `cms:sondeo` verifica que es topológico. Lo que
+ * manda es `CATALOGOS`; esta lista sólo dice cuáles entran.
+ */
 export const SEMBRADAS = [
+  "productos",
+  "sectores",
+  "monograficos",
+  "taxonomia-sectores",
+  "casos",
   "faqs",
+  "entradas-blog",
   "terminos-kunakpedia",
   "documentos-cientificos",
 ];
 
 export const FUERA_DE_BLOQUE_1 = {
-  "entradas-blog":
-    "FRONTERA — 4 de 7 cuerpos traen `" + "<script" + ">` del corpus (NBC x1 · FB3D x2 · Instagram x1). " +
-    "El `validate` de §3.3/T4 los rechaza, así que el SEED necesita T4 — que el PLAN puso en el bloque 2",
-  productos:
-    "FRONTERA — `seo.title` es `required` en el esquema (§2e: «seo, grupo como en las demás») y NO está medido en ningún sitio del repo: ni en `src/lib/products.ts` (que es la proyección de PESTAÑA) ni en `medidas/solutions-campos.json`. 9 de 9 instancias",
-  sectores:
-    "FRONTERA — 20 relaciones de teaser sin documento, y el `date` del teaser no es derivable del documento real",
-  monograficos: "FRONTERA — ídem, 11 relaciones (comparte `colaComercial` con SECTOR)",
-  casos: "arrastrada: `soluciones` → `productos`, que está en frontera",
-  "taxonomia-sectores": "arrastrada: `pagina` → `sectores`/`monograficos`, que están en frontera",
   "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
   media: "no es un catálogo: se deriva de los campos `upload` de los demás",
   usuarios: "infraestructura (CMS-0f), sin lado medido",
@@ -56,38 +62,20 @@ export const FUERA_DE_BLOQUE_1 = {
 };
 
 /**
- * ⚠ **LA FRONTERA, y va aquí porque el corte lo decidió una MEDICIÓN.**
+ * ✅ **LA FRONTERA DE TEASER, CERRADA el 2026-08-04 — y la lista queda VACÍA.**
  *
- * `scripts/seed/sondeo.mjs` recorrió los 9 catálogos contra la config resuelta y
- * contó las relaciones sin destino: **0 en siete colecciones, y 31 en dos** —
- * las 31, sin excepción, de `sectores`/`monograficos` hacia los **teasers** de
- * `casos` y `entradas-blog` (§2c.1, proyecciones). 28 slugs distintos que el
- * clon **nunca transcribió**: sólo hay 4 casos de 57 y 7 entradas de 149.
+ * Aquí vivían `proyectos.posts` y `articulos.posts`, podadas del dato porque
+ * **31 de sus 34 relaciones no tenían documento destino**. La decisión de §F2-2
+ * · TEASER las convirtió en **dato propio** (ver `campos/comunes.ts`), así que
+ * ya no son relaciones y no hay nada que podar: se siembran enteras.
  *
- * **Por qué NO se resuelve sembrando más:** la mitad es sequencing —esos
- * documentos llegan con el extractor del corpus, bloque 2— pero **la otra mitad
- * es una decisión que ningún documento tiene escrita**, y por eso este bloque
- * para aquí:
- *
- * | campo del teaser | teaser | documento real | ¿derivable? |
- * |---|---|---|---|
- * | `title` · `client` | idénticos | idénticos | ✅ |
- * | `image` | `…_Kunak-1024x683.jpg` | `…_Kunak.jpg` | ⏳ es un *image size* — bloque 3 (M-IMG) |
- * | **`date`** | **`"Ene 7, 2025"`** | **`"7 enero 2025"`** | ❌ **nadie ha escrito la regla** |
- *
- * `EntradaBlog.fechaPublicacion` está declarada *«verbatim, como lo escribe el
- * original»* y es `string` a propósito. El teaser trae **otra renderización de
- * la misma fecha**, así que proyectarla exige un formateador de meses en
- * español —o dejar de guardar la fecha verbatim—, y **eso es una decisión de
- * modelo, no una transformación**. Acta y evidencia: `PLAN-FASE-2.md` §F2-2 ·
- * FRONTERA.
- *
- * **Lo que este bloque hace mientras tanto, y lo hace VISIBLE:** no escribe esas
- * dos rutas, y **la comprobación del PASO 2 las declara NO COMPARADAS con su
- * recuento**. No se normalizan ni se omiten en silencio: una cobertura declarada
- * al nivel de arriba absorbe justo lo que no se midió abajo.
+ * **La lista se queda porque el mecanismo es real y la guarda lo vigila**: una
+ * ruta declarada aquí que no case con ningún campo sale por `PODA MUERTA` en el
+ * sondeo. Es lo que pasó al aplicar la decisión, y es lo que tenía que pasar —
+ * la declaración avisó de que se había quedado obsoleta en vez de seguir
+ * «podando» nada en silencio.
  */
-export const RUTAS_EN_FRONTERA = ["proyectos.posts", "articulos.posts"];
+export const RUTAS_EN_FRONTERA = [];
 
 const PUBLICO = path.join(APP, "public");
 
@@ -223,6 +211,15 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
    * evita.
    * ══════════════════════════════════════════════════════════════════════ */
 
+  /**
+   * Rutas de `upload` en las que el dato medido usa `""` para decir «no hay».
+   * Lo apunta la IDA al verlo; la VUELTA lo consulta. Una sola definición, dos
+   * sentidos — igual que `formaDeRel` y por la misma razón.
+   */
+  const centinelas = new Set();
+  const centinelaVacio = (ruta) => centinelas.add(rutaLimpia(ruta));
+  const esCentinela = (ruta) => centinelas.has(rutaLimpia(ruta));
+
   /** id de `media` → la ruta `"/images/…"` con la que se subió. */
   const porId = new Map();
   const rutaDeMedia = (id, donde) => {
@@ -297,6 +294,7 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
   return {
     media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas, sinLlave, formaDeRel,
     rutaDeMedia, deRel, conKind, declaraKinds, declaraProyector,
+    centinelaVacio, esCentinela, centinelas,
   };
 }
 
@@ -377,6 +375,89 @@ export function derivaTaxonomias(catalogos) {
  * EL SEED
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * T4 · LOS `<script>` DEL CORPUS — ⚠ y **T4 TIENE DOS MITADES**, que es lo que
+ * el PLAN no decía y por lo que quedó en el bloque equivocado.
+ *
+ * `PLAN-FASE-2.md` puso los seeds en el bloque 1 y T1–T8 en el bloque 2. Medido:
+ * **el seed NECESITA T4**, porque el `validate` de `campoHtml` (§3.3) rechaza
+ * `<script>` y **4 de las 7 entradas lo traen** — `npm run cms:sondeo` lo deriva
+ * corriendo el `validate` de cada campo contra su dato, ya no se cuenta a mano.
+ *
+ * Pero «subir T4 al bloque 1» entero **no se puede**, y la razón es de dato, no
+ * de tiempo:
+ *
+ * | mitad | qué hace | dónde puede estar |
+ * |---|---|---|
+ * | **T4a · la REGLA** | ningún `<script>` sobrevive: se quita | **aquí**. Es mecánica y no inventa nada |
+ * | **T4b · la SUSTITUCIÓN** | el PDF pasa a media, el embed a nodo tipado, el reproductor a enlace (§3.3) | **bloque 2** — necesita datos que el catálogo NO tiene: el fichero PDF, la URL de la noticia |
+ *
+ * **La mitad que falta es una PÉRDIDA, y por eso se cuenta y se nombra.** Los 5
+ * scripts de las 4 entradas llevan contenido real dentro (un visor de PDF con su
+ * payload en base64, un embed de Instagram, un reproductor de vídeo), y quitarlos
+ * sin sustituir **deja ese contenido fuera del CMS**. Un `?? ""` silencioso aquí
+ * sería exactamente el verde falso del que va toda la casa: la eliminación se
+ * congela con su clasificación §3.3, y el seed la imprime.
+ *
+ * **T8 va antes, y sobre este corpus resulta ser NO-OP**: los 5 scripts llevan el
+ * token de Rocket Loader en su `type`, y **medido: 5 dentro de `<script>`, 0
+ * fuera**, así que T4a se lo lleva por delante. T8 sigue haciendo falta en el
+ * importador del bloque 2, donde la comparación se hace contra el HTML crudo del
+ * origen ANTES de transformar — que es donde el token produce el ruido de
+ * re-import que §3.2 documenta.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Clasificación §3.3, por lo que el script CARGA o DEFINE. */
+const CLASE_SCRIPT = [
+  [/FB3D_CLIENT_DATA/, "FB3D FlipBook — visor de PDF; el contenido real es un PDF ⇒ relación a media (§3.3)"],
+  [/instagram\.com\/embed\.js/, "Instagram ⇒ nodo-embed tipado `proveedor: instagram` (§3.3)"],
+  [/platform\.twitter\.com/, "Twitter/X ⇒ nodo-embed tipado `proveedor: twitter` (§3.3)"],
+  [/flourish\.studio/, "Flourish ⇒ nodo-embed tipado `proveedor: flourish` (§3.3)"],
+  [/nbcwashington\.com\/portableplayer/, "Reproductor NBC ⇒ enlace a la noticia (§3.3, resuelto 2026-07-30)"],
+  [/cdn\.jsdelivr\.net/, "Swiper 8 desde jsDelivr ⇒ galería nativa (§3.3)"],
+];
+
+const SCRIPT = /<script\b[^>]*>[\s\S]*?<\/script>/gi;
+/** El token de 24 hex que Cloudflare Rocket Loader antepone al `type` (T8). */
+const ROCKET = /\btype=("|')[0-9a-f]{24}-(text\/javascript)\1/gi;
+
+/** Lo que T4a quitó, para que la pérdida no sea silenciosa. */
+export const SCRIPTS_ELIMINADOS = [];
+
+/**
+ * T8 + T4a sobre una cadena de HTML. Devuelve el HTML sin scripts y apunta cada
+ * eliminación —con su clase §3.3 y el script entero— en `SCRIPTS_ELIMINADOS`.
+ */
+export function aplicaT4(html, donde) {
+  if (typeof html !== "string" || !SCRIPT.test(html)) return html;
+  SCRIPT.lastIndex = 0;
+  const conT8 = html.replace(ROCKET, (_m, q, tipo) => `type=${q}${tipo}${q}`);
+  return conT8.replace(SCRIPT, (script) => {
+    const clase = CLASE_SCRIPT.find(([re]) => re.test(script))?.[1] ?? null;
+    if (!clase)
+      /* Regla 6: un script que no se sabe qué es NO se quita en silencio. §3.3
+       * clasificó los 17 del corpus uno a uno; uno nuevo es dato nuevo. */
+      throw new Error(
+        `T4 · SCRIPT SIN CLASIFICAR en ${donde}:\n  ${script.replace(/\s+/g, " ").slice(0, 160)}\n` +
+          `  §3.3 clasificó los 17 del corpus uno a uno. Éste no está, así que no se\n` +
+          `  puede quitar «como los demás»: clasifícalo primero.`,
+      );
+    SCRIPTS_ELIMINADOS.push({ donde, clase, script: script.replace(/\s+/g, " ").slice(0, 400) });
+    return "";
+  });
+}
+
+/** Aplica T4 a todas las cadenas del dato. El catálogo medido no se toca. */
+export function podaScripts(fila, donde) {
+  const anda = (v, ruta) => {
+    if (typeof v === "string") return aplicaT4(v, ruta);
+    if (Array.isArray(v)) return v.map((x, i) => anda(x, `${ruta}[${i}]`));
+    if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, anda(x, `${ruta}.${k}`)]));
+    return v;
+  };
+  return anda(fila, donde);
+}
+
 /**
  * Quita del dato las rutas en frontera **antes** de mapear, para que el walker
  * no tenga que saber nada de esto. Devuelve una copia: el catálogo medido es la
@@ -404,7 +485,10 @@ export async function siembra(payload, colecciones) {
     if (!cfg) throw new Error(`SEED: la colección '${coleccion}' no está en la config`);
     let n = 0;
     for (const fila of filas) {
-      const preparada = podaFrontera((PREPARA[coleccion] ?? ((x) => x))(fila));
+      const preparada = podaScripts(
+        podaFrontera((PREPARA[coleccion] ?? ((x) => x))(fila)),
+        `${coleccion}/${fila.slug ?? fila.id}`,
+      );
       const data = await aPayload(cfg.fields, preparada, ctx, coleccion);
       const doc = await payload.create({ collection: coleccion, data });
       ctx.registra(coleccion, data.slug ?? doc.slug, doc.id);
@@ -430,7 +514,20 @@ export async function siembra(payload, colecciones) {
     await inserta(c.coleccion, catalogos.get(c.coleccion));
   }
 
-  return { resumen, ctx, taxonomias, catalogos };
+  /* ── T4a, en voz alta. Lo que se quitó y NO se sustituyó es contenido que hoy
+   *    no está en el CMS: si esto se imprimiera sin contarse, sería la regla 1
+   *    (*lo que se imprime se cuenta*) rota en el sitio más caro. ────────── */
+  if (SCRIPTS_ELIMINADOS.length) {
+    console.log(`\n── T4a · ${SCRIPTS_ELIMINADOS.length} <script> eliminados, 0 sustituidos ──`);
+    for (const s of SCRIPTS_ELIMINADOS) console.log(`  · ${s.donde}\n      ${s.clase}`);
+    console.log(
+      `  ⚠ La SUSTITUCIÓN (T4b) es del bloque 2: necesita el PDF y la URL de la\n` +
+        `    noticia, que el catálogo medido NO tiene. Hasta entonces ese contenido\n` +
+        `    NO está en el CMS — congelado en medidas/, no perdido en silencio.`,
+    );
+  }
+
+  return { resumen, ctx, taxonomias, catalogos, scriptsEliminados: SCRIPTS_ELIMINADOS };
 }
 
 /**

@@ -1,6 +1,34 @@
 import type { Product } from "@/types/kunak";
 
 /**
+ * ⚠ **ESTE FICHERO ES LA PROYECCIÓN DE PESTAÑA, NO LA FICHA DEL PRODUCTO** — y
+ * saberlo cambia cómo se lee todo lo de abajo (2026-08-04).
+ *
+ * `npm run qa:cms-arquetipos` lo deriva contra el `prerender-manifest`: de estos
+ * **9 productos el clon sirve 3** (`monitor-calidad-aire`, `software-…`,
+ * `kunak-api`). Los otros **6 sólo están REFERENCIADOS** — existen aquí porque
+ * la home los pinta como pestaña, y lo que hay de ellos es *lo que la pestaña
+ * necesita*, no su página.
+ *
+ * Por eso la premisa del §F2-2 —*«`src/lib/*.ts` son los datos»*— **es falsa
+ * para 6 de 9 filas de este fichero**, y no por descuido: una proyección está
+ * completa respecto de su propósito. Lo que no puede es sembrar la colección.
+ *
+ * ── El bloque `seo`, añadido el 2026-08-04 con su medida ──────────────────
+ * `npm run qa:solutions-seo` sobre las **24** URLs del `solutions-sitemap.xml`:
+ * `title` **24/24** y **no derivable del `h1`** ⇒ es campo, y el `required` del
+ * esquema queda respaldado; `description` **22/24** ⇒ opcional con su medida.
+ * Congelado en `medidas/solutions-seo.json`. Antes de esto el título vivía en el
+ * `export const metadata` de tres `page.tsx` —capa de ESTRUCTURA— y no existía
+ * para los otros seis.
+ *
+ * ⚠ **Y una discrepancia de fidelidad que la medición destapó de paso:** el
+ * `metadata.title` del clon en `/kunak-api` dice *«Kunak API | Integración de
+ * datos de calidad del aire»* y el original dice **«Kunak API - Kunak»**. El
+ * dato de aquí abajo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
+ */
+
+/**
  * "Nuestros productos" tabs — 5 items, verbatim from `#lista-soluciones`
  * (KunakAir theme shortcode). Order and content extracted 2026-07-22.
  * Spec: docs/research/components/productos-tabs.spec.md
@@ -8,6 +36,12 @@ import type { Product } from "@/types/kunak";
 export const PRODUCTS_TABS: Product[] = [
   {
     id: "monitor-calidad-aire",
+    seo: {
+      title: "Monitor de calidad del aire profesional | Kunak AIR Pro",
+      description:
+        "El monitor de calidad del aire exterior multi-contaminante más preciso y fiable del mercado. Validado por la US EPA, Airparif, AQ Spec y más.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+    },
     name: "AIR Pro",
     tagline: "Monitor de calidad de aire para profesionales",
     description: "Estación de monitorización de la calidad del aire para profesionales.",
@@ -25,6 +59,12 @@ export const PRODUCTS_TABS: Product[] = [
   },
   {
     id: "estacion-de-monitoreo-de-calidad-del-aire",
+    seo: {
+      title: "Estación de calidad del aire | Kunak AIR Lite",
+      description:
+        "Con la estación de monitoreo de calidad del aire Kunak AIR Lite obtendrás información precisa sobre contaminantes fácil, rápida y asequible.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+    },
     name: "AIR Lite",
     tagline: "Estación de monitoreo de calidad del aire",
     description: "Información sobre la calidad del aire calle a calle.",
@@ -41,6 +81,12 @@ export const PRODUCTS_TABS: Product[] = [
   },
   {
     id: "sensor-de-calidad-del-aire",
+    seo: {
+      title: "Sensor de calidad del aire exterior preciso y fiable - Kunak",
+      description:
+        "La tecnología patentada de cartuchos inteligentes desarrollada por Kunak permite medir los contaminantes ambientales de forma precisa.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+    },
     name: "Cartuchos inteligentes",
     tagline: "Sistema plug & play",
     description:
@@ -58,6 +104,12 @@ export const PRODUCTS_TABS: Product[] = [
   },
   {
     id: "software-de-medicion-calidad-del-aire",
+    seo: {
+      title: "Software para el análisis de la calidad del aire | Kunak AIR Cloud",
+      description:
+        "Software de análisis de la calidad del aire y ayudar a los profesionales a utilizar y explotar los datos para tomar decisiones informadas.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+    },
     name: "AIR Cloud",
     tagline: "Software de calidad del aire",
     description: "Software profesional de calidad del aire para el análisis de datos.",
@@ -75,6 +127,10 @@ export const PRODUCTS_TABS: Product[] = [
   },
   {
     id: "kunak-api",
+    seo: {
+      title: "Kunak API - Kunak",
+      ogImage: "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+    },
     name: "Kunak API",
     tagline: "Fácil integración de datos",
     description:
@@ -119,6 +175,12 @@ export const PRODUCTS_TABS: Product[] = [
 export const PRODUCTS_CARTUCHOS: Product[] = [
   {
     id: "sulfuro-de-hidrogeno",
+    seo: {
+      title: "Sensor de H2S (Sulfuro de hidrógeno) - Kunak",
+      description:
+        "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de sulfuro de hidrógeno.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2023/02/Hydrogen_sulfide.jpg",
+    },
     name: "Sulfuro de hidrógeno",
     tagline: "Datos fiables sobre el H2S",
     description: "Datos fiables sobre el sulfuro de hidrógeno",
@@ -136,6 +198,12 @@ export const PRODUCTS_CARTUCHOS: Product[] = [
   },
   {
     id: "amoniaco",
+    seo: {
+      title: "Sensor de NH3 (Amoniaco) - Kunak",
+      description:
+        "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg",
+    },
     name: "Amoniaco",
     tagline: "Datos fiables sobre el NH3",
     description: "Datos fiables sobre el amoniaco",
@@ -155,6 +223,12 @@ export const PRODUCTS_CARTUCHOS: Product[] = [
   },
   {
     id: "compuestos-organicos-volatiles",
+    seo: {
+      title: "Sensor de COVs (Compuestos orgánicos volátiles) - Kunak",
+      description:
+        "Cartucho inteligente que integra un sensor capaz de medir de forma precisa y fiable los niveles de compuestos orgánicos volátiles.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2023/02/Volatile-Organic-Compounds.jpg",
+    },
     name: "Compuestos orgánicos volátiles",
     tagline: "Datos fiables sobre los COVs",
     description: "Datos fiables sobre los compuestos orgánicos volátiles",
@@ -172,6 +246,12 @@ export const PRODUCTS_CARTUCHOS: Product[] = [
   },
   {
     id: "particulas-en-suspension",
+    seo: {
+      title: "Sensor de PM (Partículas en suspensión) - Kunak",
+      description:
+        "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de partículas en suspensión.",
+      ogImage: "https://kunakair.com/wp-content/uploads/2023/02/particulate-matter.jpg",
+    },
     name: "Partículas en suspensión",
     tagline: "Medición precisa de material particulado",
     description: "Información fiable sobre partículas",

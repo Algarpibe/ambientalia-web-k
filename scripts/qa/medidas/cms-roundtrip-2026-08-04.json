@@ -1,0 +1,1343 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 63,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 8,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 9,
+      "conDiferencia": 9
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 4
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 2
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 0
+    },
+    "casos": {
+      "documentos": 4,
+      "conDiferencia": 4
+    },
+    "faqs": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "entradas-blog": {
+      "documentos": 7,
+      "conDiferencia": 4
+    },
+    "terminos-kunakpedia": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 4,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "productos",
+      "slug": "monitor-calidad-aire",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sensor-de-calidad-del-aire",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "kunak-api",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sulfuro-de-hidrogeno",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "amoniaco",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "compuestos-organicos-volatiles",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "productos",
+      "slug": "particulas-en-suspension",
+      "ruta": "cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "hero.modulos[0].paragraphs",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[0].columnas[0].modulos[1].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[0].columnas[0].modulos[1].bloques[1].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[1].columnas[0].modulos[1].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[0][1]",
+      "clase": "FORMA",
+      "esperado": "\"H₂S, CH₄, CO₂\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[0][3]",
+      "clase": "FORMA",
+      "esperado": "\"Detectar influente séptico y acumulaciones. Anticipar picos súbitos y reducir riesgos …",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[1][1]",
+      "clase": "FORMA",
+      "esperado": "\"H₂S, NH₃, CO₂\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[1][3]",
+      "clase": "FORMA",
+      "esperado": "\"Identificar acumulación de sólidos, fallos de ventilación y actuar antes de que el olo…",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[2][1]",
+      "clase": "FORMA",
+      "esperado": "\"H₂S, CH₄ (bajo), CO₂\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[2][3]",
+      "clase": "FORMA",
+      "esperado": "\"Detectar fermentación de lodos y validar la eficacia de purgas y cubiertas.\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[3][1]",
+      "clase": "FORMA",
+      "esperado": "\"NH₃, CO₂, N₂O\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[3][3]",
+      "clase": "FORMA",
+      "esperado": "\"Detectar desviaciones del proceso biológico. El N₂O actúa como indicador de eficiencia…",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[4][1]",
+      "clase": "FORMA",
+      "esperado": "\"Cl₂, O₃ (puntual)\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[4][3]",
+      "clase": "FORMA",
+      "esperado": "\"Controlar episodios localizados y verificar la correcta dosificación de reactivos.\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[5][1]",
+      "clase": "FORMA",
+      "esperado": "\"H₂S, NH₃, CO₂, CH₄\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[5][3]",
+      "clase": "FORMA",
+      "esperado": "\"Identificar digestión inestable, fugas y almacenamiento prolongado. Justificar mejoras…",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[6][1]",
+      "clase": "FORMA",
+      "esperado": "\"H₂S, NH₃\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[6][3]",
+      "clase": "FORMA",
+      "esperado": "\"Controlar operaciones de carga y descarga y prevenir episodios críticos puntuales.\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[7][1]",
+      "clase": "FORMA",
+      "esperado": "\"Mezcla global de gases según viento\"",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[0].filas[3].columnas[0].modulos[1].filas[7][3]",
+      "clase": "FORMA",
+      "esperado": "\"Atribuir correctamente episodios con datos y meteorología. Responder a quejas con evid…",
+      "real": "{}"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[1].filas[0].columnas[0].modulos[1].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[1].filas[0].columnas[1].modulos[1].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[2].filas[3].columnas[0].modulos[0].bloques[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[2].filas[3].columnas[0].modulos[0].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"titular\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "hero.modulos[0].paragraphs",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "cuerpo[0].filas[0].columnas[1].modulos[1].bloques[0].kind",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"claim\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].id",
+      "clase": "FORMA",
+      "esperado": "\"monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Pro\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].href",
+      "clase": "FORMA",
+      "esperado": "\"/monitor-calidad-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitor-calidad-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Pro\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].id",
+      "clase": "FORMA",
+      "esperado": "\"estacion-de-monitoreo-de-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Lite\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].href",
+      "clase": "FORMA",
+      "esperado": "\"https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estacion-de-monitoreo-de-calidad-del-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Lite\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].id",
+      "clase": "FORMA",
+      "esperado": "\"software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].name",
+      "clase": "FORMA",
+      "esperado": "\"AIR Cloud\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].href",
+      "clase": "FORMA",
+      "esperado": "\"/software-de-medicion-calidad-del-aire\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].slug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"software-de-medicion-calidad-del-aire\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].titulo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].cuerpo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "sectores[1].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "\"calidad-del-aire-en-las-ciudades\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "sectores[1].pagina",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-calidad-de-aire-para-world-athletics",
+      "ruta": "sectores",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-calidad-de-aire-para-world-athletics",
+      "ruta": "galeria",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "\"calidad-del-aire-en-las-ciudades\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ruta": "sectores[0].pagina",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "\"control-de-emisiones-industriales\"",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "sectores[0].pagina",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "galeria",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "soluciones",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "cuerpo",
+      "clase": "VALOR",
+      "esperado": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<blockquote><p>La monitorización de …",
+      "real": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<blockquote><p>La monitorización de …"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": "cuerpo",
+      "clase": "VALOR",
+      "esperado": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>La monitorización de emisiones de…",
+      "real": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>La monitorización de emisiones de…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "running-for-clean-air",
+      "ruta": "cuerpo",
+      "clase": "VALOR",
+      "esperado": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>La <span class=\\\"glossary-tooltip…",
+      "real": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>La <span class=\\\"glossary-tooltip…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": "cuerpo",
+      "clase": "VALOR",
+      "esperado": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>Respirar es el acto más fundament…",
+      "real": "\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>Respirar es el acto más fundament…"
+    }
+  ]
+}

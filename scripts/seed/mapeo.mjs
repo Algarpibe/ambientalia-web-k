@@ -174,6 +174,27 @@ export function lexicalAInline(doc) {
 const esObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
 
 /**
+ * ¿Es este `array` un ENVOLTORIO TRANSPARENTE del dato medido? — o sea,
+ * `bullets: string[]` en vez de `[{texto}]`.
+ *
+ * ⚠ **Se exporta y se usa en TODAS partes, y eso no es comodidad: es la clase
+ * C7.** La regla se ha re-implementado tres veces en dos días y ha salido mal
+ * las tres, siempre con números plausibles:
+ *
+ *   1. el walker contaba `campo.fields.length`, que incluye el `id` que inyecta
+ *      `buildConfig` ⇒ la rama **no se ejecutaba nunca** (17 arrays del modelo);
+ *   2. la auditoría del sondeo copió la idea sin la corrección ⇒ **110
+ *      `required` sin dato que no existían**;
+ *   3. y la copió otra vez con `typeof x !== "object"` en vez de `esObj`, que
+ *      **es distinto para un array** ⇒ **43 más**, en `ul: MonoInline[][]`.
+ *
+ * Las tres eran la misma regla escrita tres veces. Ahora está escrita una.
+ */
+export function envoltorioTransparente(campo, valor) {
+  return camposPropios(campo.fields).length === 1 && Array.isArray(valor) && !esObj(valor[0]);
+}
+
+/**
  * Elige el bloque de una unión.
  *
  * Dos discriminantes, y los dos son del DATO MEDIDO, no invención:
@@ -184,7 +205,7 @@ const esObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
  * Si ninguno resuelve, **tira**: un bloque que no se sabe qué es no se puede
  * meter «por defecto» en el primero de la lista (regla 6).
  */
-function eligeBloque(bloques, item, ruta, ctx) {
+export function eligeBloque(bloques, item, ruta, ctx) {
   if (item?.kind) {
     const b = bloques.find((x) => x.slug === item.kind);
     /**
@@ -234,6 +255,23 @@ async function valorDe(campo, dato, ctx, aqui) {
 
   switch (campo.type) {
     case "upload":
+      /**
+       * ⚠ **`""` EN UN `upload` ES EL CENTINELA DE «NO HAY IMAGEN» DEL CLON, y
+       * es dato medido, no un hueco.** `products.ts` lo dice en su comentario:
+       * *«Medido: este panel NO trae imagen en el original. No es un hueco por
+       * llenar — es el dato»*. `Product.image` es `string` no opcional, así que
+       * la clave está SIEMPRE y la ausencia se codifica con la cadena vacía.
+       *
+       * En Payload la ausencia se expresa **no poniendo el campo**, así que ésta
+       * es una transformación de FORMA como las cuatro de la cabecera — y como
+       * ellas, tiene que ser **invertible**: se apunta la ruta en `ctx` para que
+       * la vuelta devuelva `""` y no una clave que falta. Sin la inversa, el
+       * round-trip fallaría por FORMA en cada producto sin foto.
+       *
+       * Lo cazó la guarda de `ctx.media`, que tira en vez de sustituir: un
+       * `?? null` habría subido una media vacía y nadie se habría enterado.
+       */
+      if (bruto === "") { ctx.centinelaVacio?.(aqui); return undefined; }
       return await ctx.media(bruto, aqui);
 
     case "relationship": {
@@ -267,7 +305,7 @@ async function valorDe(campo, dato, ctx, aqui) {
        * bloque de `esSintetico` arriba: con el `id` inyectado la longitud era 2
        * en los 17 arrays de un solo campo del modelo.
        */
-      if (hijos.length === 1 && !esObj(bruto[0])) {
+      if (envoltorioTransparente(campo, bruto)) {
         const h = hijos[0];
         return await Promise.all(
           bruto.map(async (v, i) => ({ [h.name]: await valorDe(h, { [h.name]: v }, ctx, `${aqui}[${i}]`) })),
@@ -334,6 +372,10 @@ export function aMedido(campos, doc, ctx, ruta = "") {
     /* `undefined` y `null` significan **ausente**, y ausente es como lo escribe
      * el dato medido cuando coincide con el defecto. No se emite la clave. */
     if (v !== undefined && v !== null) out[campo.name] = v;
+    /* …salvo donde el dato medido codifica la ausencia con un CENTINELA. La
+     * inversa de la ida, y **sólo en las rutas que la ida vio usarlo**: emitirlo
+     * en todas inventaría un `""` donde el original no tiene ni la clave. */
+    else if (campo.type === "upload" && ctx?.esCentinela?.(aqui)) out[campo.name] = "";
   }
   return out;
 }

@@ -65,6 +65,25 @@ export interface Product {
   /** data-id of the `<span>` tab in the original `#lista-soluciones` module. */
   id: string;
   name: string;
+  /**
+   * Cabecera SEO de la ficha del CPT `solutions`.
+   *
+   * ⚠ **Añadido el 2026-08-04, y llegaba tarde por una razón de capa que vale la
+   * pena decir.** El esquema del CMS declara `productos.seo.title` `required` y
+   * el sondeo de frontera midió que **no tenía dato en 9 de 9**. No era un
+   * descuido del catálogo: de los 9 productos, el clon **construyó 3** y para
+   * ésos el título vive en el `export const metadata` de su `page.tsx`, o sea
+   * **en la capa de ESTRUCTURA** — justo lo que la regla 2 de `CLAUDE.md` separa.
+   * Las 6 restantes sólo están referenciadas y no lo tenían en ninguna parte.
+   *
+   * El respaldo es medido, no supuesto: `npm run qa:solutions-seo` sobre las
+   * **24** URLs del `solutions-sitemap.xml` da `title` **24/24** y **no derivable
+   * del `h1`** (17 formas distintas de «título menos h1», 7 que ni lo contienen)
+   * ⇒ es CAMPO, y el `required` queda respaldado. `description` sale **22/24**,
+   * así que es opcional con su medida — `kunak-api` es una de las dos que no la
+   * tienen. Congelado en `medidas/solutions-seo.json`.
+   */
+  seo: SeoA;
   /** Subtitle shown under the tab label ("Monitor de calidad de aire…"). */
   tagline: string;
   description: string;

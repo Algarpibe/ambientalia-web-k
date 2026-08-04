@@ -85,7 +85,28 @@ export const BLOQUE_UL: Block = {
 export const BLOQUE_CLAIM: Block = {
   slug: "claim",
   labels: { singular: "Claim", plural: "Claims" },
-  fields: [{ name: "claim", type: "text", required: true }, nivel],
+  /**
+   * ⚠ **`claim` NO es `required`, y la razón está medida (2026-08-04).**
+   *
+   * Lo era, y el seed de los monográficos murió con un 400 —*«This field is
+   * required»*— sobre `cuerpo.0.filas.0.columnas.0.modulos.1.bloques.1.claim`.
+   * El dato medido trae **`{ claim: "" }`**: un claim VACÍO.
+   *
+   * Y no es un hueco por rellenar. `MonoCuerpo.tsx` lo pinta como
+   * `<Heading>` con un `<span>` vacío dentro, o sea **un encabezado que ocupa su
+   * interlínea**: es ritmo vertical del original, y en un proyecto que mide a
+   * píxel eso es contenido. El clon lo reproduce.
+   *
+   * O sea que lo que no tenía respaldo no era el dato: era el `required`. Es la
+   * misma regla que cerró `productos.seo.title` en la misma tanda —**se mide o
+   * cae**— aplicada en el sentido contrario, que es el que menos se ve: allí la
+   * medida SOSTUVO el `required` (24/24 en el original); aquí lo TUMBA.
+   *
+   * Lo derivó `npm run cms:sondeo`, que desde esta tanda distingue un `required`
+   * **sin dato** de uno **con valor vacío** — Payload los rechaza igual y sólo el
+   * primero se veía.
+   */
+  fields: [{ name: "claim", type: "text" }, nivel],
 };
 
 export const BLOQUE_TITULAR: Block = {

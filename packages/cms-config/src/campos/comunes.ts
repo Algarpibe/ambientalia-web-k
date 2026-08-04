@@ -448,14 +448,106 @@ export const ctaSlides: Field = {
   ],
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL TEASER — ⚠ DECIDIDO el 2026-08-04: **dato propio, NO relación.**
+ *
+ * ── Lo que decía antes, y por qué se cae ──────────────────────────────────
+ * Este fichero afirmaba: *«`posts` de `proyectos`/`articulos` son relaciones, no
+ * datos copiados: `CaseStudy` y `BlogPost` son proyecciones de teaser del
+ * documento relacionado»*. Nadie lo había medido. Medido, se cae por dos sitios
+ * independientes — y basta cualquiera de los dos.
+ *
+ * **1 · El destino no existe para casi ninguno.** `medidas/sondeo-frontera.json`:
+ * de los **34** teasers del dato medido, **31 apuntan a un documento que el clon
+ * no tiene** (24 slugs distintos). Es **el precedente DIRECTO de §2e `padre`**,
+ * que se resolvió igual y por lo mismo: *«`cartuchos-inteligentes` NO es una URL
+ * del CPT, así que 17 de 18 hijos apuntarían a un documento inexistente —
+ * relación pura no vale»*. Allí eran 17 de 18; aquí **31 de 34**.
+ *
+ * **2 · Y aunque existiera, el `date` no se deriva.** `medidas/cms-teaser.json`
+ * comparó los **3** pares en que el destino SÍ está transcrito, campo a campo, y
+ * el resultado es más estrecho de lo que nadie había escrito:
+ *
+ * | campo | veredicto |
+ * |---|---|
+ * | `title` · `client` · `sector` | **IDÉNTICO** — derivables |
+ * | `image` · `href` · `sectorHref` | **POR REGLA** — los explican M-IMG y el §4, ya decididos |
+ * | **`date`** | **DISTINTO** — `"Mar 25, 2026"` en el teaser, `"25 marzo 2026"` en el documento |
+ *
+ * O sea: **lo único que impide derivar el teaser es la fecha.** Y no lo decide
+ * el modelo, lo decide el **contrato de fidelidad** (`CLAUDE.md` §1: textos
+ * verbatim, erratas incluidas): `fechaPublicacion` es `string` *a propósito*.
+ * Derivar una renderización de la otra exige parsear y re-formatear, y
+ * re-formatear **normaliza en silencio cualquier errata del original** — que es
+ * exactamente de lo que «verbatim» protege. No es una transformación que falte:
+ * es una que el contrato prohíbe.
+ *
+ * ── ⚠ LA CONSECUENCIA, SIN TAPAR ──────────────────────────────────────────
+ *
+ *   > **El teaser NO se actualiza cuando cambia el documento destino.** Quien
+ *   > edite el título de un caso en el CMS tiene que editarlo **también** en las
+ *   > páginas de sector que lo muestran. Es un coste editorial real, recurrente,
+ *   > y va en la documentación de traspaso de F2-5 — no en una nota de código.
+ *
+ * Se elige aun así porque la alternativa no es «teaser vivo»: es **no poder
+ * sembrar 31 de 34** hasta que los 57 casos y las 149 entradas estén dentro, y
+ * aun entonces seguir sin poder reproducir la fecha.
+ *
+ * ── EL FALSADOR, que es ejecutable ────────────────────────────────────────
+ * `npm run qa:cms-teaser`. **Esta decisión se cae si `date` deja de salir
+ * DISTINTO**: o porque `fechaPublicacion` deje de guardarse verbatim, o porque
+ * un formateador reproduzca las dos renderizaciones **en todo el corpus**, no en
+ * una muestra. Mientras ese campo salga DISTINTO, guardar el teaser es lo único
+ * que conserva el dato.
+ *
+ * ⚠ Y la asimetría del alcance va dicha: **3 pares comparables de 34.** Un
+ * DISTINTO basta para falsar la derivación; un IDÉNTICO en 3 pares **no** prueba
+ * derivabilidad universal. Por eso el veredicto se apoya en el DISTINTO, que es
+ * el lado que sí concluye.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** `CaseStudy` — el teaser de caso, tal cual lo mide el clon. */
+const teaserCaso: Field = {
+  name: "posts",
+  type: "array",
+  admin: { description: "Teaser VERBATIM, no proyección: no se actualiza solo si cambia el caso (§F2-2 · TEASER)." },
+  fields: [
+    { name: "client", type: "text", required: true },
+    { name: "sector", type: "text", required: true },
+    { name: "sectorHref", type: "text" },
+    { name: "title", type: "text", required: true },
+    subida("image", { requerida: true }),
+    { name: "href", type: "text", required: true },
+  ],
+};
+
+/** `BlogPost` — el teaser de entrada. `date` es el campo que impide derivarlo. */
+const teaserEntrada: Field = {
+  name: "posts",
+  type: "array",
+  admin: { description: "Teaser VERBATIM, no proyección: no se actualiza solo si cambia la entrada (§F2-2 · TEASER)." },
+  fields: [
+    { name: "title", type: "text", required: true },
+    {
+      name: "date",
+      type: "text",
+      required: true,
+      admin: {
+        description:
+          'Fecha VERBATIM en la forma del teaser ("Mar 25, 2026"). El documento la escribe de otra ' +
+          'forma ("25 marzo 2026") y las dos son verbatim: no se derivan la una de la otra.',
+      },
+    },
+    subida("image", { requerida: true }),
+    { name: "href", type: "text", required: true },
+    { name: "excerpt", type: "textarea" },
+  ],
+};
+
 /**
  * La cola comercial que SECTOR y MONOGRÁFICO comparten byte a byte
  * (`CLAUDE.md` §Páginas clonadas: «comparten cabecera, banda de clientes,
  * breadcrumb, hero, slider, bloque K y pie — medido original contra original»).
- *
- * `posts` de `proyectos`/`articulos` son **relaciones**, no datos copiados:
- * `CaseStudy` y `BlogPost` son **proyecciones de teaser** del documento
- * relacionado (§2c.1), no campos de esta colección.
  */
 export const colaComercial: Field[] = [
   ctaSlides,
@@ -463,20 +555,12 @@ export const colaComercial: Field[] = [
   {
     name: "proyectos",
     type: "group",
-    fields: [
-      { name: "title", type: "text", required: true },
-      enlace("cta"),
-      { name: "posts", type: "relationship", relationTo: "casos", hasMany: true },
-    ],
+    fields: [{ name: "title", type: "text", required: true }, enlace("cta"), teaserCaso],
   },
   {
     name: "articulos",
     type: "group",
-    fields: [
-      { name: "title", type: "text", required: true },
-      enlace("cta"),
-      { name: "posts", type: "relationship", relationTo: "entradas-blog", hasMany: true },
-    ],
+    fields: [{ name: "title", type: "text", required: true }, enlace("cta"), teaserEntrada],
   },
   enlace("taxonomy"),
   subida("footerStripImage"),

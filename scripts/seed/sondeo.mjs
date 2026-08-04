@@ -35,7 +35,7 @@
  */
 import { CATALOGOS, TAXONOMIAS_DERIVADAS, cargaCatalogos } from "./catalogos.mjs";
 import { creaContexto, derivaTaxonomias, PREPARA, esSlug, RUTAS_EN_FRONTERA } from "./seed.mjs";
-import { aPayload, camposPropios } from "./mapeo.mjs";
+import { aPayload, camposPropios, eligeBloque, envoltorioTransparente } from "./mapeo.mjs";
 import { aristasDeConfig, verificaOrden, pintaCiclo, valoresDe } from "./grafo.mjs";
 import { Evaluadas, hoy, w } from "../qa/lib.mjs";
 
@@ -262,6 +262,8 @@ function requeridosDeConfig(campos, ruta = "", fuera = []) {
 }
 
 const requeridosSinDato = [];
+const requeridosVacios = [];
+const bloquesSinResolver = [];
 const visitadas = new Set();
 
 /**
@@ -276,6 +278,19 @@ function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
     if (c.required) {
       visitadas.add(`${col}·${aqui}`);
       if (v === undefined || v === null) { requeridosSinDato.push({ col, ruta: aqui }); continue; }
+      /**
+       * ⚠ **Y el caso que la primera versión no veía: `required` con `""`.**
+       * Payload rechaza la cadena vacía en un `required` exactamente igual que
+       * la ausencia —`This field is required`— pero el dato SÍ está, así que
+       * mirar sólo `undefined`/`null` lo deja pasar y el hueco reaparece como un
+       * 400 a mitad del seed. Que es justo el sitio del que esta sonda existe
+       * para sacarlo.
+       *
+       * Y no es lo mismo que la ausencia al leerlo: un `""` medido **es un
+       * valor** —el claim vacío de un monográfico se pinta— así que lo que está
+       * sin respaldo no es el dato, es el `required`.
+       */
+      if (v === "") { requeridosVacios.push({ col, ruta: aqui, slug: dato?.slug }); continue; }
     }
     if (c.type === "group") {
       if (v === undefined || v === null) { if (entraEnAusentes) exige(c.fields, {}, col, aqui, entraEnAusentes); }
@@ -301,14 +316,31 @@ function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
        * eso se escribe una vez y se cita, no se reinventa aquí.
        */
       const propios = camposPropios(c.fields);
-      const transparente = propios.length === 1 && v.some((x) => x === null || typeof x !== "object");
+      const transparente = envoltorioTransparente(c, v);
       for (const item of v)
         exige(c.fields, transparente ? { [propios[0].name]: item } : item, col, `${aqui}[]`, entraEnAusentes);
     }
     if (c.type === "blocks" && Array.isArray(v))
-      for (const item of v) {
-        const b = c.blocks?.find((x) => x.slug === item?.blockType || x.slug === item?.kind);
-        if (b) exige(b.fields, item, col, `${aqui}[${b.slug}]`, entraEnAusentes);
+      for (const [i, item] of v.entries()) {
+        /**
+         * ⚠ **UNA SOLA DEFINICIÓN DE «QUÉ BLOQUE ES ÉSTE», y aquí había DOS.**
+         *
+         * Esto decía `find(x => x.slug === item.blockType || x.slug === item.kind)`,
+         * o sea la mitad del discriminador: el dato medido tiene **dos** formas
+         * —`kind` en `MonoModulo` y **la clave presente** en `MonoBloqueTexto`
+         * (`{p} | {ul} | {claim}`)— y ésta sólo veía la primera. Un bloque
+         * discriminado por clave **no se resolvía y se saltaba entero**, así que
+         * su auditoría salía `(ninguno)` sin haber mirado.
+         *
+         * Lo delató un 400 del seed —`claim` required con `""` en un
+         * monográfico— que esta sonda existe para ver ANTES. Es la clase C7 del
+         * repo (dos definiciones de lo mismo) cometida dentro de la guarda, así
+         * que la resolución pasa a ser la del walker: `eligeBloque`, importada.
+         */
+        let b = null;
+        try { b = eligeBloque(c.blocks ?? [], item, `${col}.${aqui}[${i}]`); }
+        catch { bloquesSinResolver.push(`${col}.${aqui}[${i}]`); continue; }
+        exige(b.fields, item, col, `${aqui}[${b.slug}]`, entraEnAusentes);
       }
   }
 }
@@ -323,6 +355,16 @@ for (const c of CATALOGOS) {
   for (const fila of catalogos.get(c.coleccion))
     exige(cfg.fields, (PREPARA[c.coleccion] ?? ((x) => x))(fila), c.coleccion, "", SABOTAJE !== "grupo");
 }
+
+/* Un bloque que la sonda no supo resolver no se auditó, y eso NO puede pasar por
+ * «no había nada»: es la misma clase que el selector muerto, un nivel más abajo. */
+if (bloquesSinResolver.length)
+  grita(
+    `${bloquesSinResolver.length} BLOQUE(S) QUE LA AUDITORÍA NO SUPO RESOLVER`,
+    [...new Set(bloquesSinResolver)].slice(0, 8).map((b) => `     · ${b}`).join("\n") +
+      `\n   Sin resolverlos no se auditan sus campos, y su ausencia del informe se lee\n` +
+      `   como «no tienen huecos». Son las dos salidas iguales de siempre.`,
+  );
 
 const sinAuditar = [...esperadas].filter((e) => !visitadas.has(e)).sort();
 if (sinAuditar.length)
@@ -366,13 +408,15 @@ function valida(campos, dato, col, ruta = "") {
     if (c.type === "group") valida(c.fields, v, col, aqui);
     if (c.type === "array" && Array.isArray(v)) {
       const propios = camposPropios(c.fields);
-      const transparente = propios.length === 1 && v.some((x) => x === null || typeof x !== "object");
+      const transparente = envoltorioTransparente(c, v);
       for (const item of v) valida(c.fields, transparente ? { [propios[0].name]: item } : item, col, `${aqui}[]`);
     }
     if (c.type === "blocks" && Array.isArray(v))
-      for (const item of v) {
-        const b = c.blocks?.find((x) => x.slug === item?.blockType || x.slug === item?.kind);
-        if (b) valida(b.fields, item, col, `${aqui}[${b.slug}]`);
+      for (const [i, item] of v.entries()) {
+        /* Misma resolución que arriba y que el walker: una sola definición. */
+        let b = null;
+        try { b = eligeBloque(c.blocks ?? [], item, `${col}.${aqui}[${i}]`); } catch { continue; }
+        valida(b.fields, item, col, `${aqui}[${b.slug}]`);
       }
   }
 }
@@ -411,6 +455,16 @@ console.log(
 if (!Object.keys(agrup).length) console.log("   (ninguno)");
 for (const [k, n] of Object.entries(agrup)) console.log(`   ✗ ${k.padEnd(44)} en ${n} instancia(s)`);
 
+const agrupVacios = {};
+for (const r of requeridosVacios) {
+  const k = `${r.col} · ${r.ruta}`;
+  (agrupVacios[k] ??= new Set()).add(r.slug ?? "(sin slug)");
+}
+console.log(`\n  campos REQUIRED con valor VACÍO — Payload los rechaza igual que la ausencia:`);
+if (!Object.keys(agrupVacios).length) console.log("   (ninguno)");
+for (const [k, v] of Object.entries(agrupVacios))
+  console.log(`   ✗ ${k.padEnd(44)} en ${v.size} documento(s): ${[...v].join(", ").slice(0, 60)}`);
+
 /* ══════════════════════════════════════════════════════════════════════════
  * CONGELAR — regla 2: una conclusión citada en un doc tiene que tener su
  * fichero. Los tres informes del bloque 1 salieron de aquí y la única copia
@@ -444,6 +498,7 @@ const informe = {
     extra: visitadas.size - cubiertas.length,
     sinAuditar,
     sinDato: agrup,
+    vacios: Object.fromEntries(Object.entries(agrupVacios).map(([k, v]) => [k, [...v].sort()])),
   },
   validate: {
     rechazos,
