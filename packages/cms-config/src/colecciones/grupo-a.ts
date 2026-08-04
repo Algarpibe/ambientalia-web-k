@@ -14,7 +14,7 @@
  * px absolutos daría la respuesta **invertida** (`CLAUDE.md` §régimen).
  */
 import type { CollectionConfig, Field } from "payload";
-import { conDefecto, editorRico, imagenA, seoA } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
 import { MODULOS_COMPARTIDOS } from "../bloques/contenido.ts";
 
 /**
@@ -51,7 +51,8 @@ export const entradasBlog: CollectionConfig = {
      * `Inicio › Blog › título`. Medido en 7 instancias, 6 con y 1 sin.
      */
     { name: "recurso", type: "relationship", relationTo: "categorias-recursos" },
-    { name: "cuerpo", type: "richText", editor: editorRico, required: true },
+    // `CampoRico` = HTML del corpus ⇒ `campoHtml` (CMS-0e · §3.1d).
+    campoHtml("cuerpo", { requerido: true }),
     /**
      * «También te puede interesar». **83 de 149 lo llevan y no se sabe qué lo
      * decide** (A-SP1/A-SP2, sin causa identificada). Hasta que se sepa es un
@@ -83,7 +84,8 @@ export const terminosKunakpedia: CollectionConfig = {
      * defecto se escribe como ausencia y no como una copia del `h1`.
      */
     conDefecto({ name: "tituloMiga", type: "text" } as Field, null, "§2c.1 · 3 términos de 37"),
-    { name: "cuerpo", type: "richText", editor: editorRico, required: true },
+    // `CampoRico` = HTML del corpus ⇒ `campoHtml` (CMS-0e · §3.1d).
+    campoHtml("cuerpo", { requerido: true }),
   ],
 };
 
@@ -130,7 +132,8 @@ export const documentosCientificos: CollectionConfig = {
         { name: "label", type: "text", required: true },
       ],
     },
-    { name: "cuerpo", type: "richText", editor: editorRico, required: true },
+    // `CampoRico` = HTML del corpus ⇒ `campoHtml` (CMS-0e · §3.1d).
+    campoHtml("cuerpo", { requerido: true }),
   ],
 };
 

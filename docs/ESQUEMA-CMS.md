@@ -1182,7 +1182,123 @@ vehículo de los nodos tipados de §3.3»*. Y **T1 está implementado**: el nodo
 enlace lleva `variante: "texto" | "boton"` con defecto, que es lo que corta el
 acoplamiento con `<a class="et_pb_button">` en el 80 % del corpus.
 
-### ⚠ 3.1d · CMS-0e necesita DÓNDE aterrizar el HTML crudo, y un `richText` no es ese sitio (2026-08-03)
+### ✅ 3.1d · RESUELTA (2026-08-04, F2-1 bloque 3) — el corpus entra como HTML, y el sitio de aterrizaje ES el campo definitivo
+
+**La decisión no se tomó aquí: se APLICÓ.** CMS-0e está vigente y decidida desde
+el 2026-07-30; lo que faltaba era dónde aterriza. El punto de congelación
+tampoco era «la primera entrada importada», como decía el aviso de abajo: es **la
+migración inicial de esta tanda**, que es la que escribe las columnas. Por eso se
+resuelve antes de ella y no en F2-2.
+
+#### El discriminador no es criterio mío: es el TIPO MEDIDO
+
+Y estaba escrito en `types/kunak.ts` desde antes de traducir. La traducción del
+bloque 2 fue la que se desvió, no el modelo:
+
+| tipo medido | qué es | destino | evidencia |
+|---|---|---|---|
+| **`CampoRico = string`** | *«HTML del contrato del campo rico (§3.1)»* | **HTML crudo** | 209/209 censadas, 43 etiquetas |
+| **`CampoRicoEnLinea = string`** | *«restringido a marcado de línea: `strong`, `b`, `i`, `br`, `sub`, `sup`, `a`»* | **HTML crudo de línea** | §2b.1 (1) · C-SP9 |
+| **`MonoInline = string \| MonoTrozo[]`** | **no** es ninguno de los dos: la unión que §1.5 dejó en dos formas | **sigue Lexical** | §1.5c, 56 `<strong>` |
+
+Los dos primeros **son `string`, o sea HTML**. Así que la frontera de `CLAUDE.md`
+—*«a partir del contenedor de contenido […] un solo campo HTML, con un contrato
+de qué tiene que admitir»*— y CMS-0e piden **lo mismo**, y el modelo medido ya lo
+decía. `MonoInline` queda fuera porque **no hay importación que aterrizar**: es
+dato tipado que el clon transcribió a mano en `lib/monografico.ts`, no un blob de
+WordPress, y el alcance de CMS-0e es *«el cuerpo entra crudo»*.
+
+#### Las dos formas que §3.1d dejó abiertas: NINGUNA hace falta
+
+| forma abierta | por qué NO |
+|---|---|
+| campo hermano `cuerpoHtml` **temporal** | resolvía el aterrizaje a costa de **dos fuentes de verdad** y de un campo que retirar |
+| **staging fuera de Payload** | dejaba las entradas sin existir en el CMS, así que **las relaciones no se pueden crear** en el mismo paso |
+
+Las dos daban por hecho que el destino final es Lexical y el HTML un tránsito.
+**No lo es:** el tipo medido *ya* es `string`, así que **el campo definitivo y el
+sitio de aterrizaje son el mismo objeto**. Cae el compromiso entero.
+
+#### El acta campo a campo — los 12 campos ricos, con su veredicto
+
+| campo | era | es | por qué |
+|---|---|---|---|
+| `entradas-blog.cuerpo` · `terminos-kunakpedia.cuerpo` · `documentos-cientificos.cuerpo` | `editorRico` | **`campoHtml`** | `CampoRico` · 209 páginas del corpus |
+| `casos.necesidad` · `.solucion` · `.resultados` | `editorRico` | **`campoHtml`** | `CampoRico` · 57/57 |
+| `casos.detalles.parametros` | `editorRico` | **`campoHtml`** | `CampoRico` · trae `ul li sub b p`, y su trampa del `<ul>` dentro de `<p>` (§2b.1 · 2) |
+| `faqs.cuerpo` | `editorRico` | **`campoHtml`** | `CampoRico` · perfil `p ul li a span br sub` |
+| `productos.cuerpo[toggle].contenido` | `editorRico` | **`campoHtml`** | contenedor de contenido del CPT |
+| `casos.destacado` | `editorEnLinea` | **`htmlLinea`** | `CampoRicoEnLinea` · 49/57, `<strong>` y `<br>` |
+| **`productos.bullets[].texto`** | `editorNegrita` | **`htmlLinea`** | ⚠ **DEFECTO — ver abajo** |
+| `productos.cuerpo[blurb].texto` · `[slider].diapositivas[].texto` | `editorNegrita` | **`htmlLinea`** | corpus del CPT, **inventario sin censar** ⇒ va al campo que **no puede perder** |
+| **`MonoInline`** (`BLOQUE_P.p` · `BLOQUE_UL.ul[].texto`) | `editorNegrita` | **`editorNegrita`** | ✅ **se queda en Lexical** — dato tipado, no corpus |
+
+`editorEnLinea` **se borra**: se queda sin consumidores y una declaración muerta
+se pudre (regla 4 aplicada al esquema). `editorRico` **se queda**, y con su papel
+por fin nombrado: es la **primera** de las dos listas que §3 abre —*«lo que el
+editor permite escribir de aquí en adelante»*—, o sea el editor por defecto de la
+config para contenido **nuevo**. El corpus es la segunda lista y ya no pasa por
+él.
+
+#### ⚠ Y la evaluación campo a campo destapó un DEFECTO del bloque 2, que no daba error
+
+> **`productos.bullets[].texto` estaba en `editorNegrita` —Párrafo + Negrita y
+> nada más—, y el corpus trae `R<sup>2</sup> >0,8` y `1 μg/m<sup>3</sup>`.** El
+> campo **no podía expresar `<sup>`**, y el comentario justo encima declaraba las
+> fórmulas: *«Admiten marcado en LÍNEA […] que son fórmulas, no adorno»*.
+
+Es *documentado no es conectado* (regla 3) en su forma de esquema, y de las
+caras, porque **las dos comprobaciones que existían pasaban**:
+
+| comprobación | por qué no lo vio |
+|---|---|
+| `payload-types.ts` compila | los tipos se generan **desde** las colecciones: un editor demasiado pobre produce tipos perfectamente consistentes con él |
+| `qa:cms-campos` · 10/10 · 0 sin contraparte | compara **rutas de campo**, y la ruta `bullets.texto` no cambió. Lo dice su propia salida de hoy: `medidas/cms-campos.json` **idéntica a la congelada** tras el cambio |
+
+**El hueco que esto nombra, y queda abierto:** ninguna guarda mira el **TIPO de
+la hoja**, solo su nombre. Un campo puede estar presente, tener el nombre
+correcto y **no poder contener su dato medido**. Se ficha como **CMS-SP-TIPO** en
+§7 — no se cierra hoy, porque cerrarlo es una sonda nueva y esta tanda ya trae la
+suya.
+
+**La causa mecánica, para que no vuelva:** `inline()` se prestó fuera de
+`MonoInline`. Nombraba *«texto que puede llevar negrita»* y se usó para *«texto
+rico de línea»*, que son cosas distintas — siete etiquetas contra una. El
+comentario de `inline()` ahora lo dice como restricción, no como costumbre.
+
+#### El contrato, escrito como dato y no como prosa
+
+`ETIQUETAS_CENSADAS` en `campos/comunes.ts` lleva **las 43** del censo 209/209.
+Es lo que el campo tiene que **ADMITIR**; no es una whitelist que se imponga
+—`campo-rico.spec.md` lo dice de las ausentes (*«que no aparezcan no significa
+que el campo pueda prohibirlos»*) y vale igual del otro lado—.
+
+**La única prohibición es `<script>`, y tampoco es mía:** §3.3 la escribe como
+regla (*«`script` no entra»*) y **T4** la ejecuta al importar (*«ninguno
+sobrevive como script»* — 17 scripts a nodo-embed tipado (7) o a eliminación con
+sustitución (10)). Va como `validate` y no como comentario **por la regla 3**: si
+T4 falla o se olvida, el alta tiene que **caer**, no colarse.
+
+#### Lo que esto desbloquea de rebote
+
+**§3.1c deja de bloquear.** Los tres huecos de `richtext-lexical@3.87.0` —`table`
+(35 páginas), `mark`, `small`— eran del editor del **corpus**, y el corpus ya no
+pasa por el editor. **§3.4** (¿la tabla es nodo de Lexical o block?) sigue
+ABIERTA como decisión de producto, pero **ya no es precondición de importar**.
+
+#### La verificación, con sus dos pasos separados
+
+| paso | resultado |
+|---|---|
+| **frescura** — ¿es el esquema de ahora? | `payload-types.ts` regenerado: **−195 / +52 líneas**. Los blobs de Lexical colapsan a `string` |
+| **efecto** — ¿el número se movió? | `necesidad: string` · `cuerpo: string` · `destacado?: string \| null` · `bullets[].texto: string`. **El tipo generado por Payload es ahora literalmente el tipo medido** |
+| `qa:cms-campos` | ✅ 10/10 tipos · 0 sin contraparte · 0 problemas |
+| `qa:cms-campos-neg` | ✅ **5/5**, cada sabotaje por su invariante |
+| `typecheck` de `@kunak/cms-config` | ✅ exit 0 |
+
+---
+
+### ~~⚠ 3.1d · el enunciado original (2026-08-03), conservado~~
 
 CMS-0e decidió: *«el cuerpo entra como **HTML crudo** y se convierte por entrada,
 no de golpe al importar»*. La traducción a Payload deja ver que esa frase
@@ -1206,6 +1322,11 @@ empiece de cero:
 
 ⚠ Lo que **no** vale es dejarlo sin decidir y empezar a importar: la primera
 entrada importada fija la respuesta de facto.
+
+> ✅ **Resuelto arriba. Y el aviso de esta última línea se quedó corto**: el
+> punto de congelación **no es la primera entrada importada, es la primera
+> MIGRACIÓN** — es la que escribe las columnas, y va antes que cualquier entrada.
+> Por eso §3.1d se cerró en F2-1 y no en F2-2.
 
 ### 3.2 · TRANSFORMACIONES DE MIGRACIÓN
 
@@ -1756,8 +1877,9 @@ corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 | # | decisión | bloquea |
 |---|---|---|
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
-| §3.4 | tabla: nodo de Lexical vs block | whitelist |
+| §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
+| **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos` | nada hoy; es deuda de **instrumento**, y la paga la tanda que escriba la sonda |
 
 **Y una condición escrita, que no es decisión abierta pero se cobra igual:** el
 **recuento** de CMS-0e (16 · 3 · 5) es **provisional** hasta rehacerlo con
@@ -1783,9 +1905,17 @@ compartido, §CMS-0f) — **la última decisión de infraestructura que quedaba*
 1 y opcional). Con ella **el cubo C de la precondición 1 queda vacío y F2-1 puede
 congelar el esquema**.
 
-De las **dos** que quedan, **ninguna bloquea nada de F2-1**: una es de contenido
-(cómo se modela la tabla) y otra de política (qué hosts de embebido se admiten).
-**El camino está despejado en los dos ejes**, infraestructura y modelado.
+**Cerrada el 2026-08-04: §3.1d** (el corpus entra como **HTML crudo**; el campo
+definitivo y el sitio de aterrizaje son el mismo, porque el tipo medido ya era
+`string`). Con ella **CMS-0e queda aplicada, no solo decidida**, y §3.1c deja de
+bloquear: `table`/`mark`/`small` eran del editor del corpus.
+
+De las **dos** que quedan de modelado, **ninguna bloquea nada de F2-1**: una es
+de contenido (cómo se modela la tabla) y otra de política (qué hosts de embebido
+se admiten). **El camino está despejado en los dos ejes**, infraestructura y
+modelado. La tercera fila nueva —**CMS-SP-TIPO**— no es de modelado sino de
+**instrumento**, y tampoco bloquea: nombra un hueco de comprobación que hasta
+hoy no se podía ni enunciar.
 
 ⚠ **Y dos cosas que el censo de embebidos cambió, no añadió:** el nodo-embed pasa
 a llevar **URL en vez de `enum` de proveedor** (§3.3b: 18 hosts, 12 de ellos una

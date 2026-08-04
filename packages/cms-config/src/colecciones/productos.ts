@@ -12,11 +12,10 @@
  * §1.5b reserva para `sectores`/`monograficos`.
  */
 import type { Block, CollectionConfig, Field } from "payload";
-import { conDefecto, editorRico, seo, subida } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, htmlLinea, seo, subida } from "../campos/comunes.ts";
 import {
   CAMPOS_CTA_DESCARGA,
   MODULOS_COMPARTIDOS,
-  inline,
 } from "../bloques/contenido.ts";
 
 /* ── Los kinds que el CPT estrena sobre los compartidos ──────────────────── */
@@ -26,17 +25,28 @@ const TOGGLE: Block = {
   labels: { singular: "Desplegable", plural: "Desplegables" },
   fields: [
     { name: "titulo", type: "text", required: true },
-    { name: "contenido", type: "richText", editor: editorRico },
+    // Contenedor de contenido del CPT ⇒ HTML crudo, igual que los cuerpos.
+    campoHtml("contenido"),
     { name: "abiertoPorDefecto", type: "checkbox" },
   ],
 };
 
+/**
+ * ⚠ **`texto` pasa de `inline()` a `htmlLinea` y NO es un cambio cosmético.**
+ * `inline()` es `editorNegrita` —Párrafo + Negrita y nada más— y estos kinds no
+ * son `MonoInline`: son módulos del **corpus** del CPT `solutions`. Su
+ * inventario **no está censado** (§2e los deja como composición del cuerpo, y
+ * `cms-campos` los declara fuera de alcance), así que por la regla de la casa
+ * *lo SIN PROBAR no se cablea*: entre un campo que **no puede perder** contenido
+ * (HTML) y uno que sí (negrita sola), el que no está probado va al primero.
+ * La primera instancia censada que solo lleve negrita puede devolverlo.
+ */
 const BLURB: Block = {
   slug: "blurb",
   labels: { singular: "Blurb", plural: "Blurbs" },
   fields: [
     { name: "titulo", type: "text" },
-    inline("texto"),
+    htmlLinea("texto"),
     subida("icono"),
   ],
 };
@@ -50,7 +60,8 @@ const SLIDER: Block = {
       type: "array",
       fields: [
         { name: "heading", type: "text" },
-        inline("texto"),
+        // Mismo caso que `BLURB.texto` — ver la nota de arriba.
+        htmlLinea("texto"),
         subida("image"),
         {
           name: "cta",
@@ -222,8 +233,20 @@ export const productos: CollectionConfig = {
     /**
      * **Admiten marcado en LÍNEA**: los cartuchos traen `R<sup>2</sup> >0,8` y
      * `1 μg/m<sup>3</sup>`, que son fórmulas, no adorno.
+     *
+     * ⚠ **DEFECTO DEL BLOQUE 2, cazado por la evaluación campo a campo del
+     * §3.1d — y no daba error.** Esto era `inline("texto", true)`, o sea
+     * `editorNegrita`, que es **Párrafo + Negrita y nada más**: un editor que
+     * **no puede expresar `<sup>`**. El comentario de al lado declaraba las
+     * fórmulas y el campo no las admitía — *documentado no es conectado*
+     * (`CLAUDE.md` §sondas regla 3) en su forma de esquema, y de las caras:
+     * `payload-types.ts` compilaba igual y `qa:cms-campos` también pasaba,
+     * porque **ninguno de los dos mira el TIPO de la hoja, solo su ruta**.
+     *
+     * El tipo medido lo decía desde el principio: `Product.bullets: string[]`,
+     * *«se pintan como HTML»*. Es `CampoRicoEnLinea` sin llamarse así.
      */
-    { name: "bullets", type: "array", fields: [inline("texto", true)] },
+    { name: "bullets", type: "array", fields: [htmlLinea("texto", { requerido: true })] },
     subida("image"),
 
     /**

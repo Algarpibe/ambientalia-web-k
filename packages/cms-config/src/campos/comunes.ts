@@ -125,11 +125,16 @@ export const BLOQUE_VIDEO: Block = {
 };
 
 /**
- * El editor del cuerpo. **`table` y `mark`/`small` NO están** — no porque se
- * decidiera excluirlos, sino porque `richtext-lexical@3.87.0` no trae feature
- * para ellos. La diferencia importa y por eso está escrita en §3.1c: una
- * ausencia por decisión y una por inexistencia se leen igual en el código y no
- * significan lo mismo.
+ * **La PRIMERA de las dos listas del §3: lo que se puede escribir de aquí en
+ * adelante.** Es el editor por defecto de la config (`payload.config.ts`), o sea
+ * el que gobierna cualquier campo rico **nuevo** — no el corpus, que entra por
+ * `campoHtml` (§3.1d, abajo).
+ *
+ * ⚠ Y esa separación es justo lo que hace inofensivos los tres huecos del
+ * §3.1c: **`table` y `mark`/`small` NO están** —no por decisión, sino porque
+ * `richtext-lexical@3.87.0` no trae feature para ellos—, y las **35 páginas con
+ * tabla** del corpus ya no dependen de que existan: entran como HTML. §3.4
+ * (¿nodo o block?) sigue abierta, pero **deja de bloquear la importación**.
  */
 export const editorRico: EditorLexical = lexicalEditor({
   features: () => [
@@ -174,21 +179,125 @@ export const editorRico: EditorLexical = lexicalEditor({
   ],
 });
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CORPUS IMPORTADO — HTML CRUDO, que es donde CMS-0e aterriza (§3.1d)
+ *
+ * §3.1d dejó escrito el problema: *«un campo `richText` de Payload guarda JSON
+ * de Lexical, no HTML, así que el importador no tiene dónde dejar el HTML crudo
+ * mientras espera su conversión»*. Y avisaba de que **no se puede empezar a
+ * importar sin resolverlo**, porque la primera entrada fija la respuesta de
+ * facto. Se resuelve aquí, ANTES de la primera migración — que es el punto de
+ * congelación real, no la primera entrada.
+ *
+ * ── El discriminador NO es mi criterio: es el TIPO MEDIDO ──────────────────
+ * `types/kunak.ts` ya lo había decidido y nadie lo leyó al traducir:
+ *
+ *   · `CampoRico = string` y `CampoRicoEnLinea = string` → **son HTML**. Todo
+ *     campo cuyo tipo medido sea uno de estos entra por aquí.
+ *   · `MonoInline = string | MonoTrozo[]` → **no** es ninguno de los dos: es la
+ *     unión que §1.5 dejó en dos formas y §1.5c resolvió por la rama rica. Sigue
+ *     en Lexical (`editorNegrita`), y por eso `inline()` no desaparece.
+ *
+ * Así que la frontera de `CLAUDE.md` —*«a partir del contenedor de contenido el
+ * contenido lleva su propia estructura dentro y se declara RICO: un solo campo
+ * HTML, con un contrato de qué tiene que admitir»*— y CMS-0e piden lo mismo, y
+ * el modelo medido ya lo decía. La traducción del bloque 2 fue la que se desvió.
+ *
+ * ── Y las DOS listas del §3, que no son la misma ───────────────────────────
+ * §3 abre diciendo: *«lo que el editor permite escribir de aquí en adelante, y
+ * lo que hay que hacerle al corpus al importarlo»*. `editorRico` es la primera
+ * —sigue siendo el editor por defecto de la config, para contenido NUEVO—; esto
+ * es la segunda.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
 /**
- * Campo rico restringido a marcado de LÍNEA (`strong`, `b`, `i`, `br`, `sub`,
- * `sup`, `a`). Sin bloques: es lo que pide `CampoRicoEnLinea` de
- * `types/kunak.ts` y lo que §2b.1 (1) midió en `destacado`.
+ * El contrato del §3.1, escrito como dato y no como prosa: **las 43 etiquetas
+ * censadas en 209/209** (`arquetipo-A/components/campo-rico.spec.md` §1).
+ *
+ * ⚠ Es lo que el campo tiene que **ADMITIR**, no una whitelist que se imponga:
+ * el spec lo dice de las ausentes —*«que no aparezcan no significa que el campo
+ * pueda prohibirlos»*— y vale igual del otro lado. Aquí vive para que «texto
+ * rico» no sea la excusa de no haber mirado; la única prohibición está abajo.
  */
-export const editorEnLinea: EditorLexical = lexicalEditor({
-  features: () => [
-    ParagraphFeature(),
-    BoldFeature(),
-    ItalicFeature(),
-    SubscriptFeature(),
-    SuperscriptFeature(),
-    LinkFeature({}),
-  ],
-});
+export const ETIQUETAS_CENSADAS = [
+  "p", "span", "a", "div", "br", "h2", "sub", "strong", "li", "ul", "img",
+  "h3", "em", "blockquote", "iframe", "b", "h4", "sup", "i", "table", "tbody",
+  "tr", "td", "thead", "th", "ol", "script", "figure", "video", "source",
+  "figcaption", "hr", "u", "section", "h1", "h5", "embed", "style", "center",
+  "small", "noscript", "mark", "tfoot",
+] as const;
+
+/**
+ * Lo ÚNICO que el contrato prohíbe, y no es cosa mía: §3.3 lo escribe como
+ * regla —*«`script` no entra. En un CMS propio, script arbitrario dentro del
+ * contenido no debe existir»*— y **T4** lo ejecuta al importar (*«ninguno
+ * sobrevive como script»*; los 17 acaban en nodo-embed tipado (7) o en
+ * eliminación documentada con sustitución (10)).
+ *
+ * Está como `validate` y no como comentario por la regla 3 (*documentado no es
+ * conectado*): si T4 falla o se olvida, el alta tiene que **caer**, no colarse.
+ * Es también la regla 6 — una ausencia de transformación se rechaza, no se
+ * traduce a un valor benigno.
+ */
+const SIN_SCRIPT = /<\s*script\b/i;
+
+/**
+ * Campo de HTML crudo del corpus. `code` con `language: "html"` — el editor de
+ * admin es un editor de código, que es exactamente lo que hay que enseñarle a
+ * quien vaya a convertir una entrada: **el HTML es la fuente de verdad hasta
+ * que esa entrada esté dada por buena** (CMS-0e).
+ *
+ * ⚠ **No es un campo de staging temporal.** Las dos formas que §3.1d dejó
+ * abiertas —campo hermano `cuerpoHtml` que hay que retirar, o staging fuera de
+ * Payload— resolvían el aterrizaje **a costa de** dos fuentes de verdad o de no
+ * poder crear las relaciones. Ninguna hace falta: el tipo medido **ya es**
+ * `string`, así que el campo definitivo y el sitio de aterrizaje son el mismo.
+ */
+export function campoHtml(name: string, { requerido = false } = {}): Field {
+  return {
+    name,
+    type: "code",
+    required: requerido,
+    admin: {
+      language: "html",
+      description:
+        "HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. " +
+        "Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.",
+    },
+    validate: (valor: unknown) => {
+      if (typeof valor === "string" && SIN_SCRIPT.test(valor))
+        return "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).";
+      return true;
+    },
+  } as Field;
+}
+
+/**
+ * Lo mismo, para el rico **de LÍNEA** — `CampoRicoEnLinea` de `types/kunak.ts`:
+ * *«restringido a marcado de línea (`strong`, `b`, `i`, `br`, `sub`, `sup`,
+ * `a`); sin bloques: no lleva `<p>` propio»*.
+ *
+ * Es el mismo `string` y el mismo contrato, así que **es el mismo mecanismo**;
+ * lo que cambia es el inventario que se le exige, y por eso se separa: un campo
+ * de línea con un `<h2>` dentro es un defecto de importación, no contenido.
+ */
+export function htmlLinea(name: string, { requerido = false } = {}): Field {
+  return {
+    name,
+    type: "code",
+    required: requerido,
+    admin: {
+      language: "html",
+      description:
+        "HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.",
+    },
+    validate: (valor: unknown) => {
+      if (typeof valor === "string" && SIN_SCRIPT.test(valor))
+        return "§3.3 · T4: `<script>` no entra en el contenido.";
+      return true;
+    },
+  } as Field;
+}
 
 /**
  * `MonoInline` — §1.5 lo deja en dos formas admisibles: *«texto rico acotado a
@@ -197,6 +306,14 @@ export const editorEnLinea: EditorLexical = lexicalEditor({
  * un array de trozos obliga al editor a partir la frase a mano para poner una
  * negrita. La elección queda registrada en §1.5c — no es libre, es una de las
  * dos que el esquema ya autorizaba.
+ *
+ * ⚠ **Y ES EL ÚNICO SUPERVIVIENTE de la tanda de §3.1d, con su porqué.** Todo
+ * lo demás que era Lexical pasó a HTML crudo porque su tipo medido es
+ * `CampoRico`/`CampoRicoEnLinea`, o sea **HTML importado del corpus**.
+ * `MonoInline` no: es `string | MonoTrozo[]`, **dato tipado que el clon
+ * transcribió a mano** en `lib/monografico.ts`, no un blob de WordPress. No hay
+ * importación que aterrizar, así que CMS-0e no lo alcanza — su alcance es *«el
+ * cuerpo entra crudo»*, y esto no es un cuerpo.
  */
 export const editorNegrita: EditorLexical = lexicalEditor({
   features: () => [ParagraphFeature(), BoldFeature()],

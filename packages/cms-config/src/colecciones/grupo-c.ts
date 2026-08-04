@@ -14,7 +14,7 @@
  * y el singular/plural de `Sector(es):`, que se deriva del número de términos.
  */
 import type { CollectionConfig } from "payload";
-import { conDefecto, editorEnLinea, editorRico, seo, subida } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, htmlLinea, seo, subida } from "../campos/comunes.ts";
 import type { Field } from "payload";
 
 /**
@@ -87,10 +87,11 @@ export const casos: CollectionConfig = {
       hasMany: true,
     },
 
-    // Los tres bloques, obligatorios los tres (57/57). Contrato del §3.1.
-    { name: "necesidad", type: "richText", editor: editorRico, required: true },
-    { name: "solucion", type: "richText", editor: editorRico, required: true },
-    { name: "resultados", type: "richText", editor: editorRico, required: true },
+    // Los tres bloques, obligatorios los tres (57/57). Contrato del §3.1, y
+    // `CampoRico` ⇒ HTML del corpus, no Lexical (§3.1d).
+    campoHtml("necesidad", { requerido: true }),
+    campoHtml("solucion", { requerido: true }),
+    campoHtml("resultados", { requerido: true }),
 
     /**
      * 49/57. **Rico en LÍNEA** — C-SP9 la cerró C-3: lleva `<strong>` y `<br>`,
@@ -98,7 +99,7 @@ export const casos: CollectionConfig = {
      * resuelto por medición. Se renderiza como último hijo del contenedor de
      * `necesidad`, que es donde lo pone el original.
      */
-    { name: "destacado", type: "richText", editor: editorEnLinea },
+    htmlLinea("destacado"),
     /**
      * 48/57; 3–15 imágenes, mediana 7. El carrusel es plantilla.
      *
@@ -134,7 +135,7 @@ export const casos: CollectionConfig = {
          * la lista queda de hermana, y un extractor ingenuo devuelve el campo
          * **vacío**. El importador recompone hasta el siguiente rótulo.
          */
-        { name: "parametros", type: "richText", editor: editorRico },
+        campoHtml("parametros"),
         // `cliente` y `sectores` NO están aquí: se PROYECTAN de los de arriba
         // (igualdad 57/57 y 53/53; ausencia conjunta 4/4).
       ],
@@ -178,6 +179,6 @@ export const faqs: CollectionConfig = {
     seo({ description: false, ogImage: false }),
     { name: "titulo", type: "text", required: true },
     // 151–539 caracteres. Perfil medido `p ul li a span br sub` — §3.1 entero.
-    { name: "cuerpo", type: "richText", editor: editorRico, required: true },
+    campoHtml("cuerpo", { requerido: true }),
   ],
 };

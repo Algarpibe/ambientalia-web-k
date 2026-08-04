@@ -39,6 +39,14 @@ export const nivel: Field = conDefecto(
  * No es cosmética: la negrita es más ancha, así que **cambia dónde envuelve**.
  * Sin ella un `li` de Petróleo S1F3 salía a 3 renglones donde el original va a
  * 4 — **−30.59 a 390**, y a 1440 no se notaba nada.
+ *
+ * ⚠ **SOLO para `MonoInline`, y desde §3.1d es una restricción, no una
+ * costumbre.** `editorNegrita` es Párrafo + Negrita y nada más, así que **no
+ * puede expresar `sub`/`sup`/`a`**. Eso es correcto **aquí** —`MonoInline` es
+ * dato tipado del clon y su inventario está medido en 56 `<strong>`— y es un
+ * defecto en cualquier campo cuyo tipo medido sea `CampoRicoEnLinea`, que es
+ * HTML y admite siete etiquetas. Prestarlo fuera de `MonoInline` fue justo lo
+ * que escondió el `<sup>` de `productos.bullets`. Para esos: `htmlLinea`.
  */
 export function inline(name: string, required = false): Field {
   return { name, type: "richText", editor: editorNegrita, required };
