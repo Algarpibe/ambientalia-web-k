@@ -5228,3 +5228,114 @@ están puestos en la sonda), igual que `data-fila` cerró el nivel de fila para
   1 columna / 1 módulo al valor por defecto. **No es un cero de instrumento**: el
   mismo código, en la misma pasada, devolvió 7 secciones en SECTOR y 8 en el
   control.
+
+---
+
+## ✅ CAMPAÑA `cqa6-390` · CERRADA (2026-08-04) — y el −30 se DISUELVE, no se convierte en defecto
+
+**Ráfaga 3**, `medidas/campana/cqa6-390/rafaga-2026-08-04T06-44-12.json`,
+`✓ evaluadas 18/18 cargas`. La sonda imprime el veredicto ella sola:
+
+```
+═══ CAMPAÑA «cqa6-390» — 3 ráfaga(s), 2 día(s)
+  requisitos: ≥3 ráfagas (3) · ≥2 días (2) · separadas ≥2h (3)
+  ✅ CAMPAÑA COMPLETA: el suelo de arriba ya se puede citar, con su fecha.
+```
+
+| combinación | `h1` (máx entre ráfagas) | posicional |
+|---|---|---|
+| `software`@1440 · EDAR@1440 · petróleo@1440 | **0** | 0 · 27 · 27 |
+| `software`@390 · EDAR@390 · petróleo@390 | **0** | 0 · 54 · 27 |
+
+El posicional (27 · 54) es la familia **conocida** de renglones de «Artículos y
+Guías». **La base dio 0 en las 6.**
+
+### ⚠ Pero el criterio pre-registrado NO se aplica, porque su premisa es FALSA
+
+El criterio escrito el 2026-08-03 (§«El −30 de EDAR@390, tras esto») decía:
+
+> *«Si esas dos cierran sin ver el ±30, el balance de evidencia queda: **un ±30
+> observado una vez, sin fichero**, no reproducido en 180 cargas ni en 3
+> episodios separados […] será suficiente para […] pasarlo a defecto con su
+> ficha.»*
+
+**«Sin fichero» es falso.** El ±30 a 390 está en `medidas/`, congelado y
+**commiteado**, en dos rutas y por otra sonda — `c-cabecera`, que es justo la que
+mide la base en crudo:
+
+| ruta @390 | estado A | estado B | **Δ** | ficheros (los dos en git) |
+|---|---|---|---|---|
+| `/software-de-medicion-calidad-del-aire` | 308.58 | **338.58** | **30.00** | `c-cabecera-390-2026-07-31.json` ↔ `c-cabecera-390.json` (`82142e2`) |
+| `/sectores/…-en-edar` | 189.39 | **219.39** | **30.00** | `c-cabecera-390.json` ↔ `c-cabecera-390-2026-08-01.json` (`cf253e9`) |
+
+**Y el lado del clon, que es lo que lo cierra: no se movió.** EDAR da `clon
+189.39` en las dos corridas, la del Δ0 y la del −30. El único valor que cambia
+entre las dos es el del **original**.
+
+### La adjudicación, y es la del −15.72 otra vez
+
+> **El −30 de EDAR@390 nunca fue un defecto del clon: es el ORIGINAL en su
+> segundo estado.** A 390 el original es **bimodal con Δ = 30 exactos**, igual
+> que a 1440 lo es con Δ = 32.28. El clon está cableado a **un** valor, así que
+> su lectura correcta es **Δ0 contra el estado dominante y −30 contra el raro** —
+> la condición que `CLAUDE.md` ya describe para 1440, reproducida a 390.
+
+Es literalmente el mecanismo que disolvió el −15.72: *«el −15.72 y el −48 nunca
+fueron dos candidatos a objetivo: eran EL MISMO defecto medido contra los dos
+estados»*. Aquí, **el Δ0 y el −30 son la misma medida contra los dos estados**, y
+**la diferencia entre los dos «defectos» ES el suelo**.
+
+**Consecuencia sobre la ficha de §C5:** el −30 sale de **SIN PROBAR** y **no
+entra en defecto**. Queda como **estado del original**, con la regla de lectura
+de los suelos bimodales: un **+30** en una corrida futura de EDAR@390 **no es una
+regresión**, es el otro pico. Y **cualquier otro valor sí es defecto**, incluidos
+los menores de 30 — un suelo bimodal DISCRIMINA, no acota.
+
+### Lo que la campaña sí compró, dicho con precisión
+
+No fue el número: fue **poder mirar**. Las 3 ráfagas dieron `h1` 0 en las 6
+combinaciones, o sea que **dentro de la campaña el original se quedó en el estado
+dominante las 9 cargas @390**. Eso, con las 180 de `estados-390`, mantiene la
+**cota** de antes —el estado raro es **poco frecuente**, no inexistente— y ahora
+además está **exhibido**, que era lo único que faltaba.
+
+> **Y el eje que cerró no es el que se creía.** La campaña se pagó por el eje de
+> los **días**; lo que dirimió la pregunta fue **el archivo**. Ver la lección de
+> abajo.
+
+### ⚠ LA LECCIÓN, y es de método: `medidas/` ES UNA MUESTRA DEL ORIGINAL Y NADIE LA CONSULTÓ
+
+La regla 7 ya dice que `medidas/` es *«la prueba, no un caché»*. Le faltaba la
+vuelta, que es la que costó una campaña de dos días:
+
+> **Toda medida congelada de un PAR contiene una muestra del original en esa
+> ruta y ese ancho.** O sea que el suelo de ruido **no vive solo en los ficheros
+> de la campaña de ruido**: vive en las 324 congeladas. Preguntar «¿cuántos
+> estados ha tenido esta ruta?» es un `grep` sobre lo que ya está en git, y
+> **nadie lo hizo** — ni al declarar el −30 SIN PROBAR, ni al escribir el
+> criterio pre-registrado que afirmaba «sin fichero».
+
+Las dos mitades operativas:
+
+1. **Antes de abrir una campaña de ruido para una ruta, se barre el archivo de
+   esa ruta y ese ancho.** Es gratis, está commiteado, y aquí tenía **las dos
+   respuestas**.
+2. **Un criterio pre-registrado también se audita contra la salida servida.** El
+   de §«tras esto» afirmaba un hecho negativo —*«sin fichero»*— que **no se
+   comprobó al escribirlo**. Pre-registrar protege de decidir por cansancio; **no
+   protege de partir de una premisa falsa**, y una premisa falsa dentro de un
+   pre-registro es peor que fuera, porque llega blindada contra la revisión.
+
+**Lo que habría costado no mirar:** el criterio habría convertido un **no-defecto
+en «defecto con su ficha»**, y la tanda siguiente habría salido a cazar en el
+clon un bug que no existe — con el agravante de que el clon **ya está a Δ0 contra
+el estado dominante**, así que «arreglarlo» habría sido moverlo al estado raro.
+Eso es exactamente una **FAMILIA DE CALIBRACIÓN** fabricada a mano.
+
+### Y el ±30 de la ráfaga A queda corroborado, sin necesitar su fichero
+
+La ráfaga A del 2026-07-30 midió `±30` en las tres rutas @390 y **su fichero se
+borró a mano** (§regla 5). Hoy ese número **está respaldado por otras dos
+congeladas que sí existen**, y en dos rutas. No lo rehabilita —sigue sin poder
+exhibirse— pero **deja de ser el único apoyo de nada**: la pregunta que abrió ya
+está contestada por evidencia que nunca se borró.
