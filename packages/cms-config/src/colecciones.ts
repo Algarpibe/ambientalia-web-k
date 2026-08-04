@@ -28,6 +28,7 @@ import {
   etiquetas,
 } from "./colecciones/taxonomias.ts";
 import { media } from "./colecciones/media.ts";
+import { slugs } from "./colecciones/slugs.ts";
 import { usuarios } from "./colecciones/usuarios.ts";
 
 export const COLECCIONES: CollectionConfig[] = [
@@ -54,6 +55,9 @@ export const COLECCIONES: CollectionConfig[] = [
   // Media (CMS-0b)
   media,
   // Infraestructura — sin lado medido, y la comprobación lo dice
+  // `slugs` es el registro del plano de /es/ (§4): no es contenido, es la
+  // unicidad ENTRE familias hecha objeto. La escriben los hooks.
+  slugs,
   usuarios,
 ];
 
@@ -71,6 +75,7 @@ export {
   monograficos,
   productos,
   sectores,
+  slugs,
   taxonomiaSectores,
   terminosKunakpedia,
   usuarios,

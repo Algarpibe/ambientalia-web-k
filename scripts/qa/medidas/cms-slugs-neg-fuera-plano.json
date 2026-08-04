@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": "fuera-plano"
+  },
+  "alcance": "plano de UN segmento de /es/ — entradas-blog · terminos-kunakpedia · productos SIN padre. Las prefijadas (casos, faqs, sectores, monograficos, documentos-cientificos, taxonomías) tienen unicidad nativa de colección y NO entran. Mismo alcance que `qa:slugs`.",
+  "pasos": [
+    {
+      "paso": "1 · alta legítima ⇒ entra y se registra",
+      "esperado": "1 registro",
+      "obtenido": "1 · familia=entradas-blog",
+      "ok": true
+    },
+    {
+      "paso": "2 · MISMO slug, otra familia ⇒ el alta CAE",
+      "esperado": "cae",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-40224-accesorios» ya está en el plano",
+      "ok": true
+    },
+    {
+      "paso": "3 · slug distinto ⇒ pasa en limpio",
+      "esperado": "pasa",
+      "obtenido": "pasó",
+      "ok": true
+    },
+    {
+      "paso": "4 · producto CON `padre` repite slug ⇒ PASA (fuera del plano)",
+      "esperado": "pasa",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-40224-accesorios» ya está en el plano",
+      "ok": false
+    },
+    {
+      "paso": "5 · borrar ⇒ suelta el slug y se puede reusar",
+      "esperado": "pasa",
+      "obtenido": "pasó",
+      "ok": true
+    }
+  ]
+}

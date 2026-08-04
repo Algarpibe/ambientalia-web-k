@@ -16,6 +16,7 @@
 import type { CollectionConfig, Field } from "payload";
 import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
 import { MODULOS_COMPARTIDOS } from "../bloques/contenido.ts";
+import { registroDeSlug } from "../hooks/registro-slug.ts";
 
 /**
  * El «contrato de nacimiento» de LH-2 D3 — lo caro de re-migrar si falta.
@@ -26,6 +27,8 @@ import { MODULOS_COMPARTIDOS } from "../bloques/contenido.ts";
 export const entradasBlog: CollectionConfig = {
   slug: "entradas-blog",
   admin: { useAsTitle: "titulo", group: "Contenido" },
+  // §4 · plano de `/es/` — las 149 entradas cuelgan de `/[slug]` de raíz.
+  hooks: registroDeSlug({ familia: "entradas-blog" }),
   fields: [
     { name: "slug", type: "text", required: true, unique: true, index: true },
     seoA,
@@ -65,6 +68,8 @@ export const entradasBlog: CollectionConfig = {
 export const terminosKunakpedia: CollectionConfig = {
   slug: "terminos-kunakpedia",
   admin: { useAsTitle: "titulo", group: "Contenido" },
+  // §4 · plano de `/es/` — los 37 términos comparten espacio con las 149 de blog.
+  hooks: registroDeSlug({ familia: "terminos-kunakpedia" }),
   fields: [
     { name: "slug", type: "text", required: true, unique: true, index: true },
     seoA,

@@ -1,4 +1,10 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+// ⚠ `migrate:create` emite `import { MigrateUpArgs, MigrateDownArgs, sql }`, y
+// este paquete compila con `verbatimModuleSyntax`: los dos primeros son TIPOS y
+// hay que importarlos como tales. **Hay que rehacerlo en cada migración nueva**
+// — no es un arreglo de una vez. Lo caza `npm run check` (typecheck del
+// paquete), así que el olvido sale rojo y no se cuela.
+import type { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
+import { sql } from '@payloadcms/db-postgres'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`

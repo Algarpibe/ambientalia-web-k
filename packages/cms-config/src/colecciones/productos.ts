@@ -17,6 +17,7 @@ import {
   CAMPOS_CTA_DESCARGA,
   MODULOS_COMPARTIDOS,
 } from "../bloques/contenido.ts";
+import { registroDeSlug } from "../hooks/registro-slug.ts";
 
 /* ── Los kinds que el CPT estrena sobre los compartidos ──────────────────── */
 
@@ -192,6 +193,17 @@ const padre: Field = {
 export const productos: CollectionConfig = {
   slug: "productos",
   admin: { useAsTitle: "titulo", group: "Catálogo" },
+  /**
+   * §4 · plano de `/es/`, **pero sólo los que no cuelgan de un segmento**: §2e
+   * midió **6 de 24 sin `padre`**, y ésos son los que comparten espacio de
+   * nombres con blog y término. `/accesorios` es uno de ellos, y es literalmente
+   * el slug con el que `ENRUTADO.md` §2 provocó la colisión que no dio error.
+   *
+   * Los otros 18 (`cartuchos-inteligentes/<slug>`, `sensor-…/<slug>`) tienen
+   * unicidad nativa de colección y **no se registran**: hacerlo inventaría
+   * colisiones que en la URL real no existen.
+   */
+  hooks: registroDeSlug({ familia: "productos", enElPlano: (doc) => !doc.padre }),
   fields: [
     // ⚠ ALIAS de `Product.id` («data-id del `<span>` del tab»): `id` lo reserva
     // Payload para la PK. §2e escribe `slug`, y es el mismo dato.

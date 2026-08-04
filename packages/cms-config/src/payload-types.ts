@@ -82,6 +82,7 @@ export interface Config {
     'categorias-recursos': CategoriasRecurso;
     'categorias-cientificas': CategoriasCientifica;
     media: Media;
+    slugs: Slug;
     usuarios: Usuario;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -105,6 +106,7 @@ export interface Config {
     'categorias-recursos': CategoriasRecursosSelect<false> | CategoriasRecursosSelect<true>;
     'categorias-cientificas': CategoriasCientificasSelect<false> | CategoriasCientificasSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    slugs: SlugsSelect<false> | SlugsSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -1559,6 +1561,20 @@ export interface ArticulosKb {
   createdAt: string;
 }
 /**
+ * Registro del plano de /es/ — un segmento. Lo escriben los hooks de las colecciones de contenido; no se edita a mano. La unicidad ENTRE familias vive aquí (§4).
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "slugs".
+ */
+export interface Slug {
+  id: number;
+  slug: string;
+  familia: string;
+  documento?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "usuarios".
  */
@@ -1667,6 +1683,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'slugs';
+        value: number | Slug;
       } | null)
     | ({
         relationTo: 'usuarios';
@@ -3004,6 +3024,17 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "slugs_select".
+ */
+export interface SlugsSelect<T extends boolean = true> {
+  slug?: T;
+  familia?: T;
+  documento?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
