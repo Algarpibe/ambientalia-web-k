@@ -1,0 +1,631 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": "sintetico",
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 63,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 8,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 9,
+      "conDiferencia": 9
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 4
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 2
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 11
+    },
+    "casos": {
+      "documentos": 4,
+      "conDiferencia": 4
+    },
+    "faqs": {
+      "documentos": 2,
+      "conDiferencia": 2
+    },
+    "entradas-blog": {
+      "documentos": 7,
+      "conDiferencia": 7
+    },
+    "terminos-kunakpedia": {
+      "documentos": 3,
+      "conDiferencia": 3
+    },
+    "documentos-cientificos": {
+      "documentos": 4,
+      "conDiferencia": 4
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "productos",
+      "slug": "monitor-calidad-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sensor-de-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.069Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "kunak-api",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.293Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sulfuro-de-hidrogeno",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.402Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "amoniaco",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.472Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "compuestos-organicos-volatiles",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.589Z\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "particulas-en-suspension",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.698Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.934Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "control-de-emisiones-industriales",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:13.243Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "contaminacion-por-construccion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:13.533Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "sectores",
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:13.815Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.035Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.827Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:11.962Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "soluciones[2].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:12.193Z\""
+    },
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.524Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "urbano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.765Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "industria",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.883Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "investigacion-consultoria",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.966Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "puertos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.047Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "mineria",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.057Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "olores",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.065Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "edar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.072Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "metalurgia",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.221Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "obras",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.230Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "oil-gas-es",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.239Z\""
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "slug": "sports",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.373Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "sectores[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.065Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "sectores[1].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.765Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.431Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-calidad-de-aire-para-world-athletics",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.591Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ruta": "sectores[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.765Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.761Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "sectores[0].updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:14.883Z\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.921Z\""
+    },
+    {
+      "coleccion": "faqs",
+      "slug": "puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.947Z\""
+    },
+    {
+      "coleccion": "faqs",
+      "slug": "cual-es-la-diferencia-entre-calibracion-y-correccion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.956Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:15.986Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.032Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.082Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.136Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.189Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "running-for-clean-air",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.244Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.332Z\""
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "slug": "cloruro-de-hidrogeno-hcl",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.407Z\""
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "slug": "emisiones-atmosfericas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.503Z\""
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "slug": "metano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.527Z\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.614Z\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.659Z\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.697Z\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-04T19:27:16.735Z\""
+    }
+  ]
+}

@@ -35,6 +35,31 @@ process.env.SIN_CLON = "1";
 
 const SOLO = env("SOLO");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS SABOTAJES — `npm run qa:solutions-seo-neg`
+ *
+ * Los tres invariantes que esta sonda tiene que saber disparar por separado, y
+ * los tres son de la familia *«no encontrar nada y no mirar nada dan la misma
+ * salida»*:
+ *
+ *   · `muerto`     — un selector que no casa en NINGUNA página sale por ERROR y
+ *                    no por «este campo no está» (regla 4). Aquí es literal: si
+ *                    el selector del `h1` fallara, «no contiene el h1» saldría
+ *                    en las 24 y el veredicto diría **CAMPO** sin haber medido;
+ *   · `derivable`  — el `<title>` se fabrica del `h1` con plantilla única ⇒ el
+ *                    veredicto tiene que voltear a **PLANTILLA**. Sin este, un
+ *                    «NO derivable» no se distingue de una sonda que siempre
+ *                    dice lo mismo;
+ *   · `sin-urls`   — 0 URLs del sitemap ⇒ exit 2, nunca un verde vacío.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SABOTAJE = env("SABOTAJE") || null;
+const SABOTAJES = ["muerto", "derivable", "sin-urls"];
+if (SABOTAJE && !SABOTAJES.includes(SABOTAJE))
+  throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" | ")})`);
+
+/** El selector del `h1`. Es variable para que `muerto` pueda romperlo. */
+const SEL_H1 = SABOTAJE === "muerto" ? "h1.no-existe-en-ninguna-pagina" : "h1";
+
 /* El alcance sale del SITEMAP del CPT, igual que `solutions-campos`: una página
  * nueva entra sola y sube el listón sin tocar la sonda. */
 const sitemap = await (await fetch("https://kunakair.com/solutions-sitemap.xml")).text();
@@ -42,7 +67,8 @@ const URLS = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
   .map((m) => m[1])
   .filter((u) => u.includes("/es/"))
   .sort()
-  .filter((u) => !SOLO || u.includes(SOLO));
+  .filter((u) => !SOLO || u.includes(SOLO))
+  .filter(() => SABOTAJE !== "sin-urls");
 if (URLS.length === 0) {
   console.error(`❌ 0 URLs del CPT solutions en /es — el sitemap no dio nada, no es una corrida limpia.`);
   process.exit(2);
@@ -56,18 +82,25 @@ const filas = [];
 for (const url of URLS) {
   const { page, status } = await openPage(browser, url, { width: 1440, height: 900 });
   if (status >= 400) { ev.fallo(url, `HTTP ${status}`); await page.close(); continue; }
-  const { datos } = await censo.medir(page, () => {
-    const meta = (sel, attr = "content") => __q(sel)?.getAttribute(attr) ?? null;
-    return {
-      title: document.title || null,
-      ogTitle: meta('meta[property="og:title"]'),
-      description: meta('meta[name="description"]'),
-      ogDescription: meta('meta[property="og:description"]'),
-      ogImage: meta('meta[property="og:image"]'),
-      canonical: meta('link[rel="canonical"]', "href"),
-      h1: __q("h1")?.textContent?.trim() ?? null,
-    };
-  });
+  const { datos } = await censo.medir(
+    page,
+    (selH1) => {
+      const meta = (sel, attr = "content") => __q(sel)?.getAttribute(attr) ?? null;
+      return {
+        title: document.title || null,
+        ogTitle: meta('meta[property="og:title"]'),
+        description: meta('meta[name="description"]'),
+        ogDescription: meta('meta[property="og:description"]'),
+        ogImage: meta('meta[property="og:image"]'),
+        canonical: meta('link[rel="canonical"]', "href"),
+        h1: __q(selH1)?.textContent?.trim() ?? null,
+      };
+    },
+    SEL_H1,
+  );
+  /* El sabotaje `derivable` fabrica el título del `h1` con plantilla ÚNICA: es
+   * el mundo en el que `seo.title` sería PLANTILLA y no campo. */
+  if (SABOTAJE === "derivable" && datos.h1) datos.title = `${datos.h1} | Kunak`;
   filas.push({ url, ...datos });
   await page.close();
 }
@@ -110,18 +143,26 @@ console.log(
     ` ⇒ ${presencia.description === filas.length ? "universal" : "opcional, con respaldo"}\n`,
 );
 
-w("medidas/solutions-seo.json", {
-  meta: {
-    fecha: hoy(),
-    alcance: `${filas.length} URLs de /es/ del solutions-sitemap.xml, derivadas no citadas`,
-    viewport: "1440×900 · DPR 1",
-    pregunta: "¿`productos.seo.title` tiene respaldo medido, y es campo o plantilla?",
+w(
+  env("SALIDA") ||
+    `medidas/solutions-seo${SABOTAJE ? `-neg-${SABOTAJE}` : ""}${SOLO ? `-solo-${SOLO.replace(/[^a-z0-9]+/gi, "-")}` : ""}.json`,
+  {
+    meta: {
+      fecha: hoy(),
+      sabotaje: SABOTAJE ?? null,
+      alcance: `${filas.length} URLs de /es/ del solutions-sitemap.xml, derivadas no citadas`,
+      viewport: "1440×900 · DPR 1",
+      pregunta: "¿`productos.seo.title` tiene respaldo medido, y es campo o plantilla?",
+    },
+    /* El veredicto va CONGELADO y no sólo impreso: lo que la sonda afirma tiene
+     * que estar en su fichero, o su negativo no puede comprobarlo (regla 1). */
+    veredicto: { titulo: derivable ? "PLANTILLA" : "CAMPO", derivable },
+    presencia,
+    plantillasDeTitulo: Object.fromEntries(plantillas),
+    faltan,
+    filas,
   },
-  presencia,
-  plantillasDeTitulo: Object.fromEntries(plantillas),
-  faltan,
-  filas,
-});
+);
 
 const muertos = censo.informe();
 console.log(`  ✓ ${filas.length} URLs medidas`);

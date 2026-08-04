@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "nada-construido",
     "pregunta": "¿de qué colecciones es cierta la premisa «src/lib/*.ts son los datos»?",
     "fuentes": {
       "rutas": ".next/prerender-manifest.json (el build, no una lista)",
@@ -9,20 +9,18 @@
       "colgantes": "sondeo-frontera.json — corrida del 2026-08-04, verificada limpia y del mismo modelo"
     },
     "veredicto": {
-      "construidas": [
+      "construidas": [],
+      "mixtas": [],
+      "referenciadas": [
+        "productos",
         "sectores",
         "monograficos",
+        "taxonomia-sectores",
         "casos",
         "faqs",
         "entradas-blog",
         "terminos-kunakpedia",
         "documentos-cientificos"
-      ],
-      "mixtas": [
-        "productos"
-      ],
-      "referenciadas": [
-        "taxonomia-sectores"
       ]
     },
     "rutasEmitidas": 34,
@@ -32,10 +30,13 @@
     {
       "coleccion": "productos",
       "filas": 9,
-      "conRuta": 3,
+      "conRuta": 0,
       "sinRuta": [
+        "monitor-calidad-aire",
         "estacion-de-monitoreo-de-calidad-del-aire",
         "sensor-de-calidad-del-aire",
+        "software-de-medicion-calidad-del-aire",
+        "kunak-api",
         "sulfuro-de-hidrogeno",
         "amoniaco",
         "compuestos-organicos-volatiles",
@@ -43,25 +44,33 @@
       ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "MIXTA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "sectores",
       "filas": 4,
-      "conRuta": 4,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "calidad-del-aire-en-las-ciudades",
+        "control-de-emisiones-industriales",
+        "contaminacion-por-construccion",
+        "estudio-de-la-contaminacion-atmosferica"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "monograficos",
       "filas": 2,
-      "conRuta": 2,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "monitorizacion-ambiental-y-control-de-olores-en-edar",
+        "monitorizacion-de-emisiones-en-petroleo-y-gas"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -87,47 +96,72 @@
     {
       "coleccion": "casos",
       "filas": 4,
-      "conRuta": 4,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+        "red-calidad-de-aire-para-world-athletics",
+        "distrito-baja-emision-rio-de-janeiro",
+        "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "faqs",
       "filas": 2,
-      "conRuta": 2,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+        "cual-es-la-diferencia-entre-calibracion-y-correccion"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "entradas-blog",
       "filas": 7,
-      "conRuta": 7,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "contaminacion-por-metano",
+        "todas-nuestras-soluciones-en-el-iotswc",
+        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "contador-particulas-suspension-movilidad-sostenible",
+        "monitorizacion-de-emisiones-del-trafico-urbano",
+        "running-for-clean-air",
+        "la-contaminacion-del-aire-el-asesino-silencioso-de-europa"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "terminos-kunakpedia",
       "filas": 3,
-      "conRuta": 3,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "cloruro-de-hidrogeno-hcl",
+        "emisiones-atmosfericas",
+        "metano"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     },
     {
       "coleccion": "documentos-cientificos",
       "filas": 4,
-      "conRuta": 4,
-      "sinRuta": [],
+      "conRuta": 0,
+      "sinRuta": [
+        "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+        "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "desafio-airlab-de-microsensores-2023",
+        "soluciones-avanzadas-de-monitorizacion"
+      ],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "CONSTRUIDA"
+      "clase": "REFERENCIADA"
     }
   ],
   "colgantesPorDestino": {}

@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "defecto",
     "alcance": {
       "comparadas": [
         "categorias",
@@ -47,7 +47,7 @@
     },
     "productos": {
       "documentos": 9,
-      "conDiferencia": 0
+      "conDiferencia": 9
     },
     "sectores": {
       "documentos": 4,
@@ -82,5 +82,78 @@
       "conDiferencia": 0
     }
   },
-  "diferencias": []
+  "diferencias": [
+    {
+      "coleccion": "productos",
+      "slug": "monitor-calidad-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sensor-de-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "kunak-api",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sulfuro-de-hidrogeno",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "amoniaco",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "compuestos-organicos-volatiles",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "particulas-en-suspension",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    }
+  ]
 }

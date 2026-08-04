@@ -1,3 +1,231 @@
+# HANDOFF — F2-2 bloque 1 CERRADO: 63/63 y el negativo entero, con un punto ciego declarado
+
+> ⚠ **Tanda 2026-08-04 (26.ª).** Reentrada sobre un commit declarado SIN
+> VERIFICAR (`5a6e1fb`). **El escalón NO se disparó**: sus tres condiciones se
+> comprobaron una a una y las tres fronteras eran **ejecución**, no frontera.
+> **No se toca `apps/web`** — y la deuda Δ0 que la tanda anterior dejó abierta
+> **queda PAGADA**: 31/31 · 0 regresiones a 1440 y a 390.
+
+## 0 · Los dos titulares
+
+> **1 · El criterio de «hecho» del §F2-2 está cumplido, literal.** `round-trip
+> 63/63 documentos IDÉNTICOS` sobre las **46 filas** de 9 colecciones + 4
+> taxonomías derivadas, DB migrada desde cero con **4 migraciones versionadas** y
+> `push: false`. Se entró con **157 diferencias**.
+>
+> **2 · Y el verde vale porque su negativo pasa: `6/6`** — 4 sabotajes que caza
+> **+ 1 PUNTO CIEGO declarado y verificado + control**. El punto ciego es el
+> resultado más caro de la tanda (§3.3).
+
+## 1 · PASO 0 — lo que había en `5a6e1fb`, derivado del diff y no de su mensaje
+
+| estado | qué | evidencia |
+|---|---|---|
+| ✅ **HECHO** | el árbol es coherente | `npm run check` exit 0 · `qa:lib` 69/69 |
+| ✅ | las migraciones aplican en limpio sobre vacío | `cms:reset`: inicial · registro_slugs · teaser_dato_propio, sin error |
+| ✅ | **TEASER conectado de punta a punta**, no sólo escrito | campos en `comunes.ts` + migración aplicada + `RUTAS_EN_FRONTERA = []` + sondeo con **0 relaciones sin destino** (eran 31) |
+| ✅ | **`productos.seo.title` medido y en el dato** | sondeo: **0 required sin dato · 0 required vacíos** |
+| ⚠ **A MEDIAS** | **las 3 sondas nuevas no tenían script npm** | el mensaje del commit las cita como `qa:solutions-seo` · `qa:cms-teaser` · `qa:cms-arquetipos` y **ninguno existía en `package.json`** |
+| ⚠ | **ninguna de las 3 tenía negativo** | y `qa:cms-roundtrip-neg` **apuntaba a un fichero que NUNCA existió** (`git log --all` vacío) |
+| ⚠ | el round-trip **no pasaba** | reproducido exacto: **40/63, 157 diferencias** |
+| ⚠ | `apps/web` tocado **sin Δ0 pagado** | `git diff bcc2b83 HEAD -- apps/web` = `products.ts` +80 · `types/kunak.ts` +19 |
+| ⚠ | `ALIAS`/`IGNORADOS` de `mapeo.mjs` **exportados y sin un solo importador**, y el `aliasCoherentes()` que su comentario prometía **no existía** | `grep -rn "ALIAS" scripts/` |
+| ⛔ **SIN EMPEZAR** | PASO 3 en los docs · T4 en el PLAN · el acta del teaser y del `seo` en el ESQUEMA | los tres vivían **sólo en comentarios de código** |
+
+**Un fichero escrito no es un paso hecho, y aquí tomó la forma de
+`package.json`:** tres sondas citadas por un nombre de script que no existe, y un
+negativo declarado apuntando al vacío. **La regla 3 en los dos sitios que nadie
+ejecuta** — el `package.json` y un comentario.
+
+## 2 · Las 157 diferencias, en 7 clases — y ninguna se normalizó
+
+| n | clase | qué era | resolución |
+|---|---|---|---|
+| **72** | `soluciones[]` embebido con `id`/`name`/`href` contra `slug`/`titulo` | **`PREPARA` tenía ida y no vuelta** | `DEVUELVE` + `sonInversas()`, que lo **ejecuta** sobre el catálogo antes de comparar nada |
+| **16** | celdas de tabla → `{}` | **el escalar de una unión aplanada se PERDÍA al entrar** | `aPayload` **tira** en vez de escribir `{}`; `custom.escalarA` declara el destino |
+| **15** | `[]` contra clave ausente | Payload **no puede** distinguir «lista vacía» de «campo ausente» | la vuelta omite; derivado: **0 arrays vacíos explícitos en las 46 filas**, y el comparador se auto-vigila si eso cambia |
+| **7** | `kind` inventado | `CON_KIND` era un `Set` de **slugs**, y `claim`/`titular` nombran **dos bloques distintos** (módulo y bloque de texto) | la llave pasa a ser **(ruta, slug)**, como `formaDeRel` |
+| **6** | `paginaSlug` vs `pagina` | ídem 72 | `DEVUELVE` |
+| **4** | `entradas-blog.cuerpo` | **T4a**, transformación declarada | se aplica a los dos lados **con su control de simetría** |
+| **1** | `nivel` ausente | **el defecto estaba MAL ELEGIDO** (§3.1) | migración versionada |
+
+## 3 · Los tres hallazgos, y los tres son de la familia CMS-SP-TIPO
+
+**Ninguna guarda mira nada de la hoja salvo su ruta.** `payload-types` compila y
+`qa:cms-campos` pasa en los tres casos.
+
+### 3.1 · El `nivel` compartido — cambiaba la ETIQUETA servida
+
+`MonoCuerpo.tsx` lee el claim con `?? 2` y el titular con **`?? 3`**. El esquema
+les daba **un solo** `conDefecto(nivel, 2)`, así que el hook —*coincidir con el
+defecto = no haber escrito*— **omitía el `nivel: 2` explícito de un titular**, y
+al leerlo de vuelta el render caía en su `?? 3`: el `<h2>Proyectos por todo el
+mundo</h2>` de EDAR salía **`<h3>`**. Una etiqueta distinta en el esqueleto del
+DOM, que es lo que `tree-cmp` compara.
+
+Migración `20260804_182349_nivel_titular_por_defecto_3` (6 columnas). **Y
+arrastra el `claim DROP NOT NULL`** que la tanda anterior cambió en la config y
+**nunca emitió como migración**: con `push: false`, una DB migrada desde cero y la
+config **discrepaban**. Va declarado en la cabecera de la migración, no colado.
+
+### 3.2 · Las 16 celdas que entraban en blanco
+
+`MonoCelda = string | {fuerte, resto?}` es una unión aplanada en 3 campos. Con 3
+campos propios el envoltorio transparente no aplica, así que `aPayload` recorría
+los tres **sobre una cadena**, sacaba `undefined` de los tres y escribía `{}`:
+**16 celdas de la tabla de EDAR en la DB en blanco, sin un solo error.** Ahora un
+escalar donde el esquema espera objeto **tira** (regla 6), y `custom.escalarA`
+—declarado **en el campo**, no en una tabla de rutas— dice a dónde va.
+
+### 3.3 · ⚠ EL PUNTO CIEGO, que es el resultado que más vale
+
+`cms-roundtrip.mjs` nació diciendo *«la única sonda que mira el TIPO de la
+hoja»*. Se comprobó con un sabotaje en vez de con un argumento:
+
+> **`tipo-hoja`** cambia `productos.bullets[].texto` de `htmlLinea` a
+> `editorNegrita` —**CMS-SP-TIPO literal**, el defecto del `R<sup>2</sup> >0,8`—
+> y la sonda sale **63/63, exit 0**.
+
+**Y no es un fallo del comparador: la pérdida ocurre al RENDERIZAR.**
+`inlineALexical` mete la cadena en un nodo de texto y `lexicalAInline` la
+devuelve idéntica — **la ida y la vuelta son inversas perfectas sobre un editor
+que aun así pinta la fórmula como texto plano**. Lo que sí mira de la hoja es su
+**DEFECTO** y su **FORMA** (3.1 y 3.2); el **EDITOR**, no.
+
+**CMS-SP-TIPO sigue ABIERTA**, ahora con la razón medida (ESQUEMA §7b) y
+**declarada como punto ciego VERIFICADO**: el sabotaje se corre en cada negativo
+y se exige que **siga sin morder**. El día que muerda, el negativo sale **ROJO** y
+obliga a venir a leer por qué. *Un punto ciego documentado y no verificado
+envejece solo; uno verificado avisa cuando deja de serlo.*
+
+## 4 · Lo que se construyó
+
+```
+scripts/qa/cms-roundtrip.neg.mjs     ← NUEVO — 4 sabotajes + 1 ciego + control
+scripts/qa/cms-teaser.neg.mjs        ← NUEVO — el falsador, falsado
+scripts/qa/cms-arquetipos.neg.mjs    ← NUEVO — par de DISCRIMINACIÓN, no guarda
+scripts/qa/solutions-seo.neg.mjs     ← NUEVO — selector muerto · derivable · 0 URLs
+scripts/seed/seed.mjs                ← DEVUELVE · rutaLocal · comoEmbebido · sonInversas
+scripts/seed/mapeo.mjs               ← escalarA · exigeObjeto · lista vacía · kind por ruta
+packages/cms-config/src/migrations/20260804_182349_nivel_titular_por_defecto_3
++ los 6 scripts npm que faltaban
+```
+
+| negativo | resultado |
+|---|---|
+| `qa:cms-roundtrip-neg` | **6/6** (4 que caza · 1 ciego · control) |
+| `qa:cms-teaser-neg` | **3/3** |
+| `qa:cms-arquetipos-neg` | **4/4** |
+| `qa:solutions-seo-neg` | **4/4** |
+| `qa:lib` | **69/69** · las **66** sondas compilan y declaran su mínimo |
+
+**Y `cms-teaser` tenía un mínimo de `1` escrito a mano.** Ahora se **deriva**:
+**34 teasers del catálogo**. La unidad correcta es el teaser recorrido —que
+existe en el dato antes de medir— y no el par comparable, **que es el
+resultado**: un mínimo puesto sobre el resultado no puede detectar que el
+instrumento no miró.
+
+### El negativo que hace honesta una decisión, y no sólo verde
+
+El sabotaje `derivable` de `cms-teaser` **le da a `date` el formateador de meses
+en español que la decisión dice que no se puede escribir**, y el veredicto
+voltea a FALSADA. O sea que derivar el teaser **sí es técnicamente posible**; no
+se hace porque re-formatear **normaliza en silencio las erratas del original** y
+el contrato de fidelidad lo prohíbe. **Es una decisión de contrato, no una
+limitación técnica** — y venderla como limitación habría sido más cómodo.
+
+## 5 · Tres defectos de instrumento, míos, y uno automatizaba la regla 5
+
+| # | qué | cómo se cazó |
+|---|---|---|
+| 1 | **el CONTROL de cada negativo iba con `PISAR` sobre la medida canónica** — un test en negativo re-congelando la evidencia buena, o sea **la regla 5 automatizada y puesta en los cuatro** | el round-trip canónico apareció re-congelado a 63/63 sin que nadie lo pidiera. Arreglado con `SALIDA` → `*-neg-control.json` |
+| 2 | **`clon-base` metía el PUERTO EFÍMERO en `meta.base`**, así que la de-duplicación de `w()` —*«idéntica se reescribe, no se pierde nada»*— **no podía dispararse jamás**: cada corrida estrenaba fichero. De ahí los **48** `clon-base-*` de `medidas/` | dos salidas de la misma corrida salieron «distintas» y sus `paginas` eran idénticas |
+| 3 | **`cms-arquetipos` citaba una congelada de OTRO modelo**: tras cerrar la frontera del teaser, `sondeo-frontera.json` seguía diciendo **31 colgantes** y el sondeo real daba **0** | guarda nueva (el conjunto de colecciones tiene que coincidir) + la fecha del fichero **se imprime** al citarlo |
+
+⚠ **Y un desliz mío que hay que decir:** borré a mano dos congeladas de
+`clon-base` **afirmando que eran idénticas cuando la comprobación decía que no**.
+No se perdió nada —la diferencia era el puerto de `meta.base`, y sus `paginas`
+coinciden con la base aceptada, **0 de 31**— pero el orden correcto era mirar
+**antes de borrar**. Es la §regla 5 rozada por tercera vez en el proyecto, y las
+tres por la misma prisa.
+
+## 6 · Δ0 de `apps/web` — la deuda de la tanda anterior, PAGADA
+
+| corrida | resultado |
+|---|---|
+| `clon-base` @1440 vs `clon-base-1440-2026-08-03.json` | **31 comparadas · 0 con regresión** |
+| `clon-base` @390 vs `clon-base-390-2026-08-03.json` | **31 comparadas · 0 con regresión** |
+
+⚠ **Y la trampa que costó una corrida entera**: la primera comparación se hizo
+contra `clon-base-*-cms0d-despues.json` y dio **10 de 11 con regresión**. No era
+una regresión: ese fichero tiene **11 rutas** y es **anterior a C-QA1/C-QA7**, así
+que los `+48`, `+36.02` y `+19.2` que marcaba son **los arreglos deliberados de
+aquellas tandas**.
+
+> **La línea base de una comparación tiene que ser la última ACEPTADA, no la que
+> tenga el nombre más parecido** — y el nombre no lo dice. Aquí lo dijo el
+> recuento: **11 rutas contra 31**. Un comparador que encuentra defecto en el
+> 91 % de lo que mira está, casi siempre, comparando dos cosas que no son la
+> misma (regla 4, la cara del pleno).
+
+## 7 · LO SIGUIENTE — F2-2 bloque 2 · extractor + saneador
+
+**Entrega:** el extractor del corpus para las 209 páginas del grupo A con
+**T1–T8** aplicadas al importar, y el saneador con la whitelist censada (43
+etiquetas **a ADMITIR**, no a filtrar; la única prohibición es `<script>`, ya
+puesta como `validate`).
+
+> **El listón es el de esta tanda: test en negativo POR TRANSFORMACIÓN.** Un
+> sabotaje por cada una de T1–T8, cada uno cayendo por SU invariante, **más el
+> control**. Y cada arreglo re-corre el test entero.
+
+Lo que ya está medido y no hay que redescubrir:
+
+- **T4b** necesita el PDF y la URL de la noticia — **5 scripts en 4 entradas**,
+  con su clasificación §3.3 congelada. Hasta que se haga, ese contenido **no está
+  en el CMS**, y el seed lo imprime documento a documento;
+- **T8 es NO-OP sobre el catálogo actual** (5 tokens dentro de `<script>`, 0
+  fuera) **y sigue haciendo falta** en el importador, que compara contra el HTML
+  crudo **antes** de transformar;
+- **el ciclo del grafo vuelve**: `taxonomia-sectores → sectores → casos →
+  taxonomia-sectores`, en cuanto entren los 57 casos y las 149 entradas ⇒
+  **sembrar en dos pasadas**;
+- **`productos.cuerpo` está vacío en las 9 y es correcto** (ESQUEMA §2f):
+  `products.ts` es la proyección de pestaña. Las **24 fichas** del CPT entran
+  aquí.
+
+## 8 · Pendientes que NO bloquean
+
+| # | pendiente | por qué no bloquea |
+|---|---|---|
+| 1 | **la HOME sigue sin content type** | cubo B: modelarla después es AÑADIR, no re-migrar |
+| 2 | **`Dockerfile` sin verificar**, y ahora sin cubrir `apps/cms` | el contrato de F2-1 es el Δ0 del HTML servido; lo cobra F2-4 |
+| 3 | **26 celdas ciegas** de `COBERTURA-MEDICION.md`, comportamiento **0/31** | deuda de medición del CLON |
+| 4 | **6 mínimos** de sondas escritos en vez de derivados — **uno menos**: `cms-teaser` ya lo deriva | ídem |
+| 5 | **`Breadcrumb` de 28 rutas**, −33.25 | ídem, y es de ancho: `clon-base` no lo ve |
+| 6 | **CMS-SP-TIPO** | §3.3: abierta, con su razón medida y su punto ciego verificado |
+| 7 | **`/kunak-api` sirve un `<title>` que no es el del original** | nuevo, fichado en `PENDIENTES-QA.md`. No lo veía nadie: **ninguna sonda compara el `<head>`** |
+| 8 | **`solutions-campos.neg.mjs` no tiene control** — tiene un sabotaje *llamado* `control`, que es otra cosa | preexistente; lo paga quien lo toque |
+
+## 9 · Lo que NO hay que hacer al empezar
+
+- **No leer el 63/63 sin su alcance.** Son **46 filas de 9 colecciones**, con
+  `productos.cuerpo` vacío y `articulos-kb` fuera. El alcance viaja en
+  `SEMBRADAS` y `FUERA_DE_BLOQUE_1`, y la sonda lo imprime al final.
+- **No dar CMS-SP-TIPO por cerrada porque el round-trip esté verde.** Está
+  **medido** que no la ve (§3.3).
+- **No comparar contra `clon-base-*-cms0d-*`.** Es de 11 rutas y anterior a
+  C-QA1/C-QA7 (§6). La base aceptada es `clon-base-{1440,390}-2026-08-03.json`.
+- **No normalizar una diferencia del round-trip.** Las tres prohibidas siguen
+  prohibidas —`?? ""` en `seo.title`, omitir el teaser del comparador, relajar el
+  `validate`— y se les suma la cuarta que esta tanda pudo haber tomado:
+  **arreglar el `nivel` en el proyector en vez de en el esquema**. Se arregló con
+  **migración**.
+- **No re-congelar una medida canónica desde un test en negativo.** Es el defecto
+  1 del §5, y estaba puesto en los cuatro.
+
+---
+
 # HANDOFF — F2-2 bloque 1: PARADO POR EL ESCALÓN, con tres fronteras medidas
 
 > ⚠ **Tanda 2026-08-04 (25.ª).** El escalón declarado disparó **tres veces** en

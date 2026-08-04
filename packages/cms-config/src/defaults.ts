@@ -57,7 +57,15 @@ export const SECTOR = {
 export const MONOGRAFICO = {
   anchoPct: d(100, "§1.5 · 70·80·90 en monografico.ts, 19 módulos"),
   lh: d(30.6, "§1.5 · 30.6 · 36 · 45 por módulo"),
-  nivel: d(2, "§1.5"),
+  /**
+   * ⚠ **Son DOS defectos, no uno.** El render los lee distinto —`Claim({nivel
+   * = 2})` y `titular ?? 3` en `MonoCuerpo.tsx`— y tenerlos como uno hacía que
+   * el hook de `conDefecto` omitiera el `nivel: 2` explícito de un `titular`,
+   * que volvía como `<h3>`. Lo cazó `qa:cms-roundtrip` el 2026-08-04; ver el
+   * bloque de `nivelCon` en `bloques/contenido.ts`.
+   */
+  nivelClaim: d(2, "§1.5 · MonoCuerpo.tsx l.100/281"),
+  nivelTitular: d(3, "§1.5 · MonoCuerpo.tsx l.156/275"),
   /** `pb` de fila: 2 % — 28.7969 @1440 · 30 @390. Omitido cuando coincide. */
   filaPb: d({ px1440: 28.7969, px390: 30 }, "§1.5 · monográfico, 19 filas"),
 } as const;

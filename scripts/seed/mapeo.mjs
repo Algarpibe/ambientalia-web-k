@@ -30,33 +30,30 @@
  */
 
 /* ══════════════════════════════════════════════════════════════════════════
- * EXCEPCIONES DECLARADAS — lo único que no se deriva
+ * ⚠ **DÓNDE VIVEN LOS ALIAS — y por qué aquí ya NO hay ninguna lista
+ * (borrada el 2026-08-04).**
  *
- * Son las mismas que `qa:cms-campos` declara en su `ALIAS`, y eso NO es
- * duplicación por comodidad: si las dos listas discreparan, la comprobación de
- * campos y el round-trip estarían midiendo modelos distintos. `aliasCoherentes()`
- * lo verifica contra el fichero de la sonda.
+ * Aquí había un `export const ALIAS = {…}` con los cuatro alias de §2e/§2b, más
+ * un `IGNORADOS` vacío, más un comentario que decía que `aliasCoherentes()` los
+ * verificaba contra el fichero de `qa:cms-campos`. Derivado (`grep -rn "ALIAS"
+ * scripts/`): **nadie importaba ninguno de los dos, y `aliasCoherentes` no
+ * existía en el repo.** Tres afirmaciones y cero código — la regla 3 de
+ * `CLAUDE.md` §sondas (*documentado no es conectado*) en mi propio fichero, y
+ * la 3.ª hermana (*un comentario que afirma consumidores es un dato sin
+ * fuente*) en el mismo bloque.
+ *
+ * Lo que hace el trabajo de verdad, y hay que mirar ahí:
+ *
+ * | quién | qué alias | dónde |
+ * |---|---|---|
+ * | **la IDA** | `id→slug` · `name→titulo` · `href→padre` · `paginaSlug→pagina` | `PREPARA` en `seed.mjs` |
+ * | **la VUELTA** | los mismos, al revés | `DEVUELVE` en `seed.mjs`, y `sonInversas()` lo COMPRUEBA sobre el catálogo |
+ * | **la auditoría de campos** | los mismos, declarados para el censo | `ALIAS` en `scripts/qa/cms-campos.mjs`, con su `DECLARACIÓN MUERTA` |
+ *
+ * La coherencia entre la ida y la vuelta **no se declara: se ejecuta** —
+ * `sonInversas()` corre `DEVUELVE(PREPARA(fila)) === fila` sobre las 46 filas y
+ * tira si alguna no vuelve. Es lo que el comentario borrado prometía y no hacía.
  * ═════════════════════════════════════════════════════════════════════════ */
-
-export const ALIAS = {
-  /* `id` lo reserva Payload para la PK; §2e escribe `slug`. */
-  "productos:id": { payload: "slug" },
-  "productos:name": { payload: "titulo" },
-  /**
-   * `href` **no se guarda**: §4 replica el plano del original, así que la ruta
-   * se DERIVA de `padre` + `slug`. En la ida hay que hacer el camino inverso —
-   * de `href` sale `padre`— y en la vuelta se reconstruye.
-   */
-  "productos:href": { payload: null, derivado: "padre" },
-  /* §2b: relación polimórfica a sectores/monograficos. */
-  "taxonomia-sectores:paginaSlug": { payload: "pagina" },
-};
-
-/** Campos del tipo medido que en Payload **no existen** y no son alias. */
-export const IGNORADOS = {
-  /* `SectorPage.body` y `MonograficoPage.cuerpo` son el mismo hueco con dos
-   * nombres; el walker los resuelve por posición, no aquí. */
-};
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LOS CAMPOS QUE PAYLOAD AÑADE SOLO — y por qué esto no es cosmética
@@ -194,6 +191,51 @@ export function envoltorioTransparente(campo, valor) {
   return camposPropios(campo.fields).length === 1 && Array.isArray(valor) && !esObj(valor[0]);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL ESCALAR EN UN ARRAY DE VARIOS CAMPOS — ⚠ **el defecto que TIRABA 16
+ * CELDAS DE TABLA SIN UN SOLO ERROR (2026-08-04, `qa:cms-roundtrip`).**
+ *
+ * `MonoCelda = string | { fuerte: string; resto?: string }` es una **unión de
+ * dos formas**, y §1.5 la modela aplanada: `CELDA = [texto, fuerte, resto]`,
+ * donde `texto` **es** la forma de cadena. Tres campos propios, así que el
+ * envoltorio transparente de arriba —que exige UNO— no aplica.
+ *
+ * Y lo que pasaba entonces no era un error: `aPayload(CELDA, "H₂S, CH₄, CO₂")`
+ * hace `dato?.[campo.name]` sobre una **cadena**, así que los tres campos salen
+ * `undefined` y el resultado es **`{}`**. Una fila vacía en la tabla, insertada
+ * sin protestar. **16 celdas de la tabla de EDAR entraban en la DB en blanco**,
+ * y sólo se vio porque la vuelta las devolvió como `{}` contra un texto.
+ *
+ * Las dos mitades del arreglo, y la primera importa más que la segunda:
+ *
+ *   1. **un escalar donde el esquema espera un objeto TIRA** (regla 6: una
+ *      ausencia se rechaza, no se traduce a un valor benigno). Sin esto, la
+ *      próxima unión aplanada vuelve a entrar en blanco;
+ *   2. **`escalarA` dice a qué campo va la forma escalar**, y **se declara en el
+ *      propio campo** (`custom.escalarA` de Payload), no en una tabla de rutas
+ *      aquí: una lista de rutas escrita a mano es una copia desactualizada de
+ *      algo que puede vivir al lado de su definición (regla 9).
+ *
+ * Con 3 campos candidatos **no hay nada que derivar** —cuál de los tres recibe
+ * la cadena es una decisión del modelo—, y por eso se declara. Lo que no se
+ * declara es que exista: eso lo dice el dato, y si no está declarado, tira.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** El campo que recibe la forma ESCALAR de una unión aplanada, si se declaró. */
+export const escalarA = (campo) => campo?.custom?.escalarA ?? null;
+
+/**
+ * La VUELTA de `escalarA`: un objeto en el que **sólo** está el campo escalar
+ * vuelve como el valor pelado. Si hay cualquier otro campo, vuelve como objeto —
+ * que es la otra rama de la unión, y confundirlas perdería `{fuerte, resto}`.
+ */
+export function deEscalar(campo, obj) {
+  const n = escalarA(campo);
+  if (!n || !esObj(obj)) return obj;
+  const claves = Object.keys(obj);
+  return claves.length === 1 && claves[0] === n ? obj[n] : obj;
+}
+
 /**
  * Elige el bloque de una unión.
  *
@@ -215,8 +257,16 @@ export function eligeBloque(bloques, item, ruta, ctx) {
      * discrimina por la clave presente. Una lista escrita a mano de «cuáles
      * llevan kind» sería una copia desactualizada de algo que este `if` ya sabe
      * — que es literalmente la regla 9 de `CLAUDE.md` §sondas.
+     *
+     * ⚠ **Y se declara POR RUTA, no por slug (corregido el 2026-08-04).** Se
+     * apuntaba en un `Set` global de slugs, y **`claim` y `titular` son slug de
+     * DOS bloques distintos**: uno de `modulos` (que sí trae `kind`) y otro de
+     * `bloques` (que discrimina por la clave presente y **no** lo trae). Un
+     * `kind: "claim"` en un módulo marcaba el slug entero, así que la vuelta le
+     * inventaba un `kind` a los 7 `{claim: …}` del cuerpo. Un `Set` global es
+     * *dos definiciones de «lo mismo»* (clase C7) escritas como una.
      */
-    if (b) { ctx?.declaraKinds?.([b.slug]); return b; }
+    if (b) { ctx?.declaraKinds?.(ruta, [b.slug]); return b; }
     throw new Error(`BLOQUE DESCONOCIDO en ${ruta}: kind='${item.kind}' no está entre [${bloques.map((x) => x.slug).join(", ")}]`);
   }
   const candidatos = bloques.filter((b) => Object.hasOwn(item ?? {}, b.slug));
@@ -311,7 +361,9 @@ async function valorDe(campo, dato, ctx, aqui) {
           bruto.map(async (v, i) => ({ [h.name]: await valorDe(h, { [h.name]: v }, ctx, `${aqui}[${i}]`) })),
         );
       }
-      return await Promise.all(bruto.map((v, i) => aPayload(hijos, v, ctx, `${aqui}[${i}]`)));
+      return await Promise.all(
+        bruto.map((v, i) => aPayload(hijos, exigeObjeto(campo, v, `${aqui}[${i}]`), ctx, `${aqui}[${i}]`)),
+      );
     }
 
     case "group":
@@ -322,12 +374,48 @@ async function valorDe(campo, dato, ctx, aqui) {
   }
 }
 
+/**
+ * Un ítem de array que llega ESCALAR contra un objeto de varios campos: o lo
+ * envuelve el `escalarA` declarado, **o tira**. Nunca `{}`.
+ */
+function exigeObjeto(campo, v, donde) {
+  if (esObj(v)) return v;
+  const n = escalarA(campo);
+  if (n) return { [n]: v };
+  throw new Error(
+    `ESCALAR SIN DESTINO en ${donde}: llegó ${JSON.stringify(v)?.slice(0, 60)} y el esquema\n` +
+      `  espera un objeto de [${camposPropios(campo.fields).map((c) => c.name).join(", ")}].\n` +
+      `  Antes esto devolvía \`{}\` en silencio —16 celdas de tabla entraron en blanco—.\n` +
+      `  Si es una unión aplanada, declara \`custom: { escalarA: "<campo>" }\` en el array.`,
+  );
+}
+
 /** El bloque de la config que corresponde a un `blockType`. */
 function bloqueDe(campo, blockType, aqui, i) {
   const b = campo.blocks?.find((x) => x.slug === blockType);
   if (!b) throw new Error(`BLOQUE DESCONOCIDO al proyectar ${aqui}[${i}]: '${blockType}'`);
   return b;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA LISTA VACÍA — `[]` en Payload es la MISMA cosa que «este campo no está»
+ *
+ * ⚠ Y decirlo importa, porque parece una normalización de las prohibidas.
+ *
+ * La ida no emite la clave cuando el dato medido no la trae, así que Payload no
+ * escribe filas. Al leer, un `array`/`blocks` sin filas **siempre** devuelve
+ * `[]`: no hay forma de guardar «este campo no existe» distinta de «existe y
+ * está vacío». O sea que la ida no es inyectiva **por el modelo de Payload**, no
+ * por el walker, y la vuelta tiene que elegir una de las dos preimágenes.
+ *
+ * Se elige AUSENTE, y el respaldo es derivado, no recordado: un recorrido de los
+ * 9 catálogos —46 filas— da **0 arrays vacíos explícitos**. Sobre el dominio
+ * medido la preimagen es única, así que la inversa es exacta.
+ *
+ * **Y se auto-vigila**: el día que un dato medido traiga un `[]` explícito, el
+ * comparador verá `[]` contra ausente y fallará por FORMA en esa ruta. No hace
+ * falta acordarse de nada.
+ * ═════════════════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════════════════════════════════════════
  * VUELTA: documento de Payload → la forma de `src/lib`
@@ -389,6 +477,9 @@ function proyecta(campo, doc, ctx, aqui) {
       return ctx.rutaDeMedia(bruto, aqui);
 
     case "relationship": {
+      /* Misma razón que en `array`/`blocks` (ver LA LISTA VACÍA): una relación
+       * `hasMany` sin filas y una ausente son indistinguibles en Payload. */
+      if (campo.hasMany && bruto.length === 0) return undefined;
       const uno = (v) => ctx.deRel(campo.relationTo, v, aqui);
       return campo.hasMany ? bruto.map(uno) : uno(bruto);
     }
@@ -397,15 +488,22 @@ function proyecta(campo, doc, ctx, aqui) {
       return lexicalAInline(bruto);
 
     case "blocks":
+      /**
+       * ⚠ **Una lista VACÍA vuelve AUSENTE.** Ver el bloque `LA LISTA VACÍA`
+       * más abajo: Payload no puede almacenar la diferencia, y el dato medido
+       * no la usa — derivado, **0 arrays vacíos explícitos en las 46 filas**.
+       */
+      if (bruto.length === 0) return undefined;
       return bruto.map((item, i) => {
         const b = bloqueDe(campo, item.blockType, aqui, i);
         const cuerpo = aMedido(b.fields, item, ctx, `${aqui}[${i}]`);
         /* El `kind` vuelve sólo si el dato medido lo llevaba: lo decide el
-         * BLOQUE, no el comparador — ver `conKind`/`declaraKinds` en `seed.mjs`. */
-        return ctx.conKind(b.slug, cuerpo);
+         * BLOQUE **en esta ruta**, no el comparador — ver `conKind` en `seed.mjs`. */
+        return ctx.conKind(aqui, b.slug, cuerpo);
       });
 
     case "array": {
+      if (bruto.length === 0) return undefined;
       const hijos = camposPropios(campo.fields);
       /* Espejo exacto de la ida: un array de UN campo propio es transparente,
        * así que vuelve como lista de valores y no como lista de objetos. */
@@ -413,7 +511,9 @@ function proyecta(campo, doc, ctx, aqui) {
         const h = hijos[0];
         return bruto.map((v, i) => proyecta(h, v, ctx, `${aqui}[${i}]`));
       }
-      return bruto.map((v, i) => aMedido(hijos, v, ctx, `${aqui}[${i}]`));
+      /* Y la inversa de `escalarA`: la unión aplanada vuelve a su forma escalar
+       * cuando el único campo presente es el declarado. */
+      return bruto.map((v, i) => deEscalar(campo, aMedido(hijos, v, ctx, `${aqui}[${i}]`)));
     }
 
     case "group": {

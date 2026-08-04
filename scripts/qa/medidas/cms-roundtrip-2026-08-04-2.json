@@ -63,7 +63,7 @@
     },
     "casos": {
       "documentos": 4,
-      "conDiferencia": 0
+      "conDiferencia": 2
     },
     "faqs": {
       "documentos": 2,
@@ -82,5 +82,22 @@
       "conDiferencia": 0
     }
   },
-  "diferencias": []
+  "diferencias": [
+    {
+      "coleccion": "casos",
+      "slug": "red-calidad-de-aire-para-world-athletics",
+      "ruta": "sectores",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "soluciones",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    }
+  ]
 }

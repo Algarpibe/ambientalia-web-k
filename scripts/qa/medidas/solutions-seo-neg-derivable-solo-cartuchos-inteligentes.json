@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": "derivable",
+    "alcance": "17 URLs de /es/ del solutions-sitemap.xml, derivadas no citadas",
+    "viewport": "1440×900 · DPR 1",
+    "pregunta": "¿`productos.seo.title` tiene respaldo medido, y es campo o plantilla?"
+  },
+  "veredicto": {
+    "titulo": "PLANTILLA",
+    "derivable": true
+  },
+  "presencia": {
+    "title": 17,
+    "ogTitle": 17,
+    "description": 16,
+    "ogDescription": 16,
+    "ogImage": 17,
+    "canonical": 17
+  },
+  "plantillasDeTitulo": {
+    "«h1» | Kunak": 17
+  },
+  "faltan": [
+    "description",
+    "ogDescription"
+  ],
+  "filas": [
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+      "title": "Amoniaco | Kunak",
+      "ogTitle": "Sensor de NH3 (Amoniaco) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+      "h1": "Amoniaco"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cianuro-de-hidrogeno/",
+      "title": "Cianuro de hidrógeno | Kunak",
+      "ogTitle": "Sensor de HCN (Cianuro de hidrógeno) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de cianuro de hidrógeno.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de cianuro de hidrógeno.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2025/07/HCN-Cianuro-de-hidrogeno.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/cianuro-de-hidrogeno/",
+      "h1": "Cianuro de hidrógeno"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cloro-dioxido-de-cloro/",
+      "title": "Cloro – Dióxido de cloro | Kunak",
+      "ogTitle": "Sensor de Cl2 (Cloro) y ClO2 (Dióxido de cloro) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak con un sensor capaz de medir de forma precisa y fiable los niveles de cloro y dióxido de cloro.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak con un sensor capaz de medir de forma precisa y fiable los niveles de cloro y dióxido de cloro.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2025/11/cloro_dioxido_de-cloro_cabecera.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/cloro-dioxido-de-cloro/",
+      "h1": "Cloro – Dióxido de cloro"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cloruro-de-hidrogeno/",
+      "title": "Cloruro de hidrógeno | Kunak",
+      "ogTitle": "Sensor de HCl (Cloruro de hidrógeno) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de cloruro de hidrógeno.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de cloruro de hidrógeno.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/cloruro-de-hidrogeno/",
+      "h1": "Cloruro de hidrógeno"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+      "title": "Compuestos orgánicos volátiles | Kunak",
+      "ogTitle": "Sensor de COVs (Compuestos orgánicos volátiles) - Kunak",
+      "description": "Cartucho inteligente que integra un sensor capaz de medir de forma precisa y fiable los niveles de compuestos orgánicos volátiles.",
+      "ogDescription": "Cartucho inteligente que integra un sensor capaz de medir de forma precisa y fiable los niveles de compuestos orgánicos volátiles.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Volatile-Organic-Compounds.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+      "h1": "Compuestos orgánicos volátiles"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-azufre/",
+      "title": "Dióxido de azufre | Kunak",
+      "ogTitle": "Dióxido de azufre - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir con precisión y fiabilidad los niveles de dióxido de azufre.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir con precisión y fiabilidad los niveles de dióxido de azufre.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Sulphur_dioxide.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-azufre/",
+      "h1": "Dióxido de azufre"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-carbono/",
+      "title": "Dióxido de carbono | Kunak",
+      "ogTitle": "Sensor de CO2 (Dióxido de carbono) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de dióxido de carbono.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de dióxido de carbono.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/Carbon_dioxide_cabecera.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-carbono/",
+      "h1": "Dióxido de carbono"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-nitrogeno/",
+      "title": "Dióxido de nitrógeno | Kunak",
+      "ogTitle": "Dióxido de nitrógeno - Kunak",
+      "description": null,
+      "ogDescription": null,
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Nitrogen_dioxide_cabecera.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-nitrogeno/",
+      "h1": "Dióxido de nitrógeno"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/fluoruro-de-hidrogeno/",
+      "title": "Fluoruro de hidrógeno | Kunak",
+      "ogTitle": "Sensor de HF (Fluoruro de hidrógeno) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de fluoruro de hidrógeno.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de fluoruro de hidrógeno.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2025/09/Fluoruro_de_hidrogeno_cabecera.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/fluoruro-de-hidrogeno/",
+      "h1": "Fluoruro de hidrógeno"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/hidrocarburos-no-metanicos/",
+      "title": "Hidrocarburos no metánicos | Kunak",
+      "ogTitle": "Sensor de NMHC (Hidrocarburos no metánicos) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak con un sensor capaz de medir de forma precisa y fiable los niveles de hidrocarburos no metánicos.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak con un sensor capaz de medir de forma precisa y fiable los niveles de hidrocarburos no metánicos.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2025/11/nmhc-header.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/hidrocarburos-no-metanicos/",
+      "h1": "Hidrocarburos no metánicos"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/monoxido-de-carbono/",
+      "title": "Monóxido de carbono | Kunak",
+      "ogTitle": "Sensor de CO (Monóxido de carbono) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de monóxido de carbono.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de monóxido de carbono.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/cabecera-bosque-incendio.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/monoxido-de-carbono/",
+      "h1": "Monóxido de carbono"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/oxido-nitrico/",
+      "title": "Óxido nítrico | Kunak",
+      "ogTitle": "Sensor de NO (Óxido nítrico) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de óxido nítrico.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de óxido nítrico.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/Nitric_oxide_cabecera.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/oxido-nitrico/",
+      "h1": "Óxido nítrico"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/oxigeno/",
+      "title": "Oxígeno | Kunak",
+      "ogTitle": "Sensor de O2 (Oxígeno) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de oxígeno.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de oxígeno.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ozone.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/oxigeno/",
+      "h1": "Oxígeno"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/ozono/",
+      "title": "Ozono | Kunak",
+      "ogTitle": "Sensor de O3 (Ozono) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de ozono.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de ozono.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ozone.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/ozono/",
+      "h1": "Ozono"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+      "title": "Sensor de partículas PM1, PM2.5, PM4, PM10, TSP y TPC | Kunak",
+      "ogTitle": "Sensor de PM (Partículas en suspensión) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de partículas en suspensión.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de partículas en suspensión.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/particulate-matter.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+      "h1": "Sensor de partículas PM1, PM2.5, PM4, PM10, TSP y TPC"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/sensor-particulas-ultrafinas/",
+      "title": "Partículas ultrafinas | Kunak",
+      "ogTitle": "Sensor de partículas ultrafinas (PUF) - Kunak",
+      "description": "Sensor inteligente para medir partículas ultrafinas (10 nm–1 µm) en tiempo real con tecnología electrostática precisa y mantenimiento mínimo.",
+      "ogDescription": "Sensor inteligente para medir partículas ultrafinas (10 nm–1 µm) en tiempo real con tecnología electrostática precisa y mantenimiento mínimo.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2025/10/particulas-ultrafinas-banner-web.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/sensor-particulas-ultrafinas/",
+      "h1": "Partículas ultrafinas"
+    },
+    {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+      "title": "Sulfuro de hidrógeno | Kunak",
+      "ogTitle": "Sensor de H2S (Sulfuro de hidrógeno) - Kunak",
+      "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de sulfuro de hidrógeno.",
+      "ogDescription": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de sulfuro de hidrógeno.",
+      "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Hydrogen_sulfide.jpg",
+      "canonical": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+      "h1": "Sulfuro de hidrógeno"
+    }
+  ]
+}

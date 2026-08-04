@@ -9,12 +9,23 @@
  *       npm run qa:cms-roundtrip-neg      (los sabotajes + el control)
  *
  * ── Por qué esta sonda y no leer el admin ─────────────────────────────────
- * Es la ÚNICA del repo que mira **el tipo de la hoja** y no sólo su ruta.
- * `payload-types` compila y `qa:cms-campos` pasa aunque un campo esté declarado
- * con un editor que **no puede expresar su contenido** — es la ficha
- * **CMS-SP-TIPO**, abierta en F2-1 con `productos.bullets[].texto`
- * (`R<sup>2</sup> >0,8`) como caso. Aquí el dato entra, vuelve y se compara: si
- * el campo no puede con él, la vuelta no es igual a la ida.
+ * Es la única del repo que mira de la hoja algo **más que su ruta**: su
+ * **DEFECTO** y su **FORMA**. `payload-types` compila y `qa:cms-campos` pasa
+ * aunque el defecto de un campo esté mal elegido o su forma no admita el dato;
+ * aquí el dato entra, vuelve y se compara, así que si el campo no puede con él,
+ * la vuelta no es igual a la ida. Cazó así los dos defectos del 2026-08-04: el
+ * `nivel` compartido entre `claim` y `titular`, y las 16 celdas de tabla que
+ * entraban en blanco.
+ *
+ * ⚠ **Y lo que NO mira, medido y no supuesto: el EDITOR de una hoja rica.**
+ * Cambiar `productos.bullets[].texto` de `htmlLinea` a `editorNegrita` —o sea
+ * **CMS-SP-TIPO literal**, el defecto del `R<sup>2</sup> >0,8`— deja esta sonda
+ * en **63/63, exit 0** (sabotaje `tipo-hoja`, corrido). La razón es de sitio, no
+ * de rigor: esa pérdida ocurre al **RENDERIZAR**, y guardar-y-releer es inverso
+ * igual. **CMS-SP-TIPO sigue abierta** y la cierra el Δ0 de F2-3 o una sonda que
+ * contraste las *features* del editor con el inventario de etiquetas del campo.
+ * Está declarado como punto ciego **verificado** en `cms-roundtrip.neg.mjs`: si
+ * algún día muerde, ese fichero sale rojo.
  *
  * ── ⚠ EL INVARIANTE QUE MANDA: el DEFECTO OMITIDO ─────────────────────────
  * `conDefecto` (§1.5c) omite el valor al escribir cuando coincide con el
@@ -35,14 +46,19 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { Evaluadas, hoy, w } from "./lib.mjs";
+import { Evaluadas, env, hoy, w } from "./lib.mjs";
 import { aMedido, camposPropios } from "../seed/mapeo.mjs";
 import {
   SEMBRADAS,
   FUERA_DE_BLOQUE_1,
   RUTAS_EN_FRONTERA,
   PREPARA,
+  DEVUELVE,
+  SCRIPTS_ELIMINADOS,
+  comoEmbebido,
   podaFrontera,
+  podaScripts,
+  sonInversas,
   exigeVacia,
   siembra,
 } from "../seed/seed.mjs";
@@ -52,7 +68,7 @@ import { TAXONOMIAS_DERIVADAS } from "../seed/catalogos.mjs";
 process.env.SIN_CLON = "1";
 
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["defecto", "sintetico", "envoltorio", "tipo-hoja"];
+const VALIDOS = ["defecto", "defecto-compartido", "sintetico", "envoltorio", "tipo-hoja"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 
@@ -76,7 +92,47 @@ if (!process.env.SIN_RESET) {
 }
 
 const { getPayload } = await import("payload");
-const { construyeConfig } = await import("../../packages/cms-config/src/index.ts");
+const { construyeConfig, COLECCIONES } = await import("../../packages/cms-config/src/index.ts");
+
+/* ── El sabotaje del EDITOR va ANTES de `buildConfig`, y no por gusto: Payload
+ *    «sanea» los editores al resolver la config, y tocar el `editor` después
+ *    tira con *«Attempted to access unsanitized rich text editor»*. Un sabotaje
+ *    que muere ahí no ha probado nada — se parece a que la sonda cazó algo. ── */
+function recorreSinResolver(campos, ruta, visita) {
+  for (const c of campos ?? []) {
+    if (!c?.name) { if (Array.isArray(c?.fields)) recorreSinResolver(c.fields, ruta, visita); continue; }
+    const aqui = ruta ? `${ruta}.${c.name}` : c.name;
+    visita(aqui, c);
+    if (Array.isArray(c.fields)) recorreSinResolver(c.fields, aqui, visita);
+    if (Array.isArray(c.blocks)) for (const b of c.blocks) recorreSinResolver(b.fields, `${aqui}[${b.slug}]`, visita);
+  }
+}
+if (SABOTAJE === "tipo-hoja") {
+  /**
+   * **CMS-SP-TIPO, tal cual se dio en F2-1**: la hoja pasa de `htmlLinea` a
+   * `editorNegrita` — un editor **válido** que no puede expresar `<sup>`, que es
+   * exactamente lo que tenía `productos.bullets[].texto` y ni `payload-types` ni
+   * `qa:cms-campos` vieron.
+   */
+  const { editorNegrita } = await import("../../packages/cms-config/src/campos/comunes.ts");
+  let diana = null;
+  for (const col of COLECCIONES) {
+    if (diana || !SEMBRADAS.includes(col.slug)) continue;
+    recorreSinResolver(col.fields, "", (ruta, c) => {
+      if (!diana && c.type === "code" && c.admin?.language === "html") diana = { col: col.slug, ruta, campo: c };
+    });
+  }
+  if (!diana) {
+    console.error(`\n❌ SABOTAJE=tipo-hoja SIN DIANA — ninguna colección de SEMBRADAS tiene una hoja \`htmlLinea\`.`);
+    process.exit(2);
+  }
+  diana.campo.type = "richText";
+  diana.campo.editor = editorNegrita;
+  delete diana.campo.validate;
+  delete diana.campo.admin?.language;
+  console.log(`  ⚠ diana: ${diana.col}.${diana.ruta} — htmlLinea → editorNegrita`);
+}
+
 const config = await construyeConfig();
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -158,17 +214,24 @@ if (SABOTAJE === "envoltorio") {
   d.campo.fields = [...d.campo.fields, { name: "sabotaje", type: "text" }];
   console.log(`  ⚠ diana: ${d.col}.${d.ruta}`);
 }
-if (SABOTAJE === "tipo-hoja") {
-  /* **CMS-SP-TIPO**: la hoja pasa a un editor que NO puede expresar su
-   * contenido. Es el defecto que ni `payload-types` ni `qa:cms-campos` ven,
-   * porque los dos miran la RUTA del campo y no su tipo. */
+if (SABOTAJE === "defecto-compartido") {
+  /**
+   * **El defecto de ESTA tanda, reintroducido**: dos bloques distintos
+   * comparten un `nivel` con el mismo `defaultValue`, cuando el render los lee
+   * con `?? 2` y `?? 3`. El hook de `conDefecto` omite entonces el valor
+   * explícito de uno de los dos y la vuelta lo devuelve AUSENTE.
+   *
+   * No es lo mismo que `defecto`: aquél prueba que la sonda ve un defecto que
+   * vuelve explícito; éste, que ve un defecto **mal elegido**. Son dos formas de
+   * fallar de la misma pieza y sólo una la cubría el otro sabotaje.
+   */
   const d = exigeDiana(
-    buscaDiana((c) => c.type === "code" && c.admin?.language === "html"),
-    "ninguna hoja de HTML en línea (`htmlLinea`)",
+    buscaDiana((c) => c.name === "nivel" && c.defaultValue === 3),
+    "ningún `nivel` con defecto 3 (el del `titular`)",
   );
-  d.campo.type = "richText";
-  delete d.campo.validate;
-  console.log(`  ⚠ diana: ${d.col}.${d.ruta}`);
+  d.campo.defaultValue = 2;
+  d.campo.hooks = { beforeChange: [({ value }) => (value === 2 ? null : value)] };
+  console.log(`  ⚠ diana: ${d.col}.${d.ruta} — defecto 3 → 2, como estaba antes`);
 }
 
 const payload = await getPayload({ config });
@@ -194,12 +257,85 @@ const ev = new Evaluadas({ nombre: "cms-roundtrip", unidad: "documentos", minimo
 /* Cómo se reconstruye un TÉRMINO EMBEBIDO (§2c): proyectando el documento
  * destino con los campos de SU colección — no copiándolo del catálogo medido,
  * que sería comparar el dato consigo mismo. Se le pasa al contexto en vez de
- * cablearlo dentro para que `seed.mjs` no dependa de la config. */
+ * cablearlo dentro para que `seed.mjs` no dependa de la config.
+ *
+ * ⚠ **Y después, `DEVUELVE` — la inversa de `PREPARA`, que hasta hoy no
+ * existía.** El walker es bidireccional por construcción, pero `PREPARA` es una
+ * transformación escrita ENCIMA de él y sólo tenía ida: el documento embebido
+ * volvía con los nombres del ESQUEMA (`slug`/`titulo`) contra los del dato
+ * medido (`id`/`name`). 72 de las 157 diferencias eran eso. */
 ctx.declaraProyector((col, docDestino, donde) => {
   const cfg = config.collections.find((c) => c.slug === col);
   if (!cfg) throw new Error(`PROYECTOR: la colección destino '${col}' (en ${donde}) no está en la config`);
-  return aMedido(cfg.fields, docDestino, ctx, col);
+  return (DEVUELVE[col] ?? ((x) => x))(aMedido(cfg.fields, docDestino, ctx, col));
 });
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS TRANSFORMACIONES DECLARADAS QUE EL LADO MEDIDO TAMBIÉN PASA
+ *
+ * ⚠ **Aplicar una transformación a los DOS lados es el modo de fallo que el
+ * walker único existe para evitar** —*un mismo olvido en las dos daría Δ0 en
+ * falso*—, así que cada una va con lo que la hace auditable:
+ *
+ * | transformación | por qué el lado medido también la pasa | control |
+ * |---|---|---|
+ * | **T4a** (`podaScripts`) | el `validate` del campo RECHAZA `<script>` (§3.3), así que lo que entró en la DB es el HTML sin ellos. Comparar contra el HTML con scripts sería comparar contra algo que el esquema prohíbe | el nº de eliminaciones se cuenta y se contrasta contra `sondeo-frontera.json`, congelada por OTRA sonda |
+ * | **regla de rutas locales** (`comoEmbebido`) | §4 no guarda `href`: se compone de `padre`+`slug`, y dentro del CMS los 24 productos son documentos ⇒ ruta local | la vuelta lo COMPONE y el lado medido lo NORMALIZA: dos cálculos independientes que tienen que coincidir |
+ *
+ * `podaFrontera` no necesita control: `RUTAS_EN_FRONTERA` está **vacía** desde
+ * que se cerró la frontera del teaser, y una ruta declarada que no case sale por
+ * `PODA MUERTA` en el sondeo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Normaliza los documentos EMBEBIDOS del lado medido, guiado por la config —
+ * no por una lista de rutas. Un valor de `relationship` que el dato medido
+ * escribe como OBJETO es un documento embebido (§2c), y su forma medida la da
+ * `comoEmbebido` de su colección destino.
+ */
+function normalizaEmbebidos(campos, dato) {
+  if (dato === null || typeof dato !== "object") return dato;
+  const out = Array.isArray(dato) ? [...dato] : { ...dato };
+  for (const campo of camposPropios(campos)) {
+    if (!campo?.name) {
+      if (Array.isArray(campo.fields)) Object.assign(out, normalizaEmbebidos(campo.fields, out));
+      continue;
+    }
+    const v = out[campo.name];
+    if (v === undefined || v === null) continue;
+    const uno = (x) => {
+      if (campo.type === "relationship")
+        return x !== null && typeof x === "object"
+          ? comoEmbebido(Array.isArray(campo.relationTo) ? campo.relationTo[0] : campo.relationTo, x)
+          : x;
+      if (campo.type === "blocks") {
+        const b = campo.blocks?.find((bl) => x?.kind === bl.slug || Object.hasOwn(x ?? {}, bl.slug));
+        return b ? normalizaEmbebidos(b.fields, x) : x;
+      }
+      if (Array.isArray(campo.fields)) return normalizaEmbebidos(campo.fields, x);
+      return x;
+    };
+    out[campo.name] = Array.isArray(v) ? v.map(uno) : uno(v);
+  }
+  return out;
+}
+
+/* ── El par escrito a mano se verifica ANTES de usarlo: si `DEVUELVE` no es la
+ *    inversa de `PREPARA`, todo lo de abajo compara contra un espejo torcido. ── */
+const conPrepara = Object.keys(PREPARA).filter((c) => SEMBRADAS.includes(c));
+const noInversas = conPrepara.flatMap((col) => sonInversas(col, catalogos.get(col)));
+if (noInversas.length) {
+  console.error(`\n❌ PREPARA/DEVUELVE NO son inversas en ${noInversas.length} campo(s):`);
+  for (const r of noInversas.slice(0, 10)) console.error(`   · ${r.coleccion}/${r.slug} · ${r.campo}`);
+  process.exit(2);
+}
+const FILAS_INVERSAS = conPrepara.reduce((a, c) => a + catalogos.get(c).length, 0);
+console.log(`  ✓ PREPARA/DEVUELVE inversas sobre ${FILAS_INVERSAS} filas de ${conPrepara.join(" · ")}`);
+
+/* ── El control de T4a: el lado medido tiene que quitar EXACTAMENTE los mismos
+ *    scripts que quitó el seed. Si difiere, la transformación no es la misma en
+ *    los dos lados y el Δ0 no significaría nada. ─────────────────────────── */
+const T4A_EN_SIEMBRA = SCRIPTS_ELIMINADOS.length;
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LA COMPARACIÓN — estructural, y las diferencias se NOMBRAN por ruta
@@ -257,7 +393,10 @@ for (const [col, filas] of filasPorColeccion) {
   const ids = ctx.idsPorColeccion.get(col);
   let malas = 0;
   for (const fila of filas) {
-    const esperado = podaFrontera((PREPARA[col] ?? ((x) => x))(fila));
+    const esperado = normalizaEmbebidos(
+      cfg.fields,
+      podaScripts(podaFrontera((PREPARA[col] ?? ((x) => x))(fila)), `esperado:${col}`),
+    );
     const id = ids?.get(esperado.slug);
     if (id === undefined) {
       ev.fallo(`${col}/${esperado.slug}`, "el seed no registró su id");
@@ -289,6 +428,21 @@ for (const [col, filas] of filasPorColeccion) {
   );
 }
 
+/* ── T4a, el control. `podaScripts` apunta en el mismo `SCRIPTS_ELIMINADOS`,
+ *    así que la mitad de arriba es la del seed y la de abajo la del lado medido:
+ *    tienen que ser el mismo número, y las mismas rutas. ─────────────────── */
+const t4aEsperado = SCRIPTS_ELIMINADOS.length - T4A_EN_SIEMBRA;
+if (t4aEsperado !== T4A_EN_SIEMBRA) {
+  console.error(
+    `\n❌ T4a NO es la misma transformación en los dos lados: ${T4A_EN_SIEMBRA} scripts\n` +
+      `   quitados al sembrar y ${t4aEsperado} al preparar el lado medido. Un Δ0 con esto\n` +
+      `   descuadrado sería exactamente el «mismo olvido en las dos direcciones».`,
+  );
+  process.exit(2);
+}
+const dondeT4a = new Set(SCRIPTS_ELIMINADOS.slice(0, T4A_EN_SIEMBRA).map((s) => s.donde.split("/")[1]));
+console.log(`  ✓ T4a simétrica — ${T4A_EN_SIEMBRA} <script> en los dos lados, ${dondeT4a.size} documento(s)`);
+
 /* ── El alcance viaja con el dato: una cobertura declarada al nivel de arriba
  *    absorbe justo lo que no se midió abajo. ─────────────────────────────── */
 console.log(`\n  alcance — FUERA de la comparación, con su razón:`);
@@ -310,7 +464,7 @@ if (informe.diferencias.length) {
   );
 }
 
-w(SABOTAJE ? `medidas/cms-roundtrip-neg-${SABOTAJE}.json` : "medidas/cms-roundtrip.json", informe);
+w(env("SALIDA") || (SABOTAJE ? `medidas/cms-roundtrip-neg-${SABOTAJE}.json` : "medidas/cms-roundtrip.json"), informe);
 
 console.log(
   `\n${conDiferencia === 0 ? "✅" : "❌"} round-trip: ${PARES - conDiferencia}/${PARES} documentos IDÉNTICOS` +

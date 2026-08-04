@@ -286,10 +286,21 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
    * Devolverlo siempre inventaría un `kind` donde el original no lo tiene;
    * omitirlo siempre lo perdería donde sí. Lo decide **el bloque**, que es
    * donde está escrito, y por eso esto no es una excepción del comparador.
+   *
+   * ⚠⚠ **La llave es (RUTA, slug), no el slug (corregido el 2026-08-04).** Un
+   * `Set` de slugs a secas daba **7 `kind` inventados** en el cuerpo de los
+   * monográficos: `claim` y `titular` nombran **dos bloques distintos** —el
+   * módulo de `modulos[]`, que trae `kind`, y el bloque de `bloques[]`, que
+   * discrimina por la clave presente y no lo trae— y marcar el slug marcaba los
+   * dos. Es la misma forma que `formaDeRel`, y por eso usa la misma
+   * `rutaLimpia`: una propiedad **del sitio**, no del nombre.
    */
-  const CON_KIND = new Set();
-  const declaraKinds = (slugs) => { for (const s of slugs) CON_KIND.add(s); };
-  const conKind = (slug, cuerpo) => (CON_KIND.has(slug) ? { kind: slug, ...cuerpo } : cuerpo);
+  const CON_KIND = new Set(); // "rutaLimpia\0slug"
+  const declaraKinds = (ruta, slugs) => {
+    for (const s of slugs) CON_KIND.add(`${rutaLimpia(ruta)}\0${s}`);
+  };
+  const conKind = (ruta, slug, cuerpo) =>
+    CON_KIND.has(`${rutaLimpia(ruta)}\0${slug}`) ? { kind: slug, ...cuerpo } : cuerpo;
 
   return {
     media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas, sinLlave, formaDeRel,
@@ -350,6 +361,113 @@ export const PREPARA = {
   productos: preparaProducto,
   "taxonomia-sectores": preparaTermino,
 };
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA VUELTA DE `PREPARA` — ⚠ **no existía, y ésa era la mitad de las 157
+ * diferencias del round-trip (2026-08-04).**
+ *
+ * El walker de `mapeo.mjs` es bidireccional **por construcción**: un solo
+ * recorrido de la config leído al derecho y al revés. `PREPARA` no lo es —es una
+ * transformación escrita a mano encima— así que **tenía ida y no vuelta**, y eso
+ * no dio error: dio 72 diferencias con pinta de campo perdido.
+ *
+ * Dónde muerde, que no es donde parece: los documentos de `productos` se
+ * comparan ya preparados en los dos lados, así que ahí cuadraban. Lo que no
+ * cuadra es el **documento EMBEBIDO**: `sectores.soluciones` guarda el `Product`
+ * entero con sus nombres medidos (`id` · `name` · `href`), y el proyector
+ * devolvía el documento con los del ESQUEMA (`slug` · `titulo`). Los dos son
+ * correctos en su lado; lo que faltaba era el traductor de vuelta.
+ *
+ * ── `href`: la REGLA DE RUTAS LOCALES, y no es una pérdida de modelo ───────
+ * §4 no guarda `href`: la ruta se compone de `padre` + `slug`. Así que la vuelta
+ * la reconstruye **local**, y el dato medido trae **3 locales y 6 absolutas al
+ * original** (derivado del catálogo, no recordado):
+ *
+ *     /monitor-calidad-aire                                       ← construido
+ *     https://kunakair.com/es/cartuchos-inteligentes/amoniaco/     ← referenciado
+ *
+ * Y ese reparto **no es ruido: es exactamente `CLAUDE.md` §Regla de rutas
+ * locales** —*«si el destino ya está clonado, el href va a la ruta local; si no,
+ * se deja apuntando al original hasta que se clone»*—, o sea la misma regla de
+ * la que **T7** (§3.2) es la mitad de cuerpo rico. Los 6 absolutos son los 6
+ * productos que el clon sólo REFERENCIÓ (`qa:cms-arquetipos`); **dentro del CMS
+ * los 24 son documentos**, así que su ruta es local por definición y
+ * reconstruirla local es la regla haciendo su trabajo, no un dato perdido.
+ *
+ * Por eso el comparador **normaliza el lado medido con `rutaLocal()`** —una
+ * función sobre la CADENA medida— y la vuelta **la compone de `padre` + `slug`».
+ * Son **dos cálculos independientes que tienen que coincidir**: si discreparan,
+ * el comparador lo dice. No es una tolerancia compartida.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * La ruta local de un `href` medido: sin origen, sin el `/es` del original y
+ * sin barra final (`trailingSlash` no está activado — `CLAUDE.md` §Regla de
+ * rutas locales).
+ */
+export function rutaLocal(href) {
+  if (typeof href !== "string") return href;
+  const segs = href
+    .replace(/^https?:\/\/[^/]+/, "")
+    .replace(/^\/es(?=\/|$)/, "")
+    .split("/")
+    .filter(Boolean);
+  return `/${segs.join("/")}`;
+}
+
+/** `productos`: deshace los alias de §2e y recompone la ruta del §4. */
+export function devuelveProducto(d) {
+  const { slug, titulo, padre, ...resto } = d;
+  return {
+    id: slug,
+    name: titulo,
+    ...resto,
+    href: `/${[padre, slug].filter(Boolean).join("/")}`,
+  };
+}
+
+/** `taxonomia-sectores`: la relación polimórfica vuelve a ser un slug. */
+export function devuelveTermino(d) {
+  const { pagina, ...resto } = d;
+  return { ...resto, ...(pagina !== undefined ? { paginaSlug: pagina } : {}) };
+}
+
+export const DEVUELVE = {
+  productos: devuelveProducto,
+  "taxonomia-sectores": devuelveTermino,
+};
+
+/**
+ * La forma medida de un documento, tal y como la escribe quien lo EMBEBE.
+ * `rutaLocal` se aplica al `href` medido porque el CMS no puede representar «este
+ * destino todavía no está clonado» — ver el bloque de arriba.
+ */
+export function comoEmbebido(coleccion, fila) {
+  if (coleccion !== "productos") return fila;
+  return { ...fila, href: rutaLocal(fila.href) };
+}
+
+/**
+ * ⚠ **`PREPARA` y `DEVUELVE` son un par escrito a mano, así que su coherencia
+ * se EJECUTA, no se declara.** El comentario que esto sustituye prometía un
+ * `aliasCoherentes()` que no existía (regla 3, en `mapeo.mjs`). Esto sí corre:
+ * `DEVUELVE(PREPARA(fila))` sobre cada fila del catálogo, contra la fila medida
+ * ya normalizada por `comoEmbebido`. Devuelve las rutas que no vuelven.
+ */
+export function sonInversas(coleccion, filas) {
+  const ida = PREPARA[coleccion];
+  const vuelta = DEVUELVE[coleccion];
+  if (!ida || !vuelta) return [];
+  const rotas = [];
+  for (const fila of filas) {
+    const esperado = comoEmbebido(coleccion, fila);
+    const real = vuelta(ida(fila));
+    for (const k of new Set([...Object.keys(esperado), ...Object.keys(real)]))
+      if (JSON.stringify(esperado[k]) !== JSON.stringify(real[k]))
+        rotas.push({ coleccion, slug: fila.slug ?? fila.id, campo: k });
+  }
+  return rotas;
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LAS TAXONOMÍAS DERIVADAS — §2c

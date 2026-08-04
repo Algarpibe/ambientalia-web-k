@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "tipo-hoja",
     "alcance": {
       "comparadas": [
         "categorias",

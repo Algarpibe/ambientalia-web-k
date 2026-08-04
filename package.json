@@ -80,7 +80,13 @@
     "qa:cms-roundtrip": "node --env-file=apps/cms/.env scripts/qa/cms-roundtrip.mjs",
     "qa:cms-roundtrip-neg": "node --env-file=apps/cms/.env scripts/qa/cms-roundtrip.neg.mjs",
     "cms:sondeo": "node --env-file=apps/cms/.env scripts/seed/sondeo.mjs",
-    "cms:sondeo-neg": "node scripts/seed/sondeo.neg.mjs"
+    "cms:sondeo-neg": "node scripts/seed/sondeo.neg.mjs",
+    "qa:solutions-seo": "node scripts/qa/solutions-seo.mjs",
+    "qa:solutions-seo-neg": "node scripts/qa/solutions-seo.neg.mjs",
+    "qa:cms-teaser": "node scripts/qa/cms-teaser.mjs",
+    "qa:cms-teaser-neg": "node scripts/qa/cms-teaser.neg.mjs",
+    "qa:cms-arquetipos": "node scripts/qa/cms-arquetipos.mjs",
+    "qa:cms-arquetipos-neg": "node scripts/qa/cms-arquetipos.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

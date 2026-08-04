@@ -112,7 +112,22 @@ if (marcador) {
 /* ─────────────────────────── medida ─────────────────────────── */
 
 const { browser } = await launch();
-const todo = { meta: { width, base: BASE, rutas: RUTAS.length }, paginas: {} };
+/**
+ * ⚠ **El PUERTO no entra en la congelada, y no es cosmética (2026-08-04).**
+ *
+ * `meta.base` traía `http://127.0.0.1:<puerto efímero>`, distinto en cada
+ * corrida. Consecuencia, que no daba error de ninguna clase: la
+ * de-duplicación de `w()` —*«idéntica se reescribe, no se pierde nada»*— **no
+ * podía dispararse nunca** para esta sonda, porque dos corridas del MISMO build
+ * difieren siempre en ese campo. De ahí que `medidas/` acumule 48 ficheros
+ * `clon-base-*`: cada corrida estrena uno, y la guarda de la regla 5 avisa de un
+ * cambio que no existe.
+ *
+ * Se conserva **si el clon es propio o ajeno** —que sí decide cómo leer la
+ * medida— y se tira el número de puerto, que no dice nada de lo medido.
+ */
+const BASE_ESTABLE = String(BASE).replace(/:\d+$/, ":<efímero>");
+const todo = { meta: { width, base: BASE_ESTABLE, rutas: RUTAS.length }, paginas: {} };
 
 /**
  * El contrato de `Evaluadas`: el mínimo se DERIVA DEL BUILD, así que una ruta

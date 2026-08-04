@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "derivable",
     "pregunta": "¿es `CaseStudy`/`BlogPost` una proyección derivable del documento destino?",
     "alcance": "3 pares comparables de 34 teasers — el resto no tiene destino transcrito",
     "asimetria": "un DISTINTO basta para falsar la derivación; un IDÉNTICO en estos pares NO prueba derivabilidad universal",
@@ -57,10 +57,8 @@
     }
   },
   "veredicto": {
-    "decision": "SE SOSTIENE",
-    "noDerivables": [
-      "entradas-blog.date"
-    ],
+    "decision": "FALSADA",
+    "noDerivables": [],
     "paresComparables": 3
   },
   "porCampo": {
@@ -129,15 +127,11 @@
       "ejemplo": null
     },
     "entradas-blog.date": {
-      "IDÉNTICO": 0,
+      "IDÉNTICO": 2,
       "POR REGLA": 0,
-      "DISTINTO": 2,
+      "DISTINTO": 0,
       "AUSENTE": 0,
-      "ejemplo": {
-        "estado": "DISTINTO",
-        "teaser": "Mar 25, 2026",
-        "documento": "25 marzo 2026"
-      }
+      "ejemplo": null
     },
     "entradas-blog.image": {
       "IDÉNTICO": 0,
@@ -212,9 +206,8 @@
           "teaser": "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible"
         },
         "date": {
-          "estado": "DISTINTO",
-          "teaser": "Mar 25, 2026",
-          "documento": "25 marzo 2026"
+          "estado": "IDÉNTICO",
+          "teaser": "Mar 25, 2026"
         },
         "image": {
           "estado": "POR REGLA",
@@ -240,9 +233,8 @@
           "teaser": "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones"
         },
         "date": {
-          "estado": "DISTINTO",
-          "teaser": "Ene 7, 2025",
-          "documento": "7 enero 2025"
+          "estado": "IDÉNTICO",
+          "teaser": "Ene 7, 2025"
         },
         "image": {
           "estado": "POR REGLA",

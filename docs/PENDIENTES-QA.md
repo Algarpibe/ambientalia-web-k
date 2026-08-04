@@ -1,5 +1,34 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ABIERTO · `/kunak-api` — el `<title>` del clon NO es el del original (2026-08-04)
+
+Lo destapó de paso `npm run qa:solutions-seo` (24/24 URLs del CPT, congelado en
+`medidas/solutions-seo.json`), midiendo otra cosa:
+
+| | `<title>` |
+|---|---|
+| **original** | `Kunak API - Kunak` |
+| **clon** (`apps/web/src/app/kunak-api/page.tsx`, `export const metadata`) | `Kunak API \| Integración de datos de calidad del aire` |
+
+**Es una discrepancia de fidelidad de las de la regla 1** (*textos verbatim,
+erratas incluidas*), y no la veía nadie porque **ninguna sonda del repo compara
+el `<head>`**: todas miden geometría del `<body>`. El dato correcto —el del
+original— **ya está** en `src/lib/products.ts` (`seo.title` de `kunak-api`, §2h
+del ESQUEMA); lo que falta es que la página lo consuma en vez de llevar su
+propio literal.
+
+**No se arregla en la tanda que lo encuentra, y la razón es de alcance:** tocar
+`metadata` de una `page.tsx` es tocar `apps/web`, o sea pagar una corrida Δ0
+completa por un cambio que **no mueve un píxel del `<body>`** — la sonda que lo
+verificaría no puede verlo. Se arregla en la tanda de F2-3, que es cuando las
+páginas pasan a leer del CMS y el `seo` deja de vivir en la capa de estructura.
+
+> ⚠ **Y lo que este pendiente enseña de método:** el título estaba en el
+> `export const metadata` de tres `page.tsx`, o sea **contenido dentro de la capa
+> de ESTRUCTURA** (`CLAUDE.md` regla 2). Ahí es invisible para cualquier
+> auditoría del catálogo *y* para cualquier sonda de geometría. **Un dato que
+> vive en la plantilla no lo audita nadie.**
+
 ## /monitor-calidad-aire — QA visual final (2026-07-26)
 
 > Comparación CDP por secciones (puppeteer-core + Chrome del sistema, perfil

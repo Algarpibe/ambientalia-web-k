@@ -26,12 +26,53 @@ import {
  * El nivel **manda la tipografía del claim** —h2→37 · h3→32 · h4→26, medido en
  * las 12 instancias— y por eso NO hay campo `fs`: el tamaño está predicho por
  * el nivel. El día que una instancia rompa esa correlación, `fs` pasa a campo.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠ **EL DEFECTO NO ES UNO: SON DOS, Y COMPARTIRLO CAMBIABA LA ETIQUETA
+ * SERVIDA (cazado el 2026-08-04 por `qa:cms-roundtrip`, y por nada más).**
+ *
+ * Este fichero declaraba **un solo** `nivel` con `conDefecto(…, 2, …)` y lo
+ * reusaba en los cuatro sitios. El render del clon —que es la salida servida, o
+ * sea la fuente de verdad— usa **dos defectos distintos**:
+ *
+ * | quién | cómo lo lee `MonoCuerpo.tsx` | defecto |
+ * |---|---|---|
+ * | `claim` (bloque y módulo) | `Claim({ nivel = 2 })` · líneas 100 · 281 | **2** |
+ * | `titular` (bloque y módulo) | `b.nivel ?? 3` · `m.nivel ?? 3` · líneas 156 · 275 | **3** |
+ *
+ * Con el defecto compartido a 2, el hook de `conDefecto` —*coincidir con el
+ * defecto = no haber escrito*— **omitía el `nivel: 2` explícito de un
+ * `titular`**, y al leerlo de vuelta el render caía en su `?? 3`: el
+ * `<h2>Proyectos por todo el mundo</h2>` de EDAR salía **`<h3>`**. Una etiqueta
+ * distinta en el esqueleto del DOM, que es justo lo que `tree-cmp` compara.
+ *
+ * **Y ninguna guarda podía verlo.** `payload-types` compila igual, `qa:cms-campos`
+ * pasa igual: **los dos miran la RUTA del campo, no su DEFECTO** — la misma
+ * ceguera que la ficha **CMS-SP-TIPO** describe para el TIPO de la hoja. El
+ * único instrumento que lo ve es el que mete el dato y lo saca: el round-trip.
+ * Alcance medido: **1 instancia** en el catálogo (`monografico.ts` l. 872), y
+ * bastaba una.
+ *
+ * El `defaultValue` viaja a la columna (`default: 2` en las 12 columnas `nivel`
+ * de la migración inicial), así que cambiarlo **es cambio de esquema y lleva su
+ * migración versionada** — `20260804_…_nivel_titular_por_defecto_3`.
+ * ══════════════════════════════════════════════════════════════════════════
  */
-export const nivel: Field = conDefecto(
-  { name: "nivel", type: "number", min: 2, max: 4 } as Field,
-  2,
-  "§1.5 · MonoNivel 2|3|4",
-);
+function nivelCon(defecto: 2 | 3, deQuien: string): Field {
+  /* Un objeto NUEVO por llamada, no una copia del de al lado: `conDefecto`
+   * MUTA el campo que recibe, así que compartir la referencia es exactamente
+   * cómo los cuatro sitios acabaron con el mismo defecto. */
+  return conDefecto(
+    { name: "nivel", type: "number", min: 2, max: 4 } as Field,
+    defecto,
+    `§1.5 · MonoNivel 2|3|4 — el ${deQuien} lo lee con \`?? ${defecto}\` en MonoCuerpo.tsx`,
+  );
+}
+
+/** El defecto del `claim`: `Claim({ nivel = 2 })`. */
+export const nivelClaim: Field = nivelCon(2, "claim");
+/** El del `titular`: `b.nivel ?? 3` / `m.nivel ?? 3`. **No es el mismo.** */
+export const nivelTitular: Field = nivelCon(3, "titular");
 
 /**
  * `MonoInline` — texto que puede llevar negrita a mitad de frase.
@@ -106,13 +147,13 @@ export const BLOQUE_CLAIM: Block = {
    * **sin dato** de uno **con valor vacío** — Payload los rechaza igual y sólo el
    * primero se veía.
    */
-  fields: [{ name: "claim", type: "text" }, nivel],
+  fields: [{ name: "claim", type: "text" }, nivelClaim],
 };
 
 export const BLOQUE_TITULAR: Block = {
   slug: "titular",
   labels: { singular: "Titular", plural: "Titulares" },
-  fields: [{ name: "titular", type: "text", required: true }, nivel],
+  fields: [{ name: "titular", type: "text", required: true }, nivelTitular],
 };
 
 export const BLOQUES_TEXTO: Block[] = [BLOQUE_P, BLOQUE_UL, BLOQUE_CLAIM, BLOQUE_TITULAR];
@@ -124,13 +165,13 @@ export const BLOQUES_TEXTO: Block[] = [BLOQUE_P, BLOQUE_UL, BLOQUE_CLAIM, BLOQUE
 export const MODULO_TITULAR: Block = {
   slug: "titular",
   labels: { singular: "Titular", plural: "Titulares" },
-  fields: [{ name: "texto", type: "text", required: true }, nivel, ...moduloBase],
+  fields: [{ name: "texto", type: "text", required: true }, nivelTitular, ...moduloBase],
 };
 
 export const MODULO_CLAIM: Block = {
   slug: "claim",
   labels: { singular: "Claim", plural: "Claims" },
-  fields: [{ name: "texto", type: "text", required: true }, nivel, ...moduloBase],
+  fields: [{ name: "texto", type: "text", required: true }, nivelClaim, ...moduloBase],
 };
 
 export const MODULO_TEXTO: Block = {

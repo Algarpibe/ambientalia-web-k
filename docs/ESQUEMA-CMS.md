@@ -1872,6 +1872,178 @@ los dos ejes están **CIEGOS ahí, no limpios** — la sonda cuenta y grita **26
 celdas SIN VEREDICTO**. Se cierra con `data-col`/`data-mod`. Los `Δ0` de la
 corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 
+## ✅ 2f · CONSTRUIDO vs REFERENCIADO — la premisa del §F2-2 es cierta de UNAS colecciones y falsa de otras (2026-08-04)
+
+**Es lo que más cambia de cómo se lee `src/lib` en todo el esquema**, y no estaba
+escrito en ninguna parte. Instrumento: **`npm run qa:cms-arquetipos`** (negativo
+`qa:cms-arquetipos-neg`, 3 sabotajes + control), congelado en
+`medidas/cms-arquetipos.json`.
+
+> **`PLAN-FASE-2.md` §F2-2 arranca de *«`src/lib/*.ts` **son** los datos»*.
+> Medido: lo son de los arquetipos que el clon **CONSTRUYÓ**, y **no** de los que
+> sólo **REFERENCIÓ**.**
+
+El clon hizo dos cosas distintas con el original, y las dos dejan filas en
+`src/lib`:
+
+| | qué hizo | qué hay en `src/lib` | ¿siembra la colección? |
+|---|---|---|---|
+| **CONSTRUYÓ** | reconstruyó la página y la sirve (emite ruta) | el contenido completo | **sí** |
+| **REFERENCIÓ** | pintó un enlace o un teaser hacia ella | lo que el que la pinta necesitaba | **no**: el resto de campos **nunca se midió** |
+
+**Una fila referenciada no es una fila incompleta por descuido: es una
+PROYECCIÓN, y está completa respecto de su propósito.** Confundir las dos cosas
+es lo que hace que un `required` sin dato se lea como *«se me olvidó
+rellenarlo»* en vez de *«este dato no existe todavía»* — que es exactamente cómo
+nació la frontera de `productos.seo.title`.
+
+**Y son DOS ejes, no uno.** Darlos juntos es el error de `CLAUDE.md` §El NIVEL al
+que se mide aplicado a un informe:
+
+- **A · ¿la FILA es completa?** ⇒ lo dice si el clon **emite ruta** para ella
+  (`prerender-manifest`, o sea el build);
+- **B · ¿está el CORPUS completo?** ⇒ cuántas filas hay de las que existen en el
+  original. **`cms-arquetipos` NO mide el eje B y lo declara**: 4 casos de 57 y 7
+  entradas de 149. Una colección puede estar **CONSTRUIDA y al 3 % del corpus**.
+
+### El reparto medido, con las aristas colgantes
+
+| colección | filas | con ruta | colgantes↑ | colgantes↓ | clase |
+|---|---|---|---|---|---|
+| `productos` | 9 | **3** | 0 | 0 | **MIXTA** — la premisa es FALSA para **6 de 9** |
+| `sectores` | 4 | 4 | 0 | 0 | CONSTRUIDA |
+| `monograficos` | 2 | 2 | 0 | 0 | CONSTRUIDA |
+| `taxonomia-sectores` | 11 | **0** | 0 | 0 | **REFERENCIADA** — 11 de 11 |
+| `casos` · `faqs` · `entradas-blog` · `terminos-kunakpedia` · `documentos-cientificos` | 4·2·7·3·4 | todas | 0 | 0 | CONSTRUIDA |
+
+`colgantes↑` = relaciones de esa colección sin documento destino ·
+`colgantes↓` = documentos suyos que otras piden y no existen. **Los dos están a
+0 desde que la decisión del teaser (§F2-2 · TEASER) convirtió las 31 relaciones
+huérfanas en dato propio** — antes eran 20 en `sectores` y 11 en `monograficos`.
+
+> ⚠ **`taxonomia-sectores` es REFERENCIADA y aun así se siembra, y eso no es una
+> excepción: es lo que distingue los dos ejes.** Sus 11 términos vienen embebidos
+> completos en los documentos que los usan (§2c), así que la proyección **es** el
+> término entero. Lo que la clase dice es que **el clon no sirve `/sector/<slug>`**,
+> no que falte dato.
+
+### Consecuencia para el esquema, que es por lo que esto vive aquí
+
+**`productos.cuerpo` está VACÍO en las 9, y es correcto.** `src/lib/products.ts`
+es la **proyección de pestaña** de la home, no la ficha: no tiene cuerpo porque
+nadie lo midió. El round-trip da Δ0 porque los dos lados están vacíos, y **eso es
+verdad, no un verde falso** — siempre que el alcance viaje al lado, que es para
+lo que existe esta sección. Las 24 fichas del CPT entran en el **bloque 2**, con
+el extractor.
+
+**Regla que deja, y vale para cualquier colección futura:** antes de declarar
+que una colección se puede sembrar de `src/lib`, se mira su clase. **REFERENCIADA
+o MIXTA ⇒ lo que hay es una proyección**, y sembrarla entera exige medir primero
+los campos que la proyección no necesitaba.
+
+---
+
+## ✅ 2g · El TEASER es DATO PROPIO, no relación — y su consecuencia va sin tapar (2026-08-04)
+
+**Afecta a `sectores.proyectos.posts` y `sectores.articulos.posts`** (y los mismos
+en `monograficos`). Migración versionada: `20260804_151246_teaser_dato_propio`.
+Falsador ejecutable: **`npm run qa:cms-teaser`**, con negativo
+`qa:cms-teaser-neg` (2 sabotajes + control). Congelado en `medidas/cms-teaser.json`.
+
+### Lo que decía antes, y por qué se cae
+
+§1.5 los dejó como **relaciones**, con este comentario: *«`CaseStudy` y
+`BlogPost` son proyecciones de teaser del documento relacionado, no campos de
+esta colección»*. **Nadie lo había medido.** Medido, se cae por dos sitios
+independientes y basta cualquiera de los dos:
+
+1. **El destino no existe para casi ninguno.** De los **34** teasers del dato
+   medido, **31 apuntan a un documento que el clon no tiene** (`sondeo-frontera`).
+   Es el **precedente directo de §2e.1 `padre`**, resuelto igual y por lo mismo:
+   allí *«17 de 18 hijos apuntarían a un documento inexistente ⇒ relación pura no
+   vale»*; aquí son **31 de 34**.
+2. **Y aunque existiera, `date` no se deriva.** Comparados campo a campo los **3**
+   pares cuyo destino sí está transcrito: `title`·`client`·`sector` **IDÉNTICOS**;
+   `image`·`href`·`sectorHref` **POR REGLA** (M-IMG y §4, ya decididas); y
+   **`date` DISTINTO** — `"Mar 25, 2026"` en el teaser contra `"25 marzo 2026"`
+   en `fechaPublicacion`.
+
+> ⚠ **Y lo que el negativo añade, que es lo que hace honesta la decisión:** el
+> sabotaje `derivable` le pone a la sonda **el formateador de meses en español**
+> y el veredicto **voltea a FALSADA**. O sea que derivar el teaser **sí es
+> técnicamente posible**. No se hace porque re-formatear **normaliza en silencio
+> cualquier errata del original**, y el contrato de fidelidad (`CLAUDE.md` §1:
+> textos verbatim, erratas incluidas) lo prohíbe. **Es una decisión de contrato,
+> no una limitación técnica**, y decirlo al revés sería vender una elección como
+> una necesidad.
+
+⚠ **La asimetría del alcance va dicha: 3 pares comparables de 34.** Un DISTINTO
+basta para falsar la derivación; un IDÉNTICO en 3 pares **no** prueba
+derivabilidad universal. El veredicto se apoya en el DISTINTO, que es el lado que
+concluye.
+
+### ⚠ LA CONSECUENCIA, SIN TAPAR
+
+> **El teaser NO se actualiza cuando cambia el documento destino.** Quien edite
+> el título de un caso en el CMS tiene que editarlo **también** en cada página de
+> sector o monográfico que lo muestre. Es un **coste editorial real y
+> recurrente**, y va en la documentación de traspaso de **F2-5** — no escondido en
+> un comentario de código.
+
+Se elige aun así porque la alternativa **no es «teaser vivo»**: es no poder
+sembrar 31 de 34 hasta que los 57 casos y las 149 entradas estén dentro, y aun
+entonces seguir sin poder reproducir la fecha. El campo lleva su `admin.description`
+diciéndolo (*«Teaser VERBATIM, no proyección»*), que es donde lo va a leer quien
+edite.
+
+**Condición de reapertura, escrita:** esta decisión cae si `date` deja de salir
+DISTINTO — porque `fechaPublicacion` deje de guardarse verbatim, o porque un
+formateador reproduzca las dos renderizaciones **en todo el corpus**, no en una
+muestra. `qa:cms-teaser` es quien lo dice.
+
+---
+
+## ✅ 2h · `productos.seo.title` — el `required` QUEDA RESPALDADO, y por medición (2026-08-04)
+
+§2e escribió *«`seo`: grupo, como en las demás»* y el traductor lo puso
+`required`. El sondeo de frontera midió lo que eso significaba: **`required` y
+sin dato en 9 de 9**, ni en `src/lib/products.ts` ni en ninguna congelada. O sea
+**el esquema afirmaba algo que ninguna medida respaldaba**.
+
+Instrumento: **`npm run qa:solutions-seo`** (negativo `qa:solutions-seo-neg`, 3
+sabotajes + control), sobre las **24 URLs derivadas del `solutions-sitemap.xml`**
+—no citadas—. Congelado en `medidas/solutions-seo.json`.
+
+| campo | medido | veredicto |
+|---|---|---|
+| `title` | **24/24** · y **NO derivable del `h1`**: 17 formas distintas de «título menos h1», y **7 que ni lo contienen** | **CAMPO**, y el `required` **respaldado** |
+| `description` | **22/24** | **opcional**, con su medida — `kunak-api` es una de las dos que no la traen |
+
+**Por qué la segunda pregunta era imprescindible:** que el `<title>` exista no lo
+hace un campo. Si fuera derivable del `h1` con plantilla fija (`"<h1> | Kunak"`)
+sería **plantilla** y el modelo no tendría que guardarlo. Lo decide la varianza —
+*lo que varía de una instancia a otra lo escribió una persona*— y el negativo lo
+prueba en los dos sentidos: el sabotaje `derivable` fabrica el mundo de plantilla
+única y el veredicto **voltea a PLANTILLA**.
+
+> **Y la razón de que llegara tarde es de CAPA, no de descuido**, que es lo
+> reutilizable: de los 9 productos el clon **construyó 3**, y para ésos el título
+> vive en el `export const metadata` de su `page.tsx` — o sea **en la capa de
+> ESTRUCTURA**, justo lo que la regla 2 de `CLAUDE.md` separa. Los otros 6 sólo
+> están REFERENCIADOS (§2f) y no lo tenían en ninguna parte. **Un dato que vive
+> en la plantilla del clon es invisible para cualquier auditoría del catálogo.**
+
+Lo que **no** se hizo, y era la salida cómoda: un `?? ""` en `seo.title`. Eso no
+arregla el hueco, lo tapa — y en el sitio donde todavía se sabía que faltaba
+(regla 6).
+
+⚠ **Y una discrepancia de fidelidad que la medición destapó de paso:** el
+`metadata.title` del clon en `/kunak-api` dice *«Kunak API | Integración de datos
+de calidad del aire»* y el original dice **«Kunak API - Kunak»**. El dato del
+catálogo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
+
+---
+
 ## 7 · Decisiones abiertas, en un sitio
 
 | # | decisión | bloquea |
@@ -1879,7 +2051,40 @@ corrida son **del nivel de fila**, 65 pares, y solo de ahí.
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
-| **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos` | nada hoy; es deuda de **instrumento**, y la paga la tanda que escriba la sonda |
+| **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos`. **⚠ SIGUE ABIERTA con la razón ya medida — ver §7b** | nada hoy; es deuda de **instrumento**, y la paga la tanda que escriba la sonda |
+
+### ⚠ 7b · CMS-SP-TIPO — por qué el round-trip NO la cierra, medido (2026-08-04)
+
+`qa:cms-roundtrip` nació con la etiqueta de *«la única sonda que mira el TIPO de
+la hoja»*, y esa frase **decía de más**. Se comprobó con un sabotaje en vez de
+con un argumento:
+
+> **`tipo-hoja`** cambia `productos.bullets[].texto` de `htmlLinea` a
+> `editorNegrita` —o sea **CMS-SP-TIPO literal**, el defecto que escondía el
+> `R<sup>2</sup> >0,8`— y la sonda sale **63/63, exit 0**.
+
+**Y no es un fallo del comparador: es que la pérdida ocurre en el sitio que él no
+mira.** `inlineALexical("R<sup>2</sup> …")` mete la cadena en un nodo de texto y
+`lexicalAInline` la devuelve idéntica: **la ida y la vuelta son inversas
+perfectas sobre un editor que aun así pinta la fórmula como texto plano**. El
+`<sup>` se pierde al **RENDERIZAR**, no al guardar, y guardar-y-releer es ciego a
+eso por construcción.
+
+| lo que sí mira de la hoja | lo que NO |
+|---|---|
+| su **DEFECTO** — cazó el `nivel` compartido entre `claim` (2) y `titular` (3) | su **EDITOR** |
+| su **FORMA** — cazó las 16 celdas de tabla que entraban en blanco | |
+
+**Quién la cierra**, y ya se puede nombrar: el **Δ0 de F2-3** (que compara la
+salida renderizada, donde la pérdida sí existe), o una sonda que contraste las
+*features* del editor de cada campo contra el **inventario de etiquetas medido**
+de ese campo — que es dato que ya existe (`ETIQUETAS_CENSADAS`, 43).
+
+**Mientras tanto está declarado como PUNTO CIEGO VERIFICADO** en
+`cms-roundtrip.neg.mjs`: el sabotaje se corre en cada negativo y se exige que
+siga **sin** morder. El día que muerda, ese fichero sale **rojo** y obliga a
+venir a leer por qué. *Un punto ciego documentado y no verificado envejece solo;
+uno verificado avisa cuando deja de serlo.*
 
 **Y una condición escrita, que no es decisión abierta pero se cobra igual:** el
 **recuento** de CMS-0e (16 · 3 · 5) es **provisional** hasta rehacerlo con

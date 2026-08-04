@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "defecto-compartido",
     "alcance": {
       "comparadas": [
         "categorias",
@@ -55,7 +55,7 @@
     },
     "monograficos": {
       "documentos": 2,
-      "conDiferencia": 0
+      "conDiferencia": 1
     },
     "taxonomia-sectores": {
       "documentos": 11,
@@ -82,5 +82,14 @@
       "conDiferencia": 0
     }
   },
-  "diferencias": []
+  "diferencias": [
+    {
+      "coleccion": "monograficos",
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ruta": "cuerpo[2].filas[3].columnas[0].modulos[0].bloques[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    }
+  ]
 }

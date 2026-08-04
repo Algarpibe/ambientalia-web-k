@@ -47,14 +47,38 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { Evaluadas, QA, enApp, hoy, w } from "./lib.mjs";
+import { Evaluadas, QA, enApp, env, hoy, w } from "./lib.mjs";
 import { CATALOGOS, cargaCatalogos } from "../seed/catalogos.mjs";
 import { PREPARA } from "../seed/seed.mjs";
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS SABOTAJES — `npm run qa:cms-arquetipos-neg`
+ *
+ * Esta sonda **no es una guarda: es un clasificador**, así que su modo de fallo
+ * no es «no salta», es «clasifica igual pase lo que pase». Un clasificador que
+ * dijera CONSTRUIDA siempre daría la misma salida que uno que mide, y la premisa
+ * del §F2-2 quedaría «confirmada» por una sonda ciega.
+ *
+ *   · `sin-manifiesto` — sin `prerender-manifest.json` la lista de rutas sería
+ *     VACÍA y **todo saldría REFERENCIADO**: es la regla del cero aplicada a la
+ *     raíz, la misma que se pagó en la mudanza a monorepo. Tiene que salir por
+ *     ERROR;
+ *   · `todo-construido` — toda fila encuentra ruta ⇒ **0 referenciadas**;
+ *   · `nada-construido` — ninguna la encuentra ⇒ **todas referenciadas**.
+ *
+ * Los dos últimos son el par de discriminación: si el veredicto no se mueve
+ * entre ellos, la sonda no está midiendo nada. El CONTROL da el reparto real.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SABOTAJE = env("SABOTAJE") || null;
+const SABOTAJES = ["sin-manifiesto", "todo-construido", "nada-construido"];
+if (SABOTAJE && !SABOTAJES.includes(SABOTAJE))
+  throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" | ")})`);
 
 /* No abre el clon: lee su manifiesto. Pero el manifiesto ES del build, así que
  * la guarda de `BUILD_ID` sí tiene sentido aquí — no se desactiva. */
 
-const MANIFIESTO = enApp(".next/prerender-manifest.json");
+const MANIFIESTO =
+  SABOTAJE === "sin-manifiesto" ? enApp(".next/prerender-manifest-que-no-existe.json") : enApp(".next/prerender-manifest.json");
 if (!fs.existsSync(MANIFIESTO)) {
   console.error(
     `\n❌ no hay \`prerender-manifest.json\` en ${MANIFIESTO}.\n` +
@@ -70,9 +94,19 @@ if (RUTAS.size === 0) {
   process.exit(2);
 }
 
-/* La congelada del sondeo. Se exige LIMPIA: citar las aristas colgantes de una
- * corrida cuyo instrumento falló es exactamente lo que el PASO 1 vino a cerrar. */
-const RUTA_SONDEO = path.join(QA, "medidas/sondeo-frontera.json");
+/**
+ * La congelada del sondeo. Se exige LIMPIA: citar las aristas colgantes de una
+ * corrida cuyo instrumento falló es exactamente lo que el PASO 1 vino a cerrar.
+ *
+ * ⚠ **Y se exige que describa EL MISMO MODELO que hay hoy.** El nombre canónico
+ * lo escribe la PRIMERA corrida —`w()` no pisa lo que difiere—, así que sin
+ * guarda se queda anclado a un modelo superado y las columnas de colgantes
+ * mienten con cara de medida congelada. Pasó de verdad: tras cerrar la frontera
+ * del teaser, `sondeo-frontera.json` seguía diciendo **31 colgantes** y el
+ * sondeo real daba **0**. La guarda de abajo compara el conjunto de colecciones;
+ * la fecha del fichero se **imprime** para que la cita nunca sea muda.
+ */
+const RUTA_SONDEO = path.join(QA, env("SONDEO") || "medidas/sondeo-frontera.json");
 if (!fs.existsSync(RUTA_SONDEO)) {
   console.error(`\n❌ falta ${RUTA_SONDEO}. Corre \`npm run cms:sondeo\` antes.`);
   process.exit(2);
@@ -87,6 +121,16 @@ if (SONDEO.instrumento?.sinLlave?.length || SONDEO.grafo?.ciclos?.length || SOND
 }
 if (SONDEO.meta?.sabotaje) {
   console.error(`\n❌ la congelada del sondeo es de un SABOTAJE (${SONDEO.meta.sabotaje}), no de una medida.`);
+  process.exit(2);
+}
+const COLS_SONDEO = Object.keys(SONDEO.huerfanas?.porColeccion ?? {}).sort().join("|");
+const COLS_HOY = CATALOGOS.map((c) => c.coleccion).sort().join("|");
+if (COLS_SONDEO !== COLS_HOY) {
+  console.error(
+    `\n❌ la congelada del sondeo describe OTRO modelo:\n` +
+      `   sondeo: ${COLS_SONDEO}\n   hoy:    ${COLS_HOY}\n` +
+      `   Sus colgantes no se pueden citar. Corre \`npm run cms:sondeo\` y congélalo.`,
+  );
   process.exit(2);
 }
 
@@ -130,7 +174,9 @@ for (const c of CATALOGOS) {
   const sinRuta = [];
   for (const f of rows) {
     const cands = (RUTA_DE[c.coleccion]?.(prep(f)) ?? []).filter(Boolean);
-    if (cands.some((r) => RUTAS.has(r))) conRuta++;
+    const tieneRuta =
+      SABOTAJE === "todo-construido" ? true : SABOTAJE === "nada-construido" ? false : cands.some((r) => RUTAS.has(r));
+    if (tieneRuta) conRuta++;
     else sinRuta.push(prep(f).slug);
   }
   ev.ok();
@@ -149,7 +195,12 @@ for (const c of CATALOGOS) {
  * SALIDA
  * ═════════════════════════════════════════════════════════════════════════ */
 console.log(`\n════════ ARQUETIPOS · construidos vs referenciados ════════`);
-console.log(`  ${RUTAS.size} rutas emitidas por el build · ${hoy()}\n`);
+console.log(`  ${RUTAS.size} rutas emitidas por el build · ${hoy()}`);
+console.log(
+  `  colgantes citados de ${path.basename(RUTA_SONDEO)} (corrida del ${SONDEO.meta?.fecha ?? "?"}) — ` +
+    `son de ESA corrida, no de ahora\n`,
+);
+if (SABOTAJE) console.log(`  ⚠ SABOTAJE=${SABOTAJE}\n`);
 console.log(
   `  ${"colección".padEnd(24)}${"filas".padStart(6)}${"con ruta".padStart(10)}` +
     `${"colgantes↑".padStart(12)}${"colgantes↓".padStart(12)}   clase`,
@@ -174,14 +225,21 @@ for (const f of filas)
         : `FALSA para ${f.sinRuta.length} de ${f.filas} — proyección, no página: ${f.sinRuta.slice(0, 3).join(", ")}${f.sinRuta.length > 3 ? "…" : ""}`),
   );
 
-w("medidas/cms-arquetipos.json", {
+w(env("SALIDA") || `medidas/cms-arquetipos${SABOTAJE ? `-neg-${SABOTAJE}` : ""}.json`, {
   meta: {
     fecha: hoy(),
+    sabotaje: SABOTAJE ?? null,
     pregunta: "¿de qué colecciones es cierta la premisa «src/lib/*.ts son los datos»?",
     fuentes: {
       rutas: ".next/prerender-manifest.json (el build, no una lista)",
       filas: "src/lib/*.ts cargados como módulo",
-      colgantes: "medidas/sondeo-frontera.json (congelada, verificada limpia)",
+      colgantes: `${path.basename(RUTA_SONDEO)} — corrida del ${SONDEO.meta?.fecha ?? "?"}, verificada limpia y del mismo modelo`,
+    },
+    /* El recuento por clase va CONGELADO: es lo que el negativo comprueba. */
+    veredicto: {
+      construidas: filas.filter((f) => f.clase === "CONSTRUIDA").map((f) => f.coleccion),
+      mixtas: filas.filter((f) => f.clase === "MIXTA").map((f) => f.coleccion),
+      referenciadas: filas.filter((f) => f.clase === "REFERENCIADA").map((f) => f.coleccion),
     },
     rutasEmitidas: RUTAS.size,
     ejeB:

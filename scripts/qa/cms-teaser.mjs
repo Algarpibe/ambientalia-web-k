@@ -32,11 +32,41 @@
  * coincide. La asimetría es real y va escrita: **un DISTINTO basta para falsar
  * la derivación; un IDÉNTICO no basta para probarla.**
  */
-import { Evaluadas, hoy, w } from "./lib.mjs";
+import { Evaluadas, env, hoy, w } from "./lib.mjs";
 import { cargaCatalogos } from "../seed/catalogos.mjs";
 import { esSlug } from "../seed/seed.mjs";
 
 process.env.SIN_CLON = "1";
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS SABOTAJES — `npm run qa:cms-teaser-neg`
+ *
+ * Un falsador que **no supiera falsar** sería la peor pieza posible aquí: la
+ * decisión §F2-2 · TEASER se apoya en que este programa dice DISTINTO, y un
+ * programa que dijera DISTINTO pase lo que pase daría exactamente la misma
+ * salida. Los dos invariantes:
+ *
+ *   · `derivable` — se fabrica el mundo en el que `date` SÍ se deriva (un
+ *     formateador de meses en español). El veredicto tiene que **voltear a
+ *     FALSADA**. Sin este, «hay un campo no derivable» no se distingue de una
+ *     sonda que siempre lo dice;
+ *   · `sin-pares` — ningún teaser tiene destino transcrito ⇒ **exit 2**, que es
+ *     lo que la propia sonda declara: *0 pares comparables NO es verde*.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SABOTAJE = env("SABOTAJE") || null;
+const SABOTAJES = ["derivable", "sin-pares"];
+if (SABOTAJE && !SABOTAJES.includes(SABOTAJE))
+  throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" | ")})`);
+
+/** El formateador que la decisión dice que NO se puede escribir. Para el sabotaje. */
+const MESES = "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split(" ");
+const ABREV = "Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic".split(" ");
+const comoTeaser = (fecha) => {
+  const m = /^(\d{1,2}) (\p{L}+) (\d{4})$/u.exec(String(fecha ?? "").trim());
+  if (!m) return fecha;
+  const i = MESES.indexOf(m[2].toLowerCase());
+  return i < 0 ? fecha : `${ABREV[i]} ${m[1]}, ${m[3]}`;
+};
 
 const catalogos = await cargaCatalogos();
 
@@ -76,7 +106,8 @@ const EQUIVALE = {
   },
   "entradas-blog": {
     title: { de: (d) => d.titulo },
-    date: { de: (d) => d.fechaPublicacion },
+    /* El sabotaje `derivable` le pone el formateador que la decisión rechaza. */
+    date: { de: (d) => (SABOTAJE === "derivable" ? comoTeaser(d.fechaPublicacion) : d.fechaPublicacion) },
     image: { de: (d) => d.imagenDestacada, regla: "M-IMG · el teaser pinta la variante de `srcset`" },
     href: { de: (d) => d.slug, regla: "§4 · la ruta se compone de prefijo + slug" },
     excerpt: { de: (d) => d.extracto },
@@ -90,14 +121,28 @@ for (const col of ["casos", "entradas-blog"])
 /** Un valor comparable: las imágenes llegan como objeto `{src, alt}` o cadena. */
 const plano = (v) => (v && typeof v === "object" ? (v.src ?? v.url ?? JSON.stringify(v)) : v);
 
+/**
+ * ⚠ **El mínimo se DERIVA del catálogo, y no es `1`.** Lo era, y `1` no
+ * expresaba nada: la sonda podía recorrer un teaser de 34 y salir conforme. La
+ * unidad correcta es **el teaser recorrido** —que existe en el dato antes de
+ * medir nada— y no el par comparable, que **es el resultado**: un mínimo puesto
+ * sobre el resultado no puede detectar que el instrumento no miró.
+ */
+const TEASERS = FUENTES.reduce(
+  (a, f) => a + catalogos.get(f.origen).reduce((b, fila) => b + (fila[f.grupo]?.posts?.length ?? 0), 0),
+  0,
+);
+const ev = new Evaluadas({ nombre: "cms-teaser", unidad: "teasers del catálogo", minimo: TEASERS });
+
 const pares = [];
 let teasers = 0;
 for (const f of FUENTES) {
   for (const fila of catalogos.get(f.origen)) {
     for (const t of fila[f.grupo]?.posts ?? []) {
       teasers++;
+      ev.ok();
       const slug = esSlug(t);
-      const doc = porSlug.get(f.destino).get(slug);
+      const doc = SABOTAJE === "sin-pares" ? undefined : porSlug.get(f.destino).get(slug);
       if (!doc) continue; // destino no transcrito: no comparable, y eso ya lo cuenta el sondeo
       const campos = {};
       for (const [campoTeaser, eq] of Object.entries(EQUIVALE[f.destino])) {
@@ -117,9 +162,6 @@ for (const f of FUENTES) {
     }
   }
 }
-
-const ev = new Evaluadas({ nombre: "cms-teaser", unidad: "pares teaser↔documento", minimo: 1 });
-ev.ok(pares.length);
 
 /* ── Resumen por campo ─────────────────────────────────────────────────── */
 const ESTADOS = ["IDÉNTICO", "POR REGLA", "DISTINTO", "AUSENTE"];
@@ -161,9 +203,10 @@ for (const [k, v] of noDerivables)
         : ""),
   );
 
-w("medidas/cms-teaser.json", {
+w(env("SALIDA") || `medidas/cms-teaser${SABOTAJE ? `-neg-${SABOTAJE}` : ""}.json`, {
   meta: {
     fecha: hoy(),
+    sabotaje: SABOTAJE ?? null,
     pregunta: "¿es `CaseStudy`/`BlogPost` una proyección derivable del documento destino?",
     alcance: `${pares.length} pares comparables de ${teasers} teasers — el resto no tiene destino transcrito`,
     asimetria:
@@ -174,6 +217,13 @@ w("medidas/cms-teaser.json", {
         Object.fromEntries(Object.entries(campos).map(([c, e]) => [c, { de: String(e.de), regla: e.regla ?? null }])),
       ]),
     ),
+  },
+  /* El veredicto CONGELADO y no sólo impreso: es lo que el negativo comprueba, y
+   * lo que la decisión §F2-2 · TEASER cita. Regla 1 — un canal único de verdad. */
+  veredicto: {
+    decision: pares.length === 0 ? "NO SE PUEDE DECIDIR" : noDerivables.length ? "SE SOSTIENE" : "FALSADA",
+    noDerivables: noDerivables.map(([k]) => k),
+    paresComparables: pares.length,
   },
   porCampo,
   pares,

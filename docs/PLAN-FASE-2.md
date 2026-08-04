@@ -449,8 +449,17 @@ negativo significa algo.**
 
 ## F2-2 · Datos
 
+> ⚠ **CORREGIDA la premisa de esta fase (2026-08-04). *«`src/lib/*.ts` son los
+> datos»* es cierta de UNAS colecciones y falsa de otras**, y la diferencia
+> decide si una colección se puede sembrar: lo es de los arquetipos que el clon
+> **CONSTRUYÓ** y no de los que sólo **REFERENCIÓ**. Medido en
+> `qa:cms-arquetipos`: **7 CONSTRUIDAS · `productos` MIXTA (3 de 9) ·
+> `taxonomia-sectores` REFERENCIADA (0 de 11)**, con las aristas colgantes a **0**
+> desde la decisión del teaser. Acta y reparto: **ESQUEMA §2f**.
+
 **Entrega.** Los **seeds** de las páginas construidas: `src/lib/*.ts` **son los
-datos** (§8) y un script los inserta por la **Local API**, mecánico. El
+datos** (§8, con la corrección de arriba) y un script los inserta por la **Local
+API**, mecánico. El
 **extractor del corpus** para las páginas de listado (las sondas de
 `scripts/qa/` ya leen el DOM del original — está medio hecho), aplicando las
 transformaciones **T1–T8** del §3.2 al importar — ninguna es opcional. El
@@ -571,15 +580,98 @@ puede añadir hosts, y por eso la lista se firma **con su alcance escrito**.
 > esquema.
 
 **Hecho cuando:** los seeds insertados se re-leen y proyectan **idénticos** a
-`src/lib` (igualdad mecánica, no de ojo); el extractor y el saneador tienen
-**test en negativo por invariante** (un sabotaje por cada transformación, y
-cada arreglo re-corre el test entero — reglas 3 y 4 de `CLAUDE.md`); y el
-`srcset` emitido coincide con el del original en las páginas medidas → M-IMG
-cerrado con medida, no por decreto.
+`src/lib` (igualdad mecánica, no de ojo) — ✅ **bloque 1, 63/63 con negativo
+6/6**; el extractor y el saneador tienen **test en negativo por invariante** (un
+sabotaje por cada transformación, y cada arreglo re-corre el test entero —
+reglas 3 y 4 de `CLAUDE.md`) — **bloque 2**; y el `srcset` emitido coincide con
+el del original en las páginas medidas → M-IMG cerrado con medida, no por
+decreto — **bloque 3**.
 
 ---
 
-### ⛔ F2-2 · BLOQUE 1 — PARADO POR EL ESCALÓN, con tres fronteras MEDIDAS (2026-08-04)
+### ✅ F2-2 · BLOQUE 1 — CERRADO contra su criterio (2026-08-04, tanda 26.ª)
+
+**El criterio literal del §F2-2 es *«los seeds insertados se re-leen y proyectan
+idénticos a `src/lib` (igualdad mecánica, no de ojo)»*, y está cumplido:**
+
+```
+✅ round-trip: 63/63 documentos IDÉNTICOS en 13 colecciones
+✅ cms-roundtrip · test en negativo: 6/6 (4 que caza · 1 punto ciego · control)
+   46 filas de catálogo · 9 colecciones + 4 taxonomías derivadas
+   DB migrada desde cero con 4 migraciones versionadas · push:false
+```
+
+Las tres fronteras que pararon el bloque están **decididas y aplicadas**, y cada
+una con su instrumento y su negativo:
+
+| frontera | resolución | instrumento | negativo |
+|---|---|---|---|
+| 31 teasers sin destino | **dato propio** (ESQUEMA §2g) | `qa:cms-teaser` | **3/3** |
+| `productos.seo.title` sin medir | **medido 24/24, `required` respaldado** (§2h) | `qa:solutions-seo` | **4/4** |
+| 4 cuerpos con `<script>` | **T4a sube al bloque 1** (abajo) | `cms:sondeo` | 3/3 (previo) |
+
+**Y la premisa que lo rompió todo queda escrita**: ESQUEMA **§2f · CONSTRUIDO vs
+REFERENCIADO**, con `qa:cms-arquetipos` (negativo **4/4**) y su reparto medido.
+
+#### ⚠ T4 · CORRIGE al orden de este PLAN — y ahora está MEDIDO
+
+> **El orden anterior era INCORRECTO.** Este documento puso los **seeds** en el
+> bloque 1 y **T1–T8** en el bloque 2. **El seed necesita T4**, y no como
+> conveniencia: el `validate` de `campoHtml` (§3.3) **rechaza `<script>`**, y
+> `npm run cms:sondeo` lo deriva corriendo el `validate` de cada campo contra su
+> dato: **4 de las 7 entradas del catálogo lo traen** (NBC ×1 · FB3D ×2 ·
+> Instagram ×1, **5 scripts**). Sin T4 el bloque 1 **no puede sembrar
+> `entradas-blog`**, y el fallo se lee como defecto del esquema.
+
+**Pero T4 no sube entero, porque son DOS MITADES y sólo una cabe aquí:**
+
+| mitad | qué hace | dónde | por qué |
+|---|---|---|---|
+| **T4a · la REGLA** | ningún `<script>` sobrevive: se quita, con su clasificación §3.3 | **bloque 1** | es mecánica y no inventa nada |
+| **T4b · la SUSTITUCIÓN** | el PDF pasa a media, el embed a nodo tipado, el reproductor a enlace | **bloque 2** | necesita datos que el catálogo **no tiene**: el fichero PDF, la URL de la noticia |
+
+**La mitad que falta es una PÉRDIDA, y por eso se cuenta y se nombra**: los 5
+scripts llevan contenido real dentro, y quitarlos sin sustituir **deja ese
+contenido fuera del CMS**. El seed lo imprime documento a documento con su clase
+§3.3 y `qa:cms-roundtrip` comprueba que la transformación se aplica **igual en
+los dos lados** (`✓ T4a simétrica — 5 <script> en los dos lados`) — sin ese
+control, aplicarla al lado medido sería el *«mismo olvido en las dos
+direcciones»* que el walker único existe para evitar.
+
+**T8 va antes de T4a, y sobre este corpus resulta NO-OP**: los 5 scripts llevan
+el token de Rocket Loader **dentro** del `<script>` (medido: 5 dentro, 0 fuera),
+así que T4a se lo lleva por delante. T8 sigue haciendo falta en el importador del
+bloque 2, donde la comparación se hace contra el HTML crudo **antes** de
+transformar, que es donde el token produce el ruido de re-import del §3.2.
+
+#### Lo que el bloque 1 encontró y ninguna otra guarda podía ver
+
+Los dos son de la familia **CMS-SP-TIPO** —*nadie mira nada de la hoja salvo su
+ruta*— y los dos daban números plausibles o ningún número:
+
+| # | defecto | qué costaba | quién lo vio |
+|---|---|---|---|
+| 1 | **`nivel` compartido entre `claim` y `titular`** con un solo defecto de 2, cuando el render los lee `?? 2` y `?? 3` | el `<h2>` de EDAR salía **`<h3>`** — etiqueta distinta en el esqueleto del DOM | sólo el round-trip. Migración `20260804_182349_nivel_titular_por_defecto_3` |
+| 2 | **el escalar de una unión aplanada entraba como `{}`** (`MonoCelda = string \| {fuerte,resto}`) | **16 celdas de la tabla de EDAR en blanco**, sin un solo error | ídem. Ahora `aPayload` **tira** en vez de escribir `{}` |
+
+Y la mitad que faltaba del walker: **`DEVUELVE`, la inversa de `PREPARA`**. El
+walker es bidireccional por construcción, pero `PREPARA` es una transformación
+escrita **encima** y sólo tenía ida — **72 de las 157 diferencias eran eso**. Su
+coherencia **se ejecuta**: `sonInversas()` corre `DEVUELVE(PREPARA(fila))` sobre
+las filas antes de comparar nada.
+
+#### ⚠ Lo que el bloque 1 NO cierra, y va dicho
+
+| # | qué | por qué |
+|---|---|---|
+| 1 | **`productos.cuerpo` está vacío en las 9** | `products.ts` es la proyección de pestaña (§2f). El Δ0 es cierto —los dos lados vacíos— y el alcance viaja con él. Las 24 fichas entran en el bloque 2 |
+| 2 | **`CMS-SP-TIPO` sigue abierta** | el round-trip **no ve el EDITOR de una hoja rica**: medido con el sabotaje `tipo-hoja`, 63/63. La pérdida del `<sup>` es de RENDER. La cierra F2-3 (ESQUEMA §7b) |
+| 3 | **T4b**, arriba | necesita datos que el catálogo no tiene |
+| 4 | **el ciclo del grafo vuelve en el bloque 2** | `taxonomia-sectores → sectores → casos → taxonomia-sectores`, cuando entren los 57 casos y las 149 entradas ⇒ **dos pasadas** |
+
+---
+
+### ~~⛔ F2-2 · BLOQUE 1 — PARADO POR EL ESCALÓN~~ (2026-08-04, superado arriba)
 
 **El bloque 1 no cierra**, y no por falta de trabajo: la premisa que lo
 sostiene resultó ser **falsa para la mitad de las colecciones**, y eso no lo

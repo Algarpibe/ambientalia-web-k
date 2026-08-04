@@ -36,6 +36,13 @@ export const ancho: Field = {
  * `MonoCelda = string | { fuerte, resto? }` — **nunca HTML**, igual que
  * `MonoTrozo`: el conjunto está cerrado. Si mañana aparece cursiva se añade un
  * caso, no un campo `html`.
+ *
+ * ⚠ **Es una UNIÓN aplanada, y hasta el 2026-08-04 nadie se lo había dicho al
+ * walker.** `texto` **es** la rama de cadena; `fuerte`+`resto` la otra. Con tres
+ * campos propios el envoltorio transparente no aplica, así que `aPayload`
+ * recorría los tres sobre una cadena, sacaba `undefined` de los tres y escribía
+ * **`{}`**: las **16 celdas de texto de la tabla de EDAR entraban en blanco**,
+ * sin un solo error. Lo vio `qa:cms-roundtrip` y nada más.
  */
 export const CELDA: Field[] = [
   { name: "texto", type: "text" },
@@ -77,7 +84,21 @@ export const MODULO_TABLA: Block = {
     {
       name: "filas",
       type: "array",
-      fields: [{ name: "celdas", type: "array", fields: CELDA }],
+      fields: [
+        {
+          name: "celdas",
+          type: "array",
+          fields: CELDA,
+          /**
+           * A qué campo va la rama ESCALAR de `MonoCelda`. Se declara **aquí**,
+           * al lado de la definición, y no en una tabla de rutas del walker: una
+           * lista de rutas escrita a mano envejece contra el esquema (regla 9).
+           * Con tres campos candidatos no hay nada que derivar — cuál recibe la
+           * cadena es decisión del modelo.
+           */
+          custom: { escalarA: "texto" },
+        },
+      ],
     },
     ...moduloBase,
   ],

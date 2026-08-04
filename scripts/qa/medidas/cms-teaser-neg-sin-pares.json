@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "sabotaje": "sin-pares",
+    "pregunta": "¿es `CaseStudy`/`BlogPost` una proyección derivable del documento destino?",
+    "alcance": "0 pares comparables de 34 teasers — el resto no tiene destino transcrito",
+    "asimetria": "un DISTINTO basta para falsar la derivación; un IDÉNTICO en estos pares NO prueba derivabilidad universal",
+    "equivalencias": {
+      "casos": {
+        "title": {
+          "de": "(d) => d.titulo",
+          "regla": null
+        },
+        "client": {
+          "de": "(d) => d.cliente",
+          "regla": null
+        },
+        "image": {
+          "de": "(d) => d.imagenCabecera",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "de": "(d) => d.slug",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "de": "(d) => d.sectores?.[0]?.nombre",
+          "regla": null
+        },
+        "sectorHref": {
+          "de": "(d) => d.sectores?.[0]?.slug",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      },
+      "entradas-blog": {
+        "title": {
+          "de": "(d) => d.titulo",
+          "regla": null
+        },
+        "date": {
+          "de": "(d) => (SABOTAJE === \"derivable\" ? comoTeaser(d.fechaPublicacion) : d.fechaPublicacion)",
+          "regla": null
+        },
+        "image": {
+          "de": "(d) => d.imagenDestacada",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "de": "(d) => d.slug",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "excerpt": {
+          "de": "(d) => d.extracto",
+          "regla": null
+        }
+      }
+    }
+  },
+  "veredicto": {
+    "decision": "NO SE PUEDE DECIDIR",
+    "noDerivables": [],
+    "paresComparables": 0
+  },
+  "porCampo": {},
+  "pares": []
+}

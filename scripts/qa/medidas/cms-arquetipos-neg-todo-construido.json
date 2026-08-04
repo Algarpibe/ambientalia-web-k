@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": null,
+    "sabotaje": "todo-construido",
     "pregunta": "¿de qué colecciones es cierta la premisa «src/lib/*.ts son los datos»?",
     "fuentes": {
       "rutas": ".next/prerender-manifest.json (el build, no una lista)",
@@ -10,20 +10,18 @@
     },
     "veredicto": {
       "construidas": [
+        "productos",
         "sectores",
         "monograficos",
+        "taxonomia-sectores",
         "casos",
         "faqs",
         "entradas-blog",
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "mixtas": [
-        "productos"
-      ],
-      "referenciadas": [
-        "taxonomia-sectores"
-      ]
+      "mixtas": [],
+      "referenciadas": []
     },
     "rutasEmitidas": 34,
     "ejeB": "ESTA SONDA NO MIDE EL EJE B (cuántas filas hay de las que existen en el original). El corpus completo son 57 casos y 149 entradas; aquí sólo se cuenta lo transcrito."
@@ -32,18 +30,11 @@
     {
       "coleccion": "productos",
       "filas": 9,
-      "conRuta": 3,
-      "sinRuta": [
-        "estacion-de-monitoreo-de-calidad-del-aire",
-        "sensor-de-calidad-del-aire",
-        "sulfuro-de-hidrogeno",
-        "amoniaco",
-        "compuestos-organicos-volatiles",
-        "particulas-en-suspension"
-      ],
+      "conRuta": 9,
+      "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "MIXTA"
+      "clase": "CONSTRUIDA"
     },
     {
       "coleccion": "sectores",
@@ -66,23 +57,11 @@
     {
       "coleccion": "taxonomia-sectores",
       "filas": 11,
-      "conRuta": 0,
-      "sinRuta": [
-        "urbano",
-        "industria",
-        "investigacion-consultoria",
-        "puertos",
-        "mineria",
-        "olores",
-        "edar",
-        "metalurgia",
-        "obras",
-        "oil-gas-es",
-        "sports"
-      ],
+      "conRuta": 11,
+      "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
-      "clase": "REFERENCIADA"
+      "clase": "CONSTRUIDA"
     },
     {
       "coleccion": "casos",
