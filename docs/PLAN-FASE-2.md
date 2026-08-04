@@ -579,6 +579,83 @@ cerrado con medida, no por decreto.
 
 ---
 
+### ⛔ F2-2 · BLOQUE 1 — PARADO POR EL ESCALÓN, con tres fronteras MEDIDAS (2026-08-04)
+
+**El bloque 1 no cierra**, y no por falta de trabajo: la premisa que lo
+sostiene resultó ser **falsa para la mitad de las colecciones**, y eso no lo
+puede decidir quien construye.
+
+> **La premisa, literal del §F2-2: *«`src/lib/*.ts` **son** los datos»*.**
+>
+> **Medido: lo son para los arquetipos que el clon CONSTRUYÓ, y NO para los que
+> sólo REFERENCIÓ.** Nadie había escrito cuáles son cuáles, y la diferencia no
+> es de grado — decide si una colección se puede sembrar o no.
+
+Instrumento: **`scripts/seed/sondeo.mjs`**, que recorre los 9 catálogos contra la
+**config resuelta** sin escribir en la DB. Todo lo de abajo es su salida, no una
+impresión.
+
+#### Las tres fronteras, con su evidencia
+
+| # | colección | qué falta | evidencia |
+|---|---|---|---|
+| **1** | `sectores` · `monograficos` | **31 relaciones de teaser sin documento** (20 + 11), **28 slugs distintos** | el clon transcribió **4 casos de 57** y **7 entradas de 149**; los teasers se transcribieron porque se pintan, sus destinos no |
+| **2** | `productos` | **`seo.title` es `required` y NO ESTÁ MEDIDO EN NINGÚN SITIO** — 9 de 9 instancias | no está en `src/lib/products.ts` (que es la **proyección de pestaña**) **ni** en `medidas/solutions-campos.json`. §2e escribió *«seo: grupo, como en las demás»* sin que nadie lo midiera |
+| **3** | `entradas-blog` | **4 de 7 cuerpos traen `<script>`** — NBC ×1 · FB3D ×2 · Instagram ×1 | el `validate` de §3.3/T4 los rechaza. **El seed necesita T4**, y el PLAN puso los seeds en el bloque 1 y T1–T8 en el bloque 2 |
+
+**Y arrastran a dos más**, por relación: `casos` (→ `productos`) y
+`taxonomia-sectores` (→ `sectores`/`monograficos`).
+
+#### Qué SÍ quedó hecho y corriendo
+
+**12 documentos en 4 colecciones** (`faqs` 2 · `terminos-kunakpedia` 3 ·
+`documentos-cientificos` 4 · `categorias-cientificas` 3 derivadas), **con subida
+de media incluida**, sobre una DB migrada desde cero. La maquinaria está
+completa y ejercitada de punta a punta:
+
+| pieza | estado |
+|---|---|
+| `catalogos.mjs` — carga los `src/lib/*.ts` **como módulo** (esbuild, alias `@/`) | ✅ corriendo |
+| `mapeo.mjs` — walker **bidireccional** dirigido por la config resuelta | ✅ la IDA · ⚠ **la VUELTA sin ejercitar** |
+| `seed.mjs` · `cli.mjs` · `reset.mjs` — seed + guarda de DB vacía + reset | ✅ la guarda **disparó** |
+| `sondeo.mjs` — la sonda de frontera | ✅ produjo las 3 mediciones |
+
+#### ⚠ Tres defectos de instrumento, míos, cazados en esta tanda
+
+Van escritos porque **los tres daban números plausibles**, que es lo único que
+los hace peligrosos:
+
+| defecto | qué reportaba | cómo se cazó |
+|---|---|---|
+| `esSlug` no leía el `href` de un teaser (no tienen `slug`) | «34 huérfanas, **1 slug distinto**» | **un slug distinto para 34 referencias es imposible** — la clase «un número plausible de más» |
+| el sondeo no entraba en un **grupo ausente** | «campos required sin dato: **(ninguno)**» | el seed caía por `productos.seo.title` **en la misma corrida** |
+| el orden de `CATALOGOS` daba por acíclico un grafo con **ciclo** (`taxonomia-sectores → sectores → casos → taxonomia-sectores`) | `RELACIÓN SIN DESTINO` que parecía orden mal puesto | reconstruirlo a mano: no había orden que lo satisficiera |
+
+> El ciclo **vuelve** en el bloque 2, cuando entren los 57 casos y las 149
+> entradas: entonces harán falta **dos pasadas** (documentos primero, relaciones
+> después). Queda escrito en `catalogos.mjs` para que no se redescubra.
+
+#### Lo que la tanda de decisión tiene que resolver
+
+1. **El `date` del teaser.** `"Ene 7, 2025"` (teaser) contra `"7 enero 2025"`
+   (`fechaPublicacion`). Son **dos renderizaciones de la misma fecha** y el campo
+   está declarado *«verbatim»* a propósito. Proyectar una de la otra exige un
+   formateador de meses en español **o** dejar de guardar la fecha verbatim:
+   **es una decisión de modelo, no una transformación.**
+2. **`productos.seo`.** ¿Es `required` de verdad? Si lo es, **hay que medirlo** —
+   hoy no existe en ninguna congelada. Si no, el esquema lo afirma sin respaldo.
+3. **Dónde va T4.** Los seeds lo necesitan, así que **o T4 sube al bloque 1, o
+   los cuerpos con `<script>` no se siembran hasta el bloque 2.** Con la segunda,
+   `entradas-blog` no tiene bloque 1 y hay que decirlo en el PLAN.
+
+> **Lo que NO se hizo, y es deliberado:** no se normalizó nada para que las
+> diferencias desaparecieran. Ni un `?? ""` en `seo.title`, ni omitir el teaser
+> del comparador, ni relajar el `validate`. Cualquiera de las tres habría dado un
+> bloque 1 «verde» — y habría falsificado el instrumento justo donde el §F2-2
+> avisa.
+
+---
+
 ## F2-3 · Lectura
 
 **Entrega.** Las páginas y `generateStaticParams()` **leen por Local API** de

@@ -1,3 +1,113 @@
+# HANDOFF — F2-2 bloque 1: PARADO POR EL ESCALÓN, con tres fronteras medidas
+
+> ⚠ **Tanda 2026-08-04 (25.ª).** El escalón declarado disparó **tres veces** en
+> el PASO 1. **No toca `apps/web`.** El bloque 1 **no cierra**, y la razón es un
+> hallazgo, no una falta de trabajo.
+
+## 0 · El titular
+
+> **La premisa del §F2-2 —*«`src/lib/*.ts` son los datos»*— es FALSA para la
+> mitad de las colecciones.** Lo son para los arquetipos que el clon
+> **construyó**; para los que sólo **referenció** son proyecciones incompletas.
+> Nadie había escrito cuáles son cuáles, y eso decide si una colección se puede
+> sembrar.
+
+**Sembrado y corriendo: 12 documentos en 4 colecciones**, con subida de media,
+sobre DB migrada desde cero. **Parado: 5 colecciones**, cada una con su
+medición.
+
+## 1 · Las tres fronteras — `scripts/seed/sondeo.mjs`
+
+| # | colección | qué falta | evidencia |
+|---|---|---|---|
+| **1** | `sectores` · `monograficos` | **31 relaciones de teaser sin documento** (20+11), 28 slugs distintos | el clon transcribió 4 casos de 57 y 7 entradas de 149 |
+| **2** | `productos` | **`seo.title` `required` y sin medir en NINGÚN sitio** (9/9) | ni `src/lib/products.ts` (proyección de pestaña) ni `medidas/solutions-campos.json` |
+| **3** | `entradas-blog` | **4 de 7 cuerpos traen `<script>`** | NBC ×1 · FB3D ×2 · Instagram ×1. El `validate` de T4 los rechaza |
+
+Arrastradas por relación: `casos` (→`productos`) y `taxonomia-sectores`
+(→`sectores`).
+
+**La 3 es la conceptualmente grave:** el PLAN puso los seeds en el bloque 1 y
+T1–T8 en el bloque 2, y **los seeds necesitan T4**. El orden del PLAN está mal,
+y ahora está medido.
+
+## 2 · Lo que la tanda de DECISIÓN tiene que resolver
+
+1. **El `date` del teaser** — `"Ene 7, 2025"` contra `"7 enero 2025"`. Dos
+   renderizaciones de la misma fecha, con el campo declarado *verbatim* a
+   propósito. Proyectar una de la otra exige un formateador de meses **o** dejar
+   de guardar la fecha verbatim: **decisión de modelo, no transformación**.
+2. **`productos.seo`** — ¿`required` de verdad? Si sí, **hay que medirlo**; hoy
+   no existe en ninguna congelada. Si no, el esquema lo afirma sin respaldo.
+3. **Dónde va T4** — o sube al bloque 1, o `entradas-blog` no tiene bloque 1 y
+   el PLAN lo dice.
+
+## 3 · Lo construido, y su estado real
+
+| pieza | estado |
+|---|---|
+| `scripts/seed/catalogos.mjs` — carga los `src/lib/*.ts` **como módulo** (esbuild + alias `@/`) | ✅ corriendo |
+| `scripts/seed/mapeo.mjs` — walker **bidireccional** dirigido por la config resuelta | ✅ la IDA · ⚠ **la VUELTA escrita y NUNCA CORRIDA** |
+| `scripts/seed/seed.mjs` · `cli.mjs` · `reset.mjs` | ✅ la guarda de DB vacía **disparó** |
+| `scripts/seed/sondeo.mjs` — la sonda de frontera | ✅ produjo las 3 mediciones |
+| `npm run cms:reset` · `cms:seed` | ✅ |
+
+> ⚠ **`aMedido` (el proyector) está SIN EJERCITAR y lleva la etiqueta encima.**
+> El PASO 2 no llegó a correr. **No se puede citar como que funciona** — la tanda
+> que lo estrene lo prueba en negativo antes de creerle nada, empezando por el
+> invariante del defecto omitido.
+
+## 4 · ⚠ Tres defectos de instrumento, MÍOS, cazados en esta tanda
+
+Los tres daban **números plausibles**, que es lo único que los hace peligrosos:
+
+| defecto | reportaba | cómo se cazó |
+|---|---|---|
+| `esSlug` no leía el `href` de un teaser | «34 huérfanas, **1 slug distinto**» | **1 slug para 34 referencias es imposible** |
+| el sondeo no entraba en un **grupo ausente** | «campos required sin dato: **(ninguno)**» | el seed caía por `productos.seo.title` en la misma corrida |
+| `CATALOGOS` daba por acíclico un grafo **con ciclo** | `RELACIÓN SIN DESTINO` con pinta de orden mal puesto | reconstruirlo a mano: no había orden posible |
+
+**El ciclo vuelve en el bloque 2** (`taxonomia-sectores → sectores → casos →
+taxonomia-sectores`), cuando entren los 57 casos y las 149 entradas: hará falta
+**sembrar en dos pasadas**. Escrito en `catalogos.mjs`.
+
+## 5 · Lo que NO se hizo, y es deliberado
+
+**No se normalizó nada para que las diferencias desaparecieran.** Ni un `?? ""`
+en `seo.title`, ni omitir el teaser del comparador, ni relajar el `validate`.
+Cualquiera de las tres habría dado un bloque 1 **verde** — y habría falsificado
+el instrumento justo donde el §F2-2 avisa.
+
+## 6 · PASO 0, que sí quedó cerrado
+
+- **Incógnitas reconciliadas con §3.1d**: el recuento de CMS-0e se **aplaza** (no
+  hay conversión que auditar); §3.4 se **disuelve como bloqueo**; el tamaño del
+  corpus sigue viva (bloque 3); la allowlist sigue viva (política).
+- **Allowlist de hosts PROPUESTA y derivada** del censo 209/209: **83 iframes ·
+  18 hosts**, en 4 tramos, con las 3 formas posibles y lo que cuesta cada una.
+  **Falta firma del propietario.** Y el censo mata la «lista cerrada de 5»: sólo
+  **2** aparecen como iframe, y **`flourish` no casa por nombre** (su host es
+  `flo.uri.sh`) ⇒ **se compara por HOST, nunca por proveedor**.
+- **El suelo de 390 publicado con su FORMA** y con su alcance **por ruta**:
+  `software` y EDAR bimodales Δ30 (**forma establecida**); **petróleo con un solo
+  estado observado ⇒ NO establecida**, y ahí sólo Δ≈0 está respaldado.
+
+## 7 · Pendientes de siempre
+
+HOME sin content type (cubo B) · `Dockerfile` sin verificar · 26 celdas ciegas
+(comportamiento 0/31) · 6 mínimos · `Breadcrumb` de 28 rutas · **CMS-SP-TIPO**
+(ninguna guarda mira el tipo de la hoja).
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No sembrar `productos`/`sectores`/`entradas-blog` «rellenando» lo que falta.**
+  Las tres fronteras son decisiones, y rellenarlas es inventar dato medido.
+- **No fiarse de `aMedido`.** Está sin correr.
+- **No dar el bloque 1 por cerrado con las 4 colecciones sembradas.** Son 12
+  documentos de 46; el alcance viaja en `SEMBRADAS` y en `FUERA_DE_BLOQUE_1`.
+
+---
+
 # HANDOFF — F2-1 CERRADA: el esquema queda congelado, versionado y con su guarda
 
 > ⚠ **Tanda 2026-08-04 (24.ª).** Cinco pasos + la ráfaga 3 de `cqa6-390`. Cierra

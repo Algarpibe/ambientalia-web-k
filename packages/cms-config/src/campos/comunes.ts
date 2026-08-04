@@ -210,6 +210,13 @@ export const editorRico: EditorLexical = lexicalEditor({
  * es la segunda.
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/* ⚠ **Y lo que este `validate` destapó al sembrar (2026-08-04, F2-2 bloque 1):**
+ * **4 de las 7 entradas de blog transcritas traen `<script>` en el cuerpo** —el
+ * reproductor de NBC, dos flipbooks FB3D y un embed de Instagram—, así que
+ * **rechaza el seed**. Es la guarda funcionando, no un defecto: lo que estaba
+ * mal era el PLAN, que puso los seeds en el bloque 1 y T4 en el bloque 2 cuando
+ * **los seeds necesitan T4**. Acta: `PLAN-FASE-2.md` §F2-2 · FRONTERA (3). */
+
 /**
  * El contrato del §3.1, escrito como dato y no como prosa: **las 43 etiquetas
  * censadas en 209/209** (`arquetipo-A/components/campo-rico.spec.md` §1).

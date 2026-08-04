@@ -1408,6 +1408,49 @@ FAMILIA DE CALIBRACIÓN fabricada a mano.
 > pre-registro afirme (*«no existe», «no hay fichero», «no se ha visto»*) **se
 > comprueban al escribirlo**, contra el archivo, no de memoria.
 
+**9 · UN RECUENTO —O UNA AUSENCIA— AFIRMADOS DE MEMORIA SE BARREN ANTES DE
+USARSE.** (2026-08-04)
+
+Las ocho reglas de arriba persiguen instrumentos que no miran. Ésta persigue lo
+contrario: **afirmaciones que nadie midió y que se usan como si sí.**
+
+> **Todo número —«son ~8», «hay 2 citas», «no existe fichero»— se DERIVA antes
+> de usarse: `grep`, `find`, o recorrer el árbol. Nunca se recuerda mejor.** Y
+> vale igual para los **hechos negativos**, que son los peores: *«no hay»*
+> parece que no cuesta comprobarlo, y es justo el que más engaña.
+
+**No es una hipótesis: son seis instancias medidas, todas en este repo.**
+
+| # | lo afirmado | lo derivado | qué costó |
+|---|---|---|---|
+| 1 | inventario de la CLASE «~8» | **31** | el alcance de una precondición de F2-1 |
+| 2 | «los mínimos flojos son 8» | **10** | dos sondas se quedaron sin contrato |
+| 3 | «2 citas usan UTC» | **8** | 6 medidas con sello ambiguo |
+| 4 | «CMS-0f se cita en 1 sitio» | **3** | dos documentos quedaron sin actualizar |
+| 5 | «el CPT `solutions` tiene 22 URLs» | **24**, y **dos «singleton» no lo eran** | una decisión de modelado sobre n mal contado |
+| 6 | **«un ±30 observado una vez, SIN FICHERO»** (pre-registro de `cqa6-390`) | **dos ficheros congelados** de otra sonda | habría convertido un **no-defecto en «defecto con ficha»** |
+
+**Los tres primeros son recuentos; los tres últimos son peores**, porque el
+número mal contado ya había **decidido algo**: qué se modela, qué se cierra, qué
+se persigue.
+
+**Cómo se barre, y es siempre lo mismo:**
+
+| lo que se quiere afirmar | cómo se deriva |
+|---|---|
+| «hay N de X» | `grep -c` · `Glob` · recorrer el árbol y contar |
+| «X se cita en N sitios» | `grep -rn` sobre `docs/` y `scripts/` |
+| «no existe fichero de Y» | **buscarlo en `medidas/` Y en `git log`** — regla 8b |
+| «esta propiedad no varía» | la sonda, no la memoria |
+
+**Y la forma general, que es lo que la hace regla y no anécdota:**
+
+> **Un número recordado y un número derivado se escriben igual y no valen lo
+> mismo.** El derivado envejece con el repo; el recordado envejece **contra** el
+> repo, en silencio, y no hay lectura que los distinga. Por eso la exigencia no
+> es «acuérdate bien»: es **que la afirmación traiga su derivación al lado**, que
+> es lo que ya se le pide a las sondas (regla 2, congelar) aplicado a la prosa.
+
 ## Comandos
 
 ```bash
