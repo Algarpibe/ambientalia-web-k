@@ -5285,6 +5285,49 @@ fueron dos candidatos a objetivo: eran EL MISMO defecto medido contra los dos
 estados»*. Aquí, **el Δ0 y el −30 son la misma medida contra los dos estados**, y
 **la diferencia entre los dos «defectos» ES el suelo**.
 
+### ⚠ EL SUELO DE 390, PUBLICADO CON SU FORMA — y con su alcance por RUTA
+
+Completado el 2026-08-04 tras **barrer el archivo entero** en vez de citar los
+dos ficheros que se habían abierto (regla 8b). Barridos: **las 324 congeladas**
+más las **4 ráfagas** de campaña a 390 (`cqa6` ×1 + `cqa6-390` ×3).
+
+**Un suelo se publica con su FORMA, no sólo con su número** (`CLAUDE.md`
+§C-QA6): si tiene picos, **DISCRIMINA** — se compara contra los valores
+admisibles, no contra el máximo.
+
+| Δ del clon contra el original | lectura |
+|---|---|
+| **≈ 0** | el original en su estado **dominante**: el clon casa. **Limpio.** |
+| **≈ 30** | el original en su estado **raro**: casa con el otro pico. **Limpio.** |
+| **cualquier otro** | **DEFECTO — incluidos los MENORES que 30.** Un Δ de 12 o de 28 es un valor que el original **nunca ha producido** a este ancho, así que sólo puede venir del clon |
+
+**Y el alcance NO es uniforme entre las tres rutas.** Es la parte que la primera
+redacción de esta acta se saltó, y la que el barrido corrigió:
+
+| ruta @390 | dominante | segundo estado | ¿forma establecida? |
+|---|---|---|---|
+| `/software-de-medicion-calidad-del-aire` | **308.58** | **338.58** (1 vez) | ✅ **bimodal, Δ 30** |
+| `/sectores/…-en-edar` | **189.39** | **219.39** (1 vez) | ✅ **bimodal, Δ 30** |
+| `/sectores/…-petroleo-y-gas` | **189.39** | **ninguno observado** | ❌ **NO establecida** |
+
+> **Para petróleo@390 la tabla de lectura de arriba NO está autorizada.** Nunca
+> se le ha observado un segundo estado, así que **no se sabe si lo tiene ni a qué
+> distancia está**. Y **«no observado» no es «no existe»**: se escribe la **cota**
+> —0 eventos en las cargas medidas ⇒ al 95 %, `3/n` por carga— no la ausencia.
+> Que sus dos hermanas sean bimodales a 30 es **una razón para sospecharlo, no
+> para afirmarlo**; en petróleo, hoy, **sólo Δ≈0 está respaldado como limpio**.
+
+**Dónde vive cada evidencia, porque las dos fuentes no ven lo mismo:**
+
+| fuente | qué aportó |
+|---|---|
+| **`c-cabecera`** (4 congeladas @390) | **los dos estados** — es la única que ha visto el raro, y en 2 rutas |
+| **campaña `ruido`** (4 ráfagas @390) | **sólo el dominante** en las tres rutas, las 4 veces |
+| **`estados-390`** (180 cargas, una sentada) | **sólo el dominante** en las tres |
+
+O sea: **la campaña que se montó para dirimir esto nunca vio el fenómeno**, y lo
+vio la sonda que no lo estaba buscando. Es la regla 8b con nombre y apellidos.
+
 **Consecuencia sobre la ficha de §C5:** el −30 sale de **SIN PROBAR** y **no
 entra en defecto**. Queda como **estado del original**, con la regla de lectura
 de los suelos bimodales: un **+30** en una corrida futura de EDAR@390 **no es una

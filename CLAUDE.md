@@ -648,10 +648,33 @@ Estas se pagaron con horas de depuración. No las reinventes:
     > quede, y ésa es la lección operativa**: cuando la evidencia que falta es
     > *medible*, la salida es **medirla otra vez**, no argumentar sobre la que se
     > perdió. Campaña **`cqa6-390`** arrancada el 2026-08-03 sobre las mismas 3
-    > rutas — ráfaga 1 hecha (`h1` a 0 en las tres @390), faltan 2 y **la 3 tiene
-    > que caer otro día obligatoriamente**, porque aquí la 1 no regala días como
-    > en `cqa6`. **Hasta que cierre, el −30 se queda SIN PROBAR con esa etiqueta
-    > literal: ni defecto ni limpio.**
+    > rutas.
+    >
+    > ✅ **CERRADA 2026-08-04 (3 ráfagas · 2 días · ≥2 h) — y la dirimió el
+    > ARCHIVO, no la campaña.** Las 4 ráfagas a 390 vieron **sólo el estado
+    > dominante** en las tres rutas, igual que las 180 cargas de `estados-390`.
+    > Quien tenía la respuesta era **`c-cabecera`**, congelada y commiteada desde
+    > julio: **a 390 el original es BIMODAL con Δ = 30 exactos**, y el clon **no
+    > se mueve** —`clon 189.39` en la corrida del Δ0 y en la del −30—.
+    >
+    > | ruta @390 | dominante | 2.º estado | forma |
+    > |---|---|---|---|
+    > | `/software…` | 308.58 | **338.58** | ✅ bimodal Δ30 |
+    > | `…-en-edar` | 189.39 | **219.39** | ✅ bimodal Δ30 |
+    > | `…-petroleo-y-gas` | 189.39 | **ninguno visto** | ❌ **no establecida** |
+    >
+    > **El −30 nunca fue defecto del clon: es el original en su segundo estado**,
+    > y sale de SIN PROBAR sin entrar en defecto. Lectura (sólo para las **dos**
+    > rutas con forma establecida): **Δ≈0 limpio · Δ≈30 limpio · cualquier otro
+    > valor DEFECTO, incluidos los menores de 30**. En **petróleo** sólo Δ≈0 está
+    > respaldado — que sus hermanas sean bimodales es razón para sospecharlo, **no
+    > para afirmarlo**. Acta con alcance y ficheros: `PENDIENTES-QA.md` §CAMPAÑA
+    > `cqa6-390` · CERRADA.
+    >
+    > ⚠ **Y el precio del borrado a mano NO se recuperó, sólo se rodeó:** la
+    > ráfaga A sigue sin poder exhibirse. Lo que la sustituyó fue **otra
+    > evidencia que nunca se borró**, y encontrarla costó un `grep`. La §regla 5
+    > sigue entera.
     >
     > **Y `±30` / `±32.28` no son de la familia conocida.** El ruido documentado
     > abajo (27 · 54 · 81) son renglones del módulo «Artículos y Guías». Estos

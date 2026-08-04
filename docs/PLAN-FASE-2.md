@@ -500,6 +500,68 @@ siguen abiertas — ~~la primera bloquea la whitelist~~, **ninguna de las dos
 bloquea ya**: §3.1d sacó el corpus del editor, así que §3.4 es decisión de
 producto y §3.3b es política.
 
+### ✅ F2-2 · PASO 0 — las incógnitas, RECONCILIADAS con §3.1d (2026-08-04)
+
+**Se redactaron cuando el destino era Lexical.** Con §3.1d resuelto a HTML crudo
+hay que decir cuál sigue viva y cuál no, porque una incógnita muerta que nadie
+retira acaba bloqueando una tanda que no tenía por qué pararse.
+
+| incógnita, como estaba escrita | veredicto | por qué |
+|---|---|---|
+| **el recuento de CMS-0e (16 · 3 · 5) es provisional hasta la corrida con `richtext-lexical` instalado** — *«§7, aquí es donde por fin se hace»* | **APLAZADA, y NO a F2-2** | medía la **pérdida al convertir HTML→Lexical**, y **F2-2 ya no convierte**: el cuerpo entra y se queda en HTML. La librería está instalada desde el bloque 2, o sea que **su condición escrita se cumple y aun así no toca hacerla aquí** — no hay conversión que auditar. Pasa a **la tanda que decida convertir un cuerpo concreto**, si llega. Mientras tanto **sigue sin citarse como firme**, igual que antes |
+| **la tabla §3.4 «bloquea la whitelist»** | **DISUELTA como bloqueo** | las 35 páginas con tabla entran **como HTML**. §3.4 sigue abierta **como decisión de producto** (qué pasa cuando alguien escriba una tabla NUEVA en el CMS), y ésa no la necesita la importación |
+| **la allowlist de hosts §3.3b** | **VIVA — y es POLÍTICA, no modelado** | el nodo ya lleva URL, así que no condiciona el esquema. Abajo va **derivada del censo y PROPUESTA**, no decidida |
+| **el tamaño del corpus completo está SIN MEDIR** (CMS-0b) | **VIVA, y es del BLOQUE 3** | §3.1d no la toca: es de media, no de cuerpo |
+
+> ⚠ **Y una que §3.1d ESTRENA, y muerde en el bloque 2:** los `<script>` ya no
+> pueden entrar —el `validate` del campo los rechaza—, así que **las 15 páginas
+> con script fallan al importar si T4 no se aplica antes**. Es deliberado (regla
+> 6), pero el importador tiene que aplicar T4 **antes** del alta.
+
+#### La allowlist de hosts — **PROPUESTA, derivada del censo. Falta firma del propietario**
+
+**Nadie la decide en esta tanda**: es política de a quién se le deja incrustar
+contenido en el sitio, y eso lo firma quien responde del sitio. Lo que sí se
+puede hacer sin firma es **poner delante el dato**, que es lo que faltaba.
+
+Derivado de `medidas/a-embeds.json` (censo **209/209**, no muestra): **83
+`iframe` · 18 hosts distintos**.
+
+> ⚠ **Y el dato mata la «lista cerrada de 5» del §3.3 con más fuerza de la que
+> §3.3b ya le atribuía: de los cinco, sólo DOS aparecen como `iframe`.**
+> `twitter` e `instagram` entran por `<script>` (§3.3), no por iframe; y
+> **`flourish` no casa por nombre** — su host real es **`flo.uri.sh`**, que el
+> censo marcó `enLista: false`. Una allowlist escrita por nombre de proveedor
+> **no habría reconocido a su propio proveedor**.
+
+| tramo | hosts | iframes | qué son |
+|---|---|---|---|
+| **A · masivo** | `youtube.com` · `ourworldindata.org` | **62 de 83 (75 %)** | vídeo y gráficos de datos. Los dos ya estaban en la lista |
+| **B · gráficos y mapas de datos** | `flo.uri.sh` (Flourish) · `experience.arcgis.com` · `storymaps.arcgis.com` · `europeanbiogas.clicdata.com` · `shipmap.org` · `geoportal.madrid.es` · `data.worldbank.org` · `essic.umd.edu` · `elliotcloud.portsdebalears.com` | 10 | **la cola larga real**: 9 hosts, casi todos 1 vez. Fuentes institucionales o científicas |
+| **C · ofimática y presentaciones** | `canva.com` · `docs.google.com` · `google.com` · `google.es` · `…gamma.site` | 8 | documentos y presentaciones incrustados |
+| **D · redes sociales** | `facebook.com` · `linkedin.com` | 3 | |
+
+**Las tres formas posibles, con su coste, para que la firma sea informada:**
+
+| forma | a favor | en contra |
+|---|---|---|
+| **allowlist estricta** (sólo A) | superficie mínima | **rompe 21 iframes en el corpus**: 16 hosts se quedan fuera y hay que decidir uno a uno qué se hace con ellos |
+| **allowlist = los 18 censados** | **cero pérdida** al importar; la lista es un hecho medido, no una opinión | congela el pasado: un host nuevo legítimo exige tocar código |
+| **sin allowlist, sólo `https` + registro** | no bloquea a nadie | acepta **cualquier** tercero en el contenido, que es justo lo que §3.3 rechazó para `script` |
+
+> **Recomendación para la firma, y va con su razón, no como preferencia:**
+> **allowlist = los 18 censados** como punto de partida —es el único valor con
+> cero pérdida medida— **más un procedimiento de alta** para hosts nuevos. La
+> estricta se puede adoptar después *sabiendo* que cuesta 21 decisiones; hoy esa
+> cuenta no la tenía nadie delante.
+>
+> ⚠ Y sea cual sea la firma: **la allowlist se compara por HOST, nunca por nombre
+> de proveedor.** Lo dice el caso de `flo.uri.sh`.
+
+**Pendiente que la firma NO cierra:** los `iframe` del **grupo C** siguen **sin
+censar por host** (C-SP6). Los 18 de arriba son del grupo A. Un censo del grupo C
+puede añadir hosts, y por eso la lista se firma **con su alcance escrito**.
+
 > ⚠ **Y una que se estrena aquí, barata pero real:** los `<script>` del corpus
 > **ya no pueden entrar** —el `validate` del campo los rechaza (§3.3 · T4)— así
 > que **una entrada de las 15 con script FALLA al importar si T4 no se aplica
