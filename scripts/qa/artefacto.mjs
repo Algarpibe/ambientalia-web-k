@@ -39,6 +39,31 @@
  *   `media/` **y medir exactamente eso**. Éste es el que habría cazado los
  *   `imageSizes` inertes el primer día.
  *
+ *   **D · CUERPO TRANSFORMADO** (2026-08-05) — cada `data-media` que T3b y T4b
+ *   escriben en el cuerpo tiene que resolver contra la captura. Es el invariante
+ *   que la relación de media necesitaba para no ser una promesa: sin él,
+ *   `data-media="2025/02/loquesea.pdf"` es una cadena que nadie comprueba.
+ *
+ * ── D · las tres salidas, y las tres DERIVADAS (nunca escritas a mano) ─────
+ * La captura es una lista congelada de lo que se PIDIÓ (`media-regenera.json` ·
+ * `listaACapturar`) y un índice de lo que LLEGÓ (`media-corpus/INDICE.json`, con
+ * sus `errores`). Cruzando las dos, una referencia sólo puede caer en tres
+ * sitios, y **cada uno significa algo distinto**:
+ *
+ * | caso | qué significa | ¿rojo? |
+ * |---|---|---|
+ * | está en el índice | resuelve — y B ya le comprueba el `sha256` | — |
+ * | **se pidió y falló** (está en `listaACapturar`, con `errores`) | **§M-ORIGEN404**: el original ya no lo sirve. Ausencia permanente del ORIGEN, no captura incompleta | **no** |
+ * | **nunca se pidió** y es un **PDF de T4b** | el mecanismo está medido: `listaACapturar` se derivó del **markup**, y la referencia de FB3D vive **sólo dentro del payload base64** — ningún barrido de markup podía verla (§M-PDF-FB3D) | **no** |
+ * | cualquier otra ausencia | **defecto** | **sí** |
+ *
+ * ⚠ **Y la última fila es la que hace que esto sea una guarda y no una excusa.**
+ * Las dos exenciones son **predicados**, no listas: «se pidió y el índice
+ * registró su error» y «es un PDF que T4b sacó de un base64». Una imagen nueva
+ * sin fichero **no cumple ninguno de los dos** y sale roja — que es exactamente
+ * la diferencia entre *«404 conocido en el origen»* y *«404 nuevo»* que este eje
+ * tiene que saber distinguir.
+ *
  * ── La deuda conocida NO pone el eje en rojo, y eso es deliberado ─────────
  * Las 23 de §M-404 son **deuda del clon fichada** (`apps/web` paga Δ0 y es otra
  * tanda). Van en una **lista derivada de la congelada**, y el eje sale ROJO en
@@ -65,6 +90,7 @@ const SABOTAJES = {
   "sha-cambiado": "se falsea el sha256 de un fichero capturado → invariante B (una congelada que cambia no es congelada)",
   "dimension-distinta": "la ficha del CMS declara una dimensión que el fichero no tiene → invariante C",
   "variante-no-generada": "la ficha declara un tamaño cuyo fichero no está → invariante C, el defecto de los `imageSizes` inertes",
+  "media-inventada": "el cuerpo transformado declara un `data-media` que no se pidió y NO es un PDF de T4b → invariante D, el «404 nuevo»",
   "sin-fuente": "las listas congeladas se vacían → 0 unidades, y «nada roto» sería la regla del cero",
   control: "ningún sabotaje: sólo la deuda FICHADA, y el eje no sale rojo por ella",
 };
@@ -146,6 +172,62 @@ for (const f of fichas) {
     dimensionDistinta.push({ ...f, real: `${m.width}x${m.height}`, declarado: `${f.width}x${f.height}` });
 }
 
+/* ══ D · el CUERPO TRANSFORMADO contra la captura ════════════════════════ */
+const fExtractor = join(QA, "medidas", "extractor-corpus.json");
+if (!existsSync(fExtractor))
+  throw new Error(
+    "no hay `medidas/extractor-corpus.json`: sin él el invariante D no tiene referencias que comprobar,\n" +
+      "  y 0 referencias darían un verde que no miró nada (la regla del cero). Corre `npm run cms:extractor`.",
+  );
+const extractor = JSON.parse(readFileSync(fExtractor, "utf8"));
+if (!extractor.mediaDelCuerpo)
+  throw new Error(
+    "`extractor-corpus.json` es de ANTES de T3b/T4b (sin `mediaDelCuerpo`). Una congelada rancia leída como\n" +
+      "  actual daría «0 referencias, todo bien»: se para aquí. Re-congela con `PISAR=1 npm run cms:extractor`.",
+  );
+
+/** Lo que la captura PIDIÓ, congelado la tanda anterior — el alcance de la lista. */
+const regenera = JSON.parse(readFileSync(join(QA, "medidas", "media-regenera.json"), "utf8"));
+const PREFIJO = "https://kunakair.com/wp-content/uploads/";
+const pedidas = new Set((regenera.listaACapturar ?? []).map((u) => decodeURIComponent(u.replace(PREFIJO, ""))));
+/**
+ * ⚠ **La media del corpus vive en DOS árboles, y mirar sólo uno da 51 falsos
+ * positivos.** `media-regenera` derivó `listaACapturar` **restando lo que ya
+ * estaba local** (`faltanCuerpo = origCuerpo − local`): de los 600 orígenes del
+ * cuerpo, **63 ya los tenía el clon** en `apps/web/public/images/uploads` y por
+ * eso no se volvieron a pedir. Un invariante que sólo mirase `media-corpus/`
+ * leería esos 63 como ausentes — y es exactamente lo que hizo la primera
+ * versión: **51 «404 nuevos» que están todos en disco.**
+ */
+const RAIZ_SUBIDAS = join(PUBLIC, "images/uploads");
+const yaLocales = new Set();
+(function anda(d, rel = "") {
+  if (!existsSync(d)) return;
+  for (const e of readdirSync(d, { withFileTypes: true })) {
+    if (e.isDirectory()) anda(join(d, e.name), rel ? `${rel}/${e.name}` : e.name);
+    else yaLocales.add(rel ? `${rel}/${e.name}` : e.name);
+  }
+})(RAIZ_SUBIDAS);
+/** Lo que se pidió y NO llegó, con su error — §M-ORIGEN404, derivado del índice. */
+const fallaronEnOrigen = new Set(
+  (idx.errores ?? []).map((e) => decodeURIComponent(String(e.url ?? "").replace(PREFIJO, ""))),
+);
+/** Las que T4b sacó de un payload base64: markup no las podía ver (§M-PDF-FB3D). */
+const deT4b = new Set((extractor.mediaDelCuerpo.detalle ?? []).filter((m) => m.via === "t4b").map((m) => m.clave));
+
+let referidas = extractor.mediaDelCuerpo.documentos ?? [];
+if (SABOTAJE === "sin-fuente") referidas = [];
+if (SABOTAJE === "media-inventada") referidas = [...referidas, "2099/01/esta-referencia-no-se-pidio-jamas.jpg"];
+
+const cuerpoOk = [], cuerpoLocal = [], cuerpo404Origen = [], cuerpoNuncaPedida = [], cuerpoNueva = [];
+for (const clave of referidas) {
+  if (idx.ficheros?.[clave]) { cuerpoOk.push(clave); continue; }
+  if (yaLocales.has(clave)) { cuerpoLocal.push(clave); continue; }
+  if (fallaronEnOrigen.has(clave)) { cuerpo404Origen.push(clave); continue; }
+  if (!pedidas.has(clave) && deT4b.has(clave) && /\.pdf$/i.test(clave)) { cuerpoNuncaPedida.push(clave); continue; }
+  cuerpoNueva.push(clave);
+}
+
 /* ══ INFORME ════════════════════════════════════════════════════════════ */
 /* El mínimo se DERIVA de las fuentes congeladas —no se escribe—: las
  * referencias servidas y las entradas de la captura se conocen ANTES de mirar
@@ -153,8 +235,8 @@ for (const f of fichas) {
  * apagada no puede convertirse en «el código está mal» (el mismo criterio por
  * el que `qa:cms-slugs` está fuera de `check`). Un mínimo puesto sobre el
  * RESULTADO no puede detectar que el instrumento no miró. */
-const MINIMO = servidas.length + entradas.length;
-const unidades = servidas.length + entradas.length + fichas.length;
+const MINIMO = servidas.length + entradas.length + referidas.length;
+const unidades = servidas.length + entradas.length + fichas.length + referidas.length;
 const ev = new Evaluadas({
   unidad: "artefactos (servidos + capturados + fichas del CMS)",
   minimo: Math.max(1, MINIMO),
@@ -183,6 +265,17 @@ for (const v of varianteAusente.slice(0, 6)) console.log(`     ✗ ${v.original}
 console.log(`  dimensión ≠ la de su ficha . ${String(dimensionDistinta.length).padStart(5)}`);
 for (const d of dimensionDistinta.slice(0, 6)) console.log(`     ✗ ${d.fichero}  ficha ${d.declarado} · real ${d.real}`);
 
+console.log(`\n── D · el \`data-media\` del CUERPO TRANSFORMADO resuelve ────────────`);
+console.log(`  documentos referidos ....... ${String(referidas.length).padStart(5)}  (T3b + T4b)`);
+console.log(`  resuelven en media-corpus .. ${String(cuerpoOk.length).padStart(5)}`);
+console.log(`  resuelven ya locales ....... ${String(cuerpoLocal.length).padStart(5)}  ← los que la captura NO pidió porque el clon ya los tenía`);
+console.log(`  §M-ORIGEN404 (404 en origen) ${String(cuerpo404Origen.length).padStart(5)}  ← se pidió y el original ya no lo sirve: NO pone el eje en rojo`);
+for (const c of cuerpo404Origen) console.log(`     · ${c}`);
+console.log(`  §M-PDF-FB3D (nunca pedida) . ${String(cuerpoNuncaPedida.length).padStart(5)}  ← la lista se derivó del MARKUP y el PDF vive en base64`);
+for (const c of cuerpoNuncaPedida) console.log(`     · ${c}`);
+console.log(`  ausencias NUEVAS ........... ${String(cuerpoNueva.length).padStart(5)}`);
+for (const c of cuerpoNueva.slice(0, 8)) console.log(`     ✗ ${c}`);
+
 w("medidas/artefacto.json", {
   meta: {
     fecha: new Date(pob.meta?.fecha ?? Date.now()).toISOString().slice(0, 10),
@@ -194,6 +287,17 @@ w("medidas/artefacto.json", {
   servido: { referencias: servidas.length, ausentesFichadas: faltanFichadas.length, ausentesNuevas: faltanServidas, listaFichadas: [...FICHADAS] },
   captura: { declarados: entradas.length, ausentes: capturaAusente, shaNoCasa: capturaCambiada },
   cms: { tamanosDeclarados: fichas.length, varianteAusente, dimensionDistinta },
+  cuerpo: {
+    referidos: referidas.length,
+    resuelven: cuerpoOk.length + cuerpoLocal.length,
+    enCaptura: cuerpoOk.length,
+    yaLocales: cuerpoLocal.length,
+    origen404: cuerpo404Origen,
+    nuncaPedida: cuerpoNuncaPedida,
+    nuevas: cuerpoNueva,
+    fuente: "medidas/extractor-corpus.json · mediaDelCuerpo (T3b + T4b)",
+    exenciones: "§M-ORIGEN404 = se pidió y el índice registró su error · §M-PDF-FB3D = PDF que T4b sacó de un base64 y la lista, derivada del markup, no podía ver",
+  },
 });
 
 const errores = [];
@@ -207,10 +311,17 @@ if (capturaAusente.length) errores.push(`${capturaAusente.length} fichero(s) de 
 if (capturaCambiada.length) errores.push(`${capturaCambiada.length} fichero(s) capturados cuyo sha256 NO casa: la línea base cambió bajo los pies.`);
 if (varianteAusente.length) errores.push(`${varianteAusente.length} tamaño(s) que la ficha declara y cuyo fichero NO está. Es el defecto de los \`imageSizes\` inertes.`);
 if (dimensionDistinta.length) errores.push(`${dimensionDistinta.length} fichero(s) que NO miden lo que su ficha dice.`);
+if (cuerpoNueva.length)
+  errores.push(
+    `${cuerpoNueva.length} \`data-media\` del cuerpo transformado que NO resuelve y NO está exento:\n` +
+      `   ni se pidió y falló (§M-ORIGEN404) ni es un PDF que T4b sacara de un base64 (§M-PDF-FB3D).\n` +
+      `   Es un 404 NUEVO: ${cuerpoNueva.slice(0, 4).join(", ")}`,
+  );
 
 console.log(`\n═══ VEREDICTO ═════════════════════════════════════════════════════`);
 if (!errores.length)
   console.log(`  ✅ ${unidades} artefactos: existen y miden lo que su ficha dice.\n` +
-    `     (${faltanFichadas.length} ausencias FICHADAS de §M-404, que son deuda del clon y tienen dueño)`);
+    `     (${faltanFichadas.length} ausencias FICHADAS de §M-404 · ${cuerpo404Origen.length} de §M-ORIGEN404 ·\n` +
+    `      ${cuerpoNuncaPedida.length} de §M-PDF-FB3D — las tres son deuda con dueño y ficha, no huecos)`);
 for (const e of errores) console.error(`\n❌ ${e}`);
 process.exit(errores.length + ev.informe() ? 2 : 0);

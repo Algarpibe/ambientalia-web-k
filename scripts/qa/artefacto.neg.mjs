@@ -15,6 +15,11 @@
  *     ficha dice**. Separado del anterior a propósito: «existe» y «mide lo que
  *     dice» son dos propiedades, y una sonda que sólo comprobara la primera
  *     daría verde sobre un recorte equivocado;
+ *   · `media-inventada`      → **D**: el cuerpo transformado declara un
+ *     `data-media` que no resuelve y **no cumple ninguna de las dos exenciones**
+ *     (§M-ORIGEN404 · §M-PDF-FB3D). Es el sabotaje que prueba que el eje sabe
+ *     distinguir *«404 conocido en el origen»* de *«404 nuevo»* — sin él, las
+ *     exenciones serían indistinguibles de un `catch {}`;
  *   · `sin-fuente`           → la regla del cero: con las listas vacías,
  *     «nada roto» y «no se ha mirado nada» dan la misma salida.
  *
@@ -57,6 +62,13 @@ const casos = [
     comprueba: (d) => (d.cms?.dimensionDistinta?.length > 0 ? null : "esperaba dimensionDistinta > 0"),
   },
   {
+    sabotaje: "media-inventada",
+    exit: 2,
+    porQue: "D · un `data-media` del cuerpo que no resuelve y NO cumple ninguna de las dos exenciones ⇒ 404 NUEVO",
+    salidaTiene: /del cuerpo transformado que NO resuelve y NO est[áa] exento/,
+    comprueba: (d) => (d.cuerpo?.nuevas?.length > 0 ? null : "esperaba nuevas > 0"),
+  },
+  {
     sabotaje: "sin-fuente",
     exit: 2,
     porQue: "las listas vacías ⇒ SIN UNIDADES, nunca «nada roto» (regla del cero)",
@@ -65,7 +77,7 @@ const casos = [
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · eje \`existencia\` ════════\n`);
-console.log(`  ${casos.length} sabotajes, uno por invariante (A · B · C×2 · el cero) + control\n`);
+console.log(`  ${casos.length} sabotajes, uno por invariante (A · B · C×2 · D · el cero) + control\n`);
 
 const ev = new Evaluadas({ nombre: "artefacto-neg", unidad: "sabotajes", minimo: casos.length });
 let fallos = 0;
@@ -117,9 +129,10 @@ console.log(
   `\n${fallos === 0 ? "✅" : "❌"} eje \`existencia\` · test en negativo: ${casos.length + 1 - fallos}/${casos.length + 1}` +
     `  (${casos.length} que cazan · control)\n` +
     (fallos === 0
-      ? `   El eje se pone rojo por los TRES invariantes por separado —el fichero que no\n` +
-        `   está, la congelada que cambia, la variante que no se generó y la que no mide\n` +
-        `   lo que dice— y NO se pone rojo por la deuda fichada. Ya se puede citar.\n`
+      ? `   El eje se pone rojo por los CUATRO invariantes por separado —el fichero que no\n` +
+        `   está, la congelada que cambia, la variante que no se generó, la que no mide lo\n` +
+        `   que dice y el \`data-media\` que no resuelve— y NO se pone rojo por la deuda\n` +
+        `   fichada. Ya se puede citar.\n`
       : `   El eje NO se puede citar hasta que esto salga verde: nació de dos verdes\n` +
         `   falsos, y un eje que no sabe ponerse rojo repetiría el que lo creó.\n`),
 );

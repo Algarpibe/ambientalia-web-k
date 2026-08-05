@@ -4,7 +4,7 @@
     "eje": "existencia — el artefacto EN DISCO, no el HTML servido",
     "fuentes": "media-poblaciones.json (referencias servidas, congeladas) · media-corpus/INDICE.json · la DB (ficha de tamaños)",
     "deudaFichada": "las ausentes de §M-404 se derivan de la congelada y NO ponen el eje en rojo; una NUEVA sí",
-    "sabotaje": null
+    "sabotaje": "media-inventada"
   },
   "servido": {
     "referencias": 406,
@@ -47,7 +47,7 @@
     "dimensionDistinta": []
   },
   "cuerpo": {
-    "referidos": 432,
+    "referidos": 433,
     "resuelven": 424,
     "enCaptura": 373,
     "yaLocales": 51,
@@ -63,7 +63,9 @@
       "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
       "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf"
     ],
-    "nuevas": [],
+    "nuevas": [
+      "2099/01/esta-referencia-no-se-pidio-jamas.jpg"
+    ],
     "fuente": "medidas/extractor-corpus.json · mediaDelCuerpo (T3b + T4b)",
     "exenciones": "§M-ORIGEN404 = se pidió y el índice registró su error · §M-PDF-FB3D = PDF que T4b sacó de un base64 y la lista, derivada del markup, no podía ver"
   }

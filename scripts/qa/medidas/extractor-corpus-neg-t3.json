@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-05",
     "sabotaje": "t3",
     "fuente": "corpus/ (captura congelada) — OFFLINE, sin tocar el sitio vivo",
     "alcance": "209 cuerpos de entradas-blog · terminos-kunakpedia · documentos-cientificos; fuera (builder): casos · faqs · productos",
@@ -133,6 +133,16 @@
         "terminos-kunakpedia/emisiones-por-chimenea: queda `wp-image-<id>` o `aligncenter` en el contenido"
       ]
     },
+    "t3b": {
+      "aplicadas": 444,
+      "dianas": 444,
+      "violaciones": []
+    },
+    "t4b": {
+      "aplicadas": 12,
+      "dianas": 12,
+      "violaciones": []
+    },
     "t4": {
       "aplicadas": 17,
       "dianas": 17,
@@ -241,6 +251,2831 @@
       "muestra": "<script type=\"text/javascript\">window.FB3D_CLIENT_DATA = window.FB3D_CLIENT_DATA || [];FB3D_CLIENT_DATA.push('eyJwb3N0cy"
     }
   ],
+  "mediaDelCuerpo": {
+    "referencias": 449,
+    "documentos": [
+      "2020/03/calidad-del-aire-en-los-puertos-Kunak-2.jpg",
+      "2020/03/calidad-del-aire-en-los-puertos-Kunak-3.jpg",
+      "2020/03/calidad-del-aire-en-los-puertos-Kunak.jpg",
+      "2020/04/Reche2020_Athletes-exposure-to-air-pollution-during-World-Athletics-Relays.pdf",
+      "2020/04/abstractaq2020mexico-200421115428.pdf",
+      "2020/07/smartkalea-estaciones-donostia.jpg",
+      "2020/08/Maquinaria-agricola-en-proceso-de-compostaje.jpg",
+      "2020/08/Tractor-aplicando-estiercol-liquido-en-campo-agricola.jpg",
+      "2020/08/Vertedero-con-basura-maquinaria-y-aves-volando.jpg",
+      "2020/09/apb-1.jpg",
+      "2020/09/apb-autoridad-portuaria-baleares.jpg",
+      "2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+      "2020/11/agustin-torres-suez-cop25-1.jpg",
+      "2020/12/emisiones-por-fuente.jpg",
+      "2021/03/Wildland-Fire-Sensor-Challenge-2017.jpg",
+      "2021/03/honorable-mention-kunak.jpg.webp",
+      "2021/06/zonas-de-bajas-emisiones-barcelona.jpg",
+      "2021/09/ZBE.jpg",
+      "2021/10/infografia-directrices-de-la-OMS-sobre-calidad-del-aire-ESP.pdf",
+      "2021/11/estaciones-Kunak-La-Palma-CumbreVieja.jpeg",
+      "2022/02/Impacto-ambiental-de-la-industria-cementera-3.jpg",
+      "2022/02/Impacto-ambiental-de-la-industria-cementera-4.jpg",
+      "2022/02/Impacto-ambiental-de-la-industria-cementera-5.jpg",
+      "2022/09/calidad_del_aire_en_los_colegios-Kunak-1.jpg",
+      "2022/09/calidad_del_aire_en_los_colegios-Kunak-2.jpg",
+      "2022/09/calidad_del_aire_en_los_colegios-Kunak-3.jpg",
+      "2023/01/control-ambiental-mina-cobre-panama.jpg",
+      "2023/01/mineria-a-cielo-abierto.jpg",
+      "2023/01/mineria-submarina.jpg",
+      "2023/01/mineria-subterranea.jpg",
+      "2023/01/plataforma-de-perforacion-marina.jpg",
+      "2023/02/Volatile_organic_compounds.jpg",
+      "2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+      "2023/04/medicion-emision-de-gases-y-particulas-en-refinerias.png",
+      "2023/05/f4dfe2ee-de97-4f68-a317-cf376d5670f3.jpg",
+      "2023/05/selective-focus-of-asthmatic-kid-using-inhaler-wit-2022-12-16-17-25-45-utc-scaled-1.webp",
+      "2023/07/calle-30-natura.jpg",
+      "2023/08/El-polvo-en-obras-de-construccion-el-enemigo-invisible.jpg",
+      "2023/08/Impacto-ambiental-de-las-obras-de-construccion.jpg",
+      "2023/08/Normativas-que-regulan-la-contaminacion-en-obras-de-construccion.jpg",
+      "2023/08/Sistemas-de-riego-y-aspersion-para-el-control-de-polvo-Kunak.jpg",
+      "2023/09/Infographic_7_Common_Workplace_Safety_Hazards.webp",
+      "2023/09/What-Does-OSHA-Stand-For.webp",
+      "2024/01/Air-quality-Albacete-Kunak-AIR.jpg.webp",
+      "2024/01/Airports-Climate-Change-ESP.jpg",
+      "2024/01/Infografia-aviones-sostenibles.jpg",
+      "2024/01/urban-pollution-size-particles.jpg.webp",
+      "2024/02/Capa_de_polucion_sobre_la_ciudad_de_Barcelona.jpg",
+      "2024/02/Redes_de_sensores_ambientales.jpg",
+      "2024/02/ica-google-maps.jpg",
+      "2024/03/89.png",
+      "2024/03/90-1.png",
+      "2024/03/Calidad-del-aire-en-los-puertos-innovacion-sostenibilidad-y-control-inteligente.jpg",
+      "2024/03/Imagen1.png",
+      "2024/03/Infografia_proceso_de_fabricacion_del_papel_Aspapel_Kunak.jpg",
+      "2024/03/La-electrificacion-de-los-puertos-es-clave-para-descarbonizar-el-transporte-maritimo.jpg",
+      "2024/03/fotografia-cenital-aerea-maquina-fertilizante-campo-agricola-dia.jpeg",
+      "2024/03/manolo-chretien-RpC-9e0ORNM-unsplash-scaled.jpg",
+      "2024/03/nitrates_directive_infographic_tcm30-519810.png",
+      "2024/03/operaciones-de-carga-y-descarga-en-puerto.jpg",
+      "2024/03/the-nitrates-directive-solutions_EU.png",
+      "2024/03/tractor-4217686_1280.jpeg",
+      "2024/04/Oil-refineries-along-the-Athabasca-River.jpg",
+      "2024/04/infografia_refino_petroleo_Kunak.jpg",
+      "2024/04/papel-reciclado.jpg",
+      "2024/04/vigilancia_perimetral_de_la_calidad_del_aire_exterior.jpg",
+      "2024/05/4a81d010-18ea-11ef-a76b-450a2cce6151.png",
+      "2024/05/How-clean-your-air-is_Ecowatch.jpg",
+      "2024/05/Infografia-Acuerdo-de-Escazu_V2_2022_Esp.jpg",
+      "2024/05/Kids_Want_Climate_Justice_34168280266.jpg",
+      "2024/05/fraction-of-deaths-and-DALYs-attributable-to-the-environment-globally.png",
+      "2024/05/industry-1761801_1280.jpg",
+      "2024/05/papel-gobierno-en-la-justicia-medioambiental-kunak.png",
+      "2024/06/Cartel_informativo_de_la_zona_de_bajas_emisiones_de_Copenhague.jpg",
+      "2024/06/Datos-mundiales-dioxido-de-nitrogeno-OMS-Kunak.jpg",
+      "2024/06/EPA-Exposicion-al-dioxido-de-nitrogeno-kunak.png",
+      "2024/06/Geoplataforma-herramienta-evaluacion-justicia-climatica-y-economica-Gobierno-EE.UU_.png",
+      "2024/06/Imagen-de-la-Zona-de-Bajas-Emisiones-de-Paris.jpg",
+      "2024/06/Inmision-Emision.png",
+      "2024/06/Niveles-de-O3-Organizacion-Mundial-Salud-Kunak.jpg",
+      "2024/06/Ozono-a-nivel-del-suelo-Ozone-Action-Heroes-Kunak.png",
+      "2024/06/ZFE_paris.jpg",
+      "2024/06/city-of-london-4481399_1280.jpg",
+      "2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
+      "2024/06/gran-via-madrid-trafico-urbano.jpg",
+      "2024/06/traffic-7272520_1280.jpg",
+      "2024/06/trafico-ciudad-berlin.jpg",
+      "2024/06/zona-de-bajas-emisiones-de-espana.png",
+      "2024/07/Contaminacion_del_aire_en_Nueva_York.jpg",
+      "2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
+      "2024/07/Medicion-de-la-calidad-del-aire.jpg",
+      "2024/07/New-York-por-la-noche-Kunak.jpg",
+      "2024/07/Nueva-York-al-atardecer-Kunak.jpg",
+      "2024/07/Particulas-en-suspension-durante-el-confinamiento-Covid-19.jpg",
+      "2024/07/Puente-de-Brooklyn-New-York-Kunak.jpg",
+      "2024/07/Sin-titulo-1.jpg",
+      "2024/07/Trafico-en-New-York-Kunak.jpg",
+      "2024/07/air-quality-monitoring-in-paris-2024-olympic-games.jpg",
+      "2024/07/science-of-methane-kunak.jpg",
+      "2024/08/Acceso-a-zona-de-productos-quimicos-en-industria-Kunak-980x764-1.jpg",
+      "2024/08/Aceeso-restringido-productos-toxicos-Kunak-980x735-1.jpg",
+      "2024/08/Productos-quimicos-Kunak-980x653-1.jpg",
+      "2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+      "2024/08/laboratorio-quimica-Kunak-980x653-1.jpg",
+      "2024/08/proteccion-sustancias-peligrosas-industria-Kunak-980x653-1.jpg",
+      "2024/08/smog-4.jpg",
+      "2024/08/why_smog_is_bad_infographic_kunak.jpg",
+      "2024/09/city-nightview.jpg",
+      "2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
+      "2024/09/power-plant-and-surroundings.jpg",
+      "2024/09/school-strike-4-climate.jpg",
+      "2024/09/urban-contamination-kunak-e1727711571513.jpg",
+      "2024/10/Almacenaje-producto-de-acero-1.jpg",
+      "2024/10/Bobinas-de-acero.jpg",
+      "2024/10/Como-se-distribuye-el-mercado-del-acero-WorldSteel.jpg",
+      "2024/10/Estacion-Kunak-en-Senegal.jpg",
+      "2024/10/Mitigar-CO2-acciones.jpg",
+      "2024/10/Produccion-hidrogeno-verde.jpg",
+      "2024/10/Produccion-mundial-de-acero-2023-WorldSteel.png",
+      "2024/10/como-se-produce-el-efecto-invernadero-ES.jpg",
+      "2024/10/dispositivo-iot-para-medir-la-calidad-del-aire.jpg",
+      "2024/10/emisiones-de-metano-teheran-nasa.jpg",
+      "2024/10/fundicion-de-acero.jpg",
+      "2024/10/gases_efecto_invernadero_mas_comunes.jpg",
+      "2024/10/health-impact-final_0.jpg",
+      "2024/10/mapa-de-temperaturas-2024.png",
+      "2024/10/scopes-of-greenhouse-effect-emissions.jpg",
+      "2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
+      "2024/11/Red-de-monitorizacion-de-la-calidad-del-aire-en-la-planta-de-fertilizantes-de-Lifeco-en-Libia-Kunak.jpg",
+      "2024/11/Trafico-en-la-calle-Real-de-Bruselas-con-el-Palacio-de-Justicia-de-fondo.jpg",
+      "2024/12/EEA-Report-Air-Pollution.pdf",
+      "2025/01/Antorcha-de-gas-en-un-pozo-petrolifero-Foto-credito-Andrew-BurtonGetty-Images-scaled-e1736250805947.jpg",
+      "2025/01/CO_WestCoast_SmokeCloud_credit_row-scaled.jpg",
+      "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-e1736246793350.png",
+      "2025/01/Emisiones-de-metano-de-un-vertedero-de-Madrid-detectadas-el-20-agosto-2021-European-Space-Agency-e1738175496669.png",
+      "2025/01/Fuentes-de-Monoxido-CO-Emision-de-CO-infografia-US-EPA.png",
+      "2025/01/Gestion-vertedero-scaled-e1736248078288.jpg",
+      "2025/01/Metano_Britannica-e1736246813444.jpg",
+      "2025/01/Residuos-generados-en-la-UE-por-sectores-y-la-evolucion-de-2004-a-2022-Parlamento-Europeo.png",
+      "2025/01/Residuos-municipales-generados-en-la-UE-entre-2004-y-2022-Parlamento-Europeo.png",
+      "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-scaled-e1736250883537.jpg",
+      "2025/01/Vertedero_credit-medianews-scaled-e1736248283603.jpg",
+      "2025/01/diagrama-sellado-de-vertedero-US-EPA.jpg",
+      "2025/01/landfill.jpg",
+      "2025/01/recogida-de-residuos-solidos-urbanos-Kunak.jpg",
+      "2025/01/valor-limite-de-monoxido-de-carbono-CO-para-la-proteccion-de-la-salud-humana-credito-imagen-EEA.png",
+      "2025/01/vertedero-de-residuos-solidos-urbanos-Kunak.jpg",
+      "2025/01/vertedero-y-areas-selladas-Kunak.jpg",
+      "2025/02/Campeon-olimpico-Haile-Gebrselassie-en-lanzamiento-Running-for-Clean-Air-World-Athletics.jpg",
+      "2025/02/Lagos-Running-for-clean-air-World-Athletics-kunak.jpg",
+      "2025/02/Principe-Alberto-II-de-Monaco-en-la-instalacion-de-sensores-Kunak-por-World-Athletics-scaled.jpg",
+      "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
+      "2025/02/World-Athletics-Running-for-Clean-Air-project-launch.jpg",
+      "2025/02/air_pollution_filtration_process.png",
+      "2025/03/Contaminacion-agua-industria-petroquimica.jpg",
+      "2025/03/Danos-salud-industria-petroquimica.png",
+      "2025/03/Indudstria-petroquimica-y-poblacion.jpg",
+      "2025/03/Monitorizacion-aire-en-planta-BASF-de-Ludwigshafen-Alemania-Kunak.jpg",
+      "2025/03/Procesos-petroquimica.png",
+      "2025/03/Refineria-de-petroleo_LaPlace-Lousiana.jpg",
+      "2025/03/US_Contaminacion-petroquimica-comparativa.png",
+      "2025/03/VOC-origen.png",
+      "2025/04/Centro-urbano-Boston-Foto-Douglas-Brugge-scaled.jpg",
+      "2025/04/Madre-embarazada-Gasp-Clean-Air-Healthy-Communities.png",
+      "2025/04/Membrana-particulas-ultrafinas-Argonne-National-Laboratory.jpg",
+      "2025/04/Particulas-ultrafinas-Karlsruhe-Institute-of-Technologie-KIT.jpg",
+      "2025/04/Trafico-rodado-RI-URBANS-European-Commission.jpg",
+      "2025/05/1712147182071.jpeg",
+      "2025/05/Analisis-espectral-del-ruido.jpg",
+      "2025/05/Cartografia-acustica.jpg",
+      "2025/05/Contaminacion_acustica_y_salud_cardiovascular_2023.png",
+      "2025/05/Dosimetro-de-ruido.jpg",
+      "2025/05/EU-energy-mix_EEA.png",
+      "2025/05/Estaciones-fijas-de-monitorizacion-acustica.jpg",
+      "2025/05/Example-of-a-simulated-map-of-an-acoustic-field-in-a-part-of-the-city-by-CADNA-software.png",
+      "2025/05/IS-Global-Ranking-ruido-en-ciudades.jpeg",
+      "2025/05/Modelos-predictivos-de-propagacion-del-sonido.jpg",
+      "2025/05/Salud-y-niveles-de-ruido-ambiental.jpg",
+      "2025/05/canal-de-alcantarillado_kunak.jpg",
+      "2025/05/carbon-emissions-by-sector.jpeg",
+      "2025/05/central-nuclear-produccion-energia-Kunak.jpg",
+      "2025/05/contaminacion-acustica-en-ciudad_Kunak.jpg",
+      "2025/05/contaminacion_acustica_2.jpg",
+      "2025/05/decibelimetro.jpg",
+      "2025/05/efectos-en-salud-de-contaminacion-energetica-Kunak-scaled.jpg",
+      "2025/05/gases-efecto-invernadero_gei-de-la-energia-electrica_page-0001.jpg",
+      "2025/05/industria-produccion-energia-Kunak.png",
+      "2025/05/produccion-de-energia-Kunak.jpg",
+      "2025/05/ruido-trafico-urban_Bangkok_Kunak.jpg",
+      "2025/05/soluciones-al-ruido-urbano_Kunak.jpg",
+      "2025/05/trabajadores-en-zona-de-alcantarillado_kunak.jpg",
+      "2025/05/trafico-urbano-nocturno_Kunak.jpg",
+      "2025/06/Emisiones-de-planta-de-energia_Kunak.jpg",
+      "2025/06/Greenhouse-emissions-EU-Members.png",
+      "2025/06/Radiative_forcing_-_climate_change_-_global_warming_-_EPA_NOAA.svg.png",
+      "2025/06/WhatsApp-Image-2025-06-25-at-11.46.44-AM.jpeg",
+      "2025/06/aparato-sonometro-conectado-a-un-ordenador.jpg",
+      "2025/06/atasco-trafico-urbano-kunak.jpg",
+      "2025/06/barreras-acusticas.jpg",
+      "2025/06/firdays-for-future_kunak.jpg",
+      "2025/06/frecyLong.png",
+      "2025/06/justicia-climatica-comunidades-vulnerables-kunak.jpg",
+      "2025/06/justicia-climatica-para-todos-kunak-scaled.jpg",
+      "2025/06/kunak-air-pro-irun.jpg",
+      "2025/06/manifestacion-calentamiento-global_kunak.jpg",
+      "2025/06/manifestacion-justicia-climatica-kunak-scaled.jpg",
+      "2025/06/pobreza-justicia-climatica-kunak.jpg",
+      "2025/06/sargazo-cancun-repmex.jpg",
+      "2025/06/stop-cambio-climatico-kunak-scaled.jpg",
+      "2025/06/tuvalu-oceania-justicia-climatica-kunak.jpg",
+      "2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Station-Kunak.jpg",
+      "2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Stations-Kunak.jpg",
+      "2025/07/ALGAS-SARGAZO_EN_REPUBLICA_DOMINICANA_JonasGuevara-CC-BY-SA-4.0-httpscommons.wikimedia.png",
+      "2025/07/Cement_production_process-scaled.png",
+      "2025/07/Miami-Beach-USA-Sargassum-Informative-Hub-Jack-Doe.jpg",
+      "2025/07/Sargazo-infografia_NOAA.jpg",
+      "2025/07/Sargazo-macroalga-Wikimedia-Commons-scaled.jpg",
+      "2025/07/Sargazo_es-1-scaled.jpg",
+      "2025/07/air-quality-sensor-systems.jpg",
+      "2025/07/litoral-con-sargazo-y-vida-marina.jpg",
+      "2025/07/sargazo-en-la-orilla-de-la-playa.jpg",
+      "2025/07/yo-cuido-nuestras-playas_sargazo_zofemat.jpg",
+      "2025/07/zofemat-limpieza-sargazo.jpg",
+      "2025/08/Biometano-gasrenovable.png",
+      "2025/08/infografia_Biometano_Repsol-scaled.jpg",
+      "2025/08/metano-fuentes-sumideros-Global-Carbon-Project.png",
+      "2025/08/planta-de-biogas.jpg",
+      "2025/08/residuos-organicos-alimentacion.jpg",
+      "2025/08/residuos-y-produccion-de-biogas-y-biometano_kunak.jpg",
+      "2025/09/Agricultor-tratando-con-pesticida-el-cultivo-scaled.jpg",
+      "2025/09/Botellas-plastico.jpg",
+      "2025/09/Cadena-de-ancla-afectada-por-corrosion-ambiental_Kunak.jpg",
+      "2025/09/Construccion-edificios-y-corrosion-ambiental_Kuank.jpg",
+      "2025/09/Corrosion-ambiental-en-la-construccion_Kunak.jpg",
+      "2025/09/Corrosion-ambiental-en-la-industria_Kunak.jpg",
+      "2025/09/Demolicion-planta-industrial_Kunak.jpg",
+      "2025/09/Diagrama-de-la-corrosion-ambiental-en-acero-en-presencia-de-humedad_Kunak.jpg",
+      "2025/09/Efectos-de-la-corrosion-ambiental-en-instalacion-industrial_Kunak.jpg",
+      "2025/09/Instalaciones-industriales-y-corrosion-metalica_Kunak.jpg",
+      "2025/09/Maquinaria-afectada-por-corrosion-ambiental_Kunak.jpg",
+      "2025/09/Mineral-oro.jpg",
+      "2025/09/Puente-metalico-afectado-por-la-corrosion-ambiental_Kunak.jpg",
+      "2025/09/Targets-of-Cyanide-Inhalation.png",
+      "2025/09/Targets-of-Cyanide-Oral.png",
+      "2025/09/cianuro-de-hidrogeno-molecula.gif",
+      "2025/09/fumingando-cultivo-con-pesticida-scaled.jpg",
+      "2025/10/Emision-de-amoniaco-por-agricultura-y-otras-fuentes.png",
+      "2025/10/atardecer-en-isla_contaminacion-aire_kunak.jpg",
+      "2025/10/aves-y-paseo-turistico-en-litoral-isleno.jpg",
+      "2025/10/crucero-rumbo-a-isla_contaminacion-aire_Kunak.jpg",
+      "2025/10/cruceros-en-isla_contaminacion-aire_kunak.jpg",
+      "2025/10/faro-de-isla-y-cielo-sin-contaminacion_Kunak.jpg",
+      "2025/10/fauna-acuatica-en-aguas-eutrofizadas_amoniaco_Kunak.jpg",
+      "2025/10/ganaderia-intensiva_amoniaco_Kunak.jpg",
+      "2025/10/litoral-con-manglar_contaminacion-aire_Kunak-.jpg",
+      "2025/10/litoral-de-isla_contaminacion-aire_Kunak.jpg",
+      "2025/10/molecula-amoniaco_Kunak.png",
+      "2025/10/seguridad-presencia-amoniaco_Kunak.png",
+      "2025/11/EDAR-y-calidad-del-aire-scaled.jpg",
+      "2025/11/Hidrocarburos-no-metanicos-NMHC.jpg",
+      "2025/11/Procesos_y_gases_generados_por_una_EDAR.jpg",
+      "2025/11/Sistema_de_alerta_temprana_y_localizacion_de_fuentes_de_emisiones_de_H2S_en_una_EDAR.jpg",
+      "2025/11/Sistema_de_alerta_temprana_y_localizacion_de_fuentes_de_emisiones_de_H2S_en_una_EDAR_2.jpg",
+      "2025/11/Subestacion-electricidad-y-alto-voltaje.jpg",
+      "2025/11/Trafico-urbano-y-motores-de-combustion.jpg",
+      "2025/11/banos-publicos-y-aguas-residuales.jpg",
+      "2025/11/compuestos-organicos-volatiles-emisiones-depuradora-aguas-residuales-scaled.jpg",
+      "2025/11/oleoducto.jpg",
+      "2025/11/planta-de-energia-y-calor-combinados.jpg",
+      "2025/11/planta-de-tratamiento-de-aguas-residuales-y-ciclo-del-agua.jpg",
+      "2025/11/planta-depuracion-aguas-residuales-scaled.jpg",
+      "2025/11/poblacion-y-estacion-depuradora-aguas-residuales-scaled.jpg",
+      "2025/11/sistema-alcantarillado_aguas-residuales.jpg",
+      "2025/11/transporte-de-energia.jpg",
+      "2025/12/Agua-potable-potabilizada-con-cloro-scaled.jpg",
+      "2025/12/Arazuri-depuradora_estacion-Kunak-AIR-Pro.jpg",
+      "2025/12/Control-sanitario-y-emisiones-ganaderia_Kunak.png",
+      "2025/12/Emisiones-atmosfericas_Ganaderia-y-agricultura_Kunak.jpg",
+      "2025/12/Explotacion-ganadera_Calidad-del-aire_Kunak.jpg",
+      "2025/12/Ganaderia-extensiva-y-calidad-del-aire_Kunak.jpg",
+      "2025/12/Ganaderia-intensiva_emisiones_Kunak.png",
+      "2025/12/Ganaderia-y-agricultura_emisiones-agroganaderas_Kunak.jpg",
+      "2025/12/Granja-apicola_Emisiones-atmosfera_Kunak.png",
+      "2025/12/Granja-ovina_Ganaderia-y-emisiones-atmosfericas_Kunak.jpg",
+      "2025/12/Granja-porcina_Calidad-del-aire_Kunak.png",
+      "2025/12/Industria-fabricacion-papel-con-blanqueamiento-por-cloro-scaled.jpg",
+      "2025/12/Industria-textil-y-blanqueamiento-de-fibras-con-cloro-scaled.jpg",
+      "2025/12/Papel-blanqueado-con-cloro-scaled.jpg",
+      "2025/12/Produccion-ganadera-y-contaminacion-del-aire_Kunak.png",
+      "2026/01/Fertilizantes-en-agricultura_Kunak.jpg",
+      "2026/01/Industria-metalurgica_Kunak.jpg",
+      "2026/01/hybrid-air-quality-network-near-reference-monitoring.jpg",
+      "2026/01/oblea-silicio.png",
+      "2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+      "2026/05/Areas-urbanas-y-trafico_Kunak.jpg",
+      "2026/05/Astilleros-y-remediacion-ambiental_Kunak.jpg",
+      "2026/05/Camion-accidente-transporte-acido-clorhidrico_Kunak.jpeg",
+      "2026/05/Cloruro-de-hidrogeno-es-precursor-de-lluvia-acida_Kunak.jpg",
+      "2026/05/Contaminacion-del-aire-por-trafico_Kunak-scaled.jpg",
+      "2026/05/Control-LDAR-para-evitar-fugas-y-su-impacto_Kunak.jpg",
+      "2026/05/Control-de-zonas-de-bajas-emisiones_Kunak.jpg",
+      "2026/05/Elemento-quimico-Oxigeno-O2.jpg.jpeg",
+      "2026/05/Emisioines-fugitivas-en-tuberias_LDAR_Kunak.jpg",
+      "2026/05/Emisiones-fugitivas-sectoriales_LDAR.png",
+      "2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+      "2026/05/Esmog-fotoquimico-Mexico-City.png",
+      "2026/05/Estacion-de-tratamiento-de-residuos_Kunak.jpg",
+      "2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg",
+      "2026/05/Implementacion-politicas-movilidad-sostenible-en-ciudades_Kunak-scaled.jpg",
+      "2026/05/Incendio-industrial-por-presencia-de-oxigeno_Kunak.jpg",
+      "2026/05/Industria-y-proyectos-de-remediacion-ambiental_Kunak.jpg",
+      "2026/05/Inspeccion-por-sistema-LDAR_Kunak.jpg",
+      "2026/05/Irun_Basque-Country_Spain_KUNAK-Air-estacion.jpeg",
+      "2026/05/LDAR-es-clave-para-la-industria-moderna_Kunak.jpg",
+      "2026/05/LDAR-monitoring_control-industrial_Kunak.jpg",
+      "2026/05/LDAR-monitoring_control-operativa_Kunak.jpg",
+      "2026/05/LDAR-monitoring_instalacion-control_Kunak.jpg",
+      "2026/05/LDAR-monitoring_inventario-puntos-control_Kunak.jpg",
+      "2026/05/LDAR-monitoring_medicion_Kunak.jpg",
+      "2026/05/LDAR-para-cumplimiento-ambiental_Kunak.jpg",
+      "2026/05/LDAR-programa_Kunak.jpeg",
+      "2026/05/LDAR-sistema-deteccion-emisiones-fugitivas.jpg",
+      "2026/05/Lluvia-acida_Kunak.png",
+      "2026/05/Loudoun-County-Data-Centers.jpg",
+      "2026/05/Mapa-NO_Kunak.jpeg",
+      "2026/05/Medicion-emisiones-centros-de-datos-Kunak.jpg",
+      "2026/05/Medicion-impacto-centros-de-datos-digitales-Kunak.jpg",
+      "2026/05/Medir-particulas-ultrafinas_proteger-vida_Kunak.jpg",
+      "2026/05/Monitorizacion-continua_LDAR_Kunak.jpg",
+      "2026/05/Movilidad-sostenible-y-ciudad_Kunak.jpg",
+      "2026/05/Movilidad-urbana-basada-en-evidencia_Kunak.jpg",
+      "2026/05/Oxigeno-en-mina-subterranea_Kunak.jpg",
+      "2026/05/PM-size-distribution-tool.jpg",
+      "2026/05/Panel-acustico-en-carretera_Kunak.jpg",
+      "2026/05/Particulas-talla-relativa.jpg",
+      "2026/05/Particulas-ultrafinas_salud-y-clima_Kunak.jpg",
+      "2026/05/Poblacion-y-movilidad-en-areas-urbanas_Kunak.jpg",
+      "2026/05/Regular-particulas-ultrafinas_PUF.jpg",
+      "2026/05/Remediacion-de-suelos-contaminados-en-entorno-habitado_Kunak.jpg",
+      "2026/05/Remediacion-en-suelos-contaminados-de-mineria_Kunak.png",
+      "2026/05/Salud-y-particulas-ultrafinas_Kunak.jpg",
+      "2026/05/Soluciones-tecnologicas_programas-LDAR_Kunak.jpg",
+      "2026/05/Suelos-contaminados-de-actividad-minera_Remediacion_Kunak.jpg",
+      "2026/05/Trabajo-industrial-en-espacios-confinados-y-riesgo-ante-oxigeno_Kunak-scaled.png",
+      "2026/05/Trafico-denso-en-ciudad_Kunak.jpg",
+      "2026/05/Trafico-diario_Bangkok_Kunak.jpg",
+      "2026/05/Vertedero-y-emisiones_Kunak.jpg",
+      "2026/05/Vision-microscopica-particulas-ultrafinas.jpg",
+      "2026/05/air-quality-sensor-network-map.jpg",
+      "2026/05/calle-30-natura-Kunak.jpg",
+      "2026/05/cambio-climatico-y-oxido-nitrico_Kunak-scaled.jpg",
+      "2026/05/castel-d-ario-Kunak.jpg",
+      "2026/05/centros-de-datos-y-contaminacion-atmosferica-Kunak.jpg",
+      "2026/05/cloruro-de-hidrogeno-en-sanidad_Kunak.jpg",
+      "2026/05/como-funcionan-los-sistemas-LDAR_Kunak.jpg",
+      "2026/05/contaminacion-interiores-por-ozono_centros-de-datos_Kunak.jpg",
+      "2026/05/corrosion-y-conexiones-digitales_centros-de-datos_Kunak.jpg",
+      "2026/05/cultivos-y-fertilizantes-nitrogenados_Kunak-scaled.jpg",
+      "2026/05/donde-medir-las-PUF_Kunak.jpg",
+      "2026/05/emision-de-cloruro-de-hidrogeno.jpeg",
+      "2026/05/emisiones-antropogenicas-de-cloruro-de-hidrogeno_Kunak.jpg",
+      "2026/05/emisiones-de-cloruro-de-hidrogeno-acidifican-suelo-y-agua_Kunak.jpg",
+      "2026/05/figure-2.jpg",
+      "2026/05/figure-3.jpg",
+      "2026/05/figure-4.jpg",
+      "2026/05/figure-5.jpg",
+      "2026/05/figure-6.jpg",
+      "2026/05/figure-7.jpg",
+      "2026/05/figure-8.jpg",
+      "2026/05/figure-9.jpg",
+      "2026/05/haluros-de-hidrogeno-en-el-ambiente_Kunak.jpg",
+      "2026/05/industria-quimica-y-petroquimica-y-emisiones-de-cloruro-de-hidrogeno_Kunak.jpg",
+      "2026/05/infografia-NO_Kunak.jpeg",
+      "2026/05/kunak-air-pro-pm-monitoring.jpg",
+      "2026/05/kunak-air-pro-pm-sensor.jpg",
+      "2026/05/microchip-y-centros-de-datos_Kunak.jpg",
+      "2026/05/origen-antropogenico-de-cloruro-de-hidrogeno_Kunak.jpg",
+      "2026/05/pvc-y-produccion-de-cloruro-de-hidrogeno_Kunak.jpg",
+      "2026/05/remediacion-proyecto-en-suelos-contaminados_Kunak-scaled.png",
+      "2026/05/residuos-militares-y-contaminacion-de-suelos-y-aire_Kunak.jpg",
+      "2026/05/residuos-portuarios-y-remediacion-ambiental_Kunak.jpg",
+      "2026/05/seguridad-laboral-en-proyectos-de-remediacion_Kunak.png",
+      "2026/05/tendido-electrico-y-cloruro-de-hidrogeno_Kunak.jpg",
+      "2026/05/trafico-y-emision-de-particulas-ultrafinas_Kunak.jpg",
+      "2026/05/tunel-y-trafico_Kunak.jpg",
+      "2026/05/zonas-de-sellado-en-vertederos-y-proyectos-de-remediacion_Kunak.jpg",
+      "2026/06/Instrumentos-de-calidad-del-aire-para-monitorizacion-de-exteriores_Kunak.jpeg",
+      "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf",
+      "2026/06/Monitorizacion-de-calidad-del-aire-en-entorno-industrial_Kunak.jpeg",
+      "2026/06/Monitorizacion-de-calidad-del-aire-en-entorno-residencial_Kunak.jpeg",
+      "2026/06/Monitorizacion-near-reference-en-zona-industrial_Kunak.jpeg",
+      "2026/06/Monitorizacion-near-reference-en-zona-industrial_Kunak_2.jpeg",
+      "2026/06/Monitorizacion-near-reference-en-zona-residencial-Vlissingen-Holanda_Kunak.jpeg",
+      "2026/06/NOx-N2O-fuentes-e-impactos.jpg",
+      "2026/06/Niebla-de-esmog-Los-Angeles-California.png",
+      "2026/06/Que-es-la-monitorizacion-near-reference_Kunak.jpeg",
+      "2026/06/compromisos-climaticos_monitorizacion-perimetral_Kunak.jpg",
+      "2026/06/datos-fiables-continuos-y-geograficamente-relevantes-para-monitorizar-NOx-y-N2O_Kunak.jpg",
+      "2026/06/dioxido-nitrogeno-y-oxido-nitroso_gases-contamiantes-economia-moderna_Kunak.jpg",
+      "2026/06/estrategias-control-NOx-y-N20-en-ciudades_Kunak.jpg",
+      "2026/06/exposicion-urbana_dioxido-nitrogeno_oxido-nitroso_Kunak.jpg",
+      "2026/06/fertilizantes-sinteticos_oxidos-nitrogeno_Kunak.jpg",
+      "2026/06/impacto-salud_dioxido-nitrogeno_oxido-nitroso_Kunak.jpg",
+      "2026/06/instalacion-petroquimica_monitorizacion-perimetral_Kunak.jpg",
+      "2026/06/kunak-cloud-fenceline-monitoring-2.jpg",
+      "2026/06/medicion-en-limite-fisico-instalacion-industrial_monitorizacion-perimetral_Kunak.jpg",
+      "2026/06/monoxido-nitrogeno-emitido-por-trafico_kunak.jpg",
+      "2026/06/perimetro-fisico-industrial-y-monitorizacion-perimetral_Kunak.jpg",
+      "2026/06/perimetro-industrial_monitorizacion-continua_Kunak.jpg",
+      "2026/06/riesgo-ambiental-y-perdida-producto_monitorizacion-perimetral_Kunak.jpg",
+      "2026/06/trafico-rodado-fuente-principal-de-NOx_Kunak.jpg",
+      "2026/06/verificar-desempeno-industrial_monitorizacion-perimetral_Kunak.jpg",
+      "2026/07/Analisis-de-datos-meteorologicos-para-rastrear-origen-contaminacion.png",
+      "2026/07/Contaminantes-atmosfericos-de-emisiones-fugitivas_Kunak.jpg",
+      "2026/07/Emisiones-fugitivas-escapan-por-valvulas_Kunak.jpg",
+      "2026/07/Focos-criticos-emisiones-fugitivas_Kunak.jpg",
+      "2026/07/Las-emisiones-difusas-pueden-ser-un-dato-gestionable_Kunak.jpg",
+      "2026/07/Las-emisiones-fugitivas-y-sus-riesgos_Kunak.jpg",
+      "2026/07/Metodos-deteccion-emisiones-fugitivas_Kunak.jpg",
+      "2026/07/actividad-industria-cemento_Kunak.jpg",
+      "2026/07/emisiones-de-chimenea-difusas-y-fugitivas.jpg",
+      "2026/07/emisiones-de-fuentes-estacionarias_Kunak.jpg",
+      "2026/07/emisiones-fugitivas_Kunak.png",
+      "2026/07/emisiones-por-chimeneas-industriales_Kunak.jpg",
+      "2026/07/gases-y-particulas-liberados-por-emisiones-de-chimeneas-industriales_Kunak.jpg",
+      "2026/07/industria-chimeneas_Kunak.png",
+      "2026/07/industria-petroquimica-y-emisiones-por-chimenea_Kunak.jpg",
+      "2026/07/kunak_basf_1.jpg",
+      "2026/07/medicion-de-emisiones-industriales_Kunak.jpg",
+      "2026/07/medicion-emisiones-por-chimenea_Kunak.jpg",
+      "2026/07/monitorizacion-de-emisiones-por-chimenea_Kunak.jpg",
+      "2026/07/sistemas-continuos-de-emisiones-por-chimenea_Kunak.jpg"
+    ],
+    "detalle": [
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/Remediacion-en-suelos-contaminados-de-mineria_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/Industria-y-proyectos-de-remediacion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/Suelos-contaminados-de-actividad-minera_Remediacion_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/zonas-de-sellado-en-vertederos-y-proyectos-de-remediacion_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/Astilleros-y-remediacion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/Remediacion-de-suelos-contaminados-en-entorno-habitado_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/residuos-portuarios-y-remediacion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/remediacion-proyecto-en-suelos-contaminados_Kunak-scaled.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/seguridad-laboral-en-proyectos-de-remediacion_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+        "clave": "2026/05/residuos-militares-y-contaminacion-de-suelos-y-aire_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/microchip-y-centros-de-datos_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/centros-de-datos-y-contaminacion-atmosferica-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/contaminacion-interiores-por-ozono_centros-de-datos_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/Loudoun-County-Data-Centers.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/Medicion-impacto-centros-de-datos-digitales-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/Medicion-emisiones-centros-de-datos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clave": "2026/05/corrosion-y-conexiones-digitales_centros-de-datos_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/kunak-air-pro-pm-sensor.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/kunak-air-pro-pm-monitoring.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/PM-size-distribution-tool.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-3.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-4.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-5.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-6.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-7.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-8.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+        "clave": "2026/05/figure-9.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Poblacion-y-movilidad-en-areas-urbanas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Trafico-diario_Bangkok_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Contaminacion-del-aire-por-trafico_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/castel-d-ario-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/air-quality-sensor-network-map.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/calle-30-natura-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Panel-acustico-en-carretera_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Control-de-zonas-de-bajas-emisiones_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Areas-urbanas-y-trafico_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Implementacion-politicas-movilidad-sostenible-en-ciudades_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/tunel-y-trafico_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Trafico-denso-en-ciudad_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Movilidad-urbana-basada-en-evidencia_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2026/05/Movilidad-sostenible-y-ciudad_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clave": "2021/10/infografia-directrices-de-la-OMS-sobre-calidad-del-aire-ESP.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/LDAR-es-clave-para-la-industria-moderna_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/LDAR-programa_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Inspeccion-por-sistema-LDAR_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Control-LDAR-para-evitar-fugas-y-su-impacto_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/LDAR-para-cumplimiento-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/como-funcionan-los-sistemas-LDAR_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Monitorizacion-continua_LDAR_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Emisiones-fugitivas-sectoriales_LDAR.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Soluciones-tecnologicas_programas-LDAR_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/LDAR-sistema-deteccion-emisiones-fugitivas.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+        "clave": "2026/05/Emisioines-fugitivas-en-tuberias_LDAR_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/trafico-y-emision-de-particulas-ultrafinas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Particulas-ultrafinas_salud-y-clima_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Vision-microscopica-particulas-ultrafinas.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/donde-medir-las-PUF_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Regular-particulas-ultrafinas_PUF.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Salud-y-particulas-ultrafinas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Particulas-talla-relativa.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/particulas-ultrafinas-puf",
+        "clave": "2026/05/Medir-particulas-ultrafinas_proteger-vida_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Ganaderia-y-agricultura_emisiones-agroganaderas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Produccion-ganadera-y-contaminacion-del-aire_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Emisiones-atmosfericas_Ganaderia-y-agricultura_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Ganaderia-intensiva_emisiones_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Granja-ovina_Ganaderia-y-emisiones-atmosfericas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Ganaderia-extensiva-y-calidad-del-aire_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Control-sanitario-y-emisiones-ganaderia_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Explotacion-ganadera_Calidad-del-aire_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Granja-apicola_Emisiones-atmosfera_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+        "clave": "2025/12/Granja-porcina_Calidad-del-aire_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/Procesos_y_gases_generados_por_una_EDAR.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/EDAR-y-calidad-del-aire-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/compuestos-organicos-volatiles-emisiones-depuradora-aguas-residuales-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/poblacion-y-estacion-depuradora-aguas-residuales-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/sistema-alcantarillado_aguas-residuales.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/Sistema_de_alerta_temprana_y_localizacion_de_fuentes_de_emisiones_de_H2S_en_una_EDAR.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/planta-depuracion-aguas-residuales-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/Sistema_de_alerta_temprana_y_localizacion_de_fuentes_de_emisiones_de_H2S_en_una_EDAR_2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/banos-publicos-y-aguas-residuales.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-olores-en-edar",
+        "clave": "2025/11/planta-de-tratamiento-de-aguas-residuales-y-ciclo-del-agua.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/atardecer-en-isla_contaminacion-aire_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/crucero-rumbo-a-isla_contaminacion-aire_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/cruceros-en-isla_contaminacion-aire_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/aves-y-paseo-turistico-en-litoral-isleno.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/litoral-con-manglar_contaminacion-aire_Kunak-.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/06/sargazo-cancun-repmex.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/07/litoral-con-sargazo-y-vida-marina.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/faro-de-isla-y-cielo-sin-contaminacion_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-islas",
+        "clave": "2025/10/litoral-de-isla_contaminacion-aire_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Efectos-de-la-corrosion-ambiental-en-instalacion-industrial_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Puente-metalico-afectado-por-la-corrosion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Construccion-edificios-y-corrosion-ambiental_Kuank.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Maquinaria-afectada-por-corrosion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Instalaciones-industriales-y-corrosion-metalica_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Diagrama-de-la-corrosion-ambiental-en-acero-en-presencia-de-humedad_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Demolicion-planta-industrial_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Corrosion-ambiental-en-la-construccion_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Cadena-de-ancla-afectada-por-corrosion-ambiental_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+        "clave": "2025/09/Corrosion-ambiental-en-la-industria_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/residuos-organicos-alimentacion.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/Biometano-gasrenovable.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/planta-de-biogas.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/infografia_Biometano_Repsol-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/metano-fuentes-sumideros-Global-Carbon-Project.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/biometano-y-biogas",
+        "clave": "2025/08/residuos-y-produccion-de-biogas-y-biometano_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/stop-cambio-climatico-kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/justicia-climatica-comunidades-vulnerables-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/firdays-for-future_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/pobreza-justicia-climatica-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/manifestacion-justicia-climatica-kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/tuvalu-oceania-justicia-climatica-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/justicia-climatica-para-todos-kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/atasco-trafico-urbano-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+        "clave": "2025/06/manifestacion-calentamiento-global_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/Sargazo-macroalga-Wikimedia-Commons-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/ALGAS-SARGAZO_EN_REPUBLICA_DOMINICANA_JonasGuevara-CC-BY-SA-4.0-httpscommons.wikimedia.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/yo-cuido-nuestras-playas_sargazo_zofemat.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/06/sargazo-cancun-repmex.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/06/WhatsApp-Image-2025-06-25-at-11.46.44-AM.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/Sargazo_es-1-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/Sargazo-infografia_NOAA.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/zofemat-limpieza-sargazo.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/sargazo-en-la-orilla-de-la-playa.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/litoral-con-sargazo-y-vida-marina.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+        "clave": "2025/07/Miami-Beach-USA-Sargassum-Informative-Hub-Jack-Doe.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Contaminacion_acustica_y_salud_cardiovascular_2023.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/trafico-urbano-nocturno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/contaminacion_acustica_2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Salud-y-niveles-de-ruido-ambiental.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/ruido-trafico-urban_Bangkok_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/IS-Global-Ranking-ruido-en-ciudades.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/soluciones-al-ruido-urbano_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/decibelimetro.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Dosimetro-de-ruido.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Estaciones-fijas-de-monitorizacion-acustica.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Analisis-espectral-del-ruido.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Cartografia-acustica.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Modelos-predictivos-de-propagacion-del-sonido.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/Example-of-a-simulated-map-of-an-acoustic-field-in-a-part-of-the-city-by-CADNA-software.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "clave": "2025/05/contaminacion-acustica-en-ciudad_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/US_Contaminacion-petroquimica-comparativa.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Procesos-petroquimica.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Danos-salud-industria-petroquimica.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Refineria-de-petroleo_LaPlace-Lousiana.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Contaminacion-agua-industria-petroquimica.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Indudstria-petroquimica-y-poblacion.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica",
+        "clave": "2025/03/Monitorizacion-aire-en-planta-BASF-de-Ludwigshafen-Alemania-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/World-Athletics-Running-for-Clean-Air-project-launch.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2024/07/Sin-titulo-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2024/07/air-quality-monitoring-in-paris-2024-olympic-games.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/air_pollution_filtration_process.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/Campeon-olimpico-Haile-Gebrselassie-en-lanzamiento-Running-for-Clean-Air-World-Athletics.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/Principe-Alberto-II-de-Monaco-en-la-instalacion-de-sensores-Kunak-por-World-Athletics-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/Lagos-Running-for-clean-air-World-Athletics-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clave": "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/vertedero-y-areas-selladas-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/Residuos-municipales-generados-en-la-UE-entre-2004-y-2022-Parlamento-Europeo.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/vertedero-de-residuos-solidos-urbanos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/diagrama-sellado-de-vertedero-US-EPA.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/recogida-de-residuos-solidos-urbanos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/Residuos-generados-en-la-UE-por-sectores-y-la-evolucion-de-2004-a-2022-Parlamento-Europeo.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/landfill.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-vertederos",
+        "clave": "2025/01/Emisiones-de-metano-de-un-vertedero-de-Madrid-detectadas-el-20-agosto-2021-European-Space-Agency-e1738175496669.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/industria-produccion-energia-Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/central-nuclear-produccion-energia-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/carbon-emissions-by-sector.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/efectos-en-salud-de-contaminacion-energetica-Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/gases-efecto-invernadero_gei-de-la-energia-electrica_page-0001.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/EU-energy-mix_EEA.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-produccion-de-energia",
+        "clave": "2025/05/produccion-de-energia-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/proyecto-pure-cities",
+        "clave": "2024/11/Trafico-en-la-calle-Real-de-Bruselas-con-el-Palacio-de-Justicia-de-fondo.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-e1736246793350.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Gestion-vertedero-scaled-e1736248078288.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Metano_Britannica-e1736246813444.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2024/10/emisiones-de-metano-teheran-nasa.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Antorcha-de-gas-en-un-pozo-petrolifero-Foto-credito-Andrew-BurtonGetty-Images-scaled-e1736250805947.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Vertedero_credit-medianews-scaled-e1736248283603.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-scaled-e1736250883537.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-por-metano",
+        "clave": "2025/01/landfill.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "clave": "2024/12/EEA-Report-Air-Pollution.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Como-se-distribuye-el-mercado-del-acero-WorldSteel.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Produccion-mundial-de-acero-2023-WorldSteel.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Bobinas-de-acero.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/fundicion-de-acero.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Almacenaje-producto-de-acero-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Mitigar-CO2-acciones.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+        "clave": "2024/10/Produccion-hidrogeno-verde.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica",
+        "clave": "2024/10/mapa-de-temperaturas-2024.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica",
+        "clave": "2024/10/como-se-produce-el-efecto-invernadero-ES.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica",
+        "clave": "2024/10/scopes-of-greenhouse-effect-emissions.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica",
+        "clave": "2024/10/gases_efecto_invernadero_mas_comunes.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica",
+        "clave": "2024/10/emisiones-de-metano-teheran-nasa.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/microsensores-de-calidad-del-aire",
+        "clave": "2024/10/dispositivo-iot-para-medir-la-calidad-del-aire.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/09/urban-contamination-kunak-e1727711571513.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/09/school-strike-4-climate.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/10/health-impact-final_0.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/09/city-nightview.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/09/power-plant-and-surroundings.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+        "clave": "2024/10/Estacion-Kunak-en-Senegal.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "clave": "2024/08/Acceso-a-zona-de-productos-quimicos-en-industria-Kunak-980x764-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "clave": "2024/08/Productos-quimicos-Kunak-980x653-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "clave": "2024/08/Aceeso-restringido-productos-toxicos-Kunak-980x735-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "clave": "2024/08/laboratorio-quimica-Kunak-980x653-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+        "clave": "2024/08/proteccion-sustancias-peligrosas-industria-Kunak-980x653-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024",
+        "clave": "2024/07/air-quality-monitoring-in-paris-2024-olympic-games.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Nueva-York-al-atardecer-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Particulas-en-suspension-durante-el-confinamiento-Covid-19.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Puente-de-Brooklyn-New-York-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/New-York-por-la-noche-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Medicion-de-la-calidad-del-aire.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Contaminacion_del_aire_en_Nueva_York.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-en-nueva-york",
+        "clave": "2024/07/Trafico-en-New-York-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/trafico-ciudad-berlin.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2023/07/calle-30-natura.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/gran-via-madrid-trafico-urbano.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/zona-de-bajas-emisiones-de-espana.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/traffic-7272520_1280.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/city-of-london-4481399_1280.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/Cartel_informativo_de_la_zona_de_bajas_emisiones_de_Copenhague.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/ZFE_paris.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+        "clave": "2024/06/Imagen-de-la-Zona-de-Bajas-Emisiones-de-Paris.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/fraction-of-deaths-and-DALYs-attributable-to-the-environment-globally.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/Infografia-Acuerdo-de-Escazu_V2_2022_Esp.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/industry-1761801_1280.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/4a81d010-18ea-11ef-a76b-450a2cce6151.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/06/Geoplataforma-herramienta-evaluacion-justicia-climatica-y-economica-Gobierno-EE.UU_.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/papel-gobierno-en-la-justicia-medioambiental-kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/Kids_Want_Climate_Justice_34168280266.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-las-comunidades",
+        "clave": "2024/05/How-clean-your-air-is_Ecowatch.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-papelera",
+        "clave": "2024/03/Infografia_proceso_de_fabricacion_del_papel_Aspapel_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-papelera",
+        "clave": "2024/03/89.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-papelera",
+        "clave": "2024/03/manolo-chretien-RpC-9e0ORNM-unsplash-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-papelera",
+        "clave": "2024/03/90-1.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-papelera",
+        "clave": "2024/04/papel-reciclado.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2024/03/Calidad-del-aire-en-los-puertos-innovacion-sostenibilidad-y-control-inteligente.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2024/03/operaciones-de-carga-y-descarga-en-puerto.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2020/03/calidad-del-aire-en-los-puertos-Kunak-3.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2020/03/calidad-del-aire-en-los-puertos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2024/03/La-electrificacion-de-los-puertos-es-clave-para-descarbonizar-el-transporte-maritimo.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-puertos",
+        "clave": "2020/03/calidad-del-aire-en-los-puertos-Kunak-2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "clave": "2024/03/fotografia-cenital-aerea-maquina-fertilizante-campo-agricola-dia.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "clave": "2024/03/nitrates_directive_infographic_tcm30-519810.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "clave": "2024/03/Imagen1.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "clave": "2024/03/the-nitrates-directive-solutions_EU.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+        "clave": "2024/03/tractor-4217686_1280.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-los-aeropuertos",
+        "clave": "2024/01/Airports-Climate-Change-ESP.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-en-los-aeropuertos",
+        "clave": "2024/01/Infografia-aviones-sostenibles.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/guia-sobre-la-contaminacion-urbana",
+        "clave": "2024/01/urban-pollution-size-particles.jpg.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/guia-sobre-la-contaminacion-urbana",
+        "clave": "2024/01/Air-quality-Albacete-Kunak-AIR.jpg.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/guia-sobre-la-contaminacion-urbana",
+        "clave": "2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/ehs-industrial",
+        "clave": "2023/09/Infographic_7_Common_Workplace_Safety_Hazards.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/ehs-industrial",
+        "clave": "2023/09/What-Does-OSHA-Stand-For.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/vertedero-y-areas-selladas-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/Residuos-municipales-generados-en-la-UE-entre-2004-y-2022-Parlamento-Europeo.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/vertedero-de-residuos-solidos-urbanos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/diagrama-sellado-de-vertedero-US-EPA.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/recogida-de-residuos-solidos-urbanos-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/Residuos-generados-en-la-UE-por-sectores-y-la-evolucion-de-2004-a-2022-Parlamento-Europeo.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/landfill.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "clave": "2025/01/Emisiones-de-metano-de-un-vertedero-de-Madrid-detectadas-el-20-agosto-2021-European-Space-Agency-e1738175496669.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-alrededor-de-los-colegios",
+        "clave": "2022/09/calidad_del_aire_en_los_colegios-Kunak-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-alrededor-de-los-colegios",
+        "clave": "2022/09/calidad_del_aire_en_los_colegios-Kunak-3.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/calidad-del-aire-alrededor-de-los-colegios",
+        "clave": "2022/09/calidad_del_aire_en_los_colegios-Kunak-2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clave": "2022/02/Impacto-ambiental-de-la-industria-cementera-4.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clave": "2022/02/Impacto-ambiental-de-la-industria-cementera-5.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clave": "2025/07/Cement_production_process-scaled.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clave": "2022/02/Impacto-ambiental-de-la-industria-cementera-3.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clave": "2023/08/El-polvo-en-obras-de-construccion-el-enemigo-invisible.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-volcanes",
+        "clave": "2021/11/estaciones-Kunak-La-Palma-CumbreVieja.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/zonas-bajas-emisiones-monitorizacion",
+        "clave": "2021/06/zonas-de-bajas-emisiones-barcelona.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-incendios-forestales-aire",
+        "clave": "2021/03/Wildland-Fire-Sensor-Challenge-2017.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-incendios-forestales-aire",
+        "clave": "2021/03/honorable-mention-kunak.jpg.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/entrevista-agustin-torres-product-manager-suez",
+        "clave": "2020/11/agustin-torres-suez-cop25-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/entrevista-agustin-torres-product-manager-suez",
+        "clave": "2020/09/apb-1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-mal-olor-sensores",
+        "clave": "2020/08/Vertedero-con-basura-maquinaria-y-aves-volando.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-mal-olor-sensores",
+        "clave": "2020/08/Tractor-aplicando-estiercol-liquido-en-campo-agricola.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-mal-olor-sensores",
+        "clave": "2020/08/Maquinaria-agricola-en-proceso-de-compostaje.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso",
+        "clave": "2020/04/abstractaq2020mexico-200421115428.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso",
+        "clave": "2020/04/Reche2020_Athletes-exposure-to-air-pollution-during-World-Athletics-Relays.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-exterior-pamplona",
+        "clave": "2020/12/emisiones-por-fuente.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+        "clave": "2023/05/f4dfe2ee-de97-4f68-a317-cf376d5670f3.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+        "clave": "2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-urbano",
+        "clave": "2024/06/gran-via-madrid-trafico-urbano.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-urbano",
+        "clave": "2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-urbano",
+        "clave": "2023/05/selective-focus-of-asthmatic-kid-using-inhaler-wit-2022-12-16-17-25-45-utc-scaled-1.webp",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-urbano",
+        "clave": "2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-urbano-donostia",
+        "clave": "2020/07/smartkalea-estaciones-donostia.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/control-emisiones-industriales",
+        "clave": "2024/11/Red-de-monitorizacion-de-la-calidad-del-aire-en-la-planta-de-fertilizantes-de-Lifeco-en-Libia-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/control-emisiones-industriales",
+        "clave": "2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-de-las-refinerias-de-petroleo",
+        "clave": "2024/04/infografia_refino_petroleo_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-de-las-refinerias-de-petroleo",
+        "clave": "2024/04/Oil-refineries-along-the-Athabasca-River.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/emisiones-de-las-refinerias-de-petroleo",
+        "clave": "2024/04/vigilancia_perimetral_de_la_calidad_del_aire_exterior.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-en-refinerias",
+        "clave": "2023/04/medicion-emision-de-gases-y-particulas-en-refinerias.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-por-obras",
+        "clave": "2023/08/Impacto-ambiental-de-las-obras-de-construccion.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-por-obras",
+        "clave": "2023/08/El-polvo-en-obras-de-construccion-el-enemigo-invisible.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-por-obras",
+        "clave": "2023/08/Normativas-que-regulan-la-contaminacion-en-obras-de-construccion.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-por-obras",
+        "clave": "2023/08/Sistemas-de-riego-y-aspersion-para-el-control-de-polvo-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-del-aire-por-obras",
+        "clave": "2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-mineria-calidad-aire",
+        "clave": "2023/01/mineria-a-cielo-abierto.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-mineria-calidad-aire",
+        "clave": "2023/01/mineria-subterranea.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-mineria-calidad-aire",
+        "clave": "2023/01/plataforma-de-perforacion-marina.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-mineria-calidad-aire",
+        "clave": "2023/01/mineria-submarina.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-mineria-calidad-aire",
+        "clave": "2023/01/control-ambiental-mina-cobre-panama.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Que-es-la-monitorizacion-near-reference_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/01/hybrid-air-quality-network-near-reference-monitoring.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Instrumentos-de-calidad-del-aire-para-monitorizacion-de-exteriores_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Monitorizacion-de-calidad-del-aire-en-entorno-residencial_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Monitorizacion-de-calidad-del-aire-en-entorno-industrial_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Monitorizacion-near-reference-en-zona-industrial_Kunak_2.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Monitorizacion-near-reference-en-zona-residencial-Vlissingen-Holanda_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Monitorizacion-near-reference-en-zona-industrial_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clave": "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf",
+        "via": "t4b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/verificar-desempeno-industrial_monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/riesgo-ambiental-y-perdida-producto_monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/instalacion-petroquimica_monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/perimetro-fisico-industrial-y-monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/kunak-cloud-fenceline-monitoring-2.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/medicion-en-limite-fisico-instalacion-industrial_monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/compromisos-climaticos_monitorizacion-perimetral_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-perimetral",
+        "clave": "2026/06/perimetro-industrial_monitorizacion-continua_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Las-emisiones-difusas-pueden-ser-un-dato-gestionable_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Las-emisiones-fugitivas-y-sus-riesgos_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Contaminantes-atmosfericos-de-emisiones-fugitivas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/emisiones-fugitivas_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Metodos-deteccion-emisiones-fugitivas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Focos-criticos-emisiones-fugitivas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/kunak_basf_1.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+        "clave": "2026/07/Emisiones-fugitivas-escapan-por-valvulas_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2025/04/Particulas-ultrafinas-Karlsruhe-Institute-of-Technologie-KIT.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2025/04/Madre-embarazada-Gasp-Clean-Air-Healthy-Communities.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2025/04/Trafico-rodado-RI-URBANS-European-Commission.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2025/04/Membrana-particulas-ultrafinas-Argonne-National-Laboratory.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2025/04/Centro-urbano-Boston-Foto-Douglas-Brugge-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/particulas-ultrafinas",
+        "clave": "2020/09/apb-autoridad-portuaria-baleares.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/metano",
+        "clave": "2024/07/science-of-methane-kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/sulfuro-de-hidrogeno",
+        "clave": "2025/05/canal-de-alcantarillado_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/sulfuro-de-hidrogeno",
+        "clave": "2025/05/1712147182071.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/sulfuro-de-hidrogeno",
+        "clave": "2025/05/trabajadores-en-zona-de-alcantarillado_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ruido",
+        "clave": "2025/06/frecyLong.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ruido",
+        "clave": "2025/06/aparato-sonometro-conectado-a-un-ordenador.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ruido",
+        "clave": "2025/06/barreras-acusticas.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ruido",
+        "clave": "2025/06/kunak-air-pro-irun.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire",
+        "clave": "2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Station-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire",
+        "clave": "2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Stations-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire",
+        "clave": "2025/07/air-quality-sensor-systems.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/cianuro-de-hidrogeno-molecula.gif",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/Botellas-plastico.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/Mineral-oro.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/Agricultor-tratando-con-pesticida-el-cultivo-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/Targets-of-Cyanide-Inhalation.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/Targets-of-Cyanide-Oral.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "clave": "2025/09/fumingando-cultivo-con-pesticida-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/amoniaco-nh3",
+        "clave": "2025/10/molecula-amoniaco_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/amoniaco-nh3",
+        "clave": "2025/10/ganaderia-intensiva_amoniaco_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/amoniaco-nh3",
+        "clave": "2025/10/fauna-acuatica-en-aguas-eutrofizadas_amoniaco_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/amoniaco-nh3",
+        "clave": "2025/10/Emision-de-amoniaco-por-agricultura-y-otras-fuentes.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/amoniaco-nh3",
+        "clave": "2025/10/seguridad-presencia-amoniaco_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/Hidrocarburos-no-metanicos-NMHC.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/transporte-de-energia.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/Subestacion-electricidad-y-alto-voltaje.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/oleoducto.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/planta-de-energia-y-calor-combinados.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc",
+        "clave": "2025/11/Trafico-urbano-y-motores-de-combustion.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2",
+        "clave": "2025/12/Papel-blanqueado-con-cloro-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2",
+        "clave": "2025/12/Industria-textil-y-blanqueamiento-de-fibras-con-cloro-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2",
+        "clave": "2025/12/Arazuri-depuradora_estacion-Kunak-AIR-Pro.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2",
+        "clave": "2025/12/Agua-potable-potabilizada-con-cloro-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2",
+        "clave": "2025/12/Industria-fabricacion-papel-con-blanqueamiento-por-cloro-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/gases-de-efecto-invernadero",
+        "clave": "2025/06/Radiative_forcing_-_climate_change_-_global_warming_-_EPA_NOAA.svg.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/gases-de-efecto-invernadero",
+        "clave": "2025/06/Greenhouse-emissions-EU-Members.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/gases-de-efecto-invernadero",
+        "clave": "2025/06/Emisiones-de-planta-de-energia_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/compuestos-organicos-volatiles",
+        "clave": "2025/03/VOC-origen.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/compuestos-organicos-volatiles",
+        "clave": "2023/02/Volatile_organic_compounds.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/esmog",
+        "clave": "2024/08/why_smog_is_bad_infographic_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/esmog",
+        "clave": "2024/08/smog-4.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/inmisiones-atmosfericas",
+        "clave": "2024/06/Inmision-Emision.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/fluoruro-de-hidrogeno-hf",
+        "clave": "2026/01/Industria-metalurgica_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/fluoruro-de-hidrogeno-hf",
+        "clave": "2026/01/Fertilizantes-en-agricultura_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/fluoruro-de-hidrogeno-hf",
+        "clave": "2026/01/oblea-silicio.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/emision-de-cloruro-de-hidrogeno.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/haluros-de-hidrogeno-en-el-ambiente_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/industria-quimica-y-petroquimica-y-emisiones-de-cloruro-de-hidrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/Camion-accidente-transporte-acido-clorhidrico_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/Cloruro-de-hidrogeno-es-precursor-de-lluvia-acida_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/tendido-electrico-y-cloruro-de-hidrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/pvc-y-produccion-de-cloruro-de-hidrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/cloruro-de-hidrogeno-en-sanidad_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/origen-antropogenico-de-cloruro-de-hidrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/emisiones-antropogenicas-de-cloruro-de-hidrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl",
+        "clave": "2026/05/emisiones-de-cloruro-de-hidrogeno-acidifican-suelo-y-agua_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/cambio-climatico-y-oxido-nitrico_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/infografia-NO_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/cultivos-y-fertilizantes-nitrogenados_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/Lluvia-acida_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/Irun_Basque-Country_Spain_KUNAK-Air-estacion.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/Mapa-NO_Kunak.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxido-nitrico-no",
+        "clave": "2026/05/Esmog-fotoquimico-Mexico-City.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Elemento-quimico-Oxigeno-O2.jpg.jpeg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Incendio-industrial-por-presencia-de-oxigeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Vertedero-y-emisiones_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Trabajo-industrial-en-espacios-confinados-y-riesgo-ante-oxigeno_Kunak-scaled.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Oxigeno-en-mina-subterranea_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxigeno",
+        "clave": "2026/05/Estacion-de-tratamiento-de-residuos_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ozono-troposferico",
+        "clave": "2024/06/Ozono-a-nivel-del-suelo-Ozone-Action-Heroes-Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ozono-troposferico",
+        "clave": "2024/06/Niveles-de-O3-Organizacion-Mundial-Salud-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/dioxido-de-nitrogeno",
+        "clave": "2024/06/EPA-Exposicion-al-dioxido-de-nitrogeno-kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/dioxido-de-nitrogeno",
+        "clave": "2024/06/Datos-mundiales-dioxido-de-nitrogeno-OMS-Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/indice-de-calidad-del-aire",
+        "clave": "2024/02/ica-google-maps.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/monoxido-de-carbono",
+        "clave": "2025/01/Fuentes-de-Monoxido-CO-Emision-de-CO-infografia-US-EPA.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/monoxido-de-carbono",
+        "clave": "2025/01/CO_WestCoast_SmokeCloud_credit_row-scaled.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/monoxido-de-carbono",
+        "clave": "2025/01/valor-limite-de-monoxido-de-carbono-CO-para-la-proteccion-de-la-salud-humana-credito-imagen-EEA.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/contaminantes-atmosfericos",
+        "clave": "2024/02/Capa_de_polucion_sobre_la_ciudad_de_Barcelona.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/contaminantes-atmosfericos",
+        "clave": "2024/02/Redes_de_sensores_ambientales.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/contaminantes-atmosfericos",
+        "clave": "2024/02/ica-google-maps.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/contaminantes-atmosfericos",
+        "clave": "2021/09/ZBE.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ldar",
+        "clave": "2026/05/LDAR-monitoring_control-operativa_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ldar",
+        "clave": "2026/05/LDAR-monitoring_medicion_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ldar",
+        "clave": "2026/05/LDAR-monitoring_inventario-puntos-control_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ldar",
+        "clave": "2026/05/LDAR-monitoring_instalacion-control_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ldar",
+        "clave": "2026/05/LDAR-monitoring_control-industrial_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/monoxido-nitrogeno-emitido-por-trafico_kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/Niebla-de-esmog-Los-Angeles-California.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/NOx-N2O-fuentes-e-impactos.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/trafico-rodado-fuente-principal-de-NOx_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/impacto-salud_dioxido-nitrogeno_oxido-nitroso_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/fertilizantes-sinteticos_oxidos-nitrogeno_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/datos-fiables-continuos-y-geograficamente-relevantes-para-monitorizar-NOx-y-N2O_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/estrategias-control-NOx-y-N20-en-ciudades_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/exposicion-urbana_dioxido-nitrogeno_oxido-nitroso_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/oxidos-de-nitrogeno-nox",
+        "clave": "2026/06/dioxido-nitrogeno-y-oxido-nitroso_gases-contamiantes-economia-moderna_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/emisiones-de-fuentes-estacionarias_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/industria-petroquimica-y-emisiones-por-chimenea_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/industria-chimeneas_Kunak.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/monitorizacion-de-emisiones-por-chimenea_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/actividad-industria-cemento_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/medicion-emisiones-por-chimenea_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/sistemas-continuos-de-emisiones-por-chimenea_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/Analisis-de-datos-meteorologicos-para-rastrear-origen-contaminacion.png",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/gases-y-particulas-liberados-por-emisiones-de-chimeneas-industriales_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/medicion-de-emisiones-industriales_Kunak.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/emisiones-de-chimenea-difusas-y-fugitivas.jpg",
+        "via": "t3b"
+      },
+      {
+        "pagina": "terminos-kunakpedia/emisiones-por-chimenea",
+        "clave": "2026/07/emisiones-por-chimeneas-industriales_Kunak.jpg",
+        "via": "t3b"
+      }
+    ],
+    "sinLlave": [
+      {
+        "pagina": "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "src": "https://www.eea.europa.eu/en/analysis/maps-and-charts/burden-of-disease-as/@@images/preview_image-3751-94ca653b5c5dfcff2f282d3710aceeb0.png"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-mal-olor-industrial",
+        "src": "https://www.freudenberg-filter.com/media/_processed_/6/7/csm_web_jpg_IF_GPF_Infographic_Website_Typical_gases_01_f1d52b50a1.jpeg"
+      },
+      {
+        "pagina": "terminos-kunakpedia/ozono-troposferico",
+        "src": "https://www.ccacoalition.org/sites/default/files/resources//Ozone-SingleLogo-SCREEN.jpg"
+      }
+    ]
+  },
+  "t4b": {
+    "sustituciones": [
+      {
+        "pagina": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2021/10/infografia-directrices-de-la-OMS-sobre-calidad-del-aire-ESP.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2021/10/infografia-directrices-de-la-OMS-sobre-calidad-del-aire-ESP.pdf"
+      },
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2025/02/Rapport_Ombrieres_village_olympique_2024.pdf"
+      },
+      {
+        "pagina": "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2024/12/EEA-Report-Air-Pollution.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2024/12/EEA-Report-Air-Pollution.pdf"
+      },
+      {
+        "pagina": "entradas-blog/guia-sobre-la-contaminacion-urbana",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf"
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "clase": "flourish",
+        "via": "data-src",
+        "visualizacion": "18484893"
+      },
+      {
+        "pagina": "entradas-blog/zonas-bajas-emisiones-monitorizacion",
+        "clase": "flourish",
+        "via": "data-src",
+        "visualizacion": "6443573"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso",
+        "clase": "fb3d-flipbook",
+        "via": "data-pdf",
+        "clave": "2020/04/abstractaq2020mexico-200421115428.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2020/04/abstractaq2020mexico-200421115428.pdf"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso",
+        "clase": "fb3d-flipbook",
+        "via": "data-pdf",
+        "clave": "2020/04/Reche2020_Athletes-exposure-to-air-pollution-during-World-Athletics-Relays.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2020/04/Reche2020_Athletes-exposure-to-air-pollution-during-World-Athletics-Relays.pdf"
+      },
+      {
+        "pagina": "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+        "clase": "flourish",
+        "via": "data-src",
+        "visualizacion": "4479121"
+      },
+      {
+        "pagina": "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+        "clase": "flourish",
+        "via": "data-src",
+        "visualizacion": "4484230"
+      },
+      {
+        "pagina": "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf"
+      },
+      {
+        "pagina": "entradas-blog/monitorizacion-near-reference",
+        "clase": "fb3d-flipbook",
+        "via": "payload",
+        "clave": "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf",
+        "url": "https://kunakair.com/wp-content/uploads/2026/06/Kunak_AIR_Pro_Co-location_tests.pdf"
+      }
+    ],
+    "sinSustituto": [
+      {
+        "pagina": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clase": "nbc (→ T4b: enlace a la noticia)",
+        "porQue": "IMPOSIBLE — el script sólo da la URL del REPRODUCTOR con su CID caducable, nunca la del artículo"
+      },
+      {
+        "pagina": "entradas-blog/proyecto-pure-cities",
+        "clase": "swiper-jsdelivr (→ T4b: galería nativa)",
+        "porQue": "decisión de RENDER — el dato está (10 · 11 · 11 slides como <a class=\"swiper-slide\">)"
+      },
+      {
+        "pagina": "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024",
+        "clase": "swiper-jsdelivr (→ T4b: galería nativa)",
+        "porQue": "decisión de RENDER — el dato está (10 · 11 · 11 slides como <a class=\"swiper-slide\">)"
+      },
+      {
+        "pagina": "entradas-blog/kunak-cloud-plataforma-web-calidad-aire",
+        "clase": "swiper-jsdelivr (→ T4b: galería nativa)",
+        "porQue": "decisión de RENDER — el dato está (10 · 11 · 11 slides como <a class=\"swiper-slide\">)"
+      }
+    ],
+    "sinTrabajo": [
+      {
+        "pagina": "entradas-blog/running-for-clean-air",
+        "clase": "instagram (→ T4b: nodo-embed tipado)",
+        "porQue": "el <blockquote class=\"instagram-media\"> sobrevive con su permalink: degrada a cita válida"
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-volcanes",
+        "clase": "twitter (→ T4b: nodo-embed tipado)",
+        "porQue": "el <blockquote class=\"twitter-tweet\"> sobrevive con su texto y su enlace al estado: degrada a cita válida"
+      },
+      {
+        "pagina": "entradas-blog/premios-pyme-2024-kunak",
+        "clase": "twitter (→ T4b: nodo-embed tipado)",
+        "porQue": "el <blockquote class=\"twitter-tweet\"> sobrevive con su texto y su enlace al estado: degrada a cita válida"
+      }
+    ],
+    "payloadIlegible": []
+  },
+  "t3b": {
+    "noCanonicos": 2
+  },
   "censoContradicho": {
     "etiquetas": {},
     "hosts": {}
@@ -254,6 +3089,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -265,6 +3102,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -276,6 +3115,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -287,6 +3128,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -298,6 +3141,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -309,6 +3154,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -320,6 +3167,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 1,
       "t6": 0,
@@ -331,6 +3180,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -342,6 +3193,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -349,10 +3202,12 @@
     },
     "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados": {
       "bytes": 78745,
-      "bytesTransformado": 78078,
+      "bytesTransformado": 77804,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -360,10 +3215,12 @@
     },
     "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
       "bytes": 83283,
-      "bytesTransformado": 82014,
+      "bytesTransformado": 81760,
       "t8": 1,
       "t1": 1,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 1,
       "t5": 2,
       "t6": 0,
@@ -371,10 +3228,12 @@
     },
     "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas": {
       "bytes": 39037,
-      "bytesTransformado": 38627,
+      "bytesTransformado": 37875,
       "t8": 0,
       "t1": 0,
       "t2": 11,
+      "t3b": 11,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -382,10 +3241,12 @@
     },
     "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano": {
       "bytes": 90311,
-      "bytesTransformado": 86270,
+      "bytesTransformado": 85554,
       "t8": 1,
       "t1": 1,
       "t2": 14,
+      "t3b": 14,
+      "t4b": 1,
       "t4": 1,
       "t5": 3,
       "t6": 0,
@@ -393,10 +3254,12 @@
     },
     "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales": {
       "bytes": 71967,
-      "bytesTransformado": 71208,
+      "bytesTransformado": 70691,
       "t8": 0,
       "t1": 1,
       "t2": 12,
+      "t3b": 12,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -404,10 +3267,12 @@
     },
     "entradas-blog/particulas-ultrafinas-puf": {
       "bytes": 58428,
-      "bytesTransformado": 57877,
+      "bytesTransformado": 57524,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -415,10 +3280,12 @@
     },
     "entradas-blog/emisiones-ganaderas-y-calidad-del-aire": {
       "bytes": 60823,
-      "bytesTransformado": 60108,
+      "bytesTransformado": 59750,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -426,10 +3293,12 @@
     },
     "entradas-blog/monitorizacion-de-olores-en-edar": {
       "bytes": 77446,
-      "bytesTransformado": 76371,
+      "bytesTransformado": 76101,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -437,10 +3306,12 @@
     },
     "entradas-blog/calidad-del-aire-en-islas": {
       "bytes": 55152,
-      "bytesTransformado": 54459,
+      "bytesTransformado": 54081,
       "t8": 0,
       "t1": 1,
       "t2": 9,
+      "t3b": 9,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -448,10 +3319,12 @@
     },
     "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla": {
       "bytes": 51551,
-      "bytesTransformado": 51005,
+      "bytesTransformado": 50715,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -459,10 +3332,12 @@
     },
     "entradas-blog/biometano-y-biogas": {
       "bytes": 61235,
-      "bytesTransformado": 60536,
+      "bytesTransformado": 60248,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3b": 6,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -470,10 +3345,12 @@
     },
     "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica": {
       "bytes": 63406,
-      "bytesTransformado": 63049,
+      "bytesTransformado": 62651,
       "t8": 0,
       "t1": 1,
       "t2": 9,
+      "t3b": 9,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -481,10 +3358,12 @@
     },
     "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto": {
       "bytes": 47553,
-      "bytesTransformado": 47032,
+      "bytesTransformado": 46552,
       "t8": 0,
       "t1": 1,
       "t2": 11,
+      "t3b": 11,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -496,6 +3375,8 @@
       "t8": 0,
       "t1": 3,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -503,10 +3384,12 @@
     },
     "entradas-blog/contaminacion-acustica": {
       "bytes": 52257,
-      "bytesTransformado": 51909,
+      "bytesTransformado": 51224,
       "t8": 0,
       "t1": 1,
       "t2": 15,
+      "t3b": 15,
+      "t4b": 0,
       "t4": 0,
       "t5": 1,
       "t6": 0,
@@ -518,6 +3401,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -525,10 +3410,12 @@
     },
     "entradas-blog/impacto-ambiental-de-la-industria-petroquimica": {
       "bytes": 45388,
-      "bytesTransformado": 44741,
+      "bytesTransformado": 44449,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -536,10 +3423,12 @@
     },
     "entradas-blog/running-for-clean-air": {
       "bytes": 46993,
-      "bytesTransformado": 42765,
+      "bytesTransformado": 42491,
       "t8": 2,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 1,
       "t4": 2,
       "t5": 1,
       "t6": 0,
@@ -547,10 +3436,12 @@
     },
     "entradas-blog/contaminacion-del-aire-en-vertederos": {
       "bytes": 60982,
-      "bytesTransformado": 60360,
+      "bytesTransformado": 60149,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -558,10 +3449,12 @@
     },
     "entradas-blog/contaminacion-por-produccion-de-energia": {
       "bytes": 50544,
-      "bytesTransformado": 49945,
+      "bytesTransformado": 49642,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -573,6 +3466,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -580,10 +3475,12 @@
     },
     "entradas-blog/proyecto-pure-cities": {
       "bytes": 32856,
-      "bytesTransformado": 32563,
+      "bytesTransformado": 32554,
       "t8": 1,
       "t1": 2,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -591,10 +3488,12 @@
     },
     "entradas-blog/contaminacion-por-metano": {
       "bytes": 92535,
-      "bytesTransformado": 91753,
+      "bytesTransformado": 91526,
       "t8": 0,
       "t1": 2,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -602,10 +3501,12 @@
     },
     "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
       "bytes": 24557,
-      "bytesTransformado": 21083,
+      "bytesTransformado": 20908,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -613,10 +3514,12 @@
     },
     "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire": {
       "bytes": 41192,
-      "bytesTransformado": 40645,
+      "bytesTransformado": 40281,
       "t8": 0,
       "t1": 4,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -624,10 +3527,12 @@
     },
     "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica": {
       "bytes": 58656,
-      "bytesTransformado": 58173,
+      "bytesTransformado": 57938,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -635,10 +3540,12 @@
     },
     "entradas-blog/microsensores-de-calidad-del-aire": {
       "bytes": 10845,
-      "bytesTransformado": 10818,
+      "bytesTransformado": 10783,
       "t8": 0,
       "t1": 2,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -646,10 +3553,12 @@
     },
     "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio": {
       "bytes": 42306,
-      "bytesTransformado": 41776,
+      "bytesTransformado": 41441,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3b": 6,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -657,10 +3566,12 @@
     },
     "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas": {
       "bytes": 40350,
-      "bytesTransformado": 39946,
+      "bytesTransformado": 39784,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -668,10 +3579,12 @@
     },
     "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024": {
       "bytes": 17710,
-      "bytesTransformado": 17288,
+      "bytesTransformado": 17257,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -679,10 +3592,12 @@
     },
     "entradas-blog/contaminacion-del-aire-en-nueva-york": {
       "bytes": 47904,
-      "bytesTransformado": 47097,
+      "bytesTransformado": 46769,
       "t8": 0,
       "t1": 2,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -690,10 +3605,12 @@
     },
     "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire": {
       "bytes": 56611,
-      "bytesTransformado": 55725,
+      "bytesTransformado": 55315,
       "t8": 0,
       "t1": 3,
       "t2": 11,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -701,10 +3618,12 @@
     },
     "entradas-blog/calidad-del-aire-en-las-comunidades": {
       "bytes": 45046,
-      "bytesTransformado": 44360,
+      "bytesTransformado": 44078,
       "t8": 0,
       "t1": 2,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -712,10 +3631,12 @@
     },
     "entradas-blog/impacto-ambiental-industria-papelera": {
       "bytes": 46910,
-      "bytesTransformado": 46194,
+      "bytesTransformado": 46294,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -723,10 +3644,12 @@
     },
     "entradas-blog/calidad-del-aire-en-puertos": {
       "bytes": 51299,
-      "bytesTransformado": 50489,
+      "bytesTransformado": 50514,
       "t8": 0,
       "t1": 2,
       "t2": 6,
+      "t3b": 6,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -734,10 +3657,12 @@
     },
     "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire": {
       "bytes": 33106,
-      "bytesTransformado": 32702,
+      "bytesTransformado": 32468,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -745,10 +3670,12 @@
     },
     "entradas-blog/calidad-del-aire-en-los-aeropuertos": {
       "bytes": 19288,
-      "bytesTransformado": 18895,
+      "bytesTransformado": 18982,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -760,6 +3687,8 @@
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -767,10 +3696,12 @@
     },
     "entradas-blog/guia-sobre-la-contaminacion-urbana": {
       "bytes": 23652,
-      "bytesTransformado": 19775,
+      "bytesTransformado": 19720,
       "t8": 1,
       "t1": 3,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -782,6 +3713,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -789,10 +3722,12 @@
     },
     "entradas-blog/ehs-industrial": {
       "bytes": 23847,
-      "bytesTransformado": 23655,
+      "bytesTransformado": 23564,
       "t8": 0,
       "t1": 2,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -804,6 +3739,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -815,6 +3752,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -822,10 +3761,12 @@
     },
     "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura": {
       "bytes": 60982,
-      "bytesTransformado": 60360,
+      "bytesTransformado": 60149,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -837,6 +3778,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -844,10 +3787,12 @@
     },
     "entradas-blog/monitorizacion-mal-olor-industrial": {
       "bytes": 36203,
-      "bytesTransformado": 35561,
+      "bytesTransformado": 35550,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 7,
       "t6": 0,
@@ -855,10 +3800,12 @@
     },
     "entradas-blog/calidad-del-aire-alrededor-de-los-colegios": {
       "bytes": 23780,
-      "bytesTransformado": 23363,
+      "bytesTransformado": 23240,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -870,6 +3817,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -881,6 +3830,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -888,10 +3839,12 @@
     },
     "entradas-blog/impacto-ambiental-industria-cementera": {
       "bytes": 38938,
-      "bytesTransformado": 38236,
+      "bytesTransformado": 38662,
       "t8": 1,
       "t1": 1,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -903,6 +3856,8 @@
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -910,10 +3865,12 @@
     },
     "entradas-blog/sensores-calidad-aire-volcanes": {
       "bytes": 23657,
-      "bytesTransformado": 22959,
+      "bytesTransformado": 23012,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -925,6 +3882,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -936,6 +3895,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -947,6 +3908,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -958,6 +3921,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -965,10 +3930,12 @@
     },
     "entradas-blog/zonas-bajas-emisiones-monitorizacion": {
       "bytes": 41930,
-      "bytesTransformado": 41196,
+      "bytesTransformado": 41470,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -980,6 +3947,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -991,6 +3960,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -998,10 +3969,12 @@
     },
     "entradas-blog/contaminacion-incendios-forestales-aire": {
       "bytes": 31487,
-      "bytesTransformado": 31127,
+      "bytesTransformado": 31220,
       "t8": 0,
       "t1": 2,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1009,10 +3982,12 @@
     },
     "entradas-blog/entrevista-agustin-torres-product-manager-suez": {
       "bytes": 12189,
-      "bytesTransformado": 12107,
+      "bytesTransformado": 12169,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1024,6 +3999,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1035,6 +4012,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1046,6 +4025,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1057,6 +4038,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1064,10 +4047,12 @@
     },
     "entradas-blog/contaminacion-mal-olor-sensores": {
       "bytes": 37219,
-      "bytesTransformado": 36995,
+      "bytesTransformado": 36895,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1079,6 +4064,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1090,6 +4077,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1097,10 +4086,12 @@
     },
     "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso": {
       "bytes": 7659,
-      "bytesTransformado": 7644,
+      "bytesTransformado": 7298,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 2,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1112,6 +4103,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1123,6 +4116,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1134,6 +4129,8 @@
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -1145,6 +4142,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1156,6 +4155,8 @@
       "t8": 0,
       "t1": 3,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 1,
       "t6": 0,
@@ -1167,6 +4168,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1178,6 +4181,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1189,6 +4194,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1200,6 +4207,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1211,6 +4220,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1222,6 +4233,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1233,6 +4246,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1244,6 +4259,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1251,10 +4268,12 @@
     },
     "entradas-blog/sensores-calidad-aire-exterior-pamplona": {
       "bytes": 14133,
-      "bytesTransformado": 13952,
+      "bytesTransformado": 13987,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1262,10 +4281,12 @@
     },
     "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades": {
       "bytes": 9001,
-      "bytesTransformado": 8699,
+      "bytesTransformado": 9392,
       "t8": 2,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 2,
       "t4": 2,
       "t5": 0,
       "t6": 0,
@@ -1273,10 +4294,12 @@
     },
     "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra": {
       "bytes": 11833,
-      "bytesTransformado": 8693,
+      "bytesTransformado": 8540,
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -1288,6 +4311,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1299,6 +4324,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1310,6 +4337,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1321,6 +4350,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1332,6 +4363,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1343,6 +4376,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1354,6 +4389,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1365,6 +4402,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1376,6 +4415,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1387,6 +4428,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1398,6 +4441,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1409,6 +4454,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1420,6 +4467,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1431,6 +4480,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1442,6 +4493,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1453,6 +4506,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1464,6 +4519,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1475,6 +4532,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1486,6 +4545,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1497,6 +4558,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1508,6 +4571,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1519,6 +4584,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1530,6 +4597,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1541,6 +4610,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1552,6 +4623,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1563,6 +4636,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1574,6 +4649,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1585,6 +4662,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1596,6 +4675,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1607,6 +4688,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1618,6 +4701,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1629,6 +4714,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1640,6 +4727,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1651,6 +4740,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1662,6 +4753,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1673,6 +4766,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1684,6 +4779,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1695,6 +4792,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1706,6 +4805,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1717,6 +4818,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1728,6 +4831,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1739,6 +4844,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1750,6 +4857,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1761,6 +4870,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1768,10 +4879,12 @@
     },
     "entradas-blog/contaminacion-del-aire-urbano": {
       "bytes": 42006,
-      "bytesTransformado": 41303,
+      "bytesTransformado": 41268,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3b": 4,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1779,10 +4892,12 @@
     },
     "entradas-blog/sensores-calidad-aire-urbano-donostia": {
       "bytes": 16849,
-      "bytesTransformado": 16500,
+      "bytesTransformado": 16545,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1790,10 +4905,12 @@
     },
     "entradas-blog/control-emisiones-industriales": {
       "bytes": 32994,
-      "bytesTransformado": 32479,
+      "bytesTransformado": 32471,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1801,10 +4918,12 @@
     },
     "entradas-blog/emisiones-de-las-refinerias-de-petroleo": {
       "bytes": 49866,
-      "bytesTransformado": 49050,
+      "bytesTransformado": 48932,
       "t8": 0,
       "t1": 2,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1812,10 +4931,12 @@
     },
     "entradas-blog/monitorizacion-de-emisiones-en-refinerias": {
       "bytes": 58463,
-      "bytesTransformado": 58138,
+      "bytesTransformado": 58109,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1823,10 +4944,12 @@
     },
     "entradas-blog/contaminacion-del-aire-por-obras": {
       "bytes": 40431,
-      "bytesTransformado": 39955,
+      "bytesTransformado": 39811,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1838,6 +4961,8 @@
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1845,10 +4970,12 @@
     },
     "entradas-blog/impacto-ambiental-mineria-calidad-aire": {
       "bytes": 24932,
-      "bytesTransformado": 24628,
+      "bytesTransformado": 24445,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1856,10 +4983,12 @@
     },
     "entradas-blog/monitorizacion-near-reference": {
       "bytes": 74304,
-      "bytesTransformado": 70428,
+      "bytesTransformado": 70131,
       "t8": 1,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 1,
       "t4": 1,
       "t5": 0,
       "t6": 0,
@@ -1867,10 +4996,12 @@
     },
     "entradas-blog/monitorizacion-perimetral": {
       "bytes": 53636,
-      "bytesTransformado": 53157,
+      "bytesTransformado": 52973,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1878,10 +5009,12 @@
     },
     "entradas-blog/monitorizacion-de-emisiones-fugitivas": {
       "bytes": 61561,
-      "bytesTransformado": 60818,
+      "bytesTransformado": 60492,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1893,6 +5026,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1904,6 +5039,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1915,6 +5052,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1922,10 +5061,12 @@
     },
     "terminos-kunakpedia/particulas-ultrafinas": {
       "bytes": 38390,
-      "bytesTransformado": 37981,
+      "bytesTransformado": 37787,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3b": 6,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1933,10 +5074,12 @@
     },
     "terminos-kunakpedia/metano": {
       "bytes": 23225,
-      "bytesTransformado": 23021,
+      "bytesTransformado": 22964,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1944,10 +5087,12 @@
     },
     "terminos-kunakpedia/sulfuro-de-hidrogeno": {
       "bytes": 44648,
-      "bytesTransformado": 44303,
+      "bytesTransformado": 44147,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1955,10 +5100,12 @@
     },
     "terminos-kunakpedia/ruido": {
       "bytes": 36858,
-      "bytesTransformado": 36756,
+      "bytesTransformado": 36519,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3b": 4,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1966,10 +5113,12 @@
     },
     "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire": {
       "bytes": 39701,
-      "bytesTransformado": 39260,
+      "bytesTransformado": 39144,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1977,10 +5126,12 @@
     },
     "terminos-kunakpedia/cianuro-de-hidrogeno-hcn": {
       "bytes": 46169,
-      "bytesTransformado": 45931,
+      "bytesTransformado": 45563,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1988,10 +5139,12 @@
     },
     "terminos-kunakpedia/amoniaco-nh3": {
       "bytes": 37059,
-      "bytesTransformado": 36814,
+      "bytesTransformado": 36602,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -1999,10 +5152,12 @@
     },
     "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc": {
       "bytes": 64455,
-      "bytesTransformado": 63948,
+      "bytesTransformado": 63636,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3b": 6,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2010,10 +5165,12 @@
     },
     "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2": {
       "bytes": 42704,
-      "bytesTransformado": 42459,
+      "bytesTransformado": 42293,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2021,10 +5178,12 @@
     },
     "terminos-kunakpedia/gases-de-efecto-invernadero": {
       "bytes": 45691,
-      "bytesTransformado": 45250,
+      "bytesTransformado": 45140,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2032,10 +5191,12 @@
     },
     "terminos-kunakpedia/compuestos-organicos-volatiles": {
       "bytes": 34937,
-      "bytesTransformado": 34592,
+      "bytesTransformado": 34466,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2043,10 +5204,12 @@
     },
     "terminos-kunakpedia/esmog": {
       "bytes": 26619,
-      "bytesTransformado": 25913,
+      "bytesTransformado": 25790,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2058,6 +5221,8 @@
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2065,10 +5230,12 @@
     },
     "terminos-kunakpedia/inmisiones-atmosfericas": {
       "bytes": 12694,
-      "bytesTransformado": 12537,
+      "bytesTransformado": 12472,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2080,6 +5247,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2087,10 +5256,12 @@
     },
     "terminos-kunakpedia/fluoruro-de-hidrogeno-hf": {
       "bytes": 42949,
-      "bytesTransformado": 42748,
+      "bytesTransformado": 42579,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2098,10 +5269,12 @@
     },
     "terminos-kunakpedia/cloruro-de-hidrogeno-hcl": {
       "bytes": 72682,
-      "bytesTransformado": 72114,
+      "bytesTransformado": 71773,
       "t8": 0,
       "t1": 1,
       "t2": 11,
+      "t3b": 11,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2109,10 +5282,12 @@
     },
     "terminos-kunakpedia/oxido-nitrico-no": {
       "bytes": 65823,
-      "bytesTransformado": 65248,
+      "bytesTransformado": 64876,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3b": 8,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2120,10 +5295,12 @@
     },
     "terminos-kunakpedia/oxigeno": {
       "bytes": 44832,
-      "bytesTransformado": 44437,
+      "bytesTransformado": 44190,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3b": 7,
+      "t4b": 0,
       "t4": 0,
       "t5": 1,
       "t6": 0,
@@ -2131,10 +5308,12 @@
     },
     "terminos-kunakpedia/ozono-troposferico": {
       "bytes": 24181,
-      "bytesTransformado": 23716,
+      "bytesTransformado": 23638,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2146,6 +5325,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2153,10 +5334,12 @@
     },
     "terminos-kunakpedia/dioxido-de-nitrogeno": {
       "bytes": 22182,
-      "bytesTransformado": 21908,
+      "bytesTransformado": 21836,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3b": 2,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2168,6 +5351,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2175,10 +5360,12 @@
     },
     "terminos-kunakpedia/indice-de-calidad-del-aire": {
       "bytes": 17251,
-      "bytesTransformado": 16878,
+      "bytesTransformado": 16812,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3b": 1,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2190,6 +5377,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2201,6 +5390,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2212,6 +5403,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 1,
       "t6": 0,
@@ -2219,10 +5412,12 @@
     },
     "terminos-kunakpedia/monoxido-de-carbono": {
       "bytes": 26494,
-      "bytesTransformado": 26079,
+      "bytesTransformado": 26026,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3b": 3,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2230,10 +5425,12 @@
     },
     "terminos-kunakpedia/contaminantes-atmosfericos": {
       "bytes": 58446,
-      "bytesTransformado": 57624,
+      "bytesTransformado": 57392,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3b": 4,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2241,10 +5438,12 @@
     },
     "terminos-kunakpedia/ldar": {
       "bytes": 33125,
-      "bytesTransformado": 32880,
+      "bytesTransformado": 32672,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3b": 5,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2256,6 +5455,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2263,10 +5464,12 @@
     },
     "terminos-kunakpedia/oxidos-de-nitrogeno-nox": {
       "bytes": 69573,
-      "bytesTransformado": 68714,
+      "bytesTransformado": 68416,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3b": 10,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2278,6 +5481,8 @@
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2285,10 +5490,12 @@
     },
     "terminos-kunakpedia/emisiones-por-chimenea": {
       "bytes": 81862,
-      "bytesTransformado": 81055,
+      "bytesTransformado": 80631,
       "t8": 0,
       "t1": 1,
       "t2": 12,
+      "t3b": 12,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2300,6 +5507,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2311,6 +5520,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2322,6 +5533,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2333,6 +5546,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2344,6 +5559,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2355,6 +5572,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2366,6 +5585,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 1,
@@ -2377,6 +5598,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 1,
@@ -2388,6 +5611,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2399,6 +5624,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2410,6 +5637,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2421,6 +5650,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2432,6 +5663,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2443,6 +5676,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2454,6 +5689,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2465,6 +5702,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2476,6 +5715,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2487,6 +5728,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2498,6 +5741,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2509,6 +5754,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2520,6 +5767,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2531,6 +5780,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,
@@ -2542,6 +5793,8 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3b": 0,
+      "t4b": 0,
       "t4": 0,
       "t5": 0,
       "t6": 0,

@@ -45,5 +45,16 @@
     "tamanosDeclarados": 0,
     "varianteAusente": [],
     "dimensionDistinta": []
+  },
+  "cuerpo": {
+    "referidos": 0,
+    "resuelven": 0,
+    "enCaptura": 0,
+    "yaLocales": 0,
+    "origen404": [],
+    "nuncaPedida": [],
+    "nuevas": [],
+    "fuente": "medidas/extractor-corpus.json · mediaDelCuerpo (T3b + T4b)",
+    "exenciones": "§M-ORIGEN404 = se pidió y el índice registró su error · §M-PDF-FB3D = PDF que T4b sacó de un base64 y la lista, derivada del markup, no podía ver"
   }
 }

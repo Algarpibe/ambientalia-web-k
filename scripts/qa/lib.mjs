@@ -666,6 +666,26 @@ export function envRutas(nombre) {
  * que acordarse de escribir bien en 23 sitios se escribe mal en alguno*.
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA VARIANTE Y SU ORIGEN — una definición, no dos
+ *
+ * `foo-1024x576.jpg` es un TAMAÑO de `foo.jpg`, no otro documento. La captura
+ * lo usa para derivar `listaACapturar` (sólo orígenes: el pipeline reproduce la
+ * dimensión, 73/73) y T3b lo necesita para que `data-media` nombre **el
+ * documento** y no la caja que el cuerpo pidió — que ya viaja verbatim en el
+ * `src`/`srcset` (§la frontera del «ancho pedido», `media-hueco` 7/7).
+ *
+ * Vive aquí porque las dos tienen que coincidir **carácter a carácter**: el
+ * invariante D de `qa:artefacto` empareja las dos listas por esta cadena, y dos
+ * definiciones de «el origen» serían la clase C7 con un rojo de 80 referencias
+ * como síntoma — que es exactamente cómo se descubrió (2026-08-05).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** `-<W>x<H>` justo antes de la extensión: la marca de variante de WordPress. */
+export const RE_VARIANTE = /-(\d+)x(\d+)(?=\.[A-Za-z0-9]+$)/;
+/** `2020/07/foo-1024x576.jpg?v=2` → `2020/07/foo.jpg`. */
+export const origenDe = (u) => String(u).split("?")[0].replace(RE_VARIANTE, "");
+
 /** El día de HOY en hora local, `YYYY-MM-DD`. Nunca `toISOString()`. */
 export function hoy(d = new Date()) {
   const p = (n) => String(n).padStart(2, "0");
@@ -700,6 +720,68 @@ export function sello(d = new Date()) {
  * Es la misma idempotencia que `w()` ya tenía, sin aplicar al camino
  * alternativo: se guarda evidencia nueva, no copias de la de hace un minuto.
  */
+/* ══════════════════════════════════════════════════════════════════════════
+ * CAMPOS VOLÁTILES — la clase del PUERTO EFÍMERO, generalizada (2026-08-05)
+ *
+ * `clon-base` la arregló en la INSTANCIA el 2026-08-04: su `meta.base` traía el
+ * puerto efímero, distinto en cada corrida, así que la de-duplicación de `w()`
+ * **no podía dispararse jamás** y `medidas/` acumuló 48 ficheros `clon-base-*`
+ * que sólo se diferenciaban en un número que no mide nada. Se normalizó el
+ * puerto **ahí**, y ahí se quedó — o sea, se arregló la instancia y no la clase,
+ * que es exactamente cómo se llega a la tercera tanda del mismo bug.
+ *
+ * **La clase es más ancha que el puerto: `meta.fecha` la tiene TODA congelada
+ * que use `hoy()`.** Dos corridas idénticas de días distintos difieren en esa
+ * cadena y sólo en ella, así que la segunda estrena `-fecha.json` y la guarda de
+ * la regla 5 avisa de un cambio que no existe. Con 324 congeladas y sondas que
+ * se re-corren en cada tanda, eso es ruido que **entierra los avisos de verdad**.
+ *
+ * ── Y la mitad que impide que esto sea un `catch {}` ──────────────────────
+ * Excluir campos de una comparación es, literalmente, dejar de mirar. Así que:
+ *
+ *   1 · **la lista es corta, explícita y de campos que produce `lib.mjs`**
+ *       (`hoy()` · `sello()`), no «lo que parezca una fecha»;
+ *   2 · **sólo dentro de `meta`** — un `fecha` dentro del dato medido es dato;
+ *   3 · **se NOMBRA en la salida**: «idéntica salvo `meta.fecha`» no es lo mismo
+ *       que «idéntica», y las dos frases se escriben distintas;
+ *   4 · **y la congelada NO se reescribe** — se deja tal cual. La medida es la
+ *       misma; cambiarle la fecha sería inventar que se volvió a medir.
+ *
+ * Su control está en `qa:lib`: dos cuerpos que difieren en `meta.fecha` **y** en
+ * un campo medido tienen que seguir fabricando el fichero fechado. Sin ese caso,
+ * la exclusión sería indistinguible de «de-duplica siempre».
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Lo que `lib.mjs` mismo escribe en `meta` y no dice nada de lo medido. */
+export const CAMPOS_VOLATILES = ["fecha", "sello"];
+
+/**
+ * Los campos volátiles que difieren entre dos cuerpos JSON congelados, o `null`
+ * si el resto **no** coincide (o si alguno no es JSON con `meta`).
+ *
+ * `[]` = idénticos de verdad. `["fecha"]` = la misma medida, otro día.
+ */
+export function volatilesQueDifieren(antes, ahora) {
+  let a, b;
+  try {
+    a = JSON.parse(antes);
+    b = JSON.parse(ahora);
+  } catch {
+    return null; // no es JSON: la comparación byte a byte es la única que hay
+  }
+  if (!a || !b || typeof a !== "object" || typeof b !== "object") return null;
+  const difieren = [];
+  const sinVolatiles = (o) => {
+    if (!o.meta || typeof o.meta !== "object") return o;
+    const meta = { ...o.meta };
+    for (const c of CAMPOS_VOLATILES) delete meta[c];
+    return { ...o, meta };
+  };
+  for (const c of CAMPOS_VOLATILES)
+    if (JSON.stringify(a.meta?.[c]) !== JSON.stringify(b.meta?.[c])) difieren.push(c);
+  return JSON.stringify(sinVolatiles(a)) === JSON.stringify(sinVolatiles(b)) ? difieren : null;
+}
+
 function alLado(destino, cuerpo) {
   const dir = path.dirname(destino);
   const ext = path.extname(destino);
@@ -870,9 +952,20 @@ export function w(file, data, { pisar = false } = {}) {
   if (fs.existsSync(destino) && !forzar) {
     // Idéntico ⇒ reescribir no destruye ninguna evidencia, y no ensucia con
     // duplicados fechados cada vez que una corrida reproduce su resultado.
-    if (fs.readFileSync(destino, "utf8") === cuerpo) {
+    const previo = fs.readFileSync(destino, "utf8");
+    if (previo === cuerpo) {
       fs.writeFileSync(destino, cuerpo);
       console.log("→", rel(destino), "(idéntica a la congelada)");
+      return destino;
+    }
+    /* La misma medida en otro día: se NOMBRA el campo, no se reescribe la
+     * congelada, y no se estrena fichero. Ver §CAMPOS VOLÁTILES arriba. */
+    const soloVolatiles = volatilesQueDifieren(previo, cuerpo);
+    if (soloVolatiles?.length) {
+      console.log(
+        "→", rel(destino),
+        `(idéntica a la congelada salvo ${soloVolatiles.map((c) => `meta.${c}`).join(" · ")} — no se reescribe)`,
+      );
       return destino;
     }
     const alt = alLado(destino, cuerpo);

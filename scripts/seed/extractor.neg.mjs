@@ -26,7 +26,7 @@ process.env.SIN_CLON = "1";
 
 const EXTRACTOR = join(QA, "../seed/extractor.mjs");
 
-console.log(`\n════════ TEST EN NEGATIVO · extractor (T1–T8) ════════`);
+console.log(`\n════════ TEST EN NEGATIVO · extractor (T1–T8 · T3b · T4b) ════════`);
 console.log(`  ${TRANSFORMACIONES.length} sabotajes —uno por transformación— + control\n`);
 
 const ev = new Evaluadas({ nombre: "extractor-neg", unidad: "sabotajes", minimo: TRANSFORMACIONES.length });
@@ -69,18 +69,22 @@ const seg = ((Date.now() - t0) / 1000).toFixed(0);
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 let malCtl = null;
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
-else if (!/8\/8 postcondiciones limpias/.test(ctlOut)) malCtl = "sin la línea de 8/8 postcondiciones";
+else if (!new RegExp(`${TRANSFORMACIONES.length}/${TRANSFORMACIONES.length} postcondiciones limpias`).test(ctlOut))
+  malCtl = `sin la línea de ${TRANSFORMACIONES.length}/${TRANSFORMACIONES.length} postcondiciones`;
 else if (!existsSync(fCtl)) malCtl = "no congeló su medida";
 if (malCtl) {
   fallos++;
   console.log(`  ❌ CONTROL   (sin sabotaje) (${seg}s)  ${malCtl}`);
-} else console.log(`  ✓  CONTROL   (sin sabotaje) (${seg}s)  exit 0, 8/8 limpias — el extractor no falla siempre`);
+} else
+  console.log(
+    `  ✓  CONTROL   (sin sabotaje) (${seg}s)  exit 0, ${TRANSFORMACIONES.length}/${TRANSFORMACIONES.length} limpias — el extractor no falla siempre`,
+  );
 
 const total = TRANSFORMACIONES.length + 1;
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} extractor · test en negativo: ${total - fallos}/${total}\n` +
     (fallos === 0
-      ? `   Las ocho transformaciones tienen guarda viva o diana declarada, y el\n` +
+      ? `   Las ${TRANSFORMACIONES.length} transformaciones tienen guarda viva o diana declarada, y el\n` +
         `   conjunto pasa en limpio. El corpus transformado ya se puede citar.\n`
       : `   El corpus transformado NO se puede citar hasta que esto salga en verde.\n`),
 );

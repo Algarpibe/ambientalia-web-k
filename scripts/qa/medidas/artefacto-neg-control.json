@@ -45,5 +45,26 @@
     "tamanosDeclarados": 557,
     "varianteAusente": [],
     "dimensionDistinta": []
+  },
+  "cuerpo": {
+    "referidos": 432,
+    "resuelven": 424,
+    "enCaptura": 373,
+    "yaLocales": 51,
+    "origen404": [
+      "2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+      "2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+      "2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg"
+    ],
+    "nuncaPedida": [
+      "2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+      "2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
+      "2024/12/EEA-Report-Air-Pollution.pdf",
+      "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
+      "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf"
+    ],
+    "nuevas": [],
+    "fuente": "medidas/extractor-corpus.json · mediaDelCuerpo (T3b + T4b)",
+    "exenciones": "§M-ORIGEN404 = se pidió y el índice registró su error · §M-PDF-FB3D = PDF que T4b sacó de un base64 y la lista, derivada del markup, no podía ver"
   }
 }

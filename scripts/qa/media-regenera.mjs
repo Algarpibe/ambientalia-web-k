@@ -48,7 +48,7 @@ import { join, basename } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import sharp from "sharp";
-import { Evaluadas, QA, w } from "./lib.mjs";
+import { Evaluadas, origenDe, QA, RE_VARIANTE, w } from "./lib.mjs";
 import { postContent } from "../seed/corpus.mjs";
 
 process.env.SIN_CLON = "1";
@@ -72,8 +72,9 @@ if (SABOTAJE && !Object.keys(SABOTAJES).includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${Object.keys(SABOTAJES).join(" | ")})`);
 if (SABOTAJE && SABOTAJE !== "control") console.log(`\n⚠ SABOTAJE=${SABOTAJE} — ${SABOTAJES[SABOTAJE]}\n`);
 
-const RE_VAR = /-(\d+)x(\d+)(?=\.[A-Za-z0-9]+$)/;
-const origenDe = (u) => u.split("?")[0].replace(RE_VAR, "");
+/* `RE_VAR`/`origenDe` estaban aquí; viven en `lib.mjs` desde el 2026-08-05 —
+ * T3b los necesita para la misma decisión y dos copias serían la clase C7. */
+const RE_VAR = RE_VARIANTE;
 const UP = "https://kunakair.com/wp-content/uploads/";
 const soloMarcado = (h) =>
   h.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");

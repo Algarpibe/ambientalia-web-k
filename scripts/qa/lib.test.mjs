@@ -136,6 +136,28 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   const p4c = callado(() => w(f, { v: 4 }));
   eq("…pero una salida NUEVA sí se guarda aparte", p4c !== p4 && readdirSync(tmp).length === antes + 1, true);
 
+  /* ── CAMPOS VOLÁTILES: la clase del PUERTO EFÍMERO, generalizada ─────────
+   * `clon-base` normalizó el puerto EN SU SONDA el 2026-08-04 y ahí se quedó,
+   * pero `meta.fecha` la tiene TODA congelada que use `hoy()`: la misma medida
+   * de otro día estrenaba fichero y la guarda avisaba de un cambio inexistente.
+   *
+   * ⚠ **Y el CONTROL es la mitad que hace que esto sea una guarda y no un
+   * `catch {}`:** un cuerpo que difiere en `meta.fecha` **Y ADEMÁS** en un campo
+   * medido tiene que seguir fabricando el fichero fechado. Sin él, «excluye los
+   * volátiles» sería indistinguible de «de-duplica siempre» — la regla 8a: *un
+   * sabotaje que no cambia el resultado no ha probado la guarda*. */
+  const g = join(tmp, "volatil.json");
+  callado(() => w(g, { meta: { fecha: "2026-08-04", alcance: "3 rutas" }, medido: { n: 7 } }));
+  const soloFichero = readdirSync(tmp).length;
+  const v1 = callado(() => w(g, { meta: { fecha: "2026-08-05", alcance: "3 rutas" }, medido: { n: 7 } }));
+  eq("misma medida, otro día → NO estrena fichero", v1 === g && readdirSync(tmp).length === soloFichero, true);
+  eq("…y la congelada conserva SU fecha (no se inventa que se re-midió)", JSON.parse(leer(g)).meta.fecha, "2026-08-04");
+  const v2 = callado(() => w(g, { meta: { fecha: "2026-08-05", alcance: "3 rutas" }, medido: { n: 8 } }));
+  eq("CONTROL · otro día Y otro número → sí estrena fichero", v2 !== g, true);
+  eq("…y la congelada sigue intacta", JSON.parse(leer(g)).medido.n, 7);
+  const v3 = callado(() => w(g, { meta: { fecha: "2026-08-05", alcance: "31 rutas" }, medido: { n: 7 } }));
+  eq("CONTROL · un `meta` que NO es volátil también estrena", v3 !== g, true);
+
   // la bandera explícita, que es la única forma de re-congelar
   const p5 = callado(() => w(f, { v: 9 }, { pisar: true }));
   eq("con `{pisar:true}` sí pisa", p5 === f && JSON.parse(leer(f)).v === 9, true);

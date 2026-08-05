@@ -96,6 +96,23 @@ const ev = new Evaluadas({ nombre: "extractor", unidad: "cuerpos", minimo: traba
 
 const porT = Object.fromEntries(VALIDOS.map((id) => [id, { aplicadas: 0, dianas: 0, violaciones: [] }]));
 const scriptsQuitados = [];
+/* Lo que T3b y T4b producen, y que el eje `existencia` empareja contra la
+ * captura: la LLAVE de cada media referenciada desde el cuerpo transformado. */
+const mediaDelCuerpo = [];
+const sinLlaveT3b = [];
+const sustitucionesT4b = [];
+const payloadIlegible = [];
+let captionNoCanonico = 0;
+/** §3.3 · las clases cuya sustitución NO es derivable — se listan, no se inventan. */
+const SIN_SUSTITUTO = {
+  "swiper-jsdelivr (→ T4b: galería nativa)": "decisión de RENDER — el dato está (10 · 11 · 11 slides como <a class=\"swiper-slide\">)",
+  "nbc (→ T4b: enlace a la noticia)": "IMPOSIBLE — el script sólo da la URL del REPRODUCTOR con su CID caducable, nunca la del artículo",
+};
+/** §3.3 · las que NO necesitan sustitución, verificado corriendo T1–T8. */
+const SIN_TRABAJO = {
+  "twitter (→ T4b: nodo-embed tipado)": "el <blockquote class=\"twitter-tweet\"> sobrevive con su texto y su enlace al estado: degrada a cita válida",
+  "instagram (→ T4b: nodo-embed tipado)": "el <blockquote class=\"instagram-media\"> sobrevive con su permalink: degrada a cita válida",
+};
 const censoContradicho = { etiquetas: new Map(), hosts: new Map() };
 const rechazosSaneador = [];
 const sinCuerpo = [];
@@ -122,7 +139,7 @@ for (const [clave, p] of trabajo) {
   }
 
   /* T1–T8, cada una con su diana y su postcondición EN SU ETAPA */
-  const ctx = { pagina: clave, rutas, scriptsQuitados };
+  const ctx = { pagina: clave, rutas, scriptsQuitados, mediaDelCuerpo, sinLlaveT3b, sustitucionesT4b, payloadIlegible };
   let html = cuerpo;
   const aplicado = {};
   for (const t of TRANSFORMACIONES) {
@@ -136,6 +153,7 @@ for (const [clave, p] of trabajo) {
     }
     for (const v of t.post(html, ctx)) porT[t.id].violaciones.push(`${clave}: ${v}`);
   }
+  captionNoCanonico += ctx.captionNoCanonico ?? 0;
 
   /* el contrato del alta, con el MISMO código que el `validate` */
   const veredicto = validaHtmlCorpus(html);
@@ -200,11 +218,36 @@ if (censoContradicho.etiquetas.size || censoContradicho.hosts.size) {
     console.log(`   · host ${h} en ${pags.length} página(s): ${pags.slice(0, 3).join(", ")}`);
 }
 
-const t4b = scriptsQuitados.filter((s) => s.clase !== "SIN CLASIFICAR");
-if (t4b.length) {
-  console.log(`\n  T4a se llevó ${t4b.length} <script> — T4b (la sustitución) SIGUE PENDIENTE en cada uno:`);
-  for (const s of t4b) console.log(`   · ${s.pagina}  [${s.clase}]`);
+/* ── T4b · lo sustituido, lo que no lo necesita, y lo que NO tiene sustituto ── */
+const porClase = (pred) => scriptsQuitados.filter((s) => pred(s.clase));
+const sinSustituto = porClase((c) => c in SIN_SUSTITUTO);
+const sinTrabajo = porClase((c) => c in SIN_TRABAJO);
+console.log(`\n  T4a se llevó ${scriptsQuitados.length} <script>. Reparto de T4b, en la unidad del CONTENEDOR:`);
+const porClaseT4b = new Map();
+for (const s of sustitucionesT4b) porClaseT4b.set(s.clase, (porClaseT4b.get(s.clase) ?? 0) + 1);
+for (const [c, n] of porClaseT4b) console.log(`   ✅ SUSTITUIDO  ${String(n).padStart(2)} × ${c}`);
+for (const s of sinTrabajo) console.log(`   ✅ SIN TRABAJO      ${s.pagina}  — ${SIN_TRABAJO[s.clase]}`);
+for (const s of sinSustituto) console.log(`   ⛔ SIN SUSTITUTO    ${s.pagina}  [${s.clase.split(" ")[0]}] — ${SIN_SUSTITUTO[s.clase]}`);
+if (payloadIlegible.length) {
+  rojo++;
+  console.error(`\n❌ ${payloadIlegible.length} payload(s) FB3D ilegible(s): el visor se queda sin su documento.`);
 }
+
+/* ── T3b · la relación de media que el cuerpo transformado declara ────────── */
+const llaves = new Set(mediaDelCuerpo.map((m) => m.clave));
+console.log(`\n  T3b/T4b · relación de media declarada en el cuerpo: ${mediaDelCuerpo.length} \`data-media\` · ${llaves.size} documentos distintos`);
+if (captionNoCanonico)
+  console.log(
+    `   ⚠ ${captionNoCanonico} bloque(s) \`wp-caption\` NO CANÓNICOS, dejados sin tocar a propósito:\n` +
+      `      su <p> sin cerrar mete un bloque \`calls\` dentro del contenedor, así que el </div>\n` +
+      `      cae después del CTA. Emparejarlos por balanceo se tragaría el CTA (§T3B-NO-CANONICO).`,
+  );
+if (sinLlaveT3b.length)
+  console.log(
+    `   ⚠ ${sinLlaveT3b.length} <img> de \`wp-caption\` SIN llave de media — hotlink a un host ajeno,\n` +
+      `      así que no son media nuestra y no pueden tener relación con la colección:\n` +
+      sinLlaveT3b.map((s) => `      · ${new URL(s.src).host}  (${s.pagina})`).join("\n"),
+  );
 
 w("medidas/extractor-corpus.json", {
   meta: {
@@ -216,6 +259,22 @@ w("medidas/extractor-corpus.json", {
   },
   porT: Object.fromEntries(Object.entries(porT).map(([id, e]) => [id, { aplicadas: e.aplicadas, dianas: e.dianas, violaciones: e.violaciones }])),
   scriptsQuitados,
+  /* La lista que consume el invariante D de `qa:artefacto` (eje `existencia`):
+   * lo que el cuerpo transformado declara como relación de media. Es DERIVADA
+   * —no escrita— y por eso una referencia nueva entra sola y pasa a exigirse. */
+  mediaDelCuerpo: {
+    referencias: mediaDelCuerpo.length,
+    documentos: [...new Set(mediaDelCuerpo.map((m) => m.clave))].sort(),
+    detalle: mediaDelCuerpo,
+    sinLlave: sinLlaveT3b,
+  },
+  t4b: {
+    sustituciones: sustitucionesT4b,
+    sinSustituto: sinSustituto.map((s) => ({ pagina: s.pagina, clase: s.clase, porQue: SIN_SUSTITUTO[s.clase] })),
+    sinTrabajo: sinTrabajo.map((s) => ({ pagina: s.pagina, clase: s.clase, porQue: SIN_TRABAJO[s.clase] })),
+    payloadIlegible,
+  },
+  t3b: { noCanonicos: captionNoCanonico },
   censoContradicho: {
     etiquetas: Object.fromEntries(censoContradicho.etiquetas),
     hosts: Object.fromEntries(censoContradicho.hosts),
@@ -225,8 +284,9 @@ w("medidas/extractor-corpus.json", {
   paginas,
 });
 
+const N = TRANSFORMACIONES.length;
 console.log(
   `\n${rojo === 0 ? "✅" : "❌"} extractor: ${trabajo.length - sinCuerpo.length}/${trabajo.length} cuerpos · ` +
-    `${rojo === 0 ? "8/8 postcondiciones limpias y el saneador admite el corpus transformado" : `${rojo} guarda(s) en rojo`}\n`,
+    `${rojo === 0 ? `${N}/${N} postcondiciones limpias y el saneador admite el corpus transformado` : `${rojo} guarda(s) en rojo`}\n`,
 );
 process.exit(rojo === 0 ? 0 : 2);
