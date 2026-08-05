@@ -89,7 +89,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "productos",
@@ -97,7 +97,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "productos",
@@ -105,7 +105,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.069Z\""
+      "real": "\"2026-08-04T23:56:35.398Z\""
     },
     {
       "coleccion": "productos",
@@ -113,7 +113,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "productos",
@@ -121,7 +121,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.293Z\""
+      "real": "\"2026-08-04T23:56:35.585Z\""
     },
     {
       "coleccion": "productos",
@@ -129,7 +129,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.402Z\""
+      "real": "\"2026-08-04T23:56:35.676Z\""
     },
     {
       "coleccion": "productos",
@@ -137,7 +137,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.472Z\""
+      "real": "\"2026-08-04T23:56:35.745Z\""
     },
     {
       "coleccion": "productos",
@@ -145,7 +145,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.589Z\""
+      "real": "\"2026-08-04T23:56:35.824Z\""
     },
     {
       "coleccion": "productos",
@@ -153,7 +153,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.698Z\""
+      "real": "\"2026-08-04T23:56:35.908Z\""
     },
     {
       "coleccion": "sectores",
@@ -161,7 +161,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "sectores",
@@ -169,7 +169,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "sectores",
@@ -177,7 +177,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "sectores",
@@ -185,7 +185,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.934Z\""
+      "real": "\"2026-08-04T23:56:36.139Z\""
     },
     {
       "coleccion": "sectores",
@@ -193,7 +193,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "sectores",
@@ -201,7 +201,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "sectores",
@@ -209,7 +209,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "sectores",
@@ -217,7 +217,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:13.243Z\""
+      "real": "\"2026-08-04T23:56:36.527Z\""
     },
     {
       "coleccion": "sectores",
@@ -225,7 +225,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "sectores",
@@ -233,7 +233,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "sectores",
@@ -241,7 +241,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "sectores",
@@ -249,7 +249,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:13.533Z\""
+      "real": "\"2026-08-04T23:56:36.859Z\""
     },
     {
       "coleccion": "sectores",
@@ -257,7 +257,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "sectores",
@@ -265,7 +265,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "sectores",
@@ -273,7 +273,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "sectores",
@@ -281,7 +281,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:13.815Z\""
+      "real": "\"2026-08-04T23:56:37.154Z\""
     },
     {
       "coleccion": "monograficos",
@@ -289,7 +289,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "monograficos",
@@ -297,7 +297,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "monograficos",
@@ -305,7 +305,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "monograficos",
@@ -313,7 +313,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.035Z\""
+      "real": "\"2026-08-04T23:56:37.409Z\""
     },
     {
       "coleccion": "monograficos",
@@ -321,7 +321,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.827Z\""
+      "real": "\"2026-08-04T23:56:35.144Z\""
     },
     {
       "coleccion": "monograficos",
@@ -329,7 +329,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:11.962Z\""
+      "real": "\"2026-08-04T23:56:35.291Z\""
     },
     {
       "coleccion": "monograficos",
@@ -337,7 +337,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:12.193Z\""
+      "real": "\"2026-08-04T23:56:35.498Z\""
     },
     {
       "coleccion": "monograficos",
@@ -345,7 +345,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.524Z\""
+      "real": "\"2026-08-04T23:56:37.848Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -353,7 +353,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.765Z\""
+      "real": "\"2026-08-04T23:56:38.132Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -361,7 +361,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.883Z\""
+      "real": "\"2026-08-04T23:56:38.243Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -369,7 +369,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.966Z\""
+      "real": "\"2026-08-04T23:56:38.330Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -377,7 +377,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.047Z\""
+      "real": "\"2026-08-04T23:56:38.415Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -385,7 +385,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.057Z\""
+      "real": "\"2026-08-04T23:56:38.424Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -393,7 +393,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.065Z\""
+      "real": "\"2026-08-04T23:56:38.429Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -401,7 +401,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.072Z\""
+      "real": "\"2026-08-04T23:56:38.435Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -409,7 +409,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.221Z\""
+      "real": "\"2026-08-04T23:56:38.569Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -417,7 +417,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.230Z\""
+      "real": "\"2026-08-04T23:56:38.576Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -425,7 +425,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.239Z\""
+      "real": "\"2026-08-04T23:56:38.581Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -433,7 +433,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.373Z\""
+      "real": "\"2026-08-04T23:56:38.706Z\""
     },
     {
       "coleccion": "casos",
@@ -441,7 +441,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.065Z\""
+      "real": "\"2026-08-04T23:56:38.429Z\""
     },
     {
       "coleccion": "casos",
@@ -449,7 +449,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.765Z\""
+      "real": "\"2026-08-04T23:56:38.132Z\""
     },
     {
       "coleccion": "casos",
@@ -457,7 +457,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.431Z\""
+      "real": "\"2026-08-04T23:56:38.762Z\""
     },
     {
       "coleccion": "casos",
@@ -465,7 +465,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.591Z\""
+      "real": "\"2026-08-04T23:56:38.876Z\""
     },
     {
       "coleccion": "casos",
@@ -473,7 +473,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.765Z\""
+      "real": "\"2026-08-04T23:56:38.132Z\""
     },
     {
       "coleccion": "casos",
@@ -481,7 +481,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.761Z\""
+      "real": "\"2026-08-04T23:56:39.042Z\""
     },
     {
       "coleccion": "casos",
@@ -489,7 +489,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:14.883Z\""
+      "real": "\"2026-08-04T23:56:38.243Z\""
     },
     {
       "coleccion": "casos",
@@ -497,7 +497,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.921Z\""
+      "real": "\"2026-08-04T23:56:39.198Z\""
     },
     {
       "coleccion": "faqs",
@@ -505,7 +505,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.947Z\""
+      "real": "\"2026-08-04T23:56:39.227Z\""
     },
     {
       "coleccion": "faqs",
@@ -513,7 +513,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.956Z\""
+      "real": "\"2026-08-04T23:56:39.235Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -521,7 +521,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:15.986Z\""
+      "real": "\"2026-08-04T23:56:39.264Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -529,7 +529,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.032Z\""
+      "real": "\"2026-08-04T23:56:39.311Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -537,7 +537,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.082Z\""
+      "real": "\"2026-08-04T23:56:39.361Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -545,7 +545,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.136Z\""
+      "real": "\"2026-08-04T23:56:39.411Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -553,7 +553,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.189Z\""
+      "real": "\"2026-08-04T23:56:39.456Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -561,7 +561,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.244Z\""
+      "real": "\"2026-08-04T23:56:39.503Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -569,7 +569,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.332Z\""
+      "real": "\"2026-08-04T23:56:39.594Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -577,7 +577,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.407Z\""
+      "real": "\"2026-08-04T23:56:39.664Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -585,7 +585,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.503Z\""
+      "real": "\"2026-08-04T23:56:39.739Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -593,7 +593,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.527Z\""
+      "real": "\"2026-08-04T23:56:39.762Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -601,7 +601,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.614Z\""
+      "real": "\"2026-08-04T23:56:39.829Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -609,7 +609,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.659Z\""
+      "real": "\"2026-08-04T23:56:39.856Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -617,7 +617,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.697Z\""
+      "real": "\"2026-08-04T23:56:39.883Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -625,7 +625,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-04T19:27:16.735Z\""
+      "real": "\"2026-08-04T23:56:39.906Z\""
     }
   ]
 }

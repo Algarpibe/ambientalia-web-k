@@ -26,10 +26,9 @@
  *
  * Uso: npm run qa:cms-teaser-neg
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const casos = [
   {
@@ -58,18 +57,16 @@ console.log(`  el falsador de §F2-2 · TEASER, falsado — ${casos.length} sabo
 const ev = new Evaluadas({ nombre: "cms-teaser-neg", unidad: "sabotajes", minimo: casos.length });
 let fallos = 0;
 
-const corre = (env) =>
-  spawnSync(process.execPath, [join(QA, "cms-teaser.mjs")], {
-    env: { ...process.env, PISAR: "1", ...env },
-    encoding: "utf8",
-    timeout: 300_000,
-  });
+/* Todo por `corridaNegativa`: el desvío a `-neg-` lo pone NEG por construcción,
+ * y PISAR no puede llegar al hijo ni exportado. */
+const corre = (etiqueta, env = {}) =>
+  corridaNegativa({ etiqueta, args: [join(QA, "cms-teaser.mjs")], env, timeout: 300_000 });
 
 for (const c of casos) {
   const fichero = join(QA, `medidas/cms-teaser-neg-${c.sabotaje}.json`);
   if (existsSync(fichero)) rmSync(fichero);
 
-  const res = corre({ SABOTAJE: c.sabotaje });
+  const res = corre(c.sabotaje, { SABOTAJE: c.sabotaje });
   const out = (res.stdout || "") + (res.stderr || "");
   if (res.error || res.status === null) ev.fallo(c.sabotaje, res.error || "no llegó a correr");
   else ev.ok();
@@ -87,12 +84,12 @@ for (const c of casos) {
 }
 
 /* ── EL CONTROL ─────────────────────────────────────────────────────────── */
-/* ⚠ El CONTROL escribe en SU PROPIO nombre. Antes iba con PISAR sobre la
- * medida canónica: una corrida de un test en negativo re-congelando la
- * evidencia buena, que es la regla 5 automatizada. */
-const F_CTL = "medidas/cms-teaser-neg-control.json";
-const fCtl = join(QA, F_CTL);
-const ctl = corre({ SALIDA: F_CTL });
+/* El CONTROL escribe en SU PROPIO nombre POR CONSTRUCCIÓN: `corridaNegativa`
+ * pone NEG=control y `w()` desvía la canónica a `-neg-control`. El nombre se
+ * DERIVA con `nombreNeg`, no se escribe a mano. */
+const fCtl = join(QA, nombreNeg("medidas/cms-teaser.json", "control"));
+if (existsSync(fCtl)) rmSync(fCtl);
+const ctl = corre("control");
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 let malCtl = null;
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;

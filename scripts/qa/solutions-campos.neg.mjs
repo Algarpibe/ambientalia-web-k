@@ -17,10 +17,9 @@
  * respuesta conocida (su modelo existe en `src/lib`), o sea la única donde un
  * «no veo campos» se puede declarar falso.
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const SOLO = "monitor-calidad-aire";
 const SUF = `-solo-${SOLO.replace(/[^a-z0-9]+/gi, "-")}`;
@@ -57,9 +56,10 @@ for (const c of casos) {
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = spawnSync(process.execPath, [join(QA, "solutions-campos.mjs")], {
-    env: { ...process.env, SABOTAJE: c.sabotaje, SOLO, PISAR: "1" },
-    encoding: "utf8",
+  const res = corridaNegativa({
+    etiqueta: c.sabotaje,
+    args: [join(QA, "solutions-campos.mjs")],
+    env: { SABOTAJE: c.sabotaje, SOLO },
     timeout: 600_000,
   });
   const out = (res.stdout || "") + (res.stderr || "");
@@ -79,11 +79,39 @@ for (const c of casos) {
   else console.log(`  ✓  SABOTAJE=${c.sabotaje.padEnd(8)} (${seg}s)  ${c.porQue}`);
 }
 
+/* ── EL CONTROL DE VERDAD (añadido 2026-08-04, F2-2 bloque 2) ─────────────
+ * El pendiente 8 del HANDOFF 26.ª, cobrado al tocar el fichero: este test
+ * tenía un SABOTAJE *llamado* `control` —que prueba que la guarda del cero
+ * dispara— y NINGUNA corrida limpia. Sin ella, una sonda rota de fábrica
+ * pasaría los tres sabotajes (F2-1 §5). La corrida limpia va por NEG=control,
+ * así que escribe en su propio nombre por construcción. */
+const fCtl = join(QA, nombreNeg(`medidas/solutions-campos${SUF}.json`, "control"));
+if (existsSync(fCtl)) rmSync(fCtl);
+const t0 = Date.now();
+const ctl = corridaNegativa({
+  etiqueta: "control",
+  args: [join(QA, "solutions-campos.mjs")],
+  env: { SOLO },
+  timeout: 600_000,
+});
+const segCtl = ((Date.now() - t0) / 1000).toFixed(0);
+let malCtl = null;
+if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
+else if (!existsSync(fCtl)) malCtl = "no congeló su medida";
+else {
+  const d = JSON.parse(readFileSync(fCtl, "utf8"));
+  const n = d.paginas[SOLO]?.nModulos;
+  if (!(n > 0)) malCtl = `la instancia CONSTRUIDA salió con nModulos=${n} — el control no vio nada`;
+}
+if (malCtl) { fallos++; console.log(`  ❌ CONTROL   (sin sabotaje) (${segCtl}s)  ${malCtl}`); }
+else console.log(`  ✓  CONTROL   (sin sabotaje) (${segCtl}s)  exit 0 y la CONSTRUIDA trae módulos — la sonda no falla siempre`);
+
+const total = casos.length + 1;
 console.log(
-  `\n${fallos === 0 ? "✅" : "❌"} solutions-campos · test en negativo: ${casos.length - fallos}/${casos.length}\n` +
+  `\n${fallos === 0 ? "✅" : "❌"} solutions-campos · test en negativo: ${total - fallos}/${total}\n` +
     (fallos === 0
-      ? `   El CONTROL dispara por su cuenta, así que un «esta forma trae pocos campos»\n` +
-        `   de esta sonda no puede ser un cero de instrumento sin que se vea.\n`
+      ? `   El CONTROL dispara por su cuenta, la corrida limpia pasa, así que un «esta\n` +
+        `   forma trae pocos campos» de esta sonda no puede ser un cero de instrumento.\n`
       : `   Un limpio de esta sonda NO se puede leer hasta que esto salga en verde.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);

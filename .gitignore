@@ -1,5 +1,9 @@
 # Dependencies
 node_modules/
+
+# Corpus: la CAPTURA se commitea (línea base); lo transformado se DERIVA de
+# captura + código (T1-T8 re-ejecutables) y no se versiona.
+corpus/transformado/
 .pnp
 .pnp.js
 

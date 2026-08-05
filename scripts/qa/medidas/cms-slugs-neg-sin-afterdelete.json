@@ -14,7 +14,7 @@
     {
       "paso": "2 · MISMO slug, otra familia ⇒ el alta CAE",
       "esperado": "cae",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-25844-accesorios» ya está en el plano",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-7376-accesorios» ya está en el plano ",
       "ok": true
     },
     {
@@ -32,7 +32,7 @@
     {
       "paso": "5 · borrar ⇒ suelta el slug y se puede reusar",
       "esperado": "pasa",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-25844-accesorios» ya está en el plano",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-7376-accesorios» ya está en el plano ",
       "ok": false
     }
   ]

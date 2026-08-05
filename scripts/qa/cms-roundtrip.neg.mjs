@@ -53,10 +53,9 @@
  *
  * Uso: npm run qa:cms-roundtrip-neg   (necesita el Postgres del CMS vivo)
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const RAIZ = join(QA, "../..");
 
@@ -138,11 +137,13 @@ const ev = new Evaluadas({
 });
 let fallos = 0;
 
-const corre = (env) =>
-  spawnSync(process.execPath, ["--env-file=apps/cms/.env", join(QA, "cms-roundtrip.mjs")], {
+/* Todo por `corridaNegativa`: el desvío a `-neg-` lo pone NEG por construcción. */
+const corre = (etiqueta, env = {}) =>
+  corridaNegativa({
+    etiqueta,
+    args: ["--env-file=apps/cms/.env", join(QA, "cms-roundtrip.mjs")],
+    env,
     cwd: RAIZ,
-    env: { ...process.env, PISAR: "1", ...env },
-    encoding: "utf8",
     timeout: 900_000,
   });
 
@@ -151,7 +152,7 @@ for (const c of casos) {
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = corre({ SABOTAJE: c.sabotaje });
+  const res = corre(c.sabotaje, { SABOTAJE: c.sabotaje });
   const seg = ((Date.now() - t0) / 1000).toFixed(0);
   if (res.error || res.status === null) ev.fallo(c.sabotaje, res.error || "no llegó a correr");
   else ev.ok();
@@ -178,7 +179,7 @@ for (const c of casos) {
 /* ── LOS PUNTOS CIEGOS, corridos y verificados como tales ────────────────── */
 for (const c of ciegos) {
   const t0 = Date.now();
-  const res = corre({ SABOTAJE: c.sabotaje });
+  const res = corre(c.sabotaje, { SABOTAJE: c.sabotaje });
   const seg = ((Date.now() - t0) / 1000).toFixed(0);
   const salida = (res.stdout || "") + (res.stderr || "");
   ev.ok();
@@ -199,11 +200,10 @@ for (const c of ciegos) {
  *    declaradas verificadas. Sin esta mitad, una sonda rota de fábrica pasaría
  *    los cuatro negativos — F2-1 §5. ──────────────────────────────────────── */
 const t0 = Date.now();
-/* ⚠ El CONTROL escribe en SU PROPIO nombre. Antes iba con PISAR sobre la
- * medida canónica: una corrida de un test en negativo re-congelando la
- * evidencia buena, que es la regla 5 automatizada. */
-const F_CTL = "medidas/cms-roundtrip-neg-control.json";
-const ctl = corre({ SALIDA: F_CTL });
+/* El CONTROL escribe en SU PROPIO nombre POR CONSTRUCCIÓN (NEG=control). */
+const fCtl = join(QA, nombreNeg("medidas/cms-roundtrip.json", "control"));
+if (existsSync(fCtl)) rmSync(fCtl);
+const ctl = corre("control");
 const seg = ((Date.now() - t0) / 1000).toFixed(0);
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 const exigeControl = [

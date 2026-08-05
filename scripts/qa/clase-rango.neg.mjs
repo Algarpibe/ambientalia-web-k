@@ -26,10 +26,9 @@
  * cierran el código de salida.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, QA } from "./lib.mjs";
 
 /* Una sola ruta, y **tiene que ser un monográfico**: es la única familia con
  * respuesta conocida (CAMPO, `anchoPct` 70·80·90), o sea la única donde el
@@ -86,9 +85,10 @@ for (const c of casos) {
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = spawnSync(process.execPath, [join(QA, "clase-rango.mjs"), "1440"], {
-    env: { ...process.env, SABOTAJE: c.sabotaje, SOLO, PISAR: "1" },
-    encoding: "utf8",
+  const res = corridaNegativa({
+    etiqueta: c.sabotaje,
+    args: [join(QA, "clase-rango.mjs"), "1440"],
+    env: { SABOTAJE: c.sabotaje, SOLO },
     timeout: 600_000,
   });
   const out = (res.stdout || "") + (res.stderr || "");

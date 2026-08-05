@@ -1,0 +1,2538 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "fuente": "HTML crudo servido por kunakair.com (bytes sin re-codificar)",
+    "derivacion": "cms-arquetipos.json (§2f) + a-censo.json + c-censo.json + solutions-campos.json",
+    "etiqueta": "secuencial · 500 ms entre peticiones · una vez por página (entre corridas)",
+    "fuera": {
+      "sectores": "CONSTRUIDA completa: el cuerpo es dato tipado transcrito (SectorPage), no blob de WordPress",
+      "monograficos": "CONSTRUIDA completa: ídem (MonoModulo/MonoInline, §3.1d)",
+      "taxonomia-sectores": "REFERENCIADA con término embebido completo (§2c): no tiene cuerpo que capturar"
+    }
+  },
+  "resumen": {
+    "paginas": 309,
+    "htmlBytes": 105108002,
+    "cuerpoBytes": 4584486,
+    "mediaUrlsDistintas": 1819,
+    "porColeccion": {
+      "entradas-blog": {
+        "paginas": 149,
+        "htmlBytes": 50695934,
+        "cuerpoBytes": 3255212,
+        "conPostContent": 149,
+        "sinPostContent": 0
+      },
+      "terminos-kunakpedia": {
+        "paginas": 37,
+        "htmlBytes": 13180594,
+        "cuerpoBytes": 1287230,
+        "conPostContent": 37,
+        "sinPostContent": 0
+      },
+      "documentos-cientificos": {
+        "paginas": 23,
+        "htmlBytes": 6817673,
+        "cuerpoBytes": 42044,
+        "conPostContent": 23,
+        "sinPostContent": 0
+      },
+      "casos": {
+        "paginas": 57,
+        "htmlBytes": 19301400,
+        "cuerpoBytes": 0,
+        "conPostContent": 0,
+        "sinPostContent": 57
+      },
+      "faqs": {
+        "paginas": 19,
+        "htmlBytes": 5421595,
+        "cuerpoBytes": 0,
+        "conPostContent": 0,
+        "sinPostContent": 19
+      },
+      "productos": {
+        "paginas": 24,
+        "htmlBytes": 9690806,
+        "cuerpoBytes": 0,
+        "conPostContent": 0,
+        "sinPostContent": 24
+      }
+    }
+  },
+  "paginas": {
+    "entradas-blog/estamos-listos-para-ayudarle": {
+      "url": "https://kunakair.com/es/estamos-listos-para-ayudarle/",
+      "fichero": "entradas-blog/estamos-listos-para-ayudarle.html",
+      "http": 200,
+      "bytes": 301361,
+      "sha256": "a70c0fa2ccdf10cc95e56ec21d20bf5b0e8b8e9e92ff50d815f5243674273f99",
+      "capturada": "2026-08-04T23:58:03.447Z"
+    },
+    "entradas-blog/nos-hemos-mudado": {
+      "url": "https://kunakair.com/es/nos-hemos-mudado/",
+      "fichero": "entradas-blog/nos-hemos-mudado.html",
+      "http": 200,
+      "bytes": 298317,
+      "sha256": "7d91f6b4e68fc4eb6227c3681a0e6d122e5a44140c2ef74dc9d7616cc820ba30",
+      "capturada": "2026-08-04T23:58:05.970Z"
+    },
+    "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar": {
+      "url": "https://kunakair.com/es/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar/",
+      "fichero": "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
+      "http": 200,
+      "bytes": 312551,
+      "sha256": "9cd9c0c657a3340b2c7b25c742a5c1555df484d3d033176608ec40164f71ea15",
+      "capturada": "2026-08-04T23:58:08.317Z"
+    },
+    "entradas-blog/covid-19-calidad-del-aire": {
+      "url": "https://kunakair.com/es/covid-19-calidad-del-aire/",
+      "fichero": "entradas-blog/covid-19-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 304887,
+      "sha256": "f3ffada06f7916f5fbf76628dc8de5d97219553081d89e32786466defa33bb48",
+      "capturada": "2026-08-04T23:58:10.859Z"
+    },
+    "entradas-blog/detectores-emisiones-coronavirus-contaminacion": {
+      "url": "https://kunakair.com/es/detectores-emisiones-coronavirus-contaminacion/",
+      "fichero": "entradas-blog/detectores-emisiones-coronavirus-contaminacion.html",
+      "http": 200,
+      "bytes": 318791,
+      "sha256": "4b04a74778b2237b3af98e47bb952b83032cd5c33f5b36943904477709bc0301",
+      "capturada": "2026-08-04T23:58:13.274Z"
+    },
+    "entradas-blog/webinar-redes-hibridas-monitorizacion-ambiental": {
+      "url": "https://kunakair.com/es/webinar-redes-hibridas-monitorizacion-ambiental/",
+      "fichero": "entradas-blog/webinar-redes-hibridas-monitorizacion-ambiental.html",
+      "http": 200,
+      "bytes": 307618,
+      "sha256": "af45e6247938f4b17b892acb0a0319b3acb903c4c4cebcfff63bf1f8df0d0e95",
+      "capturada": "2026-08-04T23:58:15.582Z"
+    },
+    "entradas-blog/webinar-como-controlar-las-emisiones-en-mineria-junio-2025": {
+      "url": "https://kunakair.com/es/webinar-como-controlar-las-emisiones-en-mineria-junio-2025/",
+      "fichero": "entradas-blog/webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+      "http": 200,
+      "bytes": 321164,
+      "sha256": "33caefc5aca36b78e0adc97781208d4872a4bbb442a8ffbd18396b2086ba826b",
+      "capturada": "2026-08-04T23:58:18.031Z"
+    },
+    "entradas-blog/proyecto-simgo": {
+      "url": "https://kunakair.com/es/proyecto-simgo/",
+      "fichero": "entradas-blog/proyecto-simgo.html",
+      "http": 200,
+      "bytes": 298479,
+      "sha256": "67a5d6672739b127f6ff4bed40ba25d52e307f550f84cf1a219c56418ccff944",
+      "capturada": "2026-08-04T23:58:20.628Z"
+    },
+    "entradas-blog/el-sensor-de-calidad-del-aire-mas-preciso": {
+      "url": "https://kunakair.com/es/el-sensor-de-calidad-del-aire-mas-preciso/",
+      "fichero": "entradas-blog/el-sensor-de-calidad-del-aire-mas-preciso.html",
+      "http": 200,
+      "bytes": 310245,
+      "sha256": "f878220a3710017deb4d25313491ca567e42b34abe595c9eebf1ff702f195d35",
+      "capturada": "2026-08-04T23:58:22.968Z"
+    },
+    "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados": {
+      "url": "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+      "fichero": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados.html",
+      "http": 200,
+      "bytes": 445801,
+      "sha256": "c3d0ba52d71054c37ea7cc6af9c1a64ed22e134ada740021852c6188fbedb141",
+      "capturada": "2026-08-04T23:58:25.641Z"
+    },
+    "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "fichero": "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos.html",
+      "http": 200,
+      "bytes": 449219,
+      "sha256": "ff7399ce7eba88ea6d63b04c4b4b8188a341e0cf4ca220b942e3e13f7456b1e0",
+      "capturada": "2026-08-04T23:58:28.302Z"
+    },
+    "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas": {
+      "url": "https://kunakair.com/es/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas/",
+      "fichero": "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas.html",
+      "http": 200,
+      "bytes": 369192,
+      "sha256": "8dbb9f6846921c54949802b7fc687e5c0f704cb8dc972b9d6317949840cf775b",
+      "capturada": "2026-08-04T23:58:30.791Z"
+    },
+    "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "fichero": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano.html",
+      "http": 200,
+      "bytes": 465342,
+      "sha256": "19a6d4629dfc225e0dfe4354558e09538ebf556572d1ecddcbb7632fef4c6b3b",
+      "capturada": "2026-08-04T23:58:33.308Z"
+    },
+    "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales": {
+      "url": "https://kunakair.com/es/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales/",
+      "fichero": "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales.html",
+      "http": 200,
+      "bytes": 436996,
+      "sha256": "b440b74a476a0b42dd2c2ddf43ba120ef474053935ca6f6814fac2a22fd3e03c",
+      "capturada": "2026-08-04T23:58:36.810Z"
+    },
+    "entradas-blog/particulas-ultrafinas-puf": {
+      "url": "https://kunakair.com/es/particulas-ultrafinas-puf/",
+      "fichero": "entradas-blog/particulas-ultrafinas-puf.html",
+      "http": 200,
+      "bytes": 411493,
+      "sha256": "786e9f52063e687615d118426cf8cc1cb21392603a65f34117e214625bccadea",
+      "capturada": "2026-08-04T23:58:39.541Z"
+    },
+    "entradas-blog/emisiones-ganaderas-y-calidad-del-aire": {
+      "url": "https://kunakair.com/es/emisiones-ganaderas-y-calidad-del-aire/",
+      "fichero": "entradas-blog/emisiones-ganaderas-y-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 407443,
+      "sha256": "91006e4f9cf6a1e98b8e86ab91168a056459dac6e2b038bf02fcaca9e3edd06a",
+      "capturada": "2026-08-04T23:58:42.519Z"
+    },
+    "entradas-blog/monitorizacion-de-olores-en-edar": {
+      "url": "https://kunakair.com/es/monitorizacion-de-olores-en-edar/",
+      "fichero": "entradas-blog/monitorizacion-de-olores-en-edar.html",
+      "http": 200,
+      "bytes": 438121,
+      "sha256": "20c0919d5b00fe6e43b3e5ee84274ca4b6b5e05bed461ced7a673a414f846762",
+      "capturada": "2026-08-04T23:58:45.218Z"
+    },
+    "entradas-blog/calidad-del-aire-en-islas": {
+      "url": "https://kunakair.com/es/calidad-del-aire-en-islas/",
+      "fichero": "entradas-blog/calidad-del-aire-en-islas.html",
+      "http": 200,
+      "bytes": 400402,
+      "sha256": "0c5d8a78e18ee18e9c906e9c5d346dcc4436284db4c932f9b7b6f531d6e407eb",
+      "capturada": "2026-08-04T23:58:47.612Z"
+    },
+    "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla": {
+      "url": "https://kunakair.com/es/corrosion-ambiental-causas-factores-y-como-prevenirla/",
+      "fichero": "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla.html",
+      "http": 200,
+      "bytes": 394581,
+      "sha256": "2afaf07de620465625c80b7920ead1f1703c250d15b7af45b875b5f3fe0bc8cf",
+      "capturada": "2026-08-04T23:58:50.010Z"
+    },
+    "entradas-blog/biometano-y-biogas": {
+      "url": "https://kunakair.com/es/biometano-y-biogas/",
+      "fichero": "entradas-blog/biometano-y-biogas.html",
+      "http": 200,
+      "bytes": 414805,
+      "sha256": "8e8e491134d13895c32c6055509da7d2f46176efee6e0683e892a0fa87f4be5d",
+      "capturada": "2026-08-04T23:58:52.603Z"
+    },
+    "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica": {
+      "url": "https://kunakair.com/es/justicia-climatica-financiacion-climatica-y-seguridad-climatica/",
+      "fichero": "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica.html",
+      "http": 200,
+      "bytes": 420233,
+      "sha256": "e6aea95157a69c2d8bfa55a87a858722ba3760b04c2eb18caf605c3ff6bdae9d",
+      "capturada": "2026-08-04T23:58:55.144Z"
+    },
+    "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto": {
+      "url": "https://kunakair.com/es/sargazo-problemas-ambientales-y-monitorizacion-del-impacto/",
+      "fichero": "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto.html",
+      "http": 200,
+      "bytes": 385848,
+      "sha256": "50705989a455b9b58e3e57fb42511002301d2999248b25335ab03896a3a4ece4",
+      "capturada": "2026-08-04T23:58:57.633Z"
+    },
+    "entradas-blog/calibracion-de-sensores-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/calibracion-de-sensores-de-calidad-del-aire/",
+      "fichero": "entradas-blog/calibracion-de-sensores-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 363604,
+      "sha256": "fef2158242f0143795bd334dfb03efdc078074dd227ee9e37d85183b6a99e9d3",
+      "capturada": "2026-08-04T23:59:00.166Z"
+    },
+    "entradas-blog/contaminacion-acustica": {
+      "url": "https://kunakair.com/es/contaminacion-acustica/",
+      "fichero": "entradas-blog/contaminacion-acustica.html",
+      "http": 200,
+      "bytes": 396866,
+      "sha256": "1ecb5bcc5a406205ef853d71e8ba66a11945d016516dcbb217b7d561ebcc2c4e",
+      "capturada": "2026-08-04T23:59:02.626Z"
+    },
+    "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881": {
+      "url": "https://kunakair.com/es/nueva-directiva-de-calidad-del-aire-ue-2024-2881/",
+      "fichero": "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881.html",
+      "http": 200,
+      "bytes": 347772,
+      "sha256": "4a049a3e600fb5c2e6cb1f88c5dbff3f26589206e3ac7d720cf1c8b5cc508e6e",
+      "capturada": "2026-08-04T23:59:05.119Z"
+    },
+    "entradas-blog/impacto-ambiental-de-la-industria-petroquimica": {
+      "url": "https://kunakair.com/es/impacto-ambiental-de-la-industria-petroquimica/",
+      "fichero": "entradas-blog/impacto-ambiental-de-la-industria-petroquimica.html",
+      "http": 200,
+      "bytes": 383819,
+      "sha256": "bbe07a762ff32c5409048d850046aa56413844bafff8cbf60a8991bb6445b265",
+      "capturada": "2026-08-04T23:59:08.255Z"
+    },
+    "entradas-blog/running-for-clean-air": {
+      "url": "https://kunakair.com/es/running-for-clean-air/",
+      "fichero": "entradas-blog/running-for-clean-air.html",
+      "http": 200,
+      "bytes": 380246,
+      "sha256": "440c5d2e23c8e9e6c734864f26c1cd9529842578e1bc6bf12f970483ba29dd07",
+      "capturada": "2026-08-04T23:59:11.733Z"
+    },
+    "entradas-blog/contaminacion-del-aire-en-vertederos": {
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-vertederos/",
+      "fichero": "entradas-blog/contaminacion-del-aire-en-vertederos.html",
+      "http": 200,
+      "bytes": 413957,
+      "sha256": "dffec6634a69fad972cca82431c1bad4ec327950f00c2070cfd046da972e864b",
+      "capturada": "2026-08-04T23:59:14.444Z"
+    },
+    "entradas-blog/contaminacion-por-produccion-de-energia": {
+      "url": "https://kunakair.com/es/contaminacion-por-produccion-de-energia/",
+      "fichero": "entradas-blog/contaminacion-por-produccion-de-energia.html",
+      "http": 200,
+      "bytes": 394744,
+      "sha256": "e3dbf22fe6dc49ab5e375204050829b612c0b0108ea5cf66fff9ebed538fa6c1",
+      "capturada": "2026-08-04T23:59:17.450Z"
+    },
+    "entradas-blog/webinar-control-de-olores-en-vertederos-y-edar": {
+      "url": "https://kunakair.com/es/webinar-control-de-olores-en-vertederos-y-edar/",
+      "fichero": "entradas-blog/webinar-control-de-olores-en-vertederos-y-edar.html",
+      "http": 200,
+      "bytes": 303923,
+      "sha256": "74f928de24d4df17acf35100203ca0ab41a6141a6a5d876984e9599015adeb39",
+      "capturada": "2026-08-04T23:59:20.076Z"
+    },
+    "entradas-blog/proyecto-pure-cities": {
+      "url": "https://kunakair.com/es/proyecto-pure-cities/",
+      "fichero": "entradas-blog/proyecto-pure-cities.html",
+      "http": 200,
+      "bytes": 356454,
+      "sha256": "87cd7927900be03963ae310324e86b399ea401e11fafad237c71e58d999fcaf1",
+      "capturada": "2026-08-04T23:59:22.763Z"
+    },
+    "entradas-blog/contaminacion-por-metano": {
+      "url": "https://kunakair.com/es/contaminacion-por-metano/",
+      "fichero": "entradas-blog/contaminacion-por-metano.html",
+      "http": 200,
+      "bytes": 475225,
+      "sha256": "5f9d439e8350d3a883b9ea7ed9f9a83cb72c753d0202af948d4da7a767e6c59c",
+      "capturada": "2026-08-04T23:59:25.447Z"
+    },
+    "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "url": "https://kunakair.com/es/la-contaminacion-del-aire-el-asesino-silencioso-de-europa/",
+      "fichero": "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa.html",
+      "http": 200,
+      "bytes": 350630,
+      "sha256": "e2f775ac33c26a6f8a1dbdeb50dd62c02ad2b8438d71c8af48800556f6595072",
+      "capturada": "2026-08-04T23:59:28.514Z"
+    },
+    "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/impacto-ambiental-del-acero-en-la-calidad-del-aire/",
+      "fichero": "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 369360,
+      "sha256": "98669135517a1f76c95dd8276ce54a366ee90f5f77192751adda5ec97fb93bc4",
+      "capturada": "2026-08-04T23:59:31.141Z"
+    },
+    "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica": {
+      "url": "https://kunakair.com/es/gases-de-efecto-invernadero-y-accion-climatica/",
+      "fichero": "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica.html",
+      "http": 200,
+      "bytes": 410989,
+      "sha256": "e7ca6180852b6ca047aba58515f06308e69d20c0a76e42f9be85fae65423416e",
+      "capturada": "2026-08-04T23:59:33.776Z"
+    },
+    "entradas-blog/microsensores-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/microsensores-de-calidad-del-aire/",
+      "fichero": "entradas-blog/microsensores-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 327347,
+      "sha256": "6f2bdb5d26a1dc8e8a05799df2022c769de8420419505bd3f6b0098fd869acc3",
+      "capturada": "2026-08-04T23:59:36.348Z"
+    },
+    "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio": {
+      "url": "https://kunakair.com/es/justicia-ambiental-el-derecho-a-respirar-aire-limpio/",
+      "fichero": "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio.html",
+      "http": 200,
+      "bytes": 380707,
+      "sha256": "f54e13cce240e6d6127fda447b0a494da2ca74cec8bcf4eb0b3aeabe9cb87011",
+      "capturada": "2026-08-04T23:59:39.195Z"
+    },
+    "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas": {
+      "url": "https://kunakair.com/es/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas/",
+      "fichero": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas.html",
+      "http": 200,
+      "bytes": 372028,
+      "sha256": "592a97798719b81e6fb9ac09a47534dcf0ea6bc5a0a5f9c399c822d19c3ffdb0",
+      "capturada": "2026-08-04T23:59:41.826Z"
+    },
+    "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024": {
+      "url": "https://kunakair.com/es/contaminacion-juegos-olimpicos-de-paris-2024/",
+      "fichero": "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024.html",
+      "http": 200,
+      "bytes": 334000,
+      "sha256": "f37f375a11b28a4a24fa8018e684ebe9ac752f78f29183f6b47f8aadc179c189",
+      "capturada": "2026-08-04T23:59:44.156Z"
+    },
+    "entradas-blog/contaminacion-del-aire-en-nueva-york": {
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-nueva-york/",
+      "fichero": "entradas-blog/contaminacion-del-aire-en-nueva-york.html",
+      "http": 200,
+      "bytes": 380906,
+      "sha256": "ff34393c799eefbf7eb7de88069661d7a3325ae71887983513ba51c1c66b9c8e",
+      "capturada": "2026-08-04T23:59:46.546Z"
+    },
+    "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire": {
+      "url": "https://kunakair.com/es/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire/",
+      "fichero": "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire.html",
+      "http": 200,
+      "bytes": 399593,
+      "sha256": "51fba136cdb850c41cff3d0d72053da7c6f0b93280450011711dd2985b254e84",
+      "capturada": "2026-08-04T23:59:49.029Z"
+    },
+    "entradas-blog/calidad-del-aire-en-las-comunidades": {
+      "url": "https://kunakair.com/es/calidad-del-aire-en-las-comunidades/",
+      "fichero": "entradas-blog/calidad-del-aire-en-las-comunidades.html",
+      "http": 200,
+      "bytes": 381486,
+      "sha256": "c60d11199d6c220a9c62fa8a052ed5a989a8c9e512e2235732a99ee625182666",
+      "capturada": "2026-08-04T23:59:51.532Z"
+    },
+    "entradas-blog/impacto-ambiental-industria-papelera": {
+      "url": "https://kunakair.com/es/impacto-ambiental-industria-papelera/",
+      "fichero": "entradas-blog/impacto-ambiental-industria-papelera.html",
+      "http": 200,
+      "bytes": 387916,
+      "sha256": "892a505f3564140814da3037d377d20f1bd9379d9a9a95cc520803a23738ab08",
+      "capturada": "2026-08-04T23:59:54.160Z"
+    },
+    "entradas-blog/calidad-del-aire-en-puertos": {
+      "url": "https://kunakair.com/es/calidad-del-aire-en-puertos/",
+      "fichero": "entradas-blog/calidad-del-aire-en-puertos.html",
+      "http": 200,
+      "bytes": 390532,
+      "sha256": "698a95fc98de75e4546785a77a0a747a8bd5e2ebc09a8093821d16df4e5b95bb",
+      "capturada": "2026-08-04T23:59:56.726Z"
+    },
+    "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire/",
+      "fichero": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 365787,
+      "sha256": "2f5aacca85f4675a7f83401eba751111a69f015d7da105d7f3da7bd3ca12927b",
+      "capturada": "2026-08-04T23:59:59.572Z"
+    },
+    "entradas-blog/calidad-del-aire-en-los-aeropuertos": {
+      "url": "https://kunakair.com/es/calidad-del-aire-en-los-aeropuertos/",
+      "fichero": "entradas-blog/calidad-del-aire-en-los-aeropuertos.html",
+      "http": 200,
+      "bytes": 340625,
+      "sha256": "74373c89fdfa06c2f02d87194064ca95ddb3b93c983d64c9e21f5a90c390d97b",
+      "capturada": "2026-08-05T00:00:03.043Z"
+    },
+    "entradas-blog/contaminacion-del-aire-en-madrid": {
+      "url": "https://kunakair.com/es/contaminacion-del-aire-en-madrid/",
+      "fichero": "entradas-blog/contaminacion-del-aire-en-madrid.html",
+      "http": 200,
+      "bytes": 338091,
+      "sha256": "e82cf2313eba743056c21d7e305442f437560213bc126377a59bdae242e3507a",
+      "capturada": "2026-08-05T00:00:06.126Z"
+    },
+    "entradas-blog/guia-sobre-la-contaminacion-urbana": {
+      "url": "https://kunakair.com/es/guia-sobre-la-contaminacion-urbana/",
+      "fichero": "entradas-blog/guia-sobre-la-contaminacion-urbana.html",
+      "http": 200,
+      "bytes": 342656,
+      "sha256": "72c85611d85193091ac64e9d2715d8958666194d0dbda8599d1d7c052bd51eaf",
+      "capturada": "2026-08-05T00:00:09.531Z"
+    },
+    "entradas-blog/kunak-air-pro-certificado-mcerts": {
+      "url": "https://kunakair.com/es/kunak-air-pro-certificado-mcerts/",
+      "fichero": "entradas-blog/kunak-air-pro-certificado-mcerts.html",
+      "http": 200,
+      "bytes": 306836,
+      "sha256": "aaf6a7bb3aea440906334872cf3872f759680eb69d2b0ce510cd7d76e8e23f45",
+      "capturada": "2026-08-05T00:00:11.904Z"
+    },
+    "entradas-blog/ehs-industrial": {
+      "url": "https://kunakair.com/es/ehs-industrial/",
+      "fichero": "entradas-blog/ehs-industrial.html",
+      "http": 200,
+      "bytes": 349677,
+      "sha256": "e9298146b532e46e5c02401f2cfb9dabaa58a5f8a4496bf23f3c329cfbcc277d",
+      "capturada": "2026-08-05T00:00:14.985Z"
+    },
+    "entradas-blog/calidad-del-aire-en-los-asentamientos-informales": {
+      "url": "https://kunakair.com/es/calidad-del-aire-en-los-asentamientos-informales/",
+      "fichero": "entradas-blog/calidad-del-aire-en-los-asentamientos-informales.html",
+      "http": 200,
+      "bytes": 321782,
+      "sha256": "1b2b9c3a046d3c22f9be7e4075ea4efc1f38efc87a5be2958b8a9c7bcde58a66",
+      "capturada": "2026-08-05T00:00:17.675Z"
+    },
+    "entradas-blog/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair": {
+      "url": "https://kunakair.com/es/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair/",
+      "fichero": "entradas-blog/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair.html",
+      "http": 200,
+      "bytes": 306840,
+      "sha256": "829101ec25bfc49ccb7177f9ed560a144f47ce9ad4c6167e0ea01236762573be",
+      "capturada": "2026-08-05T00:00:20.711Z"
+    },
+    "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura": {
+      "url": "https://kunakair.com/es/medicion-de-gases-en-los-vertederos-de-basura/",
+      "urlFinal": "https://kunakair.com/es/contaminacion-del-aire-en-vertederos/",
+      "fichero": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura.html",
+      "http": 200,
+      "bytes": 413957,
+      "sha256": "32bbbb153cdda1f308c31ba277d2ac93bbb0a3b445c03147629945cb373b454b",
+      "capturada": "2026-08-05T00:00:24.976Z"
+    },
+    "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web": {
+      "url": "https://kunakair.com/es/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web/",
+      "fichero": "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web.html",
+      "http": 200,
+      "bytes": 322175,
+      "sha256": "83ebdca581426fe2a66d7f7a7d2e23bba1fc305577a7c41930b87771f4feb3bc",
+      "capturada": "2026-08-05T00:00:27.249Z"
+    },
+    "entradas-blog/monitorizacion-mal-olor-industrial": {
+      "url": "https://kunakair.com/es/monitorizacion-mal-olor-industrial/",
+      "fichero": "entradas-blog/monitorizacion-mal-olor-industrial.html",
+      "http": 200,
+      "bytes": 372335,
+      "sha256": "1b2edb814a2eaf7d623a5c2bd99ce348b616ad763cb455e9e23e4476bf739e4b",
+      "capturada": "2026-08-05T00:00:30.495Z"
+    },
+    "entradas-blog/calidad-del-aire-alrededor-de-los-colegios": {
+      "url": "https://kunakair.com/es/calidad-del-aire-alrededor-de-los-colegios/",
+      "fichero": "entradas-blog/calidad-del-aire-alrededor-de-los-colegios.html",
+      "http": 200,
+      "bytes": 346365,
+      "sha256": "29c02194bc737d9837f08da4e9d822b61d2ed34ffc236be6e34bae7b3043b409",
+      "capturada": "2026-08-05T00:00:32.882Z"
+    },
+    "entradas-blog/despliegue-estaciones-kunak-air-pro-filipinas": {
+      "url": "https://kunakair.com/es/despliegue-estaciones-kunak-air-pro-filipinas/",
+      "fichero": "entradas-blog/despliegue-estaciones-kunak-air-pro-filipinas.html",
+      "http": 200,
+      "bytes": 306341,
+      "sha256": "1117130221c35379f9b2681aa675a71ff99bacae5f952f690bc00f36e7e1b200",
+      "capturada": "2026-08-05T00:00:35.190Z"
+    },
+    "entradas-blog/redes-hibridas-vigilancia-calidad-aire": {
+      "url": "https://kunakair.com/es/redes-hibridas-vigilancia-calidad-aire/",
+      "fichero": "entradas-blog/redes-hibridas-vigilancia-calidad-aire.html",
+      "http": 200,
+      "bytes": 331266,
+      "sha256": "92f6059eb27297c1b7ac69fc8268d3244ee0b466487f0ae3beec296e72edf27e",
+      "capturada": "2026-08-05T00:00:37.574Z"
+    },
+    "entradas-blog/impacto-ambiental-industria-cementera": {
+      "url": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+      "fichero": "entradas-blog/impacto-ambiental-industria-cementera.html",
+      "http": 200,
+      "bytes": 377039,
+      "sha256": "0b7e71e64bbf6894cfa00e0f64c38fdcfb5c76f3392fceab8c0c5e5b9f40345b",
+      "capturada": "2026-08-05T00:00:40.054Z"
+    },
+    "entradas-blog/kunak-cloud-plataforma-web-calidad-aire": {
+      "url": "https://kunakair.com/es/kunak-cloud-plataforma-web-calidad-aire/",
+      "fichero": "entradas-blog/kunak-cloud-plataforma-web-calidad-aire.html",
+      "http": 200,
+      "bytes": 368357,
+      "sha256": "547ad5b690d7156983b461ca6d042556dc4f061ba9a9f3d6a0f86f5f840045df",
+      "capturada": "2026-08-05T00:00:42.294Z"
+    },
+    "entradas-blog/sensores-calidad-aire-volcanes": {
+      "url": "https://kunakair.com/es/sensores-calidad-aire-volcanes/",
+      "fichero": "entradas-blog/sensores-calidad-aire-volcanes.html",
+      "http": 200,
+      "bytes": 347524,
+      "sha256": "30046c9b9b0e7bdf0c83209ad35ec16b460d704816e7d7b268f953dcf4788d4f",
+      "capturada": "2026-08-05T00:00:45.078Z"
+    },
+    "entradas-blog/kunak-air-pro-sensor-multi-contaminante-preciso-airlab": {
+      "url": "https://kunakair.com/es/kunak-air-pro-sensor-multi-contaminante-preciso-airlab/",
+      "fichero": "entradas-blog/kunak-air-pro-sensor-multi-contaminante-preciso-airlab.html",
+      "http": 200,
+      "bytes": 308194,
+      "sha256": "cc2c8a006303014cdf7d6dc3b9d34d7bc86a9195f6eb4bfadaac6c1350a1cfb5",
+      "capturada": "2026-08-05T00:00:47.938Z"
+    },
+    "entradas-blog/directrices-oms-calidad-aire-innovacion": {
+      "url": "https://kunakair.com/es/directrices-oms-calidad-aire-innovacion/",
+      "fichero": "entradas-blog/directrices-oms-calidad-aire-innovacion.html",
+      "http": 200,
+      "bytes": 308157,
+      "sha256": "b56ae18bf8e7571ae76429ce95a317e1b6f468d1a16a818072d635d43e5bbb53",
+      "capturada": "2026-08-05T00:00:50.443Z"
+    },
+    "entradas-blog/conferencia-partes-cop26-incendios": {
+      "url": "https://kunakair.com/es/conferencia-partes-cop26-incendios/",
+      "fichero": "entradas-blog/conferencia-partes-cop26-incendios.html",
+      "http": 200,
+      "bytes": 327408,
+      "sha256": "00c217e23b95ad32e3c02fd8d600add7a1ed293018e17ecaf22fd749e64bc961",
+      "capturada": "2026-08-05T00:00:52.740Z"
+    },
+    "entradas-blog/estres-por-calor-bienestar": {
+      "url": "https://kunakair.com/es/estres-por-calor-bienestar/",
+      "fichero": "entradas-blog/estres-por-calor-bienestar.html",
+      "http": 200,
+      "bytes": 329940,
+      "sha256": "dc1307add6f5b38eb55ffd8a1182d8832a2378daa84ef2afb067d36bc705e573",
+      "capturada": "2026-08-05T00:00:55.125Z"
+    },
+    "entradas-blog/zonas-bajas-emisiones-monitorizacion": {
+      "url": "https://kunakair.com/es/zonas-bajas-emisiones-monitorizacion/",
+      "fichero": "entradas-blog/zonas-bajas-emisiones-monitorizacion.html",
+      "http": 200,
+      "bytes": 382641,
+      "sha256": "584656efdb4cdd64d7b32b60bcad5840990e5cca5e79ce3308c11f48b4a2152a",
+      "capturada": "2026-08-05T00:00:57.413Z"
+    },
+    "entradas-blog/monitores-calidad-aire-moviles": {
+      "url": "https://kunakair.com/es/monitores-calidad-aire-moviles/",
+      "fichero": "entradas-blog/monitores-calidad-aire-moviles.html",
+      "http": 200,
+      "bytes": 336399,
+      "sha256": "a8173c5b6cb1bed071c71f32d209558d1439a4ab9ff7c6b6f77cfec0447bbf95",
+      "capturada": "2026-08-05T00:01:00.008Z"
+    },
+    "entradas-blog/entrevista-jelle-hofman-investigador-calidad-del-aire-imec": {
+      "url": "https://kunakair.com/es/entrevista-jelle-hofman-investigador-calidad-del-aire-imec/",
+      "fichero": "entradas-blog/entrevista-jelle-hofman-investigador-calidad-del-aire-imec.html",
+      "http": 200,
+      "bytes": 313616,
+      "sha256": "9c767424606a0407e8bb9d603c6df8c01a1e13f654afd6d8ba4f02415b2b30ee",
+      "capturada": "2026-08-05T00:01:02.498Z"
+    },
+    "entradas-blog/contaminacion-incendios-forestales-aire": {
+      "url": "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+      "fichero": "entradas-blog/contaminacion-incendios-forestales-aire.html",
+      "http": 200,
+      "bytes": 362895,
+      "sha256": "acea446e3fb7edd5e14bd7b36a4bdd25a1e9952be241ddd3f133af0dd0d3498c",
+      "capturada": "2026-08-05T00:01:04.989Z"
+    },
+    "entradas-blog/entrevista-agustin-torres-product-manager-suez": {
+      "url": "https://kunakair.com/es/entrevista-agustin-torres-product-manager-suez/",
+      "fichero": "entradas-blog/entrevista-agustin-torres-product-manager-suez.html",
+      "http": 200,
+      "bytes": 319047,
+      "sha256": "e50226bcbeb5ffb919d219b2ddbba31feb2742f88aaf3f87b542b8c67e6734ad",
+      "capturada": "2026-08-05T00:01:07.274Z"
+    },
+    "entradas-blog/detectores-calidad-aire-movilidad": {
+      "url": "https://kunakair.com/es/detectores-calidad-aire-movilidad/",
+      "fichero": "entradas-blog/detectores-calidad-aire-movilidad.html",
+      "http": 200,
+      "bytes": 331248,
+      "sha256": "2dd7770dd49952333fd6a807ed998c3a5677196150832eacf9d119874e3f62e6",
+      "capturada": "2026-08-05T00:01:09.739Z"
+    },
+    "entradas-blog/comparativa-de-los-informes-de-evaluacion-de-aqspec": {
+      "url": "https://kunakair.com/es/comparativa-de-los-informes-de-evaluacion-de-aqspec/",
+      "fichero": "entradas-blog/comparativa-de-los-informes-de-evaluacion-de-aqspec.html",
+      "http": 200,
+      "bytes": 304877,
+      "sha256": "ef41c0a7610d9b37f589ee4d861cc32decf9fb6d3f6e9f07da4096cd8f44efab",
+      "capturada": "2026-08-05T00:01:12.275Z"
+    },
+    "entradas-blog/contador-particulas-suspension-movilidad-sostenible": {
+      "url": "https://kunakair.com/es/contador-particulas-suspension-movilidad-sostenible/",
+      "fichero": "entradas-blog/contador-particulas-suspension-movilidad-sostenible.html",
+      "http": 200,
+      "bytes": 329639,
+      "sha256": "7532030d3be4b8e97a744fd58a3b08bfcd4914e73e515ffc64bf8de89467e0dc",
+      "capturada": "2026-08-05T00:01:14.591Z"
+    },
+    "entradas-blog/contaminacion-aire-deporte": {
+      "url": "https://kunakair.com/es/contaminacion-aire-deporte/",
+      "fichero": "entradas-blog/contaminacion-aire-deporte.html",
+      "http": 200,
+      "bytes": 335123,
+      "sha256": "d743874110f1aaf5c53aafa072cc39707842efe62debff08f1ef1dcb951fc5f2",
+      "capturada": "2026-08-05T00:01:16.869Z"
+    },
+    "entradas-blog/contaminacion-mal-olor-sensores": {
+      "url": "https://kunakair.com/es/contaminacion-mal-olor-sensores/",
+      "fichero": "entradas-blog/contaminacion-mal-olor-sensores.html",
+      "http": 200,
+      "bytes": 370562,
+      "sha256": "afca9f7e1245e56a8dd1c9252cebc04b84f4760c684bf725d465ad595c02c040",
+      "capturada": "2026-08-05T00:01:19.223Z"
+    },
+    "entradas-blog/detectores-emisiones-proyecto-trafair": {
+      "url": "https://kunakair.com/es/detectores-emisiones-proyecto-trafair/",
+      "fichero": "entradas-blog/detectores-emisiones-proyecto-trafair.html",
+      "http": 200,
+      "bytes": 308505,
+      "sha256": "b9123e7d70e6880438cd6ca94dd41ae56c79552059f88718409935944be2d338",
+      "capturada": "2026-08-05T00:01:21.737Z"
+    },
+    "entradas-blog/efectos-de-la-contaminacion-en-la-salud": {
+      "url": "https://kunakair.com/es/efectos-de-la-contaminacion-en-la-salud/",
+      "fichero": "entradas-blog/efectos-de-la-contaminacion-en-la-salud.html",
+      "http": 200,
+      "bytes": 320150,
+      "sha256": "f10f2f4f0e8378a39f9a7de4bdeff7eba5e60ad5b30ada7b650e1c529115315f",
+      "capturada": "2026-08-05T00:01:24.322Z"
+    },
+    "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso": {
+      "url": "https://kunakair.com/es/sensores-calidad-aire-exterior-rendimiento-uso/",
+      "fichero": "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso.html",
+      "http": 200,
+      "bytes": 318784,
+      "sha256": "d69c364717d72a5c151c645ad0386141b213d17ce781fbc9812d19fc02ff4a38",
+      "capturada": "2026-08-05T00:01:26.756Z"
+    },
+    "entradas-blog/necesidad-estandares-y-programas-certificacion": {
+      "url": "https://kunakair.com/es/necesidad-estandares-y-programas-certificacion/",
+      "fichero": "entradas-blog/necesidad-estandares-y-programas-certificacion.html",
+      "http": 200,
+      "bytes": 311994,
+      "sha256": "194782018caa90d673702c2ad8e2743c53458992032aa9e81a2e17d830874c8c",
+      "capturada": "2026-08-05T00:01:29.399Z"
+    },
+    "entradas-blog/webinar-calidad-del-aire-en-europa": {
+      "url": "https://kunakair.com/es/webinar-calidad-del-aire-en-europa/",
+      "fichero": "entradas-blog/webinar-calidad-del-aire-en-europa.html",
+      "http": 200,
+      "bytes": 304296,
+      "sha256": "1e7df7a79cb60ebba2ee27a120dd68a117b3cfca7534500e9b593d0f06592cbb",
+      "capturada": "2026-08-05T00:01:31.896Z"
+    },
+    "entradas-blog/premios-pyme-2024-kunak": {
+      "url": "https://kunakair.com/es/premios-pyme-2024-kunak/",
+      "fichero": "entradas-blog/premios-pyme-2024-kunak.html",
+      "http": 200,
+      "bytes": 312257,
+      "sha256": "acf7c55f84c898fb4736c0ee7f79f24e4566b0719b07f09661662a9036221221",
+      "capturada": "2026-08-05T00:01:34.289Z"
+    },
+    "entradas-blog/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024": {
+      "url": "https://kunakair.com/es/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024/",
+      "fichero": "entradas-blog/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024.html",
+      "http": 200,
+      "bytes": 306397,
+      "sha256": "9153fd6584302d279bb354f982f1d66261a08a198da95e52abef6de9ff71a3e3",
+      "capturada": "2026-08-05T00:01:36.616Z"
+    },
+    "entradas-blog/premios-aqe-2024": {
+      "url": "https://kunakair.com/es/premios-aqe-2024/",
+      "fichero": "entradas-blog/premios-aqe-2024.html",
+      "http": 200,
+      "bytes": 307755,
+      "sha256": "91d02726c44bd19f3364bc192629e93988d826fca239f7f338c1c7ed54b3cb33",
+      "capturada": "2026-08-05T00:01:38.894Z"
+    },
+    "entradas-blog/contaminacion-del-transporte-urbano": {
+      "url": "https://kunakair.com/es/contaminacion-del-transporte-urbano/",
+      "fichero": "entradas-blog/contaminacion-del-transporte-urbano.html",
+      "http": 200,
+      "bytes": 394577,
+      "sha256": "598c4a20172adae082a4b525c8db2c4bd9d6fe2cbbe1edfd1ee8c1d4c4caa7a6",
+      "capturada": "2026-08-05T00:01:41.196Z"
+    },
+    "entradas-blog/kunak-referente-en-medicion-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/kunak-referente-en-medicion-de-calidad-del-aire/",
+      "fichero": "entradas-blog/kunak-referente-en-medicion-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 313804,
+      "sha256": "354fc9828a1adfd8528d6b9f6c47e48a62483d8b85b0a5b7c9bacf9338dd285f",
+      "capturada": "2026-08-05T00:01:43.510Z"
+    },
+    "entradas-blog/medicion-de-la-calidad-del-aire-en-puertos-maritimos": {
+      "url": "https://kunakair.com/es/medicion-de-la-calidad-del-aire-en-puertos-maritimos/",
+      "fichero": "entradas-blog/medicion-de-la-calidad-del-aire-en-puertos-maritimos.html",
+      "http": 200,
+      "bytes": 317522,
+      "sha256": "ec0cb0001e7764a3b4e144f5b56f05c5bcdee9409991781e3a6917f5a2f52ca2",
+      "capturada": "2026-08-05T00:01:45.851Z"
+    },
+    "entradas-blog/plan-recuperacion-transformacion-resiliencia-zbe": {
+      "url": "https://kunakair.com/es/plan-recuperacion-transformacion-resiliencia-zbe/",
+      "fichero": "entradas-blog/plan-recuperacion-transformacion-resiliencia-zbe.html",
+      "http": 200,
+      "bytes": 316200,
+      "sha256": "08122d6f611e67a2dc3096d8bd333e53d3f085feb968209836ce6fd53cec83c1",
+      "capturada": "2026-08-05T00:01:48.041Z"
+    },
+    "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite": {
+      "url": "https://kunakair.com/es/calidad-aire-tiempo-real-kunak-air-lite/",
+      "fichero": "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite.html",
+      "http": 200,
+      "bytes": 329792,
+      "sha256": "5e84af72f877dfb89cdd569106d347b87264697e4fb932600a35fa9c2aee0c8f",
+      "capturada": "2026-08-05T00:01:50.505Z"
+    },
+    "entradas-blog/medir-calidad-aire-asic-2022": {
+      "url": "https://kunakair.com/es/medir-calidad-aire-asic-2022/",
+      "fichero": "entradas-blog/medir-calidad-aire-asic-2022.html",
+      "http": 200,
+      "bytes": 315316,
+      "sha256": "535f7e40813bdfc6588c36904c2b8997042e093a3d7e3721d1046e9fbbbb59bc",
+      "capturada": "2026-08-05T00:01:53.044Z"
+    },
+    "entradas-blog/fondos-nextgen-eu-zonas-bajas-emisiones": {
+      "url": "https://kunakair.com/es/fondos-nextgen-eu-zonas-bajas-emisiones/",
+      "fichero": "entradas-blog/fondos-nextgen-eu-zonas-bajas-emisiones.html",
+      "http": 200,
+      "bytes": 312477,
+      "sha256": "450cbf572ce9f238509d1c0f022792e71dc36a5da1b442c598efc84afac82969",
+      "capturada": "2026-08-05T00:01:55.618Z"
+    },
+    "entradas-blog/lanzamiento-kunak-air-pro": {
+      "url": "https://kunakair.com/es/lanzamiento-kunak-air-pro/",
+      "fichero": "entradas-blog/lanzamiento-kunak-air-pro.html",
+      "http": 200,
+      "bytes": 306950,
+      "sha256": "90650be069ded2fdc87abc7a562e14287cc4098fad45857a71e53437859c4407",
+      "capturada": "2026-08-05T00:01:58.122Z"
+    },
+    "entradas-blog/sensores-calidad-aire-exterior-pamplona": {
+      "url": "https://kunakair.com/es/sensores-calidad-aire-exterior-pamplona/",
+      "fichero": "entradas-blog/sensores-calidad-aire-exterior-pamplona.html",
+      "http": 200,
+      "bytes": 321137,
+      "sha256": "ad17b61953015266b4eded5a4752830f3aa6da8a58b6de47dc3b6d95f149058f",
+      "capturada": "2026-08-05T00:02:00.579Z"
+    },
+    "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades": {
+      "url": "https://kunakair.com/es/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades/",
+      "fichero": "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades.html",
+      "http": 200,
+      "bytes": 321853,
+      "sha256": "3097547b93e89ed0ebb6e173c82237357d0c979a957cf50831e975c8723fd852",
+      "capturada": "2026-08-05T00:02:02.880Z"
+    },
+    "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra": {
+      "url": "https://kunakair.com/es/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra/",
+      "fichero": "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra.html",
+      "http": 200,
+      "bytes": 315946,
+      "sha256": "30a196a40c7239bbf3cfb4cad32d4330370a77c192e81f24e2a856d5eae60ec4",
+      "capturada": "2026-08-05T00:02:05.372Z"
+    },
+    "entradas-blog/kunak-proveedor-sensores-calidad-aire-brightsites-signify": {
+      "url": "https://kunakair.com/es/kunak-proveedor-sensores-calidad-aire-brightsites-signify/",
+      "fichero": "entradas-blog/kunak-proveedor-sensores-calidad-aire-brightsites-signify.html",
+      "http": 200,
+      "bytes": 306116,
+      "sha256": "f0371933657f279ffc5e85bcccbbc03f34afc1c71d434f91732e74b59b742bb5",
+      "capturada": "2026-08-05T00:02:07.576Z"
+    },
+    "entradas-blog/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo": {
+      "url": "https://kunakair.com/es/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo/",
+      "fichero": "entradas-blog/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo.html",
+      "http": 200,
+      "bytes": 320633,
+      "sha256": "25e732988742eae5f8b829c4af2a1bc0f939d57555aeb3e0f3cd6115ff2a490c",
+      "capturada": "2026-08-05T00:02:09.892Z"
+    },
+    "entradas-blog/vigilancia-calidad-aire-maraton-valencia-2019": {
+      "url": "https://kunakair.com/es/vigilancia-calidad-aire-maraton-valencia-2019/",
+      "fichero": "entradas-blog/vigilancia-calidad-aire-maraton-valencia-2019.html",
+      "http": 200,
+      "bytes": 305273,
+      "sha256": "88519561a80b09a30f69e6480becab7f694f9c6513e79c6be541d712193eecf9",
+      "capturada": "2026-08-05T00:02:12.190Z"
+    },
+    "entradas-blog/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton": {
+      "url": "https://kunakair.com/es/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton/",
+      "fichero": "entradas-blog/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton.html",
+      "http": 200,
+      "bytes": 302248,
+      "sha256": "3d9d5114c58b525b996d1c076f8a2af9bc57e7962e2ebce60028e5bf944bf23a",
+      "capturada": "2026-08-05T00:02:14.480Z"
+    },
+    "entradas-blog/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico": {
+      "url": "https://kunakair.com/es/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico/",
+      "fichero": "entradas-blog/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico.html",
+      "http": 200,
+      "bytes": 314311,
+      "sha256": "c3fd9875ef31122309bd1ad26c3755a6aaa29c007c35910d3ab2535514e19c84",
+      "capturada": "2026-08-05T00:02:16.931Z"
+    },
+    "entradas-blog/calidad-aire-paises-sanos": {
+      "url": "https://kunakair.com/es/calidad-aire-paises-sanos/",
+      "fichero": "entradas-blog/calidad-aire-paises-sanos.html",
+      "http": 200,
+      "bytes": 316134,
+      "sha256": "ae2ab51889ca43d9f9fa2ae8794618ce7f67f9d6491d72334fc03adffd7ca2a7",
+      "capturada": "2026-08-05T00:02:19.516Z"
+    },
+    "entradas-blog/por-que-es-importante-monitorizar-en-tiempo-real": {
+      "url": "https://kunakair.com/es/por-que-es-importante-monitorizar-en-tiempo-real/",
+      "fichero": "entradas-blog/por-que-es-importante-monitorizar-en-tiempo-real.html",
+      "http": 200,
+      "bytes": 315365,
+      "sha256": "8611fd0b2719416b6ddcd452516465250b4146faac6da5f005fd48b91926e3ea",
+      "capturada": "2026-08-05T00:02:21.833Z"
+    },
+    "entradas-blog/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares": {
+      "url": "https://kunakair.com/es/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares/",
+      "fichero": "entradas-blog/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares.html",
+      "http": 200,
+      "bytes": 305731,
+      "sha256": "cca043a07ff0a924df8f8a2afa6749e30ee2f7cbc3da4c56b64f6c80a4faf12a",
+      "capturada": "2026-08-05T00:02:24.191Z"
+    },
+    "entradas-blog/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco": {
+      "url": "https://kunakair.com/es/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco/",
+      "fichero": "entradas-blog/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco.html",
+      "http": 200,
+      "bytes": 309674,
+      "sha256": "5247f4d5fc6f67fb190fcab0a42fe7f35edad916453591cbe09dd6f53fef6e7c",
+      "capturada": "2026-08-05T00:02:26.687Z"
+    },
+    "entradas-blog/workshop-sensores-ambientales-bajo-coste": {
+      "url": "https://kunakair.com/es/workshop-sensores-ambientales-bajo-coste/",
+      "fichero": "entradas-blog/workshop-sensores-ambientales-bajo-coste.html",
+      "http": 200,
+      "bytes": 302170,
+      "sha256": "eec1856e8912e5eff6dfb77b7d4a80f23290d0a927c309db3bd2919f2c0b9ec1",
+      "capturada": "2026-08-05T00:02:29.012Z"
+    },
+    "entradas-blog/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0": {
+      "url": "https://kunakair.com/es/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0/",
+      "fichero": "entradas-blog/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0.html",
+      "http": 200,
+      "bytes": 301045,
+      "sha256": "e8a2950bb91452197509fbabc0dd173a41e53b05098497921dc3949344690978",
+      "capturada": "2026-08-05T00:02:31.390Z"
+    },
+    "entradas-blog/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire": {
+      "url": "https://kunakair.com/es/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire/",
+      "fichero": "entradas-blog/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire.html",
+      "http": 200,
+      "bytes": 305014,
+      "sha256": "6ffdc6c57dbdc558fd078ce880d567d0806ffa0727425b66c1a58709d42b8e2f",
+      "capturada": "2026-08-05T00:02:33.730Z"
+    },
+    "entradas-blog/eugreenweek-we-have-gone-green": {
+      "url": "https://kunakair.com/es/eugreenweek-we-have-gone-green/",
+      "fichero": "entradas-blog/eugreenweek-we-have-gone-green.html",
+      "http": 200,
+      "bytes": 299888,
+      "sha256": "9db6c582bfa255829686685d125aaa42af3e2a1473e5f82d28fdd81c1f655c17",
+      "capturada": "2026-08-05T00:02:36.312Z"
+    },
+    "entradas-blog/fourth-session-of-the-united-nations-environment-assembly-2": {
+      "url": "https://kunakair.com/es/fourth-session-of-the-united-nations-environment-assembly-2/",
+      "fichero": "entradas-blog/fourth-session-of-the-united-nations-environment-assembly-2.html",
+      "http": 200,
+      "bytes": 301442,
+      "sha256": "37244f6edc1a89f9c524a1bc5646179203360ffe73fac8ebe3794b5758202738",
+      "capturada": "2026-08-05T00:02:38.630Z"
+    },
+    "entradas-blog/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente": {
+      "url": "https://kunakair.com/es/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente/",
+      "fichero": "entradas-blog/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente.html",
+      "http": 200,
+      "bytes": 302876,
+      "sha256": "691ef8c0d577a0230eb805afd6f05e773a896335310b986439f83d777740a576",
+      "capturada": "2026-08-05T00:02:41.577Z"
+    },
+    "entradas-blog/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas": {
+      "url": "https://kunakair.com/es/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas/",
+      "fichero": "entradas-blog/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas.html",
+      "http": 200,
+      "bytes": 327154,
+      "sha256": "651c0fb4f6244658c5c5a60cd124fc444468a574365bfa44cf17b31adcb38031",
+      "capturada": "2026-08-05T00:02:44.116Z"
+    },
+    "entradas-blog/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona": {
+      "url": "https://kunakair.com/es/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona/",
+      "fichero": "entradas-blog/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona.html",
+      "http": 200,
+      "bytes": 301683,
+      "sha256": "6079bdd7e7d7370f51a75687f5861acee765590c4ef160abc4a3b63a71d1762f",
+      "capturada": "2026-08-05T00:02:46.276Z"
+    },
+    "entradas-blog/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo": {
+      "url": "https://kunakair.com/es/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo/",
+      "fichero": "entradas-blog/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo.html",
+      "http": 200,
+      "bytes": 308036,
+      "sha256": "8809ee461f09a7d1d66a052ad508d6b9abe7dfff823ec8152c92bb61a002d718",
+      "capturada": "2026-08-05T00:02:48.774Z"
+    },
+    "entradas-blog/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia": {
+      "url": "https://kunakair.com/es/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia/",
+      "fichero": "entradas-blog/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia.html",
+      "http": 200,
+      "bytes": 306384,
+      "sha256": "eab2434c6dff05a585ef68d35324651210df2c72fa6eb26a889d3a958e9b76b2",
+      "capturada": "2026-08-05T00:02:50.944Z"
+    },
+    "entradas-blog/todas-nuestras-soluciones-en-el-iotswc": {
+      "url": "https://kunakair.com/es/todas-nuestras-soluciones-en-el-iotswc/",
+      "fichero": "entradas-blog/todas-nuestras-soluciones-en-el-iotswc.html",
+      "http": 200,
+      "bytes": 297169,
+      "sha256": "7b25c5205497a981a234e91290f4f8758830f31bbf5c92533818abe6a2a687a3",
+      "capturada": "2026-08-05T00:02:55.045Z"
+    },
+    "entradas-blog/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire/",
+      "fichero": "entradas-blog/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 299069,
+      "sha256": "dc6d558a97b56d64af16b98ac2e615941f2ae13386488c9022967498e09bea92",
+      "capturada": "2026-08-05T00:02:57.718Z"
+    },
+    "entradas-blog/additive-presenta-sistema-kunak-air-en-sensortest-2018": {
+      "url": "https://kunakair.com/es/additive-presenta-sistema-kunak-air-en-sensortest-2018/",
+      "fichero": "entradas-blog/additive-presenta-sistema-kunak-air-en-sensortest-2018.html",
+      "http": 200,
+      "bytes": 297695,
+      "sha256": "b9aad15f15208d83178e7e9d6b812e634fe39054d0bae0e0392689c526788a59",
+      "capturada": "2026-08-05T00:03:00.051Z"
+    },
+    "entradas-blog/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge": {
+      "url": "https://kunakair.com/es/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge/",
+      "fichero": "entradas-blog/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge.html",
+      "http": 200,
+      "bytes": 305444,
+      "sha256": "abda48133385e51d9102fa0862b72711c081a12445cd2b0423dc96abbcb560e0",
+      "capturada": "2026-08-05T00:03:02.476Z"
+    },
+    "entradas-blog/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea": {
+      "url": "https://kunakair.com/es/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea/",
+      "fichero": "entradas-blog/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea.html",
+      "http": 200,
+      "bytes": 302655,
+      "sha256": "ce3eb88d357162f036d6842836e0ebf5fa122a439fb081f056129ed27676abd6",
+      "capturada": "2026-08-05T00:03:04.772Z"
+    },
+    "entradas-blog/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell": {
+      "url": "https://kunakair.com/es/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell/",
+      "fichero": "entradas-blog/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell.html",
+      "http": 200,
+      "bytes": 297423,
+      "sha256": "f89ecaf6177f2e3842994479f4c27f942c188dd0ae6a3c7820f85f8c05875733",
+      "capturada": "2026-08-05T00:03:06.934Z"
+    },
+    "entradas-blog/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018": {
+      "url": "https://kunakair.com/es/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018/",
+      "fichero": "entradas-blog/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018.html",
+      "http": 200,
+      "bytes": 298833,
+      "sha256": "5851f368cc0a5f94bc2d2ba5d79cdd91074c6bbf237b328f67b36244c8ae6547",
+      "capturada": "2026-08-05T00:03:09.141Z"
+    },
+    "entradas-blog/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti": {
+      "url": "https://kunakair.com/es/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti/",
+      "fichero": "entradas-blog/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti.html",
+      "http": 200,
+      "bytes": 301364,
+      "sha256": "9ee7f622b1ea16bc37b1aabde7dedd7433e9e7d448892a3b51104ee932198bf8",
+      "capturada": "2026-08-05T00:03:11.480Z"
+    },
+    "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid": {
+      "url": "https://kunakair.com/es/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid/",
+      "fichero": "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid.html",
+      "http": 200,
+      "bytes": 298226,
+      "sha256": "93a488e1001e5f1018f9c77b64ccee603247a736e1c28d62b23b33fd902cd02b",
+      "capturada": "2026-08-05T00:03:13.820Z"
+    },
+    "entradas-blog/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018": {
+      "url": "https://kunakair.com/es/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018/",
+      "fichero": "entradas-blog/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
+      "http": 200,
+      "bytes": 299105,
+      "sha256": "8ac5113b5998be99652fcda3e3f22f974ee7e336dc0ad01bf7caf1b824f60525",
+      "capturada": "2026-08-05T00:03:16.141Z"
+    },
+    "entradas-blog/exponemos-en-greencities-malaga-2018": {
+      "url": "https://kunakair.com/es/exponemos-en-greencities-malaga-2018/",
+      "fichero": "entradas-blog/exponemos-en-greencities-malaga-2018.html",
+      "http": 200,
+      "bytes": 298462,
+      "sha256": "0b127b4df10cedd00ab03c448f5a32c580b685f07df24023377c64a09e54457d",
+      "capturada": "2026-08-05T00:03:18.719Z"
+    },
+    "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2": {
+      "url": "https://kunakair.com/es/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2/",
+      "fichero": "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2.html",
+      "http": 200,
+      "bytes": 300116,
+      "sha256": "53f98d470ca989a947b3265aeaee4f5b69501309c6183ff9c9a7c8f577a94597",
+      "capturada": "2026-08-05T00:03:21.014Z"
+    },
+    "entradas-blog/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur": {
+      "url": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/",
+      "fichero": "entradas-blog/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur.html",
+      "http": 200,
+      "bytes": 313825,
+      "sha256": "abb78295bec021d2e950783013213f6611faea287c5057e6f8db8084f8fbeb7f",
+      "capturada": "2026-08-05T00:03:23.452Z"
+    },
+    "entradas-blog/participamos-con-suez-en-el-4yfn-del-mobile-world-congress": {
+      "url": "https://kunakair.com/es/participamos-con-suez-en-el-4yfn-del-mobile-world-congress/",
+      "fichero": "entradas-blog/participamos-con-suez-en-el-4yfn-del-mobile-world-congress.html",
+      "http": 200,
+      "bytes": 302589,
+      "sha256": "2f0cc19de0bad721b03ddfea244f22efc549abb7bccc433dc7695dc24dbfb17a",
+      "capturada": "2026-08-05T00:03:25.935Z"
+    },
+    "entradas-blog/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades": {
+      "url": "https://kunakair.com/es/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades/",
+      "fichero": "entradas-blog/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades.html",
+      "http": 200,
+      "bytes": 298390,
+      "sha256": "9b0ea0aa1494ac7566178336978749229554de878d1d12737354e33aa6d93257",
+      "capturada": "2026-08-05T00:03:28.254Z"
+    },
+    "entradas-blog/kunak-oem-industrial-iot-en-el-basque-industry-4-0": {
+      "url": "https://kunakair.com/es/kunak-oem-industrial-iot-en-el-basque-industry-4-0/",
+      "fichero": "entradas-blog/kunak-oem-industrial-iot-en-el-basque-industry-4-0.html",
+      "http": 200,
+      "bytes": 299609,
+      "sha256": "727e6ad822ccdb71ea2526ba1a58578df693f31460b5e449a62268e070a9180a",
+      "capturada": "2026-08-05T00:03:30.379Z"
+    },
+    "entradas-blog/exponemos-en-la-smart-city-expo-world-congress-2017": {
+      "url": "https://kunakair.com/es/exponemos-en-la-smart-city-expo-world-congress-2017/",
+      "fichero": "entradas-blog/exponemos-en-la-smart-city-expo-world-congress-2017.html",
+      "http": 200,
+      "bytes": 305541,
+      "sha256": "caae2a5555209100d4d5c3d40457e0b5ae36d704021faa6ad8bac6dd8a20ee28",
+      "capturada": "2026-08-05T00:03:33.257Z"
+    },
+    "entradas-blog/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna": {
+      "url": "https://kunakair.com/es/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna/",
+      "fichero": "entradas-blog/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna.html",
+      "http": 200,
+      "bytes": 298424,
+      "sha256": "0087a9ef58f39a2e42ba00932419a2ef15130ada633200829a3fd34f724d2bc5",
+      "capturada": "2026-08-05T00:03:35.364Z"
+    },
+    "entradas-blog/exponemos-en-la-feria-sensortest-2017-con-alphasense": {
+      "url": "https://kunakair.com/es/exponemos-en-la-feria-sensortest-2017-con-alphasense/",
+      "fichero": "entradas-blog/exponemos-en-la-feria-sensortest-2017-con-alphasense.html",
+      "http": 200,
+      "bytes": 298400,
+      "sha256": "856bcfd8cb3c36f4dea3b525a1ee3ec7c871a7d4430f59186755cbc0ad38f37b",
+      "capturada": "2026-08-05T00:03:37.564Z"
+    },
+    "entradas-blog/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future": {
+      "url": "https://kunakair.com/es/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future/",
+      "fichero": "entradas-blog/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future.html",
+      "http": 200,
+      "bytes": 299918,
+      "sha256": "0988a43063b1d6c071cc9b57bdf46b414e20e8be607f3ee23fddf738a36d7f48",
+      "capturada": "2026-08-05T00:03:39.936Z"
+    },
+    "entradas-blog/kunak-participa-en-aqemission-monitoring-2017-con-alphasense": {
+      "url": "https://kunakair.com/es/kunak-participa-en-aqemission-monitoring-2017-con-alphasense/",
+      "fichero": "entradas-blog/kunak-participa-en-aqemission-monitoring-2017-con-alphasense.html",
+      "http": 200,
+      "bytes": 299008,
+      "sha256": "e9ad1b86dbfb75f57df221384b8f9666499dc16985bc8cbff6b650bab944de1c",
+      "capturada": "2026-08-05T00:03:42.580Z"
+    },
+    "entradas-blog/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex": {
+      "url": "https://kunakair.com/es/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex/",
+      "fichero": "entradas-blog/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex.html",
+      "http": 200,
+      "bytes": 298299,
+      "sha256": "a199ccd51b70afd14df1d6430ff2f92b9177f7dfc3fd89cba3e9d8993e04c137",
+      "capturada": "2026-08-05T00:03:45.429Z"
+    },
+    "entradas-blog/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16": {
+      "url": "https://kunakair.com/es/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16/",
+      "fichero": "entradas-blog/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16.html",
+      "http": 200,
+      "bytes": 298714,
+      "sha256": "11749ce1f4848838f3bd5905c4c45ee96399d51a85f2e45fae40f1ad2fab68ad",
+      "capturada": "2026-08-05T00:03:48.534Z"
+    },
+    "entradas-blog/quemas-prescritas-agricolas-calidad-aire": {
+      "url": "https://kunakair.com/es/quemas-prescritas-agricolas-calidad-aire/",
+      "fichero": "entradas-blog/quemas-prescritas-agricolas-calidad-aire.html",
+      "http": 200,
+      "bytes": 320219,
+      "sha256": "a1e9c84f6e971e23bbb9ffb540c2f88a08bb8c455a99b84de15514f60c4ef2c2",
+      "capturada": "2026-08-05T00:03:51.144Z"
+    },
+    "entradas-blog/medidores-de-calidad-del-aire-mediciones-indicativas": {
+      "url": "https://kunakair.com/es/medidores-de-calidad-del-aire-mediciones-indicativas/",
+      "fichero": "entradas-blog/medidores-de-calidad-del-aire-mediciones-indicativas.html",
+      "http": 200,
+      "bytes": 321811,
+      "sha256": "aec8899bb87513236a720bc864bedbc7a8902b9b4f2d28a52b097ff2b892bd7e",
+      "capturada": "2026-08-05T00:03:53.853Z"
+    },
+    "entradas-blog/contaminacion-del-aire-urbano": {
+      "url": "https://kunakair.com/es/contaminacion-del-aire-urbano/",
+      "fichero": "entradas-blog/contaminacion-del-aire-urbano.html",
+      "http": 200,
+      "bytes": 381270,
+      "sha256": "5525e0378a48eb74ebccb5871cba3f84572b55fd76b9bad1c6db05129a0e3271",
+      "capturada": "2026-08-05T00:03:56.261Z"
+    },
+    "entradas-blog/sensores-calidad-aire-urbano-donostia": {
+      "url": "https://kunakair.com/es/sensores-calidad-aire-urbano-donostia/",
+      "fichero": "entradas-blog/sensores-calidad-aire-urbano-donostia.html",
+      "http": 200,
+      "bytes": 334489,
+      "sha256": "53cee47ddf2ca3e9e1a358b5a9e71188a70ca8ea78ccb2c3826ed31dc9c86727",
+      "capturada": "2026-08-05T00:03:58.500Z"
+    },
+    "entradas-blog/control-emisiones-industriales": {
+      "url": "https://kunakair.com/es/control-emisiones-industriales/",
+      "fichero": "entradas-blog/control-emisiones-industriales.html",
+      "http": 200,
+      "bytes": 365395,
+      "sha256": "2a93b30b85f5c07ce5e3d6f8287b875c27048cd81b148d20c958fe372ed73c07",
+      "capturada": "2026-08-05T00:04:00.746Z"
+    },
+    "entradas-blog/emisiones-de-las-refinerias-de-petroleo": {
+      "url": "https://kunakair.com/es/emisiones-de-las-refinerias-de-petroleo/",
+      "fichero": "entradas-blog/emisiones-de-las-refinerias-de-petroleo.html",
+      "http": 200,
+      "bytes": 392715,
+      "sha256": "6249bca959f724d747bab6b2c057693ea58e67b07d8b03b254a702e2f57b1587",
+      "capturada": "2026-08-05T00:04:03.037Z"
+    },
+    "entradas-blog/monitorizacion-de-emisiones-en-refinerias": {
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-en-refinerias/",
+      "fichero": "entradas-blog/monitorizacion-de-emisiones-en-refinerias.html",
+      "http": 200,
+      "bytes": 413611,
+      "sha256": "ca1491534516b2bcb2051af1d84752d3c889e4f7f810a1d6e8088b3fb89db1db",
+      "capturada": "2026-08-05T00:04:05.391Z"
+    },
+    "entradas-blog/contaminacion-del-aire-por-obras": {
+      "url": "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+      "fichero": "entradas-blog/contaminacion-del-aire-por-obras.html",
+      "http": 200,
+      "bytes": 377839,
+      "sha256": "e5a0e42470afaa6bb87a32216a721604280bf21155df40ad7e622dbc1fd240a2",
+      "capturada": "2026-08-05T00:04:08.070Z"
+    },
+    "entradas-blog/contaminacion-aire-obras-demoliciones-derribos": {
+      "url": "https://kunakair.com/es/contaminacion-aire-obras-demoliciones-derribos/",
+      "fichero": "entradas-blog/contaminacion-aire-obras-demoliciones-derribos.html",
+      "http": 200,
+      "bytes": 341895,
+      "sha256": "d96a54512ac0d6c3048383f7456c1ccee969fa814163672cfba5abdf452ec8d5",
+      "capturada": "2026-08-05T00:04:10.694Z"
+    },
+    "entradas-blog/impacto-ambiental-mineria-calidad-aire": {
+      "url": "https://kunakair.com/es/impacto-ambiental-mineria-calidad-aire/",
+      "fichero": "entradas-blog/impacto-ambiental-mineria-calidad-aire.html",
+      "http": 200,
+      "bytes": 351150,
+      "sha256": "c0c52876fd9d56fa800431d5509d08bf853d74fd6f851a8bed146355cd3e311a",
+      "capturada": "2026-08-05T00:04:13.340Z"
+    },
+    "entradas-blog/monitorizacion-near-reference": {
+      "url": "https://kunakair.com/es/monitorizacion-near-reference/",
+      "fichero": "entradas-blog/monitorizacion-near-reference.html",
+      "http": 200,
+      "bytes": 438656,
+      "sha256": "2b1095fe222274dbcedba2057867d82f4e8fbdd2d7f9d2038cd185eccf98fbf0",
+      "capturada": "2026-08-05T00:04:15.980Z"
+    },
+    "entradas-blog/monitorizacion-perimetral": {
+      "url": "https://kunakair.com/es/monitorizacion-perimetral/",
+      "fichero": "entradas-blog/monitorizacion-perimetral.html",
+      "http": 200,
+      "bytes": 397958,
+      "sha256": "55be73d77827a7d8c3651d79551bad97911b061998a8a070abd638a1ebbee5fa",
+      "capturada": "2026-08-05T00:04:18.653Z"
+    },
+    "entradas-blog/monitorizacion-de-emisiones-fugitivas": {
+      "url": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+      "fichero": "entradas-blog/monitorizacion-de-emisiones-fugitivas.html",
+      "http": 200,
+      "bytes": 411367,
+      "sha256": "58f3e933a2b56a8e9149672415fbe66ed8bf96e0aca54319b73f4621d84bb2f0",
+      "capturada": "2026-08-05T00:04:21.934Z"
+    },
+    "terminos-kunakpedia/sensor-calidad-aire": {
+      "url": "https://kunakair.com/es/sensor-calidad-aire/",
+      "fichero": "terminos-kunakpedia/sensor-calidad-aire.html",
+      "http": 200,
+      "bytes": 338830,
+      "sha256": "0018750699d372b439ca57b1701352a419a5db7045b1e07a8f6748273f0a60be",
+      "capturada": "2026-08-05T00:04:24.141Z"
+    },
+    "terminos-kunakpedia/redes-de-vigilancia-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/redes-de-vigilancia-de-calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/redes-de-vigilancia-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 327950,
+      "sha256": "e01c4468d7566d4152cfe42f704cd7c016f5f3e92efd86f4bc4552f7379c5e97",
+      "capturada": "2026-08-05T00:04:26.451Z"
+    },
+    "terminos-kunakpedia/calidad-del-aire": {
+      "url": "https://kunakair.com/es/calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/calidad-del-aire.html",
+      "http": 200,
+      "bytes": 322937,
+      "sha256": "15a9495a5124738412715d052a524982fc71b49ef10826c7ec355355b6199e5a",
+      "capturada": "2026-08-05T00:04:28.732Z"
+    },
+    "terminos-kunakpedia/particulas-ultrafinas": {
+      "url": "https://kunakair.com/es/particulas-ultrafinas/",
+      "fichero": "terminos-kunakpedia/particulas-ultrafinas.html",
+      "http": 200,
+      "bytes": 362692,
+      "sha256": "fb43f116d87e89fb2abee75745be0f2c33837ad3349b6f00c6314b3d94c21192",
+      "capturada": "2026-08-05T00:04:31.080Z"
+    },
+    "terminos-kunakpedia/metano": {
+      "url": "https://kunakair.com/es/metano/",
+      "fichero": "terminos-kunakpedia/metano.html",
+      "http": 200,
+      "bytes": 338960,
+      "sha256": "70b148a268293d60dee6b778c8dcd327321314c7961e7e051ed7822272bacd30",
+      "capturada": "2026-08-05T00:04:33.276Z"
+    },
+    "terminos-kunakpedia/sulfuro-de-hidrogeno": {
+      "url": "https://kunakair.com/es/sulfuro-de-hidrogeno/",
+      "fichero": "terminos-kunakpedia/sulfuro-de-hidrogeno.html",
+      "http": 200,
+      "bytes": 376647,
+      "sha256": "c85ddb9cf89e06f2b778a5fc873aa1f60fc60f5188e98c3d5f9a39c54f4e9fcb",
+      "capturada": "2026-08-05T00:04:35.544Z"
+    },
+    "terminos-kunakpedia/ruido": {
+      "url": "https://kunakair.com/es/ruido/",
+      "fichero": "terminos-kunakpedia/ruido.html",
+      "http": 200,
+      "bytes": 364524,
+      "sha256": "30016b890429c3600f7b2006094708ae26b1b00dd70f08a184a302d84dd0f64a",
+      "capturada": "2026-08-05T00:04:37.687Z"
+    },
+    "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/aaqms-estaciones-de-calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 367610,
+      "sha256": "b3a7bb0e295b707317c17f570c76f6303e9a43a1d77567ea8090f5e6ea2777f2",
+      "capturada": "2026-08-05T00:04:39.866Z"
+    },
+    "terminos-kunakpedia/cianuro-de-hidrogeno-hcn": {
+      "url": "https://kunakair.com/es/cianuro-de-hidrogeno-hcn/",
+      "fichero": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn.html",
+      "http": 200,
+      "bytes": 376258,
+      "sha256": "2144087e6308fd90c4ebf7731963647170a661b1a0c64b796fb4a123a13c5e2a",
+      "capturada": "2026-08-05T00:04:42.179Z"
+    },
+    "terminos-kunakpedia/amoniaco-nh3": {
+      "url": "https://kunakair.com/es/amoniaco-nh3/",
+      "fichero": "terminos-kunakpedia/amoniaco-nh3.html",
+      "http": 200,
+      "bytes": 360888,
+      "sha256": "1707d20ef132c724763106daae6a2957ec0ff24e49ff4315ad28db4626499e85",
+      "capturada": "2026-08-05T00:04:44.714Z"
+    },
+    "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc": {
+      "url": "https://kunakair.com/es/hidrocarburos-no-metanicos-nmhc/",
+      "fichero": "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc.html",
+      "http": 200,
+      "bytes": 407740,
+      "sha256": "a623ce64bcb78faeba71555ec5b3871c341d2cb86ef6199e71b2187bf50b629e",
+      "capturada": "2026-08-05T00:04:47.190Z"
+    },
+    "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2": {
+      "url": "https://kunakair.com/es/cloro-cl2-dioxido-de-cloro-clo2/",
+      "fichero": "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2.html",
+      "http": 200,
+      "bytes": 369223,
+      "sha256": "1200a5c8c3bea333090cba00cb2423665dbf53c91191b713c2486fb56715d8fc",
+      "capturada": "2026-08-05T00:04:49.540Z"
+    },
+    "terminos-kunakpedia/gases-de-efecto-invernadero": {
+      "url": "https://kunakair.com/es/gases-de-efecto-invernadero/",
+      "fichero": "terminos-kunakpedia/gases-de-efecto-invernadero.html",
+      "http": 200,
+      "bytes": 377560,
+      "sha256": "65352521628fe62fdc748425fd9c486474cfe8bfbca0ad11d961dfc2d6e6a49d",
+      "capturada": "2026-08-05T00:04:51.848Z"
+    },
+    "terminos-kunakpedia/compuestos-organicos-volatiles": {
+      "url": "https://kunakair.com/es/compuestos-organicos-volatiles/",
+      "fichero": "terminos-kunakpedia/compuestos-organicos-volatiles.html",
+      "http": 200,
+      "bytes": 361016,
+      "sha256": "60d027a22d1a6705ccb0bf93a8ddcdf8da544a07633ab697eef975433148cdd4",
+      "capturada": "2026-08-05T00:04:54.156Z"
+    },
+    "terminos-kunakpedia/esmog": {
+      "url": "https://kunakair.com/es/esmog/",
+      "fichero": "terminos-kunakpedia/esmog.html",
+      "http": 200,
+      "bytes": 336586,
+      "sha256": "1f259112911ecfe41cba3f2f372a10cb178c93b1ba91263237de58b3a62d6daf",
+      "capturada": "2026-08-05T00:04:56.992Z"
+    },
+    "terminos-kunakpedia/estaciones-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/estaciones-de-calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/estaciones-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 322513,
+      "sha256": "e0d94cfbadd36d487c5ad6ce7fbc3b38909a300ee75d6978bdcf0374fd1f233e",
+      "capturada": "2026-08-05T00:04:59.282Z"
+    },
+    "terminos-kunakpedia/inmisiones-atmosfericas": {
+      "url": "https://kunakair.com/es/inmisiones-atmosfericas/",
+      "fichero": "terminos-kunakpedia/inmisiones-atmosfericas.html",
+      "http": 200,
+      "bytes": 317147,
+      "sha256": "21fcb21779389650af194f0b355dbfa9bcf63ee17c8d053cf468e730abf1e65d",
+      "capturada": "2026-08-05T00:05:01.943Z"
+    },
+    "terminos-kunakpedia/justicia-ambiental": {
+      "url": "https://kunakair.com/es/justicia-ambiental/",
+      "fichero": "terminos-kunakpedia/justicia-ambiental.html",
+      "http": 200,
+      "bytes": 327085,
+      "sha256": "81222c099ad012ee51ab82c01b758aede7f75334c523f830916db77353741856",
+      "capturada": "2026-08-05T00:05:04.093Z"
+    },
+    "terminos-kunakpedia/fluoruro-de-hidrogeno-hf": {
+      "url": "https://kunakair.com/es/fluoruro-de-hidrogeno-hf/",
+      "fichero": "terminos-kunakpedia/fluoruro-de-hidrogeno-hf.html",
+      "http": 200,
+      "bytes": 373557,
+      "sha256": "0767abda99394a7fd0740accbc6fd39f939de1cba7e2bf3b157380e6c4753ab2",
+      "capturada": "2026-08-05T00:05:06.399Z"
+    },
+    "terminos-kunakpedia/cloruro-de-hidrogeno-hcl": {
+      "url": "https://kunakair.com/es/cloruro-de-hidrogeno-hcl/",
+      "fichero": "terminos-kunakpedia/cloruro-de-hidrogeno-hcl.html",
+      "http": 200,
+      "bytes": 424532,
+      "sha256": "87260ac35d44e00af0d8a2d370e70738cabb192ed8784805ef5c71d133dc791b",
+      "capturada": "2026-08-05T00:05:08.784Z"
+    },
+    "terminos-kunakpedia/oxido-nitrico-no": {
+      "url": "https://kunakair.com/es/oxido-nitrico-no/",
+      "fichero": "terminos-kunakpedia/oxido-nitrico-no.html",
+      "http": 200,
+      "bytes": 411396,
+      "sha256": "8c9b5d981fd775df87af7f8ee1ab1a56b2959b9b899f4f4a162481dadc61684d",
+      "capturada": "2026-08-05T00:05:11.191Z"
+    },
+    "terminos-kunakpedia/oxigeno": {
+      "url": "https://kunakair.com/es/oxigeno/",
+      "fichero": "terminos-kunakpedia/oxigeno.html",
+      "http": 200,
+      "bytes": 375241,
+      "sha256": "83bc80851805a66c1b94bfa5dadab17b67b97088f753843f224d6a5c5efa68b3",
+      "capturada": "2026-08-05T00:05:13.362Z"
+    },
+    "terminos-kunakpedia/ozono-troposferico": {
+      "url": "https://kunakair.com/es/ozono-troposferico/",
+      "fichero": "terminos-kunakpedia/ozono-troposferico.html",
+      "http": 200,
+      "bytes": 334071,
+      "sha256": "1aaea14aeb6cf455a8150309a7f2a0e88e99343f910198fd8d5035457c3f7644",
+      "capturada": "2026-08-05T00:05:15.622Z"
+    },
+    "terminos-kunakpedia/dioxido-de-carbono": {
+      "url": "https://kunakair.com/es/dioxido-de-carbono/",
+      "fichero": "terminos-kunakpedia/dioxido-de-carbono.html",
+      "http": 200,
+      "bytes": 344893,
+      "sha256": "4e86244981c07d08f903c704f041f5812838679b20a70eb760eff659f82055b7",
+      "capturada": "2026-08-05T00:05:17.810Z"
+    },
+    "terminos-kunakpedia/dioxido-de-nitrogeno": {
+      "url": "https://kunakair.com/es/dioxido-de-nitrogeno/",
+      "fichero": "terminos-kunakpedia/dioxido-de-nitrogeno.html",
+      "http": 200,
+      "bytes": 331648,
+      "sha256": "80f1bf2468969ee278639a8e0923fb8ace87a3214fc8bd446bf6b68c87593c60",
+      "capturada": "2026-08-05T00:05:19.955Z"
+    },
+    "terminos-kunakpedia/particulas-en-suspension": {
+      "url": "https://kunakair.com/es/particulas-en-suspension/",
+      "fichero": "terminos-kunakpedia/particulas-en-suspension.html",
+      "http": 200,
+      "bytes": 329712,
+      "sha256": "3cd1a6d07a3315a49b6e2dcfeebd9eaff0025bf2cbe813bcdb2d39df7d29150a",
+      "capturada": "2026-08-05T00:05:23.223Z"
+    },
+    "terminos-kunakpedia/indice-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/indice-de-calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/indice-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 320145,
+      "sha256": "3797c3595da322534847cf5105acacdc6c974dcc5a398f0ea0614c98ac9ead62",
+      "capturada": "2026-08-05T00:05:26.220Z"
+    },
+    "terminos-kunakpedia/dioxido-de-azufre": {
+      "url": "https://kunakair.com/es/dioxido-de-azufre/",
+      "fichero": "terminos-kunakpedia/dioxido-de-azufre.html",
+      "http": 200,
+      "bytes": 327606,
+      "sha256": "85c303830f0f0ff9341eacaba0df0f138946b493cf628072da4ef41e8e4072e9",
+      "capturada": "2026-08-05T00:05:28.558Z"
+    },
+    "terminos-kunakpedia/emisiones-atmosfericas": {
+      "url": "https://kunakair.com/es/emisiones-atmosfericas/",
+      "fichero": "terminos-kunakpedia/emisiones-atmosfericas.html",
+      "http": 200,
+      "bytes": 311940,
+      "sha256": "e52dbbc49e6547021195dd329a8cc4cff88d6964434247a94dbfb6a7022ceadd",
+      "capturada": "2026-08-05T00:05:31.537Z"
+    },
+    "terminos-kunakpedia/huella-de-carbono": {
+      "url": "https://kunakair.com/es/huella-de-carbono/",
+      "fichero": "terminos-kunakpedia/huella-de-carbono.html",
+      "http": 200,
+      "bytes": 354820,
+      "sha256": "ab508ca1b5a6e553a6e9eaee7d98295e49540a00454e63415ea73d4856fbb46d",
+      "capturada": "2026-08-05T00:05:33.796Z"
+    },
+    "terminos-kunakpedia/monoxido-de-carbono": {
+      "url": "https://kunakair.com/es/monoxido-de-carbono/",
+      "fichero": "terminos-kunakpedia/monoxido-de-carbono.html",
+      "http": 200,
+      "bytes": 342187,
+      "sha256": "619fc56451ca9bccb2e5ce2284ce5d8b3ca27b89ccb4d3a20595be4d2a8eb41c",
+      "capturada": "2026-08-05T00:05:35.996Z"
+    },
+    "terminos-kunakpedia/contaminantes-atmosfericos": {
+      "url": "https://kunakair.com/es/contaminantes-atmosfericos/",
+      "fichero": "terminos-kunakpedia/contaminantes-atmosfericos.html",
+      "http": 200,
+      "bytes": 394647,
+      "sha256": "cd8c9fac66f7be354feb758736443b7d6181b11378d205b850da4505f8205864",
+      "capturada": "2026-08-05T00:05:38.312Z"
+    },
+    "terminos-kunakpedia/ldar": {
+      "url": "https://kunakair.com/es/ldar/",
+      "fichero": "terminos-kunakpedia/ldar.html",
+      "http": 200,
+      "bytes": 350873,
+      "sha256": "f972559a4287bc1fafba4b01e7a3153a0043d6f4159655dea29c701ffca2d63f",
+      "capturada": "2026-08-05T00:05:40.589Z"
+    },
+    "terminos-kunakpedia/monitorizacion-de-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire/",
+      "fichero": "terminos-kunakpedia/monitorizacion-de-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 330318,
+      "sha256": "26695350a4e5b3b4733ae2ed7902d6f206986da1cd4d0c0f1e78acd51ff785c2",
+      "capturada": "2026-08-05T00:05:43.031Z"
+    },
+    "terminos-kunakpedia/oxidos-de-nitrogeno-nox": {
+      "url": "https://kunakair.com/es/oxidos-de-nitrogeno-nox/",
+      "fichero": "terminos-kunakpedia/oxidos-de-nitrogeno-nox.html",
+      "http": 200,
+      "bytes": 412348,
+      "sha256": "e1bc61e5197fca0cb24bc6c0e898dbace286db363a11d27bde1a2fe5a26dbe07",
+      "capturada": "2026-08-05T00:05:45.190Z"
+    },
+    "terminos-kunakpedia/vigilancia-perimetral-industrial": {
+      "url": "https://kunakair.com/es/vigilancia-perimetral-industrial/",
+      "fichero": "terminos-kunakpedia/vigilancia-perimetral-industrial.html",
+      "http": 200,
+      "bytes": 325408,
+      "sha256": "714eff260b03f5baa0064a61b0055ef3ab23c6d03a94bae40c56d0dbd95e0089",
+      "capturada": "2026-08-05T00:05:47.250Z"
+    },
+    "terminos-kunakpedia/emisiones-por-chimenea": {
+      "url": "https://kunakair.com/es/emisiones-por-chimenea/",
+      "fichero": "terminos-kunakpedia/emisiones-por-chimenea.html",
+      "http": 200,
+      "bytes": 429086,
+      "sha256": "c9501274ad8e5fbdcfc8fe1a6c1db0a13fd3fde1c127c73eba9e71c0cfba9e42",
+      "capturada": "2026-08-05T00:05:49.527Z"
+    },
+    "documentos-cientificos/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones/",
+      "fichero": "documentos-cientificos/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones.html",
+      "http": 200,
+      "bytes": 297968,
+      "sha256": "cc11c2f6ba1a290dbdec2ee965d25d2414f69678b775bcdb3cbf557b4ab57328",
+      "capturada": "2026-08-05T00:05:51.488Z"
+    },
+    "documentos-cientificos/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal/",
+      "fichero": "documentos-cientificos/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal.html",
+      "http": 200,
+      "bytes": 297140,
+      "sha256": "2e84ce527cd7483585a2171d6c92ac79c048e1d2a710310a6525dc7bc1ddf20c",
+      "capturada": "2026-08-05T00:05:53.544Z"
+    },
+    "documentos-cientificos/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/",
+      "fichero": "documentos-cientificos/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion.html",
+      "http": 200,
+      "bytes": 295930,
+      "sha256": "fccb9561bdfed3ead4205bd440b3cb8023154d52bd675c09cc4a50c8b3c499c7",
+      "capturada": "2026-08-05T00:05:56.183Z"
+    },
+    "documentos-cientificos/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid/",
+      "fichero": "documentos-cientificos/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid.html",
+      "http": 200,
+      "bytes": 296068,
+      "sha256": "84cfdeefe105c0cb7b42c061d7b7b8cf302a55dccb6d8a62ab73b659581eecb2",
+      "capturada": "2026-08-05T00:05:58.189Z"
+    },
+    "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor/",
+      "fichero": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor.html",
+      "http": 200,
+      "bytes": 297492,
+      "sha256": "7a35653b467652b72e77daaf1cd590469125fc258fb31573e99853c112c758fa",
+      "capturada": "2026-08-05T00:06:00.172Z"
+    },
+    "documentos-cientificos/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas/",
+      "fichero": "documentos-cientificos/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas.html",
+      "http": 200,
+      "bytes": 297196,
+      "sha256": "6e942e6e5bccdcd3cb24a5d17333f8d1fbb029dc157abc7e12800524646dc5ee",
+      "capturada": "2026-08-05T00:06:02.228Z"
+    },
+    "documentos-cientificos/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica/",
+      "fichero": "documentos-cientificos/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica.html",
+      "http": 200,
+      "bytes": 297661,
+      "sha256": "4e7b8f613c3552f015c5a2cd6a15bf96058137c1023d1af074c92cd897edade8",
+      "capturada": "2026-08-05T00:06:04.101Z"
+    },
+    "documentos-cientificos/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo/",
+      "fichero": "documentos-cientificos/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo.html",
+      "http": 200,
+      "bytes": 297016,
+      "sha256": "9b86d26f6d4ad6d5e18016a454c8dba801501380b3453351566d642988599ec8",
+      "capturada": "2026-08-05T00:06:06.045Z"
+    },
+    "documentos-cientificos/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste/",
+      "fichero": "documentos-cientificos/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste.html",
+      "http": 200,
+      "bytes": 296744,
+      "sha256": "a307f9b3eee53b783dc43e5760745182f0970c1bd9627e22a786b755b67b95fd",
+      "capturada": "2026-08-05T00:06:07.905Z"
+    },
+    "documentos-cientificos/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores/",
+      "fichero": "documentos-cientificos/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores.html",
+      "http": 200,
+      "bytes": 296532,
+      "sha256": "4e52a1f1e3ad6899b169d332a17055555217b6884d7e9accc435bebf8d3c27cf",
+      "capturada": "2026-08-05T00:06:10.056Z"
+    },
+    "documentos-cientificos/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa/",
+      "fichero": "documentos-cientificos/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa.html",
+      "http": 200,
+      "bytes": 297484,
+      "sha256": "8020257856d0052894b3481b294c85e120f6b62b15eb866628d028134b7c250e",
+      "capturada": "2026-08-05T00:06:12.101Z"
+    },
+    "documentos-cientificos/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/",
+      "fichero": "documentos-cientificos/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo.html",
+      "http": 200,
+      "bytes": 297289,
+      "sha256": "2e045fa74120b2c0451b84b89f67c33dd4671401bb6933ccbbd09c2eea995d90",
+      "capturada": "2026-08-05T00:06:14.169Z"
+    },
+    "documentos-cientificos/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana/",
+      "fichero": "documentos-cientificos/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana.html",
+      "http": 200,
+      "bytes": 298242,
+      "sha256": "195c7469732878d86b5cfa095fa9a2373a6d95bd5a6ebaa8f9f64e988a6111f6",
+      "capturada": "2026-08-05T00:06:16.238Z"
+    },
+    "documentos-cientificos/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire/",
+      "fichero": "documentos-cientificos/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 297128,
+      "sha256": "6e438d2e917503fbb44e4fe9e2e21c01baff33459ad4800b9569e1b9d56988eb",
+      "capturada": "2026-08-05T00:06:18.087Z"
+    },
+    "documentos-cientificos/kunak-air-pro-informe-de-evaluacion-en-campo": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-pro-informe-de-evaluacion-en-campo/",
+      "fichero": "documentos-cientificos/kunak-air-pro-informe-de-evaluacion-en-campo.html",
+      "http": 200,
+      "bytes": 294896,
+      "sha256": "fa56e4e9255f60441a5200b75611768e141c8d80481aac17d9bb57b43c9fdf45",
+      "capturada": "2026-08-05T00:06:20.008Z"
+    },
+    "documentos-cientificos/kunak-air-lite-informe-de-evaluacion-en-campo": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-lite-informe-de-evaluacion-en-campo/",
+      "fichero": "documentos-cientificos/kunak-air-lite-informe-de-evaluacion-en-campo.html",
+      "http": 200,
+      "bytes": 294920,
+      "sha256": "9e9053223b30040c1e1c86dc83001f18ee38611e50e64361f5979e9bf48f16a5",
+      "capturada": "2026-08-05T00:06:21.974Z"
+    },
+    "documentos-cientificos/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones/",
+      "fichero": "documentos-cientificos/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones.html",
+      "http": 200,
+      "bytes": 297329,
+      "sha256": "d0f23dc988f2ef87227ad1f93f42342933c0c794d250bef0d4eeab0e988a1164",
+      "capturada": "2026-08-05T00:06:24.021Z"
+    },
+    "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite/",
+      "fichero": "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite.html",
+      "http": 200,
+      "bytes": 294715,
+      "sha256": "c00f9d6e823eeaeb43c22e8f2995d083259be065dd6663980a638567a97e94fc",
+      "capturada": "2026-08-05T00:06:26.104Z"
+    },
+    "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro/",
+      "fichero": "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro.html",
+      "http": 200,
+      "bytes": 294562,
+      "sha256": "823ea146238ab092a9acd1e56dab318915b589cdca0744536f916b98c318a214",
+      "capturada": "2026-08-05T00:06:28.080Z"
+    },
+    "documentos-cientificos/desafio-airlab-de-microsensores-2023": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/",
+      "fichero": "documentos-cientificos/desafio-airlab-de-microsensores-2023.html",
+      "http": 200,
+      "bytes": 294721,
+      "sha256": "1c839d9c226fabdf98701cf32fedc2530cd8b9ee1a4f31c3e49aa284aa75c59b",
+      "capturada": "2026-08-05T00:06:30.162Z"
+    },
+    "documentos-cientificos/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19/",
+      "fichero": "documentos-cientificos/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19.html",
+      "http": 200,
+      "bytes": 295848,
+      "sha256": "1fc47a258cb2ff4de583eb7261d897010d5d158a10dc923cd5fefc02349d73b8",
+      "capturada": "2026-08-05T00:06:32.214Z"
+    },
+    "documentos-cientificos/soluciones-avanzadas-de-monitorizacion": {
+      "url": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+      "fichero": "documentos-cientificos/soluciones-avanzadas-de-monitorizacion.html",
+      "http": 200,
+      "bytes": 295424,
+      "sha256": "7e0de497b5e4904eff6460c2e73386fd521fc48bfd4b978ffaf30be85fa6dbf8",
+      "capturada": "2026-08-05T00:06:34.257Z"
+    },
+    "documentos-cientificos/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico/",
+      "fichero": "documentos-cientificos/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico.html",
+      "http": 200,
+      "bytes": 295368,
+      "sha256": "8704f5509708fdde623e901010761bb20082297735278beefb64aea32886b98a",
+      "capturada": "2026-08-05T00:06:36.241Z"
+    },
+    "casos/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica": {
+      "url": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "fichero": "casos/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica.html",
+      "http": 200,
+      "bytes": 331323,
+      "sha256": "d81bea500b02ffef804f6d6f13bbdd04f990f713ff9571ef6633a535600b591f",
+      "capturada": "2026-08-05T00:06:38.431Z"
+    },
+    "casos/red-calidad-de-aire-para-world-athletics": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-calidad-de-aire-para-world-athletics/",
+      "fichero": "casos/red-calidad-de-aire-para-world-athletics.html",
+      "http": 200,
+      "bytes": 326105,
+      "sha256": "3a0147f1efdadebca8a83153396cf8c362f42f7afd403161bb1fc9a49ee36bdf",
+      "capturada": "2026-08-05T00:06:40.475Z"
+    },
+    "casos/transformacion-digital-y-un-aire-mas-limpio-en-etiopia": {
+      "url": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "fichero": "casos/transformacion-digital-y-un-aire-mas-limpio-en-etiopia.html",
+      "http": 200,
+      "bytes": 335896,
+      "sha256": "ab2ef48c7354c758320be8a9df0e1e0a67d0dacf7c8941964aefb3d5d06d5905",
+      "capturada": "2026-08-05T00:06:42.405Z"
+    },
+    "casos/control-quemas-controladas-cana-azucar": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "fichero": "casos/control-quemas-controladas-cana-azucar.html",
+      "http": 200,
+      "bytes": 335240,
+      "sha256": "946e00681e403e10261916f11fd8e7b4fb6ab6dcaf1e1d3858043257a5a56fa7",
+      "capturada": "2026-08-05T00:06:44.387Z"
+    },
+    "casos/red-hibrida-calidad-aire-atmo-france": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "fichero": "casos/red-hibrida-calidad-aire-atmo-france.html",
+      "http": 200,
+      "bytes": 331104,
+      "sha256": "d554ed771f18ada33130cacba223244a4dccf93b3e91423e49a9a8a0b2fba841",
+      "capturada": "2026-08-05T00:06:46.383Z"
+    },
+    "casos/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey": {
+      "url": "https://kunakair.com/es/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey/",
+      "fichero": "casos/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey.html",
+      "http": 200,
+      "bytes": 337464,
+      "sha256": "b400ed823c3e9ab3f31284faf55099ab69fe49c9086af9f88b43af67149bf817",
+      "capturada": "2026-08-05T00:06:48.583Z"
+    },
+    "casos/vigilancia-contaminacion-aire-albacete": {
+      "url": "https://kunakair.com/es/casos-de-exito/vigilancia-contaminacion-aire-albacete/",
+      "fichero": "casos/vigilancia-contaminacion-aire-albacete.html",
+      "http": 200,
+      "bytes": 345925,
+      "sha256": "37b1fa665fd487e7b60698f7e020741045b4a6ca3daa20b6dd09311655a4bdcf",
+      "capturada": "2026-08-05T00:06:50.745Z"
+    },
+    "casos/control-de-la-calidad-del-aire-en-puertos-apb": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/",
+      "fichero": "casos/control-de-la-calidad-del-aire-en-puertos-apb.html",
+      "http": 200,
+      "bytes": 341480,
+      "sha256": "9369efb7a8d8fb67694f5e00200bd2c4a5beb3c3288b540123b30d2afa513aaa",
+      "capturada": "2026-08-05T00:06:53.215Z"
+    },
+    "casos/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian": {
+      "url": "https://kunakair.com/es/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian/",
+      "fichero": "casos/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian.html",
+      "http": 200,
+      "bytes": 343497,
+      "sha256": "e42677039b08e94cc4eb887ae6138e872303effa8088b3b1c30cde0a2b59e367",
+      "capturada": "2026-08-05T00:06:55.396Z"
+    },
+    "casos/red-sensores-calidad-aire-alaquas": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-sensores-calidad-aire-alaquas/",
+      "fichero": "casos/red-sensores-calidad-aire-alaquas.html",
+      "http": 200,
+      "bytes": 335273,
+      "sha256": "7fe94c4d69a2624753df5e165e21f88b29bfaf30d43f682a4c65071980de7df0",
+      "capturada": "2026-08-05T00:06:57.436Z"
+    },
+    "casos/demolicion-estadio-vicente-calderon": {
+      "url": "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+      "fichero": "casos/demolicion-estadio-vicente-calderon.html",
+      "http": 200,
+      "bytes": 317030,
+      "sha256": "99de3551ecf13e2fafdb2c6be98eabc68d0b4e3cb8b665cc9864b6f2533a1fe5",
+      "capturada": "2026-08-05T00:06:59.377Z"
+    },
+    "casos/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "url": "https://kunakair.com/es/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano/",
+      "fichero": "casos/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano.html",
+      "http": 200,
+      "bytes": 315996,
+      "sha256": "ed18611913ab34f6cbbb993d76a6f3b99bfff19a08fabc979d182a59ff1ee550",
+      "capturada": "2026-08-05T00:07:01.374Z"
+    },
+    "casos/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid": {
+      "url": "https://kunakair.com/es/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid/",
+      "fichero": "casos/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid.html",
+      "http": 200,
+      "bytes": 319309,
+      "sha256": "34272b5277d200b7ecbe5c61a377742659484cac5aab4509f2059f69af2d2c3e",
+      "capturada": "2026-08-05T00:07:03.348Z"
+    },
+    "casos/monitorizacion-de-gases-y-particulas-en-metro-valparaiso": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-gases-y-particulas-en-metro-valparaiso/",
+      "fichero": "casos/monitorizacion-de-gases-y-particulas-en-metro-valparaiso.html",
+      "http": 200,
+      "bytes": 337324,
+      "sha256": "4266436c16696a98584cc0f70b216df590338d9a3cb9fc998322cd832547e7c3",
+      "capturada": "2026-08-05T00:07:05.431Z"
+    },
+    "casos/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023/",
+      "fichero": "casos/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023.html",
+      "http": 200,
+      "bytes": 338852,
+      "sha256": "cc155f6368268727a5e74e7e802ce3117a22bf11d774cdaf06806fcf1a7bb70b",
+      "capturada": "2026-08-05T00:07:07.412Z"
+    },
+    "casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air": {
+      "url": "https://kunakair.com/es/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air/",
+      "fichero": "casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air.html",
+      "http": 200,
+      "bytes": 341488,
+      "sha256": "f85a7be1eb29d7e37be485d63d0b2e272feb58d657a1b536d20682dcc1951466",
+      "capturada": "2026-08-05T00:07:09.437Z"
+    },
+    "casos/control-de-la-contaminacion-en-bilbao": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-en-bilbao/",
+      "fichero": "casos/control-de-la-contaminacion-en-bilbao.html",
+      "http": 200,
+      "bytes": 344385,
+      "sha256": "440b7622c1d7086fad4794365d408c1e8c1a228afedcbe75e166ec2d047fc100",
+      "capturada": "2026-08-05T00:07:11.708Z"
+    },
+    "casos/control-de-la-calidad-del-aire-en-la-formula-e": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-la-formula-e/",
+      "fichero": "casos/control-de-la-calidad-del-aire-en-la-formula-e.html",
+      "http": 200,
+      "bytes": 336484,
+      "sha256": "ca2ae427933bb1e1d5ba670dc1654cd43145d77f7da181fb54b5629b77a2e01f",
+      "capturada": "2026-08-05T00:07:14.260Z"
+    },
+    "casos/medicion-contaminantes-ambientales-ciudad-cartagena-colombia": {
+      "url": "https://kunakair.com/es/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia/",
+      "fichero": "casos/medicion-contaminantes-ambientales-ciudad-cartagena-colombia.html",
+      "http": 200,
+      "bytes": 330077,
+      "sha256": "028ab0f07dc170cef723589598c66b88fb7c81bc6262b957ceaf8e8977b13174",
+      "capturada": "2026-08-05T00:07:16.246Z"
+    },
+    "casos/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick/",
+      "fichero": "casos/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick.html",
+      "http": 200,
+      "bytes": 331466,
+      "sha256": "943ae96e50aae0dff35a3458b64d14c06751ea2ed8bd27717163ce97f25d820f",
+      "capturada": "2026-08-05T00:07:18.289Z"
+    },
+    "casos/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria": {
+      "url": "https://kunakair.com/es/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria/",
+      "fichero": "casos/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria.html",
+      "http": 200,
+      "bytes": 341115,
+      "sha256": "45f00a0fc94f4c50e42d850f9ad68379bc78c59c661b4acac0f38a348822c59f",
+      "capturada": "2026-08-05T00:07:20.674Z"
+    },
+    "casos/control-emisiones-de-olor-en-ptar-en-israel": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel/",
+      "fichero": "casos/control-emisiones-de-olor-en-ptar-en-israel.html",
+      "http": 200,
+      "bytes": 332859,
+      "sha256": "9425909d91e2a91d616b49f2ce433542900d0828bdc17ee45bcb104a361c36de",
+      "capturada": "2026-08-05T00:07:22.601Z"
+    },
+    "casos/control-de-contaminacion-por-malos-olores-en-edar-arazuri": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-contaminacion-por-malos-olores-en-edar-arazuri/",
+      "fichero": "casos/control-de-contaminacion-por-malos-olores-en-edar-arazuri.html",
+      "http": 200,
+      "bytes": 326445,
+      "sha256": "6f590c4c5c07cc8e1005e47f951e1e05fd1d2bbc83df96f8b228de9f24dead32",
+      "capturada": "2026-08-05T00:07:24.556Z"
+    },
+    "casos/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa/",
+      "fichero": "casos/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa.html",
+      "http": 200,
+      "bytes": 337912,
+      "sha256": "898e124e0903a8c4ad30ddf77ceffd87a775f029a695dc320d966afb0319e330",
+      "capturada": "2026-08-05T00:07:26.517Z"
+    },
+    "casos/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama/",
+      "fichero": "casos/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama.html",
+      "http": 200,
+      "bytes": 339388,
+      "sha256": "721e49164cebda89584883daaae189974d3d2fef4984d7356c7adf142fbfa030",
+      "capturada": "2026-08-05T00:07:28.527Z"
+    },
+    "casos/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals/",
+      "fichero": "casos/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals.html",
+      "http": 200,
+      "bytes": 346925,
+      "sha256": "f60bae9387f72a90d3bce3a851920f7d1e017cc47465a76bc0cab087d055dc8d",
+      "capturada": "2026-08-05T00:07:30.594Z"
+    },
+    "casos/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas": {
+      "url": "https://kunakair.com/es/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas/",
+      "fichero": "casos/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas.html",
+      "http": 200,
+      "bytes": 342491,
+      "sha256": "5022dcd73844e449f1048de775b4ee6560df8e2e427e6aba8ed425a7141d0d46",
+      "capturada": "2026-08-05T00:07:32.731Z"
+    },
+    "casos/red-monitorizacion-polvo-particulas-minas-brasil-iron": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron/",
+      "fichero": "casos/red-monitorizacion-polvo-particulas-minas-brasil-iron.html",
+      "http": 200,
+      "bytes": 330787,
+      "sha256": "ce7ac05eeb8f4b8f4f9b8b5be5bcbc70c6b0a251cf38797b9d29f6f1787927b6",
+      "capturada": "2026-08-05T00:07:35.420Z"
+    },
+    "casos/control-ambiental-actividades-portuarias-bahia-cadiz": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz/",
+      "fichero": "casos/control-ambiental-actividades-portuarias-bahia-cadiz.html",
+      "http": 200,
+      "bytes": 337965,
+      "sha256": "18380a75891cb53579747fc3f8256ad01cc0db5e738422733a4a768d222d32b0",
+      "capturada": "2026-08-05T00:07:37.607Z"
+    },
+    "casos/cuantificacion-emisiones-particulas-difusas-puerto-bilbao": {
+      "url": "https://kunakair.com/es/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao/",
+      "fichero": "casos/cuantificacion-emisiones-particulas-difusas-puerto-bilbao.html",
+      "http": 200,
+      "bytes": 331029,
+      "sha256": "58699a08f16d041a430b37c92ea6d94ece2104ccbd5a9a7788ec45178f4fb94a",
+      "capturada": "2026-08-05T00:07:39.745Z"
+    },
+    "casos/monitorizacion-calidad-aire-planta-fertilizantes-lifeco": {
+      "url": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "fichero": "casos/monitorizacion-calidad-aire-planta-fertilizantes-lifeco.html",
+      "http": 200,
+      "bytes": 355607,
+      "sha256": "2a75de0b9f153580ccfe26c9f1e66d054eb2ecf48e0061920741107b086afe4c",
+      "capturada": "2026-08-05T00:07:42.696Z"
+    },
+    "casos/estudio-de-la-contaminacion-atmosferica-gwadair": {
+      "url": "https://kunakair.com/es/casos-de-exito/estudio-de-la-contaminacion-atmosferica-gwadair/",
+      "fichero": "casos/estudio-de-la-contaminacion-atmosferica-gwadair.html",
+      "http": 200,
+      "bytes": 338614,
+      "sha256": "5fcb2b8a665caedd3696081cd0323605ed3204b0fd0cbc76c9ec2e3fd7ad08d1",
+      "capturada": "2026-08-05T00:07:46.347Z"
+    },
+    "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur": {
+      "url": "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+      "fichero": "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur.html",
+      "http": 200,
+      "bytes": 340783,
+      "sha256": "1a0722535fea4ae0e7f5deb472316e27ac9a98d434b34e102db6fd5cdcf86e72",
+      "capturada": "2026-08-05T00:07:48.268Z"
+    },
+    "casos/pure-cities": {
+      "url": "https://kunakair.com/es/casos-de-exito/pure-cities/",
+      "fichero": "casos/pure-cities.html",
+      "http": 200,
+      "bytes": 341263,
+      "sha256": "19639f3dfc632f40fa4f377ce404207ee831769cdf79514be440ed9b0194bb79",
+      "capturada": "2026-08-05T00:07:50.338Z"
+    },
+    "casos/monitorizacion-ambiental-mediante-boyas-en-neom": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom/",
+      "fichero": "casos/monitorizacion-ambiental-mediante-boyas-en-neom.html",
+      "http": 200,
+      "bytes": 344533,
+      "sha256": "bca34c06420bd4659471bd92debd72585632777bbcf94e6f821b75140c3b9a70",
+      "capturada": "2026-08-05T00:07:56.961Z"
+    },
+    "casos/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre/",
+      "fichero": "casos/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre.html",
+      "http": 200,
+      "bytes": 344902,
+      "sha256": "fc11a173001ed488de2bc80219d66b3900bdefc2b8a25a32bf7c48a1770d896c",
+      "capturada": "2026-08-05T00:08:09.734Z"
+    },
+    "casos/control-de-la-contaminacion-atmosferica-universidad-de-chipre": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-atmosferica-universidad-de-chipre/",
+      "fichero": "casos/control-de-la-contaminacion-atmosferica-universidad-de-chipre.html",
+      "http": 200,
+      "bytes": 331858,
+      "sha256": "ff5cd113bb27f078311e63d8bf49f64630250915d2e7b8064ac39683eb1a8490",
+      "capturada": "2026-08-05T00:08:12.916Z"
+    },
+    "casos/monitoreo-ambiental-en-el-puerto-de-cotonu": {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "fichero": "casos/monitoreo-ambiental-en-el-puerto-de-cotonu.html",
+      "http": 200,
+      "bytes": 344969,
+      "sha256": "bab3b659dc5a5966728a1cdf573d6c54a8e61768f4d19bfdae9e7dbe049d333b",
+      "capturada": "2026-08-05T00:08:15.538Z"
+    },
+    "casos/porto-alegre-red-de-control-de-la-calidad-del-aire": {
+      "url": "https://kunakair.com/es/casos-de-exito/porto-alegre-red-de-control-de-la-calidad-del-aire/",
+      "fichero": "casos/porto-alegre-red-de-control-de-la-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 346107,
+      "sha256": "c69044530386923c89f2ab03c22a1c1752750f45c87fca66c4e0cbcd8f8cdd06",
+      "capturada": "2026-08-05T00:08:18.107Z"
+    },
+    "casos/monitorizacion-ambiental-instalacion-petroleo-gas": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-ambiental-instalacion-petroleo-gas/",
+      "fichero": "casos/monitorizacion-ambiental-instalacion-petroleo-gas.html",
+      "http": 200,
+      "bytes": 337995,
+      "sha256": "a0bef26faf3a18403e3857d8d733fbfb5ea9cf186171da42ee19420d2a253e22",
+      "capturada": "2026-08-05T00:08:20.296Z"
+    },
+    "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario": {
+      "url": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "fichero": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario.html",
+      "http": 200,
+      "bytes": 339125,
+      "sha256": "5a27e974ec4dd68d0f01be4e5463de1522bb30cfb14f05f682200e72a0305a13",
+      "capturada": "2026-08-05T00:08:22.574Z"
+    },
+    "casos/citytraq-calidad-del-aire-urbano": {
+      "url": "https://kunakair.com/es/casos-de-exito/citytraq-calidad-del-aire-urbano/",
+      "fichero": "casos/citytraq-calidad-del-aire-urbano.html",
+      "http": 200,
+      "bytes": 340611,
+      "sha256": "0004cf12a4e75398643d81e2ceb44b20472656ee45fd6c96d3f64530eeaa0bad",
+      "capturada": "2026-08-05T00:08:25.031Z"
+    },
+    "casos/red-de-control-de-emisiones-en-planta-de-aluminio": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-de-control-de-emisiones-en-planta-de-aluminio/",
+      "fichero": "casos/red-de-control-de-emisiones-en-planta-de-aluminio.html",
+      "http": 200,
+      "bytes": 349836,
+      "sha256": "6a1e14b4d4013fc1a600a71c6696205e0c61587b7a0fd82dc88674caea7fefd1",
+      "capturada": "2026-08-05T00:08:27.403Z"
+    },
+    "casos/monitorizacion-ambiental-aeropuerto-subic-bay": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-ambiental-aeropuerto-subic-bay/",
+      "fichero": "casos/monitorizacion-ambiental-aeropuerto-subic-bay.html",
+      "http": 200,
+      "bytes": 349103,
+      "sha256": "3c93e2cc8e18baadca7d560c87298c41e9225fb8cc827f1e0ba6a2b314e1d1dc",
+      "capturada": "2026-08-05T00:08:29.927Z"
+    },
+    "casos/monitorizacion-de-polvo-en-la-mina-northparkes-australia": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-polvo-en-la-mina-northparkes-australia/",
+      "fichero": "casos/monitorizacion-de-polvo-en-la-mina-northparkes-australia.html",
+      "http": 200,
+      "bytes": 335905,
+      "sha256": "9042da36004e71e1ff8fa334e0ab10dde9b9e1df35e08e83b06cb2aede8a79cb",
+      "capturada": "2026-08-05T00:08:32.360Z"
+    },
+    "casos/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas": {
+      "url": "https://kunakair.com/es/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas/",
+      "fichero": "casos/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.html",
+      "http": 200,
+      "bytes": 338626,
+      "sha256": "4150071cbb883ccff50121d8b42d2237a08cc1775d7e989a0b0838500f093acb",
+      "capturada": "2026-08-05T00:08:34.633Z"
+    },
+    "casos/control-de-la-calidad-del-aire-en-el-volcan-turrialba": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba/",
+      "fichero": "casos/control-de-la-calidad-del-aire-en-el-volcan-turrialba.html",
+      "http": 200,
+      "bytes": 348218,
+      "sha256": "26d7262087ee942d12141ab677f55d9b78b7a5999d8955cd3ecd28cc09fe890f",
+      "capturada": "2026-08-05T00:08:36.927Z"
+    },
+    "casos/distrito-baja-emision-rio-de-janeiro": {
+      "url": "https://kunakair.com/es/case-studies/distrito-baja-emision-rio-de-janeiro/",
+      "fichero": "casos/distrito-baja-emision-rio-de-janeiro.html",
+      "http": 200,
+      "bytes": 345575,
+      "sha256": "b8fc875b20770ccf25aefa6797c3926ac8730e21c1396f4cd72abfcaa4f8cdf1",
+      "capturada": "2026-08-05T00:08:38.955Z"
+    },
+    "casos/control-de-emisiones-plantas-ternium-en-mexico": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico/",
+      "fichero": "casos/control-de-emisiones-plantas-ternium-en-mexico.html",
+      "http": 200,
+      "bytes": 347187,
+      "sha256": "ab7729be3fce323fc404d1654b950ca08978fbf1906cec1de90d93aa44c5a665",
+      "capturada": "2026-08-05T00:08:41.013Z"
+    },
+    "casos/red-de-monitorizacion-ambiental-mades-paraguay": {
+      "url": "https://kunakair.com/es/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay/",
+      "fichero": "casos/red-de-monitorizacion-ambiental-mades-paraguay.html",
+      "http": 200,
+      "bytes": 343985,
+      "sha256": "96fe844a3e2b7c90581604b9bd1c59bb99f7c5eed8c3fbde5f113e51f6e1a225",
+      "capturada": "2026-08-05T00:08:43.102Z"
+    },
+    "casos/clean-air-champions-league": {
+      "url": "https://kunakair.com/es/casos-de-exito/clean-air-champions-league/",
+      "fichero": "casos/clean-air-champions-league.html",
+      "http": 200,
+      "bytes": 336538,
+      "sha256": "8491b9aaed05ec105672f06bb888ae56a83d5007a947a3d822a21355d48bb4a9",
+      "capturada": "2026-08-05T00:08:46.360Z"
+    },
+    "casos/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe/",
+      "fichero": "casos/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe.html",
+      "http": 200,
+      "bytes": 341808,
+      "sha256": "59464188891abf746e473feda0f6871c1653b490ba21638af18e268bfa36335c",
+      "capturada": "2026-08-05T00:08:48.804Z"
+    },
+    "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "fichero": "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos.html",
+      "http": 200,
+      "bytes": 345508,
+      "sha256": "c2b38b259a12df0613c620e6c2789d2dfbb82353a45045015f6d582203d2267a",
+      "capturada": "2026-08-05T00:08:51.314Z"
+    },
+    "casos/running-for-clean-air-ciudades-saludables": {
+      "url": "https://kunakair.com/es/casos-de-exito/running-for-clean-air-ciudades-saludables/",
+      "fichero": "casos/running-for-clean-air-ciudades-saludables.html",
+      "http": 200,
+      "bytes": 351459,
+      "sha256": "1eed26ec1680fdd70d833f6f0e9095248ff5ef30992511f2d948f9e4d26e4df7",
+      "capturada": "2026-08-05T00:08:53.699Z"
+    },
+    "casos/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/",
+      "fichero": "casos/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez.html",
+      "http": 200,
+      "bytes": 340564,
+      "sha256": "5ae26104e5cab4e904c76756401871c3143e0a11d6b0796a3d77a94df1859676",
+      "capturada": "2026-08-05T00:08:55.698Z"
+    },
+    "casos/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman/",
+      "fichero": "casos/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman.html",
+      "http": 200,
+      "bytes": 327040,
+      "sha256": "7f7693b07409d77e8a44ca41e88e12db0c71dbf543b374268a2294b79c4cc571",
+      "capturada": "2026-08-05T00:08:57.649Z"
+    },
+    "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+      "fichero": "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania.html",
+      "http": 200,
+      "bytes": 351047,
+      "sha256": "5a2dc3647630a438f0e2171b918bbc04fade45b95826708755ae6a298707fb39",
+      "capturada": "2026-08-05T00:08:59.692Z"
+    },
+    "faqs/el-equipo-tiene-memoria-interna": {
+      "url": "https://kunakair.com/es/faqs/el-equipo-tiene-memoria-interna/",
+      "fichero": "faqs/el-equipo-tiene-memoria-interna.html",
+      "http": 200,
+      "bytes": 284944,
+      "sha256": "3fcf2aa20aad539cd1cecd11e0242f05adff4bf01689c770545db2acea8903fc",
+      "capturada": "2026-08-05T00:09:01.737Z"
+    },
+    "faqs/a-que-altura-debe-instalarse-el-equipo": {
+      "url": "https://kunakair.com/es/faqs/a-que-altura-debe-instalarse-el-equipo/",
+      "fichero": "faqs/a-que-altura-debe-instalarse-el-equipo.html",
+      "http": 200,
+      "bytes": 285056,
+      "sha256": "34918eab6a377d1ba8222e02cde09134354481895530ac0b544b8c3a9eb3f11c",
+      "capturada": "2026-08-05T00:09:03.717Z"
+    },
+    "faqs/cual-es-la-duracion-de-la-bateria": {
+      "url": "https://kunakair.com/es/faqs/cual-es-la-duracion-de-la-bateria/",
+      "fichero": "faqs/cual-es-la-duracion-de-la-bateria.html",
+      "http": 200,
+      "bytes": 284897,
+      "sha256": "3d5fa9dbbbc4c6cc418f772a2a67736316904056ba9e39c93c04f99eaa3accdd",
+      "capturada": "2026-08-05T00:09:05.723Z"
+    },
+    "faqs/como-se-comunica-el-equipo": {
+      "url": "https://kunakair.com/es/faqs/como-se-comunica-el-equipo/",
+      "fichero": "faqs/como-se-comunica-el-equipo.html",
+      "http": 200,
+      "bytes": 284874,
+      "sha256": "8ab499859655fad0906e6aa8718df0764acc9d0b87ad2753a3263c5bb90abd94",
+      "capturada": "2026-08-05T00:09:07.611Z"
+    },
+    "faqs/se-pueden-obtener-los-datos-en-local-modbus": {
+      "url": "https://kunakair.com/es/faqs/se-pueden-obtener-los-datos-en-local-modbus/",
+      "fichero": "faqs/se-pueden-obtener-los-datos-en-local-modbus.html",
+      "http": 200,
+      "bytes": 285058,
+      "sha256": "54b3bab22fa18eb128399deaa71f179a837ab2a86120c850f596a98199cfcf3f",
+      "capturada": "2026-08-05T00:09:09.588Z"
+    },
+    "faqs/que-opciones-de-calibracion-existen": {
+      "url": "https://kunakair.com/es/faqs/que-opciones-de-calibracion-existen/",
+      "fichero": "faqs/que-opciones-de-calibracion-existen.html",
+      "http": 200,
+      "bytes": 285437,
+      "sha256": "1d305ccd5ece92bb7955e0cf86d1fd0b44472a5a012ea049b30bd3f10432edae",
+      "capturada": "2026-08-05T00:09:11.639Z"
+    },
+    "faqs/cada-cuanto-se-calibra-el-equipo": {
+      "url": "https://kunakair.com/es/faqs/cada-cuanto-se-calibra-el-equipo/",
+      "fichero": "faqs/cada-cuanto-se-calibra-el-equipo.html",
+      "http": 200,
+      "bytes": 285319,
+      "sha256": "f7b60fcdd2d8f854e6b0f9a86170ecaf4cc60bfeafe3c65b134842cd5588eca2",
+      "capturada": "2026-08-05T00:09:13.559Z"
+    },
+    "faqs/el-equipo-es-portatil-o-fijo": {
+      "url": "https://kunakair.com/es/faqs/el-equipo-es-portatil-o-fijo/",
+      "fichero": "faqs/el-equipo-es-portatil-o-fijo.html",
+      "http": 200,
+      "bytes": 285033,
+      "sha256": "1e2880f4d969699efb16e38e0b66fe881024b40d3a36e2bc32bb9f8c04463c4c",
+      "capturada": "2026-08-05T00:09:15.413Z"
+    },
+    "faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software": {
+      "url": "https://kunakair.com/es/faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software/",
+      "fichero": "faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software.html",
+      "http": 200,
+      "bytes": 285982,
+      "sha256": "edc0f5116ce1e33ae3b4d0c34995b2b9d3240a158a26f7985ba28cb0a9b6995a",
+      "capturada": "2026-08-05T00:09:17.399Z"
+    },
+    "faqs/los-equipos-kunak-son-certificados-atex": {
+      "url": "https://kunakair.com/es/faqs/los-equipos-kunak-son-certificados-atex/",
+      "fichero": "faqs/los-equipos-kunak-son-certificados-atex.html",
+      "http": 200,
+      "bytes": 285401,
+      "sha256": "96a1a1290eb6a8cded296999a11ab5d815f11204edf0ef91a49b71234767717b",
+      "capturada": "2026-08-05T00:09:19.662Z"
+    },
+    "faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "url": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion/",
+      "fichero": "faqs/cual-es-la-diferencia-entre-calibracion-y-correccion.html",
+      "http": 200,
+      "bytes": 286097,
+      "sha256": "27b4809c06ca73ef3d4b3f2142535bf1cec77655b23440db314ad296c3d8d2a7",
+      "capturada": "2026-08-05T00:09:21.603Z"
+    },
+    "faqs/como-se-integran-los-datos-a-una-tercera-plataforma": {
+      "url": "https://kunakair.com/es/faqs/como-se-integran-los-datos-a-una-tercera-plataforma/",
+      "fichero": "faqs/como-se-integran-los-datos-a-una-tercera-plataforma.html",
+      "http": 200,
+      "bytes": 285375,
+      "sha256": "3ecae44fef957d505d61ed04999964f538025eb5b21fa48d4de81b9b023bf622",
+      "capturada": "2026-08-05T00:09:23.538Z"
+    },
+    "faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite": {
+      "url": "https://kunakair.com/es/faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite/",
+      "fichero": "faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite.html",
+      "http": 200,
+      "bytes": 285918,
+      "sha256": "86ab441cb9ee772d553a51a02e72b15d3d7132bb6f4aff6c826817e7e19ea8a4",
+      "capturada": "2026-08-05T00:09:25.407Z"
+    },
+    "faqs/pueden-utilizarse-los-equipos-en-interiores": {
+      "url": "https://kunakair.com/es/faqs/pueden-utilizarse-los-equipos-en-interiores/",
+      "fichero": "faqs/pueden-utilizarse-los-equipos-en-interiores.html",
+      "http": 200,
+      "bytes": 285168,
+      "sha256": "353e41e5eba9c5c4ee948f4989f84604df12d842937c97a15d0c61982b7385f8",
+      "capturada": "2026-08-05T00:09:27.296Z"
+    },
+    "faqs/cuenta-esta-tecnologia-con-certificaciones": {
+      "url": "https://kunakair.com/es/faqs/cuenta-esta-tecnologia-con-certificaciones/",
+      "fichero": "faqs/cuenta-esta-tecnologia-con-certificaciones.html",
+      "http": 200,
+      "bytes": 285439,
+      "sha256": "0ea864ab84cff937b78274190e8a59292096ac8280f6a8594843ce9997cb7dd5",
+      "capturada": "2026-08-05T00:09:29.188Z"
+    },
+    "faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "url": "https://kunakair.com/es/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento/",
+      "fichero": "faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento.html",
+      "http": 200,
+      "bytes": 285461,
+      "sha256": "14249f66d277c18235e910fffad0e54d7e550dcbd5de90e3df818ab1b05dcf39",
+      "capturada": "2026-08-05T00:09:31.053Z"
+    },
+    "faqs/se-pueden-conectar-sondas-meteorologicas": {
+      "url": "https://kunakair.com/es/faqs/se-pueden-conectar-sondas-meteorologicas/",
+      "fichero": "faqs/se-pueden-conectar-sondas-meteorologicas.html",
+      "http": 200,
+      "bytes": 285250,
+      "sha256": "44dc5f9816f52660ab191a5f432a56b898dcd1741087a57dce1fcc8d5ced3988",
+      "capturada": "2026-08-05T00:09:32.890Z"
+    },
+    "faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud": {
+      "url": "https://kunakair.com/es/faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud/",
+      "fichero": "faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud.html",
+      "http": 200,
+      "bytes": 285471,
+      "sha256": "90d383c68333ce3c6ef60ca76df489c78dbcbd16be67f55bd3b798958bf91a6d",
+      "capturada": "2026-08-05T00:09:34.890Z"
+    },
+    "faqs/que-area-cubre-cada-dispositivo": {
+      "url": "https://kunakair.com/es/faqs/que-area-cubre-cada-dispositivo/",
+      "fichero": "faqs/que-area-cubre-cada-dispositivo.html",
+      "http": 200,
+      "bytes": 285415,
+      "sha256": "17ed314135f722cba33e266ca2e660f6b9343edf8860021dafbcf2cf4d243612",
+      "capturada": "2026-08-05T00:09:36.953Z"
+    },
+    "productos/accesorios": {
+      "url": "https://kunakair.com/es/accesorios/",
+      "fichero": "productos/accesorios.html",
+      "http": 200,
+      "bytes": 380764,
+      "sha256": "97d3cce6c95d4b1eb7c8a576442afff714287147cff720d0d26e442fe07eb1d4",
+      "capturada": "2026-08-05T00:09:39.244Z"
+    },
+    "productos/cartuchos-inteligentes/amoniaco": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+      "fichero": "productos/cartuchos-inteligentes/amoniaco.html",
+      "http": 200,
+      "bytes": 384632,
+      "sha256": "060b51befc3213d74d48b6baa685ef10c9f612a1bfdbc5f2fde08309df6f2e2d",
+      "capturada": "2026-08-05T00:09:41.406Z"
+    },
+    "productos/cartuchos-inteligentes/cianuro-de-hidrogeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cianuro-de-hidrogeno/",
+      "fichero": "productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+      "http": 200,
+      "bytes": 383811,
+      "sha256": "154f0a4b094e9f97f16770fdcedf6792a3334fc3e5e86f085287d633e0bcf253",
+      "capturada": "2026-08-05T00:09:43.528Z"
+    },
+    "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cloro-dioxido-de-cloro/",
+      "fichero": "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+      "http": 200,
+      "bytes": 384736,
+      "sha256": "6fcce0d1fce61395dc64cb6f52db6ffe89b3aad6f9ce6f43da6c53f774f720d8",
+      "capturada": "2026-08-05T00:09:45.678Z"
+    },
+    "productos/cartuchos-inteligentes/cloruro-de-hidrogeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/cloruro-de-hidrogeno/",
+      "fichero": "productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+      "http": 200,
+      "bytes": 384170,
+      "sha256": "207ac3590e38c535ddf7eba86ec2967b0054e374c90c42d2de65815369a96537",
+      "capturada": "2026-08-05T00:09:47.834Z"
+    },
+    "productos/cartuchos-inteligentes/compuestos-organicos-volatiles": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+      "fichero": "productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+      "http": 200,
+      "bytes": 384872,
+      "sha256": "9394e76280f64b41a71f53b3943215b4e7524ef93a6d0e818c185c4402be1c4c",
+      "capturada": "2026-08-05T00:09:50.048Z"
+    },
+    "productos/cartuchos-inteligentes/dioxido-de-azufre": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-azufre/",
+      "fichero": "productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+      "http": 200,
+      "bytes": 384581,
+      "sha256": "b0184cee05515cb85075450d18d18af4d486031219bd566cd23181957d05d3bf",
+      "capturada": "2026-08-05T00:09:52.321Z"
+    },
+    "productos/cartuchos-inteligentes/dioxido-de-carbono": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-carbono/",
+      "fichero": "productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+      "http": 200,
+      "bytes": 384316,
+      "sha256": "b76649579223eff55260346846b04c602a9d9347f3c5dc1f19641300321c5e6e",
+      "capturada": "2026-08-05T00:09:54.571Z"
+    },
+    "productos/cartuchos-inteligentes/dioxido-de-nitrogeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-nitrogeno/",
+      "fichero": "productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+      "http": 200,
+      "bytes": 383904,
+      "sha256": "8c8de943146f05302b475f52995653e1559f17ad6aa0e039d9f77208f88f91c0",
+      "capturada": "2026-08-05T00:09:58.420Z"
+    },
+    "productos/cartuchos-inteligentes/fluoruro-de-hidrogeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/fluoruro-de-hidrogeno/",
+      "fichero": "productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+      "http": 200,
+      "bytes": 384047,
+      "sha256": "f471b3b9d7a954cc8104c7e810b4a88535c97b918efc2ff1a190adee7bda6e1e",
+      "capturada": "2026-08-05T00:10:01.090Z"
+    },
+    "productos/cartuchos-inteligentes/hidrocarburos-no-metanicos": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/hidrocarburos-no-metanicos/",
+      "fichero": "productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+      "http": 200,
+      "bytes": 384134,
+      "sha256": "614bdb2cd7529f416f0ca1499995882891d845d59a8f4702a49ee2ccfec6ee97",
+      "capturada": "2026-08-05T00:10:03.917Z"
+    },
+    "productos/cartuchos-inteligentes/monoxido-de-carbono": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/monoxido-de-carbono/",
+      "fichero": "productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+      "http": 200,
+      "bytes": 384996,
+      "sha256": "5c8d3a62dc8dc2acd0034ed7e7e7555e3ab426798e3ec16053e0d9f65e0a7802",
+      "capturada": "2026-08-05T00:10:06.559Z"
+    },
+    "productos/cartuchos-inteligentes/oxido-nitrico": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/oxido-nitrico/",
+      "fichero": "productos/cartuchos-inteligentes/oxido-nitrico.html",
+      "http": 200,
+      "bytes": 384324,
+      "sha256": "f8657b873dc2ed1cceef9503386ef4f1e2356a1bf83dd95ff25177b3905aa4a9",
+      "capturada": "2026-08-05T00:10:08.721Z"
+    },
+    "productos/cartuchos-inteligentes/oxigeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/oxigeno/",
+      "fichero": "productos/cartuchos-inteligentes/oxigeno.html",
+      "http": 200,
+      "bytes": 383671,
+      "sha256": "9c83d729bb7f2cfed398ec07808ac382448224f6e6e7ac0292dd89272c7a3c9b",
+      "capturada": "2026-08-05T00:10:10.973Z"
+    },
+    "productos/cartuchos-inteligentes/ozono": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/ozono/",
+      "fichero": "productos/cartuchos-inteligentes/ozono.html",
+      "http": 200,
+      "bytes": 384056,
+      "sha256": "2ab0639685a2c96ed6e8ad8197403e8cb4c52448586f6befe7337c800a4fc1b4",
+      "capturada": "2026-08-05T00:10:13.416Z"
+    },
+    "productos/cartuchos-inteligentes/particulas-en-suspension": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+      "fichero": "productos/cartuchos-inteligentes/particulas-en-suspension.html",
+      "http": 200,
+      "bytes": 407798,
+      "sha256": "44595da73517610bc26e9db536efcef5d79841a6e925d1d499be842e45a7820f",
+      "capturada": "2026-08-05T00:10:15.749Z"
+    },
+    "productos/cartuchos-inteligentes/sensor-particulas-ultrafinas": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/sensor-particulas-ultrafinas/",
+      "fichero": "productos/cartuchos-inteligentes/sensor-particulas-ultrafinas.html",
+      "http": 200,
+      "bytes": 391873,
+      "sha256": "5c133be16d95aecc6c5c25a53943e6c081f4ff9fd6a9361555603f63d12ffd7d",
+      "capturada": "2026-08-05T00:10:18.048Z"
+    },
+    "productos/cartuchos-inteligentes/sulfuro-de-hidrogeno": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+      "fichero": "productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+      "http": 200,
+      "bytes": 384533,
+      "sha256": "e0f64bbae55bc188abe8217a345200e75e7352604a8df8ac668e25edf4348a8f",
+      "capturada": "2026-08-05T00:10:20.124Z"
+    },
+    "productos/estacion-de-monitoreo-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
+      "fichero": "productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 488424,
+      "sha256": "08d3cbd6ec8ebe679054bad26bf24f016cb2b00b015c2727c2a946274680c11d",
+      "capturada": "2026-08-05T00:10:23.037Z"
+    },
+    "productos/kunak-api": {
+      "url": "https://kunakair.com/es/kunak-api/",
+      "fichero": "productos/kunak-api.html",
+      "http": 200,
+      "bytes": 390438,
+      "sha256": "239c2c435a387a1110d699dddf871f9f1ebd6c91558affc5da633840c3539198",
+      "capturada": "2026-08-05T00:10:25.168Z"
+    },
+    "productos/monitor-calidad-aire": {
+      "url": "https://kunakair.com/es/monitor-calidad-aire/",
+      "fichero": "productos/monitor-calidad-aire.html",
+      "http": 200,
+      "bytes": 573603,
+      "sha256": "e436c4c21327c230daa91b45325d7cbe6d95acfc03d808e3530d3f52c50a4b3f",
+      "capturada": "2026-08-05T00:10:28.382Z"
+    },
+    "productos/sensor-de-calidad-del-aire": {
+      "url": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
+      "fichero": "productos/sensor-de-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 435953,
+      "sha256": "3b6f29d713d656dab479bf24d3d8d38e89cb5c0bc82c3d730993b7c2014bb280",
+      "capturada": "2026-08-05T00:10:30.982Z"
+    },
+    "productos/sensor-de-calidad-del-aire/metano": {
+      "url": "https://kunakair.com/es/sensor-de-calidad-del-aire/metano/",
+      "fichero": "productos/sensor-de-calidad-del-aire/metano.html",
+      "http": 200,
+      "bytes": 388510,
+      "sha256": "eecda1b2e86e16aaad68d848aa4859660093394a846d2f7ac5a6a7108355f9fa",
+      "capturada": "2026-08-05T00:10:33.512Z"
+    },
+    "productos/software-de-medicion-calidad-del-aire": {
+      "url": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+      "fichero": "productos/software-de-medicion-calidad-del-aire.html",
+      "http": 200,
+      "bytes": 468660,
+      "sha256": "050f2b8c04f8d1c1e54590d94a53e304dc15f0685f856b981aed3c4a74b14155",
+      "capturada": "2026-08-05T00:10:36.254Z"
+    }
+  }
+}

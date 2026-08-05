@@ -25,10 +25,9 @@
  *
  * Uso: npm run qa:cms-slugs-neg      (necesita el Postgres del CMS vivo)
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, QA } from "./lib.mjs";
 
 const casos = [
   {
@@ -71,10 +70,11 @@ for (const c of casos) {
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = spawnSync(process.execPath, ["--env-file=apps/cms/.env", join(QA, "cms-slugs.mjs")], {
+  const res = corridaNegativa({
+    etiqueta: c.sabotaje,
+    args: ["--env-file=apps/cms/.env", join(QA, "cms-slugs.mjs")],
+    env: { SABOTAJE: c.sabotaje },
     cwd: join(QA, "../.."),
-    env: { ...process.env, SABOTAJE: c.sabotaje, PISAR: "1" },
-    encoding: "utf8",
     timeout: 300_000,
   });
   const seg = ((Date.now() - t0) / 1000).toFixed(0);
@@ -97,10 +97,13 @@ for (const c of casos) {
 
 /* ── El CONTROL: sin sabotaje, los cinco invariantes pasan. Sin esta mitad,
  *    una sonda que fallara SIEMPRE aprobaría los tres negativos. ─────────── */
-const ctl = spawnSync(process.execPath, ["--env-file=apps/cms/.env", join(QA, "cms-slugs.mjs")], {
+/* El CONTROL corre por `corridaNegativa`: escribe en `cms-slugs-neg-control.json`
+ * POR CONSTRUCCIÓN — antes iba con PISAR sobre la canónica (regla 5 automatizada,
+ * defecto 1 del HANDOFF 26.ª). */
+const ctl = corridaNegativa({
+  etiqueta: "control",
+  args: ["--env-file=apps/cms/.env", join(QA, "cms-slugs.mjs")],
   cwd: join(QA, "../.."),
-  env: { ...process.env, PISAR: "1" },
-  encoding: "utf8",
   timeout: 300_000,
 });
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");

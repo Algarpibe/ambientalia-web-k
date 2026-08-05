@@ -2,6 +2,7 @@ import puppeteer from "puppeteer-core";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 export const CHROME =
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -773,12 +774,77 @@ export function buildCambiado() {
  */
 const sinClon = () => !!process.env.SIN_CLON;
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * CORRIDA NEGATIVA — el desvío POR CONSTRUCCIÓN, no por disciplina
+ *
+ * ── La clase que cierra (2026-08-04, F2-2 bloque 2) ───────────────────────
+ * El defecto 1 del §5 del HANDOFF de la tanda 26.ª —*el CONTROL de cada
+ * negativo iba con `PISAR` sobre la medida canónica*— se arregló en CUATRO
+ * ficheros a mano, con un comentario idéntico en cada uno. Derivada la lista
+ * completa (`grep PISAR *.neg.mjs`): **11 usos en 10 ficheros**, tres de ellos
+ * controles que seguían pisando la canónica (`sondeo.neg`, `cms-campos.neg`,
+ * `cms-slugs.neg`). Arreglar por comentario replicado es la instancia, no la
+ * clase — y la clase se arregla donde escriben todas: aquí.
+ *
+ * ── El mecanismo ──────────────────────────────────────────────────────────
+ * `NEG=<etiqueta>` en el entorno declara «esta corrida es de un test en
+ * negativo». Con NEG puesto, `w()` desvía TODA escritura cuyo nombre no lleve
+ * ya un marcador de artefacto (regla 7: `-neg-` · `SABOTAJE` · `SONDA-`) a
+ * `<base>-neg-<etiqueta><ext>`. Una corrida negativa NO PUEDE tocar una
+ * canónica: no hay disciplina que mantener ni comentario que copiar.
+ *
+ * Y `corridaNegativa()` es el único camino sancionado para lanzar la sonda
+ * desde un `.neg.mjs`: pone NEG y BORRA `PISAR` y `SALIDA` del entorno del
+ * hijo — aunque quien lanzó el negativo los tuviera exportados.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** ¿El nombre ya declara que NO es una medida del sitio? (regla 7) */
+const yaMarcado = (base) => /-neg-|SABOTAJE|SONDA-/.test(base);
+
+/**
+ * El nombre al que una corrida negativa desvía un destino canónico.
+ * Puro, exportado: los `.neg.mjs` lo usan para saber dónde buscar el artefacto
+ * en vez de escribir el nombre a mano (que es como los nombres divergen).
+ */
+export function nombreNeg(file, etiqueta) {
+  const ext = path.extname(file);
+  const base = path.basename(file, ext);
+  if (yaMarcado(base)) return file;
+  return path.join(path.dirname(file), `${base}-neg-${etiqueta}${ext}`);
+}
+
+/**
+ * Lanza la sonda de un test en negativo. `etiqueta` es obligatoria —"control"
+ * o el nombre del sabotaje—: una corrida negativa sin etiqueta no puede
+ * declarar a dónde desvía, así que se rechaza (regla 6: la ausencia se
+ * rechaza, no se sustituye).
+ */
+export function corridaNegativa({ etiqueta, args, env = {}, cwd, timeout = 900_000 }) {
+  if (!etiqueta) throw new Error("corridaNegativa: falta `etiqueta` (control o sabotaje)");
+  if (!Array.isArray(args) || !args.length) throw new Error("corridaNegativa: faltan `args`");
+  const hijo = { ...process.env, ...env, NEG: etiqueta };
+  delete hijo.PISAR;  // un negativo JAMÁS re-congela una canónica
+  delete hijo.SALIDA; // el desvío lo pone NEG, no la disciplina del que llama
+  return spawnSync(process.execPath, args, { cwd, env: hijo, encoding: "utf8", timeout });
+}
+
 export function w(file, data, { pisar = false } = {}) {
   /* Congelar una medida es la señal de que esta sonda MIDE, y por tanto de que
    * le toca el contrato de `Evaluadas`. Se apunta aquí —el sitio por el que
    * pasan todas— y el gancho de salida lo cobra. */
   _congelo = true;
   ponGancho();
+  /* Corrida negativa: TODO destino se desvía a su nombre marcado. El artefacto
+   * de un negativo se regenera en cada corrida, así que se reescribe sin
+   * duplicados fechados — la guarda de abajo protege MEDIDAS, y esto no lo es
+   * (regla 7: lo dice el nombre). */
+  const NEG = process.env.NEG;
+  if (NEG) {
+    const desviado = nombreNeg(file, NEG);
+    if (desviado !== file) console.log(`⚠ NEG=${NEG}: la corrida es de un negativo — se desvía a ${path.basename(desviado)}`);
+    file = desviado;
+    pisar = true;
+  }
   /* La corrida se contaminó a mitad: se congela igual —tirar la medida sería
    * peor— pero **con nombre de contaminada y gritando**, para que nadie la cite
    * como buena. Un fichero que no se distingue de uno limpio es exactamente el

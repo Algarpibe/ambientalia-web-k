@@ -23,10 +23,9 @@
  * Necesita un build: `npm run build` antes.
  * Uso: npm run qa:cms-arquetipos-neg
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const casos = [
   {
@@ -61,19 +60,16 @@ console.log(`  clasificador, no guarda: lo que se prueba es que DISCRIMINA\n`);
 const ev = new Evaluadas({ nombre: "cms-arquetipos-neg", unidad: "sabotajes", minimo: casos.length });
 let fallos = 0;
 
-const corre = (env) =>
-  spawnSync(process.execPath, [join(QA, "cms-arquetipos.mjs")], {
-    env: { ...process.env, PISAR: "1", ...env },
-    encoding: "utf8",
-    timeout: 300_000,
-  });
+/* Todo por `corridaNegativa`: el desvío a `-neg-` lo pone NEG por construcción. */
+const corre = (etiqueta, env = {}) =>
+  corridaNegativa({ etiqueta, args: [join(QA, "cms-arquetipos.mjs")], env, timeout: 300_000 });
 
 const veredictos = [];
 for (const c of casos) {
   const fichero = join(QA, `medidas/cms-arquetipos-neg-${c.sabotaje}.json`);
   if (existsSync(fichero)) rmSync(fichero);
 
-  const res = corre({ SABOTAJE: c.sabotaje });
+  const res = corre(c.sabotaje, { SABOTAJE: c.sabotaje });
   const out = (res.stdout || "") + (res.stderr || "");
   if (res.error || res.status === null) ev.fallo(c.sabotaje, res.error || "no llegó a correr");
   else ev.ok();
@@ -96,12 +92,11 @@ for (const c of casos) {
 
 /* ── EL CONTROL: el reparto real. Sin él, los dos extremos podrían ser el
  *    mismo instrumento contestando a su propio sabotaje. ─────────────────── */
-/* ⚠ El CONTROL escribe en SU PROPIO nombre. Antes iba con PISAR sobre la
- * medida canónica: una corrida de un test en negativo re-congelando la
- * evidencia buena, que es la regla 5 automatizada. */
-const F_CTL = "medidas/cms-arquetipos-neg-control.json";
-const fCtl = join(QA, F_CTL);
-const ctl = corre({ SALIDA: F_CTL });
+/* El CONTROL escribe en SU PROPIO nombre POR CONSTRUCCIÓN (NEG=control en
+ * `corridaNegativa`); el nombre se DERIVA con `nombreNeg`. */
+const fCtl = join(QA, nombreNeg("medidas/cms-arquetipos.json", "control"));
+if (existsSync(fCtl)) rmSync(fCtl);
+const ctl = corre("control");
 let malCtl = null;
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
 else if (!existsSync(fCtl)) malCtl = "no congeló su medida";

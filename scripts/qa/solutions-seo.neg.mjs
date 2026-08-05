@@ -26,10 +26,9 @@
  *
  * Uso: npm run qa:solutions-seo-neg
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const SOLO = "cartuchos-inteligentes";
 const SUF = `-solo-${SOLO.replace(/[^a-z0-9]+/gi, "-")}`;
@@ -65,19 +64,16 @@ console.log(`  alcance de cada corrida: SOLO=${SOLO} (17 de las 24 URLs del CPT)
 const ev = new Evaluadas({ nombre: "solutions-seo-neg", unidad: "sabotajes", minimo: casos.length });
 let fallos = 0;
 
-const corre = (env) =>
-  spawnSync(process.execPath, [join(QA, "solutions-seo.mjs")], {
-    env: { ...process.env, SOLO, PISAR: "1", ...env },
-    encoding: "utf8",
-    timeout: 900_000,
-  });
+/* Todo por `corridaNegativa`: el desvío a `-neg-` lo pone NEG por construcción. */
+const corre = (etiqueta, env = {}) =>
+  corridaNegativa({ etiqueta, args: [join(QA, "solutions-seo.mjs")], env: { SOLO, ...env }, timeout: 900_000 });
 
 for (const c of casos) {
   const fichero = join(QA, `medidas/solutions-seo-neg-${c.sabotaje}${SUF}.json`);
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = corre({ SABOTAJE: c.sabotaje });
+  const res = corre(c.sabotaje, { SABOTAJE: c.sabotaje });
   const out = (res.stdout || "") + (res.stderr || "");
   const seg = ((Date.now() - t0) / 1000).toFixed(0);
   if (res.error || res.status === null) ev.fallo(c.sabotaje, res.error || "no llegó a correr");
@@ -96,14 +92,12 @@ for (const c of casos) {
 }
 
 /* ── EL CONTROL ─────────────────────────────────────────────────────────── */
-/* ⚠ El CONTROL escribe en SU PROPIO nombre. Antes iba con PISAR sobre la
- * medida canónica: una corrida de un test en negativo re-congelando la
- * evidencia buena, que es la regla 5 automatizada. */
-const F_CTL = `medidas/solutions-seo-neg-control${SUF}.json`;
-const fCtl = join(QA, F_CTL);
+/* El CONTROL escribe en SU PROPIO nombre POR CONSTRUCCIÓN (NEG=control); el
+ * nombre se DERIVA de la canónica con `nombreNeg`, no se escribe a mano. */
+const fCtl = join(QA, nombreNeg(`medidas/solutions-seo${SUF}.json`, "control"));
 if (existsSync(fCtl)) rmSync(fCtl);
 const t0 = Date.now();
-const ctl = corre({ SALIDA: F_CTL });
+const ctl = corre("control");
 const seg = ((Date.now() - t0) / 1000).toFixed(0);
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 let malCtl = null;

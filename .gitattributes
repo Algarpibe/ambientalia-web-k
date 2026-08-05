@@ -7,3 +7,6 @@
 # Batch files must always use CRLF
 *.bat text eol=crlf
 *.cmd text eol=crlf
+# La captura del corpus es BYTES del original: sin conversion de fin de linea,
+# o el sha256 del INDICE deja de casar en el siguiente checkout.
+corpus/** -text

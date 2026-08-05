@@ -26,10 +26,9 @@
  *
  * Uso: npm run qa:cms-campos-neg
  */
-import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, QA } from "./lib.mjs";
 
 const casos = [
   {
@@ -77,9 +76,10 @@ for (const c of casos) {
   if (existsSync(fichero)) rmSync(fichero);
 
   const t0 = Date.now();
-  const res = spawnSync(process.execPath, [join(QA, "cms-campos.mjs")], {
-    env: { ...process.env, SABOTAJE: c.sabotaje, PISAR: "1" },
-    encoding: "utf8",
+  const res = corridaNegativa({
+    etiqueta: c.sabotaje,
+    args: [join(QA, "cms-campos.mjs")],
+    env: { SABOTAJE: c.sabotaje },
     timeout: 300_000,
   });
   const out = (res.stdout || "") + (res.stderr || "");
@@ -105,9 +105,12 @@ for (const c of casos) {
  *    Sin él, una sonda que falle SIEMPRE pasaría los cuatro negativos. Es el
  *    complementario de la regla 4: *un patrón que casa en todas tampoco mide
  *    nada*. ──────────────────────────────────────────────────────────────── */
-const ctl = spawnSync(process.execPath, [join(QA, "cms-campos.mjs")], {
-  env: { ...process.env, PISAR: "1" },
-  encoding: "utf8",
+/* El CONTROL corre por `corridaNegativa`: su corrida escribe en
+ * `cms-campos-neg-control.json` POR CONSTRUCCIÓN — antes iba con PISAR sobre la
+ * canónica, que es la regla 5 automatizada (defecto 1 del HANDOFF 26.ª). */
+const ctl = corridaNegativa({
+  etiqueta: "control",
+  args: [join(QA, "cms-campos.mjs")],
   timeout: 300_000,
 });
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");

@@ -28,7 +28,7 @@
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { auditarSondas, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, ruta, sello, sinLiterales, w } from "./lib.mjs";
+import { auditarSondas, corridaNegativa, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, ruta, sello, sinLiterales, w } from "./lib.mjs";
 
 /* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
  * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
@@ -143,6 +143,48 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   const p6 = callado(() => w(f, { v: 10 }));
   eq("y `PISAR=1` por entorno también", p6 === f && JSON.parse(leer(f)).v === 10, true);
   delete process.env.PISAR;
+
+  /* ── LA CORRIDA NEGATIVA: el desvío POR CONSTRUCCIÓN ──────────────────────
+   * La clase del 2026-08-04: el CONTROL de un negativo iba con PISAR sobre la
+   * canónica — un test en negativo re-congelando la evidencia buena. Con NEG
+   * puesto, `w()` NO PUEDE tocar una canónica, ni siquiera con PISAR. */
+  const canonica = JSON.parse(leer(f)).v;
+  process.env.NEG = "control";
+  const n1 = callado(() => w(f, { v: 99 }));
+  eq("con NEG puesto, la canónica NO se toca", JSON.parse(leer(f)).v, canonica);
+  eq("…y la corrida va a su `-neg-control`", n1.endsWith("medida-neg-control.json"), true);
+  process.env.PISAR = "1";
+  const n2 = callado(() => w(f, { v: 100 }));
+  eq("NEG gana a PISAR: la canónica sigue intacta", JSON.parse(leer(f)).v, canonica);
+  eq("…y el artefacto del negativo SE REESCRIBE sin duplicados", n2 === n1 && JSON.parse(leer(n1)).v === 100, true);
+  delete process.env.PISAR;
+  delete process.env.NEG;
+
+  // el nombre: puro, y un nombre ya marcado (regla 7) no se re-marca
+  eq("nombreNeg marca una canónica", nombreNeg("medidas/x.json", "control").replace(/\\/g, "/"), "medidas/x-neg-control.json");
+  eq("…un `-neg-` no se re-marca", nombreNeg("medidas/x-neg-defecto.json", "control").replace(/\\/g, "/"), "medidas/x-neg-defecto.json");
+  eq("…ni un SABOTAJE (regla 7, prior art)", nombreNeg("medidas/a-spec-SABOTAJE.json", "x").replace(/\\/g, "/"), "medidas/a-spec-SABOTAJE.json");
+
+  /* ── Y el RUNNER: el entorno del hijo, comprobado EJECUTANDO ──────────────
+   * `corridaNegativa` borra PISAR y SALIDA aunque quien lanza los tenga
+   * exportados, y pone NEG. Se comprueba con un hijo real, no leyendo el
+   * código: documentado no es conectado. */
+  process.env.PISAR = "1";
+  process.env.SALIDA = "medidas/trampa.json";
+  const hijo = corridaNegativa({
+    etiqueta: "control",
+    args: ["-e", 'console.log(JSON.stringify({ pisar: process.env.PISAR ?? null, salida: process.env.SALIDA ?? null, neg: process.env.NEG ?? null }))'],
+    timeout: 30_000,
+  });
+  delete process.env.PISAR;
+  delete process.env.SALIDA;
+  const entHijo = JSON.parse(hijo.stdout.trim());
+  eq("el runner BORRA `PISAR` del hijo", entHijo.pisar, null);
+  eq("…y `SALIDA` también", entHijo.salida, null);
+  eq("…y pone `NEG` con la etiqueta", entHijo.neg, "control");
+  let sinEtiqueta = null;
+  try { corridaNegativa({ args: ["-e", ""] }); } catch (e) { sinEtiqueta = String(e.message); }
+  eq("sin etiqueta se RECHAZA (regla 6)", /falta `etiqueta`/.test(sinEtiqueta ?? ""), true);
 
   rmSync(tmp, { recursive: true, force: true });
 }

@@ -1,15 +1,12 @@
 {
   "meta": {
     "fecha": "2026-08-04",
-    "sabotaje": "grupo",
+    "sabotaje": null,
     "filas": 46,
     "alcance": "los 9 catálogos de CATALOGOS contra la config RESUELTA, sin escribir en la DB. Las taxonomías derivadas entran como destino de relación, no como origen."
   },
   "grafo": {
-    "podadas": [
-      "proyectos.posts",
-      "articulos.posts"
-    ],
+    "podadas": [],
     "orden": [
       "categorias",
       "etiquetas",
@@ -120,8 +117,8 @@
   "huerfanas": {
     "porColeccion": {
       "productos": 0,
-      "sectores": 20,
-      "monograficos": 11,
+      "sectores": 0,
+      "monograficos": 0,
       "taxonomia-sectores": 0,
       "casos": 0,
       "faqs": 0,
@@ -129,54 +126,16 @@
       "terminos-kunakpedia": 0,
       "documentos-cientificos": 0
     },
-    "porDestino": {
-      "sectores → casos": [
-        "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
-        "citytraq-calidad-del-aire-urbano",
-        "demolicion-estadio-vicente-calderon",
-        "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
-        "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
-        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
-        "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
-        "red-de-monitorizacion-ambiental-mades-paraguay",
-        "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
-      ],
-      "sectores → entradas-blog": [
-        "conferencia-partes-cop26-incendios",
-        "contaminacion-aire-deporte",
-        "contaminacion-del-aire-en-madrid",
-        "contaminacion-del-aire-por-obras",
-        "contaminacion-incendios-forestales-aire",
-        "impacto-ambiental-industria-cementera",
-        "medicion-de-gases-en-los-vertederos-de-basura",
-        "monitorizacion-aire-remediacion-suelos-contaminados",
-        "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
-        "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
-        "quemas-prescritas-agricolas-calidad-aire"
-      ],
-      "monograficos → casos": [
-        "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
-        "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
-        "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania"
-      ],
-      "monograficos → entradas-blog": [
-        "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
-        "contaminacion-incendios-forestales-aire",
-        "contaminacion-por-produccion-de-energia",
-        "monitorizacion-de-emisiones-fugitivas",
-        "monitorizacion-mal-olor-industrial"
-      ]
-    },
-    "total": 31
+    "porDestino": {},
+    "total": 0
   },
   "required": {
     "delEsquema": 69,
-    "cubiertas": 68,
-    "extra": 50,
-    "sinAuditar": [
-      "productos·seo.title"
-    ],
-    "sinDato": {}
+    "cubiertas": 69,
+    "extra": 71,
+    "sinAuditar": [],
+    "sinDato": {},
+    "vacios": {}
   },
   "validate": {
     "rechazos": [
@@ -213,7 +172,7 @@
         "running-for-clean-air"
       ]
     },
-    "noEvaluables": 795
+    "noEvaluables": 986
   },
   "instrumento": {
     "sinLlave": [],

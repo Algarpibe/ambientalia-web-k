@@ -1427,10 +1427,40 @@ rechazar a mano. **Y no rebaja CMS-0e:** el que apunta a un `.gif` y el
 `gamma.site` siguen necesitando que una persona mire, que es exactamente el
 argumento de que el cuerpo entre crudo.
 
-⚠ **Lo que queda SIN DECIDIR** es el contenido de esa allowlist inicial. Se
+~~⚠ **Lo que queda SIN DECIDIR** es el contenido de esa allowlist inicial. Se
 propone arrancar con los 18 hosts censados y exigir alta explícita para
 cualquiera nuevo; **no se cierra aquí** porque es una decisión de política de
-seguridad (un `iframe` de terceros ejecuta código de terceros), no de modelado.
+seguridad (un `iframe` de terceros ejecuta código de terceros), no de modelado.~~
+
+#### ✅ 3.3b · FIRMADA (2026-08-04, propietario del sitio — F2-2 bloque 2)
+
+> **Allowlist = LOS 18 HOSTS CENSADOS**, comparación **por HOST, nunca por
+> proveedor** (el caso `flo.uri.sh`: una lista por nombre de proveedor no habría
+> reconocido a su propio proveedor), **más procedimiento de alta** para hosts
+> nuevos. Es la forma con **cero pérdida medida** al importar; la estricta
+> (solo tramo A) queda disponible después **sabiendo que cuesta 21 decisiones**
+> — los 21 iframes de los 16 hosts de la cola.
+
+Los 18, derivados de `medidas/a-embeds.json` (censo 209/209), no citados:
+
+`youtube.com` · `ourworldindata.org` · `canva.com` · `docs.google.com` ·
+`experience.arcgis.com` · `facebook.com` · `storymaps.arcgis.com` ·
+`europeanbiogas.clicdata.com` · `linkedin.com` · `google.com` · `google.es` ·
+`shipmap.org` · `elliotcloud.portsdebalears.com` · `flo.uri.sh` ·
+`geoportal.madrid.es` · `data.worldbank.org` · `essic.umd.edu` ·
+`real-decreto-2142025-un--0qvqhh6.gamma.site`
+
+**Procedimiento de alta** (parte de la firma, no un anexo): un host nuevo entra
+**añadiéndolo a `HOSTS_PERMITIDOS`** en `packages/cms-config` con un comentario
+de una línea —quién lo pidió y para qué contenido— y el saneador lo rechaza
+mientras tanto **nombrándolo**. El alta es un cambio de código revisable, no una
+excepción silenciosa; es exactamente el punto medio entre «enum que hay que
+migrar» y «cualquier tercero entra».
+
+⚠ **Alcance firmado: GRUPO A (209/209).** Los `iframe` del **grupo C** siguen
+**sin censar por host** (C-SP6) — un censo del grupo C puede añadir hosts, y esos
+entrarían por el procedimiento de alta, no re-firmando la lista. La lista se
+firma con este alcance escrito a propósito.
 
 ### ⚠ 3.1b · Falta el nodo de vídeo — CENSADO (2026-07-30)
 
@@ -2050,7 +2080,7 @@ catálogo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
 |---|---|---|
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
-| §3.3b | **contenido de la allowlist de hosts de embebido** — 18 censados en A, y los del grupo C sin censar por host (C-SP6) | política, no modelado: el nodo ya lleva URL |
+| ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
 | **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos`. **⚠ SIGUE ABIERTA con la razón ya medida — ver §7b** | nada hoy; es deuda de **instrumento**, y la paga la tanda que escriba la sonda |
 
 ### ⚠ 7b · CMS-SP-TIPO — por qué el round-trip NO la cierra, medido (2026-08-04)

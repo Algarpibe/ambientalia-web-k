@@ -91,6 +91,23 @@ if (SABOTAJE === "ciclo")
 const { aristas, muertas } = aristasDeConfig(config, { colecciones: ORDEN_DECLARADO, podadas });
 const { ciclos, autos, violaciones, noDeclaradas } = verificaOrden(aristas, ORDEN_DECLARADO);
 
+/* ⚠ SIN DIANA — regla 8a: un sabotaje que no cambia el resultado no ha probado
+ * la guarda; ha probado que el instrumento no la ejercita. Las TRES dianas de
+ * este negativo vivían en el CATÁLOGO y la tanda 26.ª las cerró (teaser dato
+ * propio §2g · `seo.title` medido §2h · `RUTAS_EN_FRONTERA` vacía), así que
+ * cada sabotaje comprueba que la suya EXISTE — y sin ella sale por SIN DIANA,
+ * nunca por verde NI atribuyéndose un fallo ajeno. Descubierto el 2026-08-04 al
+ * re-correr el negativo entero: los tres salían exit 0. */
+if (SABOTAJE === "ciclo" && ciclos.length === 0) {
+  console.error(
+    `\n❌ SABOTAJE=ciclo SIN DIANA — sin poda el grafo SIGUE acíclico: \`RUTAS_EN_FRONTERA\`\n` +
+      `   está vacía desde que el teaser es dato propio (§2g), así que quitar la poda no\n` +
+      `   reintroduce ninguna arista. La diana vuelve con el ciclo (taxonomia-sectores →\n` +
+      `   sectores → casos) cuando el corpus del bloque 2 entre al catálogo.`,
+  );
+  process.exit(2);
+}
+
 /**
  * ⚠ **Hallazgo de la primera corrida del instrumento nuevo, y NO es el defecto
  * 3: `categorias-recursos.padre` apunta a su propia colección.** Es la taxonomía
@@ -207,6 +224,18 @@ if (erroresDeMapeo.length)
       `\n   Una fila que no se mapea no ha sido medida: su ausencia del recuento de\n` +
       `   huérfanas es un cero de «no miré», no de «no hay».`,
   );
+
+/* SIN DIANA del sabotaje `slug` (regla 8a, ver arriba): si el lector saboteado
+ * deriva las mismas llaves que el bueno, el catálogo ya no trae el caso. */
+if (SABOTAJE === "slug" && ctx.sinLlave.length === 0) {
+  console.error(
+    `\n❌ SABOTAJE=slug SIN DIANA — el catálogo ya no trae valores de relación sin \`slug\`\n` +
+      `   legible (los 31 teasers son dato propio desde §2g), así que el lector saboteado\n` +
+      `   deriva exactamente las mismas llaves que el bueno. La diana vuelve con las\n` +
+      `   relaciones del corpus del bloque 2.`,
+  );
+  process.exit(2);
+}
 
 /* ── INVARIANTE 1 · de todo valor de relación sale una llave ──────────────── */
 if (ctx.sinLlave.length)
@@ -367,6 +396,20 @@ if (bloquesSinResolver.length)
   );
 
 const sinAuditar = [...esperadas].filter((e) => !visitadas.has(e)).sort();
+
+/* SIN DIANA del sabotaje `grupo` (regla 8a, ver arriba): no descender en grupos
+ * ausentes sólo salta una auditoría si algún grupo con `required` dentro está
+ * ausente en TODAS las filas de su colección — y `productos.seo` tiene dato
+ * desde §2h. */
+if (SABOTAJE === "grupo" && sinAuditar.length === 0) {
+  console.error(
+    `\n❌ SABOTAJE=grupo SIN DIANA — ningún grupo con \`required\` dentro está ausente en\n` +
+      `   todas las filas de su colección (\`productos.seo\` lleva dato medido desde §2h),\n` +
+      `   así que no descender en ausentes ya no deja ninguna ruta sin auditar.`,
+  );
+  process.exit(2);
+}
+
 if (sinAuditar.length)
   grita(
     `${sinAuditar.length} RUTA(S) \`required\` DEL ESQUEMA SIN AUDITAR`,

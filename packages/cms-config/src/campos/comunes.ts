@@ -249,6 +249,94 @@ export const ETIQUETAS_CENSADAS = [
 const SIN_SCRIPT = /<\s*script\b/i;
 
 /**
+ * LA ALLOWLIST DE HOSTS DE EMBEBIDO — **FIRMADA** (§3.3b, 2026-08-04): los 18
+ * hosts del censo 209/209 (`medidas/a-embeds.json`), comparados **por HOST,
+ * nunca por proveedor** — el caso `flo.uri.sh`: una lista por nombre de
+ * proveedor no habría reconocido a su propio proveedor (Flourish).
+ *
+ * ⚠ **Procedimiento de alta (parte de la firma):** un host nuevo entra
+ * añadiéndose AQUÍ con un comentario de una línea —quién lo pidió y para qué
+ * contenido—. Mientras no esté, el saneador lo rechaza NOMBRÁNDOLO. El alta es
+ * un cambio de código revisable, no una excepción silenciosa.
+ *
+ * Alcance firmado: grupo A. Los iframes del grupo C están censados por host en
+ * `medidas/c-embeds.json` (C-SP6); un host que ese censo traiga de más entra
+ * por este procedimiento, no re-firmando la lista.
+ */
+export const HOSTS_PERMITIDOS = [
+  "youtube.com", "ourworldindata.org", "canva.com", "docs.google.com",
+  "experience.arcgis.com", "facebook.com", "storymaps.arcgis.com",
+  "europeanbiogas.clicdata.com", "linkedin.com", "google.com", "google.es",
+  "shipmap.org", "elliotcloud.portsdebalears.com", "flo.uri.sh",
+  "geoportal.madrid.es", "data.worldbank.org", "essic.umd.edu",
+  "real-decreto-2142025-un--0qvqhh6.gamma.site",
+] as const;
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL SANEADOR EN ESCRITURA — el contrato censado, ejecutado en el `validate`
+ *
+ * Dos guardas además de `<script>`, cada una contra su dato medido:
+ *
+ *   · **etiqueta fuera del censo** (§3.1, 43 etiquetas en 209/209) → rechazo
+ *     NOMBRÁNDOLA. «Lo que no está en el censo no entra»: una etiqueta nueva no
+ *     es un error de quien escribe, es un dato que el censo no tiene — y por
+ *     eso se rechaza con nombre, para que la decisión de admitirla sea visible;
+ *   · **host de iframe fuera de la allowlist firmada** (§3.3b) → rechazo
+ *     NOMBRÁNDOLO. La comparación es por HOST del `src`/`data-src` (Divi
+ *     difiere iframes y el `src` llega vacío — precedente de `a-embeds`).
+ *
+ * Viven aquí exportadas —no dentro del `validate`— porque el extractor del
+ * corpus comprueba EL MISMO contrato offline: dos copias de la whitelist serían
+ * la clase C7 (dos definiciones de «lo mismo»).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Solo nombres de etiqueta REALES: sin hueco tras `<` (como el parser HTML). */
+const RE_ETIQUETA = /<\/?([a-zA-Z][a-zA-Z0-9-]*)(?=[\s/>])/g;
+const CENSO = new Set<string>(ETIQUETAS_CENSADAS);
+
+export function etiquetasFueraDelCenso(html: string): string[] {
+  const fuera = new Set<string>();
+  for (const m of html.matchAll(RE_ETIQUETA)) {
+    const tag = m[1].toLowerCase();
+    if (!CENSO.has(tag)) fuera.add(tag);
+  }
+  return [...fuera].sort();
+}
+
+const RE_IFRAME = /<iframe\b[^>]*>/gi;
+const PERMITIDOS = new Set<string>(HOSTS_PERMITIDOS);
+
+export function hostsFueraDeAllowlist(html: string): string[] {
+  const fuera = new Set<string>();
+  for (const m of html.matchAll(RE_IFRAME)) {
+    const src =
+      /\bsrc\s*=\s*"([^"]+)"/i.exec(m[0])?.[1] ?? /\bdata-src\s*=\s*"([^"]+)"/i.exec(m[0])?.[1] ?? "";
+    let host: string;
+    try {
+      host = new URL(src, "https://kunakair.com/").host.replace(/^www\./, "");
+    } catch {
+      host = "(url ilegible)";
+    }
+    if (!PERMITIDOS.has(host)) fuera.add(host);
+  }
+  return [...fuera].sort();
+}
+
+/** El `validate` compartido de los campos de HTML del corpus. */
+export function validaHtmlCorpus(valor: unknown): true | string {
+  if (typeof valor !== "string") return true;
+  if (SIN_SCRIPT.test(valor))
+    return "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).";
+  const etiquetas = etiquetasFueraDelCenso(valor);
+  if (etiquetas.length)
+    return `§3.1: etiqueta(s) fuera del censo de 43 — ${etiquetas.map((t) => `<${t}>`).join(", ")}. Lo que no está en el censo no entra; si es legítima, se admite AÑADIÉNDOLA al censo con su evidencia, no colándola.`;
+  const hosts = hostsFueraDeAllowlist(valor);
+  if (hosts.length)
+    return `§3.3b: host(s) de iframe fuera de la allowlist firmada — ${hosts.join(", ")}. Un host nuevo entra por el procedimiento de alta (HOSTS_PERMITIDOS), no en silencio.`;
+  return true;
+}
+
+/**
  * Campo de HTML crudo del corpus. `code` con `language: "html"` — el editor de
  * admin es un editor de código, que es exactamente lo que hay que enseñarle a
  * quien vaya a convertir una entrada: **el HTML es la fuente de verdad hasta
@@ -271,11 +359,7 @@ export function campoHtml(name: string, { requerido = false } = {}): Field {
         "HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. " +
         "Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.",
     },
-    validate: (valor: unknown) => {
-      if (typeof valor === "string" && SIN_SCRIPT.test(valor))
-        return "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).";
-      return true;
-    },
+    validate: validaHtmlCorpus,
   } as Field;
 }
 
@@ -298,11 +382,12 @@ export function htmlLinea(name: string, { requerido = false } = {}): Field {
       description:
         "HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.",
     },
-    validate: (valor: unknown) => {
-      if (typeof valor === "string" && SIN_SCRIPT.test(valor))
-        return "§3.3 · T4: `<script>` no entra en el contenido.";
-      return true;
-    },
+    /* El mismo saneador que el campo de bloque: sus tres guardas valen para
+     * línea (las etiquetas de línea son subconjunto de las 43). Lo que NO se
+     * impone es el inventario de línea en sí —su corpus del CPT está SIN
+     * CENSAR (§3.1d)— por la misma regla que alineación/indentación en §3.1:
+     * sin medir no se restringe a ciegas. */
+    validate: validaHtmlCorpus,
   } as Field;
 }
 
