@@ -106,6 +106,32 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | módulos | **2** | 0 | 29 | `mono-cmp` | 2 |
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
 | comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
+| **`srcset` / media** ⚠ | **24** | 0 | **10** | **`cmp-srcset`** — deriva del build ∩ corpus | **0** *(eje nuevo)* |
+
+> ⚠ **EJE NUEVO (2026-08-04, F2-2 bloque 3), y llega con su letra pequeña de
+> fábrica.** Hasta hoy **ninguna de las 59 sondas COMPARABA el `srcset`**
+> (derivado: `ls scripts/qa/*.mjs` sin `.neg`/`lib`, menos las 3 de esta tanda).
+> Tres lo tocan **por un solo lado** —`a-spec` y `a-lexical` lo **censan en el
+> original**, y `cms-teaser` sólo lo **cita** en el rótulo de una regla—, y
+> censar un lado no es comparar dos. Por eso **M-IMG**, cuya causa
+> medida es justamente la variante que elige el `srcset`, llevaba abierta desde
+> que se fichó: no había con qué cerrarla. Es el caso de manual de *«un
+> arquetipo nuevo NO hereda cobertura»* aplicado a un EJE.
+>
+> **Su unidad NO es la ruta: es el PAR (ruta × imagen origen)** — 311 pares. Una
+> ruta con 51 imágenes no queda cubierta porque una de ellas empareje, que es el
+> séptimo contenedor de `CLAUDE.md` §El NIVEL al que se mide.
+>
+> **Y las 10 rutas en `·` no son deuda de trabajo, son una FRONTERA:** son `/`,
+> las internas del build y **los 4 sectores + 2 monográficos**, que están fuera
+> del corpus por construcción — y son **exactamente la población donde M-IMG
+> está medida**. Para cubrirlas hace falta el lado del original, que hoy no está
+> capturado. La sonda lo declara en su salida y en su congelada.
+>
+> **Primera cosecha del eje:** 70 pares donde el clon **no emite** el `srcset`
+> del original, y —de rebote, por `qa:media-poblaciones`— **23 imágenes que el
+> clon sirve y no existen** (§M-404 de `PENDIENTES-QA.md`), invisibles a
+> `clon-base` porque una imagen rota no mueve `docH` ni `h1.y`.
 
 > ⚠ **La celda de «anchos horizontales» es de RUTAS y su unidad son FILAS.** 31/31
 > rutas, sí — pero **164 de 181 filas** (2026-08-02). Una ruta entra en la

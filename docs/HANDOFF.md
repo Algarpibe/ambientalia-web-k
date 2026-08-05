@@ -1,3 +1,182 @@
+# HANDOFF — F2-2 bloque 3 PARADO POR EL ESCALÓN: el srcset no es función de la imagen, y M-IMG no se cierra
+
+> ⚠ **Tanda 2026-08-04 (28.ª).** PASOS 1 · 2 · 6 · 4 del encargo del bloque 3.
+> **El escalón DISPARÓ en el PASO 1**, que es donde el encargo dijo que podía
+> disparar. **No se toca `apps/web`** — `git diff 6795883 HEAD -- apps/web`
+> vacío, así que no paga corrida Δ0; aun así las dos sondas que miden el clon se
+> re-corrieron tras el `check` y salen **idénticas a sus congeladas**.
+
+## 0 · Los tres titulares
+
+> **1 · La premisa del §F2-2 —*«image sizes replicando el `srcset` del
+> original»*— es MEDIA VERDAD, y la mitad falsa es la que cierra M-IMG.**
+> Censado en las 309 páginas congeladas: un juego FIJO genera **todos** los
+> ficheros (9 cajas, 0 formas sin explicar) y **no determina el atributo**.
+> **39 de 519 imágenes se sirven con `srcset` distinto según el punto de uso.**
+> ⇒ **NECESARIO y NO SUFICIENTE.**
+>
+> **2 · El eje `srcset` se comparó de dos lados POR PRIMERA VEZ, y M-IMG no se
+> cierra — con número: 311 pares · 140 iguales · 70 sin `srcset` · 5 distintos.**
+> Y la mitad que más pesa es de ALCANCE: **la población de M-IMG no está en el
+> corpus**, así que su propia ficha no es medible con esta sonda.
+>
+> **3 · Los `imageSizes` llevaban desde que se escribieron SIN GENERAR NADA.**
+> `IMAGE_SIZES` declarado, conectado, versionado… y el seed corría sin `sharp`.
+> Payload lo avisa en un WARN y sigue con exit 0. Efecto medido tras el arreglo:
+> `media/` de **85 a 545 ficheros**, 485 variantes.
+
+## 1 · PASO 1 — el contrato del `srcset`, DERIVADO parseando el atributo
+
+`npm run qa:media-srcset` · offline sobre `corpus/` · **negativo 7/7**
+(5 que cazan · 1 **diana perdida verificada** · control).
+
+**Lo primero que había que deshacer era una LECTURA.** El grep tosco devuelve
+1110 · 1156 · 1198 · 1238 · 1279 · 1333 · 1338 · 1478, que parece «anchos por
+imagen». **Son dos poblaciones y el grep las mezcla:**
+
+| población | anchos | qué es |
+|---|---|---|
+| variante generada (`-WxH`) | **13** | tamaños declarables |
+| sólo el original sin recortar | **60** | la anchura NATIVA de esa imagen |
+
+Y las **1 819 URLs del INDICE son VARIANTES**: detrás hay **519 imágenes
+origen**. El `srcset` multiplica.
+
+**No son anchos, son CAJAS.** Las 13 se pliegan en **9**; `114 · 126 · 247 ·
+576` son la **salida** de las cajas 300 y 600 sobre retratos. En el **cuerpo**
+sólo aparecen las seis de ancho libre (w480 · w980 · w1280 · w1024 · w300 ·
+w768); `caja150` · `caja300` · `caja600` están a **0 en cuerpo** — cascarón — y
+`caja600` es la única que **recorta**.
+
+**El hallazgo que dispara el escalón:**
+
+```
+2025/07/aaqms.jpg   ×20  480w · 980w
+                    × 1  480w · 980w · 1280w · 1800w
+```
+
+La lista **se topa en el ancho pedido** y **siempre incluye el fichero pedido**.
+Ese dato no está en la colección de media ni modelado en ningún sitio.
+
+## 2 · PASO 2 — las dos poblaciones, de la SALIDA SERVIDA
+
+`npm run qa:media-poblaciones` · **negativo 4/4**.
+
+| | n | bytes | restricción |
+|---|---|---|---|
+| **(a) SERVIDA** por las 32 rutas | **406** | 65.5 MB | **DURA** — Δ0 del artefacto |
+| **(b) sólo corpus** | **1 571** de 1 819 | — | ninguna todavía |
+| solape | 248 | 52.9 MB | |
+| en disco y sin servir | 245 | 23.0 MB | peso muerto |
+
+Falta por capturar: jpg×1304 · png×103 · jpeg×67 · webp×45 · svg×20 · pdf×16 ·
+mp4×8 · gif×7 · 1 sin extensión.
+
+> ⚠ **Y de rebote, 23 imágenes que el clon SIRVE y NO EXISTEN** — Rio ×15 ·
+> Des Moines ×7 · metano ×1. **HTTP 404 verificado**, no aritmética de
+> conjuntos. No lo ve **ninguna** sonda: `clon-base` mide `docH` · `h1.y` ·
+> secciones · enlaces, y una imagen rota no mueve ninguno. §M-404.
+
+## 3 · PASO 6 — el eje `srcset`, de dos lados
+
+`npm run qa:cmp-srcset` · original = corpus congelado · clon = HTML **servido**
+· unidad = **PAR (ruta × imagen origen)**, no la ruta · **negativo 4/4**.
+
+```
+311/311 pares · 140 IGUAL · 70 el clon NO emite srcset · 5 DISTINTO
+              · 96 sin pareja (posts barajados: no es del eje)
+```
+
+Los 70 se concentran **donde el clon CONSTRUYÓ**: `/software` 19/37 ·
+`/accesorios` 14/18 · `/monitor` 8/51 · `/kunak-api` 2/18. En grupo A el
+`srcset` viaja **verbatim dentro del HTML rico**, y por eso 140 salen iguales.
+
+**Y la frontera, DERIVADA:** de las 34 rutas del build el corpus empareja 24.
+Las que faltan son `/` y **los 4 sectores + 2 monográficos** — **exactamente la
+población donde M-IMG está fichada**. La sonda lo dice en su cabecera, su salida
+y su congelada.
+
+## 4 · PASO 4 — image sizes corregidos, y el descubrimiento de que eran inertes
+
+**Dos errores de la lista anterior, los dos por venir de 14 instancias:**
+
+- **`card: {1024, 683}` FORZABA UN RECORTE** que el original nunca produce — el
+  `fit` por defecto de Payload es `cover`, y la caja de 1024 emite **10 formas
+  distintas**. Corregido a `width: 1024`;
+- faltaban **`w300`** y **`w768`**, que el cuerpo sí usa. Migración
+  `20260805_011925_image_sizes_censados`, aplicada en limpio.
+
+**Y lo que no se veía:** sin `sharp` en `scripts/seed/cli.mjs`, **nada de eso
+generaba un fichero**. Es D4 literal —*el marcador prueba que el build es nuevo,
+no que el cambio tenga efecto*—. Cazado **midiendo después**: 85 → **545**
+ficheros. El CMS genera ya `alert-cloud-vertical-web-3-480x705.jpg`, el fichero
+exacto que la ficha de M-IMG cita como «el que sirve el original».
+
+## 5 · ⛔ LO QUE NO SE HIZO, y por qué
+
+| paso | estado | razón |
+|---|---|---|
+| **3 · capturar los 1 571 que faltan** | **NO** | el PASO 1 cambia su forma: hay que decidir **fuera de `corpus/`** para no mover los denominadores congelados (309 y 209) |
+| **5 · T3b / T4b** | **NO** | T3b liga `wp-caption` a la **relación** de media, y esa relación depende de cómo se modele el ancho pedido (§1). Hacerla antes es cablear |
+| **6 · cerrar M-IMG** | **NO, y se dice así** | 70 de 311, y su población propia no es medible. «Se cierra por decreto» es justo lo que el criterio prohíbe |
+
+## 6 · ⛔ EL BLOQUEO QUE HAY QUE MIRAR PRIMERO — el seed está roto
+
+**`npm run cms:seed` NO TERMINA**, y es **pre-existente**: reproducido con las
+modificaciones de esta tanda en `git stash`, falla igual en `6795883`.
+
+```
+ValidationError · casos · Necesidad · Resultados
+  §3.3b: host(s) de iframe fuera de la allowlist firmada — kunakcloud.com
+```
+
+La 27.ª firmó la allowlist y `casos.ts` trae `kunakcloud.com`. C-SP6 lo tenía
+fichado *«para cuando el grupo C se importe»*, pero **`casos` ya se siembra hoy
+desde `src/lib`**. Es la misma clase que esa tanda descubrió en sus 3 sabotajes
+sin diana: **se cerró una frontera y no se re-corrió lo que dependía de ella.**
+
+> **Consecuencia: el `round-trip 63/63` del bloque 1 NO se puede reproducir
+> hoy.** Sigue siendo cierto de cuando se midió; lo que falta es poder
+> re-verificarlo.
+
+**Y NO se arregla metiendo el host en la lista** — el HANDOFF de la 27.ª lo
+prohíbe explícitamente. Es firma del propietario. §M-SEED.
+
+## 7 · Pendientes que NO bloquean
+
+| # | pendiente | por qué no bloquea |
+|---|---|---|
+| 1 | **HOME sin content type** | cubo B: modelarla después es AÑADIR |
+| 2 | **`Dockerfile` sin verificar** (dos apps, un compose) | lo cobra F2-4 |
+| 3 | **26 celdas ciegas** · comportamiento 0/31 | deuda de medición del CLON |
+| 4 | **6 mínimos** de sondas escritos en vez de derivados | ídem |
+| 5 | **`Breadcrumb` 28 rutas** (−33.25, de ancho) | `clon-base` no lo ve |
+| 6 | **CMS-SP-TIPO** — detector nombrado: el Δ0 de render de F2-3 | punto ciego verificado en cada negativo |
+| 7 | **`/kunak-api` `<title>`** — ninguna sonda compara el `<head>` | fichado |
+| 8 | **extracción de builder** (casos · faqs · productos) | otra mecánica, su tanda |
+| 9 | **M-404** — 23 imágenes 404 | deuda del clon; la sonda se pondrá verde sola |
+| 10 | **los 5 «distinto» de `cmp-srcset`** | SIN DIRIMIR: con una captura no se separa «el sitio cambió» de «varía por carga» |
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No cerrar M-IMG declarando `imageSizes`.** Está medido que no basta: el
+  atributo se compone en el punto de uso (§1). Cerrarla así es el decreto que el
+  criterio prohíbe.
+- **No leer el verde de `cmp-srcset` como cobertura de las 34 rutas.** Son 24, y
+  las 10 que faltan incluyen la población donde M-IMG se fichó.
+- **No meter las 6 rutas que faltan dentro de `corpus/`.** Movería los
+  denominadores congelados de `media-srcset` (309) y del extractor (209), que
+  están citados en actas.
+- **No dar de alta `kunakcloud.com` para que el seed pase.** Es §3.3b, y es
+  firma. Lo mismo con `player.vimeo.com` y `dailymotion.com`.
+- **No declarar `caja150`/`caja300`/`caja600`** sin volver a medir: están a **0
+  en cuerpo** y `caja600` recorta. Payload genera toda variante declarada para
+  toda subida.
+- **No leer el rojo de `cmp-srcset` como un fallo de instrumento.** Su control
+  sale con **exit 2 a propósito**: ese rojo ES el hallazgo del criterio.
+
+---
+
 # HANDOFF — F2-2 bloque 2 CERRADO: la captura commiteada, T1–T8 con negativo 9/9, y el saneador firmado
 
 > ⚠ **Tanda 2026-08-04 (27.ª).** PASOS 0–5 del encargo del bloque 2. El escalón

@@ -1721,6 +1721,136 @@ redonda dan Δ0). Cerrarlo es implementar `srcset` con las mismas variantes que
 elige el original — es una tanda de **assets**, transversal a todas las páginas,
 y no de este arquetipo. Anotado aquí para que la próxima medida no lo persiga.
 
+> ⚠ **MEDIDO 2026-08-04 (F2-2 bloque 3) — y NO se cierra. Con su número, que es
+> lo que el criterio del PLAN exige en vez de un decreto.**
+>
+> El eje `srcset` **no lo COMPARABA ninguna de las 59 sondas** (derivado hoy;
+> el «48» que circula es del 2026-08-02 y ya no vale). Tres lo tocan por **un
+> solo lado** —`a-spec` y `a-lexical` lo censan en el original, `cms-teaser` lo
+> cita en el rótulo de una regla— y censar un lado no es comparar dos. Se midió
+> alto, ancho, árbol, enlaces y tipografía, nunca el atributo cuya elección ES
+> la causa de M-IMG. Por eso llevaba abierta — no había con qué cerrarla. Ahora
+> existe `npm run qa:cmp-srcset` (dos lados, negativo 4/4, congela en
+> `medidas/cmp-srcset.json`).
+>
+> | | |
+> |---|---|
+> | pares comparados (ruta × imagen origen) | **311 de 311** |
+> | ✓ IGUAL | **140** |
+> | ✗ **el clon NO emite `srcset`** | **70** ← la clase M-IMG |
+> | ✗ `srcset` DISTINTO | **5** |
+> | ? sin pareja (módulo de posts barajados) | 96 — no es del eje |
+>
+> **Dónde están los 70, y explica por qué M-IMG parecía pequeña:**
+>
+> | ruta | sin `srcset` / imágenes |
+> |---|---|
+> | `/software-de-medicion-calidad-del-aire` | **19 de 37** |
+> | `/accesorios` | **14 de 18** |
+> | `/monitor-calidad-aire` | 8 de 51 |
+> | `/casos-de-exito/red-…-world-athletics` | 4 de 4 |
+> | `/kunak-api` · casos · grupo A | 2 · 3+3 · **1 por ruta** (cascarón) |
+>
+> **Se concentran donde el clon CONSTRUYÓ en vez de transcribir.** En grupo A el
+> `srcset` viaja **verbatim dentro del HTML rico** (`arquetipo-a.ts`), y por eso
+> 140 pares salen iguales; en los arquetipos construidos el dato es
+> `MonoModulo.imagen`/`Product` con **`src` y ningún campo de variantes**. La
+> ficha de arriba decía «3 imágenes de las 11» porque miraba una página.
+>
+> **Y las TRES razones por las que no se cierra, ninguna de ellas «falta
+> trabajo»:**
+>
+> 1. **el juego fijo de tamaños es NECESARIO y NO SUFICIENTE.** Censado en las
+>    309 páginas del corpus (`qa:media-srcset`): el `srcset` **no es función de
+>    la imagen** — 39 de 519 orígenes se sirven con `srcset` distinto según el
+>    punto de uso, topado en el ancho pedido. El atributo necesita un dato que
+>    **no está en la colección de media ni modelado en ningún sitio**;
+> 2. **la población de esta ficha NO ES MEDIBLE con el corpus.** M-IMG está
+>    medida en el monográfico (`alert-cloud-vertical-web-3` vive en
+>    `monografico.ts`), y los **4 sectores + 2 monográficos están fuera del
+>    corpus por construcción**. `cmp-srcset` cubre 24 de las 34 rutas del build
+>    y **lo declara en su salida y en su congelada**, para que el verde de las
+>    24 no se lea como si cubriera las 30;
+> 3. **los 5 «distinto» están SIN DIRIMIR.** En 4 el **clon trae MÁS**
+>    candidatos que la captura de hoy (un `1280w` que el original ya no emite).
+>    Ninguno está entre los 39 orígenes de varias firmas, así que con **una**
+>    captura no se distingue «el sitio cambió» de «varía por carga». Se ficha
+>    como lo que es.
+>
+> **Lo que SÍ quedó hecho, y quita la mitad de abajo del problema:** el CMS
+> genera ya `alert-cloud-vertical-web-3-480x705.jpg` — el fichero exacto que la
+> tabla de arriba cita como «el que sirve el original». Lo que falta es el lado
+> del render.
+
+### M-404 · 23 imágenes que el clon SIRVE y no existen (2026-08-04)
+
+**Nuevo, y no lo veía nadie.** `npm run qa:media-poblaciones` cruzó las
+referencias `/images/…` del **HTML servido** por las 32 rutas del build contra
+el árbol de `apps/web/public/images`, y encontró **23 referencias sin fichero**:
+
+| rutas | n |
+|---|---|
+| `/case-studies/distrito-baja-emision-rio-de-janeiro` | **15** |
+| `/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa` | **7** |
+| `/contaminacion-por-metano` | 1 |
+
+**Verificadas contra la salida servida, no por aritmética de conjuntos:** HTTP
+**404** las tres comprobadas a mano, y **200** la hermana que sí está
+(`…des-moines.jpg`). La causa se lee en el disco: el clon se bajó los
+**`-600x600`** de esas galerías y el HTML pide el **original sin recortar**.
+
+> **Por qué llevaba ahí sin que saltara nada:** `clon-base` —la guarda que más
+> se corre— mide `docH`, `h1.y`, nº de secciones y nº de enlaces. **Una imagen
+> rota no mueve ninguno de los cuatro.** Es la séptima instancia de *«la guarda
+> también tiene un NIVEL, y el suyo no es este eje»*, y la primera cosecha del
+> eje `media` en su primer barrido: **un eje nuevo no hereda cobertura.**
+
+**No cierra el código de salida de `media-poblaciones`, a propósito y dicho en
+su propia salida** (regla 1): es deuda del CLON, no un fallo del reparto de
+poblaciones, y un rojo permanente por deuda ajena es cómo se consigue que nadie
+lea los rojos. **Se pondrá verde solo** el día que los 23 ficheros estén.
+
+⚠ **Y al arreglarlo hay que decidir una cosa, no descargar y ya:** el original
+puede estar sirviendo ahí un `srcset` cuyo mayor candidato sea el `-600x600`.
+Descargar el original completo cambiaría la imagen servida. **Se mide antes con
+`qa:cmp-srcset` sobre esas tres rutas** — que ya las cubre.
+
+### ⛔ M-SEED · El seed está ROTO desde la firma de la allowlist (2026-08-04)
+
+**Pre-existente, no de esta tanda, y bloquea el criterio de F2-2 bloque 1.**
+
+```
+npm run cms:seed  →  ValidationError · collection: 'casos'
+  Necesidad · Resultados
+  §3.3b: host(s) de iframe fuera de la allowlist firmada — kunakcloud.com
+```
+
+**Reproducido con las modificaciones de esta tanda GUARDADAS APARTE**
+(`git stash`) para no atribuírselo a lo que no es: falla igual en `6795883`.
+
+**Qué pasó, y es la clase que este repo ya tiene nombrada.** La tanda 27.ª firmó
+§3.3b —la allowlist de 18 hosts— y `casos.ts` trae `kunakcloud.com` en sus
+iframes. C-SP6 lo había **fichado** (`kunakcloud.com ×2`) con la nota
+*«procedimiento de alta cuando el grupo C se importe»*… pero `casos` **ya se
+siembra hoy desde `src/lib`**, no espera al import del corpus. Así que:
+
+> **Se cerró una frontera y no se re-corrió lo que dependía de ella.** Es
+> exactamente lo que la propia tanda 27.ª descubrió en sus 3 sabotajes SIN
+> DIANA —*«el negativo no se re-corrió después»*— cometido en el mismo día
+> sobre el otro lado: allí caducaron unos sabotajes, aquí caducó **el seed**.
+
+**Consecuencia que hay que decir en voz alta:** el `round-trip 63/63` que cierra
+F2-2 bloque 1 **no se puede reproducir hoy** — necesita una DB sembrada y el
+seed no llega a terminar. El 63/63 sigue siendo cierto de cuando se midió; lo
+que ya no está es la capacidad de re-verificarlo.
+
+**Y NO se arregla metiendo el host en la lista.** El HANDOFF de la 27.ª lo
+prohíbe explícitamente: *«no dar de alta `kunakcloud.com` sin pasar por el
+procedimiento de §3.3b»*. La allowlist la firma el propietario; añadir un host
+para que el seed pase sería falsificar el instrumento justo donde §F2-2 avisa.
+**Es una decisión, y va a la tanda que la tome** — con los otros dos que C-SP6
+dejó fichados (`player.vimeo.com`, `dailymotion.com`).
+
 ### M-TAB · La tabla a 390: desviación deliberada que cuesta 0
 
 Se replica la decisión de `/accesorios` (A4): el original deja desbordar la

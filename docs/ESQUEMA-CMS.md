@@ -125,6 +125,98 @@ dato del autor: **se regenera al servir**, no se migra.
 un censo de las 209 — se anota como lo que es, la entrada de la decisión, no la
 decisión.
 
+> ✅ **CENSADO 2026-08-04 sobre las 309 páginas del corpus congelado**
+> (`npm run qa:media-srcset`, `medidas/media-srcset.json`, negativo **7/7**).
+> **La entrada de la decisión de arriba tenía dos errores**, y los dos venían de
+> mirar 14 instancias: uno de FORMA y otro de ALCANCE. Y por encima de los dos,
+> un hallazgo que cambia lo que un juego de tamaños puede prometer.
+
+#### El censo: 1 719 atributos · 4 318 candidatos · 519 imágenes ORIGEN
+
+**Lo primero que hay que deshacer es una lectura, no un número.** Un `grep`
+sobre `corpus/` devuelve anchos irregulares —1110 · 1156 · 1198 · 1238 · 1279 ·
+1333 · 1338 · 1478…— y eso **parece** la firma de anchos POR IMAGEN, con lo que
+la premisa del PLAN («image sizes replicando el `srcset`») sería falsa de raíz.
+No lo es: **son dos poblaciones distintas y el grep las mezcla.**
+
+| población | cuántos anchos | qué es |
+|---|---|---|
+| **variante generada** (`-WxH` en el nombre) | **13** | tamaños declarables |
+| **sólo el original sin recortar** | **60** | la anchura NATIVA de esa imagen |
+
+Los irregulares están **todos** en la segunda. Y las 1 819 URLs del INDICE son
+**variantes**: detrás hay **519 imágenes origen** — el `srcset` multiplica.
+
+#### Y no son anchos: son CAJAS
+
+Las 13 anchuras se pliegan en **9 cajas**. `114` · `126` · `247` · `576` no son
+tamaños exóticos: son la **salida** de las cajas 300 y 600 sobre imágenes en
+retrato. Agrupar por ancho fabrica tamaños que no existen.
+
+| caja | formas WxH | cuerpo | cascarón | forma |
+|---|---|---|---|---|
+| **w480** | 88 | 306 | 1 046 | escala (`width`) |
+| **w980** | 87 | 277 | 679 | escala |
+| **w1280** | 38 | 112 | 69 | escala |
+| **w1024** | **10** | 13 | 46 | escala |
+| **w300** | 5 | 6 | 1 | escala |
+| **w768** | 2 | 1 | 1 | escala |
+| caja300 | 3 | **0** | 311 | acotada |
+| caja150 | 1 | **0** | 50 | acotada |
+| caja600 | 2 | **0** | 16 | acotada · **RECORTA** |
+
+**Los dos errores corregidos, con su evidencia:**
+
+1. **`card` no es `1024×683`.** La caja de 1024 emite **10 formas distintas**
+   (1024x682 · 1024x1024 · 1024x576 · 1024x683 · 1024x797…), o sea que
+   **conserva la proporción**. `1024x683` era una de las diez. Y declararlo con
+   los dos lados no es cosmético: **el `fit` por defecto de Payload es `cover`**,
+   así que recortaba a 3:2 todo lo que entrara. Corregido a `width: 1024`;
+2. **`cardWide 1080×675` no aparece NI UNA VEZ** en los 4 318 candidatos. Su
+   evidencia es `lh-tarjetas`, o sea los LISTADOS, que no están en el corpus.
+   Se conserva **con su procedencia escrita**, que es justo lo que le faltaba a
+   `card`.
+
+**Y el reparto CUERPO/CASCARÓN, que decide qué declarar:** 312 atributos del
+cuerpo contra 1 407 del cascarón. Las tres cajas acotadas están a **0 en
+cuerpo** — son del sello del pie, los avatares y las galerías del tema. Es la
+lectura de `googletagmanager` en C-SP6 aplicada al media: **contarlos juntos
+infla el contrato con tamaños que ningún contenido pide.** No se declaran, y
+`caja600` además recorta (600x600 y 576x600 sobre originales de 0.75 y 0.5627):
+si algún día entra, entra con `width`+`height`+`fit` declarados, no por omisión.
+
+**Excepción nombrada:** 1 candidato de 4 318 cuyo descriptor no es el ancho del
+fichero (`…-2048x1152.jpg 1920w`). A su cubo, fichado, fuera del reparto.
+
+#### ⚠ EL HALLAZGO: el `srcset` NO es función de la imagen
+
+**39 de los 519 orígenes se sirven con `srcset` DISTINTO según dónde se usen.**
+Y la diferencia es sistemática: la lista de candidatos **se topa en el ancho que
+la plantilla pidió** y **siempre incluye el fichero pedido**.
+
+```
+2025/07/aaqms.jpg    ×20  480w · 980w
+                     × 1  480w · 980w · 1280w · 1800w (el original)
+```
+
+De donde el veredicto que gobierna todo lo demás:
+
+> **Un juego FIJO de image sizes es NECESARIO y NO SUFICIENTE.** Genera **todos**
+> los ficheros que el corpus usa —9 cajas, 0 formas sin explicar—. **No
+> determina el atributo**: el `srcset` se compone en el punto de USO, con un
+> dato —el ancho pedido— que **no está en la colección de media** y que hoy **no
+> está modelado en ningún sitio**.
+
+**Consecuencia para M-IMG, y es la que hay que leer antes de darla por cerrada:
+M-IMG no se cierra declarando `imageSizes`.** Los tamaños son la mitad de
+abajo; la mitad de arriba es una regla de render que necesita el ancho pedido.
+Ver §6 M-IMG y `medidas/cmp-srcset.json`.
+
+⚠ **Alcance del censo, declarado:** las **309 páginas del corpus** — grupo A
+(blog · kunakpedia · documentos) + casos · faqs · productos. **NO incluye
+sectores ni monográficos**, que están fuera del corpus por construcción… y son
+exactamente la población donde M-IMG está medida.
+
 ### ✅ CMS-0d · Next subido a 16.2.12 — EJECUTADA (2026-07-30)
 
 | | |
@@ -1641,7 +1733,8 @@ de un `.ts`, y los campos que aún no existen (§1.3).
 |---|---|---|
 | **CMS-1** | el caso de éxito tiene **dos patrones de ruta**: 53 en `/es/casos-de-exito/` y **4 en `/es/case-studies/`** | **✅ resuelta (2026-07-30, C-2): el prefijo como campo con defecto** en la colección única `casos` — §2b y `grupo-C/DECISIONES.md` D2. Los 4 son contenido propio en español sobre la misma plantilla; el modelo es robusto a C-SP2 (las rutas cruzadas no se emiten) |
 | **CLASE (S9–S11)** | ~~4 residuos de SECTOR~~ → **31 ítems derivados** con una causa: **componente calibrado con UNA instancia** | **✅ CLASIFICADA (2026-08-03, `docs/research/clase/`)** — ver §6c. El inventario a mano tenía ~8; el derivado tiene **31** (`medidas/clase-censo.json`). **10 BLOQUEAN F2-1 · 21 no.** Y los 10 se desbloquean con **UNA medición**, no con 10 arreglos |
-| **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **CMS-0b ya está decidida** (volumen persistente) y **no lo cierra ni lo reabre**: dónde viven los ficheros no decide qué variantes se generan. Lo que queda es el juego de tamaños que emita el CMS y su redondeo — **SIN MEDIR**, y es lo mismo con volumen que con S3, así que la reversibilidad de CMS-0b no lo toca |
+| **M-IMG** | residuo de décimas: el original sirve por `srcset` una variante cuya proporción redondea distinto | se cierra con `srcset`, no con maquetación. **CMS-0b ya está decidida** (volumen persistente) y **no lo cierra ni lo reabre**: dónde viven los ficheros no decide qué variantes se generan. Lo que queda es el juego de tamaños que emita el CMS y su redondeo — ~~SIN MEDIR~~ **MEDIDO 2026-08-04, y NO se cierra: ver la fila de abajo** |
+| **M-IMG · 2026-08-04** | **el eje `srcset` comparado de dos lados por primera vez** (`qa:cmp-srcset`, negativo 4/4): **311 pares · 140 iguales · 70 el clon NO emite `srcset` · 5 distintos** | **NO SE CIERRA, y con número.** Tres razones, y ninguna es «falta trabajo»: **(1)** el juego fijo de tamaños es **necesario y NO suficiente** — el `srcset` no es función de la imagen (39 de 519 orígenes con ≥2 firmas), así que el atributo necesita el **ancho pedido en el punto de uso**, que no está modelado; **(2)** los 70 se concentran donde el clon **CONSTRUYÓ** (`/software` 19/37 · `/accesorios` 14/18 · `/monitor` 8/51), porque ahí `MonoModulo.imagen`, `Product` y compañía tienen `src` y **ningún campo de variantes**; en grupo A el `srcset` viaja verbatim dentro del HTML rico y por eso 140 salen iguales; **(3)** la ficha original de M-IMG está medida en el **monográfico**, y los 4 sectores + 2 monográficos **no están en el corpus** ⇒ su población **no es medible** con esta sonda. Lo que sí quedó hecho: el CMS **ya genera** `alert-cloud-vertical-web-3-480x705.jpg`, el fichero exacto que la ficha cita |
 | **S1** | tarjetas de caso y de artículo: **la mitad construida del par listado→detalle** (206 páginas) | los modelos `CaseStudy`/`BlogPost` son la **proyección de teaser**: falta cuerpo, slug (hoy `href` absoluto al original), taxonomía y SEO |
 | **C-QA7** (2026-07-31) | el **`pt` de la primera fila del cuerpo** en las 4 páginas de producto (régimen builder) es **campo, no plantilla**: huella test A medida con `qa:banda` — **0 px a los dos anchos** en accesorios/api/software (el editor lo anuló) y **2 %/30 (default intacto)** en monitor. Cuatro hermanas, dos valores | cuando PRODUCTO/CATÁLOGO/SOFTWARE se modelen, la fila del hero lleva su ajuste de ritmo como **campo con defecto 2 %/30** (la familia de `flujo` de SECTOR, en la entrada del cuerpo). Hoy resuelto en plantilla por página, cada una con su valor **medido**. Y el kicker (35px/42 ≤767, 50/60 desde 768) es **plantilla con varianza cero en los 4**: al modelar, UN componente — cablearlo por instancia ya costó dos defectos (C-QA7) |
 

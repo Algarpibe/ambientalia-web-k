@@ -726,6 +726,88 @@ sus 24 fichas del CPT incluidas).
 
 ---
 
+### ⛔ F2-2 · BLOQUE 3 — PARADO POR EL ESCALÓN, con la frontera medida (2026-08-04, tanda 28.ª)
+
+**El criterio del §F2-2 para este bloque es literal: *«el `srcset` emitido
+coincide con el del original en las páginas medidas → M-IMG cerrado con medida,
+no por decreto»*. NO se cumple, y ahora se sabe por qué y con qué número.**
+
+```
+✅ contrato del srcset DERIVADO   qa:media-srcset  · 309 páginas · negativo 7/7
+✅ las dos poblaciones de media   qa:media-poblaciones · 32 rutas · negativo 4/4
+✅ image sizes CORREGIDOS         migración versionada + EFECTO medido
+✅ el eje `srcset`, DE DOS LADOS  qa:cmp-srcset · 311 pares · negativo 4/4
+⛔ M-IMG                          NO se cierra — 70 de 311 pares, y su población
+                                  propia NO es medible desde el corpus
+```
+
+**Punto por punto contra el criterio:**
+
+| punto del criterio | estado | evidencia |
+|---|---|---|
+| media al volumen persistente (CMS-0b) | **poblaciones repartidas**, captura de (b) NO hecha | `medidas/media-poblaciones.json` — 406 servidas · 1 571 sólo corpus |
+| *image sizes* replicando el `srcset` | **los TAMAÑOS sí; el ATRIBUTO no** | `medidas/media-srcset.json` |
+| el `srcset` emitido coincide con el del original | ❌ **70 pares no coinciden** | `medidas/cmp-srcset.json` |
+| M-IMG cerrado con medida | ⛔ **NO** | ídem, y §M-IMG de `PENDIENTES-QA.md` |
+
+#### El escalón: la premisa del PLAN es media verdad, y la mitad falsa es la que cierra
+
+> **«Los *image sizes* de Payload replicando el `srcset` del original»** presupone
+> que el `srcset` sale de un juego de tamaños. **Medido en 309 páginas: no.** El
+> juego fijo genera **todos los ficheros** —9 cajas, 0 formas sin explicar— y
+> **no determina el atributo**: 39 de 519 orígenes se sirven con `srcset`
+> distinto según el punto de uso, topado en el ancho que la plantilla pidió.
+>
+> **Un juego fijo es NECESARIO y NO SUFICIENTE.** Lo que falta no es un tamaño:
+> es **el ancho pedido en el punto de uso**, un dato que no está en la colección
+> de media y que **hoy no está modelado en ningún sitio**. Modelarlo es una
+> **decisión** —¿campo del bloque que referencia la imagen, o derivado del
+> contexto de render?— y no se inventa aquí.
+
+#### Y la segunda mitad del escalón, que es de ALCANCE y no de modelo
+
+**La población donde M-IMG está medida NO ESTÁ en el corpus.** Derivado, no
+supuesto: de las 34 rutas del build, el corpus empareja **24**. Las que quedan
+fuera son `/`, las internas, y **los 4 sectores + 2 monográficos** — y la ficha
+de M-IMG cita `alert-cloud-vertical-web-3`, que vive en `monografico.ts`, ruta
+`…-en-edar`.
+
+> Así que una sonda de `srcset` construida sobre el corpus **puede salir verde
+> sin haber mirado nunca donde el defecto se fichó.** `cmp-srcset` lo declara en
+> su cabecera, en su salida y en su congelada, para que el verde de 24 no se lea
+> como si cubriera 30.
+
+#### Lo que la tanda SÍ dejó, y no es poco
+
+- **el contrato del `srcset`, censado y congelado** — 13 anchos de variante
+  contra 60 nativos, 9 cajas, 0 recortes en el cuerpo, el reparto
+  cuerpo/cascarón y la excepción nombrada;
+- **`IMAGE_SIZES` corregido contra el censo** (`card` recortaba a 3:2 lo que el
+  original no recorta; faltaban `w300` y `w768`), con **migración versionada**;
+- **y el descubrimiento de que todo eso era INERTE**: sin `sharp` en el CLI del
+  seed, Payload no generaba una sola variante. Efecto medido: `media/` de 85 a
+  **545 ficheros**, 485 variantes. El CMS genera ya
+  `alert-cloud-vertical-web-3-480x705.jpg`, el fichero exacto de la ficha;
+- **el eje `srcset` en la matriz de cobertura**, con su unidad (el PAR, no la
+  ruta) y sus 10 celdas de frontera declaradas.
+
+#### Lo que la tanda de DECISIÓN tiene que resolver
+
+1. **Dónde vive el ancho pedido.** Sin él no hay `srcset` que emitir. Las dos
+   formas visibles: **campo del bloque** que referencia la imagen (explícito,
+   migrable, y hay que medir sus valores) o **derivado del contexto de render**
+   (menos dato, pero ata el CMS a una plantilla). Es la decisión que desbloquea
+   M-IMG.
+2. **Cómo se captura el original de las 6 rutas que faltan.** Sin ellas M-IMG no
+   es verificable en su propia población. Con la disciplina del corpus, pero
+   **fuera de `corpus/`**: meterlas dentro movería los denominadores de
+   `media-srcset` (309) y del extractor (209), que están congelados y citados.
+3. **`kunakcloud.com` y los otros dos hosts** (§M-SEED de `PENDIENTES-QA.md`) —
+   hoy el seed no termina, así que el `63/63` del bloque 1 no se puede
+   re-verificar. Es firma, no código.
+
+---
+
 ### ~~⛔ F2-2 · BLOQUE 1 — PARADO POR EL ESCALÓN~~ (2026-08-04, superado arriba)
 
 **El bloque 1 no cierra**, y no por falta de trabajo: la premisa que lo
