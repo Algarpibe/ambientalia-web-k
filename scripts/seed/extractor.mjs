@@ -33,6 +33,7 @@ import path, { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { enApp, Evaluadas, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
+import { postContent } from "./corpus.mjs";
 
 process.env.SIN_CLON = "1"; // lee ficheros congelados: un build del clon no la contamina
 
@@ -81,23 +82,9 @@ for (const p of Object.values(INDICE.paginas)) {
   rutas.add(camino === "" ? "/" : camino);
 }
 
-/* ── el cuerpo: el interior de `et_pb_post_content` ──────────────────────── */
-function interiorDiv(html, desde) {
-  const fin = html.indexOf(">", desde);
-  if (fin < 0) return null;
-  const re = /<(\/?)div\b/gi;
-  re.lastIndex = fin + 1;
-  let nivel = 1, m;
-  while ((m = re.exec(html))) {
-    nivel += m[1] ? -1 : 1;
-    if (nivel === 0) return html.slice(fin + 1, m.index);
-  }
-  return null;
-}
-const postContent = (html) => {
-  const i = html.search(/<div[^>]*\bclass="[^"]*\bet_pb_post_content\b[^"]*"/i);
-  return i < 0 ? null : interiorDiv(html, i);
-};
+/* ── el cuerpo: el interior de `et_pb_post_content` ────────────────────────
+ * IMPORTADO de `corpus.mjs`, no copiado: estaba definido aquí y en
+ * `captura.mjs`, y la sonda del `srcset` iba a traer la tercera copia. */
 /** La regla del markup: se busca sobre el HTML sin `<script>` ni `<style>`. */
 const sinScriptNiStyle = (html) =>
   html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");

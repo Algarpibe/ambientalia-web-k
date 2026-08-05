@@ -38,6 +38,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { Evaluadas, hoy, QA } from "../qa/lib.mjs";
+import { postContent } from "./corpus.mjs";
 
 process.env.SIN_CLON = "1"; // solo pega al original: un build del clon no contamina
 
@@ -172,22 +173,10 @@ for (const t of trabajo) {
  * bytes del HTML crudo, bytes del `post_content` donde el marcador existe, y
  * las URLs de media distintas que el corpus referencia (la unidad del bloque 3).
  * ═════════════════════════════════════════════════════════════════════════ */
-function interiorDiv(html, desde) {
-  const fin = html.indexOf(">", desde);
-  if (fin < 0) return null;
-  const re = /<(\/?)div\b/gi;
-  re.lastIndex = fin + 1;
-  let nivel = 1, m;
-  while ((m = re.exec(html))) {
-    nivel += m[1] ? -1 : 1;
-    if (nivel === 0) return html.slice(fin + 1, m.index);
-  }
-  return null;
-}
-const postContent = (html) => {
-  const i = html.search(/<div[^>]*\bclass="[^"]*\bet_pb_post_content\b[^"]*"/i);
-  return i < 0 ? null : interiorDiv(html, i);
-};
+/* `postContent` vive en `corpus.mjs` y se IMPORTA: estaba copiada aquí y en
+ * `extractor.mjs`, y la sonda del `srcset` iba a ser la tercera copia. Dos
+ * definiciones de «el cuerpo» es la clase C7, y las dos salidas seguirían
+ * siendo verdes mientras divergen. */
 
 const porColeccion = {};
 const media = new Set();

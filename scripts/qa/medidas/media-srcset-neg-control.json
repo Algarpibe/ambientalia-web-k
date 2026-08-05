@@ -1,0 +1,984 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "fuente": "corpus/ (309 páginas congeladas, sha256 por página)",
+    "alcance": "grupo A (entradas-blog · terminos-kunakpedia · documentos-cientificos) + casos · faqs · productos. ⚠ NO incluye sectores ni monograficos — están FUERA del corpus por construcción (INDICE.meta.fuera), y son EXACTAMENTE la población donde M-IMG está medida.",
+    "sabotaje": "control"
+  },
+  "totales": {
+    "paginas": 309,
+    "atributos": 1719,
+    "atributosCuerpo": 312,
+    "atributosCascaron": 1407,
+    "candidatos": 4318,
+    "origenes": 519,
+    "origenesCuerpo": 288,
+    "sinDescriptor": 0,
+    "conX": 0,
+    "mezclanOrigen": 24
+  },
+  "censo": {
+    "srcset en <img>/<source>": {
+      "casos": 1719,
+      "paginas": 309,
+      "max": null,
+      "razon": "enumerador, no discriminante: está en las 309 porque el PIE lleva el sello de certificación con srcset (cascarón, medido). El que discrimina es el del cuerpo"
+    },
+    "sizes en <img>/<source>": {
+      "casos": 1719,
+      "paginas": 309,
+      "max": null,
+      "razon": "ídem — y restringido a img/source a propósito: sin restringir casaba sobre <link rel=icon sizes=32x32> en las 309 (sobre-casado)"
+    },
+    "srcset DENTRO de post_content": {
+      "casos": 311,
+      "paginas": 66,
+      "max": 209,
+      "razon": "las páginas de builder (casos · faqs · productos) NO tienen post_content: el tope se deriva del INDICE (209)"
+    },
+    "variante -WxH": {
+      "casos": 2935,
+      "paginas": 309,
+      "max": null,
+      "razon": "enumerador: el sello del pie ya trae una variante en las 309"
+    }
+  },
+  "anchos": {
+    "soloVariante": [
+      114,
+      126,
+      150,
+      247,
+      480,
+      576,
+      980
+    ],
+    "ambos": [
+      300,
+      600,
+      768,
+      1024,
+      1280,
+      1920
+    ],
+    "soloOriginal": [
+      377,
+      492,
+      500,
+      581,
+      595,
+      606,
+      613,
+      626,
+      650,
+      669,
+      700,
+      746,
+      778,
+      794,
+      795,
+      800,
+      804,
+      811,
+      813,
+      821,
+      840,
+      848,
+      850,
+      876,
+      888,
+      900,
+      960,
+      1000,
+      1110,
+      1120,
+      1156,
+      1198,
+      1200,
+      1238,
+      1279,
+      1300,
+      1333,
+      1338,
+      1366,
+      1400,
+      1440,
+      1478,
+      1500,
+      1536,
+      1556,
+      1600,
+      1620,
+      1751,
+      1800,
+      1802,
+      1809,
+      1810,
+      1838,
+      1885,
+      1919,
+      2000,
+      2048,
+      2550,
+      2560,
+      2648
+    ],
+    "frecuenciaVariante": {
+      "114": 1,
+      "126": 1,
+      "150": 50,
+      "247": 309,
+      "300": 7,
+      "480": 1352,
+      "576": 2,
+      "600": 14,
+      "768": 2,
+      "980": 956,
+      "1024": 59,
+      "1280": 181,
+      "1920": 1
+    }
+  },
+  "cajas": {
+    "caja300": {
+      "formas": [
+        "114x300",
+        "126x300",
+        "247x300"
+      ],
+      "cuerpo": 0,
+      "cascaron": 311,
+      "recorta": false
+    },
+    "w480": {
+      "formas": [
+        "480x144",
+        "480x160",
+        "480x171",
+        "480x186",
+        "480x196",
+        "480x200",
+        "480x210",
+        "480x226",
+        "480x227",
+        "480x238",
+        "480x240",
+        "480x242",
+        "480x245",
+        "480x247",
+        "480x250",
+        "480x251",
+        "480x257",
+        "480x260",
+        "480x267",
+        "480x268",
+        "480x269",
+        "480x270",
+        "480x272",
+        "480x275",
+        "480x276",
+        "480x277",
+        "480x280",
+        "480x281",
+        "480x282",
+        "480x284",
+        "480x288",
+        "480x289",
+        "480x294",
+        "480x295",
+        "480x296",
+        "480x301",
+        "480x302",
+        "480x303",
+        "480x306",
+        "480x309",
+        "480x310",
+        "480x311",
+        "480x312",
+        "480x313",
+        "480x318",
+        "480x319",
+        "480x320",
+        "480x321",
+        "480x322",
+        "480x323",
+        "480x324",
+        "480x325",
+        "480x328",
+        "480x330",
+        "480x331",
+        "480x332",
+        "480x336",
+        "480x339",
+        "480x342",
+        "480x345",
+        "480x351",
+        "480x360",
+        "480x371",
+        "480x373",
+        "480x374",
+        "480x384",
+        "480x387",
+        "480x388",
+        "480x390",
+        "480x403",
+        "480x404",
+        "480x419",
+        "480x422",
+        "480x425",
+        "480x428",
+        "480x450",
+        "480x455",
+        "480x480",
+        "480x481",
+        "480x533",
+        "480x570",
+        "480x613",
+        "480x640",
+        "480x669",
+        "480x678",
+        "480x679",
+        "480x738",
+        "480x853"
+      ],
+      "cuerpo": 306,
+      "cascaron": 1046,
+      "recorta": false
+    },
+    "w980": {
+      "formas": [
+        "980x1088",
+        "980x1307",
+        "980x1365",
+        "980x1384",
+        "980x1386",
+        "980x1387",
+        "980x293",
+        "980x327",
+        "980x349",
+        "980x381",
+        "980x400",
+        "980x408",
+        "980x464",
+        "980x490",
+        "980x511",
+        "980x512",
+        "980x525",
+        "980x531",
+        "980x547",
+        "980x548",
+        "980x549",
+        "980x550",
+        "980x551",
+        "980x552",
+        "980x561",
+        "980x564",
+        "980x566",
+        "980x572",
+        "980x574",
+        "980x577",
+        "980x580",
+        "980x588",
+        "980x589",
+        "980x590",
+        "980x600",
+        "980x603",
+        "980x604",
+        "980x605",
+        "980x614",
+        "980x616",
+        "980x618",
+        "980x619",
+        "980x624",
+        "980x625",
+        "980x626",
+        "980x630",
+        "980x632",
+        "980x634",
+        "980x636",
+        "980x637",
+        "980x639",
+        "980x649",
+        "980x650",
+        "980x651",
+        "980x652",
+        "980x653",
+        "980x654",
+        "980x655",
+        "980x656",
+        "980x658",
+        "980x660",
+        "980x662",
+        "980x664",
+        "980x669",
+        "980x670",
+        "980x671",
+        "980x677",
+        "980x678",
+        "980x686",
+        "980x693",
+        "980x699",
+        "980x703",
+        "980x717",
+        "980x735",
+        "980x761",
+        "980x763",
+        "980x784",
+        "980x791",
+        "980x792",
+        "980x826",
+        "980x856",
+        "980x862",
+        "980x868",
+        "980x873",
+        "980x918",
+        "980x929",
+        "980x980"
+      ],
+      "cuerpo": 277,
+      "cascaron": 679,
+      "recorta": false
+    },
+    "w1280": {
+      "formas": [
+        "1280x1033",
+        "1280x1199",
+        "1280x1280",
+        "1280x1783",
+        "1280x1808",
+        "1280x1810",
+        "1280x1811",
+        "1280x427",
+        "1280x497",
+        "1280x607",
+        "1280x640",
+        "1280x686",
+        "1280x715",
+        "1280x720",
+        "1280x721",
+        "1280x733",
+        "1280x736",
+        "1280x750",
+        "1280x768",
+        "1280x789",
+        "1280x791",
+        "1280x802",
+        "1280x804",
+        "1280x831",
+        "1280x834",
+        "1280x848",
+        "1280x849",
+        "1280x852",
+        "1280x853",
+        "1280x854",
+        "1280x855",
+        "1280x859",
+        "1280x867",
+        "1280x873",
+        "1280x875",
+        "1280x876",
+        "1280x884",
+        "1280x960"
+      ],
+      "cuerpo": 112,
+      "cascaron": 69,
+      "recorta": false
+    },
+    "w1024": {
+      "formas": [
+        "1024x1024",
+        "1024x427",
+        "1024x576",
+        "1024x652",
+        "1024x680",
+        "1024x682",
+        "1024x683",
+        "1024x686",
+        "1024x797",
+        "1024x907"
+      ],
+      "cuerpo": 13,
+      "cascaron": 46,
+      "recorta": false
+    },
+    "w300": {
+      "formas": [
+        "300x104",
+        "300x167",
+        "300x169",
+        "300x200",
+        "300x62"
+      ],
+      "cuerpo": 6,
+      "cascaron": 1,
+      "recorta": false
+    },
+    "w768": {
+      "formas": [
+        "768x427",
+        "768x432"
+      ],
+      "cuerpo": 1,
+      "cascaron": 1,
+      "recorta": false
+    },
+    "caja150": {
+      "formas": [
+        "150x150"
+      ],
+      "cuerpo": 0,
+      "cascaron": 50,
+      "recorta": false
+    },
+    "caja600": {
+      "formas": [
+        "576x600",
+        "600x600"
+      ],
+      "cuerpo": 0,
+      "cascaron": 16,
+      "recorta": true
+    }
+  },
+  "formasSinCaja": [],
+  "descriptorDiscrepante": [
+    {
+      "url": "2020/04/demolicion-estadio-vicente-calderon-0-2048x1152.jpg",
+      "fichero": "2048x1152",
+      "descriptor": "1920w",
+      "pagina": "entradas-blog/contaminacion-aire-obras-demoliciones-derribos"
+    }
+  ],
+  "recortes": [
+    {
+      "origen": "2023/03/IMG_0815.jpg",
+      "formas": [
+        "576x600 (0.9600)",
+        "480x640 (0.7500)"
+      ]
+    },
+    {
+      "origen": "2023/03/IMG_0814.jpg",
+      "formas": [
+        "576x600 (0.9600)",
+        "480x640 (0.7500)"
+      ]
+    },
+    {
+      "origen": "2025/06/a30cac9c-652b-47e1-b500-0f1d4d7a12f7.jpg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x853 (0.5627)"
+      ]
+    },
+    {
+      "origen": "2025/06/30c19a36-aedc-4bd4-b463-72754074a8c5.jpg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x853 (0.5627)"
+      ]
+    },
+    {
+      "origen": "2025/07/sargazo-cancun-repmex-2.jpg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x640 (0.7500)"
+      ]
+    },
+    {
+      "origen": "2025/06/WhatsApp-Image-2025-06-25-at-11.46.44-AM-2.jpeg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x640 (0.7500)"
+      ]
+    },
+    {
+      "origen": "2025/07/sargazo-cancun-repmex.jpg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x640 (0.7500)"
+      ]
+    },
+    {
+      "origen": "2026/05/639130508516830000.jpg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x306 (1.5686)"
+      ]
+    },
+    {
+      "origen": "2026/05/NAMA-GROUP-WWTP-7-1.jpeg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x853 (0.5627)"
+      ]
+    },
+    {
+      "origen": "2026/05/NAMA-GROUP-WWTP-8-1.jpeg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x853 (0.5627)"
+      ]
+    },
+    {
+      "origen": "2026/05/NAMA-GROUP-WWTP-9-1.jpeg",
+      "formas": [
+        "600x600 (1.0000)",
+        "480x853 (0.5627)"
+      ]
+    }
+  ],
+  "porPuntoDeUso": {
+    "origenesConVariasFirmas": 39,
+    "origenes": 519,
+    "ejemplos": [
+      {
+        "origen": "2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1.png",
+        "firmas": [
+          {
+            "firma": "480x270 980x551",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar"
+            ]
+          },
+          {
+            "firma": "1280x720 480x270 980x551 FULL@1366",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg",
+        "firmas": [
+          {
+            "firma": "480x270 980x551 FULL@1200",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/detectores-emisiones-coronavirus-contaminacion"
+            ]
+          },
+          {
+            "firma": "1024x576 480x270 980x551",
+            "usos": 4,
+            "paginas": [
+              "productos/accesorios",
+              "productos/cartuchos-inteligentes/dioxido-de-azufre",
+              "productos/cartuchos-inteligentes/hidrocarburos-no-metanicos",
+              "productos/cartuchos-inteligentes/monoxido-de-carbono"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/07/aaqms.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 20,
+            "paginas": [
+              "entradas-blog/detectores-emisiones-coronavirus-contaminacion",
+              "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+              "entradas-blog/particulas-ultrafinas-puf",
+              "entradas-blog/calidad-del-aire-en-islas"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/monitorizacion-near-reference"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2026/05/PM10-measurement-in-coarse-particle-environments.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 18,
+            "paginas": [
+              "entradas-blog/detectores-emisiones-coronavirus-contaminacion",
+              "entradas-blog/particulas-ultrafinas-puf",
+              "entradas-blog/calidad-del-aire-en-islas",
+              "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 4,
+            "paginas": [
+              "entradas-blog/impacto-ambiental-industria-cementera",
+              "entradas-blog/contaminacion-del-aire-por-obras",
+              "entradas-blog/contaminacion-aire-obras-demoliciones-derribos",
+              "productos/cartuchos-inteligentes/sulfuro-de-hidrogeno"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2023/08/contaminacion-del-aire-por-obras.jpg",
+        "firmas": [
+          {
+            "firma": "1024x683 480x320 980x653",
+            "usos": 3,
+            "paginas": [
+              "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+              "entradas-blog/impacto-ambiental-industria-cementera",
+              "entradas-blog/contaminacion-aire-obras-demoliciones-derribos"
+            ]
+          },
+          {
+            "firma": "480x320 980x653 FULL@1200",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/contaminacion-del-aire-por-obras"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+        "firmas": [
+          {
+            "firma": "480x270 980x551",
+            "usos": 3,
+            "paginas": [
+              "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+              "entradas-blog/impacto-ambiental-industria-cementera",
+              "entradas-blog/contaminacion-del-aire-por-obras"
+            ]
+          },
+          {
+            "firma": "1280x720 2048x1152 480x270 980x551",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/contaminacion-aire-obras-demoliciones-derribos"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 23,
+            "paginas": [
+              "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+              "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+              "entradas-blog/proyecto-pure-cities",
+              "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 24,
+            "paginas": [
+              "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+              "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+              "entradas-blog/proyecto-pure-cities",
+              "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 3,
+            "paginas": [
+              "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+              "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
+              "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/proyecto-pure-cities"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/10/hawaii-archipielago_contaminacion-aire_Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "1024x797 480x374 980x763",
+            "usos": 3,
+            "paginas": [
+              "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+              "entradas-blog/particulas-ultrafinas-puf",
+              "entradas-blog/monitorizacion-near-reference"
+            ]
+          },
+          {
+            "firma": "480x374 980x763 FULL@1280",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/calidad-del-aire-en-islas"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 20,
+            "paginas": [
+              "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+              "entradas-blog/monitorizacion-de-olores-en-edar",
+              "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+              "entradas-blog/biometano-y-biogas"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 23,
+            "paginas": [
+              "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+              "entradas-blog/emisiones-ganaderas-y-calidad-del-aire",
+              "entradas-blog/monitorizacion-de-olores-en-edar",
+              "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/monitorizacion-de-emisiones-fugitivas"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "1024x682 480x320 980x653",
+            "usos": 22,
+            "paginas": [
+              "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+              "entradas-blog/monitorizacion-de-olores-en-edar",
+              "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla",
+              "entradas-blog/biometano-y-biogas"
+            ]
+          },
+          {
+            "firma": "480x320 980x653 FULL@1280",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/emisiones-ganaderas-y-calidad-del-aire"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/07/litoral-con-sargazo-y-vida-marina.jpg",
+        "firmas": [
+          {
+            "firma": "480x374 FULL@1800",
+            "usos": 3,
+            "paginas": [
+              "entradas-blog/calidad-del-aire-en-islas",
+              "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 1,
+            "paginas": [
+              "productos/accesorios"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/05/gas-sensor-calibration.jpg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/calibracion-de-sensores-de-calidad-del-aire"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 8,
+            "paginas": [
+              "entradas-blog/redes-hibridas-vigilancia-calidad-aire",
+              "entradas-blog/kunak-cloud-plataforma-web-calidad-aire",
+              "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso",
+              "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/05/contaminacion_acustica.jpg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/contaminacion-acustica"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 4,
+            "paginas": [
+              "productos/cartuchos-inteligentes/amoniaco",
+              "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro",
+              "productos/monitor-calidad-aire",
+              "productos/sensor-de-calidad-del-aire"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/03/Industria-petroquimica.jpg",
+        "firmas": [
+          {
+            "firma": "480x321 980x656 FULL@1280",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/impacto-ambiental-de-la-industria-petroquimica"
+            ]
+          },
+          {
+            "firma": "1024x686 480x321 980x656",
+            "usos": 3,
+            "paginas": [
+              "productos/cartuchos-inteligentes/cloruro-de-hidrogeno",
+              "productos/cartuchos-inteligentes/monoxido-de-carbono",
+              "productos/kunak-api"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/running-for-clean-air"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 1,
+            "paginas": [
+              "productos/software-de-medicion-calidad-del-aire"
+            ]
+          }
+        ]
+      },
+      {
+        "origen": "2025/05/contaminacion-produccion-energia.jpg",
+        "firmas": [
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/contaminacion-por-produccion-de-energia"
+            ]
+          },
+          {
+            "firma": "480x320 980x653",
+            "usos": 2,
+            "paginas": [
+              "productos/cartuchos-inteligentes/cianuro-de-hidrogeno",
+              "productos/cartuchos-inteligentes/sensor-particulas-ultrafinas"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sizes": {
+    "formas": 74,
+    "top": {
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw": 410,
+      "(max-width: 100px) 100vw, 100px": 309,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 492px, 100vw": 220,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1000px, 100vw": 133,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw": 129,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw": 94,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw": 93,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw": 77,
+      "(max-width: 300px) 100vw, 300px": 50,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1920px, 100vw": 29,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw": 22,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 500px, 100vw": 22
+    }
+  },
+  "veredicto": {
+    "generaLosFicheros": true,
+    "esFuncionDeLaImagen": false,
+    "lectura": "un juego FIJO de image sizes genera todos los ficheros que el corpus usa, pero NO determina el atributo: el srcset se compone en el punto de USO. M-IMG no se cierra declarando imageSizes."
+  }
+}

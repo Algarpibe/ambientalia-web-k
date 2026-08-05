@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "fuente": "corpus/ (309 páginas congeladas, sha256 por página)",
+    "alcance": "grupo A (entradas-blog · terminos-kunakpedia · documentos-cientificos) + casos · faqs · productos. ⚠ NO incluye sectores ni monograficos — están FUERA del corpus por construcción (INDICE.meta.fuera), y son EXACTAMENTE la población donde M-IMG está medida.",
+    "sabotaje": "selector-muerto"
+  },
+  "totales": {
+    "paginas": 309,
+    "atributos": 0,
+    "atributosCuerpo": 0,
+    "atributosCascaron": 0,
+    "candidatos": 0,
+    "origenes": 0,
+    "origenesCuerpo": 0,
+    "sinDescriptor": 0,
+    "conX": 0,
+    "mezclanOrigen": 0
+  },
+  "censo": {
+    "srcset en <img>/<source>": {
+      "casos": 0,
+      "paginas": 0,
+      "max": null,
+      "razon": "enumerador, no discriminante: está en las 309 porque el PIE lleva el sello de certificación con srcset (cascarón, medido). El que discrimina es el del cuerpo"
+    },
+    "sizes en <img>/<source>": {
+      "casos": 1719,
+      "paginas": 309,
+      "max": null,
+      "razon": "ídem — y restringido a img/source a propósito: sin restringir casaba sobre <link rel=icon sizes=32x32> en las 309 (sobre-casado)"
+    },
+    "srcset DENTRO de post_content": {
+      "casos": 0,
+      "paginas": 0,
+      "max": 209,
+      "razon": "las páginas de builder (casos · faqs · productos) NO tienen post_content: el tope se deriva del INDICE (209)"
+    },
+    "variante -WxH": {
+      "casos": 0,
+      "paginas": 0,
+      "max": null,
+      "razon": "enumerador: el sello del pie ya trae una variante en las 309"
+    }
+  },
+  "anchos": {
+    "soloVariante": [],
+    "ambos": [],
+    "soloOriginal": [],
+    "frecuenciaVariante": {}
+  },
+  "cajas": {},
+  "formasSinCaja": [],
+  "descriptorDiscrepante": [],
+  "recortes": [],
+  "porPuntoDeUso": {
+    "origenesConVariasFirmas": 0,
+    "origenes": 0,
+    "ejemplos": []
+  },
+  "sizes": {
+    "formas": 74,
+    "top": {
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw": 410,
+      "(max-width: 100px) 100vw, 100px": 309,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 492px, 100vw": 220,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1000px, 100vw": 133,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw": 129,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw": 94,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw": 93,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw": 77,
+      "(max-width: 300px) 100vw, 300px": 50,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1920px, 100vw": 29,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw": 22,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 500px, 100vw": 22
+    }
+  },
+  "veredicto": {
+    "generaLosFicheros": true,
+    "esFuncionDeLaImagen": true,
+    "lectura": "ver el informe"
+  }
+}
