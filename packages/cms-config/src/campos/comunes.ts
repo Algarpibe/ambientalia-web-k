@@ -259,17 +259,34 @@ const SIN_SCRIPT = /<\s*script\b/i;
  * contenido—. Mientras no esté, el saneador lo rechaza NOMBRÁNDOLO. El alta es
  * un cambio de código revisable, no una excepción silenciosa.
  *
- * Alcance firmado: grupo A. Los iframes del grupo C están censados por host en
+ * Alcance firmado: **grupo A + grupo C censados** (AMPLIACIÓN 2026-08-05, ver
+ * abajo). Los iframes del grupo C están censados por host en
  * `medidas/c-embeds.json` (C-SP6); un host que ese censo traiga de más entra
  * por este procedimiento, no re-firmando la lista.
  */
 export const HOSTS_PERMITIDOS = [
+  // ── Tramo A · grupo A (censo 209/209, `medidas/a-embeds.json`, firma 2026-08-04)
   "youtube.com", "ourworldindata.org", "canva.com", "docs.google.com",
   "experience.arcgis.com", "facebook.com", "storymaps.arcgis.com",
   "europeanbiogas.clicdata.com", "linkedin.com", "google.com", "google.es",
   "shipmap.org", "elliotcloud.portsdebalears.com", "flo.uri.sh",
   "geoportal.madrid.es", "data.worldbank.org", "essic.umd.edu",
   "real-decreto-2142025-un--0qvqhh6.gamma.site",
+
+  /* ── Tramo C · grupo C (censo 76/76, `medidas/c-embeds.json`, C-SP6) ────────
+   * AMPLIACIÓN firmada por el propietario del sitio el 2026-08-05, con el MISMO
+   * criterio de la firma del 04-08 —los hosts CENSADOS, cero pérdida medida—
+   * aplicado al censo que entonces no existía. Los 3 son contenido real de las
+   * fichas de caso; el alta la pide el propietario para importar el grupo C.
+   *
+   * ⚠ `googletagmanager.com` queda FUERA con su evidencia: **76 iframes en
+   * 76/76 páginas** ⇒ es el `<noscript>` de GTM que el tema mete en el
+   * CASCARÓN, no contenido (regla 4, el pleno: un patrón que casa en todas no
+   * mide contenido). §3.3: cero analítica dentro del contenido. Jamás
+   * candidato a alta. */
+  "kunakcloud.com",     // widget propio de Kunak (World Athletics · Running for Clean Air) — 2 iframes
+  "player.vimeo.com",   // vídeo del caso World Athletics — 1 iframe
+  "dailymotion.com",    // vídeo del caso Calle 30 Natura — 1 iframe
 ] as const;
 
 /* ══════════════════════════════════════════════════════════════════════════

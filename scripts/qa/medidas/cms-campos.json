@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-05",
     "sabotaje": null
   },
   "tipos": {
@@ -22,7 +22,7 @@
       "colecciones": [
         "productos"
       ],
-      "nCampos": 9,
+      "nCampos": 12,
       "falta": []
     },
     "CasoDeExito": {

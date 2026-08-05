@@ -1558,10 +1558,45 @@ mientras tanto **nombrándolo**. El alta es un cambio de código revisable, no u
 excepción silenciosa; es exactamente el punto medio entre «enum que hay que
 migrar» y «cualquier tercero entra».
 
-⚠ **Alcance firmado: GRUPO A (209/209).** Los `iframe` del **grupo C** estaban
-**sin censar por host** al firmar (C-SP6) — un censo del grupo C puede añadir
-hosts, y esos entran por el procedimiento de alta, no re-firmando la lista. La
-lista se firma con este alcance escrito a propósito.
+⚠ **Alcance firmado el 2026-08-04: GRUPO A (209/209).** Los `iframe` del **grupo
+C** estaban **sin censar por host** al firmar (C-SP6) — un censo del grupo C
+puede añadir hosts, y esos entran por el procedimiento de alta, no re-firmando la
+lista. La lista se firma con este alcance escrito a propósito.
+
+#### ✅ 3.3b · AMPLIACIÓN FIRMADA (2026-08-05, propietario del sitio — F2-2 bloque 3)
+
+> **La allowlist suma los 3 hosts REALES del grupo C** —`kunakcloud.com` ·
+> `player.vimeo.com` · `dailymotion.com`— por el **procedimiento de alta** que la
+> firma del 04-08 dejó escrito, no re-firmando la lista. **Alcance firmado pasa
+> de «grupo A» a «grupo A + grupo C censados».** Total: **21 hosts**.
+
+**El criterio es EL MISMO que se firmó el 04-08** —*los hosts censados, cero
+pérdida medida*— **aplicado al censo que entonces no existía**. No es un criterio
+nuevo ni una excepción: es la primera vez que se ejecuta el procedimiento de alta
+tal como la firma lo definió.
+
+Los 3, **derivados** de `medidas/c-embeds.json` (censo 76/76, C-SP6), no citados:
+
+| host | n | dónde | por qué entra |
+|---|---|---|---|
+| `kunakcloud.com` | 2 | `casos/red-calidad-de-aire-para-world-athletics` · `casos/running-for-clean-air-ciudades-saludables` | widget **propio de Kunak** |
+| `player.vimeo.com` | 1 | `casos/red-calidad-de-aire-para-world-athletics` | vídeo del caso |
+| `dailymotion.com` | 1 | `casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air` | vídeo del caso |
+
+⛔ **`googletagmanager.com` queda FUERA, y su evidencia es el motivo de que se
+escriba aquí en vez de omitirse:** **76 iframes en 76/76 páginas**. Eso no es un
+host que use el contenido — es **el pleno de la regla 4**: un patrón que casa en
+todas no mide contenido. Es el `<noscript>` de GTM que el tema inyecta en el
+**cascarón**, y §3.3 ya lo tiene medido como *«cero de analítica dentro del
+contenido»*. **Jamás candidato a alta**, y la razón queda escrita para que la
+próxima tanda no tenga que re-derivarla.
+
+**Efecto medido en la misma tanda:** `npm run cms:seed` estaba **parado** por
+`kunakcloud.com` en `casos.ts` (`ValidationError · casos · Necesidad ·
+Resultados`) — derivado con `grep`, dos ocurrencias reales en
+`apps/web/src/lib/casos.ts:144,164` (`player.vimeo.com` y `kunakcloud.com`). Con
+el alta firmada el seed termina y el `round-trip 63/63` del bloque 1 **vuelve a
+ser reproducible**, que era el bloqueo declarado en el HANDOFF de la 28.ª.
 
 > ✅ **C-SP6 CERRADO en la misma tanda** (`npm run qa:c-embeds`, offline sobre la
 > captura commiteada, congelado en `medidas/c-embeds.json`): **90 iframes · 7
