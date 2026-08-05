@@ -726,6 +726,111 @@ sus 24 fichas del CPT incluidas).
 
 ---
 
+### ⛔ F2-2 · BLOQUE 3 · segunda reentrada — la captura baja a 537 y T4b resulta DERIVABLE (2026-08-05, tanda 30.ª)
+
+**Dos premisas del PLAN caen, las dos medidas, y las dos en la misma dirección:
+había menos trabajo del que el PLAN suponía.**
+
+#### 1 · La captura: 1 571 → **537**, y el ahorro NO viene de donde se pensaba
+
+El encargo suponía que capturar sólo orígenes bajaría la lista *«dos tercios»*
+porque Payload regenera las variantes. **Se midió antes de pedirle un fichero al
+sitio vivo** (`npm run qa:media-regenera`, negativo **5/5**):
+
+| | |
+|---|---|
+| pares GENERADOS por el pipeline real, comparados con la variante capturada | **73** |
+| **dimensiones idénticas** | **73/73** |
+| **sha256 idéntico** | **0/73** — jpeg **+6 %** de peso [−1.8 %, +11.7 %], **png +256 %** (3 ficheros) |
+| CONTROL · ficheros SUBIDOS comparados consigo mismos | **38/38** dimensión y sha256 |
+
+> **El pipeline reproduce la GEOMETRÍA exacta y NO los bytes.** Para lo único que
+> este proyecto mide —píxeles— basta con los orígenes. Los bytes son una
+> re-codificación: no mueven un píxel, pero **el png sí importa** y va fichado.
+
+**Y el ahorro real no es ése.** Regenerar variantes ahorra poco; lo que ahorra es
+que **dos tercios de la media del corpus vive en el CASCARÓN**, que el clon
+construye con sus componentes y **no entra en el CMS**:
+
+| población | URLs | orígenes |
+|---|---|---|
+| todo el HTML del corpus | 2 812 | 1 335 |
+| **dentro de `post_content`** (lo que el CMS importa) | **1 268** | **600** |
+| ya locales | | 63 |
+| **⇒ A CAPTURAR** | | **537** |
+
+⚠ **39 de las 721 variantes del cuerpo no las regenera `IMAGE_SIZES`** —
+`600x600 ×32` y 7 sueltas. `600x600` es la caja que el censo midió como
+**cascarón y la única que RECORTA**, y está fuera de `IMAGE_SIZES` **por medida**.
+Fichado, no colado.
+
+#### 2 · T4b es DERIVABLE — la premisa del PLAN es falsa para 6 de los 17
+
+El PLAN dice que T4b *«necesita el fichero PDF y la URL de la noticia, que el
+catálogo medido NO tiene»*. **Cierto de `src/lib`; FALSO del CORPUS.** La captura
+de la 27.ª congeló el HTML entero, y ahí está el dato:
+
+| clase | n | sustituto | cómo se deriva |
+|---|---|---|---|
+| `fb3d-flipbook` | 6 | ✅ **derivable** | el payload `FB3D_CLIENT_DATA` es **base64**: decodifica a JSON con `.posts[].data.guid` (**la URL del PDF**) y `.title` |
+| `flourish` | 4 | ✅ derivable | `<div class="flourish-embed" data-src="visualisation/NNNN">` |
+| `twitter` | 2 | ✅ derivable | `<blockquote class="twitter-tweet">` → `href` con `/status/\d+` |
+| `instagram` | 1 | ✅ derivable | `data-instgrm-permalink` |
+| `swiper-jsdelivr` | 3 | ⚠ **el DATO está, el sustituto es DECISIÓN** | 10–11 `<div class="swiper-slide">` en el cuerpo. «Galería nativa» es una decisión de render, no una extracción |
+| `nbc` | 1 | ❌ **NO derivable** | sólo la URL del **REPRODUCTOR** (`portableplayer/?CID=…`), no la del artículo |
+
+> **13 de 17 con sustituto derivable mecánicamente · 3 con dato y sin decisión de
+> render · 1 sin dato.**
+
+**Es la misma clase que M-SEED:** *se cerró una frontera —la captura— y no se
+re-corrió lo que dependía de ella*. El PLAN describía el estado **anterior** a
+tener corpus.
+
+⚠ **Y un aviso de método sobre este mismo recuento:** la primera derivación dio
+**17 de 17**, y era falsa — contaba «encontré un dato» como «encontré EL dato».
+En `nbc` el dato hallado es el reproductor, que no es lo que T4b pide. *Un
+detector que encuentra de más no da error: da un número plausible* (regla 4,
+tercera cara), y aquí el número plausible era el más cómodo.
+
+#### 3 · ⚠ EL CRITERIO DE «HECHO» DE F2-2, CORREGIDO
+
+El criterio vigente exige *«el `srcset` emitido coincide con el del original en
+las páginas medidas → M-IMG cerrado»*. **Ese criterio ya no se puede cumplir
+dentro de F2-2, y no por falta de trabajo:** la tanda 29.ª reclasificó M-IMG a
+**deuda de RENDER en `apps/web`** —los 70 pares se concentran donde el clon
+construyó sus propios componentes, que emiten `src` y ningún candidato—. F2-2 es
+**datos**: no puede cerrar un defecto que no vive en su ámbito.
+
+> **Un criterio que no se puede cumplir nunca es peor que uno exigente: no
+> discrimina.** Un F2-2 que jamás cierra deja de informar de si está hecho.
+
+**Criterio corregido — lo que F2-2 debe DE VERDAD:**
+
+1. el modelo se **siembra** desde los catálogos medidos y **vuelve idéntico**
+   (round-trip **63/63**) ✅;
+2. el corpus se **captura, congela y commitea antes de transformarlo** ✅ (309
+   páginas) **y su media también** ⛔ (537 pendientes);
+3. **T1–T8 aplicadas con negativo por transformación** ✅ T1–T8 · ⛔ **T3b · T4b**;
+4. el **saneador** ejecuta el contrato censado ✅ (6/6, 21 hosts);
+5. **lo que el CMS almacena basta para reconstruir el contenido** — que es la
+   pregunta real de un bloque de DATOS. Medido en su parte de media: la caja
+   pedida no necesita campo, y el `srcset` del cuerpo viaja verbatim (311/311).
+
+**M-IMG sale del criterio de F2-2 y se queda en su ficha**, con las dos razones
+de alcance que le quedan (`PENDIENTES-QA.md` §M-IMG). No se cierra ni se
+disimula: **cambia de dueño**, y el dueño es una tanda de `apps/web` que paga Δ0.
+
+#### 4 · Lo que esta tanda NO hizo, y queda nombrado
+
+| paso | estado |
+|---|---|
+| **capturar los 537** | ⛔ **NO** — la lista está derivada y congelada en `medidas/media-regenera.json` (`listaACapturar`), lista para ejecutarse |
+| **T3b** (`wp-caption` → relación de media) | ⛔ **NO** — desbloqueada por la 29.ª (la relación no lleva ancho modelado) |
+| **T4b** (la sustitución) | ⛔ **NO** — pero **deja de ser una incógnita**: 13 mecánicas, 3 decisiones, 1 imposible |
+| **la de-duplicación de `w()` con campos volátiles** | ⛔ **NO** — sigue fichada |
+
+---
+
 ### ⛔ F2-2 · BLOQUE 3 · reentrada — la frontera CERRADA y el seed desbloqueado, M-IMG sigue abierta (2026-08-05, tanda 29.ª)
 
 **Contra el criterio literal del §F2-2 —*«el `srcset` emitido coincide con el

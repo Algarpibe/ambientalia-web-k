@@ -23,6 +23,7 @@ import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { buildConfig } from "payload";
 import type { Config } from "payload";
+import sharp from "sharp";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -60,6 +61,31 @@ export function construyeConfig(opciones: OpcionesConfig = {}) {
     secret,
     collections: COLECCIONES,
     editor: editorRico,
+    /**
+     * ⚠ **`sharp` VA AQUÍ, en la config compartida, y no en cada arranque —
+     * porque sin él los `imageSizes` son INERTES y NADIE SE ENTERA.**
+     *
+     * Payload sólo redimensiona si le pasan `sharp`. Si no está, emite un WARN
+     * —*«Sharp not installed»*— y **sigue con exit 0**: sube el original, no
+     * genera una sola variante, y la corrida sale verde. Es D4 literal: la
+     * declaración está servida y **no hace nada**.
+     *
+     * ── Por qué en el sitio común, y no donde se arregló la primera vez ─────
+     * La tanda 28.ª lo puso en `scripts/seed/cli.mjs` y midió el efecto
+     * (`media/` 85 → 545). Correcto, y **arreglaba la INSTANCIA, no la CLASE**.
+     * Los demás procesos que siembran —`cms-roundtrip.mjs`, y su negativo, que
+     * lo lanza **6 veces más**— llaman a `construyeConfig()` a secas, así que
+     * **re-sembraban SIN sharp y se llevaban por delante las variantes que el
+     * seed acababa de generar**. Medido: tras una tanda de round-trip, `media/`
+     * quedaba en **112 ficheros y 0 variantes** — y ninguna sonda lo veía,
+     * porque ninguna mira `media/`.
+     *
+     * `CLAUDE.md` §sondas: *«la guarda sólo cuenta cuando está en el sitio por
+     * el que escriben todas»*. El sitio por el que pasan todas es esta función.
+     * `opciones.extra` sigue pudiendo sobreescribirlo (va después del spread),
+     * que es lo que necesita el admin si algún día quiere otra instancia.
+     */
+    sharp,
     db: postgresAdapter({
       pool: { connectionString: dbUrl },
       /**

@@ -1908,6 +1908,46 @@ agujero cubre `<img src>`, `srcset`, `<source>`, `<video>`, los PDF de recursos
 y las fuentes. Nombrarlo por el síntoma que se vio primero sería fabricar una
 sonda que sólo mira imágenes porque las imágenes fueron lo primero que falló.
 
+### ✅ M-SHARP · El arreglo de los `imageSizes` estaba en UNA instancia, no en la CLASE (2026-08-05)
+
+**Cerrado en la misma tanda que lo encontró, y encontrarlo fue un accidente.**
+
+La tanda 28.ª descubrió que sin `sharp` los `imageSizes` son **inertes** —Payload
+avisa en un WARN y **sigue con exit 0**— y lo arregló en `scripts/seed/cli.mjs`,
+midiendo el efecto: `media/` de 85 a **545** ficheros. Correcto, **y era la
+instancia**.
+
+> **Los demás procesos que siembran llamaban a `construyeConfig()` a secas.**
+> `cms-roundtrip.mjs` **re-siembra** para comparar, y su negativo lo lanza **6
+> veces más**. O sea que cada corrida del round-trip **volvía a subir la media
+> SIN sharp y se llevaba por delante las variantes que el seed acababa de
+> generar**.
+
+**Medido, y por eso se vio:** tras las corridas de la tanda 29.ª, `media/`
+quedaba en **112 ficheros y 2 variantes** —y las 2 eran ficheros fuente que ya se
+llamaban `-WxH`, o sea **0 variantes reales**—. Ninguna sonda lo veía: **ninguna
+mira `media/`**.
+
+**Arreglo, en el sitio por el que pasan todas:** `sharp` entra en
+`construyeConfig` (`packages/cms-config/src/payload.config.ts`), con `sharp`
+declarado como dependencia del paquete compartido. `opciones.extra` puede seguir
+sobreescribiéndolo.
+
+| | antes | después |
+|---|---|---|
+| `media/` tras `cms:seed` | 112 · **0** variantes | **667 · 539** variantes |
+| `media/` tras `qa:cms-roundtrip` | 112 · 0 | **667 · 539** — **sobreviven** |
+| `qa:cms-roundtrip` | 63/63 | **63/63**, congelada idéntica |
+
+**La lección es la que este repo ya tiene escrita** —*«arreglar la instancia y no
+la CLASE es cómo se llega a la tercera tanda del mismo bug»*— y aquí llegó a la
+segunda en 24 horas. **Y el detector no fue una guarda: fue que el PASO 1 de la
+tanda siguiente necesitaba el pipeline y lo encontró apagado.**
+
+⚠ **Queda el hueco de instrumento, y se dice:** **ninguna sonda mira `media/`**.
+Un seed que no genera una sola variante sale verde en las 65 sondas. Es hermano
+del eje `existencia`, y se ficha con él.
+
 ### ✅ M-SEED · CERRADO 2026-08-05 — el seed está ROTO desde la firma de la allowlist (2026-08-04)
 
 > ✅ **CERRADO 2026-08-05 (29.ª) por el PROCEDIMIENTO DE ALTA, que es la salida

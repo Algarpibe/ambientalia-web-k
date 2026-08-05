@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "fuente": "corpus/ (309 páginas) + media/ (pipeline REAL de Payload+sharp) + apps/web/public/images",
+    "pregunta": "¿hay que capturar las 1571 variantes, o basta con los orígenes y Payload regenera?",
+    "sabotaje": "selector-muerto"
+  },
+  "reproduccion": {
+    "generadas": {
+      "n": 73,
+      "dimensionesIguales": 73,
+      "shaIdentico": 0,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 70,
+          "media": 6,
+          "min": -1.8,
+          "max": 11.7
+        },
+        "png": {
+          "n": 3,
+          "media": 256.6,
+          "min": 251.7,
+          "max": 262.9
+        }
+      }
+    },
+    "control_subidas": {
+      "n": 38,
+      "dimensionesIguales": 38,
+      "shaIdentico": 38,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 38,
+          "media": 0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
+  },
+  "poblaciones": {
+    "urlsTodoElHtml": 0,
+    "origenesTodoElHtml": 0,
+    "urlsEnCuerpo": 0,
+    "origenesEnCuerpo": 0,
+    "yaLocales": 0,
+    "aCapturar": 0
+  },
+  "cajasDelCuerpo": {
+    "variantes": 0,
+    "regenerables": 0,
+    "noRegenerables": {}
+  },
+  "listaACapturar": [],
+  "veredicto": {
+    "reproduceDimension": true,
+    "reproduceBytes": false,
+    "controlOk": true,
+    "lectura": "el pipeline reproduce la DIMENSIÓN exacta de la variante capturada; los BYTES no (re-codificación). Para la geometría —lo único que este proyecto mide— basta con capturar los ORÍGENES."
+  }
+}

@@ -99,7 +99,9 @@
     "qa:cmp-srcset": "node scripts/qa/cmp-srcset.mjs",
     "qa:cmp-srcset-neg": "node scripts/qa/cmp-srcset.neg.mjs",
     "qa:media-hueco": "node scripts/qa/media-hueco.mjs",
-    "qa:media-hueco-neg": "node scripts/qa/media-hueco.neg.mjs"
+    "qa:media-hueco-neg": "node scripts/qa/media-hueco.neg.mjs",
+    "qa:media-regenera": "node scripts/qa/media-regenera.mjs",
+    "qa:media-regenera-neg": "node scripts/qa/media-regenera.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

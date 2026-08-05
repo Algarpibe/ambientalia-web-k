@@ -1,3 +1,104 @@
+# HANDOFF — F2-2 bloque 3 · la captura baja a 537, T4b resulta DERIVABLE, y los `imageSizes` estaban apagados otra vez
+
+> ⚠ **Tanda 2026-08-05 (30.ª).** PASOS 1 · 4 del encargo, más la corrección del
+> criterio de F2-2 (PASO 5) y su registro. **El escalón NO disparó.** **No se
+> toca `apps/web`** — `git diff eacb79f HEAD -- apps/web` vacío, no paga Δ0.
+
+## 0 · Los tres titulares
+
+> **1 · Los `imageSizes` volvían a estar INERTES, y el arreglo de ayer era la
+> INSTANCIA.** La 28.ª puso `sharp` en `scripts/seed/cli.mjs`; pero
+> `cms-roundtrip` **re-siembra** (y su negativo lo lanza 6 veces más) llamando a
+> `construyeConfig()` a secas, así que **cada round-trip borraba las variantes**.
+> Medido: `media/` en **112 ficheros y 0 variantes reales**. Arreglado en el
+> sitio común ⇒ **667 · 539 variantes**, y **sobreviven** al round-trip.
+>
+> **2 · La captura baja de 1 571 a 537, y NO por regenerar variantes.** El
+> pipeline reproduce la **dimensión exacta** (73/73) y **no los bytes** (0/73).
+> Pero el ahorro real es otro: **dos tercios de la media del corpus vive en el
+> CASCARÓN** y no entra en el CMS. `qa:media-regenera`, negativo **5/5**.
+>
+> **3 · T4b es DERIVABLE, y el PLAN decía que no.** *«Necesita el PDF y la URL
+> de la noticia, que el catálogo no tiene»* es cierto de `src/lib` y **falso del
+> corpus**: el payload de FB3D es **base64** y lleva dentro la URL del PDF.
+> **13 de 17 mecánicas · 3 decisiones de render · 1 imposible.**
+
+## 1 · PASO 1 — medir antes de pedirle 1 571 ficheros al sitio vivo
+
+`npm run qa:media-regenera` · negativo **5/5** · congela `media-regenera.json`
+con **la lista de captura derivada** (`listaACapturar`).
+
+| | |
+|---|---|
+| dimensiones idénticas (pipeline real vs variante capturada) | **73/73** |
+| sha256 idéntico | **0/73** — jpeg **+6 %**, **png +256 %** (3 ficheros) |
+| CONTROL · ficheros comparados **consigo mismos** | **38/38** |
+| a capturar | **537** (de 600 orígenes del cuerpo, 63 ya locales) |
+
+⚠ **La primera versión mezcló las dos poblaciones de `media/`** —GENERADAS por
+sharp y SUBIDAS que ya se llamaban `-WxH`— y sacó *«38 de 111 idénticos»*: un
+dato **inventado por el instrumento**, porque comparaba ficheros **consigo
+mismos**. Ahora los SUBIDOS son el **CONTROL** (tienen que dar 100 %), y su
+sabotaje es `sin-poblaciones`.
+
+⚠ **39 de 721 variantes del cuerpo no las regenera `IMAGE_SIZES`** (`600x600 ×32`
++ 7). `600x600` está fuera **por medida** (cascarón, y la única que recorta).
+
+## 2 · PASO 4 — T4b, por sus ENTRADAS
+
+| clase | n | sustituto |
+|---|---|---|
+| `fb3d-flipbook` | 6 | ✅ payload **base64** → `.posts[].data.guid` (PDF) + `.title` |
+| `flourish` | 4 | ✅ `<div class="flourish-embed" data-src="visualisation/NNNN">` |
+| `twitter` | 2 | ✅ `<blockquote class="twitter-tweet">` → `href` con `/status/\d+` |
+| `instagram` | 1 | ✅ `data-instgrm-permalink` |
+| `swiper-jsdelivr` | 3 | ⚠ el DATO está (10–11 slides); «galería nativa» es **decisión de render** |
+| `nbc` | 1 | ❌ sólo la URL del **REPRODUCTOR**, no la del artículo |
+
+⚠ **La primera derivación dio 17/17 y era falsa:** contaba «encontré un dato»
+como «encontré EL dato». Regla 4, tercera cara — y el número plausible era el
+más cómodo.
+
+## 3 · PASO 5 — el criterio de F2-2, CORREGIDO
+
+El criterio exigía *«el `srcset` emitido coincide con el del original → M-IMG
+cerrado»*. **M-IMG es deuda de RENDER en `apps/web` desde la 29.ª**, así que F2-2
+—que es DATOS— no puede cerrarlo. *Un criterio que no se puede cumplir nunca es
+peor que uno exigente: no discrimina.* Reescrito en `PLAN-FASE-2.md` §F2-2 en 5
+puntos, con M-IMG **cambiando de dueño**, no cerrándose.
+
+## 4 · ⛔ F2-2 NO ESTÁ CERRADA, y esto es lo que falta
+
+| # | pendiente | estado |
+|---|---|---|
+| 1 | **capturar los 537** | lista **derivada y congelada**, lista para ejecutar (secuencial, espaciada, sha256, `.gitattributes`, commit antes de transformar) |
+| 2 | **T3b** (`wp-caption` → relación de media) | desbloqueada por la 29.ª; sin escribir |
+| 3 | **T4b** | deja de ser incógnita: 13 mecánicas · 3 decisiones · 1 imposible |
+| 4 | **de-duplicación de `w()`** con campos volátiles | fichada, sin hacer |
+
+## 5 · Pendientes que NO bloquean
+
+23 imágenes **404** (tanda aislada, su Δ0 se moverá y es corrección) · eje
+**`existencia`** 0/31 · **ninguna sonda mira `media/`** (nuevo, hermano del
+anterior) · HOME cubo B · `Dockerfile` · 26 celdas ciegas · 6 mínimos ·
+`Breadcrumb` 28 rutas · **CMS-SP-TIPO** · los 5 «distinto» de `cmp-srcset`.
+
+## 6 · Lo que NO hay que hacer al empezar
+
+- **No capturar las 1 571.** Están medidas: son **537**, y la lista está
+  congelada. Capturar el cascarón es pedirle al sitio vivo mil ficheros que el
+  CMS no usa.
+- **No creerse que los `imageSizes` funcionan porque el seed salga verde.**
+  Payload avisa en un WARN y sigue con **exit 0**. La comprobación es contar
+  variantes en `media/`, no leer la salida.
+- **No dar T4b por bloqueada.** El PLAN lo decía y está medido que no: el corpus
+  trae el dato. Lo que falta es **decidir** la galería y **aceptar** que el NBC
+  no tiene sustituto derivable.
+- **No inventar el sustituto del NBC.** Regla 6: una transformación que falta se
+  rechaza, no se sustituye. Va como pendiente con su documento y su clase.
+
+---
+
 # HANDOFF — F2-2 bloque 3 · la frontera del «ancho pedido» CERRADA sin añadir nada, y el seed desbloqueado
 
 > ⚠ **Tanda 2026-08-05 (29.ª).** PASOS 1 · 2 · 6 · 3 · 7 del encargo de
