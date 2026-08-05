@@ -1,7 +1,7 @@
 {
   "meta": {
     "width": 1440,
-    "fecha": "2026-08-03",
+    "fecha": "2026-08-04",
     "sabotaje": "rango",
     "solo": "petroleo-y-gas",
     "preRegistro": "docs/research/clase/PRE-REGISTRO-ANCHO-MODULO.md",
@@ -189,7 +189,7 @@
                 "pct": 86,
                 "w": 1238.39,
                 "h": 559.11,
-                "firma": "¿Cómoafectalacontaminaci"
+                "firma": "LDAR:detecciónyreparació"
               }
             ],
             "clon": [
@@ -552,7 +552,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 501.52,
-                "firma": "¿Cómoafectalacontaminaci"
+                "firma": "LDAR:detecciónyreparació"
               }
             ],
             "clon": [
@@ -1547,7 +1547,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 427.52,
-                "firma": "¿Cómoafectalacontaminaci"
+                "firma": "LDAR:detecciónyreparació"
               },
               {
                 "i": "16.0.1",

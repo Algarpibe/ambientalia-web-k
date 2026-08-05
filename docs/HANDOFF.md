@@ -1,3 +1,162 @@
+# HANDOFF — F2-2 bloque 2 CERRADO: la captura commiteada, T1–T8 con negativo 9/9, y el saneador firmado
+
+> ⚠ **Tanda 2026-08-04 (27.ª).** PASOS 0–5 del encargo del bloque 2. El escalón
+> **no disparó**: la captura no trajo nada que el censo, la whitelist o T1–T8 no
+> contemplen (0 etiquetas · 0 hosts nuevos en el corpus del grupo A). **No se
+> toca `apps/web`** — cero ficheros, no paga Δ0.
+
+## 0 · Los dos titulares
+
+> **1 · El corpus existe, está CONGELADO y COMMITEADO antes de transformarlo, y
+> tiene su número:** `corpus/` = **309 páginas · 100.2 MB de HTML crudo ·
+> 4.4 MB de cuerpo · 1 819 URLs de media** (CMS-0b por fin medido), con sha256
+> por página y `-text` para que un checkout no cambie los bytes. Y T1–T8 corren
+> **OFFLINE** contra esa captura: **209/209 cuerpos · 8/8 postcondiciones ·
+> negativo 9/9** (un sabotaje POR transformación) · saneador **6/6** con los
+> 209 cuerpos reales de control.
+>
+> **2 · La clase del PISAR está cerrada POR CONSTRUCCIÓN, y el re-corrido
+> destapó lo que llevaba semanas verde en falso:** los 3 sabotajes de `sondeo`
+> estaban **SIN DIANA desde la tanda 26.ª** (exit 0 los tres) y nadie lo sabía
+> porque nadie re-corrió el negativo tras cerrar las fronteras — la regla 8a en
+> su forma silenciosa.
+
+## 1 · PASO 1 — la clase del PISAR, en el sitio común
+
+Derivado (`grep PISAR *.neg.mjs`): **11 usos en 10 ficheros** — 3 controles
+pisando la canónica (`sondeo.neg`, `cms-campos.neg`, `cms-slugs.neg`), 4
+desviados por disciplina (el comentario copiado), el resto sabotajes con PISAR
+superfluo. El arreglo, donde se arreglan las clases:
+
+- **`NEG=<etiqueta>`**: con él puesto, `w()` desvía TODA escritura no marcada a
+  `<base>-neg-<etiqueta>` — una corrida negativa **no puede** tocar una canónica;
+- **`corridaNegativa()`** en `lib.mjs`, el único camino sancionado: pone NEG y
+  **borra `PISAR` y `SALIDA`** del entorno del hijo, aunque quien lanza los
+  tenga exportados. `nombreNeg()` deriva el nombre del artefacto — no se
+  escribe a mano;
+- caso en `qa:lib` (**80/80**): la canónica no se toca **ni con NEG+PISAR
+  juntos**; el runner probado EJECUTANDO un hijo real.
+
+**Los 9 negativos migrados y re-corridos enteros:** cms-campos **5/5** ·
+cms-teaser **3/3** · cms-arquetipos **4/4** · cms-slugs **4/4** · cms-roundtrip
+**6/6** (el ciego `tipo-hoja` sigue sin morder, como debe) · sondeo **4/4** ·
+solutions-campos **4/4** — **pagando su pendiente §8.8: ya tiene control de
+verdad**, antes tenía un sabotaje *llamado* control · solutions-seo y
+clase-rango, al final de la tanda (pegan al original y la captura estaba en
+vuelo).
+
+### ⚠ El hallazgo: tres sabotajes SIN DIANA, y no lo causó la migración
+
+La tanda 26.ª cerró las tres fronteras que les daban diana —teaser dato propio
+(§2g) eliminó las 31 relaciones con `href` · `seo.title` medido (§2h) eliminó
+el grupo ausente · `RUTAS_EN_FRONTERA = []` hizo no-op quitar la poda— y **el
+negativo no se re-corrió después**: sus 3/3 eran de otra época del catálogo.
+
+> **Un sabotaje que no cambia el resultado no ha probado la guarda: ha probado
+> que el instrumento ya no la ejercita** (regla 8a). Y no da rojo: da exit 0.
+
+Arreglo en dos mitades: `sondeo.mjs` **comprueba su diana por sabotaje** y sale
+por `SIN DIANA` nombrado (nunca por verde); `sondeo.neg.mjs` los verifica como
+**dianas perdidas** (el patrón del punto ciego de `cms-roundtrip`) y sale ROJO
+el día que el corpus del alta las reintroduzca — con la instrucción de
+devolverlos a la tabla de los que cazan (sus checks están en git, `65d6cf5`).
+Los 3 artefactos viejos ya no reproducen y se retiraron del árbol.
+
+## 2 · PASO 2 — la captura, con su etiqueta
+
+Lista **derivada** de `cms-arquetipos.json` (§2f) + `a-censo` + `c-censo` +
+`solutions-campos` — toda colección del instrumento o tiene fuente o declara
+su razón de exclusión, y una sin decidir **TIRA** (regla 6). Secuencial, 500 ms,
+UNA petición por página **también entre corridas** (lo capturado no se re-pide:
+la corrida interrumpida se reanuda sin re-pegar). 309/309 · 0 fallos.
+
+| colección | pág | HTML | cuerpo |
+|---|---|---|---|
+| entradas-blog | 149 | 48.3 MB | 3.1 MB |
+| terminos-kunakpedia | 37 | 12.6 MB | 1.2 MB |
+| documentos-cientificos | 23 | 6.5 MB | 0.04 MB — fichas cortas con PDF, 23/23 con `post_content` |
+| casos · faqs · productos | 57 · 19 · 24 | 18.4 · 5.2 · 9.2 MB | builder: sin `post_content`, es forma |
+
+Fuera con razón declarada: sectores · monograficos (cuerpo = dato tipado
+transcrito) · taxonomia-sectores (término embebido, sin cuerpo).
+
+## 3 · PASOS 3–4 — T1–T8 y el saneador
+
+Orden de contrato: **T8 → T1 → T2 → T3a → T4a → T5 → T6 → T7**, cada una con
+`aplica` · `post` (su postcondición, evaluada EN SU ETAPA — la de T8 en el HTML
+final sería vacua: T4a se lleva los scripts) · `diana` (regla 8a por
+construcción). Aplicadas sobre los 209 cuerpos: T8 ×17 · T1 ×196 · T2 ×446 ·
+T3a ×891 · T4a ×17 · T5 ×18 · T6 ×2 · T7 ×**1 785** enlaces internos a ruta
+local. Congela `medidas/extractor-corpus.json`.
+
+- **Los 17 scripts de T4a son exactamente los 17 del censo §3.3** — el número
+  cruza entre instrumentos. T4b (la sustitución) queda **por documento** en el
+  informe: 6 fb3d · 4 flourish · 3 swiper · 2 twitter · 1 instagram · 1 nbc;
+- **T3b queda NOMBRADA para el bloque 3** (precedente T4a/T4b): `wp-caption` no
+  se descarta hasta que exista la relación de media que absorbe la leyenda —
+  descartar el marcador antes sería media transformación;
+- **el saneador es UN código** (`validaHtmlCorpus` en `comunes.ts`): whitelist
+  de 43 **nombrando la etiqueta** · allowlist firmada **nombrando el host**
+  (también vía `data-src`) · `<script>`. El `validate` del alta y el extractor
+  importan LA MISMA función (clase C7 evitada). Negativo **6/6**, control = los
+  209 cuerpos transformados reales.
+
+## 4 · PASO 0 — la firma, y C-SP6 cerrado de paso
+
+**§3.3b FIRMADA**: allowlist = **los 18 hosts censados**, comparación **por
+HOST** (el caso `flo.uri.sh`), **procedimiento de alta** (un host nuevo se añade
+a `HOSTS_PERMITIDOS` con su porqué; mientras, rechazo nombrándolo). Alcance
+firmado: grupo A; la estricta queda disponible sabiendo que cuesta 21 decisiones.
+
+**C-SP6** (`qa:c-embeds`, offline sobre la captura): 90 iframes · 7 hosts en el
+grupo C. Lectura que importa: `googletagmanager.com` **76/76 = cascarón, no
+contenido** (regla 4, el pleno — jamás candidato a alta); los reales fuera de la
+allowlist son `kunakcloud.com` ×2 · `player.vimeo.com` ×1 · `dailymotion.com`
+×1 → **procedimiento de alta cuando el grupo C se importe**. Fichados, no
+colados.
+
+## 5 · LO SIGUIENTE — F2-2 bloque 3
+
+**Media al volumen persistente (CMS-0b) + image sizes replicando el `srcset`
+del original — que es lo que cierra M-IMG con medida, no por decreto.** Las
+1 819 URLs de media del INDICE son la lista de trabajo; el conjunto mínimo de
+variantes ya está medido (§CMS-0b: `480 · 980 · 1024×683 · 1080×675 · 1280` +
+original). Con el media hecho se cobran **T3b** (wp-caption → relación con
+leyenda) y **T4b** (los 5 PDF de FB3D a media); y el alta masiva del corpus
+trae **el ciclo del grafo** (dos pasadas) y **re-arma las dianas de `sondeo`**
+— su negativo saldrá rojo pidiendo devolver los sabotajes a la tabla de los que
+cazan: es la señal esperada, no una regresión.
+
+## 6 · Pendientes que NO bloquean
+
+| # | pendiente | por qué no bloquea |
+|---|---|---|
+| 1 | **HOME sin content type** | cubo B: modelarla después es AÑADIR |
+| 2 | **`Dockerfile` sin verificar** (dos apps, un compose) | lo cobra F2-4 |
+| 3 | **26 celdas ciegas** · comportamiento 0/31 | deuda de medición del CLON |
+| 4 | **6 mínimos** de sondas escritos en vez de derivados | ídem |
+| 5 | **`Breadcrumb` 28 rutas** (−33.25, de ancho) | `clon-base` no lo ve |
+| 6 | **CMS-SP-TIPO** — con su detector NOMBRADO: **el Δ0 de render de F2-3** (o contrastar features del editor contra `ETIQUETAS_CENSADAS`) | punto ciego verificado en cada corrida del negativo |
+| 7 | **`/kunak-api` `<title>`** — ninguna sonda compara el `<head>` | fichado en PENDIENTES-QA |
+| 8 | **extracción de builder** (casos · faqs · productos: 24 fichas del CPT) | el corpus está capturado; la mecánica es otra y tiene su tanda |
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No re-pegar al sitio vivo para re-correr una transformación.** La captura
+  es la línea base; T1–T8 son re-ejecutables OFFLINE. Re-capturar una página ya
+  capturada exige borrar su fichero a propósito — y eso es tocar la línea base.
+- **No leer el `-neg-` de una congelada como medida del sitio** (regla 7); y
+  desde esta tanda, **no lanzar una sonda desde un `.neg.mjs` sino por
+  `corridaNegativa`** — es lo que hace imposible pisar una canónica.
+- **No leer el rojo futuro de `cms:sondeo-neg` como regresión** cuando el
+  corpus entre: es la diana volviendo (§1). La instrucción está en su salida.
+- **No dar de alta `kunakcloud.com`/`vimeo`/`dailymotion` sin pasar por el
+  procedimiento de §3.3b** — y no dar de alta `googletagmanager.com` nunca:
+  es cascarón.
+- **No commitear `corpus/transformado/`** — se deriva; está en `.gitignore`.
+
+---
+
 # HANDOFF — F2-2 bloque 1 CERRADO: 63/63 y el negativo entero, con un punto ciego declarado
 
 > ⚠ **Tanda 2026-08-04 (26.ª).** Reentrada sobre un commit declarado SIN

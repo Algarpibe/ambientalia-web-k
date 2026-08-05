@@ -671,6 +671,61 @@ las filas antes de comparar nada.
 
 ---
 
+### ✅ F2-2 · BLOQUE 2 — CERRADO contra su criterio (2026-08-04, tanda 27.ª)
+
+**El criterio literal era *«el extractor y el saneador tienen test en negativo
+por invariante (un sabotaje por cada transformación, y cada arreglo re-corre el
+test entero)»*, y está cumplido:**
+
+```
+✅ captura:   309/309 páginas · 0 fallos · commiteada ANTES de transformar (corpus/)
+✅ extractor: 209/209 cuerpos del grupo A · T1–T8 · 8/8 postcondiciones limpias
+✅ negativo del extractor: 9/9 — un sabotaje POR transformación, cada uno
+   mordiendo por SU postcondición, + control
+✅ saneador:  test en negativo 6/6 — etiqueta fuera del censo NOMBRADA · host
+   fuera de la allowlist NOMBRADO (también por data-src) · <script> · y el
+   control son los 209 cuerpos transformados REALES, que pasan
+```
+
+**CAPTURA separada de TRANSFORMACIÓN, que era la regla nueva del bloque:** la
+lista de trabajo se DERIVÓ de `cms-arquetipos.json` (§2f) + los censos
+congelados — nada a mano —; la captura pegó al vivo UNA vez por página
+(secuencial, 500 ms); el HTML crudo quedó **commiteado antes** de correr T1–T8
+(`corpus/`, con `sha256` por página y `-text` en `.gitattributes` para que un
+checkout no cambie los bytes); y T1–T8 corren **OFFLINE** contra esa captura,
+re-ejecutables (`corpus/transformado/` se deriva y no se versiona).
+
+**El tamaño del corpus, que CMS-0b tenía SIN MEDIR, medido:** 309 páginas ·
+**100.2 MB** de HTML crudo · **4.4 MB** de cuerpo `post_content` · **1 819 URLs
+de media distintas** (la unidad del bloque 3). Acta en ESQUEMA §CMS-0b.
+
+**Y la captura NO contradice el censo de julio:** 0 etiquetas y 0 hosts nuevos
+en los 209 cuerpos del grupo A (comprobado sobre el crudo sin
+`<script>`/`<style>`, la regla del markup). Los 17 `<script>` que T4a se llevó
+son **exactamente los 17 del censo §3.3**, clasificados uno a uno — el número
+cruza entre instrumentos.
+
+**Dos mitades que NO son de este bloque, NOMBRADAS (precedente T4a/T4b):**
+
+| mitad | por qué queda | dónde se cobra |
+|---|---|---|
+| **T3b** — `wp-caption` → relación de media con leyenda | §3.2 la liga a la relación con la colección de media, que no existe hasta el bloque 3; descartar el marcador antes sería media transformación | bloque 3 |
+| **T4b** — la sustitución de los 17 scripts | necesita el PDF y la URL de la noticia; el informe los lista documento a documento con su clase §3.3 | bloque 2-bis/3 |
+
+**C-SP6 cerrado de paso** (`qa:c-embeds`, offline sobre la captura): 90 iframes
+· 7 hosts en el grupo C. `googletagmanager.com` 76/76 = **cascarón, no
+contenido** (regla 4, el pleno); `kunakcloud.com` ×2 · `vimeo` ×1 ·
+`dailymotion` ×1 = contenido real fuera de la allowlist → **procedimiento de
+alta** cuando el grupo C se importe. Acta en ESQUEMA §3.3b.
+
+**Lo que el bloque 2 NO hace, y es deliberado:** no siembra los 209 (el alta
+masiva necesita el media del bloque 3 y las dos pasadas del ciclo), y no extrae
+los cuerpos de casos · faqs · productos (páginas de **builder**: su contenido
+no vive en un `post_content` — su extracción a bloques es otra mecánica, con
+sus 24 fichas del CPT incluidas).
+
+---
+
 ### ~~⛔ F2-2 · BLOQUE 1 — PARADO POR EL ESCALÓN~~ (2026-08-04, superado arriba)
 
 **El bloque 1 no cierra**, y no por falta de trabajo: la premisa que lo

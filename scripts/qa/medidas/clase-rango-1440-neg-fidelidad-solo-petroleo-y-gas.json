@@ -1,7 +1,7 @@
 {
   "meta": {
     "width": 1440,
-    "fecha": "2026-08-03",
+    "fecha": "2026-08-04",
     "sabotaje": "fidelidad",
     "solo": "petroleo-y-gas",
     "preRegistro": "docs/research/clase/PRE-REGISTRO-ANCHO-MODULO.md",
@@ -376,7 +376,7 @@
                 "pct": 86,
                 "w": 1238.39,
                 "h": 559.11,
-                "firma": "Contaminaciónpormetano:i"
+                "firma": "EHSindustrial,transforma"
               }
             ],
             "clon": [
@@ -924,7 +924,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 501.52,
-                "firma": "Contaminaciónpormetano:i"
+                "firma": "EHSindustrial,transforma"
               }
             ],
             "clon": [
@@ -1504,7 +1504,7 @@
           },
           "varianzaOrig": true,
           "defectoRango": false,
-          "pares": 37,
+          "pares": 36,
           "difs": [
             {
               "firma": "Quénecesitasparacontrolarlasemisiones",
@@ -1648,19 +1648,6 @@
               "wO": 1238.39,
               "wC": 224.31,
               "dW": -1014.08
-            },
-            {
-              "firma": "Contaminaciónpormetano:impactoenelmedioambiente,",
-              "i": {
-                "o": "16.0.0",
-                "c": "16.1.1"
-              },
-              "pctO": 100,
-              "pctC": 28.88,
-              "d": -71.12,
-              "wO": 1238.39,
-              "wC": 346.13,
-              "dW": -892.26
             },
             {
               "firma": "Ampliatusconocimientosconnuestrasguías",
@@ -2131,7 +2118,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 427.52,
-                "firma": "Contaminaciónpormetano:i"
+                "firma": "EHSindustrial,transforma"
               },
               {
                 "i": "16.0.1",

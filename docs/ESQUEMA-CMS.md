@@ -75,9 +75,18 @@ Payload. No se estrena S3.
 
 **Lo que hay medido del tamaño:** el clon sirve hoy `public/` con **473 ficheros
 y 37.4 MB**, de los que **452 ficheros y 36.1 MB son imágenes** — y eso son las
-11 páginas construidas. **SIN MEDIR:** cuánto suma el corpus entero (123 de las
-209 del grupo A llevan imagen, con `srcset`). El orden de magnitud conocido son
-decenas de MB, no GB, y a esa escala un volumen es más simple que un bucket.
+11 páginas construidas. ~~**SIN MEDIR:** cuánto suma el corpus entero~~
+
+> ✅ **MEDIDO (2026-08-04, F2-2 bloque 2 — la captura, `corpus/INDICE.json`):**
+> el corpus entero son **309 páginas · 100.2 MB de HTML crudo · 4.4 MB de
+> cuerpo `post_content` · 1 819 URLs de media distintas** referenciadas
+> (srcset expandido; la unidad del bloque 3). Por colección: entradas-blog
+> 149 pág (48.3 MB html · 3.1 MB cuerpo) · términos 37 (12.6 · 1.2) ·
+> documentos 23 (6.5 · **0.04** — fichas cortas con PDF, `post_content`
+> presente en 23/23) · casos 57 (18.4) · faqs 19 (5.2) · productos 24 (9.2)
+> — estas tres últimas son builder: sin `post_content`, y es forma, no fallo.
+> **El orden de magnitud queda confirmado: decenas-a-cien MB, no GB** — el
+> volumen persistente sigue siendo la escala correcta.
 
 **Y es reversible, que es la mitad que importa de la decisión.** Migrar a S3 si
 crece es **cambiar el adaptador de storage y mover los ficheros**: no rehace el
@@ -1457,10 +1466,21 @@ mientras tanto **nombrándolo**. El alta es un cambio de código revisable, no u
 excepción silenciosa; es exactamente el punto medio entre «enum que hay que
 migrar» y «cualquier tercero entra».
 
-⚠ **Alcance firmado: GRUPO A (209/209).** Los `iframe` del **grupo C** siguen
-**sin censar por host** (C-SP6) — un censo del grupo C puede añadir hosts, y esos
-entrarían por el procedimiento de alta, no re-firmando la lista. La lista se
-firma con este alcance escrito a propósito.
+⚠ **Alcance firmado: GRUPO A (209/209).** Los `iframe` del **grupo C** estaban
+**sin censar por host** al firmar (C-SP6) — un censo del grupo C puede añadir
+hosts, y esos entran por el procedimiento de alta, no re-firmando la lista. La
+lista se firma con este alcance escrito a propósito.
+
+> ✅ **C-SP6 CERRADO en la misma tanda** (`npm run qa:c-embeds`, offline sobre la
+> captura commiteada, congelado en `medidas/c-embeds.json`): **90 iframes · 7
+> hosts** en las 76 páginas del grupo C. Unidad declarada: **página servida
+> completa sin `<script>`/`<style>`** — superset del campo rico, a propósito.
+>
+> | host | n | lectura |
+> |---|---|---|
+> | `googletagmanager.com` | **76 en 76/76 pág.** | **es el CASCARÓN, no contenido** — un patrón que casa en todas no mide contenido (regla 4, el pleno): es el `<noscript>` de GTM que el tema mete en cada página. **Jamás candidato a alta**: la analítica no entra en el contenido (§3.3, «cero de analítica dentro del contenido») |
+> | `youtube.com` · `facebook.com` · `storymaps.arcgis.com` | 8 · 1 · 1 | ya firmados |
+> | `kunakcloud.com` ×2 · `player.vimeo.com` ×1 · `dailymotion.com` ×1 | 4 | **contenido real del grupo C, FUERA de la allowlist** — pendientes del **procedimiento de alta** cuando el corpus del grupo C se importe (su extracción de builder no es de esta tanda). Fichados, no colados |
 
 ### ⚠ 3.1b · Falta el nodo de vídeo — CENSADO (2026-07-30)
 

@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "fuente": "corpus/ (captura congelada del 2026-08-04) — OFFLINE",
+    "unidad": "página servida completa sin <script>/<style> — SUPERSET del campo rico, declarado",
+    "alcance": "76 páginas del grupo C (casos + faqs)",
+    "allowlist": "§3.3b firmada, 18 hosts"
+  },
+  "hosts": [
+    {
+      "host": "googletagmanager.com",
+      "n": 76,
+      "paginas": [
+        "casos/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+        "casos/red-calidad-de-aire-para-world-athletics",
+        "casos/transformacion-digital-y-un-aire-mas-limpio-en-etiopia",
+        "casos/control-quemas-controladas-cana-azucar",
+        "casos/red-hibrida-calidad-aire-atmo-france",
+        "casos/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
+        "casos/vigilancia-contaminacion-aire-albacete",
+        "casos/control-de-la-calidad-del-aire-en-puertos-apb",
+        "casos/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
+        "casos/red-sensores-calidad-aire-alaquas",
+        "casos/demolicion-estadio-vicente-calderon",
+        "casos/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+        "casos/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid",
+        "casos/monitorizacion-de-gases-y-particulas-en-metro-valparaiso",
+        "casos/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
+        "casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
+        "casos/control-de-la-contaminacion-en-bilbao",
+        "casos/control-de-la-calidad-del-aire-en-la-formula-e",
+        "casos/medicion-contaminantes-ambientales-ciudad-cartagena-colombia",
+        "casos/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick",
+        "casos/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria",
+        "casos/control-emisiones-de-olor-en-ptar-en-israel",
+        "casos/control-de-contaminacion-por-malos-olores-en-edar-arazuri",
+        "casos/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+        "casos/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
+        "casos/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals",
+        "casos/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas",
+        "casos/red-monitorizacion-polvo-particulas-minas-brasil-iron",
+        "casos/control-ambiental-actividades-portuarias-bahia-cadiz",
+        "casos/cuantificacion-emisiones-particulas-difusas-puerto-bilbao",
+        "casos/monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
+        "casos/estudio-de-la-contaminacion-atmosferica-gwadair",
+        "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+        "casos/pure-cities",
+        "casos/monitorizacion-ambiental-mediante-boyas-en-neom",
+        "casos/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre",
+        "casos/control-de-la-contaminacion-atmosferica-universidad-de-chipre",
+        "casos/monitoreo-ambiental-en-el-puerto-de-cotonu",
+        "casos/porto-alegre-red-de-control-de-la-calidad-del-aire",
+        "casos/monitorizacion-ambiental-instalacion-petroleo-gas",
+        "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+        "casos/citytraq-calidad-del-aire-urbano",
+        "casos/red-de-control-de-emisiones-en-planta-de-aluminio",
+        "casos/monitorizacion-ambiental-aeropuerto-subic-bay",
+        "casos/monitorizacion-de-polvo-en-la-mina-northparkes-australia",
+        "casos/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+        "casos/control-de-la-calidad-del-aire-en-el-volcan-turrialba",
+        "casos/distrito-baja-emision-rio-de-janeiro",
+        "casos/control-de-emisiones-plantas-ternium-en-mexico",
+        "casos/red-de-monitorizacion-ambiental-mades-paraguay",
+        "casos/clean-air-champions-league",
+        "casos/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+        "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "casos/running-for-clean-air-ciudades-saludables",
+        "casos/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez",
+        "casos/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman",
+        "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+        "faqs/el-equipo-tiene-memoria-interna",
+        "faqs/a-que-altura-debe-instalarse-el-equipo",
+        "faqs/cual-es-la-duracion-de-la-bateria",
+        "faqs/como-se-comunica-el-equipo",
+        "faqs/se-pueden-obtener-los-datos-en-local-modbus",
+        "faqs/que-opciones-de-calibracion-existen",
+        "faqs/cada-cuanto-se-calibra-el-equipo",
+        "faqs/el-equipo-es-portatil-o-fijo",
+        "faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software",
+        "faqs/los-equipos-kunak-son-certificados-atex",
+        "faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
+        "faqs/como-se-integran-los-datos-a-una-tercera-plataforma",
+        "faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite",
+        "faqs/pueden-utilizarse-los-equipos-en-interiores",
+        "faqs/cuenta-esta-tecnologia-con-certificaciones",
+        "faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+        "faqs/se-pueden-conectar-sondas-meteorologicas",
+        "faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud",
+        "faqs/que-area-cubre-cada-dispositivo"
+      ],
+      "enAllowlist": false
+    },
+    {
+      "host": "youtube.com",
+      "n": 8,
+      "paginas": [
+        "casos/red-calidad-de-aire-para-world-athletics",
+        "casos/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+        "casos/estudio-de-la-contaminacion-atmosferica-gwadair",
+        "casos/pure-cities",
+        "casos/monitoreo-ambiental-en-el-puerto-de-cotonu",
+        "casos/citytraq-calidad-del-aire-urbano",
+        "casos/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
+      ],
+      "enAllowlist": true
+    },
+    {
+      "host": "kunakcloud.com",
+      "n": 2,
+      "paginas": [
+        "casos/red-calidad-de-aire-para-world-athletics",
+        "casos/running-for-clean-air-ciudades-saludables"
+      ],
+      "enAllowlist": false
+    },
+    {
+      "host": "player.vimeo.com",
+      "n": 1,
+      "paginas": [
+        "casos/red-calidad-de-aire-para-world-athletics"
+      ],
+      "enAllowlist": false
+    },
+    {
+      "host": "facebook.com",
+      "n": 1,
+      "paginas": [
+        "casos/transformacion-digital-y-un-aire-mas-limpio-en-etiopia"
+      ],
+      "enAllowlist": true
+    },
+    {
+      "host": "dailymotion.com",
+      "n": 1,
+      "paginas": [
+        "casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air"
+      ],
+      "enAllowlist": false
+    },
+    {
+      "host": "storymaps.arcgis.com",
+      "n": 1,
+      "paginas": [
+        "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos"
+      ],
+      "enAllowlist": true
+    }
+  ],
+  "resumen": {
+    "paginas": 76,
+    "iframes": 90,
+    "hostsDistintos": 7,
+    "fueraDeAllowlist": 4
+  }
+}

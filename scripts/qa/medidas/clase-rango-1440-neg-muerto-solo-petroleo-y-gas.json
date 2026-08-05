@@ -1,7 +1,7 @@
 {
   "meta": {
     "width": 1440,
-    "fecha": "2026-08-03",
+    "fecha": "2026-08-04",
     "sabotaje": "muerto",
     "solo": "petroleo-y-gas",
     "preRegistro": "docs/research/clase/PRE-REGISTRO-ANCHO-MODULO.md",
@@ -193,7 +193,7 @@
                 "pct": 86,
                 "w": 1238.39,
                 "h": 532.11,
-                "firma": "Impactoambientaldelaindu"
+                "firma": "¿Cómoafectalacontaminaci"
               }
             ],
             "clon": [
@@ -623,7 +623,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 474.52,
-                "firma": "Impactoambientaldelaindu"
+                "firma": "¿Cómoafectalacontaminaci"
               }
             ],
             "clon": [
@@ -1738,7 +1738,7 @@
                 "pct": 100,
                 "w": 1238.39,
                 "h": 400.52,
-                "firma": "Impactoambientaldelaindu"
+                "firma": "¿Cómoafectalacontaminaci"
               },
               {
                 "i": "16.0.1",
