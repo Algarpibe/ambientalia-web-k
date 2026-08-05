@@ -1782,6 +1782,61 @@ y no de este arquetipo. Anotado aquí para que la próxima medida no lo persiga.
 > tabla de arriba cita como «el que sirve el original». Lo que falta es el lado
 > del render.
 
+> ⚠ **RE-EVALUADA 2026-08-05 (29.ª). SIGUE SIN CERRARSE — y la razón 1 se
+> DISUELVE, que es lo que cambia su forma.**
+>
+> **El número se reprodujo, y hay que leerlo con cuidado:** `qa:cmp-srcset`
+> vuelve a dar **311/311 pares · 140 igual · 70 sin `srcset` · 5 distinto**, con
+> la congelada **idéntica byte a byte**. Pero eso **prueba que el CLON es
+> estable, no que el sitio no haya cambiado**: el lado «original» es la captura
+> congelada, así que la igualdad es esperable **por construcción**. La razón 3
+> —los 5 sin dirimir— **no se toca**: sigue necesitando una segunda captura.
+>
+> **La razón 1 sí cae, y no cerrando nada sino MIDIENDO que no hay nada que
+> cerrar.** Decía: *«el atributo necesita el ancho pedido en el punto de uso,
+> que no está en la colección de media ni modelado en ningún sitio»*. Eso daba
+> por hecho que faltaba **modelar** algo. `npm run qa:media-hueco` (nueva,
+> negativo **7/7**) lo midió:
+>
+> | | |
+> |---|---|
+> | pares (hueco × origen) que varían **por encima** del contenedor | **0 de 237** |
+> | grupos intra-página que varían por encima | **0 de 715** |
+> | excepciones, y **todas por debajo** del contenedor | **7** (1 en `post_content` · 6 en módulo de texto del builder) |
+> | `srcset`+`sizes`+`width`+`size-` que sobreviven VERBATIM a T1–T8 | **311/311** |
+>
+> > **Por encima del contenedor de contenido lo fija el HUECO (plantilla); por
+> > debajo viaja DENTRO del campo rico, carácter a carácter. No entra nada en el
+> > esquema.**
+>
+> **Consecuencia para M-IMG, y es una reducción real: deja de ser deuda de
+> MODELO y pasa a ser deuda de RENDER.** Los 70 se concentran donde el clon
+> **construyó** (`/software` 19/37 · `/accesorios` 14/18 · `/monitor` 8/51),
+> porque sus componentes emiten `src` y ningún candidato — y eso se arregla en
+> `apps/web`, que **paga Δ0** y es otra tanda.
+>
+> **Quedan DOS razones, las dos de alcance, ninguna de modelado:**
+>
+> 1. ~~el juego fijo es necesario y no suficiente, y falta modelar el ancho
+>    pedido~~ → **DISUELTA**: medido que no hay que modelarlo;
+> 2. **la población de la ficha NO ES MEDIBLE con el corpus** — y aquí va el
+>    recuento **derivado**, porque el que circulaba mezclaba dos unidades:
+>
+>    | | n | |
+>    |---|---|---|
+>    | entradas del `prerender-manifest` | **34** | incluye 3 que no son páginas |
+>    | `/_global-error` · `/_not-found` · `/favicon.ico` | 3 | la sonda las excluye a propósito |
+>    | **páginas del build** | **31** | |
+>    | emparejadas con el corpus | **24** | |
+>    | **fuera** | **7** | `/` + **4 sectores + 2 monográficos** |
+>
+>    El «**10** que faltan son los 4 sectores + 2 monográficos» que circulaba es
+>    `34 − 24`, o sea **la resta correcta sobre la unidad equivocada**: 10 cuenta
+>    3 no-páginas y `/`, y los sectores+monográficos son **6**. Regla 9 — *un
+>    recuento afirmado de memoria se deriva antes de usarse*;
+> 3. **los 5 «distinto» siguen SIN DIRIMIR** (ver arriba: la re-corrida no los
+>    toca).
+
 ### M-404 · 23 imágenes que el clon SIRVE y no existen (2026-08-04)
 
 **Nuevo, y no lo veía nadie.** `npm run qa:media-poblaciones` cruzó las
@@ -1815,7 +1870,76 @@ puede estar sirviendo ahí un `srcset` cuyo mayor candidato sea el `-600x600`.
 Descargar el original completo cambiaría la imagen servida. **Se mide antes con
 `qa:cmp-srcset` sobre esas tres rutas** — que ya las cubre.
 
-### ⛔ M-SEED · El seed está ROTO desde la firma de la allowlist (2026-08-04)
+> ⚠ **2026-08-05 (F2-2 bloque 3, 29.ª): NO se arregla aquí, y la razón no es
+> falta de tiempo.** Arreglarlo toca `apps/web` —los ficheros van a
+> `public/images`— y por tanto **paga corrida Δ0**. Pero además:
+>
+> > **el Δ0 SE VA A MOVER, y ese movimiento es CORRECCIÓN, no regresión.** Una
+> > imagen presente maqueta distinto que una rota: ocupa su caja, empuja lo de
+> > abajo y cambia `docH`. O sea que la guarda de regresión —`clon-base`, umbral
+> > cero— **va a marcar las 3 rutas**, y marcarlas será lo correcto.
+>
+> Y eso es justo lo que no se puede resolver de paso dentro de otra tanda: cada
+> una de las 3 rutas hay que **adjudicarla contra el original, una a una**, para
+> separar «se movió porque ahora está la imagen» de «se movió porque metí un
+> defecto». Es una **tanda aislada**, con el precedente exacto de la conversión
+> a monorepo: cambio transversal, línea base nueva, adjudicación explícita.
+> Meterlo en una tanda de esquema convertiría su Δ0 en no interpretable.
+
+#### El eje que M-404 abre, y que hoy sólo se NOMBRA
+
+> **Ninguna guarda comprueba que lo que el clon SIRVE exista.** Las 48 sondas
+> miden alto, ancho, árbol, enlaces, tipografía y —desde el bloque 3— `srcset`.
+> Ninguna hace la pregunta anterior a todas ellas: **¿el recurso referenciado
+> devuelve 200?**
+
+`media-poblaciones` lo encontró **de rebote**, cruzando poblaciones para otra
+cosa; no es una guarda del eje. La diferencia importa: una guarda del eje
+correría en cada tanda y **subiría el listón sola** cuando una ruta nueva
+trajera una referencia rota, igual que hace `enlaces.mjs` con los `href`.
+
+Se **nombra como eje pendiente y no se construye hoy** — un eje nuevo es una
+sonda con su negativo, y meterla en una tanda que ya cerró dos fronteras es
+cómo se acaba con una sonda sin test en negativo. Entra en
+`COBERTURA-MEDICION.md` como celda a 0.
+
+**Y el nombre correcto del eje es `existencia`, no `imágenes`:** el mismo
+agujero cubre `<img src>`, `srcset`, `<source>`, `<video>`, los PDF de recursos
+y las fuentes. Nombrarlo por el síntoma que se vio primero sería fabricar una
+sonda que sólo mira imágenes porque las imágenes fueron lo primero que falló.
+
+### ✅ M-SEED · CERRADO 2026-08-05 — el seed está ROTO desde la firma de la allowlist (2026-08-04)
+
+> ✅ **CERRADO 2026-08-05 (29.ª) por el PROCEDIMIENTO DE ALTA, que es la salida
+> que la propia ficha decía que había — no por meter el host y ya.**
+>
+> §3.3b **AMPLIADA Y FIRMADA** por el propietario: la allowlist suma los **3
+> hosts reales del grupo C** censados en `medidas/c-embeds.json` —
+> `kunakcloud.com` · `player.vimeo.com` · `dailymotion.com`— y el alcance
+> firmado pasa de «grupo A» a «grupo A + grupo C censados». **21 hosts.**
+> `googletagmanager.com` queda **fuera con su evidencia**: 76 en 76/76 = es el
+> cascarón (regla 4, el pleno), jamás candidato.
+>
+> **Es el MISMO criterio del 04-08** —los censados, cero pérdida medida—
+> **aplicado al censo que entonces no existía**. La prohibición de la 27.ª
+> —*«no dar de alta sin pasar por el procedimiento»*— se cumple: se pasó por él.
+>
+> **Y el efecto está MEDIDO, no supuesto** (D4: el marcador prueba frescura, no
+> efecto):
+>
+> | | |
+> |---|---|
+> | `npm run cms:seed` | termina — **63 documentos en 13 colecciones** |
+> | `npm run qa:cms-roundtrip` | **63/63 IDÉNTICOS** |
+> | la congelada nueva contra la del 04-08 | difiere **sólo en `meta.fecha`** |
+> | negativos re-corridos | `saneador` **6/6** (21 hosts) · `cms-roundtrip` **6/6** |
+>
+> **El bloque 1 sale de «pendiente de re-verificación» y vuelve a estar
+> cerrado**, que es lo que esta ficha bloqueaba. Y la lección de la ficha sigue
+> en pie sin cambios: *se cerró una frontera y no se re-corrió lo que dependía
+> de ella* — lo que se arregló es la consecuencia, no la causa.
+
+**El diagnóstico original, que se conserva porque es lo que enseña:**
 
 **Pre-existente, no de esta tanda, y bloquea el criterio de F2-2 bloque 1.**
 

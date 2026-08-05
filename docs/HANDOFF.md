@@ -1,3 +1,145 @@
+# HANDOFF — F2-2 bloque 3 · la frontera del «ancho pedido» CERRADA sin añadir nada, y el seed desbloqueado
+
+> ⚠ **Tanda 2026-08-05 (29.ª).** PASOS 1 · 2 · 6 · 3 · 7 del encargo de
+> reentrada. **El escalón NO disparó**, y se comprobaron sus tres condiciones:
+> la frontera la arbitran los dos tests (falla la primera) y `anchoPct` es
+> precedente directo (falla la tercera) ⇒ **era ejecución**. **No se toca
+> `apps/web`** — `git diff 7e1e154 HEAD -- apps/web` vacío, así que no paga Δ0.
+
+## 0 · Los tres titulares
+
+> **1 · La frontera del «ancho pedido» se CIERRA SIN AÑADIR NADA AL ESQUEMA, y
+> con número.** La tanda anterior la dejó como *«la decisión que desbloquea
+> M-IMG: ¿campo del bloque, o derivado del render?»*. **Ninguna de las dos.**
+> `qa:media-hueco` (nueva, negativo **7/7**): **0 de 237** pares y **0 de 715**
+> grupos varían **por encima** del contenedor de contenido; las **7** excepciones
+> caen **todas por debajo**, y ahí el atributo ya viaja verbatim — **311/311**
+> sobreviven a T1–T8.
+>
+> **2 · El seed vuelve a terminar, y el `63/63` está RE-VERIFICADO.** §3.3b
+> **ampliada y firmada** (21 hosts) por el **procedimiento de alta**, no
+> re-firmando la lista. La congelada nueva difiere de la del 04-08 **sólo en
+> `meta.fecha`**. §M-SEED **CERRADO**.
+>
+> **3 · M-IMG NO se cierra — y pasa de deuda de MODELO a deuda de RENDER.** De
+> sus tres razones, la nº 1 se **disuelve** (no hay nada que modelar). Quedan dos
+> y las dos son de **alcance**: la población de la ficha no está en el corpus
+> (**7** páginas fuera de 31, no 10 — recuento corregido) y los 5 «distinto»
+> siguen sin dirimir.
+
+## 1 · PASO 1 — la firma, y lo que desbloqueó
+
+§3.3b suma **`kunakcloud.com` · `player.vimeo.com` · `dailymotion.com`**,
+derivados de `medidas/c-embeds.json` (76/76). Alcance firmado: **grupo A + grupo
+C censados**. `googletagmanager.com` **fuera con su evidencia** — 76 en 76/76 =
+cascarón (regla 4, el pleno), jamás candidato.
+
+| | |
+|---|---|
+| `cms:seed` | **63 documentos en 13 colecciones** |
+| `qa:cms-roundtrip` | **63/63 IDÉNTICOS** · sólo cambia `meta.fecha` |
+| `qa:saneador-neg` | **6/6** (21 hosts) |
+| `qa:cms-roundtrip-neg` | **6/6** (4 cazan · 1 ciego · control) |
+
+## 2 · PASO 2 — la frontera, y los DOS defectos míos que el dato cazó
+
+`npm run qa:media-hueco` · offline sobre `corpus/` · **negativo 7/7**.
+Aplica los dos tests **después** de derivar el régimen del `<body>`
+(PLANTILLADO×209 · BUILDER×24 · SIN MARCADOR×76), y **el test A no se aplica**
+con su razón escrita: su alcance declarado es el RITMO.
+
+> **Por encima del contenedor de contenido lo fija el HUECO ⇒ plantilla. Por
+> debajo viaja DENTRO del campo rico ⇒ ya está almacenado. NO ENTRA NADA.**
+
+**Y NO es un `anchoPct`:** aquél varía entre módulos hermanos de la misma
+página; éste no varía **ni entre instancias**.
+
+⚠ **Los dos defectos, los dos daban un veredicto plausible y FALSO, y los dos
+quedan como sabotaje** (artefactos con marcador `SONDA-`, regla 7):
+
+| defecto | qué producía |
+|---|---|
+| medir el **ancho renderizado** en vez de la caja pedida | `large` es una CAJA y WordPress **no amplía** ⇒ el renderizado es `min(caja, ancho NATIVO)` y mezcla dos poblaciones. Sacaba «86 grupos varían» ⇒ **CAMPO**. Es el error de `media-srcset` §1 **un nivel más arriba** |
+| definir el contenedor de contenido **sólo** como `post_content` | deja al BUILDER **sin contenedor**, y el HTML que escribió una persona cuenta como cascarón. Sacaba 6 pares falsos |
+
+## 3 · PASO 6 — M-IMG con su número Y con su alcance
+
+**311/311 pares · 140 igual · 70 sin `srcset` · 5 distinto**, congelada
+**idéntica byte a byte**. ⚠ Eso prueba que **el CLON es estable, no que el sitio
+no haya cambiado**: el lado «original» es la captura congelada.
+
+⚠ **Recuento corregido (regla 9):** el «10 que faltan» es `34 − 24` sobre
+entradas del manifest que incluyen **3 no-páginas**. En la unidad de la matriz
+—la RUTA— son **7** (`/` + 4 sectores + 2 monográficos), y la fila de
+`COBERTURA-MEDICION.md` decía `24 · 0 · 10` **sobre un denominador de 31**:
+corregida.
+
+## 4 · PASO 3 — fichado, no arreglado, y el eje que abre
+
+Las **23 imágenes 404** siguen fichadas (§M-404). **No se arreglan aquí**, y no
+por tiempo:
+
+> **el Δ0 SE VA A MOVER, y ese movimiento es CORRECCIÓN, no regresión.** Una
+> imagen presente maqueta distinto que una rota. Hay que adjudicar **ruta a
+> ruta contra el original** ⇒ **tanda aislada**, con el precedente de la
+> conversión a monorepo.
+
+**Eje nuevo NOMBRADO y no construido: `existencia`** — ninguna guarda comprueba
+que lo que el clon sirve devuelva **200**. Se llama `existencia` y no
+«imágenes» porque el mismo agujero cubre `srcset`, `<source>`, `<video>`, los
+PDF y las fuentes. Entra en `COBERTURA-MEDICION.md` a **0/31**.
+
+## 5 · ⛔ LO QUE NO SE HIZO
+
+| paso | estado | razón |
+|---|---|---|
+| **4 · T3b / T4b** | **NO** | **quedan DESBLOQUEADOS** por el PASO 2 — pero cada uno exige su sabotaje por su propio invariante y el negativo entero re-corrido. Es la tanda siguiente, no su cola |
+| **5 · capturar los 1 571** | **NO** | es lo que hace medible la población de M-IMG. **Fuera de `corpus/`**: meterlas dentro movería los denominadores congelados (309 y 209) |
+
+## 6 · De rebote: una congelada rancia
+
+`cms-campos.json` llevaba desatendida desde `5a6e1fb` (`Product` 9 → **12**
+campos). La sonda sigue **verde** —0 campos sin contraparte—, así que era
+congelada rancia y **no** defecto de esquema. Re-congelada a propósito con
+`PISAR`, con la vieja a salvo en git (`0c71f89`).
+
+## 7 · Pendientes que NO bloquean
+
+| # | pendiente | por qué no bloquea |
+|---|---|---|
+| 1 | **HOME sin content type** | cubo B: modelarla después es AÑADIR |
+| 2 | **`Dockerfile` sin verificar** (dos apps, un compose; **y no hay servicio de Postgres en él** — el contenedor se levanta a mano) | lo cobra F2-4 |
+| 3 | **26 celdas ciegas** · comportamiento 0/31 · **`existencia` 0/31** | deuda de medición del CLON |
+| 4 | **`qa:cobertura` no conoce los 2 ejes nuevos** — su matriz dice «9 ejes» y el documento discute 11 | se arregla enseñándoselos, no editando el rótulo |
+| 4b | **una congelada con `hoy()` en `meta` NUNCA se de-duplica** — la de-duplicación de `w()` (*«idéntica se reescribe, no se pierde nada»*) no puede dispararse jamás, así que **cada corrida en un día nuevo estrena fichero aunque no haya cambiado un dato**. Visto hoy en `slugs` y `cms-campos`; es **la clase del puerto efímero de `clon-base`** (defecto 2 de la 26.ª) generalizada al sello de fecha | ruido de `medidas/`, no medida falsa. Lo paga quien toque `w()` |
+| 5 | **`Breadcrumb` 28 rutas** (−33.25, de ancho) | `clon-base` no lo ve |
+| 6 | **CMS-SP-TIPO** — el Δ0 de render de F2-3 | punto ciego verificado en cada negativo |
+| 7 | **`/kunak-api` `<title>`** | ninguna sonda compara el `<head>` |
+| 8 | **extracción de builder** (casos · faqs · productos) | otra mecánica, su tanda — **y es lo que falta para medir los 6 pares del módulo de texto** |
+| 9 | **M-404** — 23 imágenes 404 | tanda aislada, paga Δ0 |
+| 10 | **los 5 «distinto» de `cmp-srcset`** | SIN DIRIMIR: necesitan una **segunda** captura |
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No modelar el «ancho pedido».** Está **medido** que no hay que hacerlo
+  (§2). Volver a plantearlo como «¿campo o derivado?» es re-abrir una frontera
+  cerrada con número.
+- **No leer la re-corrida idéntica de `cmp-srcset` como que el original no ha
+  cambiado.** Su lado «original» es la captura congelada: la igualdad es
+  esperable **por construcción**, y los 5 «distinto» siguen sin dirimir.
+- **No cerrar M-IMG.** Le quedan dos razones de ALCANCE, y la principal —su
+  población— se resuelve con el PASO 5, no con una decisión.
+- **No arreglar las 23 imágenes de paso.** Su Δ0 se mueve a propósito y hay que
+  adjudicarlo ruta a ruta; dentro de otra tanda su Δ0 deja de ser interpretable.
+- **No meter las 6 rutas que faltan dentro de `corpus/`.** Movería los
+  denominadores congelados (309 y 209), citados en actas.
+- **No dar de alta `googletagmanager.com`.** Es cascarón, 76/76, y la razón ya
+  está escrita para no re-derivarla.
+- **No leer el rojo de `cmp-srcset` como fallo de instrumento.** Su control sale
+  con **exit 2 a propósito**: ese rojo ES el hallazgo del criterio.
+
+---
+
 # HANDOFF — F2-2 bloque 3 PARADO POR EL ESCALÓN: el srcset no es función de la imagen, y M-IMG no se cierra
 
 > ⚠ **Tanda 2026-08-04 (28.ª).** PASOS 1 · 2 · 6 · 4 del encargo del bloque 3.

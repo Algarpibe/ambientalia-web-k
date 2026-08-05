@@ -42,6 +42,14 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.
 > **No se edita a mano**: se recomputa de las salidas de `medidas/`.
 
+> ⚠ **El «× 9» del título es de la matriz que `qa:cobertura` genera; el recuento
+> de más abajo va ya por 11.** `srcset`/media entró el 2026-08-04 y
+> **existencia** el 2026-08-05, los dos **fuera** de la matriz generada — o sea
+> que el título dice 9 y el documento discute 11. Se deja dicho en vez de
+> retocar el número a mano: **la matriz la genera una sonda**, y cuadrarlo de
+> verdad es enseñarle los dos ejes nuevos, no editar su rótulo. Fichado como
+> deuda de `qa:cobertura`.
+
 > ⚠ **`/` — base `h1` NO VÁLIDA. Ancla alternativa: el `h2`.** Su `h1` es un
 > título oculto para SEO en los dos lados y **no empuja nada**: original
 > `static` pero **0×0**, clon `absolute` (fuera de flujo) 1×1. Medido
@@ -106,7 +114,17 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | módulos | **2** | 0 | 29 | `mono-cmp` | 2 |
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
 | comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
-| **`srcset` / media** ⚠ | **24** | 0 | **10** | **`cmp-srcset`** — deriva del build ∩ corpus | **0** *(eje nuevo)* |
+| **`srcset` / media** ⚠ | **24** | 0 | **7** | **`cmp-srcset`** — deriva del build ∩ corpus | **0** *(eje nuevo)* |
+| **existencia (¿el recurso servido devuelve 200?)** ⚠⚠ | **0** | 0 | **31** | — *(ninguna)* | **0** *(eje nuevo)* |
+
+> ⚠ **CORREGIDO 2026-08-05: la fila de `srcset` decía `24 · 0 · 10`, y
+> `24 + 10 = 34` en una matriz cuyo denominador es 31.** El «10» es
+> `34 − 24` sobre las entradas del `prerender-manifest`, que **incluyen 3 que no
+> son páginas** (`/_global-error` · `/_not-found` · `/favicon.ico`, que la sonda
+> excluye a propósito). En la unidad de esta matriz —la RUTA— son **7**: `/` +
+> los 4 sectores + los 2 monográficos. Es el **séptimo contenedor** otra vez
+> —*la unidad en la que se declara la cobertura absorbe lo que no se midió
+> abajo*— y aquí ni siquiera absorbía: **cuadraba mal a la vista** y nadie sumó.
 
 > ⚠ **EJE NUEVO (2026-08-04, F2-2 bloque 3), y llega con su letra pequeña de
 > fábrica.** Hasta hoy **ninguna de las 59 sondas COMPARABA el `srcset`**
@@ -200,6 +218,30 @@ La tanda de cierre gastó lo barato. Queda:
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
 | 5 | **comportamiento** | **0/31** — `a-behaviors` y `c-behaviors` solo abren el original | sonda nueva |
 | 6 | **estado HTTP en las demás sondas** | solo `c-cmp` lo mira; `lib.mjs` ya lo expone | 1 línea por sonda |
+| 7 | **existencia del recurso servido** | **0/31** — NOMBRADO 2026-08-05, ver abajo | sonda nueva + su negativo |
+
+### El eje 7 · existencia — nombrado el 2026-08-05, y por qué no se construyó ya
+
+**Ninguna guarda comprueba que lo que el clon SIRVE exista.** Los 10 ejes de
+arriba miden alto, ancho, árbol, enlaces, tipografía y `srcset`; ninguno hace la
+pregunta anterior a todos ellos: **¿el recurso referenciado devuelve 200?**
+
+Lo destapó `media-poblaciones` **de rebote** —cruzando poblaciones para otra
+cosa— con **23 imágenes que el clon sirve y no existen** (M-404 en
+`PENDIENTES-QA.md`). Que lo encontrara un cruce y no una guarda es justo el
+punto: un hallazgo de rebote **no sube el listón solo** cuando entre una ruta
+nueva; una guarda del eje sí, como hace `enlaces.mjs` con los `href`.
+
+> **Y el nombre es `existencia`, no `imágenes`.** El mismo agujero cubre
+> `<img src>`, `srcset`, `<source>`, `<video>`, los PDF de `/recursos` y las
+> fuentes. Nombrarlo por el síntoma que se vio primero fabricaría una sonda que
+> sólo mira imágenes porque las imágenes fueron lo primero que falló — que es
+> cómo se hereda un alcance sin haberlo elegido.
+
+**No se construye en la tanda que lo nombra**, a propósito: un eje nuevo es una
+sonda **con su test en negativo**, y añadirlo a una tanda que ya cerró dos
+fronteras es exactamente cómo se acaba con una sonda sin negativo — el defecto
+que este documento existe para no repetir.
 
 ### Por qué el ancho del cuerpo sigue siendo el número 1
 

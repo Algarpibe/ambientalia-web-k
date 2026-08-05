@@ -726,6 +726,93 @@ sus 24 fichas del CPT incluidas).
 
 ---
 
+### ⛔ F2-2 · BLOQUE 3 · reentrada — la frontera CERRADA y el seed desbloqueado, M-IMG sigue abierta (2026-08-05, tanda 29.ª)
+
+**Contra el criterio literal del §F2-2 —*«el `srcset` emitido coincide con el
+del original en las páginas medidas → M-IMG cerrado con medida, no por
+decreto»*— el bloque 3 SIGUE SIN CUMPLIRSE.** Lo que cambia es **por qué**, y la
+razón que cae es la que parecía más cara.
+
+```
+✅ §3.3b AMPLIADA Y FIRMADA        21 hosts · el procedimiento de alta, EJECUTADO
+✅ el seed vuelve a terminar        63 doc en 13 colecciones · round-trip 63/63
+✅ la frontera del «ancho pedido»   qa:media-hueco · 309 páginas · negativo 7/7
+                                    ⇒ NO ENTRA NADA EN EL ESQUEMA
+⛔ M-IMG                            NO se cierra — 2 razones, las dos de ALCANCE
+```
+
+#### 1 · La incógnita nº 1 de la tanda anterior se DISUELVE
+
+El bloque 3 dejó escrito como decisión pendiente: *«**dónde vive el ancho
+pedido** — campo del bloque que referencia la imagen, o derivado del contexto de
+render. Es la decisión que desbloquea M-IMG»*. Estaba planteada como una
+**elección entre dos formas de modelarlo**.
+
+**Ninguna de las dos: no hay que modelarlo, y está medido.** `qa:media-hueco`,
+tras identificar el régimen (PLANTILLADO×209 · BUILDER×24 · SIN MARCADOR×76):
+
+| | |
+|---|---|
+| pares (hueco × origen) que varían **por encima** del contenedor de contenido | **0 de 237** |
+| grupos intra-página (test B) que varían por encima | **0 de 715** |
+| excepciones, **todas por debajo** | **7** — 1 en `post_content`, 6 en módulo de texto del builder |
+| `srcset`+`sizes`+`width`+`size-` que sobreviven **VERBATIM** a T1–T8 | **311/311** |
+
+> **Por encima del contenedor lo fija el HUECO ⇒ plantilla. Por debajo viaja
+> dentro del campo rico ⇒ ya está almacenado. La frontera se cierra sin tocar el
+> modelo.**
+
+Y por qué no es un `anchoPct`, que era el precedente que empujaba a copiarlo:
+aquél **varía entre módulos hermanos de la misma página**; éste no varía **ni
+entre instancias**. Acta en `ESQUEMA-CMS.md` §El «ancho pedido».
+
+#### 2 · La incógnita nº 3 se CIERRA: el seed vuelve a terminar
+
+§3.3b **ampliada y firmada** (2026-08-05): +3 hosts del grupo C por el
+**procedimiento de alta** que la firma del 04-08 dejó escrito —no re-firmando la
+lista—, con `googletagmanager.com` fuera y con su evidencia (76/76 = cascarón).
+Efecto **medido**: `cms:seed` termina y `qa:cms-roundtrip` da **63/63**, con la
+congelada nueva difiriendo de la del 04-08 **sólo en `meta.fecha`**. El bloque 1
+sale de «pendiente de re-verificación». §M-SEED **CERRADO**.
+
+#### 3 · M-IMG: sigue abierta, y ahora es deuda de RENDER, no de MODELO
+
+`qa:cmp-srcset` re-corrida: **311/311 pares · 140 igual · 70 sin `srcset` · 5
+distinto**, congelada **idéntica byte a byte**. ⚠ Y eso **prueba que el clon es
+estable, no que el sitio no haya cambiado**: el lado «original» es la captura
+congelada, así que la igualdad es esperable por construcción.
+
+Las **dos** razones que quedan son de alcance, y ninguna de modelado:
+
+| # | razón | número |
+|---|---|---|
+| 1 | ~~falta modelar el ancho pedido~~ | **DISUELTA** (§1 de arriba) |
+| 2 | la población de la ficha **no es medible** desde el corpus | de las **31 páginas** del build, 24 emparejadas y **7 fuera**: `/` + 4 sectores + 2 monográficos |
+| 3 | los 5 «distinto» **sin dirimir** | necesitan una **segunda** captura; la re-corrida no los toca |
+
+> ⚠ **Recuento corregido (regla 9).** El «**10** que faltan» que circulaba es
+> `34 − 24` sobre las entradas del `prerender-manifest`, que incluyen **3 que no
+> son páginas** (`/_global-error` · `/_not-found` · `/favicon.ico`). En la unidad
+> de la matriz de cobertura —la RUTA— son **7**, y los sectores+monográficos son
+> **6**. La fila de `COBERTURA-MEDICION.md` decía `24 · 0 · 10` sobre un
+> denominador de 31: corregida.
+
+**Y los 70 dicen dónde está la deuda:** se concentran donde el clon
+**construyó** (`/software` 19/37 · `/accesorios` 14/18 · `/monitor` 8/51),
+porque sus componentes emiten `src` y ningún candidato. Eso se arregla en
+`apps/web`, **paga Δ0**, y es otra tanda.
+
+#### 4 · Lo que esta tanda NO hizo, y por qué
+
+| paso | estado | razón |
+|---|---|---|
+| **T3b / T4b** | **NO** | la frontera que los bloqueaba ya está cerrada, así que **quedan desbloqueados** — pero son transformaciones nuevas y cada una exige su sabotaje cayendo por su propio invariante, con el negativo entero re-corrido. Es el trabajo de la tanda siguiente, no su cola |
+| **captura de los 1 571** | **NO** | es la que hace medible la población de M-IMG (razón 2). Fuera de `corpus/` para no mover los denominadores congelados (309 y 209) |
+| **las 23 imágenes 404** | **FICHADAS, no arregladas** | tocan `apps/web` ⇒ pagan Δ0, **y el Δ0 se MOVERÁ**: una imagen presente maqueta distinto que una rota. Ese movimiento es CORRECCIÓN y hay que adjudicarlo ruta a ruta contra el original ⇒ **tanda aislada**, como la conversión a monorepo |
+| **el eje `existencia`** | **NOMBRADO, no construido** | ninguna guarda comprueba que lo servido devuelva 200. Un eje nuevo es sonda **+ negativo**; meterlo aquí es cómo se acaba con una sonda sin negativo |
+
+---
+
 ### ⛔ F2-2 · BLOQUE 3 — PARADO POR EL ESCALÓN, con la frontera medida (2026-08-04, tanda 28.ª)
 
 **El criterio del §F2-2 para este bloque es literal: *«el `srcset` emitido

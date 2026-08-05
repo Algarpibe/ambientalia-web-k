@@ -217,6 +217,67 @@ Ver §6 M-IMG y `medidas/cmp-srcset.json`.
 sectores ni monográficos**, que están fuera del corpus por construcción… y son
 exactamente la población donde M-IMG está medida.
 
+#### ✅ El «ancho pedido» — FRONTERA CERRADA SIN AÑADIR NADA (2026-08-05)
+
+El párrafo de arriba deja una incógnita explícita: *«un dato —el ancho pedido—
+que hoy no está modelado en ningún sitio»*. Se leía como **una pieza que falta
+por modelar**, con el precedente de `anchoPct` a mano —un valor de presentación
+por punto de uso, medido y ya en el esquema— que empujaba a copiarlo.
+
+**No hacía falta modelar nada, y la diferencia la decidió una medida.**
+`npm run qa:media-hueco` (offline sobre `corpus/`, congelada en
+`medidas/media-hueco.json`, **negativo 7/7**) aplicó los dos tests de
+`CLAUDE.md` **después de identificar el régimen**, que es el orden que la propia
+regla exige:
+
+| régimen, derivado del `<body>` | páginas |
+|---|---|
+| **PLANTILLADO** (`et-tb-has-body`) | 209 — blog · kunakpedia · documentos |
+| **BUILDER** (`et_pb_pagebuilder_layout`) | 24 — productos |
+| **SIN MARCADOR** (plantilla clásica del tema, sin builder) | 76 — casos · faqs |
+
+⚠ **El test A no se aplica, y se dice por qué:** su alcance declarado es el
+**RITMO** (`margin`/`padding` de sección, fila y módulo). El ancho pedido no es
+ritmo — es qué fichero se solicita —, así que aplicárselo daría la respuesta
+invertida, que es exactamente lo que ese alcance advierte.
+
+**El resultado, en la unidad que la sonda compara:**
+
+| | |
+|---|---|
+| pares (hueco × origen) que varían **POR ENCIMA** del contenedor de contenido | **0 de 237** |
+| grupos intra-página (test B) que varían por encima | **0 de 715** |
+| excepciones — **todas POR DEBAJO** | **7**: 1 en `post_content`, 6 en módulo de texto del builder |
+| `srcset`+`sizes`+`width`+`size-` que sobreviven **VERBATIM** a T1–T8 | **311/311** |
+
+> **Por encima del contenedor de contenido, la caja pedida la fija el HUECO ⇒
+> PLANTILLA. Por debajo, viaja DENTRO del campo rico, carácter a carácter ⇒
+> CAMPO RICO. NO ENTRA NADA EN EL ESQUEMA.**
+
+**Y por qué NO es un `anchoPct`, que era la analogía tentadora:** `anchoPct` es
+campo porque **varía entre módulos hermanos de la misma página** (70 · 80 · 90 ·
+100 % en la misma instancia). La caja pedida **no varía ni entre instancias del
+mismo hueco**. Misma pregunta, dos respuestas, y las dos medidas.
+
+⚠ **ALCANCE de la mitad «viaja verbatim»:** medida sobre `post_content`, que es
+lo único que T1–T8 procesan hoy. Los **6 pares del módulo de texto del builder
+quedan SIN esa medida** porque la extracción de builder no existe todavía. Se
+dice, no se supone: el día que se escriba, `qa:media-hueco` tiene que volver a
+salir verde.
+
+⚠ **Dos defectos de la propia sonda, cazados por el dato y conservados como
+sabotaje** — los dos daban un veredicto plausible y falso:
+
+| defecto | qué hacía | sabotaje que lo reproduce |
+|---|---|---|
+| medir el **ancho renderizado** en vez de la caja | `large` es una CAJA y WordPress no amplía ⇒ el renderizado es `min(caja, ancho NATIVO)` y **mezcla dos poblaciones**. Sacaba «86 grupos del cascarón varían» ⇒ CAMPO | `ancho-en-px` |
+| definir el contenedor de contenido **sólo** como `post_content` | deja al BUILDER **sin contenedor**, y el HTML que escribió una persona cuenta como cascarón. Sacaba 6 pares falsos | `sin-zona` |
+
+El primero es **el mismo error que §1 de `media-srcset` ya tenía documentado**
+—*«los anchos irregulares son la anchura NATIVA de cada imagen, no tamaños»*—
+cometido un nivel más arriba. Los dos artefactos quedan con marcador `SONDA-`
+(regla 7) para que no puedan leerse como medidas del sitio.
+
 ### ✅ CMS-0d · Next subido a 16.2.12 — EJECUTADA (2026-07-30)
 
 | | |
