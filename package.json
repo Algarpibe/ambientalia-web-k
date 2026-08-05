@@ -95,7 +95,9 @@
     "qa:media-srcset": "node scripts/qa/media-srcset.mjs",
     "qa:media-srcset-neg": "node scripts/qa/media-srcset.neg.mjs",
     "qa:media-poblaciones": "node scripts/qa/media-poblaciones.mjs",
-    "qa:media-poblaciones-neg": "node scripts/qa/media-poblaciones.neg.mjs"
+    "qa:media-poblaciones-neg": "node scripts/qa/media-poblaciones.neg.mjs",
+    "qa:cmp-srcset": "node scripts/qa/cmp-srcset.mjs",
+    "qa:cmp-srcset-neg": "node scripts/qa/cmp-srcset.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "original": "corpus/ congelado (24 de 309 páginas emparejadas con el build)",
+    "clon": "HTML servido por next start (no src/lib)",
+    "unidad": "par (ruta × imagen origen) — NO la ruta",
+    "alcance": {
+      "rutasEmparejadas": 24,
+      "imagenes": 0,
+      "rutasDelBuildFuera": [
+        "/",
+        "/sectores/calidad-del-aire-en-las-ciudades",
+        "/sectores/contaminacion-por-construccion",
+        "/sectores/control-de-emisiones-industriales",
+        "/sectores/estudio-de-la-contaminacion-atmosferica",
+        "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+        "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+      ]
+    },
+    "fronteraMImg": "los 4 sectores y los 2 monográficos están fuera del corpus por construcción, y son la población donde M-IMG está medida (alert-cloud-vertical-web-3 vive en monografico.ts). Esta sonda no la cubre.",
+    "sabotaje": "selector-muerto"
+  },
+  "veredictos": {
+    "igual": 0,
+    "clonSinSrcset": 0,
+    "originalSinSrcset": 0,
+    "distinto": 0,
+    "sinPareja": 0
+  },
+  "porRuta": {
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/running-for-clean-air": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/contaminacion-por-metano": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/metano": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/emisiones-atmosfericas": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/accesorios": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/kunak-api": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/monitor-calidad-aire": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "imagenes": 0,
+      "igual": 0,
+      "clonSinSrcset": 0,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    }
+  },
+  "detalle": []
+}

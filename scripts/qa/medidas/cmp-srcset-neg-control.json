@@ -1,0 +1,1836 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "original": "corpus/ congelado (24 de 309 páginas emparejadas con el build)",
+    "clon": "HTML servido por next start (no src/lib)",
+    "unidad": "par (ruta × imagen origen) — NO la ruta",
+    "alcance": {
+      "rutasEmparejadas": 24,
+      "imagenes": 311,
+      "rutasDelBuildFuera": [
+        "/",
+        "/sectores/calidad-del-aire-en-las-ciudades",
+        "/sectores/contaminacion-por-construccion",
+        "/sectores/control-de-emisiones-industriales",
+        "/sectores/estudio-de-la-contaminacion-atmosferica",
+        "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+        "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+      ]
+    },
+    "fronteraMImg": "los 4 sectores y los 2 monográficos están fuera del corpus por construcción, y son la población donde M-IMG está medida (alert-cloud-vertical-web-3 vive en monografico.ts). Esta sonda no la cubre.",
+    "sabotaje": "control"
+  },
+  "veredictos": {
+    "igual": 140,
+    "clonSinSrcset": 70,
+    "originalSinSrcset": 0,
+    "distinto": 5,
+    "sinPareja": 96
+  },
+  "porRuta": {
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "imagenes": 18,
+      "igual": 8,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 9
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "imagenes": 24,
+      "igual": 15,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 8
+    },
+    "/running-for-clean-air": {
+      "imagenes": 19,
+      "igual": 9,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 1,
+      "sinPareja": 8
+    },
+    "/contaminacion-por-metano": {
+      "imagenes": 18,
+      "igual": 5,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 4,
+      "sinPareja": 8
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "imagenes": 10,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 8
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "imagenes": 16,
+      "igual": 7,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 8
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "imagenes": 2,
+      "igual": 0,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/metano": {
+      "imagenes": 7,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 5
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "imagenes": 17,
+      "igual": 11,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 5
+    },
+    "/emisiones-atmosfericas": {
+      "imagenes": 6,
+      "igual": 0,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 5
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "imagenes": 3,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "imagenes": 3,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "imagenes": 3,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "imagenes": 3,
+      "igual": 1,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "imagenes": 4,
+      "igual": 0,
+      "clonSinSrcset": 4,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "imagenes": 1,
+      "igual": 0,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "imagenes": 12,
+      "igual": 7,
+      "clonSinSrcset": 3,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 2
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "imagenes": 19,
+      "igual": 15,
+      "clonSinSrcset": 3,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 1
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "imagenes": 1,
+      "igual": 0,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "imagenes": 1,
+      "igual": 0,
+      "clonSinSrcset": 1,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 0
+    },
+    "/accesorios": {
+      "imagenes": 18,
+      "igual": 1,
+      "clonSinSrcset": 14,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 3
+    },
+    "/kunak-api": {
+      "imagenes": 18,
+      "igual": 13,
+      "clonSinSrcset": 2,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 3
+    },
+    "/monitor-calidad-aire": {
+      "imagenes": 51,
+      "igual": 28,
+      "clonSinSrcset": 8,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 15
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "imagenes": 37,
+      "igual": 15,
+      "clonSinSrcset": 19,
+      "originalSinSrcset": 0,
+      "distinto": 0,
+      "sinPareja": 3
+    }
+  },
+  "detalle": [
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/05/PM10-measurement-in-coarse-particle-environments.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w",
+        "2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg 480w",
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-480x320.jpg 480w",
+        "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg 480w",
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-480x320.jpg 480w",
+        "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak.png",
+      "veredicto": "distinto",
+      "original": [
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-1280x721.png 1280w",
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-480x270.png 480w",
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-980x552.png 980w",
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak.png 1751w"
+      ],
+      "clon": [
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-480x270.png 480w",
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak-980x552.png 980w",
+        "2025/02/Lagos-Nigeria-estadio-monitorizacion-Running-for-Clean-Air-World-Athletics-Kunak.png 1751w"
+      ]
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/05/PM10-measurement-in-coarse-particle-environments.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/PM10-measurement-in-coarse-particle-environments-480x320.jpg 480w",
+        "2026/05/PM10-measurement-in-coarse-particle-environments-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/05/Beam-Beijing-Pollution_UFP_Kunak.png",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/Beam-Beijing-Pollution_UFP_Kunak-480x320.png 480w",
+        "2026/05/Beam-Beijing-Pollution_UFP_Kunak-980x654.png 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-e1736246793350.png",
+      "veredicto": "distinto",
+      "original": [
+        "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-480x404.png 480w",
+        "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-980x826.png 980w"
+      ],
+      "clon": [
+        "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-1280x1078.png 1280w",
+        "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-480x404.png 480w",
+        "2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF-980x826.png 980w"
+      ]
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/01/Gestion-vertedero-scaled-e1736248078288.jpg",
+      "veredicto": "distinto",
+      "original": [
+        "2025/01/Gestion-vertedero-480x320.jpg 480w",
+        "2025/01/Gestion-vertedero-980x653.jpg 980w"
+      ],
+      "clon": [
+        "2025/01/Gestion-vertedero-1280x853.jpg 1280w",
+        "2025/01/Gestion-vertedero-480x320.jpg 480w",
+        "2025/01/Gestion-vertedero-980x653.jpg 980w"
+      ]
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/01/Metano_Britannica-e1736246813444.jpg",
+      "veredicto": "distinto",
+      "original": [
+        "2025/01/Metano_Britannica-480x339.jpg 480w",
+        "2025/01/Metano_Britannica-980x693.jpg 980w"
+      ],
+      "clon": [
+        "2025/01/Metano_Britannica-1280x905.jpg 1280w",
+        "2025/01/Metano_Britannica-480x339.jpg 480w",
+        "2025/01/Metano_Britannica-980x693.jpg 980w"
+      ]
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-scaled-e1736250883537.jpg",
+      "veredicto": "distinto",
+      "original": [
+        "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-480x320.jpg 480w",
+        "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-980x653.jpg 980w"
+      ],
+      "clon": [
+        "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-1280x853.jpg 1280w",
+        "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-480x320.jpg 480w",
+        "2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap-980x653.jpg 980w"
+      ]
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak-480x320.jpg 480w",
+        "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak-1024x682.jpg 1024w",
+        "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak-480x320.jpg 480w",
+        "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w",
+        "2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg 480w",
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w",
+        "2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-480x320.jpg 480w",
+        "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/metano",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2025/07/aaqms.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "origen": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "origen": "2022/12/Kunak-AIR-Pro-1024.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/Kunak-AIR-Pro-1024-480x428.jpg 480w",
+        "2022/12/Kunak-AIR-Pro-1024-980x873.jpg 980w",
+        "2022/12/Kunak-AIR-Pro-1024.jpg 1024w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "origen": "2023/01/air-cloud.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/air-cloud-480x480.jpg 480w",
+        "2023/01/air-cloud-980x980.jpg 980w",
+        "2023/01/air-cloud.jpg 1200w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "origen": "2023/01/cartridges-300.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/cartridges-300-150x150.jpg 150w",
+        "2023/01/cartridges-300.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "origen": "2022/12/Kunak-AIR-Pro-1024.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/Kunak-AIR-Pro-1024-480x428.jpg 480w",
+        "2022/12/Kunak-AIR-Pro-1024-980x873.jpg 980w",
+        "2022/12/Kunak-AIR-Pro-1024.jpg 1024w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "origen": "2023/01/air-cloud.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/air-cloud-480x480.jpg 480w",
+        "2023/01/air-cloud-980x980.jpg 980w",
+        "2023/01/air-cloud.jpg 1200w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "origen": "2023/02/Hydrogen-sulfide.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/02/Hydrogen-sulfide-480x390.jpg 480w",
+        "2023/02/Hydrogen-sulfide.jpg 492w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "origen": "2023/02/Volatile_organic_compounds.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/02/Volatile_organic_compounds-480x390.jpg 480w",
+        "2023/02/Volatile_organic_compounds.jpg 492w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "origen": "2022/12/Kunak-AIR-Pro-1024.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/Kunak-AIR-Pro-1024-480x428.jpg 480w",
+        "2022/12/Kunak-AIR-Pro-1024-980x873.jpg 980w",
+        "2022/12/Kunak-AIR-Pro-1024.jpg 1024w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "origen": "2023/02/particulate-matter-sensor.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/02/particulate-matter-sensor-480x480.jpg 480w",
+        "2023/02/particulate-matter-sensor-980x980.jpg 980w",
+        "2023/02/particulate-matter-sensor.jpg 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "origen": "2023/01/air-cloud.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/air-cloud-480x480.jpg 480w",
+        "2023/01/air-cloud-980x980.jpg 980w",
+        "2023/01/air-cloud.jpg 1200w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2023/03/kunak-air-accessories.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/kunak-air-accessories-480x480.jpg 480w",
+        "2023/03/kunak-air-accessories-980x980.jpg 980w",
+        "2023/03/kunak-air-accessories.jpg 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/kunak_IMG_0017-300x300-2.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0017-300x300-2-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0017-300x300-2.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/kunak_IMG_0015-300x300-1.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0015-300x300-1-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0015-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/kunak-air-indoor-charger.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak-air-indoor-charger-480x480.jpg 480w",
+        "2022/12/kunak-air-indoor-charger.jpg 800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/kunak_IMG_0047-copia-300x300-1.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0047-copia-300x300-1-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0047-copia-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/kunak_IMG_0061-copia-300X300.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0061-copia-300X300-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0061-copia-300X300.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/rain-gauge.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/rain-gauge-480x480.jpg 480w",
+        "2022/12/rain-gauge.jpg 500w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2023/01/Sound-level-meter.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/Sound-level-meter-150x150.jpg 150w",
+        "2023/01/Sound-level-meter.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/pyranometer.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/pyranometer-480x480.jpg 480w",
+        "2022/12/pyranometer.jpg 500w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/apogee-su-202-ultraviolet-A-sensor.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/apogee-su-202-ultraviolet-A-sensor-480x260.jpg 480w",
+        "2022/12/apogee-su-202-ultraviolet-A-sensor-980x531.jpg 980w",
+        "2022/12/apogee-su-202-ultraviolet-A-sensor.jpg 1024w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2022/12/WBGT-300x300-1.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/WBGT-300x300-1-150x150.jpg 150w",
+        "2022/12/WBGT-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2024/07/gashood-air-pro.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2024/07/gashood-air-pro-480x480.jpg 480w",
+        "2024/07/gashood-air-pro-980x980.jpg 980w",
+        "2024/07/gashood-air-pro.jpg 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2024/07/gashood-air-pro-lite.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2024/07/gashood-air-pro-lite-1280x427.jpg 1280w",
+        "2024/07/gashood-air-pro-lite-480x160.jpg 480w",
+        "2024/07/gashood-air-pro-lite-980x327.jpg 980w",
+        "2024/07/gashood-air-pro-lite.jpg 1500w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2020/08/donostia-urban-air-quality-1.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2020/08/donostia-urban-air-quality-1-480x320.jpg 480w",
+        "2020/08/donostia-urban-air-quality-1-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430-1024x576.jpg 1024w",
+        "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430-480x270.jpg 480w",
+        "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430-980x551.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2025/07/litoral-con-sargazo-y-vida-marina.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/07/litoral-con-sargazo-y-vida-marina-480x320.jpg 480w",
+        "2025/07/litoral-con-sargazo-y-vida-marina-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/accesorios",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "origen": "2023/02/kunak-api.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/02/kunak-api-480x480.jpg 480w",
+        "2023/02/kunak-api-980x980.jpg 980w",
+        "2023/02/kunak-api.jpg 1200w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "origen": "2025/03/Industria-petroquimica.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/03/Industria-petroquimica-1024x686.jpg 1024w",
+        "2025/03/Industria-petroquimica-480x321.jpg 480w",
+        "2025/03/Industria-petroquimica-980x656.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "origen": "2020/08/donostia-urban-air-quality-1.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2020/08/donostia-urban-air-quality-1-480x320.jpg 480w",
+        "2020/08/donostia-urban-air-quality-1-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "origen": "2020/09/semana-movilidad-europea-particulas-y-gases.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2020/09/semana-movilidad-europea-particulas-y-gases-480x267.jpg 480w",
+        "2020/09/semana-movilidad-europea-particulas-y-gases.jpg 900w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak_air_pro_completo-isolated-2.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_air_pro_completo-isolated-2-126x300.png 126w",
+        "2022/12/kunak_air_pro_completo-isolated-2.png 377w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/co_mexico.webp",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/09/co_mexico-480x288.webp 480w",
+        "2023/09/co_mexico-980x588.webp 980w",
+        "2023/09/co_mexico.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/NO_sweden.webp",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/09/NO_sweden-480x288.webp 480w",
+        "2023/09/NO_sweden-980x588.webp 980w",
+        "2023/09/NO_sweden.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/NO2_UK.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/NO2_UK-480x288.webp 480w",
+        "2023/09/NO2_UK-980x588.webp 980w",
+        "2023/09/NO2_UK.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/O3_spain.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/O3_spain-480x288.webp 480w",
+        "2023/09/O3_spain-980x588.webp 980w",
+        "2023/09/O3_spain.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/SO2_france.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/SO2_france-480x288.webp 480w",
+        "2023/09/SO2_france-980x588.webp 980w",
+        "2023/09/SO2_france.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/H2S_spain.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/H2S_spain-480x288.webp 480w",
+        "2023/09/H2S_spain-980x588.webp 980w",
+        "2023/09/H2S_spain.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/PM10_belgium.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/PM10_belgium-480x288.webp 480w",
+        "2023/09/PM10_belgium-980x588.webp 980w",
+        "2023/09/PM10_belgium.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/09/PM2.5_belgium.webp",
+      "veredicto": "sinPareja",
+      "original": [
+        "2023/09/PM2.5_belgium-480x288.webp 480w",
+        "2023/09/PM2.5_belgium-980x588.webp 980w",
+        "2023/09/PM2.5_belgium.webp 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2023/01/co2_glasgow.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/01/co2_glasgow-480x288.jpg 480w",
+        "2023/01/co2_glasgow-980x588.jpg 980w",
+        "2023/01/co2_glasgow.jpg 1000w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak_IMG_0017-300x300-2.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0017-300x300-2-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0017-300x300-2.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak_IMG_0015-300x300-1.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2022/12/kunak_IMG_0015-300x300-1-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0015-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak-air-indoor-charger.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak_IMG_0047-copia-300x300-1.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2022/12/kunak_IMG_0047-copia-300x300-1-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0047-copia-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/kunak_IMG_0061-copia-300X300.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2022/12/kunak_IMG_0061-copia-300X300-150x150.jpg 150w",
+        "2022/12/kunak_IMG_0061-copia-300X300.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/rain-gauge.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/pyranometer.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/WBGT-300x300-1.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2022/12/WBGT-300x300-1-150x150.jpg 150w",
+        "2022/12/WBGT-300x300-1.jpg 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2022/12/apogee-su-202-ultraviolet-A-sensor.jpg",
+      "veredicto": "sinPareja",
+      "original": null,
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2020/11/detectores-de-calidad-del-aire-trafico-coronavirus-480x270.jpg 480w",
+        "2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg 888w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2025/05/contaminacion_acustica.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/05/contaminacion_acustica-480x320.jpg 480w",
+        "2025/05/contaminacion_acustica-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2021/09/conferencia-de-las-partes-cop26-cita-ineludible-480x267.jpg 480w",
+        "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg 900w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/02/industrial-woman-engineer-using-the-cloud.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/02/industrial-woman-engineer-using-the-cloud-480x320.jpg 480w",
+        "2023/02/industrial-woman-engineer-using-the-cloud-980x654.jpg 980w",
+        "2023/02/industrial-woman-engineer-using-the-cloud.jpg 1024w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/04/kunak-cloud-dispositivos.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/04/kunak-cloud-dispositivos-480x613.png 480w",
+        "2023/04/kunak-cloud-dispositivos.png 626w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Control-panel.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Control-panel-1280x853.jpg 1280w",
+        "2023/03/Control-panel-480x320.jpg 480w",
+        "2023/03/Control-panel-980x653.jpg 980w",
+        "2023/03/Control-panel.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Dashboard.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Dashboard-1280x853.jpg 1280w",
+        "2023/03/Dashboard-480x320.jpg 480w",
+        "2023/03/Dashboard-980x653.jpg 980w",
+        "2023/03/Dashboard.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Basic-data-analytics.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Basic-data-analytics-1280x853.jpg 1280w",
+        "2023/03/Basic-data-analytics-480x320.jpg 480w",
+        "2023/03/Basic-data-analytics-980x653.jpg 980w",
+        "2023/03/Basic-data-analytics.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/AQI.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/AQI-1280x853.jpg 1280w",
+        "2023/03/AQI-480x320.jpg 480w",
+        "2023/03/AQI-980x653.jpg 980w",
+        "2023/03/AQI.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Automatic-data-invalidation.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Automatic-data-invalidation-1280x853.jpg 1280w",
+        "2023/03/Automatic-data-invalidation-480x320.jpg 480w",
+        "2023/03/Automatic-data-invalidation-980x653.jpg 980w",
+        "2023/03/Automatic-data-invalidation.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Alert-system.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Alert-system-1280x853.jpg 1280w",
+        "2023/03/Alert-system-480x320.jpg 480w",
+        "2023/03/Alert-system-980x653.jpg 980w",
+        "2023/03/Alert-system.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Error-detection.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Error-detection-1280x853.jpg 1280w",
+        "2023/03/Error-detection-480x320.jpg 480w",
+        "2023/03/Error-detection-980x653.jpg 980w",
+        "2023/03/Error-detection.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/CMMS.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/CMMS-1280x853.jpg 1280w",
+        "2023/03/CMMS-480x320.jpg 480w",
+        "2023/03/CMMS-980x653.jpg 980w",
+        "2023/03/CMMS.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Locations-log.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Locations-log-1280x853.jpg 1280w",
+        "2023/03/Locations-log-480x320.jpg 480w",
+        "2023/03/Locations-log-980x653.jpg 980w",
+        "2023/03/Locations-log.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Data-invalidation-tool.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Data-invalidation-tool-1280x853.jpg 1280w",
+        "2023/03/Data-invalidation-tool-480x320.jpg 480w",
+        "2023/03/Data-invalidation-tool-980x653.jpg 980w",
+        "2023/03/Data-invalidation-tool.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Advanced-data-analytics.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Advanced-data-analytics-1280x853.jpg 1280w",
+        "2023/03/Advanced-data-analytics-480x320.jpg 480w",
+        "2023/03/Advanced-data-analytics-980x653.jpg 980w",
+        "2023/03/Advanced-data-analytics.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/External-data-integration.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/External-data-integration-1280x853.jpg 1280w",
+        "2023/03/External-data-integration-480x320.jpg 480w",
+        "2023/03/External-data-integration-980x653.jpg 980w",
+        "2023/03/External-data-integration.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Custom-reports.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Custom-reports-1280x853.jpg 1280w",
+        "2023/03/Custom-reports-480x320.jpg 480w",
+        "2023/03/Custom-reports-980x653.jpg 980w",
+        "2023/03/Custom-reports.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/02/hotspots-detection.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/02/hotspots-detection-1280x853.jpg 1280w",
+        "2023/02/hotspots-detection-480x320.jpg 480w",
+        "2023/02/hotspots-detection-980x653.jpg 980w",
+        "2023/02/hotspots-detection.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Pollution-source-detection.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Pollution-source-detection-1280x853.jpg 1280w",
+        "2023/03/Pollution-source-detection-480x320.jpg 480w",
+        "2023/03/Pollution-source-detection-980x653.jpg 980w",
+        "2023/03/Pollution-source-detection.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2023/03/Particle-count.jpg",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2023/03/Particle-count-1280x853.jpg 1280w",
+        "2023/03/Particle-count-480x320.jpg 480w",
+        "2023/03/Particle-count-980x653.jpg 980w",
+        "2023/03/Particle-count.jpg 1800w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2021/09/conferencia-de-las-partes-cop26-cita-ineludible-480x267.jpg 480w",
+        "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg 900w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2020/09/contaminacion-del-aire-en-el-deporte_.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2020/09/contaminacion-del-aire-en-el-deporte_-480x267.jpg 480w",
+        "2020/09/contaminacion-del-aire-en-el-deporte_.jpg 900w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+      "veredicto": "sinPareja",
+      "original": [
+        "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-480x320.jpg 480w",
+        "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-980x653.jpg 980w"
+      ],
+      "clon": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "origen": "2026/07/certificacion-ens.png",
+      "veredicto": "clonSinSrcset",
+      "original": [
+        "2026/07/certificacion-ens-247x300.png 247w",
+        "2026/07/certificacion-ens.png 300w"
+      ],
+      "clon": null
+    }
+  ]
+}
