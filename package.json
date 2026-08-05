@@ -82,6 +82,7 @@
     "cms:sondeo": "node --env-file=apps/cms/.env scripts/seed/sondeo.mjs",
     "cms:sondeo-neg": "node scripts/seed/sondeo.neg.mjs",
     "cms:captura": "node scripts/seed/captura.mjs",
+    "cms:captura-media": "node scripts/seed/captura-media.mjs",
     "cms:extractor": "node scripts/seed/extractor.mjs",
     "cms:extractor-neg": "node scripts/seed/extractor.neg.mjs",
     "qa:saneador-neg": "node scripts/qa/saneador.neg.mjs",
@@ -101,7 +102,9 @@
     "qa:media-hueco": "node scripts/qa/media-hueco.mjs",
     "qa:media-hueco-neg": "node scripts/qa/media-hueco.neg.mjs",
     "qa:media-regenera": "node scripts/qa/media-regenera.mjs",
-    "qa:media-regenera-neg": "node scripts/qa/media-regenera.neg.mjs"
+    "qa:media-regenera-neg": "node scripts/qa/media-regenera.neg.mjs",
+    "qa:artefacto": "node scripts/qa/artefacto.mjs",
+    "qa:artefacto-neg": "node scripts/qa/artefacto.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

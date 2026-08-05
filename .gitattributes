@@ -10,3 +10,7 @@
 # La captura del corpus es BYTES del original: sin conversion de fin de linea,
 # o el sha256 del INDICE deja de casar en el siguiente checkout.
 corpus/** -text
+
+# La captura de MEDIA son BYTES del original (jpg/png/pdf/mp4): sin conversion
+# de fin de linea, o el sha256 del INDICE deja de casar en el siguiente checkout.
+media-corpus/** -text

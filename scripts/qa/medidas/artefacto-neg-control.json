@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "fecha": "2026-08-04",
+    "eje": "existencia — el artefacto EN DISCO, no el HTML servido",
+    "fuentes": "media-poblaciones.json (referencias servidas, congeladas) · media-corpus/INDICE.json · la DB (ficha de tamaños)",
+    "deudaFichada": "las ausentes de §M-404 se derivan de la congelada y NO ponen el eje en rojo; una NUEVA sí",
+    "sabotaje": "control"
+  },
+  "servido": {
+    "referencias": 406,
+    "ausentesFichadas": 23,
+    "ausentesNuevas": [],
+    "listaFichadas": [
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-1.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-2.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-3.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-4.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-5.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-6.jpg",
+      "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-8.jpg",
+      "/images/uploads/2024/10/fondo-banner-catalogo-ES-2.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-1.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-10.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-11.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-12.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-13.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-14.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-2.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-3.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-4.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-5.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-6.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-7.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-8.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil-9.jpg",
+      "/images/uploads/2025/12/distrito-de-bajas-emisiones-DBE-de-Rio-de-Janeiro-Brasil.jpg"
+    ]
+  },
+  "captura": {
+    "declarados": 0,
+    "ausentes": [],
+    "shaNoCasa": []
+  },
+  "cms": {
+    "tamanosDeclarados": 557,
+    "varianteAusente": [],
+    "dimensionDistinta": []
+  }
+}
