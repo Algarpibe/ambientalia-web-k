@@ -1,5 +1,143 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ M-ORIGEN404 · DECIDIDO — el DATO conserva la referencia (2026-08-05)
+
+**La pregunta que quedó abierta el 05-08 por la mañana:** el corpus cita 3
+ficheros que `kunakair.com` ya no sirve (404 verificado a mano tras los 2
+reintentos). El contenido importado los va a citar y no habrá fichero. Las dos
+salidas eran *dejar el `<img>` como está* (fidelidad) o *quitarlo* (desviación).
+
+**Decidido: el dato conserva la referencia.** Y no es una preferencia — lo
+resuelve un contrato que ya estaba escrito:
+
+> `CLAUDE.md` §1: **fidelidad al píxel sobre criterio propio. Los textos van
+> *verbatim*, erratas incluidas.**
+
+Los tres razonamientos, en orden de peso:
+
+1. **El original SIRVE la referencia.** El `<img src>` está en el HTML que
+   kunakair.com devuelve hoy; lo que falta es el fichero al otro extremo. O sea
+   que **el corpus no está mal: el origen está roto**. Quitar el `<img>` haría
+   que el clon dejara de decir lo que el original dice — que es exactamente la
+   desviación que la regla 1 prohíbe, y encima **irreversible**: el día que
+   alguien reponga el fichero, un dato que conserva la referencia se arregla
+   solo y uno que la borró ya no sabe qué borró.
+2. **Es una decisión de RENDER, y va por su carril.** Que la página pinte un
+   hueco, un marcador de rotura o nada es una elección de plantilla en
+   `apps/web`, y se toma con la página delante. Meterla en el DATO acopla las
+   dos capas y rompe la regla 2 — que es la misma razón por la que **M-IMG
+   cambió de dueño** en la 29.ª en vez de cerrarse desde F2-2.
+3. **Y quitarlo sería sustituir una ausencia por un valor benigno** (regla 6):
+   un cuerpo sin el `<img>` no distingue *«aquí nunca hubo imagen»* de *«aquí
+   había una y el origen la perdió»*.
+
+**Los tres documentos, nombrados — y DERIVADOS de `extractor-corpus.json`
+(`mediaDelCuerpo.detalle`), no recordados** (regla 9):
+
+| documento | fichero que cita |
+|---|---|
+| `entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales` | `2026/05/Emisiones-fugitivas_programa-LDAR.jpg` |
+| `terminos-kunakpedia/oxigeno` | `2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg` |
+| `terminos-kunakpedia/oxido-nitrico-no` | `2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg` |
+
+> ⚠ **Y los tres los tuve que derivar porque los había escrito de memoria.** La
+> primera versión de esta tabla nombraba `monitorizacion-mal-olor-industrial`,
+> `salud-laboral-calidad-aire-interior` y `oxido-nitrico`: **uno inventado y dos
+> mal**, y dos de los tres ni siquiera eran del grupo correcto (son de
+> Kunakpedia, no de blog). Regla 9, séptima instancia — y aquí habría mandado a
+> la tanda siguiente a buscar la imagen rota en tres documentos que no la tienen.
+
+**Y la referencia queda MARCADA, que es la otra mitad del encargo.** El eje
+`existencia` gana su **invariante D** (`qa:artefacto`): cada `data-media` que
+T3b y T4b escriben tiene que resolver, y las ausencias se reparten en tres
+cajones **por predicado, no por lista**:
+
+| cajón | predicado | ¿rojo? |
+|---|---|---|
+| **§M-ORIGEN404** | se pidió y `media-corpus/INDICE.json` registró su error | **no** |
+| **§M-PDF-FB3D** | es un PDF que T4b sacó de un base64, y `listaACapturar` se derivó del markup | **no** |
+| **404 NUEVO** | ni lo uno ni lo otro | **SÍ** |
+
+Sabotaje `media-inventada` en `qa:artefacto-neg` (**7/7**): sin él, las dos
+exenciones serían indistinguibles de un `catch {}`.
+
+> ⚠ **Lo que NO decide esto:** si la página pinta un hueco, un `alt` visible o
+> nada. Eso es de `apps/web` y de la tanda que toque el render — aquí sólo se
+> decide que **el dato no miente sobre lo que el original dice**.
+
+## ⛔ M-PDF-FB3D · 5 PDF que T4b referencia y la captura NUNCA PIDIÓ (2026-08-05)
+
+**No es §M-ORIGEN404 y conviene no mezclarlos:** allí se pidió el fichero y el
+origen dio 404; aquí **no se pidió nunca**, y el mecanismo está medido.
+
+`listaACapturar` (537, congelada en `media-regenera.json`) se derivó barriendo
+**el MARKUP** del cuerpo — `<img src>`, `srcset`, `<source>`. La referencia al
+PDF de un visor FB3D **no está en el markup**: vive dentro del payload **base64**
+de su `<script>`, que es justo lo que T4b aprendió a leer. Ningún barrido de
+markup podía verla, así que su ausencia **no es una captura incompleta: es el
+alcance de la lista**.
+
+| PDF | por qué la lista no lo vio |
+|---|---|
+| `2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf` | sólo en el payload base64 |
+| `2024/11/Efectos-del-ozono-troposferico-…-Ecologistas-en-Accion.pdf` | idem |
+| `2024/12/EEA-Report-Air-Pollution.pdf` | idem |
+| `2025/02/Rapport_Ombrieres_village_olympique_2024.pdf` | idem |
+| `2026/06/Kunak_AIR_Pro_Co-location_tests.pdf` | idem |
+
+**3 de los 8 sí están** —`2021/10/infografia-directrices-de-la-OMS-…pdf` porque
+otra página lo enlaza con un `<a href>`, y los 2 de forma `data-pdf` porque su
+URL sí está en un atributo—. O sea: **la lista acertó en todo lo que podía ver.**
+
+**No se capturan en esta tanda, y es deliberado:** el arreglo correcto **no** es
+descargar 5 ficheros a mano —eso rompe la cadena de derivación de la regla 9—,
+sino que `qa:media-regenera` **derive también** las referencias de los payloads
+FB3D y vuelva a congelar su lista. Eso re-abre la captura, o sea vuelve a pegarle
+al sitio vivo: es una tanda con su propio alcance, no la cola de ésta.
+
+> **Mientras tanto el dato conserva la referencia**, por el mismo razonamiento
+> de §M-ORIGEN404: el original la sirve.
+
+## ⛔ T3B-NO-CANONICO · 2 bloques `wp-caption` que T3b deja sin tocar (2026-08-05)
+
+De los **446** bloques censados, **444 son canónicos** —`<div class="wp-caption">`
++ un `<img>` + `<p class="wp-caption-text">…</p></div>`— y T3b los convierte. Los
+otros 2 no lo son, y no por capricho del original:
+
+| documento | qué tiene dentro |
+|---|---|
+| `entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire` | tras la leyenda, un `<p>` **sin cerrar** y un bloque `calls` (CTA de suscripción) inyectado por shortcode |
+| `terminos-kunakpedia/particulas-en-suspension` | idem |
+
+El `</div>` del contenedor cae **después** del CTA, así que emparejar por
+balanceo —o con un `[\s\S]*?` hasta el siguiente `</p></div>`— **se tragaría el
+CTA entero o saltaría al bloque siguiente**. Se dejan sin tocar y se cuentan
+(regla 6: la ausencia se rechaza, no se sustituye a ojo).
+
+**Consecuencia declarada:** esos 2 conservan `wp-caption`/`wp-caption-text` y su
+`id="attachment_N"`. Es el motivo de que la postcondición de T3b sea *«no queda
+un `wp-caption` **canónico** sin convertir»* y no *«no queda ningún
+`wp-caption`»*: **una guarda que no puede salir verde no discrimina** — el mismo
+defecto que el criterio de F2-2 que exigía cerrar M-IMG desde una fase que no
+puede cerrarlo.
+
+## ⛔ T3-ALCANCE · marcadores del editor que §3.2 T3 NO nombra (2026-08-05)
+
+Censado al escribir T3b, y **no se barren**: §3.2 T3 nombra tres marcadores
+—`wp-image-<id>`, `wp-caption`, `aligncenter`— y éstos no están en la lista.
+
+| marcador | n | dónde |
+|---|---|---|
+| `size-full` · `size-large` · `size-medium` | **405** | el `<img>` de un `wp-caption` |
+| `alignnone` | 29 | el contenedor |
+| `alignright` | **2** | el contenedor |
+
+**Los dos primeros parecen residuo y el tercero es una decisión editorial**
+(flotar a la derecha), así que la respuesta no es la misma para los tres y **no
+se decide desde la tanda que los encuentra**. Ampliar por mi cuenta el alcance de
+una decisión ajena es cómo se pierde contenido sin que nadie lo note. Va al
+ESQUEMA §3.2 como pregunta abierta.
+
 ## ABIERTO · `/kunak-api` — el `<title>` del clon NO es el del original (2026-08-04)
 
 Lo destapó de paso `npm run qa:solutions-seo` (24/24 URLs del CPT, congelado en

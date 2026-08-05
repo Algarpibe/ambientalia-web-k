@@ -1,3 +1,171 @@
+# HANDOFF — F2-2 CERRADA: las diez transformaciones escritas, y las dos derivaciones cazaron un número mal contado cada una
+
+> ⚠ **Tanda 2026-08-05 (32.ª).** Los 7 pasos del encargo. **El escalón NO
+> disparó.** **No se toca `apps/web`** — `git diff cda063a HEAD -- apps/web`
+> vacío, no paga Δ0. **Y es la última tanda que puede decir eso: F2-3 toca
+> `apps/web` por diseño** (§7).
+
+## 0 · Los tres titulares
+
+> **1 · F2-2 CIERRA.** El punto 3 del criterio corregido era el único hueco, y lo
+> cierra **T3b y T4b escritas con su negativo**: `cms:extractor` 209/209 cuerpos
+> · **10/10 postcondiciones limpias** · `cms:extractor-neg` **11/11**, cada
+> sabotaje cayendo por SU postcondición. **Son DIEZ transformaciones, no ocho.**
+>
+> **2 · Las dos derivaciones corrigieron el reparto que traía este HANDOFF, y las
+> dos por lo mismo: LA UNIDAD.** fb3d tiene **6 scripts y 8 VISORES** —2 traen
+> `data-pdf` en el atributo y no cargan script, así que T4a nunca los vio y
+> ningún censo hecho sobre `scriptsQuitados` podía contarlos—. Misma trampa que
+> el «13 mecánicos» de la 30.ª, una vuelta más abajo: allí se contaba de más,
+> aquí de menos.
+>
+> **3 · El invariante D cazó DOS defectos míos antes de estrenarse.** 80
+> referencias que no resolvían porque `claveDeMedia` devolvía la **variante** y
+> no el origen; y las 51 restantes porque **la media del corpus vive en DOS
+> árboles** y yo miraba uno. Un eje nuevo que sale verde a la primera es un eje
+> que no ha mirado.
+
+## 1 · PASO 1 — T3b, y lo que el censo obligó a NO hacer
+
+`wp-caption` → `<figure>`/`<figcaption>` con `data-media`. **444 de 446.**
+
+Censo (446 bloques · 83 páginas): 446/446 con **un** `<img>` y **con leyenda** ·
+420 con `id="attachment_N"` · 24 con `<a>` · **443 bajo subidas, 3 hotlink**.
+
+| decisión | por qué |
+|---|---|
+| el `id` de WP y su `aria-describedby` se van **JUNTOS** | quitar uno y dejar el otro fabrica un **puntero colgante** |
+| `<figure>`/`<figcaption>`, no `<div>`/`<p>` | es el HTML que significa «leyenda de este medio», y **las dos están en las 43 censadas** |
+| `data-media` = **el ORIGEN**, no la variante | `foo-1024x576.jpg` es un **tamaño** de `foo.jpg`. `origenDe` sube a `lib.mjs`: dos copias serían C7 |
+| **nada de emparejar por balanceo** | 2 bloques traen un `calls` inyectado con el `<p>` sin cerrar: el `</div>` cae **después del CTA**, y balancear se lo tragaría |
+
+**Lo que NO se toca, y va como pregunta abierta** (§T3-ALCANCE): `size-*` (405) ·
+`alignnone` (29) · `alignright` (**2**). §3.2 T3 nombra **tres** marcadores y
+éstos no están — ampliar por mi cuenta el alcance de una decisión ajena es cómo
+se pierde contenido sin que nadie lo note.
+
+## 2 · PASO 2 — T4b, con el reparto MEDIDO
+
+| clase | n | qué hace T4b |
+|---|---|---|
+| **`fb3d-flipbook`** | **8** (no 6) | → `<p><a href="<PDF>" data-media="…">TÍTULO</a></p>`. Forma A (6): `guid`+`title` del payload **base64**; forma B (2): `data-pdf` en el atributo |
+| **`flourish`** | **4** | el `<div>` se **conserva** y el `<iframe>` entra dentro — **copiado de un hermano del mismo corpus** que ya lo trae materializado |
+| `twitter` · `instagram` | 3 | **nada**, y es un resultado medido: el `<blockquote>` degrada a cita válida con su enlace |
+| `swiper` · `nbc` | 3 + 1 | **listados** con su documento y su clase §3.3. **No es escalón: es una lista con nombre y dueño** |
+
+Del hermano de Flourish se copia todo menos **la altura** (`673.078px`, que el
+script mide en ejecución para ESA visualización — cablearla sería una familia de
+calibración) y **`data-mce-fragment`** (residuo de TinyMCE).
+
+## 3 · PASO 3 — §M-ORIGEN404 DECIDIDO: el dato conserva la referencia
+
+**Y no es una preferencia: lo resuelve la regla 1** (*verbatim, erratas
+incluidas*). **El original SIRVE la referencia** — lo que falta es el fichero al
+otro extremo, así que el corpus no está mal: el origen está roto. Quitar el
+`<img>` sería una desviación **irreversible**: el día que repongan el fichero, un
+dato que conserva la referencia se arregla solo.
+
+Que la página pinte un hueco es **decisión de render** y va por su carril — la
+misma razón por la que M-IMG cambió de dueño en vez de cerrarse desde F2-2.
+
+**Los 3 documentos van nombrados y DERIVADOS** de `extractor-corpus.json`. La
+primera versión de esa tabla los escribió **de memoria: uno inventado y dos mal**,
+y dos ni eran del grupo correcto. Regla 9, séptima instancia.
+
+**Y la referencia queda MARCADA:** invariante **D** del eje `existencia`, con las
+exenciones como **PREDICADOS y no listas** — «se pidió y el índice registró su
+error» (§M-ORIGEN404) y «es un PDF que T4b sacó de un base64» (§M-PDF-FB3D). Una
+imagen nueva sin fichero no cumple ninguno y **sale roja**. Sabotaje
+`media-inventada`, negativo **7/7**.
+
+## 4 · Los TRES hallazgos, y ninguno daba error
+
+| # | qué | cómo se vio |
+|---|---|---|
+| **1** | **§M-PDF-FB3D · 5 PDF que el CMS iba a referenciar sin fichero detrás.** `listaACapturar` se derivó del **markup** y esas URL viven en **base64**: ningún barrido de markup podía verlas | el invariante D, en su primera corrida |
+| **2** | **`claveDeMedia` devolvía la variante** — 80 referencias sin resolver | idem |
+| **3** | **la media del corpus vive en DOS árboles**: `media-corpus/` y `apps/web/public/images/uploads`, porque `listaACapturar` **resta lo que ya era local** (63 de 600). Mirar uno da 51 falsos positivos | idem |
+
+> **Los tres los encontró el eje nuevo, y dos eran MÍOS.** Es el argumento a
+> favor de estrenar una sonda contra un dato grande y no contra el caso que
+> tienes en la cabeza: 432 documentos reales encuentran lo que 5 inventados no.
+
+## 5 · PASO 4 — la de-duplicación de `w()`, en el sitio común
+
+`clon-base` normalizó el puerto efímero **en su sonda** el 04-08 y ahí se quedó
+— la instancia, no la clase. Pero **`meta.fecha` la tiene TODA congelada que use
+`hoy()`**: la misma medida de otro día estrenaba fichero y la guarda de la regla
+5 avisaba de un cambio que no existe.
+
+`volatilesQueDifieren()` en `lib.mjs`: lista **corta y explícita**, sólo dentro
+de `meta`, **NOMBRADA** en la salida, y **la congelada no se reescribe** (cambiarle
+la fecha sería inventar que se volvió a medir). Con su **CONTROL** en `qa:lib`
+(**85/85**): otro día **Y** otro número tiene que seguir estrenando fichero, o
+«excluye volátiles» sería «de-duplica siempre».
+
+## 6 · PASO 6 — F2-2 contra el criterio de 5 puntos
+
+| # | criterio | estado |
+|---|---|---|
+| 1 | siembra y round-trip idéntico | ✅ **63/63**, negativo 6/6 |
+| 2 | corpus **y media** capturados, congelados y commiteados antes de transformar | ✅ 309 páginas + **534/537 · 335 MB** con `sha256`; los 3 restantes ⇒ §M-ORIGEN404 **decidido** |
+| 3 | **T1–T8 con negativo por transformación** | ✅ **son DIEZ**: 10/10 limpias · negativo **11/11** |
+| 4 | el saneador ejecuta el contrato censado | ✅ 6/6 · 21 hosts · **y admite el corpus transformado por las diez** |
+| 5 | lo almacenado basta para reconstruir el contenido | ✅ caja 7/7 · `srcset` 311/311 · dimensión 73/73 · **relación de media 432 docs, 0 ausencias nuevas** |
+
+**M-IMG NO cierra: cambia de dueño** — deuda de RENDER en `apps/web`. Un criterio
+que no se puede cumplir nunca no discrimina, y por eso mismo la postcondición de
+T3b dice *«no queda un `wp-caption` **canónico**»* y no *«ninguno»*.
+
+## 7 · LO SIGUIENTE — F2-3 · Lectura, y ROMPE LA RACHA POR DISEÑO
+
+> ⚠ **F2-1 y F2-2 se cerraron con `git diff -- apps/web` vacío en todas sus
+> tandas, y eso se ha venido citando como señal de que nada se rompía. F2-3
+> TIENE que tocar `apps/web`**: las páginas pasan a leer por Local API en build.
+> **Desde ahí cada tanda paga su Δ0** y «apps/web intacto» deja de ser un renglón
+> del informe. Confundir el fin de la racha con una regresión —o no medir porque
+> «esta fase ya toca apps/web»— son los dos errores que este aviso evita.
+
+**Aceptación:** la del **§8** con **umbral CERO sobre TODO el
+`prerender-manifest`** —el criterio es el manifest, no un número—, con
+**MARCADOR de frescura** en el HTML servido y **la sonda probada en negativo**
+antes de creerle un «limpio».
+
+**Y la PRUEBA DE OPERACIÓN, que el Δ0 solo no cubre:** importar → **abrir la
+entrada en el admin** → **guardar SIN cambios** → y que el Δ0 **se mantenga**.
+Caza los round-trips destructivos del editor —un save que normaliza HTML,
+reordena claves o «arregla» el rico mueve el render sin que nadie haya editado—.
+Es la mitad que el piloto de CMS-0e **nunca probó**: un round-trip verde prueba
+que la ida y la vuelta son inversas, **no** que pasar por el editor no normalice.
+
+## 8 · Pendientes que NO bloquean
+
+**23 imágenes 404** (tanda aislada; su Δ0 **se moverá** y ese movimiento es
+**corrección**, a adjudicar ruta a ruta) · **§M-PDF-FB3D** (5 PDF; el arreglo es
+que `media-regenera` los derive y re-congele = **re-abrir la captura**) ·
+**§T3B-NO-CANONICO** (2 de 446) · **§T3-ALCANCE** (`size-*` · `alignnone` ·
+`alignright`) · **swiper ×3 · nbc ×1** sin sustituto · HOME cubo B ·
+`Dockerfile` · 26 celdas ciegas · 6 mínimos · `Breadcrumb` 28 rutas ·
+**CMS-SP-TIPO** · los 5 «distinto» de `cmp-srcset` · **M-IMG**, deuda de RENDER.
+
+## 9 · Lo que NO hay que hacer al empezar
+
+- **No re-capturar media, ni los 5 de §M-PDF-FB3D a mano.** Bajar 5 ficheros
+  sueltos rompe la cadena de derivación (regla 9): el arreglo es que
+  `qa:media-regenera` **derive** las referencias de los payloads FB3D y re-congele
+  su lista. Eso re-abre la captura, y es una tanda con su alcance.
+- **No leer el verde del invariante D como «no falta ninguna imagen».** Faltan
+  **8** (3 + 5), exentas **por predicado** y con ficha. Una novena saldría roja.
+- **No contar T4b por scripts.** Son **8 visores fb3d** y 6 scripts, y la
+  diferencia son 2 sustituciones reales.
+- **No barrer `size-*`/`alignnone`/`alignright` «ya que estamos».** §3.2 T3 no los
+  nombra; `alignright` es decisión editorial y los otros parecen residuo — no es
+  la misma respuesta para los tres.
+- **No dar por hecho que `apps/web` sigue intacto en F2-3.** Ahí cambia el
+  contrato: se toca y **se mide**.
+
+---
+
 # HANDOFF — F2-2 a UNA TANDA de cerrar: la media congelada, el eje `existencia` construido, y sólo faltan T3b y T4b
 
 > ⚠ **Tanda 2026-08-05 (31.ª).** PASOS 1 · 2 del encargo, más el refinamiento de

@@ -449,6 +449,11 @@ negativo significa algo.**
 
 ## F2-2 · Datos
 
+> ✅ **CERRADA el 2026-08-05 (tanda 32.ª)**, contra el criterio **corregido** de 5
+> puntos. Acta punto por punto con su evidencia: §F2-2 · CERRADA, más abajo.
+> **M-IMG no se cerró: cambió de dueño** — es deuda de RENDER en `apps/web`.
+> Quedan 5 fichas nombradas que **no bloquean F2-3**.
+
 > ⚠ **CORREGIDA la premisa de esta fase (2026-08-04). *«`src/lib/*.ts` son los
 > datos»* es cierta de UNAS colecciones y falsa de otras**, y la diferencia
 > decide si una colección se puede sembrar: lo es de los arquetipos que el clon
@@ -723,6 +728,54 @@ masiva necesita el media del bloque 3 y las dos pasadas del ciclo), y no extrae
 los cuerpos de casos · faqs · productos (páginas de **builder**: su contenido
 no vive en un `post_content` — su extracción a bloques es otra mecánica, con
 sus 24 fichas del CPT incluidas).
+
+---
+
+### ✅ F2-2 · CERRADA — las diez transformaciones escritas y con negativo (2026-08-05, tanda 32.ª)
+
+**F2-2 cierra.** El punto 3 era el único hueco del criterio corregido, y lo cierra
+esta tanda: **T3b y T4b escritas, cada una con su sabotaje cayendo por su propio
+invariante, y el negativo entero re-corrido**.
+
+#### Punto por punto contra el criterio CORREGIDO de 5 puntos
+
+| # | criterio | estado | evidencia, con su mandato |
+|---|---|---|---|
+| 1 | el modelo se **siembra** desde los catálogos medidos y **vuelve idéntico** | ✅ | `npm run qa:cms-roundtrip` **63/63** en 13 colecciones · negativo **6/6** |
+| 2 | el corpus se **captura, congela y commitea antes de transformar** — **y su media también** | ✅ | **309 páginas** (27.ª, `corpus/`) + **534 de 537 ficheros · 335 MB** con `sha256` (31.ª, `media-corpus/`), commiteados antes de transformar. Los 3 que faltan **dan 404 en el ORIGINAL** ⇒ §M-ORIGEN404, **decidido hoy** |
+| 3 | **T1–T8 aplicadas con negativo por transformación** | ✅ | **son DIEZ, no ocho**: T1–T8 · **T3b** · **T4b**. `npm run cms:extractor` 209/209 cuerpos · **10/10 postcondiciones limpias** · `cms:extractor-neg` **11/11**, cada sabotaje por SU postcondición |
+| 4 | el **saneador** ejecuta el contrato censado | ✅ | `qa:saneador-neg` **6/6** · 21 hosts firmados · el MISMO código que el `validate` del alta, importado (clase C7) — y **admite el corpus transformado por las diez** |
+| 5 | **lo almacenado basta para reconstruir el contenido** | ✅ | la caja pedida no necesita campo (`media-hueco` 7/7) · el `srcset` del cuerpo viaja **verbatim 311/311** · el pipeline reproduce la dimensión **73/73** (`media-regenera` 5/5) · y ahora **la relación de media es explícita y comprobable**: 432 documentos, **0 ausencias nuevas** (`qa:artefacto` invariante D, negativo 7/7) |
+
+> **El punto 5 es el que más ganó, y no estaba previsto.** *«Lo almacenado basta
+> para reconstruir el contenido»* se venía justificando con la caja y el
+> `srcset`; hasta hoy **nada comprobaba que el fichero al otro extremo
+> existiera**. El invariante D lo comprueba —y de paso destapó §M-PDF-FB3D, 5
+> documentos cuya referencia el CMS iba a guardar sin fichero detrás.
+
+#### M-IMG NO cierra: cambia de DUEÑO, y así queda escrito
+
+**M-IMG es deuda de RENDER en `apps/web` desde la 29.ª.** F2-2 es DATOS, así que
+no puede cerrarla — y ése era exactamente el defecto del criterio original, que
+exigía cerrarla desde aquí. **No se cierra ni se disimula: cambia de dueño**, y
+el dueño es una tanda de `apps/web` que paga Δ0. Ficha viva:
+`PENDIENTES-QA.md` §M-IMG.
+
+> **Es el mismo error, evitado dos veces en esta tanda:** la postcondición de
+> T3b se escribió como *«no queda un `wp-caption` **canónico**»* y no *«no queda
+> ningún `wp-caption`»* por lo mismo — 2 bloques no se pueden convertir sin
+> tragarse un CTA, así que la segunda redacción sería **una guarda que jamás
+> puede salir verde**, y una guarda que no discrimina no informa.
+
+#### Lo que F2-2 deja NOMBRADO al cerrar (y no bloquea F2-3)
+
+| ficha | qué es | dueño |
+|---|---|---|
+| **§M-ORIGEN404** | 3 ficheros que el original ya no sirve. **Decidido: el dato conserva la referencia** (fidelidad; el original la sirve). Que la página pinte un hueco es decisión de render | render, `apps/web` |
+| **§M-PDF-FB3D** | 5 PDF que T4b referencia y `listaACapturar` nunca pidió: la lista se derivó del **markup** y esas URL viven en **base64**. El arreglo es que `qa:media-regenera` las derive y re-congele — o sea **re-abrir la captura**, tanda propia | captura |
+| **§T3B-NO-CANONICO** | 2 de 446 `wp-caption` sin convertir, con su razón medida | — (declarado) |
+| **§T3-ALCANCE** | `size-*` (405) · `alignnone` (29) · `alignright` (2): marcadores que §3.2 T3 **no nombra** y que no se barren por mi cuenta | ESQUEMA §3.2 |
+| **swiper ×3 · nbc ×1** | sin sustituto: decisión de render e imposible. **No es escalón: es una lista con nombre y dueño** | §3.3 |
 
 ---
 
@@ -1129,6 +1182,17 @@ los hace peligrosos:
 ---
 
 ## F2-3 · Lectura
+
+> ⚠ **F2-3 ES LA PRIMERA FASE QUE TIENE QUE TOCAR `apps/web`, y conviene decirlo
+> antes de empezarla.** F2-1 y F2-2 se cerraron con `git diff -- apps/web`
+> **vacío** en todas sus tandas, y esa racha se ha citado como señal de que nada
+> se estaba rompiendo. **Aquí se rompe POR DISEÑO**: las páginas pasan a leer por
+> Local API en build, y eso es exactamente editar `apps/web`.
+>
+> La consecuencia operativa: **desde aquí, cada tanda paga su Δ0** contra la
+> línea base congelada, y «apps/web intacto» deja de ser un renglón del informe.
+> Confundir el fin de la racha con una regresión —o al revés, no medir porque
+> «esta fase ya toca apps/web»— son los dos errores que este aviso evita.
 
 **Entrega.** Las páginas y `generateStaticParams()` **leen por Local API** de
 la DB en build (CMS-0: el SSG se conserva; CMS-0c: Postgres es dependencia de

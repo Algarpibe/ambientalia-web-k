@@ -115,23 +115,35 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
 | comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
 | **`srcset` / media** ⚠ | **24** | 0 | **7** | **`cmp-srcset`** — deriva del build ∩ corpus | **0** *(eje nuevo)* |
-| **existencia (¿el artefacto EN DISCO existe y mide lo que dice?)** ✅ | **—** | 0 | 0 | **`artefacto`** — 1 497 artefactos, negativo 6/6 | **0** *(nombrado 08-05, CONSTRUIDO 08-05)* |
+| **existencia (¿el artefacto EN DISCO existe y mide lo que dice?)** ✅ | **—** | 0 | 0 | **`artefacto`** — **1 929** artefactos, negativo **7/7** | **0** *(nombrado 08-05, CONSTRUIDO 08-05, invariante D 08-05)* |
 
 > ✅ **CONSTRUIDO el 2026-08-05, y su unidad NO es la ruta** — por eso su fila
-> lleva `—` en las columnas de 31. La unidad es **el artefacto**, y son **1 497**:
+> lleva `—` en las columnas de 31. La unidad es **el artefacto**, y son **1 929**:
 > 406 referencias servidas · 534 ficheros capturados · 557 fichas de tamaño del
-> CMS. Declararlo en rutas sería el séptimo contenedor otra vez.
+> CMS · **432 documentos referidos desde el cuerpo transformado**. Declararlo en
+> rutas sería el séptimo contenedor otra vez.
 >
-> Tres invariantes, cada uno con su sabotaje (negativo **6/6**):
+> **CUATRO** invariantes, cada uno con su sabotaje (negativo **7/7**):
 > **A** lo que el clon sirve existe en `apps/web/public` · **B** lo capturado
 > existe y su `sha256` casa · **C** cada tamaño que la ficha del CMS declara
-> existe **y mide exactamente eso**.
+> existe **y mide exactamente eso** · **D** *(añadido el mismo día, con T3b/T4b)*
+> cada `data-media` que el cuerpo transformado declara **resuelve**.
 >
-> **Las 23 ausencias de §M-404 NO lo ponen en rojo**: van en una lista
-> **derivada** de la congelada, y el eje sale ROJO en cuanto aparezca una
-> **nueva**. *Un rojo permanente por deuda ajena es cómo se consigue que nadie
-> lea los rojos*; una lista escrita a mano sería peor, porque envejece contra el
-> repo (regla 9).
+> ⚠ **Y D es el que hay que leer con cuidado, porque nació encontrando dos
+> defectos MÍOS y uno del alcance de la captura:** 80 referencias que no
+> resolvían porque la llave era **la variante y no el origen**; 51 más porque
+> **la media del corpus vive en DOS árboles** (`media-corpus/` y
+> `apps/web/public/images/uploads`, ya que `listaACapturar` **resta lo que ya era
+> local**: 63 de 600); y **§M-PDF-FB3D**, 5 PDF que el CMS iba a referenciar sin
+> fichero detrás porque la lista se derivó del **markup** y esas URL viven dentro
+> de un **base64**. *Un eje nuevo que sale verde a la primera es un eje que no ha
+> mirado.*
+>
+> **Las 23 ausencias de §M-404 NO lo ponen en rojo**, ni las 3 de §M-ORIGEN404 ni
+> las 5 de §M-PDF-FB3D: van en listas **derivadas** —y las de D son **predicados**,
+> no listas—, y el eje sale ROJO en cuanto aparezca una **nueva**. *Un rojo
+> permanente por deuda ajena es cómo se consigue que nadie lea los rojos*; una
+> lista escrita a mano sería peor, porque envejece contra el repo (regla 9).
 
 > ⚠ **CORREGIDO 2026-08-05: la fila de `srcset` decía `24 · 0 · 10`, y
 > `24 + 10 = 34` en una matriz cuyo denominador es 31.** El «10» es

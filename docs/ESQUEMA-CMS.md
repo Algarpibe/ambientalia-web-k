@@ -1494,6 +1494,23 @@ entrada importada fija la respuesta de facto.
 
 Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 
+> ✅ **LAS DIEZ ESTÁN ESCRITAS Y CON NEGATIVO (2026-08-05).** T1–T8 desde el
+> bloque 2; **T3b y T4b**, que llevaban tres tandas nombradas y sin escribir,
+> desde hoy. `scripts/seed/transformaciones.mjs` · `npm run cms:extractor` ·
+> negativo **11/11** (un sabotaje por transformación, cada uno cayendo por SU
+> postcondición, más el control). Congelada: `medidas/extractor-corpus.json`.
+>
+> **El orden es parte del contrato**, y las dos nuevas obligan su sitio **por
+> dato, no por preferencia**: `T8 · T1 · T2 · T3a · T3b · T4b · T4a · T5 · T6 ·
+> T7`.
+>
+> · **T3b después de T2 y T3a** — T2 encuentra el ancho absoluto *por* la clase
+>   `wp-caption`, y 415 de los 446 contenedores traen `aligncenter` en el crudo,
+>   que es la diana de T3a. Adelantar T3b desactivaría a las dos **sin que nada
+>   diera error**;
+> · **T4b ANTES de T4a** — la referencia al PDF de 6 de los 8 visores FB3D vive
+>   **dentro del `<script>`**, así que después de T4a ya no existe.
+
 | # | qué | acción |
 |---|---|---|
 | **T1** | `<a class="et_pb_button">` — **168/209 (80 %)** | → **enlace con `variante: "boton"`**. Es un campo del nodo enlace, no una clase. Hoy el 80 % del corpus depende de una clase del tema para que un enlace parezca botón: eso es acoplamiento contenido↔tema y se corta aquí |
@@ -1504,6 +1521,98 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 | **T6** | `id` de los `h2` | **✅ REGENERAR, no conservar (2026-07-30).** A-SP9 cerrada: **los pone el JS del tema**, no el contenido — 0 `id` en el HTML servido y 16 en el DOM **en la misma página**, y 8 páginas sin excepción (`npm run qa:a-ids`, `medidas/a-ids.json`). No hay nada que migrar: el `id` **no entra en el campo** y el índice del artículo se **deriva** de los encabezados |
 | **T7** | **enlaces internos DENTRO del cuerpo rico** — **181/209** páginas del grupo A llevan enlaces | al importar, **los enlaces cuyo destino sea una ruta que publicamos se reescriben a ruta local; los que apunten fuera se dejan** (la regla de rutas locales de `CLAUDE.md`, aplicada al contenido y no solo a los datos). Nació en la sesión de C-3: dos enlaces dentro del campo rico apuntaban al original y `qa:enlaces` los convirtió en fallo al emitir las rutas nuevas — la sonda vigila la **salida**; T7 es la mitad de **entrada**, para que la guarda no cace uno a uno lo que el import puede reescribir en bloque. ⚠ Vivió solo en el informe de sesión hasta el 2026-07-31 (**mencionado no es documentado**, `CLAUDE.md` §sondas regla 3): una tanda llegó a «corregir» un plan de T1-T7 a T1–T6 comprobando este registro — la comprobación no distingue «nunca existió» de «no se escribió» |
 | **T8** | el **token de Cloudflare Rocket Loader** en el `type` de los `<script>` del cuerpo | **se normaliza a `text/javascript` al importar** (y después T4 decide qué pasa con el script). Rocket Loader reescribe `type="text/javascript"` poniéndole delante un token de 24 hex **distinto en cada petición**, para aplazar la ejecución. Medido al comparar **dos congelaciones de `a-spec` del mismo día**: misma longitud, contenido distinto en **4 de las 14** instancias, y la única diferencia era ese token (evidencia en `medidas/a-spec-SEGUNDA-CARGA-token-cloudflare.json`). Sin T8, **cada re-import marcará esas páginas como cambiadas sin que haya cambiado nada**, y el historial del CMS se llena de ruido que nadie puede explicar. Y hay un argumento de fondo además del operativo: ese `type` **no lo escribió nadie**, lo inyecta la capa de entrega — migrarlo verbatim sería importar un artefacto del CDN como si fuera contenido |
+
+#### 3.2b · T3b — `wp-caption` → `<figure>` con relación de media (2026-08-05)
+
+La segunda mitad de **T3**: *«se descartan; la relación con el media pasa a ser
+**relación a la colección**, no una clase con un id de otro sistema»*. T3a ya se
+llevó `wp-image-<id>` y `aligncenter`; T3b hace lo demás, y son **tres cosas**:
+
+| # | qué | por qué |
+|---|---|---|
+| 1 | `id="attachment_<N>"` **y** `aria-describedby="caption-attachment-<N>"` se van **JUNTOS** | son ids de WordPress. Quitar uno y dejar el otro fabricaría un **puntero colgante**, que es peor que el residuo |
+| 2 | `<div class="wp-caption">…<p class="wp-caption-text">` → **`<figure>`…`<figcaption>`** | la leyenda deja de ser un `<p>` con una clase del tema y pasa a ser el HTML que significa *«ésta es la leyenda de este medio»*. **Las dos etiquetas están en las 43 censadas (209/209)**, así que el saneador las admite sin tocar la whitelist |
+| 3 | **`data-media="<llave>"`** en el `<figure>` | la relación, explícita y comprobable |
+
+**La llave es la del documento, NO la de la variante.** `foo-1024x576.jpg` es un
+**tamaño** de `foo.jpg`, y el documento de la colección es el origen — es lo que
+`media-regenera` ya había decidido al derivar `listaACapturar` (el pipeline
+reproduce la dimensión, 73/73). La función vive en `lib.mjs` (`origenDe`),
+**una sola vez**: la primera versión de T3b tenía su propia copia y devolvía la
+variante, y el invariante D lo cazó con **80 referencias que no resolvían**.
+
+**Y `src` y `data-media` contestan preguntas distintas, a propósito:** el `src`
+sigue apuntando al original —la regla de rutas locales: el destino no está
+publicado— o sea **dónde está hoy**; `data-media` dice **qué documento de nuestra
+colección es**. Conflarlos es exactamente lo que §3.2 T3 prohíbe. Y la **caja que
+el cuerpo pidió** no se pierde: viaja verbatim en el `src`/`srcset` (§la frontera
+del «ancho pedido», `media-hueco` 7/7).
+
+**Censo que fija el alcance** (446 bloques · 83 páginas · `corpus/`): 446/446 con
+**un** `<img>` y **con leyenda** · 420 con `id="attachment_N"` · 24 con el `<img>`
+envuelto en `<a>` · **443 bajo el prefijo de subidas y 3 hotlinkeadas fuera**
+(`eea.europa.eu` · `freudenberg-filter.com` · `ccacoalition.org`), que **no son
+media nuestra** y por tanto salen sin `data-media`, contadas y nombradas.
+
+**Lo que T3b NO hace, y va como pregunta abierta:** `size-full`/`size-large`/
+`size-medium` (**405**), `alignnone` (29) y `alignright` (**2**) sobreviven. §3.2
+T3 nombra **tres** marcadores y éstos no están; los dos primeros parecen residuo
+y el tercero es una decisión editorial, así que la respuesta no es la misma para
+los tres. Ficha: `PENDIENTES-QA.md` §T3-ALCANCE.
+
+**Y 2 de los 446 quedan sin convertir**, declarados: su `<p>` sin cerrar mete un
+bloque `calls` dentro del contenedor y el `</div>` cae después del CTA, así que
+emparejar por balanceo se lo tragaría. `PENDIENTES-QA.md` §T3B-NO-CANONICO.
+
+#### 3.2c · T4b — la sustitución, y la UNIDAD que estaba mal contada (2026-08-05)
+
+§3.3 reparte los 17 `<script>` en **nodo-embed tipado (7)** y **eliminación con
+sustitución (10)**. T4a ejecuta la eliminación; T4b la sustitución de las dos
+clases que la tienen **derivable**.
+
+> ⚠ **LA UNIDAD NO ES EL `<script>`, ES EL CONTENEDOR — y contarlo mal dejaba
+> fuera dos sustituciones.** El reparto que traía el HANDOFF sale de
+> `scriptsQuitados`, o sea de contar **scripts**:
+>
+> | clase | scripts | contenedores | por qué difieren |
+> |---|---|---|---|
+> | `fb3d` | 6 | **8** | 2 visores traen `data-pdf="<URL>"` en el atributo y **no cargan script**: T4a nunca los vio, así que ningún censo hecho sobre `scriptsQuitados` podía contarlos |
+> | `flourish` | 4 | 5 | 1 ya trae su `<iframe>` materializado — **y es la que da la forma** |
+>
+> Es la misma trampa que el «13 mecánicos» de la tanda 30.ª, una vuelta más
+> abajo: allí se contaba como trabajo lo que no lo era; aquí se dejaba fuera
+> trabajo que sí lo es. **Se cuenta en la unidad sobre la que se actúa.**
+
+| clase | n | qué hace T4b | de dónde sale el dato |
+|---|---|---|---|
+| **`fb3d-flipbook`** | **8** | → `<p><a href="<PDF>" data-media="<llave>">TÍTULO</a></p>` | forma A (6): `posts[<data-id>].data.guid` + `.title` del payload **base64**; forma B (2): `data-pdf` en el atributo, título = nombre del fichero. **Ninguno es texto inventado** |
+| **`flourish`** | **4** | el `<div>` se **conserva** con su `data-src` y el `<iframe>` entra dentro | `data-src="visualisation/<ID>"` → `https://flo.uri.sh/visualisation/<ID>/embed?auto=1`. `flo.uri.sh` ya está en la allowlist firmada (§3.3b) |
+| `twitter` · `instagram` | 3 | **nada, y es un resultado medido** | el `<blockquote>` sobrevive con su texto y su enlace al estado/permalink: degrada a **cita válida** |
+| `swiper-jsdelivr` | 3 | **listado** | decisión de **RENDER**: el dato está (10 · 11 · 11 slides como `<a class="swiper-slide">`). ¿Galería nativa? — abierto |
+| `nbc` | 1 | **listado** | **imposible**: el script sólo da la URL del **reproductor** con su `CID` caducable, nunca la del artículo, y §3.3 decidió *enlace a la noticia* |
+
+**La forma del `<iframe>` de Flourish no se inventó: se copió de un hermano del
+mismo corpus.** `entradas-blog/contaminacion-de-la-industria-de-fertilizantes-…`
+trae el embed **ya materializado** —el script había corrido cuando se guardó la
+página—, y es literalmente `<div class="flourish-embed" data-src="visualisation/
+15668216?…"><iframe src="https://flo.uri.sh/visualisation/15668216/embed?auto=1"
+…>`. De él se copia todo menos dos cosas, y las dos con razón:
+
+- **`height: 673.078px`** — lo mide el script en ejecución para **esa**
+  visualización. Copiarlo a las otras cuatro sería cablear el valor de la
+  instancia que tienes delante: una familia de calibración de manual;
+- **`data-mce-fragment="1"`** — residuo de TinyMCE, misma familia que el
+  `style="width:NNNpx"` que T2 se lleva.
+
+**Lo que T4b deja SIN SUSTITUTO no es un escalón: es una lista con nombre y
+dueño** —3 swiper (decisión de render, con su §3.3) y 1 NBC (imposible)—, y el
+extractor la imprime en cada corrida. Regla 6: una transformación que falta se
+rechaza, no se sustituye a ojo.
+
+**Y §M-ORIGEN404 queda decidido con esto** (`PENDIENTES-QA.md`): **el dato
+conserva la referencia**, porque el original la sirve; que la página pinte un
+hueco es decisión de render y va por su carril. La ausencia del artefacto se
+vigila aparte, en el **invariante D** del eje `existencia`.
 
 ### 3.3 · Los `<script>`, clasificados uno a uno
 
