@@ -110,16 +110,55 @@ export const LISTADOS = {
   ),
 } as const;
 
-/* ── MEDIA (CMS-0b) ────────────────────────────────────────────────────── */
+/* ── MEDIA (CMS-0b) ──────────────────────────────────────────────────────
+ * ⚠ **CORREGIDO 2026-08-04 contra el censo de las 309 páginas del corpus**
+ * (`qa:media-srcset`, `medidas/media-srcset.json`). La lista anterior salía de
+ * **14 instancias** y traía dos errores que sólo se ven con el censo delante:
+ *
+ * **1 · `card: {width: 1024, height: 683}` FORZABA UN RECORTE QUE EL ORIGINAL
+ * NUNCA PRODUCE.** El `fit` por defecto de Payload es `cover`, así que declarar
+ * los dos lados **recorta a 3:2 todo lo que entre**. Medido: la caja de 1024
+ * emite **10 formas WxH distintas** —1024x682 · 1024x1024 · 1024x576 ·
+ * 1024x683 · 1024x797 …—, o sea que **conserva la proporción de cada imagen**.
+ * `1024x683` era una de las diez, no la forma de la caja. Pasa a `width: 1024`.
+ *
+ * **2 · faltaban dos cajas que el CUERPO sí usa:** `300` (6 candidatos en
+ * cuerpo) y `768` (1). Pocos, pero el criterio es «el corpus lo usa en el
+ * cuerpo», no la frecuencia — y una imagen sin su variante es exactamente el
+ * defecto que M-IMG describe.
+ *
+ * **Lo que NO se declara, y con su razón medida** — `caja150` (50 candidatos),
+ * `caja300` (311) y `caja600` (16): **las tres están a CERO en el cuerpo**, son
+ * del cascarón (el sello del pie, los avatares, las galerías del tema). Payload
+ * genera toda variante declarada para toda subida, así que declararlas costaría
+ * tres ficheros por imagen para algo que ningún contenido pide. `caja600`
+ * además **recorta** (600x600 y 576x600 sobre originales de 0.75 y 0.5627), y
+ * es la única caja del corpus que lo hace: si algún día entra, entra con
+ * `width`+`height`+`fit` declarados, no por omisión.
+ *
+ * **`cardWide` se queda, y su alcance es OTRO**: `1080x675` no aparece **ni una
+ * vez** en los 4318 candidatos del corpus. Su evidencia es `lh-tarjetas`, o sea
+ * las tarjetas de LISTADO, que no están en el corpus ni construidas todavía. Se
+ * conserva con la procedencia escrita para que nadie la lea como parte del
+ * mismo censo — que es justo lo que pasaba con `card`.
+ *
+ * ⚠ **Y lo que esta lista NO puede cerrar, dicho aquí porque es donde se busca:
+ * M-IMG.** El censo demostró que el `srcset` **no es función de la imagen** —39
+ * de 519 orígenes se sirven con `srcset` distinto según el punto de uso—, así
+ * que un juego de tamaños, por bien medido que esté, genera los FICHEROS y no
+ * el ATRIBUTO. Ver ESQUEMA §CMS-0b/M-IMG y `medidas/cmp-srcset.json`.
+ */
 export const IMAGE_SIZES = d(
   [
+    { nombre: "w300", width: 300 },
     { nombre: "sm", width: 480 },
+    { nombre: "w768", width: 768 },
     { nombre: "md", width: 980 },
-    { nombre: "card", width: 1024, height: 683 },
-    { nombre: "cardWide", width: 1080, height: 675 },
+    { nombre: "card", width: 1024 },
     { nombre: "lg", width: 1280 },
+    { nombre: "cardWide", width: 1080, height: 675 },
   ],
-  "§CMS-0b · unión de los anchos observados; los 848 y 1800 son tamaño nativo, no variante",
+  "§CMS-0b · CENSADO en las 309 páginas del corpus (qa:media-srcset): las 6 cajas que el CUERPO usa, todas de ancho libre. `cardWide` viene de lh-tarjetas (listados), NO del corpus. Fuera por medida: caja150/300/600 (0 en cuerpo, cascarón) y los nativos 848/1800",
 );
 
 /**
