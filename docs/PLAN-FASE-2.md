@@ -726,6 +726,57 @@ sus 24 fichas del CPT incluidas).
 
 ---
 
+### ⛔ F2-2 · BLOQUE 3 · tercera reentrada — la media CONGELADA y el eje `existencia` construido (2026-08-05, tanda 31.ª)
+
+**F2-2 NO cierra**, y falta exactamente una cosa: **T3b y T4b**. Todo lo demás
+del criterio corregido de 5 puntos está cumplido y con evidencia.
+
+#### Punto por punto contra el criterio CORREGIDO
+
+| # | criterio | estado | evidencia |
+|---|---|---|---|
+| 1 | el modelo se **siembra** y **vuelve idéntico** | ✅ | `qa:cms-roundtrip` **63/63**, negativo 6/6 |
+| 2 | el corpus se **captura, congela y commitea antes de transformar** — **y su media también** | ✅ | 309 páginas (27.ª) + **534 de 537 ficheros, 335 MB** (hoy). Los 3 que faltan **dan 404 en el ORIGINAL** ⇒ §M-ORIGEN404 |
+| 3 | **T1–T8 con negativo por transformación** | ⛔ | T1–T8 ✅ 9/9 · **T3b y T4b sin escribir** |
+| 4 | el **saneador** ejecuta el contrato censado | ✅ | 6/6, 21 hosts |
+| 5 | **lo almacenado basta para reconstruir el contenido** | ✅ | la caja pedida no necesita campo (`media-hueco` 7/7) · el `srcset` del cuerpo viaja verbatim **311/311** · el pipeline reproduce la dimensión **73/73** (`media-regenera` 5/5) |
+
+> **El original sale del camino crítico.** Con el HTML congelado (27.ª) y ahora
+> los bytes, **es la última vez que este proyecto le pega al sitio vivo por
+> media**: el extractor, T3b, T4b y el alta corren OFFLINE contra ficheros con
+> `sha256`.
+
+#### El eje `existencia`, construido — y por qué aquí
+
+La verificación del punto 2 lo necesitaba: **nada en el instrumento miraba el
+artefacto en disco**. `npm run qa:artefacto` · **1 497 artefactos** (406 servidos
+· 534 capturados · 557 fichas de tamaño del CMS) · negativo **6/6**, con un
+sabotaje por invariante. Las 23 de §M-404 van en lista **derivada** y no lo ponen
+en rojo; una **nueva** sí.
+
+#### T4b, refinado por medida: 10 necesitan sustitución, no 13
+
+Se comprobó **corriendo T1–T8** y mirando qué sobrevive:
+
+| clase | n | qué pasa sin su `<script>` |
+|---|---|---|
+| `fb3d-flipbook` | 6 | ⚠ **necesita sustitución** — la referencia al PDF vive **sólo** dentro del payload base64 |
+| `flourish` | 4 | ⚠ **necesita sustitución** — el `<div class="flourish-embed">` sobrevive **vacío**: no renderiza nada |
+| `twitter` · `instagram` | 3 | ✅ **NO necesitan nada** — el `<blockquote>` sobrevive con su texto y su enlace: degrada a cita válida |
+| `swiper-jsdelivr` | 3 | ⛔ **decisión de render** — el dato está (10–11 slides) |
+| `nbc` | 1 | ⛔ **imposible** — sólo la URL del reproductor |
+
+> **10 con sustitución derivable · 3 que no la necesitan · 3 decisiones · 1
+> imposible.** El «13 mecánicos» de la tanda anterior contaba como trabajo 3
+> casos que **no lo son**.
+
+#### Lo que NO se hizo
+
+**T3b · T4b · la de-duplicación de `w()`.** Se dice, no se disimula: F2-2 está a
+una tanda de cerrar, y esa tanda es de transformaciones con su negativo.
+
+---
+
 ### ⛔ F2-2 · BLOQUE 3 · segunda reentrada — la captura baja a 537 y T4b resulta DERIVABLE (2026-08-05, tanda 30.ª)
 
 **Dos premisas del PLAN caen, las dos medidas, y las dos en la misma dirección:

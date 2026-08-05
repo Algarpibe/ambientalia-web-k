@@ -1908,6 +1908,58 @@ agujero cubre `<img src>`, `srcset`, `<source>`, `<video>`, los PDF de recursos
 y las fuentes. Nombrarlo por el síntoma que se vio primero sería fabricar una
 sonda que sólo mira imágenes porque las imágenes fueron lo primero que falló.
 
+### ⛔ M-ORIGEN404 · 3 ficheros que el CORPUS referencia y el ORIGINAL ya no sirve (2026-08-05)
+
+**No es deuda del clon, y por eso tiene ficha propia y no entra en §M-404.** La
+captura de media pidió 537 orígenes y **534 llegaron**; los 3 que faltan dan
+**HTTP 404 en `kunakair.com`**, verificado a mano tras los 2 reintentos del
+script, con una petición por fichero:
+
+| fichero | |
+|---|---|
+| `2026/05/Emisiones-fugitivas_programa-LDAR.jpg` | 404 |
+| `2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg` | 404 |
+| `2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg` | 404 |
+
+**El corpus los referencia y el original no los tiene.** Es una **ausencia
+permanente del origen**, no una captura incompleta: reintentar no los va a traer.
+
+> **Y no se puede «arreglar» sin inventar.** El contenido importado los citará y
+> no habrá fichero. Las salidas son *dejar el `<img>` roto como está en el
+> original* (fidelidad) o *quitarlo* (desviación deliberada). **Es una decisión
+> de contrato, y va con las de T4b** — no se resuelve en la tanda que la
+> encuentra (regla 6: la ausencia se rechaza, no se sustituye a ojo).
+
+⚠ **El contrato de `Evaluadas` hizo su trabajo:** la corrida sale **«NO SE PUDO
+EVALUAR · 534 de 537»** con código ≠ 0, en vez de un verde con 3 huecos. Un
+534/537 presentado como completo es exactamente lo que ese contrato existe para
+impedir.
+
+### ✅ M-EXISTENCIA · El eje del ARTEFACTO EN DISCO, construido (2026-08-05)
+
+**Nombrado el 05-08 por la mañana y construido el mismo día**, porque la
+verificación de la captura lo necesitaba de todos modos.
+
+Dos hallazgos independientes en dos días habían caído en el mismo hueco —las 23
+imágenes 404 y `media/` con cero variantes— y **ninguna de las 65 sondas los
+vio**: todo el instrumento mide **HTML SERVIDO**, y la propiedad *«el fichero
+existe y mide lo que dice»* **no vive en el HTML**. Es §La causa común aplicada
+al **soporte**.
+
+`npm run qa:artefacto` · **1 497 artefactos** · negativo **6/6**:
+
+| invariante | qué comprueba | n |
+|---|---|---|
+| **A** | lo que el clon SIRVE existe en `apps/web/public` | 406 |
+| **B** | lo CAPTURADO existe y su `sha256` casa | 534 |
+| **C** | cada tamaño que la ficha del CMS declara existe **y mide eso** | 557 |
+
+Los sabotajes son cuatro y **cada uno por su invariante** —`fichero-ausente` ·
+`sha-cambiado` · `variante-no-generada` (el defecto de los `imageSizes` inertes)
+· `dimension-distinta`— más `sin-fuente` para la regla del cero. **«Existe» y
+«mide lo que dice» van separados a propósito:** una sonda que sólo comprobara la
+primera daría verde sobre un recorte equivocado.
+
 ### ✅ M-SHARP · El arreglo de los `imageSizes` estaba en UNA instancia, no en la CLASE (2026-08-05)
 
 **Cerrado en la misma tanda que lo encontró, y encontrarlo fue un accidente.**

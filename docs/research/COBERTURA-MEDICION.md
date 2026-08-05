@@ -115,7 +115,23 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 | offsets / holgura | **0** | 3 | 28 | — *(ninguna)* | 0 |
 | comportamiento | **0** | 0 | **31** | — *(ninguna)* | 0 |
 | **`srcset` / media** ⚠ | **24** | 0 | **7** | **`cmp-srcset`** — deriva del build ∩ corpus | **0** *(eje nuevo)* |
-| **existencia (¿el recurso servido devuelve 200?)** ⚠⚠ | **0** | 0 | **31** | — *(ninguna)* | **0** *(eje nuevo)* |
+| **existencia (¿el artefacto EN DISCO existe y mide lo que dice?)** ✅ | **—** | 0 | 0 | **`artefacto`** — 1 497 artefactos, negativo 6/6 | **0** *(nombrado 08-05, CONSTRUIDO 08-05)* |
+
+> ✅ **CONSTRUIDO el 2026-08-05, y su unidad NO es la ruta** — por eso su fila
+> lleva `—` en las columnas de 31. La unidad es **el artefacto**, y son **1 497**:
+> 406 referencias servidas · 534 ficheros capturados · 557 fichas de tamaño del
+> CMS. Declararlo en rutas sería el séptimo contenedor otra vez.
+>
+> Tres invariantes, cada uno con su sabotaje (negativo **6/6**):
+> **A** lo que el clon sirve existe en `apps/web/public` · **B** lo capturado
+> existe y su `sha256` casa · **C** cada tamaño que la ficha del CMS declara
+> existe **y mide exactamente eso**.
+>
+> **Las 23 ausencias de §M-404 NO lo ponen en rojo**: van en una lista
+> **derivada** de la congelada, y el eje sale ROJO en cuanto aparezca una
+> **nueva**. *Un rojo permanente por deuda ajena es cómo se consigue que nadie
+> lea los rojos*; una lista escrita a mano sería peor, porque envejece contra el
+> repo (regla 9).
 
 > ⚠ **CORREGIDO 2026-08-05: la fila de `srcset` decía `24 · 0 · 10`, y
 > `24 + 10 = 34` en una matriz cuyo denominador es 31.** El «10» es

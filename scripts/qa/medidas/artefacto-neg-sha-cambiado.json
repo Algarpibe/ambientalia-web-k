@@ -37,9 +37,15 @@
     ]
   },
   "captura": {
-    "declarados": 0,
+    "declarados": 534,
     "ausentes": [],
-    "shaNoCasa": []
+    "shaNoCasa": [
+      {
+        "clave": "2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambiental-y-acústica.mp4",
+        "declarado": "0000000000000000000000000000000000000000000000000000000000000000",
+        "real": "32e7b6a6f604c68df7a021c6171db577f9599a4a472751cc086d74c38a385408"
+      }
+    ]
   },
   "cms": {
     "tamanosDeclarados": 557,

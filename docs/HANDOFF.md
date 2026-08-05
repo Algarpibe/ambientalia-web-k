@@ -1,3 +1,112 @@
+# HANDOFF — F2-2 a UNA TANDA de cerrar: la media congelada, el eje `existencia` construido, y sólo faltan T3b y T4b
+
+> ⚠ **Tanda 2026-08-05 (31.ª).** PASOS 1 · 2 del encargo, más el refinamiento de
+> T4b y el registro. **El escalón NO disparó.** **No se toca `apps/web`** —
+> `git diff f416b85 HEAD -- apps/web` vacío, no paga Δ0.
+
+## 0 · Los tres titulares
+
+> **1 · El original sale del CAMINO CRÍTICO, también para la media.** 534 de 537
+> ficheros capturados (**335 MB**), con `sha256`, `-text` en `.gitattributes` y
+> **commiteados antes de transformar nada**. Con el HTML congelado desde la 27.ª,
+> **es la última vez que este proyecto le pega al sitio vivo por un fichero**.
+>
+> **2 · Los 3 que faltan NO son defecto nuestro: dan HTTP 404 EN EL ORIGINAL**,
+> verificado a mano tras los 2 reintentos. El corpus los referencia y kunakair
+> ya no los tiene ⇒ §M-ORIGEN404, y es **decisión de contrato**, no captura
+> incompleta.
+>
+> **3 · El eje `existencia` está CONSTRUIDO**, y con él se verificó la captura:
+> **1 497 artefactos**, negativo **6/6** con un sabotaje por invariante. Es el
+> hueco donde cayeron los dos hallazgos de los dos días anteriores.
+
+## 1 · PASO 1 — la captura
+
+`npm run cms:captura-media` · lista **derivada** de `media-regenera.json` ·
+secuencial · 500 ms · **nunca en paralelo** · reanudable sin re-pegar ·
+**FUERA de `corpus/`** (meterla dentro movería los denominadores congelados 309
+y 209, citados en actas).
+
+⚠ **Y el contrato de `Evaluadas` hizo su trabajo:** la corrida sale **«NO SE PUDO
+EVALUAR · 534 de 537»** con código ≠ 0, no un verde con 3 huecos.
+
+## 2 · PASO 2 — el eje `existencia`
+
+`npm run qa:artefacto` · **1 497 artefactos** · negativo **6/6**.
+
+| invariante | qué comprueba | n |
+|---|---|---|
+| **A** | lo que el clon SIRVE existe en `apps/web/public` | 406 |
+| **B** | lo CAPTURADO existe y su `sha256` casa | 534 |
+| **C** | cada tamaño que la ficha del CMS declara existe **y mide eso** | 557 |
+
+**«Existe» y «mide lo que dice» van separados a propósito:** una sonda que sólo
+comprobara la primera daría verde sobre un recorte equivocado. Y las 23 de
+§M-404 van en lista **derivada de la congelada**: no ponen el eje en rojo, pero
+**una nueva sí**.
+
+## 3 · T4b, refinado: son 10, no 13
+
+Comprobado **corriendo T1–T8** y mirando qué sobrevive sin su `<script>`:
+
+| clase | n | sin su script |
+|---|---|---|
+| `fb3d-flipbook` | 6 | ⚠ **necesita sustitución** — el PDF vive sólo en el payload base64 |
+| `flourish` | 4 | ⚠ **necesita sustitución** — el `<div>` sobrevive **vacío** |
+| `twitter` · `instagram` | 3 | ✅ **no necesitan nada**: el `<blockquote>` degrada a cita válida con su enlace |
+| `swiper` | 3 | ⛔ decisión de render |
+| `nbc` | 1 | ⛔ imposible |
+
+**El «13 mecánicos» de ayer contaba como trabajo 3 casos que no lo son.**
+
+## 4 · ⛔ LO QUE FALTA PARA CERRAR F2-2 — y es UNA cosa
+
+| # | pendiente |
+|---|---|
+| 1 | **T3b** (`wp-caption` → relación de media con leyenda) |
+| 2 | **T4b** — 10 sustituciones derivables + 4 fichadas (3 swiper + 1 nbc) |
+| 3 | *(no bloquea el criterio)* la de-duplicación de `w()` con campos volátiles |
+
+Los 4 puntos restantes del criterio corregido **están cumplidos con evidencia**
+(tabla punto por punto en `PLAN-FASE-2.md` §F2-2 · tercera reentrada).
+
+## 5 · LO SIGUIENTE — F2-3 · Lectura
+
+**Entrega:** lectura por **Local API en build** (sin HTTP en el camino de los
+datos, que es lo que CMS-0f compró), con **aceptación de umbral CERO sobre TODO
+el `prerender-manifest`**, no sobre una muestra.
+
+> ⚠ **Y la mitad que el piloto de CMS-0e nunca probó: LA PRUEBA DE OPERACIÓN.**
+> Importar → **abrir la entrada en el admin** → **guardar SIN cambios** → y que
+> el Δ0 **se mantenga**. Un round-trip verde prueba que la ida y la vuelta son
+> inversas; **no** prueba que pasar por el editor no normalice nada. Son dos
+> afirmaciones distintas y sólo la primera está medida.
+
+## 6 · Pendientes que NO bloquean
+
+23 imágenes **404** del clon (tanda aislada; su Δ0 **se moverá** y ese movimiento
+es **corrección**, a adjudicar ruta a ruta) · **§M-ORIGEN404** (3 ficheros que el
+original ya no sirve: decisión de contrato, va con T4b) · HOME cubo B ·
+`Dockerfile` · 26 celdas ciegas · 6 mínimos · `Breadcrumb` 28 rutas ·
+**CMS-SP-TIPO** · los 5 «distinto» de `cmp-srcset` · **M-IMG**, que **cambió de
+dueño**: es deuda de RENDER en `apps/web`.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No volver a capturar media.** Está congelada y commiteada con `sha256`; el
+  eje `existencia` lo verifica. Re-pegarle al original es tocar la línea base.
+- **No reintentar los 3 de §M-ORIGEN404.** Dan 404 en el origen: reintentar no
+  los trae. Lo que falta es **decidir** qué hace el contenido importado con
+  ellos.
+- **No contar T4b como 13 sustituciones.** Son **10**; 3 no necesitan nada.
+- **No inventar el sustituto del NBC ni la galería del swiper.** Regla 6: una
+  transformación que falta se rechaza, no se sustituye a ojo.
+- **No leer el verde del eje `existencia` como que no hay imágenes rotas.** Hay
+  **23**, fichadas y con dueño; el eje las excluye **derivándolas**, no
+  ignorándolas.
+
+---
+
 # HANDOFF — F2-2 bloque 3 · la captura baja a 537, T4b resulta DERIVABLE, y los `imageSizes` estaban apagados otra vez
 
 > ⚠ **Tanda 2026-08-05 (30.ª).** PASOS 1 · 4 del encargo, más la corrección del
