@@ -35,7 +35,7 @@
  */
 import { CATALOGOS, TAXONOMIAS_DERIVADAS, cargaCatalogos } from "./catalogos.mjs";
 import { creaContexto, derivaTaxonomias, PREPARA, esSlug, RUTAS_EN_FRONTERA } from "./seed.mjs";
-import { aPayload, camposPropios, eligeBloque, envoltorioTransparente } from "./mapeo.mjs";
+import { aPayload, camposPropios, eligeBloque, envoltorioTransparente } from "../../packages/cms-config/src/mapeo.mjs";
 import { aristasDeConfig, verificaOrden, pintaCiclo, valoresDe } from "./grafo.mjs";
 import { Evaluadas, hoy, w } from "../qa/lib.mjs";
 

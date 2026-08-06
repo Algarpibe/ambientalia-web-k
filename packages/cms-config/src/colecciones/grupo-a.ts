@@ -46,14 +46,14 @@ export const entradasBlog: CollectionConfig = {
      */
     { name: "extracto", type: "textarea" },
     // `category` — 1..n. El rótulo singular/plural se deriva del número.
-    { name: "categorias", type: "relationship", relationTo: "categorias", hasMany: true, required: true },
-    { name: "etiquetas", type: "relationship", relationTo: "etiquetas", hasMany: true },
+    { name: "categorias", type: "relationship", relationTo: "categorias", hasMany: true, required: true, custom: { formaMedida: "objeto" } },
+    { name: "etiquetas", type: "relationship", relationTo: "etiquetas", hasMany: true, custom: { formaMedida: "objeto" } },
     /**
      * `resources` — la categoría del hub de Recursos. **Decide la miga**: con
      * ella `Inicio › Recursos › Artículos y Guías › <hija> › título`; sin ella
      * `Inicio › Blog › título`. Medido en 7 instancias, 6 con y 1 sin.
      */
-    { name: "recurso", type: "relationship", relationTo: "categorias-recursos" },
+    { name: "recurso", type: "relationship", relationTo: "categorias-recursos", custom: { formaMedida: "objeto" } },
     // `CampoRico` = HTML del corpus ⇒ `campoHtml` (CMS-0e · §3.1d).
     campoHtml("cuerpo", { requerido: true }),
     /**
@@ -120,6 +120,7 @@ export const documentosCientificos: CollectionConfig = {
       type: "relationship",
       relationTo: "categorias-cientificas",
       required: true,
+      custom: { formaMedida: "objeto" },
     },
     seoA,
     { name: "titulo", type: "text", required: true },

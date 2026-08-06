@@ -3,6 +3,7 @@ import * as migration_20260804_122225_registro_slugs from './20260804_122225_reg
 import * as migration_20260804_151246_teaser_dato_propio from './20260804_151246_teaser_dato_propio';
 import * as migration_20260804_182349_nivel_titular_por_defecto_3 from './20260804_182349_nivel_titular_por_defecto_3';
 import * as migration_20260805_011925_image_sizes_censados from './20260805_011925_image_sizes_censados';
+import * as migration_20260806_124532_ruta_origen_media from './20260806_124532_ruta_origen_media';
 
 export const migrations = [
   {
@@ -28,6 +29,11 @@ export const migrations = [
   {
     up: migration_20260805_011925_image_sizes_censados.up,
     down: migration_20260805_011925_image_sizes_censados.down,
-    name: '20260805_011925_image_sizes_censados'
+    name: '20260805_011925_image_sizes_censados',
+  },
+  {
+    up: migration_20260806_124532_ruta_origen_media.up,
+    down: migration_20260806_124532_ruta_origen_media.down,
+    name: '20260806_124532_ruta_origen_media'
   },
 ];

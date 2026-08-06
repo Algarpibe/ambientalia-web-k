@@ -2400,7 +2400,88 @@ catálogo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
 | **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos`. **⚠ SIGUE ABIERTA con la razón ya medida — ver §7b**. **Instrumento construido el 2026-08-05: `qa:html-cmp` compara el HTML servido byte a byte y ve lo que el round-trip no ve por sitio (negativo 8/8). Falta que la familia con el `<sup>` esté migrada para que lo ejercite** | nada hoy; es deuda de **instrumento**, y ya tiene la mitad hecha |
-| **CMS-0g · ORIGEN DE MEDIA** | **`media` no guarda la ruta de origen del fichero.** Derivado el 2026-08-05: `filename = "Kunak-AIR-Pro-1024.jpg"`, `url = "/api/media/file/…"`, y **ninguna columna con el directorio**. El dato medido escribe `"/images/…"`, así que **de un id de `media` no sale la ruta que el clon renderiza** ⇒ `aMedido` no puede implementar su `rutaDeMedia`. Dos salidas: **(a)** campo de origen en `media` (cambio de esquema + migración + re-seed) o **(b)** que el render apunte a `/api/media/file/…`, que **cambia el HTML servido y rompe el Δ0** — o sea **M-IMG**, ya registrada como deuda de RENDER (§6) | ⛔ **las 5 familias de ruta que quedan por migrar en F2-3.** Ficha completa con las dos derivaciones en `PENDIENTES-QA.md` §F2-3-MEDIA |
+| ~~**CMS-0g · ORIGEN DE MEDIA**~~ | ~~`media` no guarda la ruta de origen del fichero~~ **✅ CERRADA (2026-08-06): campo de PROCEDENCIA `rutaOrigen`, nullable por construcción — §7c**. La premisa era verdadera y **la conclusión no se seguía**: `qa:media-colision` midió que `filename → ruta` **sí es una función hoy** (112 rutas · 0 repetidos) y **deja de serlo en la unión con el corpus** (646 · **1**, 12 referencias). O sea que tabular sobre `filename` funcionaría hoy y se rompería con contenido dentro | **nada** — desbloquea las 5 familias de F2-3 |
+
+### ✅ 7c · CMS-0g · EL ORIGEN DE MEDIA ES UN CAMPO DE PROCEDENCIA (2026-08-06)
+
+**Y lo primero es que el PASO 1 pudo haberla disuelto, y no la disolvió.** El
+encargo pedía medir antes de modelar —*«si no colisionan, `rutaDeMedia` se
+implementa sobre `filename` y CMS-0g se cierra sin tocar el esquema»*—, que es
+lo que pasó con el ancho pedido. Aquí el dato dijo otra cosa, y decirlo con el
+número es el resultado:
+
+| población | rutas | basenames repetidos | referencias del corpus |
+|---|---:|---:|---:|
+| **dominio** — lo que HOY es fila de `media` | **112** (133 referencias) | **0** | 0 |
+| **corpus** — los orígenes capturados | 534 | **0** | 0 |
+| **unión** — todo lo que ALGUNA VEZ podrá ser fila | 646 | **1** | **12** |
+| `publico` — `public/images` entero | 628 | 12, y **11 son CASCARÓN** (nunca es fila) | — |
+
+Congelado en `medidas/media-colision.json`, negativo **6/6**. Y no se dio por
+supuesto que `filename` FUERA el basename: se verificó contra la salida servida
+—`media/`, que `cms:reset` vacía— y salió **112/112 con el nombre exacto**.
+
+> **La lectura, con su alcance: es una función HOY y no lo es en la unión.** La
+> colisión es `control-de-la-calidad-del-aire-en-ciudades.jpg` en `2023/04` y en
+> `2024/06`, y no es una hipótesis: los dos ficheros están capturados y el corpus
+> los cita 3 y 9 veces.
+
+#### Las tres salidas, costadas
+
+| # | salida | qué cuesta |
+|---|---|---|
+| **a** | **tabular sobre `filename`**, sin campo: un mapa `filename → /images/…` derivado del árbol de `public/images` | **cero hoy.** Y mañana: la colisión de la unión llega con el bloque 2, Payload desduplica a `-1.jpg`, el mapa falla y `rutaDeMedia` tira. Falla **ruidosamente**, que es lo bueno; lo malo es **cuándo**: con contenido dentro. Además el mapa **re-deriva en la lectura un hecho que la escritura sabía y tiró**, y depende de un árbol (`public/images`) que el CMS no posee y que tras F2-4 no contendrá la media nueva |
+| **b** | **campo de PROCEDENCIA en `media`** | un campo + una migración versionada + re-seed —que el seed ya exige desde DB vacía, o sea **gratis dentro del flujo de F2-3**— + el Δ0 que cada familia paga de todos modos |
+| **c** | render contra `/api/media/file/…` | **cambia el HTML servido ⇒ rompe el Δ0**, que es el criterio entero de F2-3. Es **M-IMG**, ya registrada como deuda de RENDER (§6). Descartada para esta fase |
+
+#### El criterio: LA ASIMETRÍA DE DESHACER (la misma de CMS-0f)
+
+Y aquí la asimetría **no es la trivial** («añadir es más fácil que quitar»):
+
+| dirección | qué cuesta |
+|---|---|
+| **de SIN campo a CON campo** (añadirlo después) | La columna es barata en SQL. Lo caro es **rellenarla**: el valor sólo lo sabe **el seed**, que lee `/images/…` de `src/lib`. En cuanto haya altas del admin o ediciones, re-sembrar desde cero pierde lo escrito, así que el relleno sería un **backfill por heurística** — o sea la opción (a), con su colisión conocida y **sin manera de dirimir cuál de las dos rutas era**. **La procedencia sólo es conocible mientras el seed sea la única fuente; después es irrecuperable.** Y `media` es la colección más referenciada: 7 colecciones con `upload`, 133 referencias hoy |
+| **de CON campo a SIN campo** (quitarlo después) | una migración con `DROP COLUMN` y un `rutaDeMedia` que pase a derivar. **Mecánico y electivo**, y el día que se quiera el dato sigue ahí para comprobar que la derivación acierta antes de tirarlo |
+
+> **Irrecuperable→adivinar es caro y llega forzado; guardado→derivar es mecánico
+> y electivo, y encima verificable. Esa asimetría toma la decisión**, exactamente
+> como en CMS-0f.
+
+#### La NATURALEZA decide la forma del campo, no el gusto
+
+Es **procedencia** —de dónde vino esta media al migrar— y no contenido. De ahí
+salen las cuatro propiedades, ninguna elegida a mano:
+
+| propiedad | por qué se sigue de la naturaleza |
+|---|---|
+| **`required: false`** | un alta legítima desde `/admin` **no tiene origen**. Un `required` sobre un campo que un alta legítima no puede rellenar es un esquema roto en producción |
+| **`admin: { readOnly: true }`** | es un **registro de migración**, no un campo que el editor redacte. Editable sería invitar a que alguien lo cambie y mueva el render |
+| **no entra en el round-trip** | `media` no está en `CATALOGOS`: se deriva de los `upload` de las demás. No tiene lado medido, así que no hay nada con qué comparar |
+| **`unique: true`** | dos filas de `media` reclamando el mismo origen es un defecto del seed, y `ctx.media` ya memoiza por ruta. En Postgres un `unique` nullable admite muchos `NULL`, que es justo lo que los altas del admin necesitan |
+
+#### Y el argumento que lo cierra: es la regla que este repo ya tiene escrita
+
+`seed.mjs` lo dice de sus tres métodos de vuelta: *«se construyen con los mismos
+mapas que la ida llenó, **no con una segunda lista**: si fueran independientes,
+un mismo olvido en las dos daría Δ0 en falso»*.
+
+> **La opción (a) es exactamente esa segunda lista** — la vuelta *adivinando* lo
+> que la ida sabía. La (b) es el mismo mapa, persistido. **Una definición, dos
+> sentidos**, igual que `formaDeRel` y `centinelas`.
+
+#### El `null` tiene render, y no es un hueco
+
+`rutaDeMedia(doc)` devuelve `doc.rutaOrigen` si está, y `/api/media/file/<filename>`
+si no. **No es un defecto silencioso**: una media dada de alta en el admin nunca
+existió bajo `/images/`, así que esa URL es **la única que puede funcionar** para
+ella. El `null` no se sustituye por un valor benigno (regla 6) — se traduce a la
+única respuesta correcta para su caso, y la distinción se conserva en el dato.
+
+**Requisito que esto impone a la lectura, y es el mismo que ya tenía `deRel`:**
+el documento de `media` tiene que llegar **poblado** (`depth ≥ 1`). Con el id
+pelado no hay `rutaOrigen` que leer, y `rutaDeMedia` **tira** en vez de devolver
+la URL de la API — que sería la regla 6 otra vez: convertir «no puedo
+reconstruirlo» en «esto es lo que había».
 
 ### ⚠ 7b · CMS-SP-TIPO — por qué el round-trip NO la cierra, medido (2026-08-04)
 

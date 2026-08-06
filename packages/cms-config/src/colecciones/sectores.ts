@@ -30,7 +30,7 @@ export const sectores: CollectionConfig = {
     header,
     heroSector,
     // Cuerpo libre: los bloques que monte cada sector, en su orden.
-    { name: "body", type: "blocks", blocks: BLOQUES_SECTOR },
+    { name: "body", type: "blocks", blocks: BLOQUES_SECTOR, custom: { conKind: true } },
     ...colaComercial,
   ],
 };

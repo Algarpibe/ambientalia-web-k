@@ -145,7 +145,7 @@ export const columnas: Field = {
      * en las DOS páginas. Cablear el 30 metía +30 en esa fila de las dos.
      */
     { name: "mbMovil", type: "number" },
-    { name: "modulos", type: "blocks", blocks: MODULOS_MONOGRAFICO, required: true },
+    { name: "modulos", type: "blocks", blocks: MODULOS_MONOGRAFICO, required: true, custom: { conKind: true } },
   ],
 };
 

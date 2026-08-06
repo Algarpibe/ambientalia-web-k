@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
+    "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
+    "sabotaje": "declaracion-muerta"
+  },
+  "derivado": {
+    "formaDeRel": {
+      "soluciones": "slug",
+      "sectores": "objeto",
+      "categorias": "objeto",
+      "etiquetas": "objeto",
+      "recurso": "objeto",
+      "categoria": "objeto"
+    },
+    "conKind": [
+      [
+        "body",
+        "ctaDescarga"
+      ],
+      [
+        "body",
+        "beneficiosAplicaciones"
+      ],
+      [
+        "body",
+        "claimConFoto"
+      ],
+      [
+        "body",
+        "listaSimple2Col"
+      ],
+      [
+        "body",
+        "mapaProyectos"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "titular"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "imagen"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "claim"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "ctaDescarga"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "texto"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "tabla"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "mapaProyectos"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "boton"
+      ],
+      [
+        "cuerpo.filas.columnas.modulos",
+        "serie"
+      ]
+    ],
+    "centinelas": [
+      "image"
+    ]
+  },
+  "declarado": {
+    "formaDeRel": {
+      "sectores": "objeto",
+      "categorias": "objeto",
+      "etiquetas": "objeto",
+      "recurso": "objeto",
+      "categoria": "objeto",
+      "campo.que.no.existe": "objeto"
+    },
+    "conKind": {
+      "body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
+      "cuerpo.filas.columnas.modulos": [
+        "titular",
+        "claim",
+        "texto",
+        "imagen",
+        "boton",
+        "serie",
+        "tabla",
+        "ctaDescarga",
+        "mapaProyectos"
+      ]
+    },
+    "centinelas": [
+      "image"
+    ]
+  },
+  "contrato": {
+    "evaluadas": 21,
+    "minimo": 21,
+    "suficiente": true
+  },
+  "veredicto": {
+    "verificadas": 21,
+    "huecos": [],
+    "muertas": [
+      {
+        "tipo": "formaDeRel",
+        "ruta": "campo.que.no.existe"
+      }
+    ],
+    "sinEjercitar": [],
+    "ok": false
+  }
+}

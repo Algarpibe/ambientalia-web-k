@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
+    "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
+    "sabotaje": "selector-muerto"
+  },
+  "derivado": {
+    "formaDeRel": {},
+    "conKind": [],
+    "centinelas": []
+  },
+  "declarado": {
+    "formaDeRel": {
+      "sectores": "objeto",
+      "categorias": "objeto",
+      "etiquetas": "objeto",
+      "recurso": "objeto",
+      "categoria": "objeto"
+    },
+    "conKind": {
+      "body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
+      "cuerpo.filas.columnas.modulos": [
+        "titular",
+        "claim",
+        "texto",
+        "imagen",
+        "boton",
+        "serie",
+        "tabla",
+        "ctaDescarga",
+        "mapaProyectos"
+      ]
+    },
+    "centinelas": [
+      "image"
+    ]
+  },
+  "contrato": {
+    "evaluadas": 0,
+    "minimo": 1,
+    "suficiente": false
+  },
+  "veredicto": {
+    "verificadas": 0,
+    "huecos": [],
+    "muertas": [
+      {
+        "tipo": "formaDeRel",
+        "ruta": "sectores"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "categorias"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "etiquetas"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "recurso"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "categoria"
+      },
+      {
+        "tipo": "conKind",
+        "ruta": "body"
+      },
+      {
+        "tipo": "conKind",
+        "ruta": "cuerpo.filas.columnas.modulos"
+      },
+      {
+        "tipo": "centinelaVacio",
+        "ruta": "image"
+      }
+    ],
+    "sinEjercitar": [],
+    "ok": false
+  }
+}

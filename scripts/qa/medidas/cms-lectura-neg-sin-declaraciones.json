@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
+    "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
+    "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
+    "sabotaje": "sin-declaraciones"
+  },
+  "contrato": {
+    "evaluadas": 63,
+    "minimo": 63,
+    "suficiente": true
+  },
+  "porColeccion": {
+    "productos": {
+      "documentos": 9,
+      "comparados": 9,
+      "distintos": 2
+    },
+    "sectores": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 4
+    },
+    "monograficos": {
+      "documentos": 2,
+      "comparados": 2,
+      "distintos": 2
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "comparados": 11,
+      "distintos": 0
+    },
+    "casos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 3
+    },
+    "faqs": {
+      "documentos": 2,
+      "comparados": 2,
+      "distintos": 0
+    },
+    "entradas-blog": {
+      "documentos": 7,
+      "comparados": 7,
+      "distintos": 7
+    },
+    "terminos-kunakpedia": {
+      "documentos": 3,
+      "comparados": 3,
+      "distintos": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 4
+    },
+    "categorias": {
+      "documentos": 3,
+      "comparados": 3,
+      "distintos": 0
+    },
+    "etiquetas": {
+      "documentos": 8,
+      "comparados": 8,
+      "distintos": 0
+    },
+    "categorias-recursos": {
+      "documentos": 3,
+      "comparados": 3,
+      "distintos": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "comparados": 3,
+      "distintos": 0
+    }
+  },
+  "veredicto": {
+    "comparados": 63,
+    "distintos": 22,
+    "ok": false
+  },
+  "diferencias": [
+    {
+      "coleccion": "productos",
+      "id": 5,
+      "slug": "kunak-api",
+      "ida": "{\"id\":\"kunak-api\",\"name\":\"Kunak API\",\"seo\":{\"title\":\"Kunak API - Kunak\",\"ogImage\":\"https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg\"},\"tagline\":\"Fácil integración de datos\",\"description\":\"Fácil integración de datos en cualquier sitio web o plataforma de smart city\",\"highlight\":\"DISPONIBILIDAD DE DATOS | COPIAS DE SEGURIDAD AUTOMÁTICAS\",\"bullets\":[\"Visualización y gestión de da",
+      "render": "{\"id\":\"kunak-api\",\"name\":\"Kunak API\",\"seo\":{\"title\":\"Kunak API - Kunak\",\"ogImage\":\"https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg\"},\"tagline\":\"Fácil integración de datos\",\"description\":\"Fácil integración de datos en cualquier sitio web o plataforma de smart city\",\"highlight\":\"DISPONIBILIDAD DE DATOS | COPIAS DE SEGURIDAD AUTOMÁTICAS\",\"bullets\":[\"Visualización y gestión de da"
+    },
+    {
+      "coleccion": "productos",
+      "id": 7,
+      "slug": "amoniaco",
+      "ida": "{\"id\":\"amoniaco\",\"name\":\"Amoniaco\",\"seo\":{\"title\":\"Sensor de NH3 (Amoniaco) - Kunak\",\"description\":\"Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.\",\"ogImage\":\"https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg\"},\"tagline\":\"Datos fiables sobre el NH3\",\"description\":\"Datos fiables sobre el amoniaco\",\"highlight\"",
+      "render": "{\"id\":\"amoniaco\",\"name\":\"Amoniaco\",\"seo\":{\"title\":\"Sensor de NH3 (Amoniaco) - Kunak\",\"description\":\"Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.\",\"ogImage\":\"https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg\"},\"tagline\":\"Datos fiables sobre el NH3\",\"description\":\"Datos fiables sobre el amoniaco\",\"highlight\""
+    },
+    {
+      "coleccion": "sectores",
+      "id": 1,
+      "slug": "calidad-del-aire-en-las-ciudades",
+      "ida": "{\"slug\":\"calidad-del-aire-en-las-ciudades\",\"seo\":{\"title\":\"Soluciones de control de la calidad del aire urbano para ciudades | Kunak AIR\",\"description\":\"Soluciones de monitorización de la calidad del aire urbano para ciudades inteligentes y municipios. Mide los niveles de contaminación en tiempo real con sistemas de monitorización de la calidad del aire precisos y escalables.\",\"ogImage\":\"/images/u",
+      "render": "{\"slug\":\"calidad-del-aire-en-las-ciudades\",\"seo\":{\"title\":\"Soluciones de control de la calidad del aire urbano para ciudades | Kunak AIR\",\"description\":\"Soluciones de monitorización de la calidad del aire urbano para ciudades inteligentes y municipios. Mide los niveles de contaminación en tiempo real con sistemas de monitorización de la calidad del aire precisos y escalables.\",\"ogImage\":\"/images/u"
+    },
+    {
+      "coleccion": "sectores",
+      "id": 2,
+      "slug": "control-de-emisiones-industriales",
+      "ida": "{\"slug\":\"control-de-emisiones-industriales\",\"seo\":{\"title\":\"Control de emisiones industriales y malos olores | Kunak AIR\",\"description\":\"Medición y control de la calidad del aire en emisiones industriales mediante estaciones basadas en sensores. Mejora tu impacto ambiental.\",\"ogImage\":\"/images/uploads/2023/01/industry-1920x1024-1.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/control-de-emisio",
+      "render": "{\"slug\":\"control-de-emisiones-industriales\",\"seo\":{\"title\":\"Control de emisiones industriales y malos olores | Kunak AIR\",\"description\":\"Medición y control de la calidad del aire en emisiones industriales mediante estaciones basadas en sensores. Mejora tu impacto ambiental.\",\"ogImage\":\"/images/uploads/2023/01/industry-1920x1024-1.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/control-de-emisio"
+    },
+    {
+      "coleccion": "sectores",
+      "id": 3,
+      "slug": "contaminacion-por-construccion",
+      "ida": "{\"slug\":\"contaminacion-por-construccion\",\"seo\":{\"title\":\"Medición de contaminación por construcción | Kunak AIR\",\"description\":\"Mide de forma precisa el impacto en la calidad del aire o la contaminación por construcción y haz tus obras más sostenibles.\",\"ogImage\":\"/images/uploads/2023/01/construction-1920x1024-1.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\"},\"",
+      "render": "{\"slug\":\"contaminacion-por-construccion\",\"seo\":{\"title\":\"Medición de contaminación por construcción | Kunak AIR\",\"description\":\"Mide de forma precisa el impacto en la calidad del aire o la contaminación por construcción y haz tus obras más sostenibles.\",\"ogImage\":\"/images/uploads/2023/01/construction-1920x1024-1.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/contaminacion-por-construccion/\"},\""
+    },
+    {
+      "coleccion": "sectores",
+      "id": 4,
+      "slug": "estudio-de-la-contaminacion-atmosferica",
+      "ida": "{\"slug\":\"estudio-de-la-contaminacion-atmosferica\",\"seo\":{\"title\":\"Estudio de la contaminación atmosférica | Kunak AIR\",\"description\":\"Realiza un estudio de la contaminación atmosférica más completo y accede a nuevas financiaciones aprovechando la tecnología de sensores.\",\"ogImage\":\"/images/uploads/2023/01/research-1920.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-",
+      "render": "{\"slug\":\"estudio-de-la-contaminacion-atmosferica\",\"seo\":{\"title\":\"Estudio de la contaminación atmosférica | Kunak AIR\",\"description\":\"Realiza un estudio de la contaminación atmosférica más completo y accede a nuevas financiaciones aprovechando la tecnología de sensores.\",\"ogImage\":\"/images/uploads/2023/01/research-1920.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/estudio-de-la-contaminacion-"
+    },
+    {
+      "coleccion": "monograficos",
+      "id": 1,
+      "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "ida": "{\"slug\":\"monitorizacion-ambiental-y-control-de-olores-en-edar\",\"seo\":{\"title\":\"Monitorización ambiental en EDAR para el control de emisiones\",\"description\":\"Monitorización ambiental continua en EDAR para controlar emisiones y olores y anticipar desviaciones de proceso con datos reales.\",\"ogImage\":\"/images/uploads/2026/04/WWTP.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/monitorizacion-ambien",
+      "render": "{\"slug\":\"monitorizacion-ambiental-y-control-de-olores-en-edar\",\"seo\":{\"title\":\"Monitorización ambiental en EDAR para el control de emisiones\",\"description\":\"Monitorización ambiental continua en EDAR para controlar emisiones y olores y anticipar desviaciones de proceso con datos reales.\",\"ogImage\":\"/images/uploads/2026/04/WWTP.jpg\",\"canonical\":\"https://kunakair.com/es/sectores/monitorizacion-ambien"
+    },
+    {
+      "coleccion": "monograficos",
+      "id": 2,
+      "slug": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "ida": "{\"slug\":\"monitorizacion-de-emisiones-en-petroleo-y-gas\",\"seo\":{\"title\":\"Monitorización de emisiones y detección de fugas en Oil & Gas - Kunak\",\"description\":\"Monitorización continua de emisiones en Oil & Gas. Detecta fugas de metano en tiempo real, reduce riesgos y cumple con normativa ambiental.\",\"ogImage\":\"/images/uploads/2026/04/Monitorizacion-de-emisiones-en-el-sector-del-petroleo-y-gas-Kunak-",
+      "render": "{\"slug\":\"monitorizacion-de-emisiones-en-petroleo-y-gas\",\"seo\":{\"title\":\"Monitorización de emisiones y detección de fugas en Oil & Gas - Kunak\",\"description\":\"Monitorización continua de emisiones en Oil & Gas. Detecta fugas de metano en tiempo real, reduce riesgos y cumple con normativa ambiental.\",\"ogImage\":\"/images/uploads/2026/04/Monitorizacion-de-emisiones-en-el-sector-del-petroleo-y-gas-Kunak-"
+    },
+    {
+      "coleccion": "casos",
+      "id": 1,
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ida": "{\"slug\":\"control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa\",\"seo\":{\"title\":\"Control de la contaminación por malos olores en Des Moines, Iowa - Kunak\",\"description\":\"Descubre cómo Des Moines implementó soluciones avanzadas de monitoreo de calidad del aire para controlar la contaminación por malos olores.\",\"ogImage\":\"/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-",
+      "render": "{\"slug\":\"control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa\",\"seo\":{\"title\":\"Control de la contaminación por malos olores en Des Moines, Iowa - Kunak\",\"description\":\"Descubre cómo Des Moines implementó soluciones avanzadas de monitoreo de calidad del aire para controlar la contaminación por malos olores.\",\"ogImage\":\"/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-"
+    },
+    {
+      "coleccion": "casos",
+      "id": 3,
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ida": "{\"slug\":\"distrito-baja-emision-rio-de-janeiro\",\"prefijo\":\"case-studies\",\"seo\":{\"title\":\"El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana - Kunak\",\"description\":\"Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.\",\"ogImage\":\"/images",
+      "render": "{\"slug\":\"distrito-baja-emision-rio-de-janeiro\",\"prefijo\":\"case-studies\",\"seo\":{\"title\":\"El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana - Kunak\",\"description\":\"Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.\",\"ogImage\":\"/images"
+    },
+    {
+      "coleccion": "casos",
+      "id": 4,
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ida": "{\"slug\":\"sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano\",\"seo\":{\"title\":\"Sistema de detección de emisiones de lindano | Kunak\",\"description\":\"Sistema de alerta temprana para la deteccion de episodios de emisiones de aguas contaminadas al río en una zona rural sin cobertura.\",\"ogImage\":\"/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg\"},\"titulo\":\"Alerta de contaminación de acuífero ",
+      "render": "{\"slug\":\"sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano\",\"seo\":{\"title\":\"Sistema de detección de emisiones de lindano | Kunak\",\"description\":\"Sistema de alerta temprana para la deteccion de episodios de emisiones de aguas contaminadas al río en una zona rural sin cobertura.\",\"ogImage\":\"/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg\"},\"titulo\":\"Alerta de contaminación de acuífero "
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 1,
+      "slug": "contaminacion-por-metano",
+      "ida": "{\"slug\":\"contaminacion-por-metano\",\"seo\":{\"title\":\"Contaminación por metano: impacto en el medio ambiente, la salud y soluciones - Kunak\",\"description\":\"Conocido como el asesino silencioso, el gas metano de la atmósfera es un contaminante que pone el riesgo la salud y un entorno saludable.\",\"ogImage\":\"/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg\"},\"titulo\":\"",
+      "render": "{\"slug\":\"contaminacion-por-metano\",\"seo\":{\"title\":\"Contaminación por metano: impacto en el medio ambiente, la salud y soluciones - Kunak\",\"description\":\"Conocido como el asesino silencioso, el gas metano de la atmósfera es un contaminante que pone el riesgo la salud y un entorno saludable.\",\"ogImage\":\"/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg\"},\"titulo\":\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 2,
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ida": "{\"slug\":\"todas-nuestras-soluciones-en-el-iotswc\",\"seo\":{\"title\":\"Kunak presenta sus soluciones en el IOTSWC 2018 | Kunak\",\"description\":\"Ven a descubrir nuestras soluciones para Medioambiente, Smart Cities, Agua y Utilities, Industria 4.0 y Máquinas Inteligentes al stand de ICEX España E541.\"},\"titulo\":\"Todas nuestras soluciones en el IOTSWC\",\"fechaPublicacion\":\"17 octubre 2018\",\"fechaActualizacio",
+      "render": "{\"slug\":\"todas-nuestras-soluciones-en-el-iotswc\",\"seo\":{\"title\":\"Kunak presenta sus soluciones en el IOTSWC 2018 | Kunak\",\"description\":\"Ven a descubrir nuestras soluciones para Medioambiente, Smart Cities, Agua y Utilities, Industria 4.0 y Máquinas Inteligentes al stand de ICEX España E541.\"},\"titulo\":\"Todas nuestras soluciones en el IOTSWC\",\"fechaPublicacion\":\"17 octubre 2018\",\"fechaActualizacio"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 3,
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ida": "{\"slug\":\"monitorizacion-de-la-calidad-del-aire-en-centros-de-datos\",\"seo\":{\"title\":\"Monitorización de la calidad del aire en centros de datos - Kunak\",\"description\":\"Monitorizar centros de datos: ozono interior, emisiones de generadores y impacto comunitario. Qué medir, por qué y con qué sensores.\",\"ogImage\":\"/images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1024x631.png\"},\"titulo\":\"Monitori",
+      "render": "{\"slug\":\"monitorizacion-de-la-calidad-del-aire-en-centros-de-datos\",\"seo\":{\"title\":\"Monitorización de la calidad del aire en centros de datos - Kunak\",\"description\":\"Monitorizar centros de datos: ozono interior, emisiones de generadores y impacto comunitario. Qué medir, por qué y con qué sensores.\",\"ogImage\":\"/images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1024x631.png\"},\"titulo\":\"Monitori"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 4,
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ida": "{\"slug\":\"contador-particulas-suspension-movilidad-sostenible\",\"seo\":{\"title\":\"¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?\",\"description\":\"La Semana Europea de la Movilidad ha permitido mostrar qué utilidad tiene un contador de partículas en suspensión cuando se usa para mejorar la movilidad\",\"ogImage\":\"/images/uploads/2020/09/semana-movilidad-europea-particu",
+      "render": "{\"slug\":\"contador-particulas-suspension-movilidad-sostenible\",\"seo\":{\"title\":\"¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?\",\"description\":\"La Semana Europea de la Movilidad ha permitido mostrar qué utilidad tiene un contador de partículas en suspensión cuando se usa para mejorar la movilidad\",\"ogImage\":\"/images/uploads/2020/09/semana-movilidad-europea-particu"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 5,
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ida": "{\"slug\":\"monitorizacion-de-emisiones-del-trafico-urbano\",\"seo\":{\"title\":\"Monitorización de emisiones del tráfico urbano - Kunak\",\"description\":\"Descubre cómo el control avanzado de NO2 y PM2,5 con redes de sensores permite medir el impacto ambiental real del transporte urbano.\",\"ogImage\":\"/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg\"},\"titulo\":\"Monitorización de emisiones del tráf",
+      "render": "{\"slug\":\"monitorizacion-de-emisiones-del-trafico-urbano\",\"seo\":{\"title\":\"Monitorización de emisiones del tráfico urbano - Kunak\",\"description\":\"Descubre cómo el control avanzado de NO2 y PM2,5 con redes de sensores permite medir el impacto ambiental real del transporte urbano.\",\"ogImage\":\"/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg\"},\"titulo\":\"Monitorización de emisiones del tráf"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 6,
+      "slug": "running-for-clean-air",
+      "ida": "{\"slug\":\"running-for-clean-air\",\"seo\":{\"title\":\"Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte - Kunak\",\"description\":\"La monitorización y control del aire es esencial para el deporte de alto rendimiento como demuestra el proyecto Clean Air de World Athletics.\",\"ogImage\":\"/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.j",
+      "render": "{\"slug\":\"running-for-clean-air\",\"seo\":{\"title\":\"Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte - Kunak\",\"description\":\"La monitorización y control del aire es esencial para el deporte de alto rendimiento como demuestra el proyecto Clean Air de World Athletics.\",\"ogImage\":\"/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.j"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "id": 7,
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ida": "{\"slug\":\"la-contaminacion-del-aire-el-asesino-silencioso-de-europa\",\"seo\":{\"title\":\"La contaminación del aire: el asesino silencioso de Europa - Kunak\",\"description\":\"La contaminación del aire causa más de 240.000 muertes al año en Europa. Descubre cómo podemos construir un futuro más limpio y saludable.\",\"ogImage\":\"/images/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Clean",
+      "render": "{\"slug\":\"la-contaminacion-del-aire-el-asesino-silencioso-de-europa\",\"seo\":{\"title\":\"La contaminación del aire: el asesino silencioso de Europa - Kunak\",\"description\":\"La contaminación del aire causa más de 240.000 muertes al año en Europa. Descubre cómo podemos construir un futuro más limpio y saludable.\",\"ogImage\":\"/images/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Clean"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "id": 1,
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ida": "{\"slug\":\"exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo\",\"categoria\":{\"nombre\":\"Artículos científicos y estudios\",\"slug\":\"articulos-cientificos-y-estudios\"},\"seo\":{\"title\":\"Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto - Kunak\",\"ogImage\":\"/images/uploads/2025/02/Athletes-exposure-to-air-po",
+      "render": "{\"slug\":\"exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo\",\"categoria\":\"articulos-cientificos-y-estudios\",\"seo\":{\"title\":\"Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto - Kunak\",\"ogImage\":\"/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.j"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "id": 2,
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ida": "{\"slug\":\"idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion\",\"categoria\":{\"nombre\":\"Artículos científicos y estudios\",\"slug\":\"articulos-cientificos-y-estudios\"},\"seo\":{\"title\":\"Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución - Kunak\",\"ogImage\":\"/images/uploads/2025/02/Th",
+      "render": "{\"slug\":\"idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion\",\"categoria\":\"articulos-cientificos-y-estudios\",\"seo\":{\"title\":\"Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución - Kunak\",\"ogImage\":\"/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-D"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "id": 3,
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ida": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/images/uploads/20",
+      "render": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.j"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "id": 4,
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ida": "{\"slug\":\"soluciones-avanzadas-de-monitorizacion\",\"prefijo\":\"estudios-cientificos\",\"categoria\":{\"nombre\":\"Artículos técnicos\",\"slug\":\"articulos-tecnicos\"},\"seo\":{\"title\":\"Soluciones avanzadas de monitorización - Kunak\",\"ogImage\":\"/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg\"},\"titulo\":\"Soluciones avanzadas de monitorización\",\"autores\":\"Revista Hydrocarbon Engineering\",\"an",
+      "render": "{\"slug\":\"soluciones-avanzadas-de-monitorizacion\",\"prefijo\":\"estudios-cientificos\",\"categoria\":\"articulos-tecnicos\",\"seo\":{\"title\":\"Soluciones avanzadas de monitorización - Kunak\",\"ogImage\":\"/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg\"},\"titulo\":\"Soluciones avanzadas de monitorización\",\"autores\":\"Revista Hydrocarbon Engineering\",\"anyo\":\"2026\",\"portada\":{\"src\":\"/images/up"
+    }
+  ]
+}

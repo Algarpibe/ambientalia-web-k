@@ -47,7 +47,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Evaluadas, env, hoy, w } from "./lib.mjs";
-import { aMedido, camposPropios } from "../seed/mapeo.mjs";
+import { aMedido, camposPropios } from "../../packages/cms-config/src/mapeo.mjs";
 import {
   SEMBRADAS,
   FUERA_DE_BLOQUE_1,

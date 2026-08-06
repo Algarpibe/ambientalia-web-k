@@ -525,3 +525,186 @@ function proyecta(campo, doc, ctx, aqui) {
       return bruto;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS DECLARACIONES DE LA VUELTA — CMS-0g, y por qué existen (2026-08-06)
+ *
+ * Hasta F2-3 la VUELTA (`aMedido`) sólo corría dentro del round-trip, o sea **en
+ * el mismo proceso que la IDA**, y por eso podía apoyarse en tres mapas que la
+ * ida iba llenando al pasar:
+ *
+ *   · `formaDeRel` — ¿el dato medido escribe esta relación como TÉRMINO
+ *     EMBEBIDO (`{slug, nombre}`) o como slug pelado?
+ *   · `CON_KIND`   — ¿los ítems de este `blocks` traen `kind` en el dato medido,
+ *     o discriminan por qué clave está presente?
+ *   · `centinelas` — ¿este `upload` usa `""` para decir «no hay imagen»?
+ *
+ * **Desde F2-3 la vuelta corre en el RENDER, y allí no hay ida.** Las tres son
+ * propiedades del MODELO —no de una fila—, así que su sitio natural es la
+ * config, que es lo que el render sí tiene. Se declaran con `custom` en el campo.
+ *
+ * ⚠ **Y una declaración sin guarda es la regla 3 —*documentado no es
+ * conectado*— esperando a pasar.** Por eso `npm run qa:cms-decl` deriva los tres
+ * mapas pasando la IDA sobre los 9 catálogos y los compara con lo declarado, en
+ * LAS DOS DIRECCIONES: lo declarado que la ida nunca vio es **declaración
+ * muerta**, y lo que la ida ve sin declarar es un **hueco** que el render
+ * proyectaría mal. Las dos cierran el código de salida.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Recorre los campos de una colección y devuelve las declaraciones por RUTA DE
+ * CAMPO, en el mismo vocabulario que usa el walker (`rutaLimpia`: sin índices).
+ *
+ * Es **la única lectura de `custom` que hay en el proyecto**: la usan el
+ * contexto de lectura del render y la guarda que lo verifica. Dos lectores
+ * distintos serían dos definiciones de «lo mismo» — la clase C7.
+ */
+export function declaracionesDe(campos, ruta = "", acc = null) {
+  acc ??= { formaDeRel: new Map(), conKind: new Map(), centinelas: new Set() };
+  for (const campo of camposPropios(campos)) {
+    /* Presentacional sin nombre: sus hijos son hermanos del padre — exactamente
+     * como en `aPayload`, y por la misma razón. */
+    if (!campo?.name) {
+      if (Array.isArray(campo?.fields)) declaracionesDe(campo.fields, ruta, acc);
+      continue;
+    }
+    const aqui = ruta ? `${ruta}.${campo.name}` : campo.name;
+    if (campo.type === "relationship" && campo.custom?.formaMedida) acc.formaDeRel.set(aqui, campo.custom.formaMedida);
+    if (campo.type === "upload" && campo.custom?.centinelaVacio) acc.centinelas.add(aqui);
+    if (campo.type === "blocks" && campo.custom?.conKind)
+      acc.conKind.set(aqui, new Set((campo.blocks ?? []).map((b) => b.slug)));
+    if (Array.isArray(campo.fields)) declaracionesDe(campo.fields, aqui, acc);
+    if (Array.isArray(campo.blocks)) for (const b of campo.blocks) declaracionesDe(b.fields, aqui, acc);
+  }
+  return acc;
+}
+
+/**
+ * El CONTEXTO DE LECTURA — lo que `aMedido` necesita cuando **no hay ida**.
+ *
+ * Es la mitad de `creaContexto` (`scripts/seed/seed.mjs`) que no depende de
+ * haber sembrado: en vez de los mapas que la ida llenó, se apoya en las
+ * declaraciones de la config y en que el documento llegue **poblado**.
+ *
+ * @param {object} coleccionCfg la colección de la config resuelta
+ * @param {(col: string, doc: object, donde: string) => object} proyectaDoc
+ *        cómo se reconstruye un término EMBEBIDO. Se pasa desde fuera por la
+ *        misma razón que en el seed: para que esto no dependa de la config.
+ * @param {{slugPorId?: Map<string, unknown> | null, mediaPorId?: Map<unknown, Record<string, unknown>> | null}} [indices]
+ *        los dos que la ida tiene por construcción, para las relaciones y la
+ *        media que caen un nivel por debajo del `depth` con que se leyó.
+ */
+export function contextoDeLectura(coleccionCfg, proyectaDoc, { slugPorId = null, mediaPorId = null } = {}) {
+  /**
+   * ⚠ **La raíz es el SLUG DE LA COLECCIÓN, no la cadena vacía**, y esto costó
+   * un verde falso que sólo destapó el negativo (2026-08-06).
+   *
+   * El seed camina con `aPayload(cfg.fields, fila, ctx, coleccion)`, así que las
+   * rutas que registra son `entradas-blog.categorias`. Declarar desde raíz vacía
+   * producía `categorias`, y entonces **ningún `get` casaba nunca**: la vuelta
+   * devolvía el slug en vez del término, en silencio.
+   *
+   * Y lo peor no fue el fallo, sino su forma: el contexto de la ida fallaba el
+   * mismo `get`, así que los dos lados coincidían **por equivocarse igual** y
+   * `cms-lectura` daba 63/63. Un pleno que no medía nada (regla 4).
+   */
+  const decl = declaracionesDe(coleccionCfg.fields, coleccionCfg.slug);
+  const limpia = (r) => String(r).replace(/\[\d+\]/g, "");
+
+  return {
+    /**
+     * ⚠ **CMS-0g.** `rutaOrigen` es la ruta con la que la migración subió el
+     * fichero; **vacía en las altas del admin**, que no tienen origen. Ahí la
+     * única URL que puede funcionar es la de la API — el fichero nunca existió
+     * bajo `/images/`.
+     *
+     * Y **tira** si el documento llega con el id pelado, en vez de devolver la
+     * URL de la API: eso convertiría «no puedo reconstruirlo» en «esto es lo que
+     * había», que es la regla 6. Se lee con `depth ≥ 1`, igual que `deRel`.
+     */
+    rutaDeMedia(bruto, donde) {
+      /* Igual que en `deRel`: un nivel más abajo del que alcanza `depth`, esto
+       * llega como id. Se resuelve con el índice —el mismo `porId` que la ida
+       * tiene— y NUNCA se inventa la URL de la API a partir de un número. */
+      let doc = bruto;
+      if (doc === null || typeof doc !== "object") {
+        doc = mediaPorId?.get(doc) ?? null;
+        if (!doc)
+          throw new Error(
+            `MEDIA SIN POBLAR NI ÍNDICE: ${donde} llegó como id ${JSON.stringify(bruto)?.slice(0, 40)}\n` +
+              `  y no hay \`mediaPorId\` que lo resuelva. Pásalo al contexto o sube el \`depth\`.\n` +
+              `  Devolver /api/media/file/… a ciegas sería inventar una ruta donde lo que hay\n` +
+              `  es una lectura mal hecha.`,
+          );
+      }
+      if (typeof doc.rutaOrigen === "string" && doc.rutaOrigen) return doc.rutaOrigen;
+      if (!doc.filename)
+        throw new Error(`MEDIA SIN FILENAME NI rutaOrigen: ${donde}. El documento no identifica ningún fichero.`);
+      return `/api/media/file/${doc.filename}`;
+    },
+
+    /**
+     * Inversa de `ctx.rel`: id (o documento poblado) → slug, o término embebido.
+     *
+     * ⚠ **El id PELADO no es un caso raro: es lo que pasa un nivel más abajo.**
+     * Con `depth: 1` un término embebido llega poblado, pero **su propia
+     * relación queda a `depth: 2`** y vuelve como id. La ida no lo notaba porque
+     * resolvía con su mapa `id → slug`; aquí hace falta el mismo mapa, leído de
+     * la DB (`slugPorId`). Subir el `depth` sería la otra salida, y es peor: los
+     * documentos de `sectores`/`monograficos` son enormes y el coste crece con
+     * la profundidad, no con lo que se necesita — que es **un slug**.
+     *
+     * Y cuando no hay ni población ni mapa, **tira**: devolver el id o una
+     * cadena plausible convertiría «no puedo reconstruirlo» en «esto es lo que
+     * había» (`CLAUDE.md` §sondas, regla 6).
+     */
+    deRel(relationTo, valor, donde) {
+      const destinos = Array.isArray(relationTo) ? relationTo : [relationTo];
+      const col = valor?.relationTo ?? destinos[0];
+      const bruto = valor?.value !== undefined ? valor.value : valor;
+      const poblado = bruto !== null && typeof bruto === "object" ? bruto : null;
+      const esObjeto = decl.formaDeRel.get(limpia(donde)) === "objeto";
+
+      if (!poblado) {
+        /* Forma OBJETO sin poblar: el término entero no sale de un id, y
+         * reconstruirlo del catálogo medido sería comparar el dato consigo
+         * mismo — la misma razón que da `seed.mjs` en su `deRel`. */
+        if (esObjeto)
+          throw new Error(
+            `RELACIÓN EMBEBIDA SIN POBLAR: ${donde} se midió como término embebido y llegó\n` +
+              `  con el id pelado. Léela con \`depth\` suficiente.`,
+          );
+        const s = slugPorId?.get(`${col}\0${bruto}`);
+        if (s === undefined)
+          throw new Error(
+            `RELACIÓN SIN POBLAR NI ÍNDICE: ${donde} llegó como id ${JSON.stringify(bruto)} de '${col}'\n` +
+              `  y no hay \`slugPorId\` que lo resuelva. Pásalo al contexto o sube el \`depth\`.`,
+          );
+        return s;
+      }
+
+      if (!esObjeto) {
+        if (typeof poblado.slug !== "string")
+          throw new Error(`RELACIÓN SIN SLUG: ${donde} apunta a un documento de '${col}' sin \`slug\`.`);
+        return poblado.slug;
+      }
+      return proyectaDoc(col, poblado, donde);
+    },
+
+    /**
+     * El `kind` vuelve **sólo donde el dato medido lo llevaba**, y eso lo dice
+     * la declaración del campo `blocks`, no el slug: `claim` y `titular` nombran
+     * bloques de DOS campos distintos y sólo uno trae `kind`.
+     */
+    conKind(ruta, slug, cuerpo) {
+      return decl.conKind.get(limpia(ruta))?.has(slug) ? { kind: slug, ...cuerpo } : cuerpo;
+    },
+
+    /** Las rutas de `upload` donde el dato medido codifica «no hay» con `""`. */
+    esCentinela(ruta) {
+      return decl.centinelas.has(limpia(ruta));
+    },
+
+    declaraciones: decl,
+  };
+}

@@ -498,8 +498,22 @@ export function imagen(name: string, { requerida = false } = {}): Field {
 }
 
 /** `image: string` suelto (cabecera, CTA de descarga, franja del pie). */
-export function subida(name: string, { requerida = false } = {}): Field {
-  return { name, type: "upload", relationTo: "media", required: requerida };
+export function subida(name: string, { requerida = false, centinelaVacio = false } = {}): Field {
+  return {
+    name,
+    type: "upload",
+    relationTo: "media",
+    required: requerida,
+    /**
+     * ⚠ **CMS-0g · `centinelaVacio`: el dato medido escribe `""` para decir «no
+     * hay imagen».** `mapeo.mjs` ya lo trata como transformación de FORMA y la
+     * IDA lo apuntaba en un `Set` del proceso; desde F2-3 la VUELTA corre en el
+     * RENDER, donde no hay ida que lo apunte. Se declara aquí, y `qa:cms-decl`
+     * comprueba que la declaración coincide con lo que la ida deriva —si no,
+     * sería *documentado no es conectado* en el esquema.
+     */
+    ...(centinelaVacio ? { custom: { centinelaVacio: true } } : {}),
+  };
 }
 
 /** `ImagenA` del grupo A — `srcset` es CAMPO, no adorno: es la causa de M-IMG. */
@@ -653,7 +667,18 @@ const teaserEntrada: Field = {
  */
 export const colaComercial: Field[] = [
   ctaSlides,
-  { name: "soluciones", type: "relationship", relationTo: "productos", hasMany: true },
+  /**
+   * ⚠ **CMS-0g · `formaMedida: "objeto"`, y lo encontró la guarda.** SECTOR y
+   * MONOGRÁFICO embeben el `Product` ENTERO aquí; el caso de éxito
+   * (`grupo-c.ts`) guarda sólo el slug en un campo del mismo nombre. Sin la
+   * declaración la vuelta devolvería el slug en las dos, perdiendo el término.
+   *
+   * Y ése es exactamente el motivo de que la llave sea **(colección, ruta)** y
+   * no la ruta a secas: tres colecciones tienen un campo `soluciones` y la
+   * clave sin prefijo las colapsaba en una — la clase C7, dos definiciones de
+   * «lo mismo» escritas como una.
+   */
+  { name: "soluciones", type: "relationship", relationTo: "productos", hasMany: true, custom: { formaMedida: "objeto" } },
   {
     name: "proyectos",
     type: "group",

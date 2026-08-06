@@ -79,7 +79,7 @@ const REGENERA = path.join(QA, "medidas", "media-regenera.json");
 
 /* ── el dominio: el walker, con un `ctx` que anota ───────────────────────── */
 const { CATALOGOS, cargaCatalogos } = await import("../seed/catalogos.mjs");
-const { aPayload } = await import("../seed/mapeo.mjs");
+const { aPayload } = await import("../../packages/cms-config/src/mapeo.mjs");
 const { construyeConfig } = await import("../../packages/cms-config/src/index.ts");
 const { IMAGE_SIZES } = await import("../../packages/cms-config/src/defaults.ts");
 
@@ -110,7 +110,7 @@ for (const { coleccion } of CATALOGOS) {
    * 4 exige que salga por error y no por «no hay colisiones». */
   const campos = SABOTAJE === "selector-muerto" ? [] : cfg.fields;
   const antes = referencias.length;
-  for (const fila of catalogos.get(coleccion) ?? []) await aPayload(campos, fila, ctx, "");
+  for (const fila of catalogos.get(coleccion) ?? []) await aPayload(campos, fila, ctx, coleccion);
   for (let i = antes; i < referencias.length; i++) referencias[i].coleccion = coleccion;
 }
 

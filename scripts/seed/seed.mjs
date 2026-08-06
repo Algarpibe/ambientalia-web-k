@@ -23,7 +23,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { APP } from "../qa/lib.mjs";
 import { CATALOGOS, TAXONOMIAS_DERIVADAS, cargaCatalogos } from "./catalogos.mjs";
-import { aPayload } from "./mapeo.mjs";
+import { aPayload } from "../../packages/cms-config/src/mapeo.mjs";
+/**
+ * ⚠ **La mitad de VUELTA vive en el paquete compartido desde el 2026-08-06**
+ * (CMS-0g): el RENDER la necesita y no puede importar este fichero, que abre
+ * ficheros y habla con Payload. Se re-exporta para que sus importadores no
+ * cambien de sitio y para que siga habiendo UNA sola definición.
+ */
+export { DEVUELVE, comoEmbebido, devuelveProducto, devuelveTermino, rutaLocal } from "../../packages/cms-config/src/vuelta.mjs";
+import { comoEmbebido, DEVUELVE } from "../../packages/cms-config/src/vuelta.mjs";
 
 /**
  * Las colecciones que este bloque siembra, **en orden de dependencia**.
@@ -106,7 +114,21 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
           `  en «la imagen es opcional», y el Δ0 de F2-3 lo pagaría después.`,
       );
 
-    const doc = await payload.create({ collection: "media", filePath: abs, data: {} });
+    /**
+     * ⚠ **`rutaOrigen` es la PROCEDENCIA, y la escribe la IDA (CMS-0g).**
+     *
+     * Es el mismo mapa que `mediaPorRuta`, persistido — no una segunda lista.
+     * `seed.mjs` lo dice de los tres métodos de vuelta: *«se construyen con los
+     * mismos mapas que la ida llenó, no con una segunda lista: si fueran
+     * independientes, un mismo olvido en las dos daría Δ0 en falso»*. Derivar
+     * la ruta del `filename` al leer sería exactamente esa segunda lista, y
+     * `qa:media-colision` midió que **se rompe en la unión con el corpus**.
+     *
+     * Se escribe la ruta **tal cual la trae el dato medido** —sin decodificar—
+     * porque es la cadena que el clon renderiza: normalizarla aquí movería el
+     * HTML, que es justo lo que el Δ0 de F2-3 no admite.
+     */
+    const doc = await payload.create({ collection: "media", filePath: abs, data: { rutaOrigen: ruta } });
     mediaPorRuta.set(ruta, doc.id);
     return doc.id;
   };
@@ -399,53 +421,6 @@ export const PREPARA = {
  * Son **dos cálculos independientes que tienen que coincidir**: si discreparan,
  * el comparador lo dice. No es una tolerancia compartida.
  * ═════════════════════════════════════════════════════════════════════════ */
-
-/**
- * La ruta local de un `href` medido: sin origen, sin el `/es` del original y
- * sin barra final (`trailingSlash` no está activado — `CLAUDE.md` §Regla de
- * rutas locales).
- */
-export function rutaLocal(href) {
-  if (typeof href !== "string") return href;
-  const segs = href
-    .replace(/^https?:\/\/[^/]+/, "")
-    .replace(/^\/es(?=\/|$)/, "")
-    .split("/")
-    .filter(Boolean);
-  return `/${segs.join("/")}`;
-}
-
-/** `productos`: deshace los alias de §2e y recompone la ruta del §4. */
-export function devuelveProducto(d) {
-  const { slug, titulo, padre, ...resto } = d;
-  return {
-    id: slug,
-    name: titulo,
-    ...resto,
-    href: `/${[padre, slug].filter(Boolean).join("/")}`,
-  };
-}
-
-/** `taxonomia-sectores`: la relación polimórfica vuelve a ser un slug. */
-export function devuelveTermino(d) {
-  const { pagina, ...resto } = d;
-  return { ...resto, ...(pagina !== undefined ? { paginaSlug: pagina } : {}) };
-}
-
-export const DEVUELVE = {
-  productos: devuelveProducto,
-  "taxonomia-sectores": devuelveTermino,
-};
-
-/**
- * La forma medida de un documento, tal y como la escribe quien lo EMBEBE.
- * `rutaLocal` se aplica al `href` medido porque el CMS no puede representar «este
- * destino todavía no está clonado» — ver el bloque de arriba.
- */
-export function comoEmbebido(coleccion, fila) {
-  if (coleccion !== "productos") return fila;
-  return { ...fila, href: rutaLocal(fila.href) };
-}
 
 /**
  * ⚠ **`PREPARA` y `DEVUELVE` son un par escrito a mano, así que su coherencia

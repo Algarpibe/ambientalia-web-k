@@ -259,7 +259,7 @@ export const productos: CollectionConfig = {
      * *«se pintan como HTML»*. Es `CampoRicoEnLinea` sin llamarse así.
      */
     { name: "bullets", type: "array", fields: [htmlLinea("texto", { requerido: true })] },
-    subida("image"),
+    subida("image", { centinelaVacio: true }),
 
     /**
      * El cuerpo es `blocks` porque la **composición es por instancia**:

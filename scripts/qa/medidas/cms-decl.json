@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
+    "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
+    "sabotaje": null
+  },
+  "derivado": {
+    "formaDeRel": {
+      "sectores.soluciones": "objeto",
+      "monograficos.soluciones": "objeto",
+      "casos.sectores": "objeto",
+      "casos.soluciones": "slug",
+      "entradas-blog.categorias": "objeto",
+      "entradas-blog.etiquetas": "objeto",
+      "entradas-blog.recurso": "objeto",
+      "documentos-cientificos.categoria": "objeto"
+    },
+    "conKind": [
+      [
+        "sectores.body",
+        "ctaDescarga"
+      ],
+      [
+        "sectores.body",
+        "beneficiosAplicaciones"
+      ],
+      [
+        "sectores.body",
+        "claimConFoto"
+      ],
+      [
+        "sectores.body",
+        "listaSimple2Col"
+      ],
+      [
+        "sectores.body",
+        "mapaProyectos"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "titular"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "imagen"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "claim"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "ctaDescarga"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "texto"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "tabla"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "mapaProyectos"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "boton"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "serie"
+      ]
+    ],
+    "centinelas": [
+      "productos.image"
+    ]
+  },
+  "declarado": {
+    "formaDeRel": {
+      "sectores.soluciones": "objeto",
+      "monograficos.soluciones": "objeto",
+      "casos.sectores": "objeto",
+      "entradas-blog.categorias": "objeto",
+      "entradas-blog.etiquetas": "objeto",
+      "entradas-blog.recurso": "objeto",
+      "documentos-cientificos.categoria": "objeto"
+    },
+    "conKind": {
+      "sectores.body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
+      "monograficos.cuerpo.filas.columnas.modulos": [
+        "titular",
+        "claim",
+        "texto",
+        "imagen",
+        "boton",
+        "serie",
+        "tabla",
+        "ctaDescarga",
+        "mapaProyectos"
+      ]
+    },
+    "centinelas": [
+      "productos.image"
+    ]
+  },
+  "contrato": {
+    "evaluadas": 23,
+    "minimo": 23,
+    "suficiente": true
+  },
+  "veredicto": {
+    "verificadas": 23,
+    "huecos": [],
+    "muertas": [],
+    "sinEjercitar": [],
+    "ok": true
+  }
+}

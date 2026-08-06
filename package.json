@@ -111,7 +111,11 @@
     "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs",
     "qa:lectura-forma": "node --env-file=apps/cms/.env scripts/qa/lectura-forma.mjs",
     "qa:media-colision": "node --env-file=apps/cms/.env scripts/qa/media-colision.mjs",
-    "qa:media-colision-neg": "node --env-file=apps/cms/.env scripts/qa/media-colision.neg.mjs"
+    "qa:media-colision-neg": "node --env-file=apps/cms/.env scripts/qa/media-colision.neg.mjs",
+    "qa:cms-decl": "node --env-file=apps/cms/.env scripts/qa/cms-decl.mjs",
+    "qa:cms-decl-neg": "node --env-file=apps/cms/.env scripts/qa/cms-decl.neg.mjs",
+    "qa:cms-lectura": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.mjs",
+    "qa:cms-lectura-neg": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

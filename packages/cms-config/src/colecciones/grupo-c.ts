@@ -85,6 +85,7 @@ export const casos: CollectionConfig = {
       type: "relationship",
       relationTo: "taxonomia-sectores",
       hasMany: true,
+      custom: { formaMedida: "objeto" },
     },
 
     // Los tres bloques, obligatorios los tres (57/57). Contrato del §3.1, y
