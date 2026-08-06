@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
+    "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
+    "sabotaje": null
+  },
+  "poblaciones": {
+    "dominio": {
+      "que": "rutas que HOY llegan a un campo `upload` (el dominio de rutaDeMedia)",
+      "rutas": 112,
+      "suelo": 110,
+      "decide": true,
+      "basenamesRepetidos": 0,
+      "referenciasDelCorpusAfectadas": 0,
+      "colisiones": []
+    },
+    "corpus": {
+      "que": "orígenes capturados en media-corpus/ (el cuerpo rico del bloque 2)",
+      "rutas": 534,
+      "suelo": 534,
+      "decide": false,
+      "basenamesRepetidos": 0,
+      "referenciasDelCorpusAfectadas": 0,
+      "colisiones": []
+    },
+    "union": {
+      "que": "dominio ∪ corpus: todo lo que alguna vez podrá ser fila de `media`",
+      "rutas": 646,
+      "suelo": 534,
+      "decide": true,
+      "basenamesRepetidos": 1,
+      "referenciasDelCorpusAfectadas": 12,
+      "colisiones": [
+        {
+          "basename": "control-de-la-calidad-del-aire-en-ciudades.jpg",
+          "rutas": [
+            "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+            "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 3
+            },
+            {
+              "ruta": "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 9
+            }
+          ]
+        }
+      ]
+    },
+    "publico": {
+      "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
+      "rutas": 628,
+      "suelo": null,
+      "decide": false,
+      "basenamesRepetidos": 12,
+      "referenciasDelCorpusAfectadas": 670,
+      "colisiones": [
+        {
+          "basename": "ico-arrow.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-arrow.svg",
+            "theme/ico-arrow.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-arrow.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-arrow.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-globe-blanco.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-globe-blanco.svg",
+            "theme/ico-globe-blanco.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-globe-blanco.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-globe-blanco.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-globe.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-globe.svg",
+            "theme/ico-globe.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-globe.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-globe.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-minus-azul.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-minus-azul.svg",
+            "theme/ico-minus-azul.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-minus-azul.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-minus-azul.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-minus-negro.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-minus-negro.svg",
+            "theme/ico-minus-negro.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-minus-negro.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-minus-negro.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-plus-azul.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-plus-azul.svg",
+            "theme/ico-plus-azul.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-plus-azul.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-plus-azul.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "ico-plus-negro.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/ico-plus-negro.svg",
+            "theme/ico-plus-negro.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/ico-plus-negro.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/ico-plus-negro.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "minus-light.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/minus-light.svg",
+            "theme/minus-light.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/minus-light.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/minus-light.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "plus-light.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/plus-light.svg",
+            "theme/plus-light.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/plus-light.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/plus-light.svg",
+              "n": 0
+            }
+          ]
+        },
+        {
+          "basename": "punteado.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/punteado.svg",
+            "uploads/2022/12/punteado.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/punteado.svg",
+              "n": 0
+            },
+            {
+              "ruta": "uploads/2022/12/punteado.svg",
+              "n": 123
+            }
+          ]
+        },
+        {
+          "basename": "recurso-k-fondo.svg",
+          "rutas": [
+            "other/wp-content/themes/KunakAir/assets/images/recurso-k-fondo.svg",
+            "theme/recurso-k-fondo.svg",
+            "uploads/2022/12/recurso-k-fondo.svg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "other/wp-content/themes/KunakAir/assets/images/recurso-k-fondo.svg",
+              "n": 0
+            },
+            {
+              "ruta": "theme/recurso-k-fondo.svg",
+              "n": 0
+            },
+            {
+              "ruta": "uploads/2022/12/recurso-k-fondo.svg",
+              "n": 234
+            }
+          ]
+        },
+        {
+          "basename": "kunak-api.jpg",
+          "rutas": [
+            "uploads/2023/02/kunak-api.jpg",
+            "uploads/2026/04/kunak-api.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2023/02/kunak-api.jpg",
+              "n": 4
+            },
+            {
+              "ruta": "uploads/2026/04/kunak-api.jpg",
+              "n": 309
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "comprobaciones": {
+    "filenameEsBasename": {
+      "que": "cada basename del dominio existe en media/ con su nombre EXACTO ⇒ Payload no saneó ni desduplicó",
+      "ficherosEnMedia": 667,
+      "sinTestigo": 0,
+      "cuales": [],
+      "ok": true
+    },
+    "variantePisaOrigen": {
+      "que": "ningún origen se llama como una variante que el pipeline genere de otro origen (media/ es PLANO)",
+      "noDecideCMS0g": "los dos `filename` siguen siendo DISTINTOS: la tabla `filename → ruta` no se rompe. Lo que se pisa son los BYTES en disco, o sea familia M-IMG. Por eso se cuenta y se nombra pero NO cierra el código de salida (regla 1). La tabla la vigila B, que caza el día que Payload llegue a desduplicar.",
+      "anchosDeclarados": [
+        300,
+        480,
+        768,
+        980,
+        1024,
+        1280,
+        1080
+      ],
+      "controlVerbatim": {
+        "fichero": "Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
+        "enMedia": "ad1cf00dd7fec3b9",
+        "enPublico": "ad1cf00dd7fec3b9",
+        "copiaVerbatim": true
+      },
+      "n": 3,
+      "materializadas": 2,
+      "cuales": [
+        {
+          "origen": "uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg",
+          "pisaria": "Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro(-1024x683)",
+          "shaEnMedia": "6ea1001028621aad",
+          "shaEnPublico": "b5121641e2d4d292",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
+          "pisaria": "Movilidad-urbana-sostenible_Kunak(-1024x683)",
+          "shaEnMedia": "879232f229cf7e70",
+          "shaEnPublico": "95f3059e2abb10bb",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2025/06/sargazo-cancun-repmex-1024x683.jpg",
+          "pisaria": "sargazo-cancun-repmex(-1024x683)",
+          "shaEnMedia": "350aa42d14d64906",
+          "shaEnPublico": "350aa42d14d64906",
+          "ficheroPisado": false
+        }
+      ],
+      "ok": false
+    },
+    "dominioBajoPublico": {
+      "que": "cada ruta del dominio existe en apps/web/public/images — el invariante que `ctx.media` comprueba al sembrar",
+      "n": 0,
+      "cuales": [],
+      "ok": true
+    }
+  },
+  "veredicto": {
+    "referenciasUpload": 133,
+    "rutasDistintas": 112,
+    "funcionHoy": true,
+    "funcionEnLaUnion": false,
+    "lectura": "es una función HOY y NO en la unión: el bloque 2 la rompe. La decisión de CMS-0g no puede aplazarse a entonces."
+  }
+}
