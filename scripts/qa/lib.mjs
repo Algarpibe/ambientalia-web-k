@@ -503,6 +503,69 @@ export const APP = buscaApp();
 /** Fichero dentro de la app de render. Sustituye a los `join(QA, "../../…")`. */
 export const enApp = (...partes) => path.join(APP, ...partes);
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS RUTAS QUE EL BUILD EMITE — una sola definición, y no es cosmética
+ *
+ * El filtro `!/^\/_/ && !includes(".")` estaba escrito **igual y por separado**
+ * en `clon-base` y en `slugs`, y a partir de F2-3 lo necesita también la guarda
+ * del manifiesto. Tres copias de un predicado que decide QUÉ se mide es C7 con
+ * un agravante: si una diverge, dos sondas dicen «31 rutas» sobre conjuntos
+ * distintos y **el número sigue pareciendo el mismo**.
+ *
+ * Qué se descarta y por qué: `/_not-found` y `/_global-error` son cascarones de
+ * Next, no páginas del clon; `/favicon.ico` y cualquier otra ruta con punto son
+ * ficheros. Los tres salen del manifiesto y ninguno tiene `h1` que medir.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Lee el `prerender-manifest.json` de la app. **Tira** si no está. */
+export function leeManifiesto(raiz = APP) {
+  const f = path.join(raiz, ".next/prerender-manifest.json");
+  if (!fs.existsSync(f))
+    throw new Error(
+      `no existe ${f}.\n` +
+        `  Sin manifiesto no hay rutas, y una sonda que mide CERO rutas sale VERDE:\n` +
+        `  por eso esto tira en vez de devolver {}. ¿Falta \`npm run build\`?`,
+    );
+  return JSON.parse(fs.readFileSync(f, "utf8"));
+}
+
+/** Las rutas de página que el build emitió, ordenadas. */
+export function rutasEmitidas(manifiesto) {
+  return Object.keys(manifiesto?.routes || {})
+    .filter((r) => !r.startsWith("/_") && !r.includes("."))
+    .sort();
+}
+
+/**
+ * Reparto por FAMILIA (`srcRoute` del manifiesto: `/faqs/[slug]`, `/`…).
+ *
+ * ⚠ **Es el nivel al que vive el defecto que F2-3 estrena.** Una familia cuyo
+ * `generateStaticParams()` devuelva `[]` no deja hueco ni error: **desaparece
+ * del reparto**, y el total baja sin decir de dónde. Contar sólo rutas es medir
+ * al nivel de arriba, que es el que absorbe (`CLAUDE.md` §El NIVEL al que se
+ * mide).
+ */
+export function familiasEmitidas(manifiesto) {
+  const fam = new Map();
+  for (const [ruta, v] of Object.entries(manifiesto?.routes || {})) {
+    if (ruta.startsWith("/_") || ruta.includes(".")) continue;
+    const f = v?.srcRoute || ruta;
+    fam.set(f, (fam.get(f) || 0) + 1);
+  }
+  return fam;
+}
+
+/**
+ * Las familias DINÁMICAS que el build declara (`dynamicRoutes`), o sea las que
+ * tienen `generateStaticParams()`. **Existen en el manifiesto aunque emitan
+ * cero rutas**, y eso es justo lo que las hace un testigo independiente: sin
+ * ellas, «la familia devolvió vacío» y «la familia no existe» dan la misma
+ * salida.
+ */
+export function familiasDinamicas(manifiesto) {
+  return Object.keys(manifiesto?.dynamicRoutes || {}).sort();
+}
+
 /**
  * Normaliza una ruta de página recibida por `argv` o por variable de entorno.
  *

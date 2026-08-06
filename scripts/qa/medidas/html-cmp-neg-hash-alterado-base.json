@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "fecha": "2026-08-05",
+    "etiqueta": "f23-antes",
+    "rutas": 31,
+    "buildIdNormalizado": true
+  },
+  "paginas": {
+    "/": {
+      "bytes": 230293,
+      "crudo": "d689c9a0f6508410",
+      "normalizado": "0000000000000000",
+      "nBuildId": 1
+    },
+    "/accesorios": {
+      "bytes": 203924,
+      "crudo": "3b241dc035f1c5a0",
+      "normalizado": "3c565194f8baaa4e",
+      "nBuildId": 1
+    },
+    "/case-studies/distrito-baja-emision-rio-de-janeiro": {
+      "bytes": 151675,
+      "crudo": "d9bc9efffcc3262e",
+      "normalizado": "0c842e5923042d46",
+      "nBuildId": 1
+    },
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
+      "bytes": 130921,
+      "crudo": "b6a2c8f083e9106e",
+      "normalizado": "51d2d0a17cda40ea",
+      "nBuildId": 1
+    },
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
+      "bytes": 116464,
+      "crudo": "cdd925675b0f5b9d",
+      "normalizado": "e9e3d83317dea9ea",
+      "nBuildId": 1
+    },
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
+      "bytes": 102395,
+      "crudo": "fde5d0e40ed5600c",
+      "normalizado": "7017218ee0159e4f",
+      "nBuildId": 1
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "bytes": 267405,
+      "crudo": "c9328a098c642117",
+      "normalizado": "c278da382e0c8189",
+      "nBuildId": 1
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "bytes": 135422,
+      "crudo": "90b4da37812306fc",
+      "normalizado": "f62d835547b8397d",
+      "nBuildId": 1
+    },
+    "/contaminacion-por-metano": {
+      "bytes": 328304,
+      "crudo": "bb31cddca36fdf7a",
+      "normalizado": "04846d6f1ca1619c",
+      "nBuildId": 1
+    },
+    "/emisiones-atmosfericas": {
+      "bytes": 113905,
+      "crudo": "56bb6dc3ecf8ab18",
+      "normalizado": "860b1eb1c12fee27",
+      "nBuildId": 1
+    },
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
+      "bytes": 85958,
+      "crudo": "267e7f75e2edc28a",
+      "normalizado": "342abeb311848303",
+      "nBuildId": 1
+    },
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
+      "bytes": 84942,
+      "crudo": "8b91135713a1d18b",
+      "normalizado": "06c7559da37b6759",
+      "nBuildId": 1
+    },
+    "/kunak-api": {
+      "bytes": 147861,
+      "crudo": "8ac0e1dc41679cd0",
+      "normalizado": "8a1931a728af83cb",
+      "nBuildId": 1
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "bytes": 170008,
+      "crudo": "4d2433ab81e8593d",
+      "normalizado": "2edc80ca048942e7",
+      "nBuildId": 1
+    },
+    "/metano": {
+      "bytes": 149106,
+      "crudo": "90b15e2432dca4d0",
+      "normalizado": "446d9cab47c72958",
+      "nBuildId": 1
+    },
+    "/monitor-calidad-aire": {
+      "bytes": 287909,
+      "crudo": "d533a99cd8a9d2ea",
+      "normalizado": "07abae7d9bb2259c",
+      "nBuildId": 1
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "bytes": 318869,
+      "crudo": "488a1cefeed849e4",
+      "normalizado": "212e24cccd60def3",
+      "nBuildId": 1
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "bytes": 304655,
+      "crudo": "132325246f4e263c",
+      "normalizado": "619bda3fe8174269",
+      "nBuildId": 1
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
+      "bytes": 104142,
+      "crudo": "870ab163676c3b5e",
+      "normalizado": "02fa0e70fd7887e2",
+      "nBuildId": 1
+    },
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
+      "bytes": 100871,
+      "crudo": "1189cdc4bdf85be1",
+      "normalizado": "6f8ab9bad8b8efa6",
+      "nBuildId": 1
+    },
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
+      "bytes": 96447,
+      "crudo": "60a2737edc09c0e4",
+      "normalizado": "193f4f6aaba63c78",
+      "nBuildId": 1
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "bytes": 97851,
+      "crudo": "9c5ae3b100c19d3d",
+      "normalizado": "b1a8c9b7257ccb27",
+      "nBuildId": 1
+    },
+    "/running-for-clean-air": {
+      "bytes": 213189,
+      "crudo": "8da88681c6d3a163",
+      "normalizado": "97c9d3bc71f006eb",
+      "nBuildId": 1
+    },
+    "/sectores/calidad-del-aire-en-las-ciudades": {
+      "bytes": 161857,
+      "crudo": "46a9dee54d721826",
+      "normalizado": "81b7371ae5bb517a",
+      "nBuildId": 1
+    },
+    "/sectores/contaminacion-por-construccion": {
+      "bytes": 154921,
+      "crudo": "49b2eb8198bd9718",
+      "normalizado": "c8a5469cfc1722fb",
+      "nBuildId": 1
+    },
+    "/sectores/control-de-emisiones-industriales": {
+      "bytes": 177214,
+      "crudo": "7a7e1cae2bb8747f",
+      "normalizado": "a38f54742b91f608",
+      "nBuildId": 1
+    },
+    "/sectores/estudio-de-la-contaminacion-atmosferica": {
+      "bytes": 159544,
+      "crudo": "43bbdbe1394e62a8",
+      "normalizado": "49736f75e2058060",
+      "nBuildId": 1
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "bytes": 227382,
+      "crudo": "5e8254850dba1322",
+      "normalizado": "f5774dcc1202d711",
+      "nBuildId": 1
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "bytes": 211757,
+      "crudo": "45441ab77b831905",
+      "normalizado": "85e377d1bb461dba",
+      "nBuildId": 1
+    },
+    "/software-de-medicion-calidad-del-aire": {
+      "bytes": 213048,
+      "crudo": "b9f81faee9c3d07f",
+      "normalizado": "fa3d8f29890366e0",
+      "nBuildId": 1
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "bytes": 90765,
+      "crudo": "fe85145f7c43a294",
+      "normalizado": "41a0f5eb1df42856",
+      "nBuildId": 1
+    }
+  }
+}
