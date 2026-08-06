@@ -1221,6 +1221,62 @@ async function puertoLibre() {
   });
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ **REGISTRAR UN GANCHO DE `uncaughtException` DESACTIVA EL COMPORTAMIENTO
+ * POR DEFECTO DE NODE, Y ESO CONVERTÍA TODA MUERTE DE SONDA EN UN VERDE.**
+ *
+ * En `iniciarClon` había un `for (const ev of ["exit", "SIGINT", "SIGTERM",
+ * "uncaughtException"])` con el mismo cuerpo para los cuatro. Parece simetría y
+ * **no lo es**: los tres primeros son avisos; `uncaughtException` es un
+ * **RELEVO**. En cuanto hay un gancho, Node deja de imprimir el error y deja de
+ * salir con 1 — y como después de la excepción no queda nada que hacer, el
+ * proceso termina con **código 0 y salida vacía**.
+ *
+ * Medido el 2026-08-05 y no deducido, cazándolo el negativo del entorno de
+ * F2-3: con `.next` borrado por un build fallido,
+ * `node clon-base.mjs 1440 --cmp <base>` dio **exit 0 y CERO líneas**. La sonda
+ * que adjudica el Δ0 de la fase daba verde sin haber medido nada.
+ *
+ * **Alcance: las 7 sondas que llaman a `iniciarClon()`** — `ancho-cuerpo`,
+ * `cabecera-cmp`, `clase-rango`, `clon-base`, `cmp-srcset`, `html-cmp`,
+ * `media-poblaciones`—, o sea las que comparan contra el original más la que
+ * adjudica F2-3.
+ *
+ * Es la familia «0 comparado = verde» con un mecanismo nuevo: no es que la
+ * sonda mire poco, es que **su muerte se disfraza de éxito**. Y el contrato de
+ * `Evaluadas` no podía cubrirlo: si el proceso revienta antes de construir su
+ * `Evaluadas` o de congelar nada, no hay contador al que gritar.
+ *
+ * Control en `qa:lib` §3b, por los dos lados: el mismo `throw` sin gancho
+ * (exit ≠0, con su traza) y con un gancho vacío (exit 0, salida muda).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+let _grito = false;
+const _limpiezas = [];
+
+/**
+ * Devuelve el fallo a su sitio: limpia lo que haya que limpiar y sale con ≠0.
+ * Acumula limpiezas y registra los ganchos **una sola vez** — la llaman dos
+ * veces por corrida (antes del atajo de `CLON` y con el `parar` de verdad).
+ */
+export function gritaSiRevienta(limpia = null) {
+  if (limpia) _limpiezas.push(limpia);
+  if (_grito) return;
+  _grito = true;
+  const revienta = (e, clase) => {
+    /* La limpieza no puede tapar el error: cada una en su `try`. */
+    for (const l of _limpiezas) try { l(); } catch { /* seguimos limpiando */ }
+    console.error(
+      `\n❌❌ ${clase} — LA SONDA NO MIDIÓ NADA.\n` +
+        `   Esto no es «sin diferencias»: es que el proceso murió antes de terminar.\n`,
+    );
+    console.error(e);
+    process.exitCode = 1;
+  };
+  process.on("uncaughtException", (e) => revienta(e, "EXCEPCIÓN NO CAPTURADA"));
+  process.on("unhandledRejection", (e) => revienta(e, "PROMESA RECHAZADA SIN CAPTURAR"));
+}
+
 /**
  * Arranca el clon y devuelve `{ base, propio, parar }`.
  *   · `base`   — la URL contra la que medir
@@ -1228,6 +1284,12 @@ async function puertoLibre() {
  *   · `parar()` — idempotente; también se llama sola al salir el proceso
  */
 export async function iniciarClon({ timeoutMs = 90_000 } = {}) {
+  /* ⚠ ANTES del atajo de `CLON`, y a propósito: lo que registra `gritaSiRevienta`
+   * no depende de quién sea dueño del servidor. Ponerlo después dejaría el
+   * atajo sin la guarda —o sea, la mitad de las corridas sin ella— que es
+   * exactamente cómo se arregla la instancia en vez de la clase. */
+  gritaSiRevienta(() => {});
+
   if (process.env.CLON) {
     console.log(`· clon EXTERNO por CLON=${process.env.CLON} — esta sonda no gestiona el servidor`);
     return { base: process.env.CLON, propio: false, parar: async () => {} };
@@ -1250,12 +1312,13 @@ export async function iniciarClon({ timeoutMs = 90_000 } = {}) {
   });
 
   let parado = false;
-  const parar = async () => {
+  /* SÍNCRONO a propósito: lo llaman los ganchos de `exit` y de excepción, donde
+   * un `await` no llega a resolverse y el servidor sobreviviría a la sonda. */
+  const parar = () => {
     if (parado) return;
     parado = true;
     try {
       if (process.platform === "win32") {
-        const { spawnSync } = await import("node:child_process");
         // El árbol entero: `npm` lanza `next`, y matar solo al padre deja el puerto ocupado.
         spawnSync("taskkill", ["/PID", String(hijo.pid), "/T", "/F"], { stdio: "ignore" });
       } else {
@@ -1266,9 +1329,13 @@ export async function iniciarClon({ timeoutMs = 90_000 } = {}) {
   // Que no sobreviva a la sonda por ninguna vía: salida normal, Ctrl-C o
   // excepción sin capturar. Sin esto, una sonda que revienta deja el puerto y el
   // proceso vivos, que es la mitad del problema que esto viene a resolver.
-  for (const ev of ["exit", "SIGINT", "SIGTERM", "uncaughtException"]) {
-    process.on(ev, () => { void parar(); });
-  }
+  for (const ev of ["exit", "SIGINT", "SIGTERM"]) process.on(ev, () => parar());
+
+  /* Y `uncaughtException` NO va en ese bucle: es un relevo, no un aviso, y
+   * ponerlo ahí convertía toda muerte de sonda en un verde mudo. Ver
+   * `gritaSiRevienta` arriba, que ya quedó registrada antes del atajo de `CLON`
+   * y aquí sólo recibe la limpieza del servidor. */
+  gritaSiRevienta(parar);
 
   const t0 = Date.now();
   for (;;) {

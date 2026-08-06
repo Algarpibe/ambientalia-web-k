@@ -7,7 +7,7 @@
  * puede ser falsa por dos caminos que no se parecen:
  *
  *   1 · **que no vea una diferencia que existe** — el fallo obvio, y el que
- *       cubren `hash-alterado`, `ruta-fantasma` y `base-vacia`;
+ *       cubren `visible-alterado`, `filas-alteradas`, `ruta-fantasma` y `base-vacia`;
  *   2 · **que la NORMALIZACIÓN se coma la diferencia** — el fallo propio de
  *       esta sonda y el más peligroso, porque *fabrica* el verde en vez de
  *       perderlo: un volátil corto o frecuente borra contenido real **de los
@@ -25,7 +25,7 @@ import { existsSync, readdirSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { corridaNegativa, Evaluadas, APP, nombreNeg, QA, w } from "./lib.mjs";
 
-const BASE = "medidas/html-f23-antes.json";
+const BASE = "medidas/html-f23-base.json";
 const base = JSON.parse(readFileSync(join(QA, BASE), "utf8"));
 const rutasBase = Object.keys(base.paginas);
 
@@ -70,15 +70,55 @@ function fabricaBase(etiqueta, muta) {
   return destino;
 }
 
-const rutaDiana = rutasBase[0];
+/**
+ * La diana se elige DERIVANDO, y con una condición: que no sea una de las rutas
+ * que hoy difieren de verdad por el reparto del stream (las de la familia
+ * migrada). Si la diana fuese una de ésas, el sabotaje y el fenómeno real se
+ * mezclarían y el caso dejaría de aislar nada.
+ */
+const repartoReal = new Set(
+  Object.keys(base.paginas).filter((r) => r.startsWith("/faqs/")),
+);
+const rutaDiana = rutasBase.find((r) => r !== "/" && !repartoReal.has(r)) ?? rutasBase[0];
 
 const casos = [
   {
-    etiqueta: "hash-alterado",
+    etiqueta: "visible-alterado",
     exit: 1,
-    porQue: `${rutaDiana} con otro sha en la base ⇒ la sonda tiene que señalarla`,
-    base: () => fabricaBase("hash-alterado", (b) => (b.paginas[rutaDiana].normalizado = "0".repeat(16))),
-    salidaTiene: new RegExp(`❌ ${rutaDiana.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`),
+    porQue: `${rutaDiana} con otro \`visible\` ⇒ es lo que ve el visitante: DEFECTO, no reparto`,
+    base: () =>
+      fabricaBase("visible-alterado", (b) => {
+        b.paginas[rutaDiana].normalizado = "0".repeat(16);
+        b.paginas[rutaDiana].visible = "0".repeat(16);
+      }),
+    salidaTiene: /visible DISTINTO/,
+  },
+  {
+    etiqueta: "filas-alteradas",
+    exit: 1,
+    porQue: "el marcado visible casa pero la carga RSC no ⇒ tampoco es reparto: DEFECTO",
+    base: () =>
+      fabricaBase("filas-alteradas", (b) => {
+        b.paginas[rutaDiana].normalizado = "0".repeat(16);
+        b.paginas[rutaDiana].filas = "0".repeat(16);
+      }),
+    salidaTiene: /filas RSC DISTINTAS/,
+  },
+  {
+    /* ⚠ El complementario de los dos de arriba, y el que evita que «sólo
+     * reparto» se vuelva un cajón de sastre: con `visible` y `filas` iguales, un
+     * `normalizado` distinto tiene que salir VERDE **y contarse aparte**. Si
+     * esto saliera rojo, los tres niveles no serían tres niveles: serían uno. */
+    etiqueta: "solo-reparto",
+    exit: 0,
+    porQue: "visible y filas iguales, documento distinto ⇒ verde, pero CONTADO como reparto",
+    base: () => fabricaBase("solo-reparto", (b) => (b.paginas[rutaDiana].normalizado = "0".repeat(16))),
+    /* Anclado en LA DIANA, no en el recuento total: el total incluye las rutas
+     * que hoy difieren de verdad por el reparto, y contarlas juntas haría que
+     * este caso pasara sin que el sabotaje hubiera hecho nada. */
+    salidaTiene: new RegExp(
+      `✅ ${rutaDiana.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\n\\s+marcado visible Δ0 · filas RSC Δ0`,
+    ),
   },
   {
     etiqueta: "ruta-fantasma",
@@ -151,10 +191,10 @@ const ctl = corridaNegativa({ etiqueta: "control", args: [join(QA, "html-cmp.mjs
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 let malCtl = null;
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
-else if (!new RegExp(`${rutasBase.length} rutas comparadas · 0 con el HTML distinto`).test(ctlOut))
-  malCtl = `no dice «${rutasBase.length} rutas comparadas · 0 con el HTML distinto»`;
+else if (!new RegExp(`${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto`).test(ctlOut))
+  malCtl = `no dice «${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto»`;
 if (malCtl) { fallos++; console.log(`  ❌ CONTROL          ${malCtl}`); }
-else console.log(`  ✓  CONTROL          exit 0 · ${rutasBase.length} rutas comparadas · 0 distintas`);
+else console.log(`  ✓  CONTROL          exit 0 · ${rutasBase.length} rutas comparadas · 0 con contenido distinto`);
 
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} html-cmp · test en negativo: ${casos.length + 1 - fallos}/${casos.length + 1}\n` +

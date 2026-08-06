@@ -13,6 +13,11 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    // F2-3: `@kunak/cms-config` es TypeScript sin compilar y sus importaciones
+    // internas llevan la extensión `.ts` (igual que en `apps/cms`, que ya lo
+    // declara). Sin esto el typecheck de la app de render muere DENTRO del
+    // paquete compartido, no en su propio código.
+    "allowImportingTsExtensions": true,
     "plugins": [
       {
         "name": "next"

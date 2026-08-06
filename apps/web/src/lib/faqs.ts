@@ -3,6 +3,19 @@ import type { Faq } from "@/types/kunak";
 /**
  * FAQ — colección `faqs`. **La más simple del proyecto**: cuatro campos.
  *
+ * ── ⚠ SEED HISTÓRICO desde F2-3 (2026-08-05) ──────────────────────────────
+ * **La página ya NO lee de aquí**: `/faqs/[slug]` lee por Local API
+ * (`src/lib/cms/faqs.ts`). Este fichero **no se borra**, y no por nostalgia:
+ *
+ *   · es lo que `scripts/seed/catalogos.mjs` inserta en la DB — sin él no hay
+ *     nada que leer;
+ *   · y es **la referencia congelada del round-trip 63/63**: `qa:cms-roundtrip`
+ *     compara lo que vuelve de Payload contra ESTAS constantes. Borrarlo
+ *     dejaría al round-trip comparándose consigo mismo.
+ *
+ * O sea que cambia de papel, no de valor: deja de ser fuente de render y sigue
+ * siendo fuente de verdad medida.
+ *
  * Decisión D4 en `docs/research/grupo-C/DECISIONES.md`, modelo en `MODELO.md`
  * §2, Payload en `docs/ESQUEMA-CMS.md` §2b.
  *

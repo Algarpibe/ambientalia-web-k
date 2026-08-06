@@ -116,11 +116,94 @@ function normaliza(html) {
   return { texto: partes.join("<BUILD_ID>"), n: partes.length - 1 };
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS TRES NIVELES, Y POR QUÉ SON TRES (2026-08-05, medido con el canario)
+ *
+ * La primera versión comparaba **un** hash del documento entero, y al migrar la
+ * primera familia dio `2 DISTINTAS` de 31. Al abrir las dos diferencias:
+ *
+ *   · el **marcado visible** —todo el documento menos los `<script>` de
+ *     `self.__next_f`— salía **byte a byte idéntico** (53675→53675 y
+ *     53221→53221);
+ *   · toda la diferencia estaba en la **carga RSC**, la que Next inserta para
+ *     hidratar. Y no era contenido: en `puedo` el CONJUNTO de filas es el mismo
+ *     y sólo cambian los cortes entre `push` (17→16 trozos, **−43 bytes**, que
+ *     es exactamente un envoltorio de trozo); en `cual` las filas son las
+ *     mismas con **otros números de fila** (`HeaderNav` de la `f` a la `10`,
+ *     `IconMark` de la `1d` a la `f`) y el total no se mueve un byte.
+ *
+ * La causa es conocida y esperable: `generateMetadata` pasa a ser **asíncrona**
+ * porque consulta la DB, así que los metadatos resuelven en otro momento y el
+ * serializador de React reparte los ids de fila en orden de resolución.
+ *
+ * ── Lo que NO se hace, y es la tentación ──────────────────────────────────
+ * Meter `__next_f` en la normalización. Eso sería declarar volátil **un tercio
+ * del documento** para que la sonda deje de protestar — la trampa exacta que
+ * las dos guardas de arriba existen para impedir, cometida a mano.
+ *
+ * Lo que se hace es **medir a tres niveles y decir en cuál difiere**:
+ *
+ * | nivel | qué es | umbral |
+ * |---|---|---|
+ * | `visible` | el documento **sin** los `push` de `__next_f` | **CERO — es lo que ve el visitante** |
+ * | `filas` | las filas RSC con los identificadores ENMASCARADOS: invariante a renumeración y a dónde caen los cortes | **CERO — es el contenido de la carga** |
+ * | `normalizado` | el documento entero salvo `BUILD_ID` | **se informa**: si los dos de arriba están a cero, lo que queda es reparto del stream |
+ *
+ * Los dos primeros son el veredicto. El tercero **se cuenta y se nombra**, que
+ * es la diferencia entre «lo excluí» y «lo miré y sé qué es».
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+const RE_TROZO = /<script>self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)<\/script>/g;
+
+/** El documento sin la carga de hidratación: lo que un visitante recibe. */
+const visibleDe = (html) => html.replace(RE_TROZO, "");
+
+/**
+ * Las filas RSC, **con los identificadores enmascarados**.
+ *
+ * Los cortes entre `push` son transporte, no contenido: se concatenan las
+ * cargas y se parte por filas. Y los números de fila son una asignación
+ * interna del serializador —cambian con el orden de resolución sin que cambie
+ * el árbol—, así que se enmascaran tanto en la cabeza de la fila (`1c:`) como
+ * en las referencias (`"$L1c"`).
+ *
+ * ⚠ Enmascarar es dejar de mirar, otra vez, así que **se cuenta**: `nMascaras`
+ * viaja en la congelada. Y no puede fabricar un verde por sí solo — el nivel
+ * `visible`, que decide, no enmascara nada.
+ */
+function filasDe(html) {
+  const cargas = [];
+  RE_TROZO.lastIndex = 0;
+  let m;
+  while ((m = RE_TROZO.exec(html))) cargas.push(JSON.parse(m[1]));
+  let n = 0;
+  const filas = cargas
+    .join("")
+    .split("\n")
+    .filter(Boolean)
+    .map((f) =>
+      f
+        .replace(/^[0-9a-f]+:/, () => (n++, "<F>:"))
+        .replace(/"\$[LW]?[0-9a-f]{1,4}"/g, () => (n++, '"<REF>"')),
+    )
+    .sort();
+  return { filas, n };
+}
+
 const { base: BASE, parar } = await iniciarClon();
 
 const ev = new Evaluadas({ nombre: `html-cmp ${etiqueta}`, unidad: "rutas", minimo: RUTAS.length });
 const todo = {
-  meta: { fecha: hoy(), etiqueta, rutas: RUTAS.length, buildIdNormalizado: true },
+  /**
+   * ⚠ **`buildId` es el MARCADOR DE FRESCURA de esta sonda, y va en la
+   * congelada.** El protocolo pide un marcador en el HTML servido para
+   * discriminar el build; aquí el cambio que se mide **no deja marca en el
+   * HTML** —una migración cuyo efecto esperado es cero no la puede dejar—, así
+   * que el marcador tiene que ser otro. Éste lo es y es mejor: dos ficheros con
+   * `buildId` distinto son dos builds distintos, y se ve **en la evidencia
+   * congelada** y no sólo en la consola de quien la corrió.
+   */
+  meta: { fecha: hoy(), etiqueta, rutas: RUTAS.length, buildId: BUILD_ID },
   paginas: {},
 };
 
@@ -147,7 +230,17 @@ for (const ruta of RUTAS) {
       await parar();
       process.exit(2);
     }
-    todo.paginas[ruta] = { bytes, crudo: sha(html), normalizado: sha(texto), nBuildId: n };
+    const { filas, n: nMascaras } = filasDe(texto);
+    todo.paginas[ruta] = {
+      bytes,
+      crudo: sha(html),
+      normalizado: sha(texto),
+      visible: sha(visibleDe(texto)),
+      filas: sha(filas.join("\n")),
+      nFilas: filas.length,
+      nMascaras,
+      nBuildId: n,
+    };
     ev.ok();
   } catch (e) {
     todo.paginas[ruta] = { error: String(e).slice(0, 200) };
@@ -187,7 +280,13 @@ if (idas.length) {
 
 let distintas = 0;
 let soloVolatil = 0;
+let soloReparto = 0;
 let sinComparar = 0;
+/** ¿La base es de antes de los tres niveles? Entonces sólo se puede exigir el 1. */
+const baseConNiveles = Object.values(antes.paginas).some((p) => p.visible);
+if (!baseConNiveles)
+  console.log(`  ⚠ la base no trae \`visible\`/\`filas\`: sólo se puede comparar el documento entero\n`);
+
 for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
   const a = antes.paginas[ruta];
   const b = todo.paginas[ruta];
@@ -203,14 +302,33 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
     }
     continue;
   }
+  /* Difiere el documento entero. Los dos niveles de abajo dicen SI ESO IMPORTA:
+   * lo que el visitante ve, y el contenido de la carga de hidratación. */
+  const visibleIgual = baseConNiveles && a.visible === b.visible;
+  const filasIguales = baseConNiveles && a.filas === b.filas;
+  if (visibleIgual && filasIguales) {
+    soloReparto++;
+    console.log(
+      `  ✅ ${ruta}\n       marcado visible Δ0 · filas RSC Δ0 (${a.nFilas}) — sólo cambia el REPARTO del stream` +
+        ` (${a.bytes} → ${b.bytes} bytes)`,
+    );
+    continue;
+  }
   distintas++;
   console.log(
     `  ❌ ${ruta}\n       bytes ${a.bytes} → ${b.bytes} (${b.bytes - a.bytes >= 0 ? "+" : ""}${b.bytes - a.bytes})` +
-      `  ·  sha ${a.normalizado} → ${b.normalizado}`,
+      `  ·  sha ${a.normalizado} → ${b.normalizado}` +
+      (baseConNiveles
+        ? `\n       visible ${visibleIgual ? "Δ0" : `DISTINTO (${a.visible} → ${b.visible})`}` +
+          ` · filas RSC ${filasIguales ? `Δ0 (${a.nFilas})` : `DISTINTAS (${a.nFilas} → ${b.nFilas})`}`
+        : `\n       (base sin niveles: no se puede decir si es contenido o reparto)`),
   );
 }
-const iguales = rutasAntes.length - idas.length - sinComparar - distintas;
-console.log(`\n  ${iguales - soloVolatil} idénticas byte a byte · ${soloVolatil} sólo el BUILD_ID · ${distintas} DISTINTAS`);
+const iguales = rutasAntes.length - idas.length - sinComparar - distintas - soloReparto;
+console.log(
+  `\n  ${iguales - soloVolatil} idénticas byte a byte · ${soloVolatil} sólo el BUILD_ID · ` +
+    `${soloReparto} sólo el reparto del stream RSC · ${distintas} DISTINTAS`,
+);
 
 /* Segundo contrato, con su propio mínimo: se puede medir las 31 y comparar
  * CERO si la base es de otro conjunto de rutas (`CLAUDE.md` §sondas 4bis). */
@@ -221,7 +339,8 @@ const fallosCmp = evCmp.informe();
 const mal = distintas > 0 || idas.length > 0 || sinComparar > 0 || fallosEv > 0 || fallosCmp > 0;
 console.log(
   `\n${mal ? "❌" : "✅"} ${rutasAntes.length - idas.length - sinComparar} rutas comparadas · ` +
-    `${distintas} con el HTML distinto · umbral CERO (byte a byte, salvo BUILD_ID)`,
+    `${distintas} con CONTENIDO distinto · umbral CERO en marcado visible y filas RSC` +
+    (soloReparto ? `\n   (${soloReparto} con el mismo contenido y otro reparto del stream — contadas aparte, no son Δ0)` : ""),
 );
 await parar();
 process.exit(mal ? 1 : 0);

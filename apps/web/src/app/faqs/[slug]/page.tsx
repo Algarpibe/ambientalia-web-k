@@ -6,7 +6,7 @@ import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { FaqSidebar } from "@/components/faq/FaqSidebar";
-import { FAQS_PUBLICADAS, getFaq } from "@/lib/faqs";
+import { faqsPublicadas, getFaq } from "@/lib/cms/faqs";
 
 /**
  * `/faqs/[slug]` — ARQUETIPO **FAQ**, el más barato del proyecto en campos.
@@ -37,11 +37,23 @@ import { FAQS_PUBLICADAS, getFaq } from "@/lib/faqs";
  * ── SEO: lo que falta no se inventa ────────────────────────────────────────
  * `description` y `ogImage` están **ausentes en las 19** (corrección §0 de
  * `DECISIONES.md`, que desdice al recon). Aquí solo va `title`.
+ *
+ * ── ⚠ F2-3: el dato viene de la DB, no de `src/lib` (2026-08-05) ──────────
+ * **La primera familia migrada a Local API**, y por eso el canario: si la
+ * fontanería —bundling de `payload` dentro de `next build`, `.env`, pool—
+ * fallara, falla con 2 rutas en juego y no con 31.
+ *
+ * `src/lib/faqs.ts` **no se borra**: pasa a seed histórico. Sigue siendo lo que
+ * `scripts/seed/catalogos.mjs` inserta y la referencia congelada contra la que
+ * `qa:cms-roundtrip` mide el 63/63. Lo que cambia es quién lo lee al construir.
+ *
+ * Y el aviso de `PLAN-FASE-2.md` §F2-3: **desde aquí este fichero paga su Δ0**.
+ * «`apps/web` intacto» deja de ser un renglón del informe.
  */
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return FAQS_PUBLICADAS.map((f) => ({ slug: f.slug }));
+export async function generateStaticParams() {
+  return (await faqsPublicadas()).map((f) => ({ slug: f.slug }));
 }
 
 export async function generateMetadata({
@@ -50,7 +62,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const faq = getFaq(slug);
+  const faq = await getFaq(slug);
   if (!faq) return {};
   return {
     title: faq.seo.title,
@@ -66,7 +78,7 @@ export default async function FaqPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const faq = getFaq(slug);
+  const faq = await getFaq(slug);
   if (!faq) notFound();
 
   return (

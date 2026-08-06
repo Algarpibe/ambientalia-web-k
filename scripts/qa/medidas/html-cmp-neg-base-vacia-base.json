@@ -1,9 +1,9 @@
 {
   "meta": {
     "fecha": "2026-08-05",
-    "etiqueta": "f23-antes",
+    "etiqueta": "f23-base",
     "rutas": 31,
-    "buildIdNormalizado": true
+    "buildId": "tmFBOZ76WdquTCvwCVjJj"
   },
   "paginas": {}
 }

@@ -261,6 +261,80 @@ console.log("\n── `w()`: una salida congelada no se descongela sola ──")
   eq("un clon que no llega a levantar TIRA en vez de medir", arranqueFallido !== null, true);
   eq("…y lo dice con el puerto", /puerto \d+/.test(String(arranqueFallido)), true);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 3b · EL GANCHO DE `uncaughtException` NO PUEDE TRAGARSE LA MUERTE
+ *
+ * ⚠ **El defecto que este bloque conserva es el peor que ha tenido `lib.mjs`, y
+ * vivió meses sin dar una sola señal (2026-08-05).**
+ *
+ * `iniciarClon` registraba `uncaughtException` **en el mismo bucle** que `exit`,
+ * `SIGINT` y `SIGTERM`, con el mismo cuerpo. Parece simetría y no lo es: los
+ * tres primeros son avisos, `uncaughtException` es un **relevo**. Registrarlo
+ * desactiva el comportamiento por defecto de Node — deja de imprimir el error y
+ * deja de salir con 1—, así que **cualquier sonda que reventara terminaba con
+ * código 0 y salida vacía**.
+ *
+ * Cómo salió: el negativo del entorno de F2-3 —`.next` borrado por un build
+ * fallido— corrió `clon-base` y dio **exit 0 con CERO líneas**. La sonda que
+ * adjudica el Δ0 de la fase daba verde sin haber medido nada.
+ *
+ * Se prueba en SUBPROCESO y **por los dos lados**, que es lo que lo hace una
+ * medida y no una creencia: el mismo `throw` sin gancho y con él.
+ * ═════════════════════════════════════════════════════════════════════════ */
+{
+  const { spawnSync } = await import("node:child_process");
+  const tmpG = mkdtempSync(join(tmpdir(), "kq-gancho-"));
+  const LIB = JSON.stringify(new URL("./lib.mjs", import.meta.url).href);
+  const corre = (nombre, cuerpo, entorno = {}) => {
+    const f = join(tmpG, `${nombre}.mjs`);
+    writeFileSync(f, cuerpo);
+    const r = spawnSync(process.execPath, [f], { encoding: "utf8", env: { ...process.env, ...entorno } });
+    return { code: r.status, out: (r.stdout || "") + (r.stderr || "") };
+  };
+  /* `CLON` a una URL cualquiera: `iniciarClon` no arranca ningún proceso hijo y
+   * el caso mide EL GANCHO, no el `spawn`. Es además la prueba de que la guarda
+   * quedó registrada ANTES del atajo de `CLON` — si estuviera después, estos
+   * dos casos volverían a salir verdes en silencio. */
+  const SIN_SERVIDOR = { CLON: "http://127.0.0.1:1" };
+
+  /* El CONTROL del mecanismo: sin ningún gancho, Node hace lo que hay que hacer. */
+  let r = corre("desnudo", `throw new Error("boom");\n`);
+  eq("sin gancho, un throw sale ≠0", r.code !== 0, true);
+  eq("…y lo imprime", /boom/.test(r.out), true);
+
+  /* El DEFECTO, tal cual estaba: un gancho vacío convierte la muerte en verde.
+   * Si algún día esto dejara de ser cierto en Node, el caso de abajo dejaría de
+   * significar algo — y este `eq` es el que se enteraría. */
+  r = corre("tragon", `process.on("uncaughtException", () => {});\nthrow new Error("boom");\n`);
+  eq("un gancho VACÍO se traga la muerte: exit 0 y salida muda", r.code === 0 && r.out.trim() === "", true);
+
+  /* Y lo que hace `iniciarClon` HOY, que es el arreglo: limpia **y** devuelve
+   * el fallo. */
+  r = corre(
+    "con-iniciarclon",
+    `import { iniciarClon } from ${LIB};\n` +
+      `await iniciarClon();\n` +
+      `throw new Error("boom");\n`,
+    SIN_SERVIDOR,
+  );
+  eq("tras iniciarClon(), un throw SIGUE saliendo ≠0", r.code !== 0, true);
+  eq("…y lo dice con las palabras exactas", /LA SONDA NO MIDIÓ NADA/.test(r.out), true);
+  eq("…y enseña el error original", /boom/.test(r.out), true);
+
+  /* La otra mitad: una promesa rechazada sin capturar —que es la forma que toma
+   * un `await` que revienta en el cuerpo de una sonda— tampoco puede ser verde. */
+  r = corre(
+    "rechazo",
+    `import { iniciarClon } from ${LIB};\n` +
+      `await iniciarClon();\n` +
+      `void Promise.reject(new Error("rechazada"));\n` +
+      `await new Promise((r) => setTimeout(r, 50));\n`,
+    SIN_SERVIDOR,
+  );
+  eq("una promesa rechazada sin capturar tampoco es verde", r.code !== 0, true);
+  eq("…y se nombra como tal", /PROMESA RECHAZADA SIN CAPTURAR/.test(r.out), true);
+}
 /* ══════════════════════════════════════════════════════════════════════════
  * EL CONTRATO DE `Evaluadas` — «0 comparado = verde», la sexta vez no
  *
