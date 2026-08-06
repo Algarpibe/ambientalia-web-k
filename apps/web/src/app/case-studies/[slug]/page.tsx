@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { CasoPagina } from "@/components/caso/CasoPagina";
-import { CASOS_PUBLICADOS, getCaso, metadataDeCaso, prefijoDe } from "@/lib/casos";
+// F2-3: el catálogo se lee del CMS por Local API; `src/lib/casos.ts` se conserva
+// como seed histórico y sigue aportando lo que es PLANTILLA —`prefijoDe`,
+// `metadataDeCaso`—, que DERIVAN de los campos en vez de guardarse.
+import { metadataDeCaso, prefijoDe } from "@/lib/casos";
+import { casosPublicados, getCasoCms } from "@/lib/cms/casos";
 
 /**
  * `/case-studies/[slug]` — el **otro** prefijo de la MISMA colección `casos`:
@@ -28,10 +32,10 @@ import { CASOS_PUBLICADOS, getCaso, metadataDeCaso, prefijoDe } from "@/lib/caso
  */
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return CASOS_PUBLICADOS.filter((c) => prefijoDe(c) === "case-studies").map((c) => ({
-    slug: c.slug,
-  }));
+export async function generateStaticParams() {
+  return (await casosPublicados())
+    .filter((c) => prefijoDe(c) === "case-studies")
+    .map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({
@@ -40,7 +44,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const caso = getCaso("case-studies", slug);
+  const caso = await getCasoCms("case-studies", slug);
   return caso ? metadataDeCaso(caso) : {};
 }
 
@@ -50,7 +54,7 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const caso = getCaso("case-studies", slug);
+  const caso = await getCasoCms("case-studies", slug);
   if (!caso) notFound();
   return <CasoPagina caso={caso} />;
 }

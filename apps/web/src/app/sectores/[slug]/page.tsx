@@ -17,8 +17,11 @@ import { SectorHero } from "@/components/sectores/SectorHero";
 import { SectorBody } from "@/components/sectores/SectorBody";
 import { MonoCuerpo } from "@/components/monografico/MonoCuerpo";
 
-import { SECTORES_PUBLICADOS, getSector } from "@/lib/sectores";
-import { MONOGRAFICOS_PUBLICADOS, getMonografico } from "@/lib/monografico";
+// F2-3: los dos catálogos se leen del CMS por Local API; `src/lib/sectores.ts` y
+// `src/lib/monografico.ts` se conservan como seed histórico —es lo que
+// `catalogos.mjs` inserta y la referencia del round-trip 63/63— y siguen
+// aportando lo que es PLANTILLA: `SECTORES_INDICE` y los tipos.
+import { monograficosPublicados, sectoresPublicados } from "@/lib/cms/sectores";
 
 /**
  * /sectores/[slug] — **DOS arquetipos en la misma ruta**:
@@ -80,17 +83,17 @@ function TituloK({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function generateStaticParams() {
-  return [...SECTORES_PUBLICADOS, ...MONOGRAFICOS_PUBLICADOS].map((p) => ({
+export async function generateStaticParams() {
+  return [...(await sectoresPublicados()), ...(await monograficosPublicados())].map((p) => ({
     slug: p.slug,
   }));
 }
 
 /** Resuelve el slug contra los dos catálogos. Los slugs no se solapan. */
-function getPagina(slug: string) {
-  const monografico = getMonografico(slug);
+async function getPagina(slug: string) {
+  const monografico = (await monograficosPublicados()).find((m) => m.slug === slug);
   if (monografico) return { monografico, sector: undefined, comun: monografico };
-  const sector = getSector(slug);
+  const sector = (await sectoresPublicados()).find((s) => s.slug === slug);
   if (sector) return { monografico: undefined, sector, comun: sector };
   return null;
 }
@@ -101,7 +104,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const pagina = getPagina(slug);
+  const pagina = await getPagina(slug);
   if (!pagina) return {};
   const { seo } = pagina.comun;
   return {
@@ -122,7 +125,7 @@ export default async function SectorPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const pagina = getPagina(slug);
+  const pagina = await getPagina(slug);
   if (!pagina) notFound();
   const { monografico, sector: sectorClasico } = pagina;
   const sector = pagina.comun;
