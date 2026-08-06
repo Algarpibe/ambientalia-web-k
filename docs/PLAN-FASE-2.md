@@ -1270,6 +1270,65 @@ cada colección»* de la prueba de operación **ya no está bloqueado por una
 decisión de modelo**; lo que le falta es que las tres familias restantes se
 cableen, que es trabajo mecánico con su Δ0 por familia.
 
+### Estado 2026-08-06 (tarde) — 5 de 7 colecciones servidas, y la que falta NO es mecánica
+
+| familia de ruta | colección | estado |
+|---|---|---|
+| `/faqs/[slug]` | `faqs` | ✅ migrada (canario, 08-05) |
+| `/recursos/[...ruta]` | `documentos-cientificos` | ✅ migrada 08-06 — y su residuo RSC **cerrado** por el contrato del §F2-3-RSC-ORDEN |
+| `/casos-de-exito/[slug]` · `/case-studies/[slug]` | `casos` | ✅ **migrada 08-06** |
+| `/sectores/[slug]` | `sectores` · `monograficos` | ✅ **migrada 08-06** — las dos de más forma (108 y 199 hojas) |
+| `/[slug]` | `entradas-blog` · `terminos-kunakpedia` | ⛔ **BLOQUEADA** — §F2-3-T4A-BLOG |
+
+**El bloqueo no es del proyector y no es mecánico.** El seed aplica **T4a sin
+T4b**, así que la DB guarda **4 de las 7 entradas de blog sin sus `<script>`** y
+la familia no puede pagar su Δ0: −7112 · −6783 · −6532 · −524 bytes de marcado
+visible. `terminos-kunakpedia` está limpia y sólo la bloquea compartir ruta.
+
+**Y cambia el «hecho cuando» de la fase**, así que se dice aquí y no se
+descubre luego: *«al menos una instancia de CADA colección»* **no es alcanzable
+hoy**. Es alcanzable en **5 de 7** —`faqs` · `documentos-cientificos` · `casos` ·
+`sectores` · `monograficos`— y las 2 que faltan dependen de T4b, que es deuda de
+**F2-2**, no de esta fase.
+
+### La PRUEBA DE OPERACIÓN — preparada, NO corrida, y NO PROBADA
+
+**Su trampa, sin cambios:** un `update` por Local API **no es** el guardado del
+admin. Lo que la prueba caza es la **NORMALIZACIÓN DEL EDITOR** —un save que
+reordena claves, normaliza HTML o «arregla» el rico mueve el render sin que
+nadie haya editado nada— y eso sólo ocurre en el camino del **admin**.
+Simularlo con un update programático da un verde que **no contesta la
+pregunta**.
+
+**Protocolo, con la disciplina de siempre:**
+
+1. Congelar la línea base **antes de tocar nada**: `qa:html-cmp` con etiqueta
+   propia contra el build actual (no contra `html-f23-base`, que es de otra
+   fase). Es el «antes» de esta prueba y sólo suyo.
+2. Abrir `/admin` **de verdad** con `puppeteer-core` sobre el Chrome del sistema,
+   perfil limpio (§Notas de método). Una instancia de **cada** colección servida.
+3. **Guardar SIN cambios.**
+4. `npm run build` y volver a correr `qa:html-cmp` contra la línea base del paso
+   1. **Umbral CERO en el nivel `visible`**; `filas` es informativo con su
+   disparador (§F2-3-RSC-ORDEN).
+5. Lo que se mueva es un defecto **de F2-1/F2-2** —el modelo o el editor—, no de
+   F2-3, y se ficha como tal.
+
+**Precondiciones derivadas hoy, no supuestas:**
+
+| precondición | estado medido |
+|---|---|
+| el admin lo sirve `apps/cms` | `next start --port 3001` (su `package.json`) |
+| **existe un usuario** | **NO: `usuarios` tiene 0 filas.** Hay que pasar por `/admin/create-first-user`, y **eso es parte de la prueba**, no un preparativo aparte |
+| colecciones con instancia servida desde el CMS | **5 de 7** (ver arriba) |
+| `cms:reset` | vacía `media/` y la DB ⇒ el usuario creado **no sobrevive** a un reseed: el orden es sembrar → crear usuario → probar |
+
+> ⚠ **Mientras no se corra, la prueba se declara NO PROBADA**, y por eso **no
+> hay sonda escrita**: un fichero `admin-operacion.mjs` sin haber corrido nunca
+> es código que parece cobertura y no lo es (regla 3, *documentado no es
+> conectado*). Lo que queda escrito es el protocolo y sus precondiciones — que
+> es lo que la tanda siguiente necesita para no volver a derivarlas.
+
 ---
 
 ## F2-4 · Publicación

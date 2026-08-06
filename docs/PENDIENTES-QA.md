@@ -1,5 +1,79 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F2-3-T4A-BLOG · `/[slug]` NO se puede migrar: la DB no guarda 4 cuerpos enteros (2026-08-06)
+
+**Bloquea:** la única familia de ruta que queda (`entradas-blog` +
+`terminos-kunakpedia`), y con ella el criterio *«al menos una instancia de CADA
+colección»* de la prueba de operación.
+
+**Se migró, se midió y se revirtió**, que es como se sabe el número.
+`qa:html-cmp` marcó **4 rutas con el marcado VISIBLE distinto** —la PUERTA del
+contrato del §F2-3-RSC-ORDEN—:
+
+| ruta | Δ bytes |
+|---|---:|
+| `/running-for-clean-air` | **−7112** |
+| `/monitorizacion-de-emisiones-del-trafico-urbano` | **−6783** |
+| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | **−6532** |
+| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | **−524** |
+
+**La causa NO es el proyector: es T4a sin T4b.** El seed imprime su propia
+pérdida —*«5 `<script>` eliminados, **0 sustituidos**»*— y `T4B` vive en
+`transformaciones.mjs`, que es el camino del **extractor**, no el del seed. Así
+que la DB guarda esos 4 cuerpos **sin** el visor de PDF, el embed de Instagram,
+el reproductor de NBC y los flipbooks. Diferencia comprobada carácter a carácter
+contra el catálogo medido: el primer punto de divergencia es un `<script>` en
+los cuatro.
+
+**El alcance está acotado, y la evidencia llevaba dos días congelada** — regla
+8b, *la respuesta estaba en `medidas/`*: `sondeo-frontera.json` (**2026-08-04**)
+registra **4 rechazos del `validate`, los 4 en `entradas-blog`, los 4 mismos
+slugs**. Y ninguna otra colección tiene `<script>` en el dato medido: **0 en las
+otras 8**. Dos instrumentos independientes, el mismo conjunto de cuatro.
+
+> **Por qué no se landa igual con la desviación anotada:** meter los 4 cuerpos
+> mutilados en el clon servido es una **regresión de contenido** contra la regla
+> 1 (fidelidad), a cambio de nada — F2-3 no necesita blog para avanzar. Y el Δ0
+> de esta fase existe precisamente para que una migración de FUENTE no se
+> convierta en un cambio de CONTENIDO sin que nadie lo decida.
+
+**Y ojo con el matiz que decide cómo se desbloquea:** `terminos-kunakpedia`
+**está limpia** (0 scripts). Está bloqueada sólo por **compartir ruta** con
+`entradas-blog` en el plano de raíz. No hace falta arreglar los términos: hace
+falta T4b.
+
+**Qué lo desbloquea, y qué NO:** T4b sobre el camino del seed —o el importador
+del corpus, que ya lo lleva—. Lo que **no** lo desbloquea es esperar: T4b
+*sustituye*, no restaura, así que **el Δ0 de esas 4 rutas no va a ser cero
+nunca**. La tanda que lo aborde tiene que decidir **contra qué** se acepta esa
+familia, y esa decisión es de contenido, no de instrumento.
+
+Evidencia congelada: `medidas/html-f23-slug-REVERTIDA-2-t4a.json` (4 rojas) ·
+`medidas/sondeo-frontera.json` §`validate.rechazos`.
+
+## ⚠ F2-3-ASYNC-HIJO · un límite asíncrono NUEVO mueve el HTML sin mover un dato (2026-08-06)
+
+**Mecanismo nuevo para este proyecto, y sólo se ve porque la puerta es el
+marcado visible.** Al migrar `/[slug]` se hizo `async` el componente
+`RelacionadosA` para que leyera el catálogo del CMS. `qa:html-cmp` marcó **6**
+rutas, no 4: las 6 con `relacionados: true` — y **dos de ellas sin una sola
+diferencia de dato**, `/contador-…` con **Δ 0 bytes** y el marcado distinto.
+
+Volver el componente **síncrono** —pasándole el catálogo que la página ya
+espera— devolvió esas 2 a Δ0, dejando sólo las 4 de T4a. Antes/después con todo
+lo demás igual: `html-f23-slug-REVERTIDA-1-async.json` (6) →
+`-2-t4a.json` (4).
+
+> **Abrir un límite asíncrono dentro del árbol cambia el HTML servido aunque el
+> dato sea idéntico.** Las dos familias migradas antes no lo vieron porque su
+> `async` está **en la página**, no en un hijo; `casos` y `sectores` tampoco, por
+> lo mismo.
+
+**Regla operativa para lo que quede:** el dato se espera **en la página**, que ya
+es asíncrona, y baja a los componentes por prop. Un `await` dentro de un
+componente hijo es un cambio de maquetación disfrazado de refactor — y su Δ0 no
+lo caza `clon-base`, que mide geometría: aquí la geometría **no se movió**.
+
 ## ✅ F2-3-MEDIA · CERRADA (2026-08-06) — y la premisa era verdadera con la conclusión equivocada
 
 **Lo que decía la ficha:** *«`media` no guarda la ruta de origen ⇒ `rutaDeMedia`
@@ -69,6 +143,69 @@ dos casos, así que es familia **M-IMG** (dimensión igual, bytes no). **La deud
 real es de fragilidad**: si el orden de inserción cambiara, Payload
 desduplicaría (`-1.jpg`) y **entonces sí** rompería la tabla. Lo vigila
 `qa:media-colision` comprobación B en cada corrida.
+
+### ⚠ AMPLIADA 2026-08-06 — ¿sobreviven los orígenes? Sí, pero NO donde se buscó
+
+**La pregunta era si los bytes pisados sobreviven en la captura congelada** (534
+ficheros con `sha256`, commiteados). Medido:
+
+> **NO están en `media-corpus`. Y no es un hueco de la captura: es su ALCANCE
+> declarado.** `media-corpus/INDICE.json` lo dice en su propia cabecera —*«fuera:
+> las VARIANTES»*— y la lista se derivó del **markup**. Los dos orígenes
+> disputados **se llaman como una variante**, así que la regla de la lista nunca
+> los pidió. Es el mismo mecanismo que **§M-PDF-FB3D**: la lista acertó en todo
+> lo que podía ver.
+
+**Pero la pérdida es RECUPERABLE, y el que la recupera es otro artefacto:**
+`apps/web/public/images` —**en git**, comprobado con `git ls-files`— guarda los
+**112 orígenes**, y los 3 ficheros disputados con sus bytes buenos. Verificado
+con `sha256` origen a origen: **109 de 112 son idénticos byte a byte a
+`media/`**, y en los 3 que difieren el bueno está en `public/`. Y `media/` está
+en `.gitignore` y `cms:reset` lo vacía ⇒ **lo pisado es un artefacto
+reconstruible, no daño durable.**
+
+> **La palabra correcta no es «pérdida real»: es recuperable.** Lo que sí hay
+> que corregir es **dónde está la red**: no en la captura, en `public/images`.
+> Citar `media-corpus` como respaldo de esta clase habría sido una garantía
+> falsa — no puede contener, por construcción, nada con nombre de variante.
+
+**Y dos correcciones de recuento (regla 9), derivadas contra la DB y el disco:**
+
+**(a) La exposición es mayor que «3», y está anidada.** Las cifras no se
+contradicen: son predicados distintos, cada vez más estrecho.
+
+| predicado | nº | qué significa |
+|---|---:|---|
+| orígenes de `media` | 112 | — |
+| con **nombre de variante** (`-WxH`) | **40** | la forma cruda |
+| …y con un ancho que `imageSizes` **puede** generar | **18** | los otros **22** son `-600x600`, y **ningún `imageSize` produce 600** (300·480·768·980·1024·1080·1280) ⇒ fuera del alcance del mecanismo |
+| …y con su **base en la unión** | **3** | es el predicado de `qa:media-colision` C |
+| …y **materializado** (los dos ficheros presentes, `sha` distinto) | **2** | lo que la ficha ya decía |
+
+O sea: la sonda cuenta bien lo que dice contar. Lo que faltaba era **el
+denominador de la fragilidad**: hay **18** nombres al alcance del mecanismo, y
+cada uno se convierte en colisión el día que alguien suba su base.
+
+**(b) Hay un TERCER fichero que difiere, y NO es de este mecanismo.**
+`/images/uploads/2024/01/Air_pollution_in_Madrid.webp`: mismas dimensiones
+(**1000×600**), sin nombre de variante, y **ningún otro origen genera ese
+nombre** (comprobado contra los `sizes` de los 112). Lo que pasó es que Payload
+**lo RE-CODIFICÓ**: `65 752 → 62 096` bytes.
+
+Y eso toca **el control de la comprobación C**, cuyo propio comentario lo había
+anticipado: *«sin el control, el sha distinto se explicaría solo por
+recodificación y no probaría nada (regla 8a)»*. **La alternativa que el control
+descartaba existe de verdad** — sobre el único fichero cuyo formato es distinto:
+
+> **«Payload copia los orígenes verbatim» vale para los 111 `jpeg`+`png`, y NO
+> para el `webp`.** Es una propiedad **del formato**, no de la colección, y el
+> alcance hay que decirlo: el mecanismo está derivado sobre **n = 1** — hay un
+> solo `webp` entre los 112 (108 `jpeg` · 3 `png` · 1 `webp`).
+
+El control sigue siendo válido **para lo que se usa** (los 2 disputados son
+`jpg`), pero la frase no se puede citar de la colección entera. Consecuencia
+hoy: ninguna geométrica —misma dimensión— ⇒ **M-IMG** también, con su mecanismo
+propio.
 
 ## ✅ F2-3-RSC-ORDEN · CERRADA (2026-08-06) — con CONTRATO, y la otra salida era la equivocada
 

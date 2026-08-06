@@ -1,3 +1,154 @@
+# HANDOFF — el CONTRATO de html-cmp escrito (y quien lo decidió fue el ORIGINAL), dos familias más migradas, y la última NO se landa con su número
+
+> ⚠ **Tanda 2026-08-06 (35.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.
+> PASO 2 entrega **2 de las 4** familias con su Δ0 pagado y la tercera
+> **medida y revertida**: no puede pagarlo, y por qué está derivado.
+> **El escalón NO disparó.** `apps/web` se toca por diseño y paga: 31/31 sin
+> mover un píxel a 1440 y a 390.
+
+## 0 · Los cuatro titulares
+
+> **1 · La decisión de instrumento la tomó el ORIGINAL, no el gusto.**
+> §F2-3-RSC-ORDEN ofrecía dos salidas —ensanchar la máscara o fichar el residuo
+> ruta a ruta— y la que valía era una tercera: **declarar qué garantiza cada
+> nivel**. El hecho que la cierra se midió contra la salida servida:
+> **`qa:rsc-original` — 4 arquetipos del original, 0 con `__next_f`**, los 4 con
+> control positivo. Luego el nivel `filas` **no tiene contraparte que auditar ni
+> hoy ni nunca**: es clon-contra-clon POR CONSTRUCCIÓN. `visible` sí puede ser
+> puerta, y por el mismo argumento: es donde vive la fidelidad que se puede
+> **trasladar**.
+>
+> **2 · El contrato se pagó solo en la primera corrida.** `sectores` dejó **8
+> rutas con la carga RSC renumerada**. Con el contrato anterior eso habrían sido
+> **8 rojas por un cambio de Next**, no del clon. Y lo que descartó la otra
+> salida fue una medida: **el residuo CAMBIA DE RUTA entre dos builds del mismo
+> commit** — fichar ruta a ruta habría nombrado una ruta que deja de serlo.
+>
+> **3 · `/[slug]` no se landa, y el bloqueo no es del proyector.** Se migró, se
+> midió, se revirtió: **4 rutas con el marcado VISIBLE distinto**
+> (−7112 · −6783 · −6532 · −524). El seed aplica **T4a sin T4b** —su propia
+> salida dice «5 `<script>` eliminados, **0 sustituidos**»—, así que la DB
+> guarda 4 cuerpos de blog mutilados. **La evidencia llevaba dos días
+> congelada**: `sondeo-frontera.json` del 04-08 registra los **4 mismos slugs**.
+>
+> **4 · Y salió un mecanismo nuevo que sólo se ve con la puerta en el marcado:**
+> hacer `async` un componente HIJO cambia el HTML servido **sin mover un dato**
+> — `/contador-…` con **Δ 0 bytes** y marcado distinto. `clon-base` no lo caza:
+> la geometría no se mueve.
+
+## 1 · PASO 1 — el contrato de los tres niveles
+
+| nivel | qué GARANTIZA | umbral | falsador |
+|---|---|---|---|
+| `visible` | lo que recibe el visitante no cambió — **y traslada la fidelidad medida contra el original** | **PUERTA · CERO** | `visible-alterado` |
+| `filas` | **nada de fidelidad** (el original no emite esto): sólo churn de la carga | **INFORMATIVO con disparador** | `filas-renumeradas` verde y contado · `inv-nfilas` · `inv-nmascaras` · `inv-bytescarga` rojos |
+| `normalizado` | nada por sí solo | informativo, contado | `solo-reparto` |
+
+**Degradar no es dejar de mirar.** El reparto mueve *qué fila lleva qué id*; no
+puede mover `nFilas`, `nMascaras` ni `bytesCarga`. Filas distintas con los
+invariantes quietos → verde **contado y nombrado**; un invariante movido →
+DEFECTO con su número.
+
+⚠ **`bytesCarga` es nuevo y `html-f23-base.json` es anterior**, y esa congelada
+no se re-congela. Durante F2-3 el disparador corre con **dos invariantes y no
+tres**, y la sonda **lo dice ruta a ruta** en vez de darlo por cumplido.
+
+**Y el negativo cazó una premisa mía antes de que llegara a ningún documento:**
+creía que el clon emite `et_pb_` «replicando las clases de Divi». Los **70 usos
+de `apps/web/src` están TODOS en comentarios**. El caso salía rojo por `SIN
+CONTROL` en vez de por `EMITE` — el invariante equivocado, que mirando sólo el
+código de salida habría pasado.
+
+| sonda | resultado |
+|---|---|
+| `qa:rsc-original` | 4/4 · **negativo 5/5**, y su falsador es **el propio clon** |
+| `qa:html-cmp-neg` | **11/11** (era 8/8) |
+| `qa:lib` | 93/93 · 93 sondas compilan y declaran |
+
+## 2 · PASO 2 — dos familias con Δ0, una revertida con número
+
+| familia | colecciones | veredicto |
+|---|---|---|
+| `/casos-de-exito/[slug]` · `/case-studies/[slug]` | `casos` | ✅ |
+| `/sectores/[slug]` | `sectores` · `monograficos` (108 y 199 hojas) | ✅ |
+| `/[slug]` | `entradas-blog` · `terminos-kunakpedia` | ⛔ **revertida** |
+
+Las dos verdes, cada una con su verificación completa y sin heredar nada:
+`html-cmp` **31 comparadas · 0 con contenido distinto** · `clon-base` **31/31 a
+1440 y a 390** · `enlaces` limpia en las dos direcciones (868 hrefs) · `corte`
+12/12 · `slugs` · `manifiesto` 31 rutas · `npm run check`.
+
+**Lo que bloquea `/[slug]` está acotado:** `entradas-blog` es la **única** de las
+9 colecciones con `<script>` en el dato medido (4 de 7 instancias, 5 scripts); las
+otras 8 traen **0**. `terminos-kunakpedia` **está limpia** y sólo la bloquea
+compartir ruta. Fichas: **§F2-3-T4A-BLOG** y **§F2-3-ASYNC-HIJO**.
+
+## 3 · PASO 3 — M-IMG: sobreviven, pero NO donde se buscó
+
+**La pregunta era si los bytes pisados están en la captura congelada. NO** — y
+no es un hueco: `media-corpus` **excluye las VARIANTES por nombre** y los
+disputados se llaman como una variante. Mismo mecanismo que §M-PDF-FB3D.
+
+> **La pérdida es RECUPERABLE, y la red es otra:** `apps/web/public/images`, en
+> git, con los **112 orígenes** (109/112 byte-idénticos a `media/`). Y `media/`
+> está en `.gitignore` y lo vacía `cms:reset` ⇒ artefacto reconstruible, no daño
+> durable. **Citar la captura como respaldo habría sido una garantía falsa.**
+
+**Dos correcciones de recuento (regla 9), anidadas y sin contradecir la sonda:**
+40 orígenes con nombre de variante → **18** con ancho generable (los 22 de `600`
+están fuera de alcance: ningún `imageSize` produce 600) → **3** con base en la
+unión (el predicado de `qa:media-colision` C) → **2** materializados.
+
+**Y un TERCER fichero que difiere por OTRO mecanismo:**
+`Air_pollution_in_Madrid.webp`, mismas dimensiones y **re-codificado**
+(65 752 → 62 096 B). Toca el control de la comprobación C, cuyo propio
+comentario lo había anticipado: *«el sha distinto se explicaría por
+recodificación»*. **La alternativa existe de verdad** ⇒ *«Payload copia los
+orígenes verbatim»* vale para los **111 `jpeg`+`png` y NO para el `webp`**;
+propiedad del formato, derivada sobre **n = 1**.
+
+## 4 · PASO 4 — la prueba de operación, PREPARADA y NO PROBADA
+
+**Su criterio no es alcanzable hoy y se dice ahora, no después:** *«al menos una
+instancia de CADA colección»* llega a **5 de 7** (`faqs` ·
+`documentos-cientificos` · `casos` · `sectores` · `monograficos`); las 2 que
+faltan dependen de **T4b**, que es deuda de F2-2.
+
+Protocolo y precondiciones en `PLAN-FASE-2.md` §F2-3. La que hay que saber antes
+de empezar: **`usuarios` tiene 0 filas** ⇒ hay que pasar por
+`/admin/create-first-user`, y **eso es parte de la prueba**. `cms:reset` borra
+también el usuario: el orden es sembrar → crear usuario → probar.
+
+> ⚠ **No se ha escrito sonda a propósito.** Un `admin-operacion.mjs` sin haber
+> corrido nunca es código que parece cobertura (regla 3).
+
+## 5 · LO SIGUIENTE, por orden
+
+1. **T4b sobre el camino del seed** — es lo único que desbloquea `/[slug]`, y con
+   ello las 2 colecciones que le faltan a la prueba de operación. **Ojo: T4b
+   SUSTITUYE, no restaura**, así que el Δ0 de esas 4 rutas no va a ser cero
+   nunca; la tanda que lo aborde tiene que decidir **contra qué** se acepta esa
+   familia, y esa decisión es de contenido, no de instrumento.
+2. **La PRUEBA DE OPERACIÓN** sobre las 5 colecciones que sí están servidas.
+3. `qa:media-colision` puede ganar el segundo mecanismo (re-codificación) como
+   comprobación aparte de la C, con su negativo.
+
+## 6 · Lo que NO hay que hacer al empezar
+
+- **No ensanchar la máscara de `html-cmp`.** El §F2-3-RSC-ORDEN está **cerrado**
+  con contrato; ampliarla ahora deshace la decisión sin medir nada.
+- **No leer un `filas` distinto como defecto.** Es informativo: se mira si movió
+  un invariante, y la sonda lo dice con su número.
+- **No `await` dentro de un componente hijo** (§F2-3-ASYNC-HIJO). El dato se
+  espera en la página y baja por prop.
+- **No landar `/[slug]` con la desviación anotada.** Serían 4 páginas servidas
+  con el contenido mutilado, contra la regla 1, y a cambio de nada.
+- **No citar `media-corpus` como respaldo de un origen con nombre de variante:**
+  no puede contenerlo por construcción.
+- **No re-congelar `html-f23-base.json`.**
+
+---
+
 # HANDOFF — CMS-0g cerrada por MEDICIÓN, el proyector genérico funcionando en las 6 colecciones, y una segunda familia migrada
 
 > ⚠ **Tanda 2026-08-06 (34.ª).** PASOS 1 · 2 · 3 completos; PASO 4 **parcial —
