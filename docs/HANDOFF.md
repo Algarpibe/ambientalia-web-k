@@ -1,3 +1,177 @@
+# HANDOFF — CMS-0g cerrada por MEDICIÓN, el proyector genérico funcionando en las 6 colecciones, y una segunda familia migrada
+
+> ⚠ **Tanda 2026-08-06 (34.ª).** PASOS 1 · 2 · 3 completos; PASO 4 **parcial —
+> 1 de 4 familias de ruta**, con su Δ0 pagado; PASO 5 completo.
+> **El escalón NO disparó.** **`apps/web` se toca por diseño** y paga: 31/31 sin
+> mover un píxel a 1440 y a 390.
+
+## 0 · Los tres titulares
+
+> **1 · El PASO 1 podía haber disuelto CMS-0g, y no la disolvió — pero cambió la
+> pregunta.** La premisa del HANDOFF anterior (*«`media` no guarda la ruta de
+> origen»*) era **verdadera**; su conclusión (*«luego `rutaDeMedia` no se puede
+> implementar»*) **no se seguía**. `qa:media-colision` midió que
+> `filename → ruta` **es una función hoy** —112 rutas, 0 basenames repetidos,
+> verificado contra `media/` con 112/112 nombres exactos— y **deja de serlo en
+> la unión con el corpus**: 646 rutas, **1** colisión, **12** referencias.
+>
+> **2 · El campo era la mitad pequeña.** Lo que de verdad bloqueaba era que
+> `aMedido` necesita **tres mapas que la IDA construía en su mismo proceso**, y
+> en el render no hay ida. Ahora se **declaran** con `custom` en 8 campos, el
+> walker vive en el paquete compartido, y **`qa:cms-lectura` mide que el
+> contexto del render proyecta 63/63 idéntico al verificado** — incluidas
+> `sectores` (108 hojas) y `monograficos` (199). **El proyector genérico vale
+> para todas las familias; la forma del canario ya no hace falta que generalice.**
+>
+> **3 · El negativo cazó TRES defectos míos, todos mudos, y el tercero es un C7
+> de manual.** Un contexto de ida con los mapas vacíos que hacía coincidir los
+> dos lados **por no hacer ninguno el trabajo**; la **raíz del walker** mal
+> (el seed camina con `aPayload(…, coleccion)`, yo declaraba desde raíz vacía, y
+> ningún `get` casaba nunca); y `soluciones` **colapsando tres colecciones en una
+> clave**. Los tres los destapó `sin-declaraciones` saliendo **verde**.
+
+## 1 · PASO 1 — la medida que decidía si había algo que modelar
+
+`npm run qa:media-colision` (negativo **6/6**), congelada. Deriva el **DOMINIO
+real** de `rutaDeMedia` en vez de suponerlo: no los 534 capturados ni los 628 de
+`public/images`, sino **las rutas que llegan a un campo `upload`** — el walker
+sobre los 9 catálogos con un `ctx` que anota en vez de subir.
+
+| población | rutas | repetidos | refs del corpus |
+|---|---:|---:|---:|
+| **dominio** | **112** (133 referencias) | **0** | 0 |
+| corpus | 534 | **0** | 0 |
+| **unión** | 646 | **1** | **12** |
+| `publico` | 628 | 12, **11 CASCARÓN** | — |
+
+**Y no se dio por supuesto que `filename` FUERA el basename**: se verificó contra
+la salida servida (`media/`, que `cms:reset` vacía) → **112/112 exactos**.
+
+⚠ **Hallazgo lateral, contado y SEPARADO del código de salida a propósito**
+(regla 1, la mitad que permite no cerrarlo *diciendo por qué*): `media/` es
+**plano** y 3 orígenes se llaman como una variante generable de otro origen.
+**2 ya tienen el fichero PISADO** — probado con control: Payload copia los
+orígenes verbatim (sha idéntico en la base) y el disputado difiere. **No rompe la
+tabla** (los `filename` siguen distintos) ⇒ familia M-IMG. Ficha
+`PENDIENTES-QA.md` §F2-3-VARIANTE-PISA.
+
+## 2 · PASO 2 — CMS-0g: campo de PROCEDENCIA, decidido por la asimetría de deshacer
+
+Acta con las tres salidas costadas en `ESQUEMA-CMS.md` **§7c**. El criterio es el
+de CMS-0f, y **aquí no es la trivial**:
+
+| dirección | qué cuesta |
+|---|---|
+| **SIN → CON campo** (después) | la columna es barata; **rellenarla no**. El valor sólo lo sabe el seed. Con altas del admin dentro, re-sembrar pierde lo escrito y el relleno sería un **backfill por heurística** — la opción descartada, con su colisión conocida y **sin poder dirimir cuál de las dos rutas era**. **La procedencia sólo es conocible mientras el seed sea la única fuente.** |
+| **CON → SIN campo** | `DROP COLUMN` y derivar. **Mecánico y electivo**, y con el dato delante para comprobar que la derivación acierta **antes** de tirarlo |
+
+**La naturaleza decide la forma, no el gusto:** `required: false` (un alta del
+admin **no tiene origen**; exigirlo sería un esquema roto en producción) ·
+`readOnly` (es registro de migración) · `unique` · fuera del round-trip.
+
+**Y el `null` tiene render y no es un hueco:** `rutaOrigen ?? /api/media/file/<filename>`
+— para una media dada de alta en el admin **ésa es la única URL que puede
+funcionar**.
+
+## 3 · PASO 3 — aplicado, y lo que costó más que el campo
+
+| pieza | comprobación |
+|---|---|
+| `rutaOrigen` + migración `20260806_124532` (reversible) | **112/112 con origen en la DB** (`psql`) |
+| el walker sube a `packages/cms-config` | lo usan ida, round-trip y **render** |
+| la mitad de VUELTA de `PREPARA` sube con él | el render no puede importar `seed.mjs` |
+| `contextoDeLectura` — los 3 métodos **sin ida** | — |
+| las 3 declaraciones, `custom` en **8 campos** | `qa:cms-decl` **en las dos direcciones**, negativo **6/6** |
+| `apps/web/src/lib/cms/proyector.ts` | `qa:cms-lectura` **63/63**, negativo **4/4** |
+
+> ⚠ **Sin `qa:cms-lectura`, el 63/63 del round-trip era un verde PRESTADO**: su
+> vuelta corre con el contexto de la ida y **el build usa otro**.
+
+**Dos cosas que el render necesita y la ida tenía gratis:** con `depth: 1` un
+término embebido llega poblado pero **su propia relación y su propia media
+quedan un nivel más abajo**. Se pasan los **dos índices** (`id → slug`,
+`id → media`), leídos una vez por build. Subir el `depth` era la salida cara: los
+documentos de `sectores`/`monograficos` son enormes y lo que hace falta es *un
+slug*.
+
+## 4 · PASO 4 — 1 de 4 familias de ruta, con su Δ0 · y por qué paré ahí
+
+Migrada **`/recursos/[...ruta]`** (`documentos-cientificos`), la de menos forma,
+como pedía el encargo para que la sorpresa llegara barata.
+
+| eje | resultado |
+|---|---|
+| `qa:clon-base` @1440 · @390 vs `f21-antes` | **31/31 · 0 regresiones** las dos |
+| `qa:enlaces` | limpia en las dos direcciones · 868 hrefs internos |
+| `qa:corte` · `qa:slugs` · `qa:manifiesto` | 12/12 · 2/2 · 31 rutas, 0 vacías |
+| `npm run check` | verde |
+| `qa:html-cmp` vs `html-f23-base` | **30 de 31 limpias · 1 con residuo RSC** |
+
+**El residuo está diagnosticado y NO es contenido** (§F2-3-RSC-ORDEN):
+marcado **visible Δ0** · payload RSC **32918 → 32918** · **46 → 46 filas** · lo
+que cambia es que la fila de `meta` se emite antes (porque `generateMetadata`
+pasa a asíncrona) y una fila va de id `11:` a `12:`. La máscara de `html-cmp` es
+`^[0-9a-f]+:` y **esa fila lleva el id precedido de tabuladores**, así que no se
+enmascara. Ampliarla a `^\s*…` **tampoco lo arregla** —comprobado—: queda la fila
+de estado del router.
+
+> **NO se ensanchó la máscara**, que es exactamente lo que la cabecera de la
+> sonda prohíbe. Se mide, se nombra y se decide en la tanda siguiente.
+
+**Por qué paré con una familia y no con cuatro:** el diagnóstico del residuo
+consumió la corrida (dos builds y dos capturas para poder afirmarlo con
+números). Las tres restantes **están desbloqueadas y son trabajo mecánico** —
+`qa:cms-lectura` ya prueba que el proyector las proyecta bien—, pero cada una
+paga su Δ0 y ninguno se hereda.
+
+## 5 · LO SIGUIENTE, por orden
+
+1. **Decidir el nivel `filas` de `html-cmp`** (§F2-3-RSC-ORDEN). Es decisión de
+   INSTRUMENTO y bloquea el Δ0 de contenido de todas las familias que quedan,
+   porque el fenómeno **aparecerá en cada una**. Las dos salidas están escritas
+   en la ficha. Cualquier cambio **vuelve a correr su negativo entero (8/8)**.
+2. **Las 3 familias restantes**, de menos a más forma: `/[slug]`
+   (`entradas-blog` + `terminos-kunakpedia`) → `/casos-de-exito` ·
+   `/case-studies` (`casos`) → `/sectores/[slug]` (`sectores` + `monograficos`).
+   Patrón ya escrito: un `apps/web/src/lib/cms/<x>.ts` que llame a
+   `leeColeccion<T>` y la página que lo `await`ee. **Cada una paga su Δ0.**
+3. **La PRUEBA DE OPERACIÓN**, que ahora sí puede cumplir su criterio.
+
+> ⚠ **Y su trampa, sin cambios:** un `update` por Local API **NO es** el guardado
+> del admin. Lo que la prueba caza es la **NORMALIZACIÓN DEL EDITOR** —un save
+> que reordena claves, normaliza HTML o «arregla» el rico mueve el render sin que
+> nadie haya editado nada— y eso vive en el camino del **admin**. Simularlo con
+> un update programático da un verde que **no prueba la pregunta**. Pasa por
+> `/admin` de verdad, con `puppeteer-core` y la disciplina de siempre, **o se
+> declara NO PROBADA**. Su criterio: al menos una instancia de **CADA**
+> colección — una sola no distingue «el editor no degrada» de «esta forma no
+> tenía nada que degradar».
+
+## 6 · Pendientes que NO bloquean
+
+**§F2-3-VARIANTE-PISA** (3 orígenes, 2 pisados — M-IMG) · **§F2-3-RSC-ORDEN**
+(bloquea el Δ0 de CONTENIDO, no el resto) · 23 imágenes 404 · §M-PDF-FB3D ·
+§T3B-NO-CANONICO · §T3-ALCANCE · swiper ×3 · nbc ×1 · HOME cubo B · `Dockerfile` ·
+26 celdas ciegas · 6 mínimos · `Breadcrumb` 28 rutas · **CMS-SP-TIPO**
+(instrumento hecho, **sigue sin ejercitarse**: el `<sup>` vive en `productos`,
+que no es familia de ruta) · los 5 «distinto» de `cmp-srcset` · **M-IMG**.
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No ensanchar la máscara de `html-cmp`** hasta que el §F2-3-RSC-ORDEN esté
+  decidido. Y si se decide ampliarla, **su negativo entero, no sólo el caso que
+  se toca**.
+- **No escribir proyectores a mano.** Ya no hay motivo: `leeColeccion` funciona
+  sobre las 6 colecciones y está medido.
+- **No leer un `clon-base` verde como «no cambió nada»**: mide geometría.
+- **No tomar «sólo reparto del stream» por Δ0.** Se cuenta aparte a propósito.
+- **No re-congelar `html-f23-base.json`**: es el HTML anterior a la migración y
+  es contra lo que se mide el Δ0 de contenido de toda la fase.
+- **No dar por buena una declaración de `custom` sin `qa:cms-decl`.** Es la regla
+  3 —*documentado no es conectado*— y aquí falla en silencio.
+
+---
+
 # HANDOFF — F2-3 arranca: el canario migrado, el negativo del entorno cazando un verde falso, y el PASO 3 parado con número
 
 > ⚠ **Tanda 2026-08-05 (33.ª).** PASOS 1 · 2 · 3 del encargo, más el registro.

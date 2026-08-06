@@ -2483,6 +2483,39 @@ pelado no hay `rutaOrigen` que leer, y `rutaDeMedia` **tira** en vez de devolver
 la URL de la API — que sería la regla 6 otra vez: convertir «no puedo
 reconstruirlo» en «esto es lo que había».
 
+#### Aplicado el mismo día, y el campo era la mitad pequeña
+
+| pieza | dónde | comprobación |
+|---|---|---|
+| `rutaOrigen` en `media` | `colecciones/media.ts` | **112/112 con origen en la DB**, verificado con `psql` |
+| migración versionada | `20260806_124532_ruta_origen_media` | reversible (`DROP COLUMN`), que es la dirección barata de la asimetría |
+| la IDA lo escribe | `ctx.media` en `seed.mjs` | el mismo mapa que `mediaPorRuta`, **persistido** |
+| el walker, compartido | `packages/cms-config/src/mapeo.mjs` | lo usan la ida, el round-trip y **el render** |
+| `contextoDeLectura` | mismo fichero | los 3 métodos de `aMedido` **sin ida**, más `esCentinela` |
+| las 3 declaraciones | `custom` en **8 campos** | `qa:cms-decl`, **en las dos direcciones**, negativo **6/6** |
+| el proyector del render | `apps/web/src/lib/cms/proyector.ts` | `qa:cms-lectura` **63/63**, negativo **4/4** |
+
+> **Y la pieza que impide heredar un verde: `qa:cms-lectura`.** El round-trip
+> prueba que ida y vuelta son inversas, pero **su vuelta corre con el contexto de
+> la ida**. El render usa otro. Dar el 63/63 por bueno para el segundo es la
+> FAMILIA DE CALIBRACIÓN de manual, así que se mide: **63/63 idénticos por los
+> dos contextos**, incluidos `sectores` (108 hojas) y `monograficos` (199).
+
+⚠ **Tres defectos míos que el negativo cazó, y ninguno habría dado error:**
+
+1. el contexto de la ida que la sonda reconstruía tenía sus tres mapas **vacíos**,
+   así que los dos lados coincidían **por no hacer ninguno el trabajo** — un
+   63/63 que no medía nada (regla 4, la cara del pleno);
+2. **la RAÍZ del walker**: el seed camina con `aPayload(…, coleccion)` y las
+   declaraciones se leían desde raíz vacía. Ningún `get` casaba nunca, **en
+   silencio**;
+3. y por eso mismo, `soluciones` **colapsaba tres colecciones en una clave** —
+   dos con término embebido y una con slug. La llave es **(colección, ruta)**,
+   que es la misma corrección que ya se le había hecho a `CON_KIND` (clase C7).
+
+Los tres los destapó el sabotaje `sin-declaraciones` saliendo **verde** cuando
+tenía que salir rojo.
+
 ### ⚠ 7b · CMS-SP-TIPO — por qué el round-trip NO la cierra, medido (2026-08-04)
 
 `qa:cms-roundtrip` nació con la etiqueta de *«la única sonda que mira el TIPO de

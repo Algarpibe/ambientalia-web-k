@@ -1240,18 +1240,35 @@ sin mover un píxel. Se añade `qa:html-cmp` (HTML servido, **tres niveles**:
 canario, `clon-base` dio Δ0 en las 31 y `html-cmp` marcó 2 — las dos por reparto
 del stream RSC, no por contenido. Sin la segunda sonda eso no se habría sabido.
 
-2 · ⛔ **Las 5 familias que quedan están BLOQUEADAS por CMS-0g**, no por trabajo
-pendiente. `media` no guarda la ruta de origen del fichero, así que el proyector
-de lectura no puede reconstruir el `"/images/…"` que el clon renderiza. Y la
-forma del canario —proyector a mano, campo a campo— **no generaliza**: `faqs` es
-la única colección con 0 de las 4 transformaciones de forma
-(`qa:lectura-forma`, congelada). Ficha completa: `PENDIENTES-QA.md`
-§F2-3-MEDIA · decisión **CMS-0g** en `ESQUEMA-CMS.md` §7.
+2 · ~~⛔ **Las 5 familias que quedan están BLOQUEADAS por CMS-0g**~~ **✅
+DESBLOQUEADAS el 2026-08-06.** `media` seguía sin guardar la ruta de origen; lo
+que faltaba era **preguntarle al dato si eso importaba**. `qa:media-colision`
+midió que `filename → ruta` **es una función hoy** (112 rutas · 0 repetidos) y
+**deja de serlo en la unión con el corpus** (646 · 1, con 12 referencias), así
+que la salida no era ni «tabular» ni «aplazar»: era decidir. **CMS-0g cerrada**
+(campo de PROCEDENCIA `rutaOrigen`, `ESQUEMA-CMS.md` §7c), con su migración
+versionada y **112/112 con origen en la DB**.
+
+Y la otra mitad, que era la que de verdad bloqueaba: **el proyector genérico ya
+existe**. `aMedido` corre en el render con `contextoDeLectura`, y lo que la ida
+derivaba en su proceso se declara ahora con `custom` en 8 campos, con dos
+guardas —`qa:cms-decl` (6/6) y `qa:cms-lectura` (63/63, negativo 4/4)—. **La
+forma del canario ya no hace falta que generalice: no se usa.**
+
+**Estado real de las familias** (una migrada, tres desbloqueadas y sin migrar):
+
+| familia de ruta | colección | estado |
+|---|---|---|
+| `/faqs/[slug]` | `faqs` | ✅ migrada (canario, 08-05) |
+| `/recursos/[...ruta]` | `documentos-cientificos` | ✅ **migrada el 08-06** — Δ0 en geometría a los dos anchos, enlaces, corte, slugs, manifiesto y `check`; 1 ruta con residuo RSC **no de contenido** (§F2-3-RSC-ORDEN) |
+| `/[slug]` | `entradas-blog` · `terminos-kunakpedia` | desbloqueada |
+| `/casos-de-exito/[slug]` · `/case-studies/[slug]` | `casos` | desbloqueada |
+| `/sectores/[slug]` | `sectores` · `monograficos` | desbloqueada — y `qa:cms-lectura` ya las proyecta bien (108 y 199 hojas) |
 
 **Consecuencia para el «hecho cuando»:** el criterio *«al menos una instancia de
-cada colección»* de la prueba de operación **no es alcanzable** hasta que CMS-0g
-se decida. Se puede correr entera sobre `faqs`; el resto espera a la decisión de
-modelo, que **no depende de la prueba** y puede ir en paralelo.
+cada colección»* de la prueba de operación **ya no está bloqueado por una
+decisión de modelo**; lo que le falta es que las tres familias restantes se
+cableen, que es trabajo mecánico con su Δ0 por familia.
 
 ---
 

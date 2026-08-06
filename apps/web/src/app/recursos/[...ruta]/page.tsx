@@ -16,11 +16,11 @@ import {
 } from "@/components/arquetipo-a/CascaronA";
 import { CuerpoRicoA } from "@/components/arquetipo-a/CuerpoRicoA";
 import { IndiceArticulo } from "@/components/arquetipo-a/IndiceArticulo";
-import {
-  DOCUMENTOS_CIENTIFICOS,
-  PREFIJO_DOC_DEFECTO,
-  rutaDocumento,
-} from "@/lib/arquetipo-a";
+import { PREFIJO_DOC_DEFECTO, rutaDocumento } from "@/lib/arquetipo-a";
+// F2-3: el catálogo se lee del CMS por Local API; `src/lib/arquetipo-a.ts` se
+// conserva como seed histórico y sigue aportando los helpers de RUTA, que son
+// plantilla y no dato (`rutaDocumento`, `PREFIJO_DOC_DEFECTO`).
+import { documentosCientificos } from "@/lib/cms/arquetipo-a";
 
 /**
  * `/recursos/[...ruta]` — DOCUMENTO CIENTÍFICO, la tercera plantilla del
@@ -57,13 +57,13 @@ import {
  */
 export const dynamicParams = false;
 
-const porRuta = (segmentos: string[]) => {
+const porRuta = async (segmentos: string[]) => {
   const ruta = "/recursos/" + segmentos.join("/");
-  return DOCUMENTOS_CIENTIFICOS.find((d) => rutaDocumento(d) === ruta);
+  return (await documentosCientificos()).find((d) => rutaDocumento(d) === ruta);
 };
 
-export function generateStaticParams() {
-  return DOCUMENTOS_CIENTIFICOS.map((d) => ({
+export async function generateStaticParams() {
+  return (await documentosCientificos()).map((d) => ({
     ruta: [d.prefijo ?? PREFIJO_DOC_DEFECTO, d.categoria.slug, d.slug],
   }));
 }
@@ -74,7 +74,7 @@ export async function generateMetadata({
   params: Promise<{ ruta: string[] }>;
 }): Promise<Metadata> {
   const { ruta } = await params;
-  const doc = porRuta(ruta);
+  const doc = await porRuta(ruta);
   if (!doc) return {};
   return {
     title: doc.seo.title,
@@ -91,7 +91,7 @@ export default async function PaginaDocumento({
   params: Promise<{ ruta: string[] }>;
 }) {
   const { ruta } = await params;
-  const doc = porRuta(ruta);
+  const doc = await porRuta(ruta);
   if (!doc) notFound();
 
   const O = "https://kunakair.com/es";

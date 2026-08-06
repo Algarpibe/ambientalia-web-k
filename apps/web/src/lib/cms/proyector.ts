@@ -42,8 +42,7 @@
  * proyecta lo mismo que aquél** (63/63, negativo 4/4) — sin la segunda, el
  * primero sería un verde prestado: verifica un contexto y el build usa otro.
  */
-import type { CollectionSlug } from "payload";
-import { construyeConfig } from "@kunak/cms-config";
+import type { CollectionSlug, SanitizedConfig } from "payload";
 /* El walker va en JS con JSDoc — es el MISMO que usa el seed, y duplicarlo
  * tipado sería la segunda lista que este fichero existe para evitar. */
 import { aMedido, contextoDeLectura } from "@kunak/cms-config/mapeo";
@@ -55,11 +54,18 @@ type Fn = (x: unknown) => unknown;
 const devuelveDe = (col: string): Fn =>
   (DEVUELVE as Record<string, Fn>)[col] ?? ((x: unknown) => x);
 
-type Config = Awaited<ReturnType<typeof construyeConfig>>;
+type Config = SanitizedConfig;
 type Coleccion = Config["collections"][number];
 
-let configCache: Promise<Config> | null = null;
-const config = (): Promise<Config> => (configCache ??= Promise.resolve(construyeConfig()));
+/**
+ * ⚠ **La config sale de la INSTANCIA de Payload, no de `construyeConfig()`.**
+ * Llamarla otra vez construye una config nueva y Payload la rechaza —
+ * `DuplicateCollection: "payload-kv"`, medido en el primer build de esta
+ * familia—. Y aparte de que rompe, la instancia es lo correcto: es §El
+ * principio, *verificar contra la salida servida* — el proyector camina la
+ * config que el render **está usando**, no una equivalente.
+ */
+const config = async (): Promise<Config> => (await cms()).config;
 
 /**
  * Los dos índices, construidos **una vez por proceso de build**. Son la misma

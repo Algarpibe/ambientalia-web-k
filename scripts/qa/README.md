@@ -122,6 +122,9 @@ puerto**.
 | `dos-rutas.mjs <rutaA> <rutaB> [ancho]` | **dos rutas del MISMO build**, árbol + `docH` + anclas | preguntar si dos modelos de contenido producen la misma página |
 | **`offsets.mjs <ruta> [ancho] [--cmp otra]`** | **el offset de cada nodo dentro de su padre**, y la holgura de cada columna | **siempre que un alto cuadre y no te lo creas** — ver abajo |
 | `corte-cuerpo.mjs` | que la rebanada del cuerpo del clon **acabe en el slider**, 6 rutas × 2 anchos | guarda de E1; después de tocar `TrustBar`, `CtaBannerSlider` o el hero |
+| **`media-colision.mjs`** | si dos rutas de media **comparten su último segmento**, en 4 poblaciones (dominio · corpus · unión · público) | **antes de decidir si `media` necesita un campo de procedencia** — es la medida que cerró CMS-0g. Verifica además contra `media/` que `filename` **es** el basename |
+| **`cms-decl.mjs`** | lo que la config **DECLARA** para la vuelta contra lo que la **IDA deriva**, en las dos direcciones | **tras tocar cualquier `custom` de `formaMedida`/`conKind`/`centinelaVacio`** — sin ella son comentarios |
+| **`cms-lectura.mjs`** | el contexto del **RENDER** contra el de la **IDA**, sobre los mismos documentos | **antes de creerse el 63/63 del round-trip para el build**: aquél verifica un contexto y el build usa otro |
 
 ### Las cuatro `mono-*`: para qué se escribieron
 

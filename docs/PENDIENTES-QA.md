@@ -1,6 +1,114 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ F2-3-MEDIA · el proyector de lectura NO puede reconstruir la ruta de un `upload` (2026-08-05)
+## ✅ F2-3-MEDIA · CERRADA (2026-08-06) — y la premisa era verdadera con la conclusión equivocada
+
+**Lo que decía la ficha:** *«`media` no guarda la ruta de origen ⇒ `rutaDeMedia`
+no se puede implementar»*. La primera mitad es cierta y sigue siéndolo. La
+segunda **no se seguía**, y para saberlo había que preguntárselo al dato:
+
+> si dos rutas distintas no comparten nunca su último segmento, `filename → ruta`
+> es una **función** y se tabula. La conclusión sólo vale si **COLISIONAN**.
+
+**Medido** (`npm run qa:media-colision`, congelada, negativo 6/6):
+
+| población | rutas | basenames repetidos | referencias del corpus |
+|---|---:|---:|---:|
+| **dominio** — lo que HOY es fila de `media` | **112** (133 referencias) | **0** | 0 |
+| **corpus** — orígenes capturados | 534 | **0** | 0 |
+| **unión** — todo lo que ALGUNA VEZ podrá ser fila | 646 | **1** | **12** |
+| `publico` — `public/images` entero | 628 | 12, y **11 son CASCARÓN** | — |
+
+Y no se dio por supuesto que `filename` FUERA el basename: se verificó contra la
+salida servida —`media/`, que `cms:reset` vacía— y salió **112/112 con el nombre
+exacto**. Payload no saneó ni desduplicó.
+
+> **La lectura, con su alcance: es una función HOY y deja de serlo en la unión.**
+> La colisión es `control-de-la-calidad-del-aire-en-ciudades.jpg` en `2023/04` y
+> en `2024/06`, y no es hipotética: los dos están capturados y el corpus los cita
+> **3 y 9 veces**.
+
+**Resuelta por CMS-0g** (acta con las tres salidas costadas en `ESQUEMA-CMS.md`
+§7c): campo de **PROCEDENCIA** `rutaOrigen` en `media`, `required: false` por
+construcción, con migración versionada y re-seed. **112/112 con origen en la DB.**
+
+**Y lo que la cerró del todo**, porque el campo solo no bastaba: `aMedido`
+necesitaba **tres mapas que la IDA construía en su mismo proceso**, y en el
+render no hay ida. Ahora se declaran con `custom` en 8 campos y hay dos guardas:
+
+| guarda | qué afirma | negativo |
+|---|---|---|
+| `qa:cms-decl` | lo declarado coincide con lo que la ida deriva, **en las dos direcciones** | **6/6** |
+| `qa:cms-lectura` | el contexto del RENDER proyecta **63/63 idéntico** al verificado | **4/4** |
+
+⚠ **Sin la segunda, el 63/63 del round-trip era un verde prestado**: verifica un
+contexto y el build usa otro.
+
+## ⚠ F2-3-VARIANTE-PISA · 3 orígenes de `media` con el fichero pisado (2026-08-06)
+
+**No es CMS-0g y por eso va aparte**: los `filename` siguen siendo distintos, así
+que la tabla no se rompe. Lo que se pisa son **los bytes en disco**.
+
+`media/` es **plano** y ahí caen también las variantes que genera `imageSizes`.
+Tres rutas del dominio se llaman como una variante generable de otro origen
+(`X-1024x683.jpg`, y `X.jpg` también está subido), y **2 de las 3 ya tienen el
+fichero sobrescrito**:
+
+| origen | ¿pisado? |
+|---|---|
+| `uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg` | **sí** |
+| `uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg` | **sí** |
+| `uploads/2025/06/sargazo-cancun-repmex-1024x683.jpg` | aún no (su base no está subida) |
+
+**Probado con control, no razonado:** Payload copia los orígenes **verbatim** —el
+`sha256` de la base coincide con el de `public/images`— y el disputado **difiere**,
+o sea que lo que hay ahí es la variante generada, no el origen que un documento
+de `media` cree tener.
+
+**Consecuencia hoy: ninguna geométrica.** Las dos imágenes miden 1024×683 en los
+dos casos, así que es familia **M-IMG** (dimensión igual, bytes no). **La deuda
+real es de fragilidad**: si el orden de inserción cambiara, Payload
+desduplicaría (`-1.jpg`) y **entonces sí** rompería la tabla. Lo vigila
+`qa:media-colision` comprobación B en cada corrida.
+
+## ⚠ F2-3-RSC-ORDEN · 1 ruta con residuo en la carga RSC que NO es contenido (2026-08-06)
+
+Al migrar `/recursos/[...ruta]`, `qa:html-cmp` marcó **1 de 31** con contenido
+distinto: `…/evaluaciones-independientes/desafio-airlab-de-microsensores-2023`.
+**Diagnosticado midiendo, no supuesto** — capturando el HTML antes y después:
+
+| eje | antes → después |
+|---|---|
+| marcado **visible** (lo que ve el visitante) | **Δ0** |
+| payload RSC desescapado | **32918 → 32918**, misma longitud |
+| filas RSC | **46 → 46** |
+| trozos `push` | 20 → **19** (los −43 bytes son un envoltorio de trozo) |
+| lo que de verdad cambia | la fila de `meta` se emite **antes**, y una fila pasa de id `11:` a `12:` |
+
+Causa: `generateMetadata` pasa a ser **asíncrona** al consultar la DB, así que el
+serializador reparte los ids en orden de resolución. **Es exactamente el
+fenómeno que la cabecera de `html-cmp` documenta** y que ya excusa en otras 5
+rutas como *«sólo reparto del stream»*.
+
+**Por qué sigue saliendo rojo en ésta, y por qué NO se ha tocado la sonda:** su
+máscara de identificadores es `^[0-9a-f]+:`, y hay **una fila cuyo id va
+precedido de tabuladores** (el contenido de la fila anterior acaba en `\n\t\t\t`),
+así que no se enmascara. Ampliar la máscara a `^\s*[0-9a-f]+:` **no lo arregla**
+—se comprobó—: queda un residuo en la fila de **estado del router**, que lleva
+referencias internas que se mueven con la renumeración.
+
+> **No se ensancha la máscara hasta que la sonda calle.** Es literalmente lo que
+> su propia cabecera prohíbe: *«meter `__next_f` en la normalización sería
+> declarar volátil un tercio del documento para que la sonda deje de
+> protestar»*. Lo que se hace es **decir en qué nivel difiere y con qué número**,
+> que es lo que esta ficha hace.
+
+**Lo que hay que decidir en la tanda siguiente**, y es decisión de instrumento,
+no de dato: si el nivel `filas` debe comparar el **conjunto de filas** ignorando
+la fila de estado del router (nombrándola y contándola aparte, como ya se hace
+con `solo-reparto`), o si el residuo se ficha ruta a ruta. **Hasta decidirlo,
+esta ruta NO se cuenta como Δ0 de contenido.**
+
+## ⛔ (histórico) F2-3-MEDIA · el proyector de lectura NO puede reconstruir la ruta de un `upload` (2026-08-05)
 
 **Lo que bloquea:** las **5 familias de ruta que quedan** por migrar a Local API.
 Es el hallazgo que paró el PASO 3 de F2-3 después del canario, y no es una
