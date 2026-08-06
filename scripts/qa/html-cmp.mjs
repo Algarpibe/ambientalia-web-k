@@ -58,7 +58,9 @@ import {
   hoy,
   iniciarClon,
   leeManifiesto,
+  RE_TROZO_RSC,
   rutasEmitidas,
+  visibleDe,
   w,
 } from "./lib.mjs";
 
@@ -221,10 +223,15 @@ function normaliza(html) {
  * dos es contenido que viaje **sólo** en la carga.
  * ═════════════════════════════════════════════════════════════════════════ */
 
-const RE_TROZO = /<script>self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)<\/script>/g;
-
-/** El documento sin la carga de hidratación: lo que un visitante recibe. */
-const visibleDe = (html) => html.replace(RE_TROZO, "");
+/**
+ * ⚠ **`RE_TROZO_RSC` y `visibleDe` SUBIERON A `lib.mjs` el 2026-08-06.** No es
+ * un movimiento estético: `t4b-bloque` mide el mismo `visible` **al nivel del
+ * bloque**, y su afirmación (*«todo el resto está a Δ0»*) sólo compone con la
+ * de aquí (*«la ruta difiere»*) si las dos recortan el fichero por el mismo
+ * sitio. Dos definiciones que derivaran darían las dos sondas verdes en su
+ * propio marco y contradiciéndose sin que nada lo delatara.
+ */
+const RE_TROZO = RE_TROZO_RSC;
 
 /**
  * Las filas RSC, **con los identificadores enmascarados**.
@@ -281,7 +288,27 @@ const todo = {
 
 console.log(`\n════════ HTML SERVIDO · ${RUTAS.length} rutas · BUILD_ID ${BUILD_ID} ════════\n`);
 
+/**
+ * ⚠ **CORREGIDO 2026-08-06 — la guarda de UBICUIDAD acertaba y salía con el
+ * código equivocado, que en un negativo es indistinguible de no acertar.**
+ *
+ * Estaba escrita como `await parar(); process.exit(2)` **dentro del bucle**, o
+ * sea saliendo del proceso con una petición de `fetch` a medio cerrar. En
+ * Windows eso hace saltar una aserción de libuv (`UV_HANDLE_CLOSING`, `async.c`
+ * 94) y el proceso muere con **0xC0000409 = 3221226505**, no con 2. La guarda
+ * imprimía su mensaje correcto y `qa:html-cmp-neg` la contaba como fallada:
+ * *«esperaba exit 2, salió 3221226505»*.
+ *
+ * Es la §regla 1 por el otro lado —el canal de verdad son **la salida Y el
+ * código**, y aquí discrepaban— y también §sondas 8a: el sabotaje sí ejercitaba
+ * la guarda, y el instrumento que lo leía no podía verlo.
+ *
+ * El motivo se anota y **se sale después del bucle**, con todo cerrado.
+ */
+let ubicuo = null;
+
 for (const ruta of RUTAS) {
+  if (ubicuo) break;
   try {
     const res = await fetch(BASE + ruta, { redirect: "manual" });
     const html = await res.text();
@@ -293,14 +320,8 @@ for (const ruta of RUTAS) {
     const bytes = Buffer.byteLength(html);
     const tocados = n * BUILD_ID.length;
     if (tocados > bytes * MAX_FRACCION) {
-      console.error(
-        `\n❌ VOLÁTIL UBICUO — en ${ruta} la normalización toca ${tocados} de ${bytes} bytes ` +
-          `(${((tocados / bytes) * 100).toFixed(2)} % > ${MAX_FRACCION * 100} %), ${n} apariciones.\n` +
-          `   Eso ya no es esconder un identificador de build: es borrar documento.\n` +
-          `   Una comparación así IGUALA los dos lados y sale verde por construcción.`,
-      );
-      await parar();
-      process.exit(2);
+      ubicuo = { ruta, tocados, bytes, n };
+      break;
     }
     const { filas, n: nMascaras, bytesCarga, nTrozos } = filasDe(texto);
     todo.paginas[ruta] = {
@@ -321,6 +342,51 @@ for (const ruta of RUTAS) {
     ev.fallo(ruta, e);
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * El veredicto de la guarda de UBICUIDAD, **antes de congelar nada**: una
+ * corrida con el volátil mal no ha medido, así que su salida no sería una
+ * medida (regla 7).
+ *
+ * ⚠ **Y sale con `process.exitCode`, NO con `process.exit()`, por una razón
+ * medida en esta máquina** — repro mínimo, 3 de 3:
+ *
+ *     await fetch(url); process.exit(2)   → Assertion failed:
+ *                                           !(handle->flags & UV_HANDLE_CLOSING),
+ *                                           src\win\async.c:94  ⇒ exit 3221226505
+ *     await fetch(url); process.exitCode = 2  → exit 2
+ *
+ * `process.exit()` arranca el proceso mientras el socket keep-alive de `fetch`
+ * sigue cerrándose, y libuv aborta. Ni `setImmediate` ni `setTimeout(0)` ni
+ * cerrar el dispatcher de undici lo evitan (probados, 3 de 3 cada uno): lo
+ * único que funciona es **dejar drenar el bucle**, que es lo que hace
+ * `exitCode`. No es un retardo mágico, es el mecanismo.
+ *
+ * Lo grave era el efecto en el negativo: la guarda **acertaba** —imprimía su
+ * mensaje— y `qa:html-cmp-neg` la contaba como fallada por el código de salida.
+ * §regla 1 por el otro lado: el canal de verdad son la salida **y** el código, y
+ * discrepaban.
+ *
+ * ⚠ **Es una CLASE, no esta instancia**: 24 ficheros de `scripts/` hacen `fetch`
+ * y `process.exit`. Aquí se ve siempre porque la salida ocurre inmediatamente
+ * después del `fetch`; en las demás la carrera la suele ganar el trabajo que
+ * hay en medio. Fichada en `PENDIENTES-QA.md` §F2-3-EXIT-FETCH con su repro.
+ * ═════════════════════════════════════════════════════════════════════════ */
+if (ubicuo) {
+  console.error(
+    `\n❌ VOLÁTIL UBICUO — en ${ubicuo.ruta} la normalización toca ${ubicuo.tocados} de ${ubicuo.bytes} bytes ` +
+      `(${((ubicuo.tocados / ubicuo.bytes) * 100).toFixed(2)} % > ${MAX_FRACCION * 100} %), ${ubicuo.n} apariciones.\n` +
+      `   Eso ya no es esconder un identificador de build: es borrar documento.\n` +
+      `   Una comparación así IGUALA los dos lados y sale verde por construcción.`,
+  );
+  await parar();
+  process.exitCode = 2;
+}
+
+/* Todo lo que sigue **sólo tiene sentido si hubo medida**. Va dentro del bloque
+ * en vez de detrás de un `process.exit()` porque salir a la brava es justo lo
+ * que rompe el código de salida (arriba). */
+if (!ubicuo) {
 
 const salida = env("SALIDA") || `medidas/html-${etiqueta}.json`;
 w(salida, todo);
@@ -466,5 +532,9 @@ console.log(
       ? `\n   (${renumeradas} con la carga RSC RENUMERADA e invariantes quietos — nivel informativo, no son Δ0)`
       : ""),
 );
-await parar();
-process.exit(mal ? 1 : 0);
+  await parar();
+  /* Mismo motivo que la guarda de UBICUIDAD: `exitCode` y no `exit()`, para que
+   * el código de salida sea el que la sonda decidió y no una aserción de libuv
+   * ganándole la carrera al socket de `fetch`. */
+  process.exitCode = mal ? 1 : 0;
+}

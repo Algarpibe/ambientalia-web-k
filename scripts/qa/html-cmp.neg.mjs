@@ -34,9 +34,48 @@ import { existsSync, readdirSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { corridaNegativa, Evaluadas, APP, nombreNeg, QA, w } from "./lib.mjs";
 
-const BASE = "medidas/html-f23-base.json";
+/**
+ * ⚠ **LA BASE DEL NEGATIVO SE MIDE, NO SE HEREDA DEL PROYECTO (2026-08-06).**
+ *
+ * Esto usaba `medidas/html-f23-base.json`, que es **la línea base de la FASE**:
+ * el HTML de antes de migrar nada. Y ahí conviven dos afirmaciones que no se
+ * parecen:
+ *
+ *   · *«el comparador sabe decir IGUAL cuando algo es igual»* — lo único que un
+ *     control tiene que probar;
+ *   · *«el clon de hoy coincide con el de antes de F2-3»* — un **hecho del
+ *     proyecto**, que deja de ser cierto en cuanto una familia se migra con una
+ *     desviación deliberada (`/[slug]`: 4 rutas que **no pueden** coincidir).
+ *
+ * Mezcladas, el negativo del instrumento enrojece **porque el proyecto avanzó**,
+ * y ese rojo no dice qué pasó. Es la misma enfermedad que la diana escrita a
+ * mano, una vuelta más arriba, y con la misma factura: *la tanda que migra una
+ * familia deja rojo el negativo del instrumento con el que va a medirla.*
+ *
+ * Así que la base se **MIDE al empezar**: una corrida de sondeo contra el build
+ * de ahora. Comparar el build consigo mismo es el control correcto, y cada
+ * sabotaje se construye encima de algo que ya compara limpio.
+ */
+const SONDEO = "control-diana";
+const ARCH_SONDEO = nombreNeg(`medidas/html-${SONDEO}.json`, SONDEO);
+/* El exit de esta corrida NO se exige 0: se usa como MEDIDA, no como veredicto.
+ * Se lanza SIN `--cmp` — no compara nada, sólo congela el build de ahora. */
+corridaNegativa({ etiqueta: SONDEO, args: [join(QA, "html-cmp.mjs"), SONDEO] });
+if (!existsSync(join(QA, ARCH_SONDEO))) {
+  console.error(
+    `\n❌ SIN BASE — la corrida de sondeo no dejó ${ARCH_SONDEO}.\n` +
+      `   Sin ella habría que comparar contra la línea base de la FASE, y entonces este\n` +
+      `   negativo se pondría rojo cada vez que el proyecto avanzara a propósito.`,
+  );
+  process.exit(2);
+}
+const BASE = ARCH_SONDEO;
 const base = JSON.parse(readFileSync(join(QA, BASE), "utf8"));
 const rutasBase = Object.keys(base.paginas);
+if (!rutasBase.length) {
+  console.error(`\n❌ SIN BASE — ${ARCH_SONDEO} no trae páginas: no hay nada contra lo que sabotear.`);
+  process.exit(2);
+}
 
 /* ── La cadena UBICUA se deriva del artefacto, no se escribe ──────────────── */
 const dirHtml = join(APP, ".next/server/app");
@@ -70,9 +109,13 @@ if (!ubicua || ubicua.n * ubicua.c.length <= Buffer.byteLength(htmlDisco) * 0.01
   process.exit(2);
 }
 
-/** Una base derivada de la congelada, con la mutación pedida. */
+/**
+ * Una base derivada de la congelada, **con la diana puesta al día** y luego la
+ * mutación pedida. Ver `sincroniza` arriba: sin ese paso el sabotaje no aísla
+ * nada, porque arrastra tres tandas de renumeración RSC además de lo que rompe.
+ */
 function fabricaBase(etiqueta, muta) {
-  const b = JSON.parse(JSON.stringify(base));
+  const b = sincroniza(JSON.parse(JSON.stringify(base)));
   muta(b);
   const destino = `medidas/html-cmp-neg-${etiqueta}-base.json`;
   w(destino, b, { pisar: true });
@@ -81,14 +124,66 @@ function fabricaBase(etiqueta, muta) {
 
 /**
  * La diana se elige DERIVANDO, y con una condición: que no sea una de las rutas
- * que hoy difieren de verdad por el reparto del stream (las de la familia
- * migrada). Si la diana fuese una de ésas, el sabotaje y el fenómeno real se
+ * que hoy difieren de verdad por el reparto del stream (las de las familias
+ * migradas). Si la diana fuese una de ésas, el sabotaje y el fenómeno real se
  * mezclarían y el caso dejaría de aislar nada.
+ *
+ * ⚠ **CORREGIDO 2026-08-06 — esto era una LISTA ESCRITA A MANO, y envejecía
+ * sola.** Decía `r.startsWith("/faqs/")`, que era verdad el día que se escribió
+ * —la FAQ era la única familia migrada— y dejó de serlo con cada familia que
+ * entró después. La renumeración RSC **no se queda en la familia que se migra**:
+ * hoy la tienen 22 de las 31 rutas, `/accesorios` entre ellas, y `/accesorios`
+ * era justo la diana que salía elegida. El caso `solo-reparto` pedía ver
+ * *«filas RSC Δ0»* en una ruta cuyas filas ya NO estaban a Δ0, así que el
+ * negativo salía **9/11 sin que nadie hubiera roto nada**.
+ *
+ * Es `CLAUDE.md` §sondas 9 dentro del propio test en negativo: *un número
+ * recordado envejece CONTRA el repo, en silencio*. Y el precio real es peor que
+ * un rojo — es que **la tanda que migra una familia deja rojo el negativo del
+ * instrumento con el que va a medirla**, y ese rojo no dice qué pasó.
+ *
+ * La lista se sustituye por su DERIVACIÓN: se corre el control primero (que es
+ * la sonda contra la base, sin sabotaje) y se lee de su congelada qué rutas
+ * tienen hoy `filas` idéntico a la base. Una familia migrada mañana se queda
+ * fuera sola.
  */
-const repartoReal = new Set(
-  Object.keys(base.paginas).filter((r) => r.startsWith("/faqs/")),
-);
-const rutaDiana = rutasBase.find((r) => r !== "/" && !repartoReal.has(r)) ?? rutasBase[0];
+const ahora = base.paginas;
+
+/**
+ * ⚠ **Y aquí la segunda mitad, que es la que hacía el caso INSATISFACIBLE.**
+ *
+ * Buscar una ruta *«sin reparto real»* ya no encuentra ninguna: medido hoy,
+ * **0 de las 31** tienen `filas` igual a `html-f23-base.json`. La renumeración
+ * RSC la han acumulado todas al migrarse tres familias, y va a seguir. O sea que
+ * el caso `solo-reparto` **no era arreglable eligiendo mejor la diana**: pedía
+ * un estado del build que ya no existe y que no va a volver.
+ *
+ * El defecto de fondo es que los sabotajes se construían sobre **la base
+ * congelada**, que describe un build de hace tres tandas. Un sabotaje así no
+ * rompe una cosa: rompe la que se quería **más todo lo que haya derivado desde
+ * entonces**, y su rojo deja de decir qué lo causó.
+ *
+ * La construcción correcta es la de siempre en este repo —**el control primero,
+ * y el sabotaje encima de algo que ya compara limpio**—:
+ *
+ *   > `sincroniza()` copia a la diana **la medida de HOY** (la del control, que
+ *   > por definición compara a Δ0 consigo misma) y sólo entonces se rompe UNA
+ *   > propiedad. Así cada caso aísla lo que dice aislar, y ninguno depende del
+ *   > estado accidental del build.
+ *
+ * Y con eso la diana deja de tener requisitos: vale cualquier ruta.
+ */
+const rutaDiana = rutasBase.find((r) => r !== "/" && ahora[r] && !ahora[r].error) ?? rutasBase[0];
+if (!ahora[rutaDiana] || ahora[rutaDiana].error) {
+  console.error(`\n❌ SIN DIANA — ${rutaDiana} no se pudo medir en la corrida de sondeo.`);
+  process.exit(2);
+}
+
+/** Deja la diana con la medida de HOY: el punto de partida que compara limpio. */
+const sincroniza = (b) => {
+  b.paginas[rutaDiana] = { ...ahora[rutaDiana] };
+  return b;
+};
 
 const casos = [
   {

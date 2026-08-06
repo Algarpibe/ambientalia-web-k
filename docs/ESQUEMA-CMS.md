@@ -1614,6 +1614,29 @@ conserva la referencia**, porque el original la sirve; que la página pinte un
 hueco es decisión de render y va por su carril. La ausencia del artefacto se
 vigila aparte, en el **invariante D** del eje `existencia`.
 
+#### ⚠ T4b corre en LOS DOS CAMINOS desde el 2026-08-06 — y no lo hacía
+
+Esto se escribió cuando T4b sólo existía en el **extractor** (el camino del
+corpus). El **seed** —el que llena la DB desde el catálogo medido— tenía una
+copia a mano de T8+T4a y **no importaba `transformaciones.mjs`** (`grep -c` →
+0), así que aplicaba T4a sin T4b y guardaba 4 cuerpos de blog mutilados.
+Corregido: `seed.mjs` importa `T4B` y lo corre **antes** de T4a con su
+postcondición. **Medido: 3 de 3 visores FB3D del catálogo sustituidos vía
+`payload`.**
+
+**Lo que eso cambia del esquema es una sola cosa, y hay que saberla:
+`data-media` en el campo rico llega ahora por DOS caminos** —el extractor
+(corpus) y el seed (catálogo medido)—. El valor y su forma son los mismos (es
+la misma función, importada, no reimplementada), pero **quien audite
+`data-media` tiene que mirar las dos fuentes**: el invariante D de
+`qa:artefacto` lee `medidas/extractor-corpus.json`, o sea **sólo el camino del
+extractor**. Los 3 `data-media` que el seed produce hoy **no pasan por ese
+invariante**, y sus PDF son justamente los de §M-PDF-FB3D (la captura nunca los
+pidió). No se cierra aquí: se nombra.
+
+El `validate` de `campoHtml` acepta la salida sin cambios (63 documentos
+sembrados, 0 rechazos), así que **el modelo no se toca**.
+
 ### 3.3 · Los `<script>`, clasificados uno a uno
 
 Cierra **A-SP8**. Sonda `npm run qa:a-scripts`, salida congelada en

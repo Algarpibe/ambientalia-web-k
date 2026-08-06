@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "etiqueta": "patron-muerto",
+    "criterio": "RESTO fuera de los bloques declarados = PUERTA a cero · BLOQUE = por clase, contra la diana de su fila en CLASES",
+    "alcance": "CLON-CONTRA-CLON: no mide fidelidad contra kunakair.com. La única diana que la mide es `hermano-materializado`, con 0 instancias aquí",
+    "clases": [
+      {
+        "id": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "porQue": "el original monta el visor de PDF por JavaScript y NO existe equivalente materializado en ninguna población: ni en el catálogo medido ni en los 209 documentos del corpus. T4b sustituye el visor por un enlace al PDF con `data-media`; el contenido (el PDF) se conserva y la PRESENTACIÓN no. Acta en PENDIENTES-QA.md §F2-3-T4B-DESVIACION.",
+        "sustituye": true
+      },
+      {
+        "id": "nbc",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "porQue": "IMPOSIBLE, no pendiente: §3.3 decidió *enlace a la noticia* y el `<script>` sólo da la URL del REPRODUCTOR con su `CID` caducable — la del artículo no está en el dato. Su `<div class=\"contenedor-video-fijo\">` queda vacío. Misma acta.",
+        "sustituye": false
+      },
+      {
+        "id": "instagram",
+        "diana": "SIN PÉRDIDA DE BLOQUE",
+        "porQue": "lo que cae es el CARGADOR, no el bloque: el `<blockquote class=\"instagram-media\">` sobrevive entero a T4a con su texto y su permalink, y degrada a una cita válida. Verificado en el marcado servido, no supuesto.",
+        "sustituye": false
+      }
+    ],
+    "dianaSinInstancia": {
+      "id": "hermano-materializado",
+      "clase": "flourish",
+      "umbral": "CERO contra el hermano ya materializado del mismo corpus",
+      "instanciasAqui": 0,
+      "derivacion": "grep -rl flourish-embed corpus/ → 8 · grep -c flourish apps/web/src/lib/*.ts → 0"
+    },
+    "ganchoDeTest": "fb3d:despues:<div class=\"NO-EXISTE-EN-NINGUNA-PAGINA\"></div>"
+  },
+  "paginas": {
+    "/contaminacion-por-metano": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 161381,
+      "bytesResto": 161381,
+      "restoSha": "f17ba87083d554da",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 55896,
+      "bytesResto": 55896,
+      "restoSha": "c774e972232e9bb4",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 149544,
+      "bytesResto": 149544,
+      "restoSha": "4f4b13bc9d0313b9",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 1,
+        "instagram": 0
+      }
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 74403,
+      "bytesResto": 74403,
+      "restoSha": "53b6e6905b89f5d4",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 154048,
+      "bytesResto": 154048,
+      "restoSha": "c0bb8ad8d42edcb8",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/running-for-clean-air": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 107603,
+      "bytesResto": 107603,
+      "restoSha": "cbc793994d0d57db",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 1
+      }
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 87331,
+      "bytesResto": 87331,
+      "restoSha": "6b676d25f304a1b7",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 133297,
+      "bytesResto": 133297,
+      "restoSha": "6966105bbd715824",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/emisiones-atmosfericas": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 66253,
+      "bytesResto": 66253,
+      "restoSha": "6eff5cb3417478c2",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/metano": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 81478,
+      "bytesResto": 81478,
+      "restoSha": "84dc7ec075c44a78",
+      "lado": "sin bloques",
+      "bloques": [],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    }
+  },
+  "totalPorClase": {
+    "fb3d": 0,
+    "nbc": 0,
+    "instagram": 0
+  },
+  "censo": [
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "clase": "fb3d",
+      "hallados": 0,
+      "nAntes": 0,
+      "nDespues": 0,
+      "esperado": 1
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "clase": "fb3d",
+      "hallados": 0,
+      "nAntes": 0,
+      "nDespues": 0,
+      "esperado": 1
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "clase": "fb3d",
+      "hallados": 0,
+      "nAntes": 0,
+      "nDespues": 0,
+      "esperado": 1
+    }
+  ],
+  "invasores": [],
+  "cmp": {
+    "fichero": "medidas\\t4b-bloque-control-base-neg-control-base.json",
+    "restoAlterado": [
+      {
+        "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "bytesAntes": 153791,
+        "bytesAhora": 154048,
+        "delta": 257
+      },
+      {
+        "ruta": "/running-for-clean-air",
+        "bytesAntes": 107358,
+        "bytesAhora": 107603,
+        "delta": 245
+      },
+      {
+        "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "bytesAntes": 87167,
+        "bytesAhora": 87331,
+        "delta": 164
+      }
+    ],
+    "bloquesMovidos": [
+      {
+        "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          265
+        ],
+        "despues": [],
+        "delta": -265
+      },
+      {
+        "ruta": "/running-for-clean-air",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          253
+        ],
+        "despues": [],
+        "delta": -253
+      },
+      {
+        "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          172
+        ],
+        "despues": [],
+        "delta": -172
+      }
+    ],
+    "sinPar": []
+  }
+}

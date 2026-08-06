@@ -749,6 +749,30 @@ export const RE_VARIANTE = /-(\d+)x(\d+)(?=\.[A-Za-z0-9]+$)/;
 /** `2020/07/foo-1024x576.jpg?v=2` → `2020/07/foo.jpg`. */
 export const origenDe = (u) => String(u).split("?")[0].replace(RE_VARIANTE, "");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL MARCADO VISIBLE — una definición, y sube aquí el 2026-08-06
+ *
+ * `visibleDe` nació dentro de `html-cmp.mjs` y es **la PUERTA del contrato de
+ * los tres niveles** (§F2-3-RSC-ORDEN): el documento menos los `push` de
+ * `self.__next_f`, o sea lo que recibe el visitante. Sube al fichero común
+ * porque `t4b-bloque` mide **el mismo objeto a otro nivel** —el bloque en vez
+ * de la ruta— y las dos afirmaciones sólo se pueden componer si «visible»
+ * significa exactamente lo mismo en las dos.
+ *
+ * **Y ésa es la razón, no la comodidad.** Dos definiciones de «visible» que
+ * derivaran daría el caso C7 con la peor salida posible: `html-cmp` diciendo
+ * *«la ruta difiere»* y `t4b-bloque` diciendo *«todo el resto está a cero»*
+ * sobre dos recortes distintos del mismo fichero, las dos verdes en su propio
+ * marco y **contradiciéndose sin que nada lo delate**. Es el mismo argumento
+ * por el que `origenDe` vive aquí arriba.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Un `<script>` de carga RSC de Next: transporte de hidratación, no marcado. */
+export const RE_TROZO_RSC = /<script>self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)<\/script>/g;
+
+/** El documento sin la carga de hidratación: lo que un visitante recibe. */
+export const visibleDe = (html) => html.replace(RE_TROZO_RSC, "");
+
 /** El día de HOY en hora local, `YYYY-MM-DD`. Nunca `toISOString()`. */
 export function hoy(d = new Date()) {
   const p = (n) => String(n).padStart(2, "0");

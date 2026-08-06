@@ -18,12 +18,12 @@ import { CuerpoRicoA } from "@/components/arquetipo-a/CuerpoRicoA";
 import { IndiceArticulo } from "@/components/arquetipo-a/IndiceArticulo";
 import { RelacionadosA } from "@/components/arquetipo-a/RelacionadosA";
 import {
-  ENTRADAS_BLOG,
-  TERMINOS_KUNAKPEDIA,
-  getEntradaBlog,
-  getTermino,
-} from "@/lib/arquetipo-a";
-import type { EntradaBlog, TerminoKunakpedia } from "@/types/kunak";
+  entradasBlog,
+  getPaginaPlanaCms,
+  terminosKunakpedia,
+  type PaginaPlana,
+} from "@/lib/cms/arquetipo-a";
+import type { EntradaBlog } from "@/types/kunak";
 
 /**
  * `/[slug]` — el PLANO DE RAÍZ de `/es/`, sirviendo **dos** formas del
@@ -57,21 +57,22 @@ import type { EntradaBlog, TerminoKunakpedia } from "@/types/kunak";
  */
 export const dynamicParams = false;
 
-type Pagina =
-  | { forma: "blog"; datos: EntradaBlog }
-  | { forma: "termino"; datos: TerminoKunakpedia };
+/**
+ * ── LA FUENTE DEL DATO ES EL CMS desde el 2026-08-06 (F2-3) ───────────────
+ * El despacho vive en `lib/cms/arquetipo-a.ts` porque necesita los catálogos, y
+ * tenerlo en un sitio evita que `generateStaticParams`, `generateMetadata` y el
+ * componente consulten por tres caminos.
+ *
+ * ⚠ **Y esta familia es la ÚNICA que no puede pagar un Δ0 de ruta**, porque su
+ * dato pasa por T4b y T4b **sustituye, no restaura**. El criterio con el que se
+ * acepta —resto a umbral cero, bloque contra la diana de su clase— está en
+ * `PENDIENTES-QA.md` §F2-3-T4B-CRITERIO y lo mide `npm run qa:t4b-bloque`.
+ */
+type Pagina = PaginaPlana;
 
-/** Despacho por slug contra los dos catálogos planos, como `/sectores/[slug]`. */
-function resolver(slug: string): Pagina | null {
-  const b = getEntradaBlog(slug);
-  if (b) return { forma: "blog", datos: b };
-  const t = getTermino(slug);
-  if (t) return { forma: "termino", datos: t };
-  return null;
-}
-
-export function generateStaticParams() {
-  return [...ENTRADAS_BLOG, ...TERMINOS_KUNAKPEDIA].map((e) => ({ slug: e.slug }));
+export async function generateStaticParams() {
+  const [blog, terminos] = await Promise.all([entradasBlog(), terminosKunakpedia()]);
+  return [...blog, ...terminos].map((e) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({
@@ -80,7 +81,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const p = resolver(slug);
+  const p = await getPaginaPlanaCms(slug);
   if (!p) return {};
   const { seo } = p.datos;
   return {
@@ -175,11 +176,16 @@ export default async function PaginaPlana({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const p = resolver(slug);
+  const p = await getPaginaPlanaCms(slug);
   if (!p) notFound();
 
   const esBlog = p.forma === "blog";
   const { cuerpo, titulo } = p.datos;
+  /* El catálogo de `RelacionadosA` se espera AQUÍ y baja por prop: un `await`
+   * dentro del hijo cambia el HTML servido sin mover un dato (§F2-3-ASYNC-HIJO,
+   * medido: 2 rutas con Δ 0 bytes y el marcado distinto). Sólo se pide cuando la
+   * sección existe, para no consultar de más en las formas que no la llevan. */
+  const catalogoRelacionados = esBlog && p.datos.relacionados ? await entradasBlog() : [];
 
   return (
     <>
@@ -278,7 +284,9 @@ export default async function PaginaPlana({
 
         {/* `section#2` — solo en 83 de las 149 entradas de blog, y no se sabe
             qué lo decide (A-SP1/A-SP2). Hasta saberlo es un campo. */}
-        {esBlog && p.datos.relacionados && <RelacionadosA excluir={slug} />}
+        {esBlog && p.datos.relacionados && (
+          <RelacionadosA excluir={slug} catalogo={catalogoRelacionados} />
+        )}
       </main>
 
       <Footer tipo="grupoA" />

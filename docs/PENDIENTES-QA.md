@@ -1,6 +1,177 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ F2-3-T4A-BLOG · `/[slug]` NO se puede migrar: la DB no guarda 4 cuerpos enteros (2026-08-06)
+## 📐 F2-3-T4B-CRITERIO · el criterio de aceptación de `/[slug]`, POR CLASE y al NIVEL DEL BLOQUE (2026-08-06)
+
+**Escrito ANTES de landar nada, que es la mitad que da valor a un criterio.**
+Instrumento: `npm run qa:t4b-bloque` · negativo `qa:t4b-bloque-neg` **8/8**.
+
+### Por qué el nivel es el bloque y no la ruta
+
+`html-cmp` juzga el `visible` de la ruta entera con un hash a umbral cero, y esa
+premisa **deja de valer aquí por una razón de contenido**: T4b *sustituye*, no
+restaura. Donde el original monta un visor de PDF por JavaScript, el CMS guarda
+un enlace al PDF; el marcado **tiene** que cambiar ahí. Exigir Δ0 a la ruta es
+exigir lo imposible.
+
+Y en cuanto la ruta puede diferir por diseño, **su hash deja de decir nada**:
+cualquier regresión que entre con la migración —un `alt` vacío, un `<sup>`
+comido (CMS-SP-TIPO), una entidad mal escapada— cae en el mismo veredicto
+«distinta» y **la sustitución la tapa**. Es la §causa común de `CLAUDE.md` con
+un contenedor nuevo, **el séptimo**: el contenedor no es una fila, ni una caja,
+ni el protocolo — es **el hash de la ruta**, y su holgura mide exactamente lo
+que ocupa la sustitución (7112 bytes en la peor de las cuatro).
+
+### El criterio, en dos mitades que se miden por separado
+
+| mitad | qué | umbral |
+|---|---|---|
+| **1 · RESTO** | el `visible` de las dos partes **sin** los bloques de las clases declaradas | **PUERTA · CERO.** Un byte fuera de un bloque declarado es DEFECTO, exit 1 |
+| **2 · BLOQUE** | lo de dentro, **por clase** | **no se juzga por su tamaño**: contra la diana de su clase |
+
+### Las clases que HAY, censadas sobre el dato del seed (no sobre el corpus)
+
+| clase | n | ANTES | DESPUÉS | diana |
+|---|---:|---|---|---|
+| `fb3d` | **3** | `<div …_3d-flip-book…></div>` + `<script>` con `FB3D_CLIENT_DATA` | `<p><a href="<PDF>" data-media="<clave>">título</a></p>` | ⛔ **DESVIACIÓN DELIBERADA** |
+| `nbc` | **1** | `<script …nbcwashington.com/portableplayer…>` | *(nada; el `<div class="contenedor-video-fijo">` queda vacío)* | ⛔ **DESVIACIÓN DELIBERADA** |
+| `instagram` | **1** | `<script …instagram.com/embed.js…>` | *(nada)* | ✅ **SIN PÉRDIDA DE BLOQUE** — el `<blockquote class="instagram-media">` sobrevive con su texto y su permalink |
+| *hermano materializado* | **0** | — | — | ✅ umbral CERO contra el hermano — **la rama existe y NO tiene instancia aquí** |
+
+**La razón de cada desviación, que es lo que la regla 1 exige:**
+
+- **`fb3d`** — el original monta el visor por JS y **no existe equivalente
+  materializado en ninguna población**: ni en el catálogo medido ni en los 209
+  documentos del corpus. El **contenido (el PDF) se conserva**; la
+  **presentación, no**. Deuda: §M-PDF-FB3D (los 5 PDF que la captura nunca pidió).
+- **`nbc`** — **imposible, no pendiente**: §3.3 decidió *enlace a la noticia* y
+  el `<script>` sólo da la URL del **reproductor** con su `CID` caducable. La URL
+  del artículo no está en el dato y no se inventa (regla 6).
+
+> ⚠ **La cuarta diana —la ÚNICA que compra fidelidad— tiene n = 0 aquí, y se
+> dice en vez de darla por aplicada.** El encargo la pedía para `flourish`
+> («hay hermanos del corpus con el `<iframe>` ya materializado»). Derivado
+> (regla 9): `grep -rl flourish-embed corpus/` → **8 ficheros** ·
+> `grep -c flourish apps/web/src/lib/*.ts` → **0**. **`flourish` vive en el
+> camino del EXTRACTOR, no en el catálogo que siembra `/[slug]`.** La rama queda
+> escrita porque es donde caerá el día que el corpus entre en una familia de
+> ruta; hoy no hay nada a lo que aplicarla.
+
+### Lo que este criterio NO compra
+
+> **«Adjudicado» NO es «fiel».** Dice que la diferencia está **donde se
+> declaró**, no que la sustitución sea buena. Para `fb3d` y `nbc` la respuesta
+> de la clase es que el clon queda **peor que el original** y se acepta con
+> acta. Y la sonda entera es **clon-contra-clon**: no mide fidelidad contra
+> kunakair.com, igual que `html-cmp` y `clon-base`.
+
+### La trampa que este diseño hace posible, y la guarda que la cierra
+
+Recortar bloques para afirmar Δ0 sobre el resto abre una puerta concreta:
+**ensanchar un patrón hasta que se trague la regresión.** Ni el censo la ve —un
+patrón más ancho casa el mismo número de veces— ni la identidad de bytes, que se
+cumple por construcción del `replace`. **Las dos guardas obvias son ciegas.**
+
+La que muerde es una propiedad del CONTENIDO: **un bloque declarado es
+andamiaje, no cuerpo.** Si un match se lleva un `<p>`, un encabezado, una imagen
+o una lista sin tenerlo declarado (`permite`), es DEFECTO. Falsador:
+`patron-ensanchado` en el negativo — y es el caso que justifica la guarda,
+porque sale VERDE en todas las demás.
+
+### ✅ APLICADO — la familia landada el 2026-08-06, y qué dice CADA instrumento
+
+**Y esto es la mitad que hay que leer antes de tocar nada**, porque dos sondas
+de la casa salen ROJAS por diseño en esta familia y no son regresiones:
+
+| sonda | resultado | lectura |
+|---|---|---|
+| **`qa:t4b-bloque`** | **RESTO a CERO en 10/10 rutas** · 3 bloques adjudicados · 0 invaden cuerpo | ✅ **es la puerta de esta familia** |
+| `qa:html-cmp` vs `html-f23-base` | **4 DISTINTAS** de 31 · 27 limpias (5 sólo BUILD_ID · 8 sólo reparto · 14 renumeración) | ⚠ **rojo ESPERADO**: son las 4 con bloque sustituido. **Ni una quinta** — las 4 que marca son exactamente las 4 que `t4b-bloque` adjudica |
+| `qa:clon-base` @1440 y @390 | **28/31 sin mover un píxel**, 3 con cambio | ⚠ **rojo ESPERADO** en los 3 de `fb3d`: `+1 ancla` y `+48.6` (1440) · `+48.6/+79.18/+79.19` (390) |
+| `qa:enlaces` | limpia en las dos direcciones · 868 hrefs internos · 1728 externos | ✅ |
+| `qa:corte` · `qa:slugs` · `qa:manifiesto` · `qa:cms-lectura` · `npm run check` | 12/12 · 14 slugs 0 colisiones · 31 rutas · 63/63 · verde | ✅ |
+
+**El `+48.6` está explicado y su variación entre anchos también:** es el párrafo
+del enlace al PDF que T4b pone donde estaba el visor. A 390 dos de los tres
+títulos **envuelven a dos renglones** (`+79.18`, `+79.19`) y el tercero no
+(`EEA Report Air Pollution`, corto, `+48.6` a los dos anchos). O sea que la
+diferencia entre anchos **no es ruido: es el wrap del título del PDF**, que es
+justo lo que tiene que pasar.
+
+> ⚠ **`clon-base` y `html-cmp` NO se van a poner verdes en esta familia, y no
+> hay que intentarlo.** Su rojo es la desviación con acta. La sonda que decide
+> si algo se rompió es `qa:t4b-bloque`, y lo que hay que vigilar en las otras dos
+> es **el CONJUNTO**: si algún día marcan una ruta que `t4b-bloque` no adjudica,
+> eso sí es defecto.
+
+**Deuda que la sustitución deja abierta:** los 3 `data-media` apuntan a PDF que
+la captura **nunca pidió** (§M-PDF-FB3D — la lista se derivó del markup y esas
+URL viven en base64). El `href` va al original, que es lo que la regla de rutas
+locales pide mientras el PDF no esté publicado.
+
+## ⚠ F2-3-EXIT-FETCH · `process.exit()` después de un `fetch` NO devuelve el código elegido (2026-08-06)
+
+**Repro mínimo, 3 de 3 en esta máquina (Windows 11, Node 26.4):**
+
+```
+node -e "await fetch(URL); process.exit(2)"      → Assertion failed:
+                                                    !(handle->flags & UV_HANDLE_CLOSING),
+                                                    src\win\async.c:94   ⇒ exit 3221226505
+node -e "await fetch(URL); process.exitCode = 2" → exit 2
+```
+
+`process.exit()` arranca el proceso mientras el socket keep-alive de `fetch`
+sigue cerrándose y libuv aborta. **No lo evitan** `setImmediate`, `setTimeout(0)`
+ni cerrar el dispatcher de undici (probados, 3 de 3 cada uno). Lo único que
+funciona es **dejar drenar el bucle**, que es lo que hace `exitCode`.
+
+**Por qué importa y no es cosmético:** la guarda de UBICUIDAD de `html-cmp`
+**acertaba** —imprimía su mensaje correcto— y `qa:html-cmp-neg` la contaba como
+fallada: *«esperaba exit 2, salió 3221226505»*. Es §regla 1 por el otro lado —el
+canal de verdad son **la salida Y el código**, y discrepaban— y §sondas 8a: el
+sabotaje sí ejercitaba la guarda, y el instrumento que lo leía no podía verlo.
+
+**Alcance derivado, no recordado (regla 9): 24 ficheros de `scripts/` hacen
+`fetch` y `process.exit`.** En `html-cmp` se veía siempre porque la salida
+ocurría inmediatamente después del `fetch`; en las demás la carrera la suele
+ganar el trabajo que hay en medio, así que es **latente y dependiente del
+tiempo**. La dirección peligrosa es un `process.exit(0)` que sale 3221226505 —
+verde que se lee como rojo, ruidoso pero no silencioso.
+
+**Arreglado en las 2 que esta tanda toca** (`html-cmp`, `t4b-bloque`); las otras
+22 quedan **fichadas y sin barrer**, con su derivación al lado. Decirlo es la
+diferencia entre «arreglé la clase» y «arreglé la instancia que me estorbaba».
+
+## ✅ F2-3-T4A-BLOG · CERRADA (2026-08-06) — era T4b sin cablear, y el motivo escrito era una premisa falsada
+
+**Lo que decía la ficha:** *«el seed aplica T4a sin T4b, así que la DB guarda 4
+cuerpos de blog mutilados»*. Cierto. Lo que faltaba era **por qué**, y no era
+un orden deliberado:
+
+> **El seed no tenía T4b porque no tenía NINGUNA transformación.** Derivado:
+> `grep -c "transformaciones" scripts/seed/seed.mjs` → **0**, mientras
+> `TRANSFORMACIONES = [T8,T1,T2,T3,T3B,T4B,T4,T5,T6,T7]` ya llevaba T4b **en su
+> orden correcto** y lo usaban `extractor`, `cms-roundtrip` y `media-hueco`. El
+> seed tenía **una segunda copia a mano** de T8+T4a, y su `0 sustituidos` era un
+> **literal de cadena**, no un recuento.
+
+**Y la razón que el código daba llevaba dos tandas falsada.** `seed.mjs` decía
+que T4b *«necesita datos que el catálogo NO tiene: el PDF, la URL de la
+noticia»*; `PLAN-FASE-2.md` §871 lo derribó en la tanda 30.ª (*«T4b es
+DERIVABLE»*) porque **la referencia al PDF viaja en el payload base64 del propio
+`<script>`**. Comprobado contra el catálogo del seed: **3 de 3 FB3D derivables
+vía `payload`**, `post()` limpia, 0 payloads ilegibles.
+
+> Es §sondas 3 en su **tercera** forma: allí un comentario prometía una LLAMADA
+> que no existía, luego unos CONSUMIDORES que no existían; aquí promete **una
+> RAZÓN**, medida falsa, en el único sitio del repo que nadie ejecuta ni
+> verifica. Y el `0 sustituidos` literal ni siquiera lo contradecía.
+
+**Aplicado:** `seed.mjs` importa `T4B` (una sola definición), lo corre **antes**
+de T4a con su postcondición, y el seed imprime `5 <script> eliminados (T4a) ·
+3 sustituidos (T4b)` — los dos **contados**. La familia está landada con el
+criterio de §F2-3-T4B-CRITERIO.
+
+## ⛔ ~~F2-3-T4A-BLOG~~ · el diagnóstico original, conservado (2026-08-06)
 
 **Bloquea:** la única familia de ruta que queda (`entradas-blog` +
 `terminos-kunakpedia`), y con ella el criterio *«al menos una instancia de CADA
@@ -73,6 +244,35 @@ lo demás igual: `html-f23-slug-REVERTIDA-1-async.json` (6) →
 es asíncrona, y baja a los componentes por prop. Un `await` dentro de un
 componente hijo es un cambio de maquetación disfrazado de refactor — y su Δ0 no
 lo caza `clon-base`, que mide geometría: aquí la geometría **no se movió**.
+
+### ✅ APLICADA al landar (2026-08-06) — y el mecanismo merece nombre propio
+
+`RelacionadosA` recibe `catalogo: EntradaBlog[]` **por prop** y sigue siendo
+síncrono; la página, que ya es asíncrona, es quien espera el dato. Resultado
+medido: **de las 10 rutas de `/[slug]`, sólo las 4 con bloque sustituido
+difieren** — ni una de las 6 con `relacionados: true` aparece por el límite
+asíncrono. La regla se sostuvo en la corrida buena, no sólo en la revertida.
+
+**El mecanismo, enunciado para que no haya que redescubrirlo:**
+
+> **Abrir un LÍMITE ASÍNCRONO dentro del árbol de componentes cambia el HTML
+> servido aunque el dato sea bit a bit idéntico.** React parte el stream por los
+> límites de suspensión, así que un `await` nuevo mueve dónde cortan los `push`
+> y **qué marcado sale en qué trozo** — sin que haya cambiado un solo dato.
+
+**Y por qué esto NO estaba en el catálogo de contenedores de `CLAUDE.md`:** los
+seis de allí son cosas que **absorben** un defecto. Éste **crea uno** donde no
+había nada, y **sólo lo ve una sonda cuyo objeto sea el MARCADO**. `clon-base`
+mide geometría y no se mueve un píxel; `html-cmp` con la puerta en `filas` lo
+habría leído como reparto RSC. Lo que lo destapó fue tener la puerta en
+**`visible`** —la decisión del §F2-3-RSC-ORDEN, tomada dos días antes por otra
+razón—: un caso de una decisión de instrumento pagando en un sitio que no era
+el suyo.
+
+**La forma general, que es lo reutilizable:** al migrar la fuente de un dato,
+**la frontera async del árbol es parte del artefacto servido**, no un detalle de
+implementación. Mover un `await` un nivel arriba o abajo es un cambio de salida
+y se mide como tal.
 
 ## ✅ F2-3-MEDIA · CERRADA (2026-08-06) — y la premisa era verdadera con la conclusión equivocada
 

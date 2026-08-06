@@ -1,3 +1,185 @@
+# HANDOFF — F2-3 con las CINCO familias migradas, el criterio que se mide donde el defecto no cabe, y la prueba de operación PASADA
+
+> ⚠ **Tanda 2026-08-06 (36.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.
+> `/[slug]` **landada**: T4b cableado en el seed y la familia aceptada por un
+> criterio **de BLOQUE, no de ruta**. La prueba de operación pasa de *«preparada
+> y NO PROBADA»* a **PASADA, 12/12 colecciones por el admin de verdad**.
+> **El escalón NO disparó.** `apps/web` se toca por diseño y paga lo que le toca.
+
+## 0 · Los cinco titulares
+
+> **1 · El bloqueo de `/[slug]` no era «T4b es deuda de F2-2»: era que el seed
+> NO TENÍA PIPELINE.** `TRANSFORMACIONES = [T8,T1,T2,T3,T3B,T4B,T4,T5,T6,T7]`
+> llevaba T4b **en su orden correcto** desde la tanda 31.ª, usado por
+> `extractor`, `cms-roundtrip` y `media-hueco`. El seed tenía una **copia a mano
+> de T8+T4a** y `grep -c "transformaciones" scripts/seed/seed.mjs` daba **0**.
+>
+> **2 · Y la razón que el código daba llevaba DOS TANDAS falsada.** `seed.mjs`
+> decía que T4b *«necesita el PDF y la URL de la noticia, que el catálogo NO
+> tiene»*; `PLAN-FASE-2.md` §871 lo derribó en la 30.ª (*«T4b es DERIVABLE»*).
+> Comprobado contra el catálogo del seed: **3 de 3 FB3D derivables vía
+> `payload`**. Es §sondas 3 en su **tercera** forma — allí un comentario prometía
+> una LLAMADA, luego unos CONSUMIDORES; aquí promete **una RAZÓN**. Y el
+> `0 sustituidos` que imprimía era un **literal de cadena**, así que ni siquiera
+> lo contradecía.
+>
+> **3 · El encargo traía un recuento que no sobrevivió a la derivación, y era el
+> que decidía el criterio.** Pedía comparar `flourish` contra su hermano
+> materializado — la única diana que compra FIDELIDAD. Derivado (regla 9):
+> `flourish-embed` está en **8 ficheros del corpus** y en **0 del catálogo**.
+> Vive en el camino del EXTRACTOR, no en el que siembra `/[slug]`. **La rama de
+> más valor del criterio tiene n = 0 aquí**, y se dice en vez de darla por
+> aplicada.
+>
+> **4 · El criterio se mide al nivel del BLOQUE porque el hash de la ruta es un
+> contenedor con holgura — el SÉPTIMO del catálogo.** Su holgura mide exactamente
+> lo que ocupa la sustitución (hasta 3500 bytes). `qa:t4b-bloque`: **RESTO a
+> CERO en 10/10** y 3 bloques adjudicados. Negativo **8/8**, y su caso decisivo
+> —`patron-ensanchado`— es el único que las guardas de recuento **no pueden ver**.
+>
+> **5 · `qa:html-cmp-neg` estaba en 9/11 ANTES de tocar nada, y los dos fallos
+> eran reales.** Uno envejecía solo (una lista escrita a mano que cada familia
+> migrada invalidaba); el otro era `process.exit()` tras un `fetch` abortando
+> libuv en Windows — **la guarda acertaba y el negativo la contaba como
+> fallada**. Los dos arreglados; **11/11**.
+
+## 1 · PASO 1 — por qué el seed no aplicaba T4b (derivado, no supuesto)
+
+| pregunta | respuesta derivada |
+|---|---|
+| ¿existe T4b? | sí, en `TRANSFORMACIONES`, **antes de T4a** (el PDF vive dentro del `<script>`) |
+| ¿quién la importa? | `extractor` · `extractor.neg` · `cms-roundtrip` · `media-hueco` — **no `seed.mjs`** |
+| ¿falta la LLAMADA? | **falta el FICHERO ENTERO**: el seed no importaba `transformaciones.mjs`, tenía su propia copia de T8+T4a |
+| ¿es orden deliberado? | **no.** El comentario daba una razón medida falsa dos tandas antes |
+
+**Aplicado:** `seed.mjs` importa `T4B` —una sola definición— y lo corre antes de
+T4a con su postcondición (un visor sin sustituir **tira**, no desaparece). El
+seed imprime ahora `5 <script> eliminados (T4a) · 3 sustituidos (T4b)`, los dos
+**contados**.
+
+## 2 · PASO 2 — el criterio, escrito ANTES de landar
+
+Acta completa: `PENDIENTES-QA.md` **§F2-3-T4B-CRITERIO**. En dos mitades:
+
+| mitad | umbral |
+|---|---|
+| **RESTO** — el `visible` sin los bloques declarados | **PUERTA · CERO** |
+| **BLOQUE** — por clase | contra la diana de su fila |
+
+| clase | n | diana |
+|---|---:|---|
+| `fb3d` | 3 | ⛔ **DESVIACIÓN DELIBERADA** — el original monta el visor por JS; no hay equivalente materializado en NINGUNA población. Contenido conservado, presentación no |
+| `nbc` | 1 | ⛔ **DESVIACIÓN DELIBERADA** — imposible: el script sólo da la URL del reproductor con `CID` caducable |
+| `instagram` | 1 | ✅ **SIN PÉRDIDA DE BLOQUE** — el `<blockquote>` sobrevive con su permalink |
+| *hermano materializado* | **0** | ✅ la rama existe y **no tiene instancia aquí** (`flourish`: corpus 8 · catálogo 0) |
+
+**La trampa que el diseño abre y la guarda que la cierra:** recortar bloques
+permite **ensanchar un patrón hasta tragarse la regresión**, y ni el censo ni la
+identidad de bytes lo ven. Muerde una propiedad del contenido: **un bloque
+declarado es andamiaje, no cuerpo** — si se lleva un `<p>` sin declararlo, es
+defecto.
+
+## 3 · PASO 3 — landada, y qué dice CADA instrumento
+
+| sonda | resultado | lectura |
+|---|---|---|
+| **`qa:t4b-bloque`** | **RESTO a CERO 10/10** · 3 bloques · 0 invaden cuerpo | ✅ **la puerta de esta familia** |
+| `qa:html-cmp` | **4 DISTINTAS** de 31 · 27 limpias | ⚠ rojo **ESPERADO**, y **ni una quinta** |
+| `qa:clon-base` @1440 · @390 | **28/31 sin mover un píxel** | ⚠ rojo esperado en los 3 de `fb3d`: `+1 ancla` y `+48.6` / `+79.18` |
+| `qa:enlaces` · `corte` · `slugs` · `manifiesto` · `cms-lectura` · `check` | 868 hrefs · 12/12 · 14 slugs · 31 rutas · 63/63 · verde | ✅ |
+
+**El `+48.6` está explicado y su variación entre anchos también:** es el párrafo
+del enlace al PDF. A 390 dos de los tres títulos **envuelven a dos renglones**;
+el tercero (`EEA Report Air Pollution`, corto) no. **No es ruido: es el wrap.**
+
+## 4 · PASO 4 — la PRUEBA DE OPERACIÓN, PASADA (y el protocolo tenía un paso inejecutable)
+
+| paso | resultado |
+|---|---|
+| usuario por `/admin/create-first-user` | ✅ parte de la prueba |
+| **12/12 colecciones servidas, guardadas desde el admin** | ✅ `qa:admin-operacion` |
+| rebuild + `qa:html-cmp` contra su línea base | **31 rutas · 0 con contenido distinto** |
+| `qa:t4b-bloque` tras los saves | **10/10, RESTO a cero, 3 bloques intactos** |
+
+> **El editor NO degrada el dato.** El campo rico **sí pasó por el serializador**
+> —los 4 cuerpos con `<script>` transformados y el `data-media` de T4b incluidos—
+> y no movió un byte del marcado visible.
+
+**⚠ Y la corrección de hecho: «GUARDAR SIN CAMBIOS» NO ES EJECUTABLE.** El botón
+sale `disabled` en un formulario intacto; un `.click()` **no da error, no hace
+nada**, y la primera corrida sacó **0 de 12** — un rojo correcto **por el motivo
+equivocado**. Adaptación declarada: se ensucia un **campo de texto simple** (una
+tecla y un borrado) **comprobando que su valor queda idéntico**, y el rico no se
+toca. Sigue midiendo porque el formulario **serializa todos los campos**.
+
+**Segunda corrección: la confirmación NO es un toast**, es `updatedAt` de la API
+antes y después — la salida servida, no lo que la interfaz dice de sí misma. Sin
+eso, «no encontré el toast» y «el save no ocurrió» daban la misma salida.
+
+**`usuarios` NO se cuenta como pasada por tener 0 filas:** se declara **fuera del
+criterio con su razón** (ningún usuario llega al render) y su camino de alta
+queda probado como precondición. Igual `productos` (familia sin migrar),
+`articulos-kb`, `media` y `slugs`.
+
+## 5 · Lo que se arregló de camino, y no era de esta fase
+
+**§F2-3-EXIT-FETCH (nueva ficha).** `process.exit()` tras un `fetch` aborta libuv
+en Windows: `UV_HANDLE_CLOSING`, `async.c:94` ⇒ exit **3221226505** en vez del
+código elegido. **Repro mínimo 3/3**; no lo evitan `setImmediate`,
+`setTimeout(0)` ni cerrar el dispatcher de undici. Lo único que funciona es
+`process.exitCode` —dejar drenar el bucle—, que es mecanismo, no retardo mágico.
+**Alcance derivado: 24 ficheros.** Arreglados **2** (`html-cmp`, `t4b-bloque`);
+**22 fichadas y sin barrer**, dicho con esas palabras.
+
+**La diana de `html-cmp.neg` era una lista escrita a mano** (`startsWith("/faqs/")`)
+y cada familia migrada la invalidaba: hoy **0 de 31** rutas tienen `filas` igual
+a la base, así que el caso `solo-reparto` era **insatisfacible**. Sustituida por
+su derivación —el control corre primero y cada sabotaje parte de **la medida de
+HOY**—, así que ninguno depende del estado accidental del build.
+
+> ⚠ **Y lo que eso enseña, que es lo caro:** *la tanda que migra una familia deja
+> ROJO el negativo del instrumento con el que va a medirla*, y ese rojo no dice
+> qué pasó. El HANDOFF anterior citaba **11/11**; hoy, en HEAD y sin tocar nada,
+> eran **9/11**.
+
+## 6 · Pendientes que NO bloquean
+
+**§F2-3-EXIT-FETCH** (22 sondas sin barrer) · **`qa:admin-operacion` sin test en
+negativo** (dicho, no disimulado: el veredicto lo emite `html-cmp`, que sí está
+falsado 11/11) · **los 3 `data-media` del seed NO pasan por el invariante D** de
+`qa:artefacto`, que lee sólo el camino del extractor · §M-PDF-FB3D ·
+§F2-3-VARIANTE-PISA · 23 imágenes 404 · §T3B-NO-CANONICO · §T3-ALCANCE · swiper
+×3 · nbc ×1 · HOME cubo B · `Dockerfile` · 26 celdas ciegas · 6 mínimos ·
+`Breadcrumb` 28 rutas · **CMS-SP-TIPO** (el `<sup>` vive en `productos`, que
+sigue sin ser familia de ruta) · los 5 «distinto» de `cmp-srcset` · **M-IMG**.
+
+## 7 · LO SIGUIENTE, por orden
+
+1. **`productos`** — la única colección con lado medido que **no llega al
+   render**. Migrarla cierra `CMS-SP-TIPO` (su `<sup>`) y la mete en la prueba
+   de operación. No es familia de ruta nueva: son `/monitor-calidad-aire`,
+   `/accesorios`, `/software-…`, `/kunak-api`.
+2. **F2-4 · Publicación** — webhook de rebuild, cron de publicación programada,
+   preview. Y **A-SP13 con número**.
+3. Barrer §F2-3-EXIT-FETCH en las 22 restantes, con su control.
+
+## 8 · Lo que NO hay que hacer al empezar
+
+- **No intentar poner verdes `html-cmp` ni `clon-base` en `/[slug]`.** Su rojo
+  es la desviación con acta. Lo que se vigila ahí es **el CONJUNTO**: si marcan
+  una ruta que `qa:t4b-bloque` no adjudica, **eso** sí es defecto.
+- **No ensanchar los patrones de `t4b-bloque`** para que algo cuadre: es la
+  trampa que su guarda de ANCHURA existe para cerrar, y el negativo la prueba.
+- **No `await` dentro de un componente hijo** (§F2-3-ASYNC-HIJO). El dato se
+  espera en la página y baja por prop.
+- **No re-implementar una transformación en un segundo camino.** Es lo que causó
+  todo esto: importar `transformaciones.mjs`, no copiarlo.
+- **No leer «adjudicado» como «fiel».** Dice que la diferencia está donde se
+  declaró, no que la sustitución sea buena.
+- **No re-congelar `html-f23-base.json`.**
+
+---
+
 # HANDOFF — el CONTRATO de html-cmp escrito (y quien lo decidió fue el ORIGINAL), dos familias más migradas, y la última NO se landa con su número
 
 > ⚠ **Tanda 2026-08-06 (35.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.

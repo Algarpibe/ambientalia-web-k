@@ -1,14 +1,14 @@
 {
   "meta": {
     "fecha": "2026-08-06",
-    "etiqueta": "control-diana",
+    "etiqueta": "operacion-antes",
     "rutas": 31,
-    "buildId": "seNbF9N9hZfo4Fq37uO4a"
+    "buildId": "hMiA1-4Wd6h7if0XJqr7G"
   },
   "paginas": {
     "/": {
       "bytes": 230293,
-      "crudo": "0cd4e5b3067064b8",
+      "crudo": "4e80e5aee37cfebd",
       "normalizado": "efc0a1c7eeea8b66",
       "visible": "ce0affc1b5e7a43d",
       "filas": "f68bf5d86166069a",
@@ -20,10 +20,10 @@
     },
     "/accesorios": {
       "bytes": 203924,
-      "crudo": "f1975a1ff60f4afc",
-      "normalizado": "0000000000000000",
+      "crudo": "4f9c7ac75e36ab12",
+      "normalizado": "3c565194f8baaa4e",
       "visible": "eed446d5b35e8afd",
-      "filas": "0000000000000000",
+      "filas": "b1041bd71d42a04d",
       "nFilas": 74,
       "nMascaras": 140,
       "bytesCarga": 74653,
@@ -32,10 +32,10 @@
     },
     "/case-studies/distrito-baja-emision-rio-de-janeiro": {
       "bytes": 151675,
-      "crudo": "732c71e1887bdbce",
-      "normalizado": "2e4eb26bd65efe30",
+      "crudo": "17bfd3687e0e6a55",
+      "normalizado": "88547671bad1ea09",
       "visible": "6ef3cd0b5af7c0f5",
-      "filas": "b6c656d00bdddc64",
+      "filas": "5a87b17082e6b7c6",
       "nFilas": 156,
       "nMascaras": 99,
       "bytesCarga": 54667,
@@ -44,10 +44,10 @@
     },
     "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
       "bytes": 130921,
-      "crudo": "e808cb5281c1cd9f",
-      "normalizado": "9d22543fb2cbe2c9",
+      "crudo": "b2e61995a589493a",
+      "normalizado": "e59af6b9aa2ed8d8",
       "visible": "8dd897be00ad62d0",
-      "filas": "e42c6d338e7de378",
+      "filas": "48ce68264c7339f6",
       "nFilas": 62,
       "nMascaras": 97,
       "bytesCarga": 47214,
@@ -55,21 +55,21 @@
       "nBuildId": 1
     },
     "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
-      "bytes": 116421,
-      "crudo": "034c644e6122809e",
-      "normalizado": "d98a7bd39b4d5b45",
+      "bytes": 116464,
+      "crudo": "d7a5b5a62b047049",
+      "normalizado": "bd972a21310d0a0d",
       "visible": "4edd79b4fb02e87d",
       "filas": "915270ec9a478d21",
       "nFilas": 50,
       "nMascaras": 91,
       "bytesCarga": 40847,
-      "nTrozos": 22,
+      "nTrozos": 23,
       "nBuildId": 1
     },
     "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
       "bytes": 102395,
-      "crudo": "7e776c952f988d59",
-      "normalizado": "dc09f34d07ada48e",
+      "crudo": "2727f4bc053cefc3",
+      "normalizado": "d7d620740e1df6c0",
       "visible": "9da2df27840740fb",
       "filas": "5e18297e60a376d5",
       "nFilas": 44,
@@ -79,20 +79,20 @@
       "nBuildId": 1
     },
     "/cloruro-de-hidrogeno-hcl": {
-      "bytes": 267405,
-      "crudo": "1a7b0918ff0e4b2b",
-      "normalizado": "c9ec971c5da75829",
+      "bytes": 267362,
+      "crudo": "f992e47407fe3044",
+      "normalizado": "40c6557fa570d696",
       "visible": "6966105bbd715824",
       "filas": "9790e3935709e91a",
       "nFilas": 510,
       "nMascaras": 90,
       "bytesCarga": 110624,
-      "nTrozos": 22,
+      "nTrozos": 21,
       "nBuildId": 1
     },
     "/contador-particulas-suspension-movilidad-sostenible": {
       "bytes": 135422,
-      "crudo": "576a4942efb0bcd5",
+      "crudo": "dfbf8bf59ebf0cb0",
       "normalizado": "0c59d3424914db1f",
       "visible": "53b6e6905b89f5d4",
       "filas": "f5340d64163146b3",
@@ -104,7 +104,7 @@
     },
     "/contaminacion-por-metano": {
       "bytes": 328304,
-      "crudo": "4cf60e30f6c7165f",
+      "crudo": "cbf421ff9b634ef7",
       "normalizado": "b8aa788502882038",
       "visible": "f17ba87083d554da",
       "filas": "9f00d7941b6488e1",
@@ -116,10 +116,10 @@
     },
     "/emisiones-atmosfericas": {
       "bytes": 113862,
-      "crudo": "5017d923d00bde46",
-      "normalizado": "d44b035f764833ea",
+      "crudo": "279edfeb0dc71329",
+      "normalizado": "8229936d45e7146b",
       "visible": "6eff5cb3417478c2",
-      "filas": "ce36edd0269e9e1d",
+      "filas": "557e7a5847ce9cb6",
       "nFilas": 79,
       "nMascaras": 72,
       "bytesCarga": 40877,
@@ -128,7 +128,7 @@
     },
     "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
       "bytes": 85915,
-      "crudo": "f3f204fce4d22fa5",
+      "crudo": "4bb5dc90a0b9fe8b",
       "normalizado": "659ccad6f3e651ec",
       "visible": "8aeb9a5349499e79",
       "filas": "9e45b47fdc5fc486",
@@ -140,8 +140,8 @@
     },
     "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
       "bytes": 84899,
-      "crudo": "81549a757919b34d",
-      "normalizado": "748f9bba0519342e",
+      "crudo": "bd499d62a80d58e7",
+      "normalizado": "b3aaefea63c1b68a",
       "visible": "5254c12dd220d0d8",
       "filas": "63f6763e83a59939",
       "nFilas": 36,
@@ -152,7 +152,7 @@
     },
     "/kunak-api": {
       "bytes": 147861,
-      "crudo": "7ab9db10207d740c",
+      "crudo": "15899ed7e72435c1",
       "normalizado": "8a1931a728af83cb",
       "visible": "9db6a2c6949ea016",
       "filas": "9850c0268e69f059",
@@ -164,7 +164,7 @@
     },
     "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
       "bytes": 163144,
-      "crudo": "fe3078906a7ea0d3",
+      "crudo": "c148158900780ed1",
       "normalizado": "f2910a84a853e9f9",
       "visible": "6b676d25f304a1b7",
       "filas": "751175a28556b20c",
@@ -175,20 +175,20 @@
       "nBuildId": 1
     },
     "/metano": {
-      "bytes": 149063,
-      "crudo": "ad8a7e33d81bc760",
-      "normalizado": "1de3249ceb442561",
+      "bytes": 149106,
+      "crudo": "9776094e09ccbf9e",
+      "normalizado": "a454032fca471deb",
       "visible": "84dc7ec075c44a78",
-      "filas": "0846422dfda209fb",
+      "filas": "91d82a4c8e923fa5",
       "nFilas": 146,
       "nMascaras": 78,
       "bytesCarga": 56864,
-      "nTrozos": 20,
+      "nTrozos": 21,
       "nBuildId": 1
     },
     "/monitor-calidad-aire": {
       "bytes": 287909,
-      "crudo": "e17f6c5618090da1",
+      "crudo": "0ce58218680dbf17",
       "normalizado": "07abae7d9bb2259c",
       "visible": "ea37b0f18cc24203",
       "filas": "5a55f8aab4995e49",
@@ -200,7 +200,7 @@
     },
     "/monitorizacion-de-emisiones-del-trafico-urbano": {
       "bytes": 311983,
-      "crudo": "dbbc5c98c5eb9b7c",
+      "crudo": "7625fdc18ce24d2a",
       "normalizado": "7fb7184bca23b7ee",
       "visible": "c0bb8ad8d42edcb8",
       "filas": "1cd4c3dd9b03e187",
@@ -212,7 +212,7 @@
     },
     "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
       "bytes": 304131,
-      "crudo": "5514f88c79cba7af",
+      "crudo": "86d6a76d1fe6f8cd",
       "normalizado": "7237294d8544dd6f",
       "visible": "4f4b13bc9d0313b9",
       "filas": "af5ab9a84f670252",
@@ -224,8 +224,8 @@
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
       "bytes": 104099,
-      "crudo": "8fce60839455874e",
-      "normalizado": "029238c3208f97b1",
+      "crudo": "799770cca47426d3",
+      "normalizado": "84d252ee81b06456",
       "visible": "cf0c57055cef002c",
       "filas": "986dc7bf9f5e927d",
       "nFilas": 46,
@@ -235,20 +235,20 @@
       "nBuildId": 1
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
-      "bytes": 100871,
-      "crudo": "3f6d2cda2b75e967",
-      "normalizado": "e0eea4a7e6f8df9c",
+      "bytes": 100828,
+      "crudo": "77b4253d21f40d85",
+      "normalizado": "4997772ed57cea57",
       "visible": "ee975ff7ffb40cd8",
       "filas": "85b5cfb929d22450",
       "nFilas": 40,
       "nMascaras": 78,
       "bytesCarga": 35621,
-      "nTrozos": 20,
+      "nTrozos": 19,
       "nBuildId": 1
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
       "bytes": 96447,
-      "crudo": "446972bbfbf51e93",
+      "crudo": "3b670ce3dcaed32f",
       "normalizado": "d0194cb6b8290f44",
       "visible": "daeab8f29bb8e043",
       "filas": "b0bf92ffbac14395",
@@ -260,7 +260,7 @@
     },
     "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
       "bytes": 97808,
-      "crudo": "6e47524325f40ae1",
+      "crudo": "952be1a214774c4c",
       "normalizado": "d850a101238b4f99",
       "visible": "84381d5c0494bc75",
       "filas": "3510d5d81ad78343",
@@ -272,7 +272,7 @@
     },
     "/running-for-clean-air": {
       "bytes": 205913,
-      "crudo": "ff2a5932792060eb",
+      "crudo": "62423be2d4add1e6",
       "normalizado": "00a9dfa78095addc",
       "visible": "cbc793994d0d57db",
       "filas": "bd71630726dd8f81",
@@ -284,7 +284,7 @@
     },
     "/sectores/calidad-del-aire-en-las-ciudades": {
       "bytes": 161833,
-      "crudo": "c66eedfa59e511cb",
+      "crudo": "d0c3e7abc1a89fc6",
       "normalizado": "a39d8542770f2954",
       "visible": "95f118eaa8fc14b6",
       "filas": "ac022edeb0f4d188",
@@ -296,8 +296,8 @@
     },
     "/sectores/contaminacion-por-construccion": {
       "bytes": 154897,
-      "crudo": "06526ab27457e67b",
-      "normalizado": "d99f70c922ac648e",
+      "crudo": "5ae5fe054010e5d6",
+      "normalizado": "a0c083a776999fa3",
       "visible": "b7885e0210194229",
       "filas": "a811bc21c74362f1",
       "nFilas": 61,
@@ -308,7 +308,7 @@
     },
     "/sectores/control-de-emisiones-industriales": {
       "bytes": 177190,
-      "crudo": "25993859f98bfda3",
+      "crudo": "e4b46e3b795a8e24",
       "normalizado": "c4696e091092697a",
       "visible": "ffcd1e2ebea86973",
       "filas": "0f28ba02b88805ee",
@@ -320,8 +320,8 @@
     },
     "/sectores/estudio-de-la-contaminacion-atmosferica": {
       "bytes": 159520,
-      "crudo": "44de3c7e2d172e66",
-      "normalizado": "b72b40d0be1728ff",
+      "crudo": "5ef9dde882112026",
+      "normalizado": "b474834780d2822b",
       "visible": "a7149647084438ac",
       "filas": "c08588fcdbf5b09b",
       "nFilas": 60,
@@ -332,8 +332,8 @@
     },
     "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
       "bytes": 227358,
-      "crudo": "5cd0f18af0b612de",
-      "normalizado": "c5a299544b122f65",
+      "crudo": "d260bcb0e215fad6",
+      "normalizado": "9cd30831b01e463b",
       "visible": "ece0852cb772c9b4",
       "filas": "0f828c7b8185da83",
       "nFilas": 86,
@@ -344,8 +344,8 @@
     },
     "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
       "bytes": 211733,
-      "crudo": "ffa8f8db0c9ef6da",
-      "normalizado": "c372ccc2c047e286",
+      "crudo": "317c866d74f9d717",
+      "normalizado": "1e9e931568bf5531",
       "visible": "aa4feea75d8cafd6",
       "filas": "47407a36b4947560",
       "nFilas": 85,
@@ -356,7 +356,7 @@
     },
     "/software-de-medicion-calidad-del-aire": {
       "bytes": 213048,
-      "crudo": "d3f8998a93c89c46",
+      "crudo": "232b4e7024ca6ff2",
       "normalizado": "fa3d8f29890366e0",
       "visible": "8722c9b0c5357219",
       "filas": "4128d109cb75b33a",
@@ -367,15 +367,15 @@
       "nBuildId": 1
     },
     "/todas-nuestras-soluciones-en-el-iotswc": {
-      "bytes": 90765,
-      "crudo": "0a477c549b6d6f30",
-      "normalizado": "f6b94ae72ef490e5",
+      "bytes": 90722,
+      "crudo": "9b02f8e5bc538f0f",
+      "normalizado": "2de4915544e3ae3f",
       "visible": "c774e972232e9bb4",
       "filas": "b96089d53e4959af",
       "nFilas": 37,
       "nMascaras": 71,
       "bytesCarga": 30067,
-      "nTrozos": 21,
+      "nTrozos": 20,
       "nBuildId": 1
     }
   }

@@ -1,4 +1,5 @@
-import { BLOQUE_RELACIONADOS, ENTRADAS_BLOG } from "@/lib/arquetipo-a";
+import { BLOQUE_RELACIONADOS } from "@/lib/arquetipo-a";
+import type { EntradaBlog } from "@/types/kunak";
 
 import { FilaA } from "./CascaronA";
 
@@ -35,8 +36,26 @@ import { FilaA } from "./CascaronA";
  * Y la consulta tampoco puede ser fiel hoy: el original elige entre **149**
  * entradas y el clon tiene **7**. La lista real llega con el extractor de F2-2.
  */
-export function RelacionadosA({ excluir }: { excluir: string }) {
-  const posts = ENTRADAS_BLOG.filter((e) => e.slug !== excluir).slice(0, 3);
+/**
+ * ⚠ **`catalogo` LLEGA POR PROP, y el componente SIGUE SIENDO SÍNCRONO. No es
+ * estilo: es §F2-3-ASYNC-HIJO, un mecanismo medido.**
+ *
+ * Al migrar `/[slug]` la primera vez se hizo `async` este componente para que
+ * leyera el CMS. `qa:html-cmp` marcó **6** rutas en vez de 4: las 6 con
+ * `relacionados: true`, y **dos de ellas sin una sola diferencia de dato** —
+ * `/contador-…` con **Δ 0 bytes** y el marcado distinto.
+ *
+ *   > **Abrir un límite asíncrono dentro del árbol cambia el HTML servido
+ *   > aunque el dato sea idéntico.** Y `clon-base` no lo caza: mide geometría, y
+ *   > la geometría no se movió.
+ *
+ * Volverlo síncrono devolvió esas 2 a Δ0 (`html-f23-slug-REVERTIDA-1-async.json`
+ * → `-2-t4a.json`, 6 → 4). Así que el dato se espera **en la página**, que ya es
+ * asíncrona, y baja por prop. Un `await` aquí dentro es un cambio de maquetación
+ * disfrazado de refactor.
+ */
+export function RelacionadosA({ excluir, catalogo }: { excluir: string; catalogo: EntradaBlog[] }) {
+  const posts = catalogo.filter((e) => e.slug !== excluir).slice(0, 3);
 
   return (
     <section className="w-full bg-white pt-[50px] min-[981px]:pt-[57.59px]">

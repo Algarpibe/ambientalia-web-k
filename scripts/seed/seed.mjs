@@ -23,6 +23,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { APP } from "../qa/lib.mjs";
 import { CATALOGOS, TAXONOMIAS_DERIVADAS, cargaCatalogos } from "./catalogos.mjs";
+/**
+ * ⚠ **T4b se IMPORTA, no se re-escribe** (2026-08-06). El seed tenía su propia
+ * copia a mano de T8+T4a y por eso nunca vio a T4b: `grep -c transformaciones
+ * scripts/seed/seed.mjs` daba **0** mientras `TRANSFORMACIONES` ya lo llevaba
+ * en su orden correcto, usado por el extractor, el round-trip y `media-hueco`.
+ * Una segunda definición de una transformación de migración es la clase C7 con
+ * la peor salida: dos caminos que dicen migrar lo mismo y migran cosas distintas.
+ */
+import { T4B } from "./transformaciones.mjs";
 import { aPayload } from "../../packages/cms-config/src/mapeo.mjs";
 /**
  * ⚠ **La mitad de VUELTA vive en el paquete compartido desde el 2026-08-06**
@@ -483,14 +492,37 @@ export function derivaTaxonomias(catalogos) {
  * | mitad | qué hace | dónde puede estar |
  * |---|---|---|
  * | **T4a · la REGLA** | ningún `<script>` sobrevive: se quita | **aquí**. Es mecánica y no inventa nada |
- * | **T4b · la SUSTITUCIÓN** | el PDF pasa a media, el embed a nodo tipado, el reproductor a enlace (§3.3) | **bloque 2** — necesita datos que el catálogo NO tiene: el fichero PDF, la URL de la noticia |
+ * | **T4b · la SUSTITUCIÓN** | el PDF pasa a media, el embed a nodo tipado, el reproductor a enlace (§3.3) | ~~bloque 2~~ → **AQUÍ TAMBIÉN, desde 2026-08-06** |
  *
- * **La mitad que falta es una PÉRDIDA, y por eso se cuenta y se nombra.** Los 5
- * scripts de las 4 entradas llevan contenido real dentro (un visor de PDF con su
- * payload en base64, un embed de Instagram, un reproductor de vídeo), y quitarlos
- * sin sustituir **deja ese contenido fuera del CMS**. Un `?? ""` silencioso aquí
- * sería exactamente el verde falso del que va toda la casa: la eliminación se
- * congela con su clasificación §3.3, y el seed la imprime.
+ * ⚠ **CORREGIDO 2026-08-06 — la razón escrita arriba era una premisa YA FALSADA,
+ * y llevaba dos tandas sin que nadie volviera a por ella.**
+ *
+ * La celda decía *«necesita datos que el catálogo NO tiene: el fichero PDF, la
+ * URL de la noticia»*. `PLAN-FASE-2.md` §871 la derribó en la tanda 30.ª —*«T4b
+ * es DERIVABLE: la premisa del PLAN es falsa para 6 de los 17»*— porque **la
+ * referencia al PDF viaja dentro del payload base64 del propio `<script>`**.
+ * Comprobado ahora contra el catálogo del seed, no contra el corpus: **3 de 3
+ * visores FB3D derivables por `payload`, `post()` limpia, 0 payloads
+ * ilegibles**.
+ *
+ * Y el mecanismo del fallo es §sondas 3 en su tercera forma: allí un comentario
+ * prometía una LLAMADA que no existía, y luego unos CONSUMIDORES que no
+ * existían; aquí prometía **una RAZÓN**, medida falsa, en el único sitio del
+ * repo que nadie ejecuta ni verifica. La sonda de al lado imprimía
+ * `0 sustituidos` como **literal de cadena**, no como recuento — así que ni
+ * siquiera contradecía al comentario.
+ *
+ * **Lo que T4b NO arregla, y por eso el criterio de aceptación es de bloque y no
+ * de ruta:** T4b **sustituye, no restaura**. El visor de PDF pasa a ser un
+ * enlace al PDF: el CONTENIDO se conserva, la PRESENTACIÓN no. Y `nbc` +
+ * `instagram` siguen sin sustituto —el primero por imposible, el segundo porque
+ * no lo necesita—. El criterio, con su diana por clase, está en
+ * `PENDIENTES-QA.md` §F2-3-T4B-CRITERIO; el instrumento, en `qa:t4b-bloque`.
+ *
+ * **La pérdida que QUEDA se cuenta y se nombra igual.** Un `?? ""` silencioso
+ * aquí sería exactamente el verde falso del que va toda la casa: la eliminación
+ * se congela con su clasificación §3.3, y el seed la imprime **con el número
+ * contado, no escrito**.
  *
  * **T8 va antes, y sobre este corpus resulta ser NO-OP**: los 5 scripts llevan el
  * token de Rocket Loader en su `type`, y **medido: 5 dentro de `<script>`, 0
@@ -516,6 +548,10 @@ const ROCKET = /\btype=("|')[0-9a-f]{24}-(text\/javascript)\1/gi;
 
 /** Lo que T4a quitó, para que la pérdida no sea silenciosa. */
 export const SCRIPTS_ELIMINADOS = [];
+/** Lo que T4b SÍ sustituyó. Se cuenta: el `0 sustituidos` era un literal. */
+export const SUSTITUCIONES_T4B = [];
+/** Payloads base64 de FB3D que no se pudieron leer. Cero no se supone: se mide. */
+export const PAYLOAD_ILEGIBLE = [];
 
 /**
  * T8 + T4a sobre una cadena de HTML. Devuelve el HTML sin scripts y apunta cada
@@ -525,7 +561,26 @@ export function aplicaT4(html, donde) {
   if (typeof html !== "string" || !SCRIPT.test(html)) return html;
   SCRIPT.lastIndex = 0;
   const conT8 = html.replace(ROCKET, (_m, q, tipo) => `type=${q}${tipo}${q}`);
-  return conT8.replace(SCRIPT, (script) => {
+  /* ── T4b ANTES de T4a, y el orden es DATO, no preferencia ────────────────
+   * La referencia al PDF de los visores FB3D vive **dentro del `<script>`**
+   * (payload base64), así que después de T4a ya no existe. Es el mismo orden
+   * que `TRANSFORMACIONES` declara en `transformaciones.mjs`, y se importa de
+   * allí en vez de re-implementarse: **una sola definición**. Re-escribirla
+   * aquí es cómo nació este defecto —el seed tenía su propia copia de T4a y por
+   * eso nunca vio a T4b— y repetirlo sería arreglar la instancia, no la clase.
+   *
+   * `post()` de T4b es su POSTCONDICIÓN: un visor que quede sin sustituir se
+   * anota y TIRA, en vez de pasar por T4a y desaparecer en silencio. */
+  const ctx = { pagina: donde, sustitucionesT4b: SUSTITUCIONES_T4B, payloadIlegible: PAYLOAD_ILEGIBLE, mediaDelCuerpo: [] };
+  const conT4b = T4B.aplica(conT8, ctx).html;
+  const mal = T4B.post(conT4b);
+  if (mal.length)
+    throw new Error(
+      `T4b · POSTCONDICIÓN INCUMPLIDA en ${donde}:\n  ${mal.join("\n  ")}\n` +
+        `  Dejarlo pasar sería que T4a se llevara el <script> y el contenido desapareciera\n` +
+        `  sin que nadie lo contara. La ausencia se rechaza, no se sustituye (regla 6).`,
+    );
+  return conT4b.replace(SCRIPT, (script) => {
     const clase = CLASE_SCRIPT.find(([re]) => re.test(script))?.[1] ?? null;
     if (!clase)
       /* Regla 6: un script que no se sabe qué es NO se quita en silencio. §3.3
@@ -610,17 +665,40 @@ export async function siembra(payload, colecciones) {
   /* ── T4a, en voz alta. Lo que se quitó y NO se sustituyó es contenido que hoy
    *    no está en el CMS: si esto se imprimiera sin contarse, sería la regla 1
    *    (*lo que se imprime se cuenta*) rota en el sitio más caro. ────────── */
-  if (SCRIPTS_ELIMINADOS.length) {
-    console.log(`\n── T4a · ${SCRIPTS_ELIMINADOS.length} <script> eliminados, 0 sustituidos ──`);
-    for (const s of SCRIPTS_ELIMINADOS) console.log(`  · ${s.donde}\n      ${s.clase}`);
+  if (SCRIPTS_ELIMINADOS.length || SUSTITUCIONES_T4B.length) {
+    /* ⚠ Los dos números se CUENTAN. El `0 sustituidos` de antes era un LITERAL
+     * de cadena: decía la verdad y no la medía, así que el día que dejó de ser
+     * verdad habría seguido diciendo cero. Regla 1 — lo que se imprime, se
+     * cuenta. */
     console.log(
-      `  ⚠ La SUSTITUCIÓN (T4b) es del bloque 2: necesita el PDF y la URL de la\n` +
-        `    noticia, que el catálogo medido NO tiene. Hasta entonces ese contenido\n` +
-        `    NO está en el CMS — congelado en medidas/, no perdido en silencio.`,
+      `\n── T4 · ${SCRIPTS_ELIMINADOS.length} <script> eliminados (T4a) · ` +
+        `${SUSTITUCIONES_T4B.length} sustituidos (T4b) ──`,
+    );
+    for (const s of SUSTITUCIONES_T4B) console.log(`  ✓ ${s.pagina}\n      ${s.clase} · vía ${s.via} → ${s.clave ?? s.visualizacion}`);
+    for (const s of SCRIPTS_ELIMINADOS) console.log(`  · ${s.donde}\n      ${s.clase}`);
+    if (PAYLOAD_ILEGIBLE.length) {
+      console.log(`  ⚠ ${PAYLOAD_ILEGIBLE.length} payload(s) base64 ILEGIBLES:`);
+      for (const p of PAYLOAD_ILEGIBLE) console.log(`      ${p.pagina}: ${p.error}`);
+    }
+    console.log(
+      `  ⚠ LO QUE SIGUE SIN SUSTITUTO no es un escalón, es una lista con dueño:\n` +
+        `    · nbc ×1 — IMPOSIBLE: el <script> sólo da la URL del REPRODUCTOR con su CID\n` +
+        `      caducable; la del artículo no está en el dato (§3.3);\n` +
+        `    · instagram ×1 — NO LO NECESITA: el <blockquote> sobrevive con su permalink.\n` +
+        `    Y T4b SUSTITUYE, no restaura: el visor de PDF pasa a ser un enlace al PDF.\n` +
+        `    Criterio de aceptación por clase: PENDIENTES-QA.md §F2-3-T4B-CRITERIO.`,
     );
   }
 
-  return { resumen, ctx, taxonomias, catalogos, scriptsEliminados: SCRIPTS_ELIMINADOS };
+  return {
+    resumen,
+    ctx,
+    taxonomias,
+    catalogos,
+    scriptsEliminados: SCRIPTS_ELIMINADOS,
+    sustitucionesT4b: SUSTITUCIONES_T4B,
+    payloadIlegible: PAYLOAD_ILEGIBLE,
+  };
 }
 
 /**

@@ -1270,7 +1270,7 @@ cada colección»* de la prueba de operación **ya no está bloqueado por una
 decisión de modelo**; lo que le falta es que las tres familias restantes se
 cableen, que es trabajo mecánico con su Δ0 por familia.
 
-### Estado 2026-08-06 (tarde) — 5 de 7 colecciones servidas, y la que falta NO es mecánica
+### ✅ Estado 2026-08-06 (noche) — LAS 5 FAMILIAS DE RUTA MIGRADAS, 7 de 7 colecciones servidas
 
 | familia de ruta | colección | estado |
 |---|---|---|
@@ -1278,20 +1278,97 @@ cableen, que es trabajo mecánico con su Δ0 por familia.
 | `/recursos/[...ruta]` | `documentos-cientificos` | ✅ migrada 08-06 — y su residuo RSC **cerrado** por el contrato del §F2-3-RSC-ORDEN |
 | `/casos-de-exito/[slug]` · `/case-studies/[slug]` | `casos` | ✅ **migrada 08-06** |
 | `/sectores/[slug]` | `sectores` · `monograficos` | ✅ **migrada 08-06** — las dos de más forma (108 y 199 hojas) |
-| `/[slug]` | `entradas-blog` · `terminos-kunakpedia` | ⛔ **BLOQUEADA** — §F2-3-T4A-BLOG |
+| `/[slug]` | `entradas-blog` · `terminos-kunakpedia` | ✅ **migrada 08-06 (noche)** — con T4b cableado y **criterio de bloque**, no de ruta |
 
-**El bloqueo no es del proyector y no es mecánico.** El seed aplica **T4a sin
-T4b**, así que la DB guarda **4 de las 7 entradas de blog sin sus `<script>`** y
-la familia no puede pagar su Δ0: −7112 · −6783 · −6532 · −524 bytes de marcado
-visible. `terminos-kunakpedia` está limpia y sólo la bloquea compartir ruta.
+**El «hecho cuando» de la fase vuelve a ser alcanzable, y se alcanzó:** *«al
+menos una instancia de CADA colección»* está en **7 de 7** (`faqs` ·
+`documentos-cientificos` · `casos` · `sectores` · `monograficos` ·
+`entradas-blog` · `terminos-kunakpedia`), y con las 5 taxonomías son **12
+sujetos** para la prueba de operación.
 
-**Y cambia el «hecho cuando» de la fase**, así que se dice aquí y no se
-descubre luego: *«al menos una instancia de CADA colección»* **no es alcanzable
-hoy**. Es alcanzable en **5 de 7** —`faqs` · `documentos-cientificos` · `casos` ·
-`sectores` · `monograficos`— y las 2 que faltan dependen de T4b, que es deuda de
-**F2-2**, no de esta fase.
+> ⚠ **`/[slug]` es la única familia que NO paga un Δ0 de ruta, y no puede.**
+> T4b **sustituye, no restaura**: el visor de PDF de FB3D pasa a ser un enlace
+> al PDF. Su criterio de aceptación es **por clase y al nivel del BLOQUE** —el
+> resto de la página a umbral cero, medido APARTE, para que la sustitución no
+> tape una regresión que entre con ella—. Acta e instrumento:
+> `PENDIENTES-QA.md` §F2-3-T4B-CRITERIO · `npm run qa:t4b-bloque` (negativo 8/8).
+>
+> **Consecuencia que hay que saber antes de leer un rojo:** `qa:html-cmp` marca
+> **4 de 31** y `qa:clon-base` **3 de 31** en esta familia, **por diseño**. Lo
+> que se vigila ahí es el CONJUNTO: si algún día marcan una ruta que
+> `qa:t4b-bloque` no adjudica, eso sí es defecto.
 
-### La PRUEBA DE OPERACIÓN — preparada, NO corrida, y NO PROBADA
+#### Lo que desbloqueó la familia, y por qué no era «esperar a F2-2»
+
+El HANDOFF anterior decía que T4b era deuda de F2-2. **Lo era en el camino del
+extractor y estaba HECHA**: `TRANSFORMACIONES` la lleva desde la tanda 31.ª, en
+su orden correcto (antes de T4a), usada por `extractor`, `cms-roundtrip` y
+`media-hueco`. Lo que faltaba era que **el seed la llamara** — y no la llamaba
+porque **el seed no importaba `transformaciones.mjs` en absoluto** (`grep -c` →
+0): tenía una copia a mano de T8+T4a. Ficha con la derivación completa:
+`PENDIENTES-QA.md` §F2-3-T4A-BLOG (cerrada).
+
+### ✅ La PRUEBA DE OPERACIÓN — CORRIDA Y PASADA (2026-08-06), y el protocolo tenía un paso inejecutable
+
+**Resultado, medido de punta a punta:**
+
+| paso | resultado |
+|---|---|
+| línea base propia (no `html-f23-base`) | `medidas/html-operacion-antes.json`, 31 rutas |
+| usuario creado por `/admin/create-first-user` | ✅ — es parte de la prueba, no un preparativo |
+| **una instancia de CADA colección servida, guardada desde el admin** | **12/12** (`qa:admin-operacion`) |
+| rebuild + `qa:html-cmp` contra la línea base | **31 rutas · 0 con contenido distinto · marcado visible Δ0** |
+| `qa:t4b-bloque` contra el `despues` de la migración | **10/10, RESTO a cero, 3 bloques intactos** |
+
+> **El editor NO degrada el dato.** Ni el reordenado de claves, ni la
+> normalización de HTML, ni el serializador del campo rico movieron un byte del
+> marcado visible en ninguna de las 31 rutas. Y el campo rico **sí pasó por el
+> serializador**: los 4 cuerpos de blog con `<script>` transformados, el
+> sustituto de T4b con su `data-media` incluido, sobrevivieron al save.
+
+#### ⚠ La corrección de hecho: «GUARDAR SIN CAMBIOS» NO ES EJECUTABLE
+
+El paso 3 decía *«Guardar SIN cambios»* y **el admin no lo permite**. Medido:
+en un documento recién abierto el botón sale `#action-save` con
+`disabled: true` y clase `btn--disabled` — Payload deshabilita el guardado en un
+formulario intacto. Un `.click()` sobre él **no da error: no hace nada**, y la
+primera corrida de la sonda sacó **0 de 12** con «guardé y el admin no
+confirmó»: un rojo correcto **por el motivo equivocado**.
+
+**La adaptación conserva la pregunta y está declarada en la sonda:** se ensucia
+el formulario por un **campo de texto simple** (una tecla y un borrado) y **se
+comprueba que su valor queda idéntico**; el campo rico **no se toca**. Si se
+tecleara en él, cualquier diferencia posterior sería atribuible al tecleo y no a
+la normalización. Y sigue midiendo lo que debe porque **el formulario serializa
+TODOS los campos al guardar**: el rico pasa por el serializador aunque nadie lo
+haya tocado — que es exactamente lo que un `payload.update()` no puede provocar.
+
+#### La otra corrección: la CONFIRMACIÓN no es un toast
+
+La primera versión esperaba el texto «updated successfully» en la página. Eso es
+preguntarle a la interfaz por sí misma. Ahora la confirmación es **`updatedAt`
+de la API antes y después**, o sea la salida servida (§El principio): prueba que
+el save **llegó a la DB**. Sin ese cambio, «no encontré el toast» y «el save no
+ocurrió» daban la misma salida — que es literalmente lo que pasó.
+
+#### El ALCANCE de «cada colección», acotado y con razón
+
+Sin acotar es inaplicable: la config tiene 24 slugs y la mayoría son **blocks**.
+Los **sujetos** son las colecciones **cuya instancia llega al render**, derivadas
+de `grep -rn "leeColeccion<" apps/web/src` + `cms/faqs.ts` → **12** (7
+colecciones de contenido + 5 taxonomías). Si el dato de una colección no llega a
+ninguna página, un save suyo **no puede** mover el HTML: incluirla daría un verde
+por vacío.
+
+| fuera | razón |
+|---|---|
+| `productos` | su familia de ruta **no está migrada**: las páginas leen `src/lib`. Entra el día que se migre |
+| `articulos-kb` | 0 filas y sin lado medido (§2d.1) |
+| `media` | no es un catálogo: se deriva de los `upload` de los demás |
+| `slugs` | lo escriben los hooks del plano (§4) |
+| **`usuarios`** | infraestructura (CMS-0f). **NO se cuenta como «pasada» por tener 0 filas: se declara fuera con razón**, que es distinto. Su camino de alta **sí** queda probado — sin `create-first-user` no hay prueba |
+
+#### El protocolo original, conservado
 
 **Su trampa, sin cambios:** un `update` por Local API **no es** el guardado del
 admin. Lo que la prueba caza es la **NORMALIZACIÓN DEL EDITOR** —un save que
@@ -1328,6 +1405,19 @@ pregunta**.
 > es código que parece cobertura y no lo es (regla 3, *documentado no es
 > conectado*). Lo que queda escrito es el protocolo y sus precondiciones — que
 > es lo que la tanda siguiente necesita para no volver a derivarlas.
+>
+> ✅ **La sonda existe desde el 2026-08-06 — y se escribió PARA correrla en la
+> misma tanda**, que es la condición que el párrafo de arriba pone. Sus dos
+> precondiciones se resolvieron corriéndolas: el usuario se creó por
+> `create-first-user`, y las 5 de 7 colecciones subieron a **12 de 12** porque
+> `/[slug]` se migró en esta misma tanda. `npm run qa:admin-operacion`.
+>
+> ⚠ **Lo que la sonda NO tiene todavía: test en negativo.** No se afirma que lo
+> tenga. Su falsador natural —degradar el dato a propósito en el camino del
+> admin y comprobar que `html-cmp` lo caza— es una tanda propia, y **hasta
+> entonces el verde de esta prueba descansa en que `qa:html-cmp-neg` (11/11)
+> prueba que el comparador sabe fallar**. O sea: el instrumento que emite el
+> veredicto está falsado; el que aprieta el botón, no.
 
 ---
 

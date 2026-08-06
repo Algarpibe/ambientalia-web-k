@@ -109,6 +109,8 @@
     "qa:manifiesto-neg": "node scripts/qa/manifiesto.neg.mjs",
     "qa:html-cmp": "node scripts/qa/html-cmp.mjs",
     "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs",
+    "qa:t4b-bloque": "node scripts/qa/t4b-bloque.mjs",
+    "qa:t4b-bloque-neg": "node scripts/qa/t4b-bloque.neg.mjs",
     "qa:rsc-original": "node scripts/qa/rsc-original.mjs",
     "qa:rsc-original-neg": "node scripts/qa/rsc-original.neg.mjs",
     "qa:lectura-forma": "node --env-file=apps/cms/.env scripts/qa/lectura-forma.mjs",
@@ -117,7 +119,8 @@
     "qa:cms-decl": "node --env-file=apps/cms/.env scripts/qa/cms-decl.mjs",
     "qa:cms-decl-neg": "node --env-file=apps/cms/.env scripts/qa/cms-decl.neg.mjs",
     "qa:cms-lectura": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.mjs",
-    "qa:cms-lectura-neg": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.neg.mjs"
+    "qa:cms-lectura-neg": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.neg.mjs",
+    "qa:admin-operacion": "node scripts/qa/admin-operacion.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

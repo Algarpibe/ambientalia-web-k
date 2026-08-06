@@ -1,0 +1,8044 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "etiqueta": "patron-sobrecasado",
+    "criterio": "RESTO fuera de los bloques declarados = PUERTA a cero · BLOQUE = por clase, contra la diana de su fila en CLASES",
+    "alcance": "CLON-CONTRA-CLON: no mide fidelidad contra kunakair.com. La única diana que la mide es `hermano-materializado`, con 0 instancias aquí",
+    "clases": [
+      {
+        "id": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "porQue": "el original monta el visor de PDF por JavaScript y NO existe equivalente materializado en ninguna población: ni en el catálogo medido ni en los 209 documentos del corpus. T4b sustituye el visor por un enlace al PDF con `data-media`; el contenido (el PDF) se conserva y la PRESENTACIÓN no. Acta en PENDIENTES-QA.md §F2-3-T4B-DESVIACION.",
+        "sustituye": true
+      },
+      {
+        "id": "nbc",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "porQue": "IMPOSIBLE, no pendiente: §3.3 decidió *enlace a la noticia* y el `<script>` sólo da la URL del REPRODUCTOR con su `CID` caducable — la del artículo no está en el dato. Su `<div class=\"contenedor-video-fijo\">` queda vacío. Misma acta.",
+        "sustituye": false
+      },
+      {
+        "id": "instagram",
+        "diana": "SIN PÉRDIDA DE BLOQUE",
+        "porQue": "lo que cae es el CARGADOR, no el bloque: el `<blockquote class=\"instagram-media\">` sobrevive entero a T4a con su texto y su permalink, y degrada a una cita válida. Verificado en el marcado servido, no supuesto.",
+        "sustituye": false
+      }
+    ],
+    "dianaSinInstancia": {
+      "id": "hermano-materializado",
+      "clase": "flourish",
+      "umbral": "CERO contra el hermano ya materializado del mismo corpus",
+      "instanciasAqui": 0,
+      "derivacion": "grep -rl flourish-embed corpus/ → 8 · grep -c flourish apps/web/src/lib/*.ts → 0"
+    },
+    "ganchoDeTest": "fb3d:despues:<p\\b[^>]*>"
+  },
+  "paginas": {
+    "/contaminacion-por-metano": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 161381,
+      "bytesResto": 161234,
+      "restoSha": "7319b7f36af4625b",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "680f5929da57f031",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60497\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "0412c3af4b793671",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60506\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "edbdb3ee000fab4e",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60494\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "897c5f68fad55784",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-58733\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "cb2c6758ddb8e0bf",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60520\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "3fa380a39321dcc1",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60509\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "9d01c032a01bcd76",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60523\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "8d005e874d5a1d24",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60533\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 31,
+          "sha": "598bfcdc1d3ec212",
+          "invade": [],
+          "muestra": "<p style=\"padding-left: 40px;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/todas-nuestras-soluciones-en-el-iotswc": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 55896,
+      "bytesResto": 55551,
+      "restoSha": "a5ce314876fff0f0",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 149544,
+      "bytesResto": 149019,
+      "restoSha": "3a7f982958cc26b3",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "e95961008b99da33",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69109\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "71a9c65cd01c9aa5",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69112\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "30dda435d5d8120c",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69114\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "8303f62bf9408432",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69111\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "b5d4f27d93e2274d",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69113\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "383ad2329dba9507",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69108\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "0825206f6c9b5c2a",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-69115\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 1,
+        "instagram": 0
+      }
+    },
+    "/contador-particulas-suspension-movilidad-sostenible": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 74403,
+      "bytesResto": 73551,
+      "restoSha": "50b52226c91547b6",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 32,
+          "sha": "af2b674db0de8b07",
+          "invade": [],
+          "muestra": "<p style=\"text-align: justify;\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 154048,
+      "bytesResto": 153340,
+      "restoSha": "efd81266508154f9",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "3249c02ff2133069",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67561\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "22ad8dc82b9ed8cd",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67560\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "c76127a78a7543d3",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67568\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "37fef037f3d7fd9c",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67556\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "d5b4f3e626a82c4b",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67604\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "8dd15915578f0f16",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67555\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "75afc2050a975ef4",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67558\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "e6bfb55c99ff9bf9",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67565\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "125c270d79a1a928",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67563\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "ce47a54138a9c023",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67567\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "e1024e7c7caac587",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67557\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "71668312a9288a90",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67562\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "9f13e622764782b9",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67564\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "2406b06673cd2c06",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67559\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/running-for-clean-air": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 107603,
+      "bytesResto": 106589,
+      "restoSha": "4ae298144de9f0fa",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "4791e48ad8148283",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-61413\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "7d57453c9aabfd83",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-60968\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "84e16325c9bbeffc",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-52741\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 233,
+          "sha": "bf6f8694c1f8ee42",
+          "invade": [],
+          "muestra": "<p style=\"color: #c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: ce"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "81f58a017ed42fa9",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-52889\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "406f8873c01b799a",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-61467\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "42248c37a28403eb",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-61418\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "3fdc41d14af58101",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-61421\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "ac45f243289f57b9",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-61407\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 1
+      }
+    },
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
+      "coleccion": "entradas-blog",
+      "bytesVisible": 87331,
+      "bytesResto": 86620,
+      "restoSha": "64105b9ff988c780",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 27,
+          "sha": "b97d5ada3bb2c218",
+          "invade": [],
+          "muestra": "<p class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "6c7aed3f88731355",
+          "invade": [],
+          "muestra": "<p class=\"text-center\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 122,
+          "sha": "e7dd16a6a58a7f42",
+          "invade": [],
+          "muestra": "<p class=\"mb-[30px] text-[15px] font-extrabold leading-[30.6px] tracking-[0.1px] text-[#0075C9] min-[981px]:mb-[34.05px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 1,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/cloruro-de-hidrogeno-hcl": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 133297,
+      "bytesResto": 132685,
+      "restoSha": "09dd59e0378f70c3",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "bd2384f31cbf6375",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67256\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "a2ebbeb66c4eb189",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67255\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "3693f82b2984f413",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67264\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "3f2f19776cb60082",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67257\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "fcae0f96c8014265",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67263\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "d61630e40888164e",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67261\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "0043b9c40781a664",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67266\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "e58fe4e263a3569d",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67258\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "409f07af2ba92991",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67265\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "bf77aec4377f3970",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67259\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "dc65e88f28a3ad92",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-67262\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/emisiones-atmosfericas": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 66253,
+      "bytesResto": 65825,
+      "restoSha": "9a395e9d43af4a80",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    },
+    "/metano": {
+      "coleccion": "terminos-kunakpedia",
+      "bytesVisible": 81478,
+      "bytesResto": 81206,
+      "restoSha": "2a842e84c8fd27e5",
+      "lado": "despues",
+      "bloques": [
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 23,
+          "sha": "41944c7da434d09b",
+          "invade": [],
+          "muestra": "<p class=\"calls-title\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 57,
+          "sha": "5c61d33cfea8c386",
+          "invade": [],
+          "muestra": "<p id=\"caption-attachment-52630\" class=\"wp-caption-text\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 3,
+          "sha": "33f2799467177287",
+          "invade": [],
+          "muestra": "<p>"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 87,
+          "sha": "e74d8328527147b2",
+          "invade": [],
+          "muestra": "<p class=\"widgettitle mb-[11.2px] text-[22px] font-light leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 67,
+          "sha": "287e44fe26b7310e",
+          "invade": [],
+          "muestra": "<p class=\"mb-0 text-[14px] font-bold leading-[30.6px] text-[#333]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 21,
+          "sha": "b7a7c8abd0ec1d8d",
+          "invade": [],
+          "muestra": "<p class=\"mb-[32px]\">"
+        },
+        {
+          "clase": "fb3d",
+          "lado": "despues",
+          "bytes": 55,
+          "sha": "f322b89c26dc228d",
+          "invade": [],
+          "muestra": "<p class=\"inline-flex items-center gap-1 text-[9.6px]\">"
+        }
+      ],
+      "esperados": {
+        "fb3d": 0,
+        "nbc": 0,
+        "instagram": 0
+      }
+    }
+  },
+  "totalPorClase": {
+    "fb3d": 846,
+    "nbc": 0,
+    "instagram": 0
+  },
+  "censo": [
+    {
+      "ruta": "/contaminacion-por-metano",
+      "clase": "fb3d",
+      "hallados": 206,
+      "nAntes": 0,
+      "nDespues": 206,
+      "esperado": 0
+    },
+    {
+      "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+      "clase": "fb3d",
+      "hallados": 9,
+      "nAntes": 0,
+      "nDespues": 9,
+      "esperado": 0
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "clase": "fb3d",
+      "hallados": 110,
+      "nAntes": 0,
+      "nDespues": 110,
+      "esperado": 0
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "clase": "fb3d",
+      "hallados": 27,
+      "nAntes": 0,
+      "nDespues": 27,
+      "esperado": 0
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "clase": "fb3d",
+      "hallados": 149,
+      "nAntes": 0,
+      "nDespues": 149,
+      "esperado": 1
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "clase": "fb3d",
+      "hallados": 69,
+      "nAntes": 0,
+      "nDespues": 69,
+      "esperado": 1
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "clase": "fb3d",
+      "hallados": 62,
+      "nAntes": 0,
+      "nDespues": 62,
+      "esperado": 1
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "clase": "fb3d",
+      "hallados": 112,
+      "nAntes": 0,
+      "nDespues": 112,
+      "esperado": 0
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "clase": "fb3d",
+      "hallados": 30,
+      "nAntes": 0,
+      "nDespues": 30,
+      "esperado": 0
+    },
+    {
+      "ruta": "/metano",
+      "clase": "fb3d",
+      "hallados": 72,
+      "nAntes": 0,
+      "nDespues": 72,
+      "esperado": 0
+    }
+  ],
+  "invasores": [],
+  "cmp": {
+    "fichero": "medidas\\t4b-bloque-control-base-neg-control-base.json",
+    "restoAlterado": [
+      {
+        "ruta": "/contaminacion-por-metano",
+        "bytesAntes": 161381,
+        "bytesAhora": 161234,
+        "delta": -147
+      },
+      {
+        "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+        "bytesAntes": 55896,
+        "bytesAhora": 55551,
+        "delta": -345
+      },
+      {
+        "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "bytesAntes": 149544,
+        "bytesAhora": 149019,
+        "delta": -525
+      },
+      {
+        "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+        "bytesAntes": 74403,
+        "bytesAhora": 73551,
+        "delta": -852
+      },
+      {
+        "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "bytesAntes": 153791,
+        "bytesAhora": 153340,
+        "delta": -451
+      },
+      {
+        "ruta": "/running-for-clean-air",
+        "bytesAntes": 107358,
+        "bytesAhora": 106589,
+        "delta": -769
+      },
+      {
+        "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "bytesAntes": 87167,
+        "bytesAhora": 86620,
+        "delta": -547
+      },
+      {
+        "ruta": "/cloruro-de-hidrogeno-hcl",
+        "bytesAntes": 133297,
+        "bytesAhora": 132685,
+        "delta": -612
+      },
+      {
+        "ruta": "/emisiones-atmosfericas",
+        "bytesAntes": 66253,
+        "bytesAhora": 65825,
+        "delta": -428
+      },
+      {
+        "ruta": "/metano",
+        "bytesAntes": 81478,
+        "bytesAhora": 81206,
+        "delta": -272
+      }
+    ],
+    "bloquesMovidos": [
+      {
+        "ruta": "/contaminacion-por-metano",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          31,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1795
+      },
+      {
+        "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          3,
+          3,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 417
+      },
+      {
+        "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1405
+      },
+      {
+        "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          32,
+          32,
+          32,
+          3,
+          32,
+          3,
+          23,
+          3,
+          3,
+          32,
+          3,
+          32,
+          3,
+          32,
+          32,
+          32,
+          32,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1068
+      },
+      {
+        "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          265
+        ],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          57,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1635
+      },
+      {
+        "ruta": "/running-for-clean-air",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          253
+        ],
+        "despues": [
+          87,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          233,
+          3,
+          3,
+          57,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1313
+      },
+      {
+        "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [
+          172
+        ],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          27,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          3,
+          3,
+          3,
+          3,
+          87,
+          122,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1035
+      },
+      {
+        "ruta": "/cloruro-de-hidrogeno-hcl",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          3,
+          3,
+          57,
+          3,
+          57,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          57,
+          3,
+          3,
+          3,
+          57,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          87,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 1508
+      },
+      {
+        "ruta": "/emisiones-atmosfericas",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          87,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 668
+      },
+      {
+        "ruta": "/metano",
+        "clase": "fb3d",
+        "diana": "DESVIACIÓN DELIBERADA",
+        "antes": [],
+        "despues": [
+          87,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          23,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          57,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          87,
+          67,
+          67,
+          67,
+          67,
+          67,
+          21,
+          55
+        ],
+        "delta": 848
+      }
+    ],
+    "sinPar": []
+  }
+}
