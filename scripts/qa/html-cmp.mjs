@@ -151,6 +151,74 @@ function normaliza(html) {
  *
  * Los dos primeros son el veredicto. El tercero **se cuenta y se nombra**, que
  * es la diferencia entre «lo excluí» y «lo miré y sé qué es».
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠ CORREGIDO 2026-08-06 (§F2-3-RSC-ORDEN) · EL CONTRATO DE LOS TRES NIVELES
+ *
+ * La tabla de arriba puso `filas` a **umbral CERO**, o sea de PUERTA. Al migrar
+ * la segunda familia enrojeció una ruta cuyo contenido no había cambiado, y la
+ * ficha lo diagnosticó con números. La tentación era ensanchar la máscara. La
+ * pregunta correcta era otra: **¿qué puede garantizar cada nivel?**
+ *
+ * ── Lo que decide la categoría, y está medido ─────────────────────────────
+ *
+ *   > **EL ORIGINAL NO EMITE CARGA RSC.** `npm run qa:rsc-original`, congelada,
+ *   > negativo 5/5 — cuyo falsador es el propio clon: 4 arquetipos del original,
+ *   > 0 con `__next_f`, los 4 con su control positivo.
+ *
+ * De ahí se sigue, y no es una preferencia: **el nivel `filas` no tiene
+ * contraparte que auditar, ni hoy ni nunca.** No hay un lado del original con el
+ * que compararlo, así que es **clon-contra-clon POR CONSTRUCCIÓN** — la familia
+ * que `CLAUDE.md` §UN ARQUETIPO NUEVO NO HEREDA COBERTURA declara que *«se lee
+ * como verde y no mide fidelidad»*. Un Δ0 ahí no compra fidelidad: no hay
+ * fidelidad que comprar.
+ *
+ * ── Por qué `visible` SÍ puede ser puerta, y es el mismo argumento ────────
+ * `html-cmp` es una guarda de INVARIANCIA (clon de hoy contra clon de ayer),
+ * no de fidelidad, y eso está bien para F2-3: el efecto esperado de la migración
+ * es cero. Lo que hace una invariancia útil es que **traslade** una fidelidad ya
+ * pagada en otro sitio. El marcado visible es exactamente donde vive la
+ * fidelidad que 48 sondas midieron contra kunakair.com, así que byte-identidad
+ * ahí **transfiere** esa afirmación al otro lado de la migración. La carga RSC
+ * no tiene ninguna que transferir.
+ *
+ * ── Y la segunda razón, independiente de la primera ──────────────────────
+ * `generateMetadata` pasa a ser asíncrona **en cada familia que se migra**, así
+ * que el serializador reparte los ids en orden de resolución **en cada familia**.
+ * Una puerta que enrojece por el mecanismo de la propia fase no es una puerta:
+ * es ruido con nombre. Es la regla del pleno (`CLAUDE.md` §sondas 4,
+ * complementario) aplicada a un comparador.
+ *
+ * ── EL CONTRATO ───────────────────────────────────────────────────────────
+ *
+ * | nivel | qué es | qué GARANTIZA | umbral | falsador |
+ * |---|---|---|---|---|
+ * | `visible` | el documento sin los `push` de `__next_f` | lo que recibe el visitante no cambió — **y traslada la fidelidad medida contra el original** | **PUERTA · CERO** | `visible-alterado` (exit 1) |
+ * | `filas` | las filas RSC con los identificadores enmascarados | **nada de fidelidad**: el original no emite esto. Sólo churn accidental de la carga de hidratación | **INFORMATIVO, con disparador** | `filas-renumeradas` (verde y contado) · `filas-invariante` (exit 1) |
+ * | `normalizado` | el documento entero salvo `BUILD_ID` | nada por sí solo | informativo, contado | `solo-reparto` (verde y contado) |
+ *
+ * ── EL DISPARADOR: qué tiene que aparecer para que alguien mire `filas` ──
+ * Degradar a informativo **no es dejar de mirar**. El reparto mueve *qué fila
+ * lleva qué id*; lo que **no** puede mover son los INVARIANTES de la carga:
+ *
+ *   · `nFilas` — cuántas filas hay;
+ *   · `nMascaras` — cuántos identificadores y referencias;
+ *   · `bytesCarga` — cuánto pesa la carga desescapada.
+ *
+ * **Si el hash de `filas` difiere y los invariantes NO se mueven** → es
+ * renumeración: verde, contado y nombrado aparte. **Si se mueve uno** → DEFECTO,
+ * y la salida dice cuál y con qué número. Medido sobre las 6 rutas en que el
+ * fenómeno aparece: `nFilas` y `nMascaras` idénticos en las 6 (33·36·46·40·46·45
+ * y 66·72·77·78·75·73), incluida la que enrojecía.
+ *
+ * ⚠ **`bytesCarga` es nuevo, y `html-f23-base.json` es ANTERIOR.** Esa congelada
+ * no se re-congela —es el HTML de antes de la migración y es contra lo que se
+ * mide toda la fase—, así que **durante F2-3 el disparador corre con dos
+ * invariantes y no con tres**, y la salida lo dice ruta a ruta en vez de darlo
+ * por cumplido. Lo que eso deja fuera está acotado: un cambio de bytes DENTRO de
+ * una fila que no altere el nº de filas ni el de referencias. Si ese contenido
+ * se renderiza, el nivel `visible` —la puerta— lo ve igual; lo que escapa a los
+ * dos es contenido que viaje **sólo** en la carga.
  * ═════════════════════════════════════════════════════════════════════════ */
 
 const RE_TROZO = /<script>self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)<\/script>/g;
@@ -177,8 +245,8 @@ function filasDe(html) {
   let m;
   while ((m = RE_TROZO.exec(html))) cargas.push(JSON.parse(m[1]));
   let n = 0;
-  const filas = cargas
-    .join("")
+  const carga = cargas.join("");
+  const filas = carga
     .split("\n")
     .filter(Boolean)
     .map((f) =>
@@ -187,7 +255,11 @@ function filasDe(html) {
         .replace(/"\$[LW]?[0-9a-f]{1,4}"/g, () => (n++, '"<REF>"')),
     )
     .sort();
-  return { filas, n };
+  /* `bytesCarga` — el tercer INVARIANTE del disparador (ver el contrato arriba).
+   * Es la carga **desescapada y sin los envoltorios de trozo**: el reparto mueve
+   * dónde cortan los `push` (y con ellos los bytes del documento), pero no
+   * cuánto pesa lo transportado. */
+  return { filas, n, bytesCarga: Buffer.byteLength(carga), nTrozos: cargas.length };
 }
 
 const { base: BASE, parar } = await iniciarClon();
@@ -230,7 +302,7 @@ for (const ruta of RUTAS) {
       await parar();
       process.exit(2);
     }
-    const { filas, n: nMascaras } = filasDe(texto);
+    const { filas, n: nMascaras, bytesCarga, nTrozos } = filasDe(texto);
     todo.paginas[ruta] = {
       bytes,
       crudo: sha(html),
@@ -239,6 +311,8 @@ for (const ruta of RUTAS) {
       filas: sha(filas.join("\n")),
       nFilas: filas.length,
       nMascaras,
+      bytesCarga,
+      nTrozos,
       nBuildId: n,
     };
     ev.ok();
@@ -278,9 +352,30 @@ if (idas.length) {
   idas.forEach((r) => console.error(`       · ${r}`));
 }
 
+/**
+ * Los INVARIANTES del nivel `filas` — lo que la renumeración del serializador no
+ * puede mover. El disparador del contrato (ver la cabecera) se lee así:
+ *
+ *   · hash de `filas` distinto **y** los invariantes quietos → renumeración:
+ *     verde, contado y nombrado;
+ *   · **un invariante movido** → DEFECTO, con su nombre y su número.
+ *
+ * ⚠ Un invariante que la base NO trae **no cuenta como cumplido**: se dice en la
+ * salida. Convertir «no lo puedo comprobar» en «está bien» es exactamente la
+ * regla 6 (`CLAUDE.md` §sondas), y aquí el que falta es `bytesCarga` durante
+ * toda F2-3 porque su congelada es anterior.
+ */
+const INVARIANTES = ["nFilas", "nMascaras", "bytesCarga"];
+const movidos = (a, b) =>
+  INVARIANTES.filter((k) => a[k] !== undefined && b[k] !== undefined && a[k] !== b[k]).map(
+    (k) => `${k} ${a[k]}→${b[k]}`,
+  );
+const ausentes = (a, b) => INVARIANTES.filter((k) => a[k] === undefined || b[k] === undefined);
+
 let distintas = 0;
 let soloVolatil = 0;
 let soloReparto = 0;
+let renumeradas = 0;
 let sinComparar = 0;
 /** ¿La base es de antes de los tres niveles? Entonces sólo se puede exigir el 1. */
 const baseConNiveles = Object.values(antes.paginas).some((p) => p.visible);
@@ -314,6 +409,30 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
     );
     continue;
   }
+  /* ── EL DISPARADOR del nivel informativo ─────────────────────────────────
+   * La puerta es `visible`. Con la puerta cerrada a Δ0, unas `filas` distintas
+   * sólo son defecto si movieron un INVARIANTE de la carga; si no, es la
+   * renumeración que `generateMetadata` asíncrona produce en cada familia. */
+  if (visibleIgual && baseConNiveles) {
+    const rotos = movidos(a, b);
+    const noComprobados = ausentes(a, b);
+    if (!rotos.length) {
+      renumeradas++;
+      console.log(
+        `  ✅ ${ruta}\n       marcado visible Δ0 · filas RSC con OTROS identificadores, invariantes quietos` +
+          ` (nFilas ${a.nFilas} · nMascaras ${a.nMascaras}) — nivel informativo, NO es Δ0` +
+          (noComprobados.length ? `\n       ⚠ sin comprobar en la base: ${noComprobados.join(" · ")}` : ""),
+      );
+      continue;
+    }
+    distintas++;
+    console.log(
+      `  ❌ ${ruta}\n       marcado visible Δ0 pero la CARGA RSC movió un invariante: ${rotos.join(" · ")}` +
+        `\n       eso no es renumeración: es contenido de la carga` +
+        (noComprobados.length ? `\n       ⚠ sin comprobar en la base: ${noComprobados.join(" · ")}` : ""),
+    );
+    continue;
+  }
   distintas++;
   console.log(
     `  ❌ ${ruta}\n       bytes ${a.bytes} → ${b.bytes} (${b.bytes - a.bytes >= 0 ? "+" : ""}${b.bytes - a.bytes})` +
@@ -324,10 +443,10 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
         : `\n       (base sin niveles: no se puede decir si es contenido o reparto)`),
   );
 }
-const iguales = rutasAntes.length - idas.length - sinComparar - distintas - soloReparto;
+const iguales = rutasAntes.length - idas.length - sinComparar - distintas - soloReparto - renumeradas;
 console.log(
   `\n  ${iguales - soloVolatil} idénticas byte a byte · ${soloVolatil} sólo el BUILD_ID · ` +
-    `${soloReparto} sólo el reparto del stream RSC · ${distintas} DISTINTAS`,
+    `${soloReparto} sólo el reparto del stream RSC · ${renumeradas} sólo renumeración RSC · ${distintas} DISTINTAS`,
 );
 
 /* Segundo contrato, con su propio mínimo: se puede medir las 31 y comparar
@@ -339,8 +458,13 @@ const fallosCmp = evCmp.informe();
 const mal = distintas > 0 || idas.length > 0 || sinComparar > 0 || fallosEv > 0 || fallosCmp > 0;
 console.log(
   `\n${mal ? "❌" : "✅"} ${rutasAntes.length - idas.length - sinComparar} rutas comparadas · ` +
-    `${distintas} con CONTENIDO distinto · umbral CERO en marcado visible y filas RSC` +
-    (soloReparto ? `\n   (${soloReparto} con el mismo contenido y otro reparto del stream — contadas aparte, no son Δ0)` : ""),
+    `${distintas} con CONTENIDO distinto · umbral CERO en el marcado VISIBLE (la puerta)` +
+    (soloReparto
+      ? `\n   (${soloReparto} con el mismo contenido y otro reparto del stream — contadas aparte, no son Δ0)`
+      : "") +
+    (renumeradas
+      ? `\n   (${renumeradas} con la carga RSC RENUMERADA e invariantes quietos — nivel informativo, no son Δ0)`
+      : ""),
 );
 await parar();
 process.exit(mal ? 1 : 0);

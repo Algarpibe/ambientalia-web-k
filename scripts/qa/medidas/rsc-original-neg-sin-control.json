@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "origen": "https://kunakair.com",
+    "porEntorno": {
+      "origen": false,
+      "urls": true,
+      "marca": false
+    },
+    "marcaRsc": "__next_f",
+    "marcaOriginal": "et_pb_",
+    "conRsc": 0,
+    "sinControl": 1
+  },
+  "paginas": {
+    "/robots.txt": {
+      "arquetipo": "NEG-1",
+      "bytes": 132,
+      "rsc": false,
+      "control": false
+    }
+  }
+}

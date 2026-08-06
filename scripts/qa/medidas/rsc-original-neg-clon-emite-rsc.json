@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "origen": "http://127.0.0.1:62777",
+    "porEntorno": {
+      "origen": true,
+      "urls": true,
+      "marca": true
+    },
+    "marcaRsc": "__next_f",
+    "marcaOriginal": "Migas de pan",
+    "conRsc": 3,
+    "sinControl": 0
+  },
+  "paginas": {
+    "/monitor-calidad-aire": {
+      "arquetipo": "NEG-1",
+      "bytes": 287909,
+      "rsc": true,
+      "control": true
+    },
+    "/kunak-api": {
+      "arquetipo": "NEG-2",
+      "bytes": 147861,
+      "rsc": true,
+      "control": true
+    },
+    "/accesorios": {
+      "arquetipo": "NEG-3",
+      "bytes": 203924,
+      "rsc": true,
+      "control": true
+    }
+  }
+}

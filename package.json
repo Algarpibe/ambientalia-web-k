@@ -109,6 +109,8 @@
     "qa:manifiesto-neg": "node scripts/qa/manifiesto.neg.mjs",
     "qa:html-cmp": "node scripts/qa/html-cmp.mjs",
     "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs",
+    "qa:rsc-original": "node scripts/qa/rsc-original.mjs",
+    "qa:rsc-original-neg": "node scripts/qa/rsc-original.neg.mjs",
     "qa:lectura-forma": "node --env-file=apps/cms/.env scripts/qa/lectura-forma.mjs",
     "qa:media-colision": "node --env-file=apps/cms/.env scripts/qa/media-colision.mjs",
     "qa:media-colision-neg": "node --env-file=apps/cms/.env scripts/qa/media-colision.neg.mjs",

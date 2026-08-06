@@ -7,7 +7,7 @@
  * puede ser falsa por dos caminos que no se parecen:
  *
  *   1 · **que no vea una diferencia que existe** — el fallo obvio, y el que
- *       cubren `visible-alterado`, `filas-alteradas`, `ruta-fantasma` y `base-vacia`;
+ *       cubren `visible-alterado`, los tres `inv-*`, `ruta-fantasma` y `base-vacia`;
  *   2 · **que la NORMALIZACIÓN se coma la diferencia** — el fallo propio de
  *       esta sonda y el más peligroso, porque *fabrica* el verde en vez de
  *       perderlo: un volátil corto o frecuente borra contenido real **de los
@@ -15,6 +15,15 @@
  *
  * Sin el grupo 2, «byte a byte» sería una etiqueta y no una medida: bastaría un
  * volátil mal elegido para que las 31 rutas salieran idénticas siempre.
+ *
+ * ── Y un TERCER camino, desde el contrato del §F2-3-RSC-ORDEN ─────────────
+ *   3 · **que un nivel INFORMATIVO se comporte como una puerta, o al revés.**
+ *       Degradar `filas` a informativo sólo vale si a la vez (a) una
+ *       renumeración sale **verde y contada aparte** —`filas-renumeradas`— y
+ *       (b) un invariante movido sale **rojo** —los tres `inv-*`—. Con sólo lo
+ *       primero, el nivel se habría apagado; con sólo lo segundo, no se habría
+ *       degradado nada. Son las dos mitades de la misma decisión y el negativo
+ *       las dispara por separado.
  *
  * El sabotaje `volatil-ubicuo` **deriva su cadena del HTML prerenderizado de
  * disco** (`.next/server/app/*.html`) en vez de escribir una a mano: una cadena
@@ -94,16 +103,47 @@ const casos = [
     salidaTiene: /visible DISTINTO/,
   },
   {
-    etiqueta: "filas-alteradas",
-    exit: 1,
-    porQue: "el marcado visible casa pero la carga RSC no ⇒ tampoco es reparto: DEFECTO",
+    /* ⚠ CAMBIADO 2026-08-06 con el contrato del §F2-3-RSC-ORDEN. Este caso
+     * esperaba **exit 1**: `filas` era PUERTA. Ya no lo es —el original no emite
+     * carga RSC, así que ese nivel no tiene contraparte que auditar— y lo que
+     * tiene que hacer la sonda con unas filas renumeradas es **contarlas y
+     * nombrarlas**, no enrojecer. Su hermano de abajo es el que conserva el
+     * poder de falsar: los INVARIANTES. */
+    etiqueta: "filas-renumeradas",
+    exit: 0,
+    porQue: "visible Δ0, filas distintas, invariantes quietos ⇒ renumeración: verde y CONTADO aparte",
     base: () =>
-      fabricaBase("filas-alteradas", (b) => {
+      fabricaBase("filas-renumeradas", (b) => {
         b.paginas[rutaDiana].normalizado = "0".repeat(16);
         b.paginas[rutaDiana].filas = "0".repeat(16);
       }),
-    salidaTiene: /filas RSC DISTINTAS/,
+    salidaTiene: new RegExp(
+      `✅ ${rutaDiana.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\n\\s+marcado visible Δ0 · filas RSC con OTROS identificadores`,
+    ),
   },
+  /* ── UN CASO POR INVARIANTE, y no es exceso ────────────────────────────────
+   * El contrato promete que el nivel informativo dispara con TRES invariantes.
+   * Probar uno y citar los tres es *documentado no es conectado* (`CLAUDE.md`
+   * §sondas 3): dos de ellos podrían no estar comprobándose y la salida sería
+   * idéntica. `bytesCarga` además ejercita el camino de un invariante que la
+   * base de F2-3 **no trae** —aquí se inyecta a propósito— para que ese camino
+   * esté probado el día que una base sí lo traiga. */
+  ...[
+    { campo: "nFilas", valor: (v) => v + 1 },
+    { campo: "nMascaras", valor: (v) => v + 1 },
+    { campo: "bytesCarga", valor: (v) => (v ?? 0) + 1 },
+  ].map(({ campo, valor }) => ({
+    etiqueta: `inv-${campo.toLowerCase()}`,
+    exit: 1,
+    porQue: `visible Δ0 pero \`${campo}\` movido ⇒ NO es renumeración: es contenido de la carga`,
+    base: () =>
+      fabricaBase(`inv-${campo.toLowerCase()}`, (b) => {
+        b.paginas[rutaDiana].normalizado = "0".repeat(16);
+        b.paginas[rutaDiana].filas = "0".repeat(16);
+        b.paginas[rutaDiana][campo] = valor(b.paginas[rutaDiana][campo]);
+      }),
+    salidaTiene: new RegExp(`movió un invariante: ${campo} `),
+  })),
   {
     /* ⚠ El complementario de los dos de arriba, y el que evita que «sólo
      * reparto» se vuelva un cajón de sastre: con `visible` y `filas` iguales, un
@@ -201,7 +241,8 @@ console.log(
     (fallos === 0
       ? `   Ve una diferencia de contenido, ve una ruta que falta, se niega a comparar\n` +
         `   contra una base vacía, y RECHAZA un volátil que borraría documento — que es\n` +
-        `   la única forma que tenía de dar verde siempre.\n`
+        `   la única forma que tenía de dar verde siempre. Y el nivel INFORMATIVO está\n` +
+        `   degradado por las dos mitades: la renumeración se cuenta, el invariante grita.\n`
       : `   «El HTML es el mismo byte a byte» NO se puede citar hasta que esto salga verde.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);

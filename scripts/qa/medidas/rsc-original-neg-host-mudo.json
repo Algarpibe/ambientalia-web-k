@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "origen": "http://127.0.0.1:1",
+    "porEntorno": {
+      "origen": true,
+      "urls": true,
+      "marca": false
+    },
+    "marcaRsc": "__next_f",
+    "marcaOriginal": "et_pb_",
+    "conRsc": 0,
+    "sinControl": 0
+  },
+  "paginas": {
+    "/es/": {
+      "arquetipo": "NEG-1",
+      "error": "TypeError: fetch failed"
+    }
+  }
+}

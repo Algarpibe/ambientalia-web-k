@@ -70,7 +70,89 @@ real es de fragilidad**: si el orden de inserción cambiara, Payload
 desduplicaría (`-1.jpg`) y **entonces sí** rompería la tabla. Lo vigila
 `qa:media-colision` comprobación B en cada corrida.
 
-## ⚠ F2-3-RSC-ORDEN · 1 ruta con residuo en la carga RSC que NO es contenido (2026-08-06)
+## ✅ F2-3-RSC-ORDEN · CERRADA (2026-08-06) — con CONTRATO, y la otra salida era la equivocada
+
+**Lo que había que decidir:** si el nivel `filas` de `html-cmp` debía ignorar la
+fila de estado del router, o si el residuo se fichaba **ruta a ruta**. Se ha
+hecho lo tercero, que no estaba en la lista: **declarar qué garantiza cada nivel
+y cuál puede por tanto ser puerta.** Y la segunda opción se ha podido descartar
+midiendo, no opinando (abajo).
+
+### El hecho que decide la categoría, y es del ORIGINAL
+
+> **EL ORIGINAL NO EMITE CARGA RSC.** `npm run qa:rsc-original` —congelada en
+> `medidas/rsc-original.json`, negativo **5/5**—: 4 arquetipos (HOME · PRODUCTO ·
+> SECTOR · DOC. CIENTÍFICO), **0 con `__next_f`**, los 4 con su control positivo
+> `et_pb_`. Sin el control, «no hay RSC» y «no miré» darían la misma salida.
+
+De ahí se sigue —y no es preferencia— que **el nivel `filas` no tiene contraparte
+que auditar, ni hoy ni nunca**: es **clon-contra-clon POR CONSTRUCCIÓN**, la
+familia que `CLAUDE.md` §UN ARQUETIPO NUEVO NO HEREDA COBERTURA declara que *«se
+lee como verde y no mide fidelidad»*. Un Δ0 ahí no compra fidelidad porque no hay
+fidelidad que comprar.
+
+**Y `visible` sí puede ser puerta por el mismo argumento, no por otro.**
+`html-cmp` es una guarda de **invariancia** (clon de hoy contra clon de ayer), y
+lo que hace útil a una invariancia es que **traslade** una fidelidad ya pagada.
+El marcado visible es donde vive la que 48 sondas midieron contra kunakair.com;
+byte-identidad ahí la transfiere al otro lado de la migración. La carga RSC no
+tiene ninguna que transferir.
+
+**La segunda razón es independiente de la primera:** `generateMetadata` pasa a
+asíncrona **en cada familia que se migra**, así que el reparto de ids cambia en
+cada familia. *Una puerta que enrojece por el mecanismo de la propia fase no es
+una puerta: es ruido con nombre.*
+
+### El contrato
+
+| nivel | qué garantiza | umbral | falsador |
+|---|---|---|---|
+| **`visible`** | lo que recibe el visitante no cambió — **y traslada la fidelidad medida contra el original** | **PUERTA · CERO** | `visible-alterado` → exit 1 |
+| **`filas`** | **nada de fidelidad.** Sólo churn accidental de la carga de hidratación | **INFORMATIVO, con disparador** | `filas-renumeradas` → verde y contado · `inv-nfilas` · `inv-nmascaras` · `inv-bytescarga` → exit 1 |
+| `normalizado` | nada por sí solo | informativo, contado | `solo-reparto` → verde y contado |
+
+**El disparador —qué tiene que aparecer para que alguien mire el informativo—**,
+porque degradar a informativo **no es dejar de mirar**. El reparto mueve *qué
+fila lleva qué id*; lo que no puede mover son los INVARIANTES de la carga:
+`nFilas` · `nMascaras` · `bytesCarga`. Filas distintas con los invariantes
+quietos = renumeración (verde, **contada y nombrada aparte**); **un invariante
+movido = DEFECTO**, con su nombre y su número.
+
+⚠ **`bytesCarga` es nuevo y `html-f23-base.json` es ANTERIOR**, y esa congelada
+no se re-congela. Durante F2-3 el disparador corre con **dos invariantes y no
+tres**, y la sonda **lo dice ruta a ruta** (`⚠ sin comprobar en la base:
+bytesCarga`) en vez de darlo por cumplido — regla 6: una ausencia no se sustituye
+por un valor benigno. Lo que queda fuera está acotado: un cambio de bytes DENTRO
+de una fila sin alterar el nº de filas ni el de referencias; si ese contenido se
+renderiza lo ve la puerta, así que sólo escapa contenido que viaje **sólo** en la
+carga.
+
+### Por qué la otra salida —fichar ruta a ruta— era la equivocada, y está medido
+
+Al correr el contrato nuevo salió algo que la ficha anterior no podía ver: **el
+residuo CAMBIÓ DE RUTA entre dos builds del mismo commit.**
+
+| build | ruta que lleva el residuo |
+|---|---|
+| `4FmTRSOGl1Yg71Tvd2eMq` (`medidas/html-antes.json`, 08-06) | `…/evaluaciones-independientes/desafio-airlab-de-microsensores-2023` |
+| `AJuzJ90GKcggYZrj32lvZ` (`medidas/html-f23-contrato.json`, 08-06) | `…/articulos-cientificos-y-estudios/exposicion-de-los-atletas…` |
+
+Las dos congeladas comparadas entre sí dan **2 rutas de 31 con `filas` distintas
+— justo esas dos**, y los invariantes **idénticos en base, A y B** (`nFilas` 46 y
+46 · `nMascaras` 77 y 75). O sea: **el residuo no es una propiedad de la ruta.**
+Una ficha ruta a ruta habría nombrado una ruta que deja de ser la ruta al
+siguiente build, y la siguiente tanda habría ido a buscar un defecto donde ya no
+estaba.
+
+### Resultado
+
+`qa:html-cmp` contra `html-f23-base` con el contrato puesto: **31 comparadas · 0
+con contenido distinto** · 25 sólo el `BUILD_ID` · 5 sólo reparto · **1 sólo
+renumeración**. Negativo **11/11** (era 8/8: entran `filas-renumeradas` y los
+tres `inv-*`, sale `filas-alteradas`, que exigía rojo donde el contrato pide
+verde contado). **`/recursos/[...ruta]` queda con su Δ0 de contenido pagado.**
+
+## ⛔ (histórico) F2-3-RSC-ORDEN · 1 ruta con residuo en la carga RSC que NO es contenido (2026-08-06)
 
 Al migrar `/recursos/[...ruta]`, `qa:html-cmp` marcó **1 de 31** con contenido
 distinto: `…/evaluaciones-independientes/desafio-airlab-de-microsensores-2023`.

@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "origen": "https://kunakair.com",
+    "porEntorno": {
+      "origen": false,
+      "urls": false
+    },
+    "marcaRsc": "__next_f",
+    "marcaOriginal": "et_pb_",
+    "conRsc": 0,
+    "sinControl": 0
+  },
+  "paginas": {
+    "/es/": {
+      "arquetipo": "HOME",
+      "bytes": 437088,
+      "rsc": false,
+      "control": true
+    },
+    "/es/monitor-calidad-aire/": {
+      "arquetipo": "PRODUCTO",
+      "bytes": 573364,
+      "rsc": false,
+      "control": true
+    },
+    "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/": {
+      "arquetipo": "SECTOR",
+      "bytes": 326494,
+      "rsc": false,
+      "control": true
+    },
+    "/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/": {
+      "arquetipo": "DOC. CIENTÍFICO",
+      "bytes": 294721,
+      "rsc": false,
+      "control": true
+    }
+  }
+}
