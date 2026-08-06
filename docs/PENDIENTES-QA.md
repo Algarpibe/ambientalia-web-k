@@ -1,5 +1,66 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F2-3-MEDIA · el proyector de lectura NO puede reconstruir la ruta de un `upload` (2026-08-05)
+
+**Lo que bloquea:** las **5 familias de ruta que quedan** por migrar a Local API.
+Es el hallazgo que paró el PASO 3 de F2-3 después del canario, y no es una
+apreciación: sale de dos derivaciones.
+
+**Derivación 1 — la forma del canario no generaliza** (`npm run qa:lectura-forma`,
+congelada en `medidas/lectura-forma.json`). Cuántas de las cuatro
+transformaciones de FORMA de `scripts/seed/mapeo.mjs` tiene cada colección:
+
+| familia de ruta | colección | upload | relación | blocks | richText | array | hojas |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `/faqs/[slug]` ✅ migrada | `faqs` | 0 | 0 | 0 | 0 | 0 | 7 |
+| `/[slug]` | `terminos-kunakpedia` | 0 | 0 | 0 | 0 | 0 | 10 |
+| `/[slug]` | `entradas-blog` | **1** | **3** | 0 | 0 | 0 | 19 |
+| `/recursos/[...ruta]` | `documentos-cientificos` | **1** | **1** | 0 | 0 | 0 | 21 |
+| `/casos-de-exito/[slug]` · `/case-studies/[slug]` | `casos` | **2** | **2** | 0 | 0 | 1 | 26 |
+| `/sectores/[slug]` | `sectores` | **8** | **1** | **1** | 0 | 12 | 108 |
+| `/sectores/[slug]` | `monograficos` | **8** | **1** | **2** | **2** | 17 | 199 |
+
+El canario se migró con un proyector **escrito a mano, campo a campo**, y podía
+hacerse porque `faqs` es **0 en las cuatro**. La única otra colección así es
+`terminos-kunakpedia`, y **comparte ruta** con `entradas-blog`, que no lo es. O
+sea: **la forma del canario no vale para NINGUNA otra familia**. Copiarla igual
+sería la FAMILIA DE CALIBRACIÓN de manual — heredar los valores del primer
+contexto medido.
+
+**Derivación 2 — y aunque se compartiera el walker, falta el dato.** `aMedido`
+(el walker de la vuelta, ya escrito y probado por el round-trip 63/63) necesita
+**tres** métodos de contexto —derivado: `grep "ctx\." ` sobre su cuerpo—:
+`rutaDeMedia` · `deRel` · `conKind`. Y el primero **no se puede implementar**:
+
+```
+select filename, url from media limit 1;
+  Kunak-AIR-Pro-1024.jpg | /api/media/file/Kunak-AIR-Pro-1024.jpg
+```
+
+La colección `media` **no guarda la ruta de origen**. El seed subió
+`apps/web/public/images/…/Kunak-AIR-Pro-1024.jpg` y Payload conservó el
+**nombre de fichero**, no el directorio, así que `/images/products/x.jpg` y
+`/images/uploads/2024/03/x.jpg` son indistinguibles al volver. El dato medido
+guarda `imagenCabecera: "/images/…"`; **de un id de `media` no sale esa cadena**.
+
+**Las dos salidas, y las dos tienen dueño escrito:**
+
+| salida | qué cuesta | de quién es |
+|---|---|---|
+| añadir a `media` un campo con la ruta de origen | cambio de ESQUEMA + migración versionada + re-seed | F2-1/F2-2 (modelo) |
+| que el render apunte a `/api/media/file/…` | **cambia el HTML servido ⇒ rompe el Δ0** | **M-IMG**, ya registrada como *deuda de RENDER en `apps/web`* (§6 del ESQUEMA) |
+
+Ninguna de las dos es «seguir migrando familias»: **es una decisión de modelo
+antes de la siguiente familia.** Por eso F2-3 se para aquí y no improvisa.
+
+> ⚠ **Y lo que NO hay que hacer:** escribir proyectores a mano para `casos`,
+> `sectores` y `monograficos`. Son 26, 108 y **199 hojas** con 17 arrays y 2
+> uniones de bloques — o sea re-implementar el walker en TypeScript, que es
+> exactamente la «segunda lista escrita a mano» contra la que avisa la cabecera
+> de `mapeo.mjs`. Y aquí sería **peor que allí**: en el seed las dos listas se
+> comparan entre sí (el round-trip), y en el render **no hay pareja**, así que
+> un olvido sólo se ve si mueve píxeles.
+
 ## ✅ M-ORIGEN404 · DECIDIDO — el DATO conserva la referencia (2026-08-05)
 
 **La pregunta que quedó abierta el 05-08 por la mañana:** el corpus cita 3

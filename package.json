@@ -108,7 +108,8 @@
     "qa:manifiesto": "node scripts/qa/manifiesto.mjs",
     "qa:manifiesto-neg": "node scripts/qa/manifiesto.neg.mjs",
     "qa:html-cmp": "node scripts/qa/html-cmp.mjs",
-    "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs"
+    "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs",
+    "qa:lectura-forma": "node --env-file=apps/cms/.env scripts/qa/lectura-forma.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

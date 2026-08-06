@@ -1223,6 +1223,36 @@ defecto de F2-1/F2-2, no de esta fase.
 **Hecho cuando:** la tabla del §8 en verde con umbral cero **y** la prueba de
 operación pasada en al menos una instancia de cada colección.
 
+### Estado 2026-08-05 — arrancada, 1 de 6 familias, y PARADA con número
+
+**Hecho:** línea base reproducida (31/31 · 2 anchos) · las dos guardas nuevas
+con su negativo (`qa:manifiesto` 6/6 · `qa:html-cmp` 8/8) · el negativo del
+ENTORNO medido · **`/faqs/[slug]` migrada** y aceptada (`clon-base` 31/31 a los
+dos anchos · `html-cmp` 0 con contenido distinto · `enlaces` · `corte` 12/12 ·
+`check` verde).
+
+**Y dos cosas que el plan no preveía:**
+
+1 · **El listón del §8 se queda corto para ESTA fase, y se midió.** `clon-base`
+compara geometría; una migración de fuente de datos puede cambiar el contenido
+sin mover un píxel. Se añade `qa:html-cmp` (HTML servido, **tres niveles**:
+`visible` y `filas` a umbral cero, el documento entero contado aparte). Con el
+canario, `clon-base` dio Δ0 en las 31 y `html-cmp` marcó 2 — las dos por reparto
+del stream RSC, no por contenido. Sin la segunda sonda eso no se habría sabido.
+
+2 · ⛔ **Las 5 familias que quedan están BLOQUEADAS por CMS-0g**, no por trabajo
+pendiente. `media` no guarda la ruta de origen del fichero, así que el proyector
+de lectura no puede reconstruir el `"/images/…"` que el clon renderiza. Y la
+forma del canario —proyector a mano, campo a campo— **no generaliza**: `faqs` es
+la única colección con 0 de las 4 transformaciones de forma
+(`qa:lectura-forma`, congelada). Ficha completa: `PENDIENTES-QA.md`
+§F2-3-MEDIA · decisión **CMS-0g** en `ESQUEMA-CMS.md` §7.
+
+**Consecuencia para el «hecho cuando»:** el criterio *«al menos una instancia de
+cada colección»* de la prueba de operación **no es alcanzable** hasta que CMS-0g
+se decida. Se puede correr entera sobre `faqs`; el resto espera a la decisión de
+modelo, que **no depende de la prueba** y puede ir en paralelo.
+
 ---
 
 ## F2-4 · Publicación

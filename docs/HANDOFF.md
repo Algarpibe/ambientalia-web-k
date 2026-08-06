@@ -1,3 +1,278 @@
+# HANDOFF — F2-3 arranca: el canario migrado, el negativo del entorno cazando un verde falso, y el PASO 3 parado con número
+
+> ⚠ **Tanda 2026-08-05 (33.ª).** PASOS 1 · 2 · 3 del encargo, más el registro.
+> **El escalón NO disparó.** **`apps/web` SÍ se toca, por diseño y por primera
+> vez** — y paga su Δ0 en la misma tanda: 31/31 a 1440 y a 390.
+
+## 0 · Los tres titulares
+
+> **1 · El PASO 2 encontró lo que venía a buscar, y en el sitio menos cómodo.**
+> El negativo del entorno —contenedor tirado, build fallido, `.next` borrado—
+> corrió `clon-base` y salió **exit 0 con CERO líneas**. La sonda que adjudica
+> el Δ0 de esta fase daba verde sin haber medido nada. Causa: `iniciarClon`
+> registraba `uncaughtException` **en el mismo bucle** que `exit`, `SIGINT` y
+> `SIGTERM`. Los tres primeros son avisos; ése es un **RELEVO**, y registrarlo
+> desactiva el comportamiento por defecto de Node. **Alcance derivado: las 7
+> sondas que llaman a `iniciarClon()`.**
+>
+> **2 · El canario está migrado y limpio, y el byte a byte vio lo que el Δ0
+> geométrico no.** `clon-base` dio **Δ0 en las 31** y `html-cmp` marcó **2
+> distintas**, las dos de `/faqs/*`. Abiertas: **marcado visible idéntico byte a
+> byte**, y toda la diferencia en la carga RSC de hidratación —cortes de `push`
+> y renumeración de filas— porque `generateMetadata` pasa a ser asíncrona.
+>
+> **3 · El PASO 3 se para tras el canario, y con dos derivaciones, no con una
+> impresión.** «Si sale limpia, las demás siguen su forma» **es falso y está
+> medido**: `faqs` es la única colección con **0 de las 4 transformaciones de
+> forma**. Y aunque se compartiera el walker, `media` **no guarda la ruta de
+> origen**, así que `rutaDeMedia` no se puede implementar. Ficha:
+> `PENDIENTES-QA.md` §F2-3-MEDIA · decisión **CMS-0g** en el ESQUEMA §7.
+
+## 1 · PASO 1 — la base REPRODUCE, y «apps/web intacto» era falso
+
+`qa:clon-base` contra la congelada de `5bfb944`: **31/31 · 0 regresiones · umbral
+CERO** en los dos anchos. **La base vale.**
+
+Pero el comando del encargo no podía enseñar lo que había: `git diff 5bfb944 HEAD
+-- apps/web` sale con **53 KB de altas** porque en `5bfb944` **`apps/web` no
+existía** (la app vivía en la raíz). El filtro de ruta mide el **renombrado**, no
+el contenido — §El principio otra vez, medido al nivel que absorbe. Cruzando el
+renombrado:
+
+```
+git diff --stat 5bfb944:src HEAD:apps/web/src   →  2 ficheros, +99 líneas
+git diff --stat 5bfb944:public HEAD:apps/web/public → vacío
+```
+
+Lo hizo **5a6e1fb** (`productos.seo`), cuyo propio mensaje avisaba: *«⚠ TOCA
+apps/web y NO ha pagado su corrida Δ0»*. Llevaba cuatro tandas sin pagarla.
+
+**Reproduce porque el campo es INERTE, y eso se deriva:** `grep -rn "\.seo\b"
+apps/web/src` fuera del dato y del tipo da **3 usos, los tres de OTROS tipos**
+(`faq.seo`, `doc.seo` ×2). Nadie lee `product.seo`.
+
+> **Las dos frases que se venían usando como una:** «`apps/web` no se ha tocado»
+> (falsa desde el 04-08) y «`apps/web` no ha movido un píxel» (verdadera, y ahora
+> medida). Un dato añadido y no consumido las separa.
+
+## 2 · PASO 2 — las dos guardas nuevas, y el defecto que destaparon
+
+### 2.1 · `qa:manifiesto` — «sin rutas» deja de ser un verde · negativo **6/6**
+
+Con Postgres en el camino del build, un fallo puede **no tirar el build**: puede
+emitir menos rutas. Y entonces `clon-base`, `enlaces` y `slugs` —que derivan sus
+rutas del build **a propósito**, para automantenerse— miden sobre el conjunto
+menguado sin poder enterarse.
+
+Dos comprobaciones **independientes**, y el negativo las dispara por separado:
+
+| # | qué ve | de dónde saca la verdad | qué ve que la otra NO |
+|---|---|---|---|
+| 1 | familia dinámica declarada que emitió **0** rutas | **el build solo** | funciona sin línea base |
+| 2 | rutas de la congelada que ya no están | la congelada de F2-1 | una familia que emite 5 de 6 |
+
+La #1 existe porque `dynamicRoutes` **sobrevive a un `generateStaticParams()`
+vacío**. Sin ese testigo, «devolvió vacío» y «no existe» dan la misma salida.
+
+Y el mínimo de `Evaluadas` sale de **la base**, no del build: derivarlo del
+artefacto auditado deja que un build degenerado **se autorice a sí mismo**.
+
+### 2.2 · `qa:html-cmp` — el HTML servido byte a byte · negativo **8/8**
+
+`clon-base` compara geometría. Un `<sup>` perdido, un `alt` vacío o una entidad
+mal decodificada **dan Δ0 en sus cuatro medidas**. Y es el riesgo propio de F2-3:
+la migración no pretende cambiar nada, así que su criterio natural no es «se
+mueve poco» sino **«sale el mismo fichero»**.
+
+**Es alcanzable, y se midió antes de exigirlo:**
+
+| control | resultado |
+|---|---|
+| dos corridas contra el MISMO build (servidor relanzado) | **31/31 idénticas byte a byte** |
+| corrida tras RECONSTRUIR sin tocar código | **31/31 idénticas salvo el `BUILD_ID`** |
+
+### 2.3 · Los TRES niveles, que salieron de medir el canario
+
+La primera versión comparaba **un** hash y marcó `2 DISTINTAS`. Al abrirlas: el
+marcado visible era **idéntico byte a byte** y toda la diferencia estaba en la
+carga RSC. **Lo que NO se hizo: meter `__next_f` en la normalización** — sería
+declarar volátil un tercio del documento para que la sonda calle.
+
+| nivel | qué es | umbral |
+|---|---|---|
+| `visible` | el documento **sin** los `push` de `__next_f` | **CERO** — es lo que ve el visitante |
+| `filas` | las filas RSC con los identificadores **enmascarados** | **CERO** — es el contenido de la carga |
+| `normalizado` | el documento entero salvo `BUILD_ID` | **se cuenta y se nombra**: «sólo reparto del stream» |
+
+El negativo los dispara por separado, y el caso que lo hace honesto es
+**`solo-reparto`: tiene que salir VERDE y contarse aparte.** Sin él, los tres
+niveles serían uno.
+
+**Las dos guardas de la normalización**, que es donde esta sonda podía mentir —
+un volátil corto o frecuente no pierde el hallazgo, **borra contenido de los dos
+lados y los iguala**: largo mínimo 8 · ≤1 % de los bytes de cada página. El
+sabotaje `volatil-ubicuo` **deriva su cadena** del HTML de disco (`" class=""`
+×726 = 2.86 % en `accesorios.html`).
+
+**Y el marcador de frescura es `meta.buildId` EN LA CONGELADA.** El protocolo
+pide una marca en el HTML servido, y **una migración cuyo efecto esperado es cero
+no la puede dejar**. Ésta es mejor: se ve en la evidencia, no en la consola de
+quien la corrió.
+
+### 2.4 · El negativo del ENTORNO, medido
+
+| escenario | resultado |
+|---|---|
+| `next build` con `kunak-cms-pg` parado | **exit 1** · `ECONNREFUSED` → `Failed to collect page data for /faqs/[slug]` |
+| `.next` tras ese build | **no queda nada** — ni manifiesto ni `BUILD_ID` |
+| `qa:manifiesto` sobre ese estado | **exit 2** · «NO HAY ARTEFACTO QUE AUDITAR» |
+| **`qa:clon-base` sobre ese estado** | **exit 0 · CERO líneas** ← el hallazgo |
+| familia con `generateStaticParams()` vacío | **`npm run build` sale 0** y emite 29 rutas · `qa:manifiesto` **exit 1** |
+
+De la última sale una consecuencia estructural: **`qa:manifiesto` entra en
+`npm run check`**. Un build al que le falta una familia entera sale con 0; la
+cadena sólo falla ruidosamente si la guarda corre **dentro** de ella.
+
+### 2.5 · El verde falso de `clon-base`, y por qué el contrato no lo cubría
+
+```js
+for (const ev of ["exit","SIGINT","SIGTERM","uncaughtException"]) process.on(ev, …)
+```
+
+Parece simetría. **No lo es.** Con un gancho, Node deja de imprimir y deja de
+salir con 1 ⇒ **exit 0, salida muda**. Es «0 comparado = verde» con un mecanismo
+que el contrato de `Evaluadas` **no podía ver**: si el proceso muere antes de
+construir su `Evaluadas`, **no hay contador al que gritar**.
+
+Arreglado en el sitio común (`gritaSiRevienta` en `lib.mjs`), **registrada antes
+del atajo de `CLON`** para que el atajo no se quede sin guarda. Control en
+`qa:lib` §3b **por los dos lados** — el mismo `throw` sin gancho (≠0, 11 líneas)
+y con gancho vacío (0, mudo). **93/93 · las 85 sondas compilan y declaran.**
+
+Y el efecto se **midió después**, no se leyó en el diff: la misma orden que daba
+exit 0 mudo ahora da **exit 1** con «EXCEPCIÓN NO CAPTURADA — LA SONDA NO MIDIÓ
+NADA».
+
+## 3 · PASO 3 — la primera familia, y su aceptación
+
+`/faqs/[slug]` lee por Local API. `apps/web/src/lib/cms/local.ts` es el único
+sitio por el que este artefacto habla con la DB, y **no tiene un solo
+`try/catch`**: un `?? []` ahí produce el build en verde con menos rutas.
+`sort: "id"` (orden de inserción = orden de `src/lib`), `pagination: false` (el
+defecto de Payload son **10** documentos), `coleccion` tipada `CollectionSlug`.
+
+`src/lib/faqs.ts` **no se borra**: pasa a seed histórico y sigue siendo lo que
+`catalogos.mjs` inserta y la referencia del round-trip 63/63.
+
+| sonda | resultado |
+|---|---|
+| `qa:clon-base` @1440 · @390 vs `f21-antes` | **31/31 · 0 regresiones** las dos |
+| `qa:html-cmp` vs `html-f23-base` | **31 comparadas · 0 con CONTENIDO distinto** |
+| `qa:manifiesto` | 31 rutas · 11 familias · 0 vacías · 0 desaparecidas |
+| `qa:enlaces` | limpia en las dos direcciones · 31/31 · 868 hrefs internos |
+| `qa:corte` | 12/12 |
+| `npm run check` | verde |
+
+## 4 · Por qué el PASO 3 se PARA aquí — con dos derivaciones
+
+**Derivación 1 — la forma del canario no generaliza** (`qa:lectura-forma`,
+congelada). Cuántas de las cuatro transformaciones de forma de `mapeo.mjs` tiene
+cada colección:
+
+| familia | colección | upload | rel | blocks | richText | hojas |
+|---|---|---:|---:|---:|---:|---:|
+| `/faqs/[slug]` ✅ | `faqs` | 0 | 0 | 0 | 0 | 7 |
+| `/[slug]` | `terminos-kunakpedia` | 0 | 0 | 0 | 0 | 10 |
+| `/[slug]` | `entradas-blog` | 1 | 3 | 0 | 0 | 19 |
+| `/recursos/[...ruta]` | `documentos-cientificos` | 1 | 1 | 0 | 0 | 21 |
+| `/casos-de-exito` · `/case-studies` | `casos` | 2 | 2 | 0 | 0 | 26 |
+| `/sectores/[slug]` | `sectores` | 8 | 1 | 1 | 0 | **108** |
+| `/sectores/[slug]` | `monograficos` | 8 | 1 | 2 | 2 | **199** |
+
+El canario pudo migrarse con un proyector **a mano, campo a campo**, porque
+`faqs` es **0 en las cuatro**. La única otra colección así **comparte ruta** con
+una que no lo es. O sea: **la forma del canario no vale para ninguna otra
+familia.**
+
+**Derivación 2 — y aunque se compartiera el walker, falta el dato.** `aMedido`
+necesita **tres** métodos de contexto (derivado: `grep "ctx\."` sobre su cuerpo):
+`rutaDeMedia` · `deRel` · `conKind`. El primero **no se puede implementar**:
+
+```
+select filename, url from media limit 1;
+  Kunak-AIR-Pro-1024.jpg | /api/media/file/Kunak-AIR-Pro-1024.jpg
+```
+
+**`media` no guarda la ruta de origen.** El dato medido escribe `"/images/…"` y
+de un id de `media` **no sale esa cadena**. Es la decisión **CMS-0g** (ESQUEMA
+§7), y sus dos salidas ya tienen dueño: campo de origen en `media` (esquema, con
+migración) o render contra `/api/media/file/…` (**cambia el HTML ⇒ rompe el Δ0**,
+o sea **M-IMG**, ya registrada como deuda de RENDER).
+
+> **Ninguna de las dos es «seguir migrando familias».** Escribir proyectores a
+> mano para `casos`, `sectores` y `monograficos` sería re-implementar el walker
+> en TypeScript — la «segunda lista escrita a mano» contra la que avisa la
+> cabecera de `mapeo.mjs`, y **peor aquí que allí**: en el seed las dos listas se
+> comparan entre sí (el round-trip); en el render **no hay pareja**, así que un
+> olvido sólo se ve si mueve píxeles.
+
+## 5 · LO SIGUIENTE — la PRUEBA DE OPERACIÓN, y su trampa
+
+> ⚠ **Un `update` por Local API NO es el guardado del admin.** Lo que la prueba
+> caza es la **NORMALIZACIÓN DEL EDITOR** —un save que reordena claves, normaliza
+> HTML o «arregla» el rico mueve el render sin que nadie haya editado nada—, y
+> eso vive en el camino del **admin**, no en el de la API. Simularlo con un
+> update programático da un verde que **no prueba la pregunta**.
+
+Así que pasa por `/admin` de verdad, con `puppeteer-core` y la disciplina de
+siempre (perfil limpio, device metrics, matar por puerto), **o se declara NO
+PROBADA**. Es la mitad que el piloto de CMS-0e nunca hizo.
+
+**Su criterio:** al menos una instancia de **CADA** colección — una sola no
+distingue «el editor no degrada» de «esta forma no tenía nada que degradar».
+
+**Y hoy sólo hay UNA familia migrada**, así que la prueba de operación en su
+forma completa está **acotada por el §4**: puede correrse entera sobre `faqs`
+(importar → abrir en admin → guardar sin cambios → `html-cmp` y `clon-base` se
+mantienen), y para las demás colecciones hay que decidir **CMS-0g** antes. Las
+dos mitades se pueden solapar: la decisión de modelo no depende de la prueba.
+
+**El instrumento ya está**: `qa:html-cmp` es exactamente la sonda que ve una
+normalización del editor, porque compara **contenido**, no geometría. Y de
+rebote es la que puede cerrar **CMS-SP-TIPO** en cuanto la familia con el `<sup>`
+esté migrada.
+
+## 6 · Pendientes que NO bloquean
+
+**⛔ F2-3-MEDIA / CMS-0g** (bloquea las 5 familias que quedan; ficha con las dos
+derivaciones) · **23 imágenes 404** · **§M-PDF-FB3D** (5 PDF) ·
+**§T3B-NO-CANONICO** (2 de 446) · **§T3-ALCANCE** · **swiper ×3 · nbc ×1** ·
+HOME cubo B · `Dockerfile` · 26 celdas ciegas · 6 mínimos · `Breadcrumb` 28
+rutas · **CMS-SP-TIPO** (instrumento hecho, falta ejercitarlo) · los 5 «distinto»
+de `cmp-srcset` · **M-IMG**, deuda de RENDER · `enlaces.json` canónica es del
+**2026-08-01** y difiere en **+8 hrefs** (deriva entre el 08-01 y el 08-03, **no**
+de esta tanda: `clon-base` da Δ0 en `nAnclas` contra la base del 08-03 y
+`html-cmp` da marcado visible Δ0 en las 31).
+
+## 7 · Lo que NO hay que hacer al empezar
+
+- **No escribir proyectores a mano** para las familias que quedan. Ver §4: el
+  número que lo desaconseja son 199 hojas, 17 arrays y 2 uniones de bloques.
+- **No leer un `clon-base` verde como «no cambió nada»**: mide geometría. Lo que
+  ve el contenido es `qa:html-cmp`, y su verdadero umbral son los niveles
+  `visible` y `filas`, no el documento entero.
+- **No tomar «sólo reparto del stream» por Δ0.** Se cuenta aparte a propósito, y
+  aparecerá en cada familia que migre (su `generateMetadata` pasa a asíncrona).
+- **No simular la prueba de operación con un `update` programático.** §5.
+- **No dar por cerrada CMS-SP-TIPO** porque exista `html-cmp`: el instrumento
+  está, pero **no ha ejercitado** la hoja con el `<sup>` — sigue en `productos`,
+  que no está migrada. Regla 8a.
+- **No re-congelar `html-f23-base.json`**: es el HTML **anterior** a la
+  migración, reconstruido a propósito desde `909f0db`. Es contra lo que se mide
+  el Δ0 de contenido de toda la fase.
+
+---
+
 # HANDOFF — F2-2 CERRADA: las diez transformaciones escritas, y las dos derivaciones cazaron un número mal contado cada una
 
 > ⚠ **Tanda 2026-08-05 (32.ª).** Los 7 pasos del encargo. **El escalón NO

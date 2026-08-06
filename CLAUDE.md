@@ -1242,6 +1242,41 @@ verde sobre un fichero **con dos `const ev` que no compilaba**. Miraba el texto,
 no el programa. Ahora `qa:lib` hace además un `--check` por sonda: *mirar una
 cosa y creer que has mirado otra*, cometido en el test del propio contrato.
 
+⚠⚠ **Y HUBO SEXTA (2026-08-05), por un camino que el contrato NO PODÍA cerrar —
+así que el titular de arriba estaba de más.**
+
+| # | sonda | qué pasó |
+|---|---|---|
+| **6** | **`clon-base`** (y las otras 6 que llaman a `iniciarClon`) | sin `.next`: **exit 0 y CERO líneas de salida** |
+
+`iniciarClon` registraba `uncaughtException` **en el mismo bucle** que `exit`,
+`SIGINT` y `SIGTERM`, con el mismo cuerpo. Parece simetría y **no lo es**: los
+tres primeros son **avisos**; `uncaughtException` es un **RELEVO**. En cuanto hay
+un gancho, Node deja de imprimir el error y deja de salir con 1, y como después
+de la excepción no queda nada que hacer, el proceso termina **en verde y mudo**.
+
+> **El contrato de `Evaluadas` es ciego a esto POR CONSTRUCCIÓN: si el proceso
+> muere antes de construir su `Evaluadas` o de congelar nada, no hay contador al
+> que gritar ni congelada que reclamar.** El gancho de `exit` que fuerza el
+> veredicto **sí corre** — y no encuentra nada de qué quejarse.
+
+De donde la forma general, que es lo reutilizable y vale para cualquier guarda
+futura:
+
+> **Una guarda que vigila el FINAL de un proceso no puede ver que el proceso no
+> llegó al final.** Hay que vigilar además **la muerte**, y la muerte no se
+> vigila contando: se vigila **no desactivando lo que Node ya hacía**. Cualquier
+> gancho que RELEVE un comportamiento por defecto —`uncaughtException`,
+> `unhandledRejection`, un `catch` de tope— **tiene que devolver el fallo a su
+> sitio**, no sólo limpiar.
+
+Vive en `gritaSiRevienta()` de `lib.mjs`, registrada **antes** del atajo de
+`CLON` para que el atajo no se quede sin guarda. Control en `qa:lib` §3b **por
+los dos lados**: el mismo `throw` sin gancho (exit ≠0, 11 líneas) y con un gancho
+vacío (exit 0, mudo). Lo destapó el negativo del entorno de F2-3 —contenedor
+tirado, build fallido, `.next` borrado—, que es también el argumento a favor de
+probar en negativo **el entorno** y no sólo el dato.
+
 **5 · CONGELAR NO SIRVE DE NADA SI LA SIGUIENTE CORRIDA DESCONGELA SIN AVISAR.**
 
 La regla 2 dice que toda sonda congela su salida *para que una conclusión citada

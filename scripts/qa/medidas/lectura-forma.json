@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "fecha": "2026-08-05",
+    "familias": 6
+  },
+  "familias": {
+    "/[slug]": {
+      "entradas-blog": {
+        "upload": 1,
+        "relationship": 3,
+        "blocks": 0,
+        "richText": 0,
+        "array": 0,
+        "hojas": 19,
+        "transformaciones": 4
+      },
+      "terminos-kunakpedia": {
+        "upload": 0,
+        "relationship": 0,
+        "blocks": 0,
+        "richText": 0,
+        "array": 0,
+        "hojas": 10,
+        "transformaciones": 0
+      }
+    },
+    "/case-studies/[slug]": {
+      "casos": {
+        "upload": 2,
+        "relationship": 2,
+        "blocks": 0,
+        "richText": 0,
+        "array": 1,
+        "hojas": 26,
+        "transformaciones": 4
+      }
+    },
+    "/casos-de-exito/[slug]": {
+      "casos": {
+        "upload": 2,
+        "relationship": 2,
+        "blocks": 0,
+        "richText": 0,
+        "array": 1,
+        "hojas": 26,
+        "transformaciones": 4
+      }
+    },
+    "/faqs/[slug]": {
+      "faqs": {
+        "upload": 0,
+        "relationship": 0,
+        "blocks": 0,
+        "richText": 0,
+        "array": 0,
+        "hojas": 7,
+        "transformaciones": 0
+      }
+    },
+    "/recursos/[...ruta]": {
+      "documentos-cientificos": {
+        "upload": 1,
+        "relationship": 1,
+        "blocks": 0,
+        "richText": 0,
+        "array": 0,
+        "hojas": 21,
+        "transformaciones": 2
+      }
+    },
+    "/sectores/[slug]": {
+      "sectores": {
+        "upload": 8,
+        "relationship": 1,
+        "blocks": 1,
+        "richText": 0,
+        "array": 12,
+        "hojas": 108,
+        "transformaciones": 10
+      },
+      "monograficos": {
+        "upload": 8,
+        "relationship": 1,
+        "blocks": 2,
+        "richText": 2,
+        "array": 17,
+        "hojas": 199,
+        "transformaciones": 13
+      }
+    }
+  }
+}
