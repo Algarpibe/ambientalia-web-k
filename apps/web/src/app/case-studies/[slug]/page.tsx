@@ -7,6 +7,7 @@ import { CasoPagina } from "@/components/caso/CasoPagina";
 // `metadataDeCaso`—, que DERIVAN de los campos en vez de guardarse.
 import { metadataDeCaso, prefijoDe } from "@/lib/casos";
 import { casosPublicados, getCasoCms } from "@/lib/cms/casos";
+import { getProductosCms } from "@/lib/cms/productos";
 
 /**
  * `/case-studies/[slug]` — el **otro** prefijo de la MISMA colección `casos`:
@@ -56,5 +57,7 @@ export default async function CaseStudyPage({
   const { slug } = await params;
   const caso = await getCasoCms("case-studies", slug);
   if (!caso) notFound();
-  return <CasoPagina caso={caso} />;
+  // El dato se espera aquí y baja por prop (§F2-3-ASYNC-HIJO).
+  const soluciones = caso.soluciones?.length ? await getProductosCms(caso.soluciones) : null;
+  return <CasoPagina caso={caso} soluciones={soluciones} />;
 }

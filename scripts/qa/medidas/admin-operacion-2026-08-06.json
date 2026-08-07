@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "admin": "http://127.0.0.1:3001",
+    "sujetos": [
+      "productos",
+      "categorias",
+      "etiquetas",
+      "categorias-recursos",
+      "categorias-cientificas",
+      "taxonomia-sectores",
+      "faqs",
+      "casos",
+      "sectores",
+      "monograficos",
+      "entradas-blog",
+      "terminos-kunakpedia",
+      "documentos-cientificos"
+    ],
+    "fuera": {
+      "articulos-kb": "0 filas y sin lado medido (§2d.1)",
+      "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+      "slugs": "lo escriben los hooks del plano (§4), no una persona",
+      "usuarios": "infraestructura (CMS-0f); EJERCITADA como precondición (create-first-user) pero ningún usuario llega al render"
+    }
+  },
+  "pasos": [
+    {
+      "que": "abro /admin",
+      "detalle": "/admin/login"
+    },
+    {
+      "que": "login",
+      "detalle": "/admin"
+    },
+    {
+      "que": "guardado productos",
+      "detalle": "9 · #field-titulo · updatedAt 2026-08-06T20:24:47.133Z → 2026-08-07T00:40:51.683Z"
+    },
+    {
+      "que": "guardado categorias",
+      "detalle": "3 · #field-nombre · updatedAt 2026-08-06T21:11:21.192Z → 2026-08-07T00:40:54.483Z"
+    },
+    {
+      "que": "guardado etiquetas",
+      "detalle": "8 · #field-nombre · updatedAt 2026-08-06T21:11:23.763Z → 2026-08-07T00:40:57.162Z"
+    },
+    {
+      "que": "guardado categorias-recursos",
+      "detalle": "3 · #field-nombre · updatedAt 2026-08-06T21:11:26.352Z → 2026-08-07T00:40:59.816Z"
+    },
+    {
+      "que": "guardado categorias-cientificas",
+      "detalle": "3 · #field-nombre · updatedAt 2026-08-06T21:11:27.915Z → 2026-08-07T00:41:02.426Z"
+    },
+    {
+      "que": "guardado taxonomia-sectores",
+      "detalle": "11 · #field-nombre · updatedAt 2026-08-06T21:11:30.458Z → 2026-08-07T00:41:05.064Z"
+    },
+    {
+      "que": "guardado faqs",
+      "detalle": "2 · #field-titulo · updatedAt 2026-08-06T21:11:33.181Z → 2026-08-07T00:41:08.017Z"
+    },
+    {
+      "que": "guardado casos",
+      "detalle": "4 · #field-titulo · updatedAt 2026-08-06T21:11:38.505Z → 2026-08-07T00:41:10.329Z"
+    },
+    {
+      "que": "guardado sectores",
+      "detalle": "4 · #field-slug · updatedAt 2026-08-06T21:11:42.990Z → 2026-08-07T00:41:12.682Z"
+    },
+    {
+      "que": "guardado monograficos",
+      "detalle": "2 · #field-slug · updatedAt 2026-08-06T21:11:51.438Z → 2026-08-07T00:41:19.498Z"
+    },
+    {
+      "que": "guardado entradas-blog",
+      "detalle": "7 · #field-titulo · updatedAt 2026-08-06T21:11:56.930Z → 2026-08-07T00:41:23.545Z"
+    },
+    {
+      "que": "guardado terminos-kunakpedia",
+      "detalle": "3 · #field-titulo · updatedAt 2026-08-06T21:12:00.176Z → 2026-08-07T00:41:26.764Z"
+    },
+    {
+      "que": "guardado documentos-cientificos",
+      "detalle": "4 · #field-titulo · updatedAt 2026-08-06T21:12:03.177Z → 2026-08-07T00:41:29.804Z"
+    }
+  ],
+  "guardados": [
+    {
+      "coleccion": "productos",
+      "ok": true,
+      "doc": "/admin/collections/productos/9",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T20:24:47.133Z",
+        "despues": "2026-08-07T00:40:51.683Z"
+      }
+    },
+    {
+      "coleccion": "categorias",
+      "ok": true,
+      "doc": "/admin/collections/categorias/3",
+      "campoEnsuciado": "#field-nombre",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:21.192Z",
+        "despues": "2026-08-07T00:40:54.483Z"
+      }
+    },
+    {
+      "coleccion": "etiquetas",
+      "ok": true,
+      "doc": "/admin/collections/etiquetas/8",
+      "campoEnsuciado": "#field-nombre",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:23.763Z",
+        "despues": "2026-08-07T00:40:57.162Z"
+      }
+    },
+    {
+      "coleccion": "categorias-recursos",
+      "ok": true,
+      "doc": "/admin/collections/categorias-recursos/3",
+      "campoEnsuciado": "#field-nombre",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:26.352Z",
+        "despues": "2026-08-07T00:40:59.816Z"
+      }
+    },
+    {
+      "coleccion": "categorias-cientificas",
+      "ok": true,
+      "doc": "/admin/collections/categorias-cientificas/3",
+      "campoEnsuciado": "#field-nombre",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:27.915Z",
+        "despues": "2026-08-07T00:41:02.426Z"
+      }
+    },
+    {
+      "coleccion": "taxonomia-sectores",
+      "ok": true,
+      "doc": "/admin/collections/taxonomia-sectores/11",
+      "campoEnsuciado": "#field-nombre",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:30.458Z",
+        "despues": "2026-08-07T00:41:05.064Z"
+      }
+    },
+    {
+      "coleccion": "faqs",
+      "ok": true,
+      "doc": "/admin/collections/faqs/2",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:33.181Z",
+        "despues": "2026-08-07T00:41:08.017Z"
+      }
+    },
+    {
+      "coleccion": "casos",
+      "ok": true,
+      "doc": "/admin/collections/casos/4",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:38.505Z",
+        "despues": "2026-08-07T00:41:10.329Z"
+      }
+    },
+    {
+      "coleccion": "sectores",
+      "ok": true,
+      "doc": "/admin/collections/sectores/4",
+      "campoEnsuciado": "#field-slug",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:42.990Z",
+        "despues": "2026-08-07T00:41:12.682Z"
+      }
+    },
+    {
+      "coleccion": "monograficos",
+      "ok": true,
+      "doc": "/admin/collections/monograficos/2",
+      "campoEnsuciado": "#field-slug",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:51.438Z",
+        "despues": "2026-08-07T00:41:19.498Z"
+      }
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ok": true,
+      "doc": "/admin/collections/entradas-blog/7",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:11:56.930Z",
+        "despues": "2026-08-07T00:41:23.545Z"
+      }
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ok": true,
+      "doc": "/admin/collections/terminos-kunakpedia/3",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:12:00.176Z",
+        "despues": "2026-08-07T00:41:26.764Z"
+      }
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ok": true,
+      "doc": "/admin/collections/documentos-cientificos/4",
+      "campoEnsuciado": "#field-titulo",
+      "valorIntacto": true,
+      "updatedAt": {
+        "antes": "2026-08-06T21:12:03.177Z",
+        "despues": "2026-08-07T00:41:29.804Z"
+      }
+    }
+  ]
+}

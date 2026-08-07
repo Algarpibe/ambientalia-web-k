@@ -793,6 +793,7 @@ Las seis instancias medidas en este proyecto, cada una con su contenedor:
 | el **HTML de `.next`**, en el test en negativo de `enlaces.mjs` | `next start` sirviendo el build anterior | el enlace roto — la sonda dio **«limpio» en falso** |
 | **todo el cuerpo de 4 páginas de producto**, relativo al `h1`: `Δ0` | **el propio PROTOCOLO** — la regla del `h1` resta la base antes de comparar | **−48 y −19.2 de cabecera a 1440**, y **+78.42 y +48.42 a 390**: el signo se invierte |
 | la **base en crudo** de `/accesorios` a 1440: `−19.2` | la suma otra vez: **dos defectos con signos opuestos** | **−48 de espaciador tapando +28.8 propios** (un `pt` de fila que el original no tiene, C-QA7). Un número pequeño no es un defecto pequeño: era el residuo de dos grandes |
+| el **HTML servido** de las 10 instancias que pintan `#lista-soluciones`: `Δ0` | **el mecanismo de PESTAÑAS**: sólo se sirve el panel del producto ACTIVO, y el activo es el mismo en las 10 | **el panel entero de los otros 8 productos** — con sus viñetas, su imagen y su `href`. Ahí vivían el `<sup>` de CMS-SP-TIPO (4 filas) y 6 `href` a rutas que el build no emite. **Ninguna sonda de HTML servido puede verlos: no se sirven** (2026-08-06, ESQUEMA §7d) |
 
 Los seis contenedores son distintos y el error es el mismo: se leyó el número
 del nivel de arriba porque estaba a mano.

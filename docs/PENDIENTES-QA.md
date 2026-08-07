@@ -1,5 +1,122 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🧨 CLASE · UN NEGATIVO ANCLADO A ALGO QUE EL PROPIO TRABAJO MUEVE SE AUTO-INVALIDA (2026-08-06)
+
+**Tercera instancia en dos tandas, y las tres con el mismo daño: el negativo se
+pone rojo *porque el trabajo avanzó*, y ese rojo no dice qué pasó.** Lo que
+cambia entre ellas es **a qué estaba anclado**, y por eso conviene enunciarla una
+vez en general:
+
+> **Un test en negativo compara contra un ANCLA. Si el ancla es algo que la
+> propia tanda modifica —el estado del build, una lista de rutas, o el
+> CONTRATO— el negativo deja de falsar sin dejar de correr.** Y su salida no
+> distingue «la sonda ya no caza» de «el proyecto cambió»: son el mismo rojo.
+
+| # | ancla | qué la movió | cómo se vio |
+|---|---|---|---|
+| 1 | `html-f23-base.json` (la línea base de la FASE) | migrar una familia con desviación deliberada | el negativo del instrumento enrojecía por 4 rutas que **no pueden** coincidir |
+| 2 | `startsWith("/faqs/")` (una lista de rutas a mano) | cada familia migrada acumula renumeración RSC | `solo-reparto` pedía un estado del build que ya no existe ⇒ **insatisfacible**, 9/11 sin que nadie rompiera nada |
+| 3 | **el CONTRATO** — qué nivel es la PUERTA | declarar el 2º volátil movió la puerta de `visible` a `visibleSinChunks` | `visible-alterado` saboteaba el nivel viejo ⇒ **exit 0 esperando 1** |
+
+**La tercera es la peor de las tres y hay que saber por qué:** las dos primeras
+se arreglan **derivando el ancla** (medir la base al empezar; derivar la lista en
+vez de escribirla). La tercera **no tiene ancla que derivar**: el contrato es una
+decisión, y cuando cambia, *todo falsador que apuntara al nivel viejo deja de
+falsar*. No hay derivación que lo evite.
+
+> **Lo único que la caza es correr el negativo ENTERO en la misma tanda que
+> cambia el contrato** —`CLAUDE.md` §sondas 3, corolario— y **leer el rojo como
+> lo que es**: no «relaja la expectativa», sino «apunta el falsador a la puerta
+> nueva». La diferencia entre las dos lecturas es exactamente la diferencia entre
+> tener guarda y no tenerla.
+
+Las tres salieron a la luz porque el negativo se corrió **antes de tocar nada**
+(el control primero). Sin ese hábito, la 3 se habría leído como «la sonda sigue
+verde» — que es literalmente lo que decía.
+
+## 📐 F2-3-CHUNK · el SEGUNDO volátil declarado de `html-cmp`, y en qué se diferencia del primero (2026-08-06)
+
+**Lo destapó migrar `productos`: 11 rutas con el `visible` distinto y el
+contenido idéntico** — entre ellas un caso que **ni siquiera monta el componente
+tocado**. Diagnóstico tomado contra el build inmediatamente anterior y con
+`visibleDe` (la función de la propia sonda, no una copia):
+
+```
+             visible            igual   igual tras normalizar <CHUNK>
+home      136664 → 136664       false   TRUE
+sector     96687 →  96687       false   TRUE
+lindano    60873 →  60873       false   TRUE
+```
+
+Toda la diferencia estaba en `<script src="/_next/static/chunks/2xiiasx10lkh8.js">`
+→ `0la1r4byhiv3d.js`. **Causa real y deseada:** `ProductosTabs` es un componente
+**cliente** y dejó de importar `src/lib/products.ts`, así que su chunk cambió de
+contenido y con él su nombre. El bundle de la home **ya no lleva el catálogo
+dentro**.
+
+**Por qué es volátil declarable:** el original **no emite chunks de Next**
+(`qa:rsc-original`, 4 arquetipos, 0 con carga de Next), así que no traslada
+ninguna fidelidad. Mismas cuatro guardas del `BUILD_ID`: patrón **anclado a un
+prefijo literal**, **contado** (`nChunks`), **los dos hashes guardados**
+(`visible` y `visibleSinChunks`) y **fracción acotada** (medido: 0.12 %).
+
+> ⚠ **Y la diferencia con el `BUILD_ID`, que es la que impide borrarlo sin más:
+> el `BUILD_ID` cambia en TODO build; el nombre de chunk cambia SÓLO si el bundle
+> cliente cambió.** Normalizarlo a secas **borraría una señal real**. Por eso no
+> se borra: una ruta así **no se reporta como idéntica** — sale en su propia
+> categoría `bundle`, contada y nombrada.
+
+**Falsadores** (`qa:html-cmp-neg`, hoy **13/13**, era 11/11): `solo-bundle`
+(verde y contado) · `chunk-ensanchado` (un patrón que además se coma
+`class="…"` ⇒ VOLÁTIL UBICUO, exit 2) · y `visible-alterado` **reapuntado a la
+puerta nueva** — ver la CLASE de arriba.
+
+**⚠ Lo que NO se puede adjudicar contra la base de la FASE, y la sonda lo dice
+ruta a ruta:** `html-f23-base.json` es anterior a este nivel y **no se
+re-congela**. Contra ella las 11 siguen saliendo DISTINTAS con el aviso
+*«la base no trae `visibleSinChunks`: NO se puede descartar que sea sólo el
+nombre de chunk»*. Su adjudicación viene de `medidas/html-f23-prod-base.json`,
+tomada del build inmediatamente anterior **con el nivel puesto**.
+
+## ⚠ F2-3-HREF-DERIVADO · 6 de 9 productos apuntan a una ruta que el build NO emite (2026-08-06)
+
+**Consecuencia declarada de §4** —*«dentro del CMS los 24 son documentos, así que
+su ruta es local por definición»*—, con su número por primera vez.
+`npm run qa:tipo-hoja`, eje `href`:
+
+| | n |
+|---|---:|
+| productos con lado medido | 9 |
+| cuyo `href` **cambia de valor** al pasar por el CMS | **6** |
+| que apuntan a una ruta que **el build no emite** | **6** |
+
+Ejemplo: `https://kunakair.com/es/cartuchos-inteligentes/amoniaco/` →
+`/cartuchos-inteligentes/amoniaco`. El dato medido aplica la **regla de rutas
+locales** (`CLAUDE.md`) —local si está clonado, original si no—; el esquema no
+guarda `href` y la vuelta lo compone **siempre local**.
+
+**⚠ Y no lo ve ninguna otra sonda, que es la parte que importa:**
+
+- **`qa:enlaces` no**, porque recorre `<a href>` del marcado y estos `href`
+  **no llegan al marcado**: `ProductosTabs` sólo sirve el panel del producto
+  **activo**, y el activo es `monitor-calidad-aire` en las 10 instancias;
+- **`html-cmp` no**, porque su puerta es el marcado visible. Estos `href` viajan
+  en la **carga RSC** como props del componente cliente — que es el nivel
+  declarado INFORMATIVO.
+
+Se ve en su **disparador**, y con el número exacto: `bytesCarga` bajó **−24 por
+cada producto referenciado** en las 3 rutas de caso (−24 · −24 · **−72** con tres
+cartuchos), que es exactamente el largo de `https://kunakair.com/es` más la barra
+final. El cuarto disparo es `/` (**+3759**, `nFilas 120→109`): el catálogo pasó
+del chunk cliente a la carga RSC al dejar de ser un valor por defecto del
+componente y pasar a ser prop del servidor.
+
+**Estado: DECLARADA, no arreglada, y las dos salidas son de ESQUEMA** — (a)
+reabrir §4 para guardar `href` verbatim, o (b) aplicar la regla de rutas locales
+en el render con una lista derivada de las rutas emitidas. Las dos son decisión
+de modelado, no trabajo mecánico de F2-3. **No bloquea**: hoy ninguna de las 6
+rutas se enlaza desde el marcado servido.
+
 ## 📐 F2-3-T4B-CRITERIO · el criterio de aceptación de `/[slug]`, POR CLASE y al NIVEL DEL BLOQUE (2026-08-06)
 
 **Escrito ANTES de landar nada, que es la mitad que da valor a un criterio.**
@@ -140,6 +257,50 @@ verde que se lee como rojo, ruidoso pero no silencioso.
 **Arreglado en las 2 que esta tanda toca** (`html-cmp`, `t4b-bloque`); las otras
 22 quedan **fichadas y sin barrer**, con su derivación al lado. Decirlo es la
 diferencia entre «arreglé la clase» y «arreglé la instancia que me estorbaba».
+
+### ⚠ ALCANCE CORREGIDO Y DUEÑO ASIGNADO (2026-08-06, tanda 37.ª)
+
+**El recuento de arriba se re-derivó antes de usarlo (regla 9) y no salió 24.**
+
+```
+for f in $(grep -rl "fetch(" scripts --include="*.mjs"); do
+  grep -q "process\.exit(" $f && echo $f; done | wc -l      → 29
+```
+
+**29 candidatos**, no 24 — y la lista está congelada en el cuerpo de esta ficha
+(4 de `scripts/`, 23 de `scripts/qa/`, 2 de `scripts/seed/`).
+
+**Y la segunda corrección es peor que un recuento: «arreglado en las 2» era
+IMPRECISO.** Las dos conservan llamadas a `process.exit()` **después** de sus
+`fetch` —`html-cmp` 496 y 505, `t4b-bloque` 451—; lo que se convirtió fue **la
+ruta que se demostró fallando**. Comprobado hoy: la corrida sin `--cmp`
+(línea 496, post-`fetch`) sale **0** correctamente… *porque hay un `await parar()`
+en medio que le gana la carrera al socket*. O sea **lo mismo que la ficha dice de
+las otras 27: latente y dependiente del tiempo**, no arreglado.
+
+> **Lectura correcta del estado:** 29 candidatos · **2 auditados** con su ruta
+> crítica convertida · **27 sin auditar** · y en los 2 auditados quedan llamadas
+> de la misma clase que hoy ganan la carrera por accidente de ordenación.
+
+**DUEÑO: tanda de INSTRUMENTO, no F2-4.** La razón es de coste y de riesgo, no de
+preferencia:
+
+- **no bloquea F2-4** — es un modo de fallo de las *sondas*, no del sitio ni del
+  CMS, y su dirección peligrosa (`exit(0)` → 3221226505) es **ruidosa**: se lee
+  como rojo, no como verde falso;
+- **barrerlo bien no es un `sed`**: `process.exit()` corta el flujo y
+  `process.exitCode` no, así que cada conversión exige **reestructurar el control
+  de flujo** de esa sonda (en `html-cmp`, meter ~100 líneas dentro de un `else`).
+  Hacerlo al final de una tanda de migración es cambiar 27 instrumentos sin
+  presupuesto para volver a falsarlos uno a uno;
+- y **cada arreglo de una sonda vuelve a correr su test en negativo, entero**
+  (`CLAUDE.md` §sondas 3, corolario). 27 sondas = 27 negativos.
+
+**Criterio de «hecho» de esa tanda, escrito ya para que no se negocie luego:**
+las 29 auditadas una a una —convertidas o declaradas exentas con su razón—, cada
+sonda tocada con su negativo corrido entero, y **un control en `qa:lib` que falle
+si aparece un `process.exit()` alcanzable tras un `fetch`**. Sin ese último
+control es un barrido, no una clase cerrada.
 
 ## ✅ F2-3-T4A-BLOG · CERRADA (2026-08-06) — era T4b sin cablear, y el motivo escrito era una premisa falsada
 

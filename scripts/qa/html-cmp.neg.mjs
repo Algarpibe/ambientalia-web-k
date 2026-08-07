@@ -187,13 +187,28 @@ const sincroniza = (b) => {
 
 const casos = [
   {
+    /* ⚠ **CORREGIDO 2026-08-06, y lo cazó ESTE negativo en la misma tanda que
+     * movió la puerta.** El caso saboteaba sólo `visible`, que era la puerta
+     * hasta que se declaró el 2º volátil. Con la puerta en `visibleSinChunks`,
+     * *«cambió el visible»* dejó de significar una sola cosa —puede ser un
+     * nombre de chunk (benigno, y lo cubre `solo-bundle`) o contenido (defecto,
+     * y lo cubre esto)—, así que el sabotaje pasó a caer del lado benigno y
+     * **salió exit 0 esperando 1**.
+     *
+     * Es la clase que esta tanda tuvo que nombrar dos veces: *un negativo
+     * anclado a una línea base que el propio trabajo mueve se auto-invalida.*
+     * Aquí la «línea base» no es un fichero: es **el CONTRATO**. Cuando cambia
+     * qué nivel decide, todo falsador que apuntara al nivel viejo deja de
+     * falsar — y su verde no dice nada. Se arregla apuntando a la puerta, no
+     * relajando la expectativa. */
     etiqueta: "visible-alterado",
     exit: 1,
-    porQue: `${rutaDiana} con otro \`visible\` ⇒ es lo que ve el visitante: DEFECTO, no reparto`,
+    porQue: `${rutaDiana} con otro marcado visible **y** otro \`visibleSinChunks\` ⇒ es lo que ve el visitante: DEFECTO`,
     base: () =>
       fabricaBase("visible-alterado", (b) => {
         b.paginas[rutaDiana].normalizado = "0".repeat(16);
         b.paginas[rutaDiana].visible = "0".repeat(16);
+        b.paginas[rutaDiana].visibleSinChunks = "0".repeat(16);
       }),
     salidaTiene: /visible DISTINTO/,
   },
@@ -254,6 +269,38 @@ const casos = [
     salidaTiene: new RegExp(
       `✅ ${rutaDiana.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\n\\s+marcado visible Δ0 · filas RSC Δ0`,
     ),
+  },
+  {
+    /* ── EL SEGUNDO VOLÁTIL, sus dos mitades ────────────────────────────────
+     * Igual que con `filas`: declarar un volátil sólo vale si a la vez (a) el
+     * caso legítimo sale **verde y contado aparte** —esto— y (b) una
+     * normalización ensanchada sale **roja** —`chunk-ensanchado`, abajo—. Con
+     * sólo lo primero se habría apagado la puerta; con sólo lo segundo, no se
+     * habría declarado nada. */
+    etiqueta: "solo-bundle",
+    exit: 0,
+    porQue:
+      "visible distinto, `visibleSinChunks` igual ⇒ mismo marcado y otro BUNDLE cliente: verde y CONTADO aparte",
+    base: () =>
+      fabricaBase("solo-bundle", (b) => {
+        b.paginas[rutaDiana].normalizado = "0".repeat(16);
+        b.paginas[rutaDiana].visible = "0".repeat(16);
+      }),
+    salidaTiene: new RegExp(
+      `✅ ${rutaDiana.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\n\\s+marcado visible Δ0 SALVO los nombres de chunk`,
+    ),
+  },
+  {
+    /* La otra mitad: un patrón de chunk ENSANCHADO tiene que morir en la guarda
+     * de ubicuidad, no igualar los dos lados. La diana del ensanche se deriva —
+     * `class="…"` está por todo el documento— y el sabotaje entra por el gancho
+     * declarado, igual que `volatil-ubicuo` entra por `BUILD_ID`. */
+    etiqueta: "chunk-ensanchado",
+    exit: 2,
+    porQue: 'un patrón de chunk que además se coma `class="…"` BORRA documento e iguala los dos lados',
+    base: () => BASE,
+    env: { CHUNK_PATRON: 'class="[^"]*"' },
+    salidaTiene: /VOLÁTIL UBICUO \(nombres de chunk\)/,
   },
   {
     etiqueta: "ruta-fantasma",
@@ -335,9 +382,10 @@ console.log(
   `\n${fallos === 0 ? "✅" : "❌"} html-cmp · test en negativo: ${casos.length + 1 - fallos}/${casos.length + 1}\n` +
     (fallos === 0
       ? `   Ve una diferencia de contenido, ve una ruta que falta, se niega a comparar\n` +
-        `   contra una base vacía, y RECHAZA un volátil que borraría documento — que es\n` +
-        `   la única forma que tenía de dar verde siempre. Y el nivel INFORMATIVO está\n` +
-        `   degradado por las dos mitades: la renumeración se cuenta, el invariante grita.\n`
+        `   contra una base vacía, y RECHAZA los DOS volátiles cuando se ensanchan hasta\n` +
+        `   borrar documento — que es la única forma que tenían de dar verde siempre. Y\n` +
+        `   los dos niveles degradados lo están por sus dos mitades: la renumeración y el\n` +
+        `   cambio de bundle se CUENTAN, el invariante y el marcado gritan.\n`
       : `   «El HTML es el mismo byte a byte» NO se puede citar hasta que esto salga verde.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);

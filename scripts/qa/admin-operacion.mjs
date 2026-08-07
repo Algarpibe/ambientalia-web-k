@@ -40,7 +40,6 @@
  *
  * | fuera | por qué |
  * |---|---|
- * | `productos` | su familia de ruta **no está migrada**: las páginas siguen leyendo `src/lib`. Un save no puede mover un render que no lee esa colección. Entra el día que se migre |
  * | `articulos-kb` | 0 filas y sin lado medido (§2d.1) |
  * | `media` | no es un catálogo: se deriva de los `upload` de los demás |
  * | `slugs` | lo escriben los hooks, no una persona |
@@ -67,6 +66,22 @@ const CLAVE = process.env.ADMIN_PASS ?? "kunak-qa-2026";
  * causas.
  */
 const SUJETOS = [
+  /**
+   * ⚠ **`productos` ENTRA el 2026-08-06, y su razón para estar fuera había
+   * dejado de ser cierta.** Decía *«su familia de ruta no está migrada: las
+   * páginas leen `src/lib`»*. Ya no: la home y las dos rutas de caso leen
+   * `leeColeccion<Product>("productos")`, así que un save suyo **sí** puede
+   * mover el render. Es la derivación del comentario de arriba —`grep -rn
+   * "leeColeccion<" apps/web/src`— aplicada otra vez, que es justo lo que
+   * impide que un «fuera» se quede fósil.
+   *
+   * ⚠ Y con un matiz que hay que decir, porque acota lo que este sujeto prueba:
+   * de sus campos, el render sólo pinta `name` y `tagline` de todos y el PANEL
+   * (imagen, textos, viñetas, `href`) **del producto activo**. `seo` no lo lee
+   * nadie y `cuerpo` está vacío en las 9. Un save que degradara sólo esos dos
+   * no movería el HTML — y esta prueba no lo vería. Lo ve `qa:tipo-hoja`.
+   */
+  "productos",
   "categorias",
   "etiquetas",
   "categorias-recursos",
@@ -82,7 +97,6 @@ const SUJETOS = [
 ];
 
 const FUERA = {
-  productos: "su familia de ruta NO está migrada: las páginas leen `src/lib`, así que un save no puede mover su render",
   "articulos-kb": "0 filas y sin lado medido (§2d.1)",
   media: "no es un catálogo: se deriva de los campos `upload` de los demás",
   slugs: "lo escriben los hooks del plano (§4), no una persona",

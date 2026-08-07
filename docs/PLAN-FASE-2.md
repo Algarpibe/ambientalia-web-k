@@ -1362,7 +1362,7 @@ por vacío.
 
 | fuera | razón |
 |---|---|
-| `productos` | su familia de ruta **no está migrada**: las páginas leen `src/lib`. Entra el día que se migre |
+| ~~`productos`~~ | ~~su familia de ruta no está migrada~~ **✅ ENTRA el 2026-08-06: la razón dejó de ser cierta.** La home y las dos rutas de caso leen `leeColeccion<Product>("productos")`, así que un save suyo **sí** mueve el render. Sujetos: **13** |
 | `articulos-kb` | 0 filas y sin lado medido (§2d.1) |
 | `media` | no es un catálogo: se deriva de los `upload` de los demás |
 | `slugs` | lo escriben los hooks del plano (§4) |
@@ -1420,6 +1420,73 @@ pregunta**.
 > veredicto está falsado; el que aprieta el botón, no.
 
 ---
+
+### ✅✅ F2-3 · CERRADA (2026-08-06, tanda 37.ª) — punto por punto contra su criterio
+
+**«Hecho cuando: la tabla del §8 en verde con umbral cero **y** la prueba de
+operación pasada en al menos una instancia de cada colección.»** Las dos mitades,
+con su evidencia congelada:
+
+#### La tabla del §8, umbral CERO
+
+| comprobación del §8 | resultado | congelada |
+|---|---|---|
+| `qa:clon-base -- 1440 --cmp <base>` | **28/31 sin mover un píxel**; los 3 restantes son la desviación con acta de `/[slug]` (fb3d), **idénticos al control tomado antes de tocar nada** | `clon-base-1440-f23-productos.json` |
+| `qa:clon-base -- 390 --cmp <base>` | **28/31**, los mismos 3 | `clon-base-390-f23-productos.json` |
+| `qa:enlaces` | **limpio en las dos direcciones** · 868 hrefs internos · 31/31 páginas | `enlaces-2026-08-06-2.json` |
+| `qa:corte` | **12/12** | `corte-cuerpo.json` |
+| `npm run check` | **verde** (lint · typecheck ×3 · build · manifiesto · slugs · cms-campos 10/10) | — |
+
+**Y el listón que F2-3 se añadió por encima del §8**, porque `clon-base` mide
+geometría y una migración de fuente de datos puede cambiar contenido sin mover un
+píxel:
+
+| | resultado |
+|---|---|
+| `qa:html-cmp` vs la base de la tanda (`html-f23-prod-base`) | **31 comparadas · 0 con el marcado visible distinto** · 7 sólo el nombre de chunk · 4 con un invariante de la carga RSC movido, **los 4 con su número explicado** (§F2-3-HREF-DERIVADO) |
+| `qa:html-cmp` vs la base de la FASE (`html-f23-base`) | 15 DISTINTAS = **4 adjudicadas** (`/[slug]`) + **11 que esa base NO PUEDE clasificar** por ser anterior al nivel `visibleSinChunks` — y la sonda **lo dice ruta a ruta** en vez de darlo por cumplido |
+| `qa:t4b-bloque` | **10/10, RESTO a cero**, 3 bloques adjudicados |
+| `qa:cms-roundtrip` · `qa:cms-lectura` · `qa:cms-decl` | **63/63 · 63/63 · 23/23** |
+| `qa:tipo-hoja` (nueva) | **10/10 hojas con marcado, 0 que su campo no pueda contener** — cierra CMS-SP-TIPO |
+| `qa:lib` | **93/93 · 98 sondas compilan y declaran su mínimo** |
+
+#### La prueba de OPERACIÓN
+
+**13/13 colecciones guardadas desde el admin de verdad** (`qa:admin-operacion`,
+`productos` incluida), y la otra mitad —la que convierte «13 guardados» en un
+veredicto— **también**: rebuild + `qa:html-cmp` contra el estado previo a los
+saves ⇒ **31 rutas · 0 con contenido distinto · 0 de bundle**.
+
+> **El editor NO degrada el dato**, y ahora con el caso que más lo podía sufrir
+> dentro: el `<sup>` de `productos.bullets` sigue **byte a byte en la DB tras
+> pasar por el formulario** (4 de 4 filas).
+
+**`usuarios` queda FUERA con su razón escrita y EJERCITADA como precondición**,
+que no es lo mismo que «pasada»: ningún usuario llega al render, así que un save
+suyo no puede mover el HTML — pero sin `create-first-user` no hay prueba, así que
+su camino de alta sí está probado. Igual `articulos-kb` (0 filas, sin lado
+medido), `media` (se deriva de los `upload`) y `slugs` (lo escriben los hooks).
+
+#### La incógnita de la fase, contestada
+
+*«¿Se degrada algún campo en el round-trip del admin?»* → **No, en 13 de 13**. Y
+el alcance va dicho, porque es lo que impide leerlo de más: la prueba mide **lo
+que llega al render**. De `productos`, eso es `name` y `tagline` de todos más el
+panel del producto activo; **`seo` no lo lee nadie y `cuerpo` está vacío en las
+9**. Un save que degradara sólo esos dos no movería el HTML y esta prueba no lo
+vería — lo ve `qa:tipo-hoja`, que compara contra el catálogo medido y no contra
+el render.
+
+#### Lo que F2-3 deja NOMBRADO al cerrar (y no bloquea F2-4)
+
+**§F2-3-HREF-DERIVADO** (6 de 9 productos apuntan a una ruta que el build no
+emite: consecuencia declarada de §4, con dos salidas que son de ESQUEMA) ·
+**§F2-3-CHUNK** (el 2º volátil, ya con contrato y falsadores) ·
+**§F2-3-EXIT-FETCH** (29 candidatos derivados, 2 auditados, **27 sin auditar** —
+dueño: tanda de instrumento, con su criterio de «hecho» escrito) ·
+§F2-3-VARIANTE-PISA · §M-PDF-FB3D · §T3B-NO-CANONICO · §T3-ALCANCE · M-IMG ·
+23 imágenes 404 · HOME cubo B · `Dockerfile` sin verificar · 26 celdas ciegas ·
+6 mínimos flojos · `Breadcrumb` 28 rutas · **el eje `comportamiento` a 0/31**.
 
 ## F2-4 · Publicación
 

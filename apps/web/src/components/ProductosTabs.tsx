@@ -1,7 +1,6 @@
 "use client";
 
 import type { Product } from "@/types/kunak";
-import { PRODUCTS_TABS } from "@/lib/products";
 import { useListaContenido } from "@/hooks/useListaContenido";
 import { SectionTitle, BlueButton, OutlineButton } from "./SectionRow";
 
@@ -17,8 +16,12 @@ import { SectionTitle, BlueButton, OutlineButton } from "./SectionRow";
  * El mecanismo vive en `useListaContenido`, compartido con `ListaContenido`
  * (la variante "accesorios" del mismo shortcode).
  *
- * `items` por defecto son los 5 productos de la home; se parametriza para
- * poder reutilizar el bloque con otro conjunto de datos.
+ * ⚠ **`items` es OBLIGATORIO desde F2-3** y eso es la migración, no estilo. Tenía
+ * de defecto `PRODUCTS_TABS` —o sea el catálogo medido importado dentro de un
+ * componente—, y con los productos ya en el CMS ese defecto sería una **segunda
+ * fuente de verdad** que además no da error: la home habría seguido pintando el
+ * fichero mientras las otras dos instancias pintaban la DB. El dato lo espera la
+ * página y baja por prop (§F2-3-ASYNC-HIJO).
  *
  * Spec: docs/research/components/productos-tabs.spec.md
  */
@@ -26,10 +29,10 @@ const PLUS_ICON = "/images/theme/ico-plus-negro.svg";
 const MINUS_ICON = "/images/theme/ico-minus-azul.svg";
 
 export function ProductosTabs({
-  items = PRODUCTS_TABS,
+  items,
   sinTitulo = false,
 }: {
-  items?: Product[];
+  items: Product[];
   /**
    * `sinTitulo` — las páginas de sector titulan el bloque **"Nuestras
    * soluciones"** y lo hacen en su propia fila, con el punteado, porque el

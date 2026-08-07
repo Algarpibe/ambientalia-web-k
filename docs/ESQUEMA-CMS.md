@@ -2423,7 +2423,7 @@ catálogo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
-| **CMS-SP-TIPO** | **ninguna guarda mira el TIPO de la hoja, solo su nombre** — un campo puede existir, llamarse bien y **no poder contener su dato medido**. Abierta el 2026-08-04 por el `<sup>` de `productos.bullets` (§3.1d), que pasó `payload-types` **y** `qa:cms-campos`. **⚠ SIGUE ABIERTA con la razón ya medida — ver §7b**. **Instrumento construido el 2026-08-05: `qa:html-cmp` compara el HTML servido byte a byte y ve lo que el round-trip no ve por sitio (negativo 8/8). Falta que la familia con el `<sup>` esté migrada para que lo ejercite** | nada hoy; es deuda de **instrumento**, y ya tiene la mitad hecha |
+| ~~**CMS-SP-TIPO**~~ | ~~ninguna guarda mira el TIPO de la hoja, solo su nombre~~ **✅ CERRADA (2026-08-06): `npm run qa:tipo-hoja`, 10/10 hojas con marcado, negativo 5/5 — §7d**. ⚠ Y la cerró **la salida 2 de §7b, no la 1**: el Δ0 de render **NO PUEDE** verla, y eso está medido — el panel de un producto sólo se sirve si es el ACTIVO, y el activo es `monitor-calidad-aire` en las 10 instancias, así que **ninguna ruta emitida contiene el `<sup>`** | **nada** |
 | ~~**CMS-0g · ORIGEN DE MEDIA**~~ | ~~`media` no guarda la ruta de origen del fichero~~ **✅ CERRADA (2026-08-06): campo de PROCEDENCIA `rutaOrigen`, nullable por construcción — §7c**. La premisa era verdadera y **la conclusión no se seguía**: `qa:media-colision` midió que `filename → ruta` **sí es una función hoy** (112 rutas · 0 repetidos) y **deja de serlo en la unión con el corpus** (646 · **1**, 12 referencias). O sea que tabular sobre `filename` funcionaría hoy y se rompería con contenido dentro | **nada** — desbloquea las 5 familias de F2-3 |
 
 ### ✅ 7c · CMS-0g · EL ORIGEN DE MEDIA ES UN CAMPO DE PROCEDENCIA (2026-08-06)
@@ -2578,6 +2578,49 @@ uno verificado avisa cuando deja de serlo.*
 `@payloadcms/richtext-lexical` instalado. La decisión no depende de ello —la
 sostiene el inventario—, pero **ningún número del §CMS-0e·B se cita como firme**
 antes de esa corrida.
+
+### ✅ 7d · CMS-SP-TIPO — CERRADA, y por la salida que parecía la de repuesto (2026-08-06)
+
+§7b nombró **dos** salidas posibles. La tanda que migra `productos` fue a por la
+primera —el Δ0 de render— y se encontró con que **no puede**:
+
+> **El mecanismo de pestañas es un CONTENEDOR CON HOLGURA, y su holgura es el
+> panel entero de todo producto que no sea el activo.** `ProductosTabs` sólo
+> renderiza en servidor el panel del **primero** de la lista; de los demás llegan
+> al HTML únicamente `name` y `tagline`. El activo es `monitor-calidad-aire` en
+> **las 10 instancias** que pintan el bloque (1 home · 6 sectores · 3 casos), y
+> sus 5 viñetas son texto plano.
+
+**Derivado, no supuesto:** los 4 `<sup>` viven en los productos 6, 8 y 9
+(`sulfuro-de-hidrogeno`, `compuestos-organicos-volatiles`,
+`particulas-en-suspension`), y `grep -rl "<sup>" apps/web/.next/server/app` da
+**5 ficheros, los 5 cuerpos de grupo A** — **ninguno un panel de producto**. Así
+que migrar la familia **no** ejercita el detector: `html-cmp` mide el HTML
+servido, y lo que no se sirve no lo puede ver.
+
+**Lo cierra la salida 2:** `npm run qa:tipo-hoja` compara, campo a campo, **lo
+que la hoja PUEDE expresar** (su `type`; si es `richText`, su `editor`
+identificado **por referencia** al objeto exportado, nunca por su nombre) contra
+**lo que su dato medido TRAE** (las etiquetas reales de los catálogos de
+`src/lib/*.ts`).
+
+| resultado | n |
+|---|---:|
+| hojas del corpus con marcado | **10** |
+| que su campo no puede contener | **0** |
+| campos `richText` en las 16 colecciones | 6, **los 6 `editorNegrita`** |
+
+**El negativo (5/5) prueba las cuatro formas de dar verde en falso**, y su caso
+decisivo **es el defecto original**: `tipo-plano` pone `productos.bullets` como
+`text` y la sonda nombra `<sup>` con su ejemplo medido. Los otros tres son la
+familia de `CLAUDE.md` §sondas 4 — `editor-opaco` (un editor desconocido **tira**
+en vez de suponerse capaz), `detector-muerto` (0 hojas con marcado sale por
+error, no por cero) y `sin-emparejar` («no lo encontré» ≠ «cabe»).
+
+⚠ **Y una condición escrita, que es lo que impide que envejezca:** `editorRico`
+**no lo usa ningún campo hoy**, así que la sonda **no le escribe una tabla de
+etiquetas a ciegas** — el día que un campo lo use, `tipo-hoja` **falla** y obliga
+a derivarla de sus *features*. Lo SIN PROBAR no se cablea.
 
 **Cerradas el 2026-07-30**, y dónde vive cada acta: **CMS-0d** (Next 16.2.12,
 §CMS-0d) · **CMS-0c** (rebuild por webhook, §CMS-0c) · **CMS-0b** (volumen

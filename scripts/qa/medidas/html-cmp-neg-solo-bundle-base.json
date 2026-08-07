@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-06",
-    "etiqueta": "filas-renumeradas",
+    "etiqueta": "control-diana",
     "rutas": 31,
     "buildId": "KuWhsfRMdGa_wI2jbeMsU"
   },
@@ -23,8 +23,8 @@
     "/accesorios": {
       "bytes": 203924,
       "crudo": "8a93c8ef67ae7f7a",
-      "normalizado": "3c565194f8baaa4e",
-      "visible": "eed446d5b35e8afd",
+      "normalizado": "0000000000000000",
+      "visible": "0000000000000000",
       "visibleSinChunks": "d6ac269b3f72c4bf",
       "nChunks": 11,
       "filas": "b1041bd71d42a04d",

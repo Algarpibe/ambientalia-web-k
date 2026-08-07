@@ -150,6 +150,28 @@ export const PRODUCTS_TABS: Product[] = [
 ];
 
 /**
+ * **QUÉ productos lista la home y EN QUÉ ORDEN** — lo único de este fichero que
+ * sigue vivo en el render desde F2-3 (`src/lib/cms/productos.ts`).
+ *
+ * Es ESTRUCTURA, no dato del producto: lo decide quien montó el shortcode
+ * `#lista-soluciones` de la home, igual que `SOLUCIONES_IDS` en
+ * `src/lib/sectores.ts` decide los 3 del sector. Los campos de cada producto
+ * vienen ya del CMS.
+ *
+ * **Se DERIVA del catálogo medido en vez de escribirse a mano** (`CLAUDE.md`
+ * §sondas regla 9): la lista de pestañas de la home *es* `PRODUCTS_TABS`, así
+ * que copiar sus cinco `id` sería una segunda definición con su propia deriva.
+ *
+ * ⚠ **Lo que NO se cablea, y por qué:** hoy los 5 de la home son exactamente los
+ * 5 productos **sin `padre`** de la DB, y es tentador usar eso de discriminante.
+ * **No está probado**: §2e midió **6 de 24 sin `padre`** sobre el CPT completo, y
+ * uno de ellos es `/accesorios` (`tipo: "catalogo"`). Con n = 9 no se distingue
+ * «la home lista los de primer nivel» de «la home lista estos cinco». Queda como
+ * hipótesis que sólo pueden dirimir las 24 fichas — sin probar no se cablea.
+ */
+export const PRODUCTOS_HOME_IDS: string[] = PRODUCTS_TABS.map((p) => p.id);
+
+/**
  * Los productos de CARTUCHO que usan los casos de éxito.
  *
  * No son "otra lista": son **el mismo content type** (`#lista-soluciones`, el

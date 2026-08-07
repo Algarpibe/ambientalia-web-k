@@ -119,6 +119,90 @@ function normaliza(html) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * EL SEGUNDO VOLÁTIL DECLARADO — los NOMBRES DE FICHERO DE CHUNK (2026-08-06)
+ *
+ * Lo destapó la migración de `productos`: **11 rutas con el `visible` distinto y
+ * el contenido idéntico**. El diff, tomado contra el build inmediatamente
+ * anterior y con `visibleDe` (la función de la propia sonda, no una copia):
+ *
+ *     visible 136664 → 136664 · igual: false
+ *                              · igual tras normalizar los nombres de chunk: TRUE
+ *
+ * en las 3 rutas muestreadas —home, sector y un caso **que ni siquiera monta el
+ * componente tocado**—. Toda la diferencia estaba en
+ * `<script src="/_next/static/chunks/2xiiasx10lkh8.js">` → `0la1r4byhiv3d.js`.
+ *
+ * ── Por qué es volátil, y en qué se DIFERENCIA del `BUILD_ID` ─────────────
+ * Es identidad de build igual que él —**el original no emite chunks de Next**,
+ * medido en `qa:rsc-original`— así que no traslada ninguna fidelidad. Pero hay
+ * una diferencia que **hay que decir en voz alta porque es la que podría tapar
+ * algo**:
+ *
+ *   > el `BUILD_ID` cambia en **todo** build, aunque el código sea idéntico; el
+ *   > nombre de chunk cambia **sólo si el bundle cliente cambió**. Normalizarlo
+ *   > a secas **borraría una señal real**.
+ *
+ * Por eso no se borra: se **cuenta y se nombra**. Una ruta cuyo `visible` sólo
+ * difiere en los nombres de chunk **no se reporta como idéntica**: sale en su
+ * propia categoría (`bundle`), con su recuento, y la salida dice que el paquete
+ * de JS que descarga el visitante ha cambiado. En esta tanda es un hecho real y
+ * deseado: `ProductosTabs` dejó de importar el catálogo medido, así que el
+ * bundle de la home **ya no lleva los 9 productos dentro**.
+ *
+ * ── Las MISMAS cuatro guardas del `BUILD_ID`, y por lo mismo ──────────────
+ *   1 · el patrón está **anclado a un prefijo literal** (`/_next/static/chunks/`),
+ *       no a «lo que parezca un hash»;
+ *   2 · **se cuenta** (`nChunks` viaja en la congelada);
+ *   3 · **se guardan los DOS hashes** (`visible` crudo y `visibleSinChunks`), así
+ *       que la salida nunca puede decir «idéntico» donde hubo sustitución;
+ *   4 · **se acota la fracción** de bytes del visible que toca, con la misma
+ *       guarda de ubicuidad. Medido: ~13 referencias × ~13 caracteres sobre
+ *       ~136 KB ⇒ **0.12 %**.
+ *
+ * ── ⚠ Y lo que NO se puede comprobar contra una base anterior ─────────────
+ * `html-f23-base.json` es de antes de este nivel y **no se re-congela**. Contra
+ * ella, una ruta que sólo cambie de nombres de chunk **no se puede distinguir**
+ * de una que cambie de contenido, así que sigue saliendo DISTINTA y la salida
+ * **dice por qué** en vez de darlo por cumplido (regla 6: una ausencia se
+ * rechaza, no se traduce a un valor benigno). Para adjudicarla hace falta una
+ * base tomada con este nivel puesto.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Anclado al prefijo literal: el nombre opaco de un chunk de Next y nada más.
+ *
+ * ⚠ **GANCHO DE TEST, declarado** — mismo patrón que `BUILD_ID` y por lo mismo:
+ * el negativo necesita poder darle a la sonda un patrón ENSANCHADO para
+ * comprobar que la guarda de ubicuidad lo para. Se anuncia en la salida; un
+ * gancho invisible es un gancho que puede fabricar un verde sin dejar rastro.
+ */
+const CHUNK_PATRON = env("CHUNK_PATRON", null) ?? "\\/_next\\/static\\/chunks\\/[A-Za-z0-9_-]+\\.js";
+if (env("CHUNK_PATRON", null))
+  console.log(`⚠ CHUNK_PATRON=${CHUNK_PATRON} por entorno — no es el patrón declarado`);
+const RE_CHUNK = new RegExp(CHUNK_PATRON, "g");
+
+/**
+ * Sustituye las referencias a chunk y devuelve cuántas y cuántos bytes ocupaban.
+ *
+ * Se sustituye **la referencia entera**, no sólo el nombre: cuenta como
+ * «tocado» más de lo estrictamente volátil, que es la dirección conservadora
+ * para una guarda —una normalización que se pasa tiene que saltar antes, no
+ * después—. Que haya o deje de haber referencias lo dice `nChunks`, que viaja
+ * en la congelada.
+ */
+function sinChunks(html) {
+  let n = 0;
+  let tocados = 0;
+  RE_CHUNK.lastIndex = 0;
+  const texto = html.replace(RE_CHUNK, (m) => {
+    n++;
+    tocados += m.length;
+    return "<CHUNK>";
+  });
+  return { texto, n, tocados };
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
  * LOS TRES NIVELES, Y POR QUÉ SON TRES (2026-08-05, medido con el canario)
  *
  * La primera versión comparaba **un** hash del documento entero, y al migrar la
@@ -196,6 +280,7 @@ function normaliza(html) {
  * | nivel | qué es | qué GARANTIZA | umbral | falsador |
  * |---|---|---|---|---|
  * | `visible` | el documento sin los `push` de `__next_f` | lo que recibe el visitante no cambió — **y traslada la fidelidad medida contra el original** | **PUERTA · CERO** | `visible-alterado` (exit 1) |
+ * | `visibleSinChunks` | lo mismo, con los **nombres de fichero de chunk** normalizados (2º volátil declarado, 2026-08-06) | el MARCADO no cambió aunque el bundle cliente sí | **PUERTA · CERO** (es la puerta real) | `chunk-ensanchado` (exit 2) · `solo-bundle` (verde y contado) |
  * | `filas` | las filas RSC con los identificadores enmascarados | **nada de fidelidad**: el original no emite esto. Sólo churn accidental de la carga de hidratación | **INFORMATIVO, con disparador** | `filas-renumeradas` (verde y contado) · `filas-invariante` (exit 1) |
  * | `normalizado` | el documento entero salvo `BUILD_ID` | nada por sí solo | informativo, contado | `solo-reparto` (verde y contado) |
  *
@@ -324,11 +409,22 @@ for (const ruta of RUTAS) {
       break;
     }
     const { filas, n: nMascaras, bytesCarga, nTrozos } = filasDe(texto);
+    const vis = visibleDe(texto);
+    const { texto: visSinChunks, n: nChunks, tocados: bytesChunks } = sinChunks(vis);
+    /* Guarda 4 del segundo volátil: la misma de UBICUIDAD, sobre el visible. Una
+     * normalización que toque más que un puñado de nombres no está escondiendo
+     * una identidad de build: está borrando documento e igualando los dos lados. */
+    if (bytesChunks > vis.length * MAX_FRACCION) {
+      ubicuo = { ruta, tocados: bytesChunks, bytes: vis.length, n: nChunks, cual: "nombres de chunk" };
+      break;
+    }
     todo.paginas[ruta] = {
       bytes,
       crudo: sha(html),
       normalizado: sha(texto),
-      visible: sha(visibleDe(texto)),
+      visible: sha(vis),
+      visibleSinChunks: sha(visSinChunks),
+      nChunks,
       filas: sha(filas.join("\n")),
       nFilas: filas.length,
       nMascaras,
@@ -374,7 +470,7 @@ for (const ruta of RUTAS) {
  * ═════════════════════════════════════════════════════════════════════════ */
 if (ubicuo) {
   console.error(
-    `\n❌ VOLÁTIL UBICUO — en ${ubicuo.ruta} la normalización toca ${ubicuo.tocados} de ${ubicuo.bytes} bytes ` +
+    `\n❌ VOLÁTIL UBICUO${ubicuo.cual ? ` (${ubicuo.cual})` : ""} — en ${ubicuo.ruta} la normalización toca ${ubicuo.tocados} de ${ubicuo.bytes} bytes ` +
       `(${((ubicuo.tocados / ubicuo.bytes) * 100).toFixed(2)} % > ${MAX_FRACCION * 100} %), ${ubicuo.n} apariciones.\n` +
       `   Eso ya no es esconder un identificador de build: es borrar documento.\n` +
       `   Una comparación así IGUALA los dos lados y sale verde por construcción.`,
@@ -442,7 +538,16 @@ let distintas = 0;
 let soloVolatil = 0;
 let soloReparto = 0;
 let renumeradas = 0;
+let bundle = 0;
 let sinComparar = 0;
+/** ¿La base trae el segundo volátil? Si no, un cambio de chunk NO se adjudica. */
+const baseConChunks = Object.values(antes.paginas).some((p) => p.visibleSinChunks);
+if (!baseConChunks)
+  console.log(
+    `  ⚠ la base es ANTERIOR al nivel \`visibleSinChunks\`: una ruta que sólo cambie de\n` +
+      `    nombres de chunk saldrá DISTINTA y no se puede distinguir de un cambio de\n` +
+      `    contenido. Para adjudicarla hace falta una base tomada con este nivel.\n`,
+  );
 /** ¿La base es de antes de los tres niveles? Entonces sólo se puede exigir el 1. */
 const baseConNiveles = Object.values(antes.paginas).some((p) => p.visible);
 if (!baseConNiveles)
@@ -467,10 +572,23 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
    * lo que el visitante ve, y el contenido de la carga de hidratación. */
   const visibleIgual = baseConNiveles && a.visible === b.visible;
   const filasIguales = baseConNiveles && a.filas === b.filas;
-  if (visibleIgual && filasIguales) {
-    soloReparto++;
+  /* El segundo volátil declarado: mismo marcado, otro BUNDLE cliente. Cierra la
+   * puerta —el contenido no cambió— pero **no cuenta como idéntico**: lo que el
+   * visitante descarga sí cambió, y eso se dice. */
+  const soloBundle =
+    !visibleIgual &&
+    a.visibleSinChunks !== undefined &&
+    b.visibleSinChunks !== undefined &&
+    a.visibleSinChunks === b.visibleSinChunks;
+  const puertaCerrada = visibleIgual || soloBundle;
+  const nota = soloBundle
+    ? `marcado visible Δ0 SALVO los nombres de chunk (${a.nChunks}→${b.nChunks} refs): otro BUNDLE cliente`
+    : `marcado visible Δ0`;
+  if (puertaCerrada && filasIguales) {
+    if (soloBundle) bundle++;
+    else soloReparto++;
     console.log(
-      `  ✅ ${ruta}\n       marcado visible Δ0 · filas RSC Δ0 (${a.nFilas}) — sólo cambia el REPARTO del stream` +
+      `  ✅ ${ruta}\n       ${nota} · filas RSC Δ0 (${a.nFilas}) — sólo cambia el REPARTO del stream` +
         ` (${a.bytes} → ${b.bytes} bytes)`,
     );
     continue;
@@ -479,13 +597,14 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
    * La puerta es `visible`. Con la puerta cerrada a Δ0, unas `filas` distintas
    * sólo son defecto si movieron un INVARIANTE de la carga; si no, es la
    * renumeración que `generateMetadata` asíncrona produce en cada familia. */
-  if (visibleIgual && baseConNiveles) {
+  if (puertaCerrada && baseConNiveles) {
     const rotos = movidos(a, b);
     const noComprobados = ausentes(a, b);
     if (!rotos.length) {
-      renumeradas++;
+      if (soloBundle) bundle++;
+      else renumeradas++;
       console.log(
-        `  ✅ ${ruta}\n       marcado visible Δ0 · filas RSC con OTROS identificadores, invariantes quietos` +
+        `  ✅ ${ruta}\n       ${nota} · filas RSC con OTROS identificadores, invariantes quietos` +
           ` (nFilas ${a.nFilas} · nMascaras ${a.nMascaras}) — nivel informativo, NO es Δ0` +
           (noComprobados.length ? `\n       ⚠ sin comprobar en la base: ${noComprobados.join(" · ")}` : ""),
       );
@@ -493,7 +612,7 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
     }
     distintas++;
     console.log(
-      `  ❌ ${ruta}\n       marcado visible Δ0 pero la CARGA RSC movió un invariante: ${rotos.join(" · ")}` +
+      `  ❌ ${ruta}\n       ${nota} pero la CARGA RSC movió un invariante: ${rotos.join(" · ")}` +
         `\n       eso no es renumeración: es contenido de la carga` +
         (noComprobados.length ? `\n       ⚠ sin comprobar en la base: ${noComprobados.join(" · ")}` : ""),
     );
@@ -505,14 +624,19 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
       `  ·  sha ${a.normalizado} → ${b.normalizado}` +
       (baseConNiveles
         ? `\n       visible ${visibleIgual ? "Δ0" : `DISTINTO (${a.visible} → ${b.visible})`}` +
-          ` · filas RSC ${filasIguales ? `Δ0 (${a.nFilas})` : `DISTINTAS (${a.nFilas} → ${b.nFilas})`}`
+          ` · filas RSC ${filasIguales ? `Δ0 (${a.nFilas})` : `DISTINTAS (${a.nFilas} → ${b.nFilas})`}` +
+          (!visibleIgual && a.visibleSinChunks === undefined
+            ? `\n       ⚠ la base no trae \`visibleSinChunks\`: NO se puede descartar que sea sólo el nombre de chunk`
+            : "")
         : `\n       (base sin niveles: no se puede decir si es contenido o reparto)`),
   );
 }
-const iguales = rutasAntes.length - idas.length - sinComparar - distintas - soloReparto - renumeradas;
+const iguales =
+  rutasAntes.length - idas.length - sinComparar - distintas - soloReparto - renumeradas - bundle;
 console.log(
   `\n  ${iguales - soloVolatil} idénticas byte a byte · ${soloVolatil} sólo el BUILD_ID · ` +
-    `${soloReparto} sólo el reparto del stream RSC · ${renumeradas} sólo renumeración RSC · ${distintas} DISTINTAS`,
+    `${soloReparto} sólo el reparto del stream RSC · ${renumeradas} sólo renumeración RSC · ` +
+    `${bundle} sólo el NOMBRE DE CHUNK (otro bundle cliente) · ${distintas} DISTINTAS`,
 );
 
 /* Segundo contrato, con su propio mínimo: se puede medir las 31 y comparar
@@ -530,6 +654,9 @@ console.log(
       : "") +
     (renumeradas
       ? `\n   (${renumeradas} con la carga RSC RENUMERADA e invariantes quietos — nivel informativo, no son Δ0)`
+      : "") +
+    (bundle
+      ? `\n   (${bundle} con el MISMO marcado y otro NOMBRE DE CHUNK: el bundle cliente cambió — contadas aparte, no son Δ0)`
       : ""),
 );
   await parar();

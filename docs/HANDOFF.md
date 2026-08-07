@@ -1,3 +1,167 @@
+# HANDOFF — F2-3 CERRADA: `productos` migrada, CMS-SP-TIPO cerrada por la salida que parecía la de repuesto, y el 2.º volátil declarado
+
+> ⚠ **Tanda 2026-08-06 (37.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.
+> **F2-3 cerrada contra su criterio del PLAN**: tabla del §8 en verde con umbral
+> cero y prueba de operación **13/13** (`productos` dentro). **El escalón NO
+> disparó** — el `<sup>` cabía, y de sobra. `apps/web` se toca por diseño y paga:
+> **puerta a Δ0 en las 31 rutas**.
+
+## 0 · Los cinco titulares
+
+> **1 · CMS-SP-TIPO la cerró la salida 2, y la 1 NO PODÍA cerrarla.** §7b nombró
+> dos salidas: *el Δ0 de render* o *una sonda que contraste el editor de cada
+> campo contra su inventario medido*. La tanda fue a por la primera y midió que
+> es ciega aquí: **`ProductosTabs` sólo sirve el panel del producto ACTIVO**, y
+> el activo es `monitor-calidad-aire` en **las 10** instancias que pintan el
+> bloque. Los 4 `<sup>` viven en los productos 6, 8 y 9 ⇒ **ninguna ruta emitida
+> los contiene** (`grep -rl "<sup>"` sobre `.next/server/app`: 5 ficheros, los 5
+> cuerpos de grupo A). **El mecanismo de pestañas es un contenedor con holgura, y
+> su holgura es el panel entero.** La cierra `npm run qa:tipo-hoja` (10/10,
+> negativo 5/5, y su sabotaje decisivo **es el defecto original**).
+>
+> **2 · La pregunta del encargo —«cuál de los dos contratos inline le
+> corresponde»— tenía la respuesta con dos días de antigüedad, y uno de los dos
+> contratos ya no existe.** Derivado del árbol, no recordado: `editorEnLinea`
+> **se borró** el 2026-08-04 (`cbd2b3a`, *«sin consumidores»*), y `bullets[].texto`
+> pasó de `inline()` a **`htmlLinea`** en ese mismo commit — **antes** de que
+> existiera ninguna migración (`b1c6650`, *«la inicial en limpio»*). Así que
+> **la migración versionada del campo ya es `20260804_120654_inicial`**: la
+> columna nació `varchar` y el `<sup>` está en la DB desde el primer seed. **No
+> había nada que mover**: la asimetría de §1.5b ya jugó a favor, dos días antes.
+>
+> **3 · Migrar `productos` destapó un VOLÁTIL que el contrato no tenía: el
+> NOMBRE DE FICHERO DE CHUNK.** 11 rutas con el `visible` distinto y el contenido
+> idéntico —incluida una que ni monta el componente tocado—. Diff tomado con
+> `visibleDe` (la función de la propia sonda): **`visible` 136664 → 136664,
+> `igual: false`, `igual tras normalizar <CHUNK>: TRUE`** en las 3 muestreadas.
+> Causa real y deseada: `ProductosTabs` es cliente y dejó de importar el
+> catálogo. Declarado con las **mismas cuatro guardas** del `BUILD_ID` y **una
+> diferencia dicha en voz alta**: el `BUILD_ID` cambia en todo build, el chunk
+> **sólo si el bundle cliente cambió**, así que no se borra — **se cuenta y se
+> nombra** (`bundle`).
+>
+> **4 · El defecto de `href` que ninguna sonda podía ver, con su número.**
+> `qa:tipo-hoja` eje `href`: **6 de 9 productos** apuntan a una ruta que el build
+> **no emite**. No lo ve `qa:enlaces` (recorre `<a href>` y estos no llegan al
+> marcado) ni `html-cmp` (su puerta es el marcado visible): viajan en la **carga
+> RSC** como props del cliente. Se ve en su disparador y cuadra al byte: **−24
+> por producto referenciado** (−24 · −24 · **−72**) = `https://kunakair.com/es`
+> más la barra. Es consecuencia **declarada** de §4, fichada, y sus dos salidas
+> son de ESQUEMA.
+>
+> **5 · Y la clase, por TERCERA vez en dos tandas, con un ancla nueva.**
+> *Un negativo anclado a algo que el propio trabajo mueve se auto-invalida.* Las
+> dos primeras se anclaban a un fichero y a una lista —y se arreglan
+> **derivando**—. Ésta se anclaba **al CONTRATO**: declarar el 2.º volátil movió
+> la puerta de `visible` a `visibleSinChunks` y `visible-alterado` pasó a
+> sabotear el nivel viejo ⇒ **exit 0 esperando 1**. **No hay derivación que lo
+> evite**: lo único que lo caza es correr el negativo entero en la misma tanda
+> que cambia el contrato. Lo cazó.
+
+## 1 · PASO 1 — `productos` migrada, y qué dice cada instrumento
+
+Tres sitios pintan un producto y los tres leen ya del CMS: la **home**
+(`PRODUCTOS_HOME_IDS`, derivado del catálogo medido), las **6 rutas de sector**
+(ya lo hacían) y las **3 fichas de caso** (`getProductosCms`, esperado en la
+página y bajado por prop — §F2-3-ASYNC-HIJO).
+
+| sonda | resultado |
+|---|---|
+| `qa:html-cmp` vs base de la tanda | **31 · 0 con el marcado visible distinto** · 7 `bundle` · 4 con invariante de carga movido **y explicado** |
+| `qa:html-cmp` vs base de la FASE | 15 = 4 adjudicadas + **11 que esa base no PUEDE clasificar**, dicho ruta a ruta |
+| `qa:clon-base` @1440 · @390 | **28/31 sin mover un píxel**, los 3 del control — **ni uno más** |
+| `qa:enlaces` · `corte` · `slugs` · `manifiesto` · `check` | 868 hrefs · 12/12 · 2/2 · 31 rutas · verde |
+| `qa:cms-roundtrip` · `cms-lectura` · `cms-decl` | 63/63 · 63/63 · 23/23 |
+| `qa:html-cmp-neg` · `qa:tipo-hoja-neg` · `qa:lib` | **13/13** (era 11/11) · **5/5** · 93/93 · 98 sondas |
+
+**Las dos comprobaciones que el encargo pidió ANTES de medir, y las dos acotan lo
+que el Δ0 significa:**
+
+- **`productos.cuerpo` sigue VACÍO en las 9** — derivado sobre las 23 tablas
+  `productos_blocks_*`: **0 filas en las 23**. Así que su Δ0 es **con los dos
+  lados vacíos y no prueba nada del cuerpo**. Las 24 fichas entran después;
+- **`Product.seo` se escribe y NO se lee** — `grep -rln "products" apps/web/src/app`
+  no devuelve nada y los 3 productos construidos llevan su `metadata` en el
+  `export const metadata` de su `page.tsx`, o sea en la capa de ESTRUCTURA. **Un
+  campo que nadie renderiza no puede dar regresión, así que tampoco puede dar
+  verde**: su cobertura la aporta `qa:tipo-hoja`, no el Δ0 ni la prueba de
+  operación.
+
+## 2 · PASO 3 — F2-3 CERRADA, punto por punto
+
+Acta completa en `PLAN-FASE-2.md` §F2-3 · CERRADA. Las dos mitades del criterio:
+**la tabla del §8 en verde con umbral cero** y **la prueba de operación 13/13**
+—con su segunda mitad corrida: rebuild + `html-cmp` ⇒ **31 rutas · 0 con
+contenido distinto**—. `usuarios` **fuera con su razón escrita y EJERCITADA como
+precondición**, que no es lo mismo que «pasada».
+
+**El `<sup>` sobrevivió al formulario**: 4 de 4 filas byte a byte en la DB tras
+los 13 saves del admin.
+
+## 3 · PASO 4 — §F2-3-EXIT-FETCH: alcance corregido y dueño asignado
+
+**El recuento se re-derivó antes de usarlo y no salió 24: son 29.** Y la segunda
+corrección duele más que la primera: **«arreglado en las 2» era impreciso**.
+`html-cmp` (496, 505) y `t4b-bloque` (451) conservan `process.exit()` **después**
+de sus `fetch`; hoy salen bien **porque hay un `await parar()` en medio que le
+gana la carrera al socket** — o sea exactamente lo que la ficha dice de las
+otras: latente y dependiente del tiempo.
+
+> **29 candidatos · 2 auditados · 27 sin auditar**, y en los 2 auditados quedan
+> llamadas de la misma clase.
+
+**Dueño: tanda de INSTRUMENTO, no F2-4**, con su razón (no bloquea nada del
+sitio; su dirección peligrosa es **ruidosa**; y convertir cada llamada exige
+**reestructurar el control de flujo** de esa sonda y **volver a correr su
+negativo entero**). Criterio de «hecho» ya escrito en la ficha, incluido **un
+control en `qa:lib` que falle si aparece un `process.exit()` alcanzable tras un
+`fetch`** — sin él sería un barrido, no una clase cerrada.
+
+## 4 · LO SIGUIENTE — F2-4 · Publicación
+
+Su especificación ya está escrita en `PLAN-FASE-2.md` §F2-4 y no la cambia nada
+de esta tanda. Las cuatro piezas:
+
+1. **webhook de rebuild** (CMS-0c: publicar dispara reconstrucción, no hay ISR);
+2. **cron de publicación programada** — sin servidor mirando fechas, el cron
+   dispara el rebuild cuando llega la hora;
+3. **preview de borradores como ÚNICA ruta que lee en runtime**, acotada y con
+   auth; todo lo demás sigue siendo HTML estático sin Postgres detrás;
+4. **A-SP13 con número**: el coste de emitir ~220 rutas (hoy 31; 11 ≈ 1 s, y 220
+   es otro orden). Es la **primera** de las tres incógnitas operativas de CMS-0c;
+   **las otras dos** —quién dispara el webhook y qué ve el editor mientras
+   reconstruye— se cierran en la misma fase, midiendo.
+
+## 5 · Pendientes que NO bloquean
+
+**§F2-3-HREF-DERIVADO** (6 de 9, dos salidas de ESQUEMA) · **§F2-3-EXIT-FETCH**
+(27 sin auditar) · §F2-3-VARIANTE-PISA · §M-PDF-FB3D · §T3B-NO-CANONICO ·
+§T3-ALCANCE · **M-IMG** (deuda de render) · **23 imágenes 404** (tanda aislada) ·
+HOME cubo B · `Dockerfile` sin verificar · **26 celdas ciegas** · **6 mínimos**
+flojos · `Breadcrumb` 28 rutas · los 5 «distinto» de `cmp-srcset` · swiper ×3 ·
+nbc ×1 · los 3 `data-media` del seed fuera del invariante D de `qa:artefacto` ·
+`qa:admin-operacion` sin negativo · **el eje `comportamiento` a 0/31**.
+
+## 6 · Lo que NO hay que hacer al empezar
+
+- **No leer un `html-cmp` contra `html-f23-base.json` como veredicto de una tanda
+  nueva.** Esa base es anterior al nivel `visibleSinChunks` y no puede
+  distinguir un cambio de chunk de un cambio de contenido — **la sonda lo dice
+  ruta a ruta**. Para adjudicar, base tomada con el nivel puesto.
+- **No re-congelar `html-f23-base.json`.**
+- **No borrar el nombre de chunk «porque es ruido».** Cambia **sólo** si el
+  bundle cliente cambió: se cuenta y se nombra, no se calla.
+- **No dar por cerrado un `<sup>` con un Δ0 de render.** Aquí no se sirve.
+  Lo que lo mide es `qa:tipo-hoja`.
+- **No escribirle a `editorRico` una tabla de etiquetas** para que `tipo-hoja`
+  deje de fallar el día que un campo lo use: se **deriva de sus features**, o lo
+  SIN PROBAR entra cableado por la puerta de atrás.
+- **No `await` dentro de un componente hijo** (§F2-3-ASYNC-HIJO).
+- **No cablear «los productos de la home son los que no tienen `padre`»**: hoy
+  cuadra con n=9 y §2e midió **6 de 24 sin `padre`** sobre el CPT completo.
+
+---
+
 # HANDOFF — F2-3 con las CINCO familias migradas, el criterio que se mide donde el defecto no cabe, y la prueba de operación PASADA
 
 > ⚠ **Tanda 2026-08-06 (36.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.

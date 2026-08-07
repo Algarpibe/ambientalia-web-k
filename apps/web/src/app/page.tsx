@@ -16,8 +16,17 @@ import { CtaPreocupa } from "@/components/CtaPreocupa";
 import { Sostenibilidad } from "@/components/Sostenibilidad";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+// F2-3: los productos se leen del CMS por Local API. `src/lib/products.ts` pasa
+// a seed histórico y sólo aporta `PRODUCTOS_HOME_IDS`, que es ESTRUCTURA — qué
+// productos lista este shortcode y en qué orden.
+import { getProductosCms } from "@/lib/cms/productos";
+import { PRODUCTOS_HOME_IDS } from "@/lib/products";
 
-export default function Home() {
+export default async function Home() {
+  /* El dato se espera AQUÍ y baja por prop: un `await` dentro de un componente
+     hijo cambia el HTML servido sin mover un dato (§F2-3-ASYNC-HIJO). */
+  const productos = await getProductosCms(PRODUCTOS_HOME_IDS);
+
   return (
     <>
       <HeaderNav />
@@ -48,7 +57,7 @@ export default function Home() {
           <PresenciaMundial />
           <Testimonios />
           <HazVisible />
-          <ProductosTabs />
+          <ProductosTabs items={productos} />
         </div>
 
         {/* 8 CTA newsletter · 9 Últimos artículos · 10 Últimos proyectos */}

@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "fecha": "2026-08-06",
+    "sabotaje": "productos:bullets=text"
+  },
+  "tipo": [
+    {
+      "coleccion": "casos",
+      "ruta": "destacado",
+      "tags": [
+        "br",
+        "strong"
+      ],
+      "ejemplo": "<strong>Eduardo Paes, alcalde de Río de Janeiro:</strong><br>\n    “Con esta iniciativa, Rí…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "detalles.parametros",
+      "tags": [
+        "b",
+        "li",
+        "p",
+        "sub",
+        "ul"
+      ],
+      "ejemplo": "<ul>\n      <li>Sulfuro de hidrógeno</li>\n      <li>Amoniaco</li>\n      <li>Compuestos orgá…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "necesidad",
+      "tags": [
+        "a",
+        "b",
+        "br",
+        "div",
+        "iframe",
+        "p",
+        "span"
+      ],
+      "ejemplo": "<p>La ciudad de <a href=\"https://www.dsm.city/\" target=\"_blank\" rel=\"noopener\">Des Moines<…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "resultados",
+      "tags": [
+        "a",
+        "b",
+        "blockquote",
+        "br",
+        "iframe",
+        "li",
+        "p",
+        "strong",
+        "ul"
+      ],
+      "ejemplo": "<p>Los monitores de olores miden los niveles de compuestos químicos en el aire, como amoní…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "solucion",
+      "tags": [
+        "a",
+        "b",
+        "i",
+        "iframe",
+        "li",
+        "p",
+        "strong",
+        "sub",
+        "table",
+        "tbody",
+        "td",
+        "th",
+        "thead",
+        "tr",
+        "ul"
+      ],
+      "ejemplo": "<p>Tras identificar los tres principales emisores de olores, en octubre de 2023, el equipo…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "cuerpo",
+      "tags": [
+        "a",
+        "h2",
+        "p",
+        "span",
+        "strong",
+        "sub",
+        "sup"
+      ],
+      "ejemplo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<h2>Resumen</h2>\n<p>Las posibles consecuencias adversas de la exp…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "cuerpo",
+      "tags": [
+        "a",
+        "b",
+        "blockquote",
+        "br",
+        "div",
+        "em",
+        "figure",
+        "h2",
+        "h3",
+        "i",
+        "iframe",
+        "img",
+        "li",
+        "ol",
+        "p",
+        "script",
+        "small",
+        "source",
+        "span",
+        "strong",
+        "sub",
+        "sup",
+        "table",
+        "tbody",
+        "td",
+        "th",
+        "thead",
+        "tr",
+        "ul",
+        "video"
+      ],
+      "ejemplo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<p>Las <b>fugas de <a href=\"https://kunakair.com/es/sensor-de-cal…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "faqs",
+      "ruta": "cuerpo",
+      "tags": [
+        "a",
+        "li",
+        "p",
+        "ul"
+      ],
+      "ejemplo": "<p>Sí, siempre que la velocidad no supere los 20 km/h. De este modo se garantiza la estabi…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "bullets",
+      "tags": [
+        "sup"
+      ],
+      "ejemplo": "R<sup>2</sup> &gt;0,8",
+      "campo": "text (texto plano)",
+      "perdidas": [
+        "sup"
+      ],
+      "veredicto": "NO EXPRESABLE"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ruta": "cuerpo",
+      "tags": [
+        "a",
+        "b",
+        "blockquote",
+        "br",
+        "div",
+        "em",
+        "h2",
+        "h3",
+        "h4",
+        "i",
+        "iframe",
+        "img",
+        "li",
+        "p",
+        "span",
+        "strong",
+        "sub",
+        "sup",
+        "table",
+        "tbody",
+        "td",
+        "tr",
+        "ul"
+      ],
+      "ejemplo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<p>El <a href=\"https://kunakair.com/es/cartuchos-inteligentes/clo…",
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
+    }
+  ],
+  "href": {
+    "n": 9,
+    "cambian": 6,
+    "sinRutaEmitida": 6,
+    "filas": [
+      {
+        "id": "monitor-calidad-aire",
+        "medido": "/monitor-calidad-aire",
+        "compuesto": "/monitor-calidad-aire",
+        "cambia": false,
+        "emitida": true
+      },
+      {
+        "id": "estacion-de-monitoreo-de-calidad-del-aire",
+        "medido": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
+        "compuesto": "/estacion-de-monitoreo-de-calidad-del-aire",
+        "cambia": true,
+        "emitida": false
+      },
+      {
+        "id": "sensor-de-calidad-del-aire",
+        "medido": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
+        "compuesto": "/sensor-de-calidad-del-aire",
+        "cambia": true,
+        "emitida": false
+      },
+      {
+        "id": "software-de-medicion-calidad-del-aire",
+        "medido": "/software-de-medicion-calidad-del-aire",
+        "compuesto": "/software-de-medicion-calidad-del-aire",
+        "cambia": false,
+        "emitida": true
+      },
+      {
+        "id": "kunak-api",
+        "medido": "/kunak-api",
+        "compuesto": "/kunak-api",
+        "cambia": false,
+        "emitida": true
+      },
+      {
+        "id": "sulfuro-de-hidrogeno",
+        "medido": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+        "compuesto": "/cartuchos-inteligentes/sulfuro-de-hidrogeno",
+        "cambia": true,
+        "emitida": false
+      },
+      {
+        "id": "amoniaco",
+        "medido": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+        "compuesto": "/cartuchos-inteligentes/amoniaco",
+        "cambia": true,
+        "emitida": false
+      },
+      {
+        "id": "compuestos-organicos-volatiles",
+        "medido": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+        "compuesto": "/cartuchos-inteligentes/compuestos-organicos-volatiles",
+        "cambia": true,
+        "emitida": false
+      },
+      {
+        "id": "particulas-en-suspension",
+        "medido": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+        "compuesto": "/cartuchos-inteligentes/particulas-en-suspension",
+        "cambia": true,
+        "emitida": false
+      }
+    ]
+  }
+}

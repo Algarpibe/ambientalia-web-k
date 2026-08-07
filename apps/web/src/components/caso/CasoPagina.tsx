@@ -11,8 +11,7 @@ import { CasoBloque } from "./CasoBloque";
 import { CasoGaleria } from "./CasoGaleria";
 import { CasoDetalles } from "./CasoDetalles";
 
-import type { CasoDeExito } from "@/types/kunak";
-import { getProductos } from "@/lib/products";
+import type { CasoDeExito, Product } from "@/types/kunak";
 import { CASO_CTA_PIE } from "@/lib/grupo-c-plantilla";
 
 /**
@@ -48,8 +47,24 @@ import { CASO_CTA_PIE } from "@/lib/grupo-c-plantilla";
  * no un caso degradado. Los cuatro casos poblados incluyen uno de cada
  * ausencia justamente para que esto se ejercite.
  */
-export function CasoPagina({ caso }: { caso: CasoDeExito }) {
-  const soluciones = caso.soluciones?.length ? getProductos(caso.soluciones) : null;
+/**
+ * ⚠ **`soluciones` llega por PROP desde F2-3, ya proyectado.** Antes lo resolvía
+ * aquí con `getProductos(caso.soluciones)` contra el catálogo de
+ * `src/lib/products.ts`; con los productos en el CMS eso exigiría un `await`
+ * **dentro de un componente hijo**, que cambia el HTML servido sin mover un dato
+ * (§F2-3-ASYNC-HIJO, medido: `/contador-…` con Δ 0 bytes y marcado distinto).
+ * El caso guarda **qué** productos (`data-id`); resolverlos es de la página.
+ *
+ * `null` cuando el caso no trae soluciones (4 de 57): sigue siendo un estado
+ * normal del arquetipo, no un caso degradado.
+ */
+export function CasoPagina({
+  caso,
+  soluciones,
+}: {
+  caso: CasoDeExito;
+  soluciones: Product[] | null;
+}) {
 
   return (
     <>
