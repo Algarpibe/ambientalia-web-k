@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-08",
-    "sabotaje": "productos:bullets=richText"
+    "sabotaje": null
   },
   "tipo": [
     {
@@ -170,7 +170,9 @@
         "sup"
       ],
       "ejemplo": "R<sup>2</sup> &gt;0,8",
-      "veredicto": "EDITOR DESCONOCIDO"
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -208,8 +210,8 @@
   ],
   "href": {
     "n": 9,
-    "defectos": 0,
-    "coincidenConMedido": 9,
+    "defectos": 6,
+    "coincidenConMedido": 3,
     "filas": [
       {
         "id": "monitor-calidad-aire",
@@ -223,17 +225,17 @@
         "id": "estacion-de-monitoreo-de-calidad-del-aire",
         "medido": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
         "local": "/estacion-de-monitoreo-de-calidad-del-aire",
-        "final": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/estacion-de-monitoreo-de-calidad-del-aire",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       },
       {
         "id": "sensor-de-calidad-del-aire",
         "medido": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
         "local": "/sensor-de-calidad-del-aire",
-        "final": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/sensor-de-calidad-del-aire",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       },
       {
         "id": "software-de-medicion-calidad-del-aire",
@@ -255,33 +257,33 @@
         "id": "sulfuro-de-hidrogeno",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
         "local": "/cartuchos-inteligentes/sulfuro-de-hidrogeno",
-        "final": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/cartuchos-inteligentes/sulfuro-de-hidrogeno",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       },
       {
         "id": "amoniaco",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
         "local": "/cartuchos-inteligentes/amoniaco",
-        "final": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/cartuchos-inteligentes/amoniaco",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       },
       {
         "id": "compuestos-organicos-volatiles",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
         "local": "/cartuchos-inteligentes/compuestos-organicos-volatiles",
-        "final": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/cartuchos-inteligentes/compuestos-organicos-volatiles",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       },
       {
         "id": "particulas-en-suspension",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
         "local": "/cartuchos-inteligentes/particulas-en-suspension",
-        "final": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "/cartuchos-inteligentes/particulas-en-suspension",
+        "coincideConMedido": false,
+        "defecto": "LOCAL SIN RUTA EMITIDA"
       }
     ]
   }

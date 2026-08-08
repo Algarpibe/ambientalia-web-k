@@ -1888,6 +1888,27 @@ colisión deliberada en `/accesorios`, medido y borrado.
 **Requisito, no recomendación:** sin (3), la colisión es silenciosa y solo se ve
 sirviendo la página equivocada.
 
+### ✅ 4·href — el `href` de un producto REFERENCIADO no es local por definición (F2-5, 2026-08-08)
+
+La frase de este § *«dentro del CMS los 24 son documentos, así que su ruta es
+local por definición»* produjo §F2-3-HREF-DERIVADO: la vuelta componía local
+para los 9 y 6 apuntaban a rutas que el build no emite. **Corregida por la
+salida (b) de la ficha**, y el reparto de capas es la decisión de esquema:
+
+| capa | qué sabe del `href` |
+|---|---|
+| **dato** (DB) | nada — sigue sin guardarse; `padre` + `slug` es el candidato |
+| **vuelta** (`devuelveProducto`) | compone el CANDIDATO local, pura, sin entorno |
+| **render** (proyector de `apps/web`) | aplica la **regla de rutas locales**: candidato construido → local; no construido → `https://kunakair.com/es<candidato>/` |
+
+«Construido» se **deriva** del árbol de `app/` (`@kunak/cms-config/entorno`),
+que es la ENTRADA de la que el build deriva sus rutas estáticas — el manifiesto
+es la SALIDA y no existe aún cuando el render corre. El lazo lo cierra
+`qa:tipo-hoja` (eje `href`, veredicto) contra el manifiesto real: árbol y
+manifiesto divergen ⇒ rojo. Medido al cerrar: **9/9 coinciden con el dato
+medido** — el catálogo ya cumplía la regla; era la vuelta quien la rompía.
+Acta y ficheros en `PENDIENTES-QA.md` §F2-3-HREF-DERIVADO · CERRADA.
+
 ### ⚠ 4b · La PAGINACIÓN son 107 rutas más, medidas (2026-07-31)
 
 Del recon de listados y hubs (`docs/research/listados-hubs/PAGE_TOPOLOGY.md`

@@ -17,19 +17,15 @@
  * ESTRUCTURA (qué productos lista la home y en qué orden), no dato del
  * producto.
  *
- * ── ⚠ `href` NO viene de la DB: lo COMPONE la vuelta, y eso tiene número ───
- * §4 decidió no guardar `href`: la ruta es `padre` + `slug`, y `devuelveProducto`
- * la recompone **local para los 9**. El dato medido trae **3 locales y 6
- * absolutas al original** (los 6 que el clon sólo referencia), así que al leer
- * del CMS esos 6 pasan a apuntar a una ruta que **el build no emite**.
- *
- * Eso está **declarado** en §4 —dentro del CMS los 24 son documentos, así que su
- * ruta es local por definición— y **no lo caza ninguna sonda de las que hay**,
- * porque no llega al marcado visible: el panel de un producto sólo se sirve
- * cuando es el ACTIVO, y el activo es `monitor-calidad-aire` en las 10
- * instancias. Los otros ocho viajan en la **carga RSC** como props del
- * componente cliente. Medido y fichado en `PENDIENTES-QA.md` §F2-3-HREF-DERIVADO
- * con su instrumento (`npm run qa:tipo-hoja`, eje `href`).
+ * ── `href` NO viene de la DB: candidato en la vuelta + regla en el render ──
+ * §4 no guarda `href`: `devuelveProducto` compone el CANDIDATO local
+ * (`padre` + `slug`) y el proyector le aplica después la regla de rutas
+ * locales (`segunEntorno`): construido → local; no construido → el original.
+ * Cerró §F2-3-HREF-DERIVADO (F2-5, salida b) — antes la vuelta componía local
+ * para los 9 y 6 apuntaban a rutas que el build no emite. La guarda es
+ * `npm run qa:tipo-hoja` (eje `href`, veredicto contra el manifiesto real):
+ * sigue sin verlo ninguna otra sonda, porque estos `href` viajan en la carga
+ * RSC — el panel de un producto sólo se sirve cuando es el ACTIVO.
  */
 import type { Product } from "@/types/kunak";
 import { leeColeccion } from "./proyector";

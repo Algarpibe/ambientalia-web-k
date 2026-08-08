@@ -17,6 +17,20 @@
  *       silencio** — `sin-emparejar`. «No lo encontré» y «está bien» no pueden
  *       dar la misma salida.
  *
+ * Y desde F2-5 el eje `href` (§F2-3-HREF-DERIVADO) trae los suyos, uno por
+ * dirección de la regla más el de la derivación:
+ *
+ *   5 · **`href-todo-construido`** — la regla no se aplica y el candidato local
+ *       sale para todo: ES el defecto original de la ficha (6 de 9 a rutas que
+ *       el build no emite) y tiene que caer por LOCAL SIN RUTA EMITIDA;
+ *   6 · **`href-nada-construido`** — entorno vacío inyectado: los 3 productos
+ *       que el clon SÍ sirve saldrían al original. La regla tiene que morder en
+ *       las dos direcciones o no discrimina (§sondas 4, el par de
+ *       discriminación de `cms-arquetipos`);
+ *   7 · **`href-app-vacio`** — la derivación apunta a un árbol que no existe ⇒
+ *       TIRA. «No pude derivar el entorno» y «nada está clonado» no pueden dar
+ *       la misma salida: es la regla del cero en la raíz de la lista.
+ *
  * El control corre **primero**: un sabotaje sólo aísla algo si parte de una
  * corrida que ya sale limpia.
  */
@@ -55,6 +69,27 @@ const casos = [
     porQue: "una hoja medida con marcado que no casa con ningún campo ⇒ DEFECTO, no silencio",
     env: { TIPO_BORRA: "productos:bullets" },
     salidaTiene: /NO casa con ningún campo del esquema/,
+  },
+  {
+    etiqueta: "href-todo-construido",
+    exit: 1,
+    porQue: "la regla no se aplica y el candidato local sale para todo ⇒ el 404 de la ficha, cazado",
+    env: { HREF_SABOTAJE: "todo-construido" },
+    salidaTiene: /LOCAL SIN RUTA EMITIDA/,
+  },
+  {
+    etiqueta: "href-nada-construido",
+    exit: 1,
+    porQue: "entorno vacío ⇒ los productos que el clon SÍ sirve saldrían al original: muerde en las dos direcciones",
+    env: { HREF_SABOTAJE: "nada-construido" },
+    salidaTiene: /CONSTRUIDO APUNTANDO AL ORIGINAL/,
+  },
+  {
+    etiqueta: "href-app-vacio",
+    exit: 2,
+    porQue: "la derivación del entorno no encuentra el árbol ⇒ TIRA, no «nada construido»",
+    env: { HREF_SABOTAJE: "app-vacio" },
+    salidaTiene: /ENTORNO SIN DERIVAR/,
   },
 ];
 

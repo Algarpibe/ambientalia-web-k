@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-08",
-    "sabotaje": "productos:bullets=richText"
+    "sabotaje": null
   },
   "tipo": [
     {
@@ -170,7 +170,9 @@
         "sup"
       ],
       "ejemplo": "R<sup>2</sup> &gt;0,8",
-      "veredicto": "EDITOR DESCONOCIDO"
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -208,16 +210,16 @@
   ],
   "href": {
     "n": 9,
-    "defectos": 0,
-    "coincidenConMedido": 9,
+    "defectos": 3,
+    "coincidenConMedido": 6,
     "filas": [
       {
         "id": "monitor-calidad-aire",
         "medido": "/monitor-calidad-aire",
         "local": "/monitor-calidad-aire",
-        "final": "/monitor-calidad-aire",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "https://kunakair.com/es/monitor-calidad-aire/",
+        "coincideConMedido": false,
+        "defecto": "CONSTRUIDO APUNTANDO AL ORIGINAL"
       },
       {
         "id": "estacion-de-monitoreo-de-calidad-del-aire",
@@ -239,17 +241,17 @@
         "id": "software-de-medicion-calidad-del-aire",
         "medido": "/software-de-medicion-calidad-del-aire",
         "local": "/software-de-medicion-calidad-del-aire",
-        "final": "/software-de-medicion-calidad-del-aire",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+        "coincideConMedido": false,
+        "defecto": "CONSTRUIDO APUNTANDO AL ORIGINAL"
       },
       {
         "id": "kunak-api",
         "medido": "/kunak-api",
         "local": "/kunak-api",
-        "final": "/kunak-api",
-        "coincideConMedido": true,
-        "defecto": null
+        "final": "https://kunakair.com/es/kunak-api/",
+        "coincideConMedido": false,
+        "defecto": "CONSTRUIDO APUNTANDO AL ORIGINAL"
       },
       {
         "id": "sulfuro-de-hidrogeno",

@@ -76,6 +76,7 @@ import { Evaluadas, QA, APP, env, gritaSiRevienta, hoy, leeManifiesto, rutasEmit
 import { cargaCatalogos } from "../seed/catalogos.mjs";
 import { preparaProducto } from "../seed/seed.mjs";
 import { devuelveProducto } from "../../packages/cms-config/src/vuelta.mjs";
+import { ORIGEN, hrefSegunEntorno, rutasConstruidas } from "../../packages/cms-config/src/entorno.mjs";
 
 gritaSiRevienta();
 
@@ -304,28 +305,63 @@ if (censo.size > 0) {
     }
   }
 
-  /* ─────────────────── EJE 2 · `href` de `productos` ────────────────────── */
+  /* ─────────────────── EJE 2 · `href` de `productos` ──────────────────────
+   *
+   * F2-5 (cierra §F2-3-HREF-DERIVADO): el eje deja de INFORMAR y pasa a JUZGAR.
+   * Se ejercita la regla REAL del render —`hrefSegunEntorno` con el entorno
+   * derivado del árbol de `app/`, la misma llamada que hace el proyector— y se
+   * contrasta contra el `prerender-manifest` REAL, que es la salida servida.
+   * Los dos lados del lazo: el render deriva de la ENTRADA del build (árbol),
+   * esta sonda verifica contra su SALIDA (manifiesto); si divergen, rojo.
+   *
+   * Tres formas de fallo, cada una con su sabotaje en `qa:tipo-hoja-neg`:
+   *   · LOCAL SIN RUTA EMITIDA — el 404 de la ficha (`href-todo-construido`);
+   *   · CONSTRUIDO APUNTANDO AL ORIGINAL — la regresión inversa: la regla
+   *     manda al original un producto que el clon sirve (`href-nada-construido`);
+   *   · el entorno no se puede derivar — TIRA, no «nada construido»
+   *     (`href-app-vacio`, la regla del cero en la derivación).
+   */
+  const HREF_SABOTAJE = env("HREF_SABOTAJE", null);
+  if (HREF_SABOTAJE) console.log(`\n⚠ HREF_SABOTAJE=${HREF_SABOTAJE} — el entorno NO es el del render`);
 
   const rutas = new Set(rutasEmitidas(leeManifiesto(APP)));
   const filas = catalogos.get("productos") ?? [];
-  const href = filas.map((p) => {
-    const compuesto = devuelveProducto(preparaProducto(p)).href;
-    return { id: p.id, medido: p.href, compuesto, cambia: p.href !== compuesto, emitida: rutas.has(compuesto) };
-  });
-  const cambian = href.filter((h) => h.cambia);
-  const rotas = href.filter((h) => !h.emitida);
-  informe.href = { n: href.length, cambian: cambian.length, sinRutaEmitida: rotas.length, filas: href };
+  const DIR_APP =
+    HREF_SABOTAJE === "app-vacio" ? path.join(QA, ".tmp", "app-que-no-existe") : path.join(APP, "src", "app");
+  let construidas;
+  if (HREF_SABOTAJE === "nada-construido") construidas = new Set();
+  else
+    try {
+      construidas = rutasConstruidas(DIR_APP);
+    } catch (e) {
+      console.error(`\n❌ ENTORNO SIN DERIVAR — ${e.message}`);
+      process.exit(2);
+    }
 
-  console.log(`\n──── eje \`href\` · §4 lo compone de \`padre\` + \`slug\` · ${href.length} productos ────\n`);
+  const href = filas.map((p) => {
+    const local = devuelveProducto(preparaProducto(p)).href; // el candidato del §4
+    const final = HREF_SABOTAJE === "todo-construido" ? local : hrefSegunEntorno(local, construidas);
+    const esLocal = final.startsWith("/");
+    let defecto = null;
+    if (esLocal && !rutas.has(final)) defecto = "LOCAL SIN RUTA EMITIDA";
+    else if (!esLocal && rutas.has(local)) defecto = "CONSTRUIDO APUNTANDO AL ORIGINAL";
+    else if (!esLocal && final !== `${ORIGEN}${local}/`) defecto = "FORMA DEL ORIGINAL MAL COMPUESTA";
+    return { id: p.id, medido: p.href, local, final, coincideConMedido: p.href === final, defecto };
+  });
+  const rotos = href.filter((h) => h.defecto);
+  const coinciden = href.filter((h) => h.coincideConMedido);
+  informe.href = { n: href.length, defectos: rotos.length, coincidenConMedido: coinciden.length, filas: href };
+
+  console.log(`\n──── eje \`href\` · regla de rutas locales sobre el candidato del §4 · ${href.length} productos ────\n`);
   for (const h of href)
     console.log(
-      `  ${h.emitida ? "✅" : "⚠ "} ${h.id.padEnd(42)} ${h.cambia ? `${h.medido} → ${h.compuesto}` : `${h.compuesto} (sin cambio)`}` +
-        (h.emitida ? "" : "  ← el build NO emite esta ruta"),
+      `  ${h.defecto ? "❌" : "✅"} ${h.id.padEnd(42)} ${h.local === h.final ? `${h.final} (local, emitida)` : `${h.local} → ${h.final}`}` +
+        (h.defecto ? `  ← ${h.defecto}` : ""),
     );
   console.log(
-    `\n  ${cambian.length} de ${href.length} cambian de valor · ${rotas.length} apuntan a una ruta que el build no emite.\n` +
-      `  Es la consecuencia DECLARADA de §4 (dentro del CMS los 24 son documentos), no un dato perdido —\n` +
-      `  pero tiene número, y no la ve ninguna otra sonda: viaja en la carga RSC como props del cliente.`,
+    `\n  ${rotos.length} defecto(s) · ${coinciden.length}/${href.length} coinciden con el dato medido.\n` +
+      `  El criterio de la ficha: cero href locales a rutas que el build no emite, y cero construidos\n` +
+      `  apuntando al original. Sigue sin verlo ninguna otra sonda: viaja en la carga RSC.`,
   );
 
   const evHref = new Evaluadas({ nombre: "tipo-hoja · href", unidad: "productos", minimo: filas.length });
@@ -337,11 +373,14 @@ if (censo.size > 0) {
 
   const fallos = ev.informe() + evHref.informe();
   console.log(
-    `\n${defectos || fallos ? "❌" : "✅"} ${censo.size} hojas con marcado · ${defectos} que su campo NO puede contener\n` +
+    `\n${defectos || rotos.length || fallos ? "❌" : "✅"} ${censo.size} hojas con marcado · ${defectos} que su campo NO puede contener · ` +
+      `eje href: ${rotos.length} defecto(s)\n` +
       (defectos
         ? `   CMS-SP-TIPO: un campo puede existir, llamarse bien y no poder contener su dato medido.\n`
-        : `   Ningún campo pierde marcado de su corpus. Y el \`<sup>\` de \`productos.bullets\` está\n` +
-          `   medido AQUÍ porque el HTML servido no puede verlo: su panel nunca es el activo.\n`),
+        : rotos.length
+          ? `   §F2-3-HREF-DERIVADO: un href compuesto que el build no respalda es un 404 latente.\n`
+          : `   Ningún campo pierde marcado de su corpus, y los ${href.length} href salen según la regla\n` +
+            `   de rutas locales: local si el build la emite, al original si no.\n`),
   );
-  process.exitCode = defectos || fallos ? 1 : 0;
+  process.exitCode = defectos || rotos.length || fallos ? 1 : 0;
 }

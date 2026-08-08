@@ -47,12 +47,42 @@ import type { CollectionSlug, SanitizedConfig } from "payload";
  * tipado sería la segunda lista que este fichero existe para evitar. */
 import { aMedido, contextoDeLectura } from "@kunak/cms-config/mapeo";
 import { DEVUELVE } from "@kunak/cms-config/vuelta";
+import { COMPONEN_RUTA, hrefSegunEntorno, rutasConstruidas } from "@kunak/cms-config/entorno";
+import path from "node:path";
 import { cms } from "./local";
 
 type Doc = Record<string, unknown>;
 type Fn = (x: unknown) => unknown;
 const devuelveDe = (col: string): Fn =>
   (DEVUELVE as Record<string, Fn>)[col] ?? ((x: unknown) => x);
+
+/**
+ * ── LA REGLA DE RUTAS LOCALES, aplicada AQUÍ y no en la vuelta (F2-5, cierra
+ * §F2-3-HREF-DERIVADO por su salida b) ─────────────────────────────────────
+ *
+ * `devuelveProducto` compone el CANDIDATO local (`padre` + `slug`); si el clon
+ * no construye esa ruta, el destino sigue siendo el original hasta que se
+ * clone (`CLAUDE.md` §Regla de rutas locales). La lista de construidas se
+ * DERIVA del árbol de `app/` — el mismo del que el build deriva sus rutas
+ * estáticas, no una lista a mano — y el lazo contra el `prerender-manifest`
+ * real lo cierra `qa:tipo-hoja` (eje `href`) después de cada build.
+ *
+ * Va DESPUÉS del `DEVUELVE` a propósito: `qa:cms-roundtrip` y `qa:cms-lectura`
+ * miden la PROYECCIÓN (dato ↔ forma medida) y este paso es ENTORNO — meterlo
+ * en la vuelta les cambiaría el objeto medido a las dos. Su guarda es la del
+ * eje `href`, no las de proyección.
+ *
+ * `process.cwd()` es `apps/web` en build y en `next start` (npm -w). Si el
+ * árbol no está, `rutasConstruidas` TIRA (regla 6): un entorno vacío mandaría
+ * los 9 al original en silencio, con el build en verde.
+ */
+let construidasCache: Set<string> | null = null;
+const construidas = () => (construidasCache ??= rutasConstruidas(path.join(process.cwd(), "src", "app")) as Set<string>);
+const segunEntorno = (col: string, x: unknown): unknown => {
+  if (!(COMPONEN_RUTA as Set<string>).has(col)) return x;
+  const p = x as { href?: unknown };
+  return { ...p, href: hrefSegunEntorno(p.href, construidas()) };
+};
 
 type Config = SanitizedConfig;
 type Coleccion = Config["collections"][number];
@@ -120,7 +150,9 @@ async function contexto(slug: CollectionSlug) {
     const destino = resuelta.collections.find((x) => x.slug === col);
     if (!destino) throw new Error(`PROYECTOR: la colección destino '${col}' (en ${donde}) no está en la config`);
     const ctxDestino = contextoDeLectura(destino, proyectaDoc, idx);
-    return devuelveDe(col)(aMedido(destino.fields, doc, ctxDestino, col)) as object;
+    /* Los embebidos también pasan por el entorno: las `soluciones` de un sector
+     * llegan por aquí, no por `leeColeccion`, y su `href` viaja igual. */
+    return segunEntorno(col, devuelveDe(col)(aMedido(destino.fields, doc, ctxDestino, col))) as object;
   };
 
   return { cfg, ctx: contextoDeLectura(cfg, proyectaDoc, idx) };
@@ -177,5 +209,5 @@ export async function leeColeccion<T>(
     ...filtraPublicados(cfg, conBorradores),
   });
   const devuelve = devuelveDe(slug);
-  return docs.map((d) => devuelve(aMedido(cfg.fields, d, ctx, slug))) as T[];
+  return docs.map((d) => segunEntorno(slug, devuelve(aMedido(cfg.fields, d, ctx, slug)))) as T[];
 }

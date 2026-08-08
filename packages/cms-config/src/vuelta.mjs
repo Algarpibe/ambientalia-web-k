@@ -34,7 +34,13 @@ export function rutaLocal(href) {
   return `/${segs.join("/")}`;
 }
 
-/** `productos`: deshace los alias de §2e y recompone la ruta del §4. */
+/**
+ * `productos`: deshace los alias de §2e y compone el CANDIDATO local del §4.
+ * ⚠ Es el candidato, no el `href` final: la regla de rutas locales (construido
+ * → local, no construido → original) la aplica el RENDER con `entorno.mjs` —
+ * aquí no hay entorno que consultar y meterlo rompería la pureza y el
+ * round-trip (§F2-3-HREF-DERIVADO, salida b).
+ */
 export function devuelveProducto(d) {
   const { slug, titulo, padre, ...resto } = d;
   return {

@@ -245,6 +245,47 @@ un producto desde el formulario, que es cuando el 404 pasa de latente a real.
 compuestos contra `rutasEmitidas()`, **cero** apuntando a una ruta que el build
 no emite, y un falsador que meta un `href` a ruta inexistente y **falle**.
 
+### ✅ CERRADA (2026-08-08, F2-5 PASO 0) — por la salida (b), y con un dato que la ficha no esperaba
+
+**La regla vive en el render y el dato no cambia.** `devuelveProducto` sigue
+componiendo el CANDIDATO local (la vuelta sigue pura, el round-trip intacto);
+el proyector de `apps/web` le aplica después la regla de rutas locales de
+`CLAUDE.md` (`segunEntorno`, en los DOS caminos: colección y embebido), con la
+lista de construidas **derivada del árbol de `app/`**
+(`@kunak/cms-config/entorno` · `rutasConstruidas`), no de una lista a mano.
+
+**Por qué del árbol y no del manifiesto, dicho porque la consigna decía
+«manifest»:** el `prerender-manifest` es la SALIDA del build y esta regla corre
+DENTRO del build que lo produce — con el publicador construyendo en un `dist`
+limpio, a la hora de renderizar no hay manifiesto. El árbol de `app/` es la
+ENTRADA de la que el build deriva sus rutas estáticas, y el lazo contra el
+manifiesto real lo cierra `qa:tipo-hoja` (eje `href`, ahora VEREDICTO y no
+aviso) después de cada build: si árbol y manifiesto divergen, rojo.
+
+**El criterio, medido:** `qa:tipo-hoja` **9/9 · 0 defectos** — 3 locales
+emitidas, 6 al original con la forma exacta — **y 9/9 COINCIDEN CON EL DATO
+MEDIDO**: la regla reconstruye byte a byte los `href` que el catálogo traía
+(el dato ya cumplía la regla de rutas locales; era la vuelta quien la rompía).
+Falsadores nuevos en `qa:tipo-hoja-neg` (**8/8**): `href-todo-construido` (el
+404 de la ficha, cazado por LOCAL SIN RUTA EMITIDA), `href-nada-construido`
+(la dirección inversa: un construido apuntando al original — el par de
+discriminación) y `href-app-vacio` (la derivación TIRA, regla del cero).
+
+**El efecto en la salida servida, adjudicado por derivación:** `html-cmp` vs
+`html-f24-verif` — **marcado visible Δ0 en las 31**; 10 rutas con `bytesCarga`
+movido, las 10 las que pintan el bloque, cada una **+24 × sus referenciados**:
+`/` +48 (estación y sensor, los 2 referenciados de las 5 pestañas), las 6 de
+`/sectores/*` +24 (estación, el único referenciado de sus 3 soluciones), y los
+3 casos +24/+72/+24 — **la inversa exacta de los −24·−72·−24 que fichó F2-3**.
+`clon-base` **31/31 sin mover un píxel** @1440 y @390 · `qa:enlaces` 868 hrefs
+limpio · `check` verde. Ficheros: `tipo-hoja.json` (re-congelada, PISAR, con la
+del defecto en git `ec5fbf3`), `tipo-hoja-2026-08-08.json`,
+`html-f25-paso0.json`, `clon-base-{1440,390}-f25-paso0.json`.
+
+**Y la nota para el alta desde el admin (PASO 4 de F2-5):** un producto nuevo
+no construido sale al original **por la misma regla, sin tocar nada** — que es
+exactamente el caso que esta fase multiplica.
+
 ## 📐 F2-3-T4B-CRITERIO · el criterio de aceptación de `/[slug]`, POR CLASE y al NIVEL DEL BLOQUE (2026-08-06)
 
 **Escrito ANTES de landar nada, que es la mitad que da valor a un criterio.**

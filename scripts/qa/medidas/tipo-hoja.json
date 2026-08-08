@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-06",
+    "fecha": "2026-08-08",
     "sabotaje": null
   },
   "tipo": [
@@ -210,71 +210,80 @@
   ],
   "href": {
     "n": 9,
-    "cambian": 6,
-    "sinRutaEmitida": 6,
+    "defectos": 0,
+    "coincidenConMedido": 9,
     "filas": [
       {
         "id": "monitor-calidad-aire",
         "medido": "/monitor-calidad-aire",
-        "compuesto": "/monitor-calidad-aire",
-        "cambia": false,
-        "emitida": true
+        "local": "/monitor-calidad-aire",
+        "final": "/monitor-calidad-aire",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "estacion-de-monitoreo-de-calidad-del-aire",
         "medido": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
-        "compuesto": "/estacion-de-monitoreo-de-calidad-del-aire",
-        "cambia": true,
-        "emitida": false
+        "local": "/estacion-de-monitoreo-de-calidad-del-aire",
+        "final": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "sensor-de-calidad-del-aire",
         "medido": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
-        "compuesto": "/sensor-de-calidad-del-aire",
-        "cambia": true,
-        "emitida": false
+        "local": "/sensor-de-calidad-del-aire",
+        "final": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "software-de-medicion-calidad-del-aire",
         "medido": "/software-de-medicion-calidad-del-aire",
-        "compuesto": "/software-de-medicion-calidad-del-aire",
-        "cambia": false,
-        "emitida": true
+        "local": "/software-de-medicion-calidad-del-aire",
+        "final": "/software-de-medicion-calidad-del-aire",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "kunak-api",
         "medido": "/kunak-api",
-        "compuesto": "/kunak-api",
-        "cambia": false,
-        "emitida": true
+        "local": "/kunak-api",
+        "final": "/kunak-api",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "sulfuro-de-hidrogeno",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
-        "compuesto": "/cartuchos-inteligentes/sulfuro-de-hidrogeno",
-        "cambia": true,
-        "emitida": false
+        "local": "/cartuchos-inteligentes/sulfuro-de-hidrogeno",
+        "final": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "amoniaco",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
-        "compuesto": "/cartuchos-inteligentes/amoniaco",
-        "cambia": true,
-        "emitida": false
+        "local": "/cartuchos-inteligentes/amoniaco",
+        "final": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "compuestos-organicos-volatiles",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
-        "compuesto": "/cartuchos-inteligentes/compuestos-organicos-volatiles",
-        "cambia": true,
-        "emitida": false
+        "local": "/cartuchos-inteligentes/compuestos-organicos-volatiles",
+        "final": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+        "coincideConMedido": true,
+        "defecto": null
       },
       {
         "id": "particulas-en-suspension",
         "medido": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
-        "compuesto": "/cartuchos-inteligentes/particulas-en-suspension",
-        "cambia": true,
-        "emitida": false
+        "local": "/cartuchos-inteligentes/particulas-en-suspension",
+        "final": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+        "coincideConMedido": true,
+        "defecto": null
       }
     ]
   }
