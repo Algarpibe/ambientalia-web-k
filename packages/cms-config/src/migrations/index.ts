@@ -4,6 +4,7 @@ import * as migration_20260804_151246_teaser_dato_propio from './20260804_151246
 import * as migration_20260804_182349_nivel_titular_por_defecto_3 from './20260804_182349_nivel_titular_por_defecto_3';
 import * as migration_20260805_011925_image_sizes_censados from './20260805_011925_image_sizes_censados';
 import * as migration_20260806_124532_ruta_origen_media from './20260806_124532_ruta_origen_media';
+import * as migration_20260808_023851_publicacion_f24 from './20260808_023851_publicacion_f24';
 
 export const migrations = [
   {
@@ -34,6 +35,11 @@ export const migrations = [
   {
     up: migration_20260806_124532_ruta_origen_media.up,
     down: migration_20260806_124532_ruta_origen_media.down,
-    name: '20260806_124532_ruta_origen_media'
+    name: '20260806_124532_ruta_origen_media',
+  },
+  {
+    up: migration_20260808_023851_publicacion_f24.up,
+    down: migration_20260808_023851_publicacion_f24.down,
+    name: '20260808_023851_publicacion_f24'
   },
 ];

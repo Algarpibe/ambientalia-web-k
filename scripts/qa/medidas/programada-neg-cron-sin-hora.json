@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "sonda": "programada",
+    "que": "publicación programada (cron) y vista previa de borradores — F2-4 pasos 3 y 4",
+    "fecha": "2026-08-07",
+    "sabotaje": "cron-sin-hora"
+  },
+  "invariantes": {
+    "P2·futuro NO se publica": {
+      "ok": false,
+      "detalle": "publicó 1 con la hora en el FUTURO: [\"entradas-blog:qa-programada-borrador@2026-08-08T04:25:04.263Z\"]"
+    },
+    "P1·borrador fuera del build": {
+      "ok": true,
+      "detalle": "31 rutas emitidas y /qa-programada-borrador NO está entre ellas"
+    },
+    "P4·preview sin credencial": {
+      "ok": true,
+      "detalle": "sin token ⇒ 404 y CERO rastro del borrador"
+    },
+    "P5·preview con credencial": {
+      "ok": true,
+      "detalle": "con token ⇒ 200 y el borrador servido con su cinta"
+    },
+    "P6·preview fuera del manifiesto": {
+      "ok": true,
+      "detalle": "0 entradas con 'vista-previa' en routes ni en dynamicRoutes"
+    },
+    "P3·vencido se publica UNA vez": {
+      "ok": false,
+      "detalle": "1.ª vuelta 0 · estado 'publicado' · 2.ª vuelta 0 (tiene que ser 1 · publicado · 0)"
+    }
+  },
+  "violados": 2,
+  "dbRestaurada": true
+}

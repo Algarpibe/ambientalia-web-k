@@ -63,10 +63,31 @@ Las tres consecuencias, y son las que se venían asumiendo:
    hubiera tocado nada — el ruido del original, importado al clon. Rebuild por
    webhook lo evita por construcción.
 
-**SIN MEDIR, y es operativo, no de esquema:** quién dispara el webhook, cuánto
+~~**SIN MEDIR, y es operativo, no de esquema:** quién dispara el webhook, cuánto
 tarda el rebuild con las 209 del grupo A dentro (**A-SP13**) y qué ve el editor
-mientras tanto. Nada de eso cambia el modelo de datos; se mide cuando haya
-instancia.
+mientras tanto.~~
+
+> ✅ **LAS TRES MEDIDAS Y CONTESTADAS (2026-08-07, F2-4).** Acta completa con
+> configuración y congeladas: `PLAN-FASE-2.md` §F2-4 · ACTA.
+>
+> | incógnita | respuesta |
+> |---|---|
+> | quién dispara | hook `afterChange`/`afterDelete` de Payload, cableado en `colecciones.ts` para todo lo que no sea grupo `Sistema`; opt-in por `PUBLICAR_URL` |
+> | **cuánto tarda** | **41.84 s a 31 rutas · 91.41 s a 220** (mediana; cota superior — los clones pesan 4.16× la media del corpus). Pendiente medida **0.2228 s/ruta** en la fase que escala, **lineal y sin codo** |
+> | qué ve el editor | `GET /estado` del publicador, con el `ultimoFallo` conservado hasta que un build termine bien |
+>
+> **Las tres consecuencias de arriba SE CONSERVAN**, con una grieta declarada y
+> acotada en la 1: `/vista-previa/[slug]` lee Postgres en runtime. **No entra en
+> el `prerender-manifest`** (`force-dynamic`), así que las sondas que derivan sus
+> rutas del build siguen midiendo las 31 de siempre; si Postgres cae, cae esa
+> ruta y sólo ésa.
+>
+> ⚠ **Y un hallazgo que la consecuencia 1 no anticipaba, medido:** un `next
+> build` que falla **borra el build anterior** (`BUILD_ID`, `standalone` y
+> `prerender-manifest`), y vacía su directorio desde el primer segundo aunque
+> vaya bien. Reconstruir en sitio no arriesga servir algo viejo: arriesga **no
+> servir nada**. Por eso se construye fuera (`NEXT_DIST_DIR`) y se promociona
+> por rename sólo con `exit 0`.
 
 ### ✅ CMS-0b · Media en VOLUMEN PERSISTENTE del VPS (2026-07-30)
 
@@ -2415,6 +2436,79 @@ de calidad del aire»* y el original dice **«Kunak API - Kunak»**. El dato del
 catálogo es el del ORIGINAL. Fichado en `PENDIENTES-QA.md`.
 
 ---
+
+## ✅ 2i · LA PUBLICACIÓN — dos campos de infraestructura, y por qué NO son los drafts de Payload (2026-08-07, F2-4)
+
+**El modelo cambia por primera vez desde F2-3, y es lo mínimo que hace falta
+para que F2-4 exista:** hasta hoy, todo lo que estaba en la DB salía en el
+sitio, así que ni la publicación programada ni la vista previa se podían
+enunciar. Los dos campos viven en `campos/comunes.ts` (`PUBLICACION`):
+
+| campo | tipo | defecto | qué es |
+|---|---|---|---|
+| `estado` | `select` (`borrador` · `publicado`), **required**, indexado | **`borrador`** | sólo `publicado` sale en el build |
+| `publicarEn` | `date` (día y hora), indexado | vacío | la hora a la que el cron debe publicarlo. Vacío = manual |
+
+**Dónde:** las **9 colecciones publicables**, derivadas de `admin.group` ∈
+{`Contenido`, `Páginas`, `Catálogo`} — sectores, monográficos, productos, casos,
+FAQ, blog, términos, documentos científicos y artículos KB. **NO** en taxonomías,
+media ni sistema.
+
+> **Y el reparto se declara al revés que el del disparo del webhook, a
+> propósito.** El disparo lista lo que **excluye** (defecto seguro: disparar de
+> más cuesta un build sobrante). Aquí el defecto seguro es el contrario: un
+> `estado: borrador` en una **taxonomía** no es «un poco de más», es **una
+> relación rota** — una categoría en borrador la sigue apuntando una entrada
+> publicada, y ahí no hay nada que publicar porque la categoría no es una página.
+
+### Por qué NO `versions: { drafts: true }` de Payload
+
+| | drafts nativos | los dos campos |
+|---|---|---|
+| tablas | **una `_v` por colección** (13) | 2 columnas |
+| semántica de las consultas existentes | **cambia**: un `find` sin `draft: true` deja de devolver lo que devolvía | no cambia nada |
+| riesgo concreto | un build que **emite menos rutas sin dar un error** — el modo de fallo exacto que `qa:manifiesto` existe para cazar | ninguno nuevo |
+| previsualizar **cambios sobre un documento YA PUBLICADO** | ✅ | ❌ |
+
+**La limitación se declara en vez de esconderse:** editar una página publicada
+**no tiene preview** — sale en el siguiente rebuild. Se pueden previsualizar
+**borradores** (documentos que aún no han salido), no ediciones de uno vivo.
+Subir a drafts nativos después es un cambio de **migración**, no de modelo: los
+dos campos se traducen a `_status` y a la fecha de `schedulePublish`.
+
+### Los dos son INFRAESTRUCTURA, y eso es una declaración en el campo
+
+Llevan `custom: { infraestructura: true }` y `camposPropios()` de `mapeo.mjs`
+los salta, igual que salta lo que `buildConfig` inyecta. Sin esa marca, la
+**vuelta** los devolvería como dato medido —la ida no los trae— y
+`qa:cms-roundtrip` fallaría en las **63 filas**.
+
+⚠ **Se reconoce por la DECLARACIÓN, nunca por el nombre.** Un
+`SIN_MEDIR = ["estado", …]` sería una lista a mano que borraría en silencio un
+campo medido que se llamara igual — el mismo argumento que `esSintetico` ya
+tenía escrito, aplicado a la otra mitad.
+
+### El seed escribe `publicado` explícitamente, y tiene que hacerlo
+
+El defecto del campo es `borrador` (decisión de quien **edita**: una página a
+medias no debe salir sola) y el seed reconstruye un sitio que **ya estaba
+publicado** (decisión de quien **migra**). Son dos personas distintas, así que
+son dos sitios distintos. Si el seed lo olvidara, el build emitiría **cero rutas
+por familia** — y no en silencio: `qa:manifiesto` grita exactamente eso y entra
+en `npm run check`.
+
+### La idempotencia del cron es la TRANSICIÓN, no una marca de tiempo
+
+> `estado = 'borrador'` **y** `publicarEn <= ahora` ⇒ se pone `publicado` y se
+> dispara **un** rebuild. La segunda vuelta encuentra **cero**.
+
+La primera versión comparaba `publicarEn` con el instante del último build
+promocionado, y era frágil por una razón de **nivel**: ese corte vive en la
+memoria del publicador, así que un reinicio o un segundo publicador lo pierden o
+lo contradicen. **Un estado que decide si algo ya pasó no puede vivir en el
+proceso que pregunta.** Con la transición, el cron es seguro de reintentar cada
+minuto sin memoria ninguna. Medido: `qa:programada` P3 — 1ª vuelta publica 1,
+2ª publica 0.
 
 ## 7 · Decisiones abiertas, en un sitio
 

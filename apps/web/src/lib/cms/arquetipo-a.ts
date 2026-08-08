@@ -45,12 +45,14 @@ export async function documentosCientificos(): Promise<DocumentoCientifico[]> {
  * `PENDIENTES-QA.md` §F2-3-T4B-CRITERIO · `npm run qa:t4b-bloque`.
  * ═════════════════════════════════════════════════════════════════════════ */
 
-export async function entradasBlog(): Promise<EntradaBlog[]> {
-  return leeColeccion<EntradaBlog>("entradas-blog");
+export async function entradasBlog(o?: { conBorradores?: boolean }): Promise<EntradaBlog[]> {
+  return leeColeccion<EntradaBlog>("entradas-blog", o);
 }
 
-export async function terminosKunakpedia(): Promise<TerminoKunakpedia[]> {
-  return leeColeccion<TerminoKunakpedia>("terminos-kunakpedia");
+export async function terminosKunakpedia(o?: {
+  conBorradores?: boolean;
+}): Promise<TerminoKunakpedia[]> {
+  return leeColeccion<TerminoKunakpedia>("terminos-kunakpedia", o);
 }
 
 export type PaginaPlana =
@@ -64,10 +66,13 @@ export type PaginaPlana =
  * catálogos, y tenerlo en un sitio evita que `generateStaticParams`,
  * `generateMetadata` y el componente lean el CMS por tres caminos distintos.
  */
-export async function getPaginaPlanaCms(slug: string): Promise<PaginaPlana | null> {
-  const b = (await entradasBlog()).find((e) => e.slug === slug);
+export async function getPaginaPlanaCms(
+  slug: string,
+  o?: { conBorradores?: boolean },
+): Promise<PaginaPlana | null> {
+  const b = (await entradasBlog(o)).find((e) => e.slug === slug);
   if (b) return { forma: "blog", datos: b };
-  const t = (await terminosKunakpedia()).find((e) => e.slug === slug);
+  const t = (await terminosKunakpedia(o)).find((e) => e.slug === slug);
   if (t) return { forma: "termino", datos: t };
   return null;
 }

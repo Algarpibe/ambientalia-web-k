@@ -1,5 +1,41 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🧨 CLASE · UN SERVIDOR AJENO EN EL PUERTO NO SE DISTINGUE DEL TUYO (2026-08-07)
+
+**Dos instancias en la misma tanda, y la segunda ya tenía la solución escrita al
+lado**, que es lo que la convierte en clase en vez de anécdota.
+
+> **`spawn(..., { shell: true })` + `p.kill()` mata el SHELL y deja vivo el
+> proceso.** En Windows no hay grupo de procesos que matar, así que `npm run
+> start` y `node publicador.mjs` sobreviven a la sonda que los lanzó. La corrida
+> siguiente pide el mismo puerto, **recibe `200 OK`** y mide el estado de otro
+> proceso — con su `.next`, su DB y su contador de builds.
+
+| # | sonda | qué midió de más |
+|---|---|---|
+| 1 | `qa:publicar` | `builds: 2 · disparos: 4` **antes de su primer disparo** — era el publicador de la corrida anterior |
+| 2 | `qa:programada` | se quedó colgada hablando con un `next start` huérfano en `:3187` |
+
+**Es la §causa común de `CLAUDE.md` con un contenedor nuevo: el PROCESO al otro
+lado del puerto.** Un `200 OK` prueba que *algo* escucha, no que sea lo que
+acabas de lanzar — exactamente igual que un `Δ0` prueba que dos números
+coinciden, no que midan lo mismo.
+
+**Las dos mitades del arreglo, y hacen falta las dos:**
+
+1. **Identidad.** El servidor publica su `pid` (y su `dist`) en `/estado`, y
+   quien lo levanta **exige que sea el suyo**. Sin esto, la corrida no puede
+   saberlo;
+2. **Muerte de verdad.** `iniciarClon()` de `lib.mjs` ya lo tenía resuelto desde
+   julio —**puerto libre pedido al sistema** y `taskkill /T` sobre el árbol—, y
+   la sonda nueva se escribió un servidor a mano en vez de usarlo. La segunda
+   instancia se arregló **borrando código**, no escribiéndolo.
+
+> **La regla operativa: una sonda no levanta servidores a mano.** Si necesita el
+> clon, `iniciarClon()`. Si necesita otro proceso, **sin `shell`** y con
+> comprobación de identidad. Y si aparece un tercer caso, la solución ya existe:
+> búscala antes de escribirla.
+
 ## 🧨 CLASE · UN NEGATIVO ANCLADO A ALGO QUE EL PROPIO TRABAJO MUEVE SE AUTO-INVALIDA (2026-08-06)
 
 **Tercera instancia en dos tandas, y las tres con el mismo daño: el negativo se
@@ -116,6 +152,52 @@ reabrir §4 para guardar `href` verbatim, o (b) aplicar la regla de rutas locale
 en el render con una lista derivada de las rutas emitidas. Las dos son decisión
 de modelado, no trabajo mecánico de F2-3. **No bloquea**: hoy ninguna de las 6
 rutas se enlaza desde el marcado servido.
+
+### ⚖ ADJUDICADA (2026-08-07, F2-4): salida (b), y el dueño es F2-5
+
+**El encargo de F2-4 pedía adjudicarla con este argumento: *«6 de 9 productos
+apuntando a rutas no emitidas es un 404 con `dynamicParams = false`, y publicar
+multiplica el caso»*. La primera mitad es cierta; la segunda hay que
+corregirla, y la corrección cambia la prioridad, no la decisión.**
+
+> **Publicar NO multiplica el caso: lo deja donde está.** F2-4 no toca ni
+> `ProductosTabs` ni el dato de `productos`. Lo que multiplicaría el caso es
+> **dar de alta productos desde el admin**, que es F2-5.
+
+⚠ **Y el alcance de la ficha se re-derivó antes de adjudicar (regla 9), porque
+el primer intento salió mal en las dos direcciones.** Contra el build de hoy:
+
+| pregunta | derivación | resultado |
+|---|---|---|
+| ¿aparece en el build? | `grep -rl "cartuchos-inteligentes" .next/server/app` | **67 ficheros** — la primera versión de esta ficha escribió «0», y era falso |
+| ¿en cuántas RUTAS, en su forma local? | `grep -rlo '"/cartuchos-inteligentes/' … --include='*.html'` | **2**: `case-studies/distrito-baja-emision-rio-de-janeiro` y `casos-de-exito/control-…-des-moines-iowa` |
+| ¿como `<a href>` del marcado visible? | `grep -rho 'href="/cartuchos-inteligentes…'` | **cero.** Los `href` visibles a cartuchos apuntan **al original** (`https://kunakair.com/es/cartuchos-inteligentes/…`), que es lo correcto |
+
+**O sea que los 67 ficheros son casi todos el `href` BUENO** —al original, en el
+marcado— y la forma local defectuosa vive en la **carga RSC de 2 rutas**, tal
+como la ficha original decía. La cifra de «6 de 9 productos» sigue siendo del
+**dato**, no de las rutas servidas: **2 rutas afectadas hoy, 0 enlaces rotos
+visibles**. Es el mismo error que la ficha ya nombraba —*el panel que no se
+sirve*— cometido esta vez **al comprobarlo**: un `grep` sin distinguir la forma
+local de la del original cuenta las dos y da un número que no significa nada.
+
+**Se adjudica la salida (b) —componer el `href` contra las rutas que el build
+emite— y no la (a), con tres razones y una es nueva de esta tanda:**
+
+| | por qué |
+|---|---|
+| (a) guardar `href` verbatim | **congela una decisión de ENTORNO en el dato.** El `href` bueno depende de *qué está clonado*, que cambia cada tanda; guardarlo obliga a re-migrar los 24 productos cada vez que se clona una página. Es la regla de rutas locales convertida en contenido |
+| **(b) derivar en el render** ← | la lista de rutas emitidas **ya existe y ya se deriva**: es de donde `qa:enlaces` y `qa:slugs` sacan la suya. No hay nada que mantener |
+| lo nuevo de F2-4 | **el build es el único momento en que se sabe qué rutas existen** (CMS-0c · §4), y (b) se resuelve **ahí**. Con rebuild-por-webhook eso no es una restricción: es exactamente cuando toca |
+
+**Dueño: F2-5**, y con su razón: la salida (b) hay que escribirla en el render y
+**su guarda tiene que ver el panel que hoy no se sirve** — o sea `qa:tipo-hoja`
+extendida, no `qa:enlaces`. Y F2-5 es la fase en la que alguien va a dar de alta
+un producto desde el formulario, que es cuando el 404 pasa de latente a real.
+
+**Criterio de «hecho», escrito ya para que no se negocie luego:** los 9 `href`
+compuestos contra `rutasEmitidas()`, **cero** apuntando a una ruta que el build
+no emite, y un falsador que meta un `href` a ruta inexistente y **falle**.
 
 ## 📐 F2-3-T4B-CRITERIO · el criterio de aceptación de `/[slug]`, POR CLASE y al NIVEL DEL BLOQUE (2026-08-06)
 

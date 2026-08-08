@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "sonda": "publicar",
+    "que": "los 4 invariantes del publicador de F2-4 (auth · sin solape · invariante de disparo · fallo no pisa .next)",
+    "fecha": "2026-08-07",
+    "sabotaje": "politica-descartar"
+  },
+  "invariantes": {
+    "A·auth": {
+      "ok": true,
+      "detalle": "401 y 0 builds · 0 disparos registrados"
+    },
+    "B·sin solape": {
+      "ok": true,
+      "detalle": "1 builds, 0 solapados"
+    },
+    "C·invariante de disparo": {
+      "ok": false,
+      "detalle": "3 de 4 disparos NO tienen ningún build que empezara después: se guardaron y no se sirven"
+    },
+    "D·fallo no pisa .next": {
+      "ok": true,
+      "detalle": "build exit 1 · `.next` intacto (BUILD_ID ncORn1YsuVaw1YbAzN9F9) · el fallo QUEDA en /estado"
+    }
+  },
+  "violados": 1
+}

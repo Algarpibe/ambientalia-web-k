@@ -638,6 +638,23 @@ export async function siembra(payload, colecciones) {
         `${coleccion}/${fila.slug ?? fila.id}`,
       );
       const data = await aPayload(cfg.fields, preparada, ctx, coleccion);
+      /**
+       * ⚠ **`estado: "publicado"` EXPLÍCITO, y es obligatorio (F2-4).**
+       *
+       * El campo tiene defecto `borrador` a propósito —una página a medias no
+       * debe salir sola— y el seed reconstruye un sitio que **ya estaba
+       * publicado**: sin esta línea, `cms:seed` deja las 63 filas en borrador y
+       * el build emite **cero rutas por familia**, sin un solo error.
+       *
+       * No es un fallo silencioso porque `qa:manifiesto` grita exactamente eso
+       * y entra en `npm run check`. Pero la línea va aquí y no en el defecto del
+       * campo: el defecto es la decisión de quien edita, esto es la decisión de
+       * quien migra, y son dos personas distintas.
+       *
+       * Se aplica **sólo donde el campo existe**, derivado de la config: las
+       * taxonomías y el media no publican.
+       */
+      if (cfg.fields.some((f) => f.name === "estado")) data.estado = "publicado";
       const doc = await payload.create({ collection: coleccion, data });
       ctx.registra(coleccion, data.slug ?? doc.slug, doc.id);
       n++;

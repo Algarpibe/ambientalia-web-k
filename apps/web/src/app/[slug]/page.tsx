@@ -172,11 +172,23 @@ function Taxonomias({ entrada }: { entrada: EntradaBlog }) {
 
 export default async function PaginaPlana({
   params,
+  conBorradores = false,
 }: {
   params: Promise<{ slug: string }>;
+  /**
+   * ⚠ **Prop que Next NUNCA pasa — F2-4.** Next entrega `params` y
+   * `searchParams` y nada más, así que en la ruta estática vale siempre `false`
+   * y el artefacto no cambia (Δ0 medido en las 31 rutas).
+   *
+   * Existe para que **la vista previa REUSE esta página en vez de copiarla**.
+   * Una segunda copia del árbol de un arquetipo es la peor forma de preview que
+   * hay: enseña algo que se *parece* a la página, y la divergencia aparece el
+   * día que alguien toca una sola de las dos — sin que nada lo diga.
+   */
+  conBorradores?: boolean;
 }) {
   const { slug } = await params;
-  const p = await getPaginaPlanaCms(slug);
+  const p = await getPaginaPlanaCms(slug, { conBorradores });
   if (!p) notFound();
 
   const esBlog = p.forma === "blog";

@@ -1514,6 +1514,137 @@ de punta a punta; una publicación programada sale **sola** a su hora; la
 preview funciona sin tocar las rutas estáticas; y **A-SP13 tiene número**, con
 su fecha y su configuración.
 
+### ✅ F2-4 · ACTA (2026-08-07, tanda 38.ª)
+
+#### A-SP13 · el número, y la proyección heredada era falsa por su mitad más citada
+
+**Configuración, porque un tiempo no es propiedad del proyecto sino de la
+máquina:** Intel Core Ultra 9 285H · 16 núcleos · 31.4 GB · Node v26.4.0 ·
+Next 16.2.12 (Turbopack) · Windows 11 · Postgres 17-alpine en `kunak-cms-pg`
+(docker local, :55432) · 63 filas sembradas y el media dentro · **rebuild
+COMPLETO** (`.next` borrado antes de cada corrida).
+
+| población | rutas | TOTAL (mediana) | dispersión | fase que ESCALA |
+|---|---:|---:|---|---:|
+| real (hoy) | **31** | **41.84 s** | 39.22 – 43.42 (3 corridas) | 6.09 s |
+| real + 189 clones | **220** | **91.41 s** | 86.81 – 96.01 (2 corridas) | 48.21 s |
+
+Descomposición a 31 rutas: arranque 3.33 · compilación 8.10 · typescript 8.34 ·
+**datos 13.04** · generación 6.09 · cierre 2.85. Congeladas:
+`medidas/a-sp13-frio.json` · `a-sp13-tibio.json` · `a-sp13-sintetico-189.json`.
+
+> **Un solo punto no puede contestar A-SP13, y por eso se midieron dos.**
+> Multiplicar el total por el nº de rutas multiplica también el coste **fijo**
+> —arranque, compilación y `tsc` cuestan lo mismo con 11 rutas que con 220— e
+> infla la proyección varias veces. Y la parte que sí escala **podía** tener un
+> codo por tandas de workers, que un punto no ve. La segunda población se
+> siembra con `EXTRA=n` (clones de una entrada real, borrados en `finally` con
+> el recuento verificado).
+
+**Lo que sale de los dos puntos:**
+
+- **pendiente de la generación: `0.2228 s/ruta`** — `(48.207 − 6.095) / 189`;
+- **ordenada en el origen: `−0.81 s` ≈ 0** ⇒ la generación es **lineal y sin
+  codo hasta 220**. La proyección lineal **se sostiene** en esta fase;
+- **pendiente del TOTAL: `0.2623 s/ruta`** (la diferencia la pone `datos`, que
+  crece con el nº de filas leídas, no con el de rutas);
+- **frío vs tibio: 41.84 vs 43.03 s**, o sea **sin diferencia por encima de la
+  dispersión de las corridas** (39.2–44.6). Con Turbopack, borrar `.next` no se
+  paga: el rebuild en contenedor nuevo cuesta lo mismo que el rebuild en sitio.
+
+**Y la cita de `ENRUTADO.md` §4 —*«el build actual emite 11 en ~1 s; 220 es otro
+orden»*— es falsa en sus dos mitades, cada una por su motivo:**
+
+| mitad | qué pasa |
+|---|---|
+| «11 rutas ≈ 1 s» | **es de una FASE, no del rebuild.** Ningún `next build` termina en un segundo: era la línea que Next imprime al cerrar la generación de estáticas. Leerla como coste de publicación es leer un contenedor por otro |
+| «220 es otro orden» | **de rutas sí; de tiempo NO.** 7.1× de rutas dan **2.2× de tiempo**, porque el coste fijo (36–43 s) domina. El rebuild de 220 rutas no es «otro orden»: es **minuto y medio** |
+
+⚠ **Alcance, y juega a favor:** los 189 clones son de
+`contaminacion-por-metano`, que con **90 815 caracteres de cuerpo** es **la más
+grande de las 7 sembradas** y **4.16×** la media del corpus de blog
+(3 255 212 / 149 = 21 847). **El `0.2228 s/ruta` es una cota SUPERIOR**: la
+población real del grupo A pesa menos y saldría por debajo.
+
+**El ESCALÓN no dispara.** 91 s de rebuild es holgadamente compatible con
+publicar-es-reconstruir; CMS-0c se conserva entero.
+
+#### El hallazgo que diseñó el webhook, y no estaba previsto
+
+> **Un `next build` que falla no deja el build anterior: LO BORRA.** Medido con
+> `kunak-cms-pg` parado — `exit 1`, y `.next` sin `BUILD_ID`, sin `standalone` y
+> sin `prerender-manifest`, los tres comprobados.
+
+Y no hace falta que falle: `next build` vacía su directorio **desde el primer
+segundo**, así que reconstruir en sitio abre una ventana de ~90 s **sin sitio**
+aunque todo vaya bien. La frase tranquilizadora *«si el rebuild falla se sigue
+sirviendo lo de antes»* **es falsa en este proyecto**, y con CMS-0c eso deja de
+ser un detalle de despliegue: es el camino de cada publicación.
+
+De ahí el diseño: `NEXT_DIST_DIR` construye **fuera** (`.next-nuevo`) y se
+**promociona por rename sólo con `exit 0`**. El artefacto servido no se toca
+mientras se construye, y un fallo no le quita ni un byte.
+
+#### La política de idempotencia: COALESCER, con su invariante escrito
+
+> **Para toda publicación P existe un build B que EMPEZÓ después de que P
+> estuviera en la DB.**
+
+| política | ¿cumple? | coste |
+|---|---|---|
+| descartar | ❌ **no** — medido: **3 de 4 disparos sin build posterior** | — |
+| encolar (N) | ✅ sí | N builds, los N−1 primeros publican un estado ya superado |
+| **coalescer** ← | ✅ sí | **≤ 2 builds por ráfaga** |
+
+El pendiente es **un booleano, no un contador**: lo que hay que reconstruir no
+es «una vez por publicación», es **el estado final**, que es uno solo.
+
+⚠ **Y el discriminador NO es el recuento de builds.** «1 build para 4 disparos»
+es también lo que produce un coalescer correcto si los 4 llegan antes de
+arrancar. Lo que separa las políticas es **el nº de disparos huérfanos**, que es
+una comparación de instantes — `0` limpio contra `3 de 4` con descartar.
+
+#### Las tres incógnitas operativas de CMS-0c, contestadas
+
+| incógnita | respuesta |
+|---|---|
+| **quién dispara el webhook** | un hook `afterChange`/`afterDelete` cableado **en `colecciones.ts` para todo lo que no sea del grupo `Sistema`** — no colección a colección. Opt-in por `PUBLICAR_URL`: sin ella es inerte, y eso es lo que impide que `cms:seed` lance 63 rebuilds |
+| **cuánto tarda con las 209 dentro** | **91.41 s** a 220 rutas, cota superior (arriba) |
+| **qué ve el editor** | `GET /estado` del publicador: fase, desde cuándo, `ultimoExito` con su `buildId` y su nº de rutas, y **`ultimoFallo` con código de salida y las últimas 25 líneas — que NO se borra al disparar el siguiente**, sólo cuando un build termina bien |
+
+#### Lo que se midió, con su negativo
+
+| sonda | resultado |
+|---|---|
+| `qa:a-sp13` | 3 corridas frío · 3 tibio · 2 a 220 rutas · DB restaurada |
+| **`qa:publicar`** | **4/4 invariantes**: auth · sin solape · invariante de disparo · el fallo no pisa `.next` |
+| `qa:publicar-neg` | **4/4** (`sin-auth` · `politica-descartar` · `promociona-roto` + control) |
+| **`qa:programada`** | **6/6**: borrador fuera del build · futuro no se publica · vencido se publica UNA vez · preview sin/con credencial · preview fuera del manifiesto |
+| `qa:programada-neg` | 4/4 (`sin-filtro` · `cron-sin-hora` · `preview-abierta` + control) |
+| `qa:html-cmp` vs `html-f24-base` | **31 rutas · 0 con contenido distinto**, dos veces: tras el cambio de `next.config`+hooks y tras el cambio de modelo + reseed |
+| `qa:manifiesto` | 31 rutas · 11 familias · 0 vacías |
+
+#### El defecto propio que hay que llevarse, porque es la regla del cero otra vez
+
+**El filtro de publicación se escribió primero en `todos()` de `local.ts`** —el
+fichero que se anuncia como *«el único sitio por el que este artefacto habla con
+la DB»*— **y no lo usa ninguna familia**: las once leen por `leeColeccion`, que
+hace su propio `find`.
+
+> **Y el Δ0 salió verde igual.** Con las 63 filas sembradas como `publicado`, un
+> filtro que no corre y un filtro correcto emiten **exactamente las mismas 31
+> rutas**. No hay medida de fidelidad que pueda distinguirlos: el falsador no es
+> otro ancho ni otra ruta, **es un borrador**, y por eso `sin-filtro` es el
+> primer sabotaje de `qa:programada-neg`.
+
+Dos sondas más se cobraron lo mismo en esta tanda: `qa:publicar` promocionaba
+sus builds falsos **sobre el `.next` real** y luego medía como «el de antes» un
+`BUILD_ID` que ella misma había escrito; y su segunda corrida habló con **el
+publicador de la corrida anterior** —en Windows `spawn` con `shell: true` mata
+el shell y deja vivo el node—, leyendo `builds: 2` antes del primer disparo.
+Cerrados con `PUBLICAR_DIST` y con una **guarda de identidad por `pid`**: un
+`200 OK` en el puerto no prueba que conteste el proceso que acabas de lanzar.
+
 ---
 
 ## F2-5 · Admin y traspaso

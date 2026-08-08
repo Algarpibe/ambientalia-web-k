@@ -133,10 +133,49 @@ async function contexto(slug: CollectionSlug) {
  * `sort: "id"`, `pagination: false` y la ausencia de `try/catch` son las mismas
  * decisiones de `local.ts` y por las mismas razones — ver su cabecera.
  */
-export async function leeColeccion<T>(slug: CollectionSlug): Promise<T[]> {
+/**
+ * ── EL FILTRO DE PUBLICACIÓN VIVE AQUÍ, y estuvo en el sitio equivocado ──
+ *
+ * F2-4 añade `estado: borrador | publicado` para poder programar salidas y
+ * previsualizar. El filtro se escribió primero en `todos()` de `local.ts` —el
+ * fichero que se anuncia como *«el único sitio por el que este artefacto habla
+ * con la DB»*— y **`todos()` no lo usa ninguna familia**: las once leen por
+ * aquí, que hace su propio `find`.
+ *
+ * Lo que lo hace digno de escribirse es que **el Δ0 salió verde igualmente**:
+ * con las 63 filas sembradas como `publicado`, un filtro que no corre y un
+ * filtro correcto emiten exactamente las mismas 31 rutas. Es la regla del cero
+ * en su forma más cara —*no filtrar nada y filtrar bien dan la misma salida*—
+ * y la habría cobrado el primer borrador de verdad, sirviéndolo.
+ *
+ * ⚠ Y por eso el filtro se deriva de la config (¿tiene la colección el campo?)
+ * en vez de listar colecciones: la lista habría hecho falta en los dos sitios.
+ */
+function filtraPublicados(cfg: Coleccion, conBorradores: boolean) {
+  /* ⚠ Punto de sabotaje de `qa:programada-neg`, declarado y ruidoso: sin él,
+   * «el borrador no sale en el build» sería una frase sin instrumento. Sólo se
+   * activa con la variable puesta, y el negativo reconstruye sin ella. */
+  if (process.env.PROGRAMADA_SABOTAJE === "sin-filtro") {
+    console.error("⚠⚠ PROGRAMADA_SABOTAJE=sin-filtro: el build va a emitir BORRADORES");
+    return {};
+  }
+  const tieneEstado = cfg.fields.some((f) => "name" in f && f.name === "estado");
+  return tieneEstado && !conBorradores ? { where: { estado: { equals: "publicado" } } } : {};
+}
+
+export async function leeColeccion<T>(
+  slug: CollectionSlug,
+  { conBorradores = false }: { conBorradores?: boolean } = {},
+): Promise<T[]> {
   const payload = await cms();
   const { cfg, ctx } = await contexto(slug);
-  const { docs } = await payload.find({ collection: slug, pagination: false, depth: 1, sort: "id" });
+  const { docs } = await payload.find({
+    collection: slug,
+    pagination: false,
+    depth: 1,
+    sort: "id",
+    ...filtraPublicados(cfg, conBorradores),
+  });
   const devuelve = devuelveDe(slug);
   return docs.map((d) => devuelve(aMedido(cfg.fields, d, ctx, slug))) as T[];
 }

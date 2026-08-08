@@ -59,3 +59,11 @@ scripts/qa/.tmp/
 # corrida (determinismo, §F2-2) y en producción es el volumen persistente de
 # CMS-0b. Tenerlo en git haría que cada seed ensuciara el árbol con binarios.
 media/
+
+# F2-4 · publicador: los árboles de build fuera de sitio y su estado
+.next-nuevo/
+.next-anterior/
+.next-prueba*/
+scripts/publicar/estado*.json
+.next-p1/
+.next-prog*/

@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "sonda": "a-sp13",
+    "que": "coste del rebuild por fases; la fase que escala con el nº de rutas se aísla",
+    "fecha": "2026-08-07",
+    "config": {
+      "fecha": "2026-08-07",
+      "modo": "frio",
+      "node": "v26.4.0",
+      "next": "16.2.12",
+      "so": "Windows_NT 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 9 285H",
+      "nucleos": 16,
+      "ramGB": 31.4,
+      "postgres": "docker kunak-cms-pg · postgres:17-alpine · localhost:55432"
+    },
+    "corridas": 2,
+    "extraSinteticas": 189,
+    "poblacion": "REAL + 189 clones sintéticos de \"contaminacion-por-metano\"",
+    "alcance": "Un tiempo es propiedad de ESTA máquina, ESTA fecha y ESTA configuración. Ninguna cifra de aquí se cita sin `meta.config` al lado."
+  },
+  "resumen": {
+    "rutas": 220,
+    "total": {
+      "min": 86.809,
+      "mediana": 91.409,
+      "max": 96.008
+    },
+    "fases": {
+      "arranque": {
+        "mediana": 3.293,
+        "min": 3.248,
+        "max": 3.339
+      },
+      "compilacion": {
+        "mediana": 10.424,
+        "min": 8.206,
+        "max": 12.641
+      },
+      "typescript": {
+        "mediana": 10.262,
+        "min": 8.403,
+        "max": 12.122
+      },
+      "datos": {
+        "mediana": 14.27,
+        "min": 13.761,
+        "max": 14.778
+      },
+      "generacion": {
+        "mediana": 48.207,
+        "min": 47.451,
+        "max": 48.963
+      },
+      "cierre": {
+        "mediana": 4.953,
+        "min": 4.165,
+        "max": 5.74
+      }
+    },
+    "fijo": 43.202,
+    "porRuta": 0.2191
+  },
+  "corridas": [
+    {
+      "n": 1,
+      "codigo": 0,
+      "total": 86.809,
+      "fases": {
+        "arranque": 3.248,
+        "compilacion": 8.206,
+        "typescript": 8.403,
+        "datos": 13.761,
+        "generacion": 47.451,
+        "cierre": 5.74
+      },
+      "faltan": [],
+      "rutasNext": 223,
+      "autoinforme": {
+        "compilacion": 7.8,
+        "typescript": 8.4,
+        "generacion": 47
+      },
+      "rutas": 220,
+      "familias": {
+        "/": 1,
+        "/[slug]": 199,
+        "/accesorios": 1,
+        "/case-studies/[slug]": 1,
+        "/casos-de-exito/[slug]": 3,
+        "/faqs/[slug]": 2,
+        "/kunak-api": 1,
+        "/monitor-calidad-aire": 1,
+        "/recursos/[...ruta]": 4,
+        "/sectores/[slug]": 6,
+        "/software-de-medicion-calidad-del-aire": 1
+      }
+    },
+    {
+      "n": 2,
+      "codigo": 0,
+      "total": 96.008,
+      "fases": {
+        "arranque": 3.339,
+        "compilacion": 12.641,
+        "typescript": 12.122,
+        "datos": 14.778,
+        "generacion": 48.963,
+        "cierre": 4.165
+      },
+      "faltan": [],
+      "rutasNext": 223,
+      "autoinforme": {
+        "compilacion": 12,
+        "typescript": 12.1,
+        "generacion": 49
+      },
+      "rutas": 220,
+      "familias": {
+        "/": 1,
+        "/[slug]": 199,
+        "/accesorios": 1,
+        "/case-studies/[slug]": 1,
+        "/casos-de-exito/[slug]": 3,
+        "/faqs/[slug]": 2,
+        "/kunak-api": 1,
+        "/monitor-calidad-aire": 1,
+        "/recursos/[...ruta]": 4,
+        "/sectores/[slug]": 6,
+        "/software-de-medicion-calidad-del-aire": 1
+      }
+    }
+  ],
+  "dbRestaurada": true
+}

@@ -93,6 +93,24 @@
  * (`sondeo.neg.mjs` no lo cubre; lo cubre el round-trip, que sin esto no da Δ0).
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/**
+ * ¿Es un campo de INFRAESTRUCTURA declarado por el esquema? (F2-4)
+ *
+ * Distinto de `esSintetico`, y a propósito: aquél reconoce lo que **Payload
+ * inyecta** —y lo reconoce por su forma, porque nadie lo declara—; éste
+ * reconoce lo que **el esquema declara** como no-dato. `estado` y `publicarEn`
+ * existen para publicar, no para describir el original: no salen de ninguna
+ * medición, no viajan al HTML y no tienen contraparte en `src/lib`.
+ *
+ * ⚠ **Se reconoce por la DECLARACIÓN, nunca por el nombre.** Un
+ * `SIN_MEDIR = ["estado", …]` aquí sería una lista a mano que borraría en
+ * silencio un campo medido que se llamara igual — que es exactamente el
+ * argumento que `esSintetico` ya escribió, aplicado a la otra mitad.
+ */
+export function esInfraestructura(campo) {
+  return campo?.custom?.infraestructura === true;
+}
+
 /** ¿Lo puso `buildConfig` o lo escribió el esquema? */
 export function esSintetico(campo) {
   if (!campo?.name) return false;
@@ -104,8 +122,9 @@ export function esSintetico(campo) {
   return false;
 }
 
-/** Los campos del esquema, sin los que Payload se inventa. */
-export const camposPropios = (campos) => (campos ?? []).filter((c) => !esSintetico(c));
+/** Los campos MEDIDOS: sin los que Payload se inventa y sin los de infraestructura. */
+export const camposPropios = (campos) =>
+  (campos ?? []).filter((c) => !esSintetico(c) && !esInfraestructura(c));
 
 /* ══════════════════════════════════════════════════════════════════════════
  * `MonoInline` ↔ Lexical — la ida y la vuelta, y tienen que ser inversas

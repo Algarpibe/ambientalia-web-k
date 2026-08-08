@@ -30,6 +30,69 @@ import {
 import { media } from "./colecciones/media.ts";
 import { slugs } from "./colecciones/slugs.ts";
 import { usuarios } from "./colecciones/usuarios.ts";
+import { avisaAlPublicador, fundeHooks } from "./hooks/avisa-publicador.ts";
+import { PUBLICACION } from "./campos/comunes.ts";
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL DISPARO DEL REBUILD SE CABLEA AQUÍ, NO COLECCIÓN A COLECCIÓN — F2-4
+ *
+ * Añadir `hooks: avisaAlPublicador(...)` a mano en cada fichero sería **una
+ * lista escrita a mano de quince entradas**, y este repo ya tiene catalogado lo
+ * que pasa con ésas: la número dieciséis se olvida, y su olvido no da error —
+ * da una colección que se puede publicar **sin que el sitio se reconstruya**,
+ * o sea un cambio guardado que no llega a servirse y nadie se entera.
+ *
+ * ── El predicado, y por qué NO es «las de contenido» ─────────────────────
+ * Se deriva de la config: **dispara todo lo que NO esté en el grupo `Sistema`**.
+ * Y el complemento se declara al revés a propósito —lista lo que se EXCLUYE, no
+ * lo que se incluye— porque el defecto seguro es disparar de más: una colección
+ * nueva entra disparando sola, y lo peor que puede pasar es un build sobrante.
+ * Con la lista al derecho, lo peor que puede pasar es una publicación que no se
+ * publica.
+ *
+ * Los dos excluidos, con su razón medida:
+ *
+ *   · `usuarios` — auth. Cambiar una contraseña no cambia un byte del HTML;
+ *   · `slugs`    — **y aquí no es sólo que no haga falta: es que haría daño.**
+ *     Lo escriben los hooks de las otras colecciones (§4), así que un guardado
+ *     de contenido produce *dos* escrituras —el documento y su slug— y por tanto
+ *     **dos disparos por un solo acto de publicar**. El coalescer lo absorbe,
+ *     pero el recuento de `GET /estado` mentiría al editor, que es la cifra que
+ *     F2-4 le pone delante.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SIN_DISPARO = "Sistema";
+
+const conDisparo = (c: CollectionConfig): CollectionConfig =>
+  c.admin?.group === SIN_DISPARO
+    ? c
+    : { ...c, hooks: fundeHooks(c.hooks ?? {}, avisaAlPublicador(c.slug)) };
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS CAMPOS DE PUBLICACIÓN — F2-4, y su reparto se declara AL REVÉS que el
+ * del disparo, por una razón que hay que decir en voz alta.
+ *
+ * El disparo lista lo que **excluye**: el defecto seguro es disparar de más y
+ * lo peor que puede pasar es un build sobrante. Aquí el defecto seguro es el
+ * contrario, y por eso la lista es de lo que **incluye**:
+ *
+ *   > Un `estado: "borrador"` en una TAXONOMÍA o en un MEDIA no es «un poco de
+ *   > más»: es una relación rota. Una categoría en borrador la sigue apuntando
+ *   > una entrada publicada, y ahí no hay nada que publicar — la categoría no
+ *   > es una página, es una clasificación.
+ *
+ * Así que se publican los tres grupos que **son páginas o piezas de página** —
+ * `Contenido`, `Páginas`, `Catálogo`— y NO `Taxonomías`, `Media` ni `Sistema`.
+ * Sale de una declaración que la config ya tiene (`admin.group`), no de una
+ * lista de slugs paralela: una colección nueva tiene que elegir grupo de todas
+ * formas, así que no hay nada que mantener sincronizado.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const GRUPOS_PUBLICABLES = new Set(["Contenido", "Páginas", "Catálogo"]);
+
+export const esPublicable = (c: CollectionConfig) =>
+  GRUPOS_PUBLICABLES.has(c.admin?.group as string);
+
+const conPublicacion = (c: CollectionConfig): CollectionConfig =>
+  esPublicable(c) ? { ...c, fields: [...c.fields, ...PUBLICACION] } : c;
 
 export const COLECCIONES: CollectionConfig[] = [
   // Páginas de sector (§1.4 · §1.5 · §1.5b)
@@ -59,7 +122,9 @@ export const COLECCIONES: CollectionConfig[] = [
   // unicidad ENTRE familias hecha objeto. La escriben los hooks.
   slugs,
   usuarios,
-];
+]
+  .map(conPublicacion)
+  .map(conDisparo);
 
 export {
   articulosKb,

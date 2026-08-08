@@ -752,3 +752,95 @@ export const anchoPct: Field = conDefecto(
 
 /** Base de todo módulo: su ritmo y su ancho. */
 export const moduloBase: Field[] = [ritmoModulo, anchoPct];
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA PUBLICACIÓN — F2-4. Dos campos, y son INFRAESTRUCTURA, no dato medido.
+ *
+ * ── Qué problema resuelven ────────────────────────────────────────────────
+ * F2-4 pide dos cosas que hoy no se pueden ni enunciar: **publicación
+ * programada** (§F2-4 · el cron) y **preview de borradores** (§F2-4 · la única
+ * grieta de runtime). Las dos necesitan que un documento pueda existir en la DB
+ * **sin estar en el sitio**, y hasta hoy todo lo que estaba en la DB salía.
+ *
+ * ── ⚠ POR QUÉ NO SE USAN LOS DRAFTS NATIVOS DE PAYLOAD ───────────────────
+ * Payload trae `versions: { drafts: true }` y hace justo esto. Se descarta con
+ * su coste dicho, no por no haberlo mirado:
+ *
+ *   · **crea una tabla `_v` por colección** —trece— y con ellas un `_status`
+ *     cuyo defecto cambia la semántica de TODA consulta existente. Un `find`
+ *     sin `draft: true` deja de devolver lo que devolvía, y en este proyecto
+ *     eso significa **un build que emite menos rutas sin dar un solo error**:
+ *     el modo de fallo exacto que `qa:manifiesto` existe para cazar;
+ *   · y su ventaja real —**previsualizar cambios sobre un documento YA
+ *     PUBLICADO**— es la que aquí no se compra. Con estos dos campos se pueden
+ *     previsualizar **borradores** (documentos que aún no han salido), no
+ *     ediciones de uno vivo.
+ *
+ * > **Se declara la limitación en vez de esconderla:** editar una página
+ * > publicada no tiene preview; sale en el siguiente rebuild. Subir a drafts
+ * > nativos es un cambio de migración, no de modelo — los dos campos se
+ * > traducen a `_status` y a la fecha de `schedulePublish`.
+ *
+ * ── Y por qué llevan `custom.infraestructura` ────────────────────────────
+ * No son dato medido: no salen de ninguna medición del original, no viajan al
+ * HTML y no tienen contraparte en `src/lib`. Sin la marca, el proyector los
+ * devolvería como si fueran dato y **`qa:cms-roundtrip` fallaría en las 63
+ * filas** — la ida no los trae y la vuelta sí. Se marcan **declarándolo en el
+ * campo**, no con una lista de nombres en el walker: una lista se pudre y
+ * borraría un campo medido que se llamara igual (mismo argumento que
+ * `esSintetico`, `mapeo.mjs`).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * ⚠ **El defecto es `borrador`, y es una decisión editorial, no técnica.**
+ *
+ * Con `publicado` por defecto, crear un documento lo publica: nada sale mal
+ * hasta el día que alguien empieza una página a medias y el siguiente rebuild
+ * la sirve. Con `borrador`, lo peor que pasa es que haya que pulsar publicar.
+ *
+ * **Y su precio, dicho porque hay que pagarlo:** el seed tiene que escribir
+ * `publicado` en los 63 documentos **explícitamente**. Si se le olvida, el
+ * build emite **cero rutas por familia** — que no es un fallo silencioso
+ * porque `qa:manifiesto` grita exactamente eso, y por eso está en `npm run
+ * check`.
+ */
+export const ESTADO_PUBLICACION: Field = {
+  name: "estado",
+  type: "select",
+  required: true,
+  defaultValue: "borrador",
+  index: true,
+  options: [
+    { label: "Borrador", value: "borrador" },
+    { label: "Publicado", value: "publicado" },
+  ],
+  admin: {
+    position: "sidebar",
+    description: "Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.",
+  },
+  custom: { infraestructura: true },
+};
+
+/**
+ * La hora a la que el cron debe publicarlo. Vacío = no programado.
+ *
+ * ⚠ **No publica por sí solo.** Lo servido es HTML estático y no sabe qué hora
+ * es (CMS-0c), así que sin alguien preguntando *«¿ha llegado la hora de
+ * alguno?»* esta fecha no hace absolutamente nada. Quien pregunta es
+ * `POST /cron` del publicador, y quien le da el reloj es el cron del sistema.
+ */
+export const PUBLICAR_EN: Field = {
+  name: "publicarEn",
+  type: "date",
+  index: true,
+  admin: {
+    position: "sidebar",
+    date: { pickerAppearance: "dayAndTime" },
+    description:
+      "Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.",
+  },
+  custom: { infraestructura: true },
+};
+
+/** Los dos, para añadirlos de una vez. */
+export const PUBLICACION: Field[] = [ESTADO_PUBLICACION, PUBLICAR_EN];

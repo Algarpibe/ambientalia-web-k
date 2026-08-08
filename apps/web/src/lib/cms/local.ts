@@ -70,13 +70,36 @@ export function cms(): Promise<Payload> {
  * cero silencioso del que este fichero protege. Tipada, el error es de
  * compilación.
  */
-export async function todos<T>(coleccion: CollectionSlug): Promise<T[]> {
+/**
+ * ── EL FILTRO DE PUBLICACIÓN — F2-4 ──────────────────────────────────────
+ * Desde F2-4 un documento puede existir en la DB **sin estar en el sitio**
+ * (`estado: "borrador"`, para poder programar su salida y previsualizarlo). El
+ * build es el único sitio donde se decide qué rutas hay (§4 · CMS-0c), así que
+ * es aquí donde el borrador se queda fuera.
+ *
+ * ⚠ **El filtro se aplica sólo donde el campo EXISTE, y eso se deriva de la
+ * config**, no de una lista de colecciones. Las taxonomías y el media no
+ * publican —no son páginas—, y un `where` contra un campo que no está no da
+ * cero: da error o, peor, un cero que se lee como «no hay nada» (§regla 6).
+ */
+function publica(payload: Payload, coleccion: CollectionSlug): boolean {
+  const c = payload.config.collections.find((x) => x.slug === coleccion);
+  return !!c?.fields.some((f) => "name" in f && f.name === "estado");
+}
+
+export async function todos<T>(
+  coleccion: CollectionSlug,
+  { conBorradores = false }: { conBorradores?: boolean } = {},
+): Promise<T[]> {
   const payload = await cms();
   const { docs } = await payload.find({
     collection: coleccion,
     pagination: false,
     depth: 0,
     sort: "id",
+    ...(publica(payload, coleccion) && !conBorradores
+      ? { where: { estado: { equals: "publicado" } } }
+      : {}),
   });
   return docs as T[];
 }

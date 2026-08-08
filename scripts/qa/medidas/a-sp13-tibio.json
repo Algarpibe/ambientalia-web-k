@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "sonda": "a-sp13",
+    "que": "coste del rebuild por fases; la fase que escala con el nº de rutas se aísla",
+    "fecha": "2026-08-07",
+    "config": {
+      "fecha": "2026-08-07",
+      "modo": "tibio",
+      "node": "v26.4.0",
+      "next": "16.2.12",
+      "so": "Windows_NT 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 9 285H",
+      "nucleos": 16,
+      "ramGB": 31.4,
+      "postgres": "docker kunak-cms-pg · postgres:17-alpine · localhost:55432"
+    },
+    "corridas": 3,
+    "extraSinteticas": 0,
+    "poblacion": "REAL (la sembrada por cms:seed)",
+    "alcance": "Un tiempo es propiedad de ESTA máquina, ESTA fecha y ESTA configuración. Ninguna cifra de aquí se cita sin `meta.config` al lado."
+  },
+  "resumen": {
+    "rutas": 31,
+    "total": {
+      "min": 40.935,
+      "mediana": 43.035,
+      "max": 44.634
+    },
+    "fases": {
+      "arranque": {
+        "mediana": 3.946,
+        "min": 3.937,
+        "max": 4.93
+      },
+      "compilacion": {
+        "mediana": 8.503,
+        "min": 7.884,
+        "max": 9.154
+      },
+      "typescript": {
+        "mediana": 8.868,
+        "min": 8.222,
+        "max": 9.846
+      },
+      "datos": {
+        "mediana": 13.002,
+        "min": 11.785,
+        "max": 13.12
+      },
+      "generacion": {
+        "mediana": 5.45,
+        "min": 5.43,
+        "max": 6.041
+      },
+      "cierre": {
+        "mediana": 2.684,
+        "min": 2.654,
+        "max": 3.148
+      }
+    },
+    "fijo": 37.585,
+    "porRuta": 0.1758
+  },
+  "corridas": [
+    {
+      "n": 1,
+      "codigo": 0,
+      "total": 40.935,
+      "fases": {
+        "arranque": 4.93,
+        "compilacion": 7.884,
+        "typescript": 8.222,
+        "datos": 11.785,
+        "generacion": 5.43,
+        "cierre": 2.684
+      },
+      "faltan": [],
+      "rutasNext": 34,
+      "autoinforme": {
+        "compilacion": 7.5,
+        "typescript": 8.2,
+        "generacion": 5.4
+      },
+      "rutas": 31,
+      "familias": {
+        "/": 1,
+        "/[slug]": 10,
+        "/accesorios": 1,
+        "/case-studies/[slug]": 1,
+        "/casos-de-exito/[slug]": 3,
+        "/faqs/[slug]": 2,
+        "/kunak-api": 1,
+        "/monitor-calidad-aire": 1,
+        "/recursos/[...ruta]": 4,
+        "/sectores/[slug]": 6,
+        "/software-de-medicion-calidad-del-aire": 1
+      }
+    },
+    {
+      "n": 2,
+      "codigo": 0,
+      "total": 43.035,
+      "fases": {
+        "arranque": 3.946,
+        "compilacion": 8.503,
+        "typescript": 8.868,
+        "datos": 13.12,
+        "generacion": 5.45,
+        "cierre": 3.148
+      },
+      "faltan": [],
+      "rutasNext": 34,
+      "autoinforme": {
+        "compilacion": 8,
+        "typescript": 8.9,
+        "generacion": 5.5
+      },
+      "rutas": 31,
+      "familias": {
+        "/": 1,
+        "/[slug]": 10,
+        "/accesorios": 1,
+        "/case-studies/[slug]": 1,
+        "/casos-de-exito/[slug]": 3,
+        "/faqs/[slug]": 2,
+        "/kunak-api": 1,
+        "/monitor-calidad-aire": 1,
+        "/recursos/[...ruta]": 4,
+        "/sectores/[slug]": 6,
+        "/software-de-medicion-calidad-del-aire": 1
+      }
+    },
+    {
+      "n": 3,
+      "codigo": 0,
+      "total": 44.634,
+      "fases": {
+        "arranque": 3.937,
+        "compilacion": 9.154,
+        "typescript": 9.846,
+        "datos": 13.002,
+        "generacion": 6.041,
+        "cierre": 2.654
+      },
+      "faltan": [],
+      "rutasNext": 34,
+      "autoinforme": {
+        "compilacion": 8.7,
+        "typescript": 9.8,
+        "generacion": 6
+      },
+      "rutas": 31,
+      "familias": {
+        "/": 1,
+        "/[slug]": 10,
+        "/accesorios": 1,
+        "/case-studies/[slug]": 1,
+        "/casos-de-exito/[slug]": 3,
+        "/faqs/[slug]": 2,
+        "/kunak-api": 1,
+        "/monitor-calidad-aire": 1,
+        "/recursos/[...ruta]": 4,
+        "/sectores/[slug]": 6,
+        "/software-de-medicion-calidad-del-aire": 1
+      }
+    }
+  ],
+  "dbRestaurada": null
+}
