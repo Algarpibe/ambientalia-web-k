@@ -2,7 +2,10 @@
  * LA GUARDA DEL PUBLICADOR — F2-4. Cuatro invariantes, y ninguno es «tarda poco».
  *
  * Uso:  npm run qa:publicar
- * Negativo:  npm run qa:publicar-neg   (4 sabotajes + control)
+ * Negativo:  npm run qa:publicar-neg   (3 sabotajes + control = 4 casos)
+ *   ⚠ decía «4 sabotajes» y son 3. El recuento no mintió en la salida porque el
+ *   contrato lo DERIVA de `casos.length` (§sondas 9: un número recordado y uno
+ *   derivado se escriben igual y no valen lo mismo) — pero la cabecera sí.
  *
  * ── Qué prueba, y por qué CADA uno hace falta ─────────────────────────────
  *

@@ -38,6 +38,25 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    /**
+     * ⚠ **LOS ÁRBOLES DE BUILD ALTERNOS — F2-4, y su ausencia rompía `check`.**
+     *
+     * Desde F2-4 el publicador construye fuera de sitio (`NEXT_DIST_DIR`) y
+     * promociona por rename, así que junto a `.next` conviven `.next-nuevo`,
+     * `.next-anterior` y el que cada sonda estrene (`.next-e2e`, `.next-prog`…).
+     * El ignore de arriba nombra **`.next` y sólo `.next`**, de modo que en
+     * cuanto una corrida deja un hermano, `eslint` se pone a linter **código
+     * generado**: medido el 2026-08-08, **502 errores y 10 187 avisos** que no
+     * son de ninguna fuente del repo.
+     *
+     * Y el modo de fallo es el peor de los dos posibles: no es que `check` deje
+     * pasar algo, es que **se pone rojo por un motivo que no existe** — y un
+     * rojo que no significa nada es un rojo que se acaba ignorando.
+     *
+     * Comodín anclado al prefijo, igual que en `.gitignore`, y por lo mismo: la
+     * lista a mano se queda corta en la siguiente sonda.
+     */
+    ".next-*/**",
   ]),
 ]);
 

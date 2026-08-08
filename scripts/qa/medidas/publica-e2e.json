@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "sabotaje": null,
+    "slug": "qa-e2e-1786201540530"
+  },
+  "invariantes": {
+    "E1·sin PUBLICAR_URL el hook es inerte": {
+      "ok": true,
+      "detalle": "guardado con la variable quitada ⇒ 0 disparos"
+    },
+    "E2·guardar DISPARA": {
+      "ok": true,
+      "detalle": "1 disparo(s) · motivo «entradas-blog:qa-e2e-1786201540530 update»"
+    },
+    "E3·un guardado, UN disparo": {
+      "ok": true,
+      "detalle": "1 guardado ⇒ 1 disparo · 0 avisos de `slugs` en 2 motivos"
+    },
+    "E4·el cambio llega SERVIDO": {
+      "ok": true,
+      "detalle": "alta ⇒ 31→32 rutas con /qa-e2e-1786201540530 dentro (build d2SOzVWKEKVQLrqhzkpVr) · baja ⇒ 31 y fuera (build f1a9L0hniEWs57YcKxMC0)"
+    }
+  }
+}

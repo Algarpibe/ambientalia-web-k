@@ -128,7 +128,9 @@
     "qa:publicar-neg": "node scripts/qa/publicar.neg.mjs",
     "publicar": "node --env-file=apps/cms/.env scripts/publicar/publicador.mjs",
     "qa:programada": "node --env-file=apps/cms/.env scripts/qa/programada.mjs",
-    "qa:programada-neg": "node --env-file=apps/cms/.env scripts/qa/programada.neg.mjs"
+    "qa:programada-neg": "node --env-file=apps/cms/.env scripts/qa/programada.neg.mjs",
+    "qa:publica-e2e": "node --env-file=apps/cms/.env scripts/qa/publica-e2e.mjs",
+    "qa:publica-e2e-neg": "node --env-file=apps/cms/.env scripts/qa/publica-e2e.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

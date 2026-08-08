@@ -2,7 +2,7 @@
   "meta": {
     "sonda": "publicar",
     "que": "los 4 invariantes del publicador de F2-4 (auth · sin solape · invariante de disparo · fallo no pisa .next)",
-    "fecha": "2026-08-07",
+    "fecha": "2026-08-08",
     "sabotaje": "promociona-roto"
   },
   "invariantes": {
@@ -20,7 +20,7 @@
     },
     "D·fallo no pisa .next": {
       "ok": false,
-      "detalle": "un build FALLIDO tocó `.next`: BUILD_ID ncORn1YsuVaw1YbAzN9F9 → (borrado) · manifiesto false · standalone false"
+      "detalle": "un build FALLIDO tocó `.next`: BUILD_ID l4PWpt4KOcPwHedDAuSdF → (borrado) · manifiesto false · standalone false"
     }
   },
   "violados": 1

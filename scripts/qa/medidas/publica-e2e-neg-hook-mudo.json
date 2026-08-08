@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "sabotaje": "hook-mudo",
+    "slug": "qa-e2e-1786203012889"
+  },
+  "invariantes": {
+    "E1·sin PUBLICAR_URL el hook es inerte": {
+      "ok": true,
+      "detalle": "guardado con la variable quitada ⇒ 0 disparos"
+    },
+    "E2·guardar DISPARA": {
+      "ok": false,
+      "detalle": "0 disparos con PUBLICAR_URL puesto: el hook NO está cableado"
+    },
+    "E3·un guardado, UN disparo": {
+      "ok": false,
+      "detalle": "1 guardado ⇒ 0 disparos · 0 de `slugs` (se esperaba 1 y 0)"
+    },
+    "E4·el cambio llega SERVIDO": {
+      "ok": true,
+      "detalle": "alta ⇒ 31→32 rutas con /qa-e2e-1786203012889 dentro (build SS1-GBGT1LcFyspzibqxa) · baja ⇒ 31 y fuera (build QW-n0omdw3DyN85ayIhWr)"
+    }
+  }
+}

@@ -264,7 +264,30 @@ function construye() {
  * rename falla, la excepción sube y el build se marca fallido. Un «promocionado»
  * que en realidad no promocionó es exactamente el fallo silencioso que este
  * fichero existe para evitar.
- */
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠ CORREGIDO 2026-08-08 (`qa:publica-e2e`) · LA CURA REINTRODUCÍA LA ENFERMEDAD
+ *
+ * La frase de arriba —*«la excepción sube y el build se marca fallido»*— era
+ * **falsa como estaba implementada**, y de las dos mitades falla la segunda:
+ * `dispara()` llama a `bombea()` **sin `await` y sin `catch`**, así que la
+ * excepción no subía a ningún sitio — era una **rechazo no capturado** y mataba
+ * el proceso. Nadie marcaba nada. Es §sondas 3 (*documentado no es conectado*)
+ * dentro del propio publicador.
+ *
+ * **Y lo que dejaba detrás es lo grave.** La promoción son DOS renames:
+ *
+ *   1 · `.next` → `.next-anterior`     2 · `.next-nuevo` → `.next`
+ *
+ * Morir entre los dos deja el árbol **sin `.next`** — que es, palabra por
+ * palabra, el modo de fallo que la §2 de este fichero existe para cerrar,
+ * reintroducido por la propia cura. Medido dos veces el 2026-08-08, la segunda
+ * con el publicador muerto y `.next` ausente durante 7 minutos.
+ *
+ * Dos renames no se pueden hacer atómicos. Lo que sí se puede es **no dejar la
+ * ventana abierta**: si el segundo falla, se deshace el primero y el artefacto
+ * que ya se servía vuelve a su sitio antes de propagar el error.
+ * ═════════════════════════════════════════════════════════════════════════ */
 async function promociona() {
   if (!fs.existsSync(path.join(DIST_NUEVO, "BUILD_ID")))
     throw new Error(
@@ -273,8 +296,20 @@ async function promociona() {
     );
   await paraServidor();
   fs.rmSync(DIST_ANTERIOR, { recursive: true, force: true });
-  if (fs.existsSync(DIST)) fs.renameSync(DIST, DIST_ANTERIOR);
-  fs.renameSync(DIST_NUEVO, DIST);
+
+  const apartado = fs.existsSync(DIST);
+  if (apartado) fs.renameSync(DIST, DIST_ANTERIOR);
+  try {
+    fs.renameSync(DIST_NUEVO, DIST);
+  } catch (e) {
+    /* NO se traga el error (§regla 6): se cierra la ventana y se relanza con la
+     * causa dentro, para que `ultimoFallo` diga qué pasó y no sólo que pasó. */
+    if (apartado && !fs.existsSync(DIST)) {
+      fs.renameSync(DIST_ANTERIOR, DIST);
+      log(`⚠ la promoción falló y se ha DESHECHO: \`${NOMBRE_DIST}\` vuelve a ser el de antes`);
+    }
+    throw new Error(`no se pudo promocionar \`${NOMBRE_DIST}-nuevo\` → \`${NOMBRE_DIST}\`: ${e.message}`);
+  }
   arrancaServidor();
   return fs.readFileSync(path.join(DIST, "BUILD_ID"), "utf8").trim();
 }
@@ -367,6 +402,28 @@ async function bombea() {
       estado.pendiente = false;
       await unaVuelta(motivo);
     }
+  } catch (e) {
+    /* ⚠ **UN PUBLICADOR QUE SE MUERE ES UN WEBHOOK QUE FALLA EN SILENCIO**, que
+     * es justo lo que la §3 de este fichero dice que no puede pasar — sólo que
+     * peor, porque además se lleva el `GET /estado` con el que quien publicó
+     * iba a enterarse.
+     *
+     * Esto NO es tragarse el error (§regla 6): el error **cambia de canal** y
+     * el canal de destino es el que el editor ya tiene que mirar. Se escribe en
+     * `ultimoFallo` con su causa, se grita por stderr, y `ultimoFallo` NO se
+     * borra hasta que un build termine bien.
+     *
+     * Antes de esto, `dispara()` llamaba a `bombea()` sin `await` y sin
+     * `catch`: cualquier throw de `promociona()` era un rechazo no capturado y
+     * mataba el proceso. Medido dos veces el 2026-08-08 con `qa:publica-e2e`. */
+    estado.ultimoFallo = {
+      cuando: new Date().toISOString(),
+      motivo: estado.motivo ?? "(sin motivo)",
+      codigo: null,
+      donde: "promoción",
+      cola: String(e?.stack || e?.message || e),
+    };
+    log(`❌❌ el bucle de build REVENTÓ y el publicador sigue vivo a propósito: ${e?.message || e}`);
   } finally {
     corriendo = false;
     estado.fase = "ocioso";
@@ -537,9 +594,60 @@ export async function publicaVencidos(ahora = new Date()) {
   };
 }
 
+/**
+ * ── LA VENTANA DE LA PROMOCIÓN, y NO es teórica: se midió cayendo dentro ──
+ *
+ * La cabecera de `promociona()` dice que un `rename` en el mismo volumen es
+ * atómico. Es cierto **de un rename**, y la promoción hace **dos**:
+ *
+ *   1 · `.next` → `.next-anterior`
+ *   2 · `.next-nuevo` → `.next`
+ *
+ * Entre los dos hay un instante en el que **`.next` no existe**. Morir ahí no
+ * deja el sitio desactualizado: lo deja **sin sitio** — que es exactamente el
+ * modo de fallo que toda la §2 de este fichero viene a cerrar, reintroducido
+ * por la propia cura.
+ *
+ * > **Medido el 2026-08-08 en la corrida de `qa:publica-e2e`:** la sonda murió
+ * > por un `ECONNRESET` mientras el publicador promocionaba el build #2, y el
+ * > árbol quedó con `.next` **ausente**, `.next-anterior` = build #1 (32 rutas)
+ * > y `.next-nuevo` = build #2 (31 rutas). No se perdió nada, pero **hacía falta
+ * > una persona** para saber cuál de los dos era el bueno.
+ *
+ * Dos renames no se pueden hacer atómicos, así que lo que se añade no es una
+ * garantía de que la ventana no exista —existe— sino **que salir de ella no
+ * dependa de nadie**: al arrancar, si falta `DIST` y hay un `DIST_NUEVO`
+ * completo, se termina la promoción que se quedó a medias; y si no lo hay, se
+ * devuelve el anterior. Se GRITA en los dos casos: un arranque que repara algo
+ * en silencio es un fallo que nadie investiga.
+ */
+function reparaPromocionAMedias() {
+  if (fs.existsSync(path.join(DIST, "BUILD_ID"))) return;
+
+  const nuevoOk = fs.existsSync(path.join(DIST_NUEVO, "BUILD_ID"));
+  const anteriorOk = fs.existsSync(path.join(DIST_ANTERIOR, "BUILD_ID"));
+  if (!nuevoOk && !anteriorOk) {
+    log(`⚠ no hay artefacto: ni ${NOMBRE_DIST}, ni -nuevo, ni -anterior. Hace falta un build.`);
+    return;
+  }
+
+  /* El nuevo gana: si existe entero, el build que lo produjo salió 0 —es la
+   * única forma de que `promociona()` llegue a renombrar— así que terminar la
+   * promoción es lo que iba a pasar. El anterior es el respaldo. */
+  const origen = nuevoOk ? DIST_NUEVO : DIST_ANTERIOR;
+  fs.renameSync(origen, DIST);
+  const buildId = fs.readFileSync(path.join(DIST, "BUILD_ID"), "utf8").trim();
+  estado.reparado = { cuando: new Date().toISOString(), desde: path.basename(origen), buildId };
+  log(
+    `⚠⚠ PROMOCIÓN A MEDIAS REPARADA — \`${NOMBRE_DIST}\` no existía y se ha restaurado desde ` +
+      `\`${path.basename(origen)}\` (${buildId}). El proceso anterior murió entre los dos renames.`,
+  );
+}
+
 servidor.listen(PUERTO, () => {
   estado.ganchos = { PUBLICAR_CMD: CMD, SABOTAJE };
   log(`publicador escuchando en :${PUERTO} · web :${PUERTO_WEB} · gestiona servidor: ${GESTIONA_SERVIDOR}`);
+  reparaPromocionAMedias();
   guardaEstado();
   if (GESTIONA_SERVIDOR && fs.existsSync(path.join(DIST, "BUILD_ID"))) arrancaServidor();
 });

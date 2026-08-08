@@ -2,17 +2,17 @@
   "meta": {
     "sonda": "programada",
     "que": "publicación programada (cron) y vista previa de borradores — F2-4 pasos 3 y 4",
-    "fecha": "2026-08-07",
+    "fecha": "2026-08-08",
     "sabotaje": "cron-sin-hora"
   },
   "invariantes": {
     "P2·futuro NO se publica": {
       "ok": false,
-      "detalle": "publicó 1 con la hora en el FUTURO: [\"entradas-blog:qa-programada-borrador@2026-08-08T04:25:04.263Z\"]"
+      "detalle": "publicó 1 con la hora en el FUTURO: [\"entradas-blog:qa-programada-borrador@2026-08-08T16:39:34.449Z\"]"
     },
     "P1·borrador fuera del build": {
-      "ok": true,
-      "detalle": "31 rutas emitidas y /qa-programada-borrador NO está entre ellas"
+      "ok": false,
+      "detalle": "el borrador /qa-programada-borrador SÍ está en el build (32 rutas)"
     },
     "P4·preview sin credencial": {
       "ok": true,
@@ -31,6 +31,6 @@
       "detalle": "1.ª vuelta 0 · estado 'publicado' · 2.ª vuelta 0 (tiene que ser 1 · publicado · 0)"
     }
   },
-  "violados": 2,
+  "violados": 3,
   "dbRestaurada": true
 }

@@ -72,7 +72,7 @@ mientras tanto.~~
 >
 > | incógnita | respuesta |
 > |---|---|
-> | quién dispara | hook `afterChange`/`afterDelete` de Payload, cableado en `colecciones.ts` para todo lo que no sea grupo `Sistema`; opt-in por `PUBLICAR_URL` |
+> | quién dispara | hook `afterChange`/`afterDelete` de Payload, cableado en `colecciones.ts` para todo lo que no sea grupo `Sistema`; opt-in por `PUBLICAR_URL`. ⚠ **Esta fila se escribió el 2026-08-07 y NO estaba medida**: el hook existía sin un solo consumidor que lo hiciera correr (`grep -rn PUBLICAR_URL`: cero llamadas). **Medida el 2026-08-08** por `qa:publica-e2e` — guardar por la Local API dispara, 1 guardado = 1 disparo, 0 de `slugs`, y el cambio llega al artefacto servido |
 > | **cuánto tarda** | **41.84 s a 31 rutas · 91.41 s a 220** (mediana; cota superior — los clones pesan 4.16× la media del corpus). Pendiente medida **0.2228 s/ruta** en la fase que escala, **lineal y sin codo** |
 > | qué ve el editor | `GET /estado` del publicador, con el `ultimoFallo` conservado hasta que un build termine bien |
 >

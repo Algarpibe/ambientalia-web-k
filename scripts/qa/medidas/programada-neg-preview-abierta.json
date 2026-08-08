@@ -2,7 +2,7 @@
   "meta": {
     "sonda": "programada",
     "que": "publicación programada (cron) y vista previa de borradores — F2-4 pasos 3 y 4",
-    "fecha": "2026-08-07",
+    "fecha": "2026-08-08",
     "sabotaje": null
   },
   "invariantes": {
@@ -12,7 +12,7 @@
     },
     "P1·borrador fuera del build": {
       "ok": true,
-      "detalle": "31 rutas emitidas y /qa-programada-borrador NO está entre ellas"
+      "detalle": "build propio: 31 rutas y /qa-programada-borrador NO está entre ellas"
     },
     "P4·preview sin credencial": {
       "ok": false,

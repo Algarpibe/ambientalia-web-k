@@ -114,6 +114,52 @@ re-congela**. Contra ella las 11 siguen saliendo DISTINTAS con el aviso
 nombre de chunk»*. Su adjudicación viene de `medidas/html-f23-prod-base.json`,
 tomada del build inmediatamente anterior **con el nivel puesto**.
 
+## ⚠ F2-4-CHUNK-CSS · la máscara del 2.º volátil cubre `.js` y NO `.css` (2026-08-08)
+
+**`qa:html-cmp` contra `html-f24-base.json` da 31 de 31 rutas con el marcado
+VISIBLE distinto. NO es una regresión, y tampoco es «el instrumento comparando
+dos cosas distintas»: es un volátil YA DECLARADO al que le falta un tipo de
+fichero.**
+
+⚠ **Y el 100 % obligaba a dudar del comparador antes que del clon** (§sondas 4,
+complementario). Se reconstruyó a mano, que es lo que esa regla pide:
+
+| paso | resultado |
+|---|---|
+| ¿es el instrumento? | **no.** `visible` es idéntico en **tres** congeladas anteriores (`html-f23-prod-operacion`, `html-f23-prod-despues`, `html-f24-base`) y estable entre **cargas** y entre **dos builds** distintos de HEAD |
+| ¿qué cambió, en TEXTO? | se construyó `ec5fbf3` aparte y se compararon los **33 HTML prerenderizados del disco** (sin servidor, para que el desajuste servidor/`.next` no pudiera entrar): **32 de 33 difieren en UN token de ~795, y en las 32 es el nombre del fichero CSS.** `bytes` idénticos. **Cero «otra cosa»** |
+| ¿cambió el CSS, o sólo su nombre? | **cambió: 92 442 → 92 536 = +94 B.** Son las dos utilidades nuevas de la cinta de la preview: `.bg-\[\#111\]{background-color:#111}` (36) y `.leading-\[22px\]{--tw-leading:22px;line-height:22px}` (52) |
+| ¿pueden tocar a las 31? | **no.** Son selectores de clase **autoconfinados**, y `grep -rl` sobre `apps/web/src` dice que las usa **sólo** `vista-previa/[slug]/page.tsx`. Corroborado aparte: `qa:clon-base` da **Δ0 en las 31 a 1440 y a 390** |
+
+> **Veredicto: no es regresión.** Es lo que cuesta añadir una ruta que estrena
+> dos utilidades: la hoja de estilos es **compartida**, así que crece para todos
+> y su nombre —que es función del grafo de módulos— cambia en todas las páginas.
+
+**La grieta del instrumento, que es lo que queda abierto.** `CHUNK_PATRON` vale
+`\/_next\/static\/chunks\/[A-Za-z0-9_-]+\.js`: **sólo `.js`**. Así que
+`visibleSinChunks` —la puerta real— **no puede distinguir un CSS renombrado de un
+CSS con otro contenido**, y las dos cosas salen igual de rojas.
+
+**NO se ensancha la máscara en esta tanda, y la razón es la que el propio
+`html-cmp` escribe:** meter algo en la normalización *«para que la sonda deje de
+protestar»* es la trampa que sus cuatro guardas existen para impedir. Ensanchar a
+`.css` mandaría **todo cambio de hoja de estilos** al cubo `solo-bundle` —verde y
+contado—, y una hoja de estilos **sí** es fidelidad: es donde viven los píxeles
+que 48 sondas midieron contra kunakair.com. El chunk JS puede ir ahí porque su
+contenido no pinta; el CSS no.
+
+**Salida propuesta, para quien la coja:** un nivel **`css`** propio y contado
+—hash del CSS *resuelto* (el contenido del fichero, no su nombre)— de forma que
+un renombrado salga verde y un cambio de reglas salga rojo **con el diff de
+selectores**. Es un nivel nuevo, no una máscara más ancha.
+
+**Criterio de «hecho»:** `qa:html-cmp` distingue los dos casos sobre esta misma
+pareja de builds (renombrado ⇒ verde · +94 B de reglas ⇒ rojo con las dos
+selectores nombrados), y su negativo lo prueba con los dos falsadores.
+**Mientras tanto**, la base con la que se compara es `html-f24-verif.json`
+(2026-08-08), y un rojo de `html-cmp` en `visible` **hay que adjudicarlo a mano**
+como se hizo aquí: no se puede leer como regresión sin mirar el token.
+
 ## ⚠ F2-3-HREF-DERIVADO · 6 de 9 productos apuntan a una ruta que el build NO emite (2026-08-06)
 
 **Consecuencia declarada de §4** —*«dentro del CMS los 24 son documentos, así que
@@ -351,6 +397,22 @@ for f in $(grep -rl "fetch(" scripts --include="*.mjs"); do
 
 **29 candidatos**, no 24 — y la lista está congelada en el cuerpo de esta ficha
 (4 de `scripts/`, 23 de `scripts/qa/`, 2 de `scripts/seed/`).
+
+> ⚠ **RE-DERIVADO 2026-08-08: son 32.** No es que la cifra estuviera mal — es que
+> **el alcance CRECE con cada sonda nueva**, y una ficha que cita un recuento sin
+> volver a derivarlo envejece **contra** el repo en silencio (§sondas 9). Las tres
+> nuevas son de F2-4: `publicar.mjs`, `programada.mjs` y `publica-e2e.mjs`.
+>
+> **Y las tres entran DECLARADAS, no por descuido**: su `process.exit()` es el
+> **vigilante `unref()`** que sale con el código ya calculado, y va **2 s después
+> del último `fetch` y después de matar a los hijos**, así que la carrera que
+> describe esta ficha no existe ahí. Están escritas con su razón en el propio
+> fichero. **El recuento sube igual**, porque el criterio de la ficha es
+> *«alcanzable tras un `fetch`»* y eso lo decide el barrido, no la intención de
+> quien lo escribió — si el criterio admitiera excepciones por comentario, el
+> control automático que la ficha pide para `qa:lib` no podría escribirse.
+>
+> **Estado: 32 candidatos · 2 auditados · 30 sin auditar.** El dueño no cambia.
 
 **Y la segunda corrección es peor que un recuento: «arreglado en las 2» era
 IMPRECISO.** Las dos conservan llamadas a `process.exit()` **después** de sus

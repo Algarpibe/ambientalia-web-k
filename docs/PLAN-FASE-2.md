@@ -1514,7 +1514,21 @@ de punta a punta; una publicación programada sale **sola** a su hora; la
 preview funciona sin tocar las rutas estáticas; y **A-SP13 tiene número**, con
 su fecha y su configuración.
 
-### ✅ F2-4 · ACTA (2026-08-07, tanda 38.ª)
+### ✅ F2-4 · ACTA (2026-08-07 tanda 38.ª · **verificada y corregida** 2026-08-08 tanda 39.ª)
+
+> ⚠ **ESTA ACTA SE ESCRIBIÓ ANTES DE VERIFICARSE, y hay que leerla sabiéndolo.**
+> La tanda 38.ª se cortó a mitad y commiteó declarando *«SIN VERIFICAR»* — pero
+> el acta ya estaba puesta con un ✅ delante. La 39.ª la verificó entera. **Lo
+> que decía es cierto casi todo**; lo que no, está corregido abajo con su número.
+>
+> | lo que el acta afirmaba | lo que la verificación encontró |
+> |---|---|
+> | (implícito) el árbol compila | **`npm run check` salía EXIT=2.** La migración `20260808_023851_publicacion_f24.ts` traía el `import` que emite `migrate:create` y el paquete compila con `verbatimModuleSyntax`. Es el arreglo que su hermana `20260804_120654_inicial.ts` **documenta como obligatorio en cada migración nueva** |
+> | *«las tres incógnitas, contestadas»* | dos lo estaban. **«Quién dispara el webhook» estaba ESCRITO y sin ejercitar**: `grep -rn PUBLICAR_URL` devolvía la definición y sus comentarios, **cero llamadas**. Lo cierra `qa:publica-e2e`, nueva |
+> | *«la promoción es un rename, que es atómico»* | **son DOS renames**, y morir entre ellos deja el árbol **sin `.next`**. Ocurrió dos veces el 2026-08-08. Ver §la ventana de la promoción |
+> | `qa:html-cmp` **31 · 0 distintas** | cierto **el 2026-08-07**. Contra HEAD salen **31 · 31**, y está **adjudicado**: es el nombre del chunk **CSS**, que la máscara del 2.º volátil no cubre. No es regresión — ver §F2-4-CHUNK-CSS |
+> | `qa:publicar-neg` *«4 sabotajes + control»* | son **3** sabotajes + control (= 4 casos). El recuento de la cabecera de la sonda estaba mal; el contrato lo deriva de `casos.length` y por eso no mintió |
+> | (no previsto) los árboles de build alternos | **`eslint` los lintea.** Su ignore nombra `.next` y sólo `.next`, así que en cuanto una corrida deja un `.next-e2e` o un `.next-prog`, `npm run check` sale rojo con **502 errores y 10 187 avisos de código GENERADO**. Cerrado con `.next-*/**` en `eslint.config.mjs` y `.next-*/` en `.gitignore` — comodín anclado al prefijo en los dos, porque la lista a mano se queda corta con la siguiente sonda. ⚠ Es el modo de fallo peor de los dos: no deja pasar nada, **se pone rojo por un motivo que no existe**, y un rojo que no significa nada se acaba ignorando |
 
 #### A-SP13 · el número, y la proyección heredada era falsa por su mitad más citada
 
@@ -1532,6 +1546,35 @@ COMPLETO** (`.next` borrado antes de cada corrida).
 Descomposición a 31 rutas: arranque 3.33 · compilación 8.10 · typescript 8.34 ·
 **datos 13.04** · generación 6.09 · cierre 2.85. Congeladas:
 `medidas/a-sp13-frio.json` · `a-sp13-tibio.json` · `a-sp13-sintetico-189.json`.
+
+#### ⚠ TRES NÚMEROS NO SON UNA RESPUESTA: cuál gobierna qué (2026-08-08)
+
+Hay tres corridas congeladas y **contestan preguntas distintas**. Citar la que
+toque no es pedantería: la de al lado da una decisión distinta.
+
+| medida | qué reproduce | qué DECIDE, y sólo eso |
+|---|---|---|
+| **frío · 41.84 s @31** ← | el rebuild **sin `.next`**: contenedor nuevo, CI, y **cada publicación** (se construye en `.next-nuevo`, que se borra al empezar) | **lo que ve el editor mientras reconstruye.** Es la condición de producción de CMS-0c, así que es la que gobierna el `GET /estado` y la expectativa de espera |
+| tibio · 43.03 s @31 | el rebuild **en sitio**, con `.next` caliente | **nada por sí solo — y ése es su valor.** 41.84 vs 43.03 está **dentro de la dispersión** de las corridas (39.2–44.6), o sea **sin diferencia medible**. Lo que decide es descartar una optimización: con Turbopack, **conservar `.next` no compra nada**, así que construir fuera y promocionar (§2) no cuesta tiempo |
+| **sintético · 91.41 s @220** | la población proyectada del grupo A | **la proyección, y es el único que puede.** Un punto solo no separa el coste **fijo** del coste **por ruta**, y multiplicar el total por el nº de rutas multiplica también los 35.7 s fijos |
+
+> **La regla de cita, para que no haya que releer esta tabla:** *«cuánto tarda
+> publicar»* se contesta con el **frío**; *«cuánto tardará con las 209 dentro»*,
+> con el **sintético**; el **tibio** no se cita como coste — se cita como el
+> descarte de una optimización.
+
+**¿Se sostiene la proyección de §2.3 (*«11 rutas ≈ 1 s; 220 es otro orden»*)?
+NO, y es falsa en sus dos mitades por motivos distintos.** Derivado de las tres
+congeladas, no heredado:
+
+| mitad | veredicto | el número |
+|---|---|---|
+| «11 rutas ≈ 1 s» | **falsa: era una FASE, no el rebuild** | el coste **fijo** solo (arranque + compilación + `tsc` + datos + cierre) es **35.74 s**. Ningún `next build` de esta app puede acercarse a 1 s **con cualquier número de rutas**, ni siquiera con cero |
+| «220 es otro orden» | **falsa en tiempo, cierta en rutas** | **7.10× de rutas ⇒ 2.18× de tiempo** (220/31 y 91.409/41.839). El rebuild de 220 rutas no es «otro orden»: es **minuto y medio** |
+
+**Y la proyección lineal SÍ se sostiene**, que es lo que la fase necesitaba saber:
+pendiente de la generación **0.2228 s/ruta** —`(48.207 − 6.095)/189`— con ordenada
+en el origen **−0.81 s ≈ 0**, o sea **sin codo hasta 220**.
 
 > **Un solo punto no puede contestar A-SP13, y por eso se midieron dos.**
 > Multiplicar el total por el nº de rutas multiplica también el coste **fijo**
@@ -1604,11 +1647,73 @@ es también lo que produce un coalescer correcto si los 4 llegan antes de
 arrancar. Lo que separa las políticas es **el nº de disparos huérfanos**, que es
 una comparación de instantes — `0` limpio contra `3 de 4` con descartar.
 
+#### La PREVIEW — la única grieta de runtime, declarada y medida (2026-08-08)
+
+`/vista-previa/[slug]` es **la única ruta que lee Postgres en caliente**. La
+consecuencia 1 de CMS-0c —*«la app no necesita Postgres en runtime»*— **se
+conserva**, y lo que sigue es lo que la acota, cada línea con su medida:
+
+| pregunta | respuesta | quién lo mide |
+|---|---|---|
+| **qué puede leer** | **sólo el plano de raíz `/[slug]`**: entrada de blog y término de Kunakpedia — las 2 formas del arquetipo A, **186 de las 209** de esa familia. Con credencial devuelve el documento **esté publicado o no**. **NO** cubre sector, monográfico, caso, FAQ, producto ni documento científico | el despacho del propio fichero |
+| **qué devuelve SIN credencial** | **exactamente lo mismo que una ruta inventada**: `notFound()`, no un 401. Un 401 **enumera los borradores** de quien pruebe slugs. Y la puerta va **antes de la primera consulta**: un 401 que ya leyó el borrador es un borrador leído | **P4** de `qa:programada` — *«sin token ⇒ 404 y CERO rastro del borrador»* |
+| **que no toca ninguna ruta estática** | `dynamic = "force-dynamic"` la deja **fuera del `prerender-manifest`**, así que `qa:manifiesto`, `qa:slugs`, `qa:clon-base` y `qa:enlaces` —las cuatro derivan sus rutas de ahí— siguen midiendo **las 31 de siempre** | **P6**: *«0 entradas con 'vista-previa' en `routes` ni en `dynamicRoutes`»*, y el propio `next build` la lista como **`ƒ (Dynamic)`** |
+| **que la puerta existe de verdad** | el falsador la quita y **P4 cae**, no otro | `qa:programada-neg` · `preview-abierta` |
+
+**Sin `PREVIEW_SECRETO` el módulo TIRA** —como `PAYLOAD_SECRET`—, y es la
+dirección segura: la ruta revienta en vez de servir borradores. ⚠ **Hoy no está
+en `apps/cms/.env`**: la sonda usa su propio valor, así que **quien despliegue
+tiene que ponerla** o la preview no funcionará (y no funcionará de la manera
+correcta: cerrada).
+
+**Lo que NO cubre, dicho en vez de arreglado a medias:** editar una página **ya
+publicada** no tiene preview —estos dos campos previsualizan *borradores*, no
+ediciones de un documento vivo—. Subir a los drafts nativos de Payload es un
+cambio de migración, no de modelo.
+
+#### ⚠ La VENTANA DE LA PROMOCIÓN — el defecto que la cura reintrodujo (2026-08-08)
+
+La §2 de `publicador.mjs` cierra *«un build que falla deja el sitio sin sitio»*
+construyendo fuera y promocionando. **La promoción, tal como estaba escrita,
+reintroducía exactamente eso**, y hicieron falta dos corridas de `qa:publica-e2e`
+para verlo porque sólo se manifiesta cuando el proceso muere en el instante malo.
+
+> **La promoción son DOS renames** —`.next`→`.next-anterior` y
+> `.next-nuevo`→`.next`— y entre ellos **`.next` no existe**. La cabecera decía
+> *«un rename en el mismo volumen es atómico»*: cierto **de un** rename.
+
+Y lo que lo convertía en muerte y no en fallo: `dispara()` llamaba a `bombea()`
+**sin `await` y sin `catch`**, así que un throw de `promociona()` era un **rechazo
+no capturado** y mataba el proceso. La cabecera afirmaba que *«la excepción sube
+y el build se marca fallido»* — **no subía a ningún sitio y nadie marcaba nada**:
+§sondas 3 (*documentado no es conectado*) dentro del publicador.
+
+**Medido, las dos veces del 2026-08-08:** `.next` ausente, `.next-anterior` = el
+build de 32 rutas y `.next-nuevo` = el de 31. No se perdió nada, pero **hacía
+falta una persona** para saber cuál era el bueno — y la segunda vez el árbol
+estuvo 7 minutos sin artefacto sin que nada lo dijera.
+
+**Tres arreglos, y ninguno pretende hacer atómicos dos renames:**
+
+| dónde | qué hace |
+|---|---|
+| `promociona()` | si el 2.º rename falla, **deshace el 1.º** y relanza con la causa dentro: la ventana no se queda abierta |
+| `bombea()` | **captura y sigue vivo**: el fallo va a `ultimoFallo` con su traza. Un publicador muerto es un webhook que falla en silencio *y* se lleva el `GET /estado` con el que el editor iba a enterarse |
+| arranque | `reparaPromocionAMedias()`: si falta `DIST` y hay un `-nuevo` completo, **termina la promoción**; si no, devuelve el `-anterior`. **Grita** en los dos casos |
+
+> **Y la lección de instrumento, que es la mitad que se paga dos veces:** la
+> primera versión de `qa:publica-e2e` **descartaba la salida del publicador**, así
+> que cuando éste murió promocionando la sonda sólo supo decir `ECONNRESET`. **El
+> motivo estaba en el canal que ella misma había cerrado.** Ahora la retiene y la
+> imprime si el hijo muere — y `esperaOcioso` tolera un corte de transporte
+> **acotado por la fecha límite**, porque «se cortó el socket» y «el publicador no
+> terminó» son cosas distintas y no pueden dar la misma salida.
+
 #### Las tres incógnitas operativas de CMS-0c, contestadas
 
 | incógnita | respuesta |
 |---|---|
-| **quién dispara el webhook** | un hook `afterChange`/`afterDelete` cableado **en `colecciones.ts` para todo lo que no sea del grupo `Sistema`** — no colección a colección. Opt-in por `PUBLICAR_URL`: sin ella es inerte, y eso es lo que impide que `cms:seed` lance 63 rebuilds |
+| **quién dispara el webhook** | un hook `afterChange`/`afterDelete` cableado **en `colecciones.ts` para todo lo que no sea del grupo `Sistema`** — no colección a colección. Opt-in por `PUBLICAR_URL`: sin ella es inerte, y eso es lo que impide que `cms:seed` lance 63 rebuilds. ⚠ **Esto estuvo ESCRITO y SIN EJERCITAR hasta el 2026-08-08** (`grep -rn PUBLICAR_URL`: la definición y sus comentarios, **cero llamadas**). Hoy lo mide `qa:publica-e2e` E2, con su control E1 y su falsador `hook-mudo` |
 | **cuánto tarda con las 209 dentro** | **91.41 s** a 220 rutas, cota superior (arriba) |
 | **qué ve el editor** | `GET /estado` del publicador: fase, desde cuándo, `ultimoExito` con su `buildId` y su nº de rutas, y **`ultimoFallo` con código de salida y las últimas 25 líneas — que NO se borra al disparar el siguiente**, sólo cuando un build termina bien |
 
@@ -1623,6 +1728,24 @@ una comparación de instantes — `0` limpio contra `3 de 4` con descartar.
 | `qa:programada-neg` | 4/4 (`sin-filtro` · `cron-sin-hora` · `preview-abierta` + control) |
 | `qa:html-cmp` vs `html-f24-base` | **31 rutas · 0 con contenido distinto**, dos veces: tras el cambio de `next.config`+hooks y tras el cambio de modelo + reseed |
 | `qa:manifiesto` | 31 rutas · 11 familias · 0 vacías |
+
+**Lo que añadió la verificación de la 39.ª (2026-08-08), con el mismo formato:**
+
+| sonda | resultado |
+|---|---|
+| **`qa:publica-e2e`** ← nueva | **4/4**: el hook es inerte sin `PUBLICAR_URL` · **guardar DISPARA** (`entradas-blog:<slug> update`) · 1 guardado = 1 disparo, **0 de `slugs`** · **alta ⇒ 31→32 rutas con la ruta dentro, baja ⇒ 31 y fuera** |
+| `qa:publica-e2e-neg` ← nueva | 3/3 (`hook-mudo` ⇒ cae E2 · `disparo-fantasma` ⇒ cae E1 + control) |
+| `qa:publicar` · `-neg` | **4/4** · **4/4**, re-corridas tras tocar el publicador. Cada sabotaje cae **por su propio invariante**, y la salida lo dice |
+| `qa:programada` · `-neg` | **6/6** · **4/4**. `preview-abierta` cae por **P4**, que es el suyo |
+| `qa:clon-base` @1440 · @390 | **31/31 sin mover un píxel** contra la base de cierre de F2-3 (`clon-base-*-f23-productos.json`), a los dos anchos |
+| `qa:enlaces` · `corte` · `slugs` · `manifiesto` | 868 hrefs · 12/12 · 2/2 · 31 rutas · 11 familias |
+| `npm run check` | verde **tras arreglar el import de tipos de la migración** (salía EXIT=2) |
+
+> ⚠ **Y una nota de método sobre la primera fila de la tabla de arriba:** el
+> `EXIT=0` que se lee de `npm run check | tail` **no es el de `check`**, es el de
+> `tail`. La tubería es un contenedor con holgura más (§La causa común), y por
+> eso la verificación de esta tanda empezó creyendo que el árbol compilaba.
+> Se captura con `npm run check > fichero; echo $?`.
 
 #### El defecto propio que hay que llevarse, porque es la regla del cero otra vez
 
@@ -1644,6 +1767,28 @@ publicador de la corrida anterior** —en Windows `spawn` con `shell: true` mata
 el shell y deja vivo el node—, leyendo `builds: 2` antes del primer disparo.
 Cerrados con `PUBLICAR_DIST` y con una **guarda de identidad por `pid`**: un
 `200 OK` en el puerto no prueba que conteste el proceso que acabas de lanzar.
+
+⚠ **Y una tercera, de la 39.ª, que es la misma clase con otro traje:**
+`qa:publica-e2e` **descartaba la salida del publicador** y **no drenaba su bucle**
+al terminar. Lo primero la dejó sin poder decir por qué había muerto el hijo; lo
+segundo convirtió un cuelgue de 2 s en **~14 minutos por caso** dentro de
+`corridaNegativa` (`spawnSync`, timeout 900 s) y en un `exit null` que el
+negativo leyó, con razón, como *«el control no sale 0»*. Las dos cerradas como en
+`programada.mjs`: cola retenida e impresa si el hijo muere, y **vigilante
+`unref()`** que sale con el código ya calculado.
+
+#### El criterio de «hecho» de la fase, punto por punto
+
+| lo que el PLAN exigía | veredicto | evidencia |
+|---|---|---|
+| publicar desde el admin → rebuild → cambio servido, **medido de punta a punta** | ✅ | `qa:publica-e2e` **E2 · E4**: guardado por la Local API ⇒ disparo `entradas-blog:<slug> update` ⇒ build ⇒ **31→32 rutas con la ruta dentro**; baja ⇒ **31 y fuera**. Negativo `hook-mudo` |
+| una publicación programada sale **sola** a su hora | ✅ | `qa:programada` **P2 · P3**: futuro ⇒ 0 publicados · vencido ⇒ 1 y la 2.ª vuelta 0. Negativo `cron-sin-hora` |
+| la preview funciona **sin tocar las rutas estáticas** | ✅ | **P4 · P5 · P6** + `ƒ (Dynamic)` en el build. Negativo `preview-abierta` |
+| **A-SP13 con número**, su fecha y su configuración | ✅ | 41.84 s @31 · **91.41 s @220** · 0.2228 s/ruta lineal sin codo · config completa arriba. **Y cuál gobierna qué**, declarado |
+
+**El ESCALÓN no disparó.** 91 s de rebuild es holgadamente compatible con
+publicar-es-reconstruir; **CMS-0c se conserva entero**, con la única grieta
+declarada y acotada de la preview.
 
 ---
 

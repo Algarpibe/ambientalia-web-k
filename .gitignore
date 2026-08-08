@@ -60,10 +60,12 @@ scripts/qa/.tmp/
 # CMS-0b. Tenerlo en git haría que cada seed ensuciara el árbol con binarios.
 media/
 
-# F2-4 · publicador: los árboles de build fuera de sitio y su estado
-.next-nuevo/
-.next-anterior/
-.next-prueba*/
+# F2-4 · publicador: los árboles de build fuera de sitio y su estado.
+#
+# ⚠ La lista se escribía árbol a árbol y cada sonda nueva estrenaba el suyo
+# (`.next-p1`, `.next-prog*`, `.next-e2e*`…). Una lista a mano de la que hay que
+# acordarse es la clase que este repo tiene catalogada: la siguiente se olvida y
+# su olvido no da error — da un `.next` de 200 MB dentro de un commit.
+# Se cierra con un comodín anclado al prefijo, que es lo que las sondas usan.
+.next-*/
 scripts/publicar/estado*.json
-.next-p1/
-.next-prog*/

@@ -1,4 +1,101 @@
-# HANDOFF — F2-3 CERRADA: `productos` migrada, CMS-SP-TIPO cerrada por la salida que parecía la de repuesto, y el 2.º volátil declarado
+# HANDOFF — F2-4 CERRADA: el eslabón que nadie ejercitaba, medido; y la cura de la §2 reintroducía la enfermedad
+
+> ⚠ **Tanda 2026-08-08 (39.ª).** Reentrada sobre el commit de parada de la 38.ª,
+> que se cortó a mitad y se commiteó **declarándose SIN VERIFICAR**. PASOS
+> 0 · 1 · 2 · 3 · 4 · 5 completos. **El escalón NO disparó**: 91.41 s a 220 rutas
+> es holgadamente compatible con publicar-es-reconstruir, y CMS-0c se conserva
+> entero — con **una** grieta declarada y acotada (la preview).
+
+## 0 · Los cinco titulares
+
+> **1 · El árbol NO era coherente, y el primer instrumento que lo dijo mintió.**
+> `npm run check` salía **EXIT=2**: la migración de F2-4 traía el `import` que
+> emite `migrate:create` y el paquete compila con `verbatimModuleSyntax` — el
+> arreglo que su hermana `20260804_120654_inicial.ts` **documenta como obligatorio
+> en cada migración nueva**. Y la primera corrida lo dio por bueno porque
+> `npm run check | tail` **devuelve el código de `tail`**: la tubería es un
+> contenedor con holgura más (§La causa común), esta vez con el código de salida
+> dentro.
+>
+> **2 · «Quién dispara el webhook» estaba ESCRITO y SIN EJERCITAR.** El hook
+> `afterChange`/`afterDelete` llevaba 110 líneas de cabecera y
+> `grep -rn PUBLICAR_URL scripts packages apps` devolvía **la definición y sus
+> comentarios: cero llamadas**. Es §sondas 3 (*documentado no es conectado*)
+> sobre **la pieza que da nombre a CMS-0c**. Lo cierra `qa:publica-e2e` (nueva,
+> 4/4) con su control y su negativo: **guardar por la Local API dispara**
+> (`entradas-blog:<slug> update`), **1 guardado = 1 disparo, 0 de `slugs`**, y
+> **alta ⇒ 31→32 rutas con la ruta dentro · baja ⇒ 31 y fuera**.
+>
+> **3 · La cura de la §2 reintroducía la enfermedad, y hicieron falta DOS
+> corridas para verlo.** Construir fuera y promocionar existe para que un build
+> fallido no deje el sitio sin sitio. **La promoción son DOS renames**, y morir
+> entre ellos deja el árbol **sin `.next`** — pasó dos veces, la segunda con el
+> publicador muerto y el artefacto ausente **7 minutos**. Causa: `dispara()`
+> llamaba a `bombea()` **sin `await` y sin `catch`**, así que el throw era un
+> rechazo no capturado; la cabecera afirmaba *«la excepción sube y el build se
+> marca fallido»* y **no subía a ningún sitio**.
+>
+> **4 · El 31 de 31 de `html-cmp` NO era regresión, y tampoco era el
+> comparador.** Se reconstruyó a mano como pide §sondas 4: se construyó
+> `ec5fbf3` aparte y se compararon los **33 HTML del disco** — **32 difieren en
+> UN token de ~795, y en las 32 es el nombre del fichero CSS**. El CSS creció
+> **+94 B**: las dos utilidades de la cinta de la preview, **selectores
+> autoconfinados** que ninguna de las 31 páginas usa. `clon-base` corrobora con
+> **Δ0 en las 31 a 1440 y a 390**. Lo que queda abierto es del instrumento:
+> `CHUNK_PATRON` enmascara **`.js` y no `.css`** (§F2-4-CHUNK-CSS).
+>
+> **5 · Y la sonda nueva llegó con su propio defecto, del catálogo.**
+> `qa:publica-e2e` **descartaba la salida del publicador**, así que cuando éste
+> murió promocionando sólo supo decir `ECONNRESET`: **el motivo estaba en el
+> canal que ella misma había cerrado.** Es la tercera vez en el repo que un
+> instrumento se queda sin ver lo que venía a medir.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| **`qa:publica-e2e`** ← nueva | **4/4** · negativo **3/3** (`hook-mudo` ⇒ E2 · `disparo-fantasma` ⇒ E1 + control) |
+| `qa:publicar` · `-neg` | 4/4 · 4/4 — **re-corridas tras tocar el publicador** |
+| `qa:programada` · `-neg` | 6/6 · 4/4 — `preview-abierta` cae por **P4**, el suyo |
+| `qa:clon-base` @1440 · @390 | **31/31 sin mover un píxel** contra `clon-base-*-f23-productos` |
+| `qa:enlaces` · `corte` · `slugs` · `manifiesto` · `check` | 868 hrefs · 12/12 · 2/2 · 31 rutas · **verde tras el arreglo** |
+| `qa:html-cmp` | 31 · 31 **adjudicadas a mano** — ver titular 4 |
+
+## 2 · Lo siguiente — F2-5 · Admin y traspaso
+
+Su especificación está en `PLAN-FASE-2.md` §F2-5 y **F2-4 no la cambia**. Lo que
+sí le deja F2-4 en el plato, ya escrito con su criterio de «hecho»:
+
+1. **§F2-3-HREF-DERIVADO es suya**, y con la corrección que hizo la 38.ª:
+   *publicar NO multiplica el caso, **dar de alta productos desde el admin sí***.
+   Salida (b), guarda por `qa:tipo-hoja` extendida (no `qa:enlaces`, que no ve el
+   panel que no se sirve);
+2. **`PREVIEW_SECRETO` no está en `apps/cms/.env`** — quien despliegue tiene que
+   ponerla. Sin ella la preview **revienta**, que es la dirección segura;
+3. **§F2-4-CHUNK-CSS** — un nivel `css` propio en `html-cmp`, **no** una máscara
+   más ancha: una hoja de estilos **sí** es fidelidad.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer un `EXIT=0` de una tubería como el código de la orden.**
+  `npm run check > fichero; echo $?`.
+- **No creerse un `html-cmp` verde ni rojo sin mirar el token.** Hasta que exista
+  el nivel `css`, un rojo en `visible` **hay que adjudicarlo a mano**; la base
+  vigente es `html-f24-verif.json` (2026-08-08).
+- **No dar por buena una base de `clon-base` por su fecha.** `f23-base` es de
+  **antes** de F2-3 y marca 3 rutas que ya estaban adjudicadas. La base de cierre
+  de una fase es **la que congeló su commit de cierre** — se deriva con
+  `git show --stat <sha> -- scripts/qa/medidas/`.
+- **No re-congelar `html-f24-base.json`** ni `programada.json`: la guarda de la
+  §regla 5 ya desvía a fichero fechado, y esas dos son las que sostienen las
+  adjudicaciones de arriba.
+- **No arrancar el publicador sobre un `.next` a medias sin mirar el arranque:**
+  ahora repara la promoción interrumpida, y lo **grita**. Ese grito es un dato,
+  no ruido.
+
+---
+
+# (anterior) HANDOFF — F2-3 CERRADA: `productos` migrada, CMS-SP-TIPO cerrada por la salida que parecía la de repuesto, y el 2.º volátil declarado
 
 > ⚠ **Tanda 2026-08-06 (37.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos.
 > **F2-3 cerrada contra su criterio del PLAN**: tabla del §8 en verde con umbral

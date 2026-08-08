@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "sabotaje": "disparo-fantasma",
+    "slug": "qa-e2e-1786203095430"
+  },
+  "invariantes": {
+    "E1·sin PUBLICAR_URL el hook es inerte": {
+      "ok": false,
+      "detalle": "1 disparos sin PUBLICAR_URL: el hook no es opt-in, o los cuenta otro"
+    },
+    "E2·guardar DISPARA": {
+      "ok": true,
+      "detalle": "2 disparo(s) · motivo «entradas-blog:qa-e2e-1786203095430 update»"
+    },
+    "E3·un guardado, UN disparo": {
+      "ok": true,
+      "detalle": "1 guardado ⇒ 1 disparo · 0 avisos de `slugs` en 3 motivos"
+    },
+    "E4·el cambio llega SERVIDO": {
+      "ok": true,
+      "detalle": "alta ⇒ 31→32 rutas con /qa-e2e-1786203095430 dentro (build jTUrXjB01PaY0G898K17h) · baja ⇒ 31 y fuera (build l4PWpt4KOcPwHedDAuSdF)"
+    }
+  }
+}
