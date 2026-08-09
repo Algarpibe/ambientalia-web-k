@@ -1815,3 +1815,53 @@ decisión de producto, no de esquema; se decide con quien vaya a editar.
 
 **Hecho cuando:** una persona **sin acceso al repo** publica una página nueva
 y las sondas la verifican sin que nadie haya abierto el editor de código.
+
+### ⚖ F2-5 · EJECUTADA, y la prueba final PARÓ EN EL ESCALÓN — que era su salida prevista (2026-08-08, tanda 40.ª)
+
+**Los PASOS 0–3 están cerrados con sus medidas; el criterio de «hecho» de
+arriba NO se alcanzó en verde y eso es lo correcto**: la consigna de la fase
+decía *«si el alta destapa un hueco de esquema que ningún documento arbitra,
+PARA con la evidencia congelada — un hueco así vale más que la prueba en
+verde»*, y el alta lo destapó. El escalón ES el resultado de la prueba.
+
+| pieza | estado | medida |
+|---|---|---|
+| **PASO 0** · §F2-3-HREF-DERIVADO | ✅ CERRADA (salida b) | `tipo-hoja` 9/9 · **9/9 coinciden con el dato medido** · neg 8/8 · `html-cmp` visible Δ0/31 con la carga adjudicada por derivación (+24×referenciado, la inversa de F2-3) · `clon-base` 31/31 Δ0 ×2 anchos |
+| **PASO 1** · roles ADMIN+EDITOR | ✅ | migración `roles_f25` · `qa:roles` 8/8 (con **R7**: el webhook dispara igual bajo sesión de editor — medido, no supuesto) · neg 3/3 cayendo cada uno POR SU invariante |
+| **PASO 2** · español + vistas | ✅ | i18n es en el admin (verificado en pantalla) · columnas DERIVADAS de la config (título·slug·estado·publicarEn·fecha), verificado sobre la config resuelta |
+| pre-vuelo | ✅ | `qa:slugs` re-anclada del SEED a la **DB** (la clase de F2-3 t.5; el catálogo del build es la DB desde F2-3) · negativo re-corrido |
+| **PASO 4** · prueba final | ⚖ **PARADA EN EL ESCALÓN** | el EDITOR dio de alta la página desde el admin; TODAS las guardas de entrada la acogieron sin editarlas (esquema · slug · colisión · webhook con su sesión); **el render murió** en el caso sin-etiquetas que estaba SIN PROBAR. Contención de F2-4 verificada en su primer fallo real: nada promocionado, sitio anterior entero. Ficha: `PENDIENTES-QA.md` §F2-5-ESCALON-ETIQUETAS |
+| **PASO 3** · traspaso | ✅ | `docs/TRASPASO-CMS.md` — colecciones, roles, publicación con sus números, QUÉ NO TOCAR (erratas · `headingColor` · §M-ORIGEN404 · defaults · `slugs`) y operación (PREVIEW_SECRETO · webhook opt-in · DB como dependencia de build · Dockerfile sin verificar) |
+| segunda mitad del PASO 4 (producto) | ✱ no corrida | la prueba paró antes; su mecánica quedó verificada por otra vía: el eje `href` de `tipo-hoja` ejercita la regla del render contra el manifiesto real, con falsadores en las dos direcciones |
+
+**Lo que la prueba final SÍ midió antes de parar, porque ya no hay que
+suponerlo:** el flujo entero de una persona sin repo — crear primer usuario
+(admin), crear editor, entrar como editor, alta desde el formulario en
+español — funciona; el guardado del editor dispara el rebuild real (motivo
+`entradas-blog:<slug> create`); y **el fallo de build es visible y contenido**
+(`GET /estado · ultimoFallo` con la cola entera, sitio anterior servido).
+
+## ESTADO DE LA FASE 2 — cerrada con UN arbitraje pendiente
+
+Las cinco fases ejecutadas: F2-1 (esquema) · F2-2 (datos) · F2-3 (lectura) ·
+F2-4 (publicación) · F2-5 (admin y traspaso, con su prueba final parada en el
+escalón). **El sistema completo — editar → guardar → reconstruir → promocionar
+→ servir — está construido, medido y con sus guardas en negativo.** Lo que
+impide llamarla REDONDA es un solo arbitraje: §F2-5-ESCALON-ETIQUETAS, que
+exige medir el original antes de decidir (y su decisión es de una tanda
+corta).
+
+**Lo que queda fuera, con su dueño — nada de esto bloquea el traspaso:**
+
+| qué | dueño | naturaleza |
+|---|---|---|
+| **§F2-5-ESCALON-ETIQUETAS** | **la PRÓXIMA tanda** — medir el original (entradas sin etiquetas en las 149) y arbitrar esquema/proyección/plantilla | el único arbitraje abierto de la fase |
+| M-IMG | deuda de RENDER declarada (no de dato) | tanda propia |
+| 23 imágenes 404 del corpus | tanda aislada, no mezclar | dato |
+| §F2-4-CHUNK-CSS | nivel `css` propio en `html-cmp`, con criterio (una hoja de estilos SÍ es fidelidad) | instrumento |
+| §F2-3-EXIT-FETCH | 27 sondas sin auditar; criterio ya escrito en su ficha (incluido el control en `qa:lib`) | tanda de instrumento |
+| `Dockerfile` | **SIN VERIFICAR** — nadie construyó la imagen | operación |
+| eje `comportamiento` 0/31 | el hueco mayor de COBERTURA-MEDICION | medición |
+| los 21 de CLASE que no bloqueaban | fichas abiertas en PENDIENTES-QA | varias |
+| `Breadcrumb` 28 rutas | pendiente declarado | render |
+| **biblioteca pendiente**: `articulos-kb` (dato sin plantilla) · listados/hubs (35+107 rutas §4b) · cola larga del corpus (casos 4/57, blog 7/149…) | Fase 3 — es **AÑADIR arquetipos e instancias, no cambiar** lo construido | crecimiento |

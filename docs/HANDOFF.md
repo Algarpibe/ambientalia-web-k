@@ -1,4 +1,108 @@
-# HANDOFF — F2-4 CERRADA: el eslabón que nadie ejercitaba, medido; y la cura de la §2 reintroducía la enfermedad
+# HANDOFF — F2-5 EJECUTADA y FASE 2 al completo: la prueba final PARÓ EN EL ESCALÓN, que era su salida prevista
+
+> ⚠ **Tanda 2026-08-08 (40.ª).** PASOS 0 · 1 · 2 · 3 · 5 completos; el PASO 4
+> corrió hasta el ESCALÓN y **paró con la evidencia congelada, como mandaba la
+> consigna**. La FASE 2 queda ejecutada entera con UN arbitraje abierto
+> (§F2-5-ESCALON-ETIQUETAS). Acta de fase en `PLAN-FASE-2.md` §F2-5 y §ESTADO
+> DE LA FASE 2; manual de traspaso nuevo en `docs/TRASPASO-CMS.md`.
+
+## 0 · Los cinco titulares
+
+> **1 · El alta del EDITOR pasó TODAS las guardas de entrada y el RENDER
+> murió — y eso es el hallazgo, no el fracaso.** La cuenta editor (sin repo)
+> dio de alta una entrada desde el formulario en español; esquema, registro de
+> slug y webhook la acogieron (disparo real con su sesión, motivo
+> `entradas-blog:guia-cms-traspaso-f25 create`); `next build` murió
+> prerenderizándola: `undefined.length`, exit 1 a los 35.91 s. **Tres piezas
+> documentadas, cada una coherente, cuya composición nadie arbitra**:
+> `mapeo.mjs:501` (un `hasMany` vacío proyecta `undefined` — «LA LISTA
+> VACÍA»), `types/kunak.ts:394` (`etiquetas: TerminoA[]` no-opcional con el
+> comentario diciendo «0..n») y `[slug]/page.tsx:163` (`.length` sin guarda).
+> Las 7 entradas transcritas de 149 traen todas etiquetas: el caso ausente
+> estaba SIN PROBAR. **Se PARA porque arreglar sin medir el original sería
+> inventar el contrato** — ficha §F2-5-ESCALON-ETIQUETAS con las tres salidas
+> y sus costes.
+>
+> **2 · La contención de F2-4 funcionó en su PRIMER fallo real, medida en
+> producción de la prueba:** nada se promocionó — home 200, la ruta nueva 404,
+> el build anterior entero — y `GET /estado` conservó `ultimoFallo` con la
+> cola del build (lo que ve el editor). **El lazo diagnóstico se cerró con UNA
+> variable**: la misma fila pasada a borrador ⇒ build verde y promocionado en
+> 38.29 s, 31 rutas. Publicada falla, borrador pasa: el elemento era esa fila.
+>
+> **3 · §F2-3-HREF-DERIVADO CERRADA, y la regla devolvió el dato medido
+> exacto.** La vuelta compone el CANDIDATO local; el proyector aplica la regla
+> de rutas locales con «construido» DERIVADO del árbol de `app/` (la ENTRADA
+> del build — el manifiesto es su SALIDA y no existe cuando el render corre);
+> `qa:tipo-hoja` cierra el lazo contra el manifiesto real, en VEREDICTO.
+> Medido: **9/9 coinciden con el dato medido** — el catálogo ya cumplía la
+> regla; era la vuelta quien la rompía. La carga RSC devolvió los +24 por
+> referenciado exactos (la inversa de los −24·−72 de F2-3), con el visible a
+> Δ0 en las 31 y `clon-base` 31/31 a los dos anchos.
+>
+> **4 · Los roles existen y el webhook NO distingue quién guarda — medido, no
+> supuesto.** `usuarios.rol` (migración `roles_f25`, defecto `editor`: a quien
+> olvide elegir le falta poder, no le sobra), acceso en el paquete compartido,
+> y la escalada cae por hook CON MENSAJE — a propósito no es un `access` de
+> campo, porque un campo negado se descarta EN SILENCIO. `qa:roles` 8/8 por
+> Local API con `overrideAccess: false` (R7: 1 guardado de editor ⇒ 1 disparo
+> con su credencial) · negativo 3/3 cayendo cada sabotaje POR SU invariante.
+>
+> **5 · Y el pre-vuelo cazó a `qa:slugs` anclada al SEED — la clase de F2-3
+> titular 5, declarada ANTES de tropezar con ella.** Su comprobación C leía el
+> catálogo del plano de `src/lib/arquetipo-a.ts`, que dejó de ser la fuente
+> del build en F2-3: el alta legítima habría salido HUÉRFANA — la guarda
+> rechazando exactamente lo que la fase entrega. Re-anclada a la DB (filtro
+> `estado=publicado`, el mismo del build), negativo re-corrido, y sin
+> requisitos nuevos para `check`: su build ya exigía Postgres desde CMS-0c.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| `qa:tipo-hoja` (eje `href` en veredicto) · `-neg` | **9/9 · 0 defectos · 9/9 = dato medido** · neg **8/8** (3 falsadores nuevos del eje) |
+| `qa:roles` ← nueva · `-neg` | **8/8** · **3/3** (control · `sin-acceso`⇒R2/R3/R5 · `sin-guarda-rol`⇒R4) |
+| `qa:slugs` re-anclada a la DB · sabotaje | 14 slugs · 3 familias limpio · `SABOTAJE=accesorios` ⇒ exit 1 |
+| `qa:html-cmp` vs `html-f24-verif` | visible **Δ0 en las 31** · 10 cargas movidas, adjudicadas por DERIVACIÓN: +24 × referenciado exacto |
+| `qa:clon-base` @1440 · @390 | **31/31 sin mover un píxel** (×2) |
+| `qa:enlaces` · `qa:lib` · `check` | 868 hrefs limpio · 107 sondas con contrato · verde |
+| la prueba final | guardas de entrada 4/4 acogiendo · build fallido CONTENIDO · lazo borrador⇒verde 38.29 s · evidencia `medidas/f25-prueba-final-ESCALON-*.json` |
+
+## 2 · Lo siguiente — el arbitraje del escalón, y después Fase 3
+
+1. **§F2-5-ESCALON-ETIQUETAS** (la tanda corta que abre lo demás): medir el
+   original — ¿cuáles de las 149 entradas no tienen etiquetas y qué renderiza
+   WordPress ahí? — y arbitrar entre plantilla-con-guarda / `[]` en proyección
+   / `required` en esquema. Las tres salidas y sus costes ya están en la
+   ficha. Después: re-correr la prueba final entera, **incluida la mitad del
+   producto que no corrió**;
+2. la tabla completa de lo que queda fuera, con dueños, está en
+   `PLAN-FASE-2.md` §ESTADO DE LA FASE 2 (M-IMG · 23×404 · CHUNK-CSS ·
+   EXIT-FETCH · Dockerfile · comportamiento 0/31 · 21 de CLASE · Breadcrumb ·
+   biblioteca pendiente = Fase 3, que es AÑADIR, no cambiar).
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No «arreglar» el escalón sin la medida del original.** Una guarda en la
+  plantilla, un `[]` en la proyección o un `required` en el esquema deciden
+  cosas DISTINTAS y ninguna está medida. La ficha lista los costes; primero el
+  original, después el arbitraje.
+- **No borrar la entrada 71 (`guia-cms-traspaso-f25`, borrador)**: es la
+  semilla que reproduce y documenta el hueco. Su dueña es la ficha; se borra
+  al cerrarla.
+- **No publicar una entrada sin etiquetas** hasta el arbitraje: el build
+  fallará (contenido, no caído — pero fallará). Está avisado también en
+  `TRASPASO-CMS.md` §4.
+- **No leer el estado de `usuarios` como definitivo**: la DB quedó a 0 a
+  propósito (los usuarios de la prueba se borraron). El primer alta real la
+  hace el propietario eligiendo rol **Admin** — el defecto del campo es
+  `editor`.
+- **No correr sondas con un build del publicador en vuelo** (la regla de
+  siempre): la prueba final los dispara de verdad.
+
+---
+
+# (anterior) HANDOFF — F2-4 CERRADA: el eslabón que nadie ejercitaba, medido; y la cura de la §2 reintroducía la enfermedad
 
 > ⚠ **Tanda 2026-08-08 (39.ª).** Reentrada sobre el commit de parada de la 38.ª,
 > que se cortó a mitad y se commiteó **declarándose SIN VERIFICAR**. PASOS
