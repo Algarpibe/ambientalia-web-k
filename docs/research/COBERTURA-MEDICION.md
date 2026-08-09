@@ -30,6 +30,26 @@ recuento de «los dos lados» de §2 estaba mal en los dos sentidos — ver ahí
 > desconocidas**. Coste restante del arquetipo: **una forma + su LECTOR**,
 > contado en `PLAN-FASE-3.md` §F3-1.
 
+> ⚠⚠⚠ **AÑADIDO EL MISMO DÍA, y corrige lo que el párrafo de arriba da por
+> supuesto: el LECTOR no se puede escribir todavía, y no por falta de rutas.**
+>
+> El coste se contó como *«una forma + su lector»* dando por hecho que el lector
+> es trabajo mecánico. No lo es: **un lector son ANCLAS**, y las anclas de un
+> arquetipo salen de su **fase de specs** — que en `articulos-kb` **no existe**
+> (`docs/research/grupo-D/` tiene `RECON.md` y `DECISION.md` y **ningún**
+> `components/*.spec.md`). Escribirlas hoy sería inventarlas, que es el mismo
+> defecto que el fallback `A-blog` con otro disfraz: **anclas plausibles sobre
+> una página que nadie ha medido**.
+>
+> **La guarda, en cambio, ya está en su sitio y se verificó leyendo el código:**
+> `c-cmp.mjs:128` sale con **exit 2** ante una familia sin declarar. O sea que el
+> día que las 6 rutas se emitan, la sonda **se para sola** — que es exactamente
+> lo que tiene que hacer. Declararle la familia ahora, sin lector medido,
+> **desactivaría esa guarda** a cambio de nada.
+>
+> Orden correcto, y va en `ESQUEMA-CMS.md` §2d.4: **specs → … → lector**. Nunca
+> al revés.
+
 ## Por qué existe este documento
 
 En la tanda de la miga (A-QA1b) tres rutas —`/accesorios`, `/software-…`,

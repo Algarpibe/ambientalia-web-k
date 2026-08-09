@@ -9,6 +9,18 @@
 > **No decide construir nada.** Es un censo: qué formas de página existen en el
 > original, cuáles caen bajo un arquetipo que ya tenemos y cuáles no.
 
+> ⚠ **Nota de alcance añadida el 2026-08-09 (F3-1), y no es un número: es una
+> distinción que este censo no hacía.** Un arquetipo puede estar **CENSADO**
+> (sabemos que existe y cuántas instancias tiene), **RECONOCIDO** (topología y
+> decisión de modelo) y **ESPECIFICADO** (`getComputedStyle` por sección, o sea
+> lo único que permite construir una plantilla fiel). Los tres se venían leyendo
+> como uno.
+>
+> `articulos-kb` está **censado y reconocido, y NO especificado** —
+> `docs/research/grupo-D/` no tiene `components/`—, y eso paró su construcción
+> (`ESQUEMA-CMS.md` §2d.4). **Un arquetipo con decisión de modelo escrita puede
+> seguir sin ser construible**, y hasta hoy no había dónde leerlo.
+
 ## 0 · De dónde salen los números, y qué NO cubren
 
 Fuente: los **11 sub-sitemaps** de `https://kunakair.com/sitemap_index.xml`

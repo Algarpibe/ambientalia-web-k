@@ -91,6 +91,18 @@ sobre este arquetipo sin modificarse, **se dice con la evidencia de haberlos
 corrido**; si hay que tocarlos, **esa modificación ES el coste del arquetipo** y
 se cuenta antes de hacerla, no después.
 
+> ⚠⚠ **A ESTA TABLA LE FALTABA UNA FILA, y se vio al ir a cumplirla (2026-08-09,
+> §2d.4): la PRECONDICIÓN de SPECS.** El criterio (d) pide **Δ0 contra el
+> original**, y este arquetipo **no tiene fase de specs** —
+> `docs/research/grupo-D/` tiene `RECON.md` y `DECISION.md`, y **ningún**
+> `components/*.spec.md`—. Sin `getComputedStyle` por sección, la plantilla se
+> inventa y el «Δ0» deja de medir fidelidad.
+>
+> **Un criterio de «hecho» no comprueba que exista lo que hace falta para
+> cumplirlo** (§regla 10). El orden obligado de la tanda que lo retome:
+> **specs → filas/columnas en el esquema → extractor+seed → plantilla → ruta →
+> sonda de dos lados**.
+
 #### El coste de cobertura, CONTADO ANTES de gastarlo (2026-08-09)
 
 Derivado leyendo de dónde saca cada sonda su lista de rutas y cómo clasifica.
@@ -205,7 +217,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 | fase | estado |
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
-| **F3-1** · `articulos-kb` | ⛔ **PARADA EN SU ESCALÓN** — §F3-1-ESCALON-TEXTO |
+| **F3-1** · `articulos-kb` | 🟡 **escalón CERRADO (§2d.3); PASO 4 parado en DOS huecos nuevos (§2d.4)** — `cuerpo` plano vs 45 filas · **sin fase de SPECS** |
 | **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |

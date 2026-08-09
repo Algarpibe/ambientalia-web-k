@@ -22,7 +22,7 @@
  */
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { corridaNegativa, QA } from "./lib.mjs";
+import { corridaNegativa, Evaluadas, QA } from "./lib.mjs";
 
 const SONDA = join(QA, "texto-poblacion.mjs");
 const INDICE_SEC = join(QA, "../../corpus/fase-3-sectores/INDICE.json");
@@ -80,6 +80,10 @@ const SABOTAJES = [
   },
 ];
 
+/* El contrato vale también aquí: un negativo que no ejerce ningún sabotaje da
+ * la misma salida que uno donde todos mordieron (§sondas 4bis). */
+const ev = new Evaluadas({ nombre: "texto-poblacion-neg", unidad: "sabotajes", minimo: SABOTAJES.length });
+
 let vivos = 0;
 console.log(`\n═══ NEGATIVO · texto-poblacion (${SABOTAJES.length} sabotajes) ═══\n`);
 for (const s of SABOTAJES) {
@@ -92,10 +96,12 @@ for (const s of SABOTAJES) {
   }
   const salida = `${r.stdout ?? ""}${r.stderr ?? ""}`;
   const mordio = r.status !== 0 && s.espera.test(salida);
-  if (mordio) vivos++;
+  if (mordio) {
+    vivos++;
+    ev.ok();
+  }
   console.log(`  ${mordio ? "✓" : "✗"} ${s.id.padEnd(18)} exit ${String(r.status).padStart(2)} · ${s.que}`);
   if (!mordio) console.log(`     ⚠ NO mordió por su invariante. Se esperaba ${s.espera} y exit ≠ 0.\n${salida.slice(-700)}`);
 }
 
-console.log(`\n  ✓ evaluadas ${vivos}/${SABOTAJES.length} sabotajes · texto-poblacion-neg`);
-process.exit(vivos === SABOTAJES.length ? 0 : 1);
+process.exit(ev.informe() === 0 && vivos === SABOTAJES.length ? 0 : 1);

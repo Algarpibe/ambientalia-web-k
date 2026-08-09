@@ -1,4 +1,102 @@
-# HANDOFF — FASE 3 ABIERTA: el original FUERA del camino crítico, y `articulos-kb` parada en su escalón
+# HANDOFF — el escalón CERRADO SIN ARBITRAR, y `articulos-kb` parada un escalón más arriba
+
+> ⚠ **Tanda 2026-08-09 (43.ª).** PASOS 1 · 2 · 3 · 5 · 6 · 7 completos. El
+> **PASO 4 paró en dos huecos que ninguna salida costeada contemplaba**, que era
+> su salida prevista por la consigna. Acta del arbitraje: `ESQUEMA-CMS.md`
+> §2d.3. Acta de la parada: §2d.4. Clase nueva: `PENDIENTES-QA.md`
+> §CLASE-INLINE-PRESTADO.
+
+## 0 · Los cinco titulares
+
+> **1 · EL DILEMA NO SE ARBITRÓ: SE DISOLVIÓ, y lo disolvió preguntar sobre qué
+> POBLACIÓN se derivó el tipo.** `MODULO_TEXTO` se calibró sobre `MonoInline`,
+> que es **dato transcrito a mano** — y **una transcripción no se puede auditar
+> contra sí misma**: lo que no se transcribió no está ahí para contarlo. Medido
+> contra el original, en prosa: **SECTOR/MONOGRÁFICO traen 12 etiquetas fuera
+> del tipo y KB trae 7.** El tipo no se le quedaba corto al recién llegado —
+> **estaba corto para sus propios consumidores desde el principio**, y KB fue
+> sólo el primero que se midió contra el sitio en vez de contra su copia.
+>
+> **2 · Hubo que CAPTURAR el original otra vez, y la razón que lo dejó fuera es
+> la que produjo el hueco.** Los cuerpos de SECTOR y MONOGRÁFICO **no estaban en
+> ningún corpus** —0 de 309, 0 de 272— excluidos con la razón escrita *«CONSTRUIDA
+> completa: el cuerpo es dato tipado transcrito»*. Correcta para **sembrar**;
+> exactamente la equivocada para **auditar**, porque los excluyó *por* estar
+> transcritos, o sea *por* ser lo que había que comprobar. 8/8 capturados,
+> denominador propio en `corpus/fase-3-sectores/`.
+>
+> **3 · El segundo testigo estaba en el repo desde julio: la transcripción
+> improvisó TRES veces en un fichero.** `monografico.ts` aplana `<sub>` a negrita
+> (l. 585), usa el carácter Unicode `H₂S` 40 líneas más allá (l. 627) e inventa
+> un `kind: "tabla"` (l. 622) para el `<table>` que no cabía. **Tres apaños
+> distintos para la misma carencia es la firma de un tipo corto**, no de tres
+> decisiones. Y de ahí sale un **defecto VIVO**: EDAR sirve `H2S` donde el
+> original sirve `H₂S` —4 de 5 `<li>`, 41 `<sub>` en la página— en una ruta dada
+> por verificada.
+>
+> **4 · El PASO 4 paró, y no por el texto: por DOS huecos nuevos.** (a) el
+> `cuerpo` de `articulos-kb` es **plano** y el original tiene **45 filas** con
+> 1·2·3 columnas (`4_4`×31 · `1_2`×14 · `1_3`×9 · `2_3`×6); (b) **este arquetipo
+> no tiene fase de SPECS** — `grupo-D/` no tiene `components/`. Sin specs la
+> plantilla se inventa y el «Δ0 contra el original» deja de medir fidelidad.
+> **Un criterio de «hecho» no comprueba que exista lo que hace falta para
+> cumplirlo.**
+>
+> **5 · Y el PASO 5 se contestó con un NO, que es su resultado.** El lector de
+> `c-cmp` **no se escribe todavía**: un lector son **anclas**, y las anclas salen
+> de las specs que no existen — inventarlas es el fallback `A-blog` con otro
+> disfraz. La **guarda sí está puesta y verificada leyendo el código**
+> (`c-cmp.mjs:128`, exit 2 ante familia sin declarar), así que el día que las 6
+> rutas se emitan la sonda se para sola. Declararle la familia hoy **desactivaría
+> esa guarda a cambio de nada**.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`cms:captura-sectores`** ← nueva | **8/8 páginas · 2.5 MB · 0 fallos** — la población que faltaba |
+| **`qa:texto-poblacion`** ← nueva · `-neg` | **14 páginas · 2 poblaciones · 7 vs 12 etiquetas fuera del tipo** · neg **4/4** · control contra `kb-recon` al carácter |
+| `qa:nunca-vistos` | **208 de 296** sin moverse · fuera del universo **105 en 8 colecciones** (`articulos-kb` **31**, era 37: el número se mueve con el esquema) |
+| `qa:lib` | **116 sondas** COMPILAN y declaran su mínimo · 0 no conformes |
+| `npm run check` | **verde** (lint + typecheck + build + slugs + cms-campos 10/10) |
+| migraciones | `20260809_135819_f3_texto_kb_rico` + `20260809_135857_f3_kb_retira_compartidos`, **aplicadas** |
+
+## 2 · Lo siguiente, por orden de valor
+
+1. **F3-1 PASO 4, y su orden es OBLIGADO** (§2d.4): **specs del arquetipo** →
+   filas/columnas en el esquema con su migración → extractor + seed → plantilla
+   → ruta → sonda de dos lados + Δ0 + lector de `c-cmp`. **Saltarse las specs es
+   construir contra una plantilla inventada**, y entonces el Δ0 no prueba nada;
+2. **F3-2 · listados y hubs** — sigue siendo el de más rendimiento (35 páginas +
+   107 rutas), y **sigue bloqueada por `P-LH-C6`** (la pasada de comportamiento).
+   Ojo: sus 142 = 35 + 107 ya están capturados y reproducen LH-2 al número;
+3. **§CLASE-INLINE-PRESTADO** — el `H₂S` de EDAR. Es un **defecto vivo**, no un
+   pendiente de modelo, y su arreglo es el ensanchamiento de `MonoInline` +
+   render + `mapeo`/`vuelta` **con su round-trip 63/63 antes y después**;
+4. operación, sin cambios: `Dockerfile` **sin verificar** y `PREVIEW_SECRETO`.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer «un ensanchamiento toca lo poblado» como una prohibición.** Es
+  **retrocompatible**: el tabú protege de estrechamientos y de campos nuevos
+  requeridos, y **no aplica**. Lo que sí cuesta es el round-trip, y ésa es la
+  razón por la que se aplazó — decir la otra manda a la tanda siguiente a elegir
+  por un motivo falso.
+- **No declarar la familia de `articulos-kb` en `c-cmp` «para dejarlo listo».**
+  Sin lector medido eso apaga la única guarda que hoy protege al arquetipo.
+- **No citar «37 casos de `articulos-kb`» ni «111 fuera del universo».** Con el
+  esquema de hoy son **31** y **105**. El número se mueve con el esquema, que es
+  justo lo que lo hace útil.
+- **No dar por buena la cobertura de `articulos-kb`:** sigue `·` en los nueve
+  ejes, y lo seguirá hasta que emita rutas Y tenga lector.
+- **No re-medir la población del texto.** Está congelada en
+  `medidas/texto-poblacion.json` con su control; la corrida defectuosa se
+  conserva aparte (`-SONDA-SOBRECASABA-ANFITRIONES`) y **no es una medida del
+  sitio**.
+
+---
+
+# (anterior) HANDOFF — FASE 3 ABIERTA: el original FUERA del camino crítico, y `articulos-kb` parada en su escalón
 
 > ⚠ **Tanda 2026-08-09 (42.ª).** PASOS 0 · 1 · 3 · 4 · 5 completos; el **PASO 2
 > paró en el ESCALÓN con la evidencia congelada**, que era su salida prevista.

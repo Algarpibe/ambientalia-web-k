@@ -767,6 +767,7 @@ proyecto costaron una tanda cada una:
 | «el ritmo lo pone el componente del bloque» | lo ponía la SECCIÓN, y cada sector la corta donde quiere (S7) |
 | «el desfase del claim es +26.5» | eran **−47.5 de contenido tapados por +74 de ritmo** — dos errores anulándose |
 | «los enlaces a sectores los pinta `nav.ts`» | los pintaban **tres** ficheros, y dos ni se sospechaban |
+| «el tipo del módulo de texto se midió sobre el original» | se midió sobre **la TRANSCRIPCIÓN**, que ya había tirado lo que faltaba |
 
 De ahí las dos formas de aplicarlo, que son la misma:
 
@@ -1523,6 +1524,41 @@ se persigue.
 > repo, en silencio, y no hay lectura que los distinga. Por eso la exigencia no
 > es «acuérdate bien»: es **que la afirmación traiga su derivación al lado**, que
 > es lo que ya se le pide a las sondas (regla 2, congelar) aplicado a la prosa.
+
+**10 · UNA AFIRMACIÓN DE COMPLETITUD SE VERIFICA EJERCITÁNDOLA, NO
+RELEYÉNDOLA.** (2026-08-09)
+
+La regla 9 persigue números afirmados de memoria. Ésta persigue su hermana
+mayor: **afirmaciones de que algo ESTÁ COMPLETO**, que no son un número y por
+eso no se pueden `grep`ear.
+
+> **«Ya está capturado» · «el original sale del camino crítico» · «esa fase está
+> cerrada» son afirmaciones sobre un CONJUNTO, y releer el acta que las escribió
+> no las comprueba: sólo comprueba que el acta lo dice.** La única verificación
+> es **USAR la cosa para lo siguiente que iba a necesitarla** — y si no se puede
+> usar todavía, la afirmación se declara con su alcance, no con su titular.
+
+**Caso medido:** el acta de F3-0 escribió *«EL ORIGINAL SALE DEL CAMINO CRÍTICO,
+DEFINITIVAMENTE»* sobre una campaña de **272 registros con 0 fallos**. Todo
+cierto, y la frase **falsa a medias**: al ir a sembrar salió que **0 de las 56
+imágenes de `articulos-kb` estaban capturadas**. *Capturar las páginas no es
+capturar sus assets.* Y lo destapó **intentar sembrar**, no releer el acta —
+releerla habría vuelto a dar verde las veces que hiciera falta.
+
+**Y a la segunda vuelta pasó otra vez, con la misma frase y otro conjunto:** ya
+con las dos mitades capturadas, la frase seguía siendo falsa **para AUDITAR** —
+los cuerpos de SECTOR y MONOGRÁFICO no estaban en ningún corpus (0 de 309, 0 de
+272), excluidos con la razón *«CONSTRUIDA completa: el cuerpo es dato tipado
+transcrito»*. Hubo que pegarle al original otra vez (§2d.3).
+
+> **La forma general: una campaña se declara COMPLETA respecto a un USO, nunca
+> en absoluto.** «Completa para sembrar» y «completa para auditar» son dos
+> afirmaciones, y la segunda ni siquiera se había planteado. Un titular sin uso
+> declarado es un cheque que firma la tanda siguiente.
+
+**Operativamente:** cuando una tanda vaya a escribir *«X está completo»*, escribe
+al lado **para qué** y **qué lo ejercitó**. Si nada lo ha ejercitado todavía, eso
+es lo que se escribe — y es información, no una rebaja.
 
 ## Comandos
 

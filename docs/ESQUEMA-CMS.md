@@ -1385,6 +1385,71 @@ Ficha con su evidencia en `PENDIENTES-QA.md` §CLASE-INLINE-PRESTADO. **No se
 arregla en esta tanda** —arreglarlo es el ensanchamiento con su round-trip— pero
 deja de estar invisible, que era lo caro.
 
+### ⛔ 2d.4 · `articulos-kb` NO SE PUEDE SEMBRAR TODAVÍA — dos huecos que ninguna salida del escalón contemplaba (2026-08-09, F3-1 PASO 4)
+
+Resuelto el escalón del texto, F3-1 PASO 4 (seed → plantilla → ruta → Δ0) **paró
+en el primer paso**, y por dos cosas distintas que salieron al ir a usar el
+modelo. Las dos con su número, ninguna arbitrable: **son estructura sin medir**,
+no un dilema.
+
+#### Hueco 1 · el `cuerpo` es PLANO y el original tiene FILAS Y COLUMNAS
+
+`articulos-kb.cuerpo` se construyó como `blocks` **plano** — una lista de
+módulos. La captura dice otra cosa, derivado del árbol congelado en
+`medidas/kb-recon.json` (los mismos bytes con los que se decidió `blurb`):
+
+| | |
+|---|---|
+| filas en las 6 instancias | **45** |
+| columnas por fila | **1**×31 · **2**×13 · **3**×1 |
+| anchos de columna | `4_4`×31 · `1_2`×14 · `1_3`×9 · `2_3`×6 |
+| clase de fila no-por-defecto | `d-none`×6 — **una por artículo** |
+
+Una lista plana **no puede expresar** «este texto y esta imagen van en dos
+columnas de la misma fila», que es lo que hacen 14 de las 45. El modelo que hace
+falta ya existe y está medido: **`MonoFila`/`MonoColumna`**, el mismo que usan
+SECTOR y MONOGRÁFICO. O sea que esto **no abre decisión**: es trabajo.
+
+> ⚠ **Y por qué no se vio en la tanda anterior:** §2d.2 midió **los módulos**
+> —`blurb` campo a campo, `gallery`— y el `cuerpo` plano nunca se ejerció, porque
+> **no se sembró nada**. Es la §regla 10 otra vez: *«construida a medias» se
+> verifica usándola*, y el uso llegó hoy.
+
+#### Hueco 2 · este arquetipo NO TIENE FASE DE SPECS, y el Δ0 la exige
+
+El flujo del proyecto es **Recon → Specs → Build**. Para `articulos-kb`:
+
+| fase | estado |
+|---|---|
+| Recon | ✅ `docs/research/grupo-D/RECON.md` + `DECISION.md` + captura F3-0 |
+| **Specs** (`getComputedStyle` por sección, estados, texto verbatim, assets) | ❌ **NO EXISTE** — `docs/research/grupo-D/components/` no existe |
+| Build | bloqueado por lo anterior |
+
+**Sin specs, «la plantilla» se inventa**, y entonces el Δ0 del criterio (d) no
+mide fidelidad: mide si acerté. Es exactamente lo que `CLAUDE.md` §UN ARQUETIPO
+NUEVO NO HEREDA COBERTURA dice de las guardas solo-clon, aplicado a la
+construcción en vez de a la sonda.
+
+> **Es la §regla 10 por tercera vez en la misma tanda.** F3-1 escribió su
+> criterio de «hecho» —*(d) Δ0 contra el ORIGINAL a 1440 y 390*— **sin declarar
+> la precondición que ese criterio tiene**. Un criterio de cierre no comprueba
+> que exista lo que hace falta para cumplirlo.
+
+#### Lo que esto NO cambia
+
+- **§2d.3 sigue en pie entera**: el texto es `campoHtml`, y eso se decidió con
+  la medida delante. Los dos huecos son de **estructura de página**, no de tipo
+  de campo;
+- **`blurb`/`gallery` siguen medidos y aplicados**, con sus migraciones;
+- **nada se cableó a ciegas.** Es lo que pedía la consigna: *si aparece algo que
+  ninguna salida costeada contempla, para con la evidencia congelada*.
+
+**Dueño:** la tanda que retome F3-1 PASO 4, y su **orden obligado** es:
+**(1)** specs del arquetipo · **(2)** filas/columnas en el esquema con su
+migración · **(3)** extractor + seed · **(4)** plantilla · **(5)** ruta ·
+**(6)** sonda de dos lados + Δ0. Saltarse (1) es construir contra una plantilla
+inventada.
+
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 
 Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`
