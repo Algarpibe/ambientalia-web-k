@@ -1841,21 +1841,67 @@ español — funciona; el guardado del editor dispara el rebuild real (motivo
 `entradas-blog:<slug> create`); y **el fallo de build es visible y contenido**
 (`GET /estado · ultimoFallo` con la cola entera, sitio anterior servido).
 
-## ESTADO DE LA FASE 2 — cerrada con UN arbitraje pendiente
+### ✅ F2-5 · CERRADA — el escalón arbitrado con la medida delante, y la prueba final ENTERA en verde (2026-08-08, tanda 41.ª)
 
-Las cinco fases ejecutadas: F2-1 (esquema) · F2-2 (datos) · F2-3 (lectura) ·
-F2-4 (publicación) · F2-5 (admin y traspaso, con su prueba final parada en el
-escalón). **El sistema completo — editar → guardar → reconstruir → promocionar
-→ servir — está construido, medido y con sus guardas en negativo.** Lo que
-impide llamarla REDONDA es un solo arbitraje: §F2-5-ESCALON-ETIQUETAS, que
-exige medir el original antes de decidir (y su decisión es de una tanda
-corta).
+**El criterio de «hecho» de F2-5 se alcanza aquí, y con la vuelta que la 40.ª
+dejó pendiente**: *una persona sin acceso al repo publica una página nueva y las
+sondas la verifican sin que nadie haya abierto el editor de código*. Ahora está
+además **cableado como sonda repetible** (`qa:f25-final`), no como acta de una
+sesión.
+
+| paso | estado | medida |
+|---|---|---|
+| **PASO 1** · medir el original | ✅ | `qa:escalon` **149/149 entradas del corpus** · **8 sin etiquetas** · **el original OMITE el bloque**, UNA sola forma en las 8 · rótulo derivado del número 141/141 · negativo **5/5** (3 al instrumento, 1 al HALLAZGO: una instancia de bloque vacío voltea el veredicto a AMBIGUO) |
+| **PASO 2** · arbitrar | ✅ | cede `mapeo.mjs`, por ESTRECHAMIENTO. `types/kunak.ts` NO cede —la contradicción imputada no existía: un array no-opcional de longitud 0 **es** «0»— y `[slug]/page.tsx` NO cede —ya es la fidelidad medida—. Regla nueva en `ESQUEMA-CMS.md` §7e, discriminador DERIVADO de la ida (40 listas · 35 siempre presentes · 5 omitibles, que son las 5 opcionales del tipo: **40/40**). Guarda `qa:cms-decl` en las dos direcciones, negativo **8/8**. **EFECTO medido: NO-OP** — `cms-roundtrip` 63/63 y `cms-lectura` 63/63 sin moverse |
+| **PASO 3** · generalizar | ✅ | `qa:nunca-vistos` — **208 de 296 casos legales sin ejercitar** (128 ausente · 43 vacía · 37 valor), alcance declarado (el SEED, no el original) y los 43 `vacía` con respuesta ya decidida. Negativo **4/4**, con dos sabotajes que producen EL MISMO cero por causas opuestas |
+| **pre-vuelo** | ✅ | barrido de las 16 sondas que leen el seed, DERIVADO. **4.ª instancia** de la clase: `tipo-hoja` tenía DOS ejes con DOS anclas y los dos leían el seed — el eje `href` re-anclado a la DB (**9/9 → 10/10** con el alta dentro), negativo **10/10**. 5.ª fichada con dueño y razón de no arreglarla ahora |
+| **PASO 4** · prueba final | ✅ **6/6** | `qa:f25-final` · el EDITOR da de alta **entrada sin etiquetas** Y **producto**; guardas de entrada acogen (slug + webhook con SU credencial); **`next build` exit 0 en 31.37 s, 31→32 rutas** —el caso que mató a la 40.ª—; el eje `href` cubre el alta del admin; deshecho y reconstruido, **31 rutas y DB sin residuo**. Negativo **4/4** |
+| **la segunda mitad del PASO 4** | ✅ | ya no es «no corrida»: **P2 y P5** son literalmente el producto, y el eje `href` la juzga desde la DB |
+
+**Y lo que hay que saber para leer el verde**, porque el §Δ0 no lo dice solo:
+`qa:clon-base` da **31/31 sin mover un píxel a 1440 y a 390** contra
+`f25-paso0` — o sea que **cambiar la proyección de las listas vacías no movió un
+píxel de las 31 rutas construidas**. Es la prueba de que el arreglo del PASO 2 no
+cableó nada: sólo cambia el caso que el seed no tiene.
+
+⚠ **Una corrección de estado que la fase arrastraba:** la **entrada 71**
+(`guia-cms-traspaso-f25`, la semilla del escalón que el HANDOFF pedía no borrar)
+**ya no está** — la DB traía sólo las 7 sembradas. Se perdió en un reseed entre
+tandas. No cambia nada del arbitraje (lo decide el corpus, no la fila) y el caso
+se recrea solo en cada corrida de `qa:f25-final`, que es mejor semilla que una
+fila que hay que acordarse de no borrar.
+
+## ✅ ESTADO DE LA FASE 2 — CERRADA, sin arbitrajes abiertos (2026-08-08, tanda 41.ª)
+
+**Las cinco fases ejecutadas y cada una contra su criterio de «hecho», con la
+evidencia al lado.** El sistema completo —**editar → guardar → reconstruir →
+promocionar → servir**— está construido, medido y con sus guardas en negativo.
+El único arbitraje que quedaba abierto, §F2-5-ESCALON-ETIQUETAS, **está
+cerrado**: medido sobre el corpus, arbitrado, con el efecto verificado y la
+prueba final re-corrida entera.
+
+| fase | criterio de «hecho» | ✔ | evidencia |
+|---|---|---|---|
+| **F2-1** esquema | las colecciones expresan los content types medidos, y una guarda lo comprueba | ✅ | `qa:cms-campos` **10/10 tipos · 0 campos sin contraparte** (neg 4/4) · `qa:cms-arquetipos` · `qa:cms-slugs` |
+| **F2-2** datos | el corpus entra y **la ida y la vuelta son inversas** sobre lo sembrado | ✅ | `qa:cms-roundtrip` **63/63 documentos idénticos, 13 colecciones** (neg entero) · `qa:cms-teaser` (el TEASER es dato propio, falsado) · corpus 309 capturas congeladas |
+| **F2-3** lectura | el sitio lee de Payload **sin mover un píxel** de lo construido | ✅ | `qa:clon-base` **31/31 Δ0 a 1440 y a 390** · `qa:html-cmp` visible Δ0/31 · `qa:cms-lectura` **63/63 por los dos contextos** (neg 4/4) · `qa:cms-decl` **63 rutas en las dos direcciones** (neg **8/8**) |
+| **F2-4** publicación | guardar dispara la reconstrucción, y **un build fallido no deja el sitio sin sitio** | ✅ | `qa:publica-e2e` **4/4** (alta ⇒ 31→32 rutas, baja ⇒ 31) · `qa:publicar` 4/4 · `qa:programada` 6/6 · **contención verificada en su primer fallo REAL** (nada promocionado, `ultimoFallo` con la cola) |
+| **F2-5** admin y traspaso | **una persona sin acceso al repo publica una página nueva y las sondas la verifican sin que nadie abra el editor de código** | ✅ | `qa:roles` **8/8** (neg 3/3) · admin en español con vistas derivadas · `docs/TRASPASO-CMS.md` · **`qa:f25-final` 6/6** (neg 4/4) · `qa:tipo-hoja` **10/10 href** (neg 10/10) |
+
+**Y las tres medidas que sostienen el «cerrada» y no estaban en la 40.ª:**
+
+| | |
+|---|---|
+| el original en el caso del escalón | `qa:escalon` — **8 de 149 sin etiquetas · OMITE el bloque · una sola forma** (neg 5/5) |
+| el arreglo no cableó nada | **NO-OP medido**: `cms-roundtrip` y `cms-lectura` 63/63 sin moverse · `clon-base` **31/31 sin mover un píxel** ×2 anchos |
+| el alta del editor sobrevive al render | `qa:f25-final` P4 — **`next build` exit 0, 31→32 rutas**, con la entrada sin etiquetas dentro |
 
 **Lo que queda fuera, con su dueño — nada de esto bloquea el traspaso:**
 
 | qué | dueño | naturaleza |
 |---|---|---|
-| **§F2-5-ESCALON-ETIQUETAS** | **la PRÓXIMA tanda** — medir el original (entradas sin etiquetas en las 149) y arbitrar esquema/proyección/plantilla | el único arbitraje abierto de la fase |
+| **208 casos legales sin ejercitar** (§PENDIENTES-QA · CASOS NUNCA OBSERVADOS) | inventario abierto con instrumento (`qa:nunca-vistos`) y cola de trabajo (`qa:f25-final`). **No es deuda: es cobertura declarada** | medición |
+| `clase-rango` anclada al seed (5.ª instancia) | fichada con dueño **y con la razón de NO arreglarla ahora**: es la más benigna y el arreglo le añade Postgres | instrumento |
 | M-IMG | deuda de RENDER declarada (no de dato) | tanda propia |
 | 23 imágenes 404 del corpus | tanda aislada, no mezclar | dato |
 | §F2-4-CHUNK-CSS | nivel `css` propio en `html-cmp`, con criterio (una hoja de estilos SÍ es fidelidad) | instrumento |

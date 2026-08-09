@@ -363,7 +363,13 @@ como una verificación**, porque la diferencia entre «no hay defecto conocido»
 «no se ha mirado» no está en ningún otro sitio del repo. Hoy (2026-08-02): el
 ancho del **cuerpo** ya no está a 0 —se midió, **164 de 181 filas**, y su unidad
 es la FILA, no la ruta— y el **comportamiento sigue a 0/31**, que es el hueco
-mayor que queda. Son **48 sondas**.
+mayor que queda.
+
+> ⚠ **El recuento de sondas se DERIVA, no se cita de memoria** (§sondas 9): el
+> número exacto lo dice `npm run qa:lib` en su última línea (*«las N sondas
+> COMPILAN y declaran su mínimo»*). Aquí llegó a estar escrito «48» y a fecha de
+> 2026-08-08 son **113**: un número recordado envejece **contra** el repo, en
+> silencio, y no hay lectura que lo distinga de uno derivado.
 
 > ⚠ **Y desde esta fecha hay una lectura más barata que abrir el documento:
 > toda sonda imprime su LÍNEA DE UNIDADES** (`✓ evaluadas 31/31 rutas · enlaces`).
@@ -905,6 +911,37 @@ anchos.** Si el componente lo usa un segundo arquetipo, **ése es parte del
 barrido**, y si sus contenidos son más largos, es el único sitio donde el defecto
 existe. Es también por lo que la **FAMILIA DE CALIBRACIÓN** no siempre es una
 familia de páginas: aquí lo era de **arquetipos**.
+
+⚠ **Y la tercera cosa de la que puede ser familia: el ESQUEMA (2026-08-08,
+§F2-5-ESCALON-ETIQUETAS).** Las dos de arriba son de píxeles. Ésta no, y por eso
+conviene enunciarla aparte:
+
+> **Una regla derivada sobre un dominio donde el caso NO SE DA no está probada
+> para ese caso: está SIN PROBAR.** Y se lee como probada, porque la derivación
+> es correcta y el dominio es real.
+
+Medido, y las dos mitades eran ciertas: *«un recorrido de los 9 catálogos —46
+filas— da **0 arrays vacíos explícitos**, así que la lista vacía vuelve
+AUSENTE»*. Verdad. **La conclusión no se sigue**: «0 vacíos explícitos» dice que
+la preimagen es única **en ese dominio**, no que «ausente» sea la respuesta
+correcta para todos los campos. El dominio eran **7 entradas de blog de 149**, y
+el original ejerce el caso **8 veces**. Costó una fase parada: el primer editor
+dio de alta una entrada sin etiquetas y el build murió con `undefined.length`.
+
+**Las dos consecuencias operativas, y la segunda es la que se olvida:**
+
+1. **Un campo que ADMITE un caso y que ningún dato de calibración EJERCITA es un
+   camino de render sin estrenar.** Se inventaría —`npm run qa:nunca-vistos`,
+   208 de 296— y se declara con su alcance; no se da por soportado;
+2. **el arreglo se ESTRECHA a donde la regla se derivó, no se sustituye por la
+   contraria.** Aquí: la lista vuelve `[]` **salvo** que el campo declare que el
+   dato medido la omite, y el discriminador **se deriva** (de la ida) en vez de
+   elegirse. La prueba de que no se cableó nada es que el cambio fue **NO-OP
+   sobre todo lo medido** — 63/63 y 63/63 sin moverse, 31/31 sin un píxel.
+
+**Y el defecto se pone en la dirección que GRITA** (§sondas 6): olvidar declarar
+un campo omitible hace fallar el round-trip **en el acto**; olvidar lo contrario
+—el defecto viejo— no hace fallar nada y mata el render delante del editor.
 
 **Y su corolario de instrumento, pagado en la misma corrida:** para afirmar
 «envuelve un renglón más» hace falta **contar renglones**, y

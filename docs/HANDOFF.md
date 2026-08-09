@@ -1,4 +1,110 @@
-# HANDOFF — F2-5 EJECUTADA y FASE 2 al completo: la prueba final PARÓ EN EL ESCALÓN, que era su salida prevista
+# HANDOFF — FASE 2 CERRADA: el escalón arbitrado con la medida delante, y la prueba final entera en verde
+
+> ⚠ **Tanda 2026-08-08 (41.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos. El único
+> arbitraje que quedaba abierto —§F2-5-ESCALON-ETIQUETAS— **está cerrado**, y no
+> por criterio propio: **por medición del original**. La FASE 2 queda cerrada sin
+> arbitrajes pendientes. Acta de fase en `PLAN-FASE-2.md` §F2-5 CERRADA y
+> §ESTADO DE LA FASE 2; decisión de esquema en `ESQUEMA-CMS.md` §7e.
+
+## 0 · Los cinco titulares
+
+> **1 · La medida disolvió la mitad de la pregunta: la «contradicción escrita»
+> del tipo NO EXISTÍA.** La ficha del escalón imputaba a `types/kunak.ts:394`
+> una contradicción —*«`0..n` en prosa y negado en el tipo»*—. Falso: **un array
+> NO-OPCIONAL de longitud 0 ES «0»**. El tipo dice *la clave está siempre, la
+> lista puede estar vacía*, que es exactamente lo que hace el original. Y
+> `[slug]/page.tsx:163` tampoco cede: **ya era la fidelidad medida** — el
+> original OMITE el bloque en las 8, y `etiquetas.length > 0 &&` es justo eso.
+> **De tres piezas «cada una coherente», dos eran además CORRECTAS.**
+>
+> **2 · Lo que cedió fue `mapeo.mjs`, y por ESTRECHAMIENTO, no por borrado.**
+> «LA LISTA VACÍA» decía *«se elige AUSENTE; 46 filas dan 0 arrays vacíos
+> explícitos»*: las dos mitades ciertas y **la conclusión no se seguía** — «0
+> vacíos» dice que la preimagen es única EN ESE DOMINIO, y el dominio eran 7
+> entradas de 149. Regla nueva (§7e): **una lista vuelve `[]` salvo que el campo
+> declare `vaciaEsAusente`**, y el discriminador **se DERIVA de la ida** (40
+> listas · 35 siempre presentes · **5 omitibles, que son las 5 que el tipo
+> declara opcionales: 40/40**). El defecto se invierte a propósito: olvidar
+> declarar un omitible hace fallar el round-trip **en el acto**; olvidar lo
+> contrario no falla nada y mata el render delante del editor.
+>
+> **3 · Y la prueba de que no cableó nada es que NO MOVIÓ NADA.**
+> `cms-roundtrip` **63/63** y `cms-lectura` **63/63** sin moverse;
+> `clon-base` **31/31 sin mover un píxel** a 1440 y a 390. El cambio es un
+> **NO-OP sobre todo lo medido** — sólo difiere en el caso que el corpus tiene
+> (8 de 149) y el seed no. Efecto verificado por MEDIDA, no por diff.
+>
+> **4 · La prueba final ya no es un acta: es una SONDA, y salió 6/6 con la mitad
+> del producto dentro.** `qa:f25-final` — el editor da de alta **entrada sin
+> etiquetas** Y **producto**; las guardas la acogen (slug + webhook con SU
+> credencial); **`next build` exit 0 en 31.37 s, 31→32 rutas** *(el caso que
+> mató a la 40.ª)*; el eje `href` cubre el alta del admin; y deshecho el alta y
+> reconstruido, **31 rutas y DB sin residuo**. Negativo 4/4.
+>
+> **5 · El pre-vuelo sacó la 4.ª instancia de la clase, y la sacó por barrido.**
+> `tipo-hoja` tenía **DOS ejes con DOS anclas** y los dos leían el seed: «tipo de
+> hoja» pregunta si el esquema expresa lo MEDIDO —seed, correcto— y **`href`**
+> pregunta si el build emite la ruta —**DB**—. Re-anclado: **9/9 → 10/10** con el
+> alta del admin dentro. La 5.ª (`clase-rango`) queda fichada **con la razón de
+> no arreglarla ahora**, que es parte del resultado.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`qa:escalon`** ← nueva · `-neg` | **149/149 entradas del corpus · 8 sin etiquetas · el original OMITE, 1 sola forma · rótulo 141/141** · neg **5/5** |
+| **`qa:f25-final`** ← nueva · `-neg` | **6/6 invariantes** (31→32→31 rutas, DB sin residuo) · neg **4/4** |
+| **`qa:nunca-vistos`** ← nueva · `-neg` | **208 de 296 casos legales sin ejercitar** (128 ausente · 43 vacía · 37 valor) · neg **4/4** |
+| `qa:cms-decl` (4.ª declaración) · `-neg` | **63 rutas en las dos direcciones** · neg **8/8** (2 sabotajes nuevos) |
+| `qa:tipo-hoja` (eje href re-anclado) · `-neg` | **10/10 productos desde la DB · 0 defectos** · neg **10/10** (2 sabotajes nuevos) |
+| `qa:cms-roundtrip` · `qa:cms-lectura` | **63/63 · 63/63** — sin moverse tras tocar la proyección |
+| `qa:clon-base` @1440 · @390 | **31/31 sin mover un píxel** contra `f25-paso0` (×2) |
+| `qa:slugs` · `qa:manifiesto` · `qa:enlaces` · `qa:corte` · `qa:lib` · `check` | 3 familias · 31 rutas · 868 hrefs limpio · 12/12 · **113 sondas con contrato** · verde |
+
+## 2 · Lo siguiente — Fase 3, que es AÑADIR
+
+**No queda ningún arbitraje de la FASE 2.** Lo que sigue está en
+`PLAN-FASE-2.md` §ESTADO DE LA FASE 2, con dueño y naturaleza. Por orden de
+valor:
+
+1. **la biblioteca pendiente = Fase 3**: `articulos-kb` (dato sin plantilla) ·
+   listados/hubs (35+107 rutas, §4b) · la cola larga del corpus (casos 4/57,
+   blog 7/149…). Es **añadir arquetipos e instancias, no cambiar** lo
+   construido;
+2. **los 208 casos sin ejercitar** — inventario abierto CON instrumento
+   (`qa:nunca-vistos`) y cola de trabajo (`qa:f25-final`). Prioridad natural:
+   los `ausente` cuyo tipo medido es **no-opcional**, que es la firma exacta del
+   escalón. Pide cruzar el AST de `types/kunak.ts` con la config por
+   OPCIONALIDAD, que hoy `qa:cms-campos` hace por RUTA;
+3. **operación**: `Dockerfile` **sin verificar** (nadie ha construido la imagen)
+   y `PREVIEW_SECRETO` que quien despliegue tiene que poner;
+4. instrumento: §F2-4-CHUNK-CSS · §F2-3-EXIT-FETCH (27 sondas) · el eje
+   `comportamiento` **0/31** de `COBERTURA-MEDICION.md`, que sigue siendo el
+   hueco mayor.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer «208 casos sin ejercitar» como 208 defectos.** Es cobertura
+  declarada. Los 43 `vacía` **tienen respuesta decidida y guardada** (§7e):
+  *sin ejercitar* ≠ *sin decidir*.
+- **No «simplificar» la regla de §7e a «todas vuelven `[]`».** Las 5 declaradas
+  `vaciaEsAusente` corresponden a campos que el tipo medido declara
+  **opcionales**; quitarles la declaración rompe `qa:cms-roundtrip` por FORMA —
+  y ése es el punto: el defecto está puesto en la dirección que grita.
+- **No buscar la entrada 71** (`guia-cms-traspaso-f25`): ya no está, se perdió en
+  un reseed. No hace falta — `qa:f25-final` recrea el caso y lo borra en cada
+  corrida, que es mejor semilla que una fila que hay que acordarse de no borrar.
+- **No correr `qa:f25-final` con otra sonda en vuelo**: construye dos veces y le
+  cambiaría el `.next` por debajo a quien esté midiendo.
+- **No dar por buena una base de `clon-base` por su fecha.** La de cierre de esta
+  tanda es **`f25-paso2`**; la anterior, `f25-paso0`.
+- **No leer un `qa:enlaces` o `qa:corte` en rojo como regresión sin mirar el
+  puerto**: las dos esperan un `next start` en `:3000` y **no lo levantan
+  ellas** — un `ECONNREFUSED` es eso, no un defecto del clon.
+
+---
+
+# (anterior) HANDOFF — F2-5 EJECUTADA y FASE 2 al completo: la prueba final PARÓ EN EL ESCALÓN, que era su salida prevista
 
 > ⚠ **Tanda 2026-08-08 (40.ª).** PASOS 0 · 1 · 2 · 3 · 5 completos; el PASO 4
 > corrió hasta el ESCALÓN y **paró con la evidencia congelada, como mandaba la

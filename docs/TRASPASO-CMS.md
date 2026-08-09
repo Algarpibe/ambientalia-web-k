@@ -106,14 +106,22 @@ conserva la URL del original: es la llave con la que el render reconstruye el
 - Guardar varias veces seguidas no encola builds infinitos: los avisos se
   **coalescen** (un build en marcha + como mucho uno pendiente).
 
-### ⚠ El caso abierto que un editor puede pisar HOY
+### ✅ El caso que un editor podía pisar — CERRADO el 2026-08-08
 
-**§F2-5-ESCALON-ETIQUETAS** (`PENDIENTES-QA.md`): una entrada de blog
-**publicada y sin ninguna etiqueta** tumba el build — el sitio no se cae (sigue
-el anterior), pero el cambio no sale hasta que se arregle. Mientras el
-arbitraje de esa ficha no se cierre: **ponle al menos una etiqueta, o déjala en
-borrador**. La entrada `guia-cms-traspaso-f25` (borrador) es la semilla que lo
-reproduce y documenta.
+**Ya NO hace falta ponerle etiqueta a una entrada para publicarla.** Hasta esa
+fecha, una entrada de blog publicada **sin ninguna etiqueta** tumbaba el build
+(§F2-5-ESCALON-ETIQUETAS). Está arreglado, y se arregló **midiendo el original
+antes de decidir**: de las 149 entradas capturadas de kunakair.com, **8 no
+tienen etiquetas**, y ahí el original **no pinta el bloque de etiquetas** — ni
+vacío ni con el rótulo suelto. El clon hace exactamente eso.
+
+O sea que **las etiquetas son opcionales de verdad**, como en el original: si no
+le pones ninguna, la línea de «Etiquetas:» simplemente no aparece. La categoría
+sí sigue saliendo (las 149 del original tienen al menos una).
+
+Lo comprueba en cada corrida `npm run qa:f25-final`, que da de alta una entrada
+sin etiquetas desde una cuenta de editor y verifica que el sitio se reconstruye
+con ella dentro.
 
 ## 5 · QUÉ NO TOCAR Y POR QUÉ
 
@@ -128,7 +136,7 @@ parece un error y NO lo es — «arreglarlo» rompería la fidelidad medida:
 | **Campos vacíos que coinciden con su defecto** (`flujo`, `variante`, `anchoPct`, `tipo`, `headingColor`, `tituloMiga`…) | vacío = el defecto **explícito y medido**. Rellenarlos «por completar» cambia la página |
 | **El registro `slugs`** | estado derivado — lo mantienen los hooks (§3 arriba) |
 | **`rutaOrigen` en media** | es la identidad del fichero frente al original |
-| **La entrada `guia-cms-traspaso-f25` (borrador)** | semilla del escalón §F2-5-ESCALON-ETIQUETAS — su dueña es esa ficha; se borra cuando la ficha se cierre |
+| **Filas con marca `qa-f25-…`**, si ves alguna | son de una corrida de `qa:f25-final` que no llegó a limpiar. Se pueden borrar sin pensarlo: no son contenido |
 
 ## 6 · Operación y despliegue
 
