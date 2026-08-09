@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-08",
-    "sabotaje": null
+    "sabotaje": "accesorios"
   },
   "familias": [
     {
@@ -18,6 +18,11 @@
       "familia": "termino",
       "n": 3,
       "fuente": "DB › terminos-kunakpedia (estado=publicado)"
+    },
+    {
+      "familia": "SABOTAJE",
+      "n": 1,
+      "fuente": "env SABOTAJE"
     }
   ],
   "noConstruidas": [],
@@ -29,8 +34,22 @@
     "software-de-medicion-calidad-del-aire"
   ],
   "emitidasPorPlano": 10,
-  "colisiones": [],
-  "sombras": [],
+  "colisiones": [
+    {
+      "slug": "accesorios",
+      "familias": [
+        "estáticas (page · solutions)",
+        "SABOTAJE"
+      ]
+    }
+  ],
+  "sombras": [
+    {
+      "slug": "accesorios",
+      "familia": "SABOTAJE",
+      "emisor": "/accesorios"
+    }
+  ],
   "huerfanas": [],
   "declaradosSinEmitir": []
 }

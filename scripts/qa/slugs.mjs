@@ -35,6 +35,22 @@
  * que acordarse de tocar este fichero — que es exactamente el modo de fallo que
  * una lista a mano produce.
  *
+ * ⚠ **CORREGIDO 2026-08-08 (F2-5, pre-vuelo de la prueba final): el CATÁLOGO
+ * del plano se lee de la DB, no de `src/lib/arquetipo-a.ts`.** Los módulos del
+ * seed dejaron de ser «el catálogo que usa el build» en F2-3 —el build lee por
+ * Local API— y esta sonda siguió anclada a ellos. Con DB == seed la
+ * discrepancia es invisible; la destapó la prueba final de F2-5: **un alta
+ * legítima desde el admin salía HUÉRFANA** (C), o sea la guarda rechazando
+ * exactamente lo que la fase entrega. Es la clase de F2-3 titular 5 —*un
+ * ancla a algo que el propio trabajo mueve se auto-invalida*— y se arregla
+ * como siempre: DERIVANDO de la fuente que el build usa de verdad.
+ *
+ * El filtro es `estado = publicado`, el MISMO que aplica el build
+ * (`filtraPublicados`): un borrador no emitido no es una desincronía, es un
+ * borrador. Y desde CMS-0c esto no le añade requisitos a `npm run check`: el
+ * build de dentro ya exige Postgres — sin DB, `check` muere antes de llegar
+ * aquí.
+ *
  * ── Las CUATRO comprobaciones, y por qué son cuatro y no una ──────────────
  * No son redundantes: cada una ve un fallo que las otras **no** pueden ver.
  *
@@ -68,9 +84,8 @@
  * plano, se añade a `FAMILIAS` y la guarda la cubre; mientras tanto, que no
  * esté no es un hueco: es el alcance.
  */
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { pathToFileURL } from "node:url";
 import { Evaluadas, hoy, w, APP} from "./lib.mjs";
 
 /**
@@ -88,16 +103,13 @@ const RAIZ = APP;
 const PLANO = "/[slug]";
 
 /**
- * Las familias que viven en el plano de un segmento, y de dónde salen sus slugs.
- *
- * `modulo` se carga con `import()` directo sobre el `.ts`: Node borra los tipos
- * y los ficheros de `src/lib/` sólo importan tipos (`import type`), así que se
- * leen tal cual. **No hay copia de los datos**: la guarda mira el catálogo que
- * usa el build, no un espejo que se pueda quedar viejo.
+ * Las familias que viven en el plano de un segmento, y de dónde salen sus
+ * slugs: **de la DB, que es el catálogo que el build usa desde F2-3** (ver la
+ * corrección en la cabecera). Sólo las publicadas — el mismo filtro del build.
  */
 const FAMILIAS = [
-  { familia: "blog", modulo: "src/lib/arquetipo-a.ts", exportado: "ENTRADAS_BLOG" },
-  { familia: "termino", modulo: "src/lib/arquetipo-a.ts", exportado: "TERMINOS_KUNAKPEDIA" },
+  { familia: "blog", coleccion: "entradas-blog" },
+  { familia: "termino", coleccion: "terminos-kunakpedia" },
 ];
 
 /* ─────────────────── rutas emitidas, leídas del build ──────────────────── */
@@ -132,29 +144,29 @@ const estaticas = emitidas
 const porFamilia = [{ familia: "estáticas (page · solutions)", slugs: estaticas, fuente: "prerender-manifest" }];
 const noConstruidas = [];
 
+/* La DB por la MISMA config que usa el build (Local API). Un fallo aquí TIRA:
+ * «no pude leer el catálogo» y «el catálogo está vacío» no pueden dar la misma
+ * salida (regla 6). */
+const { getPayload } = await import("payload");
+const { construyeConfig } = await import("../../packages/cms-config/src/index.ts");
+const payload = await getPayload({ config: await construyeConfig() });
+
 /* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
  * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
  * `openPage`, así que cuenta ella misma cada unidad completada. */
 const ev = new Evaluadas({ nombre: "slugs", unidad: "familias de slug", minimo: FAMILIAS.length });
-for (const { familia, modulo, exportado } of FAMILIAS) {
-  const abs = join(RAIZ, modulo);
-  if (!existsSync(abs)) {
-    noConstruidas.push({ familia, modulo, razon: "el módulo no existe todavía" });
-    continue;
-  }
-  const mod = await import(pathToFileURL(abs).href);
-  const datos = mod[exportado];
-  if (!Array.isArray(datos)) {
-    console.error(
-      `\n❌ ${modulo} no exporta \`${exportado}\` como array.\n` +
-        `   Eso NO es «esta familia no tiene slugs»: es un export equivocado, y su\n` +
-        `   \`undefined\` se estaba a punto de leer como cero.\n`,
-    );
-    process.exit(2);
-  }
-  porFamilia.push({ familia, slugs: datos.map((d) => d.slug), fuente: `${modulo} › ${exportado}` });
+for (const { familia, coleccion } of FAMILIAS) {
+  const { docs } = await payload.find({
+    collection: coleccion,
+    where: { estado: { equals: "publicado" } },
+    pagination: false,
+    depth: 0,
+    sort: "id",
+  });
+  porFamilia.push({ familia, slugs: docs.map((d) => d.slug), fuente: `DB › ${coleccion} (estado=publicado)` });
   ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
+await payload.db.destroy?.();
 
 /** Test en negativo: una familia postiza con el slug que se pida. */
 const sabotaje = process.env.SABOTAJE;
