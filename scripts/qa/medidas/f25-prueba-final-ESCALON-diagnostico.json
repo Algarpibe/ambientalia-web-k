@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "tipo": "EVIDENCIA DEL ESCALÓN — no es salida de sonda; es el fallo real de la prueba final de F2-5, conservado",
+    "regla": "CLAUDE.md §sondas 7: un fichero de medidas que no es una medida del sitio lo dice en el nombre"
+  },
+  "queSePidio": "PASO 4 de F2-5: la cuenta EDITOR da de alta una página nueva desde el admin, sin tocar código",
+  "queHizoElEditor": {
+    "cuenta": "editor-f25@prueba.local (rol editor, creada por el admin de la prueba)",
+    "alta": "entradas-blog · slug guia-cms-traspaso-f25 · id 71 · estado publicado",
+    "campos": "slug, seo.title, titulo, fechaPublicacion, categorias=[Artículos], cuerpo HTML — SIN etiquetas, SIN imagenDestacada, SIN extracto (todos opcionales en el esquema)"
+  },
+  "queHicieronLasGuardasDeEntrada": "TODAS lo acogieron: el esquema validó, registroDeSlug registró el slug, el hook del webhook disparó (disparos 1, motivo 'entradas-blog:guia-cms-traspaso-f25 create') — con la sesión del EDITOR, como pedía comprobar el encargo",
+  "dondeMurio": {
+    "sintoma": "next build · Error occurred prerendering page /guia-cms-traspaso-f25 · TypeError: Cannot read properties of undefined (reading 'length') · exit 1 en 35.91 s",
+    "contencion": "el publicador NO promocionó: home 200, /guia-cms-traspaso-f25 404, el build anterior sigue servido (la promesa de F2-4, medida en su primer fallo real). GET /estado conserva ultimoFallo con la cola del build — es lo que ve el editor"
+  },
+  "elHueco": {
+    "resumen": "tres piezas documentadas, cada una coherente por separado, cuya COMPOSICIÓN mata el render — y ningún documento arbitra la composición",
+    "piezas": [
+      "packages/cms-config/src/mapeo.mjs:501 — decisión escrita «LA LISTA VACÍA»: un hasMany sin filas proyecta undefined, porque Payload no puede distinguir 'vacío' de 'ausente'",
+      "apps/web/src/types/kunak.ts:394 — etiquetas: TerminoA[] NO-opcional, con su comentario diciendo «post_tag — 0..n»: el 0 declarado en prosa y negado en el tipo",
+      "apps/web/src/app/[slug]/page.tsx:163 — la plantilla se fía del tipo: entrada.etiquetas.length sin guarda"
+    ],
+    "porQueNoSeVioAntes": "las 7 entradas transcritas (de 149) traen TODAS etiquetas — el caso 'sin etiquetas' estaba SIN PROBAR, y 'sin probar no se cablea' vale también para un tipo no-opcional",
+    "loQueNadieMidio": "qué renderiza el ORIGINAL en una entrada sin etiquetas (WordPress las permite). Sin esa medida, cualquier arreglo — guarda en plantilla, [] en la proyección, required en el esquema — es inventar el contrato en vez de medirlo"
+  },
+  "porQueSePara": "la consigna de F2-5: «si el alta destapa un hueco de esquema que ningún documento arbitra, PARA con la evidencia congelada — un hueco así vale más que la prueba en verde». Arbitrarlo aquí sería decidir fidelidad sin medida",
+  "estadoAlParar": {
+    "entrada71": "pasada a BORRADOR por el editor (semilla de documentación del hueco; un borrador no se emite y desbloquea el pipeline de builds)",
+    "usuariosDePrueba": "borrados — la DB vuelve a 0 usuarios y el primer alta real la hace el propietario (documentado en el traspaso)",
+    "productoDeLaSegundaMitad": "NO se dio de alta: la prueba paró antes"
+  },
+  "ficheros": [
+    "f25-prueba-final-ESCALON-estado-publicador.json (GET /estado con ultimoFallo y la cola del build)",
+    "captura del panel del editor sin grupo Sistema (acta de F2-5)"
+  ]
+}

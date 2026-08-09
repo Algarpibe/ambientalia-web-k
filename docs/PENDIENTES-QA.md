@@ -1,5 +1,62 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F2-5-ESCALON-ETIQUETAS · el alta del EDITOR pasó TODAS las guardas de entrada y el RENDER murió — el escalón de la prueba final, con su hueco arbitrable (2026-08-08)
+
+**La prueba final de F2-5 PARÓ aquí a propósito** — la consigna: *«si el alta
+destapa un hueco de esquema que ningún documento arbitra, PARA con la evidencia
+congelada»*. Esto es el acta del disparo, y la pregunta que deja para arbitrar.
+
+**Qué pasó, medido y no contado:** la cuenta EDITOR (creada por el admin de la
+prueba, sin acceso al repo) dio de alta `entradas-blog/guia-cms-traspaso-f25`
+desde el formulario — slug, seo.title, título, fecha, categoría, cuerpo HTML —
+**sin etiquetas, sin imagen destacada, sin extracto: los tres opcionales en el
+esquema**. Todas las guardas de entrada la acogieron: el esquema validó, el
+hook registró el slug, el webhook disparó con la sesión del editor (`disparos
+1 · motivo "entradas-blog:guia-cms-traspaso-f25 create"`). Y el build murió
+prerenderizando la página nueva: `TypeError: Cannot read properties of
+undefined (reading 'length')`, exit 1 a los 35.91 s.
+
+**La contención de F2-4 funcionó en su primer fallo real:** nada se promocionó
+— home 200, `/guia-cms-traspaso-f25` 404, el build anterior siguió servido, y
+`GET /estado` conservó `ultimoFallo` con la cola entera del build (lo que ve el
+editor). Ficheros: `medidas/f25-prueba-final-ESCALON-estado-publicador.json` ·
+`medidas/f25-prueba-final-ESCALON-diagnostico.json`.
+
+**El hueco, localizado: tres piezas documentadas, cada una coherente, cuya
+COMPOSICIÓN mata el render — y ningún documento arbitra la composición:**
+
+| pieza | qué dice |
+|---|---|
+| `mapeo.mjs:501` («LA LISTA VACÍA», decisión escrita) | un `hasMany` sin filas proyecta **`undefined`** — Payload no distingue «vacío» de «ausente» |
+| `types/kunak.ts:394` | `etiquetas: TerminoA[]` **no-opcional** — con su comentario diciendo «post_tag — **0..n**»: el 0 declarado en prosa y negado en el tipo |
+| `[slug]/page.tsx:163` | la plantilla se fía del tipo: `entrada.etiquetas.length` sin guarda |
+
+**Por qué no se vio antes:** las 7 entradas transcritas (de 149) traen TODAS
+etiquetas — el caso «sin etiquetas» estaba **SIN PROBAR**, y *sin probar no se
+cablea* vale también para un tipo no-opcional.
+
+**El lazo diagnóstico, cerrado con UNA variable:** el editor pasó la fila a
+BORRADOR y el siguiente build **pasó y promocionó** (38.29 s, 31 rutas, home
+200) — misma DB, mismo código; publicada falla, borrador pasa. El elemento era
+exactamente esa fila.
+
+**Lo que hay que medir ANTES de arreglar, y por eso se para:** qué renderiza
+**el original** en una entrada sin etiquetas (WordPress las permite; ¿cuáles de
+las 149 no tienen?). Sin esa medida, cualquier arreglo —guarda en la plantilla,
+`[]` en la proyección, `required` en el esquema— es inventar el contrato. Las
+tres salidas tienen costes distintos: la guarda en plantilla decide una
+fidelidad no medida; el `[]` en la proyección rompe la decisión escrita de «LA
+LISTA VACÍA» y a `qa:cms-roundtrip`; el `required` impondría al editor un dato
+que el original no exige. **Es una decisión de ESQUEMA con medida previa, no un
+parche.**
+
+**Estado al parar:** entrada 71 en borrador (**semilla de documentación** del
+hueco — se queda, con dueño: esta ficha); usuarios de prueba borrados (DB a 0;
+el primer alta real la hace el propietario); la segunda mitad de la prueba (el
+producto) **no se corrió**. Y el alcance de la clase queda anotado: el mismo
+patrón `campo opcional ⇒ undefined ⇒ plantilla sin guarda` puede existir en las
+otras familias — se barre cuando el arbitraje decida la dirección, no antes.
+
 ## 🧨 CLASE · UN SERVIDOR AJENO EN EL PUERTO NO SE DISTINGUE DEL TUYO (2026-08-07)
 
 **Dos instancias en la misma tanda, y la segunda ya tenía la solución escrita al

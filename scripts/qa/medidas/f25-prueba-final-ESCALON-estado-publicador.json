@@ -1,0 +1,36 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-08-09T01:42:34.031Z",
+  "motivo": "entradas-blog:guia-cms-traspaso-f25 create",
+  "ultimoExito": null,
+  "ultimoFallo": {
+    "cuando": "2026-08-09T01:42:34.029Z",
+    "motivo": "entradas-blog:guia-cms-traspaso-f25 create",
+    "codigo": 1,
+    "segundos": 35.91,
+    "cola": "(Use `node --trace-deprecation ...` to show where the warning was created)\n(node:30420) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\n✓ Compiled successfully in 7.5s\n  Running TypeScript ...\n  Finished TypeScript in 8.2s ...\n  Collecting page data using 15 workers ...\n  Generating static pages using 15 workers (0/35) ...\n  Generating static pages using 15 workers (8/35) \n  Generating static pages using 15 workers (17/35) \nError occurred prerendering page \"/guia-cms-traspaso-f25\". Read more: https://nextjs.org/docs/messages/prerender-error\nTypeError: Cannot read properties of undefined (reading 'length')\n    at r (C:\\Users\\algar\\OneDrive\\Documentos\\Ambientalia_2026_K\\kunak-web-clone\\apps\\web\\.next-nuevo\\server\\chunks\\ssr\\[root-of-the-server]__1dvkk6k._.js:1:5823)\n    at stringify (<anonymous>) {\n  digest: '3590536728'\n}\nExport encountered an error on /[slug]/page: /guia-cms-traspaso-f25, exiting the build.\n⨯ Next.js build worker exited with code: 1 and signal: null\nnpm error Lifecycle script `build` failed with error:\nnpm error code 1\nnpm error path C:\\Users\\algar\\OneDrive\\Documentos\\Ambientalia_2026_K\\kunak-web-clone\\apps\\web\nnpm error workspace web@0.3.1\nnpm error location C:\\Users\\algar\\OneDrive\\Documentos\\Ambientalia_2026_K\\kunak-web-clone\\apps\\web\nnpm error command failed\nnpm error command C:\\Windows\\system32\\cmd.exe /d /s /c next build",
+    "servido": "el build ANTERIOR sigue servido: no se promocionó nada"
+  },
+  "builds": 1,
+  "disparos": 1,
+  "coalescidos": 0,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1786239717994,
+      "disparosPrevios": 1,
+      "motivo": "entradas-blog:guia-cms-traspaso-f25 create",
+      "codigo": 1,
+      "termino": 1786239753901
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 18184,
+  "dist": ".next",
+  "arrancado": 1786238743682
+}
