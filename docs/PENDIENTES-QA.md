@@ -115,6 +115,68 @@ vez de reutilizarlo. Es la §regla 5 en su forma general: *lo que devuelve el
 árbol a un estado anterior se lleva por delante lo no commiteado*, aplicado a la
 DB, que no está en git en absoluto.
 
+## 📋 CASOS LEGALES NUNCA OBSERVADOS · el inventario, con número (2026-08-08, F2-5 PASO 3)
+
+**La generalización del escalón, y lo que evita repetirlo alta a alta.**
+§F2-5-ESCALON-ETIQUETAS costó una fase parada por una frase: *el clon se calibró
+con 7 entradas de 149, y las 7 traían etiquetas*. El campo admitía vacío, el
+original lo ejerce 8 veces, y **el render nunca lo había renderizado**. No es un
+fallo de `etiquetas`: es **la FAMILIA DE CALIBRACIÓN aplicada al ESQUEMA en vez
+de a las páginas**, y ahora tiene un generador nuevo —**cada alta desde el
+admin**— así que la pregunta hay que poder repetirla.
+
+Instrumento: **`npm run qa:nunca-vistos`** (negativo 4/4), congelada en
+`medidas/casos-nunca-vistos.json`.
+
+> **La salida es una lista con número, NO un juicio.** Un caso sin ejercitar no
+> es un defecto: es un camino de render que no ha corrido. Puede estar
+> perfectamente soportado —muchos lo están— o matar el build como mató el de la
+> 40.ª. Por eso el código de salida **no** depende de cuántos haya, sino de que
+> la sonda haya podido mirar.
+
+### El número
+
+| | |
+|---|---|
+| casos que el esquema admite | **296** |
+| ejercitados por las 46 filas sembradas | **88** |
+| **SIN EJERCITAR** | **208** |
+
+Reparto por forma del caso, y no valen lo mismo:
+
+| forma | n | qué es |
+|---|---|---|
+| **ausente** | 128 | un campo sin `required` que ninguna fila omite. El más peligroso: el tipo medido puede prometer que sí está — **es el escalón, literal** |
+| **vacía** | 43 | una lista con cero filas. **LA FORMA DEL ESCALÓN**, y desde ESQUEMA §7e **las 43 tienen respuesta decidida**: 43 vuelven `[]` por defecto, 0 por declaración. Guardada en las dos direcciones por `qa:cms-decl` |
+| **valor** | 37 | una opción de `select` o de `checkbox` que ningún dato trae |
+
+### Las tres cosas que hay que leer con cuidado
+
+1. **El alcance es el SEED, no el original.** La cobertura se mide sobre los 9
+   catálogos (46 filas) porque es el dato con el que el render está calibrado.
+   O sea que el inventario dice *«el render no ha visto esto»*, **no** *«el
+   original no lo tiene»* — y ésa es exactamente la distinción que enseñó el
+   escalón: `etiquetas` vacías existen **8 veces en el original** y **cero en el
+   seed**.
+2. **«Sin ejercitar» ≠ «sin decidir».** Los 43 `vacía` están sin ejercitar y
+   **todos tienen su respuesta escrita y guardada**. Confundir las dos cosas
+   convertiría un inventario en una lista de pánico.
+3. **El detector sobre-casaba y se corrigió antes de publicar el número**: un
+   campo ausente **con `defaultValue`** SÍ ejercita ese valor —el dato medido
+   omite lo que coincide con su defecto— y contarlo como «nunca visto» marcaba
+   justo el valor que ven casi todas las filas. Eran **5 casos** de más (213 →
+   208). Es §sondas 4 en su tercera cara: un número plausible de más.
+
+### Y lo que el inventario NO puede contestar
+
+Un caso sin ejercitar no dice si el render lo soporta. Para saberlo hay que
+**ejercitarlo**, y eso ya tiene instrumento: `qa:f25-final` da de alta desde el
+admin y construye. Los 208 son la **cola de trabajo** de esa sonda, no su
+veredicto. Prioridad natural: los `ausente` cuyo tipo medido es **no-opcional**,
+que es la firma exacta del escalón — derivarlos pide cruzar el AST de
+`types/kunak.ts` con la config, que hoy `qa:cms-campos` hace por RUTA pero no
+por OPCIONALIDAD. **Dueño: esta ficha.**
+
 ## 🧨 CLASE · UN INSTRUMENTO ANCLADO AL SEED — el BARRIDO, 4.ª instancia (2026-08-08)
 
 **El encargo de F2-5 lo pidió por su nombre:** *«comprueba que ninguna otra

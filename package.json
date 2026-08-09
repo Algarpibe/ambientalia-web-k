@@ -136,7 +136,9 @@
     "qa:escalon": "node scripts/qa/escalon-etiquetas.mjs",
     "qa:escalon-neg": "node scripts/qa/escalon-etiquetas.neg.mjs",
     "qa:f25-final": "node --env-file=apps/cms/.env scripts/qa/f25-final.mjs",
-    "qa:f25-final-neg": "node --env-file=apps/cms/.env scripts/qa/f25-final.neg.mjs"
+    "qa:f25-final-neg": "node --env-file=apps/cms/.env scripts/qa/f25-final.neg.mjs",
+    "qa:nunca-vistos": "node --env-file=apps/cms/.env scripts/qa/casos-nunca-vistos.mjs",
+    "qa:nunca-vistos-neg": "node --env-file=apps/cms/.env scripts/qa/casos-nunca-vistos.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

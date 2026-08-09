@@ -1,0 +1,2101 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "pregunta": "¿qué casos que el esquema ADMITE no ejercita ninguna fila sembrada?",
+    "alcance": "los 9 catálogos de src/lib — 0 filas. NO el corpus del original",
+    "deDonde": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS · PASO 3",
+    "noEsUnJuicio": "un caso sin ejercitar no es un defecto: es un camino de render sin estrenar",
+    "sabotaje": "sin-catalogos"
+  },
+  "contrato": {
+    "universo": 296,
+    "filasRecorridas": 0,
+    "ejercitados": 0,
+    "minimo": 296,
+    "problemas": [
+      "CERO FILAS RECORRIDAS — sin catálogos TODO sale sin ejercitar, y la lista sería verdadera y vacua"
+    ]
+  },
+  "sinEjercitar": {
+    "total": 296,
+    "porForma": {
+      "ausente": 183,
+      "vacía": 49,
+      "valor": 64
+    },
+    "casos": [
+      {
+        "coleccion": "casos",
+        "ruta": "casos.destacado",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.detalles",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.detalles.parametros",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.galeria",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.galeria.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.galeria.height",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.galeria.width",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.prefijo",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.prefijo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "casos-de-exito"
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.prefijo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "case-studies"
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.sectores",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.soluciones",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.ubicacionMapa",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.ubicacionMapa.lat",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "casos",
+        "ruta": "casos.ubicacionMapa.lng",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.descarga",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada.height",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada.sizes",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada.srcset",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.portada.width",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.prefijo",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.prefijo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "documentos-cientificos"
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.prefijo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "estudios-cientificos"
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "ruta": "documentos-cientificos.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.categorias",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.etiquetas",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.extracto",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.fechaActualizacion",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.height",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.sizes",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.src",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.srcset",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.imagenDestacada.width",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.recurso",
+        "forma": "ausente",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.relacionados",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.relacionados",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.relacionados",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "entradas-blog",
+        "ruta": "entradas-blog.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "faqs",
+        "ruta": "faqs.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.posts",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.articulos.posts.excerpt",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.breadcrumb",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.breadcrumb.href",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.ctaSlides.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_4"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_3"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "2_5"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_2"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "3_5"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "2_3"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "3_4"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "4_4"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.mbMovil",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.anchoPct",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.bloques",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.bloques.claim",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.bloques.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.bloques.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.bloques.ul",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.body",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.cabeceras",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.filas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.filas.celdas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.filas.celdas.fuerte",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.filas.celdas.resto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.filas.celdas.texto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.items",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.lh",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.pins",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.mb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.mbAlterno",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.mbAlterno",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.mbAlterno",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.mt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.pr",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos.ritmo.pt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.punteado",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.punteado",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.columnas.punteado",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.mt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.filas.pt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.mt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.cuerpo.pt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.footerStripImage",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.header",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.ctas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.ctas.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.ctas.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.ctas.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.image",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.image.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.modulos",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.modulos.heading",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.modulos.headingColor",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.modulos.mb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.modulos.paragraphs",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.hero.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.posts",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.proyectos.posts.sectorHref",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.seo.canonical",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.soluciones",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.taxonomy",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.taxonomy.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.taxonomy.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "monograficos",
+        "ruta": "monograficos.taxonomy.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.bullets",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.bulletsTitulo",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.abiertoPorDefecto",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.abiertoPorDefecto",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.abiertoPorDefecto",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.anchoPct",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.archivo",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.bloques",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.bloques.claim",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.bloques.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.bloques.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.bloques.ul",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.body",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.cabeceras",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.contenido",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta.href",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.cta.label",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.heading",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.diapositivas.texto",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.filas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.filas.celdas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.filas.celdas.fuerte",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.filas.celdas.resto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.filas.celdas.texto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.icono",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.imagenes",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.imagenes.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.lh",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.poster",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.mb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.mbAlterno",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.mbAlterno",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.mbAlterno",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.mt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.pb",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.pr",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.ritmo.pt",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.texto",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.titulo",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.cuerpo.url",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.highlight",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.padre",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.padre",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "cartuchos-inteligentes"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.padre",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "sensor-de-calidad-del-aire"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.tagline",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.tipo",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.tipo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "ficha"
+      },
+      {
+        "coleccion": "productos",
+        "ruta": "productos.tipo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "catalogo"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.posts",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.articulos.posts.excerpt",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.anchoPct",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.body",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.flujo",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.flujo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "seccion"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.flujo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "seccionRasa"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.flujo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "fila"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.flujo",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "filaPegada"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.image",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.image.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.intro",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.left",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.left",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.left.items",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.pins",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.right",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.right",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.right.items",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.variante",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.variante",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "foto"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.body.variante",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "fondo"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.breadcrumb",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.breadcrumb.href",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.ctaSlides.image",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.footerStripImage",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.header",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.ctas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.ctas.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.ctas.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.ctas.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.headingColor",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.image",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.image.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.hero.paragraphs",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.cta",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.cta.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.cta.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.posts",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.proyectos.posts.sectorHref",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.seo.canonical",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.soluciones",
+        "forma": "vacía",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.taxonomy",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.taxonomy.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.taxonomy.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "sectores",
+        "ruta": "sectores.taxonomy.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "taxonomia-sectores",
+        "ruta": "taxonomia-sectores.pagina",
+        "forma": "ausente",
+        "tipo": "relationship",
+        "detalle": null
+      },
+      {
+        "coleccion": "terminos-kunakpedia",
+        "ruta": "terminos-kunakpedia.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "terminos-kunakpedia",
+        "ruta": "terminos-kunakpedia.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "terminos-kunakpedia",
+        "ruta": "terminos-kunakpedia.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "terminos-kunakpedia",
+        "ruta": "terminos-kunakpedia.tituloMiga",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      }
+    ]
+  }
+}
