@@ -85,7 +85,11 @@ export const casos: CollectionConfig = {
       type: "relationship",
       relationTo: "taxonomia-sectores",
       hasMany: true,
-      custom: { formaMedida: "objeto" },
+      /* `vaciaEsAusente`: `CaseStudy.sectores?` es OPCIONAL en el tipo medido y
+       * la ida lo ve faltar (3 de 4 casos lo traen). Ver §LA LISTA VACÍA de
+       * `mapeo.mjs`: sin la declaración la vuelta emitiría `[]` contra una clave
+       * que no está, y `qa:cms-roundtrip` fallaría por FORMA. */
+      custom: { formaMedida: "objeto", vaciaEsAusente: true },
     },
 
     // Los tres bloques, obligatorios los tres (57/57). Contrato del §3.1, y
@@ -111,6 +115,9 @@ export const casos: CollectionConfig = {
     {
       name: "galeria",
       type: "array",
+      /* `CaseStudy.galeria?` — opcional en el tipo, y la ida la ve faltar en 2
+       * de 4 casos. Ver `sectores` arriba. */
+      custom: { vaciaEsAusente: true },
       fields: [
         { name: "src", type: "upload", relationTo: "media", required: true },
         { name: "alt", type: "text" },
@@ -160,7 +167,8 @@ export const casos: CollectionConfig = {
      * **la ficha se proyecta del producto** — §2e cerró que son UNA colección,
      * así que esto no necesita relación polimórfica.
      */
-    { name: "soluciones", type: "relationship", relationTo: "productos", hasMany: true },
+    /* `CaseStudy.soluciones?` — opcional en el tipo, ausente en 1 de 4. */
+    { name: "soluciones", type: "relationship", relationTo: "productos", hasMany: true, custom: { vaciaEsAusente: true } },
   ],
 };
 

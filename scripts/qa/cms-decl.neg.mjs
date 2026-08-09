@@ -51,6 +51,31 @@ const casos = [
         : `esperaba un hueco de centinelaVacio; salió ${JSON.stringify(d.veredicto?.huecos?.map((h) => h.tipo))}`,
   },
   {
+    sabotaje: "sin-vacia-es-ausente",
+    exit: 2,
+    porQue: "se cae un `vaciaEsAusente` ⇒ la vuelta emitiría `[]` donde el dato medido no tiene la clave",
+    comprueba: (d) =>
+      d.veredicto?.huecos?.some((h) => h.tipo === "vaciaEsAusente")
+        ? null
+        : `esperaba un hueco de vaciaEsAusente; salió ${JSON.stringify(d.veredicto?.huecos?.map((h) => h.tipo))}`,
+  },
+  {
+    /* ⚠ **Éste es EL ESCALÓN**, reproducido como sabotaje: declarar omitible una
+     * lista que el dato medido trae SIEMPRE hace que la vuelta devuelva
+     * `undefined` donde el tipo promete un array — que es exactamente lo que
+     * mató el build de la prueba final de F2-5 con `undefined.length`. La otra
+     * mitad (`sin-vacia-es-ausente`) la cazaría además el round-trip; **ésta
+     * sólo la caza esta guarda**, y por eso la mitad de las «muertas» no es
+     * simétrica de la de los «huecos». */
+    sabotaje: "vacia-es-ausente-muerta",
+    exit: 2,
+    porQue: "se declara omitible una lista SIEMPRE presente ⇒ el render devolvería `undefined` donde el tipo promete un array (§F2-5-ESCALON-ETIQUETAS)",
+    comprueba: (d) =>
+      d.veredicto?.muertas?.some((m) => m.tipo === "vaciaEsAusente") && !d.veredicto?.huecos?.length
+        ? null
+        : `esperaba 1 muerta de vaciaEsAusente y 0 huecos; salió ${JSON.stringify(d.veredicto?.muertas?.map((m) => m.tipo))} / ${d.veredicto?.huecos?.length}`,
+  },
+  {
     sabotaje: "declaracion-muerta",
     exit: 2,
     porQue: "una declaración que la ida no ve NUNCA — la otra dirección, sin la cual las declaraciones se pudren y tapan huecos futuros",

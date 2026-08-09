@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-06",
+    "fecha": "2026-08-08",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "selector-muerto"
@@ -8,25 +8,28 @@
   "derivado": {
     "formaDeRel": {},
     "conKind": [],
-    "centinelas": []
+    "centinelas": [],
+    "listas": {}
   },
   "declarado": {
     "formaDeRel": {
-      "sectores": "objeto",
-      "categorias": "objeto",
-      "etiquetas": "objeto",
-      "recurso": "objeto",
-      "categoria": "objeto"
+      "sectores.soluciones": "objeto",
+      "monograficos.soluciones": "objeto",
+      "casos.sectores": "objeto",
+      "entradas-blog.categorias": "objeto",
+      "entradas-blog.etiquetas": "objeto",
+      "entradas-blog.recurso": "objeto",
+      "documentos-cientificos.categoria": "objeto"
     },
     "conKind": {
-      "body": [
+      "sectores.body": [
         "ctaDescarga",
         "beneficiosAplicaciones",
         "claimConFoto",
         "listaSimple2Col",
         "mapaProyectos"
       ],
-      "cuerpo.filas.columnas.modulos": [
+      "monograficos.cuerpo.filas.columnas.modulos": [
         "titular",
         "claim",
         "texto",
@@ -39,7 +42,14 @@
       ]
     },
     "centinelas": [
-      "image"
+      "productos.image"
+    ],
+    "vaciaEsAusente": [
+      "casos.galeria",
+      "casos.sectores",
+      "casos.soluciones",
+      "monograficos.hero.modulos.paragraphs",
+      "productos.cuerpo"
     ]
   },
   "contrato": {
@@ -53,38 +63,97 @@
     "muertas": [
       {
         "tipo": "formaDeRel",
-        "ruta": "sectores"
+        "ruta": "sectores.soluciones"
       },
       {
         "tipo": "formaDeRel",
-        "ruta": "categorias"
+        "ruta": "monograficos.soluciones"
       },
       {
         "tipo": "formaDeRel",
-        "ruta": "etiquetas"
+        "ruta": "casos.sectores"
       },
       {
         "tipo": "formaDeRel",
-        "ruta": "recurso"
+        "ruta": "entradas-blog.categorias"
       },
       {
         "tipo": "formaDeRel",
-        "ruta": "categoria"
+        "ruta": "entradas-blog.etiquetas"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "entradas-blog.recurso"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "documentos-cientificos.categoria"
       },
       {
         "tipo": "conKind",
-        "ruta": "body"
+        "ruta": "sectores.body"
       },
       {
         "tipo": "conKind",
-        "ruta": "cuerpo.filas.columnas.modulos"
+        "ruta": "monograficos.cuerpo.filas.columnas.modulos"
       },
       {
         "tipo": "centinelaVacio",
-        "ruta": "image"
+        "ruta": "productos.image"
       }
     ],
     "sinEjercitar": [],
+    "listasSinEjercitar": [
+      "productos.bullets",
+      "productos.cuerpo",
+      "productos.cuerpo.bloques",
+      "productos.cuerpo.bloques.ul",
+      "productos.cuerpo.diapositivas",
+      "productos.cuerpo.imagenes",
+      "productos.cuerpo.body",
+      "productos.cuerpo.cabeceras",
+      "productos.cuerpo.filas",
+      "productos.cuerpo.filas.celdas",
+      "sectores.breadcrumb",
+      "sectores.hero.ctas",
+      "sectores.hero.paragraphs",
+      "sectores.body",
+      "sectores.body.body",
+      "sectores.body.left.items",
+      "sectores.body.right.items",
+      "sectores.body.left",
+      "sectores.body.right",
+      "sectores.body.pins",
+      "sectores.ctaSlides",
+      "sectores.soluciones",
+      "sectores.proyectos.posts",
+      "sectores.articulos.posts",
+      "monograficos.breadcrumb",
+      "monograficos.hero.ctas",
+      "monograficos.hero.modulos",
+      "monograficos.hero.modulos.paragraphs",
+      "monograficos.cuerpo",
+      "monograficos.cuerpo.filas",
+      "monograficos.cuerpo.filas.columnas",
+      "monograficos.cuerpo.filas.columnas.modulos",
+      "monograficos.cuerpo.filas.columnas.modulos.bloques",
+      "monograficos.cuerpo.filas.columnas.modulos.bloques.ul",
+      "monograficos.cuerpo.filas.columnas.modulos.items",
+      "monograficos.cuerpo.filas.columnas.modulos.cabeceras",
+      "monograficos.cuerpo.filas.columnas.modulos.filas",
+      "monograficos.cuerpo.filas.columnas.modulos.filas.celdas",
+      "monograficos.cuerpo.filas.columnas.modulos.body",
+      "monograficos.cuerpo.filas.columnas.modulos.pins",
+      "monograficos.ctaSlides",
+      "monograficos.soluciones",
+      "monograficos.proyectos.posts",
+      "monograficos.articulos.posts",
+      "casos.sectores",
+      "casos.galeria",
+      "casos.soluciones",
+      "entradas-blog.categorias",
+      "entradas-blog.etiquetas"
+    ],
     "ok": false
   }
 }

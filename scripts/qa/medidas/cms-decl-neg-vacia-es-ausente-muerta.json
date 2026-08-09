@@ -3,7 +3,7 @@
     "fecha": "2026-08-08",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
-    "sabotaje": "sin-con-kind"
+    "sabotaje": "vacia-es-ausente-muerta"
   },
   "derivado": {
     "formaDeRel": {
@@ -251,6 +251,13 @@
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": {
+      "sectores.body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
       "monograficos.cuerpo.filas.columnas.modulos": [
         "titular",
         "claim",
@@ -271,49 +278,25 @@
       "casos.sectores",
       "casos.soluciones",
       "monograficos.hero.modulos.paragraphs",
+      "productos.bullets",
       "productos.cuerpo"
     ]
   },
   "contrato": {
-    "evaluadas": 63,
+    "evaluadas": 62,
     "minimo": 63,
-    "suficiente": true
+    "suficiente": false
   },
   "veredicto": {
-    "verificadas": 58,
-    "huecos": [
+    "verificadas": 62,
+    "huecos": [],
+    "muertas": [
       {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "ctaDescarga",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "beneficiosAplicaciones",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "claimConFoto",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "listaSimple2Col",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "mapaProyectos",
-        "declarado": "(nada)"
+        "tipo": "vaciaEsAusente",
+        "ruta": "productos.bullets",
+        "porQue": "el dato medido la trae en 9/9 filas"
       }
     ],
-    "muertas": [],
     "sinEjercitar": [],
     "listasSinEjercitar": [
       "productos.cuerpo.bloques",

@@ -320,6 +320,12 @@ export async function aPayload(campos, dato, ctx, ruta = "") {
 
 async function valorDe(campo, dato, ctx, aqui) {
   const bruto = dato?.[campo.name];
+  /* LA LISTA VACÍA (bloque de abajo) — la vuelta necesita saber si el dato
+   * medido OMITE alguna vez esta lista, y **eso sólo lo sabe la ida**: en la DB
+   * las dos preimágenes son el mismo `[]`. Se anota al pasar, igual que
+   * `centinelaVacio` y `declaraKinds`, y lo consume `qa:cms-decl`.
+   * Va ANTES del corte por ausencia: la ausencia es justo lo que se anota. */
+  if (esLista(campo)) ctx?.lista?.(aqui, bruto !== undefined && bruto !== null);
   if (bruto === undefined || bruto === null) return undefined;
 
   switch (campo.type) {
@@ -422,19 +428,64 @@ function bloqueDe(campo, blockType, aqui, i) {
  * ⚠ Y decirlo importa, porque parece una normalización de las prohibidas.
  *
  * La ida no emite la clave cuando el dato medido no la trae, así que Payload no
- * escribe filas. Al leer, un `array`/`blocks` sin filas **siempre** devuelve
- * `[]`: no hay forma de guardar «este campo no existe» distinta de «existe y
- * está vacío». O sea que la ida no es inyectiva **por el modelo de Payload**, no
- * por el walker, y la vuelta tiene que elegir una de las dos preimágenes.
+ * escribe filas. Al leer, un `array`/`blocks`/`hasMany` sin filas **siempre**
+ * devuelve `[]`: no hay forma de guardar «este campo no existe» distinta de
+ * «existe y está vacío». O sea que la ida no es inyectiva **por el modelo de
+ * Payload**, no por el walker, y la vuelta tiene que elegir una preimagen.
  *
- * Se elige AUSENTE, y el respaldo es derivado, no recordado: un recorrido de los
- * 9 catálogos —46 filas— da **0 arrays vacíos explícitos**. Sobre el dominio
- * medido la preimagen es única, así que la inversa es exacta.
+ * ── ⚠ CORREGIDO 2026-08-08 (§F2-5-ESCALON-ETIQUETAS): elegir SIEMPRE «ausente»
+ *    era una FAMILIA DE CALIBRACIÓN — el valor de las instancias que había
+ *    delante, cableado ───────────────────────────────────────────────────────
  *
- * **Y se auto-vigila**: el día que un dato medido traiga un `[]` explícito, el
- * comparador verá `[]` contra ausente y fallará por FORMA en esa ruta. No hace
- * falta acordarse de nada.
+ * La regla anterior decía *«se elige AUSENTE, y el respaldo es derivado: los 9
+ * catálogos —46 filas— dan 0 arrays vacíos explícitos»*. Las dos mitades eran
+ * ciertas y la conclusión no se seguía: **«0 vacíos explícitos» dice que la
+ * preimagen es única EN ESE DOMINIO, no que «ausente» sea la correcta para
+ * todos los campos.** Y el dominio eran 7 entradas de blog de **149**.
+ *
+ * Lo cobró la prueba final de F2-5: el editor dio de alta una entrada **sin
+ * etiquetas** —opcional en el esquema, y `EntradaBlog.etiquetas` es
+ * `TerminoA[]` NO opcional—, la vuelta devolvió `undefined` donde el tipo
+ * promete un array, y el render murió con `undefined.length` prerenderizando.
+ * `npm run qa:escalon` mide que el caso **existe en el original**: 8 de las 149
+ * entradas capturadas no traen etiquetas.
+ *
+ * ── La regla que la sustituye, y por qué el DEFECTO se invierte ────────────
+ *
+ *   > **Una lista vuelve como `[]`, salvo que el campo declare
+ *   > `custom: { vaciaEsAusente: true }`** — o sea, que el dato medido OMITE la
+ *   > clave cuando la lista está vacía.
+ *
+ * El discriminador **no se elige: se deriva**, y de lo único que puede saberlo,
+ * que es la IDA (`ctx.lista(ruta, presente)` en `valorDe`). Medido sobre los 9
+ * catálogos: **34 rutas de lista que el dato medido trae SIEMPRE** —entre ellas
+ * `entradas-blog.etiquetas`, 7/7— y **6 que omite alguna vez**. Las 6 declaran;
+ * las 34 no. Guarda en las dos direcciones: `npm run qa:cms-decl`.
+ *
+ * **Y el cambio es un NO-OP sobre todo lo medido**, que es la prueba de que no
+ * cablea nada: para las 34 la rama de la lista vacía no se ejecuta nunca (traen
+ * ≥1 fila), y para las 6 el comportamiento es idéntico al de antes. Los 63/63
+ * de `qa:cms-roundtrip` y `qa:cms-lectura` no se mueven. La diferencia aparece
+ * **sólo** en el caso que PASO 1 midió en el original y el seed no tiene.
+ *
+ * ── Por qué `[]` es el defecto y no `undefined` (regla 6) ─────────────────
+ * Los dos olvidos NO cuestan lo mismo, y el defecto seguro es el que grita:
+ *
+ *   · olvidar declarar un campo omitible ⇒ la vuelta emite `[]` donde el dato
+ *     medido no tiene clave ⇒ **`qa:cms-roundtrip` falla por FORMA en el acto**;
+ *   · olvidar lo contrario —el defecto de antes— ⇒ **no falla nada**, y el
+ *     render muere delante del primer editor que deje una lista vacía.
+ *
+ * O sea que la auto-vigilancia que la regla vieja se atribuía sigue existiendo,
+ * pero **apuntando al olvido que se puede ver** en vez de al que no.
  * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Los tres tipos cuyo «vacío» Payload no distingue de «ausente». */
+export const esLista = (campo) =>
+  campo?.type === "array" || campo?.type === "blocks" || (campo?.type === "relationship" && campo.hasMany);
+
+/** ¿Declara este campo que el dato medido OMITE la clave cuando está vacía? */
+export const vaciaEsAusente = (campo) => campo?.custom?.vaciaEsAusente === true;
 
 /* ══════════════════════════════════════════════════════════════════════════
  * VUELTA: documento de Payload → la forma de `src/lib`
@@ -497,8 +548,11 @@ function proyecta(campo, doc, ctx, aqui) {
 
     case "relationship": {
       /* Misma razón que en `array`/`blocks` (ver LA LISTA VACÍA): una relación
-       * `hasMany` sin filas y una ausente son indistinguibles en Payload. */
-      if (campo.hasMany && bruto.length === 0) return undefined;
+       * `hasMany` sin filas y una ausente son indistinguibles en Payload, y
+       * cuál de las dos es la preimagen buena **lo declara el campo**.
+       * `entradas-blog.etiquetas` es el caso que dio nombre al escalón: 0..n en
+       * el original (8 de 149), `TerminoA[]` NO opcional en el tipo ⇒ `[]`. */
+      if (campo.hasMany && bruto.length === 0) return vaciaEsAusente(campo) ? undefined : [];
       const uno = (v) => ctx.deRel(campo.relationTo, v, aqui);
       return campo.hasMany ? bruto.map(uno) : uno(bruto);
     }
@@ -508,11 +562,12 @@ function proyecta(campo, doc, ctx, aqui) {
 
     case "blocks":
       /**
-       * ⚠ **Una lista VACÍA vuelve AUSENTE.** Ver el bloque `LA LISTA VACÍA`
-       * más abajo: Payload no puede almacenar la diferencia, y el dato medido
-       * no la usa — derivado, **0 arrays vacíos explícitos en las 46 filas**.
+       * ⚠ **Una lista VACÍA vuelve `[]` salvo que el campo declare lo
+       * contrario.** Ver el bloque `LA LISTA VACÍA` más abajo: Payload no puede
+       * almacenar la diferencia y quién elige la preimagen es la DECLARACIÓN,
+       * derivada de la ida y guardada por `qa:cms-decl` en las dos direcciones.
        */
-      if (bruto.length === 0) return undefined;
+      if (bruto.length === 0) return vaciaEsAusente(campo) ? undefined : [];
       return bruto.map((item, i) => {
         const b = bloqueDe(campo, item.blockType, aqui, i);
         const cuerpo = aMedido(b.fields, item, ctx, `${aqui}[${i}]`);
@@ -522,7 +577,7 @@ function proyecta(campo, doc, ctx, aqui) {
       });
 
     case "array": {
-      if (bruto.length === 0) return undefined;
+      if (bruto.length === 0) return vaciaEsAusente(campo) ? undefined : [];
       const hijos = camposPropios(campo.fields);
       /* Espejo exacto de la ida: un array de UN campo propio es transparente,
        * así que vuelve como lista de valores y no como lista de objetos. */
@@ -579,7 +634,7 @@ function proyecta(campo, doc, ctx, aqui) {
  * distintos serían dos definiciones de «lo mismo» — la clase C7.
  */
 export function declaracionesDe(campos, ruta = "", acc = null) {
-  acc ??= { formaDeRel: new Map(), conKind: new Map(), centinelas: new Set() };
+  acc ??= { formaDeRel: new Map(), conKind: new Map(), centinelas: new Set(), vaciaEsAusente: new Set(), listas: new Set() };
   for (const campo of camposPropios(campos)) {
     /* Presentacional sin nombre: sus hijos son hermanos del padre — exactamente
      * como en `aPayload`, y por la misma razón. */
@@ -590,6 +645,13 @@ export function declaracionesDe(campos, ruta = "", acc = null) {
     const aqui = ruta ? `${ruta}.${campo.name}` : campo.name;
     if (campo.type === "relationship" && campo.custom?.formaMedida) acc.formaDeRel.set(aqui, campo.custom.formaMedida);
     if (campo.type === "upload" && campo.custom?.centinelaVacio) acc.centinelas.add(aqui);
+    /* La cuarta declaración (§F2-5-ESCALON-ETIQUETAS). `listas` es el universo
+     * sobre el que la guarda compara: sin él, «declarado» y «existe» no se
+     * distinguen de «el campo ni siquiera es una lista». */
+    if (esLista(campo)) {
+      acc.listas.add(aqui);
+      if (vaciaEsAusente(campo)) acc.vaciaEsAusente.add(aqui);
+    }
     if (campo.type === "blocks" && campo.custom?.conKind)
       acc.conKind.set(aqui, new Set((campo.blocks ?? []).map((b) => b.slug)));
     if (Array.isArray(campo.fields)) declaracionesDe(campo.fields, aqui, acc);

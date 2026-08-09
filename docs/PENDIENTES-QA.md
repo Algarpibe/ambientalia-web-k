@@ -1,6 +1,6 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⚠ F2-5-ESCALON-ETIQUETAS · el alta del EDITOR pasó TODAS las guardas de entrada y el RENDER murió — el escalón de la prueba final, con su hueco arbitrable (2026-08-08)
+## ✅ F2-5-ESCALON-ETIQUETAS · el alta del EDITOR pasó TODAS las guardas de entrada y el RENDER murió — el escalón de la prueba final, con su hueco arbitrable (2026-08-08)
 
 **La prueba final de F2-5 PARÓ aquí a propósito** — la consigna: *«si el alta
 destapa un hueco de esquema que ningún documento arbitra, PARA con la evidencia
@@ -56,6 +56,64 @@ el primer alta real la hace el propietario); la segunda mitad de la prueba (el
 producto) **no se corrió**. Y el alcance de la clase queda anotado: el mismo
 patrón `campo opcional ⇒ undefined ⇒ plantilla sin guarda` puede existir en las
 otras familias — se barre cuando el arbitraje decida la dirección, no antes.
+
+### ✅ CERRADA 2026-08-08 — arbitrada CON la medida delante, y la contradicción imputada al tipo NO existía
+
+**PASO 1 · lo que faltaba, medido sobre el ARCHIVO** (`npm run qa:escalon`,
+negativo 5/5, congelada en `medidas/escalon-etiquetas.json`). Las 149 capturas
+del corpus llevaban la respuesta desde el 2026-08-04 — §sondas 8b otra vez: *el
+suelo de una pregunta no vive sólo en la campaña que la persigue*.
+
+| pregunta | medido |
+|---|---|
+| ¿cuántas de las 149 sin etiquetas? | **8** — el caso es REAL, no sólo legal |
+| ¿qué emite el original ahí? | **OMITE** el `<span class="case-tags">`. **Una sola forma en las 8**: el `div.case-taxonomies` sigue con la categoría sola |
+| ¿el rótulo se deriva del número? | **141/141** — 63 singular · 78 plural |
+
+**PASO 2 · el arbitraje, y las dos piezas que NO ceden:**
+
+> **`types/kunak.ts:394` no cede porque la contradicción imputada NO EXISTE.**
+> La ficha decía *«el 0 declarado en prosa y negado en el tipo»*. Un array
+> **no-opcional de longitud 0 ES «0»**: el tipo dice «la clave está siempre, la
+> lista puede estar vacía», que es exactamente lo que el original hace. `0..n` y
+> `TerminoA[]` **concuerdan**. La medida no dejó la contradicción en pie: la
+> disolvió.
+
+> **`[slug]/page.tsx:163` no cede porque YA es la fidelidad medida.** El
+> original omite (8/8) y `etiquetas.length > 0 &&` es justo eso. Un `?.` ahí
+> toleraría un valor que el tipo prohíbe: cerraría **la instancia** y dejaría
+> vivas las otras 34 rutas de lista — el arreglo falso de manual.
+
+**Cede `mapeo.mjs`, y no por borrado sino por ESTRECHAMIENTO a donde se
+derivó.** La regla vieja tenía las dos mitades ciertas y la conclusión no se
+seguía: *«0 arrays vacíos explícitos en 46 filas»* dice que la preimagen es
+única **en ese dominio**, no que «ausente» valga para todos los campos — y el
+dominio eran 7 entradas de 149. Regla nueva, en `ESQUEMA-CMS.md` §7e:
+
+> **una lista vuelve `[]`, salvo que el campo declare `vaciaEsAusente: true`.**
+
+El discriminador **se deriva de la ida** (40 listas recorridas · 35 siempre
+presentes · **5 omitibles**), y las 5 coinciden con las 5 que el tipo medido
+declara opcionales: el invariante *opcional en el tipo ⟺ omitible en el dato* se
+cumple **40/40**. Guarda: `qa:cms-decl` con su cuarta declaración en las dos
+direcciones (negativo **8/8**), donde `vacia-es-ausente-muerta` **reproduce el
+escalón** — y es la mitad que ninguna otra sonda caza.
+
+**Y la prueba de EFECTO, medida y no leída en el diff** (§dos pasos, D4): el
+cambio es **NO-OP sobre todo lo medido** —`qa:cms-roundtrip` 63/63 y
+`qa:cms-lectura` 63/63 sin moverse— porque para las 35 la rama no se ejecuta
+nunca. Proyectado el caso del escalón: `etiquetas: []` ⇒ `[]`, la plantilla
+sobrevive al `.length`; y el control de la otra rama, `casos.galeria: []` ⇒
+sigue **AUSENTE**.
+
+⚠ **Y una corrección de estado que hay que decir: la entrada 71 YA NO ESTÁ.** La
+DB traía **7 entradas-blog** al empezar esta tanda, o sea sólo las sembradas: la
+semilla del escalón se perdió en algún reseed entre tandas, pese al *«no la
+borres»* del HANDOFF. **No cambia el arbitraje** —la medida que lo decide es el
+corpus, no la fila— pero sí obliga a **recrear el caso** en la prueba final en
+vez de reutilizarlo. Es la §regla 5 en su forma general: *lo que devuelve el
+árbol a un estado anterior se lleva por delante lo no commiteado*, aplicado a la
+DB, que no está en git en absoluto.
 
 ## 🧨 CLASE · UN SERVIDOR AJENO EN EL PUERTO NO SE DISTINGUE DEL TUYO (2026-08-07)
 

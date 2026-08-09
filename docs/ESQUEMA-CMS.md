@@ -2774,6 +2774,83 @@ dos estaban dadas por resueltas y no lo estaban.
 
 ---
 
+### ✅ 7e · CMS-LISTA-VACÍA — la lista vacía vuelve `[]`, y quién la omite se DECLARA (2026-08-08, cierra §F2-5-ESCALON-ETIQUETAS)
+
+**La decisión que la prueba final de F2-5 destapó por no existir.** El editor dio
+de alta una entrada **sin etiquetas** —opcional en el esquema—, todas las guardas
+de entrada la acogieron y el build murió prerenderizándola con
+`undefined.length`. Tres piezas documentadas, cada una coherente, y **ningún
+documento arbitraba su composición**. Esto es el arbitraje.
+
+#### Lo que se midió primero, porque sin ello el arreglo inventa el contrato
+
+`npm run qa:escalon` (nueva · negativo 5/5) interroga las **149 capturas
+congeladas** del corpus — no el sitio vivo:
+
+| pregunta | medido |
+|---|---|
+| ¿cuántas de las 149 no traen etiquetas? | **8** — el caso es REAL en el original, no sólo legal en el esquema |
+| ¿qué emite el original ahí? | **OMITE** el `<span class="case-tags">` entero. UNA sola forma en las 8: el `div.case-taxonomies` sigue con la categoría sola. Ni vacío, ni rótulo sin lista |
+| ¿el rótulo se deriva del número? | **sí, 141/141** — 63 con una (`Etiqueta:`), 78 con varias (`Etiquetas:`) |
+
+#### Qué pieza cede, y por qué las otras dos NO
+
+| pieza | veredicto |
+|---|---|
+| `types/kunak.ts:394` — `etiquetas: TerminoA[]` no-opcional, comentario «0..n» | **NO cede: la contradicción que se le imputaba NO EXISTE.** Un array no-opcional de longitud 0 **es** «0». El tipo dice «la clave está siempre, la lista puede estar vacía», que es exactamente lo medido. Es la pieza que ENUNCIA el contrato, y la que el arreglo restaura |
+| `[slug]/page.tsx:163` — `entrada.etiquetas.length > 0 &&` | **NO cede: ya es la fidelidad medida.** El original OMITE (8/8) y eso es justo lo que la plantilla hace. Un `?.` ahí toleraría un valor que el tipo prohíbe — cerraría la INSTANCIA y dejaría vivas las otras 34 rutas de lista |
+| **`mapeo.mjs` — «LA LISTA VACÍA»** | **CEDE**, y no por borrado: por **estrechamiento a donde se derivó** |
+
+#### La regla nueva, y por qué el defecto se invierte
+
+> **Una lista (`array` · `blocks` · `relationship hasMany`) vuelve como `[]`,
+> salvo que el campo declare `custom: { vaciaEsAusente: true }`** — o sea, que el
+> dato medido OMITE la clave cuando la lista está vacía.
+
+La regla vieja —*«se elige AUSENTE; los 9 catálogos dan 0 arrays vacíos
+explícitos»*— tenía las dos mitades ciertas y **la conclusión no se seguía**: «0
+vacíos explícitos» dice que la preimagen es única *en ese dominio*, no que
+«ausente» sea la correcta para todos los campos. Y el dominio eran **7 entradas
+de 149**. Es una FAMILIA DE CALIBRACIÓN de manual.
+
+**El discriminador no se elige: se DERIVA de la ida** (`ctx.lista(ruta,
+presente)`), que es lo único que puede saberlo — en la DB las dos preimágenes son
+el mismo `[]`. Medido sobre los 9 catálogos: **40 rutas de lista recorridas · 35
+que el dato medido trae SIEMPRE · 5 que omite alguna vez**. Las 5 declaran:
+`casos.sectores` · `casos.galeria` · `casos.soluciones` ·
+`monograficos.hero.modulos.paragraphs` · `productos.cuerpo`. **Y las 5 son
+exactamente las que el tipo medido declara opcionales** (`sectores?`, `galeria?`,
+`soluciones?`, `paragraphs?`, y `Product` que ni siquiera tiene `cuerpo`): el
+invariante *«opcional en el tipo ⟺ omitible en el dato»* se cumple 40/40.
+
+**Por qué `[]` es el defecto y no `undefined` (regla 6):** los dos olvidos no
+cuestan lo mismo, y el defecto seguro es el que grita.
+
+| olvido | qué pasa |
+|---|---|
+| no declarar un campo omitible | la vuelta emite `[]` contra una clave ausente ⇒ **`qa:cms-roundtrip` falla por FORMA en el acto** |
+| el contrario (el defecto de antes) | **no falla nada**, y el render muere delante del primer editor que deje una lista vacía |
+
+#### La prueba de que no cablea nada
+
+**El cambio es un NO-OP sobre todo lo medido**: para las 35 la rama de la lista
+vacía no se ejecuta nunca (traen ≥1 fila) y para las 5 el comportamiento es
+idéntico. Medido después, no leído en el diff: `qa:cms-roundtrip` **63/63** y
+`qa:cms-lectura` **63/63**, sin moverse. La diferencia aparece **sólo** en el
+caso que el corpus tiene y el seed no.
+
+**Guarda:** `qa:cms-decl` gana su cuarta declaración, en las dos direcciones —
+`vaciaEsAusente` de menos = HUECO, de más = DECLARACIÓN MUERTA (**que es el
+escalón**, y es la mitad que sólo caza esta guarda). Negativo **8/8**, con
+`vacia-es-ausente-muerta` reproduciendo el fallo real de la prueba final.
+
+⚠ **Lo que la guarda NO puede afirmar, y lo nombra:** **9 listas de la config que
+la ida no recorrió nunca** —8 bajo `productos.cuerpo` y
+`monograficos.…modulos.filas.celdas`—. De ellas no se sabe si el dato medido las
+omite. Entran en el inventario de §F2-5 · CASOS LEGALES NUNCA OBSERVADOS.
+
+---
+
 ## 8 · Aceptación de la migración
 
 **Cuándo se puede decir que el CMS está puesto.** El listón lo da el clon actual,

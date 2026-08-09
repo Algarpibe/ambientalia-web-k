@@ -3,7 +3,7 @@
     "fecha": "2026-08-08",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
-    "sabotaje": "sin-con-kind"
+    "sabotaje": "sin-vacia-es-ausente"
   },
   "derivado": {
     "formaDeRel": {
@@ -251,6 +251,13 @@
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": {
+      "sectores.body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
       "monograficos.cuerpo.filas.columnas.modulos": [
         "titular",
         "claim",
@@ -270,8 +277,7 @@
       "casos.galeria",
       "casos.sectores",
       "casos.soluciones",
-      "monograficos.hero.modulos.paragraphs",
-      "productos.cuerpo"
+      "monograficos.hero.modulos.paragraphs"
     ]
   },
   "contrato": {
@@ -280,36 +286,12 @@
     "suficiente": true
   },
   "veredicto": {
-    "verificadas": 58,
+    "verificadas": 62,
     "huecos": [
       {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "ctaDescarga",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "beneficiosAplicaciones",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "claimConFoto",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "listaSimple2Col",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "conKind",
-        "ruta": "sectores.body",
-        "slug": "mapaProyectos",
+        "tipo": "vaciaEsAusente",
+        "ruta": "productos.cuerpo",
+        "derivado": "ausente en 9 de 9",
         "declarado": "(nada)"
       }
     ],

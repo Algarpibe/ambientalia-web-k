@@ -52,7 +52,7 @@ const catalogos = await cargaCatalogos();
 const limpia = (r) => String(r).replace(/\[\d+\]/g, "");
 
 /* ── LO DERIVADO: la ida de verdad, con un `ctx` que anota ───────────────── */
-const derivado = { formaDeRel: new Map(), conKind: new Set(), centinelas: new Set() };
+const derivado = { formaDeRel: new Map(), conKind: new Set(), centinelas: new Set(), listas: new Map() };
 const ctx = {
   media: async () => 1,
   rel: async (_relationTo, valor, donde) => {
@@ -62,6 +62,20 @@ const ctx = {
   centinelaVacio: (ruta) => derivado.centinelas.add(limpia(ruta)),
   declaraKinds: (ruta, slugs) => {
     for (const s of slugs) derivado.conKind.add(`${limpia(ruta)}\0${s}`);
+  },
+  /**
+   * La CUARTA declaración (§F2-5-ESCALON-ETIQUETAS): ¿omite el dato medido esta
+   * lista alguna vez? En la DB `[]` y «ausente» son el mismo valor, así que la
+   * única que puede saberlo es la ida, viendo pasar las filas.
+   *
+   * Se cuentan las dos, no sólo las ausencias: `presente 0 / ausente 0` es «este
+   * campo no lo recorrió nadie» y no puede confundirse con «nunca falta».
+   */
+  lista: (ruta, presente) => {
+    const r = limpia(ruta);
+    const e = derivado.listas.get(r) ?? { presente: 0, ausente: 0 };
+    presente ? e.presente++ : e.ausente++;
+    derivado.listas.set(r, e);
   },
 };
 
@@ -75,13 +89,15 @@ for (const { coleccion } of CATALOGOS) {
 }
 
 /* ── LO DECLARADO: la config, por el ÚNICO lector que hay ────────────────── */
-const declarado = { formaDeRel: new Map(), conKind: new Map(), centinelas: new Set() };
+const declarado = { formaDeRel: new Map(), conKind: new Map(), centinelas: new Set(), vaciaEsAusente: new Set(), listas: new Set() };
 for (const { coleccion } of CATALOGOS) {
   const cfg = config.collections.find((c) => c.slug === coleccion);
   const d = declaracionesDe(cfg.fields, coleccion);
   for (const [k, v] of d.formaDeRel) declarado.formaDeRel.set(k, v);
   for (const [k, v] of d.conKind) declarado.conKind.set(k, v);
   for (const k of d.centinelas) declarado.centinelas.add(k);
+  for (const k of d.vaciaEsAusente) declarado.vaciaEsAusente.add(k);
+  for (const k of d.listas) declarado.listas.add(k);
 }
 
 /**
@@ -92,13 +108,26 @@ for (const { coleccion } of CATALOGOS) {
 if (SABOTAJE === "sin-forma-de-rel") declarado.formaDeRel.delete([...declarado.formaDeRel.keys()][0]);
 if (SABOTAJE === "sin-con-kind") declarado.conKind.delete([...declarado.conKind.keys()][0]);
 if (SABOTAJE === "sin-centinela") declarado.centinelas.delete([...declarado.centinelas][0]);
+/* El de la CUARTA: quitar `vaciaEsAusente` a un campo que el dato medido SÍ
+ * omite ⇒ la vuelta emitiría `[]` donde el dato no tiene clave. Es exactamente
+ * el olvido que el defecto nuevo hace ruidoso (§LA LISTA VACÍA). */
+if (SABOTAJE === "sin-vacia-es-ausente") declarado.vaciaEsAusente.delete([...declarado.vaciaEsAusente][0]);
 /* Y éste va al revés: declara algo que la ida no ve nunca. */
 if (SABOTAJE === "declaracion-muerta") declarado.formaDeRel.set("campo.que.no.existe", "objeto");
+/* Su gemelo en la cuarta: declarar omitible una lista que el dato medido trae
+ * SIEMPRE ⇒ el render devolvería `undefined` donde el tipo promete un array,
+ * que es el escalón entero. */
+if (SABOTAJE === "vacia-es-ausente-muerta") {
+  const viva = [...derivado.listas].find(([r, e]) => e.ausente === 0 && !declarado.vaciaEsAusente.has(r));
+  if (!viva) throw new Error("SABOTAJE vacia-es-ausente-muerta: no hay ninguna lista SIEMPRE presente sin declarar");
+  declarado.vaciaEsAusente.add(viva[0]);
+}
 /* Y éste no mira nada: la ida no recorre ningún campo (regla 4, el cero). */
 if (SABOTAJE === "selector-muerto") {
   derivado.formaDeRel.clear();
   derivado.conKind.clear();
   derivado.centinelas.clear();
+  derivado.listas.clear();
 }
 
 /* ── LA COMPARACIÓN, en las dos direcciones ──────────────────────────────── */
@@ -138,11 +167,41 @@ for (const ruta of derivado.centinelas) {
 }
 for (const ruta of declarado.centinelas) if (!derivado.centinelas.has(ruta)) muertas.push({ tipo: "centinelaVacio", ruta });
 
+/* `vaciaEsAusente`: el DEFECTO del walker es `[]`, así que sólo necesitan
+ * declaración las listas que el dato medido OMITE alguna vez. Las dos
+ * direcciones, y ninguna es simétrica de la otra en su coste:
+ *   · HUECO   — la ida la vio ausente y nadie lo declaró ⇒ la vuelta emitiría
+ *     `[]` contra una clave que no está. Lo cazaría además el round-trip;
+ *   · MUERTA  — declarada omitible y la ida la trae SIEMPRE ⇒ el render
+ *     devolvería `undefined` donde el tipo medido promete un array. **Es el
+ *     escalón**, y sólo lo caza esta mitad. */
+for (const [ruta, e] of derivado.listas) {
+  if (e.ausente === 0) {
+    if (declarado.vaciaEsAusente.has(ruta))
+      muertas.push({ tipo: "vaciaEsAusente", ruta, porQue: `el dato medido la trae en ${e.presente}/${e.presente} filas` });
+    else verificadas++;
+    continue;
+  }
+  if (declarado.vaciaEsAusente.has(ruta)) verificadas++;
+  else
+    huecos.push({
+      tipo: "vaciaEsAusente",
+      ruta,
+      derivado: `ausente en ${e.ausente} de ${e.presente + e.ausente}`,
+      declarado: "(nada)",
+    });
+}
+/* Y la tercera lectura, que no es hueco ni muerta: una lista que la config
+ * declara y **la ida no recorrió nunca**. No se puede afirmar nada de ella, así
+ * que se nombra en vez de contarse como verificada (la regla del cero aplicada
+ * a la propia guarda, igual que `sinEjercitar` de `conKind`). */
+const listasSinEjercitar = [...declarado.listas].filter((r) => !derivado.listas.has(r));
+
 /* ── El contrato. La unidad es la RUTA DE CAMPO comparada, y el mínimo sale de
  * lo que la IDA deriva — que es el lado que no se puede declarar de más. Un
  * `selector-muerto` que vacía la derivación cae aquí y no en «0 huecos». ── */
 const totalDerivado =
-  [...derivado.formaDeRel].length + derivado.conKind.size + derivado.centinelas.size;
+  [...derivado.formaDeRel].length + derivado.conKind.size + derivado.centinelas.size + derivado.listas.size;
 const ev = new Evaluadas({ nombre: "cms-decl", unidad: "rutas de campo", minimo: Math.max(1, totalDerivado) });
 ev.ok(verificadas + huecos.length);
 
@@ -153,6 +212,11 @@ console.log(`  ${"tipo".padEnd(16)} ${"derivadas".padStart(9)} ${"declaradas".pa
 console.log(`  ${"formaDeRel".padEnd(16)} ${String(derivado.formaDeRel.size).padStart(9)} ${String(declarado.formaDeRel.size).padStart(10)}`);
 console.log(`  ${"conKind".padEnd(16)} ${String(derivado.conKind.size).padStart(9)} ${String(declarado.conKind.size).padStart(10)}  (declaración por CAMPO, derivación por par campo·slug)`);
 console.log(`  ${"centinelaVacio".padEnd(16)} ${String(derivado.centinelas.size).padStart(9)} ${String(declarado.centinelas.size).padStart(10)}`);
+const omitidas = [...derivado.listas].filter(([, e]) => e.ausente > 0).length;
+console.log(
+  `  ${"vaciaEsAusente".padEnd(16)} ${String(omitidas).padStart(9)} ${String(declarado.vaciaEsAusente.size).padStart(10)}` +
+    `  (de ${derivado.listas.size} listas recorridas; las otras ${derivado.listas.size - omitidas} vuelven \`[]\` por defecto)`,
+);
 
 if (huecos.length) {
   console.log(`\n  ❌ ${huecos.length} HUECO(S) — la ida lo ve y nadie lo declaró; el render lo proyectaría mal:`);
@@ -160,7 +224,12 @@ if (huecos.length) {
 }
 if (muertas.length) {
   console.log(`\n  ❌ ${muertas.length} DECLARACIÓN(ES) MUERTA(S) — declarado y la ida no lo ve nunca:`);
-  for (const m of muertas.slice(0, 12)) console.log(`      · ${m.tipo.padEnd(14)} ${m.ruta}`);
+  for (const m of muertas.slice(0, 12)) console.log(`      · ${m.tipo.padEnd(14)} ${m.ruta}${m.porQue ? `   ${m.porQue}` : ""}`);
+}
+if (listasSinEjercitar.length) {
+  console.log(`\n  ⚠ ${listasSinEjercitar.length} lista(s) de la config que la IDA no recorrió NUNCA — no se`);
+  console.log(`    puede afirmar si el dato medido las omite, así que no cuentan como verificadas:`);
+  for (const r of listasSinEjercitar.slice(0, 12)) console.log(`      · ${r}`);
 }
 if (sinEjercitar.length) {
   console.log(`\n  ⚠ ${sinEjercitar.length} slug(s) bajo un campo declarado SIN EJERCITAR — no hay instancia en el catálogo`);
@@ -181,16 +250,18 @@ w("medidas/cms-decl.json", {
     formaDeRel: Object.fromEntries(derivado.formaDeRel),
     conKind: [...derivado.conKind].map((p) => p.split("\0")),
     centinelas: [...derivado.centinelas],
+    listas: Object.fromEntries([...derivado.listas].sort()),
   },
   declarado: {
     formaDeRel: Object.fromEntries(declarado.formaDeRel),
     conKind: Object.fromEntries([...declarado.conKind].map(([k, v]) => [k, [...v]])),
     centinelas: [...declarado.centinelas],
+    vaciaEsAusente: [...declarado.vaciaEsAusente].sort(),
   },
   /* El contrato se congela para que el negativo pueda distinguir «no cuadra» de
    * «no se evaluó»: son los dos modos de fallo y sólo uno se ve en `huecos`. */
   contrato: { evaluadas: ev.n, minimo: ev.minimo, suficiente: ev.suficiente() },
-  veredicto: { verificadas, huecos, muertas, sinEjercitar, ok: huecos.length === 0 && muertas.length === 0 },
+  veredicto: { verificadas, huecos, muertas, sinEjercitar, listasSinEjercitar, ok: huecos.length === 0 && muertas.length === 0 },
 });
 
 process.exit(ev.informe() || huecos.length || muertas.length ? 2 : 0);

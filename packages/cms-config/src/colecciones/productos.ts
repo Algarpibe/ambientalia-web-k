@@ -266,6 +266,10 @@ export const productos: CollectionConfig = {
      * 4 · 5 · 6 (×21) · 7 secciones propias sobre **un solo cascarón**
      * (`solutions-template-default et-tb-has-template` en 24 de 24).
      */
-    { name: "cuerpo", type: "blocks", blocks: BLOQUES_PRODUCTO },
+    /* `vaciaEsAusente`: `Product` **no tiene `cuerpo`** en el tipo medido — el
+     * cuerpo del CPT `solutions` está en el esquema y todavía no transcrito, así
+     * que la ida lo ve ausente en las 9 filas. Mientras siga así la vuelta tiene
+     * que devolver ausente, o el round-trip fallaría por FORMA en los 9. */
+    { name: "cuerpo", type: "blocks", blocks: BLOQUES_PRODUCTO, custom: { vaciaEsAusente: true } },
   ],
 };

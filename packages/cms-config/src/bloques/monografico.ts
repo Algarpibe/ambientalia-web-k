@@ -206,7 +206,14 @@ export const heroMonografico: Field = {
          * páginas. Se replica a propósito — fidelidad sobre criterio propio.
          */
         { name: "headingColor", type: "text" },
-        { name: "paragraphs", type: "array", fields: [{ name: "texto", type: "textarea", required: true }] },
+        /* `paragraphs?: string[]` — opcional en el tipo medido, y la ida lo ve
+         * faltar en 2 de los 6 módulos del hero. Ver §LA LISTA VACÍA. */
+        {
+          name: "paragraphs",
+          type: "array",
+          custom: { vaciaEsAusente: true },
+          fields: [{ name: "texto", type: "textarea", required: true }],
+        },
         { name: "mb", type: "number" },
       ],
     },
