@@ -1,4 +1,101 @@
-# HANDOFF — FASE 2 CERRADA: el escalón arbitrado con la medida delante, y la prueba final entera en verde
+# HANDOFF — FASE 3 ABIERTA: el original FUERA del camino crítico, y `articulos-kb` parada en su escalón
+
+> ⚠ **Tanda 2026-08-09 (42.ª).** PASOS 0 · 1 · 3 · 4 · 5 completos; el **PASO 2
+> paró en el ESCALÓN con la evidencia congelada**, que era su salida prevista.
+> La FASE 3 queda abierta con plan, con captura y con un arbitraje declarado.
+> Plan nuevo: `docs/PLAN-FASE-3.md`. Escalón: `PENDIENTES-QA.md`
+> §F3-1-ESCALON-TEXTO. Modelo medido: `ESQUEMA-CMS.md` §2d.2.
+
+## 0 · Los cinco titulares
+
+> **1 · EL ORIGINAL SALE DEL CAMINO CRÍTICO, DEFINITIVAMENTE — y hubo que
+> capturarlo DOS veces para poder decirlo.** La campaña congeló **272 registros
+> de HTML (69.4 MB)** y **337 ficheros de media (101.5 MB)**, 0 fallos en las
+> dos. La primera acta ya decía la frase y **era falsa a medias**: al intentar
+> sembrar salió que **0 de las 56 imágenes de `articulos-kb` estaban
+> capturadas**. *Capturar las páginas no es capturar sus assets* — y lo destapó
+> **usar la captura para algo**, no releer el acta.
+>
+> **2 · La lista se derivó de SEIS fuentes y el sitemap no aportó NI UNA en
+> exclusiva.** Sus 370 URLs de `/es` ya eran alcanzables desde el corpus
+> congelado: la captura de F2-2 era un **superconjunto** del sitemap y nadie lo
+> había comprobado. Lo que sí apareció: **`/es/author/*`, 34 rutas vivas** (29
+> sólo en `author/kunak`) con **0 URLs en el sitemap**; `/es/categoria/*` con
+> **dos formas acentuadas** que 301; `/es/sector/*` a medias (5 de 11 redirigen).
+> Y `listados` dio **142 = 35 + 107**, reproduciendo la paginación de LH-2 **al
+> número** nueve días después.
+>
+> **3 · El PASO 2 paró donde tenía que parar: el módulo de TEXTO compartido NO
+> expresa lo que trae el corpus.** 85 módulos `et_pb_text`, **16 etiquetas
+> dentro**, **7 fuera del tipo** (`span×50 · sub×7 · a×5 · i×4 · em×2 · img×1 ·
+> sup×1`). §2d.1 escribió que este arquetipo *«consume las definiciones
+> compartidas sin cambiarlas»* y **PD2 acierta en imagen y botón y falla en
+> texto**: se midió sobre KINDS de módulo, no sobre la forma de sus campos. Es
+> el `<sup>` de `productos.bullets` otra vez, ×7.
+>
+> **4 · Lo que sí quedó medido y construido: `blurb` y `gallery`.** 36 blurbs en
+> 3 artículos → `imagen` **opcional** (30/36), `descripcion` **opcional**
+> (24/36), nivel del titular **campo** (h4×27·h3×9), `reticula` **campo con TRES
+> valores** (iconos×24 · col-md-4×9 · **ninguna**×3), enlace **0/36 ⇒ no
+> existe**. Lo que sale 36/36 **no se cableó**: cero varianza no prueba
+> plantilla. Migración versionada aplicada y `npm run check` **verde**.
+>
+> **5 · Dos instrumentos mentían, y los dos por la misma familia.**
+> `qa:nunca-vistos` decía «296 casos que el ESQUEMA admite» y eran los de las
+> colecciones **con catálogo**: se le añadieron 2 bloques a `articulos-kb` y el
+> número **no se movió ni un carácter** — la colección entera era invisible (hoy
+> declara **111 casos en 8 colecciones** que no puede ejercitar, 37 de ellos de
+> `articulos-kb`). Y `c-cmp` clasificaba la forma con una cascada terminada en
+> **`return "A-blog"`**: una familia nueva se habría medido con el lector del
+> blog — anclas que **sí existen** en el DOM, sobre la página equivocada, y
+> números plausibles. Arreglado antes de construir y verificado como **no-op**.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`cms:captura-f3`** ← nueva · `-neg` | **272 registros · 107 base + 165 de paginación · 0 fallos** · neg **4/4** |
+| **`cms:captura-f3-media`** ← nueva | **337 ficheros · 101.5 MB · 0 fallos** |
+| **`qa:kb-recon`** ← nueva | **6/6 artículos, offline** (25–44 peticiones a la red BLOQUEADAS por página) · 0 selectores muertos |
+| `qa:nunca-vistos` (alcance corregido) · `-neg` | **208 de 296** sin moverse **+ 111 declarados fuera** · neg **4/4** |
+| `qa:lib` | **114 sondas** COMPILAN y declaran su mínimo |
+| `npm run check` | **verde** (lint + typecheck + build + slugs + cms-campos 10/10) |
+| `c-cmp` (fallback arreglado) | reparto **31 rutas → 10 formas · 0 desconocidas** (control offline contra el manifiesto) |
+
+## 2 · Lo siguiente, por orden de valor
+
+1. **Decidir §F3-1-ESCALON-TEXTO** y terminar `articulos-kb`. Las dos salidas
+   están escritas con su coste; **A** (`campoHtml` en un módulo propio de KB) es
+   la que CMS-0e, §3.1d y `CLAUDE.md` §Dónde para el modelado ya implican, pero
+   **se decide con pre-registro**, no de paso — cambia una decisión escrita;
+2. **F3-2 · listados y hubs** — 4 arquetipos que cubren 35 páginas + 107 rutas,
+   con modelo ya decidido en `listados-hubs/DECISIONES.md`. **Bloqueada por
+   `P-LH-C6`** (la pasada de comportamiento: hover · AJAX · lazy · orden entre
+   cargas), que es además el primer mordisco al eje `comportamiento` **0/31**;
+3. **F3-4 · las tres familias de archivo** que ningún censo tenía
+   (`categoria`/`author`/`sector`): ya están capturadas, falta modelarlas;
+4. operación, sin cambios: `Dockerfile` **sin verificar** y `PREVIEW_SECRETO`.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No cablear la salida A del escalón sin su acta.** §2d.1 dice hoy lo
+  contrario y es una decisión con predicado pre-registrado: se corrige con otra,
+  no con un commit de código.
+- **No leer «el original sale del camino crítico» como «ya no hace falta».**
+  Sigue haciendo falta para **medir el píxel** (el Δ0 de dos lados). Lo que ya no
+  hace falta es pegarle para **obtener datos**.
+- **No sumar los 111 «fuera del universo» a los 208.** Son dos preguntas: los 208
+  el seed **podría** ejercitarlos y no lo hace; los 111 **no puede**, porque no
+  hay filas. Fundirlos mueve un número que hay actas citando.
+- **No citar `blurb ×36` del inventario del grupo D.** La captura da **×18** por
+  tres recuentos independientes, y el instrumento viejo **no existe en el repo**
+  para adjudicarlo (regla 2). La decisión no se mueve; el número sí.
+- **No dar por buena la cobertura de `articulos-kb`:** es `·` en los nueve ejes,
+  y lo será hasta que emita rutas y `c-cmp` tenga su forma y su LECTOR.
+
+---
+
+# (anterior) HANDOFF — FASE 2 CERRADA: el escalón arbitrado con la medida delante, y la prueba final entera en verde
 
 > ⚠ **Tanda 2026-08-08 (41.ª).** PASOS 1 · 2 · 3 · 4 · 5 completos. El único
 > arbitraje que quedaba abierto —§F2-5-ESCALON-ETIQUETAS— **está cerrado**, y no

@@ -38,7 +38,7 @@ ya no se puede hacer igual mañana.
 
 | | |
 |---|---|
-| **entrega** | `corpus/fase-3/` — **272 registros · 69.4 MB · 0 fallos**, con índice propio |
+| **entrega** | **dos mitades**: `corpus/fase-3/` — 272 registros · 69.4 MB · 0 fallos — **y** `media-corpus/fase-3/` — 337 ficheros · 101.5 MB · 0 fallos. Cada una con índice propio |
 | **alimenta** | §2f (CONSTRUIDO vs REFERENCIADO) · §2d.1 (los 13 del grupo D) · §2c + LH-2 (los 35) · CMS-0e (HTML crudo primero) |
 | **incógnita** | ninguna abierta: la derivación tiene test en negativo 4/4 |
 | **hecho** | ✅ `npm run cms:captura-f3` exit 0 con `evaluadas 107/107 páginas`, commiteada antes de transformar nada |
@@ -53,6 +53,15 @@ palabras:
 > Ninguna fase posterior necesita pegarle al sitio vivo para construir. Lo único
 > que sigue exigiéndolo es **medir el píxel** (el Δ0 contra el original), y eso
 > es medición, no dependencia de datos.
+
+> ⚠ **Y esa frase se pudo escribir sólo después de la SEGUNDA mitad, porque con
+> la primera era falsa a medias.** El acta de la captura de HTML ya la decía, y
+> al intentar sembrar salió que **0 de las 56 imágenes de `articulos-kb` estaban
+> capturadas**: construir cualquiera de estos arquetipos seguía exigiendo el
+> sitio vivo. **Capturar las páginas no es capturar sus assets** — la misma
+> lección que `captura-media.mjs` había escrito para el corpus de F2-2, cobrada
+> otra vez por no haberla aplicado a la vez. Lo que la destapó no fue releer el
+> acta: fue **usar la captura para algo**.
 
 Y lo que la campaña midió de paso, porque no se sabía:
 
@@ -81,6 +90,42 @@ NUEVO NO HEREDA COBERTURA: si `mono-cmp` o los comparadores existentes corren
 sobre este arquetipo sin modificarse, **se dice con la evidencia de haberlos
 corrido**; si hay que tocarlos, **esa modificación ES el coste del arquetipo** y
 se cuenta antes de hacerla, no después.
+
+#### El coste de cobertura, CONTADO ANTES de gastarlo (2026-08-09)
+
+Derivado leyendo de dónde saca cada sonda su lista de rutas y cómo clasifica.
+**Con el matiz que lo hace citable: es una derivación del CÓDIGO, no una corrida
+—** las 6 rutas no se emiten todavía, así que ninguna sonda se ha podido correr
+sobre ellas. Eso es lo que hay, y no se presenta como más.
+
+| sonda | ¿corre sin tocarla? | evidencia |
+|---|---|---|
+| `clon-base` · `c-cabecera` · `enlaces` · `manifiesto` · `corte` · `slugs` | **SÍ** | derivan sus rutas del `prerender-manifest` y **no clasifican por forma**: una ruta nueva entra sola |
+| `html-cmp` | **SÍ** | ídem, y compara HTML/chunks — agnóstica del arquetipo |
+| **`c-cmp`** | **NO** | ver abajo |
+| `mono-cmp` · `cmp-sector` · `d4-*` · `a-*` | **no aplican** | son de otros arquetipos, con sus anclas |
+
+> ⚠ **Y `c-cmp` no es que «necesitara un ajuste»: tenía un FALLBACK que habría
+> medido la página nueva con el lector equivocado y sin decir nada.**
+> `formaDe()` era una cascada de `if` terminada en `return "A-blog"`, así que una
+> ruta de un arquetipo desconocido **no daba error: daba «entrada de blog»**, y
+> con él las anclas del blog. Y no lo caza el `Censo`: esos selectores **existen**
+> en el DOM del clon, así que la salida habría sido **números plausibles sobre el
+> elemento equivocado**.
+>
+> Es la regla 6 en un sitio nuevo — *un valor por defecto convierte «no lo sé» en
+> «está bien»*—, y es peor que un selector muerto porque el muerto tiene guarda y
+> esto no la tenía.
+>
+> **Arreglado antes de construir**, que es cuando valía la pena: la forma se
+> deriva de la **familia del manifiesto** (`srcRoute`), toda familia emitida
+> tiene que estar declarada, y una que no lo esté **TIRA con el aviso escrito
+> para la tanda que lo reciba**. La prueba de que no cableó nada es que **no
+> movió nada**: el mismo reparto de 31 rutas en 10 formas, **0 desconocidas**.
+
+**Conclusión, sin redondear:** el coste de cobertura de este arquetipo es **una
+forma + su LECTOR en `c-cmp`**, y aparece como rojo explícito el día que las 6
+rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 
 ## F3-2 · listados y hubs — LISTADO-B y sus hermanos
 
@@ -159,8 +204,8 @@ se cuenta antes de hacerla, no después.
 
 | fase | estado |
 |---|---|
-| **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — 272 registros, 0 fallos, commiteada |
-| **F3-1** · `articulos-kb` | en curso |
+| **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
+| **F3-1** · `articulos-kb` | ⛔ **PARADA EN SU ESCALÓN** — §F3-1-ESCALON-TEXTO |
 | **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |

@@ -49,6 +49,31 @@ soporte                                          soporte/servicio-de-reparacion
 `noindex` a las que no enlaza nada de lo ya clonado **no están contadas**. Todo lo
 que sigue va sobre **380 páginas conocidas**, y el verdadero total es ≥ 380.
 
+> ✅ **MEDIDO el 2026-08-09 (F3-0), y el «≥ 380» se puede sustituir por un
+> número con su alcance.** La campaña de captura de la FASE 3 derivó la unión de
+> **seis** fuentes —los 11 sub-sitemaps, los `href` de las 309 páginas
+> congeladas del corpus, los del clon, el bloque `noindex` de este documento, el
+> inventario del grupo D y el censo de listados— y salieron **685 rutas
+> distintas de `/es/`**. Evidencia: `corpus/fase-3/INDICE.json`.
+>
+> **Los tres resultados que corrigen a esta sección:**
+>
+> 1. **El sitemap no aporta NADA en exclusiva.** Sus 370 URLs de `/es` ya eran
+>    todas alcanzables desde el corpus congelado. O sea que la captura de F2-2
+>    era un **superconjunto** del sitemap, y nadie lo había comprobado;
+> 2. **hay TRES familias de archivo que este censo no tiene**, y ninguna está en
+>    ningún sitemap: `/es/categoria/*` (4 términos + 2 formas **acentuadas** que
+>    301), **`/es/author/*` (34 rutas vivas, 29 sólo en `author/kunak`)** y
+>    `/es/sector/*` (11, de las que **5 redirigen** a `/es/sectores/*`). El §4 de
+>    abajo cuenta **23** archivos de taxonomía; con éstas son **muchas más**;
+> 3. **la cola larga de «26 páginas» tenía más ejemplares de los enumerados**:
+>    los `informe-tecnico-*` son **5** y aquí se citan 2, y aparece
+>    `sistema-interno-de-informacion`, que no está en la lista de 10 de arriba.
+>
+> **Y el 685 tampoco es «el sitio»:** es la unión de lo que seis fuentes
+> conocidas alcanzan. Sigue siendo un suelo — mejor medido, con su derivación
+> commiteada, y ya no citable de memoria.
+
 ## 1 · El resultado, en una tabla
 
 | cubo | páginas | formas de página distintas |

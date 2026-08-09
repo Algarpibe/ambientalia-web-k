@@ -1130,6 +1130,78 @@ solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
 hipótesis del grupo D; la hipótesis cayó, así que la cola larga necesitará su
 propia decisión de modelo cuando toque.
 
+### ✅ 2d.2 · `articulos-kb` CONSTRUIDA a medias — `blurb` y `gallery` MEDIDOS, y el texto PARADO en su escalón (2026-08-09, F3-1)
+
+§2d.1 dejó `blurb`/`gallery` «para cuando se construya». Se construyó, y esto es
+lo que la medida dijo. Instrumento: **`npm run qa:kb-recon`** — 6/6 artículos,
+**offline sobre `corpus/fase-3/`** con toda la red bloqueada (25–44 peticiones
+abortadas por página), congelada en `medidas/kb-recon.json`.
+
+**Confirma §2d.1 en lo que decidió:** **1 sección propia en las 6, varianza cero
+⇒ plantilla**; sidebar 6/6 y sticky 6/6 en la capa `_tb_` ⇒ cascarón.
+
+#### El content type de `blurb`, campo a campo y con su alcance (36 módulos, 3 artículos)
+
+Régimen: capa propia de **builder**, así que el discriminador es el **test B**
+(varianza entre hermanos) más la varianza entre instancias.
+
+| propiedad | medido | veredicto |
+|---|---|---|
+| `imagen` | 30/36 | **opcional** |
+| `descripcion` | 24/36 | **opcional** |
+| nivel del titular | `h4`×27 · `h3`×9 | **CAMPO** |
+| `reticula` | `iconos`×24 · `col-md-4`×9 · **ninguna**×3 | **CAMPO, con TRES valores** |
+| `alineacion` | `center`×27 · `left`×9 | **CAMPO** |
+| enlace | **0/36** | **NO EXISTE** — no se añade |
+
+⚠ **`ninguna` es un valor, no la ausencia del campo**: los 3 blurbs que no
+llevan clase de retícula la tienen *quitada* por quien editó. Modelarlo como
+campo ausente obligaría a distinguir «no lo puso» de «lo quitó», que es
+justamente la ambigüedad que §7e cerró por el otro lado.
+
+⚠ **Y lo que NO se cableó, con su nombre:** `et_pb_blurb_position_top` y
+`et_pb_bg_layout_light` salen **36/36**, y el estilo en línea es `null` en las
+36. **Cero varianza no prueba plantilla**: prueba que en las instancias que
+existen nadie lo tocó. Van al componente y quedan **SIN PROBAR** anotados.
+
+**`gallery`: 1 módulo con 6 items.** Se escribe con lo que hay y **se declara que
+no discrimina nada**: con n=1 no se sabe qué es plantilla y qué es campo — es la
+FAMILIA DE CALIBRACIÓN, como `anchoPct: 90` viviendo en una sola de cuatro
+instancias. El día que aparezca una segunda galería, se re-mide.
+
+> ⚠ **Corrige de paso al inventario del grupo D.** `grupo-d-inventario.json`
+> (2026-08-03) dice `blurb ×36/×18/×18` y `gallery ×2`; la captura congelada da
+> **×18/×9/×9** y **×1** — la mitad exacta en los cuatro. Tres recuentos
+> independientes sobre los mismos bytes coinciden en la mitad: nodos del DOM,
+> índices `et_pb_blurb_N` distintos y el token de clase exacto. **No se puede
+> adjudicar contra el instrumento viejo porque su código no existe en el repo**
+> —ningún fichero de `scripts/` produce ese JSON—, que es la regla 2 (*una sonda
+> que no congela su código produce afirmaciones que no se pueden auditar*)
+> cobrada con nueve días de retraso. **La decisión no se mueve**: §2d.1 metió
+> `blurb`/`gallery` en la unión propia por estar **ausentes de `MonoModulo`**, y
+> 18 ó 36 no cambia eso. Lo que cambia es el número, y el número correcto es el
+> que trae su sonda commiteada.
+
+#### ⛔ Lo que NO se decide aquí: el módulo de TEXTO
+
+La misma corrida midió **85 módulos `et_pb_text` con 16 etiquetas dentro**, de
+las cuales **7 no caben en el tipo compartido** (`span`·`sub`·`a`·`i`·`em`·
+`img`·`sup`). O sea que la mitad de §2d.1 que dice *«CONSUME las definiciones
+compartidas sin cambiarlas»* **es cierta de imagen y botón y falsa del texto**.
+
+**Parado con la evidencia congelada, con sus dos salidas y su coste**:
+`PENDIENTES-QA.md` §F3-1-ESCALON-TEXTO. Se decide con pre-registro en la tanda
+que retome F3-1 — **no se cabló nada** mientras §2d.1 diga lo contrario.
+
+#### Lo que sí quedó aplicado
+
+`prefijo` es **campo required**: los 6 artículos cuelgan de **dos** prefijos
+(`centro-de-ayuda/kunak-air/…` ×5 y `soporte/centro-de-ayuda/kunak-air-cloud/…`
+×1). Es el mismo hallazgo que obligó al catch-all de `/recursos/[...ruta]` en
+grupo A — *el prefijo tiene tres valores, no uno*—, así que el slug no basta
+para construir la URL. Migración versionada `20260809_125718_f3_articulos_kb`,
+aplicada, con `npm run check` en verde.
+
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 
 Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`

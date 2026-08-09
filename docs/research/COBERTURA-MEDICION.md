@@ -5,6 +5,31 @@ nuevo. Todo sale de leer las salidas congeladas de `scripts/qa/medidas/` y el
 código de las 41 sondas. ⚠ **Actualizado 2026-08-02: son 48**, y el
 recuento de «los dos lados» de §2 estaba mal en los dos sentidos — ver ahí.
 
+> ⚠ **2026-08-09 (F3-1): el recuento de sondas NO se cita de aquí.** Arriba pone
+> «41» y luego «48»; hoy `npm run qa:lib` dice **114**. Es la §sondas 9 en este
+> mismo documento: *un número recordado envejece **contra** el repo, en
+> silencio*. **La cifra la deriva `qa:lib` en su última línea**, y las de arriba
+> se conservan sólo porque están fechadas.
+
+> ⚠⚠ **Y lo que esta tanda añade a la matriz, que es un hueco NUEVO, no un
+> avance: `articulos-kb` no está en las 31 rutas y su cobertura es `·` en los
+> nueve ejes.** No podía ser otra cosa —no emite rutas todavía—, pero conviene
+> que esté escrito antes de que alguien lea «31/31» como «todo».
+>
+> Lo que **sí** se midió antes de construir es el **coste** de darle cobertura,
+> y salió un defecto de instrumento en el sitio menos visible: `c-cmp` derivaba
+> las rutas del manifiesto —o sea que la ruta nueva **entraba sola**, bien— y
+> luego decidía su forma con una cascada terminada en `return "A-blog"`. Una
+> familia desconocida se habría medido **con el lector del blog**: anclas que sí
+> existen en el DOM, sobre la página equivocada, y **números plausibles**. Es
+> exactamente lo que este documento existe para evitar, con la vuelta de tuerca
+> de que la sonda **no** habría dicho `·` ni `c`: habría dicho **O**.
+>
+> Arreglado (la forma se deriva de `srcRoute` y una familia sin declarar TIRA) y
+> verificado como no-op: **mismo reparto de 31 rutas en 10 formas, 0
+> desconocidas**. Coste restante del arquetipo: **una forma + su LECTOR**,
+> contado en `PLAN-FASE-3.md` §F3-1.
+
 ## Por qué existe este documento
 
 En la tanda de la miga (A-QA1b) tres rutas —`/accesorios`, `/software-…`,

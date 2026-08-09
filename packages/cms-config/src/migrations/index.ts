@@ -6,6 +6,7 @@ import * as migration_20260805_011925_image_sizes_censados from './20260805_0119
 import * as migration_20260806_124532_ruta_origen_media from './20260806_124532_ruta_origen_media';
 import * as migration_20260808_023851_publicacion_f24 from './20260808_023851_publicacion_f24';
 import * as migration_20260808_232710_roles_f25 from './20260808_232710_roles_f25';
+import * as migration_20260809_125718_f3_articulos_kb from './20260809_125718_f3_articulos_kb';
 
 export const migrations = [
   {
@@ -46,6 +47,11 @@ export const migrations = [
   {
     up: migration_20260808_232710_roles_f25.up,
     down: migration_20260808_232710_roles_f25.down,
-    name: '20260808_232710_roles_f25'
+    name: '20260808_232710_roles_f25',
+  },
+  {
+    up: migration_20260809_125718_f3_articulos_kb.up,
+    down: migration_20260809_125718_f3_articulos_kb.down,
+    name: '20260809_125718_f3_articulos_kb'
   },
 ];

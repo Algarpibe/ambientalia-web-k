@@ -1,5 +1,65 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-1-ESCALON-TEXTO · el módulo de texto compartido NO expresa lo que trae el corpus de KB — PARADO CON LA EVIDENCIA CONGELADA (2026-08-09)
+
+**La construcción de `articulos-kb` paró aquí a propósito**, con la consigna de
+la tanda: *«si la captura trae una forma que el ESQUEMA no expresa, eso es
+frontera de modelo y se para con la evidencia congelada»*. Esto es su acta.
+
+**Qué se estaba haciendo:** F3-1 (`PLAN-FASE-3.md`) construye `articulos-kb`
+CMS-first — captura → seed → build → Δ0 contra el original. El bloque `blurb` y
+el `gallery` que §2d.1 dejó pendientes están **medidos y escritos**
+(`packages/cms-config/src/bloques/kb.ts`, migración versionada
+`20260809_125718_f3_articulos_kb`, `npm run check` verde). Lo que paró es el
+**módulo de TEXTO**.
+
+**La medida, congelada en `medidas/kb-recon.json` → `veredicto.moduloTexto`**
+(`npm run qa:kb-recon`, offline sobre `corpus/fase-3/`, 6/6 artículos):
+
+| | |
+|---|---|
+| módulos `et_pb_text` | **85** |
+| etiquetas distintas dentro | **16** |
+| el inventario | `p×95 · span×50 · li×40 · h2×20 · strong×13 · ul×9 · b×9 · h3×8 · sub×7 · h1×6 · a×5 · i×4 · em×2 · h4×2 · sup×1 · img×1` |
+| atributos | `style×74 · target×5 · decoding×1` |
+| **fuera del tipo compartido** | **7**: `span×50 · sub×7 · a×5 · i×4 · em×2 · img×1 · sup×1` |
+
+**La contradicción, y las dos mitades son citas:**
+
+- §2d.1 decidió que `articulos-kb` *«CONSUME las definiciones compartidas **sin
+  cambiarlas**»*, y **PD2** predijo que *«texto, imagen y botón entran»*;
+- `MODULO_TEXTO` compartido tiene `bloques: BLOQUES_TEXTO` (`p`·`ul`·`claim`·
+  `titular`) y sus textos son **`inline` = párrafo + negrita y nada más**.
+
+Para **imagen** y **botón** la medida confirma a PD2. Para **texto no**: el tipo
+compartido no puede expresar `span[style]`, `sub`, `sup`, `a`, `i`, `em` ni
+`img`. **PD2 se midió sobre KINDS de módulo, no sobre la FORMA de sus campos**,
+y ahí es donde falla — igual que HD1 acertó en la mitad de la retícula y falló
+en la de los kinds.
+
+> **Y es exactamente el `<sup>` de `productos.bullets` otra vez** (§7d): prestar
+> `inline` fuera de `MonoInline` fue lo que escondió aquel `<sup>`, y aquí hay
+> **7 de ellos** en un tipo que no los admite.
+
+### Por qué NO se ha resuelto sobre la marcha
+
+Porque la resolución **cambia una decisión escrita** (§2d.1), y este repo eso lo
+hace con acta y no de paso. Las dos salidas, con su coste:
+
+| salida | qué cuesta | qué dice el precedente |
+|---|---|---|
+| **A · el texto de KB es `campoHtml`** (un módulo `texto-kb` propio en `MODULOS_KB`) | un bloque más; `MODULO_TEXTO` compartido **intacto**, o sea MONOGRÁFICO no se toca | **CMS-0e** («HTML crudo primero») y **§3.1d** ya decidieron esto para el dato que viene del editor de WordPress, que es exactamente este caso. Y `CLAUDE.md` §Dónde para el modelado: *a partir del contenedor de contenido, el contenido lleva su estructura dentro y se declara RICO* |
+| **B · ampliar `BLOQUES_TEXTO`** con 7 formas más | toca un tipo **poblado** (SECTOR y MONOGRÁFICO lo usan) ⇒ cubo **C**, que es lo caro | `CLAUDE.md` lo rechaza con el censo de 209: *modelar eso como bloques sería inventar un esquema para documentos que ya tienen uno* |
+
+**La salida A es la que los documentos ya existentes implican**, y aun así **no
+se aplica en esta tanda**: se escribe aquí, se decide en el ESQUEMA con su
+pre-registro, y entonces se construye. Lo que NO se hace es cablearlo mientras
+§2d.1 dice lo contrario.
+
+**Dueño:** la tanda que retome F3-1. **Lo que ya está hecho y no hay que
+repetir:** la captura (F3-0), el recon (`qa:kb-recon`, negativo por el `Censo`),
+los bloques `blurb`/`gallery` medidos, la migración aplicada y `check` verde.
+
 ## ✅ F2-5-ESCALON-ETIQUETAS · el alta del EDITOR pasó TODAS las guardas de entrada y el RENDER murió — el escalón de la prueba final, con su hueco arbitrable (2026-08-08)
 
 **La prueba final de F2-5 PARÓ aquí a propósito** — la consigna: *«si el alta
@@ -166,6 +226,53 @@ Reparto por forma del caso, y no valen lo mismo:
    omite lo que coincide con su defecto— y contarlo como «nunca visto» marcaba
    justo el valor que ven casi todas las filas. Eran **5 casos** de más (213 →
    208). Es §sondas 4 en su tercera cara: un número plausible de más.
+
+### ⚠⚠ CORRIGE AL ALCANCE (2026-08-09, F3-1): «296 casos que el esquema admite» ERAN LOS DE LAS COLECCIONES CON CATÁLOGO
+
+**Cómo se destapó, y es el mejor destapador posible: se le añadió trabajo y el
+número no se movió.** `articulos-kb` ganó tres campos y **dos bloques nuevos**
+—`blurb` con `reticula` (3 valores), `alineacion` (2), imagen y descripción
+opcionales; `gallery` con su array— y el titular salió **296 · 208, idéntico al
+carácter**. No porque la colección no admita casos: porque **el universo se
+construía recorriendo `CATALOGOS`**, y `articulos-kb` no tiene catálogo en
+`src/lib`. **La colección entera era invisible al instrumento.**
+
+> **Es la clase de siempre —*no encontrar nada y no mirar nada dan la misma
+> salida*— en su forma más cara: el DENOMINADOR no era el que el titular
+> decía.** «296 casos que el esquema admite» son los casos de las colecciones
+> **con catálogo**, y el número se venía citando como si fuera del esquema. Es
+> §El NIVEL al que se mide aplicado a la unidad de una cobertura, otra vez.
+
+**Lo medido al declararlo: 111 casos en 8 colecciones que el instrumento NO
+puede ejercitar**, y el reparto importa más que el total:
+
+| colección | casos | por qué no se puede ejercitar |
+|---|---|---|
+| `media` | 61 | no es un catálogo: se deriva de los `upload` de las demás |
+| **`articulos-kb`** | **37** | **su dato NACE en el CMS (F3-1)**: se siembra desde `corpus/fase-3/`, no desde `src/lib` |
+| `usuarios` | 11 | infraestructura (CMS-0f), sin lado medido |
+| `categorias-recursos` · `slugs` | 1 + 1 | taxonomía derivada · registro del plano |
+
+**Y NO se suman al 208, a propósito.** Son dos preguntas distintas: los 208 son
+casos que **el seed podría ejercitar y no ejercita**; estos 111 son casos que el
+seed **no puede ejercitar en absoluto**, porque no hay filas que recorrer.
+Fundirlos movería un número congelado que hay actas citando (regla 5) y además
+mezclaría dos cosas que se arreglan por caminos distintos.
+
+**El arreglo es de alcance, no de recuento:** el instrumento ahora recorre
+**todas** las colecciones de la config, y una que no tenga catálogo **y no tenga
+razón escrita TIRA**. Las internas de Payload se reconocen por prefijo
+(`payload-*`) y no se enumeran — una lista a mano de las internas de una
+dependencia envejece con cada `npm update`. La declaración viaja **dentro de la
+congelada** (`fueraDelUniverso`), para que un número citado de ahí traiga al lado
+lo que su instrumento no podía mirar.
+
+**Consecuencia para F3-1:** los 37 de `articulos-kb` son su cola de trabajo, y
+**ninguno está ejercitado todavía** porque el seed está parado en
+§F3-1-ESCALON-TEXTO. Los que la medida del original ya dice que existen —y que
+por tanto el render va a ver en cuanto se siembre— son: `blurb` **sin imagen**
+(6 de 36), `blurb` **sin descripción** (12 de 36), y `reticula: "ninguna"` (3 de
+36). Ésos no hay que inventárselos: **están en el corpus**.
 
 ### Y lo que el inventario NO puede contestar
 

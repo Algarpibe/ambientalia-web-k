@@ -51,30 +51,91 @@ const SOLO = env("SOLO");
  * ------------------------------------------------------------------------ */
 const manifiesto = JSON.parse(readFileSync(enApp(".next/prerender-manifest.json"), "utf8"));
 
-/** Forma de la página, que decide qué predicciones aplican. */
-const formaDe = (r) => {
-  if (r.startsWith("/casos-de-exito/") || r.startsWith("/case-studies/")) return "caso";
-  if (r.startsWith("/faqs/")) return "faq";
-  if (/^\/sectores\/(monitorizacion-ambiental|monitorizacion-de-emisiones-en-petroleo)/.test(r)) return "monografico";
-  if (r.startsWith("/sectores/")) return "sector";
-  if (r.startsWith("/recursos/")) return "A-documento";
-  if (r === "/") return "home";
-  if (r === "/monitor-calidad-aire") return "producto";
-  if (r === "/accesorios") return "catalogo";
-  if (r === "/kunak-api" || r === "/software-de-medicion-calidad-del-aire") return "software";
-  return "A-blog";
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ EL FALLBACK DE `formaDe` ERA UN «NO LO SÉ» DISFRAZADO DE «ES UN BLOG»
+ *
+ * Medido el 2026-08-09, al contar el coste de cobertura de `articulos-kb`
+ * ANTES de construirlo (`PLAN-FASE-3.md` §F3-1, criterio (c)).
+ *
+ * Las rutas se derivan del manifiesto, así que **una familia nueva entra sola**
+ * — eso está bien y es lo que esta sonda ganó en 2026-08-01. Pero la forma se
+ * decidía con una cascada de `if` **terminada en `return "A-blog"`**, o sea que
+ * una ruta de un arquetipo que esta sonda no conoce **no daba error: daba
+ * "A-blog"**, y con él el LECTOR del blog. Resultado: anclas de blog buscadas en
+ * una página que no las tiene, y **números plausibles sobre el elemento
+ * equivocado**.
+ *
+ * Es la regla 6 en un sitio nuevo: *un valor por defecto convierte «no lo sé» en
+ * «está bien»*. Y es peor que un selector muerto, porque un muerto lo caza el
+ * `Censo` y esto no: los selectores del blog **existen** en el DOM del clon.
+ *
+ * ── El arreglo: la forma se deriva de la FAMILIA del manifiesto ───────────
+ * `srcRoute` (`/faqs/[slug]`, `/[slug]`, `/recursos/[...ruta]`…) es lo que el
+ * build dice que es cada ruta, no lo que esta sonda adivina del prefijo. Toda
+ * familia emitida tiene que estar declarada aquí; una que no lo esté **TIRA**,
+ * que es exactamente lo que hará `articulos-kb` el día que emita — y ése es el
+ * aviso que su tanda necesita recibir.
+ *
+ * ⚠ `/[slug]` sirve DOS formas (entrada de blog y término de Kunakpedia) y las
+ * dos se leen igual, así que comparten `A-blog`. Eso es una decisión medida
+ * (§2.1: mismo cascarón), no el fallback de antes.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const FORMA_POR_FAMILIA = {
+  "/": "home",
+  "/monitor-calidad-aire": "producto",
+  "/accesorios": "catalogo",
+  "/kunak-api": "software",
+  "/software-de-medicion-calidad-del-aire": "software",
+  "/casos-de-exito/[slug]": "caso",
+  "/case-studies/[slug]": "caso",
+  "/faqs/[slug]": "faq",
+  "/sectores/[slug]": null, // se parte en sector/monografico por el slug, abajo
+  "/recursos/[...ruta]": "A-documento",
+  "/[slug]": "A-blog", // blog Y término: mismo cascarón medido (§2.1)
 };
 
+/**
+ * Forma de la página. **Sin fallback**: devuelve `null` para lo que no sabe, y
+ * quien llama TIRA. `familia` viene del manifiesto (`srcRoute`), no del prefijo.
+ */
+const formaDe = (r, familia) => {
+  if (familia === "/sectores/[slug]")
+    return /^\/sectores\/(monitorizacion-ambiental|monitorizacion-de-emisiones-en-petroleo)/.test(r) ? "monografico" : "sector";
+  return FORMA_POR_FAMILIA[familia] ?? null;
+};
+
+const desconocidas = [];
 const RUTAS = Object.keys(manifiesto.routes || {})
   .filter((r) => !r.startsWith("/_") && r !== "/favicon.ico")
   .sort()
-  .map((r) => ({
-    clave: r,
-    clon: r,
-    orig: `https://kunakair.com/es${r === "/" ? "" : r}/`,
-    forma: formaDe(r),
-  }))
+  .map((r) => {
+    const familia = manifiesto.routes[r]?.srcRoute || r;
+    const forma = formaDe(r, familia);
+    if (!forma) desconocidas.push(`${r}   (familia ${familia})`);
+    return {
+      clave: r,
+      clon: r,
+      orig: `https://kunakair.com/es${r === "/" ? "" : r}/`,
+      forma,
+      familia,
+    };
+  })
   .filter((R) => !SOLO || R.forma === SOLO || R.clave.includes(SOLO));
+
+/* ⚠ Antes que nada: una familia emitida que esta sonda no sabe leer NO se mide
+ * con el lector de otra. Es el arreglo del fallback, y su aviso está escrito
+ * para la tanda que lo reciba — que será la de `articulos-kb`. */
+if (desconocidas.length) {
+  console.error(
+    `\n❌ ${desconocidas.length} ruta(s) de una FAMILIA que esta sonda no conoce:\n` +
+      desconocidas.map((d) => `     · ${d}`).join("\n") +
+      `\n\n   Antes esto devolvía "A-blog" por defecto y las medía con el LECTOR del blog:\n` +
+      `   anclas que sí existen en el DOM, sobre la página equivocada, y números plausibles.\n` +
+      `   Un arquetipo nuevo NO hereda cobertura: declara su familia en FORMA_POR_FAMILIA\n` +
+      `   y dale su LECTOR. Ese trabajo ES el coste del arquetipo, y aparece aquí a propósito.\n`,
+  );
+  process.exit(2);
+}
 
 if (RUTAS.length === 0) {
   console.error(SOLO ? `❌ SOLO=${SOLO} no casa con ninguna ruta — filtro equivocado, no corrida limpia.` : "❌ el manifiesto no trae rutas — corre `npm run build` antes.");
