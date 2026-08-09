@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "sonda": "escalon-etiquetas",
+    "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
+    "fuente": "corpus/entradas-blog — 149 capturas congeladas el 2026-08-04",
+    "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
+    "sello": "2026-08-08T21-14-00",
+    "sabotaje": "tags-vacio"
+  },
+  "contrato": {
+    "unidad": "entradas del corpus",
+    "minimo": 149,
+    "evaluadas": 149,
+    "fallos": []
+  },
+  "censo": {
+    "bloque": 149,
+    "case-categorias": 149,
+    "case-tags": 142,
+    "localizador": "case-taxonomies",
+    "discriminante": "case-tags",
+    "problemas": []
+  },
+  "cotejoIndiceDisco": {
+    "soloIndice": [],
+    "soloDisco": []
+  },
+  "sinEtiquetas": {
+    "n": 7,
+    "de": 149,
+    "ficheros": [
+      "covid-19-calidad-del-aire.html",
+      "detectores-emisiones-coronavirus-contaminacion.html",
+      "estamos-listos-para-ayudarle.html",
+      "proyecto-simgo.html",
+      "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+      "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
+      "webinar-redes-hibridas-monitorizacion-ambiental.html"
+    ]
+  },
+  "formasSinEtiquetas": [
+    {
+      "forma": "<span class=\"case-categorias\"><span>…</span><a href=\"…\">…</a></span>",
+      "n": 7,
+      "ficheros": [
+        "covid-19-calidad-del-aire.html",
+        "detectores-emisiones-coronavirus-contaminacion.html",
+        "estamos-listos-para-ayudarle.html",
+        "proyecto-simgo.html",
+        "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+        "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
+        "webinar-redes-hibridas-monitorizacion-ambiental.html"
+      ]
+    }
+  ],
+  "bloquesVacios": [
+    {
+      "fichero": "nos-hemos-mudado.html",
+      "dentro": ""
+    }
+  ],
+  "rotulo": {
+    "conEtiquetas": 142,
+    "conUna": 63,
+    "conVarias": 79,
+    "noCuadran": [
+      {
+        "f": "nos-hemos-mudado.html",
+        "enlaces": 0,
+        "rotulo": null,
+        "esperado": "Etiqueta: "
+      }
+    ],
+    "derivadoDelNumero": false
+  },
+  "veredicto": {
+    "decision": "AMBIGUO",
+    "porQue": "el corpus contiene las DOS formas: 7 entradas OMITEN el bloque y 1 lo traen PRESENTE Y VACÍO. Un arbitraje no se apoya en una mayoría."
+  }
+}
