@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "que": "la prueba final de F2-5: el EDITOR da de alta entrada (sin etiquetas) y producto, y el sitio se reconstruye",
+    "marca": "qa-f25-18032",
+    "sabotaje": "sin-guarda-render"
+  },
+  "evidencia": {
+    "rutasAntes": 31,
+    "builds": {
+      "conAltas": {
+        "ok": true,
+        "codigo": 0,
+        "seg": 0,
+        "cola": null
+      },
+      "trasDeshacer": {
+        "ok": true,
+        "codigo": 0,
+        "seg": 30.36,
+        "cola": null
+      }
+    },
+    "rutasDespues": 31,
+    "conteos": {
+      "antes": {
+        "usuarios": 0,
+        "entradas-blog": 7,
+        "productos": 9
+      },
+      "despues": {
+        "usuarios": 0,
+        "entradas-blog": 7,
+        "productos": 9
+      }
+    }
+  },
+  "invariantes": {
+    "P1·el editor da de alta una entrada SIN etiquetas, SIN imagen y SIN extracto": {
+      "ok": true,
+      "detalle": "alta de `qa-f25-18032-entrada-sin-etiquetas` con sesión de editor · etiquetas [] · sin imagenDestacada ni extracto"
+    },
+    "P2·el editor da de alta un PRODUCTO con padre": {
+      "ok": true,
+      "detalle": "alta de `qa-f25-18032-producto` (padre `cartuchos-inteligentes`) con sesión de editor"
+    },
+    "P3·las guardas de entrada la acogen (esquema · slug · webhook con SU sesión)": {
+      "ok": true,
+      "detalle": "slug de la entrada registrado (1 de las 2 altas está en el plano de raíz; el producto no cuelga de él) · webhook disparó 2 vez/veces CON la credencial, bajo la sesión del editor"
+    },
+    "P4·`next build` sobrevive y emite las dos rutas nuevas": {
+      "ok": false,
+      "detalle": "SABOTEADO: no se construyó, así que P4 no midió nada — y eso no puede salir verde"
+    },
+    "P5·el eje `href` cubre el producto nuevo y NO lo cuenta como coincidente": {
+      "ok": true,
+      "detalle": "10 productos juzgados (fuente DB, era 9 desde el seed) · 0 defectos · el alta `qa-f25-18032-producto` → https://kunakair.com/es/cartuchos-inteligentes/qa-f25-18032-producto/\n      y cuenta como SIN dato medido, no como coincidente."
+    },
+    "P6·deshecho el alta y reconstruido, el artefacto vuelve a las rutas de antes": {
+      "ok": true,
+      "detalle": "31 rutas, las mismas de partida · DB sin residuo (usuarios 0 · entradas-blog 7 · productos 9)"
+    }
+  },
+  "veredicto": {
+    "violados": 1,
+    "ok": false
+  }
+}

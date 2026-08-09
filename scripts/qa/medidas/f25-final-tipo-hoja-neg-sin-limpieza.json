@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-08",
-    "sabotaje": "productos:bullets=richText"
+    "sabotaje": null
   },
   "tipo": [
     {
@@ -170,7 +170,9 @@
         "sup"
       ],
       "ejemplo": "R<sup>2</sup> &gt;0,8",
-      "veredicto": "EDITOR DESCONOCIDO"
+      "campo": "code (HTML crudo)",
+      "perdidas": [],
+      "veredicto": "EXPRESABLE"
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -207,12 +209,12 @@
     }
   ],
   "href": {
-    "n": 9,
+    "n": 10,
     "fuente": "DB (productos publicados) — el build lee de aquí desde F2-3",
     "defectos": 0,
     "coincidenConMedido": 9,
     "discrepanDelMedido": 0,
-    "sinDatoMedido": 0,
+    "sinDatoMedido": 1,
     "filas": [
       {
         "id": "monitor-calidad-aire",
@@ -284,6 +286,14 @@
         "local": "/cartuchos-inteligentes/particulas-en-suspension",
         "final": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
         "coincideConMedido": true,
+        "defecto": null
+      },
+      {
+        "id": "qa-f25-31604-producto",
+        "medido": null,
+        "local": "/cartuchos-inteligentes/qa-f25-31604-producto",
+        "final": "https://kunakair.com/es/cartuchos-inteligentes/qa-f25-31604-producto/",
+        "coincideConMedido": null,
         "defecto": null
       }
     ]

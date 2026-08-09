@@ -210,8 +210,11 @@
   ],
   "href": {
     "n": 9,
+    "fuente": "DB (productos publicados) — el build lee de aquí desde F2-3",
     "defectos": 6,
     "coincidenConMedido": 3,
+    "discrepanDelMedido": 6,
+    "sinDatoMedido": 0,
     "filas": [
       {
         "id": "monitor-calidad-aire",

@@ -115,6 +115,82 @@ vez de reutilizarlo. Es la §regla 5 en su forma general: *lo que devuelve el
 árbol a un estado anterior se lleva por delante lo no commiteado*, aplicado a la
 DB, que no está en git en absoluto.
 
+## 🧨 CLASE · UN INSTRUMENTO ANCLADO AL SEED — el BARRIDO, 4.ª instancia (2026-08-08)
+
+**El encargo de F2-5 lo pidió por su nombre:** *«comprueba que ninguna otra
+guarda sigue anclada al SEED en vez de a la DB… es la tercera instancia de la
+clase, así que barre las demás en vez de arreglar ésta»*. Esto es el barrido, y
+salió una cuarta.
+
+**Derivado, no recordado** (§sondas 9): `grep -ln "catalogos.mjs\|src/lib/\|arquetipo-a"
+scripts/qa/*.mjs` ⇒ **16 sondas**. El discriminador no es *«lee el seed»* —
+muchas deben— sino:
+
+> **¿cuál es el OBJETO de la sonda?** Si compara contra el **dato medido**, el
+> seed **es** el ancla correcta: la medición no envejece. Si juzga la **salida
+> del build**, el ancla es la **DB**, porque es de donde el build lee desde F2-3
+> (8 familias: casos · documentos-cientificos · entradas-blog · faqs ·
+> monograficos · productos · sectores · terminos-kunakpedia).
+
+| reparto de las 16 | veredicto |
+|---|---|
+| `cms-campos` · `cms-decl` · `cms-lectura` · `cms-roundtrip` · `cms-teaser` · `cms-arquetipos` · `media-colision` · `t4b-bloque` (8) | **ancla correcta** — su objeto ES el dato medido |
+| `cmp-srcset` · `media-poblaciones` · `solutions-seo` · `tree-todos` (4) | **no leen el seed** — sólo lo nombran en comentarios |
+| `slugs` (1) | ya corregida — 3.ª instancia, pre-vuelo de la 40.ª |
+| **`tipo-hoja` (1)** | ⚠ **4.ª INSTANCIA — corregida en esta tanda** |
+| `clase-rango` (1) | ⚠ **5.ª, más débil — ficha abajo, sin corregir** |
+
+### ⚠ La 4.ª: `tipo-hoja` tenía DOS ejes con DOS anclas, y los dos leían el seed
+
+Lo que la hace vale la pena escribir es que **las dos anclas conviven en el mismo
+fichero**, así que «esta sonda lee el seed» no es ni verdadero ni falso:
+
+| eje | su OBJETO | ancla correcta |
+|---|---|---|
+| tipo de hoja | *¿puede el esquema expresar lo que el dato MEDIDO decía?* | **el SEED** — un producto nuevo del admin no es una medición |
+| **`href`** | *¿emite el build la ruta a la que apunta este href?* | **la DB** — cuenta todo producto que el build renderiza |
+
+El eje `href` sacaba sus filas de `catalogos.get("productos")`. Con DB == seed la
+discrepancia es **invisible**; la destapa el alta de un producto desde el admin,
+que es exactamente el caso que F2-4 dejó escrito (*«publicar NO multiplica el
+caso, dar de alta productos desde el admin sí»*) y **la mitad de la prueba final
+que nunca corrió**.
+
+**Corregido**: el eje lee la DB con el mismo filtro que el build
+(`estado=publicado`, derivado de si la colección tiene el campo). Medido: **9/9
+→ 10/10** con el alta de la prueba dentro, 0 defectos. Y el reparto que deja, que
+no se puede fusionar:
+
+> **el DEFECTO se juzga sobre todos los productos que el build renderiza; la
+> COINCIDENCIA con el dato medido, sólo sobre los que tienen dato medido.** Un
+> producto del admin no puede «coincidir» con nada — contarlo como que coincide
+> es la regla del cero.
+
+Guardas nuevas, las dos por si el ancla nueva deja de mirar: `href-sin-db` (0
+productos ⇒ error, no «0 defectos») y `href-medido-ausente` (un producto medido
+que la DB no tiene ⇒ error, no verde por omisión). **El listón NO sale de
+`filas.length`** —derivarlo de la lista que se itera es no tener listón— sino de
+que todo producto medido siga en la DB. Negativo **10/10**.
+
+### La 5.ª, más débil, y por qué se ficha en vez de arreglarse
+
+`clase-rango` deriva su ALCANCE del `prerender-manifest` (correcto) pero
+**clasifica** qué `/sectores/*` es MONOGRÁFICO leyendo los slugs de
+`src/lib/monografico.ts`. Un monográfico dado de alta desde el admin caería en la
+MUESTRA en vez de en el CONTROL.
+
+**Es instancia de la clase y a la vez la más benigna de las cinco**, y conviene
+decir por qué: `clase-rango` compara el clon contra **el original vivo**, y un
+monográfico creado desde el admin **no existe en kunakair.com** — la corrida
+moriría antes por el 404 del lado del original. O sea que la mala clasificación
+no puede llegar a producir un veredicto en falso, sólo un error confuso.
+
+**Dueño:** esta ficha. **Coste del arreglo:** leer los slugs de la DB, lo que le
+añade a `clase-rango` un requisito de Postgres que hoy no tiene — y es una sonda
+de rango, que se corre contra el original en sesiones donde el CMS puede no estar
+levantado. Se arregla cuando se toque `clase-rango` por otra razón; **no antes**,
+porque el cambio cuesta más de lo que compra.
+
 ## 🧨 CLASE · UN SERVIDOR AJENO EN EL PUERTO NO SE DISTINGUE DEL TUYO (2026-08-07)
 
 **Dos instancias en la misma tanda, y la segunda ya tenía la solución escrita al

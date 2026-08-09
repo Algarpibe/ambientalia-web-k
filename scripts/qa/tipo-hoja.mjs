@@ -320,12 +320,92 @@ if (censo.size > 0) {
    *     manda al original un producto que el clon sirve (`href-nada-construido`);
    *   · el entorno no se puede derivar — TIRA, no «nada construido»
    *     (`href-app-vacio`, la regla del cero en la derivación).
+   *
+   * ── ⚠ CORREGIDO 2026-08-08 (pre-vuelo de F2-5 PASO 4): LOS DOS EJES DE ESTA
+   *    SONDA TIENEN ANCLAS DISTINTAS, y los dos leían el SEED ────────────────
+   *
+   * Es la **4.ª instancia** de la clase *«un instrumento anclado a algo que el
+   * propio trabajo mueve»* (`PENDIENTES-QA.md` §CLASE), y lo que la hace vale
+   * la pena escribir es que las dos anclas conviven en el mismo fichero:
+   *
+   * | eje | su OBJETO | ancla correcta |
+   * |---|---|---|
+   * | tipo de hoja | *¿puede el esquema expresar lo que el dato MEDIDO decía?* | **el SEED** — un producto nuevo del admin no es una medición |
+   * | **`href`** | *¿emite el build la ruta a la que apunta este href?* | **la DB** — cuenta todo producto que el build renderiza |
+   *
+   * El eje `href` derivaba sus filas de `catalogos.get("productos")`, o sea de
+   * `src/lib/products.ts`, y **el build lee `productos` de la DB desde F2-3**.
+   * Con DB == seed la discrepancia es invisible; la destapa el alta de un
+   * producto desde el admin — que es exactamente el caso que F2-4 dejó escrito
+   * (*«publicar NO multiplica el caso, dar de alta productos desde el admin
+   * sí»*) y la mitad de la prueba final que no había corrido.
+   *
+   * Y el reparto que deja, que es la parte que no se puede fusionar: el
+   * **defecto** se juzga sobre TODOS los productos que el build renderiza; la
+   * **coincidencia con el dato medido** sólo sobre los que TIENEN dato medido.
+   * Un producto del admin no puede «coincidir» con nada, y contarlo como que
+   * coincide sería la regla del cero (`CLAUDE.md` §sondas 4bis).
    */
   const HREF_SABOTAJE = env("HREF_SABOTAJE", null);
   if (HREF_SABOTAJE) console.log(`\n⚠ HREF_SABOTAJE=${HREF_SABOTAJE} — el entorno NO es el del render`);
 
   const rutas = new Set(rutasEmitidas(leeManifiesto(APP)));
-  const filas = catalogos.get("productos") ?? [];
+
+  /* ── El ancla del eje `href`: la DB, que es de donde el build lee ────────
+   * `HREF_SABOTAJE=sin-db` deja la lista vacía para que el negativo compruebe
+   * que «0 productos» sale por ERROR y no por «0 defectos» (regla 4bis). */
+  const { getPayload } = await import("payload");
+  const { construyeConfig } = await import("../../packages/cms-config/src/index.ts");
+  const cfgPayload = await construyeConfig();
+  const payload = await getPayload({ config: cfgPayload });
+  const cfgProd = cfgPayload.collections.find((c) => c.slug === "productos");
+  /* El MISMO filtro que aplica el build (`filtraPublicados` del proyector), y
+   * derivado igual: ¿tiene la colección el campo `estado`? Un borrador que el
+   * build no emite no es un href roto, es un borrador. */
+  const tieneEstado = cfgProd.fields.some((f) => "name" in f && f.name === "estado");
+  const { docs: enDb } =
+    HREF_SABOTAJE === "sin-db"
+      ? { docs: [] }
+      : await payload.find({
+          collection: "productos",
+          pagination: false,
+          depth: 0,
+          sort: "id",
+          ...(tieneEstado ? { where: { estado: { equals: "publicado" } } } : {}),
+        });
+
+  /* El dato MEDIDO se sigue leyendo del seed, porque es lo que es: la medición.
+   * Se indexa por slug para poder decir, de cada producto de la DB, si tiene
+   * contraparte medida — y los que no la tienen NO cuentan como coincidentes. */
+  const medidoPorSlug = new Map(
+    (catalogos.get("productos") ?? []).map((p) => [preparaProducto(p).slug, p]),
+  );
+  const filas = enDb.map((d) => ({
+    slug: d.slug,
+    padre: d.padre ?? undefined,
+    medido: medidoPorSlug.get(d.slug)?.href ?? null,
+  }));
+  if (filas.length === 0) {
+    console.error(
+      `\n❌ 0 PRODUCTOS EN LA DB — el eje \`href\` no tendría nada que juzgar, y «0 defectos»\n` +
+        `   se leería como verde. Siembra (\`npm run seed\`) o levanta Postgres.`,
+    );
+    process.exit(2);
+  }
+  /* ⚠ El listón NO puede salir de `filas.length`: derivarlo de la misma lista
+   * que se itera es no tener listón. El suelo independiente es **el dato
+   * medido**: todo producto que se midió tiene que seguir estando en la DB, o
+   * el build ha dejado de renderizar algo que sí se midió. */
+  const vistosEnDb =
+    HREF_SABOTAJE === "medido-ausente" ? enDb.slice(1) : enDb; /* esconde uno MEDIDO de la DB */
+  const medidosAusentes = [...medidoPorSlug.keys()].filter((s) => !vistosEnDb.some((d) => d.slug === s));
+  if (medidosAusentes.length) {
+    console.error(
+      `\n❌ ${medidosAusentes.length} PRODUCTO(S) MEDIDO(S) QUE LA DB NO TIENE: ${medidosAusentes.join(", ")}\n` +
+        `   El eje juzgaría menos filas de las que se midieron y saldría verde por omisión.`,
+    );
+    process.exit(2);
+  }
   const DIR_APP =
     HREF_SABOTAJE === "app-vacio" ? path.join(QA, ".tmp", "app-que-no-existe") : path.join(APP, "src", "app");
   let construidas;
@@ -339,18 +419,38 @@ if (censo.size > 0) {
     }
 
   const href = filas.map((p) => {
-    const local = devuelveProducto(preparaProducto(p)).href; // el candidato del §4
+    /* El candidato del §4, compuesto por la MISMA función que usa el render. */
+    const local = devuelveProducto({ slug: p.slug, titulo: "", padre: p.padre }).href;
     const final = HREF_SABOTAJE === "todo-construido" ? local : hrefSegunEntorno(local, construidas);
     const esLocal = final.startsWith("/");
     let defecto = null;
     if (esLocal && !rutas.has(final)) defecto = "LOCAL SIN RUTA EMITIDA";
     else if (!esLocal && rutas.has(local)) defecto = "CONSTRUIDO APUNTANDO AL ORIGINAL";
     else if (!esLocal && final !== `${ORIGEN}${local}/`) defecto = "FORMA DEL ORIGINAL MAL COMPUESTA";
-    return { id: p.id, medido: p.href, local, final, coincideConMedido: p.href === final, defecto };
+    /* ⚠ Tres estados, no dos: un producto SIN dato medido —dado de alta desde
+     * el admin— no coincide ni deja de coincidir. `null`, y se cuenta aparte. */
+    return {
+      id: p.slug,
+      medido: p.medido,
+      local,
+      final,
+      coincideConMedido: p.medido === null ? null : p.medido === final,
+      defecto,
+    };
   });
   const rotos = href.filter((h) => h.defecto);
-  const coinciden = href.filter((h) => h.coincideConMedido);
-  informe.href = { n: href.length, defectos: rotos.length, coincidenConMedido: coinciden.length, filas: href };
+  const coinciden = href.filter((h) => h.coincideConMedido === true);
+  const sinMedida = href.filter((h) => h.coincideConMedido === null);
+  const discrepan = href.filter((h) => h.coincideConMedido === false);
+  informe.href = {
+    n: href.length,
+    fuente: "DB (productos publicados) — el build lee de aquí desde F2-3",
+    defectos: rotos.length,
+    coincidenConMedido: coinciden.length,
+    discrepanDelMedido: discrepan.length,
+    sinDatoMedido: sinMedida.length,
+    filas: href,
+  };
 
   console.log(`\n──── eje \`href\` · regla de rutas locales sobre el candidato del §4 · ${href.length} productos ────\n`);
   for (const h of href)
@@ -359,10 +459,19 @@ if (censo.size > 0) {
         (h.defecto ? `  ← ${h.defecto}` : ""),
     );
   console.log(
-    `\n  ${rotos.length} defecto(s) · ${coinciden.length}/${href.length} coinciden con el dato medido.\n` +
+    `\n  ${rotos.length} defecto(s) sobre los ${href.length} productos que el build renderiza (fuente: DB).\n` +
+      `  ${coinciden.length} coinciden con su dato medido · ${discrepan.length} discrepan · ` +
+      `${sinMedida.length} SIN dato medido (alta desde el admin: no coinciden ni dejan de coincidir).\n` +
       `  El criterio de la ficha: cero href locales a rutas que el build no emite, y cero construidos\n` +
       `  apuntando al original. Sigue sin verlo ninguna otra sonda: viaja en la carga RSC.`,
   );
+  if (sinMedida.length)
+    console.log(
+      `\n  ⚠ ${sinMedida.length} producto(s) de la DB sin contraparte en \`src/lib/products.ts\`:\n` +
+        sinMedida.map((h) => `      · ${h.id}`).join("\n") +
+        `\n    Se JUZGAN igual (el defecto es del build, no de la medición) y NO se cuentan\n` +
+        `    como coincidentes — «no lo pude comparar» y «coincide» no pueden dar lo mismo.`,
+    );
 
   const evHref = new Evaluadas({ nombre: "tipo-hoja · href", unidad: "productos", minimo: filas.length });
   evHref.ok(href.length);
@@ -383,4 +492,17 @@ if (censo.size > 0) {
             `   de rutas locales: local si el build la emite, al original si no.\n`),
   );
   process.exitCode = defectos || rotos.length || fallos ? 1 : 0;
+
+  /**
+   * ⚠ **EL VIGILANTE — el mismo de `roles` y `publica-e2e`, y ahora también
+   * aquí porque el eje `href` estrena conexión a la DB.** El pool de Payload
+   * mantiene vivo el bucle aunque la sonda haya terminado e impreso (medido:
+   * salida completa y el proceso vivo). `unref()`: si el bucle drena solo,
+   * nunca dispara.
+   */
+  await payload.db.destroy?.();
+  setTimeout(() => {
+    console.error("⚠ el bucle no drenó en 2 s (pool aún referenciado): se sale con el código ya calculado");
+    process.exit(process.exitCode ?? 0);
+  }, 2000).unref();
 }

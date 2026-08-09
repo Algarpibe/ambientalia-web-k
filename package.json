@@ -122,8 +122,8 @@
     "qa:cms-lectura-neg": "node --env-file=apps/cms/.env scripts/qa/cms-lectura.neg.mjs",
     "qa:admin-operacion": "node scripts/qa/admin-operacion.mjs",
     "qa:a-sp13": "node --env-file=apps/cms/.env scripts/qa/a-sp13.mjs",
-    "qa:tipo-hoja": "node scripts/qa/tipo-hoja.mjs",
-    "qa:tipo-hoja-neg": "node scripts/qa/tipo-hoja.neg.mjs",
+    "qa:tipo-hoja": "node --env-file=apps/cms/.env scripts/qa/tipo-hoja.mjs",
+    "qa:tipo-hoja-neg": "node --env-file=apps/cms/.env scripts/qa/tipo-hoja.neg.mjs",
     "qa:publicar": "node scripts/qa/publicar.mjs",
     "qa:publicar-neg": "node scripts/qa/publicar.neg.mjs",
     "publicar": "node --env-file=apps/cms/.env scripts/publicar/publicador.mjs",
@@ -134,7 +134,9 @@
     "qa:roles": "node --env-file=apps/cms/.env scripts/qa/roles.mjs",
     "qa:roles-neg": "node --env-file=apps/cms/.env scripts/qa/roles.neg.mjs",
     "qa:escalon": "node scripts/qa/escalon-etiquetas.mjs",
-    "qa:escalon-neg": "node scripts/qa/escalon-etiquetas.neg.mjs"
+    "qa:escalon-neg": "node scripts/qa/escalon-etiquetas.neg.mjs",
+    "qa:f25-final": "node --env-file=apps/cms/.env scripts/qa/f25-final.mjs",
+    "qa:f25-final-neg": "node --env-file=apps/cms/.env scripts/qa/f25-final.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

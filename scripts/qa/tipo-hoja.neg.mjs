@@ -91,6 +91,24 @@ const casos = [
     env: { HREF_SABOTAJE: "app-vacio" },
     salidaTiene: /ENTORNO SIN DERIVAR/,
   },
+  /* ── Los dos del ancla nueva (pre-vuelo de F2-5 PASO 4) ─────────────────
+   * El eje `href` pasó a leer de la DB, que es de donde lee el build. Eso
+   * estrena dos formas de no medir nada, y las dos tienen que salir por error
+   * en vez de por «0 defectos» (`CLAUDE.md` §sondas 4bis). */
+  {
+    etiqueta: "href-sin-db",
+    exit: 2,
+    porQue: "la DB no devuelve productos ⇒ 0 filas que juzgar, y «0 defectos» se leería como verde",
+    env: { HREF_SABOTAJE: "sin-db" },
+    salidaTiene: /0 PRODUCTOS EN LA DB/,
+  },
+  {
+    etiqueta: "href-medido-ausente",
+    exit: 2,
+    porQue: "un producto MEDIDO que la DB no tiene ⇒ el eje juzgaría menos filas de las medidas y saldría verde por omisión",
+    env: { HREF_SABOTAJE: "medido-ausente" },
+    salidaTiene: /PRODUCTO\(S\) MEDIDO\(S\) QUE LA DB NO TIENE/,
+  },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · tipo-hoja ════════\n`);
