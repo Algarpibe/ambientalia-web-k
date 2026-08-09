@@ -1,0 +1,3847 @@
+{
+  "meta": {
+    "fecha": "2026-08-09",
+    "que": "La captura de la FASE 3: lo que `corpus/INDICE.json` (309 páginas, 2026-08-04) NO cubre.",
+    "denominadorPropio": "Este índice NO toca los congelados: `corpus/INDICE.json` sigue en 309 y `a-censo.json` en 209.",
+    "fuente": "HTML crudo servido por kunakair.com (bytes sin re-codificar)",
+    "derivacion": "sitemap_index.xml (11 sub) + href de corpus/**.html (309) + href de apps/web/src/lib/*.ts + grupo-d-inventario.json + lh-censo.json",
+    "etiqueta": "secuencial · 500 ms entre peticiones · una vez por página (entre corridas) · redirect manual",
+    "buckets": {
+      "articulos-kb": "artículo del centro de ayuda — la colección `articulos-kb` de §2d.1 (6, varianza 0)",
+      "hubs-kb": "hub/índice del centro de ayuda — cola larga, casillero L4 de LH-2 (7, de 1 a 11 secciones)",
+      "listados": "los 35 listados y hubs de LH-2 (L1·L2·L3·L4·L5) y su paginación",
+      "categoria": "archivo de `category` — la familia SIN CENSAR de LH-SP8",
+      "autor": "archivo de `author` — 0 URLs en el sitemap de `/es` y VIVO en el original",
+      "taxonomia-sector": "archivo de la taxonomía `sector` — referenciada por §2c, nunca censada como página",
+      "sueltas": "cola larga: legales, landings, empresa, suscripción, soporte, contacto y los huérfanos de una familia ya capturada"
+    },
+    "fuera": {
+      "malformada": "no es una ruta: trozo de plantilla o escape recogido al barrer código/HTML por regex",
+      "sistema": "endpoint del sistema WordPress, no una página del sitio",
+      "paginacion": "ruta de paginación: la genera la FASE D recorriendo su listado, no la lista base"
+    },
+    "yaCapturado": 309,
+    "construido": [
+      "/es/",
+      "/es/sectores/calidad-del-aire-en-las-ciudades/",
+      "/es/sectores/control-de-emisiones-industriales/",
+      "/es/sectores/contaminacion-por-construccion/",
+      "/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+      "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+      "/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+      "/es/sectores/contaminacion-del-transporte-maritimo/",
+      "/es/sectores/contaminacion-del-aire-por-la-mineria/"
+    ]
+  },
+  "resumen": {
+    "paginas": 272,
+    "base": 107,
+    "rutasDePaginacion": 165,
+    "htmlBytes": 72769388,
+    "mediaUrlsDistintas": 493,
+    "porColeccion": {
+      "articulos-kb": {
+        "paginas": 6,
+        "htmlBytes": 1765604,
+        "http200": 6,
+        "http3xx": 0,
+        "otro": 0,
+        "paginacion": 0
+      },
+      "autor": {
+        "paginas": 34,
+        "htmlBytes": 9219040,
+        "http200": 34,
+        "http3xx": 0,
+        "otro": 0,
+        "paginacion": 28
+      },
+      "categoria": {
+        "paginas": 29,
+        "htmlBytes": 7625057,
+        "http200": 27,
+        "http3xx": 2,
+        "otro": 0,
+        "paginacion": 23
+      },
+      "hubs-kb": {
+        "paginas": 7,
+        "htmlBytes": 1915837,
+        "http200": 7,
+        "http3xx": 0,
+        "otro": 0,
+        "paginacion": 0
+      },
+      "listados": {
+        "paginas": 142,
+        "htmlBytes": 41598709,
+        "http200": 142,
+        "http3xx": 0,
+        "otro": 0,
+        "paginacion": 107
+      },
+      "sueltas": {
+        "paginas": 36,
+        "htmlBytes": 5978630,
+        "http200": 20,
+        "http3xx": 13,
+        "otro": 3,
+        "paginacion": 0
+      },
+      "taxonomia-sector": {
+        "paginas": 18,
+        "htmlBytes": 4666511,
+        "http200": 13,
+        "http3xx": 5,
+        "otro": 0,
+        "paginacion": 7
+      }
+    }
+  },
+  "paginacion": {
+    "/es/author/admin/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/author/edurne-ibarrola/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/author/irene/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/author/javier-fernandez/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/author/kunak/": {
+      "paginas": 29,
+      "paginaDeVerdad": true
+    },
+    "/es/author/mar_ramirez/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/categoria/articulos/": {
+      "paginas": 16,
+      "paginaDeVerdad": true
+    },
+    "/es/categoria/eventos/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    },
+    "/es/categoría/eventos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/categoria/noticias/": {
+      "paginas": 6,
+      "paginaDeVerdad": true
+    },
+    "/es/categoría/noticias/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/categoria/podcast-es/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/blog/": {
+      "paginas": 17,
+      "paginaDeVerdad": true
+    },
+    "/es/casos-de-exito/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/casos-de-exito/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "paginas": 7,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/co2-es/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/contaminantes-atmosfericos/": {
+      "paginas": 8,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/cov/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/emisiones-industriales/": {
+      "paginas": 5,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/gases-de-efecto-invernadero/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/h2s-es/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/etiqueta/malos-olores/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/monitorizacion-ambiental/": {
+      "paginas": 19,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/particulas-en-suspension/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    },
+    "/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "paginas": 7,
+      "paginaDeVerdad": true
+    },
+    "/es/glosario/": {
+      "paginas": 8,
+      "paginaDeVerdad": true
+    },
+    "/es/preguntas-frecuentes/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    },
+    "/es/productos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/productos/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/recursos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/recursos/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/recursos/articulos/": {
+      "paginas": 16,
+      "paginaDeVerdad": true
+    },
+    "/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/recursos/articulos/contaminacion-minera/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "paginas": 5,
+      "paginaDeVerdad": true
+    },
+    "/es/recursos/articulos/contaminacion-y-salud/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    },
+    "/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "paginas": 5,
+      "paginaDeVerdad": true
+    },
+    "/es/recursos/articulos/petroleo-y-gas/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/recursos/articulos/productos-kunak/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/recursos/documentos-cientificos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/recursos/documentos-cientificos/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/recursos/kunakpedia/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/recursos/kunakpedia/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/recursos/preguntas-frecuentes/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/recursos/preguntas-frecuentes/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/recursos/seminarios-web/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "paginas": 3,
+      "paginaDeVerdad": true
+    },
+    "/es/scientific-category/articulos-tecnicos/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/scientific-category/evaluaciones-independientes/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/sectores/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ sirve 200 y su canonical vuelve a /es/sectores/: no es una ruta",
+      "canonicalConfirmaMismaPagina": true
+    },
+    "/es/sector/edar/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/industria/": {
+      "paginas": 3,
+      "paginaDeVerdad": true
+    },
+    "/es/sector/investigacion-consultoria/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/sector/metalurgia/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/mineria/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/obras/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/oil-gas-es/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/olores/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/puertos/": {
+      "paginas": 2,
+      "paginaDeVerdad": true
+    },
+    "/es/sector/sports/": {
+      "paginas": 1,
+      "paginaDeVerdad": false,
+      "motivo": "page/2/ → HTTP 404"
+    },
+    "/es/sector/urbano/": {
+      "paginas": 4,
+      "paginaDeVerdad": true
+    }
+  },
+  "paginas": {
+    "articulos-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/index.html",
+      "http": 200,
+      "bytes": 276870,
+      "sha256": "4714dbf8132a346675fb0e5ffa2548cc3ad3569853eb8b1f560611ad604aaac0",
+      "capturada": "2026-08-09T12:11:31.541Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "grupo-d"
+      ]
+    },
+    "articulos-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/index.html",
+      "http": 200,
+      "bytes": 275152,
+      "sha256": "a59831735f810385469675a31d12999410f8e02e4753f179d74b26667b2aad6a",
+      "capturada": "2026-08-09T12:11:33.657Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "articulos-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/index.html",
+      "http": 200,
+      "bytes": 276069,
+      "sha256": "88c6a8f25275b5191875167e2a3a35e9551e2a302d39a450c04d25f018b73aeb",
+      "capturada": "2026-08-09T12:11:35.620Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "articulos-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/index.html",
+      "http": 200,
+      "bytes": 308985,
+      "sha256": "30b26a898dcca5c691dcf4493ad7daee4489a31727422f8e6cc152d80beddd8f",
+      "capturada": "2026-08-09T12:11:37.784Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "articulos-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/index.html",
+      "http": 200,
+      "bytes": 294833,
+      "sha256": "a726579e6d737c24b88014fef26f40911926016e3338ea579a3ae447b8cba682",
+      "capturada": "2026-08-09T12:11:39.890Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "articulos-kb:/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+      "url": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+      "fichero": "articulos-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/index.html",
+      "http": 200,
+      "bytes": 333695,
+      "sha256": "69ccd43c9a16d8f3a234fda4c0675dd27d6f8a2c2d22fefe51a56dd5cc965a29",
+      "capturada": "2026-08-09T12:11:42.115Z",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "grupo-d"
+      ]
+    },
+    "autor:/es/author/admin/": {
+      "url": "https://kunakair.com/es/author/admin/",
+      "fichero": "autor/author/admin/index.html",
+      "http": 200,
+      "bytes": 106943,
+      "sha256": "4f1c75552339ecd47ed0cb8c381e24c4f6d1bb6ea170dcaadb208c545311d500",
+      "capturada": "2026-08-09T12:11:44.125Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "autor:/es/author/edurne-ibarrola/": {
+      "url": "https://kunakair.com/es/author/edurne-ibarrola/",
+      "fichero": "autor/author/edurne-ibarrola/index.html",
+      "http": 200,
+      "bytes": 278269,
+      "sha256": "185b99d7d13b53b36a84f925fa279b7c38ced16e47f224c189641b6c275f0ed1",
+      "capturada": "2026-08-09T12:11:46.337Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "autor:/es/author/irene/": {
+      "url": "https://kunakair.com/es/author/irene/",
+      "fichero": "autor/author/irene/index.html",
+      "http": 200,
+      "bytes": 275968,
+      "sha256": "000661e744342eba7a55b13c56374ba25542e03ec0aa29baa8adcde19630bda4",
+      "capturada": "2026-08-09T12:11:48.370Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "autor:/es/author/javier-fernandez/": {
+      "url": "https://kunakair.com/es/author/javier-fernandez/",
+      "fichero": "autor/author/javier-fernandez/index.html",
+      "http": 200,
+      "bytes": 274402,
+      "sha256": "63b47a2fe4702373719adeb090e3d5ac062b2662e6685b3a955b19851bf90165",
+      "capturada": "2026-08-09T12:11:50.920Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "autor:/es/author/kunak/": {
+      "url": "https://kunakair.com/es/author/kunak/",
+      "fichero": "autor/author/kunak/index.html",
+      "http": 200,
+      "bytes": 281885,
+      "sha256": "6a1e08d3b171e843d469681d80b534a0b1e639b053606c54814c76409db6baf4",
+      "capturada": "2026-08-09T12:11:53.095Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "autor:/es/author/mar_ramirez/": {
+      "url": "https://kunakair.com/es/author/mar_ramirez/",
+      "fichero": "autor/author/mar_ramirez/index.html",
+      "http": 200,
+      "bytes": 104685,
+      "sha256": "2d3f412df4352a893ac8cd2d7ad6fce833ff82aae622cd8fde7e12f0d12b4aef",
+      "capturada": "2026-08-09T12:11:56.194Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "categoria:/es/categoria/articulos/": {
+      "url": "https://kunakair.com/es/categoria/articulos/",
+      "fichero": "categoria/categoria/articulos/index.html",
+      "http": 200,
+      "bytes": 290416,
+      "sha256": "5d80a3cecf71667bcff79f4c32df20b615cece8947180e2ade1f102ba80f98b6",
+      "capturada": "2026-08-09T12:11:59.816Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "categoria:/es/categoria/eventos/": {
+      "url": "https://kunakair.com/es/categoria/eventos/",
+      "fichero": "categoria/categoria/eventos/index.html",
+      "http": 200,
+      "bytes": 287145,
+      "sha256": "04f2da504c847798559a827324819856d7747160821b44335c2cd3f9b68324fd",
+      "capturada": "2026-08-09T12:12:02.557Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "categoria:/es/categoría/eventos/": {
+      "url": "https://kunakair.com/es/categoría/eventos/",
+      "http": 301,
+      "location": "https://kunakair.com/es/categoria/eventos/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:12:03.518Z",
+      "bucket": "categoria",
+      "familia": "categoria-tilde",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "categoria:/es/categoria/noticias/": {
+      "url": "https://kunakair.com/es/categoria/noticias/",
+      "fichero": "categoria/categoria/noticias/index.html",
+      "http": 200,
+      "bytes": 287694,
+      "sha256": "5acf1a05b25c407672f1213e9635004f7c773016afdef770a2434bd8e1405b07",
+      "capturada": "2026-08-09T12:12:06.230Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "categoria:/es/categoría/noticias/": {
+      "url": "https://kunakair.com/es/categoría/noticias/",
+      "http": 301,
+      "location": "https://kunakair.com/es/categoria/noticias/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:12:07.256Z",
+      "bucket": "categoria",
+      "familia": "categoria-tilde",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "categoria:/es/categoria/podcast-es/": {
+      "url": "https://kunakair.com/es/categoria/podcast-es/",
+      "fichero": "categoria/categoria/podcast-es/index.html",
+      "http": 200,
+      "bytes": 276478,
+      "sha256": "29f7478564722f060120a7016a8d5c5d5777b12bf41fba859c84ea744caace64",
+      "capturada": "2026-08-09T12:12:10.122Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "hubs-kb:/es/centro-de-ayuda/kunak-air-cloud/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/",
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air-cloud/index.html",
+      "http": 200,
+      "bytes": 271240,
+      "sha256": "1ef50cdd0de3f4cd8935378a672aedc0689bc9cdce610ab7bb9930a96de54f07",
+      "capturada": "2026-08-09T12:12:13.143Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/centro-de-ayuda/kunak-air/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/",
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/index.html",
+      "http": 200,
+      "bytes": 273957,
+      "sha256": "f9b26c4f5d1e70d020db8a3f5a9ccc1dc45894ccd28ff43c467f304fa734f0ea",
+      "capturada": "2026-08-09T12:12:15.910Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/index.html",
+      "http": 200,
+      "bytes": 267513,
+      "sha256": "76cfe241b3b20f780e1bfc6395046b8e08520c3f8450ba5989ff0e9f4f9b5601",
+      "capturada": "2026-08-09T12:12:18.040Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/centro-de-ayuda/kunak-air/video-tutoriales/": {
+      "url": "https://kunakair.com/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/video-tutoriales/index.html",
+      "http": 200,
+      "bytes": 279658,
+      "sha256": "e83192b2c36404589f1a7369c7f33c74d4d7f9f0695f5be2c71109ee8834b530",
+      "capturada": "2026-08-09T12:12:20.829Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/soporte/centro-de-ayuda/": {
+      "url": "https://kunakair.com/es/soporte/centro-de-ayuda/",
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/index.html",
+      "http": 200,
+      "bytes": 281578,
+      "sha256": "2caf17a76a8c8da1a7647b42b756abb833cc55a30d40b86870789d4ed0c16828",
+      "capturada": "2026-08-09T12:12:24.301Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/": {
+      "url": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/index.html",
+      "http": 200,
+      "bytes": 266655,
+      "sha256": "ab5bc82b510b9bd1a4650cd89be1f191176aeaddabeb63cfac70f3c70d8a7b72",
+      "capturada": "2026-08-09T12:12:26.720Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "hubs-kb:/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/": {
+      "url": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/index.html",
+      "http": 200,
+      "bytes": 275236,
+      "sha256": "ebe15e47f7b6b20d29d9a21af4d8b88e39df3755ed2109c6cef4678837e8d243",
+      "capturada": "2026-08-09T12:12:29.367Z",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ]
+    },
+    "listados:/es/blog/": {
+      "url": "https://kunakair.com/es/blog/",
+      "fichero": "listados/blog/index.html",
+      "http": 200,
+      "bytes": 287488,
+      "sha256": "5b36d6f82ceb66f22ef4fc874b053db0fa925f1b87c2e0d327b62327847204c7",
+      "capturada": "2026-08-09T12:12:31.857Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/casos-de-exito/": {
+      "url": "https://kunakair.com/es/casos-de-exito/",
+      "fichero": "listados/casos-de-exito/index.html",
+      "http": 200,
+      "bytes": 340153,
+      "sha256": "e9cf1476857388497612ba8452fa1e048f06a694a360b6d0ecbea281ee7b354c",
+      "capturada": "2026-08-09T12:12:34.698Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/calidad-del-aire/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+      "fichero": "listados/etiqueta/calidad-del-aire/index.html",
+      "http": 200,
+      "bytes": 291465,
+      "sha256": "87bbcf06a0839c618e8e3c9d81ce8a51dad6e145363ac5a76172450459895193",
+      "capturada": "2026-08-09T12:12:37.601Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/co2-es/": {
+      "url": "https://kunakair.com/es/etiqueta/co2-es/",
+      "fichero": "listados/etiqueta/co2-es/index.html",
+      "http": 200,
+      "bytes": 286536,
+      "sha256": "913949ca333fe47ef9a8c739d492e407069d6d82e3ba5b90d6c19a4e4b0d1307",
+      "capturada": "2026-08-09T12:12:40.389Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/index.html",
+      "http": 200,
+      "bytes": 291475,
+      "sha256": "2f061f3358906b1384de0e60d1995cf9b81ed5708382e7a9112eb1489a1cd889",
+      "capturada": "2026-08-09T12:12:42.864Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/cov/": {
+      "url": "https://kunakair.com/es/etiqueta/cov/",
+      "fichero": "listados/etiqueta/cov/index.html",
+      "http": 200,
+      "bytes": 284401,
+      "sha256": "516a8c42deeb76a457fe170e3a0626adee173d515b51587803c58d4d44f5080d",
+      "capturada": "2026-08-09T12:12:45.503Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/emisiones-industriales/": {
+      "url": "https://kunakair.com/es/etiqueta/emisiones-industriales/",
+      "fichero": "listados/etiqueta/emisiones-industriales/index.html",
+      "http": 200,
+      "bytes": 291517,
+      "sha256": "55fb10bd9a160c01922ec6a0c7a64241b72de7caf1645a214cfaa58cc7f0310d",
+      "capturada": "2026-08-09T12:12:48.582Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/gases-de-efecto-invernadero/": {
+      "url": "https://kunakair.com/es/etiqueta/gases-de-efecto-invernadero/",
+      "fichero": "listados/etiqueta/gases-de-efecto-invernadero/index.html",
+      "http": 200,
+      "bytes": 290475,
+      "sha256": "b305a415f0a8c494bd03b62627e9ed12d80f97fa167b096d81a881a4fd45ee38",
+      "capturada": "2026-08-09T12:12:51.475Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/h2s-es/": {
+      "url": "https://kunakair.com/es/etiqueta/h2s-es/",
+      "fichero": "listados/etiqueta/h2s-es/index.html",
+      "http": 200,
+      "bytes": 280745,
+      "sha256": "dbcaae7ec394ec2f0f90955d716e759360f5ae70be8229b9fcf8a44cc1999cae",
+      "capturada": "2026-08-09T12:12:54.054Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/malos-olores/": {
+      "url": "https://kunakair.com/es/etiqueta/malos-olores/",
+      "fichero": "listados/etiqueta/malos-olores/index.html",
+      "http": 200,
+      "bytes": 288005,
+      "sha256": "52c3e3851578e85d5d33fa5aa3161282dbff12962e98ce7c996e579a0b9f7302",
+      "capturada": "2026-08-09T12:12:56.546Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/index.html",
+      "http": 200,
+      "bytes": 291734,
+      "sha256": "92a310a67b1b9550b1d2dee39af5fff202a480832858a713d1863f940ae3c3a2",
+      "capturada": "2026-08-09T12:12:58.944Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "url": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/",
+      "fichero": "listados/etiqueta/normativa-de-calidad-del-aire/index.html",
+      "http": 200,
+      "bytes": 291444,
+      "sha256": "eda9cfb157f65748f18ac5be7f039ea63031544ad52781836b56ed3b60d6c36e",
+      "capturada": "2026-08-09T12:13:01.554Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/particulas-en-suspension/": {
+      "url": "https://kunakair.com/es/etiqueta/particulas-en-suspension/",
+      "fichero": "listados/etiqueta/particulas-en-suspension/index.html",
+      "http": 200,
+      "bytes": 291330,
+      "sha256": "316779b0ad9e76a3935081327afd962c47472cc5e0d30b89b8ce70438800b164",
+      "capturada": "2026-08-09T12:13:04.120Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/index.html",
+      "http": 200,
+      "bytes": 291614,
+      "sha256": "70406888050b712dbc409a1276db4ab3d3181d095cca4dcc2968e4b632008dca",
+      "capturada": "2026-08-09T12:13:07.219Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/glosario/": {
+      "url": "https://kunakair.com/es/glosario/",
+      "fichero": "listados/glosario/index.html",
+      "http": 200,
+      "bytes": 340735,
+      "sha256": "c62ddaf047705ddd5679a870daf2f7a4d0bd62825a2c50802677589dd1f9a757",
+      "capturada": "2026-08-09T12:13:09.274Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/preguntas-frecuentes/": {
+      "url": "https://kunakair.com/es/preguntas-frecuentes/",
+      "fichero": "listados/preguntas-frecuentes/index.html",
+      "http": 200,
+      "bytes": 340177,
+      "sha256": "0e2d946248e0b517fb85cfdea276116fdc9430d42522c2e04a0d6d89100176ab",
+      "capturada": "2026-08-09T12:13:11.282Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/productos/": {
+      "url": "https://kunakair.com/es/productos/",
+      "fichero": "listados/productos/index.html",
+      "http": 200,
+      "bytes": 268235,
+      "sha256": "7fa33ec2cda6bef9d244e5a0e3d78a78d1a81a3b43bd8a5c6f2f079c15ad6969",
+      "capturada": "2026-08-09T12:13:13.286Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/": {
+      "url": "https://kunakair.com/es/recursos/",
+      "fichero": "listados/recursos/index.html",
+      "http": 200,
+      "bytes": 278883,
+      "sha256": "e4f0b028521755cd9607cf160facc225391120a3bafdad8e6512137d3648197d",
+      "capturada": "2026-08-09T12:13:15.776Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/": {
+      "url": "https://kunakair.com/es/recursos/articulos/",
+      "fichero": "listados/recursos/articulos/index.html",
+      "http": 200,
+      "bytes": 303101,
+      "sha256": "7c96c22d38c8f3a5c4c61b44aaf1a24d845314fd1d546c5b4abedb09938e89b5",
+      "capturada": "2026-08-09T12:13:17.988Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "fichero": "listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+      "http": 200,
+      "bytes": 288156,
+      "sha256": "995fc9393627f6cfd0bf597327cea13030424576440acd2f194b01544dac8857",
+      "capturada": "2026-08-09T12:13:20.452Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "fichero": "listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+      "http": 200,
+      "bytes": 284399,
+      "sha256": "15b1c189db8bc91cb59332d2cfad5f6a087c1635f45f8658660ff6e0ab84db38",
+      "capturada": "2026-08-09T12:13:23.744Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/contaminacion-minera/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-minera/",
+      "fichero": "listados/recursos/articulos/contaminacion-minera/index.html",
+      "http": 200,
+      "bytes": 284108,
+      "sha256": "086784dfed45d25f4bb7fb868e407065cc87debe9b9b692883570e3660151fdb",
+      "capturada": "2026-08-09T12:13:26.159Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/contaminacion-urbana/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/index.html",
+      "http": 200,
+      "bytes": 302255,
+      "sha256": "54e71750aed3273eef288b0038bd35df86d4877a94005bf31c264247ce2df9c2",
+      "capturada": "2026-08-09T12:13:28.335Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/contaminacion-y-salud/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/",
+      "fichero": "listados/recursos/articulos/contaminacion-y-salud/index.html",
+      "http": 200,
+      "bytes": 301735,
+      "sha256": "00a569ed6defa7c452a582dcfc72f097ca8b5ab371d3d0350af1dcb97718d790",
+      "capturada": "2026-08-09T12:13:30.738Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "url": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+      "http": 200,
+      "bytes": 304078,
+      "sha256": "95a8e1ebdad3adcaa562198d23568b7abb8bb9dce20471ccc24e1ffbc677841d",
+      "capturada": "2026-08-09T12:13:33.267Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/petroleo-y-gas/": {
+      "url": "https://kunakair.com/es/recursos/articulos/petroleo-y-gas/",
+      "fichero": "listados/recursos/articulos/petroleo-y-gas/index.html",
+      "http": 200,
+      "bytes": 286703,
+      "sha256": "7169b20b944735f47f94ada00f399bb1ceca657f189fdaba55947ef5dae5c97e",
+      "capturada": "2026-08-09T12:13:35.303Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/articulos/productos-kunak/": {
+      "url": "https://kunakair.com/es/recursos/articulos/productos-kunak/",
+      "fichero": "listados/recursos/articulos/productos-kunak/index.html",
+      "http": 200,
+      "bytes": 290936,
+      "sha256": "7c565f5b90527b31048e2ef96a2350eb35f98acb909cb2f47dbb07657ae4bd7d",
+      "capturada": "2026-08-09T12:13:37.305Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/documentos-cientificos/": {
+      "url": "https://kunakair.com/es/recursos/documentos-cientificos/",
+      "fichero": "listados/recursos/documentos-cientificos/index.html",
+      "http": 200,
+      "bytes": 313196,
+      "sha256": "87fd3c9ad0a9d479ca56af89b2aa4719fac5e7e81224420116c285b949736646",
+      "capturada": "2026-08-09T12:13:39.357Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/kunakpedia/": {
+      "url": "https://kunakair.com/es/recursos/kunakpedia/",
+      "fichero": "listados/recursos/kunakpedia/index.html",
+      "http": 200,
+      "bytes": 265913,
+      "sha256": "1053f2e1a6c904d09afffa45dfde99a5b9e5eebde1bb8086b6fe9541a0e6d34c",
+      "capturada": "2026-08-09T12:13:41.345Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/preguntas-frecuentes/": {
+      "url": "https://kunakair.com/es/recursos/preguntas-frecuentes/",
+      "fichero": "listados/recursos/preguntas-frecuentes/index.html",
+      "http": 200,
+      "bytes": 271950,
+      "sha256": "063506ed0076b65a2724428ab4eaa92071b9793f50745712c287ba21aae411ee",
+      "capturada": "2026-08-09T12:13:43.384Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/recursos/seminarios-web/": {
+      "url": "https://kunakair.com/es/recursos/seminarios-web/",
+      "fichero": "listados/recursos/seminarios-web/index.html",
+      "http": 200,
+      "bytes": 284888,
+      "sha256": "e0d051e539a82e5ed2f11df2a13bc550084bf2799db4f18b4eec5d83dde53b68",
+      "capturada": "2026-08-09T12:13:45.494Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "url": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+      "fichero": "listados/scientific-category/articulos-cientificos-y-estudios/index.html",
+      "http": 200,
+      "bytes": 392609,
+      "sha256": "06d815e24a3e40e6f00c7a8a0f9a736e1647d5522bdf5a651494f0a52e8002b0",
+      "capturada": "2026-08-09T12:13:47.597Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/scientific-category/articulos-tecnicos/": {
+      "url": "https://kunakair.com/es/scientific-category/articulos-tecnicos/",
+      "fichero": "listados/scientific-category/articulos-tecnicos/index.html",
+      "http": 200,
+      "bytes": 357195,
+      "sha256": "57967b6d7d72747d1ef107a5613d6aa33174471d37936501453ac9adbc710a94",
+      "capturada": "2026-08-09T12:13:49.627Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/scientific-category/evaluaciones-independientes/": {
+      "url": "https://kunakair.com/es/scientific-category/evaluaciones-independientes/",
+      "fichero": "listados/scientific-category/evaluaciones-independientes/index.html",
+      "http": 200,
+      "bytes": 376927,
+      "sha256": "c62b4b0eb6f2fc1a1d81cb9407cb0c86f3a5530fb5968153d162e62b9fa5b388",
+      "capturada": "2026-08-09T12:13:51.780Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ]
+    },
+    "listados:/es/sectores/": {
+      "url": "https://kunakair.com/es/sectores/",
+      "fichero": "listados/sectores/index.html",
+      "http": 200,
+      "bytes": 262843,
+      "sha256": "c994797182dc86e8a848f5163c92beed1e8108e1c2d8b22ed9d9bbf7d8b8c595",
+      "capturada": "2026-08-09T12:13:53.907Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ]
+    },
+    "sueltas:/es/air-quality-monitor-2/": {
+      "url": "https://kunakair.com/es/air-quality-monitor-2/",
+      "http": 301,
+      "location": "https://kunakair.com/wp-content/uploads/2022/06/air-quality-monitor.png",
+      "fichero": null,
+      "capturada": "2026-08-09T12:13:55.080Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/air-quality-software-2/": {
+      "url": "https://kunakair.com/es/air-quality-software-2/",
+      "http": 301,
+      "location": "https://kunakair.com/wp-content/uploads/2018/03/air-quality-software.jpg",
+      "fichero": null,
+      "capturada": "2026-08-09T12:13:56.258Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/aviso-legal/": {
+      "url": "https://kunakair.com/es/aviso-legal/",
+      "fichero": "sueltas/aviso-legal/index.html",
+      "http": 200,
+      "bytes": 264903,
+      "sha256": "506dcd94e874e7e4b485a899b6817a0ac0e5384157ae5b6a44b8ea6e2621ce39",
+      "capturada": "2026-08-09T12:13:59.260Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/calidad-aire-puertos-maritimos/": {
+      "url": "https://kunakair.com/es/calidad-aire-puertos-maritimos/",
+      "http": 301,
+      "location": "https://kunakair.com/es/calidad-del-aire-en-puertos/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:00.211Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/cartuchos-inteligentes/": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/",
+      "http": 404,
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:02.092Z",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/cartuchos-inteligentes/acido-sulfhidrico/": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/acido-sulfhidrico/",
+      "http": 301,
+      "location": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:03.044Z",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/cartuchos-inteligentes/metano/": {
+      "url": "https://kunakair.com/es/cartuchos-inteligentes/metano/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sensor-de-calidad-del-aire/metano/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:04.315Z",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/": {
+      "url": "https://kunakair.com/es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/",
+      "http": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:05.406Z",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/": {
+      "url": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/",
+      "http": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:06.342Z",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/": {
+      "url": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/",
+      "http": 301,
+      "location": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:07.213Z",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/contacto/": {
+      "url": "https://kunakair.com/es/contacto/",
+      "fichero": "sueltas/contacto/index.html",
+      "http": 200,
+      "bytes": 340911,
+      "sha256": "64b5c0cec389e8f0a8ee54413f7a2f987d9863e06fc4088a29dc993695c91ce2",
+      "capturada": "2026-08-09T12:14:10.273Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/descarga-catalogo/": {
+      "url": "https://kunakair.com/es/descarga-catalogo/",
+      "fichero": "sueltas/descarga-catalogo/index.html",
+      "http": 200,
+      "bytes": 319215,
+      "sha256": "eded1f64989cc986899dd06f5874269161cda5b0ba8b804b4a74c43bd39cae8b",
+      "capturada": "2026-08-09T12:14:13.549Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/emision-de-gases-y-particulas-en-refinerias/": {
+      "url": "https://kunakair.com/es/emision-de-gases-y-particulas-en-refinerias/",
+      "http": 404,
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:16.010Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/empresa/": {
+      "url": "https://kunakair.com/es/empresa/",
+      "fichero": "sueltas/empresa/index.html",
+      "http": 200,
+      "bytes": 312075,
+      "sha256": "79ea297e7953bf0692f9b45b3c9b296f77eb64a4f7eac455dd4a79cafa2194a1",
+      "capturada": "2026-08-09T12:14:18.481Z",
+      "bucket": "sueltas",
+      "familia": "empresa",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/empresa/premios-y-reconocimientos/": {
+      "url": "https://kunakair.com/es/empresa/premios-y-reconocimientos/",
+      "fichero": "sueltas/empresa/premios-y-reconocimientos/index.html",
+      "http": 200,
+      "bytes": 279844,
+      "sha256": "65d5214a1b45c3de90185aa87641390b310a40e8b2952d78fff9c078f7d8d17e",
+      "capturada": "2026-08-09T12:14:20.668Z",
+      "bucket": "sueltas",
+      "familia": "empresa",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/estaciones-control-calidad-del-aire/": {
+      "url": "https://kunakair.com/es/estaciones-control-calidad-del-aire/",
+      "http": 301,
+      "location": "https://kunakair.com/es/monitor-calidad-aire/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:21.556Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/glossary/huella-de-carbono/": {
+      "url": "https://kunakair.com/es/glossary/huella-de-carbono/",
+      "http": 301,
+      "location": "https://kunakair.com/es/huella-de-carbono/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:22.591Z",
+      "bucket": "sueltas",
+      "familia": "glossary-en",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/higiene-industrial-y-seguridad-laboral/": {
+      "url": "https://kunakair.com/es/higiene-industrial-y-seguridad-laboral/",
+      "http": 404,
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:24.924Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/": {
+      "url": "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/",
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/index.html",
+      "http": 200,
+      "bytes": 315281,
+      "sha256": "146174c382fc3974872765bd623b8e3298253d131d6311854ff4973e5c9a461f",
+      "capturada": "2026-08-09T12:14:27.297Z",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/": {
+      "url": "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-industria/index.html",
+      "http": 200,
+      "bytes": 314467,
+      "sha256": "398cc1c810d98e2934472f1621cf7d740f4484a334b114bf789c9ac2a662d3a0",
+      "capturada": "2026-08-09T12:14:29.911Z",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/": {
+      "url": "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/",
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/index.html",
+      "http": 200,
+      "bytes": 314641,
+      "sha256": "df46d26fd16d2d55242123efe5ba7943a333a75c3c47ca1cdcfe963ed504b5c3",
+      "capturada": "2026-08-09T12:14:32.161Z",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/": {
+      "url": "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-obras/index.html",
+      "http": 200,
+      "bytes": 315372,
+      "sha256": "26a55b0c05504b07ec194fb8377c2f6d3eba765203ae06a3accf4463e8fea90b",
+      "capturada": "2026-08-09T12:14:34.324Z",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/": {
+      "url": "https://kunakair.com/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/",
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/index.html",
+      "http": 200,
+      "bytes": 315423,
+      "sha256": "3ac619ef9db15ba3f532f6c42031bfd52dc9b2bdf411bffee0b164743ba4d700",
+      "capturada": "2026-08-09T12:14:36.802Z",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/newsletter/": {
+      "url": "https://kunakair.com/es/newsletter/",
+      "fichero": "sueltas/newsletter/index.html",
+      "http": 200,
+      "bytes": 316331,
+      "sha256": "d8edabc1373e1e5d6028cac00c12f768d7ae7f6c53851c92ebbb759272ece780",
+      "capturada": "2026-08-09T12:14:38.989Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/politica-de-cookies/": {
+      "url": "https://kunakair.com/es/politica-de-cookies/",
+      "fichero": "sueltas/politica-de-cookies/index.html",
+      "http": 200,
+      "bytes": 278437,
+      "sha256": "8bfc97acea356d609eedd4e355405a0c39bfa7a47e6103c84afd21d917bab3ad",
+      "capturada": "2026-08-09T12:14:41.220Z",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/politica-de-privacidad-y-de-proteccion-de-datos/": {
+      "url": "https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+      "fichero": "sueltas/politica-de-privacidad-y-de-proteccion-de-datos/index.html",
+      "http": 200,
+      "bytes": 252235,
+      "sha256": "3c39d854476941de612dce4f598d1ea3cbff5f9da2faf7405ea1325bc1e90777",
+      "capturada": "2026-08-09T12:14:43.299Z",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/politica-de-seguridad-de-la-informacion/": {
+      "url": "https://kunakair.com/es/politica-de-seguridad-de-la-informacion/",
+      "fichero": "sueltas/politica-de-seguridad-de-la-informacion/index.html",
+      "http": 200,
+      "bytes": 261601,
+      "sha256": "8e9ddebf2de43467df8fd28028d7bbce64c38e78231bdea105913a9bf7bdd7fe",
+      "capturada": "2026-08-09T12:14:45.372Z",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/recursos/guias/": {
+      "url": "https://kunakair.com/es/recursos/guias/",
+      "http": 301,
+      "location": "https://kunakair.com/es/recursos/articulos/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:46.265Z",
+      "bucket": "sueltas",
+      "familia": "recursos-otros",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/": {
+      "url": "https://kunakair.com/es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/",
+      "fichero": "sueltas/redes-hibridas-de-calidad-del-aire-grabacion-webinar/index.html",
+      "http": 200,
+      "bytes": 321105,
+      "sha256": "19270f1e0007be9defabc047b2f4a8a42f55c6915b1368aa903f4447c6478b8b",
+      "capturada": "2026-08-09T12:14:48.831Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/sistema-interno-de-informacion/": {
+      "url": "https://kunakair.com/es/sistema-interno-de-informacion/",
+      "fichero": "sueltas/sistema-interno-de-informacion/index.html",
+      "http": 200,
+      "bytes": 289336,
+      "sha256": "3366aae9e1f46d39051c861f9e273628ecb2b825b91ee1819ffe740e15c570b2",
+      "capturada": "2026-08-09T12:14:50.832Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/soluciones/": {
+      "url": "https://kunakair.com/es/soluciones/",
+      "http": 301,
+      "location": "https://kunakair.com/es/productos/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:51.734Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "sueltas:/es/soporte/": {
+      "url": "https://kunakair.com/es/soporte/",
+      "fichero": "sueltas/soporte/index.html",
+      "http": 200,
+      "bytes": 256867,
+      "sha256": "1881d8b6fb2f417924d4880fa9e4a85780600e22e1b7fca026b03f616b995c69",
+      "capturada": "2026-08-09T12:14:53.935Z",
+      "bucket": "sueltas",
+      "familia": "soporte",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/soporte/servicio-de-reparacion/": {
+      "url": "https://kunakair.com/es/soporte/servicio-de-reparacion/",
+      "fichero": "sueltas/soporte/servicio-de-reparacion/index.html",
+      "http": 200,
+      "bytes": 275374,
+      "sha256": "156218bc1c7f1aa4692a5202923f5555be4c21d739be6e409aeac5026f83c4da",
+      "capturada": "2026-08-09T12:14:55.933Z",
+      "bucket": "sueltas",
+      "familia": "soporte",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ]
+    },
+    "sueltas:/es/suscribete/": {
+      "url": "https://kunakair.com/es/suscribete/",
+      "fichero": "sueltas/suscribete/index.html",
+      "http": 200,
+      "bytes": 316331,
+      "sha256": "18af499686f9c42f2391a8b620a1af78688b638bb0c10c56c5a16be0f49f3bc3",
+      "capturada": "2026-08-09T12:14:58.032Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "sitemap",
+        "clon"
+      ]
+    },
+    "sueltas:/es/vigilancia-perimetral-calidad-del-aire/": {
+      "url": "https://kunakair.com/es/vigilancia-perimetral-calidad-del-aire/",
+      "http": 301,
+      "location": "https://kunakair.com/es/vigilancia-perimetral-industrial/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:14:58.950Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "sueltas:/es/webinar-control-de-la-contaminacion-del-aire-en-la-industria/": {
+      "url": "https://kunakair.com/es/webinar-control-de-la-contaminacion-del-aire-en-la-industria/",
+      "fichero": "sueltas/webinar-control-de-la-contaminacion-del-aire-en-la-industria/index.html",
+      "http": 200,
+      "bytes": 318881,
+      "sha256": "28c07425f252a625559f202ad5ebe6f5e4a1fda3d8846541eefd767bf5e82c9c",
+      "capturada": "2026-08-09T12:15:01.583Z",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/edar/": {
+      "url": "https://kunakair.com/es/sector/edar/",
+      "fichero": "taxonomia-sector/sector/edar/index.html",
+      "http": 200,
+      "bytes": 378394,
+      "sha256": "ed1a9df4fad1927873edd4d1e7ccb3039cca73db35e1779cadadc14e12f66458",
+      "capturada": "2026-08-09T12:15:04.600Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "taxonomia-sector:/es/sector/industria/": {
+      "url": "https://kunakair.com/es/sector/industria/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:15:05.571Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "taxonomia-sector:/es/sector/investigacion-consultoria/": {
+      "url": "https://kunakair.com/es/sector/investigacion-consultoria/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:15:06.535Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "taxonomia-sector:/es/sector/metalurgia/": {
+      "url": "https://kunakair.com/es/sector/metalurgia/",
+      "fichero": "taxonomia-sector/sector/metalurgia/index.html",
+      "http": 200,
+      "bytes": 379176,
+      "sha256": "a917b3a6ad24307d99dc6585f8381bc86bed56be3f03d47e9de55ba267559079",
+      "capturada": "2026-08-09T12:15:08.920Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/mineria/": {
+      "url": "https://kunakair.com/es/sector/mineria/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sector/mineria/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:15:09.922Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/obras/": {
+      "url": "https://kunakair.com/es/sector/obras/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:15:10.814Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "taxonomia-sector:/es/sector/oil-gas-es/": {
+      "url": "https://kunakair.com/es/sector/oil-gas-es/",
+      "fichero": "taxonomia-sector/sector/oil-gas-es/index.html",
+      "http": 200,
+      "bytes": 290057,
+      "sha256": "2497d79e3a07f2b6311f785349cfbaef3189b3ce209c0fd5e4cce9971932ef87",
+      "capturada": "2026-08-09T12:15:13.381Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/olores/": {
+      "url": "https://kunakair.com/es/sector/olores/",
+      "fichero": "taxonomia-sector/sector/olores/index.html",
+      "http": 200,
+      "bytes": 379106,
+      "sha256": "f18fd71d6541e2ae4e04e4d6c5d2c5c34f82e02722f77e14d686935041ef0dad",
+      "capturada": "2026-08-09T12:15:15.707Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "taxonomia-sector:/es/sector/puertos/": {
+      "url": "https://kunakair.com/es/sector/puertos/",
+      "fichero": "taxonomia-sector/sector/puertos/index.html",
+      "http": 200,
+      "bytes": 379187,
+      "sha256": "82590395d5cd8c53420731322eb8211d60cc7cbf2487539863e3948b33794245",
+      "capturada": "2026-08-09T12:15:18.252Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/sports/": {
+      "url": "https://kunakair.com/es/sector/sports/",
+      "fichero": "taxonomia-sector/sector/sports/index.html",
+      "http": 200,
+      "bytes": 380148,
+      "sha256": "732863d94b9a2949965ab8d8dce87a0a499cf6093a427c9fed65f52e9ec632a3",
+      "capturada": "2026-08-09T12:15:20.667Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ]
+    },
+    "taxonomia-sector:/es/sector/urbano/": {
+      "url": "https://kunakair.com/es/sector/urbano/",
+      "http": 301,
+      "location": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+      "fichero": null,
+      "capturada": "2026-08-09T12:15:21.611Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ]
+    },
+    "autor:/es/author/kunak/page/2/": {
+      "url": "https://kunakair.com/es/author/kunak/page/2/",
+      "fichero": "autor/author/kunak/page/2/index.html",
+      "http": 200,
+      "bytes": 282023,
+      "sha256": "ad0c8bc64ea3d518929044f793fad17c329f368cb4a2ebb7073f7e7f261751ca",
+      "capturada": "2026-08-09T12:15:31.451Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 2
+    },
+    "autor:/es/author/kunak/page/3/": {
+      "url": "https://kunakair.com/es/author/kunak/page/3/",
+      "fichero": "autor/author/kunak/page/3/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "3b0058cb52b85a0667f807355d93971bbd13c7a239cad2f414427cb9c7827067",
+      "capturada": "2026-08-09T12:15:33.489Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 3
+    },
+    "autor:/es/author/kunak/page/4/": {
+      "url": "https://kunakair.com/es/author/kunak/page/4/",
+      "fichero": "autor/author/kunak/page/4/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "1de23cb5db6852b4816d67be4e79a1ce3f6b840e6404722fe483e83fda94b844",
+      "capturada": "2026-08-09T12:15:35.314Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 4
+    },
+    "autor:/es/author/kunak/page/5/": {
+      "url": "https://kunakair.com/es/author/kunak/page/5/",
+      "fichero": "autor/author/kunak/page/5/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "bfa4b6e3dd749fb7bac576885074c7c279ca3512272ebcb62f72accd6f0cbfd8",
+      "capturada": "2026-08-09T12:15:37.207Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 5
+    },
+    "autor:/es/author/kunak/page/6/": {
+      "url": "https://kunakair.com/es/author/kunak/page/6/",
+      "fichero": "autor/author/kunak/page/6/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "0402031aa04a7eca28f5ca0158a45b6bb046f71b7c3ec74b018b0b6f69fbcb97",
+      "capturada": "2026-08-09T12:15:39.048Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 6
+    },
+    "autor:/es/author/kunak/page/7/": {
+      "url": "https://kunakair.com/es/author/kunak/page/7/",
+      "fichero": "autor/author/kunak/page/7/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "dd0e9863f0e2fad358c25a0dfe679816f0416b8a00efe71da4c2a97d58eab83d",
+      "capturada": "2026-08-09T12:15:40.930Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 7
+    },
+    "autor:/es/author/kunak/page/8/": {
+      "url": "https://kunakair.com/es/author/kunak/page/8/",
+      "fichero": "autor/author/kunak/page/8/index.html",
+      "http": 200,
+      "bytes": 282030,
+      "sha256": "9487b7ff82aa84b3201cc003a7a48c2f8f88676daf8cbbfa17b99f19f9bfe217",
+      "capturada": "2026-08-09T12:15:42.900Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 8
+    },
+    "autor:/es/author/kunak/page/9/": {
+      "url": "https://kunakair.com/es/author/kunak/page/9/",
+      "fichero": "autor/author/kunak/page/9/index.html",
+      "http": 200,
+      "bytes": 282031,
+      "sha256": "24bbe4f0ac778a164d94cd824ca3db6812dc97bfdd50a7620d0415a7b8745f9f",
+      "capturada": "2026-08-09T12:15:44.944Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 9
+    },
+    "autor:/es/author/kunak/page/10/": {
+      "url": "https://kunakair.com/es/author/kunak/page/10/",
+      "fichero": "autor/author/kunak/page/10/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "0183b5e05d2abee74f0d4443999b1538529201b7f02bd716e0b5775d74d59b03",
+      "capturada": "2026-08-09T12:15:47.011Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 10
+    },
+    "autor:/es/author/kunak/page/11/": {
+      "url": "https://kunakair.com/es/author/kunak/page/11/",
+      "fichero": "autor/author/kunak/page/11/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "89d0369ba769df4d3595ccc8736eee17c7703b93f960f439241842b436322be3",
+      "capturada": "2026-08-09T12:15:49.328Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 11
+    },
+    "autor:/es/author/kunak/page/12/": {
+      "url": "https://kunakair.com/es/author/kunak/page/12/",
+      "fichero": "autor/author/kunak/page/12/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "dfbc26acfdba3d3269b8dc9e387081c7a968ad6e90573d81fb689f4434bb6e10",
+      "capturada": "2026-08-09T12:15:51.460Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 12
+    },
+    "autor:/es/author/kunak/page/13/": {
+      "url": "https://kunakair.com/es/author/kunak/page/13/",
+      "fichero": "autor/author/kunak/page/13/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "2560634d71074832000c2de08e3eeeeec7c1efaa01c68ff6fa671812e1eb5cc5",
+      "capturada": "2026-08-09T12:15:53.596Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 13
+    },
+    "autor:/es/author/kunak/page/14/": {
+      "url": "https://kunakair.com/es/author/kunak/page/14/",
+      "fichero": "autor/author/kunak/page/14/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "edad4e60b9f681a1c15998c980be57d4b34dcd5d5d658e277e8ae6c7856cc2a9",
+      "capturada": "2026-08-09T12:15:55.842Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 14
+    },
+    "autor:/es/author/kunak/page/15/": {
+      "url": "https://kunakair.com/es/author/kunak/page/15/",
+      "fichero": "autor/author/kunak/page/15/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "97d4e265bacdabc25ea7edab6510b66d75e471d3e2bd69d831277248a49e2720",
+      "capturada": "2026-08-09T12:15:57.930Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 15
+    },
+    "autor:/es/author/kunak/page/16/": {
+      "url": "https://kunakair.com/es/author/kunak/page/16/",
+      "fichero": "autor/author/kunak/page/16/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "64aedd6d038c0349dd47ed6a39541b371feeb9d06a5139c9e91dc15675021f36",
+      "capturada": "2026-08-09T12:16:00.208Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 16
+    },
+    "autor:/es/author/kunak/page/17/": {
+      "url": "https://kunakair.com/es/author/kunak/page/17/",
+      "fichero": "autor/author/kunak/page/17/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "c5b38beefdc75d64fb27f10c27623cd2b07e84c6b48ce6963044372c33a4a125",
+      "capturada": "2026-08-09T12:16:02.461Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 17
+    },
+    "autor:/es/author/kunak/page/18/": {
+      "url": "https://kunakair.com/es/author/kunak/page/18/",
+      "fichero": "autor/author/kunak/page/18/index.html",
+      "http": 200,
+      "bytes": 282037,
+      "sha256": "3e1908aaa576a6647b2785e202b1af09635b81339115a23d169bd718432725ee",
+      "capturada": "2026-08-09T12:16:04.593Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 18
+    },
+    "autor:/es/author/kunak/page/19/": {
+      "url": "https://kunakair.com/es/author/kunak/page/19/",
+      "fichero": "autor/author/kunak/page/19/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "2a8244c90e570105a19e205586da9d495ab3d7447725650b1c40fcfaa8e74f83",
+      "capturada": "2026-08-09T12:16:06.804Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 19
+    },
+    "autor:/es/author/kunak/page/20/": {
+      "url": "https://kunakair.com/es/author/kunak/page/20/",
+      "fichero": "autor/author/kunak/page/20/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "190d630d094cfe6184a55b0ed0c6fb89098167826a64b32693e82d26abda8565",
+      "capturada": "2026-08-09T12:16:08.912Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 20
+    },
+    "autor:/es/author/kunak/page/21/": {
+      "url": "https://kunakair.com/es/author/kunak/page/21/",
+      "fichero": "autor/author/kunak/page/21/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "0d997e28579de8a94d0340da25199c033a96c15aa74c07499c37125772139cd1",
+      "capturada": "2026-08-09T12:16:11.641Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 21
+    },
+    "autor:/es/author/kunak/page/22/": {
+      "url": "https://kunakair.com/es/author/kunak/page/22/",
+      "fichero": "autor/author/kunak/page/22/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "eedd806ec067d0153b48e244a65eebbc9f1f7dc50c449be4c6bc61381126d990",
+      "capturada": "2026-08-09T12:16:13.936Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 22
+    },
+    "autor:/es/author/kunak/page/23/": {
+      "url": "https://kunakair.com/es/author/kunak/page/23/",
+      "fichero": "autor/author/kunak/page/23/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "eb02bcfdcbc5abc424e27743ed5fab8d049de4650e8ed69d4b16c7d453ad2d19",
+      "capturada": "2026-08-09T12:16:15.984Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 23
+    },
+    "autor:/es/author/kunak/page/24/": {
+      "url": "https://kunakair.com/es/author/kunak/page/24/",
+      "fichero": "autor/author/kunak/page/24/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "c838fccfea4cd6768178c6e1d13fe77b5caa3428fdc7102b9d5f840d978e3a4f",
+      "capturada": "2026-08-09T12:16:18.019Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 24
+    },
+    "autor:/es/author/kunak/page/25/": {
+      "url": "https://kunakair.com/es/author/kunak/page/25/",
+      "fichero": "autor/author/kunak/page/25/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "7e8f4562e51474ba87c19b6f28e1b2b7072eb2d93a60271e1d71e2920fc726ba",
+      "capturada": "2026-08-09T12:16:20.176Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 25
+    },
+    "autor:/es/author/kunak/page/26/": {
+      "url": "https://kunakair.com/es/author/kunak/page/26/",
+      "fichero": "autor/author/kunak/page/26/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "eff84db99797e95bd3d8851845b8f517ddbed4a8862b52b4f5de28187f335988",
+      "capturada": "2026-08-09T12:16:22.235Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 26
+    },
+    "autor:/es/author/kunak/page/27/": {
+      "url": "https://kunakair.com/es/author/kunak/page/27/",
+      "fichero": "autor/author/kunak/page/27/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "414e04888291334b42b5c6d291f3313fdfb52d2db58bfa0b44fd3fe95f1ce4ce",
+      "capturada": "2026-08-09T12:16:25.146Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 27
+    },
+    "autor:/es/author/kunak/page/28/": {
+      "url": "https://kunakair.com/es/author/kunak/page/28/",
+      "fichero": "autor/author/kunak/page/28/index.html",
+      "http": 200,
+      "bytes": 282036,
+      "sha256": "7a41c366f8e9cf0a299225c99c33c3cbb2ff08a848e9b2f2815b7c278c4245b9",
+      "capturada": "2026-08-09T12:16:27.353Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 28
+    },
+    "autor:/es/author/kunak/page/29/": {
+      "url": "https://kunakair.com/es/author/kunak/page/29/",
+      "fichero": "autor/author/kunak/page/29/index.html",
+      "http": 200,
+      "bytes": 281962,
+      "sha256": "c05407464aa74f120ea93d7ff6a7e1bd59dd046d76c63baa7560abf3165f1d42",
+      "capturada": "2026-08-09T12:16:29.504Z",
+      "bucket": "autor",
+      "familia": "autor",
+      "paginaDe": "/es/author/kunak/",
+      "n": 29
+    },
+    "categoria:/es/categoria/articulos/page/2/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/2/",
+      "fichero": "categoria/categoria/articulos/page/2/index.html",
+      "http": 200,
+      "bytes": 290662,
+      "sha256": "8f050b0f31693c2da3cf527d4da08c6c33d119f15448d66b860f2858f4ac4ffa",
+      "capturada": "2026-08-09T12:16:36.964Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 2
+    },
+    "categoria:/es/categoria/articulos/page/3/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/3/",
+      "fichero": "categoria/categoria/articulos/page/3/index.html",
+      "http": 200,
+      "bytes": 290167,
+      "sha256": "8ac62fa7bd6f9022f170e5bef927284e470cc7a49674fc2422cdd24a52b59269",
+      "capturada": "2026-08-09T12:16:40.290Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 3
+    },
+    "categoria:/es/categoria/articulos/page/4/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/4/",
+      "fichero": "categoria/categoria/articulos/page/4/index.html",
+      "http": 200,
+      "bytes": 290849,
+      "sha256": "8ba55df009944717de53185deba387ae0b10d52aa7da85d70114fb3130e06183",
+      "capturada": "2026-08-09T12:16:43.231Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 4
+    },
+    "categoria:/es/categoria/articulos/page/5/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/5/",
+      "fichero": "categoria/categoria/articulos/page/5/index.html",
+      "http": 200,
+      "bytes": 290535,
+      "sha256": "63c0a8edd416b8521707048f3391cf9fcfef6e443c461d8f7f2382d265a17569",
+      "capturada": "2026-08-09T12:16:45.676Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 5
+    },
+    "categoria:/es/categoria/articulos/page/6/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/6/",
+      "fichero": "categoria/categoria/articulos/page/6/index.html",
+      "http": 200,
+      "bytes": 290240,
+      "sha256": "41c02798d7df75b033ea8dd6420a190fcfacad5d8625a9f862a41ccd5424e47e",
+      "capturada": "2026-08-09T12:16:48.262Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 6
+    },
+    "categoria:/es/categoria/articulos/page/7/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/7/",
+      "fichero": "categoria/categoria/articulos/page/7/index.html",
+      "http": 200,
+      "bytes": 290146,
+      "sha256": "2bfe4e69d3b43dcebfa1eca282f59ebba4b6ebda3b60f61deb28f5813426d9f7",
+      "capturada": "2026-08-09T12:16:50.714Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 7
+    },
+    "categoria:/es/categoria/articulos/page/8/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/8/",
+      "fichero": "categoria/categoria/articulos/page/8/index.html",
+      "http": 200,
+      "bytes": 289516,
+      "sha256": "230fd018874a5e85ec2d18fdf4975619c646e9e8d72c46502d7b937ba89af6c8",
+      "capturada": "2026-08-09T12:16:53.231Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 8
+    },
+    "categoria:/es/categoria/articulos/page/9/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/9/",
+      "fichero": "categoria/categoria/articulos/page/9/index.html",
+      "http": 200,
+      "bytes": 289932,
+      "sha256": "c51c03880aa934145ece51a2f21737119813b15580d6a9a1bb85fa51ab6bdd0f",
+      "capturada": "2026-08-09T12:16:55.730Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 9
+    },
+    "categoria:/es/categoria/articulos/page/10/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/10/",
+      "fichero": "categoria/categoria/articulos/page/10/index.html",
+      "http": 200,
+      "bytes": 288231,
+      "sha256": "43ab9cf84243e40bed762e95db2e1659cac2c61e3bfe386db048e23585129fa7",
+      "capturada": "2026-08-09T12:16:57.973Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 10
+    },
+    "categoria:/es/categoria/articulos/page/11/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/11/",
+      "fichero": "categoria/categoria/articulos/page/11/index.html",
+      "http": 200,
+      "bytes": 279770,
+      "sha256": "d7c458d3bddfdf57d2120741cc9d310023b4a3e436412d1fd5475c11dce54a2f",
+      "capturada": "2026-08-09T12:17:00.542Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 11
+    },
+    "categoria:/es/categoria/articulos/page/12/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/12/",
+      "fichero": "categoria/categoria/articulos/page/12/index.html",
+      "http": 200,
+      "bytes": 273208,
+      "sha256": "4bf132bef6672afd49abc684f029167e2af5b2b704adf6cc44a9a5b6614f030b",
+      "capturada": "2026-08-09T12:17:02.890Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 12
+    },
+    "categoria:/es/categoria/articulos/page/13/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/13/",
+      "fichero": "categoria/categoria/articulos/page/13/index.html",
+      "http": 200,
+      "bytes": 273207,
+      "sha256": "b43a347c752b5acdb892aaca6ea9e1a1a1437bad9130fcfc7737ddb6387ec5a6",
+      "capturada": "2026-08-09T12:17:05.383Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 13
+    },
+    "categoria:/es/categoria/articulos/page/14/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/14/",
+      "fichero": "categoria/categoria/articulos/page/14/index.html",
+      "http": 200,
+      "bytes": 273207,
+      "sha256": "7c0be015cab162a71d6d1c4e9e6abdfdf5eb18f81045fc4b820bed31edda47fe",
+      "capturada": "2026-08-09T12:17:07.627Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 14
+    },
+    "categoria:/es/categoria/articulos/page/15/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/15/",
+      "fichero": "categoria/categoria/articulos/page/15/index.html",
+      "http": 200,
+      "bytes": 273207,
+      "sha256": "0559d13add8edc0a9653c9594964a4629ecd8552f3e6c5ab66e00bd2d0a67e7d",
+      "capturada": "2026-08-09T12:17:10.008Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 15
+    },
+    "categoria:/es/categoria/articulos/page/16/": {
+      "url": "https://kunakair.com/es/categoria/articulos/page/16/",
+      "fichero": "categoria/categoria/articulos/page/16/index.html",
+      "http": 200,
+      "bytes": 273207,
+      "sha256": "995759e70c93e8f17637067c2f79e736dc5b940141f28d7118008c6ade985379",
+      "capturada": "2026-08-09T12:17:11.974Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/articulos/",
+      "n": 16
+    },
+    "categoria:/es/categoria/eventos/page/2/": {
+      "url": "https://kunakair.com/es/categoria/eventos/page/2/",
+      "fichero": "categoria/categoria/eventos/page/2/index.html",
+      "http": 200,
+      "bytes": 281670,
+      "sha256": "01836f078083225a45288e6ef3b02f080a8d0b2ca4987650d9137b31a2b4b48a",
+      "capturada": "2026-08-09T12:17:16.613Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/eventos/",
+      "n": 2
+    },
+    "categoria:/es/categoria/eventos/page/3/": {
+      "url": "https://kunakair.com/es/categoria/eventos/page/3/",
+      "fichero": "categoria/categoria/eventos/page/3/index.html",
+      "http": 200,
+      "bytes": 275713,
+      "sha256": "e44044b372127c9b7fb2bec3a6f223070030854bae561953b0fb2334648ff2e1",
+      "capturada": "2026-08-09T12:17:19.102Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/eventos/",
+      "n": 3
+    },
+    "categoria:/es/categoria/eventos/page/4/": {
+      "url": "https://kunakair.com/es/categoria/eventos/page/4/",
+      "fichero": "categoria/categoria/eventos/page/4/index.html",
+      "http": 200,
+      "bytes": 272984,
+      "sha256": "0261f3c1aae7951ca567f745e498426dd90d25b85917f489d80e1b8894c22e75",
+      "capturada": "2026-08-09T12:17:21.508Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/eventos/",
+      "n": 4
+    },
+    "categoria:/es/categoria/noticias/page/2/": {
+      "url": "https://kunakair.com/es/categoria/noticias/page/2/",
+      "fichero": "categoria/categoria/noticias/page/2/index.html",
+      "http": 200,
+      "bytes": 286683,
+      "sha256": "073d9b1c11b955d31e1619bf389fa2d24a07a4571ab65bc053cb38b0b405c50b",
+      "capturada": "2026-08-09T12:17:27.863Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/noticias/",
+      "n": 2
+    },
+    "categoria:/es/categoria/noticias/page/3/": {
+      "url": "https://kunakair.com/es/categoria/noticias/page/3/",
+      "fichero": "categoria/categoria/noticias/page/3/index.html",
+      "http": 200,
+      "bytes": 284290,
+      "sha256": "f16d2403ffb16150dc25d48dd6f26968a62ecf1e37df64e9480e3c0b64f73a60",
+      "capturada": "2026-08-09T12:17:30.095Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/noticias/",
+      "n": 3
+    },
+    "categoria:/es/categoria/noticias/page/4/": {
+      "url": "https://kunakair.com/es/categoria/noticias/page/4/",
+      "fichero": "categoria/categoria/noticias/page/4/index.html",
+      "http": 200,
+      "bytes": 279652,
+      "sha256": "caeaa47fa3107cd3ae5f3f39f3be49c9e985e91962b8c850acd1f3bb44933c1b",
+      "capturada": "2026-08-09T12:17:32.885Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/noticias/",
+      "n": 4
+    },
+    "categoria:/es/categoria/noticias/page/5/": {
+      "url": "https://kunakair.com/es/categoria/noticias/page/5/",
+      "fichero": "categoria/categoria/noticias/page/5/index.html",
+      "http": 200,
+      "bytes": 273124,
+      "sha256": "7f2edc5b9f81ca3ee6b5acb674db5ea8f5e109064ad8ef4e9436ed5416ebaf28",
+      "capturada": "2026-08-09T12:17:35.456Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/noticias/",
+      "n": 5
+    },
+    "categoria:/es/categoria/noticias/page/6/": {
+      "url": "https://kunakair.com/es/categoria/noticias/page/6/",
+      "fichero": "categoria/categoria/noticias/page/6/index.html",
+      "http": 200,
+      "bytes": 273124,
+      "sha256": "18af4e68e24bfbea4d534f1e9ba593fdec05fa3d168a4861ccc1ea8685f9f65f",
+      "capturada": "2026-08-09T12:17:37.757Z",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "paginaDe": "/es/categoria/noticias/",
+      "n": 6
+    },
+    "listados:/es/blog/page/2/": {
+      "url": "https://kunakair.com/es/blog/page/2/",
+      "fichero": "listados/blog/page/2/index.html",
+      "http": 200,
+      "bytes": 287980,
+      "sha256": "2b62a255ecfd147aca4decc993ff90114d3ce374a25dc5f90b8a07db268a55ca",
+      "capturada": "2026-08-09T12:17:45.282Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 2
+    },
+    "listados:/es/blog/page/3/": {
+      "url": "https://kunakair.com/es/blog/page/3/",
+      "fichero": "listados/blog/page/3/index.html",
+      "http": 200,
+      "bytes": 286886,
+      "sha256": "bede38f89c77f1c21d5c3b66037c22923473907b0ec0b370c8265db242e0ba71",
+      "capturada": "2026-08-09T12:17:47.196Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 3
+    },
+    "listados:/es/blog/page/4/": {
+      "url": "https://kunakair.com/es/blog/page/4/",
+      "fichero": "listados/blog/page/4/index.html",
+      "http": 200,
+      "bytes": 284492,
+      "sha256": "deff42835c784ddecb7be4374d781cf2dc89949408ceaf083b3c6ff66af7fe69",
+      "capturada": "2026-08-09T12:17:49.437Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 4
+    },
+    "listados:/es/blog/page/5/": {
+      "url": "https://kunakair.com/es/blog/page/5/",
+      "fichero": "listados/blog/page/5/index.html",
+      "http": 200,
+      "bytes": 284793,
+      "sha256": "368c15b570596e45125242b7a2a433cf12b171aafe1b79c58218a2cadc89dd0d",
+      "capturada": "2026-08-09T12:17:51.534Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 5
+    },
+    "listados:/es/blog/page/6/": {
+      "url": "https://kunakair.com/es/blog/page/6/",
+      "fichero": "listados/blog/page/6/index.html",
+      "http": 200,
+      "bytes": 283873,
+      "sha256": "dde233b45484984a5247699ca5e936c2c2850e897dc6ccb032b788d1f15f8d18",
+      "capturada": "2026-08-09T12:17:53.688Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 6
+    },
+    "listados:/es/blog/page/7/": {
+      "url": "https://kunakair.com/es/blog/page/7/",
+      "fichero": "listados/blog/page/7/index.html",
+      "http": 200,
+      "bytes": 282105,
+      "sha256": "502f5b09400e24ffb7e0b3d3c975127200dd780d1a14f1965717a76d7e5fe2b7",
+      "capturada": "2026-08-09T12:17:55.637Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 7
+    },
+    "listados:/es/blog/page/8/": {
+      "url": "https://kunakair.com/es/blog/page/8/",
+      "fichero": "listados/blog/page/8/index.html",
+      "http": 200,
+      "bytes": 278046,
+      "sha256": "1526c198b84e1e94ce1abb52d65479692511b51774ccc2ded9011c734b38b9ed",
+      "capturada": "2026-08-09T12:17:57.704Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 8
+    },
+    "listados:/es/blog/page/9/": {
+      "url": "https://kunakair.com/es/blog/page/9/",
+      "fichero": "listados/blog/page/9/index.html",
+      "http": 200,
+      "bytes": 273095,
+      "sha256": "32ec327f2e1198ac3d2b1b75911ffd1561a7a121f14fbfdf6dd6701238030c68",
+      "capturada": "2026-08-09T12:17:59.777Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 9
+    },
+    "listados:/es/blog/page/10/": {
+      "url": "https://kunakair.com/es/blog/page/10/",
+      "fichero": "listados/blog/page/10/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "a41535f5c2099726b2d662d90f980e1d34fe0c74a9599083e1ef1cd74ee84449",
+      "capturada": "2026-08-09T12:18:02.093Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 10
+    },
+    "listados:/es/blog/page/11/": {
+      "url": "https://kunakair.com/es/blog/page/11/",
+      "fichero": "listados/blog/page/11/index.html",
+      "http": 200,
+      "bytes": 273101,
+      "sha256": "e68b714bdc0d38059b7aa7e5880d68a33aea1102f7fd8821178ae08dcdab7ef4",
+      "capturada": "2026-08-09T12:18:04.184Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 11
+    },
+    "listados:/es/blog/page/12/": {
+      "url": "https://kunakair.com/es/blog/page/12/",
+      "fichero": "listados/blog/page/12/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "cd85915ca320606a127154392cd42e296f9753a30850774ea4a3902964c35faf",
+      "capturada": "2026-08-09T12:18:06.266Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 12
+    },
+    "listados:/es/blog/page/13/": {
+      "url": "https://kunakair.com/es/blog/page/13/",
+      "fichero": "listados/blog/page/13/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "321fb40a891fa6a5dac9a54f03f2100503644212bc9b3c35bae45db67dcf5183",
+      "capturada": "2026-08-09T12:18:08.246Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 13
+    },
+    "listados:/es/blog/page/14/": {
+      "url": "https://kunakair.com/es/blog/page/14/",
+      "fichero": "listados/blog/page/14/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "e13d7182597118f4963bd11222d174e7657f72efba7c8bb13d50366b6da64823",
+      "capturada": "2026-08-09T12:18:10.245Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 14
+    },
+    "listados:/es/blog/page/15/": {
+      "url": "https://kunakair.com/es/blog/page/15/",
+      "fichero": "listados/blog/page/15/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "9e4e164487afffb1d791317ed5a6dbaa4082a30cc52c1f4d33d6d8230422e740",
+      "capturada": "2026-08-09T12:18:12.357Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 15
+    },
+    "listados:/es/blog/page/16/": {
+      "url": "https://kunakair.com/es/blog/page/16/",
+      "fichero": "listados/blog/page/16/index.html",
+      "http": 200,
+      "bytes": 273100,
+      "sha256": "f65b67bcb723d11638404473ba74663ece0366167be819ea4aa212807aa01715",
+      "capturada": "2026-08-09T12:18:14.323Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 16
+    },
+    "listados:/es/blog/page/17/": {
+      "url": "https://kunakair.com/es/blog/page/17/",
+      "fichero": "listados/blog/page/17/index.html",
+      "http": 200,
+      "bytes": 273034,
+      "sha256": "50a8f712bde0d1143807dc513fbbd401a60c16303502887376845e60543c660d",
+      "capturada": "2026-08-09T12:18:16.340Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/blog/",
+      "n": 17
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/2/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/2/index.html",
+      "http": 200,
+      "bytes": 291737,
+      "sha256": "a1c89af045b9a97629030a9f56c0ba2d7f6ee98acb1c558276d3986ca72276b2",
+      "capturada": "2026-08-09T12:18:22.656Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/3/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/3/index.html",
+      "http": 200,
+      "bytes": 291135,
+      "sha256": "82033e14ac56dcd8a8498c83dc4041ba4b5ce424ed7a4c2ba006cf66795fb874",
+      "capturada": "2026-08-09T12:18:26.238Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/4/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/4/index.html",
+      "http": 200,
+      "bytes": 285599,
+      "sha256": "f36586146b3d16a6b8e8a42930383bf86a87f5d1e8c9169750cb78f75f25c98c",
+      "capturada": "2026-08-09T12:18:28.647Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/5/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/5/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/5/index.html",
+      "http": 200,
+      "bytes": 274654,
+      "sha256": "2452bbd1e1863a2fb1da44cf787d0efcef6873c7638bcd82f1a250fde0933de6",
+      "capturada": "2026-08-09T12:18:31.137Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 5
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/6/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/6/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/6/index.html",
+      "http": 200,
+      "bytes": 274654,
+      "sha256": "c4f506ad016f7f2678a5a97780d9d7e3fe20c899e122f056a765907e73f6362f",
+      "capturada": "2026-08-09T12:18:34.073Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 6
+    },
+    "listados:/es/etiqueta/calidad-del-aire/page/7/": {
+      "url": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/7/",
+      "fichero": "listados/etiqueta/calidad-del-aire/page/7/index.html",
+      "http": 200,
+      "bytes": 274568,
+      "sha256": "1ed21554f67daec87478e5eaa5b4c060955472839bba56372aec6d9b845bb247",
+      "capturada": "2026-08-09T12:18:36.699Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/calidad-del-aire/",
+      "n": 7
+    },
+    "listados:/es/etiqueta/co2-es/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/co2-es/page/2/",
+      "fichero": "listados/etiqueta/co2-es/page/2/index.html",
+      "http": 200,
+      "bytes": 274393,
+      "sha256": "a3e49d762ea309e8d3aff3084a9d2919c213d99f2d2bcefe1fb84781a2392c02",
+      "capturada": "2026-08-09T12:18:41.182Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/co2-es/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/2/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/2/index.html",
+      "http": 200,
+      "bytes": 291305,
+      "sha256": "94cbf5f2ce0661128ed5dc0f499df66f4a63b0f7162c21c28676a39cd4c630a1",
+      "capturada": "2026-08-09T12:18:45.278Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/3/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/3/index.html",
+      "http": 200,
+      "bytes": 291699,
+      "sha256": "8c823ca78f2afd15c9e35bdd262dc18fb4aa37005d043f12d04700a5ec5c323f",
+      "capturada": "2026-08-09T12:18:47.587Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/4/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/4/index.html",
+      "http": 200,
+      "bytes": 291301,
+      "sha256": "988499265864bac62a3e293244ba940f9f9f06377caac2163348215047f2ea64",
+      "capturada": "2026-08-09T12:18:49.939Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/5/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/5/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/5/index.html",
+      "http": 200,
+      "bytes": 274890,
+      "sha256": "111f0c79cd40e41a99a650d0860109b9bc0d7682b110d875d14946b6b29ed132",
+      "capturada": "2026-08-09T12:18:52.155Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 5
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/6/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/6/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/6/index.html",
+      "http": 200,
+      "bytes": 274890,
+      "sha256": "35a645bc5abe8a4ffce07ed43271e45fb2391ff3da39884384d43521bf7f095a",
+      "capturada": "2026-08-09T12:18:54.395Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 6
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/7/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/7/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/7/index.html",
+      "http": 200,
+      "bytes": 274890,
+      "sha256": "b8c0feb28cdd5782e33a7b08dfa767ecba5b8048acb827074692deae43ef5dc4",
+      "capturada": "2026-08-09T12:18:56.693Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 7
+    },
+    "listados:/es/etiqueta/contaminantes-atmosfericos/page/8/": {
+      "url": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/page/8/",
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/page/8/index.html",
+      "http": 200,
+      "bytes": 274793,
+      "sha256": "4e7e47a8f18c86ba7906b314700e58443d81f6b6403543dae08a476dee45762b",
+      "capturada": "2026-08-09T12:18:59.148Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/contaminantes-atmosfericos/",
+      "n": 8
+    },
+    "listados:/es/etiqueta/cov/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/cov/page/2/",
+      "fichero": "listados/etiqueta/cov/page/2/index.html",
+      "http": 200,
+      "bytes": 274333,
+      "sha256": "d46b2492d473a3fa6dd4709f750d45e1ba9f0f41c15ef655edbd2c79803e970c",
+      "capturada": "2026-08-09T12:19:04.155Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/cov/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/emisiones-industriales/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/emisiones-industriales/page/2/",
+      "fichero": "listados/etiqueta/emisiones-industriales/page/2/index.html",
+      "http": 200,
+      "bytes": 291167,
+      "sha256": "26a5d6086484df15988370d0da23bb384757fb3980181ad50bacd790c7949f7d",
+      "capturada": "2026-08-09T12:19:09.992Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/emisiones-industriales/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/emisiones-industriales/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/emisiones-industriales/page/3/",
+      "fichero": "listados/etiqueta/emisiones-industriales/page/3/index.html",
+      "http": 200,
+      "bytes": 283845,
+      "sha256": "8cc19bd946f9358ebc261d643bc0071aad42c1444bed214caa4949bbaa21fe72",
+      "capturada": "2026-08-09T12:19:12.621Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/emisiones-industriales/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/emisiones-industriales/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/emisiones-industriales/page/4/",
+      "fichero": "listados/etiqueta/emisiones-industriales/page/4/index.html",
+      "http": 200,
+      "bytes": 274693,
+      "sha256": "8b4a5ee9c070d35370cd7c7c1b3819cab57ba478257c58a135a1b209c4db388b",
+      "capturada": "2026-08-09T12:19:15.316Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/emisiones-industriales/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/emisiones-industriales/page/5/": {
+      "url": "https://kunakair.com/es/etiqueta/emisiones-industriales/page/5/",
+      "fichero": "listados/etiqueta/emisiones-industriales/page/5/index.html",
+      "http": 200,
+      "bytes": 274601,
+      "sha256": "46eb89a2923bc3e5529ea60fb76c841f7ef7aef2de43dc468e3ddbd1cf3f7749",
+      "capturada": "2026-08-09T12:19:17.784Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/emisiones-industriales/",
+      "n": 5
+    },
+    "listados:/es/etiqueta/gases-de-efecto-invernadero/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/gases-de-efecto-invernadero/page/2/",
+      "fichero": "listados/etiqueta/gases-de-efecto-invernadero/page/2/index.html",
+      "http": 200,
+      "bytes": 274669,
+      "sha256": "3e8ce6cb1d181a6a9e7c0c4853d757ca1368c58a12888a6620c56ea8a9c7149b",
+      "capturada": "2026-08-09T12:19:26.085Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/gases-de-efecto-invernadero/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/malos-olores/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/malos-olores/page/2/",
+      "fichero": "listados/etiqueta/malos-olores/page/2/index.html",
+      "http": 200,
+      "bytes": 274432,
+      "sha256": "60a550ebfac80d0680a715daf3a1debaa84a4fb6f40cb5c06827630a413bb035",
+      "capturada": "2026-08-09T12:19:34.065Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/malos-olores/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/2/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/2/index.html",
+      "http": 200,
+      "bytes": 292263,
+      "sha256": "d4ffc2c1ac2c2d332ca5ef4027ba000cc6d0ad85a4a0d3fbd6c8d31ca5ecc41f",
+      "capturada": "2026-08-09T12:19:38.928Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/3/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/3/index.html",
+      "http": 200,
+      "bytes": 291421,
+      "sha256": "6a4341b64f5794ab5ecb2a5431f437391d9b155adfecf36a8d19267cc02b1df3",
+      "capturada": "2026-08-09T12:19:41.492Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/4/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/4/index.html",
+      "http": 200,
+      "bytes": 291898,
+      "sha256": "e8235460fcd0ac891afe315301f4bc8590b66bb191803e53f1472cc95e4a8ddf",
+      "capturada": "2026-08-09T12:19:44.394Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/5/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/5/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/5/index.html",
+      "http": 200,
+      "bytes": 291188,
+      "sha256": "1e74489a7d1509309f0914b9966255ab4e14be7b84c160d17c40fc4169be306c",
+      "capturada": "2026-08-09T12:19:46.963Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 5
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/6/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/6/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/6/index.html",
+      "http": 200,
+      "bytes": 289903,
+      "sha256": "ed5110e0ed21ad3d636495a53ad9425d93277dc1c104323e8b8791b8b41d42b3",
+      "capturada": "2026-08-09T12:19:49.741Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 6
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/7/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/7/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/7/index.html",
+      "http": 200,
+      "bytes": 288658,
+      "sha256": "3248c081788237fee3c84dda6909f1ca41fbc3878d39b034407b2df476af93d9",
+      "capturada": "2026-08-09T12:19:52.142Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 7
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/8/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/8/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/8/index.html",
+      "http": 200,
+      "bytes": 286859,
+      "sha256": "7747b59286203b27fcd9ef6c47447412b0675063a7e8f764a719a275214f07ab",
+      "capturada": "2026-08-09T12:19:54.632Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 8
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/9/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/9/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/9/index.html",
+      "http": 200,
+      "bytes": 284613,
+      "sha256": "78b0003bf4e76a392e511e14ee76ba010ec4daed2c0eeb92fb5d9a116a4bb237",
+      "capturada": "2026-08-09T12:19:57.135Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 9
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/10/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/10/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/10/index.html",
+      "http": 200,
+      "bytes": 284460,
+      "sha256": "8ebc7a3bd1b63982481e0e9ebcb464d88c2733f6f668a50bbea845646944a190",
+      "capturada": "2026-08-09T12:19:59.987Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 10
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/11/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/11/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/11/index.html",
+      "http": 200,
+      "bytes": 276582,
+      "sha256": "ee2f32b4162458648bcb8a2da7dde37ed04fe90ba9d8c4e4341606a870d15329",
+      "capturada": "2026-08-09T12:20:02.792Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 11
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/12/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/12/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/12/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "fa7287b270ce5dca72eb3c876a13db81cf4d14ca80fdc12032fe796dfc035b55",
+      "capturada": "2026-08-09T12:20:05.209Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 12
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/13/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/13/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/13/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "69a7ddc0c757f5b91ebedfd4ae3e1ecf754f1a6558fed65af2f269c4cb992439",
+      "capturada": "2026-08-09T12:20:07.872Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 13
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/14/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/14/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/14/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "ec3cc5d3db7fefd74b4db1af3ecff534477ccb57f0268b1e257b759810f898f9",
+      "capturada": "2026-08-09T12:20:10.326Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 14
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/15/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/15/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/15/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "61a6a340da4b6f5df598db92105470c20d097eaf900c8baca4d918b119b0cd6d",
+      "capturada": "2026-08-09T12:20:12.410Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 15
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/16/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/16/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/16/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "469803fa0d8414fbe0f94eaff51e2d2e7f3b402eb6a6a7e6a6b355a5dc2e32b2",
+      "capturada": "2026-08-09T12:20:14.639Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 16
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/17/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/17/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/17/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "5550c2d308a2d688cd7dd8f38d206735aa7b6cdb13d81790d9fb41d9d2f4b2de",
+      "capturada": "2026-08-09T12:20:16.675Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 17
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/18/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/18/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/18/index.html",
+      "http": 200,
+      "bytes": 274829,
+      "sha256": "5362eca383a6238f3290daf04bb3158c21f1289c37028582714bbb20eacc345c",
+      "capturada": "2026-08-09T12:20:18.665Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 18
+    },
+    "listados:/es/etiqueta/monitorizacion-ambiental/page/19/": {
+      "url": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/page/19/",
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/page/19/index.html",
+      "http": 200,
+      "bytes": 274734,
+      "sha256": "377b36ac50033373d1fcc3fdefebc948f8b149f36f17acfca8d35a245c14861e",
+      "capturada": "2026-08-09T12:20:20.727Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/monitorizacion-ambiental/",
+      "n": 19
+    },
+    "listados:/es/etiqueta/normativa-de-calidad-del-aire/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/page/2/",
+      "fichero": "listados/etiqueta/normativa-de-calidad-del-aire/page/2/index.html",
+      "http": 200,
+      "bytes": 291529,
+      "sha256": "9bc030164322bde470302ae0c2c623f63b11676f31f5951ee4195cfa1aea3a48",
+      "capturada": "2026-08-09T12:20:25.061Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/normativa-de-calidad-del-aire/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/page/3/",
+      "fichero": "listados/etiqueta/normativa-de-calidad-del-aire/page/3/index.html",
+      "http": 200,
+      "bytes": 279069,
+      "sha256": "fa96d797b602f8ae8f794bdc2d384d81ab485bc7c913cc0cd6765313a0f8327a",
+      "capturada": "2026-08-09T12:20:27.423Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/normativa-de-calidad-del-aire/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/page/4/",
+      "fichero": "listados/etiqueta/normativa-de-calidad-del-aire/page/4/index.html",
+      "http": 200,
+      "bytes": 274729,
+      "sha256": "afa7206a21ca4dfab3399e17ec4c532125059522c81a5379967139e61a4e12bb",
+      "capturada": "2026-08-09T12:20:29.785Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/particulas-en-suspension/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/particulas-en-suspension/page/2/",
+      "fichero": "listados/etiqueta/particulas-en-suspension/page/2/index.html",
+      "http": 200,
+      "bytes": 287400,
+      "sha256": "877ae22bf7babb1e42557b7f630ef635f408cf7d4d9f7e6286715ddc5d84b945",
+      "capturada": "2026-08-09T12:20:34.194Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/particulas-en-suspension/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/particulas-en-suspension/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/particulas-en-suspension/page/3/",
+      "fichero": "listados/etiqueta/particulas-en-suspension/page/3/index.html",
+      "http": 200,
+      "bytes": 274799,
+      "sha256": "a34c8a3540cfa28e593458052f59df86736584e958233ef779e4c63c54f78f14",
+      "capturada": "2026-08-09T12:20:36.754Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/particulas-en-suspension/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/particulas-en-suspension/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/particulas-en-suspension/page/4/",
+      "fichero": "listados/etiqueta/particulas-en-suspension/page/4/index.html",
+      "http": 200,
+      "bytes": 274704,
+      "sha256": "c391741a58bd97ab7c5628f05b4ffd09a9a49eb633d1972fe6a1f8644a04bea0",
+      "capturada": "2026-08-09T12:20:39.206Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/particulas-en-suspension/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/2/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/2/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/2/index.html",
+      "http": 200,
+      "bytes": 291271,
+      "sha256": "86561fb1096ba2fbb88862a1c7f7399ac429ea050c091786e2fdf19703de0995",
+      "capturada": "2026-08-09T12:20:44.544Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 2
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/3/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/3/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/3/index.html",
+      "http": 200,
+      "bytes": 291030,
+      "sha256": "1a20d97d4aa4c110ee15d9213be94b39afe6c450586468050c2643d68fda545e",
+      "capturada": "2026-08-09T12:20:47.149Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 3
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/4/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/4/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/4/index.html",
+      "http": 200,
+      "bytes": 285696,
+      "sha256": "5c41453336cc07650136ff6aae94d63c54b90465dc92d78731de7a6f99fb24b5",
+      "capturada": "2026-08-09T12:20:52.603Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 4
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/5/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/5/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/5/index.html",
+      "http": 200,
+      "bytes": 274808,
+      "sha256": "c3ee4ccc71af4ba87cadef11811a8b0eac4551cf494a4368047ccb227e968db1",
+      "capturada": "2026-08-09T12:20:54.975Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 5
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/6/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/6/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/6/index.html",
+      "http": 200,
+      "bytes": 274807,
+      "sha256": "ddd11985517b1f25e1e47f658d4882c3ede2b30eecbe8ffe5899b6aca43a0d91",
+      "capturada": "2026-08-09T12:20:57.708Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 6
+    },
+    "listados:/es/etiqueta/sensor-de-calidad-del-aire/page/7/": {
+      "url": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/page/7/",
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/page/7/index.html",
+      "http": 200,
+      "bytes": 274711,
+      "sha256": "3ac0c54a9f2e14fcdb5e685a8cc5f382d6390e1bb3cd526cd552ff7d3f45e279",
+      "capturada": "2026-08-09T12:21:07.991Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "n": 7
+    },
+    "listados:/es/glosario/page/2/": {
+      "url": "https://kunakair.com/es/glosario/page/2/",
+      "fichero": "listados/glosario/page/2/index.html",
+      "http": 200,
+      "bytes": 341073,
+      "sha256": "39f256fce38a318cb702aa6d1a539b92b213b88f8bee624d4dad411403057284",
+      "capturada": "2026-08-09T12:21:17.287Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 2
+    },
+    "listados:/es/glosario/page/3/": {
+      "url": "https://kunakair.com/es/glosario/page/3/",
+      "fichero": "listados/glosario/page/3/index.html",
+      "http": 200,
+      "bytes": 341043,
+      "sha256": "1561552fa3006a3d179fefbc9db346eeed67af117dfdf60a1e093087197ed708",
+      "capturada": "2026-08-09T12:21:19.516Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 3
+    },
+    "listados:/es/glosario/page/4/": {
+      "url": "https://kunakair.com/es/glosario/page/4/",
+      "fichero": "listados/glosario/page/4/index.html",
+      "http": 200,
+      "bytes": 341210,
+      "sha256": "4840602e66210c1700e0a1957cf18c7d20b36006753b2c5b3dad7743df84e115",
+      "capturada": "2026-08-09T12:21:21.752Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 4
+    },
+    "listados:/es/glosario/page/5/": {
+      "url": "https://kunakair.com/es/glosario/page/5/",
+      "fichero": "listados/glosario/page/5/index.html",
+      "http": 200,
+      "bytes": 341137,
+      "sha256": "0b8fbfa50169e0f37f3156cfe1292659987078d0f7a5c9eab6682c086e5b7831",
+      "capturada": "2026-08-09T12:21:23.826Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 5
+    },
+    "listados:/es/glosario/page/6/": {
+      "url": "https://kunakair.com/es/glosario/page/6/",
+      "fichero": "listados/glosario/page/6/index.html",
+      "http": 200,
+      "bytes": 341068,
+      "sha256": "4fb47d3c67589e012e24acce3c3c9574a3e0ee5fc3baaf0840a35d40b87fb5cb",
+      "capturada": "2026-08-09T12:21:25.833Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 6
+    },
+    "listados:/es/glosario/page/7/": {
+      "url": "https://kunakair.com/es/glosario/page/7/",
+      "fichero": "listados/glosario/page/7/index.html",
+      "http": 200,
+      "bytes": 341049,
+      "sha256": "61c7d125d93119cd5af41179663db296c4684063b005f3f253cd64f1d5c4d1b7",
+      "capturada": "2026-08-09T12:21:27.826Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 7
+    },
+    "listados:/es/glosario/page/8/": {
+      "url": "https://kunakair.com/es/glosario/page/8/",
+      "fichero": "listados/glosario/page/8/index.html",
+      "http": 200,
+      "bytes": 339110,
+      "sha256": "c5cccacc6f15a94025c1bf61c18e82cef68b6141783542a18b38561f39cf4d2f",
+      "capturada": "2026-08-09T12:21:29.856Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/glosario/",
+      "n": 8
+    },
+    "listados:/es/preguntas-frecuentes/page/2/": {
+      "url": "https://kunakair.com/es/preguntas-frecuentes/page/2/",
+      "fichero": "listados/preguntas-frecuentes/page/2/index.html",
+      "http": 200,
+      "bytes": 340039,
+      "sha256": "f6079baa4b867bae99a27b118cbaabb44eb5b0adc69bd855be36a2734aa33d40",
+      "capturada": "2026-08-09T12:21:33.936Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/preguntas-frecuentes/",
+      "n": 2
+    },
+    "listados:/es/preguntas-frecuentes/page/3/": {
+      "url": "https://kunakair.com/es/preguntas-frecuentes/page/3/",
+      "fichero": "listados/preguntas-frecuentes/page/3/index.html",
+      "http": 200,
+      "bytes": 340270,
+      "sha256": "32f0c4034064db19b22e5fd2384fe3cbe972d2605ca5bbd579a00de0d90113ea",
+      "capturada": "2026-08-09T12:21:36.144Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/preguntas-frecuentes/",
+      "n": 3
+    },
+    "listados:/es/preguntas-frecuentes/page/4/": {
+      "url": "https://kunakair.com/es/preguntas-frecuentes/page/4/",
+      "fichero": "listados/preguntas-frecuentes/page/4/index.html",
+      "http": 200,
+      "bytes": 339630,
+      "sha256": "54c8a0247e9fe20d44201b641dc18b57b41efddfcd3e3715adafeca81e499d85",
+      "capturada": "2026-08-09T12:21:38.310Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/preguntas-frecuentes/",
+      "n": 4
+    },
+    "listados:/es/recursos/articulos/page/2/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/2/",
+      "fichero": "listados/recursos/articulos/page/2/index.html",
+      "http": 200,
+      "bytes": 302561,
+      "sha256": "0924945f0a249cc3fddfeb13b33e4aca5c7ee5247bedac17506d539e73f9b076",
+      "capturada": "2026-08-09T12:21:46.371Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 2
+    },
+    "listados:/es/recursos/articulos/page/3/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/3/",
+      "fichero": "listados/recursos/articulos/page/3/index.html",
+      "http": 200,
+      "bytes": 302316,
+      "sha256": "78ed05ce5bf3178b844d837963ec2dbcd0d5fc15e4ddcff4c87712f623b3e2f1",
+      "capturada": "2026-08-09T12:21:48.461Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 3
+    },
+    "listados:/es/recursos/articulos/page/4/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/4/",
+      "fichero": "listados/recursos/articulos/page/4/index.html",
+      "http": 200,
+      "bytes": 301395,
+      "sha256": "ea43008f25abf4565c91528aa53ec09d4097fa211151f90c75a25600091405cf",
+      "capturada": "2026-08-09T12:21:50.618Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 4
+    },
+    "listados:/es/recursos/articulos/page/5/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/5/",
+      "fichero": "listados/recursos/articulos/page/5/index.html",
+      "http": 200,
+      "bytes": 301493,
+      "sha256": "e044ae03c89a482dc4a3920a0461f8f4cfb5ff949977f606aca8f03e2b68cba5",
+      "capturada": "2026-08-09T12:21:52.622Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 5
+    },
+    "listados:/es/recursos/articulos/page/6/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/6/",
+      "fichero": "listados/recursos/articulos/page/6/index.html",
+      "http": 200,
+      "bytes": 289588,
+      "sha256": "b2a0c781fb66b8e3092c3edfda525ec4b14d205d45cb7547db1e5ed7a8f956a8",
+      "capturada": "2026-08-09T12:21:54.758Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 6
+    },
+    "listados:/es/recursos/articulos/page/7/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/7/",
+      "fichero": "listados/recursos/articulos/page/7/index.html",
+      "http": 200,
+      "bytes": 282621,
+      "sha256": "0dd1557688c55332bbfa16f155e4d355f9d65a1c3a7eadc874826ae67a98d0bd",
+      "capturada": "2026-08-09T12:21:57.557Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 7
+    },
+    "listados:/es/recursos/articulos/page/8/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/8/",
+      "fichero": "listados/recursos/articulos/page/8/index.html",
+      "http": 200,
+      "bytes": 282621,
+      "sha256": "5184779f42fcd8a19d2039662e4e9ae5f73e0495eac0dd5f8bedb38d7131e2d8",
+      "capturada": "2026-08-09T12:22:00.304Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 8
+    },
+    "listados:/es/recursos/articulos/page/9/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/9/",
+      "fichero": "listados/recursos/articulos/page/9/index.html",
+      "http": 200,
+      "bytes": 282622,
+      "sha256": "73ca3e94b42911729e8a605c3cddb883bca584280f983c72257e5b7eda9e57fb",
+      "capturada": "2026-08-09T12:22:03.570Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 9
+    },
+    "listados:/es/recursos/articulos/page/10/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/10/",
+      "fichero": "listados/recursos/articulos/page/10/index.html",
+      "http": 200,
+      "bytes": 282626,
+      "sha256": "f2b664f3500191222dbcd924c77dd361ea1052f08cea12afc87d0cdf2394e50d",
+      "capturada": "2026-08-09T12:22:06.678Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 10
+    },
+    "listados:/es/recursos/articulos/page/11/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/11/",
+      "fichero": "listados/recursos/articulos/page/11/index.html",
+      "http": 200,
+      "bytes": 282627,
+      "sha256": "60e5396b52839794d873d1d1f4975ba5fcbc0fc53f9c31545c57f59006814763",
+      "capturada": "2026-08-09T12:22:10.082Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 11
+    },
+    "listados:/es/recursos/articulos/page/12/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/12/",
+      "fichero": "listados/recursos/articulos/page/12/index.html",
+      "http": 200,
+      "bytes": 282627,
+      "sha256": "8c1c8b73496b6f46362652abe6aafa22a75598decf4b4b6d157e7a6999fca4ca",
+      "capturada": "2026-08-09T12:22:12.422Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 12
+    },
+    "listados:/es/recursos/articulos/page/13/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/13/",
+      "fichero": "listados/recursos/articulos/page/13/index.html",
+      "http": 200,
+      "bytes": 282627,
+      "sha256": "e1ee9b57f16ed1b82f216e3d0099b8367e45108f7ccca7eebdc1b95e67dcc01f",
+      "capturada": "2026-08-09T12:22:14.735Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 13
+    },
+    "listados:/es/recursos/articulos/page/14/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/14/",
+      "fichero": "listados/recursos/articulos/page/14/index.html",
+      "http": 200,
+      "bytes": 282625,
+      "sha256": "9141fde2733093d7e4c3ee744c3cef2cff68bd483a17c953fcc6e08fe2613cbc",
+      "capturada": "2026-08-09T12:22:16.836Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 14
+    },
+    "listados:/es/recursos/articulos/page/15/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/15/",
+      "fichero": "listados/recursos/articulos/page/15/index.html",
+      "http": 200,
+      "bytes": 282625,
+      "sha256": "e258de58b8a9cb4898a27bcbfa755f3ed126d28f3cc272d8b3c94091526d0455",
+      "capturada": "2026-08-09T12:22:18.921Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 15
+    },
+    "listados:/es/recursos/articulos/page/16/": {
+      "url": "https://kunakair.com/es/recursos/articulos/page/16/",
+      "fichero": "listados/recursos/articulos/page/16/index.html",
+      "http": 200,
+      "bytes": 282545,
+      "sha256": "f299bb8568f1ebd8b113e47a087ec4764c58f5bfcfbd3858751c05c7ae095017",
+      "capturada": "2026-08-09T12:22:21.084Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/",
+      "n": 16
+    },
+    "listados:/es/recursos/articulos/contaminacion-urbana/page/2/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/page/2/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+      "http": 200,
+      "bytes": 294030,
+      "sha256": "828bdf7c14c1b73a67378b310282b363896f21c45bf49a4a72a8e58eb4b8a697",
+      "capturada": "2026-08-09T12:22:31.247Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-urbana/",
+      "n": 2
+    },
+    "listados:/es/recursos/articulos/contaminacion-urbana/page/3/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/page/3/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/page/3/index.html",
+      "http": 200,
+      "bytes": 282929,
+      "sha256": "e35af2e4c5a7ef9d3e79ee7e4ddad5c39dee9ba8ab11312c3b03b7a44082e770",
+      "capturada": "2026-08-09T12:22:33.273Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-urbana/",
+      "n": 3
+    },
+    "listados:/es/recursos/articulos/contaminacion-urbana/page/4/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/page/4/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/page/4/index.html",
+      "http": 200,
+      "bytes": 282929,
+      "sha256": "b8459a8acc194b9cfc96fa20f5051f8cf98c70b9aefe22b4844c5cff5c428d5b",
+      "capturada": "2026-08-09T12:22:35.411Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-urbana/",
+      "n": 4
+    },
+    "listados:/es/recursos/articulos/contaminacion-urbana/page/5/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/page/5/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/page/5/index.html",
+      "http": 200,
+      "bytes": 282827,
+      "sha256": "3618194bcb02ffd7883a7158db14d3fb9b16adf5d0f647b713082d0be18a03bd",
+      "capturada": "2026-08-09T12:22:37.907Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-urbana/",
+      "n": 5
+    },
+    "listados:/es/recursos/articulos/contaminacion-y-salud/page/2/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/page/2/",
+      "fichero": "listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+      "http": 200,
+      "bytes": 288744,
+      "sha256": "d75dfb4c0a6d127426a8b36d684b324892f0a42188d0da4d41fdcd36f03d1907",
+      "capturada": "2026-08-09T12:22:41.779Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-y-salud/",
+      "n": 2
+    },
+    "listados:/es/recursos/articulos/contaminacion-y-salud/page/3/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/page/3/",
+      "fichero": "listados/recursos/articulos/contaminacion-y-salud/page/3/index.html",
+      "http": 200,
+      "bytes": 282948,
+      "sha256": "8a3e92ffb59e1847ba88283f6f80a99fc4e33a98850ccd2882a7f61115e69ef6",
+      "capturada": "2026-08-09T12:22:44.244Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-y-salud/",
+      "n": 3
+    },
+    "listados:/es/recursos/articulos/contaminacion-y-salud/page/4/": {
+      "url": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/page/4/",
+      "fichero": "listados/recursos/articulos/contaminacion-y-salud/page/4/index.html",
+      "http": 200,
+      "bytes": 282845,
+      "sha256": "ab0121209f7ddd1e8dd90d5fb21fe6cfdf9d1a42ed8f2d109c200a783a419804",
+      "capturada": "2026-08-09T12:22:46.204Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/contaminacion-y-salud/",
+      "n": 4
+    },
+    "listados:/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/": {
+      "url": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/",
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/2/index.html",
+      "http": 200,
+      "bytes": 291940,
+      "sha256": "450049882d0fdde2b928f16c722a74cfe3b78e46045019bc622ee5e3fc001830",
+      "capturada": "2026-08-09T12:22:50.219Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "n": 2
+    },
+    "listados:/es/recursos/articulos/industria-y-contaminacion-por-olores/page/3/": {
+      "url": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/page/3/",
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/3/index.html",
+      "http": 200,
+      "bytes": 284247,
+      "sha256": "e68f6b2f8a1e6276646057304c6a3ef7d3e3ad4941af307a94b4509ed571f32d",
+      "capturada": "2026-08-09T12:22:52.467Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "n": 3
+    },
+    "listados:/es/recursos/articulos/industria-y-contaminacion-por-olores/page/4/": {
+      "url": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/page/4/",
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/4/index.html",
+      "http": 200,
+      "bytes": 284247,
+      "sha256": "715d09336da5ed37b654f9782d95d2afac179269c106a4afe1b55b4d120349d3",
+      "capturada": "2026-08-09T12:22:54.561Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "n": 4
+    },
+    "listados:/es/recursos/articulos/industria-y-contaminacion-por-olores/page/5/": {
+      "url": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/page/5/",
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/5/index.html",
+      "http": 200,
+      "bytes": 284129,
+      "sha256": "d98ebfbb4d81e94a0009a5cacfe7d6a29ece1994a6e49b1896b9938764ab08b7",
+      "capturada": "2026-08-09T12:22:56.611Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "n": 5
+    },
+    "listados:/es/recursos/articulos/productos-kunak/page/2/": {
+      "url": "https://kunakair.com/es/recursos/articulos/productos-kunak/page/2/",
+      "fichero": "listados/recursos/articulos/productos-kunak/page/2/index.html",
+      "http": 200,
+      "bytes": 282745,
+      "sha256": "aadc5e5012a071fbfeb14d3ed55cc697877dd3cee0b30877f069de8bf79d045c",
+      "capturada": "2026-08-09T12:23:02.497Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/recursos/articulos/productos-kunak/",
+      "n": 2
+    },
+    "listados:/es/scientific-category/articulos-cientificos-y-estudios/page/2/": {
+      "url": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/page/2/",
+      "fichero": "listados/scientific-category/articulos-cientificos-y-estudios/page/2/index.html",
+      "http": 200,
+      "bytes": 392770,
+      "sha256": "4cbd159800d68d3a8db970a637d41d797ce87f2044fe0cedb98f565c37ebf2d5",
+      "capturada": "2026-08-09T12:23:15.615Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "n": 2
+    },
+    "listados:/es/scientific-category/articulos-cientificos-y-estudios/page/3/": {
+      "url": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/page/3/",
+      "fichero": "listados/scientific-category/articulos-cientificos-y-estudios/page/3/index.html",
+      "http": 200,
+      "bytes": 392664,
+      "sha256": "2f5b9507c3568ed53760d7aeab216536b41a08dc68b98a66319f0e62fecb2cb0",
+      "capturada": "2026-08-09T12:23:17.641Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "n": 3
+    },
+    "listados:/es/scientific-category/evaluaciones-independientes/page/2/": {
+      "url": "https://kunakair.com/es/scientific-category/evaluaciones-independientes/page/2/",
+      "fichero": "listados/scientific-category/evaluaciones-independientes/page/2/index.html",
+      "http": 200,
+      "bytes": 376975,
+      "sha256": "fd7796155dc3511c01395dcedd91726b166f9c79e65bd57b6300da9654f938fa",
+      "capturada": "2026-08-09T12:23:23.512Z",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "paginaDe": "/es/scientific-category/evaluaciones-independientes/",
+      "n": 2
+    },
+    "taxonomia-sector:/es/sector/industria/page/2/": {
+      "url": "https://kunakair.com/es/sector/industria/page/2/",
+      "fichero": "taxonomia-sector/sector/industria/page/2/index.html",
+      "http": 200,
+      "bytes": 290156,
+      "sha256": "c0655c5df12a8e30912eaffc22d10bca2a05402cf0c8b82c0ab554494d629286",
+      "capturada": "2026-08-09T12:23:31.909Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/industria/",
+      "n": 2
+    },
+    "taxonomia-sector:/es/sector/industria/page/3/": {
+      "url": "https://kunakair.com/es/sector/industria/page/3/",
+      "fichero": "taxonomia-sector/sector/industria/page/3/index.html",
+      "http": 200,
+      "bytes": 305920,
+      "sha256": "70e48feb87eb324c61094cf9d15c57c6bb09edb7fc89aa446f194c35bdae9505",
+      "capturada": "2026-08-09T12:23:34.670Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/industria/",
+      "n": 3
+    },
+    "taxonomia-sector:/es/sector/investigacion-consultoria/page/2/": {
+      "url": "https://kunakair.com/es/sector/investigacion-consultoria/page/2/",
+      "fichero": "taxonomia-sector/sector/investigacion-consultoria/page/2/index.html",
+      "http": 200,
+      "bytes": 380308,
+      "sha256": "72a6a54b237c52c8a95740f2db944ec38e30f1a56844fae204ae3c4558a89652",
+      "capturada": "2026-08-09T12:23:39.289Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/investigacion-consultoria/",
+      "n": 2
+    },
+    "taxonomia-sector:/es/sector/puertos/page/2/": {
+      "url": "https://kunakair.com/es/sector/puertos/page/2/",
+      "fichero": "taxonomia-sector/sector/puertos/page/2/index.html",
+      "http": 200,
+      "bytes": 379235,
+      "sha256": "f32b06eb5cc0bfe8979a104b6f8ea3fbff6d7b57bbc3f7c71c726092adec5407",
+      "capturada": "2026-08-09T12:23:52.858Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/puertos/",
+      "n": 2
+    },
+    "taxonomia-sector:/es/sector/urbano/page/2/": {
+      "url": "https://kunakair.com/es/sector/urbano/page/2/",
+      "fichero": "taxonomia-sector/sector/urbano/page/2/index.html",
+      "http": 200,
+      "bytes": 380196,
+      "sha256": "62fbf638a72c2d84b873554a3d75a3b5aba4a47c12d197ae687174f62f133e2e",
+      "capturada": "2026-08-09T12:23:58.878Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/urbano/",
+      "n": 2
+    },
+    "taxonomia-sector:/es/sector/urbano/page/3/": {
+      "url": "https://kunakair.com/es/sector/urbano/page/3/",
+      "fichero": "taxonomia-sector/sector/urbano/page/3/index.html",
+      "http": 200,
+      "bytes": 380196,
+      "sha256": "ed92c2c3a2390d19dc4e72658a021fe9519d56b2bb403667777467ab1ccb184d",
+      "capturada": "2026-08-09T12:24:01.644Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/urbano/",
+      "n": 3
+    },
+    "taxonomia-sector:/es/sector/urbano/page/4/": {
+      "url": "https://kunakair.com/es/sector/urbano/page/4/",
+      "fichero": "taxonomia-sector/sector/urbano/page/4/index.html",
+      "http": 200,
+      "bytes": 364432,
+      "sha256": "64b3eaa1b83675befeeb808a6f4508f8a8ef90be81c8b7c8df163e25e2602440",
+      "capturada": "2026-08-09T12:24:04.029Z",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "paginaDe": "/es/sector/urbano/",
+      "n": 4
+    }
+  }
+}

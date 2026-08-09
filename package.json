@@ -138,7 +138,9 @@
     "qa:f25-final": "node --env-file=apps/cms/.env scripts/qa/f25-final.mjs",
     "qa:f25-final-neg": "node --env-file=apps/cms/.env scripts/qa/f25-final.neg.mjs",
     "qa:nunca-vistos": "node --env-file=apps/cms/.env scripts/qa/casos-nunca-vistos.mjs",
-    "qa:nunca-vistos-neg": "node --env-file=apps/cms/.env scripts/qa/casos-nunca-vistos.neg.mjs"
+    "qa:nunca-vistos-neg": "node --env-file=apps/cms/.env scripts/qa/casos-nunca-vistos.neg.mjs",
+    "cms:captura-f3": "node scripts/seed/captura-f3.mjs",
+    "cms:captura-f3-neg": "node scripts/seed/captura-f3.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
