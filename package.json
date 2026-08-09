@@ -130,7 +130,9 @@
     "qa:programada": "node --env-file=apps/cms/.env scripts/qa/programada.mjs",
     "qa:programada-neg": "node --env-file=apps/cms/.env scripts/qa/programada.neg.mjs",
     "qa:publica-e2e": "node --env-file=apps/cms/.env scripts/qa/publica-e2e.mjs",
-    "qa:publica-e2e-neg": "node --env-file=apps/cms/.env scripts/qa/publica-e2e.neg.mjs"
+    "qa:publica-e2e-neg": "node --env-file=apps/cms/.env scripts/qa/publica-e2e.neg.mjs",
+    "qa:roles": "node --env-file=apps/cms/.env scripts/qa/roles.mjs",
+    "qa:roles-neg": "node --env-file=apps/cms/.env scripts/qa/roles.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

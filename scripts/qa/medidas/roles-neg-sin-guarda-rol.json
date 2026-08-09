@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "fecha": "2026-08-08",
+    "sabotaje": "sin-guarda-rol",
+    "marca": "qa-roles-43040"
+  },
+  "invariantes": {
+    "R1·un editor crea y edita CONTENIDO": {
+      "ok": true,
+      "detalle": "alta y edición de `qa-roles-43040-entrada` con sesión de editor"
+    },
+    "R2·un editor NO crea usuarios": {
+      "ok": true,
+      "detalle": "rechazado: You are not allowed to perform this action."
+    },
+    "R3·un editor sólo SE VE a sí mismo": {
+      "ok": true,
+      "detalle": "find usuarios como editor ⇒ 1 doc, él mismo"
+    },
+    "R4·un editor NO se cambia el rol, y cae con mensaje": {
+      "ok": false,
+      "detalle": "el editor SE HIZO ADMIN — la guarda no existe"
+    },
+    "R5·el registro `slugs` está cerrado por API y lo escriben los hooks": {
+      "ok": true,
+      "detalle": "admin y editor rechazados · el hook registró `qa-roles-43040-entrada` (1 fila)"
+    },
+    "R6·un admin gestiona usuarios": {
+      "ok": true,
+      "detalle": "alta, ascenso y baja de un tercero con sesión de admin"
+    },
+    "R7·el webhook dispara igual con sesión de editor": {
+      "ok": true,
+      "detalle": "1 guardado de editor ⇒ 1 disparo con su credencial"
+    },
+    "R8·la colisión de slug cae igual bajo editor": {
+      "ok": true,
+      "detalle": "la colisión con `qa-roles-43040-entrada` cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-roles-43040-entrada» ya"
+    }
+  }
+}

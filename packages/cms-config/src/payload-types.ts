@@ -349,7 +349,20 @@ export interface Sectore {
       href: string;
       external?: boolean | null;
     };
-    posts?: (number | Caso)[] | null;
+    /**
+     * Teaser VERBATIM, no proyección: no se actualiza solo si cambia el caso (§F2-2 · TEASER).
+     */
+    posts?:
+      | {
+          client: string;
+          sector: string;
+          sectorHref?: string | null;
+          title: string;
+          image: number | Media;
+          href: string;
+          id?: string | null;
+        }[]
+      | null;
   };
   articulos: {
     title: string;
@@ -358,7 +371,22 @@ export interface Sectore {
       href: string;
       external?: boolean | null;
     };
-    posts?: (number | EntradasBlog)[] | null;
+    /**
+     * Teaser VERBATIM, no proyección: no se actualiza solo si cambia la entrada (§F2-2 · TEASER).
+     */
+    posts?:
+      | {
+          title: string;
+          /**
+           * Fecha VERBATIM en la forma del teaser ("Mar 25, 2026"). El documento la escribe de otra forma ("25 marzo 2026") y las dos son verbatim: no se derivan la una de la otra.
+           */
+          date: string;
+          image: number | Media;
+          href: string;
+          excerpt?: string | null;
+          id?: string | null;
+        }[]
+      | null;
   };
   taxonomy: {
     label: string;
@@ -366,6 +394,14 @@ export interface Sectore {
     external?: boolean | null;
   };
   footerStripImage?: (number | null) | Media;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -376,6 +412,10 @@ export interface Sectore {
 export interface Media {
   id: number;
   alt?: string | null;
+  /**
+   * Procedencia: la ruta con la que la migración subió este fichero (/images/…). Vacío en las altas hechas desde el admin, que no tienen origen — y entonces el render usa /api/media/file/<filename>, la única URL que puede funcionar para ellas.
+   */
+  rutaOrigen?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -388,7 +428,23 @@ export interface Media {
   focalX?: number | null;
   focalY?: number | null;
   sizes?: {
+    w300?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
     sm?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    w768?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -412,7 +468,7 @@ export interface Media {
       filesize?: number | null;
       filename?: string | null;
     };
-    cardWide?: {
+    lg?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -420,7 +476,7 @@ export interface Media {
       filesize?: number | null;
       filename?: string | null;
     };
-    lg?: {
+    cardWide?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -473,7 +529,7 @@ export interface Producto {
         | {
             texto: string;
             /**
-             * Defecto 2 — §1.5 · MonoNivel 2|3|4
+             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
              */
             nivel?: number | null;
             ritmo?: {
@@ -495,7 +551,7 @@ export interface Producto {
         | {
             texto: string;
             /**
-             * Defecto 2 — §1.5 · MonoNivel 2|3|4
+             * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
              */
             nivel?: number | null;
             ritmo?: {
@@ -563,9 +619,9 @@ export interface Producto {
                   blockType: 'ul';
                 }
               | {
-                  claim: string;
+                  claim?: string | null;
                   /**
-                   * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                   * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
                    */
                   nivel?: number | null;
                   id?: string | null;
@@ -575,7 +631,7 @@ export interface Producto {
               | {
                   titular: string;
                   /**
-                   * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                   * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
                    */
                   nivel?: number | null;
                   id?: string | null;
@@ -737,88 +793,14 @@ export interface Producto {
           }
       )[]
     | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "casos".
- */
-export interface Caso {
-  id: number;
-  slug: string;
   /**
-   * Defecto "casos-de-exito" — §2b · CMS-1 · D2 · 4 de 57
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
    */
-  prefijo?: ('casos-de-exito' | 'case-studies') | null;
-  seo: {
-    title: string;
-    description?: string | null;
-    ogImage?: string | null;
-  };
-  titulo: string;
-  imagenCabecera: number | Media;
-  cliente: string;
-  sectores?: (number | TaxonomiaSectore)[] | null;
+  estado: 'borrador' | 'publicado';
   /**
-   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
    */
-  necesidad: string;
-  /**
-   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-   */
-  solucion: string;
-  /**
-   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-   */
-  resultados: string;
-  /**
-   * HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.
-   */
-  destacado?: string | null;
-  galeria?:
-    | {
-        src: number | Media;
-        alt?: string | null;
-        width?: number | null;
-        height?: number | null;
-        id?: string | null;
-      }[]
-    | null;
-  detalles: {
-    usuario: string;
-    ubicacion: string;
-    anyo: string;
-    /**
-     * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-     */
-    parametros?: string | null;
-  };
-  ubicacionMapa?: {
-    lat?: number | null;
-    lng?: number | null;
-  };
-  soluciones?: (number | Producto)[] | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "taxonomia-sectores".
- */
-export interface TaxonomiaSectore {
-  id: number;
-  slug: string;
-  nombre: string;
-  pagina?:
-    | ({
-        relationTo: 'sectores';
-        value: number | Sectore;
-      } | null)
-    | ({
-        relationTo: 'monograficos';
-        value: number | Monografico;
-      } | null);
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -895,7 +877,7 @@ export interface Monografico {
                       | {
                           texto: string;
                           /**
-                           * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                           * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
                            */
                           nivel?: number | null;
                           ritmo?: {
@@ -917,7 +899,7 @@ export interface Monografico {
                       | {
                           texto: string;
                           /**
-                           * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                           * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
                            */
                           nivel?: number | null;
                           ritmo?: {
@@ -985,9 +967,9 @@ export interface Monografico {
                                 blockType: 'ul';
                               }
                             | {
-                                claim: string;
+                                claim?: string | null;
                                 /**
-                                 * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                                 * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
                                  */
                                 nivel?: number | null;
                                 id?: string | null;
@@ -997,7 +979,7 @@ export interface Monografico {
                             | {
                                 titular: string;
                                 /**
-                                 * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                                 * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
                                  */
                                 nivel?: number | null;
                                 id?: string | null;
@@ -1197,7 +1179,20 @@ export interface Monografico {
       href: string;
       external?: boolean | null;
     };
-    posts?: (number | Caso)[] | null;
+    /**
+     * Teaser VERBATIM, no proyección: no se actualiza solo si cambia el caso (§F2-2 · TEASER).
+     */
+    posts?:
+      | {
+          client: string;
+          sector: string;
+          sectorHref?: string | null;
+          title: string;
+          image: number | Media;
+          href: string;
+          id?: string | null;
+        }[]
+      | null;
   };
   articulos: {
     title: string;
@@ -1206,7 +1201,22 @@ export interface Monografico {
       href: string;
       external?: boolean | null;
     };
-    posts?: (number | EntradasBlog)[] | null;
+    /**
+     * Teaser VERBATIM, no proyección: no se actualiza solo si cambia la entrada (§F2-2 · TEASER).
+     */
+    posts?:
+      | {
+          title: string;
+          /**
+           * Fecha VERBATIM en la forma del teaser ("Mar 25, 2026"). El documento la escribe de otra forma ("25 marzo 2026") y las dos son verbatim: no se derivan la una de la otra.
+           */
+          date: string;
+          image: number | Media;
+          href: string;
+          excerpt?: string | null;
+          id?: string | null;
+        }[]
+      | null;
   };
   taxonomy: {
     label: string;
@@ -1214,6 +1224,130 @@ export interface Monografico {
     external?: boolean | null;
   };
   footerStripImage?: (number | null) | Media;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "casos".
+ */
+export interface Caso {
+  id: number;
+  slug: string;
+  /**
+   * Defecto "casos-de-exito" — §2b · CMS-1 · D2 · 4 de 57
+   */
+  prefijo?: ('casos-de-exito' | 'case-studies') | null;
+  seo: {
+    title: string;
+    description?: string | null;
+    ogImage?: string | null;
+  };
+  titulo: string;
+  imagenCabecera: number | Media;
+  cliente: string;
+  sectores?: (number | TaxonomiaSectore)[] | null;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  necesidad: string;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  solucion: string;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  resultados: string;
+  /**
+   * HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.
+   */
+  destacado?: string | null;
+  galeria?:
+    | {
+        src: number | Media;
+        alt?: string | null;
+        width?: number | null;
+        height?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  detalles: {
+    usuario: string;
+    ubicacion: string;
+    anyo: string;
+    /**
+     * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+     */
+    parametros?: string | null;
+  };
+  ubicacionMapa?: {
+    lat?: number | null;
+    lng?: number | null;
+  };
+  soluciones?: (number | Producto)[] | null;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "taxonomia-sectores".
+ */
+export interface TaxonomiaSectore {
+  id: number;
+  slug: string;
+  nombre: string;
+  pagina?:
+    | ({
+        relationTo: 'sectores';
+        value: number | Sectore;
+      } | null)
+    | ({
+        relationTo: 'monograficos';
+        value: number | Monografico;
+      } | null);
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: number;
+  slug: string;
+  seo: {
+    title: string;
+  };
+  titulo: string;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  cuerpo: string;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1249,6 +1383,14 @@ export interface EntradasBlog {
    */
   cuerpo: string;
   relacionados?: boolean | null;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1290,24 +1432,6 @@ export interface CategoriasRecurso {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "faqs".
- */
-export interface Faq {
-  id: number;
-  slug: string;
-  seo: {
-    title: string;
-  };
-  titulo: string;
-  /**
-   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-   */
-  cuerpo: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "terminos-kunakpedia".
  */
 export interface TerminosKunakpedia {
@@ -1327,6 +1451,14 @@ export interface TerminosKunakpedia {
    * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
    */
   cuerpo: string;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1366,6 +1498,14 @@ export interface DocumentosCientifico {
    * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
    */
   cuerpo: string;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1398,7 +1538,7 @@ export interface ArticulosKb {
         | {
             texto: string;
             /**
-             * Defecto 2 — §1.5 · MonoNivel 2|3|4
+             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
              */
             nivel?: number | null;
             ritmo?: {
@@ -1420,7 +1560,7 @@ export interface ArticulosKb {
         | {
             texto: string;
             /**
-             * Defecto 2 — §1.5 · MonoNivel 2|3|4
+             * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
              */
             nivel?: number | null;
             ritmo?: {
@@ -1488,9 +1628,9 @@ export interface ArticulosKb {
                   blockType: 'ul';
                 }
               | {
-                  claim: string;
+                  claim?: string | null;
                   /**
-                   * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                   * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
                    */
                   nivel?: number | null;
                   id?: string | null;
@@ -1500,7 +1640,7 @@ export interface ArticulosKb {
               | {
                   titular: string;
                   /**
-                   * Defecto 2 — §1.5 · MonoNivel 2|3|4
+                   * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
                    */
                   nivel?: number | null;
                   id?: string | null;
@@ -1557,6 +1697,14 @@ export interface ArticulosKb {
           }
       )[]
     | null;
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1581,6 +1729,10 @@ export interface Slug {
 export interface Usuario {
   id: number;
   nombre?: string | null;
+  /**
+   * Editor: edita y publica contenido. Admin: además gestiona usuarios y ve el registro del sistema. Sólo un admin puede cambiar este campo.
+   */
+  rol: 'admin' | 'editor';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -1926,7 +2078,17 @@ export interface SectoresSelect<T extends boolean = true> {
               href?: T;
               external?: T;
             };
-        posts?: T;
+        posts?:
+          | T
+          | {
+              client?: T;
+              sector?: T;
+              sectorHref?: T;
+              title?: T;
+              image?: T;
+              href?: T;
+              id?: T;
+            };
       };
   articulos?:
     | T
@@ -1939,7 +2101,16 @@ export interface SectoresSelect<T extends boolean = true> {
               href?: T;
               external?: T;
             };
-        posts?: T;
+        posts?:
+          | T
+          | {
+              title?: T;
+              date?: T;
+              image?: T;
+              href?: T;
+              excerpt?: T;
+              id?: T;
+            };
       };
   taxonomy?:
     | T
@@ -1949,6 +2120,8 @@ export interface SectoresSelect<T extends boolean = true> {
         external?: T;
       };
   footerStripImage?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2308,7 +2481,17 @@ export interface MonograficosSelect<T extends boolean = true> {
               href?: T;
               external?: T;
             };
-        posts?: T;
+        posts?:
+          | T
+          | {
+              client?: T;
+              sector?: T;
+              sectorHref?: T;
+              title?: T;
+              image?: T;
+              href?: T;
+              id?: T;
+            };
       };
   articulos?:
     | T
@@ -2321,7 +2504,16 @@ export interface MonograficosSelect<T extends boolean = true> {
               href?: T;
               external?: T;
             };
-        posts?: T;
+        posts?:
+          | T
+          | {
+              title?: T;
+              date?: T;
+              image?: T;
+              href?: T;
+              excerpt?: T;
+              id?: T;
+            };
       };
   taxonomy?:
     | T
@@ -2331,6 +2523,8 @@ export interface MonograficosSelect<T extends boolean = true> {
         external?: T;
       };
   footerStripImage?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2596,6 +2790,8 @@ export interface ProductosSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2645,6 +2841,8 @@ export interface CasosSelect<T extends boolean = true> {
         lng?: T;
       };
   soluciones?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2661,6 +2859,8 @@ export interface FaqsSelect<T extends boolean = true> {
       };
   titulo?: T;
   cuerpo?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2707,6 +2907,8 @@ export interface EntradasBlogSelect<T extends boolean = true> {
   recurso?: T;
   cuerpo?: T;
   relacionados?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2726,6 +2928,8 @@ export interface TerminosKunakpediaSelect<T extends boolean = true> {
   titulo?: T;
   tituloMiga?: T;
   cuerpo?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2764,6 +2968,8 @@ export interface DocumentosCientificosSelect<T extends boolean = true> {
         label?: T;
       };
   cuerpo?: T;
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2909,6 +3115,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
+  estado?: T;
+  publicarEn?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -2959,6 +3167,7 @@ export interface CategoriasCientificasSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  rutaOrigen?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -2973,7 +3182,27 @@ export interface MediaSelect<T extends boolean = true> {
   sizes?:
     | T
     | {
+        w300?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
         sm?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        w768?:
           | T
           | {
               url?: T;
@@ -3003,7 +3232,7 @@ export interface MediaSelect<T extends boolean = true> {
               filesize?: T;
               filename?: T;
             };
-        cardWide?:
+        lg?:
           | T
           | {
               url?: T;
@@ -3013,7 +3242,7 @@ export interface MediaSelect<T extends boolean = true> {
               filesize?: T;
               filename?: T;
             };
-        lg?:
+        cardWide?:
           | T
           | {
               url?: T;
@@ -3042,6 +3271,7 @@ export interface SlugsSelect<T extends boolean = true> {
  */
 export interface UsuariosSelect<T extends boolean = true> {
   nombre?: T;
+  rol?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

@@ -43,9 +43,23 @@
  * estática del clon que sombree un slug del catálogo, o una huérfana—.
  */
 import type { CollectionConfig } from "payload";
+import { nadiePorApi, soloAdmin } from "../acceso.ts";
 
 export const slugs: CollectionConfig = {
   slug: "slugs",
+  /**
+   * F2-5: el «no se edita a mano» de la descripción pasa de consejo a acceso.
+   * Escribir es de los hooks (Local API sin `overrideAccess: false`, que estas
+   * funciones no tocan); NADIE escribe por la API, admin incluido — el
+   * registro es estado derivado y editarlo a mano lo desincroniza. Leerlo, un
+   * admin, para depurar. Invariante 5 de `qa:roles`.
+   */
+  access: {
+    read: soloAdmin,
+    create: nadiePorApi,
+    update: nadiePorApi,
+    delete: nadiePorApi,
+  },
   admin: {
     useAsTitle: "slug",
     group: "Sistema",
@@ -53,6 +67,8 @@ export const slugs: CollectionConfig = {
       "Registro del plano de /es/ — un segmento. Lo escriben los hooks de las colecciones " +
       "de contenido; no se edita a mano. La unicidad ENTRE familias vive aquí (§4).",
     defaultColumns: ["slug", "familia", "documento"],
+    /* Cosmética; la guarda es el `access`. */
+    hidden: ({ user }) => (user as { rol?: string } | null)?.rol !== "admin",
   },
   fields: [
     /**
