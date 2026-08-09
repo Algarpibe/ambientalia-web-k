@@ -15,7 +15,7 @@
  */
 import type { CollectionConfig, Field } from "payload";
 import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
-import { MODULOS_COMPARTIDOS } from "../bloques/contenido.ts";
+import { MODULO_BOTON, MODULO_IMAGEN } from "../bloques/contenido.ts";
 import { MODULOS_KB } from "../bloques/kb.ts";
 import { registroDeSlug } from "../hooks/registro-slug.ts";
 
@@ -197,6 +197,29 @@ export const articulosKb: CollectionConfig = {
      * con ellos»* (PD1 y PD2 acertaron). Los otros 3 son justo los que traen
      * `blurb`, y uno de ellos la única `gallery`.
      */
-    { name: "cuerpo", type: "blocks", blocks: [...MODULOS_COMPARTIDOS, ...MODULOS_KB] },
+    {
+      name: "cuerpo",
+      type: "blocks",
+      /**
+       * ⚠ **Los kinds que se ofrecen son LOS MEDIDOS, y por eso esto no es
+       * `...MODULOS_COMPARTIDOS` (2026-08-09, §2d.3).**
+       *
+       * `qa:kb-recon` censó los 6 artículos y salieron **cinco** kinds:
+       * `text`×85 · `image`×21 · `button`×6 · `blurb`×36 · `gallery`×1. **No hay
+       * módulos `titular` ni `claim`**: en este arquetipo los encabezados van
+       * DENTRO del texto (`h1`×6 · `h2`×20 · `h3`×8 · `h4`×2, contados dentro de
+       * los `et_pb_text`), que es justo lo que hace que su texto sea rico.
+       *
+       * Y el de texto es **`texto-kb`**, no el compartido: el escalón midió que
+       * `MODULO_TEXTO` no expresa lo que trae este dato —ni, resultó, lo que
+       * traen sus propios consumidores—. Acta: §2d.3.
+       *
+       * Ofrecer los tres que sobran no sería inocuo: le pondría al editor tres
+       * bloques que el arquetipo no tiene, y el primero que los use crea una
+       * instancia sin contraparte en el original. La colección está **vacía**
+       * cuando esto se escribe, así que estrechar aquí no rompe dato ninguno.
+       */
+      blocks: [MODULO_IMAGEN, MODULO_BOTON, ...MODULOS_KB],
+    },
   ],
 };

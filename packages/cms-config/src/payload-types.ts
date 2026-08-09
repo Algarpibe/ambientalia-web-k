@@ -1533,141 +1533,9 @@ export interface ArticulosKb {
     ogImage?: string | null;
   };
   titulo: string;
+  prefijo: string;
   cuerpo?:
     | (
-        | {
-            texto: string;
-            /**
-             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
-             */
-            nivel?: number | null;
-            ritmo?: {
-              mt?: number | null;
-              mb?: number | null;
-              pt?: number | null;
-              pb?: number | null;
-              pr?: number | null;
-              mbAlterno?: boolean | null;
-            };
-            /**
-             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-             */
-            anchoPct?: number | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'titular';
-          }
-        | {
-            texto: string;
-            /**
-             * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
-             */
-            nivel?: number | null;
-            ritmo?: {
-              mt?: number | null;
-              mb?: number | null;
-              pt?: number | null;
-              pb?: number | null;
-              pr?: number | null;
-              mbAlterno?: boolean | null;
-            };
-            /**
-             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-             */
-            anchoPct?: number | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'claim';
-          }
-        | {
-            bloques: (
-              | {
-                  p: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
-                  pb?: number | null;
-                  id?: string | null;
-                  blockName?: string | null;
-                  blockType: 'p';
-                }
-              | {
-                  ul?:
-                    | {
-                        texto: {
-                          root: {
-                            type: string;
-                            children: {
-                              type: any;
-                              version: number;
-                              [k: string]: unknown;
-                            }[];
-                            direction: ('ltr' | 'rtl') | null;
-                            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                            indent: number;
-                            version: number;
-                          };
-                          [k: string]: unknown;
-                        };
-                        id?: string | null;
-                      }[]
-                    | null;
-                  id?: string | null;
-                  blockName?: string | null;
-                  blockType: 'ul';
-                }
-              | {
-                  claim?: string | null;
-                  /**
-                   * Defecto 2 — §1.5 · MonoNivel 2|3|4 — el claim lo lee con `?? 2` en MonoCuerpo.tsx
-                   */
-                  nivel?: number | null;
-                  id?: string | null;
-                  blockName?: string | null;
-                  blockType: 'claim';
-                }
-              | {
-                  titular: string;
-                  /**
-                   * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
-                   */
-                  nivel?: number | null;
-                  id?: string | null;
-                  blockName?: string | null;
-                  blockType: 'titular';
-                }
-            )[];
-            /**
-             * Defecto 30.6 — §1.5 · 30.6·36·45 por módulo
-             */
-            lh?: number | null;
-            ritmo?: {
-              mt?: number | null;
-              mb?: number | null;
-              pt?: number | null;
-              pb?: number | null;
-              pr?: number | null;
-              mbAlterno?: boolean | null;
-            };
-            /**
-             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-             */
-            anchoPct?: number | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'texto';
-          }
         | {
             src: number | Media;
             alt?: string | null;
@@ -1694,6 +1562,86 @@ export interface ArticulosKb {
             id?: string | null;
             blockName?: string | null;
             blockType: 'boton';
+          }
+        | {
+            /**
+             * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+             */
+            html: string;
+            ritmo?: {
+              mt?: number | null;
+              mb?: number | null;
+              pt?: number | null;
+              pb?: number | null;
+              pr?: number | null;
+              mbAlterno?: boolean | null;
+            };
+            /**
+             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+             */
+            anchoPct?: number | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'texto-kb';
+          }
+        | {
+            titulo: string;
+            /**
+             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
+             */
+            nivel?: number | null;
+            imagen?: (number | null) | Media;
+            alt?: string | null;
+            /**
+             * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+             */
+            descripcion?: string | null;
+            /**
+             * Defecto "iconos" — kb-recon · iconos×24 · col-md-4×9 · ninguna×3
+             */
+            reticula?: ('iconos' | 'col-md-4' | 'ninguna') | null;
+            /**
+             * Defecto "center" — kb-recon · center×27 · left×9
+             */
+            alineacion?: ('center' | 'left') | null;
+            ritmo?: {
+              mt?: number | null;
+              mb?: number | null;
+              pt?: number | null;
+              pb?: number | null;
+              pr?: number | null;
+              mbAlterno?: boolean | null;
+            };
+            /**
+             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+             */
+            anchoPct?: number | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'blurb';
+          }
+        | {
+            items: {
+              imagen: number | Media;
+              alt?: string | null;
+              titulo?: string | null;
+              id?: string | null;
+            }[];
+            ritmo?: {
+              mt?: number | null;
+              mb?: number | null;
+              pt?: number | null;
+              pb?: number | null;
+              pr?: number | null;
+              mbAlterno?: boolean | null;
+            };
+            /**
+             * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+             */
+            anchoPct?: number | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'gallery';
           }
       )[]
     | null;
@@ -2987,105 +2935,10 @@ export interface ArticulosKbSelect<T extends boolean = true> {
         ogImage?: T;
       };
   titulo?: T;
+  prefijo?: T;
   cuerpo?:
     | T
     | {
-        titular?:
-          | T
-          | {
-              texto?: T;
-              nivel?: T;
-              ritmo?:
-                | T
-                | {
-                    mt?: T;
-                    mb?: T;
-                    pt?: T;
-                    pb?: T;
-                    pr?: T;
-                    mbAlterno?: T;
-                  };
-              anchoPct?: T;
-              id?: T;
-              blockName?: T;
-            };
-        claim?:
-          | T
-          | {
-              texto?: T;
-              nivel?: T;
-              ritmo?:
-                | T
-                | {
-                    mt?: T;
-                    mb?: T;
-                    pt?: T;
-                    pb?: T;
-                    pr?: T;
-                    mbAlterno?: T;
-                  };
-              anchoPct?: T;
-              id?: T;
-              blockName?: T;
-            };
-        texto?:
-          | T
-          | {
-              bloques?:
-                | T
-                | {
-                    p?:
-                      | T
-                      | {
-                          p?: T;
-                          pb?: T;
-                          id?: T;
-                          blockName?: T;
-                        };
-                    ul?:
-                      | T
-                      | {
-                          ul?:
-                            | T
-                            | {
-                                texto?: T;
-                                id?: T;
-                              };
-                          id?: T;
-                          blockName?: T;
-                        };
-                    claim?:
-                      | T
-                      | {
-                          claim?: T;
-                          nivel?: T;
-                          id?: T;
-                          blockName?: T;
-                        };
-                    titular?:
-                      | T
-                      | {
-                          titular?: T;
-                          nivel?: T;
-                          id?: T;
-                          blockName?: T;
-                        };
-                  };
-              lh?: T;
-              ritmo?:
-                | T
-                | {
-                    mt?: T;
-                    mb?: T;
-                    pt?: T;
-                    pb?: T;
-                    pr?: T;
-                    mbAlterno?: T;
-                  };
-              anchoPct?: T;
-              id?: T;
-              blockName?: T;
-            };
         imagen?:
           | T
           | {
@@ -3111,6 +2964,73 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               label?: T;
               href?: T;
               external?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'texto-kb'?:
+          | T
+          | {
+              html?: T;
+              ritmo?:
+                | T
+                | {
+                    mt?: T;
+                    mb?: T;
+                    pt?: T;
+                    pb?: T;
+                    pr?: T;
+                    mbAlterno?: T;
+                  };
+              anchoPct?: T;
+              id?: T;
+              blockName?: T;
+            };
+        blurb?:
+          | T
+          | {
+              titulo?: T;
+              nivel?: T;
+              imagen?: T;
+              alt?: T;
+              descripcion?: T;
+              reticula?: T;
+              alineacion?: T;
+              ritmo?:
+                | T
+                | {
+                    mt?: T;
+                    mb?: T;
+                    pt?: T;
+                    pb?: T;
+                    pr?: T;
+                    mbAlterno?: T;
+                  };
+              anchoPct?: T;
+              id?: T;
+              blockName?: T;
+            };
+        gallery?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    imagen?: T;
+                    alt?: T;
+                    titulo?: T;
+                    id?: T;
+                  };
+              ritmo?:
+                | T
+                | {
+                    mt?: T;
+                    mb?: T;
+                    pt?: T;
+                    pb?: T;
+                    pr?: T;
+                    mbAlterno?: T;
+                  };
+              anchoPct?: T;
               id?: T;
               blockName?: T;
             };

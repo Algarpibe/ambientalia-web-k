@@ -1124,6 +1124,15 @@ Por predicados pre-registrados **antes de evaluarse** (commit `effb473`):
 ritmo se exportan una vez y las consumen `MonoModulo` y la futura unión de
 `articulos-kb` — *lo que se duplica es el documento, no la definición* (§1.5b).
 
+> ⚠ **CORREGIDA EN SU CLÁUSULA DE TEXTO (2026-08-09, §2d.3).** El principio se
+> mantiene y **`imagen`/`botón`/`moduloBase`/`nivelTitular` se consumen tal
+> cual**, medido. Lo que no se sostuvo es *«sin cambiarlas»* aplicado al
+> **texto**: `MODULO_TEXTO` no expresa lo que trae el original **ni en KB (7
+> etiquetas) ni en SECTOR/MONOGRÁFICO (12)**, porque se calibró sobre la
+> transcripción y no sobre el sitio. `articulos-kb` usa **`texto-kb`**
+> (`campoHtml`); el compartido queda **declarado infra-especificado**. Acta y
+> medida: §2d.3.
+
 **Consecuencia nueva para la cola larga, que antes no estaba escrita:** la cola
 de páginas compuestas (6 hubs LH-2 + 7 hubs KB) **ya se sabe que `MonoSeccion[]`
 solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
@@ -1190,8 +1199,15 @@ las cuales **7 no caben en el tipo compartido** (`span`·`sub`·`a`·`i`·`em`·
 compartidas sin cambiarlas»* **es cierta de imagen y botón y falsa del texto**.
 
 **Parado con la evidencia congelada, con sus dos salidas y su coste**:
-`PENDIENTES-QA.md` §F3-1-ESCALON-TEXTO. Se decide con pre-registro en la tanda
-que retome F3-1 — **no se cabló nada** mientras §2d.1 diga lo contrario.
+`PENDIENTES-QA.md` §F3-1-ESCALON-TEXTO.
+
+> ✅ **CERRADO EL MISMO DÍA, y ninguna de las dos salidas era la respuesta —
+> §2d.3.** El arbitraje no llegó a hacer falta: preguntando **sobre qué
+> población se derivó el tipo** salió que SECTOR/MONOGRÁFICO traen **12**
+> etiquetas fuera de él, más que las 7 de KB. `inline` estaba
+> **INFRA-ESPECIFICADO desde el principio** y el dilema —*¿acomodo al recién
+> llegado o toco un tipo poblado?*— **no tenía sujeto**. Las 7 de aquí no eran
+> la anomalía: eran la primera vez que alguien miraba.
 
 #### Lo que sí quedó aplicado
 
@@ -1201,6 +1217,173 @@ que retome F3-1 — **no se cabló nada** mientras §2d.1 diga lo contrario.
 grupo A — *el prefijo tiene tres valores, no uno*—, así que el slug no basta
 para construir la URL. Migración versionada `20260809_125718_f3_articulos_kb`,
 aplicada, con `npm run check` en verde.
+
+### ✅ 2d.3 · EL ESCALÓN DEL TEXTO — ARBITRADO, y el dilema se DISOLVIÓ al preguntar por la POBLACIÓN (2026-08-09, F3-1)
+
+Cierra §F3-1-ESCALON-TEXTO. **No lo cerró el arbitraje: lo cerró la pregunta de
+antes**, que ninguna de las dos salidas escritas se había hecho.
+
+> **¿Sobre qué POBLACIÓN se derivó el tipo compartido?**
+
+Es la misma que disolvió CLASE (31 ítems → 1 medición) y la frontera del ancho
+pedido. Y aquí valía lo mismo: **sobre `MonoInline`, que es dato TRANSCRITO A
+MANO** a `apps/web/src/lib`. Lo dice la cabecera de `contenido.ts` sin
+disimularlo — *«su inventario está medido en 56 `<strong>`»*.
+
+> **Una transcripción no se puede auditar contra sí misma.** Lo que no se
+> transcribió no está ahí para contarlo, así que preguntarle a `src/lib` si le
+> falta algo **devuelve siempre que no**. El tipo no se midió sobre lo que
+> existe: se midió sobre lo que alguien ya había decidido escribir.
+
+#### Las dos premisas que había que derivar antes de medir, y las dos eran falsas
+
+| lo que se daba por hecho | lo derivado |
+|---|---|
+| «el corpus tiene congelados los cuerpos de MONOGRÁFICO y SECTOR» | **0 en `corpus/INDICE.json` (309) y 0 en `corpus/fase-3/INDICE.json` (272).** Las dos campañas los excluyen *a propósito*, con la razón escrita: *«CONSTRUIDA completa: el cuerpo es dato tipado transcrito»* |
+| el original ya está fuera del camino crítico | lo está **para construir**. Para **auditar una decisión de modelo** seguía dentro, y nadie lo había notado |
+
+La segunda es la interesante: **la razón que dejó esas 8 páginas fuera del
+corpus es exactamente la que produce el hueco.** Se excluyeron *porque* estaban
+transcritas — o sea porque su única copia era la que había que auditar.
+
+Capturadas para esto: **`npm run cms:captura-sectores`**, 8/8, 2.5 MB, 0 fallos,
+denominador propio en `corpus/fase-3-sectores/` (no mueve los 309 ni los 272).
+
+#### La medida: un instrumento, dos poblaciones
+
+**`npm run qa:texto-poblacion`** (negativo **4/4**), congelada en
+`medidas/texto-poblacion.json`. Offline sobre HTML congelado, red bloqueada.
+
+Dos guardas que no son decorado, porque la sonda **falló las dos en su primera
+corrida**:
+
+1. **CONTROL** — reproduce `medidas/kb-recon.json` al carácter (85 módulos, 16
+   etiquetas). Sin él, una asimetría entre poblaciones podría ser del
+   instrumento (§sondas 4: *un comparador que falla en el 100 % está comparando
+   dos cosas que no son la misma*);
+2. **CLASIFICADOR prosa/anfitrión** — la primera corrida contó `div×427 ·
+   article×42 · header×22` y **eso no es prosa**: en Divi un `et_pb_text` es
+   también donde el editor pega un shortcode (la miga, la banda de clientes,
+   `#lista-soluciones`, las tarjetas de caso). Es §sondas 4 en su **tercera
+   cara** —*un número plausible de más, que encima invita a explicarlo*—.
+   Evidencia conservada con su nombre (regla 7):
+   `medidas/texto-poblacion-SONDA-SOBRECASABA-ANFITRIONES.json`.
+
+**El resultado, sólo prosa:**
+
+| población | páginas | módulos de prosa | fuera del tipo compartido |
+|---|---|---|---|
+| `articulos-kb` | 6 | 85 | **7** — `span×50 · sub×7 · a×5 · i×4 · em×2 · sup×1 · img×1` |
+| **SECTOR + MONOGRÁFICO** | 8 | 175 | **12** — `span×179 · sub×52 · td×32 · tr×9 · th×4 · h5×4 · div×4 · br×3 · em×1 · table×1 · thead×1 · tbody×1` |
+
+Compartidas por las dos: **`span` · `sub` · `em`**. Y el lado que se creía sano
+trae **más** que el recién llegado, incluida **una `<table>` entera** en el
+cuerpo de EDAR.
+
+> **`inline` no se le quedaba corto a KB: estaba INFRA-ESPECIFICADO desde el
+> principio.** KB no rompe nada — es **el primer arquetipo que se midió contra
+> el original en vez de contra su propia transcripción**.
+
+#### El segundo testigo: la transcripción improvisó TRES veces
+
+Y es el que no admite réplica, porque está en el repo desde julio — un solo
+fichero, `apps/web/src/lib/monografico.ts`:
+
+| línea | el original | lo transcrito |
+|---|---|---|
+| 585-589 | `<strong>H<sub>2</sub>S (sulfuro de hidrógeno).</strong>` | `[{b:"H"},{b:"2"},{b:"S (sulfuro…"}]` — el subíndice **aplanado a negrita** |
+| 627·633·639 | `H<sub>2</sub>S, CH<sub>4</sub>, CO<sub>2</sub>` | `"H₂S, CH₄, CO₂"` — **carácter Unicode**, otro apaño, 40 líneas más allá |
+| 622 | el `<table>` del cuerpo | `kind: "tabla"` — un **kind inventado** para rodear el tipo |
+
+**Tres apaños distintos para la misma carencia es la firma de un tipo corto**, no
+de tres decisiones. Y ninguno dejó rastro de defecto: el clon compila, el
+round-trip pasa y el píxel casa en casi todo, porque **nadie estaba comparando
+contra la etiqueta del original**.
+
+#### ⚠ La asimetría de esta decisión NO es la de siempre: UN ENSANCHAMIENTO ES RETROCOMPATIBLE
+
+Hay que decirlo explícitamente, porque el instinto del proyecto empuja al revés
+y aquí empuja **por la razón equivocada**:
+
+> **La regla «no toques una colección poblada» protege de ESTRECHAMIENTOS y de
+> CAMPOS NUEVOS REQUERIDOS.** Los dos invalidan dato que ya existe: el primero
+> lo deja fuera del tipo, el segundo lo deja incompleto. **Un ensanchamiento no
+> hace ninguna de las dos cosas** — el contenido ya sembrado sigue siendo válido
+> si el tipo acepta más. Así que el cubo **C** *no* es el argumento contra la
+> salida B, y usarlo como tal habría elegido la salida separada por un motivo
+> que no aplica.
+
+Lo que sí cuesta ensanchar `MODULO_TEXTO` es otra cosa, y es real: `MonoInline`,
+el render de `MonoCuerpo.tsx` y `mapeo`/`vuelta` tienen que saber llevar las
+marcas nuevas, y eso **se prueba con su round-trip**. Es una tanda, no un
+renglón. La diferencia importa: se aplaza por **coste medido**, no por tabú.
+
+#### La decisión
+
+**La frontera ya estaba escrita en `CLAUDE.md` §Dónde para el modelado**, y esto
+es su primera aplicación fuera de grupo A:
+
+> *Hasta el contenedor de contenido, la estructura se modela. A partir del
+> contenedor, el contenido lleva su propia estructura dentro y se declara RICO.*
+
+| | |
+|---|---|
+| **`articulos-kb`** | módulo propio **`texto-kb`** = `campoHtml("html")` + `moduloBase`. El módulo, su ritmo y su ancho siguen modelados; lo de dentro es HTML (CMS-0e · §3.1d) |
+| **`MODULO_TEXTO` compartido** | **intacto en el código y DECLARADO infra-especificado**, con su medida y su fecha. Ficha: `PENDIENTES-QA.md` §CLASE-INLINE-PRESTADO |
+| **lo que se ofrece en `articulos-kb`** | los **5 kinds medidos** (`texto-kb`·`imagen`·`boton`·`blurb`·`gallery`). `titular`/`claim`/`texto` compartidos **se retiran**: el censo no los tiene —los encabezados van DENTRO del texto (`h1`×6·`h2`×20·`h3`×8·`h4`×2)— y la colección estaba **vacía**, así que estrechar aquí no invalida dato |
+
+Migraciones versionadas y aplicadas: `20260809_135819_f3_texto_kb_rico` (sólo
+altas) + `20260809_135857_f3_kb_retira_compartidos` (sólo bajas). **Partidas en
+dos por la herramienta, no por el modelo**: `migrate:create` pregunta de forma
+interactiva si cada tabla nueva es un renombrado de una que desaparece, y en un
+entorno sin TTY ese prompt no se puede contestar; si ningún diff trae altas y
+bajas a la vez, no hay pregunta.
+
+#### PD2 no fracasó: acertó en KINDS y la pregunta era la FORMA DE LOS CAMPOS
+
+**Y así se escribe un predicado pre-registrado que falla — como un resultado.**
+
+PD2 predijo *«texto, imagen y botón entran»* y §2d.1 escribió que este arquetipo
+*«CONSUME las definiciones compartidas **sin cambiarlas**»*. Medido: **imagen y
+botón entran tal cual** (siguen importados, sin duplicar). Lo que falla es el
+texto, y **falla por la misma junta que el proyecto ya había articulado** al
+calibrar la frontera de `productos`:
+
+> *un kind que una forma usa y otra no NO es campo de frontera; lo son las
+> PROPIEDADES.*
+
+**PD2 se midió sobre KINDS de módulo** —¿aparece `texto` en las dos?, sí— **y la
+pregunta era la FORMA DE SUS CAMPOS**. Es el mismo desajuste de nivel que HD1,
+que acertó la mitad de la retícula y falló la de los kinds. §2d.1 queda
+corregida en esa cláusula y **sólo en ésa**: sus cinco decisiones siguen en pie.
+
+#### Lo que NO encaja en ninguna salida, LISTADO y no acomodado
+
+- **`img×1` dentro de un módulo de texto de KB** (`que-es-kunak-air`): con
+  `campoHtml` deja de ser una excepción —el contrato del campo rico admite `img`
+  en 209/209 de grupo A— **pero arrastra una pregunta que el bloque no contesta**:
+  ese `<img>` apunta a `wp-content` y **necesita T4b** (sustitución por media
+  local) igual que el cuerpo de grupo A. Se resuelve al sembrar, o el Δ0 lo
+  delata. **Dueño: F3-1 PASO 4.**
+- **`class="none"` en 6 de los 85 módulos de texto.** Aparece una vez por
+  artículo y no se sabe qué la pone. Cero explicación ⇒ **SIN PROBAR, anotado y
+  no cableado.**
+- **El `<table>` de EDAR** sigue siendo `kind: "tabla"` en el clon y **§3.4 sigue
+  ABIERTA** («¿nodo de Lexical o block?»). Esta acta no la cierra: la vuelve a
+  poner sobre la mesa con un dato que antes no tenía —la tabla **está dentro de
+  un `et_pb_text`**, o sea que en el original no es un módulo aparte.
+
+#### El defecto NUEVO que salió de aquí, y no es un pendiente de modelo
+
+> **`/sectores/…-en-edar` sirve `H2S` donde el original sirve `H₂S`.** No es que
+> falte modelar: **el clon ya está pintando otra cosa**, hoy, en una página dada
+> por verificada. Un `<sub>` tiene otro tamaño y otra línea base, así que además
+> **puede mover el envolvimiento** — y es exactamente el tipo de defecto que
+> §CONTRATO A DOS ANCHOS dice que sólo se ve donde el texto envuelve.
+
+Ficha con su evidencia en `PENDIENTES-QA.md` §CLASE-INLINE-PRESTADO. **No se
+arregla en esta tanda** —arreglarlo es el ensanchamiento con su round-trip— pero
+deja de estar invisible, que era lo caro.
 
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 

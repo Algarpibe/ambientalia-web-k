@@ -40,9 +40,9 @@
  * ══════════════════════════════════════════════════════════════════════════
  */
 import type { Block } from "payload";
-import { conDefecto, subida } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, subida } from "../campos/comunes.ts";
 import type { Field } from "payload";
-import { inline, nivelTitular } from "./contenido.ts";
+import { nivelTitular } from "./contenido.ts";
 import { moduloBase } from "../campos/comunes.ts";
 
 /**
@@ -76,11 +76,24 @@ export const alineacionBlurb: Field = conDefecto(
  * `imagen` usa **`subida`** y no `imagen()`: es la misma relación a `media` que
  * el resto del proyecto, importada, no una segunda definición.
  *
- * La descripción es `inline` —párrafo con negrita— y no `campoHtml`: lo medido
- * son `<p>` con texto, sin una sola etiqueta fuera de ese conjunto en los 24.
- * Si aparece una, **se amplía el campo con la medida delante**, no se pone
- * `campoHtml` «por si acaso» — prestar un editor más ancho de la cuenta fue lo
- * que escondió el `<sup>` de `productos.bullets`.
+ * ⚠⚠ **`descripcion` era `inline` sobre una afirmación FALSA, y se corrige aquí
+ * con la medida delante (2026-08-09, §2d.3).** Esta cabecera decía:
+ *
+ *   > *«lo medido son `<p>` con texto, sin una sola etiqueta fuera de ese
+ *   > conjunto en los 24. Si aparece una, se amplía el campo con la medida
+ *   > delante»*
+ *
+ * La segunda frase es la regla correcta; **la primera no se había derivado**.
+ * Recorriendo `medidas/kb-recon.json → descripcionHtml` (los mismos bytes que ya
+ * estaban congelados cuando se escribió): **`p×24 · br×1 · img×6`**. Los 6
+ * `<img>` son las capturas de pantalla de `que-es-kunak-air` **dentro de la
+ * descripción del blurb**, no en su icono.
+ *
+ * O sea que el tipo medido es **rico de bloque** ⇒ `campoHtml`, igual que el
+ * `cuerpo` de grupo A. Es §sondas 9 —*un recuento afirmado de memoria se barre
+ * antes de usarse*— cobrada sobre una cabecera que citaba «los 24» sin haberlos
+ * recorrido, y es la **tercera** instancia de `inline` prestado a un campo cuyo
+ * tipo medido es rico (§2d.3): `productos.bullets` · `MODULO_TEXTO` · ésta.
  */
 export const MODULO_BLURB: Block = {
   slug: "blurb",
@@ -90,7 +103,7 @@ export const MODULO_BLURB: Block = {
     nivelTitular,
     subida("imagen"),
     { name: "alt", type: "text" },
-    inline("descripcion"),
+    campoHtml("descripcion"),
     reticulaBlurb,
     alineacionBlurb,
     ...moduloBase,
@@ -124,5 +137,92 @@ export const MODULO_GALLERY: Block = {
   ],
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * `texto-kb` — EL MÓDULO DE TEXTO DEL ARQUETIPO, y el acta del escalón
+ *
+ * Resuelve §F3-1-ESCALON-TEXTO. El acta completa, con su medida y su tabla de
+ * poblaciones, está en `ESQUEMA-CMS.md` §2d.3; aquí va lo que hay que saber
+ * para leer el código.
+ *
+ * ── Lo que el escalón preguntaba, y lo que lo disolvió ─────────────────────
+ * `qa:kb-recon` midió que el tipo COMPARTIDO (`MODULO_TEXTO`, con `BLOQUES_TEXTO`
+ * y textos `inline` = párrafo + negrita) **no expresa** 7 de las 16 etiquetas
+ * que traen los 85 `et_pb_text` de KB. El dilema escrito era: ¿módulo propio
+ * para KB, o ensanchar el compartido y tocar un tipo poblado?
+ *
+ * **Ninguna de las dos, porque la pregunta de antes no se había hecho:**
+ *
+ *   > **¿sobre qué POBLACIÓN se derivó el tipo compartido?**
+ *
+ * Sobre `MonoInline`, que es **dato TRANSCRITO A MANO** a `apps/web/src/lib`. Y
+ * una transcripción **no se puede auditar contra sí misma**: lo que no se
+ * transcribió no está ahí para contarlo. Medido contra el ORIGINAL de los 8
+ * `/es/sectores/*` (capturados para esto, porque no estaban en ningún corpus)
+ * por `npm run qa:texto-poblacion` — un instrumento, dos poblaciones, con
+ * control contra `kb-recon`:
+ *
+ * | en PROSA, fuera del tipo | n |
+ * |---|---|
+ * | `articulos-kb` (6 páginas · 85 módulos) | `span·sub·a·i·em·img·sup` — **7** |
+ * | **SECTOR/MONOGRÁFICO** (8 páginas · 175 módulos de prosa) | `span·sub·td·tr·th·h5·div·br·em·table·thead·tbody` — **12** |
+ *
+ * O sea que **el tipo ya se le quedaba corto a sus PROPIOS consumidores**, y KB
+ * no es el recién llegado que rompe nada: es el primero que se midió contra el
+ * original en vez de contra su transcripción. **`inline` no está corto: está
+ * INFRA-ESPECIFICADO**, y ensancharlo corrige una medición.
+ *
+ * ── El segundo testigo, y es el que no admite réplica ──────────────────────
+ * La transcripción misma improvisó **tres veces** para rodear lo que su tipo no
+ * podía decir, en un solo fichero (`apps/web/src/lib/monografico.ts`):
+ *
+ *   · l. 585-589 · `<strong>H<sub>2</sub>S…` → `[{b:"H"},{b:"2"},{b:"S…"}]`
+ *                  — el subíndice **aplanado a negrita**;
+ *   · l. 627·633·639 · `H<sub>2</sub>S, CH<sub>4</sub>` → `"H₂S, CH₄"`
+ *                  — **carácter Unicode**, otro apaño, 40 líneas más allá;
+ *   · l. 622 · el `<table>` del cuerpo → `kind: "tabla"`, un **kind inventado**.
+ *
+ * Tres apaños distintos para la misma carencia es la firma de un tipo corto, no
+ * de tres decisiones.
+ *
+ * ── La decisión, que es la FRONTERA que `CLAUDE.md` ya tenía escrita ───────
+ *
+ *   > *Hasta el contenedor de contenido, la estructura se modela. A partir del
+ *   > contenedor, el contenido lleva su propia estructura dentro y se declara
+ *   > RICO.*
+ *
+ * El módulo, su ritmo, su ancho y su sitio en la fila **siguen modelados** —eso
+ * es estructura y lo pone quien maquetó—. Lo de dentro es **un campo HTML**,
+ * como el `cuerpo` de grupo A y por la misma razón (CMS-0e: *HTML crudo
+ * primero*; §3.1d: *el sitio de aterrizaje ES el campo definitivo*). No se
+ * inventan 12 formas de bloque para documentos que ya traen la suya.
+ *
+ * ⚠ **Y lo que este bloque NO hace: tocar `MODULO_TEXTO`.** El compartido queda
+ * como está **con su defecto declarado y fechado** (ficha en `PENDIENTES-QA.md`
+ * §CLASE-INLINE-PRESTADO), porque ensancharlo bien exige que `MonoInline`, el
+ * render y `mapeo`/`vuelta` sepan llevar las marcas nuevas — y eso se prueba con
+ * su round-trip, no de paso. **La razón NO es «no se toca lo poblado»**: un
+ * ensanchamiento es RETROCOMPATIBLE y ese tabú no aplica (§2d.3).
+ * ═════════════════════════════════════════════════════════════════════════ */
+export const MODULO_TEXTO_KB: Block = {
+  slug: "texto-kb",
+  labels: { singular: "Texto (KB)", plural: "Textos (KB)" },
+  fields: [
+    campoHtml("html", { requerido: true }),
+    /**
+     * ⚠ **NO lleva `lh`, y es medida, no olvido.** El compartido tiene `lh`
+     * porque en el monográfico varía entre hermanos (30.6 · 36 · 45, test B).
+     * Aquí `estiloInline` es **`null` en los 85** módulos: el editor no tocó ni
+     * la interlínea ni el ancho en ninguno.
+     *
+     * **Cero varianza no prueba plantilla** — prueba que nadie lo tocó en las
+     * instancias que existen. Así que no se cablea un valor **ni** se inventa un
+     * campo: queda **SIN PROBAR**, anotado, y lo decide la segunda instancia que
+     * lo mueva. `moduloBase` sí entra, porque es la definición compartida del
+     * ritmo y omitirla sería duplicar la decisión por el otro lado.
+     */
+    ...moduloBase,
+  ],
+};
+
 /** La unión propia del arquetipo: lo compartido lo pone quien la consume. */
-export const MODULOS_KB: Block[] = [MODULO_BLURB, MODULO_GALLERY];
+export const MODULOS_KB: Block[] = [MODULO_TEXTO_KB, MODULO_BLURB, MODULO_GALLERY];

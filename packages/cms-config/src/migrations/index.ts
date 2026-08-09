@@ -7,6 +7,8 @@ import * as migration_20260806_124532_ruta_origen_media from './20260806_124532_
 import * as migration_20260808_023851_publicacion_f24 from './20260808_023851_publicacion_f24';
 import * as migration_20260808_232710_roles_f25 from './20260808_232710_roles_f25';
 import * as migration_20260809_125718_f3_articulos_kb from './20260809_125718_f3_articulos_kb';
+import * as migration_20260809_135819_f3_texto_kb_rico from './20260809_135819_f3_texto_kb_rico';
+import * as migration_20260809_135857_f3_kb_retira_compartidos from './20260809_135857_f3_kb_retira_compartidos';
 
 export const migrations = [
   {
@@ -52,6 +54,16 @@ export const migrations = [
   {
     up: migration_20260809_125718_f3_articulos_kb.up,
     down: migration_20260809_125718_f3_articulos_kb.down,
-    name: '20260809_125718_f3_articulos_kb'
+    name: '20260809_125718_f3_articulos_kb',
+  },
+  {
+    up: migration_20260809_135819_f3_texto_kb_rico.up,
+    down: migration_20260809_135819_f3_texto_kb_rico.down,
+    name: '20260809_135819_f3_texto_kb_rico',
+  },
+  {
+    up: migration_20260809_135857_f3_kb_retira_compartidos.up,
+    down: migration_20260809_135857_f3_kb_retira_compartidos.down,
+    name: '20260809_135857_f3_kb_retira_compartidos'
   },
 ];

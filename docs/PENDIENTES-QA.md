@@ -1,6 +1,84 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ F3-1-ESCALON-TEXTO · el módulo de texto compartido NO expresa lo que trae el corpus de KB — PARADO CON LA EVIDENCIA CONGELADA (2026-08-09)
+## 🧨 CLASE-INLINE-PRESTADO · `inline` en campos cuyo tipo medido es RICO — 4 instancias, y una de ellas está VIVA en pantalla (2026-08-09)
+
+**La clase que destapó el escalón del texto**, generalizada para que no haga
+falta encontrarla una cuarta vez. Acta y medida: `ESQUEMA-CMS.md` §2d.3.
+
+> **`inline` (`editorNegrita`) es párrafo + negrita y NADA MÁS.** Prestarlo a un
+> campo cuyo tipo medido admite marcado de línea **no da error de ningún tipo**:
+> el esquema valida, el round-trip pasa, el typecheck compila y la página se
+> sirve. Lo único que ocurre es que **el dato entra aplanado**, y a partir de ahí
+> ninguna sonda puede echar de menos lo que ya no está.
+
+| # | campo | lo medido | estado |
+|---|---|---|---|
+| 1 | `productos.bullets` | `<sup>` en 4 filas | ✅ cerrada (§7d) — la primera de la clase |
+| 2 | **`MODULO_TEXTO` compartido** (SECTOR · MONOGRÁFICO) | **12 etiquetas en prosa**: `span×179 · sub×52 · td×32 · tr×9 · th×4 · h5×4 · div×4 · br×3 · em×1 · table×1 · thead×1 · tbody×1` | ⛔ **ABIERTA** — ver abajo |
+| 3 | `articulos-kb`, módulo de texto | 7 etiquetas | ✅ cerrada — `texto-kb` = `campoHtml` (§2d.3) |
+| 4 | **`blurb.descripcion`** | `p×24 · br×1 · **img×6**` | ✅ cerrada — `campoHtml`, misma tanda |
+
+**La 4.ª se encontró barriendo, y es la más instructiva del lote:** su cabecera
+en `bloques/kb.ts` afirmaba *«lo medido son `<p>` con texto, sin una sola
+etiqueta fuera de ese conjunto en los 24»* **y traía al lado la regla correcta**
+(*«si aparece una, se amplía el campo con la medida delante»*). El recuento
+**nunca se derivó**: los 6 `<img>` estaban en `medidas/kb-recon.json` desde antes
+de que la frase se escribiera. Es §sondas 9 —*un recuento afirmado de memoria se
+barre antes de usarse*— sobre una cabecera que citaba «los 24» sin recorrerlos.
+
+### ⛔ Lo que queda ABIERTO, y no es un pendiente de modelo: es un DEFECTO VIVO
+
+> **`/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` sirve
+> `H2S` donde el original sirve `H₂S`.** Y `NH₃`, `CH₄`, `SO₂`, `N₂O`, `O₃`,
+> `CO₂`: **4 de los 5 `<li>`** de ese módulo llevan `<sub>` (el 5.º es «COV» y
+> no tiene fórmula), y la página trae **41 `<sub>`** en total — derivado, no
+> recordado. No falta modelar: **el clon ya pinta
+> otra cosa**, hoy, en una página dada por verificada desde julio.
+
+**Evidencia, los dos lados:** original en
+`corpus/fase-3-sectores/monitorizacion-ambiental-y-control-de-olores-en-edar.html`
+(`<strong>H<sub>2</sub>S (sulfuro de hidrógeno).</strong>`) · clon en
+`apps/web/src/lib/monografico.ts:585` (`[{b:"H"},{b:"2"},{b:"S (sulfuro…"}]`).
+
+**Por qué ninguna sonda lo vio:** todas comparan alturas, árbol de secciones y
+anclas. **Ninguna compara la ETIQUETA del texto en línea**, y el aplanado no
+cambia el nº de nodos de bloque. Es §El NIVEL al que se mide con un contenedor
+nuevo: **el nivel de la marca en línea**, por debajo de lo que mide el árbol.
+
+⚠ **Y puede no ser sólo cosmético:** un `<sub>` tiene otro tamaño y otra línea
+base, así que **cambia el ancho de la línea**. Si en algún ancho ese `li`
+envuelve distinto, es un Δ de alto — el mismo mecanismo que el `<strong>` en
+línea (−30.59 a 390, invisible a 1440).
+
+**Lo que cuesta arreglarlo, contado antes:** `MonoInline` (el tipo), el render de
+`MonoCuerpo.tsx`, y `mapeo`/`vuelta` con su round-trip 63/63 **verde antes y
+después**. Es una tanda propia.
+
+> ⚠ **Y NO se aplaza por «no se toca lo poblado».** Ensanchar es
+> **retrocompatible** —el dato sembrado sigue siendo válido si el tipo acepta
+> más— así que ese tabú **no aplica** (§2d.3). Se aplaza por el coste del
+> round-trip, que es una razón distinta y hay que decir cuál es.
+
+**Dueño:** esta ficha. **Precondición para cerrarla:** el barrido de las otras
+`inline` del repo —derivado, no recordado— para no arreglar la instancia y
+dejar viva la clase por cuarta vez.
+
+## ✅ F3-1-ESCALON-TEXTO · el módulo de texto compartido NO expresa lo que trae el corpus de KB — CERRADO SIN ARBITRAR (2026-08-09)
+
+> ✅ **CERRADO EL MISMO DÍA que se abrió, y las dos salidas costeadas resultaron
+> ser la pregunta equivocada.** Antes de arbitrar se preguntó **sobre qué
+> POBLACIÓN se derivó el tipo compartido** y salió que se derivó sobre la
+> TRANSCRIPCIÓN. Medido contra el original (`qa:texto-poblacion`, 8 páginas
+> capturadas para esto): **SECTOR/MONOGRÁFICO traen 12 etiquetas fuera del tipo,
+> KB trae 7.** O sea que el tipo **no se le queda corto al recién llegado:
+> estaba corto para sus propios consumidores desde el principio.**
+>
+> **Salida aplicada:** `texto-kb` = `campoHtml` para KB (la frontera de
+> `CLAUDE.md` §Dónde para el modelado), y `MODULO_TEXTO` **declarado
+> infra-especificado** con ficha propia — §CLASE-INLINE-PRESTADO, arriba. Acta
+> completa con su medida: `ESQUEMA-CMS.md` §2d.3.
+>
+> Lo que sigue debajo es el enunciado original, conservado.
 
 **La construcción de `articulos-kb` paró aquí a propósito**, con la consigna de
 la tanda: *«si la captura trae una forma que el ESQUEMA no expresa, eso es

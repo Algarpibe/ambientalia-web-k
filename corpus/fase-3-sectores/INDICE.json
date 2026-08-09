@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "fecha": "2026-08-09",
+    "que": "Los 8 cuerpos de /es/sectores/ del ORIGINAL — los 6 SECTOR y los 2 MONOGRÁFICO.",
+    "porQue": "corpus/INDICE.json los deja fuera con la razón «CONSTRUIDA completa: el cuerpo es dato tipado transcrito». Correcto para sembrar y falso para AUDITAR: el tipo compartido MODULO_TEXTO se calibró sobre esa transcripción, y una transcripción no se puede auditar contra sí misma. Esta es su población de verdad.",
+    "denominadorPropio": "NO toca los congelados: corpus/INDICE.json sigue en 309 y corpus/fase-3/INDICE.json en 272.",
+    "fuente": "HTML crudo servido por kunakair.com (bytes sin re-codificar)",
+    "derivacion": "href de corpus/fase-3/listados/sectores/index.html (congelado F3-0)",
+    "etiqueta": "secuencial · 500 ms entre peticiones · una vez por página (entre corridas) · redirect manual"
+  },
+  "resumen": {
+    "paginas": 8,
+    "bytes": 2453583,
+    "bajadas": 8,
+    "reusadas": 0,
+    "fallos": 0
+  },
+  "paginas": {
+    "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/": {
+      "fichero": "fase-3-sectores/calidad-del-aire-en-las-ciudades.html",
+      "bytes": 297503,
+      "sha256": "2064e4e6c7454de40f74c60185b5065bdca59ab9f67c822f50be0bd1c9f4d40f",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/contaminacion-del-aire-por-la-mineria/": {
+      "fichero": "fase-3-sectores/contaminacion-del-aire-por-la-mineria.html",
+      "bytes": 302546,
+      "sha256": "678d61422cedb573133b06d899a0f3f8a2eca7c54bea9c4aab65a497e71fabcd",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/contaminacion-del-transporte-maritimo/": {
+      "fichero": "fase-3-sectores/contaminacion-del-transporte-maritimo.html",
+      "bytes": 303873,
+      "sha256": "ca203d393cf2ee5558a84a30264de3baab70ddda7e242c59bca47beea971b5c3",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/contaminacion-por-construccion/": {
+      "fichero": "fase-3-sectores/contaminacion-por-construccion.html",
+      "bytes": 294247,
+      "sha256": "10eed2666ba2f31ceded606a70eda5a73e171048caf823407dfbe3637fc1b818",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/control-de-emisiones-industriales/": {
+      "fichero": "fase-3-sectores/control-de-emisiones-industriales.html",
+      "bytes": 311297,
+      "sha256": "846bf4ecc6bc6bb9552b10b85bac620a51a053d9b9ef3dd9ab1a165de3c0a212",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/": {
+      "fichero": "fase-3-sectores/estudio-de-la-contaminacion-atmosferica.html",
+      "bytes": 296080,
+      "sha256": "5da64639f28d41b178918a7f0581d0eb41a6a227eefbbdfea1393318843bc635",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/": {
+      "fichero": "fase-3-sectores/monitorizacion-ambiental-y-control-de-olores-en-edar.html",
+      "bytes": 326365,
+      "sha256": "3254d46ff9a768b14711bc8d3ad575226930bd836dc14731c40790ee29059fb6",
+      "http": 200
+    },
+    "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/": {
+      "fichero": "fase-3-sectores/monitorizacion-de-emisiones-en-petroleo-y-gas.html",
+      "bytes": 321672,
+      "sha256": "7a6bbaac7fd6d9dfbbb45a2d5db5cf894c00b1412d41abdefc1c5fc150ecc1a5",
+      "http": 200
+    }
+  }
+}

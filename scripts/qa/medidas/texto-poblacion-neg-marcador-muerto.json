@@ -1,0 +1,647 @@
+{
+  "meta": {
+    "fecha": "2026-08-09",
+    "que": "Qué hay dentro de los `et_pb_text` del ORIGINAL, en las DOS poblaciones que consumen `MODULO_TEXTO`.",
+    "fuente": "corpus/fase-3/articulos-kb/** (6) + corpus/fase-3-sectores/** (8)",
+    "metodo": "file:// + DOM real, red BLOQUEADA; sólo SECCIONES PROPIAS (se excluyen las _tb_)",
+    "instrumento": "el MISMO código para las dos; el control es reproducir `medidas/kb-recon.json`"
+  },
+  "poblaciones": {
+    "articulos-kb": {
+      "que": "los 6 artículos del centro de ayuda — el RECIÉN LLEGADO, dato del editor de WordPress",
+      "paginas": 6,
+      "modulosTexto": 85,
+      "modulosProsa": 85,
+      "modulosAnfitrion": 0,
+      "anfitrionPorMarcador": {
+        "miga": 0,
+        "inventado": 0,
+        "shortcode-kunak": 0,
+        "swiper": 0,
+        "tarjeta-post": 0,
+        "lista-soluciones": 0
+      },
+      "etiquetas": {
+        "h1": 6,
+        "h2": 20,
+        "p": 95,
+        "strong": 13,
+        "a": 5,
+        "em": 2,
+        "ul": 9,
+        "li": 40,
+        "sub": 7,
+        "span": 50,
+        "h4": 2,
+        "sup": 1,
+        "img": 1,
+        "h3": 8,
+        "b": 9,
+        "i": 4
+      },
+      "atributos": {
+        "target": 5,
+        "style": 74,
+        "decoding": 1
+      },
+      "fueraDelTipo": {
+        "a": 5,
+        "em": 2,
+        "sub": 7,
+        "span": 50,
+        "sup": 1,
+        "img": 1,
+        "i": 4
+      },
+      "prosa": {
+        "etiquetas": {
+          "h1": 6,
+          "h2": 20,
+          "p": 95,
+          "strong": 13,
+          "a": 5,
+          "em": 2,
+          "ul": 9,
+          "li": 40,
+          "sub": 7,
+          "span": 50,
+          "h4": 2,
+          "sup": 1,
+          "img": 1,
+          "h3": 8,
+          "b": 9,
+          "i": 4
+        },
+        "atributos": {
+          "target": 5,
+          "style": 74,
+          "decoding": 1
+        },
+        "fueraDelTipo": {
+          "a": 5,
+          "em": 2,
+          "sub": 7,
+          "span": 50,
+          "sup": 1,
+          "img": 1,
+          "i": 4
+        }
+      },
+      "ejemplos": {
+        "a": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+            "seccion": 0,
+            "muestra": "<a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/\">condiciones ambientales (temperatura y humedad)</a>, su respuesta en el cero y la sensibil"
+          },
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+            "seccion": 0,
+            "muestra": "<a target=\"_blank\" href=\"https://www.kunak.es/blog/comparativa-de-los-informes-de-evaluacion-de-aqspec/\"></a></p>"
+          },
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+            "seccion": 0,
+            "muestra": "<a target=\"_blank\" href=\"https://kunakair.com/es/cartuchos/\">cartuchos de gas inteligentes</a>.</p>"
+          }
+        ],
+        "em": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+            "seccion": 0,
+            "muestra": "<em>«La variabilidad intramodelo está relacionada con la proximidad entre las mediciones de tr"
+          },
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+            "seccion": 0,
+            "muestra": "<em><strong>El sensor multi-contaminante más preciso</strong></em></span></p>"
+          }
+        ],
+        "sub": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+            "seccion": 0,
+            "muestra": "<sub>2</sub>, O<sub>3</sub>, y CO, respectivamente.»</p>"
+          },
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+            "seccion": 0,
+            "muestra": "<sub>1</sub>, muy buena calidad para PM<sub>2,5</sub>, PM<sub>10</sub> y O<sub>3</sub>, y buena"
+          }
+        ],
+        "span": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+            "seccion": 0,
+            "muestra": "<span style=\"color: #0075c9;\"><em><strong>El sensor multi-contaminante más preciso</strong></em></span></p>"
+          },
+          {
+            "pagina": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+            "seccion": 0,
+            "muestra": "<span style=\"font-weight: 400;\">Panel de control para ver el estado de tus dispositivos y sensores. Visualiza fácilmente l"
+          },
+          {
+            "pagina": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+            "seccion": 0,
+            "muestra": "<span style=\"font-weight: 400;\">Asegura el buen funcionamiento de tu red y obtén la mejor precisión de los datos gracias a"
+          }
+        ],
+        "sup": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+            "seccion": 0,
+            "muestra": "<sup>3</sup>), localmente y en tiempo real, sin utilizar ni necesitar datos de referencia exter"
+          }
+        ],
+        "img": [
+          {
+            "pagina": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+            "seccion": 0,
+            "muestra": "<img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/kunak-air-cloud.svg\" width=\"300\" height=\"300\" alt=\"\" class=\"wp-image-25467 alignnone size-medium\"></p>"
+          }
+        ],
+        "i": [
+          {
+            "pagina": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+            "seccion": 0,
+            "muestra": "<i><span style=\"font-weight: 400;\">OpenAir</span></i><span style=\"font-weight: 400;\">. Detect"
+          }
+        ]
+      },
+      "porPagina": {
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+          "modulos": 14,
+          "fuera": [
+            "a",
+            "em"
+          ]
+        },
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+          "modulos": 15,
+          "fuera": [
+            "em",
+            "span",
+            "sub"
+          ]
+        },
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+          "modulos": 11,
+          "fuera": [
+            "a",
+            "sup"
+          ]
+        },
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+          "modulos": 13,
+          "fuera": [
+            "a",
+            "img"
+          ]
+        },
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+          "modulos": 8,
+          "fuera": []
+        },
+        "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+          "modulos": 24,
+          "fuera": [
+            "a",
+            "i",
+            "span"
+          ]
+        }
+      }
+    },
+    "sector-monografico": {
+      "que": "los 8 de /es/sectores/ — LOS CONSUMIDORES SOBRE LOS QUE SE CALIBRÓ el tipo compartido",
+      "paginas": 8,
+      "modulosTexto": 215,
+      "modulosProsa": 175,
+      "modulosAnfitrion": 40,
+      "anfitrionPorMarcador": {
+        "miga": 8,
+        "inventado": 0,
+        "shortcode-kunak": 16,
+        "swiper": 8,
+        "tarjeta-post": 16,
+        "lista-soluciones": 8
+      },
+      "etiquetas": {
+        "div": 427,
+        "img": 165,
+        "ol": 8,
+        "li": 681,
+        "a": 170,
+        "span": 271,
+        "meta": 24,
+        "h2": 54,
+        "p": 384,
+        "h3": 120,
+        "ul": 127,
+        "strong": 204,
+        "article": 42,
+        "header": 22,
+        "em": 1,
+        "br": 3,
+        "sub": 52,
+        "table": 1,
+        "thead": 1,
+        "tr": 9,
+        "th": 4,
+        "h5": 4,
+        "tbody": 1,
+        "td": 32,
+        "h4": 13,
+        "b": 7
+      },
+      "atributos": {
+        "class": 535,
+        "decoding": 97,
+        "itemprop": 88,
+        "style": 351,
+        "id": 50,
+        "data-id": 64,
+        "loading": 68,
+        "href": 154,
+        "data-start": 4
+      },
+      "fueraDelTipo": {
+        "div": 427,
+        "img": 165,
+        "ol": 8,
+        "a": 170,
+        "span": 271,
+        "meta": 24,
+        "article": 42,
+        "header": 22,
+        "em": 1,
+        "br": 3,
+        "sub": 52,
+        "table": 1,
+        "thead": 1,
+        "tr": 9,
+        "th": 4,
+        "h5": 4,
+        "tbody": 1,
+        "td": 32
+      },
+      "prosa": {
+        "etiquetas": {
+          "h2": 54,
+          "span": 179,
+          "p": 224,
+          "h3": 30,
+          "ul": 71,
+          "li": 393,
+          "strong": 132,
+          "em": 1,
+          "br": 3,
+          "sub": 52,
+          "table": 1,
+          "thead": 1,
+          "tr": 9,
+          "th": 4,
+          "h5": 4,
+          "tbody": 1,
+          "td": 32,
+          "div": 4,
+          "h4": 13,
+          "b": 7
+        },
+        "atributos": {
+          "style": 351,
+          "data-start": 4
+        },
+        "fueraDelTipo": {
+          "span": 179,
+          "em": 1,
+          "br": 3,
+          "sub": 52,
+          "table": 1,
+          "thead": 1,
+          "tr": 9,
+          "th": 4,
+          "h5": 4,
+          "tbody": 1,
+          "td": 32,
+          "div": 4
+        }
+      },
+      "ejemplos": {
+        "span": [
+          {
+            "pagina": "/es/sectores/calidad-del-aire-en-las-ciudades/",
+            "seccion": 2,
+            "muestra": "<span style=\"color: #0075c9;\">Conoce la calidad del aire que respiran tus ciudadanos con datos precisos calle a calle.</"
+          },
+          {
+            "pagina": "/es/sectores/calidad-del-aire-en-las-ciudades/",
+            "seccion": 2,
+            "muestra": "<span style=\"font-weight: 400;\">Esto plantea un reto debido a las densas tramas urbanas, el ruido, el tráfico o la meteoro"
+          },
+          {
+            "pagina": "/es/sectores/calidad-del-aire-en-las-ciudades/",
+            "seccion": 4,
+            "muestra": "<span style=\"font-weight: 400;\">Permite tomar medidas para mejorar la calidad de vida y la salud de sus ciudadanos.</span>"
+          }
+        ],
+        "em": [
+          {
+            "pagina": "/es/sectores/contaminacion-del-aire-por-la-mineria/",
+            "seccion": 3,
+            "muestra": "<em>stakeholders</em>.</span></li>"
+          }
+        ],
+        "br": [
+          {
+            "pagina": "/es/sectores/control-de-emisiones-industriales/",
+            "seccion": 3,
+            "muestra": "<br><span style=\"font-size: 18px;\"></span></li>"
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 2,
+            "muestra": "<br></strong>No permiten detectar picos, identificar patrones ni explicar por qué se producen "
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 4,
+            "muestra": "<br>no con suposiciones</span></h2>"
+          }
+        ],
+        "sub": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<sub>2</sub>S (sulfuro de hidrógeno).</strong> Principal gas odorífero. Asociado a quejas, corr"
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<sub>2</sub>S, CH<sub>4</sub>, CO<sub>2</sub></td>"
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 4,
+            "muestra": "<sub>2</sub>S, NH<sub>3</sub> y CH<sub>4</sub> complementa los <strong>protocolos de prevención"
+          }
+        ],
+        "table": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<table style=\"width: 100%; border-collapse: collapse;\">"
+          }
+        ],
+        "thead": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<thead>"
+          }
+        ],
+        "tr": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<tr style=\"background-color: #f2f2f2;\">"
+          }
+        ],
+        "th": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<th style=\"padding: 12px 10px; text-align: left;\">"
+          }
+        ],
+        "h5": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<h5>Fase del proceso</h5>"
+          }
+        ],
+        "tbody": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<tbody>"
+          }
+        ],
+        "td": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 3,
+            "muestra": "<td style=\"padding: 12px 10px;\"><strong>Llegada e impulsión</strong></td>"
+          }
+        ],
+        "div": [
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 7,
+            "muestra": "<div><strong>Ventajas</strong></div>"
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+            "seccion": 7,
+            "muestra": "<div><strong>Ventajas</strong></div>"
+          },
+          {
+            "pagina": "/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+            "seccion": 7,
+            "muestra": "<div><strong>Ventajas</strong></div>"
+          }
+        ]
+      },
+      "porPagina": {
+        "/es/sectores/calidad-del-aire-en-las-ciudades/": {
+          "modulos": 21,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/contaminacion-del-aire-por-la-mineria/": {
+          "modulos": 22,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "em",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/contaminacion-del-transporte-maritimo/": {
+          "modulos": 23,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/contaminacion-por-construccion/": {
+          "modulos": 21,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/control-de-emisiones-industriales/": {
+          "modulos": 25,
+          "fuera": [
+            "a",
+            "article",
+            "br",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/estudio-de-la-contaminacion-atmosferica/": {
+          "modulos": 21,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span"
+          ]
+        },
+        "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/": {
+          "modulos": 40,
+          "fuera": [
+            "a",
+            "article",
+            "br",
+            "div",
+            "h5",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span",
+            "sub",
+            "table",
+            "tbody",
+            "td",
+            "th",
+            "thead",
+            "tr"
+          ]
+        },
+        "/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/": {
+          "modulos": 42,
+          "fuera": [
+            "a",
+            "article",
+            "div",
+            "header",
+            "img",
+            "meta",
+            "ol",
+            "span",
+            "sub"
+          ]
+        }
+      }
+    }
+  },
+  "control": {
+    "contra": "medidas/kb-recon.json → veredicto.moduloTexto",
+    "discrepancias": []
+  },
+  "marcadores": {
+    "cuenta": {
+      "miga": 8,
+      "inventado": 0,
+      "shortcode-kunak": 16,
+      "swiper": 8,
+      "tarjeta-post": 16,
+      "lista-soluciones": 8
+    },
+    "muertos": [
+      "inventado"
+    ],
+    "ubicuos": [],
+    "totalModulos": 300
+  },
+  "veredicto": {
+    "pregunta": "¿los consumidores sobre los que se calibró `MODULO_TEXTO` traen, EN PROSA, las etiquetas que el tipo no expresa?",
+    "alcance": "sólo módulos `prosa`: los `anfitrion` hospedan shortcodes (miga · clientes · lista-soluciones · tarjetas) y no los modela `MODULO_TEXTO`",
+    "fueraDelTipoEnProsa": {
+      "articulos-kb": {
+        "a": 5,
+        "em": 2,
+        "sub": 7,
+        "span": 50,
+        "sup": 1,
+        "img": 1,
+        "i": 4
+      },
+      "sector-monografico": {
+        "span": 179,
+        "em": 1,
+        "br": 3,
+        "sub": 52,
+        "table": 1,
+        "thead": 1,
+        "tr": 9,
+        "th": 4,
+        "h5": 4,
+        "tbody": 1,
+        "td": 32,
+        "div": 4
+      }
+    },
+    "compartidas": [
+      "em",
+      "sub",
+      "span"
+    ],
+    "soloKb": [
+      "a",
+      "sup",
+      "img",
+      "i"
+    ],
+    "soloSm": [
+      "br",
+      "table",
+      "thead",
+      "tr",
+      "th",
+      "h5",
+      "tbody",
+      "td",
+      "div"
+    ],
+    "lectura": "INFRA-ESPECIFICADO: el tipo compartido ya no expresaba lo que traen en PROSA sus PROPIOS consumidores. Ensancharlo corrige una medición, no acomoda a un recién llegado."
+  }
+}
