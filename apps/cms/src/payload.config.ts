@@ -15,11 +15,21 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { construyeConfig } from "@kunak/cms-config";
+import { es } from "@payloadcms/translations/languages/es";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default construyeConfig({
   extra: {
+    /**
+     * F2-5: el admin EN ESPAÑOL. Va aquí y no en el paquete compartido porque
+     * es texto de la interfaz de admin — la Local API del build ni lo carga.
+     * `es` como único idioma y como `fallback`: quien edita es Ambientalia, y
+     * un menú a medias en inglés es exactamente lo que el traspaso no puede
+     * entregar. Las etiquetas de campos y colecciones ya están en español en
+     * la config (labels/descriptions); esto traduce el cromo de Payload.
+     */
+    i18n: { supportedLanguages: { es }, fallbackLanguage: "es" },
     admin: {
       user: "usuarios",
       importMap: { baseDir: path.resolve(dirname) },

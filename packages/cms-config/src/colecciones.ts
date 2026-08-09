@@ -94,6 +94,48 @@ export const esPublicable = (c: CollectionConfig) =>
 const conPublicacion = (c: CollectionConfig): CollectionConfig =>
   esPublicable(c) ? { ...c, fields: [...c.fields, ...PUBLICACION] } : c;
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS VISTAS DEL LISTADO — F2-5, y se DERIVAN, no se listan.
+ *
+ * El criterio del PLAN: columnas que identifican una entrada de un vistazo
+ * (título · slug · estado de publicación · fecha), «no los primeros N campos
+ * del esquema» — que es lo que Payload pone por defecto. Escribir las columnas
+ * colección a colección sería la lista a mano de quince entradas; aquí se
+ * componen de lo que cada colección YA declara: su `useAsTitle`, si tiene
+ * `slug`, y si es publicable (o sea, si `conPublicacion` le puso `estado`).
+ *
+ * Reparto:
+ *   · `Sistema` no se toca — `usuarios` y `slugs` traen sus columnas escritas;
+ *   · `upload` (media) tampoco: la biblioteca de medios de Payload ya lista
+ *     por fichero y miniatura, y unas columnas de texto la empeorarían;
+ *   · las publicables se ordenan por `-updatedAt` — quien edita busca «lo que
+ *     toqué hace un momento», no el id de inserción del seed. La lectura del
+ *     render NO depende de esto: el proyector pasa `sort: "id"` explícito;
+ *   · la búsqueda del listado va por el título y el slug, que es como quien
+ *     edita nombra las cosas.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const conVistas = (c: CollectionConfig): CollectionConfig => {
+  if (c.admin?.group === "Sistema" || c.upload) return c;
+  const nombres = new Set(c.fields.map((f) => ("name" in f ? f.name : null)).filter(Boolean));
+  const titulo = c.admin?.useAsTitle;
+  const columnas = [
+    ...(titulo ? [titulo] : []),
+    ...(nombres.has("slug") && titulo !== "slug" ? ["slug"] : []),
+    ...(nombres.has("estado") ? ["estado", "publicarEn"] : []),
+    "updatedAt",
+  ];
+  const busqueda = [...new Set([titulo, "slug"])].filter((n): n is string => !!n && nombres.has(n));
+  return {
+    ...c,
+    ...(nombres.has("estado") ? { defaultSort: "-updatedAt" } : {}),
+    admin: {
+      ...c.admin,
+      defaultColumns: c.admin?.defaultColumns ?? columnas,
+      listSearchableFields: c.admin?.listSearchableFields ?? busqueda,
+    },
+  };
+};
+
 export const COLECCIONES: CollectionConfig[] = [
   // Páginas de sector (§1.4 · §1.5 · §1.5b)
   sectores,
@@ -124,6 +166,8 @@ export const COLECCIONES: CollectionConfig[] = [
   usuarios,
 ]
   .map(conPublicacion)
+  /* después de `conPublicacion`: las columnas de estado sólo existen si él las puso */
+  .map(conVistas)
   .map(conDisparo);
 
 export {
