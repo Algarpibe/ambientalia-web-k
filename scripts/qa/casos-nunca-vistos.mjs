@@ -114,6 +114,68 @@ for (const { coleccion } of CATALOGOS) {
   declara(coleccion, cfg.fields, coleccion);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LO QUE ESTE INSTRUMENTO **NO PUEDE VER**, Y HASTA HOY NO LO DECÍA
+ *
+ * ── Cómo se destapó (2026-08-09, F3-1) ────────────────────────────────────
+ * Se le añadieron a `articulos-kb` tres campos y DOS BLOQUES NUEVOS —`blurb`
+ * con `reticula` (3 valores), `alineacion` (2), imagen y descripción opcionales;
+ * `gallery` con su array— y el titular **no se movió: 296 · 208, idéntico**. No
+ * porque la colección no admita casos: porque **el universo se construye sobre
+ * `CATALOGOS`**, y `articulos-kb` no tiene catálogo en `src/lib`. La colección
+ * entera era invisible.
+ *
+ * Es la clase de siempre —*no encontrar nada y no mirar nada dan la misma
+ * salida*— en su forma más cara: **el denominador no es el que el titular
+ * dice**. «296 casos que el esquema admite» eran los casos de las colecciones
+ * CON catálogo, y el número se venía citando como si fuera del esquema.
+ *
+ * ── Por qué NO se arregla metiéndolas en el universo ──────────────────────
+ * Porque entonces el 208 saltaría de golpe y **las actas que lo citan quedarían
+ * sin respaldo sin que nadie lo note** (regla 5: congelar sirve de poco si el
+ * número se mueve por debajo). Y porque significan cosas distintas: los 208 son
+ * casos que **el seed podría ejercitar y no ejercita**; éstos son casos que el
+ * seed **no puede ejercitar en absoluto**, porque no hay filas.
+ *
+ * Así que se cuentan APARTE y se NOMBRAN, que es la regla 1 aplicada al
+ * alcance: lo que se mira se cuenta, y lo que se deja fuera se declara con su
+ * razón. Una colección sin catálogo y sin razón escrita TIRA.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SIN_CATALOGO = {
+  "articulos-kb": "su dato NACE en el CMS (F3-1): se siembra desde `corpus/fase-3/`, no desde un catálogo de `src/lib`",
+  media: "no es un catálogo: se deriva de los campos `upload` de las demás",
+  usuarios: "infraestructura (CMS-0f), sin lado medido",
+  slugs: "registro del plano (§4): lo escriben los hooks, no un seed",
+  categorias: "taxonomía DERIVADA del corpus (`derivaTaxonomias`), no un catálogo propio",
+  etiquetas: "ídem",
+  "categorias-recursos": "ídem",
+  "categorias-cientificas": "ídem",
+};
+/**
+ * Las que **Payload añade solas** (`payload-kv`, `payload-locked-documents`,
+ * `payload-preferences`, `payload-migrations`…). Se reconocen por prefijo y NO
+ * se enumeran: una lista a mano de las internas de una dependencia envejece con
+ * cada `npm update` y su olvido volvería a TIRAR sin que nadie sepa por qué.
+ */
+const esInternaDePayload = (slug) => slug.startsWith("payload-");
+const conCatalogo = new Set(CATALOGOS.map((c) => c.coleccion));
+const invisible = new Map(); // coleccion → nº de casos que admite y nadie puede ejercitar
+for (const cfg of config.collections) {
+  if (conCatalogo.has(cfg.slug) || esInternaDePayload(cfg.slug)) continue;
+  if (!SIN_CATALOGO[cfg.slug])
+    throw new Error(
+      `COLECCIÓN SIN CATÁLOGO Y SIN RAZÓN: '${cfg.slug}'.\n` +
+        `  Este instrumento sólo puede ejercitar colecciones con catálogo en src/lib, así que\n` +
+        `  ésta queda fuera del 296 — y una exclusión sin razón escrita es indistinguible de\n` +
+        `  un olvido. Declárala en SIN_CATALOGO (regla 6: la ausencia se rechaza).`,
+    );
+  const antes = universo.size;
+  declara(cfg.slug, cfg.fields, cfg.slug);
+  invisible.set(cfg.slug, universo.size - antes);
+  /* Se sacan del universo otra vez: cuentan aparte, no en el 296. */
+  for (const k of [...universo.keys()]) if (universo.get(k).coleccion === cfg.slug) universo.delete(k);
+}
+
 /* ── LO EJERCITADO: el mismo recorrido sobre las filas de verdad ─────────── */
 const vistos = new Set();
 const ve = (ruta, forma, detalle = null) => vistos.add(`${ruta}\0${forma}${detalle ? `\0${detalle}` : ""}`);
@@ -228,6 +290,17 @@ if (problemas.length) {
   for (const p of problemas) console.error(`     · ${p}`);
 }
 
+/* El alcance, en voz alta: sin esta línea el titular de abajo se lee como si
+ * el 296 fuera «lo que el esquema admite», y son los catálogos. */
+const invisibles = [...invisible.values()].reduce((a, b) => a + b, 0);
+console.log(
+  `  ── FUERA DEL 296, y por eso se nombran: ${invisibles} casos en ${invisible.size} colecciones SIN CATÁLOGO ──\n` +
+    [...invisible].filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])
+      .map(([c, n]) => `     ${c.padEnd(22)} ${String(n).padStart(3)} casos — ${SIN_CATALOGO[c]}`).join("\n") +
+    `\n     Este instrumento NO puede ejercitarlos: no hay filas que recorrer. No son «208 + N»\n` +
+    `     — son otra pregunta, y la contesta el seed de su arquetipo, no éste.\n`,
+);
+
 console.log(
   `${problemas.length ? "❌" : "✅"} ${sinEjercitar.length} de ${universo.size} casos SIN EJERCITAR sobre ${filasRecorridas} filas.\n` +
     (problemas.length
@@ -247,6 +320,9 @@ w("medidas/casos-nunca-vistos.json", {
     sabotaje: SABOTAJE || null,
   },
   contrato: { universo: universo.size, filasRecorridas, ejercitados, minimo: ev.minimo, problemas },
+  /* El alcance, DENTRO de la congelada: un número citado de aquí trae al lado
+   * lo que su instrumento no podía mirar. */
+  fueraDelUniverso: { total: invisibles, porColeccion: Object.fromEntries(invisible), razones: SIN_CATALOGO },
   sinEjercitar: {
     total: sinEjercitar.length,
     porForma: Object.fromEntries(Object.entries(porForma).map(([k, v]) => [k, v.length])),

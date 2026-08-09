@@ -1,0 +1,3053 @@
+{
+  "meta": {
+    "fecha": "2026-08-09",
+    "que": "La media que referencia la captura de la FASE 3. Índice PROPIO: `media-corpus/INDICE.json` sigue en 534.",
+    "derivacion": "corpus/fase-3/INDICE.json → referencias a /wp-content/uploads/, con `origenDe()` colapsando variantes -WxH",
+    "etiqueta": "secuencial · 500 ms · nunca en paralelo · una petición por fichero, también entre corridas",
+    "porQue": "sin esto el original SIGUE en el camino crítico: 0 de las 56 imágenes de `articulos-kb` estaban capturadas.",
+    "fuera": "las VARIANTES (el pipeline reproduce su dimensión: 73/73) y 1 ruta(s) de DIRECTORIO que no son un fichero. El CASCARÓN **NO** se excluye: esa partición no se ha medido para estas páginas y el defecto se pone en la dirección que grita."
+  },
+  "resumen": {
+    "pedidos": 337,
+    "nuevos": 0,
+    "reutilizados": 337,
+    "fallos": 0,
+    "bytes": 101472967
+  },
+  "errores": [],
+  "ficheros": {
+    "2018/03/cloud-aqi-e1676883908116.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/03/cloud-aqi-e1676883908116.jpg",
+      "fichero": "2018/03/cloud-aqi-e1676883908116.jpg",
+      "bytes": 170188,
+      "sha256": "4a5baf1bc9f4d6784eec9f9c941460ba3d6acff177b4da7170825411903bdde8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2018/03/cloud-operation-alarms-e1676884474183.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/03/cloud-operation-alarms-e1676884474183.jpg",
+      "fichero": "2018/03/cloud-operation-alarms-e1676884474183.jpg",
+      "bytes": 116970,
+      "sha256": "512255dd7023cd1ad01347087731b23b65b9a41f3d768e9de33a2664573ec7cc",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2018/03/cloud-time-variation-e1676884641219.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/03/cloud-time-variation-e1676884641219.jpg",
+      "fichero": "2018/03/cloud-time-variation-e1676884641219.jpg",
+      "bytes": 190184,
+      "sha256": "fc209ff807ba1dc7c65f8550ed3ea232f9167cf4f5560f3413e50829dbf3eeb1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2018/06/IMG-20160729-WA0013-sice.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
+      "fichero": "2018/06/IMG-20160729-WA0013-sice.jpg",
+      "bytes": 539849,
+      "sha256": "9b70df38ec44a7005e7eba4ed8c30365b1c74db1ecaf5b2da44ac0a3e01fe111",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2018/06/kunak_monitorizacion_de_perimetro_emisiones_industriales_tecnalia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/06/kunak_monitorizacion_de_perimetro_emisiones_industriales_tecnalia.jpg",
+      "fichero": "2018/06/kunak_monitorizacion_de_perimetro_emisiones_industriales_tecnalia.jpg",
+      "bytes": 87993,
+      "sha256": "1e66b649fdd34236c9919cebf1c7a53d235f27c4b29fb2339bb76b98bb073e6f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg",
+      "fichero": "2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg",
+      "bytes": 103818,
+      "sha256": "575b16e9f6d920d11550436806d9ad8202cf3ae4a92b8e607009f5a560da914f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg",
+      "fichero": "2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg",
+      "bytes": 74940,
+      "sha256": "1b1a0a3676f5fa6ad1f441362249afb57ea96b212bb539dd87c9bb21c3f5c089",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2019/05/Kunak-Toulouse-Low-Cost-Sensors-Air-Quality.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2019/05/Kunak-Toulouse-Low-Cost-Sensors-Air-Quality.jpg",
+      "fichero": "2019/05/Kunak-Toulouse-Low-Cost-Sensors-Air-Quality.jpg",
+      "bytes": 56238,
+      "sha256": "d16280eeaffff7dcaeaeaf6f80044a195427603163c7ce7ba3525b5cb1034a84",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2019/05/Why-is-Spain-officially-the-worlds-healthiest-country.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2019/05/Why-is-Spain-officially-the-worlds-healthiest-country.jpg",
+      "fichero": "2019/05/Why-is-Spain-officially-the-worlds-healthiest-country.jpg",
+      "bytes": 642556,
+      "sha256": "05eb609d94f284acb6758ffb7e3d6566254e6ecfe006e30b8d0b2954193f6693",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2019/05/calidad-del-aire-ciudad-de-mexico.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2019/05/calidad-del-aire-ciudad-de-mexico.jpeg",
+      "fichero": "2019/05/calidad-del-aire-ciudad-de-mexico.jpeg",
+      "bytes": 90665,
+      "sha256": "301687ea306ca6eca6417dc6fed7ad55e56ddd4d5e851ef233d5bbd172eadd28",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2019/05/sports.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2019/05/sports.jpg",
+      "fichero": "2019/05/sports.jpg",
+      "bytes": 247317,
+      "sha256": "d0011da9810a3d036da26b672eef0f20c2b12fceac7a0a35de3665a731dc0306",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2020/03/The-necessity-of-standards-and-certification-programs.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/03/The-necessity-of-standards-and-certification-programs.jpg",
+      "fichero": "2020/03/The-necessity-of-standards-and-certification-programs.jpg",
+      "bytes": 63148,
+      "sha256": "f9951b237d4840f9cc8311c7bb866add87a9b353f69459f9fa00ccfb5506f9da",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2020/04/athletes-exposure-to-air-pollution-during-world-athletics-relays-a-pilot-study.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/04/athletes-exposure-to-air-pollution-during-world-athletics-relays-a-pilot-study.jpg",
+      "fichero": "2020/04/athletes-exposure-to-air-pollution-during-world-athletics-relays-a-pilot-study.jpg",
+      "bytes": 97507,
+      "sha256": "efcddecd72fc2a234849d6515038a8d3a2cbe7def371385d29cb38d5a89ba673",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/04/demolicion-estadio-vicente-calderon-0.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+      "fichero": "2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+      "bytes": 423909,
+      "sha256": "ea2f645fc2808e34c3e8bbfc7241f343cabbfd2878e7811d0f18ee2c6f18f48f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg",
+      "fichero": "2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg",
+      "bytes": 372614,
+      "sha256": "772cab5c99400c2440c797e8474a73dffac5b3e62b64530a958a362a1dfcda52",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2020/04/sensores-de-calidad-del-aire-usos-rendimiento.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/04/sensores-de-calidad-del-aire-usos-rendimiento.jpg",
+      "fichero": "2020/04/sensores-de-calidad-del-aire-usos-rendimiento.jpg",
+      "bytes": 36327,
+      "sha256": "7821a0ab393fa8a44a0bd96745af3f4522e190a24499a460852dc42d9d3be31e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/05/alaquas.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/05/alaquas.jpg",
+      "fichero": "2020/05/alaquas.jpg",
+      "bytes": 166222,
+      "sha256": "dfcc3f48417547c3a8da0b5284a77d570a01677eb795739068a717c3e291239f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2020/05/contaminación-por-mal-olor-problemas-ambientales.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/05/contaminación-por-mal-olor-problemas-ambientales.jpg",
+      "fichero": "2020/05/contaminación-por-mal-olor-problemas-ambientales.jpg",
+      "bytes": 53689,
+      "sha256": "22ed5a2d524853573cfd877101d238f2a82b28a9b82167576979aaa92df76fdf",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/05/covid-19-calidad-del-aire-articulos-de-interes.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/05/covid-19-calidad-del-aire-articulos-de-interes.jpg",
+      "fichero": "2020/05/covid-19-calidad-del-aire-articulos-de-interes.jpg",
+      "bytes": 60336,
+      "sha256": "ca1a92327ab142ba2d06831e3031860b925cd19e55f6b5f2647db4b8e649a9ac",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2020/06/detectores-de-emisiones-coronavirus-contaminacion.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/06/detectores-de-emisiones-coronavirus-contaminacion.jpg",
+      "fichero": "2020/06/detectores-de-emisiones-coronavirus-contaminacion.jpg",
+      "bytes": 88202,
+      "sha256": "27ea465a3c729519bd969787931464b64ad64bd400aa1d8df711dbcc23eeeabd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg",
+      "fichero": "2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg",
+      "bytes": 45219,
+      "sha256": "87fc232116b3fb5f09d29ac49ebf7223f34a336d4528a9ed53458817137a6a09",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/06/trafair.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/06/trafair.jpg",
+      "fichero": "2020/06/trafair.jpg",
+      "bytes": 53037,
+      "sha256": "e417d08a6afbae9e947bf16f64e7a228c11f147e5c57b683d67c66d022ccde0b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2020/08/donostia-urban-air-quality-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-quality-1.jpg",
+      "fichero": "2020/08/donostia-urban-air-quality-1.jpg",
+      "bytes": 614741,
+      "sha256": "a507656349020d8a80eb9ff4bc710b492fceb34e8cfd527d154a1d93c33e9e63",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 13
+    },
+    "2020/09/contaminacion-del-aire-en-el-deporte_.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/09/contaminacion-del-aire-en-el-deporte_.jpg",
+      "fichero": "2020/09/contaminacion-del-aire-en-el-deporte_.jpg",
+      "bytes": 48403,
+      "sha256": "dc666744e67fe0bd8d0322251b7dfdc11668eeb323790f4e9205720e3eceaf33",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/09/semana-movilidad-europea-particulas-y-gases.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg",
+      "fichero": "2020/09/semana-movilidad-europea-particulas-y-gases.jpg",
+      "bytes": 78576,
+      "sha256": "72547aee32308c41c612c2118274d2d94bd5dd616236c04029b14d92c84466eb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2020/10/circular-economy.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/10/circular-economy.jpg",
+      "fichero": "2020/10/circular-economy.jpg",
+      "bytes": 30657,
+      "sha256": "d13e165481ab2af1fc22ba1a0dc9f1562438d23f023dad986fad1d6ff8b4dc33",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2020/10/comparativa-de-los-informes-de-evaluacion-de-aqspec.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/10/comparativa-de-los-informes-de-evaluacion-de-aqspec.jpg",
+      "fichero": "2020/10/comparativa-de-los-informes-de-evaluacion-de-aqspec.jpg",
+      "bytes": 96329,
+      "sha256": "931a51986c36314a335781840e4fede44e9881ffff8413528ef4075d9f5ba95a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/11/agustin-torres-suez-labaqua.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/11/agustin-torres-suez-labaqua.jpg",
+      "fichero": "2020/11/agustin-torres-suez-labaqua.jpg",
+      "bytes": 58560,
+      "sha256": "41136b9998b54afd583045fabaff77b1ce8b3f67536b746e233e9aedef673121",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
+      "fichero": "2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
+      "bytes": 97353,
+      "sha256": "4093ef0c86e9864b4082894c0878939087fc9b40ad66d117bb0263d4fbc69898",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2020/11/sebastian-coe-world-athletics-calidad-aire-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/11/sebastian-coe-world-athletics-calidad-aire-kunak.jpg",
+      "fichero": "2020/11/sebastian-coe-world-athletics-calidad-aire-kunak.jpg",
+      "bytes": 56720,
+      "sha256": "0ade5294b66c06879ff26e11da0c8241303a273478c4073c64cbb4d93dd17ead",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2020/12/Kunak-green-move-sensores-de-calidad-del-aire-exterior.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2020/12/Kunak-green-move-sensores-de-calidad-del-aire-exterior.jpg",
+      "fichero": "2020/12/Kunak-green-move-sensores-de-calidad-del-aire-exterior.jpg",
+      "bytes": 116787,
+      "sha256": "4dee7db5fb53ee3857732fba992da65b8c45b0b802ce466a056dd2319fee69a5",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg",
+      "fichero": "2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg",
+      "bytes": 36370,
+      "sha256": "eaa65904a488b875909a25560cec4f7b0e6a901f1a771d06479462039ef6cbda",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2021/03/honorable-mention-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/03/honorable-mention-kunak.jpg",
+      "fichero": "2021/03/honorable-mention-kunak.jpg",
+      "bytes": 229661,
+      "sha256": "acc645dbeb006a9b7997e6a2cdca6b81b83a0e475a731b9908e41cc40dcaad0c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2021/03/jelle-hofman-air-quality-researcher-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/03/jelle-hofman-air-quality-researcher-kunak.jpg",
+      "fichero": "2021/03/jelle-hofman-air-quality-researcher-kunak.jpg",
+      "bytes": 43216,
+      "sha256": "ca1f5b2fd4ec5c93e2ca88126bcd1ba32e3e637d42b077069712b197703be7c8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2021/05/monitores-de-calidad-de-aire-moviles.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/05/monitores-de-calidad-de-aire-moviles.jpg",
+      "fichero": "2021/05/monitores-de-calidad-de-aire-moviles.jpg",
+      "bytes": 115752,
+      "sha256": "0f661bd2b76a433ef9fa66c96554dc8778df41fd3991d8e7d2022e0737b96f60",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2021/06/javier-fernandez-kunak-air-pro.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/06/javier-fernandez-kunak-air-pro.jpg",
+      "fichero": "2021/06/javier-fernandez-kunak-air-pro.jpg",
+      "bytes": 56443,
+      "sha256": "3b6290c520c689ceba02f835be12fe8809ab53a9e30e15c4f5309be510d8c909",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2021/06/port-of-bilbao-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/06/port-of-bilbao-kunak.jpg",
+      "fichero": "2021/06/port-of-bilbao-kunak.jpg",
+      "bytes": 334732,
+      "sha256": "3604af1f2fc53b6c21d957949a5d186e8efcb8cfebf26c16e513892a59d19154",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2021/06/zona-bajas-emisiones.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/06/zona-bajas-emisiones.jpg",
+      "fichero": "2021/06/zona-bajas-emisiones.jpg",
+      "bytes": 134687,
+      "sha256": "35f80e242484b88f34409e618f617af3174f54288b4aaad5b56be6fe0610a768",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2021/08/estres-por-calor.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/08/estres-por-calor.jpg",
+      "fichero": "2021/08/estres-por-calor.jpg",
+      "bytes": 17030,
+      "sha256": "ecf7841c5ac1e6651247902da77aa4fba71668c61ec123ac004fd87baf51c0ec",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+      "fichero": "2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+      "bytes": 92752,
+      "sha256": "34acf8f617ca4cbe6df8893c13f7f8e92cc041f4afe15bd5dbcdfd128e9be61b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2021/09/fondos-next-generation-eu.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/09/fondos-next-generation-eu.jpg",
+      "fichero": "2021/09/fondos-next-generation-eu.jpg",
+      "bytes": 40139,
+      "sha256": "381bfff602853ae4c9c9ad0605192509fcc1ff17f7dfbf9fcf41aad3e9509379",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2021/10/directrices-OMS-calidad-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/10/directrices-OMS-calidad-aire.jpg",
+      "fichero": "2021/10/directrices-OMS-calidad-aire.jpg",
+      "bytes": 33501,
+      "sha256": "75cb6521b387882684f7af20944bec36887395803c3117ed250973c7a9318bcc",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2021/10/kunak-air-pro-ganador-airlab-sensor-challenge.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/10/kunak-air-pro-ganador-airlab-sensor-challenge.jpg",
+      "fichero": "2021/10/kunak-air-pro-ganador-airlab-sensor-challenge.jpg",
+      "bytes": 61068,
+      "sha256": "d7a7141d37b49fc74a287f0b454e5291ed6012a271361a9e099df881df26236f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2021/11/airlab-logo.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/11/airlab-logo.png",
+      "fichero": "2021/11/airlab-logo.png",
+      "bytes": 3473,
+      "sha256": "8a784724d2197d563723b939303425fcfb0a74e9521002ed9af060212d9edd8e",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2021/11/sensores-de-calidad-del-aire-y-volcanes.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2021/11/sensores-de-calidad-del-aire-y-volcanes.jpg",
+      "fichero": "2021/11/sensores-de-calidad-del-aire-y-volcanes.jpg",
+      "bytes": 51539,
+      "sha256": "760f4ff80e73c3716a8b0b2f968d8a6ddb6005521c334213c330a9a0868e8d34",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2022/01/Kunak-Cloud-plataforma-web-calidad-del-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/01/Kunak-Cloud-plataforma-web-calidad-del-aire.jpg",
+      "fichero": "2022/01/Kunak-Cloud-plataforma-web-calidad-del-aire.jpg",
+      "bytes": 57433,
+      "sha256": "a84852de1e77d3249eaa4442fc16e0e21518b7459d411d56f757d2f9754cab18",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2022/01/albacete.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/01/albacete.jpg",
+      "fichero": "2022/01/albacete.jpg",
+      "bytes": 432538,
+      "sha256": "57e4cf140a87801800a4028127ab55e43dae44bc6bae0b6e63973444ab057561",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes.jpg",
+      "fichero": "2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes.jpg",
+      "bytes": 214214,
+      "sha256": "0894a949df3b59a16ca49779c8a68a29ab609cdaa69a848ce1bb54befae422bb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2022/02/the-cement-industry-and-the-environment-air-quality-monitoring.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/02/the-cement-industry-and-the-environment-air-quality-monitoring.jpg",
+      "fichero": "2022/02/the-cement-industry-and-the-environment-air-quality-monitoring.jpg",
+      "bytes": 59476,
+      "sha256": "532ea1c80d6e2523c801389ccf4d512ba4bc0f56c4b26b53b6709544a52115eb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2022/03/EXPERT.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/03/EXPERT.svg",
+      "fichero": "2022/03/EXPERT.svg",
+      "bytes": 4177,
+      "sha256": "8eef2351b6e53790a848c3ca4986a6f44529620ec1e559003eadfc1364aba642",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/03/Kunak-ASIC-2022.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/03/Kunak-ASIC-2022.jpg",
+      "fichero": "2022/03/Kunak-ASIC-2022.jpg",
+      "bytes": 93178,
+      "sha256": "537ec26607a61d26715c98e3577790415adc7ddf9f8f286fb151565b2771b23e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2022/03/VIEWER.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/03/VIEWER.svg",
+      "fichero": "2022/03/VIEWER.svg",
+      "bytes": 4203,
+      "sha256": "af0caf81ee0167ed4b92f9ea525c3bf7f6eb95f8cb1fa9f093d9cca6e705d165",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/03/apbc-autoridad-portuaria-bahia-cadiz.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/03/apbc-autoridad-portuaria-bahia-cadiz.jpg",
+      "fichero": "2022/03/apbc-autoridad-portuaria-bahia-cadiz.jpg",
+      "bytes": 209846,
+      "sha256": "62b41a6d60ec098f29989252de1c101ef78c46b6e9161c42f8ab8ecaf82577a7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/04/asazgua-2-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/04/asazgua-2-1.jpg",
+      "fichero": "2022/04/asazgua-2-1.jpg",
+      "bytes": 204180,
+      "sha256": "a4a6140fb180b3c60d69bd2e5260104e33b66e7041b22d34fa854a050b506e41",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/04/quemas-prescritas-agricolas-calidad-aire-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/04/quemas-prescritas-agricolas-calidad-aire-1.jpg",
+      "fichero": "2022/04/quemas-prescritas-agricolas-calidad-aire-1.jpg",
+      "bytes": 33182,
+      "sha256": "4ed93fcb5b0235d8e21971415c63b2ebef5b509d77091195ae5686332a167bb2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2022/05/atmo-hausde-france.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/05/atmo-hausde-france.jpg",
+      "fichero": "2022/05/atmo-hausde-france.jpg",
+      "bytes": 330644,
+      "sha256": "63481d6c79dea3c43de63c60539de6786981df146f05aad2a44cc53da29d462e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/05/redes-hibridas-de-vigilancia-de-la-calidad-del-aire_.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/05/redes-hibridas-de-vigilancia-de-la-calidad-del-aire_.jpg",
+      "fichero": "2022/05/redes-hibridas-de-vigilancia-de-la-calidad-del-aire_.jpg",
+      "bytes": 151652,
+      "sha256": "43c6c0d06e0a9dcce4fe937b2f472c922e148a1c5cd72531ae40d57c3532ba11",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights.jpg",
+      "fichero": "2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights.jpg",
+      "bytes": 206054,
+      "sha256": "1f741fd2f6a4a4c55d4efe8b4388c23f01871d5759cc2b498ce70f3b682b1cbd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2022/06/Filipinas-Kunak-04.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/06/Filipinas-Kunak-04.jpg",
+      "fichero": "2022/06/Filipinas-Kunak-04.jpg",
+      "bytes": 107904,
+      "sha256": "25f966257318d9dd88db8bd10a90135f4388341970e6f0f5971a2e0cd3eeda50",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2022/06/brazil-iron.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/06/brazil-iron.jpg",
+      "fichero": "2022/06/brazil-iron.jpg",
+      "bytes": 248197,
+      "sha256": "bbabacab63a6a86b6d4bfbcf57ab3e8bf96a736d83ff243b5f986e27564e6fb0",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/06/kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/06/kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg",
+      "fichero": "2022/06/kunak-air-lite-estacion-calidad-aire-compacta-basada-en-sensores.jpg",
+      "bytes": 96529,
+      "sha256": "b3a62846ffd72d9d9b13bd7d2a1a76c6e8809b9c7f226bbe3e8afc3bfda5e082",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2022/07/cemex.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/07/cemex.jpg",
+      "fichero": "2022/07/cemex.jpg",
+      "bytes": 257209,
+      "sha256": "4482c46dc66a5ae92bd8df4655987e89cc905faa300b850239b39027a4ae56e4",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/07/control-de-emisiones-industriales.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/07/control-de-emisiones-industriales.jpg",
+      "fichero": "2022/07/control-de-emisiones-industriales.jpg",
+      "bytes": 46907,
+      "sha256": "dfb0b67eabfc95d89253c5c2663c22aedff0d942f1ad23b3dc947184380b2362",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2022/07/industrial-air-emission-control-WTP-Arazuri.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/07/industrial-air-emission-control-WTP-Arazuri.jpg",
+      "fichero": "2022/07/industrial-air-emission-control-WTP-Arazuri.jpg",
+      "bytes": 191384,
+      "sha256": "49a8075e37b39a8799734ed217b33adcdf2e86bb21fce92128b8511447b9c7fb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2022/08/Plan-de-Recuperacion-Transformacion-y-Resiliencia-ayudas-ZBE.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/08/Plan-de-Recuperacion-Transformacion-y-Resiliencia-ayudas-ZBE.jpg",
+      "fichero": "2022/08/Plan-de-Recuperacion-Transformacion-y-Resiliencia-ayudas-ZBE.jpg",
+      "bytes": 116064,
+      "sha256": "4b8ede88d037a4ec5f31a0961e05ea58faf4f31a37dc66bf8f319b371416457b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2022/09/monitorizacion-calidad-del-aire-alrededor-de-los-colegios.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/09/monitorizacion-calidad-del-aire-alrededor-de-los-colegios.jpg",
+      "fichero": "2022/09/monitorizacion-calidad-del-aire-alrededor-de-los-colegios.jpg",
+      "bytes": 93794,
+      "sha256": "7124da2817aff3353e5ff54089541f1ae1ef14c62a480d1e02e6de27fc5f76f7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2022/10/industrial-odour-control.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/10/industrial-odour-control.jpg",
+      "fichero": "2022/10/industrial-odour-control.jpg",
+      "bytes": 75743,
+      "sha256": "7e3d293e8612925f2a0cb9678e3501957f71073d0c4728f8c39710b4127770a9",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1.png",
+      "fichero": "2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1.png",
+      "bytes": 229148,
+      "sha256": "a105c77db2d9c413358bf50d676532ccafc939c2bf7e86778ce1029dd2d9d501",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2022/11/real-time-air-quality-monitoring-in-maritime-ports-AQE-2022-award-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/11/real-time-air-quality-monitoring-in-maritime-ports-AQE-2022-award-1.jpg",
+      "fichero": "2022/11/real-time-air-quality-monitoring-in-maritime-ports-AQE-2022-award-1.jpg",
+      "bytes": 156339,
+      "sha256": "3c2081d5309c5ba5efd7484a77377c925e54bae4375ac078ef3bc38753820ecd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2022/12/cabecera-puerto-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg",
+      "fichero": "2022/12/cabecera-puerto-1.jpg",
+      "bytes": 117494,
+      "sha256": "117ced0165b9ef75c82774008394e1897ca072811fa801b5f24850f1ce4287b1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 107
+    },
+    "2022/12/cabecera-puerto.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto.jpg",
+      "fichero": "2022/12/cabecera-puerto.jpg",
+      "bytes": 89370,
+      "sha256": "48c68fb4fc4de4ffa13e247a9db74b1e176855d3ba3937d70a00a9ccafb5eddd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2022/12/imagen-banner-principal.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/12/imagen-banner-principal.jpg",
+      "fichero": "2022/12/imagen-banner-principal.jpg",
+      "bytes": 346806,
+      "sha256": "0c707d0447d14df1ebf38f4ffaf7b673da454857b8035f79322d5f301bd40eff",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 22
+    },
+    "2022/12/punteado.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+      "fichero": "2022/12/punteado.svg",
+      "bytes": 2075,
+      "sha256": "fe38e9c5b158cb1131c1793bee0510d1b27ca9892d068ae8db64242e33fe6e07",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 22
+    },
+    "2022/12/recurso-k-fondo.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2022/12/recurso-k-fondo.svg",
+      "fichero": "2022/12/recurso-k-fondo.svg",
+      "bytes": 346,
+      "sha256": "08fb1a8cd3e635e02f23bc8a837ccae933d17e582d4949c06077753f5d9e7875",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 7
+    },
+    "2023/01/AQ-SPEC.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/AQ-SPEC.svg",
+      "fichero": "2023/01/AQ-SPEC.svg",
+      "bytes": 21237,
+      "sha256": "39257028a11af50839f03ed2cd69d72bf16c2760c09eb934f7af39119db104c3",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+      "fichero": "2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+      "bytes": 4465,
+      "sha256": "92a87342bd3ef97ad6b803d87cdbde7f5973ea12d49065875dce70fecde1a6b2",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/Kunak-collage-leading-company-in-air-quality-monitoring-1.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/Kunak-collage-leading-company-in-air-quality-monitoring-1.png",
+      "fichero": "2023/01/Kunak-collage-leading-company-in-air-quality-monitoring-1.png",
+      "bytes": 185552,
+      "sha256": "3579529f3c05ce89e0caf76781143f8db0462ffa76fcd3c54cf60b2e8af13ad6",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2023/01/air-cloud.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg",
+      "fichero": "2023/01/air-cloud.jpg",
+      "bytes": 132577,
+      "sha256": "a64ddadb83bfed8c49e4f5c91b217f8dd8630bee0fa3b7a0263e1bbb8eb9f617",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2023/01/construction-1920x1024-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/construction-1920x1024-1.jpg",
+      "fichero": "2023/01/construction-1920x1024-1.jpg",
+      "bytes": 339175,
+      "sha256": "6028d5b9b4c820eab61207917aab32a31ffccb5a371a445d0cdafcde0d767c54",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/construction.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/construction.svg",
+      "fichero": "2023/01/construction.svg",
+      "bytes": 6234,
+      "sha256": "9cc6a27c3823e721d887796ff20c20d25e2e516a57a49079c1f5bad79c55b446",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/01/impacto-de-la-mineria-en-la-calidad-del-aire-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/impacto-de-la-mineria-en-la-calidad-del-aire-kunak.jpg",
+      "fichero": "2023/01/impacto-de-la-mineria-en-la-calidad-del-aire-kunak.jpg",
+      "bytes": 448543,
+      "sha256": "a3e88dd8fd69caf518b2d1e8d08915527f2ee2230eb1b708bed3e56c3d027b88",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/01/industry-1920x1024-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/industry-1920x1024-1.jpg",
+      "fichero": "2023/01/industry-1920x1024-1.jpg",
+      "bytes": 303960,
+      "sha256": "c9f98d81b4d431e8769816ba0034242e2d90cd490318592af9e1139bdd581f4c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/industry.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/industry.svg",
+      "fichero": "2023/01/industry.svg",
+      "bytes": 1805,
+      "sha256": "74f6b0f05771584b1d8a4f7faf1e1d2fa9149c4236aff261b0e111bb36af4c82",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/01/mining-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/mining-1.jpg",
+      "fichero": "2023/01/mining-1.jpg",
+      "bytes": 312857,
+      "sha256": "1244be860a040fb1fa8cca1e0a20b12c60b7d23606cd96708429dc0f69cc4106",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/mining-1920x1024-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/mining-1920x1024-1.jpg",
+      "fichero": "2023/01/mining-1920x1024-1.jpg",
+      "bytes": 1822995,
+      "sha256": "0e466387fd228f056debc6cd5160a8ef2652c22ac1d5a2138e362368f3c42fef",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/mining.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/mining.svg",
+      "fichero": "2023/01/mining.svg",
+      "bytes": 3563,
+      "sha256": "bdc59fe7d9d163f3acd356a94ba5dfb1db07190f5cc9926932c4bdc5ad5ba5e9",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/01/research-1920.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/research-1920.jpg",
+      "fichero": "2023/01/research-1920.jpg",
+      "bytes": 144041,
+      "sha256": "24a440f152d67cc96183d526409dd34d39a3ddb805fd4758c5e492e4c8e05565",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/research.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/research.svg",
+      "fichero": "2023/01/research.svg",
+      "bytes": 10974,
+      "sha256": "a8e1ea67bcf94106ae2503cdedb0258658a50ef7f77b4b4a08ee4d690282b650",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/01/urban-1500.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/urban-1500.jpg",
+      "fichero": "2023/01/urban-1500.jpg",
+      "bytes": 211345,
+      "sha256": "7973c8534adaa395a06e892414976c5acc36d680f1c64f632c7316bb3962f706",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/urban-1920.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/urban-1920.jpg",
+      "fichero": "2023/01/urban-1920.jpg",
+      "bytes": 312457,
+      "sha256": "401c172ba84f6db52c9c84e0616f9ebde5089a3fae45e3b86f8f0fb1aba1fc69",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/01/urban-2.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/01/urban-2.svg",
+      "fichero": "2023/01/urban-2.svg",
+      "bytes": 13433,
+      "sha256": "59201b40885c90e65c08c4471315423febfdb6579e3792a0e36bca9ca31d5858",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg",
+      "fichero": "2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg",
+      "bytes": 64892,
+      "sha256": "377cff0f427a71903f9256a14a5f1ecc350fd823bd79dd88d99dfec74c42fd22",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/01-Kunak-AIR-Pro-1-scaled.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled.jpg",
+      "fichero": "2023/02/01-Kunak-AIR-Pro-1-scaled.jpg",
+      "bytes": 270712,
+      "sha256": "afa997149996835b481a2a8eab73c29a1175de88e9899a9cf1b80ce540e6b262",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2023/02/Algoritmo-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Algoritmo-Kunak.jpg",
+      "fichero": "2023/02/Algoritmo-Kunak.jpg",
+      "bytes": 40517,
+      "sha256": "151830537432f77d0ab2f41e2a61522e98d38bdf534dcfda9cae4eca748f315c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Intra-model-Varialibity.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Intra-model-Varialibity.png",
+      "fichero": "2023/02/Intra-model-Varialibity.png",
+      "bytes": 6175,
+      "sha256": "f312d81e1869c3be7e36c4b549f9488846d62370406c49a5f59a599e1eef97a4",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Kunak-AIR-Lite.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Lite.jpg",
+      "fichero": "2023/02/Kunak-AIR-Lite.jpg",
+      "bytes": 64905,
+      "sha256": "58645e58245815c16e62e23a9bbf358aef259732fd0341f099e77c9f3cafcea5",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Kunak-AIR-Pro.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Pro.jpg",
+      "fichero": "2023/02/Kunak-AIR-Pro.jpg",
+      "bytes": 22554,
+      "sha256": "6534cf6f1dfb9a2e5075af1e10e4fbe85975b7738be4ad63ee1e6b2438bd0296",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Kunak-logo.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-logo.png",
+      "fichero": "2023/02/Kunak-logo.png",
+      "bytes": 2730,
+      "sha256": "938db2cf9e08d012b443a71416780c5d4665361f2163d5eefa2d30542f54a9da",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/Reliable-rugged.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Reliable-rugged.svg",
+      "fichero": "2023/02/Reliable-rugged.svg",
+      "bytes": 3672,
+      "sha256": "13ebbd36a40d9b4f69212aa522f3e12db1d5ea9c05c3433b5443ecd46e9a9ad1",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/US-EPA-united-states-environmental-protection-agency-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/US-EPA-united-states-environmental-protection-agency-1.svg",
+      "fichero": "2023/02/US-EPA-united-states-environmental-protection-agency-1.svg",
+      "bytes": 21044,
+      "sha256": "29261d85503e9753928d00abd4582056ef7cf1c376802d6d86c63c290f786c45",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/Video-Checking-before-deployment.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-Checking-before-deployment.jpg",
+      "fichero": "2023/02/Video-Checking-before-deployment.jpg",
+      "bytes": 15937,
+      "sha256": "a5938178197eebfbb5528d27d6991ec1fc204e191d4ccc80fd9052ee3f6432e2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-account-and-device-management.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-account-and-device-management.jpg",
+      "fichero": "2023/02/Video-account-and-device-management.jpg",
+      "bytes": 27269,
+      "sha256": "be4922d9842bdb314fd0c3c513efe811bd6bbc08002b97aca413f2437937fecc",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-air-quality-index-control-panel-aqi.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-air-quality-index-control-panel-aqi.jpg",
+      "fichero": "2023/02/Video-air-quality-index-control-panel-aqi.jpg",
+      "bytes": 66627,
+      "sha256": "057fae7b1e3831fbcf8eb675dbbe988a5730f2300c658e08687d464ac1a33573",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-gas-calibration-tool.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-gas-calibration-tool.jpg",
+      "fichero": "2023/02/Video-gas-calibration-tool.jpg",
+      "bytes": 17982,
+      "sha256": "92ac01e79542206a7b0c384fd8daf84d60c4dc4488700a6a6025127fb2b66a89",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-installation-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-installation-1.jpg",
+      "fichero": "2023/02/Video-installation-1.jpg",
+      "bytes": 17247,
+      "sha256": "c7173a86ba872e1694dcad109c05f667b6587e2d768ef94f1e9a07f46c2dab82",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-installation-of-a-probe.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-installation-of-a-probe.jpg",
+      "fichero": "2023/02/Video-installation-of-a-probe.jpg",
+      "bytes": 15372,
+      "sha256": "7c71c50367b710a5c01286b41b0c1ff6c681b2e4c21cbd6aea2551dda0c36a41",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-introduction-to-Kunak-Cloud.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-introduction-to-Kunak-Cloud.jpg",
+      "fichero": "2023/02/Video-introduction-to-Kunak-Cloud.jpg",
+      "bytes": 33332,
+      "sha256": "2332b4d4e0da08c1da6cba5e678a45242fd9c9d2e12405bd48e36df6b1088bb6",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-replacement-of-a-cartridge.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-replacement-of-a-cartridge.jpg",
+      "fichero": "2023/02/Video-replacement-of-a-cartridge.jpg",
+      "bytes": 8739,
+      "sha256": "403349ae4a3eaefe44cfc7e7b1a59b301df563b4463f5ce4cfb409625867f13d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-solar-panel-installation.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-solar-panel-installation.jpg",
+      "fichero": "2023/02/Video-solar-panel-installation.jpg",
+      "bytes": 11691,
+      "sha256": "06984cdc8d1c137a93e7b44aade04bbb062d755bb42043bacd972442f9fa79b8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/Video-storage-and-transportation.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/Video-storage-and-transportation.jpg",
+      "fichero": "2023/02/Video-storage-and-transportation.jpg",
+      "bytes": 17962,
+      "sha256": "9fcad8c34a6d2f498d123558ed91f39589711dd1c1896b9296bd7dd8f6a4a4f2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/accuracy.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/accuracy.svg",
+      "fichero": "2023/02/accuracy.svg",
+      "bytes": 1440,
+      "sha256": "ca3f6224db88d7e9e2d69a0354b7fb49d07f5248c4b603a3b2d1afaf7f78d1ed",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/additional-probes.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/additional-probes.svg",
+      "fichero": "2023/02/additional-probes.svg",
+      "bytes": 1622,
+      "sha256": "3e42ec45808c08eff93ad866434746d7b7a7326b5be0b635887029360c11616d",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/arquitectura-datos.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/arquitectura-datos.svg",
+      "fichero": "2023/02/arquitectura-datos.svg",
+      "bytes": 101765,
+      "sha256": "42196b693d181b9f66fe92844db9ba6aa6c2fe10dcb5a6d31661391e8c3cba29",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/awarded.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/awarded.svg",
+      "fichero": "2023/02/awarded.svg",
+      "bytes": 5709,
+      "sha256": "7797ba5177832692c08f2ef529e9ecd08e2c0cab1181778aea4585f8822234eb",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/best-accuracy.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/best-accuracy.jpg",
+      "fichero": "2023/02/best-accuracy.jpg",
+      "bytes": 116193,
+      "sha256": "c53af3ea84716cb6437b35d190067ba7d6b8e99e01637c52a86bda52cf9b3f0f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/best-support.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/best-support.svg",
+      "fichero": "2023/02/best-support.svg",
+      "bytes": 1879,
+      "sha256": "7bb2a5a15d02d671f0a5c5a50c3c0b6a8b3179b6c8fe9354543418e831e4d0bf",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/cartridge-system.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/cartridge-system.svg",
+      "fichero": "2023/02/cartridge-system.svg",
+      "bytes": 2449,
+      "sha256": "dfa93bc7b7c5231cd5452bdd0874035524acb98510241df0b81e0a82cef538c7",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/cloud-photo-adaptada.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/cloud-photo-adaptada.jpg",
+      "fichero": "2023/02/cloud-photo-adaptada.jpg",
+      "bytes": 295261,
+      "sha256": "ce055987a204077623736cee11ac3fed67c2881d3994ad9e5c7f405c3832a5f0",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/cloud-platform.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/cloud-platform.svg",
+      "fichero": "2023/02/cloud-platform.svg",
+      "bytes": 4425,
+      "sha256": "38f3327bdee1b005ce8b62d4b70dfb5415a82a8b16fe85121fb172b096c37906",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/control-garantia-calidad.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/control-garantia-calidad.svg",
+      "fichero": "2023/02/control-garantia-calidad.svg",
+      "bytes": 93106,
+      "sha256": "502264d93a26f8b79b701d57712d8bde837a4c2050bec70a99c0f20a10ec8a2c",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/cropped-favicon.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/cropped-favicon.png",
+      "fichero": "2023/02/cropped-favicon.png",
+      "bytes": 1976,
+      "sha256": "926020efdf4abc4642c09d0656c261586ca4ff203a7a2356a9568e7726b505ea",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 996
+    },
+    "2023/02/data-quality-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/data-quality-1.svg",
+      "fichero": "2023/02/data-quality-1.svg",
+      "bytes": 2432,
+      "sha256": "0f6538855c36cd3f8cf27686492414577e8a8406f538d5f90108758f3b7cbf01",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/data-sharing-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/data-sharing-1.svg",
+      "fichero": "2023/02/data-sharing-1.svg",
+      "bytes": 1432,
+      "sha256": "a8e30dddd6d516a5576295e29cf0d1579aa3661b423b7c6308ab7e3fdb67ec08",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/decision-making.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/decision-making.svg",
+      "fichero": "2023/02/decision-making.svg",
+      "bytes": 2104,
+      "sha256": "2e15285e0bf59ea3921261dddc50b7bbd44c500d83755b60c6d11e232558970a",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/easy-calibration.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/easy-calibration.svg",
+      "fichero": "2023/02/easy-calibration.svg",
+      "bytes": 3211,
+      "sha256": "abda77882977449b8dea8d9b950e18370073b06ada24042229c219ff150ad9b9",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/easy-fast-installation.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/easy-fast-installation.svg",
+      "fichero": "2023/02/easy-fast-installation.svg",
+      "bytes": 2811,
+      "sha256": "a97c45dc413085f9ff58237a32002c1c8311aa70ca6e3054fa20074e863694b4",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/easy-to-setup.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-setup.svg",
+      "fichero": "2023/02/easy-to-setup.svg",
+      "bytes": 2770,
+      "sha256": "3b93a413cd1f6de46a6cab1e35224716654ea4de75ff3d23b475c840097e08b2",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/easy-to-use.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-use.svg",
+      "fichero": "2023/02/easy-to-use.svg",
+      "bytes": 1721,
+      "sha256": "7895e5af15007b869d2f9766e7cac2c5d5f300dc71c40391b66ec164edd333dd",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/ecology.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/ecology.svg",
+      "fichero": "2023/02/ecology.svg",
+      "bytes": 7241,
+      "sha256": "d34a9553f197d29f5acf774a1904455b0161a009470df89ee16341139018ca5b",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/efficiency-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/efficiency-1.svg",
+      "fichero": "2023/02/efficiency-1.svg",
+      "bytes": 2748,
+      "sha256": "282490bbdd6649e1f39775d403bec8b2d851fd1431b32185bb702abe58040e8f",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/endless-combinations.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/endless-combinations.svg",
+      "fichero": "2023/02/endless-combinations.svg",
+      "bytes": 4115,
+      "sha256": "203810b9060269a305e1210327ae6de291fd6c194d9e031073fdeaeb9ba3cb3f",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/estacion-referencia-calidad-del-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/estacion-referencia-calidad-del-aire.jpg",
+      "fichero": "2023/02/estacion-referencia-calidad-del-aire.jpg",
+      "bytes": 42637,
+      "sha256": "60b0427e4bd1236a049f3df73a107651985b47e13e6714a851c47ca5a84b62a4",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/evidence-accuracy.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/evidence-accuracy.jpg",
+      "fichero": "2023/02/evidence-accuracy.jpg",
+      "bytes": 119400,
+      "sha256": "74287086fba5c1fc331f92dfec8274478efb199f240ea9639ecbed57f360de88",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/fast.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/fast.svg",
+      "fichero": "2023/02/fast.svg",
+      "bytes": 3954,
+      "sha256": "85f67c05ecc21e0c159586ac7ac79c2e50f469c7450b05a556a31c427ed9fd15",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/flexible-scalable-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/flexible-scalable-1.svg",
+      "fichero": "2023/02/flexible-scalable-1.svg",
+      "bytes": 1105,
+      "sha256": "69a7fd5a446cabf768b6c7030580737f43a90201aa93bcb64a19e54845f70c9d",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/flexible.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/flexible.svg",
+      "fichero": "2023/02/flexible.svg",
+      "bytes": 1092,
+      "sha256": "125738e2c474df1d79a08d59558e72239bd654c8d0143ea1617e2b985e93d324",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/fondo-contacto.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/fondo-contacto.jpg",
+      "fichero": "2023/02/fondo-contacto.jpg",
+      "bytes": 77008,
+      "sha256": "a952e9514f9b23991cab58c37e0181fd490ea017674de974676485c51a707171",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/global-presence.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/global-presence.svg",
+      "fichero": "2023/02/global-presence.svg",
+      "bytes": 8418,
+      "sha256": "fc72d219ecbba98dda435f88c64cea8b58a0fdc9fb7112a5276486f8015cda92",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/human-centered.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/human-centered.svg",
+      "fichero": "2023/02/human-centered.svg",
+      "bytes": 1507,
+      "sha256": "6bbc82f0149e3685c08f280a6832fc7d53727afa64366555e7476b46a1e0ac51",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image026-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image026-2.png",
+      "fichero": "2023/02/image026-2.png",
+      "bytes": 12540,
+      "sha256": "b7a514ad540dce14e37b781866c7a0c33ba663b5510dba749af32f5a036360d1",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image026.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image026.png",
+      "fichero": "2023/02/image026.png",
+      "bytes": 12540,
+      "sha256": "b7a514ad540dce14e37b781866c7a0c33ba663b5510dba749af32f5a036360d1",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image027-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image027-2.png",
+      "fichero": "2023/02/image027-2.png",
+      "bytes": 6591,
+      "sha256": "5f107a514f2a3a78250f9fd1f357a70957c8bfd3262761e71b1c84c58f52716d",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image027.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image027.png",
+      "fichero": "2023/02/image027.png",
+      "bytes": 6591,
+      "sha256": "5f107a514f2a3a78250f9fd1f357a70957c8bfd3262761e71b1c84c58f52716d",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image028-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image028-2.png",
+      "fichero": "2023/02/image028-2.png",
+      "bytes": 8013,
+      "sha256": "3ef7e3bc0a58ca7b000f626182407fcc314de045b1920e5f0cd810f977217463",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image028.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image028.png",
+      "fichero": "2023/02/image028.png",
+      "bytes": 8013,
+      "sha256": "3ef7e3bc0a58ca7b000f626182407fcc314de045b1920e5f0cd810f977217463",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image029-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image029-2.png",
+      "fichero": "2023/02/image029-2.png",
+      "bytes": 6397,
+      "sha256": "8ba060597c12fb5e5d232ef3ab3784fc4cdb08df17fed63eaa4e7466afa490fd",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image029.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image029.png",
+      "fichero": "2023/02/image029.png",
+      "bytes": 6397,
+      "sha256": "8ba060597c12fb5e5d232ef3ab3784fc4cdb08df17fed63eaa4e7466afa490fd",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image030-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image030-2.png",
+      "fichero": "2023/02/image030-2.png",
+      "bytes": 9159,
+      "sha256": "e4533b8d29fb2c363e3e3e4808c07de08c691397a9c5072b99289c156591dfe2",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image030.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image030.png",
+      "fichero": "2023/02/image030.png",
+      "bytes": 9159,
+      "sha256": "e4533b8d29fb2c363e3e3e4808c07de08c691397a9c5072b99289c156591dfe2",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/image031-2.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image031-2.png",
+      "fichero": "2023/02/image031-2.png",
+      "bytes": 7188,
+      "sha256": "f27707c0d60eb2df4239f6c4d2f11e947910430c4ea5f672a7ec52f3d091977b",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2023/02/image031.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/image031.png",
+      "fichero": "2023/02/image031.png",
+      "bytes": 7188,
+      "sha256": "f27707c0d60eb2df4239f6c4d2f11e947910430c4ea5f672a7ec52f3d091977b",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/immediately.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/immediately.svg",
+      "fichero": "2023/02/immediately.svg",
+      "bytes": 4361,
+      "sha256": "946b937d55c87318cabe96a9d7f55d83d11d997604a331b4c58876cf73bc1c39",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/innovation.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/innovation.svg",
+      "fichero": "2023/02/innovation.svg",
+      "bytes": 4386,
+      "sha256": "b41708a47b4267b9dff72a5cbe1fdbfb8012fd4c943d4c3c08d4e03b01f1e005",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/kunak-air-applications.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/kunak-air-applications.jpg",
+      "fichero": "2023/02/kunak-air-applications.jpg",
+      "bytes": 196043,
+      "sha256": "4d88b12ca55934b19ec2a0e2e65cfbf4e2de54558970044ba95f6821070d7d33",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/kunak-air-cloud.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/kunak-air-cloud.svg",
+      "fichero": "2023/02/kunak-air-cloud.svg",
+      "bytes": 3875,
+      "sha256": "e88820b0d877ecfbb4590c0a62e3d86b57d11eb040af8ed3b32d81c3e94a579b",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/kunak-api.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/kunak-api.jpg",
+      "fichero": "2023/02/kunak-api.jpg",
+      "bytes": 70156,
+      "sha256": "bc801998237955203fb358763fd4e9bf40711f5547fda92ee84c7155873e74af",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/kunak-cloud-screenshot-1.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/kunak-cloud-screenshot-1.jpeg",
+      "fichero": "2023/02/kunak-cloud-screenshot-1.jpeg",
+      "bytes": 84639,
+      "sha256": "d83a535b0f72c191aba2a05b653e92ac54cba64212b65c587c8ee286dac513bc",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/kunak-smart-gas-cartridges-p3brvpk3ptby95uqta8y2i1mrn1x6zk6jagxhn2d12.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/kunak-smart-gas-cartridges-p3brvpk3ptby95uqta8y2i1mrn1x6zk6jagxhn2d12.jpg",
+      "fichero": "2023/02/kunak-smart-gas-cartridges-p3brvpk3ptby95uqta8y2i1mrn1x6zk6jagxhn2d12.jpg",
+      "bytes": 31615,
+      "sha256": "6eee49e3e61cb24cca04f65519d08fa5b5ce7fdb0462a1660d820c5c0a3e4659",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/multi-pollutant-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/multi-pollutant-1.svg",
+      "fichero": "2023/02/multi-pollutant-1.svg",
+      "bytes": 3798,
+      "sha256": "912532234b72f2661b176d26b9e6ad543514599e11f7904abe0060690f215894",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/patented-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/patented-1.svg",
+      "fichero": "2023/02/patented-1.svg",
+      "bytes": 1876,
+      "sha256": "aa69b303802e7f6062e8c311a7d8a2331f2423ae0356c71f88006284eb6f7cd6",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/plug-play.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/plug-play.svg",
+      "fichero": "2023/02/plug-play.svg",
+      "bytes": 2857,
+      "sha256": "0d65368629f904f1b0ba9dee0a30a6cc8397eeefef400f221c00e0c2ea1b6521",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/portable-personal-air-quality-monitor.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/portable-personal-air-quality-monitor.jpg",
+      "fichero": "2023/02/portable-personal-air-quality-monitor.jpg",
+      "bytes": 32549,
+      "sha256": "89cd7e4f7756abfd58e453c65ff634fe5674cc951dc24f6796e7affde6f665a1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/ports-airports-2.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/ports-airports-2.svg",
+      "fichero": "2023/02/ports-airports-2.svg",
+      "bytes": 4470,
+      "sha256": "6c319c5901971ea1a3b2dea7c05ed833ccf12127347499b53a198120f6d5bde1",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/protected-designs.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/protected-designs.svg",
+      "fichero": "2023/02/protected-designs.svg",
+      "bytes": 1298,
+      "sha256": "954c1433551e4bd983e02140c8f790e34aaadddda663bac12b2789aeebf16b41",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/quality-data.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/quality-data.jpg",
+      "fichero": "2023/02/quality-data.jpg",
+      "bytes": 180086,
+      "sha256": "9386634b78846cd193ddd8a33b894f224d4b9304842bb8b8f0551d41ec4e58e1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/real-time.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/real-time.svg",
+      "fichero": "2023/02/real-time.svg",
+      "bytes": 4163,
+      "sha256": "b0b71ebf41874de23ed2be24d1eeabad5a16f32445dcb7927ee72e1dea7c644c",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/secure-confidential-1.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/secure-confidential-1.svg",
+      "fichero": "2023/02/secure-confidential-1.svg",
+      "bytes": 1559,
+      "sha256": "aa670da2316ac5bb0ef79bdc07a91024481e3c7be8051a98d779caf6ea298b02",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/02/service-oriented.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/service-oriented.svg",
+      "fichero": "2023/02/service-oriented.svg",
+      "bytes": 1332,
+      "sha256": "ac6321394c255f79d43ba0306c413850e44d7d4e5206b2cd2948b460257e4731",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/urban-air-quality.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/urban-air-quality.jpg",
+      "fichero": "2023/02/urban-air-quality.jpg",
+      "bytes": 231234,
+      "sha256": "c3583f85b6b4a82082adbc7f6249101eef4ed197704963742a3ed4e9038e0d03",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2023/02/urban-pedestrian-city.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/urban-pedestrian-city.jpg",
+      "fichero": "2023/02/urban-pedestrian-city.jpg",
+      "bytes": 150384,
+      "sha256": "7b143075bee73bd68133e497401e8c6d3bbb6a4dd83fc2e0b63266d0f58b370b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/02/winner.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/02/winner.svg",
+      "fichero": "2023/02/winner.svg",
+      "bytes": 4936,
+      "sha256": "539fd6b635f948e1eb6b0a23c7c06332f19de9877da63d86901ff9801ffcb770",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/03/air-pollution-control.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/air-pollution-control.jpg",
+      "fichero": "2023/03/air-pollution-control.jpg",
+      "bytes": 219828,
+      "sha256": "1e56638f140bd74b65abe06f97542fca14cc0b8667c93cc80b3ddf0a4010374c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/03/air-pollution.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/air-pollution.jpg",
+      "fichero": "2023/03/air-pollution.jpg",
+      "bytes": 335164,
+      "sha256": "411c728217c5827cd2474f680447e5bed6641466f9effbb71c16e0a3084b6b57",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/03/kunak-air-accessories.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/kunak-air-accessories.jpg",
+      "fichero": "2023/03/kunak-air-accessories.jpg",
+      "bytes": 81119,
+      "sha256": "e16121dd550c5af085902d5278420998da0c92fc1717cddd7c79b338ba2d0f3d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/03/kunak-office.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/kunak-office.jpg",
+      "fichero": "2023/03/kunak-office.jpg",
+      "bytes": 50784,
+      "sha256": "2db9c176e9998266055df59ca82a9dedf65b7db192caef5946c8caeb34630600",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/03/ports-1920.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/ports-1920.jpg",
+      "fichero": "2023/03/ports-1920.jpg",
+      "bytes": 494277,
+      "sha256": "695d443ef365c379b32ff542cf923f7f0fdf516188393b70a1461789aa378215",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/03/smart-cartridges.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/smart-cartridges.jpg",
+      "fichero": "2023/03/smart-cartridges.jpg",
+      "bytes": 71788,
+      "sha256": "4dc84ab9254ba9c73d0ecf34e86ff6364b2f138cf82101d774ce87afa68c448b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/03/unep.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/unep.jpg",
+      "fichero": "2023/03/unep.jpg",
+      "bytes": 304604,
+      "sha256": "be9578425e796257bf8ca7357a240072d80c550c861451785b57c765c33863ff",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/03/world.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/03/world.svg",
+      "fichero": "2023/03/world.svg",
+      "bytes": 141345,
+      "sha256": "8c3bf260494db5a6038948ed9df161bf1a2d9db18535677337d3d3b7e75ec0ec",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/04/gases-en-los-vertederos-de-basura.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/04/gases-en-los-vertederos-de-basura.png",
+      "fichero": "2023/04/gases-en-los-vertederos-de-basura.png",
+      "bytes": 194910,
+      "sha256": "919df80699718bee25f3c91e73e30c4e41de4bb76cb6e83d112de733c4ad8612",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/04/monitorizacion-emision-de-gases-y-particulas-en-refinerias-yacimientos-gas.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/04/monitorizacion-emision-de-gases-y-particulas-en-refinerias-yacimientos-gas.jpg",
+      "fichero": "2023/04/monitorizacion-emision-de-gases-y-particulas-en-refinerias-yacimientos-gas.jpg",
+      "bytes": 101614,
+      "sha256": "1cb36372dd3214dcf74171f7e05cb10937ab34cf69a4e63f2c6e463413f76a88",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/05/GwadAir_0.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/05/GwadAir_0.jpg",
+      "fichero": "2023/05/GwadAir_0.jpg",
+      "bytes": 93499,
+      "sha256": "22cd24aacb4738bf974485b85f848628b3aeea475474890ad0d50db862fb88be",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2023/05/GwadAir_1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/05/GwadAir_1.jpg",
+      "fichero": "2023/05/GwadAir_1.jpg",
+      "bytes": 309850,
+      "sha256": "3cd96e9c83e743e55aa9bfab7ebbd547a5d72036e0abebb2c88d7feb90e3b470",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/05/aptica-puerto-almeria-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/05/aptica-puerto-almeria-1.jpg",
+      "fichero": "2023/05/aptica-puerto-almeria-1.jpg",
+      "bytes": 317785,
+      "sha256": "11f04a4af7bbdf683bb064d65b17615aa4fc8505321da8726b48fa4246e15a29",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/05/transporte-sostenible-en-entornos-urbanos-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/05/transporte-sostenible-en-entornos-urbanos-1.jpg",
+      "fichero": "2023/05/transporte-sostenible-en-entornos-urbanos-1.jpg",
+      "bytes": 156504,
+      "sha256": "470e26996a0a38f2d319b39d6b50cf007ce0957caa217d59f037cabfd1c0ca75",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/06/Logo-PIN_A-cast-ingles-BN.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/Logo-PIN_A-cast-ingles-BN.jpg",
+      "fichero": "2023/06/Logo-PIN_A-cast-ingles-BN.jpg",
+      "bytes": 33614,
+      "sha256": "ec588fa290231669de7b48cbf931de453feeed715acec651c414fbf790c527e9",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2023/06/Shapdan-WWTP.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/Shapdan-WWTP.jpg",
+      "fichero": "2023/06/Shapdan-WWTP.jpg",
+      "bytes": 388969,
+      "sha256": "9f9be34790a42408d378347724a607a4381206f577c1edf6dc4eeae104015dcd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/06/calidad-del-aire-en-los-asentamientos-informales.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/calidad-del-aire-en-los-asentamientos-informales.png",
+      "fichero": "2023/06/calidad-del-aire-en-los-asentamientos-informales.png",
+      "bytes": 389727,
+      "sha256": "f412a8cd5eaadcaa7037dfbd679d5be857a83e5a6eb2320a7e1a81aa073ff017",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/06/cartagena-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/cartagena-1.jpg",
+      "fichero": "2023/06/cartagena-1.jpg",
+      "bytes": 322743,
+      "sha256": "fd9dc0ec5d4e68f84ed005f5bbe8588490815b67a12dc98d73e4120625f8707c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/06/contaminacion-del-aire-en-industria.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria.jpg",
+      "fichero": "2023/06/contaminacion-del-aire-en-industria.jpg",
+      "bytes": 438960,
+      "sha256": "8b4b389da257e7afd70d04df39ad7c50109db3550c3e708f6ecb4050527b9904",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 15
+    },
+    "2023/06/medidores-de-calidad-del-aire-cost-effective.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/medidores-de-calidad-del-aire-cost-effective.jpg",
+      "fichero": "2023/06/medidores-de-calidad-del-aire-cost-effective.jpg",
+      "bytes": 146955,
+      "sha256": "8efc46c74b1d423dca91c79ab55e029dbe5a023dba2c1b72c6d427d08a506802",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/07/contaminacion-transporte-urbano.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/07/contaminacion-transporte-urbano.jpg",
+      "fichero": "2023/07/contaminacion-transporte-urbano.jpg",
+      "bytes": 223866,
+      "sha256": "8bec2e411c346ef1a77ab10781096f4dde36e81b9d9c972a2cc5d1909d17cf06",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2023/07/metro-valparaiso-3-1.webp": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/07/metro-valparaiso-3-1.webp",
+      "fichero": "2023/07/metro-valparaiso-3-1.webp",
+      "bytes": 224242,
+      "sha256": "208450f83c336f9f47c4a7c1049e640ce41cb654ff98abcc29ef6181c08d1d70",
+      "tipo": "image/webp",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/08/contaminacion-del-aire-por-obras.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/08/contaminacion-del-aire-por-obras.jpg",
+      "fichero": "2023/08/contaminacion-del-aire-por-obras.jpg",
+      "bytes": 239201,
+      "sha256": "53825342600a1bfe33e66df6ddbad3339e3d5f13ed849265b285f767fe3c74db",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/09/Air-quality-and-heat-stress-during-the-World-Athletics-Championships-Budapest-2023.webp": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/09/Air-quality-and-heat-stress-during-the-World-Athletics-Championships-Budapest-2023.webp",
+      "fichero": "2023/09/Air-quality-and-heat-stress-during-the-World-Athletics-Championships-Budapest-2023.webp",
+      "bytes": 255984,
+      "sha256": "7aacdd3eee69ed5257fd422da7f8929f917fbfff9c627fab7c5964375ddbfe00",
+      "tipo": "image/webp",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/09/EHS-industrial.webp": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/09/EHS-industrial.webp",
+      "fichero": "2023/09/EHS-industrial.webp",
+      "bytes": 205632,
+      "sha256": "c066dc95579a6a757cbee9016bc8a0c270cef3726c91223dbe211e76de70c403",
+      "tipo": "image/webp",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2023/09/control_de_la_contaminacion_del_aire.webp": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/09/control_de_la_contaminacion_del_aire.webp",
+      "fichero": "2023/09/control_de_la_contaminacion_del_aire.webp",
+      "bytes": 209054,
+      "sha256": "e1d6005bd61b47c7ea0c5f99053ac92bc9892e437b9cb4b76224318930af2bc3",
+      "tipo": "image/webp",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/10/1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/10/1.jpg",
+      "fichero": "2023/10/1.jpg",
+      "bytes": 126642,
+      "sha256": "f0cea0c3f21dc806eb2b7db148aa09378907809348a8ab73a0442ad035241af3",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2023/10/MCERTS-AIR-PRO-ES.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/10/MCERTS-AIR-PRO-ES.jpg",
+      "fichero": "2023/10/MCERTS-AIR-PRO-ES.jpg",
+      "bytes": 149453,
+      "sha256": "d39486703f0cc9b4a649624af101f67ca8b05f5961a4b979faa86128caf707e4",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2023/10/cabecera-puerto.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/10/cabecera-puerto.jpg",
+      "fichero": "2023/10/cabecera-puerto.jpg",
+      "bytes": 111828,
+      "sha256": "aa2639749df3b4e1e80f9cd5668e14c85084866e73ed63258c26a061722ec102",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2024/01/Air_pollution_in_Madrid.webp": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/Air_pollution_in_Madrid.webp",
+      "fichero": "2024/01/Air_pollution_in_Madrid.webp",
+      "bytes": 65752,
+      "sha256": "aa994a05c415406ff1490c310573307c53a66eed61bbd318ab0733ffe0db2f07",
+      "tipo": "image/webp",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/01/Control-de-la-contaminacion-en-Bilbao-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/Control-de-la-contaminacion-en-Bilbao-Kunak.jpg",
+      "fichero": "2024/01/Control-de-la-contaminacion-en-Bilbao-Kunak.jpg",
+      "bytes": 417496,
+      "sha256": "97140276815a109a1b16f401753e4856f962a46b664a36c22a60271a21743cca",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg",
+      "fichero": "2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg",
+      "bytes": 29033,
+      "sha256": "b9293c9cdde5895bdd6e5cf7ac4c60dc1ffa18e49d48fe9dc73058de7dc4a7d1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2024/01/airlab-2-2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/airlab-2-2.jpg",
+      "fichero": "2024/01/airlab-2-2.jpg",
+      "bytes": 58499,
+      "sha256": "4af42b63c3969af42b4e683c6321ce3611358ad01fafba71d35264bf96fbe2c3",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2024/01/calidad-del-aire-ena-aeropuertos-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/calidad-del-aire-ena-aeropuertos-Kunak.jpg",
+      "fichero": "2024/01/calidad-del-aire-ena-aeropuertos-Kunak.jpg",
+      "bytes": 300941,
+      "sha256": "8ca3fc802734f91f0c41511494ec234494f5803ca53a6bee20ff635b204bc3cb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/01/urban-air-pollution-monitoring.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/01/urban-air-pollution-monitoring.jpg",
+      "fichero": "2024/01/urban-air-pollution-monitoring.jpg",
+      "bytes": 119033,
+      "sha256": "ea00b0fe3434e700777fbb91570bc303880de0d33d18d0f9504ec5552f6a7556",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/02/Red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-First-Quantum-Minerals-Kunak-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/02/Red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-First-Quantum-Minerals-Kunak-1.jpg",
+      "fichero": "2024/02/Red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-First-Quantum-Minerals-Kunak-1.jpg",
+      "bytes": 268261,
+      "sha256": "2d1214d222f79916ae3e487c1334d1e594a79cd566579bf3971eddf2a5fc264a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/03/91.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/91.png",
+      "fichero": "2024/03/91.png",
+      "bytes": 1296577,
+      "sha256": "fc095a1116f449d4d3cc05a91ef64589629db2895373a2cda8ad0412572dc5cc",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/03/Air-quality-monitoring-at-theTurrialba-volcano-Kunak-8.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Air-quality-monitoring-at-theTurrialba-volcano-Kunak-8.jpg",
+      "fichero": "2024/03/Air-quality-monitoring-at-theTurrialba-volcano-Kunak-8.jpg",
+      "bytes": 483410,
+      "sha256": "524b9430123e709dc7b16daf83d1d9d621e1f730a906a930e2b0c9ab84a0f88c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/03/Airlab-Microsensors-Challenge-2023.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Airlab-Microsensors-Challenge-2023.jpg",
+      "fichero": "2024/03/Airlab-Microsensors-Challenge-2023.jpg",
+      "bytes": 223978,
+      "sha256": "03d64c737c2fd11f69aea120353f378498cdfc53947850501c710c585c1a0c4a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/Cristobal-Hernandez.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Cristobal-Hernandez.jpg",
+      "fichero": "2024/03/Cristobal-Hernandez.jpg",
+      "bytes": 38996,
+      "sha256": "0774b18975a959490e3cd93a3f50b167e6470e12c88937f0bb86f9b7a569ef4b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg",
+      "fichero": "2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg",
+      "bytes": 13723,
+      "sha256": "d14e55a666debe0db0974ad6ce40aa3caae3a98fb849eb3a7a767b8ab84efbfc",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/03/Jelle-Hofman.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Jelle-Hofman.jpg",
+      "fichero": "2024/03/Jelle-Hofman.jpg",
+      "bytes": 45869,
+      "sha256": "e1bffb6bb6235771114c84f26190cbf18ab2774101e631218b9c91bcd95437fd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/Premio-DHL-Atlas-2-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Premio-DHL-Atlas-2-1.jpg",
+      "fichero": "2024/03/Premio-DHL-Atlas-2-1.jpg",
+      "bytes": 122258,
+      "sha256": "3ab0a04664b25eb39bc13ca4a3aa13e6376c83b10bd4d0f71853f067ac809494",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/Premio-DHL-Atlas-2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Premio-DHL-Atlas-2.jpg",
+      "fichero": "2024/03/Premio-DHL-Atlas-2.jpg",
+      "bytes": 161537,
+      "sha256": "f6a93e365cfaf6b2de2ed90895a35c70684a6a6f13b8c15174fb5d7f47ded4da",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg",
+      "fichero": "2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg",
+      "bytes": 179507,
+      "sha256": "260980cb80e160592d4cbeb060eb975fd6e905f6b85ae875b901163b27b9fe85",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/airplane-465619_1280.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/airplane-465619_1280.jpeg",
+      "fichero": "2024/03/airplane-465619_1280.jpeg",
+      "bytes": 157142,
+      "sha256": "bf5133f9400995d4e39fa804177ddc0cda98acdde7cf415b798e5162700d783b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/03/aqe-show.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/aqe-show.jpg",
+      "fichero": "2024/03/aqe-show.jpg",
+      "bytes": 154100,
+      "sha256": "34ae0a919f3f192c5341148322fce72f84a42443e1e0ab3d4bf55c5061897814",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/control-de-la-calidad-del-aire-en-puertos.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/control-de-la-calidad-del-aire-en-puertos.jpg",
+      "fichero": "2024/03/control-de-la-calidad-del-aire-en-puertos.jpg",
+      "bytes": 585000,
+      "sha256": "c534e90b786108e7a4d5f129fe9b87677ea402fade88bb3c83fce1c8b877751a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2024/03/fia-formula-e-berlin-eprix-air-quaility-monitoring.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/fia-formula-e-berlin-eprix-air-quaility-monitoring.jpg",
+      "fichero": "2024/03/fia-formula-e-berlin-eprix-air-quaility-monitoring.jpg",
+      "bytes": 280387,
+      "sha256": "b19131e6acbe4ee542cb4b4c2782f1a7b4c83cf2a7b9e9eb7eafdfa254716947",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/03/premio-airlab-2021.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/premio-airlab-2021.jpg",
+      "fichero": "2024/03/premio-airlab-2021.jpg",
+      "bytes": 229715,
+      "sha256": "5183b17c7d3539efd9be3a0af8a2646164ac6fe005ed7dc40ed13d5dd5f2101b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/premio-atana.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/premio-atana.jpg",
+      "fichero": "2024/03/premio-atana.jpg",
+      "bytes": 147646,
+      "sha256": "1f309f04b349c5442be0f9ce09c14641860deebd7dbbc479c561cb2f0d7e106d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/premio-tesicnor-2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/premio-tesicnor-2.jpg",
+      "fichero": "2024/03/premio-tesicnor-2.jpg",
+      "bytes": 293098,
+      "sha256": "4c5ca63b6c241d3149626fa2dc84b27b3e933faebd1fe198f7aeb818f04bbfe7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/premios-y-reconocimientos.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/premios-y-reconocimientos.jpg",
+      "fichero": "2024/03/premios-y-reconocimientos.jpg",
+      "bytes": 249548,
+      "sha256": "6831f025273f2fe316a71441328a8e44fd967b197ae910689746a691d3e3fef0",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/03/wildland-fire-sensor-challenge.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/03/wildland-fire-sensor-challenge.jpg",
+      "fichero": "2024/03/wildland-fire-sensor-challenge.jpg",
+      "bytes": 203420,
+      "sha256": "292532838854929c461d1c1d57d23e2f6e5291b0d5cbc74f2ffa942979ba1170",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/Emisiones-de-las-refinerias-de-petroleo.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/Emisiones-de-las-refinerias-de-petroleo.jpg",
+      "fichero": "2024/04/Emisiones-de-las-refinerias-de-petroleo.jpg",
+      "bytes": 473983,
+      "sha256": "e093fce662f15b88bac56d16b292e02126c4d78d613582754cd68ba3aff55653",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/04/Ibai-Uria-Gaztelu-Iturri.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/Ibai-Uria-Gaztelu-Iturri.jpg",
+      "fichero": "2024/04/Ibai-Uria-Gaztelu-Iturri.jpg",
+      "bytes": 111989,
+      "sha256": "c52bf861733e1699b0c128fc733f30a80e5f2276618e4e1f6b5b5d02321f5be6",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/Javier_Fernandez_1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg",
+      "fichero": "2024/04/Javier_Fernandez_1.jpg",
+      "bytes": 146160,
+      "sha256": "fe4556c72fba1257962dbd72d3d165a407cd7351ede0f6b91c237d694097b005",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/Kunak_K_Logo_Cuadrado.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png",
+      "fichero": "2024/04/Kunak_K_Logo_Cuadrado.png",
+      "bytes": 3047,
+      "sha256": "7ddbf94974c14752b79360aec85f4bb7dd63d25a4e14667f63017931ac8819e2",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 62
+    },
+    "2024/04/bachir-kerkache-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/bachir-kerkache-1.jpg",
+      "fichero": "2024/04/bachir-kerkache-1.jpg",
+      "bytes": 115378,
+      "sha256": "5e4c39c5da12c91f198d128f8a441e0797a6d863d4d3f6b98159d48dcde8049d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/edurne-ibarrola-kunak.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg",
+      "fichero": "2024/04/edurne-ibarrola-kunak.jpeg",
+      "bytes": 82670,
+      "sha256": "ef2e0696edaba46e945242e95f543d332d1a1816ea77dc7a576d5f117ba72aaf",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/glossary.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/glossary.jpg",
+      "fichero": "2024/04/glossary.jpg",
+      "bytes": 42384,
+      "sha256": "b987aec4a2c82896ce574116ac93dbf8aa26ca3564dffad6fe9fafb9ec18d0c3",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/guides.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/guides.jpg",
+      "fichero": "2024/04/guides.jpg",
+      "bytes": 55104,
+      "sha256": "141cb34680ee8e770e9f80dc372dcc578e05487b3816daffc56d9119abc18768",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/irene-lara-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg",
+      "fichero": "2024/04/irene-lara-kunak.jpg",
+      "bytes": 48176,
+      "sha256": "b61be50a24b3ffbd21b843c0f6f671050565ed5fcfa6a3193a82f6d9868b48a7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/jerome-airscan.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/jerome-airscan.jpg",
+      "fichero": "2024/04/jerome-airscan.jpg",
+      "bytes": 66768,
+      "sha256": "f6ffacc360454228d7faaf9d6d92829f9bb0d66afd1f00fb5e77ca436c9dec84",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/kunak-air-catalogue.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue.jpg",
+      "fichero": "2024/04/kunak-air-catalogue.jpg",
+      "bytes": 165271,
+      "sha256": "73b12f6725ec59b517de9ef1c0fd56ebb02a73d312b741b6aeac8cf7e2316784",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2024/04/premios-aster-navarra-2024-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/premios-aster-navarra-2024-kunak.jpg",
+      "fichero": "2024/04/premios-aster-navarra-2024-kunak.jpg",
+      "bytes": 410561,
+      "sha256": "d899157658610f9b1f63c6b4f9d821195ae4ab180d93c094533a01152b5d138d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/04/webinar.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/webinar.jpg",
+      "fichero": "2024/04/webinar.jpg",
+      "bytes": 47785,
+      "sha256": "cc6b2594c85c16d995d1c6b90fb42db3ffc1f0893e98a4ba1fab54c0d5f7765c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/05/Monitorizacion-ambiental-con-datos-oceanicos-mediante-boyas-en-NEOM-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/05/Monitorizacion-ambiental-con-datos-oceanicos-mediante-boyas-en-NEOM-Kunak.jpg",
+      "fichero": "2024/05/Monitorizacion-ambiental-con-datos-oceanicos-mediante-boyas-en-NEOM-Kunak.jpg",
+      "bytes": 229026,
+      "sha256": "1cef4a713c9c8fb18b1dff1cad5c793684211d3973165f535f94abf5dcb93564",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/05/redes-hibridas-calidad-del-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/05/redes-hibridas-calidad-del-aire.jpg",
+      "fichero": "2024/05/redes-hibridas-calidad-del-aire.jpg",
+      "bytes": 635537,
+      "sha256": "ba3da3165e96c3e6a904250ccffc3458150fffcd8aeb58dfd07f9522b6cee1ea",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2024/05/webinar-popup-es.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/05/webinar-popup-es.jpg",
+      "fichero": "2024/05/webinar-popup-es.jpg",
+      "bytes": 230143,
+      "sha256": "e9b672c4ac80070d4f766876e44a61a85ca8aef3585e95dce09291fa95b79860",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 11
+    },
+    "2024/06/Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/06/Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire.jpg",
+      "fichero": "2024/06/Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire.jpg",
+      "bytes": 500897,
+      "sha256": "dc30adcff5b09766994ad529d524f6c59e08d21e545ee626d58bab5fe7669e94",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/06/barrick_gold_pueblo_viejo.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/06/barrick_gold_pueblo_viejo.jpg",
+      "fichero": "2024/06/barrick_gold_pueblo_viejo.jpg",
+      "bytes": 697948,
+      "sha256": "a36a4c6f79994e0e91c7fe3e359c81086d08a76d6f53fc891fe0f90802a309dc",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/06/fondo-azul.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/06/fondo-azul.jpg",
+      "fichero": "2024/06/fondo-azul.jpg",
+      "bytes": 5911,
+      "sha256": "d7f4d5a0859affc20a9e0776bfae5ae2ffe31c02fa18820acc080f6d76651b6b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 48
+    },
+    "2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
+      "fichero": "2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
+      "bytes": 103837,
+      "sha256": "e80cb46ae90b416f6ac6bd2b34949c9a43b6136e5c25aea7ba8ffc27b61b602e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/07/Sin-titulo-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/07/Sin-titulo-1.jpg",
+      "fichero": "2024/07/Sin-titulo-1.jpg",
+      "bytes": 210389,
+      "sha256": "278a3d29e0e7de550a35aa7c21586c5420855daaef5c4ed5a4fbe850e2887b54",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/08/SEVESO-1976.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/08/SEVESO-1976.jpg",
+      "fichero": "2024/08/SEVESO-1976.jpg",
+      "bytes": 106648,
+      "sha256": "bcb6e14a1505b26a96d6a5f6b52db921f208126f76288eabd7e01f0f01d7dbb4",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/09/Monitoreo-ambiental-en-el-puerto-de-Cotonu.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/09/Monitoreo-ambiental-en-el-puerto-de-Cotonu.jpg",
+      "fichero": "2024/09/Monitoreo-ambiental-en-el-puerto-de-Cotonu.jpg",
+      "bytes": 86762,
+      "sha256": "0193760a34e6b73b258fd6e38824a400a172440839cbed998731aacc636f7d15",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/09/aqe-awards-2024.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/09/aqe-awards-2024.jpg",
+      "fichero": "2024/09/aqe-awards-2024.jpg",
+      "bytes": 54629,
+      "sha256": "e2a9186ce62a47fe4666e5aea3baa31935b3245cc23f296cdacea3570d1ac644",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2024/09/cabecera-puerto-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/09/cabecera-puerto-1.jpg",
+      "fichero": "2024/09/cabecera-puerto-1.jpg",
+      "bytes": 117494,
+      "sha256": "117ced0165b9ef75c82774008394e1897ca072811fa801b5f24850f1ce4287b1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
+      "fichero": "2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
+      "bytes": 448045,
+      "sha256": "15c30f3d5c1f554b0d4e6dd9bd741bcd48b4f81bd419d979c7d99acaf66726d8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/10/Microsensores-de-calidad-del-aire-Una-herramienta-fundamental-para-el-monitoreo-ambiental.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/Microsensores-de-calidad-del-aire-Una-herramienta-fundamental-para-el-monitoreo-ambiental.jpg",
+      "fichero": "2024/10/Microsensores-de-calidad-del-aire-Una-herramienta-fundamental-para-el-monitoreo-ambiental.jpg",
+      "bytes": 379253,
+      "sha256": "a274c2875f914f17b09dade70e05e56068f278d03cc3b290378364be482f10c6",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/10/NOAA-Medicion-de-gas-ozono-en-la-atmosfera.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/NOAA-Medicion-de-gas-ozono-en-la-atmosfera.jpg",
+      "fichero": "2024/10/NOAA-Medicion-de-gas-ozono-en-la-atmosfera.jpg",
+      "bytes": 241477,
+      "sha256": "8c54c818d3ebe10c4a5655b8f2a9962998b7b6b53ef6cef5592686c579c5a7d2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2024/10/barriada-urbana-y-calidad-del-aire.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/barriada-urbana-y-calidad-del-aire.jpg",
+      "fichero": "2024/10/barriada-urbana-y-calidad-del-aire.jpg",
+      "bytes": 672999,
+      "sha256": "a9078ad81b9e8693e5b054e140b2a64b038539dc31367046c39bcf337a72abfd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/10/kunak-premiada-aqe-awards-2024.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/kunak-premiada-aqe-awards-2024.jpg",
+      "fichero": "2024/10/kunak-premiada-aqe-awards-2024.jpg",
+      "bytes": 255181,
+      "sha256": "d8f6eefb27dd04b4ad2159e308cd458c5ecacc9439008a8b0e3eeb925f9d2bed",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2024/10/lamina-acero.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/lamina-acero.jpg",
+      "fichero": "2024/10/lamina-acero.jpg",
+      "bytes": 535088,
+      "sha256": "c009be1eca671b26c727e6efaa5934c3f268578d6786c3106cdc3917d93213d4",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/10/odor-and-particulate-matter-emissions-control-cerro-patacon-panama-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/10/odor-and-particulate-matter-emissions-control-cerro-patacon-panama-kunak.jpg",
+      "fichero": "2024/10/odor-and-particulate-matter-emissions-control-cerro-patacon-panama-kunak.jpg",
+      "bytes": 353851,
+      "sha256": "baf87fd8e09b848a9d9b9e5eb43deb9ce5894f22559d9ba03d5fa9d7bf7e8c34",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
+      "fichero": "2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
+      "bytes": 270628,
+      "sha256": "cabebf81b91aeb9e1137e0a753a324d11efdd54bef748f6a0e9e3e670065fabd",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 13
+    },
+    "2024/11/banner-suscripcion.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+      "fichero": "2024/11/banner-suscripcion.svg",
+      "bytes": 33320,
+      "sha256": "434f93d7d86339c634b0a675d14195938f0ed77f1a1e386b309d072b9d1d9404",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg",
+      "fichero": "2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg",
+      "bytes": 330756,
+      "sha256": "6835b9a9b46cd23e9f9d1fe2c65dacc92349946fa16e8788106bca39e7b6b49a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2024/12/Celebrando-la-Excelencia-Empresarial-Kunak-Brilla-en-los-Premios-Pyme-2024.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/12/Celebrando-la-Excelencia-Empresarial-Kunak-Brilla-en-los-Premios-Pyme-2024.jpg",
+      "fichero": "2024/12/Celebrando-la-Excelencia-Empresarial-Kunak-Brilla-en-los-Premios-Pyme-2024.jpg",
+      "bytes": 257004,
+      "sha256": "59449663ecffa40698d5d5675abc830d2a39f992dee66f91cdc1426907e7fde0",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2024/12/premios-pyme-2024-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/12/premios-pyme-2024-kunak.jpg",
+      "fichero": "2024/12/premios-pyme-2024-kunak.jpg",
+      "bytes": 155241,
+      "sha256": "335b8bd26db44dfca6af9d63fd0627b73103e1b244bd7f84163249b5ba5e7e43",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/01/Ganaderia-extensiva-y-emisiones-de-metano.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano.jpg",
+      "fichero": "2025/01/Ganaderia-extensiva-y-emisiones-de-metano.jpg",
+      "bytes": 204780,
+      "sha256": "cf5bf0b8bc94724ed560b6c6053ac5871e0c354d17943125cf5b5c42b36a41b2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 8
+    },
+    "2025/01/Logos_web_beneficiarios_1.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/01/Logos_web_beneficiarios_1.png",
+      "fichero": "2025/01/Logos_web_beneficiarios_1.png",
+      "bytes": 73596,
+      "sha256": "dfaba19d1a5b4d8c2253c00a21c18ac0a629fdf6c6a769bd05e6d428aa19c5e3",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/01/food-processing-plant-in-Singapore.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
+      "fichero": "2025/01/food-processing-plant-in-Singapore.jpg",
+      "bytes": 212417,
+      "sha256": "d0862f84b05e27c3e36242d1f108d86a583a44277592c27a1ef1a45fa797a189",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/01/movimiento-de-residuos-en-vertedero-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak.jpg",
+      "fichero": "2025/01/movimiento-de-residuos-en-vertedero-Kunak.jpg",
+      "bytes": 224118,
+      "sha256": "479ff15e5814cfc09ae03593bfba81f67cba98b2459e040aaad02383811d20ec",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review.jpg",
+      "fichero": "2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review.jpg",
+      "bytes": 233178,
+      "sha256": "5b3391e8ec5d52f66c2e0c3eccf821fffd5e184092715a1beb699293ab6e9ea2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+      "fichero": "2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+      "bytes": 144086,
+      "sha256": "9f488943c7179b7635f8102452cfd25ccd7e064a91008caacb8d44fabb641b7a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+      "fichero": "2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+      "bytes": 315531,
+      "sha256": "7e6600c94c921f214f09aa70c87a65a524a4932a0ce71f7a11ce73a90a4f7365",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose.jpg",
+      "fichero": "2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose.jpg",
+      "bytes": 136315,
+      "sha256": "962856d82cc35db4ca681794b7a92cce48c5d524dfaf612b408cc3a340600a5e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network.jpg",
+      "fichero": "2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network.jpg",
+      "bytes": 205048,
+      "sha256": "4cbad0fb82a909773d8ba5e3ad03fe5248bcebd1e5ae0603be6a8d7c15af268f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection.jpg",
+      "fichero": "2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection.jpg",
+      "bytes": 155996,
+      "sha256": "e16868056aa4c7878273a4c3f0d37b7f9891e06219053d72eaf53b94217582b7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density.jpg",
+      "fichero": "2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density.jpg",
+      "bytes": 206202,
+      "sha256": "ddd9369d816ff50c9943538d739f633ed55cd87c5d95a9932ad4165c96f80b6b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles.jpg",
+      "fichero": "2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles.jpg",
+      "bytes": 183570,
+      "sha256": "2a6a015195b2027ae07551dcb18a84a9c4c3879d118eb59f24b228973974b210",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid.jpg",
+      "fichero": "2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid.jpg",
+      "bytes": 154760,
+      "sha256": "3210ddd88f3929b486d601be6ec81598a649f8bf425aa2b54c0174b78d31b73b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg",
+      "fichero": "2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg",
+      "bytes": 136640,
+      "sha256": "a35eeca92d2b25ea5dabe906321e10c49df467f7b9f4103fbc2fd0a124b29f1f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity.jpg",
+      "fichero": "2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity.jpg",
+      "bytes": 189832,
+      "sha256": "558755c9927fac016519e55d0f08e7336270606b02ef4d72eae753cc475d86d7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from.jpg",
+      "fichero": "2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from.jpg",
+      "bytes": 187360,
+      "sha256": "9b5ca23d16cca7bb4cb61fab632f03519eb6a52b0eb3a87058ef9fa1fe52c5da",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg",
+      "fichero": "2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg",
+      "bytes": 233972,
+      "sha256": "61ad38e829116f62e7fac6638fa6937a7786245bd26c6668f8b879645535c9af",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems.jpg",
+      "fichero": "2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems.jpg",
+      "bytes": 154973,
+      "sha256": "bce66077a2665d7c52183256273c91512fba7950a77320261097f57f0abb803a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations.jpg",
+      "fichero": "2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations.jpg",
+      "bytes": 1468910,
+      "sha256": "2ffd589c4ac5be0a568673206bea8e3c5b5ae834dd08a575e4ba0e9671c3471f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 4
+    },
+    "2025/02/airlab-microsensors-challenge-2023-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg",
+      "fichero": "2025/02/airlab-microsensors-challenge-2023-kunak.jpg",
+      "bytes": 106776,
+      "sha256": "337e7625e890c4bde03ecbf5d80f692b3569ec46e4cfbd5f9c3f186bd6efe4db",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/aq-spec-kunak_air_lite-Field-evaluation-report.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/aq-spec-kunak_air_lite-Field-evaluation-report.jpg",
+      "fichero": "2025/02/aq-spec-kunak_air_lite-Field-evaluation-report.jpg",
+      "bytes": 47145,
+      "sha256": "f10c3c73c68b5589d9ab578ac2a948ef0edebaf052e137ddd9cf2e8995ee7213",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/aq-spec-kunak_air_pro-Field-evaluation-report.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/aq-spec-kunak_air_pro-Field-evaluation-report.jpg",
+      "fichero": "2025/02/aq-spec-kunak_air_pro-Field-evaluation-report.jpg",
+      "bytes": 47143,
+      "sha256": "acca8fee010336a6164c1b4be62b6e3c53b48527265b148bea4d2c52d85fde5b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/qr-compliance.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/qr-compliance.png",
+      "fichero": "2025/02/qr-compliance.png",
+      "bytes": 2209,
+      "sha256": "4e4fb71ba293111214a9f468761a29132a2c1b8f716efed5da9daa7f51943d34",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/ricardo-sensor-report-air-lite.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/ricardo-sensor-report-air-lite.jpg",
+      "fichero": "2025/02/ricardo-sensor-report-air-lite.jpg",
+      "bytes": 106265,
+      "sha256": "c5a4b1e75bcd238c38329b3e815859a8d9ebed1ebe1197f31c8f1be811075f90",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/02/ricardo-sensor-report.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/02/ricardo-sensor-report.jpg",
+      "fichero": "2025/02/ricardo-sensor-report.jpg",
+      "bytes": 102223,
+      "sha256": "072d3d24ce3426c96f93b7fc9afb4bc5df75aa3d026f637999e0af84e1e9d59b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/03/Industria-petroquimica.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/Industria-petroquimica.jpg",
+      "fichero": "2025/03/Industria-petroquimica.jpg",
+      "bytes": 165876,
+      "sha256": "a0259597489eee61baac333a0e2ce29537e275ce94f9fdcfbdb4cbbd430cb1e1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/03/Monitorizacion-de-calidad-del-aire-en-el-puerto-de-Le-Havre-para-medir-contaminantes-en-tiempo-real.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/Monitorizacion-de-calidad-del-aire-en-el-puerto-de-Le-Havre-para-medir-contaminantes-en-tiempo-real.jpg",
+      "fichero": "2025/03/Monitorizacion-de-calidad-del-aire-en-el-puerto-de-Le-Havre-para-medir-contaminantes-en-tiempo-real.jpg",
+      "bytes": 379926,
+      "sha256": "f24b444c1adc5b963fd0436da14c27bf6321a1aa959c6da1c31d7adb55a8889d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation.jpg",
+      "fichero": "2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation.jpg",
+      "bytes": 41712,
+      "sha256": "3f2ff36c588acfd5f3888d44e35c38c70967c29471d20b317acb562c38e06054",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 3
+    },
+    "2025/03/scientific_docs.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/scientific_docs.jpg",
+      "fichero": "2025/03/scientific_docs.jpg",
+      "bytes": 57474,
+      "sha256": "ed6cbf69d0a28099a6b500bc8681026873c0794a6055b871955391df22963f0c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/03/webinar-air-quality-in-europe.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/webinar-air-quality-in-europe.jpg",
+      "fichero": "2025/03/webinar-air-quality-in-europe.jpg",
+      "bytes": 285575,
+      "sha256": "2a9b4ccddbba55e76517840b95a77e8b706a5da9099f637c83096d8d6b389397",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2025/03/webinar-banner-beru-2.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2.jpg",
+      "fichero": "2025/03/webinar-banner-beru-2.jpg",
+      "bytes": 105569,
+      "sha256": "6a9d34e7aa851fc8b8969a5c9eadc14e82e94fb7fa189ca39d6186711f086b0d",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2025/04/Porto-Alegre-air-quality-monitoring-network-0.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/04/Porto-Alegre-air-quality-monitoring-network-0.jpg",
+      "fichero": "2025/04/Porto-Alegre-air-quality-monitoring-network-0.jpg",
+      "bytes": 401462,
+      "sha256": "c08551931db5bb5b712b8a6ab9eebe3427703db5d561e8364b7e9c58cbda161e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg",
+      "fichero": "2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg",
+      "bytes": 46973,
+      "sha256": "b17bc09c29d33e95d9025dfbb7ee98c3b2bfb3eb43df9fda796abfe15ca5dcd5",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "fichero": "2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881.jpg",
+      "bytes": 104158,
+      "sha256": "ee750216a0e749a64e9fc351ecaf17c6182e39b7e4dea5b076890011948b300c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
+      "fichero": "2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
+      "bytes": 260751,
+      "sha256": "727a94f3557cb852faf160871dd775c100b28b7c859132fd6064723c9faeb2d1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/05/contaminacion-produccion-energia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/05/contaminacion-produccion-energia.jpg",
+      "fichero": "2025/05/contaminacion-produccion-energia.jpg",
+      "bytes": 316565,
+      "sha256": "eecaa30a319c6676b391fbe87f229c39f0fce3f228e10f343a7f40d2ae9384b1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2025/05/contaminacion_acustica.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/05/contaminacion_acustica.jpg",
+      "fichero": "2025/05/contaminacion_acustica.jpg",
+      "bytes": 229199,
+      "sha256": "d04f87e4a36c3fdbba3fdb9dd590cfd8d6661716f72ef1c7c8855558878587e7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 10
+    },
+    "2025/05/gas-sensor-calibration.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/05/gas-sensor-calibration.jpg",
+      "fichero": "2025/05/gas-sensor-calibration.jpg",
+      "bytes": 183337,
+      "sha256": "b8f52013e4987f3061669b8637681cba4f1009b4ed9791de59c08a2cb80041bb",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2025/06/castel-d-ario.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/06/castel-d-ario.jpg",
+      "fichero": "2025/06/castel-d-ario.jpg",
+      "bytes": 416517,
+      "sha256": "83c1018e983d14c14c013cbfafb6ce756f5b4958a76726a77040163bd9f3c70f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/06/justicia-climatica-kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/06/justicia-climatica-kunak.jpg",
+      "fichero": "2025/06/justicia-climatica-kunak.jpg",
+      "bytes": 910426,
+      "sha256": "1b5a605c72a62b062054dabad538a141e13a1fe7fd1e251bc31e3b0cf7a130d1",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg",
+      "fichero": "2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg",
+      "bytes": 312227,
+      "sha256": "8a0bf548f1f605e63defcf9a49a47dfdf13bef63943a201459aebe574d0ae259",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/07/aaqms.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/07/aaqms.jpg",
+      "fichero": "2025/07/aaqms.jpg",
+      "bytes": 332584,
+      "sha256": "f618d4cae6e82fbe71db0dcef9dddd4b0e5886bc0b708334b35855e567c2371a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 74
+    },
+    "2025/08/Logo_FEDER_GN_bilingue.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/08/Logo_FEDER_GN_bilingue.png",
+      "fichero": "2025/08/Logo_FEDER_GN_bilingue.png",
+      "bytes": 42712,
+      "sha256": "95ced8bb60a0e91994ee271be46126514b720803029b32be3df3ecbca30f2ce7",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/08/planta-biogas_biometano.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/08/planta-biogas_biometano.jpg",
+      "fichero": "2025/08/planta-biogas_biometano.jpg",
+      "bytes": 469943,
+      "sha256": "076938bb38bce3f0a4410b4bf1e34007e465692c74f991cf948a649d6395e35e",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/09/Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/09/Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak.jpg",
+      "fichero": "2025/09/Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak.jpg",
+      "bytes": 131379,
+      "sha256": "46387c544439de868bf38b5cc54642a3c47d4fb1e66e2f1f137756fdf489a4ed",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/09/Red-de-control-de-emisiones-en-la-planta-de-aluminio.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/09/Red-de-control-de-emisiones-en-la-planta-de-aluminio.jpg",
+      "fichero": "2025/09/Red-de-control-de-emisiones-en-la-planta-de-aluminio.jpg",
+      "bytes": 274221,
+      "sha256": "a123d1d0728d43c9975e81c489994702ecc2d405c8f2062a000404a02f5b182f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/10/Estacion-Kunak-AIR-Pro-monitorizando-la-calidad-del-aire-y-el-ruido-en-el-Aeropuerto-Internacional-de-Subic-Bay-Filipinas.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/10/Estacion-Kunak-AIR-Pro-monitorizando-la-calidad-del-aire-y-el-ruido-en-el-Aeropuerto-Internacional-de-Subic-Bay-Filipinas.jpg",
+      "fichero": "2025/10/Estacion-Kunak-AIR-Pro-monitorizando-la-calidad-del-aire-y-el-ruido-en-el-Aeropuerto-Internacional-de-Subic-Bay-Filipinas.jpg",
+      "bytes": 227705,
+      "sha256": "a5b11082fa08c65a4c802fa44a76a1db7a7ed9354160e513ae246b99f635901f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/10/GN-v2-2c.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/10/GN-v2-2c.png",
+      "fichero": "2025/10/GN-v2-2c.png",
+      "bytes": 32739,
+      "sha256": "2e7a4dbbd05ea7d62e5895bd6ddf3245ca561b0cece299b5bd7ffdbfc0ec6e1b",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/10/hawaii-archipielago_contaminacion-aire_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak.jpg",
+      "fichero": "2025/10/hawaii-archipielago_contaminacion-aire_Kunak.jpg",
+      "bytes": 255369,
+      "sha256": "02a661250b94905915402a88da83641a764b28f89b2fa332ac70739cae5cb11f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/10/kunakpedia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/10/kunakpedia.jpg",
+      "fichero": "2025/10/kunakpedia.jpg",
+      "bytes": 163660,
+      "sha256": "ad043e4b4ed8597b59ea19dd84a1aa371fd9d2b75f437744f087f6834483675c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 6
+    },
+    "2025/11/Kunak_premio_itelna_2025.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/11/Kunak_premio_itelna_2025.jpg",
+      "fichero": "2025/11/Kunak_premio_itelna_2025.jpg",
+      "bytes": 279709,
+      "sha256": "2a8a1db95c1850141f59bb763ad3b7e47be651925f353769b8b745b3d123e6c7",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2025/11/Smart-dust-monitoring-at-Northparkes-mine-in-Australia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/11/Smart-dust-monitoring-at-Northparkes-mine-in-Australia.jpg",
+      "fichero": "2025/11/Smart-dust-monitoring-at-Northparkes-mine-in-Australia.jpg",
+      "bytes": 502881,
+      "sha256": "132fd0521a71e3141ef537e44a19312ba30e1717ffe26a8d25e81c640f1230f5",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/11/depuradora-de-aguas-residuales.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/11/depuradora-de-aguas-residuales.jpg",
+      "fichero": "2025/11/depuradora-de-aguas-residuales.jpg",
+      "bytes": 5598639,
+      "sha256": "e138d16a0ba934bbe24e7bcded6b57dbd5d56267730781b29913b5c5cbe7b4b3",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
+      "fichero": "2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
+      "bytes": 637221,
+      "sha256": "ad1cf00dd7fec3b906e068d71846e0e217b1b6aed768f17377f58c86791c52aa",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak.jpg",
+      "fichero": "2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak.jpg",
+      "bytes": 254422,
+      "sha256": "043c09cfab76cdb106bb2d512b336c2f2182bfab1c95a561fd75d05cb076f20b",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2025/12/Reconcilia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia.jpg",
+      "fichero": "2025/12/Reconcilia.jpg",
+      "bytes": 200023,
+      "sha256": "1eec0b78eccfc7fb561eb9234678058f2f8c1dfdc83e0d4d6a80cf737ae625d2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 64
+    },
+    "2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg",
+      "fichero": "2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg",
+      "bytes": 162599,
+      "sha256": "30d8ee7ebb8327f53f613c0c652715b6bf971615ad00633517dedeb5c444cc20",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2025/12/sello_pyme_innovadora_kunak.svg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/sello_pyme_innovadora_kunak.svg",
+      "fichero": "2025/12/sello_pyme_innovadora_kunak.svg",
+      "bytes": 37717,
+      "sha256": "a2e08261c25f079eb5671ac8af83f659510335df7587adf3f76fb31cdaa524a6",
+      "tipo": "image/svg+xml",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/639130508516830000.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/639130508516830000.jpg",
+      "fichero": "2026/05/639130508516830000.jpg",
+      "bytes": 184296,
+      "sha256": "639ac26c21c1169aa9df4d946fa0acf1c12562c9d583f2399f90458ea8a37879",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/Beam-Beijing-Pollution_UFP_Kunak.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Beam-Beijing-Pollution_UFP_Kunak.png",
+      "fichero": "2026/05/Beam-Beijing-Pollution_UFP_Kunak.png",
+      "bytes": 11420714,
+      "sha256": "1713f37fa28ba5c3ff14d6cdb451e92bcac0777ab6292173a38aa6958f429dbc",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2026/05/Centro-de-datos_Wisconsin_EE-UU.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "fichero": "2026/05/Centro-de-datos_Wisconsin_EE-UU.png",
+      "bytes": 26474598,
+      "sha256": "6391f0d8c97f8af4f6eead82d9357b44eccc12abd72043a8c6c43b086f834543",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg",
+      "fichero": "2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg",
+      "bytes": 359235,
+      "sha256": "40c35bce3974bcdc055ef83afb7072d3f0ba3f11564d487b55b5a4494d26c5b8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak.jpg",
+      "fichero": "2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak.jpg",
+      "bytes": 362640,
+      "sha256": "aa55abf7efcc6055c3bbcac04213220674f6e979b4061d5bd3439395982b5041",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2026/05/MADES-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/MADES-1.jpg",
+      "fichero": "2026/05/MADES-1.jpg",
+      "bytes": 330227,
+      "sha256": "50502bdb170b76a2a3dc370394142b675ee66007a7e4181324b940b67646aa7c",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/Movilidad-urbana-sostenible_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+      "fichero": "2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+      "bytes": 734933,
+      "sha256": "d3c74b0f4e3c26973fa980581100e6174164505683b1c53e6ff4edba02d3a1c2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 12
+    },
+    "2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg",
+      "fichero": "2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg",
+      "bytes": 323000,
+      "sha256": "65d941e57fc65402e07d864ac5e141a2825d98ee651340173fae5c8c88e4f9c2",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/PM10-measurement-in-coarse-particle-environments.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/PM10-measurement-in-coarse-particle-environments.jpg",
+      "fichero": "2026/05/PM10-measurement-in-coarse-particle-environments.jpg",
+      "bytes": 253558,
+      "sha256": "60ca914911bd7e7bd4999f420bd91c4fa798f7fd972e3f3983ff9289cc670fa8",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2026/05/Planta-Guerrero-1.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Planta-Guerrero-1.jpeg",
+      "fichero": "2026/05/Planta-Guerrero-1.jpeg",
+      "bytes": 126369,
+      "sha256": "b15d4da53430219b38803073a22fcf4147e5c65d155f57cc6c8b733d8b63397f",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "fichero": "2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+      "bytes": 565913,
+      "sha256": "6863d14eff3711d9502877f5510ee96661a4f422d713d5b04d85645cfc7abe79",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 14
+    },
+    "2026/05/air-pro-kotiti-certified-web.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/air-pro-kotiti-certified-web.jpg",
+      "fichero": "2026/05/air-pro-kotiti-certified-web.jpg",
+      "bytes": 108173,
+      "sha256": "20be035c7c207426c08cab05af714febef405f2e5896872a73905382291fbb59",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 68
+    },
+    "2026/05/clean-air-champions-league-betis-1.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/05/clean-air-champions-league-betis-1.jpg",
+      "fichero": "2026/05/clean-air-champions-league-betis-1.jpg",
+      "bytes": 380313,
+      "sha256": "b66ed1c9fbf013637431eeaf3d9bec738d6ae1fdab12f56ffe6cb011b9df65d3",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 1
+    },
+    "2026/06/monitorizacion-perimetral_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "fichero": "2026/06/monitorizacion-perimetral_Kunak.jpg",
+      "bytes": 1541463,
+      "sha256": "65519c24695a46f667fc814c6d9a8fd9e2384156eb5d4a0a8c4a7d5c998d8645",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 74
+    },
+    "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "fichero": "2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+      "bytes": 457886,
+      "sha256": "3d84c72cee62cace0ebe019fcbd236423d6e757016321c038281ab602551843a",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 74
+    },
+    "2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg",
+      "fichero": "2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg",
+      "bytes": 198011,
+      "sha256": "4d60d5491c46514efa9b07e45ecf17c7cd74a07b37c84e203932d5195f38ee61",
+      "tipo": "image/jpeg",
+      "capturado": "2026-08-09",
+      "referencias": 2
+    },
+    "2026/07/certificacion-ens.png": {
+      "url": "https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png",
+      "fichero": "2026/07/certificacion-ens.png",
+      "bytes": 14117,
+      "sha256": "9abb052c576a5c9a51e9a33057638b11f202f89681b2ecdf349eb6577fba9931",
+      "tipo": "image/png",
+      "capturado": "2026-08-09",
+      "referencias": 498
+    }
+  }
+}

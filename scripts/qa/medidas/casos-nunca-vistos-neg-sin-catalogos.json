@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-08",
+    "fecha": "2026-08-09",
     "pregunta": "¿qué casos que el esquema ADMITE no ejercita ninguna fila sembrada?",
     "alcance": "los 9 catálogos de src/lib — 0 filas. NO el corpus del original",
     "deDonde": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS · PASO 3",
@@ -15,6 +15,29 @@
     "problemas": [
       "CERO FILAS RECORRIDAS — sin catálogos TODO sale sin ejercitar, y la lista sería verdadera y vacua"
     ]
+  },
+  "fueraDelUniverso": {
+    "total": 111,
+    "porColeccion": {
+      "articulos-kb": 37,
+      "categorias": 0,
+      "etiquetas": 0,
+      "categorias-recursos": 1,
+      "categorias-cientificas": 0,
+      "media": 61,
+      "slugs": 1,
+      "usuarios": 11
+    },
+    "razones": {
+      "articulos-kb": "su dato NACE en el CMS (F3-1): se siembra desde `corpus/fase-3/`, no desde un catálogo de `src/lib`",
+      "media": "no es un catálogo: se deriva de los campos `upload` de las demás",
+      "usuarios": "infraestructura (CMS-0f), sin lado medido",
+      "slugs": "registro del plano (§4): lo escriben los hooks, no un seed",
+      "categorias": "taxonomía DERIVADA del corpus (`derivaTaxonomias`), no un catálogo propio",
+      "etiquetas": "ídem",
+      "categorias-recursos": "ídem",
+      "categorias-cientificas": "ídem"
+    }
   },
   "sinEjercitar": {
     "total": 296,

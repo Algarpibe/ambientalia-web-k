@@ -16,6 +16,7 @@
 import type { CollectionConfig, Field } from "payload";
 import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
 import { MODULOS_COMPARTIDOS } from "../bloques/contenido.ts";
+import { MODULOS_KB } from "../bloques/kb.ts";
 import { registroDeSlug } from "../hooks/registro-slug.ts";
 
 /**
@@ -155,23 +156,47 @@ export const documentosCientificos: CollectionConfig = {
  * falso de §1.5b Razón 1 (P-K1 salió ❌: no aparecen en SECTOR/MONOGRÁFICO).
  * Hasta entonces el cuerpo usa **solo las definiciones compartidas**.
  *
- * ⚠ Y **no tiene contraparte medida en `src/lib`**: las 6 instancias no están
- * transcritas. La comprobación `qa:cms-campos` lo dice en voz alta en vez de
- * dejarlo pasar — una colección sin lado medido no se puede verificar.
+ * > ✅ **CONSTRUIDO el 2026-08-09 (F3-1), y la mitad de arriba se cumple tal
+ * > cual está escrita.** `blurb` y `gallery` entran por `MODULOS_KB` —**unión
+ * > PROPIA de este arquetipo** (`bloques/kb.ts`), medida por `qa:kb-recon` sobre
+ * > la captura de F3-0—, y `MonoSeccion[]` sigue **intacto**: `MODULOS_KB` no lo
+ * > importa nadie más. `video`/`toggle` siguen fuera porque siguen sin darse
+ * > aquí: son de los HUBS, y los hubs son cola larga (F3-3).
+ *
+ * ⚠ Y **no tenía contraparte medida en `src/lib`**: las 6 instancias no están
+ * transcritas. **Eso deja de ser un problema y pasa a ser el punto**: es la
+ * primera colección cuyo dato NACE en el CMS, sembrada desde la captura
+ * congelada en vez de desde un catálogo de TypeScript. Su verificación no es
+ * `qa:cms-campos` (que empareja contra `src/lib`) sino el comparador de dos
+ * lados **contra el ORIGINAL** — `qa:kb-cmp`.
  */
 export const articulosKb: CollectionConfig = {
   slug: "articulos-kb",
   admin: { useAsTitle: "titulo", group: "Contenido" },
+  // §4 · las 6 rutas entran en el plano de slugs igual que las demás familias.
+  hooks: registroDeSlug({ familia: "articulos-kb" }),
   fields: [
     { name: "slug", type: "text", required: true, unique: true, index: true },
     seoA,
     { name: "titulo", type: "text", required: true },
     /**
-     * `blocks` con **solo lo compartido**, que es la mitad útil de HD1 que sí se
-     * confirmó: *«`MonoRitmo` y los kinds de texto/imagen/botón sirven — 3 de
-     * los 6 artículos se expresarían solo con ellos»* (PD1 y PD2 acertaron).
-     * Los otros 3 esperan a su construcción con los kinds que les falten.
+     * ⚠ **El prefijo es CAMPO, y lo dice la medida: hay DOS.**
+     * `centro-de-ayuda/kunak-air/articulos-de-ayuda` (5) y
+     * `soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda` (1). Es el
+     * mismo hallazgo que en grupo A obligó al catch-all de `/recursos/[...ruta]`
+     * — *«el prefijo tiene tres valores, no uno»*—, así que el slug NO basta
+     * para construir la URL y el prefijo no se puede cablear en la ruta.
      */
-    { name: "cuerpo", type: "blocks", blocks: MODULOS_COMPARTIDOS },
+    { name: "prefijo", type: "text", required: true },
+    /**
+     * `blocks` = lo COMPARTIDO + la unión PROPIA. El orden importa poco al
+     * esquema y mucho al admin: primero lo que el editor usa en las 6.
+     *
+     * La mitad útil de HD1 se confirmó y se conserva: *«`MonoRitmo` y los kinds
+     * de texto/imagen/botón sirven — 3 de los 6 artículos se expresarían solo
+     * con ellos»* (PD1 y PD2 acertaron). Los otros 3 son justo los que traen
+     * `blurb`, y uno de ellos la única `gallery`.
+     */
+    { name: "cuerpo", type: "blocks", blocks: [...MODULOS_COMPARTIDOS, ...MODULOS_KB] },
   ],
 };

@@ -1,0 +1,167 @@
+# PLAN FASE 3 — la BIBLIOTECA sobre el CMS
+
+> **Abierto el 2026-08-09.** Las fases se llaman **F3-0…F3-5**; los `CMS-n`
+> siguen siendo **IDs de DECISIÓN** y viven en `docs/ESQUEMA-CMS.md`. Este plan
+> **consume** decisiones; no las toma — lo que una fase decida se escribe como
+> acta en el ESQUEMA, en la misma tanda. Misma convención que `PLAN-FASE-2.md`,
+> y por la misma razón: un `F3-n` no es una decisión.
+>
+> Cada fase trae: **qué entrega · qué decisiones del ESQUEMA la alimentan · su
+> incógnita · su criterio de «hecho» con su medida.** Un criterio de «hecho» sin
+> medida no es un criterio.
+
+## Por qué esta fase existe, y en qué se diferencia de la FASE 2
+
+La FASE 2 **movió** al CMS lo que ya estaba construido: 9 colecciones, 46 filas
+de catálogo, 31 rutas. Terminó sin arbitrajes abiertos (`PLAN-FASE-2.md`
+§ESTADO DE LA FASE 2).
+
+> **La FASE 3 es AÑADIR, no cambiar.** Lo dijo la precondición 1 reformulada, y
+> es lo que autoriza a construir sin re-migrar: todo lo que queda cayó en el
+> cubo **B** (*añade lo suyo*) y el cubo **C** (*fuerza algo ya decidido*) quedó
+> **vacío** el 2026-08-03.
+
+Y trae una diferencia de método que no es cosmética:
+
+> **Es la primera vez que el dato NACE en el CMS.** En la FASE 2 el dato existía
+> en `apps/web/src/lib/*.ts` y el CMS lo recibió; aquí no hay contraparte
+> transcrita — `articulos-kb` está en `FUERA_DE_BLOQUE_1` con esa razón exacta.
+> El camino es **captura → seed por Local API → build → Δ0 contra el ORIGINAL**,
+> y ese último eslabón es lo que hace que la migración pruebe algo: hasta hoy el
+> CMS se comparaba contra el clon, no contra el sitio.
+
+## ⚠ F3-0 · LA CAPTURA — EJECUTADA (2026-08-09)
+
+**Va primero y se hace UNA vez**, por una razón que no es de orden sino de
+irreversibilidad: el original es un sitio vivo, y la captura que no se hizo hoy
+ya no se puede hacer igual mañana.
+
+| | |
+|---|---|
+| **entrega** | `corpus/fase-3/` — **272 registros · 69.4 MB · 0 fallos**, con índice propio |
+| **alimenta** | §2f (CONSTRUIDO vs REFERENCIADO) · §2d.1 (los 13 del grupo D) · §2c + LH-2 (los 35) · CMS-0e (HTML crudo primero) |
+| **incógnita** | ninguna abierta: la derivación tiene test en negativo 4/4 |
+| **hecho** | ✅ `npm run cms:captura-f3` exit 0 con `evaluadas 107/107 páginas`, commiteada antes de transformar nada |
+
+**El resultado que cambia el plan de esta fase**, y merece escribirse con estas
+palabras:
+
+> **EL ORIGINAL SALE DEL CAMINO CRÍTICO, DEFINITIVAMENTE.** Todo lo que la FASE
+> 3 va a construir —los 6 artículos de KB, los 35 listados con sus 107 rutas de
+> paginación, los 7 hubs, la cola larga, y las tres familias de archivo que
+> ningún censo había mirado— **está congelado en bytes, con su sha256 y en git**.
+> Ninguna fase posterior necesita pegarle al sitio vivo para construir. Lo único
+> que sigue exigiéndolo es **medir el píxel** (el Δ0 contra el original), y eso
+> es medición, no dependencia de datos.
+
+Y lo que la campaña midió de paso, porque no se sabía:
+
+- **el sitemap aporta CERO en exclusiva** — sus 370 URLs de `/es` ya eran
+  alcanzables desde el corpus congelado. La captura de F2-2 era un
+  superconjunto del sitemap y nadie lo había comprobado;
+- **`/es/author/*` es una familia viva de 34 rutas** (29 sólo en `author/kunak`)
+  con **0 URLs en el sitemap de `/es`**. No estaba en ningún censo;
+- **`/es/categoria/*` (LH-SP8) son 4 términos + 2 formas acentuadas** que 301 a
+  la forma sin tilde;
+- **`/es/sector/*` está a medias**: 5 de 11 redirigen a `/es/sectores/*`;
+- **142 = 35 + 107** en los listados: la paginación de LH-2 se reprodujo
+  **exacta** nueve días después.
+
+## F3-1 · `articulos-kb` — el primer arquetipo CMS-FIRST
+
+| | |
+|---|---|
+| **entrega** | la colección poblada con sus **6 instancias**, la plantilla de página, la ruta emitida, y el Δ0 contra el original |
+| **alimenta** | **§2d.1** (una colección nueva; `blurb`/`gallery` como **unión propia** que CONSUME las definiciones compartidas exportadas, no las duplica) · §2d (el cascarón `_tb_` es plantilla: sidebar y sticky en 13/13) · CMS-0e · §7e (la lista vacía vuelve `[]` salvo declaración) |
+| **incógnita** | **qué campos piden los 3 artículos que `MODULOS_COMPARTIDOS` NO cubre.** El recon midió los *kinds* (`blurb` ×36/×18/×18, `gallery` ×2) pero **no sus campos**: eso lo mide la construcción sobre la captura |
+| **hecho** | (a) `npm run check` verde; (b) las 6 rutas emitidas y en `qa:slugs` sin colisión; (c) **sonda comparadora de dos lados propia**, congelando, con negativo por invariante; (d) **Δ0 contra el ORIGINAL a 1440 y a 390** en sus ejes, con la **base en crudo medida una vez** (§Notas de método: un arquetipo nuevo mide su base sin corregir antes de fiarse de sus deltas de cuerpo) |
+
+⚠ **Y el criterio (c) no es opcional ni heredable.** `CLAUDE.md` §UN ARQUETIPO
+NUEVO NO HEREDA COBERTURA: si `mono-cmp` o los comparadores existentes corren
+sobre este arquetipo sin modificarse, **se dice con la evidencia de haberlos
+corrido**; si hay que tocarlos, **esa modificación ES el coste del arquetipo** y
+se cuenta antes de hacerla, no después.
+
+## F3-2 · listados y hubs — LISTADO-B y sus hermanos
+
+| | |
+|---|---|
+| **entrega** | L1 (LISTADO-B, 3 variantes de tarjeta · 23 instancias) · L2 (2) · L3 (3) · L5 (`casos-de-exito`), **y las 107 rutas `/page/N/` derivadas en build** |
+| **alimenta** | **§2c + `listados-hubs/DECISIONES.md`** (D1 los arquetipos · D2 la paginación · D3 lo que le exigen al grupo A · D4 campo vs plantilla) · §4b (paginación) · §2g (el teaser es dato propio de cada content type) |
+| **incógnita** | **LH-SP3** (qué ordena cada listado, y si sortea como P4 — condiciona el QA px a px) · **LH-SP9** (entradas/página de L3) · **LH-SP10** (extracto manual vs derivado) |
+| **hecho** | los **6 pre-registros de LH-2** (`P-LH-C1…C6`) verificados uno a uno, cada uno con su sonda |
+
+> ⚠ **`P-LH-C6` es una PRECONDICIÓN, no un criterio de cierre**: la pasada de
+> comportamiento (hover · si la paginación navega por enlace o por AJAX · lazy
+> de las imágenes de tarjeta · el orden entre dos cargas) va **ANTES** de
+> construir. Es también el primer mordisco al eje `comportamiento`, que sigue
+> **0/31** en `COBERTURA-MEDICION.md` y es el hueco mayor del proyecto.
+
+> ⚠ **Y `P-LH-C3` cambia de fuente con esta tanda.** Decía *«contra una corrida
+> de `qa:lh-paginas` del día de la construcción, no contra la del
+> 2026-07-31»*. Hoy hay una tercera opción y es mejor que las dos: **la
+> paginación de F3-0**, congelada con su HTML. Sigue valiendo la razón —el
+> contenido vivo mueve el total— así que el criterio se reformula: **contra la
+> congelada de F3-0, y si difiere, el que manda es el original y la diferencia
+> se ficha con su fecha.**
+
+## F3-3 · la cola larga — 7 hubs de KB + las sueltas
+
+| | |
+|---|---|
+| **entrega** | los 7 hubs del centro de ayuda (casillero **L4**: página compuesta por instancia) + las páginas autónomas (legal · landing de descarga · empresa · suscripción · soporte · contacto) |
+| **alimenta** | §2d.1 (los hubs van a cola larga, **cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
+| **incógnita** | **el modelo de la cola larga no está decidido.** §2d.1 lo dejó dicho: *«la cola larga necesitará su propia decisión de modelo cuando toque»*. Es una decisión de ESQUEMA (`CMS-n`), no una fase |
+| **hecho** | la decisión de modelo escrita en el ESQUEMA **con su pre-registro**, y las páginas emitidas con Δ0 en sus ejes |
+
+## F3-4 · las tres familias de archivo sin censar
+
+| | |
+|---|---|
+| **entrega** | el censo y el modelo de `category` (LH-SP8) · `author` · la taxonomía `sector` |
+| **alimenta** | §2c (`categorias`: *«SIN CENSAR … se censa antes de modelar»*) · LH-2 D3 (las **tres** taxonomías que la tarjeta exige) |
+| **incógnita** | **`author` no estaba en el plan de nadie.** LH-2 D3 midió que *«el autor no aparece en ninguna tarjeta y el sitemap de author tiene 0 URLs en `/es`»* y concluyó, correctamente para su alcance, que **los listados no lo exigen**. F3-0 midió otra cosa: **el archivo existe y tiene 34 rutas vivas.** Las dos son ciertas y contestan preguntas distintas |
+| **hecho** | cada familia con su decisión escrita en el ESQUEMA (colección o «no se replica», **con razón**), y el nº de rutas que añade contabilizado contra A-SP13 |
+
+## F3-5 · los content types de lo ya construido
+
+| | |
+|---|---|
+| **entrega** | el content type de **HOME** — el único arquetipo construido que sigue sin uno (§precondición 1: PRODUCTO/CATÁLOGO/SOFTWARE/API resultaron ser del CPT `solutions`, ya modelado en §2e) |
+| **alimenta** | §2e (`productos`, una colección con discriminante) |
+| **incógnita** | HOME es **singleton**: una instancia, así que **no se sabe qué es plantilla y qué es campo**. Es exactamente la FAMILIA DE CALIBRACIÓN, y modelarla desde su única instancia es el arreglo falso |
+| **hecho** | o el content type escrito **con sus SIN PROBAR declarados y no cableados**, o la decisión explícita de dejar HOME como plantilla sin colección, con razón |
+
+## El orden, y por qué
+
+| # | por qué va aquí |
+|---|---|
+| **F3-0** | irreversible: el sitio vivo cambia. ✅ hecho |
+| **F3-1** | el más barato de los que estrenan colección (6 instancias, forma uniforme, varianza cero) y el que **estrena el camino CMS-first**. Si el camino falla, es mejor que falle con 6 documentos que con 23 listados |
+| **F3-2** | el de más rendimiento: 4 arquetipos cubren 35 páginas + 107 rutas. Depende de `P-LH-C6` |
+| **F3-3 · F3-4** | los dos abren decisión de ESQUEMA, así que van después de que F3-1/F3-2 hayan enseñado si el patrón de bloques aguanta |
+| **F3-5** | el único que no le debe nada a nadie: se puede mover |
+
+## Lo que esta fase NO hace
+
+- **No toca lo poblado.** Si algo de lo construido en la FASE 2 tiene que
+  cambiar, eso NO es F3: es una reapertura, y se escribe como tal en el ESQUEMA
+  con la razón. Todo lo de esta fase cayó en el cubo B **precisamente** por eso.
+- **No cierra los 208 casos legales sin ejercitar.** Los va reduciendo: cada
+  fase EJERCITA a propósito los que su colección toca —lista vacía, opcional
+  ausente, unión con un solo miembro— en vez de esperar a que un editor los
+  cree. El escalón de las etiquetas midió el coste de la otra vía: 8 entradas
+  reales de 149 tenían el caso y el render moría **al prerenderizar**.
+- **No arregla el eje `comportamiento` 0/31.** Lo muerde en F3-2 (`P-LH-C6`) y
+  lo declara donde toca; cerrarlo es una tanda propia.
+
+## ESTADO DE LA FASE 3
+
+| fase | estado |
+|---|---|
+| **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — 272 registros, 0 fallos, commiteada |
+| **F3-1** · `articulos-kb` | en curso |
+| **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
+| **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
+| **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |
+| **F3-5** · content type de HOME | pendiente · sin dependencias |
