@@ -133,6 +133,19 @@ function* pares() {
 const anchoFila = {};
 for (const [ruta, a] of Object.entries(G.articulos)) anchoFila[ruta] = a.cascaron.contenido?.rect.w ?? null;
 
+/* ⚠ **LÍMITE DECLARADO, medido el 2026-08-10.** Esta función reconoce UNA forma
+ * de default: «el % contra la fila propia». Y `modulo.marginBottom` tiene DOS
+ * valores que se comportan como default —los dos colapsan a `30px` a 390— y
+ * **cuál sale lo decide el TIPO DE COLUMNA**, sin excepción en los 72 que los
+ * llevan: `34.0469` en las 59 de columna `4_4` (= 2.75 % de **1238.39**, la fila
+ * del CASCARÓN) y `25.0625` en las 13 de columna estrecha (= 2.75 % de
+ * **911.75**, la fila propia). Ninguno es el 2.75 % de su propio contenedor.
+ *
+ * Consecuencia: los 59 a `34.0469` salen **CAMPO por test B**, y eso NO afirma
+ * que los escribiera un editor — afirma que aquí no está la regla para
+ * reconocerlos. El veredicto de la propiedad no depende de ellos (lo sostienen
+ * `16`, `27`, `40`, `13`, `45`). Detalle:
+ * `docs/research/articulos-kb/components/modulos.spec.md` §1.3. */
 function esDefault(r) {
   const d = DEFAULTS[`${r.nivel}.${r.prop}`];
   if (!d) return null;
