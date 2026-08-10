@@ -60,6 +60,93 @@ De `medidas/kb-tests.json` — **1519 pares (nodo × propiedad)** clasificados.
 una constante se equivoca en uno de los dos grupos por ~9 px, y en **59 módulos**
 si se elige mal. **El default es una función del tipo de columna, no un número.**
 
+> ⚠⚠ **CORREGIDO EL MISMO DÍA (F3-1 PASO 6): la frase de arriba atribuye el
+> efecto a la VARIABLE EQUIVOCADA, y es correcta sólo dentro de KB.** En las 6
+> instancias **todas las filas miden 911.75**, así que «tipo de columna» y
+> «ancho de fila» están **confundidos** y la medición no puede separarlos.
+> Derivado contra un segundo arquetipo —`medidas/mono-modulos-{1440,390}.json`,
+> filas de 1238.39, emparejado nodo a nodo— la confusión se deshace:
+>
+> | arquetipo | fila | columna | `mb` por defecto @1440 | n |
+> |---|---|---|---|---|
+> | SECTOR/MONOGRÁFICO | 1238.39 | **estrechas** | **34.0469** | 35 |
+> | SECTOR/MONOGRÁFICO | 1238.39 | `4_4` | **34.0469** | 11 |
+> | `articulos-kb` | 911.75 | **estrechas** | **25.0625** | 13 |
+> | `articulos-kb` | 911.75 | `4_4` | **34.0469** | 59 |
+>
+> **Manda el ANCHO DE LA FILA (2.75 %), no el tipo de columna.** Y la
+> consecuencia es la contraria a la que la cola retroactiva iba buscando: **en
+> los arquetipos ya construidos NO hay nada que corregir** —sus 35 módulos de
+> columna estrecha llevan `34.0469` y ése es su valor medido—, y lo que habría
+> hecho daño es **generalizar la regla de KB hacia atrás**: habría puesto
+> `25.0625` en 35 módulos que miden `34.0469`. El mismo arreglo falso, con el
+> signo cambiado.
+>
+> Lo que sigue SIN PROBAR es sólo la **excepción**: por qué una `4_4` de una fila
+> de 911.75 resuelve su 2.75 % contra 1238.39. Implementación con su tabla y su
+> `throw` ante un ancho de fila sin medir: `mbPorDefecto()` en
+> `packages/cms-config/src/defaults.ts`.
+
+## ⚠ F3-1-RITMO-SIN-UNIDAD · `ritmoInline` y `ritmoModulo` son `number`, o sea px IMPLÍCITOS (2026-08-10)
+
+`campos/comunes.ts` declara el ritmo de SECTOR, MONOGRÁFICO y `productos` con
+campos `number`. En KB eso no vale —el editor escribió px **y** porcentajes, y a
+1440 son el mismo número (`cuerpo.spec.md` §2.1)—, así que el arquetipo nuevo
+estrena `medida()`: valor + unidad, con la unidad **obligatoria** en cuanto hay
+valor. La pregunta retroactiva es si los poblados arrastran la misma ambigüedad.
+
+**Derivado, no recordado** (§sondas 9), emparejando nodo a nodo
+`medidas/mono-modulos-1440.json` contra `-390.json` — 3 páginas congeladas:
+edar · petróleo · **urbano**:
+
+| nivel | n | valores NO-default distintos entre 1440 y 390 |
+|---|---|---|
+| sección (`mt`·`pt`·`pb`) | **8** | **0** — `−14 · 14 · 40 · 0` iguales a los dos anchos |
+| fila (`pt`·`pb`) | **22** | **0** — `2 · 36 · 40 · 60 · 72 · 0` iguales |
+| módulo (`mt`·`mb`) | **95** | **0** — `16 · 17 · 20 · 23 · 26 · 30 · 41 · 0` iguales |
+
+Los únicos pares que se mueven son **los defaults** (`57.5938→50` ·
+`28.7969→30` · `34.0469→30` · `37.1406→10.0469`), y el dato los **omite** por
+convención.
+
+> **Veredicto: la ambigüedad es LATENTE, no realizada.** En lo medido el editor
+> no escribió ni un porcentaje, así que ningún dato guardado está mal hoy. Lo que
+> un `number` no puede hacer es **expresar** el `%` que traiga una cuarta
+> instancia: lo guardaría como px, sin dar error, y el defecto sería invisible a
+> 1440 — exactamente el modo de fallo que KB acaba de exhibir.
+
+**Alcance declarado: 3 páginas de las 4 construidas.** Los 8 sectores NO están
+todos medidos con esta sonda, así que «0 porcentajes» es una propiedad de esas
+tres, no del arquetipo.
+
+**Por qué no se migra en esta tanda, y no es pereza:** cambiar `number` → grupo
+en un tipo **poblado** exige que `mapeo`/`vuelta`, el render y `qa:cms-roundtrip`
+sepan llevar la forma nueva, y eso se prueba con su round-trip, no de paso. La
+razón **no** es «no se toca lo poblado» (§2d.3 ya cerró ese tabú): es que la
+prueba cuesta una tanda y esta no es la suya.
+
+**Dueño:** la tanda que toque el ritmo de SECTOR/MONOGRÁFICO por cualquier otra
+razón, o la primera que mida un porcentaje escrito por el editor en esas páginas.
+
+## ⚠ F3-1-SRCSET-KB · las imágenes de `articulos-kb` no modelan `srcset`, y es omisión DECLARADA (2026-08-10)
+
+`modulos.spec.md` §3 censó **14 de 21** módulos `image` con `srcset` en el
+original. `MODULO_IMAGEN_KB` guarda `src` + `alt` y **no** lo modela, mientras
+que el grupo A sí lo hace (`imagenA`) **porque `srcset` es la causa de M-IMG**:
+el censo de las 309 páginas demostró que **no es función de la imagen** —39 de
+519 orígenes se sirven con `srcset` distinto según el punto de uso—.
+
+**Por qué se deja fuera en vez de colarlo:** M-IMG está **abierta** en el ESQUEMA
+(§CMS-0b) y resolverla de paso, en la tanda que estrena el arquetipo, es
+exactamente cómo se fabrica una decisión sin medida. Lo que sí es defecto es no
+decirlo, y por eso está esta ficha.
+
+**Qué NO bloquea:** el Δ0 de geometría. A viewport fijo el navegador sirve una
+sola variante y el alto no cambia. **Qué SÍ afecta:** el byte servido y, con él,
+`qa:cmp-srcset` el día que se corra sobre estas 6 rutas.
+
+**Dueño:** la tanda que cierre M-IMG, o la que corra `cmp-srcset` sobre KB.
+
 **Límite declarado del instrumento:** `esDefault()` de `kb-tests.mjs` sólo
 reconoce la forma «% de la fila propia», así que los 59 nodos a `34.0469` salen
 **CAMPO por test B**. Eso no afirma que los escribiera un editor — afirma que el

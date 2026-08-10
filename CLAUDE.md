@@ -87,6 +87,57 @@ plantilla, vive en el componente. Igual a 1440 y a 390 → lo escribió una pers
 en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 (57.5938/50) · fila `pt/pb` 2% (28.7969/30) · módulo `mb` 2.75% (34.0469/30).
 
+> ⚠⚠ **LOS TRES DEFAULTS DE ARRIBA SON PORCENTAJES SIN DECIR DE QUÉ, Y ESO LOS
+> CONVIERTE EN CONSTANTES EN CUANTO SE LEEN (corregido 2026-08-10, F3-1 PASO 6).**
+> `57.5938 · 28.7969 · 34.0469` son los valores **de una página cuyo contenedor
+> mide 1440 y cuya fila mide 1238.39**. En cuanto un arquetipo mete su contenido
+> **dentro de una columna**, los tres cambian y ninguno da error:
+>
+> | default | contra 1440 / fila 1238.39 | **contra la columna 911.75 de KB** |
+> |---|---|---|
+> | sección `pt/pb` 4 % | 57.5938 | **36.4688** |
+> | fila `pt/pb` 2 % | 28.7969 | **18.2344** |
+> | módulo `mb` 2.75 % | 34.0469 | **25.0625** |
+>
+> **Escribir los de la izquierda en el comparador de `articulos-kb` daría «no es
+> el default» a TODOS los defaults, y de ahí saldrían ~30 campos inventados.** El
+> porcentaje se resuelve contra el contenedor **medido**, no contra 1440.
+>
+> **Y el de `mb` tiene además una excepción con número, que es la que enseña.**
+> La spec de KB concluyó *«el default de `mb` es una función del TIPO DE
+> COLUMNA»* (34.0469 en `4_4`, 25.0625 en estrechas) — correcto en KB, donde
+> **todas las filas miden 911.75** y tipo de columna y ancho de fila están
+> confundidos. Derivado contra un **segundo** arquetipo
+> (`medidas/mono-modulos-{1440,390}.json`, filas de 1238.39) la confusión se
+> deshace y el enunciado se **invierte fuera de KB**:
+>
+> | arquetipo | fila | columna | `mb` por defecto @1440 | n |
+> |---|---|---|---|---|
+> | SECTOR/MONOGRÁFICO | 1238.39 | **estrechas** (`1_2·1_3·1_4·2_3·3_4·3_5`) | **34.0469** | 35 |
+> | SECTOR/MONOGRÁFICO | 1238.39 | `4_4` | **34.0469** | 11 |
+> | `articulos-kb` | 911.75 | **estrechas** (`1_2·1_3·2_3`) | **25.0625** | 13 |
+> | `articulos-kb` | 911.75 | `4_4` | **34.0469** | 59 |
+>
+> > **La variable que manda es el ANCHO DE LA FILA, no el tipo de columna.** Un
+> > `1_2` de **585.13** en fila de 1238.39 lleva **34.0469**; un `2_3` de
+> > **591.11** —casi el mismo ancho de columna— en fila de 911.75 lleva
+> > **25.0625**. Aplicar la regla del tipo de columna fuera de KB pondría
+> > 25.0625 donde hay 34.0469 medido en 35 módulos.
+>
+> **La excepción `4_4` de KB queda SIN PROBAR**: por qué una `4_4` de una fila de
+> 911.75 resuelve su 2.75 % contra 1238.39 no se ha medido. Se replica el número,
+> no se explica el mecanismo. Implementación con su tabla y su `throw`:
+> `mbPorDefecto()` en `packages/cms-config/src/defaults.ts`.
+>
+> **Y la moraleja general, que vale para cualquier default futuro:**
+>
+> > **Un default expresado como porcentaje se lee como constante en cuanto se
+> > cita, porque el px es lo que se puede comparar y el contenedor no viaja con
+> > él.** Un default de ritmo se escribe **con su contenedor** —«2.75 % de la
+> > FILA»— o no se escribe. Los cuatro arquetipos anteriores calibraron bien por
+> > una coincidencia: sin cascarón, la fila mide 1238.39 **siempre**, así que las
+> > dos lecturas dan el mismo número y ninguna medición podía separarlas.
+
 > **⚠ Alcance: vale para el RITMO, que es donde se descubrió — `margin` y
 > `padding` de sección, fila y módulo. NO vale para la caja ni para la
 > tipografía.** En Divi el **ancho de módulo** se escribe en % igual que su
