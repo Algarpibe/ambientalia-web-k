@@ -1541,6 +1541,79 @@ de Divi se resuelven contra ella (sección 4 % = **36.4688**, fila 2 % =
 monográfico en el comparador daría «no es el default» a todos los defaults**, y
 de ahí saldrían ~30 campos inventados.
 
+### ✅ 2d.6 · la RETÍCULA aplicada y la colección POBLADA — y el defecto de `mb` atribuido a la variable equivocada (2026-08-10, tanda 45.ª)
+
+Cierra el **hueco 1** de §2d.4 y los pasos **(2)** y **(3)** de su orden
+obligado. `articulos-kb.cuerpo` deja de ser `blocks` plano y pasa a ser **la
+lista de las 39 filas visibles**; la colección **está sembrada** con sus 6
+instancias. Migraciones `20260810_140505` (suelta) y `20260810_140630` (retícula).
+
+#### Las tres precisiones, y la forma que toma cada una
+
+| precisión (§2d.5) | cómo se expresa | dónde |
+|---|---|---|
+| `fila.reparto` es CAMPO | **la secuencia de `ancho` de sus columnas**, con `validaReticulaKb` (suman 1 o se rechaza) | `bloques/kb.ts` |
+| el ritmo lleva **unidad** | `medida()` = `valor` + `unidad` (`px`\|`pct`) + override de móvil; la unidad es **obligatoria en cuanto hay valor** | `campos/comunes.ts` |
+| el defecto de `mb` no es una constante | `mbPorDefecto(anchoFila, tipoColumna)` — tabla medida, **`throw`** ante un ancho de fila sin medir | `defaults.ts` |
+
+> ⚠ **Y `reparto` NO es un `select` de los cuatro repartos vistos, a propósito.**
+> Sería el **catch 1 de `MODELO.md` §2 repetido con el mismo número**: `ancho` se
+> declaró como *«la retícula y no el enum de los valores vistos»* porque escrito
+> sólo desde EDAR habría salido de **cuatro** valores y Petróleo estrenó otros
+> cuatro. KB vuelve a traer **cuatro, en 6 instancias**. Y guardar las dos cosas
+> —el reparto y los anchos— sería la clase C7: dos representaciones de un dato,
+> que divergen en silencio.
+
+#### ⚠⚠ CORRIGE a §2d.5 · 2 — el default de `mb` depende del ANCHO DE LA FILA
+
+§2d.5 escribió *«es una función del TIPO DE COLUMNA»*, y es correcto **sólo
+dentro de KB**: allí **todas las filas miden 911.75**, así que tipo de columna y
+ancho de fila están **confundidos** y la medición no puede separarlos. Derivado
+contra un segundo arquetipo —`medidas/mono-modulos-{1440,390}.json`, filas de
+1238.39, emparejado nodo a nodo— la confusión se deshace:
+
+| arquetipo | fila | columna | `mb` por defecto @1440 | n |
+|---|---|---|---|---|
+| SECTOR/MONOGRÁFICO | 1238.39 | **estrechas** (`1_2·1_3·1_4·2_3·3_4·3_5`) | **34.0469** | 35 |
+| SECTOR/MONOGRÁFICO | 1238.39 | `4_4` | **34.0469** | 11 |
+| `articulos-kb` | 911.75 | **estrechas** (`1_2·1_3·2_3`) | **25.0625** | 13 |
+| `articulos-kb` | 911.75 | `4_4` | **34.0469** | 59 |
+
+> **Manda el ancho de la FILA (2.75 %).** Un `1_2` de **585.13** en fila de
+> 1238.39 lleva 34.0469; un `2_3` de **591.11** —casi el mismo ancho de
+> columna— en fila de 911.75 lleva 25.0625. Aplicar la regla del tipo de columna
+> fuera de KB pondría 25.0625 en 35 módulos que miden 34.0469.
+
+La excepción `4_4` de KB sigue **SIN PROBAR**: se replica el número, no se
+explica el mecanismo. Corrección propagada a `CLAUDE.md` §Test A —donde los
+**tres** defaults eran porcentajes sin decir de qué contenedor— y a
+`PENDIENTES-QA.md` §F3-1-SIN-PROBAR-KB.
+
+#### Lo que el seed cambia del modelo de trabajo, y hay que leerlo
+
+`articulos-kb` es **la primera colección cuyo dato NACE en el CMS**: no tiene
+catálogo en `src/lib` ni lo va a tener. Consecuencias, las dos ya escritas en el
+código para que no se olviden:
+
+1. **su verificación no es `qa:cms-campos`** —empareja colección contra
+   `src/lib` y aquí no hay contra qué—, **sino el comparador de dos lados contra
+   el ORIGINAL**;
+2. **el extractor no puede leer `style=`**: 0 estilos en línea en las 45 filas y
+   los 149 módulos. Su entrada son las medidas congeladas, **a los dos anchos** —
+   uno solo no distingue `19px` de `2 %`.
+
+#### Tres campos nuevos que el ESQUEMA gana, con su alcance
+
+- **`MODULO_IMAGEN_KB` / `MODULO_BOTON_KB`** — mismo contenido compartido
+  (`CAMPOS_MODULO_IMAGEN`, `CAMPOS_MODULO_BOTON`), **otro ritmo**. El botón de KB
+  **sí** lleva ritmo (`mb 34.0469→30` ×2 · `mt −15` ×2) y el del monográfico no
+  («el wrapper no se entera de ser el último», 7 de 7). Dos medidas, dos bloques;
+- **`srcset` NO entra** en las imágenes de KB — 14 de 21 lo traen en el original.
+  Omisión **declarada** (§F3-1-SRCSET-KB), no medida: M-IMG está abierta y no se
+  cierra de paso;
+- **`ancho` sube a `contenido.ts`**: lo consumen dos arquetipos y la retícula de
+  Divi no es de ninguno.
+
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 
 Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`

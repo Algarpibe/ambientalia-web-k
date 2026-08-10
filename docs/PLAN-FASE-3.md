@@ -139,6 +139,32 @@ se cuenta antes de hacerla, no después.
 > ninguna decisión escrita** (§1.5b deja `MonoModulo` intacto y `articulos-kb` ya
 > tiene unión propia).
 
+> ✅ **PASOS 2 y 3 DEL ORDEN OBLIGADO — HECHOS (2026-08-10, tanda 45.ª).** Acta:
+> `ESQUEMA-CMS.md` §2d.6.
+>
+> | paso | estado |
+> |---|---|
+> | (1) specs | ✅ 44.ª tanda |
+> | **(2) filas/columnas en el esquema, con su migración** | ✅ 39 filas · 54 columnas · 143 módulos · 4 repartos. Dos migraciones |
+> | **(3) extractor + seed** | ✅ `cms:extractor-kb` (+ negativo 6/6) · `cms:seed-kb` — 6 artículos, 56 imágenes, 0 peticiones al original |
+> | (4) plantilla | ⛔ **no hecha** |
+> | (5) ruta | ⛔ **no hecha** |
+> | (6) sonda de dos lados + Δ0 + lector de `c-cmp` | ⛔ **no hecha** |
+>
+> **Y la corrección que el PASO 2 se llevó por delante, porque afecta a lo ya
+> construido:** §2d.5 decía que el default de `mb` es *«función del tipo de
+> columna»*. Medido contra un **segundo** arquetipo, manda **el ancho de la
+> FILA**. En KB las dos lecturas dan el mismo número (todas sus filas miden
+> 911.75); fuera de KB **no**, y la regla de la spec habría puesto `25.0625` en
+> 35 módulos que miden `34.0469`. `mbPorDefecto()` es una tabla medida que
+> **TIRA** ante un ancho de fila sin medir.
+>
+> ⚠ **La cobertura NO se mueve, y es por construcción:** las 6 rutas **no se
+> emiten**, así que ninguna sonda de este repo puede verlas —todas leen HTML
+> servido—. `COBERTURA-MEDICION.md` no gana ni la forma ni el lector de `c-cmp`
+> hasta el PASO 5. Estado nuevo nombrado en `CENSO-ARQUETIPOS.md`: **POBLADO y no
+> SERVIDO**.
+
 #### El coste de cobertura, CONTADO ANTES de gastarlo (2026-08-09)
 
 Derivado leyendo de dónde saca cada sonda su lista de rutas y cómo clasifica.

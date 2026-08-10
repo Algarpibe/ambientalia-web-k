@@ -41,6 +41,26 @@
 >
 > ⚠ **Sigue sin ser CONSTRUIDO**, y no se lea «especificado» como avance de
 > construcción: es 1 de los 6 pasos del orden obligado de §2d.4.
+>
+> ✅ **2026-08-10 (2.ª tanda del día): pasa a MODELADO y POBLADO — 2 de los 6
+> pasos más.** El esquema expresa la retícula (39 filas · 54 columnas · 143
+> módulos, cuatro repartos) y la colección **está sembrada con sus 6
+> instancias**, derivadas de las medidas congeladas por `cms:extractor-kb`.
+>
+> **Y hay que nombrar el estado, porque el censo tampoco lo tenía:** un
+> arquetipo puede estar **POBLADO y no SERVIDO**. Las 6 rutas **no se emiten**
+> —falta la plantilla (PASO 3) y la ruta (PASO 4)—, así que:
+>
+> > **CENSADO → RECONOCIDO → MEDIBLE → ESPECIFICADO → MODELADO → POBLADO →
+> > *SERVIDO* → COMPARADO.** Y sólo desde SERVIDO puede correr una sonda de las
+> > que este repo llama medir: **todas leen HTML servido**, así que un arquetipo
+> > poblado y no servido tiene cobertura **cero** por construcción, no por
+> > descuido.
+>
+> Es la razón operativa de que `COBERTURA-MEDICION.md` **no gane hoy ni la forma
+> ni el lector de `c-cmp`**: declarar una familia contra rutas que no se emiten
+> sería estrenar una guarda sin nada contra qué ejercitarla, que es exactamente
+> lo que la tanda anterior decidió no hacer.
 
 ## 0 · De dónde salen los números, y qué NO cubren
 

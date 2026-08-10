@@ -1,4 +1,116 @@
-# HANDOFF — `articulos-kb` tiene SPECS, y el PASO 0 que nadie había planteado dice dónde se pueden medir
+# HANDOFF — `articulos-kb` está MODELADA y POBLADA, y el defecto de `mb` estaba atribuido a la variable equivocada
+
+> ⚠ **Tanda 2026-08-10 (45.ª).** PASOS **1 · 2 · 6 · 7** completos. Los PASOS
+> **3 (plantilla)**, **4 (ruta)** y **5 (sonda + Δ0 + lector de `c-cmp`)** **NO
+> se hicieron** — se dice con su razón abajo. Registro: `ESQUEMA-CMS.md` §2d.6 ·
+> `PLAN-FASE-3.md` §F3-1 · `CENSO-ARQUETIPOS.md` · `CLAUDE.md` §Test A ·
+> `PENDIENTES-QA.md` (3 fichas nuevas).
+
+## 0 · Los cuatro titulares
+
+> **1 · EL DEFECTO DE `mb` NO ES «FUNCIÓN DEL TIPO DE COLUMNA»: MANDA EL ANCHO
+> DE LA FILA.** La spec de la tanda anterior lo derivó de KB, donde **todas las
+> filas miden 911.75** — así que tipo de columna y ancho de fila están
+> **confundidos** y la medición no puede separarlos. Añadiendo
+> `mono-modulos-{1440,390}.json` (filas de 1238.39) la confusión se deshace: un
+> `1_2` de **585.13** en fila de 1238.39 lleva **34.0469**, y un `2_3` de
+> **591.11** —casi el mismo ancho de columna— en fila de 911.75 lleva
+> **25.0625**. La cola retroactiva del PASO 6 se contestó **al revés de como se
+> preguntaba**: en los arquetipos construidos no hay nada que corregir (sus 35
+> módulos de columna estrecha llevan 34.0469, medido), y **el daño lo habría
+> hecho generalizar la regla de KB hacia atrás**.
+>
+> **2 · Y la corrección de fondo, que vale para cualquier default futuro: los
+> TRES defaults de `CLAUDE.md` eran porcentajes sin decir DE QUÉ.** `57.5938 ·
+> 28.7969 · 34.0469` son los valores de una página cuyo contenedor mide 1440.
+> Dentro de una columna de 911.75 los tres cambian (`36.4688 · 18.2344 ·
+> 25.0625`) y **ninguno da error**. Un default de ritmo se escribe **con su
+> contenedor** o no se escribe.
+>
+> **3 · La retícula está en el esquema y la colección SEMBRADA: 39 filas · 54
+> columnas · 143 módulos · 4 repartos · 56 imágenes**, derivadas de las medidas
+> congeladas —**no** del HTML, que miente en 55 de 210 anclas— y con **0**
+> peticiones al original. Verificado leyendo de vuelta: `mt: {valor: 2, unidad:
+> "pct"}` en una fila, `anchoPct: 85` en la imagen cuadrada, **75 `movilValor`**
+> en un solo documento. Un campo `number` habría guardado ese `2 %` como `2px`,
+> y a 1440 se ve igual.
+>
+> **4 · `reparto` NO es un `select` de los cuatro repartos vistos**, y es el
+> catch 1 de `MODELO.md` §2 evitado con el mismo número: `ancho` se declaró como
+> **la retícula** porque desde EDAR habrían salido cuatro valores y Petróleo
+> estrenó otros cuatro. KB vuelve a traer cuatro, en 6 instancias. El reparto es
+> **la secuencia de `ancho` de las columnas**, con una guarda derivada: suman 1 o
+> se rechaza.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`cms:extractor-kb`** ← nueva | **6 documentos** · 39 filas · 54 columnas · 143 módulos · repartos `4_4`×25 `1_2+1_2`×7 `1_3+2_3`×6 `1_3×3`×1 · `2 %`×3 `5 %`×2 `0.8 %`×3 `0.4 %`×1 · 26 overrides de móvil · **62 módulos con el `mb` en su defecto** |
+| **`cms:extractor-kb-neg`** ← nueva | **6/6** — 5 sabotajes cayendo cada uno por SU invariante + control |
+| **`cms:seed-kb`** ← nueva | 6 artículos · 39 filas · 143 módulos · **56 imágenes**, todas de `media-corpus/fase-3` |
+| `npm run check` | verde · 31 rutas · `cms-campos` 10/10 |
+| `qa:slugs` | LIMPIO · registro `articulos-kb` 6 · blog 7 · término 3 · productos 5 |
+| `qa:lib` | **119 sondas** COMPILAN y declaran su mínimo |
+
+**Y un número que se corrige por derivación (§sondas 9):** la consigna citaba
+**31** casos legales sin ejercitar para esta colección. `qa:nunca-vistos` dice
+hoy **96** — el PASO 1 le añadió el nivel de fila y las cuatro `medida`. El
+instrumento **sigue sin poder ejercitarlos** (no hay catálogo que recorrer) y él
+mismo lo dice: *«los contesta el seed de su arquetipo, no éste»*.
+
+## 2 · Lo siguiente, por orden — y el orden sigue siendo de DEPENDENCIA
+
+**Quedan 3 de los 6 pasos de §2d.4**, en el único orden posible:
+
+1. **la plantilla** contra `docs/research/articulos-kb/components/*.spec.md`.
+   Tiene que emitir **la sección propia** (`pt: 0`, campo uniforme declarado),
+   **las 6 filas ocultas** (`d-none`, con el `<h1>Kunak Help Center</h1>` — no
+   están en el dato porque son plantilla), el cascarón `_tb_` con su barra
+   lateral, y resolver los defaults con `mbPorDefecto`;
+2. **la ruta**, con sus **dos prefijos** (`prefijo` ya es campo y ya está
+   sembrado con sus dos valores);
+3. **sonda de dos lados + Δ0 + el lector de `c-cmp`**, que van juntos.
+
+Después: **F3-2 · listados y hubs** (35 + 107, capturados, modelo decidido,
+bloqueada por `P-LH-C6`) · **§DEFECTO-SUB-EDAR** (tanda propia) · operación sin
+cambios (`Dockerfile` sin verificar, `PREVIEW_SECRETO`).
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer «POBLADA» como cobertura.** Las 6 rutas **no se emiten**, y todas las
+  sondas de este repo leen **HTML servido**: su cobertura es **cero por
+  construcción**, no por descuido. Estado nombrado en `CENSO-ARQUETIPOS.md`:
+  **POBLADO y no SERVIDO**.
+- **No declarar la familia de `articulos-kb` en `c-cmp` todavía** — sigue sin
+  haber contra qué ejercitar el lector. Va **en la misma tanda que emita las
+  rutas**, y entonces la guarda que ya está puesta tiene que **dejar de saltar
+  por sí sola**: eso se comprueba, no se supone.
+- **No usar el `h1` como base en crudo.** Está **oculto en las 6** y su `y` es 0
+  en los dos lados: heredar el ancla del protocolo da **Δ0 por construcción**.
+  Elegir el ancla es parte del PASO 5.
+- **No medir píxeles contra la captura.** Renderiza y **miente en 55 de 210
+  anclas** (§F3-1-CSS-NO-CAPTURADO). Sirve para la ESTRUCTURA, no para el estilo.
+- **No cablear el default de `mb`.** Y ojo: **tampoco el de la spec** — es el
+  ancho de la FILA, no el tipo de columna. Se llama a `mbPorDefecto()`, que tira
+  ante una fila sin medir.
+- **No re-correr `cms:seed-kb` sobre una colección con datos**: exige vacía, y
+  tira si no lo está.
+- **No dar por buena la cabecera y el pie de KB** — salen con varianza cero en el
+  ORIGINAL pero **nunca se han comparado contra el clon**
+  (§F3-1-CASCARON-KB-SIN-COMPARAR).
+
+## 4 · Por qué pararon los PASOS 3-5, dicho sin adornos
+
+**No hubo hallazgo que lo impidiera: se acabó la tanda.** Los tres son trabajo de
+construcción con su spec delante y sin decisión abierta — la plantilla tiene sus
+1519 pares nodo × propiedad medidos, la ruta tiene su campo `prefijo` poblado, y
+la sonda tiene su arquetipo poblado contra el que correr. Lo que hay que saber
+antes de retomarlos está en §2 y §3 de arriba.
+
+---
+
+# (anterior) HANDOFF — `articulos-kb` tiene SPECS, y el PASO 0 que nadie había planteado dice dónde se pueden medir
 
 > ⚠ **Tanda 2026-08-10 (44.ª).** PASOS 0 · 1 · 2 · 5 · 6 completos. El **PASO 3
 > (la construcción) NO se hizo**, y el **PASO 4 (el lector de `c-cmp`) se
