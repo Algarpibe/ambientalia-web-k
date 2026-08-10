@@ -78,7 +78,24 @@ export function SeccionCuerpoTb({ children }: { children: ReactNode }) {
   );
 }
 
-/** Columna `3_4`: 73.62 % (911.75 a 1440), ancho completo al apilar. */
+/**
+ * Columna `3_4`: **73.624 %** (911.75 a 1440), ancho completo al apilar.
+ *
+ * ⚠ **El 73.62 % de antes daba 911.703, o sea −0.047 px, y de ahí salían 45
+ * pares distintos** — el ancho de la sección, el de sus 39 filas y el 2 % de
+ * `padding` que cada una resuelve contra él. Lo cazó `qa:kb-cmp` par a par; una
+ * guarda de alturas no lo habría visto nunca, porque a esa escala el texto no
+ * cambia de renglón (§la GUARDA TAMBIÉN TIENE UN NIVEL).
+ *
+ * El valor no es «el porcentaje de Divi»: es **el que reproduce el píxel
+ * medido**. El ancho computado está cuantizado a 1/64 px, así que un px no
+ * determina un porcentaje —determina un conjunto— y quién elige dentro de él es
+ * el motor. Se ajusta contra la medida y lo adjudica el comparador, que es la
+ * única forma de saberlo sin modelar cómo redondea Chrome.
+ *
+ * Y aprovecha a las DOS familias: grupo A tiene la misma columna de 911.75 en el
+ * original y arrastraba el mismo −0.047 **sin que ninguna sonda lo mirase**.
+ */
 export function ColumnaAncha({
   children,
   className = "",
@@ -86,7 +103,7 @@ export function ColumnaAncha({
   children: ReactNode;
   className?: string;
 }) {
-  return <div className={`w-full min-[981px]:w-[73.62%] ${className}`}>{children}</div>;
+  return <div className={`w-full min-[981px]:w-[73.624%] ${className}`}>{children}</div>;
 }
 
 /**

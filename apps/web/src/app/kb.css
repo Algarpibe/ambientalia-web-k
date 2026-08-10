@@ -1,0 +1,543 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LAS CLASES `kb-*` — la PLANTILLA del cuerpo de `articulos-kb`
+ *
+ * Cada número de esta hoja sale de `npm run qa:kb-clases`, que lo deriva de los
+ * nodos cuyo DATO omite la propiedad (`medidas/kb-clases.json`). El denominador
+ * va al lado de cada bloque: `n=` es cuántos nodos lo sostienen.
+ *
+ * ── Las tres cosas que hay que saber antes de tocar una línea ──────────────
+ *
+ * **1 · El default vive AQUÍ y el campo llega por VARIABLE.** La cascada es
+ * siempre la misma y tiene tres pisos, porque el original tiene tres:
+ *
+ *     escritorio:  padding-top: var(--kbf-pt, 2%)
+ *     ≤980:        padding-top: var(--kbf-pt-movil, var(--kbf-pt, 30px))
+ *
+ * El de en medio no es adorno: un campo escrito como `2 %` **sigue siendo 2 %**
+ * a 390 (6.70312 medido), mientras que el DEFAULT de Divi cambia de unidad al
+ * apilar (2 % → `30px` plano). Sin el piso intermedio, un `%` del editor se
+ * comería el 30px o al revés. Y poner el valor `style={{paddingTop}}` en línea
+ * haría ganar el de escritorio también a 390: defecto de RANGO invisible a 1440.
+ *
+ * **2 · Los nombres de variable llevan prefijo POR NIVEL, y no es estética.**
+ * Las custom properties **heredan**: un `--kb-mb` puesto en la fila lo verían
+ * sus columnas y sus módulos, así que un módulo sin `mb` propio cogería el de su
+ * fila y el default de la hoja no llegaría a aplicarse nunca. Por eso `--kbf-*`
+ * (fila), `--kbc-*` (columna), `--kbm-*` (módulo) y `--kbh-*` / `--kbb-*`
+ * (pieles de titular).
+ *
+ * **3 · El corte responsive es 980, el de Divi**, no el `md` de Tailwind (768).
+ * Es el mismo que ya usa `CascaronTb`. ⚠ Y con las dos medidas que hay (1440 y
+ * 390) **el corte mismo está SIN PROBAR**: cualquier valor entre 391 y 1439
+ * cumple. Se hereda del cascarón, que lo tiene por la misma vía.
+ *
+ * ── Lo que esta hoja NO puede reproducir, dicho aquí y no en un pie ────────
+ * · **la viñeta de las listas.** El original pone `list-style-type:none` con
+ *   `padding-left:36px` y la pinta el tema — y ESO no está en las medidas
+ *   (§F3-1-VINETA-KB). Sin medida no se inventa: la lista sale sin viñeta;
+ * · **el color de los enlaces del cuerpo rico.** `kb-spec` no mide `a`, así que
+ *   se queda con el del sitio (§F3-1-ENLACE-CUERPO-KB);
+ * · **la piel del CUERPO del módulo de texto** (el claim de 25px y la etiqueta
+ *   azul de 15px, 7 módulos): §F3-1-PIEL-CUERPO-KB, campo no modelado todavía.
+ *   `qa:kb-cmp` los nombra uno a uno en vez de dejarlos pasar.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── LA SECCIÓN PROPIA · n=6 ───────────────────────────────────────────────
+ * `pt: 0` es CAMPO UNIFORME, no plantilla probada: el default de Divi es 4 % y
+ * las 6 escriben 0 — alguien lo escribió. El test B no puede confirmarlo (hay
+ * UNA sección por página) y su silencio no es «no varía» (cuerpo.spec.md §3).
+ * `pb: 36.4688` sí es el default: el 4 % resuelto contra la columna de
+ * contenido (911.75), no contra 1440. A 390 Divi lo pasa a 50px plano. */
+.kb-seccion {
+  width: 100%;
+  padding: 0 0 4%;
+  margin: 0;
+  /* `left` y no el `start` inicial del navegador: son el mismo píxel y **no el
+     mismo par**. El original computa `left` en el titular, en el párrafo y en el
+     botón; sin esto el clon devuelve `start` y salen 11 pares distintos que
+     ningún ancho enseña, porque el texto cae en el mismo sitio. */
+  text-align: left;
+}
+@media (max-width: 980px) {
+  .kb-seccion {
+    padding-bottom: 50px;
+  }
+}
+
+/* ── LA FILA · n=39 visibles + 6 ocultas ───────────────────────────────────
+ * `max-width: 1380` es SIN PROBAR e **inerte**: 1380 > 911.75 y > 335.39, así
+ * que no recorta en ningún ancho medido. Se emite porque está medido en 39/39.
+ *
+ * `margin-left/right: auto` se deriva de las filas OCULTAS: un nodo
+ * `display:none` devuelve el valor ESPECIFICADO, y las 6 dan `auto` — mientras
+ * las 39 visibles dan el `0px` que es el valor USADO de ese mismo `auto`. Es la
+ * única propiedad de esta hoja que sólo se puede leer en los nodos ocultos. */
+.kb-fila {
+  width: 100%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--kbf-pt, 2%);
+  padding-bottom: var(--kbf-pb, 2%);
+  /* ⚠ El default vertical es `auto`, **no `0`**, y sólo el nodo OCULTO lo dice:
+     su `getComputedStyle` devuelve `margin: auto` en los cuatro lados mientras
+     las 39 visibles dan `0px`, que es el valor USADO de ese mismo `auto`.
+     Escribir `0px` aquí daba Δ en 15 pares que ningún ancho enseña. */
+  margin-top: var(--kbf-mt, auto);
+  margin-bottom: var(--kbf-mb, auto);
+}
+/* Las columnas van flotadas, como en Divi: el clearfix es lo que le devuelve la
+   altura a la fila. `display:table` no añade alto. */
+.kb-fila::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 980px) {
+  .kb-fila {
+    padding-top: var(--kbf-pt-movil, var(--kbf-pt, 30px));
+    padding-bottom: var(--kbf-pb-movil, var(--kbf-pb, 30px));
+    margin-top: var(--kbf-mt-movil, var(--kbf-mt, auto));
+    margin-bottom: var(--kbf-mb-movil, var(--kbf-mb, auto));
+  }
+}
+
+/* La fila oculta: `et_pb_row_0 d-none`, una por artículo, 0×0, con el único
+   `h1` de la página. Es plantilla y por eso no viene del dato.
+   ⚠ El `display:none` está también en el MÓDULO, no sólo en la fila: los 6
+   módulos ocultos computan `none` (y no el `block` que devolvería un hijo de un
+   padre oculto), y su ritmo es 0 en los cuatro lados. Es medida, no simetría. */
+.kb-fila-oculta {
+  display: none;
+}
+/* La regla del módulo oculto va MÁS ABAJO, después del default de `mb` por tipo
+   de columna: con la misma especificidad gana la última, y puesta aquí perdía
+   contra `.kb-col-4_4 > .kb-modulo` en los 6. */
+
+/* ── LA COLUMNA · n=54 ─────────────────────────────────────────────────────
+ * Los anchos son la RAZÓN medida contra la fila propia (911.75):
+ *   4_4 100 %  ·  1_2 47.249465 %  ·  2_3 64.832355 %  ·  1_3 29.666466 %
+ * y se escriben con los dos decimales que la retícula de Divi usa. ⚠ La
+ * cuantización a 1/64 px **no la resuelve la aritmética**: quién adjudica es
+ * `qa:kb-cmp`, que mide el clon con el mismo motor contra el mismo número.
+ *
+ * El canal (`margin-right` 50.1406 = 5.5 % en toda columna que no es la última,
+ * 0 en la última) y el `margin-bottom: 30` al apilar son **regla posicional de
+ * la retícula, no campos** — el falso positivo del test B que `MEDICION.md`
+ * §3.2 nombra. Modelarlos como dato inventaría un `margenDerecho` por columna. */
+.kb-columna {
+  float: left;
+  width: var(--kbc-w, 100%);
+  min-height: 1px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.kb-columna:not(:last-child) {
+  margin-right: 5.5%;
+}
+@media (max-width: 980px) {
+  .kb-columna {
+    float: none;
+    width: 100%;
+  }
+  /* ⚠ El `margin-right: 0` va en el selector CON `:not(:last-child)`, no en
+     `.kb-columna` a secas: la media query no sube la especificidad, así que
+     (0,1,0) perdía contra el (0,2,0) de la regla de escritorio y las 15 columnas
+     no-últimas se quedaban con su canal de 5.5 % — **18.4375 px a 390 donde el
+     original pone 0**. Un defecto de 390 puro, invisible a 1440. */
+  .kb-columna:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* ── EL MÓDULO · n=143 ─────────────────────────────────────────────────────
+ * `mt` 0 (n=121) · `pb` 0 (n=141) · `pt`/`pl`/`pr` 0 (n=143).
+ *
+ * ⚠ **El default de `mb` NO es un número: es una tabla por TIPO DE COLUMNA**, y
+ * el mecanismo está SIN PROBAR (modulos.spec.md §1.3). `34.0469` es el 2.75 %
+ * de 1238.39 —la fila del CASCARÓN— y `25.0625` el 2.75 % de 911.75 —la fila
+ * propia—; ninguno de los dos es el 2.75 % de su propio contenedor, y por qué
+ * cada uno resuelve contra un ancestro distinto **no se ha medido**.
+ *
+ * Por eso va en px y no como porcentaje: escribirlo en % obligaría a elegir
+ * contra qué ancestro, que es exactamente lo que no se sabe. El precio está
+ * declarado — en anchos intermedios el original varía y esto no
+ * (§F3-1-MB-RANGO-KB) — y se paga con una medida, no con una suposición. */
+.kb-modulo {
+  margin-top: var(--kbm-mt, 0px);
+  margin-bottom: var(--kbm-mb, 25.0625px);
+  padding: 0;
+  padding-bottom: var(--kbm-pb, 0px);
+  position: relative;
+}
+.kb-col-4_4 > .kb-modulo {
+  margin-bottom: var(--kbm-mb, 34.0469px);
+}
+@media (max-width: 980px) {
+  .kb-modulo,
+  .kb-col-4_4 > .kb-modulo {
+    margin-top: var(--kbm-mt-movil, var(--kbm-mt, 0px));
+    margin-bottom: var(--kbm-mb-movil, var(--kbm-mb, 30px));
+    padding-bottom: var(--kbm-pb-movil, var(--kbm-pb, 0px));
+  }
+}
+
+/* `anchoPct` — 85 ×6 · 50 ×4 · 40 ×2, los 12 en `image`. Los márgenes medidos
+   son exactamente (100 − anchoPct)/2 de la columna en los 12, y en 2 de ellos
+   asimétricos por 1/64 px: eso no es un número, es `auto`. El módulo se centra. */
+.kb-modulo.kb-ancho {
+  width: var(--kbm-w, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* El módulo de la fila OCULTA: `display:none` y ritmo 0 en los cuatro lados,
+   medido en los 6. Va aquí, después del default de `mb`, porque con la misma
+   especificidad decide el orden. */
+.kb-fila-oculta .kb-modulo {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── MÓDULO DE TEXTO ───────────────────────────────────────────────────────
+ * El wrapper interno (`.et_pb_text_inner`) tiene ritmo 0 en los 85, así que el
+ * componente no lo emite: `.kb-texto` hace de módulo y de inner a la vez.
+ *
+ * ⚠ **El hueco entre párrafos es `:last-of-type`, NO `:last-child`**, y la
+ * diferencia la enseñaron 2 pares. La primera versión escribió
+ * `> :not(:last-child) { padding-bottom: 1em }` —lo que parece— y falló en los
+ * módulos con forma `<p>…</p><ul>…</ul>`: ahí el `p` **no es el último hijo** y
+ * el original le da **0**. Derivado sobre los 54 `p` medidos, la regla casa 1:1
+ * sin una excepción: un solo `<p>` ⇒ **0** (n=27); dos o más ⇒ el primero **18**
+ * (n=27). El último `p` DE SU TIPO no lleva hueco, lo siga lo que lo siga — y el
+ * `ul` lo lleva siempre (9 de 9), que es otra regla y no la misma.
+ *
+ * ⚠ **`1em` y `18px` siguen siendo indistinguibles en lo medido**: los 7
+ * párrafos con otro tamaño (claim 25px ×5, etiqueta azul 15px ×2) son todos
+ * último de su tipo, así que ninguno ejercita la diferencia. Se escribe `1em` y
+ * se declara SIN PROBAR con su denominador — no se afirma que sea la unidad.
+ *
+ * `:where()` deja la regla en especificidad (0,1,0) a propósito: los titulares
+ * llevan `padding-bottom: 10px` medido incluso cuando NO son el último hijo
+ * (36 de 36), y con la misma especificidad gana la regla que va después. */
+/* `et_pb_text_align_left` sale en los 85 módulos de texto, así que el módulo
+   declara `left` y sus titulares lo heredan. Sin esto el clon computa `start`
+   —el valor inicial del navegador— y el original `left`: son el mismo píxel y
+   **NO el mismo par**, así que 6 titulares salían distintos. El único `h2`
+   centrado del corpus trae su `style="text-align:center"` DENTRO del campo rico
+   y gana igual, que es lo que confirma que `align` aquí es contenido. */
+.kb-texto {
+  text-align: left;
+}
+.kb-texto > :where(*) {
+  margin: 0;
+}
+.kb-texto :where(p) {
+  padding-bottom: 1em;
+}
+.kb-texto :where(p:last-of-type) {
+  padding-bottom: 0;
+}
+.kb-texto :where(ul, ol) {
+  padding-bottom: 1em;
+}
+.kb-texto :where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+  padding: 0 0 10px;
+  letter-spacing: -0.5px;
+  font-family: inherit;
+}
+
+/* La PIEL de cada nivel. El defecto es el del TEMA, derivado de los módulos que
+ * NO llevan override en el dato: `h2` n=3 · `h3` n=4 · `h4` n=2
+ * (`titularPorDefecto()` en `packages/cms-config/src/defaults.ts` los tiene con
+ * la misma procedencia). El campo llega por variable, una por propiedad.
+ *
+ * ⚠ **`lh` va en RAZÓN (em) y no en px**, que es como Divi lo escribe y como el
+ * corpus lo confirma (499/499). A 390 el `h2` de 44 pasa a 35 y su interlínea a
+ * 43.75 = **el mismo 1.25**: guardarlo en px daría 55 en los dos anchos.
+ *
+ * `align` NO se deriva del computado: está confundido con la herencia del
+ * contenedor y con el `style=` del propio campo rico — medido, el único `h2`
+ * centrado lo trae en su HTML. Por eso el defecto es `inherit`. */
+.kb-texto h1 {
+  font-size: var(--kbh-h1-fs, 44px);
+  line-height: var(--kbh-h1-lh, 1em);
+  font-weight: var(--kbh-h1-fw, 300);
+  color: var(--kbh-h1-color, #333333);
+  text-align: var(--kbh-h1-align, inherit);
+}
+.kb-texto h2 {
+  font-size: var(--kbh-h2-fs, 37px);
+  line-height: var(--kbh-h2-lh, 1em);
+  font-weight: var(--kbh-h2-fw, 300);
+  color: var(--kbh-h2-color, #333333);
+  text-align: var(--kbh-h2-align, inherit);
+}
+.kb-texto h3 {
+  font-size: var(--kbh-h3-fs, 32px);
+  line-height: var(--kbh-h3-lh, 1em);
+  font-weight: var(--kbh-h3-fw, 300);
+  color: var(--kbh-h3-color, #333333);
+  text-align: var(--kbh-h3-align, inherit);
+}
+.kb-texto h4 {
+  font-size: var(--kbh-h4-fs, 26px);
+  line-height: var(--kbh-h4-lh, 1em);
+  font-weight: var(--kbh-h4-fw, 300);
+  color: var(--kbh-h4-color, #333333);
+  text-align: var(--kbh-h4-align, inherit);
+}
+/* `h5`/`h6` no aparecen en las 6 instancias y `titularPorDefecto()` TIRA ante
+   ellos: aquí tampoco se inventa una escala que nadie ha medido. Si el editor
+   escribe uno, hereda del `body` y `qa:kb-cmp` lo verá como Δ, que es lo que
+   tiene que pasar — no un valor plausible puesto por si acaso. */
+@media (max-width: 980px) {
+  .kb-texto h1 {
+    font-size: var(--kbh-h1-movil-fs, var(--kbh-h1-fs, 44px));
+  }
+  .kb-texto h2 {
+    font-size: var(--kbh-h2-movil-fs, var(--kbh-h2-fs, 37px));
+  }
+  .kb-texto h3 {
+    font-size: var(--kbh-h3-movil-fs, var(--kbh-h3-fs, 32px));
+  }
+  .kb-texto h4 {
+    font-size: var(--kbh-h4-movil-fs, var(--kbh-h4-fs, 26px));
+  }
+}
+
+/* Cuerpo del módulo: `p` 18/30.6 w400 (n=54) · `li` idéntico (n=9) · `ul` con
+   `padding-left:36px` y `list-style-type:none` (n=9). Ningún campo los toca. */
+.kb-texto p {
+  font-size: 18px;
+  line-height: 30.6px;
+  font-weight: 400;
+  color: #333333;
+  letter-spacing: normal;
+}
+.kb-texto ul,
+.kb-texto ol {
+  padding-left: 36px;
+  list-style-type: none;
+}
+.kb-texto li {
+  font-size: 18px;
+  line-height: 30.6px;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* ── MÓDULO DE IMAGEN · n=21 ───────────────────────────────────────────────
+ *
+ * ⚠⚠ **EL DISCRIMINADOR ES LA EXTENSIÓN DEL FICHERO, y el primer candidato era
+ * una CORRELACIÓN.** El envoltorio sirve dos `display` —`inline-block` ×14 y
+ * `block` ×7— y a primera vista los separa 1:1 el `srcset`, que este arquetipo
+ * dejó fuera del modelo (§F3-1-SRCSET-KB): parecía una ficha abierta cobrándose
+ * geometría. Censadas las 21 extensiones, la partición es **la misma y con
+ * causa**: los 7 de `block` son **los 7 `.svg`** y los 14 de `inline-block` son
+ * jpg/png. WordPress no genera `srcset` para SVG, así que `srcset` no era el
+ * discriminador — era su sombra. La regla se escribe sobre lo que **el clon
+ * tiene** (el `src`), no sobre lo que le falta.
+ *
+ * **Y no es cosmética: un SVG sin `width`/`height` mide 0×0.** Con el
+ * envoltorio `inline-block` —que encoge hasta su contenido— los 7 SVG y los 27
+ * iconos de blurb salían a **0 px de ancho** en el clon, y con ellos 60 alturas
+ * de módulo. 40 nodos invisibles con HTTP 200 en todas las imágenes.
+ *
+ * `line-height: 0` reproduce otro cero medido: el hueco entre el alto del módulo
+ * y el de la imagen es **0.00 en los 21**, o sea que el tema mata el renglón que
+ * un `inline-block` crearía. */
+.kb-imagen {
+  line-height: 0;
+  font-size: 0;
+}
+.kb-imagen-wrap {
+  display: inline-block;
+  max-width: 100%;
+}
+.kb-imagen img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+/* El SVG no tiene ancho intrínseco: su envoltorio es de bloque y él llena la
+   caja. Es lo medido en los 7, no una preferencia. */
+.kb-imagen-wrap:has(> img[src$=".svg"]) {
+  display: block;
+}
+.kb-imagen img[src$=".svg"] {
+  width: 100%;
+}
+
+/* ── MÓDULO DE BOTÓN · n=6, una sola piel a los dos anchos ─────────────────
+ * Cero varianza en 6 instancias **no prueba plantilla**: va aquí declarado SIN
+ * PROBAR de bajo riesgo, con su denominador (modulos.spec.md §4). El `padding`
+ * asimétrico (40.5 a la derecha, 22.5 a la izquierda) es el hueco que Divi
+ * reserva para la flecha; se reproduce como está medido, no se «arregla». */
+.kb-boton-a {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 25.5px;
+  font-weight: 700;
+  color: #333333;
+  padding: 7.5px 40.5px 9px 22.5px;
+  margin-right: 15px;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 30px;
+  background-color: transparent;
+}
+
+/* ── MÓDULO BLURB · n=36 ───────────────────────────────────────────────────
+ * Tres retículas medidas y cada una con su geometría a los dos anchos:
+ *
+ * | retícula | n | @1440 | @390 |
+ * |---|---|---|---|
+ * | `iconos` | 24 | `inline-block` · w 30 % · mr 3 % | `inline-block` · w 48 % · mr 2 % |
+ * | `col-md-4` | 9 | `inline-block` · w 30 % · mr 3 % | `block` · w 100 % · mr 0 |
+ * | `ninguna` | 3 | `block` · w 100 % · mr 0 | igual |
+ *
+ * ⚠ **El `mr: 0` de `iconos` es POSICIONAL y cuenta sobre TODOS los hermanos de
+ * la columna, no sólo sobre los blurbs.** Medido en las 4 columnas que lo
+ * ejercitan —todas con 2 módulos de texto por delante—: el que lleva `mr: 0` es
+ * el hijo `3n+1` de la columna, o sea **el del medio de cada terna visual**. Es
+ * contraintuitivo y por eso se escribe: contar sólo entre blurbs daría `3n`, que
+ * es otra cosa, y con dos textos delante saldría desplazado en las cuatro. */
+.kb-blurb-iconos,
+.kb-blurb-col-md-4 {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin-right: 3%;
+}
+.kb-columna > .kb-blurb-iconos:nth-child(3n + 1) {
+  margin-right: 0;
+}
+.kb-blurb-ninguna {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+}
+@media (max-width: 980px) {
+  .kb-blurb-iconos {
+    width: 48%;
+    margin-right: 2%;
+  }
+  .kb-columna > .kb-blurb-iconos:nth-child(3n + 1) {
+    margin-right: 2%;
+  }
+  .kb-columna > .kb-blurb-iconos:nth-child(2n) {
+    margin-right: 0;
+  }
+  .kb-blurb-col-md-4 {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ⚠ **El `max-width: 550px` del blurb NO se emite, y la primera versión lo puso
+   en el módulo: 12 pares distintos.** En el original vive en
+   `.et_pb_blurb_content`, un envoltorio interior que el clon no tiene, y el
+   módulo mide `max-width: none` en los 36. Antes de quitarlo se comprobó que no
+   cuesta nada: el contenido mide **273.516** en los 33 y **270.484** en los 3,
+   así que el tope **nunca llega a atar** a ninguno de los dos anchos. Es
+   varianza INERTE, como el `display` del envoltorio de imagen — se declara con
+   su evidencia en vez de fabricar un `<div>` para reproducir un número que no
+   se usa. */
+.kb-al-center {
+  text-align: center;
+}
+.kb-al-left {
+  text-align: left;
+}
+
+/* El contenedor del icono: `margin-bottom: 30px` en los 30 que traen imagen, y
+ * **dos anchos medidos: 50px en los 27 `.svg` y el ancho del blurb en los 3
+ * `.jpg`** (270.484, o sea lo que le cabe).
+ *
+ * ⚠ **Y aquí hay DOS VARIABLES CONFUNDIDAS, así que la regla se escribe sin
+ * afirmar el mecanismo** (`CLAUDE.md` §la CUARTA cara): los 27 iconos de 50px
+ * son SVG **y** están todos en retícula `iconos`/`col-md-4`; los 3 de ancho
+ * completo son ráster **y** están todos en `ninguna`. Dentro de estas 6
+ * instancias «SVG» y «retícula» toman siempre el mismo valor, así que la
+ * medición **no puede separarlas** y cualquiera de las dos reproduce el número.
+ * Se escribe sobre la extensión —el eje que también explica el `display` del
+ * envoltorio de imagen, donde no hay confusión— y se declara que la otra
+ * lectura cabe igual. Una séptima instancia con un SVG en `ninguna` lo dirime. */
+.kb-blurb-icono {
+  display: block;
+  margin-bottom: 30px;
+  max-width: 100%;
+  line-height: 0;
+}
+.kb-blurb-icono img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.kb-blurb-icono:has(> img[src$=".svg"]) {
+  width: 50px;
+}
+.kb-blurb-icono img[src$=".svg"] {
+  width: 100%;
+}
+
+/* El titular del blurb. Divi lo compila contra `.et_pb_module_header` y NO
+ * contra `h4` —el nivel es un ajuste aparte—, que es justo lo que hizo que
+ * `qa:pieles` informara «0 overrides en blurb» hasta corregir el selector.
+ * Su defecto (`fs` 18 · `lh` 1 · `fw` 300) no sale de un módulo sin regla —los
+ * 36 llevan— sino de lo que las reglas OMITEN (defaults.ts §TITULAR_POR_DEFECTO). */
+.kb-blurb-titulo {
+  margin: 0;
+  padding: 0 0 10px;
+  letter-spacing: -0.5px;
+  font-family: inherit;
+  font-size: var(--kbb-fs, 18px);
+  line-height: var(--kbb-lh, 1em);
+  font-weight: var(--kbb-fw, 300);
+  color: var(--kbb-color, #333333);
+  text-align: var(--kbb-align, inherit);
+}
+@media (max-width: 980px) {
+  .kb-blurb-titulo {
+    font-size: var(--kbb-movil-fs, var(--kbb-fs, 18px));
+  }
+}
+
+/* La descripción: `16/21.92` (= 1.37) w400, medida en los 24 que la traen. */
+.kb-blurb-desc > :where(*) {
+  margin: 0;
+}
+.kb-blurb-desc p {
+  font-size: 16px;
+  line-height: 21.92px;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* ── MÓDULO GALERÍA · n=1 ──────────────────────────────────────────────────
+ * ⚠ **Un módulo en 6 instancias es un denominador de 1**: esto reproduce lo
+ * medido (6 items, item de 258.5 × 201.33 a 1440, centrado) y **no afirma nada
+ * del arquetipo**. La segunda galería que aparezca se re-mide, y entonces se
+ * sabrá qué es plantilla y qué es campo. Hasta entonces es calibración. */
+.kb-gallery {
+  text-align: center;
+}
+.kb-gallery-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 28.353%;
+  margin: 0 5.5% 5.5% 0;
+}
+.kb-gallery-item:nth-child(3n) {
+  margin-right: 0;
+}
+.kb-gallery-item img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}

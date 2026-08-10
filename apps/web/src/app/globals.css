@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* La plantilla del cuerpo de `articulos-kb`. Va en su fichero porque es una
+   hoja DERIVADA —cada número sale de `npm run qa:kb-clases`— y mezclarla con
+   los tokens del tema haría imposible releer de dónde viene cada valor.
+   Sin capa a propósito: el CSS no capado gana a `@layer base`, que es lo que
+   hace falta para que `.kb-texto h2` pise el `h2` global de 44px. */
+@import "./kb.css";
 
 @custom-variant dark (&:is(.dark *));
 

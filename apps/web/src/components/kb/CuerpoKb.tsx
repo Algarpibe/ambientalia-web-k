@@ -4,45 +4,26 @@ import type {
   FilaKb,
   MedidaKb,
   ModuloKb,
-  TipoColumnaKb,
+  PielKb,
 } from "@/lib/cms/articulos-kb";
-import { ANCHO_FILA_KB, mbPorDefectoKb } from "@/lib/cms/articulos-kb";
 
 /**
  * EL CUERPO DE `articulos-kb` — la capa PROPIA, la del builder.
  *
  * ══════════════════════════════════════════════════════════════════════════
- * ⛔ ESTE COMPONENTE SIGUE SIN RUTA — pero **ya no por un escalón**
+ * LA PLANTILLA VIVE EN DOS SITIOS, Y ÉSTE ES EL QUE NO TIENE LOS NÚMEROS
  *
- * ✅ **El ESCALÓN de la tipografía está CERRADO** (2026-08-10,
- * `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA · `ESQUEMA-CMS.md` §2d.7). Lo que
- * decía esta cabecera —*«ninguno de los 10 ejes servidos distingue las tres
- * pieles del `h2`»*— era cierto de los diez ejes **y falso del servido**: los
- * diez eran atributos y estructura, y **Divi no escribe marcado, compila CSS**.
- * Leído el `<style>` del propio documento, las tres pieles son **el DEFECTO del
- * tema (37/37 w300) y DOS overrides por módulo**, y lo mismo el `h3`.
+ * Los valores por defecto —el `pt` de la fila, el `mb` del módulo, las pieles
+ * del tema— **están en `src/app/kb.css`**, derivados por `npm run qa:kb-clases`
+ * de los nodos cuyo dato los omite. Este fichero no repite ni uno: lo único que
+ * hace es **emitir por variable lo que el dato SÍ trae**, y dejar que la hoja
+ * ponga el resto.
  *
- * El campo existe (`titulares` en `texto-kb`, `piel` en `blurb`), está migrado y
- * la colección **está re-sembrada con él**: 21 pieles de titular y 36 de blurb,
- * verificadas en la DB.
- *
- * **Lo que falta ahora es CONSTRUCCIÓN, no decisión:**
- *
- *   1 · el CSS de este componente —las clases `kb-*` que usa **no existen
- *       todavía** en `globals.css`—, incluida la cascada de la piel:
- *       `.kb-texto h2 { font-size: var(--kb-h2-fs, 37px); … }` con su
- *       `@media (max-width:980px)` para `movilFs`, que es como Divi lo sirve;
- *   2 · el cascarón de KB (`cascaron.spec.md`: 5 secciones `_tb_`, barra lateral
- *       a la IZQUIERDA con 1 widget) y la ruta con sus **dos prefijos**;
- *   3 · y sólo entonces el Δ0 contra el sitio VIVO, con su sonda de dos lados.
- *
- * ⚠ **La piel se emite por VARIABLE CSS con defecto en la hoja, no en línea** —
- * por la misma razón que el ritmo (nota 1 de abajo): un `style={{fontSize}}`
- * ganaría también a 390, donde 11 de los 17 `h2` valen 35 y no 44. Sería un
- * defecto de RANGO invisible a 1440.
- *
- * Lo que sí queda hecho y medido está abajo: la retícula, el ritmo con unidad,
- * el default de `mb`, los cinco kinds y la fila oculta.
+ * No es reparto de gusto, es lo que exige el original: el default de Divi
+ * **cambia de unidad al apilar** (`2 %` en escritorio, `30px` plano a 390), y un
+ * valor que se emita desde aquí gana en los dos anchos. Escribirlo en línea
+ * sería un defecto de RANGO invisible a 1440 — el mismo modo de fallo que
+ * §CONTRATO POR ANCHOS nombra.
  * ══════════════════════════════════════════════════════════════════════════
  *
  * Specs: `docs/research/articulos-kb/components/{cuerpo,modulos}.spec.md`,
@@ -65,9 +46,12 @@ import { ANCHO_FILA_KB, mbPorDefectoKb } from "@/lib/cms/articulos-kb";
  * porque **cambia de unidad** entre escritorio y móvil (`2 %` → `30px` plano).
  *
  * **3 · El default de `mb` de un módulo depende del ANCHO DE LA FILA**, no del
- * tipo de columna (§2d.6, corrección medida contra un segundo arquetipo). Aquí
- * la fila mide siempre 911.75, así que se resuelve con `mbPorDefectoKb`, que
- * es la misma función que usó el extractor — no una segunda copia.
+ * tipo de columna (§2d.6, corrección medida contra un segundo arquetipo). Dentro
+ * de KB la fila mide siempre 911.75, así que la tabla se reduce al tipo de
+ * columna — y por eso **la resuelve la hoja** (`.kb-col-4_4 > .kb-modulo`) y no
+ * este fichero: la clase sí sabe en qué columna cayó, porque el componente se lo
+ * dice con `kb-col-<tipo>`. Emitirlo desde aquí obligaba a elegir un píxel de
+ * escritorio y arrastrarlo a 390.
  * ══════════════════════════════════════════════════════════════════════════
  */
 
@@ -94,16 +78,44 @@ function cssMovil(m: MedidaKb | null | undefined): string | null {
  * escritorio**, incluso a 390 donde el original pone otro: es el modo de fallo
  * que §CONTRATO POR ANCHOS llama *defecto de rango* —un valor cableado donde el
  * original varía— y no se vería a 1440.
+ *
+ * ⚠ **El prefijo lo pone quien llama, y es obligatorio**: las custom properties
+ * HEREDAN, así que un `--kb-mb` puesto en la fila lo verían sus columnas y sus
+ * módulos — y un módulo sin `mb` propio cogería el de su fila en vez del default
+ * de la hoja, **sin dar error y sólo en las filas que traen `mb`**. Con
+ * `--kbf-*` / `--kbm-*` el hueco de cada nivel es suyo.
  */
-function vars(pares: Record<string, MedidaKb | null | undefined>): CSSProperties {
+function vars(prefijo: "kbf" | "kbm", pares: Record<string, MedidaKb | null | undefined>): CSSProperties {
   const s: Record<string, string> = {};
   for (const [k, m] of Object.entries(pares)) {
     const v = css(m);
     const mv = cssMovil(m);
-    if (v !== null) s[`--kb-${k}`] = v;
-    if (mv !== null) s[`--kb-${k}-movil`] = mv;
+    if (v !== null) s[`--${prefijo}-${k}`] = v;
+    if (mv !== null) s[`--${prefijo}-${k}-movil`] = mv;
   }
   return s as CSSProperties;
+}
+
+/**
+ * La PIEL de un titular → variables. Una propiedad ausente **no se emite**: es
+ * lo que deja llegar el defecto del tema, que vive en `kb.css`. Traducirla aquí
+ * a un valor «razonable» sería convertir «el editor no lo tocó» en «el editor
+ * escribió esto», que es la §regla 6 al revés.
+ *
+ * `lh` se emite **sin unidad** (razón), que es como está medido y como Divi lo
+ * escribe: `line-height: 1.25` sobre una `fs` de 44 da 55 y sobre 35 da 43.75,
+ * que es exactamente lo que hace el original al apilar.
+ */
+function varsPiel(prefijo: string, p: PielKb | null | undefined): Record<string, string> {
+  const s: Record<string, string> = {};
+  if (!p) return s;
+  if (p.fs !== null && p.fs !== undefined) s[`${prefijo}-fs`] = `${p.fs}px`;
+  if (p.lh !== null && p.lh !== undefined) s[`${prefijo}-lh`] = `${p.lh}`;
+  if (p.fw !== null && p.fw !== undefined) s[`${prefijo}-fw`] = `${p.fw}`;
+  if (p.color) s[`${prefijo}-color`] = p.color;
+  if (p.align) s[`${prefijo}-align`] = p.align;
+  if (p.movilFs !== null && p.movilFs !== undefined) s[`${prefijo}-movil-fs`] = `${p.movilFs}px`;
+  return s;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -111,31 +123,30 @@ function vars(pares: Record<string, MedidaKb | null | undefined>): CSSProperties
  * ═════════════════════════════════════════════════════════════════════════ */
 
 /**
- * ⚠ **El `mb` por defecto se emite EXPLÍCITO cuando el dato lo omite**, y no es
- * una contradicción con la nota 2 de arriba: el default de un módulo depende
- * del tipo de su columna, así que **no se puede escribir en una clase CSS** — la
- * clase no sabe en qué columna cayó. Lo que sí se conserva es la regla: el dato
- * lo omite (es plantilla) y el componente lo resuelve.
+ * El estilo en línea de un módulo: **sólo lo que el dato trae**. El default de
+ * `mb` NO se emite aquí — lo pone `.kb-col-<tipo> > .kb-modulo` en la hoja, que
+ * sabe en qué columna cayó porque el componente se lo dice.
  */
-function estiloModulo(m: ModuloKb, tipoColumna: TipoColumnaKb): CSSProperties {
-  const def = mbPorDefectoKb(ANCHO_FILA_KB, tipoColumna);
+function estiloModulo(m: ModuloKb): CSSProperties {
   const s: Record<string, string> = {
-    ...(vars({ mt: m.ritmo?.mt, mb: m.ritmo?.mb, pb: m.ritmo?.pb }) as Record<string, string>),
+    ...(vars("kbm", { mt: m.ritmo?.mt, mb: m.ritmo?.mb, pb: m.ritmo?.pb }) as Record<string, string>),
   };
-  if (s["--kb-mb"] === undefined) {
-    s["--kb-mb"] = `${def.px1440}px`;
-    s["--kb-mb-movil"] = `${def.px390}px`;
-  }
   /* `anchoPct` — 85 · 50 · 40 medidos, defecto 100. La razón se conserva a los
-   * dos anchos (test A en razón), así que se emite como % y no como px. */
-  if (m.anchoPct !== undefined && m.anchoPct !== null && m.anchoPct !== 100) s.width = `${m.anchoPct}%`;
+   * dos anchos (test A en razón), así que se emite como % y no como px. Y con
+   * él va el centrado: los márgenes medidos son (100 − pct)/2 en los 12, o sea
+   * `auto` — lo aplica `.kb-ancho`, no un número. */
+  if (m.anchoPct !== undefined && m.anchoPct !== null && m.anchoPct !== 100) s["--kbm-w"] = `${m.anchoPct}%`;
   return s as CSSProperties;
 }
 
-function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb }) {
-  const style = estiloModulo(m, tipoColumna);
+/** ¿lleva ancho de módulo? Decide la clase que activa el centrado. */
+const conAncho = (m: ModuloKb) => m.anchoPct !== undefined && m.anchoPct !== null && m.anchoPct !== 100;
 
-  switch (m.blockType) {
+function Modulo({ m }: { m: ModuloKb }) {
+  const style = estiloModulo(m);
+  const ancho = conAncho(m) ? " kb-ancho" : "";
+
+  switch (m.kind) {
     case "texto-kb":
       /**
        * `html` es el campo RICO del arquetipo (§2d.3): 16 etiquetas medidas
@@ -144,7 +155,22 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
        * contenedor de contenido, el contenido lleva su estructura dentro*.
        */
       return (
-        <div className="kb-modulo kb-texto" style={style} dangerouslySetInnerHTML={{ __html: m.html }} />
+        <div
+          className={`kb-modulo kb-texto${ancho}`}
+          /**
+           * La piel de CADA nivel que el editor tocó, una variable por
+           * propiedad. Divi da seis controles aquí (`h1`…`h6`) y por eso el dato
+           * es un array por nivel — a diferencia del blurb, donde da uno.
+           */
+          style={{
+            ...style,
+            ...(m.titulares ?? []).reduce<Record<string, string>>(
+              (acc, t) => ({ ...acc, ...varsPiel(`--kbh-${t.nivel}`, t) }),
+              {},
+            ),
+          }}
+          dangerouslySetInnerHTML={{ __html: m.html }}
+        />
       );
 
     case "imagen-kb":
@@ -154,7 +180,7 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
        * más estrecha que su columna y no se estira. Por eso no hay `width:100%`.
        */
       return (
-        <div className="kb-modulo kb-imagen" style={style}>
+        <div className={`kb-modulo kb-imagen${ancho}`} style={style}>
           <span className="kb-imagen-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={m.src} alt={m.alt ?? ""} />
@@ -169,7 +195,7 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
        * plantilla**: es SIN PROBAR de bajo riesgo, con denominador 6.
        */
       return (
-        <div className="kb-modulo kb-boton" style={style}>
+        <div className={`kb-modulo kb-boton${ancho}`} style={style}>
           <a
             className="kb-boton-a"
             href={m.href}
@@ -188,8 +214,11 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
        */
       return (
         <div
-          className={`kb-modulo kb-blurb kb-blurb-${m.reticula ?? "iconos"} kb-al-${m.alineacion ?? "center"}`}
-          style={style}
+          className={`kb-modulo kb-blurb kb-blurb-${m.reticula ?? "iconos"} kb-al-${m.alineacion ?? "center"}${ancho}`}
+          /* Aquí la piel es UN grupo, no un array: Divi da un solo control y por
+             eso Divi mismo la compila contra `.et_pb_module_header`, no contra
+             el nivel. Es lo que hizo que `qa:pieles` diera «0 overrides». */
+          style={{ ...style, ...varsPiel("--kbb", m.piel) }}
         >
           {m.imagen && (
             <span className="kb-blurb-icono">
@@ -214,7 +243,7 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
        * del arquetipo**. La segunda galería que aparezca se re-mide.
        */
       return (
-        <div className="kb-modulo kb-gallery" style={style}>
+        <div className={`kb-modulo kb-gallery${ancho}`} style={style}>
           {m.items.map((it, i) => (
             <figure key={i} className="kb-gallery-item">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -224,6 +253,26 @@ function Modulo({ m, tipoColumna }: { m: ModuloKb; tipoColumna: TipoColumnaKb })
           ))}
         </div>
       );
+
+    /**
+     * ⚠ **El `default` que TIRA, y no es paranoia: el hueco ya se cobró una
+     * corrida.** Un `switch` sin él devuelve `undefined`, y React renderiza
+     * `undefined` **sin decir nada**: las 6 páginas salieron con sus filas, sus
+     * columnas y **cero módulos**, con HTTP 200 y el build en verde, porque el
+     * discriminador se llama `kind` y aquí ponía `blockType`.
+     *
+     * Es la §regla 6 en su forma más cara —una ausencia traducida a un valor
+     * benigno, aquí «no pintes nada»— y el defecto se pone en la dirección que
+     * GRITA: mejor una página que revienta que seis que mienten.
+     */
+    default: {
+      const desconocido = m as { kind?: string };
+      throw new Error(
+        `CuerpoKb: módulo con \`kind\` desconocido ("${desconocido.kind}"). Los cinco medidos son ` +
+          `texto-kb · imagen-kb · boton-kb · blurb · gallery. Ojo: el dato del CMS discrimina con ` +
+          `\`kind\` (lo pone la VUELTA), no con el \`blockType\` que guarda Payload.`,
+      );
+    }
   }
 }
 
@@ -237,17 +286,38 @@ function Titular({ nivel, children }: { nivel: number; children: ReactNode }) {
  * LA RETÍCULA DEL CUERPO — filas y columnas
  * ═════════════════════════════════════════════════════════════════════════ */
 
-/** `4_4` → 100 % · `1_2` → 47.25 % · `2_3` → 64.833 % · `1_3` → 29.6667 %. */
+/**
+ * La retícula de Divi: **los cuatro que este arquetipo ejercita están medidos**
+ * (`4_4` 100 % · `1_2` 47.249465 % · `2_3` 64.832355 % · `1_3` 29.666466 %,
+ * razón contra la fila de 911.75), y los otros cuatro son la retícula del tema
+ * — **no los ejercita ninguna instancia de KB** y por eso están declarados en
+ * `qa:nunca-vistos`, no verificados.
+ *
+ * ⚠ **Un `ancho` fuera de la tabla TIRA.** Un `?? "100%"` convertiría «no sé qué
+ * es esto» en «ocupa la fila entera», y la fila saldría torcida sin un solo
+ * error (§regla 6). La validación del esquema ya exige que los anchos sumen 1;
+ * esto es la misma guarda del lado del render.
+ */
 const ANCHO_COLUMNA: Record<string, string> = {
   "4_4": "100%",
   "3_4": "73.625%",
-  "2_3": "64.833%",
+  "2_3": "64.8333%",
   "3_5": "58.75%",
   "1_2": "47.25%",
   "2_5": "38.75%",
   "1_3": "29.6667%",
   "1_4": "20.875%",
 };
+function anchoDe(ancho: string): string {
+  const v = ANCHO_COLUMNA[ancho];
+  if (!v)
+    throw new Error(
+      `CuerpoKb: columna con \`ancho\` fuera de la retícula de Divi ("${ancho}"). ` +
+        `Los ocho de la retícula son ${Object.keys(ANCHO_COLUMNA).join(" · ")}; ` +
+        `los medidos en \`articulos-kb\` son 4_4 · 1_2 · 2_3 · 1_3.`,
+    );
+  return v;
+}
 
 /**
  * Una fila. El canal entre columnas —`margin-right` 50.1406 en toda columna que
@@ -255,18 +325,21 @@ const ANCHO_COLUMNA: Record<string, string> = {
  * campo** (`MEDICION.md` §3.2): lo pone el CSS con `:not(:last-child)`, que es
  * exactamente lo que el original hace. Modelarlo como dato habría inventado un
  * `margenDerecho` por columna en el content type.
+ *
+ * `kb-col-<tipo>` no es decoración: es lo que le permite a la hoja resolver el
+ * default de `mb` del módulo, que **depende del tipo de columna** (§2d.6).
  */
 function Fila({ f }: { f: FilaKb }) {
   return (
-    <div className="kb-fila" style={vars({ pt: f.pt, pb: f.pb, mt: f.mt, mb: f.mb })}>
+    <div className="kb-fila" style={vars("kbf", { pt: f.pt, pb: f.pb, mt: f.mt, mb: f.mb })}>
       {f.columnas.map((c, i) => (
         <div
           key={i}
-          className="kb-columna"
-          style={{ "--kb-col": ANCHO_COLUMNA[c.ancho] ?? "100%" } as CSSProperties}
+          className={`kb-columna kb-col-${c.ancho}`}
+          style={{ "--kbc-w": anchoDe(c.ancho) } as CSSProperties}
         >
           {c.modulos.map((m, j) => (
-            <Modulo key={j} m={m} tipoColumna={c.ancho} />
+            <Modulo key={j} m={m} />
           ))}
         </div>
       ))}
@@ -295,7 +368,7 @@ export function CuerpoKb({ filas }: { filas: FilaKb[] }) {
     <div className="kb-seccion">
       {/* La fila oculta: `d-none`, 0×0, con el único `h1` de la página. */}
       <div className="kb-fila kb-fila-oculta">
-        <div className="kb-columna" style={{ "--kb-col": "100%" } as CSSProperties}>
+        <div className="kb-columna kb-col-4_4" style={{ "--kbc-w": "100%" } as CSSProperties}>
           <div className="kb-modulo kb-texto">
             <h1>Kunak Help Center</h1>
           </div>

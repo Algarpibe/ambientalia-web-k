@@ -134,4 +134,17 @@ export const BANDA = {
    * y que hoy midan igual no es una razón para acoplarlas.
    */
   grupoA: { alto: 225, altoMovil: 165.58 },
+  /**
+   * `articulos-kb` — **225 / 165.58 medidos DIRECTAMENTE**, no deducidos por
+   * composición como los de grupo A: `cascaron.spec.md` §0 mide el alto de la
+   * sección `_tb_header` en las 6 instancias y da **un solo valor** a cada
+   * ancho (varianza 0, lectura plantillada).
+   *
+   * Coincide con `grupoA` y con `faq` en los dos anchos, y aun así va con
+   * entrada propia por la misma razón que la de grupo A: **que hoy midan igual
+   * no es una razón para acoplarlas**. Si el theme-builder cambia una, la otra
+   * no tiene por qué seguirla — y con una entrada compartida el cambio saldría
+   * como defecto en la familia equivocada.
+   */
+  kb: { alto: 225, altoMovil: 165.58 },
 } as const;

@@ -1,0 +1,844 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "que": "El VALOR que la hoja `kb-*` tiene que poner en cada propiedad, derivado de los nodos cuyo DATO la omite.",
+    "fuente": [
+      "medidas/kb-spec-1440.json",
+      "medidas/kb-spec-390.json",
+      "medidas/kb-extraido.json"
+    ],
+    "metodo": "default = valor medido en los nodos que el dato NO escribe. Dos valores entre esos nodos ⇒ no hay default y la derivación falla.",
+    "noEsUnaVerificacion": "esto es la ENTRADA de la escritura del CSS. La aceptación es `qa:kb-cmp`, que mide el clon renderizado par a par — verificar el CSS contra el CSS sería comprobar contra la fuente que uno supone responsable.",
+    "nodos": 260
+  },
+  "anchosColumna": {
+    "1_2": {
+      "px": 430.797,
+      "n": 14,
+      "razonCruda": 47.249465,
+      "candidatos": [
+        47.25,
+        47.249,
+        47.2495
+      ],
+      "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+      "px390": [
+        "335.391px"
+      ]
+    },
+    "4_4": {
+      "px": 911.75,
+      "n": 25,
+      "razonCruda": 100,
+      "candidatos": [
+        100,
+        100,
+        100
+      ],
+      "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+      "px390": [
+        "335.391px"
+      ]
+    },
+    "1_3": {
+      "px": 270.484,
+      "n": 9,
+      "razonCruda": 29.666466,
+      "candidatos": [
+        29.67,
+        29.666,
+        29.6665
+      ],
+      "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+      "px390": [
+        "335.391px"
+      ]
+    },
+    "2_3": {
+      "px": 591.109,
+      "n": 6,
+      "razonCruda": 64.832355,
+      "candidatos": [
+        64.83,
+        64.832,
+        64.8324
+      ],
+      "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+      "px390": [
+        "335.391px"
+      ]
+    }
+  },
+  "reglas": [
+    {
+      "selector": ".kb-seccion",
+      "prop": "padding-top",
+      "n": 6,
+      "nMovil": 6,
+      "deCuantos": 6,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 6
+      },
+      "reparto390": {
+        "0px": 6
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "CAMPO uniforme: el default de Divi es 4 % y las 6 escriben 0. El test B no puede confirmarlo (una sección por página) — cuerpo.spec.md §3"
+    },
+    {
+      "selector": ".kb-seccion",
+      "prop": "padding-bottom",
+      "n": 6,
+      "nMovil": 6,
+      "deCuantos": 6,
+      "valor1440": [
+        "36.4688px"
+      ],
+      "valor390": [
+        "50px"
+      ],
+      "reparto1440": {
+        "36.4688px": 6
+      },
+      "reparto390": {
+        "50px": 6
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el 4 % de Divi resuelto contra la columna de contenido (911.75), no contra 1440"
+    },
+    {
+      "selector": ".kb-seccion",
+      "prop": "margin-top",
+      "n": 6,
+      "nMovil": 6,
+      "deCuantos": 6,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 6
+      },
+      "reparto390": {
+        "0px": 6
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-seccion",
+      "prop": "margin-bottom",
+      "n": 6,
+      "nMovil": 6,
+      "deCuantos": 6,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 6
+      },
+      "reparto390": {
+        "0px": 6
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "padding-top",
+      "n": 30,
+      "nMovil": 30,
+      "deCuantos": 39,
+      "valor1440": [
+        "18.2344px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "18.2344px": 30
+      },
+      "reparto390": {
+        "30px": 30
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "default de Divi 2 % de la fila propia en escritorio y 30px PLANO al apilar: cambia de UNIDAD, por eso no se puede escribir un solo valor"
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "padding-bottom",
+      "n": 13,
+      "nMovil": 13,
+      "deCuantos": 39,
+      "valor1440": [
+        "18.2344px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "18.2344px": 13
+      },
+      "reparto390": {
+        "30px": 13
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "default de Divi 2 % de la fila propia en escritorio y 30px PLANO al apilar: cambia de UNIDAD, por eso no se puede escribir un solo valor"
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "margin-top",
+      "n": 27,
+      "nMovil": 27,
+      "deCuantos": 39,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 27
+      },
+      "reparto390": {
+        "0px": 27
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "margin-bottom",
+      "n": 38,
+      "nMovil": 38,
+      "deCuantos": 39,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 38
+      },
+      "reparto390": {
+        "0px": 38
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "max-width",
+      "n": 39,
+      "nMovil": 39,
+      "deCuantos": 39,
+      "valor1440": [
+        "1380px"
+      ],
+      "valor390": [
+        "1380px"
+      ],
+      "reparto1440": {
+        "1380px": 39
+      },
+      "reparto390": {
+        "1380px": 39
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "SIN PROBAR e inerte: 1380 > 911.75 y > 335.39, así que no recorta"
+    },
+    {
+      "selector": ".kb-fila",
+      "prop": "margin-left/right (especificado)",
+      "n": 6,
+      "nMovil": 6,
+      "deCuantos": 6,
+      "valor1440": [
+        "auto"
+      ],
+      "valor390": [
+        "auto"
+      ],
+      "reparto1440": {
+        "auto": 6
+      },
+      "reparto390": {
+        "auto": 6
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el nodo OCULTO devuelve el valor especificado: `auto`. Los visibles dan 0px, que es el valor USADO del mismo `auto`"
+    },
+    {
+      "selector": ".kb-columna[data-ancho]",
+      "prop": "width",
+      "n": 54,
+      "porTipo": {
+        "1_2": {
+          "px": 430.797,
+          "n": 14,
+          "razonCruda": 47.249465,
+          "candidatos": [
+            47.25,
+            47.249,
+            47.2495
+          ],
+          "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+          "px390": [
+            "335.391px"
+          ]
+        },
+        "4_4": {
+          "px": 911.75,
+          "n": 25,
+          "razonCruda": 100,
+          "candidatos": [
+            100,
+            100,
+            100
+          ],
+          "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+          "px390": [
+            "335.391px"
+          ]
+        },
+        "1_3": {
+          "px": 270.484,
+          "n": 9,
+          "razonCruda": 29.666466,
+          "candidatos": [
+            29.67,
+            29.666,
+            29.6665
+          ],
+          "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+          "px390": [
+            "335.391px"
+          ]
+        },
+        "2_3": {
+          "px": 591.109,
+          "n": 6,
+          "razonCruda": 64.832355,
+          "candidatos": [
+            64.83,
+            64.832,
+            64.8324
+          ],
+          "adjudica": "qa:kb-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda",
+          "px390": [
+            "335.391px"
+          ]
+        }
+      },
+      "nota": "razón contra la fila propia (911.75); el intervalo es el que la cuantización a 1/64 px deja abierto"
+    },
+    {
+      "selector": ".kb-columna:not(:last-child)",
+      "prop": "margin-right",
+      "n": 15,
+      "nMovil": 15,
+      "deCuantos": 15,
+      "valor1440": [
+        "50.1406px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "50.1406px": 15
+      },
+      "reparto390": {
+        "0px": 15
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el CANAL de la retícula: regla POSICIONAL, no campo (MEDICION.md §3.2)"
+    },
+    {
+      "selector": ".kb-columna:last-child",
+      "prop": "margin-right",
+      "n": 39,
+      "nMovil": 39,
+      "deCuantos": 39,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 39
+      },
+      "reparto390": {
+        "0px": 39
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-columna:not(:last-child)",
+      "prop": "margin-bottom",
+      "n": 15,
+      "nMovil": 15,
+      "deCuantos": 15,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "0px": 15
+      },
+      "reparto390": {
+        "30px": 15
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "0 en escritorio y 30 al apilar: la otra mitad de la misma regla posicional"
+    },
+    {
+      "selector": ".kb-columna",
+      "prop": "padding-top/bottom",
+      "n": 54,
+      "nMovil": 54,
+      "deCuantos": 54,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 54
+      },
+      "reparto390": {
+        "0px": 54
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-modulo",
+      "prop": "margin-top",
+      "n": 121,
+      "nMovil": 121,
+      "deCuantos": 143,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 121
+      },
+      "reparto390": {
+        "0px": 121
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-modulo",
+      "prop": "padding-bottom",
+      "n": 141,
+      "nMovil": 141,
+      "deCuantos": 143,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 141
+      },
+      "reparto390": {
+        "0px": 141
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-col-1_2 > .kb-modulo",
+      "prop": "margin-bottom",
+      "n": 7,
+      "nMovil": 7,
+      "deCuantos": 21,
+      "valor1440": [
+        "25.0625px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "25.0625px": 7
+      },
+      "reparto390": {
+        "30px": 7
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el default de `mb` NO es un número: depende del ancho de la FILA y, dentro de KB, del tipo de columna (§2d.6). El mecanismo queda SIN PROBAR"
+    },
+    {
+      "selector": ".kb-col-4_4 > .kb-modulo",
+      "prop": "margin-bottom",
+      "n": 59,
+      "nMovil": 49,
+      "deCuantos": 101,
+      "valor1440": [
+        "34.0469px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "34.0469px": 59
+      },
+      "reparto390": {
+        "30px": 49
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el default de `mb` NO es un número: depende del ancho de la FILA y, dentro de KB, del tipo de columna (§2d.6). El mecanismo queda SIN PROBAR"
+    },
+    {
+      "selector": ".kb-col-1_3 > .kb-modulo",
+      "prop": "margin-bottom",
+      "n": 1,
+      "nMovil": 1,
+      "deCuantos": 10,
+      "valor1440": [
+        "25.0625px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "25.0625px": 1
+      },
+      "reparto390": {
+        "30px": 1
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el default de `mb` NO es un número: depende del ancho de la FILA y, dentro de KB, del tipo de columna (§2d.6). El mecanismo queda SIN PROBAR"
+    },
+    {
+      "selector": ".kb-col-2_3 > .kb-modulo",
+      "prop": "margin-bottom",
+      "n": 5,
+      "nMovil": 5,
+      "deCuantos": 11,
+      "valor1440": [
+        "25.0625px"
+      ],
+      "valor390": [
+        "30px"
+      ],
+      "reparto1440": {
+        "25.0625px": 5
+      },
+      "reparto390": {
+        "30px": 5
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": "el default de `mb` NO es un número: depende del ancho de la FILA y, dentro de KB, del tipo de columna (§2d.6). El mecanismo queda SIN PROBAR"
+    },
+    {
+      "selector": ".kb-modulo",
+      "prop": "padding-top / padding-left / padding-right",
+      "n": 143,
+      "nMovil": 143,
+      "deCuantos": 143,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 143
+      },
+      "reparto390": {
+        "0px": 143
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-modulo:not(.kb-ancho)",
+      "prop": "margin-left/right",
+      "n": 131,
+      "nMovil": 131,
+      "deCuantos": 131,
+      "valor1440": [
+        "0px"
+      ],
+      "valor390": [
+        "0px"
+      ],
+      "reparto1440": {
+        "0px": 131
+      },
+      "reparto390": {
+        "0px": 131
+      },
+      "movil": "@media (max-width: 980px)",
+      "nota": null
+    },
+    {
+      "selector": ".kb-modulo.kb-ancho",
+      "prop": "margin-left/right",
+      "n": 12,
+      "valor1440": [
+        "7.5 % de la columna",
+        "25 % de la columna",
+        "30 % de la columna"
+      ],
+      "nota": "= (100 − anchoPct)/2 en los 12 ⇒ es `auto`, no un número: el módulo se centra. Un ml/mr asimétrico de 1/64 px en 2 de los 12 lo confirma (el resto se lo lleva un lado)"
+    },
+    {
+      "selector": ".kb-texto h2",
+      "prop": "font-size/line-height/font-weight/color",
+      "n": 3,
+      "valor1440": [
+        "37px/37px w300 rgb(51, 51, 51) ls-0.5px"
+      ],
+      "valor390": [
+        "37px/37px w300"
+      ],
+      "ritmo": [
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"10px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}"
+      ],
+      "nota": "DEFECTO del tema: derivado de los titulares cuyo módulo NO trae override en el dato"
+    },
+    {
+      "selector": ".kb-texto h4",
+      "prop": "font-size/line-height/font-weight/color",
+      "n": 2,
+      "valor1440": [
+        "26px/26px w300 rgb(51, 51, 51) ls-0.5px"
+      ],
+      "valor390": [
+        "26px/26px w300"
+      ],
+      "ritmo": [
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"10px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}"
+      ],
+      "nota": "DEFECTO del tema: derivado de los titulares cuyo módulo NO trae override en el dato"
+    },
+    {
+      "selector": ".kb-texto h3",
+      "prop": "font-size/line-height/font-weight/color",
+      "n": 4,
+      "valor1440": [
+        "32px/32px w300 rgb(51, 51, 51) ls-0.5px"
+      ],
+      "valor390": [
+        "32px/32px w300"
+      ],
+      "ritmo": [
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"10px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}"
+      ],
+      "nota": "DEFECTO del tema: derivado de los titulares cuyo módulo NO trae override en el dato"
+    },
+    {
+      "selector": ".kb-blurb-titulo",
+      "prop": "font-size/line-height/font-weight",
+      "n": 0,
+      "valor1440": [],
+      "nota": "los 36 traen piel ⇒ el defecto NO se deriva de un módulo sin regla: se deriva de las OMISIONES de las reglas (defaults.ts §TITULAR_POR_DEFECTO.blurb)"
+    },
+    {
+      "selector": ".kb-texto p",
+      "prop": "tipografía/ritmo",
+      "n": 54,
+      "valor1440": [
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb18px",
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb0px",
+        "25px/30px w400 rgb(51, 51, 51) lsnormal pb0px",
+        "15px/30.6px w800 rgb(0, 117, 201) ls0.1px pb0px"
+      ],
+      "reparto1440": {
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb18px": 27,
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb0px": 20,
+        "25px/30px w400 rgb(51, 51, 51) lsnormal pb0px": 5,
+        "15px/30.6px w800 rgb(0, 117, 201) ls0.1px pb0px": 2
+      },
+      "valor390": [
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb18px",
+        "18px/30.6px w400 rgb(51, 51, 51) lsnormal pb0px",
+        "35px/42px w400 rgb(51, 51, 51) lsnormal pb0px",
+        "13px/30.6px w800 rgb(0, 117, 201) ls0.1px pb0px"
+      ],
+      "nota": "sin campo que lo toque: es plantilla entera"
+    },
+    {
+      "selector": ".kb-texto li",
+      "prop": "tipografía/ritmo",
+      "n": 9,
+      "valor1440": [
+        "18px/30.6px w400 rgb(51, 51, 51)"
+      ],
+      "reparto1440": {
+        "18px/30.6px w400 rgb(51, 51, 51)": 9
+      },
+      "valor390": [
+        "18px/30.6px w400 rgb(51, 51, 51)"
+      ],
+      "nota": "sin campo que lo toque: es plantilla entera"
+    },
+    {
+      "selector": ".kb-texto ul",
+      "prop": "tipografía/ritmo",
+      "n": 9,
+      "valor1440": [
+        "pl36px pb18px none"
+      ],
+      "reparto1440": {
+        "pl36px pb18px none": 9
+      },
+      "valor390": [
+        "pl36px pb18px none"
+      ],
+      "nota": "sin campo que lo toque: es plantilla entera"
+    },
+    {
+      "selector": ".kb-texto .inner",
+      "prop": "tipografía/ritmo",
+      "n": 79,
+      "valor1440": [
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"0px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}"
+      ],
+      "reparto1440": {
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"0px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}": 79
+      },
+      "valor390": [
+        "{\"paddingTop\":\"0px\",\"paddingRight\":\"0px\",\"paddingBottom\":\"0px\",\"paddingLeft\":\"0px\",\"marginTop\":\"0px\",\"marginRight\":\"0px\",\"marginBottom\":\"0px\",\"marginLeft\":\"0px\"}"
+      ],
+      "nota": "sin campo que lo toque: es plantilla entera"
+    },
+    {
+      "selector": ".kb-blurb-iconos",
+      "prop": "retícula",
+      "n": 24,
+      "valor1440": {
+        "w": [
+          "30.00 %"
+        ],
+        "mr": [
+          "3.00 %",
+          "0.00 %"
+        ],
+        "display": [
+          "inline-block"
+        ],
+        "contenidoMaxWidth": [
+          "none"
+        ]
+      },
+      "valor390": {
+        "w": [
+          "48.00 %"
+        ],
+        "mr": [
+          "2.00 %",
+          "0.00 %"
+        ],
+        "display": [
+          "inline-block"
+        ]
+      }
+    },
+    {
+      "selector": ".kb-blurb-ninguna",
+      "prop": "retícula",
+      "n": 3,
+      "valor1440": {
+        "w": [
+          "100.00 %"
+        ],
+        "mr": [
+          "0.00 %"
+        ],
+        "display": [
+          "block"
+        ],
+        "contenidoMaxWidth": [
+          "550px"
+        ]
+      },
+      "valor390": {
+        "w": [
+          "100.00 %"
+        ],
+        "mr": [
+          "0.00 %"
+        ],
+        "display": [
+          "block"
+        ]
+      }
+    },
+    {
+      "selector": ".kb-blurb-col-md-4",
+      "prop": "retícula",
+      "n": 9,
+      "valor1440": {
+        "w": [
+          "30.00 %"
+        ],
+        "mr": [
+          "3.00 %"
+        ],
+        "display": [
+          "inline-block"
+        ],
+        "contenidoMaxWidth": [
+          "550px"
+        ]
+      },
+      "valor390": {
+        "w": [
+          "100.00 %"
+        ],
+        "mr": [
+          "0.00 %"
+        ],
+        "display": [
+          "block"
+        ]
+      }
+    },
+    {
+      "selector": ".kb-boton-a",
+      "prop": "piel",
+      "n": 6,
+      "valor1440": [
+        "15px/25.5px w700 rgb(51, 51, 51) pad 7.5px 40.5px 9px 22.5px mr15px b1px rgb(51, 51, 51) r30px inline-block"
+      ],
+      "nota": "cero varianza en 6 instancias ⇒ NO se cablea como campo: va al componente declarado SIN PROBAR de bajo riesgo (modulos.spec.md §4)"
+    },
+    {
+      "selector": ".kb-imagen-wrap",
+      "prop": "display/max-width",
+      "n": 21,
+      "valor1440": [
+        "inline-block maxW100%",
+        "block maxW100%"
+      ],
+      "nota": "`.et_pb_image_wrap` es inline-block con max-width 100 %: 21/21. Los anchos de 752 y 800 son INTRÍNSECOS, no campo"
+    }
+  ],
+  "problemas": []
+}

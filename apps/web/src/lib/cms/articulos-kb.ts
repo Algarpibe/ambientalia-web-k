@@ -34,12 +34,44 @@ export type TipoColumnaKb = "1_4" | "1_3" | "2_5" | "1_2" | "3_5" | "2_3" | "3_4
 type Ritmo = { mt?: MedidaKb | null; mb?: MedidaKb | null; pb?: MedidaKb | null } | null;
 type Base = { ritmo?: Ritmo; anchoPct?: number | null };
 
+/* ⚠ **El discriminador que llega al render es `kind`, no `blockType`** — y
+ * costó una corrida entera del comparador saberlo. `blockType` es lo que Payload
+ * guarda y lo que la IDA escribe (`mapeo.mjs` §blocks); la VUELTA lo traduce a
+ * `kind` cuando el bloque lo declara (`custom: { conKind: true }` en
+ * `columnasKb`), porque `kind` es la forma del dato MEDIDO.
+ *
+ * El error no dio ni un aviso: un `switch (m.blockType)` sin `default` devuelve
+ * `undefined` y React **no renderiza nada**. Las 6 páginas se servían con sus
+ * filas, sus columnas y **cero módulos** — HTTP 200, build verde, `qa:slugs`
+ * limpio. Lo cazó `qa:kb-cmp` con `columna.nModulos: orig 2 → clon 0`, que es
+ * exactamente para lo que existe un comparador de dos lados. */
+
+/**
+ * La PIEL de un titular: lo que el editor tocó en la pestaña de tipografía de
+ * Divi. **Ausente = el defecto del tema**, que vive en la hoja (`kb.css`) y en
+ * `titularPorDefecto()` con la misma procedencia.
+ *
+ * `lh` va en RAZÓN (em) y no en px: a 390 el `h2` de 44 pasa a 35 y su
+ * interlínea a 43.75, que es el mismo 1.25 sobre otra `fs`. En px daría 55 a
+ * los dos anchos (§2d.7).
+ */
+export type PielKb = {
+  fs?: number | null;
+  lh?: number | null;
+  fw?: number | null;
+  color?: string | null;
+  align?: "left" | "center" | "right" | "justify" | null;
+  movilFs?: number | null;
+};
+
+export type TitularKb = PielKb & { nivel: string };
+
 export type ModuloKb =
-  | (Base & { blockType: "texto-kb"; html: string })
-  | (Base & { blockType: "imagen-kb"; src: string; alt?: string | null })
-  | (Base & { blockType: "boton-kb"; label: string; href: string; external?: boolean | null })
+  | (Base & { kind: "texto-kb"; html: string; titulares?: TitularKb[] | null })
+  | (Base & { kind: "imagen-kb"; src: string; alt?: string | null })
+  | (Base & { kind: "boton-kb"; label: string; href: string; external?: boolean | null })
   | (Base & {
-      blockType: "blurb";
+      kind: "blurb";
       titulo: string;
       nivel?: number | null;
       imagen?: string | null;
@@ -47,9 +79,11 @@ export type ModuloKb =
       descripcion?: string | null;
       reticula?: "iconos" | "col-md-4" | "ninguna" | null;
       alineacion?: "center" | "left" | null;
+      /** Un GRUPO y no un array por nivel: Divi da UN control aquí (§2d.7). */
+      piel?: PielKb | null;
     })
   | (Base & {
-      blockType: "gallery";
+      kind: "gallery";
       items: { imagen: string; alt?: string | null; titulo?: string | null }[];
     });
 

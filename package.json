@@ -154,7 +154,10 @@
     "cms:extractor-kb-neg": "node scripts/seed/extractor-kb.neg.mjs",
     "cms:seed-kb": "node --env-file=apps/cms/.env scripts/seed/seed-kb.mjs",
     "qa:kb-tipografia": "node scripts/qa/kb-tipografia.mjs",
-    "qa:pieles": "node scripts/qa/pieles-modulo.mjs"
+    "qa:pieles": "node scripts/qa/pieles-modulo.mjs",
+    "qa:kb-clases": "node scripts/qa/kb-clases.mjs",
+    "qa:kb-cmp": "node scripts/qa/kb-cmp.mjs",
+    "qa:kb-cmp-vivo": "node scripts/qa/kb-cmp.mjs --vivo"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
