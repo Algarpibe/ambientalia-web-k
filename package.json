@@ -146,7 +146,8 @@
     "cms:captura-sectores": "node scripts/seed/captura-sectores.mjs",
     "cms:captura-sectores-neg": "node scripts/seed/captura-sectores.neg.mjs",
     "qa:texto-poblacion": "node scripts/qa/texto-poblacion.mjs",
-    "qa:texto-poblacion-neg": "node scripts/qa/texto-poblacion.neg.mjs"
+    "qa:texto-poblacion-neg": "node scripts/qa/texto-poblacion.neg.mjs",
+    "qa:kb-css": "node scripts/qa/kb-css.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

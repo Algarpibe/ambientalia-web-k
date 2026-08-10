@@ -1,0 +1,1851 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "que": "PASO 0 de las specs de `articulos-kb`: ¿la captura congelada sirve para `getComputedStyle`? Batería de 35 anclas de ESTILO + 6 de CAJA, medida de DOS LADOS a 1440.",
+    "ancho": 1440,
+    "lados": {
+      "captura": "corpus/fase-3/articulos-kb/** por file:// con TODA petición no-file abortada",
+      "original": "kunakair.com vivo · perfil limpio · Cookiebot bloqueado · scroll+settle"
+    },
+    "anclas": [
+      {
+        "id": "body",
+        "sel": "body",
+        "props": [
+          "fontFamily",
+          "fontSize",
+          "lineHeight",
+          "color",
+          "backgroundColor"
+        ]
+      },
+      {
+        "id": "seccion",
+        "sel": ".et_pb_section:not([class*='_tb_'])",
+        "props": [
+          "paddingTop",
+          "paddingBottom",
+          "marginTop",
+          "marginBottom",
+          "backgroundColor"
+        ]
+      },
+      {
+        "id": "fila",
+        "sel": ".et_pb_section:not([class*='_tb_']) .et_pb_row",
+        "props": [
+          "maxWidth",
+          "paddingTop",
+          "paddingBottom",
+          "marginLeft",
+          "marginRight"
+        ]
+      },
+      {
+        "id": "columna",
+        "sel": ".et_pb_section:not([class*='_tb_']) .et_pb_row > .et_pb_column",
+        "props": [
+          "width",
+          "marginRight",
+          "paddingTop"
+        ]
+      },
+      {
+        "id": "h1",
+        "sel": "h1",
+        "props": [
+          "fontFamily",
+          "fontSize",
+          "lineHeight",
+          "fontWeight",
+          "color",
+          "letterSpacing"
+        ]
+      },
+      {
+        "id": "texto-p",
+        "sel": ".et_pb_section:not([class*='_tb_']) .et_pb_text_inner p",
+        "props": [
+          "fontSize",
+          "lineHeight",
+          "color",
+          "marginBottom"
+        ]
+      },
+      {
+        "id": "modulo-texto",
+        "sel": ".et_pb_section:not([class*='_tb_']) .et_pb_text",
+        "props": [
+          "marginBottom",
+          "paddingTop",
+          "width"
+        ]
+      },
+      {
+        "id": "blurb-titular",
+        "sel": ".et_pb_blurb .et_pb_module_header",
+        "props": [
+          "fontSize",
+          "lineHeight",
+          "fontWeight",
+          "color"
+        ]
+      }
+    ]
+  },
+  "hojasExternas": {
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/25912/et-divi-dynamic-tb-140-tb-25181-tb-342-25912-late.css?ver=1785224548",
+        "https://kunakair.com/wp-content/et-cache/25912/et-divi-dynamic-tb-140-tb-25181-tb-342-25912.css?ver=1785224548",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/25912/et-core-unified-25912.min.css?ver=1785224550"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 184015
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/25889/et-divi-dynamic-tb-140-tb-25181-tb-342-25889.css?ver=1785277977",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/25889/et-core-unified-25889.min.css?ver=1785277977"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 184444
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/25902/et-divi-dynamic-tb-140-tb-25181-tb-342-25902-late.css?ver=1785224547",
+        "https://kunakair.com/wp-content/et-cache/25902/et-divi-dynamic-tb-140-tb-25181-tb-342-25902.css?ver=1785224547",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/25902/et-core-unified-25902.min.css?ver=1785224549"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 184001
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/25859/et-divi-dynamic-tb-140-tb-25181-tb-342-25859.css?ver=1785232373",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/25859/et-core-unified-25859.min.css?ver=1785232374"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 203977
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/25881/et-divi-dynamic-tb-140-tb-25181-tb-342-25881.css?ver=1785274883",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/25881/et-core-unified-25881.min.css?ver=1785274883"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 197233
+      }
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+      "externas": [
+        "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1",
+        "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css?ver=2.0",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css?ver=3.2.7",
+        "https://kunakair.com/wp-content/et-cache/26017/et-divi-dynamic-tb-140-tb-25181-tb-342-26017.css?ver=1785246609",
+        "https://kunakair.com/wp-content/themes/KunakAir/style.css?ver=4.27.6",
+        "https://kunakair.com/wp-content/et-cache/26017/et-core-unified-26017.min.css?ver=1785246610"
+      ],
+      "externasEnElRepo": [],
+      "enLinea": {
+        "bloques": 8,
+        "bytes": 217999
+      }
+    }
+  },
+  "articulos": {
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 4528,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 685,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 18,
+        "peticionesBloqueadas": 27,
+        "hojasCssBloqueadas": 8
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 4554,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 20,
+          "reglas": 3662,
+          "fuentesDeclaradas": 19
+        },
+        "modulos": 18
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 9,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 4528,
+              "original": 4554,
+              "delta": -26
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 18,
+          "original": 18,
+          "iguales": true
+        }
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 3273,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 686,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 22,
+        "peticionesBloqueadas": 26,
+        "hojasCssBloqueadas": 7
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 2512,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 18,
+          "reglas": 3616,
+          "fuentesDeclaradas": 11
+        },
+        "modulos": 22
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 9,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 3273,
+              "original": 2512,
+              "delta": 761
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 22,
+          "original": 22,
+          "iguales": true
+        }
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 4590,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 684,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 15,
+        "peticionesBloqueadas": 25,
+        "hojasCssBloqueadas": 8
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": null,
+          "blurb-titular.lineHeight": null,
+          "blurb-titular.fontWeight": null,
+          "blurb-titular.color": null
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": false
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 3736,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 20,
+          "reglas": 3650,
+          "fuentesDeclaradas": 19
+        },
+        "modulos": 15
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 9,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 4590,
+              "original": 3736,
+              "delta": 854
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 15,
+          "original": 15,
+          "iguales": true
+        }
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "700",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 8291,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 726,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 34,
+        "peticionesBloqueadas": 46,
+        "hojasCssBloqueadas": 7
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "700",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 6218,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 18,
+          "reglas": 3667,
+          "fuentesDeclaradas": 11
+        },
+        "modulos": 34
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 9,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 8291,
+              "original": 6218,
+              "delta": 2073
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 34,
+          "original": 34,
+          "iguales": true
+        }
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "700",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 5809,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 725,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 18,
+        "peticionesBloqueadas": 28,
+        "hojasCssBloqueadas": 7
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "700",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 3902,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 18,
+          "reglas": 3666,
+          "fuentesDeclaradas": 11
+        },
+        "modulos": 18
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 9,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 5809,
+              "original": 3902,
+              "delta": 1907
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 18,
+          "original": 18,
+          "iguales": true
+        }
+      }
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+      "captura": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "33.9219px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "16.9531px",
+          "fila.paddingBottom": "16.9531px",
+          "fila.marginLeft": "84.8125px",
+          "fila.marginRight": "84.8281px",
+          "columna.width": "678.516px",
+          "columna.marginRight": "0px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": "Manrope, sans-serif",
+          "h1.fontSize": "44px",
+          "h1.lineHeight": "44px",
+          "h1.fontWeight": "500",
+          "h1.color": "rgb(51, 51, 51)",
+          "h1.letterSpacing": "normal",
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "0px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "678.516px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "500",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": true,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1565,
+          "docH": 8444,
+          "h1.w": 678.52,
+          "h1.h": 54,
+          "fila.w": 678.52,
+          "columna.w": 678.52
+        },
+        "hojas": {
+          "n": 14,
+          "reglas": 874,
+          "fuentesDeclaradas": 4
+        },
+        "modulos": 42,
+        "peticionesBloqueadas": 46,
+        "hojasCssBloqueadas": 7
+      },
+      "original": {
+        "estilo": {
+          "body.fontFamily": "Manrope, sans-serif",
+          "body.fontSize": "18px",
+          "body.lineHeight": "30.6px",
+          "body.color": "rgb(51, 51, 51)",
+          "body.backgroundColor": "rgb(255, 255, 255)",
+          "seccion.paddingTop": "0px",
+          "seccion.paddingBottom": "36.4688px",
+          "seccion.marginTop": "0px",
+          "seccion.marginBottom": "0px",
+          "seccion.backgroundColor": "rgb(255, 255, 255)",
+          "fila.maxWidth": "1380px",
+          "fila.paddingTop": "18.2344px",
+          "fila.paddingBottom": "0px",
+          "fila.marginLeft": "0px",
+          "fila.marginRight": "0px",
+          "columna.width": "430.797px",
+          "columna.marginRight": "50.1406px",
+          "columna.paddingTop": "0px",
+          "h1.fontFamily": null,
+          "h1.fontSize": null,
+          "h1.lineHeight": null,
+          "h1.fontWeight": null,
+          "h1.color": null,
+          "h1.letterSpacing": null,
+          "texto-p.fontSize": "18px",
+          "texto-p.lineHeight": "30.6px",
+          "texto-p.color": "rgb(51, 51, 51)",
+          "texto-p.marginBottom": "0px",
+          "modulo-texto.marginBottom": "25.0625px",
+          "modulo-texto.paddingTop": "0px",
+          "modulo-texto.width": "430.797px",
+          "blurb-titular.fontSize": "18px",
+          "blurb-titular.lineHeight": "21.6px",
+          "blurb-titular.fontWeight": "300",
+          "blurb-titular.color": "rgb(51, 51, 51)"
+        },
+        "renderizada": {
+          "body": true,
+          "seccion": true,
+          "fila": true,
+          "columna": true,
+          "h1": false,
+          "texto-p": true,
+          "modulo-texto": true,
+          "blurb-titular": true
+        },
+        "caja": {
+          "docW": 1440,
+          "docH": 8396,
+          "h1.w": 0,
+          "h1.h": 0,
+          "fila.w": 911.75,
+          "columna.w": 430.8
+        },
+        "hojas": {
+          "n": 20,
+          "reglas": 3854,
+          "fuentesDeclaradas": 11
+        },
+        "modulos": 42
+      },
+      "diff": {
+        "estilo": {
+          "total": 35,
+          "distintas": 10,
+          "detalle": [
+            {
+              "ancla": "seccion.paddingBottom",
+              "captura": "33.9219px",
+              "original": "36.4688px"
+            },
+            {
+              "ancla": "fila.paddingTop",
+              "captura": "16.9531px",
+              "original": "18.2344px"
+            },
+            {
+              "ancla": "fila.paddingBottom",
+              "captura": "16.9531px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginLeft",
+              "captura": "84.8125px",
+              "original": "0px"
+            },
+            {
+              "ancla": "fila.marginRight",
+              "captura": "84.8281px",
+              "original": "0px"
+            },
+            {
+              "ancla": "columna.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "columna.marginRight",
+              "captura": "0px",
+              "original": "50.1406px"
+            },
+            {
+              "ancla": "modulo-texto.marginBottom",
+              "captura": "0px",
+              "original": "25.0625px"
+            },
+            {
+              "ancla": "modulo-texto.width",
+              "captura": "678.516px",
+              "original": "430.797px"
+            },
+            {
+              "ancla": "blurb-titular.fontWeight",
+              "captura": "500",
+              "original": "300"
+            }
+          ]
+        },
+        "soloUnLado": {
+          "n": 6,
+          "detalle": [
+            {
+              "ancla": "h1.fontFamily",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontSize",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.lineHeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.fontWeight",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.color",
+              "enCaptura": true,
+              "enOriginal": false
+            },
+            {
+              "ancla": "h1.letterSpacing",
+              "enCaptura": true,
+              "enOriginal": false
+            }
+          ]
+        },
+        "caja": {
+          "total": 6,
+          "distintas": 6,
+          "detalle": [
+            {
+              "ancla": "docW",
+              "captura": 1565,
+              "original": 1440,
+              "delta": 125
+            },
+            {
+              "ancla": "docH",
+              "captura": 8444,
+              "original": 8396,
+              "delta": 48
+            },
+            {
+              "ancla": "h1.w",
+              "captura": 678.52,
+              "original": 0,
+              "delta": 678.52
+            },
+            {
+              "ancla": "h1.h",
+              "captura": 54,
+              "original": 0,
+              "delta": 54
+            },
+            {
+              "ancla": "fila.w",
+              "captura": 678.52,
+              "original": 911.75,
+              "delta": -233.23
+            },
+            {
+              "ancla": "columna.w",
+              "captura": 678.52,
+              "original": 430.8,
+              "delta": 247.72
+            }
+          ]
+        },
+        "modulos": {
+          "captura": 42,
+          "original": 42,
+          "iguales": true
+        }
+      }
+    }
+  },
+  "veredicto": {
+    "ancho": 1440,
+    "articulos": 6,
+    "cssExternoCapturado": 0,
+    "hojasExternasDistintas": [
+      "module-style.css",
+      "zebra_tooltips.min.css",
+      "front.min.css",
+      "front-popuphidden.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25912-late.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25912.css",
+      "style.css",
+      "et-core-unified-25912.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25889.css",
+      "et-core-unified-25889.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25902-late.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25902.css",
+      "et-core-unified-25902.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25859.css",
+      "et-core-unified-25859.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-25881.css",
+      "et-core-unified-25881.min.css",
+      "et-divi-dynamic-tb-140-tb-25181-tb-342-26017.css",
+      "et-core-unified-26017.min.css"
+    ],
+    "cssEnLineaBytes": {
+      "bloques": 8,
+      "bytes": 184015
+    },
+    "estilo": {
+      "total": 210,
+      "distintas": 55,
+      "iguales": 155
+    },
+    "soloUnLado": {
+      "n": 36,
+      "anclas": [
+        "h1"
+      ]
+    },
+    "caja": {
+      "total": 36,
+      "distintas": 36
+    },
+    "arbolIgual": "6/6",
+    "anclasQueFallanEnLasSeis": [
+      "seccion.paddingBottom",
+      "fila.paddingTop",
+      "fila.paddingBottom",
+      "fila.marginLeft",
+      "fila.marginRight",
+      "columna.width",
+      "columna.marginRight",
+      "modulo-texto.marginBottom",
+      "modulo-texto.width"
+    ],
+    "sirveOffline": false
+  }
+}
