@@ -995,6 +995,57 @@ dio de alta una entrada sin etiquetas y el build murió con `undefined.length`.
 un campo omitible hace fallar el round-trip **en el acto**; olvidar lo contrario
 —el defecto viejo— no hace fallar nada y mata el render delante del editor.
 
+⚠ **Y la CUARTA cara, que no es de dominio sino de ÁLGEBRA: DOS VARIABLES
+CONFUNDIDAS (2026-08-10, F3-1).** Las tres de arriba dicen que una regla puede
+estar sin probar **fuera** del dominio donde se derivó. Ésta dice algo peor:
+
+> **Si dentro del arquetipo donde la mediste dos variables toman siempre el
+> mismo valor, la regla que escribas nombrará una de las dos AL AZAR — y será
+> cierta dentro y falsa fuera.** No es un error de razonamiento: es que **la
+> medición no puede distinguirlas**, y el enunciado no lleva marca de eso.
+
+**Medido, con las dos direcciones y sus números.** El default de `margin-bottom`
+de un módulo se derivó de `articulos-kb`, donde **todas las filas miden 911.75**;
+allí «tipo de columna» y «ancho de fila» son indistinguibles, y la spec escribió
+*«es una función del TIPO DE COLUMNA»*. Con un segundo arquetipo delante
+(`mono-modulos-{1440,390}.json`, filas de 1238.39) manda **el ancho de la FILA**:
+un `1_2` de **585.13** en fila de 1238.39 lleva `34.0469`, y un `2_3` de
+**591.11** —casi el mismo ancho de columna— en fila de 911.75 lleva `25.0625`.
+Generalizar la regla de KB hacia atrás habría puesto `25.0625` en **35 módulos
+medidos a `34.0469`**.
+
+**Cómo se detecta, y es barato:** antes de escribir una regla con la forma *«X
+depende de Y»*, comprobar que **Y VARÍA** en el dominio donde se midió. Si Y es
+constante ahí, la regla no está probada: está **nombrando una correlación**, y
+hay que decir contra qué otra variable no se pudo separar. Un `select` sobre el
+dominio agrupando por Y contesta la pregunta en una línea.
+
+> **Y el corolario que evita el falso positivo simétrico:** un discriminador
+> hallado en **una sola instancia** tampoco es un discriminador. Medido el mismo
+> día: las dos pieles del `h3` de KB viven en una sola página, así que `fila` y
+> `mb` «las separaban» — cualquier eje posicional lo hace cuando los grupos caen
+> en bloques. Se exige que la separación se sostenga en **≥2 instancias**, y si
+> no, se reporta **NO ESTABLECIDO con su denominador**
+> (`qa:kb-tipografia`).
+
+⚠ **Y su regla hermana, de MÉTODO y no de dominio: UNA COMPROBACIÓN RETROACTIVA
+SE ENMARCA EN LAS DOS DIRECCIONES.**
+
+> **Preguntar «¿lo viejo está mal?» sesga qué respuesta se encuentra.** La otra
+> mitad —**«¿lo NUEVO está sobre-generalizado?»**— se contesta con la misma
+> medición y casi nunca se hace, porque lo nuevo acaba de medirse y se siente
+> firme. Las dos preguntas tienen la misma forma y **respuestas independientes**.
+
+**La evidencia es la propia comprobación de arriba:** se encargó en la dirección
+*«¿hay columnas estrechas en los arquetipos construidos que lleven `34.0469`
+donde tocaba `25.0625`?»* y **se contestó en la contraria** — no había nada que
+corregir en lo viejo (sus 35 módulos llevan el valor medido), y el riesgo real
+era la regla nueva aplicada hacia atrás. **Con el marco de una sola dirección,
+el hallazgo cabía en el resultado «no hay nada» y se habría cerrado en verde.**
+
+Operativamente: una tanda que revise algo retroactivamente escribe **las dos
+preguntas antes de mirar**, y contesta las dos con el mismo barrido.
+
 **Y su corolario de instrumento, pagado en la misma corrida:** para afirmar
 «envuelve un renglón más» hace falta **contar renglones**, y
 `elemento.getClientRects().length` **no los cuenta** — en un elemento de bloque
