@@ -149,7 +149,9 @@
     "qa:texto-poblacion-neg": "node scripts/qa/texto-poblacion.neg.mjs",
     "qa:kb-css": "node scripts/qa/kb-css.mjs",
     "qa:kb-spec": "node scripts/qa/kb-spec.mjs",
-    "qa:kb-tests": "node scripts/qa/kb-tests.mjs"
+    "qa:kb-tests": "node scripts/qa/kb-tests.mjs",
+    "cms:extractor-kb": "node scripts/seed/extractor-kb.mjs",
+    "cms:extractor-kb-neg": "node scripts/seed/extractor-kb.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

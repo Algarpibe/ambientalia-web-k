@@ -1,0 +1,2180 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "que": "Los 6 documentos de `articulos-kb` derivados de las medidas congeladas — la entrada del seed.",
+    "fuente": [
+      "medidas/kb-spec-1440.json",
+      "medidas/kb-spec-390.json"
+    ],
+    "porQue": "0 estilos en línea en las 45 filas y los 149 módulos: el ritmo sólo existe en el estilo computado. Los DOS anchos hacen falta — uno solo no distingue px de %.",
+    "sabotaje": "reparto"
+  },
+  "censo": {
+    "filas": 39,
+    "columnas": 54,
+    "modulos": 143,
+    "porKind": {
+      "texto-kb": 79,
+      "imagen-kb": 21,
+      "boton-kb": 6,
+      "blurb": 36,
+      "gallery": 1
+    },
+    "repartos": {
+      "4_4+4_4": 13,
+      "4_4": 25,
+      "4_4+4_4+4_4": 1
+    },
+    "medidas": {
+      "px": 134,
+      "pct": 9,
+      "movil": 26
+    },
+    "pctDistintos": {
+      "2": 3,
+      "5": 2,
+      "0.8": 3,
+      "0.4": 1
+    },
+    "mbPorDefecto": 62
+  },
+  "problemas": [
+    "repartos distintos: se esperaban 4 y salieron 3",
+    "como-garantiza-kunak-la-mejor-precision#fila0: los anchos suman 2, no 1",
+    "como-garantiza-kunak-la-mejor-precision#fila3: los anchos suman 2, no 1",
+    "evidencias-de-funcionamiento#fila0: los anchos suman 2, no 1",
+    "evidencias-de-funcionamiento#fila2: los anchos suman 2, no 1",
+    "evidencias-de-funcionamiento#fila3: los anchos suman 2, no 1",
+    "evidencias-de-funcionamiento#fila4: los anchos suman 2, no 1",
+    "evidencias-de-funcionamiento#fila6: los anchos suman 2, no 1",
+    "por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire#fila0: los anchos suman 2, no 1",
+    "que-es-kunak-air#fila0: los anchos suman 2, no 1",
+    "que-puedes-hacer-con-kunak-air#fila0: los anchos suman 2, no 1",
+    "que-puedes-hacer-con-kunak-air#fila3: los anchos suman 3, no 1",
+    "que-es-kunak-air-cloud#fila0: los anchos suman 2, no 1",
+    "que-es-kunak-air-cloud#fila8: los anchos suman 2, no 1",
+    "que-es-kunak-air-cloud#fila9: los anchos suman 2, no 1"
+  ],
+  "articulos": [
+    {
+      "slug": "como-garantiza-kunak-la-mejor-precision",
+      "prefijo": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "titulo": "¿Cómo garantiza Kunak la mejor precisión?",
+      "seo": {
+        "title": "¿Cómo garantiza Kunak la mejor precisión? - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"como-garantiza-kunak-la-mejor-precision\">¿Cómo garantiza Kunak la mejor precisión?</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>No todos los sensores para un mismo contaminante funcionan de la misma manera, pudiéndose encontrar algunas variabilidades entre ellos.</p>\n<p>Así, lo primero que hacemos en Kunak es seleccionar y descartar los sensores que no tienen una buena respuesta en condiciones ambientales para su rango de medición esperado.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/best-accuracy.jpg",
+                  "alt": "Kunak AIR Pro",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Para ello, llevamos a cabo una <strong>evaluación</strong> para asegurar el buen funcionamiento de cada sensor.</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Una vez que se seleccionan los sensores, debido al efecto que tienen las distintas <a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/\">condiciones ambientales (temperatura y humedad)</a>, su respuesta en el cero y la sensibilidad puede variar de diferentes formas.</p>\n<p>El <strong>algoritmo de Kunak</strong> es capaz de corregir estas variaciones caracterizando el sensor según su respuesta a las condiciones ambientales y adaptando el tipo de algoritmo para corregir la deriva del cero y de la sensibilidad de cada sensor.</p>\n<p>Sin embargo, el mismo tipo de sensores puede tener pequeñas variabilidades y, aunque se aplica una corrección de algoritmo específico a cada tipo de sensor, esto hace que cada sensor tenga un comportamiento diferente y por ello realizamos una caracterización de los sensores individualizada.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"cual-es-la-variabilidad-intramodelo-esperada-en-los-sensores-kunak\">¿Cuál es la variabilidad intramodelo esperada en los sensores Kunak?</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 13,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>La estación de monitorización de calidad del aire Kunak AIR fue evaluada por AQSPEC en el cual se determinó la variabilidad intramodelo de tres equipos.</p>\n<p>Según AQSPEC:</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 2,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/01/AQ-SPEC.svg",
+                  "alt": "AQ-SPEC",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 50
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><em>«La variabilidad intramodelo está relacionada con la proximidad entre las mediciones de tres unidades del mismo tipo de sensor».</em></p>\n<p>Programa de evaluación AQSPEC</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Durante esta evaluación externa, los dispositivos Kunak AIR obtuvieron una variabilidad intramodelo muy baja siendo la más baja en gases y en el promedio de partículas con respecto a los diferentes equipos de monitorizacion de la calidad del aire evaluados.</p>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/Intra-model-Varialibity.png",
+                  "alt": "Intra-model-Varialibity",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mt": {
+            "valor": 25,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"cuales-son-los-pasos-para-asegurar-la-mejor-precision-de-los-datos\">¿Cuáles son los pasos para asegurar la mejor precisión de los datos?</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Los sistemas Kunak AIR aseguran la calidad del dato, ofreciendo la medición más precisa encontrada en estaciones de calidad del aire.</p>\n<p>Por lo tanto, aseguramos una trazabilidad QC&amp;QA con un proceso exhaustivo:</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<ul>\n<li><strong>Selección de sensores:</strong> los sensores se evalúan en fábrica para garantizar el buen funcionamiento de cada sensor. Si el sensor no pasa nuestros primeros requisitos de QC&amp;QA, el sensor se descarta.</li>\n<li><strong>Caracterización del cartucho:</strong> cada cartucho con su electrónica individual se caracteriza bajo condiciones ambientales específicas de temperatura y humedad para adaptar el algoritmo de Kunak a la respuesta específica de cada sensor.</li>\n<li><strong>Calibración de cartuchos:</strong> se lleva a cabo en el laboratorio contra patrones de referencia.</li>\n<li><strong>Validación de cartuchos en el campo:</strong> se realiza una validación de la calibración del laboratorio contra los estándares Kunak Gold correctamente mantenidos con estaciones de referencia para asegurar los objetivos de calidad de los datos de Kunak.</li>\n<li><strong>Operación y mantenimiento de la red:</strong> Kunak ofrece la gestión y la configuración remota de los dispositivos. Además, incluye una herramienta de calibración y validación remota en nuestra Kunak AIR Cloud. Los cartuchos se pueden enviar individualmente a Kunak para una recalibración de laboratorio si es necesario.</li>\n<li><strong>Reemplazo del cartucho:</strong> una vez que el sensor llega al final de su vida útil, los cartuchos se reemplazan y se devuelven para ser reutilizados con un nuevo sensor, lo que convierte a Kunak AIR Pro en la estación basada en sensores de calidad del aire más sostenible del mercado.</li>\n</ul>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Todos estos pasos aseguran la máxima precisión y la mayor fiabilidad de los datos obtenidos por el sistema Kunak Air.</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 style=\"text-align: center;\" id=\"ciclo-de-control-y-garantia-de-calidad\">Ciclo de control y garantía de calidad</h2>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/control-garantia-calidad.svg",
+                  "alt": "Ciclo de control",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "evidencias-de-funcionamiento",
+      "prefijo": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "titulo": "Evidencias de funcionamiento",
+      "seo": {
+        "title": "Evidencias de funcionamiento - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"evidencias-de-funcionamiento\">Evidencias de funcionamiento</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>El funcionamiento de las estaciones Kunak AIR se evalúan mediante comparativas junto a analizadores de referencia.</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>La solución de monitorización de la calidad del aire se ubica en campo cerca de un instrumento de referencia durante un período de tiempo para proporcionar una comparación directa de las medidas del dispositivo con un instrumento de referencia calibrado.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/evidence-accuracy.jpg",
+                  "alt": "Kunak AIR Pro",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 1,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": -2,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Los dispositivos Kunak AIR se prueban continuamente para garantizar resultados de la más alta calidad.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 5,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/01/AQ-SPEC.svg",
+                  "alt": "AQ-SPEC",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 50
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>AQSPEC Evaluation program</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>“Se ha mostrado una variabilidad de 0,32 ppb, 0,33 ppb y 0,002 ppm para los sensores NO<sub>2</sub>, O<sub>3</sub>, y CO, respectivamente.»</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/US-EPA-united-states-environmental-protection-agency-1.svg",
+                  "alt": "US-EPA-united-states-environmental-protection-agency",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 50
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>EPA Wildland Fire Sensors Challenge</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>“Los equipos tienen un tamaño y peso reducido, resultando prácticos para despliegues en campo.”</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2021/11/airlab-logo.png",
+                  "alt": "airlab-logo",
+                  "anchoPct": 50
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><span style=\"color: #0075c9;\"><em><strong>El sensor multi-contaminante más preciso</strong></em></span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>AIRLAB Microsensor Challenge</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>«Proporciona una excelente calidad para PM<sub>1</sub>, muy buena calidad para PM<sub>2,5</sub>, PM<sub>10</sub> y O<sub>3</sub>, y buena calidad para NO<sub>2</sub> y NO, siendo el sensor con mejor rendimiento para este último contaminante».</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mt": {
+            "valor": 25,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"redimiento-demostrado\">Redimiento demostrado</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Si desea conocer en detalle las especificaciones técnicas de cada cartucho, puede hacerlo haciendo clic en el botón inferior:</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "boton-kb",
+                  "label": "Especificaciones de los sensores de gas y partículas",
+                  "href": "https://kunakair.com/doc/External/Kunak_AIR_Datasheet_ES.pdf"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Para obtener más información sobre la precisión de la solución Kunak AIR, haz clic en:</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mt": {
+            "valor": 25,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "boton-kb",
+                  "label": "Informes de evaluación de AQSPEC",
+                  "href": "https://kunakair.com/es/comparativa-de-los-informes-de-evaluacion-de-aqspec/",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -15,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "boton-kb",
+                  "label": "Normas y programas de certificación",
+                  "href": "https://kunakair.com/es/necesidad-estandares-y-programas-certificacion/",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -15,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "prefijo": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "titulo": "¿Por qué Kunak AIR es la mejor estación de calidad del aire?",
+      "seo": {
+        "title": "¿Por qué Kunak AIR es la mejor estación de calidad del aire? - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire\">¿Por qué Kunak AIR es la mejor estación de calidad del aire?</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Después de 7 años diseñando y desplegando estaciones de calidad del aire en todo el mundo, creamos la solución Kunak AIR, una evolución de nuestra anterior estación de monitorización de calidad del aire que resuelve los retos asociados a los equipos de calidad del aire basados en sensores.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/quality-data.jpg",
+                  "alt": "Kunak AIR Pro",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 25,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Ofrecemos una solución económica de monitorización de la calidad del aire, con una precisión similar a las estaciones de referencia y diseñada para su uso en entornos urbanos, industriales e investigación, facilitando la toma de mejores decisiones gracias a un mayor volumen de datos y de mayor precisión.</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"que-problemas-pueden-afectar-a-la-precision-de-los-sistemas-de-control-de-la-calidad-del-aire\">¿Qué problemas pueden afectar a la precisión de los sistemas de control de la calidad del aire?</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Los principales problemas encontrados en los sensores de bajo coste según la WMO:</p>\n<ul>\n<li>Efectos de las condiciones ambientales: los sensores de bajo coste tienen una respuesta no lineal a la temperatura, la humedad y la presión. Además, algunos sensores de gas son susceptibles a sensibilidades cruzadas de otros compuestos atmosféricos comunes.</li>\n<li>Desviación de la línea de base y de la sensibilidad: los sensores de bajo coste sufren una desviación no lineal del cero y de la sensibilidad a lo largo del tiempo, requiriendo una calibración regular para ajustar estos parámetros.</li>\n</ul>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 7,
+            "unidad": "px"
+          },
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 25,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"como-resuelve-kunak-estos-problemas\">¿Cómo resuelve Kunak estos problemas?</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Nuestro sistema Kunak AIR ha sido diseñado para resolver todos los desafíos del ciclo de vida de los equipos, su operación y mantenimiento, y los diversos retos encontrados en los sensores de bajo coste.</p>\n<p>Por lo tanto, gracias al desarrollo e innovación tecnológica, hemos creado un sistema de cartucho de gas inteligente, el cual sigue un procedimiento detallado de control de calidad (QC&amp;QA).</p>\n<p>Este sistema de cartuchos nos permite solucionar de forma práctica y sencilla los problemas antes mencionados:</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    },
+                    "pb": {
+                      "valor": 35,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h4>Efectos de las condiciones ambientales</h4>\n<p>Caracterizamos y seleccionamos los mejores sensores para que funcionen de la forma más precisa bajo condiciones ambientales específicas de temperatura y humedad.</p>\n<p>Kunak incorpora su propio algoritmo para convertir los datos brutos de cada sensor en valores de concentración (ppb o µg/m<sup>3</sup>), localmente y en tiempo real, sin utilizar ni necesitar datos de referencia externos para calcularlos.</p>\n<p>Además, se corrigen las interferencias y artefactos encontrados en los datos brutos y el efecto de la temperatura y presión, así como las sensibilidades cruzadas en los gases y el efecto de la humedad en las partículas.</p>\n<p>Cada cartucho de gas se calibra individualmente en el laboratorio contra estándares de referencia trazables, validándose en condiciones reales y adaptando el algoritmo para cada sensor específico.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    },
+                    "pb": {
+                      "valor": 35,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h4>Deriva de la línea de base y la sensibilidad</h4>\n<p>Ofrecemos una plataforma Cloud basada en web para la gestión y configuración remota de dispositivos de calidad del aire y análisis de datos.</p>\n<p>Kunak AIR Cloud dispone de una herramienta de calibración para reajustar los sensores de forma remota y modificar el cero y la sensibilidad de cada sensor individualmente para corregir la deriva de los sensores.</p>\n<p>Solo se necesitan dos puntos para calibrar el equipo, un punto cero para la deriva del cero y un punto de alta concentración (span) para la deriva de la sensibilidad.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/Algoritmo-Kunak.jpg",
+                  "alt": "Algoritmo Kunak"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<ul>\n<li>En Kunak AIR Cloud, Ud. mismo puede calibrar los sensores o puede contratarlo como servicio adicional.</li>\n<li>Kunak garantiza la buena calibración de cada uno de los cartuchos.</li>\n<li>Estos pueden ser reemplazados o enviados a fábrica para realizar una nueva calibración una vez hayan alcanzado el final de su vida útil.</li>\n</ul>\n<p>Más información sobre la Kunak AIR Pro como mejor estación de control de la calidad del aire:<a target=\"_blank\" href=\"https://www.kunak.es/blog/comparativa-de-los-informes-de-evaluacion-de-aqspec/\"></a></p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "boton-kb",
+                  "label": "Resultados del programa AQ Spec",
+                  "href": "https://kunakair.com/es/comparativa-de-los-informes-de-evaluacion-de-aqspec/"
+                },
+                {
+                  "blockType": "boton-kb",
+                  "label": "Evidencias de funcionamiento",
+                  "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "que-es-kunak-air",
+      "prefijo": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "titulo": "¿Qué es Kunak AIR?",
+      "seo": {
+        "title": "¿Qué es Kunak AIR? - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"que-es-kunak-air\">¿Qué es Kunak AIR?</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Kunak AIR es la solución para la monitorización de la calidad del aire basada en sensores.</p>\n<p>Kunak AIR mantiene las ventajas de tamaño y costo en comparación con una estación de referencia pero tratando de ser tan precisa como esta.</p>\n<p>Se complementa con las múltiples funcionalidades que ofrece la plataforma web Kunak AIR Cloud, el software de análisis avanzado de datos recogidos por la red de monitorización.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled.jpg",
+                  "alt": "Kunak AIR Pro",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 20,
+            "unidad": "px"
+          },
+          "pb": {
+            "valor": 0.8,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"la-estacion-de-calidad-del-aire-para-profesionales\">La estación de calidad del aire para profesionales</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Tras 7 años diseñando y desplegando pequeñas estaciones de calidad del aire en todo el mundo, hemos creado la solución Kunak AIR, una importante evolución de nuestra anterior estación de monitorización basada en sensores, diseñada para resolver todos los desafíos del ciclo de vida de un producto de calidad del aire, incluyendo su manejo y mantenimiento, así como las necesidades de cualquier proyecto medioambiental.</p>\n<p>Su vanguardista diseño para medir diversos contaminantes incluye también sensores ambientales y conectores para añadir otros sensores meteorológicos o sondas externas que, junto con la alimentación por panel solar y la transmisión de datos en tiempo real, hacen del Kunak AIR la estación de solución de calidad del aire más avanzada del mercado.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 40,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Instalación fácil y rápida",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-fast-installation.svg",
+                  "alt": "Cartridge system",
+                  "descripcion": "<p>Puesta en marcha en menos de 10 min con diagnóstico en pantalla.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Sistema de cartuchos",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cartridge-system.svg",
+                  "alt": "Multi pollutant",
+                  "descripcion": "<p>Cartuchos sustituibles y combinables con sistema Plug &amp; Play.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Precisión demostrada",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/accuracy.svg",
+                  "alt": "Flexible and scalable",
+                  "descripcion": "<p>Diseñada para homologación y certificación.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Calibración fácil",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-calibration.svg",
+                  "alt": "Additional probes",
+                  "descripcion": "<p>Ajuste remoto de valores de calibración (cero y span).</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Plataforma de calidad del aire",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cloud-platform.svg",
+                  "alt": "Remote calibration",
+                  "descripcion": "<p>Visualización, análisis y gestión de datos en la nube.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Múltiples contaminantes",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/multi-pollutant-1.svg",
+                  "alt": "Remote calibration",
+                  "descripcion": "<p>Medición de hasta 5 gases y partículas en suspensión al mismo tiempo.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Totalmente autónomo",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+                  "alt": "Fully autonomous",
+                  "descripcion": "<p>Funcionamiento autónomo con batería integrada y panel solar.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Datos en tiempo real",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/real-time.svg",
+                  "alt": "Remote calibration",
+                  "descripcion": "<p>Acceso a datos y alarmas <br>en tiempo real.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Añada sensores medioambientales",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/additional-probes.svg",
+                  "alt": "Remote calibration",
+                  "descripcion": "<p>Conexión de sensores de viento, lluvia, ruido y otro tipo de sondas.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Kunak AIR incluye una estación base y un sistema de cartuchos (patentado) que integra los sensores de contaminantes y su electrónica.</p>\n<p>Los datos monitorizados por Kunak AIR se envían en tiempo real a través de GPRS, 3G, 4G o Ethernet a nuestra plataforma Kunak AIR Cloud para la gestión de datos y configuración remota de la estación.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"arquitectura-de-datos\">Arquitectura de datos</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/arquitectura-datos.svg",
+                  "alt": "Arquitectura de datos",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 20,
+            "unidad": "px"
+          },
+          "pb": {
+            "valor": 0.8,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>TECNOLOGÍA PATENTADA</p>\n<h2 id=\"cartuchos-de-gas-inteligentes\">Cartuchos de gas inteligentes</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Kunak AIR es una solución basada en sensores equipada con hasta cinco compartimentos donde pueden alojarse <a target=\"_blank\" href=\"https://kunakair.com/es/cartuchos/\">cartuchos de gas inteligentes</a>.</p>\n<p>Los cartuchos inteligentes Kunak resuelven muchos de los problemas conocidos de la tecnología de sensores como son la variabilidad de los sensores, la calibración en fábrica y en campo, la invalidación automática de datos, la sustitución de sensores, el funcionamiento en red y las tareas de mantenimiento.</p>\n<p>Los cartuchos de gas inteligentes de Kunak proporcionan un control de las mediciones a lo largo de todo el ciclo de vida de cada sensor, lo que hace de Kunak AIR la solución más sostenible y que facilita el trabajo a nuestros clientes.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 40,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Control y garantía de la calidad trazable",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-quality-1.svg",
+                  "alt": "Cartridge system",
+                  "descripcion": "<p>Cada cartucho se calibra y valida individualmente en laboratorio respecto a normas de referencia trazables.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Múltiples combinaciones",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/endless-combinations.svg",
+                  "alt": "Multi pollutant",
+                  "descripcion": "<p>Los parámetros pueden combinarse libremente. Las estaciones base pueden reutilizarse y confi gurarse según convenga.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Plug & Play",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/plug-play.svg",
+                  "alt": "Remote calibration",
+                  "descripcion": "<p>Simplemente retire el antiguo y sustitúyalo por el nuevo en la misma ubicación. El equipo volverá a estar activo en 2 minutos.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"tecnologia-gasplug-patentada\">Tecnología GasPlug (patentada)</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Todos los cartuchos tienen el mismo tamaño y encajan en cualquiera de los cinco conectores disponibles. Dentro del cartucho instalamos el sensor en una placa electrónica que almacena toda su información: el tipo, la edad y la calibración de fábrica.</p>\n<p>Nada más insertar el nuevo cartucho, la estación base lee la información, se autoconfigura y empieza a funcionar.</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 16,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/kunak-smart-gas-cartridges-p3brvpk3ptby95uqta8y2i1mrn1x6zk6jagxhn2d12.jpg",
+                  "alt": "Smart-gas-cartridges",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/kunak-air-cloud.svg\" width=\"300\" height=\"300\" alt=\"\" class=\"wp-image-25467 alignnone size-medium\" loading=\"eager\"></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 45,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Plataforma professional para la gestión remota de redes de calidad del aire y análisis de ruido.</p>\n<p>Nuestro software de monitorización de la calidad del aire basado en web, Kunak AIR Cloud, ayuda a los profesionales del medioambiente a entender y utilizar los datos de calidad del aire ofreciendo inteligencia medioambiental para ayudar a tomar decisiones. Gracias a nuestro software bidireccional, Kunak AIR Cloud ofrece a los profesionales una nueva manera de gestionar la configuración remota, la gestión de alarmas, la calibración y las operaciones en campo.</p>\n<p>Kunak AIR Cloud es una suite de software modular flexible diseñada para facilitar la gestión de cuentas de usuario, el manejo a través de la red, la validación de datos y la creación de informes. Asegura la satisfacción de los clientes gracias a su escalabilidad y la integración en otras plataformas a través de su APIrest.</p>"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Panel de control",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image026.png\" width=\"264\" height=\"176\" alt=\"Control-panel\" class=\"wp-image-25470 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Gestión de usuarios",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image027.png\" width=\"264\" height=\"176\" alt=\"Users-management\" class=\"wp-image-25472 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Análisis multiparamétrico",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image028.png\" width=\"264\" height=\"176\" alt=\"Multiparametric-analysis\" class=\"wp-image-25475 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Validación e informes",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image029.png\" width=\"264\" height=\"176\" alt=\"Data validation &amp; data reporting\" class=\"wp-image-25477 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Alarmas y trazabilidad",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image030.png\" width=\"264\" height=\"176\" alt=\"Alarms log &amp; traceability\" class=\"wp-image-25480 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "CMMS",
+                  "nivel": 4,
+                  "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image031.png\" width=\"264\" height=\"176\" alt=\"CMMS\" class=\"wp-image-25483 alignnone size-full\" loading=\"eager\"></p>",
+                  "reticula": "iconos",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "que-puedes-hacer-con-kunak-air",
+      "prefijo": "centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "titulo": "¿Qué puedes hacer con Kunak AIR?",
+      "seo": {
+        "title": "Qué puedes hacer con Kunak AIR? - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"que-puedes-hacer-con-kunak-air\">¿Qué puedes hacer con Kunak AIR?</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Kunak AIR es una solución de monitorización de la calidad del aire basada en sensores y diseñada para ciudades, industrias e investigadores que necesitan tomar mejores decisiones sobre sistemas complementarios de calidad del aire con datos precisos.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/kunak-air-applications.jpg",
+                  "alt": "Kunak AIR Pro",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 20,
+            "unidad": "px"
+          },
+          "pb": {
+            "valor": 0.8,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"en-que-aplicaciones-se-puede-utilizar\">¿En qué aplicaciones se puede utilizar?</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Kunak AIR es un sistema de monitorización de la calidad del aire basados en sensores diseñado para una fácil instalación, operación y mantenimiento, con un menor coste a una estación de referencia, manteniendo una medición precisa de los contaminantes a medir.</p>\n<p>Ahora, es posible monitorizar multitud de parámetros simultáneamente en diferentes aplicaciones a través de pequeños sistemas de monitorización de la calidad del aire basados en sensores con un reducido consumo de energía:</p>",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -18,
+                      "unidad": "px",
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    },
+                    "mb": {
+                      "valor": 40,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Calidad del aire urbano",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/urban-2.svg",
+                  "alt": "urban",
+                  "descripcion": "<p>Control e identificación de las fuentes de emisión con datos precisos a escala hiperlocal.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Industria y olores",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/industry.svg",
+                  "alt": "Industry & Odours",
+                  "descripcion": "<p>Control de las emisiones atmosféricas industriales: sentar las bases de un futuro más limpio.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Construcción",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/construction.svg",
+                  "alt": "Construction",
+                  "descripcion": "<p>Controlar la contaminación atmosférica en una obra, una forma de reforzar la sostenibilidad.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Puertos y aeropuertos",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/ports-airports-2.svg",
+                  "alt": "Additional probes",
+                  "descripcion": "<p>Medir las emisiones del transporte hace que los puertos y aeropuertos sean más sostenibles.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Minería",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/mining.svg",
+                  "alt": "Mining",
+                  "descripcion": "<p>Control de la contaminación atmosférica minera, contribuyendo a una extracción de recursos sin humos.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Investigación y consultoría",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/01/research.svg",
+                  "alt": "Research & Consultancy",
+                  "descripcion": "<p>Investigación de la contaminación, combinando conocimientos y tecnología de vanguardia.</p>",
+                  "reticula": "iconos",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"tipos-de-instrumentos-de-monitorizacion-de-la-calidad-del-aire\">Tipos de instrumentos de monitorización de la calidad del aire</h2>",
+                  "ritmo": {
+                    "mb": {
+                      "movilValor": 0,
+                      "movilUnidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>La calidad del aire se ha medido tradicionalmente con Estaciones de Referencia Oficiales que cumplen los requisitos del Objetivo de Calidad de Datos (DQO) de la Directiva 2008/50/CE.</p>\n<p>Durante los últimos años, los equipos de monitorización de la calidad del aire han experimentado un rápido crecimiento y desarrollo. Se han diseñado sensores de bajo coste para medir partículas atmosféricas y gases que se integran en diferentes dispositivos de monitorización de la calidad del aire.</p>\n<p>Podemos encontrar en el mercado dispositivos específicos para aplicaciones de interior y exterior. En cuanto a estos dispositivos específicos para aplicaciones exteriores, en función de su precisión e incertidumbre, así como si cuentan con un software para recoger y analizar los datos, encontraremos sistemas de monitorización de la calidad del aire diseñados para ofrecer medidas complementarias a las estaciones de referencia, mientras que otros están diseñados para utilizarse como dispositivos de exposición personal.</p>\n<p>Las principales distinciones entre los diferentes dispositivos de monitoreo de la calidad del aire exterior son:</p>\n<ul>\n<li>Las <strong>estaciones de calidad del aire de referencia</strong> requieren una infraestructura significativa y personal capacitado para operarlas. Aporta datos muy precisos, con un coste de instalación y operación desde miles hasta cientos de miles de euros. Utilizan métodos de referencia específicos para obtener los datos según la Directiva 2008/50/CE.</li>\n<li><strong>Sistemas de monitorización de la calidad del aire basados ​​en sensores</strong>: son dispositivos de monitorización de la calidad del aire (o miniestaciones) que toma los datos visualizables en un software avanzado para el análisis de datos y la gestión remota del dispositivo. Los dispositivos de control de la calidad del aire son más pequeños, mucho más económicos (10 veces menos costosos) y menos voluminosos que las estaciones de calidad del aire de referencia, pero con menor precisión. No quieren sustituir las estaciones oficiales, sino complementarlas.</li>\n<li><strong>Los dispositivos portátiles de control de la exposición personal</strong> y de la calidad del aire están diseñados para ser portátiles y su precio ronda los 100€. Tienen poca precisión, pero son útiles como dispositivos de información, con fines educativos y para establecer umbrales para diferentes riesgos para la salud.</li>\n</ul>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 17,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "blurb",
+                  "titulo": "Estaciones de Referencia de la Calidad del Aire",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/estacion-referencia-calidad-del-aire.jpg",
+                  "alt": "estacion-referencia-calidad-del-aire",
+                  "reticula": "ninguna",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "blurb",
+                  "titulo": "Sistemas de monitorización basados en sensores",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Pro.jpg",
+                  "alt": "Kunak-AIR-Pro",
+                  "reticula": "ninguna",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "blurb",
+                  "titulo": "Dispositivos portátiles de exposición personal",
+                  "nivel": 4,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/portable-personal-air-quality-monitor.jpg",
+                  "alt": "portable-personal-air-quality-monitor",
+                  "reticula": "ninguna",
+                  "alineacion": "center",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><strong>Kunak AIR permite monitorizar la calidad del aire con una alta precisión del dato, cercana a las estaciones de referencia, convirtiéndose en un equipos de medida de calidad del aire complementarios a las estaciones de referencia, con una mayor resolución espacial, con el cual es posible monitorizar la calidad del aire a nivel local, con una fácil instalación y mantenimiento.</strong></p>\n<p>Por ello, la serie AIR de Kunak es una solución de monitoreo de calidad del aire con una precisión cercana a las estaciones de referencia y con un coste efectivo, diseñada para ciudades, industrias e investigadores que necesiten tomar mejores decisiones basadas en sistemas complementarios con datos precisos.</p>\n<p>&nbsp;</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "que-es-kunak-air-cloud",
+      "prefijo": "soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+      "titulo": "¿Qué es Kunak AIR Cloud?",
+      "seo": {
+        "title": "¿Qué es Kunak AIR Cloud? - Kunak"
+      },
+      "estado": "publicado",
+      "cuerpo": [
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"que-es-kunak-air-cloud\">¿Qué es Kunak AIR Cloud?</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Es la plataforma profesional para la gestión remota de redes de calidad del aire y análisis de datos.</p>\n<p><a target=\"_blank\" href=\"https://kunakair.com/es/software-de-medicion-calidad-del-aire/\">Kunak AIR Cloud</a> es una plataforma web que completa la solución vertical integral Kunak AIR para la gestión de la calidad del aire, desde el sensor hasta la nube.</p>\n<p>Este software permite explotar de una manera rápida y sencilla los datos obtenidos por los sistemas de monitorización Kunak y otras fuentes externas.</p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/kunak-cloud-screenshot-1.jpeg",
+                  "alt": "kunak-cloud",
+                  "ritmo": {
+                    "mt": {
+                      "valor": -25,
+                      "unidad": "px"
+                    },
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 14,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>La plataforma Kunak AIR Cloud satisface todas las necesidades de gestión, operación, validación, calibración y análisis típicas de proyectos los de monitorización de la calidad del aire y de redes de sensores inteligentes.</p>\n<p>De esta manera, se facilitará el trabajo del técnico de mantenimiento, del operador y del analista, unificando todas las funciones en una única plataforma visual e intuitiva que facilita la toma de decisiones.</p>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2023/02/cloud-photo-adaptada.jpg",
+                  "alt": "Kunal-cloud"
+                },
+                {
+                  "blockType": "boton-kb",
+                  "label": "Kunak AIR Cloud",
+                  "href": "https://kunakair.com/air-quality-software/",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 17,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Nuestro software basado en web de monitorización de la calidad del aire Kunak AIR Cloud ayuda a los profesionales del medioambiente a entender y utilizar los datos de la calidad del aire facilitando la toma de decisiones. Gracias a nuestro software bidireccional, Kunak AIR Cloud ofrece a los profesionales una nueva manera de gestionar las redes de sensores de manera remota gracias a:</p>\n<ul>\n<li>La sencilla configuración de equipos</li>\n<li>La fácil gestión de alarmas y avisos</li>\n<li>La rápida calibración del sistema</li>\n</ul>\n<p>Kunak AIR Cloud está diseñada para facilitar la gestión de cuentas de usuarios, el mantenimiento de la red, la validación de datos, análisis y generación de informes, asegurando la satisfacción de los clientes gracias a su escalabilidad e integración en otras plataformas a través de su sencilla API Rest.</p>"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Centrado en las personas",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/human-centered.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Orientado a servicio",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/service-oriented.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Toma de decisiones",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/decision-making.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Fácil de instalar",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-setup.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Fácil de usar",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-use.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Fácil de compartir",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-sharing-1.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Fiable y seguro",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/secure-confidential-1.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "Escalable",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/flexible-scalable-1.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left"
+                },
+                {
+                  "blockType": "blurb",
+                  "titulo": "El mejor soporte técnico",
+                  "nivel": 3,
+                  "imagen": "https://kunakair.com/wp-content/uploads/2023/02/best-support.svg",
+                  "reticula": "col-md-4",
+                  "alineacion": "left",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 19,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"planes-de-software\">Planes de software</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3>INICIAL</h3>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 27,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><b>La mejor opción para visualizar los datos, ICA y configurar la red, mientras nuestro equipo opera los dispositivos.</b></p>\n<p><span style=\"font-weight: 400;\">Panel de control para ver el estado de tus dispositivos y sensores. Visualiza fácilmente los datos en tiempo real, comprueba los gráficos temporales y obtén estadísticas básicas. Proporciona datos fiables gracias al etiquetado automático de los datos.</span></p>\n<ul>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Consulta tus dispositivos en un mapa, su estado y las últimas mediciones.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Visualización de datos estándar, cálculos de medias horarias/diarias y estadísticas básicas para mostrar de forma rápida todos los datos medidos por los dispositivos.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Exportación de los datos a archivos CSV o TXT.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Herramienta de índice de calidad del aire (ICA) según diferentes escalas: UE, US EPA, España, India, etc.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Prevalidación automática de los datos en caso de mal funcionamiento de los dispositivos o sensores.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Configuración remota de avisos por superación de umbrales.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Comunicación bidireccional para la configuración remota de los dispositivos y la actualización remota del firmware.</span></li>\n</ul>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2018/03/cloud-aqi-e1676883908116.jpg",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 19,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3>INICIAL + OPERACIÓN</h3>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 27,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><b>Para hacer un seguimiento de los dispositivos se necesita un operador experto en calidad del aire y la tecnología basada en sensores.</b><b> Estas herramientas le facilitarán el trabajo y podrá operar y mantener la red.</b></p>\n<p><span style=\"font-weight: 400;\">Asegura el buen funcionamiento de tu red y obtén la mejor precisión de los datos gracias a los algoritmos de supervisión automática integrados. Confirma las alarmas de funcionamiento (mal funcionamiento de los sensores, problemas en los dispositivos…) y consulta las sugerencias en línea para solucionar los problemas detectados mientras controlas todas las acciones realizadas en tus dispositivos a través de la herramienta GMAO.</span></p>\n<ul>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Detección automática de errores y anomalías en los dispositivos, sensores y datos de forma inmediata, notificándolos y proponiendo consejos para solucionar el problema.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Detecta la descalibración de los sensores de gases y partículas. Calibra tus sensores de gas y partículas a distancia gracias a la herramienta de calibración.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Sistema informático de gestión del mantenimiento (GMAO) para facilitar el mantenimiento de los dispositivos, registrando cualquier trabajo de mantenimiento, subiendo fotos y documentos, historial de configuración, diario de actividades, etc.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Gestione los datos de calidad del aire mediante la asignación de ubicaciones de los dispositivos a puntos específicos.</span></li>\n</ul>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2018/03/cloud-operation-alarms-e1676884474183.jpg",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 19,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3>INICIAL + ANÁLISIS</h3>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 27,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><b>¿Visualizar los datos no te aporta la información que necesitas? Accede a las herramientas de análisis de datos más avanzadas. Nuestro equipo operará y mantendrá tu red por ti.</b></p>\n<p><span style=\"font-weight: 400;\">Saca el máximo partido a tus datos validando tus mediciones y utilizando los análisis avanzados de la suite </span><i><span style=\"font-weight: 400;\">OpenAir</span></i><span style=\"font-weight: 400;\">. Detecta las fuentes de emisión y hotspots gracias a herramientas que muestran gráficas de vientos avanzadas y mapas de calor directamente sobre el mapa. Crea informes personalizados y expórtalos o compártelos con tus clientes o comunidad.</span></p>\n<ul>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Validación de datos manual y sencilla para limpiar conjuntos de datos y realizar análisis avanzados con datos fiables.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Análisis avanzado de la suite </span><i><span style=\"font-weight: 400;\">OpenAir </span></i><span style=\"font-weight: 400;\">para facilitar el análisis de datos, incluyendo el cálculo de estadísticas básicas, gráficos de calendario ICA y calendarios con concentración de contaminantes, gráficos temporales de contaminantes, variación temporal, gráficas de viento y muchos más.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Integración de otras fuentes de datos en tiempo real o mediante la importación de archivos.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Creación sencilla de informes de calidad del aire de forma automática de un dispositivo y/o de toda una red.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Mapas de calor para identificar los puntos calientes (</span><i><span style=\"font-weight: 400;\">hotspots</span></i><span style=\"font-weight: 400;\">) en una zona.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Mapas de calor variables para conocer la evolución de los </span><i><span style=\"font-weight: 400;\">hotspots </span></i><span style=\"font-weight: 400;\">en el tiempo.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Detección de fuentes de contaminación mediante rosas de contaminación y gráficos polares directamente en el mapa.</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Herramienta de análisis del tamaño de las partículas que incluye gráficos de distribución de tamaños por masa y por recuentos.</span></li>\n</ul>"
+                },
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2018/03/cloud-time-variation-e1676884641219.jpg",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": {
+            "valor": 19,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3>COMPLETO</h3>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 27,
+                      "unidad": "px"
+                    }
+                  }
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><b>Orientado a las personas que quieren realizar todas las tareas implicadas en la obtención de la máxima calidad de los datos de los sensores.</b></p>\n<p><span style=\"font-weight: 400;\">Accede a todas las herramientas incluidas en el software Kunak AIR Cloud.</span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 17,
+            "unidad": "px"
+          },
+          "mb": {
+            "valor": -21,
+            "unidad": "px"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h2 id=\"configura-tu-paquete-de-software\">Configura tu paquete de software</h2>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3><b>Obtén tu cuenta de Admin</b></h3>\n<p><span style=\"font-weight: 400;\">(sólo requerido la 1ª vez, facturación anual)</span></p>\n<p><span style=\"font-weight: 400;\">Gestiona usuarios y cuentas y administra fácilmente la red; configura, opera, calibra y mantén las estaciones, así como valida y analiza los datos y crea informes.</span><span style=\"font-weight: 400;\"></span></p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3><b>Elige el paquete del dispositivo</b></h3>\n<p><span style=\"font-weight: 400;\">(Un paquete por dispositivo, facturación anual)</span></p>\n<p><span style=\"font-weight: 400;\">Selecciona el paquete de licencias que mejor se adapte a tus necesidades y te permita sacar el máximo provecho de los datos ofrecidos por la red de sensores. </span></p>\n<p><span style=\"font-weight: 400;\">Elige entre:</span></p>\n<ul>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Inicial</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Inicial + Operación</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Inicial + Análisis</span></li>\n<li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Completo</span><span style=\"font-weight: 400;\"></span></li>\n</ul>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3><b>Añade usuarios adicionales según necesites</b></h3>\n<p><span style=\"font-weight: 400;\">(opcional, facturación anual)</span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 2,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2022/03/VIEWER.svg",
+                  "alt": "VIEWER",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 40
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Visualizador</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><span style=\"font-weight: 400;\">Diagnóstico diario, operación y mantenimiento, y acceso a la consulta de datos validados, análisis e informes personalizados.</span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 0,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 2,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "imagen-kb",
+                  "src": "https://kunakair.com/wp-content/uploads/2022/03/EXPERT.svg",
+                  "alt": "EXPERT",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  },
+                  "anchoPct": 40
+                }
+              ]
+            },
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p>Experto</p>"
+                },
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><span style=\"font-weight: 400;\">Gestiona fácilmente la red; configura, opera, calibra y mantén las estaciones, así como valida y analiza datos.</span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 17,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 5,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<p><b>Inicia sesión en Kunak AIR Cloud</b></p>\n<p><span style=\"font-weight: 400;\">(y comience a operar su red)</span></p>\n<p><span style=\"font-weight: 400;\">Visite </span><a target=\"_blank\" href=\"http://www.kunakcloud.com\"><span style=\"font-weight: 400;\">www.kunakcloud.com</span></a><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pb": {
+            "valor": 17,
+            "unidad": "px"
+          },
+          "mt": {
+            "valor": 0.4,
+            "unidad": "pct"
+          },
+          "columnas": [
+            {
+              "ancho": "4_4",
+              "modulos": [
+                {
+                  "blockType": "texto-kb",
+                  "html": "<h3>Galería</h3>"
+                },
+                {
+                  "blockType": "gallery",
+                  "items": [
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image026-2.png",
+                      "alt": "Panel de control",
+                      "titulo": "Panel de control"
+                    },
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image027-2.png",
+                      "alt": "Gestión de usuarios",
+                      "titulo": "Gestión de usuarios"
+                    },
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image028-2.png",
+                      "alt": "Análisis multiparamétrico",
+                      "titulo": "Análisis multiparamétrico"
+                    },
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image029-2.png",
+                      "alt": "Validación e informes",
+                      "titulo": "Validación e informes"
+                    },
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image030-2.png",
+                      "alt": "Alarmas y trazabilidad",
+                      "titulo": "Alarmas y trazabilidad"
+                    },
+                    {
+                      "imagen": "https://kunakair.com/wp-content/uploads/2023/02/image031-2.png",
+                      "alt": "GMO",
+                      "titulo": "GMO"
+                    }
+                  ],
+                  "ritmo": {
+                    "mb": {
+                      "valor": 0,
+                      "unidad": "px"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
