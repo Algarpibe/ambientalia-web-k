@@ -18,17 +18,17 @@
  *
  * ── La media ──────────────────────────────────────────────────────────────
  * Las 56 imágenes vienen de `media-corpus/fase-3/` (índice propio, capturado
- * por `cms:captura-f3-media`), **no del sitio vivo**. `rutaOrigen` guarda la
- * procedencia tal cual la escribe el original —`/wp-content/uploads/…`— porque
- * es la cadena que el clon tiene que poder reproducir (CMS-0g).
+ * por `cms:captura-f3-media`), **no del sitio vivo**, y se copian a
+ * `apps/web/public/images/uploads/` — la convención del clon, ver el bloque de
+ * `ficheroDe` para por qué NO es `/wp-content/uploads/`.
  *
  * ⚠ **Una imagen que falte NO se sustituye por nada.** Un alta de media vacía
  * convierte «falta el fichero» en «la imagen es opcional», y el Δ0 lo paga
  * después (§regla 6).
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { Evaluadas, QA, origenDe } from "../qa/lib.mjs";
 
 process.env.SIN_CLON = "1";
@@ -59,20 +59,47 @@ for (const { indice, raiz } of INDICES) {
     if (!catalogoMedia.has(rel)) catalogoMedia.set(rel, join(raiz, rel));
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA RUTA DEL ASSET EN EL CLON ES `/images/uploads/…`, NO `/wp-content/…`
+ *
+ * Corregido el 2026-08-10 (tanda 46.ª) **antes de servir nada**, y lo destapó
+ * ir a construir la plantilla: la primera versión de este seed escribió
+ * `rutaOrigen = /wp-content/uploads/…` —la ruta del ORIGINAL— y esa carpeta no
+ * existe en `apps/web/public`. O sea **56 imágenes rotas en el HTML servido**,
+ * sin un solo error en el seed ni en el build.
+ *
+ * La convención del clon estaba ya derivada y no se miró: de las 168 filas de
+ * `media`, **112 llevan `/images/uploads/…`** —el grupo A, cuyo corpus pasó por
+ * la reescritura de T3— y los ficheros viven en `apps/web/public/images/uploads`.
+ * Es la misma ruta con otro prefijo, que es lo que T3 hace: *cortar el
+ * acoplamiento con el sistema de origen*.
+ *
+ * Así que este seed **copia el fichero capturado a `public/` si no está**, y
+ * escribe la ruta del clon. 19 de las 56 ya estaban (las comparte con grupo A);
+ * las 37 restantes las pone esta corrida.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const PUBLICO_SUBIDAS = join(RAIZ, "apps/web/public/images/uploads");
+
 /**
  * `https://kunakair.com/wp-content/uploads/2023/02/x-480x480.jpg` → el fichero
- * capturado. `origenDe` colapsa la variante `-WxH`, que es la misma regla con
+ * del clon. `origenDe` colapsa la variante `-WxH`, que es la misma regla con
  * la que se capturó (una definición, no dos).
  */
 function ficheroDe(url) {
   const rel = String(url).split("/wp-content/uploads/")[1];
   if (!rel) throw new Error(`MEDIA con URL inesperada: ${url}`);
   for (const cand of [origenDe(rel), rel]) {
-    const abs = catalogoMedia.get(cand);
-    if (abs && existsSync(abs)) return { abs, ruta: `/wp-content/uploads/${cand}` };
+    const enPublico = join(PUBLICO_SUBIDAS, cand);
+    if (existsSync(enPublico)) return { abs: enPublico, ruta: `/images/uploads/${cand}`, copiado: false };
+    const capturado = catalogoMedia.get(cand);
+    if (capturado && existsSync(capturado)) {
+      mkdirSync(dirname(enPublico), { recursive: true });
+      copyFileSync(capturado, enPublico);
+      return { abs: enPublico, ruta: `/images/uploads/${cand}`, copiado: true };
+    }
   }
   throw new Error(
-    `MEDIA AUSENTE: ${url} no está en media-corpus.\n` +
+    `MEDIA AUSENTE: ${url} no está ni en apps/web/public/images/uploads ni en media-corpus.\n` +
       `  No se sustituye por nada: un alta vacía convierte «falta el fichero» en\n` +
       `  «la imagen es opcional», y el Δ0 lo paga después. Corre \`npm run cms:captura-f3-media\`.`,
   );
@@ -96,11 +123,13 @@ if (previas.totalDocs)
 
 /* ── media: se sube una vez por origen, y el mapa ES la ida ──────────────── */
 const idsMedia = new Map();
+let copiadas = 0;
 async function media(url) {
-  const { abs, ruta } = ficheroDe(url);
+  const { abs, ruta, copiado } = ficheroDe(url);
   if (idsMedia.has(ruta)) return idsMedia.get(ruta);
   const ya = await payload.find({ collection: "media", where: { rutaOrigen: { equals: ruta } }, limit: 1 });
   const id = ya.docs[0]?.id ?? (await payload.create({ collection: "media", filePath: abs, data: { rutaOrigen: ruta } })).id;
+  if (copiado) copiadas++;
   idsMedia.set(ruta, id);
   return id;
 }

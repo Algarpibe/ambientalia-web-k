@@ -7507,3 +7507,100 @@ borró a mano** (§regla 5). Hoy ese número **está respaldado por otras dos
 congeladas que sí existen**, y en dos rutas. No lo rehabilita —sigue sin poder
 exhibirse— pero **deja de ser el único apoyo de nada**: la pregunta que abrió ya
 está contestada por evidencia que nunca se borró.
+
+## ⛔ F3-1-ESCALON-TIPOGRAFIA · el `h2` tiene TRES pieles y NADA de lo servido las distingue (2026-08-10)
+
+Aparece al escribir la plantilla de `articulos-kb`, que es cuando la pregunta se
+hace por primera vez. `modulos.spec.md` §1.1 **había medido** que el `h2` tiene
+más de una piel y lo dejó escrito. Lo que la spec no contestó, porque no era su
+pregunta, es la que necesita el componente: **¿con QUÉ las separa?**
+
+Sonda: `npm run qa:kb-tipografia` · `medidas/kb-tipografia.json` · 30 titulares.
+
+| etiqueta | pieles medidas | veredicto | discriminador servido |
+|---|---|---|---|
+| `h2` | `45/45 w700` x6 · `44/55 w300` x11 · `37/37 w300` x3 | **CAMPO (test B)** | **NINGUNO de los 10 ejes** |
+| `h3` | `32/32 w300 rgb(12,113,195)` x4 · `32/32 w300 #333` x4 | **CAMPO (test B)** | **NINGUNO establecido** |
+| `h4` | `26/26 w300` x2 | una piel | — |
+
+**Test B con nombre y apellidos:** `como-garantiza-kunak-la-mejor-precision` trae
+`44/55` **y** `37/37` en la misma página (f3c0m0 y f6c0m0 contra f6c0m4), y
+`que-es-kunak-air-cloud` trae los dos colores de `h3`. Dos hermanos con valores
+distintos ⇒ lo escribió una persona.
+
+**Los diez ejes que se miraron, y ninguno separa:** `style=` y `class=` de la
+propia etiqueta dentro del campo rico · las clases del módulo · `estiloInline`
+del módulo · reparto de la fila · posición en la columna · nº de fila · `mb` ·
+`mt` · etiquetas vecinas. Los tres módulos son, hasta el último atributo
+servido, **indistinguibles**.
+
+> **El único rastro es `et_pb_text_N`, y no cuenta.** Es el gancho con el que
+> Divi cuelga el CSS compilado de los ajustes de ESE módulo — o sea **la huella
+> del campo que falta**, no un dato: `N` es el ordinal del módulo en la página y
+> no significa nada fuera de ella. Aceptarlo sería cablear la piel a la
+> posición, con la instancia siguiente por delante.
+
+### La trampa que la sonda tuvo que esquivar
+
+La primera versión dio **`fila` y `mb` como discriminador del `h3`** — y es
+falso. Las dos pieles del `h3` viven en **una sola página**, así que *cualquier*
+eje posicional las separa por accidente: los 4 de un color caen antes que los 4
+del otro. Es la regla de sondas 4 en su tercera cara —*un detector que encuentra
+más de lo que hay da un número plausible de más*—, y habría producido una
+plantilla que cablea el color a la fila.
+
+> **Un discriminador hallado en UNA página no es un discriminador.** La sonda
+> exige ahora que la separación se sostenga en **2 páginas o más** y, si no,
+> reporta **NO ESTABLECIDO** con su denominador.
+
+### Qué decide, y por qué la tanda para aquí
+
+`texto-kb` guarda `html` + ritmo + `anchoPct`, y **ninguno expresa la piel del
+titular**. §2d.5 concluyó que `lh` no hacía falta en este módulo; la conclusión
+se derivó de la interlínea de los **párrafos** y **no se comprobó sobre los
+titulares** — es la regla de la regla derivada sobre un dominio donde el caso no
+se da, otra vez.
+
+Servir hoy pintaría **3 `h2` a `44/55` donde el original pone `37/37`** y **4
+`h3` en el color equivocado**. El Δ tendría causa conocida: medirlo no informa y
+tapa lo que sí. Por eso **no hay CSS de titulares ni ruta emitida** — escribirlos
+exige *elegir* una de las tres pieles, que es el arreglo falso con otro disfraz.
+
+**Lo que hay que decidir (no se improvisa aquí):** si `texto-kb` gana un campo de
+piel del titular —y con qué forma: `fs`/`lh`/`color` sueltos, un enum de pieles,
+o el ajuste por módulo tal cual lo escribe Divi— y cómo lo deriva el extractor,
+que **sí puede**: la piel está en `kb-spec-{1440,390}.json`, que es estilo
+computado. El coste es un campo, una migración y una re-siembra.
+
+**Dueño:** la tanda que retome F3-1 PASO 4.
+
+## ⚠ HTML-CMP-NO-REPRODUCIBLE · dos builds seguidos del mismo árbol dan 31/31 rutas distintas (2026-08-10)
+
+Al verificar que la extracción de `CascaronTb` no movía nada, `qa:html-cmp` salió
+**31 de 31 con el marcado visible distinto**, y **también con los nombres de
+chunk quitados** (`visibleSinChunks`). Congelado en
+`medidas/html-cascaron-antes.json` y `-despues.json`, dos builds del mismo día.
+
+**No es el cambio, y basta un control para saberlo:** entre las 31 están **`/` y
+`/accesorios`, que no importan el fichero tocado**. Los deltas de bytes son
+`±43` en 8 rutas **con los dos signos** y `0` en las otras 23 — la firma de algo
+del build, no de una edición.
+
+> Es la regla de sondas 4 tal cual: **31 de 31 no es un hallazgo, es el
+> instrumento.** Un comparador que encuentra defecto en el 100 % de lo que mira
+> está comparando dos cosas que no son la misma.
+
+**Consecuencia operativa:** `qa:html-cmp` **no puede adjudicar hoy** un cambio de
+render en este entorno — su umbral es cero y el suelo no lo es. Cualquier
+afirmación de tipo *«este refactor no movió nada»* respaldada en él es una
+afirmación **sin medida**, y así queda etiquetada la de `CascaronTb`.
+
+**Lo que NO se sabe todavía, dicho para que no se lea de más:** de dónde sale la
+variación. No se ha aislado si es el `BUILD_ID`, un nonce, un orden de módulos
+del bundler o un `updatedAt` que llega al payload RSC. **Sin esa causa tampoco se
+puede afirmar que el suelo sea inocuo** — podría estar tapando un cambio real.
+
+**Dueño:** la tanda que necesite volver a usar `html-cmp` como puerta. El primer
+paso es barato: **dos builds SIN tocar una línea** y comparar. Si salen 31/31, el
+suelo es del build; si salen 0/31, lo de hoy sí era la edición y esta ficha se
+cae.

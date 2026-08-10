@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { ColumnaAncha, ColumnaEstrecha, FilaTb, SeccionCuerpoTb } from "@/components/CascaronTb";
 
 /**
  * EL CASCARÓN DEL ARQUETIPO A — las piezas comunes a las tres plantillas.
@@ -32,18 +33,29 @@ import { Breadcrumb } from "@/components/Breadcrumb";
  * dos columnas entre 768 y 980, que es donde el original ya apila.
  */
 
-/** Fila del `tb_body`: 86 % con tope de 1380. Idéntica en las tres plantillas. */
-export function FilaA({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div data-fila="" className={`mx-auto w-[86%] max-w-[1380px] ${className}`}>{children}</div>
-  );
-}
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA RETÍCULA DEL `_tb_body` — REEXPORTADA desde `components/CascaronTb.tsx`
+ *
+ * ⚠ **Movida el 2026-08-10 (F3-1 PASO 1 de la construcción), y por una medida:**
+ * `articulos-kb` usa **la misma plantilla de theme-builder**, al píxel y a los
+ * dos anchos —fila 1238.39/335.39 con tope 1380, sección `pt/pb` 57.5938/50,
+ * columnas 911.75 y 258.5, canal 68.1094—. Lo único que cambia es el LADO de la
+ * columna estrecha, que en A va a la derecha y en KB a la izquierda.
+ *
+ * Así que estas cuatro piezas **no son del arquetipo A**: son del cascarón, y
+ * dejarlas aquí con nombre de arquetipo habría obligado a la segunda página a
+ * importar `arquetipo-a/` o a copiarlas — que es la clase C7. Es la regla del
+ * repo (*cuando un componente de página se reutiliza, se extrae a la raíz*)
+ * aplicada con su verificación: **el JSX emitido es el mismo**, y quien lo dice
+ * es `qa:html-cmp` byte a byte, no el diff.
+ *
+ * Los nombres de siempre se conservan para no tocar a sus 3 importadores.
+ * ═════════════════════════════════════════════════════════════════════════ */
+export const FilaA = FilaTb;
+export const SeccionCuerpoA = SeccionCuerpoTb;
+export const ColumnaPrincipalA = ColumnaAncha;
+/** La barra de A va a la DERECHA: el canal es `ml`. Medido en las 24. */
+export const ColumnaLateralA = ColumnaEstrecha;
 
 /**
  * `section#0` — la sección de las migas del grupo A.
@@ -60,10 +72,9 @@ export function FilaA({
  * `content: "/"`, `padding-left: 7.2`— y el eslabón lleva `padding-right: 7.2`.
  * Reimplementarlo a mano dio `75.89` donde el original mide `75.72`.
  *
- * Ahora es lo que tenía que haber sido: **el componente base, con la retícula
- * del arquetipo A**. Lo único propio de A es el ancho de fila (86 %, frente al
- * 80 % de producto); la interlínea de 26 y el truncado del último eslabón son
- * del defecto porque están medidos en las 7 formas.
+ * ⚠ **`articulos-kb` NO la usa**, y es medida: su cascarón tiene **5 secciones**
+ * y ninguna es de migas (`cascaron.spec.md` §1). Por eso esta pieza se queda
+ * aquí y no sube a `CascaronTb` con las otras cuatro.
  */
 export function MigasA({ migas }: { migas: { label: string; href?: string }[] }) {
   return (
@@ -72,46 +83,6 @@ export function MigasA({ migas }: { migas: { label: string; href?: string }[] })
       rowClassName="mx-auto w-[86%] max-w-[1380px]"
       variante="producto"
     />
-  );
-}
-
-/**
- * `section#1` — la que contiene el `post_content`. `pt/pb` **57.59 a 1440 y 50
- * a 390**: se mueve con el ancho, o sea que es el 4 % por defecto de Divi y
- * **plantilla** por el test A. (En este régimen el test A no decide campo vs
- * plantilla, pero sí identifica el valor como el default de Divi.)
- */
-export function SeccionCuerpoA({ children }: { children: ReactNode }) {
-  return (
-    <section className="w-full bg-white pt-[50px] pb-[50px] min-[981px]:pt-[57.59px] min-[981px]:pb-[57.59px]">
-      {children}
-    </section>
-  );
-}
-
-/** Columna principal: 73.62 % (911.75 a 1440), ancho completo al apilar. */
-export function ColumnaPrincipalA({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return <div className={`w-full min-[981px]:w-[73.62%] ${className}`}>{children}</div>;
-}
-
-/** Columna lateral: 20.87 % (258.5 a 1440) con gutter de 5.5 %. */
-export function ColumnaLateralA({
-  children,
-  className = "",
-}: {
-  children?: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={`w-full min-[981px]:w-[20.87%] min-[981px]:ml-[5.5%] ${className}`}>
-      {children}
-    </div>
   );
 }
 
