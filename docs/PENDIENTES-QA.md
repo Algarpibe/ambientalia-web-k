@@ -1,5 +1,120 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-1 · `articulos-kb` SERVIDA y COMPARADA PAR A PAR (2026-08-10)
+
+**Cierra los PASOS 1·2·3.** La hoja `kb-*` (`apps/web/src/app/kb.css`) está
+**derivada** por `npm run qa:kb-clases` de los nodos cuyo DATO omite cada
+propiedad —no del valor mayoritario— y aceptada **par a par** por
+`npm run qa:kb-cmp`, que compara el clon renderizado contra el original:
+
+| corrida | pares iguales | sin declarar |
+|---|---|---|
+| @1440 · original **congelado** | **4999 / 5089** | **0** |
+| @390 · original **congelado** | **4979 / 5089** | **0** |
+| @1440 · original **VIVO** | **5453 / 5543** | **0** |
+| @390 · original **VIVO** | **5433 / 5543** | **0** |
+
+> **Y el vivo da los MISMOS recuentos de hueco que el congelado**, ficha por
+> ficha. Es el control cruzado que ninguna de las dos corridas da sola: el
+> original de hoy reproduce la medida del 2026-08-10 en todo lo comparado.
+
+⚠ **Alcance, y hay que leerlo con el aviso puesto:** estas rutas **no tienen
+campaña de ruido propia**, así que un residuo pequeño aquí **es SIN PROBAR, no
+limpio** — y no se puede pedir prestado el suelo de otra ruta, porque un suelo es
+propiedad *de las rutas medidas*.
+
+### Los 4 defectos que el comparador cazó y ninguna guarda anterior podía ver
+
+| defecto | coste | por qué no lo veía nada |
+|---|---|---|
+| el discriminador de bloque es **`kind`** y el componente miraba `blockType` | **las 6 páginas servidas con CERO módulos** | `switch` sin `default` ⇒ `undefined` ⇒ React no pinta y no avisa. Verde: `check`, `qa:slugs`, `qa:manifiesto`, manifiesto con sus 6 rutas |
+| los SVG no tienen tamaño intrínseco | **40 imágenes a 0 px de ancho** | el `src` resuelve (HTTP 200); lo que falta es la caja |
+| `ColumnaAncha` al **73.62 %** en vez de 73.624 | **−0.047 px ⇒ 45 pares** | horizontal y sub-píxel: no cambia un renglón, así que ninguna guarda de alturas lo mueve. **Grupo A lo traía igual** |
+| `margin-right` del canal a **390** | **18.4375 px en 15 columnas** | la media query no sube la especificidad y perdía contra `:not(:last-child)`. Δ0 perfecto a 1440 |
+
+### Los 7 huecos DECLARADOS, con su número
+
+La sonda los cuenta y **falla en las dos direcciones**: uno que crece es un
+defecto nuevo con coartada; uno que se vacía es un permiso muerto.
+
+| ficha | @1440 | @390 | qué es |
+|---|---|---|---|
+| **F3-1-SRCSET-KB** | 7 | 12 | ver abajo — asciende de cómoda a cara |
+| **F3-1-PIEL-CUERPO-KB** | 18 | 18 | la piel del CUERPO del módulo de texto (claim 25px ×5 · etiqueta azul 15px ×2) no es campo todavía |
+| **F3-1-ALIGN-BLURB-KB** | 9 | 9 | el `align` de la piel del blurb no se extrae |
+| **F3-1-ICONO-BLURB-KB** | 27 | 27 | el contenedor del icono mide **50×46** con una imagen de **50×50 desplazada +6** |
+| **F3-1-GALERIA-KB** | 10 | 19 | n=1 en las 6 instancias: FAMILIA DE CALIBRACIÓN |
+| **F3-1-ALTO-DERIVADO-KB** | 18 | 24 | altos de módulo con Δ de 0.42 a 10.6 y **ninguna propiedad comparada distinta** |
+| **F3-1-BOTON-ALIGN-KB** | 1 | 1 | 1 de 6 botones computa `start` en el ORIGINAL y los otros 5 `left` |
+
+#### F3-1-SRCSET-KB · la ficha que cambia de categoría
+
+`srcset` se dejó fuera del modelo con su razón (M-IMG abierta en el ESQUEMA, no
+se resuelve de paso). Medido ahora, **tiene consecuencia geométrica**:
+
+> a 390 el original sirve la **variante que WordPress recorta** y el clon el
+> fichero entero. `cloud-aqi` mide **1651×393** en disco y el original lo pinta
+> **335.39 × 188.66** (16:9): el clon da **79.83** de alto. **Δ 108.83 px**, en 3
+> imágenes; y 0.34 px en otras 7 por el redondeo de la razón.
+
+Deja de ser una ficha de peso de descarga. Su cierre es el de M-IMG.
+
+#### F3-1-ICONO-BLURB-KB · lo que falta para cerrarla es una MEDIDA, no una idea
+
+El contenedor es `inline-block` de 50×**46** con la imagen dentro midiendo
+50×**50** y empezando **6 px más abajo**. Ninguna combinación de lo capturado lo
+explica, y **la spec no tomó** `height`, `overflow`, `font-size` ni los márgenes
+del `img`. Se cierra re-midiendo esas cuatro sobre el original, no razonando.
+
+#### F3-1-ALTO-DERIVADO-KB · el hueco que la corrida VIVA acotó
+
+La corrida `--vivo` compara **454 pares más** (el espejo congelado guarda un solo
+`p` por módulo) y **los 18 Δ de alto siguen sin una sola propiedad distinta
+debajo**. O sea que la causa **no** está en el ritmo ni en la tipografía de
+párrafo: queda entre lo que este barrido no mira (métricas de los inline —
+`b`, `span`, `sub`, `a`— o la fuente). Es la §regla del NIVEL aplicada al propio
+comparador: mide alto y no mide lo que lo compone.
+
+## ✅ F3-1-PIEL-FUERA-DE-KB · contestada en las DOS direcciones (2026-08-10)
+
+**(a) ¿cuántas conclusiones anteriores de «varianza cero / ningún discriminador»
+se sacaron de ejes de atributo y estructura sin mirar el CSS compilado?**
+
+Derivado sobre el repo entero (`docs` · `apps/web/src` · `packages` · `scripts`):
+**141 afirmaciones**, de las cuales **10 mencionan tipografía**. Leídas una a una,
+**ninguna está en riesgo**, y la razón es estructural y vale como regla:
+
+> **Toda afirmación tipográfica del repo se derivó de `getComputedStyle`, que
+> está AGUAS ABAJO del CSS compilado.** El escalón fue posible en un solo sitio:
+> donde una sonda leyó el **atributo** (`estiloInline`) y lo llamó «el editor no
+> tocó nada». Medir el computado ya ve el `<style>` que Divi escribe.
+
+Las 3 copias de *«cero varianza en 24 instancias (ritmo, **tipografía**,
+retícula)»* del cascarón de grupo A salen de `a-cascaron`, que mide computado ⇒
+**siguen en pie**. Las otras son declaraciones del límite (*«cero varianza no
+prueba plantilla»*), no conclusiones.
+
+**Contestada al revés otra vez:** el riesgo no está en lo viejo — está en
+**sobre-generalizar la regla nueva** y mandar a alguien a re-auditar 131
+afirmaciones sobre estructura que nunca estuvieron expuestas.
+
+**(b) las reglas de piel FUERA de KB: ¿cómo las produce hoy cada arquetipo
+construido?**
+
+Derivado de `medidas/pieles-modulo.json` y del árbol de componentes:
+
+| | |
+|---|---|
+| reglas de piel de titular fuera de `articulos-kb` | **1227** (productos 658 · sectores 291 · listados 118 · sueltas 104 · hubs 56) |
+| cómo las produce el clon hoy | **CABLEADAS en el componente**: **56 de los 74 `.tsx`** de `src/components` llevan `text-[NNpx]` literal (60× `18px` · 12× `35px` · 11× `37px` · 10× `44px`) |
+| su Δ0 | **limpio donde está medido** — los comparadores de esos arquetipos no lo marcan |
+
+> **No es una emergencia: es la CLASE.** Correcto para las instancias medidas y
+> roto para la siguiente, exactamente como estaba `mb` antes de §2d.6. Va a esta
+> lista **con su número** y se paga cuando toque el arquetipo, con su round-trip
+> — no de paso.
+
+
 ## ⛔ F3-1-CSS-NO-CAPTURADO · el original NO está fuera del camino crítico para MEDIR EL PÍXEL (2026-08-10)
 
 **Medido por `npm run qa:kb-css`, de dos lados, 6/6.** Acta:

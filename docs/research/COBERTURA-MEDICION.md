@@ -126,6 +126,30 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > por descuido, sino porque sus 6 rutas **no se emiten** (§CENSO: POBLADO y no
 > SERVIDO, y todas las sondas de este repo leen HTML servido).
 
+> ✅ **CERRADO el 2026-08-10 (tanda 48.ª): `articulos-kb` emite sus 6 rutas y
+> gana FORMA y LECTOR.** `npm run qa:kb-cmp` es una sonda **de dos lados** —clon
+> renderizado contra original, congelado o **vivo**— y compara **par a par, nodo
+> × propiedad**, que es la unidad en la que esta matriz manda declarar la
+> cobertura:
+>
+> | eje | antes | ahora | evidencia |
+> |---|---|---|---|
+> | ritmo (sección · fila · columna · módulo) | `·` | **`O`** | `kb-cmp-{1440,390}[-vivo].json` |
+> | caja (`width` · `maxWidth` · `display`) | `·` | **`O`** | idem |
+> | tipografía (titular · párrafo · `li` · botón · blurb) | `·` | **`O`** | idem |
+> | árbol (nº de filas · columnas · módulos · reparto) | `·` | **`O`** | idem |
+> | **comportamiento** | `·` | **`·`** | sigue sin tocarse — ver abajo |
+>
+> **Recuento en la unidad que la sonda compara**, no en rutas: **5089 pares por
+> ancho** contra la medida congelada (4999 y 4979 iguales) y **5543** contra el
+> sitio vivo (5453 y 5433). Los **90 y 110** restantes son **7 huecos declarados
+> con su número**, no residuo — y la sonda **falla si crecen o si se vacían**.
+>
+> ⚠ **Lo que esto NO mueve:** el eje de **comportamiento sigue a 0/31** y esta
+> familia no lo estrena. Y estas 6 rutas **no tienen campaña de ruido propia**,
+> así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
+> PROBAR, no limpio.
+
 ## La matriz · 31 rutas × 9 ejes
 
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.

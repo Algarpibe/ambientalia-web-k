@@ -1052,6 +1052,29 @@ dominio agrupando por Y contesta la pregunta en una línea.
 > no, se reporta **NO ESTABLECIDO con su denominador**
 > (`qa:kb-tipografia`).
 
+⚠ **Y el tercer caso de la misma familia, que es el que se cuela porque parece
+resuelto: UN DISCRIMINADOR 1:1 PUEDE SER LA SOMBRA DE OTRO (2026-08-10, F3-1).**
+
+Los dos de arriba son sobre variables que **no** se pueden separar. Éste es
+sobre una que sí, y que nadie mira porque la primera ya casaba perfecto:
+
+> **Cuando el eje que separa tus grupos es un campo que declaraste FUERA del
+> modelo, sospecha de él antes de fichar el conflicto.** Un 1:1 no dice cuál de
+> las dos variables es la causa — dice que en tus datos van juntas —, y la que
+> tienes a mano suele ser la sombra de la que no.
+
+Medido: el envoltorio de imagen del original sirve `display` en dos valores,
+**`inline-block` ×14 y `block` ×7**, y los separa **1:1 el `srcset`** — que este
+arquetipo dejó fuera con su ficha. Leído así, era una decisión de modelo
+cobrándose geometría. Censadas las 21 extensiones, la partición es **la misma y
+con causa**: los 7 de `block` son **los 7 `.svg`**. WordPress no genera `srcset`
+para SVG, o sea que `srcset` no era el discriminador: era su **sombra**.
+
+**Y la diferencia no es académica, porque decide dónde se escribe la regla:**
+sobre `srcset` no se puede escribir —el clon no lo tiene— y sobre la extensión
+sí, que viaja en el `src`. El criterio para elegir el eje es ése: **el que tenga
+mecanismo y esté SERVIDO en los dos lados**.
+
 ⚠ **Y su regla hermana, de MÉTODO y no de dominio: UNA COMPROBACIÓN RETROACTIVA
 SE ENMARCA EN LAS DOS DIRECCIONES.**
 
@@ -1557,6 +1580,37 @@ misma familia.** La guarda contaba mal por el mismo mecanismo del que protege.
 Operativamente: **en el código de las guardas, una ausencia se rechaza, no se
 sustituye.** Si un valor puede no existir, el defecto seguro es tirar; el valor
 benigno es el que fabrica el verde falso.
+
+⚠ **Y su gemelo del lado del RENDER, pagado el 2026-08-10 (F3-1): UN
+RENDERIZADOR QUE DEVUELVE `undefined` NO FALLA — NO PINTA.**
+
+La regla de arriba persigue guardas que cuentan de más. Ésta persigue lo mismo
+en el sitio donde no hay ningún contador:
+
+> **En React, `undefined` es un valor de retorno legal que renderiza NADA.** Así
+> que un `switch` sin `default`, un `find` que no encuentra o un `?.` que corta
+> **borran contenido en silencio**, y el silencio llega hasta el HTML servido:
+> no hay excepción, no hay aviso, y la página responde **200**.
+
+**Medido, y el número es lo que lo hace regla:** el discriminador de bloque que
+llega al render se llama `kind` —lo pone la vuelta del proyector— y el
+componente miraba `blockType`, que es lo que Payload guarda. Las **6 páginas de
+`articulos-kb` se servían con sus filas, sus columnas y CERO módulos**. Verde:
+`npm run check`, `qa:slugs`, `qa:manifiesto`, el `prerender-manifest` con sus 6
+rutas. Lo cazó el comparador de dos lados con `columna.nModulos: orig 2 → clon
+0`.
+
+**Las dos consecuencias, y la segunda es la que vale para cualquier arquetipo:**
+
+1. **todo `switch` de un renderizador lleva `default` que TIRA**, con el valor
+   recibido en el mensaje. El defecto se pone en la dirección que grita: mejor
+   una página que revienta que seis que mienten;
+2. **una ruta que responde 200 no prueba que sirva CONTENIDO.** Ninguna guarda
+   de este repo mira dentro —cuentan rutas, slugs, familias y bytes— así que
+   *«la ruta está emitida»* y *«la página está servida»* son dos afirmaciones, y
+   sólo un comparador **contra el original** distingue la segunda. Es §UN
+   ARQUETIPO NUEVO NO HEREDA COBERTURA con su caso más barato: aquí el clon no
+   estaba un poco mal, estaba **vacío**, y todo lo verde siguió verde.
 
 **7 · UN ARTEFACTO DE TEST EN NEGATIVO NO PUEDE PARECER UNA MEDIDA.**
 

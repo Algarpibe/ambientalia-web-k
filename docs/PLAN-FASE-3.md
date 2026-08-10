@@ -279,7 +279,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 | fase | estado |
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
-| **F3-1** · `articulos-kb` | 🟡 **4 de 6 del orden obligado hecho (2026-08-10, 3 tandas)** — specs + PASO 0 (§F3-1-CSS-NO-CAPTURADO) · esquema con retícula · extractor + seed · **y la PIEL DEL TITULAR, que cierra el escalón que paró la tanda anterior** (§2d.7 del ESQUEMA). Quedan **2**: la **plantilla** y la **ruta** (PASO 4) → **sonda de dos lados + Δ0 contra el sitio vivo + lector de `c-cmp`** (PASO 5). **Sin decisión abierta que lo bloquee**: lo que queda es construcción |
+| **F3-1** · `articulos-kb` | ✅ **COMPLETA (2026-08-10, 4 tandas)** — los 6 pasos del orden obligado: specs + PASO 0 · esquema con retícula · extractor + seed · piel del titular (§2d.7) · **plantilla + ruta** (hoja `kb.css` DERIVADA por `qa:kb-clases`, 2 catch-all por sus dos prefijos) · **sonda de dos lados**: `qa:kb-cmp` par a par, **4999/5089 @1440 y 4979/5089 @390** contra la medida congelada y **5453/5543 y 5433/5543 contra el sitio VIVO**, cero diferencias sin declarar en las cuatro corridas. Deja **7 huecos con su número** (`PENDIENTES-QA.md` §F3-1), el mayor de ellos `srcset` con **108.83 px** de consecuencia geométrica a 390 |
 | **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |

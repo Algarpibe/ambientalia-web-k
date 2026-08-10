@@ -3081,6 +3081,39 @@ proceso que pregunta.** Con la transición, el cron es seguro de reintentar cada
 minuto sin memoria ninguna. Medido: `qa:programada` P3 — 1ª vuelta publica 1,
 2ª publica 0.
 
+### ✅ 2d.8 · LA PLANTILLA DE `articulos-kb` — el default vive en la HOJA y el campo llega por VARIABLE (2026-08-10, tanda 48.ª)
+
+Cierra los pasos 5 y 6 de §2d.4. El content type no cambia; lo que se decide
+aquí es **dónde vive cada mitad**, y la decisión la impone el original:
+
+> **El default de Divi CAMBIA DE UNIDAD al apilar** (`2 %` en escritorio, `30px`
+> plano a 390). Un valor emitido desde el componente gana en los dos anchos, así
+> que el default **tiene que estar en la hoja** y el campo **tiene que llegar por
+> variable CSS**, con tres pisos: `var(--x-movil, var(--x, DEFECTO))`.
+
+El piso de en medio no es adorno: un campo escrito como `2 %` **sigue siendo
+2 %** a 390 (6.70312 medido), mientras el default pasa a 30px. Sin él, uno de los
+dos se come al otro — y a 1440 no se vería.
+
+**Los valores de la hoja se DERIVAN, no se escriben**: `npm run qa:kb-clases`
+toma, para cada propiedad, el valor medido **en los nodos cuyo DATO la omite**, y
+**falla si esos nodos no coinciden entre sí**. Con 1519 pares delante, escribir
+la hoja de impresión es el arreglo falso con otro disfraz.
+
+**Y el nombre de la variable lleva prefijo por NIVEL** (`--kbf-*` fila,
+`--kbm-*` módulo, `--kbh-*` / `--kbb-*` pieles). Las custom properties heredan:
+un `--kb-mb` puesto en la fila lo verían sus columnas y sus módulos, así que un
+módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
+`mb`** — sin dar error.
+
+#### Lo que la construcción devolvió al ESQUEMA
+
+| hallazgo | consecuencia de modelo |
+|---|---|
+| el discriminador que llega al render es **`kind`**, no `blockType` | ninguna en el esquema; sí en el render, que ahora **TIRA** ante un `kind` desconocido |
+| **`srcset`** tiene consecuencia GEOMÉTRICA: hasta **108.83 px** de alto a 390 | sube la prioridad de **M-IMG** (§CMS-0b): deja de ser una ficha de peso |
+| el `align` de la piel de blurb **no se extrae** (9 de 36) | el campo existe; lo que falta es derivarlo **de la regla compilada**, no del computado, donde está confundido con la herencia |
+
 ## 7 · Decisiones abiertas, en un sitio
 
 | # | decisión | bloquea |

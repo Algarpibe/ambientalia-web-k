@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "que": "Comparación de DOS LADOS de `articulos-kb`, par a par (nodo × propiedad), a 1440.",
+    "ancho": 1440,
+    "ladoOriginal": "medidas/kb-spec-1440.json (congelado el 2026-08-10)",
+    "ladoClon": "http://127.0.0.1:52819 — HTML servido por `next start` sobre el build actual",
+    "puerta": "geometría y tipografía RENDERIZADAS. El byte no puede ser puerta aquí (§HTML-CMP-NO-REPRODUCIBLE)",
+    "ruido": "⚠ `articulos-kb` NO tiene campaña de ruido propia: un residuo pequeño en estas rutas es SIN PROBAR, no limpio",
+    "huecosDeclarados": [
+      {
+        "ficha": "F3-1-PIEL-CUERPO-KB",
+        "que": "la piel del CUERPO del módulo de texto (claim 25px ×5 · etiqueta azul 15px ×2) no es campo todavía"
+      },
+      {
+        "ficha": "F3-1-ALIGN-BLURB-KB",
+        "que": "el `align` de la piel del blurb no se extrae: el extractor lo lee del COMPUTADO, donde está confundido con la herencia, y la regla compilada sí lo dice"
+      },
+      {
+        "ficha": "F3-1-ICONO-BLURB-KB",
+        "que": "el contenedor del icono mide 50×46 con una imagen de 50×50 desplazada +6: la spec no capturó `height`, `overflow` ni los márgenes del `img`, así que el mecanismo no es derivable de lo congelado"
+      },
+      {
+        "ficha": "F3-1-GALERIA-KB",
+        "que": "la galería es n=1 en las 6 instancias — FAMILIA DE CALIBRACIÓN: con una sola no se sabe qué es plantilla y qué es campo"
+      },
+      {
+        "ficha": "F3-1-ALTO-DERIVADO-KB",
+        "que": "altos de módulo de texto con Δ de 0.6 a 10.6 y ninguna propiedad comparada distinta: la causa está FUERA de este barrido y el espejo congelado guarda un solo `p` por módulo, así que no puede adjudicarlo — lo resuelve la corrida `--vivo`"
+      },
+      {
+        "ficha": "F3-1-SRCSET-KB",
+        "que": "la caja de la imagen. `srcset` está FUERA del modelo por decisión declarada (§F3-1-SRCSET-KB), así que a 390 el original sirve una VARIANTE y el clon el fichero entero, y la razón de aspecto NO es la misma: **0.34 px en 7 imágenes y hasta 108.83 px en 3** — el original pinta 335.39×188.66 (16:9, la variante que WordPress RECORTA) donde el fichero mide 1651×393. La ficha deja de ser sólo de peso y pasa a tener consecuencia GEOMÉTRICA, que es lo que la asciende de cómoda a cara"
+      },
+      {
+        "ficha": "F3-1-BOTON-ALIGN-KB",
+        "que": "1 de los 6 botones computa `start` en el original y los otros 5 `left`: varianza del ORIGINAL que ninguna propiedad capturada explica"
+      }
+    ]
+  },
+  "rutas": {
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+      "pares": 609,
+      "iguales": 607,
+      "distintos": 0,
+      "diferencias": []
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+      "pares": 788,
+      "iguales": 778,
+      "distintos": 0,
+      "diferencias": []
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+      "pares": 519,
+      "iguales": 516,
+      "distintos": 0,
+      "diferencias": []
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+      "pares": 1096,
+      "iguales": 1069,
+      "distintos": 0,
+      "diferencias": []
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+      "pares": 669,
+      "iguales": 662,
+      "distintos": 0,
+      "diferencias": []
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+      "pares": 1408,
+      "iguales": 1367,
+      "distintos": 0,
+      "diferencias": []
+    }
+  },
+  "resumen": {
+    "pares": 5089,
+    "iguales": 4999,
+    "distintos": 0,
+    "porPropiedad": {},
+    "huecos": {
+      "F3-1-ALTO-DERIVADO-KB": 18,
+      "F3-1-SRCSET-KB": 7,
+      "F3-1-PIEL-CUERPO-KB": 18,
+      "F3-1-ICONO-BLURB-KB": 27,
+      "F3-1-GALERIA-KB": 10,
+      "F3-1-BOTON-ALIGN-KB": 1,
+      "F3-1-ALIGN-BLURB-KB": 9
+    },
+    "soloClon": 454,
+    "soloOriginal": 0
+  },
+  "soloClon": [
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f1.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f2.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f3.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f4.c1.m0.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f5.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m2 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m3 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/ s0.f6.c0.m4 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f1.c0.m2 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f3.c1.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f3.c1.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f4.c1.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f4.c1.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f5.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f5.c1.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f5.c1.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f6.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f6.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/ s0.f6.c0.m3 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f2.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f2.c0.m2 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m2.p3 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m3.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/ s0.f3.c0.m5 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f1.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f2.c0.m11.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f3.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f4.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f5.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/ s0.f6.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f2.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p2 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f3.c0.m1.p3 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0 · texto.nParrafos",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p1 · parrafo.textAlign",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.color",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.fontSize",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.fontWeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.letterSpacing",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.lineHeight",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.marginBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.marginTop",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.paddingBottom",
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/ s0.f5.c0.m0.p2 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f0.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f1.c0.m1.p2 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f10.c1.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f10.c1.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f11.c0.m0.p2 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f12.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f2.c0.m0.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f3.c0.m0.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f4.c0.m2.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f5.c0.m1.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f6.c0.m1.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f7.c0.m1.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m1.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p1 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.color",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.fontSize",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.fontWeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.letterSpacing",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.lineHeight",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.marginBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.marginTop",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.paddingBottom",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m2.p2 · parrafo.textAlign",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f8.c0.m3 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f9.c1.m0 · texto.nParrafos",
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/ s0.f9.c1.m1 · texto.nParrafos"
+  ],
+  "soloOriginal": [],
+  "huecosPorFicha": {
+    "F3-1-ALTO-DERIVADO-KB": [
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+        "clave": "s0.f6.c0.m2 · modulo.altoDerivado",
+        "original": 513.5,
+        "clon": 507.5
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f3.c1.m0 · modulo.altoDerivado",
+        "original": 30,
+        "clon": 30.59
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f4.c1.m0 · modulo.altoDerivado",
+        "original": 30,
+        "clon": 30.59
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f5.c1.m0 · modulo.altoDerivado",
+        "original": 30,
+        "clon": 30.59
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+        "clave": "s0.f2.c0.m2 · modulo.altoDerivado",
+        "original": 234.16,
+        "clon": 232.16
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+        "clave": "s0.f3.c0.m5 · modulo.altoDerivado",
+        "original": 173.97,
+        "clon": 170.97
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m0 · modulo.altoDerivado",
+        "original": 64.8,
+        "clon": 54.2
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m2 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m3 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m4 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m5 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m6 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m7 · modulo.altoDerivado",
+        "original": 213.52,
+        "clon": 213.94
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f10.c1.m0 · modulo.altoDerivado",
+        "original": 30,
+        "clon": 30.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m0 · modulo.altoDerivado",
+        "original": 344.94,
+        "clon": 341.94
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f4.c0.m2 · modulo.altoDerivado",
+        "original": 471.31,
+        "clon": 464.31
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f8.c0.m2 · modulo.altoDerivado",
+        "original": 344.75,
+        "clon": 340.75
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f9.c1.m0 · modulo.altoDerivado",
+        "original": 30,
+        "clon": 30.59
+      }
+    ],
+    "F3-1-SRCSET-KB": [
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+        "clave": "s0.f6.c0.m5 · img.w",
+        "original": 911.73,
+        "clon": 911.75
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f5.c0.m0 · img.w",
+        "original": 135.23,
+        "clon": 135.19
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+        "clave": "s0.f3.c0.m4 · img.w",
+        "original": 911.75,
+        "clon": 911.72
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f2.c0.m1 · img.w",
+        "original": 911.75,
+        "clon": 911.73
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f4.c0.m3 · img.w",
+        "original": 911.75,
+        "clon": 911.67
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f5.c0.m2 · img.w",
+        "original": 911.75,
+        "clon": 911.72
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f6.c0.m2 · img.w",
+        "original": 911.75,
+        "clon": 911.72
+      }
+    ],
+    "F3-1-PIEL-CUERPO-KB": [
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f3.c1.m0.p0 · parrafo.fontSize",
+        "original": "25px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f3.c1.m0.p0 · parrafo.lineHeight",
+        "original": "30px",
+        "clon": "30.6px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f4.c1.m0.p0 · parrafo.fontSize",
+        "original": "25px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f4.c1.m0.p0 · parrafo.lineHeight",
+        "original": "30px",
+        "clon": "30.6px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f5.c1.m0.p0 · parrafo.fontSize",
+        "original": "25px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+        "clave": "s0.f5.c1.m0.p0 · parrafo.lineHeight",
+        "original": "30px",
+        "clon": "30.6px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m0.p0 · parrafo.color",
+        "original": "rgb(0, 117, 201)",
+        "clon": "rgb(51, 51, 51)"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m0.p0 · parrafo.fontSize",
+        "original": "15px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m0.p0 · parrafo.fontWeight",
+        "original": "800",
+        "clon": "400"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m0.p0 · parrafo.letterSpacing",
+        "original": "0.1px",
+        "clon": "normal"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m0.p0 · parrafo.color",
+        "original": "rgb(0, 117, 201)",
+        "clon": "rgb(51, 51, 51)"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m0.p0 · parrafo.fontSize",
+        "original": "15px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m0.p0 · parrafo.fontWeight",
+        "original": "800",
+        "clon": "400"
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f6.c0.m0.p0 · parrafo.letterSpacing",
+        "original": "0.1px",
+        "clon": "normal"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f10.c1.m0.p0 · parrafo.fontSize",
+        "original": "25px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f10.c1.m0.p0 · parrafo.lineHeight",
+        "original": "30px",
+        "clon": "30.6px"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f9.c1.m0.p0 · parrafo.fontSize",
+        "original": "25px",
+        "clon": "18px"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f9.c1.m0.p0 · parrafo.lineHeight",
+        "original": "30px",
+        "clon": "30.6px"
+      }
+    ],
+    "F3-1-ICONO-BLURB-KB": [
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m10 · modulo.altoDerivado",
+        "original": 173.03,
+        "clon": 177.03
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m2 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m3 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m4 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m5 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m6 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m7 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m8 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f2.c0.m9 · modulo.altoDerivado",
+        "original": 151.44,
+        "clon": 155.44
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m2 · modulo.altoDerivado",
+        "original": 216.88,
+        "clon": 220.88
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m3 · modulo.altoDerivado",
+        "original": 195.28,
+        "clon": 199.28
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+        "clave": "s0.f4.c0.m4 · modulo.altoDerivado",
+        "original": 195.28,
+        "clon": 199.28
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m2 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m3 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m4 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m5 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m6 · modulo.altoDerivado",
+        "original": 195.28,
+        "clon": 199.28
+      },
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f2.c0.m7 · modulo.altoDerivado",
+        "original": 173.36,
+        "clon": 177.36
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m1 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m2 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m3 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m4 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m5 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m6 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m7 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m8 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m9 · modulo.altoDerivado",
+        "original": 107.59,
+        "clon": 111.59
+      }
+    ],
+    "F3-1-GALERIA-KB": [
+      {
+        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+        "clave": "s0.f3.c0.m1 · modulo.altoDerivado",
+        "original": 809.25,
+        "clon": 806.25
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1 · modulo.altoDerivado",
+        "original": 470.75,
+        "clon": 506.13
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g0 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g1 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g2 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g3 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g4 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f12.c0.m1.g5 · item.h",
+        "original": 201.33,
+        "clon": 202.92
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f5.c0.m1 · modulo.altoDerivado",
+        "original": 560.09,
+        "clon": 556.09
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f6.c0.m1 · modulo.altoDerivado",
+        "original": 655.88,
+        "clon": 647.88
+      }
+    ],
+    "F3-1-BOTON-ALIGN-KB": [
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f2.c0.m2 · boton.textAlign",
+        "original": "start",
+        "clon": "left"
+      }
+    ],
+    "F3-1-ALIGN-BLURB-KB": [
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m1 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m2 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m3 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m4 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m5 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m6 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m7 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m8 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      },
+      {
+        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+        "clave": "s0.f3.c0.m9 · blurbTitular.textAlign",
+        "original": "center",
+        "clon": "left"
+      }
+    ]
+  }
+}

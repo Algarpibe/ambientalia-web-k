@@ -21,6 +21,21 @@
 > (`ESQUEMA-CMS.md` §2d.4). **Un arquetipo con decisión de modelo escrita puede
 > seguir sin ser construible**, y hasta hoy no había dónde leerlo.
 >
+> ✅✅ **Y el 2026-08-10 (tanda 48.ª) pasa a SERVIDO, que era el cuarto estado.**
+> El censo llegó a tener **POBLADO y no SERVIDO** —dato en la DB, cero rutas
+> emitidas, cobertura cero *por construcción*—; hoy emite sus **6 rutas** por sus
+> **dos prefijos** (`/centro-de-ayuda/[...ruta]` · `/soporte/[...ruta]`) y su
+> cuerpo está comparado **par a par contra el original**, congelado y vivo
+> (`PENDIENTES-QA.md` §F3-1 · `qa:kb-cmp`).
+>
+> ⚠ **Y «SERVIDO» tampoco es «servido bien», que es la lección de esta tanda.**
+> Las 6 rutas respondieron **200** durante toda una corrida **sirviendo cero
+> módulos** —el discriminador de bloque se llama `kind` y el componente miraba
+> `blockType`—, con `check`, `qa:slugs` y el manifiesto en verde. Así que el
+> estado se declara **con el instrumento que lo sostiene**: SERVIDO *y comparado
+> par a par*, no SERVIDO a secas. Una ruta emitida es una afirmación sobre el
+> enrutado, no sobre el contenido.
+>
 > ✅ **CORREGIDO 2026-08-10: `articulos-kb` pasa a ESPECIFICADO.** Sus specs
 > viven en **`docs/research/articulos-kb/`** —no en `grupo-D/`, que se queda como
 > el recon— con `MEDICION.md` y `components/{cascaron,cuerpo,modulos}.spec.md`,

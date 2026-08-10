@@ -1,3 +1,103 @@
+# HANDOFF — `articulos-kb` SERVIDA y comparada PAR A PAR; el arreglo falso lo impidió el instrumento, no la disciplina
+
+> ⚠ **Tanda 2026-08-10 (48.ª).** PASOS **1 · 2 · 3 · 4 · 5 · 7** completos. El
+> PASO **6** (los casos legales sin ejercitar) **no se hizo** — razón en §4.
+> Registro: `PENDIENTES-QA.md` (§F3-1 + 7 fichas nuevas + §F3-1-PIEL-FUERA-DE-KB
+> contestada) · `CLAUDE.md` (2 reglas) · `CENSO-ARQUETIPOS.md` (SERVIDO) ·
+> `COBERTURA-MEDICION.md` (4 ejes a `O`) · `PLAN-FASE-3.md` (F3-1 ✅).
+
+## 0 · Los cuatro titulares
+
+> **1 · LA HOJA SE DERIVÓ, Y LA DERIVACIÓN ENCONTRÓ UN DEFECTO ANTES DE
+> ESCRIBIR UNA LÍNEA DE CSS.** `qa:kb-clases` no toma el valor mayoritario: toma
+> el valor medido **en los nodos cuyo DATO omite la propiedad**, y falla si esos
+> nodos no coinciden entre sí. A la primera corrida falló — `modulo.marginBottom`
+> daba `30px ×49` y `0px ×10` a 390 — y el conflicto era **del instrumento**: los
+> dos anchos tienen DENOMINADORES distintos, porque la cascada que la hoja
+> escribe (`var(--x-movil, var(--x, DEFECTO))`) hace que un nodo con override de
+> móvil **no llegue** al defecto de móvil.
+>
+> **2 · EL COMPARADOR PAR A PAR CAZÓ QUE LAS 6 PÁGINAS SERVÍAN CERO MÓDULOS.**
+> El discriminador que llega al render es **`kind`** —lo pone la vuelta del
+> proyector— y el componente miraba `blockType`, que es lo que guarda Payload. Un
+> `switch` sin `default` devuelve `undefined` y **React no pinta nada**: HTTP 200
+> en las 6, `npm run check` verde, `qa:slugs` limpio, manifiesto con sus 6 rutas.
+> **Ninguna guarda de este repo mira dentro.** Lo dijo `columna.nModulos: orig 2
+> → clon 0`.
+>
+> **3 · EL DISCRIMINADOR «EVIDENTE» ERA UNA SOMBRA.** El envoltorio de imagen
+> sirve dos `display` y los separa **1:1 el `srcset`** — que este arquetipo dejó
+> fuera del modelo. Parecía una ficha abierta cobrándose geometría. Censadas las
+> 21 extensiones: los **7 de `block` son los 7 `.svg`**, y WordPress no genera
+> `srcset` para SVG. La regla se escribe sobre el eje que **el clon tiene** y que
+> **tiene mecanismo**. Y no era cosmético: **40 imágenes salían a 0 px de ancho**
+> porque un SVG sin `width`/`height` no mide nada.
+>
+> **4 · EL VIVO CONFIRMÓ AL CONGELADO, FICHA POR FICHA.** `--vivo` compara **454
+> pares más** y da **5453/5543 @1440 y 5433/5543 @390** con **los mismos siete
+> recuentos de hueco** que la corrida congelada. Es el control cruzado que
+> ninguna de las dos da sola: el original de hoy reproduce la medida del
+> 2026-08-10 en todo lo comparado.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| **`qa:kb-clases`** ← nueva | 260 nodos (medida × dato) · 0 propiedades sin default derivable |
+| **`qa:kb-cmp`** ← nueva | **4999/5089** @1440 · **4979/5089** @390 · **0 sin declarar** |
+| **`qa:kb-cmp --vivo`** | **5453/5543** @1440 · **5433/5543** @390 · **0 sin declarar** |
+| `npm run check` | verde · **37 rutas** · 13 familias · slugs LIMPIO · `cms-campos` 10/10 |
+| `qa:lib` | **123 sondas** COMPILAN y declaran su mínimo · negativo 93/93 |
+
+## 2 · Lo que hay que saber para retomar
+
+**No queda ninguna decisión abierta en F3-1.** Lo que queda son **7 huecos con su
+número** (`PENDIENTES-QA.md` §F3-1), y sólo dos merecen tanda propia:
+
+1. **§F3-1-SRCSET-KB** — subió de categoría: **108.83 px** de alto a 390 en 3
+   imágenes, porque el original sirve la variante que WordPress **recorta**. Su
+   cierre es el de **M-IMG** en el ESQUEMA, no un parche aquí;
+2. **§F3-1-ICONO-BLURB-KB** — 27 pares. Lo que falta es **una medida**, no una
+   idea: `height`, `overflow`, `font-size` del contenedor y los márgenes del
+   `img`, que la spec no tomó.
+
+Los otros cinco están acotados y declarados. **`qa:kb-cmp` falla si cualquiera
+crece o se vacía**, así que no se pudren en silencio.
+
+**Después: F3-2 · listados y hubs** — 142 = 35 + 107 capturados, modelo decidido,
+esperando `P-LH-C6`, que es además **el eje de comportamiento que sigue a 0/31**.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer «SERVIDO» como «servido bien».** Las 6 rutas dieron 200 durante una
+  corrida entera **sirviendo cero módulos**. El estado va con su instrumento:
+  *servido y comparado par a par*.
+- **No leer un residuo pequeño en estas 6 rutas como «limpio».** No tienen
+  campaña de ruido propia ⇒ **SIN PROBAR**, y el suelo de otra ruta no se presta.
+- **No perseguir los anchos intermedios del `mb` de módulo.** Va en px porque su
+  mecanismo está SIN PROBAR (§2d.6): expresarlo en % obligaría a elegir contra
+  qué ancestro resuelve, que es justo lo que no se sabe.
+- **No tocar `ANCHO_COLUMNA` ni `ColumnaAncha` «para redondear».** El `73.624 %`
+  no es el porcentaje de Divi: es **el que reproduce el píxel medido** con la
+  cuantización a 1/64 del motor. Lo adjudica `qa:kb-cmp`, no la aritmética.
+- **No dar por auditadas las 141 afirmaciones de «varianza cero»** por la regla
+  nueva del CSS compilado: **10 hablan de tipografía y ninguna está en riesgo**,
+  porque todas salen de `getComputedStyle`, que está aguas abajo del CSS
+  compilado (§F3-1-PIEL-FUERA-DE-KB (a)).
+
+## 4 · Por qué no se hizo el PASO 6, sin adornos
+
+**No hubo hallazgo que lo impidiera: el PASO 1 volvió a ser lo más caro, y esta
+vez con razón.** Derivar la hoja de 1519 pares, escribirla, y **cerrar el ciclo
+medir → nombrar → corregir cuatro veces** consumió el presupuesto. Lo que se
+compró a cambio está en §0: cuatro defectos que ninguna guarda anterior podía
+ver, uno de ellos con las seis páginas vacías.
+
+El PASO 6 (`qa:nunca-vistos`, **241 de 330** sin ejercitar) **no perdió nada por
+esperar**: es un recuento que se deriva y no caduca.
+
+---
+
 # HANDOFF — el escalón se DISUELVE: no eran tres pieles, era un defecto y dos overrides, y el campo no es de KB
 
 > ⚠ **Tanda 2026-08-10 (47.ª).** PASOS **1 · 2 · 3 · 6 · 7** completos. Los
