@@ -151,7 +151,8 @@
     "qa:kb-spec": "node scripts/qa/kb-spec.mjs",
     "qa:kb-tests": "node scripts/qa/kb-tests.mjs",
     "cms:extractor-kb": "node scripts/seed/extractor-kb.mjs",
-    "cms:extractor-kb-neg": "node scripts/seed/extractor-kb.neg.mjs"
+    "cms:extractor-kb-neg": "node scripts/seed/extractor-kb.neg.mjs",
+    "cms:seed-kb": "node --env-file=apps/cms/.env scripts/seed/seed-kb.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
