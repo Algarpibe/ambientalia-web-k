@@ -17,6 +17,7 @@ import {
   imagen,
   moduloBase,
   subida,
+  titularesModulo,
 } from "../campos/comunes.ts";
 
 /**
@@ -207,6 +208,28 @@ export const MODULO_TEXTO: Block = {
      * por plantilla y llamaba «excepción» al 36 de Petróleo.
      */
     conDefecto({ name: "lh", type: "number" } as Field, 30.6, "§1.5 · 30.6·36·45 por módulo"),
+    /**
+     * ⚠ **La piel de los titulares — ENSANCHAMIENTO retrocompatible, y la
+     * medida dice que este módulo es su sitio (F3-1, 2026-08-10).**
+     *
+     * `qa:pieles` leyó el CSS que Divi compiló en las 573 páginas del corpus:
+     * de las **1309** reglas de titular por módulo en capa propia, **291 son de
+     * `sectores`** (los 8, o sea SECTOR *y* MONOGRÁFICO, que son quienes
+     * consumen este bloque) y **658 de `productos`**, contra 82 de KB. El campo
+     * no llegó por KB: **llevaba aquí desde el principio y no se había medido**,
+     * exactamente como `inline` (§2d.3).
+     *
+     * Es opcional y su ausencia es el defecto del tema, así que **los 2
+     * monográficos y los 9 productos ya sembrados siguen válidos sin tocar un
+     * dato**: por eso el tabú de «no toques lo poblado» no aplica.
+     *
+     * ⚠ **Y lo que esta tanda NO hace: POBLARLO aquí.** Los 949 overrides de
+     * `sectores` + `productos` están medidos y **no extraídos** — el extractor
+     * del monográfico lee `style=` y estos valores no viven ahí. Es un camino de
+     * render sin estrenar **declarado**, con su ficha (§F3-1-PIEL-FUERA-DE-KB) y
+     * su número, no un campo que se supone soportado.
+     */
+    titularesModulo,
     ...moduloBase,
   ],
 };

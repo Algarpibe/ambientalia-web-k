@@ -819,6 +819,30 @@ proyecto costaron una tanda cada una:
 | «el desfase del claim es +26.5» | eran **−47.5 de contenido tapados por +74 de ritmo** — dos errores anulándose |
 | «los enlaces a sectores los pinta `nav.ts`» | los pintaban **tres** ficheros, y dos ni se sospechaban |
 | «el tipo del módulo de texto se midió sobre el original» | se midió sobre **la TRANSCRIPCIÓN**, que ya había tirado lo que faltaba |
+| «si el editor tocó la tipografía, quedará rastro en el marcado» | **Divi no escribe marcado: COMPILA CSS**, y lo sirve en el mismo `<style>`. Los 10 ejes que se miraron eran atributos y estructura; **ninguno era CSS** |
+
+⚠ **La cuarta es de 2026-08-10 y merece nombre propio, porque el error no fue
+mirar poco: fue mirar EL CANAL EQUIVOCADO.**
+
+> **«La salida servida» incluye el CSS que el documento se trae.** Un constructor
+> de páginas puede expresar lo que escribió el editor en **cualquiera** de los
+> canales que sirve —atributo, clase, CSS compilado, `<style>` en línea—, y mirar
+> sólo uno da un cero que se lee como *«esa propiedad no existe»*.
+
+Medido: `qa:kb-tipografia` recorrió `style=`, `class=`, las clases del módulo,
+`estiloInline`, el reparto, la posición, la fila, `mb`, `mt` y las etiquetas
+vecinas —**diez ejes**— y concluyó que el `h2` de `articulos-kb` tiene **tres
+pieles sin discriminador servido**. Lo tenía, en el `<style>` del propio
+documento: `.et_pb_text_3 h2 { font-weight:300; font-size:44px;
+line-height:1.25em }`. Con eso, las tres pieles resultaron ser **un DEFECTO del
+tema y DOS overrides por módulo** — y lo mismo el `h3`.
+
+**Y la premisa que lo sostenía era cierta**, que es lo que la hace peligrosa: el
+esquema afirmaba *«`estiloInline` es `null` en los 85 módulos, o sea que el
+editor no tocó la tipografía»*. `estiloInline` es el atributo `style=`, **y Divi
+no lo usa**: es medir al nivel que absorbe, con una medida real como coartada.
+Lo servido dice que el editor tocó la tipografía **en 89 sitios** de esos 85
+módulos.
 
 De ahí las dos formas de aplicarlo, que son la misma:
 
@@ -1216,6 +1240,29 @@ absorba.
 **El ámbito importa y es «todas las páginas», no «cada página».** Que un
 selector no case en una página concreta es legítimo —la FAQ no tiene migas y el
 caso sí—. Lo que no puede pasar es que no case en ninguna.
+
+⚠ **Y la instancia que enseña cómo se caza cuando no hay error que mirar
+(2026-08-10): LA CONTRADICCIÓN CON UNA MEDIDA BUENA ANTERIOR.**
+
+`qa:pieles` informó **«0 overrides de titular en `blurb`»** en la misma corrida
+en que informaba 1299 en módulos de texto. Un cero perfectamente plausible… que
+**contradecía a `modulos.spec.md` §2**, donde estaban medidas **tres pieles** del
+titular de blurb con sus tres denominadores. Las dos no podían ser verdad.
+
+Ganó la spec: **Divi compila la piel del blurb contra `.et_pb_module_header`** —
+porque ahí el nivel es un ajuste aparte y la piel tiene que valer para los seis
+niveles— y el selector de la sonda sólo casaba `h[1-6]`. Corregido: **216 reglas
+de blurb en una sola página**, y las tres pieles reaparecen exactas.
+
+> **El cero no tenía forma de dar error: tenía forma de dato.** Lo único que lo
+> delató fue **otra medición del mismo objeto hecha con otro instrumento**, que
+> es el control que este proyecto no siempre tiene — y por eso, cuando exista,
+> **cruzarlo es obligatorio antes de creerse un recuento nuevo.**
+
+Y el corolario de construcción: el conjunto que un selector discrimina **se
+deriva censando lo que aparece**, no se escribe de memoria. Aquí bastó censar
+los objetivos de regla en 60 páginas para ver `.et_pb_module_header` con 271
+apariciones, al lado de `h2`, `h3` y `h1`.
 
 **Y su COMPLEMENTARIO, que cuesta lo mismo y se ve menos (2026-07-31):**
 

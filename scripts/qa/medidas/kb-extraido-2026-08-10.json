@@ -50,14 +50,6 @@
         "h2 {\"fs\":44,\"movilFs\":35,\"lh\":1.25}": 11,
         "h3 {\"color\":\"#0c71c3\"}": 4
       }
-    },
-    "blurbPiel": {
-      "conPiel": 36,
-      "pieles": {
-        "{\"movilFs\":16,\"lh\":1.2,\"fw\":700}": 24,
-        "{\"fw\":600}": 3,
-        "{\"lh\":1.2}": 9
-      }
     }
   },
   "problemas": [],
@@ -1071,11 +1063,6 @@
                   "blockType": "blurb",
                   "titulo": "Instalación fácil y rápida",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-fast-installation.svg",
                   "alt": "Cartridge system",
                   "descripcion": "<p>Puesta en marcha en menos de 10 min con diagnóstico en pantalla.</p>",
@@ -1086,11 +1073,6 @@
                   "blockType": "blurb",
                   "titulo": "Sistema de cartuchos",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cartridge-system.svg",
                   "alt": "Multi pollutant",
                   "descripcion": "<p>Cartuchos sustituibles y combinables con sistema Plug &amp; Play.</p>",
@@ -1101,11 +1083,6 @@
                   "blockType": "blurb",
                   "titulo": "Precisión demostrada",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/accuracy.svg",
                   "alt": "Flexible and scalable",
                   "descripcion": "<p>Diseñada para homologación y certificación.</p>",
@@ -1116,11 +1093,6 @@
                   "blockType": "blurb",
                   "titulo": "Calibración fácil",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-calibration.svg",
                   "alt": "Additional probes",
                   "descripcion": "<p>Ajuste remoto de valores de calibración (cero y span).</p>",
@@ -1131,11 +1103,6 @@
                   "blockType": "blurb",
                   "titulo": "Plataforma de calidad del aire",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cloud-platform.svg",
                   "alt": "Remote calibration",
                   "descripcion": "<p>Visualización, análisis y gestión de datos en la nube.</p>",
@@ -1146,11 +1113,6 @@
                   "blockType": "blurb",
                   "titulo": "Múltiples contaminantes",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/multi-pollutant-1.svg",
                   "alt": "Remote calibration",
                   "descripcion": "<p>Medición de hasta 5 gases y partículas en suspensión al mismo tiempo.</p>",
@@ -1161,11 +1123,6 @@
                   "blockType": "blurb",
                   "titulo": "Totalmente autónomo",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
                   "alt": "Fully autonomous",
                   "descripcion": "<p>Funcionamiento autónomo con batería integrada y panel solar.</p>",
@@ -1176,11 +1133,6 @@
                   "blockType": "blurb",
                   "titulo": "Datos en tiempo real",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/real-time.svg",
                   "alt": "Remote calibration",
                   "descripcion": "<p>Acceso a datos y alarmas <br>en tiempo real.</p>",
@@ -1191,11 +1143,6 @@
                   "blockType": "blurb",
                   "titulo": "Añada sensores medioambientales",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/additional-probes.svg",
                   "alt": "Remote calibration",
                   "descripcion": "<p>Conexión de sensores de viento, lluvia, ruido y otro tipo de sondas.</p>",
@@ -1305,11 +1252,6 @@
                   "blockType": "blurb",
                   "titulo": "Control y garantía de la calidad trazable",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-quality-1.svg",
                   "alt": "Cartridge system",
                   "descripcion": "<p>Cada cartucho se calibra y valida individualmente en laboratorio respecto a normas de referencia trazables.</p>",
@@ -1320,11 +1262,6 @@
                   "blockType": "blurb",
                   "titulo": "Múltiples combinaciones",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/endless-combinations.svg",
                   "alt": "Multi pollutant",
                   "descripcion": "<p>Los parámetros pueden combinarse libremente. Las estaciones base pueden reutilizarse y confi gurarse según convenga.</p>",
@@ -1335,11 +1272,6 @@
                   "blockType": "blurb",
                   "titulo": "Plug & Play",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/plug-play.svg",
                   "alt": "Remote calibration",
                   "descripcion": "<p>Simplemente retire el antiguo y sustitúyalo por el nuevo en la misma ubicación. El equipo volverá a estar activo en 2 minutos.</p>",
@@ -1435,11 +1367,6 @@
                   "blockType": "blurb",
                   "titulo": "Panel de control",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image026.png\" width=\"264\" height=\"176\" alt=\"Control-panel\" class=\"wp-image-25470 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center"
@@ -1448,11 +1375,6 @@
                   "blockType": "blurb",
                   "titulo": "Gestión de usuarios",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image027.png\" width=\"264\" height=\"176\" alt=\"Users-management\" class=\"wp-image-25472 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center"
@@ -1461,11 +1383,6 @@
                   "blockType": "blurb",
                   "titulo": "Análisis multiparamétrico",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image028.png\" width=\"264\" height=\"176\" alt=\"Multiparametric-analysis\" class=\"wp-image-25475 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center"
@@ -1474,11 +1391,6 @@
                   "blockType": "blurb",
                   "titulo": "Validación e informes",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image029.png\" width=\"264\" height=\"176\" alt=\"Data validation &amp; data reporting\" class=\"wp-image-25477 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center"
@@ -1487,11 +1399,6 @@
                   "blockType": "blurb",
                   "titulo": "Alarmas y trazabilidad",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image030.png\" width=\"264\" height=\"176\" alt=\"Alarms log &amp; traceability\" class=\"wp-image-25480 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center"
@@ -1500,11 +1407,6 @@
                   "blockType": "blurb",
                   "titulo": "CMMS",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image031.png\" width=\"264\" height=\"176\" alt=\"CMMS\" class=\"wp-image-25483 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
                   "alineacion": "center",
@@ -1636,11 +1538,6 @@
                   "blockType": "blurb",
                   "titulo": "Calidad del aire urbano",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/urban-2.svg",
                   "alt": "urban",
                   "descripcion": "<p>Control e identificación de las fuentes de emisión con datos precisos a escala hiperlocal.</p>",
@@ -1651,11 +1548,6 @@
                   "blockType": "blurb",
                   "titulo": "Industria y olores",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/industry.svg",
                   "alt": "Industry & Odours",
                   "descripcion": "<p>Control de las emisiones atmosféricas industriales: sentar las bases de un futuro más limpio.</p>",
@@ -1666,11 +1558,6 @@
                   "blockType": "blurb",
                   "titulo": "Construcción",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/construction.svg",
                   "alt": "Construction",
                   "descripcion": "<p>Controlar la contaminación atmosférica en una obra, una forma de reforzar la sostenibilidad.</p>",
@@ -1681,11 +1568,6 @@
                   "blockType": "blurb",
                   "titulo": "Puertos y aeropuertos",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/ports-airports-2.svg",
                   "alt": "Additional probes",
                   "descripcion": "<p>Medir las emisiones del transporte hace que los puertos y aeropuertos sean más sostenibles.</p>",
@@ -1696,11 +1578,6 @@
                   "blockType": "blurb",
                   "titulo": "Minería",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/mining.svg",
                   "alt": "Mining",
                   "descripcion": "<p>Control de la contaminación atmosférica minera, contribuyendo a una extracción de recursos sin humos.</p>",
@@ -1711,11 +1588,6 @@
                   "blockType": "blurb",
                   "titulo": "Investigación y consultoría",
                   "nivel": 4,
-                  "piel": {
-                    "movilFs": 16,
-                    "lh": 1.2,
-                    "fw": 700
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/research.svg",
                   "alt": "Research & Consultancy",
                   "descripcion": "<p>Investigación de la contaminación, combinando conocimientos y tecnología de vanguardia.</p>",
@@ -1786,9 +1658,6 @@
                   "blockType": "blurb",
                   "titulo": "Estaciones de Referencia de la Calidad del Aire",
                   "nivel": 4,
-                  "piel": {
-                    "fw": 600
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/estacion-referencia-calidad-del-aire.jpg",
                   "alt": "estacion-referencia-calidad-del-aire",
                   "reticula": "ninguna",
@@ -1809,9 +1678,6 @@
                   "blockType": "blurb",
                   "titulo": "Sistemas de monitorización basados en sensores",
                   "nivel": 4,
-                  "piel": {
-                    "fw": 600
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Pro.jpg",
                   "alt": "Kunak-AIR-Pro",
                   "reticula": "ninguna",
@@ -1832,9 +1698,6 @@
                   "blockType": "blurb",
                   "titulo": "Dispositivos portátiles de exposición personal",
                   "nivel": 4,
-                  "piel": {
-                    "fw": 600
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/portable-personal-air-quality-monitor.jpg",
                   "alt": "portable-personal-air-quality-monitor",
                   "reticula": "ninguna",
@@ -1989,9 +1852,6 @@
                   "blockType": "blurb",
                   "titulo": "Centrado en las personas",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/human-centered.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2000,9 +1860,6 @@
                   "blockType": "blurb",
                   "titulo": "Orientado a servicio",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/service-oriented.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2011,9 +1868,6 @@
                   "blockType": "blurb",
                   "titulo": "Toma de decisiones",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/decision-making.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2022,9 +1876,6 @@
                   "blockType": "blurb",
                   "titulo": "Fácil de instalar",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-setup.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2033,9 +1884,6 @@
                   "blockType": "blurb",
                   "titulo": "Fácil de usar",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-use.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2044,9 +1892,6 @@
                   "blockType": "blurb",
                   "titulo": "Fácil de compartir",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-sharing-1.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2055,9 +1900,6 @@
                   "blockType": "blurb",
                   "titulo": "Fiable y seguro",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/secure-confidential-1.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2066,9 +1908,6 @@
                   "blockType": "blurb",
                   "titulo": "Escalable",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/flexible-scalable-1.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left"
@@ -2077,9 +1916,6 @@
                   "blockType": "blurb",
                   "titulo": "El mejor soporte técnico",
                   "nivel": 3,
-                  "piel": {
-                    "lh": 1.2
-                  },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/best-support.svg",
                   "reticula": "col-md-4",
                   "alineacion": "left",

@@ -643,6 +643,36 @@ export interface Producto {
              * Defecto 30.6 — §1.5 · 30.6·36·45 por módulo
              */
             lh?: number | null;
+            /**
+             * Lo que el editor tocó en la pestaña de titulares de Divi. Vacío = el defecto del tema (h2 37px · h3 32px · h4 26px, interlínea 1em, peso 300, #333333).
+             */
+            titulares?:
+              | {
+                  nivel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+                  /**
+                   * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
+                   */
+                  fs?: number | null;
+                  /**
+                   * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
+                   */
+                  lh?: number | null;
+                  /**
+                   * Peso CSS 100–900. 300·600·700·800 medidos.
+                   */
+                  fw?: number | null;
+                  /**
+                   * Hex, sin `!important` (lo pone el compilador de Divi).
+                   */
+                  color?: string | null;
+                  align?: ('left' | 'center' | 'right' | 'justify') | null;
+                  /**
+                   * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
+                   */
+                  movilFs?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
             ritmo?: {
               mt?: number | null;
               mb?: number | null;
@@ -991,6 +1021,36 @@ export interface Monografico {
                            * Defecto 30.6 — §1.5 · 30.6·36·45 por módulo
                            */
                           lh?: number | null;
+                          /**
+                           * Lo que el editor tocó en la pestaña de titulares de Divi. Vacío = el defecto del tema (h2 37px · h3 32px · h4 26px, interlínea 1em, peso 300, #333333).
+                           */
+                          titulares?:
+                            | {
+                                nivel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+                                /**
+                                 * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
+                                 */
+                                fs?: number | null;
+                                /**
+                                 * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
+                                 */
+                                lh?: number | null;
+                                /**
+                                 * Peso CSS 100–900. 300·600·700·800 medidos.
+                                 */
+                                fw?: number | null;
+                                /**
+                                 * Hex, sin `!important` (lo pone el compilador de Divi).
+                                 */
+                                color?: string | null;
+                                align?: ('left' | 'center' | 'right' | 'justify') | null;
+                                /**
+                                 * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
+                                 */
+                                movilFs?: number | null;
+                                id?: string | null;
+                              }[]
+                            | null;
                           ritmo?: {
                             mt?: number | null;
                             mb?: number | null;
@@ -1615,6 +1675,36 @@ export interface ArticulosKb {
              * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
              */
             html: string;
+            /**
+             * Lo que el editor tocó en la pestaña de titulares de Divi. Vacío = el defecto del tema (h2 37px · h3 32px · h4 26px, interlínea 1em, peso 300, #333333).
+             */
+            titulares?:
+              | {
+                  nivel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+                  /**
+                   * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
+                   */
+                  fs?: number | null;
+                  /**
+                   * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
+                   */
+                  lh?: number | null;
+                  /**
+                   * Peso CSS 100–900. 300·600·700·800 medidos.
+                   */
+                  fw?: number | null;
+                  /**
+                   * Hex, sin `!important` (lo pone el compilador de Divi).
+                   */
+                  color?: string | null;
+                  align?: ('left' | 'center' | 'right' | 'justify') | null;
+                  /**
+                   * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
+                   */
+                  movilFs?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
             ritmo?: {
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×121 · `−25`×6 · `−18→0`×14 · `−15`×2
@@ -1826,6 +1916,32 @@ export interface ArticulosKb {
              * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
              */
             descripcion?: string | null;
+            /**
+             * Lo que el editor tocó en la tipografía del titular. Vacío = el defecto del tema.
+             */
+            piel?: {
+              /**
+               * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
+               */
+              fs?: number | null;
+              /**
+               * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
+               */
+              lh?: number | null;
+              /**
+               * Peso CSS 100–900. 300·600·700·800 medidos.
+               */
+              fw?: number | null;
+              /**
+               * Hex, sin `!important` (lo pone el compilador de Divi).
+               */
+              color?: string | null;
+              align?: ('left' | 'center' | 'right' | 'justify') | null;
+              /**
+               * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
+               */
+              movilFs?: number | null;
+            };
             /**
              * Defecto "iconos" — kb-recon · iconos×24 · col-md-4×9 · ninguna×3
              */
@@ -2566,6 +2682,18 @@ export interface MonograficosSelect<T extends boolean = true> {
                                           };
                                     };
                                 lh?: T;
+                                titulares?:
+                                  | T
+                                  | {
+                                      nivel?: T;
+                                      fs?: T;
+                                      lh?: T;
+                                      fw?: T;
+                                      color?: T;
+                                      align?: T;
+                                      movilFs?: T;
+                                      id?: T;
+                                    };
                                 ritmo?:
                                   | T
                                   | {
@@ -2917,6 +3045,18 @@ export interface ProductosSelect<T extends boolean = true> {
                         };
                   };
               lh?: T;
+              titulares?:
+                | T
+                | {
+                    nivel?: T;
+                    fs?: T;
+                    lh?: T;
+                    fw?: T;
+                    color?: T;
+                    align?: T;
+                    movilFs?: T;
+                    id?: T;
+                  };
               ritmo?:
                 | T
                 | {
@@ -3311,6 +3451,18 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                       | T
                       | {
                           html?: T;
+                          titulares?:
+                            | T
+                            | {
+                                nivel?: T;
+                                fs?: T;
+                                lh?: T;
+                                fw?: T;
+                                color?: T;
+                                align?: T;
+                                movilFs?: T;
+                                id?: T;
+                              };
                           ritmo?:
                             | T
                             | {
@@ -3426,6 +3578,16 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                           imagen?: T;
                           alt?: T;
                           descripcion?: T;
+                          piel?:
+                            | T
+                            | {
+                                fs?: T;
+                                lh?: T;
+                                fw?: T;
+                                color?: T;
+                                align?: T;
+                                movilFs?: T;
+                              };
                           reticula?: T;
                           alineacion?: T;
                           ritmo?:

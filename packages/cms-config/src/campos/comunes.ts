@@ -861,6 +861,168 @@ export const anchoPct: Field = conDefecto(
 export const moduloBase: Field[] = [ritmoModulo, anchoPct];
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA PIEL DEL TITULAR — el campo que cerró el escalón de F3-1, y NO es de KB
+ *
+ * ── Las dos preguntas de población, contestadas ANTES de elegir la forma ───
+ * El escalón (`qa:kb-tipografia`) proponía arbitrar entre «un enum de pieles» y
+ * «propiedades sueltas». Las dos son respuestas a una pregunta que llegaba
+ * tarde: **primero hay que saber sobre qué población se derivó**. Medido con
+ * `npm run qa:pieles` sobre las **573 páginas** del corpus congelado, leyendo el
+ * CSS que Divi COMPILÓ (que es donde vive lo que el editor escribió):
+ *
+ * **(a) ¿ES CERRADO el conjunto? NO — y por goleada.** 7 pieles distintas en
+ * `articulos-kb` contra **30 en el corpus**, y los valores no son un catálogo:
+ * `font-size` ∈ {20·21·23·32·35·37·**44.1**·44·45·50} px, `font-weight` ∈
+ * {300·600·700·800}, `line-height` ∈ {1.1·1.2·1.25} em, `color` ∈ 3 hex,
+ * `text-align` ∈ {left·center}. Un `44.1px` no se adivina, y **la misma piel
+ * aparece en `h1`, `h2` y `h3`** (`{44px·300·1.25em}` ×234 en h2 y ×66 en h3):
+ * la piel no es propiedad del nivel. ⇒ **enum descartado, propiedades.**
+ *
+ * **(b) ¿EXISTE FUERA DE KB? SÍ, y KB es la MINORÍA.** De las 1309 reglas de
+ * titular en capa propia, **1227 están fuera de `articulos-kb`**:
+ *
+ * | colección | reglas | páginas |
+ * |---|---|---|
+ * | `productos` | **658** | 24/24 |
+ * | `sectores` (SECTOR + MONOGRÁFICO) | **291** | 8/8 |
+ * | `listados` | 118 | 12/149 |
+ * | `sueltas` | 104 | 8/20 |
+ * | `hubs-kb` | 56 | 7/7 |
+ * | `articulos-kb` | **82** | 6/6 |
+ *
+ * Y **24 pieles son IDÉNTICAS** a las de KB — `{44px·300·1.25em}` sale ×127 en
+ * productos y ×57 en sectores. Vive en módulos `text` (1299) y `toggle` (10).
+ *
+ *   > **Por eso el campo NO es de `articulos-kb`: es del módulo de texto
+ *   > compartido, que estaba infra-especificado exactamente igual que lo estaba
+ *   > `inline` (§2d.3).** Y por eso este fichero lo define UNA vez: dos
+ *   > definiciones de «la piel del titular» es la clase C7, y las dos salidas
+ *   > seguirían verdes mientras divergen.
+ *
+ * Es un **ENSANCHAMIENTO retrocompatible** —todo opcional, ausente = el defecto
+ * del tema—, así que el tabú de *«no toques lo poblado»* no aplica: los 2
+ * monográficos y los 9 productos ya sembrados siguen siendo válidos sin tocar
+ * un dato. Lo que NO se hace en esta tanda es POBLARLO fuera de KB: los 291 +
+ * 658 quedan como hueco medido con su ficha (§F3-1-PIEL-FUERA-DE-KB), porque
+ * extraerlos exige su propio round-trip y eso se prueba, no se hace de paso.
+ *
+ * ── La forma, y de dónde sale cada decisión ───────────────────────────────
+ * · **`nivel`** es la clave: Divi da un control por nivel (`h1`…`h6`);
+ * · **`fs` en px** — 1309 de 1309 reglas en px, sin una en `em` ni en `%`;
+ * · **`lh` en RAZÓN (em)** — 499 de 499 en `em`. Guardarlo en px sería el
+ *   defecto de `medida()` con otra unidad: a 1440 `55px` y `1.25em` valen igual
+ *   sobre una `fs` de 44, y a 390 (`fs` 35) no;
+ * · **`fw` es un número, no un enum de los cuatro vistos.** Es el catch 1 de
+ *   `MODELO.md` §2, el mismo por el que `ancho` se declaró como la retícula:
+ *   la escala de CSS es 100–900 y KB sólo estrenó cuatro peldaños;
+ * · **`align` sí es un select**, y su cierre no viene de lo visto sino **del
+ *   control de Divi**, que es un conmutador de cuatro. Sólo se ejercitan dos
+ *   (`left`·`center`): lo cuenta `qa:nunca-vistos`;
+ * · **`movilFs`** y no un par tableta/móvil: las 323 reglas responsive traen
+ *   `@980` y `@767` con **el mismo valor en las 323**, y ninguna sin base. O sea
+ *   que el editor escribió UN valor y Divi lo emitió dos veces. Un par de campos
+ *   admitiría un caso que el original no produce.
+ *
+ * ⚠ **Y el defecto NO vive aquí: vive en `titularPorDefecto()`** (`defaults.ts`),
+ * que tira ante un nivel sin medir. Ausencia de fila = el defecto del tema.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Los seis niveles de titular que Divi expone; la clave del override. */
+export const NIVELES_TITULAR = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
+
+/**
+ * Las cuatro alineaciones del conmutador de Divi. **Cerrado por el CONTROL, no
+ * por lo visto** — lo visto son dos (`left`×8 · `center`×55).
+ */
+export const ALINEACIONES_TITULAR = ["left", "center", "right", "justify"] as const;
+
+/** Las propiedades de piel; sirve para el `validate` y para el render. */
+export const PROPIEDADES_PIEL = ["fs", "lh", "fw", "color", "align", "movilFs"] as const;
+
+/**
+ * El override tipográfico que el editor puso a los titulares de ESTE módulo,
+ * una fila por nivel. **Ausente = el defecto del tema** (`titularPorDefecto`).
+ *
+ * Un `nivel` sin ninguna propiedad es un dato que no dice nada y que el render
+ * no puede distinguir de la ausencia: se **rechaza** en vez de guardarse
+ * (§regla 6 — una ausencia no se sustituye por un valor benigno).
+ */
+/**
+ * Las propiedades de UNA piel. Se declaran una vez y se componen dos veces
+ * —`titularesModulo` (array por nivel) y `pielTitularModulo` (grupo)— por la
+ * misma razón que `medida()` se compone distinto en KB y en el monográfico:
+ * **lo compartido es la primitiva; lo que difiere es la composición, porque lo
+ * medido difiere.** Duplicar las seis propiedades sería la clase C7.
+ */
+export const CAMPOS_PIEL: Field[] = [
+  { name: "fs", type: "number", admin: { description: "Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos." } },
+  { name: "lh", type: "number", admin: { description: "Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos." } },
+  { name: "fw", type: "number", admin: { description: "Peso CSS 100–900. 300·600·700·800 medidos." } },
+  { name: "color", type: "text", admin: { description: "Hex, sin `!important` (lo pone el compilador de Divi)." } },
+  { name: "align", type: "select", options: [...ALINEACIONES_TITULAR] },
+  {
+    name: "movilFs",
+    type: "number",
+    admin: { description: "Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323." },
+  },
+];
+
+/**
+ * ⚠ **La piel del titular de un BLURB es UN grupo, no un array por nivel — y la
+ * diferencia la impone el CONTROL de Divi, no la comodidad.**
+ *
+ * En un módulo de texto Divi da **seis** controles de tipografía (`H1`…`H6`),
+ * porque el texto puede traer cualquier nivel. En un blurb da **uno solo**, y el
+ * nivel es un ajuste aparte (`nivelTitular`) — por eso Divi lo compila contra
+ * `.et_pb_module_header` y no contra `h4`. Modelarlo como array admitiría seis
+ * filas donde el original sólo puede producir una.
+ *
+ * Medido en los 36 blurbs de KB, **tres pieles y las tres explicadas por su
+ * regla**: `{18px·700·1.2em·center}` ×24 (con `16px` bajo 980) ·
+ * `{18px·1.2em·center}` ×9 · `{600}` ×3.
+ */
+export const pielTitularModulo: Field = {
+  name: "piel",
+  type: "group",
+  label: "Piel del titular",
+  admin: { description: "Lo que el editor tocó en la tipografía del titular. Vacío = el defecto del tema." },
+  fields: CAMPOS_PIEL,
+} as Field;
+
+export const titularesModulo: Field = {
+  name: "titulares",
+  type: "array",
+  label: "Piel de los titulares",
+  admin: {
+    description:
+      "Lo que el editor tocó en la pestaña de titulares de Divi. Vacío = el defecto del tema " +
+      "(h2 37px · h3 32px · h4 26px, interlínea 1em, peso 300, #333333).",
+  },
+  fields: [
+    { name: "nivel", type: "select", options: [...NIVELES_TITULAR], required: true },
+    ...CAMPOS_PIEL,
+  ],
+  validate: (valor: unknown) => {
+    if (!Array.isArray(valor)) return true;
+    const vistos = new Set<string>();
+    for (const [i, fila] of valor.entries()) {
+      const f = fila as Record<string, unknown>;
+      const nivel = String(f?.nivel ?? "");
+      if (vistos.has(nivel))
+        return `Titular ${i + 1}: \`${nivel}\` repetido. Divi da UN control por nivel, así que dos filas del mismo nivel son dos verdades.`;
+      vistos.add(nivel);
+      const conValor = PROPIEDADES_PIEL.some((k) => f?.[k] !== undefined && f?.[k] !== null && f?.[k] !== "");
+      if (!conValor)
+        return (
+          `Titular ${i + 1} (\`${nivel}\`): ninguna propiedad. Una fila vacía y la AUSENCIA de la fila ` +
+          `se renderizan igual, así que el dato no diría nada: se rechaza en vez de guardarse.`
+        );
+    }
+    return true;
+  },
+} as Field;
+
+/* ══════════════════════════════════════════════════════════════════════════
  * LA PUBLICACIÓN — F2-4. Dos campos, y son INFRAESTRUCTURA, no dato medido.
  *
  * ── Qué problema resuelven ────────────────────────────────────────────────

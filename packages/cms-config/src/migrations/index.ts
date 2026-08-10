@@ -11,6 +11,8 @@ import * as migration_20260809_135819_f3_texto_kb_rico from './20260809_135819_f
 import * as migration_20260809_135857_f3_kb_retira_compartidos from './20260809_135857_f3_kb_retira_compartidos';
 import * as migration_20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos from './20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos';
 import * as migration_20260810_140630_f3_kb_reticula_filas_columnas from './20260810_140630_f3_kb_reticula_filas_columnas';
+import * as migration_20260810_164348_f3_kb_piel_titular from './20260810_164348_f3_kb_piel_titular';
+import * as migration_20260810_171434_f3_kb_piel_blurb from './20260810_171434_f3_kb_piel_blurb';
 
 export const migrations = [
   {
@@ -76,6 +78,16 @@ export const migrations = [
   {
     up: migration_20260810_140630_f3_kb_reticula_filas_columnas.up,
     down: migration_20260810_140630_f3_kb_reticula_filas_columnas.down,
-    name: '20260810_140630_f3_kb_reticula_filas_columnas'
+    name: '20260810_140630_f3_kb_reticula_filas_columnas',
+  },
+  {
+    up: migration_20260810_164348_f3_kb_piel_titular.up,
+    down: migration_20260810_164348_f3_kb_piel_titular.down,
+    name: '20260810_164348_f3_kb_piel_titular',
+  },
+  {
+    up: migration_20260810_171434_f3_kb_piel_blurb.up,
+    down: migration_20260810_171434_f3_kb_piel_blurb.down,
+    name: '20260810_171434_f3_kb_piel_blurb'
   },
 ];

@@ -1173,6 +1173,30 @@ export function sinLiterales(src) {
   return out;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS LIBRERÍAS DE `scripts/qa/` — lo único que el contrato NO alcanza
+ *
+ * El contrato de `Evaluadas` exige que todo `.mjs` de este directorio declare su
+ * mínimo. Una LIBRERÍA no puede: no mide nada, y no tiene unidades que contar.
+ *
+ * ⚠ **Y NO puede declararse con `SIN_CONTRATO`, aunque el hueco exista.** Poner
+ * `process.env.SIN_CONTRATO = "1"` en una librería sería un efecto secundario
+ * **sobre quien la importa**: `cms:extractor-kb` importa `css-compilado.mjs`, y
+ * heredar la bandera **desactivaría su contrato en silencio**. O sea, el
+ * mecanismo que existe para no fabricar verdes fabricaría uno.
+ *
+ * Por eso la exclusión es una LISTA — con las dos guardas que impiden que se
+ * pudra, porque una exclusión es literalmente dejar de mirar (§sondas):
+ *
+ *   1 · es corta, explícita y **se imprime en la salida de `qa:lib`**: no se
+ *       puede colar un fichero aquí sin que aparezca en el informe;
+ *   2 · el veredicto de la auditoría **sigue contando el total**, así que quitar
+ *       una sonda de la vigilancia se ve en el número.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Ficheros de `scripts/qa/` que NO son sondas: no miden, se importan. */
+export const LIBRERIAS = ["lib.mjs", "lib.test.mjs", "css-compilado.mjs"];
+
 /**
  * Audita un directorio de sondas contra el contrato de `Evaluadas`.
  *
@@ -1183,7 +1207,7 @@ export function sinLiterales(src) {
  * @param {string} dir  directorio con las sondas (por defecto, `scripts/qa`)
  * @param {string[]} [excluir]  ficheros que no son sondas
  */
-export async function auditarSondas(dir = QA, excluir = ["lib.mjs", "lib.test.mjs"]) {
+export async function auditarSondas(dir = QA, excluir = LIBRERIAS) {
   const { spawnSync } = await import("node:child_process");
   const ficheros = fs.readdirSync(dir).filter((f) => f.endsWith(".mjs") && !excluir.includes(f)).sort();
   const rotas = [];

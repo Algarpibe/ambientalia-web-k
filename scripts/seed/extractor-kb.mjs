@@ -34,6 +34,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { Evaluadas, QA, hoy, w } from "../qa/lib.mjs";
+import { pielesPorModulo } from "../qa/css-compilado.mjs";
 
 process.env.SIN_CLON = "1"; // lee ficheros congelados: un build del clon no la contamina
 
@@ -65,7 +66,7 @@ await esbuild.build({
   format: "esm",
   logLevel: "silent",
 });
-const { ARTICULO_KB, ANCHO_FILA_KB, mbPorDefecto } = await import(pathToFileURL(bundle).href);
+const { ARTICULO_KB, ANCHO_FILA_KB, mbPorDefecto, titularPorDefecto } = await import(pathToFileURL(bundle).href);
 
 /** El contenedor contra el que Divi resuelve los % del cuerpo, por ancho. */
 const CONTENEDOR = { 1440: ANCHO_FILA_KB, 390: 335.391 };
@@ -79,6 +80,8 @@ const SABOTAJES = {
   "un-ancho": "clasifica con 1440 solamente ⇒ default y `2 %` son indistinguibles",
   "sin-ocultas": "no descarta las filas `d-none` ⇒ 45 filas en vez de 39",
   reparto: "escribe `4_4` en toda columna ⇒ la retícula deja de sumar 1",
+  "piel-defecto": "toma la piel MAYORITARIA del `h2` (44/1.25em/300) como defecto del tema ⇒ 21 pieles pasan a otra cuenta",
+  "piel-align": "deriva `align` del computado ⇒ el `center` que vive en el campo rico se convierte en campo del módulo",
 };
 const SABOTAJE = process.env.SABOTAJE || null;
 if (SABOTAJE && !SABOTAJES[SABOTAJE])
@@ -180,6 +183,151 @@ function ritmoModulo(m1440, m390, tipoCol) {
   return Object.keys(r).length ? r : undefined;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA PIEL DE LOS TITULARES — derivada del COMPUTADO, verificada contra el CSS
+ *
+ * ── Por qué la fuente sigue siendo la medida, y no el CSS ─────────────────
+ * El campo se deriva del **estilo computado a los dos anchos**, igual que todo
+ * lo demás de este extractor: es la salida servida, y es lo que decide el Δ0.
+ * El CSS compilado entra como **SEGUNDO TESTIGO**, no como fuente:
+ *
+ *   > el computado dice **qué se ve**; el CSS dice **quién lo escribió**. Un
+ *   > override que el computado ve y el CSS no explica no es un campo del
+ *   > módulo — es contenido, o una hoja que la captura no tiene.
+ *
+ * **Y eso no es teoría: mordió a la primera.** El `h2` de `text_13` de
+ * `como-garantiza` computa `text-align: center` y **ninguna regla lo explica**;
+ * viene de `style="text-align: center"` **dentro del campo rico**. O sea que es
+ * contenido del editor de texto, no ajuste del módulo, y ya viaja verbatim en
+ * `html`. Escribirlo como campo habría duplicado el dato — y las dos copias
+ * habrían divergido en cuanto alguien editara el cuerpo.
+ *
+ * Por eso `align` **no se deriva del computado**: está confundido con la
+ * herencia del contenedor Y con el `style=` del campo rico. Existe en el
+ * esquema porque el corpus trae **63 reglas reales** de `text-align` por módulo
+ * (55 `center` · 8 `left`) fuera de KB; aquí queda **sin ejercitar y dicho**.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** `rgb(51, 51, 51)` → `#333333`. El computado siempre da `rgb()`. */
+function aHex(color) {
+  const m = /^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(String(color || ""));
+  if (!m) return null;
+  return "#" + [1, 2, 3].map((i) => Number(m[i]).toString(16).padStart(2, "0")).join("");
+}
+
+/**
+ * La piel de UN titular como campo, o `undefined` si es el defecto del tema.
+ *
+ * `lh` sale en **razón** (`lineHeight / fontSize`) y no en px porque Divi la
+ * escribe en `em` — 499 de 499 reglas del corpus—, y porque a 390 el mismo
+ * `1.25` produce otro número de píxeles: guardarlo en px es el defecto de
+ * `medida()` con otra unidad.
+ */
+function pielDe(t1440, t390, donde, clave) {
+  const nivel = clave ?? t1440.etiqueta;
+  /**
+   * ⚠ El sabotaje `piel-defecto` es el que más se parece a una decisión
+   * razonable: *«el defecto es la piel que más se repite»*. Con 11 de 20 `h2` a
+   * 44 px, tomarla por defecto parece estadística — y es cablear la instancia
+   * mayoritaria, o sea el arreglo falso de `CLAUDE.md` §Estructura.
+   */
+  const def =
+    SABOTAJE === "piel-defecto" && nivel === "h2"
+      ? { fs: 44, lh: 1.25, fw: 300, color: "#333333" }
+      : titularPorDefecto(nivel); // TIRA ante un nivel sin medir
+  const fs1440 = px(t1440.tipo.fontSize);
+  const fs390 = px(t390.tipo.fontSize);
+  const lh1440 = px(t1440.tipo.lineHeight);
+  const lh390 = px(t390.tipo.lineHeight);
+  if ([fs1440, fs390, lh1440, lh390].some((v) => v === null))
+    throw new Error(`TITULAR sin tipografía medible en ${donde}`);
+
+  const piel = { nivel };
+  if (!casi(fs1440, def.fs)) piel.fs = redondea(fs1440, 2);
+  if (!casi(fs390, fs1440)) piel.movilFs = redondea(fs390, 2);
+
+  /* La razón, comprobada a los DOS anchos: si no coincide, no es un `em`. */
+  const r1440 = lh1440 / fs1440;
+  const r390 = lh390 / fs390;
+  if (Math.abs(r1440 - r390) > 0.005)
+    throw new Error(
+      `INTERLÍNEA que no es una razón en ${donde}: ${r1440.toFixed(4)} a 1440 y ${r390.toFixed(4)} a 390.\n` +
+        `  Divi la escribe en \`em\` (499/499 en el corpus). Un par que no casa significa px absolutos,\n` +
+        `  y este campo no puede expresarlos: se para en vez de guardar el de 1440.`,
+    );
+  const lh = redondea((r1440 + r390) / 2, 4);
+  if (!casi(lh, def.lh, 0.005)) piel.lh = lh;
+
+  const fw = Number(t1440.tipo.fontWeight);
+  if (Number.isFinite(fw) && fw !== def.fw) piel.fw = fw;
+  const color = aHex(t1440.tipo.color);
+  if (color && color !== def.color) piel.color = color;
+
+  /* `align` NO se deriva: está confundido con la herencia del contenedor y con
+   * el `style=` del campo rico. El sabotaje lo hace, y por eso cae. */
+  if (SABOTAJE === "piel-align" && t1440.tipo.textAlign && t1440.tipo.textAlign !== "left")
+    piel.align = t1440.tipo.textAlign;
+
+  return Object.keys(piel).length > 1 ? piel : undefined; // sólo `nivel` = el defecto
+}
+
+/**
+ * El campo `titulares` de un módulo de texto, y **su verificación cruzada**.
+ *
+ * `cssModulo` son las reglas que Divi compiló para ESTE módulo
+ * (`css-compilado.mjs` → `pielesPorModulo`). Cada override derivado del
+ * computado tiene que estar explicado por una regla; si no lo está, se nombra.
+ * Es la única forma de que *«la captura no tiene las 19 hojas externas»* deje de
+ * ser un riesgo silencioso y pase a ser un fallo que se ve.
+ */
+function titularesDe(m1440, m390, cssModulo, donde) {
+  const t1440 = m1440.titulares || [];
+  const t390 = m390.titulares || [];
+  if (t1440.length !== t390.length) throw new Error(`DESCUADRE de titulares en ${donde}`);
+  const out = [];
+  const sinExplicar = [];
+  for (const [i, t] of t1440.entries()) {
+    if (t.etiqueta !== t390[i].etiqueta) throw new Error(`TITULAR distinto entre anchos en ${donde}#${i}`);
+    const piel = pielDe(t, t390[i], `${donde}#${i}<${t.etiqueta}>`);
+    if (!piel) continue;
+    if (out.some((p) => p.nivel === piel.nivel)) {
+      /* Dos titulares del mismo nivel en un módulo comparten piel por
+       * construcción (Divi da UN control por nivel). Si difieren, el modelo es
+       * el equivocado y hay que verlo, no promediarlo. */
+      const previo = out.find((p) => p.nivel === piel.nivel);
+      if (JSON.stringify(previo) !== JSON.stringify(piel))
+        throw new Error(
+          `DOS PIELES para <${piel.nivel}> en el MISMO módulo (${donde}): ` +
+            `${JSON.stringify(previo)} y ${JSON.stringify(piel)}. Divi da un control por nivel.`,
+        );
+      continue;
+    }
+    const regla = cssModulo?.[piel.nivel];
+    if (!regla) sinExplicar.push(`${donde}<${piel.nivel}> ${JSON.stringify(piel)}`);
+    out.push(piel);
+  }
+  return { titulares: out.length ? out : undefined, sinExplicar };
+}
+
+/**
+ * La piel del titular de un BLURB — **un grupo, no un array**, porque Divi da un
+ * solo control aquí (lo compila contra `.et_pb_module_header`, no contra `h4`).
+ *
+ * Su defecto no sale de un módulo sin regla —los 36 llevan— sino de las
+ * OMISIONES de las reglas que hay: la de ×3 no escribe `fs` ni `lh` y computa
+ * `18/18`; la de ×9 no escribe peso y computa `w300`. Ver `TITULAR_POR_DEFECTO`.
+ */
+function pielBlurbDe(m1440, m390, cssModulo, donde) {
+  const t1440 = m1440.titular;
+  const t390 = m390.titular;
+  if (!t1440?.tipo || !t390?.tipo) return { piel: undefined, sinExplicar: [] };
+  const piel = pielDe(t1440, t390, `${donde}<blurb>`, "blurb");
+  if (!piel) return { piel: undefined, sinExplicar: [] };
+  delete piel.nivel; // la clave era sólo para elegir el defecto
+  const regla = cssModulo?.[".et_pb_module_header"];
+  return { piel, sinExplicar: regla ? [] : [`${donde}<blurb> ${JSON.stringify(piel)}`] };
+}
+
 const RE_NIVEL = /^h([1-6])$/;
 const reticulaDe = (clases) =>
   clases.includes("iconos-xs-2") || clases.includes("iconos-md-3")
@@ -189,8 +337,14 @@ const reticulaDe = (clases) =>
       : "ninguna";
 const alineacionDe = (clases) => (clases.includes("et_pb_text_align_left") ? "left" : "center");
 
+/** El ordinal con el que Divi cuelga el CSS de ESTE módulo: `et_pb_text_13` → `text_13`. */
+const ordinalDe = (clases) => {
+  const c = (clases || []).find((x) => /^et_pb_[a-z_]+_\d+$/.test(x));
+  return c ? c.replace(/^et_pb_/, "") : null;
+};
+
 /** Un módulo medido → el bloque que el esquema espera. */
-function moduloDe(m1440, m390, col1440, col390, donde) {
+function moduloDe(m1440, m390, col1440, col390, donde, cssPagina, sinExplicar) {
   const tipoCol = tipoColumna(col1440);
   const comun = {
     ritmo: ritmoModulo(m1440, m390, tipoCol),
@@ -199,8 +353,12 @@ function moduloDe(m1440, m390, col1440, col390, donde) {
   for (const k of Object.keys(comun)) if (comun[k] === undefined) delete comun[k];
 
   switch (m1440.kind) {
-    case "text":
-      return { blockType: "texto-kb", html: m1440.html, ...comun };
+    case "text": {
+      const ord = ordinalDe(m1440.clases);
+      const t = titularesDe(m1440, m390, cssPagina?.[ord], donde);
+      sinExplicar.push(...t.sinExplicar);
+      return { blockType: "texto-kb", html: m1440.html, titulares: t.titulares, ...comun };
+    }
     case "image":
       return { blockType: "imagen-kb", src: m1440.src, alt: m1440.alt || undefined, ...comun };
     case "button":
@@ -217,10 +375,13 @@ function moduloDe(m1440, m390, col1440, col390, donde) {
     case "blurb": {
       const nivel = Number(RE_NIVEL.exec(m1440.titular?.etiqueta || "")?.[1]);
       if (!nivel) throw new Error(`BLURB sin nivel de titular en ${donde}`);
+      const pb = pielBlurbDe(m1440, m390, cssPagina?.[ordinalDe(m1440.clases)], donde);
+      sinExplicar.push(...pb.sinExplicar);
       return {
         blockType: "blurb",
         titulo: m1440.titular.texto,
         nivel,
+        piel: pb.piel,
         imagen: m1440.imagen?.src,
         alt: m1440.imagen?.alt || undefined,
         descripcion: m1440.descripcion?.html,
@@ -261,7 +422,7 @@ const esExterno = (href) => {
  */
 const esVisible = (fila) => (SABOTAJE === "sin-ocultas" ? true : fila.renderizada !== false);
 
-function articuloDe(url, a1440, a390, ev) {
+function articuloDe(url, a1440, a390, ev, cssPagina, sinExplicar) {
   const partes = url.split("/").filter(Boolean); // ["es", …, slug]
   const slug = partes[partes.length - 1];
   const prefijo = partes.slice(1, -1).join("/");
@@ -292,7 +453,9 @@ function articuloDe(url, a1440, a390, ev) {
           throw new Error(`DESCUADRE de módulos en ${donde}c${j}`);
         return {
           ancho: SABOTAJE === "reparto" ? "4_4" : tipoColumna(ca),
-          modulos: ca.modulos.map((ma, k) => moduloDe(ma, cb.modulos[k], ca, cb, `${donde}c${j}m${k}`)),
+          modulos: ca.modulos.map((ma, k) =>
+            moduloDe(ma, cb.modulos[k], ca, cb, `${donde}c${j}m${k}`, cssPagina, sinExplicar),
+          ),
         };
       }),
     };
@@ -337,7 +500,56 @@ const FILAS_VISIBLES = urls.reduce(
 );
 const ev = new Evaluadas({ unidad: "filas del cuerpo", minimo: FILAS_VISIBLES, nombre: "extractor-kb" });
 
-const articulos = urls.map((u) => articuloDe(u, spec1440.articulos[u], spec390.articulos[u], ev));
+/* ── EL SEGUNDO TESTIGO: el CSS que Divi compiló, por artículo ────────────── */
+const INDICE = JSON.parse(readFileSync(join(RAIZ, "corpus/fase-3/INDICE.json"), "utf8"));
+/** La clave de `kb-spec` es la RUTA (`/es/…`) y la del índice la URL completa. */
+const soloRuta = (u) => new URL(u, "https://kunakair.com/").pathname.replace(/\/$/, "");
+const ficheroDe = (url) => {
+  const p = Object.values(INDICE.paginas).find((x) => soloRuta(x.url) === soloRuta(url));
+  if (!p) throw new Error(`SIN CAPTURA para ${url} — el segundo testigo no puede faltar en silencio.`);
+  return join(RAIZ, "corpus/fase-3", p.fichero);
+};
+const cssPorArticulo = Object.fromEntries(
+  urls.map((u) => [u, pielesPorModulo(readFileSync(ficheroDe(u), "utf8"))]),
+);
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA GUARDA ESTRUCTURAL VA ANTES DEL RECORRIDO, y esto lo enseñó el negativo
+ *
+ * `filas visibles` se comprobaba **al final**, sobre el dato ya emitido. Con
+ * `titulares` en el extractor eso dejó de funcionar: el sabotaje `sin-ocultas`
+ * mete las 6 filas `d-none`, dentro va el `<h1>Kunak Help Center</h1>`, y
+ * `titularPorDefecto("h1")` **tira** —correctamente, porque el defecto de `h1`
+ * no está medido en este arquetipo—. O sea que el sabotaje pasaba a caer por
+ * una excepción aguas abajo **y no por su invariante**, que es justo lo que
+ * `CLAUDE.md` §sondas prohíbe: *«si cae por uno ajeno, lo que se ha probado es
+ * que el extractor es frágil, no que esa guarda esté viva»*.
+ *
+ * Lo cazó **volver a correr el test en negativo ENTERO** tras tocar el
+ * extractor (§sondas 4, corolario). Leer el diff no lo habría visto: el diff
+ * era correcto.
+ *
+ * La guarda de la salida (`exige("filas visibles", 39, censo.filas)`) se queda:
+ * **son dos objetos distintos** —lo que se selecciona de la entrada y lo que se
+ * emite—, y que coincidan es parte de lo que hay que comprobar.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const FILAS_QUE_ENTRAN = urls.reduce(
+  (n, u) => n + spec1440.articulos[u].propias[0].filas.filter(esVisible).length,
+  0,
+);
+if (FILAS_QUE_ENTRAN !== FILAS_VISIBLES) {
+  console.log(
+    `\n❌ filas visibles: se esperaban ${FILAS_VISIBLES} y entran ${FILAS_QUE_ENTRAN}.\n` +
+      `   Las 6 filas \`d-none\` son PLANTILLA (llevan el <h1> del centro de ayuda) y no dato.\n`,
+  );
+  process.exit(1);
+}
+
+/** Overrides que el computado ve y NINGUNA regla del CSS servido explica. */
+const sinExplicar = [];
+const articulos = urls.map((u) =>
+  articuloDe(u, spec1440.articulos[u], spec390.articulos[u], ev, cssPorArticulo[u], sinExplicar),
+);
 
 /* ── El recuento, que es lo que hay que mirar para creerse la salida ─────── */
 const censo = {
@@ -351,6 +563,10 @@ const censo = {
   pctDistintos: {},
   /** Módulos cuyo `mb` coincide con su defecto y por eso NO viaja en el dato. */
   mbPorDefecto: 0,
+  /** Titulares: cuántos llevan piel de campo y cuántos van con el defecto del tema. */
+  titulares: { conPiel: 0, porDefecto: 0, porNivel: {}, pieles: {} },
+  /** Las pieles del titular de blurb: grupo, no array (un control en Divi). */
+  blurbPiel: { conPiel: 0, pieles: {} },
 };
 const cuentaMedida = (m) => {
   if (!m) return;
@@ -371,6 +587,17 @@ for (const a of articulos)
         censo.porKind[m.blockType] = (censo.porKind[m.blockType] || 0) + 1;
         if (m.ritmo?.mb === undefined) censo.mbPorDefecto++;
         for (const k of ["mt", "mb", "pb"]) cuentaMedida(m.ritmo?.[k]);
+        if (m.piel) {
+          censo.blurbPiel.conPiel++;
+          const cb = JSON.stringify(m.piel);
+          censo.blurbPiel.pieles[cb] = (censo.blurbPiel.pieles[cb] || 0) + 1;
+        }
+        for (const t of m.titulares || []) {
+          censo.titulares.conPiel++;
+          censo.titulares.porNivel[t.nivel] = (censo.titulares.porNivel[t.nivel] || 0) + 1;
+          const clave = `${t.nivel} ${JSON.stringify(Object.fromEntries(Object.entries(t).filter(([k]) => k !== "nivel")))}`;
+          censo.titulares.pieles[clave] = (censo.titulares.pieles[clave] || 0) + 1;
+        }
       }
     }
   }
@@ -402,6 +629,37 @@ exige("porcentajes DISTINTOS", 4, Object.keys(censo.pctDistintos).length);
 exige("módulos con `mb` en su defecto", 62, censo.mbPorDefecto);
 /** Los overrides de móvil, que un extractor de un solo ancho no puede ver. */
 exige("medidas con override de móvil", 26, censo.medidas.movil);
+/**
+ * ⚠ **Las pieles de titular, contra la medida que paró la tanda anterior.**
+ * `qa:kb-tipografia` censó **30 titulares**: `h2` 6+11+3 · `h3` 4+4 · `h4` 2. De
+ * ésos, **los 3 `h2` de 37 px, los 4 `h3` de #333 y los 2 `h4`** son el DEFECTO
+ * del tema y **no viajan en el dato** (§1.5: se omite cuando coincide). Quedan
+ * **21 con piel de campo**, y si el defecto se cablease mal saldrían 30 o 9.
+ */
+exige("titulares con piel de campo", 21, censo.titulares.conPiel);
+/** Y las pieles DISTINTAS: 3, que son los dos overrides de `h2` y el de color de `h3`. */
+exige("pieles de titular DISTINTAS", 3, Object.keys(censo.titulares.pieles).length);
+/**
+ * ⚠ **Los BLURBS: los 36, con las TRES pieles de `modulos.spec.md` §2.** Y la
+ * guarda que de verdad prueba el defecto derivado es que **`fs` no aparece en
+ * ninguna de las tres**: 18 px es el defecto, deducido de que la regla de ×3
+ * omite `font-size` y computa `18/18`. Si el defecto estuviera mal, las tres
+ * pieles traerían un `fs` explícito y este recuento se movería.
+ */
+exige("blurbs con piel de titular", 36, censo.blurbPiel.conPiel);
+exige("pieles de blurb DISTINTAS", 3, Object.keys(censo.blurbPiel.pieles).length);
+exige(
+  "pieles de blurb que escriben `fs` (el defecto 18 lo hace innecesario)",
+  0,
+  Object.keys(censo.blurbPiel.pieles).filter((p) => /"fs"/.test(p)).length,
+);
+/**
+ * ⚠ **Ningún override puede quedar sin explicar por el CSS servido.** Es lo que
+ * convierte *«la captura no tiene las 19 hojas externas»* de riesgo silencioso
+ * en fallo visible — y lo que cazó que el `text-align:center` del `h2` de
+ * `text_13` es CONTENIDO (`style=` en el campo rico), no ajuste del módulo.
+ */
+for (const s of sinExplicar) problemas.push(`OVERRIDE SIN REGLA que lo explique: ${s}`);
 const PCT_MEDIDOS = [0.4, 0.8, 2, 5];
 for (const p of Object.keys(censo.pctDistintos).map(Number).sort((a, b) => a - b))
   if (!PCT_MEDIDOS.includes(p))
@@ -427,6 +685,13 @@ console.log(`  repartos       ${Object.entries(censo.repartos).map(([k, v]) => `
 console.log(`  kinds          ${Object.entries(censo.porKind).map(([k, v]) => `${k}×${v}`).join(" · ")}`);
 console.log(`  pct            ${Object.entries(censo.pctDistintos).map(([k, v]) => `${k}%×${v}`).join(" · ")}`);
 console.log(`  medidas        px×${censo.medidas.px} · pct×${censo.medidas.pct} · con móvil×${censo.medidas.movil}`);
+console.log(`  titulares      ${censo.titulares.conPiel} con piel de campo (${Object.entries(censo.titulares.porNivel).map(([k, v]) => `${k}×${v}`).join(" · ")}) · el resto, defecto del tema`);
+for (const [p, n] of Object.entries(censo.titulares.pieles).sort((a, b) => b[1] - a[1]))
+  console.log(`                 ×${String(n).padStart(2)}  ${p}`);
+/* §sondas 1 — lo que se cuenta se imprime: los blurbs tienen guarda y tienen línea. */
+console.log(`  blurbs         ${censo.blurbPiel.conPiel} con piel de titular (GRUPO, no array: Divi da un control)`);
+for (const [p, n] of Object.entries(censo.blurbPiel.pieles).sort((a, b) => b[1] - a[1]))
+  console.log(`                 ×${String(n).padStart(2)}  ${p}`);
 
 w("medidas/kb-extraido.json", {
   meta: {

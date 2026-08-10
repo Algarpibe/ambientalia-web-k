@@ -7,7 +7,7 @@
       "medidas/kb-spec-390.json"
     ],
     "porQue": "0 estilos en línea en las 45 filas y los 149 módulos: el ritmo sólo existe en el estilo computado. Los DOS anchos hacen falta — uno solo no distingue px de %.",
-    "sabotaje": null
+    "sabotaje": "piel-defecto"
   },
   "censo": {
     "filas": 39,
@@ -39,15 +39,16 @@
     },
     "mbPorDefecto": 62,
     "titulares": {
-      "conPiel": 21,
+      "conPiel": 24,
       "porDefecto": 0,
       "porNivel": {
-        "h2": 17,
+        "h2": 20,
         "h3": 4
       },
       "pieles": {
-        "h2 {\"fs\":45,\"fw\":700}": 6,
-        "h2 {\"fs\":44,\"movilFs\":35,\"lh\":1.25}": 11,
+        "h2 {\"fs\":45,\"lh\":1,\"fw\":700}": 6,
+        "h2 {\"movilFs\":35}": 11,
+        "h2 {\"fs\":37,\"lh\":1}": 3,
         "h3 {\"color\":\"#0c71c3\"}": 4
       }
     },
@@ -60,7 +61,13 @@
       }
     }
   },
-  "problemas": [],
+  "problemas": [
+    "titulares con piel de campo: se esperaban 21 y salieron 24",
+    "pieles de titular DISTINTAS: se esperaban 3 y salieron 4",
+    "OVERRIDE SIN REGLA que lo explique: como-garantiza-kunak-la-mejor-precision#fila5c0m4<h2> {\"nivel\":\"h2\",\"fs\":37,\"lh\":1}",
+    "OVERRIDE SIN REGLA que lo explique: que-es-kunak-air-cloud#fila3c0m0<h2> {\"nivel\":\"h2\",\"fs\":37,\"lh\":1}",
+    "OVERRIDE SIN REGLA que lo explique: que-es-kunak-air-cloud#fila7c0m0<h2> {\"nivel\":\"h2\",\"fs\":37,\"lh\":1}"
+  ],
   "articulos": [
     {
       "slug": "como-garantiza-kunak-la-mejor-precision",
@@ -87,6 +94,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -164,9 +172,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -275,9 +281,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -325,7 +329,14 @@
                 },
                 {
                   "blockType": "texto-kb",
-                  "html": "<h2 style=\"text-align: center;\" id=\"ciclo-de-control-y-garantia-de-calidad\">Ciclo de control y garantía de calidad</h2>"
+                  "html": "<h2 style=\"text-align: center;\" id=\"ciclo-de-control-y-garantia-de-calidad\">Ciclo de control y garantía de calidad</h2>",
+                  "titulares": [
+                    {
+                      "nivel": "h2",
+                      "fs": 37,
+                      "lh": 1
+                    }
+                  ]
                 },
                 {
                   "blockType": "imagen-kb",
@@ -369,6 +380,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -606,9 +618,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -728,6 +738,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -790,9 +801,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -845,9 +854,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -981,6 +988,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -1039,9 +1047,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1227,9 +1233,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1273,9 +1277,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1367,9 +1369,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1546,6 +1546,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -1604,9 +1605,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1747,9 +1746,7 @@
                   "titulares": [
                     {
                       "nivel": "h2",
-                      "fs": 44,
-                      "movilFs": 35,
-                      "lh": 1.25
+                      "movilFs": 35
                     }
                   ],
                   "ritmo": {
@@ -1900,6 +1897,7 @@
                     {
                       "nivel": "h2",
                       "fs": 45,
+                      "lh": 1,
                       "fw": 700
                     }
                   ]
@@ -2105,7 +2103,14 @@
               "modulos": [
                 {
                   "blockType": "texto-kb",
-                  "html": "<h2 id=\"planes-de-software\">Planes de software</h2>"
+                  "html": "<h2 id=\"planes-de-software\">Planes de software</h2>",
+                  "titulares": [
+                    {
+                      "nivel": "h2",
+                      "fs": 37,
+                      "lh": 1
+                    }
+                  ]
                 },
                 {
                   "blockType": "texto-kb",
@@ -2281,7 +2286,14 @@
               "modulos": [
                 {
                   "blockType": "texto-kb",
-                  "html": "<h2 id=\"configura-tu-paquete-de-software\">Configura tu paquete de software</h2>"
+                  "html": "<h2 id=\"configura-tu-paquete-de-software\">Configura tu paquete de software</h2>",
+                  "titulares": [
+                    {
+                      "nivel": "h2",
+                      "fs": 37,
+                      "lh": 1
+                    }
+                  ]
                 },
                 {
                   "blockType": "texto-kb",

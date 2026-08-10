@@ -40,7 +40,15 @@
  * ══════════════════════════════════════════════════════════════════════════
  */
 import type { Block } from "payload";
-import { anchoPct, campoHtml, conDefecto, medida, subida } from "../campos/comunes.ts";
+import {
+  anchoPct,
+  campoHtml,
+  conDefecto,
+  medida,
+  pielTitularModulo,
+  subida,
+  titularesModulo,
+} from "../campos/comunes.ts";
 import type { Field } from "payload";
 import { CAMPOS_MODULO_BOTON, CAMPOS_MODULO_IMAGEN, ancho, nivelTitular } from "./contenido.ts";
 
@@ -141,6 +149,19 @@ export const MODULO_BLURB: Block = {
     subida("imagen"),
     { name: "alt", type: "text" },
     campoHtml("descripcion"),
+    /**
+     * ⚠ **La piel del titular, y aquí la sonda tuvo que corregirse primero.**
+     * `qa:pieles` informó al principio **0 overrides en `blurb`** mientras
+     * `modulos.spec.md` §2 tenía medidas **TRES pieles** del titular
+     * (`18/21.6 w700` ×24 → `16/19.2` a 390 · `18/21.6 w300` ×9 · `18/18 w600`
+     * ×3). Las dos no podían ser verdad: fallaba el selector, porque **Divi
+     * compila la piel del blurb contra `.et_pb_module_header`**, no contra `h4`
+     * —el nivel es otro ajuste—. Corregido, salen **216 reglas de blurb en una
+     * sola página** y las tres pieles reaparecen exactas.
+     *
+     * Es un GRUPO y no un array por nivel: el control de Divi aquí es **uno**.
+     */
+    pielTitularModulo,
     reticulaBlurb,
     alineacionBlurb,
     ...moduloBaseKb,
@@ -246,16 +267,33 @@ export const MODULO_TEXTO_KB: Block = {
   fields: [
     campoHtml("html", { requerido: true }),
     /**
-     * ⚠ **NO lleva `lh`, y es medida, no olvido.** El compartido tiene `lh`
-     * porque en el monográfico varía entre hermanos (30.6 · 36 · 45, test B).
-     * Aquí `estiloInline` es **`null` en los 85** módulos: el editor no tocó ni
-     * la interlínea ni el ancho en ninguno.
+     * ⚠⚠ **AQUÍ VIVÍA UNA AFIRMACIÓN FALSA, y costó una tanda parada en el
+     * escalón de la tipografía (corregido 2026-08-10, F3-1).** Decía:
      *
-     * **Cero varianza no prueba plantilla** — prueba que nadie lo tocó en las
-     * instancias que existen. Así que no se cablea un valor **ni** se inventa un
-     * campo: queda **SIN PROBAR**, anotado, y lo decide la segunda instancia que
-     * lo mueva. El ritmo sí entra, porque es lo que el editor sí tocó.
+     *   > *«NO lleva `lh`, y es medida, no olvido. Aquí `estiloInline` es `null`
+     *   > en los 85 módulos: **el editor no tocó ni la interlínea ni el ancho en
+     *   > ninguno**.»*
+     *
+     * **La premisa es cierta y la conclusión no se sigue.** `estiloInline` es el
+     * atributo `style=` del nodo, y **Divi no lo usa**: compila los ajustes del
+     * módulo a CSS con una clase por módulo (`.et_pb_text_3 h2 {…}`) y lo sirve
+     * en el mismo documento. Medir la ausencia de `style=` para concluir «el
+     * editor no tocó» es medir **al nivel que absorbe** (`CLAUDE.md` §El NIVEL
+     * al que se mide) — con el agravante de que la frase que lo justificaba
+     * citaba una medida real.
+     *
+     * Lo servido, leído por `npm run qa:pieles`: **82 reglas de titular** en
+     * estos 6 artículos, más **7 pieles del propio módulo**
+     * (`{font-size:15px; font-weight:800; letter-spacing:0.1px}` ×12,
+     * `{font-family:Manrope; font-size:25px; line-height:1.2em}` ×11). O sea que
+     * el editor tocó la tipografía **en 89 sitios** de los 85 módulos.
+     *
+     * `titulares` cierra la parte que el escalón bloqueaba —las tres pieles del
+     * `h2` y las dos del `h3`—. La piel del CUERPO del módulo (esos 7) sigue
+     * **sin campo y ahora sí con evidencia**, ficha §F3-1-PIEL-CUERPO-KB: se
+     * modela cuando se mida contra qué defecto se compara, no de paso.
      */
+    titularesModulo,
     ...moduloBaseKb,
   ],
 };

@@ -140,6 +140,91 @@ export function mbPorDefecto(anchoFila: number, tipoColumna: string): { px1440: 
   );
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA PIEL POR DEFECTO DE UN TITULAR — el lado PLANTILLA del escalón de F3-1
+ *
+ * ── Qué escalón, y cómo se disolvió ───────────────────────────────────────
+ * `qa:kb-tipografia` midió que el `h2` de `articulos-kb` tiene **TRES** pieles
+ * que coexisten en la misma página (⇒ CAMPO por el test B) y que **ninguno de
+ * los 10 ejes servidos las separa**. Los diez ejes eran de MARCADO y estructura.
+ * Ninguno era CSS — y Divi **no escribe marcado: compila CSS**.
+ *
+ * Leído el CSS servido (`npm run qa:pieles`, 573 páginas del corpus), las tres
+ * pieles se reparten en dos cosas que sí tienen nombre:
+ *
+ * | piel medida @1440 | de dónde sale |
+ * |---|---|
+ * | `45/45 w700` ×6  | `.et_pb_text_1 h2 { font-weight:700; font-size:45px }` |
+ * | `44/55 w300` ×11 | `.et_pb_text_N h2 { font-weight:300; font-size:44px; line-height:1.25em }` |
+ * | **`37/37 w300` ×3** | **NINGUNA regla: es el DEFECTO del tema** |
+ *
+ * Reconstruido módulo a módulo: los 3 `h2` de 37 px viven en `text_13` de
+ * `como-garantiza`, y `text_5` y `text_14` de `que-es-kunak-air` — **los únicos
+ * cuyo módulo no lleva regla de `h2`**. Igual el `h3`: `32/32 #333` ×4 sin regla
+ * y `32/32 azul` ×4 con `color:#0C71C3`, que sólo toca el color.
+ *
+ *   > **No eran tres pieles: eran UN defecto y DOS overrides.** El escalón venía
+ *   > de medir la ausencia de `style=` y leerla como «el editor no tocó nada» —
+ *   > el NIVEL que absorbe (`CLAUDE.md` §El principio).
+ *
+ * ── Por qué la interlínea va en `em` y no en px ───────────────────────────
+ * Divi la escribe en `em` y el corpus lo confirma sin excepción: **499 de 499**
+ * reglas de `line-height` en `em` (`1.25em`×321 · `1.2em`×176 · `1.1em`×2), y
+ * cero en px. Por eso el defecto es la RAZÓN 1 y no un número de píxeles: a 390
+ * el `44/55` pasa a `35/43.75`, que es el mismo `1.25` sobre otra `fs`.
+ *
+ * ⚠ **Alcance, y es corto a propósito: `h2`·`h3`·`h4`, medidos en las 6
+ * instancias de `articulos-kb`** (3 · 4 · 2 módulos sin override). `h1` no entra
+ * porque en este arquetipo vive en la fila OCULTA, que es plantilla y no se
+ * extrae. `h5`/`h6` no aparecen. Un nivel sin medir **TIRA** — §regla 6: una
+ * ausencia se rechaza, no se sustituye por un valor benigno, que aquí sería
+ * inventarse una escala tipográfica.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** La piel de un titular: `fs` en px, `lh` en RAZÓN (em), `fw` numérico, color hex. */
+export type PielTitular = { fs: number; lh: number; fw: number; color: string };
+
+/**
+ * Las pieles por defecto medidas. Fuera de éstas no hay defecto derivable.
+ *
+ * ⚠ **`blurb` no es un nivel: es el ENVOLTORIO `.et_pb_module_header`**, con el
+ * que Divi escribe el titular de un blurb — porque ahí el nivel es un ajuste
+ * aparte y la piel tiene que valer para los seis.
+ *
+ * Y su defecto **no se pudo derivar como los otros tres** (un módulo sin regla),
+ * porque los **36 blurbs llevan regla**. Se deriva de otra forma, y cada valor
+ * tiene su testigo: la piel de ×3 escribe **sólo** `font-weight:600` y computa
+ * `18/18` ⇒ el defecto de `fs` es **18** y el de `lh` es **1**; la de ×9 **no**
+ * escribe peso y computa `w300` ⇒ el defecto de `fw` es **300**. Cada omisión
+ * de una regla es la medida del defecto de esa propiedad.
+ */
+export const TITULAR_POR_DEFECTO: Readonly<Record<string, PielTitular>> = {
+  h2: { fs: 37, lh: 1, fw: 300, color: "#333333" },
+  h3: { fs: 32, lh: 1, fw: 300, color: "#333333" },
+  h4: { fs: 26, lh: 1, fw: 300, color: "#333333" },
+  blurb: { fs: 18, lh: 1, fw: 300, color: "#333333" },
+};
+
+/**
+ * La piel que un titular tiene **sin que nadie la toque**. Es lo que el
+ * componente pinta y contra lo que el extractor decide si hay campo.
+ *
+ * ⚠ Un nivel sin medir tira, igual que `mbPorDefecto` con un ancho de fila
+ * nuevo: un `?? h2` aquí produciría un `h5` de 37 px que nadie ha visto.
+ */
+export function titularPorDefecto(nivel: string): PielTitular {
+  const p = TITULAR_POR_DEFECTO[nivel];
+  if (!p)
+    throw new Error(
+      `titularPorDefecto: nivel SIN MEDIR ('${nivel}').\n` +
+        `  Los medidos son ${Object.keys(TITULAR_POR_DEFECTO).join(" · ")} sobre los módulos de ` +
+        `\`articulos-kb\` que NO llevan override (h2×3 · h3×4 · h4×2).\n` +
+        `  \`h1\` vive en la fila oculta (plantilla) y \`h5\`/\`h6\` no aparecen. ` +
+        `Inventar su defecto sería fabricar una escala tipográfica que nadie ha medido.`,
+    );
+  return p;
+}
+
 export const ARTICULO_KB = {
   /** `pt`/`pb` de fila: 2 % de la fila propia. Omitido cuando coincide. */
   filaPt: d({ px1440: 18.2344, px390: 30 }, "§2d.5 · cuerpo.spec.md §2 — 45 filas"),

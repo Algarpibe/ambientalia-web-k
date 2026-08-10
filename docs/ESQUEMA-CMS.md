@@ -1614,6 +1614,72 @@ código para que no se olviden:
 - **`ancho` sube a `contenido.ts`**: lo consumen dos arquetipos y la retícula de
   Divi no es de ninguno.
 
+### ✅ 2d.7 · LA PIEL DEL TITULAR — el escalón cerrado, y el campo NO es de KB (2026-08-10, tanda 46.ª)
+
+Cierra `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA. El acta completa está allí;
+aquí va lo que el ESQUEMA gana y por qué está donde está.
+
+#### El canal que faltaba mirar
+
+El escalón concluyó que el `h2` de KB tiene **tres pieles** y que **ningún eje
+servido las separa**. Los diez ejes eran atributos y estructura; **ninguno era
+CSS**, y Divi **compila CSS** en vez de escribir marcado. Leído
+(`npm run qa:pieles`, 573 páginas del corpus), las tres pieles son **un DEFECTO
+del tema (37/37 w300) y DOS overrides por módulo** — reconstruido 1:1: los 3
+módulos de 37 px son exactamente los que no llevan regla de `h2`.
+
+#### Las dos preguntas de POBLACIÓN, que van antes de elegir la forma
+
+| | pregunta | derivada |
+|---|---|---|
+| (a) | ¿conjunto CERRADO? | **NO** — 14 pieles en KB contra **43 en el corpus**, `font-size` hasta `44.1px`, y la misma piel en `h1`·`h2`·`h3` ⇒ **no es propiedad del nivel** |
+| (b) | ¿existe FUERA de KB? | **SÍ, y KB es la minoría**: **1272 de 1456 reglas** están fuera (productos 827 · sectores 291 · sueltas 148 · listados 126 · hubs 56) |
+
+> **(b) mueve el campo de sitio: no es de `articulos-kb`, es del módulo de texto
+> COMPARTIDO**, infra-especificado igual que lo estaba `inline` (§2d.3). Se
+> declara **una vez** en `campos/comunes.ts` y lo consumen `MODULO_TEXTO` y
+> `MODULO_TEXTO_KB`. El tabú de «no toques lo poblado» **no aplica**, y esta vez
+> con el diff delante: la migración es **3 `CREATE TABLE` + 6 `ADD COLUMN`, cero
+> `ALTER` sobre columna existente**.
+
+#### La forma, y de dónde sale cada decisión
+
+| decisión | derivación |
+|---|---|
+| `titulares` = **array por nivel** en texto | Divi da 6 controles (`H1`…`H6`) |
+| `piel` = **grupo** en blurb | Divi da **1** control, y lo compila contra `.et_pb_module_header`; el nivel es otro ajuste |
+| `fs` en **px** | 1456/1456 reglas en px |
+| `lh` en **em** (razón) | **499/499** en `em`, cero en px. En px, `1.25` sobre `fs 44` y sobre `fs 35` son números distintos y el dato quedaría atado a 1440 |
+| `fw` **número**, no enum | catch 1 de `MODELO.md` §2: la escala CSS es 100–900 y KB estrenó cuatro peldaños |
+| `align` **select de 4** | cerrado **por el control de Divi**, no por lo visto (2 ejercitados) |
+| `movilFs` **uno** | `@980` y `@767` traen el **mismo valor en las 323**, ninguna sin base |
+| el **defecto** fuera del campo | `titularPorDefecto()` en `defaults.ts`, que **tira** ante un nivel sin medir |
+
+**El defecto del blurb se derivó de las OMISIONES de las reglas**, porque los 36
+llevan regla: la de ×3 escribe *sólo* `font-weight:600` y computa `18/18` ⇒
+`fs`=18, `lh`=1; la de ×9 no escribe peso y computa `w300` ⇒ `fw`=300.
+
+#### La guarda que hace auditable todo esto
+
+El extractor deriva del **computado a dos anchos** y **cruza contra el CSS
+servido**: un override que el computado ve y ninguna regla explica **se nombra**.
+
+> Es lo que convierte *«la captura no tiene las 19 hojas externas»* de riesgo
+> silencioso en fallo visible. Y mordió a la primera: el `h2` de `text_13`
+> computa `text-align:center` y **ninguna regla lo explica** — viene de
+> `style="text-align:center"` **dentro del campo rico**. Es contenido, ya viaja
+> en `html`, y escribirlo como campo habría duplicado el dato. Por eso `align`
+> **no se deriva del computado**: está confundido con la herencia y con el
+> `style=` del cuerpo rico.
+
+#### Lo que el ESQUEMA gana y lo que queda declarado
+
+- **gana** `titularesModulo` y `pielTitularModulo` (una sola definición de las
+  propiedades, `CAMPOS_PIEL`, dos composiciones) y `TITULAR_POR_DEFECTO`;
+- **queda declarado y no poblado**: los **1272 overrides fuera de KB**
+  (§F3-1-PIEL-FUERA-DE-KB) y la **piel del CUERPO del módulo** (7 pieles en KB,
+  §F3-1-PIEL-CUERPO-KB). Los dos con su número y su dueño.
+
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 
 Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`

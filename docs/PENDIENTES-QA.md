@@ -7508,7 +7508,120 @@ congeladas que sí existen**, y en dos rutas. No lo rehabilita —sigue sin pode
 exhibirse— pero **deja de ser el único apoyo de nada**: la pregunta que abrió ya
 está contestada por evidencia que nunca se borró.
 
-## ⛔ F3-1-ESCALON-TIPOGRAFIA · el `h2` tiene TRES pieles y NADA de lo servido las distingue (2026-08-10)
+## ✅ F3-1-ESCALON-TIPOGRAFIA · CERRADO (2026-08-10) — no eran tres pieles: era UN defecto y DOS overrides, y el discriminador SÍ estaba servido
+
+> **La ficha original queda entera abajo**, porque su razonamiento es correcto en
+> todo menos en una cosa, y esa cosa es la que enseña.
+
+### Qué faltaba mirar
+
+Los diez ejes que la sonda recorrió son **atributos y estructura**. Ninguno era
+CSS. Y Divi **no escribe marcado: COMPILA CSS**, y lo sirve en el mismo
+documento. Leído con `npm run qa:pieles` (nueva, 573 páginas del corpus):
+
+```
+.et_pb_text_1 h2                   { font-weight:700; font-size:45px }
+.et_pb_text_3 h2,.et_pb_text_5 h2  { font-weight:300; font-size:44px; line-height:1.25em }
+@media (max-width:980px) y (max-width:767px) { … h2 { font-size:35px } }
+.et_pb_text_6 h3,…                 { color:#0C71C3!important }
+```
+
+**Reconstruido módulo a módulo, y cierra 1:1:** los 3 `h2` de `37/37` son
+`text_13` de `como-garantiza` y `text_5`/`text_14` de `que-es-kunak-air` — **los
+únicos cuyo módulo no lleva regla de `h2`**. Igual los 4 `h3` de `#333`: sin
+regla. O sea:
+
+> **No había tres pieles de `h2`: había el DEFECTO DEL TEMA (37/37 w300) y DOS
+> overrides por módulo.** Y el `h3` no tenía dos pieles: tenía el defecto
+> (32/32 #333) y **un override que sólo toca el color**.
+
+### La causa de fondo, y es una que ya está en `CLAUDE.md`
+
+La ficha decía que el discriminador «no está servido». Estaba: en el `<style>`
+del propio documento. Lo que llevó al error fue una frase del esquema
+(`MODULO_TEXTO_KB`) que era **premisa cierta con conclusión falsa**:
+
+> *«`estiloInline` es `null` en los 85 módulos: el editor no tocó ni la
+> interlínea ni el ancho en ninguno.»*
+
+`estiloInline` es el atributo `style=`, y **Divi no lo usa**. Medir su ausencia
+para concluir «el editor no tocó» es **medir al nivel que absorbe** (§El NIVEL al
+que se mide), con el agravante de que la frase citaba una medida real. Lo servido
+dice que el editor tocó la tipografía **en 89 sitios** de esos 85 módulos.
+
+### Y hubo un SEGUNDO escalón, que la sonda nueva se tragó primero
+
+`qa:pieles` informó **«0 overrides en `blurb`»** mientras `modulos.spec.md` §2
+tenía medidas **TRES pieles** del titular de blurb. Las dos no podían ser
+verdad, y ganó la spec: **Divi compila la piel del blurb contra
+`.et_pb_module_header`**, no contra `h4` —el nivel es un ajuste aparte—, y
+`ES_TITULAR` sólo casaba `h[1-6]`. Corregido, salen **216 reglas de blurb en una
+sola página** y las tres pieles reaparecen exactas (`18/21.6 w700` ×24 con
+`16/19.2` a 390 · `18/21.6 w300` ×9 · `18/18 w600` ×3).
+
+> §sondas 4 en su forma pura: **un cero que significaba «no miré»**. Lo delató
+> **contradecir una medida buena anterior**, que es el control que no siempre se
+> tiene.
+
+### Lo que las dos preguntas de población contestaron, con número
+
+| | pregunta | respuesta derivada |
+|---|---|---|
+| **(a)** | ¿es CERRADO el conjunto de pieles? | **NO** — 14 en KB contra **43 en el corpus**; `font-size` ∈ {18·20·21·23·32·35·37·**44.1**·44·45·50}, y la misma piel aparece en `h1`, `h2` y `h3` ⇒ **no es propiedad del nivel** ⇒ enum descartado, **propiedades** |
+| **(b)** | ¿existe FUERA de KB? | **SÍ, y KB es la minoría**: de 1456 reglas, **1272 están fuera** (productos 827 · sectores 291 · listados 126 · sueltas 148 · hubs 56 · **KB 184**) |
+
+**Por (b) el arbitraje cambió de sitio, como la consigna anticipaba:** el campo
+**no es de `articulos-kb`** — es del módulo de texto **compartido**, que estaba
+infra-especificado igual que lo estaba `inline` (§2d.3). Se define **una vez** en
+`campos/comunes.ts` y lo consumen `MODULO_TEXTO` (compartido) y
+`MODULO_TEXTO_KB`.
+
+### La forma, y de dónde sale cada decisión
+
+- `titulares`: **array por nivel** en módulos de texto (Divi da 6 controles);
+- `piel`: **grupo** en el blurb (Divi da 1 control, y el nivel va aparte);
+- `fs` en **px** (1456/1456), `lh` en **em** (razón; 499/499, cero en px),
+  `fw` **número** y no enum de los cuatro vistos (catch 1 de `MODELO.md` §2),
+  `align` **select cerrado por el CONTROL de Divi** (4 valores; 2 ejercitados),
+  `movilFs` **uno solo** porque `@980` y `@767` traen **el mismo valor en las
+  323** y ninguna sin base;
+- el **defecto** no vive en el campo: vive en `titularPorDefecto()`
+  (`defaults.ts`), que **tira** ante un nivel sin medir.
+
+**El defecto del blurb se derivó de las OMISIONES**, no de un módulo sin regla
+(los 36 llevan): la piel de ×3 escribe *sólo* `font-weight:600` y computa
+`18/18` ⇒ `fs`=18 y `lh`=1; la de ×9 no escribe peso y computa `w300` ⇒
+`fw`=300. **Cada omisión de una regla es la medida del defecto de esa
+propiedad**, y la guarda que lo prueba es que **ninguna de las tres pieles
+extraídas escribe `fs`**.
+
+### `align` NO se deriva del computado, y eso lo enseñó un caso
+
+El `h2` de `text_13` computa `text-align: center` y **ninguna regla lo explica**:
+viene de `style="text-align: center"` **dentro del campo rico**. Es contenido del
+editor de texto, no ajuste del módulo, y ya viaja verbatim en `html`. Escribirlo
+como campo habría **duplicado el dato**, con las dos copias divergiendo en cuanto
+alguien editara el cuerpo. Es la frontera de `CLAUDE.md` sosteniéndose sola.
+
+De ahí la guarda que lo convierte en fallo visible en vez de riesgo silencioso:
+
+> **Todo override que el computado ve y ninguna regla del CSS servido explica se
+> nombra.** Es lo que hace que *«la captura no tiene las 19 hojas externas»* deje
+> de ser un riesgo callado. Sabotaje `piel-align` en el test en negativo.
+
+### Estado
+
+Campo, migraciones versionadas (`20260810_164348` · `20260810_171434`, **3
+`CREATE TABLE` + 6 `ADD COLUMN`, cero `ALTER` sobre columna existente** ⇒
+retrocompatible probado por el diff) y **re-siembra hecha y verificada en DB**:
+21 filas de `titulares` y 36 pieles de blurb, las seis exactas.
+
+**Lo que NO se hizo, y es lo siguiente:** la plantilla y la ruta (PASO 4) y el Δ0
+(PASO 5). Ver §F3-1-PIEL-FUERA-DE-KB y §F3-1-PIEL-CUERPO-KB.
+
+---
+
+## ⛔ (histórico) F3-1-ESCALON-TIPOGRAFIA · el `h2` tiene TRES pieles y NADA de lo servido las distingue (2026-08-10)
 
 Aparece al escribir la plantilla de `articulos-kb`, que es cuando la pregunta se
 hace por primera vez. `modulos.spec.md` §1.1 **había medido** que el `h2` tiene
@@ -7573,6 +7686,68 @@ que **sí puede**: la piel está en `kb-spec-{1440,390}.json`, que es estilo
 computado. El coste es un campo, una migración y una re-siembra.
 
 **Dueño:** la tanda que retome F3-1 PASO 4.
+
+## ⚠ F3-1-PIEL-FUERA-DE-KB · 1272 overrides de titular medidos y NO extraídos (2026-08-10)
+
+El campo `titularesModulo` está **declarado** en `MODULO_TEXTO` (el compartido) y
+**no poblado** fuera de `articulos-kb`. El hueco está medido, con su número:
+
+| colección | reglas de titular en capa propia | páginas | consume `MODULO_TEXTO`? |
+|---|---|---|---|
+| `productos` | **827** | 24/24 | **sí** |
+| `sectores` (SECTOR + MONOGRÁFICO) | **291** | 8/8 | **sí** |
+| `sueltas` | 148 | 8/20 | aún no modeladas |
+| `listados` | 126 | 12/149 | F3-2 |
+| `hubs-kb` | 56 | 7/7 | F3-2 |
+
+Sonda: `npm run qa:pieles` · `medidas/pieles-modulo.json`.
+
+**Por qué no se pobló en esta tanda, dicho con precisión:** el extractor del
+monográfico lee `style=` del nodo, y **estos valores no viven ahí** — viven en el
+CSS compilado. Extraerlos exige el mismo movimiento que se hizo para KB (leer el
+CSS servido, cruzarlo contra el computado a dos anchos) **más** su round-trip, y
+eso se prueba, no se hace de paso. Es la misma razón por la que §2d.3 no tocó
+`inline`, aplicada consistentemente.
+
+> ⚠ **Y hasta entonces es un CAMINO DE RENDER SIN ESTRENAR declarado**, no un
+> campo soportado: `qa:nunca-vistos` lo cuenta. Lo que **sí** está probado es que
+> declararlo no rompe nada — la migración es aditiva pura y los 2 monográficos y
+> 9 productos ya sembrados siguen válidos con el campo ausente, o sea con el
+> defecto del tema, que es lo que hoy renderizan.
+
+**Y lo que esto predice, que es lo aprovechable:** si el monográfico tiene 291
+overrides de titular sin modelar, es probable que su Δ contra el original tenga
+una componente tipográfica que hoy se atribuye a otra cosa. **No está medido** —
+se dice como hipótesis con su origen, no como hallazgo.
+
+**Dueño:** la tanda que extraiga el cuerpo de SECTOR/MONOGRÁFICO contra el CSS.
+
+## ⚠ F3-1-PIEL-CUERPO-KB · el módulo de texto también tiene piel PROPIA, y no tiene campo (2026-08-10)
+
+Además de la piel de sus titulares, el propio módulo de texto lleva overrides
+tipográficos **sobre su cuerpo**, y en KB son **7 pieles distintas**:
+
+```
+{ color:#0075c9!important }                                              ×12
+{ font-size:15px; font-weight:800; letter-spacing:0.1px }                ×12
+  └ @980 y @767 { font-size:13px }                                       ×12+×12
+{ font-family:'Manrope'; font-size:25px; line-height:1.2em }             ×11
+  └ @980 y @767 { font-size:35px }                                       ×11+×11
+```
+
+Casan con `modulos.spec.md` §1.1: el `p` (etiqueta azul) a `15/30.6 w800 ls
+0.1px rgb(0,117,201)` que a 390 pasa a **13**, y el `p` (claim) a `25/30` que a
+390 pasa a **35**.
+
+**No se modela en esta tanda, y la razón es que falta la mitad de la medida:** el
+campo `lh` del módulo compartido existe con defecto `30.6`, pero **contra qué
+defecto se compara `font-size`, `letter-spacing` y `color` del cuerpo aquí no
+está derivado** — y derivarlo es exactamente el trabajo que se acaba de hacer
+para los titulares (encontrar los módulos sin regla). Modelarlo sin eso
+produciría campos con el defecto dentro, que es el §1.5 al revés.
+
+**Dueño:** la tanda que cierre el Δ0 del cuerpo de KB (PASO 5), porque es donde
+se va a ver.
 
 ## ⚠ HTML-CMP-NO-REPRODUCIBLE · dos builds seguidos del mismo árbol dan 31/31 rutas distintas (2026-08-10)
 

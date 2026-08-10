@@ -6,7 +6,7 @@
  * SU invariante, no por otro** — si cae por uno ajeno, lo que se ha probado es
  * que el extractor es frágil, no que esa guarda esté viva.
  *
- * Los cinco sabotajes son las cinco cosas que esta tanda midió y que un
+ * Los siete sabotajes son las siete cosas que esta tanda midió y que un
  * extractor «razonable» habría hecho mal sin dar error:
  *
  * | sabotaje | qué desactiva | por qué invariante TIENE que caer |
@@ -16,9 +16,11 @@
  * | `un-ancho` | clasifica sólo con 1440 | **medidas con override de móvil** (26 → 0) |
  * | `sin-ocultas` | no descarta las filas `d-none` | **filas visibles** (39 → 45) |
  * | `reparto` | `4_4` en toda columna | **los anchos suman** ≠ 1 |
+ * | `piel-defecto` | la piel mayoritaria del `h2` como defecto | **titulares con piel de campo** (21 → 24) |
+ * | `piel-align` | deriva `align` del computado | **OVERRIDE SIN REGLA** que lo explique |
  *
  * Y el CONTROL, que es lo que hace legible a los cinco: sin sabotaje el
- * extractor sale **exit 0 con 0 problemas**. Sin él, cinco rojos sólo probarían
+ * extractor sale **exit 0 con 0 problemas**. Sin él, siete rojos sólo probarían
  * que el extractor falla siempre (§sondas 8a — *un negativo sin control no es un
  * negativo*).
  *
@@ -39,6 +41,8 @@ const CASOS = [
   { id: "un-ancho", invariante: "medidas con override de móvil", que: "clasifica con 1440 solamente" },
   { id: "sin-ocultas", invariante: "filas visibles", que: "no descarta las filas `d-none`" },
   { id: "reparto", invariante: "los anchos suman", que: "escribe `4_4` en toda columna" },
+  { id: "piel-defecto", invariante: "titulares con piel de campo", que: "toma la piel mayoritaria del `h2` por defecto del tema" },
+  { id: "piel-align", invariante: "OVERRIDE SIN REGLA", que: "deriva `align` del computado y se traga el `style=` del campo rico" },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · extractor-kb ════════`);
@@ -84,7 +88,7 @@ const total = CASOS.length + 1;
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} extractor-kb · test en negativo: ${total - fallos}/${total}\n` +
     (fallos === 0
-      ? `   Las 5 precisiones medidas tienen guarda viva, y el conjunto pasa en limpio.\n`
+      ? `   Las ${CASOS.length} precisiones medidas tienen guarda viva, y el conjunto pasa en limpio.\n`
       : `   \`medidas/kb-extraido.json\` NO se puede citar hasta que esto salga en verde.\n`),
 );
 console.log(`  ✓ evaluadas ${ev.n}/${CASOS.length} sabotajes · extractor-kb-neg`);

@@ -7,7 +7,7 @@
       "medidas/kb-spec-390.json"
     ],
     "porQue": "0 estilos en línea en las 45 filas y los 149 módulos: el ritmo sólo existe en el estilo computado. Los DOS anchos hacen falta — uno solo no distingue px de %.",
-    "sabotaje": null
+    "sabotaje": "piel-align"
   },
   "censo": {
     "filas": 39,
@@ -39,28 +39,33 @@
     },
     "mbPorDefecto": 62,
     "titulares": {
-      "conPiel": 21,
+      "conPiel": 22,
       "porDefecto": 0,
       "porNivel": {
-        "h2": 17,
+        "h2": 18,
         "h3": 4
       },
       "pieles": {
         "h2 {\"fs\":45,\"fw\":700}": 6,
         "h2 {\"fs\":44,\"movilFs\":35,\"lh\":1.25}": 11,
+        "h2 {\"align\":\"center\"}": 1,
         "h3 {\"color\":\"#0c71c3\"}": 4
       }
     },
     "blurbPiel": {
       "conPiel": 36,
       "pieles": {
-        "{\"movilFs\":16,\"lh\":1.2,\"fw\":700}": 24,
-        "{\"fw\":600}": 3,
-        "{\"lh\":1.2}": 9
+        "{\"movilFs\":16,\"lh\":1.2,\"fw\":700,\"align\":\"center\"}": 24,
+        "{\"fw\":600,\"align\":\"center\"}": 3,
+        "{\"lh\":1.2,\"align\":\"center\"}": 9
       }
     }
   },
-  "problemas": [],
+  "problemas": [
+    "titulares con piel de campo: se esperaban 21 y salieron 22",
+    "pieles de titular DISTINTAS: se esperaban 3 y salieron 4",
+    "OVERRIDE SIN REGLA que lo explique: como-garantiza-kunak-la-mejor-precision#fila5c0m4<h2> {\"nivel\":\"h2\",\"align\":\"center\"}"
+  ],
   "articulos": [
     {
       "slug": "como-garantiza-kunak-la-mejor-precision",
@@ -325,7 +330,13 @@
                 },
                 {
                   "blockType": "texto-kb",
-                  "html": "<h2 style=\"text-align: center;\" id=\"ciclo-de-control-y-garantia-de-calidad\">Ciclo de control y garantía de calidad</h2>"
+                  "html": "<h2 style=\"text-align: center;\" id=\"ciclo-de-control-y-garantia-de-calidad\">Ciclo de control y garantía de calidad</h2>",
+                  "titulares": [
+                    {
+                      "nivel": "h2",
+                      "align": "center"
+                    }
+                  ]
                 },
                 {
                   "blockType": "imagen-kb",
@@ -1074,7 +1085,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-fast-installation.svg",
                   "alt": "Cartridge system",
@@ -1089,7 +1101,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cartridge-system.svg",
                   "alt": "Multi pollutant",
@@ -1104,7 +1117,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/accuracy.svg",
                   "alt": "Flexible and scalable",
@@ -1119,7 +1133,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-calibration.svg",
                   "alt": "Additional probes",
@@ -1134,7 +1149,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/cloud-platform.svg",
                   "alt": "Remote calibration",
@@ -1149,7 +1165,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/multi-pollutant-1.svg",
                   "alt": "Remote calibration",
@@ -1164,7 +1181,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
                   "alt": "Fully autonomous",
@@ -1179,7 +1197,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/real-time.svg",
                   "alt": "Remote calibration",
@@ -1194,7 +1213,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/additional-probes.svg",
                   "alt": "Remote calibration",
@@ -1308,7 +1328,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-quality-1.svg",
                   "alt": "Cartridge system",
@@ -1323,7 +1344,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/endless-combinations.svg",
                   "alt": "Multi pollutant",
@@ -1338,7 +1360,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/plug-play.svg",
                   "alt": "Remote calibration",
@@ -1438,7 +1461,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image026.png\" width=\"264\" height=\"176\" alt=\"Control-panel\" class=\"wp-image-25470 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1451,7 +1475,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image027.png\" width=\"264\" height=\"176\" alt=\"Users-management\" class=\"wp-image-25472 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1464,7 +1489,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image028.png\" width=\"264\" height=\"176\" alt=\"Multiparametric-analysis\" class=\"wp-image-25475 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1477,7 +1503,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image029.png\" width=\"264\" height=\"176\" alt=\"Data validation &amp; data reporting\" class=\"wp-image-25477 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1490,7 +1517,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image030.png\" width=\"264\" height=\"176\" alt=\"Alarms log &amp; traceability\" class=\"wp-image-25480 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1503,7 +1531,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "descripcion": "<p><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2023/02/image031.png\" width=\"264\" height=\"176\" alt=\"CMMS\" class=\"wp-image-25483 alignnone size-full\" loading=\"eager\"></p>",
                   "reticula": "iconos",
@@ -1639,7 +1668,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/urban-2.svg",
                   "alt": "urban",
@@ -1654,7 +1684,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/industry.svg",
                   "alt": "Industry & Odours",
@@ -1669,7 +1700,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/construction.svg",
                   "alt": "Construction",
@@ -1684,7 +1716,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/ports-airports-2.svg",
                   "alt": "Additional probes",
@@ -1699,7 +1732,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/mining.svg",
                   "alt": "Mining",
@@ -1714,7 +1748,8 @@
                   "piel": {
                     "movilFs": 16,
                     "lh": 1.2,
-                    "fw": 700
+                    "fw": 700,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/01/research.svg",
                   "alt": "Research & Consultancy",
@@ -1787,7 +1822,8 @@
                   "titulo": "Estaciones de Referencia de la Calidad del Aire",
                   "nivel": 4,
                   "piel": {
-                    "fw": 600
+                    "fw": 600,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/estacion-referencia-calidad-del-aire.jpg",
                   "alt": "estacion-referencia-calidad-del-aire",
@@ -1810,7 +1846,8 @@
                   "titulo": "Sistemas de monitorización basados en sensores",
                   "nivel": 4,
                   "piel": {
-                    "fw": 600
+                    "fw": 600,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Pro.jpg",
                   "alt": "Kunak-AIR-Pro",
@@ -1833,7 +1870,8 @@
                   "titulo": "Dispositivos portátiles de exposición personal",
                   "nivel": 4,
                   "piel": {
-                    "fw": 600
+                    "fw": 600,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/portable-personal-air-quality-monitor.jpg",
                   "alt": "portable-personal-air-quality-monitor",
@@ -1990,7 +2028,8 @@
                   "titulo": "Centrado en las personas",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/human-centered.svg",
                   "reticula": "col-md-4",
@@ -2001,7 +2040,8 @@
                   "titulo": "Orientado a servicio",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/service-oriented.svg",
                   "reticula": "col-md-4",
@@ -2012,7 +2052,8 @@
                   "titulo": "Toma de decisiones",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/decision-making.svg",
                   "reticula": "col-md-4",
@@ -2023,7 +2064,8 @@
                   "titulo": "Fácil de instalar",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-setup.svg",
                   "reticula": "col-md-4",
@@ -2034,7 +2076,8 @@
                   "titulo": "Fácil de usar",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/easy-to-use.svg",
                   "reticula": "col-md-4",
@@ -2045,7 +2088,8 @@
                   "titulo": "Fácil de compartir",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/data-sharing-1.svg",
                   "reticula": "col-md-4",
@@ -2056,7 +2100,8 @@
                   "titulo": "Fiable y seguro",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/secure-confidential-1.svg",
                   "reticula": "col-md-4",
@@ -2067,7 +2112,8 @@
                   "titulo": "Escalable",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/flexible-scalable-1.svg",
                   "reticula": "col-md-4",
@@ -2078,7 +2124,8 @@
                   "titulo": "El mejor soporte técnico",
                   "nivel": 3,
                   "piel": {
-                    "lh": 1.2
+                    "lh": 1.2,
+                    "align": "center"
                   },
                   "imagen": "https://kunakair.com/wp-content/uploads/2023/02/best-support.svg",
                   "reticula": "col-md-4",

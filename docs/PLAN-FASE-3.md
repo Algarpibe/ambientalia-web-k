@@ -279,7 +279,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 | fase | estado |
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
-| **F3-1** · `articulos-kb` | 🟡 **1 de 6 del orden obligado hecho (2026-08-10)** — el hueco de las SPECS **cerrado** (`research/articulos-kb/`, 1519 pares clasificados) y con él el PASO 0 que nadie había planteado (§F3-1-CSS-NO-CAPTURADO). Quedan los 5 pasos de construcción: esquema con filas/columnas → extractor+seed → plantilla → ruta → sonda de dos lados + Δ0 |
+| **F3-1** · `articulos-kb` | 🟡 **4 de 6 del orden obligado hecho (2026-08-10, 3 tandas)** — specs + PASO 0 (§F3-1-CSS-NO-CAPTURADO) · esquema con retícula · extractor + seed · **y la PIEL DEL TITULAR, que cierra el escalón que paró la tanda anterior** (§2d.7 del ESQUEMA). Quedan **2**: la **plantilla** y la **ruta** (PASO 4) → **sonda de dos lados + Δ0 contra el sitio vivo + lector de `c-cmp`** (PASO 5). **Sin decisión abierta que lo bloquee**: lo que queda es construcción |
 | **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |

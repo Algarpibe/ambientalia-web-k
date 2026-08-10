@@ -107,6 +107,25 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > mover un píxel** en la corrida que corregía **+33.25 px** de ancho, porque
 > mide alto y estructura.
 
+> ⚠ **Y hay un CUARTO estado que esta tabla no tiene y que conviene no
+> confundir con `O`: la sonda que mide SÓLO EL ORIGINAL** (2026-08-10).
+>
+> `qa:pieles` —estrenada con F3-1— censa **573 páginas del corpus** y saca
+> números grandes y citables (1456 reglas de piel de titular, 43 pieles
+> distintas). **No aporta ni una celda a esta matriz**, y por la misma razón por
+> la que `c` no aporta fidelidad, con el signo cambiado:
+>
+> > **`c` compara el clon con el clon; una sonda de censo compara el original con
+> > nada.** Las dos producen verdes legítimos y **ninguna de las dos dice si el
+> > clon se parece al original**, que es lo único que esta matriz mide.
+>
+> Es el mismo aviso que ya lleva `a-cascaron` (censo del original) frente a
+> `clon-base` (guarda del clon): *«dos sondas que nunca se tocan»*. Se dice aquí
+> porque la tanda que estrena una sonda grande tiene la tentación de leerla como
+> avance de cobertura, y **`articulos-kb` sigue a `·` en los nueve ejes** — no
+> por descuido, sino porque sus 6 rutas **no se emiten** (§CENSO: POBLADO y no
+> SERVIDO, y todas las sondas de este repo leen HTML servido).
+
 ## La matriz · 31 rutas × 9 ejes
 
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.

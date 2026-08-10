@@ -12,24 +12,34 @@ import { ANCHO_FILA_KB, mbPorDefectoKb } from "@/lib/cms/articulos-kb";
  * EL CUERPO DE `articulos-kb` — la capa PROPIA, la del builder.
  *
  * ══════════════════════════════════════════════════════════════════════════
- * ⛔ ESTE COMPONENTE **NO ESTÁ CABLEADO A NINGUNA RUTA**, y es deliberado
+ * ⛔ ESTE COMPONENTE SIGUE SIN RUTA — pero **ya no por un escalón**
  *
- * La construcción paró en el ESCALÓN de la tipografía de los titulares
- * (`npm run qa:kb-tipografia`, `medidas/kb-tipografia.json`,
- * `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA):
+ * ✅ **El ESCALÓN de la tipografía está CERRADO** (2026-08-10,
+ * `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA · `ESQUEMA-CMS.md` §2d.7). Lo que
+ * decía esta cabecera —*«ninguno de los 10 ejes servidos distingue las tres
+ * pieles del `h2`»*— era cierto de los diez ejes **y falso del servido**: los
+ * diez eran atributos y estructura, y **Divi no escribe marcado, compila CSS**.
+ * Leído el `<style>` del propio documento, las tres pieles son **el DEFECTO del
+ * tema (37/37 w300) y DOS overrides por módulo**, y lo mismo el `h3`.
  *
- *   > **El `h2` tiene TRES pieles y el `h3` DOS, coexisten dentro de la misma
- *   > página (test B ⇒ CAMPO), y NINGUNO de los 10 ejes servidos las
- *   > distingue** — ni el HTML del campo rico, ni las clases del módulo, ni
- *   > `estiloInline`, ni la estructura. El discriminador vive en el CSS que
- *   > Divi compiló por módulo (`et_pb_text_N`), o sea **en un campo que el
- *   > content type no tiene**.
+ * El campo existe (`titulares` en `texto-kb`, `piel` en `blurb`), está migrado y
+ * la colección **está re-sembrada con él**: 21 pieles de titular y 36 de blurb,
+ * verificadas en la DB.
  *
- * Servir esto hoy pintaría 3 `h2` a `44/55` donde el original pone `37/37` y 4
- * `h3` en el color equivocado, y el Δ resultante **tendría causa conocida**:
- * medirlo no informaría de nada y taparía lo que sí. Por eso no hay CSS de
- * titulares en `globals.css` y no hay ruta: escribirlos exigiría **elegir** una
- * de las tres pieles, que es el arreglo falso con otro disfraz.
+ * **Lo que falta ahora es CONSTRUCCIÓN, no decisión:**
+ *
+ *   1 · el CSS de este componente —las clases `kb-*` que usa **no existen
+ *       todavía** en `globals.css`—, incluida la cascada de la piel:
+ *       `.kb-texto h2 { font-size: var(--kb-h2-fs, 37px); … }` con su
+ *       `@media (max-width:980px)` para `movilFs`, que es como Divi lo sirve;
+ *   2 · el cascarón de KB (`cascaron.spec.md`: 5 secciones `_tb_`, barra lateral
+ *       a la IZQUIERDA con 1 widget) y la ruta con sus **dos prefijos**;
+ *   3 · y sólo entonces el Δ0 contra el sitio VIVO, con su sonda de dos lados.
+ *
+ * ⚠ **La piel se emite por VARIABLE CSS con defecto en la hoja, no en línea** —
+ * por la misma razón que el ritmo (nota 1 de abajo): un `style={{fontSize}}`
+ * ganaría también a 390, donde 11 de los 17 `h2` valen 35 y no 44. Sería un
+ * defecto de RANGO invisible a 1440.
  *
  * Lo que sí queda hecho y medido está abajo: la retícula, el ritmo con unidad,
  * el default de `mb`, los cinco kinds y la fila oculta.

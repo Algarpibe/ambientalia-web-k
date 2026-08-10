@@ -42,6 +42,31 @@ Titulares dentro de `.et_pb_text_inner`, todos `Manrope`, `letter-spacing
 > y **sí** encoge (a `35/43.75`). Un componente que trate «h2» como una sola cosa
 > se equivoca en 11 de 17.
 
+> ⚠⚠ **CORREGIDO 2026-08-10 (tanda 46.ª): NO SON DOS PIELES NI TRES — SON UN
+> DEFECTO Y DOS OVERRIDES**, y la diferencia decide si el campo existe.
+>
+> Esta tabla lista los valores COMPUTADOS, que es lo que se ve, y por eso no
+> podía distinguir *«el editor escribió 45»* de *«nadie escribió nada y el tema
+> pone 37»*. Leído el CSS que Divi compiló (`npm run qa:pieles`) y reconstruido
+> módulo a módulo:
+>
+> | fila de la tabla | qué es en realidad | regla servida |
+> |---|---|---|
+> | `h2` **45/45 w700** ×6 | **override** del módulo | `.et_pb_text_1 h2 { font-weight:700; font-size:45px }` |
+> | `h2` **44/55 w300** ×11 | **override** del módulo | `… h2 { font-weight:300; font-size:44px; line-height:1.25em }` + `@980`/`@767 { 35px }` |
+> | `h2` **37/37 w300** ×3 | **EL DEFECTO DEL TEMA** | **ninguna** — son los 3 módulos sin regla de `h2` |
+> | `h3` azul ×4 | **override**, y sólo del color | `… h3 { color:#0C71C3!important }` |
+> | `h3` `#333` ×4 | **EL DEFECTO** | ninguna |
+> | `h4` `26/26` ×2 | **EL DEFECTO** | ninguna |
+>
+> Y lo mismo el titular del blurb de §2, con el matiz de que **Divi lo compila
+> contra `.et_pb_module_header`** y no contra `h4`: `{18px·700·1.2em·center}`
+> ×24 (con `16px` bajo 980) · `{18px·1.2em·center}` ×9 · `{600}` ×3. Su defecto
+> (`fs` 18 · `lh` 1 · `fw` 300) se deriva de **lo que esas reglas OMITEN**.
+>
+> Modelo resultante en `ESQUEMA-CMS.md` §2d.7. Acta:
+> `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA (cerrada).
+
 Cuerpo:
 
 | elemento | @1440 | @390 | n |

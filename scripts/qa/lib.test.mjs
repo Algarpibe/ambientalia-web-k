@@ -28,7 +28,7 @@
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { auditarSondas, corridaNegativa, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, ruta, sello, sinLiterales, w } from "./lib.mjs";
+import { auditarSondas, corridaNegativa, LIBRERIAS, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, ruta, sello, sinLiterales, w } from "./lib.mjs";
 
 /* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
  * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
@@ -526,6 +526,14 @@ console.log("\n── el barrido del contrato: EJECUTAR, no casar texto ──")
   rmSync(tmpA, { recursive: true, force: true });
 
   /* ── (b) el barrido de verdad, con UN solo veredicto ── */
+  /**
+   * ⚠ **La exclusión se IMPRIME, y por eso no puede pudrirse.** `LIBRERIAS` es
+   * lo único que el contrato no alcanza —ficheros que se importan y no miden—, y
+   * una lista de exclusión es literalmente dejar de mirar. Enseñarla en el
+   * informe es lo que impide que alguien meta ahí una sonda de verdad y el verde
+   * lo tape (§sondas: *lo que imprime y lo que cuenta no pueden discrepar*).
+   */
+  console.log(`  · fuera del contrato por ser LIBRERÍA (se importan, no miden): ${LIBRERIAS.join(" · ")}`);
   const a = await auditarSondas();
   const noConformes = [
     ...a.rotas.map((r) => `${r.fichero} (NO COMPILA: ${r.error})`),

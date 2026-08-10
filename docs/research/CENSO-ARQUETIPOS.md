@@ -61,6 +61,27 @@
 > ni el lector de `c-cmp`**: declarar una familia contra rutas que no se emiten
 > sería estrenar una guarda sin nada contra qué ejercitarla, que es exactamente
 > lo que la tanda anterior decidió no hacer.
+>
+> ⚠ **2026-08-10 (3.ª tanda del día): sigue en POBLADO — y esta vez el estado no
+> se movió por una razón que conviene distinguir de la anterior.**
+>
+> La tanda anterior paró en un ESCALÓN —una piel que el content type no podía
+> expresar—. **Ese escalón está CERRADO** (`PENDIENTES-QA.md`
+> §F3-1-ESCALON-TIPOGRAFIA): el campo existe, está migrado y la colección está
+> **re-sembrada con él** (21 pieles de titular + 36 de blurb, verificadas en DB).
+> Lo que no cupo fue la **construcción** de la plantilla y la ruta.
+>
+> > **La distinción importa para leer el censo: «POBLADO» significa hoy lo mismo
+> > que ayer, pero por un motivo distinto.** Ayer había una decisión abierta que
+> > bloqueaba; hoy no queda ninguna — queda trabajo. Un censo que no separa
+> > *bloqueado* de *pendiente* invita a releer la parada anterior como si siguiera
+> > vigente, y no lo está.
+>
+> Y lo que la tanda sí añadió al camino: el arquetipo pasó a tener **dos
+> testigos independientes de su dato** —el estilo computado (`kb-spec`) y el CSS
+> que Divi compiló (`qa:pieles`)—, cruzados módulo a módulo, con la regla de que
+> *un override que el computado ve y ninguna regla explica se nombra*. Eso no es
+> un estado del censo, pero es lo que hará auditable el SERVIDO cuando llegue.
 
 ## 0 · De dónde salen los números, y qué NO cubren
 

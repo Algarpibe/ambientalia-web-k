@@ -1,4 +1,148 @@
-# HANDOFF — PARADA EN EL ESCALÓN: el `h2` de KB tiene TRES pieles y nada de lo servido las distingue
+# HANDOFF — el escalón se DISUELVE: no eran tres pieles, era un defecto y dos overrides, y el campo no es de KB
+
+> ⚠ **Tanda 2026-08-10 (47.ª).** PASOS **1 · 2 · 3 · 6 · 7** completos. Los
+> PASOS **4 (la ruta)** y **5 (el Δ0)** **NO se hicieron** — razón sin adornos en
+> §4. Registro: `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA (**cerrada**) + 2
+> fichas nuevas · `ESQUEMA-CMS.md` §2d.7 · `CLAUDE.md` (2 reglas) ·
+> `CENSO-ARQUETIPOS.md` · `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` ·
+> `modulos.spec.md` §1.1 (corregida).
+
+## 0 · Los cuatro titulares
+
+> **1 · EL ESCALÓN NO ERA UN ESCALÓN: EL DISCRIMINADOR ESTABA SERVIDO, en el
+> `<style>` del propio documento.** Los 10 ejes que la sonda anterior recorrió
+> eran **atributos y estructura**; ninguno era CSS — y **Divi no escribe
+> marcado: COMPILA CSS**. Leído, las tres pieles del `h2` son **el DEFECTO del
+> tema (`37/37 w300`) y DOS overrides por módulo**, y las dos del `h3` son **el
+> defecto y un override que sólo toca el color**. Reconstruido módulo a módulo y
+> cierra **1:1**: los 3 `h2` de 37 px son exactamente los 3 cuyos módulos **no
+> llevan regla de `h2`**.
+>
+> **2 · Y la premisa que lo tapaba era CIERTA, que es lo que la hacía
+> peligrosa.** El esquema afirmaba *«`estiloInline` es `null` en los 85 módulos,
+> o sea que el editor no tocó la tipografía»*. `estiloInline` es el atributo
+> `style=`, **y Divi no lo usa**: es medir al nivel que absorbe, con una medida
+> real de coartada. Lo servido dice que el editor tocó la tipografía **en 89
+> sitios** de esos 85 módulos.
+>
+> **3 · Las dos preguntas de POBLACIÓN movieron el arbitraje de sitio, como la
+> consigna anticipaba.** (a) el conjunto **NO es cerrado** —14 pieles en KB
+> contra **43 en el corpus**, con `44.1px` entre los valores, y **la misma piel
+> en `h1`, `h2` y `h3`** ⇒ no es propiedad del nivel ⇒ **propiedades, no enum**;
+> (b) **existe fuera de KB y KB es la MINORÍA** —**1272 de 1456** reglas están
+> fuera (productos 827 · sectores 291 · sueltas 148 · listados 126 · hubs 56)—.
+> Así que el campo **no es de `articulos-kb`**: es del **módulo de texto
+> compartido**, infra-especificado igual que lo estaba `inline` (§2d.3).
+> Ensanchamiento retrocompatible, y esta vez **con el diff delante**: 3
+> `CREATE TABLE` + 6 `ADD COLUMN`, **cero `ALTER` sobre columna existente**.
+>
+> **4 · Y hubo un SEGUNDO escalón que se tragó mi propia sonda: un CERO que
+> significaba «no miré».** `qa:pieles` informó **«0 overrides en `blurb`»**
+> mientras `modulos.spec.md` §2 tenía medidas **TRES pieles** del titular de
+> blurb. Las dos no podían ser verdad. Ganó la spec: **Divi compila la piel del
+> blurb contra `.et_pb_module_header`**, no contra `h4` —el nivel es un ajuste
+> aparte—, y mi `ES_TITULAR` sólo casaba `h[1-6]`. Corregido: **216 reglas de
+> blurb en una sola página**, y las tres pieles reaparecen exactas. *Lo delató
+> contradecir una medida buena anterior, que es el control que no siempre se
+> tiene.*
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`qa:pieles`** ← nueva | **573 páginas** del corpus · **1456 reglas** de piel de titular en capa propia · **43 pieles distintas** · 1272 fuera de KB |
+| **`cms:extractor-kb`** (ampliada) | 6 docs · **21 titulares con piel** (3 distintas) · **36 blurbs con piel** (3 distintas) · **0 overrides sin regla que los explique** |
+| **`cms:extractor-kb-neg`** | **8/8** — 7 sabotajes, cada uno por SU invariante, + control |
+| `cms:seed-kb` | 6 artículos · 39 filas · 143 módulos · 56 imágenes |
+| DB verificada a mano | 21 filas en `…texto_kb_titulares` · 36 pieles en `…blocks_blurb`, las seis exactas |
+| `npm run check` | verde · 31 rutas · 11 familias · slugs LIMPIO · `cms-campos` 10/10 |
+| `qa:lib` | **121 sondas** COMPILAN y declaran su mínimo |
+| `qa:nunca-vistos` | **241 de 330** sin ejercitar (`articulos-kb` pasa de 96 a **124**) |
+| media / `rutaOrigen` | **0 de 168** fuera de `/images/uploads/` · **0** apuntando a fichero inexistente |
+
+## 2 · Lo que sí quedó hecho
+
+- **`scripts/qa/css-compilado.mjs`** — el parser del CSS compilado, **una sola
+  definición**, consumida por `qa:pieles` y por el extractor. Dos copias serían
+  C7 con la peor salida: la sonda contando 82 overrides y el extractor
+  escribiendo otros, **las dos verdes en su marco**;
+- **el campo, en `campos/comunes.ts` y no en `kb.ts`** — `CAMPOS_PIEL` (las seis
+  propiedades, una vez) compuesto en dos formas: **`titularesModulo`** (array por
+  nivel, para texto: Divi da 6 controles) y **`pielTitularModulo`** (grupo, para
+  blurb: Divi da 1). Lo consumen `MODULO_TEXTO` (compartido), `MODULO_TEXTO_KB` y
+  `MODULO_BLURB`;
+- **`titularPorDefecto()` en `defaults.ts`**, que **tira** ante un nivel sin
+  medir. El defecto del blurb se derivó **de las OMISIONES** de las reglas —los
+  36 llevan regla—: la de ×3 escribe *sólo* `font-weight:600` y computa `18/18`
+  ⇒ `fs`=18 y `lh`=1; la de ×9 no escribe peso y computa `w300` ⇒ `fw`=300;
+- **dos migraciones versionadas** y la colección **re-sembrada y verificada**;
+- **la guarda que hace auditable todo esto:** el extractor deriva del computado a
+  dos anchos y **cruza contra el CSS servido**; un override que el computado ve y
+  ninguna regla explica **se nombra**. Convierte *«la captura no tiene las 19
+  hojas»* de riesgo callado en fallo visible;
+- **`LIBRERIAS` en `lib.mjs`** — el contrato de `Evaluadas` no alcanza a un
+  fichero que se importa y no mide, y **no se puede resolver con
+  `SIN_CONTRATO`**: ponerlo en una librería lo heredaría **quien la importa** y
+  desactivaría su contrato en silencio. Es una lista, y **se imprime en la salida
+  de `qa:lib`** para que no se pudra.
+
+## 3 · Lo que hay que saber para retomar (PASOS 4 y 5)
+
+**No queda ninguna decisión abierta. Queda construcción**, en este orden:
+
+1. **el CSS de `CuerpoKb`.** Las clases `kb-*` que el componente usa **no existen
+   todavía** en `globals.css` — hay que escribirlas contra `kb-spec-{1440,390}`
+   (1519 pares). ⚠ **La piel se emite por VARIABLE CSS con el defecto en la
+   hoja**, nunca en línea: `style={{fontSize}}` ganaría también a 390, donde 11
+   de los 17 `h2` valen 35 y no 44 — defecto de RANGO invisible a 1440;
+2. **el cascarón** (`cascaron.spec.md`: 5 secciones `_tb_`, barra lateral a la
+   **IZQUIERDA** con 1 widget) y **la ruta** con sus dos prefijos (`prefijo` ya es
+   campo y ya está sembrado con sus dos valores);
+3. **sonda de dos lados + Δ0 contra el sitio VIVO + lector de `c-cmp`**, que van
+   juntos. Y sólo entonces el CENSO sale de **POBLADO y no SERVIDO**.
+
+## 4 · Por qué pararon los PASOS 4 y 5, sin adornos
+
+**No hubo hallazgo que lo impidiera: el PASO 1 resultó más caro de lo que la
+consigna suponía, y se llevó el presupuesto.** La consigna decía *«si (a) y (b)
+se contestan con número, arbitrar es ejecución»* — y así fue, pero contestarlas
+exigió **una sonda nueva sobre 573 páginas**, y de paso destapó el **segundo
+escalón del blurb**, que era un campo más, otra migración y otra re-siembra.
+
+Lo que **no** se hizo es lo que la consigna avisaba de no hacer mal: escribir un
+`globals.css` de KB *a ojo* para tener ruta. Con 1519 pares medidos delante,
+escribirlo de impresión es exactamente el arreglo falso con otro disfraz.
+
+## 5 · Lo que NO hay que hacer al empezar
+
+- **No releer §F3-1-ESCALON-TIPOGRAFIA como si siguiera vigente.** Está
+  **cerrada**; el histórico se conserva debajo del acta a propósito, porque su
+  razonamiento es correcto en todo menos en el canal que no miró.
+- **No poblar `titulares` fuera de KB de paso.** Los **1272** overrides de
+  productos/sectores están medidos y **no extraídos** (§F3-1-PIEL-FUERA-DE-KB):
+  el extractor del monográfico lee `style=` y ahí no están. Es su propia tanda,
+  con su round-trip.
+- **No leer `qa:pieles` como cobertura.** Mide **sólo el original**: no aporta ni
+  una celda a `COBERTURA-MEDICION.md`, igual que `clon-base` no aporta fidelidad
+  con el signo cambiado.
+- **No derivar `align` del estilo computado.** Está confundido con la herencia
+  del contenedor **y** con el `style=` del campo rico — medido: el `h2` de
+  `text_13` computa `center` y **ninguna regla lo explica** porque es contenido.
+  Sabotaje `piel-align` en el negativo.
+- **No usar el `h1` como base en crudo**: sigue oculto en las 6 y su `y` es 0 en
+  los dos lados ⇒ Δ0 por construcción. El ancla la elige el PASO 5.
+- **No medir el Δ0 contra la captura.** Le faltan las 19 hojas externas y da
+  geometría equivocada **sin dar error**.
+- **No usar `qa:html-cmp` como puerta** hasta aislar su suelo
+  (§HTML-CMP-NO-REPRODUCIBLE).
+
+Después de F3-1: **F3-2 · listados y hubs** — 142 = 35 + 107 capturados, modelo
+decidido, esperando `P-LH-C6`, que es además **el eje de comportamiento que sigue
+a 0/31** en `COBERTURA-MEDICION.md`.
+
+---
+
+# (anterior) HANDOFF — PARADA EN EL ESCALÓN: el `h2` de KB tiene TRES pieles y nada de lo servido las distingue
 
 > ⚠ **Tanda 2026-08-10 (46.ª).** La consigna pedía plantilla → ruta → Δ0 →
 > sonda → casos → reglas → registro. **Paró en el primer paso**, por el ESCALÓN
