@@ -1,4 +1,100 @@
-# HANDOFF — `articulos-kb` está MODELADA y POBLADA, y el defecto de `mb` estaba atribuido a la variable equivocada
+# HANDOFF — PARADA EN EL ESCALÓN: el `h2` de KB tiene TRES pieles y nada de lo servido las distingue
+
+> ⚠ **Tanda 2026-08-10 (46.ª).** La consigna pedía plantilla → ruta → Δ0 →
+> sonda → casos → reglas → registro. **Paró en el primer paso**, por el ESCALÓN
+> que la propia consigna dejaba armado. **No hay ruta emitida y no hay Δ0**, y
+> eso es el resultado, no una tarea pendiente de esta tanda. Fichas:
+> `PENDIENTES-QA.md` §F3-1-ESCALON-TIPOGRAFIA · §HTML-CMP-NO-REPRODUCIBLE.
+
+## 0 · Los cuatro titulares
+
+> **1 · EL ESCALÓN, con su número: `h2` tiene 3 pieles y `h3` 2, coexisten
+> DENTRO de la misma página (test B ⇒ CAMPO) y NINGUNO de los 10 ejes servidos
+> las separa.** `45/45 w700`×6 · `44/55 w300`×11 · `37/37 w300`×3; y
+> `32/32` azul×4 contra `32/32` `#333`×4. Se miraron `style=` y `class=` de la
+> propia etiqueta dentro del campo rico, las clases del módulo, `estiloInline`,
+> el reparto, la posición, el nº de fila, `mb`, `mt` y las etiquetas vecinas:
+> los módulos son **indistinguibles hasta el último atributo servido**.
+>
+> **2 · El único rastro es `et_pb_text_N`, y por eso no cuenta:** es el gancho
+> con el que Divi cuelga el CSS compilado de ESE módulo, o sea **la huella del
+> campo que falta**. `N` es el ordinal del módulo en la página. Aceptarlo sería
+> cablear la piel a la posición.
+>
+> **3 · Y su causa de fondo es la regla que la tanda anterior acababa de
+> escribir**, en su tercera instancia: §2d.5 concluyó que `texto-kb` no
+> necesitaba `lh`, y esa conclusión **se derivó de la interlínea de los
+> PÁRRAFOS**. Los titulares nunca se comprobaron. *Una regla derivada sobre un
+> dominio donde el caso no se da está SIN PROBAR para ese caso.*
+>
+> **4 · Y una ficha que no buscaba nadie: `qa:html-cmp` NO PUEDE ADJUDICAR en
+> este entorno.** Dos builds propios del mismo árbol dan **31 de 31 rutas
+> distintas**, también sin nombres de chunk, y entre ellas **`/` y
+> `/accesorios`, que no importan el fichero tocado**. *31 de 31 no es un
+> hallazgo, es el instrumento.*
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`qa:kb-tipografia`** ← nueva | **30 titulares** · `h2` CAMPO sin discriminador · `h3` CAMPO sin discriminador **establecido** · `h4` una piel |
+| `medidas/html-cascaron-{antes,despues}.json` | 31/31 distintas · `±43` bytes en 8 rutas **con los dos signos** · 0 en 23 |
+| `npm run check` | verde · 31 rutas · `cms-campos` 10/10 |
+| `cms:seed-kb` | 6 artículos · 56 imágenes, ahora en `/images/uploads/…` |
+
+## 2 · Lo que sí quedó hecho
+
+- **`components/CascaronTb.tsx`** — la retícula del `_tb_body` es **la misma
+  plantilla de theme-builder** en grupo A y en KB, al píxel y a los dos anchos
+  (fila 1238.39/335.39 con tope 1380 · sección `pt/pb` 57.5938/50 · columnas
+  911.75 y 258.5 · canal 68.1094). **Lo único que cambia es el LADO de la
+  columna estrecha** —derecha en A, izquierda en KB—, que es prop del cascarón y
+  no campo del documento. `CascaronA` reexporta los cuatro nombres de siempre;
+- **`components/kb/CuerpoKb.tsx` + `lib/cms/articulos-kb.ts`** — retícula, ritmo
+  **con unidad** (el `%` se emite como `%`, no traducido a px), `mbPorDefectoKb`,
+  los cinco kinds y la fila oculta con su `<h1>`. **Sin cablear**, con el escalón
+  en la cabecera;
+- **el seed corrige `rutaOrigen`**, y el defecto era gordo: escribía
+  `/wp-content/uploads/…` —la ruta del ORIGINAL, que **no existe** en
+  `apps/web/public`— o sea **56 imágenes rotas en el HTML servido, sin un solo
+  error** en el seed ni en el build. La convención estaba derivada y no se miró:
+  de las 168 filas de `media`, 112 llevan `/images/uploads/…`. Las 37 que
+  faltaban ya están copiadas y commiteadas.
+
+## 3 · Lo siguiente — y el primer paso es una DECISIÓN, no código
+
+1. **Arbitrar el escalón:** ¿`texto-kb` gana un campo de piel del titular, y con
+   qué forma —`fs`/`lh`/`color` sueltos, un enum de pieles, o el ajuste por
+   módulo tal cual lo escribe Divi—? El extractor **sí puede** derivarlo: la piel
+   está en `kb-spec-{1440,390}.json`, que es estilo computado. Coste: un campo,
+   una migración y una re-siembra;
+2. después, y sólo después: CSS de titulares → ruta (dos prefijos, `prefijo` ya
+   poblado) → Δ0 contra el **sitio vivo** a 1440 y 390 → sonda de dos lados +
+   lector de `c-cmp`;
+3. y entonces el CENSO sale de **POBLADO y no SERVIDO**.
+
+Después: **F3-2 · listados y hubs** — 142 = 35 + 107 capturados, modelo decidido
+en `DECISIONES.md`, esperando `P-LH-C6`, que es además **el eje de comportamiento
+que sigue a 0/31** en `COBERTURA-MEDICION.md`.
+
+## 4 · Lo que NO hay que hacer al empezar
+
+- **No cablear una de las tres pieles del `h2`** para «desbloquear» y llamar Δ a
+  la diferencia. Es exactamente el arreglo falso, y el Δ resultante tendría causa
+  conocida: no informaría de nada y taparía lo que sí.
+- **No creerse un discriminador hallado en UNA página.** `fila` y `mb`
+  «separaban» los dos `h3` y es un accidente posicional — las dos pieles viven en
+  una sola instancia. La sonda ya exige ≥2 páginas.
+- **No usar `qa:html-cmp` como puerta** hasta aislar su suelo (§ficha). El primer
+  control es barato: dos builds **sin tocar una línea**.
+- **No medir el Δ0 contra la captura.** Le faltan las 19 hojas externas y
+  renderiza con los 184 KB en línea: da geometría equivocada **sin dar error**.
+- **No usar el `h1` como base en crudo**: está oculto en las 6 y su `y` es 0 en
+  los dos lados ⇒ Δ0 por construcción.
+
+---
+
+# (anterior) HANDOFF — `articulos-kb` está MODELADA y POBLADA, y el defecto de `mb` estaba atribuido a la variable equivocada
 
 > ⚠ **Tanda 2026-08-10 (45.ª).** PASOS **1 · 2 · 6 · 7** completos. Los PASOS
 > **3 (plantilla)**, **4 (ruta)** y **5 (sonda + Δ0 + lector de `c-cmp`)** **NO
