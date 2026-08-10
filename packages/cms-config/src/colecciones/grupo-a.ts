@@ -15,8 +15,7 @@
  */
 import type { CollectionConfig, Field } from "payload";
 import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
-import { MODULO_BOTON, MODULO_IMAGEN } from "../bloques/contenido.ts";
-import { MODULOS_KB } from "../bloques/kb.ts";
+import { cuerpoKb } from "../bloques/kb.ts";
 import { registroDeSlug } from "../hooks/registro-slug.ts";
 
 /**
@@ -189,37 +188,33 @@ export const articulosKb: CollectionConfig = {
      */
     { name: "prefijo", type: "text", required: true },
     /**
-     * `blocks` = lo COMPARTIDO + la unión PROPIA. El orden importa poco al
-     * esquema y mucho al admin: primero lo que el editor usa en las 6.
+     * ⚠ **`cuerpo` DEJA DE SER PLANO (2026-08-10, F3-1 PASO 1 · §2d.5).**
      *
-     * La mitad útil de HD1 se confirmó y se conserva: *«`MonoRitmo` y los kinds
-     * de texto/imagen/botón sirven — 3 de los 6 artículos se expresarían solo
-     * con ellos»* (PD1 y PD2 acertaron). Los otros 3 son justo los que traen
-     * `blurb`, y uno de ellos la única `gallery`.
+     * Era `blocks` —una lista de módulos— y el original tiene **45 filas** en 6
+     * instancias, repartidas en 1, 2 o 3 columnas con **cuatro repartos**
+     * (`docs/research/articulos-kb/components/cuerpo.spec.md` §1). Una lista
+     * plana no puede expresar «este texto y esta imagen van en dos columnas de
+     * la misma fila», que es lo que hacen 14 de las 45. Es el **hueco 1** de
+     * §2d.4, y no abría decisión: era trabajo.
+     *
+     * Lo que se guarda son las **39 filas visibles**; las 6 ocultas
+     * (`et_pb_row_0 d-none`, con el `<h1>Kunak Help Center</h1>` dentro) las
+     * emite el componente, porque **no son contenido del artículo**
+     * (`cascaron.spec.md` §3).
+     *
+     * ── Los kinds que se ofrecen siguen siendo LOS MEDIDOS ─────────────────
+     * `qa:kb-recon` censó los 6 artículos y salieron **cinco**: `text`×85 ·
+     * `image`×21 · `button`×6 · `blurb`×36 · `gallery`×1. **No hay módulos
+     * `titular` ni `claim`**: aquí los encabezados van DENTRO del texto, que es
+     * justo lo que hace que su texto sea rico (§2d.3).
+     *
+     * ⚠ **Y desde esta tanda tampoco son los COMPARTIDOS de imagen y botón.**
+     * Lo eran, y su ritmo es `number` —px implícitos— mientras que el de este
+     * arquetipo lleva **unidad**: `MODULO_IMAGEN_KB` y `MODULO_BOTON_KB`
+     * consumen los mismos campos de contenido (`CAMPOS_MODULO_IMAGEN`,
+     * `CAMPOS_MODULO_BOTON`) sobre `moduloBaseKb`. Lo que se duplica es el
+     * documento, no la definición.
      */
-    {
-      name: "cuerpo",
-      type: "blocks",
-      /**
-       * ⚠ **Los kinds que se ofrecen son LOS MEDIDOS, y por eso esto no es
-       * `...MODULOS_COMPARTIDOS` (2026-08-09, §2d.3).**
-       *
-       * `qa:kb-recon` censó los 6 artículos y salieron **cinco** kinds:
-       * `text`×85 · `image`×21 · `button`×6 · `blurb`×36 · `gallery`×1. **No hay
-       * módulos `titular` ni `claim`**: en este arquetipo los encabezados van
-       * DENTRO del texto (`h1`×6 · `h2`×20 · `h3`×8 · `h4`×2, contados dentro de
-       * los `et_pb_text`), que es justo lo que hace que su texto sea rico.
-       *
-       * Y el de texto es **`texto-kb`**, no el compartido: el escalón midió que
-       * `MODULO_TEXTO` no expresa lo que trae este dato —ni, resultó, lo que
-       * traen sus propios consumidores—. Acta: §2d.3.
-       *
-       * Ofrecer los tres que sobran no sería inocuo: le pondría al editor tres
-       * bloques que el arquetipo no tiene, y el primero que los use crea una
-       * instancia sin contraparte en el original. La colección está **vacía**
-       * cuando esto se escribe, así que estrechar aquí no rompe dato ninguno.
-       */
-      blocks: [MODULO_IMAGEN, MODULO_BOTON, ...MODULOS_KB],
-    },
+    cuerpoKb,
   ],
 };

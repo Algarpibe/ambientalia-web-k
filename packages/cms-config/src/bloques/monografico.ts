@@ -17,20 +17,16 @@ import {
   CAMPOS_CTA_DESCARGA,
   CAMPO_PINS,
   MODULOS_COMPARTIDOS,
+  ancho,
   inline,
 } from "./contenido.ts";
 
 /**
- * `MonoAncho` — token de columna de Divi. **No es el enum de los valores
- * vistos: es la retícula.** Escrito solo desde EDAR habría salido de cuatro
- * valores y Petróleo estrena otros cuatro (catch 1 de `MODELO.md` §2).
+ * `MonoAncho` — **reexportado**: vive en `contenido.ts` desde F3-1 PASO 1,
+ * porque lo consumen MONOGRÁFICO y `articulos-kb` y la retícula de Divi no es
+ * de un arquetipo.
  */
-export const ancho: Field = {
-  name: "ancho",
-  type: "select",
-  required: true,
-  options: ["1_4", "1_3", "2_5", "1_2", "3_5", "2_3", "3_4", "4_4"],
-};
+export { ancho };
 
 /**
  * `MonoCelda = string | { fuerte, resto? }` — **nunca HTML**, igual que

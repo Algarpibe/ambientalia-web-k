@@ -69,6 +69,26 @@ function nivelCon(defecto: 2 | 3, deQuien: string): Field {
   );
 }
 
+/**
+ * `MonoAncho` — **el token de columna de la retícula de Divi**, compartido por
+ * todo arquetipo que tenga columnas. **No es el enum de los valores vistos: es
+ * la retícula.** Escrito solo desde EDAR habría salido de cuatro valores y
+ * Petróleo estrena otros cuatro (catch 1 de `MODELO.md` §2) — y `articulos-kb`
+ * volvió a traer **cuatro repartos, en 6 instancias**, que es exactamente el
+ * mismo número con el que la primera vez se acertó por poco.
+ *
+ * ⚠ Vive aquí y no en `monografico.ts` desde el **2026-08-10 (F3-1 PASO 1)**:
+ * lo consumen MONOGRÁFICO y `articulos-kb`, y un arquetipo importando la
+ * retícula *del otro arquetipo* invierte la dirección de la dependencia. Se
+ * reexporta desde `monografico.ts` para no partir a quien lo importaba de allí.
+ */
+export const ancho: Field = {
+  name: "ancho",
+  type: "select",
+  required: true,
+  options: ["1_4", "1_3", "2_5", "1_2", "3_5", "2_3", "3_4", "4_4"],
+};
+
 /** El defecto del `claim`: `Claim({ nivel = 2 })`. */
 export const nivelClaim: Field = nivelCon(2, "claim");
 /** El del `titular`: `b.nivel ?? 3` / `m.nivel ?? 3`. **No es el mismo.** */
@@ -191,14 +211,21 @@ export const MODULO_TEXTO: Block = {
   ],
 };
 
+/**
+ * El CONTENIDO de un módulo de imagen, sin su ritmo. Se exporta aparte porque
+ * `articulos-kb` monta el mismo contenido sobre **otro ritmo** —el suyo lleva
+ * unidad (`medida`)— y *lo que se duplica es el documento, no la definición*
+ * (§1.5b): dos declaraciones de «la imagen de un módulo» son la clase C7.
+ */
+export const CAMPOS_MODULO_IMAGEN: Field[] = [
+  { name: "src", type: "upload", relationTo: "media", required: true },
+  { name: "alt", type: "text" },
+];
+
 export const MODULO_IMAGEN: Block = {
   slug: "imagen",
   labels: { singular: "Imagen", plural: "Imágenes" },
-  fields: [
-    { name: "src", type: "upload", relationTo: "media", required: true },
-    { name: "alt", type: "text" },
-    ...moduloBase,
-  ],
+  fields: [...CAMPOS_MODULO_IMAGEN, ...moduloBase],
 };
 
 /**
@@ -207,14 +234,16 @@ export const MODULO_IMAGEN: Block = {
  * que **no extiende `MonoModuloBase`**: el wrapper del botón de Divi no se
  * entera de ser el último de su columna y lleva su `mb 16` fijo en 7 de 7.
  */
+export const CAMPOS_MODULO_BOTON: Field[] = [
+  { name: "label", type: "text", required: true },
+  { name: "href", type: "text", required: true },
+  { name: "external", type: "checkbox" },
+];
+
 export const MODULO_BOTON: Block = {
   slug: "boton",
   labels: { singular: "Botón", plural: "Botones" },
-  fields: [
-    { name: "label", type: "text", required: true },
-    { name: "href", type: "text", required: true },
-    { name: "external", type: "checkbox" },
-  ],
+  fields: [...CAMPOS_MODULO_BOTON],
 };
 
 /** Los que consumen los tres arquetipos de cuerpo (§2d.1). */

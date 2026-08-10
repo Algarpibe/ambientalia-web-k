@@ -700,12 +700,119 @@ export const colaComercial: Field[] = [
  * en `defaults.ts` con su procedencia; aquí solo está la FORMA.
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA MEDIDA — un valor de ritmo NO ES UN NÚMERO: es un número CON UNIDAD
+ *
+ * ── Qué obliga a esto, y por qué el error era invisible ────────────────────
+ * `docs/research/articulos-kb/components/cuerpo.spec.md` §2.1, medido a los dos
+ * anchos sobre las 45 filas y los 149 módulos de KB: **el editor escribió px
+ * absolutos Y porcentajes en el mismo hueco**, y
+ *
+ *   > **a 1440 son EL MISMO NÚMERO.**
+ *
+ * | par medido | qué es |
+ * |---|---|
+ * | `18.2344 → 30`      | el **default** de Divi (`2 %`, que al apilar pasa a `30px` PLANO) |
+ * | `18.2344 → 6.70312` | **campo**: el editor escribió `2 %` — y el `%` sigue siendo `%` a 390 |
+ * | `45.5781 → 16.7656` | campo `5 %` · `7.28125 → 2.67188` campo `0.8 %` · `3.64062 → 1.32812` campo `0.4 %` |
+ * | `7 · 14 · 17 · 19 · 20 · 25 · −2 · −21` | campo, px absolutos (test A) |
+ *
+ * Un campo `number` fuerza a elegir una de las dos lecturas **y no deja rastro
+ * de cuál se eligió**: el dato queda ambiguo POR CONSTRUCCIÓN, y el error no se
+ * ve al ancho al que se calibra. Es la §regla 6 en el esquema —*un valor por
+ * defecto convierte «no lo sé» en «está bien»*—, con la unidad como el valor
+ * implícito.
+ *
+ * ── Cómo se lee el dato ────────────────────────────────────────────────────
+ * · `valor` **ausente** = nadie lo escribió ⇒ el render aplica el default
+ *   responsive de Divi (que cambia de unidad al apilar, y por eso NO se puede
+ *   representar como un valor de este campo);
+ * · `valor` presente ⇒ `unidad` es **obligatoria**. Se rechaza en vez de
+ *   suponerse `px`: suponerla es exactamente el defecto que este campo corrige;
+ * · `movilValor` ausente = **hereda** el de escritorio (la cascada de Divi);
+ *   presente = override de móvil, y entonces `movilUnidad` es obligatoria.
+ *
+ * ⚠ **Alcance de lo EJERCITADO, declarado (§regla del caso no ejercitado):** la
+ * rama `movil*` la ejercitan **4 pares del nivel de MÓDULO** en KB
+ * (`34.0469 → 0` ×10 · `13 → 0` · `45 → 0` · `mt −18 → 0` ×14). **A nivel de
+ * FILA no la ejercita nadie** en las 45 filas medidas: es legal en Divi y es un
+ * camino de render sin estrenar, y por eso se declara aquí en vez de suponerse
+ * soportado. Lo cuenta `npm run qa:nunca-vistos`.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Las dos unidades que el dato medido usa. `pct` y no `%`: es un valor de enum. */
+export const UNIDADES_MEDIDA = ["px", "pct"] as const;
+
+/** `unidad` es obligatoria en cuanto hay `valor`, y no se sustituye por `px`. */
+function unidadDe(nombreValor: string, etiqueta: string): Field {
+  return {
+    name: nombreValor === "valor" ? "unidad" : "movilUnidad",
+    type: "select",
+    options: [...UNIDADES_MEDIDA],
+    admin: { description: `Obligatoria si hay ${etiqueta}. Sin ella el dato es ambiguo a 1440.` },
+    validate: (valor: unknown, opciones: unknown) => {
+      const hermano = (opciones as { siblingData?: Record<string, unknown> })?.siblingData;
+      const hayValor = hermano?.[nombreValor] !== undefined && hermano?.[nombreValor] !== null;
+      if (hayValor && !valor)
+        return (
+          `Falta la unidad de ${etiqueta}. Un ritmo sin unidad NO es un número: ` +
+          `\`19px\` y \`2 %\` valen lo mismo a 1440 y distinto a 390 (cuerpo.spec.md §2.1). ` +
+          `Se rechaza en vez de suponer \`px\`.`
+        );
+      return true;
+    },
+  } as Field;
+}
+
+/**
+ * Una medida de ritmo con su unidad y su override de móvil. **Grupo**, para que
+ * valor y unidad no puedan separarse: son una sola magnitud.
+ *
+ * `fuente` no es adorno — es la evidencia, igual que en `conDefecto`.
+ */
+export function medida(name: string, fuente: string): Field {
+  return {
+    name,
+    type: "group",
+    admin: { description: `Vacío = el default responsive de Divi. ${fuente}` },
+    fields: [
+      { name: "valor", type: "number" },
+      unidadDe("valor", "`valor`"),
+      { name: "movilValor", type: "number", admin: { description: "Vacío = hereda el de escritorio." } },
+      unidadDe("movilValor", "`movilValor`"),
+    ],
+  } as Field;
+}
+
 /**
  * `MonoRitmo` — sección y fila. **Va EN LÍNEA, no agrupado**, porque el tipo
  * medido lo trae así: `MonoSeccion extends MonoRitmo`. En el módulo, en cambio,
  * el ritmo es una propiedad con nombre (`ritmo?: MonoRitmoModulo`) y allí sí es
  * un grupo. La diferencia no es cosmética: cambia la ruta del campo, que es lo
  * que la comprobación de `qa:cms-campos` empareja.
+ *
+ * ⚠ **Estos tres son `number`, o sea PX IMPLÍCITOS, y eso arrastra la
+ * ambigüedad que `medida()` corrige (F3-1 PASO 6, 2026-08-10).** Derivado —no
+ * recordado— contra `medidas/mono-modulos-{1440,390}.json`, emparejando nodo a
+ * nodo las 3 páginas congeladas (edar · petróleo · urbano):
+ *
+ * | nivel | n | valores no-default distintos a los dos anchos |
+ * |---|---|---|
+ * | sección (`mt`·`pt`·`pb`) | 8 | **0** — `−14·14·40·0` iguales a 1440 y a 390 |
+ * | fila (`pt`·`pb`) | 22 | **0** — `2·36·40·60·72·0` iguales |
+ * | módulo (`mt`·`mb`) | 95 | **0** — `16·17·20·23·26·30·41·0` iguales |
+ *
+ * Los únicos pares que se mueven son los **defaults** (`57.5938→50` ·
+ * `28.7969→30` · `34.0469→30` · `37.1406→10.0469`), que el dato **omite** por
+ * convención. O sea: **el editor no escribió ni un porcentaje en lo medido**, y
+ * la ambigüedad aquí es **latente, no realizada** — un `number` no puede
+ * expresar el `%` que aparecería en una cuarta instancia, y lo guardaría como px
+ * sin dar error.
+ *
+ * **Alcance: 3 páginas de las 4 construidas** (los 8 sectores NO están todos
+ * medidos con esta sonda). No se migra en esta tanda porque tocar un tipo
+ * poblado se prueba con su round-trip y no de paso: ficha en
+ * `PENDIENTES-QA.md` §F3-1-RITMO-SIN-UNIDAD.
  */
 export const ritmoInline: Field[] = [
   { name: "mt", type: "number" },

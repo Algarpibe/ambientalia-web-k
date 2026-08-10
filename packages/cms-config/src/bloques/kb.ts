@@ -40,10 +40,47 @@
  * ══════════════════════════════════════════════════════════════════════════
  */
 import type { Block } from "payload";
-import { campoHtml, conDefecto, subida } from "../campos/comunes.ts";
+import { anchoPct, campoHtml, conDefecto, medida, subida } from "../campos/comunes.ts";
 import type { Field } from "payload";
-import { nivelTitular } from "./contenido.ts";
-import { moduloBase } from "../campos/comunes.ts";
+import { CAMPOS_MODULO_BOTON, CAMPOS_MODULO_IMAGEN, ancho, nivelTitular } from "./contenido.ts";
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL RITMO DE ESTE ARQUETIPO — el mismo concepto que `ritmoModulo`, OTRO TIPO
+ *
+ * `campos/comunes.ts` ya tiene `ritmoModulo` y lo consumen SECTOR, MONOGRÁFICO
+ * y `productos`. **No se reutiliza aquí, y no es por gusto:** sus campos son
+ * `number`, o sea px implícitos, y el dato medido de KB trae **porcentajes
+ * escritos por el editor** que a 1440 dan el mismo número
+ * (`cuerpo.spec.md` §2.1). Guardar `2 %` en un `number` lo convierte en `2px`
+ * sin dar error.
+ *
+ * ⚠ **Y esto NO es la clase C7 (dos definiciones de «lo mismo»), aunque se le
+ * parezca.** Lo compartido es la PRIMITIVA —`medida()`, una sola definición de
+ * «un valor de ritmo con su unidad»—; lo que difiere es la COMPOSICIÓN, porque
+ * lo medido difiere: KB usa `mt`·`mb`·`pb` y no tiene `pr` ni `pt` (0 en los
+ * 143 ⇒ SIN EVIDENCIA, y un campo que ninguna instancia ejercita es un camino
+ * de render sin estrenar, no un campo).
+ *
+ * El día que se pague §F3-1-RITMO-SIN-UNIDAD, `ritmoModulo` pasa a esta misma
+ * primitiva y las dos composiciones convergen **por medida**, no por ganas.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * `mt` · `mb` · `pb` del módulo. Ver `mbPorDefecto()` en `defaults.ts`: el
+ * defecto de `mb` **no es un número**, es una función del ancho de la fila.
+ */
+export const ritmoModuloKb: Field = {
+  name: "ritmo",
+  type: "group",
+  fields: [
+    medida("mt", "modulos.spec.md §1.3 — `0`×121 · `−25`×6 · `−18→0`×14 · `−15`×2"),
+    medida("mb", "modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`"),
+    medida("pb", "modulos.spec.md §1.3 — `0`×141 · `35`×2"),
+  ],
+};
+
+/** Base de todo módulo de KB: su ritmo (con unidad) y su ancho. */
+export const moduloBaseKb: Field[] = [ritmoModuloKb, anchoPct];
 
 /**
  * La retícula del blurb — **el número de columnas que el editor le pone**, y es
@@ -106,7 +143,7 @@ export const MODULO_BLURB: Block = {
     campoHtml("descripcion"),
     reticulaBlurb,
     alineacionBlurb,
-    ...moduloBase,
+    ...moduloBaseKb,
   ],
 };
 
@@ -133,7 +170,7 @@ export const MODULO_GALLERY: Block = {
       minRows: 1,
       fields: [subida("imagen", { requerida: true }), { name: "alt", type: "text" }, { name: "titulo", type: "text" }],
     },
-    ...moduloBase,
+    ...moduloBaseKb,
   ],
 };
 
@@ -217,12 +254,175 @@ export const MODULO_TEXTO_KB: Block = {
      * **Cero varianza no prueba plantilla** — prueba que nadie lo tocó en las
      * instancias que existen. Así que no se cablea un valor **ni** se inventa un
      * campo: queda **SIN PROBAR**, anotado, y lo decide la segunda instancia que
-     * lo mueva. `moduloBase` sí entra, porque es la definición compartida del
-     * ritmo y omitirla sería duplicar la decisión por el otro lado.
+     * lo mueva. El ritmo sí entra, porque es lo que el editor sí tocó.
      */
-    ...moduloBase,
+    ...moduloBaseKb,
   ],
 };
 
-/** La unión propia del arquetipo: lo compartido lo pone quien la consume. */
-export const MODULOS_KB: Block[] = [MODULO_TEXTO_KB, MODULO_BLURB, MODULO_GALLERY];
+/**
+ * `image` — **21 módulos**, el mismo CONTENIDO que el compartido y otro RITMO.
+ *
+ * Consume `CAMPOS_MODULO_IMAGEN` en vez de re-declararlo: la única diferencia
+ * medida está en el ritmo, y duplicar `src`/`alt` sería la clase C7.
+ *
+ * ⚠ **`srcset` NO es campo aquí, y es una omisión DECLARADA, no una medida.**
+ * `modulos.spec.md` §3 censó **14 de 21 con `srcset`** y el grupo A sí lo
+ * modela (`imagenA`) *porque es la causa de M-IMG*. Aquí se deja fuera con su
+ * ficha (§F3-1-SRCSET-KB) en vez de colarlo: M-IMG está abierta en el ESQUEMA
+ * (§CMS-0b) y resolverla de paso, en la tanda que estrena el arquetipo, es
+ * exactamente cómo se fabrica una decisión sin medida.
+ *
+ * `alineacion` no entra: **ninguna clase de alineación en las 21**.
+ */
+export const MODULO_IMAGEN_KB: Block = {
+  slug: "imagen-kb",
+  labels: { singular: "Imagen (KB)", plural: "Imágenes (KB)" },
+  fields: [...CAMPOS_MODULO_IMAGEN, ...moduloBaseKb],
+};
+
+/**
+ * `button` — **6 módulos, una sola piel** a los dos anchos (`modulos.spec.md`
+ * §4). Cero varianza en 6 ⇒ la piel **no se cablea como campo**: va al
+ * componente y queda SIN PROBAR con su denominador.
+ *
+ * ⚠ **Lleva ritmo, y el compartido NO lo lleva — es medida, no descuido.**
+ * `MODULO_BOTON` se declaró sin `moduloBase` porque en el monográfico *«el
+ * wrapper del botón de Divi no se entera de ser el último de su columna y lleva
+ * su `mb 16` fijo en 7 de 7»*. Aquí el wrapper **sí** lo lleva: `mb 34.0469→30`
+ * (el default) ×2 · `mb 0` ×4 · `mt −15` ×2, derivado de
+ * `kb-spec-{1440,390}.json`. Dos arquetipos, dos medidas, y por eso dos bloques.
+ */
+export const MODULO_BOTON_KB: Block = {
+  slug: "boton-kb",
+  labels: { singular: "Botón (KB)", plural: "Botones (KB)" },
+  fields: [...CAMPOS_MODULO_BOTON, ...moduloBaseKb],
+};
+
+/** La unión propia del arquetipo: los cinco kinds medidos, ninguno más. */
+export const MODULOS_KB: Block[] = [
+  MODULO_TEXTO_KB,
+  MODULO_IMAGEN_KB,
+  MODULO_BOTON_KB,
+  MODULO_BLURB,
+  MODULO_GALLERY,
+];
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA RETÍCULA — el hueco 1 de §2d.4, cerrado con la medida delante
+ *
+ * `articulos-kb.cuerpo` era `blocks` **plano**, y el original tiene **45 filas
+ * en 6 instancias** que se reparten en 1, 2 o 3 columnas
+ * (`cuerpo.spec.md` §1). Una lista plana no puede expresar «este texto y esta
+ * imagen van en dos columnas de la misma fila», que es lo que hacen 14 de 45.
+ *
+ * ── Lo que NO entra, y por qué ─────────────────────────────────────────────
+ *
+ * **1 · No hay nivel de SECCIÓN.** 1 sección propia por artículo, **6/6** ⇒
+ * varianza cero ⇒ plantilla (§2d.1). Su `pt: 0` es un CAMPO uniforme —el
+ * default es 4 %— que el componente emite **declarando que el test B no pudo
+ * confirmarlo**: no hay hermanos a nivel de sección, y su silencio no es «no
+ * varía» (`cuerpo.spec.md` §3).
+ *
+ * **2 · No hay campo `reparto`, y ES el campo.** El spec lo prueba CAMPO por
+ * test B (filas hermanas con repartos distintos) y esto lo expresa como **la
+ * secuencia de `ancho` de las columnas**, que es dato escrito por el editor y
+ * es lo mismo: `4_4` · `1_2+1_2` · `1_3+2_3` · `1_3+1_3+1_3` son exactamente
+ * las cuatro secuencias medidas.
+ *
+ * > ⚠ **Un `select` con los cuatro repartos vistos sería el catch 1 de
+ * > `MODELO.md` §2, repetido con el mismo número.** `ancho` se declaró como **la
+ * > retícula y no el enum de los valores vistos** porque *«escrito solo desde
+ * > EDAR habría salido de CUATRO valores y Petróleo estrena otros cuatro»*.
+ * > Aquí también son cuatro, vistos en 6 instancias. Y guardar las dos cosas
+ * > —el reparto y los anchos— sería la clase C7: dos representaciones de un
+ * > dato, que divergen en silencio.
+ *
+ * **3 · La columna no lleva ritmo.** `paddingTop`/`paddingBottom` valen 0 en
+ * las 60 ⇒ SIN EVIDENCIA; `marginRight` (50.1406 en toda no-última, 0 en toda
+ * última) y `marginBottom` (0 → 30 al apilar) son **regla posicional de la
+ * retícula**, el falso positivo del test B que `MEDICION.md` §3.2 nombra. Darlos
+ * por campo inventaría un `margenDerecho` por columna.
+ *
+ * **4 · La fila oculta NO se guarda.** 6 de las 45 (`et_pb_row_0 d-none`, una
+ * por artículo) llevan el `<h1>Kunak Help Center</h1>`, que **no es contenido
+ * del artículo**: es plantilla, y la emite el componente (`cascaron.spec.md`
+ * §3). Lo que se guarda son las **39 visibles**.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * La columna. `ancho` es el compartido —**la retícula de Divi**, no el enum de
+ * lo visto— y `modulos` la unión propia.
+ */
+export const columnasKb: Field = {
+  name: "columnas",
+  type: "array",
+  required: true,
+  minRows: 1,
+  fields: [
+    ancho,
+    { name: "modulos", type: "blocks", blocks: MODULOS_KB, required: true, custom: { conKind: true } },
+  ],
+};
+
+/**
+ * La fila. Su ritmo va **con unidad** (`medida`), que es la precisión que
+ * `cuerpo.spec.md` §2.1 obliga: el editor escribió px absolutos **y**
+ * porcentajes, y a 1440 son el mismo número.
+ *
+ * ⚠ **Los anchos de las columnas tienen que sumar la fila.** Es la regla de la
+ * retícula de Divi (`1_3 + 2_3` = 1), derivada y no inventada, y sin ella el
+ * dato admite `1_2 + 1_3`, que no es una fila que el original pueda producir.
+ * Se rechaza en vez de renderizarse torcida (§regla 6).
+ */
+export const CAMPOS_FILA_KB: Field[] = [
+  medida("pt", "cuerpo.spec.md §2 — default 2 % (18.2344/30); `7·17·19·20` px"),
+  medida("pb", "cuerpo.spec.md §2 — default 2 %; `0·1·14·17` px y `0.8 %`"),
+  medida("mt", "cuerpo.spec.md §2 — default 0; `25·−2` px y `2 %·5 %·0.4 %`"),
+  medida("mb", "cuerpo.spec.md §2 — default 0; `−21` px"),
+  columnasKb,
+];
+
+/**
+ * La regla de la retícula, **derivada**: `1_3 + 2_3 = 1`. Sin ella el dato
+ * admite `1_2 + 1_3`, que no es una fila que el original pueda producir — y se
+ * renderizaría torcida sin dar error (§regla 6: la ausencia se rechaza).
+ */
+export function validaReticulaKb(valor: unknown): true | string {
+  if (!Array.isArray(valor)) return true;
+  for (const [i, fila] of valor.entries()) {
+    const cols = (fila as { columnas?: { ancho?: string }[] })?.columnas;
+    if (!Array.isArray(cols) || cols.length === 0) continue;
+    let suma = 0;
+    for (const c of cols) {
+      const m = /^(\d+)_(\d+)$/.exec(String(c?.ancho ?? ""));
+      if (!m) return `Fila ${i + 1}: columna con \`ancho\` ilegible ("${c?.ancho}").`;
+      suma += Number(m[1]) / Number(m[2]);
+    }
+    if (Math.abs(suma - 1) > 1e-6)
+      return (
+        `Fila ${i + 1}: los anchos de sus ${cols.length} columnas suman ${suma.toFixed(4)}, no 1. ` +
+        `La retícula de Divi reparte la fila entera (los cuatro repartos medidos son ` +
+        `\`4_4\` · \`1_2+1_2\` · \`1_3+2_3\` · \`1_3+1_3+1_3\`).`
+      );
+  }
+  return true;
+}
+
+/**
+ * `cuerpo` de `articulos-kb` — **LA LISTA DE FILAS**, no una lista plana de
+ * módulos y **tampoco** un nivel de sección: la sección es una en las 6
+ * (varianza cero ⇒ plantilla) y por eso el cuerpo empieza en la fila.
+ *
+ * `array` y no `blocks` por la misma razón que en el monográfico: no son una
+ * unión, tienen una sola forma, y un `blocks` de una variante es peor admin sin
+ * ganar nada.
+ */
+export const cuerpoKb: Field = {
+  name: "cuerpo",
+  type: "array",
+  required: true,
+  minRows: 1,
+  fields: CAMPOS_FILA_KB,
+  validate: validaReticulaKb,
+} as Field;

@@ -70,6 +70,100 @@ export const MONOGRAFICO = {
   filaPb: d({ px1440: 28.7969, px390: 30 }, "§1.5 · monográfico, 19 filas"),
 } as const;
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * `articulos-kb` (§2d.5) — y EL DEFECTO DE `mb`, QUE NO ES UN NÚMERO
+ *
+ * ── El enunciado que había, y por qué engaña ───────────────────────────────
+ * `CLAUDE.md` escribía el defecto de Divi como **«módulo `mb` 2.75 %
+ * (34.0469/30)»**, y calibró con él los arquetipos anteriores. Es correcto en
+ * ellos y **no es una constante**: `docs/research/articulos-kb/components/modulos.spec.md`
+ * §1.3 midió en KB **34.0469 en las 59 columnas `4_4` y 25.0625 en las 13
+ * estrechas, sin una excepción**, y ninguno de los dos es el 2.75 % de su
+ * propio contenedor.
+ *
+ * ── ⚠ Y LA SPEC LO ATRIBUYE A LA VARIABLE EQUIVOCADA — derivado en la misma
+ *    tanda contra un SEGUNDO arquetipo (F3-1 PASO 6, 2026-08-10) ────────────
+ * La spec concluye «función del TIPO DE COLUMNA» porque en KB **todas las filas
+ * miden 911.75**: dentro de KB, tipo de columna y ancho de fila están
+ * confundidos y sólo uno de los dos se puede ver. Añadiendo
+ * `medidas/mono-modulos-{1440,390}.json` (edar · petróleo · urbano, filas de
+ * **1238.39**) la confusión se deshace, y el resultado **invierte** el
+ * enunciado de la spec fuera de KB:
+ *
+ * | arquetipo | fila | columna | `mb` por defecto @1440 | n |
+ * |---|---|---|---|---|
+ * | SECTOR/MONOGRÁFICO | 1238.39 | `1_2·1_3·1_4·2_3·3_4·3_5` (**estrechas**) | **34.0469** | 35 |
+ * | SECTOR/MONOGRÁFICO | 1238.39 | `4_4` | **34.0469** | 11 |
+ * | `articulos-kb` | 911.75 | `1_2·1_3·2_3` (**estrechas**) | **25.0625** | 13 |
+ * | `articulos-kb` | 911.75 | `4_4` | **34.0469** | 59 |
+ *
+ * > **La variable que manda es el ANCHO DE LA FILA, no el tipo de columna.** Un
+ * > `1_2` de 585.13 en fila de 1238.39 lleva **34.0469**; un `2_3` de 591.11
+ * > —casi el mismo ancho de columna— en fila de 911.75 lleva **25.0625**.
+ * > Aplicar la spec literalmente fuera de KB pondría 25.0625 donde hay 34.0469
+ * > medido en 35 módulos: el mismo arreglo falso, con el signo cambiado.
+ *
+ * `25.0625` es el 2.75 % de la fila propia (911.75) y `34.0469` el 2.75 % de la
+ * fila del cascarón (1238.39). Las dos filas coinciden en una página de builder
+ * sin cascarón, **y por eso el enunciado como constante nunca falló**.
+ *
+ * ⚠ **La excepción `4_4` queda SIN PROBAR, y se replica sin explicarla:** por
+ * qué una columna `4_4` de una fila de 911.75 resuelve su 2.75 % contra 1238.39
+ * no se ha medido. Lo que se afirma es el número, no el mecanismo
+ * (`PENDIENTES-QA.md` §F3-1-SIN-PROBAR-KB).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Anchos de fila MEDIDOS. Fuera de estos dos no hay defecto derivable. */
+export const ANCHO_FILA_CASCARON = 1238.39;
+export const ANCHO_FILA_KB = 911.75;
+
+/**
+ * `margin-bottom` por defecto de un módulo, **@1440**. Tabla medida, no
+ * fórmula: este proyecto compara píxeles y `2.75 % × 1238.39` da `34.0557`, que
+ * no es lo que el original sirve.
+ *
+ * ⚠ Un ancho de fila no medido **TIRA**: §regla 6 — una ausencia se rechaza, no
+ * se sustituye por un valor benigno. Un `?? 34.0469` aquí sería exactamente el
+ * arreglo falso que esta tabla existe para impedir.
+ */
+export function mbPorDefecto(anchoFila: number, tipoColumna: string): { px1440: number; px390: number } {
+  const esCuatroCuartos = tipoColumna === "4_4";
+  if (anchoFila === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
+  if (anchoFila === ANCHO_FILA_KB)
+    return { px1440: esCuatroCuartos ? 34.0469 : 25.0625, px390: 30 };
+  throw new Error(
+    `mbPorDefecto: ancho de fila SIN MEDIR (${anchoFila}).\n` +
+      `  Los dos medidos son ${ANCHO_FILA_CASCARON} (SECTOR/MONOGRÁFICO, 46 módulos) y ` +
+      `${ANCHO_FILA_KB} (articulos-kb, 72 módulos).\n` +
+      `  El defecto de \`mb\` depende del ancho de la FILA, no del tipo de columna: ` +
+      `inventarlo para una fila nueva es el arreglo falso de CLAUDE.md §Estructura.`,
+  );
+}
+
+export const ARTICULO_KB = {
+  /** `pt`/`pb` de fila: 2 % de la fila propia. Omitido cuando coincide. */
+  filaPt: d({ px1440: 18.2344, px390: 30 }, "§2d.5 · cuerpo.spec.md §2 — 45 filas"),
+  filaPb: d({ px1440: 18.2344, px390: 30 }, "§2d.5 · cuerpo.spec.md §2 — 45 filas"),
+  /** `mt`/`mb` de fila: Divi no pone ninguno. Omitido cuando coincide. */
+  filaMt: d({ px1440: 0, px390: 0 }, "§2d.5 · cuerpo.spec.md §2"),
+  filaMb: d({ px1440: 0, px390: 0 }, "§2d.5 · cuerpo.spec.md §2"),
+  /** `mt`/`pb` de módulo: 0. Omitidos cuando coinciden. */
+  moduloMt: d({ px1440: 0, px390: 0 }, "§2d.5 · modulos.spec.md §1.3 — 121 de 143 a 0"),
+  moduloPb: d({ px1440: 0, px390: 0 }, "§2d.5 · modulos.spec.md §1.3 — 141 de 143 a 0"),
+  /** El de `mb` NO cabe aquí: es `mbPorDefecto(anchoFila, tipoColumna)`. */
+  anchoPct: d(100, "§2d.5 · 85 %×6 · 50 %×4 · 40 %×2, los 12 en `image`"),
+  /**
+   * La sección propia. `pt` es **CAMPO uniforme** —el default es 4 % y las 6
+   * escriben 0—, `pb` es el default. No hay hermanos, así que el test B **no
+   * puede pronunciarse**: se emite como plantilla DECLARANDO su silencio
+   * (`cuerpo.spec.md` §3).
+   */
+  seccionPt: d({ px1440: 0, px390: 0 }, "§2d.5 · cuerpo.spec.md §3 — CAMPO uniforme, test B mudo"),
+  seccionPb: d({ px1440: 36.4688, px390: 50 }, "§2d.5 · cuerpo.spec.md §3 — default 4 % de 911.75"),
+  /** SIN PROBAR e **inerte**: 1380 > 911.75 y > 335.39, así que no recorta. */
+  filaMaxWidth: d(1380, "§2d.5 · MEDICION.md §4 — uniforme en 39, sin test que lo pruebe"),
+} as const;
+
 /* ── GRUPO A (§2, §2c.1) ───────────────────────────────────────────────── */
 export const GRUPO_A = {
   /**
@@ -170,6 +264,7 @@ export const IMAGE_SIZES = d(
 export const DEFECTOS = {
   SECTOR,
   MONOGRAFICO,
+  ARTICULO_KB,
   GRUPO_A,
   CASO,
   DOCUMENTO_CIENTIFICO,

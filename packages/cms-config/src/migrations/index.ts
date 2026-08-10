@@ -9,6 +9,8 @@ import * as migration_20260808_232710_roles_f25 from './20260808_232710_roles_f2
 import * as migration_20260809_125718_f3_articulos_kb from './20260809_125718_f3_articulos_kb';
 import * as migration_20260809_135819_f3_texto_kb_rico from './20260809_135819_f3_texto_kb_rico';
 import * as migration_20260809_135857_f3_kb_retira_compartidos from './20260809_135857_f3_kb_retira_compartidos';
+import * as migration_20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos from './20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos';
+import * as migration_20260810_140630_f3_kb_reticula_filas_columnas from './20260810_140630_f3_kb_reticula_filas_columnas';
 
 export const migrations = [
   {
@@ -64,6 +66,16 @@ export const migrations = [
   {
     up: migration_20260809_135857_f3_kb_retira_compartidos.up,
     down: migration_20260809_135857_f3_kb_retira_compartidos.down,
-    name: '20260809_135857_f3_kb_retira_compartidos'
+    name: '20260809_135857_f3_kb_retira_compartidos',
+  },
+  {
+    up: migration_20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos.up,
+    down: migration_20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos.down,
+    name: '20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos',
+  },
+  {
+    up: migration_20260810_140630_f3_kb_reticula_filas_columnas.up,
+    down: migration_20260810_140630_f3_kb_reticula_filas_columnas.down,
+    name: '20260810_140630_f3_kb_reticula_filas_columnas'
   },
 ];
