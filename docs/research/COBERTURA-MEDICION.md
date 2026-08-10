@@ -50,6 +50,31 @@ recuento de «los dos lados» de §2 estaba mal en los dos sentidos — ver ahí
 > Orden correcto, y va en `ESQUEMA-CMS.md` §2d.4: **specs → … → lector**. Nunca
 > al revés.
 
+> ✅ **2026-08-10 · LAS SPECS YA EXISTEN, así que la precondición del lector está
+> levantada — y aun así el lector NO se escribe todavía. Con otra razón.**
+>
+> `docs/research/articulos-kb/` tiene su `MEDICION.md` y sus tres
+> `components/*.spec.md`, así que **las anclas ya no habría que inventarlas**:
+> están medidas. Lo que **sigue faltando** es la otra mitad, y es la que el
+> párrafo de arriba no separaba —
+>
+> > **un lector no se declara HECHO por tener anclas: se declara hecho por
+> > haberse EJERCITADO.** Y no hay contra qué ejercitarlo: las 6 rutas siguen sin
+> > emitirse, así que `c-cmp` no puede correrlo ni una vez. Declarar la familia
+> > hoy cambiaría «una guarda armada» por **un lector sin estrenar**, que es un
+> > cambio a peor: el primero se para solo y el segundo mide.
+>
+> Es la §regla 10 aplicada al propio instrumento —*una afirmación de completitud
+> se verifica ejercitándola, no releyéndola*— y por eso el lector va **en la misma
+> tanda que emita las rutas**, no antes. Lo que sí queda hecho y no hay que
+> repetir: **las anclas están escritas** (`cascaron.spec.md` §4 nombra además la
+> que NO sirve — el `h1` está oculto en las 6 y su `y` es 0 en los dos lados, o
+> sea **Δ0 por construcción** si alguien hereda el ancla del protocolo).
+>
+> **Y esto NO mueve una sola celda de la matriz**: `articulos-kb` sigue `·` en los
+> nueve ejes. Tener specs no es tener cobertura — la cobertura la da haber
+> comparado, y no se ha comparado nada del clon porque no hay clon.
+
 ## Por qué existe este documento
 
 En la tanda de la miga (A-QA1b) tres rutas —`/accesorios`, `/software-…`,

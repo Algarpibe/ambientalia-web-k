@@ -20,6 +20,27 @@
 > `docs/research/grupo-D/` no tiene `components/`—, y eso paró su construcción
 > (`ESQUEMA-CMS.md` §2d.4). **Un arquetipo con decisión de modelo escrita puede
 > seguir sin ser construible**, y hasta hoy no había dónde leerlo.
+>
+> ✅ **CORREGIDO 2026-08-10: `articulos-kb` pasa a ESPECIFICADO.** Sus specs
+> viven en **`docs/research/articulos-kb/`** —no en `grupo-D/`, que se queda como
+> el recon— con `MEDICION.md` y `components/{cascaron,cuerpo,modulos}.spec.md`,
+> sobre `medidas/kb-spec-{1440,390}.json` y `kb-tests.json`.
+>
+> **Y el tercer estado resultó tener un estado ANTES que nadie había nombrado:
+> dónde se puede medir.** Especificar es `getComputedStyle` por sección, y eso
+> necesita las hojas de estilo: de las **19** que el HTML de KB pide, la captura
+> congelada tiene **0**. La captura **renderiza igual** —trae 184 KB de CSS en
+> línea— así que una spec medida ahí sale **plausible y equivocada** (55 de 210
+> anclas mal). O sea:
+>
+> > **CENSADO → RECONOCIDO → *MEDIBLE* → ESPECIFICADO.** Y «medible» no es una
+> > propiedad del arquetipo: es una propiedad **del corpus que se tiene**, y se
+> > pierde en silencio cuando el corpus no trae lo que el instrumento necesita.
+>
+> Ficha: `PENDIENTES-QA.md` §F3-1-CSS-NO-CAPTURADO.
+>
+> ⚠ **Sigue sin ser CONSTRUIDO**, y no se lea «especificado» como avance de
+> construcción: es 1 de los 6 pasos del orden obligado de §2d.4.
 
 ## 0 · De dónde salen los números, y qué NO cubren
 

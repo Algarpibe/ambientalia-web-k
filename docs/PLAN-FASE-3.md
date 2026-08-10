@@ -103,6 +103,42 @@ se cuenta antes de hacerla, no después.
 > **specs → filas/columnas en el esquema → extractor+seed → plantilla → ruta →
 > sonda de dos lados**.
 
+> ✅ **PASO 1 DEL ORDEN OBLIGADO — HECHO (2026-08-10, tanda 44.ª).** El
+> arquetipo tiene fase de specs: `docs/research/articulos-kb/MEDICION.md` +
+> `components/{cascaron,cuerpo,modulos}.spec.md`, sobre `medidas/kb-spec-{1440,390}.json`
+> y `kb-tests.json` (**1519 pares nodo × propiedad**).
+>
+> **Y el PASO 0 que la tabla tampoco tenía: DÓNDE se miden.** `qa:kb-css`, de dos
+> lados: de las **19 hojas externas** que el HTML pide, la captura tiene **0**, y
+> aun así renderiza —184 KB de CSS en línea— así que sale **plausible y
+> equivocada** (55 de 210 anclas de estilo mal, `columna.width` **678.52 offline
+> contra 430.80**). **Las specs necesitan el sitio vivo**, y eso deja la frase de
+> F3-0 con su alcance: el original está fuera del camino crítico **para obtener
+> datos**, no **para medir el píxel**. Ficha: `PENDIENTES-QA.md`
+> §F3-1-CSS-NO-CAPTURADO.
+>
+> **Lo que las specs cambian del plan, y hay que leerlo antes de seguir:**
+>
+> 1. **el `cuerpo` necesita el nivel FILA con su `reparto`** — 45 filas (6
+>    ocultas), cuatro repartos, y `fila.reparto` sale **CAMPO por test B**;
+> 2. **un campo de ritmo de fila no es un número: es un número CON UNIDAD.** El
+>    editor escribió px absolutos (`7·14·17·19·20·25·−2·−21`) **y** porcentajes
+>    (`2·5·0.8·0.4 %`), y **a 1440 son el mismo número**. Los separa que el
+>    default de Divi cambia de unidad al apilar (`2 %` → `30px` plano) y un % del
+>    editor no;
+> 3. **el extractor NO puede leer `style=`**: hay **0** estilos en línea en las 45
+>    filas y los 149 módulos. Divi lo compiló a `et-core-unified`. La entrada del
+>    extractor son **las medidas congeladas** `kb-spec-{1440,390}.json` (que son
+>    la captura del estilo computado) más el HTML congelado para el verbatim;
+> 4. **el default de `mb` es una función del tipo de columna**, no una constante
+>    — `34.0469` en `4_4` y `25.0625` en columna estrecha, sin excepción en 72.
+>
+> Lo que **no** cambia: el escalón **no se disparó**. Las specs no destaparon
+> ninguna forma que el ESQUEMA no pueda expresar — el nivel de fila y una unidad
+> en el campo de ritmo caben en el vocabulario que ya hay, y **no contradicen
+> ninguna decisión escrita** (§1.5b deja `MonoModulo` intacto y `articulos-kb` ya
+> tiene unión propia).
+
 #### El coste de cobertura, CONTADO ANTES de gastarlo (2026-08-09)
 
 Derivado leyendo de dónde saca cada sonda su lista de rutas y cómo clasifica.
@@ -217,7 +253,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 | fase | estado |
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
-| **F3-1** · `articulos-kb` | 🟡 **escalón CERRADO (§2d.3); PASO 4 parado en DOS huecos nuevos (§2d.4)** — `cuerpo` plano vs 45 filas · **sin fase de SPECS** |
+| **F3-1** · `articulos-kb` | 🟡 **1 de 6 del orden obligado hecho (2026-08-10)** — el hueco de las SPECS **cerrado** (`research/articulos-kb/`, 1519 pares clasificados) y con él el PASO 0 que nadie había planteado (§F3-1-CSS-NO-CAPTURADO). Quedan los 5 pasos de construcción: esquema con filas/columnas → extractor+seed → plantilla → ruta → sonda de dos lados + Δ0 |
 | **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |

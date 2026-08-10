@@ -1450,6 +1450,97 @@ migración · **(3)** extractor + seed · **(4)** plantilla · **(5)** ruta ·
 **(6)** sonda de dos lados + Δ0. Saltarse (1) es construir contra una plantilla
 inventada.
 
+### ✅ 2d.5 · el PASO (1) HECHO, y lo que las specs le cambian al modelo (2026-08-10, tanda 44.ª)
+
+Specs: `docs/research/articulos-kb/MEDICION.md` + `components/{cascaron,cuerpo,modulos}.spec.md`.
+Medidas: `kb-css.json` (dónde se mide) · `kb-spec-{1440,390}.json` (el árbol) ·
+`kb-tests.json` (**1519 pares nodo × propiedad** clasificados).
+
+> **El escalón NO se disparó.** Las specs no destaparon ninguna forma que este
+> ESQUEMA no pueda expresar: el nivel de fila y una unidad en el campo de ritmo
+> caben en el vocabulario que ya hay, y **no contradicen ninguna decisión
+> escrita**. Lo que sigue son **precisiones con número**, no arbitrajes.
+
+#### El PASO 0 que el orden obligado tampoco tenía: DÓNDE se mide
+
+`qa:kb-css`, de dos lados. **De las 19 hojas externas que el HTML pide, la
+captura tiene 0** — y aun así renderiza, porque trae **184 KB de CSS en línea**.
+O sea que **sale plausible y equivocada**: 155 de 210 anclas de estilo coinciden
+y **55 no**, entre ellas las 9 del ritmo y la caja que fallan en las 6. La peor:
+`columna.width` **678.52 offline contra 430.80** en el original — sin las hojas
+la partición en columnas no ocurre, así que **una spec medida ahí habría afirmado
+con número que el cuerpo es plano**, que es el hueco 1 con respaldo falso.
+
+**Consecuencia declarada:** el original está fuera del camino crítico **para
+obtener datos** y **no lo está para medir el píxel**. Ficha:
+`PENDIENTES-QA.md` §F3-1-CSS-NO-CAPTURADO.
+
+#### Lo que el hueco 1 necesita, ahora con la medida
+
+| | medido |
+|---|---|
+| secciones propias | **1 por artículo**, 6/6 |
+| filas | **45** — **6 ocultas** (`d-none`, una por artículo, con el `<h1>Kunak Help Center</h1>` dentro) y **39 visibles** |
+| repartos | `4_4`×25 · `1_2+1_2`×7 · `1_3+2_3`×6 · `1_3×3`×1 |
+| `fila.reparto` | **CAMPO**, probado por test B (filas hermanas con repartos distintos) |
+| módulos | 149 · `text`×85 `blurb`×36 `image`×21 `button`×6 `gallery`×1 |
+
+> ⚠ **CORRIGE al recuento del hueco 1**, que decía `4_4`×31: eran **25 visibles
+> + 6 de las filas ocultas**. El número no cambia la decisión; el reparto entre
+> visibles y ocultas sí cambia lo que hay que emitir.
+
+#### Las CUATRO precisiones que el modelo tiene que absorber
+
+1. **Un campo de ritmo de fila no es un número: es un número CON UNIDAD.**
+   `ritmoModulo` (`campos/comunes.ts`) es `number`, o sea px. Medido en las
+   filas de KB, el editor escribió **px absolutos** (`7·14·17·19·20·25·−2·−21`)
+   **y porcentajes** (`2·5·0.8·0.4 %`). **A 1440 son el mismo número**; los
+   separa que el default de Divi **cambia de unidad al apilar** (`2 %` → `30px`
+   plano) y un porcentaje del editor no. Un campo `number` fuerza a elegir uno de
+   los dos y **el error es invisible a 1440**;
+2. **el default de `margin-bottom` es una FUNCIÓN DEL TIPO DE COLUMNA**, no una
+   constante: `34.0469` en las 59 columnas `4_4` y `25.0625` en las 13
+   estrechas, sin una excepción — y **ninguno de los dos es el 2.75 % de su
+   propio contenedor** (`34.0469` es el 2.75 % de 1238.39, la fila del
+   *cascarón*). Cablear una constante se equivoca en uno de los dos grupos por
+   ~9 px;
+3. **el extractor NO puede leer `style=`.** Hay **0** estilos en línea en las 45
+   filas y los 149 módulos: Divi lo compiló a `et-core-unified`. En SECTOR y
+   MONOGRÁFICO el valor del editor viajaba en el atributo. **La entrada del
+   extractor son las medidas congeladas `kb-spec-{1440,390}.json`** —que son la
+   captura del estilo computado, reproducible y commiteada— más el HTML
+   congelado para el verbatim. Los dos anchos hacen falta: **uno solo no
+   distingue px de %**;
+4. **`anchoPct` sí aplica, y sale MEDIDO**: `85 %`×6 · `50 %`×4 · `40 %`×2, los
+   12 en módulos `image`. **Ningún `text` tiene ancho < 100 %** de su columna, y
+   los `blurb` al 30 % son la retícula (`iconos`/`col-md-4`), campo que ya
+   existe — o sea que la geometría **confirma `reticula` por un camino
+   independiente de los nombres de clase**.
+
+#### Y una corrección de RAZONAMIENTO a `bloques/kb.ts`, con la conclusión intacta
+
+La cabecera de `MODULO_TEXTO_KB` deduce que no hace falta `lh` ni `anchoPct`
+**de que `estiloInline` es `null` en los 85**. La premisa es cierta y **el
+argumento no vale**: `estiloInline` es `null` en los **149** módulos, incluidos
+los 12 que sí llevan `anchoPct`. Lo que prueba la ausencia de `style=` es que
+**Divi compiló a CSS**, no que el editor no tocara nada.
+
+**La conclusión se sostiene, medida como toca** (`getComputedStyle`, no el
+atributo): ningún `text` tiene ancho < 100 % de su columna, y su interlínea sólo
+cambia junto con el tamaño de letra —o sea que es una **piel de párrafo dentro
+del HTML**, no un ajuste por módulo—. `lh` y `anchoPct` siguen sin hacer falta en
+`texto-kb`; lo que cambia es **por qué**.
+
+#### Lo que las specs añaden al cascarón
+
+**Varianza cero en las 6** en los 8 ejes medidos ⇒ plantilla entera, **cero
+campos** — confirma §2d. Y el dato que gobierna todos los porcentajes del cuerpo:
+**la capa propia vive dentro de una columna de 911.75**, no a 1440. Los defaults
+de Divi se resuelven contra ella (sección 4 % = **36.4688**, fila 2 % =
+**18.2344**, no los 57.5938/28.7969 del monográfico). **Escribir los números del
+monográfico en el comparador daría «no es el default» a todos los defaults**, y
+de ahí saldrían ~30 campos inventados.
+
 ## ✅ 2e · `productos` — UNA colección, medida y cerrada (2026-08-03)
 
 Acta `docs/research/productos/DECISION.md` · pre-registro `PRE-REGISTRO.md`

@@ -1,5 +1,179 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-1-CSS-NO-CAPTURADO · el original NO está fuera del camino crítico para MEDIR EL PÍXEL (2026-08-10)
+
+**Medido por `npm run qa:kb-css`, de dos lados, 6/6.** Acta:
+`docs/research/articulos-kb/MEDICION.md` §0.
+
+| | |
+|---|---|
+| hojas externas que el HTML de KB pide | **19 distintas** |
+| capturadas en el repo | **0** |
+| CSS **en línea** dentro del HTML | 8 bloques · **184 015 bytes** |
+| anclas de ESTILO distintas entre captura y original | **55 de 210** |
+| anclas de CAJA distintas | **36 de 36** |
+| árbol de módulos idéntico | **6/6** |
+
+> **La captura no sale desnuda: sale PLAUSIBLE.** 155 de 210 anclas de estilo
+> coinciden. Medir specs ahí **no habría dado ningún error**: habría dado una
+> spec con 55 valores inventados. El peor de todos: `columna.width` **678.52
+> offline contra 430.80 en el original** — sin las hojas externas la partición
+> en columnas no ocurre y todas salen de ancho completo, o sea **una spec que
+> afirma, con número, que el cuerpo de este arquetipo es plano**.
+
+**La frase de F3-0, con su alcance:** *el original está fuera del camino crítico
+para **obtener datos** —sembrar, censar, transcribir, auditar el texto— y **no lo
+está para medir el píxel**.* Es §regla 10 por tercera vez sobre la misma campaña:
+capturar las páginas no es capturar sus assets, ni sus imágenes ni sus hojas.
+
+**Salidas, con su coste:**
+
+| | qué costaría | qué compraría |
+|---|---|---|
+| **(a) dejarlo así** | 0 | las specs y los Δ0 de este arquetipo siguen necesitando el sitio vivo |
+| **(b) capturar el cascarón CSS** | las 19 hojas + las fuentes + reescritura de URL absolutas + **una campaña que pruebe que el render offline ≡ el vivo** | medición reproducible para siempre, también para los otros arquetipos |
+
+**Se elige (a) para esta tanda y se declara.** (b) no es una tarea: es una tanda
+con su propia verificación, y **hasta que exista y salga a Δ0 la captura no se
+puede usar para medir píxeles**. Anotarlo es lo que impide que la próxima tanda
+lo dé por hecho leyendo el titular de F3-0.
+
+⚠ **Y esto NO afecta a `qa:kb-recon`**, que mide **estructura** sobre la misma
+captura: el árbol de módulos sale **idéntico 6/6**. La captura sirve para el
+árbol y no para el estilo, y las dos frases son distintas.
+
+## ⚠ F3-1-SIN-PROBAR-KB · lo que las specs de `articulos-kb` dejan sin probar, nombrado (2026-08-10)
+
+De `medidas/kb-tests.json` — **1519 pares (nodo × propiedad)** clasificados.
+**No se cablea ninguno**: cablear lo no probado es exactamente el arreglo falso.
+
+| propiedad | par medido | por qué no está probada |
+|---|---|---|
+| `fila.maxWidth` | `1380px → 1380px` (39 filas) | el test A no vale (es caja) y el B calla. **Inerte**: 1380 > 911.75 y > 335.39, no recorta nada |
+| `columna.width` ×17 | `430.797 → 335.391` · `270.484 → 335.391` | columnas de filas **simétricas**: las hermanas miden lo mismo. **No añaden incógnita** — la propiedad que decide es `fila.reparto`, y ésa sí está probada |
+| `modulo.marginTop` ×1 | `-18px → 0px` | **un solo módulo** con margen superior negativo a 1440, sin hermano que lo contradiga |
+| **el mecanismo del default de `mb`** | `34.0469` en las 59 columnas `4_4` · `25.0625` en las 13 estrechas | **ninguno es el 2.75 % de su propio contenedor**: `34.0469` es el 2.75 % de **1238.39**, la fila del CASCARÓN. *Que* ocurre está medido sin excepción; *por qué*, no |
+| `seccion.paddingTop = 0` | `0px → 0px` en las 6 | es un desvío del default (4 %), así que alguien lo escribió — pero **hay UNA sección por página**, así que el test B **no puede pronunciarse**, y su silencio no es «no varía» |
+| `blurb.position_top` · `bg_layout_light` · la piel del `button` | 36/36 y 6/6 | **cero varianza no prueba plantilla**: prueba que en las instancias que existen nadie lo tocó |
+
+**El de `mb` es el que muerde al construir:** cablear «el default de `mb`» como
+una constante se equivoca en uno de los dos grupos por ~9 px, y en **59 módulos**
+si se elige mal. **El default es una función del tipo de columna, no un número.**
+
+**Límite declarado del instrumento:** `esDefault()` de `kb-tests.mjs` sólo
+reconoce la forma «% de la fila propia», así que los 59 nodos a `34.0469` salen
+**CAMPO por test B**. Eso no afirma que los escribiera un editor — afirma que el
+clasificador no tiene la regla. El veredicto de la propiedad (CAMPO) no depende
+de ellos.
+
+## ⚠ F3-1-CASCARON-KB-SIN-COMPARAR · la cabecera y el pie de KB nunca se han comparado contra el clon (2026-08-10)
+
+El cascarón de `articulos-kb` sale con **varianza cero en las 6 instancias** del
+ORIGINAL, así que es plantilla y no aporta campos. Lo que **no** está medido es
+si el clon lo sirve igual: `qa:c-cabecera` cubre **17 rutas y ninguna es de KB**.
+
+> Que sean «los mismos módulos `_tb_` que el resto del sitio» es una hipótesis
+> razonable, **no una medida** — y §COBERTURA ya cobró una vez que un arquetipo
+> nuevo **no hereda cobertura**.
+
+⚠ **Y la base en crudo de este arquetipo NO se puede tomar con el `h1`.** El
+protocolo dice *cada arquetipo nuevo mide su base EN CRUDO una vez*, y su ancla
+es el `h1`; aquí el `h1` dice `Kunak Help Center`, **está oculto en las 6** y su
+`y` es 0 en los dos lados — o sea **Δ0 por construcción**, que es el contenedor
+que absorbe en su forma más pura. **El ancla la tiene que elegir la tanda que
+construya**, y elegirla es parte del trabajo, no un detalle.
+
+## ⛔ DEFECTO-SUB-EDAR · el clon sirve `H2S` donde el original sirve `H₂S` — DEFECTO VIVO con dueño (2026-08-10)
+
+> **Se saca a ficha propia porque estaba dentro de §CLASE-INLINE-PRESTADO y ahí
+> se lee como pendiente de MODELO.** No lo es: **el clon pinta hoy otra cosa que
+> el original**, en dos rutas dadas por verificadas desde julio. El modelo es la
+> *causa*; esto es el *defecto*.
+
+**Rutas afectadas:** `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar`
+y `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas`.
+
+**Los dos lados, derivados y no recordados** (2026-08-10):
+
+| | |
+|---|---|
+| `<sub>` en el ORIGINAL | **41** en EDAR · **31** en petróleo (`grep -o '<sub>' corpus/fase-3-sectores/*.html`) |
+| `<sub>` que el clon emite en esas rutas | **0** |
+| cómo los representa `apps/web/src/lib/monografico.ts` | **8** aplanados a negrita (`{ b: "<dígito>" }`) · **25** como carácter Unicode (`₂`×16 · `₃`×5 · `₄`×4) |
+
+> **Y las dos representaciones conviven en el mismo fichero**, a 40 líneas de
+> distancia: `[{ b: "H" }, { b: "2" }, { b: "S…" }]` en la l. 585 y `"H₂S, CH₄,
+> CO₂"` en la 627. Ninguna de las dos es lo que sirve el original.
+
+**El clon SÍ sabe emitir `<sub>`** — lo hace en `monitor/InformacionProducto.tsx`,
+`SolucionProfesional.tsx`, `monitor/FaqAcordeon.tsx` y dentro del `campoHtml` de
+`arquetipo-a.ts`. **Lo que no puede es decirlo por `MonoInline`**, cuyo tipo es
+literalmente `string | (string | {b:string})[]` (`monografico.ts:165-179`): el
+único marcado que expresa es la negrita. Es §CLASE-INLINE-PRESTADO en su forma
+más pura — **el renderizador no tiene la culpa, la tiene el tipo**.
+
+**Por qué ninguna sonda lo ve:** todas comparan alturas, árbol de secciones y
+anclas. **Ninguna compara la ETIQUETA del texto en línea**, y aplanar un `<sub>`
+no cambia el nº de nodos de bloque. §El NIVEL al que se mide, con un contenedor
+nuevo: **el nivel de la marca en línea**, por debajo de lo que ve el árbol.
+
+⚠ **Y puede no ser sólo cosmético:** un `<sub>` tiene otro tamaño y otra línea
+base, así que **cambia el ancho de la línea**. Si en algún ancho ese `li` envuelve
+distinto, es un Δ de alto — el mismo mecanismo que el `<strong>` en línea
+(−30.59 a 390, invisible a 1440).
+
+**Dueño:** esta ficha. **Tanda propia, no cola de F3-1** — toca `apps/web` y por
+tanto **paga su Δ0**: `MonoInline` + el render de `MonoCuerpo.tsx` +
+`mapeo`/`vuelta` con **round-trip 63/63 verde antes y después**, y
+`clon-base` 31/31 sin mover un píxel.
+
+> ⚠ **NO se aplaza por «no se toca lo poblado».** Ensanchar un tipo es
+> **retrocompatible** y ese tabú **no aplica** (§2d.3). Se aplaza por el coste
+> del round-trip, que es una razón distinta y hay que decir cuál es.
+
+**Precondición para cerrarla:** el barrido de las otras `inline` del repo
+—derivado, no recordado— para no arreglar la instancia y dejar viva la clase por
+cuarta vez.
+
+## 📦 MIGRACION-DATO-MONOGRAFICO · las TRES improvisaciones dejan de ser irreparables al ensanchar el tipo (2026-08-10)
+
+> **La palabra importa y por eso la ficha existe: esto es MIGRACIÓN DE DATO, no
+> cambio de código.** Hoy las tres se leen como decisiones de transcripción que
+> habría que revisar a mano. **No lo son: son el mismo tipo corto rodeado tres
+> veces**, y en cuanto el tipo lo exprese, las tres se convierten en
+> **transformaciones mecánicas y verificables** del dato ya sembrado.
+
+Las tres, en `apps/web/src/lib/monografico.ts`, derivadas:
+
+| # | línea | lo que hace | lo que el original tiene | al ensanchar pasa a ser |
+|---|---|---|---|---|
+| 1 | **585-589** | `<sub>` **aplanado a negrita** — `[{b:"H"},{b:"2"},{b:"S…"}]`, **8 casos** | `<strong>H<sub>2</sub>S…</strong>` | `{b:"H"},{sub:"2"},{b:"S…"}` — reagrupable **por regla** |
+| 2 | **627 · 633 · 639 · 657 · 663 · 1037** | el mismo subíndice como **carácter Unicode**, `₂`×16 · `₃`×5 · `₄`×4 | `H<sub>2</sub>S` | `H` + `{sub:"2"}` + `S` — **sustitución de carácter a marca** |
+| 3 | **276 · 622** | `kind: "tabla"` **inventado** para el `<table>` que el tipo no admitía | un `<table>` del editor | el kind se conserva; lo que cambia es que sus celdas puedan llevar marca |
+
+> **Tres apaños DISTINTOS para la misma carencia es la firma de un tipo corto,
+> no de tres decisiones.** Y es lo que hace que la migración sea segura: no hay
+> que adivinar qué quiso decir quien transcribió — **el original está congelado**
+> (`corpus/fase-3-sectores/*.html`, 8/8) y la forma correcta se **deriva** de él.
+
+**Por qué NO se hace ahora:** depende del ensanchamiento de `MonoInline`, que es
+§DEFECTO-SUB-EDAR y es tanda propia. **El orden es obligado**: primero el tipo y
+su render con el round-trip verde, después la migración del dato.
+
+**Criterio de «hecho» cuando llegue:**
+
+1. **cero** caracteres Unicode de subíndice en `apps/web/src/lib/*.ts` (hoy: 25
+   en `monografico.ts`, 14 en `monitor.ts`, 9 en `nav.ts`, 1 en `casos.ts` —
+   **derivado**, y hay que decidir uno a uno si son marca o texto del original);
+2. **cero** `{ b: "<dígito>" }` (hoy 8);
+3. el nº de `<sub>` del HTML servido **iguala al del original**: 41 en EDAR y 31
+   en petróleo;
+4. `cms-roundtrip` **63/63** y `clon-base` **31/31** sin moverse.
+
+⚠ **El punto 1 no es un `sed`.** Un `₂` puede ser el original escribiendo un
+carácter Unicode, no una marca — y `monitor.ts` y `nav.ts` no son monográficos.
+**Se decide contra el original de cada ruta, no por búsqueda y reemplazo.**
+
 ## 🧨 CLASE-INLINE-PRESTADO · `inline` en campos cuyo tipo medido es RICO — 4 instancias, y una de ellas está VIVA en pantalla (2026-08-09)
 
 **La clase que destapó el escalón del texto**, generalizada para que no haga
@@ -26,42 +200,21 @@ etiqueta fuera de ese conjunto en los 24»* **y traía al lado la regla correcta
 de que la frase se escribiera. Es §sondas 9 —*un recuento afirmado de memoria se
 barre antes de usarse*— sobre una cabecera que citaba «los 24» sin recorrerlos.
 
-### ⛔ Lo que queda ABIERTO, y no es un pendiente de modelo: es un DEFECTO VIVO
+### ⛔ Lo que queda ABIERTO — promovido a ficha propia el 2026-08-10
 
-> **`/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` sirve
-> `H2S` donde el original sirve `H₂S`.** Y `NH₃`, `CH₄`, `SO₂`, `N₂O`, `O₃`,
-> `CO₂`: **4 de los 5 `<li>`** de ese módulo llevan `<sub>` (el 5.º es «COV» y
-> no tiene fórmula), y la página trae **41 `<sub>`** en total — derivado, no
-> recordado. No falta modelar: **el clon ya pinta
-> otra cosa**, hoy, en una página dada por verificada desde julio.
+> **La 2.ª instancia (el `MODULO_TEXTO` compartido) tiene su defecto VIVO en
+> pantalla, y desde el 2026-08-10 vive en su propia ficha: §DEFECTO-SUB-EDAR**,
+> arriba. Se sacó de aquí porque dentro de una ficha de CLASE se leía como
+> «pendiente de modelo», y no lo es: **el clon pinta hoy otra cosa que el
+> original** en dos rutas dadas por verificadas.
+>
+> La migración del dato que ese ensanchamiento habilita —las tres
+> improvisaciones de `monografico.ts`— es **§MIGRACION-DATO-MONOGRAFICO**,
+> también arriba, y es **migración de DATO, no cambio de código**.
 
-**Evidencia, los dos lados:** original en
-`corpus/fase-3-sectores/monitorizacion-ambiental-y-control-de-olores-en-edar.html`
-(`<strong>H<sub>2</sub>S (sulfuro de hidrógeno).</strong>`) · clon en
-`apps/web/src/lib/monografico.ts:585` (`[{b:"H"},{b:"2"},{b:"S (sulfuro…"}]`).
-
-**Por qué ninguna sonda lo vio:** todas comparan alturas, árbol de secciones y
-anclas. **Ninguna compara la ETIQUETA del texto en línea**, y el aplanado no
-cambia el nº de nodos de bloque. Es §El NIVEL al que se mide con un contenedor
-nuevo: **el nivel de la marca en línea**, por debajo de lo que mide el árbol.
-
-⚠ **Y puede no ser sólo cosmético:** un `<sub>` tiene otro tamaño y otra línea
-base, así que **cambia el ancho de la línea**. Si en algún ancho ese `li`
-envuelve distinto, es un Δ de alto — el mismo mecanismo que el `<strong>` en
-línea (−30.59 a 390, invisible a 1440).
-
-**Lo que cuesta arreglarlo, contado antes:** `MonoInline` (el tipo), el render de
-`MonoCuerpo.tsx`, y `mapeo`/`vuelta` con su round-trip 63/63 **verde antes y
-después**. Es una tanda propia.
-
-> ⚠ **Y NO se aplaza por «no se toca lo poblado».** Ensanchar es
-> **retrocompatible** —el dato sembrado sigue siendo válido si el tipo acepta
-> más— así que ese tabú **no aplica** (§2d.3). Se aplaza por el coste del
-> round-trip, que es una razón distinta y hay que decir cuál es.
-
-**Dueño:** esta ficha. **Precondición para cerrarla:** el barrido de las otras
-`inline` del repo —derivado, no recordado— para no arreglar la instancia y
-dejar viva la clase por cuarta vez.
+**Lo que sigue siendo de esta ficha (la CLASE):** la precondición de cierre —el
+barrido de las otras `inline` del repo, **derivado y no recordado**— para no
+arreglar la instancia y dejar viva la clase por cuarta vez.
 
 ## ✅ F3-1-ESCALON-TEXTO · el módulo de texto compartido NO expresa lo que trae el corpus de KB — CERRADO SIN ARBITRAR (2026-08-09)
 

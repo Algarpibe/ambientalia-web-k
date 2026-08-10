@@ -1,4 +1,119 @@
-# HANDOFF — el escalón CERRADO SIN ARBITRAR, y `articulos-kb` parada un escalón más arriba
+# HANDOFF — `articulos-kb` tiene SPECS, y el PASO 0 que nadie había planteado dice dónde se pueden medir
+
+> ⚠ **Tanda 2026-08-10 (44.ª).** PASOS 0 · 1 · 2 · 5 · 6 completos. El **PASO 3
+> (la construcción) NO se hizo**, y el **PASO 4 (el lector de `c-cmp`) se
+> contestó otra vez con un NO, con razón nueva**. Specs:
+> `docs/research/articulos-kb/`. Registro: `ESQUEMA-CMS.md` §2d.5 ·
+> `PLAN-FASE-3.md` §F3-1 · `PENDIENTES-QA.md` (5 fichas nuevas).
+
+## 0 · Los cinco titulares
+
+> **1 · LA CAPTURA NO SIRVE PARA MEDIR SPECS, y no porque salga desnuda: porque
+> sale PLAUSIBLE.** De las **19 hojas externas** que el HTML de KB pide, la
+> captura congelada tiene **0** — y aun así renderiza, porque trae **184 KB de
+> CSS en línea**. Resultado medido de dos lados (`qa:kb-css`, 6/6): **155 de 210
+> anclas de estilo coinciden y 55 no**. Medir ahí no habría dado ningún error;
+> habría dado **una spec con 55 valores inventados**. El peor:
+> `columna.width` **678.52 offline contra 430.80** en el original — sin las hojas
+> la partición en columnas no ocurre y todas salen de ancho completo, o sea **una
+> spec que afirma con número que el cuerpo es plano**, que es justo el defecto
+> que paró el PASO 4.
+>
+> **2 · Y de ahí la frase de F3-0 con su alcance, por tercera vez sobre la misma
+> campaña.** El original está fuera del camino crítico **para obtener datos**
+> —sembrar, censar, transcribir, auditar el texto— y **NO lo está para medir el
+> píxel**. Capturar las páginas no es capturar sus assets: primero fueron las 56
+> imágenes, luego los cuerpos de SECTOR/MONOGRÁFICO, ahora las hojas de estilo.
+>
+> **3 · Las specs existen y el cuerpo NO es plano, con test detrás.** 1 sección
+> propia por artículo (6/6) · **45 filas**, 6 ocultas (`d-none`, con el
+> `<h1>Kunak Help Center</h1>` dentro — el `h1` de estas páginas está OCULTO en
+> las 6) y 39 visibles con **cuatro repartos**: `4_4`×25 · `1_2+1_2`×7 ·
+> `1_3+2_3`×6 · `1_3×3`×1. `fila.reparto` sale **CAMPO por test B**. Reconcilia
+> con el `4_4`×31 del acta anterior: **25 visibles + 6 ocultas**.
+>
+> **4 · Los dos tests necesitaron CUATRO correcciones, y tres salieron de que la
+> salida se contradecía a sí misma.** (a) el veredicto se da **por PROPIEDAD, no
+> por nodo** —`fila.paddingTop` salía CAMPO×17 y PLANTILLA×13 con **el mismo par
+> de valores**—; (b) el test B tiene un **falso positivo no escrito**, la REGLA
+> POSICIONAL (`columna.marginRight` = 50.1406 en toda no-última y 0 en toda
+> última, en las 60); (c) el test A **no se aplica en píxeles a la caja** pero
+> **sí en RAZÓN contra el padre**, y así sale `anchoPct` medido (85 %×6 · 50 %×4 ·
+> 40 %×2) en vez de inventado; (d) **`0px` es el caso degenerado del test A** —es
+> a la vez «escribió 0» y «no hay nada»— y se discrimina con el default.
+>
+> **5 · Y el hallazgo que habría costado 59 módulos: EL DEFAULT DE `mb` NO ES UN
+> NÚMERO, ES UNA FUNCIÓN DEL TIPO DE COLUMNA.** `34.0469` en las 59 columnas
+> `4_4` y `25.0625` en las 13 estrechas, **sin una excepción** — y ninguno de los
+> dos es el 2.75 % de su propio contenedor (`34.0469` es el 2.75 % de **1238.39**,
+> la fila del *cascarón*). Cablearlo como constante se equivoca en uno de los dos
+> grupos por ~9 px.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda / medida | resultado |
+|---|---|
+| **`qa:kb-css`** ← nueva | **6/6 pares captura-vs-original** · 19 hojas externas · **0 capturadas** · 55/210 anclas de estilo distintas · 36/36 de caja · árbol **6/6 idéntico** |
+| **`qa:kb-spec [1440\|390]`** ← nueva | **6/6 artículos** a cada ancho · 0 selectores muertos · el árbol entero con `getComputedStyle` |
+| **`qa:kb-tests`** ← nueva | **1519 pares (nodo × propiedad)** clasificados · 18 SIN PROBAR, nombrados uno a uno |
+| `qa:lib` | **119 sondas** COMPILAN y declaran su mínimo · 0 no conformes |
+
+**Corrida conservada como artefacto (regla 7):**
+`kb-css-SONDA-ANCLA-EN-FILA-OCULTA.json` — la primera versión anclaba en
+`.et_pb_row` a secas, que en las 6 páginas es `et_pb_row_0` con `d-none`, o sea
+**comparaba una fila oculta contra una fila oculta que se ve**. Es el aviso de
+*«antes de creerte un pleno, reconstruye un caso a mano»* cobrado en la sonda que
+estrena el PASO 0.
+
+## 2 · Lo siguiente, por orden — y el orden NO es de valor, es de dependencia
+
+**F3-1 PASO 4 sigue abierto: 1 de sus 6 pasos está hecho** (§2d.4). Los cinco
+que quedan, en el único orden posible:
+
+1. **filas/columnas en el esquema, con su migración.** `articulos-kb.cuerpo` es
+   `blocks` plano y necesita el nivel FILA con `reparto`. **La colección está
+   VACÍA**, así que no hay dato que migrar — sólo esquema;
+2. **extractor + seed.** ⚠ **No puede leer `style=`**: hay **0** estilos en línea
+   en las 45 filas y los 149 módulos (Divi lo compiló a `et-core-unified`). Su
+   entrada son **las medidas congeladas `kb-spec-{1440,390}.json`** —la captura
+   del estilo computado, reproducible y commiteada— más el HTML congelado para el
+   verbatim. **Los dos anchos hacen falta: uno solo no distingue px de %**;
+3. **plantilla** contra `components/*.spec.md`;
+4. **ruta** (dos prefijos; `prefijo` ya es campo);
+5. **sonda de dos lados + Δ0 + el lector de `c-cmp`**, que van juntos.
+
+Después: **F3-2 · listados y hubs** (35 + 107, ya capturados, bloqueada por
+`P-LH-C6`) · **§DEFECTO-SUB-EDAR** (tanda propia, paga su Δ0) · operación sin
+cambios (`Dockerfile` sin verificar, `PREVIEW_SECRETO`).
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No medir specs, ni Δ0, ni nada de píxeles contra la captura.** Renderiza y
+  **miente en 55 de 210 anclas**. Sirve para la ESTRUCTURA (el árbol sale
+  idéntico 6/6, y por eso `qa:kb-recon` es válida) y **no para el estilo**.
+- **No cablear «el default de `mb`» como una constante.** Es una función del
+  tipo de columna, medida sin excepción en 72 módulos.
+- **No escribir el campo de ritmo de fila como un `number`.** El editor escribió
+  px absolutos **y** porcentajes (`2·5·0.8·0.4 %`), y **a 1440 son el mismo
+  número**. Los separa que el default de Divi cambia de unidad al apilar
+  (`2 %` → `30px` plano) y un % del editor no.
+- **No declarar la familia de `articulos-kb` en `c-cmp` todavía**, y la razón ha
+  CAMBIADO: ya no es que falten anclas —las specs las tienen— sino que **no hay
+  contra qué ejercitar el lector**, porque las 6 rutas siguen sin emitirse. Un
+  lector sin estrenar es peor que una guarda armada. Va **en la misma tanda que
+  emita las rutas**.
+- **No usar el `h1` como base en crudo de este arquetipo.** Está **oculto en las
+  6** y su `y` es 0 en los dos lados: heredar el ancla del protocolo da **Δ0 por
+  construcción**. Elegir el ancla es parte del trabajo.
+- **No leer «`articulos-kb` está ESPECIFICADO» como avance de construcción.**
+  Es 1 de 6 pasos, y su cobertura sigue `·` en los nueve ejes.
+- **No dar por buena la cabecera y el pie de KB.** Salen con varianza cero en el
+  ORIGINAL, pero **nunca se han comparado contra el clon** — `c-cabecera` cubre
+  17 rutas y ninguna es de KB (§F3-1-CASCARON-KB-SIN-COMPARAR).
+
+---
+
+# (anterior) HANDOFF — el escalón CERRADO SIN ARBITRAR, y `articulos-kb` parada un escalón más arriba
 
 > ⚠ **Tanda 2026-08-09 (43.ª).** PASOS 1 · 2 · 3 · 5 · 6 · 7 completos. El
 > **PASO 4 paró en dos huecos que ninguna salida costeada contemplaba**, que era
