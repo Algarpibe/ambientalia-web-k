@@ -1,5 +1,97 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔⛔ ESCALÓN F3-2 (2.º) · **80 de las 117 páginas de `L1` sirven una BARRA LATERAL de 10 widgets, y `D1` dice que entre variantes sólo cambia la tarjeta** (2026-08-11)
+
+**Salió en el PASO 2 —la fase de specs—, y otra vez antes de escribir una línea
+de plantilla.** Al medir la retícula del cuerpo por primera vez (`qa:lh-spec`,
+el píxel que `LH-SP2` decía que no estaba medido):
+
+| forma | fila del listado | ancho de la columna de contenido | tarjeta |
+|---|---|---|---|
+| **L1-blog · L1-etiqueta** | **`3_4 + 1_4`** | **911.75** + barra de **258.5** | 277.2 |
+| **L1-resources** (padre e hijo) | **`4_4`** | **1238.39**, sin barra | 386.08 |
+
+Y no son dos instancias: derivado sobre la **población entera** de la captura de
+F3-0 (`qa:lh-barra`, negativo 3/3, `medidas/lh-barra.json`):
+
+| familia | documentos | con barra lateral en el cuerpo | con columna `3_4` |
+|---|---|---|---|
+| **L1-blog** | 17 | **17** | 17 |
+| **L1-etiqueta** | 63 | **63** | 63 |
+| **L1-resources** | **37** | **0** | 0 |
+| L2 · L3 · L4 · L5 | 24 | 0 | 0 |
+
+**Reparto mixto dentro de una familia: CERO.** O sea que en régimen plantillado
+la lectura es la misma que la de la configuración de tarjeta —varianza 0 dentro,
+distinta entre— y por tanto **distingue variantes de plantilla**, no campos. El
+recuento de arquetipos **no cambia**.
+
+### Por qué es ESCALÓN y no un detalle de spec
+
+`DECISIONES.md` §D1 no se queda en «L1 es uno con tres variantes»; **dice de qué
+son las variantes**:
+
+> *«lo que difiere entre familias es la **configuración del módulo de
+> tarjetas**, uniforme al 100 % dentro de cada familia»*
+
+Eso, medido, es **falso por defecto**. Lo que difiere además es:
+
+1. **la RETÍCULA del cuerpo** — `3_4+1_4` contra `4_4`, y con ella el nº de
+   filas de la 2.ª sección (2 contra 3);
+2. **una superficie de contenido entera que ningún documento del repo modela**:
+   la barra lateral trae **10 widgets** con **una sola firma en los 80
+   documentos** — `search` · 6 × `text` · 2 × `custom_html`, con los títulos
+   **«Buscar» · «Categorías» · «¡Suscríbete a nuestra newsletter!»**.
+
+**`D3` enumera lo que los listados le EXIGEN al grupo A** —título, slug, fecha,
+imagen, extracto, tres taxonomías, autor— y **la barra lateral no está**. Un
+buscador, una lista de categorías y un formulario de newsletter no son «la
+configuración de la tarjeta».
+
+### Y la razón de que nadie lo viera es la de siempre: EL NIVEL AL QUE SE MIDIÓ
+
+`lh-censo` midió **el primer nivel de secciones** y dio *«6 secciones y 2
+`_tb_body` en 23/23, sin una excepción»*. **Eso sigue siendo verdad.** La barra
+lateral **no vive en ese nivel**: vive en una **fila** dentro de la 2.ª sección.
+Es §La causa común de `CLAUDE.md` con un contenedor nuevo — **el recuento de
+secciones**, que tenía holgura de sobra para esconder una columna entera y no
+movió ni un dígito.
+
+⚠ **Y hay un instrumento que además lo tapó activamente:** la firma de
+`lh-serie` marca `·sb` (sidebar) en **las 149**, porque busca
+`et_pb_widget_area` **en el documento entero** — y el pie también tiene widgets.
+Es el **pleno** de §sondas 4 (*un patrón que casa en TODAS no mide nada*), y
+convertía justo esta diferencia en una constante. `lh-barra` lo evita exigiendo
+el sufijo `_tb_body` y **declarando máximo además de mínimo**: con
+`SABOTAJE=patron-ubicuo` sale por UBICUO, no por dato.
+
+### Lo que decide, y por eso F3-2 no construye hoy
+
+| pregunta | por qué no se puede improvisar |
+|---|---|
+| **¿la barra lateral entra en la entrega de F3-2?** | son 80 de 117 páginas de `L1`. Dejarla fuera no es «un fleco»: es **un cuarto del ancho** y toda la columna derecha |
+| **¿qué es cada widget en el modelo?** | «Categorías» **consume la taxonomía `category`** — que es exactamente la condición de reapertura que `D3` dejó escrita («no se añade la relación hasta que un listado la consuma»). El buscador y la newsletter son **integraciones**, no contenido |
+| **¿es plantilla o contenido?** | lo medido dice **plantilla** (1 firma en 80). Pero está medido sobre el **marcado**, no sobre lo que el editor puede tocar en WordPress |
+| **¿contra qué contenedor resuelven los defaults de ritmo?** | **911.75 en blog/etiqueta y 1238.39 en resources** — literalmente los dos números del ⚠⚠ de `CLAUDE.md` (§Test A). Construir L1 con un solo contenedor mete el error que ese aviso describe, en 80 páginas |
+
+**Evidencia congelada:** `medidas/lh-barra.json` (+ sus 3 negativos) ·
+`medidas/lh-spec-1440.json` · `medidas/lh-spec-390.json`.
+
+### Un segundo hallazgo de la misma corrida, más pequeño y también sin ficha
+
+**`/es/glosario/` y `/es/preguntas-frecuentes/` NO tienen `<h1>`.** Cero, medido
+en vivo y derivado del HTML capturado. `D4` afirma *«los 35 `h1` = nombre del
+término/índice»*, y `lh-censo` guardó `h1: ""` para las dos — que es **«lo
+encontré vacío» y «no lo encontré» colapsados en el mismo valor**, la regla del
+cero otra vez.
+
+**Consecuencia operativa inmediata, y es de método:** el protocolo de este
+proyecto lee el cuerpo **restando la `y` del `h1`**. En `L2` **no hay ancla**, así
+que su base tiene que ser otra cosa —`lh-spec` congela ya la de la primera
+tarjeta— y eso hay que decidirlo antes de comparar nada de `L2`.
+
+---
+
 ## 🟡 F3-2-SEO-PAGINAS-VACIAS · las 55 páginas vacías, ¿son deuda de SEO del SITIO? — pregunta de PRODUCTO, abierta a propósito (2026-08-11)
 
 **Ficha abierta por `D2.5`, y con el encuadre puesto para que ni se pierda ni se

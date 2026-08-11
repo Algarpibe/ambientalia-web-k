@@ -163,7 +163,9 @@
     "qa:pieles": "node scripts/qa/pieles-modulo.mjs",
     "qa:kb-clases": "node scripts/qa/kb-clases.mjs",
     "qa:kb-cmp": "node scripts/qa/kb-cmp.mjs",
-    "qa:kb-cmp-vivo": "node scripts/qa/kb-cmp.mjs --vivo"
+    "qa:kb-cmp-vivo": "node scripts/qa/kb-cmp.mjs --vivo",
+    "qa:lh-spec": "node scripts/qa/lh-spec.mjs",
+    "qa:lh-barra": "node scripts/qa/lh-barra.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

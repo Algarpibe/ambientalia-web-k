@@ -203,7 +203,32 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 
 ## F3-2 · listados y hubs — LISTADO-B y sus hermanos
 
-> ⛔⛔ **PARADA DE ESCALÓN (2026-08-11), levantada en el PASO 2 y antes de
+> ✅ **EL 1.er ESCALÓN ESTÁ CERRADO (2026-08-11, tarde): `D2.5` · REPLICAR TAL
+> CUAL**, firmada por el propietario. El clon emite las **55 rutas vacías** con
+> 200, como el original — la única de las tres salidas que **no cambia el
+> sitio**; `noindex` y 404 son decisiones de producto y se llevan aparte
+> (`PENDIENTES-QA.md` §F3-2-SEO-PAGINAS-VACIAS). Con eso la entrega deja de ser
+> un rango: **142 rutas** (35 índices + 107 de paginación), derivadas de la
+> decisión y re-medidas en vivo ese día. `D2.4` no se reabre: **el canonical
+> separa las dos formas, 7/7 y 55/55**.
+>
+> ⛔⛔ **PERO HAY UN 2.º ESCALÓN, y lo levantó la fase de specs: `L1` tiene DOS
+> retículas de cuerpo, no una.** `3_4 + 1_4` con **barra lateral de 10 widgets**
+> en blog y etiqueta (**80 de 80 documentos**), `4_4` sin barra en resources
+> (**0 de 37**) — y con ellas dos contenedores distintos, **911.75 y 1238.39**,
+> que son literalmente los dos del `⚠⚠` de `CLAUDE.md` §Test A. `D1` afirma que
+> entre familias sólo cambia la configuración de la tarjeta, y `D3` no lista la
+> barra lateral, cuyo widget «Categorías» **consume la taxonomía `category`**.
+> **F3-2 no construye hasta decidirlo.** Ficha: `PENDIENTES-QA.md` §ESCALÓN F3-2
+> (2.º). Congeladas: `medidas/lh-barra.json` · `medidas/lh-spec-{1440,390}.json`.
+>
+> ✅ **Y la precondición de abajo queda LEVANTADA a medias:** ya hay fase de
+> specs —`qa:lh-spec` contra el original vivo, 13 páginas × 2 anchos— con
+> `components/README.md` y `components/listado-b.spec.md` escritas. **Las specs
+> de `L2` · `L3` · `L4` · `L5` están MEDIDAS Y CONGELADAS, sin redactar**: lo
+> que falta es la prosa, no volver a pegarle al original.
+>
+> ⬇ **(histórico) PARADA DE ESCALÓN (2026-08-11, mañana)**, levantada en el PASO 2 y antes de
 > construir nada: la entrega «107 rutas `/page/N/`» está mal contada, y no por
 > poco.** El original sirve **55 páginas que responden 200, se declaran
 > canónicas de sí mismas y no listan ni una entrada** (`/es/blog/page/9/`…`17/`,

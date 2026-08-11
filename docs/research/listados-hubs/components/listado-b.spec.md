@@ -1,0 +1,156 @@
+# SPEC · `LISTADO-B` — el archivo plantillado (`L1`, 23 páginas + 107 de paginación)
+
+> **2026-08-11.** Medido con `npm run qa:lh-spec` contra **kunakair.com vivo**, a
+> **1440 y 390**, sobre **7 páginas de `L1`** (3 canónicas + 4 segundas
+> instancias). Congelado: `medidas/lh-spec-1440.json` · `medidas/lh-spec-390.json`
+> · `medidas/lh-barra.json`.
+>
+> **Régimen: PLANTILLADO** (`et-tb-has-body`, cuerpo en 2 secciones `_tb_body`).
+> No existe un editor por instancia ⇒ el discriminador es la **varianza ENTRE
+> INSTANCIAS**, y un px absoluto significa **plantilla**, no campo. Aplicar aquí
+> el test A del builder daría la respuesta invertida.
+
+## ⛔ ANTES DE NADA: esta spec NO se puede implementar todavía
+
+**`L1` no tiene una retícula de cuerpo: tiene dos**, y `DECISIONES.md` §D1
+afirma lo contrario. Ficha completa en `PENDIENTES-QA.md` §ESCALÓN F3-2 (2.º).
+Lo que sigue está medido y es correcto; **lo que falta es la decisión de qué se
+hace con la columna que sobra.**
+
+| | `L1-blog` · `L1-etiqueta` | `L1-resources` (padre e hijo) |
+|---|---|---|
+| fila del listado | **`3_4 + 1_4`** | **`4_4`** |
+| columna de contenido @1440 | **911.75** | **1238.39** |
+| barra lateral | **258.5**, con **10 widgets** | **no hay** |
+| filas de la 2.ª sección `_tb_body` | **2** | **3** |
+| documentos (población entera) | **80 de 80** | **0 de 37** |
+
+⚠ **Y ojo al par 911.75 / 1238.39: son literalmente los dos contenedores del
+`⚠⚠` de `CLAUDE.md` §Test A.** Los defaults de ritmo de Divi son **porcentajes
+del contenedor**, así que `sección pt/pb 4 %`, `fila pt/pb 2 %` y `módulo mb
+2.75 %` **valen distinto en las dos variantes**. Construir `L1` con un solo
+contenedor mete ese error en 80 páginas — que es exactamente el fallo que ese
+aviso describe, cobrado por segunda vez.
+
+## 1 · El cascarón y la base
+
+**Medido EN CRUDO** (`y` absoluta del `h1`, sin restar nada), que es la
+obligación de §Notas de método para todo arquetipo nuevo:
+
+| | @1440 | @390 |
+|---|---|---|
+| `h1.y` — blog · etiqueta · resources-padre | **332.59** en las tres | **236.58** en las tres |
+| `h1.y` — resources-**hijo** | **332.59** | **262.58** ⚠ **+26** |
+| cabecera + `_tb_header` | 1 sección | 1 sección |
+| pie `_tb_footer` | 3 secciones | 3 secciones |
+| capas del `<body>` | `tb_header 1 · tb_body 2 · tb_footer 3` — **varianza 0 en las 7 páginas** | ídem |
+
+> ⚠ **Los +26 de `resources-hijo` a 390 son un hallazgo, no un fleco.** A 1440
+> las cuatro familias comparten base exacta y **a 390 una se separa**. Es la
+> **regla espejo** de `CLAUDE.md`: un Δ que aparece en un solo ancho es un
+> contenedor que en el otro lo tapaba. **No está diagnosticado** — se ficha, y
+> el sitio donde mirarlo es la miga (los hijos cuelgan un nivel más).
+
+`h1`: `Manrope 800`, **50 px / 60** a 1440 y **35 px / 42** a 390,
+`letter-spacing −0.5px`, `#333`, alineado a la izquierda. **Varianza 0 en las 7.**
+
+## 2 · La retícula del listado
+
+| | @1440 blog·etiqueta | @1440 resources | @390 (las tres) |
+|---|---|---|---|
+| columnas | **3** | **3** | **1 — apiladas** |
+| ancho de tarjeta | **277.2** | **386.08** | **335.39** |
+| hueco horizontal | **40** | **40** (39.99) | — |
+| hueco vertical | **40** | **39.99** | **32** |
+| contenedor del listado | 951.75 | 1278.39 | 335.39 |
+| ritmo de la tarjeta | `margin-right 40 · margin-bottom 40` | ídem | `margin-right 0 · margin-bottom 32` |
+
+`3 × 277.2 + 2 × 40 = 911.6` contra la columna de **911.75**, y
+`3 × 386.08 + 2 × 40 = 1238.24` contra la fila de **1238.39**: la rejilla llena
+su contenedor en las dos variantes. **El hueco de 40 es el mismo**; lo que cambia
+es el contenedor.
+
+## 3 · La tarjeta, variante a variante
+
+Todas las cifras son de la **primera tarjeta**; la sonda congela las tres
+primeras. Tipografía: `Manrope, sans-serif` en todo.
+
+| | `L1-etiqueta` | `L1-resources` | `L1-blog` |
+|---|---|---|---|
+| **media** | `.entry-featured-image-url img` · **277.2 × 187.11** @1440 | ídem · **440 × 293.17** ⚠ | **la 1.ª no tiene** (ya visto en §7b) |
+| **título** | `h2` · **20 px / 27** · `−0.5px` · `#333` | `h2` · **20 px / 27** | `h2` · **23 px / 28.75** ⚠ |
+| `padding-bottom` del título | **10** | **0** | **10** |
+| **fecha** | `.published` · **13.5 px / 20.925** · `#333` · «May 25, 2026» | **no** | **no** |
+| **categoría** | **13.5 px / 20.925** · **`#666`** · → `/es/categoria/articulos/` | **no** | **13.5 / 20.925** · `#666` · → `/es/categoria/noticias/` |
+| **extracto** | **15 px / 23.25** · `#333` · **267 c** | **no** | ⚠ **sí, 300 c** |
+| alto de tarjeta @1440 | 548.03 | 430.02 | 653.53 |
+
+⚠ **Dos celdas contradicen a `PAGE_TOPOLOGY.md` §7b, y no se resuelven aquí.**
+Aquella tabla da `L1-blog` **sin extracto** y con el mismo titular que las
+demás; lo medido ahora da **extracto de 300 c** y **titular de 23 px**. Las dos
+medidas son buenas en su instrumento —§7b leyó el HTML servido, esto lee el DOM
+renderizado con las hojas externas— así que **la discrepancia es el dato**: o la
+primera tarjeta de `/es/blog/` es una tarjeta destacada con piel propia, o §7b
+midió otra cosa. **Se ficha, no se elige** — y hasta resolverlo, la piel de la
+tarjeta de blog está **SIN PROBAR**.
+
+⚠ **Y la media de `resources` mide 440 dentro de una tarjeta de 386.08**: la
+imagen **desborda** su caja y la recorta el envoltorio. Es coherente con el zoom
+de `scale(1.1)` medido en `BEHAVIORS.md` —hace falta margen para ampliar sin
+hueco— pero **el recorte hay que construirlo**, no sale solo.
+
+## 4 · El paginador — tres pieles, una por variante
+
+Confirmado por una vía independiente de la de `BEHAVIORS.md` §1b (que las censó
+sobre el corpus): aquí salen del **DOM renderizado**.
+
+| variante | piel | selector | alto @1440 |
+|---|---|---|---|
+| `L1-blog` | **A** | `div.wp-pagenavi[role="pagination"]` | **42** |
+| `L1-etiqueta` · **`L2`** | **B** | `div.wp-pagenavi[role="navigation"]` | **40** |
+| `L1-resources` | **C** | `nav.kunak-pagination` | **42** |
+| `L3` | **ninguna** | — · el único `/page/2/` está en el `<link rel=next>` del `<head>` | — |
+
+El paginador ocupa **el ancho completo de la columna de contenido** (911.75 /
+1238.39 @1440; 335.39 @390) y va **sin margen propio** en las tres pieles.
+
+> **Y navega por enlace real, no por AJAX** — `defaultPrevented: false` en las 5
+> formas con control (`BEHAVIORS.md` §1b). Es lo que `D2.3` necesitaba.
+
+⚠ **La instancia con una sola página de contenido NO sirve paginador** (`piel:
+ninguna` en `h2s-es` y en los `resources` de 1 tarjeta). O sea que el paginador
+es **condicional al nº de páginas**, no un elemento fijo de la plantilla.
+
+## 5 · La barra lateral — 10 widgets, **una sola firma en 80 documentos**
+
+Derivado sobre la población entera de la captura (`qa:lh-barra`, negativo 3/3):
+
+| | |
+|---|---|
+| documentos con barra | **80** de 149 |
+| **firmas distintas** | **1** — composición idéntica en los 80 |
+| widgets | `search-6` · `text-1` · `text-7` · `custom_html-25` · `text-10` · `text-13` · `text-16` · `text-22` · `text-19` · `custom_html-29` |
+| títulos visibles | **«Buscar»** · **«Categorías»** · **«¡Suscríbete a nuestra newsletter!»** |
+| ancho @1440 | **258.5** (`et_pb_column_1_4`) |
+
+**Varianza 0 en 80 instancias en régimen plantillado ⇒ PLANTILLA**, no campo.
+Pero *plantilla* no quiere decir *gratis*:
+
+- **«Categorías» consume la taxonomía `category`** — que es literalmente la
+  condición de reapertura que `D3` dejó escrita (*«no se añade la relación hasta
+  que un listado la consuma»*). **Se cumple aquí.**
+- **«Buscar» es una interacción** y `BEHAVIORS.md` no la midió: su alcance eran
+  hover, paginación, lazy y orden. **Está SIN MEDIR**, no «sin efecto».
+- **La newsletter es una integración externa**, no contenido.
+
+## 6 · Lo que esta spec NO mide, dicho para que nadie lo dé por medido
+
+| # | qué | por qué importa |
+|---|---|---|
+| **SP-B1** | el **clon**: no existe, las 9 formas dan 404 | esta spec es de un lado. La comparación es del PASO 4 |
+| **SP-B2** | **anchos intermedios** | el contrato ahí es de RANGO, no de fidelidad (§CONTRATO) |
+| **SP-B3** | la varianza de `L1-blog` — **n = 1** | todo lo suyo está **SIN PROBAR**, incluida la piel de tarjeta del §3 |
+| **SP-B4** | el **buscador** de la barra lateral | interacción no medida por `P-LH-C6` |
+| **SP-B5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
+| **SP-B6** | el `+26` de `resources-hijo` a 390 | medido, **no diagnosticado** |
+| **SP-B7** | los **widgets** uno a uno (su contenido, no su presencia) | 6 son `text` y 2 `custom_html`: puede haber HTML de editor dentro |

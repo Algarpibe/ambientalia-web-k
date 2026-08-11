@@ -160,16 +160,29 @@ celda `·` nueva es *«todavía no medida»*, **no** *«se rompió algo»*.
 | | rutas emitidas | `comportamiento` | `docH` · `base` · `árbol` · `enlaces` |
 |---|---|---|---|
 | **HOY, antes de F3-2** | **37** | **37/37 = 100 %** | 31/37 = 84 % |
-| **DESPUÉS**, si F3-2 emite los 35 listados y **54** `/page/N/` | **126** | 37/126 = **29 %** | 31/126 = **25 %** |
-| **DESPUÉS**, si además replica las **55 vacías** | **181** | 37/181 = **20 %** | 31/181 = **17 %** |
+| **DESPUÉS de F3-2** — 35 listados + **107** `/page/N/`, **vacías incluidas** | **179** | 37/179 = **21 %** | 31/179 = **17 %** |
 
-> ⚠ **El denominador de después es un RANGO y no un número, y ésa es la
-> noticia.** «107 rutas `/page/N/`» sale de `lh-paginas`, cuyo criterio es *200
-> hasta el primer 404* — y ese criterio **cuenta 55 páginas que responden 200 y
-> no listan nada** (§ESCALÓN F3-2 en `PENDIENTES-QA.md`, verificado en vivo:
-> 51 fronteras, 0 discrepancias). Según cómo se decida esa ficha, F3-2 emite
-> **~89 o ~144 rutas nuevas**. Escribir aquí «142» a secas sería fijar por
-> inercia una decisión que no está tomada.
+> ✅ **CERRADO EL MISMO DÍA: el denominador ya NO es un rango, es 179.** Lo fija
+> **`D2.5` · REPLICAR TAL CUAL** (firmada por el propietario;
+> `docs/research/listados-hubs/DECISIONES.md` §D2.5), que decidió que las **55
+> páginas que responden 200 y no listan nada** se emiten como en el original.
+>
+> **El antes y el después de esta celda, que es lo que había que escribir:**
+>
+> | | denominador | por qué |
+> |---|---|---|
+> | **antes** (2026-08-11, mañana) | **126 ó 181** — un **RANGO** | «107» salía de `lh-paginas`, cuyo criterio *200 hasta el primer 404* contaba las vacías **sin decirlo**: la decisión la estaba tomando una medición por inercia |
+> | **después** (2026-08-11, tarde) | **179** — un **NÚMERO** | `D2.5` decide, y el número **se deriva de la decisión**: `37 + 142` rutas de F3-2 |
+>
+> **De dónde salen los 179, derivados y no recordados:** `qa:lh-paginas` re-corrida
+> en vivo ese día (261 peticiones, `medidas/lh-paginas-2026-08-11.json`) da
+> **142** rutas bajo `D2.5` —35 índices + **107** de paginación, de las cuales
+> **55 vacías**— contra **87** bajo la lectura por contenido. Las 37 de hoy no se
+> tocan: **37 + 142 = 179**.
+>
+> ⚠ **Y el 142 es una foto, no una constante** (`P-LH-C3`): el contenido vivo
+> mueve la frontera. La tanda que emita re-corre la sonda **ese día** y verifica
+> contra esa corrida.
 
 **Lo que NO cambia y conviene decir en la misma frase:** las **37** rutas de hoy
 siguen medidas exactamente igual después. El porcentaje baja porque entra

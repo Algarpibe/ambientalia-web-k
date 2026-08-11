@@ -55,6 +55,35 @@ los seis hubs de builder.**
 
 **Cuadre: 23 + 2 + 3 + 6 + 1 = 35.** ✓
 
+> ⛔⛔ **NO LEAS LA FILA DE `L1` SIN ESTO (2026-08-11, fase de specs).** El
+> veredicto —*un arquetipo con tres variantes*— **sigue en pie**; lo que es
+> falso por defecto es la frase que lo justifica: *«lo que difiere entre familias
+> es la configuración del módulo de tarjetas»*.
+>
+> Medido al construir la spec (`qa:lh-spec` en vivo + `qa:lh-barra` sobre la
+> población entera): **difiere también la RETÍCULA DEL CUERPO**, y con ella una
+> superficie de contenido que ningún documento de este repo modela.
+>
+> | | blog · etiqueta | resources |
+> |---|---|---|
+> | fila del listado | **`3_4 + 1_4`** | **`4_4`** |
+> | columna de contenido @1440 | **911.75** | **1238.39** |
+> | barra lateral (**10 widgets**: Buscar · Categorías · newsletter) | **80 de 80 documentos** | **0 de 37** |
+>
+> Reparto mixto dentro de una familia: **cero**, así que en régimen plantillado
+> se lee igual que la tarjeta —varianza 0 dentro, distinta entre— y **el
+> recuento de arquetipos no cambia**. Lo que cambia es **de qué son las
+> variantes**, y por tanto qué hay que construir y qué hay que modelar.
+>
+> **`D3` no lista la barra lateral**, y su widget «Categorías» **consume la
+> taxonomía `category`** — la condición de reapertura que `D3` dejó escrita.
+> Ficha: `PENDIENTES-QA.md` §ESCALÓN F3-2 (2.º). **F3-2 no construye hasta que
+> se decida.**
+>
+> Y la razón de que el recon no lo viera es §La causa común con un contenedor
+> nuevo: `lh-censo` midió **el primer nivel de secciones** —6 y 2 `_tb_body` en
+> 23/23, que sigue siendo verdad— y **la barra lateral vive una fila más abajo**.
+
 ## D2 · La paginación: qué es campo, qué es plantilla, y cómo se emite
 
 **Decidido, y escrito también en `ESQUEMA-CMS.md` §4b (que esta sesión

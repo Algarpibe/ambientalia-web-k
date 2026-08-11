@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿la retícula del CUERPO es la misma en las tres variantes de L1, y qué hay en la columna que sobra?",
+    "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
+    "porQue": "lh-spec midió por primera vez la retícula y dio 3_4+1_4 en blog contra 4_4 en resources. DECISIONES.md §D1 dice que entre familias de L1 sólo difiere la configuración de tarjeta.",
+    "sabotaje": "familia-vacia",
+    "noMide": [
+      "el píxel: los anchos 911.75 / 1238.39 los pone lh-spec contra el original vivo",
+      "el comportamiento del buscador de la barra: no se abrió navegador aquí",
+      "las instancias de L1 que la captura no trae"
+    ]
+  },
+  "documentos": 149,
+  "patrones": {
+    "barraEnElCuerpo": 80,
+    "columna1_4": 80,
+    "columna3_4": 80
+  },
+  "porFamilia": {
+    "L1-blog": {
+      "n": 17,
+      "conBarra": 17,
+      "con3_4": 17,
+      "rutasSinBarra": []
+    },
+    "L5-casos": {
+      "n": 2,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/casos-de-exito",
+        "/casos-de-exito/page/2"
+      ]
+    },
+    "L1-etiqueta": {
+      "n": 63,
+      "conBarra": 63,
+      "con3_4": 63,
+      "rutasSinBarra": []
+    },
+    "L2-glosario": {
+      "n": 8,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/glosario",
+        "/glosario/page/2",
+        "/glosario/page/3",
+        "/glosario/page/4",
+        "/glosario/page/5",
+        "/glosario/page/6",
+        "/glosario/page/7",
+        "/glosario/page/8"
+      ]
+    },
+    "L2-faqs": {
+      "n": 4,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/preguntas-frecuentes",
+        "/preguntas-frecuentes/page/2",
+        "/preguntas-frecuentes/page/3",
+        "/preguntas-frecuentes/page/4"
+      ]
+    },
+    "otra": {
+      "n": 4,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/productos",
+        "/productos/page/2",
+        "/sectores",
+        "/sectores/page/2"
+      ]
+    },
+    "L1-resources": {
+      "n": 37,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/recursos/articulos/contaminacion-en-la-construccion",
+        "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+        "/recursos/articulos/contaminacion-minera",
+        "/recursos/articulos/contaminacion-urbana",
+        "/recursos/articulos/contaminacion-urbana/page/2",
+        "/recursos/articulos/contaminacion-urbana/page/3",
+        "/recursos/articulos/contaminacion-urbana/page/4",
+        "/recursos/articulos/contaminacion-urbana/page/5",
+        "/recursos/articulos/contaminacion-y-salud",
+        "/recursos/articulos/contaminacion-y-salud/page/2",
+        "/recursos/articulos/contaminacion-y-salud/page/3",
+        "/recursos/articulos/contaminacion-y-salud/page/4",
+        "/recursos/articulos",
+        "/recursos/articulos/industria-y-contaminacion-por-olores",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/2",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/3",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/4",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/5",
+        "/recursos/articulos/page/10",
+        "/recursos/articulos/page/11",
+        "/recursos/articulos/page/12",
+        "/recursos/articulos/page/13",
+        "/recursos/articulos/page/14",
+        "/recursos/articulos/page/15",
+        "/recursos/articulos/page/16",
+        "/recursos/articulos/page/2",
+        "/recursos/articulos/page/3",
+        "/recursos/articulos/page/4",
+        "/recursos/articulos/page/5",
+        "/recursos/articulos/page/6",
+        "/recursos/articulos/page/7",
+        "/recursos/articulos/page/8",
+        "/recursos/articulos/page/9",
+        "/recursos/articulos/petroleo-y-gas",
+        "/recursos/articulos/productos-kunak",
+        "/recursos/articulos/productos-kunak/page/2",
+        "/recursos/seminarios-web"
+      ]
+    },
+    "L4-hub": {
+      "n": 8,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/recursos/documentos-cientificos",
+        "/recursos/documentos-cientificos/page/2",
+        "/recursos",
+        "/recursos/kunakpedia",
+        "/recursos/kunakpedia/page/2",
+        "/recursos/page/2",
+        "/recursos/preguntas-frecuentes",
+        "/recursos/preguntas-frecuentes/page/2"
+      ]
+    },
+    "L3-sci": {
+      "n": 6,
+      "conBarra": 0,
+      "con3_4": 0,
+      "rutasSinBarra": [
+        "/scientific-category/articulos-cientificos-y-estudios",
+        "/scientific-category/articulos-cientificos-y-estudios/page/2",
+        "/scientific-category/articulos-cientificos-y-estudios/page/3",
+        "/scientific-category/articulos-tecnicos",
+        "/scientific-category/evaluaciones-independientes",
+        "/scientific-category/evaluaciones-independientes/page/2"
+      ]
+    }
+  },
+  "barraLateral": {
+    "documentosConBarra": 80,
+    "firmasDistintas": 1,
+    "firmas": [
+      {
+        "widgets": [
+          "search-6",
+          "text-1",
+          "text-7",
+          "custom_html-25",
+          "text-10",
+          "text-13",
+          "text-16",
+          "text-22",
+          "text-19",
+          "custom_html-29"
+        ],
+        "titulos": [
+          "Buscar",
+          "Categorías",
+          "¡Suscríbete a nuestra newsletter!"
+        ],
+        "enDocumentos": 80,
+        "ejemplo": "/blog"
+      }
+    ]
+  },
+  "veredicto": {
+    "particionPorFamilia": true,
+    "familiasConBarra": [
+      "L1-blog",
+      "L1-etiqueta"
+    ],
+    "familiasSinBarra": [
+      "L5-casos",
+      "L2-glosario",
+      "L2-faqs",
+      "otra",
+      "L1-resources",
+      "L4-hub",
+      "L3-sci"
+    ],
+    "lectura": "régimen plantillado: varianza 0 DENTRO de cada familia y distinta ENTRE familias ⇒ distingue PLANTILLAS (variantes), no campos — la misma lectura que la configuración de tarjeta"
+  }
+}
