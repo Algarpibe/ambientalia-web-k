@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "§LH-C6-HOVER-ZONAL — qué CONTENEDOR dispara el zoom de la media de tarjeta",
+    "instrumento": "el CSS SERVIDO (los <style> del documento + las hojas EXTERNAS que pide)",
+    "alcance": {
+      "formas": 9,
+      "soloPropiedad": "transform",
+      "noMide": [
+        "el hover de COLOR (a.noticias, .scientific-imagen-container): otra pregunta",
+        "la cascada COMPUTADA: eso lo mide qa:comportamiento, y por eso se cruzan",
+        "390: el catálogo de hover se declara a 1440 (emulación táctil ≠ :hover)"
+      ]
+    },
+    "topeUbicuo": 0,
+    "sabotaje": "tope",
+    "otroInstrumento": "medidas/comportamiento-1440.json (congelado, no se re-mide)"
+  },
+  "formas": {
+    "L1-blog": {
+      "ruta": "/es/blog/",
+      "hojasExternas": 12,
+      "hojasPedidas": 12,
+      "hojasQueContestaron": 12,
+      "bytesCss": 574741,
+      "reglasServidas": 4561,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".et_pb_post .entry-featured-image-url",
+          "objetivo": "img",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L1-etiqueta": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "hojasExternas": 14,
+      "hojasPedidas": 14,
+      "hojasQueContestaron": 14,
+      "bytesCss": 638711,
+      "reglasServidas": 5036,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".et_pb_post .entry-featured-image-url",
+          "objetivo": "img",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L1-resources-hijo": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 582635,
+      "reglasServidas": 4571,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".et_pb_post .entry-featured-image-url",
+          "objetivo": "img",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": [
+            ".et_pb_post .entry-featured-image-url:hover img"
+          ]
+        }
+      ]
+    },
+    "L1-resources-padre": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 582635,
+      "reglasServidas": 4571,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".et_pb_post .entry-featured-image-url",
+          "objetivo": "img",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": [
+            ".et_pb_post .entry-featured-image-url:hover img"
+          ]
+        }
+      ]
+    },
+    "L2-glosario": {
+      "ruta": "/es/glosario/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 647867,
+      "reglasServidas": 4579,
+      "reglasHoverConTransform": 2,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L2-faqs": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 647867,
+      "reglasServidas": 4579,
+      "reglasHoverConTransform": 2,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L3-sci": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 664451,
+      "reglasServidas": 4630,
+      "reglasHoverConTransform": 2,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L4-listado-embebido": {
+      "ruta": "/es/recursos/",
+      "hojasExternas": 7,
+      "hojasPedidas": 7,
+      "hojasQueContestaron": 7,
+      "bytesCss": 533594,
+      "reglasServidas": 4287,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".et_pb_post .entry-featured-image-url",
+          "objetivo": "img",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": [
+            ".et_pb_post .entry-featured-image-url:hover img"
+          ]
+        }
+      ]
+    },
+    "L5-casos": {
+      "ruta": "/es/casos-de-exito/",
+      "hojasExternas": 7,
+      "hojasPedidas": 7,
+      "hojasQueContestaron": 7,
+      "bytesCss": 549690,
+      "reglasServidas": 4371,
+      "reglasHoverConTransform": 3,
+      "disparadores": [
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:before",
+          "declaraciones": "-webkit-transform: translateY(-2px); -ms-transform: translateY(-2px); transform: translateY(-2px)"
+        },
+        {
+          "media": "@media all and (max-width: 1023px)",
+          "disparador": ".mobile_nav.closed",
+          "objetivo": ".mobile_menu_bar span:after",
+          "declaraciones": "-webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px)"
+        },
+        {
+          "media": "base",
+          "disparador": ".case-list-content article .case-imagen",
+          "objetivo": "(el propio disparador)",
+          "declaraciones": "transform: scale(1.1);"
+        }
+      ],
+      "zoomMedidoPorComportamiento": [
+        "a.case-imagen"
+      ],
+      "cruce": [
+        {
+          "elemento": "a.case-imagen",
+          "reglas": [
+            ".case-list-content article .case-imagen:hover (el propio disparador)"
+          ]
+        }
+      ]
+    }
+  },
+  "resumen": {
+    "reglasServidas": 41185,
+    "reglasHoverConTransform": 24,
+    "fraccion": 0.00058,
+    "efectosMedidosSinRegla": 0,
+    "veredicto": "PATRÓN UBICUO"
+  }
+}

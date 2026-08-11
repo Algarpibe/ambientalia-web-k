@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "§LH-C6-HOVER-ZONAL — qué CONTENEDOR dispara el zoom de la media de tarjeta",
+    "instrumento": "el CSS SERVIDO (los <style> del documento + las hojas EXTERNAS que pide)",
+    "alcance": {
+      "formas": 9,
+      "soloPropiedad": "transfrom",
+      "noMide": [
+        "el hover de COLOR (a.noticias, .scientific-imagen-container): otra pregunta",
+        "la cascada COMPUTADA: eso lo mide qa:comportamiento, y por eso se cruzan",
+        "390: el catálogo de hover se declara a 1440 (emulación táctil ≠ :hover)"
+      ]
+    },
+    "topeUbicuo": 0.05,
+    "sabotaje": "patron-falso",
+    "otroInstrumento": "medidas/comportamiento-1440.json (congelado, no se re-mide)"
+  },
+  "formas": {
+    "L1-blog": {
+      "ruta": "/es/blog/",
+      "hojasExternas": 12,
+      "hojasPedidas": 12,
+      "hojasQueContestaron": 12,
+      "bytesCss": 574741,
+      "reglasServidas": 4561,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L1-etiqueta": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "hojasExternas": 14,
+      "hojasPedidas": 14,
+      "hojasQueContestaron": 14,
+      "bytesCss": 638711,
+      "reglasServidas": 5036,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L1-resources-hijo": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 582635,
+      "reglasServidas": 4571,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": []
+        }
+      ]
+    },
+    "L1-resources-padre": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 582635,
+      "reglasServidas": 4571,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": []
+        }
+      ]
+    },
+    "L2-glosario": {
+      "ruta": "/es/glosario/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 647867,
+      "reglasServidas": 4579,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L2-faqs": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 647867,
+      "reglasServidas": 4579,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L3-sci": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 664451,
+      "reglasServidas": 4630,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [],
+      "cruce": []
+    },
+    "L4-listado-embebido": {
+      "ruta": "/es/recursos/",
+      "hojasExternas": 7,
+      "hojasPedidas": 7,
+      "hojasQueContestaron": 7,
+      "bytesCss": 533594,
+      "reglasServidas": 4287,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [
+        "img.attachment-large"
+      ],
+      "cruce": [
+        {
+          "elemento": "img.attachment-large",
+          "reglas": []
+        }
+      ]
+    },
+    "L5-casos": {
+      "ruta": "/es/casos-de-exito/",
+      "hojasExternas": 7,
+      "hojasPedidas": 7,
+      "hojasQueContestaron": 7,
+      "bytesCss": 549690,
+      "reglasServidas": 4371,
+      "reglasHoverConTransform": 0,
+      "disparadores": [],
+      "zoomMedidoPorComportamiento": [
+        "a.case-imagen"
+      ],
+      "cruce": [
+        {
+          "elemento": "a.case-imagen",
+          "reglas": []
+        }
+      ]
+    }
+  },
+  "resumen": {
+    "reglasServidas": 41185,
+    "reglasHoverConTransform": 0,
+    "fraccion": 0,
+    "efectosMedidosSinRegla": 4,
+    "veredicto": "PATRÓN MUERTO"
+  }
+}

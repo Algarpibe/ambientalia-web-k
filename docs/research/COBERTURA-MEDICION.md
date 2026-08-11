@@ -150,7 +150,32 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
 > PROBAR, no limpio.
 
-## ✅✅ EL EJE `comportamiento` DEJA DE ESTAR A CERO — 0/31 → **13/37** (2026-08-10, `P-LH-C6`) → **18/37** (2026-08-11)
+## ✅✅✅ EL EJE `comportamiento` ESTÁ COMPLETO — **37/37** (2026-08-11)
+
+**Era el hueco mayor del proyecto y hoy es el único eje con cobertura completa**,
+por delante de `docH` · `base` · `árbol` (31/37 los tres). La trayectoria, en
+dos días: `0/31` → `13/37` → `18/37` → **`37/37`**.
+
+| | |
+|---|---|
+| corrida | `TODAS=1 UNIVERSO=emitidas` · **518/518 interacciones con disparo confirmado** · `NO SE DISPARÓ` **0** · 5 selectores vivos, **0 muertos** en 74 páginas |
+| veredictos | `EFECTO` 387 · `SIN EFECTO` 101 · `NO APLICA` 30 |
+| alcance | **las 37 rutas emitidas × 2 lados**, a **1440** |
+| congelada | `medidas/comportamiento-1440-emitidas-todas.json`, **declarada por nombre** en `cobertura.mjs` |
+
+> **Lo que la completitud compra, y no es sólo un número:** se acabó el
+> *«una ruta por familia»*. Esa frase era cierta y escondió un arquetipo entero
+> (§LH-C6-FAMILIA-NO-ES-FAMILIA) porque **la sonda y esta matriz llaman «familia»
+> a dos particiones distintas**. Con las 37 medidas **las dos coinciden por
+> construcción**: no queda nada fuera de ninguna de las dos.
+
+⚠ **Y lo que NO compra, dicho aquí para que nadie lo lea de más:** `37/37`
+significa *«las 37 comparadas a 1440»*. **No hay pasada a 390** —el catálogo
+excluye `hover` ahí a propósito— y **el eje sigue sin campaña de ruido**, así que
+un `SIN EFECTO` suelto es SIN PROBAR, no limpio. Cobertura completa **no es**
+suelo conocido.
+
+## ✅✅ Cómo llegó hasta aquí — 0/31 → **13/37** (2026-08-10, `P-LH-C6`) → **18/37** (2026-08-11)
 
 Era **el hueco mayor del proyecto** y llevaba a cero desde que existe esta
 matriz. La causa estaba escrita aquí abajo y era exacta: *«`a-behaviors` y
@@ -255,48 +280,79 @@ sus rutas.
 | ruta | docH | base cruda (h1.y) | árbol secciones | filas | módulos | offsets/holgura | anchos horiz. | enlaces | comportamiento |
 |---|---|---|---|---|---|---|---|---|---|
 | **HOME** ||||||||||
-| `/` ⚠ | **O** | **O**⚠ | **O** | · | · | · | **O** | **O** | · |
+| `/` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **PRODUCTO** ||||||||||
-| `/monitor-calidad-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/monitor-calidad-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **CATÁLOGO** ||||||||||
-| `/accesorios` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/accesorios` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **SOFTWARE** ||||||||||
-| `/kunak-api` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/kunak-api` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **MONOGRÁFICO** ||||||||||
-| `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | · |
-| `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | · |
+| `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | **O** |
+| `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | **O** |
 | **SECTOR** ||||||||||
-| `/sectores/calidad-del-aire-en-las-ciudades` | **O** | **O** | **O** | **O** | · | c | **O** | **O** | · |
-| `/sectores/contaminacion-por-construccion` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
-| `/sectores/control-de-emisiones-industriales` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
-| `/sectores/estudio-de-la-contaminacion-atmosferica` | **O** | **O** | **O** | **O** | · | · | · | **O** | · |
+| `/sectores/calidad-del-aire-en-las-ciudades` | **O** | **O** | **O** | **O** | · | c | **O** | **O** | **O** |
+| `/sectores/contaminacion-por-construccion` | **O** | **O** | **O** | **O** | · | · | · | **O** | **O** |
+| `/sectores/control-de-emisiones-industriales` | **O** | **O** | **O** | **O** | · | · | · | **O** | **O** |
+| `/sectores/estudio-de-la-contaminacion-atmosferica` | **O** | **O** | **O** | **O** | · | · | · | **O** | **O** |
 | **CASO** ||||||||||
-| `/case-studies/distrito-baja-emision-rio-de-janeiro` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/casos-de-exito/red-calidad-de-aire-para-world-athletics` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/case-studies/distrito-baja-emision-rio-de-janeiro` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/casos-de-exito/red-calidad-de-aire-para-world-athletics` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
 | **FAQ** ||||||||||
-| `/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **A · documento científico** ||||||||||
-| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion` | **O** | **O** | **O** | · | · | · | · | **O** | · |
+| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
 | **A · blog / término** ||||||||||
-| `/cloruro-de-hidrogeno-hcl` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/contador-particulas-suspension-movilidad-sostenible` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/contaminacion-por-metano` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/emisiones-atmosfericas` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
-| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/metano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/monitorizacion-de-emisiones-del-trafico-urbano` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/running-for-clean-air` | **O** | **O** | **O** | · | · | · | · | **O** | · |
-| `/todas-nuestras-soluciones-en-el-iotswc` | **O** | **O** | **O** | · | · | · | **O** | **O** | · |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision` | · | · | · | · | · | · | · | · | **O** |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento` | · | · | · | · | · | · | · | · | **O** |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire` | · | · | · | · | · | · | · | · | **O** |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air` | · | · | · | · | · | · | · | · | **O** |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air` | · | · | · | · | · | · | · | · | **O** |
+| `/cloruro-de-hidrogeno-hcl` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/contador-particulas-suspension-movilidad-sostenible` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/contaminacion-por-metano` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/emisiones-atmosfericas` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/metano` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/monitorizacion-de-emisiones-del-trafico-urbano` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/running-for-clean-air` | **O** | **O** | **O** | · | · | · | · | **O** | **O** |
+| `/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud` | · | · | · | · | · | · | · | · | **O** |
+| `/todas-nuestras-soluciones-en-el-iotswc` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 
-### Recuento · DESPUÉS de la tanda de cierre (2026-08-01)
+### Recuento · HOY (2026-08-11) — **derivado por `qa:cobertura`, no escrito a mano**
+
+Denominador **37** (las rutas que emite el build; eran 31 hasta que `articulos-kb`
+entró con las suyas). Sale de `medidas/cobertura-2026-08-11-2.json`:
+
+| eje | **O** | `c` | `·` | sonda declarada |
+|---|---|---|---|---|
+| **comportamiento** | **37** | 0 | **0** | `comportamiento` ← **el único completo** |
+| docH | 31 | 0 | 6 | `c-cmp` |
+| base cruda (h1.y) | 31 | 0 | 6 | `c-cabecera` |
+| árbol secciones | 31 | 0 | 6 | `c-cmp` |
+| enlaces | 31 | 0 | 6 | `enlaces` |
+| anchos horiz. | 15 | 0 | 22 | `c-banda` · `a-miga` |
+| filas | 6 | 0 | 31 | `tree-cmp` · `mono-cmp` |
+| módulos | 2 | 0 | 35 | `mono-cmp` |
+| offsets / holgura | 0 | **3** | 34 | `offsets` *(solo clon)* |
+
+> ⚠ **Los 6 `·` de las cinco primeras filas son las 6 rutas de `articulos-kb`, y
+> NO significan que no se hayan medido:** `kb-cmp` las compara par a par
+> (F3-1) pero **no está declarada como fuente** en `cobertura.mjs`. Igual que
+> `anchos horiz.`, donde el documento decía 31/31 por `ancho-cuerpo` y la sonda
+> dice 15 por la misma causa. Es §LH-C6-COBERTURA-DIVERGE, **sigue abierta**, y
+> se deja ver en vez de cuadrarla a mano: **declarar una fuente es decidir qué
+> ejes acredita**, y eso no se hace de paso.
+
+### Recuento · DESPUÉS de la tanda de cierre (2026-08-01) — *histórico, con su fecha*
 
 | eje | **O** | `c` | `·` | sonda que lo compara | antes |
 |---|---|---|---|---|---|
@@ -439,7 +495,7 @@ La tanda de cierre gastó lo barato. Queda:
 | 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
 | 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
-| 5 | ~~**comportamiento**~~ | ✅ **CERRADO PARCIALMENTE 2026-08-10, ampliado 2026-08-11**: `qa:comportamiento` es la sonda nueva y de dos lados — **18/37 rutas** (13 + 5 que cierran MONOGRÁFICO), **324/324 interacciones** entre las dos corridas. Lo que queda: las otras **19** rutas (`TODAS=1`), 390, y un suelo de ruido para el eje — del que ya hay **una forma medida**: el tipo `tiempo` en `L1-blog` es **bimodal** (§LH-C6-TIEMPO-BIMODAL), no ruido | hecho el instrumento |
+| 5 | ~~**comportamiento**~~ | ✅✅ **CERRADO EN RUTAS 2026-08-11 — `37/37`**: `qa:comportamiento` (de dos lados) recorrió el universo entero con `TODAS=1`, **518/518 interacciones con disparo confirmado**, 0 selectores muertos, sobre las **842/842** de las tres corridas del eje. Lo que queda **no son rutas**: (a) **390** —el catálogo excluye `hover` ahí a propósito, así que es otra pasada, no la misma más estrecha—; (b) **el suelo de ruido**, del que sólo hay **una forma medida** (el `tiempo` de `L1-blog` es **bimodal**, §LH-C6-TIEMPO-BIMODAL) | ✅ hecho |
 | 6 | **estado HTTP en las demás sondas** | solo `c-cmp` lo mira; `lib.mjs` ya lo expone | 1 línea por sonda |
 | 7 | **existencia del recurso servido** | **0/31** — NOMBRADO 2026-08-05, ver abajo | sonda nueva + su negativo |
 

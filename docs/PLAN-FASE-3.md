@@ -243,10 +243,19 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > 2. **§LH-C6-L3-SIN-PAGINADOR** — L3 pagina por URL (3 páginas) y **no sirve
 >    ningún control** en el cuerpo. `D2.3` emitiría rutas inalcanzables:
 >    replicar o desviarse, **con la razón escrita**, como `D2.4`;
-> 3. **§LH-C6-HOVER-ZONAL** — el hover de tarjeta **no es uno**: la imagen hace
->    zoom y el enlace de categoría cambia de color, con dianas distintas. Falta
->    medir **qué contenedor dispara el zoom**; cablear `article:hover img` cuadra
->    el píxel a 1440 y cambia el disparador.
+> 3. ~~**§LH-C6-HOVER-ZONAL**~~ ✅ **RESUELTA 2026-08-11 — con la regla medida, no
+>    con un criterio.** `npm run qa:hover-zonal` (nueva, negativo 4/4) leyó el CSS
+>    **servido** —incluidas las hojas **externas**, 41 185 reglas— y el
+>    disparador tiene nombre. **Se construye así, literal:**
+>
+>    | forma | regla a reproducir |
+>    |---|---|
+>    | L1 (3 variantes) · L4 | `.et_pb_post .entry-featured-image-url:hover img { transform: scale(1.1) }` |
+>    | L5-casos | `.case-list-content article .case-imagen:hover { transform: scale(1.1) }` (se amplía **el propio `<a>`**) |
+>
+>    O sea: **el disparador es el `<a>` de la imagen, nunca el `article`**, y en
+>    L5 el objetivo es el disparador mismo. Cruce con `qa:comportamiento`: 4
+>    zooms medidos, **4 explicados, 0 sin regla**.
 
 > ✅ **CONFIRMADO 2026-08-11: «DESBLOQUEADA» es exacto, y las tres fichas de
 > arriba NO la re-bloquean.** Se comprobó porque el commit lo afirmaba y una
@@ -334,7 +343,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
 | **F3-1** · `articulos-kb` | ✅ **COMPLETA (2026-08-10, 4 tandas)** — los 6 pasos del orden obligado: specs + PASO 0 · esquema con retícula · extractor + seed · piel del titular (§2d.7) · **plantilla + ruta** (hoja `kb.css` DERIVADA por `qa:kb-clases`, 2 catch-all por sus dos prefijos) · **sonda de dos lados**: `qa:kb-cmp` par a par, **4999/5089 @1440 y 4979/5089 @390** contra la medida congelada y **5453/5543 y 5433/5543 contra el sitio VIVO**, cero diferencias sin declarar en las cuatro corridas. Deja **7 huecos con su número** (`PENDIENTES-QA.md` §F3-1), el mayor de ellos `srcset` con **108.83 px** de consecuencia geométrica a 390 |
-| **F3-2** · listados y hubs | pendiente · **DESBLOQUEADA** — `P-LH-C6` cumplida el 2026-08-10 (`qa:comportamiento` 254/254, `BEHAVIORS.md` de listados). Entra con 3 fichas que resolver antes de construir: §LH-C6-FILTRO-L5 · §LH-C6-L3-SIN-PAGINADOR · §LH-C6-HOVER-ZONAL |
+| **F3-2** · listados y hubs | pendiente · **DESBLOQUEADA** — `P-LH-C6` cumplida el 2026-08-10 y el eje llevado a **37/37** el 08-11 (`qa:comportamiento` 254 + 70 + **518** interacciones, todas con disparo confirmado). De las 3 fichas de entrada queda **UNA en el camino**: §LH-C6-L3-SIN-PAGINADOR (decidir replicar o desviarse, con la razón escrita). ✅ §LH-C6-HOVER-ZONAL **resuelta con la regla medida** (`qa:hover-zonal`); §LH-C6-FILTRO-L5 **no bloquea**: se decide en F3-4 y F3-2 entrega **L5 menos el filtro**, anotado como desviación |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |
 | **F3-5** · content type de HOME | pendiente · sin dependencias |

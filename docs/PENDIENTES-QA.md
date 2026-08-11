@@ -1,6 +1,75 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ✅ P-LH-C6 · el eje COMPORTAMIENTO deja de estar vacío — 0/31 → 13/37 (2026-08-10)
+## ✅✅ LH-C6-EJE-COMPLETO · el eje `comportamiento` llega a **37/37**, y con eso deja de haber una partición que interpretar (2026-08-11)
+
+`0/31` el 08-10 por la mañana · `13/37` esa tarde · `18/37` al cerrar
+MONOGRÁFICO · **`37/37` hoy**. Es **el único eje de la matriz con cobertura
+completa** — por delante de `docH`, `base` y `árbol`, que van por 31/37.
+
+| | |
+|---|---|
+| corrida | `TODAS=1 UNIVERSO=emitidas` · **518 / 518 interacciones con DISPARO CONFIRMADO** · `NO SE DISPARÓ` **0** |
+| veredictos | `EFECTO` 387 · `SIN EFECTO` 101 · `NO APLICA` 30 (con su número, uno a uno) |
+| alcance | **las 37 rutas emitidas × 2 lados** = 74 páginas, a **1440** |
+| selectores | **5 vivos, 0 muertos** en las 74 |
+| congelada | `medidas/comportamiento-1440-emitidas-todas.json` · matriz en `medidas/cobertura-2026-08-11-2.json` |
+
+> **Lo que este `37/37` SÍ permite decir, y el `18/37` no:** se acabó tener que
+> declarar *«una ruta por familia»* — que es la frase que escondió un arquetipo
+> entero (§LH-C6-FAMILIA-NO-ES-FAMILIA). Con las 37 medidas, **las dos
+> particiones dan lo mismo porque no queda nada fuera**, y el alcance se declara
+> sin adjetivos: *las rutas que el build emite, a 1440*.
+
+⚠ **Lo que sigue sin poder decir, y no es letra pequeña:**
+
+- **es 1440 y sólo 1440.** El catálogo excluye `hover` a 390 a propósito (bajo
+  emulación táctil no es la misma interacción), así que **390 no es «lo mismo
+  más estrecho»**: es una pasada que no se ha hecho;
+- **el eje sigue SIN SUELO DE RUIDO.** Un `SIN EFECTO` aislado es *SIN PROBAR*,
+  no *limpio*. Lo único medido de su forma es §LH-C6-TIEMPO-BIMODAL, y son 8
+  observaciones de **una** página;
+- **`0 selectores muertos` de ESTA corrida vive en la consola, no en la
+  congelada.** El arreglo que mete el censo en el fichero (§sondas 2, *una
+  conclusión citada necesita su fichero*) se escribió **con la corrida ya en
+  vuelo**, así que entra a partir de la siguiente. Se dice en vez de callarlo:
+  el respaldo de hoy es el código de salida —la sonda sale con 2 si hay un
+  muerto— y eso no es un fichero.
+
+---
+
+## ✅ LH-C6-TODAS-SIN-MARCA · la TERCERA perilla que cambia el alcance de una congelada sin decirlo en el nombre (2026-08-11)
+
+Ayer se cerró para `SOLO` lo que ya existía para `AFOR`
+(§LH-C6-SOLO-SIN-ETIQUETA). Al ir a correr las 37 apareció la tercera, **y es
+la misma clase con el signo cambiado**:
+
+| perilla | qué cambia | cómo se declaraba |
+|---|---|---|
+| `AFOR` | **qué zona** de la afordancia | exige `ETIQUETA` |
+| `SOLO` | **cuántas páginas** — un SUBconjunto | exige `ETIQUETA` (desde ayer) |
+| **`TODAS`** | **cuántas páginas — el SUPERconjunto** | **nada** |
+
+Sin marca, *«una por `srcRoute`» (13 rutas)* y *«las 37»* escriben en el **mismo
+nombre** y con la **misma forma**: sólo `meta.alcance` las separa, que es
+literalmente el defecto que la ficha de ayer describe.
+
+**Arreglado derivando en vez de pidiendo.** El nombre lleva `-todas` porque lo
+sabe la perilla — no hay nada que recordar, y un valor derivado no envejece
+contra el repo (§sondas 9). `meta.alcance.todasLasEmitidas` va además dentro.
+
+⚠ **Prior art que NO se renombra:** `comportamiento-1440-emitidas-monografico.json`
+se congeló con `TODAS=1 SOLO=… ETIQUETA=…` **antes** de esta regla y está
+declarada por su nombre en `cobertura.mjs`; renombrarla rompería la cita, y su
+`ETIQUETA` ya dice lo que es.
+
+> **La moraleja, que es la de siempre una vuelta más abajo:** cerrar una clase
+> con una guarda por perilla deja la clase abierta para **la perilla que aún no
+> existe**. Lo que la cierra de verdad es que el nombre se **componga** de lo
+> que la corrida hizo, no de lo que su autor se acordó de escribir.
+
+---
+
+## ✅ P-LH-C6 · el eje COMPORTAMIENTO deja de estar vacío — 0/31 → 13/37 (2026-08-10) → 18/37 → **37/37** (2026-08-11, §LH-C6-EJE-COMPLETO)
 
 **La precondición de LISTADO-B está cumplida** y, de paso, la celda peor cubierta
 del proyecto tiene su primera medida. Sonda nueva: **`npm run qa:comportamiento`**
@@ -110,7 +179,50 @@ el cuerpo.**
 
 ---
 
-## ⚠ LH-C6-HOVER-ZONAL · el hover de una tarjeta NO ES UNO: depende de la zona (2026-08-10)
+## ✅ LH-C6-HOVER-ZONAL · CERRADA (2026-08-11) — el disparador tiene nombre, y no lo dio el comportamiento sino el CSS SERVIDO
+
+**La pregunta que quedaba era una sola** —*«¿cuál es el contenedor que dispara el
+zoom?»*— y **el instrumento que la tenía abierta no podía contestarla**, que es
+lo que hay que aprenderse de esta ficha:
+
+> El hover ya había **excluido** `article` (con el puntero en la meta, la imagen
+> no se mueve). Lo que quedaba era separar `a…:hover img` de `img:hover`, y eso
+> **no lo separa ningún píxel**: las dos cajas coinciden en pantalla. Más
+> corridas de hover habrían dado la misma respuesta más veces.
+
+**Medido por `npm run qa:hover-zonal`** (nueva; negativo **4/4**), que lee el CSS
+que el documento **se trae** — los `<style>` **y las 7–14 hojas EXTERNAS**, un
+canal que ninguna sonda de este repo leía (§F3-1-CSS-NO-CAPTURADO: *19 hojas, 0
+capturadas*). **41 185 reglas servidas** en las 9 formas:
+
+| forma | disparador servido | objetivo | declaración |
+|---|---|---|---|
+| **L1-blog · L1-etiqueta · L1-resources (×2) · L4** | **`.et_pb_post .entry-featured-image-url`** | **`img`** | `transform: scale(1.1)` |
+| **L5-casos** | `.case-list-content article .case-imagen` | **el propio disparador** | `transform: scale(1.1)` |
+
+> **O sea que son DOS formas distintas, no una con dos pieles:** en L1/L4 el
+> disparador es el **`<a>` que envuelve la imagen destacada** y el que se amplía
+> es el `<img>` **de dentro**; en L5 el `<a>` **se amplía a sí mismo** (la tarjeta
+> de caso no tiene `<img>`: la imagen es `background-image` del propio enlace).
+> Cablear `article:hover img` reproduce el píxel a 1440 en las dos y **cambia el
+> disparador en las dos**.
+
+**El cruce de instrumentos cerró, y es lo que hace adjudicable esto** (§sondas 4,
+tercera cara — *cuando existe otra medición del mismo objeto con otro
+instrumento, cruzarla es obligatorio*): los **4 zooms medidos** por
+`qa:comportamiento` tienen **los 4** su regla servida; `efectos medidos SIN
+regla = 0`. Y al revés — **L1-blog y L1-etiqueta SIRVEN la regla y no tenían zoom
+medido** en la corrida canónica, porque su puntero cayó en la meta. Las dos
+corridas que parecían contradecirse quedan explicadas por el mismo CSS.
+
+⚠ **Alcance:** sólo `transform`. El hover de color (`a.noticias`,
+`.scientific-imagen-container`) es otra pregunta y no la contesta esta sonda; y
+esto lee la cascada **escrita**, no la computada — por eso se cruza con el otro
+instrumento en vez de sustituirlo. Congelada: `medidas/hover-zonal.json`.
+
+---
+
+## ⚠ LH-C6-HOVER-ZONAL · el hover de una tarjeta NO ES UNO: depende de la zona (2026-08-10) — *cómo se llegó a la ficha de arriba*
 
 **Dos corridas de la misma sonda sobre `L1-blog` dieron efectos distintos**, y
 las dos son ciertas:
@@ -134,8 +246,9 @@ aplicada *antes* de que ocurra).
 que construir las dos. Una plantilla con `article:hover img { scale: 1.1 }`
 reproduce el píxel a 1440 **y cambia el disparador** — o sea, el defecto de
 rango del §CONTRATO NO ES EL MISMO A TODOS LOS ANCHOS trasladado al eje de
-interacción. **Falta medir cuál es el contenedor que dispara el zoom** (la
-`<a>`/`div` de la imagen), y eso es una medida, no una idea.
+interacción. ~~**Falta medir cuál es el contenedor que dispara el zoom**~~
+**MEDIDO el 2026-08-11** — es `a.entry-featured-image-url` (L1/L4) y
+`a.case-imagen` (L5): ver la ficha ✅ de arriba.
 
 ---
 
@@ -191,6 +304,30 @@ scrollear»* es la lectura literal de la sonda sobre el clon.
 también en el más tardío y con el contenido más pesado. Sigue sin cablearse
 nada, y sigue siendo decisión de `M-IMG`/`CMS-0b`.
 
+### ✅ ALCANCE COMPLETO (2026-08-11): las 37 rutas, y el veredicto por lado es lo que lo cierra
+
+Ya no es una muestra. `TODAS=1` sobre las 37 × 2 lados:
+
+| | orig → clon | dónde |
+|---|---|---|
+| `loading="lazy"` **en la raíz** | **373 → 28** | 29 rutas de 37 difieren |
+| **imágenes pedidas AL SCROLLEAR** (documento entero) | **363 → 2** | ídem |
+| **veredicto del tipo `scroll`** | **`EFECTO` 29 de 37 → `EFECTO` 1 de 37** | — |
+
+> **La fila del veredicto es la que no admite interpretación:** *«hay carga
+> diferida»* es la lectura literal de la sonda en **29 de las 37** rutas del
+> original y en **1** de las del clon. No es que el clon difiera menos: es que
+> **no difiere**.
+
+⚠ **Y las dos primeras filas NO tienen el mismo alcance, que es justo lo que hay
+que leer bien:** el recuento de `lazy` se toma **en la raíz de contenido**, y las
+raíces son `#main-content` (orig) y `main` (clon) — **dos selectores que no está
+probado que denoten el mismo subárbol** (§sondas 4: *un pleno también puede ser
+el instrumento*). El de imágenes pedidas al scrollear se toma **sobre el
+documento entero en los dos lados**, y por eso es el que se puede comparar sin
+asterisco. Se dan las dos, con su ámbito escrito, en vez de fundirlas en un
+número más redondo.
+
 ---
 
 ## ⚠ LH-C6-CLON-SIRVE-OTRO-MARCADO · tres diferencias de marcado que ninguna sonda de alto puede ver (2026-08-11)
@@ -215,6 +352,44 @@ distinción importa: `article` es una etiqueta, no una tarjeta — que el clon
 sirva 6 donde el original sirve 7 dice que **el marcado difiere**, no cuál de
 los dos está mal. Adjudicarlo pide mirar qué nodo es cada uno, y eso no se ha
 hecho. Va a la lista con su número, sin conclusión.
+
+### ⚠ ALCANCE COMPLETO (2026-08-11): no eran 2 rutas, son **21 de 37** — y el eje `article` tiene FORMA
+
+Las 37 × 2 lados, mismo inventario:
+
+| eje | orig → clon | rutas que difieren | ámbito |
+|---|---|---|---|
+| nodos `article` | **105 → 64** | **21 de 37** | **el DOCUMENTO** en los dos lados ⇒ comparable |
+| controles de formulario | **67 → 183** | 16 de 37 | la raíz (`#main-content` / `main`) ⇒ **con asterisco** |
+| marcador `slider` | **290 → 323** | 12 de 37 | ídem |
+| `<img>` | **1094 → 719** | 26 de 37 | ídem |
+
+**Y `article` —el único de los cuatro con ámbito comparable— no sale disperso:
+sale en dos grupos limpios.**
+
+| patrón | rutas | qué son |
+|---|---|---|
+| **`−1`** (7→6 · 5→4 · 4→3) | 11 | HOME · PRODUCTO · SOFTWARE · CATÁLOGO · API · los 6 de `/sectores/*` |
+| **`3→0`** | 6 | seis de grupo A: el clon **no emite ni uno** |
+| **`4→1`** | 3 | los tres de `casos-de-exito` / `case-studies` |
+
+> **Un `−1` repetido en once rutas de seis arquetipos distintos no es ruido de
+> contenido: es un nodo que la plantilla del original pone y la del clon no.**
+> Y el `3→0` de grupo A es otra cosa distinta —ahí no falta uno, faltan todos—.
+> Fundir los dos en «el marcado difiere» pierde exactamente la información que
+> hace falta para adjudicarlos.
+
+**Sigue sin adjudicarse, y ahora se sabe qué costaría:** identificar **qué** nodo
+es el `−1` en una sola de las once (mirar los `article` de los dos lados y
+emparejarlos) muy probablemente cierra las once a la vez. Es una medida pequeña
+y no entra aquí porque esta tanda es del eje, no del marcado.
+
+⚠ **Los otros tres ejes cargan el asterisco de la raíz** —`#main-content` contra
+`main`, dos selectores que no está probado que denoten el mismo subárbol— así
+que `1094 → 719` **no es «al clon le faltan 375 imágenes»**: es que los dos
+recuentos pueden no estar contando el mismo conjunto. Antes de citarlo como
+defecto hay que igualar el ámbito, que es la misma trampa por la que `c-cmp` dio
+«las 31 rutas con el árbol distinto» (§sondas 4).
 
 ---
 
@@ -250,6 +425,29 @@ la raíz de contenido»* — o sea que **no son necesariamente los mismos elemen
 en los dos lados**. Lo que sí es comparable es **el reparto de propiedades**, que
 es lo que está en la tabla. Para adjudicar píxel a píxel hace falta emparejar
 afordancias, y eso no está hecho.
+
+### ⚠ ALCANCE COMPLETO (2026-08-11): las 37 rutas — el reparto aguanta y el subrayado se multiplica por 3.5
+
+**253 hover con `EFECTO`** (132 orig · 121 clon) sobre las 37 × 2 lados:
+
+| propiedad que cambia al hover | original | clon |
+|---|---|---|
+| `color` | 195 | 184 |
+| **`textDecorationLine: none → underline`** | **0** | **90** |
+| **`textDecorationColor`** | **0** | **86** |
+| `transform` (zoom de media) | **2** | **0** |
+| `backgroundColor` · `borderTopColor` · `borderBottomColor` | 16 · 16 · 16 | 15 · 15 · 15 |
+| `opacity` | 2 | 4 |
+
+> **El reparto es el mismo con 2.8× más muestra**, que es lo que convierte el
+> hallazgo de *«se vio en 13 rutas»* en *«así es el clon»*: el original **nunca**
+> subraya al hover —0 de 132— y el clon lo hace en **90 de 121**. El `0 → 90` es
+> el mismo defecto de clase que el `0 → 26`, contado entero.
+>
+> Y el `transform 2 → 0` dice la otra mitad: **el zoom de media que el original
+> tiene en dos afordancias, el clon no lo tiene en ninguna** — coherente con que
+> las plantillas que lo llevan (§LH-C6-HOVER-ZONAL) son justo las de listado, que
+> el clon todavía no construye.
 
 ---
 

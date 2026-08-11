@@ -255,6 +255,16 @@ comparar. Barato, y mueve 20 páginas de "no se sabe" a A o a C.
 > > **Un arquetipo con topología y modelo decididos puede seguir con su
 > > comportamiento sin medir, y eso no se ve en ningún estado del censo.**
 > > Acta: `docs/research/listados-hubs/BEHAVIORS.md`.
+>
+> ✅ **2026-08-11 · el estado que faltaba ya se puede leer para TODO lo servido:
+> el eje `comportamiento` está a `37/37`** (`TODAS=1`, **518/518** interacciones
+> con disparo confirmado). O sea que de las 14 formas, **todas las que el clon
+> emite tienen su comportamiento comparado contra el original** — y las que no,
+> es porque no se sirven todavía, que es un estado distinto y ya censado arriba.
+>
+> ⚠ **Sin ampliar la afirmación:** es **a 1440**, y el eje **sigue sin suelo de
+> ruido**. «Comportamiento medido» no es «comportamiento verificado a los dos
+> anchos».
 
 ### La forma del trabajo que falta, que es lo útil del censo
 

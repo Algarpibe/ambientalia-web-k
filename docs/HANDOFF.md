@@ -1,3 +1,103 @@
+# HANDOFF — el eje llega a 37/37 y deja de haber partición que interpretar; y la pregunta que el hover no podía contestar la contestó el CSS que el documento se trae
+
+> ⚠ **Tanda 2026-08-11 (51.ª).** Segunda reentrada a `P-LH-C6`. PASOS
+> **1 · 3 · 4 · 5 · 6 · 7** completos (el **2** venía cerrado y se verificó
+> ejercitándolo). Registro: `PENDIENTES-QA.md` (**3 fichas nuevas** + 3
+> ampliadas al universo completo) · `COBERTURA-MEDICION.md` (**37/37** + matriz
+> regenerada) · `BEHAVIORS.md` · `PLAN-FASE-3.md` §F3-2 · `DECISIONES.md` ·
+> `CENSO-ARQUETIPOS.md`.
+
+## 0 · Los cuatro titulares
+
+> **1 · EL EJE `comportamiento` ESTÁ COMPLETO: 37/37, Y ES EL ÚNICO DE LA
+> MATRIZ.** `TODAS=1 UNIVERSO=emitidas`: **518/518 interacciones con disparo
+> confirmado**, `NO SE DISPARÓ` **0**, **5 selectores vivos y 0 muertos** en 74
+> páginas. Hace dos días iba a `0/31`; hoy va por delante de `docH`, `base` y
+> `árbol` (31/37 los tres). **Y lo que compra no es el número: es que se acabó
+> tener que declarar «una ruta por familia»** — la frase que escondió un
+> arquetipo entero. Con las 37, las dos particiones coinciden porque no queda
+> nada fuera de ninguna.
+>
+> **2 · LA FICHA DEL HOVER NO SE CERRÓ MIDIENDO MÁS HOVER: SE CERRÓ CAMBIANDO DE
+> CANAL.** El comportamiento ya había excluido `article`, pero separar
+> `a:hover img` de `img:hover` **no lo hace ningún píxel** —las dos cajas
+> coinciden—, así que más corridas habrían dado la misma respuesta más veces.
+> Sonda nueva `qa:hover-zonal` (negativo **4/4**) lee el **CSS servido**, hojas
+> **externas incluidas** —41 185 reglas—, y el disparador tiene nombre:
+> `.et_pb_post .entry-featured-image-url:hover img` en L1/L4 y
+> `.case-list-content article .case-imagen:hover` en L5, **que se amplía a sí
+> mismo**. Cruce con el otro instrumento: 4 zooms medidos, **4 explicados, 0 sin
+> regla**.
+>
+> **3 · Y APARECIÓ LA TERCERA PERILLA DE UNA CLASE QUE SE CERRÓ AYER.** `AFOR`
+> exige `ETIQUETA`, `SOLO` la exige desde ayer… y **`TODAS` no exigía nada**,
+> siendo la que cambia el alcance con el signo contrario: el SUPERconjunto. Sin
+> marca, «13 rutas» y «las 37» escriben el mismo nombre con la misma forma.
+> Arreglado **derivando** el marcador de la perilla, no pidiéndolo. *Cerrar una
+> clase con una guarda por perilla la deja abierta para la perilla que aún no
+> existe.*
+>
+> **4 · LA COSECHA DEL UNIVERSO COMPLETO CONVIERTE DOS MUESTRAS EN CLASES.** El
+> `scroll` da **`EFECTO` en 29 de 37 rutas del original y en 1 de 37 del clon**
+> —*el original difiere la carga y el clon no*, dicho sin muestra—; el subrayado
+> al hover pasa de `0 → 26` a **`0 → 90`** con el reparto intacto; y los nodos
+> `article` difieren en **21 de 37**, pero **no dispersos: en dos grupos** (`−1`
+> en once rutas de seis arquetipos · `3→0` en seis de grupo A).
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| `qa:comportamiento` `TODAS=1` | **518/518** · 37 rutas × 2 lados · 0 muertos → `medidas/comportamiento-1440-emitidas-todas.json` |
+| **`qa:hover-zonal`** ← nueva | **9/9 formas** · 41 185 reglas servidas · 24 reglas `:hover`+`transform` (0.058 %) · **0 efectos sin regla** |
+| **`qa:hover-zonal-neg`** ← nueva | **4/4** — control verde y cada sabotaje por SU discriminador (MUERTO · UBICUO · EFECTO SIN REGLA) |
+| `qa:cobertura` | **comportamiento O=37 · c=0 · nunca=0** → `medidas/cobertura-2026-08-11-2.json` |
+| `qa:nunca-vistos` | **241 de 330** — congelada idéntica, sin deriva |
+| `qa:lib` | **127 sondas** COMPILAN y declaran su mínimo · negativo **93/93** |
+| `npm run check` | verde · 37 rutas · slugs **LIMPIO** · `cms-campos` 10/10 |
+
+## 2 · Lo que hay que saber para retomar
+
+**F3-2 entra con UNA ficha en el camino, no con tres.** §LH-C6-HOVER-ZONAL está
+**resuelta con la regla medida** (se copia con su disparador: `article:hover img`
+cuadra el píxel y cambia quién dispara); §LH-C6-FILTRO-L5 **no bloquea** —se
+decide en F3-4 y F3-2 entrega **L5 menos el filtro**, anotado como desviación—;
+queda **§LH-C6-L3-SIN-PAGINADOR**, que es una decisión con su razón escrita, no
+una medida.
+
+**Y el CSS servido reforzó `D1` sin que nadie se lo pidiera:** la regla de zoom
+es **literalmente la misma** en las tres variantes de L1 y en L4 —varianza cero
+en el canal donde Divi escribe lo del editor— y **de otra familia** en L5. Es
+mejor evidencia que las tres pieles de paginación, que eran un 1:1 en 9 páginas.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer `37/37` como «el eje está verificado».** Es **a 1440** —el catálogo
+  excluye `hover` a 390 a propósito, no por pereza— y **el eje sigue sin campaña
+  de ruido**: un `SIN EFECTO` suelto es SIN PROBAR. Cobertura completa **no es**
+  suelo conocido.
+- **No citar `1094 → 719` imágenes ni `67 → 183` controles como defecto.** Se
+  cuentan **en la raíz**, y las raíces son `#main-content` y `main`: dos
+  selectores que no está probado que denoten el mismo subárbol. El que sí es
+  comparable —documento entero en los dos lados— es **363 → 2** imágenes pedidas
+  al scrollear.
+- **No dar por auditado el `−1` de `article`.** Es un recuento de selector con
+  forma, no un defecto adjudicado. Lo barato: identificar **qué** nodo falta en
+  UNA de las once — probablemente cierra las once.
+- **No re-declarar fuentes en `cobertura.mjs` de paso.** Los 6 `·` de `docH` y
+  compañía son las rutas de `articulos-kb`, medidas por `kb-cmp` y **no
+  declaradas**: §LH-C6-COBERTURA-DIVERGE sigue abierta a propósito.
+
+## 4 · Lo siguiente
+
+**Construir F3-2** — LISTADO-B con sus 3 variantes · L2/L3 · el índice
+`casos-de-exito` (**menos el filtro**) · las 107 rutas `/page/N/` derivadas en
+build, con `P-LH-C1…C5` como criterio de cierre. Sin caducar: los **241/330**
+casos sin ejercitar, las **1227** reglas de piel cableadas, y **390** para este
+eje.
+
+---
+
 # HANDOFF — el `13/37` era cierto y escondía un ARQUETIPO A CERO, porque la sonda y el informe llamaban «familia» a dos cosas distintas
 
 > ⚠ **Tanda 2026-08-11 (50.ª).** Reentrada a `P-LH-C6` tras el corte. PASOS

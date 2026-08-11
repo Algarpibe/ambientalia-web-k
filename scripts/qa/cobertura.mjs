@@ -293,6 +293,13 @@ if (fuente("enlaces.json")) set("enlaces", J("enlaces.json").publicadas || RUTAS
 const PARCIALES_COMPORT = [
   // TODAS=1 SOLO=monitorizacion ETIQUETA=monografico · 5 rutas × 2 lados, 70/70
   "comportamiento-1440-emitidas-monografico.json",
+  /* TODAS=1 UNIVERSO=emitidas · LAS 37 rutas × 2 lados · 518/518 con disparo
+   * confirmado, 0 selectores muertos (2026-08-11). Es la corrida que quita el
+   * «una por familia» del alcance: ya no hay que elegir de qué partición se
+   * habla, porque están todas. Y sigue declarada POR NOMBRE y no por glob, por
+   * la misma razón que la de arriba — un glob se tragaría una corrida `AFOR=`,
+   * que mide OTRA ZONA de la afordancia y no acredita el hover canónico. */
+  "comportamiento-1440-emitidas-todas.json",
 ];
 for (const f of [...congeladas("comportamiento-1440"), ...congeladas("comportamiento-390"), ...PARCIALES_COMPORT]) {
   if (!fuente(f)) continue;

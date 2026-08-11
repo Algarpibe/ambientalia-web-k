@@ -189,7 +189,7 @@ Escrito ahora para que la tanda que construya no se lo invente:
 | **P-LH-C3** | las rutas `/page/N/` emitidas coinciden con **una corrida de `qa:lh-paginas` del día de la construcción** (no con la del 2026-07-31 — el contenido vivo mueve el total) |
 | **P-LH-C4** | al emitir el primer hub/listado, `qa:enlaces` convierte los **25 href** absolutos en fallo — se localizan con la sonda, no a mano, y se re-corre hasta limpia en las dos direcciones |
 | **P-LH-C5** | los 7 sin paginación real devuelven **404** en el clon para `/page/2/`, y la desviación queda anotada en `PENDIENTES-QA.md` con la razón de D2.4 |
-| **P-LH-C6** | ✅ **CUMPLIDA 2026-08-10** — `npm run qa:comportamiento`, 254/254 interacciones con disparo confirmado, negativo 5/5. Acta: **`BEHAVIORS.md`** (mismo directorio) · `medidas/comportamiento-1440.json` |
+| **P-LH-C6** | ✅ **CUMPLIDA 2026-08-10** — `npm run qa:comportamiento`, 254/254 interacciones con disparo confirmado, negativo 5/5. Acta: **`BEHAVIORS.md`** (mismo directorio) · `medidas/comportamiento-1440.json`. **AMPLIADA al universo entero el 08-11**: `TODAS=1` → **518/518** sobre las **37 rutas × 2 lados**, el eje de la matriz a **37/37** (`comportamiento-1440-emitidas-todas.json`) |
 
 ## ⚠ Lo que la pasada de comportamiento le DEVUELVE a este documento (2026-08-10)
 
@@ -222,3 +222,26 @@ aviso al lado.
 > como tal en la tanda que construya —igual que `D2.4` con los 7 sin paginación
 > real—, no un pendiente tácito. `PLAN-FASE-3.md` §F3-2 lo lleva escrito: la
 > entrega hay que leerla **«L5 menos el filtro»**.
+
+### ✅ 2026-08-11 · el CSS servido añade una fila, y refuerza D1 por una vía que no era el marcado
+
+`qa:hover-zonal` no se escribió para contestar a D1 —iba a por el disparador del
+zoom— y de paso trae la evidencia más limpia que tiene esa decisión:
+
+| decisión | qué midió el CSS servido |
+|---|---|
+| **D1** · *L1 es UNO con tres variantes de tarjeta* | ✅ **la regla de zoom de media es LITERALMENTE LA MISMA** en las tres variantes de L1 **y en L4**: `.et_pb_post .entry-featured-image-url:hover img { transform: scale(1.1) }`. Varianza **cero** entre variantes en el canal donde Divi escribe lo que decidió el editor |
+| **D1** · *L5 no es un arquetipo: es plantilla PHP propia sobre `casos`* | ✅ **su regla es de otra familia** —`.case-list-content article .case-imagen:hover`, y amplía **el propio `<a>`** porque la tarjeta de caso no tiene `<img>`—. O sea que **no comparte el módulo de Divi con L1/L4**, que es exactamente lo que D1 afirma |
+
+> **Por qué esto vale más que las tres pieles de paginación:** aquella
+> corroboración era **un discriminador 1:1 en 9 páginas** y venía marcada como
+> *«corrobora, no prueba»*. Ésta es varianza cero **dentro** de las variantes y
+> familia distinta **fuera**, medida en el canal que este repo aprendió a mirar
+> en F3-1 —*Divi no escribe marcado: COMPILA CSS*—. Sigue sin ser una prueba
+> (n = 9 formas), pero es evidencia de otra naturaleza, y **apunta al mismo
+> sitio**.
+
+**Y para la construcción hay una consecuencia directa, no una impresión:** la
+regla se copia **con su disparador**. `article:hover img` cuadra el píxel a 1440
+en las dos formas y cambia **quién** dispara, que es el defecto de rango del
+§CONTRATO trasladado al eje de interacción.

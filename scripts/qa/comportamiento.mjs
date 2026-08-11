@@ -121,6 +121,23 @@ if (SOLO && !ETIQUETA && !env("NEG")) {
   console.error(`\n❌ SOLO sin ETIQUETA: esta corrida mide un SUBCONJUNTO y escribiría en el\n   nombre canónico, con la forma de una corrida completa. Pon ETIQUETA=<nombre>.`);
   process.exit(2);
 }
+/* ── Y la TERCERA perilla de la misma clase: `TODAS`, que se DERIVA ────────
+ * `AFOR` cambia qué zona · `SOLO` cuántas páginas · **`TODAS` también cuántas**,
+ * y con el signo cambiado: es el SUPERCONJUNTO. Sin marca, las dos corridas
+ * —«una por `srcRoute`» (13 rutas) y «las 37»— escriben en el MISMO nombre y con
+ * la MISMA forma; sólo `meta.alcance` las separa, que es exactamente lo que
+ * §LH-C6-SOLO-SIN-ETIQUETA acaba de cerrar para `SOLO`.
+ *
+ * Aquí no se pide `ETIQUETA`: **se deriva el marcador**, porque el valor no hay
+ * que recordarlo —lo sabe la perilla— y un número derivado no envejece contra el
+ * repo (§sondas, regla 9). El nombre lleva `-todas` y la congelada dice su
+ * alcance sin que nadie se acuerde de escribirlo.
+ *
+ * ⚠ Prior art que NO se renombra: `comportamiento-1440-emitidas-monografico.json`
+ * (2026-08-11) se congeló con `TODAS=1 SOLO=… ETIQUETA=…` antes de esta regla y
+ * está **declarada por su nombre** en `cobertura.mjs`; renombrarla rompería la
+ * cita. Su `ETIQUETA` ya dice lo que es. */
+const MARCA_ALCANCE = TODAS ? "-todas" : "";
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /* ── Sabotajes del test en negativo ────────────────────────────────────────
@@ -635,6 +652,7 @@ const salida = {
     fueraDelCatalogo: CATALOGO.filter((c) => !c.anchos.includes(ANCHO)).map((c) => `${c.tipo} (no a ${ANCHO})`),
     alcance: {
       paginas: PAGINAS.length,
+      todasLasEmitidas: TODAS,
       listados: PAGINAS.filter((P) => P.universo === "listados").map((P) => P.rutaEs),
       emitidas: PAGINAS.filter((P) => P.universo === "emitidas").map((P) => P.clon),
       unidadesPlanificadas: PLAN.length,
@@ -1169,6 +1187,15 @@ console.log(`\n  por tipo:`);
 for (const [t, r] of Object.entries(salida.resumen.porTipo)) console.log(`    ${t.padEnd(12)} ${JSON.stringify(r)}`);
 
 const muertos = censo.informe(`· comportamiento@${ANCHO}`);
+/* ⚠ «0 selectores muertos» se viene CITANDO en las actas de este eje y sólo
+ * existía en la consola de quien corrió la sonda — que es la regla 2 de §sondas
+ * (*una conclusión citada en un doc tiene que tener su fichero*) con el objeto
+ * más pequeño posible: un cero. Ahora viaja en la congelada. */
+salida.resumen.censoSelectores = {
+  vivos: Object.keys(censo.total).length - censo.muertos().length,
+  muertos: censo.muertos(),
+  paginasCensadas: censo.paginas,
+};
 
 if (noDisparadas) {
   console.error(
@@ -1179,6 +1206,6 @@ if (noDisparadas) {
   );
 }
 
-w(`medidas/comportamiento-${ANCHO}${UNIVERSO === "ambos" ? "" : `-${UNIVERSO}`}${ETIQUETA ? `-${ETIQUETA}` : ""}.json`, salida);
+w(`medidas/comportamiento-${ANCHO}${UNIVERSO === "ambos" ? "" : `-${UNIVERSO}`}${MARCA_ALCANCE}${ETIQUETA ? `-${ETIQUETA}` : ""}.json`, salida);
 ev.informe();
 process.exitCode = (muertos || noDisparadas) ? 2 : 0;

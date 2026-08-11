@@ -88,6 +88,28 @@ probarían nada (§sondas, regla 8a).
 > construir las dos. Una plantilla que ponga `article:hover img {scale:1.1}`
 > reproduce el píxel a 1440 y **cambia el disparador**.
 
+> ✅ **CERRADO 2026-08-11 — el disparador tiene nombre, y lo dio otro
+> instrumento.** `npm run qa:hover-zonal` (negativo 4/4) lee el **CSS SERVIDO**
+> —los `<style>` y las **7–14 hojas externas**, 41 185 reglas en las 9 formas— y
+> encuentra la regla, que es lo que ninguna cantidad de hover podía dar:
+>
+> | forma | lo que se construye |
+> |---|---|
+> | **L1** (blog · etiqueta · resources) **y L4** | `.et_pb_post .entry-featured-image-url:hover img { transform: scale(1.1) }` — dispara el **`<a>` que envuelve la imagen destacada**, se amplía el `<img>` de dentro |
+> | **L5-casos** | `.case-list-content article .case-imagen:hover { transform: scale(1.1) }` — dispara **y se amplía el mismo `<a>`** (la tarjeta de caso no tiene `<img>`: la imagen es su `background-image`) |
+>
+> **Por qué el hover no podía cerrarlo, y conviene saberlo para la próxima:** el
+> comportamiento ya había **excluido `article`** (puntero en la meta ⇒ la imagen
+> no se mueve), pero separar `a:hover img` de `img:hover` **no lo hace ningún
+> píxel** — las dos cajas coinciden en pantalla. El discriminador estaba
+> **servido**, que es la lección de F3-1 (`CLAUDE.md` §El principio) aplicada a
+> un eje nuevo.
+>
+> **Y el cruce cerró en las dos direcciones:** los 4 zooms medidos tienen los 4
+> su regla (`efectos medidos SIN regla = 0`), y **L1-blog y L1-etiqueta SIRVEN la
+> regla aunque su corrida canónica no midiera zoom** — porque el puntero cayó en
+> la meta. Las dos corridas que parecían contradecirse las explica el mismo CSS.
+
 **El factor es 1.1 exacto y se repite en cuatro formas** (`440→484` = ×1.1,
 `293.2→322.5` = ×1.1, `357.3→393` = ×1.1). Eso es plantilla, no campo.
 
@@ -258,3 +280,18 @@ por hover, paginación y —en L5— el filtro.**
 > 70/70 con disparo confirmado, 0 selectores muertos**, congelada en
 > `medidas/comportamiento-1440-emitidas-monografico.json`. El eje pasa de
 > **13/37 a 18/37** y ninguna familia de la matriz queda a cero.
+
+> ✅✅ **Y EL 2026-08-11 SE ACABA LA PREGUNTA: `TODAS=1` sobre el universo
+> entero — 37/37.** `518/518` interacciones con disparo confirmado, `NO SE
+> DISPARÓ 0`, **5 selectores vivos y 0 muertos** en las 74 páginas. Congelada:
+> `medidas/comportamiento-1440-emitidas-todas.json`.
+>
+> **Lo que cambia no es sólo el número: es que ya no hay partición que
+> declarar.** «Una ruta por familia» era la frase que escondió MONOGRÁFICO, y
+> escondía porque `srcRoute` y ARQUETIPO son dos particiones distintas que suenan
+> igual. Con las 37 medidas **las dos coinciden porque no queda nada fuera de
+> ninguna**, y el alcance se dice sin adjetivos: *las rutas que el build emite,
+> a 1440*.
+>
+> ⚠ **Sigue siendo 1440 y sigue sin suelo.** Cobertura completa **no es** ruido
+> conocido, y esta lista de §3 sigue en pie en todo lo demás.
