@@ -150,6 +150,39 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
 > PROBAR, no limpio.
 
+## ⚠ DECLARADO ANTES DE CONSTRUIR: **F3-2 va a hundir TODOS los ejes de esta matriz, y no será una regresión** (2026-08-11)
+
+**Se escribe ahora, con F3-2 sin empezar, porque dicho después parece lo
+contrario de lo que es.** F3-2 emite listados y hubs; el denominador de esta
+matriz es *«las rutas que el build emite»*, así que **crece de golpe** y toda
+celda `·` nueva es *«todavía no medida»*, **no** *«se rompió algo»*.
+
+| | rutas emitidas | `comportamiento` | `docH` · `base` · `árbol` · `enlaces` |
+|---|---|---|---|
+| **HOY, antes de F3-2** | **37** | **37/37 = 100 %** | 31/37 = 84 % |
+| **DESPUÉS**, si F3-2 emite los 35 listados y **54** `/page/N/` | **126** | 37/126 = **29 %** | 31/126 = **25 %** |
+| **DESPUÉS**, si además replica las **55 vacías** | **181** | 37/181 = **20 %** | 31/181 = **17 %** |
+
+> ⚠ **El denominador de después es un RANGO y no un número, y ésa es la
+> noticia.** «107 rutas `/page/N/`» sale de `lh-paginas`, cuyo criterio es *200
+> hasta el primer 404* — y ese criterio **cuenta 55 páginas que responden 200 y
+> no listan nada** (§ESCALÓN F3-2 en `PENDIENTES-QA.md`, verificado en vivo:
+> 51 fronteras, 0 discrepancias). Según cómo se decida esa ficha, F3-2 emite
+> **~89 o ~144 rutas nuevas**. Escribir aquí «142» a secas sería fijar por
+> inercia una decisión que no está tomada.
+
+**Lo que NO cambia y conviene decir en la misma frase:** las **37** rutas de hoy
+siguen medidas exactamente igual después. El porcentaje baja porque entra
+trabajo nuevo, no porque se pierda ninguno — y la unidad en la que hay que
+leerlo es **la ruta comparada**, no el tanto por ciento (§séptimo contenedor: *una
+cobertura declarada al nivel de arriba absorbe todo lo que no se midió abajo*).
+
+**Y la unidad de las rutas de paginación ya está decidida con medida**
+(§F3-2-UNIDAD-SERIE): **cada `/page/N/` es su propia unidad**. Las 28 series con
+varias páginas dan **35 clases estructurales** y **19 de las 28 son
+heterogéneas**, así que «una por serie» vería sólo la clase «primera». Si en
+algún momento se muestrea, será *una por CLASE medida*, con el censo detrás.
+
 ## ✅✅✅ EL EJE `comportamiento` ESTÁ COMPLETO — **37/37** (2026-08-11)
 
 **Era el hueco mayor del proyecto y hoy es el único eje con cobertura completa**,

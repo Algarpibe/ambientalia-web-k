@@ -1,5 +1,112 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔⛔ ESCALÓN F3-2 · **55 de las «107 rutas /page/N/» existen y no listan NADA**, y eso es una forma que `DECISIONES.md` no contempla (2026-08-11)
+
+**Salió en el PASO 2 —antes de construir una sola línea—** al preguntar si una
+serie `/page/N/` es una unidad. No lo es, y de paso apareció esto:
+
+| | |
+|---|---|
+| qué hace el original | `/es/blog/page/9/` … `/page/17/` responden **200**, con `<link rel=canonical>` **a sí mismas**, `<title>` de Yoast **«Página 9 de 17»**… y **cero `<article>`** |
+| dónde está la frontera | `page/8` = 5 tarjetas · `page/9..17` = 0 · `page/18` = **404** |
+| cuántas | **55 páginas vacías** frente a **84 con contenido**, en las 17 series a las que la pregunta aplica |
+| las tres fuentes del total **no coinciden** | la **ventana** de `paginate_links` dice 8 · el **`<title>`** dice 17 · el **contenido** se acaba en 8 |
+| verificado en vivo | **51 puntos de frontera · 0 discrepancias** con la captura de F3-0 |
+
+Congeladas: `medidas/lh-serie.json` · `medidas/lh-serie-vivo.json` (con su control).
+
+### Por qué es ESCALÓN y no una ficha más
+
+`DECISIONES.md` §D2 contempla **dos** situaciones y ésta es una **tercera**:
+
+| | qué dice el original | qué decidió D2 |
+|---|---|---|
+| **D2.3** · listado que pagina | N páginas con contenido | derivar `/page/N/` en build: `⌈entradas ÷ porPágina⌉` |
+| **D2.4** · los 7 que responden 200 a **cualquier** N | canonical → **la página 1** | **no se replican**: 404 en el clon, desviación anotada |
+| **← ESTO** | **200 · canonical a SÍ MISMA · título «de 17» · cero entradas** | **nada** |
+
+Y las dos reglas existentes dan **respuestas distintas** aquí, que es lo que
+impide resolverlo de paso:
+
+- por **D2.3**, la derivación por contenido emite **8** páginas para el blog ⇒
+  `/page/9..17` serían **404** en el clon y **200** en el original;
+- por **D2.4**, el criterio para no replicar era *«el canonical dice que no son
+  rutas»* — y aquí **el canonical dice que sí lo son**.
+
+> **El número de la entrega está en juego, no un detalle:** «107 rutas
+> `/page/N/`» sale de `lh-paginas`, cuyo criterio es *«200 hasta el primer
+> 404»*, y ese criterio **cuenta las vacías**. Medido sobre la población:
+> **54 con contenido · 55 vacías**. O sea que F3-2 emite ~54 o ~109 según cómo
+> se decida, y la diferencia es **la mitad de la entrega**.
+
+**No se decide aquí, y por eso está escrito así.** La consigna de la tanda lo
+dejó dicho —*si al construir aparece una forma que `DECISIONES.md` no contempla,
+para con la evidencia congelada*—, y además la decisión no es obvia: replicar el
+200-vacío es fiel y emite 55 rutas que no sirven nada; no replicarlo es
+divergir del original en 55 URLs que hoy responden. **Las dos son legítimas y
+las dos hay que escribirlas con su razón**, como se hizo con `D2.4`.
+
+⚠ **Y hay una consecuencia que sí es inmediata: `LH-SP9` estaba mal planteada.**
+Decía *«14·1·8 entradas con 2·1·2 páginas — no sale un divisor limpio»*. Con las
+vacías fuera, el divisor se calcula contra **las páginas con contenido**, no
+contra el total del 404. Es la misma confusión, un nivel más abajo.
+
+---
+
+## ✅ F3-2-UNIDAD-SERIE · una serie `/page/N/` **no es una unidad**, y ahora está medido en vez de supuesto (2026-08-11)
+
+**PASO 2 de F3-2, y la pregunta se hizo antes de necesitar la respuesta.** Al
+declarar cobertura de las ~142 rutas nuevas, la tentación es *«con una página
+por serie basta: es la misma plantilla»* — que es **literalmente la frase que
+dejó MONOGRÁFICO a cero** (§LH-C6-FAMILIA-NO-ES-FAMILIA): un contenedor que
+mapea a varias unidades reportadas, con «la primera de cada uno» de filtro
+silencioso.
+
+**No se muestreó: se midió la población entera**, y gratis — la captura de F3-0
+ya trae **las 149 páginas** (cada índice y **cada** `/page/N/`). Sonda nueva
+`npm run qa:lh-serie` (negativo **3/3**):
+
+| | |
+|---|---|
+| series con más de una página | **28** |
+| …**heterogéneas** (≥2 clases estructurales) | **19** |
+| …homogéneas | 9 — y son las **triviales**: las que sirven la misma página a cualquier `N` (`D2.4`) |
+| clases estructurales distintas en la población | **35** |
+| veredicto | **LA SERIE NO ES UNA UNIDAD** |
+
+**Las tres hipótesis del pre-registro salieron, y por eso el resultado se puede
+leer como una prueba y no como una descripción:** la 1.ª no tiene «anterior» y
+la última no tiene «siguiente» (H1); la última trae **menos tarjetas** (H2, p. ej.
+`9 → 7 → 0`); las intermedias sólo se diferencian en qué números imprime la
+ventana (H3).
+
+> **Consecuencia operativa para F3-2:** la unidad de cobertura de las rutas de
+> paginación **es la ruta**, no la serie. Si alguna vez se quiere muestrear, el
+> muestreo legítimo es *«una de cada CLASE medida»* con este censo detrás —
+> nunca *«la primera de cada serie»*, que sólo ve la clase «primera».
+
+### ⚠ Y la sonda nació con el mismo defecto del que protege — lo cazó su CONTROL EN VIVO, no su código
+
+La primera corrida contó **65 documentos con 0 tarjetas** y los llamó *«páginas
+que existen y no listan nada»*. **Mezclaba dos ceros distintos:**
+
+| cero | qué es |
+|---|---|
+| `/es/blog/page/9/` → 0 `<article>`, **y su página 1 sirve 9** | la página existe y no lista nada — **hallazgo** |
+| `/es/productos/` → 0 `<article>`, **y su página 1 tampoco** | esa forma **no usa `<article>`** (hub de builder) — cero del selector |
+
+Son 5 series enteras (`productos` · `sectores` · `recursos/{documentos-cientificos,kunakpedia,preguntas-frecuentes}`)
+contadas como «vacías» sin serlo. Corregido mirando la página 1 de cada serie;
+el número bueno es **55**, no 65.
+
+**Y lo que lo destapó fue el control, no releer el código:** al pedir en vivo la
+frontera de cada serie, cinco dieron `1:301` —porque `/page/1/` **no es una URL
+de este sitio**, WordPress la redirige— y cuatro dieron `-Infinity:404`, que es
+lo que sale al hacer `Math.max()` de un conjunto vacío. **Dos defectos del
+instrumento, los dos con forma de dato**, y ninguno habría dado error.
+
+---
+
 ## ✅✅ LH-C6-EJE-COMPLETO · el eje `comportamiento` llega a **37/37**, y con eso deja de haber una partición que interpretar (2026-08-11)
 
 `0/31` el 08-10 por la mañana · `13/37` esa tarde · `18/37` al cerrar

@@ -1,3 +1,86 @@
+# HANDOFF — F3-2 PARADA EN EL PASO 2: la mitad de las «107 rutas de paginación» existen y no listan nada, y el modelo no contempla esa forma
+
+> ⚠ **Tanda 2026-08-11 (52.ª).** F3-2, PASOS **2 · 1 · 5** completos y **3
+> DETENIDO por el ESCALÓN** (la consigna: *si aparece una forma que
+> `DECISIONES.md` no contempla, para con la evidencia congelada*). Registro:
+> `PENDIENTES-QA.md` (**2 fichas nuevas**, una de ellas ⛔⛔) ·
+> `COBERTURA-MEDICION.md` (aviso del PASO 1) · `PLAN-FASE-3.md` §F3-2.
+
+## 0 · Los tres titulares
+
+> **1 · EL ESCALÓN, Y SALTÓ ANTES DE ESCRIBIR UNA LÍNEA DE CÓDIGO.** El original
+> sirve **55 páginas `/page/N/` que responden 200, se declaran canónicas de sí
+> mismas, llevan el `<title>` «Página 9 de 17» de Yoast… y no listan ni una
+> entrada** — frente a **54 con contenido**. La frontera del blog es exacta:
+> `page/8` 5 tarjetas · `page/9..17` **cero** · `page/18` **404**. Y las tres
+> fuentes del total se contradicen: **la ventana dice 8, el `<title>` dice 17, el
+> contenido se acaba en 8**. `D2.3` (derivar por contenido) y `D2.4` (no
+> replicar porque *«el canonical dice que no son rutas»*) **dan respuestas
+> distintas aquí**, y el canonical dice justo lo contrario que en D2.4. **La
+> entrega vale ~89 o ~144 rutas según cómo se decida: la mitad.**
+>
+> **2 · LA UNIDAD SÍ QUEDA CERRADA, Y MEDIDA SOBRE LA POBLACIÓN ENTERA.** Nada de
+> muestrear: la captura de F3-0 ya traía **las 149 páginas**, índice y cada
+> `/page/N/`. Sonda nueva `qa:lh-serie` (negativo **3/3**): **19 de 28 series son
+> heterogéneas**, **35 clases estructurales**, y las 9 «homogéneas» son las
+> triviales de `D2.4`. **Cada `/page/N/` es su propia unidad.** El atajo «una por
+> serie» **sale rojo por construcción** en el negativo — no por criterio.
+>
+> **3 · Y LA SONDA NACIÓ CON EL DEFECTO DEL QUE PROTEGE; LO CAZÓ SU CONTROL EN
+> VIVO.** Contó **65** documentos «vacíos» mezclando dos ceros: el de
+> `/es/blog/page/9/` (0 `<article>` **y su página 1 sirve 9**) con el de
+> `/es/productos/` (0 `<article>` **y su página 1 tampoco** — esa forma no usa
+> `<article>`). El número bueno es **55**. Lo destapó pedir las fronteras en
+> vivo: cinco series dieron `301` porque **`/page/1/` no es una URL de este
+> sitio**, y cuatro dieron `-Infinity` de un `Math.max()` vacío. Dos defectos del
+> instrumento, los dos **con forma de dato**.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| **`qa:lh-serie`** ← nueva | **149/149** documentos · 28 series · 19 heterogéneas · 35 clases → `medidas/lh-serie.json` |
+| **`qa:lh-serie` `VIVO=1`** | **51 fronteras · 0 discrepancias** con la captura de F3-0 → `medidas/lh-serie-vivo.json` |
+| **`qa:lh-serie-neg`** ← nueva | **3/3** — y el sabotaje central **es el atajo** (`una-por-serie` ⇒ NO SE PUDO COMPARAR) |
+| PASO 5 · las 19 rutas | **absorbidas**: derivado contra el manifiesto, **0 siguen sin medir** tras el `37/37` |
+| `qa:lib` · `npm run check` | **129 sondas** · negativo 93/93 · verde (slugs LIMPIO, `cms-campos` 10/10) |
+
+## 2 · Lo que hay que decidir antes de tocar código
+
+**Una sola cosa, y con las dos opciones ya escritas** (`PENDIENTES-QA.md`
+§ESCALÓN F3-2):
+
+- **replicar** el 200-vacío ⇒ fiel al original, y el clon emite **55 rutas que no
+  sirven nada**;
+- **no replicarlo** ⇒ 404 donde el original da 200, en 55 URLs vivas, y hay que
+  escribir la razón como se hizo con `D2.4`.
+
+**Las dos son legítimas.** Lo que no vale es que la decida el criterio de
+`lh-paginas` por inercia, que es lo que estaba pasando: «107» **incluye las
+vacías** porque su criterio es *200 hasta el primer 404*.
+
+## 3 · Y una precondición que la parada deja a la vista
+
+`docs/research/listados-hubs/` tiene `PAGE_TOPOLOGY` · `DECISIONES` · `MODELO` ·
+`BEHAVIORS` y **ningún `components/*.spec.md`** (derivado, no recordado). O sea
+que **F3-2 no tiene fase de specs**, y `COBERTURA-MEDICION.md` ya dejó escrito
+para `articulos-kb` qué pasa cuando se construye sin ellas: *«un lector son
+ANCLAS, y las anclas salen de su fase de specs; escribirlas hoy sería
+inventarlas»*. Antes de LISTADO-B toca medir las secciones de las 9 formas.
+
+## 4 · Lo siguiente
+
+1. **decidir el escalón** con su razón escrita en `DECISIONES.md` (§D2.5 nueva);
+2. **specs de listados** — `components/*.spec.md` de las 9 formas;
+3. **entonces** construir LISTADO-B · L2/L3 · el índice de casos (**menos el
+   filtro**, §LH-C6-FILTRO-L5), con `P-LH-C1…C5` de cierre y el hover **con su
+   disparador medido** (`.et_pb_post .entry-featured-image-url:hover img`).
+
+Sin caducar: **241/330** casos sin ejercitar · **1227** reglas de piel cableadas
+· **390** para el eje de comportamiento.
+
+---
+
 # HANDOFF — el eje llega a 37/37 y deja de haber partición que interpretar; y la pregunta que el hover no podía contestar la contestó el CSS que el documento se trae
 
 > ⚠ **Tanda 2026-08-11 (51.ª).** Segunda reentrada a `P-LH-C6`. PASOS

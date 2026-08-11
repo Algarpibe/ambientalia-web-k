@@ -1,0 +1,3613 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿basta UNA página por serie /page/N/, o cada una es su propia unidad?",
+    "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
+    "preRegistro": {
+      "H1": "la 1.ª no tiene «anterior» y la última no tiene «siguiente» ⇒ ≥2 formas por serie",
+      "H2": "la última trae MENOS tarjetas (el resto de la división)",
+      "H3": "las intermedias son iguales entre sí salvo la ventana de números"
+    },
+    "sabotaje": null,
+    "noMide": [
+      "píxeles: dos páginas con la misma firma pueden diferir de alto si el texto envuelve distinto",
+      "el contenido: qué entradas salen en cada página es dato, no forma"
+    ]
+  },
+  "series": {
+    "/blog": {
+      "nPaginas": 17,
+      "nClases": 4,
+      "clases": [
+        "t9·A·-N·s6·sb",
+        "t9·A·PN·s6·sb",
+        "t5·A·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          5,
+          0
+        ],
+        "piel": [
+          "A",
+          "ninguna"
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          4,
+          5,
+          2,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·A·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "A",
+          "prev": false,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 2,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 3,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 4,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 5,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 6,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "intermedia",
+          "clase": "t9·A·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 7,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 8,
+          "pos": "intermedia",
+          "clase": "t5·A·P-·s6·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 7,
+          "tituloN": 8,
+          "tituloTotal": 17,
+          "piel": "A",
+          "prev": true,
+          "next": false,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 9,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 9,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 10,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 10,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 11,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 11,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 12,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 12,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 13,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 13,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 14,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 14,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 15,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 15,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 16,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 16,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 17,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 17,
+          "tituloTotal": 17,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/casos-de-exito": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t57·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t57·ninguna·--·s6·sb",
+          "tarjetas": 57,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t57·ninguna·--·s6·sb",
+          "tarjetas": 57,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/calidad-del-aire": {
+      "nPaginas": 7,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t6·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          6,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          2,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 2,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 3,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t6·ninguna·P-·s6·sb",
+          "tarjetas": 6,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 4,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 6,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 7,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/co2-es": {
+      "nPaginas": 2,
+      "nClases": 2,
+      "clases": [
+        "t7·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          7,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t7·ninguna·--·s6·sb",
+          "tarjetas": 7,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/contaminantes-atmosfericos": {
+      "nPaginas": 8,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t9·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          2,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 2,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 3,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·P-·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 4,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 6,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 7,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 8,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 8,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/cov": {
+      "nPaginas": 2,
+      "nClases": 2,
+      "clases": [
+        "t6·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          6,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t6·ninguna·--·s6·sb",
+          "tarjetas": 6,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/emisiones-industriales": {
+      "nPaginas": 5,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t5·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          5,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          2,
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 2,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·P-·s6·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": 3,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/gases-de-efecto-invernadero": {
+      "nPaginas": 2,
+      "nClases": 2,
+      "clases": [
+        "t9·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·--·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/h2s-es": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t4·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t4·ninguna·--·s6·sb",
+          "tarjetas": 4,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/malos-olores": {
+      "nPaginas": 2,
+      "nClases": 2,
+      "clases": [
+        "t8·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          8,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t8·ninguna·--·s6·sb",
+          "tarjetas": 8,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/monitorizacion-ambiental": {
+      "nPaginas": 19,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t1·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          1,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          5,
+          4,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 2,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 3,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 4,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 5,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 6,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 9,
+          "tituloN": 7,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 8,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 8,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 9,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 11,
+          "tituloN": 9,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 10,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 11,
+          "tituloN": 10,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 11,
+          "pos": "intermedia",
+          "clase": "t1·ninguna·P-·s6·sb",
+          "tarjetas": 1,
+          "vacia": false,
+          "ventanaMax": 10,
+          "tituloN": 11,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 12,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 12,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 13,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 13,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 14,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 14,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 15,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 15,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 16,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 16,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 17,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 17,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 18,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 18,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 19,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 19,
+          "tituloTotal": 19,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/normativa-de-calidad-del-aire": {
+      "nPaginas": 4,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t2·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          2,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          2,
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 2,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t2·ninguna·P-·s6·sb",
+          "tarjetas": 2,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": 3,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/particulas-en-suspension": {
+      "nPaginas": 4,
+      "nClases": 3,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t7·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          7,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t7·ninguna·P-·s6·sb",
+          "tarjetas": 7,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 3,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/etiqueta/sensor-de-calidad-del-aire": {
+      "nPaginas": 7,
+      "nClases": 4,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t7·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          9,
+          7,
+          0
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          2,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t9·ninguna·-N·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 2,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t9·ninguna·PN·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 3,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t7·ninguna·P-·s6·sb",
+          "tarjetas": 7,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 4,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 6,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 7,
+          "tituloTotal": 7,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/glosario": {
+      "nPaginas": 8,
+      "nClases": 3,
+      "clases": [
+        "t5·ninguna·-N·s4·sb",
+        "t5·ninguna·PN·s4·sb",
+        "t2·ninguna·P-·s4·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          5,
+          2
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          4,
+          3
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t5·ninguna·-N·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 5,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 5,
+          "tituloN": 2,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 5,
+          "tituloN": 3,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": 4,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 7,
+          "tituloN": 5,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 6,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 8,
+          "tituloN": 7,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 8,
+          "pos": "última",
+          "clase": "t2·ninguna·P-·s4·sb",
+          "tarjetas": 2,
+          "vacia": false,
+          "ventanaMax": 7,
+          "tituloN": 8,
+          "tituloTotal": 8,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 4,
+          "sidebar": true
+        }
+      ]
+    },
+    "/preguntas-frecuentes": {
+      "nPaginas": 4,
+      "nClases": 3,
+      "clases": [
+        "t5·ninguna·-N·s4·sb",
+        "t5·ninguna·PN·s4·sb",
+        "t4·ninguna·P-·s4·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          5,
+          4
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          2
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t5·ninguna·-N·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 2,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t5·ninguna·PN·s4·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 4,
+          "tituloN": 3,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 4,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "última",
+          "clase": "t4·ninguna·P-·s4·sb",
+          "tarjetas": 4,
+          "vacia": false,
+          "ventanaMax": 3,
+          "tituloN": 4,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 2,
+          "secciones": 4,
+          "sidebar": true
+        }
+      ]
+    },
+    "/productos": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t3·ninguna·--·s8·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t3·ninguna·--·s8·sb",
+          "tarjetas": 3,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 8,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t3·ninguna·--·s8·sb",
+          "tarjetas": 3,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 8,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos": {
+      "nPaginas": 16,
+      "nClases": 4,
+      "clases": [
+        "t15·C·-N·s6·sb",
+        "t15·C·PN·s6·sb",
+        "t5·C·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          15,
+          5,
+          0
+        ],
+        "piel": [
+          "C",
+          "ninguna"
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          3,
+          4,
+          5,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t15·C·-N·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "C",
+          "prev": false,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t15·C·PN·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": 2,
+          "tituloTotal": 16,
+          "piel": "C",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t15·C·PN·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": 3,
+          "tituloTotal": 16,
+          "piel": "C",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t15·C·PN·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": 4,
+          "tituloTotal": 16,
+          "piel": "C",
+          "prev": true,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 5,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "intermedia",
+          "clase": "t15·C·PN·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 6,
+          "tituloN": 5,
+          "tituloTotal": 16,
+          "piel": "C",
+          "prev": true,
+          "next": true,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 4,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 6,
+          "pos": "intermedia",
+          "clase": "t5·C·P-·s6·sb",
+          "tarjetas": 5,
+          "vacia": false,
+          "ventanaMax": 5,
+          "tituloN": 6,
+          "tituloTotal": 16,
+          "piel": "C",
+          "prev": true,
+          "next": false,
+          "dots": true,
+          "spanPages": null,
+          "ventana": 3,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 7,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 7,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 8,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 8,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 9,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 9,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 10,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 10,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 11,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 11,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 12,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 12,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 13,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 13,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 14,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 14,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 15,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 15,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 16,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 16,
+          "tituloTotal": 16,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/contaminacion-en-la-construccion": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t4·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t4·ninguna·--·s6·sb",
+          "tarjetas": 4,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t1·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t1·ninguna·--·s6·sb",
+          "tarjetas": 1,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/contaminacion-minera": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t1·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t1·ninguna·--·s6·sb",
+          "tarjetas": 1,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/contaminacion-urbana": {
+      "nPaginas": 5,
+      "nClases": 3,
+      "clases": [
+        "t15·C·-N·s6·sb",
+        "t9·C·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          15,
+          9,
+          0
+        ],
+        "piel": [
+          "C",
+          "ninguna"
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t15·C·-N·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "C",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t9·C·P-·s6·sb",
+          "tarjetas": 9,
+          "vacia": false,
+          "ventanaMax": 1,
+          "tituloN": 2,
+          "tituloTotal": 5,
+          "piel": "C",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 3,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/contaminacion-y-salud": {
+      "nPaginas": 4,
+      "nClases": 3,
+      "clases": [
+        "t15·C·-N·s6·sb",
+        "t4·C·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          15,
+          4,
+          0
+        ],
+        "piel": [
+          "C",
+          "ninguna"
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t15·C·-N·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "C",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t4·C·P-·s6·sb",
+          "tarjetas": 4,
+          "vacia": false,
+          "ventanaMax": 1,
+          "tituloN": 2,
+          "tituloTotal": 4,
+          "piel": "C",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 3,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 4,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/industria-y-contaminacion-por-olores": {
+      "nPaginas": 5,
+      "nClases": 3,
+      "clases": [
+        "t15·C·-N·s6·sb",
+        "t6·C·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          15,
+          6,
+          0
+        ],
+        "piel": [
+          "C",
+          "ninguna"
+        ],
+        "prev": [
+          false,
+          true
+        ],
+        "next": [
+          true,
+          false
+        ],
+        "ventana": [
+          1,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t15·C·-N·s6·sb",
+          "tarjetas": 15,
+          "vacia": false,
+          "ventanaMax": 2,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "C",
+          "prev": false,
+          "next": true,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t6·C·P-·s6·sb",
+          "tarjetas": 6,
+          "vacia": false,
+          "ventanaMax": 1,
+          "tituloN": 2,
+          "tituloTotal": 5,
+          "piel": "C",
+          "prev": true,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 1,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 3,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 4,
+          "pos": "intermedia",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 4,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 5,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 5,
+          "tituloTotal": 5,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/petroleo-y-gas": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t3·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t3·ninguna·--·s6·sb",
+          "tarjetas": 3,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/articulos/productos-kunak": {
+      "nPaginas": 2,
+      "nClases": 2,
+      "clases": [
+        "t7·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {
+        "tarjetas": [
+          7,
+          0
+        ]
+      },
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t7·ninguna·--·s6·sb",
+          "tarjetas": 7,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/documentos-cientificos": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t0·ninguna·--·s7·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t0·ninguna·--·s7·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 7,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s7·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 7,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/kunakpedia": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/preguntas-frecuentes": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t0·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s6·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/recursos/seminarios-web": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t3·ninguna·--·s6·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t3·ninguna·--·s6·sb",
+          "tarjetas": 3,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 6,
+          "sidebar": true
+        }
+      ]
+    },
+    "/scientific-category/articulos-cientificos-y-estudios": {
+      "nPaginas": 3,
+      "nClases": 1,
+      "clases": [
+        "t14·ninguna·--·s5·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t14·ninguna·--·s5·sb",
+          "tarjetas": 14,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "intermedia",
+          "clase": "t14·ninguna·--·s5·sb",
+          "tarjetas": 14,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 3,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        },
+        {
+          "n": 3,
+          "pos": "última",
+          "clase": "t14·ninguna·--·s5·sb",
+          "tarjetas": 14,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": 3,
+          "tituloTotal": 3,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        }
+      ]
+    },
+    "/scientific-category/articulos-tecnicos": {
+      "nPaginas": 1,
+      "nClases": 1,
+      "clases": [
+        "t1·ninguna·--·s5·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t1·ninguna·--·s5·sb",
+          "tarjetas": 1,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        }
+      ]
+    },
+    "/scientific-category/evaluaciones-independientes": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t8·ninguna·--·s5·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t8·ninguna·--·s5·sb",
+          "tarjetas": 8,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t8·ninguna·--·s5·sb",
+          "tarjetas": 8,
+          "vacia": false,
+          "ventanaMax": null,
+          "tituloN": 2,
+          "tituloTotal": 2,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 5,
+          "sidebar": true
+        }
+      ]
+    },
+    "/sectores": {
+      "nPaginas": 2,
+      "nClases": 1,
+      "clases": [
+        "t0·ninguna·--·s7·sb"
+      ],
+      "varia": {},
+      "paginas": [
+        {
+          "n": 1,
+          "pos": "primera",
+          "clase": "t0·ninguna·--·s7·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 7,
+          "sidebar": true
+        },
+        {
+          "n": 2,
+          "pos": "última",
+          "clase": "t0·ninguna·--·s7·sb",
+          "tarjetas": 0,
+          "vacia": true,
+          "ventanaMax": null,
+          "tituloN": null,
+          "tituloTotal": null,
+          "piel": "ninguna",
+          "prev": false,
+          "next": false,
+          "dots": false,
+          "spanPages": null,
+          "ventana": 0,
+          "secciones": 7,
+          "sidebar": true
+        }
+      ]
+    }
+  },
+  "resumen": {
+    "documentos": 149,
+    "series": 35,
+    "seriesConVariasPaginas": 28,
+    "homogeneas": 9,
+    "heterogeneas": 19,
+    "clasesGlobales": {
+      "t0·ninguna·--·s6·sb": 61,
+      "t9·ninguna·PN·s6·sb": 17,
+      "t5·ninguna·PN·s4·sb": 8,
+      "t9·ninguna·-N·s6·sb": 7,
+      "t9·A·PN·s6·sb": 6,
+      "t15·C·-N·s6·sb": 4,
+      "t15·C·PN·s6·sb": 4,
+      "t0·ninguna·--·s7·sb": 4,
+      "t14·ninguna·--·s5·sb": 3,
+      "t57·ninguna·--·s6·sb": 2,
+      "t7·ninguna·--·s6·sb": 2,
+      "t4·ninguna·--·s6·sb": 2,
+      "t7·ninguna·P-·s6·sb": 2,
+      "t5·ninguna·-N·s4·sb": 2,
+      "t3·ninguna·--·s8·sb": 2,
+      "t1·ninguna·--·s6·sb": 2,
+      "t3·ninguna·--·s6·sb": 2,
+      "t8·ninguna·--·s5·sb": 2,
+      "t9·A·-N·s6·sb": 1,
+      "t5·A·P-·s6·sb": 1,
+      "t6·ninguna·P-·s6·sb": 1,
+      "t9·ninguna·P-·s6·sb": 1,
+      "t6·ninguna·--·s6·sb": 1,
+      "t5·ninguna·P-·s6·sb": 1,
+      "t9·ninguna·--·s6·sb": 1,
+      "t8·ninguna·--·s6·sb": 1,
+      "t1·ninguna·P-·s6·sb": 1,
+      "t2·ninguna·P-·s6·sb": 1,
+      "t2·ninguna·P-·s4·sb": 1,
+      "t4·ninguna·P-·s4·sb": 1,
+      "t5·C·P-·s6·sb": 1,
+      "t9·C·P-·s6·sb": 1,
+      "t4·C·P-·s6·sb": 1,
+      "t6·C·P-·s6·sb": 1,
+      "t1·ninguna·--·s5·sb": 1
+    },
+    "clasesPorPosicion": {
+      "primera": 18,
+      "intermedia": 17,
+      "última": 8
+    },
+    "paginasVacias": {
+      "n": 55,
+      "deCuantas": 139,
+      "rutas": [
+        "/blog/page/9",
+        "/blog/page/10",
+        "/blog/page/11",
+        "/blog/page/12",
+        "/blog/page/13",
+        "/blog/page/14",
+        "/blog/page/15",
+        "/blog/page/16",
+        "/blog/page/17",
+        "/etiqueta/calidad-del-aire/page/5",
+        "/etiqueta/calidad-del-aire/page/6",
+        "/etiqueta/calidad-del-aire/page/7",
+        "/etiqueta/co2-es/page/2",
+        "/etiqueta/contaminantes-atmosfericos/page/5",
+        "/etiqueta/contaminantes-atmosfericos/page/6",
+        "/etiqueta/contaminantes-atmosfericos/page/7",
+        "/etiqueta/contaminantes-atmosfericos/page/8",
+        "/etiqueta/cov/page/2",
+        "/etiqueta/emisiones-industriales/page/4",
+        "/etiqueta/emisiones-industriales/page/5",
+        "/etiqueta/gases-de-efecto-invernadero/page/2",
+        "/etiqueta/malos-olores/page/2",
+        "/etiqueta/monitorizacion-ambiental/page/12",
+        "/etiqueta/monitorizacion-ambiental/page/13",
+        "/etiqueta/monitorizacion-ambiental/page/14",
+        "/etiqueta/monitorizacion-ambiental/page/15",
+        "/etiqueta/monitorizacion-ambiental/page/16",
+        "/etiqueta/monitorizacion-ambiental/page/17",
+        "/etiqueta/monitorizacion-ambiental/page/18",
+        "/etiqueta/monitorizacion-ambiental/page/19",
+        "/etiqueta/normativa-de-calidad-del-aire/page/4",
+        "/etiqueta/particulas-en-suspension/page/3",
+        "/etiqueta/particulas-en-suspension/page/4",
+        "/etiqueta/sensor-de-calidad-del-aire/page/5",
+        "/etiqueta/sensor-de-calidad-del-aire/page/6",
+        "/etiqueta/sensor-de-calidad-del-aire/page/7",
+        "/recursos/articulos/page/7",
+        "/recursos/articulos/page/8",
+        "/recursos/articulos/page/9",
+        "/recursos/articulos/page/10",
+        "/recursos/articulos/page/11",
+        "/recursos/articulos/page/12",
+        "/recursos/articulos/page/13",
+        "/recursos/articulos/page/14",
+        "/recursos/articulos/page/15",
+        "/recursos/articulos/page/16",
+        "/recursos/articulos/contaminacion-urbana/page/3",
+        "/recursos/articulos/contaminacion-urbana/page/4",
+        "/recursos/articulos/contaminacion-urbana/page/5",
+        "/recursos/articulos/contaminacion-y-salud/page/3",
+        "/recursos/articulos/contaminacion-y-salud/page/4",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/3",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/4",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/5",
+        "/recursos/articulos/productos-kunak/page/2"
+      ]
+    },
+    "conContenido": 84,
+    "seriesSinArticles": {
+      "n": 5,
+      "rutas": [
+        "/productos",
+        "/recursos/documentos-cientificos",
+        "/recursos/kunakpedia",
+        "/recursos/preguntas-frecuentes",
+        "/sectores"
+      ],
+      "porQue": "su página 1 tampoco sirve <article>: la pregunta de «vacía» no aplica"
+    },
+    "desacuerdoVentanaVsTitulo": [
+      {
+        "ruta": "/blog",
+        "ventanaMax": 8,
+        "tituloTotal": 17,
+        "ultimaConContenido": 8,
+        "nCapturadas": 17
+      },
+      {
+        "ruta": "/etiqueta/calidad-del-aire",
+        "ventanaMax": 4,
+        "tituloTotal": 7,
+        "ultimaConContenido": 4,
+        "nCapturadas": 7
+      },
+      {
+        "ruta": "/etiqueta/contaminantes-atmosfericos",
+        "ventanaMax": 4,
+        "tituloTotal": 8,
+        "ultimaConContenido": 4,
+        "nCapturadas": 8
+      },
+      {
+        "ruta": "/etiqueta/emisiones-industriales",
+        "ventanaMax": 3,
+        "tituloTotal": 5,
+        "ultimaConContenido": 3,
+        "nCapturadas": 5
+      },
+      {
+        "ruta": "/etiqueta/monitorizacion-ambiental",
+        "ventanaMax": 10,
+        "tituloTotal": 19,
+        "ultimaConContenido": 11,
+        "nCapturadas": 19
+      },
+      {
+        "ruta": "/etiqueta/normativa-de-calidad-del-aire",
+        "ventanaMax": 3,
+        "tituloTotal": 4,
+        "ultimaConContenido": 3,
+        "nCapturadas": 4
+      },
+      {
+        "ruta": "/etiqueta/particulas-en-suspension",
+        "ventanaMax": 2,
+        "tituloTotal": 4,
+        "ultimaConContenido": 2,
+        "nCapturadas": 4
+      },
+      {
+        "ruta": "/etiqueta/sensor-de-calidad-del-aire",
+        "ventanaMax": 4,
+        "tituloTotal": 7,
+        "ultimaConContenido": 4,
+        "nCapturadas": 7
+      },
+      {
+        "ruta": "/glosario",
+        "ventanaMax": 5,
+        "tituloTotal": 8,
+        "ultimaConContenido": 8,
+        "nCapturadas": 8
+      },
+      {
+        "ruta": "/recursos/articulos",
+        "ventanaMax": 6,
+        "tituloTotal": 16,
+        "ultimaConContenido": 6,
+        "nCapturadas": 16
+      },
+      {
+        "ruta": "/recursos/articulos/contaminacion-urbana",
+        "ventanaMax": 2,
+        "tituloTotal": 5,
+        "ultimaConContenido": 2,
+        "nCapturadas": 5
+      },
+      {
+        "ruta": "/recursos/articulos/contaminacion-y-salud",
+        "ventanaMax": 2,
+        "tituloTotal": 4,
+        "ultimaConContenido": 2,
+        "nCapturadas": 4
+      },
+      {
+        "ruta": "/recursos/articulos/industria-y-contaminacion-por-olores",
+        "ventanaMax": 2,
+        "tituloTotal": 5,
+        "ultimaConContenido": 2,
+        "nCapturadas": 5
+      }
+    ],
+    "veredicto": "LA SERIE NO ES UNA UNIDAD"
+  }
+}

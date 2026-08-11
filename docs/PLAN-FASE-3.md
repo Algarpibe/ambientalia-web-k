@@ -203,6 +203,33 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 
 ## F3-2 · listados y hubs — LISTADO-B y sus hermanos
 
+> ⛔⛔ **PARADA DE ESCALÓN (2026-08-11), levantada en el PASO 2 y antes de
+> construir nada: la entrega «107 rutas `/page/N/`» está mal contada, y no por
+> poco.** El original sirve **55 páginas que responden 200, se declaran
+> canónicas de sí mismas y no listan ni una entrada** (`/es/blog/page/9/`…`17/`,
+> con el `<title>` de Yoast diciendo «Página 9 de 17»). Frente a **54** con
+> contenido. Verificado **en vivo**: 51 fronteras, **0 discrepancias** con la
+> captura. `D2.3` y `D2.4` **no contemplan esta forma** y dan respuestas
+> distintas para ella, así que la decisión —replicar el 200-vacío o divergir— va
+> con su razón escrita **antes** de emitir rutas. Evidencia y desarrollo:
+> `PENDIENTES-QA.md` §ESCALÓN F3-2. Congeladas: `medidas/lh-serie{,-vivo}.json`.
+>
+> ✅ **Y lo que el mismo PASO 2 sí deja cerrado: la UNIDAD.** Cada `/page/N/` es
+> su propia unidad de cobertura — **19 de 28 series son heterogéneas** y hay
+> **35 clases estructurales** en la población, medidas sobre las 149 páginas
+> capturadas (no sobre una muestra). «Una por serie» es el atajo que dejó
+> MONOGRÁFICO a cero, y aquí sale **rojo por construcción** en el negativo de
+> `qa:lh-serie`.
+>
+> ⚠ **Precondición que esta parada deja a la vista, y que no es del escalón:**
+> `docs/research/listados-hubs/` tiene `PAGE_TOPOLOGY` · `DECISIONES` · `MODELO`
+> · `BEHAVIORS` y **ningún `components/*.spec.md`** — derivado, no recordado. O
+> sea que F3-2 entra en construcción **sin fase de specs**, que es justamente lo
+> que `COBERTURA-MEDICION.md` dejó escrito para `articulos-kb`: *«un lector son
+> ANCLAS, y las anclas salen de su fase de specs; escribirlas hoy sería
+> inventarlas»*. Construir antes de medir las secciones repetiría ese error con
+> otro arquetipo.
+
 | | |
 |---|---|
 | **entrega** | L1 (LISTADO-B, 3 variantes de tarjeta · 23 instancias) · L2 (2) · L3 (3) · L5 (`casos-de-exito`), **y las 107 rutas `/page/N/` derivadas en build** |
