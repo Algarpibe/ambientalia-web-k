@@ -1,6 +1,39 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔⛔ ESCALÓN F3-2 (2.º) · **80 de las 117 páginas de `L1` sirven una BARRA LATERAL de 10 widgets, y `D1` dice que entre variantes sólo cambia la tarjeta** (2026-08-11)
+## ✅ (cerrado por acotación de `D1`) ESCALÓN F3-2 (2.º) · **80 de las 117 páginas de `L1` sirven una BARRA LATERAL, y `D1` dice que entre variantes sólo cambia la tarjeta** (2026-08-11)
+
+> ✅ **CERRADO EL MISMO 2026-08-11, y sin retirar ninguna decisión.** El escalón
+> preguntaba dos cosas y las dos tienen respuesta medida sobre la población
+> entera (`medidas/lh-barra.json`, 149 documentos, **negativo 5/5**):
+>
+> | pregunta del escalón | respuesta |
+> |---|---|
+> | ¿`D1` es falsa? | **No: queda ACOTADA.** `L1` sigue siendo uno con tres variantes; lo que se ensancha es **de qué** son las variantes — tarjeta **y** retícula de cuerpo con su barra. Misma lectura que la tarjeta, las tres pieles de paginación y la regla de zoom: varianza 0 dentro, distinta entre |
+> | ¿el widget «Categorías» consume la taxonomía (condición de reapertura de `D3`)? | **NO.** Es `widget_text` en 80/80 —no el nativo `widget_categories`—, con **1 solo contenido** en los 80, y **no cubre 5 de los 7** términos que el propio contenido ejerce. `D3` queda **confirmada**: la condición se comprobó y no se cumple |
+>
+> **Y el límite que la medida SÍ impone, que es la parte que no se puede
+> decidir:** barra y retícula son **COLINEALES en 149/149** —ningún documento
+> tiene una sin la otra—, así que *«la barra es propiedad de la CAPA»* y *«…de la
+> VARIANTE»* son **INDISTINGUIBLES** con esta población. Se declara **NO
+> SEPARABLE** con su denominador; si al modelar hay que elegir, se elige el eje
+> con **mecanismo servido** (la plantilla de cuerpo del theme builder decide las
+> dos a la vez) y **se dice que la razón es ésa, no una medida**. Acta completa:
+> `docs/research/listados-hubs/DECISIONES.md` §*D1 queda ACOTADA*.
+>
+> ⚠ **Y la firma de la barra son 4 widgets, no 10 — todo lo que este documento
+> diga «10» abajo está corregido por esto.** `lh-barra` tomaba la firma sobre una
+> **ventana fija de 14 000 caracteres** y la barra mide **1481**: los otros 6 eran
+> del **pie** (clase `fwidget`). §sondas 4, tercera cara. **No mueve la partición**
+> (los tres patrones siguen a 80·80·80), sólo el recuento. Congelada vieja
+> conservada como `medidas/lh-barra-SONDA-VENTANA-14000-COMIA-EL-PIE.json`;
+> arreglo por balance de `<div>` **con guarda** (`fwidget` = 0 dentro / 480 fuera)
+> y dos negativos nuevos: `categorias-variable` (el comparador sabe fallar) y
+> `corte-fijo` (reproduce el defecto con su número — el ANTES/DESPUÉS que el diff
+> no da).
+>
+> **Lo que queda vivo del escalón** es el trabajo, no la duda: la barra **entra en
+> la entrega de F3-2** como contenido de plantilla de la variante, y los dos
+> `href` absolutos a `/es/categoria/*` entran en **`P-LH-C4`**.
 
 **Salió en el PASO 2 —la fase de specs—, y otra vez antes de escribir una línea
 de plantilla.** Al medir la retícula del cuerpo por primera vez (`qa:lh-spec`,

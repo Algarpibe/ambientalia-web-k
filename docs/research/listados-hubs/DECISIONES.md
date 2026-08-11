@@ -68,21 +68,123 @@ los seis hubs de builder.**
 > |---|---|---|
 > | fila del listado | **`3_4 + 1_4`** | **`4_4`** |
 > | columna de contenido @1440 | **911.75** | **1238.39** |
-> | barra lateral (**10 widgets**: Buscar · Categorías · newsletter) | **80 de 80 documentos** | **0 de 37** |
+> | barra lateral (**4 widgets**: Buscar · vacío · Categorías · newsletter) | **80 de 80 documentos** | **0 de 37** |
 >
 > Reparto mixto dentro de una familia: **cero**, así que en régimen plantillado
 > se lee igual que la tarjeta —varianza 0 dentro, distinta entre— y **el
 > recuento de arquetipos no cambia**. Lo que cambia es **de qué son las
 > variantes**, y por tanto qué hay que construir y qué hay que modelar.
 >
-> **`D3` no lista la barra lateral**, y su widget «Categorías» **consume la
-> taxonomía `category`** — la condición de reapertura que `D3` dejó escrita.
-> Ficha: `PENDIENTES-QA.md` §ESCALÓN F3-2 (2.º). **F3-2 no construye hasta que
-> se decida.**
->
 > Y la razón de que el recon no lo viera es §La causa común con un contenedor
 > nuevo: `lh-censo` midió **el primer nivel de secciones** —6 y 2 `_tb_body` en
 > 23/23, que sigue siendo verdad— y **la barra lateral vive una fila más abajo**.
+
+### ✅ 2026-08-11 · D1 queda ACOTADA (no contradicha), y la barra CIERRA sin escalón
+
+Tres cosas, y sólo la primera cambia lo que hay que construir. La corrida es
+`qa:lh-barra` sobre los **149 documentos** de la captura de F3-0
+(`medidas/lh-barra.json`), sin red y con población completa.
+
+**(a) La acotación, que es el entregable.** `L1` es **uno con tres variantes**, y
+lo que cambia entre variantes es **la configuración de la tarjeta Y la retícula
+del cuerpo con su barra** — no sólo la tarjeta. Es la **misma lectura** que ya
+tenían la tarjeta (76/76 · 0/79 · 0/9), las tres pieles de paginación y la regla
+de zoom de `hover-zonal`: varianza **0 dentro** de cada familia, distinta
+**entre** familias, en régimen plantillado ⇒ distingue **plantillas**, no campos.
+**D1 no se retira ni se reabre: se le ensancha el enunciado.**
+
+**(b) El límite, que es lo que la medida SÍ dice — y es una NO SEPARABILIDAD.**
+
+| | valor | denominador |
+|---|---|---|
+| `barraEnElCuerpo` · `columna3_4` · `columna1_4` | **80 · 80 · 80** | 149 |
+| familias con `conBarra == con3_4` | **9 de 9** | 9 |
+| familias con reparto mixto (ni 0 ni n) | **0** | 9 |
+
+Como dentro de cada familia los dos recuentos son **0 o n y coinciden**, el cruce
+baja al documento: **no existe un solo documento con `3_4` sin barra, ni con
+barra sin `3_4`**. Barra y retícula son **COLINEALES en la población entera**.
+
+> ⛔ **Por tanto «la barra es propiedad de la CAPA» y «la barra es propiedad de
+> la VARIANTE» son INDISTINGUIBLES con esta población.** Es §DOS VARIABLES
+> CONFUNDIDAS de `CLAUDE.md` en su forma literal: la regla que se escribiera
+> nombraría una de las dos **al azar**, cierta dentro y sin probar fuera.
+>
+> **Se declara NO SEPARABLE, con su denominador (149) y con la variable contra
+> la que no se pudo separar (la retícula `3_4 + 1_4`).** No se elige ninguna.
+
+**Y si al modelar hay que elegir una, se elige por MECANISMO, no por medida:** la
+**plantilla de cuerpo del theme builder** decide las dos cosas a la vez —la fila
+y lo que va en su columna estrecha— y es lo que está **servido en los dos lados**.
+Ése es el criterio de §UN DISCRIMINADOR 1:1 PUEDE SER LA SOMBRA DE OTRO: *el eje
+que tenga mecanismo y esté servido*. **La razón de la elección es ésa, y hay que
+escribirla como tal — no como si la medición la hubiera dirimido.**
+
+**(c) La condición de reapertura de `D3` se COMPROBÓ y NO SE CUMPLE.** `D3`
+dejó escrito que el widget «Categorías» *«consume la taxonomía `category`»*; era
+una lectura del **título**, y la medida dice otra cosa:
+
+| pregunta | medido | denominador |
+|---|---|---|
+| ¿es el widget nativo `widget_categories`? | **NO** — es `et_pb_widget widget_text` | 80/80 |
+| ¿varía su contenido entre instancias? | **NO** — 1 solo contenido | 80/80 |
+| ¿cubre los términos que el contenido ejerce? | **NO** — lista 2, vivos **7** | 149 documentos |
+
+Los 5 que la lista no menciona: `articulos` (240 artículos) ·
+`articulos-cientificos-y-estudios` (42) · `evaluaciones-independientes` (16) ·
+`podcast-es` (4) · `articulos-tecnicos` (1). Los términos vivos se derivan de las
+clases `category-{slug}` que `post_class()` escribe en cada `<article>`.
+
+> **Y esto es lo que convierte el veredicto en POSITIVO en vez de en una
+> ausencia.** «No encontré un `categories-N`» sería §la regla del cero — *no
+> encontrar nada y no mirar nada dan la misma salida*. **Una lista que no cubre 5
+> de los 7 términos que su propio sitio ejerce está DESINCRONIZADA**, y una lista
+> desincronizada no se está regenerando desde la taxonomía. Es evidencia de
+> mecanismo, no de silencio.
+>
+> ⚠ **Con su límite declarado, porque el marcado servido no lo distingue todo:**
+> un `widget_text` **podría** contener un shortcode que expandiera la taxonomía, y
+> el HTML servido saldría igual. Lo que la medida sí cierra es que **no es el
+> widget nativo** y que **su salida no varía ni cubre lo vivo**. Para el modelado
+> basta: se modela como **contenido de la plantilla**, y si alguien lo cambia,
+> cambia en las 80 a la vez.
+
+**⇒ `D3` queda CONFIRMADA tal como está. No hay escalón por este disparador.**
+Lo único que la barra le añade al modelo es **contenido de plantilla de la
+variante** (4 widgets: buscador, uno vacío, la lista escrita, el CTA de
+newsletter), no una relación a taxonomía.
+
+**Dato que la construcción sí hereda:** el widget emite **2 `href` absolutos** a
+`https://kunakair.com/es/categoria/{eventos,noticias}/`. Entran en **`P-LH-C4`**
+(`qa:enlaces` los convertirá en fallo al emitir el primer listado) y tocan
+**LH-SP8**, que ya tenía fichada la familia `/es/categoria/*` como archivo vivo
+fuera de sitemap.
+
+> ⚠ **Y de paso salió un defecto DE LA PROPIA SONDA, que es por lo que la firma
+> de arriba dice 4 widgets y no 10.** `lh-barra` tomaba la firma sobre una
+> **ventana fija de 14 000 caracteres** desde el inicio de la barra; la barra de
+> `/blog` mide **1481**, así que **12 519 de esos 14 000 son PIE**. De los «10
+> widgets» de la firma congelada, **6 eran del pie** (clase `fwidget`).
+>
+> Es §sondas 4 en su tercera cara —*un heurístico que encuentra MÁS de lo que hay
+> no da error: da un número plausible de más*— y es **el mismo error que la
+> cabecera de esa sonda le reprochaba a `lh-serie`**, cometido un nivel más
+> abajo. **No mueve el veredicto de partición** —los tres patrones siguen a
+> 80·80·80, verificable comparando las dos congeladas— pero sí el recuento de la
+> firma, así que la vieja se conserva como
+> `medidas/lh-barra-SONDA-VENTANA-14000-COMIA-EL-PIE.json` (§sondas 7) y la nueva
+> se re-emite con su razón.
+>
+> **Arreglado en la clase, no en la instancia:** el delimitador es ahora el
+> **balance de `<div>`**, y hay **guarda** — ningún widget de la barra puede
+> llevar `fwidget`, derivado sobre esta misma población (**0 dentro, 480 fuera**).
+> Negativos: **5, todos con código ≠ 0** (`patron-falso` · `patron-ubicuo` ·
+> `familia-vacia` · **`categorias-variable`** · **`corte-fijo`**). Los dos nuevos
+> son los que hacían falta: `categorias-variable` prueba que el comparador de
+> contenido **sabe fallar** (da 2 contenidos distintos, o sea que el «1» de
+> arriba es un dato y no un cero de instrumento), y `corte-fijo` reproduce el
+> defecto **con su número** —vuelve a dar los 10 widgets— que es el ANTES/DESPUÉS
+> que el §protocolo de verificación exige y que un diff no da.
 
 ## D2 · La paginación: qué es campo, qué es plantilla, y cómo se emite
 

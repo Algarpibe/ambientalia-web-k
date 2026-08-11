@@ -4,7 +4,7 @@
     "pregunta": "¿la retícula del CUERPO es la misma en las tres variantes de L1, y qué hay en la columna que sobra? — y ¿el widget «Categorías» CONSUME la taxonomía o es una lista escrita? (D3, condición de reapertura)",
     "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
     "porQue": "lh-spec midió por primera vez la retícula y dio 3_4+1_4 en blog contra 4_4 en resources. DECISIONES.md §D1 dice que entre familias de L1 sólo difiere la configuración de tarjeta.",
-    "sabotaje": null,
+    "sabotaje": "corte-fijo",
     "corrige": "la firma de widgets se tomaba sobre una ventana FIJA de 14000 caracteres desde el inicio de la barra, y la barra mide 1481: 6 de los 10 ids de la firma congelada del 2026-08-11 eran del PIE (clase `fwidget`). Ahora la barra se delimita por balance de <div>.",
     "noMide": [
       "el píxel: los anchos 911.75 / 1238.39 los pone lh-spec contra el original vivo",
@@ -161,7 +161,13 @@
           "search-6",
           "text-1",
           "text-7",
-          "custom_html-25"
+          "custom_html-25",
+          "text-10",
+          "text-13",
+          "text-16",
+          "text-22",
+          "text-19",
+          "custom_html-29"
         ],
         "titulos": [
           "Buscar",

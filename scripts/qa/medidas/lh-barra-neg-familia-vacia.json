@@ -1,14 +1,17 @@
 {
   "meta": {
     "fecha": "2026-08-11",
-    "pregunta": "¿la retícula del CUERPO es la misma en las tres variantes de L1, y qué hay en la columna que sobra?",
+    "pregunta": "¿la retícula del CUERPO es la misma en las tres variantes de L1, y qué hay en la columna que sobra? — y ¿el widget «Categorías» CONSUME la taxonomía o es una lista escrita? (D3, condición de reapertura)",
     "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
     "porQue": "lh-spec midió por primera vez la retícula y dio 3_4+1_4 en blog contra 4_4 en resources. DECISIONES.md §D1 dice que entre familias de L1 sólo difiere la configuración de tarjeta.",
     "sabotaje": "familia-vacia",
+    "corrige": "la firma de widgets se tomaba sobre una ventana FIJA de 14000 caracteres desde el inicio de la barra, y la barra mide 1481: 6 de los 10 ids de la firma congelada del 2026-08-11 eran del PIE (clase `fwidget`). Ahora la barra se delimita por balance de <div>.",
     "noMide": [
       "el píxel: los anchos 911.75 / 1238.39 los pone lh-spec contra el original vivo",
       "el comportamiento del buscador de la barra: no se abrió navegador aquí",
-      "las instancias de L1 que la captura no trae"
+      "las instancias de L1 que la captura no trae",
+      "la taxonomía viva EN EL ORIGINAL DE HOY: los términos se derivan de las clases de los <article> de la captura, así que el cruce vale para lo capturado, no para el sitio de hoy",
+      "⚠ el LÍMITE del marcado servido: no distingue «lista escrita a mano» de «un shortcode dentro del widget de texto que expande la taxonomía». Lo que sí decide es que NO es `widget_categories` —el widget nativo— y que su salida no varía; el cruce con los términos vivos es lo que inclina la lectura, no el tipo de widget a solas"
     ]
   },
   "documentos": 149,
@@ -158,13 +161,7 @@
           "search-6",
           "text-1",
           "text-7",
-          "custom_html-25",
-          "text-10",
-          "text-13",
-          "text-16",
-          "text-22",
-          "text-19",
-          "custom_html-29"
+          "custom_html-25"
         ],
         "titulos": [
           "Buscar",
@@ -175,6 +172,69 @@
         "ejemplo": "/blog"
       }
     ]
+  },
+  "widgetCategorias": {
+    "buscadoPorTitulo": "Categorías",
+    "documentosConBarra": 80,
+    "encontrado": 80,
+    "sinWidget": [],
+    "tiposDeWidget": {
+      "et_pb_widget widget_text": 80
+    },
+    "esWidgetNativoDeTaxonomia": false,
+    "contenidosDistintos": 1,
+    "contenidos": [
+      {
+        "id": "text-7",
+        "clases": "et_pb_widget widget_text",
+        "enDocumentos": 80,
+        "ejemplo": "/blog",
+        "hrefs": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ],
+        "cuerpo": "<div id=\"text-7\" class=\"et_pb_widget widget_text\"> <div class=\"textwidget\"><ul> <li class=\"cat-item cat-item-13\"><a href=\"https://kunakair.com/es/categoria/eventos/\">Eventos</a></li> <li class=\"cat-item cat-item-14\"><a href=\"https://kunakair.com/es/categoria/noticias/\">Noticias</a></li> </ul> </div> </div>"
+      }
+    ],
+    "cruceConLaTaxonomiaViva": {
+      "comoSeDerivan": "clases `category-{slug}` de cada <article> de los 149 documentos — post_class() sólo las emite para la taxonomía `category`",
+      "terminosVivos": {
+        "articulos": 240,
+        "noticias": 72,
+        "eventos": 43,
+        "articulos-cientificos-y-estudios": 42,
+        "evaluaciones-independientes": 16,
+        "podcast-es": 4,
+        "articulos-tecnicos": 1
+      },
+      "slugsQueElWidgetLista": [
+        "eventos",
+        "noticias"
+      ],
+      "terminosVivosNoListados": [
+        {
+          "slug": "articulos",
+          "articulos": 240
+        },
+        {
+          "slug": "articulos-cientificos-y-estudios",
+          "articulos": 42
+        },
+        {
+          "slug": "evaluaciones-independientes",
+          "articulos": 16
+        },
+        {
+          "slug": "podcast-es",
+          "articulos": 4
+        },
+        {
+          "slug": "articulos-tecnicos",
+          "articulos": 1
+        }
+      ],
+      "lectura": "la lista NO cubre 5 de los 7 términos que el contenido ejerce ⇒ está DESINCRONIZADA de la taxonomía: evidencia POSITIVA de que no se regenera"
+    }
   },
   "veredicto": {
     "particionPorFamilia": true,
@@ -191,6 +251,7 @@
       "L4-hub",
       "L3-sci"
     ],
-    "lectura": "régimen plantillado: varianza 0 DENTRO de cada familia y distinta ENTRE familias ⇒ distingue PLANTILLAS (variantes), no campos — la misma lectura que la configuración de tarjeta"
+    "lectura": "régimen plantillado: varianza 0 DENTRO de cada familia y distinta ENTRE familias ⇒ distingue PLANTILLAS (variantes), no campos — la misma lectura que la configuración de tarjeta",
+    "D3": "el widget NO es nativo de taxonomía (`widget_text` ×80), su contenido tiene varianza CERO en la población entera y NO cubre 5 de los 7 términos que el contenido ejerce ⇒ es contenido CABLEADO de la plantilla: la condición de reapertura de D3 se comprobó y NO se cumple"
   }
 }
