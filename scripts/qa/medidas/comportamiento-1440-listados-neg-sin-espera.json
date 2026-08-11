@@ -1,10 +1,12 @@
 {
   "meta": {
-    "fecha": "2026-08-10",
+    "fecha": "2026-08-11",
     "ancho": 1440,
     "viewport": "1440x900 · DPR 1",
     "universo": "listados",
     "sabotaje": "sin-espera",
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": null,
     "catalogo": [
       "inventario·afordancias servidas",
       "scroll·lazy de imagen",
@@ -159,7 +161,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/proyecto-simgo/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -186,8 +189,12 @@
           "href": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/"
         },
         "cambios": [
-          "5:a.noticias · color: rgb(102, 102, 102) → rgb(0, 117, 201)",
-          "5:a.noticias · borderTopColor: rgb(102, 102, 102) → rgb(0, 117, 201)"
+          "5:a.noticias · color: rgb(102, 102, 102) → rgb(0, 117, 201)"
+        ],
+        "cambiosQueNoPintan": [
+          "5:a.noticias · borderTopColor: rgb(102, 102, 102) → rgb(0, 117, 201)",
+          "5:a.noticias · borderBottomColor: rgb(102, 102, 102) → rgb(0, 117, 201)",
+          "5:a.noticias · textDecorationColor: rgb(102, 102, 102) → rgb(0, 117, 201)"
         ]
       }
     },
@@ -216,7 +223,7 @@
       "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "peticion": "http://127.0.0.1:62396/blog",
+        "peticion": "http://127.0.0.1:53160/blog",
         "http": 404
       },
       "detalle": {

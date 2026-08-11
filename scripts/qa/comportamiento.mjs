@@ -4,7 +4,7 @@
  *
  * Uso:  npm run qa:comportamiento -- [ancho]
  *       UNIVERSO=listados|emitidas|ambos   (por defecto: ambos)
- *       SOLO=<trozo de clave>              acota (para probar guardas sin 47 cargas)
+ *       SOLO=<trozo de clave>              acota — **exige ETIQUETA** (mide un subconjunto)
  *       TODAS=1                            emitidas: las 37 rutas, no una por familia
  *       SABOTAJE=sin-disparo|diana-falsa|tapado|sin-espera   → test en negativo
  *
@@ -105,6 +105,20 @@ const AFOR = env("AFOR");
 const ETIQUETA = env("ETIQUETA");
 if (AFOR && !ETIQUETA) {
   console.error(`\n❌ AFOR sin ETIQUETA: esta corrida mide OTRA zona y escribiría en el nombre\n   canónico. Pon ETIQUETA=<nombre> para que la congelada diga qué es.`);
+  process.exit(2);
+}
+/* ── Y la MISMA guarda para `SOLO`, que es la otra mitad de la clase ───────
+ * `AFOR` cambia QUÉ ZONA se mide; `SOLO` cambia CUÁNTAS PÁGINAS se miden. Las
+ * dos producen una congelada que **no es la canónica**, y la de `SOLO` es peor
+ * de leer: el fichero tiene la forma exacta de una corrida completa y sólo el
+ * `meta.alcance` delata que midió una página de trece. Escrita la guarda para
+ * `AFOR` y no para `SOLO`, se arregló la instancia y no la CLASE.
+ *
+ * `NEG` queda exento: el test en negativo usa `SOLO` por diseño y `w()` ya lo
+ * desvía a `-neg-<caso>` por su cuenta (`nombreNeg`), o sea que su congelada YA
+ * dice lo que es. */
+if (SOLO && !ETIQUETA && !env("NEG")) {
+  console.error(`\n❌ SOLO sin ETIQUETA: esta corrida mide un SUBCONJUNTO y escribiría en el\n   nombre canónico, con la forma de una corrida completa. Pon ETIQUETA=<nombre>.`);
   process.exit(2);
 }
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -1,10 +1,12 @@
 {
   "meta": {
-    "fecha": "2026-08-10",
+    "fecha": "2026-08-11",
     "ancho": 1440,
     "viewport": "1440x900 · DPR 1",
     "universo": "listados",
     "sabotaje": "tapado",
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": null,
     "catalogo": [
       "inventario·afordancias servidas",
       "scroll·lazy de imagen",
@@ -127,12 +129,12 @@
       "motivoNoAplica": null,
       "control": {
         "relojDeLaPagina": "marcó",
-        "transcurrido": 3507,
+        "transcurrido": 3514,
         "pedido": 3000
       },
       "detalle": {
         "enElContenido": 1,
-        "fueraDeLaRaiz": 80,
+        "fueraDeLaRaiz": 74,
         "porTipo": {
           "attributes:DIV[class]": 1
         }
@@ -161,7 +163,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/proyecto-simgo/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -187,7 +190,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -215,7 +219,7 @@
       "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "peticion": "http://127.0.0.1:60650/blog",
+        "peticion": "http://127.0.0.1:57838/blog",
         "http": 404
       },
       "detalle": {

@@ -1,10 +1,12 @@
 {
   "meta": {
-    "fecha": "2026-08-10",
+    "fecha": "2026-08-11",
     "ancho": 1440,
     "viewport": "1440x900 · DPR 1",
     "universo": "listados",
     "sabotaje": "sin-disparo",
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": null,
     "catalogo": [
       "inventario·afordancias servidas",
       "scroll·lazy de imagen",
@@ -123,19 +125,17 @@
       "lado": "orig",
       "tipo": "tiempo",
       "que": "cambio espontáneo",
-      "veredicto": "EFECTO",
+      "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
         "relojDeLaPagina": "marcó",
-        "transcurrido": 3512,
+        "transcurrido": 3507,
         "pedido": 3000
       },
       "detalle": {
-        "enElContenido": 1,
-        "fueraDeLaRaiz": 80,
-        "porTipo": {
-          "attributes:DIV[class]": 1
-        }
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
       }
     },
     {
@@ -161,7 +161,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/proyecto-simgo/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -187,7 +188,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -215,7 +217,7 @@
       "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "peticion": "http://127.0.0.1:57439/blog",
+        "peticion": "http://127.0.0.1:56345/blog",
         "http": 404
       },
       "detalle": {
@@ -295,10 +297,10 @@
     "planificadas": 9,
     "registradas": 9,
     "porVeredicto": {
-      "EFECTO": 2,
+      "EFECTO": 1,
       "NO SE DISPARÓ": 4,
-      "NO APLICA": 1,
-      "SIN EFECTO": 2
+      "SIN EFECTO": 3,
+      "NO APLICA": 1
     },
     "porTipo": {
       "inventario": {
@@ -308,7 +310,7 @@
         "NO SE DISPARÓ": 1
       },
       "tiempo": {
-        "EFECTO": 1
+        "SIN EFECTO": 1
       },
       "hover": {
         "NO SE DISPARÓ": 2

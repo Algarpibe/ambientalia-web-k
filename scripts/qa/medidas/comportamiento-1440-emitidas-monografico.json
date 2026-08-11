@@ -1,0 +1,2481 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "ancho": 1440,
+    "viewport": "1440x900 · DPR 1",
+    "universo": "emitidas",
+    "sabotaje": null,
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": "monografico",
+    "catalogo": [
+      "inventario·afordancias servidas",
+      "scroll·lazy de imagen",
+      "tiempo·cambio espontáneo",
+      "hover·afordancia",
+      "filtro·control de filtro",
+      "click·paginación",
+      "carga·orden entre cargas"
+    ],
+    "fueraDelCatalogo": [],
+    "alcance": {
+      "paginas": 5,
+      "listados": [],
+      "emitidas": [
+        "/monitorizacion-de-emisiones-del-trafico-urbano",
+        "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+        "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+        "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+      ],
+      "unidadesPlanificadas": 70
+    },
+    "controles": {
+      "hover": "elementFromPoint + evento isTrusted en la diana + :hover",
+      "click": "elementFromPoint + click isTrusted por CANAL DE CONSOLA (sobrevive a la navegación)",
+      "scroll": "scrollY 0→>0 + eventos scroll + la imagen entra en viewport",
+      "tiempo": "setTimeout DE LA PÁGINA marcó + performance.now() avanzó ≥0.9·N",
+      "carga": "cabecera `date` distinta entre respuestas"
+    }
+  },
+  "interacciones": [
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 3,
+        "afordancias": 76,
+        "imagenes": {
+          "total": 25,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 25,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 1
+        },
+        "controles": [],
+        "alto": 40583
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 40092",
+        "eventosScroll": 4,
+        "imagenesQueEntraron": 15,
+        "imgAntes": 40,
+        "imgDespues": 60,
+        "mismaLista": false
+      },
+      "detalle": {
+        "imagenesDelDocumento": 40,
+        "bajoElPliegue": 23,
+        "sinCargarAntes": 2,
+        "cargadas": "38 → 58",
+        "cargadasTrasScroll": 20,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 3,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 3,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 3,
+          "difieren": 0
+        },
+        "lectura": "hay carga diferida (20 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3506,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 90,
+        "fueraDeLaRaiz": 12,
+        "porTipo": {
+          "attributes:DIV[style]": 86,
+          "childList:DIV": 4
+        }
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos y Guías",
+          "caja": "100.77x17",
+          "href": "https://kunakair.com/es/recursos/articulos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Contaminación urbana",
+          "caja": "136.61x17",
+          "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 0,
+        "afordancias": 85,
+        "imagenes": {
+          "total": 17,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 17,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 1
+        },
+        "controles": [],
+        "alto": 38589
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 37689",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 2,
+        "imgAntes": 32,
+        "imgDespues": 32,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 32,
+        "bajoElPliegue": 17,
+        "sinCargarAntes": 0,
+        "cargadas": "32 → 32",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 0,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 0,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 0,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3512,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos y Guías",
+          "caja": "100.77x17",
+          "href": "https://kunakair.com/es/recursos/articulos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Contaminación urbana",
+          "caja": "136.61x17",
+          "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 3,
+        "afordancias": 132,
+        "imagenes": {
+          "total": 18,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 18,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 33309
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 32265",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 15,
+        "imgAntes": 48,
+        "imgDespues": 53,
+        "mismaLista": false
+      },
+      "detalle": {
+        "imagenesDelDocumento": 48,
+        "bajoElPliegue": 16,
+        "sinCargarAntes": 2,
+        "cargadas": "46 → 51",
+        "cargadasTrasScroll": 5,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 3,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 3,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 3,
+          "difieren": 0
+        },
+        "lectura": "hay carga diferida (5 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3502,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 84,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[style]": 84
+        }
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos y Guías",
+          "caja": "100.77x17",
+          "href": "https://kunakair.com/es/recursos/articulos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Contaminación urbana",
+          "caja": "136.61x17",
+          "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 0,
+        "afordancias": 118,
+        "imagenes": {
+          "total": 10,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 10,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 30194
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 29294",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 3,
+        "imgAntes": 25,
+        "imgDespues": 25,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 25,
+        "bajoElPliegue": 10,
+        "sinCargarAntes": 0,
+        "cargadas": "25 → 25",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 0,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 0,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 0,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3509,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos y Guías",
+          "caja": "100.77x17",
+          "href": "https://kunakair.com/es/recursos/articulos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Contaminación urbana",
+          "caja": "136.61x17",
+          "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 0,
+        "afordancias": 10,
+        "imagenes": {
+          "total": 2,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 2,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 1856
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 812",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 1,
+        "imgAntes": 32,
+        "imgDespues": 32,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 32,
+        "bajoElPliegue": 1,
+        "sinCargarAntes": 0,
+        "cargadas": "32 → 32",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 0,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 0,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 0,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3517,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 84,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[style]": 84
+        }
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Documentos científicos",
+          "caja": "142.55x17",
+          "href": "https://kunakair.com/es/recursos/documentos-cientificos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos técnicos",
+          "caja": "112.17x17",
+          "href": "https://kunakair.com/es/scientific-category/articulos-tecnicos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 0,
+        "afordancias": 7,
+        "imagenes": {
+          "total": 1,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 1,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 1745
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 845",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 1,
+        "imgAntes": 16,
+        "imgDespues": 16,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 16,
+        "bajoElPliegue": 1,
+        "sinCargarAntes": 0,
+        "cargadas": "16 → 16",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 0,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 0,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 0,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3507,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Recursos",
+          "caja": "56.03x17",
+          "href": "https://kunakair.com/es/recursos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Documentos científicos",
+          "caja": "142.55x17",
+          "href": "https://kunakair.com/es/recursos/documentos-cientificos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Artículos técnicos",
+          "caja": "109.47x17",
+          "href": "https://kunakair.com/es/scientific-category/articulos-tecnicos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 7,
+        "afordancias": 41,
+        "imagenes": {
+          "total": 57,
+          "lazy": 28,
+          "eager": 0,
+          "sinAtributo": 29,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 32,
+          "acordeon": 0,
+          "pestanas": 1,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 11136
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 10092",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 18,
+        "imgAntes": 87,
+        "imgDespues": 209,
+        "mismaLista": false
+      },
+      "detalle": {
+        "imagenesDelDocumento": 87,
+        "bajoElPliegue": 23,
+        "sinCargarAntes": 20,
+        "cargadas": "66 → 194",
+        "cargadasTrasScroll": 128,
+        "atributoLazyEnLaRaiz": 28,
+        "tarjeta": {
+          "imagenes": 57,
+          "conAtributoLazy": 28,
+          "bajoElPliegue": 22,
+          "sinCargarAntes": 20,
+          "cargadasDespues": 164,
+          "difieren": 127
+        },
+        "lectura": "hay carga diferida (128 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3515,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 37,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[class]": 34,
+          "attributes:DIV[style]": 3
+        }
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Sectores",
+          "caja": "54.3x17",
+          "href": "https://kunakair.com/es/sectores/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.et_pb_button",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Solicita una demo técnica",
+          "caja": "252.3x44",
+          "href": "https://kunakair.com/es/contacto/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 252.3x44 → 267.3x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.et_pb_button",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Descargar catálogo",
+          "caja": "206.64x44",
+          "href": "https://kunakair.com/es/descarga-catalogo/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 206.6x44 → 221.6x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 6,
+        "afordancias": 40,
+        "imagenes": {
+          "total": 59,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 59,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 37,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Diapositiva anterior"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Diapositiva siguiente"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 1"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 2"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 3"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          }
+        ],
+        "alto": 11152
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 10252",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 4,
+        "imgAntes": 74,
+        "imgDespues": 74,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 74,
+        "bajoElPliegue": 22,
+        "sinCargarAntes": 0,
+        "cargadas": "74 → 74",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 3,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 3,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 3,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3504,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 17,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[class]": 10,
+          "attributes:DIV[style]": 7
+        }
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Sectores",
+          "caja": "54.3x17",
+          "href": "https://kunakair.com/es/sectores/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.group",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Solicita una demo técnica→",
+          "caja": "252.3x44",
+          "href": "https://kunakair.com/es/contacto/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 252.3x44 → 267.3x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.group",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Descargar catálogo→",
+          "caja": "206.64x44",
+          "href": "https://kunakair.com/es/descarga-catalogo/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 206.6x44 → 221.6x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 7,
+        "afordancias": 44,
+        "imagenes": {
+          "total": 50,
+          "lazy": 28,
+          "eager": 0,
+          "sinAtributo": 22,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 25,
+          "acordeon": 0,
+          "pestanas": 1,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 11303
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 10259",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 4,
+        "imgAntes": 80,
+        "imgDespues": 80,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 80,
+        "bajoElPliegue": 23,
+        "sinCargarAntes": 21,
+        "cargadas": "58 → 64",
+        "cargadasTrasScroll": 6,
+        "atributoLazyEnLaRaiz": 28,
+        "tarjeta": {
+          "imagenes": 50,
+          "conAtributoLazy": 28,
+          "bajoElPliegue": 22,
+          "sinCargarAntes": 21,
+          "cargadasDespues": 34,
+          "difieren": 5
+        },
+        "lectura": "hay carga diferida (6 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3518,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 31,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[class]": 28,
+          "attributes:DIV[style]": 3
+        }
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Sectores",
+          "caja": "54.3x17",
+          "href": "https://kunakair.com/es/sectores/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ],
+        "cambiosQueNoPintan": [
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · borderBottomColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.et_pb_button",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Solicita una demo técnica",
+          "caja": "252.3x44",
+          "href": "https://kunakair.com/es/contacto/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 252.3x44 → 267.3x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.et_pb_button",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Descargar catálogo",
+          "caja": "206.64x44",
+          "href": "https://kunakair.com/es/descarga-catalogo/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 206.6x44 → 221.6x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 6,
+        "afordancias": 43,
+        "imagenes": {
+          "total": 59,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 59,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 37,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Diapositiva anterior"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Diapositiva siguiente"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 1"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 2"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ir a la diapositiva 3"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          }
+        ],
+        "alto": 11230
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 10330",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 4,
+        "imgAntes": 74,
+        "imgDespues": 74,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 74,
+        "bajoElPliegue": 22,
+        "sinCargarAntes": 0,
+        "cargadas": "74 → 74",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 3,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 3,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 3,
+          "difieren": 0
+        },
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3508,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 15,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[class]": 10,
+          "attributes:DIV[style]": 5
+        }
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Sectores",
+          "caja": "54.3x17",
+          "href": "https://kunakair.com/es/sectores/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "0:span · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ],
+        "cambiosQueNoPintan": [
+          "0:span · textDecorationColor: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.group",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Solicita una demo técnica→",
+          "caja": "252.3x44",
+          "href": "https://kunakair.com/es/contacto/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 252.3x44 → 267.3x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    },
+    {
+      "clave": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "a.group",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Descargar catálogo→",
+          "caja": "206.64x44",
+          "href": "https://kunakair.com/es/descarga-catalogo/"
+        },
+        "cambios": [
+          "backgroundColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderTopColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "borderBottomColor: rgb(0, 117, 201) → rgb(127, 135, 152)",
+          "__caja: 206.6x44 → 221.6x44"
+        ],
+        "cambiosQueNoPintan": []
+      }
+    }
+  ],
+  "paginas": {
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/monitorizacion-de-emisiones-del-trafico-urbano/",
+      "clon": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "clonEmitida": true,
+      "pagina": false
+    },
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
+      "forma": "/[slug]",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "clon": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "clonEmitida": true,
+      "pagina": false
+    },
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
+      "forma": "/recursos/[...ruta]",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/",
+      "clon": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "clonEmitida": true,
+      "pagina": false
+    },
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/",
+      "clon": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "clonEmitida": true,
+      "pagina": false
+    },
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
+      "forma": "/sectores/[slug]",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/",
+      "clon": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "clonEmitida": true,
+      "pagina": false
+    }
+  },
+  "resumen": {
+    "planificadas": 70,
+    "registradas": 70,
+    "porVeredicto": {
+      "EFECTO": 61,
+      "SIN EFECTO": 9
+    },
+    "porTipo": {
+      "inventario": {
+        "EFECTO": 10
+      },
+      "scroll": {
+        "EFECTO": 4,
+        "SIN EFECTO": 6
+      },
+      "tiempo": {
+        "EFECTO": 7,
+        "SIN EFECTO": 3
+      },
+      "hover": {
+        "EFECTO": 40
+      }
+    }
+  }
+}

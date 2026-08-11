@@ -207,3 +207,18 @@ aviso al lado.
 | **D3** · *no se añade la relación `sector` al caso **hasta que un listado la consuma*** | condición de reapertura | ⛔ **la condición SE CUMPLE**: el filtro de L5 la consume, y es el discriminador de sus 12 opciones. **A la mesa de F3-4**, no aquí: `sector` es una de sus tres familias sin censar y decidirla desde un único consumidor es n=1 |
 | **D2** · paginación de L3 | *«las rutas se derivan en build»* | ⛔ **§LH-C6-L3-SIN-PAGINADOR**: L3 pagina por URL (3 páginas) y **no sirve ningún control en el cuerpo** — el único `/page/2/` del documento es el `<link rel="next">` de Yoast en el `<head>`. Replicar o desviarse, **con la razón escrita** |
 | **LH-SP9** · *entradas/página de L3* | abierta | sigue abierta, **y ahora se sabe por qué costaba**: la ventana de `paginate_links` que el censo leía **no existe** en esta forma |
+
+> ✅ **REVISADO 2026-08-11 con el comportamiento delante: de las cinco filas de
+> arriba, TRES confirman el modelo y DOS lo recortan — y ninguna lo tumba.**
+> Concretamente: **D1 (L1 es uno con tres variantes) sigue en pie** —corroborada
+> por las tres pieles de paginación 1:1—, **D2.3 y D4 quedan cerradas con
+> medida**, y lo que cae no son los arquetipos sino **dos supuestos de alcance**
+> (que L5 no traía campos y que L3 serviría paginador). El reparto D1/D2/D3/D5
+> **no se toca**.
+>
+> ⚠ **Y la consecuencia de la fila de L5 que faltaba escribir, porque es de
+> ENTREGA y no de modelo:** si `sector` se decide en **F3-4**, entonces F3-2
+> construye **L5 sin su filtro**. Eso es una **desviación deliberada** y se anota
+> como tal en la tanda que construya —igual que `D2.4` con los 7 sin paginación
+> real—, no un pendiente tácito. `PLAN-FASE-3.md` §F3-2 lo lleva escrito: la
+> entrega hay que leerla **«L5 menos el filtro»**.

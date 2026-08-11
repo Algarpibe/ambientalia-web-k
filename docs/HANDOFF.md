@@ -1,3 +1,97 @@
+# HANDOFF — el `13/37` era cierto y escondía un ARQUETIPO A CERO, porque la sonda y el informe llamaban «familia» a dos cosas distintas
+
+> ⚠ **Tanda 2026-08-11 (50.ª).** Reentrada a `P-LH-C6` tras el corte. PASOS
+> **0 · 1 · 2 · 3 · 4** completos. Registro: `PENDIENTES-QA.md` (**4 fichas
+> nuevas** + 2 ampliadas) · `COBERTURA-MEDICION.md` (**18/37**) ·
+> `BEHAVIORS.md` §3 · `PLAN-FASE-3.md` §F3-2 · `DECISIONES.md` ·
+> `CENSO-ARQUETIPOS.md` (tabla partida, arreglada).
+
+## 0 · Los cuatro titulares
+
+> **1 · EL ÁRBOL ESTABA COHERENTE, Y ESO SE COMPROBÓ ANTES DE CONSTRUIR NADA.**
+> `npm run check` verde de punta a punta · `qa:lib` **125 sondas** compilan y
+> declaran su mínimo (negativo 93/93) · y el negativo del eje **se re-corrió
+> entero en vez de heredarse**: **5/5**, control en verde, cada sabotaje por su
+> discriminador. El **control positivo está cableado en `disparado` para los
+> SEIS tipos que disparan** (`scroll` · `tiempo` · `hover` · `click` · `filtro` ·
+> `carga`) — verificado leyendo el código, no el comentario.
+>
+> **2 · Y LO QUE DESTAPÓ MIRAR EL ALCANCE: «una ruta por familia» dejó
+> MONOGRÁFICO en 0 de 2, y el `13/37` no podía decirlo.** La sonda agrupa por
+> **`srcRoute`** (13 grupos); la matriz reporta por **ARQUETIPO** (10). Coinciden
+> en 8 de 10 — y donde no, es donde `CLAUDE.md` ya avisa: **`/sectores/[slug]` es
+> UN `srcRoute` con DOS arquetipos**. «La primera de cada `srcRoute`» eligió la
+> de SECTOR. **Dos variables que dentro del instrumento van juntas**, otra vez, y
+> el arquetipo que cayó por el hueco es justo el que esconde los defectos de los
+> componentes que comparte con SECTOR (el −36.02 del `h1`).
+>
+> **3 · CERRADO MIDIENDO, NO REINTERPRETANDO — y las 5 rutas nuevas trajeron
+> cosecha.** `TODAS=1 SOLO=monitorizacion ETIQUETA=monografico`: **70/70 con
+> disparo confirmado, 0 selectores muertos**. El eje va a **18/37** y **ninguna
+> familia de la matriz queda a cero** (verificado sobre la matriz generada, no
+> por aritmética). Dentro: el clon **no difiere 128 imágenes** en EDAR
+> (orig 66→194 al scrollear, clon 74→74), `lazy` **28 → 0** en las dos, y tres
+> diferencias de marcado que ninguna sonda de alto puede ver.
+>
+> **4 · Y EL «RUIDO» DEL EJE RESULTÓ SER UNA FORMA.** Re-correr el negativo dio
+> la segunda instancia del `tiempo` inestable, y con 8 observaciones sale
+> **BIMODAL**: exactamente `mut 1 · fuera 80` (×6) o `0 · 0` (×2), sin
+> intermedios y flipando en las dos direcciones. Le aplica la regla ya escrita
+> —**un suelo bimodal DISCRIMINA, no acota**—. Lo tranquilizador: **los cuatro
+> discriminadores de disparo salieron idénticos en las dos corridas**. La
+> inestabilidad está en el efecto, no en el control.
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| `qa:comportamiento` (ampliación) | **70/70** interacciones · 5 rutas × 2 lados · 0 muertos → `medidas/comportamiento-1440-emitidas-monografico.json` |
+| `qa:comportamiento-neg` | **5/5** — re-corrido **dos veces** (antes y después de tocar la sonda) |
+| `qa:cobertura` | **37/37 rutas** · comportamiento **O=18 · nunca=19** → `medidas/cobertura-2026-08-11.json` |
+| `qa:nunca-vistos` | **241 de 330** — congelada **idéntica**, sin deriva |
+| `qa:lib` | **125 sondas** · negativo **93/93** |
+| `npm run check` | verde · 37 rutas · slugs LIMPIO · `cms-campos` 10/10 |
+
+## 2 · Lo que se arregló, además de medir
+
+- **`comportamiento.mjs`: la guarda de `SOLO`.** Existía para `AFOR=` y no para
+  `SOLO=`, que produce el mismo daño y **peor de leer** (una congelada parcial
+  con la forma exacta de una completa). Es *arreglar la instancia y no la
+  CLASE*, cazado y cerrado. `NEG` exento. Probado por los dos lados.
+- **`cobertura.mjs`: las corridas etiquetadas se declaran POR NOMBRE**, no por
+  glob — un glob sobre `comportamiento-1440-*` absorbería una corrida `AFOR=`,
+  que mide otra zona y no puede acreditar el hover canónico.
+- **`CENSO-ARQUETIPOS.md`: la tabla de 14 formas estaba PARTIDA.** La tanda
+  anterior insertó su aviso **dentro** de la tabla y las 6 últimas filas (LEGAL ·
+  LANDING · EMPRESA · SUSCRIPCIÓN · SOPORTE · CONTACTO) dejaban de renderizar.
+- **Dos denominadores de memoria, corregidos donde viven:** `56 de 74 .tsx` →
+  **de 77** (derivado contra el árbol *y* contra el commit donde se escribió: ya
+  estaba viejo ese día), y el `96 casos de articulos-kb` de §4 de la entrada
+  anterior, que el propio documento ya corregía a **124** doce líneas más abajo.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer `18/37` como «casi cubierto».** Son **19 rutas sin mirar**, y el
+  reparto no es uniforme: `A · blog / término` va **5 de 16** y `SECTOR` **1 de
+  4**. Lo que sí se puede afirmar ahora, y antes no: **ninguna familia está a
+  cero**.
+- **No leer un `SIN EFECTO` de `tiempo` en `L1-blog` como defecto.** Es el
+  segundo estado (§LH-C6-TIEMPO-BIMODAL). Y **no extender esa forma** a otras
+  rutas ni a otros tipos: son 8 observaciones de una página.
+- **No dar por completo el L5 que construya F3-2.** Sale **sin su filtro de 12
+  botones** porque `sector` se decide en F3-4 — desviación deliberada, se anota.
+- **No usar `SOLO=` sin `ETIQUETA=`.** Ya no deja: sale por error.
+
+## 4 · Lo siguiente
+
+**Construir F3-2** — LISTADO-B con sus 3 variantes · L2/L3 · el índice
+`casos-de-exito` (**menos el filtro**) · las 107 rutas `/page/N/` derivadas en
+build. Con las tres fichas de la entrada anterior resueltas primero y
+`P-LH-C1…C5` como criterio de cierre. Sigue en la lista, sin caducar: los
+**241/330** casos sin ejercitar y las **1227** reglas de piel cableadas.
+
+---
+
 # HANDOFF — el eje que llevaba 0/31 se mide por fin, y lo que lo tenía a cero no era el trabajo: era que «no se disparó» y «no tuvo efecto» se escriben igual
 
 > ⚠ **Tanda 2026-08-10 (49.ª).** PASOS **1 · 2 · 3 · 4 · 5 · 7** completos. El
@@ -116,10 +210,12 @@ completas de ~25 min cada una, dos de ellas descartadas y congeladas como
 evidencia con nombre de defecto de sonda (`-SONDA-APUNTE-BBOX`,
 `-SONDA-TAPADA-DE-MARCA`).
 
-Los dos pendientes del PASO 6 —los **96 casos de `articulos-kb`** sin ejercitar
+Los dos pendientes del PASO 6 —los **124 casos de `articulos-kb`** sin ejercitar
 (`qa:nunca-vistos` va por 241 de 330) y las **1227 reglas de piel cableadas fuera
 de KB**— **no perdieron nada por esperar**: los dos son recuentos que se derivan
-y no caducan.
+y no caducan. *(«96» corregido a **124** el 2026-08-11 — es el número que esta
+misma entrada ya daba bien en su §1, y re-derivarlo hoy da la congelada idéntica,
+sin deriva.)*
 
 ## 5 · Lo siguiente
 

@@ -230,6 +230,12 @@ comparar. Barato, y mueve 20 páginas de "no se sabe" a A o a C.
 | **FAQ suelta** | **19** | CPT `faqs` |
 | **CENTRO DE AYUDA (KB)** | **13** | `centro-de-ayuda/*` y `soporte/centro-de-ayuda/*`: hubs, artículos y vídeo-tutoriales |
 | **ÍNDICE / HUB de listado** | **12** | `productos` · `sectores` · `recursos` · `casos-de-exito` · `blog` · `glosario` · `preguntas-frecuentes` · `recursos/{articulos,seminarios-web,kunakpedia,documentos-cientificos,preguntas-frecuentes}` |
+| **LEGAL** | **4** | `noindex`: aviso legal, privacidad, cookies, seguridad de la información |
+| **LANDING DE DESCARGA** (gated) | **3** | `noindex`: `descarga-catalogo` + 2 `informe-tecnico-*`. **Son el destino de los CTA que el clon ya pinta** |
+| **EMPRESA / QUIÉNES SOMOS** | **2** | `empresa` · `empresa/premios-y-reconocimientos` |
+| **SUSCRIPCIÓN** | **2** | `suscribete` · `newsletter` (`noindex`) |
+| **SOPORTE** | **2** | `noindex`: `soporte` · `soporte/servicio-de-reparacion` |
+| **CONTACTO** (formulario) | **1** | `contacto` |
 
 > ⚠ **Y a los estados de arriba les faltaba uno que sólo se ve en los listados:
 > RECONOCIDO ≠ SU COMPORTAMIENTO MEDIDO (2026-08-10, `P-LH-C6`).**
@@ -249,12 +255,6 @@ comparar. Barato, y mueve 20 páginas de "no se sabe" a A o a C.
 > > **Un arquetipo con topología y modelo decididos puede seguir con su
 > > comportamiento sin medir, y eso no se ve en ningún estado del censo.**
 > > Acta: `docs/research/listados-hubs/BEHAVIORS.md`.
-| **LEGAL** | **4** | `noindex`: aviso legal, privacidad, cookies, seguridad de la información |
-| **LANDING DE DESCARGA** (gated) | **3** | `noindex`: `descarga-catalogo` + 2 `informe-tecnico-*`. **Son el destino de los CTA que el clon ya pinta** |
-| **EMPRESA / QUIÉNES SOMOS** | **2** | `empresa` · `empresa/premios-y-reconocimientos` |
-| **SUSCRIPCIÓN** | **2** | `suscribete` · `newsletter` (`noindex`) |
-| **SOPORTE** | **2** | `noindex`: `soporte` · `soporte/servicio-de-reparacion` |
-| **CONTACTO** (formulario) | **1** | `contacto` |
 
 ### La forma del trabajo que falta, que es lo útil del censo
 

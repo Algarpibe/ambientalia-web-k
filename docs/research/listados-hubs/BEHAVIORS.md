@@ -234,3 +234,27 @@ por hover, paginación y —en L5— el filtro.**
   corrida y **1** en la siguiente.
 - **El lado del clon de los listados.** No existe: las 9 dan **404**. Eso está
   medido (no supuesto) y es exactamente lo que `F3-2` viene a construir.
+
+> ⚠ **AÑADIDO 2026-08-11 — y esta lista NO lo tenía, que es el punto: el
+> arquetipo MONOGRÁFICO se había quedado en CERO rutas, y el `13/37` no podía
+> decirlo.**
+>
+> El alcance se declaró como *«una ruta por familia del manifiesto»*, y es
+> literalmente cierto: `comportamiento.mjs` agrupa por **`srcRoute`** y hay 13.
+> Pero `COBERTURA-MEDICION.md` reporta por **ARQUETIPO** y tiene **10 familias**,
+> y las dos particiones no coinciden: **`/sectores/[slug]` es un `srcRoute` que
+> sirve DOS arquetipos** (§Páginas clonadas de `CLAUDE.md`). Tomar «la primera de
+> cada `srcRoute`» eligió la de SECTOR, y MONOGRÁFICO se quedó a **0 de 2**.
+>
+> **Es la firma de siempre: dos variables que dentro del instrumento van
+> juntas.** `srcRoute` y arquetipo coinciden en 8 de las 10 familias, así que la
+> palabra «familia» tapó la diferencia — y el arquetipo que cayó por el hueco es
+> justo el que este repo ya sabe que esconde los defectos de los componentes que
+> comparte con SECTOR (el **−36.02** del `h1`, que los 4 sectores no podían
+> enseñar).
+>
+> **Cerrado midiendo, no reinterpretando** —
+> `TODAS=1 SOLO=monitorizacion ETIQUETA=monografico`, **5 rutas × 2 lados,
+> 70/70 con disparo confirmado, 0 selectores muertos**, congelada en
+> `medidas/comportamiento-1440-emitidas-monografico.json`. El eje pasa de
+> **13/37 a 18/37** y ninguna familia de la matriz queda a cero.

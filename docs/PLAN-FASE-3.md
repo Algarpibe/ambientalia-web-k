@@ -248,6 +248,24 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 >    medir **qué contenedor dispara el zoom**; cablear `article:hover img` cuadra
 >    el píxel a 1440 y cambia el disparador.
 
+> ✅ **CONFIRMADO 2026-08-11: «DESBLOQUEADA» es exacto, y las tres fichas de
+> arriba NO la re-bloquean.** Se comprobó porque el commit lo afirmaba y una
+> afirmación de completitud se verifica ejercitándola (§regla 10): `P-LH-C6` es
+> una **precondición** —«medir el comportamiento ANTES de construir»— y está
+> cumplida con su sonda, su negativo 5/5 **reproducido en una segunda corrida
+> independiente** y su congelada. Las tres fichas son **trabajo DENTRO de F3-2**,
+> no requisitos previos suyos.
+>
+> ⚠ **Con una precisión que faltaba, y es de alcance de la entrega, no de
+> bloqueo:** la ficha 1 se resuelve **en F3-4**, no aquí. O sea que F3-2 **no
+> puede entregar L5 completo** — construiría el índice `casos-de-exito` **sin su
+> filtro de 12 botones**, que es una afordancia medida del original. **Eso es una
+> desviación deliberada y se anota como tal** (`PENDIENTES-QA.md`, misma tanda
+> que construya, con la razón de `D1`/`D3`), exactamente como `D2.4` hace con los
+> 7 sin paginación real. Lo que no vale es entregar L5 y llamarlo completo: la
+> entrega de la tabla de arriba dice «L5 (`casos-de-exito`)» y hoy hay que
+> leerla **«L5 menos el filtro»**.
+
 > ⚠ **Y `P-LH-C3` cambia de fuente con esta tanda.** Decía *«contra una corrida
 > de `qa:lh-paginas` del día de la construcción, no contra la del
 > 2026-07-31»*. Hoy hay una tercera opción y es mejor que las dos: **la

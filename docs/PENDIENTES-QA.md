@@ -171,6 +171,51 @@ si el atributo del original es uniforme dentro de cada familia, así que **no se
 cablea nada**: el número es la ficha, la decisión es de la tanda que toque
 `M-IMG`/`CMS-0b`.
 
+### ⚠ AMPLÍA EL ALCANCE (2026-08-11): confirmado en un SEGUNDO arquetipo, y ahí el número es mucho mayor
+
+Al cerrar el hueco de MONOGRÁFICO (§LH-C6-FAMILIA-NO-ES-FAMILIA) entraron **5
+rutas más**, y las dos del arquetipo MONOGRÁFICO son las peores medidas hasta
+hoy — porque son las que más imágenes traen:
+
+| ruta | `lazy` orig → clon | imágenes cargadas antes → después del scroll |
+|---|---|---|
+| `/sectores/…-en-edar` | **28 → 0** | orig **66 → 194** (pidió **128** al scrollear) · clon **74 → 74** (**0**) |
+| `/sectores/…-petroleo-y-gas` | **28 → 0** | orig **58 → 64** · clon **74 → 74** (**0**) |
+
+El veredicto del tipo `scroll` lo dice sin interpretación: **orig `EFECTO`, clon
+`SIN EFECTO`** en las dos. *«todas las imágenes ya estaban cargadas antes de
+scrollear»* es la lectura literal de la sonda sobre el clon.
+
+**Lo que esto añade a la ficha no es un número más grande, es el ALCANCE:** con
+13 rutas el hallazgo podía ser de los arquetipos tempranos; con las 18 aparece
+también en el más tardío y con el contenido más pesado. Sigue sin cablearse
+nada, y sigue siendo decisión de `M-IMG`/`CMS-0b`.
+
+---
+
+## ⚠ LH-C6-CLON-SIRVE-OTRO-MARCADO · tres diferencias de marcado que ninguna sonda de alto puede ver (2026-08-11)
+
+Salidas del mismo barrido de MONOGRÁFICO, **inventario de los dos lados**, a
+1440. Ninguna mueve `docH` ni `h1.y`, y por eso llegan hasta aquí:
+
+| eje | orig → clon | dónde |
+|---|---|---|
+| nodos `article` | **7 → 6** | las 2 rutas de MONOGRÁFICO |
+| nodos `article` | **3 → 0** | las 2 de grupo A del barrido (`/monitorizacion-de-emisiones-del-trafico-urbano`, `/…-en-centros-de-datos`) |
+| controles de formulario | **0 → 8** | las 2 de MONOGRÁFICO |
+
+**Los 8 controles del clon son de Swiper** —`Diapositiva anterior` ·
+`Diapositiva siguiente` · `Ir a la diapositiva 1..3` + 3 sin nombre—: el
+original tiene slider (25 y 32 nodos) pero **no lo gobierna con `<button>`**. O
+sea que no es «un control de más», es **el mismo carrusel con otro mecanismo**,
+y aparece en el inventario porque el inventario cuenta controles de formulario.
+
+⚠ **Los tres son RECUENTOS DE SELECTOR, no defectos adjudicados**, y la
+distinción importa: `article` es una etiqueta, no una tarjeta — que el clon
+sirva 6 donde el original sirve 7 dice que **el marcado difiere**, no cuál de
+los dos está mal. Adjudicarlo pide mirar qué nodo es cada uno, y eso no se ha
+hecho. Va a la lista con su número, sin conclusión.
+
 ---
 
 ## ⚠ LH-C6-HOVER-SUBRAYADO · el clon SUBRAYA al hover y el original NUNCA (2026-08-10)
@@ -231,6 +276,144 @@ evitar. Va con su número a la tanda que toque cobertura.
 **Lo que sí queda:** la matriz **vuelve a ser generable**, y el eje
 `comportamiento` sale **13/37 con su sonda declarada**. Congelada:
 `medidas/cobertura-2026-08-10.json`.
+
+---
+
+## ✅ LH-C6-FAMILIA-NO-ES-FAMILIA · «una ruta por familia» dejó un ARQUETIPO ENTERO a cero, y el 13/37 no podía decirlo (2026-08-11)
+
+**El alcance de `P-LH-C6` se declaró como *«13 rutas emitidas, una por familia
+del manifiesto»*. Es literalmente cierto y aun así dejaba un hueco que la cifra
+no expresa.** Las dos mitades, las dos derivadas:
+
+| | `comportamiento.mjs` | `cobertura.mjs` |
+|---|---|---|
+| qué llama «familia» | el **`srcRoute`** del manifiesto | el **ARQUETIPO** (`FAMILIAS`, predicados escritos) |
+| cuántas hay | **13** | **10** |
+| en qué unidad reporta | la interacción | **la RUTA** |
+
+Las dos particiones coinciden en 8 de 10 familias, y **por eso la palabra tapó
+la diferencia**. Donde no coinciden es donde `CLAUDE.md` ya avisa: **una ruta
+dinámica sirve DOS arquetipos** (§Páginas clonadas). Derivado sobre el
+manifiesto:
+
+| arquetipo | rutas | medidas el 2026-08-10 |
+|---|---|---|
+| MONOGRÁFICO | 2 | **0** ← |
+| SECTOR | 4 | 1 |
+| A · blog / término | 16 | 3 |
+| A · documento científico | 4 | 1 |
+| CASO | 4 | 2 |
+| FAQ | 2 | 1 |
+| HOME · CATÁLOGO · PRODUCTO · SOFTWARE | 1·1·1·2 | 1·1·1·2 |
+
+`/sectores/[slug]` es **un** `srcRoute` con **dos** arquetipos dentro; «la
+primera de cada `srcRoute`» eligió la de SECTOR y MONOGRÁFICO se quedó en
+**0 de 2**.
+
+> **Y no es un arquetipo cualquiera: es aquel del que este repo ya sabe que
+> esconde los defectos de los componentes que comparte con SECTOR.** El `h1` al
+> 100 % donde el original le da el 50 % daba **Δ0 a los cinco anchos** en los 4
+> sectores y **−36.02** en el monográfico, porque sus titulares son más largos
+> (§El NIVEL al que se mide, *«a veces el detector no es otro ancho, es otro
+> contenido»*). Muestrear por `srcRoute` reproduce exactamente ese punto ciego.
+
+**Cerrado midiendo** — `TODAS=1 SOLO=monitorizacion ETIQUETA=monografico`:
+**5 rutas × 2 lados · 70/70 con disparo confirmado · 0 selectores muertos**,
+congelada en `medidas/comportamiento-1440-emitidas-monografico.json` y
+**declarada por su nombre** en `cobertura.mjs` (no por glob: una corrida `AFOR=`
+mide otra zona y no puede acreditar el hover canónico). El eje pasa a
+**18/37** y ninguna familia de la matriz queda a cero.
+
+**Cosecha de esas 5 rutas:** §LH-C6-LAZY-CLON (ampliada — el clon no difiere
+**128** imágenes en EDAR) y §LH-C6-CLON-SIRVE-OTRO-MARCADO (nueva).
+
+**La regla, que es lo reutilizable:**
+
+> **Cuando una sonda y su informe agrupan con palabras distintas que suenan
+> igual, el alcance se declara en la unidad del INFORME, no en la del
+> instrumento.** «Una por familia» sólo se puede leer si dice *de qué* familia,
+> y aquí las dos particiones eran reales, ambas correctas, y no eran la misma.
+
+---
+
+## ⚠ MEDIDAS-BASE-VIEJA · dos congeladas canónicas se quedaron ANTES de F3-1, y cada `npm run check` derrama una fechada (2026-08-11)
+
+Visto al revisar el árbol antes de commitear, no buscándolo:
+
+| congelada | dice | dice el build de hoy |
+|---|---|---|
+| `medidas/manifiesto.json` (2026-08-05) | 31 rutas | **37** — y marca las 6 de `articulos-kb` + `/centro-de-ayuda/[...ruta]` en su clave `nuevas` |
+| `medidas/slugs.json` (2026-08-08) | `emitidas: 31` | **37** |
+
+**La guarda funciona: por eso se ve.** `w()` se niega a pisar y desvía a un
+fichero fechado — pero como nadie re-congela, **`slugs-*` lleva ~20 derrames
+desde el 2026-08-01** (5 el día 1, 14 el día 2…). No es una medida mala: es que
+la canónica de esos dos ejes **quedó atrás cuando F3-1 emitió 6 rutas más**.
+
+**No se re-congela en esta tanda, y por la misma razón que
+§LH-C6-COBERTURA-DIVERGE:** re-basar una canónica es **decidir cuál es la
+referencia**, y hacerlo de paso, en la tanda que iba de otra cosa, es como se
+pierde el punto de comparación. Es `PISAR=1` y una frase de por qué — pero la
+frase hay que escribirla mirando los dos ficheros, no al vuelo.
+
+⚠ **Y el coste mientras tanto no es cero:** `medidas/` es *la prueba*, y 20
+derrames casi idénticos alrededor de una canónica vieja hacen más caro
+distinguir cuál es la buena — que es justo lo que la regla 7 protege.
+
+---
+
+## ⚠ LH-C6-TIEMPO-BIMODAL · el tipo `tiempo` tiene DOS ESTADOS discretos, no ruido (2026-08-11)
+
+El acta de `P-LH-C6` avisó de que este eje **no tiene suelo** citando *«29
+mutaciones en una corrida y 1 en la siguiente»* sobre `/monitor-calidad-aire`.
+Re-correr el test en negativo entero dio la **segunda instancia**, en otra
+página, y con una forma que el aviso no tenía:
+
+| corrida de `L1-blog` | `tiempo` orig |
+|---|---|
+| control · 08-10 y 08-11 | `EFECTO` · **mut 1 · fuera 80** |
+| tapado · 08-10 y 08-11 | `EFECTO` · **mut 1 · fuera 80** |
+| sin-disparo | 08-10 `EFECTO` (1·80) → 08-11 `SIN EFECTO` (**0·0**) |
+| diana-falsa | 08-10 `SIN EFECTO` (0·0) → 08-11 `EFECTO` (**1·80**) |
+
+**8 observaciones válidas, exactamente DOS valores: `1 · 80` (6) y `0 · 0`
+(2).** Ningún intermedio, y **flipa en las dos direcciones** entre corridas.
+
+> **O sea que no es «ruido»: es BIMODAL, como el `h1` de `/software` y los dos
+> monográficos.** Y a un suelo bimodal le aplica la regla ya escrita
+> (`CLAUDE.md` §La base de lectura): **un suelo bimodal NO es un umbral —
+> DISCRIMINA.** Un `SIN EFECTO` del tipo `tiempo` en `L1-blog` no es defecto: es
+> el segundo estado. Cualquier **otro** valor sí lo sería.
+
+**Y lo que esto NO autoriza:** son 8 observaciones de **una** página. No
+establece la forma para las demás rutas ni para los otros tipos. El eje sigue
+**sin campaña**, y el aviso de §BEHAVIORS §3 sigue en pie — lo que cambia es que
+ahora hay una forma medida donde antes había un adjetivo.
+
+**Lo que sí prueba de la sonda, y es lo tranquilizador:** los cuatro
+discriminadores de disparo (`NO SE DISPARÓ` · `tapada` · selector MUERTO · reloj
+de la página) salieron **idénticos en las dos corridas**. La inestabilidad está
+en el **efecto**, no en el **control** — que es exactamente el reparto que la
+sonda se diseñó para conseguir.
+
+---
+
+## ✅ LH-C6-SOLO-SIN-ETIQUETA · la guarda de `AFOR` existía y la de `SOLO` no: se arregló la instancia, no la clase (2026-08-11)
+
+`comportamiento.mjs` traía una guarda explícita para `AFOR=` — *cambia qué zona
+se mide, así que **exige `ETIQUETA`** o la congelada escribiría en el nombre
+canónico* (§sondas, regla 7 aplicada antes de que ocurra). Correcta.
+
+**`SOLO=` no la tenía, y produce el mismo daño y peor de leer:** una corrida
+`SOLO` mide **un subconjunto** y su congelada tiene **la forma exacta de una
+corrida completa** — mismas claves, mismo esquema—; sólo el `meta.alcance`
+delata que midió una página de trece. Y es la perilla que más se usa.
+
+Arreglado en el sitio de la clase, con `NEG` exento (el negativo usa `SOLO` por
+diseño y `w()` ya lo desvía a `-neg-<caso>` por su cuenta). Comprobado en los
+dos lados: `SOLO=… ` sin `ETIQUETA` → **exit 2** con su mensaje; con `ETIQUETA`
+→ escribe `comportamiento-1440-emitidas-monografico.json`. Negativo entero
+**re-corrido tras el cambio**.
 
 ---
 
@@ -340,13 +523,26 @@ Derivado de `medidas/pieles-modulo.json` y del árbol de componentes:
 | | |
 |---|---|
 | reglas de piel de titular fuera de `articulos-kb` | **1227** (productos 658 · sectores 291 · listados 118 · sueltas 104 · hubs 56) |
-| cómo las produce el clon hoy | **CABLEADAS en el componente**: **56 de los 74 `.tsx`** de `src/components` llevan `text-[NNpx]` literal (60× `18px` · 12× `35px` · 11× `37px` · 10× `44px`) |
+| cómo las produce el clon hoy | **CABLEADAS en el componente**: **56 de los 77 `.tsx`** de `apps/web/src/components` llevan `text-[NNpx]` literal (60× `18px` · 12× `35px` · 11× `37px` · 10× `44px`) |
 | su Δ0 | **limpio donde está medido** — los comparadores de esos arquetipos no lo marcan |
 
 > **No es una emergencia: es la CLASE.** Correcto para las instancias medidas y
 > roto para la siguiente, exactamente como estaba `mb` antes de §2d.6. Va a esta
 > lista **con su número** y se paga cuando toque el arquetipo, con su round-trip
 > — no de paso.
+
+> ⚠ **DENOMINADOR CORREGIDO 2026-08-11 (74 → 77), y merece la nota porque es la
+> §regla 9 cometida DENTRO de una tanda que derivó todo lo demás.** El **56** se
+> derivó; el **74** se heredó del barrido del 2026-08-01 que dejó escrito
+> `CLAUDE.md` (*«los 74 `.tsx` de `src/components`»*). Derivado hoy contra el
+> árbol y contra el commit donde se escribió la ficha (`git ls-tree be4cb37`):
+> **77 en los dos**. O sea que el denominador ya estaba viejo el día que se
+> escribió.
+>
+> **Nada cambia del hallazgo** —el numerador y las 1227 son buenos, y re-derivar
+> hoy da 56 otra vez—, y por eso es el ejemplo limpio de lo que la regla dice:
+> *un número recordado y uno derivado se escriben igual y no valen lo mismo*. En
+> una fracción, **basta con que uno de los dos lados sea de memoria**.
 
 
 ## ⛔ F3-1-CSS-NO-CAPTURADO · el original NO está fuera del camino crítico para MEDIR EL PÍXEL (2026-08-10)

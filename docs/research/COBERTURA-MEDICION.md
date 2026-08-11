@@ -150,7 +150,7 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
 > PROBAR, no limpio.
 
-## ✅✅ EL EJE `comportamiento` DEJA DE ESTAR A CERO — 0/31 → **13/37** (2026-08-10, `P-LH-C6`)
+## ✅✅ EL EJE `comportamiento` DEJA DE ESTAR A CERO — 0/31 → **13/37** (2026-08-10, `P-LH-C6`) → **18/37** (2026-08-11)
 
 Era **el hueco mayor del proyecto** y llevaba a cero desde que existe esta
 matriz. La causa estaba escrita aquí abajo y era exacta: *«`a-behaviors` y
@@ -161,9 +161,9 @@ sonda del eje que abre **los dos**:
 
 | | |
 |---|---|
-| corrida | **254 / 254 interacciones con DISPARO CONFIRMADO** · 0 selectores muertos |
+| corrida | **254 / 254 interacciones con DISPARO CONFIRMADO** · 0 selectores muertos · **+70/70** en la ampliación del 08-11 |
 | unidad | **la INTERACCIÓN**, no la ruta — declarada así a propósito (§séptimo contenedor) |
-| alcance | **13 rutas emitidas × 2 lados**, una por familia del manifiesto, a **1440** · más **9 formas de listado** cuyo lado del clon es un **404 verificado** |
+| alcance | **18 rutas emitidas × 2 lados** (13 del 08-10, una por `srcRoute` · **+5** del 08-11 que cierran MONOGRÁFICO), a **1440** · más **9 formas de listado** cuyo lado del clon es un **404 verificado** |
 | negativo | **5/5**, cada sabotaje por su discriminador y con el **CONTROL en verde** |
 | congelada | `medidas/comportamiento-1440.json` |
 
@@ -187,6 +187,22 @@ sonda del eje que abre **los dos**:
 > ⚠ **Lo que este `13/37` NO es.** Es **una ruta por familia**: contar las 37
 > porque «la familia está cubierta» sería el séptimo contenedor otra vez. Con
 > `TODAS=1` la sonda recorre las 37, y hasta entonces las otras 24 son `·`.
+>
+> ⚠⚠ **Y «familia» ahí NO es la familia de este documento — por eso un
+> arquetipo entero se quedó a cero (corregido 2026-08-11, →`18/37`).** La sonda
+> agrupa por **`srcRoute`** del manifiesto (13 grupos); esta matriz agrupa por
+> **ARQUETIPO** (10). Coinciden en 8 de 10, y donde no coinciden es donde
+> `CLAUDE.md` ya avisa: **`/sectores/[slug]` es UN `srcRoute` que sirve DOS
+> arquetipos**. «La primera de cada `srcRoute`» eligió la de SECTOR y
+> **MONOGRÁFICO quedó en 0 de sus 2 rutas** — el arquetipo del que este repo ya
+> sabe que esconde los defectos de los componentes que comparte con SECTOR (el
+> **−36.02** del `h1`, invisible en los 4 sectores).
+>
+> Cerrado midiendo: `TODAS=1 SOLO=monitorizacion ETIQUETA=monografico` → **5
+> rutas × 2 lados, 70/70, 0 muertos**, congelada en
+> `medidas/comportamiento-1440-emitidas-monografico.json` y **declarada por
+> nombre** en `cobertura.mjs`. **El eje va por `18/37` y ninguna familia de esta
+> matriz está a cero.** Ficha: `PENDIENTES-QA.md` §LH-C6-FAMILIA-NO-ES-FAMILIA.
 >
 > ⚠ **Y este eje no tiene suelo de ruido.** Ninguna campaña lo ha medido, así que
 > un `SIN EFECTO` aislado es **SIN PROBAR**, no *limpio*: el mismo `tiempo` sobre
@@ -423,7 +439,7 @@ La tanda de cierre gastó lo barato. Queda:
 | 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
 | 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
-| 5 | ~~**comportamiento**~~ | ✅ **CERRADO PARCIALMENTE 2026-08-10**: `qa:comportamiento` es la sonda nueva y de dos lados — **13/37 rutas**, 254/254 interacciones. Lo que queda: las otras 24 rutas (`TODAS=1`), 390, y un suelo de ruido para el eje | hecho el instrumento |
+| 5 | ~~**comportamiento**~~ | ✅ **CERRADO PARCIALMENTE 2026-08-10, ampliado 2026-08-11**: `qa:comportamiento` es la sonda nueva y de dos lados — **18/37 rutas** (13 + 5 que cierran MONOGRÁFICO), **324/324 interacciones** entre las dos corridas. Lo que queda: las otras **19** rutas (`TODAS=1`), 390, y un suelo de ruido para el eje — del que ya hay **una forma medida**: el tipo `tiempo` en `L1-blog` es **bimodal** (§LH-C6-TIEMPO-BIMODAL), no ruido | hecho el instrumento |
 | 6 | **estado HTTP en las demás sondas** | solo `c-cmp` lo mira; `lib.mjs` ya lo expone | 1 línea por sonda |
 | 7 | **existencia del recurso servido** | **0/31** — NOMBRADO 2026-08-05, ver abajo | sonda nueva + su negativo |
 

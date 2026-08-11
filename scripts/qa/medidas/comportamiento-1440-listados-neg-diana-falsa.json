@@ -1,10 +1,12 @@
 {
   "meta": {
-    "fecha": "2026-08-10",
+    "fecha": "2026-08-11",
     "ancho": 1440,
     "viewport": "1440x900 · DPR 1",
     "universo": "listados",
     "sabotaje": "diana-falsa",
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": null,
     "catalogo": [
       "inventario·afordancias servidas",
       "scroll·lazy de imagen",
@@ -78,7 +80,7 @@
             "name": null
           }
         ],
-        "alto": 3169
+        "alto": 3136
       }
     },
     {
@@ -91,18 +93,18 @@
       "veredicto": "EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "scrollY": "0 → 2125",
-        "eventosScroll": 2,
+        "scrollY": "0 → 2236",
+        "eventosScroll": 1,
         "imagenesQueEntraron": 1,
-        "imgAntes": 38,
-        "imgDespues": 38,
+        "imgAntes": 23,
+        "imgDespues": 23,
         "mismaLista": true
       },
       "detalle": {
-        "imagenesDelDocumento": 38,
+        "imagenesDelDocumento": 23,
         "bajoElPliegue": 7,
         "sinCargarAntes": 1,
-        "cargadas": "37 → 38",
+        "cargadas": "22 → 23",
         "cargadasTrasScroll": 1,
         "atributoLazyEnLaRaiz": 0,
         "tarjeta": {
@@ -123,17 +125,19 @@
       "lado": "orig",
       "tipo": "tiempo",
       "que": "cambio espontáneo",
-      "veredicto": "SIN EFECTO",
+      "veredicto": "EFECTO",
       "motivoNoAplica": null,
       "control": {
         "relojDeLaPagina": "marcó",
-        "transcurrido": 3518,
+        "transcurrido": 3509,
         "pedido": 3000
       },
       "detalle": {
-        "enElContenido": 0,
-        "fueraDeLaRaiz": 0,
-        "porTipo": {}
+        "enElContenido": 1,
+        "fueraDeLaRaiz": 80,
+        "porTipo": {
+          "attributes:DIV[class]": 1
+        }
       }
     },
     {
@@ -189,7 +193,7 @@
       "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "peticion": "http://127.0.0.1:54173/blog",
+        "peticion": "http://127.0.0.1:57760/blog",
         "http": 404
       },
       "detalle": {
@@ -258,9 +262,9 @@
     "planificadas": 9,
     "registradas": 9,
     "porVeredicto": {
-      "EFECTO": 2,
-      "SIN EFECTO": 3,
-      "NO APLICA": 4
+      "EFECTO": 3,
+      "NO APLICA": 4,
+      "SIN EFECTO": 2
     },
     "porTipo": {
       "inventario": {
@@ -270,7 +274,7 @@
         "EFECTO": 1
       },
       "tiempo": {
-        "SIN EFECTO": 1
+        "EFECTO": 1
       },
       "hover": {
         "NO APLICA": 2

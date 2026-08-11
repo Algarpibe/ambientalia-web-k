@@ -1,10 +1,12 @@
 {
   "meta": {
-    "fecha": "2026-08-10",
+    "fecha": "2026-08-11",
     "ancho": 1440,
     "viewport": "1440x900 · DPR 1",
     "universo": "listados",
     "sabotaje": null,
+    "afordanciaListados": "article:not(.type-page)",
+    "etiqueta": null,
     "catalogo": [
       "inventario·afordancias servidas",
       "scroll·lazy de imagen",
@@ -123,19 +125,17 @@
       "lado": "orig",
       "tipo": "tiempo",
       "que": "cambio espontáneo",
-      "veredicto": "EFECTO",
+      "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
         "relojDeLaPagina": "marcó",
-        "transcurrido": 3512,
+        "transcurrido": 3510,
         "pedido": 3000
       },
       "detalle": {
-        "enElContenido": 1,
-        "fueraDeLaRaiz": 80,
-        "porTipo": {
-          "attributes:DIV[class]": 1
-        }
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
       }
     },
     {
@@ -161,7 +161,8 @@
           "caja": "277.2x653.53",
           "href": "https://kunakair.com/es/proyecto-simgo/"
         },
-        "cambios": []
+        "cambios": [],
+        "cambiosQueNoPintan": []
       }
     },
     {
@@ -178,7 +179,7 @@
         "encima": "a.noticias",
         "eventoOverEnDiana": true,
         "hoverCss": true,
-        "eventos": 2,
+        "eventos": 4,
         "reintentos": 0
       },
       "detalle": {
@@ -188,8 +189,12 @@
           "href": "https://kunakair.com/es/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur/"
         },
         "cambios": [
-          "5:a.noticias · color: rgb(102, 102, 102) → rgb(0, 117, 201)",
-          "5:a.noticias · borderTopColor: rgb(102, 102, 102) → rgb(0, 117, 201)"
+          "3:a · color: rgb(51, 51, 51) → rgb(0, 117, 201)"
+        ],
+        "cambiosQueNoPintan": [
+          "3:a · borderTopColor: rgb(51, 51, 51) → rgb(0, 117, 201)",
+          "3:a · borderBottomColor: rgb(51, 51, 51) → rgb(0, 117, 201)",
+          "3:a · textDecorationColor: rgb(51, 51, 51) → rgb(0, 117, 201)"
         ]
       }
     },
@@ -218,7 +223,7 @@
       "veredicto": "SIN EFECTO",
       "motivoNoAplica": null,
       "control": {
-        "peticion": "http://127.0.0.1:50957/blog",
+        "peticion": "http://127.0.0.1:55831/blog",
         "http": 404
       },
       "detalle": {
@@ -298,8 +303,8 @@
     "planificadas": 9,
     "registradas": 9,
     "porVeredicto": {
-      "EFECTO": 5,
-      "SIN EFECTO": 3,
+      "EFECTO": 4,
+      "SIN EFECTO": 4,
       "NO APLICA": 1
     },
     "porTipo": {
@@ -310,7 +315,7 @@
         "EFECTO": 1
       },
       "tiempo": {
-        "EFECTO": 1
+        "SIN EFECTO": 1
       },
       "hover": {
         "SIN EFECTO": 1,

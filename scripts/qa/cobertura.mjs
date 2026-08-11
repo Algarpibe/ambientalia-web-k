@@ -272,8 +272,29 @@ if (fuente("enlaces.json")) set("enlaces", J("enlaces.json").publicadas || RUTAS
  * familia** salvo con `TODAS=1`, así que esta celda va a quedar parcial a
  * propósito: 13 de 37 es lo que se midió, y contar las 37 porque «la familia
  * está cubierta» sería el séptimo contenedor otra vez.
+ *
+ * ⚠⚠ **Y «familia» ahí no quiere decir lo mismo que en ESTE fichero, que es
+ * cómo un arquetipo entero se quedó a cero sin que la cifra lo dijera
+ * (2026-08-11).** `comportamiento.mjs` agrupa por `srcRoute` del manifiesto —13
+ * grupos— y `FAMILIAS` de arriba agrupa por ARQUETIPO —10—. No son la misma
+ * partición: `/sectores/[slug]` es **un** `srcRoute` que sirve **dos**
+ * arquetipos (SECTOR y MONOGRÁFICO, §Páginas clonadas de `CLAUDE.md`), así que
+ * tomar «la primera de cada `srcRoute`» eligió la de SECTOR y dejó
+ * **MONOGRÁFICO en 0 de sus 2 rutas** — el arquetipo del que este repo ya sabe
+ * que esconde los defectos de los componentes que comparte con SECTOR (el −36.02
+ * del `h1`, §El NIVEL al que se mide). El `13/37` era cierto y el hueco no se
+ * veía en él.
+ *
+ * Cerrado midiendo, no reinterpretando: la congelada etiquetada de abajo. Se
+ * declara **por su nombre y no por glob** a propósito — un glob sobre
+ * `comportamiento-1440-*` absorbería también una corrida `AFOR=`, que mide OTRA
+ * ZONA de la afordancia y no puede acreditar el hover canónico.
  */
-for (const f of [...congeladas("comportamiento-1440"), ...congeladas("comportamiento-390")]) {
+const PARCIALES_COMPORT = [
+  // TODAS=1 SOLO=monitorizacion ETIQUETA=monografico · 5 rutas × 2 lados, 70/70
+  "comportamiento-1440-emitidas-monografico.json",
+];
+for (const f of [...congeladas("comportamiento-1440"), ...congeladas("comportamiento-390"), ...PARCIALES_COMPORT]) {
   if (!fuente(f)) continue;
   const j = J(f);
   const rutas = Object.values(j.paginas || {})
