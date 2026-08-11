@@ -87,6 +87,143 @@ CORRIGE):**
    `qa:lh-paginas` el día que emita** y verifica contra esa corrida, no contra
    la de hoy.
 
+## D2.5 · Las 55 rutas `/page/N/` que responden 200 y no listan nada — **REPLICAR TAL CUAL** (2026-08-11, firmada por el propietario)
+
+**Decidido: el clon emite las 55 rutas de paginación vacías con HTTP 200, igual
+que el original.** Cierra el §ESCALÓN F3-2 de `PENDIENTES-QA.md`, que paró la
+construcción precisamente porque `D2.3` y `D2.4` daban respuestas distintas y
+ninguna de las dos contemplaba esta forma.
+
+### El razonamiento, no sólo el veredicto
+
+Había **tres** salidas, y las tres eran defendibles. Lo que las separa no es
+cuál deja el sitio mejor, sino **cuál de ellas es una decisión de MIGRACIÓN**:
+
+| salida | qué hace el clon | qué es |
+|---|---|---|
+| **replicar** ← **decidida** | 200 vacío, canonical a sí misma, `<title>` «Página 9 de 17» | **la única que NO CAMBIA EL SITIO** |
+| `noindex` en las vacías | 200 vacío + `robots: noindex` | decisión de **producto** (SEO) |
+| 404 en las vacías | la URL deja de responder | decisión de **producto** (SEO) |
+
+> **Las otras dos son legítimas y pueden ser incluso mejores; lo que no pueden
+> es viajar DENTRO de una migración.** Si las 55 páginas vacías son deuda de
+> SEO, lo son **hoy, en el original**, con este mismo clon sin existir. Una
+> migración que las arregla de paso mezcla dos cambios en un despliegue y deja
+> sin respuesta la pregunta que de verdad importa —*¿el clon reproduce el
+> original?*— porque cualquier diferencia posterior tendrá dos explicaciones.
+>
+> La pregunta de producto **no se pierde**: se abre con su propio encuadre en
+> `PENDIENTES-QA.md` §**F3-2-SEO-PAGINAS-VACIAS**, para decidirse **sobre el
+> sitio**, antes o después de la migración, pero no dentro.
+
+### Y `D2.4` no se contradice con esto: el discriminador es EL CANONICAL, y parte limpio
+
+Ésta es la parte que convierte la decisión en una regla en vez de en dos
+excepciones. El original **declara él mismo** cuáles de sus `/page/N/` son
+rutas, y lo declara en el canonical:
+
+| forma | canonical | veredicto | n |
+|---|---|---|---|
+| los 7 que sirven 200 para **cualquier** `N` (`D2.4`) | → **la página 1** | *«no soy una ruta»* ⇒ **404 en el clon** | **7/7** |
+| las 55 vacías (**D2.5**) | → **a sí misma** | *«sí soy una ruta»* ⇒ **se emite** | **55/55** |
+
+Derivado, no recordado: el 7/7 sale de `medidas/lh-paginas.json`
+(`canonicalConfirmaMismaPagina`) y el 55/55 de recorrer las 55 capturas de
+`corpus/fase-3/listados` — 55 canonical propias, **0** a otra URL, 0 sin
+canonical. **La misma regla da las dos respuestas**, y por eso `D2.4` se queda
+como está en vez de reabrirse.
+
+### Las tres fuentes del total **no discrepan**: miden dos cosas distintas, y una de ellas manda
+
+El escalón las anotó como *«tres fuentes que se contradicen — ventana 8 ·
+`<title>` 17 · contenido 8»*. Con la población entera delante eso se deshace, y
+es lo que hace que el número deje de ser una opinión:
+
+| fuente | qué mide en realidad | acierto, con su denominador |
+|---|---|---|
+| **`<title>` de Yoast** («Página N **de M**») | **la última que sirve 200** — la frontera del servidor | **21/21** de las 21 series que paginan |
+| **ventana de `paginate_links`** (la del **cuerpo**) | **la última CON CONTENIDO** | **14/14 donde existe** — y **no existe en 7 de las 21** |
+| contar `<article>` | la última con contenido (misma magnitud que la ventana) | — |
+
+No había contradicción: había **dos magnitudes** y un criterio que elegía una
+sin decirlo. **Bajo D2.5 manda la del servidor**, o sea el `<title>` — que es
+además la única que un cliente puede leer sin adivinar.
+
+⚠ **Y los dos denominadores están escritos porque el segundo casi se publica
+mal.** El primer cálculo dio «ventana = contenido, 14/14» y eso se lee como *«en
+las 14 que se miraron»* cuando el universo son **21**: las **7** que faltan no
+discrepan, **no imprimen ventana** —5 porque sólo tienen una página con
+contenido, y los **2 `scientific-category` por §LH-C6-L3-SIN-PAGINADOR**, que ya
+estaba fichado—. Es §sondas 4 por el lado del lector: un acierto sobre un
+subconjunto no declarado.
+
+**Y hay una tercera magnitud que se llama parecido y no lo es:** el campo
+`segunLaVentana` de `lh-censo` es *el mayor `/page/N/` que el documento CITA en
+cualquier sitio*, **`<link rel="next">` del `<head>` incluido**. Da **15/21**
+contra el contenido, no 14/14, porque en esas 7 el `<head>` cita una página que
+el cuerpo no. `qa:lh-paginas` imprime las dos con su nombre largo, y **ninguna
+se llama «la ventana» a secas**.
+
+### El número de la entrega, DERIVADO de la decisión
+
+| criterio | rutas de F3-2 |
+|---|---|
+| **D2.5 · replicar tal cual** ← **el que manda** | **142** (35 índices + **107** de paginación) |
+| derivar por contenido (`D2.3` leída al pie) | 87 (35 + 52) |
+| diferencia | **55** — las vacías |
+
+**Los dos números se derivaron primero del archivo congelado y después se
+re-midieron EN VIVO el mismo día** (`qa:lh-paginas`, 261 peticiones, congelada
+en `medidas/lh-paginas-2026-08-11.json`), y salen idénticos: **142 · 87 · 55
+vacías**, con el `<title>` = frontera del servidor **21/21**. O sea que `P-LH-C3`
+—*«re-corre la sonda el día que emitas»*— queda **cumplida para el 2026-08-11**;
+si la construcción cae otro día, se repite.
+
+> ⚠ **Y sigue en pie `P-LH-C3`: el 142 es una foto.** El contenido vivo mueve la
+> frontera de contenido y puede mover la del servidor. La tanda que emita
+> **re-corre `qa:lh-paginas` ese día** y verifica contra esa corrida.
+
+### ⚠ La corrección que esta decisión obliga: el «107» lo estaba decidiendo una MEDICIÓN
+
+El total de 107 salía de `lh-paginas`, cuyo criterio era *«último N con HTTP
+200; parada por 404»*. Ese criterio **cuenta las vacías** — o sea que la sonda
+venía dando por decidida, **por inercia y sin decirlo**, exactamente la pregunta
+que el escalón paró. Es §la causa común de `CLAUDE.md` en su versión más barata:
+no un contenedor que absorbe, sino **un criterio de medición ocupando el sitio
+de una decisión**.
+
+Corregido en la misma tanda, y en las dos direcciones:
+
+1. **el criterio de `lh-paginas` cita a D2.5 como su autoridad** — deja de ser
+   una elección del instrumento y pasa a ser la consecuencia de una decisión
+   escrita;
+2. **la sonda mide y publica las DOS magnitudes** (servidor y contenido) con su
+   fuente al lado, e imprime el total bajo cada criterio. Un lector futuro ve
+   qué habría dado la otra lectura, que es justo lo que no se podía ver.
+
+> ⚠ **Y arreglándola aparecieron DOS defectos suyos, los dos de la familia
+> «verde falso», los dos cazados por corridas y no por leer el código:**
+>
+> | qué | qué hacía | regla |
+> |---|---|---|
+> | `catch {}` mudo en el fetch | cualquier fallo de red → `status: 0` → aguas abajo *«no pagina»*. Una corrida entera dio **«los 35 tienen 1 página»** con **cero errores impresos** y **exit 0** | §sondas **6**: una ausencia traducida a un valor benigno **en el sitio donde todavía se sabía** |
+> | `process.exit(0)` en la última línea | **reseteaba `process.exitCode`**, así que el ❌ de *«canonical NO confirma»* se imprimía y la sonda salía **VERDE** | §sondas **1** por la puerta de atrás: no un descuadre sin contar, sino uno contado y **borrado después** |
+>
+> El primero se cazó porque el «1 página en las 35» es un **pleno** (§sondas 4:
+> *un patrón que casa en TODAS no mide nada*) y contradecía la medida buena de
+> julio. La corrida defectuosa se conserva con su nombre diciendo lo que es:
+> `medidas/lh-paginas-2026-08-11-SONDA-CATCH-MUDO-red.json` (§sondas 7).
+
+### Lo que D2.5 arrastra
+
+- **`LH-SP9`** (entradas/página de L3) se calcula contra **las páginas con
+  contenido**, nunca contra el total del 404 — ya anotado en el escalón.
+- **Cobertura**: el denominador de F3-2 deja de ser un rango y pasa a ser
+  **142** (§PASO 5 · `COBERTURA-MEDICION.md`).
+- **Verificación**: las 55 vacías **tienen contrato propio** y se verifican —
+  200, canonical a sí misma y `<title>` correcto—. Una ruta vacía que sirva 404
+  en el clon es un defecto igual que cualquier otro (`P-LH-C7`, abajo).
+
 ## D3 · Lo que los listados le EXIGEN al grupo A — la decisión que condiciona
 
 **Ésta es la razón de que LH-2 vaya antes de construir A: si A nace sin estos
@@ -189,6 +326,7 @@ Escrito ahora para que la tanda que construya no se lo invente:
 | **P-LH-C3** | las rutas `/page/N/` emitidas coinciden con **una corrida de `qa:lh-paginas` del día de la construcción** (no con la del 2026-07-31 — el contenido vivo mueve el total) |
 | **P-LH-C4** | al emitir el primer hub/listado, `qa:enlaces` convierte los **25 href** absolutos en fallo — se localizan con la sonda, no a mano, y se re-corre hasta limpia en las dos direcciones |
 | **P-LH-C5** | los 7 sin paginación real devuelven **404** en el clon para `/page/2/`, y la desviación queda anotada en `PENDIENTES-QA.md` con la razón de D2.4 |
+| **P-LH-C7** | **las 55 vacías cumplen SU contrato** (`D2.5`): HTTP **200**, `<link rel=canonical>` **a sí misma** y `<title>` «Página N de M» con la **M del servidor**. Un 404 ahí es defecto, no ahorro |
 | **P-LH-C6** | ✅ **CUMPLIDA 2026-08-10** — `npm run qa:comportamiento`, 254/254 interacciones con disparo confirmado, negativo 5/5. Acta: **`BEHAVIORS.md`** (mismo directorio) · `medidas/comportamiento-1440.json`. **AMPLIADA al universo entero el 08-11**: `TODAS=1` → **518/518** sobre las **37 rutas × 2 lados**, el eje de la matriz a **37/37** (`comportamiento-1440-emitidas-todas.json`) |
 
 ## ⚠ Lo que la pasada de comportamiento le DEVUELVE a este documento (2026-08-10)

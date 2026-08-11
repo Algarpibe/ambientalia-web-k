@@ -1,6 +1,71 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔⛔ ESCALÓN F3-2 · **55 de las «107 rutas /page/N/» existen y no listan NADA**, y eso es una forma que `DECISIONES.md` no contempla (2026-08-11)
+## 🟡 F3-2-SEO-PAGINAS-VACIAS · las 55 páginas vacías, ¿son deuda de SEO del SITIO? — pregunta de PRODUCTO, abierta a propósito (2026-08-11)
+
+**Ficha abierta por `D2.5`, y con el encuadre puesto para que ni se pierda ni se
+cuele en la migración.**
+
+`kunakair.com/es` sirve **55 URLs** que responden **200**, se declaran canónicas
+de sí mismas, llevan `<title>` «Página 9 de 17» y **no listan ni una entrada**
+(`/es/blog/page/9/` … `/page/17/`, y lo mismo en otras 16 series). Son
+indexables y no tienen contenido.
+
+| | |
+|---|---|
+| **es una pregunta legítima** | 55 URLs indexables sin contenido es, a primera vista, deuda de SEO |
+| **y NO es una pregunta de la migración** | esas 55 URLs existen **hoy**, en el original, con el clon sin desplegar. La deuda —si lo es— **ya está contraída** |
+| **por eso `D2.5` decide REPLICAR** | es la única salida que no cambia el sitio. `noindex` o 404 son **mejoras de producto**, y meterlas dentro de una migración deja sin respuesta la única pregunta que la migración contesta: *¿el clon reproduce el original?* |
+
+### Qué hay que decidir, y con qué información
+
+1. **¿Es deuda de verdad?** No está medido: haría falta mirar si Google las
+   tiene indexadas (Search Console del original) y si alguna recibe tráfico o
+   enlaces. Hoy **no lo sabemos** — que 55 URLs sean indexables no prueba que
+   estén indexadas.
+2. **Si lo es, ¿cuál es el arreglo?** `noindex` (siguen respondiendo, dejan de
+   competir) o **404** (dejan de existir, y con ellas cualquier enlace entrante).
+   Son distintas y la segunda es irreversible de facto.
+3. **¿Y por qué existen?** Mecanismo sin identificar: WordPress sirve 200 para
+   `/page/N/` mientras `N ≤ ` el total que Yoast anuncia, y ese total **no es**
+   el número de páginas con contenido (§`D2.5`, la tabla de las dos magnitudes).
+   Diagnosticarlo es parte de la respuesta, no un extra.
+
+### Cómo se cierra
+
+**Se lleva al propietario del SITIO, como cambio de producto sobre
+kunakair.com**, no a una tanda de clonado. Si se decide arreglarlo:
+
+- se arregla **primero en el original** y después el clon lo replica —con lo
+  que `D2.5` sigue valiendo sin tocarse y el número de rutas baja solo—; o
+- se decide explícitamente que el clon **diverge**, y entonces deja de ser una
+  réplica en ese punto y se anota como desviación deliberada con su razón,
+  igual que `D2.4`.
+
+**Lo que no se hace es decidirlo dentro de una tanda de construcción**, que es
+exactamente lo que `D2.5` evitó.
+
+---
+
+## ✅ (cerrado por `D2.5`) ESCALÓN F3-2 · **55 de las «107 rutas /page/N/» existen y no listan NADA**, y eso es una forma que `DECISIONES.md` no contempla (2026-08-11)
+
+> ✅ **CERRADO EL MISMO 2026-08-11** con **`D2.5` · REPLICAR TAL CUAL**, firmada
+> por el propietario (`docs/research/listados-hubs/DECISIONES.md` §D2.5). La
+> ficha se conserva entera porque es la evidencia que la decisión cita.
+>
+> **Tres cosas que el cierre añadió y esta ficha no tenía:**
+>
+> 1. **`D2.4` y `D2.5` no se contradicen — las separa el CANONICAL, 7/7 y
+>    55/55.** El original declara él mismo qué `/page/N/` es ruta: canonical a la
+>    página 1 = *«no soy ruta»* (→ 404 en el clon); canonical a sí misma = *«sí
+>    lo soy»* (→ se emite). Una regla, dos respuestas.
+> 2. **Las tres fuentes NO discrepan: son dos magnitudes.** El `<title>` de
+>    Yoast mide la frontera del **servidor** (**21/21** series) y la ventana de
+>    `paginate_links` mide la del **contenido** (**14/14**). Lo que había no era
+>    una contradicción sino un criterio de medición eligiendo una en silencio.
+> 3. **El número deja de ser un rango:** **142** rutas bajo `D2.5` (87 bajo la
+>    otra lectura), derivado en `qa:lh-paginas`, que ahora imprime las dos.
+
+
 
 **Salió en el PASO 2 —antes de construir una sola línea—** al preguntar si una
 serie `/page/N/` es una unidad. No lo es, y de paso apareció esto:

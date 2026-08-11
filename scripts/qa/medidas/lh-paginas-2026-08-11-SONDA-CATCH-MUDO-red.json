@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "rutas": 35,
+    "criterio": "D2.5 · REPLICAR TAL CUAL — la ruta existe si el servidor la sirve con 200 (frontera por 404), vacía incluida",
+    "autoridad": "docs/research/listados-hubs/DECISIONES.md §D2.5",
+    "contrafactual": "derivar por contenido (D2.3 al pie): sólo las páginas que listan ≥1 entrada",
+    "MAX": 64,
+    "total": 35,
+    "extra": 0,
+    "totalSegunElContenido": 35,
+    "vacias": 0,
+    "extraSegunLaVentana": 56,
+    "subestimadas": 0,
+    "paginan": 0,
+    "noPaginan": 35,
+    "tituloEsLaFronteraDelServidor": "0/0",
+    "ventanaEsLaFronteraDelContenido": "0/0"
+  },
+  "paginas": {
+    "/es/productos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/sectores/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/casos-de-exito/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/blog/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 8,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/glosario/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 8,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 4,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 6,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/seminarios-web/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/kunakpedia/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/documentos-cientificos/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/preguntas-frecuentes/": {
+      "grupo": "hub",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 4,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/co2-es/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/contaminantes-atmosfericos/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 4,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/cov/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/emisiones-industriales/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 3,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/gases-de-efecto-invernadero/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/h2s-es/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/malos-olores/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/monitorizacion-ambiental/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 11,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 3,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/particulas-en-suspension/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "grupo": "post_tag",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 4,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "grupo": "scientific-category",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/scientific-category/articulos-tecnicos/": {
+      "grupo": "scientific-category",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/scientific-category/evaluaciones-independientes/": {
+      "grupo": "scientific-category",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/contaminacion-minera/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/contaminacion-urbana/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/contaminacion-y-salud/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/petroleo-y-gas/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 1,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    },
+    "/es/recursos/articulos/productos-kunak/": {
+      "grupo": "resources",
+      "paginas": 1,
+      "segunElServidor": 1,
+      "segunElContenido": null,
+      "segunLaVentana": 2,
+      "segunElTitulo": null,
+      "status2": 0
+    }
+  }
+}
