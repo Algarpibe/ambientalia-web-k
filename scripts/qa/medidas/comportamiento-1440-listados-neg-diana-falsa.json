@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "ancho": 1440,
+    "viewport": "1440x900 · DPR 1",
+    "universo": "listados",
+    "sabotaje": "diana-falsa",
+    "catalogo": [
+      "inventario·afordancias servidas",
+      "scroll·lazy de imagen",
+      "tiempo·cambio espontáneo",
+      "hover·afordancia",
+      "filtro·control de filtro",
+      "click·paginación",
+      "carga·orden entre cargas"
+    ],
+    "fueraDelCatalogo": [],
+    "alcance": {
+      "paginas": 1,
+      "listados": [
+        "/es/blog/"
+      ],
+      "emitidas": [],
+      "unidadesPlanificadas": 9
+    },
+    "controles": {
+      "hover": "elementFromPoint + evento isTrusted en la diana + :hover",
+      "click": "elementFromPoint + click isTrusted por CANAL DE CONSOLA (sobrevive a la navegación)",
+      "scroll": "scrollY 0→>0 + eventos scroll + la imagen entra en viewport",
+      "tiempo": "setTimeout DE LA PÁGINA marcó + performance.now() avanzó ≥0.9·N",
+      "carga": "cabecera `date` distinta entre respuestas"
+    }
+  },
+  "interacciones": [
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 9,
+        "afordancias": 0,
+        "imagenes": {
+          "total": 8,
+          "lazy": 0,
+          "eager": 0,
+          "sinAtributo": 8,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 0,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [
+          {
+            "tag": "form",
+            "type": "search",
+            "name": null
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "s"
+          },
+          {
+            "tag": "input",
+            "type": "submit",
+            "name": null
+          }
+        ],
+        "alto": 3169
+      }
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 2125",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 1,
+        "imgAntes": 38,
+        "imgDespues": 38,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 38,
+        "bajoElPliegue": 7,
+        "sinCargarAntes": 1,
+        "cargadas": "37 → 38",
+        "cargadasTrasScroll": 1,
+        "atributoLazyEnLaRaiz": 0,
+        "tarjeta": {
+          "imagenes": 8,
+          "conAtributoLazy": 0,
+          "bajoElPliegue": 6,
+          "sinCargarAntes": 0,
+          "cargadasDespues": 8,
+          "difieren": 0
+        },
+        "lectura": "hay carga diferida (1 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3518,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 0,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {}
+      }
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "NO APLICA",
+      "motivoNoAplica": "no hay afordancia #0 (hay 0)",
+      "control": {
+        "diana": null
+      },
+      "detalle": null
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "NO APLICA",
+      "motivoNoAplica": "no hay afordancia #1 (hay 0)",
+      "control": {
+        "diana": null
+      },
+      "detalle": null
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "filtro",
+      "que": "control de filtro",
+      "veredicto": "NO APLICA",
+      "motivoNoAplica": "0 controles con `data-filter` (de 3 controles de formulario en la raíz)",
+      "control": {
+        "controles": 3,
+        "filtros": 0
+      },
+      "detalle": null
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "clon",
+      "tipo": "existencia",
+      "que": "¿la sirve el clon?",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "peticion": "http://127.0.0.1:54173/blog",
+        "http": 404
+      },
+      "detalle": {
+        "enElManifiesto": false,
+        "http": 404,
+        "lectura": "no construida (HTTP 404)"
+      }
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "click",
+      "que": "paginación → /page/2/",
+      "veredicto": "NO APLICA",
+      "motivoNoAplica": "no se encontró enlace a /page/2/ (la sonda dice que pagina: 17 páginas)",
+      "control": {
+        "diana": null
+      },
+      "detalle": null
+    },
+    {
+      "clave": "L1-blog",
+      "forma": "L1-blog",
+      "universo": "listados",
+      "lado": "orig",
+      "tipo": "carga",
+      "que": "orden en 10 cargas",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "respuestas200": 10,
+        "fechasDistintas": 10,
+        "cache": "DYNAMIC",
+        "age": null
+      },
+      "detalle": {
+        "ordenesDistintos": 1,
+        "nEntradas": [
+          9
+        ],
+        "lectura": "un solo orden en 10 cargas — COTA al 95 %: < 30 % por carga (regla de tres). NO es «el orden es estable»",
+        "primerOrden": [
+          "proyecto-simgo",
+          "kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+          "kunak-obtiene-el-sello-reconcilia",
+          "webinar-control-de-olores-en-vertederos-y-edar",
+          "webinar-calidad-del-aire-en-europa",
+          "premios-pyme-2024-kunak"
+        ]
+      }
+    }
+  ],
+  "paginas": {
+    "L1-blog": {
+      "forma": "L1-blog",
+      "universo": "listados",
+      "orig": "https://kunakair.com/es/blog/",
+      "clon": "/blog",
+      "clonEmitida": false,
+      "pagina": true
+    }
+  },
+  "resumen": {
+    "planificadas": 9,
+    "registradas": 9,
+    "porVeredicto": {
+      "EFECTO": 2,
+      "SIN EFECTO": 3,
+      "NO APLICA": 4
+    },
+    "porTipo": {
+      "inventario": {
+        "EFECTO": 1
+      },
+      "scroll": {
+        "EFECTO": 1
+      },
+      "tiempo": {
+        "SIN EFECTO": 1
+      },
+      "hover": {
+        "NO APLICA": 2
+      },
+      "filtro": {
+        "NO APLICA": 1
+      },
+      "existencia": {
+        "SIN EFECTO": 1
+      },
+      "click": {
+        "NO APLICA": 1
+      },
+      "carga": {
+        "SIN EFECTO": 1
+      }
+    }
+  }
+}

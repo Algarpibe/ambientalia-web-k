@@ -1,0 +1,685 @@
+{
+  "meta": {
+    "fecha": "2026-08-10",
+    "ancho": 1440,
+    "viewport": "1440x900 · DPR 1",
+    "universo": "emitidas",
+    "sabotaje": null,
+    "catalogo": [
+      "inventario·afordancias servidas",
+      "scroll·lazy de imagen",
+      "tiempo·cambio espontáneo",
+      "hover·afordancia",
+      "click·paginación",
+      "carga·orden entre cargas"
+    ],
+    "fueraDelCatalogo": [],
+    "alcance": {
+      "paginas": 1,
+      "listados": [],
+      "emitidas": [
+        "/monitor-calidad-aire"
+      ],
+      "unidadesPlanificadas": 14
+    },
+    "controles": {
+      "hover": "elementFromPoint + evento isTrusted en la diana + :hover",
+      "click": "elementFromPoint + click isTrusted por CANAL DE CONSOLA (sobrevive a la navegación)",
+      "scroll": "scrollY 0→>0 + eventos scroll + la imagen entra en viewport",
+      "tiempo": "setTimeout DE LA PÁGINA marcó + performance.now() avanzó ≥0.9·N",
+      "carga": "cabecera `date` distinta entre respuestas"
+    }
+  },
+  "interacciones": [
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "#main-content",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 7,
+        "afordancias": 145,
+        "imagenes": {
+          "total": 115,
+          "lazy": 74,
+          "eager": 0,
+          "sinAtributo": 41,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 24,
+          "acordeon": 19,
+          "pestanas": 2,
+          "video": 0
+        },
+        "controles": [],
+        "alto": 12430
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 11386",
+        "eventosScroll": 2,
+        "imagenesQueEntraron": 15,
+        "imgAntes": 145,
+        "imgDespues": 146,
+        "mismaLista": false
+      },
+      "detalle": {
+        "imagenesDelDocumento": 145,
+        "bajoElPliegue": 48,
+        "sinCargarAntes": 30,
+        "cargadas": "91 → 94",
+        "cargadasTrasScroll": 3,
+        "atributoLazyEnLaRaiz": 74,
+        "lectura": "hay carga diferida (3 imágenes se pidieron al scrollear)"
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3508,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 1,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:DIV[style]": 1
+        }
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "https://kunakair.com/es/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "a · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "a · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Productos",
+          "caja": "61.97x17",
+          "href": "https://kunakair.com/es/productos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "a · color: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)",
+          "a · borderTopColor: rgb(0, 117, 201) → rgba(0, 117, 201, 0.7)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "img.et-waypoint",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "",
+          "caja": "77.28x83.28",
+          "href": "https://kunakair.com/doc/09.StudiesReferences/Independent_studies/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf"
+        },
+        "cambios": [
+          "__caja: 77.3x83.3 → 92.7x99.9",
+          "a · __caja: 77.3x83.3 → 92.7x99.9",
+          "img · __caja: 77.3x77.3 → 92.7x92.7"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "orig",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "img.et-waypoint",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "",
+          "caja": "77.28x83.28",
+          "href": "https://kunakair.com/doc/09.StudiesReferences/Independent_studies/Kunak_AIR_Pro_Mcerts_certificate_MC23041800-1.pdf"
+        },
+        "cambios": [
+          "__caja: 77.3x83.3 → 92.7x99.9",
+          "a · __caja: 77.3x83.3 → 92.7x99.9",
+          "img · __caja: 77.3x77.3 → 92.7x92.7"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "inventario",
+      "que": "afordancias servidas",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "raiz": "main",
+        "encontrada": true
+      },
+      "detalle": {
+        "tarjetas": 6,
+        "afordancias": 137,
+        "imagenes": {
+          "total": 59,
+          "lazy": 0,
+          "eager": 9,
+          "sinAtributo": 50,
+          "conDataSrc": 0
+        },
+        "marcadores": {
+          "slider": 15,
+          "acordeon": 0,
+          "pestanas": 0,
+          "video": 0
+        },
+        "controles": [
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Gráfica anterior"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Gráfica siguiente"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 1 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 2 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 3 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 4 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 5 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 6 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 7 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 8 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": "Ver gráfica 9 de 9"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "name": null
+          }
+        ],
+        "alto": 12867
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "scroll",
+      "que": "lazy de imagen",
+      "veredicto": "SIN EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "scrollY": "0 → 11967",
+        "eventosScroll": 1,
+        "imagenesQueEntraron": 1,
+        "imgAntes": 74,
+        "imgDespues": 74,
+        "mismaLista": true
+      },
+      "detalle": {
+        "imagenesDelDocumento": 74,
+        "bajoElPliegue": 49,
+        "sinCargarAntes": 0,
+        "cargadas": "74 → 74",
+        "cargadasTrasScroll": 0,
+        "atributoLazyEnLaRaiz": 0,
+        "lectura": "todas las imágenes ya estaban cargadas antes de scrollear"
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "tiempo",
+      "que": "cambio espontáneo",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "relojDeLaPagina": "marcó",
+        "transcurrido": 3501,
+        "pedido": 3000
+      },
+      "detalle": {
+        "enElContenido": 34,
+        "fueraDeLaRaiz": 0,
+        "porTipo": {
+          "attributes:SPAN[class]": 14,
+          "attributes:DIV[class]": 12,
+          "attributes:DIV[style]": 6,
+          "childList:DIV": 2
+        }
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #0",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Inicio",
+          "caja": "32.67x17",
+          "href": "/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "a · color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "a · textDecorationLine: none → underline"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #1",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "span.",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "Productos",
+          "caja": "61.97x17",
+          "href": "https://kunakair.com/es/productos/"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "textDecorationLine: none → underline",
+          "a · color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "a · textDecorationLine: none → underline"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #2",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "img.aspect-square",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "",
+          "caja": "69x69",
+          "href": "https://kunakair.com/doc/09.StudiesReferences/Independent_studies/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "a · color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "img · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    },
+    {
+      "clave": "/monitor-calidad-aire",
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "lado": "clon",
+      "tipo": "hover",
+      "que": "afordancia #3",
+      "veredicto": "EFECTO",
+      "motivoNoAplica": null,
+      "control": {
+        "tapada": false,
+        "encima": "img.aspect-square",
+        "eventoOverEnDiana": true,
+        "hoverCss": true,
+        "eventos": 2,
+        "reintentos": 0
+      },
+      "detalle": {
+        "diana": {
+          "texto": "",
+          "caja": "69x69",
+          "href": "https://kunakair.com/doc/09.StudiesReferences/Independent_studies/Kunak_AIR_Pro_Mcerts_certificate_MC23041800-1.pdf"
+        },
+        "cambios": [
+          "color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "a · color: rgb(0, 117, 201) → rgb(0, 94, 163)",
+          "img · color: rgb(0, 117, 201) → rgb(0, 94, 163)"
+        ]
+      }
+    }
+  ],
+  "paginas": {
+    "/monitor-calidad-aire": {
+      "forma": "/monitor-calidad-aire",
+      "universo": "emitidas",
+      "orig": "https://kunakair.com/es/monitor-calidad-aire/",
+      "clon": "/monitor-calidad-aire",
+      "clonEmitida": true,
+      "pagina": false
+    }
+  },
+  "resumen": {
+    "planificadas": 14,
+    "registradas": 14,
+    "porVeredicto": {
+      "EFECTO": 13,
+      "SIN EFECTO": 1
+    },
+    "porTipo": {
+      "inventario": {
+        "EFECTO": 2
+      },
+      "scroll": {
+        "EFECTO": 1,
+        "SIN EFECTO": 1
+      },
+      "tiempo": {
+        "EFECTO": 2
+      },
+      "hover": {
+        "EFECTO": 8
+      }
+    }
+  }
+}

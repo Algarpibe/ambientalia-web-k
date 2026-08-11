@@ -51,6 +51,8 @@
     "qa:lh": "node scripts/qa/lh-censo.mjs",
     "qa:lh-paginas": "node scripts/qa/lh-paginas.mjs",
     "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs",
+    "qa:comportamiento": "node scripts/qa/comportamiento.mjs",
+    "qa:comportamiento-neg": "node scripts/qa/comportamiento.neg.mjs",
     "qa:slugs": "node --env-file=apps/cms/.env scripts/qa/slugs.mjs",
     "qa:a-spec": "node scripts/qa/a-spec.mjs",
     "qa:a-miga": "node scripts/qa/a-miga.mjs",
