@@ -216,6 +216,38 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > construir. Es también el primer mordisco al eje `comportamiento`, que sigue
 > **0/31** en `COBERTURA-MEDICION.md` y es el hueco mayor del proyecto.
 
+> ✅ **`P-LH-C6` CUMPLIDA (2026-08-10). F3-2 queda DESBLOQUEADA.** Sonda nueva
+> `npm run qa:comportamiento` (negativo 5/5), **254/254 interacciones con disparo
+> confirmado**, congelada en `medidas/comportamiento-1440.json`. Acta:
+> `docs/research/listados-hubs/BEHAVIORS.md`. El eje pasa de **0/31 a 13/37**.
+>
+> **Lo que la construcción de F3-2 se lleva ya contestado:**
+>
+> | pregunta | respuesta |
+> |---|---|
+> | ¿la paginación es AJAX? | **no: enlace real**, `defaultPrevented:false` en las 5 formas con control ⇒ `D2.3` (derivar `/page/N/` en build) es viable sin punto de entrada de datos |
+> | ¿hay que congelar contenido para el QA px a px? | **no por sorteo**: 1 solo orden en 10 cargas en blog · etiqueta · casos, **cota < 30 %** |
+> | ¿hace falta maquinaria de carga diferida? | **no** para ser fiel: `sinCargarAntes = 0` en las 9 formas. El atributo `loading="lazy"` es markup y sólo aparece en L4 (3 de 3) |
+> | ¿qué hace el hover? | `scale(1.1)` **exacto** sobre la media en L1-resources · L4 · L5; `#f7f7f7 → #f0f0f0` en L3; **nada** en L2 |
+> | ¿cuántas pieles de paginación? | **tres**, alineadas 1:1 con las tres variantes de tarjeta de `D1` — y la piel B **imprime el total de páginas** en `span.pages` |
+>
+> ⚠ **Y TRES cosas que F3-2 tiene que resolver ANTES de construir, con su ficha
+> y su número** (`PENDIENTES-QA.md`):
+>
+> 1. **§LH-C6-FILTRO-L5** — `casos-de-exito` tiene **12 botones de filtro de
+>    cliente por sector** (57 → 3 tarjetas, sin recargar). `D1` dijo *«cero
+>    campos nuevos»* y `D3` dejó la relación `sector` fuera *«hasta que un
+>    listado la consuma»*: **la consume**. Va a la mesa de **F3-4** (la taxonomía
+>    `sector` es una de sus tres familias sin censar) — modelarla desde este
+>    único consumidor sería decidir con n=1;
+> 2. **§LH-C6-L3-SIN-PAGINADOR** — L3 pagina por URL (3 páginas) y **no sirve
+>    ningún control** en el cuerpo. `D2.3` emitiría rutas inalcanzables:
+>    replicar o desviarse, **con la razón escrita**, como `D2.4`;
+> 3. **§LH-C6-HOVER-ZONAL** — el hover de tarjeta **no es uno**: la imagen hace
+>    zoom y el enlace de categoría cambia de color, con dianas distintas. Falta
+>    medir **qué contenedor dispara el zoom**; cablear `article:hover img` cuadra
+>    el píxel a 1440 y cambia el disparador.
+
 > ⚠ **Y `P-LH-C3` cambia de fuente con esta tanda.** Decía *«contra una corrida
 > de `qa:lh-paginas` del día de la construcción, no contra la del
 > 2026-07-31»*. Hoy hay una tercera opción y es mejor que las dos: **la
@@ -271,8 +303,12 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
   ausente, unión con un solo miembro— en vez de esperar a que un editor los
   cree. El escalón de las etiquetas midió el coste de la otra vía: 8 entradas
   reales de 149 tenían el caso y el render moría **al prerenderizar**.
-- **No arregla el eje `comportamiento` 0/31.** Lo muerde en F3-2 (`P-LH-C6`) y
-  lo declara donde toca; cerrarlo es una tanda propia.
+- ~~**No arregla el eje `comportamiento` 0/31.**~~ **Lo mordió el 2026-08-10 y
+  el mordisco fue mayor de lo previsto: 0/31 → 13/37 con sonda de dos lados y su
+  negativo.** Lo que queda para una tanda propia son las **otras 24 rutas**
+  (`TODAS=1`), el ancho **390** con su catálogo propio (a 390 el `hover` no es la
+  misma interacción y por eso no está en el catálogo), y **un suelo de ruido para
+  el eje** — hoy no existe, así que un `SIN EFECTO` aislado es SIN PROBAR.
 
 ## ESTADO DE LA FASE 3
 
@@ -280,7 +316,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
 | **F3-1** · `articulos-kb` | ✅ **COMPLETA (2026-08-10, 4 tandas)** — los 6 pasos del orden obligado: specs + PASO 0 · esquema con retícula · extractor + seed · piel del titular (§2d.7) · **plantilla + ruta** (hoja `kb.css` DERIVADA por `qa:kb-clases`, 2 catch-all por sus dos prefijos) · **sonda de dos lados**: `qa:kb-cmp` par a par, **4999/5089 @1440 y 4979/5089 @390** contra la medida congelada y **5453/5543 y 5433/5543 contra el sitio VIVO**, cero diferencias sin declarar en las cuatro corridas. Deja **7 huecos con su número** (`PENDIENTES-QA.md` §F3-1), el mayor de ellos `srcset` con **108.83 px** de consecuencia geométrica a 390 |
-| **F3-2** · listados y hubs | pendiente · **bloqueada por `P-LH-C6`** |
+| **F3-2** · listados y hubs | pendiente · **DESBLOQUEADA** — `P-LH-C6` cumplida el 2026-08-10 (`qa:comportamiento` 254/254, `BEHAVIORS.md` de listados). Entra con 3 fichas que resolver antes de construir: §LH-C6-FILTRO-L5 · §LH-C6-L3-SIN-PAGINADOR · §LH-C6-HOVER-ZONAL |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |
 | **F3-5** · content type de HOME | pendiente · sin dependencias |

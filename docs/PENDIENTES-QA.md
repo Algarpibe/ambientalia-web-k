@@ -1,5 +1,239 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ P-LH-C6 · el eje COMPORTAMIENTO deja de estar vacío — 0/31 → 13/37 (2026-08-10)
+
+**La precondición de LISTADO-B está cumplida** y, de paso, la celda peor cubierta
+del proyecto tiene su primera medida. Sonda nueva: **`npm run qa:comportamiento`**
+(negativo `qa:comportamiento-neg`), congelada en `medidas/comportamiento-1440.json`.
+
+| | |
+|---|---|
+| corrida | **254 / 254 interacciones con DISPARO CONFIRMADO** · 0 selectores muertos |
+| veredictos | `EFECTO` 171 · `SIN EFECTO` 65 · `NO APLICA` 18 · **`NO SE DISPARÓ` 0** |
+| alcance | **9 formas de listado** (lado original; el del clon **404 verificado**) + **13 rutas emitidas × 2 lados** (una por familia del manifiesto) · **1440** |
+| negativo | **5/5**, cada sabotaje por su discriminador **y con el CONTROL en verde** |
+
+Las cuatro preguntas de `LH-2` §D5 están contestadas en
+`docs/research/listados-hubs/BEHAVIORS.md`. Resumen:
+
+| pregunta | respuesta medida |
+|---|---|
+| hover de tarjeta | **`scale(1.1)` sobre la media** en L1-resources · L4 · L5; `#f7f7f7 → #f0f0f0` en L3; **sin efecto** en L2 (tarjeta solo-título). **Y es ZONAL** — ver §LH-C6-HOVER-ZONAL |
+| ¿paginación AJAX? | **NO: enlace real**, `defaultPrevented: false` en las 5 formas con control |
+| lazy de imagen de tarjeta | **no hay**: `sinCargarAntes = 0` en las 9 y `Δ 0` al scrollear. Atributo `loading="lazy"` sólo en L4 (3 de 3) |
+| orden entre cargas | **1 solo orden en 10 cargas** en blog · etiqueta · casos ⇒ **cota al 95 %: < 30 % por carga**. NO sortean como el módulo P4 de la HOME |
+
+### Por qué esta sonda necesitó una guarda que ningún otro eje necesita
+
+> **Una interacción que NO SE DISPARA da la misma lectura que una que se dispara
+> y no tiene efecto.** Las dos escriben «0 cambios».
+
+Es el `switch` sin `default` de F3-1 con otro disfraz. Sin cerrarlo, el eje
+entero saldría verde midiendo nada — que es exactamente cómo llevaba 0/31 sin
+que nadie lo notara. Cada tipo lleva **control positivo independiente del
+efecto** y el veredicto tiene **cuatro** valores; `NO SE DISPARÓ` **no cuenta
+como unidad evaluada**, así que la corrida sale roja por el contrato de
+`Evaluadas` y no por buena voluntad.
+
+**Y el control se pagó solo en la primera corrida completa**: marcó **3 dianas**
+que no reaccionaban, y ninguna era del sitio —
+
+| lo que parecía | lo que era |
+|---|---|
+| «esta tarjeta no tiene hover» | la **cabecera fija** de Divi tapaba el punto de disparo |
+| «este enlace no reacciona» | un `<a>` **en línea** de dos renglones: su caja de borde cubre el hueco entre líneas y el centro cae en el `<p>`. Se apunta sobre `getClientRects()`, no sobre la caja |
+| ídem | el veredicto leía `tapada` de la MARCA y el control publicaba la del PUNTO disparado: **los tres controles en verde y veredicto rojo**. Regla 1 de §sondas rota dentro de la sonda escrita para cerrar esa familia |
+
+Evidencia de los dos defectos, congelada con nombre que lo dice (regla 7):
+`comportamiento-1440-SONDA-APUNTE-BBOX.json` · `comportamiento-1440-SONDA-TAPADA-DE-MARCA.json`.
+
+---
+
+## ⛔ LH-C6-FILTRO-L5 · `casos-de-exito` tiene un FILTRO DE CLIENTE por sector, y LH-2 D1 dijo «cero campos nuevos» (2026-08-10)
+
+**Medido, no supuesto** (`comportamiento-1440.json`, interacción `filtro`):
+
+| | |
+|---|---|
+| controles | **12 `<button data-filter=".sector-*">`** en `div.case-filter > #filters.button-group`, con `h2` = «Sectores» |
+| al pulsar el 2.º | **57 de 57 → 3 de 57** tarjetas visibles |
+| `is-checked` | `*` → `.sector-edar` |
+| mecanismo | **FILTRO DE CLIENTE**: oculta tarjetas **sin recargar y sin cambiar la URL** |
+| control positivo | `click` `isTrusted` en la diana, sin navegación |
+
+**Por qué es ficha y no arreglo:** `LH-2` §D1 decidió que L5 *«no es un arquetipo:
+es el índice que le faltaba al grupo C … en el modelo es una ruta + plantilla
+sobre la colección `casos`; **cero campos nuevos**»*. El filtro **consume la
+taxonomía `sector`** del caso, que hoy **no está en el modelo del caso** — §D3 la
+dejó fuera con una condición de reapertura explícita: *«no se añade la relación
+al modelo del caso **hasta que un listado la consuma**»*.
+
+> **La condición se cumple: un listado la consume.** Y no de adorno — es el
+> discriminador de las 12 opciones de un control que el visitante usa.
+
+**Lo que NO se hace aquí, y es a propósito:** no se reescribe `DECISIONES.md`
+sobre la marcha. La consigna de la tanda lo dejó dicho —*si el comportamiento
+contradice el modelo decidido, para con la evidencia congelada*— y además la
+decisión correcta no es obvia: la taxonomía `sector` es una de las **tres
+familias sin censar de F3-4**, así que modelarla desde este único consumidor
+sería decidir con n=1. **Va a la mesa de F3-4 con este número delante.**
+
+---
+
+## ⛔ LH-C6-L3-SIN-PAGINADOR · `scientific-category` pagina por URL y no sirve ningún control (2026-08-10)
+
+Dos medidas congeladas que se contradicen, y la contradicción **la imprime la
+sonda** en vez de quedarse callada:
+
+| fuente | dice |
+|---|---|
+| `lh-paginas.json` | `articulos-cientificos-y-estudios` tiene **3 páginas** (`evaluaciones-independientes` 2 · `articulos-tecnicos` 1) |
+| `comportamiento-1440.json` | `click · paginación` → **NO APLICA**: *«no se encontró enlace a /page/2/ (la sonda dice que pagina: 3 páginas)»* |
+
+**Verificado contra el HTML congelado de F3-0**: en todo el documento hay **una
+sola** aparición de `/page/2/`, y está en el `<head>` — el `<link rel="next">`
+que pone Yoast. **Ni `.wp-pagenavi`, ni `nav.kunak-pagination`, ni ningún `a` en
+el cuerpo.**
+
+> **Desde la página 1 de L3 no se puede llegar a la 2 pulsando nada.**
+
+**Lo que decide, y por eso es ficha antes de construir:**
+
+1. **`D2.3`** dice que las rutas `/page/N/` se derivan en build. Para L3 eso
+   emitiría rutas **que nadie puede alcanzar navegando**. Replicarlo es fiel;
+   no replicarlo es una desviación deliberada. Las dos son legítimas y hay que
+   **elegir con la razón escrita**, como se hizo con las 7 de `D2.4`;
+2. **`LH-SP9`** (entradas por página de L3, *«14·1·8 con 2·1·2 páginas — no sale
+   un divisor limpio»*) sigue abierta **y ahora se sabe por qué costaba**: la
+   ventana de `paginate_links` que el censo leía no existe en esta forma. El
+   total sólo lo sabe el servidor, y `lh-paginas` ya lo pregunta bien (3, no 2).
+
+---
+
+## ⚠ LH-C6-HOVER-ZONAL · el hover de una tarjeta NO ES UNO: depende de la zona (2026-08-10)
+
+**Dos corridas de la misma sonda sobre `L1-blog` dieron efectos distintos**, y
+las dos son ciertas:
+
+| punto de disparo | efecto medido |
+|---|---|
+| dentro de la **imagen** | `img` · `transform: none → matrix(1.1,0,0,1.1,0,0)` (caja `440×293.2 → 484×322.5`) |
+| dentro de la **meta** | `a.noticias` · `color: rgb(102,102,102) → rgb(0,117,201)`, **y la imagen no se mueve** |
+
+> **Una sonda que apunta «al centro de la tarjeta» está eligiendo una respuesta
+> sin decirlo.** El primer apunte iba al centro de la caja de borde; el segundo
+> —el que arregla el problema de los `<a>` en línea— busca el primer píxel
+> alcanzable, y ése cayó en otra zona. Nada falló: la pregunta estaba mal puesta.
+
+**Corregido declarando la zona**: `AFOR=<selector> ETIQUETA=<nombre>` mide otra
+zona de la misma afordancia y **exige nombre propio para la congelada**, para que
+una medida de la meta no pueda pasar por «el hover de la tarjeta» (regla 7
+aplicada *antes* de que ocurra).
+
+**Consecuencia para LISTADO-B:** son **dos reglas con dianas distintas**, y hay
+que construir las dos. Una plantilla con `article:hover img { scale: 1.1 }`
+reproduce el píxel a 1440 **y cambia el disparador** — o sea, el defecto de
+rango del §CONTRATO NO ES EL MISMO A TODOS LOS ANCHOS trasladado al eje de
+interacción. **Falta medir cuál es el contenedor que dispara el zoom** (la
+`<a>`/`div` de la imagen), y eso es una medida, no una idea.
+
+---
+
+## ⛔ LH-C6-LAZY-CLON · el clon emite 28 `loading="lazy"` donde el original emite 265 (2026-08-10)
+
+Primer hallazgo del eje **por los dos lados**, y es de CLASE: 13 rutas, una por
+familia del manifiesto, a 1440.
+
+| ruta | `loading="lazy"` orig → clon | imágenes sin pedir al terminar la red, orig → clon |
+|---|---|---|
+| `/` | **69 → 0** | **35 → 0** |
+| `/monitor-calidad-aire` | **74 → 0** | **24 → 0** |
+| `/software-de-medicion-calidad-del-aire` | **40 → 16** | **32 → 16** |
+| `/accesorios` | 21 → 12 | 17 → 10 |
+| `/kunak-api` | **20 → 0** | 4 → 0 |
+| `/sectores/calidad-del-aire-en-las-ciudades` | **18 → 0** | 10 → 0 |
+| `/case-studies/…rio-de-janeiro` | **16 → 0** | 9 → 0 |
+| `/casos-de-exito/…des-moines-iowa` | **7 → 0** | 2 → 0 |
+| las 5 de grupo A y KB | 0 → 0 | ≤1 → 0 |
+| **TOTAL** | **265 → 28** | — |
+
+Las dos columnas dicen cosas distintas y por eso están las dos: la primera es
+**markup** (el atributo), la segunda es **comportamiento** (cuántas imágenes
+seguían sin pedirse cuando la red quedó en reposo). **El clon las pide todas.**
+
+**Por qué ninguna guarda podía verlo:** una imagen que se carga antes o después
+**no mueve `docH`, ni `h1.y`, ni el árbol de secciones, ni un `href`**. Es el
+mismo hueco por el que pasaron las 23 imágenes rotas de §M-404, con el signo
+cambiado.
+
+**Alcance:** medido en **13 de 37 rutas** y **sólo a 1440**. No se ha comprobado
+si el atributo del original es uniforme dentro de cada familia, así que **no se
+cablea nada**: el número es la ficha, la decisión es de la tanda que toque
+`M-IMG`/`CMS-0b`.
+
+---
+
+## ⚠ LH-C6-HOVER-SUBRAYADO · el clon SUBRAYA al hover y el original NUNCA (2026-08-10)
+
+Medido sobre **99 hover con efecto** en las 13 rutas × 2 lados, contando sólo
+los cambios **que pintan** (un color de borde con anchura 0 se registra aparte y
+no cuenta):
+
+| propiedad que cambia al hover | original | clon |
+|---|---|---|
+| `color` | 60 | 61 |
+| **`textDecorationLine: none → underline`** | **0** | **26** |
+| **`textDecorationColor`** | **0** | **24** |
+| `transform` (zoom de media) | 2 | 0 |
+| `opacity` | 2 | 3 |
+| `backgroundColor` | 6 | 5 |
+
+**Y el color al que va tampoco es el mismo:** el original pasa a
+`rgba(0,117,201,0.7)` —el mismo azul translúcido— y el clon a `rgb(0,94,163)`,
+un azul más oscuro y **opaco**.
+
+> ⚠ **La mitad que hace esto adjudicable llegó tarde y merece anotarse:** la
+> primera versión de la sonda leía `borderTopColor` **sin su anchura** y contó
+> **88 «cambios» en el original**. Un color de borde con `border-width: 0` **no
+> pinta nada**. O sea que el hallazgo estaba a punto de ser «el original
+> reacciona en el borde y el clon no» sobre 88 efectos invisibles. Se miden las
+> anchuras y `text-decoration` completos, y los cambios que no pintan se
+> registran **aparte**.
+
+**Alcance:** 13 rutas, 1440, y la afordancia es *«los 4 primeros `a`/`button` de
+la raíz de contenido»* — o sea que **no son necesariamente los mismos elementos
+en los dos lados**. Lo que sí es comparable es **el reparto de propiedades**, que
+es lo que está en la tabla. Para adjudicar píxel a píxel hace falta emparejar
+afordancias, y eso no está hecho.
+
+---
+
+## ⚠ LH-C6-COBERTURA-DIVERGE · la matriz generada y `COBERTURA-MEDICION.md` llevan una semana divergiendo (2026-08-10)
+
+**`qa:cobertura` no arrancaba desde el 2026-08-03** (`path.enApp` en vez de
+`enApp`, colado en la conversión a monorepo, commit `bcc2b83`). No es un verde
+falso —muere con `TypeError` y código ≠0— pero sí una semana en la que **la
+matriz no se podía regenerar**, y lo destapó **intentar usarla** (§regla 10).
+
+Arreglado. Y al correrla salen **dos divergencias con el documento**, las dos por
+la misma causa —una sonda que acredita un eje y no está declarada como fuente:
+
+| eje | dice el documento | dice la sonda | por qué |
+|---|---|---|---|
+| **anchos horiz.** | **31/31** por `qa:ancho` | **15/37** (`c-banda` · `a-miga`) | `ancho-cuerpo` **no está declarada** como fuente en `cobertura.mjs` |
+| docH · base · árbol · **KB** | 4 ejes a `O` para las 6 rutas de `articulos-kb` | **`·` en las 6** | `kb-cmp` **no está declarada** como fuente |
+
+**No se arregla en esta tanda, y se dice por qué:** declarar una fuente es
+decidir **qué rutas y qué ejes acredita**, y hacerlo deprisa es cómo se pinta de
+verde una celda que nadie miró — que es lo único que este documento existe para
+evitar. Va con su número a la tanda que toque cobertura.
+
+**Lo que sí queda:** la matriz **vuelve a ser generable**, y el eje
+`comportamiento` sale **13/37 con su sonda declarada**. Congelada:
+`medidas/cobertura-2026-08-10.json`.
+
+---
+
 ## ✅ F3-1 · `articulos-kb` SERVIDA y COMPARADA PAR A PAR (2026-08-10)
 
 **Cierra los PASOS 1·2·3.** La hoja `kb-*` (`apps/web/src/app/kb.css`) está

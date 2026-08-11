@@ -150,6 +150,72 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
 > PROBAR, no limpio.
 
+## ✅✅ EL EJE `comportamiento` DEJA DE ESTAR A CERO — 0/31 → **13/37** (2026-08-10, `P-LH-C6`)
+
+Era **el hueco mayor del proyecto** y llevaba a cero desde que existe esta
+matriz. La causa estaba escrita aquí abajo y era exacta: *«`a-behaviors` y
+`c-behaviors` **solo abren el original**»* — censar un lado no es comparar dos.
+
+**`npm run qa:comportamiento`** (`scripts/qa/comportamiento.mjs`) es la primera
+sonda del eje que abre **los dos**:
+
+| | |
+|---|---|
+| corrida | **254 / 254 interacciones con DISPARO CONFIRMADO** · 0 selectores muertos |
+| unidad | **la INTERACCIÓN**, no la ruta — declarada así a propósito (§séptimo contenedor) |
+| alcance | **13 rutas emitidas × 2 lados**, una por familia del manifiesto, a **1440** · más **9 formas de listado** cuyo lado del clon es un **404 verificado** |
+| negativo | **5/5**, cada sabotaje por su discriminador y con el **CONTROL en verde** |
+| congelada | `medidas/comportamiento-1440.json` |
+
+> **La guarda que este eje necesita y ningún otro:** *una interacción que NO SE
+> DISPARA da la misma lectura que una que se dispara y no tiene efecto.* Las dos
+> escriben «0 cambios». Por eso el veredicto tiene **cuatro** valores —`EFECTO` ·
+> `SIN EFECTO` · `NO APLICA` (con su número) · `NO SE DISPARÓ`— y **el último no
+> cuenta como unidad evaluada**, así que la corrida sale roja por el contrato de
+> `Evaluadas`. Sin eso, el eje entero habría salido verde midiendo nada — que es
+> exactamente cómo se llega a 0/31 sin que nadie lo note.
+
+**Primera cosecha, por los dos lados** (fichas en `PENDIENTES-QA.md`):
+
+| hallazgo | número |
+|---|---|
+| §LH-C6-LAZY-CLON — el clon no difiere la carga de imagen | `loading="lazy"` **265 → 28**; imágenes sin pedir al quedar la red en reposo **35 → 0** en `/` |
+| §LH-C6-HOVER-SUBRAYADO — el clon subraya al hover y el original nunca | `textDecorationLine` **0 → 26**, y el color va a `rgb(0,94,163)` opaco donde el original va a `rgba(0,117,201,0.7)` |
+| §LH-C6-FILTRO-L5 — filtro de cliente por sector no modelado | **12 botones**, 57 → 3 tarjetas |
+| §LH-C6-L3-SIN-PAGINADOR — pagina por URL sin control en el cuerpo | 3 páginas, **0** enlaces `/page/2/` fuera del `<head>` |
+
+> ⚠ **Lo que este `13/37` NO es.** Es **una ruta por familia**: contar las 37
+> porque «la familia está cubierta» sería el séptimo contenedor otra vez. Con
+> `TODAS=1` la sonda recorre las 37, y hasta entonces las otras 24 son `·`.
+>
+> ⚠ **Y este eje no tiene suelo de ruido.** Ninguna campaña lo ha medido, así que
+> un `SIN EFECTO` aislado es **SIN PROBAR**, no *limpio*: el mismo `tiempo` sobre
+> `/monitor-calidad-aire` dio **29** mutaciones en una corrida y **1** en la
+> siguiente.
+
+## ⚠ Y la matriz llevaba una SEMANA sin poder regenerarse (2026-08-10)
+
+`qa:cobertura` moría con `TypeError` desde la conversión a monorepo
+(`path.enApp` por `enApp`, commit `bcc2b83` del 2026-08-03). Muere gritando —no
+es un verde falso— pero durante esa semana **la matriz sólo se leía a mano**, y
+lo destapó **intentar usarla**, que es §regla 10.
+
+Arreglado, y al correrla salen **dos divergencias con este documento**, las dos
+por la misma causa —una sonda que acredita un eje y **no está declarada como
+fuente** en `cobertura.mjs`:
+
+| eje | dice este documento | dice la sonda |
+|---|---|---|
+| **anchos horiz.** | 31/31 por `qa:ancho` | **15/37** — `ancho-cuerpo` no está declarada |
+| los 4 ejes de `articulos-kb` | `O` en las 6 rutas (F3-1) | **`·`** — `kb-cmp` no está declarada |
+
+**No se arreglan aquí a propósito:** declarar una fuente es decidir qué rutas y
+qué ejes acredita, y hacerlo deprisa es cómo se pinta de verde una celda que
+nadie miró. Ficha con su número: `PENDIENTES-QA.md` §LH-C6-COBERTURA-DIVERGE.
+
+**Y el denominador ya no es 31: son 37** — las 6 de `articulos-kb` entraron con
+sus rutas.
+
 ## La matriz · 31 rutas × 9 ejes
 
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.
@@ -357,7 +423,7 @@ La tanda de cierre gastó lo barato. Queda:
 | 2 | **filas** | 6/31 — solo sectores y monográficos; `tree-cmp` no sabe de las otras formas | generalizar `tree-cmp` |
 | 3 | **módulos** | 2/31 — solo `mono-cmp` | generalizar `mono-cmp` |
 | 4 | **offsets / holgura** | 0 contra el original; `offsets` es solo-clon por construcción | modo `--orig`, caro |
-| 5 | **comportamiento** | **0/31** — `a-behaviors` y `c-behaviors` solo abren el original | sonda nueva |
+| 5 | ~~**comportamiento**~~ | ✅ **CERRADO PARCIALMENTE 2026-08-10**: `qa:comportamiento` es la sonda nueva y de dos lados — **13/37 rutas**, 254/254 interacciones. Lo que queda: las otras 24 rutas (`TODAS=1`), 390, y un suelo de ruido para el eje | hecho el instrumento |
 | 6 | **estado HTTP en las demás sondas** | solo `c-cmp` lo mira; `lib.mjs` ya lo expone | 1 línea por sonda |
 | 7 | **existencia del recurso servido** | **0/31** — NOMBRADO 2026-08-05, ver abajo | sonda nueva + su negativo |
 

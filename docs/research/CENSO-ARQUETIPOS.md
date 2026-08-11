@@ -230,6 +230,25 @@ comparar. Barato, y mueve 20 páginas de "no se sabe" a A o a C.
 | **FAQ suelta** | **19** | CPT `faqs` |
 | **CENTRO DE AYUDA (KB)** | **13** | `centro-de-ayuda/*` y `soporte/centro-de-ayuda/*`: hubs, artículos y vídeo-tutoriales |
 | **ÍNDICE / HUB de listado** | **12** | `productos` · `sectores` · `recursos` · `casos-de-exito` · `blog` · `glosario` · `preguntas-frecuentes` · `recursos/{articulos,seminarios-web,kunakpedia,documentos-cientificos,preguntas-frecuentes}` |
+
+> ⚠ **Y a los estados de arriba les faltaba uno que sólo se ve en los listados:
+> RECONOCIDO ≠ SU COMPORTAMIENTO MEDIDO (2026-08-10, `P-LH-C6`).**
+>
+> Las 35 páginas de listado/hub estaban **censadas y reconocidas** desde julio —
+> `RECON-LISTADOS.md` + `listados-hubs/{PAGE_TOPOLOGY,DECISIONES}.md`, con
+> arquetipos, variantes y campos decididos—. Y aun así, la primera pasada de
+> comportamiento encontró **dos cosas que ninguna decisión recogía**: un **filtro
+> de cliente de 12 botones** en `casos-de-exito` y una forma (**L3**) que
+> **pagina por URL sin servir ningún control**.
+>
+> Los dos son **marcado servido** que estaba delante todo el tiempo. Lo que
+> faltaba no era acceso al dato: era **preguntar por interacción**, que es un
+> paso del flujo (§Recon: *clasificar cada interacción en scroll · click ·
+> tiempo*) y que hasta hoy **ninguna sonda de este repo hacía por los dos lados**.
+>
+> > **Un arquetipo con topología y modelo decididos puede seguir con su
+> > comportamiento sin medir, y eso no se ve en ningún estado del censo.**
+> > Acta: `docs/research/listados-hubs/BEHAVIORS.md`.
 | **LEGAL** | **4** | `noindex`: aviso legal, privacidad, cookies, seguridad de la información |
 | **LANDING DE DESCARGA** (gated) | **3** | `noindex`: `descarga-catalogo` + 2 `informe-tecnico-*`. **Son el destino de los CTA que el clon ya pinta** |
 | **EMPRESA / QUIÉNES SOMOS** | **2** | `empresa` · `empresa/premios-y-reconocimientos` |

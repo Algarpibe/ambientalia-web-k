@@ -89,6 +89,24 @@ const MOVIL = ANCHO <= 500;
 const UNIVERSO = env("UNIVERSO", "ambos");
 const SOLO = env("SOLO");
 const TODAS = !!env("TODAS");
+/* ── AFOR · medir OTRA ZONA de la misma afordancia ─────────────────────────
+ * El hover de una tarjeta **no es uno**: depende de dónde caiga el puntero.
+ * Medido en dos corridas de esta misma sonda sobre `L1-blog`: con el punto en
+ * la imagen sale `transform: scale(1.1)` sobre el `<img>`; con el punto en la
+ * meta sale el color del enlace de categoría **y la imagen no se mueve**. Las
+ * dos son ciertas y ninguna es «el hover de la tarjeta».
+ *
+ * Así que la zona se declara. `AFOR=<selector>` cambia la afordancia de los
+ * listados y **exige `ETIQUETA=<nombre>`**: sin ella la corrida escribiría en
+ * el nombre canónico y una medida de otra zona pasaría por la de la tarjeta —
+ * que es la regla 7 (*un artefacto que no es la medida canónica lo dice en el
+ * nombre*) aplicada antes de que ocurra. */
+const AFOR = env("AFOR");
+const ETIQUETA = env("ETIQUETA");
+if (AFOR && !ETIQUETA) {
+  console.error(`\n❌ AFOR sin ETIQUETA: esta corrida mide OTRA zona y escribiría en el nombre\n   canónico. Pon ETIQUETA=<nombre> para que la congelada diga qué es.`);
+  process.exit(2);
+}
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /* ── Sabotajes del test en negativo ────────────────────────────────────────
@@ -137,10 +155,33 @@ const MS_TIEMPO = 3000;
 /** Cuántas veces se pide la misma URL para el tipo `carga`. */
 const N_CARGAS = 10;
 
-/** Propiedades cuyo cambio cuenta como «efecto» de un hover. Declaradas, no «todas». */
+/* ── Propiedades cuyo cambio cuenta como «efecto» de un hover ──────────────
+ * Declaradas, no «todas» — pero **con sus anchuras**, y eso no es cosmético.
+ *
+ * ⚠ La primera versión leía `borderTopColor` sin `borderTopWidth`, y la corrida
+ * completa contó **88 cambios de color de borde en el original**. Un color de
+ * borde con anchura **0 no pinta nada**: eso habría publicado 88 «efectos»
+ * invisibles y, peor, habría hecho parecer que el original reacciona donde no
+ * reacciona. Es la regla del NIVEL otra vez, en su forma más barata: *se mide
+ * la propiedad que se ve, no la que está a mano.*
+ *
+ * Y el borde de ABAJO entra porque es donde Divi pinta el subrayado de enlace;
+ * `text-decoration` entra porque es donde lo pinta el clon. Sin los dos, la
+ * comparación de los dos lados no puede adjudicar si el mecanismo distinto da
+ * el mismo píxel. */
 const PROPS = [
-  "transform", "opacity", "boxShadow", "backgroundColor", "color",
-  "borderTopColor", "filter", "textDecorationLine", "scale", "translate",
+  "transform", "opacity", "boxShadow", "backgroundColor", "color", "filter", "scale", "translate",
+  "borderTopColor", "borderTopWidth",
+  "borderBottomColor", "borderBottomWidth", "borderBottomStyle",
+  "textDecorationLine", "textDecorationColor", "textDecorationThickness",
+];
+
+/** Cambios de color de borde sin anchura: se registran, pero NO cuentan como efecto. */
+const NO_PINTA = [
+  { prop: "borderTopColor", ancho: "borderTopWidth" },
+  { prop: "borderBottomColor", ancho: "borderBottomWidth" },
+  { prop: "textDecorationColor", ancho: "textDecorationLine" },
+  { prop: "textDecorationThickness", ancho: "textDecorationLine" },
 ];
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -310,16 +351,30 @@ function ESTILOS(props) {
   };
 }
 
-/** Diferencias entre dos lecturas de `ESTILOS`. `[]` = ninguna. */
+/**
+ * Diferencias entre dos lecturas de `ESTILOS`, partidas en las que **pintan** y
+ * las que no. Un color de borde que cambia con la anchura a `0px` en las dos
+ * lecturas es un cambio real del computado y **cero píxeles en pantalla**: se
+ * registra aparte para que se pueda auditar, y no cuenta como efecto.
+ */
 const difEstilos = (a, b) => {
   if (!a || !b) return null;
-  const out = [];
+  const pintan = [];
+  const invisibles = [];
   const cmp = (pre, x, y) => {
-    for (const k of Object.keys(x)) if (x[k] !== y?.[k]) out.push(`${pre}${k}: ${x[k]} → ${y?.[k]}`);
+    for (const k of Object.keys(x)) {
+      if (x[k] === y?.[k]) continue;
+      const regla = NO_PINTA.find((n) => n.prop === k);
+      const muerto = regla
+        && (k === "textDecorationColor" || k === "textDecorationThickness"
+          ? x[regla.ancho] === "none" && y?.[regla.ancho] === "none"
+          : parseFloat(x[regla.ancho] || "0") === 0 && parseFloat(y?.[regla.ancho] || "0") === 0);
+      (muerto ? invisibles : pintan).push(`${pre}${k}: ${x[k]} → ${y?.[k]}`);
+    }
   };
   cmp("", a.diana, b.diana);
   for (const s of Object.keys(a.sub)) cmp(`${s} · `, a.sub[s], b.sub[s] || {});
-  return out;
+  return { pintan, invisibles };
 };
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -527,7 +582,7 @@ const SEL = {
   listados: {
     tarjeta: "article:not(.type-page)",
     /** Las tres pieles de paginación medidas en el corpus congelado de F3-0. */
-    afor: "article:not(.type-page)",
+    afor: AFOR || "article:not(.type-page)",
     paginacion: [
       ".wp-pagenavi a[href*='/page/2/']",
       "nav.kunak-pagination a[href*='/page/2/']",
@@ -560,6 +615,8 @@ const salida = {
     viewport: `${ANCHO}x${MOVIL ? 844 : 900}${MOVIL ? " (device metrics, táctil)" : ""} · DPR 1`,
     universo: UNIVERSO,
     sabotaje: SABOTAJE || null,
+    afordanciaListados: SEL.listados.afor,
+    etiqueta: ETIQUETA || null,
     catalogo: CATALOGO.filter((c) => c.anchos.includes(ANCHO)).map((c) => `${c.tipo}·${c.que}`),
     fueraDelCatalogo: CATALOGO.filter((c) => !c.anchos.includes(ANCHO)).map((c) => `${c.tipo} (no a ${ANCHO})`),
     alcance: {
@@ -803,13 +860,25 @@ async function midePagina(browser, P, lado, url) {
         eventoOverEnDiana: llego, hoverCss: despues?.hover ?? null, eventos: evs.length,
         reintentos, ...(punto?.fueraDelViewport ? { fueraDelViewport: punto.y } : {}),
       };
-      const dif = difEstilos(antes, despues) || [];
+      const dif = difEstilos(antes, despues) || { pintan: [], invisibles: [] };
+      /* ⚠ El veredicto se lee de `control`, **no de la marca**. La primera
+       * versión ponía `!d.tapada`, o sea la lectura del `getBoundingClientRect`
+       * de `MARCA`, mientras el control publicaba la de `PUNTO` — que es la del
+       * píxel al que de verdad fue el ratón. Resultado: una interacción con los
+       * TRES controles en verde impresos (`tapada:false`,
+       * `eventoOverEnDiana:true`, `hoverCss:true`) y veredicto «NO SE DISPARÓ».
+       * Es la regla 1 de §sondas —*lo que imprime y lo que cuenta no pueden
+       * discrepar*— rota dentro de la sonda escrita para cerrar esta familia. */
       registra({
         P, lado, tipo: "hover", que: `afordancia #${k}`,
-        disparado: !d.tapada && llego && despues?.hover === true,
+        disparado: !control.tapada && llego && despues?.hover === true,
         control,
-        efecto: dif.length > 0,
-        detalle: { diana: { texto: d.texto, caja: `${d.w}x${d.h}`, href: d.href }, cambios: dif.slice(0, 10) },
+        efecto: dif.pintan.length > 0,
+        detalle: {
+          diana: { texto: d.texto, caja: `${d.w}x${d.h}`, href: d.href },
+          cambios: dif.pintan.slice(0, 12),
+          cambiosQueNoPintan: dif.invisibles.slice(0, 8),
+        },
       });
       await page.mouse.move(1, 1);
     }
@@ -1048,7 +1117,7 @@ function resumeDetalle(i) {
   if (i.tipo === "inventario") return `tarjetas ${d.tarjetas} · afordancias ${d.afordancias} · img ${d.imagenes?.total} (lazy ${d.imagenes?.lazy}) · slider ${d.marcadores?.slider} · controles ${d.controles?.length} · filtros ${d.filtros?.length ?? 0}`;
   if (i.tipo === "scroll") return `doc: ${d.cargadas} (bajo el pliegue ${d.bajoElPliegue}) · TARJETA: ${d.tarjeta?.imagenes} img, lazy ${d.tarjeta?.conAtributoLazy}, bajo el pliegue ${d.tarjeta?.bajoElPliegue}, sin cargar antes ${d.tarjeta?.sinCargarAntes}, Δ ${d.tarjeta?.difieren}`;
   if (i.tipo === "tiempo") return `${d.enElContenido} mutaciones EN EL CONTENIDO (+${d.fueraDeLaRaiz} fuera: terceros) ${JSON.stringify(d.porTipo || {}).slice(0, 80)}`;
-  if (i.tipo === "hover") return `${(d.cambios || []).length} cambios ${(d.cambios || []).slice(0, 2).join(" | ").slice(0, 110)}`;
+  if (i.tipo === "hover") return `${(d.cambios || []).length} cambios${(d.cambiosQueNoPintan || []).length ? ` (+${d.cambiosQueNoPintan.length} que NO pintan)` : ""} ${(d.cambios || []).slice(0, 2).join(" | ").slice(0, 100)}`;
   if (i.tipo === "click") return `${d.mecanismo} · preventDefault=${d.defaultPrevented}`;
   if (i.tipo === "filtro") return `${d.mecanismo} · ${d.nFiltros} filtros · tarjetas ${d.tarjetasVisibles} · activo ${d.activo}`;
   if (i.tipo === "carga") return d.lectura;
@@ -1096,6 +1165,6 @@ if (noDisparadas) {
   );
 }
 
-w(`medidas/comportamiento-${ANCHO}${UNIVERSO === "ambos" ? "" : `-${UNIVERSO}`}.json`, salida);
+w(`medidas/comportamiento-${ANCHO}${UNIVERSO === "ambos" ? "" : `-${UNIVERSO}`}${ETIQUETA ? `-${ETIQUETA}` : ""}.json`, salida);
 ev.informe();
 process.exitCode = (muertos || noDisparadas) ? 2 : 0;

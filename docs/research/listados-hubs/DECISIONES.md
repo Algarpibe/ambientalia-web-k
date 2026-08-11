@@ -189,4 +189,21 @@ Escrito ahora para que la tanda que construya no se lo invente:
 | **P-LH-C3** | las rutas `/page/N/` emitidas coinciden con **una corrida de `qa:lh-paginas` del día de la construcción** (no con la del 2026-07-31 — el contenido vivo mueve el total) |
 | **P-LH-C4** | al emitir el primer hub/listado, `qa:enlaces` convierte los **25 href** absolutos en fallo — se localizan con la sonda, no a mano, y se re-corre hasta limpia en las dos direcciones |
 | **P-LH-C5** | los 7 sin paginación real devuelven **404** en el clon para `/page/2/`, y la desviación queda anotada en `PENDIENTES-QA.md` con la razón de D2.4 |
-| **P-LH-C6** | ANTES de construir: la pasada de comportamiento de D5/LH-SP5 (hover · AJAX · lazy · orden entre cargas) |
+| **P-LH-C6** | ✅ **CUMPLIDA 2026-08-10** — `npm run qa:comportamiento`, 254/254 interacciones con disparo confirmado, negativo 5/5. Acta: **`BEHAVIORS.md`** (mismo directorio) · `medidas/comportamiento-1440.json` |
+
+## ⚠ Lo que la pasada de comportamiento le DEVUELVE a este documento (2026-08-10)
+
+**Esta sección NO reescribe ninguna decisión.** El acta está en `BEHAVIORS.md` y
+las fichas en `PENDIENTES-QA.md`; aquí sólo queda anotado qué decisión toca cada
+hallazgo, para que la tanda que construya no lea las tablas de arriba sin este
+aviso al lado.
+
+| decisión | qué dice hoy | qué midió `P-LH-C6` |
+|---|---|---|
+| **D2.3** · *las rutas `/page/N/` se derivan en build* | supone navegación por enlace | ✅ **confirmada**: enlace real, `defaultPrevented:false` en las 5 formas con control. **NO es AJAX** |
+| **D4** · *«qué entradas salen y en qué orden» = SIN PROBAR (LH-SP3)* | sin medir | ✅ **medido con su cota**: 1 solo orden en 10 cargas (blog · etiqueta · casos) ⇒ **< 30 % por carga al 95 %**. **No sortean como el módulo P4 de la HOME**, así que el QA px a px **no necesita congelar contenido** por esa causa |
+| **D1** · *L1 es UNO con tres variantes de tarjeta* | tres variantes | ✅ **corroborada por una vía nueva**: hay **tres pieles de paginación** y caen **1:1** con las tres variantes (blog · etiqueta/L2 · resources/L3). ⚠ Es un discriminador 1:1 en 9 páginas: corrobora, **no prueba** |
+| **D1** · *L5 … **cero campos nuevos*** | ninguno | ⛔ **§LH-C6-FILTRO-L5**: 12 botones de **filtro de cliente por sector** (57 → 3 tarjetas, sin recargar ni cambiar la URL) |
+| **D3** · *no se añade la relación `sector` al caso **hasta que un listado la consuma*** | condición de reapertura | ⛔ **la condición SE CUMPLE**: el filtro de L5 la consume, y es el discriminador de sus 12 opciones. **A la mesa de F3-4**, no aquí: `sector` es una de sus tres familias sin censar y decidirla desde un único consumidor es n=1 |
+| **D2** · paginación de L3 | *«las rutas se derivan en build»* | ⛔ **§LH-C6-L3-SIN-PAGINADOR**: L3 pagina por URL (3 páginas) y **no sirve ningún control en el cuerpo** — el único `/page/2/` del documento es el `<link rel="next">` de Yoast en el `<head>`. Replicar o desviarse, **con la razón escrita** |
+| **LH-SP9** · *entradas/página de L3* | abierta | sigue abierta, **y ahora se sabe por qué costaba**: la ventana de `paginate_links` que el censo leía **no existe** en esta forma |

@@ -76,7 +76,14 @@ const congeladas = (base) => {
  */
 const ultima = (base) => congeladas(base).pop();
 
-const MANIFIESTO = path.enApp(".next/prerender-manifest.json");
+/* ⚠ `enApp(...)`, no `path.enApp(...)`. La conversión a monorepo (F2-1, bcc2b83)
+ * dejó aquí la llamada colgando del `path` de Node, o sea que **esta sonda no
+ * arrancaba desde el 2026-08-03**: `TypeError` a nivel de módulo. No es un verde
+ * falso —muere gritando y con código ≠0— pero sí una semana en la que la matriz
+ * de cobertura **no se podía regenerar** y sólo se leía a mano. Lo destapó
+ * intentar usarla, que es §regla 10: *una afirmación de completitud se verifica
+ * ejercitándola.* */
+const MANIFIESTO = enApp(".next/prerender-manifest.json");
 if (!fs.existsSync(MANIFIESTO)) {
   console.error("❌ no hay .next/prerender-manifest.json — corre `npm run build` antes.");
   process.exit(2);
@@ -246,9 +253,34 @@ for (const f of fs.readdirSync(M).filter((x) => x.startsWith("offsets-") && x.en
 // 10 · enlaces — las 31 contra las rutas que emite el build.
 if (fuente("enlaces.json")) set("enlaces", J("enlaces.json").publicadas || RUTAS, "O", "enlaces", "enlaces");
 
-// 11 · comportamiento — `a-behaviors` y `c-behaviors` SOLO abren el original:
-//      son recon de fase 1. Censar el original no es comparar el clon: no se
-//      acredita nada, y ése es el hallazgo.
+/* 11 · comportamiento — la celda deja de estar vacía (2026-08-10, P-LH-C6).
+ *
+ * `a-behaviors` y `c-behaviors` SOLO abren el original: son recon de fase 1, y
+ * censar el original no es comparar el clon. Por eso el eje llevaba **0/31**
+ * desde que existe esta matriz — no por descuido, sino porque **ninguna sonda
+ * lo miraba por los dos lados**.
+ *
+ * `comportamiento.mjs` sí, y por eso acredita `O`. Con dos condiciones que se
+ * comprueban aquí y no se dan por hechas:
+ *
+ *   · la ruta tiene que ser del universo `emitidas` — las 9 formas de listado
+ *     también se miden, pero su lado del clon es un **404 verificado**, o sea
+ *     que no hay comparación de comportamiento que acreditar;
+ *   · y tiene que haberse medido **el lado del clon**, no sólo el del original.
+ *
+ * ⚠ Sólo entran las rutas que la corrida MIDIÓ. La sonda mide **una ruta por
+ * familia** salvo con `TODAS=1`, así que esta celda va a quedar parcial a
+ * propósito: 13 de 37 es lo que se midió, y contar las 37 porque «la familia
+ * está cubierta» sería el séptimo contenedor otra vez.
+ */
+for (const f of [...congeladas("comportamiento-1440"), ...congeladas("comportamiento-390")]) {
+  if (!fuente(f)) continue;
+  const j = J(f);
+  const rutas = Object.values(j.paginas || {})
+    .filter((v) => v.universo === "emitidas" && v.clonEmitida)
+    .map((v) => v.clon);
+  set("comport", rutas, "O", "comportamiento", f.replace(".json", ""));
+}
 
 if (SABOTAJE) fuente("cobertura-FUENTE-INVENTADA.json");
 

@@ -1,3 +1,135 @@
+# HANDOFF — el eje que llevaba 0/31 se mide por fin, y lo que lo tenía a cero no era el trabajo: era que «no se disparó» y «no tuvo efecto» se escriben igual
+
+> ⚠ **Tanda 2026-08-10 (49.ª).** PASOS **1 · 2 · 3 · 4 · 5 · 7** completos. El
+> PASO **6** (los dos pendientes con número) **no se hizo** — razón en §4.
+> Registro: `PENDIENTES-QA.md` (§P-LH-C6 + **6 fichas nuevas**) ·
+> `docs/research/listados-hubs/BEHAVIORS.md` (**nuevo**) ·
+> `COBERTURA-MEDICION.md` (el eje **0/31 → 13/37**) · `PLAN-FASE-3.md` (**F3-2
+> DESBLOQUEADA**) · `DECISIONES.md` (§lo que la pasada le devuelve) ·
+> `CENSO-ARQUETIPOS.md`.
+
+## 0 · Los cuatro titulares
+
+> **1 · EL EJE `comportamiento` DEJA DE ESTAR A CERO, Y LA CAUSA DE QUE
+> ESTUVIERA A CERO NO ERA LA PEREZA.** Las dos sondas que existían
+> —`a-behaviors`, `c-behaviors`— **solo abren el original**, y censar un lado no
+> es comparar dos. La sonda nueva abre los dos: **254/254 interacciones con
+> disparo confirmado**, 0 selectores muertos, **13/37 rutas** en la matriz.
+>
+> **2 · Y NECESITÓ UNA GUARDA QUE NINGÚN OTRO EJE NECESITA, porque aquí el falso
+> verde tiene mecanismo propio:** *una interacción que NO SE DISPARA da la misma
+> lectura que una que se dispara y no tiene efecto — las dos escriben «0
+> cambios»*. Es el `switch` sin `default` de F3-1 con otro disfraz. El veredicto
+> tiene **CUATRO** valores —`EFECTO` · `SIN EFECTO` · `NO APLICA` (con su
+> número) · **`NO SE DISPARÓ`**— y el último **no cuenta como unidad evaluada**,
+> así que la corrida sale roja por el contrato de `Evaluadas`, no por atención.
+> Negativo **5/5**, cada sabotaje por su discriminador y **con el CONTROL en
+> verde**.
+>
+> **3 · EL CONTROL SE PAGÓ SOLO EN LA PRIMERA CORRIDA: marcó 3 dianas que no
+> reaccionaban y NINGUNA era del sitio.** La cabecera fija de Divi tapando el
+> punto; un `<a>` **en línea** cuya caja de borde cubre el hueco entre dos
+> renglones (se apunta sobre `getClientRects()`, no sobre la caja); y —la peor—
+> **mi propio veredicto leyendo `tapada` de la marca mientras el control
+> publicaba la del punto disparado**: los tres controles impresos en verde y
+> veredicto rojo. Regla 1 de §sondas rota **dentro de la sonda escrita para
+> cerrar esa familia**.
+>
+> **4 · Y LA PRIMERA COSECHA DE DOS LADOS SON DOS DEFECTOS DE CLASE QUE NINGUNA
+> GUARDA PODÍA VER, porque no mueven un píxel de alto.** El clon emite
+> **`loading="lazy"` 265 → 28** (y **35 → 0** imágenes sin pedir en la HOME al
+> quedar la red en reposo): **el original difiere la carga y el clon no**. Y al
+> hover el clon **SUBRAYA** —`textDecorationLine` **0 → 26**— donde el original
+> nunca lo hace, yendo además a un azul **opaco** (`rgb(0,94,163)`) en vez del
+> translúcido (`rgba(0,117,201,0.7)`).
+
+## 1 · Lo que quedó midiendo, y con qué
+
+| sonda | resultado |
+|---|---|
+| **`qa:comportamiento`** ← nueva | **254/254** interacciones con disparo confirmado · `EFECTO` 171 · `SIN EFECTO` 65 · `NO APLICA` 18 · **`NO SE DISPARÓ` 0** · 0 selectores muertos |
+| **`qa:comportamiento-neg`** ← nueva | **5/5** — control + 4 sabotajes, cada uno por SU invariante |
+| `qa:cobertura` (**arreglada**: no arrancaba desde el 2026-08-03) | 37 rutas · **comportamiento 13/37** |
+| `qa:lib` | **125 sondas** COMPILAN y declaran su mínimo · negativo 93/93 |
+| `npm run check` | verde · 37 rutas · 13 familias · slugs LIMPIO · `cms-campos` 10/10 |
+
+**Alcance declarado** (un eje es propiedad de lo medido): **9 formas de listado**
+—lado del original; el del clon es un **404 verificado**— y **13 rutas emitidas ×
+2 lados**, una por familia del manifiesto, **a 1440**.
+
+## 2 · Lo que hay que saber para retomar
+
+**`P-LH-C6` está cumplida y F3-2 desbloqueada.** Lo que la construcción se lleva
+ya contestado está en `PLAN-FASE-3.md` §F3-2; lo esencial:
+
+- **la paginación NO es AJAX** (enlace real, `defaultPrevented:false` en las 5
+  formas con control) ⇒ `D2.3` es viable tal como está escrita;
+- **los listados no sortean**: 1 solo orden en 10 cargas, **cota < 30 %** ⇒ el
+  QA px a px **no necesita congelar contenido** por esa causa;
+- **no hace falta maquinaria de carga diferida** para ser fiel en los listados:
+  `sinCargarAntes = 0` en las 9 formas;
+- **el hover de tarjeta es `scale(1.1)` exacto** sobre la media, repetido en
+  cuatro formas.
+
+**Y TRES fichas que hay que resolver ANTES de construir F3-2:**
+
+1. **§LH-C6-FILTRO-L5** — `casos-de-exito` tiene **12 botones de filtro de
+   cliente por sector** (57 → 3 tarjetas, sin recargar ni cambiar la URL). `D1`
+   dijo *«cero campos nuevos»* y `D3` dejó la relación `sector` fuera *«hasta que
+   un listado la consuma»*: **la consume**. Va a la mesa de **F3-4** — decidir
+   desde este único consumidor es n=1;
+2. **§LH-C6-L3-SIN-PAGINADOR** — L3 pagina por URL (3 páginas) y **no sirve
+   ningún control**: el único `/page/2/` del documento es el `<link rel="next">`
+   de Yoast en el `<head>`. Replicar o desviarse, **con la razón escrita**;
+3. **§LH-C6-HOVER-ZONAL** — el hover de tarjeta **no es uno**: la imagen hace
+   zoom y el enlace de categoría cambia de color, con dianas distintas. Falta
+   medir **qué contenedor dispara el zoom**.
+
+## 3 · Lo que NO hay que hacer al empezar
+
+- **No leer `13/37` como «el eje está cubierto».** Es **una ruta por familia**;
+  con `TODAS=1` la sonda recorre las 37 y hasta entonces las otras 24 son `·`.
+  Contar las 37 porque «la familia está cubierta» es el séptimo contenedor.
+- **No leer un `SIN EFECTO` como «limpio».** Este eje **no tiene suelo de
+  ruido**: el mismo `tiempo` sobre `/monitor-calidad-aire` dio **29** mutaciones
+  en una corrida y **1** en la siguiente. Sin campaña, es SIN PROBAR.
+- **No medir `hover` a 390 «para completar los dos anchos».** El catálogo se
+  declara **por ancho** y a 390 no lo incluye a propósito: bajo emulación táctil
+  el `:hover` no es la misma interacción, así que no es «lo mismo más estrecho».
+- **No fiarse de `COBERTURA-MEDICION.md` para `anchos horiz.` ni para las 6
+  rutas de KB.** La matriz generada dice **15/37** y `·` respectivamente, porque
+  `ancho-cuerpo` y `kb-cmp` **no están declaradas como fuentes** en
+  `cobertura.mjs` (§LH-C6-COBERTURA-DIVERGE). El documento y la sonda divergen y
+  la divergencia tiene número.
+- **No apuntar «al centro» de una afordancia sin decirlo.** El hover de una
+  tarjeta depende de la zona; la perilla `AFOR=<selector> ETIQUETA=<nombre>`
+  existe para medir otra zona **y exige nombre propio para la congelada**.
+
+## 4 · Por qué no se hizo el PASO 6, sin adornos
+
+**No hubo hallazgo que lo impidiera: el PASO 2 —la guarda— resultó ser el trabajo
+entero, y eso era lo previsto por la propia consigna** (*el orden de valor es
+2 > 1 > 3 > 5 > 4 > 7 > 6*). Escribir el motor de control positivo, sus cinco
+sabotajes, y **cerrar cuatro veces el ciclo medir → ver el control en rojo →
+arreglar la puntería → volver a medir** consumió el presupuesto: tres corridas
+completas de ~25 min cada una, dos de ellas descartadas y congeladas como
+evidencia con nombre de defecto de sonda (`-SONDA-APUNTE-BBOX`,
+`-SONDA-TAPADA-DE-MARCA`).
+
+Los dos pendientes del PASO 6 —los **96 casos de `articulos-kb`** sin ejercitar
+(`qa:nunca-vistos` va por 241 de 330) y las **1227 reglas de piel cableadas fuera
+de KB**— **no perdieron nada por esperar**: los dos son recuentos que se derivan
+y no caducan.
+
+## 5 · Lo siguiente
+
+**Construir F3-2** — LISTADO-B con sus 3 variantes de tarjeta · L2/L3 · el índice
+`casos-de-exito` sobre la colección `casos` · y las 107 rutas `/page/N/`
+derivadas en build. Con las tres fichas de §2 resueltas primero, y con
+`P-LH-C1…C5` como criterio de cierre (`DECISIONES.md` §Pre-registro).
+
+---
+
 # HANDOFF — `articulos-kb` SERVIDA y comparada PAR A PAR; el arreglo falso lo impidió el instrumento, no la disciplina
 
 > ⚠ **Tanda 2026-08-10 (48.ª).** PASOS **1 · 2 · 3 · 4 · 5 · 7** completos. El
