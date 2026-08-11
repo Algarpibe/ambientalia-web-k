@@ -1,4 +1,53 @@
-# HANDOFF — F3-2 PARADA EN EL PASO 2: la mitad de las «107 rutas de paginación» existen y no listan nada, y el modelo no contempla esa forma
+# HANDOFF — F3-2: el 1.er escalón se cierra con `D2.5`, la fase de specs nace… y levanta un SEGUNDO escalón
+
+> ⚠ **Tanda 2026-08-11 (53.ª).** PASOS **1 · 2 · 5 completos**; **3 · 4 NO
+> EMPEZADOS**, detenidos por el 2.º escalón (la consigna: *si las specs destapan
+> algo que `DECISIONES.md` no contempla, para con la evidencia congelada*).
+> Registro: `DECISIONES.md` §D2.5 + aviso en §D1 · `PENDIENTES-QA.md` (2 fichas
+> nuevas) · `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` §F3-2 ·
+> `research/listados-hubs/components/` (nuevo).
+
+## 0 · Los cuatro titulares
+
+> **1 · `D2.5` CIERRA EL PRIMER ESCALÓN: REPLICAR TAL CUAL**, firmada por el
+> propietario. El clon emite las **55 rutas vacías** con 200, como el original —
+> la única de las tres salidas que **no cambia el sitio**. `noindex` y 404 son
+> decisiones de **producto**: legítimas, pero no viajan dentro de una migración,
+> y van a su ficha (§F3-2-SEO-PAGINAS-VACIAS).
+>
+> **2 · Y `D2.4` no se reabre: LAS SEPARA EL CANONICAL, 7/7 y 55/55.** El
+> original declara él mismo qué `/page/N/` es ruta. Una regla, dos respuestas.
+> Además, **las tres fuentes del total no discrepaban: eran dos magnitudes** — el
+> `<title>` mide el servidor (**21/21**) y la ventana el contenido (**14/14
+> donde existe, ausente en 7 de 21**). El **142** de la entrega ya se **deriva de
+> la decisión**, y la sonda imprime también el contrafactual (87).
+>
+> **3 · LA FASE DE SPECS EXISTE** (`qa:lh-spec`, original vivo, 13 páginas × dos
+> anchos) y con ella `LH-SP2` deja de estar a cero. **Escritas 2 de 6**; las
+> otras 4 formas están **medidas y congeladas, sin redactar**.
+>
+> **4 · SEGUNDO ESCALÓN: `L1` tiene DOS retículas de cuerpo.** `3_4+1_4` con
+> **barra lateral de 10 widgets** en blog y etiqueta (**80/80 documentos**),
+> `4_4` sin barra en resources (**0/37**) — con contenedores de **911.75** y
+> **1238.39**, que son los dos del `⚠⚠` de `CLAUDE.md` §Test A. `D1` dice que
+> entre familias sólo cambia la tarjeta; `D3` no lista la barra, cuyo widget
+> «Categorías» **consume `category`**. **F3-2 no construye hasta decidirlo.**
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **empieza por la ficha §ESCALÓN F3-2 (2.º)**: decide qué es la barra lateral
+  (¿entra en la entrega? ¿qué es cada widget en el modelo?) y con eso `D1`/`D3`
+  se corrigen y F3-2 arranca el PASO 3;
+- **`L2` no tiene `h1`** —cero, medido— y el protocolo lee el cuerpo restando la
+  `y` del `h1`: hay que elegirle ancla antes de comparar nada de `L2`;
+- **redactar las specs de `L2` · `L3` · `L4` · `L5`** no cuesta volver al
+  original: están en `medidas/lh-spec-{1440,390}.json`;
+- **`P-LH-C3` está cumplida para el 2026-08-11**; si la construcción cae otro
+  día, se re-corre `qa:lh-paginas`.
+
+---
+
+# (histórico) HANDOFF — F3-2 PARADA EN EL PASO 2: la mitad de las «107 rutas de paginación» existen y no listan nada, y el modelo no contempla esa forma
 
 > ⚠ **Tanda 2026-08-11 (52.ª).** F3-2, PASOS **2 · 1 · 5** completos y **3
 > DETENIDO por el ESCALÓN** (la consigna: *si aparece una forma que
