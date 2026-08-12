@@ -169,7 +169,9 @@
     "qa:lh-h1": "node scripts/qa/lh-h1.mjs",
     "qa:lh-contenedores": "node scripts/qa/lh-contenedores.mjs",
     "qa:lh-ancla": "node scripts/qa/lh-ancla.mjs",
-    "qa:lh-rol": "node scripts/qa/lh-rol.mjs"
+    "qa:lh-rol": "node scripts/qa/lh-rol.mjs",
+    "qa:lh-poblacion": "node --env-file=apps/cms/.env scripts/qa/lh-poblacion.mjs",
+    "qa:lh-poblacion-neg": "node scripts/qa/lh-poblacion.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

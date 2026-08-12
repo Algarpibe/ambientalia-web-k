@@ -1,5 +1,77 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
+
+> **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de
+> `LISTADO-B`.** Lo destapó dimensionar el PASO 3 de la 56.ª tanda: el contrato
+> era *«entero o nada»* y el corte limpio está **antes** de empezarlo.
+
+**Un listado no tiene contenido propio: es una CONSULTA.** Cuántas páginas emite
+es una función de **cuántos documentos hay en la colección que consulta** — y
+los tres números que gobiernan F3-2 (`142` rutas · `55` vacías · `21` series que
+paginan) salen **del original**. El clon consulta **su** DB, y nadie había
+puesto los dos lados en la misma tabla.
+
+Sonda: **`npm run qa:lh-poblacion`** (nueva; sin red — cruza `lh-serie.json` con
+la `lh-paginas` **del día** y la DB por Local API, `estado=publicado`, la misma
+fuente que usa el build). Congelada en `medidas/lh-poblacion.json`, negativo
+**3/3**.
+
+| colección | original | clon | serie mayor que la consulta |
+|---|---|---|---|
+| `entradas-blog` | **149** capturadas | **7** | `/etiqueta/monitorizacion-ambiental` · **91** |
+| `casos` | 57 | **4** | `/casos-de-exito` · **57** |
+| `terminos-kunakpedia` | 37 | **3** | `/glosario` · **37** |
+| `documentos-cientificos` | 23 | **4** | `/scientific-category/…-y-estudios` · **14** |
+| `faqs` | 19 | **2** | `/preguntas-frecuentes` · **19** |
+
+> **19 de las 29 series con listado se quedan cortas**, y la columna del clon es
+> una **COTA SUPERIOR**: a cada serie de término se le atribuye **toda** su
+> colección, porque el clon no tiene la taxonomía poblada. Si ni así llega, no
+> llega. **Rutas que el clon podría emitir hoy: 35 de 142.**
+
+### Por qué esto NO es «ya se poblará después»: los criterios de verificación ya escritos lo presuponen
+
+Es lo que lo convierte en escalón y no en una tarea de datos:
+
+| criterio | qué presupone | qué pasa hoy |
+|---|---|---|
+| **`P-LH-C3`** | *«las rutas emitidas coinciden con una corrida de `qa:lh-paginas` del día»* | **35 contra 142.** No hay lectura bajo la que eso «coincida» |
+| **`P-LH-C7`** | *«las 55 vacías cumplen su contrato: 200, canonical a sí misma, `<title>` Página N de M»* | el clon **no llega a tener una sola vacía**: con 7 entradas, `/blog` es 1 página |
+| **la comparación PAR A PAR** | que la página N del clon y la del original **listen las mismas tarjetas** | 7 tarjetas contra 9 en la primera de `/blog`. Cada Δ del comparador vendría del **contenido**, no de la plantilla |
+| **el universo de 38 clases** | que el clon **ejercite** las clases | con una página por serie sólo se ejercita la clase «primera y última sin paginador». Es §F2-5-ESCALON-ETIQUETAS literal: *un camino de render que ningún dato de calibración estrena* |
+
+**Y el orden importa:** construir primero y poblar después **no** desbloquea la
+verificación — la deja en «verde sin haber mirado», que es la familia que
+`CLAUDE.md` §sondas persigue entera.
+
+### Las salidas, con lo que cada una ES (no cuál deja el clon mejor)
+
+| salida | qué hace | qué es |
+|---|---|---|
+| **A · sembrar el corpus** (149 entradas + 57 casos + 37 términos + 23 docs + 19 faqs) | el clon consulta lo mismo que el original | **la única que deja verificable lo que F3-2 declara**. Coste: una campaña de extracción por colección, y `entradas-blog` ya tiene sus 149 capturadas |
+| **B · re-derivar los criterios contra la población del clon** | `P-LH-C3`/`P-LH-C7` pasan a medirse contra lo que el clon tiene | barato, y **cambia lo que la fase entrega**: deja de verificarse la paginación, que es justo el mecanismo que `D2.3`·`D2.4`·`D2.5`·`D2.6` costaron cuatro decisiones |
+| **C · entregar `L1` con su población de muestra y declarar el hueco** | se construye la plantilla, se verifica **la primera página** contra el original y el resto queda declarado SIN EJERCITAR | intermedia y honesta, **si el hueco se escribe con su número** — no si se lee como «F3-2 completa» |
+
+⚠ **Lo que ninguna de las tres puede ser es implícita.** Empezar a construir sin
+elegir deja el criterio de verificación decidiéndose **por inercia**, que es
+exactamente el defecto que `D2.5` corrigió en `lh-paginas` (§*el «107» lo estaba
+decidiendo una MEDICIÓN*).
+
+### Y de camino, un número mal etiquetado que llevaba dos tandas circulando
+
+`lh-serie.json` suma **149 páginas** y `lh-paginas` declara **142 rutas**. No es
+una discrepancia: son **dos magnitudes**, y la diferencia son **7 series** que la
+captura recorrió hasta `/page/2/` y que **no paginan** —canonical a la página 1,
+o sea `D2.4`—: `/casos-de-exito` · `/productos` · `/recursos` ·
+`/recursos/{documentos-cientificos,kunakpedia,preguntas-frecuentes}` ·
+`/sectores`. La sonda **manda sobre `lh-paginas`** para el recuento y publica las
+dos con su fuente, para que nadie vuelva a sumar la congelada que tiene a mano.
+
+**Qué la cierra:** la decisión A · B · C escrita en
+`research/listados-hubs/DECISIONES.md`, con la forma de `D2.5`. Hasta entonces
+`qa:lh-poblacion` **sale roja a propósito**, como hizo `§LH-CONTENEDOR-ROL`.
+
 ## ✅ LH-SERIE-HIGIENE · dos defectos de sonda y una congelada que no correspondía a su código (2026-08-11)
 
 **PASO 6 de la 54.ª tanda.** Los tres se cazaron **re-corriendo**, no leyendo —
