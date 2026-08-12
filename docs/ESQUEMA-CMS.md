@@ -1003,6 +1003,48 @@ escrita**). Los 6 hubs de builder **no estrenan arquetipo** (cola larga /
 hipótesis grupo D), y `/es/casos-de-exito/` es una **página índice** sobre la
 colección `casos`: lista las 57, ambos prefijos, **sin paginar** (fidelidad).
 
+### ⚠ 2c.0 · Lo que la variante de `LISTADO-B` incluye ADEMÁS de la tarjeta (2026-08-11)
+
+**`D1` queda ACOTADA**, no contradicha (acta: `listados-hubs/DECISIONES.md`
+§*D1 queda ACOTADA*; evidencia `medidas/lh-barra.json`, 149 documentos):
+
+> La variante de `LISTADO-B` no es sólo la **configuración de tarjeta**: es
+> además la **retícula del cuerpo con su barra lateral**.
+
+| variante | fila del listado | columna de contenido @1440 | barra lateral |
+|---|---|---|---|
+| `blog` · `etiqueta` | **`3_4 + 1_4`** | **911.75** | **sí** — 80/80 |
+| `resources` | **`4_4`** | **1238.39** | **no** — 0/37 |
+
+**La barra es CONTENIDO DE PLANTILLA de la variante, no campos.** Cuatro
+widgets con **una sola firma en los 80**: buscador · uno de texto vacío · la
+lista «Categorías» · el CTA de newsletter.
+
+> ✅ **Y `D3` queda CONFIRMADA: su condición de reapertura se comprobó y NO se
+> cumple.** El widget «Categorías» **no consume la taxonomía**: es
+> `et_pb_widget_area`/`widget_text` en 80/80 —no el nativo `widget_categories`—,
+> con **un solo contenido**, y **no cubre 5 de los 7** términos que el propio
+> sitio ejerce (`articulos` 240 · `articulos-cientificos-y-estudios` 42 ·
+> `evaluaciones-independientes` 16 · `podcast-es` 4 · `articulos-tecnicos` 1).
+> Una lista desincronizada no se regenera. ⇒ **no se añade relación a
+> `category` por esta vía**; la colección `categorias` sigue como estaba (§2c,
+> SIN CENSAR por LH-SP8).
+>
+> Límite declarado: el marcado servido no distingue «lista escrita» de «un
+> shortcode que expande la taxonomía». Lo que sí cierra es que **no es el widget
+> nativo** y que **su salida no varía ni cubre lo vivo**.
+
+⛔ **NO SEPARABLE, y se declara como tal.** Barra y retícula son **colineales en
+149/149**: ningún documento tiene una sin la otra. Así que *«la barra es
+propiedad de la CAPA»* y *«…de la VARIANTE»* son **indistinguibles con esta
+población** (§DOS VARIABLES CONFUNDIDAS). Al modelar se elige **variante**, y la
+razón es de **mecanismo, no de medida**: la plantilla de cuerpo del theme
+builder decide las dos cosas a la vez y está servida en los dos lados.
+
+**Dato de entrega:** los 2 `href` del widget son absolutos a
+`https://kunakair.com/es/categoria/{eventos,noticias}/` → entran en `P-LH-C4` y
+tocan **LH-SP8**.
+
 ### ⚠ 2c.1 · `tituloMiga` — el rótulo NO es el titular (2026-07-31)
 
 **Campo nuevo del content type, medido al cerrar A-QA1.** El rótulo del último

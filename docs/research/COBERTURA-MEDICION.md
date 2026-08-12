@@ -192,9 +192,22 @@ cobertura declarada al nivel de arriba absorbe todo lo que no se midió abajo*).
 
 **Y la unidad de las rutas de paginación ya está decidida con medida**
 (§F3-2-UNIDAD-SERIE): **cada `/page/N/` es su propia unidad**. Las 28 series con
-varias páginas dan **35 clases estructurales** y **19 de las 28 son
+varias páginas dan **38 clases estructurales** y **19 de las 28 son
 heterogéneas**, así que «una por serie» vería sólo la clase «primera». Si en
 algún momento se muestrea, será *una por CLASE medida*, con el censo detrás.
+
+> ⚠ **38, no 35 (corregido 2026-08-11) — y el cambio es del INSTRUMENTO, no del
+> sitio.** La firma de `lh-serie` incluye un componente `·sb` que casaba
+> `et_pb_widget_area` **en el documento entero**, pie incluido, y por tanto salía
+> en **las 149**: §sondas 4, *un patrón que casa en TODAS no mide nada*. Con el
+> discriminador que derivó `lh-barra` (`et_pb_sidebar_N_tb_body`, **80/149**)
+> **tres clases que estaban unidas se separan**.
+>
+> **La lección de cobertura, que es la que hay que llevarse:** un componente de
+> firma que no discrimina **no es neutro — está fusionando unidades**, y una
+> unidad fusionada es cobertura declarada de más. Aquí eran 3 de 38 (**8 %**) que
+> se habrían dado por cubiertas comparando otra. Detalle: `PENDIENTES-QA.md`
+> §LH-SERIE-HIGIENE.
 
 ## ✅✅✅ EL EJE `comportamiento` ESTÁ COMPLETO — **37/37** (2026-08-11)
 

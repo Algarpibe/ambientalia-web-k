@@ -212,15 +212,38 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > decisión y re-medidas en vivo ese día. `D2.4` no se reabre: **el canonical
 > separa las dos formas, 7/7 y 55/55**.
 >
-> ⛔⛔ **PERO HAY UN 2.º ESCALÓN, y lo levantó la fase de specs: `L1` tiene DOS
-> retículas de cuerpo, no una.** `3_4 + 1_4` con **barra lateral de 10 widgets**
-> en blog y etiqueta (**80 de 80 documentos**), `4_4` sin barra en resources
-> (**0 de 37**) — y con ellas dos contenedores distintos, **911.75 y 1238.39**,
-> que son literalmente los dos del `⚠⚠` de `CLAUDE.md` §Test A. `D1` afirma que
-> entre familias sólo cambia la configuración de la tarjeta, y `D3` no lista la
-> barra lateral, cuyo widget «Categorías» **consume la taxonomía `category`**.
-> **F3-2 no construye hasta decidirlo.** Ficha: `PENDIENTES-QA.md` §ESCALÓN F3-2
-> (2.º). Congeladas: `medidas/lh-barra.json` · `medidas/lh-spec-{1440,390}.json`.
+> ✅ **EL 2.º ESCALÓN TAMBIÉN ESTÁ CERRADO (2026-08-11), y sin retirar ninguna
+> decisión de modelo.** `L1` tiene **dos retículas de cuerpo**: `3_4 + 1_4` con
+> **barra lateral de 4 widgets** en blog y etiqueta (**80 de 80**), `4_4` sin
+> barra en resources (**0 de 37**). Eso **acota `D1`** —la variante incluye la
+> retícula y su barra, no sólo la tarjeta— y **confirma `D3`**: el widget
+> «Categorías» **NO consume la taxonomía** (es `widget_text` en 80/80, un solo
+> contenido, y no cubre 5 de los 7 términos vivos). Actas:
+> `listados-hubs/DECISIONES.md` §*D1 queda ACOTADA* · `ESQUEMA-CMS.md` §2c.0.
+> Congeladas: `medidas/lh-barra.json` (+5 negativos) ·
+> `medidas/lh-spec-{1440,390}.json`.
+>
+> ⛔⛔ **PERO HAY UN 3.er ESCALÓN, y éste SÍ retira una decisión cerrada:
+> `D4-H1`.** `D4` afirma *«los 35 `h1` = nombre del término»* y son **33 de 35**
+> — y la evidencia que lo sostenía (`lh-censo`, `h1: ""`) **guardaba el TEXTO**,
+> así que no distinguía «vacío» de «ausente» y **no podía decidir la pregunta en
+> ninguna dirección**. Medido sobre las 149 capturas: **12 documentos sin `<h1>`
+> — la familia `L2` completa — y 0 con `<h1>` vacío**. Lo que cae no es una cifra
+> sino que `D4` **mezclaba dos propiedades**: de dónde sale el TEXTO del `h1`
+> (del término) y si HAY `h1` (lo decide la plantilla de la familia).
+> **Reescribir esa fila es MODELAR ⇒ tanda de decisión.** Ficha:
+> `PENDIENTES-QA.md` §ESCALÓN F3-2 (3.º). Congelada: `medidas/lh-h1.json` (+4
+> negativos).
+>
+> ⚠ **Y dos fichas de contenedor que NO bloquean pero condicionan la
+> construcción** (`PENDIENTES-QA.md` §LH-CONTENEDOR, `medidas/lh-contenedores.json`):
+> **§LH-CONTENEDOR-ROL** — `911.75` es el ancho de la **FILA** en `articulos-kb`
+> y el de una **COLUMNA `3_4`** en `L1`, cuya fila mide **1238.39**;
+> `mbPorDefecto` recibe un número suelto, así que pasarle el de `L1` **no da
+> error: devuelve el default del otro arquetipo**. **§LH-CONTENEDOR-L3** —
+> `L3-sci` estrena un **tercer** ancho de fila (**1152**) que la tabla no cubre.
+> La tabla cubre **6 de las 9 formas**; `L2` no tiene filas Divi y el mecanismo
+> no le aplica.
 >
 > ✅ **Y la precondición de abajo queda LEVANTADA a medias:** ya hay fase de
 > specs —`qa:lh-spec` contra el original vivo, 13 páginas × 2 anchos— con
@@ -241,10 +264,18 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 >
 > ✅ **Y lo que el mismo PASO 2 sí deja cerrado: la UNIDAD.** Cada `/page/N/` es
 > su propia unidad de cobertura — **19 de 28 series son heterogéneas** y hay
-> **35 clases estructurales** en la población, medidas sobre las 149 páginas
+> **38 clases estructurales** en la población, medidas sobre las 149 páginas
 > capturadas (no sobre una muestra). «Una por serie» es el atajo que dejó
 > MONOGRÁFICO a cero, y aquí sale **rojo por construcción** en el negativo de
 > `qa:lh-serie`.
+>
+> > ⚠ **Eran 35 hasta el 2026-08-11 y son 38**, y no porque el sitio cambiara:
+> > la firma `sb` de `lh-serie` casaba `et_pb_widget_area` **en el documento
+> > entero** —pie incluido— y daba `·sb` en las 149, o sea que **no
+> > discriminaba**. Con el discriminador bueno (80/149) **parte tres clases que
+> > estaban unidas**. La congelada anterior venía además **obsoleta respecto a su
+> > propio código**. Detalle y tabla ANTES/DESPUÉS: `PENDIENTES-QA.md`
+> > §LH-SERIE-HIGIENE.
 >
 > ⚠ **Precondición que esta parada deja a la vista, y que no es del escalón:**
 > `docs/research/listados-hubs/` tiene `PAGE_TOPOLOGY` · `DECISIONES` · `MODELO`

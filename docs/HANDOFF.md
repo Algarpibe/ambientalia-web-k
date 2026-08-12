@@ -1,4 +1,127 @@
-# HANDOFF — F3-2: el 1.er escalón se cierra con `D2.5`, la fase de specs nace… y levanta un SEGUNDO escalón
+# HANDOFF — F3-2: el 2.º escalón cierra sin retirar nada, y el 3.º retira `D4-H1`
+
+> ⚠ **Tanda 2026-08-11 (54.ª).** PASOS **1 · 2 · 4 · 6 · 8 completos**; **3 · 5
+> · 7 NO EMPEZADOS** — el 3 y el 7 necesitan el sitio vivo y el 3 depende de la
+> decisión que el escalón deja abierta; el 5 escribiría prosa sobre un modelo en
+> movimiento. Todo lo hecho va **sobre el corpus congelado, sin red**. Registro:
+> `listados-hubs/DECISIONES.md` (§D1 acotada · §D4 retirada) ·
+> `PENDIENTES-QA.md` (3 fichas nuevas, 1 cerrada) · `ESQUEMA-CMS.md` §2c.0 ·
+> `PLAN-FASE-3.md` §F3-2 · `COBERTURA-MEDICION.md` · `package.json` (2 sondas).
+
+## 0 · Los cinco titulares
+
+> **1 · EL 2.º ESCALÓN CIERRA SIN RETIRAR NADA: `D1` se ACOTA y `D3` se
+> CONFIRMA.** `L1` sigue siendo **uno con tres variantes**; lo que se ensancha es
+> **de qué** son las variantes — tarjeta **y** retícula de cuerpo con su barra.
+> Misma lectura que ya tenían la tarjeta, las tres pieles de paginación y la
+> regla de zoom: varianza 0 dentro, distinta entre, en régimen plantillado.
+>
+> **2 · `D3` queda confirmada con evidencia POSITIVA, no con una ausencia.** El
+> widget «Categorías» **no consume la taxonomía**: es `widget_text` en **80/80**
+> —no el nativo `widget_categories`—, con **un solo contenido**, y **no cubre 5
+> de los 7** términos que el propio sitio ejerce. Una lista desincronizada no se
+> regenera. *(«No encontré un `categories-N`» habría sido la regla del cero; esto
+> no lo es.)*
+>
+> **3 · ⛔ Y HAY UN 3.er ESCALÓN, que SÍ retira una decisión cerrada: `D4-H1`.**
+> `D4` afirma *«los 35 `h1` = nombre del término»* y son **33 de 35** — y su
+> evidencia (`lh-censo`, `h1: ""`) **guardaba el TEXTO**, así que no distinguía
+> «vacío» de «ausente» y **no podía decidir la pregunta en ninguna dirección**.
+> Medido: **12 sin `<h1>`** (la familia `L2` entera) y **0 con `<h1>` vacío** en
+> las 149. Lo que cae no es una cifra: `D4` **mezclaba dos propiedades** —de
+> dónde sale el TEXTO del `h1` y si HAY `h1`—. **Reescribirlo es modelar ⇒ tanda
+> de decisión.**
+>
+> **4 · Y una NO SEPARABILIDAD que hay que declarar, no resolver.** Barra y
+> retícula son **colineales en 149/149**: ningún documento tiene una sin la otra.
+> «La barra es propiedad de la CAPA» y «…de la VARIANTE» son **indistinguibles
+> con esta población** (§DOS VARIABLES CONFUNDIDAS). Al modelar se elige
+> *variante*, y **la razón es de mecanismo, no de medida**.
+>
+> **5 · `911.75` NO significa lo mismo en dos arquetipos, y la función que lo
+> usa no puede distinguirlo.** Es el ancho de la **FILA** en `articulos-kb`
+> (39/39) y el de una **COLUMNA `3_4`** en `L1`, cuya fila mide **1238.39**.
+> `mbPorDefecto` recibe un número suelto: pasarle el de `L1` **no da error —
+> devuelve el default del otro arquetipo** (25.0625 donde tocan 34.0469).
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **empieza por §ESCALÓN F3-2 (3.º)**: `D4-H1` está retirada y hay que
+  reescribirla. El enunciado que la medida sostiene ya está redactado —*la
+  **presencia** del `h1` es de la plantilla de la familia, el **contenido** es
+  del término*— pero **escribirlo es decidir**, y esta tanda no lo hizo a
+  propósito;
+- **el ancla de `L2` sigue sin elegir, y la mitad de su verificación no se puede
+  hacer todavía**: `lh-spec` propone «primera tarjeta», pero para ser ancla tiene
+  que ser **el mismo elemento en los dos lados** y **el clon no emite estas
+  rutas**. Lo que sí se puede hacer hoy, sin red, es probarla **en 9/9 formas
+  contra el corpus congelado** — y empezando por `/glosario` y
+  `/preguntas-frecuentes`, no por las siete que sí tienen `h1`;
+- **antes de construir `L1`, mira §LH-CONTENEDOR-ROL.** El `911.75` que se tiene
+  a mano al construir `L1` es una **columna**, y su fila mide 1238.39. El aviso
+  está puesto en la cabecera de `mbPorDefecto`, que es donde el error se
+  cometería;
+- **`L3-sci` no tiene default de ritmo derivable**: su fila mide **1152**, un
+  tercer ancho que la tabla no cubre. `mbPorDefecto` tira, que es lo correcto —
+  hay que medirlo antes de construirla;
+- **las clases estructurales son 38, no 35** (`qa:lh-serie`), y el cambio es del
+  instrumento: la firma `sb` no discriminaba. Un componente de firma que casa en
+  todas **está fusionando unidades**, y eso es cobertura declarada de más;
+- **redactar las specs de `L2` · `L3` · `L4` · `L5`** sigue sin costar volver al
+  original: están en `medidas/lh-spec-{1440,390}.json`;
+- **`P-LH-C3` está cumplida para el 2026-08-11**; si la construcción cae otro
+  día, se re-corre `qa:lh-paginas`.
+
+## 1 · Sondas nuevas y cambiadas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-barra`** (ampliada) | la retícula del cuerpo **y** el contenido del widget «Categorías», con el cruce contra los términos vivos | **5/5** — dos nuevos: `categorias-variable` (el comparador sabe fallar) y `corte-fijo` (reproduce el defecto con su número) |
+| **`qa:lh-h1`** (nueva) | «vacío» vs «ausente» en las 149 | **4/4** — `vacio-inyectado` y `colapsa-con-vacio` **fabrican el caso** que la población no ejercita |
+| **`qa:lh-contenedores`** (nueva) | contra qué contenedor resuelve sus % cada forma, y si la tabla las cubre | **3/3**. **Sale ROJA a propósito** hasta que se cierren §LH-CONTENEDOR-L3 y -ROL |
+| **`qa:lh-serie`** (arreglada) | igual que antes, pero sin dos defectos | **4/4** — `error-de-lectura` y `sb-en-el-documento` nuevos |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un sabotaje que no cambia el resultado no ha probado nada — y hubo que
+fabricar el caso.** El negativo `colapsa` de `lh-h1` reproduce exactamente el
+defecto de `lh-censo` (leer el texto en vez del elemento) y daba **el mismo
+resultado que la corrida limpia**: 137 · 0 · 12. No porque el defecto no
+importe, sino porque **la población no lo ejercita** — no hay ni un `<h1>` vacío
+en 149. §sondas 8a, y la salida fue inyectar un `<h1></h1>` sintético:
+
+| corrida | discriminador | vacío | ausente |
+|---|---|---|---|
+| limpia | elemento | 0 | 12 |
+| `colapsa` | texto | 0 | 12 ← **no discrimina: no hay caso** |
+| `vacio-inyectado` | elemento | **1** | 11 |
+| `colapsa-con-vacio` | texto | **0** | **12** ← el mismo documento, mal leído |
+
+**(b) Una comprobación retroactiva enmarcada en las dos direcciones volvió a
+contestar en la contraria.** El PASO 4 preguntaba *«¿alguna congelada resolvió un
+% contra el contenedor equivocado?»* — **no, ninguna** — y lo que apareció fue lo
+otro: **la regla nueva sólo cubre 6 de las 9 formas**, más una colisión de rol
+que la pregunta no contemplaba.
+
+**(c) Un componente de firma que casa en TODAS no es neutro: fusiona unidades.**
+El `·sb` de `lh-serie` salía en las 149 y por eso «no molestaba». Arreglado
+—80/149— **parte tres clases que estaban unidas**: 35 → 38. El encargo suponía
+que no se movería; **se movió**, y sólo la medición posterior lo dijo.
+
+**(d) Una congelada puede no corresponder a su propio código.** `lh-serie.json`
+se commiteó en `d767b7f` **junto a** un código que ya producía otra salida (65 vs
+55 vacías). Nada lo detecta salvo re-correr — ni el `check`, ni el contrato de
+`Evaluadas`, ni leer el diff.
+
+**(e) Y un defecto de sonda de la misma familia que su propia cabecera
+criticaba.** `lh-barra` tomaba la firma de la barra sobre una **ventana fija de
+14 000 caracteres**; la barra mide **1481**, así que **6 de los «10 widgets»
+eran del pie**. Su cabecera le reprochaba a `lh-serie` exactamente ese error, un
+nivel más arriba.
+
+---
+
+# (histórico) HANDOFF — F3-2: el 1.er escalón se cierra con `D2.5`, la fase de specs nace… y levanta un SEGUNDO escalón
 
 > ⚠ **Tanda 2026-08-11 (53.ª).** PASOS **1 · 2 · 5 completos**; **3 · 4 NO
 > EMPEZADOS**, detenidos por el 2.º escalón (la consigna: *si las specs destapan
