@@ -2285,7 +2285,27 @@ export const DOCUMENTOS_CIENTIFICOS: DocumentoCientifico[] = [
     titulo: "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto",
     autores: "Reche et al.",
     anyo: "2020",
-    portada: { src: "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg", srcset: "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w", sizes: "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw", width: "848", height: "1200", alt: "Athletes&#039; exposure to air pollution during World Athletics Relays: A Pilot Study" },
+    portada: { src: "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg", srcset: "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w", sizes: "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw", width: "848", height: "1200", alt: "Athletes' exposure to air pollution during World Athletics Relays: A Pilot Study" },
+    /* ⚠ **DEFECTO DE TRANSCRIPCIÓN corregido (2026-08-12, PASO 5), y lo cazó el
+     * CONTROL del extractor comparándose contra ESTE fichero.**
+     *
+     * El `alt` de arriba estaba transcrito con la entidad **sin decodificar**
+     * (`Athletes&#039; …`). `alt` es un valor de CAMPO, no HTML, así que React
+     * lo escapa al renderizar y el clon servía `alt="Athletes&amp;#039; …"` —
+     * o sea el texto alternativo contenía literalmente `&#039;`.
+     *
+     * **Lo dirimió la salida servida, no el argumento**: `grep` sobre el HTML
+     * construido en `.next` da `&amp;#039;` en el clon contra `&#039;` en el
+     * original. La transcripción era la equivocada y el extractor el correcto,
+     * que es la dirección contraria a la que uno espera del control.
+     *
+     * Es la única de todo el fichero: el barrido de entidades en campos (fuera
+     * del cuerpo rico, donde SÍ deben quedarse) da **1**.
+     *
+     * ⚠ Y el byte no queda idéntico: React escribe `&#x27;` donde el original
+     * escribe `&#039;`. **El VALOR del atributo sí coincide** —las dos entidades
+     * son `'`— y no mueve un píxel; la diferencia de grafía se declara aquí en
+     * vez de perseguirse. */
     descarga: { href: "https://pubmed.ncbi.nlm.nih.gov/32065890/", label: "View document" },
     cuerpo: `
 				

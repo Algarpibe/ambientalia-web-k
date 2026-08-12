@@ -14,7 +14,7 @@
  * | `control-roto` | **el CONTROL no reproduce** la transcripción | un fallo de lectura del corpus |
  * | `selector-muerto` | **lector MUERTO** (`<h9>`, miga anulada) | «ese campo no está», que es como se lee un cero |
  * | `cuerpo-ausente` | **documento sin cuerpo ⇒ TIRA**, no se emite a medias | un catálogo con 148 y verde |
- * | (control) | ✅ 209 extraídos, 95/95 comparaciones | — |
+ * | (control) | ✅ 209 extraídos, el control reproduce la transcripción entera | — |
  *
  * `cuerpo-ausente` es el que protege del fallo más caro de este proyecto: un
  * campo rico `undefined` **no revienta, no pinta** (§sondas 6bis) — 6 páginas
@@ -31,13 +31,35 @@ const CANONICA = "medidas/a-extraido.json";
 const casos = [
   {
     etiqueta: "control",
-    porQue: "sin sabotaje: 209 documentos, 95/95 comparaciones contra la transcripción",
+    porQue: "sin sabotaje: 209 documentos y TODAS las comparaciones contra la transcripción",
     env: {},
     exit: 0,
-    salidaTiene: /CONTROL · 95 comparaciones[\s\S]*?✅ TODAS/,
+    /**
+     * ⚠ **El número de comparaciones NO se escribe aquí, se DERIVA de la
+     * congelada** (§sondas 9). Estaba cableado a `95`, y al añadir los 5 campos
+     * del documento científico pasó a **111**: el negativo salió rojo por su
+     * propio literal, no por un defecto del extractor.
+     *
+     * Un número recordado envejece **contra** el repo y no hay lectura que lo
+     * distinga de uno derivado — así que se exige que el control **cubra más de
+     * un campo por documento CONTROLADO**, y el total exacto lo dice la
+     * congelada.
+     *
+     * ⚠ **Y la primera versión de esta derivación usó el DENOMINADOR
+     * EQUIVOCADO**: comparó las 111 contra los **209** del catálogo cuando el
+     * control mira sólo los **14 transcritos a mano**. Dos poblaciones
+     * distintas, y la sonda salió roja por eso. Por eso el extractor congela
+     * ahora `control.documentos` al lado de `control.comparaciones`: un
+     * numerador sin su denominador invita a compararlo con el que se tenga a
+     * mano.
+     */
+    salidaTiene: /CONTROL · \d+ comparaciones[\s\S]*?✅ TODAS/,
     comprueba: (j) => {
       if (j.recuento["entradas-blog"] !== 149) return `${j.recuento["entradas-blog"]} entradas, no 149`;
       if (j.control.discrepancias !== 0) return `${j.control.discrepancias} discrepancias en el control`;
+      if (!j.control.documentos) return "la congelada no trae `control.documentos`: el numerador viene sin denominador";
+      if (j.control.comparaciones <= j.control.documentos)
+        return `${j.control.comparaciones} comparaciones para ${j.control.documentos} documentos controlados: el control mira un campo o menos por documento`;
       /* Sin destacadas ni taxonomías leídas los sabotajes no probarían nada. */
       const conImagen = j.catalogo["entradas-blog"].filter((d) => d.imagenDestacada).length;
       if (conImagen === 0 || conImagen === 149) return `imagenDestacada en ${conImagen} de 149: o el lector está muerto o es un pleno`;

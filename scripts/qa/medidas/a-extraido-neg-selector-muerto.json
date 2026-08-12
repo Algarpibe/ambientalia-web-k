@@ -3,7 +3,7 @@
     "fecha": "2026-08-12",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
-    "control": "95 comparaciones contra src/lib/arquetipo-a.ts",
+    "control": "111 comparaciones contra src/lib/arquetipo-a.ts",
     "sabotaje": "selector-muerto",
     "noMide": [
       "no toca el original",
@@ -17,8 +17,10 @@
     "documentos-cientificos": 23
   },
   "control": {
-    "comparaciones": 95,
-    "discrepancias": 17,
+    "comparaciones": 111,
+    "documentos": 14,
+    "poblacion": 209,
+    "discrepancias": 25,
     "detalle": [
       {
         "slug": "contaminacion-por-metano",
@@ -105,10 +107,54 @@
         "esperado": "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto"
       },
       {
+        "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+        "campo": "portada",
+        "leido": null,
+        "esperado": {
+          "src": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+          "srcset": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Athletes' exposure to air pollution during World Athletics Relays: A Pilot Study"
+        }
+      },
+      {
+        "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+        "campo": "descarga",
+        "leido": null,
+        "esperado": {
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32065890/",
+          "label": "View document"
+        }
+      },
+      {
         "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
         "campo": "titulo",
         "leido": null,
         "esperado": "Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución"
+      },
+      {
+        "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "campo": "portada",
+        "leido": null,
+        "esperado": {
+          "src": "/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg",
+          "srcset": "/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg 848w, /images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "The suitability of a mobile communications network to deliver high-resolution air quality measurements"
+        }
+      },
+      {
+        "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "campo": "descarga",
+        "leido": null,
+        "esperado": {
+          "href": "https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344",
+          "label": "View document"
+        }
       },
       {
         "slug": "desafio-airlab-de-microsensores-2023",
@@ -117,10 +163,53 @@
         "esperado": "Desafío AIRLAB de microsensores 2023"
       },
       {
+        "slug": "desafio-airlab-de-microsensores-2023",
+        "campo": "portada",
+        "leido": null,
+        "esperado": {
+          "src": "/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg",
+          "srcset": "/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg 848w, /images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "AIRLAB Micro Sensors Challenge 2023"
+        }
+      },
+      {
+        "slug": "desafio-airlab-de-microsensores-2023",
+        "campo": "descarga",
+        "leido": null,
+        "esperado": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf",
+          "label": "View document"
+        }
+      },
+      {
         "slug": "soluciones-avanzadas-de-monitorizacion",
         "campo": "titulo",
         "leido": null,
         "esperado": "Soluciones avanzadas de monitorización"
+      },
+      {
+        "slug": "soluciones-avanzadas-de-monitorizacion",
+        "campo": "portada",
+        "leido": null,
+        "esperado": {
+          "src": "/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg",
+          "srcset": "/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg 848w, /images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200"
+        }
+      },
+      {
+        "slug": "soluciones-avanzadas-de-monitorizacion",
+        "campo": "descarga",
+        "leido": null,
+        "esperado": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf",
+          "label": "View document"
+        }
       }
     ]
   },
@@ -5734,7 +5823,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Lara-Ibeas et al.",
+        "anyo": "2024",
+        "descarga": null
       },
       {
         "slug": "cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
@@ -5746,7 +5838,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2023",
+        "descarga": null
       },
       {
         "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
@@ -5758,7 +5853,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Thibault et al.",
+        "anyo": "2023",
+        "descarga": null
       },
       {
         "slug": "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
@@ -5770,7 +5868,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "de Garrastazu Diaz et al.",
+        "anyo": "2023",
+        "descarga": null
       },
       {
         "slug": "correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
@@ -5782,7 +5883,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Gagic et al.",
+        "anyo": "2022",
+        "descarga": null
       },
       {
         "slug": "redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
@@ -5794,7 +5898,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2022",
+        "descarga": null
       },
       {
         "slug": "cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
@@ -5806,7 +5913,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Qin et al.",
+        "anyo": "2022",
+        "descarga": null
       },
       {
         "slug": "sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
@@ -5818,7 +5928,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Viana et al.",
+        "anyo": "2022",
+        "descarga": null
       },
       {
         "slug": "inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
@@ -5830,7 +5943,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2022",
+        "descarga": null
       },
       {
         "slug": "evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
@@ -5842,7 +5958,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "MCP",
+        "anyo": "2021",
+        "descarga": null
       },
       {
         "slug": "desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
@@ -5854,7 +5973,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "S. Landis et al.",
+        "anyo": "2021",
+        "descarga": null
       },
       {
         "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
@@ -5866,7 +5988,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Reche et al.",
+        "anyo": "2020",
+        "descarga": null
       },
       {
         "slug": "evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
@@ -5878,7 +6003,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Luna et al.",
+        "anyo": "2018",
+        "descarga": null
       },
       {
         "slug": "sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
@@ -5890,7 +6018,10 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
-        }
+        },
+        "autores": "Ronan Baron and John Saffell",
+        "anyo": "2017",
+        "descarga": null
       },
       {
         "slug": "kunak-air-pro-informe-de-evaluacion-en-campo",
@@ -5902,7 +6033,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)",
+        "anyo": "2025",
+        "descarga": null
       },
       {
         "slug": "kunak-air-lite-informe-de-evaluacion-en-campo",
@@ -5914,7 +6048,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)",
+        "anyo": "2025",
+        "descarga": null
       },
       {
         "slug": "vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
@@ -5926,7 +6063,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Ribalta et al.",
+        "anyo": "2024",
+        "descarga": null
       },
       {
         "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
@@ -5938,7 +6078,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Ricardo",
+        "anyo": "2024",
+        "descarga": null
       },
       {
         "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
@@ -5950,7 +6093,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Ricardo",
+        "anyo": "2024",
+        "descarga": null
       },
       {
         "slug": "desafio-airlab-de-microsensores-2023",
@@ -5962,7 +6108,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Airparif",
+        "anyo": "2023",
+        "descarga": null
       },
       {
         "slug": "desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
@@ -5974,7 +6123,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Agencia de Protección del Medio Ambiente de EE.UU. (US EPA)",
+        "anyo": "2021",
+        "descarga": null
       },
       {
         "slug": "soluciones-avanzadas-de-monitorizacion",
@@ -5987,6 +6139,9 @@
           "slug": "articulos-tecnicos",
           "nombre": "Artículos técnicos"
         },
+        "autores": "Revista Hydrocarbon Engineering",
+        "anyo": "2026",
+        "descarga": null,
         "prefijo": "estudios-cientificos"
       },
       {
@@ -5999,7 +6154,10 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
-        }
+        },
+        "autores": "Instituto de ciencias atmosféricas y cambio climático, UNAM",
+        "anyo": "2023",
+        "descarga": null
       }
     ]
   }

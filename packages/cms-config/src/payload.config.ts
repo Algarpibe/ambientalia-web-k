@@ -87,7 +87,26 @@ export function construyeConfig(opciones: OpcionesConfig = {}) {
      */
     sharp,
     db: postgresAdapter({
-      pool: { connectionString: dbUrl },
+      /**
+       * ⚠ **`max` NO es afinado prematuro: sin él, el build MUERE en cuanto la
+       * población crece** (medido 2026-08-12, tanda de datos, PASO 5).
+       *
+       * Next prerenderiza en **un worker por CPU** —16 en esta máquina— y cada
+       * worker construye su propia instancia de Payload, o sea **su propio
+       * pool**. Con el `max: 10` por defecto de `pg` eso son **160 conexiones**
+       * contra un Postgres que trae `max_connections = 100`, y el build se cae
+       * con *«sorry, too many clients already»* — no al principio, sino cuando
+       * hay bastantes rutas como para que arranquen todos los workers a la vez.
+       *
+       * Por eso el síntoma llegó ahora y no antes: con 37 rutas los workers no
+       * llegaban a coincidir; con 213 sí. **No es un defecto de la población: es
+       * un límite que la población destapó.**
+       *
+       * `3 × 16 = 48 < 100`, con holgura para el admin y las sondas que abren su
+       * propia conexión a la vez. Se puede subir por entorno sin tocar código,
+       * que es lo que necesita una máquina con otra `max_connections`.
+       */
+      pool: { connectionString: dbUrl, max: Number(process.env.PG_POOL_MAX ?? 3) },
       /**
        * ⚠ **`false` SIEMPRE, no solo en producción — y la diferencia importa.**
        *

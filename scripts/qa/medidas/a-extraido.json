@@ -3,7 +3,7 @@
     "fecha": "2026-08-12",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
-    "control": "95 comparaciones contra src/lib/arquetipo-a.ts",
+    "control": "111 comparaciones contra src/lib/arquetipo-a.ts",
     "sabotaje": null,
     "noMide": [
       "no toca el original",
@@ -17,7 +17,9 @@
     "documentos-cientificos": 23
   },
   "control": {
-    "comparaciones": 95,
+    "comparaciones": 111,
+    "documentos": 14,
+    "poblacion": 209,
     "discrepancias": 0,
     "detalle": []
   },
@@ -5855,6 +5857,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Lara-Ibeas et al.",
+        "anyo": "2024",
+        "portada": {
+          "src": "/images/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-scaled.jpg",
+          "srcset": "/images/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-scaled.jpg 1810w, /images/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-1280x1810.jpg 1280w, /images/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-980x1386.jpg 980w, /images/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1810px, 100vw",
+          "width": "1810",
+          "height": "2560",
+          "alt": "The Use of Sensor-Based System to Measure Accurate Low Odorant Concentrations"
+        },
+        "descarga": {
+          "href": "https://www.cetjournal.it/index.php/cet/article/view/CET24112023",
+          "label": "View document"
         }
       },
       {
@@ -5868,6 +5884,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2023",
+        "portada": {
+          "src": "/images/uploads/2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles.jpg",
+          "srcset": "/images/uploads/2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles.jpg 848w, /images/uploads/2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Opportunistic mobile air quality mapping using sensors on postal service vehicles: from point clouds to actionable insights"
+        },
+        "descarga": {
+          "href": "https://www.frontiersin.org/journals/environmental-health/articles/10.3389/fenvh.2023.1232867/full",
+          "label": "View document"
         }
       },
       {
@@ -5881,6 +5911,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Thibault et al.",
+        "anyo": "2023",
+        "portada": {
+          "src": "/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg",
+          "srcset": "/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg 848w, /images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "The suitability of a mobile communications network to deliver high-resolution air quality measurements"
+        },
+        "descarga": {
+          "href": "https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344",
+          "label": "View document"
         }
       },
       {
@@ -5894,6 +5938,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "de Garrastazu Diaz et al.",
+        "anyo": "2023",
+        "portada": {
+          "src": "/images/uploads/2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid.jpg",
+          "srcset": "/images/uploads/2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid.jpg 848w, /images/uploads/2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Plan de Control Ambiental de las obras del Mahou-Calderón (2018-2020) en la ciudad de Madrid"
+        },
+        "descarga": {
+          "href": "https://ojs.diffundit.com/index.php/rsa/article/view/1158/1455",
+          "label": "View document"
         }
       },
       {
@@ -5907,6 +5965,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Gagic et al.",
+        "anyo": "2022",
+        "portada": {
+          "src": "/images/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network.jpg",
+          "srcset": "/images/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network.jpg 848w, /images/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Establishing Correlation between Cruise Ship Activities and Ambient PM Concentrations in the Kotor Bay Area Using a Low-Cost Sensor Network"
+        },
+        "descarga": {
+          "href": "https://www.mdpi.com/1920830",
+          "label": "View document"
         }
       },
       {
@@ -5920,6 +5992,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2022",
+        "portada": {
+          "src": "/images/uploads/2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights.jpg",
+          "srcset": "/images/uploads/2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights.jpg 848w, /images/uploads/2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Air Quality Sensor Networks for Evidence-Based Policy Making: Best Practices for Actionable Insights"
+        },
+        "descarga": {
+          "href": "https://www.mdpi.com/2073-4433/13/6/944",
+          "label": "View document"
         }
       },
       {
@@ -5933,6 +6019,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Qin et al.",
+        "anyo": "2022",
+        "portada": {
+          "src": "/images/uploads/2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density.jpg",
+          "srcset": "/images/uploads/2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density.jpg 848w, /images/uploads/2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Fine-Grained Urban Air Quality Mapping from Sparse Mobile Air Pollution Measurements and Dense Traffic Density"
+        },
+        "descarga": {
+          "href": "https://www.mdpi.com/2072-4292/14/11/2613",
+          "label": "View document"
         }
       },
       {
@@ -5946,6 +6046,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Viana et al.",
+        "anyo": "2022",
+        "portada": {
+          "src": "/images/uploads/2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes.jpg",
+          "srcset": "/images/uploads/2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes.jpg 848w, /images/uploads/2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Air Quality Sensors Systems as Tools to Support Guidance in Athletics Stadia for Elite and Recreational Athletes"
+        },
+        "descarga": {
+          "href": "https://www.mdpi.com/1660-4601/19/6/3561",
+          "label": "View document"
         }
       },
       {
@@ -5959,6 +6073,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Hofman et al.",
+        "anyo": "2022",
+        "portada": {
+          "src": "/images/uploads/2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from.jpg",
+          "srcset": "/images/uploads/2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from.jpg 848w, /images/uploads/2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Spatiotemporal air quality inference of low-cost sensor data: Evidence from\nmultiple sensor testbeds"
+        },
+        "descarga": {
+          "href": "https://www.sciencedirect.com/science/article/abs/pii/S1364815222000123",
+          "label": "View document"
         }
       },
       {
@@ -5972,6 +6100,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "MCP",
+        "anyo": "2021",
+        "portada": {
+          "src": "/images/uploads/2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection.jpg",
+          "srcset": "/images/uploads/2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection.jpg 848w, /images/uploads/2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Evaluation of the use of air quality monitoring stations based on electrochemical sensors for early odour detection."
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Papers_and_studies/Estudio_en_la_EDAR_de_Arazuri-Kunak.pdf",
+          "label": "View document"
         }
       },
       {
@@ -5985,6 +6127,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "S. Landis et al.",
+        "anyo": "2021",
+        "portada": {
+          "src": "/images/uploads/2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems.jpg",
+          "srcset": "/images/uploads/2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems.jpg 848w, /images/uploads/2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "The U.S. EPA wildland fire sensor challenge: Performance and evaluation of solver submitted multi-pollutant sensor systems - Kunak"
+        },
+        "descarga": {
+          "href": "https://www.sciencedirect.com/science/article/pii/S1352231020308955",
+          "label": "View document"
         }
       },
       {
@@ -5998,6 +6154,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Reche et al.",
+        "anyo": "2020",
+        "portada": {
+          "src": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+          "srcset": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Athletes' exposure to air pollution during World Athletics Relays: A Pilot Study"
+        },
+        "descarga": {
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32065890/",
+          "label": "View document"
         }
       },
       {
@@ -6011,6 +6181,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Luna et al.",
+        "anyo": "2018",
+        "portada": {
+          "src": "/images/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity.jpg",
+          "srcset": "/images/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity.jpg 848w, /images/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Spatial-temporal Assessment and Mapping of the Air Quality and Noise Pollution in a Sub-area Local Environment inside the Center of a Latin American Megacity: Universidad Nacional de Colombia - Bogotá Campus"
+        },
+        "descarga": {
+          "href": "https://link.springer.com/article/10.5572/ajae.2018.12.3.232",
+          "label": "View document"
         }
       },
       {
@@ -6024,6 +6208,20 @@
         "categoria": {
           "slug": "articulos-cientificos-y-estudios",
           "nombre": "Artículos científicos y estudios"
+        },
+        "autores": "Ronan Baron and John Saffell",
+        "anyo": "2017",
+        "portada": {
+          "src": "/images/uploads/2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review.jpg",
+          "srcset": "/images/uploads/2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review.jpg 848w, /images/uploads/2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Amperometric Gas Sensors as a Low Cost Emerging Technology Platform for Air Quality Monitoring Applications: A Review"
+        },
+        "descarga": {
+          "href": "https://pubs.acs.org/doi/10.1021/acssensors.7b00620#",
+          "label": "View document"
         }
       },
       {
@@ -6037,6 +6235,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)",
+        "anyo": "2025",
+        "portada": {
+          "src": "/images/uploads/2025/02/aq-spec-kunak_air_pro-Field-evaluation-report.jpg",
+          "srcset": "/images/uploads/2025/02/aq-spec-kunak_air_pro-Field-evaluation-report.jpg 848w, /images/uploads/2025/02/aq-spec-kunak_air_pro-Field-evaluation-report-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "AQ-SPEC Kunak AIR Pro - Field evaluation report"
+        },
+        "descarga": {
+          "href": "https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-pro---field-evaluation.pdf",
+          "label": "View document"
         }
       },
       {
@@ -6050,6 +6262,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)",
+        "anyo": "2025",
+        "portada": {
+          "src": "/images/uploads/2025/02/aq-spec-kunak_air_lite-Field-evaluation-report.jpg",
+          "srcset": "/images/uploads/2025/02/aq-spec-kunak_air_lite-Field-evaluation-report.jpg 848w, /images/uploads/2025/02/aq-spec-kunak_air_lite-Field-evaluation-report-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "AQ-SPEC Kunak AIR Lite - Field evaluation report"
+        },
+        "descarga": {
+          "href": "https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-lite---field-evaluation.pdf",
+          "label": "View document"
         }
       },
       {
@@ -6063,6 +6289,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Ribalta et al.",
+        "anyo": "2024",
+        "portada": {
+          "src": "/images/uploads/2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose.jpg",
+          "srcset": "/images/uploads/2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose.jpg 848w, /images/uploads/2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Dynamic and stationary monitoring of air pollutant exposures and dose\nduring marathons"
+        },
+        "descarga": {
+          "href": "https://pubmed.ncbi.nlm.nih.gov/38565357/",
+          "label": "View document"
         }
       },
       {
@@ -6076,6 +6316,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Ricardo",
+        "anyo": "2024",
+        "portada": {
+          "src": "/images/uploads/2025/02/ricardo-sensor-report-air-lite.jpg",
+          "srcset": "/images/uploads/2025/02/ricardo-sensor-report-air-lite.jpg 848w, /images/uploads/2025/02/ricardo-sensor-report-air-lite-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Ricardo Co-location report at Glasgow Kerbside - Kunak AIR Lite"
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Lite_2022.html",
+          "label": "View document"
         }
       },
       {
@@ -6089,6 +6343,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Ricardo",
+        "anyo": "2024",
+        "portada": {
+          "src": "/images/uploads/2025/02/ricardo-sensor-report.jpg",
+          "srcset": "/images/uploads/2025/02/ricardo-sensor-report.jpg 848w, /images/uploads/2025/02/ricardo-sensor-report-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Ricardo Co-location report at Glasgow Kerbside - Kunak AIR Pro"
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Pro_2022.html",
+          "label": "View document"
         }
       },
       {
@@ -6102,6 +6370,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Airparif",
+        "anyo": "2023",
+        "portada": {
+          "src": "/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg",
+          "srcset": "/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg 848w, /images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "AIRLAB Micro Sensors Challenge 2023"
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf",
+          "label": "View document"
         }
       },
       {
@@ -6115,6 +6397,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Agencia de Protección del Medio Ambiente de EE.UU. (US EPA)",
+        "anyo": "2021",
+        "portada": {
+          "src": "/images/uploads/2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation.jpg",
+          "srcset": "/images/uploads/2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation.jpg 848w, /images/uploads/2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "US EPA Wildland Fire Sensors Challenge: Solver #19 Evaluation"
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf",
+          "label": "View document"
         }
       },
       {
@@ -6129,6 +6425,19 @@
           "slug": "articulos-tecnicos",
           "nombre": "Artículos técnicos"
         },
+        "autores": "Revista Hydrocarbon Engineering",
+        "anyo": "2026",
+        "portada": {
+          "src": "/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg",
+          "srcset": "/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg 848w, /images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200"
+        },
+        "descarga": {
+          "href": "https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf",
+          "label": "View document"
+        },
         "prefijo": "estudios-cientificos"
       },
       {
@@ -6142,6 +6451,20 @@
         "categoria": {
           "slug": "evaluaciones-independientes",
           "nombre": "Evaluaciones independientes"
+        },
+        "autores": "Instituto de ciencias atmosféricas y cambio climático, UNAM",
+        "anyo": "2023",
+        "portada": {
+          "src": "/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg",
+          "srcset": "/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg 848w, /images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "SEDEMA - Evaluation of Low-Cost Air Quality Sensors in Mexico City"
+        },
+        "descarga": {
+          "href": "https://epr.atmosfera.unam.mx/Microsensores-2022/documentos/2b_Evaluacion_Sensores_CDMX_2022.pdf",
+          "label": "View document"
         }
       }
     ]

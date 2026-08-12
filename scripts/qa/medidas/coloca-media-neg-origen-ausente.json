@@ -8,15 +8,15 @@
     "renuncia": "una variante REGENERADA coincide en DIMENSIÓN, no byte a byte (qa:media-regenera, 73/73)"
   },
   "resumen": {
-    "pendientes": 28,
-    "yaEstaban": 0,
+    "pendientes": 49,
+    "yaEstaban": 21,
     "copiadas": 0,
     "regeneradas": 0,
     "ausentesEnOrigen": 0,
     "sinOrigen": 28
   },
   "control": {
-    "pares": 918,
+    "pares": 175,
     "fallos": 0,
     "detalle": []
   },

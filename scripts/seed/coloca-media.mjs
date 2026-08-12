@@ -46,7 +46,7 @@
  *   (`ausentesEnOrigen`). Se cuentan aparte y se nombran, nunca se descartan en
  *   silencio.
  */
-import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, sep } from "node:path";
 import sharp from "sharp";
 import { Evaluadas, gritaSiRevienta, hoy, origenDe, QA, RE_VARIANTE, w } from "../qa/lib.mjs";
@@ -125,20 +125,35 @@ const ev = new Evaluadas({ nombre: "coloca-media", unidad: "rutas pendientes", m
  * Es el mismo control que `qa:media-regenera` hizo para decidir **si** había que
  * capturar variantes (73/73); éste comprueba **cómo** se regeneran, que es la
  * mitad que aquella sonda no tenía que contestar.
+ *
+ * ⚠⚠ **Y EL CONTROL NO PUEDE CALIFICARSE A SÍ MISMO.** La primera versión tomaba
+ * TODAS las variantes de `public/` — incluidas **las que esta misma sonda acaba
+ * de regenerar**. Comparar mi regeneración contra mi regeneración da identidad
+ * **por construcción**, y el número sube solo: pasó de `133/133` a `922/922`
+ * mientras el control real seguía siendo el de las 133 CAPTURADAS.
+ *
+ * Es literalmente lo que `media-regenera` ya había dejado escrito —*«comparar un
+ * fichero CONSIGO MISMO … sale `sha256` idéntico por construcción»*— aplicado a
+ * un instrumento nuevo.
+ *
+ * **Y se cierra por LISTA BLANCA, no por lista negra**, que es la dirección
+ * segura: el control mide **sólo** contra las variantes que se sabe CAPTURADAS
+ * del original, congeladas en `medidas/coloca-media-BASE-capturadas.json` y
+ * derivadas del árbol de git **anterior** a la primera colocación. Con lista
+ * negra, una variante fabricada que se olvidara de declarar se colaría y
+ * volvería a inflar el número; con lista blanca, lo que no está declarado como
+ * capturado simplemente **no cuenta**.
  */
-async function controlDelRedimensionado() {
+async function controlDelRedimensionado(capturadas) {
   const pares = [];
   const raiz = join(PUBLICO, "images/uploads");
-  (function barre(d) {
-    if (!existsSync(d)) return;
-    for (const e of readdirSync(d, { withFileTypes: true })) {
-      const p = join(d, e.name);
-      if (e.isDirectory()) { barre(p); continue; }
-      if (!RE_VARIANTE.test(e.name)) continue;
-      const origen = join(d, origenDe(e.name));
-      if (existsSync(origen)) pares.push({ variante: p, origen });
-    }
-  })(raiz);
+  for (const rel of capturadas) {
+    const p = join(PUBLICO, decodeURIComponent(rel));
+    if (!existsSync(p) || !RE_VARIANTE.test(rel)) continue;
+    const origen = join(dirname(p), origenDe(rel.split("/").pop()));
+    if (existsSync(origen)) pares.push({ variante: p, origen });
+  }
+  void raiz;
 
   const fallos = [];
   for (const par of pares) {
@@ -153,7 +168,21 @@ async function controlDelRedimensionado() {
   return { pares: pares.length, fallos };
 }
 
-const control = await controlDelRedimensionado();
+/**
+ * La LISTA BLANCA del control: variantes que se sabe **CAPTURADAS del
+ * original**, derivadas del árbol de git anterior a la primera colocación. Lo
+ * que no esté ahí no se puede afirmar que venga del original, así que la sonda
+ * **no lo usa para controlarse**.
+ */
+const BASE = join(QA, "medidas/coloca-media-BASE-capturadas.json");
+if (!existsSync(BASE))
+  throw new Error(
+    "no existe `medidas/coloca-media-BASE-capturadas.json`: sin la lista de variantes\n" +
+      "  CAPTURADAS, el control del redimensionado se mediría contra sus propias\n" +
+      "  regeneraciones y daría identidad por construcción.",
+  );
+const capturadas = JSON.parse(readFileSync(BASE, "utf8")).variantes ?? [];
+const control = await controlDelRedimensionado(capturadas);
 /* §sondas 4: 0 pares comparados no es «todas coinciden», es que no se miró. */
 if (!control.pares)
   throw new Error(
@@ -198,10 +227,21 @@ for (const ruta of pendientes) {
     hecho.copiadas.push(ruta);
   } else {
     const [, w0, h0] = rel.match(RE_VARIANTE);
-    /* Los mismos parámetros que el CONTROL de arriba acaba de verificar contra
+    /**
+     * Los mismos parámetros que el CONTROL de arriba acaba de verificar contra
      * las variantes capturadas del original. Si se cambian aquí y no allí, el
-     * control deja de medir lo que se hace — que es la clase C7. */
-    await sharp(origen).resize(Number(w0), Number(h0), { fit: "cover", position: "centre" }).toFile(destino);
+     * control deja de medir lo que se hace — que es la clase C7.
+     *
+     * ⚠ **`toBuffer()` + `writeFileSync`, NO `toFile()`, y es por Windows:**
+     * `libvips` abre la ruta por la API estrecha y muere con *«unable to open
+     * for write · No such file or directory»* en cuanto pasa de 260 caracteres
+     * — hay títulos de documento científico que dan rutas de **269**. `fs` de
+     * Node sí las maneja (por eso `copyFileSync` funcionaba y esto no), así que
+     * se le pasa el buffer y escribe Node. Lo destapó `gritaSiRevienta()`, que
+     * mató la sonda en voz alta en vez de dejarla a medias en verde.
+     */
+    const buf = await sharp(origen).resize(Number(w0), Number(h0), { fit: "cover", position: "centre" }).toBuffer();
+    writeFileSync(destino, buf);
     hecho.regeneradas.push(ruta);
   }
   ev.ok();
@@ -215,7 +255,7 @@ console.log(`\n════════ coloca-media · de media-corpus a apps/w
 console.log(`  ${SOLO_DERIVA ? "(SOLO_DERIVA=1 — no se ha tocado un fichero)\n" : ""}`);
 console.log(
   `  CONTROL del redimensionado ........... ${control.pares - control.fallos.length}/${control.pares} variantes capturadas ` +
-    `reproducidas en DIMENSIÓN por sharp${control.fallos.length ? "  ❌" : ""}`,
+    `reproducidas en DIMENSIÓN por sharp (sólo CAPTURADAS: lista blanca de ${capturadas.length}; lo fabricado por esta sonda queda FUERA)${control.fallos.length ? "  ❌" : ""}`,
 );
 for (const f of control.fallos.slice(0, 8)) console.log(`       ✗ ${f.fichero}: capturada ${f.capturada} ≠ regenerada ${f.regenerada}`);
 if (control.fallos.length > 8) console.log(`       … y ${control.fallos.length - 8} más`);

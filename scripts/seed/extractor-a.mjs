@@ -109,6 +109,27 @@ const SEL = {
    * plausible (§sondas 4, el complementario).
    */
   destacada: /<div class="et_pb_module et_pb_image et_pb_image_0_tb_body">\s*<span class="et_pb_image_wrap[^"]*">([\s\S]*?)<\/span>/,
+
+  /* ── los CINCO del documento científico (PASO 5, 2026-08-12) ────────────
+   * Los cuatro lectores de abajo cubren `autores` · `anyo` · `portada` ·
+   * `descarga.{href,label}`, que §2.4 declara `required` en las 23 y que el
+   * extractor no leía. No es un hallazgo: era trabajo declarado. */
+
+  /** `<div class="scientific-taxonomies"><strong>Reche et al.</strong> | 2020<div …` */
+  autores: /<div class="scientific-taxonomies">\s*<strong>([\s\S]*?)<\/strong>/,
+  /**
+   * El año va SUELTO entre el `</strong>` y el `<div class="scientific-category">`,
+   * con un `|` de separador que es **plantilla** (constante en las 23) y no dato.
+   */
+  anyo: /<div class="scientific-taxonomies">\s*<strong>[\s\S]*?<\/strong>\s*\|\s*([^<]*?)\s*<div/,
+  /**
+   * La PORTADA — mismo envoltorio que la destacada del blog, con la diferencia
+   * de que aquí va **dentro de un `<a>`**, que es justo de donde sale la
+   * descarga. Se ancla al módulo, no al `<a>`, para no depender de que exista.
+   */
+  portada: /<div class="et_pb_with_border et_pb_module et_pb_image et_pb_image_0_tb_body">([\s\S]*?)<\/div>/,
+  /** El botón: su `href` es la descarga y su texto el rótulo (en INGLÉS). */
+  descarga: /<a class="et_pb_button et_pb_button_0_tb_body[^"]*"\s+href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/,
 };
 
 /**
@@ -222,7 +243,16 @@ for (const [clave, p] of trabajo) {
     salida["terminos-kunakpedia"].push(doc);
   } else {
     const cat = terminosDe(sin, "scientific-category")[0];
-    const doc = { ...base, categoria: cuenta("categoria", cat) ?? null };
+    const envPortada = uno(sin, SABOTAJE === "selector-muerto" ? /<div class="et_pb_portada_inexistente">([\s\S]*?)<\/div>/ : SEL.portada);
+    const mDescarga = SABOTAJE === "selector-muerto" ? null : sin.match(SEL.descarga);
+    const doc = {
+      ...base,
+      categoria: cuenta("categoria", cat) ?? null,
+      autores: cuenta("autores", textoPlano(uno(sin, SEL.autores))) ?? "",
+      anyo: cuenta("anyo", deco(uno(sin, SEL.anyo))) ?? "",
+      portada: cuenta("portada", imagen(envPortada ? (envPortada.match(/<img[^>]*>/) ?? [null])[0] : null)),
+      descarga: cuenta("descarga", mDescarga ? { href: mDescarga[1], label: textoPlano(mDescarga[2]) } : null),
+    };
     /* El prefijo se omite cuando vale el defecto (CMS-1). La ruta es
      * `/es/recursos/<prefijo>/<categoría>/<slug>/`, así que el prefijo es el
      * segmento **2**, no el 1 — el 1 es `recursos`, que es constante y por eso
@@ -286,6 +316,11 @@ for (const e of LIB.DOCUMENTOS_CIENTIFICOS) {
   cmp(e.slug, "titulo", d.titulo, e.titulo);
   cmp(e.slug, "categoria", d.categoria, e.categoria);
   cmp(e.slug, "prefijo", d.prefijo, e.prefijo);
+  /* Los CINCO del PASO 5, contra los 4 transcritos a mano. */
+  cmp(e.slug, "autores", d.autores, e.autores);
+  cmp(e.slug, "anyo", d.anyo, e.anyo);
+  cmp(e.slug, "portada", d.portada, e.portada);
+  cmp(e.slug, "descarga", d.descarga, e.descarga);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -296,7 +331,7 @@ console.log(`\n════════ extractor-a · el catálogo del grupo A 
 for (const col of GRUPO_A) console.log(`  ${col.padEnd(24)} ${String(salida[col].length).padStart(4)} documentos`);
 if (sinCuerpo.length) console.log(`\n  ⛔ ${sinCuerpo.length} sin cuerpo en corpus/transformado: ${sinCuerpo.slice(0, 4).join(" · ")}`);
 
-const nControl = LIB.ENTRADAS_BLOG.length * 11 + LIB.TERMINOS_KUNAKPEDIA.length * 2 + LIB.DOCUMENTOS_CIENTIFICOS.length * 3;
+const nControl = LIB.ENTRADAS_BLOG.length * 11 + LIB.TERMINOS_KUNAKPEDIA.length * 2 + LIB.DOCUMENTOS_CIENTIFICOS.length * 7;
 console.log(`\n  CONTROL · ${nControl} comparaciones contra la transcripción a mano: ` +
   `${control.length === 0 ? "✅ TODAS" : `❌ ${control.length} discrepancia(s)`}`);
 for (const c of control.slice(0, 10))
@@ -316,7 +351,21 @@ w("medidas/a-extraido.json", {
     noMide: ["no toca el original", "no siembra", "el cuerpo lo transforma `cms:extractor`, no esta sonda"],
   },
   recuento: Object.fromEntries(GRUPO_A.map((c) => [c, salida[c].length])),
-  control: { comparaciones: nControl, discrepancias: control.length, detalle: control },
+  /**
+   * ⚠ **El DENOMINADOR del control se congela al lado de su numerador.** El
+   * control no compara los 209 documentos: compara los **transcritos a mano**,
+   * que son otro conjunto y mucho más pequeño. Sin este número, cualquiera que
+   * lea `comparaciones: 111` tiene que adivinar contra qué población es — y su
+   * negativo lo adivinó mal en cuanto los campos crecieron (§sondas 9: la
+   * afirmación trae su derivación al lado).
+   */
+  control: {
+    comparaciones: nControl,
+    documentos: LIB.ENTRADAS_BLOG.length + LIB.TERMINOS_KUNAKPEDIA.length + LIB.DOCUMENTOS_CIENTIFICOS.length,
+    poblacion: Object.values(salida).reduce((a, b) => a + b.length, 0),
+    discrepancias: control.length,
+    detalle: control,
+  },
   catalogo: salida,
 });
 

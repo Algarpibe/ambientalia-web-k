@@ -18,10 +18,29 @@
   },
   "control": {
     "comparaciones": 111,
-    "documentos": 14,
-    "poblacion": 209,
-    "discrepancias": 0,
-    "detalle": []
+    "discrepancias": 1,
+    "detalle": [
+      {
+        "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+        "campo": "portada",
+        "leido": {
+          "src": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+          "srcset": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Athletes' exposure to air pollution during World Athletics Relays: A Pilot Study"
+        },
+        "esperado": {
+          "src": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg",
+          "srcset": "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg 848w, /images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-480x679.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 848px, 100vw",
+          "width": "848",
+          "height": "1200",
+          "alt": "Athletes&#039; exposure to air pollution during World Athletics Relays: A Pilot Study"
+        }
+      }
+    ]
   },
   "catalogo": {
     "entradas-blog": [

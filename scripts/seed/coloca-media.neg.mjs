@@ -40,7 +40,7 @@ const SONDA = join(QA, "../seed/coloca-media.mjs");
 const casos = [
   {
     etiqueta: "control",
-    porQue: "0 sin origen, y el CONTROL del redimensionado corre con 133 pares",
+    porQue: "0 sin origen, y el CONTROL del redimensionado corre con pares CAPTURADOS, no con sus propias regeneraciones",
     env: { SOLO_DERIVA: "1" },
     exit: 0,
     salidaTiene: /CONTROL del redimensionado \.+ (\d+)\/\1 /,

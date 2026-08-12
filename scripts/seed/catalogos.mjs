@@ -107,7 +107,12 @@ export const CATALOGOS = [
    * matando (`qa:vacio-legal`, negativo 3/3). Alcance derivado antes de tocar
    * nada: **1 de 37 · 0 de 149 · 0 de 23**. */
   { coleccion: "terminos-kunakpedia", json: "medidas/a-extraido.json", en: "catalogo.terminos-kunakpedia" },
-  { coleccion: "documentos-cientificos", modulo: "src/lib/arquetipo-a.ts", exportado: "DOCUMENTOS_CIENTIFICOS" },
+  /* ✅ **`documentos-cientificos` CAMBIA DE FUENTE (2026-08-12, PASO 5).** Su
+   * precondición eran **5 campos sin lector** (`autores` · `anyo` · `portada` ·
+   * `descarga.href` · `descarga.label`): trabajo declarado, no un hallazgo.
+   * Escritos y verificados — el CONTROL sube de 95 a **111** comparaciones y
+   * pasa entero, con negativo 4/4. */
+  { coleccion: "documentos-cientificos", json: "medidas/a-extraido.json", en: "catalogo.documentos-cientificos" },
 ];
 
 /**
