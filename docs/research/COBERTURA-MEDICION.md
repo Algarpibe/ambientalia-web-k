@@ -190,6 +190,29 @@ trabajo nuevo, no porque se pierda ninguno — y la unidad en la que hay que
 leerlo es **la ruta comparada**, no el tanto por ciento (§séptimo contenedor: *una
 cobertura declarada al nivel de arriba absorbe todo lo que no se midió abajo*).
 
+### ✅ 2026-08-11 · las **5 specs** de listados existen — pero eso NO es cobertura
+
+`docs/research/listados-hubs/components/` pasa de 1 spec a **5**
+(`listado-b` · `listado-tema-cpt` · `listado-tema-tax` · `hub-builder` ·
+`indice-casos`). Conviene decir en qué eje mueve eso la aguja **y en cuál no**:
+
+| | |
+|---|---|
+| **lo que sí** | las **anclas** para comparar existen: cada forma tiene su base **en crudo**, su retícula y su ritmo medidos. Es lo que `COBERTURA` dejó escrito para `articulos-kb` (*«un lector son ANCLAS, y las anclas salen de su fase de specs»*) |
+| **lo que NO** | **cero rutas comparadas.** Las 5 specs son **de un solo lado** — el clon no emite ninguna de las 9 formas—, así que en esta matriz `F3-2` sigue a **0**, exactamente igual que antes de escribirlas |
+
+> **Una spec no es una comparación**, y esta distinción es la razón de ser de
+> este documento: *«la diferencia entre «no hay defecto conocido» y «no se ha
+> mirado» no está en ningún otro sitio del repo»*. Escribir las specs mueve
+> `F3-2` de **«no se puede comparar»** a **«se puede comparar»**. La comparación
+> es de la tanda que construya.
+
+⚠ **Y las specs traen su propia deuda declarada**, que la construcción hereda:
+**4 medidas del cascarón sin diagnosticar** —`L5` con 4 secciones de pie y
+cabecera de 458.09, tres pieles de `h1`, y la base de `L5` subiendo al
+estrechar—. Están fichadas (`SP-K5` · `SP-T7` · `SP-H6`) y **no son defectos del
+clon**: son cosas del original que nadie ha explicado.
+
 **Y la unidad de las rutas de paginación ya está decidida con medida**
 (§F3-2-UNIDAD-SERIE): **cada `/page/N/` es su propia unidad**. Las 28 series con
 varias páginas dan **38 clases estructurales** y **19 de las 28 son

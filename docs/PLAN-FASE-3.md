@@ -223,33 +223,48 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > Congeladas: `medidas/lh-barra.json` (+5 negativos) ·
 > `medidas/lh-spec-{1440,390}.json`.
 >
-> ⛔⛔ **PERO HAY UN 3.er ESCALÓN, y éste SÍ retira una decisión cerrada:
-> `D4-H1`.** `D4` afirma *«los 35 `h1` = nombre del término»* y son **33 de 35**
-> — y la evidencia que lo sostenía (`lh-censo`, `h1: ""`) **guardaba el TEXTO**,
-> así que no distinguía «vacío» de «ausente» y **no podía decidir la pregunta en
-> ninguna dirección**. Medido sobre las 149 capturas: **12 documentos sin `<h1>`
-> — la familia `L2` completa — y 0 con `<h1>` vacío**. Lo que cae no es una cifra
-> sino que `D4` **mezclaba dos propiedades**: de dónde sale el TEXTO del `h1`
-> (del término) y si HAY `h1` (lo decide la plantilla de la familia).
-> **Reescribir esa fila es MODELAR ⇒ tanda de decisión.** Ficha:
-> `PENDIENTES-QA.md` §ESCALÓN F3-2 (3.º). Congelada: `medidas/lh-h1.json` (+4
-> negativos).
+> ✅ **EL 3.er ESCALÓN TAMBIÉN CIERRA (2026-08-11, tanda de decisión): `D4` se
+> parte en `D4a` y `D4b`.** `D4` afirmaba *«los 35 `h1` = nombre del término»* y
+> eran **33 de 35** — pero la lectura correcta no era corregir la cifra: **el
+> denominador estaba MAL FORMADO**. Las 35 rutas se agrupaban por el campo
+> `grupo` de `lh-censo` (`hub` · `post_tag` · …), y **`hub` junta SIETE familias
+> de arquetipo**, ninguna de ellas mixta. Las «2 excepciones» eran **dos familias
+> enteras**, 12 de 12 documentos.
 >
-> ⚠ **Y dos fichas de contenedor que NO bloquean pero condicionan la
-> construcción** (`PENDIENTES-QA.md` §LH-CONTENEDOR, `medidas/lh-contenedores.json`):
-> **§LH-CONTENEDOR-ROL** — `911.75` es el ancho de la **FILA** en `articulos-kb`
-> y el de una **COLUMNA `3_4`** en `L1`, cuya fila mide **1238.39**;
-> `mbPorDefecto` recibe un número suelto, así que pasarle el de `L1` **no da
-> error: devuelve el default del otro arquetipo**. **§LH-CONTENEDOR-L3** —
-> `L3-sci` estrena un **tercer** ancho de fila (**1152**) que la tabla no cubre.
-> La tabla cubre **6 de las 9 formas**; `L2` no tiene filas Divi y el mecanismo
-> no le aplica.
+> · **`D4a`** — el TEXTO: **89 documentos** de archivo de término lo sacan del
+> **NOMBRE** del término (no de su slug: lo separan 4 casos), y **48** de índice
+> lo llevan como **campo propio de la página**. Dos enunciados, dos
+> denominadores.
+> · **`D4b`** — la PRESENCIA: **12 sin `<h1>`** (`L2` entera), **0 con `<h1>`
+> vacío**, **0 familias mixtas** de 9 ⇒ **plantilla de la familia**.
+> · **`D4b.1`** — el ANCLA de `L2` es **la primera tarjeta**, y existe **12/12**.
+> ⚠ **MEDIA verificación**: falta *«el mismo elemento en los dos lados»*, que no
+> se puede comprobar hasta que el clon emita estas rutas ⇒ **`P-LH-C8`**.
 >
-> ✅ **Y la precondición de abajo queda LEVANTADA a medias:** ya hay fase de
-> specs —`qa:lh-spec` contra el original vivo, 13 páginas × 2 anchos— con
-> `components/README.md` y `components/listado-b.spec.md` escritas. **Las specs
-> de `L2` · `L3` · `L4` · `L5` están MEDIDAS Y CONGELADAS, sin redactar**: lo
-> que falta es la prosa, no volver a pegarle al original.
+> Congeladas: `medidas/lh-h1.json` (+5 negativos) · `medidas/lh-ancla.json` (+3).
+>
+> ✅ **Y las dos fichas de contenedor CIERRAN las dos** (`medidas/lh-contenedores.json`,
+> `medidas/lh-rol.json`): **§LH-CONTENEDOR-ROL** — `mbPorDefecto` **exige el rol**
+> (`"fila" | "columna"`) y una columna **tira**, ejercitado en `qa:lh-rol` (7
+> casos, negativo 1/1); el cambio es **NO-OP** sobre `articulos-kb`, comprobado
+> corriendo el extractor antes y después. **§LH-CONTENEDOR-L3** — la pregunta **no
+> aplica: `L3` no usa `mbPorDefecto`**, porque su listado va por `loop-del-tema` y
+> de su fila de 1152 **no cuelga ni un módulo de cuerpo**. Con eso
+> `qa:lh-contenedores` **se pone verde**.
+>
+> ✅ **Y la precondición de abajo queda LEVANTADA DEL TODO (2026-08-11):** la fase
+> de specs existe y **las CINCO están escritas** — `listado-b` · `listado-tema-cpt`
+> · `listado-tema-tax` · `hub-builder` · `indice-casos`, con su
+> `components/README.md`. Las cuatro últimas se redactaron **desde lo congelado**,
+> sin volver a pegarle al original.
+>
+> ⚠ **Y cruzarlas destapó CUATRO medidas del CASCARÓN sin explicar**, que la
+> construcción tiene que llevar delante: `L5` sirve **4 secciones de pie** (las
+> otras 4 formas, 3); su cabecera mide **458.09** contra 225; hay **tres pieles
+> de `h1`** (`L1` 50/60·800 · `L3`+`L5` 44/44·300 · `L4` 44.1/55.125·300, y `L3`
+> **no baja de 44 a 390**); y `L5` es **la única cuya base SUBE al estrechar**.
+> Fichadas en su spec (`SP-K5` · `SP-T7` · `SP-H6`). **Dar el cascarón por común
+> las mete todas.**
 >
 > ⬇ **(histórico) PARADA DE ESCALÓN (2026-08-11, mañana)**, levantada en el PASO 2 y antes de
 > construir nada: la entrega «107 rutas `/page/N/`» está mal contada, y no por

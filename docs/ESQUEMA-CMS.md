@@ -1045,6 +1045,34 @@ builder decide las dos cosas a la vez y está servida en los dos lados.
 `https://kunakair.com/es/categoria/{eventos,noticias}/` → entran en `P-LH-C4` y
 tocan **LH-SP8**.
 
+### ⚠ 2c.0bis · El `h1` de un listado: **dos poblaciones, dos tratamientos** (2026-08-11)
+
+`D4` publicaba esto en **una** unidad —*«los 35 `h1` = nombre del término/
+índice»*— y ahí iban fundidas dos cosas que no admiten el mismo enunciado.
+Partido en `D4a`/`D4b` (`listados-hubs/DECISIONES.md`; evidencia
+`medidas/lh-h1.json`, 149 documentos):
+
+| población | n | de dónde sale el `h1` | qué hace el modelo |
+|---|---|---|---|
+| **archivo de TÉRMINO** | **89 documentos** | el **NOMBRE del término** — no su `slug` | **NO lleva campo de titular**: lo trae la relación al término |
+| **ÍNDICE** | **48 documentos** (10 índices) | **no es derivable de la ruta** y varía dentro de la familia | **campo propio de la página** |
+
+**El discriminador de `nombre` contra `slug` está medido, y son 4 documentos los
+que lo sostienen**: `co2-es → «CO2»`, `h2s-es → «H2S»` (×2 documentos) y
+`petroleo-y-gas → «Emisiones del petróleo y gas»`. En los otros 85 slug y nombre
+coinciden, así que **sin esos 4 las dos hipótesis serían indistinguibles**
+(§DOS VARIABLES CONFUNDIDAS). Probado con su negativo: borrándolos, el veredicto
+pasa solo a *«INDISTINGUIBLES»*.
+
+**Y la PRESENCIA del `h1` es plantilla de la familia** (`D4b`): **12 documentos
+sin `<h1>`** —`L2` entera— y **0 con `<h1>` vacío**, con **0 familias mixtas** de
+9. En régimen plantillado, varianza cero dentro y distinta entre ⇒ **plantilla**.
+
+> **Consecuencia para el content type:** el titular de un listado **no es un
+> campo del listado en general**. Un archivo de término lo deriva; un índice lo
+> almacena; y **si la familia lo emite o no lo decide su plantilla**, no el dato.
+> Las tres cosas son distintas y `D4` las tenía en una fila.
+
 ### ⚠ 2c.1 · `tituloMiga` — el rótulo NO es el titular (2026-07-31)
 
 **Campo nuevo del content type, medido al cerrar A-QA1.** El rótulo del último

@@ -1,4 +1,115 @@
-# HANDOFF — F3-2: el 2.º escalón cierra sin retirar nada, y el 3.º retira `D4-H1`
+# HANDOFF — F3-2: el 3.er escalón cierra, y las «2 excepciones de 35» eran un DENOMINADOR mal formado
+
+> ⚠ **Tanda de DECISIÓN, 2026-08-11 (55.ª).** **Los 7 pasos completos.** Nada
+> tocó el sitio vivo: todo sobre el corpus congelado y el fuente. Registro:
+> `listados-hubs/DECISIONES.md` (§D4a · §D4b · §D4b.1 · `P-LH-C8`) ·
+> `PENDIENTES-QA.md` (3 fichas cerradas) · `ESQUEMA-CMS.md` §2c.0bis ·
+> `PLAN-FASE-3.md` · `COBERTURA-MEDICION.md` ·
+> `listados-hubs/components/` (**4 specs nuevas**) · `package.json` (3 sondas).
+
+## 0 · Los seis titulares
+
+> **1 · `D4` NO ESTABA MAL MEDIDA: SU DENOMINADOR ESTABA MAL FORMADO.** Decía
+> *«los 35 `h1` = nombre del término»* y eran 33 de 35 — pero la corrección no es
+> la cifra. Las 35 rutas se agrupaban por el campo `grupo` de `lh-censo`, y
+> **`hub` junta SIETE familias de arquetipo**, ninguna mixta. Las «2 excepciones»
+> eran **dos familias enteras**: 12 de 12 documentos. De las tres salidas escritas
+> antes de mirar —excepción de contenido, varianza intra-familia, denominador mal
+> formado— es **la tercera**.
+>
+> **2 · `D4a` — el TEXTO, en DOS poblaciones con DOS denominadores.** **89
+> documentos** de archivo de término sacan el `h1` del **NOMBRE** del término; **48**
+> de índice lo llevan como **campo propio de la página**. Y la mitad de `D4` que
+> decía *«no propiedad de la página»* **es falsa para los 48**: «Sistemas de
+> sensores de calidad del aire» no es el nombre de nada.
+>
+> **3 · Y el «137/137» con que se planteó la tanda no era lo que la evidencia
+> sostiene.** 137 son los documentos **con** `h1`; para un índice, *«el `h1` es el
+> nombre del índice»* **no es falsable** — no hay contra qué contrastarlo. La barra
+> de «término/índice» era lo que lo escondía.
+>
+> **4 · `D4b` — la PRESENCIA es plantilla de la familia.** 12 sin `<h1>` (`L2`
+> entera), **0 con `<h1>` vacío**, **0 familias mixtas** de 9. El disparador 1 del
+> escalón **no salta**, y ahora está **cableado**: una familia mixta cierra el
+> código de salida de `lh-h1`.
+>
+> **5 · El rol del ancho deja de ser un comentario.** `mbPorDefecto` **exige**
+> `"fila" | "columna"` y una columna **tira**. NO-OP sobre `articulos-kb`,
+> comprobado corriendo el extractor antes y después. Y `L3` no necesitaba la
+> tabla: **su fila de 1152 no tiene módulos de cuerpo**. Con las dos,
+> `qa:lh-contenedores` **se pone verde sola**.
+>
+> **6 · Las 5 specs existen, y cruzarlas destapa CUATRO medidas del CASCARÓN sin
+> explicar.** `L5` sirve **4 secciones de pie** (las otras 4 formas, 3) · su
+> cabecera mide **458.09** contra 225 · hay **tres pieles de `h1`** · y `L5` es la
+> **única cuya base SUBE al estrechar**. Fichadas, no diagnosticadas.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **F3-2 ya no tiene escalones abiertos.** Los tres cerraron: `D2.5` (rutas
+  vacías), `D1` acotada + `D3` confirmada (la barra), y `D4a`/`D4b` (el `h1`).
+  Las fichas de contenedor también. **Lo que queda es construir.**
+- **Pero la construcción hereda cuatro cosas medidas y sin explicar**, todas del
+  cascarón (§`SP-K5` · `SP-T7` · `SP-H6`). **Dar el cascarón por común las mete
+  todas** — y es justo donde el arquetipo A tenía varianza cero, así que la
+  intuición engaña.
+- **`P-LH-C8` es la mitad que falta del ancla de `L2`**: que sea *el mismo
+  elemento en los dos lados*. Hoy es incontestable porque el clon no emite esas
+  rutas; **la hace la tanda que construya**, con `qa:c-cabecera`.
+- **Antes de llamar a `mbPorDefecto` desde `L1`**: el `911.75` que se tiene a
+  mano es una **columna**; su fila mide **1238.39**. La función ya tira, pero el
+  error es fácil de cometer.
+- **`mbPorDefectoKb` no tiene llamadores** (derivado: `grep` devuelve sólo su
+  definición). Borrarla o cablearla **es decisión del propietario**.
+- **Las clases estructurales son 38**, no 35, y **los widgets de la barra son 4**,
+  no 10. Barrido hecho sobre `docs/` entero; lo que queda de esos números son
+  referencias al defecto.
+
+## 1 · Sondas nuevas y cambiadas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-h1`** (ampliada) | forma del `h1` **y** de dónde sale su texto, con los dos denominadores | **5/5** — `slug-igual-al-nombre` borra los 4 casos que separan «slug» de «nombre» y el veredicto pasa solo a INDISTINGUIBLES |
+| **`qa:lh-ancla`** (nueva) | ¿todo documento con contenido tiene base de lectura? | **3/3** |
+| **`qa:lh-rol`** (nueva) | el contrato de `mbPorDefecto`, **ejercitado** con `esbuild` | **1/1** — `invierte`: 7/7 fallos |
+| **`qa:lh-contenedores`** | contra qué contenedor resuelve cada forma | **4/4** — `modulo-en-l3` nuevo: **fabrica el caso** que ya nada dispara |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un denominador formado por una etiqueta cómoda produce EXCEPCIONES
+APARENTES.** `D4` contaba sobre el campo `grupo` de una sonda —una etiqueta de
+conveniencia— en vez de sobre la **familia de plantilla**, que es la partición
+que gobierna el fenómeno. Resultado: dos familias enteras se leían como «dos
+rarezas», y una rareza **se explica** en vez de corregirse. Es §el séptimo
+contenedor aplicado a una decisión.
+
+**(b) Un enunciado puede ser INVACUO para media población y no notarse.** *«El
+`h1` es el nombre del término/índice»* es falsable para los 89 de término y **no
+lo es** para los 48 de índice. **La barra de «término/índice» era el mecanismo**:
+fusionaba una afirmación comprobable con una que no lo es, y el conjunto se leía
+como medido.
+
+**(c) La condición correcta no era «tiene ancla»: era «tiene BASE».** Dos
+versiones de `lh-ancla` dieron bloqueos **falsos** antes de dar con el
+denominador — la primera exigía ancla a las páginas **vacías** (que no tienen
+cuerpo que medir) y la segunda a las que **tienen `h1`** (que no la necesitan).
+Lo que hay que comprobar es la **disyunción**, no una de las dos ramas.
+
+**(d) Una guarda que se cierra deja de ejercitarse, y eso hay que compensarlo.**
+Al cerrar `§LH-CONTENEDOR-L3`, **nada disparaba ya** la guarda de anchos
+huérfanos. Se añadió `modulo-en-l3`, que **fabrica el caso**. Mismo patrón que
+`vacio-inyectado` en `lh-h1`: §sondas 8a no es sólo para sabotajes que fallan —
+también para guardas que se quedan sin población.
+
+**(e) Y una segunda escritura de una función puede no tener llamadores.**
+`mbPorDefectoKb` está exportada, documentada con su razón de existir y **nadie la
+llama**. Su guarda declarada (*«si divergen, el Δ lo dice»*) **no puede
+dispararse**: una función que nadie llama no diverge, no mide y no falla. El
+linter no la caza porque está exportada.
+
+---
+
+# (histórico) HANDOFF — F3-2: el 2.º escalón cierra sin retirar nada, y el 3.º retira `D4-H1`
 
 > ⚠ **Tanda 2026-08-11 (54.ª).** PASOS **1 · 2 · 4 · 6 · 8 completos**; **3 · 5
 > · 7 NO EMPEZADOS** — el 3 y el 7 necesitan el sitio vivo y el 3 depende de la
