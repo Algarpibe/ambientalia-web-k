@@ -88,6 +88,120 @@ Los cinco están en lo servido; falta escribir sus lectores y su control.
   vacías**, y `clon-base --cmp` contra la línea base de esta misma tanda da
   **37/37 sin mover un píxel**.
 
+## ⛔ DATOS-C · casos (57) y faqs (19) DIMENSIONADOS — el bloqueo que el informe anterior no nombró, con su número (2026-08-12)
+
+> **El encargo de esta tanda lo dijo mejor que ninguna regla:** *«"no se mencionó"
+> y "no tiene bloqueo" no pueden salir iguales»*. Es §sondas 4 —*no encontrar
+> nada y no mirar nada dan la misma salida*— aplicada al **acta**: la tanda
+> anterior dimensionó las tres colecciones del grupo A y las dos del grupo C
+> **no aparecían**, lo cual se lee como que están listas.
+>
+> Instrumento: **`qa:c-inventario`**, negativo **4/4**, congelada en
+> `medidas/c-inventario.json`.
+
+### 1 · El camino de extracción, DERIVADO del índice y no supuesto
+
+| colección | en disco | en índice | `post_content` | `corpus/transformado/` |
+|---|---|---|---|---|
+| `casos` | 57 | 57 | **0 de 57** | **NO EXISTE** |
+| `faqs` | 19 | 19 | **0 de 19** | **NO EXISTE** |
+
+Los dos extractores que hay entran por sitios que para el grupo C están vacíos:
+`cms:extractor` (T1–T8) recorta `et_pb_post_content`, y `cms:extractor-a` toma
+el cuerpo de `corpus/transformado/`. **Ninguno de los dos los cubre**, y por eso
+`extractor.mjs` los declara `FUERA` desde F2-2 — con razón, no por descuido.
+
+> ✅ **El ESCALÓN 2 del encargo NO se dispara: es EXTENSIÓN, no camino nuevo.**
+> Y se decide con un número, no con una impresión: **10 de las 10**
+> transformaciones de `TRANSFORMACIONES` tienen la firma `aplica(html, ctx)`
+> sobre **una cadena** — son agnósticas de la región. Lo que no existe es el
+> **extractor de regiones** del grupo C, y esta tanda ya lo ha escrito y
+> validado (abajo). El pipeline se reutiliza entero.
+>
+> La diferencia real con el grupo A, dicha con precisión: un documento del grupo
+> A tiene **una** región rica; un caso tiene **cinco** (`necesidad`, `solucion`,
+> `resultados`, `destacado`, `detalles.parametros`) y una `faq` tiene **una**,
+> pero en `.entry-content` y no en `et_pb_post_content`.
+
+### 2·3·4 · Qué pide el esquema, qué trae el corpus, qué falta
+
+Los campos se **derivan de `colecciones.ts`** con esbuild, no se teclean: un
+campo nuevo en el esquema entra solo en el informe, y si no tiene lector la
+sonda **sale roja** (sabotaje `campo-inventado`).
+
+| `casos` (20 campos) | trae | `faqs` (3 campos) | trae |
+|---|---|---|---|
+| `prefijo` · `seo.title` · `seo.ogImage` · `titulo` · `imagenCabecera` · `cliente` · `necesidad` · `solucion` · `resultados` · `detalles.{usuario,ubicacion,anyo}` | **57/57** | `seo.title` · `titulo` · `cuerpo` | **19/19** |
+| `detalles.parametros` · `ubicacionMapa.{lat,lng}` | 56/57 | | |
+| `seo.description` · `sectores` · `soluciones` | 53/57 | | |
+| `destacado` | 49/57 | | |
+| `galeria` | 48/57 | | |
+
+> **El hueco de CAMPO es CERO**: no hay un solo campo `required` del esquema que
+> el corpus no sirva. Los `53/57`, `49/57`, `48/57` **no son huecos** —
+> reproducen exactamente las cifras que `ESQUEMA-CMS.md` §2b midió en su día
+> (`destacado` 49/57 · `galeria` 48/57 · `parametros` 56/57 · `sectores` 53/57 ·
+> `ubicacionMapa` 56/57 · `description` falta en 4). **Dos instrumentos
+> distintos sobre el mismo objeto dando el mismo número**, que es el control que
+> §sondas 4 pide antes de creerse un recuento nuevo.
+
+**Lo que falta, entonces, no son campos: es el extractor y su siembra.** Y el
+hueco de MEDIA, que se cuenta en §DATOS-MEDIA (PASO 1), no aquí.
+
+### El CONTROL, con su denominador dicho (y es pequeño)
+
+**60 comparaciones, 0 discrepancias.** Pero el alcance se declara, porque no es
+el del grupo A:
+
+| | transcritos a mano | población | % |
+|---|---|---|---|
+| `casos` | **4** | 57 | **7.0 %** |
+| `faqs` | **2** | 19 | **10.5 %** |
+| (grupo A, para comparar) | 14 | 209 | 6.7 % |
+
+> **Un extractor validado contra n=4 no está validado igual que uno validado
+> contra 14**, y el porcentaje parecido **no lo arregla**: lo que compra un
+> control es **cuántas formas distintas ejercita**, no qué fracción cubre. Los 4
+> casos se eligieron adversarios a propósito (`casos.ts` §El mínimo ADVERSARIO)
+> — dos con galería y dos sin, uno sin sector, uno sin soluciones — y eso es lo
+> que hay que escribir al lado del 60/60, no el 7 %.
+
+**Y los cuerpos ricos NO entran en ese control**, declarado en la sonda: la
+transcripción de `src/lib` está **ya transformada** (T1–T8: rutas locales,
+`target="_blank"` retirado en 3 sitios) y el corpus trae el HTML crudo.
+Compararlos verbatim daría discrepancia en los 4 **por diseño**. El verbatim del
+cuerpo es control **del extractor**, cuando se escriba.
+
+### Lo que el CONTROL ya se cobró, y es la razón de tenerlo
+
+El lector de `soluciones` recortaba hasta el primer `</ul>` — y el panel de cada
+producto trae **su propia `<ul>` de ventajas** dentro del `<li>`. Devolvía
+`["monitor-calidad-aire"]` en los tres casos que tienen varios productos.
+
+> **Un array de UNO es un dato plausible.** Ningún recuento lo habría visto: la
+> cobertura decía `soluciones 53/57`, que es el número correcto, porque presencia
+> y contenido son dos preguntas. Lo cazó comparar contra los 4 transcritos, y su
+> salida está congelada como
+> `c-inventario-SONDA-CORTABA-SOLUCIONES-EN-EL-PRIMER-UL.json` (§sondas 7).
+
+**Y el discriminador bueno no era una frontera, era el marcado**: la pestaña
+lleva `data-id="<producto>"` y su panel `data-id="item-<producto>"`.
+
+### El canal que no está en el marcado, y por qué se dice aparte
+
+**`imagenCabecera` no se sirve como atributo.** Divi la compila a CSS y la sirve
+en el `<style>` del propio documento:
+
+```
+.et_pb_section_0_tb_header{background-image:linear-gradient(…),url(…)!important}
+```
+
+Es §*la salida servida incluye el CSS que el documento se trae*, con su versión
+operativa: **el lector de ese campo mira el `<style>` a propósito**, mientras
+todos los demás miran el HTML **sin** `<script>` ni `<style>` (la regla del
+markup). Un extractor que aplicara la regla del markup a los 20 campos daría
+`imagenCabecera: null` en **57 de 57** — un cero perfecto, sin error, y falso.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de
