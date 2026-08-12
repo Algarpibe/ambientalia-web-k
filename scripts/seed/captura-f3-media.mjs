@@ -2,6 +2,33 @@
  * LA MEDIA DE LA CAMPAÑA F3 — la otra mitad del PASO 0, y sin ella el PASO 0
  * NO está hecho.
  * Uso: npm run cms:captura-f3-media     (SOLO_DERIVA=1 → deriva y no pide nada)
+ *      LISTA=medidas/media-siembra.json npm run cms:captura-f3-media
+ * Negativo: npm run cms:captura-f3-media-neg
+ *
+ * ── ⚠ DOS MODOS, y el segundo se añadió el 2026-08-12 ─────────────────────
+ * El modo original **deriva su lista del HTML de `corpus/fase-3/`**, que es lo
+ * correcto para lo que capturó: las páginas de esa campaña. Pero la tanda de
+ * DATOS necesita capturar la media de **los CAMPOS de cinco colecciones**, y
+ * esos campos no viven en el HTML de `corpus/fase-3/` — la imagen destacada,
+ * sin ir más lejos, es un campo propio fuera del cuerpo.
+ *
+ * Volver a derivar aquí sería **una segunda definición del hueco**, que es la
+ * clase C7 y además la que ya se pagó: `qa:media-siembra` lo deriva **contra la
+ * guarda que para** (`apps/web/public`, no `media-corpus`) y con los canales
+ * enumerados contra el esquema. Así que este script **consume esa lista** en vez
+ * de fabricar otra:
+ *
+ *   · `LISTA=<json>` → la lista sale de `origenesACapturar` de esa congelada, y
+ *     el destino es **`media-corpus/datos/` con índice propio** — por la misma
+ *     razón que `fase-3/` lo tiene: `media-corpus/INDICE.json` sigue diciendo
+ *     534 y `fase-3/INDICE.json` lo suyo, y **ningún acta que los cite se
+ *     mueve**;
+ *   · sin `LISTA` → el comportamiento de siempre, intacto.
+ *
+ * Y la guarda que hacía falta para que el modo nuevo no herede el fallo de
+ * siempre: **una lista que no resuelve, o que resuelve a CERO, TIRA.** Un `?? []`
+ * ahí convertiría «la sonda no se ha corrido» en «no hay nada que capturar», y
+ * la campaña saldría verde sin pedir un fichero (§sondas 4 · regla 6).
  *
  * ── Por qué existe: capturar las PÁGINAS no es capturar sus ASSETS ─────────
  * `captura-f3` congeló 249 ficheros de HTML y con eso el acta decía que «el
@@ -47,7 +74,7 @@
  */
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, relative, sep } from "node:path";
 import { Evaluadas, gritaSiRevienta, hoy, origenDe, QA } from "../qa/lib.mjs";
 
 process.env.SIN_CLON = "1";
@@ -55,38 +82,99 @@ gritaSiRevienta();
 
 const RAIZ = join(QA, "../..");
 const F3 = join(RAIZ, "corpus/fase-3");
-const DESTINO = join(RAIZ, "media-corpus/fase-3");
-const INDICE = join(DESTINO, "INDICE.json");
+/**
+ * `LISTA=<json>` — la campaña de CAMPOS, con su propio subárbol e índice.
+ *
+ * ⚠ **También por argumento (`--lista=…`), y no es una comodidad:** `npm run`
+ * ejecuta el script con `cmd.exe` en Windows, donde el prefijo `VAR=valor cmd`
+ * **no es sintaxis** — sale *«"LISTA" no se reconoce como un comando»*. Un
+ * `npm run` que sólo funciona en POSIX es una sonda que en esta máquina no se
+ * puede correr, así que el modo se declara por las dos vías.
+ */
+const LISTA =
+  process.env.LISTA || (process.argv.slice(2).find((a) => a.startsWith("--lista=")) ?? "").split("=").slice(1).join("=") || null;
+const DESTINO = join(RAIZ, LISTA ? "media-corpus/datos" : "media-corpus/fase-3");
+/**
+ * ⚠ **UNA CORRIDA NEGATIVA NO PISA EL ÍNDICE DE LA CAMPAÑA**, y esto se escribió
+ * después de que lo hiciera: el sabotaje `error-no-404` reescribió
+ * `media-corpus/datos/INDICE.json` con 28 fallos y 0 ficheros, o sea **borró el
+ * acta de la campaña buena en el acto de comprobar una guarda**.
+ *
+ * Es exactamente §sondas 5 —*congelar no sirve de nada si la siguiente corrida
+ * descongela sin avisar*— y **la guarda de `w()` no lo cubría**, porque este
+ * script escribe su índice con `writeFileSync` directo. `corridaNegativa` ya
+ * pone `NEG` en el entorno; lo que faltaba era leerlo aquí.
+ */
+const NEG = process.env.NEG || null;
+const INDICE = join(DESTINO, NEG ? `INDICE-neg-${NEG}.json` : "INDICE.json");
 const PREVIO = join(RAIZ, "media-corpus/INDICE.json");
 const UA = "Mozilla/5.0 (compatible; KunakWebClone/1.0; +https://github.com/Ambientalia)";
 const ESPACIADO_MS = 500;
 const PREFIJO = "https://kunakair.com/wp-content/uploads/";
 const SOLO_DERIVA = !!process.env.SOLO_DERIVA;
+const SABOTAJE_NO_404 = process.env.SABOTAJE === "error-no-404";
+if (process.env.SABOTAJE && !SABOTAJE_NO_404)
+  throw new Error(`SABOTAJE desconocido: '${process.env.SABOTAJE}' (error-no-404)`);
 
 const sha = (buf) => createHash("sha256").update(buf).digest("hex");
 const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /* ── la derivación ───────────────────────────────────────────────────────── */
-const indiceF3 = JSON.parse(readFileSync(join(F3, "INDICE.json"), "utf8"));
-const conFichero = Object.values(indiceF3.paginas).filter((p) => p.fichero);
-if (!conFichero.length)
-  throw new Error(
-    "0 páginas con fichero en `corpus/fase-3/INDICE.json`: sin HTML no hay referencias que derivar,\n" +
-      "  y una lista vacía se leería como «ya está todo capturado» — la regla del cero.",
-  );
-
 const referencias = new Map(); // origen → nº de referencias
-for (const p of conFichero) {
-  const html = readFileSync(join(F3, p.fichero), "utf8");
-  for (const m of html.matchAll(/["'(](https?:\/\/kunakair\.com\/wp-content\/uploads\/[^"')?\s]+)/g)) {
-    const o = origenDe(m[1]);
-    referencias.set(o, (referencias.get(o) ?? 0) + 1);
+let conFichero = [];
+
+if (LISTA) {
+  /**
+   * MODO LISTA — la lista viene DERIVADA de fuera, y las dos guardas de abajo
+   * son la regla 6 aplicada a un fichero de entrada: una ausencia se **rechaza**,
+   * no se sustituye por un valor benigno.
+   */
+  const f = join(QA, LISTA);
+  if (!existsSync(f))
+    throw new Error(
+      `LISTA AUSENTE: no existe ${LISTA}.\n` +
+        `  Corre \`npm run qa:media-siembra\` antes: la lista se DERIVA contra la guarda\n` +
+        `  que para (apps/web/public), y sin ella esta campaña no sabe qué pedir.`,
+    );
+  const raiz = JSON.parse(readFileSync(f, "utf8"));
+  const origenes = raiz.origenesACapturar;
+  if (!Array.isArray(origenes) || !origenes.length)
+    throw new Error(
+      `LISTA VACÍA: ${LISTA} no trae 'origenesACapturar' con contenido (es ${typeof origenes}, ${origenes?.length ?? "—"} entradas).\n` +
+        `  Eso NO es «no hay nada que capturar»: es una lista que no se pudo leer, y su\n` +
+        `  cero saldría como una campaña verde que no pidió un solo fichero.`,
+    );
+  for (const local of origenes) {
+    /* `/images/uploads/X` es la ruta LOCAL (T3b). Al original se le pide la suya. */
+    referencias.set(PREFIJO + local.replace(/^\/images\/uploads\//, ""), 1);
+  }
+  console.log(`\n  (modo LISTA — ${origenes.length} orígenes derivados por ${LISTA}, destino media-corpus/datos/)`);
+} else {
+  const indiceF3 = JSON.parse(readFileSync(join(F3, "INDICE.json"), "utf8"));
+  conFichero = Object.values(indiceF3.paginas).filter((p) => p.fichero);
+  if (!conFichero.length)
+    throw new Error(
+      "0 páginas con fichero en `corpus/fase-3/INDICE.json`: sin HTML no hay referencias que derivar,\n" +
+        "  y una lista vacía se leería como «ya está todo capturado» — la regla del cero.",
+    );
+  for (const p of conFichero) {
+    const html = readFileSync(join(F3, p.fichero), "utf8");
+    for (const m of html.matchAll(/["'(](https?:\/\/kunakair\.com\/wp-content\/uploads\/[^"')?\s]+)/g)) {
+      const o = origenDe(m[1]);
+      referencias.set(o, (referencias.get(o) ?? 0) + 1);
+    }
   }
 }
 
-/* Lo que la captura de F2-2 ya tiene: dos tandas del MISMO archivo. */
+/**
+ * Lo que la captura de F2-2 ya tiene: dos tandas del MISMO archivo.
+ *
+ * ⚠ En modo LISTA **no se vuelve a filtrar**: `media-siembra` ya cruzó contra
+ * `media-corpus` **y** contra `public`, y volver a hacerlo aquí sería la segunda
+ * definición del hueco que este modo existe para no tener.
+ */
 const yaEnCorpus = new Set();
-if (existsSync(PREVIO))
+if (!LISTA && existsSync(PREVIO))
   for (const f of Object.values(JSON.parse(readFileSync(PREVIO, "utf8")).ficheros ?? {}))
     yaEnCorpus.add(origenDe(f.url ?? ""));
 
@@ -105,8 +193,8 @@ const candidatos = [...referencias.keys()].filter((u) => !yaEnCorpus.has(u)).sor
 const noSonFichero = candidatos.filter((u) => !esFichero(u));
 const lista = candidatos.filter(esFichero);
 
-console.log(`\n════════ MEDIA DE LA CAMPAÑA F3 ════════\n`);
-console.log(`  HTML leído          ${conFichero.length} ficheros de corpus/fase-3/`);
+console.log(`\n════════ MEDIA DE LA CAMPAÑA ${LISTA ? "DE DATOS (modo LISTA)" : "F3"} ════════\n`);
+console.log(`  ${LISTA ? `lista               ${LISTA}` : `HTML leído          ${conFichero.length} ficheros de corpus/fase-3/`}`);
 console.log(`  referencias         ${[...referencias.values()].reduce((a, b) => a + b, 0)}`);
 console.log(`  orígenes distintos  ${referencias.size}   (variantes -WxH ya colapsadas)`);
 console.log(`  ya en media-corpus  ${referencias.size - candidatos.length}`);
@@ -127,6 +215,8 @@ if (SOLO_DERIVA) {
 const previo = existsSync(INDICE) ? JSON.parse(readFileSync(INDICE, "utf8")) : { ficheros: {} };
 const ficheros = {};
 const errores = [];
+/** 404 del original: ausencia MEDIDA, no captura fallida. Se congela con su fecha. */
+const ausentesEnOrigen = [];
 let nuevos = 0, reutilizados = 0, fallos = 0, bytes = 0, i = 0;
 
 for (const url of lista) {
@@ -152,6 +242,15 @@ for (const url of lista) {
   }
 
   let buf = null, tipo = null, error = null;
+  /**
+   * ⚠ `SABOTAJE=error-no-404` — el negativo del reclasificador de arriba, y
+   * **sin una sola petición**: sustituye el error por uno que NO es 404, así
+   * que lo que era «ausencia medida» tiene que volver a ser FALLO. Sin él, la
+   * excepción del 404 sería una puerta por la que se colaría cualquier error.
+   */
+  if (SABOTAJE_NO_404) {
+    error = "HTTP 503 (sabotaje: no es un 404)";
+  } else
   for (let intento = 1; intento <= 2 && !buf; intento++) {
     try {
       const r = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow", signal: AbortSignal.timeout(120_000) });
@@ -165,6 +264,34 @@ for (const url of lista) {
   }
 
   if (!buf) {
+    /**
+     * ⚠ **UN 404 DEL ORIGINAL NO ES UNA CAPTURA FALLIDA: es una AUSENCIA
+     * MEDIDA EN EL ORIGINAL**, y mezclarlos deja el contrato en rojo para
+     * siempre por algo que no se puede arreglar capturando más.
+     *
+     * Es el mismo precedente que las rutas de DIRECTORIO de arriba —*«contarlas
+     * como fallo deja el contrato en rojo para siempre por algo que no
+     * existe»*— y se aplica con las mismas dos condiciones, que son las que
+     * impiden que se convierta en una excusa:
+     *
+     *   · **sólo el 404**, que es reproducible y decidible: un 500, un timeout
+     *     o un DNS caído siguen siendo FALLO, porque ahí no sabemos nada;
+     *   · **se imprime una a una y se congela con su fecha**. Un descarte en
+     *     silencio y un fallo dan informes distintos, y ninguno de los dos es el
+     *     correcto (§sondas 1: lo que imprime y lo que cuenta no discrepan).
+     *
+     * Medido el 2026-08-12 en DOS corridas seguidas: **28 de 393**, todas del
+     * canal C (el cuerpo rico), **ninguna del canal A**. O sea que no bloquean
+     * ninguna siembra — y el clon servirá para ellas exactamente el mismo 404
+     * que sirve el original, que es fidelidad y no deuda.
+     */
+    if (/HTTP 404/.test(error ?? "")) {
+      ausentesEnOrigen.push({ url, fichero: rel, http: 404, comprobado: hoy() });
+      console.log(`  ⌀ ${String(i).padStart(3)}/${lista.length}  ${rel} — 404 EN EL ORIGINAL (ausencia medida, no fallo)`);
+      ev.ok();
+      await dormir(ESPACIADO_MS);
+      continue;
+    }
     fallos++;
     errores.push({ url, error });
     ev.fallo(rel, error);
@@ -190,14 +317,21 @@ writeFileSync(
     {
       meta: {
         fecha: hoy(),
-        que: "La media que referencia la captura de la FASE 3. Índice PROPIO: `media-corpus/INDICE.json` sigue en 534.",
-        derivacion: "corpus/fase-3/INDICE.json → referencias a /wp-content/uploads/, con `origenDe()` colapsando variantes -WxH",
+        que: LISTA
+          ? "La media de los CAMPOS de las 5 colecciones de la tanda de DATOS. Índice PROPIO: los de `media-corpus/` y `fase-3/` no se mueven."
+          : "La media que referencia la captura de la FASE 3. Índice PROPIO: `media-corpus/INDICE.json` sigue en 534.",
+        derivacion: LISTA
+          ? `${LISTA} → \`origenesACapturar\`, derivado contra la guarda que PARA (apps/web/public) y con los canales enumerados contra el esquema`
+          : "corpus/fase-3/INDICE.json → referencias a /wp-content/uploads/, con `origenDe()` colapsando variantes -WxH",
         etiqueta: `secuencial · ${ESPACIADO_MS} ms · nunca en paralelo · una petición por fichero, también entre corridas`,
         porQue: "sin esto el original SIGUE en el camino crítico: 0 de las 56 imágenes de `articulos-kb` estaban capturadas.",
         fuera: `las VARIANTES (el pipeline reproduce su dimensión: 73/73) y ${noSonFichero.length} ruta(s) de DIRECTORIO que no son un fichero. El CASCARÓN **NO** se excluye: esa partición no se ha medido para estas páginas y el defecto se pone en la dirección que grita.`,
       },
-      resumen: { pedidos: lista.length, nuevos, reutilizados, fallos, bytes },
+      resumen: { pedidos: lista.length, nuevos, reutilizados, fallos, ausentesEnOrigen: ausentesEnOrigen.length, bytes },
       errores,
+      /* Ausencias MEDIDAS en el original (404), no capturas fallidas. Se congelan
+       * con su fecha para que la afirmación sea auditable y no una excusa. */
+      ausentesEnOrigen,
       ficheros,
     },
     null,
@@ -205,13 +339,21 @@ writeFileSync(
   ) + "\n",
 );
 
-console.log(`\n──────── MEDIA F3 ────────`);
+console.log(`\n──────── MEDIA ${LISTA ? "DE DATOS" : "F3"} ────────`);
 console.log(`  nuevos ....... ${nuevos}`);
 console.log(`  reutilizados . ${reutilizados}`);
 console.log(`  fallos ....... ${fallos}`);
+console.log(`  404 en origen  ${ausentesEnOrigen.length}   ← ausencia MEDIDA del original, no captura fallida`);
 console.log(`  bytes ........ ${(bytes / 1e6).toFixed(1)} MB`);
 for (const e of errores.slice(0, 12)) console.log(`     ✗ ${e.url.replace(PREFIJO, "")} — ${e.error}`);
-console.log(`\n→ media-corpus/fase-3/INDICE.json`);
+/* Una a una, sin recortar: un descarte en silencio y un fallo dan informes
+ * distintos, y ninguno de los dos es el correcto (§sondas 1). */
+for (const a of ausentesEnOrigen) console.log(`     ⌀ ${a.fichero} — 404 el ${a.comprobado}`);
+/* ⚠ La ruta se DERIVA de `INDICE`, no se teclea: la primera corrida en modo
+ * LISTA escribió en `media-corpus/datos/` e imprimió `media-corpus/fase-3/`.
+ * §sondas 1 — lo que imprime y lo que hace no pueden discrepar, y un lector del
+ * informe habría ido a buscar la campaña al archivo equivocado. */
+console.log(`\n→ ${relative(RAIZ, INDICE).split(sep).join("/")}`);
 console.log(`  ⚠ COMMITEA esto ANTES de transformar nada (regla 5b).`);
 
 process.exit(ev.informe() ? 2 : 0);

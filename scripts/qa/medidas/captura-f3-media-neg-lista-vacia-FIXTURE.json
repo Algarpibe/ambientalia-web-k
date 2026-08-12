@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "que": "FIXTURE de test en negativo — NO es una medida del sitio (§sondas 7).",
+    "porQue": "ejercita la guarda LISTA VACÍA de `captura-f3-media`: una lista que resuelve a 0 TIRA en vez de salir verde sin pedir nada.",
+    "noMide": ["no sale de ninguna corrida", "no describe el original", "no se cita en ningún acta"]
+  },
+  "origenesACapturar": []
+}

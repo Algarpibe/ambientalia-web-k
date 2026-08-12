@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "que": "el paso SIN RED entre la captura y la siembra: colocar orígenes y regenerar variantes",
+    "fuente": "medidas/media-siembra.json (la lista) + media-corpus/ (los bytes)",
+    "soloDeriva": true,
+    "sabotaje": "origen-ausente",
+    "renuncia": "una variante REGENERADA coincide en DIMENSIÓN, no byte a byte (qa:media-regenera, 73/73)"
+  },
+  "resumen": {
+    "pendientes": 28,
+    "yaEstaban": 0,
+    "copiadas": 0,
+    "regeneradas": 0,
+    "ausentesEnOrigen": 0,
+    "sinOrigen": 28
+  },
+  "control": {
+    "pares": 918,
+    "fallos": 0,
+    "detalle": []
+  },
+  "sinOrigen": [
+    {
+      "ruta": "/images/uploads/2018/11/GettyImages-78084479-696x464.jpg",
+      "origen": "2018/11/GettyImages-78084479.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2019/03/ECOTEC-Ingenieria.pdf",
+      "origen": "2019/03/ECOTEC-Ingenieria.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2020/02/Riesgo_Sargazo_Big_Data.pdf",
+      "origen": "2020/02/Riesgo_Sargazo_Big_Data.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2020/09/OCU-008.jpg",
+      "origen": "2020/09/OCU-008.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2020/09/smokemap.gif",
+      "origen": "2020/09/smokemap.gif"
+    },
+    {
+      "ruta": "/images/uploads/2020/10/Relative-Size-of-Particles-Infographic-full.jpg",
+      "origen": "2020/10/Relative-Size-of-Particles-Infographic-full.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2020/10/relative-size-of-particles-infographic.html",
+      "origen": "2020/10/relative-size-of-particles-infographic.html"
+    },
+    {
+      "ruta": "/images/uploads/2021/07/2019_09_Briefing_LEZ-ZEZ_final.pdf",
+      "origen": "2021/07/2019_09_Briefing_LEZ-ZEZ_final.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2021/09/Barrel-of-Crude-Oil_8.jpg",
+      "origen": "2021/09/Barrel-of-Crude-Oil_8.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2021/10/Resolucion-2254-de-2017.pdf",
+      "origen": "2021/10/Resolucion-2254-de-2017.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2021/12/Costs-and-benefits-of-the-sustainable-urban-transition-video-version-2.mp4",
+      "origen": "2021/12/Costs-and-benefits-of-the-sustainable-urban-transition-video-version-2.mp4"
+    },
+    {
+      "ruta": "/images/uploads/2021/12/KH0321465ENN.en_.pdf",
+      "origen": "2021/12/KH0321465ENN.en_.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2022/05/ABB_EE_WhitePaper_Metals_250422_es_HR.pdf",
+      "origen": "2022/05/ABB_EE_WhitePaper_Metals_250422_es_HR.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2022/05/worlds-largest-gold-mines-2021.jpg",
+      "origen": "2022/05/worlds-largest-gold-mines-2021.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2022/10/Resilience-Guide-espanol_Actualizado13julio.pdf",
+      "origen": "2022/10/Resilience-Guide-espanol_Actualizado13julio.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2023/07/innovative-biomethane-for-repowereu-ZZ0923084ENN.pdf",
+      "origen": "2023/07/innovative-biomethane-for-repowereu-ZZ0923084ENN.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2023/09/MethaneReport-Waste-ES.pdf",
+      "origen": "2023/09/MethaneReport-Waste-ES.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2023/10/DSC_9472-1-scaled.jpg",
+      "origen": "2023/10/DSC_9472-1-scaled.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2023/11/Global-Landscape-of-Climate-Finance-2023.pdf",
+      "origen": "2023/11/Global-Landscape-of-Climate-Finance-2023.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2024/05/CAN-Guidelines-NDCs-es.pdf",
+      "origen": "2024/05/CAN-Guidelines-NDCs-es.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2024/07/dossier_sport-et-pollution-de-lair-3.pdf",
+      "origen": "2024/07/dossier_sport-et-pollution-de-lair-3.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2024/12/1.-Air-Quality-in-Data-Centers_People-vs-The-Machines.pdf",
+      "origen": "2024/12/1.-Air-Quality-in-Data-Centers_People-vs-The-Machines.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2025/01/Book_of_abstracts_EmiLi24.pdf",
+      "origen": "2025/01/Book_of_abstracts_EmiLi24.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Policies.pdf",
+      "origen": "2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Policies.pdf"
+    },
+    {
+      "ruta": "/images/uploads/2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+      "origen": "2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+      "origen": "2026/05/Emisiones-fugitivas_programa-LDAR.jpg"
+    },
+    {
+      "ruta": "/images/uploads/2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg",
+      "origen": "2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg"
+    },
+    {
+      "ruta": "/images/uploads/sites/2/2019/07/gco.jpg",
+      "origen": "sites/2/2019/07/gco.jpg"
+    }
+  ],
+  "ausentesEnOrigen": []
+}

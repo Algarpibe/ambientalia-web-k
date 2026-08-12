@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "que": "el paso SIN RED entre la captura y la siembra: colocar orígenes y regenerar variantes",
+    "fuente": "medidas/media-siembra.json (la lista) + media-corpus/ (los bytes)",
+    "soloDeriva": true,
+    "sabotaje": null,
+    "renuncia": "una variante REGENERADA coincide en DIMENSIÓN, no byte a byte (qa:media-regenera, 73/73)"
+  },
+  "resumen": {
+    "pendientes": 28,
+    "yaEstaban": 0,
+    "copiadas": 0,
+    "regeneradas": 0,
+    "ausentesEnOrigen": 28,
+    "sinOrigen": 0
+  },
+  "control": {
+    "pares": 918,
+    "fallos": 0,
+    "detalle": []
+  },
+  "sinOrigen": [],
+  "ausentesEnOrigen": [
+    "/images/uploads/2018/11/GettyImages-78084479-696x464.jpg",
+    "/images/uploads/2019/03/ECOTEC-Ingenieria.pdf",
+    "/images/uploads/2020/02/Riesgo_Sargazo_Big_Data.pdf",
+    "/images/uploads/2020/09/OCU-008.jpg",
+    "/images/uploads/2020/09/smokemap.gif",
+    "/images/uploads/2020/10/Relative-Size-of-Particles-Infographic-full.jpg",
+    "/images/uploads/2020/10/relative-size-of-particles-infographic.html",
+    "/images/uploads/2021/07/2019_09_Briefing_LEZ-ZEZ_final.pdf",
+    "/images/uploads/2021/09/Barrel-of-Crude-Oil_8.jpg",
+    "/images/uploads/2021/10/Resolucion-2254-de-2017.pdf",
+    "/images/uploads/2021/12/Costs-and-benefits-of-the-sustainable-urban-transition-video-version-2.mp4",
+    "/images/uploads/2021/12/KH0321465ENN.en_.pdf",
+    "/images/uploads/2022/05/ABB_EE_WhitePaper_Metals_250422_es_HR.pdf",
+    "/images/uploads/2022/05/worlds-largest-gold-mines-2021.jpg",
+    "/images/uploads/2022/10/Resilience-Guide-espanol_Actualizado13julio.pdf",
+    "/images/uploads/2023/07/innovative-biomethane-for-repowereu-ZZ0923084ENN.pdf",
+    "/images/uploads/2023/09/MethaneReport-Waste-ES.pdf",
+    "/images/uploads/2023/10/DSC_9472-1-scaled.jpg",
+    "/images/uploads/2023/11/Global-Landscape-of-Climate-Finance-2023.pdf",
+    "/images/uploads/2024/05/CAN-Guidelines-NDCs-es.pdf",
+    "/images/uploads/2024/07/dossier_sport-et-pollution-de-lair-3.pdf",
+    "/images/uploads/2024/12/1.-Air-Quality-in-Data-Centers_People-vs-The-Machines.pdf",
+    "/images/uploads/2025/01/Book_of_abstracts_EmiLi24.pdf",
+    "/images/uploads/2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Policies.pdf",
+    "/images/uploads/2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+    "/images/uploads/2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+    "/images/uploads/2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg",
+    "/images/uploads/sites/2/2019/07/gco.jpg"
+  ]
+}
