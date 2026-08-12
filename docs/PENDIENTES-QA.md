@@ -464,6 +464,45 @@ exactamente lo que `D2.5` evitó.
 
 ---
 
+## 🟡 F3-2-PRODUCTO-L3-NAVEGACION · a las páginas 2 y 3 de `scientific-category` no se llega pulsando nada — pregunta de PRODUCTO, abierta a propósito (2026-08-12)
+
+**Ficha abierta por `D2.6`, y con el mismo encuadre que su hermana de arriba.**
+
+`kunakair.com/es` sirve **6 URLs** de `scientific-category` —3 series: 3 · 1 · 2
+páginas— y **ninguna de ellas pinta un control de paginación en el cuerpo**
+(`wp-pagenavi`/`kunak-pagination`: **0 en los 6** documentos capturados). Las
+páginas 2 y 3 tienen contenido, se declaran canónicas de sí mismas y el
+`<title>` anuncia «Página N de M» — pero **desde la página 1 no se puede llegar
+a la 2 pulsando nada**: el único `/page/2/` del documento es el `<link
+rel="next">` que pone Yoast en el `<head>`.
+
+| | |
+|---|---|
+| **es una pregunta legítima** | contenido alcanzable sólo por URL o por un cliente que lea `rel=next` es, a primera vista, un fallo de navegación |
+| **y NO es una pregunta de la migración** | esas páginas son inalcanzables **hoy**, en el original, con el clon sin desplegar |
+| **por eso `D2.6` decide REPLICAR** | es la única salida que no cambia el sitio. Servir un paginador es una **mejora de producto**, y meterla dentro de una migración deja sin respuesta la única pregunta que la migración contesta |
+
+### Qué hay que decidir, y con qué información
+
+1. **¿Es un fallo o es deliberado?** No está medido. `L3` es la forma más densa
+   del sitio (4 columnas) y su plantilla la sirve el tema, no el builder: puede
+   ser una plantilla PHP a la que nunca se le puso `paginate_links`, o una
+   decisión de que estas taxonomías se recorran desde el hub `L4`.
+2. **Si es un fallo, ¿cuál es el arreglo?** Añadir el control en el original
+   —y entonces el clon lo replica sin tocar `D2.6`— o declarar que el clon
+   **diverge**, con su razón escrita, como `D2.4`.
+3. **¿Cuánto contenido afecta?** Derivado: **3 páginas** inalcanzables por
+   clic de un total de 6 (`lh-paginas-2026-08-12`), todas con contenido —
+   `vacias: 0` en las tres series, así que aquí no se solapa con
+   §F3-2-SEO-PAGINAS-VACIAS.
+
+### Cómo se cierra
+
+Igual que la anterior: **se lleva al propietario del SITIO**. Lo que no se hace
+es decidirlo dentro de una tanda de construcción.
+
+---
+
 ## ✅ (cerrado por `D2.5`) ESCALÓN F3-2 · **55 de las «107 rutas /page/N/» existen y no listan NADA**, y eso es una forma que `DECISIONES.md` no contempla (2026-08-11)
 
 > ✅ **CERRADO EL MISMO 2026-08-11** con **`D2.5` · REPLICAR TAL CUAL**, firmada
@@ -764,7 +803,26 @@ sería decidir con n=1. **Va a la mesa de F3-4 con este número delante.**
 
 ---
 
-## ⛔ LH-C6-L3-SIN-PAGINADOR · `scientific-category` pagina por URL y no sirve ningún control (2026-08-10)
+## ✅ LH-C6-L3-SIN-PAGINADOR · **CERRADA 2026-08-12 con `D2.6` — se REPLICA** (abierta 2026-08-10)
+
+> **La ficha pedía elegir «con la razón escrita», y la razón es la de `D2.5`:
+> replicar es la única salida que no cambia el sitio.** El clon emite las 6
+> `/page/N/` de `scientific-category` y **su cuerpo no pinta paginador**, que es
+> lo que sirve el original.
+>
+> **Y no hizo falta criterio nuevo:** el discriminador de `D2.4`/`D2.5` —el
+> canonical— contesta esta también. Los 6 documentos declaran canonical **a sí
+> mismos** (*«sí soy una ruta»* ⇒ se emite), con `<title>` «Página N de M» del
+> servidor y **0** apariciones de `wp-pagenavi`/`kunak-pagination` en los 6.
+>
+> **Servir un paginador visible sería una decisión de PRODUCTO** y no viaja
+> dentro de una migración: queda encuadrada aparte en
+> §**F3-2-PRODUCTO-L3-NAVEGACION**, para decidirse sobre el sitio.
+>
+> Acta con las tres salidas, el discriminador y lo que arrastra:
+> `research/listados-hubs/DECISIONES.md` §**D2.6**.
+
+### (histórico) el hallazgo que la abrió
 
 Dos medidas congeladas que se contradicen, y la contradicción **la imprime la
 sonda** en vez de quedarse callada:

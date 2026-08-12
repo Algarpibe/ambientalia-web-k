@@ -355,6 +355,67 @@ Corregido en la misma tanda, y en las dos direcciones:
   200, canonical a sí misma y `<title>` correcto—. Una ruta vacía que sirva 404
   en el clon es un defecto igual que cualquier otro (`P-LH-C7`, abajo).
 
+## D2.6 · `L3` pagina por URL y **no sirve ningún control** — **REPLICAR TAL CUAL** (2026-08-12)
+
+**Decidido: el clon emite las `/page/N/` de `scientific-category` y su cuerpo NO
+pinta paginador**, igual que el original. Cierra
+`PENDIENTES-QA.md` §**LH-C6-L3-SIN-PAGINADOR**, que dejó la elección abierta
+*«con la razón escrita»* y no la tomó.
+
+### Es la misma forma que D2.5, y por eso se decide igual
+
+Había **tres** salidas y las tres eran defendibles. Lo que las separa no es cuál
+deja el sitio mejor:
+
+| salida | qué hace el clon | qué es |
+|---|---|---|
+| **replicar** ← **decidida** | emite las 6 rutas; el cuerpo sin control de paginación | **la única que NO CAMBIA EL SITIO** |
+| servir un paginador visible | emite las 6 y **añade** el control que el original no tiene | decisión de **producto** (navegación) |
+| no emitir las `/page/N/` | las URL dejan de responder | decisión de **producto** (SEO/enrutado) |
+
+> **Servir el paginador sería mejorar el original dentro de la migración**, que
+> es exactamente lo que `D2.5` rechazó: si las páginas 2 y 3 de `L3` son
+> inalcanzables navegando, lo son **hoy, en el original**, con este clon sin
+> existir. Arreglarlo de paso mezcla dos cambios y deja sin respuesta la
+> pregunta que importa —*¿el clon reproduce el original?*—.
+>
+> La pregunta de producto **no se pierde**: se abre con su encuadre propio en
+> `PENDIENTES-QA.md` §**F3-2-PRODUCTO-L3-NAVEGACION**, para decidirse **sobre el
+> sitio**, antes o después de la migración, pero no dentro.
+
+### El discriminador es EL MISMO CANONICAL de D2.4/D2.5, y da la respuesta sin caso nuevo
+
+`L3` no estrena criterio: el original **declara él mismo** que sus `/page/N/` son
+rutas, con el canonical, igual que las 55 vacías.
+
+| forma | canonical | veredicto | n |
+|---|---|---|---|
+| las 7 de `D2.4` | → la página 1 | *«no soy una ruta»* ⇒ 404 en el clon | 7/7 |
+| las 55 vacías de `D2.5` | → a sí misma | *«sí soy una ruta»* ⇒ se emite | 55/55 |
+| **las `/page/N/` de `L3`** | → **a sí misma** | *«sí soy una ruta»* ⇒ **se emite** | **6/6** |
+
+Derivado de las capturas de `corpus/fase-3/listados/scientific-category/**`: los
+6 documentos llevan canonical propia, **0** a otra URL; los `<title>` traen su
+«Página N de M» del servidor; y `grep` de `wp-pagenavi|kunak-pagination` da
+**0 en los 6**. La ausencia de control no es una anomalía de una página: es la
+plantilla de la forma.
+
+**Y las tres series de `L3` no tienen ni una vacía** (`lh-paginas-2026-08-12`:
+3+1+2 páginas, `vacias: 0` en las tres), así que aquí `D2.5` no aplica y las 6
+rutas son todas con contenido. Son dos preguntas distintas sobre la misma
+familia de URLs y se han contestado por separado.
+
+### Lo que D2.6 arrastra
+
+- **Construcción**: la ruta de `L3` deriva sus `/page/N/` como cualquier otra
+  (`D2.3`) y **el componente de listado no monta paginador** para esta forma.
+  No es un olvido que una revisión futura deba «arreglar»: está decidido aquí.
+- **Verificación**: el comparador de dos lados exige `paginador.presente:false`
+  en las 6 — un paginador servido por el clon es **defecto**, no mejora.
+- **`LH-SP9`** (entradas/página de `L3`) sigue abierta y se calcula contra el
+  servidor, nunca contra la ventana: en esta forma **no existe**.
+- **`P-LH-C5`** no cambia: los 7 de `D2.4` siguen dando 404.
+
 ## D3 · Lo que los listados le EXIGEN al grupo A — la decisión que condiciona
 
 **Ésta es la razón de que LH-2 vaya antes de construir A: si A nace sin estos
