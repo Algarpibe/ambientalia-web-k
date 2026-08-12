@@ -173,7 +173,9 @@
     "qa:lh-poblacion": "node --env-file=apps/cms/.env scripts/qa/lh-poblacion.mjs",
     "qa:lh-poblacion-neg": "node scripts/qa/lh-poblacion.neg.mjs",
     "qa:a-inventario": "node scripts/qa/a-inventario.mjs",
-    "qa:a-inventario-neg": "node scripts/qa/a-inventario.neg.mjs"
+    "qa:a-inventario-neg": "node scripts/qa/a-inventario.neg.mjs",
+    "cms:extractor-a": "node scripts/seed/extractor-a.mjs",
+    "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

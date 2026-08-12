@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
+    "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
+    "control": "95 comparaciones contra src/lib/arquetipo-a.ts",
+    "sabotaje": "cuerpo-ausente",
+    "noMide": [
+      "no toca el original",
+      "no siembra",
+      "el cuerpo lo transforma `cms:extractor`, no esta sonda"
+    ]
+  },
+  "recuento": {
+    "entradas-blog": 3,
+    "terminos-kunakpedia": 0,
+    "documentos-cientificos": 0
+  },
+  "control": {
+    "comparaciones": 95,
+    "discrepancias": 14,
+    "detalle": [
+      {
+        "slug": "contaminacion-por-metano",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "todas-nuestras-soluciones-en-el-iotswc",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "contador-particulas-suspension-movilidad-sostenible",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "running-for-clean-air",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "cloruro-de-hidrogeno-hcl",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "emisiones-atmosfericas",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "metano",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "desafio-airlab-de-microsensores-2023",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "soluciones-avanzadas-de-monitorizacion",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      }
+    ]
+  },
+  "catalogo": {
+    "entradas-blog": [
+      {
+        "slug": "estamos-listos-para-ayudarle",
+        "seo": {
+          "title": "Estamos listos para ayudarle - Kunak"
+        },
+        "titulo": "Estamos listos para ayudarle",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<p>Queridos amigos/as,</p>\n<p>Esperamos que estéis bien y que la situación actual os afecte lo menos posible.</p>\n<p>En Kunak Technologies, en nuestro afán de continuar brindando el mejor servicio, hemos decidido ir a distancia y atender todas las consultas de forma telemática con el objetivo de proteger la salud de nuestro equipo y nuestros clientes, proveedores y colaboradores. Estamos seguros que esto nos permitirá mantener el ritmo de trabajo y atenderles adecuadamente.</p>\n<p>La delicada situación actual hace que nos enfrentemos nuevos desafíos, pero estamos seguros de que juntos podremos superarlos.</p>\n<h2>Estamos preparados para ayudarte</h2>\n<ul>\n<li>Hemos destinado todos los recursos necesarios y aprovisionado el stock suficiente para poder seguir preparando y proporcionando los equipos requeridos por nuestros clientes y los proyectos que están en marcha.</li>\n<li>Todas las reuniones con soporte técnico o con los representantes de ventas se llevarán a cabo según lo planeado y de forma telemática.</li>\n<li>Estamos gestionando todos los envíos para aquellos clientes de Kunak que ya han realizado pedidos.</li>\n<li>Todo nuestro equipo continúa trabajando para minimizar los efectos que esto puede causar, y estará disponible para aquellos clientes que lo precisen. Si requiere soporte técnico, respuesta a consultas o necesita información sobre cualquiera de nuestros productos o servicios, estos serán gestionados electrónicamente.</li>\n</ul>\n<p>Nuestro equipo de <a target=\"_blank\" href=\"https://kunakes.jaimezubiaur.com/en/products/ambient-monitoring/air-quality-and-noise-software/\"><strong>Kunak AIR Cloud</strong></a> está listo para ayudar con cualquier consulta que pueda surgir mientras avanzan para implementar todos los proyectos vigentes.</p><p>\n    <div class=\"calls one-column\" style='background-image: url(https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg);'>\n        <div class=\"calls-content\">\n                        <div class=\"calls-content-inner\">\n                <p class=\"calls-title\">Innovación en calidad del aire a 1 clic</p> <!-- Mostrar el título del CTA -->\n                <div class=\"calls-text\"><p>¡Mantente informado sobre el aire que respiras!</p>\n<p>Suscríbete a nuestra newsletter para recibir las últimas novedades en tecnología de monitorización ambiental, estudios sobre calidad del aire y más.</p>\n</div>\n                \t                <div class=\"calls-buttons\">\n\t                    \t                        <span class=\"calls-button kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\" data-variante=\"boton\">\n\t                            ¡Me apunto!\t                        </span>\n\t                    \t                </div>\n\t                        </div>   \n            \n        \n        </div>\n    </div>\n\n    </p></p>\n<p>Puedes contactarnos, cuando lo necesites, a través del correo electrónico <a target=\"_blank\" href=\"/cdn-cgi/l/email-protection#20535550504f5254604b554e414b0e4553\"><strong><span class=\"__cf_email__\" data-cfemail=\"fc8f898c8c938e88bc9789929d97d2998f\">[email&#160;protected]</span></strong></a> o en nuestro teléfono <strong>+34 848 470 055</strong>.</p>\n<h2>#QuédateEnCasa</h2>\n<h2>#EsteVirusLoParamosUnidos</h2>\n<p>Atentamente,</p>\n<p><em>Javier Fernández</em></p>\n<p>CEO, Kunak Technologies</p>\n\n\t\t\t",
+        "fechaPublicacion": "18 marzo 2020",
+        "categorias": [
+          {
+            "slug": "noticias",
+            "nombre": "Noticias"
+          }
+        ],
+        "etiquetas": [],
+        "relacionados": false,
+        "fechaActualizacion": "20 enero 2023"
+      },
+      {
+        "slug": "nos-hemos-mudado",
+        "seo": {
+          "title": "Nos hemos mudado a unas nuevas y modernas oficinas - Kunak"
+        },
+        "titulo": "¡Nos hemos mudado!",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<p>El crecimiento que estamos viviendo nos ha hecho dar un gran salto, hacer las maletas y trasladarnos a unas nuevas instalaciones.</p>\n<p>Gracias a la confianza de nuestros clientes y al gran equipo humano que forma Kunak, hemos dejado atrás las oficinas que ocupábamos en CEIN y comenzamos una nueva etapa.</p>\n<p>Nuestras nuevas instalaciones nos permiten ampliar nuestra capacidad y nuestros servicios. Desde aquí, estamos seguros de que vamos a afrontar con mayores garantías el desarrollo futuro de la empresa.</p>\n<p>&nbsp;</p>\n<p><strong>A partir de ahora podéis encontrarnos en:</strong><br />\nParque Empresarial La Muga 9, Planta 4, Oficina 1<br />\n31160, Navarra &#8211; Spain<br />\n+34 848 470 055</p><p>\n    <div class=\"calls one-column\" style='background-image: url(https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg);'>\n        <div class=\"calls-content\">\n                        <div class=\"calls-content-inner\">\n                <p class=\"calls-title\">Innovación en calidad del aire a 1 clic</p> <!-- Mostrar el título del CTA -->\n                <div class=\"calls-text\"><p>¡Mantente informado sobre el aire que respiras!</p>\n<p>Suscríbete a nuestra newsletter para recibir las últimas novedades en tecnología de monitorización ambiental, estudios sobre calidad del aire y más.</p>\n</div>\n                \t                <div class=\"calls-buttons\">\n\t                    \t                        <span class=\"calls-button kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\" data-variante=\"boton\">\n\t                            ¡Me apunto!\t                        </span>\n\t                    \t                </div>\n\t                        </div>   \n            \n        \n        </div>\n    </div>\n\n    </p></p>\n<p>&nbsp;</p>\n\n\t\t\t",
+        "fechaPublicacion": "24 mayo 2019",
+        "categorias": [
+          {
+            "slug": "noticias",
+            "nombre": "Noticias"
+          }
+        ],
+        "etiquetas": [],
+        "relacionados": false,
+        "fechaActualizacion": "14 junio 2023"
+      },
+      {
+        "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+        "seo": {
+          "title": "Webinar: Detección temprana de episodios de contaminación por malos olores en EDAR - Kunak",
+          "description": "¿Tienes problemas de malos olores en tu EDAR? Descubre las soluciones más eficaces de modelización, monitorización y prevención.",
+          "ogImage": "/images/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg"
+        },
+        "titulo": "Webinar: Detección temprana de episodios de contaminación por malos olores en EDAR",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"registration-content__meta flex flex-col md:flex-row\">Los sistemas de saneamiento y especialmente las estaciones depuradoras de aguas residuales, pueden llegar a ser un foco de generación de malos olores, generando molestias a los vecinos más próximos a este tipo de instalaciones.</div>\n<div class=\"registration-content__description registration-block\">\n<div class=\"custom-body ql-editor display\">\n<p class=\"ql-align-justify\">Desde <strong>AGUASRESIDUALES.INFO</strong><strong> </strong>y como medio de referencia para el sector del tratamiento del agua, han organizado esta segunda jornada técnica on-line sobre la detección y eliminación de OLORES y H<sub>2</sub>S en las EDAR y redes de saneamiento (en formato webinar) donde han participado varias empresas especialistas en soluciones como la modelización de olores (<strong>HYDRENS</strong>), la monitorización de la <span class=\"glossary-tooltip\">calidad del aire<span class=\"tooltip-content\">La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen...<br><a target=\"_blank\" href=\"/calidad-del-aire\" class=\"glossary-link\">Leer más</a></span></span> (<strong>KUNAK</strong>) y tratamientos eficaces para la prevención del H<sub>2</sub>S y olores (<strong>Yara</strong>).</p>\n<p class=\"ql-align-justify\">El objetivo de la jornada ha sido conocer la problemática de los olores desde varios puntos y disponer de soluciones como la modelización, la monitorización y la prevención y eliminación, para poder atacar el problema desde la raíz y eliminarlo con éxito.</p>\n<p class=\"ql-align-justify\"><iframe src=\"//www.youtube.com/embed/aHlsyzC3_iI?si=No96iVtUSltiivkn&amp;t=1563\" width=\"800\" height=\"448\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<h3 class=\"ql-align-justify\"></h3>\n<h3 class=\"ql-align-justify\">Programa</h3>\n<h4>Presentación</h4>\n<ul>\n<li><strong>José Miguel del Arco</strong> &#8211; Director y Fundador de <strong>Aguas Residuales</strong></li>\n</ul>\n<h4>1.- Presentación de <a href=\"https://www.hydrens.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">HYDRENS</a>: Diagnóstico del impacto del olor producido en la EDAR a través de metodologías dinámicas de experimentación y modelado.</h4>\n<ul>\n<li><strong>José Vilarroig Herrera</strong>, Responsable del área técnica (CTO) de <strong>HYDRENS</strong></li>\n</ul>\n<h4>2.- Presentación de : Detección temprana de episodios de contaminación por malos olores en las EDAR.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Peio Ibáñez Ancizu</strong>, Técnico Comercial de Medio Ambiente de <strong>Kunak</strong></li>\n</ul>\n<h4>3.- Presentación de <a href=\"https://www.yara.es/productos-quimicos-nitrogenados-y-soluciones-medioambientales/mal-olor-y-yprevencion-de-formacion-de-h2s/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Yara</a>: Detección, y eliminación de H<sub>2</sub>S en redes de saneamiento, EBAR / EDAR con las soluciones Yara Nutriox.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Emilio Bas</strong>, Sales Manager de <strong>Yara</strong></li>\n</ul>\n</div>\n</div>\n\n\t\t\t",
+        "fechaPublicacion": "2 diciembre 2021",
+        "categorias": [
+          {
+            "slug": "articulos",
+            "nombre": "Artículos"
+          }
+        ],
+        "etiquetas": [],
+        "relacionados": true,
+        "fechaActualizacion": "17 enero 2024",
+        "imagenDestacada": {
+          "src": "/images/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg",
+          "srcset": "/images/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg 800w, /images/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR-480x280.jpeg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw",
+          "width": "800",
+          "height": "466"
+        }
+      }
+    ],
+    "terminos-kunakpedia": [],
+    "documentos-cientificos": []
+  }
+}
