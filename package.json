@@ -166,7 +166,8 @@
     "qa:kb-cmp-vivo": "node scripts/qa/kb-cmp.mjs --vivo",
     "qa:lh-spec": "node scripts/qa/lh-spec.mjs",
     "qa:lh-barra": "node scripts/qa/lh-barra.mjs",
-    "qa:lh-h1": "node scripts/qa/lh-h1.mjs"
+    "qa:lh-h1": "node scripts/qa/lh-h1.mjs",
+    "qa:lh-contenedores": "node scripts/qa/lh-contenedores.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿contra qué contenedor resuelve sus % cada una de las 9 formas, y los cubre la tabla de mbPorDefecto?",
+    "fuente": "medidas/lh-spec-{1440,390}.json (congeladas) + packages/cms-config/src/defaults.ts (fuente)",
+    "sabotaje": "tabla-sin-kb",
+    "anchosCubiertosPorLaTabla": {
+      "1238.39": "CASCARON"
+    },
+    "noMide": [
+      "el original: no abre navegador — deriva de dos congeladas",
+      "el valor de `mb` de cada módulo: eso es `lh-spec`/`kb-spec`; aquí sólo se pregunta si el CONTENEDOR está en la tabla",
+      "las formas que lh-spec no trae: su alcance son 9 formas × 1 instancia canónica + 4 segundas"
+    ]
+  },
+  "formas": {
+    "L1-blog": {
+      "instancias": 1,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 2,
+        "3_4@911.75": 1,
+        "1_4@258.5": 1
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    },
+    "L1-etiqueta": {
+      "instancias": 2,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 4,
+        "3_4@911.75": 2,
+        "1_4@258.5": 2
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    },
+    "L1-resources-hijo": {
+      "instancias": 2,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 8
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    },
+    "L1-resources-padre": {
+      "instancias": 2,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 8
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    },
+    "L2-glosario": {
+      "instancias": 1,
+      "anchosDeFila1440": [],
+      "anchosDeFila390": [],
+      "columnas": {},
+      "cubiertaPorMbPorDefecto": false,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": false
+    },
+    "L2-faqs": {
+      "instancias": 1,
+      "anchosDeFila1440": [],
+      "anchosDeFila390": [],
+      "columnas": {},
+      "cubiertaPorMbPorDefecto": false,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": false
+    },
+    "L3-sci": {
+      "instancias": 2,
+      "anchosDeFila1440": [
+        1152
+      ],
+      "anchosDeFila390": [
+        312
+      ],
+      "columnas": {
+        "4_4@1152": 2
+      },
+      "cubiertaPorMbPorDefecto": false,
+      "anchosDeFilaSinCubrir": [
+        1152
+      ],
+      "tieneFilasDivi": true
+    },
+    "L4-listado-embebido": {
+      "instancias": 1,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 2,
+        "1_3@367.38": 2,
+        "2_3@802.88": 2,
+        "1_4@281.72": 4
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    },
+    "L5-casos": {
+      "instancias": 1,
+      "anchosDeFila1440": [
+        1238.39
+      ],
+      "anchosDeFila390": [
+        335.39
+      ],
+      "columnas": {
+        "4_4@1238.39": 1
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "tieneFilasDivi": true
+    }
+  },
+  "veredicto": {
+    "formasCubiertas": 6,
+    "formasSinFilasDivi": [
+      "L2-glosario",
+      "L2-faqs"
+    ],
+    "formasHuerfanas": [
+      "L3-sci → fila 1152"
+    ],
+    "colisionesDeRol": [],
+    "b_valeParaLasNueve": false
+  }
+}

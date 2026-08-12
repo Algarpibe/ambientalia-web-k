@@ -125,6 +125,22 @@ export const ANCHO_FILA_KB = 911.75;
  * ⚠ Un ancho de fila no medido **TIRA**: §regla 6 — una ausencia se rechaza, no
  * se sustituye por un valor benigno. Un `?? 34.0469` aquí sería exactamente el
  * arreglo falso que esta tabla existe para impedir.
+ *
+ * ⛔⛔ **PERO HAY UN AGUJERO QUE EL `throw` NO TAPA, y es el contrario: un
+ * argumento que sí está en la tabla y significa OTRA COSA (2026-08-11, F3-2
+ * PASO 4).** `911.75` es el ancho de la **FILA** en `articulos-kb` (39/39) y el
+ * de una **COLUMNA `3_4`** en `L1-blog` y `L1-etiqueta`, cuya fila mide
+ * **1238.39**. Esta función recibe **un número suelto**, así que:
+ *
+ * > **Pasarle el `911.75` de `L1` no da error: devuelve el default de KB.** Para
+ * > una columna estrecha daría `25.0625` donde a `L1` le tocan `34.0469`.
+ *
+ * El `throw` protege del ancho **desconocido** y es ciego al **conocido con otro
+ * rol**. Antes de llamarla desde un arquetipo nuevo hay que comprobar que el
+ * número que se le pasa es **la fila de ESA forma**, no un ancho que coincide.
+ * Vigilado por `npm run qa:lh-contenedores`; ficha:
+ * `PENDIENTES-QA.md` §LH-CONTENEDOR-ROL. **Y `L3-sci` estrena un tercero
+ * (1152) que ninguna de las dos ramas cubre** (§LH-CONTENEDOR-L3).
  */
 export function mbPorDefecto(anchoFila: number, tipoColumna: string): { px1440: number; px390: number } {
   const esCuatroCuartos = tipoColumna === "4_4";

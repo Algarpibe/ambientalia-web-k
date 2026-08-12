@@ -1,5 +1,70 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🟠 LH-CONTENEDOR · el `%` de `L1` NO se resuelve contra el número que parece, y la tabla de `mbPorDefecto` cubre **6 de las 9 formas** (2026-08-11)
+
+**PASO 4 de la 54.ª tanda.** Las dos direcciones se escribieron **antes de
+mirar** y —como la vez anterior— **la respuesta salió en la contraria**:
+
+| dirección | veredicto |
+|---|---|
+| **(a) ¿alguna congelada resolvió un % contra el contenedor equivocado?** | **NO. Nada que corregir hacia atrás.** Derivado de `kb-spec-1440.json`: **las 39 filas de `articulos-kb` miden 911.75**, sin excepción, así que el `mbPorDefecto(ANCHO_FILA_KB, …)` cableado en `scripts/seed/extractor-kb.mjs:176` **coincide con lo medido** |
+| **(b) ¿la regla nueva vale para las 9 formas?** | **NO: vale para 6.** Y de camino aparece algo que la pregunta no contemplaba — una **colisión de rol** |
+
+Sonda: **`qa:lh-contenedores`** (deriva de `lh-spec-{1440,390}` congeladas y del
+**fuente** de `defaults.ts`; no abre navegador), congelada en
+`medidas/lh-contenedores.json`, negativo **3/3**.
+
+| forma | fila @1440 | ¿la cubre `mbPorDefecto`? |
+|---|---|---|
+| L1-blog · L1-etiqueta · L1-resources (padre e hijo) · L4 · L5 | **1238.39** | ✅ `ANCHO_FILA_CASCARON` |
+| **L3-sci** | **1152** | ❌ **ancho sin medir — la función TIRA** |
+| **L2-glosario · L2-faqs** | **sin filas Divi** | ⊘ **el mecanismo no aplica** |
+
+### §LH-CONTENEDOR-ROL · **`911.75` es FILA en un arquetipo y COLUMNA en otro, y la función no puede distinguirlo**
+
+Es el hallazgo caro, y no lo enseña ninguna medida a solas: lo enseña el cruce.
+
+| dónde | qué es `911.75` | la fila real |
+|---|---|---|
+| `articulos-kb` | **el ancho de la FILA** (39/39) | 911.75 |
+| **L1-blog · L1-etiqueta** | **el ancho de una COLUMNA `3_4`** | **1238.39** |
+
+`mbPorDefecto(anchoFila, tipoColumna)` recibe **un número suelto**, y la
+constante que lo nombra se llama `ANCHO_FILA_KB`. Al construir `L1`, la columna
+de contenido mide **exactamente 911.75** — el mismo número — y es el que se tiene
+a mano.
+
+> ⛔ **Pasárselo NO da error: devuelve el default del OTRO arquetipo.** Para una
+> columna estrecha daría **25.0625** donde a `L1` le tocan **34.0469**, que es
+> justo el error que el ⚠⚠ del §Test A describe, cometido con la función escrita
+> para evitarlo.
+
+**Y es una cara NUEVA de §DOS VARIABLES CONFUNDIDAS.** Allí dos variables tomaban
+el mismo valor dentro de un dominio y la regla nombraba una al azar. Aquí es al
+revés: **un mismo valor tiene dos ROLES en dominios distintos**, y la firma de la
+función —un número— no lleva cuál. La regla del §Test A —*«un default de ritmo se
+escribe CON SU CONTENEDOR o no se escribe»*— hay que aplicarla también **al
+argumento**, no sólo a la prosa.
+
+**Qué lo cerraría** (no se decide aquí: es modelado): que `mbPorDefecto` reciba
+**el rol además del número** —arquetipo, o el par (fila, columna)— para que el
+911.75 de `L1` no pueda hacerse pasar por el de KB. Mientras tanto, la sonda lo
+vigila y **sale roja a propósito**.
+
+### §LH-CONTENEDOR-L3 · `L3-sci` estrena un tercer ancho de fila: **1152**
+
+No es `1238.39` ni `911.75`. `mbPorDefecto(1152, …)` **tira**, que es el
+comportamiento correcto (§sondas 6: una ausencia se rechaza, no se sustituye) —
+pero significa que **`L3` no tiene default de ritmo derivable** y que construirla
+exige medirlo primero. Anotado, no cableado.
+
+> **El disparador 3 del ESCALÓN NO salta**, y conviene decirlo explícito: pedía
+> *«una medida congelada resuelta contra el contenedor equivocado»*, y **no la
+> hay** — (a) sale limpia. Lo que hay es **cobertura incompleta y un riesgo de
+> construcción**, que se fichan y no paran nada.
+
+---
+
 ## ⛔⛔ ESCALÓN F3-2 (3.º) · **`D4-H1` sale de CERRADA: su evidencia no podía sostener lo que afirma** (2026-08-11)
 
 **Es un escalón de los que este proyecto se toma en serio porque RETIRA una
