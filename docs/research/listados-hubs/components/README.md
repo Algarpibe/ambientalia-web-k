@@ -49,17 +49,32 @@ MENOS tarjetas**, la que rompe una plantilla calibrada con la abundante—.
 
 | forma | spec | estado |
 |---|---|---|
-| `L1` (blog · etiqueta · resources) | [`listado-b.spec.md`](listado-b.spec.md) | ✅ escrita — **con su escalón declarado dentro** |
-| `L2` (glosario · faqs) | — | ⛔ **pendiente**: medida y congelada, sin redactar |
-| `L3` (`scientific-category`) | — | ⛔ pendiente |
-| `L4` (hub con listado embebido) | — | ⛔ pendiente |
-| `L5` (`casos-de-exito`) | — | ⛔ pendiente |
+| `L1` (blog · etiqueta · resources) | [`listado-b.spec.md`](listado-b.spec.md) | ✅ escrita — su escalón **cerrado**, ver abajo |
+| `L2` (glosario · faqs) | [`listado-tema-cpt.spec.md`](listado-tema-cpt.spec.md) | ✅ escrita **2026-08-11** |
+| `L3` (`scientific-category`) | [`listado-tema-tax.spec.md`](listado-tema-tax.spec.md) | ✅ escrita **2026-08-11** |
+| `L4` (hub con listado embebido) | [`hub-builder.spec.md`](hub-builder.spec.md) | ✅ escrita **2026-08-11** |
+| `L5` (`casos-de-exito`) | [`indice-casos.spec.md`](indice-casos.spec.md) | ✅ escrita **2026-08-11** |
 
-**Las cuatro pendientes tienen su medida congelada en
-`medidas/lh-spec-{1440,390}.json`**, con la misma profundidad que la escrita:
-lo que falta es la redacción, no la medición. Se dice así y no «faltan las
-specs» porque son dos estados distintos y sólo uno cuesta volver a pegarle al
-original.
+**Las cuatro se redactaron DESDE LO CONGELADO**, sin volver al original: la
+medición ya estaba en `medidas/lh-spec-{1440,390}.json` con la misma profundidad
+que la primera. Lo que faltaba era la prosa, no los píxeles.
+
+### ⚠ Lo que la redacción destapó, y no estaba en ninguna medida anterior
+
+Cuatro cosas que sólo se ven **cruzando las cinco formas**, y las cuatro quedan
+**medidas y sin diagnosticar** en su spec:
+
+| # | hallazgo | dónde |
+|---|---|---|
+| 1 | **`L5` sirve CUATRO secciones de pie**; las otras cuatro formas sirven **tres** | `indice-casos` §0 · `SP-K5` |
+| 2 | **La cabecera de `L5` mide 458.09 @1440** contra los **225** de `L2`/`L3` — y **473.08 @390** contra 136.58 | `indice-casos` §1 |
+| 3 | **Tres pieles de `h1`**, no una: `L1` **50/60 · 800** · `L3`+`L5` **44/44 · 300** · `L4` **44.1/55.125 · 300**. Y `L3` **no baja de 44px a 390** mientras `L1` baja a 35 | `listado-tema-tax` §1 · `hub-builder` §1 |
+| 4 | **`L5` es la única forma cuya base SUBE al estrechar** (593.28 → 608.27); en las otras cuatro baja | `indice-casos` §1 |
+
+> **Los cuatro son del CASCARÓN**, que es justo donde el arquetipo A midió
+> varianza cero dentro de cada forma. Aquí hay varianza **entre** formas — que es
+> lo que distingue plantillas, no campos— pero **no está explicada**, y una
+> construcción que dé el cascarón por común los mete todos.
 
 ## ⛔ Y lo que esta fase destapó, antes de construir nada
 
@@ -71,6 +86,9 @@ Dos hallazgos, los dos en `PENDIENTES-QA.md`:
    **acota `D1`** —la variante incluye la retícula y su barra, no sólo la
    tarjeta— y **confirma `D3`**: el widget «Categorías» no consume la taxonomía.
    Acta: `../DECISIONES.md` §*D1 queda ACOTADA*.
-2. **`/es/glosario/` y `/es/preguntas-frecuentes/` no tienen `<h1>`** — y el
-   protocolo de este proyecto lee el cuerpo restando la `y` del `h1`. `L2` **no
-   tiene ancla**, así que su base hay que decidirla antes de comparar nada.
+2. ✅ **`/es/glosario/` y `/es/preguntas-frecuentes/` no tienen `<h1>` — CERRADO
+   2026-08-11 con `D4b` y `D4b.1`.** No es una anomalía: es **plantilla de la
+   familia** (12 documentos sin `h1`, 0 con `h1` vacío, 0 familias mixtas). Su
+   base es **la primera tarjeta**, y **existe donde hace falta** (`L2` 12/12).
+   ⚠ **Media verificación**: falta que sea *el mismo elemento en los dos lados*,
+   que no se puede comprobar hasta que el clon emita estas rutas — **`P-LH-C8`**.
