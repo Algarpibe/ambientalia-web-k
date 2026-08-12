@@ -185,7 +185,9 @@
     "qa:vacio-legal": "node --env-file=apps/cms/.env scripts/qa/vacio-legal.mjs",
     "qa:vacio-legal-neg": "node scripts/qa/vacio-legal.neg.mjs",
     "cms:extractor-a": "node scripts/seed/extractor-a.mjs",
-    "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs"
+    "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs",
+    "cms:extractor-c": "node scripts/seed/extractor-c.mjs",
+    "cms:extractor-c-neg": "node scripts/seed/extractor-c.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

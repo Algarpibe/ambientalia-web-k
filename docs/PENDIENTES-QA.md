@@ -354,6 +354,90 @@ SIN DERIVAR**. Declararlo en la primitiva sería generalizar a un dominio donde 
 caso no se ha medido, que es lo que §F2-5-ESCALÓN-ETIQUETAS dejó escrito que no
 se hace. Tras el arreglo: `qa:cms-decl` **64/64 en las dos direcciones**.
 
+## ⛔⛔ DATOS-C-PIPELINE · el PASO 6 se para: el cuerpo transformado y la transcripción a mano NO coinciden, y eso no es de casos — es de GRUPO A, ya sembrado (2026-08-12)
+
+> **`cms:extractor-c` extrae los 76** —57 casos y 19 faqs— **con 0 lectores
+> muertos y 0 regiones ausentes**, y su negativo sale **5/5**. Lo que impide
+> sembrar no es el extractor: son **12 discrepancias en los CUERPOS RICOS**, y al
+> mirarlas de cerca no son suyas.
+
+### Por qué esto no había salido nunca, y es lo que lo hace grave
+
+> **El CONTROL de `extractor-a` compara 18 campos y NINGUNO es `cuerpo`.**
+> Derivado, no recordado: `grep -c 'cmp(e.slug, "cuerpo"' scripts/seed/extractor-a.mjs` → **0**.
+
+O sea que **el HTML que T1–T8 produce nunca se había comparado contra nada**. El
+grupo A se sembró con su control en verde, y ese verde decía *«los metadatos se
+reproducen»* — no *«el cuerpo se reproduce»*. `extractor-c` es el primero que lo
+compara, porque `src/lib/casos.ts` trae los cuerpos transcritos **verbatim** y
+`arquetipo-a.ts` también los tiene pero nadie los enfrentó.
+
+**Es §el séptimo contenedor otra vez**: la unidad en la que se declaró la
+cobertura del control (*«95 comparaciones»*) absorbía lo que no se comparaba.
+
+### Las 12, clasificadas
+
+| clase | n | qué pasa |
+|---|---|---|
+| `target="_blank"` de más | **3** | T7 localiza el `href` y **no quita el `target`**. La regla del repo dice que sólo va si el destino es externo |
+| `href` distinto | **1** | T7 localiza `/cartuchos-inteligentes/…`, que el clon **no emite**; la transcripción lo dejó externo a propósito |
+| `<br />` vs `<br>` · CRLF | **2** | la transcripción normalizó el cierre XHTML y los finales de línea; el pipeline no |
+| combinaciones de las anteriores | **6** | — |
+
+### El alcance, que es lo que obliga a parar: **está en los 209 cuerpos YA SEMBRADOS**
+
+| medido sobre `corpus/transformado/` (209 cuerpos) | n |
+|---|---|
+| enlaces **localizados que conservan `target="_blank"`** | **1788** |
+| rutas locales distintas en los cuerpos | 153 |
+| ⛔ de ésas, **NO emitidas por el build** | **53** |
+
+Y el reparto de las 53, porque **no son la misma cosa** y un total sin reparto es
+el error que este repo ya tiene fichado:
+
+| origen | n | ¿se resuelve? |
+|---|---|---|
+| `casos` | **31** | **sí**, en cuanto se siembren los 57 (este mismo PASO 6) |
+| `productos` | **20** | **no**: `/cartuchos-inteligentes/*` y `/sensor-de-calidad-del-aire/*` no los emite el clon. **Enlaces rotos VIVOS hoy** |
+| no están en el corpus | 2 | `/cdn-cgi/l/email-protection` (artefacto de Cloudflare) y `/?resources=guides` |
+
+### Por qué la causa es T7 y no el extractor
+
+`T7` decide localizar con `ctx.rutas`, que `extractor.mjs` llena con **el
+manifiesto del build + todas las URL del corpus**. Una URL capturada no es una
+ruta publicada, así que T7 localiza destinos que el clon no sirve. Y al
+localizar **no toca el `target`**, aunque el destino pase de externo a interno.
+
+Las dos mitades contradicen reglas escritas de `CLAUDE.md` §Regla de rutas
+locales: *«si el destino ya está clonado, el href va a la ruta local; **si no, se
+deja apuntando al original**»* y *«`target="_blank"` **solo si el destino es
+externo**»*.
+
+### Qué NO se ha hecho, y por qué
+
+**No se ha tocado T7 ni se ha resembrado el grupo A.** Cambiar `ctx.rutas` mueve
+el HTML de **209 cuerpos ya en la DB**, y eso no es un arreglo de una tanda de
+datos: es una decisión de pipeline con su migración y su comparación de píxel.
+Se ficha con su número y se arbitra en la siguiente.
+
+**Y no se siembran casos ni faqs**, porque el contrato es *«o entra entera con
+sus guardas o no entra»* y su guarda —el control— está roja por esto.
+
+### Lo que SÍ queda hecho y no hay que rehacer
+
+- **`cms:extractor-c`** con negativo **5/5**: extrae los 57 + 19, aplica T1–T8
+  **por región** (5 en un caso, 1 en una faq), pasa el saneador con el mismo
+  `validaHtmlCorpus` del alta, y su control compara **los cuerpos ricos**, que
+  es justamente lo que nadie hacía;
+- la media de casos y faqs está **capturada y colocada**: `canal A` a **0
+  pendientes** en las dos;
+- el reparto de arriba, congelado en `medidas/c-extraido.json`.
+
+> ⚠ **Y una limitación conocida del lector, con su número:** en **1 de 57**
+> (`monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario`) la región
+> `detalles.parametros` sobre-captura hasta un `<article>` y el saneador la
+> rechaza. Está contada y nombrada, no silenciada.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de

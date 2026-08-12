@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "que": "el catálogo de CASOS y FAQS extraído del corpus congelado, con T1–T8 por región",
+    "fuente": "corpus/{casos,faqs} (metadatos y regiones) + TRANSFORMACIONES (las mismas 10 del grupo A)",
+    "control": "25 comparaciones sobre 6 documentos transcritos a mano",
+    "sabotaje": "region-ausente",
+    "alcance": {
+      "controlCasos": "4 de 2",
+      "controlFaqs": "2 de 19",
+      "advertencia": "denominador PEQUEÑO: 4 y 2. Lo que compra un control es cuántas FORMAS ejercita — los 4 casos son adversarios por diseño (con/sin galería, sin sector, sin soluciones) — no qué fracción cubre.",
+      "htmlComparado": "normalizando espacio en blanco: la transcripción está indentada a mano y el corpus no"
+    },
+    "noMide": [
+      "no toca el original",
+      "no siembra",
+      "no decide modelo"
+    ]
+  },
+  "recuento": {
+    "casos": 2,
+    "faqs": 19
+  },
+  "transformaciones": {
+    "t8": 0,
+    "t1": 0,
+    "t2": 0,
+    "t3": 0,
+    "t3b": 0,
+    "t4b": 0,
+    "t4": 0,
+    "t5": 0,
+    "t6": 0,
+    "t7": 1
+  },
+  "violaciones": {
+    "t8": [],
+    "t1": [],
+    "t2": [],
+    "t3": [],
+    "t3b": [],
+    "t4b": [],
+    "t4": [],
+    "t5": [],
+    "t6": [],
+    "t7": []
+  },
+  "saneador": [],
+  "control": {
+    "comparaciones": 25,
+    "documentos": 6,
+    "poblacion": 21,
+    "discrepancias": 6,
+    "detalle": [
+      {
+        "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "red-calidad-de-aire-para-world-athletics",
+        "campo": "necesidad",
+        "leido": "<p><a href=\"https://worldathletics.org/\" target=\"_blank\" rel=\"noopener\">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>\n<p>World Athletics, en colaboración con el Programa de las Naciones Unidas para el Medio Ambiente, tiene como objetivo abordar el problema de la contaminación del aire que contribuye a 7 millones de muertes al año en todo el mundo. Al crear una red de monitoreo de la calidad del aire en 1.000 pistas de atletismo en todo el mundo, brinda una oportunidad de primera para proporcionar evidencias que mejoren la salud de los ciudadanos y futuros atletas.</p>\n<p><a href=\"https://worldathletics.org/athletics-better-world/air-quality\" target=\"_blank\" rel=\"noopener\">https://worldathletics.org/athletics-better-world/air-quality</a></p>\n<p><iframe src=\"//player.vimeo.com/video/722223811?title=0&amp;byline=0&amp;portrait=0&amp;color=8dc7dc\" width=\"425\" height=\"auto\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<div class=\"texto-destacado\">El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.",
+        "esperado": "<p><a href=\"https://worldathletics.org/\" target=\"_blank\" rel=\"noopener\">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>\n    <p>World Athletics, en colaboración con el Programa de las Naciones Unidas para el Medio Ambiente, tiene como objetivo abordar el problema de la contaminación del aire que contribuye a 7 millones de muertes al año en todo el mundo. Al crear una red de monitoreo de la calidad del aire en 1.000 pistas de atletismo en todo el mundo, brinda una oportunidad de primera para proporcionar evidencias que mejoren la salud de los ciudadanos y futuros atletas.</p>\n    <p><a href=\"https://worldathletics.org/athletics-better-world/air-quality\" target=\"_blank\" rel=\"noopener\">https://worldathletics.org/athletics-better-world/air-quality</a></p>\n    <p><iframe src=\"//player.vimeo.com/video/722223811?title=0&amp;byline=0&amp;portrait=0&amp;color=8dc7dc\" width=\"425\" height=\"auto\" allowfullscreen=\"allowfullscreen\"></iframe></p>"
+      },
+      {
+        "slug": "red-calidad-de-aire-para-world-athletics",
+        "campo": "solucion",
+        "leido": "<p style=\"text-align: justify;\">Suministro e instalación a demanda de estaciones Kunak <a href=\"/monitor-calidad-aire\" target=\"_blank\">AIR Pro</a> para la monitorización de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\">Acciones realizadas:</p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Desarrollo de aplicación móvil.</li>\n<li>Informe mensual de los datos obtenidos.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"//www.youtube.com/embed/0AmzdyB5Jl4\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></p>",
+        "esperado": "<p style=\"text-align: justify;\">Suministro e instalación a demanda de estaciones Kunak <a href=\"/monitor-calidad-aire\">AIR Pro</a> para la monitorización de gases contaminantes y partículas.</p>\n    <p style=\"text-align: justify;\">Acciones realizadas:</p>\n    <ul style=\"text-align: justify;\">\n    <li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n    <li>Desarrollo de aplicación móvil.</li>\n    <li>Informe mensual de los datos obtenidos.</li>\n    </ul>\n    <p>&nbsp;</p>\n    <p style=\"text-align: left;\"><iframe src=\"//www.youtube.com/embed/0AmzdyB5Jl4\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></p>"
+      },
+      {
+        "slug": "red-calidad-de-aire-para-world-athletics",
+        "campo": "resultados",
+        "leido": "<p style=\"text-align: justify;\">Desarrollo de una solución de monitorización ambiental calibrada con las siguientes funcionalidades:</p>\n<ul>\n<li style=\"text-align: justify;\">Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n<li style=\"text-align: justify;\">Detección de episodios de aumento de la contaminación.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de los equipos.</li>\n<li style=\"text-align: justify;\">Desarrollo de protocolos estadísticos avanzados para la obtención de datos de alta calidad y fiabilidad que aportan altas correlaciones con estaciones oficiales y equipos de referencia.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"https://kunakcloud.com/widgets/wa/widget.html\" width=\"800\" height=\"400\"></iframe></p>",
+        "esperado": "<p style=\"text-align: justify;\">Desarrollo de una solución de monitorización ambiental calibrada con las siguientes funcionalidades:</p>\n    <ul>\n    <li style=\"text-align: justify;\">Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n    <li style=\"text-align: justify;\">Detección de episodios de aumento de la contaminación.</li>\n    <li style=\"text-align: justify;\">Gestión y calibración remota de los equipos.</li>\n    <li style=\"text-align: justify;\">Desarrollo de protocolos estadísticos avanzados para la obtención de datos de alta calidad y fiabilidad que aportan altas&nbsp;correlaciones con estaciones oficiales y equipos de referencia.</li>\n    </ul>\n    <p>&nbsp;</p>\n    <p style=\"text-align: left;\"><iframe src=\"https://kunakcloud.com/widgets/wa/widget.html\" width=\"800\" height=\"400\"></iframe></p>"
+      },
+      {
+        "slug": "distrito-baja-emision-rio-de-janeiro",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      },
+      {
+        "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+        "campo": "—",
+        "leido": null,
+        "esperado": "existe"
+      }
+    ]
+  },
+  "catalogo": {
+    "casos": [
+      {
+        "slug": "analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+        "seo": {
+          "title": "Análisis de la calidad del aire mediante estaciones móviles en Bélgica - Kunak",
+          "ogImage": "/images/uploads/2021/03/imec-2.jpg"
+        },
+        "titulo": "Análisis de la calidad del aire mediante estaciones móviles en Bélgica",
+        "imagenCabecera": "/images/uploads/2021/03/imec-2.jpg",
+        "cliente": "IMEC - Centro Interuniversitario de Microelectrónica",
+        "necesidad": "<p style=\"text-align: justify;\">El Centro Interuniversitario de Microelectrónica (<a href=\"https://www.imec-int.com/en\">IMEC</a>) nos trasladó su interés en realizar un estudio sobre la calidad del aire mediante estaciones de monitorización móviles basadas en sensores con el objetivo de analizar las concentraciones de contaminantes, tanto en el espacio como en el tiempo, y de esta forma desarrollar modelos basados en estos datos móviles de calidad del aire.</p>\n<p style=\"text-align: justify;\">Las redes oficiales de control de la calidad del aire son científicamente sólidas y precisas, pero cuentan con una resolución espacial muy limitada ya que las concentraciones de contaminantes pueden variar mucho en el espacio y en el tiempo.</p>\n<p style=\"text-align: justify;\">Es por eso que IMEC quería analizar el potencial de las redes de sensores de calidad del aire complementarias, las cuales permiten un muestreo a nivel local en diferentes ubicaciones y a lo largo del tiempo.</p>\n<div class=\"texto-destacado\">«Las soluciones de Kunak aportan importantes pruebas sobre la fiabilidad de los datos de los sensores de calidad del aire»",
+        "solucion": "<p style=\"text-align: justify;\">Suministro de 20 equipos Kunak AIR Mobile con GPS para la monitorización de parámetros de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\"><strong>Acciones realizadas</strong></p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Informe periódicos de los datos obtenidos.</li>\n<li>Plataforma Kunak Cloud para gestión operativa de la rede de sensores.</li>\n</ul>",
+        "resultados": "<p style=\"text-align: justify;\">Despliegue de una red de monitorización móvil que permiten un muestreo en local y así complementar las redes de estaciones oficiales que alcanzan una resolución de control espacial limitada.</p>\n<ul>\n<li style=\"text-align: justify;\">Validación de este tipo de tecnología basada en sensores para el análisis de la calidad del aire.</li>\n<li style=\"text-align: justify;\">Desarrollo de modelos basados en datos tanto en el espacio como en el tiempo a través de estos sensores.</li>\n<li style=\"text-align: justify;\">Recogida mediciones representativas pormenorizadas.</li>\n<li style=\"text-align: justify;\">Análisis la incidencia del tráfico y de industrias cercanas en la calidad del aire.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de la red de sensores.</li>\n<li style=\"text-align: justify;\">Evaluación de dependencias, trazado series temporales y rosas de viento, investigación de correlaciones y precisiones a través de Kunak Cloud.</li>\n</ul>",
+        "detalles": {
+          "usuario": "IMEC - Centro Interuniversitario de Microelectrónica",
+          "ubicacion": "Amberes, Bélgica",
+          "anyo": "2020",
+          "parametros": "<ul>\n<li>NO<sub>2</sub> y O<sub>3</sub></li>\n<li>PM<sub>1</sub>, PM<sub>2.5</sub> y PM<sub>10</sub></li>\n</ul>"
+        },
+        "sectores": [
+          {
+            "slug": "investigacion-consultoria",
+            "nombre": "Investigación y consultoría"
+          }
+        ],
+        "destacado": "«Las soluciones de Kunak aportan importantes pruebas sobre la fiabilidad de los datos de los sensores de calidad del aire»",
+        "galeria": [
+          {
+            "src": "/images/uploads/2021/03/imec-3-600x600.jpg",
+            "width": 600,
+            "height": 600
+          },
+          {
+            "src": "/images/uploads/2021/03/imec-2-600x600.jpg",
+            "width": 600,
+            "height": 600
+          },
+          {
+            "src": "/images/uploads/2021/03/imec-1-600x600.jpg",
+            "width": 600,
+            "height": 600
+          }
+        ],
+        "ubicacionMapa": {
+          "lat": 51.2194496,
+          "lng": 4.4024615
+        },
+        "soluciones": [
+          "monitor-calidad-aire",
+          "software-de-medicion-calidad-del-aire",
+          "dioxido-de-nitrogeno",
+          "ozono",
+          "particulas-en-suspension"
+        ]
+      },
+      {
+        "slug": "red-calidad-de-aire-para-world-athletics",
+        "seo": {
+          "title": "Red global de calidad de aire en pistas de atletismo de World Athletics - Kunak",
+          "description": "Caso de éxito sobre la instalación de redes de calidad del aire en pistas de atletismo para World Athletics (Asociación Internacional de Federaciones de Atletismo).",
+          "ogImage": "/images/uploads/2019/05/sports.jpg"
+        },
+        "titulo": "Red global de calidad de aire en pistas de atletismo de World Athletics",
+        "imagenCabecera": "/images/uploads/2019/05/sports.jpg",
+        "cliente": "World Athletics",
+        "necesidad": "<p><a href=\"https://worldathletics.org/\" target=\"_blank\" rel=\"noopener\">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>\n<p>World Athletics, en colaboración con el Programa de las Naciones Unidas para el Medio Ambiente, tiene como objetivo abordar el problema de la contaminación del aire que contribuye a 7 millones de muertes al año en todo el mundo. Al crear una red de monitoreo de la calidad del aire en 1.000 pistas de atletismo en todo el mundo, brinda una oportunidad de primera para proporcionar evidencias que mejoren la salud de los ciudadanos y futuros atletas.</p>\n<p><a href=\"https://worldathletics.org/athletics-better-world/air-quality\" target=\"_blank\" rel=\"noopener\">https://worldathletics.org/athletics-better-world/air-quality</a></p>\n<p><iframe src=\"//player.vimeo.com/video/722223811?title=0&amp;byline=0&amp;portrait=0&amp;color=8dc7dc\" width=\"425\" height=\"auto\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<div class=\"texto-destacado\">El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.",
+        "solucion": "<p style=\"text-align: justify;\">Suministro e instalación a demanda de estaciones Kunak <a href=\"/monitor-calidad-aire\" target=\"_blank\">AIR Pro</a> para la monitorización de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\">Acciones realizadas:</p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Desarrollo de aplicación móvil.</li>\n<li>Informe mensual de los datos obtenidos.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"//www.youtube.com/embed/0AmzdyB5Jl4\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></p>",
+        "resultados": "<p style=\"text-align: justify;\">Desarrollo de una solución de monitorización ambiental calibrada con las siguientes funcionalidades:</p>\n<ul>\n<li style=\"text-align: justify;\">Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n<li style=\"text-align: justify;\">Detección de episodios de aumento de la contaminación.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de los equipos.</li>\n<li style=\"text-align: justify;\">Desarrollo de protocolos estadísticos avanzados para la obtención de datos de alta calidad y fiabilidad que aportan altas correlaciones con estaciones oficiales y equipos de referencia.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"https://kunakcloud.com/widgets/wa/widget.html\" width=\"800\" height=\"400\"></iframe></p>",
+        "detalles": {
+          "usuario": "World Athletics",
+          "ubicacion": "Mundial (Mónaco, México, Japón, Etiopía, Australia)",
+          "anyo": "2018",
+          "parametros": "<ul>\n<li>CO, NO<sub>2</sub>, NO and O<sub>3</sub>.</li>\n<li>PM<sub>1</sub>, PM<sub>2.5</sub>, PM<sub>4</sub> and PM<sub>10.</sub></li>\n<li>Temperature, humidity, pressure and dew point.</li>\n</ul>"
+        },
+        "destacado": "El proyecto Calidad del Aire de World Athletics forma parte de una amplia campaña de concienciación sobre la contaminación atmosférica en todo el mundo y el impacto que tiene en los atletas de élite y los corredores recreativos.",
+        "ubicacionMapa": {
+          "lat": 43.7275817,
+          "lng": 7.4156038
+        },
+        "soluciones": [
+          "monitor-calidad-aire",
+          "software-de-medicion-calidad-del-aire",
+          "sensor-de-calidad-del-aire"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "slug": "el-equipo-tiene-memoria-interna",
+        "seo": {
+          "title": "¿El equipo tiene memoria interna? - Kunak"
+        },
+        "titulo": "¿El equipo tiene memoria interna?",
+        "cuerpo": "<p>Sí. Dispone de memoria interna de alta velocidad capaz de almacenar los datos hasta 15 días sin conexión a Internet, asegurando la continuidad de los registros.</p>"
+      },
+      {
+        "slug": "a-que-altura-debe-instalarse-el-equipo",
+        "seo": {
+          "title": "¿A qué altura debe instalarse el equipo? - Kunak"
+        },
+        "titulo": "¿A qué altura debe instalarse el equipo?",
+        "cuerpo": "<p>Se recomienda una altura de instalación de 3 a 4 metros sobre el suelo, para garantizar representatividad en la medición y evitar interferencias o actos vandálicos.</p>"
+      },
+      {
+        "slug": "cual-es-la-duracion-de-la-bateria",
+        "seo": {
+          "title": "¿Cuál es la duración de la batería? - Kunak"
+        },
+        "titulo": "¿Cuál es la duración de la batería?",
+        "cuerpo": "<p>Los equipos incluyen una batería interna de respaldo con una autonomía de entre 3 y 30 días, dependiendo de la configuración y del tipo de sensor activo.</p>"
+      },
+      {
+        "slug": "como-se-comunica-el-equipo",
+        "seo": {
+          "title": "¿Cómo se comunica el equipo? - Kunak"
+        },
+        "titulo": "¿Cómo se comunica el equipo?",
+        "cuerpo": "<p>El sistema puede enviar datos mediante conexión celular (4G/3G), Ethernet, Wi-Fi o Modbus, adaptándose a las infraestructuras de red disponibles en cada emplazamiento.</p>"
+      },
+      {
+        "slug": "se-pueden-obtener-los-datos-en-local-modbus",
+        "seo": {
+          "title": "¿Se pueden obtener los datos en local (Modbus)? - Kunak"
+        },
+        "titulo": "¿Se pueden obtener los datos en local (Modbus)?",
+        "cuerpo": "<p>Sí. Todos los equipos Kunak incorporan el protocolo Modbus RTU RSxx, que permite la transmisión y lectura local de datos sin depender de la conexión a Internet.</p>"
+      },
+      {
+        "slug": "que-opciones-de-calibracion-existen",
+        "seo": {
+          "title": "¿Qué opciones de calibración existen? - Kunak"
+        },
+        "titulo": "¿Qué opciones de calibración existen?",
+        "cuerpo": "<p>La calibración puede hacerse mediante tres métodos:</p>\n<ul>\n<li>co-locación con una estación de referencia</li>\n<li>campana de gas (gashood) con botellas patrón</li>\n<li>ajuste remoto utilizando datos históricos para corregir la línea base</li>\n</ul>\n<p>La elección dependerá de las necesidades del proyecto y del presupuesto disponible.</p>"
+      },
+      {
+        "slug": "cada-cuanto-se-calibra-el-equipo",
+        "seo": {
+          "title": "¿Cada cuánto se calibra el equipo? - Kunak"
+        },
+        "titulo": "¿Cada cuánto se calibra el equipo?",
+        "cuerpo": "<p>Los sensores se entregan calibrados de fábrica con certificado oficial de calibración.</p>\n<p>Para mantener la precisión de las mediciones, se recomienda realizar una calibración o ajuste remoto cada tres meses, o bien tras un cambio de ubicación o de estación del año.</p>"
+      },
+      {
+        "slug": "el-equipo-es-portatil-o-fijo",
+        "seo": {
+          "title": "¿El equipo es portátil o fijo? - Kunak"
+        },
+        "titulo": "¿El equipo es portátil o fijo?",
+        "cuerpo": "<p><span data-sheets-root=\"1\">Los equipos Kunak pueden instalarse en farolas, paredes, mástiles o trípodes.</p>\n<p>Gracias a su diseño ligero y modular, es posible reubicarlos fácilmente retirando la base y fijándolos en otro punto de la instalación.</span></p>"
+      },
+      {
+        "slug": "cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software",
+        "seo": {
+          "title": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el software? - Kunak"
+        },
+        "titulo": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el software?",
+        "cuerpo": "<p>La vida útil de los cartuchos depende del tipo de sensor y las condiciones ambientales, con un rango estimado de entre 12 y 36 meses. Puede consultarse más información en la página correspondiente del catálogo.</p>\n<p>Los servicios en la nube (Kunak Cloud) se renuevan anualmente para mantener las funciones de análisis, calibración y trazabilidad actualizadas.</p>"
+      },
+      {
+        "slug": "los-equipos-kunak-son-certificados-atex",
+        "seo": {
+          "title": "¿Los equipos Kunak son certificados ATEX? - Kunak"
+        },
+        "titulo": "¿Los equipos Kunak son certificados ATEX?",
+        "cuerpo": "<p>Los equipos Kunak están diseñados para el monitoreo perimetral de emisiones difusas o detección de fugas en zonas no clasificadas como ATEX.</p>\n<p>Pueden adaptarse para operar en entornos con riesgo de explosión cumpliendo los requisitos de la Zona 1 ATEX, siempre que se configure el sistema adecuadamente.</p>"
+      },
+      {
+        "slug": "cual-es-la-diferencia-entre-calibracion-y-correccion",
+        "seo": {
+          "title": "¿Cuál es la diferencia entre calibración y corrección? - Kunak"
+        },
+        "titulo": "¿Cuál es la diferencia entre calibración y corrección?",
+        "cuerpo": "<ul>\n<li>La calibración ajusta la respuesta del sensor comparando sus datos con una referencia trazable (como una estación de referencia o gas certificado) para determinar su incertidumbre exacta.</li>\n<li>La corrección modifica la respuesta del sensor sin referencia externa para reducir errores y compensar la deriva natural, aunque no permite calcular la incertidumbre con precisión.</li>\n</ul>\n<p>En síntesis, la calibración usa una referencia externa y la corrección es un ajuste interno para mantener la fiabilidad del sensor.</p>\n<p>Más info en la página 35 del <a target=\"_blank\" href=\"https://kunakair.com/es/descarga-catalogo/\">catálogo</a>.</p>"
+      },
+      {
+        "slug": "como-se-integran-los-datos-a-una-tercera-plataforma",
+        "seo": {
+          "title": "¿Cómo se integran los datos a una tercera plataforma? - Kunak"
+        },
+        "titulo": "¿Cómo se integran los datos a una tercera plataforma?",
+        "cuerpo": "<p>Los datos pueden integrarse automáticamente mediante REST API, Modbus o FTP, facilitando la conexión con plataformas de terceros y sistemas de gestión ambiental o industrial.</p>"
+      },
+      {
+        "slug": "cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite",
+        "seo": {
+          "title": "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el AIR Lite? - Kunak"
+        },
+        "titulo": "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el AIR Lite?",
+        "cuerpo": "<p>Kunak AIR Pro: Sensor de 24 canales, certificado MCERTS, mide partículas finas y gruesas (PM<sub>1</sub>, PM<sub>2.5</sub>, PM<sub>10</sub>) y cumple con medidas indicativas.</p>\n<p>Kunak AIR Lite: Sensor de 5 canales, sin certificación MCERTS, especializado en la detección de partículas finas.</p>"
+      },
+      {
+        "slug": "pueden-utilizarse-los-equipos-en-interiores",
+        "seo": {
+          "title": "¿Pueden utilizarse los equipos en interiores? - Kunak"
+        },
+        "titulo": "¿Pueden utilizarse los equipos en interiores?",
+        "cuerpo": "<p>Sí. Los equipos pueden utilizarse en entornos industriales, ganaderos o logísticos, ofreciendo un control preciso de los contaminantes también en espacios cerrados.</p>"
+      },
+      {
+        "slug": "cuenta-esta-tecnologia-con-certificaciones",
+        "seo": {
+          "title": "¿Cuenta esta tecnología con certificaciones? - Kunak"
+        },
+        "titulo": "¿Cuenta esta tecnología con certificaciones?",
+        "cuerpo": "<p>Los equipos basados en sensores no se rigen por una certificación única. Kunak valida continuamente sus dispositivos en campo junto a organismos independientes.</p>\n<p>Estas pruebas garantizan que los datos cumplen con la Directiva Europea de Calidad del Aire y los estándares de la US EPA.</p>"
+      },
+      {
+        "slug": "puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+        "seo": {
+          "title": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimiento? - Kunak"
+        },
+        "titulo": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimiento?",
+        "cuerpo": "<p>Sí, siempre que la velocidad no supere los 20 km/h. De este modo se garantiza la estabilidad de la medición y la correcta captura de datos ambientales.</p>"
+      },
+      {
+        "slug": "se-pueden-conectar-sondas-meteorologicas",
+        "seo": {
+          "title": "¿Se pueden conectar sondas meteorológicas? - Kunak"
+        },
+        "titulo": "¿Se pueden conectar sondas meteorológicas?",
+        "cuerpo": "<p>Sí. Kunak AIR Pro admite hasta 6 sondas meteorológicas. Kunak AIR Lite, hasta 2 sondas, según la versión del equipo.<br />\nEsto permite correlacionar variables ambientales con las concentraciones de contaminantes.</p>"
+      },
+      {
+        "slug": "es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud",
+        "seo": {
+          "title": "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud? - Kunak"
+        },
+        "titulo": "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud?",
+        "cuerpo": "<p>Sí. Kunak AIR Cloud es esencial para compensar efectos de temperatura y humedad, ejecutar mantenimiento remoto y autodiagnóstico, corregir la línea base y validar los datos, y asegurar la trazabilidad y fiabilidad de las mediciones.</p>"
+      },
+      {
+        "slug": "que-area-cubre-cada-dispositivo",
+        "seo": {
+          "title": "¿Qué área cubre cada dispositivo? - Kunak"
+        },
+        "titulo": "¿Qué área cubre cada dispositivo?",
+        "cuerpo": "<p>En cuanto al alcance del dispositivo, es importante tener en cuenta que los equipos Kunak realizan mediciones puntuales (point measurement). No existe un “radio” de alcance, es decir, miden la concentración en el punto donde están instalados. La representatividad espacial que pueda tener esa medición depende de múltiples factores como la orografía, las fuentes emisoras cercanas y las condiciones meteorológicas.</p>"
+      }
+    ]
+  }
+}
