@@ -31,18 +31,22 @@
  *     cero ahí daría «ninguna forma está cubierta», que es un dato falso con
  *     forma de hallazgo (§sondas 4);
  * 3 · congela en `medidas/lh-contenedores.json`;
- * 4 · negativo: `SABOTAJE=sin-constantes|forma-huerfana|tabla-sin-kb`.
+ * 4 · negativo: `SABOTAJE=sin-constantes|forma-huerfana|tabla-sin-kb|modulo-en-l3`.
  *
- * ⚠ **ESTA SONDA SALE ROJA A PROPÓSITO, y no es un defecto suyo.** Su rojo es el
- * hallazgo, y a 2026-08-11 queda **una sola causa**:
+ * ── ⚠ ESTA SONDA ESTUVO ROJA A PROPÓSITO, y se puso VERDE sola ────────────
+ * Nació roja el 2026-08-11 con dos causas, y **las dos se cerraron en la tanda
+ * de decisión del mismo día**. Se documenta el recorrido porque un verde sin
+ * historia es indistinguible de un verde que nunca miró:
  *
- * | ficha | estado |
+ * | ficha | cómo cerró |
  * |---|---|
- * | **§LH-CONTENEDOR-ROL** | ✅ **MITIGADA** — `mbPorDefecto` **exige el rol** desde el PASO 3 de la tanda de decisión, y una COLUMNA tira. Ejercitado en `qa:lh-rol` (7 casos, negativo 1/1). La colisión sigue en el DATO, así que se informa, pero ya no bloquea |
- * | **§LH-CONTENEDOR-L3** | ⛔ **abierta** — `L3-sci` tiene fila de **1152**, un ancho que la tabla no cubre |
+ * | **§LH-CONTENEDOR-ROL** | ✅ **MITIGADA** (PASO 3) — `mbPorDefecto` **exige el rol** y una COLUMNA tira. Ejercitado en `qa:lh-rol`: 7 casos, negativo 1/1. La colisión sigue **en el dato** —911.75 es las dos cosas— así que se informa, pero ya no puede colarse en silencio |
+ * | **§LH-CONTENEDOR-L3** | ✅ **CERRADA** (PASO 6) — y no midiendo el default, sino viendo que **la pregunta no aplica**: el listado de `L3-sci` va por **`loop-del-tema`**, no por módulo Divi, y de su fila de 1152 **no cuelga ni un módulo de cuerpo** (el único es la miga). Sin módulos no hay `mb` que omitir, así que no hace falta defecto |
  *
- * Se pondrá verde cuando `L3` se mida, no antes — un verde hoy sería el
- * §sondas 4bis clásico.
+ * **Y la guarda queda, no se relaja:** si `L3` gana algún día módulos Divi de
+ * cuerpo, su 1152 vuelve a contar como huérfano y `mbPorDefecto` **tira**. Lo
+ * que cambió no es el umbral: es que ahora se cuenta **de qué anchos cuelga
+ * contenido**, en vez de qué anchos existen.
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -72,19 +76,41 @@ if (!Object.keys(CUBIERTOS).length)
 const spec = (a) => JSON.parse(readFileSync(join(QA, `medidas/lh-spec-${a}.json`), "utf8"));
 const S = { 1440: spec(1440), 390: spec(390) };
 
-/** De una página: los anchos de FILA y de COLUMNA distintos que tiene su cuerpo. */
+/** La miga de pan es un módulo del CASCARÓN, no del cuerpo editorial. */
+const ES_MIGA = (m) => (m.clases ?? []).some((c) => /breadcrumb/i.test(c));
+
+/**
+ * De una página: los anchos de FILA y de COLUMNA distintos que tiene su cuerpo,
+ * **y cuántos MÓDULOS DIVI de cuerpo cuelgan de cada ancho de fila**.
+ *
+ * ⚠ Lo último es lo que decide si a esa forma le hace falta `mbPorDefecto`: la
+ * tabla existe para **omitir el `mb` de un módulo cuando coincide con su
+ * defecto**, así que una fila **sin módulos de cuerpo** no necesita ningún
+ * defecto — no hay nada que omitir. Sin este recuento, `lh-contenedores`
+ * marcaba `L3-sci` como huérfana por un ancho (1152) del que **no cuelga ni un
+ * módulo editorial**.
+ */
 const anchosDe = (p) => {
   const filas = new Set();
   const columnas = new Map();
+  const modulosPorFila = {};
   for (const s of p.esqueleto?.cuerpo ?? [])
     for (const f of s.filas ?? []) {
       filas.add(f.rect.w);
+      modulosPorFila[f.rect.w] ??= 0;
       for (const c of f.columnas ?? []) {
         const t = (c.tipo ?? "").replace("et_pb_column_", "");
         columnas.set(`${t}@${c.rect.w}`, (columnas.get(`${t}@${c.rect.w}`) ?? 0) + 1);
+        modulosPorFila[f.rect.w] += (c.modulos ?? []).filter((m) => !ES_MIGA(m)).length;
+        /* ⚠ CONTROL de §sondas 8a: desde que `L3` se cerró, **nada dispara la
+         * guarda de huérfanas** — y una guarda que ya no se ejercita no se
+         * distingue de una que no funciona. Este sabotaje finge un módulo de
+         * cuerpo colgando de la fila de 1152, y la guarda tiene que volver a
+         * saltar. */
+        if (SAB === "modulo-en-l3" && f.rect.w === 1152) modulosPorFila[f.rect.w] += 1;
       }
     }
-  return { filas: [...filas], columnas: Object.fromEntries(columnas) };
+  return { filas: [...filas], columnas: Object.fromEntries(columnas), modulosPorFila, via: p.listado?.via ?? null };
 };
 
 /* La FORMA es la unidad, y una forma puede traer varias instancias medidas. */
@@ -97,9 +123,11 @@ const filasPorForma = {};
 for (const [k, p] of Object.entries(S[1440].paginas)) {
   const a = anchosDe(p);
   const f = p.forma;
-  const acc = (filasPorForma[f] ??= { instancias: 0, filas: new Set(), columnas: {}, filas390: new Set() });
+  const acc = (filasPorForma[f] ??= { instancias: 0, filas: new Set(), columnas: {}, filas390: new Set(), modulosPorFila: {}, via: null });
   acc.instancias++;
+  acc.via ??= a.via;
   for (const x of a.filas) acc.filas.add(x);
+  for (const [w, n] of Object.entries(a.modulosPorFila)) acc.modulosPorFila[w] = Math.max(acc.modulosPorFila[w] ?? 0, n);
   for (const [c, n] of Object.entries(a.columnas)) acc.columnas[c] = (acc.columnas[c] ?? 0) + n;
   const p390 = Object.values(S[390].paginas).find((q) => q.forma === f && q.ruta === p.ruta);
   if (p390) for (const x of anchosDe(p390).filas) acc.filas390.add(x);
@@ -124,14 +152,20 @@ const salida = {
 const huerfanas = [];
 for (const [f, v] of Object.entries(filasPorForma)) {
   const filas = [...v.filas].sort((a, b) => a - b);
-  const sinCubrir = filas.filter((x) => x > 0 && !(x in CUBIERTOS));
+  /* Sólo cuenta como huérfano un ancho SIN CUBRIR del que cuelgue al menos un
+   * módulo de cuerpo: si no cuelga ninguno, no hay ningún `mb` que omitir. */
+  const sinCubrir = filas.filter((x) => x > 0 && !(x in CUBIERTOS) && (v.modulosPorFila[x] ?? 0) > 0);
+  const sinCubrirSinModulos = filas.filter((x) => x > 0 && !(x in CUBIERTOS) && (v.modulosPorFila[x] ?? 0) === 0);
   salida.formas[f] = {
     instancias: v.instancias,
     anchosDeFila1440: filas,
     anchosDeFila390: [...v.filas390].sort((a, b) => a - b),
     columnas: v.columnas,
+    viaDelListado: v.via,
+    modulosDeCuerpoPorAnchoDeFila: v.modulosPorFila,
     cubiertaPorMbPorDefecto: filas.length > 0 && sinCubrir.length === 0,
     anchosDeFilaSinCubrir: sinCubrir,
+    anchosSinCubrirPeroSinModulosDeCuerpo: sinCubrirSinModulos,
     tieneFilasDivi: filas.length > 0,
   };
   if (filas.length && sinCubrir.length) huerfanas.push(`${f} → fila ${sinCubrir.join(" · ")}`);

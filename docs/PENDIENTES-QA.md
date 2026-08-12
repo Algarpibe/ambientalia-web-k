@@ -155,7 +155,39 @@ argumento**, no sólo a la prosa.
 911.75 de `L1` no pueda hacerse pasar por el de KB. Mientras tanto, la sonda lo
 vigila y **sale roja a propósito**.
 
-### §LH-CONTENEDOR-L3 · `L3-sci` estrena un tercer ancho de fila: **1152**
+### ✅ §LH-CONTENEDOR-L3 · **CERRADA 2026-08-11 — la pregunta NO APLICA**
+
+`L3-sci` tiene una fila de **1152**, que no es `1238.39` ni `911.75`. Pero
+mirando lo que **ya estaba congelado** en `lh-spec-{1440,390}` —sin volver al
+original, que era la condición— la pregunta se deshace:
+
+| | medido |
+|---|---|
+| cómo emite `L3` su listado | **`loop-del-tema`** — *no* por módulo Divi (las otras 6 formas de listado son `modulo-divi`; `L5-casos` también es del tema) |
+| filas Divi en su cuerpo | **1**, de 1152 |
+| **módulos de cuerpo colgando de ella** | **0** — el único módulo es **la miga de pan** (`et_pb_text_0.breadcrumbs`, `mb: 0px`), y la miga es cascarón |
+
+> **`mbPorDefecto` existe para OMITIR el `mb` de un módulo cuando coincide con su
+> defecto. Una fila sin módulos de cuerpo no necesita ningún defecto: no hay nada
+> que omitir.** Así que `L3` no está «sin default»: **no lo usa**.
+
+**Y la guarda no se relaja, se afina:** `lh-contenedores` ya no cuenta *«qué
+anchos de fila existen»* sino *«de qué anchos **cuelga contenido**»*. Si `L3`
+gana algún día módulos Divi de cuerpo, su 1152 vuelve a salir huérfano y
+`mbPorDefecto` **tira**.
+
+> ⚠ **Con su control, porque al cerrarse dejó de haber nada que dispare esa
+> guarda** — y una guarda que ya no se ejercita no se distingue de una rota
+> (§sondas 8a). Negativo nuevo **`modulo-en-l3`**: finge un módulo de cuerpo en
+> la fila de 1152 y la guarda **vuelve a saltar** (exit 2). Es el mismo patrón
+> que `vacio-inyectado` en `lh-h1`: **fabricar el caso** que la población no
+> ejerce.
+
+**Con esto `qa:lh-contenedores` se pone VERDE** — no porque se haya silenciado,
+sino porque sus dos causas cerraron (ROL en el PASO 3, L3 aquí). Es exactamente
+el matiz que el propietario dejó escrito al confirmar el rojo.
+
+### (histórico) §LH-CONTENEDOR-L3 · `L3-sci` estrena un tercer ancho de fila: **1152**
 
 No es `1238.39` ni `911.75`. `mbPorDefecto(1152, …)` **tira**, que es el
 comportamiento correcto (§sondas 6: una ausencia se rechaza, no se sustituye) —

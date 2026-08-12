@@ -3,7 +3,7 @@
     "fecha": "2026-08-11",
     "pregunta": "¿contra qué contenedor resuelve sus % cada una de las 9 formas, y los cubre la tabla de mbPorDefecto?",
     "fuente": "medidas/lh-spec-{1440,390}.json (congeladas) + packages/cms-config/src/defaults.ts (fuente)",
-    "sabotaje": "forma-huerfana",
+    "sabotaje": "modulo-en-l3",
     "anchosCubiertosPorLaTabla": {
       "1238.39": "CASCARON",
       "911.75": "KB"
@@ -136,13 +136,13 @@
       },
       "viaDelListado": "loop-del-tema",
       "modulosDeCuerpoPorAnchoDeFila": {
-        "1152": 0
+        "1152": 1
       },
-      "cubiertaPorMbPorDefecto": true,
-      "anchosDeFilaSinCubrir": [],
-      "anchosSinCubrirPeroSinModulosDeCuerpo": [
+      "cubiertaPorMbPorDefecto": false,
+      "anchosDeFilaSinCubrir": [
         1152
       ],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L4-listado-embebido": {
@@ -190,12 +190,14 @@
     }
   },
   "veredicto": {
-    "formasCubiertas": 7,
+    "formasCubiertas": 6,
     "formasSinFilasDivi": [
       "L2-glosario",
       "L2-faqs"
     ],
-    "formasHuerfanas": [],
+    "formasHuerfanas": [
+      "L3-sci → fila 1152"
+    ],
     "colisionesDeRol": [
       {
         "forma": "L1-blog",
@@ -218,6 +220,6 @@
         ]
       }
     ],
-    "b_valeParaLasNueve": true
+    "b_valeParaLasNueve": false
   }
 }

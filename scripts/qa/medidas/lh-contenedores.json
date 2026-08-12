@@ -28,8 +28,13 @@
         "3_4@911.75": 1,
         "1_4@258.5": 1
       },
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 3
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L1-etiqueta": {
@@ -45,8 +50,13 @@
         "3_4@911.75": 2,
         "1_4@258.5": 2
       },
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 5
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L1-resources-hijo": {
@@ -60,8 +70,13 @@
       "columnas": {
         "4_4@1238.39": 8
       },
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 3
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L1-resources-padre": {
@@ -75,8 +90,13 @@
       "columnas": {
         "4_4@1238.39": 8
       },
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 3
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L2-glosario": {
@@ -84,8 +104,11 @@
       "anchosDeFila1440": [],
       "anchosDeFila390": [],
       "columnas": {},
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {},
       "cubiertaPorMbPorDefecto": false,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": false
     },
     "L2-faqs": {
@@ -93,8 +116,11 @@
       "anchosDeFila1440": [],
       "anchosDeFila390": [],
       "columnas": {},
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {},
       "cubiertaPorMbPorDefecto": false,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": false
     },
     "L3-sci": {
@@ -108,8 +134,13 @@
       "columnas": {
         "4_4@1152": 2
       },
-      "cubiertaPorMbPorDefecto": false,
-      "anchosDeFilaSinCubrir": [
+      "viaDelListado": "loop-del-tema",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1152": 0
+      },
+      "cubiertaPorMbPorDefecto": true,
+      "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [
         1152
       ],
       "tieneFilasDivi": true
@@ -128,8 +159,13 @@
         "2_3@802.88": 2,
         "1_4@281.72": 4
       },
+      "viaDelListado": "modulo-divi",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 12
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     },
     "L5-casos": {
@@ -143,20 +179,23 @@
       "columnas": {
         "4_4@1238.39": 1
       },
+      "viaDelListado": "loop-del-tema",
+      "modulosDeCuerpoPorAnchoDeFila": {
+        "1238.39": 0
+      },
       "cubiertaPorMbPorDefecto": true,
       "anchosDeFilaSinCubrir": [],
+      "anchosSinCubrirPeroSinModulosDeCuerpo": [],
       "tieneFilasDivi": true
     }
   },
   "veredicto": {
-    "formasCubiertas": 6,
+    "formasCubiertas": 7,
     "formasSinFilasDivi": [
       "L2-glosario",
       "L2-faqs"
     ],
-    "formasHuerfanas": [
-      "L3-sci → fila 1152"
-    ],
+    "formasHuerfanas": [],
     "colisionesDeRol": [
       {
         "forma": "L1-blog",
@@ -179,6 +218,6 @@
         ]
       }
     ],
-    "b_valeParaLasNueve": false
+    "b_valeParaLasNueve": true
   }
 }
