@@ -65,6 +65,34 @@ export const CATALOGOS = [
   { coleccion: "taxonomia-sectores", modulo: "src/lib/taxonomia-sectores.ts", exportado: "TERMINOS_SECTOR" },
   { coleccion: "casos", modulo: "src/lib/casos.ts", exportado: "CASOS_PUBLICADOS" },
   { coleccion: "faqs", modulo: "src/lib/faqs.ts", exportado: "FAQS_PUBLICADAS" },
+  /* ⚠ **Las tres del grupo A ya NO salen de `src/lib`** (D2.7, 2026-08-12).
+   * `src/lib/arquetipo-a.ts` es una transcripción de MUESTRA —7 entradas de
+   * 149— y los listados son el primer consumidor que no puede funcionar con
+   * una muestra. La fuente pasa a ser el catálogo EXTRAÍDO del corpus, igual
+   * que `articulos-kb` nace de `kb-extraido.json` (F3-1).
+   *
+   * `src/lib` no se borra ni se contradice: sigue siendo la definición de los
+   * TIPOS y **el control** de `cms:extractor-a` — 95/95 comparaciones. */
+  /* ⚠⚠ **LAS TRES SIGUEN EN `src/lib`, y cada una por una razón MEDIDA.**
+   * `D2.7` decide sembrar el corpus y `cms:extractor-a` ya produce el catálogo
+   * entero (149 · 37 · 23, control 95/95). Lo que falta **no es el extractor**:
+   * son tres precondiciones que la tanda de datos paró **antes** de sembrar
+   * (fichas en `PENDIENTES-QA.md` §DATOS-A):
+   *
+   *   · `entradas-blog` — **90 orígenes de media SIN CAPTURAR** (destacada +
+   *     `og:image`). `media-corpus/` tiene 534 ficheros, derivados de los
+   *     CUERPOS de la muestra: las destacadas de las 149 **nunca estuvieron en
+   *     esa lista**. La guarda `MEDIA AUSENTE` del seed las para, y hace bien;
+   *   · `terminos-kunakpedia` — **1 de 37** (`esmog`) sirve el `<h1>` de
+   *     plantilla **VACÍO** en el original, y `titulo` es `required`. n=1 **no
+   *     establece** una regla de respaldo, así que no se inventa;
+   *   · `documentos-cientificos` — su tipo pide **5 campos** que `extractor-a`
+   *     todavía no lee (`autores` · `anyo` · `portada` · `descarga.href/label`).
+   *
+   * **Ninguna entra a medias**: o la colección va entera con sus guardas, o no
+   * va. Para cambiarlas de fuente basta con sustituir `modulo`/`exportado` por
+   * `json: "medidas/a-extraido.json", en: "catalogo.<colección>"` — el soporte
+   * ya está debajo y probado. */
   { coleccion: "entradas-blog", modulo: "src/lib/arquetipo-a.ts", exportado: "ENTRADAS_BLOG" },
   { coleccion: "terminos-kunakpedia", modulo: "src/lib/arquetipo-a.ts", exportado: "TERMINOS_KUNAKPEDIA" },
   { coleccion: "documentos-cientificos", modulo: "src/lib/arquetipo-a.ts", exportado: "DOCUMENTOS_CIENTIFICOS" },
@@ -96,7 +124,7 @@ export async function cargaCatalogos() {
   const tmp = path.join(QA, ".tmp");
   fs.mkdirSync(tmp, { recursive: true });
 
-  const modulos = [...new Set(CATALOGOS.map((c) => c.modulo))];
+  const modulos = [...new Set(CATALOGOS.filter((c) => c.modulo).map((c) => c.modulo))];
   /* Un punto de entrada sintético que reexporta todo: una sola invocación de
    * esbuild y un solo `import()`, así que no puede haber dos versiones del
    * mismo módulo en memoria. */
@@ -128,6 +156,28 @@ export async function cargaCatalogos() {
 
   const salida = new Map();
   for (const c of CATALOGOS) {
+    /* ── fuente JSON: el catálogo extraído del corpus ──────────────────────
+     * Misma regla 6 que abajo: una ruta que no resuelve **tira**. Un `?? []`
+     * convertiría «el extractor no se ha corrido» en «esta colección está
+     * vacía», y el seed saldría verde sin sembrar nada. */
+    if (c.json) {
+      const f = path.join(QA, c.json);
+      if (!fs.existsSync(f))
+        throw new Error(
+          `CATÁLOGO AUSENTE: no existe ${c.json} para '${c.coleccion}'.\n` +
+            `  Corre \`npm run cms:extractor-a\` antes de sembrar — el dato del grupo A\n` +
+            `  nace del corpus desde D2.7, no de \`src/lib\`.`,
+        );
+      const raiz = JSON.parse(fs.readFileSync(f, "utf8"));
+      const v = c.en.split(".").reduce((o, k) => o?.[k], raiz);
+      if (!Array.isArray(v))
+        throw new Error(
+          `CATÁLOGO AUSENTE: ${c.json} no trae '${c.en}' como array (es ${typeof v}).\n` +
+            `  Eso NO es «esta colección no tiene instancias»: es una ruta equivocada.`,
+        );
+      salida.set(c.coleccion, v);
+      continue;
+    }
     const m = porModulo.get(c.modulo);
     const nombres = Array.isArray(c.exportado) ? c.exportado : [c.exportado];
     const filas = [];

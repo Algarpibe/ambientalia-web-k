@@ -1,5 +1,93 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ DATOS-A · el catálogo del grupo A está EXTRAÍDO y verificado, y las tres colecciones se quedan sin sembrar por tres precondiciones distintas (2026-08-12)
+
+> **`D2.7` decidió sembrar el corpus completo y `cms:extractor-a` ya lo produce**
+> —149 · 37 · 23, con **95/95** comparaciones contra la transcripción a mano y
+> negativo **4/4**—. Lo que paró la siembra **no es el extractor**: son tres
+> precondiciones que `cms:sondeo` y la guarda de media del seed cazaron **antes
+> de escribir en la DB**, que es exactamente donde había que cazarlas.
+
+| colección | qué falta | n |
+|---|---|---|
+| **`entradas-blog`** | **90 orígenes de media SIN CAPTURAR** | 90 de 345 referencias de campo |
+| **`terminos-kunakpedia`** | `esmog` sirve el `<h1>` de plantilla **VACÍO** y `titulo` es `required` | **1 de 37** |
+| **`documentos-cientificos`** | 5 campos que `extractor-a` no lee: `autores` · `anyo` · `portada` · `descarga.href` · `descarga.label` | 23 de 23 |
+
+### 1 · `entradas-blog` — capturar páginas no es capturar assets, **otra vez**
+
+La guarda del seed lo dijo con todas las letras y **hace bien en pararlo**:
+
+> *«MEDIA AUSENTE … No se sustituye por nada: un alta de media vacía convertiría
+> «falta el fichero» en «la imagen es opcional», y el Δ0 de F2-3 lo pagaría
+> después.»*
+
+**Y el reparto importa, porque el número de bulto estaría mal enmarcado** (la
+misma familia que el `149 vs 142` de `lh-poblacion`):
+
+| | n |
+|---|---|
+| referencias de campo (destacada + `og:image` + `srcset`) | **345** |
+| ya en `public/` | 57 |
+| en `media-corpus/` | 4 |
+| **variantes `-WxH`** — las regenera `sharp` desde su origen | 194 |
+| ⛔ **orígenes sin capturar en NINGÚN sitio** | **90** |
+
+**Por qué `media-corpus` no las tiene, y no es un olvido:** sus **534** ficheros
+se derivaron de `medidas/media-regenera.json`, cuya lista salió de los **cuerpos
+de la muestra**. La **imagen destacada es un campo propio**, fuera del
+`post_content` —medido: el `et_pb_image_0_tb_body` va antes de que el
+`post_content` empiece—, así que **nunca estuvo en esa lista**.
+
+> **Es §UNA AFIRMACIÓN DE COMPLETITUD SE VERIFICA EJERCITÁNDOLA cobrada por
+> tercera vez.** F3-0 escribió *«el original sale del camino crítico»*; luego
+> hubo que capturar las 56 imágenes de `articulos-kb`; luego los cuerpos de
+> SECTOR y MONOGRÁFICO para auditar. Hoy: **las destacadas de las 149**. La
+> campaña era completa **para los cuerpos de la muestra**, y eso no se escribió
+> al lado del titular.
+
+**Qué la cierra:** una campaña de captura de esos 90 orígenes contra el
+original. **Esta tanda no la hace** — su encargo dice explícitamente que no abre
+el sitio vivo.
+
+### 2 · `terminos-kunakpedia` — un `<h1>` vacío en el original contra un `required` del esquema
+
+`esmog` sirve **dos** `<h1>`: el de la plantilla **vacío** y el real dentro del
+cuerpo (`Esmog, qué hay detrás de esa densa niebla`). Su miga dice **«Esmog»** y
+su `<title>` «Esmog - Kunak».
+
+> ⚠ **Y es n=1 de 37, así que NO se inventa la regla de respaldo.** «Si el `h1`
+> está vacío, cae a la miga» es un discriminador hallado en **una sola
+> instancia**, y este proyecto ya tiene escrito que eso **no es un
+> discriminador** — se exige que se sostenga en ≥2 y, si no, se reporta **NO
+> ESTABLECIDO con su denominador**.
+
+**Qué hay que decidir**, y es de esquema, no de extractor: si `titulo` puede ser
+vacío en esta forma (fidelidad: el original sirve un `h1` vacío) o si la
+migración le da un valor y **eso es una desviación con su razón**.
+
+### 3 · `documentos-cientificos` — 5 campos que el extractor todavía no lee
+
+`autores` · `anyo` · `portada` · `descarga.href` · `descarga.label`, `required`
+en las 23. No es un hallazgo: es **trabajo declarado** que la tanda no alcanzó.
+Los cinco están en lo servido; falta escribir sus lectores y su control.
+
+### Lo que SÍ queda hecho y no hay que rehacer
+
+- **`cms:extractor-a`** con su negativo 4/4 y `medidas/a-extraido.json`
+  congelado: el catálogo entero, con el control que autoriza cambiar de fuente.
+- **El soporte de fuente JSON en `catalogos.mjs`**: cambiar una colección de
+  `src/lib` al catálogo extraído es sustituir dos claves, y la ruta que no
+  resuelve **tira** (regla 6) en vez de sembrar cero en verde.
+- **Las taxonomías se derivan solas**: en la corrida que llegó a escribirlas
+  salieron **4 categorías · 12 etiquetas · 8 categorías de recurso · 3
+  científicas** (contra 3 · 8 · 3 · 3 con la muestra). No hay trabajo de
+  taxonomía pendiente: entra con los documentos.
+- **El clon quedó restaurado y verificado**: `cms:reset` + `cms:seed` +
+  `cms:seed-kb`, `npm run check` verde con **37 rutas · 13 familias · 0
+  vacías**, y `clon-base --cmp` contra la línea base de esta misma tanda da
+  **37/37 sin mover un píxel**.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de

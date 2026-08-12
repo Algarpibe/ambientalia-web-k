@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "app": "apps/web",
+    "manifiesto": "(el del build)",
+    "base": "medidas/clon-base-1440-f21-antes.json"
+  },
+  "rutas": [
+    "/",
+    "/accesorios",
+    "/case-studies/distrito-baja-emision-rio-de-janeiro",
+    "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+    "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+    "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+    "/cloruro-de-hidrogeno-hcl",
+    "/contador-particulas-suspension-movilidad-sostenible",
+    "/contaminacion-por-metano",
+    "/emisiones-atmosfericas",
+    "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
+    "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+    "/kunak-api",
+    "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+    "/metano",
+    "/monitor-calidad-aire",
+    "/monitorizacion-de-emisiones-del-trafico-urbano",
+    "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+    "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+    "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+    "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+    "/running-for-clean-air",
+    "/sectores/calidad-del-aire-en-las-ciudades",
+    "/sectores/contaminacion-por-construccion",
+    "/sectores/control-de-emisiones-industriales",
+    "/sectores/estudio-de-la-contaminacion-atmosferica",
+    "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+    "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+    "/software-de-medicion-calidad-del-aire",
+    "/todas-nuestras-soluciones-en-el-iotswc"
+  ],
+  "familias": {
+    "/": 1,
+    "/[slug]": 10,
+    "/accesorios": 1,
+    "/case-studies/[slug]": 1,
+    "/casos-de-exito/[slug]": 3,
+    "/faqs/[slug]": 2,
+    "/kunak-api": 1,
+    "/monitor-calidad-aire": 1,
+    "/recursos/[...ruta]": 4,
+    "/sectores/[slug]": 6,
+    "/software-de-medicion-calidad-del-aire": 1
+  },
+  "dinamicas": [
+    "/[slug]",
+    "/case-studies/[slug]",
+    "/casos-de-exito/[slug]",
+    "/centro-de-ayuda/[...ruta]",
+    "/faqs/[slug]",
+    "/recursos/[...ruta]",
+    "/sectores/[slug]",
+    "/soporte/[...ruta]"
+  ],
+  "vacias": [
+    "/centro-de-ayuda/[...ruta]",
+    "/soporte/[...ruta]"
+  ],
+  "desaparecidas": [],
+  "nuevas": []
+}
