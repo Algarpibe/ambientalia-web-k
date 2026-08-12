@@ -225,7 +225,26 @@
       "ausente": 6
     }
   },
+  "D4a": {
+    "enunciadoOriginal": "D4: «los 35 h1 = nombre del término/índice» — UNA unidad para DOS poblaciones",
+    "archivoDeTermino": {
+      "documentos": 0,
+      "elH1CasaConElSlug": 0,
+      "noCasanConElSlug": [],
+      "lectura": "slug y nombre coinciden en toda la población: «sale del slug» y «sale del nombre» son INDISTINGUIBLES aquí"
+    },
+    "indice": {
+      "documentos": 0,
+      "indicesDistintos": 0,
+      "valores": {},
+      "familiasConVarianzaIntra": [],
+      "lectura": "no hay dos índices de la misma familia con h1 distinto: no se puede discriminar en esta población"
+    }
+  },
   "veredicto": {
+    "D4a": "0 documentos de ARCHIVO DE TÉRMINO: el h1 es el NOMBRE del término (no su slug — lo separan 0 casos). 0 documentos de ÍNDICE: el h1 NO es derivable y varía dentro de 0 familia(s) ⇒ es DATO DE LA PÁGINA. Son DOS enunciados con DOS denominadores, no uno con 137.",
+    "D4b": "149 documentos SIN <h1> y 0 con <h1> vacío, sobre 149. Reparto por familia: L1-blog 17/17 · L5-casos 2/2 · L1-etiqueta 63/63 · L2-glosario 8/8 · L2-faqs 4/4 · otra 4/4 · L1-resources 37/37 · L4-hub 8/8 · L3-sci 6/6. Ninguna familia MIXTA ⇒ por el discriminador de régimen plantillado (varianza entre instancias) la PRESENCIA del h1 es PLANTILLA DE LA FAMILIA.",
+    "familiasMixtas": [],
     "a_colapsaLaEvidencia": true,
     "b_hayCasoQueEjercite_h1Vacio": false,
     "lectura": "«149 documentos SIN <h1>» y «0 con <h1> vacío» ⇒ (a) el \"\" de lh-censo era AUSENCIA, y su valor no podía decirlo; (b) la lectura de lh-spec NO está sobre-generalizada — distingue por elemento, y además ningún documento de la población ejercita la rama del <h1> vacío: es un CAMINO SIN ESTRENAR, se declara con su alcance y no se da por probado"

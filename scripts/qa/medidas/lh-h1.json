@@ -88,7 +88,88 @@
       "ausente": 0
     }
   },
+  "D4a": {
+    "enunciadoOriginal": "D4: «los 35 h1 = nombre del término/índice» — UNA unidad para DOS poblaciones",
+    "archivoDeTermino": {
+      "documentos": 89,
+      "elH1CasaConElSlug": 85,
+      "noCasanConElSlug": [
+        {
+          "ruta": "/etiqueta/co2-es",
+          "slug": "co2-es",
+          "h1": "CO2"
+        },
+        {
+          "ruta": "/etiqueta/co2-es/page/2",
+          "slug": "co2-es",
+          "h1": "CO2"
+        },
+        {
+          "ruta": "/etiqueta/h2s-es",
+          "slug": "h2s-es",
+          "h1": "H2S"
+        },
+        {
+          "ruta": "/recursos/articulos/petroleo-y-gas",
+          "slug": "petroleo-y-gas",
+          "h1": "Emisiones del petróleo y gas"
+        }
+      ],
+      "lectura": "en 4 documentos el h1 NO coincide con el slug pero sí es el nombre del término (sufijo -es de desambiguación, o slug abreviado) ⇒ el h1 sale del NOMBRE del término, NO de su slug — y esos 4 son lo único que separa las dos hipótesis"
+    },
+    "indice": {
+      "documentos": 48,
+      "indicesDistintos": 10,
+      "valores": {
+        "/blog": "Blog",
+        "/casos-de-exito": "Casos de éxito",
+        "/productos": "Sistemas de sensores de calidad del aire",
+        "/recursos/articulos": "Artículos y Guías",
+        "/recursos/documentos-cientificos": "Precisión validada por organismos independientes",
+        "/recursos": "Centro de recursos sobre la calidad del aire",
+        "/recursos/kunakpedia": "Kunakpedia",
+        "/recursos/preguntas-frecuentes": "Preguntas frecuentes",
+        "/recursos/seminarios-web": "Seminarios Web",
+        "/sectores": "Soluciones líderes de control del aire"
+      },
+      "familiasConVarianzaIntra": [
+        {
+          "familia": "otra",
+          "indices": 2,
+          "textosDistintos": 2,
+          "valores": {
+            "/productos": "Sistemas de sensores de calidad del aire",
+            "/sectores": "Soluciones líderes de control del aire"
+          }
+        },
+        {
+          "familia": "L1-resources",
+          "indices": 2,
+          "textosDistintos": 2,
+          "valores": {
+            "/recursos/articulos": "Artículos y Guías",
+            "/recursos/seminarios-web": "Seminarios Web"
+          }
+        },
+        {
+          "familia": "L4-hub",
+          "indices": 4,
+          "textosDistintos": 4,
+          "valores": {
+            "/recursos/documentos-cientificos": "Precisión validada por organismos independientes",
+            "/recursos": "Centro de recursos sobre la calidad del aire",
+            "/recursos/kunakpedia": "Kunakpedia",
+            "/recursos/preguntas-frecuentes": "Preguntas frecuentes"
+          }
+        }
+      ],
+      "lectura": "el h1 de un índice NO es derivable de la ruta y VARÍA dentro de 3 familia(s) ⇒ es DATO DE LA PÁGINA, no derivación del término. La mitad de D4 que decía «no propiedad de la página» es FALSA para esta población"
+    }
+  },
   "veredicto": {
+    "D4a": "89 documentos de ARCHIVO DE TÉRMINO: el h1 es el NOMBRE del término (no su slug — lo separan 4 casos). 48 documentos de ÍNDICE: el h1 NO es derivable y varía dentro de 3 familia(s) ⇒ es DATO DE LA PÁGINA. Son DOS enunciados con DOS denominadores, no uno con 137.",
+    "D4b": "12 documentos SIN <h1> y 0 con <h1> vacío, sobre 149. Reparto por familia: L2-glosario 8/8 · L2-faqs 4/4. Ninguna familia MIXTA ⇒ por el discriminador de régimen plantillado (varianza entre instancias) la PRESENCIA del h1 es PLANTILLA DE LA FAMILIA.",
+    "familiasMixtas": [],
     "a_colapsaLaEvidencia": true,
     "b_hayCasoQueEjercite_h1Vacio": false,
     "lectura": "«12 documentos SIN <h1>» y «0 con <h1> vacío» ⇒ (a) el \"\" de lh-censo era AUSENCIA, y su valor no podía decirlo; (b) la lectura de lh-spec NO está sobre-generalizada — distingue por elemento, y además ningún documento de la población ejercita la rama del <h1> vacío: es un CAMINO SIN ESTRENAR, se declara con su alcance y no se da por probado"

@@ -3,7 +3,7 @@
     "fecha": "2026-08-11",
     "pregunta": "¿el `h1: \"\"` de lh-censo es «vacío» o «ausente», y a qué se apoya en él? — las dos direcciones de la comprobación retroactiva",
     "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
-    "sabotaje": "colapsa",
+    "sabotaje": "slug-igual-al-nombre",
     "noMide": [
       "el original de HOY: el censo es de lo capturado en F3-0",
       "el CLON: estas rutas todavía no las emite (F3-2 no ha construido), así que la mitad «es el MISMO elemento en los dos lados» de la regla de `c-cabecera` no se puede contestar aquí",
@@ -92,30 +92,9 @@
     "enunciadoOriginal": "D4: «los 35 h1 = nombre del término/índice» — UNA unidad para DOS poblaciones",
     "archivoDeTermino": {
       "documentos": 89,
-      "elH1CasaConElSlug": 85,
-      "noCasanConElSlug": [
-        {
-          "ruta": "/etiqueta/co2-es",
-          "slug": "co2-es",
-          "h1": "CO2"
-        },
-        {
-          "ruta": "/etiqueta/co2-es/page/2",
-          "slug": "co2-es",
-          "h1": "CO2"
-        },
-        {
-          "ruta": "/etiqueta/h2s-es",
-          "slug": "h2s-es",
-          "h1": "H2S"
-        },
-        {
-          "ruta": "/recursos/articulos/petroleo-y-gas",
-          "slug": "petroleo-y-gas",
-          "h1": "Emisiones del petróleo y gas"
-        }
-      ],
-      "lectura": "en 4 documentos el h1 NO coincide con el slug pero sí es el nombre del término (sufijo -es de desambiguación, o slug abreviado) ⇒ el h1 sale del NOMBRE del término, NO de su slug — y esos 4 son lo único que separa las dos hipótesis"
+      "elH1CasaConElSlug": 89,
+      "noCasanConElSlug": [],
+      "lectura": "slug y nombre coinciden en toda la población: «sale del slug» y «sale del nombre» son INDISTINGUIBLES aquí"
     },
     "indice": {
       "documentos": 48,
@@ -167,7 +146,7 @@
     }
   },
   "veredicto": {
-    "D4a": "89 documentos de ARCHIVO DE TÉRMINO: el h1 es el NOMBRE del término (no su slug — lo separan 4 casos). 48 documentos de ÍNDICE: el h1 NO es derivable y varía dentro de 3 familia(s) ⇒ es DATO DE LA PÁGINA. Son DOS enunciados con DOS denominadores, no uno con 137.",
+    "D4a": "89 documentos de ARCHIVO DE TÉRMINO: el h1 es el NOMBRE del término (no su slug — lo separan 0 casos). 48 documentos de ÍNDICE: el h1 NO es derivable y varía dentro de 3 familia(s) ⇒ es DATO DE LA PÁGINA. Son DOS enunciados con DOS denominadores, no uno con 137.",
     "D4b": "12 documentos SIN <h1> y 0 con <h1> vacío, sobre 149. Reparto por familia: L2-glosario 8/8 · L2-faqs 4/4. Ninguna familia MIXTA ⇒ por el discriminador de régimen plantillado (varianza entre instancias) la PRESENCIA del h1 es PLANTILLA DE LA FAMILIA.",
     "familiasMixtas": [],
     "a_colapsaLaEvidencia": true,

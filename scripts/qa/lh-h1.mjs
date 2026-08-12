@@ -28,7 +28,14 @@
  *     casar en todos— pero **sí tiene que casar en alguno**: si sale 0 en los
  *     149, es un selector muerto y no un sitio sin titulares (§sondas 4);
  * 3 · congela en `medidas/lh-h1.json`;
- * 4 · negativo: `SABOTAJE=patron-muerto|colapsa|vacio-inyectado|colapsa-con-vacio`.
+ * 4 · negativo: `SABOTAJE=patron-muerto|colapsa|vacio-inyectado|`
+ *     `colapsa-con-vacio|slug-igual-al-nombre`.
+ *
+ * ⚠ **Tres de los cinco señalan por el VALOR, no por el código de salida**, y
+ * hay que saberlo para leerlos: `colapsa`, `colapsa-con-vacio` y
+ * `slug-igual-al-nombre` prueban que un discriminador **discrimina**, y su
+ * evidencia es que el veredicto CAMBIA. Los que cierran el código son
+ * `patron-muerto` (selector) y `vacio-inyectado` (la rama sin estrenar).
  *
  * ⚠ **Y los dos últimos existen porque `colapsa` A SOLAS NO PRUEBA NADA, y eso
  * se descubrió corriéndolo.** `colapsa` reproduce el defecto de `lh-censo`
@@ -85,12 +92,40 @@ const familiaDe = (r) =>
 const ABRE = SAB === "patron-muerto" ? /<h1-no-existe\b/gi : /<h1\b/gi;
 const PAR = /<h1\b[^>]*>([\s\S]*?)<\/h1>/gi;
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * D4a · ¿DE DÓNDE SALE EL **TEXTO** DEL `h1`? (2026-08-11, tanda de decisión)
+ *
+ * `D4` lo publicaba en **una** unidad —«los 35 `h1` = nombre del término/
+ * índice»— y ahí van fundidas **dos poblaciones que no admiten el mismo
+ * enunciado**:
+ *
+ *   · **archivo de TÉRMINO** — el `h1` se puede contrastar con el término, así
+ *     que la afirmación es FALSABLE;
+ *   · **ÍNDICE** — «el `h1` es el nombre del índice» **no se puede falsar** sin
+ *     conocer «el nombre del índice» por otra vía. Es un enunciado invacuo, y
+ *     la barra de «término/índice» era lo que lo escondía.
+ *
+ * Se separan aquí, cada una con su denominador.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+/** El slug del término si la ruta es un archivo de término; `null` si es índice. */
+const terminoDe = (r) => {
+  const s = r.replace(/\/page\/\d+$/, "");
+  for (const re of [/^\/etiqueta\/([^/]+)$/, /^\/scientific-category\/([^/]+)$/, /^\/recursos\/articulos\/([^/]+)$/, /^\/recursos\/seminarios-web\/([^/]+)$/]) {
+    const m = re.exec(s);
+    if (m) return m[1];
+  }
+  return null;
+};
+
 const ev = new Evaluadas({ nombre: "lh-h1", unidad: "documentos", minimo: F.length });
 
 const porForma = { conTexto: [], vacio: [], ausente: [] };
 const porFamilia = {};
 let totalAbre = 0;
 const multiples = [];
+const deTermino = [];
+const deIndice = [];
 
 const COLAPSA = SAB === "colapsa" || SAB === "colapsa-con-vacio";
 const INYECTA = SAB === "vacio-inyectado" || SAB === "colapsa-con-vacio";
@@ -123,6 +158,18 @@ for (const f of F) {
   const acc = (porFamilia[fam] ??= { n: 0, conTexto: 0, vacio: 0, ausente: 0 });
   acc.n++;
   acc[forma]++;
+
+  /* ── D4a: sólo tiene sentido preguntarlo donde hay texto ───────────────── */
+  if (forma === "conTexto") {
+    const texto = textos[0].replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+    const t = terminoDe(ruta);
+    /* `slug-igual-al-nombre` borra los 4 casos que separan «el h1 sale del
+     * SLUG» de «sale del NOMBRE»: el veredicto tiene que pasar a
+     * INDISTINGUIBLES. Es el control de que la conclusión la sostienen esos 4 y
+     * no la redacción (§sondas 8a). */
+    if (t) deTermino.push({ ruta, fam, slug: t, texto, casaConElSlug: SAB === "slug-igual-al-nombre" ? true : norm(texto) === norm(t) });
+    else deIndice.push({ ruta, fam, base: ruta.replace(/\/page\/\d+$/, ""), texto });
+  }
   ev.ok();
 }
 
@@ -150,6 +197,41 @@ const salida = {
   sinH1: porForma.ausente,
   conVariosH1: multiples,
   porFamilia,
+  D4a: (() => {
+    const noCasan = deTermino.filter((x) => !x.casaConElSlug);
+    /* Los ÍNDICES, agrupados por familia: si dentro de una familia hay dos
+     * índices con `h1` distinto, ese texto es DATO de la página. */
+    const indicesPorFamilia = {};
+    for (const x of deIndice) ((indicesPorFamilia[x.fam] ??= {})[x.base] ??= x.texto);
+    const conVarianzaIntra = Object.entries(indicesPorFamilia)
+      .map(([f, m]) => ({ familia: f, indices: Object.keys(m).length, textosDistintos: new Set(Object.values(m)).size, valores: m }))
+      .filter((x) => x.textosDistintos > 1);
+    return {
+      enunciadoOriginal: "D4: «los 35 h1 = nombre del término/índice» — UNA unidad para DOS poblaciones",
+      archivoDeTermino: {
+        documentos: deTermino.length,
+        elH1CasaConElSlug: deTermino.length - noCasan.length,
+        noCasanConElSlug: noCasan.map((x) => ({ ruta: x.ruta, slug: x.slug, h1: x.texto })),
+        /* ⚠ Los que NO casan son el DISCRIMINADOR, no las excepciones: sin ellos,
+         * «el h1 sale del SLUG» y «sale del NOMBRE del término» serían
+         * indistinguibles (§DOS VARIABLES CONFUNDIDAS). Con ellos, el slug
+         * queda descartado como fuente. */
+        lectura: noCasan.length
+          ? `en ${noCasan.length} documentos el h1 NO coincide con el slug pero sí es el nombre del término (sufijo -es de desambiguación, o slug abreviado) ⇒ el h1 sale del NOMBRE del término, NO de su slug — y esos ${noCasan.length} son lo único que separa las dos hipótesis`
+          : "slug y nombre coinciden en toda la población: «sale del slug» y «sale del nombre» son INDISTINGUIBLES aquí",
+      },
+      indice: {
+        documentos: deIndice.length,
+        indicesDistintos: [...new Set(deIndice.map((x) => x.base))].length,
+        valores: Object.fromEntries([...new Set(deIndice.map((x) => x.base))].map((b) => [b, deIndice.find((x) => x.base === b).texto])),
+        familiasConVarianzaIntra: conVarianzaIntra,
+        lectura:
+          conVarianzaIntra.length
+            ? `el h1 de un índice NO es derivable de la ruta y VARÍA dentro de ${conVarianzaIntra.length} familia(s) ⇒ es DATO DE LA PÁGINA, no derivación del término. La mitad de D4 que decía «no propiedad de la página» es FALSA para esta población`
+            : "no hay dos índices de la misma familia con h1 distinto: no se puede discriminar en esta población",
+      },
+    };
+  })(),
 };
 
 console.log(`\n═══ LA FORMA DEL <h1> — ${F.length} documentos de la captura`);
@@ -160,9 +242,24 @@ console.log(`  con VARIOS <h1>  : ${multiples.length}`);
 console.log(`\n  familia`.padEnd(24) + `n`.padStart(5) + `  conTexto`.padStart(12) + `vacío`.padStart(10) + `ausente`.padStart(10));
 for (const [k, v] of Object.entries(porFamilia).sort())
   console.log(`  ${k.padEnd(22)}${String(v.n).padStart(5)}${String(v.conTexto).padStart(12)}${String(v.vacio).padStart(10)}${String(v.ausente).padStart(10)}`);
+const D = salida.D4a;
+console.log(`\n═══ D4a — de dónde sale el TEXTO del <h1>, con sus DOS denominadores`);
+console.log(`  archivo de TÉRMINO : ${D.archivoDeTermino.documentos} documentos · el h1 casa con el slug en ${D.archivoDeTermino.elH1CasaConElSlug}`);
+for (const x of D.archivoDeTermino.noCasanConElSlug) console.log(`      slug "${x.slug}"  →  h1 "${x.h1}"   (${x.ruta})`);
+console.log(`  ÍNDICE             : ${D.indice.documentos} documentos · ${D.indice.indicesDistintos} índices distintos`);
+for (const [b, t] of Object.entries(D.indice.valores)) console.log(`      ${b.padEnd(36)} "${t}"`);
+console.log(`  familias con DOS índices de h1 distinto: ${D.indice.familiasConVarianzaIntra.length}${D.indice.familiasConVarianzaIntra.length ? " → " + D.indice.familiasConVarianzaIntra.map((x) => `${x.familia} (${x.textosDistintos})`).join(" · ") : ""}`);
 console.log(`✓ evaluadas ${F.length}/${F.length} documentos · forma del <h1>`);
+console.log(`✓ evaluadas ${D.archivoDeTermino.documentos + D.indice.documentos}/${porForma.conTexto.length} documentos con h1 · procedencia del texto (D4a)`);
 
 salida.veredicto = {
+  D4a: `${D.archivoDeTermino.documentos} documentos de ARCHIVO DE TÉRMINO: el h1 es el NOMBRE del término (no su slug — lo separan ${D.archivoDeTermino.noCasanConElSlug.length} casos). ` +
+    `${D.indice.documentos} documentos de ÍNDICE: el h1 NO es derivable y varía dentro de ${D.indice.familiasConVarianzaIntra.length} familia(s) ⇒ es DATO DE LA PÁGINA. ` +
+    `Son DOS enunciados con DOS denominadores, no uno con 137.`,
+  D4b: `${porForma.ausente.length} documentos SIN <h1> y ${porForma.vacio.length} con <h1> vacío, sobre ${F.length}. ` +
+    `Reparto por familia: ${Object.entries(porFamilia).filter(([, v]) => v.ausente).map(([k, v]) => `${k} ${v.ausente}/${v.n}`).join(" · ") || "ninguna"}. ` +
+    `Ninguna familia MIXTA ⇒ por el discriminador de régimen plantillado (varianza entre instancias) la PRESENCIA del h1 es PLANTILLA DE LA FAMILIA.`,
+  familiasMixtas: Object.entries(porFamilia).filter(([, v]) => v.ausente > 0 && v.ausente < v.n).map(([k]) => k),
   a_colapsaLaEvidencia: porForma.ausente.length > 0,
   b_hayCasoQueEjercite_h1Vacio: porForma.vacio.length > 0,
   lectura:
@@ -176,6 +273,16 @@ salida.veredicto = {
 /* En la dirección que GRITA: un `<h1>` vacío de verdad significa que la lectura
  * «sin h1 ⇒ ausente» de `lh-spec` tiene un caso que no cubre, y eso no puede
  * vivir como un campo dentro de un JSON. */
+/* ⛔ DISPARADOR 1 DEL ESCALÓN, cableado: una familia MIXTA —unos documentos con
+ * h1 y otros sin él— significaría varianza INTRA-familia, y entonces la
+ * presencia del h1 sería CAMPO y no plantilla. Se comprueba, no se supone. */
+if (salida.veredicto.familiasMixtas.length) {
+  console.error(
+    `\n⛔ ESCALÓN · VARIANZA INTRA-FAMILIA en la PRESENCIA del <h1>: ${salida.veredicto.familiasMixtas.join(" · ")}.\n` +
+      `   En régimen plantillado eso hace que la presencia sea CAMPO, no plantilla — y eso cambia el modelo.`,
+  );
+  rotos++;
+}
 if (porForma.vacio.length) {
   console.error(
     `\n⛔ HAY ${porForma.vacio.length} DOCUMENTO(S) CON <h1> VACÍO: la rama que \`lh-spec\` no ejercita existe.\n` +

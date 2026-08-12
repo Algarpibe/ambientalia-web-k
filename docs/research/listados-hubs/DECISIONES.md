@@ -401,7 +401,7 @@ se toquen — no aquí.
 | esqueleto L1 (6 secciones · 2 `tb_body`) | **plantilla** | varianza 0 en 23/23 |
 | configuración de tarjeta (fecha · categoría · extracto · tamaño de imagen) | **plantilla DE LA VARIANTE** | varianza 0 dentro de familia (76/76 · 0/79 · 0/9); varía solo entre familias |
 | `entradasPorPagina` (9 · 15 · 5) | **plantilla de la variante** (⚠ corrige §4b) | varianza 0 intra-familia |
-| `h1` del archivo | ⛔ **RETIRADA 2026-08-11 — vuelve a PENDIENTE**, ver abajo | ~~los 35 h1 = nombre del término/índice~~ → **33 de 35**; y la evidencia no podía sostenerlo |
+| ~~`h1` del archivo~~ → **partida en `D4a` y `D4b`** | ✅ **RESUELTA 2026-08-11**, ver abajo | ~~los 35 h1 = nombre del término/índice~~ — un enunciado, **dos poblaciones**, **dos unidades** |
 | nivel del titular de tarjeta (h2 · h3 embebido) | plantilla (contexto) | medido en L4 |
 | patrón `/page/N/` | plantilla (sistema) | 21/21 |
 | la **consulta** (qué término, qué CPT) | **dato** (el término es contenido) | es lo único que cambia entre los 23 de L1 |
@@ -412,7 +412,106 @@ se toquen — no aquí.
 **Y nada de lo SIN PROBAR se cablea** — se construye con el default medido y la
 pregunta anotada, que es exactamente la regla del arreglo falso.
 
-### ⛔ 2026-08-11 · la fila del `h1` SALE DE CERRADA — y no por un dato nuevo, sino porque su evidencia NO PODÍA SOSTENERLA
+### ✅ D4a · de dónde sale el TEXTO del `h1` — **DOS enunciados, DOS denominadores** (2026-08-11, tanda de decisión)
+
+El escalón no era que `D4` estuviera mal medida: es que **publicaba dos
+propiedades en una sola unidad**. Partidas, y cada una con la suya
+(`medidas/lh-h1.json`, 149 documentos, negativo **5/5**):
+
+| población | n | qué dice la medida |
+|---|---|---|
+| **archivo de TÉRMINO** | **89 documentos** | el `h1` es **el NOMBRE del término** — se **deriva**, la página no lo almacena |
+| **ÍNDICE** | **48 documentos** (10 índices) | el `h1` **NO es derivable de la ruta** y **varía dentro de la familia** ⇒ es **DATO DE LA PÁGINA** |
+
+**Y la mitad que `D4` tenía al revés:** decía *«dato derivado del término, **no
+propiedad de la página**»*. Para los **48 de índice eso es falso**: «Sistemas de
+sensores de calidad del aire» (`/productos`), «Precisión validada por organismos
+independientes» (`/recursos/documentos-cientificos`) o «Centro de recursos sobre
+la calidad del aire» (`/recursos`) son **titulares escritos**, no el nombre de
+nada. El discriminador está medido: **3 familias tienen dos índices con `h1`
+distinto** — `L1-resources` («Artículos y Guías» vs «Seminarios Web»), `L4-hub`
+(4 valores) y `otra` (2). `L1-resources` es **régimen plantillado**, así que ahí
+varianza intra-familia significa **dato**, sin ambigüedad.
+
+> ⚠ **Y el «137/137» con el que se planteó esta tanda NO es lo que la evidencia
+> sostiene, aunque el número sea correcto.** 137 son los documentos **con `h1`**;
+> lo que se puede afirmar de los 89 no se puede afirmar de los 48. Para un
+> índice, *«el `h1` es el nombre del índice»* **no es falsable** —no hay «nombre
+> del índice» en ninguna otra parte contra el que contrastarlo—: es un enunciado
+> invacuo, y **la barra de «término/índice» era exactamente lo que lo
+> escondía**. Es §la cobertura declarada al nivel de arriba, aplicada a una
+> decisión: **una unidad que agrupa dos poblaciones absorbe lo que no se midió en
+> la segunda.**
+
+#### El detalle que separa dos hipótesis, y sin él serían indistinguibles
+
+De los 89 de término, el `h1` **casa literalmente con el slug en 85**. Los **4**
+que no:
+
+| slug | `h1` | por qué |
+|---|---|---|
+| `co2-es` | **CO2** | sufijo `-es` de desambiguación de WordPress |
+| `h2s-es` | **H2S** | idem (2 documentos: la página 1 y `/page/2`) |
+| `petroleo-y-gas` | **Emisiones del petróleo y gas** | el slug es una abreviación del nombre |
+
+> **Esos 4 no son excepciones: son EL DISCRIMINADOR.** Con slug ≡ nombre en 85
+> de 89, *«el `h1` sale del SLUG»* y *«sale del NOMBRE del término»* darían el
+> mismo resultado y serían **indistinguibles** (§DOS VARIABLES CONFUNDIDAS). Los
+> 4 casos rompen el empate y **descartan el slug como fuente**.
+>
+> Probado con su negativo: `SABOTAJE=slug-igual-al-nombre` los borra y el
+> veredicto pasa solo a *«INDISTINGUIBLES»* — o sea que la conclusión la
+> sostienen esos 4 casos y no la redacción.
+
+**Consecuencia de modelo:** el archivo de término **no lleva campo de titular**
+(lo trae la relación al término, por su `nombre`, no por su `slug`); **el índice
+sí lo lleva**, y es un campo propio de la página.
+
+### ✅ D4b · SI HAY `h1` — **plantilla de la FAMILIA** (2026-08-11)
+
+| | |
+|---|---|
+| **evidencia** | **12 documentos sin `<h1>`** y **0 con `<h1>` vacío**, sobre **149** |
+| **quiénes** | `L2-glosario` **8/8** · `L2-faqs` **4/4** — la familia `L2` entera |
+| **discriminador aplicado** | **la varianza entre instancias**, que es el de **régimen plantillado** (`CLAUDE.md` §Antes de aplicar ningún test) |
+| **resultado** | **0 familias mixtas** de 9: cada una es «todas» o «ninguna» ⇒ **PLANTILLA DE LA FAMILIA**, no campo |
+
+**El disparador 1 del escalón NO salta, y está cableado en la sonda**: una
+familia mixta —unos documentos con `h1` y otros sin él— haría que la presencia
+fuera campo, y `lh-h1` **cierra el código de salida** si aparece. Sale limpia.
+
+#### Las DOS rutas que no cumplían el enunciado viejo, nombradas — y qué son
+
+> `/es/glosario/` y `/es/preguntas-frecuentes/`.
+
+Las tres salidas estaban escritas antes de mirar. **Es la (c): el denominador de
+`D4` estaba MAL FORMADO**, y se re-declara con su alcance.
+
+`D4` contaba sobre las **35 rutas de `lh-censo`**, agrupadas por su campo
+`grupo` — `hub` · `post_tag` · `scientific-category` · `resources`—, **que no es
+la partición de arquetipos**. Derivado:
+
+| grupo del censo | rutas | familias de arquetipo que contiene |
+|---|---|---|
+| **`hub`** | 12 | **7** — `otra` · `L4-hub` · `L5-casos` · `L1-blog` · **`L2-glosario`** · **`L2-faqs`** · `L1-resources` |
+| `post_tag` | 12 | 1 (`L1-etiqueta`) |
+| `scientific-category` | 3 | 1 (`L3-sci`) |
+| `resources` | 8 | 1 (`L1-resources`) |
+
+**`hub` es un cajón que junta siete familias**, y **ninguna de las siete es
+mixta**: cada una sale «todas con `h1`» o «ninguna». O sea que la «excepción de 2
+en 35» **no era una excepción: era la señal de que el denominador mezclaba
+plantillas distintas**. Descartadas (a) —no es excepción dentro de su familia,
+es el 100 % de ella— y (b) —no hay varianza intra-familia en ninguna de las 9—.
+
+> **Y la lección, que es la misma del §séptimo contenedor:** un denominador
+> formado por una etiqueta cómoda (`grupo`) en vez de por la partición que
+> gobierna el fenómeno (la **familia de plantilla**) **produce excepciones
+> aparentes**, y una excepción aparente se «explica» en vez de corregirse. Los
+> 2 de 35 se leían como *«dos rarezas»*; en la unidad correcta son **dos
+> familias enteras**, 12 de 12 documentos.
+
+### (histórico) ⛔ 2026-08-11 · la fila del `h1` SALE DE CERRADA — y no por un dato nuevo, sino porque su evidencia NO PODÍA SOSTENERLA
 
 Comprobación retroactiva **enmarcada en las dos direcciones antes de mirar**
 (§UNA COMPROBACIÓN RETROACTIVA SE ENMARCA EN LAS DOS DIRECCIONES), contestadas
