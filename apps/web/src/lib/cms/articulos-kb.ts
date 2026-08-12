@@ -104,50 +104,11 @@ export type ArticuloKb = {
   cuerpo: FilaKb[];
 };
 
-/* ══════════════════════════════════════════════════════════════════════════
- * EL DEFECTO DE `mb` — una TABLA medida, y el `throw` que impide inventarla
- *
- * ⚠ **NO es una constante y tampoco es «función del tipo de columna».** §2d.6
- * lo corrigió con un segundo arquetipo delante: manda el **ancho de la FILA**.
- * En KB la fila mide siempre 911.75, así que las dos lecturas coinciden aquí —
- * y por eso la de la spec no fallaba dentro de KB y falla fuera.
- *
- * Es una **segunda escritura** de `mbPorDefecto` de `defaults.ts`, y eso sería
- * la clase C7 si no fuera porque el render **no puede importar** el paquete de
- * config (arrastraría Payload al bundle del cliente). La guarda contra la
- * divergencia es que los dos números están en el mismo commit y que
- * `qa:kb-cmp` mide contra el original: si divergen, el Δ lo dice.
- * ═════════════════════════════════════════════════════════════════════════ */
-export const ANCHO_FILA_KB = 911.75;
-const ANCHO_FILA_CASCARON = 1238.39;
-
-/**
- * ⚠ **SIN LLAMADORES a 2026-08-11 — derivado, no supuesto:** `grep -rn
- * "mbPorDefectoKb"` sobre el repo devuelve **sólo su definición**. O sea que la
- * duplicación que el comentario de arriba justifica **no está en uso**, y su
- * guarda declarada («`qa:kb-cmp` mide contra el original: si divergen, el Δ lo
- * dice») **no puede dispararse**: una función que nadie llama no diverge, no
- * mide y no falla. Es §sondas 3 —*documentado no es conectado*— y el linter no
- * la caza porque está exportada.
- *
- * Se le aplica igualmente el `rol` obligatorio para que las dos escrituras no
- * se separen. **Si borrarla o cablearla es decisión del propietario:**
- * `PENDIENTES-QA.md` §LH-CONTENEDOR-ROL.
- */
-export function mbPorDefectoKb(ancho: number, tipoColumna: TipoColumnaKb, rol: "fila" | "columna"): { px1440: number; px390: number } {
-  if (rol !== "fila")
-    throw new Error(
-      `mbPorDefectoKb: el defecto de \`mb\` depende del ancho de la FILA. Llegó rol=${JSON.stringify(rol)} ` +
-        `con ancho ${ancho}. Ojo: ${ANCHO_FILA_KB} es la FILA en articulos-kb y una COLUMNA 3_4 en L1.`,
-    );
-  if (ancho === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
-  if (ancho === ANCHO_FILA_KB)
-    return { px1440: tipoColumna === "4_4" ? 34.0469 : 25.0625, px390: 30 };
-  throw new Error(
-    `mbPorDefectoKb: ancho de fila SIN MEDIR (${ancho}). Los dos medidos son ` +
-      `${ANCHO_FILA_CASCARON} (SECTOR/MONOGRÁFICO) y ${ANCHO_FILA_KB} (articulos-kb).`,
-  );
-}
+/* El defecto de `mb` NO vive aquí: es `mbPorDefecto()` en
+ * `packages/cms-config/src/defaults.ts`, que lo resuelve el EXTRACTOR — al
+ * render el valor le llega ya escrito en el dato. La segunda escritura que
+ * hubo aquí no tenía llamadores y se borró (PENDIENTES-QA.md
+ * §LH-CONTENEDOR-ROL). */
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LA LECTURA
