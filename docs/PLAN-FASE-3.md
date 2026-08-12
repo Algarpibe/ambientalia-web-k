@@ -203,6 +203,32 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 
 ## F3-2 · listados y hubs — LISTADO-B y sus hermanos
 
+> ⛔ **PARADA DE ESCALÓN (2026-08-12, 56.ª tanda) — el 4.º, y es de POBLACIÓN.**
+> Los tres escalones anteriores cerraron y `D2.6` cerró la última ficha del
+> camino, así que la tanda entró a construir `LISTADO-B` con el contrato de
+> *«entero o nada»*. **Al dimensionarlo salió que el corte limpio está antes de
+> empezarlo:**
+>
+> **Un listado no tiene contenido propio: es una CONSULTA.** Las `142` rutas,
+> las `55` vacías y las `21` series que paginan salen **del original**; el clon
+> consulta **su** DB, que tiene **7 entradas de blog contra 149**, 4 casos contra
+> 57, 3 términos contra 37, 4 documentos contra 23 y 2 faqs contra 19. **19 de
+> las 29 series con listado se quedan cortas** y el clon podría emitir **35 de
+> 142** — con la columna del clon calculada como **cota superior**.
+>
+> **Y no es una tarea de datos que se haga después:** `P-LH-C3` (*«las rutas
+> emitidas coinciden con una corrida del día»*), `P-LH-C7` (*«las 55 vacías
+> cumplen su contrato»*) y la comparación **par a par** presuponen las tres la
+> población del original. Con 7 entradas el clon no llega a tener **una sola**
+> ruta vacía, y cada Δ del comparador vendría del contenido, no de la plantilla.
+>
+> Sonda: **`npm run qa:lh-poblacion`** (sin red; cruza `lh-serie` con la
+> `lh-paginas` del día y la DB por Local API), negativo **3/3** —el que importa
+> es `completa`: con la población del original **sale verde**, así que el rojo
+> mide el clon y no el código—. Tres salidas (sembrar el corpus · re-derivar los
+> criterios · entregar con el hueco declarado) en `PENDIENTES-QA.md` §ESCALÓN
+> F3-2 (4.º) · POBLACIÓN. **Lo que ninguna puede ser es implícita.**
+
 > ✅ **EL 1.er ESCALÓN ESTÁ CERRADO (2026-08-11, tarde): `D2.5` · REPLICAR TAL
 > CUAL**, firmada por el propietario. El clon emite las **55 rutas vacías** con
 > 200, como el original — la única de las tres salidas que **no cambia el
@@ -441,7 +467,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
 | **F3-1** · `articulos-kb` | ✅ **COMPLETA (2026-08-10, 4 tandas)** — los 6 pasos del orden obligado: specs + PASO 0 · esquema con retícula · extractor + seed · piel del titular (§2d.7) · **plantilla + ruta** (hoja `kb.css` DERIVADA por `qa:kb-clases`, 2 catch-all por sus dos prefijos) · **sonda de dos lados**: `qa:kb-cmp` par a par, **4999/5089 @1440 y 4979/5089 @390** contra la medida congelada y **5453/5543 y 5433/5543 contra el sitio VIVO**, cero diferencias sin declarar en las cuatro corridas. Deja **7 huecos con su número** (`PENDIENTES-QA.md` §F3-1), el mayor de ellos `srcset` con **108.83 px** de consecuencia geométrica a 390 |
-| **F3-2** · listados y hubs | pendiente · **DESBLOQUEADA** — `P-LH-C6` cumplida el 2026-08-10 y el eje llevado a **37/37** el 08-11 (`qa:comportamiento` 254 + 70 + **518** interacciones, todas con disparo confirmado). De las 3 fichas de entrada queda **UNA en el camino**: §LH-C6-L3-SIN-PAGINADOR (decidir replicar o desviarse, con la razón escrita). ✅ §LH-C6-HOVER-ZONAL **resuelta con la regla medida** (`qa:hover-zonal`); §LH-C6-FILTRO-L5 **no bloquea**: se decide en F3-4 y F3-2 entrega **L5 menos el filtro**, anotado como desviación |
+| **F3-2** · listados y hubs | ⛔ **PARADA EN EL 4.º ESCALÓN (2026-08-12): POBLACIÓN.** El camino de decisiones está **entero** —§LH-C6-L3-SIN-PAGINADOR cerrada con **`D2.6` · REPLICAR**, y las 4 medidas del cascarón diagnosticadas (3 con causa, `SP-H6` a medias)— pero **el clon no tiene documentos para emitir ni verificar las 142 rutas**: 19 de 29 series con listado se quedan cortas y sólo **35 de 142** son emitibles hoy (7 entradas de blog contra 149, 4 casos contra 57, 3 términos contra 37, 4 documentos contra 23, 2 faqs contra 19). `P-LH-C3`, `P-LH-C7` y la comparación par a par **presuponen las tres la población del original**. Sonda `qa:lh-poblacion` (negativo 3/3), congelada en `medidas/lh-poblacion.json`; tres salidas escritas en `PENDIENTES-QA.md` §ESCALÓN F3-2 (4.º). ✅ §LH-C6-HOVER-ZONAL resuelta; §LH-C6-FILTRO-L5 no bloquea (F3-4, `L5` menos el filtro) |
 | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
 | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |
 | **F3-5** · content type de HOME | pendiente · sin dependencias |

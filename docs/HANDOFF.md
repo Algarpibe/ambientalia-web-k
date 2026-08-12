@@ -1,4 +1,115 @@
-# HANDOFF — F3-2: el 3.er escalón cierra, y las «2 excepciones de 35» eran un DENOMINADOR mal formado
+# HANDOFF — F3-2: el camino de decisiones se acaba, y aparece un 4.º escalón que no es de modelo sino de POBLACIÓN
+
+> ⚠ **Tanda de CONSTRUCCIÓN que NO construyó, 2026-08-12 (56.ª).** **PASOS 0 · 1
+> · 2 · 6 completos; 3 · 4 · 5 NO EMPEZADOS** — y no por falta de tiempo: el
+> PASO 3 tenía contrato de *«entero o nada»* y al dimensionarlo salió que el
+> corte limpio está **antes** de empezarlo. Registro: `PENDIENTES-QA.md` (1
+> ficha de escalón nueva, 1 cerrada, 1 de producto abierta) ·
+> `listados-hubs/DECISIONES.md` §**D2.6** · `listados-hubs/components/` (3 specs
+> + README) · `PLAN-FASE-3.md` · `COBERTURA-MEDICION.md` · `package.json` (2
+> sondas).
+
+## 0 · Los cinco titulares
+
+> **1 · EL TITULAR ES LA PARADA: un listado no tiene contenido propio, es una
+> CONSULTA — y el clon consulta SU DB.** Las `142` rutas de `D2.5`, las `55`
+> vacías y las `21` series que paginan salen **del original**. El clon tiene
+> **7 entradas de blog contra 149**, 4 casos contra 57, 3 términos contra 37, 4
+> documentos contra 23, 2 faqs contra 19. **19 de 29 series se quedan cortas;
+> emitibles hoy: 35 de 142.** Nadie había puesto los dos lados en la misma tabla.
+>
+> **2 · Y no es «ya se poblará después», que es lo que lo hace escalón.**
+> `P-LH-C3`, `P-LH-C7` y la comparación **par a par** presuponen las tres la
+> población del original. Con 7 entradas el clon **no llega a tener una sola
+> ruta vacía**, y cada Δ del comparador vendría del **contenido**, no de la
+> plantilla. Construir primero y poblar después deja la verificación en
+> «verde sin haber mirado».
+>
+> **3 · `D2.6` cierra la última ficha del camino, y sin criterio nuevo.**
+> `L3` se **REPLICA**: emite sus `/page/N/` y su cuerpo **no pinta paginador**.
+> El discriminador de `D2.4`/`D2.5` —el canonical— contesta ésta también: los 6
+> documentos declaran canonical **a sí mismos**, con **0** apariciones de
+> `wp-pagenavi`/`kunak-pagination`. Servir el paginador sería producto:
+> §F3-2-PRODUCTO-L3-NAVEGACION.
+>
+> **4 · Las 4 medidas del cascarón: TRES con causa, UNA a medias.** El pie de 4
+> secciones de `L5` es **el de la familia CASOS** (banda CTA que el clon ya
+> construye); la cabecera de 458.09 es una **3.ª fila del header exclusiva del
+> índice** (n=2, 0 en las otras 15 capturas); la base que sube es **enteramente
+> esa cabecera** (`h1.y − cabecera` = **135.19 a los dos anchos**). `SP-T7` gana
+> mecanismo (banda del tema sin override móvil vs módulo Divi con el suyo
+> compilado) y `SP-H6` cierra su mitad tipográfica **con la regla exhibida**
+> (`44.1px` tecleado, no un `em` resuelto). **Sigue sin diagnóstico el +29 de
+> `L4` a 390.**
+>
+> **5 · Un número mal etiquetado llevaba dos tandas circulando.** `lh-serie`
+> suma **149 páginas** y `lh-paginas` declara **142 rutas**: son **dos
+> magnitudes**, y la diferencia son **7 series** que la captura recorrió hasta
+> `/page/2/` y que **no paginan**. Lo destapó la sonda nueva al escribir el
+> total — y su primera versión **sumaba la congelada equivocada**, salida
+> conservada como `lh-poblacion-SONDA-SUMABA-PAGINAS-CAPTURADAS.json`.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **F3-2 no se puede construir hasta que la salida A · B · C esté elegida** y
+  escrita en `DECISIONES.md` con la forma de `D2.5`. Las tres están redactadas
+  con lo que cada una **es**, no con cuál deja el clon mejor.
+- **Si se elige A (sembrar el corpus), lo más caro ya está hecho**: las **149**
+  entradas de blog están capturadas en `corpus/entradas-blog/`, y las 57 de
+  casos, 37 de términos, 23 de documentos y 19 de faqs también
+  (`corpus/INDICE.json`). Lo que falta es **extractor + seed** por colección,
+  el camino que estrenó F3-1.
+- **`qa:lh-poblacion` sale ROJA a propósito** mientras el escalón siga abierto,
+  igual que hizo `§LH-CONTENEDOR-ROL`. Su negativo `completa` prueba que **sabe
+  ponerse verde**: sin él, una sonda que sólo sabe salir roja no distingue *«el
+  clon no llega»* de *«el código siempre falla»*.
+- **La matriz de cobertura NO se movió, y esa frase hay que leerla entera**: no
+  es que la cobertura esté bien, es que **F3-2 no ha empezado**. El día que
+  entren las 142 rutas la matriz **tiene que hundirse**, y ese hundimiento es lo
+  esperado.
+- **`mbPorDefectoKb` ya no existe** (PASO 0a): `grep` en código da **0**; las
+  citas de `docs/` son historia.
+- **`P-LH-C3` está cumplida para el 2026-08-12** y el 142 **no se movió**
+  (`lh-paginas-2026-08-12.json`, 261 peticiones, 35/35 rutas).
+- **Línea base de compartidos congelada antes de tocar nada**:
+  `clon-base-{1440,390}-f32-antes.json`, 37/37 rutas. Como no se construyó, sigue
+  siendo válida como «antes» para la tanda que sí lo haga.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-poblacion`** (nueva) | ¿puede el clon **ejercitar** el universo que F3-2 declara verificar? | **3/3** — `completa` (el control invertido: con la población del original sale **verde**) · `huerfana` (serie sin mapear ⇒ SIN MIRAR, nunca «sin población») · control |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) El contrato «entero o nada» sólo sirve si se dimensiona ANTES.** El PASO 3
+traía escrito *«si no cabe entero, NO lo empieces»*, y lo que hizo falta para
+saberlo no fue empezar: fue **contar la población de las dos partes**. Media
+hora de derivación evitó una plantilla a medias sobre datos que no la pueden
+verificar.
+
+**(b) Un criterio de verificación puede presuponer un hecho del ORIGINAL sin
+decirlo.** `P-LH-C3` dice *«las rutas emitidas coinciden con una corrida del
+día»* — y una corrida del día mide **el original**. El criterio estaba escrito
+como si las dos poblaciones fueran la misma, y **nada en su redacción lo
+delataba**. Es §el séptimo contenedor aplicado a un pre-registro: la unidad en
+la que se declara una comprobación absorbe lo que no se comparó.
+
+**(c) Y el corolario de instrumento: una sonda que sólo puede salir ROJA no
+prueba nada.** El negativo que hacía falta no era un sabotaje que la rompiera
+—de eso sobran— sino uno que la **pusiera verde**: atribuirle al clon la
+población del original. Con él, «19 series cortas» mide el clon; sin él, podría
+ser el código.
+
+**(d) Al escribir un total, cruza las dos congeladas que lo podrían dar.** El
+149 de `lh-serie` y el 142 de `lh-paginas` son dos magnitudes, y la primera
+versión de la sonda sumó la que tenía a mano. Lo cazó **contradecir a `D2.5`**,
+que es el control que §sondas 4 pide y que aquí sí existía.
+
+---
+
+# (histórico) HANDOFF — F3-2: el 3.er escalón cierra, y las «2 excepciones de 35» eran un DENOMINADOR mal formado
 
 > ⚠ **Tanda de DECISIÓN, 2026-08-11 (55.ª).** **Los 7 pasos completos.** Nada
 > tocó el sitio vivo: todo sobre el corpus congelado y el fuente. Registro:

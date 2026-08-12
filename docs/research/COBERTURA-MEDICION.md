@@ -1,5 +1,21 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠ **RE-DERIVADA 2026-08-12 (56.ª tanda) — y NO se movió, que es el dato.**
+> `npm run qa:cobertura`: **37 rutas**, comportamiento **37/37**, `docH` · base
+> cruda · árbol · enlaces **31/31**, anchos **15**, filas **6**, módulos **2**,
+> holgura **0 (3 en `c`)**. Idéntica a la corrida anterior.
+>
+> **La tanda venía con esto declarado al revés**: *«la matriz SE VA A HUNDIR al
+> entrar 142 rutas nuevas, y eso está declarado como no-regresión»*. No se
+> hundió **porque no entró ninguna ruta**: F3-2 paró en el 4.º escalón
+> (§POBLACIÓN) antes de construir. Congelada: `medidas/cobertura-2026-08-12.json`.
+>
+> **Y conviene leerlo con la frase entera, no con el número:** que la matriz
+> siga igual no es que la cobertura esté bien — es que **F3-2 no ha empezado**.
+> Las 35 formas de listado siguen en `·` en los nueve ejes, igual que
+> `articulos-kb` cuando no emitía rutas. El día que entren las 142, **la matriz
+> tiene que hundirse**, y ese hundimiento **es lo esperado y no una regresión**.
+
 **Fecha: 2026-08-01.** Diagnóstico puro: no se arregló nada y no se midió nada
 nuevo. Todo sale de leer las salidas congeladas de `scripts/qa/medidas/` y el
 código de las 41 sondas. ⚠ **Actualizado 2026-08-02: son 48**, y el
