@@ -416,6 +416,72 @@ familia de URLs y se han contestado por separado.
   servidor, nunca contra la ventana: en esta forma **no existe**.
 - **`P-LH-C5`** no cambia: los 7 de `D2.4` siguen dando 404.
 
+## D2.7 · El clon no tiene población para sus listados — **SEMBRAR EL CORPUS COMPLETO** (salida A, 2026-08-12)
+
+**Decidido: las cinco colecciones que consumen los listados se siembran enteras
+desde el corpus congelado** —`entradas-blog` · `casos` · `terminos-kunakpedia`
+· `documentos-cientificos` · `faqs`— **con las taxonomías que sus series
+consultan**. Cierra `PENDIENTES-QA.md` §**ESCALÓN F3-2 (4.º) · POBLACIÓN**, que
+paró la construcción de `LISTADO-B` antes de escribir una línea.
+
+### El razonamiento, no sólo el veredicto
+
+Había **tres** salidas y las tres eran defendibles. Lo que las separa es **qué
+deja verificable**:
+
+| salida | qué hace | qué es |
+|---|---|---|
+| **A · sembrar el corpus** ← **decidida** | el clon consulta lo mismo que el original | **la única que deja verificable lo que F3-2 declara** |
+| B · re-derivar los criterios contra la población del clon | `P-LH-C3`/`P-LH-C7` pasan a medirse contra lo que el clon tiene | una **FAMILIA DE CALIBRACIÓN en el instrumento**: el criterio se ajusta al clon en vez de al original, y con él desaparece la única comprobación de que la paginación funciona |
+| C · entregar `L1` con la muestra y declarar el hueco | se verifica la primera página y el resto queda declarado | deja **38 clases estructurales con UN camino ejercitado**. Es §F2-5-ESCALON-ETIQUETAS literal: *un camino de render que ningún dato de calibración estrena* — y aquella costó una fase parada |
+
+> **B es la más barata y la peor**, y conviene decir por qué con precisión: no
+> falla por ser menos ambiciosa, falla porque **mueve el patrón de calibración
+> al lado del clon**. `P-LH-C3` dice *«las rutas emitidas coinciden con una
+> corrida del día»*, y una corrida del día mide **el original**; re-derivarla
+> contra el clon la convierte en *«el clon coincide consigo mismo»*, que es la
+> guarda solo-clon que §UN ARQUETIPO NUEVO NO HEREDA COBERTURA prohíbe leer
+> como verde.
+
+### El encuadre que la hace barata de defender: **no es un desvío, es la migración que el proyecto debe**
+
+Ésta es la parte que evita leer la tanda como un rodeo:
+
+> **Sembrar el corpus no es trabajo extra de F3-2: es F2-2 terminada.** El
+> bloque 1 sembró **46 filas** porque su alcance eran los tipos **medidos en
+> `src/lib`**, y `src/lib` es una **transcripción de muestra** — 7 entradas de
+> 149. El resto de los documentos nunca se decidió dejarlos fuera: **no les
+> tocaba todavía**. Un CMS que se entrega con el 5 % de su contenido no está
+> entregado, así que esta siembra **iba a hacer falta con listados o sin ellos**.
+
+Lo que F3-2 aporta es la **fecha**: los listados son el primer consumidor que
+**no puede funcionar** con una muestra, y por eso el hueco aparece ahora y no en
+la entrega final. Adelantarlo aquí es más barato que descubrirlo con cuatro
+arquetipos más construidos encima.
+
+### Lo que D2.7 arrastra
+
+- **Las taxonomías entran con los documentos, no después.** Una serie de término
+  (`/etiqueta/*`, `/scientific-category/*`) **no puede emitir sin su taxonomía
+  poblada**: población y relación son la misma precondición, y separarlas
+  dejaría 12 series emitiendo vacío con la colección llena.
+- **La frontera escrita de `seed.mjs` se respeta**: `sectores` y `monograficos`
+  **no** se siembran —su round-trip topa con la frontera de `PLAN-FASE-2` §F2-2
+  y **ningún listado los consume como documentos**: `/es/sectores/` es un hub de
+  builder, no una consulta.
+- **La siembra parte de DB VACÍA** (`cms:reset` + seed), que es la regla escrita
+  en `seed.mjs`: la salida es determinista, así que cada colección nueva
+  re-siembra todo en vez de añadirse encima.
+- **Se espera que `qa:nunca-vistos` baje de golpe** (hoy 208 de 296): la
+  población completa **estrena casos legales** que la muestra no ejercía. Es la
+  cosecha de esta decisión, no un daño.
+- **Se espera que algún render muera.** Cada muerte es un hallazgo con la forma
+  de `F2-5`: el arreglo **se estrecha** a donde el caso se da, con su ficha —
+  no se sustituye por la regla contraria ni se tapa con un default benigno.
+- **Lo que la cierra**: `qa:lh-poblacion` **verde sola**. Es la sonda del
+  escalón y su rojo era deliberado; si con las cinco sembradas siguiera roja,
+  eso sería un hallazgo y no un ajuste de la sonda.
+
 ## D3 · Lo que los listados le EXIGEN al grupo A — la decisión que condiciona
 
 **Ésta es la razón de que LH-2 vaya antes de construir A: si A nace sin estos
