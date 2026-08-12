@@ -173,7 +173,11 @@ function anchoPctDe(m1440, m390, col1440, col390) {
 function ritmoModulo(m1440, m390, tipoCol) {
   const defMb = SABOTAJE === "mb-constante"
     ? { px1440: 34.0469, px390: 30 }
-    : mbPorDefecto(ANCHO_FILA_KB, tipoCol);
+    /* `"fila"` y no `"columna"`: en `articulos-kb` las **39 filas medidas**
+     * valen 911.75 (`kb-spec-1440.json`), así que aquí el número ES la fila.
+     * El rol es obligatorio desde 2026-08-11 porque ese mismo 911.75 es una
+     * COLUMNA en `L1` — §LH-CONTENEDOR-ROL. */
+    : mbPorDefecto(ANCHO_FILA_KB, tipoCol, "fila");
   const r = {
     mt: medidaDe(m1440.ritmo.marginTop, m390.ritmo.marginTop, ARTICULO_KB.moduloMt.valor),
     mb: medidaDe(m1440.ritmo.marginBottom, m390.ritmo.marginBottom, defMb),

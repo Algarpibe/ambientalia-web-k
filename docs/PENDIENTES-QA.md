@@ -85,7 +85,46 @@ Sonda: **`qa:lh-contenedores`** (deriva de `lh-spec-{1440,390}` congeladas y del
 | **L3-sci** | **1152** | ❌ **ancho sin medir — la función TIRA** |
 | **L2-glosario · L2-faqs** | **sin filas Divi** | ⊘ **el mecanismo no aplica** |
 
-### §LH-CONTENEDOR-ROL · **`911.75` es FILA en un arquetipo y COLUMNA en otro, y la función no puede distinguirlo**
+### ✅ §LH-CONTENEDOR-ROL · **MITIGADA 2026-08-11** — el aviso pasa a ser una guarda ejercitada
+
+> **El aviso era un comentario, y §sondas 3 dice que documentado no es
+> conectado.** El precedente correcto estaba **en la misma función**: un ancho
+> sin medir **TIRA**. Ahora el rol recibe ese mismo trato.
+
+`mbPorDefecto(ancho, tipoColumna, **rol**)` — el tercer parámetro es
+**obligatorio**, y `rol: "columna"` **tira** con el mensaje que nombra el caso de
+`L1`. En TypeScript la firma tumba las llamadas viejas en `typecheck`; el `throw`
+cubre los `.mjs`, que TS no ve — y **el único llamador vivo es uno de ésos**.
+
+**Ejercitado, no leído:** `npm run qa:lh-rol` compila `defaults.ts` con `esbuild`
+y **llama a la función** en **7 casos** (4 que devuelven valor exacto + 3 que
+deben tirar: la columna de `L1`, la llamada sin rol y la fila de 1152 de `L3`).
+Negativo `invierte`: **7/7 fallos, exit 2** — sin él, un test que sólo pasa no
+distingue *«la guarda salta»* de *«no la estoy ejercitando»*.
+
+**Las dos direcciones, contestadas antes de tocar la firma:**
+
+| dirección | veredicto |
+|---|---|
+| **(a) ¿alguna llamada viva pasa un ancho con el rol equivocado?** | **NO.** Derivado aquí, no heredado: hay **una sola** llamada viva (`scripts/seed/extractor-kb.mjs:176`) y las **39 filas** de `articulos-kb` miden **911.75** (`kb-spec-1440.json`), así que ahí el número **es** la fila |
+| **(b) ¿el cambio mueve algún valor SERVIDO en `articulos-kb`?** | **NO — NO-OP, comprobado corriendo el extractor antes y después:** `medidas/kb-extraido.json` sale *«idéntica a la congelada»* en las dos corridas. **El disparador 2 del ESCALÓN no salta** y no hay congelada que re-emitir |
+
+> ⚠ **Y de camino, un hallazgo que no se buscaba: la SEGUNDA escritura de la
+> función NO TIENE LLAMADORES.** `mbPorDefectoKb` en
+> `apps/web/src/lib/cms/articulos-kb.ts` está exportada, documentada con su razón
+> de existir —*«el render no puede importar el paquete de config»*— y **`grep -rn
+> "mbPorDefectoKb"` sobre el repo devuelve sólo su definición**.
+>
+> Su guarda declarada (*«`qa:kb-cmp` mide contra el original: si divergen, el Δ
+> lo dice»*) **no puede dispararse**: una función que nadie llama no diverge, no
+> mide y no falla. Es §sondas 3 otra vez, y **el linter no la caza porque está
+> exportada**.
+>
+> **Se le ha aplicado el mismo `rol` obligatorio** para que las dos escrituras no
+> se separen. **Borrarla o cablearla es decisión del propietario** — no se toca
+> código de producción por iniciativa propia en una tanda de decisión.
+
+### (histórico) §LH-CONTENEDOR-ROL · **`911.75` es FILA en un arquetipo y COLUMNA en otro, y la función no puede distinguirlo**
 
 Es el hallazgo caro, y no lo enseña ninguna medida a solas: lo enseña el cruce.
 

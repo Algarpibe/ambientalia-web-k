@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿la firma de mbPorDefecto EXIGE el rol del ancho, o un número suelto sigue devolviendo el default del otro arquetipo?",
+    "fuente": "packages/cms-config/src/defaults.ts compilado con esbuild — la función se LLAMA, no se lee",
+    "sabotaje": null,
+    "porQue": "§LH-CONTENEDOR-ROL: 911.75 es FILA en articulos-kb y COLUMNA 3_4 en L1. Hasta hoy la guarda era un comentario, y §sondas 3 dice que documentado no es conectado.",
+    "noMide": [
+      "si algún llamador pasa el rol EQUIVOCADO: eso lo dice el tipo (TS) en los .ts y el throw en runtime, pero un .mjs que mienta a conciencia no lo caza nadie"
+    ]
+  },
+  "casos": [
+    {
+      "que": "MONOGRÁFICO/SECTOR · fila del cascarón, 4_4",
+      "args": [
+        1238.39,
+        "4_4",
+        "fila"
+      ],
+      "esperaTirar": false,
+      "tiro": false,
+      "resultado": {
+        "px1440": 34.0469,
+        "px390": 30
+      },
+      "error": null,
+      "ok": true
+    },
+    {
+      "que": "MONOGRÁFICO/SECTOR · fila del cascarón, columna estrecha",
+      "args": [
+        1238.39,
+        "1_2",
+        "fila"
+      ],
+      "esperaTirar": false,
+      "tiro": false,
+      "resultado": {
+        "px1440": 34.0469,
+        "px390": 30
+      },
+      "error": null,
+      "ok": true
+    },
+    {
+      "que": "articulos-kb · fila 911.75, 4_4",
+      "args": [
+        911.75,
+        "4_4",
+        "fila"
+      ],
+      "esperaTirar": false,
+      "tiro": false,
+      "resultado": {
+        "px1440": 34.0469,
+        "px390": 30
+      },
+      "error": null,
+      "ok": true
+    },
+    {
+      "que": "articulos-kb · fila 911.75, columna estrecha",
+      "args": [
+        911.75,
+        "2_3",
+        "fila"
+      ],
+      "esperaTirar": false,
+      "tiro": false,
+      "resultado": {
+        "px1440": 25.0625,
+        "px390": 30
+      },
+      "error": null,
+      "ok": true
+    },
+    {
+      "que": "⛔ L1 · el 911.75 que es una COLUMNA, declarado como tal",
+      "args": [
+        911.75,
+        "3_4",
+        "columna"
+      ],
+      "esperaTirar": true,
+      "tiro": true,
+      "resultado": null,
+      "error": "mbPorDefecto: recibió una COLUMNA de 911.75, y el defecto de `mb` depende del",
+      "ok": true
+    },
+    {
+      "que": "⛔ L1 · el mismo 911.75 SIN declarar el rol (la llamada vieja)",
+      "args": [
+        911.75,
+        "3_4"
+      ],
+      "esperaTirar": true,
+      "tiro": true,
+      "resultado": null,
+      "error": "mbPorDefecto: falta el ROL del ancho (llegó undefined).",
+      "ok": true
+    },
+    {
+      "que": "⛔ L3-sci · fila de 1152, un ancho sin medir",
+      "args": [
+        1152,
+        "4_4",
+        "fila"
+      ],
+      "esperaTirar": true,
+      "tiro": true,
+      "resultado": null,
+      "error": "mbPorDefecto: ancho de fila SIN MEDIR (1152).",
+      "ok": true
+    }
+  ],
+  "fallos": 0,
+  "veredicto": "el contrato se cumple en los 7 casos: los 4 que devuelven valor lo devuelven exacto y los 3 que deben tirar tiran"
+}

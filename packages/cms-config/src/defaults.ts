@@ -142,17 +142,42 @@ export const ANCHO_FILA_KB = 911.75;
  * `PENDIENTES-QA.md` §LH-CONTENEDOR-ROL. **Y `L3-sci` estrena un tercero
  * (1152) que ninguna de las dos ramas cubre** (§LH-CONTENEDOR-L3).
  */
-export function mbPorDefecto(anchoFila: number, tipoColumna: string): { px1440: number; px390: number } {
+export type RolDeAncho = "fila" | "columna";
+
+export function mbPorDefecto(ancho: number, tipoColumna: string, rol: RolDeAncho): { px1440: number; px390: number } {
+  /* ⛔ EL ROL, ANTES QUE EL NÚMERO — y es obligatorio a propósito.
+   * El `throw` de abajo protege del ancho DESCONOCIDO y era ciego al conocido
+   * CON OTRO ROL: `911.75` es la FILA en `articulos-kb` y una COLUMNA `3_4` en
+   * `L1`, cuya fila mide 1238.39. Sin declarar qué se está pasando, el `L1` de
+   * la izquierda y el KB de la derecha son el mismo número.
+   *
+   * Que el parámetro sea OBLIGATORIO hace que TypeScript tumbe las llamadas
+   * viejas en `npm run typecheck`; el `throw` cubre los `.mjs`, que TS no ve. */
+  if (rol !== "fila" && rol !== "columna")
+    throw new Error(
+      `mbPorDefecto: falta el ROL del ancho (llegó ${JSON.stringify(rol)}).\n` +
+        `  Un número suelto no dice si es una FILA o una COLUMNA, y ${ANCHO_FILA_KB} es\n` +
+        `  las dos cosas según el arquetipo. Declara "fila" | "columna".`,
+    );
+  if (rol === "columna")
+    throw new Error(
+      `mbPorDefecto: recibió una COLUMNA de ${ancho}, y el defecto de \`mb\` depende del\n` +
+        `  ancho de la FILA (§2d.6: derivado contra un segundo arquetipo).\n` +
+        `  Si estás construyendo L1: su columna de contenido mide 911.75 —el mismo número\n` +
+        `  que la FILA de articulos-kb— pero su fila mide ${ANCHO_FILA_CASCARON}. Pasa la fila.\n` +
+        `  Ficha: PENDIENTES-QA.md §LH-CONTENEDOR-ROL.`,
+    );
   const esCuatroCuartos = tipoColumna === "4_4";
-  if (anchoFila === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
-  if (anchoFila === ANCHO_FILA_KB)
+  if (ancho === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
+  if (ancho === ANCHO_FILA_KB)
     return { px1440: esCuatroCuartos ? 34.0469 : 25.0625, px390: 30 };
   throw new Error(
-    `mbPorDefecto: ancho de fila SIN MEDIR (${anchoFila}).\n` +
+    `mbPorDefecto: ancho de fila SIN MEDIR (${ancho}).\n` +
       `  Los dos medidos son ${ANCHO_FILA_CASCARON} (SECTOR/MONOGRÁFICO, 46 módulos) y ` +
       `${ANCHO_FILA_KB} (articulos-kb, 72 módulos).\n` +
       `  El defecto de \`mb\` depende del ancho de la FILA, no del tipo de columna: ` +
-      `inventarlo para una fila nueva es el arreglo falso de CLAUDE.md §Estructura.`,
+      `inventarlo para una fila nueva es el arreglo falso de CLAUDE.md §Estructura.\n` +
+      `  (L3-sci estrena un tercero, 1152, sin medir: §LH-CONTENEDOR-L3.)`,
   );
 }
 

@@ -121,12 +121,30 @@ export type ArticuloKb = {
 export const ANCHO_FILA_KB = 911.75;
 const ANCHO_FILA_CASCARON = 1238.39;
 
-export function mbPorDefectoKb(anchoFila: number, tipoColumna: TipoColumnaKb): { px1440: number; px390: number } {
-  if (anchoFila === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
-  if (anchoFila === ANCHO_FILA_KB)
+/**
+ * ⚠ **SIN LLAMADORES a 2026-08-11 — derivado, no supuesto:** `grep -rn
+ * "mbPorDefectoKb"` sobre el repo devuelve **sólo su definición**. O sea que la
+ * duplicación que el comentario de arriba justifica **no está en uso**, y su
+ * guarda declarada («`qa:kb-cmp` mide contra el original: si divergen, el Δ lo
+ * dice») **no puede dispararse**: una función que nadie llama no diverge, no
+ * mide y no falla. Es §sondas 3 —*documentado no es conectado*— y el linter no
+ * la caza porque está exportada.
+ *
+ * Se le aplica igualmente el `rol` obligatorio para que las dos escrituras no
+ * se separen. **Si borrarla o cablearla es decisión del propietario:**
+ * `PENDIENTES-QA.md` §LH-CONTENEDOR-ROL.
+ */
+export function mbPorDefectoKb(ancho: number, tipoColumna: TipoColumnaKb, rol: "fila" | "columna"): { px1440: number; px390: number } {
+  if (rol !== "fila")
+    throw new Error(
+      `mbPorDefectoKb: el defecto de \`mb\` depende del ancho de la FILA. Llegó rol=${JSON.stringify(rol)} ` +
+        `con ancho ${ancho}. Ojo: ${ANCHO_FILA_KB} es la FILA en articulos-kb y una COLUMNA 3_4 en L1.`,
+    );
+  if (ancho === ANCHO_FILA_CASCARON) return { px1440: 34.0469, px390: 30 };
+  if (ancho === ANCHO_FILA_KB)
     return { px1440: tipoColumna === "4_4" ? 34.0469 : 25.0625, px390: 30 };
   throw new Error(
-    `mbPorDefectoKb: ancho de fila SIN MEDIR (${anchoFila}). Los dos medidos son ` +
+    `mbPorDefectoKb: ancho de fila SIN MEDIR (${ancho}). Los dos medidos son ` +
       `${ANCHO_FILA_CASCARON} (SECTOR/MONOGRÁFICO) y ${ANCHO_FILA_KB} (articulos-kb).`,
   );
 }

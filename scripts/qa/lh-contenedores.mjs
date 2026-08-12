@@ -34,10 +34,15 @@
  * 4 · negativo: `SABOTAJE=sin-constantes|forma-huerfana|tabla-sin-kb`.
  *
  * ⚠ **ESTA SONDA SALE ROJA A PROPÓSITO, y no es un defecto suyo.** Su rojo es el
- * hallazgo: mientras `L3-sci` (fila **1152**) no esté medida y la **colisión de
- * rol** de `911.75` no se cierre, el veredicto correcto es ≠ 0. Fichas:
- * `PENDIENTES-QA.md` §LH-CONTENEDOR-L3 y §LH-CONTENEDOR-ROL. Se pondrá verde
- * cuando se decidan, no antes — un verde hoy sería el §sondas 4bis clásico.
+ * hallazgo, y a 2026-08-11 queda **una sola causa**:
+ *
+ * | ficha | estado |
+ * |---|---|
+ * | **§LH-CONTENEDOR-ROL** | ✅ **MITIGADA** — `mbPorDefecto` **exige el rol** desde el PASO 3 de la tanda de decisión, y una COLUMNA tira. Ejercitado en `qa:lh-rol` (7 casos, negativo 1/1). La colisión sigue en el DATO, así que se informa, pero ya no bloquea |
+ * | **§LH-CONTENEDOR-L3** | ⛔ **abierta** — `L3-sci` tiene fila de **1152**, un ancho que la tabla no cubre |
+ *
+ * Se pondrá verde cuando `L3` se mida, no antes — un verde hoy sería el
+ * §sondas 4bis clásico.
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -165,12 +170,18 @@ if (huerfanas.length) {
   console.error(`\n⛔ ${huerfanas.length} forma(s) con un ancho de fila que la tabla NO cubre — mbPorDefecto TIRARÍA:\n   ${huerfanas.join("\n   ")}`);
   rotos++;
 }
+/* ── La COLISIÓN DE ROL: sigue siendo un hecho del dato, y ya está MITIGADA ──
+ * Hasta el 2026-08-11 esto cerraba el código porque `mbPorDefecto` recibía un
+ * número suelto y no podía distinguirlos. Desde el PASO 3 de la tanda de
+ * decisión la firma **exige el rol** (`"fila" | "columna"`) y una columna TIRA:
+ * ejercitado en `npm run qa:lh-rol`, 7 casos, negativo 1/1. El dato no cambia
+ * —911.75 sigue siendo las dos cosas— pero ya no puede colarse en silencio, así
+ * que se informa en vez de bloquear. */
 if (colisiones.length) {
-  console.error(`\n⛔ COLISIÓN DE ROL — un mismo número es FILA en la tabla y COLUMNA en otra forma:`);
+  console.log(`\n  ℹ COLISIÓN DE ROL (mitigada) — un mismo número es FILA en la tabla y COLUMNA en otra forma:`);
   for (const c of colisiones)
-    console.error(`   ${c.forma}: la columna ${c.columna} vale ${c.anchoQueEnLaTablaEsFila}, que en la tabla es \`${c.nombreEnLaTabla}\` — pero la FILA de esta forma mide ${c.filaRealDeEstaForma.join(" · ")}`);
-  console.error(`   ⇒ pasarle ese número a mbPorDefecto NO da error: da el default del OTRO arquetipo.`);
-  rotos++;
+    console.log(`     ${c.forma}: la columna ${c.columna} vale ${c.anchoQueEnLaTablaEsFila} = \`${c.nombreEnLaTabla}\`, pero su FILA mide ${c.filaRealDeEstaForma.join(" · ")}`);
+  console.log(`     ⇒ desde 2026-08-11 \`mbPorDefecto\` exige el rol y una COLUMNA tira. Guarda: qa:lh-rol.`);
 }
 console.log(`\n✓ evaluadas ${Object.keys(salida.formas).length}/${Object.keys(formas).length} formas · contenedor de los %`);
 
