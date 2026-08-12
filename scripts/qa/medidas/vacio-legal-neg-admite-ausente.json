@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "fecha": "2026-08-12",
+    "pregunta": "¿el esquema distingue la cadena VACÍA de la AUSENCIA, y sólo donde el caso se da?",
+    "contra": "Payload de verdad (Local API), no el objeto de config — §documentado no es conectado",
+    "caso": "terminos-kunakpedia/esmog: <h1> de plantilla vacío, 1 de 37 · 0 de 149 blog · 0 de 23 documentos",
+    "sabotaje": "admite-ausente",
+    "noMide": [
+      "no siembra el catálogo",
+      "crea y borra sus propios documentos"
+    ]
+  },
+  "casos": [
+    {
+      "caso": "vacío ENTRA",
+      "esperado": "entra",
+      "obtenido": "entra",
+      "ok": true,
+      "error": null
+    },
+    {
+      "caso": "ausente MUERE",
+      "esperado": "rechazado",
+      "obtenido": "entra",
+      "ok": false,
+      "error": null
+    },
+    {
+      "caso": "faqs.titulo (required normal) RECHAZA el vacío",
+      "esperado": "rechazado",
+      "obtenido": "rechazado",
+      "ok": true,
+      "error": "The following field is invalid: Titulo"
+    }
+  ],
+  "fallos": 1
+}

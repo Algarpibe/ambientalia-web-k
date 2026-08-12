@@ -48,6 +48,71 @@ import {
 type EditorLexical = ReturnType<typeof lexicalEditor>;
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * OBLIGATORIO PERO CON VACÍO LEGAL — «vacío» y «ausente» son DOS COSAS
+ *
+ * ── El caso, con su denominador ───────────────────────────────────────────
+ * `terminos-kunakpedia/esmog` sirve **dos** `<h1>`: el de la plantilla **vacío**
+ * (`<h1></h1>`) y el real dentro del cuerpo. Su `titulo` medido es `""`, y
+ * `titulo` es `required`, así que Payload lo rechaza igual que si faltara.
+ *
+ * Derivado antes de tocar nada: **1 de 37** términos · **0 de 149** entradas ·
+ * **0 de 23** documentos. O sea que el caso existe, es único, y **no se
+ * generaliza**: `imagenA.src`, `cliente`, `seo.title` y los demás `required`
+ * siguen rechazando el vacío porque **ninguno lo ha ejercido**.
+ *
+ * ── Por qué esto NO es «inventar una regla de respaldo desde n=1» ─────────
+ * La tanda anterior hizo bien en no escribir *«si el `h1` está vacío, cae a la
+ * miga»*: eso **sí** sería derivar un discriminador de una sola instancia. Lo
+ * que se hace aquí es otra cosa y ya estaba escrito:
+ *
+ *   > **`h1: ""` colapsando «vacío» y «ausente» es el defecto de `lh-censo`**, y
+ *   > este repo ya pagó por él. El arreglo es que el campo **admita el vacío de
+ *   > forma EXPLÍCITA y distinguible de la ausencia** — no que alguien decida
+ *   > qué poner cuando está vacío.
+ *
+ * ── Y el defecto se pone en la dirección que GRITA (§sondas 6) ────────────
+ * **Ausente sigue matando**: un documento sin la clave falla en el alta, en el
+ * acto, con su mensaje. **Vacío es un valor legal declarado**, que se guarda y
+ * vuelve tal cual. Al revés —admitir la ausencia— no haría fallar nada y
+ * mataría el render delante del editor, que es exactamente lo que pasó en
+ * §F2-5-ESCALÓN-ETIQUETAS.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Un campo obligatorio **cuya cadena vacía es dato medido**. No usa el
+ * `required` de Payload —que no distingue `""` de ausente— sino un `validate`
+ * que rechaza sólo la AUSENCIA.
+ *
+ * @param fuente la instancia medida que lo ejerce, con su denominador. Es
+ *   obligatoria: un vacío legal sin caso que lo ejerza es un camino de render
+ *   sin estrenar, no una decisión (§qa:nunca-vistos).
+ */
+export function requeridoConVacio<T extends Field>(campo: T, fuente: string): T {
+  const c = campo as Field & {
+    required?: boolean;
+    validate?: unknown;
+    admin?: { description?: string };
+    custom?: Record<string, unknown>;
+  };
+  if (!("name" in campo)) throw new Error("requeridoConVacio: el campo necesita `name`.");
+  /* `required` de Payload rechaza `""`, así que no puede convivir con esto: se
+   * quita a propósito y el rechazo de la ausencia lo hace el `validate`. */
+  c.required = false;
+  c.validate = (valor: unknown) =>
+    valor === undefined || valor === null
+      ? `\`${"name" in campo ? campo.name : "?"}\` es obligatorio. La cadena VACÍA sí es un valor legal ` +
+        `(${fuente}) — lo que no lo es es que la clave no esté: «vacío» y «ausente» son dos cosas.`
+      : true;
+  c.admin = {
+    ...(c.admin ?? {}),
+    description: `Obligatorio. La cadena VACÍA es dato medido y se admite — ${fuente}.`,
+  };
+  /* Declarado en el esquema, no sólo en un comentario: así se puede auditar. */
+  c.custom = { ...(c.custom ?? {}), vacioLegal: true, fuenteVacioLegal: fuente };
+  return campo;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
  * EL DEFECTO EXPLÍCITO, CON SU OMISIÓN
  * ═════════════════════════════════════════════════════════════════════════ */
 

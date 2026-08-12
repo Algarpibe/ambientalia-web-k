@@ -1109,6 +1109,56 @@ consumen: `BlogPost`/`CaseStudy` (S1) quedan **verificadas contra 9 formas**
 (`lh-tarjetas`). El listado embebido en páginas de builder es un **bloque de
 consulta** que el clon ya tiene (`UltimosArticulos`, h3 medido).
 
+### ⚠ 2c.2 · `titulo` admite la cadena VACÍA en `terminos-kunakpedia` — CMS-2 (2026-08-12)
+
+**Decisión de esquema tomada en la tanda de datos, PASO 4.** `esmog` sirve **dos**
+`<h1>`: el de la plantilla **vacío** (`<h1></h1>`) y el real dentro del cuerpo
+(*«Esmog, qué hay detrás de esa densa niebla»*). Su `titulo` medido es `""`, y el
+`required` de Payload lo rechaza **igual que si faltara**.
+
+| dominio | con `<h1>` vacío |
+|---|---|
+| `terminos-kunakpedia` | **1 de 37** (`esmog`) |
+| `entradas-blog` | **0 de 149** |
+| `documentos-cientificos` | **0 de 23** |
+
+> **CMS-2 · `titulo` de `terminos-kunakpedia` es OBLIGATORIO y su cadena VACÍA es
+> un valor legal DECLARADO.** La ausencia de la clave sigue matando el alta.
+> Implementación: `requeridoConVacio()` en `campos/comunes.ts`, que sustituye el
+> `required` de Payload por un `validate` que sólo rechaza `undefined`/`null`, y
+> lo declara en el esquema (`custom.vacioLegal`) para poder auditarlo.
+
+**Por qué esto NO es «inventar una regla de respaldo desde n=1».** La tanda
+anterior hizo bien en no escribir *«si el `h1` está vacío, cae a la miga»* — eso
+sería derivar un **discriminador** de una sola instancia. Lo que se decide aquí
+es otra cosa, y ya estaba escrito en el repo:
+
+> **`h1: ""` colapsando «vacío» y «ausente» es el defecto de `lh-censo`**,
+> trasladado al esquema. El arreglo es que el campo **admita el vacío de forma
+> explícita y distinguible de la ausencia** — no que alguien decida qué poner
+> cuando está vacío.
+
+**El defecto va en la dirección que GRITA** (§sondas 6): *ausente* falla en el
+acto y con su mensaje; *vacío* se guarda y vuelve tal cual. Al revés —admitir la
+ausencia— no haría fallar nada y mataría el render delante del editor, que es
+literalmente §F2-5-ESCALÓN-ETIQUETAS.
+
+**Y está ESTRECHADO, con su prueba.** `qa:vacio-legal` (negativo **3/3**) mide
+contra Payload de verdad —no contra el objeto de config, §documentado no es
+conectado— las **tres** mitades:
+
+| caso | esperado | medido |
+|---|---|---|
+| `terminos-kunakpedia.titulo = ""` | entra | ✅ entra |
+| `terminos-kunakpedia.titulo` ausente | muere | ✅ rechazado |
+| **`faqs.titulo = ""`** (un `required` normal) | **muere** | ✅ rechazado |
+
+El tercero es el que impide que «lo hemos ablandado» y «lo hemos ablandado en
+todas partes» den el mismo verde.
+
+**NO-OP sobre lo ya medido**: round-trip **249/249** con los 37 términos
+sembrados, `esmog` incluido — el `""` sobrevive la ida y la vuelta.
+
 ## 2d · El grupo D — HD1 RECHAZADA, y la frontera medida (2026-08-03)
 
 Contesta la hipótesis pre-registrada `docs/research/arquetipo-A/HIPOTESIS-GRUPO-D.md`.

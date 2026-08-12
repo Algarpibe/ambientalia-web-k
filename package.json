@@ -182,6 +182,8 @@
     "qa:c-inventario-neg": "node scripts/qa/c-inventario.neg.mjs",
     "qa:media-siembra": "node scripts/qa/media-siembra.mjs",
     "qa:media-siembra-neg": "node scripts/qa/media-siembra.neg.mjs",
+    "qa:vacio-legal": "node --env-file=apps/cms/.env scripts/qa/vacio-legal.mjs",
+    "qa:vacio-legal-neg": "node scripts/qa/vacio-legal.neg.mjs",
     "cms:extractor-a": "node scripts/seed/extractor-a.mjs",
     "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs"
   },

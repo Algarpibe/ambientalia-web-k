@@ -100,7 +100,13 @@ export const CATALOGOS = [
    * canal `upload` está a **0 pendientes**. Las otras dos siguen abajo con su
    * razón, que no es de media. */
   { coleccion: "entradas-blog", json: "medidas/a-extraido.json", en: "catalogo.entradas-blog" },
-  { coleccion: "terminos-kunakpedia", modulo: "src/lib/arquetipo-a.ts", exportado: "TERMINOS_KUNAKPEDIA" },
+  /* ✅ **`terminos-kunakpedia` CAMBIA DE FUENTE (2026-08-12, PASO 4).** Su
+   * precondición era `esmog` con el `<h1>` de plantilla VACÍO contra un
+   * `required`. Resuelto **en el esquema, no en el extractor**:
+   * `requeridoConVacio()` declara el vacío como valor legal y deja la AUSENCIA
+   * matando (`qa:vacio-legal`, negativo 3/3). Alcance derivado antes de tocar
+   * nada: **1 de 37 · 0 de 149 · 0 de 23**. */
+  { coleccion: "terminos-kunakpedia", json: "medidas/a-extraido.json", en: "catalogo.terminos-kunakpedia" },
   { coleccion: "documentos-cientificos", modulo: "src/lib/arquetipo-a.ts", exportado: "DOCUMENTOS_CIENTIFICOS" },
 ];
 

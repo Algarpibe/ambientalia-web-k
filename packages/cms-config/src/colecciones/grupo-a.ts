@@ -14,7 +14,7 @@
  * px absolutos daría la respuesta **invertida** (`CLAUDE.md` §régimen).
  */
 import type { CollectionConfig, Field } from "payload";
-import { campoHtml, conDefecto, imagenA, seoA } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, imagenA, requeridoConVacio, seoA } from "../campos/comunes.ts";
 import { cuerpoKb } from "../bloques/kb.ts";
 import { registroDeSlug } from "../hooks/registro-slug.ts";
 
@@ -73,7 +73,18 @@ export const terminosKunakpedia: CollectionConfig = {
   fields: [
     { name: "slug", type: "text", required: true, unique: true, index: true },
     seoA,
-    { name: "titulo", type: "text", required: true },
+    /**
+     * ⚠ **`titulo` admite la cadena VACÍA aquí, y SÓLO aquí** (2026-08-12, tanda
+     * de datos, PASO 4). `esmog` sirve el `<h1>` de plantilla vacío —**1 de 37**
+     * términos, **0 de 149** entradas, **0 de 23** documentos— y `required` de
+     * Payload no distingue `""` de la ausencia.
+     *
+     * Lo que se decide es de ESQUEMA y no de extractor: el campo declara que el
+     * vacío es un valor legal. Lo que **no** se decide —y la tanda anterior hizo
+     * bien en no inventarlo— es *«qué poner cuando está vacío»*: eso sería un
+     * discriminador de una sola instancia.
+     */
+    requeridoConVacio({ name: "titulo", type: "text" } as Field, "§2c · `esmog`: el `<h1>` de plantilla vacío, 1 de 37"),
     /**
      * **`tituloMiga` — el rótulo NO es el titular** (§2c.1, medido al cerrar
      * A-QA1). De las 14 instancias transcritas, **3 de 3 términos difieren** y
