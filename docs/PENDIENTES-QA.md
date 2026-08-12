@@ -1,5 +1,95 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔⛔ ESCALÓN F3-2 (3.º) · **`D4-H1` sale de CERRADA: su evidencia no podía sostener lo que afirma** (2026-08-11)
+
+**Es un escalón de los que este proyecto se toma en serio porque RETIRA una
+decisión cerrada**, y no por un dato nuevo: por releer con el discriminador
+correcto la evidencia que ya estaba congelada.
+
+| | |
+|---|---|
+| **lo que `D4` afirma** | *«los 35 `h1` = nombre del término/índice»* ⇒ el `h1` es **dato derivado del término, no propiedad de la página** |
+| **lo que dice su propia evidencia** | `lh-censo.json`: **33 de 35**. `/es/glosario/` y `/es/preguntas-frecuentes/` traen `h1: ""` |
+| **y por qué eso no es sólo una cifra mal** | `lh-censo` guardaba **el TEXTO**, así que *«lo encontré vacío»* y *«no lo encontré»* salen **con el mismo valor**. El enunciado no está mal medido: está **SIN MEDIR**, con una medida real de coartada |
+
+**Resuelto contra el marcado servido** (`qa:lh-h1`, 149 documentos,
+`medidas/lh-h1.json`, negativo **4/4**): esas dos páginas tienen **cero `<h1>` en
+el documento entero**. Era **ausencia**.
+
+### Las dos direcciones, contestadas con el mismo barrido
+
+Escritas **antes de mirar**, como pide §UNA COMPROBACIÓN RETROACTIVA SE ENMARCA
+EN LAS DOS DIRECCIONES — y como la última vez, **la segunda no salió donde se
+esperaba**:
+
+| dirección | veredicto |
+|---|---|
+| **(a) ¿algo cerrado se apoya en el `""`?** | **SÍ — `D4`**, y es lo único: el barrido de las **753** congeladas encuentra `h1` vacío/nulo sólo en `lh-censo*` y `lh-regimen*` (las mismas 2 rutas) y en ficheros `-neg-muerto`, que son artefactos de test |
+| **(b) ¿la lectura nueva de `lh-spec` está sobre-generalizada?** | **NO.** `lh-spec.mjs:308-310` discrimina **por elemento**, no por texto, así que un `<h1></h1>` vacío daría `hayH1: true` con `texto: ""`. No colapsa |
+
+> ⚠ **Pero (b) trae su propio límite, y es la razón de que se declare en vez de
+> cerrarse: hay 0 `<h1>` vacíos en los 149.** O sea que la rama del `<h1>` vacío
+> de `lh-spec` es un **CAMINO SIN ESTRENAR** — correcto en el 100 % de lo medido
+> y **no ejercitado ni una vez**. Se declara con su alcance (§F2-5, la familia de
+> `qa:nunca-vistos`); no se da por soportada.
+
+### El censo, y la partición es lo que convierte esto en una pregunta de modelo
+
+| familia | n | con `<h1>` y texto | `<h1>` vacío | SIN `<h1>` |
+|---|---|---|---|---|
+| L1 (blog · etiqueta · resources) | 117 | **117** | 0 | 0 |
+| L3-sci · L4-hub · L5-casos · otra | 20 | **20** | 0 | 0 |
+| **L2-glosario** | 8 | 0 | 0 | **8** |
+| **L2-faqs** | 4 | 0 | 0 | **4** |
+
+Varianza **0 dentro** de cada familia y distinta **entre** familias: en régimen
+plantillado, **plantilla**. Y ahí está lo que `D4` mezclaba en una sola fila:
+
+> **¿de dónde sale el TEXTO del `h1`?** → del término (137/137 de los que lo
+> tienen). **¿HAY `h1`?** → lo decide **la plantilla de la familia**.
+>
+> Si el `h1` fuera *«dato derivado del término, no propiedad de la página»*, `L2`
+> tendría uno: **sus términos tienen nombre y la página no tiene `h1`.** Luego la
+> **presencia** es de la plantilla y el **contenido** del término — un enunciado
+> distinto del que `D4` tiene escrito, no una corrección de su cifra.
+
+### Por qué para aquí
+
+**Reescribir esa fila es MODELAR**, y modelar con una decisión retirada delante
+es exactamente lo que una tanda de medición no debe hacer. La evidencia queda
+congelada y la decisión va a una **tanda de decisión**.
+
+**Y arrastra una consecuencia de método con denominador:** el protocolo lee el
+cuerpo **restando la `y` del `h1`**, y **12 documentos no tienen ancla**.
+`lh-spec` propone «primera tarjeta» — **candidato, no ancla**: para serlo hay que
+probarlo en **9/9 formas** y verificar que es **el mismo elemento en los dos
+lados** (lo que `c-cabecera` aprendió a exigir). **La mitad de «los dos lados» no
+se puede contestar hoy: el clon no emite estas rutas.**
+
+**Evidencia congelada:** `medidas/lh-h1.json` + sus 4 negativos ·
+`medidas/lh-censo.json` (la que contenía las excepciones) ·
+`docs/research/listados-hubs/DECISIONES.md` §*la fila del `h1` sale de cerrada*.
+
+> ⚠ **Nota de instrumento que se pagó en esta misma corrida (§sondas 8a):** el
+> sabotaje `colapsa` —que reproduce el defecto de `lh-censo` leyendo el texto—
+> daba **exactamente el mismo resultado que la corrida limpia** (137 · 0 · 12), y
+> eso **no prueba que el defecto no importe: prueba que la población no lo
+> ejercita**. Hizo falta **fabricar el caso** (`vacio-inyectado`, un `<h1></h1>`
+> en `/glosario`) para que las dos lecturas se separaran:
+>
+> | corrida | discriminador | vacío | ausente |
+> |---|---|---|---|
+> | limpia | elemento | 0 | 12 |
+> | `colapsa` | texto | 0 | 12 ← **no discrimina: no hay caso** |
+> | `vacio-inyectado` | elemento | **1** | 11 |
+> | `colapsa-con-vacio` | texto | **0** | **12** ← el mismo documento, mal leído |
+>
+> El par de abajo es la demostración: **mismo documento, mismo `<h1></h1>`, y el
+> colapso lo cuenta como ausente.** Sin fabricar el caso, el negativo habría
+> pasado por bueno sin haber probado nada.
+
+---
+
 ## ✅ (cerrado por acotación de `D1`) ESCALÓN F3-2 (2.º) · **80 de las 117 páginas de `L1` sirven una BARRA LATERAL, y `D1` dice que entre variantes sólo cambia la tarjeta** (2026-08-11)
 
 > ✅ **CERRADO EL MISMO 2026-08-11, y sin retirar ninguna decisión.** El escalón

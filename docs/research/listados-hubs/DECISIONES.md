@@ -401,7 +401,7 @@ se toquen — no aquí.
 | esqueleto L1 (6 secciones · 2 `tb_body`) | **plantilla** | varianza 0 en 23/23 |
 | configuración de tarjeta (fecha · categoría · extracto · tamaño de imagen) | **plantilla DE LA VARIANTE** | varianza 0 dentro de familia (76/76 · 0/79 · 0/9); varía solo entre familias |
 | `entradasPorPagina` (9 · 15 · 5) | **plantilla de la variante** (⚠ corrige §4b) | varianza 0 intra-familia |
-| `h1` del archivo | **dato derivado del término** (su nombre), no propiedad de la página | los 35 h1 = nombre del término/índice |
+| `h1` del archivo | ⛔ **RETIRADA 2026-08-11 — vuelve a PENDIENTE**, ver abajo | ~~los 35 h1 = nombre del término/índice~~ → **33 de 35**; y la evidencia no podía sostenerlo |
 | nivel del titular de tarjeta (h2 · h3 embebido) | plantilla (contexto) | medido en L4 |
 | patrón `/page/N/` | plantilla (sistema) | 21/21 |
 | la **consulta** (qué término, qué CPT) | **dato** (el término es contenido) | es lo único que cambia entre los 23 de L1 |
@@ -411,6 +411,78 @@ se toquen — no aquí.
 
 **Y nada de lo SIN PROBAR se cablea** — se construye con el default medido y la
 pregunta anotada, que es exactamente la regla del arreglo falso.
+
+### ⛔ 2026-08-11 · la fila del `h1` SALE DE CERRADA — y no por un dato nuevo, sino porque su evidencia NO PODÍA SOSTENERLA
+
+Comprobación retroactiva **enmarcada en las dos direcciones antes de mirar**
+(§UNA COMPROBACIÓN RETROACTIVA SE ENMARCA EN LAS DOS DIRECCIONES), contestadas
+con **el mismo barrido**: `qa:lh-h1` sobre los 149 documentos de la captura,
+congelada en `medidas/lh-h1.json`, negativo **4/4**.
+
+**(a) ¿Alguna decisión cerrada se apoya en el `h1: ""` de `lh-censo`? — SÍ, ésta.**
+
+`D4` afirmaba *«los 35 `h1` = nombre del término/índice»*. Derivado del propio
+`lh-censo.json` que la sostenía: **33 de 35**. Las dos excepciones
+—`/es/glosario/` y `/es/preguntas-frecuentes/`— estaban **dentro de la evidencia
+citada**, con valor `""`, y no se miraron.
+
+> **Y lo grave no es el 33/35: es que ese `""` no puede decidir la pregunta en
+> ninguna dirección.** `lh-censo` guardaba el **TEXTO**, así que «lo encontré y
+> estaba vacío» y «no lo encontré» salen **con el mismo valor**. Un enunciado
+> apoyado en él no está mal medido — está **sin medir**, con una medida real de
+> coartada. Es §la regla del cero dentro de un censo que después se citó.
+
+Resuelto contra el marcado servido, que sí distingue: **cero `<h1>` en el
+documento entero** en esas dos. Era **ausencia**.
+
+**(b) ¿Y la lectura NUEVA de `lh-spec` está sobre-generalizada? — NO, y con su
+límite declarado.** `lh-spec.mjs:308-310` discrimina **por elemento**
+(`h1 ? … : …`), no por texto: un `<h1></h1>` vacío daría `hayH1: true` con
+`texto: ""`. No colapsa. Pero:
+
+> ⚠ **Ningún documento de la población ejercita esa rama** — **0 `<h1>` vacíos
+> en 149**. Así que «sin `h1` ⇒ ausente» es correcto en el 100 % de lo medido y
+> **la rama del `<h1>` vacío es un CAMINO SIN ESTRENAR** (§F2-5, la familia de
+> `qa:nunca-vistos`). Se declara con su alcance; no se da por soportada.
+
+**El censo completo, y la partición es lo que decide:**
+
+| familia | n | con `<h1>` y texto | `<h1>` vacío | SIN `<h1>` |
+|---|---|---|---|---|
+| L1-blog · L1-etiqueta · L1-resources | 117 | **117** | 0 | 0 |
+| L3-sci · L4-hub · L5-casos · otra | 20 | **20** | 0 | 0 |
+| **L2-glosario** | 8 | 0 | 0 | **8** |
+| **L2-faqs** | 4 | 0 | 0 | **4** |
+
+**Varianza 0 dentro de cada familia, distinta entre familias** — la misma forma
+que la barra y la tarjeta. En régimen plantillado eso se lee como **plantilla**.
+
+### Por qué esto NO se decide aquí
+
+Porque lo que cae no es un número, es que **`D4` mezclaba dos propiedades en una
+fila**:
+
+| pregunta | lo que dice el censo |
+|---|---|
+| ¿de dónde sale el **texto** del `h1`? | del término — en 137/137 de los que lo tienen |
+| ¿**hay** `h1`? | lo decide **la plantilla de la familia**: `L2` no emite ninguno, y sus términos sí tienen nombre |
+
+Si el `h1` fuera *«dato derivado del término, no propiedad de la página»*, `L2`
+tendría uno. **No lo tiene.** Así que la presencia es de la plantilla y el
+contenido del término, y eso es un enunciado distinto del que `D4` tiene escrito
+— **no una corrección de su cifra**. Reescribirlo es modelar, y modelar con una
+decisión retirada delante es lo que esta tanda tiene prohibido.
+
+⇒ **Queda como PENDIENTE para una tanda de decisión**, con la evidencia ya
+congelada. Ficha: `PENDIENTES-QA.md` §**ESCALÓN F3-2 (3.º) · D4-H1**.
+
+⚠ **Y arrastra una consecuencia de MÉTODO que ya estaba fichada y ahora tiene
+denominador:** el protocolo de este proyecto lee el cuerpo **restando la `y` del
+`h1`**, y **12 documentos no tienen ancla**. `lh-spec` ya propone «primera
+tarjeta» como alternativa — es un **candidato, no el ancla**: para serlo hay que
+probarlo en 9/9 formas y verificar que es **el mismo elemento en los dos lados**,
+que es lo que `c-cabecera` aprendió a exigir. La mitad de los dos lados **no se
+puede contestar todavía**: el clon no emite estas rutas.
 
 ## D5 · Las ocho preguntas del §9, una a una
 

@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿el `h1: \"\"` de lh-censo es «vacío» o «ausente», y a qué se apoya en él? — las dos direcciones de la comprobación retroactiva",
+    "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
+    "sabotaje": "colapsa-con-vacio",
+    "noMide": [
+      "el original de HOY: el censo es de lo capturado en F3-0",
+      "el CLON: estas rutas todavía no las emite (F3-2 no ha construido), así que la mitad «es el MISMO elemento en los dos lados» de la regla de `c-cabecera` no se puede contestar aquí",
+      "la `y` del h1: esto es marcado, no geometría — el píxel lo pone `lh-spec`"
+    ]
+  },
+  "documentos": 149,
+  "formas": {
+    "conTexto": 137,
+    "vacio": 0,
+    "ausente": 12
+  },
+  "conH1Vacio": [],
+  "sinH1": [
+    "/glosario",
+    "/glosario/page/2",
+    "/glosario/page/3",
+    "/glosario/page/4",
+    "/glosario/page/5",
+    "/glosario/page/6",
+    "/glosario/page/7",
+    "/glosario/page/8",
+    "/preguntas-frecuentes",
+    "/preguntas-frecuentes/page/2",
+    "/preguntas-frecuentes/page/3",
+    "/preguntas-frecuentes/page/4"
+  ],
+  "conVariosH1": [],
+  "porFamilia": {
+    "L1-blog": {
+      "n": 17,
+      "conTexto": 17,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L5-casos": {
+      "n": 2,
+      "conTexto": 2,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L1-etiqueta": {
+      "n": 63,
+      "conTexto": 63,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L2-glosario": {
+      "n": 8,
+      "conTexto": 0,
+      "vacio": 0,
+      "ausente": 8
+    },
+    "L2-faqs": {
+      "n": 4,
+      "conTexto": 0,
+      "vacio": 0,
+      "ausente": 4
+    },
+    "otra": {
+      "n": 4,
+      "conTexto": 4,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L1-resources": {
+      "n": 37,
+      "conTexto": 37,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L4-hub": {
+      "n": 8,
+      "conTexto": 8,
+      "vacio": 0,
+      "ausente": 0
+    },
+    "L3-sci": {
+      "n": 6,
+      "conTexto": 6,
+      "vacio": 0,
+      "ausente": 0
+    }
+  },
+  "veredicto": {
+    "a_colapsaLaEvidencia": true,
+    "b_hayCasoQueEjercite_h1Vacio": false,
+    "lectura": "«12 documentos SIN <h1>» y «0 con <h1> vacío» ⇒ (a) el \"\" de lh-censo era AUSENCIA, y su valor no podía decirlo; (b) la lectura de lh-spec NO está sobre-generalizada — distingue por elemento, y además ningún documento de la población ejercita la rama del <h1> vacío: es un CAMINO SIN ESTRENAR, se declara con su alcance y no se da por probado"
+  }
+}
