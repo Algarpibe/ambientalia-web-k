@@ -51,6 +51,21 @@ va por **`loop-del-tema`**.
 > sirve **44px/44 · 300**. Y a **390 `L3` no baja de 44px** mientras `L1` baja a
 > 35. Son **dos pieles distintas de titular**, medidas — no una con variantes.
 > El texto es el **nombre del término** (`D4a`, 89 documentos de archivo).
+>
+> ✅ **El mecanismo de `SP-T7` está DIAGNOSTICADO 2026-08-12 desde lo servido.**
+> El `h1` de `L3` es **la banda del TEMA** — `.main-title.titulo-puntos >
+> h1.entry-title`, el mismo elemento que `L5` (por eso sus pieles son
+> idénticas: 44/44 · 300 a los dos anchos)—. Su regla vive en la **hoja externa
+> del tema** y el documento servido **no lleva ni una regla** para
+> `main-title`/`entry-title` ni ningún override móvil que le aplique (censado
+> el `<style>` inline completo de las 2 instancias): **una sola regla a todos
+> los anchos**, y por eso no baja. Los `h1` que SÍ bajan (`L1`, `L4`) son
+> **módulos de texto de Divi** cuya piel compila el override móvil del editor —
+> exhibido en la spec de `L4` (`.et_pb_text_1 h1{font-size:35px}` @≤767).
+> *No baja* = nadie escribió un tamaño móvil para la banda del tema; *baja* =
+> el módulo lleva el suyo. **Lo que lo congelado no puede exhibir**: la regla
+> concreta de la hoja externa (et-cache / style.css del hijo) — la piel de
+> `L3`/`L5` se replica de la MEDIDA.
 
 ## 2 · La retícula del listado — **4 columnas**, la más densa del sitio
 
@@ -128,4 +143,4 @@ resulta ser un bloque opcional del mismo esqueleto, se fusionan»*. Lo medido:
 | **SP-T4** | **anchos intermedios** | contrato de RANGO |
 | **SP-T5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
 | **SP-T6** | **entradas por página** (`LH-SP9`) | sin ventana de `paginate_links` no se deriva del documento |
-| **SP-T7** | por qué el `h1` **no baja de 44px a 390** cuando el de `L1` sí | medido, no diagnosticado |
+| **SP-T7** | ✅ mecanismo **DIAGNOSTICADO 2026-08-12** (§1: banda del tema con una sola regla vs módulo Divi con override móvil compilado) · queda sin exhibir la regla de la hoja externa — la piel se replica de la medida | mitad cerrada |

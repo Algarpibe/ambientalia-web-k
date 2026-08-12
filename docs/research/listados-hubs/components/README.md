@@ -61,20 +61,27 @@ que la primera. Lo que faltaba era la prosa, no los píxeles.
 
 ### ⚠ Lo que la redacción destapó, y no estaba en ninguna medida anterior
 
-Cuatro cosas que sólo se ven **cruzando las cinco formas**, y las cuatro quedan
-**medidas y sin diagnosticar** en su spec:
+Cuatro cosas que sólo se ven **cruzando las cinco formas**. ✅ **Diagnosticadas
+2026-08-12 (PASO 1 de la 56.ª tanda), desde el corpus congelado y sin red** —
+tres enteras con causa, una a medias:
 
-| # | hallazgo | dónde |
+| # | hallazgo | diagnóstico |
 |---|---|---|
-| 1 | **`L5` sirve CUATRO secciones de pie**; las otras cuatro formas sirven **tres** | `indice-casos` §0 · `SP-K5` |
-| 2 | **La cabecera de `L5` mide 458.09 @1440** contra los **225** de `L2`/`L3` — y **473.08 @390** contra 136.58 | `indice-casos` §1 |
-| 3 | **Tres pieles de `h1`**, no una: `L1` **50/60 · 800** · `L3`+`L5` **44/44 · 300** · `L4` **44.1/55.125 · 300**. Y `L3` **no baja de 44px a 390** mientras `L1` baja a 35 | `listado-tema-tax` §1 · `hub-builder` §1 |
-| 4 | **`L5` es la única forma cuya base SUBE al estrechar** (593.28 → 608.27); en las otras cuatro baja | `indice-casos` §1 |
+| 1 | **`L5` sirve CUATRO secciones de pie**; las otras cuatro formas sirven **tres** | ✅ la 4.ª es la **banda CTA** (`et_pb_fullwidth_slider`) y es **el pie de la familia CASOS** — los singulares del grupo C sirven las mismas 4; el clon ya la construye (`CtaInmerso`). `indice-casos` §0 |
+| 2 | **La cabecera de `L5` mide 458.09 @1440** contra los **225** de `L2`/`L3` — y **473.08 @390** contra 136.58 | ✅ **tercera fila del header** con módulo de texto («Más información sobre nuestros proyectos…»), **exclusiva del índice** (n=2: índice y `page/2`; 0 en las otras 15 capturas miradas). `indice-casos` §1 |
+| 3 | **Tres pieles de `h1`**: `L1` **50/60 · 800** · `L3`+`L5` **44/44 · 300** · `L4` **44.1/55.125 · 300**. Y `L3` **no baja de 44px a 390** mientras `L1` baja a 35 | ✅ mecanismo: `L3`/`L5` = **banda del tema** (`.main-title > .entry-title`, una regla externa, sin override móvil); `L1`/`L4` = **módulos Divi con override móvil compilado**. En `L4` la regla está **exhibida** (44.1px tecleado + 35px móvil); la de `L1` vive en et-cache externo — se replica de la medida. `listado-tema-tax` §1 · `hub-builder` §1 |
+| 4 | **`L5` es la única forma cuya base SUBE al estrechar** (593.28 → 608.27) | ✅ por composición: `h1.y − cabecera.h` = **135.19 a los dos anchos** — la subida es enteramente la cabecera (su fila extra crece +103.41 a 390 mientras el header base encoge −88.42). `indice-casos` §1 |
 
-> **Los cuatro son del CASCARÓN**, que es justo donde el arquetipo A midió
-> varianza cero dentro de cada forma. Aquí hay varianza **entre** formas — que es
-> lo que distingue plantillas, no campos— pero **no está explicada**, y una
-> construcción que dé el cascarón por común los mete todos.
+> ⚠ **Lo que queda medido y NO explicado**, con su ficha: el **+29 @390** de la
+> cabecera de `L4` (marcado idéntico a `L2`, el Δ vive al nivel de fila y lo
+> congelado no baja ahí — `hub-builder` §1) · el reparto interno de la fila
+> extra de `L5` (hoja externa) · la regla externa de la piel de `L1`. Los tres
+> se replican del número medido, que es lo que manda el contrato de FIDELIDAD.
+>
+> **Y un quinto hallazgo del mismo barrido** (2026-08-12): `footer-background`
+> lleva `et_pb_with_background` en todo el sitio **salvo en las páginas de
+> ARCHIVO** (13/13 sin, 0 excepciones; el cruce con blog singular —plantillado y
+> con fondo— descarta que sea builder-vs-plantilla). `indice-casos` §0.
 
 ## ⛔ Y lo que esta fase destapó, antes de construir nada
 

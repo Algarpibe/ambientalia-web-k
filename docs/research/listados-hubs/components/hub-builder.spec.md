@@ -37,12 +37,33 @@
 | texto | «Centro de recursos sobre la calidad del aire» | ídem |
 
 > ⚠ **Tercera piel de titular del sitio, y las tres están medidas:** `L1`
-> **50/60 · 800**, `L3`·`L5` **44/44 · 300**, `L4` **44.1/55.125 · 300**. El
-> `44.1` y el `55.125` **no son redondos**: huelen a `em`/`%` resueltos, no a px
-> escritos. **No diagnosticado** — es `SP-H6`.
+> **50/60 · 800**, `L3`·`L5` **44/44 · 300**, `L4` **44.1/55.125 · 300**.
 >
-> Y la cabecera de `L4` mide **165.58 a 390** contra los **136.58** de `L2`/`L3`:
-> **+29**. También sin diagnosticar.
+> ✅ **La mitad tipográfica de `SP-H6` está DIAGNOSTICADA 2026-08-12, con la
+> regla exhibida.** `L4` es builder y su documento **compila la piel al
+> `<style>` servido** (la lección de `qa:kb-tipografia`):
+>
+> ```css
+> .et_pb_text_1 h1{font-weight:300;font-size:44.1px;line-height:1.25em}
+> .et_pb_text_1 h1{font-size:35px}   /* override móvil */
+> ```
+>
+> El **44.1 está escrito tal cual** en la regla — valor tecleado por el editor,
+> no un `em` resuelto—; el 55.125 **sí** es el `1.25em` resuelto (44.1 × 1.25), y
+> a 390 el override da 35 × 1.25 = **43.75**, exactamente lo medido. La piel es
+> un override POR MÓDULO, de la misma clase que los 89 de `articulos-kb`.
+>
+> ⚠ **La otra mitad —la cabecera de `L4` a 390: 165.58 contra 136.58, +29— NO
+> sale de lo congelado.** Comprobado en las dos direcciones: el marcado del
+> `header` es **idéntico** al de `L2` (mismas 2 filas, mismos módulos) y el
+> ritmo de sección congelado también (`pb: 40px` en ambos). El Δ vive **al
+> nivel de fila**, que ni `lh-spec` congeló ni la captura puede renderizar (sin
+> hojas externas no hay layout que medir). Candidato anotado, no afirmado: el
+> documento de `L4` lleva INLINE el CSS de la plantilla de cabecera que las
+> páginas plantilladas cargan por hoja externa — si las dos fuentes difieren en
+> algún override móvil, ahí estaría el +29. **Se replica el número medido**; lo
+> que faltaría mirar: las filas del header en vivo a 390, o la hoja et-cache
+> externa.
 
 ## 2 · El cuerpo — cuatro secciones propias, cinco filas
 
@@ -101,5 +122,5 @@ de una página compuesta, no el caso de `L3` (que sí pagina por URL sin control
 | **SP-H3** | el **contenido** de los 11 módulos de las 5 filas | esta spec mide la retícula y el ritmo, no lo que va dentro |
 | **SP-H4** | **anchos intermedios** | contrato de RANGO |
 | **SP-H5** | **el ruido** de esta ruta | sin campaña, un residuo pequeño es SIN PROBAR |
-| **SP-H6** | por qué el `h1` mide **44.1 / 55.125** y la cabecera **+29 a 390** | medido, **no diagnosticado** |
+| **SP-H6** | ✅ mitad tipográfica **DIAGNOSTICADA 2026-08-12** (§1: regla exhibida, override por módulo) · ⚠ el **+29 a 390** de la cabecera sigue sin diagnóstico — el Δ vive al nivel de fila y lo congelado no baja ahí; se replica el número | mitad cerrada, mitad medida |
 | **SP-H7** | si `MonoSeccion[]` expresa este cuerpo | es la **hipótesis pre-registrada del grupo D**, y su experimento sigue pendiente (`D1`) |

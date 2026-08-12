@@ -21,7 +21,29 @@
 > ⚠⚠ **`L5` sirve CUATRO secciones de pie, y las otras cuatro formas sirven
 > TRES.** Medido a los dos anchos. Es varianza **en el cascarón**, que es
 > justamente donde el arquetipo A midió varianza cero — así que **no se puede dar
-> el pie por común** al construir. No está diagnosticado: es `SP-K5`.
+> el pie por común** al construir.
+>
+> ✅ **DIAGNOSTICADO 2026-08-12 desde lo congelado (PASO 1 de la 56.ª tanda).**
+> La 4.ª sección es la **banda CTA del pie** — un `et_pb_fullwidth_slider` con
+> tres diapositivas por idioma (`ocultar-en/es/fr`, sólo la ES visible):
+> «¿Necesitas información fiable para tu proyecto de calidad del aire?» +
+> «Podemos ayudarte» — servida **delante** de `footer-links`, que pasa a índice 1.
+> **No es una rareza de `L5`: es el pie de la FAMILIA CASOS.** Derivado del
+> corpus, no supuesto: los singulares del grupo C sirven **las mismas 4
+> secciones en el mismo orden** (`corpus/casos/*.html`, 3 verificados + índice +
+> `page/2`), y el resto del sitio —blog singular, producto, sector, y los 12
+> listados capturados— sirve 3. El clon **ya construye esta banda**
+> (`CtaInmerso`, plantilla del grupo C): para `L5` el pie es **el del grupo C**,
+> no el de los listados.
+>
+> Y de camino, la segunda varianza del pie, censada en las 13 capturas de
+> listados + 4 familias singulares: **`footer-background` pierde
+> `et_pb_with_background` exactamente en las páginas de ARCHIVO** (L1-blog,
+> etiqueta ×2, glosario, faqs, resources hijo/padre ×4, sci ×2 — 13/13 sin) y lo
+> lleva todo lo que no es archivo (L4, L5 ×2, singulares de blog/producto/
+> sector/casos — 0 excepciones). El discriminador sobrevive al cruce: blog
+> singular es plantillado y lleva fondo, así que no es builder-vs-plantilla —
+> es **archivo-vs-no**. Cada forma lleva su pie MEDIDO, no el compartido.
 
 **Y su plantilla se llama en el marcado**: `page-template-case-studies-php`. No
 hay que inferir que es PHP propia — el `<body>` lo dice.
@@ -41,9 +63,25 @@ hay que inferir que es PHP propia — el `<body>` lo dice.
 > de éxito») es un **titular de índice**, o sea **dato de la página**, no
 > derivado de ningún término.
 >
-> **Es la única forma cuya `y` de base es MAYOR a 390 que a 1440** (608.27 contra
-> 593.28). En las otras cuatro la base baja al estrechar. **No diagnosticado** —
-> `SP-K5`.
+> ✅ **DIAGNOSTICADO 2026-08-12 desde lo servido.** El `header.et-l--header` de
+> `L5` lleva una **TERCERA fila** (`et_pb_row_2_tb_header`, columna `4_4`) con un
+> módulo de texto centrado: *«Más información sobre nuestros proyectos más
+> interesantes»*. Esa fila es **exclusiva de las páginas del índice** — está en
+> las 2 instancias de `L5` (índice y `page/2`) y en **ninguna** otra captura:
+> 0 de 12 listados, 0 de 3 singulares de casos mirados. O sea que la plantilla
+> de cabecera del theme builder que recibe `/casos-de-exito/` trae la banda; el
+> resto del sitio recibe la de 2 filas. El +233.09 ES esa fila (458.09 − 225).
+>
+> **Y la base que SUBE al estrechar cae con el mismo diagnóstico, por
+> composición desde lo congelado:** `h1.y − cabecera.h` = **135.19 px a los DOS
+> anchos** (593.28−458.09 = 608.27−473.08) — todo lo que hay entre cabecera y
+> `h1` es invariante al ancho, así que la subida de la base (+14.99) **es
+> enteramente la subida de la cabecera**. La cabecera base encoge a 390 como en
+> todas las formas (225→136.58, −88.42) y la fila extra **crece** de 233.09 a
+> 336.5 (+103.41: el texto envuelve y su ritmo es relativo); el neto es +14.99.
+> Lo que lo congelado NO puede exhibir es el reparto interno de la fila
+> (padding/tipografía viven en la hoja externa et-cache, que la captura no
+> trae): **los números de la fila son la MEDIDA y se replican como tal.**
 
 ## 2 · La retícula — **3 columnas y 57 tarjetas sin paginar**
 
@@ -103,5 +141,5 @@ del modelo del caso *«hasta que un listado la consuma»* — y la consume.
 | **SP-K2** | las **54 tarjetas** que no son las 3 primeras | se congelaron 3 de 57; la varianza de altura dentro de la rejilla está SIN MEDIR |
 | **SP-K3** | el **filtro** de 12 botones — su marcado, su estado inicial y su efecto en el alto | medido como comportamiento (`P-LH-C6`), **no como geometría** |
 | **SP-K4** | **anchos intermedios** y **el ruido** | contrato de RANGO · sin campaña, un residuo pequeño es SIN PROBAR |
-| **SP-K5** | por qué el pie trae **4 secciones** y la cabecera **458.09**, y por qué la base **sube** al estrechar | tres medidas sin diagnóstico, y las tres son del **cascarón** — que es donde el resto del sitio tiene varianza cero |
+| **SP-K5** | ✅ **DIAGNOSTICADO 2026-08-12** (§0 y §1): pie = familia CASOS con banda CTA; cabecera = 3.ª fila exclusiva del índice; base que sube = la cabecera, por composición (135.19 invariante). **Queda sin exhibir**: el reparto interno de la fila extra (hoja externa) — los números se replican como medida |
 | **SP-K6** | la **relación `post_tag`** que las clases del `<article>` revelan (`tag-cov`, `tag-h2s-es`, `tag-malos-olores`) | `D3` la anotó como dato y **no la añadió al modelo** hasta que un listado la consuma; este listado **no** la consume — el que la consume es el filtro, y ése usa `sector` |
