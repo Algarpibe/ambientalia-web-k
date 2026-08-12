@@ -292,6 +292,68 @@ deliberadas: no cubre **el cascarón** (el clon lo construye con sus propios
 assets, no entran en el CMS), no cubre **`articulos-kb`** (ya sembrada, y su
 guarda es la otra) y no cubre **ninguna colección futura**.
 
+## ✅ DATOS-BLOG · `entradas-blog` SEMBRADA — 149 de 149, y de paso dos defectos que llevaban ahí desde antes (2026-08-12)
+
+**La colección de más valor está poblada**: 149 documentos, y con ella las
+taxonomías derivadas — **4 categorías · 12 etiquetas · 8 categorías de recurso ·
+3 científicas** (contra 3 · 8 · 3 · 3 con la muestra de 7).
+
+| criterio del PASO 3 | resultado |
+|---|---|
+| desde DB vacía (`reset` + `seed` + `seed-kb`) | ✅ |
+| recuento por Local API contra 149 | ✅ **149**, todas `publicado` |
+| round-trip de la familia | ✅ **149/149**, y **215/215** en las 13 colecciones |
+| `qa:slugs` | ✅ **156 slugs, 0 colisiones** entre familias |
+| `npm run check` | ✅ **179 rutas · 13 familias · 0 vacías** (antes: 37 · 13 · 0) |
+
+`/[slug]` pasa de **7 a 152** rutas (149 blog + 3 términos).
+
+> ⚠ **El `~285` del encargo no se alcanza todavía, y no es un fallo del plan:**
+> `qa:slugs` cuenta **156** porque términos (3 de 37), documentos (4 de 23),
+> casos (4 de 57) y faqs (2 de 19) siguen con la muestra. La unicidad ENTRE
+> familias se ejercita **de verdad** cuando entren los PASOS 4·5·6 — hoy está
+> probada sobre 156, y eso es lo que se puede afirmar.
+
+### Defecto 1 · `qa:cms-roundtrip` DESTRUÍA ESTADO QUE NO RESTAURABA
+
+**La sonda resetea la DB y siembra — pero su siembra son los 9 catálogos, y el
+reset se lleva también `articulos-kb`**, que nace de `cms:seed-kb`. O sea que
+correr el round-trip dejaba la DB **incompleta** y el siguiente build emitía
+**6 rutas menos**.
+
+Aislado en una corrida: `articulos-kb` **6 → 0** al correr la sonda; `6 → 6`
+después del arreglo.
+
+> **Lo destapó `qa:manifiesto`** —*«2 FAMILIAS DECLARADAS QUE NO EMITIERON
+> NINGUNA RUTA»*—, o sea que **la guarda funcionó**. Lo que no existía era la
+> restauración. Y merece enunciarse porque es una clase nueva en este repo:
+>
+> > **Una sonda que es dueña de su precondición tiene que serlo de las DOS
+> > mitades.** Dejar el entorno peor de como se encontró convierte cualquier
+> > medida posterior en un misterio — y el misterio se lo come la tanda
+> > siguiente, que no sabe que hubo una sonda por medio.
+
+Arreglado en la propia sonda: repone con **el mismo script** que siembra
+(`seed-kb.mjs`), no con una copia, y si no puede **lo dice y sale con ≠0**.
+Negativo entero re-corrido: **6/6**.
+
+### Defecto 2 · `vaciaEsAusente` sin declarar en `titulares` — 17 diferencias de FORMA
+
+Al re-correr el round-trip sobre la DB entera salieron **17 diferencias** en los
+2 monográficos: el dato medido **omite** `titulares` y la vuelta emitía `[]`.
+
+**No es una regresión de esta tanda.** La congelada canónica de `qa:cms-decl` es
+del **2026-08-06** y el mecanismo `vaciaEsAusente` es posterior: el campo nació
+después de la última auditoría y **nadie volvió a correrla**. La sonda lo derivó
+con su denominador — **ausente en 17 de 17** — y lo imprimió como HUECO.
+
+**Y la declaración va en la COMPOSICIÓN, no en la primitiva.** `titularesModulo`
+es compartido, y `articulos-kb` lo compone por su cuenta (`bloques/kb.ts`) sin
+que la ida lo recorra —el round-trip la deja fuera—, así que **para KB esto está
+SIN DERIVAR**. Declararlo en la primitiva sería generalizar a un dominio donde el
+caso no se ha medido, que es lo que §F2-5-ESCALÓN-ETIQUETAS dejó escrito que no
+se hace. Tras el arreglo: `qa:cms-decl` **64/64 en las dos direcciones**.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de

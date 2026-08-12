@@ -466,6 +466,41 @@ if (informe.diferencias.length) {
 
 w(env("SALIDA") || (SABOTAJE ? `medidas/cms-roundtrip-neg-${SABOTAJE}.json` : "medidas/cms-roundtrip.json"), informe);
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ REPONER `articulos-kb` — esta sonda DESTRUÍA ESTADO QUE NO RESTAURABA
+ *
+ * La sonda es dueña de su precondición (resetea y siembra), y eso está bien.
+ * Lo que estaba mal es la otra mitad: **su siembra son los 9 catálogos, y el
+ * reset se lleva TAMBIÉN `articulos-kb`**, que nace de `cms:seed-kb` y no de
+ * `seed.mjs`. Así que correr el round-trip dejaba la DB **incompleta**, y el
+ * siguiente build emitía **6 rutas menos** sin que nada lo relacionara.
+ *
+ * Medido el 2026-08-12, aislado en una corrida: `articulos-kb` pasa de **6 a 0**
+ * al correr esta sonda. Lo destapó `qa:manifiesto` —*«2 FAMILIAS DECLARADAS QUE
+ * NO EMITIERON NINGUNA RUTA»*—, o sea que **la guarda funcionó**; lo que no
+ * existía era la restauración.
+ *
+ * No es un caso de «úsala con cuidado»: una sonda que deja el entorno peor de
+ * como lo encontró convierte cualquier medida posterior en un misterio, y el
+ * misterio se lo come la tanda siguiente. Se repone con el MISMO script que la
+ * siembra —no con una copia—, y si no se puede, se dice en voz alta.
+ * ═════════════════════════════════════════════════════════════════════════ */
+if (!process.env.SIN_RESET) {
+  const { spawnSync } = await import("node:child_process");
+  const r = spawnSync(process.execPath, [path.join(RAIZ, "scripts/seed/seed-kb.mjs")], { encoding: "utf8", env: process.env });
+  if (r.status !== 0) {
+    console.error(r.stdout ?? "");
+    console.error(r.stderr ?? "");
+    console.error(
+      `\n⚠ NO se pudo reponer \`articulos-kb\` tras el round-trip.\n` +
+        `   La DB queda INCOMPLETA: el siguiente build emitirá 6 rutas menos y\n` +
+        `   \`qa:manifiesto\` sacará 2 familias vacías. Corre \`npm run cms:seed-kb\`.`,
+    );
+    process.exit(2);
+  }
+  console.log(`  ✓ \`articulos-kb\` repuesta tras el reset: la DB queda como estaba (6 artículos)`);
+}
+
 console.log(
   `\n${conDiferencia === 0 ? "✅" : "❌"} round-trip: ${PARES - conDiferencia}/${PARES} documentos IDÉNTICOS` +
     ` en ${filasPorColeccion.size} colecciones.\n` +

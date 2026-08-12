@@ -93,7 +93,13 @@ export const CATALOGOS = [
    * va. Para cambiarlas de fuente basta con sustituir `modulo`/`exportado` por
    * `json: "medidas/a-extraido.json", en: "catalogo.<colección>"` — el soporte
    * ya está debajo y probado. */
-  { coleccion: "entradas-blog", modulo: "src/lib/arquetipo-a.ts", exportado: "ENTRADAS_BLOG" },
+  /* ✅ **`entradas-blog` CAMBIA DE FUENTE (2026-08-12, tanda de datos, PASO 3).**
+   * Su precondición era «90 orígenes de media sin capturar», y al derivarla
+   * contra **la guarda que para** —`apps/web/public`, no `media-corpus`— eran
+   * **4** ficheros (`qa:media-siembra`). Capturados, colocados y remedidos: el
+   * canal `upload` está a **0 pendientes**. Las otras dos siguen abajo con su
+   * razón, que no es de media. */
+  { coleccion: "entradas-blog", json: "medidas/a-extraido.json", en: "catalogo.entradas-blog" },
   { coleccion: "terminos-kunakpedia", modulo: "src/lib/arquetipo-a.ts", exportado: "TERMINOS_KUNAKPEDIA" },
   { coleccion: "documentos-cientificos", modulo: "src/lib/arquetipo-a.ts", exportado: "DOCUMENTOS_CIENTIFICOS" },
 ];

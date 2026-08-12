@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-05",
+    "fecha": "2026-08-12",
     "sabotaje": "defecto",
     "alcance": {
       "comparadas": [
@@ -18,7 +18,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 63,
+      "pares": 215,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -30,15 +30,15 @@
   },
   "porColeccion": {
     "categorias": {
-      "documentos": 3,
+      "documentos": 4,
       "conDiferencia": 0
     },
     "etiquetas": {
-      "documentos": 8,
+      "documentos": 12,
       "conDiferencia": 0
     },
     "categorias-recursos": {
-      "documentos": 3,
+      "documentos": 8,
       "conDiferencia": 0
     },
     "categorias-cientificas": {
@@ -70,7 +70,7 @@
       "conDiferencia": 0
     },
     "entradas-blog": {
-      "documentos": 7,
+      "documentos": 149,
       "conDiferencia": 0
     },
     "terminos-kunakpedia": {

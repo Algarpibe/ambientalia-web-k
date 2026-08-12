@@ -229,7 +229,30 @@ export const MODULO_TEXTO: Block = {
      * render sin estrenar **declarado**, con su ficha (§F3-1-PIEL-FUERA-DE-KB) y
      * su número, no un campo que se supone soportado.
      */
-    titularesModulo,
+    /**
+     * ⚠ **`vaciaEsAusente` — y la declaración se DERIVÓ, no se eligió
+     * (2026-08-12, tanda de datos, PASO 3).**
+     *
+     * Al re-correr el round-trip sobre la DB entera salieron **17 diferencias de
+     * FORMA** en los 2 monográficos: el dato medido **omite** `titulares` y la
+     * vuelta emitía `[]`. Es §7e —*la lista vacía vuelve `[]` SALVO que el campo
+     * declare que el dato medido la omite*— con su discriminador puesto donde
+     * toca.
+     *
+     * **No es una regresión de esta tanda ni de este campo**: la congelada
+     * canónica de `cms-decl` es del **2026-08-06** y el mecanismo
+     * `vaciaEsAusente` es posterior, así que el campo nació después de la última
+     * auditoría y nadie volvió a correrla. Lo destapó `qa:cms-decl`, que lo
+     * imprime con su denominador: **ausente en 17 de 17**.
+     *
+     * ⚠ **Y va AQUÍ y no en `titularesModulo`**, que es la primitiva compartida:
+     * `articulos-kb` la compone por su cuenta (`bloques/kb.ts`) y **la ida no lo
+     * recorre** —el round-trip lo deja fuera—, así que para KB esto está SIN
+     * DERIVAR. Declararlo en la primitiva sería generalizar a un dominio donde
+     * el caso no se ha medido, que es exactamente lo que §F2-5-ESCALON-ETIQUETAS
+     * dejó escrito que no se hace.
+     */
+    { ...titularesModulo, custom: { ...(titularesModulo.custom ?? {}), vaciaEsAusente: true } } as Field,
     ...moduloBase,
   ],
 };

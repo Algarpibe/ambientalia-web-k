@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-05",
+    "fecha": "2026-08-12",
     "sabotaje": "sintetico",
     "alcance": {
       "comparadas": [
@@ -18,7 +18,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 63,
+      "pares": 215,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -30,15 +30,15 @@
   },
   "porColeccion": {
     "categorias": {
-      "documentos": 3,
+      "documentos": 4,
       "conDiferencia": 0
     },
     "etiquetas": {
-      "documentos": 8,
+      "documentos": 12,
       "conDiferencia": 0
     },
     "categorias-recursos": {
-      "documentos": 3,
+      "documentos": 8,
       "conDiferencia": 0
     },
     "categorias-cientificas": {
@@ -70,8 +70,8 @@
       "conDiferencia": 2
     },
     "entradas-blog": {
-      "documentos": 7,
-      "conDiferencia": 7
+      "documentos": 149,
+      "conDiferencia": 149
     },
     "terminos-kunakpedia": {
       "documentos": 3,
@@ -89,7 +89,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "productos",
@@ -97,7 +97,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "productos",
@@ -105,7 +105,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.850Z\""
+      "real": "\"2026-08-12T20:55:49.619Z\""
     },
     {
       "coleccion": "productos",
@@ -113,7 +113,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "productos",
@@ -121,7 +121,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:54.125Z\""
+      "real": "\"2026-08-12T20:55:49.989Z\""
     },
     {
       "coleccion": "productos",
@@ -129,7 +129,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:54.258Z\""
+      "real": "\"2026-08-12T20:55:50.133Z\""
     },
     {
       "coleccion": "productos",
@@ -137,7 +137,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:54.362Z\""
+      "real": "\"2026-08-12T20:55:50.207Z\""
     },
     {
       "coleccion": "productos",
@@ -145,7 +145,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:54.497Z\""
+      "real": "\"2026-08-12T20:55:50.359Z\""
     },
     {
       "coleccion": "productos",
@@ -153,7 +153,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:54.621Z\""
+      "real": "\"2026-08-12T20:55:50.558Z\""
     },
     {
       "coleccion": "sectores",
@@ -161,7 +161,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "sectores",
@@ -169,7 +169,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "sectores",
@@ -177,7 +177,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "sectores",
@@ -185,7 +185,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:55.047Z\""
+      "real": "\"2026-08-12T20:55:52.423Z\""
     },
     {
       "coleccion": "sectores",
@@ -193,7 +193,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "sectores",
@@ -201,7 +201,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "sectores",
@@ -209,7 +209,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "sectores",
@@ -217,7 +217,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:55.569Z\""
+      "real": "\"2026-08-12T20:55:54.069Z\""
     },
     {
       "coleccion": "sectores",
@@ -225,7 +225,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "sectores",
@@ -233,7 +233,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "sectores",
@@ -241,7 +241,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "sectores",
@@ -249,7 +249,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:56.164Z\""
+      "real": "\"2026-08-12T20:55:56.234Z\""
     },
     {
       "coleccion": "sectores",
@@ -257,7 +257,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "sectores",
@@ -265,7 +265,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "sectores",
@@ -273,7 +273,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "sectores",
@@ -281,7 +281,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:56.651Z\""
+      "real": "\"2026-08-12T20:55:58.053Z\""
     },
     {
       "coleccion": "monograficos",
@@ -289,7 +289,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "monograficos",
@@ -297,7 +297,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "monograficos",
@@ -305,7 +305,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "monograficos",
@@ -313,7 +313,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:57.127Z\""
+      "real": "\"2026-08-12T20:55:59.266Z\""
     },
     {
       "coleccion": "monograficos",
@@ -321,7 +321,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.467Z\""
+      "real": "\"2026-08-12T20:55:49.309Z\""
     },
     {
       "coleccion": "monograficos",
@@ -329,7 +329,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.701Z\""
+      "real": "\"2026-08-12T20:55:49.467Z\""
     },
     {
       "coleccion": "monograficos",
@@ -337,7 +337,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:53.999Z\""
+      "real": "\"2026-08-12T20:55:49.882Z\""
     },
     {
       "coleccion": "monograficos",
@@ -345,7 +345,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:58.500Z\""
+      "real": "\"2026-08-12T20:56:01.308Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -353,7 +353,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:58.922Z\""
+      "real": "\"2026-08-12T20:56:01.583Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -361,7 +361,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.085Z\""
+      "real": "\"2026-08-12T20:56:01.710Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -369,7 +369,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.205Z\""
+      "real": "\"2026-08-12T20:56:01.826Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -377,7 +377,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.350Z\""
+      "real": "\"2026-08-12T20:56:01.929Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -385,7 +385,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.364Z\""
+      "real": "\"2026-08-12T20:56:01.940Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -393,7 +393,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.375Z\""
+      "real": "\"2026-08-12T20:56:01.951Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -401,7 +401,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.385Z\""
+      "real": "\"2026-08-12T20:56:01.959Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -409,7 +409,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.593Z\""
+      "real": "\"2026-08-12T20:56:02.128Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -417,7 +417,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.605Z\""
+      "real": "\"2026-08-12T20:56:02.136Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -425,7 +425,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.615Z\""
+      "real": "\"2026-08-12T20:56:02.143Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -433,7 +433,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.798Z\""
+      "real": "\"2026-08-12T20:56:02.310Z\""
     },
     {
       "coleccion": "casos",
@@ -441,7 +441,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.375Z\""
+      "real": "\"2026-08-12T20:56:01.951Z\""
     },
     {
       "coleccion": "casos",
@@ -449,7 +449,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:58.922Z\""
+      "real": "\"2026-08-12T20:56:01.583Z\""
     },
     {
       "coleccion": "casos",
@@ -457,7 +457,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.928Z\""
+      "real": "\"2026-08-12T20:56:02.746Z\""
     },
     {
       "coleccion": "casos",
@@ -465,7 +465,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.143Z\""
+      "real": "\"2026-08-12T20:56:03.186Z\""
     },
     {
       "coleccion": "casos",
@@ -473,7 +473,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:58.922Z\""
+      "real": "\"2026-08-12T20:56:01.583Z\""
     },
     {
       "coleccion": "casos",
@@ -481,7 +481,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.523Z\""
+      "real": "\"2026-08-12T20:56:03.856Z\""
     },
     {
       "coleccion": "casos",
@@ -489,7 +489,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:31:59.085Z\""
+      "real": "\"2026-08-12T20:56:01.710Z\""
     },
     {
       "coleccion": "casos",
@@ -497,7 +497,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.761Z\""
+      "real": "\"2026-08-12T20:56:04.205Z\""
     },
     {
       "coleccion": "faqs",
@@ -505,7 +505,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.804Z\""
+      "real": "\"2026-08-12T20:56:04.276Z\""
     },
     {
       "coleccion": "faqs",
@@ -513,23 +513,87 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.816Z\""
+      "real": "\"2026-08-12T20:56:04.288Z\""
     },
     {
       "coleccion": "entradas-blog",
-      "slug": "contaminacion-por-metano",
+      "slug": "estamos-listos-para-ayudarle",
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.871Z\""
+      "real": "\"2026-08-12T20:56:04.307Z\""
     },
     {
       "coleccion": "entradas-blog",
-      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "slug": "nos-hemos-mudado",
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:00.969Z\""
+      "real": "\"2026-08-12T20:56:04.354Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:04.501Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "covid-19-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:04.587Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:04.771Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-redes-hibridas-monitorizacion-ambiental",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:04.978Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-como-controlar-las-emisiones-en-mineria-junio-2025",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:05.241Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-simgo",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:05.275Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "el-sensor-de-calidad-del-aire-mas-preciso",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:05.386Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-aire-remediacion-suelos-contaminados",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:05.589Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -537,15 +601,15 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.055Z\""
+      "real": "\"2026-08-12T20:56:06.136Z\""
     },
     {
       "coleccion": "entradas-blog",
-      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "slug": "medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.200Z\""
+      "real": "\"2026-08-12T20:56:06.406Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -553,7 +617,111 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.342Z\""
+      "real": "\"2026-08-12T20:56:06.843Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:07.019Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "particulas-ultrafinas-puf",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:07.622Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-ganaderas-y-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:07.886Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-olores-en-edar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:08.253Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-islas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:08.491Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "corrosion-ambiental-causas-factores-y-como-prevenirla",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:08.712Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "biometano-y-biogas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:09.009Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:09.386Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:09.649Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:10.001Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-acustica",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:10.263Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:10.542Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-de-la-industria-petroquimica",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:10.823Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -561,7 +729,47 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.434Z\""
+      "real": "\"2026-08-12T20:56:11.236Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-vertederos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:11.548Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-produccion-de-energia",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:11.854Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-olores-en-vertederos-y-edar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:12.011Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-pure-cities",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:12.220Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:12.408Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -569,7 +777,935 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.577Z\""
+      "real": "\"2026-08-12T20:56:12.738Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:13.094Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "gases-de-efecto-invernadero-y-accion-climatica",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:13.468Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "microsensores-de-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:13.803Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:14.087Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:14.355Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-juegos-olimpicos-de-paris-2024",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:14.664Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-nueva-york",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:14.925Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:15.178Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:15.440Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-papelera",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:15.971Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-puertos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:16.269Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:16.533Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-aeropuertos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:16.855Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-madrid",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:16.956Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "guia-sobre-la-contaminacion-urbana",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:17.174Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificado-mcerts",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:17.451Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ehs-industrial",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:18.372Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-asentamientos-informales",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:18.633Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:18.774Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-gases-en-los-vertederos-de-basura",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:18.810Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.144Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-mal-olor-industrial",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.207Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-alrededor-de-los-colegios",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.418Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "despliegue-estaciones-kunak-air-pro-filipinas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.573Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "redes-hibridas-vigilancia-calidad-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.666Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-cementera",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.767Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-cloud-plataforma-web-calidad-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:19.919Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-volcanes",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.068Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-sensor-multi-contaminante-preciso-airlab",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.271Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "directrices-oms-calidad-aire-innovacion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.347Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "conferencia-partes-cop26-incendios",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.380Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estres-por-calor-bienestar",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.460Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-bajas-emisiones-monitorizacion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.592Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitores-calidad-aire-moviles",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.820Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:20.975Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-incendios-forestales-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.003Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-agustin-torres-product-manager-suez",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.145Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-calidad-aire-movilidad",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.220Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.317Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.399Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-deporte",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.432Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-mal-olor-sensores",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.598Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-proyecto-trafair",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.781Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "efectos-de-la-contaminacion-en-la-salud",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.903Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-rendimiento-uso",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:21.971Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "necesidad-estandares-y-programas-certificacion",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:22.073Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-calidad-del-aire-en-europa",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:22.286Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-pyme-2024-kunak",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:22.524Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:22.764Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-aqe-2024",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:22.914Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-transporte-urbano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.185Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-referente-en-medicion-de-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.394Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-la-calidad-del-aire-en-puertos-maritimos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.628Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "plan-recuperacion-transformacion-resiliencia-zbe",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.719Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-tiempo-real-kunak-air-lite",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.815Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medir-calidad-aire-asic-2022",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:23.945Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fondos-nextgen-eu-zonas-bajas-emisiones",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.029Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "lanzamiento-kunak-air-pro",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.154Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-pamplona",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.302Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.436Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.535Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.567Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.757Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "vigilancia-calidad-aire-maraton-valencia-2019",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.791Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.825Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:24.978Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-paises-sanos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.244Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "por-que-es-importante-monitorizar-en-tiempo-real",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.344Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.368Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.390Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "workshop-sensores-ambientales-bajo-coste",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.462Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.493Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.563Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "eugreenweek-we-have-gone-green",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.589Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fourth-session-of-the-united-nations-environment-assembly-2",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.612Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.633Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.698Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.720Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.746Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.769Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.795Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.818Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:25.841Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.114Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.149Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.180Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.209Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.243Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.275Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.305Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-greencities-malaga-2018",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.340Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.371Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.549Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "participamos-con-suez-en-el-4yfn-del-mobile-world-congress",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.576Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.596Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-oem-industrial-iot-en-el-basque-industry-4-0",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.621Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-smart-city-expo-world-congress-2017",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.645Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.671Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-feria-sensortest-2017-con-alphasense",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.697Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.720Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-aqemission-monitoring-2017-con-alphasense",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.743Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.765Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.789Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "quemas-prescritas-agricolas-calidad-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.819Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medidores-de-calidad-del-aire-mediciones-indicativas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:26.947Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-urbano",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:27.096Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-urbano-donostia",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:27.506Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-emisiones-industriales",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:27.678Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-de-las-refinerias-de-petroleo",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:28.019Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-en-refinerias",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:28.169Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-por-obras",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:28.444Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-obras-demoliciones-derribos",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:28.812Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-mineria-calidad-aire",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:29.154Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:29.546Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-perimetral",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:29.916Z\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-fugitivas",
+      "ruta": "updatedAt",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"2026-08-12T20:56:30.160Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -577,7 +1713,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.671Z\""
+      "real": "\"2026-08-12T20:56:30.265Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -585,7 +1721,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.783Z\""
+      "real": "\"2026-08-12T20:56:30.364Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -593,7 +1729,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.827Z\""
+      "real": "\"2026-08-12T20:56:30.385Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -601,7 +1737,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:01.967Z\""
+      "real": "\"2026-08-12T20:56:30.641Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -609,7 +1745,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:02.056Z\""
+      "real": "\"2026-08-12T20:56:30.823Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -617,7 +1753,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:02.138Z\""
+      "real": "\"2026-08-12T20:56:30.948Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -625,7 +1761,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-05T16:32:02.210Z\""
+      "real": "\"2026-08-12T20:56:31.070Z\""
     }
   ]
 }
