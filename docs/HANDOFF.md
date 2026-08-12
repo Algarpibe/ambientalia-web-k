@@ -1,4 +1,97 @@
-# HANDOFF — F3-2: el camino de decisiones se acaba, y aparece un 4.º escalón que no es de modelo sino de POBLACIÓN
+# HANDOFF — tanda de DATOS: el catálogo entero está extraído y verificado, y la siembra se para en la guarda de media
+
+> ⚠ **Tanda de DATOS, 2026-08-12 (57.ª).** **PASOS 0 · 1 · 4 completos; PASO 2
+> parado con evidencia; PASO 3 no alcanzado.** Ninguna colección sembrada, y
+> **no por el extractor**. Registro: `listados-hubs/DECISIONES.md` §**D2.7** ·
+> `PENDIENTES-QA.md` (§DATOS-A nueva + progreso en §ESCALÓN F3-2) ·
+> `PLAN-FASE-3.md` · `package.json` (4 sondas).
+
+## 0 · Los cinco titulares
+
+> **1 · La decisión está tomada y escrita: `D2.7` · SEMBRAR EL CORPUS** (salida
+> **A**). Lo que la hace barata de defender no es que sea la mejor, es el
+> encuadre: **no es un desvío, es F2-2 terminada.** El bloque 1 sembró 46 filas
+> porque su alcance eran los tipos medidos en `src/lib`, y `src/lib` es una
+> **transcripción de MUESTRA** —7 entradas de 149—. El resto nunca se decidió
+> dejarlo fuera: no le tocaba. Los listados sólo aportan **la fecha**.
+>
+> **2 · El catálogo entero está EXTRAÍDO y VERIFICADO.** `cms:extractor-a`
+> produce **149 · 37 · 23** desde el corpus, con **95/95** comparaciones contra
+> la transcripción a mano y negativo **4/4**. Ese control es lo único que
+> autoriza a cambiar la fuente del dato para los otros 195 documentos.
+>
+> **3 · Y aun así NO se sembró nada, por tres precondiciones distintas** que
+> `cms:sondeo` y la guarda de media pararon **antes de escribir en la DB**:
+> **90 orígenes de media sin capturar** (`entradas-blog`) · **1 de 37** con el
+> `<h1>` de plantilla vacío contra un `required` (`terminos-kunakpedia`) · **5
+> campos sin lector** (`documentos-cientificos`). El contrato era *«o entra
+> entera con sus guardas o no entra»*.
+>
+> **4 · La mayor es de captura, y es §COMPLETITUD cobrada por TERCERA vez.**
+> `media-corpus/` tiene 534 ficheros derivados de `media-regenera`, cuya lista
+> salió de los **cuerpos de la muestra**. La **imagen destacada es un campo
+> propio, FUERA del `post_content`** — así que **nunca estuvo en esa lista**. La
+> campaña era completa *para los cuerpos*, y eso no se escribió al lado del
+> titular *«el original sale del camino crítico»*.
+>
+> **5 · El clon quedó restaurado y verificado al píxel**, no a medias: `reset` +
+> `seed` + `seed-kb`, `check` verde con **37 rutas · 13 familias · 0 vacías**, y
+> `clon-base --cmp` contra la línea base **37/37 sin mover un píxel**.
+> `qa:lh-poblacion` sigue roja e **idéntica a su congelada**, que es la prueba
+> independiente de que la restauración es exacta.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **El orden correcto ahora es: capturar los 90 orígenes de media → sembrar
+  `entradas-blog`.** Es el único de los tres bloqueos que **no se puede
+  resolver sin red**, y desbloquea la colección de más valor (80 de las 117
+  páginas de `L1`).
+- **Cambiar una colección de fuente son DOS CLAVES**: en `scripts/seed/catalogos.mjs`,
+  sustituir `modulo`/`exportado` por `json: "medidas/a-extraido.json", en:
+  "catalogo.<colección>"`. El soporte está escrito y probado, y una ruta que no
+  resuelve **tira** en vez de sembrar cero en verde.
+- **Las taxonomías NO son trabajo aparte: se derivan solas del catálogo.** En la
+  corrida que llegó a escribirlas salieron **4 categorías · 12 etiquetas · 8 de
+  recurso · 3 científicas** (contra 3 · 8 · 3 · 3 con la muestra).
+- **`esmog` no se arregla inventando un respaldo.** Es **1 de 37**, y un
+  discriminador de una sola instancia no es un discriminador. Lo que hay que
+  decidir es de **esquema**: si `titulo` puede ser vacío en esa forma.
+- ⚠ **Un `cms:reset` se lleva `articulos-kb` y `cms:seed` NO lo repone**:
+  `cms:seed-kb` es un segundo paso. Sin él el build emite **31 rutas y 2
+  familias vacías** — lo cazó `qa:manifiesto`, no la vista.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:a-inventario`** | qué trae el corpus antes de extraer, con el **control** contra la transcripción | **3/3** |
+| **`cms:extractor-a`** | el catálogo COMPLETO del grupo A desde el corpus | **4/4** — incluido `cuerpo-ausente`: un documento sin cuerpo **tira** |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) El CONTROL es lo que convierte un censo en una medida.** El extractor
+llegó con **cuatro defectos** y ninguno habría dado error por su cuenta: la
+imagen destacada cruzaba la frontera de su envoltorio vacío y se traía **la foto
+del autor** (149 de 149 «con imagen» es un pleno plausible); el nombre del
+término caía al **slug** (`nombre: "contaminacion-urbana"`, que parece un dato);
+el rótulo de la miga usaba una clase que el último `<li>` no lleva (**0 de
+209**); y el prefijo leía el segmento **1** de la ruta —que es constante— en vez
+del 2. **Los cuatro los cazó comparar contra los 14 transcritos a mano.**
+
+**(b) Un número de bulto puede estar mal enmarcado aunque sea correcto.** «1174
+assets sin capturar» es cierto y **junta tres cosas de coste muy distinto**: 476
+ya capturados, 664 **variantes** que `sharp` regenera, y **34** orígenes de
+verdad. Es la misma familia que el `149 vs 142` de `lh-poblacion`, y se arregla
+igual: **publicando el reparto, no el total.**
+
+**(c) Y la guarda que más valió es la que impidió trabajar.** `cms:sondeo` y el
+`MEDIA AUSENTE` del seed pararon la siembra **antes** de escribir un documento.
+Sin ellas, la DB habría quedado con 149 entradas y 90 imágenes rotas, y el
+descubrimiento habría llegado en el QA visual — con el clon ya movido.
+
+---
+
+# (histórico) HANDOFF — F3-2: el camino de decisiones se acaba, y aparece un 4.º escalón que no es de modelo sino de POBLACIÓN
 
 > ⚠ **Tanda de CONSTRUCCIÓN que NO construyó, 2026-08-12 (56.ª).** **PASOS 0 · 1
 > · 2 · 6 completos; 3 · 4 · 5 NO EMPEZADOS** — y no por falta de tiempo: el

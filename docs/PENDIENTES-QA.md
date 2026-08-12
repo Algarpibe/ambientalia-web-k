@@ -160,6 +160,30 @@ dos con su fuente, para que nadie vuelva a sumar la congelada que tiene a mano.
 `research/listados-hubs/DECISIONES.md`, con la forma de `D2.5`. Hasta entonces
 `qa:lh-poblacion` **sale roja a propósito**, como hizo `§LH-CONTENEDOR-ROL`.
 
+### ▸ PROGRESO 2026-08-12 (tanda de DATOS) — decidida la salida A, y el escalón sigue abierto
+
+> ✅ **La decisión está tomada: `D2.7` · SEMBRAR EL CORPUS** (salida **A**),
+> escrita con la forma de `D2.5` en `listados-hubs/DECISIONES.md`.
+>
+> ✅ **Y el catálogo está EXTRAÍDO y verificado**: `cms:extractor-a` produce las
+> **149 · 37 · 23** con **95/95** comparaciones contra la transcripción a mano
+> (negativo 4/4), congelado en `medidas/a-extraido.json`.
+>
+> ⛔ **Pero ninguna colección llegó a sembrarse**, y no por el extractor: por
+> **tres precondiciones** que `cms:sondeo` y la guarda de media pararon antes de
+> escribir en la DB — **90 orígenes de media sin capturar** (`entradas-blog`) ·
+> **1 de 37** con `<h1>` vacío contra un `required` (`terminos-kunakpedia`) · **5
+> campos sin lector** (`documentos-cientificos`). Detalle y números:
+> §**DATOS-A**, arriba.
+>
+> **La mayor, y es la que hay que atacar primero:** las 90 de media necesitan
+> **una campaña contra el original**, que la tanda de datos tenía prohibida por
+> encargo. Es el único de los tres que no se puede resolver sin red.
+>
+> `qa:lh-poblacion` sigue **roja e idéntica a su congelada** —el clon quedó
+> restaurado al píxel (`clon-base --cmp`, 37/37)—, así que el escalón está
+> **abierto con su progreso escrito**, que es como se declaró que se cerraría.
+
 ## ✅ LH-SERIE-HIGIENE · dos defectos de sonda y una congelada que no correspondía a su código (2026-08-11)
 
 **PASO 6 de la 54.ª tanda.** Los tres se cazaron **re-corriendo**, no leyendo —
