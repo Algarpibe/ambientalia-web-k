@@ -1,5 +1,37 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠⚠ **EL DENOMINADOR SE MULTIPLICA POR 6 (2026-08-12, 58.ª tanda) — y esto SÍ
+> es el hundimiento anunciado, aunque llegue por otra puerta.**
+>
+> La tanda anterior escribió que *«el día que entren las 142 rutas la matriz
+> tiene que hundirse, y ese hundimiento es lo esperado»*. **No entró ninguna
+> ruta de listado y la matriz se hunde igual**, porque lo que entró fue la
+> POBLACIÓN: `entradas-blog` 7 → **149**, `terminos-kunakpedia` 3 → **37**,
+> `documentos-cientificos` 4 → **23**.
+>
+> | | antes | ahora |
+> |---|---|---|
+> | rutas emitidas por el build | **37** | **232** |
+> | de ellas, en la matriz de 9 ejes | 37 | **37** |
+> | ⛔ **sin una sola medida contra el original** | 0 | **195** |
+>
+> **Las 195 nuevas están en `·` en los NUEVE ejes.** No es una regresión: es que
+> existían como dato y ahora existen como página, y ninguna sonda las ha mirado.
+> Y conviene decirlo con la forma que este documento ya usa: **la diferencia
+> entre «no hay defecto conocido» y «no se ha mirado» no está en ningún otro
+> sitio del repo**, y hoy 195 de 232 caen en la segunda.
+>
+> **Lo que NO cambia, y es lo que hace citable el resto:** las 37 que sí estaban
+> medidas **no se han movido** — `clon-base --cmp` a los dos anchos contra la
+> línea base de F3-2. Poblar la DB no era un cambio de plantilla, y eso está
+> comprobado en vez de supuesto.
+>
+> ⚠ **Y el aviso de UNIDAD, que esta matriz ya se ha cobrado una vez:** «232
+> rutas» es el denominador **de la ruta**, no el de la fila ni el del módulo. El
+> eje horizontal enseñó que *«31/31 rutas»* era verdad **y** que una ruta contaba
+> como cubierta con **una** de sus doce filas emparejada. Con 232 rutas el mismo
+> error costaría seis veces más.
+
 > ⚠ **RE-DERIVADA 2026-08-12 (56.ª tanda) — y NO se movió, que es el dato.**
 > `npm run qa:cobertura`: **37 rutas**, comportamiento **37/37**, `docH` · base
 > cruda · árbol · enlaces **31/31**, anchos **15**, filas **6**, módulos **2**,

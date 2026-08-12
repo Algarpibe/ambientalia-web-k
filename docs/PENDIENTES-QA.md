@@ -354,6 +354,113 @@ SIN DERIVAR**. Declararlo en la primitiva sería generalizar a un dominio donde 
 caso no se ha medido, que es lo que §F2-5-ESCALÓN-ETIQUETAS dejó escrito que no
 se hace. Tras el arreglo: `qa:cms-decl` **64/64 en las dos direcciones**.
 
+## 📋 DATOS-COBERTURA-LEGAL · poblar ×5.2 las filas ejercitó **7 casos legales nuevos**, no la mitad (2026-08-12)
+
+**El encargo predecía que `qa:nunca-vistos` «va a bajar de golpe y eso es la
+cosecha». No bajó de golpe, y ese resultado es en sí el hallazgo.**
+
+| | antes (2026-08-10) | ahora | factor |
+|---|---|---|---|
+| filas de catálogo recorridas | **46** | **241** | **×5.2** |
+| casos legales EJERCITADOS | 89 | **96** | **+7** |
+| ⛔ casos legales SIN EJERCITAR | 241 | **235** | −6 |
+| universo del esquema | 330 | 331 | — |
+
+> **Multiplicar por 5 los DATOS no multiplica la cobertura de CAMINOS DE RENDER.**
+> Un caso legal es una combinación de campo × estado admisible; **149 entradas
+> de blog son 149 instancias de la MISMA forma**, así que recorren los mismos
+> caminos que recorrían 7. Lo que estrena un camino no es una instancia más: es
+> una **forma** nueva.
+
+Es la misma familia que §el séptimo contenedor —la unidad en la que se declara
+una cobertura— vista desde el otro lado: **«hemos poblado el 100 % de tres
+colecciones» y «hemos cubierto el 100 % de sus casos legales» son dos
+afirmaciones**, y la primera compra muy poco de la segunda.
+
+**Consecuencia operativa para la fase que viene:** los 235 restantes **no se
+cierran sembrando más**. Se cierran (a) dando de alta instancias con formas que
+el corpus no tiene, o (b) declarando cuáles no se van a soportar. Ninguna de las
+dos es trabajo de datos.
+
+## ⛔⛔ DATOS-PIXEL · §DATOS-C-PIPELINE **se ve en píxeles**: 8 de las 37 rutas se movieron al cambiar de fuente (2026-08-12)
+
+> **El PASO 7 pedía NO-OP: *«las 37 rutas ya construidas no deben moverse un
+> píxel por haber poblado la DB. Si se mueven, congela y para»*. Se movieron 8.
+> Congelado (`clon-base-1440-f32-despues.json`) y parado.**
+
+### Qué se movió, y la adjudicación es limpia
+
+| ruta | `docH` antes → después | Δ |
+|---|---|---|
+| `/running-for-clean-air` | 19444 → 19309 | **−135** |
+| `/contaminacion-por-metano` | 42115 → 41990 | **−125** |
+| `/monitorizacion-de-emisiones-del-trafico-urbano` | 38589 → 38502 | −87 |
+| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | 30194 → 30135 | −59 |
+| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | 12288 → 12261 | −27 |
+| `/contador-particulas-suspension-movilidad-sostenible` | 8682 → 8668 | −14 |
+| `/metano` | 12590 → 12576 | −14 |
+| `/cloruro-de-hidrogeno-hcl` | 31005 → 31004 | −1 |
+
+> **Las 8 son EXACTAMENTE documentos del grupo A cuya FUENTE cambió** en esta
+> tanda: de la transcripción a mano de `src/lib/arquetipo-a.ts` al catálogo
+> extraído del corpus. **Las otras 27 rutas están a Δ0** — sectores,
+> monográficos, producto, catálogo, software, API, caso, FAQ y los 6 de
+> `articulos-kb` no se mueven un píxel. Poblar la DB **no** cambió ninguna
+> plantilla.
+
+### Y esto NO es un defecto nuevo: es §DATOS-C-PIPELINE medido en el eje que duele
+
+El extractor del grupo C descubrió que el pipeline T1–T8 y la transcripción a
+mano **no producen el mismo HTML**, y que el control de `extractor-a` **nunca
+comparó `cuerpo`**. Esta tabla es esa divergencia **cobrada en alto de página**,
+en las páginas donde el cambio de fuente la hizo visible.
+
+### Y a 390 se mueven **LOS MISMOS 8**, con el signo de `S1` INVERTIDO
+
+| ruta @390 | `docH` | `S1` (cuerpo) | `S2` (relacionados) |
+|---|---|---|---|
+| `/la-contaminacion-del-aire-el-asesino-silencioso-de-europa` | −244 | **+16.59** | −260.37 |
+| `/monitorizacion-de-emisiones-del-trafico-urbano` | −120 | **+140.53** | −260.37 |
+| `/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos` | −154 | **+85.57** | −239.97 |
+| `/running-for-clean-air` | −229 | **+31.47** | −260.37 |
+| `/metano` | −14 | −14 | — |
+
+**Las dos lecturas que esto autoriza, y ninguna más:**
+
+- **reproducirse en los DOS anchos descarta el ruido.** Son dos maquetaciones
+  distintas: un residuo que aparece en las dos no puede ser un episodio del
+  instrumento;
+- **el signo de `S1` se invierte** (−121.5 a 1440 → +31.47 a 390), que es la
+  firma de §la regla espejo: **el contenido difiere y envuelve distinto en cada
+  ancho**. No es un desplazamiento constante — es contenido que no es el mismo.
+
+Y `S2` a 390 vale **−260.37 en tres rutas distintas**: el módulo de
+relacionados apila 3 tarjetas a ese ancho, así que perder una cuesta ~260. **Eso
+es la consulta funcionando con 149 documentos en vez de 7**, no un defecto.
+
+**Dos observaciones que acotan la causa, y las dos son medidas:**
+
+1. **`S2` es «También te puede interesar»**, un módulo de CONSULTA. Su Δ
+   (−13.31 · +8.85) es lo que tiene que pasar cuando la colección pasa de 7 a
+   149: **ése no es un defecto, es el módulo funcionando**;
+2. **`S1` es el CUERPO**, y ahí los Δ son de −14 a −121.5. **Eso sí** es la
+   divergencia de pipeline: el mismo documento, servido desde otra fuente, mide
+   distinto;
+3. **los 4 `documentos-cientificos` cambiaron de fuente y están a Δ0.** O sea
+   que la divergencia **no es universal** — el pipeline reproduce esos cuatro
+   exactos. Lo que la distingue está por medir.
+
+> **La consecuencia de método, que es lo reutilizable:** un cambio de FUENTE no
+> es un cambio de datos. Se lee como *«ahora hay más documentos»* y es además
+> *«los que ya había se sirven desde otro sitio»* — y la segunda mitad mueve
+> píxeles. Los 8 estaban **dentro** de las 37 verificadas, así que el
+> instrumento existía; lo que faltaba era **correrlo con la pregunta correcta**.
+
+**Qué la cierra:** arbitrar §DATOS-C-PIPELINE. Mientras tanto, los 8 Δ quedan
+**fichados y congelados**, no normalizados: mover el clon para que cuadre con la
+línea base sería fabricar una FAMILIA DE CALIBRACIÓN sobre una divergencia sin
+diagnosticar.
+
 ## ⛔⛔ DATOS-C-PIPELINE · el PASO 6 se para: el cuerpo transformado y la transcripción a mano NO coinciden, y eso no es de casos — es de GRUPO A, ya sembrado (2026-08-12)
 
 > **`cms:extractor-c` extrae los 76** —57 casos y 19 faqs— **con 0 lectores

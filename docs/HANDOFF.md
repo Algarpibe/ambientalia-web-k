@@ -1,4 +1,133 @@
-# HANDOFF — tanda de DATOS: el catálogo entero está extraído y verificado, y la siembra se para en la guarda de media
+# HANDOFF — la siembra ARRANCA: tres colecciones pobladas, y el escalón de F3-2 baja de 19 a 2
+
+> ⚠ **Tanda de DATOS, 2.ª mitad, 2026-08-12 (58.ª).** **PASOS 0 · 1 · 2 · 3 · 4 ·
+> 5 completos; PASO 6 PARADO con evidencia; 7 · 8 hechos.** Tres colecciones
+> sembradas desde el corpus con sus guardas y su commit. Registro:
+> `PENDIENTES-QA.md` (§DATOS-C · §DATOS-MEDIA · §DATOS-BLOG · §DATOS-C-PIPELINE) ·
+> `ESQUEMA-CMS.md` §2c.2 · `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` ·
+> `package.json` (6 sondas nuevas).
+
+## 0 · Los seis titulares
+
+> **1 · TRES DE CINCO COLECCIONES SEMBRADAS, y el clon pasa de 37 a 232 rutas.**
+> `entradas-blog` **149** · `terminos-kunakpedia` **37** ·
+> `documentos-cientificos` **23**, con las taxonomías derivadas solas (**4
+> categorías · 12 etiquetas · 8 de recurso · 3 científicas**). Round-trip
+> **268/268**, `qa:slugs` **190 slugs sin una colisión**, `npm run check` verde
+> con **13 familias y 0 vacías**.
+>
+> **2 · El bloqueo mayor de la tanda anterior eran CUATRO ficheros, no noventa —
+> y el «90» no era falso, estaba medido contra la GUARDA EQUIVOCADA.** Hay dos
+> guardas de media en este repo y **no miran lo mismo**: `seed.mjs` exige el
+> fichero EXACTO en `apps/web/public`; `seed-kb.mjs` acepta `media-corpus` y
+> colapsa variantes. El 90 se derivó restando `media-corpus`, o sea contra la
+> que **no corre**. Contra la que sí: **112 destacadas distintas · 93 faltan · 89
+> ya estaban en `media-corpus` · 4 a pedir**.
+>
+> **3 · La campaña de captura salió UNA vez y trajo 365 de 393. Los 28 restantes
+> son 404 EN EL PROPIO ORIGINAL**, confirmados en dos corridas, **todos de canal
+> C** (el cuerpo rico) y **ninguno de canal A**: no bloquean ninguna siembra. Un
+> 404 deja de contar como captura fallida y pasa a **ausencia MEDIDA**, impresa
+> una a una y congelada con su fecha.
+>
+> **4 · Faltaba un paso entero entre «capturado» y «sembrable», y no era de
+> red.** `cms:coloca-media`: **682 orígenes copiados + 1179 variantes
+> regeneradas**. El hueco cayó de **1889 a 28** medido después. Sin él, la
+> captura se habría declarado completa y el seed habría muerto en el primer
+> `MEDIA AUSENTE` — §COMPLETITUD por cuarta vez.
+>
+> **5 · El PASO 6 se para, y lo que lo para NO es casos: es GRUPO A, ya
+> sembrado.** `cms:extractor-c` extrae los 57 + 19 con 0 lectores muertos y
+> negativo 5/5, y es **el primer instrumento del repo que compara un cuerpo
+> transformado contra su transcripción a mano**. Resultado: el control de
+> `extractor-a` compara **18 campos y ninguno es `cuerpo`** (derivado: `grep -c`
+> → **0**). En los **209 cuerpos ya en la DB** hay **1788 enlaces localizados con
+> `target="_blank"`** y **53 rutas locales que el build no emite** — 31 se
+> resuelven al sembrar casos, **20 son enlaces rotos vivos**.
+>
+> **6 · Y el que habría matado la tanda sin avisar: el BUILD se caía por
+> conexiones.** Next prerenderiza con un worker por CPU (16) y cada uno abre su
+> propio pool de `pg` con `max: 10` → **160 contra `max_connections = 100`**. Con
+> 37 rutas los workers no coincidían; con 213 sí. **No es un defecto de la
+> población: es un límite que la población destapó.** `pool.max = 3`.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **El orden correcto ahora es: arbitrar §DATOS-C-PIPELINE → sembrar casos y
+  faqs.** El extractor ya está y su negativo también; lo que falta es **una
+  decisión sobre T7**, no código de extracción.
+- **`qa:lh-poblacion` sigue ROJA y bajó de 19 a 2 series cortas.** Las 2 son
+  `/casos-de-exito` (57 vs 4) y `/preguntas-frecuentes` (19 vs 2), o sea
+  exactamente el PASO 6. **Su rojo está explicado entero**: no hay nada que
+  ajustar en la sonda.
+- **Cambiar una colección de fuente son DOS CLAVES** en `scripts/seed/catalogos.mjs`
+  (`json` + `en` en vez de `modulo`/`exportado`). Ya está hecho para las tres del
+  grupo A; para casos y faqs apuntaría a `medidas/c-extraido.json`.
+- ⚠ **`qa:cms-roundtrip` resetea la DB y NO reponía `articulos-kb`.** Arreglado
+  —repone con `seed-kb.mjs`, el mismo script que siembra— pero conviene saberlo:
+  cualquier sonda que resetee tiene que reponer las dos mitades.
+- ⚠ **La matriz de cobertura SE HUNDIÓ, y era lo anunciado.** 232 rutas emitidas,
+  **37 medidas contra el original, 195 en `·` en los nueve ejes**. Las 37 viejas
+  **no se movieron** (`clon-base --cmp` a los dos anchos).
+- **Windows: `git config core.longpaths true`** hizo falta para commitear —
+  `apps/web/public/images/uploads/…` pasa de 260 caracteres en varios ficheros.
+- ⚠ **El PASO 7 NO salió limpio, y está fichado: 8 de las 37 rutas se movieron**
+  (§DATOS-PIXEL). Las 8 son exactamente los documentos del grupo A **cuya fuente
+  cambió**; las otras 27 están a Δ0 a los dos anchos. **No se normalizó ninguna**
+  — cuadrarlas contra la línea base sería fabricar una familia de calibración
+  sobre una divergencia sin diagnosticar.
+- **`npm run check` tarda 82 s** con 232 rutas (era ~40 s con 37). Anotado, no
+  optimizado.
+- ⚠ **Y `qa:nunca-vistos` NO bajó de golpe**: filas ×5.2 y sólo **+7** casos
+  legales ejercitados (§DATOS-COBERTURA-LEGAL). Más datos no es más cobertura de
+  caminos: lo que estrena un camino es una **forma** nueva, no una instancia más.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:c-inventario`** | qué camino, qué campos, qué trae el corpus y qué falta en casos y faqs — **con número, aunque sea cero** | **4/4** — incluido `campo-inventado`: un campo del esquema sin lector sale por ERROR |
+| **`qa:media-siembra`** | el hueco de media **por colección y por canal**, contra **la guarda que para** | **4/4** — `guarda-blanda` comprueba **el número**, no el código de salida |
+| **`cms:coloca-media`** | el paso SIN RED entre capturar y sembrar | **3/3** |
+| **`qa:vacio-legal`** | ¿el esquema distingue `""` de AUSENTE, y **sólo donde el caso se da**? | **3/3** — las dos direcciones + el estrechamiento |
+| **`cms:extractor-c`** | el catálogo de casos y faqs, con T1–T8 **por región** | **5/5** — sin caso en verde, y **declarado** |
+| **`cms:captura-f3-media-neg`** | el negativo que la única salida a la red del proyecto **no tenía** | **5/5**, con **cero peticiones** |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un HUECO se cita con la guarda contra la que se midió, o no se cita.** El
+«90» era verdad **contra `media-corpus`** y el seed comprueba **contra
+`public`**. Las dos frases se escriben igual —«90 orígenes sin capturar»— y nada
+en su redacción lo delataba. Es §un número de un par se cita con sus dos lados,
+aplicado a un hueco.
+
+**(b) Una sonda que es dueña de su precondición tiene que serlo de las DOS
+mitades.** `qa:cms-roundtrip` reseteaba y sembraba 9 catálogos, y el reset se
+llevaba también `articulos-kb`. El build siguiente emitía 6 rutas menos y nada lo
+relacionaba. **Lo cazó `qa:manifiesto`** — la guarda funcionó; lo que no existía
+era la restauración.
+
+**(c) Un control no puede calificarse a sí mismo.** El del redimensionado tomaba
+todas las variantes de `public/`, incluidas **las que la propia sonda acababa de
+fabricar**: identidad por construcción, y el número subía solo de **133 a 922**.
+Cerrado **por lista blanca** —lo que no está declarado como capturado no cuenta—
+y no por lista negra, que es la dirección insegura.
+
+**(d) El control puede tener razón CONTRA la transcripción.** La única
+discrepancia de `portada` fue `alt` con la entidad sin decodificar, y **la
+equivocada era la transcripción**: el clon servía `&amp;#039;`. Lo dirimió
+**la salida servida** —`grep` sobre `.next`—, no el argumento. Un control se lee
+en las dos direcciones o sólo confirma lo que ya se creía.
+
+**(e) Y la más cara: un verde puede estar midiendo otro conjunto.** El control de
+`extractor-a` decía «95 comparaciones ✅» y **ninguna era el cuerpo**. El HTML que
+T1–T8 produce llevaba desde F2-2 sin compararse contra nada, y se descubrió al
+construir un extractor **para otro arquetipo**. Es §el séptimo contenedor: la
+unidad en la que se declara la cobertura de un control absorbe lo que no compara.
+
+---
+
+# (histórico) HANDOFF — tanda de DATOS: el catálogo entero está extraído y verificado, y la siembra se para en la guarda de media
 
 > ⚠ **Tanda de DATOS, 2026-08-12 (57.ª).** **PASOS 0 · 1 · 4 completos; PASO 2
 > parado con evidencia; PASO 3 no alcanzado.** Ninguna colección sembrada, y
