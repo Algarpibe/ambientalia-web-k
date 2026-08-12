@@ -202,6 +202,96 @@ todos los demás miran el HTML **sin** `<script>` ni `<style>` (la regla del
 markup). Un extractor que aplicara la regla del markup a los 20 campos daría
 `imagenCabecera: null` en **57 de 57** — un cero perfecto, sin error, y falso.
 
+## ⛔ DATOS-MEDIA · el hueco de media de las CINCO colecciones, y el «90» se disuelve en 4 (2026-08-12)
+
+> **El diagnóstico de `DATOS-A` era correcto y el NÚMERO estaba medido contra la
+> guarda equivocada.** Instrumento: **`qa:media-siembra`**, negativo **4/4**,
+> congelada en `medidas/media-siembra.json`.
+
+### El error que lo hacía inservible: HAY DOS GUARDAS Y NO MIRAN LO MISMO
+
+| guarda | qué exige | a quién para |
+|---|---|---|
+| `seed.mjs` · `media()` | el fichero **EXACTO** en `apps/web/public` | las **5** colecciones de `cms:seed` |
+| `seed-kb.mjs` · `ficheroDe()` | `public/images/uploads` **o** `media-corpus`, **colapsando la variante** a su origen | sólo `articulos-kb` |
+
+Un origen que esté en `media-corpus` y no en `public` **pasa la segunda y muere
+en la primera**. El «90» se derivó restando lo que hay en `media-corpus`, o sea
+**contra la guarda que no corre**.
+
+> Es §*la causa común: el NIVEL al que se mide* con un contenedor nuevo — **la
+> GUARDA que se elige para medir el hueco**. Y su sabotaje `guarda-blanda`
+> reproduce el defecto: medido así el hueco **sale menor y la sonda no da
+> error**. Por eso su negativo comprueba **el número**, no el código de salida.
+
+### Los CANALES, enumerados contra el esquema y no de memoria
+
+La lista vieja miró **un** canal —el cuerpo— y por eso perdió la destacada. Aquí
+se derivan recorriendo los campos y clasificando **por TIPO**, así que un campo
+nuevo con una URL entra solo:
+
+| canal | qué es | qué bloquea | rutas | faltan |
+|---|---|---|---|---|
+| **A** | campos `upload` | **la SIEMBRA** — es el único que llega a `ctx.media()` | 515 | **468** |
+| **B** | escalares con pinta de fichero (`ogImage`, `srcset`, `descarga.href`) | el RENDER (404 en la página) | 459 | 389 |
+| **C** | cuerpo rico (`code`) | el RENDER | 1313 | 1191 |
+
+**Que B y C no bloqueen el seed no los hace opcionales**: los bloquea el render,
+que es más tarde y más caro.
+
+### El reparto, porque «1889 sin capturar» sería el número mal enmarcado
+
+Misma familia que el `1174` que `a-inventario` ya había separado, y que el
+`149 vs 142` de `lh-poblacion`:
+
+| | n | coste |
+|---|---|---|
+| VARIANTES con su origen ya en `public/` | 16 | `sharp`, **sin red** |
+| **ORÍGENES ya en `media-corpus/`** | **624** | **copiar, sin red** |
+| VARIANTES con su origen en `media-corpus` | 849 | copiar + regenerar, **sin red** |
+| ⛔ **sin origen en NINGÚN sitio** | **400** | **la campaña** |
+
+**1489 de 1889 (78.8 %) se resuelven sin tocar el original.** Lo que hay que
+pedir son **393 orígenes distintos**.
+
+### Y el reparto de la campaña, que es lo que decide qué desbloquea cada trozo
+
+| | orígenes a pedir |
+|---|---|
+| `casos` | **317** |
+| `entradas-blog` | **41** |
+| `terminos-kunakpedia` | 34 |
+| `documentos-cientificos` | **1** |
+| `faqs` | **0** — no tiene un solo campo de media |
+
+> ⚠⚠ **Y el titular, que cambia el orden de la tanda: lo que impide sembrar
+> `entradas-blog` son CUATRO ficheros, no noventa.**
+>
+> | `imagenDestacada.src` | n |
+> |---|---|
+> | rutas distintas en las 149 | 112 |
+> | faltan en `apps/web/public` | 93 |
+> | **ya en `media-corpus/`** → colocar | **89** |
+> | ⛔ **a pedir al original** | **4** |
+>
+> Los cuatro: `Kunak-Mineria.jpg` · `justicia-climatica-kunak-scaled.jpg` ·
+> `depuradora-de-aguas-residuales-scaled.jpg` ·
+> `Beam-Beijing-Pollution_UFP_Kunak-scaled.png`.
+>
+> **El «90» no era falso: era el hueco contra `media-corpus` presentado como si
+> fuera el hueco contra la guarda.** Y como las dos frases se escriben igual —«90
+> orígenes sin capturar»— nada en su redacción lo delataba. Es §un número de un
+> par se cita con sus dos lados, aplicado a un hueco: **un hueco se cita con la
+> guarda contra la que se midió, o no se cita.**
+
+### El ALCANCE, declarado como pide §COMPLETITUD
+
+La lista es **COMPLETA PARA SEMBRAR Y SERVIR LAS CINCO COLECCIONES** con el
+catálogo de hoy. **No** es completa en absoluto, y las tres exclusiones son
+deliberadas: no cubre **el cascarón** (el clon lo construye con sus propios
+assets, no entran en el CMS), no cubre **`articulos-kb`** (ya sembrada, y su
+guarda es la otra) y no cubre **ninguna colección futura**.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de

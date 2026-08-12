@@ -176,6 +176,8 @@
     "qa:a-inventario-neg": "node scripts/qa/a-inventario.neg.mjs",
     "qa:c-inventario": "node scripts/qa/c-inventario.mjs",
     "qa:c-inventario-neg": "node scripts/qa/c-inventario.neg.mjs",
+    "qa:media-siembra": "node scripts/qa/media-siembra.mjs",
+    "qa:media-siembra-neg": "node scripts/qa/media-siembra.neg.mjs",
     "cms:extractor-a": "node scripts/seed/extractor-a.mjs",
     "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs"
   },
