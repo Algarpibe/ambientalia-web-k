@@ -1,5 +1,70 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ LH-SERIE-HIGIENE · dos defectos de sonda y una congelada que no correspondía a su código (2026-08-11)
+
+**PASO 6 de la 54.ª tanda.** Los tres se cazaron **re-corriendo**, no leyendo —
+que es la única forma, porque los tres tenían forma de dato.
+
+| # | qué | por qué no daba error |
+|---|---|---|
+| 1 | `lh-serie.mjs` usaba `try {} catch { }` **a secas** en los tres puntos del recorrido del universo | `ENOENT` sí es «no hay», pero `ENOTDIR` · `EACCES` · `EMFILE` **salían por la misma puerta**. Una serie ilegible se contaba como **inexistente**, y eso **baja numerador y denominador a la vez**: el `Evaluadas` deriva su mínimo del propio recorrido, así que un universo mutilado sale **verde**. §sondas 6 |
+| 2 | la firma `sb` casaba `et_pb_widget_area` en el **documento ENTERO** | daba `·sb` en **las 149** — el pie también trae widgets. §sondas 4 en su complementario: *un patrón que casa en TODAS no mide nada*; y encima la etiqueta **afirmaba «tiene barra lateral»** de 69 páginas que no la tienen |
+| 3 | `medidas/lh-serie.json` **no correspondía a su propio código** | commiteada en `d767b7f` **junto a** un código que ya producía otra salida. Nada lo detecta salvo re-correr |
+
+### La comprobación posterior, que es lo que el arreglo exigía — y desmiente la suposición
+
+> El encargo decía de `sb`: *«es constante, así que **NO** mueve las 35 clases
+> estructurales — compruébalo, no lo supongas»*. **Comprobado: sí las mueve.**
+
+| corrida | clases | vacías | `sb` |
+|---|---|---|---|
+| congelada `lh-serie.json` (d767b7f) | 35 | **65** / 149 | no lo contaba |
+| **el código de d767b7f, corrido hoy** | 35 | **55** / 139 | no lo contaba |
+| el código de hoy (los dos arreglos) | **38** | 55 / 139 | **80 / 149** |
+
+**La fila del medio separa los dos efectos**, y es lo que convierte esto en dos
+hallazgos y no en uno: prueba que la congelada estaba **obsoleta** —mismo commit,
+otra salida— y que **el 55 es el número que ese código ya medía**, el mismo de
+`D2.5`. La de abajo prueba que `sb` **no era inocuo**: **35 → 38 clases**.
+
+Y era predecible en retrospectiva: mientras `·sb` casaba en todas, **no
+discriminaba**; arreglarlo lo convierte en un discriminador real (80/149), y un
+discriminador real **parte clases que antes estaban unidas**. Suponer que un
+componente constante puede quitarse sin efecto es correcto sólo si sigue siendo
+constante después.
+
+**Arreglos, con guarda y negativo:** sólo `ENOENT` es «no hay» y todo lo demás
+**tira con su código**; `sidebar` usa el discriminador que derivó `lh-barra`
+(`et_pb_sidebar_\d+_tb_body`) y **declara máximo además de mínimo**. Negativos
+**4/4**: `patron-falso` · `una-por-serie` · **`error-de-lectura`** (inyecta un
+`EACCES` en una ruta real → exit 1 con el mensaje, sin congelar: muere antes, y
+`gritaSiRevienta` lo devuelve a su sitio) · **`sb-en-el-documento`** (restaura el
+patrón viejo → **UBICUO**, exit 2). Obsoleta conservada como
+`medidas/lh-serie-OBSOLETA-no-correspondia-a-su-codigo.json` (§sondas 7);
+`lh-serie.json` re-congelada con su razón.
+
+### Y el vistazo a las tres capturas: **limpio**, con su derivación
+
+El encargo pedía mirar si *«una captura que sale 0 con páginas fallidas parece
+completa»*. **No pasa en ninguna de las tres** — y los `process.exit(0)`
+señalados están todos en la rama `SOLO_DERIVA`, que no pide nada al original:
+
+| fichero | cómo cierra el código | ¿cubre los fallos? |
+|---|---|---|
+| `captura-f3.mjs:604` | `process.exit(fallos === 0 ? 0 : 1)` | ✅ explícito |
+| `captura-f3-media.mjs:217` | `process.exit(ev.informe() ? 2 : 0)` | ✅ — `informe()` devuelve `fallos.length ? 1 : 0`, y la captura llama a `ev.fallo()` en cada uno |
+| `captura-sectores.mjs:215` | `process.exit(ev.informe() + (fallos ? 1 : 0) === 0 ? 0 : 1)` | ✅ suma explícita |
+
+**Observación menor, sin tocar:** `captura-sectores.mjs:129` sale antes de
+construir su `Evaluadas`, así que en `SOLO_DERIVA` no hay contrato — pero tampoco
+congela nada, así que la guarda de «SIN CONTRATO» no aplica. Es menos limpio que
+los otros dos, no un defecto.
+
+**Los tres `process.exit(0)` deliberados** (`c-embeds:109` ·
+`cms-arquetipos:261` · `lh-censo:175`) **no se han tocado**, como estaba dicho.
+
+---
+
 ## 🟠 LH-CONTENEDOR · el `%` de `L1` NO se resuelve contra el número que parece, y la tabla de `mbPorDefecto` cubre **6 de las 9 formas** (2026-08-11)
 
 **PASO 4 de la 54.ª tanda.** Las dos direcciones se escribieron **antes de

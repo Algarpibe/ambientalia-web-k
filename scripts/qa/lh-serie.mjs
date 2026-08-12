@@ -4,7 +4,31 @@
  * muestra.
  *
  * Uso:  npm run qa:lh-serie
- *       SABOTAJE=patron-falso|una-por-serie   → test en negativo
+ *       SABOTAJE=patron-falso|una-por-serie|error-de-lectura|sb-en-el-documento
+ *                                             → test en negativo (4/4 disparan)
+ *
+ * ⚠ **2026-08-11 · esta sonda venía con DOS defectos y su congelada estaba
+ * OBSOLETA.** Los tres se cazaron re-corriéndola, no leyéndola:
+ *
+ * | qué | efecto medido |
+ * |---|---|
+ * | `try {} catch { }` a secas en el recorrido del universo | `ENOENT` es «no hay», pero `ENOTDIR`/`EACCES`/`EMFILE` **salían por la misma puerta**: una serie ilegible se contaba como inexistente y **bajaba numerador y denominador a la vez** ⇒ verde |
+ * | la firma `sb` casaba `et_pb_widget_area` en el **documento entero** | `·sb` en **las 149** — el pie también trae widgets. §sondas 4: *un patrón que casa en TODAS no mide nada*, y encima la etiqueta **mentía** sobre 69 páginas |
+ * | `medidas/lh-serie.json` no correspondía a su propio código | commiteada en `d767b7f` **junto a** un código que ya producía otra salida |
+ *
+ * **Y el arreglo de `sb` SÍ mueve el resultado, al revés de lo que se suponía:**
+ *
+ * | | clases | vacías | `sb` |
+ * |---|---|---|---|
+ * | congelada `lh-serie.json` (d767b7f) | 35 | **65** / 149 | no lo contaba |
+ * | **el código de d767b7f, corrido hoy** | 35 | **55** / 139 | no lo contaba |
+ * | el código de hoy (los dos arreglos) | **38** | 55 / 139 | **80 / 149** |
+ *
+ * La fila del medio es la que prueba que la congelada estaba obsoleta —mismo
+ * commit, otra salida— y que **el 55 es el número que ese código medía**, el
+ * mismo de `D2.5`. La de abajo, que `sb` **no era inocuo**: las clases
+ * estructurales pasan de **35 a 38**. Obsoleta conservada como
+ * `medidas/lh-serie-OBSOLETA-no-correspondia-a-su-codigo.json` (§sondas 7).
  *
  * ══════════════════════════════════════════════════════════════════════════
  * POR QUÉ ESTA SONDA EXISTE, Y POR QUÉ AHORA
@@ -54,13 +78,57 @@ import { Evaluadas, QA, env, gritaSiRevienta, hoy, w } from "./lib.mjs";
 const RAIZ = join(QA, "../../corpus/fase-3/listados");
 
 const SABOTAJE = env("SABOTAJE", "");
-const SABOTAJES = ["patron-falso", "una-por-serie"];
+const SABOTAJES = ["patron-falso", "una-por-serie", "error-de-lectura", "sb-en-el-documento"];
 if (SABOTAJE && !SABOTAJES.includes(SABOTAJE)) {
   console.error(`\n❌ SABOTAJE=${SABOTAJE} no existe. Los que hay: ${SABOTAJES.join(" · ")}`);
   process.exit(2);
 }
 const SAB = Object.fromEntries(SABOTAJES.map((s) => [s, SABOTAJE === s]));
 gritaSiRevienta();
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA AUSENCIA Y EL FALLO NO PUEDEN ENTRAR POR LA MISMA PUERTA (2026-08-11)
+ *
+ * Estas dos envolturas existen porque el recorrido del universo usaba `try {}
+ * catch { }` a secas en tres sitios. **`ENOENT` sí es «no hay»** —no existe
+ * `index.html`, no existe `page/`— pero `ENOTDIR`, `EACCES`, `EMFILE` o
+ * `EPERM` salían **por la misma puerta y con el mismo silencio**: una serie
+ * ilegible se contaba como una serie inexistente, y el universo salía más
+ * pequeño **sin que nada lo dijera**.
+ *
+ * Es §sondas 6 en su forma literal —*una ausencia traducida a un valor benigno
+ * en el sitio donde todavía se sabía*— y no lo caza ninguna guarda de
+ * `Evaluadas`: el mínimo se deriva del propio recorrido, así que **un universo
+ * mutilado baja el numerador y el denominador a la vez** y sale verde.
+ *
+ * Regla: **sólo `ENOENT` es «no hay». Todo lo demás TIRA con su código.**
+ * Negativo: `SABOTAJE=error-de-lectura` inyecta un `EACCES` en una ruta real.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const MARCA_FALLO = /[\\/]blog$/;
+const alLeer = (p, e) => {
+  if (e && e.code === "ENOENT") return null; // el ÚNICO caso legítimo de «no hay»
+  throw new Error(
+    `lh-serie: no se pudo leer ${p} — ${e?.code ?? e?.message ?? e}.\n` +
+      `  Sólo ENOENT significa «no hay». Cualquier otro fallo de lectura mutila el\n` +
+      `  universo en silencio y baja numerador y denominador a la vez (§sondas 6).`,
+  );
+};
+/** ¿Es un fichero? `null` si no existe; TIRA si no se pudo saber. */
+const esFichero = (p) => {
+  try {
+    if (SAB["error-de-lectura"] && MARCA_FALLO.test(p.replace(/[\\/]index\.html$/, ""))) {
+      const e = new Error("EACCES simulado"); e.code = "EACCES"; throw e;
+    }
+    return statSync(p).isFile();
+  } catch (e) { return alLeer(p, e) ?? false; }
+};
+/** Entradas de un directorio; `[]` si no existe; TIRA si no se pudo saber. */
+const entradas = (p) => {
+  try {
+    if (SAB["error-de-lectura"] && MARCA_FALLO.test(p)) { const e = new Error("EACCES simulado"); e.code = "EACCES"; throw e; }
+    return readdirSync(p);
+  } catch (e) { return alLeer(p, e) ?? []; }
+};
 
 /** El marcado SIN `<style>` ni `<script>` (§sondas 4: ahí viven los selectores disfrazados de marcado). */
 const marcadoDe = (html) =>
@@ -108,7 +176,20 @@ function firma(html) {
     spanPages: (m.match(/<span class="pages">([^<]*)<\/span>/) || [])[1]?.replace(/\s+/g, " ").trim() || null,
     ventana: [...new Set(numeros)].sort((a, b) => a - b).length,
     secciones: (m.match(/class="[^"]*et_pb_section/g) || []).length,
-    sidebar: /id="sidebar"|et_pb_widget_area|widget_search/.test(m),
+    /* ⚠ ARREGLADO 2026-08-11. Antes: `/id="sidebar"|et_pb_widget_area|widget_search/`
+     * sobre el documento ENTERO — y **el PIE también tiene `et_pb_widget_area`**,
+     * así que daba `·sb` en las **149**. Es §sondas 4 en su complementario —*un
+     * patrón que casa en TODAS no mide nada*— y encima con la etiqueta
+     * mintiendo: `·sb` decía «esta página tiene barra lateral» de 69 páginas
+     * que no la tienen.
+     *
+     * El discriminador bueno lo derivó `lh-barra` sobre esta misma población:
+     * el sufijo **`_tb_body`** es lo que separa el cuerpo del pie, y da **80 de
+     * 149**. Negativo: `SABOTAJE=sb-en-el-documento` restaura el patrón viejo,
+     * que tiene que volver a salir UBICUO. */
+    sidebar: SAB["sb-en-el-documento"]
+      ? /id="sidebar"|et_pb_widget_area|widget_search/.test(m)
+      : /class="[^"]*\bet_pb_sidebar_\d+_tb_body\b/.test(m),
   };
 }
 
@@ -124,16 +205,13 @@ const series = [];
 (function rec(dir, ruta) {
   const ent = readdirSync(dir, { withFileTypes: true });
   const idx = join(dir, "index.html");
-  let tieneIdx = false;
-  try { tieneIdx = statSync(idx).isFile(); } catch { /* no hay */ }
-  if (tieneIdx) {
+  if (esFichero(idx)) {
     const paginas = [{ n: 1, fichero: idx }];
     const pdir = join(dir, "page");
-    let ns = [];
-    try { ns = readdirSync(pdir).filter((x) => /^\d+$/.test(x)).map(Number).sort((a, b) => a - b); } catch { /* sin page/ */ }
+    const ns = entradas(pdir).filter((x) => /^\d+$/.test(x)).map(Number).sort((a, b) => a - b);
     for (const n of ns) {
       const f = join(pdir, String(n), "index.html");
-      try { if (statSync(f).isFile()) paginas.push({ n, fichero: f }); } catch { /* nada */ }
+      if (esFichero(f)) paginas.push({ n, fichero: f });
     }
     series.push({ ruta: ruta || "/", paginas });
   }
@@ -409,6 +487,28 @@ if (env("VIVO")) {
   }
 }
 
+/* ── La guarda que le faltaba a `sidebar` (2026-08-11) ─────────────────────
+ * `sidebar` es un componente DISCRIMINANTE de la clase estructural, así que
+ * tiene que declarar su máximo igual que su mínimo: si casa en los 149, no está
+ * midiendo la barra lateral — está midiendo que el pie existe. Es el patrón que
+ * `lh-barra` ya tenía y éste no. */
+const todasLasPaginas = Object.values(salida.series).flatMap((s) => s.paginas);
+const conSidebar = todasLasPaginas.filter((p) => p.sidebar).length;
+let sidebarRoto = 0;
+if (conSidebar === 0) {
+  console.error(`\n❌ \`sidebar\` MUERTO: no casa en NINGUNO de los ${todasLasPaginas.length} documentos.`);
+  sidebarRoto = 1;
+} else if (conSidebar === todasLasPaginas.length) {
+  console.error(
+    `\n❌ \`sidebar\` UBICUO: casa en los ${todasLasPaginas.length}. Si su trabajo es discriminar,\n` +
+      `   casar en todos no mide nada — y encima la etiqueta \`·sb\` afirma «tiene barra\n` +
+      `   lateral» de páginas que no la tienen. El pie también trae \`et_pb_widget_area\`.`,
+  );
+  sidebarRoto = 1;
+}
+salida.sidebar = { conSidebar, deCuantos: todasLasPaginas.length, patron: SAB["sb-en-el-documento"] ? "documento entero (el VIEJO, defectuoso)" : "et_pb_sidebar_N_tb_body (el bueno)" };
+console.log(`  barra lateral (componente \`·sb\` de la clase): ${conSidebar}/${todasLasPaginas.length} documentos`);
+
 w(`medidas/lh-serie${SABOTAJE ? `-neg-${SABOTAJE}` : ""}${env("VIVO") ? "-vivo" : ""}.json`, salida);
 ev.informe();
-process.exitCode = sinComparar || pielesMuertas === universo.length ? 2 : 0;
+process.exitCode = sinComparar || sidebarRoto || pielesMuertas === universo.length ? 2 : 0;

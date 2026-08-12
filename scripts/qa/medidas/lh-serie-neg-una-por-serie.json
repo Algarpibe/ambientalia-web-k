@@ -47,14 +47,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t57·ninguna·--·s6·sb"
+        "t57·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t57·ninguna·--·s6·sb",
+          "clase": "t57·ninguna·--·s6",
           "tarjetas": 57,
           "vacia": false,
           "ventanaMax": null,
@@ -67,7 +67,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -411,14 +411,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t5·ninguna·-N·s4·sb"
+        "t5·ninguna·-N·s4"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t5·ninguna·-N·s4·sb",
+          "clase": "t5·ninguna·-N·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 5,
@@ -431,7 +431,7 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -439,14 +439,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t5·ninguna·-N·s4·sb"
+        "t5·ninguna·-N·s4"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t5·ninguna·-N·s4·sb",
+          "clase": "t5·ninguna·-N·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 4,
@@ -459,7 +459,7 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -467,14 +467,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -487,7 +487,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -495,14 +495,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s8·sb"
+        "t3·ninguna·--·s8"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s8·sb",
+          "clase": "t3·ninguna·--·s8",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -515,7 +515,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 8,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -523,14 +523,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t15·C·-N·s6·sb"
+        "t15·C·-N·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -543,7 +543,7 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -551,14 +551,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t4·ninguna·--·s6·sb"
+        "t4·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t4·ninguna·--·s6·sb",
+          "clase": "t4·ninguna·--·s6",
           "tarjetas": 4,
           "vacia": false,
           "ventanaMax": null,
@@ -571,7 +571,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -579,14 +579,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s6·sb"
+        "t1·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s6·sb",
+          "clase": "t1·ninguna·--·s6",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -599,7 +599,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -607,14 +607,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s6·sb"
+        "t1·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s6·sb",
+          "clase": "t1·ninguna·--·s6",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -627,7 +627,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -635,14 +635,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t15·C·-N·s6·sb"
+        "t15·C·-N·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -655,7 +655,7 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -663,14 +663,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t15·C·-N·s6·sb"
+        "t15·C·-N·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -683,7 +683,7 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -691,14 +691,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t15·C·-N·s6·sb"
+        "t15·C·-N·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -711,7 +711,7 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -719,14 +719,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s6·sb"
+        "t3·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s6·sb",
+          "clase": "t3·ninguna·--·s6",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -739,7 +739,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -747,14 +747,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t7·ninguna·--·s6·sb"
+        "t7·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t7·ninguna·--·s6·sb",
+          "clase": "t7·ninguna·--·s6",
           "tarjetas": 7,
           "vacia": false,
           "ventanaMax": null,
@@ -767,7 +767,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -775,14 +775,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s7·sb"
+        "t0·ninguna·--·s7"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -795,7 +795,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -803,14 +803,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -823,7 +823,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -831,14 +831,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -851,7 +851,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -859,14 +859,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s6·sb"
+        "t3·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s6·sb",
+          "clase": "t3·ninguna·--·s6",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -879,7 +879,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -887,14 +887,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t14·ninguna·--·s5·sb"
+        "t14·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t14·ninguna·--·s5·sb",
+          "clase": "t14·ninguna·--·s5",
           "tarjetas": 14,
           "vacia": false,
           "ventanaMax": null,
@@ -907,7 +907,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -915,14 +915,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s5·sb"
+        "t1·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s5·sb",
+          "clase": "t1·ninguna·--·s5",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -935,7 +935,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -943,14 +943,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t8·ninguna·--·s5·sb"
+        "t8·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t8·ninguna·--·s5·sb",
+          "clase": "t8·ninguna·--·s5",
           "tarjetas": 8,
           "vacia": false,
           "ventanaMax": null,
@@ -963,7 +963,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -971,14 +971,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s7·sb"
+        "t0·ninguna·--·s7"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -991,7 +991,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     }
@@ -1004,26 +1004,28 @@
     "heterogeneas": 0,
     "clasesGlobales": {
       "t9·ninguna·-N·s6·sb": 7,
-      "t15·C·-N·s6·sb": 4,
-      "t0·ninguna·--·s6·sb": 3,
-      "t7·ninguna·--·s6·sb": 2,
-      "t4·ninguna·--·s6·sb": 2,
-      "t5·ninguna·-N·s4·sb": 2,
-      "t1·ninguna·--·s6·sb": 2,
-      "t3·ninguna·--·s6·sb": 2,
-      "t0·ninguna·--·s7·sb": 2,
+      "t15·C·-N·s6": 4,
+      "t0·ninguna·--·s6": 3,
+      "t5·ninguna·-N·s4": 2,
+      "t1·ninguna·--·s6": 2,
+      "t3·ninguna·--·s6": 2,
+      "t0·ninguna·--·s7": 2,
       "t9·A·-N·s6·sb": 1,
-      "t57·ninguna·--·s6·sb": 1,
+      "t57·ninguna·--·s6": 1,
+      "t7·ninguna·--·s6·sb": 1,
       "t6·ninguna·--·s6·sb": 1,
       "t9·ninguna·--·s6·sb": 1,
+      "t4·ninguna·--·s6·sb": 1,
       "t8·ninguna·--·s6·sb": 1,
-      "t3·ninguna·--·s8·sb": 1,
-      "t14·ninguna·--·s5·sb": 1,
-      "t1·ninguna·--·s5·sb": 1,
-      "t8·ninguna·--·s5·sb": 1
+      "t3·ninguna·--·s8": 1,
+      "t4·ninguna·--·s6": 1,
+      "t7·ninguna·--·s6": 1,
+      "t14·ninguna·--·s5": 1,
+      "t1·ninguna·--·s5": 1,
+      "t8·ninguna·--·s5": 1
     },
     "clasesPorPosicion": {
-      "primera": 18
+      "primera": 20
     },
     "paginasVacias": {
       "n": 0,
@@ -1044,5 +1046,10 @@
     },
     "desacuerdoVentanaVsTitulo": [],
     "veredicto": "NO SE PUDO EVALUAR"
+  },
+  "sidebar": {
+    "conSidebar": 13,
+    "deCuantos": 35,
+    "patron": "et_pb_sidebar_N_tb_body (el bueno)"
   }
 }
