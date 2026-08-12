@@ -21,7 +21,7 @@ hace con la columna que sobra.**
 |---|---|---|
 | fila del listado | **`3_4 + 1_4`** | **`4_4`** |
 | columna de contenido @1440 | **911.75** | **1238.39** |
-| barra lateral | **258.5**, con **10 widgets** | **no hay** |
+| barra lateral | **258.5**, con **4 widgets** | **no hay** |
 | filas de la 2.ª sección `_tb_body` | **2** | **3** |
 | documentos (población entera) | **80 de 80** | **0 de 37** |
 
@@ -121,27 +121,42 @@ El paginador ocupa **el ancho completo de la columna de contenido** (911.75 /
 ninguna` en `h2s-es` y en los `resources` de 1 tarjeta). O sea que el paginador
 es **condicional al nº de páginas**, no un elemento fijo de la plantilla.
 
-## 5 · La barra lateral — 10 widgets, **una sola firma en 80 documentos**
+## 5 · La barra lateral — 4 widgets, **una sola firma en 80 documentos**
 
-Derivado sobre la población entera de la captura (`qa:lh-barra`, negativo 3/3):
+Derivado sobre la población entera de la captura (`qa:lh-barra`, negativo 5/5):
 
 | | |
 |---|---|
 | documentos con barra | **80** de 149 |
 | **firmas distintas** | **1** — composición idéntica en los 80 |
-| widgets | `search-6` · `text-1` · `text-7` · `custom_html-25` · `text-10` · `text-13` · `text-16` · `text-22` · `text-19` · `custom_html-29` |
-| títulos visibles | **«Buscar»** · **«Categorías»** · **«¡Suscríbete a nuestra newsletter!»** |
+| widgets | `search-6` · `text-1` · `text-7` · `custom_html-25` |
+| títulos visibles | **«Buscar»** · **«Categorías»** · **«¡Suscríbete a nuestra newsletter!»** (el `text-1` va sin título y con cuerpo vacío) |
 | ancho @1440 | **258.5** (`et_pb_column_1_4`) |
 
 **Varianza 0 en 80 instancias en régimen plantillado ⇒ PLANTILLA**, no campo.
 Pero *plantilla* no quiere decir *gratis*:
 
-- **«Categorías» consume la taxonomía `category`** — que es literalmente la
-  condición de reapertura que `D3` dejó escrita (*«no se añade la relación hasta
-  que un listado la consuma»*). **Se cumple aquí.**
+- ⚠ **CORREGIDO 2026-08-11: «Categorías» NO consume la taxonomía.** Esta spec
+  decía que sí, y con ello daba por cumplida la condición de reapertura de `D3`.
+  **Medido** (`qa:lh-barra` ampliada): es `et_pb_widget widget_text` en **80/80**
+  —no el nativo `widget_categories`—, con **un solo contenido** en los 80, y
+  **no cubre 5 de los 7** términos que el sitio ejerce (`articulos` 240 ·
+  `articulos-cientificos-y-estudios` 42 · `evaluaciones-independientes` 16 ·
+  `podcast-es` 4 · `articulos-tecnicos` 1). Una lista desincronizada no se
+  regenera ⇒ **es contenido cableado de la plantilla, y `D3` queda CONFIRMADA**.
+  Emite 2 `href` absolutos a `/es/categoria/{eventos,noticias}/` → `P-LH-C4`.
 - **«Buscar» es una interacción** y `BEHAVIORS.md` no la midió: su alcance eran
   hover, paginación, lazy y orden. **Está SIN MEDIR**, no «sin efecto».
 - **La newsletter es una integración externa**, no contenido.
+- **`text-1` va sin título y con `<div class="textwidget"></div>` vacío** — es un
+  widget servido y sin contenido, no un hueco de medición.
+
+> ⚠ **Y por qué esta sección decía «10 widgets» hasta hoy:** `lh-barra` tomaba la
+> firma sobre una **ventana fija de 14 000 caracteres** desde el inicio de la
+> barra, y la barra mide **1481** — los otros 6 ids (`text-10 · text-13 ·
+> text-16 · text-22 · text-19 · custom_html-29`, todos con clase `fwidget`) eran
+> **del PIE**. §sondas 4 en su tercera cara. Corregido con delimitación por
+> balance de `<div>` y guarda (`fwidget`: 0 dentro / 480 fuera).
 
 ## 6 · Lo que esta spec NO mide, dicho para que nadie lo dé por medido
 
@@ -153,4 +168,4 @@ Pero *plantilla* no quiere decir *gratis*:
 | **SP-B4** | el **buscador** de la barra lateral | interacción no medida por `P-LH-C6` |
 | **SP-B5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
 | **SP-B6** | el `+26` de `resources-hijo` a 390 | medido, **no diagnosticado** |
-| **SP-B7** | los **widgets** uno a uno (su contenido, no su presencia) | 6 son `text` y 2 `custom_html`: puede haber HTML de editor dentro |
+| ~~**SP-B7**~~ | ✅ **CERRADA 2026-08-11** — el contenido del widget «Categorías» está medido en los 80 (§5). Los otros tres (`search-6` · `text-1` vacío · `custom_html-25`) siguen sin censar por dentro, pero **su denominador ya no es «6 text y 2 custom_html»**: eran 6 del pie |

@@ -65,11 +65,12 @@ original.
 
 Dos hallazgos, los dos en `PENDIENTES-QA.md`:
 
-1. **§ESCALÓN F3-2 (2.º)** — `L1` no tiene una retícula, tiene **dos**:
-   `3_4+1_4` con **barra lateral de 10 widgets** en blog y etiqueta (**80 de 117
-   documentos**), `4_4` sin barra en resources (**0 de 37**). `D1` afirma que
-   entre familias sólo cambia la configuración de la tarjeta. **F3-2 no
-   construye hasta que eso se decida.**
+1. ✅ **§ESCALÓN F3-2 (2.º) — CERRADO 2026-08-11.** `L1` no tiene una retícula,
+   tiene **dos**: `3_4+1_4` con **barra lateral de 4 widgets** en blog y etiqueta
+   (**80 de 117 documentos**), `4_4` sin barra en resources (**0 de 37**). Eso
+   **acota `D1`** —la variante incluye la retícula y su barra, no sólo la
+   tarjeta— y **confirma `D3`**: el widget «Categorías» no consume la taxonomía.
+   Acta: `../DECISIONES.md` §*D1 queda ACOTADA*.
 2. **`/es/glosario/` y `/es/preguntas-frecuentes/` no tienen `<h1>`** — y el
    protocolo de este proyecto lee el cuerpo restando la `y` del `h1`. `L2` **no
    tiene ancla**, así que su base hay que decidirla antes de comparar nada.

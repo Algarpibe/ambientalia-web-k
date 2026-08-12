@@ -150,7 +150,9 @@ nivel más arriba.
 > otras 4 formas están **medidas y congeladas, sin redactar**.
 >
 > **4 · SEGUNDO ESCALÓN: `L1` tiene DOS retículas de cuerpo.** `3_4+1_4` con
-> **barra lateral de 10 widgets** en blog y etiqueta (**80/80 documentos**),
+> **barra lateral de ~~10~~ → 4 widgets** *(corregido el 2026-08-11: 6 de los 10
+> eran del PIE — §LH-SERIE-HIGIENE / la ampliación de `lh-barra`)* en blog y
+> etiqueta (**80/80 documentos**),
 > `4_4` sin barra en resources (**0/37**) — con contenedores de **911.75** y
 > **1238.39**, que son los dos del `⚠⚠` de `CLAUDE.md` §Test A. `D1` dice que
 > entre familias sólo cambia la tarjeta; `D3` no lista la barra, cuyo widget
@@ -194,9 +196,12 @@ nivel más arriba.
 > **2 · LA UNIDAD SÍ QUEDA CERRADA, Y MEDIDA SOBRE LA POBLACIÓN ENTERA.** Nada de
 > muestrear: la captura de F3-0 ya traía **las 149 páginas**, índice y cada
 > `/page/N/`. Sonda nueva `qa:lh-serie` (negativo **3/3**): **19 de 28 series son
-> heterogéneas**, **35 clases estructurales**, y las 9 «homogéneas» son las
-> triviales de `D2.4`. **Cada `/page/N/` es su propia unidad.** El atajo «una por
-> serie» **sale rojo por construcción** en el negativo — no por criterio.
+> heterogéneas**, ~~**35**~~ → **38 clases estructurales** *(corregido el
+> 2026-08-11: el componente `sb` de la firma no discriminaba — §LH-SERIE-HIGIENE.
+> **«19 de 28 heterogéneas» y «9 homogéneas» NO cambian**)*, y las 9
+> «homogéneas» son las triviales de `D2.4`. **Cada `/page/N/` es su propia
+> unidad.** El atajo «una por serie» **sale rojo por construcción** en el
+> negativo — no por criterio.
 >
 > **3 · Y LA SONDA NACIÓ CON EL DEFECTO DEL QUE PROTEGE; LO CAZÓ SU CONTROL EN
 > VIVO.** Contó **65** documentos «vacíos» mezclando dos ceros: el de

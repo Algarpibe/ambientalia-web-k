@@ -331,9 +331,11 @@ Eso, medido, es **falso por defecto**. Lo que difiere además es:
 1. **la RETÍCULA del cuerpo** — `3_4+1_4` contra `4_4`, y con ella el nº de
    filas de la 2.ª sección (2 contra 3);
 2. **una superficie de contenido entera que ningún documento del repo modela**:
-   la barra lateral trae **10 widgets** con **una sola firma en los 80
-   documentos** — `search` · 6 × `text` · 2 × `custom_html`, con los títulos
-   **«Buscar» · «Categorías» · «¡Suscríbete a nuestra newsletter!»**.
+   la barra lateral trae ~~10~~ → **4 widgets** *(corregido el 2026-08-11: los
+   otros 6 eran del PIE — ver el aviso al principio de esta ficha)* con **una
+   sola firma en los 80 documentos** — `search-6` · `text-1` · `text-7` ·
+   `custom_html-25`, con los títulos **«Buscar» · «Categorías» ·
+   «¡Suscríbete a nuestra newsletter!»**.
 
 **`D3` enumera lo que los listados le EXIGEN al grupo A** —título, slug, fecha,
 imagen, extracto, tres taxonomías, autor— y **la barra lateral no está**. Un
@@ -520,8 +522,33 @@ ya trae **las 149 páginas** (cada índice y **cada** `/page/N/`). Sonda nueva
 | series con más de una página | **28** |
 | …**heterogéneas** (≥2 clases estructurales) | **19** |
 | …homogéneas | 9 — y son las **triviales**: las que sirven la misma página a cualquier `N` (`D2.4`) |
-| clases estructurales distintas en la población | **35** |
+| clases estructurales distintas en la población | **38** (eran 35 hasta el 2026-08-11 · §LH-SERIE-HIGIENE) |
 | veredicto | **LA SERIE NO ES UNA UNIDAD** |
+
+> ⚠ **35 → 38, y el cambio es del INSTRUMENTO, no del sitio — pero NINGUNA
+> conclusión de esta tabla se mueve.** El componente `·sb` de la firma casaba
+> `et_pb_widget_area` en el documento entero, pie incluido, así que salía en las
+> 149 y **no discriminaba**. Con el discriminador bueno (80/149) **se parten 3
+> clases**, y las tres se parten **exactamente en «con barra» y «sin barra»**:
+>
+> | clase fusionada | se parte en |
+> |---|---|
+> | `t0·ninguna·--·s6` | `…·sb` y `…` |
+> | `t7·ninguna·--·s6` | `…·sb` y `…` |
+> | `t4·ninguna·--·s6` | `…·sb` y `…` |
+>
+> **La partición es correcta y la fusión era el defecto**: un documento de blog
+> con 7 tarjetas y uno de resources con 7 tarjetas **no son la misma clase** —
+> uno sirve la retícula `3_4+1_4` con barra y el otro `4_4` sin ella, que es lo
+> que `D1` acotada mide. Se comprobó **en las dos direcciones** (§PASO 4 de la
+> tanda de decisión): 38 podía **reforzar** la heterogeneidad o significar que
+> `sb` **partía clases que eran la misma**. Es lo primero.
+>
+> **Y las dos conclusiones que se apoyaban en el 35 siguen intactas, derivadas:
+> «19 de 28 heterogéneas» y «9 homogéneas» dan EXACTAMENTE lo mismo** antes y
+> después — porque la heterogeneidad se mide **dentro** de cada serie y `sb` es
+> constante ahí. El disparador 3 del ESCALÓN **no salta**: cambió una cifra, no
+> una conclusión.
 
 **Las tres hipótesis del pre-registro salieron, y por eso el resultado se puede
 leer como una prueba y no como una descripción:** la 1.ª no tiene «anterior» y
