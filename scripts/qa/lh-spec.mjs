@@ -307,7 +307,25 @@ function barrer() {
      * Derivado sobre el HTML capturado: esas dos páginas tienen CERO `<h1>`. */
     baseEnCrudo: h1
       ? { hayH1: true, yAbsoluta: R(h1).y, texto: txt(h1), etiqueta: h1.tagName.toLowerCase(), tipo: S(h1, TIPO), ritmo: S(h1, RITMO), rect: R(h1), renglones: renglones(h1), renderizado: rend(h1) }
-      : { hayH1: false, yAbsoluta: null, anclaAlternativa: (() => { const c = document.querySelector("article[class*='type-'], article.et_pb_post"); return c ? { que: "primera tarjeta", marca: marca(c), yAbsoluta: R(c).y } : null; })() },
+      /* ⚠ ARREGLADO 2026-08-11 (F3-2, PASO 2). Esto decía
+       * `querySelector("article[class*='type-'], article.et_pb_post")` **sin
+       * filtrar el wrapper `article.type-page`** — el mismo filtro que
+       * `contenedorDeTarjetas()` sí tiene 160 líneas más arriba, y que su
+       * propio comentario explica. §sondas 3 (*documentado no es conectado*)
+       * en su forma más barata: el arreglo existe, está razonado, y **no está
+       * en la llamada que importa**.
+       *
+       * Medido sobre el corpus (`qa:lh-ancla`, 149 documentos): en `/recursos`
+       * y `/recursos/page/2` el selector viejo apunta a `post-33166 type-page`
+       * —la página— y la 1.ª tarjeta es `post-71347 type-post`.
+       *
+       * **Y el arreglo es NO-OP sobre lo ya congelado**, comprobado y no
+       * supuesto: `anclaAlternativa` sólo se evalúa donde NO hay `h1`, y las
+       * únicas rutas así son `/es/glosario/` y `/es/preguntas-frecuentes/`, que
+       * no traen wrapper. `lh-spec-{1440,390}.json` **no se re-emiten**. Se
+       * arregla la CLASE igualmente: el día que se mida una forma sin `h1` que
+       * sí lo traiga, el ancla apuntaría mal **en silencio**. */
+      : { hayH1: false, yAbsoluta: null, anclaAlternativa: (() => { const c = contenedorDeTarjetas().cards[0] ?? null; return c ? { que: "primera tarjeta", marca: marca(c), yAbsoluta: R(c).y } : null; })() },
     cabecera: cabecera ? { marca: marca(cabecera), rect: R(cabecera), ritmo: S(cabecera, RITMO), caja: S(cabecera, CAJA) } : null,
     pie: pie ? { marca: marca(pie), yAbsoluta: R(pie).y, rect: R(pie) } : null,
     contenedorTema: contenedorTema ? { marca: marca(contenedorTema), rect: R(contenedorTema), ritmo: S(contenedorTema, RITMO), caja: S(contenedorTema, CAJA) } : null,

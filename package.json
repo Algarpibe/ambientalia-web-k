@@ -167,7 +167,8 @@
     "qa:lh-spec": "node scripts/qa/lh-spec.mjs",
     "qa:lh-barra": "node scripts/qa/lh-barra.mjs",
     "qa:lh-h1": "node scripts/qa/lh-h1.mjs",
-    "qa:lh-contenedores": "node scripts/qa/lh-contenedores.mjs"
+    "qa:lh-contenedores": "node scripts/qa/lh-contenedores.mjs",
+    "qa:lh-ancla": "node scripts/qa/lh-ancla.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

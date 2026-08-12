@@ -511,6 +511,61 @@ es el 100 % de ella— y (b) —no hay varianza intra-familia en ninguna de las 
 > 2 de 35 se leían como *«dos rarezas»*; en la unidad correcta son **dos
 > familias enteras**, 12 de 12 documentos.
 
+### ✅ D4b.1 · el ANCLA de `L2` — «primera tarjeta», con MEDIA verificación y la otra mitad asignada (2026-08-11)
+
+`D4b` convierte *«`L2` no tiene `h1`»* de anomalía en **propiedad de su
+plantilla**, así que su base de lectura no es un parche: es lo que a esa familia
+le toca. Medido sobre el corpus congelado (`qa:lh-ancla`, 149 documentos,
+negativo **3/3**), **empezando por `/glosario` y `/preguntas-frecuentes`** — las
+dos que rompieron el protocolo, porque calibrar contra las siete que sí tienen
+`h1` sería fabricar una familia de calibración.
+
+**La condición correcta no es «tiene ancla»: es «tiene BASE».** El ancla
+alternativa sólo hace falta donde no hay `h1`, y exigírsela a una página que sí
+lo tiene produce un bloqueo falso — pasó en la 2.ª versión de la sonda.
+
+| base | documentos |
+|---|---|
+| el `<h1>` (la estándar) | **82** |
+| **«primera tarjeta»** | **12** — exactamente `L2`, que es donde hace falta |
+| **ninguna** | **0** |
+| *(vacíos, sin cuerpo que medir — `D2.5`/`P-LH-C7`)* | *55* |
+
+`L2-glosario` **8/8** y `L2-faqs` **4/4** tienen ancla. El selector cubre los
+**cinco** tipos de tarjeta del sitio: `type-glossary` · `type-faqs` ·
+`type-post` · `type-scientific-docs` · `type-case-studies`.
+
+> ℹ **Y los 10 documentos con contenido que NO tienen «primera tarjeta» no son
+> un problema: tienen `h1`.** Son `/productos` · `/sectores` ·
+> `/recursos/kunakpedia` · `/recursos/documentos-cientificos` ·
+> `/recursos/preguntas-frecuentes` (con sus `/page/2`), páginas de builder que
+> **no listan posts** — justo lo que `D1` dice de los hubs. Usan la base
+> estándar.
+
+⚠⚠ **MEDIA VERIFICACIÓN, y la otra mitad tiene dueño.** El criterio de
+`c-cabecera` —*ser **el mismo elemento** en los dos lados*— **no se puede
+contestar hoy**: el clon no emite estas rutas, así que **no hay segundo lado**.
+Eso no es un pendiente tácito:
+
+| **`P-LH-C8`** | la tanda que CONSTRUYA verifica que el ancla de `L2` es **el mismo elemento** en original y clon, a los dos anchos — con el criterio de `qa:c-cabecera`, que existe precisamente porque un selector puede casar en los dos lados y apuntar a cosas distintas |
+|---|---|
+
+> ⚠ **Y de camino, un defecto real de `lh-spec`, arreglado en la CLASE:** su
+> `anclaAlternativa` (`:310`) usaba `article[class*='type-'], article.et_pb_post`
+> **sin filtrar el wrapper `article.type-page`** — el mismo filtro que
+> `contenedorDeTarjetas()` (`:152`) **sí tiene**, con su comentario explicándolo.
+> §sondas 3 en su forma más barata: *el arreglo existe, está razonado, y no está
+> en la llamada que importa*. Medido: en `/recursos` y `/recursos/page/2` el
+> selector viejo apunta a `post-33166 type-page` —la página— en vez de a
+> `post-71347 type-post`.
+>
+> **El arreglo es NO-OP sobre lo congelado, comprobado y no supuesto:**
+> `anclaAlternativa` sólo se evalúa donde falta el `h1`, y las únicas rutas así
+> son las dos de `L2`, que **no traen wrapper** — sus valores en
+> `lh-spec-{1440,390}.json` son los mismos antes y después, así que **no se
+> re-emiten**. Se arregla igual porque el día que se mida una forma sin `h1` que
+> sí lo traiga, el ancla apuntaría mal **en silencio**.
+
 ### (histórico) ⛔ 2026-08-11 · la fila del `h1` SALE DE CERRADA — y no por un dato nuevo, sino porque su evidencia NO PODÍA SOSTENERLA
 
 Comprobación retroactiva **enmarcada en las dos direcciones antes de mirar**
@@ -629,6 +684,7 @@ Escrito ahora para que la tanda que construya no se lo invente:
 | **P-LH-C4** | al emitir el primer hub/listado, `qa:enlaces` convierte los **25 href** absolutos en fallo — se localizan con la sonda, no a mano, y se re-corre hasta limpia en las dos direcciones |
 | **P-LH-C5** | los 7 sin paginación real devuelven **404** en el clon para `/page/2/`, y la desviación queda anotada en `PENDIENTES-QA.md` con la razón de D2.4 |
 | **P-LH-C7** | **las 55 vacías cumplen SU contrato** (`D2.5`): HTTP **200**, `<link rel=canonical>` **a sí misma** y `<title>` «Página N de M» con la **M del servidor**. Un 404 ahí es defecto, no ahorro |
+| **P-LH-C8** | **el ancla de `L2` es EL MISMO ELEMENTO en los dos lados** — la mitad de `D4b.1` que hoy no se puede contestar porque el clon no emite estas rutas. Criterio y sonda: `qa:c-cabecera`, a los dos anchos. Sin esto, la base de `L2` está verificada **a medias** |
 | **P-LH-C6** | ✅ **CUMPLIDA 2026-08-10** — `npm run qa:comportamiento`, 254/254 interacciones con disparo confirmado, negativo 5/5. Acta: **`BEHAVIORS.md`** (mismo directorio) · `medidas/comportamiento-1440.json`. **AMPLIADA al universo entero el 08-11**: `TODAS=1` → **518/518** sobre las **37 rutas × 2 lados**, el eje de la matriz a **37/37** (`comportamiento-1440-emitidas-todas.json`) |
 
 ## ⚠ Lo que la pasada de comportamiento le DEVUELVE a este documento (2026-08-10)

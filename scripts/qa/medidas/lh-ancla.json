@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "fecha": "2026-08-11",
+    "pregunta": "¿«la primera tarjeta» sirve de ancla de lectura en las 9 formas? — la base que L2 necesita porque D4b dice que su plantilla no emite h1",
+    "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red)",
+    "sabotaje": null,
+    "mediaVerificacion": {
+      "loQueSeContestaAqui": "que el ancla EXISTE en las 9 formas y que el selector es inequívoco (no apunta al wrapper de la página)",
+      "loQueNO": "que sea EL MISMO ELEMENTO en los dos lados — el clon no emite estas rutas todavía, así que no hay segundo lado",
+      "dueño": "la tanda que CONSTRUYA F3-2 · pre-registro P-LH-C8 en listados-hubs/DECISIONES.md",
+      "porQueImporta": "c-cabecera existe porque un selector que casa en los dos lados puede apuntar a cosas distintas, y eso no lo caza ningún censo"
+    },
+    "noMide": [
+      "la `y` del ancla: eso es geometría y la pone lh-spec contra el original",
+      "si el ancla es ESTABLE entre cargas (el orden de las tarjetas): eso lo midió qa:comportamiento — 1 solo orden en 10 cargas, cota < 30 %"
+    ]
+  },
+  "documentos": 149,
+  "familias": 9,
+  "familiasConContenido": 9,
+  "familiasConAnclaEnTodosSusDocumentosConContenido": 7,
+  "documentosVacios": {
+    "n": 55,
+    "porQueNoCuentan": "no tienen cuerpo que medir: son las que D2.5 manda replicar con 200 sin listar nada, y su contrato es P-LH-C7 (200 · canonical · <title>), no una base de lectura",
+    "rutas": [
+      "/blog/page/10",
+      "/blog/page/11",
+      "/blog/page/12",
+      "/blog/page/13",
+      "/blog/page/14",
+      "/blog/page/15",
+      "/blog/page/16",
+      "/blog/page/17",
+      "/blog/page/9",
+      "/etiqueta/calidad-del-aire/page/5",
+      "/etiqueta/calidad-del-aire/page/6",
+      "/etiqueta/calidad-del-aire/page/7",
+      "/etiqueta/co2-es/page/2",
+      "/etiqueta/contaminantes-atmosfericos/page/5",
+      "/etiqueta/contaminantes-atmosfericos/page/6",
+      "/etiqueta/contaminantes-atmosfericos/page/7",
+      "/etiqueta/contaminantes-atmosfericos/page/8",
+      "/etiqueta/cov/page/2",
+      "/etiqueta/emisiones-industriales/page/4",
+      "/etiqueta/emisiones-industriales/page/5",
+      "/etiqueta/gases-de-efecto-invernadero/page/2",
+      "/etiqueta/malos-olores/page/2",
+      "/etiqueta/monitorizacion-ambiental/page/12",
+      "/etiqueta/monitorizacion-ambiental/page/13",
+      "/etiqueta/monitorizacion-ambiental/page/14",
+      "/etiqueta/monitorizacion-ambiental/page/15",
+      "/etiqueta/monitorizacion-ambiental/page/16",
+      "/etiqueta/monitorizacion-ambiental/page/17",
+      "/etiqueta/monitorizacion-ambiental/page/18",
+      "/etiqueta/monitorizacion-ambiental/page/19",
+      "/etiqueta/normativa-de-calidad-del-aire/page/4",
+      "/etiqueta/particulas-en-suspension/page/3",
+      "/etiqueta/particulas-en-suspension/page/4",
+      "/etiqueta/sensor-de-calidad-del-aire/page/5",
+      "/etiqueta/sensor-de-calidad-del-aire/page/6",
+      "/etiqueta/sensor-de-calidad-del-aire/page/7",
+      "/recursos/articulos/contaminacion-urbana/page/3",
+      "/recursos/articulos/contaminacion-urbana/page/4",
+      "/recursos/articulos/contaminacion-urbana/page/5",
+      "/recursos/articulos/contaminacion-y-salud/page/3",
+      "/recursos/articulos/contaminacion-y-salud/page/4",
+      "/recursos/articulos/industria-y-contaminacion-por-olores/page/3",
+      "/recursos/articulos/industria-y-contaminacion-por-olores/page/4",
+      "/recursos/articulos/industria-y-contaminacion-por-olores/page/5",
+      "/recursos/articulos/page/10",
+      "/recursos/articulos/page/11",
+      "/recursos/articulos/page/12",
+      "/recursos/articulos/page/13",
+      "/recursos/articulos/page/14",
+      "/recursos/articulos/page/15",
+      "/recursos/articulos/page/16",
+      "/recursos/articulos/page/7",
+      "/recursos/articulos/page/8",
+      "/recursos/articulos/page/9",
+      "/recursos/articulos/productos-kunak/page/2"
+    ]
+  },
+  "porFamilia": {
+    "L1-blog": {
+      "n": 17,
+      "conContenido": 8,
+      "conAncla": 8,
+      "conH1": 8,
+      "vacios": 9,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-68584 type-post": 1,
+        "post-50848 type-post": 1,
+        "post-16387 type-post": 1,
+        "post-8829 type-post": 1,
+        "post-5456 type-post": 1,
+        "post-4597 type-post": 1,
+        "post-1211 type-post": 1,
+        "post-1234 type-post": 1
+      },
+      "discrepan": 0
+    },
+    "L5-casos": {
+      "n": 2,
+      "conContenido": 2,
+      "conAncla": 2,
+      "conH1": 2,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-71307 type-case-studies": 2
+      },
+      "discrepan": 0
+    },
+    "L1-etiqueta": {
+      "n": 63,
+      "conContenido": 36,
+      "conAncla": 36,
+      "conH1": 36,
+      "vacios": 27,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-69132 type-post": 1,
+        "post-60237 type-post": 1,
+        "post-33327 type-post": 2,
+        "post-15909 type-post": 1,
+        "post-63336 type-post": 2,
+        "post-71347 type-post": 3,
+        "post-63286 type-post": 1,
+        "post-52844 type-post": 1,
+        "post-16191 type-post": 1,
+        "post-62251 type-post": 1,
+        "post-29508 type-post": 1,
+        "post-66316 type-post": 2,
+        "post-63783 type-post": 1,
+        "post-1217 type-post": 1,
+        "post-2400 type-post": 1,
+        "post-65463 type-post": 1,
+        "post-58780 type-post": 1,
+        "post-32303 type-post": 1,
+        "post-17083 type-post": 1,
+        "post-9987 type-post": 1,
+        "post-5542 type-post": 1,
+        "post-5239 type-post": 1,
+        "post-1179 type-post": 1,
+        "post-68232 type-post": 1,
+        "post-52220 type-post": 1,
+        "post-6711 type-post": 1,
+        "post-68424 type-post": 1,
+        "post-16452 type-post": 1,
+        "post-68582 type-post": 1,
+        "post-15694 type-post": 1,
+        "post-7658 type-post": 1
+      },
+      "discrepan": 0
+    },
+    "L2-glosario": {
+      "n": 8,
+      "conContenido": 8,
+      "conAncla": 8,
+      "conH1": 0,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-71556 type-glossary": 1,
+        "post-68955 type-glossary": 1,
+        "post-64487 type-glossary": 1,
+        "post-62481 type-glossary": 1,
+        "post-53153 type-glossary": 1,
+        "post-50185 type-glossary": 1,
+        "post-50166 type-glossary": 1,
+        "post-33751 type-glossary": 1
+      },
+      "discrepan": 0
+    },
+    "L2-faqs": {
+      "n": 4,
+      "conContenido": 4,
+      "conAncla": 4,
+      "conH1": 0,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-68944 type-faqs": 1,
+        "post-65804 type-faqs": 1,
+        "post-65794 type-faqs": 1,
+        "post-65782 type-faqs": 1
+      },
+      "discrepan": 0
+    },
+    "otra": {
+      "n": 4,
+      "conContenido": 4,
+      "conAncla": 0,
+      "conH1": 4,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [
+        "/productos",
+        "/productos/page/2",
+        "/sectores",
+        "/sectores/page/2"
+      ],
+      "marcas": {},
+      "discrepan": 0
+    },
+    "L1-resources": {
+      "n": 37,
+      "conContenido": 18,
+      "conAncla": 18,
+      "conH1": 18,
+      "vacios": 19,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-68424 type-post": 1,
+        "post-33627 type-post": 1,
+        "post-29592 type-post": 1,
+        "post-69132 type-post": 1,
+        "post-17332 type-post": 1,
+        "post-68582 type-post": 1,
+        "post-7291 type-post": 1,
+        "post-71347 type-post": 2,
+        "post-29508 type-post": 1,
+        "post-63598 type-post": 1,
+        "post-57246 type-post": 1,
+        "post-31433 type-post": 1,
+        "post-14340 type-post": 1,
+        "post-6774 type-post": 1,
+        "post-70141 type-post": 1,
+        "post-63286 type-post": 1,
+        "post-31718 type-post": 1
+      },
+      "discrepan": 0
+    },
+    "L4-hub": {
+      "n": 8,
+      "conContenido": 8,
+      "conAncla": 2,
+      "conH1": 8,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [
+        "/recursos/documentos-cientificos",
+        "/recursos/documentos-cientificos/page/2",
+        "/recursos/kunakpedia",
+        "/recursos/kunakpedia/page/2",
+        "/recursos/preguntas-frecuentes",
+        "/recursos/preguntas-frecuentes/page/2"
+      ],
+      "marcas": {
+        "post-71347 type-post": 2
+      },
+      "discrepan": 2
+    },
+    "L3-sci": {
+      "n": 6,
+      "conContenido": 6,
+      "conAncla": 6,
+      "conH1": 6,
+      "vacios": 0,
+      "sinBase": [],
+      "sinAncla": [],
+      "marcas": {
+        "post-61981 type-scientific-docs": 3,
+        "post-71039 type-scientific-docs": 1,
+        "post-61964 type-scientific-docs": 2
+      },
+      "discrepan": 0
+    }
+  },
+  "baseDeLectura": {
+    "porH1": 82,
+    "porPrimeraTarjeta": 12,
+    "sinNinguna": 0,
+    "rutasSinNinguna": [],
+    "rutasQueUsanLaTarjeta": [
+      "/glosario",
+      "/glosario/page/2",
+      "/glosario/page/3",
+      "/glosario/page/4",
+      "/glosario/page/5",
+      "/glosario/page/6",
+      "/glosario/page/7",
+      "/glosario/page/8",
+      "/preguntas-frecuentes",
+      "/preguntas-frecuentes/page/2",
+      "/preguntas-frecuentes/page/3",
+      "/preguntas-frecuentes/page/4"
+    ]
+  },
+  "documentosConContenidoSinPrimeraTarjeta": {
+    "n": 10,
+    "tienenH1": true,
+    "porQueNoImporta": "usan la base estándar (el h1); son páginas de builder que no listan posts",
+    "rutas": [
+      "/productos",
+      "/productos/page/2",
+      "/recursos/documentos-cientificos",
+      "/recursos/documentos-cientificos/page/2",
+      "/recursos/kunakpedia",
+      "/recursos/kunakpedia/page/2",
+      "/recursos/preguntas-frecuentes",
+      "/recursos/preguntas-frecuentes/page/2",
+      "/sectores",
+      "/sectores/page/2"
+    ]
+  },
+  "discrepanciaEntreSelectores": {
+    "queEs": "lh-spec.mjs:310 (`anclaAlternativa`) NO filtra el wrapper `type-page`, y lh-spec.mjs:152 (`contenedorDeTarjetas`) SÍ",
+    "documentos": 2,
+    "casos": [
+      {
+        "ruta": "/recursos",
+        "familia": "L4-hub",
+        "lhSpecApuntaA": "post-33166 type-page",
+        "deberiaApuntarA": "post-71347 type-post"
+      },
+      {
+        "ruta": "/recursos/page/2",
+        "familia": "L4-hub",
+        "lhSpecApuntaA": "post-33166 type-page",
+        "deberiaApuntarA": "post-71347 type-post"
+      }
+    ]
+  },
+  "veredicto": {
+    "todoDocumentoConContenidoTieneBase": true,
+    "existeElAnclaDondeHaceFalta": true,
+    "selectorInequivoco": false,
+    "tiposDeTarjetaQueElAnclaTieneQueCubrir": [
+      "type-case-studies",
+      "type-faqs",
+      "type-glossary",
+      "type-post",
+      "type-scientific-docs"
+    ],
+    "lectura": "TODO documento con contenido tiene base: 82 por <h1> y 12 por «primera tarjeta» (los 12 de L2, que es donde hace falta). Los 10 sin primera tarjeta tienen <h1>, y los 55 vacíos no tienen cuerpo que medir. MEDIA VERIFICACIÓN: falta «el mismo elemento en los dos lados» — el clon no emite estas rutas (P-LH-C8)."
+  }
+}
