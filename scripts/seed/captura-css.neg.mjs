@@ -55,6 +55,22 @@ const casos = [
     exit: 1,
     salidaTiene: /PÁGINA AUSENTE/,
   },
+  {
+    etiqueta: "dir-ausente",
+    porQue: "un subárbol que no existe ⇒ TIRA (el modo --dir hereda la misma guarda, no una más floja)",
+    env: {},
+    args: ["--dir=corpus/no-existe-este-arbol"],
+    exit: 1,
+    salidaTiene: /DIRECTORIO AUSENTE/,
+  },
+  {
+    etiqueta: "dos-definiciones",
+    porQue: "--pagina y --dir a la vez ⇒ TIRA: dos definiciones de la lista es la clase C7",
+    env: {},
+    args: ["--pagina=corpus/casos/x.html", "--dir=corpus/fase-3/listados"],
+    exit: 1,
+    salidaTiene: /excluyentes/,
+  },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · captura-css ════════`);

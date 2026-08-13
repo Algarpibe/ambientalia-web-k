@@ -37,6 +37,92 @@ seed de KB murió en el 4.º documento. La protección de congeladas funcionando
 su lectura mal hecha. Queda cerrado con una guarda de **sincronía código↔censo**
 en el negativo, en los dos sentidos.
 
+## ✅ F3-LH-BASE-MUDA · «exit 0 y cero líneas» NO era de la sonda: era del PIPE de quien la llamó (2026-08-13, tanda de CONSTRUCCIÓN, PASO 0)
+
+> **Y la congelada que se declaró «no exhibible» EXISTÍA.** Dos afirmaciones
+> falsas en la misma nota, y las dos comprobables con un `ls`.
+
+El HANDOFF anterior fichó: *«Una corrida de `clon-base --cmp` a 1440 salió con
+**exit 0 y cero líneas de salida**: no es exhibible y se descartó»*. Reproducido
+hoy a la primera —misma sonda, misma salida vacía, mismo exit 0— y **diagnosticado**:
+
+| se creyó | lo medido |
+|---|---|
+| la sonda muere muda | **la sonda escribe con normalidad**. La misma corrida, redirigida a fichero en vez de a `\| tail`, imprime desde el segundo 2 |
+| exit 0 lo daba la sonda | **lo daba `tail`**: en `A \| B` el código de salida es **el de B**, así que el pipe *sustituyó* el veredicto de la sonda por el del último comando |
+| «no es exhibible» | **su congelada estaba en `medidas/`** — `clon-base-1440-2026-08-13.json`, 249 rutas, 249 páginas |
+
+**Las dos causas son de la misma familia y ninguna es de la sonda:**
+
+1. **un pipe se come la salida** cuando el comando se mueve a segundo plano
+   —`tail` bufferea hasta EOF y ahí no llega—;
+2. **un pipe también se come el CÓDIGO DE SALIDA.** Esto es §regla 6 —*un valor
+   por defecto convierte «no lo sé» en «está bien»*— **en el shell**: `| tail`
+   devuelve 0 porque *tail* funcionó, y con eso el contrato de `Evaluadas`, el
+   gancho de `exit` y `gritaSiRevienta` quedan **todos por detrás de un filtro
+   que siempre dice que sí**. Toda la maquinaria antimuda del repo vive **dentro**
+   del proceso de la sonda, y el pipe actúa **fuera**.
+
+> **La regla que deja, y por eso está en el encargo del propietario desde hace
+> tandas:** una sonda se corre **sin `2>&1` y sin `| tail`** — se redirige a
+> fichero y se lee después. Un filtro cómodo en la línea de invocación puede
+> anular un contrato de 155 sondas sin tocar una línea de código.
+
+**Y la tercera lección, que es §regla 9 aplicada a un hecho negativo:** *«no es
+exhibible»* se escribió **sin buscar el fichero**. Estaba. Un hecho negativo se
+comprueba contra el archivo —`medidas/` y `git log`—, nunca de memoria, y
+justamente ésta es la clase que ya se pagó en el pre-registro de `cqa6-390`.
+
+**Estado hoy:** la línea base de esta tanda está congelada y es exhibible —
+`clon-base-1440-f32-antes-2026-08-13.json`, **302 rutas · 302 páginas · 0
+errores · 0 sin `docH`**.
+
+## ⛔ F3-LH-PIELES-SIN-CAPTURAR · las 9 formas de listado SÍ enlazan el canal de pieles, y estaba a CERO (2026-08-13, tanda de CONSTRUCCIÓN, PASO 1)
+
+> **Es §F3-CSS-CANAL-PIELES acotada a la pregunta que bloqueaba, y contestada
+> ANTES de construir — que es el punto entero.** Si se hubiera preguntado
+> después, las specs de listados habrían calibrado la plantilla contra ceros sin
+> probar: el escalón de F3-1 repetido, donde el `h2` de KB tenía su discriminador
+> en el canal que la sonda no miraba.
+
+**La pregunta, acotada:** ¿las 9 formas enlazan `et-core-unified-*` —donde Divi
+vuelca el CSS compilado de módulos— y esas hojas están capturadas?
+
+**La respuesta, derivada del corpus congelado (sin red):**
+
+| | |
+|---|---|
+| formas que enlazan `et-core-unified` | **9 de 9** |
+| ficheros HTML de `corpus/fase-3/listados/` que lo enlazan | **149** |
+| **hojas distintas** que piden las 9 formas CANÓNICAS | **15** |
+| de ellas, `et-core-unified*` | **13** |
+| **capturadas antes de esta tanda** | **1** (`et-divi-customizer-global`, que vino con T9) |
+
+> **Y el número es la buena noticia: 15, no 505.** El inventario global asusta
+> —505 hojas, 498 `et-cache`— porque Divi compila una por página; pero las 9
+> formas **comparten** las suyas. Acotar la pregunta a la familia que bloquea
+> convirtió una campaña inviable en unas pocas peticiones.
+
+**Qué se hizo:** `cms:captura-css --dir=corpus/fase-3/listados` — modo nuevo, que
+deriva la unión de un subárbol en vez de obligar a nueve corridas con nueve
+listas (la clase C7 otra vez). Negativo ampliado a **5 casos** (`dir-ausente` y
+`dos-definiciones`: `--pagina` y `--dir` a la vez **tiran**, porque dos
+definiciones de la lista es exactamente lo que este modo viene a no tener).
+
+⚠ **Y el alcance capturado es MAYOR que «las 9 formas», con su razón:** el modo
+`--dir` recorrió los **149 HTML** del subárbol, no las 9 páginas canónicas, y
+capturó **52 hojas** (total en `corpus/css`: **59 de 505**). No es un desliz: el
+comparador mide **13 páginas** —las 9 formas **más** las segundas instancias de
+`L1-etiqueta`, `L1-resources-hijo` y `L3-sci`—, y cada instancia trae su propia
+`et-divi-dynamic` compilada por página. Capturar sólo las 9 canónicas habría
+dejado el comparador midiendo la mitad de su universo con el canal incompleto,
+que es el defecto que este paso venía a evitar.
+
+⚠ **Lo que esto NO cierra:** §F3-CSS-CANAL-PIELES sigue abierta para el resto del
+corpus — `qa:pieles` recorre **782** páginas y hay **59 de 505** hojas
+capturadas. Lo cerrado es **el tramo que bloqueaba la construcción de listados**,
+declarado con su alcance y no con un titular.
+
 ## ⚠ F3-CSS-CANAL-PIELES · `qa:pieles` lee UN canal de CSS de los dos, y 573 de 782 páginas enlazan el otro (2026-08-13, T9 PASO 1)
 
 > **Sale de la comprobación retroactiva de la tanda de T9, hecha en LAS DOS

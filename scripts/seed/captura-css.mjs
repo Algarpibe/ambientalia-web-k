@@ -53,6 +53,8 @@ const SOLO_DERIVA = !!process.env.SOLO_DERIVA;
 
 const arg = (n) => (process.argv.slice(2).find((a) => a.startsWith(`--${n}=`)) ?? "").split("=").slice(1).join("=") || null;
 const PAGINA = process.env.PAGINA || arg("pagina");
+const DIR = process.env.DIR || arg("dir");
+if (PAGINA && DIR) throw new Error("--pagina y --dir son excluyentes: nombra UNA definición de la lista.");
 
 /** §sondas 5 · una corrida negativa NO pisa el índice de la campaña buena. */
 const NEG = process.env.NEG || null;
@@ -136,33 +138,56 @@ const capturadasYa = [...inventario.keys()].filter(yaCapturada).length;
 console.log(`  ya capturadas        ${capturadasYa} de ${inventario.size}`);
 
 /* ── la lista que se pide, que NO es el inventario ────────────────────────── */
-let lista = [];
-if (PAGINA) {
-  const f = join(RAIZ, PAGINA);
-  if (!existsSync(f))
-    throw new Error(
-      `PÁGINA AUSENTE: no existe ${PAGINA}.\n` +
-        `  Se nombra la ruta del HTML del corpus, p.ej. corpus/casos/<fichero>.html`,
-    );
+/**
+ * `--dir=` es el modo de una FAMILIA de páginas, y existe porque la pregunta que
+ * lo pidió era de una familia: *«¿las 9 formas de listado enlazan un canal de
+ * pieles sin capturar?»* (§F3-CSS-CANAL-PIELES). Correr `--pagina=` nueve veces
+ * daría el mismo resultado y **nueve listas**, que es la clase C7 — la segunda
+ * definición del hueco. Aquí la unión se hace una vez y se declara.
+ */
+const hojasDeFichero = (f) => {
   const html = readFileSync(f, "utf8");
   const suyas = [];
   for (const m of html.matchAll(RE_LINK)) {
     const href = hojaDe(m[0]);
     if (href) suyas.push(href);
   }
+  return suyas;
+};
+
+let lista = [];
+let alcance = null;
+if (PAGINA || DIR) {
+  const objetivo = join(RAIZ, PAGINA ?? DIR);
+  if (!existsSync(objetivo))
+    throw new Error(
+      `${PAGINA ? "PÁGINA" : "DIRECTORIO"} AUSENTE: no existe ${PAGINA ?? DIR}.\n` +
+        `  Se nombra una ruta del corpus, p.ej. corpus/casos/<fichero>.html o corpus/fase-3/listados`,
+    );
+  const ficheros = PAGINA ? [objetivo] : htmls.filter((f) => f.startsWith(objetivo));
+  if (!ficheros.length)
+    throw new Error(
+      `0 ficheros HTML bajo ${DIR}: su cero se leería como «nada que capturar» (§sondas 4).`,
+    );
+  const suyas = ficheros.flatMap(hojasDeFichero);
   if (!suyas.length)
     throw new Error(
-      `0 hojas enlazadas en ${PAGINA}: eso NO es «esta página no necesita CSS».\n` +
+      `0 hojas enlazadas en ${PAGINA ?? DIR}: eso NO es «esto no necesita CSS».\n` +
         `  Es una lectura que no encontró nada, y su cero saldría como campaña verde\n` +
         `  sin pedir un fichero (§sondas 4).`,
     );
-  /* Se pide CON su `?ver=`: es la URL que el documento sirve. */
-  lista = [...new Set(suyas)];
-  console.log(`\n  lista pedida         ${lista.length} hojas de ${PAGINA}`);
+  /* Se pide CON su `?ver=`: es la URL que el documento sirve. Pero se DEDUPLICA
+   * por URL base — dos páginas que piden la misma hoja con distinto `?ver=` no
+   * son dos ficheros, y pedir los dos inflaría la campaña sin añadir un byte. */
+  const porBase = new Map();
+  for (const u of suyas) if (!porBase.has(sinVer(u))) porBase.set(sinVer(u), u);
+  lista = [...porBase.values()];
+  alcance = `${PAGINA ?? DIR} · ${ficheros.length} HTML`;
+  console.log(`\n  lista pedida         ${lista.length} hojas distintas de ${ficheros.length} HTML de ${PAGINA ?? DIR}`);
 } else if (!SOLO_DERIVA) {
   throw new Error(
-    "SIN LISTA: hay que nombrar qué capturar (`--pagina=corpus/…/x.html`) o pedir sólo el\n" +
-      "  inventario (`SOLO_DERIVA=1`).\n" +
+    "SIN LISTA: hay que nombrar qué capturar (`--pagina=corpus/…/x.html` o `--dir=corpus/…`)\n" +
+      "  o pedir sólo el inventario (`SOLO_DERIVA=1`).\n" +
       `  Capturar el inventario entero son ${inventario.size} peticiones: eso es una campaña con su\n` +
       "  encargo, no el valor por defecto de un parámetro que se olvidó.",
   );
@@ -212,9 +237,9 @@ writeFileSync(
       meta: {
         fecha: hoy(),
         fuente: "hojas CSS que el HTML del corpus enlaza (bytes servidos, sin re-codificar)",
-        derivacion: "los <link> de los 782 HTML de corpus/ — inventario completo; se PIDE sólo la lista nombrada",
+        derivacion: "los <link> de los HTML de corpus/ — inventario completo; se PIDE sólo la lista nombrada",
         etiqueta: `secuencial · ${ESPACIADO_MS} ms entre peticiones · sha256 · reanudable`,
-        alcance: PAGINA ? `lista de ${PAGINA}` : "sólo derivación",
+        alcance: alcance ?? "sólo derivación",
       },
       resumen: {
         htmlLeidos: htmls.length,

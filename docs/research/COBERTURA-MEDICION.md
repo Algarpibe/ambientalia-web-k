@@ -1,5 +1,27 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠⚠ **ACTUALIZADO 2026-08-13 (tanda de CONSTRUCCIÓN) — LISTADOS ESTRENA
+> COMPARADOR, y su primera lectura es 0.**
+>
+> | eje nuevo | qué compara | estado hoy |
+> |---|---|---|
+> | **listados · par a par** | las 13 páginas de las 9 formas, nodo × propiedad, contra `lh-spec` | **13 AUSENTES · 0 pares comparados** |
+>
+> **Y ese 0 es el dato, no un hueco de la matriz:** el clon no emite ninguna ruta
+> de listado (404 en las 13, verificado también desde el manifiesto). El
+> comparador se escribió **antes** que la plantilla a propósito — §UN ARQUETIPO
+> NUEVO NO HEREDA COBERTURA— así que su rojo de hoy mide **el trabajo que queda**,
+> no una regresión.
+>
+> **Lo que sí se pagó:** la **línea base** del clon a 1440 sobre las **302 rutas**
+> (302 páginas · 0 errores), que es el «antes» que la tanda de construcción
+> necesitará para adjudicar cualquier cambio a componente compartido.
+>
+> ⚠ **Y sigue en pie la declaración de hace tres tandas: cuando F3-2 construya,
+> esta matriz se va a hundir otra vez, y NO será una regresión** — entrarán
+> decenas de rutas de listado sin una sola medida contra el original, igual que
+> pasó al sembrar. El denominador crece antes que la cobertura, por construcción.
+
 > ⚠⚠ **ACTUALIZADO 2026-08-13 (tanda de T9) — el denominador sube de 252 a 302,
 > y entra un CANAL que ningún eje de esta matriz leía: el CSS ENLAZADO.**
 >

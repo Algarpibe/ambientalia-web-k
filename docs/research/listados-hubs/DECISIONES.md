@@ -868,3 +868,27 @@ zoom— y de paso trae la evidencia más limpia que tiene esa decisión:
 regla se copia **con su disparador**. `article:hover img` cuadra el píxel a 1440
 en las dos formas y cambia **quién** dispara, que es el defecto de rango del
 §CONTRATO trasladado al eje de interacción.
+
+### ✅ 2026-08-13 · el comparador de dos lados EXISTE, y con él P-LH-C8 pasa de «sin dueño» a «declarado NO EJERCITADO»
+
+La tanda de CONSTRUCCIÓN escribió `qa:lh-cmp` **antes** de la plantilla. Lo que
+eso cambia en el camino de decisiones:
+
+| precondición | antes | ahora |
+|---|---|---|
+| **`P-LH-C8`** — que el ancla de `L2` sea **el mismo elemento** en los dos lados | «a cargo de la tanda que construya» | **cableada en el comparador**: compara la `marca` (etiqueta + 3 clases) además de la `y`, y si difieren **no normaliza nada** contra esa base |
+| su **sabotaje** (`base-distinta`) | no existía | escrito y **declarado NO EJERCITADO**, con su razón |
+
+> ⚠ **«NO EJERCITADO» no es «pasa».** Mientras las 13 formas estén AUSENTES en el
+> clon, el sabotaje no puede cambiar el resultado — y *un sabotaje que no cambia
+> el resultado no ha probado la guarda: ha probado que el instrumento no la
+> ejercita* (§sondas 8a). El negativo lo imprime en cada corrida y **la tanda que
+> construya tiene que añadirlo a sus casos**. Escribirlo como pasado habría sido
+> exactamente el verde que esa regla existe para impedir.
+
+**Y una consecuencia de `D4b` que sólo se ve con el comparador delante:** la base
+de lectura **no es la misma en todas las formas**, así que el comparador la
+resuelve **por forma** (h1 · primera tarjeta) y publica la lectura **EN CRUDO**
+antes que ningún delta normalizado — §*la regla del `h1` es ciega a su propio
+punto de apoyo*. Un comparador que normalizara primero no podría ver un desfase
+que viva **en** la base, que es justo lo que costó cuatro páginas en C-QA1.

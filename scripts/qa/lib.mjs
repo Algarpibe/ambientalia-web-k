@@ -1346,7 +1346,7 @@ export function sinLiterales(src) {
  * ═════════════════════════════════════════════════════════════════════════ */
 
 /** Ficheros de `scripts/qa/` que NO son sondas: no miden, se importan. */
-export const LIBRERIAS = ["lib.mjs", "lib.test.mjs", "css-compilado.mjs"];
+export const LIBRERIAS = ["lib.mjs", "lib.test.mjs", "css-compilado.mjs", "lh-barrido.mjs"];
 
 /**
  * Audita un directorio de sondas contra el contrato de `Evaluadas`.

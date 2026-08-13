@@ -10,12 +10,29 @@
 > INSTANCIAS**, y un px absoluto significa **plantilla**, no campo. Aplicar aquí
 > el test A del builder daría la respuesta invertida.
 
-## ⛔ ANTES DE NADA: esta spec NO se puede implementar todavía
+## ✅ ANTES DE NADA: el bloqueo de esta spec ESTÁ LEVANTADO (2026-08-11; anotado aquí el 2026-08-13)
 
-**`L1` no tiene una retícula de cuerpo: tiene dos**, y `DECISIONES.md` §D1
-afirma lo contrario. Ficha completa en `PENDIENTES-QA.md` §ESCALÓN F3-2 (2.º).
-Lo que sigue está medido y es correcto; **lo que falta es la decisión de qué se
-hace con la columna que sobra.**
+> ⚠ **Esta cabecera decía «esta spec NO se puede implementar todavía» y llevaba
+> dos días siendo falsa.** El escalón que citaba —§ESCALÓN F3-2 (2.º)— se cerró
+> **el mismo día que se abrió**, y el cierre no bajó hasta aquí. Es §MENCIONADO
+> NO ES DOCUMENTADO por el otro lado: no una decisión que no se escribió, sino
+> **un bloqueo que nadie retiró** — y un lector de esta spec pararía sin motivo.
+
+**Lo que se decidió:** `D1` no es falsa, queda **ACOTADA**. `L1` sigue siendo
+**uno con tres variantes**; lo que se ensancha es **de qué** son las variantes:
+tarjeta **y** retícula de cuerpo **y** barra. Varianza 0 dentro de cada variante,
+distinta entre ellas — la misma lectura que la tarjeta, las tres pieles de
+paginación y la regla de zoom.
+
+**Y el límite que la medida impone, que sigue vivo:** barra y retícula son
+**COLINEALES en 149/149** —ningún documento tiene una sin la otra—, así que
+*«la barra es propiedad de la CAPA»* y *«…de la VARIANTE»* son **INDISTINGUIBLES**
+con esta población. Al construir se elige el eje con **mecanismo servido** (la
+plantilla de cuerpo del theme builder decide las dos a la vez) y **se dice que la
+razón es ésa, no una medida**.
+
+Lo que sigue está medido y es correcto. La tabla de abajo es **la que hay que
+implementar**, con sus dos contenedores.
 
 | | `L1-blog` · `L1-etiqueta` | `L1-resources` (padre e hijo) |
 |---|---|---|

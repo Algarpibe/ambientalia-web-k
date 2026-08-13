@@ -1,4 +1,108 @@
-# HANDOFF — T9 cerrada con sus CUATRO condiciones, pagando la última POR MECANISMO; F3-2 se queda sin escalones y lo que falta es CONSTRUIR
+# HANDOFF — el comparador de listados EXISTE y sale rojo a propósito; el canal de pieles, capturado ANTES de construir. LISTADO-B abre la siguiente
+
+> ⚠ **Tanda de CONSTRUCCIÓN, 2026-08-13 (62.ª).** PASOS 0 · 1 · 2 completos.
+> **PASOS 3 y 4 NO SE EMPIEZAN — corte limpio declarado por el propio encargo**
+> (*«si no cabe ENTERO con su verificación, NO lo empieces»*). Registro:
+> `PENDIENTES-QA.md` (§F3-LH-BASE-MUDA · §F3-LH-PIELES-SIN-CAPTURAR ·
+> §F3-CSS-CANAL-PIELES) · `listado-b.spec.md` (bloqueo levantado) ·
+> `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` · `package.json` (4 sondas nuevas).
+
+## 0 · Los titulares
+
+> **1 · EL COMPARADOR DE DOS LADOS EXISTE, Y HOY SALE ROJO PORQUE TIENE QUE.**
+> `qa:lh-cmp`: **13 formas · 13 AUSENTES · status 404 · 0 pares comparados**, con
+> negativo **3/3**. Ése es el **estado inicial correcto** — se escribió *antes* de
+> la plantilla justamente para que no acabara calibrado contra lo que el clon ya
+> hace. La unidad es **el PAR** (camino × propiedad), no el Δ0 de página.
+>
+> **2 · EL CANAL DE PIELES SE MIRÓ ANTES DE CONSTRUIR, Y SÍ ESTABA.** Las **9 de
+> 9** formas de listado enlazan `et-core-unified-*` —donde Divi vuelca el CSS
+> compilado de módulos— y estaba **a cero**. El escalón 1 del encargo disparó y se
+> capturó: **52 hojas** (`corpus/css`: 59 de 505). Sin esto, las specs de listados
+> habrían calibrado la plantilla contra **ceros sin probar**: el escalón de F3-1
+> repetido, donde el `h2` de KB tenía su discriminador en el canal que la sonda no
+> miraba.
+>
+> **3 · «EXIT 0 Y CERO LÍNEAS» NO ERA DE LA SONDA: ERA DEL PIPE DE QUIEN LA
+> LLAMÓ.** Reproducido a la primera y diagnosticado: `| tail` **se come la salida
+> Y el código de salida** (en `A | B` el exit es el de B). Toda la maquinaria
+> antimuda del repo —`Evaluadas`, el gancho de `exit`, `gritaSiRevienta`— vive
+> **dentro** del proceso, y el pipe actúa **fuera**. Y la congelada que se declaró
+> «no exhibible» **existía**: `clon-base-1440-2026-08-13.json`, 249 rutas.
+>
+> **4 · LÍNEA BASE DEL PASO 0c: 302 rutas · 302 páginas · 0 errores** a 1440
+> (`clon-base-1440-f32-antes-2026-08-13.json`).
+>
+> **5 · UN BARRIDO, LOS DOS LADOS.** `lh-barrido.mjs` sale de `lh-spec` **verbatim**
+> (16 340 bytes, comprobado por igualdad de texto, no por transcripción) y lo
+> comparten spec y comparador. Copiarlo habría sido la clase C7 con su peor
+> salida: dos barridos divergiendo, **los dos verdes en su marco**.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **LISTADO-B ENTERO ABRE LA SIGUIENTE, y ya tiene su comparador esperando.**
+  L1 con sus tres variantes (blog · etiqueta · resources), y **la variante
+  incluye tarjeta, retícula Y barra** (`D1` acotada). El comparador dirá
+  `AUSENTE` hasta que las rutas se emitan, y a partir de ahí mide par a par.
+- ✅ **El ⛔ de `listado-b.spec.md` estaba CADUCADO y se ha levantado.** Decía
+  «esta spec NO se puede implementar todavía» citando un escalón **que se cerró
+  el mismo día que se abrió**. Un lector habría parado sin motivo.
+- ⚠ **`base-distinta` (P-LH-C8) está declarado NO EJERCITADO, no pasado.** El
+  sabotaje no puede cambiar el resultado mientras las 13 formas estén ausentes, y
+  *un sabotaje que no cambia nada no prueba la guarda* (§sondas 8a). **La tanda
+  que construya tiene que añadirlo a los casos** — el negativo lo dice en su
+  salida.
+- ⚠ **Estas rutas NO tienen campaña de ruido.** Un residuo pequeño será **SIN
+  PROBAR**, no «limpio», y no se puede rodear con el suelo de otra ruta. El
+  comparador lo imprime en cada corrida.
+- **Defectos a no estrenar, con su número:** `loading="lazy"` **NO** en las
+  tarjetas de L1 (el original emite **0**; los 3 de 3 con lazy son de **L4**),
+  cero subrayado al hover (el original nunca lo hace; su color va a
+  `rgba(0,117,201,0.7)`), y el zoom es la regla medida
+  `.et_pb_post .entry-featured-image-url:hover img { transform: scale(1.1) }`,
+  **la misma en las tres variantes** — con su disparador, que es el `<a>`, no el
+  `article`.
+- **Sondas: 155 → 157.** `npm run check` exit 0 · 302 rutas · 190 slugs.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-cmp`** | el comparador de dos lados de listados, **par a par** | **3/3** (+1 declarado NO EJERCITADO) |
+| **`cms:captura-css --dir=`** | la unión de hojas de un subárbol, en una sola definición | **5 casos** |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un filtro en la línea de invocación puede anular un contrato de 157
+sondas.** `| tail` se lleva por delante la salida **y** el exit code, y ninguna
+guarda del repo puede verlo porque todas viven dentro del proceso. Es §regla 6
+—*un valor por defecto convierte «no lo sé» en «está bien»*— **en el shell**.
+
+**(b) No se adquiere un recurso caro antes de comprobar lo que se puede
+comprobar gratis.** El comparador arrancaba el clon *antes* de validar el
+espejo; al tirar dejaba el `next start` huérfano y `spawnSync` esperaba **hasta
+agotar su timeout**: 45 min de negativo que parecía colgado. Con la validación
+delante, el mismo caso tarda **0 s**.
+
+**(c) Una sonda que adquiere un proceso hijo TERMINA ella.** `process.exitCode`
+no basta: Node espera a vaciar el event loop y el hijo lo mantiene vivo.
+`process.exit()` explícito — el patrón que `kb-cmp` ya tenía y que copiar habría
+evitado el punto (b) entero.
+
+**(d) Tres defectos en la sonda nueva, cazados antes de publicar un solo
+número** (§sondas 1, *una sonda es código sin tests*): `page.__status ?? 200` —o
+sea **200 siempre**, con las 404 pasando por páginas buenas—, `page.evaluate` en
+vez de `censo.medir` —el barrido usa `__q` y sin la inyección ni existe— y el
+orden del punto (b). Ninguno habría dado error: los tres dan números plausibles.
+
+**(e) Y una de alcance, dicha con su número:** capturar «las 9 formas» acabó
+siendo **52 hojas de 149 HTML**, porque el comparador mide **13 páginas** —las
+segundas instancias traen su propia hoja compilada— y capturar sólo las
+canónicas habría dejado la mitad del universo con el canal incompleto.
+
+---
+
+# (histórico) HANDOFF — T9 cerrada con sus CUATRO condiciones, pagando la última POR MECANISMO; F3-2 se queda sin escalones y lo que falta es CONSTRUIR
 
 > ⚠ **Tanda de T9, 2026-08-13 (61.ª).** PASOS 1 y 2 completos. Registro:
 > `PENDIENTES-QA.md` (§DATOS-DOM-AJENO **cerrada** · §F3-1-CSS-NO-CAPTURADO
