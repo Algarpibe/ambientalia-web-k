@@ -382,6 +382,126 @@ cierran sembrando más**. Se cierran (a) dando de alta instancias con formas que
 el corpus no tiene, o (b) declarando cuáles no se van a soportar. Ninguna de las
 dos es trabajo de datos.
 
+## ⛔ DATOS-C-SOLUCIONES · los 57 casos no entran porque referencian 10 productos que el clon no modela (2026-08-13, PASO 6)
+
+> **`cms:extractor-c` sale VERDE con los 57** —control 0, saneador 0, negativo
+> 7/7— **y la siembra muere en OTRA guarda**: `RELACIÓN SIN DESTINO`. Lo que para
+> a `casos` no es el extractor ni el pipeline: es que **el clon modela 9 de los
+> 24 productos**.
+
+| | n |
+|---|---:|
+| productos que el clon MODELA (`src/lib/products.ts`) | **9** de 24 |
+| slugs de producto que los 57 casos referencian en `soluciones` | **19** |
+| de ésos, **sin destino en la colección** | **10** |
+| **CASOS afectados** | **43** de 57 |
+| casos con **todas** sus soluciones rotas | **0** |
+
+Los 10, con su peso: `dioxido-de-nitrogeno` **37** · `ozono` **29** ·
+`monoxido-de-carbono` **25** · `dioxido-de-azufre` **20** · `oxido-nitrico`
+**14** · `dioxido-de-carbono` **8** · `metano` **5** · `accesories` **2** ·
+`ozone-2` **2** · `air-cloud` **1**.
+
+### Es §F3-COLA-DESTINOS visto desde la RELACIÓN, y ésa es la parte que vale
+
+**Los mismos productos.** En §F3-COLA-DESTINOS son **544 enlaces del cuerpo**
+apuntando al original porque `/cartuchos-inteligentes/*` no está clonado; aquí
+son **43 casos que no pueden entrar** porque esos mismos productos no están en la
+colección. Un hueco, dos caras:
+
+| capa | cómo se manifiesta | qué lo tapa hoy |
+|---|---|---|
+| **cuerpo rico** (`href`) | 544 enlaces al original | la §Regla de rutas locales: *«si no, se deja apuntando al original»*. **Degrada bien** |
+| **relación** (`soluciones`) | 43 documentos que no se siembran | nada: una relación **no puede** apuntar fuera. **No degrada** |
+
+> **Y ésa es la asimetría que hay que saber: un `href` admite «fuera»; una
+> RELACIÓN no.** Por eso el mismo hueco es un fleco en una capa y un bloqueo en
+> la otra, y por eso no se arregla con la misma regla.
+
+### Lo que NO se hace, y por qué
+
+**No se podan las soluciones sin destino.** La guarda dice *«una relación que
+apunta a la nada es un dato perdido, y el round-trip lo vería como “este campo no
+estaba”»*, y tiene razón. Además `RUTAS_EN_FRONTERA` **se vació a propósito el
+2026-08-04** con esta frase: *«se siembran enteras, sin “podar” nada en
+silencio»*. Reintroducir la poda para desbloquear una siembra sería deshacer una
+decisión tomada para evitar exactamente esto.
+
+**Qué la cierra:** modelar los **15 productos que faltan**. Eso es clonar un
+arquetipo (F3), no trabajo de datos — y es la misma tarea que cierra
+§F3-COLA-DESTINOS, así que las dos fichas se cierran juntas o ninguna.
+
+## ⚠ DATOS-DOM-AJENO · el editor pegó DOM de otra aplicación, y la clase es 10× la instancia (2026-08-13, PASO 6)
+
+> **Empezó como «el saneador rechaza 1 campo» y acabó siendo una transformación
+> declarada (T9) y un censo de 6 familias.** Lo que cambió el tamaño del problema
+> fue **cambiar la pregunta**.
+
+### La pregunta equivocada, y cuánto costaba
+
+El saneador rechazó `detalles.parametros` de `castel-d-ario` por un `<article>`.
+La primera pregunta fue *«¿cuántas páginas traen `<article>`?»* → **1 de 309**.
+Número correcto, pregunta equivocada:
+
+> **La INSTANCIA es «un `<article>` de ChatGPT». La CLASE es «el editor pegó DOM
+> de otra aplicación».** Censar la etiqueta mide la instancia; censar los
+> **marcadores de cada aplicación de origen** mide la clase.
+
+`npm run qa:dom-ajeno` (6 familias · 309 páginas · sin red):
+
+| familia | páginas | qué es |
+|---|---:|---|
+| `chatgpt` | **1** | el envoltorio de UI entero, 5/5 marcadores |
+| `tailwind-prose` | **1** | la misma página |
+| `markdown-renderizado` | **10** | `data-start` / `data-end` de un renderizador ajeno |
+| `word` · `google-docs` · `notion` | **0** | medido, no supuesto |
+
+**10 de 309, no 1.** Y **9 de esas 10 YA ESTÁN SEMBRADAS** — son del grupo A.
+
+### ⚠ Y el hallazgo que lo explica: la whitelist censa ETIQUETAS, no ATRIBUTOS
+
+Por eso el `<article>` saltó y los `data-start` no. **Los atributos ajenos pasan
+en silencio**, en 10 páginas, y `validaHtmlCorpus` no tiene nada que decir sobre
+ellos. No es un defecto del saneador: es su **alcance**, y no estaba escrito.
+
+**T9 no los toca a propósito.** Desenvolver contenedores es una cosa y limpiar
+atributos es otra; la segunda **no está decidida** y no se cuela dentro de la
+primera. Queda aquí con su número para que se decida sola, no de rebote.
+
+### T9, y sus dos mitades honestas
+
+Enunciado: **«se desenvuelven los contenedores de TRANSPORTE ajenos —los que no
+aportan contenido ni estilo servido—, conservando su contenido»**. Detalle y
+orden en `ESQUEMA-CMS.md` §3.2c.
+
+| condición | estado |
+|---|---|
+| transformación **declarada** de clase, no caso especial | ✅ `ESQUEMA-CMS.md` §3.2c |
+| **negativo** que ataca el DISCRIMINADOR | ✅ `t9-sin-discriminador`: ciega `clasesConEstilo` e inyecta un envoltorio **con render**; T9 se lo lleva y el canario lo caza. **Exit 2 cegado, exit 0 con él** |
+| **barrido de la CLASE** | ✅ `qa:dom-ajeno`, 6 familias, 10 de 309 |
+| **NO-OP al píxel** | ⚠ **A MEDIAS — y se dice** |
+
+**El NO-OP, por los dos lados:**
+
+- ✅ **contra el CLON: byte a byte.** T9 aplica **0 veces** sobre los 209 cuerpos
+  del grupo A (diana 0), y las congeladas dan **0 de 209 cuerpos con bytes
+  distintos**. La atribución es limpia: lo que T9 toca es una región de un caso y
+  nada más;
+- ⛔ **contra el ORIGINAL: NO SE MIDIÓ.** Esta tanda no abre el original por
+  encargo. **Lo que hay en su lugar es una derivación**, no una medida de píxel:
+  ninguna de las **10 clases** del envoltorio tiene regla en los **231 103
+  bytes** de `<style>` que la página sirve — y Divi **compila ahí** lo que el
+  editor toca, así que es donde estaría. **Su límite, declarado:** las **7 hojas
+  ENLAZADAS** (plugins · `et-cache` · tema) no están en el corpus, o sea que
+  *«ninguna regla en el CSS EN LÍNEA»* está medido y *«ninguna en absoluto»* no.
+
+> **Precondición antes de dar T9 por probada:** la comparación de píxel contra el
+> original en `/casos-de-exito/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario`.
+> **Y ojo con el orden:** esa ruta **no se emite todavía** —`casos` está
+> bloqueada por §DATOS-C-SOLUCIONES—, así que la comprobación no se puede hacer
+> hasta que se desbloquee. No es que no se haya querido: **no hay página que
+> medir**.
+
 ## ⚠ F3-COLA-DESTINOS · 830 enlaces del cuerpo apuntan al original porque el clon no clona su destino (2026-08-13, PASO 5)
 
 > **Con T7 arreglado dejan de ser enlaces ROTOS —vuelven al original y funcionan—
@@ -565,7 +685,101 @@ es la consulta funcionando con 149 documentos en vez de 7**, no un defecto.
 línea base sería fabricar una FAMILIA DE CALIBRACIÓN sobre una divergencia sin
 diagnosticar.
 
-## ⛔⛔ DATOS-C-PIPELINE · el PASO 6 se para: el cuerpo transformado y la transcripción a mano NO coinciden, y eso no es de casos — es de GRUPO A, ya sembrado (2026-08-12)
+### ⚖ ADJUDICADA (2026-08-13) — la fuente nueva NO introdujo un defecto, y ahora hay instrumento que lo diga
+
+**La pregunta (a) del encargo —*«las 8 rutas que se movieron: ¿la fuente nueva
+introdujo un defecto?»*— ya se puede contestar**, porque §DATOS-C-PIPELINE
+construyó lo que faltaba: un control que compara el CUERPO.
+
+> **No.** Sobre los 14 cuerpos con transcripción a mano, el control da **0
+> discrepancias no declaradas**, y la divergencia entera se reparte en clases
+> **todas adjudicadas**: T1 · T2 · T3a · T3b · T4a · T4b · T5 · T7 · T8
+> (transformaciones **declaradas**, y la transcripción es **anterior** a ellas) ·
+> `srcset` recapturado · y `media-original`, el único DEFECTO, con su ficha.
+
+**O sea que el Δ de las 8 mide exactamente esto: la transcripción a mano no había
+pasado por T1–T8.** No es que la fuente nueva esté peor — es que la vieja traía
+marcado sin transformar. La fuente nueva **está trazada al corpus**; la
+transcripción no lo estaba.
+
+⚠ **Y la mitad que hay que decir, porque la pregunta (b) del encargo la exigía:**
+comparar el pipeline contra la transcripción **sigue siendo clon-contra-clon**.
+Lo que cambia no es que ahora se compare contra el original — **es que uno de los
+dos lados ahora es DERIVABLE del original por transformaciones con
+postcondición**, y el otro nunca lo fue.
+
+> **Lo que sigue SIN medir es lo mismo que antes: el RENDER de esas 8 rutas
+> contra el original.** Eso es §COBERTURA para grupo A, no esta ficha. Un control
+> de cuerpo en verde dice *«el dato que entra es el que toca»*; no dice *«la
+> página se ve como la del original»*.
+
+## ✅ DATOS-C-PIPELINE · CERRADA (2026-08-13) — las 12 discrepancias eran 3 clases más de las que la ficha nombraba, y ninguna era del extractor
+
+> **Arbitrada entera. El control de cuerpos ricos está en VERDE en los dos
+> extractores** —`extractor-a` 125 comparaciones · 14 cuerpos · **0
+> discrepancias**; `extractor-c` 82 comparaciones · **0 discrepancias**— con un
+> solo defecto abierto declarado con su número (`media-original` = 9,
+> §DATOS-MEDIA-HOTLINK).
+
+### Cómo se repartieron las 12, y por qué la ficha no podía verlo
+
+| clase | n | veredicto |
+|---|---:|---|
+| `href` + `target` | 6 | **T7 sin aplicar dos reglas escritas** — §PASO 1 y §PASO 4 |
+| `espacio` · `cierre-xhtml` · `espacio-duro` | 3 | **la TRANSCRIPCIÓN normalizó y el original NO** — §PASO 2 |
+| `texto-destacado` **anidado** | 3 | **una clase entera** que el cubo escondía — y son **48 regiones**, no 3 |
+
+> ⚠ **La lección, y es de las caras: un cubo de «combinaciones de las anteriores»
+> no es una clasificación — es el sitio donde se pierden las clases que nadie
+> nombró.** La ficha original repartió 12 en «4 clases y 6 combinaciones». Las 6
+> del cubo escondían **tres** clases distintas, una de ellas con **16× el alcance
+> que se le atribuía**.
+>
+> Se reclasificaron con un instrumento que **no tiene cubo**
+> (`clasificaDiscrepancia`, `scripts/qa/lib.mjs`): lo que no encaja en ninguna
+> clase sale **`SIN CLASIFICAR`** y es rojo. Ahí aparecieron las tres.
+
+### Y dos defectos DEL INSTRUMENTO, cazados por su propio residuo
+
+Los dos son de **orden de pliegues**, y los dos tenían forma de hallazgo:
+
+| # | qué pasaba | cómo se vio |
+|---|---|---|
+| 1 | el pliegue del **espacio** corría ANTES que los del pipeline, y T5/T4a dejan espacio pegado al quitar etiquetas | 2 de 4 residuos eran `</div>  <figure>` contra `</div> <figure>` |
+| 2 | el pliegue de **media** corría antes, y **T4b INTRODUCE URLs de media** al decodificar el payload FB3D | los 3 últimos residuos eran exactamente los 3 PDF de FB3D |
+
+> **La forma general: un pliegue que normaliza tiene que correr DESPUÉS de todo
+> lo que puede producir lo que él normaliza.** Los dos salieron como
+> `SIN CLASIFICAR` con números plausibles, y los dos habrían pasado por
+> «divergencia residual» si el clasificador no obligara a nombrar el residuo.
+
+### El alcance de la corrección, medido
+
+| | antes | después |
+|---|---:|---:|
+| `<a href>` en los 209 cuerpos | 3318 | **3318** |
+| locales con `target="_blank"` | **1788** | **2** |
+| destinos que el build no emite | **53** | **2** |
+| `clon-base --cmp` a 1440 y a 390 | — | **232 páginas · 0 con regresión** en los dos |
+
+> ⚠ **Y cómo se lee ese doble cero, que no es lo que invita a decir:** `clon-base`
+> mide `docH`, `h1.y`, nº de secciones y nº de enlaces — **alto y estructura**.
+> Un `clon-base` limpio dice *«no hay regresión VERTICAL»*, **nunca** *«el cambio
+> no tuvo efecto»*. El efecto lo prueban los recuentos derivados de arriba, no
+> él.
+
+### Lo que queda abierto, y no es de esta ficha
+
+- **§DATOS-MEDIA-HOTLINK** — 3688 hotlinks a kunakair.com en 180 rutas;
+- **§DATOS-C-SOLUCIONES** — `casos` no se siembra: 43 de 57 referencian productos
+  que el clon no modela;
+- **§DATOS-DOM-AJENO** — T9 sin su NO-OP de píxel contra el original.
+
+---
+
+### (histórico) la ficha original, 2026-08-12
+
+## ⛔ DATOS-C-PIPELINE · el PASO 6 se para: el cuerpo transformado y la transcripción a mano NO coinciden, y eso no es de casos — es de GRUPO A, ya sembrado (2026-08-12)
 
 > **`cms:extractor-c` extrae los 76** —57 casos y 19 faqs— **con 0 lectores
 > muertos y 0 regiones ausentes**, y su negativo sale **5/5**. Lo que impide

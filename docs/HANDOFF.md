@@ -1,4 +1,121 @@
-# HANDOFF — la siembra ARRANCA: tres colecciones pobladas, y el escalón de F3-2 baja de 19 a 2
+# HANDOFF — §DATOS-C-PIPELINE arbitrada y CERRADA: tres cuartas partes eran reglas sin aplicar, y el cubo de «combinaciones» escondía tres clases
+
+> ⚠ **Tanda de PIPELINE, 2026-08-13 (59.ª).** **PASOS 1 · 2 · 3 · 4 · 5 · 7 · 8
+> completos; PASO 6 a MEDIAS con evidencia** (`faqs` sí, `casos` no). Registro:
+> `PENDIENTES-QA.md` (§DATOS-C-PIPELINE **cerrada** · §DATOS-MEDIA-HOTLINK ·
+> §DATOS-C-SOLUCIONES · §DATOS-DOM-AJENO · §F3-COLA-DESTINOS · §DATOS-PIXEL
+> adjudicada) · `ESQUEMA-CMS.md` §3.2a-bis y §3.2c · `COBERTURA-MEDICION.md` ·
+> `PLAN-FASE-3.md` · `package.json` (1 sonda nueva).
+
+## 0 · Los seis titulares
+
+> **1 · DE LAS 4 CLASES DE §DATOS-C-PIPELINE, TRES ERAN REGLAS ESCRITAS Y SIN
+> APLICAR.** No decisiones: `target="_blank"` lo decide §Regla de rutas locales;
+> los 20 de `productos` los decide §F2-3-HREF-DERIVADO **salida (b), adjudicada
+> el 2026-08-07**; los 31 de `casos` son aritmética. La única decisión de verdad
+> era el cierre XHTML, y la contestó **el original**.
+>
+> **2 · Y LAS 12 ERAN 3 CLASES MÁS DE LAS QUE LA FICHA NOMBRABA.** El reparto
+> original —«4 clases y 6 combinaciones»— metía en el cubo **tres clases
+> distintas**, una con **16× el alcance** que se le atribuía: el
+> `texto-destacado` **anidado** dentro de `necesidad` afecta a **48 regiones**,
+> no a 3, y se habría pintado **dos veces** en 48 sitios.
+>
+> **3 · EL CONTROL DEL CUERPO NO EXISTÍA, Y AHORA EXISTE.** `extractor-a`
+> comparaba **111 comparaciones · 0 discrepancias · CERO cuerpos**. Hoy: **125 ·
+> 0 · 14 cuerpos**, con inventario de clases **todas adjudicadas por escrito** y
+> `SIN CLASIFICAR` en rojo. Negativo nuevo: `cuerpo-cambiado`.
+>
+> **4 · T7 REESCRITA, con el efecto medido y no leído del diff.** `<a href>`
+> **3318 → 3318** (no se pierde ninguno) · locales con `target="_blank"` **1788 →
+> 2** · destinos que el build no emite **53 → 2**. `clon-base --cmp` **232
+> páginas · 0 con regresión** a **1440 y a 390**.
+>
+> **5 · EL CLON HOTLINKEA AL ORIGINAL: 3688 imágenes en 180 de 234 rutas** —
+> `srcset` 986 · `src` 586 · `background-image` 180 · `href` 63 sobre los 209
+> cuerpos. Y **la premisa que lo justificaba es hoy falsa con su número**: T3b
+> dice *«el destino no está publicado»* y **1265 de 1268 URL ya están** en
+> `apps/web/public` (99.8 %). No se arregla aquí **a propósito**: es otra
+> transformación sobre los mismos 209 cuerpos, y meterla en el mismo re-sembrado
+> haría **inatribuible** el efecto de T7.
+>
+> **6 · PASO 6 ENTREGA LA MITAD QUE PUEDE ENTRAR ENTERA.** `faqs` **2 → 19**
+> (285 documentos, round-trip 285/285). `casos` **NO**, y no por el extractor
+> —verde con los 57, negativo 7/7—: la para `RELACIÓN SIN DESTINO`, porque **43
+> de 57 referencian 10 productos que el clon no modela**.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- **El orden ahora es: modelar los 15 productos que faltan → sembrar `casos`.**
+  Eso cierra §DATOS-C-SOLUCIONES **y** §F3-COLA-DESTINOS de una vez: son el mismo
+  hueco visto desde la relación y desde el `href`.
+- ⚠ **Y la asimetría que hay que tener presente: un `href` admite «fuera»; una
+  RELACIÓN no.** Por eso el mismo hueco es un fleco de 544 enlaces en el cuerpo
+  (degrada bien, vuelven al original) y un **bloqueo total** en `soluciones`.
+- **`qa:lh-poblacion` baja de 2 series cortas a 1**, y la 1 es exactamente
+  `/casos-de-exito` (57 vs 4). Su rojo sigue explicado entero.
+- ⚠ **T9 está escrita, probada por tres de sus cuatro condiciones, y le falta la
+  cuarta POR UN MOTIVO QUE NO SE PUEDE FORZAR:** el NO-OP de píxel contra el
+  original necesita la ruta del caso afectado, y **esa ruta no se emite** hasta
+  que `casos` se desbloquee. No hay página que medir.
+- **Los recuentos de rutas: 235 → 252** (+17 = exactamente las faqs). `npm run
+  check` **exit 0** · 249 rutas · 13 familias · 0 vacías · `qa:slugs` 190 slugs
+  sin colisión.
+- ⚠ **La matriz de cobertura estrena un EJE, no sólo filas:** el **cuerpo**.
+  Ninguno de los nueve ejes miraba el dato que entra, y ahí vivía un cero
+  perfecto desde F2-2.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:dom-ajeno`** | el censo de la CLASE «el editor pegó DOM de otra app», 6 familias sobre las 309 — **con el número aunque sea cero** | guardas de MUERTO y de UBICUO, y una que exige que la familia que motivó la sonda **siga apareciendo** |
+
+Y dos que crecen: **`cms:extractor-a-neg` 4 → 5** (`cuerpo-cambiado`) y
+**`cms:extractor-c-neg` 5 → 7** (`t9-sin-discriminador` · `destacado-dentro`).
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Una discrepancia medida no es una pregunta abierta hasta que se comprueba
+que NINGUNA regla del repo la contesta.** Es §regla 9 —derivar en vez de
+recordar— aplicada al **camino de decisiones** en vez de a un número. Tratar las
+12 como 12 preguntas habría producido **cuatro decisiones donde había una**, y
+tres podrían haber salido **contra** el precedente sin que nada lo detectara.
+
+**(b) Un cubo de «combinaciones de las anteriores» no es una clasificación: es
+el sitio donde se pierden las clases que nadie nombró.** El arreglo no es mirar
+mejor — es **un instrumento sin cubo**: lo que no encaja sale `SIN CLASIFICAR` y
+es rojo. Con él aparecieron tres clases y desapareció el residuo.
+
+**(c) Un pliegue que normaliza tiene que correr DESPUÉS de todo lo que puede
+PRODUCIR lo que él normaliza.** Dos defectos del instrumento, los dos con forma
+de hallazgo: el pliegue del espacio corría antes que T5/T4a, que dejan espacio
+pegado al quitar etiquetas; el de media corría antes que T4b, que **introduce**
+URLs de media al decodificar el payload FB3D. Los dos salían como residuo
+plausible.
+
+**(d) Una premisa envejece, y la regla que sostiene sigue en pie citándola.** T3b
+justifica no localizar la media con *«el destino no está publicado»* — cierto
+cuando se escribió, **falso desde `cms:coloca-media`**: 1265 de 1268. Es §regla 9
+aplicada a un **hecho** en vez de a un número: los hechos que una decisión cita
+**se re-derivan cuando la decisión se invoca**, no cuando se escribe.
+
+**(e) La instancia no es la clase, y preguntar por la instancia da un número
+correcto que cierra la pregunta equivocada.** *«¿Cuántas páginas traen
+`<article>`?»* → 1 de 309. *«¿Cuántas traen DOM pegado de otra aplicación?»* →
+**10 de 309**, y 9 ya sembradas. El censo de la clase también destapó que **la
+whitelist censa ETIQUETAS y no ATRIBUTOS**, así que los atributos ajenos pasan en
+silencio.
+
+**(f) Y la que vale para cualquier tanda que mida dos cosas a la vez: dos
+transformaciones en el mismo re-sembrado son INATRIBUIBLES.** Es la razón —la
+única— por la que §DATOS-MEDIA-HOTLINK no se arregló aquí teniendo el diagnóstico
+completo y la regla de su lado. §DATOS-PIXEL existe precisamente porque un cambio
+de fuente movió píxeles y nadie pudo adjudicarlos.
+
+---
+
+# (histórico) HANDOFF — la siembra ARRANCA: tres colecciones pobladas, y el escalón de F3-2 baja de 19 a 2
 
 > ⚠ **Tanda de DATOS, 2.ª mitad, 2026-08-12 (58.ª).** **PASOS 0 · 1 · 2 · 3 · 4 ·
 > 5 completos; PASO 6 PARADO con evidencia; 7 · 8 hechos.** Tres colecciones

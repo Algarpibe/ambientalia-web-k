@@ -2261,6 +2261,62 @@ no hay dónde ponerlo sin cambiar lo que se sirve**. Así que la marca es la
 congelada: `medidas/extractor-corpus.json` → `t7.porDestino`, **830 enlaces en 80
 destinos**, contable y auditable. Ficha del hueco: §F3-COLA-DESTINOS.
 
+#### 3.2c · T9 — contenedores de TRANSPORTE ajenos se desenvuelven (2026-08-13)
+
+> **Se desenvuelven los contenedores de TRANSPORTE ajenos —los que no aportan
+> contenido ni estilo servido—, conservando su contenido.**
+
+**Es un enunciado de CLASE, y eso no es un detalle de redacción: es lo que
+separa esta transformación de un parche.** Nació de un caso
+(`castel-d-ario`) cuyo campo `Parámetros` trae **el DOM de una conversación de
+ChatGPT pegado en el editor** — un `<article>` con 9 `<div>` anidados alrededor
+de un `<ul>` de tres viñetas —, y la primera pregunta fue *«¿cuántas páginas
+traen `<article>`?»*: **1 de 309**. Correcta, y equivocada. Censada la CLASE
+(`npm run qa:dom-ajeno`, 6 familias): **10 de 309**.
+
+**El precedente es T8**, literal: *«ese `type` no lo escribió nadie, lo inyecta
+la capa de entrega — migrarlo verbatim sería importar un artefacto del CDN como
+si fuera contenido»*. Aquí lo pegó una persona, pero **no como contenido**: es el
+envoltorio de la UI de la aplicación de la que copió.
+
+**El DISCRIMINADOR, que es todo.** Un contenedor se desenvuelve **sólo si las dos
+cosas**:
+
+1. está **dentro de una raíz ajena** — un elemento con marcadores de una
+   aplicación de origen (`data-testid="conversation-turn…"`,
+   `data-message-author-role`, `class="… prose …"`, `Mso*`,
+   `docs-internal-guid`, `notion-`). Fuera de esa raíz T9 no toca nada;
+2. **no aporta estilo SERVIDO** — ninguna de sus clases tiene regla en el CSS que
+   el documento se trae, y no lleva `style=` en línea.
+
+La 2 se **deriva del propio documento** (§*la salida servida incluye el CSS que
+el documento se trae*), no de una lista escrita. Y es lo que hace el **negativo**
+posible: `t9-sin-discriminador` **ciega** `clasesConEstilo` e inyecta un
+envoltorio **con render**; T9 se lo lleva y el canario lo caza. **Exit 2 cegado ·
+exit 0 con el discriminador.** Sin ese caso T9 sería un `replace` de `<div>` con
+una historia bonita.
+
+**Orden:** después de T4b y **antes de T5**. T5 deshace envoltorios *sin
+atributos* y los de transporte llegan **con sus clases puestas**, que es justo lo
+que T9 tiene que juzgar. No se mueve antes de T3a, aunque la simetría lo sugiera:
+rompería la restricción *«T3b después de T2 y de T3a»*, que está medida en 415 de
+446 contenedores. **Una restricción documentada pesa más que una simetría.**
+
+**Lo que T9 NO hace, con su número:** no toca **atributos** ajenos sobre
+etiquetas legítimas. `data-start`/`data-end` de un renderizador de markdown
+aparecen en **10 páginas** sobre `<li>` y `<p>`, que son contenido de verdad —
+y ahí se descubrió que **la whitelist del §3.1 censa ETIQUETAS, no ATRIBUTOS**,
+así que los atributos ajenos pasan en silencio. Desenvolver es una cosa y limpiar
+atributos es otra; la segunda no está decidida y **no se cuela dentro de la
+primera**. Ficha: §DATOS-DOM-AJENO.
+
+**Estado del NO-OP, y va con su asterisco:** ✅ contra el clon, **byte a byte** —
+0 aplicaciones y 0 de 209 cuerpos del grupo A con bytes distintos. ⛔ contra el
+**original**, no medido: la ruta del único caso afectado **no se emite todavía**
+(§DATOS-C-SOLUCIONES). En su lugar hay una derivación —0 de 10 clases con regla
+en los 231 103 bytes de `<style>` servidos— **con su límite declarado**: las 7
+hojas enlazadas no están en el corpus.
+
 #### 3.2b · T3b — `wp-caption` → `<figure>` con relación de media (2026-08-05)
 
 La segunda mitad de **T3**: *«se descartan; la relación con el media pasa a ser

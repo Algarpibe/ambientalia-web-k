@@ -1,5 +1,45 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠ **ACTUALIZADO 2026-08-13 (tanda de PIPELINE) — el denominador sube de 232 a
+> 252, y aparece un EJE que esta matriz no tenía.**
+>
+> | | antes | ahora |
+> |---|---:|---:|
+> | rutas emitidas por el build | 232 | **252** |
+> | de ellas, en la matriz de 9 ejes | 37 | **37** |
+> | ⛔ sin una sola medida contra el original | 195 | **215** |
+>
+> Las 20 nuevas son **17 `faqs`** (de 2 a 19) más 3 de reparto. Entran en `·` en
+> los nueve ejes, como las 195 anteriores.
+>
+> **Lo que sí se midió, y hay que leerlo con su alcance:** `clon-base --cmp` a
+> **1440 y 390** da **232 páginas · 0 con regresión** en los dos anchos tras
+> reescribir T7 —**1788 enlaces tocados**—. Eso es **clon contra clon**.
+>
+> ⚠⚠ **Y EL EJE QUE FALTA, que esta tanda estrenó y esta matriz no contempla: el
+> CUERPO.**
+>
+> Los nueve ejes miden **geometría y estructura de la página servida**. Ninguno
+> mira **el dato que entra**. Y ahí había un cero perfecto: el control de
+> `extractor-a` comparaba **18 campos y ninguno era `cuerpo`**, o sea que el HTML
+> que T1–T8 produce llevaba **desde F2-2 sin compararse contra nada** — con su
+> verde puesto.
+>
+> | eje nuevo | qué compara | estado hoy |
+> |---|---|---|
+> | **cuerpo · grupo A** | el HTML de T1–T8 contra la transcripción a mano, por CLASES adjudicadas | **14 de 209** cuerpos · 0 discrepancias no declaradas |
+> | **cuerpo · grupo C** | ídem, por región | **6 de 76** documentos · 0 discrepancias |
+>
+> **Y el denominador de ese eje se declara al lado del numerador, porque es
+> pequeño:** 14 y 6 son los que tienen transcripción a mano. Lo que compra un
+> control **no es qué fracción cubre, sino cuántas FORMAS ejercita** — pero eso
+> se escribe, no se da por sabido.
+>
+> **Es §el séptimo contenedor con nombre nuevo:** la matriz declaraba su
+> cobertura en la unidad *ruta × eje geométrico*, y esa unidad **absorbía
+> entero** un eje que no estaba en la lista. Un eje ausente de la matriz no sale
+> como hueco: **no sale**.
+
 > ⚠⚠ **EL DENOMINADOR SE MULTIPLICA POR 6 (2026-08-12, 58.ª tanda) — y esto SÍ
 > es el hundimiento anunciado, aunque llegue por otra puerta.**
 >
