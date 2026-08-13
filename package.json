@@ -184,6 +184,8 @@
     "qa:lh-rol": "node scripts/qa/lh-rol.mjs",
     "qa:lh-poblacion": "node --env-file=apps/cms/.env scripts/qa/lh-poblacion.mjs",
     "qa:lh-poblacion-neg": "node scripts/qa/lh-poblacion.neg.mjs",
+    "qa:lh-extracto": "node scripts/qa/lh-extracto.mjs",
+    "qa:lh-extracto-neg": "node scripts/qa/lh-extracto.neg.mjs",
     "qa:a-inventario": "node scripts/qa/a-inventario.mjs",
     "qa:a-inventario-neg": "node scripts/qa/a-inventario.neg.mjs",
     "qa:c-inventario": "node scripts/qa/c-inventario.mjs",

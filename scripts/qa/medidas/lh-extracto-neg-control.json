@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "LH-SP10 (los dos mecanismos de extracto) y la deriva corpus↔espejo",
+    "corpus": "corpus/fase-3/listados",
+    "espejo": "medidas/lh-spec-1440.json (2026-08-11)",
+    "alcance": "SÓLO /blog y /etiqueta/*. `/recursos/*` NO entra: su taxonomía está incompleta en el clon (8 de 10 términos, `padre` a null) y sus tarjetas no se pueden emparejar todavía.",
+    "loQueNoDecide": "cuál de las dos fotos manda. Manda el original; aquí se establece el DENOMINADOR de la duda."
+  },
+  "sp10": {
+    "postsEnLosDos": 63,
+    "identicos": 0,
+    "prefijo": 48,
+    "distintos": 15,
+    "longitudBlog": {
+      "n": 68,
+      "min": 86,
+      "max": 401,
+      "media": 301
+    },
+    "longitudEtiqueta": {
+      "n": 143,
+      "min": 256,
+      "max": 271,
+      "media": 267
+    },
+    "terminadorBlogPuntosSuspensivosHtml": "0/68",
+    "terminadorEtiquetaTresPuntos": "143/143",
+    "ejemplosDistintos": [
+      {
+        "slug": "calidad-del-aire-en-puertos",
+        "blog": "¿Cómo ayudan las tecnologías de monitorización a mejorar la calidad del aire en los puertos marítimos?",
+        "etiqueta": "PUNTOS DESTACADOS El transporte marítimo representa un activo fundamental en la economía mundial. El tráfico de cruceros genera ingresos millonarios, pero también emisiones significativas. Las principales emisiones son SO2, NOx, partículas en suspensión y ruido. La..."
+      },
+      {
+        "slug": "kunak-air-pro-certificado-mcerts",
+        "blog": "Kunak AIR Pro: El sensor de calidad del aire más preciso obtiene el certificado Mcerts",
+        "etiqueta": "En un mundo donde la calidad del aire es una preocupación creciente, contar con herramientas confiables para su medición se vuelve esencial. En este contexto, Kunak se enorgullece en anunciar que su innovador dispositivo, el Kunak AIR Pro, ha obtenido la prestigiosa..."
+      },
+      {
+        "slug": "estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+        "blog": "Proyecto de investigación de la contaminación atmosférica en medio del océano llevado a cabo por Gwad'Air con una estación de calidad del aire Kunak AIR Pro en el barco We Explore de Roland Jourdain.",
+        "etiqueta": "La contaminación atmosférica es un tema importante que afecta a todos, incluso en medio del océano. Es por eso que Gwad'Air, el observatorio regional de la calidad del aire en Guadalupe y perteneciente a la federación nacional ATMO France, ha instalado un sensor de..."
+      },
+      {
+        "slug": "plan-recuperacion-transformacion-resiliencia-zbe",
+        "blog": "¿Qué ayudas para la creación de Zonas de Bajas Emisiones (ZBE) desbloquea o propicia el Plan de Recuperación, Transformación y Resiliencia?",
+        "etiqueta": "El Plan de Recuperación, Transformación y Resiliencia ya ha empezado a materializarse. Y uno de los ejemplos más palpables es la proliferación de proyectos para implantar zonas de bajas emisiones (ZBE). Este Plan de Recuperación, Transformación y Resiliencia nació..."
+      },
+      {
+        "slug": "medir-calidad-aire-asic-2022",
+        "blog": "Kunak y su innovadora tecnología para medir la calidad del aire, presentes en la edición de ASIC 2022 de Pasadena (CA)",
+        "etiqueta": "PUNTOS DESTACADOS ASIC 2022 es una de las principales citas profesionales sobre tecnología para medir la calida del aire y otros aspectos relacionados con la contaminación atmosférica. La Air Sensors International Conference (ASIC) 2022 se celebra en Pasadena..."
+      },
+      {
+        "slug": "directrices-oms-calidad-aire-innovacion",
+        "blog": "Las directrices de la OMS sobre calidad del aire ponen sobre la mesa la necesidad de reducir la exposición a la contaminación del aire y abren la puerta a la innovación y la tecnología",
+        "etiqueta": "PUNTOS DESTACADOS Las directrices de la OMS sobre calidad del aire revisan a la baja los valores de exposición. El documento publicado en septiembre de 2021 pone de manifiesto la importante de la tecnología como herramienta para monitorizar y reducir la..."
+      },
+      {
+        "slug": "fondos-nextgen-eu-zonas-bajas-emisiones",
+        "blog": "Fondos NEXT GEN para el despliegue un sistema de monitorización ambiental con sensores de partículas para medir la calidad del aire.",
+        "etiqueta": "Abierto el periodo de información pública de la propuesta de Directrices para la creación de Zonas de Bajas Emisiones (ZBE) por parte del MITECO (Ministerio para la Transición Ecológica y el Reto Demográfico) con una guía para que las entidades locales puedan diseñar..."
+      },
+      {
+        "slug": "lanzamiento-kunak-air-pro",
+        "blog": "Javier Fernández, CEO y Co-fundador de Kunak, nos habla sobre lo que supuso el diseño, desarrollo y lanzamiento del Kunak AIR Pro.",
+        "etiqueta": "Por Javier Fernández, CEO y fundador de Kunak Technologies S.L. Tras muchos meses de duro trabajo de todo el equipo de Kunak, donde hemos utilizado la experiencia acumulada en los últimos años diseñando y desplegando estaciones de medida de calidad del aire por todo..."
+      },
+      {
+        "slug": "entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+        "blog": "Jelle Hoffman, investigador de sistemas de calidad de aire basados en sensores, nos cuenta su experiencia con las soluciones de monitorización de Kunak.",
+        "etiqueta": "El pasado jueves 18 de marzo de 2021, tuvimos la oportunidad de hablar con Jelle Hofman, sobre los sistemas de calidad del aire basados en sensores, su calibración y la validación de datos. Jelle Hofman es investigador de calidad del aire en Imec, (Centro..."
+      },
+      {
+        "slug": "sensores-calidad-aire-exterior-pamplona",
+        "blog": "Smart Pamplona Lab es un proyecto piloto que nos permitirá testear los nuevos sensores de calidad del aire exterior del Kunak AIR Pro. Descubre en qué consiste esta iniciativa.",
+        "etiqueta": "PUNTOS DESTACADOS La ciudad de Pamplona busca convertirse en un referente europeo en el ámbito de las smart cities a través de la iniciativa Smart Pamplona Lab. Kunak participa en el proyecto monitorizando las condiciones ambientales con su sistema de sensores de..."
+      },
+      {
+        "slug": "entrevista-agustin-torres-product-manager-suez",
+        "blog": "Agustín Torres de Suez nos cuenta su experiencia e impresiones con la tecnología de Kunak, la cual les ha permitido posicionarse con una propuesta de valor frente a la competencia.",
+        "etiqueta": "El pasado jueves 5 de noviembre de 2020, tuvimos la ocasión de charlar con Agustín Torres, sobre sensores y necesidades de monitorización. Agustín Torres es actualmente Product Manager en SUEZ, responsable de la elaboración y actualización del mapa tecnológico y de la..."
+      },
+      {
+        "slug": "kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+        "blog": "El Gobierno de Navarra, con la colaboración de la AIN (Asociación de la Industria de Navarra) ha elaborado un catálogo llamado “Circular Navarre Catalogue” donde se muestran diferentes organizaciones ubicadas en Navarra que contribuyen a una Economía Circular, entre las que se encuentra Kunak.",
+        "etiqueta": "El Gobierno de Navarra, con la colaboración de la AIN (Asociación de la Industria de Navarra) ha organizado un evento virtual donde se presentan diferentes ejemplos de empresas regionales que quieren crear valor económico y a la vez restaurar el capital natural y..."
+      },
+      {
+        "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+        "blog": "Informe sobre el programa de evaluación del AQSPEC que compara los sensores de monitorización de la calidad del aire de bajo costo para establecer normas de rendimiento.",
+        "etiqueta": "Tal como declaró la US EPA en su Air Sensor Evaluation Toolbox: \"los sensores de calidad del aire emergentes - con rasgos generales de ser más compactos, de leer directamente los contaminantes, y de menor costo que los métodos tradicionales - tienen un amplio..."
+      },
+      {
+        "slug": "detectores-emisiones-proyecto-trafair",
+        "blog": "El proyecto europeo Trafair en el que colabora Kunak ha puesto de relieve la utilidad de los detectores de emisiones cost-effective ¿Quieres saber cómo?",
+        "etiqueta": "¿Qué relación hay entre el tráfico de vehículos y la calidad del aire? Dar respuesta a esta duda fue uno de los gérmenes de Trafair, un proyecto en el que colabora Kunak. Esta iniciativa europea está permitiendo, entre otros aspectos, mostrar la utilidad de los..."
+      },
+      {
+        "slug": "kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+        "blog": "Los nuevos postes inteligentes BrightSites de Signify incluirán la tecnología desarrollada por Kunak Technologies para la medición del ruido y el control de la calidad del aire.",
+        "etiqueta": "En la última edición del Smart City Expo World Congress (SCEWC19) celebrado en Barcelona en noviembre pasado, con el objetivo de impulsar las ciudades inteligentes y satisfacer las necesidades de conectividad, la empresa Signify (anteriormente conocido como Philips..."
+      }
+    ]
+  },
+  "deriva": {
+    "paresTitulo": 9,
+    "titulosIguales": 7,
+    "cambiaron": 2,
+    "porForma": [
+      {
+        "forma": "L1-blog::/es/blog/",
+        "nTarjetasCorpus": 9,
+        "nTarjetasEspejo": 9,
+        "titularesQueCambiaron": []
+      },
+      {
+        "forma": "L1-etiqueta::/es/etiqueta/calidad-del-aire/",
+        "nTarjetasCorpus": 9,
+        "nTarjetasEspejo": 9,
+        "titularesQueCambiaron": [
+          {
+            "i": 0,
+            "espejo": "Control de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores",
+            "corpus": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores"
+          },
+          {
+            "i": 1,
+            "espejo": "Emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible",
+            "corpus": "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible"
+          }
+        ]
+      },
+      {
+        "forma": "L1-etiqueta::/es/etiqueta/h2s-es/",
+        "nTarjetasCorpus": 4,
+        "nTarjetasEspejo": 4,
+        "titularesQueCambiaron": []
+      }
+    ]
+  }
+}
