@@ -2373,12 +2373,29 @@ así que los atributos ajenos pasan en silencio. Desenvolver es una cosa y limpi
 atributos es otra; la segunda no está decidida y **no se cuela dentro de la
 primera**. Ficha: §DATOS-DOM-AJENO.
 
-**Estado del NO-OP, y va con su asterisco:** ✅ contra el clon, **byte a byte** —
-0 aplicaciones y 0 de 209 cuerpos del grupo A con bytes distintos. ⛔ contra el
-**original**, no medido: la ruta del único caso afectado **no se emite todavía**
-(§DATOS-C-SOLUCIONES). En su lugar hay una derivación —0 de 10 clases con regla
-en los 231 103 bytes de `<style>` servidos— **con su límite declarado**: las 7
-hojas enlazadas no están en el corpus.
+**Estado del NO-OP: ✅ COMPLETO desde el 2026-08-13, y la segunda mitad se pagó
+POR MECANISMO en vez de por píxel.**
+
+- ✅ contra el clon, **byte a byte** — 0 aplicaciones y 0 de 209 cuerpos del
+  grupo A con bytes distintos;
+- ✅ contra el **original**: `npm run qa:t9-css` cruza **las 44 clases** del
+  envoltorio —derivadas *corriendo T9*, no escritas— contra **los 8 canales de
+  CSS que el documento se trae**: el `<style>` en línea (231 508 B) **más las 7
+  hojas enlazadas** (345 315 B), ya capturadas en `corpus/css/`. **0 de 44 con
+  regla**, con CONTROL vivo (`.et_pb_section` 26 · `.et_pb_row` 254 ·
+  `.et_pb_text` 19) y negativo **4/4**.
+
+> **Y es una respuesta más fuerte que un Δ0**: no dice *«no se observó
+> diferencia»* —lectura que en esa ruta sería SIN PROBAR, porque no tiene campaña
+> de ruido— sino que **no hay mecanismo** por el que pudiera haberla. Sin regla
+> servida no hay render, y sin render desenvolver no puede mover un píxel. Es el
+> eje *con mecanismo y servido en los dos lados*.
+
+⚠ **Con su alcance:** el discriminador que corre en el extractor sigue leyendo
+sólo el `<style>` en línea; lo medido es que en la única página que ejercita T9
+las enlazadas **no habrían añadido ninguna**. Un arquetipo nuevo con DOM ajeno
+vuelve a pasar por `qa:t9-css`. (Y §regla 9: «10 clases» era un número recordado
+— derivado son **44**.)
 
 #### 3.2b · T3b — `wp-caption` → `<figure>` con relación de media (2026-08-05)
 

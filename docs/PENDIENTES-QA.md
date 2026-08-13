@@ -712,7 +712,7 @@ orden en `ESQUEMA-CMS.md` §3.2c.
 | transformación **declarada** de clase, no caso especial | ✅ `ESQUEMA-CMS.md` §3.2c |
 | **negativo** que ataca el DISCRIMINADOR | ✅ `t9-sin-discriminador`: ciega `clasesConEstilo` e inyecta un envoltorio **con render**; T9 se lo lleva y el canario lo caza. **Exit 2 cegado, exit 0 con él** |
 | **barrido de la CLASE** | ✅ `qa:dom-ajeno`, 6 familias, 10 de 309 |
-| **NO-OP al píxel** | ⚠ **A MEDIAS — y se dice** |
+| **NO-OP al píxel** | ✅ **PAGADA POR MECANISMO** (2026-08-13, ver abajo) |
 
 **El NO-OP, por los dos lados:**
 
@@ -720,20 +720,57 @@ orden en `ESQUEMA-CMS.md` §3.2c.
   del grupo A (diana 0), y las congeladas dan **0 de 209 cuerpos con bytes
   distintos**. La atribución es limpia: lo que T9 toca es una región de un caso y
   nada más;
-- ⛔ **contra el ORIGINAL: NO SE MIDIÓ.** Esta tanda no abre el original por
-  encargo. **Lo que hay en su lugar es una derivación**, no una medida de píxel:
-  ninguna de las **10 clases** del envoltorio tiene regla en los **231 103
-  bytes** de `<style>` que la página sirve — y Divi **compila ahí** lo que el
-  editor toca, así que es donde estaría. **Su límite, declarado:** las **7 hojas
-  ENLAZADAS** (plugins · `et-cache` · tema) no están en el corpus, o sea que
-  *«ninguna regla en el CSS EN LÍNEA»* está medido y *«ninguna en absoluto»* no.
+- ✅ **contra el ORIGINAL: por MECANISMO, no por píxel.** `npm run qa:t9-css`:
+  **0 de 44 clases del envoltorio tienen regla** en los **8 canales de CSS que el
+  documento se trae** —el `<style>` en línea **más las 7 hojas enlazadas**, 576 823
+  bytes en total—. Congelada: `medidas/t9-css.json`.
 
-> **Precondición antes de dar T9 por probada:** la comparación de píxel contra el
-> original en `/casos-de-exito/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario`.
-> **Y ojo con el orden:** esa ruta **no se emite todavía** —`casos` está
-> bloqueada por §DATOS-C-SOLUCIONES—, así que la comprobación no se puede hacer
-> hasta que se desbloquee. No es que no se haya querido: **no hay página que
-> medir**.
+### ✅ Cómo se pagó la cuarta condición, y por qué NO se midió píxel (2026-08-13)
+
+**El encargo autorizó una segunda salida a la red y la redirigió**: en vez de
+medir la ruta viva, traerse **las 7 hojas CSS enlazadas** —ficheros estáticos, no
+un objetivo vivo— y completar offline la derivación que ya existía a medias.
+
+> **Y la respuesta que da es MÁS FUERTE que un Δ0.** Un Δ0 dice *«no se observó
+> diferencia»* — en una ruta que **no tiene campaña de ruido**, o sea que un
+> residuo pequeño ahí sería SIN PROBAR (§suelo). Esto dice **que no hay mecanismo
+> por el que pudiera haberla**: si ninguna clase del envoltorio tiene regla
+> servida, esos contenedores no llevan render, y desenvolverlos **no puede** mover
+> un píxel. Es el eje que este repo prefiere — *el que tenga mecanismo y esté
+> SERVIDO en los dos lados*.
+
+| | |
+|---|---|
+| clases del envoltorio, **derivadas corriendo T9** | **44** |
+| con regla en el CSS **en línea** (231 508 B) | **0** |
+| con regla en las **7 hojas enlazadas** (345 315 B) | **0** |
+| CONTROL — `.et_pb_section` · `.et_pb_row` · `.et_pb_text` | **26 · 254 · 19 reglas** |
+| negativo | **4/4** (`t9-css.neg.mjs`) |
+
+**Las tres cosas que hacen que ese cero se pueda citar**, y ninguna sobra:
+
+1. **las clases se derivan CORRIENDO T9** y recogiendo su `transporteDesenvuelto`
+   — escribirlas a mano mediría un conjunto distinto del que la transformación
+   toca (§sondas 3);
+2. **el CONTROL** (§sondas 8a): clases del mismo documento que **sí** tienen que
+   aparecer. Sin él, «no llevan render» y «no sé leer el CSS» son la misma salida
+   — y el sabotaje `lector-ciego` lo demuestra produciendo **el mismo `0 de 44`**
+   que la corrida buena;
+3. **el criterio es una REGLA cuyo selector casa la clase**, con `reglas()` de
+   `css-compilado.mjs` — no *«la cadena aparece en el fichero»*. Un `.markdown`
+   dentro de un comentario o de un `content:` no es render. El negativo exige
+   además que el parser conserve el `@media`.
+
+⚠ **Y de camino, §regla 9 otra vez: «las 10 clases» era un número RECORDADO.**
+Derivado del código son **44**. Nadie lo había contado; se citó igual en tres
+sitios (`transformaciones.mjs`, `ESQUEMA-CMS.md`, esta ficha), corregidos.
+
+⚠ **Lo que este cierre NO dice**, y se declara: el discriminador que corre en
+producción (`clasesConEstiloDe`) **sigue leyendo sólo el `<style>` en línea**. Lo
+medido es que en la única página que ejercita T9 las hojas enlazadas no añaden
+ninguna regla. Se deja así a propósito —un conjunto de menos sesga hacia **no**
+desenvolver, la dirección segura— y **un arquetipo nuevo con DOM ajeno vuelve a
+pasar por `qa:t9-css` antes de fiarse.**
 
 ## ⚠ F3-COLA-DESTINOS · 830 enlaces del cuerpo apuntan al original porque el clon no clona su destino (2026-08-13, PASO 5)
 
@@ -2760,6 +2797,22 @@ capturar las páginas no es capturar sus assets, ni sus imágenes ni sus hojas.
 con su propia verificación, y **hasta que exista y salga a Δ0 la captura no se
 puede usar para medir píxeles**. Anotarlo es lo que impide que la próxima tanda
 lo dé por hecho leyendo el titular de F3-0.
+
+> ⚠ **ACTUALIZADA 2026-08-13 (T9 PASO 1) — hay INSTRUMENTO y hay 7 hojas, y eso
+> NO es (b).** Se escribió `cms:captura-css` (deriva el inventario del corpus
+> entero; pide sólo la lista que se le nombre) y se capturaron **las 7 hojas de
+> `castel-d-ario`**. Lo que eso compró está acotado, y decirlo es el punto:
+>
+> | | |
+> |---|---|
+> | ✅ compra | **leer el CSS servido offline** — que es lo que la cuarta condición de T9 necesitaba, y con eso se pagó (§DATOS-DOM-AJENO) |
+> | ⛔ **NO** compra | **medir píxeles offline**. Sigue faltando lo caro de (b): las fuentes, la reescritura de URL absolutas y **la campaña que pruebe que el render offline ≡ el vivo** |
+>
+> **Leer CSS y renderizar con CSS son dos usos distintos** (§regla 10 — una
+> campaña se declara completa *respecto a un uso*). Un cruce de selectores es
+> texto; un `columna.width` de 430.80 exige que el navegador aplique cascada,
+> `@media`, fuentes y orden de hojas. **La ficha sigue ABIERTA para (b)**, y las
+> **19 hojas de KB siguen sin capturar**: el inventario dice **7 de 505**.
 
 ⚠ **Y esto NO afecta a `qa:kb-recon`**, que mide **estructura** sobre la misma
 captura: el árbol de módulos sale **idéntico 6/6**. La captura sirve para el

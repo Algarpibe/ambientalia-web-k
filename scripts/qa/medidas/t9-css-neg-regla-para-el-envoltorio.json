@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "pregunta": "¿alguna clase del envoltorio de TRANSPORTE ajeno tiene regla en el CSS que el documento se trae?",
+    "pagina": "corpus/casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario.html",
+    "canales": [
+      {
+        "nombre": "<style> en línea",
+        "bytes": 231103
+      },
+      {
+        "nombre": "wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css",
+        "bytes": 14140
+      },
+      {
+        "nombre": "wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css",
+        "bytes": 1856
+      },
+      {
+        "nombre": "wp-content/plugins/popups-for-divi/styles/front.min.css",
+        "bytes": 7239
+      },
+      {
+        "nombre": "wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css",
+        "bytes": 21
+      },
+      {
+        "nombre": "wp-content/et-cache/63690/et-divi-dynamic-tb-140-tb-29204-63690.css",
+        "bytes": 280
+      },
+      {
+        "nombre": "wp-content/themes/KunakAir/style.css",
+        "bytes": 311462
+      },
+      {
+        "nombre": "wp-content/et-cache/global/et-divi-customizer-global.min.css",
+        "bytes": 10722
+      },
+      {
+        "nombre": "SABOTAJE",
+        "bytes": 0
+      }
+    ],
+    "limite": "mide el CSS EN LÍNEA y las hojas ENLAZADAS por ESTA página. No mide CSS que un <script> inyecte en runtime; el original no lo hace para estas clases."
+  },
+  "resumen": {
+    "contenedoresDesenvueltos": 9,
+    "clases": 44,
+    "conRegla": 1,
+    "hojasEnlazadas": 7,
+    "bytesCss": 576823,
+    "control": {
+      "et_pb_section": 26,
+      "et_pb_row": 254,
+      "et_pb_text": 19
+    },
+    "t9Aplicaciones": 9
+  },
+  "clases": [
+    {
+      "clase": "@[34rem]:[--thread-content-max-width:40rem]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "@[37rem]:[--thread-content-margin:--spacing(6)]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "@[64rem]:[--thread-content-max-width:48rem]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "@[72rem]:[--thread-content-margin:--spacing(16)]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "[--thread-content-margin:--spacing(4)]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "[--thread-content-max-width:32rem]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "[.text-message+&amp;]:mt-5",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "agent-turn",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "break-words",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "dark",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "dark:prose-invert",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "empty:hidden",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "first:pt-[3px]",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "flex",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "flex-1",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "flex-col",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "focus-visible:outline-hidden",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "gap-1",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "gap-2",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "gap-4",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "group/conversation-turn",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "group/turn-messages",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "grow",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "items-end",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "lg:gap-6",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "markdown",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "max-w-(--thread-content-max-width)",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "max-w-full",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "md:gap-3",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "md:gap-5",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "min-h-8",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "min-w-0",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "mx-auto",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "my-auto",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "prose",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "px-(--thread-content-margin)",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "py-5",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "relative",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "text-base",
+      "conRegla": true,
+      "donde": [
+        {
+          "fuente": "SABOTAJE",
+          "media": "@media (max-width:980px)",
+          "selector": ".text-base"
+        }
+      ]
+    },
+    {
+      "clase": "text-message",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "text-start",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "text-token-text-primary",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "w-full",
+      "conRegla": false,
+      "donde": []
+    },
+    {
+      "clase": "whitespace-normal",
+      "conRegla": false,
+      "donde": []
+    }
+  ],
+  "contenedores": [
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "text-base my-auto mx-auto py-5 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "relative flex-col gap-1 md:gap-3"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "flex max-w-full flex-col grow"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "div",
+      "clase": "markdown prose dark:prose-invert w-full break-words dark"
+    },
+    {
+      "pagina": "castel-d-ario",
+      "tag": "article",
+      "clase": "text-token-text-primary w-full",
+      "raiz": true
+    }
+  ]
+}

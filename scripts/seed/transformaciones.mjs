@@ -648,15 +648,28 @@ export const T7 = {
  * está en el CSS **tiene que sobrevivir**. Sin ese sabotaje, T9 no está probada
  * — sería un `replace` de `<div>` con una historia bonita.
  *
- * ── Lo que se midió antes de escribirla, y lo que NO ──────────────────────
- * ✅ De las **10 clases** del envoltorio (`markdown` · `prose` ·
+ * ── Lo que se midió antes de escribirla, y lo que se CERRÓ después ────────
+ * ✅ De las **44 clases** del envoltorio (`markdown` · `prose` ·
  *    `dark:prose-invert` · `text-token-text-primary` · `agent-turn` …),
- *    **ninguna tiene regla** en los **231 103 bytes** de `<style>` que la página
+ *    **ninguna tiene regla** en los **231 508 bytes** de `<style>` que la página
  *    sirve. Divi **compila** ahí lo que el editor toca, así que es el sitio
  *    donde estaría si existiera.
- * ⛔ **Las 7 hojas ENLAZADAS no están en el corpus** (plugins · `et-cache` ·
- *    tema), así que *«ninguna regla en el CSS en línea»* está medido y
- *    *«ninguna regla en absoluto»* **no**. Queda declarado, no dado por hecho.
+ * ✅ **CERRADO 2026-08-13 — y las «10 clases» eran un número RECORDADO: son
+ *    44.** Las 7 hojas ENLAZADAS ya están capturadas (`corpus/css/`,
+ *    `cms:captura-css`) y el cruce se hace sobre **los 8 canales**: `npm run
+ *    qa:t9-css` da **0 de 44 en 576 823 bytes**, con CONTROL vivo
+ *    (`.et_pb_section` 26 reglas · `.et_pb_row` 254 · `.et_pb_text` 19) y
+ *    negativo 4/4. O sea que la cuarta condición de T9 —el NO-OP al píxel—
+ *    queda **PAGADA POR MECANISMO**: los contenedores no llevan render en el
+ *    original, así que desenvolverlos no puede mover nada.
+ *
+ * ⚠ **Y lo que este código sigue leyendo NO cambia:** `clasesConEstiloDe` mira
+ *    sólo el `<style>` en línea, o sea que el discriminador que corre en
+ *    producción sigue siendo *«ninguna regla en el CSS EN LÍNEA»*. Lo medido es
+ *    que en la única página que ejercita T9 **las enlazadas no añaden ninguna**,
+ *    y el sesgo del discriminador va hacia **no** desenvolver de más — que es la
+ *    dirección segura. Un arquetipo nuevo con DOM ajeno vuelve a pasar por
+ *    `qa:t9-css` antes de fiarse.
  *
  * ── Y lo que T9 NO hace, con su número ────────────────────────────────────
  * **No toca ATRIBUTOS ajenos sobre etiquetas legítimas.** `data-start` /

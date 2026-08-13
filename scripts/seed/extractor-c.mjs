@@ -143,11 +143,18 @@ const sinScriptNiStyle = (html) =>
  * canal equivocado — es el error de `qa:kb-tipografia`, que censó diez ejes y
  * ninguno era CSS.
  *
- * ⛔ **Y su límite, declarado:** las hojas ENLAZADAS (plugins · `et-cache` ·
- * tema) **no están en el corpus**, así que este conjunto es *«las clases con
- * regla en el CSS EN LÍNEA»*, no *«todas las que tienen estilo»*. T9 lo usa como
- * condición NECESARIA para desenvolver, o sea que el sesgo va hacia **no**
- * desenvolver de más — que es la dirección segura.
+ * ⚠ **Su límite sigue en pie, y ya está MEDIDO en vez de sólo declarado.** Este
+ * conjunto es *«las clases con regla en el CSS EN LÍNEA»*, no *«todas las que
+ * tienen estilo»*: las hojas ENLAZADAS no se leen aquí. Lo que cambió el
+ * 2026-08-13 es que **ya están capturadas** (`corpus/css/`) y que el cruce
+ * completo está hecho — `npm run qa:t9-css`: **0 de 44 clases con regla en los 8
+ * canales**, control vivo, negativo 4/4. O sea que en la única página que
+ * ejercita T9 las enlazadas **no habrían añadido ninguna**.
+ *
+ * Se deja leyendo sólo el `<style>` **a propósito**: T9 lo usa como condición
+ * NECESARIA para desenvolver, así que un conjunto de menos sesga hacia **no**
+ * desenvolver — la dirección segura. Un arquetipo nuevo con DOM ajeno pasa por
+ * `qa:t9-css` antes de fiarse de este atajo.
  */
 function clasesConEstiloDe(crudo) {
   const css = [...crudo.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)].map((m) => m[1]).join("\n");

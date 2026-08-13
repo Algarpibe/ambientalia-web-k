@@ -1112,17 +1112,18 @@ holgura**, entonces sí: el alto de la fila es concluyente.
 ### EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA, NO DE LOS QUE ALGÚN EXTRACTOR YA LEE (2026-08-13)
 
 **Es la §regla 9 —derivar en vez de recordar— aplicada a un CONJUNTO en vez de a
-un número, y se ha pagado tres veces con la misma moneda.**
+un número, y se ha pagado CUATRO veces con la misma moneda.**
 
 | # | canal | cómo se descubrió | n |
 |---|---|---|---|
 | 1 | el CUERPO rico | el seed murió al sembrar `entradas-blog` | 1889 → 28 |
 | 2 | la DESTACADA y el `og:image` | el seed murió otra vez | 93 → 4 |
 | 3 | **la foto del PANEL de producto** | el seed murió otra vez | **5** |
+| 4 | **las HOJAS CSS ENLAZADAS** | ⚠ **no mató un seed: dejó una condición de T9 sin pagar durante dos tandas** | **505 distintas · 0 capturadas** |
 
-Las tres veces el inventario se derivó **de lo que el extractor de turno ya
-sabía leer**, y las tres veces el canal que faltaba apareció **chocando con
-`MEDIA AUSENTE`** en mitad de una siembra. No es mala suerte: es que
+Las cuatro veces el inventario se derivó **de lo que el extractor de turno ya
+sabía leer**, y las cuatro veces el canal que faltaba apareció **chocando** con
+algo. No es mala suerte: es que
 
 > **un canal nuevo no avisa — espera a que alguien lo siembre.** El esquema, en
 > cambio, **ya lo declara**: cada campo `upload` y cada campo de texto que el
@@ -1155,6 +1156,45 @@ por fallback silencioso.
 entera: `cms:captura-*` deja los bytes en `media-corpus/`; `cms:coloca-media` los
 copia a `apps/web/public` y regenera variantes. Entre los dos, el inventario
 sigue diciendo que falta — y tiene razón.
+
+#### ⚠ Y el cuarto canal AMPLÍA la regla, porque no se descubrió sembrando: LAS HOJAS CSS ENLAZADAS ENTRAN EN LA CAPTURA POR DEFECTO (2026-08-13)
+
+Los tres primeros canales **mataron un seed**, así que la regla se escribió con
+la forma *«el canal que falta aparece al sembrar»*. El cuarto no mata nada, y por
+eso vivió más:
+
+> **Un HTML capturado sin sus hojas no es la página: es su esqueleto con el
+> estilo puesto por otro.** Y no da error — da una captura **PLAUSIBLE**, que es
+> la peor salida posible.
+
+**Lo que costó, con sus dos números:**
+
+- §F3-1-CSS-NO-CAPTURADO: 19 hojas pedidas, **0 capturadas**, y la captura
+  offline midiendo `columna.width` **678.52 contra 430.80** en vivo — sin las
+  hojas la partición en columnas no ocurre y **una spec habría afirmado, con
+  número, que el cuerpo de ese arquetipo es plano**;
+- la cuarta condición de T9 (**el NO-OP al píxel**) quedó **dos tandas** sin
+  pagar, porque la única derivación posible —*¿tienen render estas clases?*—
+  sólo podía mirar el CSS **en línea** y tenía que declarar su límite.
+
+**Las dos mitades que se añaden:**
+
+1. **Toda campaña que congele HTML congela sus HOJAS ENLAZADAS.** Un `<link
+   rel=stylesheet>` es un canal exactamente igual que un `<img src>`: sin él, lo
+   capturado no reproduce lo servido. `npm run cms:captura-css` deriva el
+   inventario del corpus entero y **pide sólo la lista que se le nombre**;
+2. **y el inventario se declara con su cero, como los otros.** Medido hoy:
+   **505 hojas distintas · 62 en más de una página · 443 en una sola**, de las
+   que **498 son `et-cache`** — Divi compila una hoja **por página y por
+   plantilla**, así que este canal **no es un conjunto pequeño y compartido** y
+   capturarlo entero es una campaña con su encargo, no un parámetro por defecto.
+   Hoy capturadas: **7 de 505** (las de `castel-d-ario`, para T9).
+
+> **Y la lección de método que generaliza los cuatro:** el disparador de los tres
+> primeros fue *«algo se rompió»*. Un canal cuyo síntoma es **una medida
+> plausible** no tiene disparador — así que la única defensa es **enumerar los
+> canales antes de necesitarlos**, que es lo que la regla ya decía y lo que
+> «esperar a que el seed muera» venía sustituyendo sin que se notara.
 
 ### Reglas sobre las sondas mismas
 
