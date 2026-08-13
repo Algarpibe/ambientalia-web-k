@@ -229,6 +229,41 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > criterios · entregar con el hueco declarado) en `PENDIENTES-QA.md` §ESCALÓN
 > F3-2 (4.º) · POBLACIÓN. **Lo que ninguna puede ser es implícita.**
 
+> ✅ **EL 4.º ESCALÓN CIERRA PARA `/blog` Y `/etiqueta/*`, Y SIGUE ABIERTO PARA
+> `/recursos/*` (2026-08-13, 64.ª tanda).** `qa:lh-poblacion` sale **verde en las
+> 29 series** (149 entradas · 57 casos · 37 términos · 23 documentos · 19 faqs) y
+> `qa:lh-paginas` re-derivada ese día confirma las **142 rutas**, idéntica a la
+> congelada ⇒ **`P-LH-C3` cumplida**.
+>
+> ⚠ **Pero el verde de `lh-poblacion` no cubre `/recursos/*`, y la razón es que
+> su cota superior lo tapa** (§F3-LH-TAXONOMIA-RECURSOS). Derivado contra la DB:
+> `categorias-recursos` tiene **8 de 10** términos —faltan `articulos` y
+> `seminarios-web`—, **`padre` a null en los 8**, y **0** entradas en
+> `seminarios-web` contra 3 del original. Las 4 formas `L1-resources` del
+> comparador **no son construibles** hasta que eso se pueble.
+>
+> **Lo que esta tanda deja resuelto y no lo estaba:**
+>
+> | | |
+> |---|---|
+> | **`LH-SP10`** | ✅ **CONTESTADA — son DOS mecanismos** (`qa:lh-extracto`, negativo 4/4). `/blog` usa el extracto **manual** donde existe (15 de 63 medidos, 86–102 c) y el automático si no; `/etiqueta` **ignora el manual** y trunca el contenido a 256–271 c + «...». ⇒ el de `/blog` es **campo**, el de `/etiqueta` es **derivado** |
+> | **`LH-SP3`** (qué ordena) | ✅ **fecha descendente**, verificado: las 149 fechas verbatim parsean 149/149 y las posiciones 0 y 1 de `/blog` y de `/etiqueta/calidad-del-aire` reproducen el original |
+> | el discriminador de `/blog` | ✅ **derivado y exacto**: 149 − 81 con `recurso` = **68**, que es lo que lista el original. El campo `recurso` decide **miga y listado a la vez** |
+> | la **deriva** corpus↔espejo | ⚠ **nueva, y es de método** — §F3-LH-DOS-FOTOS. **2 de 9** titulares congelados cambiaron entre F3-0 y el espejo del 2026-08-11 |
+>
+> **Y el hueco de dato que queda antes de construir**, dicho con su número:
+> `extracto` está a **null en las 149** entradas ⇒ la variante `/blog` necesita
+> una pasada de extractor sobre el corpus; la de `/etiqueta` **no**, porque su
+> extracto se deriva del cuerpo. `etiquetas.descripcion` **no existe** y las 2
+> instancias medidas lo traen (módulo `et_pb_text_4_tb_body`, 941.17 de ancho a
+> 1440) ⇒ es **campo**, y es el único que `L1-etiqueta` necesita añadir.
+>
+> **Estado de la entrega, en la unidad del comparador (13 formas):** siguen
+> **13 AUSENTES · 0 pares**. Esta tanda no emitió ruta ninguna — lo que hizo fue
+> **quitarle a `L1-etiqueta` sus dos incógnitas de dato** (orden y extracto) y
+> dejar `L1-resources` fichado con lo que le falta. Es menos de lo que el encargo
+> pedía y está dicho con su número.
+
 > ✅ **EL 1.er ESCALÓN ESTÁ CERRADO (2026-08-11, tarde): `D2.5` · REPLICAR TAL
 > CUAL**, firmada por el propietario. El clon emite las **55 rutas vacías** con
 > 200, como el original — la única de las tres salidas que **no cambia el

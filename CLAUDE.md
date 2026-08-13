@@ -1892,6 +1892,85 @@ sesión. Es §MENCIONADO NO ES DOCUMENTADO cobrado sobre una regla de método en
 vez de sobre un hallazgo — y la prueba de que el sitio importa más que la
 redacción.
 
+**12 · UN HALLAZGO QUE ES REGLA Y NO EVENTO VIVE AQUÍ.** (2026-08-13)
+
+La regla 11 se pagó **tres veces** y dos de ellas ya estaban escritas —bien, con
+su mecanismo y su solución— en un acta y en un plan de fase. O sea que el fallo
+no fue de redacción ni de razonamiento: **fue de UBICACIÓN**, y eso se puede
+enunciar y evitar:
+
+> **Un acta se lee UNA VEZ, en su sesión. `CLAUDE.md` se lee CADA sesión.** Así
+> que un enunciado con forma de **regla general** —*«siempre que…», «nunca…»,
+> «la forma correcta es…»*— escrito **sólo** en un acta, un plan de fase o un
+> `HANDOFF` **equivale a no haberlo escrito**: se vuelve a pagar, y encima con la
+> sensación de que ya estaba resuelto.
+
+Es la hermana de §MENCIONADO NO ES DOCUMENTADO, aplicada a una **regla de
+método** en vez de a un hallazgo — y con el discriminador al revés: allí el
+problema era *no escribirlo*; aquí es *escribirlo en el sitio que nadie relee*.
+
+**El discriminador, que es lo operativo:**
+
+| lo que se escribió | dónde vive |
+|---|---|
+| **EVENTO** — qué pasó, con su fecha, su número y su ruta | el acta · `PENDIENTES-QA.md` · el plan de fase |
+| **REGLA** — lo que hay que hacer *la próxima vez*, sin fecha ni ruta | **`CLAUDE.md`**, y el evento se queda de evidencia |
+
+La prueba de que algo es regla y no evento: **quítale la fecha y el nombre
+propio.** Si sigue diciendo qué hacer, es regla y va aquí.
+
+> ⚠ **Y el barrido que la acompaña se hace ACOTADO, no sobre el archivo entero.**
+> Barrer 7 296 líneas de `HANDOFF` produce ruido y ninguna decisión. Se barren
+> **las actas de la fase en curso** buscando enunciados con forma de regla que no
+> estén aquí, **y el número se escribe aunque sea cero** — «no encontré ninguna»
+> y «no barrí» son la misma salida si no se dice (§regla del cero).
+>
+> **Barrido del 2026-08-13** (`PLAN-FASE-2.md` §F2-5 · `PLAN-FASE-3.md` §F3-1 y
+> §F3-2, buscando `^> \*\*MAYÚSCULA…\*\*`): **31 enunciados, de los que 2 son
+> regla general y no estaban aquí** —
+>
+> 1. **Un `next build` que falla no deja el build anterior: LO BORRA.** Y no hace
+>    falta que falle: `next build` **vacía su directorio desde el primer
+>    segundo**, así que reconstruir en sitio abre una ventana de ~90 s **sin
+>    sitio** aunque todo vaya bien. Medido con `kunak-cms-pg` parado: `exit 1` y
+>    `.next` sin `BUILD_ID`, sin `standalone` y sin `prerender-manifest`. **Es la
+>    razón mecánica de la regla que ya está arriba** (*«mientras haya una sonda
+>    en vuelo, nada de `build`, `check` ni `dev`»*): no es que el build
+>    *desincronice* el `.next`, es que **se lo lleva por delante**. Se construye
+>    fuera (`NEXT_DIST_DIR=.next-nuevo`) y se promociona por rename **sólo con
+>    `exit 0`**;
+> 2. **Un listado no tiene contenido propio: es una CONSULTA.** El contenido son
+>    los términos y las colecciones; el listado es una proyección sobre ellos. Por
+>    eso no hay colección «blog» ni «recursos» en el esquema. Vale para cualquier
+>    arquetipo de archivo que venga después, y decide **que un listado no se
+>    modela como content type** — el error contrario cuesta una colección por
+>    cada archivo del sitio.
+>
+> Los otros 29 son **eventos** con su fecha y su número, y se quedan donde están.
+
+**13 · UN DOCUMENTO SE ESCRIBE CON `Write`/`Edit`, NUNCA CON `node -e` NI CON UN
+HEREDOC.** (2026-08-13)
+
+Es la regla 11 —*el shell se mete en medio*— cobrada sobre el **contenido** en
+vez de sobre el código de salida:
+
+> **Todo texto que pasa por la línea de órdenes atraviesa un intérprete que
+> reclama caracteres para sí**: backticks, `$`, `!`, comillas, `@'…'@`. Y no
+> falla — **entrega el documento con huecos**, que es la salida que no se nota.
+
+Medido: escribiendo actas por `node -e` y heredocs, el shell **se comió**
+`qa:lh-pieles-css`, `L1` y `@media…` **dejando los huecos vacíos**. El fichero se
+creó, el comando salió con 0, y el documento quedó afirmando menos de lo que se
+había medido.
+
+**Y por qué duele más que un error de shell normal:** un comando roto se ve; un
+documento con tres huecos **se lee como si estuviera completo**, y la próxima
+sesión lo cita.
+
+La forma correcta es además la más corta: `Write`/`Edit` escriben el fichero
+**sin intérprete en medio**. Para un mensaje de commit largo, el mismo criterio —
+se escribe a un fichero y se pasa con `git commit -F`.
+
 ## Comandos
 
 ```bash

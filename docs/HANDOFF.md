@@ -1,4 +1,100 @@
-# HANDOFF — las pieles de listado EXHIBIDAS con su regla; la ley del pipe escrita tras tres ocurrencias. LISTADO-B sigue abriendo la siguiente
+# HANDOFF — LH-SP10 y LH-SP3 CONTESTADAS con mecanismo; `L1-etiqueta` se queda sin incógnitas de dato y `L1-resources` con las suyas fichadas
+
+> ⚠ **Tanda de CONSTRUCCIÓN (3.ª), 2026-08-13 (64.ª).** PASOS **0 · 3 · 4
+> completos**. **PASO 1 NO ENTREGA NINGUNA FORMA** — sigue **13 AUSENTES · 0
+> pares**. Lo que hizo fue **quitarle a `L1-etiqueta` sus dos incógnitas de dato
+> y fichar las de `L1-resources`**, que es menos de lo que el encargo pedía y va
+> dicho con su número. PASO 2 no se empieza. Registro: `CLAUDE.md` (**reglas 12 y
+> 13**) · `PENDIENTES-QA.md` (§F3-LH-DOS-FOTOS · §LH-SP10 · §F3-LH-TAXONOMIA-RECURSOS) ·
+> `PLAN-FASE-3.md` §F3-2.
+
+## 0 · Los titulares
+
+> **1 · `LH-SP10` CONTESTADA, Y NO MIRANDO UN EXTRACTO.** La contesta **cruzar
+> los dos listados donde el MISMO post sale con las dos pieles**: **63** posts en
+> `/blog` y en `/etiqueta/*`, **0 idénticos · 48 uno prefijo del otro · 15
+> DISTINTOS**; terminador **0/68 «…»** contra **143/143 «...»**. Son **DOS
+> mecanismos**: `/blog` usa el extracto **MANUAL** donde existe (los 15, de
+> 86–102 c) y el automático si no; el módulo Divi de `/etiqueta` **lo ignora** y
+> trunca el contenido a **256–271 c**. ⇒ el de `/blog` es **campo**; el de
+> `/etiqueta`, **derivado**. Sonda `qa:lh-extracto`, negativo **4/4**.
+>
+> **2 · LA DERIVA CORPUS↔ESPEJO, que es de MÉTODO y decide cómo se lee
+> `qa:lh-cmp`.** El clon se siembra del **corpus** (F3-0) y el comparador mide
+> contra el **espejo** (`lh-spec`, en vivo el 2026-08-11): **dos fotos del
+> original en fechas distintas**. Así que **un Δ de TEXTO no distingue «el clon
+> está mal» de «el original cambió entre las dos fotos»**. Acotada: **2 de 9**
+> titulares congelados cambiaron, los dos en `/etiqueta/calidad-del-aire`.
+>
+> **3 · EL VERDE DE `lh-poblacion` NO CUBRE `/recursos/*`, Y ES SU COTA LA QUE LO
+> TAPA.** Verde en las **29 series**, y aun así: `categorias-recursos` tiene **8
+> de 10** términos, **`padre` a null en los 8** y **0** entradas en
+> `seminarios-web` contra 3. Es §La causa común con un **contenedor nuevo — la
+> COTA con la que se declara la suficiencia**.
+>
+> **4 · `LH-SP3` (qué ordena) también cae: FECHA DESCENDENTE**, verificado —
+> **149/149** fechas verbatim parsean, y las posiciones 0 y 1 de `/blog` y de
+> `/etiqueta/calidad-del-aire` reproducen el original. Y el discriminador de
+> `/blog` queda derivado y **exacto**: **149 − 81 con `recurso` = 68**, que es lo
+> que lista el original.
+>
+> **5 · PASO 0: `qa:lh-paginas` del día = 142 rutas, IDÉNTICA a la congelada**
+> ⇒ `P-LH-C3` cumplida.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **`L1-etiqueta` es hoy la forma más barata de convertir AUSENTES en PARES**, y
+  ya no tiene incógnita de dato: orden ✅, extracto ✅ (derivado del cuerpo, no
+  hace falta sembrar nada), título de tarjeta = `titulo` ✅, fecha derivable de
+  `fechaPublicacion` ✅. **Le falta UN campo: `etiquetas.descripcion`** — las 2
+  instancias medidas lo traen (`et_pb_text_4_tb_body`, 941.17 de ancho a 1440) y
+  el esquema no lo tiene. Con eso son **2 formas** del comparador.
+- ⚠ **`L1-blog` necesita ADEMÁS una pasada de extractor**: `extracto` está a
+  **null en las 149** y su variante sí lo usa como campo. 1 forma.
+- ⛔ **`L1-resources` NO es construible hoy** — 4 formas. Le faltan los 2 términos
+  padre, `padre` en los 8 y las 3 entradas de `seminarios-web`. Todo está en el
+  corpus; es una pasada de datos, no una decisión.
+- ⚠ **Al leer el primer `qa:lh-cmp` con pares: los 2 titulares de
+  §F3-LH-DOS-FOTOS salen del saco de «defecto» ANTES de perseguirlos.** Lo que no
+  esté en esa tabla y difiera, sí es del clon.
+- ⚠ **`base-distinta` (P-LH-C8) sigue DECLARADO NO EJERCITADO**, por tercera
+  tanda: el sabotaje no puede cambiar nada mientras las 13 formas estén ausentes.
+- **La cobertura NO se movió** —302 rutas, matriz idéntica a la del día— y es
+  **por construcción**: no se emitió ninguna ruta. La matriz sólo se hunde cuando
+  las de listado entren.
+- **Sondas: 161.** `npm run check` **exit 0** · `qa:lib` **93/93**.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-extracto`** | `LH-SP10` (los dos mecanismos de extracto) **y** la deriva corpus↔espejo, acotada | **4/4** — y el que importa es `mecanismo-unico`: fuerza a los dos listados a dar el mismo texto y comprueba que la sonda **deja de afirmar** que son dos |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Una incógnita de dato se contesta con un CRUCE, no con una inspección.**
+`LH-SP10` llevaba abierta desde LH-2 y se leía como *«hay que decidir si el
+extracto es manual o derivado»*. No había que decidir nada: había que **cruzar
+los dos listados donde el mismo post aparece dos veces**, y el dato ya estaba en
+el corpus desde F3-0. Mirar un extracto —o diez— no la habría contestado nunca,
+porque la respuesta **no vive en un extracto: vive en la diferencia entre dos**.
+
+**(b) Un «verde» con cota superior declarada sigue siendo un verde que tapa.**
+`lh-poblacion` **dice** que su columna es una cota, y aun así su veredicto es
+`✅ el clon alcanza la población del original`. Las dos cosas son ciertas y la
+segunda es la que se cita. La lección no es «leer la letra pequeña»: es que **el
+veredicto tiene que llevar el alcance dentro**, porque el alcance escrito al lado
+no viaja con la afirmación.
+
+**(c) Y la de ubicación, que es la regla 12 pagándose en el acto:** el barrido
+acotado de las actas de F2-5, F3-1 y F3-2 —31 enunciados— encontró **2** reglas
+generales que llevaban meses escritas fuera de `CLAUDE.md` (*el `next build` que
+falla borra el build anterior* · *un listado no es un content type, es una
+consulta*). Las dos estaban bien razonadas. Ninguna se estaba aplicando.
+
+---
+
+# (histórico) HANDOFF — las pieles de listado EXHIBIDAS con su regla; la ley del pipe escrita tras tres ocurrencias. LISTADO-B sigue abriendo la siguiente
 
 > ⚠ **Tanda de CONSTRUCCIÓN (2.ª), 2026-08-13 (63.ª).** PASOS 0 · 1 · 4 · 5
 > completos. **PASO 2 (LISTADO-B) NO SE EMPIEZA** — corte limpio declarado por el

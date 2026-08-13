@@ -1,5 +1,108 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F3-LH-DOS-FOTOS · EL CLON SE SIEMBRA DEL CORPUS Y SE MIDE CONTRA EL ESPEJO, Y NO SON LA MISMA FECHA (2026-08-13, 64.ª tanda)
+
+**Es de MÉTODO y decide cómo se lee `qa:lh-cmp`, así que va antes que cualquier
+número que esa sonda produzca.**
+
+`cms:seed` puebla desde `corpus/fase-3/`, capturado en **F3-0**. `qa:lh-cmp`
+compara contra `medidas/lh-spec-{1440,390}.json`, medido **en vivo el
+2026-08-11**. Son **dos fotos del original en fechas distintas**, y de ahí:
+
+> **Un Δ de TEXTO entre clon y espejo no distingue «el clon está mal» de «el
+> original cambió entre las dos fotos».**
+
+**Medido y acotado** (`npm run qa:lh-extracto`, negativo 4/4,
+`medidas/lh-extracto.json`): de los **9** titulares de tarjeta que el espejo
+congela para `L1-blog` y `L1-etiqueta`, **7 siguen siendo los del corpus y 2
+cambiaron** — los dos en `/es/etiqueta/calidad-del-aire/`:
+
+| | espejo (2026-08-11) | corpus (F3-0) |
+|---|---|---|
+| T0 | «**Control** de la calidad del aire en centros de datos…» | «**Monitorización** de la calidad del aire en centros de datos…» |
+| T1 | «Emisiones del tráfico urbano: control avanzado…» | «**Monitorización de** emisiones del tráfico urbano: control avanzado…» |
+
+**Y lo que esto NO es:** no es una razón para no comparar, ni para mover el clon.
+El clon tiene el título del corpus **porque de ahí se sembró**, y está bien.
+Manda el original, y de las dos fotos el espejo es la reciente — lo que aquí se
+establece es **el denominador de la duda**, no su resolución.
+
+**Operativamente, para la tanda que construya:** los 2 pares de texto de arriba
+salen del saco de «defecto» **antes** de que nadie los persiga. Lo que no está
+en esta tabla y difiera, sí es del clon.
+
+⚠ **Y la forma general, que vale para cualquier arquetipo CMS-first futuro:**
+sembrar de una captura y medir contra otra mete una **variable de fecha** en
+todos los pares de texto. O se siembra y se mide de la misma foto, o **la deriva
+se acota y se publica**, que es lo que se ha hecho aquí. Lo que no vale es
+tenerla y no saberlo.
+
+## ✅ LH-SP10 · CONTESTADA: SON DOS MECANISMOS DE EXTRACTO, NO UNO (2026-08-13, 64.ª tanda)
+
+`PLAN-FASE-3.md` §F3-2 la llevaba como **incógnita** desde LH-2 (*«extracto
+manual vs derivado»*), y es el texto de la tarjeta: sin ella `LISTADO-B` no se
+puede construir.
+
+**Lo que la contesta no es mirar un extracto, es CRUZAR LOS DOS LISTADOS donde el
+mismo post aparece con las dos pieles** (`qa:lh-extracto`, 80 páginas del corpus):
+
+| | |
+|---|---|
+| posts en `/blog` **y** en `/etiqueta/*` | **63** |
+| extractos **idénticos** | **0** |
+| uno **prefijo** del otro | **48** |
+| **DISTINTOS** | **15** |
+| longitud en `/blog` | min 86 · max 401 · **media 301** |
+| longitud en `/etiqueta` | min 256 · max 271 · **media 267** |
+| terminador | **0/68** «…» en `/blog` · **143/143** «...» en `/etiqueta` |
+
+> · **`/blog`** (loop del tema, `the_excerpt()`) usa el extracto **MANUAL** donde
+>   existe y el automático si no. Los **15 distintos** miden 86–102 c: son
+>   escritos a mano.
+> · **`/etiqueta`** (módulo `et_pb_blog` de Divi) **IGNORA el manual** y trunca
+>   el contenido a 256–271 c + «...».
+
+**Consecuencia de modelo, y no es cosmética:** un solo campo `extracto` **no
+expresa la tarjeta de las dos variantes**. El de `/blog` es **campo** (≥15
+medidos); el de `/etiqueta` es **derivado del cuerpo** — o sea mecanismo, no
+número replicado, que es la diferencia que este proyecto paga cara.
+
+**Estado del dato hoy:** `extracto` está a **null en las 149** entradas de la DB,
+así que la variante `/blog` **necesita una pasada de extractor** sobre el corpus
+antes de poder construirse. La de `/etiqueta` no.
+
+## ⚠ F3-LH-TAXONOMIA-RECURSOS · LA COTA SUPERIOR DE `lh-poblacion` TAPA UN HUECO, Y ES OTRO CONTENEDOR DE §LA CAUSA COMÚN (2026-08-13, 64.ª tanda)
+
+`qa:lh-poblacion` sale **verde en las 29 series** (*«el clon alcanza la población
+del original»*), y para `/recursos/*` **ese verde no significa lo que parece**.
+
+La sonda declara honestamente que su columna «clon» es una **cota superior** —
+*«se le atribuye a cada serie de término TODA su colección, porque el clon no
+tiene la taxonomía poblada»*—. Derivado hoy contra la DB por Local API:
+
+| | original | clon |
+|---|---|---|
+| términos de `categorias-recursos` | **10** (2 padres + 8 hijas) | **8** — faltan `articulos` y `seminarios-web` |
+| campo `padre` | jerárquica | **null en los 8** |
+| entradas con `recurso = seminarios-web` | **3** | **0** |
+
+O sea que **`/recursos/articulos/` y `/recursos/seminarios-web/` no son
+construibles hoy**, y la sonda no puede decirlo: la cota superior **absorbe**
+exactamente el hueco que habría que ver. Es §La causa común con un contenedor
+nuevo — **no una fila, ni una caja, ni el protocolo: la COTA con la que se
+declara la suficiencia.**
+
+**Lo que sí queda derivado y es bueno:** el discriminador de `/blog` es exacto.
+**149 entradas − 81 con `recurso` = 68**, y 68 es justo lo que lista el original
+(`lh-poblacion`, columna `orig`). O sea que el campo `recurso` decide **la miga y
+el listado a la vez**, como el esquema ya sospechaba.
+
+**Pendiente para la tanda que construya `L1-resources`:** dar de alta los 2
+términos padre, poblar `padre` en los 8 y adjudicar las 3 entradas de
+`seminarios-web` — todo desde el corpus, que los tiene. Y **añadirle a
+`lh-poblacion` una guarda que distinga «la colección da» de «el término está
+poblado»**, porque hoy no puede.
+
 ## ✅ CAMPO-RICO-ATRIBUTOS · el contrato ya censa ATRIBUTOS, y el ESCALÓN no dispara (2026-08-13, PASO 6)
 
 > **`validaHtmlCorpus` censaba etiquetas y hosts, y nada más.** Lo destapó
