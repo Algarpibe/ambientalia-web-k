@@ -300,6 +300,67 @@ export const ETIQUETAS_CENSADAS = [
 ] as const;
 
 /**
+ * EL CENSO DE **ATRIBUTOS** — la mitad que faltaba, y no es cosmética.
+ *
+ * ── El hueco, medido ──────────────────────────────────────────────────────
+ * Hasta el 2026-08-13 `validaHtmlCorpus` censaba **etiquetas** y **hosts** de
+ * iframe, y **nada más**. Lo destapó §DATOS-DOM-AJENO: el `<article>` de ChatGPT
+ * saltó por la etiqueta y sus `data-start`/`data-end` **pasaron en silencio en 10
+ * páginas**. No era un defecto del saneador: era su ALCANCE, y no estaba escrito.
+ *
+ * > En un campo que admite HTML del corpus y que un editor va a poder pegar, los
+ * > atributos son **superficie**: sobre una etiqueta admitida entran `onclick`,
+ * > `onerror` y `href="javascript:"` sin que nada los mire.
+ *
+ * ── La lista se DERIVA, igual que las 43 etiquetas ───────────────────────
+ * `npm run qa:atributos-censo` sobre **291 páginas · 47 524 aperturas de
+ * etiqueta** (grupo A + grupo C + `articulos-kb`, que usa estos mismos campos).
+ * Son estos **81**, exactos y no por patrón: un `data-*` comodín admitiría
+ * cualquier cosa, que es lo contrario de censar.
+ *
+ * ⚠ **Y el 81.º entró porque la guarda lo cazó, no porque yo lo viera.** La
+ * primera versión llevaba 80 y el seed de `articulos-kb` murió en el 4.º
+ * documento con `atributo(s) fuera del censo — loading`. La causa no fue el
+ * censo: fue **citar el número del fichero equivocado** — `w()` no pisa una
+ * congelada, así que la corrida que ya incluía KB se fue a un nombre fechado y
+ * yo leí la anterior. La protección de congeladas funcionando, y su lectura
+ * mal hecha. `loading="lazy"` es de `<img>` y estaba en el corpus desde
+ * siempre.
+ *
+ * ── Y lo que hace que rechazar NO cueste contenido servido ───────────────
+ * Las cuatro familias peligrosas salen a **CERO** en el censo, medido y no
+ * supuesto: `on*` **0** · `javascript:` **0** · `data:` **0** · `srcdoc` **0**.
+ * Por eso el rechazo puede ir en la dirección que grita —**un atributo fuera del
+ * censo TIRA, no se limpia en silencio**— sin perder un solo byte del corpus.
+ *
+ * ⚠ **`style` se admite y no es una concesión: son 3722 apariciones en 194
+ * páginas.** Es CSS en línea del editor; no ejecuta, pero pinta. Prohibirlo sería
+ * perder contenido servido en dos tercios del corpus.
+ *
+ * **Procedimiento de alta**, igual que el de `HOSTS_PERMITIDOS`: un atributo
+ * nuevo entra AQUÍ, con su evidencia. Mientras no esté, el saneador lo rechaza
+ * **nombrándolo** — un cambio de código revisable, no una excepción silenciosa.
+ */
+export const ATRIBUTOS_CENSADOS = [
+  "align", "allow", "allowfullscreen", "alt", "aria-describedby", "aria-description",
+  "aria-level", "autoplay", "border", "cellpadding", "cellspacing", "class", "colspan",
+  "controls", "data-cfemail", "data-citationid", "data-element_type",
+  "data-elementor-open-lightbox", "data-end", "data-gtm-vis-first-on-screen-31374389_64",
+  "data-gtm-vis-first-on-screen-31374389_66", "data-gtm-vis-has-fired-31374389_64",
+  "data-gtm-vis-has-fired-31374389_66", "data-gtm-vis-recent-on-screen-31374389_64",
+  "data-gtm-vis-recent-on-screen-31374389_66", "data-gtm-vis-total-visible-time-31374389_64",
+  "data-gtm-vis-total-visible-time-31374389_66", "data-id", "data-instgrm-permalink",
+  "data-instgrm-version", "data-is-last-node", "data-is-only-node", "data-label",
+  "data-lazy-src", "data-lightbox", "data-ll-status", "data-mce-fragment", "data-mce-type",
+  "data-media", "data-placeholder", "data-pm-slice", "data-rtid", "data-sheets-root",
+  "data-sort-value", "data-spread", "data-src", "data-start", "data-title", "data-url",
+  "data-variante", "data-widget_type", "data-wp-editing", "decoding", "dir", "download",
+  "fetchpriority", "frameborder", "height", "href", "id", "lang", "loading", "loop", "muted", "preload",
+  "referrerpolicy", "rel", "role", "rowspan", "sandbox", "scrolling", "sizes", "src",
+  "srcset", "start", "style", "tabindex", "target", "title", "type", "width",
+] as const;
+
+/**
  * Lo ÚNICO que el contrato prohíbe, y no es cosa mía: §3.3 lo escribe como
  * regla —*«`script` no entra. En un CMS propio, script arbitrario dentro del
  * contenido no debe existir»*— y **T4** lo ejecuta al importar (*«ninguno
@@ -385,6 +446,28 @@ export function etiquetasFueraDelCenso(html: string): string[] {
   return [...fuera].sort();
 }
 
+/**
+ * Los atributos de una apertura de etiqueta REAL. Se lee la etiqueta entera y
+ * después sus pares, para no confundir un `on…=` dentro de un texto con uno
+ * puesto en un elemento — el mismo criterio que `RE_ETIQUETA` usa arriba.
+ */
+const RE_APERTURA_ATR = /<([a-zA-Z][a-zA-Z0-9-]*)((?:\s+[^\s=/>]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'>]+))?)*)\s*\/?>/g;
+const RE_PAR_ATR = /([^\s=/>]+)(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'>]+))?/g;
+const CENSO_ATR = new Set<string>(ATRIBUTOS_CENSADOS);
+
+export function atributosFueraDelCenso(html: string): string[] {
+  const fuera = new Set<string>();
+  for (const m of html.matchAll(RE_APERTURA_ATR)) {
+    RE_PAR_ATR.lastIndex = 0;
+    let a: RegExpExecArray | null;
+    while ((a = RE_PAR_ATR.exec(m[2] ?? ""))) {
+      const nombre = (a[1] ?? "").toLowerCase();
+      if (nombre && !CENSO_ATR.has(nombre)) fuera.add(nombre);
+    }
+  }
+  return [...fuera].sort();
+}
+
 const RE_IFRAME = /<iframe\b[^>]*>/gi;
 const PERMITIDOS = new Set<string>(HOSTS_PERMITIDOS);
 
@@ -415,6 +498,19 @@ export function validaHtmlCorpus(valor: unknown): true | string {
   const hosts = hostsFueraDeAllowlist(valor);
   if (hosts.length)
     return `§3.3b: host(s) de iframe fuera de la allowlist firmada — ${hosts.join(", ")}. Un host nuevo entra por el procedimiento de alta (HOSTS_PERMITIDOS), no en silencio.`;
+  /**
+   * ⚠ **Va DESPUÉS de las tres de arriba a propósito.** Un `<script onerror=…>`
+   * tiene que salir por `SIN_SCRIPT` —el mensaje que nombra la regla que de
+   * verdad lo prohíbe— y no por «atributo fuera del censo», que lo describiría
+   * mal. El orden de los mensajes es parte del contrato, no estilo.
+   */
+  const atributos = atributosFueraDelCenso(valor);
+  if (atributos.length)
+    return (
+      `§3.1-atributos: atributo(s) fuera del censo de ${ATRIBUTOS_CENSADOS.length} — ${atributos.join(", ")}. ` +
+      `El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores \`on*\`, CERO \`javascript:\` y CERO \`data:\`, ` +
+      `así que rechazar no cuesta contenido servido. Si es legítimo, se admite AÑADIÉNDOLO a ATRIBUTOS_CENSADOS con su evidencia — no se limpia en silencio.`
+    );
   return true;
 }
 

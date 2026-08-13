@@ -40,7 +40,7 @@ await esbuild.build({
   packages: "external",
   logLevel: "silent",
 });
-const { validaHtmlCorpus, HOSTS_PERMITIDOS } = await import(`${pathToFileURL(bundle).href}?t=${Date.now()}`);
+const { validaHtmlCorpus, HOSTS_PERMITIDOS, ATRIBUTOS_CENSADOS } = await import(`${pathToFileURL(bundle).href}?t=${Date.now()}`);
 
 const casos = [
   {
@@ -73,6 +73,38 @@ const casos = [
     porQue: "`www.` se normaliza: youtube.com está firmado y el iframe PASA",
     espera: (v) => (v === true ? null : `rechazó un host firmado: ${v}`),
   },
+  /* ── §3.1-atributos (2026-08-13) · LOS DOS LADOS ─────────────────────────
+   * El censo (`qa:atributos-censo`, 291 páginas · 47 524 aperturas) mide CERO
+   * manejadores `on*`, CERO `javascript:` y CERO `data:`, así que rechazar no
+   * cuesta contenido servido. Un condicional con un solo lado no está probado:
+   * hacen falta el que TIRA y el que PASA.                                   */
+  {
+    caso: "atributo-onclick",
+    entrada: `<p>texto</p><a href="/x" onclick="robar()">pincha</a>`,
+    porQue: "un manejador `on*` sobre una etiqueta ADMITIDA se rechaza NOMBRÁNDOLO",
+    espera: (v) => (typeof v === "string" && v.includes("onclick") ? null : `no nombró onclick: ${v}`),
+  },
+  {
+    caso: "atributo-onerror-en-img",
+    entrada: `<img src="/images/uploads/x.jpg" onerror="alert(1)" alt="x" />`,
+    porQue: "`onerror` es la vía que `<script>` bloqueado NO cubría — es la superficie que motivó el censo",
+    espera: (v) => (typeof v === "string" && v.includes("onerror") ? null : `no nombró onerror: ${v}`),
+  },
+  {
+    caso: "atributo-legitimo-pasa",
+    entrada:
+      `<p style="color: #0075c9;" class="x" dir="ltr"><a href="/y" target="_blank" rel="noopener" ` +
+      `data-variante="boton" title="t">z</a><img src="/i.jpg" srcset="/i.jpg 1x" sizes="100vw" ` +
+      `alt="a" width="10" height="10" decoding="async" data-media="2023/02/i.jpg" /></p>`,
+    porQue: "un atributo del censo PASA — sin esta mitad, un validate que rechazara todo aprobaría los otros dos",
+    espera: (v) => (v === true ? null : `rechazó atributos censados: ${v}`),
+  },
+  {
+    caso: "script-gana-al-atributo",
+    entrada: `<script onerror="x">a</script>`,
+    porQue: "el orden del contrato: un `<script>` con `on*` cae por §3.3·T4, que es la regla que de verdad lo prohíbe",
+    espera: (v) => (typeof v === "string" && /§3\.3 · T4/.test(v) ? null : `no cayó por T4 sino por: ${v}`),
+  },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · saneador en escritura ════════`);
@@ -88,6 +120,41 @@ for (const col of readdirSync(TRANSFORMADO))
 
 const ev = new Evaluadas({ nombre: "saneador-neg", unidad: "casos", minimo: casos.length + ficheros.length });
 let fallos = 0;
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA SINCRONÍA CON EL CENSO — la deriva que ya se pagó una vez
+ *
+ * `ATRIBUTOS_CENSADOS` **es** el censo congelado, así que separarse de él no es
+ * una diferencia de opinión: es que uno de los dos está viejo. Se pagó en la
+ * misma tanda en que se escribió — la lista salió con **80** porque se leyó la
+ * congelada ANTERIOR a incluir `articulos-kb` (`w()` no pisa, la buena fue a un
+ * nombre fechado), y el seed de KB murió en el 4.º documento por `loading`.
+ *
+ * La guarda es de las baratas y evita exactamente eso: **comparar las dos
+ * listas**, en los dos sentidos.
+ * ═════════════════════════════════════════════════════════════════════════ */
+{
+  const fCenso = join(QA, "medidas/atributos-censo.json");
+  if (!existsSync(fCenso))
+    throw new Error(
+      "no existe `medidas/atributos-censo.json`: corre `npm run qa:atributos-censo` antes.\n" +
+        "  Sin la congelada no se puede comprobar que la whitelist del código sea la medida,\n" +
+        "  y una whitelist que nadie compara envejece contra el corpus en silencio.",
+    );
+  const censo = Object.keys(JSON.parse(readFileSync(fCenso, "utf8")).atributos ?? {});
+  const enCodigo = new Set(ATRIBUTOS_CENSADOS);
+  const faltan = censo.filter((a) => !enCodigo.has(a));
+  const sobran = [...enCodigo].filter((a) => !censo.includes(a));
+  if (faltan.length || sobran.length) {
+    fallos++;
+    console.log(
+      `  ❌ SINCRONÍA con el censo    faltan en el código: ${faltan.join(", ") || "—"} · ` +
+        `sobran: ${sobran.join(", ") || "—"}`,
+    );
+  } else {
+    console.log(`  ✓  SINCRONÍA con el censo    los ${censo.length} atributos del código SON los medidos`);
+  }
+}
 const resultado = { meta: { fecha: hoy(), control: `${ficheros.length} cuerpos de corpus/transformado` }, casos: [] };
 
 for (const c of casos) {

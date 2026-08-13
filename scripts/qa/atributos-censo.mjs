@@ -79,6 +79,34 @@ for (const [coleccion, filas] of Object.entries(C.catalogo ?? {}))
       if (typeof v === "string" && v) regiones.push({ pagina: `${coleccion}/${d.slug}`, campo, html: v });
     }
 
+/**
+ * ⚠ **Y `articulos-kb`, que el encargo no pedía y hace falta igual.** El censo se
+ * pidió sobre «las 309» (grupo A + grupo C), pero la whitelist que salga de aquí
+ * se aplica a `campoHtml`/`htmlLinea` — **y `articulos-kb` los usa**. Derivar la
+ * regla sobre un dominio donde el caso no se da y aplicarla donde sí es la
+ * trampa ya fichada (§F2-5-ESCALON-ETIQUETAS): el seed de KB moriría con un
+ * atributo legítimo que este censo nunca vio.
+ */
+const fKb = join(QA, "medidas/kb-extraido.json");
+if (!existsSync(fKb))
+  throw new Error(
+    `no existe medidas/kb-extraido.json.\n` +
+      `  La whitelist derivada de aquí se aplica también a \`articulos-kb\`, así que\n` +
+      `  censar sin él daría una lista que rompe su siembra sin haberlo mirado.`,
+  );
+const KB = JSON.parse(readFileSync(fKb, "utf8"));
+if (!Array.isArray(KB.articulos) || !KB.articulos.length)
+  throw new Error("kb-extraido.json no trae `articulos` como array no vacío.");
+const cadenas = (x, id, fn) => {
+  if (typeof x === "string") fn(x, id);
+  else if (Array.isArray(x)) x.forEach((y, i) => cadenas(y, `${id}[${i}]`, fn));
+  else if (x && typeof x === "object") for (const [k, v] of Object.entries(x)) cadenas(v, `${id}.${k}`, fn);
+};
+for (const a of KB.articulos)
+  cadenas(a.cuerpo, `articulos-kb/${a.slug}#cuerpo`, (v, id) => {
+    if (/<[a-zA-Z]/.test(v)) regiones.push({ pagina: `articulos-kb/${a.slug}`, campo: id.split("#")[1] ?? "cuerpo", html: v });
+  });
+
 const paginas = new Set(regiones.map((r) => r.pagina));
 
 /* ══════════════════════════════════════════════════════════════════════════

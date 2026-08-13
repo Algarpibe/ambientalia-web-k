@@ -1,0 +1,852 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "el censo de ATRIBUTOS del campo rico — la mitad que `validaHtmlCorpus` no mira",
+    "alcance": "291 páginas · 607 regiones ricas (grupo A desde corpus/transformado, grupo C desde c-extraido)",
+    "nivel": "el HTML que ENTRA al CMS (post-pipeline), no el crudo del original",
+    "sabotaje": null,
+    "noDecide": "esto CENSA. Qué se admite y qué se rechaza lo decide el contrato, con este censo delante."
+  },
+  "recuento": {
+    "paginas": 291,
+    "regiones": 607,
+    "aperturas": 47524,
+    "atributosDistintos": 81
+  },
+  "familias": {
+    "manejador-on*": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "ejecuta JS sobre una etiqueta admitida"
+    },
+    "url-javascript:": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "`href`/`src` con esquema `javascript:`"
+    },
+    "url-data:": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "`href`/`src` con `data:` — puede llevar HTML ejecutable"
+    },
+    "style": {
+      "n": 3722,
+      "paginas": 194,
+      "muestras": [
+        {
+          "pagina": "documentos-cientificos/soluciones-avanzadas-de-monitorizacion",
+          "campo": "cuerpo",
+          "atributo": "style",
+          "valor": "color: #0075c9;"
+        },
+        {
+          "pagina": "documentos-cientificos/soluciones-avanzadas-de-monitorizacion",
+          "campo": "cuerpo",
+          "atributo": "style",
+          "valor": "color: #0075c9;"
+        },
+        {
+          "pagina": "entradas-blog/biometano-y-biogas",
+          "campo": "cuerpo",
+          "atributo": "style",
+          "valor": "width: 100%; display: flex; justify-content: center;"
+        },
+        {
+          "pagina": "entradas-blog/biometano-y-biogas",
+          "campo": "cuerpo",
+          "atributo": "style",
+          "valor": "width: 100%; max-width: 1200px;"
+        },
+        {
+          "pagina": "entradas-blog/biometano-y-biogas",
+          "campo": "cuerpo",
+          "atributo": "style",
+          "valor": "position: relative; padding-bottom: 66.66%; height: 0; overflow: hidden;"
+        }
+      ],
+      "porQue": "CSS en línea del editor: no ejecuta, pero pinta"
+    },
+    "srcdoc": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "documento embebido en línea dentro de un iframe"
+    },
+    "data-* ajeno": {
+      "n": 142,
+      "paginas": 10,
+      "muestras": [
+        {
+          "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+          "campo": "cuerpo",
+          "atributo": "data-start",
+          "valor": "15"
+        },
+        {
+          "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+          "campo": "cuerpo",
+          "atributo": "data-end",
+          "valor": "485"
+        },
+        {
+          "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+          "campo": "cuerpo",
+          "atributo": "data-start",
+          "valor": "487"
+        },
+        {
+          "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+          "campo": "cuerpo",
+          "atributo": "data-end",
+          "valor": "1236"
+        },
+        {
+          "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+          "campo": "cuerpo",
+          "atributo": "data-start",
+          "valor": "630"
+        }
+      ],
+      "porQue": "restos de otra aplicación (§DATOS-DOM-AJENO)"
+    }
+  },
+  "atributos": {
+    "class": {
+      "n": 4260,
+      "paginas": 208,
+      "etiquetas": [
+        "a",
+        "blockquote",
+        "div",
+        "figure",
+        "h2",
+        "h3",
+        "h4",
+        "img",
+        "li",
+        "p",
+        "section",
+        "span",
+        "strong",
+        "table",
+        "td",
+        "th",
+        "video"
+      ],
+      "muestra": "html-p"
+    },
+    "style": {
+      "n": 3722,
+      "paginas": 194,
+      "etiquetas": [
+        "a",
+        "blockquote",
+        "div",
+        "em",
+        "figure",
+        "h2",
+        "h3",
+        "h4",
+        "iframe",
+        "img",
+        "li",
+        "ol",
+        "p",
+        "span",
+        "table",
+        "tbody",
+        "td",
+        "th",
+        "thead",
+        "tr",
+        "u",
+        "ul",
+        "video"
+      ],
+      "muestra": "color: #0075c9;"
+    },
+    "href": {
+      "n": 3635,
+      "paginas": 240,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "https://kunakair.com/es/author/irene/"
+    },
+    "target": {
+      "n": 2371,
+      "paginas": 218,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "_blank"
+    },
+    "width": {
+      "n": 1028,
+      "paginas": 154,
+      "etiquetas": [
+        "embed",
+        "iframe",
+        "img",
+        "table",
+        "td",
+        "video"
+      ],
+      "muestra": "1280"
+    },
+    "src": {
+      "n": 733,
+      "paginas": 160,
+      "etiquetas": [
+        "embed",
+        "iframe",
+        "img",
+        "source",
+        "video"
+      ],
+      "muestra": "https://europeanbiogas.clicdata.com/v/jcn6CnV0CVTa"
+    },
+    "rel": {
+      "n": 695,
+      "paginas": 127,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "noopener"
+    },
+    "height": {
+      "n": 685,
+      "paginas": 153,
+      "etiquetas": [
+        "embed",
+        "iframe",
+        "img",
+        "video"
+      ],
+      "muestra": "1069"
+    },
+    "decoding": {
+      "n": 619,
+      "paginas": 134,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "async"
+    },
+    "alt": {
+      "n": 614,
+      "paginas": 134,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "Los residuos orgánicos de la alimentación son una de las principales fuentes para la obtención de biogás y biometano - K"
+    },
+    "data-media": {
+      "n": 450,
+      "paginas": 84,
+      "etiquetas": [
+        "a",
+        "figure"
+      ],
+      "muestra": "2025/08/residuos-organicos-alimentacion.jpg"
+    },
+    "srcset": {
+      "n": 318,
+      "paginas": 73,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "https://kunakair.com/wp-content/uploads/2025/08/residuos-organicos-alimentacion-1280x853.jpg 1280w, https://kunakair.com"
+    },
+    "sizes": {
+      "n": 318,
+      "paginas": 73,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and ("
+    },
+    "aria-level": {
+      "n": 250,
+      "paginas": 21,
+      "etiquetas": [
+        "li"
+      ],
+      "muestra": "1"
+    },
+    "data-variante": {
+      "n": 203,
+      "paginas": 175,
+      "etiquetas": [
+        "a",
+        "span"
+      ],
+      "muestra": "boton"
+    },
+    "tabindex": {
+      "n": 186,
+      "paginas": 168,
+      "etiquetas": [
+        "div",
+        "span",
+        "th"
+      ],
+      "muestra": "0"
+    },
+    "role": {
+      "n": 170,
+      "paginas": 168,
+      "etiquetas": [
+        "img",
+        "span"
+      ],
+      "muestra": "link"
+    },
+    "data-url": {
+      "n": 168,
+      "paginas": 168,
+      "etiquetas": [
+        "span"
+      ],
+      "muestra": "aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8="
+    },
+    "fetchpriority": {
+      "n": 118,
+      "paginas": 118,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "high"
+    },
+    "title": {
+      "n": 85,
+      "paginas": 39,
+      "etiquetas": [
+        "a",
+        "iframe",
+        "th"
+      ],
+      "muestra": "Unboxing Kunak AIR Lite"
+    },
+    "data-start": {
+      "n": 71,
+      "paginas": 10,
+      "etiquetas": [
+        "em",
+        "h4",
+        "li",
+        "p",
+        "strong"
+      ],
+      "muestra": "15"
+    },
+    "data-end": {
+      "n": 71,
+      "paginas": 10,
+      "etiquetas": [
+        "em",
+        "h4",
+        "li",
+        "p",
+        "strong"
+      ],
+      "muestra": "485"
+    },
+    "allowfullscreen": {
+      "n": 67,
+      "paginas": 52,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "allowfullscreen"
+    },
+    "id": {
+      "n": 47,
+      "paginas": 22,
+      "etiquetas": [
+        "a",
+        "div",
+        "h2",
+        "iframe",
+        "p",
+        "span",
+        "video"
+      ],
+      "muestra": "abssec0010"
+    },
+    "frameborder": {
+      "n": 42,
+      "paginas": 33,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "0"
+    },
+    "data-lightbox": {
+      "n": 32,
+      "paginas": 3,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "roadtrip"
+    },
+    "data-title": {
+      "n": 32,
+      "paginas": 3,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": ""
+    },
+    "lang": {
+      "n": 16,
+      "paginas": 6,
+      "etiquetas": [
+        "p",
+        "span"
+      ],
+      "muestra": "es"
+    },
+    "data-id": {
+      "n": 16,
+      "paginas": 3,
+      "etiquetas": [
+        "div",
+        "img",
+        "section"
+      ],
+      "muestra": "bd50487"
+    },
+    "rowspan": {
+      "n": 15,
+      "paginas": 8,
+      "etiquetas": [
+        "td",
+        "th"
+      ],
+      "muestra": "2"
+    },
+    "dir": {
+      "n": 15,
+      "paginas": 6,
+      "etiquetas": [
+        "h4",
+        "li",
+        "p",
+        "span"
+      ],
+      "muestra": "ltr"
+    },
+    "data-element_type": {
+      "n": 15,
+      "paginas": 2,
+      "etiquetas": [
+        "div",
+        "section"
+      ],
+      "muestra": "section"
+    },
+    "colspan": {
+      "n": 13,
+      "paginas": 9,
+      "etiquetas": [
+        "td",
+        "th"
+      ],
+      "muestra": "3"
+    },
+    "data-mce-type": {
+      "n": 13,
+      "paginas": 9,
+      "etiquetas": [
+        "span"
+      ],
+      "muestra": "bookmark"
+    },
+    "scrolling": {
+      "n": 13,
+      "paginas": 12,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "no"
+    },
+    "allow": {
+      "n": 13,
+      "paginas": 11,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    },
+    "type": {
+      "n": 12,
+      "paginas": 12,
+      "etiquetas": [
+        "embed",
+        "source"
+      ],
+      "muestra": "video/mp4"
+    },
+    "border": {
+      "n": 12,
+      "paginas": 10,
+      "etiquetas": [
+        "table"
+      ],
+      "muestra": "1"
+    },
+    "data-label": {
+      "n": 12,
+      "paginas": 1,
+      "etiquetas": [
+        "td"
+      ],
+      "muestra": "Contaminante"
+    },
+    "controls": {
+      "n": 11,
+      "paginas": 11,
+      "etiquetas": [
+        "video"
+      ],
+      "muestra": "controls"
+    },
+    "cellpadding": {
+      "n": 9,
+      "paginas": 8,
+      "etiquetas": [
+        "table"
+      ],
+      "muestra": "2"
+    },
+    "data-pm-slice": {
+      "n": 9,
+      "paginas": 3,
+      "etiquetas": [
+        "h3",
+        "li",
+        "p"
+      ],
+      "muestra": "1 1 []"
+    },
+    "referrerpolicy": {
+      "n": 8,
+      "paginas": 7,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "strict-origin-when-cross-origin"
+    },
+    "cellspacing": {
+      "n": 8,
+      "paginas": 7,
+      "etiquetas": [
+        "table"
+      ],
+      "muestra": "0"
+    },
+    "data-sort-value": {
+      "n": 8,
+      "paginas": 1,
+      "etiquetas": [
+        "td"
+      ],
+      "muestra": ""
+    },
+    "preload": {
+      "n": 7,
+      "paginas": 7,
+      "etiquetas": [
+        "video"
+      ],
+      "muestra": "auto"
+    },
+    "data-placeholder": {
+      "n": 7,
+      "paginas": 1,
+      "etiquetas": [
+        "h4",
+        "p"
+      ],
+      "muestra": "Translation"
+    },
+    "loading": {
+      "n": 7,
+      "paginas": 1,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "eager"
+    },
+    "data-src": {
+      "n": 6,
+      "paginas": 4,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "visualisation/15668216?708637"
+    },
+    "align": {
+      "n": 5,
+      "paginas": 4,
+      "etiquetas": [
+        "div",
+        "iframe"
+      ],
+      "muestra": "center"
+    },
+    "aria-description": {
+      "n": 5,
+      "paginas": 2,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": ""
+    },
+    "sandbox": {
+      "n": 5,
+      "paginas": 4,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-naviga"
+    },
+    "data-spread": {
+      "n": 5,
+      "paginas": 2,
+      "etiquetas": [
+        "ul"
+      ],
+      "muestra": "false"
+    },
+    "aria-describedby": {
+      "n": 4,
+      "paginas": 3,
+      "etiquetas": [
+        "div",
+        "img"
+      ],
+      "muestra": "data-wrapper-9v8aa4p7y-desc"
+    },
+    "data-mce-fragment": {
+      "n": 3,
+      "paginas": 3,
+      "etiquetas": [
+        "iframe"
+      ],
+      "muestra": "1"
+    },
+    "loop": {
+      "n": 2,
+      "paginas": 2,
+      "etiquetas": [
+        "video"
+      ],
+      "muestra": null
+    },
+    "autoplay": {
+      "n": 2,
+      "paginas": 2,
+      "etiquetas": [
+        "video"
+      ],
+      "muestra": null
+    },
+    "muted": {
+      "n": 2,
+      "paginas": 2,
+      "etiquetas": [
+        "video"
+      ],
+      "muestra": null
+    },
+    "data-citationid": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "483b839a-9da2-039d-e1c3-68634b4450ed-25-group"
+    },
+    "data-widget_type": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "heading.default"
+    },
+    "data-gtm-vis-recent-on-screen-31374389_64": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "4181"
+    },
+    "data-gtm-vis-first-on-screen-31374389_64": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "4181"
+    },
+    "data-gtm-vis-total-visible-time-31374389_64": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "100"
+    },
+    "data-gtm-vis-has-fired-31374389_64": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "1"
+    },
+    "data-gtm-vis-recent-on-screen-31374389_66": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "4185"
+    },
+    "data-gtm-vis-first-on-screen-31374389_66": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "4185"
+    },
+    "data-gtm-vis-total-visible-time-31374389_66": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "100"
+    },
+    "data-gtm-vis-has-fired-31374389_66": {
+      "n": 2,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "1"
+    },
+    "data-is-last-node": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "p"
+      ],
+      "muestra": ""
+    },
+    "data-is-only-node": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "p"
+      ],
+      "muestra": ""
+    },
+    "data-rtid": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "div"
+      ],
+      "muestra": "iDathXRBh9UM"
+    },
+    "data-cfemail": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "span"
+      ],
+      "muestra": "fc8f898c8c938e88bc9789929d97d2998f"
+    },
+    "data-elementor-open-lightbox": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": ""
+    },
+    "data-wp-editing": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "1"
+    },
+    "data-lazy-src": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "https://wpwma.ca.gov/wp-content/uploads/2023/10/DSC_9472-1-scaled.jpg"
+    },
+    "data-ll-status": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "img"
+      ],
+      "muestra": "loaded"
+    },
+    "data-instgrm-permalink": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "blockquote"
+      ],
+      "muestra": "https://www.instagram.com/p/CD4N_jSgVMO/?utm_source=ig_embed&amp;utm_campaign=loading"
+    },
+    "data-instgrm-version": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "blockquote"
+      ],
+      "muestra": "14"
+    },
+    "start": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "ol"
+      ],
+      "muestra": "2"
+    },
+    "download": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "a"
+      ],
+      "muestra": "Caso de éxito - Proyecto SmartKalea Donostia - San Sebastián"
+    },
+    "data-sheets-root": {
+      "n": 1,
+      "paginas": 1,
+      "etiquetas": [
+        "span"
+      ],
+      "muestra": "1"
+    }
+  }
+}

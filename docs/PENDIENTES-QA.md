@@ -1,5 +1,42 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ CAMPO-RICO-ATRIBUTOS · el contrato ya censa ATRIBUTOS, y el ESCALÓN no dispara (2026-08-13, PASO 6)
+
+> **`validaHtmlCorpus` censaba etiquetas y hosts, y nada más.** Lo destapó
+> §DATOS-DOM-AJENO: el `<article>` de ChatGPT saltó por la etiqueta y sus
+> `data-start`/`data-end` **pasaron en silencio en 10 páginas**. No era un defecto
+> del saneador: era su ALCANCE, y no estaba escrito.
+
+**El censo primero, la regla después** — `qa:atributos-censo` sobre **291 páginas
+· 47 524 aperturas de etiqueta** (grupo A + grupo C + `articulos-kb`):
+
+| familia | apariciones | páginas | decisión |
+|---|---:|---:|---|
+| **`on*`** (manejadores) | **0** | 0 | rechazado — no cuesta nada |
+| **`javascript:`** en `href`/`src` | **0** | 0 | rechazado |
+| **`data:`** en `href`/`src` | **0** | 0 | rechazado |
+| **`srcdoc`** | **0** | 0 | rechazado |
+| `style` | **3722** | 194 | **admitido**: es CSS del editor, prohibirlo perdería contenido en 2/3 del corpus |
+| `data-*` ajeno | 142 | 10 | admitido con su nombre (§DATOS-DOM-AJENO sigue abierta) |
+
+**Por eso el ESCALÓN 3 no dispara:** las cuatro familias que de verdad son
+superficie salen a **CERO en el corpus**, así que **rechazar no cuesta un byte de
+contenido servido**. La whitelist son los **81** atributos medidos, exactos y no
+por patrón —un `data-*` comodín admitiría cualquier cosa, que es lo contrario de
+censar—, con el mismo procedimiento de alta que `HOSTS_PERMITIDOS`.
+
+**Probado por los dos lados** (`qa:saneador-neg` 10/10): `onclick` y `onerror`
+salen **rechazados nombrándolos**; un HTML con 12 atributos del censo **pasa**; y
+un `<script onerror>` cae por §3.3·T4 y no por el atributo — el orden de los
+mensajes es parte del contrato. El CONTROL son los 209 cuerpos reales.
+
+⚠ **Y la guarda cazó un atributo legítimo que yo había perdido: `loading`.** La
+lista salió con 80 porque leí la congelada **anterior** a incluir `articulos-kb`
+—`w()` no pisa una congelada, así que la buena se fue a un nombre fechado— y el
+seed de KB murió en el 4.º documento. La protección de congeladas funcionando y
+su lectura mal hecha. Queda cerrado con una guarda de **sincronía código↔censo**
+en el negativo, en los dos sentidos.
+
 ## ✅ DATOS-MEDIA-CIFRAS · los dos números del hotlink, ATADOS — y manda el DATO (2026-08-13, PASO 4)
 
 > **3688 y 1820/1268 nunca estuvieron en conflicto: medían objetos distintos.**

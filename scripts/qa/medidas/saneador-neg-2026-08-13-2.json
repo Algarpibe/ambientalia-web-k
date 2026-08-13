@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "control": "209 cuerpos de corpus/transformado"
+  },
+  "casos": [
+    {
+      "caso": "etiqueta-fuera",
+      "veredicto": "§3.1: etiqueta(s) fuera del censo de 43 — <canvas>. Lo que no está en el censo no entra; si es legítima, se admite AÑADIÉNDOLA al censo con ",
+      "mal": null
+    },
+    {
+      "caso": "host-fuera",
+      "veredicto": "§3.3b: host(s) de iframe fuera de la allowlist firmada — intruso.example.com. Un host nuevo entra por el procedimiento de alta (HOSTS_PERMIT",
+      "mal": null
+    },
+    {
+      "caso": "host-fuera-data-src",
+      "veredicto": "§3.3b: host(s) de iframe fuera de la allowlist firmada — otro-intruso.example.org. Un host nuevo entra por el procedimiento de alta (HOSTS_P",
+      "mal": null
+    },
+    {
+      "caso": "script",
+      "veredicto": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+      "mal": null
+    },
+    {
+      "caso": "host-con-www",
+      "veredicto": true,
+      "mal": null
+    },
+    {
+      "caso": "atributo-onclick",
+      "veredicto": "§3.1-atributos: atributo(s) fuera del censo de 81 — onclick. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO `j",
+      "mal": null
+    },
+    {
+      "caso": "atributo-onerror-en-img",
+      "veredicto": "§3.1-atributos: atributo(s) fuera del censo de 81 — onerror. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO `j",
+      "mal": null
+    },
+    {
+      "caso": "atributo-legitimo-pasa",
+      "veredicto": true,
+      "mal": null
+    },
+    {
+      "caso": "script-gana-al-atributo",
+      "veredicto": "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).",
+      "mal": null
+    }
+  ],
+  "control": {
+    "cuerpos": 209,
+    "rechazados": 0
+  }
+}
