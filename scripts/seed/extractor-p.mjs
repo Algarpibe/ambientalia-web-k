@@ -38,7 +38,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { cargaCatalogos } from "./catalogos.mjs";
+import { cargaExportados } from "./catalogos.mjs";
 import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
 
 process.env.SIN_CLON = "1";
@@ -291,8 +291,13 @@ const sinSeo = filas.filter((f) => f._meta.pagina === "propia" && !f.seo).map((f
  * EL CONTROL — los 9 transcritos a mano, campo a campo
  * ═════════════════════════════════════════════════════════════════════════ */
 
-const catalogos = await cargaCatalogos();
-const aMano = new Map((catalogos.get("productos") ?? []).map((p) => [p.id, p]));
+/* ⚠ **El control se lee de SU FICHERO, no del catálogo activo.** Desde que
+ *  cambió de fuente a , pasar por
+ *  compararía la salida de este extractor CONSIGO MISMA — un
+ * control que no puede fallar, que es la peor forma de pasar. */
+const aMano = new Map(
+  (await cargaExportados("src/lib/products.ts", ["PRODUCTS_TABS", "PRODUCTS_CARTUCHOS"])).map((p) => [p.id, p]),
+);
 const extraidoPorId = new Map(filas.map((f) => [f.id, f]));
 
 /**

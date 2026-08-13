@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "CMS-PR3: el condicional `pagina` → {seo.title, hrefServido} verificado contra Payload, en las dos direcciones",
+    "porQue": "un condicional con un solo lado no está probado: el esquema que acepta el dato de MÁS pasa igual, y ése es el que deja entrar un documento que miente sobre si tiene página",
+    "sabotaje": null,
+    "noMide": [
+      "no siembra",
+      "no deja documentos",
+      "no mide píxel"
+    ]
+  },
+  "cuadrantes": [
+    {
+      "id": "propia · CON seo.title",
+      "campo": "seo.title",
+      "direccion": "obligatorio presente",
+      "esperado": "entra",
+      "obtenido": "entra",
+      "ok": true,
+      "error": null
+    },
+    {
+      "id": "propia · SIN seo.title",
+      "campo": "seo.title",
+      "direccion": "obligatorio AUSENTE ⇒ muere",
+      "esperado": "rechazado",
+      "obtenido": "rechazado",
+      "ok": true,
+      "error": "The following field is invalid: Seo > Title"
+    },
+    {
+      "id": "ninguna · SIN seo.title, CON hrefServido",
+      "campo": "hrefServido",
+      "direccion": "obligatorio presente",
+      "esperado": "entra",
+      "obtenido": "entra",
+      "ok": true,
+      "error": null
+    },
+    {
+      "id": "ninguna · CON seo.title (sobra)",
+      "campo": "seo.title",
+      "direccion": "PROHIBIDO presente ⇒ muere",
+      "esperado": "rechazado",
+      "saltaSi": "un-solo-lado",
+      "obtenido": "rechazado",
+      "ok": true,
+      "error": "The following field is invalid: Seo > Title"
+    },
+    {
+      "id": "propia · CON hrefServido (sobra)",
+      "campo": "hrefServido",
+      "direccion": "PROHIBIDO presente ⇒ muere",
+      "esperado": "rechazado",
+      "saltaSi": "un-solo-lado",
+      "obtenido": "rechazado",
+      "ok": true,
+      "error": "The following field is invalid: Href Servido"
+    },
+    {
+      "id": "SIN pagina (el discriminador)",
+      "campo": "pagina",
+      "direccion": "required SIN defecto ⇒ muere",
+      "esperado": "rechazado",
+      "obtenido": "rechazado",
+      "ok": true,
+      "error": "The following field is invalid: Pagina"
+    }
+  ]
+}

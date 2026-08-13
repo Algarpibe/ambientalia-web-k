@@ -13,6 +13,7 @@ import * as migration_20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos f
 import * as migration_20260810_140630_f3_kb_reticula_filas_columnas from './20260810_140630_f3_kb_reticula_filas_columnas';
 import * as migration_20260810_164348_f3_kb_piel_titular from './20260810_164348_f3_kb_piel_titular';
 import * as migration_20260810_171434_f3_kb_piel_blurb from './20260810_171434_f3_kb_piel_blurb';
+import * as migration_20260813_140606_f3_pr3_documento_sin_pagina from './20260813_140606_f3_pr3_documento_sin_pagina';
 
 export const migrations = [
   {
@@ -88,6 +89,11 @@ export const migrations = [
   {
     up: migration_20260810_171434_f3_kb_piel_blurb.up,
     down: migration_20260810_171434_f3_kb_piel_blurb.down,
-    name: '20260810_171434_f3_kb_piel_blurb'
+    name: '20260810_171434_f3_kb_piel_blurb',
+  },
+  {
+    up: migration_20260813_140606_f3_pr3_documento_sin_pagina.up,
+    down: migration_20260813_140606_f3_pr3_documento_sin_pagina.down,
+    name: '20260813_140606_f3_pr3_documento_sin_pagina'
   },
 ];

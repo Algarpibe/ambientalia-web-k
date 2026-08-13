@@ -192,7 +192,9 @@
     "cms:extractor-p-neg": "node scripts/seed/extractor-p.neg.mjs",
     "qa:dom-ajeno": "node scripts/qa/dom-ajeno.mjs",
     "qa:productos-hueco": "node scripts/qa/productos-hueco.mjs",
-    "qa:productos-hueco-neg": "node scripts/qa/productos-hueco.neg.mjs"
+    "qa:productos-hueco-neg": "node scripts/qa/productos-hueco.neg.mjs",
+    "qa:pagina-propia": "node --env-file=apps/cms/.env scripts/qa/pagina-propia.mjs",
+    "qa:pagina-propia-neg": "node --env-file=apps/cms/.env scripts/qa/pagina-propia.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

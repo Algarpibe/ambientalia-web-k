@@ -53,12 +53,46 @@ import { APP, QA } from "../qa/lib.mjs";
  * después). Queda escrito aquí para que esa tanda no lo redescubra.
  */
 export const CATALOGOS = [
+  /* ✅ **`productos` CAMBIA DE FUENTE (2026-08-13, tanda de DESBLOQUEO, PASO 2):
+   * de la transcripción a mano (9) al catálogo EXTRAÍDO del corpus (19).**
+   *
+   * §2e dice que es **UNA** colección; lo que partía los datos en dos arrays era
+   * el clon, por dónde los pinta (pestañas de la home vs fichas de cartucho).
+   * `cms:extractor-p` los deriva del PANEL servido y devuelve una sola lista.
+   *
+   * Su precondición era §DATOS-C-SOLUCIONES, y lo que la cerró fue **repartirla**:
+   * de los 19 slugs que los 57 casos referencian, 9 estaban modelados, 7 son URLs
+   * del CPT sin modelar y **3 son documentos en inglés SIN PÁGINA PROPIA**
+   * (CMS-PR3). Los **8 productos del CPT que ningún caso referencia** NO entran:
+   * el corpus no sirve su ficha en ninguna página, así que su dato no existe
+   * todavía — necesitan PÁGINA, y eso es §F3-COLA-DESTINOS.
+   *
+   * `src/lib/products.ts` **no se borra**: se queda como los TIPOS, como
+   * `PRODUCTOS_HOME_IDS` (que es ESTRUCTURA: qué lista la home y en qué orden) y
+   * como el **CONTROL** del extractor — 72 comparaciones sobre 9 productos, que
+   * es lo que autoriza a fiarse de los 10 que nadie transcribió a mano.
+   *
+   * ⛔ **Y NO CAMBIA TODAVÍA, por una precondición de MEDIA — 5 ficheros.**
+   * Con `json: "medidas/p-extraido.json", en: "catalogo.productos"` el seed muere
+   * en `MEDIA AUSENTE`: las fotos de panel de 5 de los 10 productos nuevos no
+   * están **ni en `apps/web/public` ni en `media-corpus`**, y la guarda tiene
+   * razón —*un alta de media vacía convertiría «falta el fichero» en «la imagen
+   * es opcional»*—. Derivado, no supuesto: 8 en public · 6 sin foto en el
+   * original (dato, no hueco) · **5 ausentes**:
+   *
+   *   `2023/02/Sulphur-dioxide.jpg` · `2023/01/Carbon_dioxide-1.jpg` ·
+   *   `2023/02/Nitreogen_dioxide.jpg` · `2023/03/CH4.jpg` ·
+   *   `2023/01/Nitric_oxide_cartucho.jpg`
+   *
+   * Es §COMPLETITUD por quinta vez —*capturar las páginas no es capturar sus
+   * assets*— y capturarlas exige RED, que esta tanda tiene vedada por encargo.
+   * **Se sigue el precedente de `casos`**: la fuente no se cambia hasta que la
+   * precondición se cumple, para que `cms:seed` siga entero. Ficha:
+   * `PENDIENTES-QA.md` §DATOS-P-MEDIA. */
   {
     coleccion: "productos",
     modulo: "src/lib/products.ts",
     exportado: ["PRODUCTS_TABS", "PRODUCTS_CARTUCHOS"],
-    /* §2e: **UNA** colección. Los dos arrays son la misma, partidos en el clon
-     * por dónde se pintan (pestañas de la home vs fichas de cartucho). */
   },
   { coleccion: "sectores", modulo: "src/lib/sectores.ts", exportado: "SECTORES_PUBLICADOS" },
   { coleccion: "monograficos", modulo: "src/lib/monografico.ts", exportado: "MONOGRAFICOS_PUBLICADOS" },
@@ -173,17 +207,45 @@ export const TAXONOMIAS_DERIVADAS = [
 
 let cache = null;
 
-/** Empaqueta e importa. Una sola pasada para todos los catálogos. */
-export async function cargaCatalogos() {
-  if (cache) return cache;
+/**
+ * Empaqueta e importa un módulo de `apps/web/src/lib` y devuelve los `export`
+ * pedidos, concatenados.
+ *
+ * ⚠ **Existe para romper un CICLO, y el ciclo fabricaba un verde.** El CONTROL
+ * de `cms:extractor-p` son los 9 productos transcritos a mano en
+ * `src/lib/products.ts`; los leía por `cargaCatalogos()`, y en cuanto
+ * `productos` cambió de fuente a `medidas/p-extraido.json` **el control pasó a
+ * comparar la salida del extractor consigo misma**. Un control así no puede
+ * fallar nunca, que es la peor forma de pasar: §sondas 4 —no encontrar nada y no
+ * mirar nada dan la misma salida— aplicada al instrumento que autoriza el cambio
+ * de fuente.
+ *
+ * De aquí en adelante: **un control se lee de su fichero, nunca del catálogo
+ * activo** — porque el catálogo activo es justo lo que el control juzga.
+ */
+export async function cargaExportados(modulo, nombres) {
+  const bundle = await empaqueta([modulo]);
+  const m = bundle.get(modulo);
+  const filas = [];
+  for (const n of Array.isArray(nombres) ? nombres : [nombres]) {
+    const v = m?.[n];
+    if (!Array.isArray(v))
+      throw new Error(
+        `CATÁLOGO AUSENTE: ${modulo} no exporta '${n}' como array (es ${typeof v}).\n` +
+          `  Eso NO es «no hay control»: es un export equivocado, y su \`undefined\` se\n` +
+          `  estaba a punto de leer como «el control no encontró discrepancias».`,
+      );
+    filas.push(...v);
+  }
+  return filas;
+}
+
+/** El empaquetado compartido: un `esbuild` y un `import()` por lista de módulos. */
+async function empaqueta(modulos) {
   const tmp = path.join(QA, ".tmp");
   fs.mkdirSync(tmp, { recursive: true });
-
-  const modulos = [...new Set(CATALOGOS.filter((c) => c.modulo).map((c) => c.modulo))];
-  /* Un punto de entrada sintético que reexporta todo: una sola invocación de
-   * esbuild y un solo `import()`, así que no puede haber dos versiones del
-   * mismo módulo en memoria. */
-  const entrada = path.join(tmp, "catalogos-entrada.ts");
+  const sufijo = modulos.length === 1 ? `-${modulos[0].replace(/\W+/g, "_")}` : "";
+  const entrada = path.join(tmp, `catalogos-entrada${sufijo}.ts`);
   fs.writeFileSync(
     entrada,
     modulos
@@ -193,8 +255,7 @@ export async function cargaCatalogos() {
       .join("\n"),
     "utf8",
   );
-
-  const bundle = path.join(tmp, "catalogos.mjs");
+  const bundle = path.join(tmp, `catalogos${sufijo}.mjs`);
   await esbuild.build({
     entryPoints: [entrada],
     outfile: bundle,
@@ -205,9 +266,19 @@ export async function cargaCatalogos() {
     logLevel: "silent",
     tsconfig: path.join(APP, "tsconfig.json"), // el alias `@/…` sale de aquí
   });
-
   const mod = await import(`${pathToFileURL(bundle).href}?t=${Date.now()}`);
-  const porModulo = new Map(modulos.map((m, i) => [m, mod[`m${i}`]]));
+  return new Map(modulos.map((m, i) => [m, mod[`m${i}`]]));
+}
+
+/** Empaqueta e importa. Una sola pasada para todos los catálogos. */
+export async function cargaCatalogos() {
+  if (cache) return cache;
+
+  const modulos = [...new Set(CATALOGOS.filter((c) => c.modulo).map((c) => c.modulo))];
+  /* Un punto de entrada sintético que reexporta todo: una sola invocación de
+   * esbuild y un solo `import()`, así que no puede haber dos versiones del
+   * mismo módulo en memoria. */
+  const porModulo = await empaqueta(modulos);
 
   const salida = new Map();
   for (const c of CATALOGOS) {
