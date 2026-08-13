@@ -4,7 +4,7 @@
     "que": "el catálogo de CASOS y FAQS extraído del corpus congelado, con T1–T8 por región",
     "fuente": "corpus/{casos,faqs} (metadatos y regiones) + TRANSFORMACIONES (las mismas 10 del grupo A)",
     "control": "82 comparaciones sobre 6 documentos transcritos a mano",
-    "sabotaje": null,
+    "sabotaje": "t9-sin-discriminador",
     "alcance": {
       "controlCasos": "4 de 57",
       "controlFaqs": "2 de 19",
@@ -28,7 +28,7 @@
     "t3": 4,
     "t3b": 1,
     "t4b": 0,
-    "t9": 9,
+    "t9": 10,
     "t4": 0,
     "t5": 2,
     "t6": 0,
@@ -3143,7 +3143,7 @@
           "usuario": "Ayuntamiento de Castel D’Ario",
           "ubicacion": "Castel D’Ario, Italia",
           "anyo": "2025",
-          "parametros": "\n\n\n\n\n\n\n\n\n<ul>\n<li data-start=\"0\" data-end=\"132\">NO<sub>2</sub> (dióxido de nitrógeno) y NO (óxido nítrico)</li>\n<li data-start=\"0\" data-end=\"132\">Partículas PM<sub>10</sub>, PM<sub>2,5</sub> y PM<sub>1</sub></li>\n<li data-start=\"0\" data-end=\"132\">Temperatura, humedad relativa y presión atmosférica</li>\n</ul>\n\n\n\n\n\n\n\n\n"
+          "parametros": "<p>canario con render</p>\n\n\n\n\n\n\n\n\n<ul>\n<li data-start=\"0\" data-end=\"132\">NO<sub>2</sub> (dióxido de nitrógeno) y NO (óxido nítrico)</li>\n<li data-start=\"0\" data-end=\"132\">Partículas PM<sub>10</sub>, PM<sub>2,5</sub> y PM<sub>1</sub></li>\n<li data-start=\"0\" data-end=\"132\">Temperatura, humedad relativa y presión atmosférica</li>\n</ul>\n\n\n\n\n\n\n\n\n"
         },
         "prefijo": "case-studies",
         "sectores": [

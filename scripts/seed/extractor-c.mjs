@@ -59,7 +59,7 @@ gritaSiRevienta();
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus");
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["selector-muerto", "control-roto", "region-ausente", "saneador", "destacado-dentro"];
+const VALIDOS = ["selector-muerto", "control-roto", "region-ausente", "saneador", "destacado-dentro", "t9-sin-discriminador"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -107,6 +107,28 @@ const cuenta = (id, v) => {
 
 const sinScriptNiStyle = (html) =>
   html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");
+
+/**
+ * Las clases que el documento SIRVE con estilo — el discriminador de T9.
+ *
+ * ⚠ **Se lee del `<style>`, que es el único canal donde Divi lo pone.** §*Divi
+ * no escribe marcado: COMPILA CSS, y lo sirve en el mismo `<style>`*. Mirar
+ * atributos y clases del marcado para saber si algo tiene estilo es medir el
+ * canal equivocado — es el error de `qa:kb-tipografia`, que censó diez ejes y
+ * ninguno era CSS.
+ *
+ * ⛔ **Y su límite, declarado:** las hojas ENLAZADAS (plugins · `et-cache` ·
+ * tema) **no están en el corpus**, así que este conjunto es *«las clases con
+ * regla en el CSS EN LÍNEA»*, no *«todas las que tienen estilo»*. T9 lo usa como
+ * condición NECESARIA para desenvolver, o sea que el sesgo va hacia **no**
+ * desenvolver de más — que es la dirección segura.
+ */
+function clasesConEstiloDe(crudo) {
+  const css = [...crudo.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)].map((m) => m[1]).join("\n");
+  const s = new Set();
+  for (const m of css.matchAll(/\.(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)/g)) s.add(m[1]);
+  return s;
+}
 
 const deco = (s) =>
   s === null || s === undefined
@@ -159,8 +181,16 @@ const SEL = {
  * `SIN CLASIFICAR` en 3 de las 12 discrepancias, y la ficha lo tenía metido en
  * el cubo de «combinaciones de las anteriores». Un cubo que absorbe una clase
  * entera.
+ *
+ * ⚠ **Y el recorte llega SIN el `</div>` de cierre, que es lo que hace que la
+ * primera versión de este arreglo no mordiera.** `SEL.necesidad` es no greedy
+ * hasta `</div>\s*</div>`, y ese primer `</div>` **es el del propio
+ * `texto-destacado`** — así que el grupo capturado termina en el texto, con el
+ * `<div>` abierto y sin cerrar. Un patrón que exija el cierre no casa nunca y
+ * devuelve **cero sin dar error**, que es §sondas 4 otra vez: `destacadoExtraido`
+ * salió `[]` y las 3 discrepancias siguieron ahí.
  */
-const SIN_DESTACADO = /\s*<div class="texto-destacado">[\s\S]*?<\/div>\s*$/;
+const SIN_DESTACADO = /\s*<div class="texto-destacado">[\s\S]*$/;
 
 /**
  * `imagenCabecera` — el ÚNICO lector que mira el `<style>`, y a propósito: Divi
@@ -236,12 +266,41 @@ const rechazosSaneador = [];
 const noLocalizadas = [];
 const relHuerfano = [];
 
+/**
+ * ⚠ **EL NEGATIVO DE T9, y sin él T9 no está probada.**
+ *
+ * T9 desenvuelve contenedores de transporte, y lo único que la separa de un
+ * `replace` de `<div>` es su **discriminador**: *«no aporta estilo servido»*.
+ * Así que el sabotaje ataca **el discriminador**, no la transformación:
+ *
+ * · inyecta dentro de la raíz ajena un envoltorio **que SÍ tiene render** —
+ *   una clase con regla en el CSS que el documento sirve—;
+ * · y **ciega** `clasesConEstilo` (conjunto vacío), que es exactamente «no
+ *   saber cuál tiene estilo».
+ *
+ * Con el discriminador ciego, T9 se lleva el envoltorio con render y la guarda
+ * de abajo lo caza. **Si el sabotaje no cambiara el resultado, no habría
+ * probado nada** (§sondas 8a) — y aquí cambiarlo es la prueba de que la
+ * condición 2 de T9 está haciendo trabajo, no adornando la cabecera.
+ */
+const CANARIO_CLASE = "et_pb_text";
+const CANARIO = `<div class="${CANARIO_CLASE}"><p>canario con render</p></div>`;
+const canarioComido = [];
+
 /** Aplica el pipeline a UNA región y devuelve su HTML transformado. */
-function transforma(html, clave, campo) {
+function transforma(html, clave, campo, clasesConEstilo) {
   if (html === null || html === undefined) return html;
+  let entrada = html;
+  const ciego = SABOTAJE === "t9-sin-discriminador";
+  if (ciego && /data-testid="conversation-turn|class="[^"]*\bprose\b/.test(html)) {
+    /* El canario va DENTRO de la raíz ajena, que es donde T9 actúa. */
+    entrada = html.replace(/(<article\b[^>]*>)/i, `$1${CANARIO}`);
+  }
   const ctx = {
     pagina: `${clave}#${campo}`,
     rutas,
+    clasesConEstilo: ciego ? new Set() : clasesConEstilo,
+    transporteDesenvuelto,
     scriptsQuitados: [],
     mediaDelCuerpo: [],
     sinLlaveT3b: [],
@@ -250,13 +309,17 @@ function transforma(html, clave, campo) {
     noLocalizadas,
     relHuerfano,
   };
-  let out = html;
+  let out = entrada;
   for (const t of TRANSFORMACIONES) {
     const r = t.aplica(out, ctx);
     out = r.html;
     porT[t.id].aplicadas += r.n;
     for (const v of t.post(out, ctx)) porT[t.id].violaciones.push(`${clave}.${campo}: ${v}`);
   }
+  /* La guarda del canario: si se inyectó, TIENE que seguir ahí. Un envoltorio
+   * con render no es transporte, y T9 no puede llevárselo. */
+  if (entrada !== html && !out.includes(`class="${CANARIO_CLASE}"`))
+    canarioComido.push(`${clave}.${campo}`);
   /* El contrato del alta, con el MISMO código que el `validate`. El sabotaje
    * `saneador` mete un `<script>` DESPUÉS de T4 para que tenga que morder. */
   const conSabotaje = SABOTAJE === "saneador" ? `${out}<script>alert(1)</script>` : out;
@@ -276,12 +339,15 @@ const salida = { casos: [], faqs: [] };
 const sinRegion = [];
 /** Las regiones de las que hubo que sacar un `texto-destacado` anidado. */
 const destacadoExtraido = [];
+/** T9 · qué contenedores de transporte ajeno se desenvolvieron, y de dónde. */
+const transporteDesenvuelto = [];
 
 for (const [clave, p] of trabajo) {
   const col = clave.split("/")[0];
   const slug = clave.slice(col.length + 1);
   const crudo = readFileSync(join(CORPUS, p.fichero), "utf8");
   const sin = sinScriptNiStyle(crudo);
+  const clasesConEstilo = clasesConEstiloDe(crudo);
 
   const seo = {
     title: cuenta("seo.title", deco(uno(crudo, /<title>([\s\S]*?)<\/title>/))),
@@ -302,7 +368,7 @@ for (const [clave, p] of trabajo) {
       slug,
       seo: { title: seo.title },
       titulo: cuenta("faq.titulo", textoPlano(uno(art, titRe))),
-      cuerpo: transforma(cuerpo, clave, "cuerpo"),
+      cuerpo: transforma(cuerpo, clave, "cuerpo", clasesConEstilo),
     });
     ev.ok();
     continue;
@@ -335,9 +401,9 @@ for (const [clave, p] of trabajo) {
     titulo: cuenta("caso.titulo", textoPlano(uno(ambito, titRe))),
     imagenCabecera: cuenta("caso.imagenCabecera", imagenCabeceraDe(crudo)),
     cliente: cuenta("caso.cliente", textoPlano(uno(ambito, SEL.cliente))),
-    necesidad: transforma(regiones.necesidad, clave, "necesidad"),
-    solucion: transforma(regiones.solucion, clave, "solucion"),
-    resultados: transforma(regiones.resultados, clave, "resultados"),
+    necesidad: transforma(regiones.necesidad, clave, "necesidad", clasesConEstilo),
+    solucion: transforma(regiones.solucion, clave, "solucion", clasesConEstilo),
+    resultados: transforma(regiones.resultados, clave, "resultados", clasesConEstilo),
     detalles: {
       usuario: cuenta("caso.detalles.usuario", det.usuario ?? ""),
       ubicacion: cuenta("caso.detalles.ubicacion", det.ubicacion ?? ""),
@@ -350,12 +416,12 @@ for (const [clave, p] of trabajo) {
   if (sectores.length) doc.sectores = sectores;
 
   const destacado = uno(ambito, SEL.destacado)?.trim() ?? null;
-  if (destacado !== null) doc.destacado = transforma(cuenta("caso.destacado", destacado), clave, "destacado");
+  if (destacado !== null) doc.destacado = transforma(cuenta("caso.destacado", destacado), clave, "destacado", clasesConEstilo);
 
   const galeria = cuenta("caso.galeria", galeriaDe(ambito));
   if (galeria.length) doc.galeria = galeria;
 
-  if (det.parametros) doc.detalles.parametros = transforma(cuenta("caso.detalles.parametros", det.parametros), clave, "parametros");
+  if (det.parametros) doc.detalles.parametros = transforma(cuenta("caso.detalles.parametros", det.parametros), clave, "parametros", clasesConEstilo);
   if (mapa) doc.ubicacionMapa = cuenta("caso.ubicacionMapa", { lat: Number(mapa[1]), lng: Number(mapa[2]) });
 
   const soluciones = cuenta("caso.soluciones", solucionesDe(ambito));
@@ -561,7 +627,17 @@ w("medidas/c-extraido.json", {
   catalogo: salida,
 });
 
-const rojo = control.length > 0 || muertos > 0 || sinRegion.length > 0 || rechazosSaneador.length > 0 || violaciones > 0;
+if (canarioComido.length)
+  console.error(
+    `\n❌ T9 SE LLEVÓ UN ENVOLTORIO CON RENDER en ${canarioComido.length} región(es):\n` +
+      `     ${canarioComido.join(" · ")}\n` +
+      `     Un contenedor cuya clase TIENE regla en el CSS servido no es transporte.\n` +
+      `     Es exactamente lo que el discriminador de T9 tiene que impedir.`,
+  );
+
+const rojo =
+  control.length > 0 || muertos > 0 || sinRegion.length > 0 || rechazosSaneador.length > 0 ||
+  violaciones > 0 || canarioComido.length > 0;
 console.log(
   `\n${rojo ? "❌" : "✅"} extractor-c: ${salida.casos.length} casos · ${salida.faqs.length} faqs · ` +
     `${control.length} discrepancia(s) · ${muertos} lector(es) muerto(s) · ${sinRegion.length} sin región · ` +

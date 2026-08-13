@@ -49,6 +49,7 @@
       "t3-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3a · `wp-image-<id>` y `aligncenter` se descartan (T3b, wp-caption→rela",
       "t3b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` (la rela",
       "t4b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al PDF con ",
+      "t9-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) se desen",
       "t4-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustitución, nece",
       "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
       "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",

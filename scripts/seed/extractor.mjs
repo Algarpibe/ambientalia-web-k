@@ -100,6 +100,28 @@ for (const r of Object.keys(JSON.parse(readFileSync(manifest, "utf8")).routes ??
 const sinScriptNiStyle = (html) =>
   html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");
 
+/**
+ * Las clases con regla en el CSS que el documento SIRVE — el discriminador de T9.
+ *
+ * ⚠ **Sin esto T9 se pasa de largo, y en la dirección peor.** `esTransporte`
+ * pregunta *«¿ninguna de sus clases tiene estilo servido?»*, y con el conjunto
+ * `undefined` la respuesta es **sí para todas** — o sea que cualquier
+ * contenedor dentro de una raíz ajena se desenvolvería. Es §regla 6 en su forma
+ * exacta: una ausencia traducida a un valor benigno, en el sitio donde todavía
+ * se sabía. Aquí el valor benigno **borra marcado**.
+ *
+ * Misma definición que en `extractor-c.mjs` — y misma limitación declarada: las
+ * hojas ENLAZADAS no están en el corpus, así que esto es *«con regla en el CSS
+ * EN LÍNEA»*. Como T9 lo usa como condición NECESARIA, el sesgo va hacia **no**
+ * desenvolver, que es la dirección segura.
+ */
+const clasesConEstiloDe = (crudo) => {
+  const css = [...crudo.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)].map((m) => m[1]).join("\n");
+  const s = new Set();
+  for (const m of css.matchAll(/\.(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)/g)) s.add(m[1]);
+  return s;
+};
+
 console.log(`\n════════ EXTRACTOR · ${trabajo.length} cuerpos del grupo A · T1–T8 ════════`);
 console.log(`  fuera de esta extracción (capturadas, builder): ${FUERA.join(" · ")}\n`);
 
@@ -117,6 +139,8 @@ const payloadIlegible = [];
 const noLocalizadas = [];
 /** T7 · `rel="noopener"` que se queda sin su `target`. Nombrado, no barrido. */
 const relHuerfano = [];
+/** T9 · los contenedores de transporte ajeno desenvueltos, con su página. */
+const transporteDesenvuelto = [];
 let captionNoCanonico = 0;
 /** §3.3 · las clases cuya sustitución NO es derivable — se listan, no se inventan. */
 const SIN_SUSTITUTO = {
@@ -154,7 +178,12 @@ for (const [clave, p] of trabajo) {
   }
 
   /* T1–T8, cada una con su diana y su postcondición EN SU ETAPA */
-  const ctx = { pagina: clave, rutas, scriptsQuitados, mediaDelCuerpo, sinLlaveT3b, sustitucionesT4b, payloadIlegible, noLocalizadas, relHuerfano };
+  const ctx = {
+    pagina: clave, rutas, scriptsQuitados, mediaDelCuerpo, sinLlaveT3b, sustitucionesT4b, payloadIlegible,
+    noLocalizadas, relHuerfano,
+    clasesConEstilo: clasesConEstiloDe(crudo),
+    transporteDesenvuelto,
+  };
   let html = cuerpo;
   const aplicado = {};
   for (const t of TRANSFORMACIONES) {

@@ -612,6 +612,143 @@ export const T7 = {
   },
 };
 
+/* ════════ T9 · contenedores de TRANSPORTE ajenos se desenvuelven ══════════
+ *
+ * ── El enunciado, y es de CLASE, no de instancia ──────────────────────────
+ *
+ * > **Se desenvuelven los contenedores de TRANSPORTE ajenos —los que no
+ * > aportan contenido ni estilo servido—, conservando su contenido.**
+ *
+ * Nació de un caso (`castel-d-ario`) cuyo campo `Parámetros` trae **el DOM de
+ * una conversación de ChatGPT pegado en el editor**: un `<article>` con 9
+ * `<div>` anidados alrededor de un `<ul>` de tres viñetas. Pero **la instancia
+ * no es la clase**: preguntar *«¿cuántas páginas traen `<article>`?»* contesta
+ * **1 de 309** y es la pregunta equivocada. La clase es *«el editor pegó DOM de
+ * otra aplicación»*, y censada (`npm run qa:dom-ajeno`, 6 familias) son **10 de
+ * 309**.
+ *
+ * Es el mismo argumento de **T8**: *«ese `type` no lo escribió nadie, lo inyecta
+ * la capa de entrega — migrarlo verbatim sería importar un artefacto del CDN
+ * como si fuera contenido»*. Aquí lo escribió alguien, pero **no como
+ * contenido**: es el envoltorio de la UI de la aplicación de la que copió.
+ *
+ * ── EL DISCRIMINADOR, que es lo único que separa esto de un barrido ───────
+ * Un contenedor se desenvuelve **sólo si las dos cosas**:
+ *
+ *   1 · está **dentro de una raíz ajena** — un elemento con marcadores de una
+ *       aplicación de origen (`data-testid="conversation-turn…"`,
+ *       `data-message-author-role`, `class="… prose …"`…). Fuera de esa raíz,
+ *       T9 no toca nada;
+ *   2 · **no aporta estilo SERVIDO**: ninguna de sus clases tiene regla en el
+ *       CSS que el documento se trae, y no lleva `style=` en línea.
+ *
+ * La 2 se deriva del propio documento —`ctx.clasesConEstilo`— y no de una lista
+ * escrita: es §*la salida servida incluye el CSS que el documento se trae*. Y es
+ * la condición que hace el **negativo** posible: un envoltorio cuya clase SÍ
+ * está en el CSS **tiene que sobrevivir**. Sin ese sabotaje, T9 no está probada
+ * — sería un `replace` de `<div>` con una historia bonita.
+ *
+ * ── Lo que se midió antes de escribirla, y lo que NO ──────────────────────
+ * ✅ De las **10 clases** del envoltorio (`markdown` · `prose` ·
+ *    `dark:prose-invert` · `text-token-text-primary` · `agent-turn` …),
+ *    **ninguna tiene regla** en los **231 103 bytes** de `<style>` que la página
+ *    sirve. Divi **compila** ahí lo que el editor toca, así que es el sitio
+ *    donde estaría si existiera.
+ * ⛔ **Las 7 hojas ENLAZADAS no están en el corpus** (plugins · `et-cache` ·
+ *    tema), así que *«ninguna regla en el CSS en línea»* está medido y
+ *    *«ninguna regla en absoluto»* **no**. Queda declarado, no dado por hecho.
+ *
+ * ── Y lo que T9 NO hace, con su número ────────────────────────────────────
+ * **No toca ATRIBUTOS ajenos sobre etiquetas legítimas.** `data-start` /
+ * `data-end` de un renderizador de markdown aparecen en **10 páginas** sobre
+ * `<li>` y `<p>`, que son contenido de verdad. Desenvolver es una cosa y limpiar
+ * atributos es otra; la segunda no está decidida y **no se cuela dentro de la
+ * primera**. Ficha: §DATOS-DOM-AJENO.
+ */
+const RAIZ_AJENA = [
+  /\bdata-testid\s*=\s*"conversation-turn/i,
+  /\bdata-message-author-role\s*=/i,
+  /\bdata-message-model-slug\s*=/i,
+  /\bclass\s*=\s*"[^"]*\b(?:markdown\s+prose|prose)\b/i,
+  /\bclass\s*=\s*"[^"]*\bnotion-/i,
+  /\bclass\s*=\s*"Mso[A-Za-z]/i,
+  /\bdocs-internal-guid/i,
+];
+const CONTENEDOR = /<(div|article|section|span)\b[^>]*>/i;
+/** ¿Este tag es transporte? Sin `style=` y sin una sola clase con regla servida. */
+const esTransporte = (tag, clasesConEstilo) => {
+  if (/\bstyle\s*=\s*"/i.test(tag)) return false;
+  const clase = atributo(tag, "class");
+  if (clase === undefined) return true; // sin clase y sin estilo: no puede aportar render
+  return clase.split(/\s+/).filter(Boolean).every((c) => !clasesConEstilo?.has(c));
+};
+/** El primer contenedor de una raíz ajena, o `null`. */
+function raizAjenaEn(html, desde = 0) {
+  const re = new RegExp(CONTENEDOR.source, "gi");
+  re.lastIndex = desde;
+  let m;
+  while ((m = re.exec(html))) if (RAIZ_AJENA.some((r) => r.test(m[0]))) return m;
+  return null;
+}
+export const T9 = {
+  id: "t9",
+  titulo: "T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) se desenvuelven, conservando su contenido",
+  aplica(html, ctx) {
+    let n = 0;
+    for (let vuelta = 0; vuelta < 200; vuelta++) {
+      const raiz = raizAjenaEn(html);
+      if (!raiz) break;
+      const tag = raiz[1].toLowerCase();
+      const cierra = cierreDe(html, tag, raiz.index);
+      if (cierra < 0) break; // sin cierre: se deja y el saneador lo verá
+      const finCierre = html.indexOf(">", cierra) + 1;
+      let dentro = html.slice(raiz.index + raiz[0].length, cierra);
+
+      /* Dentro de la raíz: se desenvuelve TODO contenedor de transporte. Lo que
+       * lleve estilo servido sobrevive — es la condición 2, y es lo que el
+       * sabotaje `envoltorio-con-render` tiene que demostrar. */
+      for (let i = 0; i < 200; i++) {
+        const re = new RegExp(CONTENEDOR.source, "gi");
+        let m, hecho = false;
+        while ((m = re.exec(dentro))) {
+          if (!esTransporte(m[0], ctx?.clasesConEstilo)) continue;
+          const t = m[1].toLowerCase();
+          const c = cierreDe(dentro, t, m.index);
+          if (c < 0) continue;
+          const fin = dentro.indexOf(">", c) + 1;
+          dentro = dentro.slice(0, m.index) + dentro.slice(m.index + m[0].length, c) + dentro.slice(fin);
+          ctx?.transporteDesenvuelto?.push({ pagina: ctx.pagina, tag: t, clase: atributo(m[0], "class") ?? null });
+          n++;
+          hecho = true;
+          break;
+        }
+        if (!hecho) break;
+      }
+
+      /* Y la raíz misma, con el mismo criterio. Si LLEVA estilo servido se
+       * queda —y entonces su etiqueta la juzgará el saneador, que es quien
+       * decide qué entra—; si no, se va como los de dentro. */
+      if (esTransporte(raiz[0], ctx?.clasesConEstilo)) {
+        ctx?.transporteDesenvuelto?.push({ pagina: ctx.pagina, tag, clase: atributo(raiz[0], "class") ?? null, raiz: true });
+        n++;
+        html = html.slice(0, raiz.index) + dentro + html.slice(finCierre);
+      } else {
+        html = html.slice(0, raiz.index + raiz[0].length) + dentro + html.slice(cierra);
+        break; // la raíz se queda: no hay más que hacer con ella y no se cicla
+      }
+    }
+    return { html, n };
+  },
+  /** Muerde si queda una raíz ajena que ADEMÁS era transporte: ésa tenía que irse. */
+  post(html, ctx) {
+    const m = raizAjenaEn(html);
+    return m && esTransporte(m[0], ctx?.clasesConEstilo)
+      ? [`queda una raíz de DOM ajeno sin desenvolver: ${m[0].slice(0, 90)}`]
+      : [];
+  },
+  diana: (html) => (raizAjenaEn(html) ? 1 : 0),
+};
+
 /**
  * EL ORDEN ES PARTE DEL CONTRATO: T8 antes que T4a (el token se normaliza
  * antes de que la eliminación se lleve el script — es lo que estabiliza la
@@ -629,5 +766,19 @@ export const T7 = {
  * · **T4b ANTES de T4a.** La referencia al PDF de 6 de los 8 visores vive
  *   **dentro del `<script>`**, así que después de T4a ya no existe. Es el orden
  *   que hace la sustitución posible, no una preferencia.
+ *
+ * ⚠ **Y la posición de T9 (2026-08-13): después de T4b y ANTES de T5.**
+ *
+ * · **antes de T5**, que es la restricción con dato: T5 deshace envoltorios
+ *   **sin atributos**, y los de transporte llegan **con sus clases puestas** —
+ *   que es justo lo que T9 tiene que juzgar («¿alguna tiene estilo servido?»).
+ *   Con T5 delante, T9 encontraría un árbol ya medio deshecho por otro criterio;
+ * · **después de T4b**, por la misma razón que T4a: T4b lee el payload del visor
+ *   antes de que nadie toque la estructura;
+ * · **NO antes de T3a**, aunque la simetría lo sugiera: T3a sólo quita
+ *   `wp-image-<id>` y `aligncenter`, que no son clases de ninguna raíz ajena, y
+ *   moverla rompería su propia restricción —**T3b va después de T2 y de T3a**—
+ *   que está medida en 415 de 446 contenedores. Una restricción documentada
+ *   pesa más que una simetría.
  */
-export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T4, T5, T6, T7];
+export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T4, T5, T6, T7];

@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "el censo de la CLASE «el editor pegó DOM de otra aplicación», no de la instancia «<article>»",
+    "fuente": "corpus/ congelado — 309 páginas, sin red",
+    "reglaDelMarkup": "los marcadores se buscan sobre el HTML SIN <script> ni <style>",
+    "sabotaje": null,
+    "noMide": [
+      "no toca el original",
+      "no transforma",
+      "no decide qué hacer con lo que encuentra"
+    ]
+  },
+  "paginasCensadas": 309,
+  "paginasAfectadas": 10,
+  "porFamilia": {
+    "chatgpt": {
+      "paginas": 1,
+      "marcadoresVivos": 5,
+      "de": 5,
+      "tope": 20,
+      "veredicto": "ok"
+    },
+    "tailwind-prose": {
+      "paginas": 1,
+      "marcadoresVivos": 3,
+      "de": 3,
+      "tope": 20,
+      "veredicto": "ok"
+    },
+    "word": {
+      "paginas": 0,
+      "marcadoresVivos": 0,
+      "de": 4,
+      "tope": 40,
+      "veredicto": "ok"
+    },
+    "google-docs": {
+      "paginas": 0,
+      "marcadoresVivos": 0,
+      "de": 2,
+      "tope": 40,
+      "veredicto": "ok"
+    },
+    "notion": {
+      "paginas": 0,
+      "marcadoresVivos": 0,
+      "de": 2,
+      "tope": 40,
+      "veredicto": "ok"
+    },
+    "markdown-renderizado": {
+      "paginas": 10,
+      "marcadoresVivos": 2,
+      "de": 2,
+      "tope": 20,
+      "veredicto": "ok"
+    }
+  },
+  "detalle": {
+    "chatgpt": [
+      {
+        "pagina": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+        "marcadores": 5,
+        "de": 5
+      }
+    ],
+    "tailwind-prose": [
+      {
+        "pagina": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+        "marcadores": 3,
+        "de": 3
+      }
+    ],
+    "word": [],
+    "google-docs": [],
+    "notion": [],
+    "markdown-renderizado": [
+      {
+        "pagina": "entradas-blog/contaminacion-acustica",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "entradas-blog/impacto-ambiental-industria-cementera",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "entradas-blog/sensores-calidad-aire-volcanes",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "terminos-kunakpedia/cianuro-de-hidrogeno-hcn",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "documentos-cientificos/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "documentos-cientificos/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "casos/porto-alegre-red-de-control-de-la-calidad-del-aire",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+        "marcadores": 2,
+        "de": 2
+      },
+      {
+        "pagina": "casos/monitorizacion-de-polvo-en-la-mina-northparkes-australia",
+        "marcadores": 2,
+        "de": 2
+      }
+    ]
+  }
+}

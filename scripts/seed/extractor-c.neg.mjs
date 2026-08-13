@@ -10,23 +10,27 @@
  * | `region-ausente` | **región obligatoria ausente ⇒ TIRA** | un catálogo con 56 y verde |
  * | `saneador` | **el contrato del alta muerde** sobre la región transformada | una región que el saneador acepta |
  *
- * ── ⚠ NO HAY CASO «control» EN VERDE, Y ESO ES EL HALLAZGO ────────────────
- * `extractor-c` sale **ROJO sin sabotaje**, con **12 discrepancias** en los
- * cuerpos ricos, y eso **no es un defecto del extractor**: es que ésta es la
- * primera vez que el pipeline T1–T8 se compara contra un cuerpo transcrito a
- * mano. El control de `extractor-a` tiene **11 campos por entrada y ninguno es
- * `cuerpo`** — así que el HTML transformado del grupo A **nunca se comparó**
- * contra nada, y su verde no dice lo que parece decir.
+ * | `t9-sin-discriminador` | **T9 sin su condición «no aporta estilo servido»** se lleva un envoltorio CON render | «no había envoltorios que respetar» |
+ * | `destacado-dentro` | el `texto-destacado` ANIDADO se queda dentro de la región | un cuerpo que casualmente coincide |
+ * | (sin sabotaje) | ✅ **VERDE desde 2026-08-13**: 57 + 19, control de cuerpos ricos a 0 | — |
  *
- * La ficha con las dos divergencias medidas está en `PENDIENTES-QA.md`
- * §DATOS-C-PIPELINE. Mientras siga abierta, este negativo comprueba que los
- * **cuatro modos de fallo salen rojos por lo suyo** —que es lo que hace usable
- * el extractor— y **declara que el control en verde está pendiente**, en vez de
- * bajar el listón para que pase.
+ * ── ⚠ EL CASO EN VERDE LLEGÓ, Y LO QUE COSTÓ ES LA LECCIÓN ───────────────
+ * Hasta el 2026-08-13 aquí ponía *«NO HAY CASO control EN VERDE, Y ESO ES EL
+ * HALLAZGO»*: 12 discrepancias en los cuerpos ricos, declaradas en vez de
+ * bajar el listón. Cerradas, y **ninguna era del extractor**:
  *
- * > Es §una sonda que sólo sabe salir ROJA no prueba nada, dicho al revés: aquí
- * > se sabe **por qué** está roja, está medido, y el negativo verifica que las
- * > otras cuatro razones para estarlo también funcionan.
+ *   · **6** eran T7 sin aplicar dos reglas ya escritas (§F2-3-HREF-DERIVADO b
+ *     y el `target`) — arregladas en el pipeline, no aquí;
+ *   · **3** eran serialización que la TRANSCRIPCIÓN normalizó y el original NO
+ *     (`<br />` · CRLF · U+00A0), dirimidas contra el corpus congelado;
+ *   · **3** eran una clase entera que el cubo de «combinaciones» escondía: el
+ *     `texto-destacado` ANIDADO dentro de `necesidad`, que es campo propio y se
+ *     habría pintado dos veces. Afectaba a **48 regiones**, no a 3.
+ *
+ * > **Un cubo de «combinaciones de las anteriores» no es una clasificación: es
+ * > el sitio donde se pierden las clases que nadie nombró.** Las 12 se
+ * > reclasificaron con un instrumento que **no tiene cubo** —lo que no encaja
+ * > sale `SIN CLASIFICAR` y es rojo—, y ahí aparecieron las tres.
  * ══════════════════════════════════════════════════════════════════════════
  */
 import { existsSync, readFileSync, rmSync } from "node:fs";
@@ -39,9 +43,9 @@ const SONDA = join(QA, "../seed/extractor-c.mjs");
 const casos = [
   {
     etiqueta: "sin-sabotaje",
-    porQue: "extrae los 76 con lectores VIVOS y sin regiones ausentes — y sale rojo SÓLO por §DATOS-C-PIPELINE",
+    porQue: "extrae los 76 con lectores vivos, sin regiones ausentes y con el CONTROL DE CUERPOS RICOS EN VERDE",
     env: {},
-    exit: 2,
+    exit: 0,
     comprueba: (j) => {
       if (j.recuento.casos !== 57) return `${j.recuento.casos} casos, no 57`;
       if (j.recuento.faqs !== 19) return `${j.recuento.faqs} faqs, no 19`;
@@ -51,6 +55,33 @@ const casos = [
       if (!j.control.documentos) return "la congelada no trae `control.documentos`: el numerador viene sin denominador";
       return null;
     },
+  },
+  {
+    /**
+     * ⚠ **El negativo de T9, y ataca el DISCRIMINADOR, no la transformación.**
+     *
+     * Lo único que separa T9 de un `replace` de `<div>` es su condición 2 —*«no
+     * aporta estilo servido»*—. El sabotaje inyecta dentro de la raíz ajena un
+     * envoltorio **con render** (una clase con regla en el CSS del documento) y
+     * **ciega** `clasesConEstilo`. Con el discriminador ciego T9 se lo lleva, y
+     * la guarda del canario lo caza.
+     *
+     * Sin este caso, T9 estaría «probada» por una corrida verde que no
+     * distingue *«respeta el estilo servido»* de *«no había nada que respetar»*.
+     */
+    etiqueta: "t9-sin-discriminador",
+    porQue: "T9 sin su condición «no aporta estilo servido» se lleva un envoltorio CON render ⇒ rojo",
+    env: { SABOTAJE: "t9-sin-discriminador" },
+    exit: 2,
+    salidaTiene: /T9 SE LLEVÓ UN ENVOLTORIO CON RENDER/,
+  },
+  {
+    etiqueta: "destacado-dentro",
+    porQue: "el `texto-destacado` anidado se queda DENTRO de la región ⇒ el control lo caza (se pintaría dos veces)",
+    env: { SABOTAJE: "destacado-dentro" },
+    exit: 2,
+    comprueba: (j) =>
+      j.destacadoExtraido?.length ? `el sabotaje no desactivó la extracción: ${j.destacadoExtraido.length} regiones` : null,
   },
   {
     etiqueta: "selector-muerto",
@@ -128,10 +159,10 @@ for (const c of casos) {
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} extractor-c · test en negativo: ${casos.length - fallos}/${casos.length}\n` +
     (fallos === 0
-      ? `   Los 76 se extraen con lectores VIVOS, sin regiones ausentes, y los cuatro\n` +
-        `   modos de fallo salen rojos por lo suyo. Lo único abierto son las 12\n` +
-        `   discrepancias de CUERPO RICO, que son de PIPELINE y no de este extractor:\n` +
-        `   §DATOS-C-PIPELINE. NO se siembra hasta que se arbitren.\n`
+      ? `   Los 76 se extraen con lectores VIVOS, sin regiones ausentes, con el\n` +
+        `   CONTROL DE CUERPOS RICOS EN VERDE, y los seis modos de fallo salen rojos\n` +
+        `   por lo suyo — incluido el que prueba que el DISCRIMINADOR de T9 manda.\n` +
+        `   El catálogo se puede sembrar.\n`
       : `   El extractor NO se puede citar hasta que esto salga en verde.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);

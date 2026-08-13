@@ -187,7 +187,8 @@
     "cms:extractor-a": "node scripts/seed/extractor-a.mjs",
     "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs",
     "cms:extractor-c": "node scripts/seed/extractor-c.mjs",
-    "cms:extractor-c-neg": "node scripts/seed/extractor-c.neg.mjs"
+    "cms:extractor-c-neg": "node scripts/seed/extractor-c.neg.mjs",
+    "qa:dom-ajeno": "node scripts/qa/dom-ajeno.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

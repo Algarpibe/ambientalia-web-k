@@ -28,7 +28,6 @@
     "t3": 4,
     "t3b": 1,
     "t4b": 0,
-    "t9": 9,
     "t4": 0,
     "t5": 2,
     "t6": 0,
@@ -41,13 +40,18 @@
     "t3": [],
     "t3b": [],
     "t4b": [],
-    "t9": [],
     "t4": [],
     "t5": [],
     "t6": [],
     "t7": []
   },
-  "saneador": [],
+  "saneador": [
+    {
+      "documento": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "campo": "parametros",
+      "veredicto": "§3.1: etiqueta(s) fuera del censo de 43 — <article>. Lo que no está en el censo no entra; si es legítima, se admite AÑADIÉNDOLA al censo con su evidencia, no co"
+    }
+  ],
   "divergencia": {
     "porClase": {
       "espacio": 17,
@@ -61,7 +65,6 @@
       "t3-declarada": "dato — transformación declarada §3.2 — T3a · `wp-image-<id>` y `aligncenter` se descartan (T3b, wp-capt",
       "t3b-declarada": "dato — transformación declarada §3.2 — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` ",
       "t4b-declarada": "dato — transformación declarada §3.2 — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al ",
-      "t9-declarada": "dato — transformación declarada §3.2 — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) ",
       "t4-declarada": "dato — transformación declarada §3.2 — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustituci",
       "t5-declarada": "dato — transformación declarada §3.2 — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no ",
       "t6-declarada": "dato — transformación declarada §3.2 — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índ",
@@ -3143,7 +3146,7 @@
           "usuario": "Ayuntamiento de Castel D’Ario",
           "ubicacion": "Castel D’Ario, Italia",
           "anyo": "2025",
-          "parametros": "\n\n\n\n\n\n\n\n\n<ul>\n<li data-start=\"0\" data-end=\"132\">NO<sub>2</sub> (dióxido de nitrógeno) y NO (óxido nítrico)</li>\n<li data-start=\"0\" data-end=\"132\">Partículas PM<sub>10</sub>, PM<sub>2,5</sub> y PM<sub>1</sub></li>\n<li data-start=\"0\" data-end=\"132\">Temperatura, humedad relativa y presión atmosférica</li>\n</ul>\n\n\n\n\n\n\n\n\n"
+          "parametros": "<article class=\"text-token-text-primary w-full\" dir=\"auto\" data-testid=\"conversation-turn-356\" data-scroll-anchor=\"true\">\n<div class=\"text-base my-auto mx-auto py-5 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden\" tabindex=\"-1\">\n<div class=\"group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"relative flex-col gap-1 md:gap-3\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"36d94049-5539-493c-90fe-e9ffae8113d7\" data-message-model-slug=\"gpt-4-1-mini\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[3px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words dark\">\n<ul>\n<li data-start=\"0\" data-end=\"132\">NO<sub>2</sub> (dióxido de nitrógeno) y NO (óxido nítrico)</li>\n<li data-start=\"0\" data-end=\"132\">Partículas PM<sub>10</sub>, PM<sub>2,5</sub> y PM<sub>1</sub></li>\n<li data-start=\"0\" data-end=\"132\">Temperatura, humedad relativa y presión atmosférica</li>\n</ul>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</article>"
         },
         "prefijo": "case-studies",
         "sectores": [
