@@ -37,6 +37,38 @@ seed de KB murió en el 4.º documento. La protección de congeladas funcionando
 su lectura mal hecha. Queda cerrado con una guarda de **sincronía código↔censo**
 en el negativo, en los dos sentidos.
 
+## ⚠ F3-LH-CONGELA-A-MEDIAS · una corrida INTERRUMPIDA congela igual, con 22 rutas a `undefined` y nombre de medida buena (2026-08-13, tanda de CONSTRUCCIÓN)
+
+> **Salió por casualidad y por eso vale la pena escribirlo: dos corridas del
+> mismo build cruzadas dieron 22 rutas distintas, y el culpable no era el clon.**
+
+Al matar a mano una corrida redundante de `clon-base`, el fichero **se congeló
+igualmente**: `clon-base-1440-f32b-antes.json`, con las **302 claves puestas** y
+**22 de ellas con `docH: undefined`** — las últimas por orden alfabético, o sea
+las que no llegó a medir.
+
+| | rutas | sin `docH` |
+|---|---:|---:|
+| la corrida buena (`f32-antes-2026-08-13`) | 302 | **0** |
+| la **interrumpida** (`f32b`) | 302 | **22** |
+
+**Por qué es peligroso y no una anécdota:** el fichero tiene **nombre de medida
+buena** y **el recuento correcto** (302 claves). Quien lo cite mañana citará una
+base con 22 agujeros, y la comprobación barata —«¿tiene las 302 rutas?»— **dice
+que sí**. Es §sondas 7 con un origen nuevo: no un sabotaje ni un defecto de la
+sonda, sino **una corrida que alguien cortó**.
+
+**Qué se hizo:** renombrada a `clon-base-1440-f32b-antes-neg-INTERRUMPIDA.json`.
+La línea base que vale es la otra, y su cero de `undefined` está verificado.
+
+**Y las dos reglas que deja:**
+
+1. **matar una sonda a mano no es gratis** — deja evidencia con aspecto de buena.
+   Si hay que cortar una corrida, su salida se marca **en el acto**;
+2. **el recuento de claves no es el recuento de MEDIDAS.** Una congelada se
+   valida por el campo que se va a citar (`docH`, `h1`), no por `Object.keys`.
+   Es §el séptimo contenedor otra vez: contar al nivel que hace la cifra bonita.
+
 ## ✅ F3-LH-BASE-MUDA · «exit 0 y cero líneas» NO era de la sonda: era del PIPE de quien la llamó (2026-08-13, tanda de CONSTRUCCIÓN, PASO 0)
 
 > **Y la congelada que se declaró «no exhibible» EXISTÍA.** Dos afirmaciones

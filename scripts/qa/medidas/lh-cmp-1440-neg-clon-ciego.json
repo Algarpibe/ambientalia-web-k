@@ -3,7 +3,7 @@
     "fecha": "2026-08-13",
     "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
     "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-11)",
-    "ladoClon": "http://127.0.0.1:62574",
+    "ladoClon": "http://127.0.0.1:59683",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -11,91 +11,91 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:62574/blog",
+      "clon": "http://127.0.0.1:59683/blog",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:62574/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:59683/etiqueta/calidad-del-aire",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:62574/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:59683/etiqueta/h2s-es",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:62574/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:59683/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:62574/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:59683/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:62574/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:59683/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:62574/glosario",
+      "clon": "http://127.0.0.1:59683/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:62574/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:59683/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:62574/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:59683/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:62574/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:59683/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:62574/recursos",
+      "clon": "http://127.0.0.1:59683/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:62574/casos-de-exito",
+      "clon": "http://127.0.0.1:59683/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:62574/recursos/articulos",
+      "clon": "http://127.0.0.1:59683/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
