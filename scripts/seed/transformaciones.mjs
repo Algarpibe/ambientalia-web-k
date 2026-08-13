@@ -492,31 +492,122 @@ export const T6 = {
   diana: (html) => [...html.matchAll(RE_H_CON_ID)].length,
 };
 
-/* ═════════ T7 · enlaces internos del cuerpo → ruta local publicada ════════ */
-const RE_HREF_ORIGINAL = /\bhref="https?:\/\/(?:www\.)?kunakair\.com\/es(\/[^"#?]*?)?\/?(#[^"]*)?"/g;
-const localDe = (camino) => (camino ?? "") === "" ? "/" : camino;
+/* ═════════ T7 · enlaces internos del cuerpo → ruta local publicada ════════
+ *
+ * ⚠ **REESCRITA 2026-08-13 (§DATOS-C-PIPELINE, PASO 4), y las dos mitades del
+ * cambio son REGLAS QUE YA ESTABAN ESCRITAS, no criterio nuevo.**
+ *
+ * **(1) Opera sobre el `<a>` ENTERO, no sobre el atributo `href`.** La versión
+ * anterior casaba sólo el `href`, así que no tenía forma de tocar el `target` —
+ * y por eso dejaba **1788 enlaces localizados con `target="_blank"`** en los 209
+ * cuerpos. `CLAUDE.md` §Regla de rutas locales: *«`target="_blank"` **solo si el
+ * destino es externo**»*.
+ *
+ * **Y no choca con FIDELIDAD, que era el único motivo para dudar:** localizar el
+ * `href` **YA es una transformación declarada**, así que en cuanto T7 muerde el
+ * enlace deja de ser el del original. Conservar el `target` lo dejaba en un
+ * tercer estado que no es ninguno de los dos — ni el original (fuera, pestaña
+ * nueva) ni la regla (dentro, misma pestaña). La fidelidad se conserva **no
+ * localizando**; una vez localizado, manda la regla.
+ *
+ * **(2) `ctx.rutas` es SÓLO el manifiesto del build.** Antes era *manifiesto +
+ * todas las URL del corpus*, y **una URL capturada no es una ruta publicada**:
+ * de ahí salían **53 destinos locales que el build no emite**. Es
+ * §F2-3-HREF-DERIVADO —salida (b), adjudicada el 2026-08-07: *componer contra
+ * las rutas que el build emite*— sin aplicar al pipeline. La otra mitad de la
+ * misma regla dice qué hacer con el resto: *«si no, se deja apuntando al
+ * original»*, y es lo que hace el `return todo`.
+ *
+ * ── Lo que NO se toca, y es deliberado ───────────────────────────────────
+ * **`rel="noopener"` sobrevive.** Existe *por* el `target="_blank"` y sin él es
+ * inerte, pero la regla nombra el `target` y sólo el `target`; quitarlo sería
+ * ampliar el alcance de una decisión ajena por mi cuenta — el mismo argumento
+ * por el que T3b deja `alignnone` y `size-full`. Queda nombrado, no barrido en
+ * silencio: `ctx.relHuerfano` lo cuenta.
+ *
+ * ── La MARCA de lo que se deja fuera ─────────────────────────────────────
+ * §Regla de rutas locales pide anotar el destino que no se localiza. En código
+ * eso es un comentario; **en un cuerpo rico no hay dónde ponerlo sin cambiar lo
+ * que se sirve**, así que la marca es la CONGELADA: `ctx.noLocalizadas` recoge
+ * cada destino dejado al original con su página, y el extractor lo publica. Una
+ * marca que se puede contar vale más que una que hay que leer.
+ */
+const RE_ANCLA = /<a\b[^>]*>/gi;
+const RE_HREF_ORIGINAL = /\bhref="https?:\/\/(?:www\.)?kunakair\.com\/es(\/[^"#?]*?)?\/?(#[^"]*)?"/;
+const localDe = (camino) => ((camino ?? "") === "" ? "/" : camino);
+/** El destino local de un `<a>` al original, o `null` si no apunta al original. */
+const destinoDe = (tag) => {
+  const m = RE_HREF_ORIGINAL.exec(tag);
+  return m ? { local: localDe(m[1]), ancla: m[2] ?? "", href: m[0] } : null;
+};
+/** El camino de un `href` ya local, sin query ni ancla: `/x?a=b#c` → `/x`. */
+const caminoLocal = (href) => (href.startsWith("/") ? href.split("#")[0].split("?")[0] || "/" : null);
+/** ¿Este `<a>` apunta a una página que NOSOTROS publicamos? Una sola pregunta. */
+const esNuestro = (tag, rutas) => {
+  const d = destinoDe(tag);
+  if (d) return rutas.has(d.local);
+  const href = (tag.match(/\bhref="([^"]*)"/) ?? [])[1];
+  const c = href === undefined ? null : caminoLocal(href);
+  return c !== null && rutas.has(c);
+};
+const conBlank = (tag) => /\btarget\s*=\s*"_blank"/i.test(tag);
+
 export const T7 = {
   id: "t7",
-  titulo: "T7 · enlaces internos del cuerpo: a ruta local si la publicamos; fuera se quedan",
+  titulo: 'T7 · enlaces internos del cuerpo: a ruta local si el BUILD la emite, y sin `target="_blank"`; fuera se quedan',
+  /**
+   * ⚠ **Una sola pregunta, aplicada a los dos casos: «¿este destino lo
+   * publicamos NOSOTROS?».**
+   *
+   * Hay enlaces que llegan del original **ya locales** —`/?resources=guides`—
+   * y la regla les aplica igual: si el destino es nuestro, no lleva `target`.
+   * La primera versión sólo miraba los que T7 reescribía, y su postcondición
+   * cazó 3 que venían así. Tratarlos aparte habría sido **medir al nivel que
+   * absorbe**: dos predicados distintos para la misma pregunta.
+   *
+   * Y el contraejemplo que fija el límite: `/cdn-cgi/l/email-protection` **se
+   * escribe local y NO es nuestro** —es infraestructura de Cloudflare del sitio
+   * original—, así que conserva su `target`. Lo decide `ctx.rutas`, no la forma
+   * del `href`.
+   */
   aplica(html, ctx) {
     let n = 0;
-    const salida = html.replace(RE_HREF_ORIGINAL, (todo, camino, ancla) => {
-      const local = localDe(camino);
-      if (!ctx.rutas.has(local)) return todo; // no publicada: se deja apuntando al original
-      n++;
-      return `href="${local === "/" ? "/" : local}${ancla ?? ""}"`;
+    const salida = html.replace(RE_ANCLA, (tag) => {
+      const d = destinoDe(tag);
+      if (!esNuestro(tag, ctx.rutas)) {
+        if (d) ctx.noLocalizadas?.push({ pagina: ctx.pagina, destino: d.local });
+        return tag; // no la publicamos: al original, CON su target — sigue siendo externo
+      }
+      let t = tag;
+      if (d) { n++; t = t.replace(d.href, `href="${d.local}${d.ancla}"`); }
+      if (conBlank(t)) {
+        t = t.replace(/\s*\btarget\s*=\s*"_blank"/i, "");
+        if (/\brel\s*=\s*"[^"]*\bnoopener\b/i.test(t))
+          ctx.relHuerfano?.push({ pagina: ctx.pagina, destino: d ? d.local : (t.match(/\bhref="([^"]*)"/) ?? [])[1] });
+      }
+      return t;
     });
     return { html: salida, n };
   },
+  /**
+   * Dos postcondiciones, y la segunda es la que no existía:
+   * 1 · no queda ningún `href` al original de una ruta que SÍ publicamos;
+   * 2 · **no queda ningún enlace a una página NUESTRA con `target="_blank"`** —
+   *     lo hubiera reescrito T7 o hubiera venido ya local del original.
+   */
   post(html, ctx) {
     const mal = [];
-    for (const m of html.matchAll(RE_HREF_ORIGINAL))
-      if (ctx.rutas.has(localDe(m[1]))) mal.push(`queda href al original de una ruta publicada: ${localDe(m[1])}`);
+    for (const m of html.matchAll(RE_ANCLA)) {
+      const d = destinoDe(m[0]);
+      if (d && ctx.rutas.has(d.local)) mal.push(`queda href al original de una ruta publicada: ${d.local}`);
+      if (esNuestro(m[0], ctx.rutas) && conBlank(m[0]))
+        mal.push(`queda target="_blank" hacia una página nuestra: ${(m[0].match(/href="([^"]*)"/) ?? [])[1]}`);
+    }
     return mal;
   },
   diana(html, ctx) {
     let n = 0;
-    for (const m of html.matchAll(RE_HREF_ORIGINAL)) if (ctx.rutas.has(localDe(m[1]))) n++;
+    for (const m of html.matchAll(RE_ANCLA)) if (esNuestro(m[0], ctx.rutas) && (destinoDe(m[0]) || conBlank(m[0]))) n++;
     return n;
   },
 };

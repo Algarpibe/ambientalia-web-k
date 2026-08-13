@@ -830,11 +830,6 @@ export const PLIEGUES = [
     aplica: (s) => s.replace(/<(br|hr|img|input|source)\b([^>]*?)\s*\/>/gi, "<$1$2>"),
     firma: (s) => `${(s.match(/<(?:br|hr|img|input|source)\b[^>]*\/>/gi) ?? []).length}`,
   },
-  {
-    clase: "media-original",
-    aplica: (s) => s.replace(/https?:\/\/(?:www\.)?kunakair\.com\/wp-content\/uploads\//g, "/images/uploads/"),
-    firma: (s) => `${(s.match(/kunakair\.com\/wp-content\/uploads\//g) ?? []).length}`,
-  },
 ];
 
 /**
@@ -850,6 +845,21 @@ export const PLIEGUES = [
  * da un número plausible que invita a explicarlo.
  */
 export const PLIEGUES_FINAL = [
+  /**
+   * ⚠ **`media-original` va también AL FINAL, y por el mismo motivo que el
+   * espacio: los pliegues de pipeline INTRODUCEN URLs de media.** T4b decodifica
+   * el payload del visor FB3D y emite un enlace al PDF con la URL del original,
+   * o sea que una URL que no existía antes del pliegue aparece después.
+   *
+   * Se cazó así: los 3 últimos residuos del PASO 4 eran exactamente los 3 PDF
+   * de FB3D. Plegar antes los dejaba fuera, y la salida era un `href` sin
+   * adjudicación que parecía un defecto de T7 y no lo era.
+   */
+  {
+    clase: "media-original",
+    aplica: (s) => s.replace(/https?:\/\/(?:www\.)?kunakair\.com\/wp-content\/uploads\//g, "/images/uploads/"),
+    firma: (s) => `${(s.match(/kunakair\.com\/wp-content\/uploads\//g) ?? []).length}`,
+  },
   {
     clase: "espacio",
     aplica: (s) => s.replace(/\s+/g, " ").trim(),

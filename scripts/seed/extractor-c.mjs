@@ -78,7 +78,13 @@ await esbuild.build({
 });
 const { validaHtmlCorpus } = await import(`${pathToFileURL(bComunes).href}?t=${Date.now()}`);
 
-/** Las rutas publicadas, para T7: el manifiesto del build + el propio corpus. */
+/**
+ * Las rutas publicadas, para T7: **SÓLO el manifiesto del build**.
+ *
+ * ⚠ Aquí había una copia literal del defecto de `extractor.mjs` —manifiesto
+ * **más las URL del corpus**—, corregida el 2026-08-13 con él (§PASO 4). Una URL
+ * capturada no es una ruta publicada: §F2-3-HREF-DERIVADO, salida (b).
+ */
 const rutas = new Set();
 const manifiesto = enApp(".next/prerender-manifest.json");
 if (!existsSync(manifiesto))
@@ -87,10 +93,6 @@ if (!existsSync(manifiesto))
       "  0 rutas daría un T7 «limpio» que no miró nada (la regla del cero).",
   );
 for (const r of Object.keys(JSON.parse(readFileSync(manifiesto, "utf8")).routes ?? {})) rutas.add(r);
-for (const p of Object.values(INDICE.paginas)) {
-  const camino = new URL(p.url).pathname.replace(/^\/es/, "").replace(/\/$/, "");
-  rutas.add(camino === "" ? "/" : camino);
-}
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LECTORES — los de `qa:c-inventario`, que salieron 60/60 contra el control
@@ -214,6 +216,9 @@ function solucionesDe(art) {
 
 const porT = Object.fromEntries(TRANSFORMACIONES.map((t) => [t.id, { aplicadas: 0, violaciones: [] }]));
 const rechazosSaneador = [];
+/** T7 · la marca de §Regla de rutas locales, igual que en `extractor.mjs`. */
+const noLocalizadas = [];
+const relHuerfano = [];
 
 /** Aplica el pipeline a UNA región y devuelve su HTML transformado. */
 function transforma(html, clave, campo) {
@@ -226,6 +231,8 @@ function transforma(html, clave, campo) {
     sinLlaveT3b: [],
     sustitucionesT4b: [],
     payloadIlegible: [],
+    noLocalizadas,
+    relHuerfano,
   };
   let out = html;
   for (const t of TRANSFORMACIONES) {
@@ -449,6 +456,15 @@ w("medidas/c-extraido.json", {
   transformaciones: Object.fromEntries(TRANSFORMACIONES.map((t) => [t.id, porT[t.id].aplicadas])),
   violaciones: Object.fromEntries(TRANSFORMACIONES.map((t) => [t.id, porT[t.id].violaciones])),
   saneador: rechazosSaneador,
+  t7: {
+    rutasPublicadas: rutas.size,
+    fuente: "SÓLO `.next/prerender-manifest.json` (§F2-3-HREF-DERIVADO b)",
+    dejadosAlOriginal: noLocalizadas.length,
+    porDestino: Object.fromEntries(
+      [...noLocalizadas.reduce((m, x) => m.set(x.destino, (m.get(x.destino) ?? 0) + 1), new Map())].sort((a, b) => b[1] - a[1]),
+    ),
+    relHuerfano,
+  },
   control: { comparaciones: nControl, documentos: controlados, poblacion: salida.casos.length + salida.faqs.length, discrepancias: control.length, detalle: control },
   catalogo: salida,
 });

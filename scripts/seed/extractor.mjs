@@ -71,16 +71,27 @@ const DEL_GRUPO_A = ["entradas-blog", "terminos-kunakpedia", "documentos-cientif
 const FUERA = ["casos", "faqs", "productos"]; // capturadas; extracción de builder = otra mecánica
 const trabajo = Object.entries(INDICE.paginas).filter(([clave]) => DEL_GRUPO_A.includes(clave.split("/")[0]));
 
-/* ── las rutas publicadas, para T7: manifest del build + el propio corpus ── */
+/* ── las rutas publicadas, para T7: SÓLO el manifiesto del build ───────────
+ *
+ * ⚠ **CORREGIDO 2026-08-13 (§DATOS-C-PIPELINE, PASO 4).** Aquí ponía
+ * *«manifiesto del build **+ el propio corpus**»*, y **una URL capturada no es
+ * una ruta publicada**: T7 localizaba 53 destinos que el build no emite, y 20
+ * de ellos son **enlaces rotos vivos** hoy (`/cartuchos-inteligentes/*` ·
+ * `/sensor-de-calidad-del-aire/*`).
+ *
+ * No es una elección de esta tanda: es §F2-3-HREF-DERIVADO —salida **(b)**,
+ * adjudicada el 2026-08-07: *componer contra las rutas que el build emite*—
+ * que estaba aplicada en el render y **no en el pipeline**.
+ *
+ * El conjunto correcto tiene además la propiedad que hace falta: **crece solo**.
+ * Cuando se siembren `casos`, sus 57 rutas entran en el manifiesto del build
+ * siguiente y sus 31 destinos pasan a localizarse sin tocar una línea.
+ */
 const rutas = new Set();
 const manifest = enApp(".next/prerender-manifest.json");
 if (!existsSync(manifest))
   throw new Error("no hay `prerender-manifest.json`: sin build no hay conjunto de rutas publicadas para T7 (regla del cero — 0 rutas daría un T7 «limpio» que no miró nada).");
 for (const r of Object.keys(JSON.parse(readFileSync(manifest, "utf8")).routes ?? {})) rutas.add(r);
-for (const p of Object.values(INDICE.paginas)) {
-  const camino = new URL(p.url).pathname.replace(/^\/es/, "").replace(/\/$/, "");
-  rutas.add(camino === "" ? "/" : camino);
-}
 
 /* ── el cuerpo: el interior de `et_pb_post_content` ────────────────────────
  * IMPORTADO de `corpus.mjs`, no copiado: estaba definido aquí y en
@@ -102,6 +113,10 @@ const mediaDelCuerpo = [];
 const sinLlaveT3b = [];
 const sustitucionesT4b = [];
 const payloadIlegible = [];
+/** T7 · la MARCA de §Regla de rutas locales: qué destinos se dejan al original. */
+const noLocalizadas = [];
+/** T7 · `rel="noopener"` que se queda sin su `target`. Nombrado, no barrido. */
+const relHuerfano = [];
 let captionNoCanonico = 0;
 /** §3.3 · las clases cuya sustitución NO es derivable — se listan, no se inventan. */
 const SIN_SUSTITUTO = {
@@ -139,7 +154,7 @@ for (const [clave, p] of trabajo) {
   }
 
   /* T1–T8, cada una con su diana y su postcondición EN SU ETAPA */
-  const ctx = { pagina: clave, rutas, scriptsQuitados, mediaDelCuerpo, sinLlaveT3b, sustitucionesT4b, payloadIlegible };
+  const ctx = { pagina: clave, rutas, scriptsQuitados, mediaDelCuerpo, sinLlaveT3b, sustitucionesT4b, payloadIlegible, noLocalizadas, relHuerfano };
   let html = cuerpo;
   const aplicado = {};
   for (const t of TRANSFORMACIONES) {
@@ -233,6 +248,22 @@ if (payloadIlegible.length) {
   console.error(`\n❌ ${payloadIlegible.length} payload(s) FB3D ilegible(s): el visor se queda sin su documento.`);
 }
 
+/* ── T7 · la marca de lo que NO se localiza, y el `rel` que queda huérfano ── */
+const porDestino = new Map();
+for (const x of noLocalizadas) porDestino.set(x.destino, (porDestino.get(x.destino) ?? 0) + 1);
+console.log(
+  `\n  T7 · ${rutas.size} rutas publicadas (SÓLO el manifiesto del build) · ` +
+    `${noLocalizadas.length} enlace(s) dejado(s) apuntando al ORIGINAL en ${porDestino.size} destino(s) distintos`,
+);
+for (const [d, n] of [...porDestino].sort((a, b) => b[1] - a[1]).slice(0, 8))
+  console.log(`     ${String(n).padStart(4)} × ${d}`);
+if (porDestino.size > 8) console.log(`     … y ${porDestino.size - 8} destino(s) más (la lista entera va a la congelada)`);
+if (relHuerfano.length)
+  console.log(
+    `   ⚠ ${relHuerfano.length} \`rel="noopener"\` se quedan SIN su \`target\`: inertes, y se dejan a\n` +
+      `      propósito — §Regla de rutas locales nombra el \`target\` y sólo el \`target\`.`,
+  );
+
 /* ── T3b · la relación de media que el cuerpo transformado declara ────────── */
 const llaves = new Set(mediaDelCuerpo.map((m) => m.clave));
 console.log(`\n  T3b/T4b · relación de media declarada en el cuerpo: ${mediaDelCuerpo.length} \`data-media\` · ${llaves.size} documentos distintos`);
@@ -275,6 +306,19 @@ w("medidas/extractor-corpus.json", {
     payloadIlegible,
   },
   t3b: { noCanonicos: captionNoCanonico },
+  /**
+   * T7 · la MARCA que §Regla de rutas locales pide para lo que no se localiza.
+   * En código eso es un comentario; en un cuerpo rico no hay dónde ponerlo sin
+   * cambiar lo servido, así que la marca es esto — contable y auditable.
+   */
+  t7: {
+    rutasPublicadas: rutas.size,
+    fuente: "SÓLO `.next/prerender-manifest.json` — una URL capturada no es una ruta publicada (§F2-3-HREF-DERIVADO b)",
+    dejadosAlOriginal: noLocalizadas.length,
+    porDestino: Object.fromEntries([...porDestino].sort((a, b) => b[1] - a[1])),
+    detalle: noLocalizadas,
+    relHuerfano,
+  },
   censoContradicho: {
     etiquetas: Object.fromEntries(censoContradicho.etiquetas),
     hosts: Object.fromEntries(censoContradicho.hosts),

@@ -317,17 +317,42 @@ const porSlug = (col) => new Map(salida[col].map((d) => [d.slug, d]));
  * pipeline y la transcripción difieran aquí no es un defecto de ninguno de los
  * dos: es que miden momentos distintos del proyecto.
  */
+/**
+ * Las rutas publicadas, que T7 necesita para plegar. **Mismo conjunto y misma
+ * fuente que `extractor.mjs`: SÓLO el manifiesto del build.** Si se leyera de
+ * otro sitio, el pliegue aplicaría un T7 distinto del que produjo el cuerpo y
+ * la comparación mediría la diferencia entre las dos listas.
+ */
+const rutasT7 = new Set();
+{
+  const m = enApp(".next/prerender-manifest.json");
+  if (!existsSync(m))
+    throw new Error("no hay `prerender-manifest.json`: sin él no se puede plegar T7, y plegarlo con 0 rutas daría un pliegue que no mira nada (la regla del cero).");
+  for (const r of Object.keys(JSON.parse(readFileSync(m, "utf8")).routes ?? {})) rutasT7.add(r);
+}
 const ctxMudo = () => ({
-  pagina: "control", rutas: new Set(),
+  pagina: "control", rutas: rutasT7,
   scriptsQuitados: [], mediaDelCuerpo: [], sinLlaveT3b: [], sustitucionesT4b: [], payloadIlegible: [],
+  noLocalizadas: [], relHuerfano: [],
 });
 const PLIEGUES_PIPELINE = [
   /**
    * Los pliegues NO se escriben: se DERIVAN de `TRANSFORMACIONES`, así que una
    * transformación nueva entra sola y su divergencia contra la transcripción
    * deja de contar como defecto sin tocar esta sonda (§sondas 9: la afirmación
-   * trae su derivación al lado). **T7 queda FUERA a propósito** — es justo lo
-   * que esta tanda está decidiendo, y plegarlo taparía lo que hay que medir.
+   * trae su derivación al lado).
+   *
+   * ⚠ **T7 ENTRA AQUÍ DESDE EL 2026-08-13, y sólo porque ya está decidida.**
+   * Mientras §PASO 2/4 la arbitraban se quedó fuera a propósito: plegar lo que
+   * estás decidiendo tapa justo lo que hay que medir. Tomada la decisión, T7 es
+   * una transformación declarada como las otras nueve — **y la transcripción a
+   * mano es anterior a ella igual que a T1 y a T3b**, así que su `href` al
+   * original y su `target` no la contradicen: no la habían aplicado.
+   *
+   * **Lo que arbitra T7 no es la transcripción**, y por eso plegarla no deja un
+   * hueco: la arbitran §Regla de rutas locales y §F2-3-HREF-DERIVADO (b), sus
+   * **dos** postcondiciones, y el efecto medido — `1788 → 2` enlaces locales con
+   * `target` y `53 → 2` destinos que el build no emite.
    *
    * Se pueden aplicar a la transcripción porque son **idempotentes por
    * contrato**: la postcondición de cada una exige que después no quede diana.
@@ -339,7 +364,7 @@ const PLIEGUES_PIPELINE = [
    * censos en `cms:extractor`. Aquí se mide otra cosa: que fuera de ellas los
    * dos cuerpos son el mismo.
    */
-  ...TRANSFORMACIONES.filter((t) => t.id !== "t7").map((t) => ({
+  ...TRANSFORMACIONES.map((t) =>({
     clase: `${t.id}-declarada`,
     aplica: (s) => t.aplica(s, ctxMudo()).html,
     firma: (s) => String(t.diana(s, ctxMudo())),
@@ -401,15 +426,20 @@ const CLASES = {
    * pliegan: `<id>-declarada` es una transformación de §3.2 posterior a la
    * transcripción a mano, y su título dice cuál. */
   ...Object.fromEntries(
-    TRANSFORMACIONES.filter((t) => t.id !== "t7").map((t) => [
+    TRANSFORMACIONES.map((t) =>[
       `${t.id}-declarada`,
       ["dato", `transformación declarada §3.2, POSTERIOR a la transcripción — ${t.titulo.slice(0, 72)}`],
     ]),
   ),
   "srcset-recapturado": ["dato", "ninguna de las 10 transformaciones toca `srcset`, así que el del pipeline ES el del corpus. La transcripción es más VIEJA que la captura y el original regenera variantes — arbitrado contra el corpus en 2/2"],
   "t3b-data-media": ["dato", "CONSECUENCIA de `media-original`: la llave sólo se deriva del `src` del original, y la transcripción lo localizó. Guardado aparte en `extractor-corpus.json` → `mediaDelCuerpo`"],
-  href: ["DEFECTO", "§Regla de rutas locales + §F2-3-HREF-DERIVADO salida (b) — lo arregla T7 (§PASO 4)"],
-  target: ["DEFECTO", '§Regla de rutas locales: `target="_blank"` sólo si el destino es externo — lo arregla T7 (§PASO 4)'],
+  /* ⚠ Siguen siendo DEFECTO, y eso NO contradice que T7 se pliegue: el pliegue
+   * aplica T7 a los dos lados, así que si después de él un `href` o un `target`
+   * todavía difieren, la diferencia **no es T7** — es otra cosa, y no tiene
+   * adjudicación. Antes del 2026-08-13 llegaban aquí 9 y 9; hoy tienen que
+   * llegar 0, y si vuelve alguno es un hallazgo. */
+  href: ["DEFECTO", "difieren DESPUÉS de plegar T7, así que no lo explica T7 — §Regla de rutas locales + §F2-3-HREF-DERIVADO (b)"],
+  target: ["DEFECTO", 'difieren DESPUÉS de plegar T7 — §Regla de rutas locales: `target="_blank"` sólo si el destino es externo'],
   "media-original": ["DEFECTO", "§Assets: «nunca se enlaza a kunakair.com en caliente», y el destino SÍ está publicado — §DATOS-MEDIA-HOTLINK"],
   "SIN CLASIFICAR": ["DEFECTO", "ninguna regla escrita la cubre"],
 };
