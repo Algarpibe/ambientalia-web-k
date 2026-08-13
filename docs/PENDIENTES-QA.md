@@ -545,6 +545,61 @@ sus guardas o no entra»* y su guarda —el control— está roja por esto.
 > `detalles.parametros` sobre-captura hasta un `<article>` y el saneador la
 > rechaza. Está contada y nombrada, no silenciada.
 
+### ⚖ ARBITRADA (2026-08-13, PASO 1) — de las cuatro clases, TRES son PRECEDENTE SIN APLICAR y sólo UNA es decisión
+
+> **La ficha presentaba las 12 discrepancias como si fueran doce decisiones
+> abiertas. No lo son.** Leídas contra las reglas que este repo ya tiene
+> escritas, **tres cuartas partes son reglas que existen y que T7 no aplica** —
+> o sea trabajo mecánico con su regla ya adjudicada— y la decisión de verdad es
+> **una sola**, y pequeña.
+
+**Los números se re-derivaron antes de arbitrar** (§sondas 9), sobre los 209 de
+`corpus/transformado/` contra el `prerender-manifest.json` del build de
+2026-08-12: **3318 `<a href>`** · **1788** locales con `target="_blank"` ·
+**153** rutas locales distintas · **53** no emitidas = **31 casos · 20 productos
+· 2 fuera del corpus**. Coinciden con los de la ficha original al último dígito.
+
+| clase | n | ¿decisión? | la regla que YA lo dice |
+|---|---|---|---|
+| `target="_blank"` de más | 1788 enlaces / 3 docs del control | **NO** | `CLAUDE.md` §Regla de rutas locales: *«`target="_blank"` **solo si el destino es externo**»* |
+| `href` a `productos` no emitidos | 20 rutas | **NO** | §F2-3-HREF-DERIVADO, **salida (b) adjudicada** (2026-08-07): *componer contra las rutas que el build emite*. Y la misma §Regla: *«si no, se deja apuntando al original»* |
+| `href` a `casos` no emitidos | 31 rutas | **NO** | se resuelven **solas** al sembrar los 57 (PASO 6). No hay nada que decidir |
+| `<br />` vs `<br>` · CRLF | 2 docs del control | ⚖ **SÍ** | ninguna. Ver §PASO 2 abajo |
+
+**Y el detalle de cada una, porque el argumento importa más que la conclusión:**
+
+**(1) El `target` no choca con FIDELIDAD, y ése era el único motivo para dudar.**
+El original sirve `target="_blank"` y conservarlo *parece* fidelidad. No lo es:
+**localizar el `href` YA es una transformación declarada** (T7, §3.2), así que en
+cuanto T7 muerde, el estado servido **no es el del original**. Conservar el
+`target` deja el enlace en un tercer estado que **no es ninguno de los dos** —ni
+el original (que apunta fuera y abre pestaña) ni la regla (que apunta dentro y no
+la abre)—. La fidelidad al original se conserva **no localizando**; una vez
+localizado, manda la regla.
+
+**(2) Las 20 de `productos` son un DEFECTO DE FUENTE, no una elección.** La ficha
+ya lo localiza: `ctx.rutas` se llena con **el manifiesto del build MÁS todas las
+URL del corpus** (`extractor.mjs:79-83`, y la copia literal en
+`extractor-c.mjs:89-93`). **Una URL capturada no es una ruta publicada** — es
+exactamente la confusión que §F2-3-HREF-DERIVADO adjudicó hace una semana en el
+render, sin que nadie la aplicara al pipeline. El conjunto correcto es **el
+manifiesto y sólo el manifiesto**; lo que no esté, se queda apuntando al
+original, que es la otra mitad de la misma regla.
+
+**(3) Las 31 de `casos` ni siquiera son un defecto**: son la consecuencia
+aritmética de que la colección no esté sembrada. `ctx.rutas` con el manifiesto
+correcto **las excluye hoy y las incluye mañana**, sin tocar una línea.
+
+> **La consecuencia de método, que es lo que justifica escribir esto en vez de
+> ponerse a codificar:** *tres cuartas partes de un escalón resultaron ser reglas
+> escritas y sin aplicar*, y la ficha las presentaba con la misma forma que la
+> decisión de verdad. **Una discrepancia medida no es una pregunta abierta hasta
+> que se comprueba que ninguna regla del repo la contesta.** Es la §regla 9
+> —derivar en vez de recordar— aplicada al **camino de decisiones** en vez de a
+> un número: haber tratado las 12 como 12 preguntas habría producido cuatro
+> decisiones nuevas donde había una, y tres de ellas podrían haber salido
+> **contra** el precedente sin que nada lo detectara.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de
