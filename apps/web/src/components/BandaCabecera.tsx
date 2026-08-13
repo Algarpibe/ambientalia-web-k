@@ -147,4 +147,20 @@ export const BANDA = {
    * como defecto en la familia equivocada.
    */
   kb: { alto: 225, altoMovil: 165.58 },
+  /**
+   * `LISTADO-B` (`L1`) — `/blog` y `/etiqueta/*`. **225 / 136.58**, medidos por
+   * composición sobre `lh-spec-{1440,390}.json`: la primera sección `_tb_body`
+   * arranca en `y = 225` a 1440 y en `y = 136.58` a 390, y esa sección **no
+   * tiene `padding-top`** (0 a los dos anchos, blog y etiqueta), así que la `y`
+   * ES el alto de la cabecera sin nada que restar.
+   *
+   * ⚠ **Coincide en los dos anchos con `producto` y NO se reusa su entrada**, ni
+   * su `corte`. Producto lleva 1024 desde C-QA2 porque su cambio va con el menú
+   * de hamburguesa; aquí el corte **está SIN PROBAR** —los dos altos se midieron
+   * a 1440 y a 390, y entre esos dos anchos caben los dos cortes—. Se deja el
+   * 768 por defecto, que es lo que ya sirven caso, FAQ, grupo A y KB, y se
+   * anota en vez de adivinar. El contrato en los anchos intermedios es de
+   * RANGO, no de fidelidad.
+   */
+  listado: { alto: 225, altoMovil: 136.58 },
 } as const;

@@ -350,6 +350,26 @@ export interface TerminoA {
 }
 
 /**
+ * ETIQUETA (`post_tag`) **con lo que su ARCHIVO pinta** — 12 términos.
+ *
+ * Es `TerminoA` más `descripcion`, y va aparte en vez de ensanchar `TerminoA`
+ * porque la descripción **no es propiedad del término citado desde una tarjeta**:
+ * es lo que la plantilla del archivo `/etiqueta/<slug>/` sirve bajo el `h1`
+ * (módulo `et_pb_text_4_tb_body`, 941.17 de ancho a 1440). Las entradas de blog
+ * siguen citando `TerminoA` y no deben arrastrar un campo que su tarjeta no usa.
+ *
+ * `descripcion` es **rico** —el censo del marcado de las 12 da `p`, `br` y `a`—
+ * y **opcional**: las 12 la traen, pero un término sin descripción es un camino
+ * de render que el dato de calibración no ejercita (§F2-5-ESCALON-ETIQUETAS), y
+ * declararlo obligatorio sería una regla que ninguna instancia ha probado.
+ */
+export interface EtiquetaA {
+  slug: string;
+  nombre: string;
+  descripcion?: CampoRico;
+}
+
+/**
  * Imagen de WordPress con su `srcset`. **`srcset` es campo, no adorno**: es la
  * causa medida de M-IMG (los tres módulos de imagen con residuo de décimas) y
  * la entrada de los *image sizes* que hay que declarar en Payload (CMS-0b).
@@ -388,6 +408,19 @@ export interface EntradaBlog {
   /** «15 junio 2026» — presente en las 7 medidas, con el MISMO valor. */
   fechaActualizacion?: string;
   imagenDestacada?: ImagenA;
+  /**
+   * El extracto de la TARJETA de `/blog`. **Campo, no derivado** — LH-SP10 lo
+   * contestó midiendo (`qa:lh-extracto`, negativo 4/4): `/blog` usa el extracto
+   * manual donde existe (**15 de 63** medidos, 86–102 c) y el automático si no;
+   * `/etiqueta` **ignora el manual** y trunca el cuerpo. O sea que son **dos
+   * mecanismos**, y sólo el de `/blog` es dato.
+   *
+   * ⚠ Estaba declarado en la colección desde F2-1 y **no en este tipo**, con la
+   * razón escrita al lado: *«el clon no pinta listados todavía»*. Los pinta desde
+   * la 66.ª tanda, así que el hueco se cierra aquí. Sembrado **66 de 68**; los 2
+   * que faltan son el hueco de captura de §F3-LH-DOS-CONJUNTOS-DE-149.
+   */
+  extracto?: string;
   /** `category` — 1..n. El rótulo singular/plural se deriva del número. */
   categorias: TerminoA[];
   /** `post_tag` — 0..n. */

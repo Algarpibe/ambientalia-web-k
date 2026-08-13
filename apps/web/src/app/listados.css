@@ -1,0 +1,619 @@
+/**
+ * LA HOJA DE `LISTADO-B` — transcrita del CSS SERVIDO, no escrita de impresión.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * DE DÓNDE SALE CADA DECLARACIÓN
+ *
+ * De `corpus/css` — las hojas que el original enlaza, capturadas en la tanda de
+ * pieles (§F3-LH-PIELES-SIN-CAPTURAR, 52 hojas). Es §El principio en su forma
+ * literal: *«la salida servida incluye el CSS que el documento se trae»*, y la
+ * lección que lo precede — Divi **no escribe el ajuste en el marcado, lo COMPILA
+ * a CSS**, así que el CSS servido ES el dato.
+ *
+ * Lo que NO es esta hoja: una calibración. Ninguna regla se ha ajustado mirando
+ * el clon. Se transcriben los valores y los BREAKPOINTS que el original sirve, y
+ * **quien adjudica es `qa:lh-cmp`**, par a par contra el original — que es lo
+ * que `kb-clases` ya dejó escrito: *verificar el CSS contra el CSS es verificar
+ * contra la fuente que uno supone responsable*.
+ *
+ * ── Por qué el clon emite el vocabulario de clases de Divi ────────────────
+ * Porque `lh-barrido.mjs` lee el ESQUELETO por `.et_pb_section` · `.et_pb_row` ·
+ * `.et_pb_column_*` · `.et_pb_module`, y es **un solo instrumento para los dos
+ * lados**. Emitir un vocabulario propio obligaría a una tabla de traducción, que
+ * es la clase C7 con su peor salida: dos barridos verdes en su marco midiendo
+ * cosas distintas. Las clases son además el marcador **semántico** que este
+ * proyecto ya reconoce como identidad (§sondas · `kunak-*`, `et_pb_*`).
+ *
+ * ── El alcance está ACOTADO a propósito ───────────────────────────────────
+ * Aquí **no** entran los resets de Divi (`* { margin:0 }`, `a { color:… }`, las
+ * reglas de `h1..h6` globales). El original los sirve, pero su cabecera y su pie
+ * son marcado de Divi y el del clon es Tailwind ya verificado a dos anchos:
+ * traerlos re-estilaría 302 rutas para arreglar 3. Lo que se transcribe son las
+ * reglas del CUERPO del listado, y las globales se reproducen **en el selector
+ * que las necesita**. Es una desviación declarada, no un descuido.
+ */
+
+/* ── Tokens del tema que las reglas de abajo citan ───────────────────────── */
+.lh-cuerpo {
+  --azul: #0075c9;
+  --gris: #666666;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1 · LA RETÍCULA DEL `_tb_body`
+ *
+ * Sección · fila · columna, con los defaults de ritmo de Divi resueltos contra
+ * SU contenedor (⚠⚠ de `CLAUDE.md` §Test A: son porcentajes, y leerlos como
+ * constantes es el fallo que ese aviso describe).
+ *
+ *   sección `pt/pb` 4 %   → 57.5938 @1440 · 50 @390
+ *   fila     `pt/pb` 2 %  → 28.7969 @1440 · 30 @390
+ *   módulo   `mb` 2.75 %  → 34.0469 @1440 · 30 @390
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .et_pb_section {
+  position: relative;
+  background-color: #fff;
+}
+
+/* La sección de la miga NO lleva el default: el editor la puso a 0 (medido a
+   los dos anchos, blog y etiqueta). */
+.lh-cuerpo .et_pb_section_0_tb_body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.lh-cuerpo .et_pb_section_1_tb_body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_section_1_tb_body {
+    padding-top: 57.5938px;
+    padding-bottom: 57.5938px;
+  }
+}
+
+/* La fila: 86 % con tope de 1380 ⇒ 1238.39 @1440 · 335.39 @390. Los mismos
+   números que `CascaronTb`, medidos de los dos lados en grupo A y en KB. */
+.lh-cuerpo .et_pb_row {
+  position: relative;
+  width: 86%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lh-cuerpo .et_pb_row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Fila 0 — la miga: `pt/pb 12px`, iguales a 1440 y a 390 ⇒ los escribió una
+   persona en el builder, no el default responsive. */
+.lh-cuerpo .et_pb_row_0_tb_body {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Fila 1 — el titular: `pt 0 · pb 8px`, iguales a los dos anchos. */
+.lh-cuerpo .et_pb_row_1_tb_body {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+
+/* Fila 2 — el listado. El `pt` es la única celda donde las dos variantes
+   DIFIEREN, y por eso es una prop del componente y no una constante de la hoja:
+   blog 14.3906 @1440 / 3.89062 @390 · etiqueta 28.7969 / 30. */
+.lh-cuerpo .et_pb_row_2_tb_body {
+  padding-top: var(--lh-fila2-pt);
+  padding-bottom: 30px;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_row_2_tb_body {
+    padding-top: var(--lh-fila2-pt-lg);
+    padding-bottom: 28.7969px;
+  }
+}
+
+/* Las columnas. `4_4` ocupa la fila; `3_4 + 1_4` es 73.624 % + canal 5.5 % +
+   20.87 % — los mismos porcentajes que `CascaronTb`, y el 73.624 no es «el
+   porcentaje de Divi»: es el que reproduce el píxel medido (911.75). */
+.lh-cuerpo .et_pb_column {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+}
+
+.lh-cuerpo .et_pb_column_4_4 {
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  /* Apiladas: la columna que no es la última lleva 30px de separación, que es
+     el `mb` que la medida da en `col_3_4` a 390. */
+  .lh-cuerpo .et_pb_row_3-4_1-4 > .et_pb_column_3_4 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_column {
+    float: left;
+  }
+  .lh-cuerpo .et_pb_column_3_4 {
+    width: 73.624%;
+    margin-right: 5.5%;
+  }
+  .lh-cuerpo .et_pb_column_1_4 {
+    width: 20.87%;
+    margin-right: 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 2 · LOS MÓDULOS
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .et_pb_module {
+  position: relative;
+}
+
+/* El titular de la página. Las TRES pieles de `h1` de los listados se exhibieron
+   como REGLAS SERVIDAS (`qa:lh-pieles-css`, 13/13 con canal completo); ésta es
+   la de `L1`, verbatim del CSS compilado por Divi:
+       .et_pb_text_1_tb_body h1 { font-weight:800; font-size:50px; line-height:1.2em }
+       @media (max-width:980px) { … font-size:35px }
+   ⚠ `letter-spacing` y `color` NO están en ese override: vienen de la regla
+   global del tema (`h1..h6 { letter-spacing:-0.5px }` · `{ color:#333 }`), y se
+   reproducen aquí en el selector que las necesita en vez de traer el reset
+   entero (ver el alcance acotado de la cabecera). */
+.lh-cuerpo .lh-titulo h1 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 1.2em;
+  letter-spacing: -0.5px;
+  color: #333;
+  text-align: left;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .lh-titulo h1 {
+    font-size: 50px;
+  }
+}
+
+/* El módulo del titular de `/blog` lleva `pb` propio: 24.7656 @1440 y 6.70312
+   @390. Son el 2 % y el 2 % de contenedores distintos, o sea el default de
+   Divi resuelto contra la fila — no un valor escrito. */
+.lh-cuerpo .et_pb_text_1_tb_body {
+  padding-bottom: 6.70312px;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_text_1_tb_body {
+    padding-bottom: 24.7656px;
+  }
+}
+
+/* La descripción del término (`/etiqueta`): módulo con ANCHO PROPIO —941.17 de
+   1238.39 a 1440, o sea 76 %— y ancho completo al apilar. Es el caso de manual
+   de §Estructura que en realidad es contenido: el ancho de módulo lo escribe
+   quien edita, y en el original va en %. */
+.lh-cuerpo .et_pb_text_4_tb_body {
+  width: 100%;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_text_4_tb_body {
+    width: 76%;
+  }
+}
+
+.lh-cuerpo .et_pb_text_4_tb_body p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7em;
+  color: #333;
+}
+
+.lh-cuerpo .et_pb_text_4_tb_body a {
+  color: var(--azul);
+  text-decoration: none;
+}
+
+/* La miga: la comparte con el resto del clon, y su tipografía la pone
+   `globals.css`. Aquí sólo el módulo. */
+.lh-cuerpo .et_pb_text_0_tb_body {
+  padding: 0;
+  margin: 0;
+}
+
+/* El módulo del listado de `/etiqueta` lleva el `mb` por defecto de Divi
+   (2.75 % de la fila): 34.0469 @1440 · 30 @390. El de `/blog` no lo lleva
+   porque su listado va dentro de un módulo de TEXTO, que es otro shortcode. */
+.lh-cuerpo .et_pb_blog_1_tb_body {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_blog_1_tb_body {
+    margin-bottom: 34.0469px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 3 · LA REJILLA DE TARJETAS
+ *
+ * Transcrita con SUS breakpoints del CSS servido — es lo que hace que el clon
+ * VARÍE como varía el original en los anchos intermedios, que es el contrato de
+ * rango de `CLAUDE.md`. Cablear los valores de 1440 y 390 daría Δ0 en los dos
+ * anchos medidos y un defecto de RANGO en todo lo de en medio.
+ *
+ *   base    (sin rejilla)          card: mb 2rem, columna flex
+ *   ≥480    2 col, canal 30        contenedor calc(100% + 30px)
+ *   ≥768    2 col, canal 35        contenedor calc(100% + 35px)
+ *   ≥981    3 col, canal 35        contenedor calc(100% + 35px)
+ *   ≥1280   3 col, canal 40        contenedor calc(100% + 40px)
+ *
+ * Comprobación a 1440: contenedor = 911.75 + 40 = 951.75 (medido 951.75 ✓) y
+ * tarjeta = 33.33 % · 951.75 − 40 = 277.218 → 277.2 con el redondeo a 1/64 de
+ * Chrome (medido 277.2 ✓).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .et_pb_posts > div {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.lh-cuerpo .et_pb_posts .et_pb_post {
+  margin-bottom: 2rem;
+  align-items: initial;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+@media (min-width: 480px) {
+  .lh-cuerpo .et_pb_posts > div {
+    width: calc(100% + 30px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .lh-cuerpo .et_pb_posts .et_pb_post {
+    width: calc(50% - 30px);
+    margin-inline-end: 30px;
+    margin-bottom: 40px;
+    float: inline-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .lh-cuerpo .et_pb_posts > div {
+    width: calc(100% + 35px);
+  }
+  .lh-cuerpo .et_pb_posts .et_pb_post {
+    width: calc(50% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo .et_pb_posts .et_pb_post {
+    width: calc(33.33% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lh-cuerpo .et_pb_posts > div {
+    width: calc(100% + 40px);
+  }
+  .lh-cuerpo .et_pb_posts .et_pb_post {
+    width: calc(33.33% - 40px);
+    margin-inline-end: 40px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4 · LA TARJETA
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/* La media. `aspect-ratio: 4/2.7` con `overflow:hidden` es lo que RECORTA la
+   imagen que desborda — el §3 de la spec avisa de que «el recorte hay que
+   construirlo, no sale solo». */
+.lh-cuerpo .et_pb_post .entry-featured-image-url {
+  position: relative;
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  border: 0 solid #333;
+  border-radius: 10px;
+  aspect-ratio: 4 / 2.7;
+  overflow: hidden;
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.lh-cuerpo .et_pb_post .entry-featured-image-url img {
+  min-height: 100%;
+  width: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+  transition: all 0.5s;
+}
+
+/* El zoom, con la regla EXACTA que `qa:hover-zonal` leyó del CSS servido: el
+   disparador es el `<a>` de la imagen, **nunca** el `article`. */
+.lh-cuerpo .et_pb_post .entry-featured-image-url:hover img {
+  transform: scale(1.1);
+}
+
+/* ⚠ `min-width: 440px` SÓLO en el listado de `/blog`, y es la causa medida de
+   que su media dé 440 de ancho dentro de una tarjeta de 277.2 mientras la de
+   `/etiqueta` da 277.2. Está en el CSS servido con ese selector literal. */
+.lh-cuerpo .shotcode-listar-entradas-blog .et_pb_post .entry-featured-image-url img {
+  max-width: 100%;
+  min-width: 440px;
+}
+
+/* El titular de la tarjeta. DOS pieles, y las dos son reglas servidas:
+     .et_pb_posts .et_pb_post .entry-title  → 23px / 1.25 / 400   (blog)
+     .et_pb_blog_1_tb_body .et_pb_post .entry-title → 20px / 1.35em !important
+   La segunda gana por el `!important` del override de módulo, que es cómo Divi
+   compila lo que el editor tocó. */
+.lh-cuerpo .et_pb_posts .et_pb_post .entry-title {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #333;
+}
+
+.lh-cuerpo .et_pb_blog_1_tb_body .et_pb_post .entry-title {
+  font-size: 20px;
+  line-height: 1.35em;
+}
+
+.lh-cuerpo .et_pb_post .entry-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lh-cuerpo .et_pb_posts .et_pb_post .entry-title a:hover,
+.lh-cuerpo .et_pb_posts .et_pb_post .post-meta a:hover {
+  color: var(--azul);
+}
+
+/* La meta. `color: inherit !important` es lo que explica que el `<p>` mida #333
+   y su enlace #666: el `p` hereda del cuerpo y el `a` conserva el color de
+   `.et_pb_widget a`/`.et_pb_post .post-meta a`. */
+.lh-cuerpo .et_pb_posts .et_pb_post .post-meta {
+  margin: 0 0 6px;
+  font-size: 13.5px;
+  line-height: 1.55em;
+  color: inherit;
+}
+
+.lh-cuerpo .et_pb_post .post-meta a {
+  color: #666;
+  text-decoration: none;
+}
+
+/* El extracto. */
+.lh-cuerpo .et_pb_posts .et_pb_post .post-content p {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.55em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 5 · EL PAGINADOR — dos pieles, una por variante (`A` en blog, `B` en etiqueta)
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .wp-pagenavi {
+  clear: both;
+  font-size: 18px;
+  line-height: 30.6px;
+  color: #333;
+  text-align: left;
+}
+
+.lh-cuerpo .wp-pagenavi a,
+.lh-cuerpo .wp-pagenavi span {
+  text-decoration: none;
+  border: 1px solid #bfbfbf;
+  padding: 3px 5px;
+  margin: 2px;
+}
+
+.lh-cuerpo .wp-pagenavi a {
+  border: 2px solid var(--azul);
+  padding: 0 5px;
+  min-width: 36px;
+  display: inline-block;
+  text-align: center;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--azul);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.lh-cuerpo .wp-pagenavi span.current,
+.lh-cuerpo .wp-pagenavi span.page-numbers.current {
+  color: #fff;
+  border: 2px solid var(--azul);
+  padding: 0 5px;
+  min-width: 36px;
+  display: inline-block;
+  text-align: center;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 32px;
+  background-color: var(--azul);
+}
+
+.lh-cuerpo .wp-pagenavi a:hover {
+  border-color: var(--gris);
+  transition: all 0.3s;
+  color: var(--gris);
+}
+
+/* `a.prev`/`a.next` (piel A) y `.pages`/`.dots` no llevan la píldora. */
+.lh-cuerpo .wp-pagenavi a.prev,
+.lh-cuerpo .wp-pagenavi a.next {
+  border: none;
+  padding: 0 5px;
+  min-width: 0;
+  height: 36px;
+  border-radius: 0;
+}
+
+.lh-cuerpo .wp-pagenavi .pages,
+.lh-cuerpo .wp-pagenavi .extend,
+.lh-cuerpo .wp-pagenavi .first,
+.lh-cuerpo .wp-pagenavi .last,
+.lh-cuerpo .wp-pagenavi span.dots {
+  border: none;
+  font-size: 15px;
+}
+
+.lh-cuerpo .wp-pagenavi .previouspostslink,
+.lh-cuerpo .wp-pagenavi .nextpostslink {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 6 · LA BARRA LATERAL — 4 widgets, UNA SOLA FIRMA en 80 documentos
+ *
+ * Varianza 0 en 80 instancias en régimen plantillado ⇒ PLANTILLA. Su contenido
+ * va cableado por la misma razón por la que el original lo tiene cableado: el
+ * widget «Categorías» es `widget_text` en 80/80 y **no cubre 5 de los 7
+ * términos vivos** — o sea que NO consume la taxonomía, y regenerarlo sería
+ * arreglar el original, no clonarlo (`D3` CONFIRMADA).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .et_pb_widget_area_right {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 30px;
+}
+
+.lh-cuerpo .et_pb_sidebar_0_tb_body.et_pb_widget_area {
+  border-left-width: 1px;
+  border-left-color: #d6d6d6;
+}
+
+@media (max-width: 980px) {
+  .lh-cuerpo .et_pb_widget_area_right {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.lh-cuerpo .et_pb_widget_area::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.lh-cuerpo .et_pb_widget {
+  float: left;
+  max-width: 100%;
+  width: 100%;
+  word-wrap: break-word;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.7em;
+  color: #666;
+}
+
+.lh-cuerpo .et_pb_widget:last-child {
+  margin-bottom: 0;
+}
+
+.lh-cuerpo .et_pb_widget a {
+  text-decoration: none;
+  color: #666;
+}
+
+.lh-cuerpo .et_pb_widget li a:hover {
+  color: #82c0c7;
+}
+
+.lh-cuerpo .et_pb_widget .widgettitle {
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1em;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.lh-cuerpo .et_pb_widget_area ul {
+  list-style: none !important;
+  padding: 0 !important;
+  line-height: inherit !important;
+  margin: 0;
+}
+
+.lh-cuerpo .et_pb_widget ul li {
+  margin-bottom: 0.5em;
+}
+
+/* El buscador. ⚠ `SP-B4`: es una INTERACCIÓN y `P-LH-C6` no la midió — su
+   alcance eran hover, paginación, lazy y orden. Se replica el marcado y la caja
+   medidos; lo que hace al enviarse está SIN MEDIR, no «sin efecto». */
+.lh-cuerpo .widget_search #searchform {
+  position: relative;
+}
+
+.lh-cuerpo .widget_search .screen-reader-text {
+  display: none;
+}
+
+.lh-cuerpo .widget_search input#s,
+.lh-cuerpo .widget_search input#searchsubmit {
+  padding: 0.7em;
+  height: 40px !important;
+  margin: 0;
+  font-size: 14px;
+  line-height: normal !important;
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+.lh-cuerpo .widget_search #s {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.lh-cuerpo .widget_search #searchsubmit {
+  background-color: #ddd;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+/* El botón de la newsletter. `et_pb_button` es la convención del tema que el
+   80 % del corpus usa para que un enlace se vea como botón. */
+.lh-cuerpo .et_pb_widget .et_pb_button {
+  display: inline-block;
+  cursor: pointer;
+}

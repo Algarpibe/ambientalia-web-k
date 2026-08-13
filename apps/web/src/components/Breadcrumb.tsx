@@ -78,6 +78,7 @@ export function Breadcrumb({
   items,
   rowClassName = "mx-auto w-[80%] max-w-[1380px]",
   variante = "producto",
+  envoltorio = "propio",
 }: {
   items: BreadcrumbItem[];
   /** Retícula de la fila. Por defecto la de las páginas de producto (80%). */
@@ -87,54 +88,75 @@ export function Breadcrumb({
    * último eslabón bajó al defecto en A-QA1, porque está en las 7 formas.
    */
   variante?: "producto" | "caso";
+  /**
+   * `"propio"` — la miga trae su `<nav>` y su fila, que es como vive en las 11
+   * rutas anteriores: fuera de `main > section`, por la partición D2.
+   *
+   * `"heredado"` — devuelve **sólo el `<ol>`**, para las plantillas donde la
+   * miga es un MÓDULO dentro de una fila que ya existe. Es el caso de `L1`: en
+   * el original está en `et_pb_text_0_tb_body.breadcrumbs`, dentro de
+   * `section_0 → row_0 → column_4_4`, y montarle aquí otra fila metería una
+   * `.et_pb_row` de más — que el barrido cuenta (`nFilas` es eje `plantilla`).
+   *
+   * ⚠ Es una prop y no un componente nuevo **a propósito**: la cabecera de este
+   * fichero dice que ésta es la ÚNICA implementación del clon, y la razón está
+   * pagada — cuatro páginas con su copia a mano dieron por cerrada una clase que
+   * llegaba a 3 de 7. Una segunda miga «para listados» sería esa historia otra
+   * vez con otro nombre.
+   */
+  envoltorio?: "propio" | "heredado";
 }) {
   const esCaso = variante === "caso";
+  const lista = (
+    <ol
+      className={
+        "kunak-breadcrumbs text-[12px] font-semibold tracking-[0.3px] text-[#0075C9] " +
+        (esCaso ? "leading-[30.6px]" : "leading-[26px]")
+      }
+      itemScope
+      itemType="https://schema.org/BreadcrumbList"
+    >
+      {items.map((item, i) => (
+        <li
+          key={item.label}
+          className={
+            "inline-block pr-[7.2px] after:pl-[7.2px] after:content-['/'] last:after:content-none " +
+            // El truncado es del ÚLTIMO, que es el título del contenido — y
+            // va **en el defecto**: medido en las 7 formas del original, sin
+            // una excepción (A-QA1). Antes vivía en `variante="caso"` y eso
+            // era una regla general disfrazada de específica.
+            (i === items.length - 1
+              ? "max-w-[350px] overflow-hidden text-ellipsis whitespace-nowrap align-bottom"
+              : "")
+          }
+          itemProp="itemListElement"
+          itemScope
+          itemType="https://schema.org/ListItem"
+        >
+          {item.href ? (
+            <a itemProp="item" href={item.href} className="hover:underline">
+              <span itemProp="name">{item.label}</span>
+            </a>
+          ) : (
+            <span itemProp="name" aria-current="page">
+              {item.label}
+            </span>
+          )}
+          <meta itemProp="position" content={String(i + 1)} />
+        </li>
+      ))}
+    </ol>
+  );
+
+  if (envoltorio === "heredado") return lista;
+
   return (
     <nav aria-label="Migas de pan" className="bg-white">
       {/* `data-fila`: en el original la miga ES una `.et_pb_row` dentro de una
           sección; en el clon vive en un `<nav>` fuera de `main > section` (la
           partición D2). Sin marcador, `ancho-cuerpo` no podía verla por ningún
           lado y la miga del original salía huérfana en ~29 rutas. */}
-      <div data-fila="" className={rowClassName + " py-[12px]"}>
-        <ol
-          className={
-            "kunak-breadcrumbs text-[12px] font-semibold tracking-[0.3px] text-[#0075C9] " +
-            (esCaso ? "leading-[30.6px]" : "leading-[26px]")
-          }
-          itemScope
-          itemType="https://schema.org/BreadcrumbList"
-        >
-          {items.map((item, i) => (
-            <li
-              key={item.label}
-              className={
-                "inline-block pr-[7.2px] after:pl-[7.2px] after:content-['/'] last:after:content-none " +
-                // El truncado es del ÚLTIMO, que es el título del contenido — y
-                // va **en el defecto**: medido en las 7 formas del original, sin
-                // una excepción (A-QA1). Antes vivía en `variante="caso"` y eso
-                // era una regla general disfrazada de específica.
-                (i === items.length - 1
-                  ? "max-w-[350px] overflow-hidden text-ellipsis whitespace-nowrap align-bottom"
-                  : "")
-              }
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/ListItem"
-            >
-              {item.href ? (
-                <a itemProp="item" href={item.href} className="hover:underline">
-                  <span itemProp="name">{item.label}</span>
-                </a>
-              ) : (
-                <span itemProp="name" aria-current="page">
-                  {item.label}
-                </span>
-              )}
-              <meta itemProp="position" content={String(i + 1)} />
-            </li>
-          ))}
-        </ol>
-      </div>
+      <div data-fila="" className={rowClassName + " py-[12px]"}>{lista}</div>
     </nav>
   );
 }
