@@ -773,6 +773,147 @@ export const RE_TROZO_RSC = /<script>self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*
 /** El documento sin la carga de hidratación: lo que un visitante recibe. */
 export const visibleDe = (html) => html.replace(RE_TROZO_RSC, "");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * COMPARAR DOS HTML QUE DEBERÍAN SER EL MISMO — y CLASIFICAR en qué difieren
+ *
+ * Sube aquí el 2026-08-13 (§DATOS-C-PIPELINE, PASO 3) por el mismo argumento
+ * que `visibleDe`: `extractor-c` comparaba cuerpos ricos con un `norm` propio
+ * y `extractor-a` iba a estrenar el suyo. Dos definiciones de «el mismo HTML»
+ * dan el caso C7 en su peor forma —dos controles verdes en marcos distintos—
+ * y aquí encima **deciden qué se siembra**.
+ *
+ * ── Qué se pliega, y por qué CADA pliegue está medido contra el ORIGINAL ──
+ * Los tres son de SERIALIZACIÓN: cambian los bytes y no el documento. Y los
+ * tres se decidieron mirando qué sirve el original en el corpus congelado, no
+ * eligiendo el que le convenía al instrumento (§PASO 2, 2026-08-13):
+ *
+ *   | pliegue        | el ORIGINAL sirve            | el pipeline | la transcripción |
+ *   |----------------|------------------------------|-------------|------------------|
+ *   | espacio        | LF y CRLF mezclados          | ambos       | LF               |
+ *   | cierre `<br>`  | `<br />` en las 3 instancias | `<br />`    | `<br>`           |
+ *   | espacio duro   | U+00A0 crudo                 | U+00A0      | `&nbsp;`         |
+ *
+ * O sea: **el pipeline reproduce el original en los tres y la transcripción a
+ * mano normalizó**. Plegarlos NO es fidelidad a la copia — es reconocer que la
+ * copia escribió lo mismo de otra manera.
+ *
+ * ⚠ **Un pliegue equipara ORTOGRAFÍAS, nunca CANTIDADES.** `<br />`↔`<br>`
+ * iguala las dos formas de escribir un salto; **no** iguala dos saltos con
+ * uno. Si el pipeline perdiera un `<br>`, el pliegue no lo taparía. Ésa es la
+ * línea que separa esto de un umbral que esconde defectos.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Los pliegues, con nombre y con FIRMA. El nombre es la clase de discrepancia;
+ * la firma es lo que decide si esa clase **está presente** en un par concreto —
+ * se deriva contando la ortografía de cada lado, no se adivina por parecido.
+ *
+ * ⚠ `espacio-duro` va ANTES que `espacio` a propósito: `\s` de JS **casa
+ * U+00A0**, así que plegar el espacio primero se llevaría por delante la
+ * evidencia que la firma del espacio duro tiene que contar.
+ *
+ * ⚠⚠ **Y `media-original` es un pliegue que NOMBRA UN DEFECTO, no una
+ * equivalencia.** Los otros tres dicen *«lo mismo escrito de otra forma»*; éste
+ * dice *«el mismo fichero servido desde el sitio ajeno»*, que es exactamente lo
+ * que `CLAUDE.md` §Assets prohíbe. Se pliega para que el resto del documento se
+ * pueda comparar, **y quien llama tiene que tratar su clase como roja** — si se
+ * mete en el mismo saco que el espacio, el pliegue pasa de medir a tapar.
+ */
+export const PLIEGUES = [
+  {
+    clase: "espacio-duro",
+    aplica: (s) => s.replace(/&nbsp;/g, " "),
+    firma: (s) => `${(s.match(/&nbsp;/g) ?? []).length}`,
+  },
+  {
+    clase: "cierre-xhtml",
+    aplica: (s) => s.replace(/<(br|hr|img|input|source)\b([^>]*?)\s*\/>/gi, "<$1$2>"),
+    firma: (s) => `${(s.match(/<(?:br|hr|img|input|source)\b[^>]*\/>/gi) ?? []).length}`,
+  },
+  {
+    clase: "media-original",
+    aplica: (s) => s.replace(/https?:\/\/(?:www\.)?kunakair\.com\/wp-content\/uploads\//g, "/images/uploads/"),
+    firma: (s) => `${(s.match(/kunakair\.com\/wp-content\/uploads\//g) ?? []).length}`,
+  },
+];
+
+/**
+ * ⚠ **El pliegue del ESPACIO va EL ÚLTIMO, y no es cosmética.** Los pliegues de
+ * pipeline que se inyectan por `extra` **quitan etiquetas** —T5 deshace
+ * envoltorios, T4a se lleva `<script>`—, y al quitarlas dejan pegado el espacio
+ * que las rodeaba. Plegar el espacio ANTES los deja reaparecer después, y la
+ * salida es un `SIN CLASIFICAR` cuya única diferencia es un espacio doble.
+ *
+ * Se cazó así: 2 de los 4 residuos del PASO 3 eran `</div>  <figure>` contra
+ * `</div> <figure>`. Un defecto del INSTRUMENTO con forma de hallazgo — que es
+ * §sondas 4 en su tercera cara: un heurístico que encuentra de MÁS no da error,
+ * da un número plausible que invita a explicarlo.
+ */
+export const PLIEGUES_FINAL = [
+  {
+    clase: "espacio",
+    aplica: (s) => s.replace(/\s+/g, " ").trim(),
+    /* CRLF y LF sueltos por separado: la ficha afirma «finales de línea», y sin
+     * este desglose esa afirmación no se puede auditar contra la congelada. */
+    firma: (s) =>
+      `${(s.match(/\r\n/g) ?? []).length}·${(s.match(/(?<!\r)\n/g) ?? []).length}·${(s.match(/[ \t]{2,}/g) ?? []).length}`,
+  },
+];
+
+/** El HTML con los pliegues aplicados: dos valores iguales aquí son el mismo documento. */
+export const comparable = (s, extra = []) =>
+  typeof s === "string" ? [...PLIEGUES, ...extra, ...PLIEGUES_FINAL].reduce((h, p) => p.aplica(h), s) : s;
+
+/** Los `href` de un HTML, en orden de aparición. */
+const hrefsDe = (s) => [...s.matchAll(/\bhref="([^"]*)"/g)].map((m) => m[1]);
+/** El patrón de `target="_blank"` sobre los `<a>`, en orden: `"0110…"`. */
+const targetsDe = (s) => [...s.matchAll(/<a\b[^>]*>/gi)].map((t) => (/target="_blank"/i.test(t[0]) ? "1" : "0")).join("");
+/** El HTML con `href` y `target` neutralizados: lo que queda al quitarles la voz. */
+const sinEnlaces = (s) => s.replace(/\bhref="[^"]*"/g, 'href="·"').replace(/\s*target="_blank"/gi, "");
+
+/**
+ * En QUÉ difieren dos HTML que deberían ser el mismo. Derivado, no supuesto.
+ *
+ * `extra` admite pliegues más allá de los universales — los que dependen del
+ * pipeline de este proyecto (T3a, T3b…) y por tanto no pueden vivir aquí sin
+ * atar `lib.mjs` a `transformaciones.mjs`. Cada uno trae su `clase`, su
+ * `aplica` y su `firma`, igual que los de arriba.
+ *
+ * Devuelve `{ clases, mismoDocumento }`:
+ *
+ * · **`mismoDocumento`** — si, plegado todo, son idénticos byte a byte;
+ * · **`clases`** — las etiquetas presentes: las de los pliegues (por FIRMA
+ *   distinta) y `href` · `target` (por lista distinta).
+ *
+ * Y lo que sobrevive a todas sale como **`SIN CLASIFICAR`**, que es rojo y
+ * nunca cero: un clasificador que no reconoce nada y uno que no mira nada dan
+ * la misma salida (§sondas 4), así que el residuo tiene que GRITAR en vez de
+ * caer en un cubo de «combinaciones de las anteriores» — que es exactamente
+ * donde §DATOS-C-PIPELINE metió 6 de sus 12 y perdió tres clases enteras.
+ *
+ * ⚠ **Una clase presente NO significa «benigno».** Este clasificador dice EN QUÉ
+ * difieren; **qué se hace con cada clase lo decide quien llama**, y tiene que
+ * decidirlo por escrito. Es la §regla 6 aplicada aquí: traducir una diferencia
+ * a un valor benigno en el sitio donde todavía se sabe cuál es la borra.
+ */
+export function clasificaDiscrepancia(leido, esperado, extra = []) {
+  if (leido === esperado) return { clases: [], mismoDocumento: true };
+  if (typeof leido !== "string" || typeof esperado !== "string")
+    return { clases: ["tipo"], mismoDocumento: false };
+
+  const clases = [];
+  let a = leido, b = esperado;
+  for (const p of [...PLIEGUES, ...extra, ...PLIEGUES_FINAL]) {
+    if (p.firma(a) !== p.firma(b)) clases.push(p.clase);
+    a = p.aplica(a);
+    b = p.aplica(b);
+  }
+  if (JSON.stringify(hrefsDe(a)) !== JSON.stringify(hrefsDe(b))) clases.push("href");
+  if (targetsDe(a) !== targetsDe(b)) clases.push("target");
+  if (sinEnlaces(a) !== sinEnlaces(b)) clases.push("SIN CLASIFICAR");
+  return { clases, mismoDocumento: a === b };
+}
+
 /** El día de HOY en hora local, `YYYY-MM-DD`. Nunca `toISOString()`. */
 export function hoy(d = new Date()) {
   const p = (n) => String(n).padStart(2, "0");

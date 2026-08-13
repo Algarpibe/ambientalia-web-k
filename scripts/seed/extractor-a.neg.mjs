@@ -14,6 +14,7 @@
  * | `control-roto` | **el CONTROL no reproduce** la transcripción | un fallo de lectura del corpus |
  * | `selector-muerto` | **lector MUERTO** (`<h9>`, miga anulada) | «ese campo no está», que es como se lee un cero |
  * | `cuerpo-ausente` | **documento sin cuerpo ⇒ TIRA**, no se emite a medias | un catálogo con 148 y verde |
+ * | `cuerpo-cambiado` | **el CUERPO RICO no reproduce** la transcripción | un cuerpo que nadie compara — el defecto real hasta 2026-08-13 |
  * | (control) | ✅ 209 extraídos, el control reproduce la transcripción entera | — |
  *
  * `cuerpo-ausente` es el que protege del fallo más caro de este proyecto: un
@@ -80,6 +81,30 @@ const casos = [
     env: { SABOTAJE: "selector-muerto" },
     exit: 2,
     salidaTiene: /SELECTOR\(ES\) MUERTO\(S\)/,
+  },
+  {
+    /**
+     * ⚠ **El sabotaje que no existía, y su ausencia es lo que dejó pasar
+     * §DATOS-C-PIPELINE.** Hasta el 2026-08-13 el control comparaba 18 campos y
+     * **ninguno era `cuerpo`**, así que un cuerpo cambiado salía VERDE. Que
+     * ahora caiga es lo único que autoriza a leer «✅ TODAS» como *«el cuerpo se
+     * reproduce»* en vez de *«los metadatos se reproducen»*.
+     *
+     * Y cae por su clase: un `<p>` añadido no es espacio, ni cierre XHTML, ni
+     * `href`, ni ninguna transformación declarada ⇒ **`SIN CLASIFICAR`**, que es
+     * la puerta por la que tiene que salir lo que ninguna regla cubre.
+     */
+    etiqueta: "cuerpo-cambiado",
+    porQue: "un CUERPO que no reproduce la transcripción ⇒ rojo, y por `SIN CLASIFICAR`",
+    env: { SABOTAJE: "cuerpo-cambiado" },
+    exit: 2,
+    salidaTiene: /SIN CLASIFICAR/,
+    comprueba: (j) => {
+      const n = j.divergencia?.porClase?.["SIN CLASIFICAR"] ?? 0;
+      if (!n) return "el sabotaje no produjo ni un `SIN CLASIFICAR`: el control del cuerpo no muerde";
+      if (!j.control.cuerposComparados) return "la congelada dice que compara 0 cuerpos: el numerador del control no cubre el campo rico";
+      return null;
+    },
   },
   {
     etiqueta: "cuerpo-ausente",
