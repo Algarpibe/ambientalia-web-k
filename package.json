@@ -53,6 +53,8 @@
     "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs",
     "qa:lh-serie": "node scripts/qa/lh-serie.mjs",
     "qa:lh-cmp": "node scripts/qa/lh-cmp.mjs",
+    "qa:lh-pieles-css": "node scripts/qa/lh-pieles-css.mjs",
+    "qa:lh-pieles-css-neg": "node scripts/qa/lh-pieles-css.neg.mjs",
     "qa:lh-cmp-390": "node scripts/qa/lh-cmp.mjs 390",
     "qa:lh-cmp-vivo": "node scripts/qa/lh-cmp.mjs --vivo",
     "qa:lh-cmp-neg": "node scripts/qa/lh-cmp.neg.mjs",

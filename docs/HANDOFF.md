@@ -1,4 +1,84 @@
-# HANDOFF — el comparador de listados EXISTE y sale rojo a propósito; el canal de pieles, capturado ANTES de construir. LISTADO-B abre la siguiente
+# HANDOFF — las pieles de listado EXHIBIDAS con su regla; la ley del pipe escrita tras tres ocurrencias. LISTADO-B sigue abriendo la siguiente
+
+> ⚠ **Tanda de CONSTRUCCIÓN (2.ª), 2026-08-13 (63.ª).** PASOS 0 · 1 · 4 · 5
+> completos. **PASO 2 (LISTADO-B) NO SE EMPIEZA** — corte limpio declarado por el
+> encargo: *«si no cabe ENTERO con su verificación, NO lo empieces»*. PASO 3
+> depende del 2. Registro: `CLAUDE.md` (**regla 11**) · `PENDIENTES-QA.md`
+> (§F3-LH-PIELES-EXHIBIDAS · §F3-LH-CONGELA-A-MEDIAS) · `components/README.md` ·
+> `listado-tema-tax.spec.md` (**SP-T7 cerrada**) · `COBERTURA` · `PLAN-FASE-3`.
+
+## 0 · Los titulares
+
+> **1 · LO QUE LAS SPECS «REPLICABAN DE LA MEDIDA» YA TIENE SU REGLA.** Con las
+> 52 hojas capturadas, `qa:lh-pieles-css` (**13/13 páginas con su canal
+> completo**, negativo **3/3**) exhibe lo que estaba declarado *sin exhibir*:
+> `L1` = `.et_pb_text_1_tb_body h1 {800; 50px; 1.2em}` **+ `@media
+> (max-width:980px) {35px}`** — 50×1.2=**60** y 35×1.2=**42**, los números
+> medidos—; `L4` ídem con 44.1/1.25em; y el *«L3 no baja a 390»* tiene mecanismo:
+> **CERO overrides móviles**. Reparto: `L1-blog`/`L1-etiqueta` **4** ·
+> `L1-resources`/`L4` **2** · `L2`/`L3`/`L5` **0**.
+>
+> **2 · NINGUNA SPEC CAMBIA DE VALOR — el escalón 1 no dispara.** Las tres
+> afirmaciones auditadas **se confirman**. Lo que cambia es su estatus: de
+> *número replicado* (SIN PROBAR, no cablear) a **regla servida** (se puede
+> cablear). **SP-T7 queda CERRADA entera.**
+>
+> **3 · LA LEY DEL PIPE, ESCRITA EN `CLAUDE.md` — Y ERA LA TERCERA VEZ.** El
+> barrido del archivo lo derivó: `PLAN-FASE-2.md` §F2-5 y `HANDOFF.md` §F2-5 **ya
+> lo tenían escrito**, con su mecanismo y **con la solución al lado**, y aun así
+> se volvió a pagar. Las dos estaban bien redactadas y **en el sitio
+> equivocado**: un acta se lee una vez, `CLAUDE.md` cada sesión. **Regla 11: una
+> sonda no se pipea.** En `A | B` el exit es el de B, así que una tubería anula
+> el veredicto de las 157 sondas sin tocar código.
+>
+> **4 · LÍNEA BASE COMPLETA A LOS DOS ANCHOS:** 1440 y 390, **302 rutas · 302
+> páginas · 0 sin `docH`** en las dos.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **LISTADO-B ENTERO SIGUE SIENDO LO SIGUIENTE**, y ahora con dos cosas que
+  antes no tenía: **su comparador** (`qa:lh-cmp`, esperando en rojo con 13
+  AUSENTES) y **sus tres pieles de `h1` con la regla exhibida**, o sea
+  cableables sin inventar.
+- ⚠ **`L3` y `L5` NO llevan override móvil de titular.** Construirles uno sería
+  inventar un mecanismo que el original no tiene — y el número saldría bien a
+  1440, que es como no se nota.
+- ⚠ **El barrido de pieles EXHIBE reglas, no resuelve la CASCADA.** No computa
+  cuál gana por especificidad y orden. Para el titular basta (el override por
+  módulo es el más específico) y **está dicho**; para otra propiedad, hay que
+  mirar antes de citarlo.
+- ⚠ **`base-distinta` (P-LH-C8) sigue DECLARADO NO EJERCITADO**, no pasado: el
+  sabotaje no puede cambiar nada mientras las 13 formas estén ausentes. La tanda
+  que construya lo añade a los casos.
+- **Sondas: 157 → 159.**
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-pieles-css`** | las pieles de titular contra el CSS **servido entero** (en línea + hojas) | **3/3** — y `sin-hojas` reproduce el estado anterior: la regla **desaparece**, que es la prueba de que viene de las hojas |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Una regla de método en el sitio equivocado se vuelve a pagar.** Tres
+ocurrencias del pipe, dos de ellas ya escritas —bien— en un acta y en un plan de
+fase. §MENCIONADO NO ES DOCUMENTADO aplicado a una **regla**, no a un hallazgo:
+lo que decide si una lección sirve no es cómo está redactada, sino **dónde vive**.
+
+**(b) El negativo de una sonda caza defectos que su salida no enseña.** La
+primera versión de `lh-pieles-css` contaba `.banner-home .et_pb_text_0 h1` como
+regla de módulo de `L3`. En la salida se veía **plausible**; sólo saltó porque el
+negativo comprobaba una afirmación concreta de la spec. §sondas 4, tercera cara.
+
+**(c) Y el arreglo ya estaba escrito en el repo.** `hover-zonal` tenía el filtro
+—*descartar reglas cuyas clases no están en el marcado*— con su comentario y su
+razón. Buscar antes de inventar habría ahorrado el defecto entero; ahora está
+aplicado **con su recuento** (14-18 descartadas por página), porque descartar en
+silencio y no descartar dan informes distintos y ninguno es correcto.
+
+---
+
+# (histórico) HANDOFF — el comparador de listados EXISTE y sale rojo a propósito; el canal de pieles, capturado ANTES de construir. LISTADO-B abre la siguiente
 
 > ⚠ **Tanda de CONSTRUCCIÓN, 2026-08-13 (62.ª).** PASOS 0 · 1 · 2 completos.
 > **PASOS 3 y 4 NO SE EMPIEZAN — corte limpio declarado por el propio encargo**

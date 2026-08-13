@@ -1850,6 +1850,48 @@ transcrito»*. Hubo que pegarle al original otra vez (§2d.3).
 al lado **para qué** y **qué lo ejercitó**. Si nada lo ha ejercitado todavía, eso
 es lo que se escribe — y es información, no una rebaja.
 
+**11 · UNA SONDA NO SE PIPEA. NUNCA.** (2026-08-13)
+
+Las diez reglas de arriba blindan lo que pasa **dentro** del proceso de una
+sonda: el contrato de `Evaluadas`, el gancho de `exit`, `gritaSiRevienta`, la
+guarda de `w()`. Ésta es la única que mira **fuera**, y por eso ninguna de las
+otras puede sustituirla:
+
+> **`npm run qa:x | tail` devuelve el código de salida de `tail`, no el de la
+> sonda.** En `A | B` el exit es **el de B**. Así que una tubería —puesta por
+> comodidad, para no leer 300 líneas— **anula el veredicto de las 157 sondas a
+> la vez**, sin tocar una línea de código y sin dejar rastro.
+
+**Y se lleva dos cosas, no una:**
+
+| se pierde | cómo se ve |
+|---|---|
+| **el código de salida** | un rojo se lee como **verde** |
+| **la salida misma** | `tail` bufferea hasta EOF; si el proceso se mueve a segundo plano o lo matan, **no imprime nada**: exit 0 y cero líneas |
+
+**Es §regla 6 —*un valor por defecto convierte «no lo sé» en «está bien»*— en el
+shell**, y el «valor por defecto» es que `tail` casi siempre funciona.
+
+> **La forma correcta, y es más corta que la tubería:**
+> `npm run qa:x > /tmp/x.log; echo "EXIT=$?"` — y después se lee el fichero.
+> También vale mirar la congelada de `medidas/`, que es la prueba de verdad.
+
+⚠ **Y esto se escribe aquí, en la ley, PORQUE YA ESTABA ESCRITO EN OTROS DOS
+SITIOS Y NO SIRVIÓ.** Derivado con `grep`, tres ocurrencias del **mismo**
+mecanismo:
+
+| # | dónde quedó | qué costó |
+|---|---|---|
+| 1 | `PLAN-FASE-2.md` §F2-5 — *«el `EXIT=0` que se lee de `npm run check \| tail` **no es el de `check`**»*, **con la solución al lado** | la verificación de esa tanda **empezó creyendo que el árbol compilaba**, y no compilaba |
+| 2 | `HANDOFF.md` §F2-5 — *«la tubería es un contenedor con holgura más (§La causa común), esta vez con el código de salida dentro»* | ídem |
+| 3 | **esta tanda** | una corrida de `clon-base` de 302 rutas dada por perdida, y antes otra **descartada** por «no exhibible» cuando su congelada existía |
+
+**Las dos primeras están bien escritas, bien razonadas y en el sitio
+equivocado**: un acta y un plan de fase se leen una vez; `CLAUDE.md` se lee cada
+sesión. Es §MENCIONADO NO ES DOCUMENTADO cobrado sobre una regla de método en
+vez de sobre un hallazgo — y la prueba de que el sitio importa más que la
+redacción.
+
 ## Comandos
 
 ```bash

@@ -1,5 +1,21 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠ **RE-DERIVADA 2026-08-13 (2.ª tanda de construcción) — sin movimiento, y eso
+> es lo esperado: esta tanda no construyó rutas.** `qa:cobertura` sobre las
+> **302** emitidas: `comportamiento` **37** · `docH`/`base cruda`/`árbol`/
+> `enlaces` **31** · `anchos` 15 · `filas` 6 · `módulos` 2 · `offsets` 0.
+>
+> **Y la declaración que lleva cuatro tandas escrita, otra vez y con la misma
+> frase: cuando F3-2 construya, esta matriz se va a hundir, y NO será una
+> regresión.** Entrarán decenas de rutas de listado sin una sola medida contra el
+> original — el denominador crece antes que la cobertura, por construcción.
+>
+> **Lo que sí cambió es de otro eje y no está en la matriz:** el **canal de CSS**
+> de las 13 páginas de listado pasa de incompleto a **completo (13/13)**, y con
+> él las tres pieles de `h1` dejan de ser *números replicados* para ser **reglas
+> servidas** (§F3-LH-PIELES-EXHIBIDAS). Eso no sube ninguna celda —no es una
+> comparación de geometría— pero es lo que permite **cablearlas sin inventar**.
+
 > ⚠⚠ **ACTUALIZADO 2026-08-13 (tanda de CONSTRUCCIÓN) — LISTADOS ESTRENA
 > COMPARADOR, y su primera lectura es 0.**
 >

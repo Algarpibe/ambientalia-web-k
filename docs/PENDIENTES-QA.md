@@ -37,6 +37,52 @@ seed de KB murió en el 4.º documento. La protección de congeladas funcionando
 su lectura mal hecha. Queda cerrado con una guarda de **sincronía código↔censo**
 en el negativo, en los dos sentidos.
 
+## ✅ F3-LH-PIELES-EXHIBIDAS · lo que las specs «replicaban de la medida» ya tiene su REGLA, y ninguna spec cambia de valor (2026-08-13, tanda de CONSTRUCCIÓN, PASO 1)
+
+> **La comprobación retroactiva de las specs contra el canal recién capturado,
+> hecha EN LAS DOS DIRECCIONES.** Resultado: **ninguna afirmación se cae**, y las
+> tres que estaban declaradas *«sin exhibir»* ahora tienen su mecanismo delante.
+
+**Por qué había que preguntarlo antes de construir:** las specs de listados se
+escribieron con `et-core-unified-*` **a cero en las 9 formas**. Una piel
+*replicada de la medida* no es un defecto —es lo honesto cuando no se puede ver
+el mecanismo— pero deja el valor **SIN PROBAR**, y lo sin probar **no se cablea**
+en una plantilla que va a servir 23 instancias.
+
+**(a) ¿Alguna afirmación se apoyaba en un cero del canal?** Sí, tres — y las tres
+**se confirman** ahora que el canal está completo (`qa:lh-pieles-css`, **13/13
+páginas con sus hojas**, negativo **3/3**):
+
+| forma | regla SERVIDA (antes: «se replica de la medida») | la spec decía |
+|---|---|---|
+| **L1** | `.et_pb_text_1_tb_body h1 {font-weight:800; font-size:50px; line-height:1.2em}` + `@media (max-width:980px) {…font-size:35px}` | 50/60 @1440 → 35/42 @390 ✅ (50×1.2=60 · 35×1.2=42) |
+| **L4** | `.et_pb_text_1 h1 {font-weight:300; font-size:44.1px; line-height:1.25em}` + móvil 35px | 44.1/55.125 ✅ (44.1×1.25) |
+| **L3 · L5** | **ninguna** regla de módulo para el titular · **0 overrides móviles** | 44/44 y *«no baja a 390»* ✅ — **ahora con su mecanismo**, no con su número |
+
+**El reparto de overrides móviles de titular, que es el discriminador:**
+`L1-blog`/`L1-etiqueta` **4** · `L1-resources`/`L4` **2** · `L2`/`L3`/`L5` **0**.
+
+**(b) ¿Hay sobre-generalización?** **No detectada**: la partición
+*«L1 y L4 con override por módulo / L2, L3 y L5 sin ninguno»* se sostiene con el
+canal completo. Lo que sí se acota: este barrido **exhibe reglas, no resuelve la
+cascada** — no computa cuál gana por especificidad y orden. Para el titular basta
+(el override por módulo es el más específico), y **se dice** en vez de dejarlo
+implícito.
+
+⚠ **Y el defecto propio, cazado por el negativo de la propia sonda:** la primera
+versión contaba `.banner-home .et_pb_text_0 h1 {font-size:1.5vw}` como regla de
+módulo **de L3** — es del banner de la HOME, servido en todas las páginas y sin
+`.banner-home` en ninguna de éstas. §sondas 4, **tercera cara**: un detector que
+encuentra de más no da error, da **un número plausible de más**. El arreglo no
+era nuevo: **`hover-zonal` ya lo tenía escrito** —descartar reglas cuyas clases
+no estén en el marcado— y se aplicó igual, **con su recuento** (14-18 descartadas
+por página). Congelada defectuosa conservada como
+`lh-pieles-css-SONDA-CONTABA-REGLAS-QUE-NO-APLICAN.json`.
+
+**Consecuencia para la construcción:** las tres pieles de `h1` **se pueden
+cablear**, porque ya no son números replicados sino reglas servidas. Y `L3`/`L5`
+**no llevan override móvil** — construirles uno sería inventar.
+
 ## ⚠ F3-LH-CONGELA-A-MEDIAS · una corrida INTERRUMPIDA congela igual, con 22 rutas a `undefined` y nombre de medida buena (2026-08-13, tanda de CONSTRUCCIÓN)
 
 > **Salió por casualidad y por eso vale la pena escribirlo: dos corridas del

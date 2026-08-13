@@ -143,4 +143,4 @@ resulta ser un bloque opcional del mismo esqueleto, se fusionan»*. Lo medido:
 | **SP-T4** | **anchos intermedios** | contrato de RANGO |
 | **SP-T5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
 | **SP-T6** | **entradas por página** (`LH-SP9`) | sin ventana de `paginate_links` no se deriva del documento |
-| **SP-T7** | ✅ mecanismo **DIAGNOSTICADO 2026-08-12** (§1: banda del tema con una sola regla vs módulo Divi con override móvil compilado) · queda sin exhibir la regla de la hoja externa — la piel se replica de la medida | mitad cerrada |
+| ~~**SP-T7**~~ | ✅✅ **CERRADA ENTERA 2026-08-13.** El diagnóstico del 2026-08-12 era correcto y le faltaba el canal: con las **52 hojas capturadas**, `qa:lh-pieles-css` exhibe las dos mitades — `L1` lleva override **por módulo** (`.et_pb_text_1_tb_body h1` 50px + `@media (max-width:980px)` 35px) y `L3`/`L5` tienen **CERO** overrides móviles de titular, que es el mecanismo del *«no baja a 390»*. **Ya no se replica de la medida: se cita la regla.** Canal completo 13/13, negativo 3/3 | ✅ cerrada |

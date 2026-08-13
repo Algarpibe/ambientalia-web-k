@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "las pieles de titular de listado contra el CSS SERVIDO (en línea + hojas capturadas)",
+    "canal": "corpus/css"
+  },
+  "paginas": {
+    "L1-blog::/es/blog/": {
+      "ruta": "/es/blog/",
+      "fichero": "listados/blog/index.html",
+      "hojasEnlazadas": 12,
+      "hojasCapturadas": 12,
+      "faltan": [],
+      "bytesCss": 12,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "fichero": "listados/etiqueta/calidad-del-aire/index.html",
+      "hojasEnlazadas": 14,
+      "hojasCapturadas": 14,
+      "faltan": [],
+      "bytesCss": 14,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-etiqueta::/es/etiqueta/h2s-es/": {
+      "ruta": "/es/etiqueta/h2s-es/",
+      "fichero": "listados/etiqueta/h2s-es/index.html",
+      "hojasEnlazadas": 14,
+      "hojasCapturadas": 14,
+      "faltan": [],
+      "bytesCss": 14,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/index.html",
+      "hojasEnlazadas": 10,
+      "hojasCapturadas": 10,
+      "faltan": [],
+      "bytesCss": 10,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "fichero": "listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+      "hojasEnlazadas": 10,
+      "hojasCapturadas": 10,
+      "faltan": [],
+      "bytesCss": 10,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-resources-padre::/es/recursos/seminarios-web/": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "fichero": "listados/recursos/seminarios-web/index.html",
+      "hojasEnlazadas": 10,
+      "hojasCapturadas": 10,
+      "faltan": [],
+      "bytesCss": 10,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L2-glosario::/es/glosario/": {
+      "ruta": "/es/glosario/",
+      "fichero": "listados/glosario/index.html",
+      "hojasEnlazadas": 11,
+      "hojasCapturadas": 11,
+      "faltan": [],
+      "bytesCss": 11,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L2-faqs::/es/preguntas-frecuentes/": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "fichero": "listados/preguntas-frecuentes/index.html",
+      "hojasEnlazadas": 11,
+      "hojasCapturadas": 11,
+      "faltan": [],
+      "bytesCss": 11,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "fichero": "listados/scientific-category/articulos-cientificos-y-estudios/index.html",
+      "hojasEnlazadas": 11,
+      "hojasCapturadas": 11,
+      "faltan": [],
+      "bytesCss": 11,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L3-sci::/es/scientific-category/articulos-tecnicos/": {
+      "ruta": "/es/scientific-category/articulos-tecnicos/",
+      "fichero": "listados/scientific-category/articulos-tecnicos/index.html",
+      "hojasEnlazadas": 11,
+      "hojasCapturadas": 11,
+      "faltan": [],
+      "bytesCss": 11,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L4-listado-embebido::/es/recursos/": {
+      "ruta": "/es/recursos/",
+      "fichero": "listados/recursos/index.html",
+      "hojasEnlazadas": 7,
+      "hojasCapturadas": 7,
+      "faltan": [],
+      "bytesCss": 7,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L5-casos::/es/casos-de-exito/": {
+      "ruta": "/es/casos-de-exito/",
+      "fichero": "listados/casos-de-exito/index.html",
+      "hojasEnlazadas": 7,
+      "hojasCapturadas": 7,
+      "faltan": [],
+      "bytesCss": 7,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    },
+    "L1-resources-padre::/es/recursos/articulos/": {
+      "ruta": "/es/recursos/articulos/",
+      "fichero": "listados/recursos/articulos/index.html",
+      "hojasEnlazadas": 10,
+      "hojasCapturadas": 10,
+      "faltan": [],
+      "bytesCss": 10,
+      "descartadasPorNoAplicar": 0,
+      "pieles": [],
+      "conOverrideMovil": 0
+    }
+  },
+  "porForma": {
+    "L1-blog": [],
+    "L1-etiqueta": [],
+    "L1-resources-hijo": [],
+    "L1-resources-padre": [],
+    "L2-glosario": [],
+    "L2-faqs": [],
+    "L3-sci": [],
+    "L4-listado-embebido": [],
+    "L5-casos": []
+  },
+  "resumen": {
+    "paginas": 13,
+    "sinCanalCompleto": 0,
+    "conReglaDeTitular": 0,
+    "control": {
+      ".et_pb_section": 0,
+      ".et_pb_row": 0
+    }
+  }
+}
