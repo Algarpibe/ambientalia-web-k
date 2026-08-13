@@ -264,6 +264,37 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > dejar `L1-resources` fichado con lo que le falta. Es menos de lo que el encargo
 > pedía y está dicho con su número.
 
+> ✅ **EL DATO DE `L1-blog` Y `L1-etiqueta` ESTÁ COMPLETO (2026-08-13, 65.ª
+> tanda). `L1-resources` PARA con un escalón medido.** Los dos instrumentos que
+> había que arreglar antes de construir están arreglados, y los dos cambiaron lo
+> que se puede afirmar:
+>
+> | paso | qué quedó |
+> |---|---|
+> | **la referencia por EJE** | `lh-cmp` declara, por par, contra qué lado mide: `contenido` → el **corpus** del que se sembró el clon · `plantilla` → el **original** · `mixta` → **sin referencia limpia**. Censo del universo: **contenido 523 · plantilla 13 147 · MIXTOS 3 036** de 16 706 |
+> | **la cota de `lh-poblacion`** | estrechada: una serie de término se cuenta **por su término**, no por su colección al bulto. De **0 series cortas a 3** |
+> | **`etiquetas.descripcion`** | ✅ campo nuevo, rico y opcional, con migración, extracción y siembra **12/12** (§2c.2 del ESQUEMA) |
+> | **`extracto`** | ✅ sembrado **66 de 68**. LH-SP10 aterrizada: **campo** en `/blog`, **derivado** en `/etiqueta` |
+> | **la jerarquía de `resources`** | ⛔ **ESCALÓN** — el original **SÍ** la tiene (§F3-LH-JERARQUIA-RECURSOS) |
+>
+> **Lo que el escalón deja fuera, con su número: las 4 formas `L1-resources`.**
+> No falta extraer: faltan **dos términos que no existen como filas** y, con
+> ellos, **una decisión que nadie ha escrito** — qué es el archivo del padre. Las
+> dos lecturas dan las mismas 80 tarjetas hoy, así que **el dato no las separa**.
+>
+> **Y dos hallazgos que sólo aparecen al intentar sembrar:**
+>
+> 1. **el recuento casa y el conjunto no** (§F3-LH-DOS-CONJUNTOS-DE-149):
+>    `/blog 68 → 68` es exacto y **los dos conjuntos difieren en 2 por lado**. Un
+>    cardinal es un contenedor y absorbe la membresía; hacían falta los slugs;
+> 2. **2 documentos que el listado nombra no están capturados** — ni en
+>    `corpus/entradas-blog` ni en la DB. Es hueco de **captura**, no de seed, y su
+>    efecto en el comparador ya está fichado para que no se persiga.
+>
+> **Cobertura: 302 rutas, matriz IDÉNTICA a la del día.** No se movió porque no
+> entró ninguna ruta de listado — ése es el dato, no una conclusión escrita de
+> antemano.
+
 > ✅ **EL 1.er ESCALÓN ESTÁ CERRADO (2026-08-11, tarde): `D2.5` · REPLICAR TAL
 > CUAL**, firmada por el propietario. El clon emite las **55 rutas vacías** con
 > 200, como el original — la única de las tres salidas que **no cambia el

@@ -1,4 +1,96 @@
-# HANDOFF — LH-SP10 y LH-SP3 CONTESTADAS con mecanismo; `L1-etiqueta` se queda sin incógnitas de dato y `L1-resources` con las suyas fichadas
+# HANDOFF — los dos instrumentos ARREGLADOS y el dato de `L1-blog`/`L1-etiqueta` COMPLETO; `L1-resources` para con la jerarquía medida
+
+> ⚠ **Tanda de DATO + CONSTRUCCIÓN, 2026-08-13 (65.ª).** PASOS **0 · 1 · 2 · 3(a,b)
+> · 5 completos**. **PASO 3(c) PARA con ESCALÓN declarado** y **PASO 4 (LISTADO-B)
+> NO SE EMPIEZA** — corte limpio *«tras el 3 (dato completo, nada construido)»*,
+> que es una de las dos salidas que el encargo declara. Sigue **13 AUSENTES · 0
+> pares**. Registro: `PENDIENTES-QA.md` (§F3-LH-JERARQUIA-RECURSOS ·
+> §F3-LH-DOS-CONJUNTOS-DE-149) · `ESQUEMA-CMS.md` §2c.2 · `PLAN-FASE-3.md` §F3-2.
+
+## 0 · Los titulares
+
+> **1 · LA REFERENCIA SE DECLARA POR EJE, Y EL EJE MIXTO SALE CON SU NÚMERO.**
+> `lh-cmp` compara ahora cada par contra el lado que le toca: `contenido` → **el
+> corpus** del que se sembró el clon; `plantilla` → **el original**; `mixta` →
+> **ninguno, limpio**. El tercer lado es real —el mismo `barrer()` sobre el HTML
+> congelado con todo subrecurso abortado, **13/13 formas · 16 715 caminos**— y de
+> él se lee **sólo** contenido, porque su geometría es basura por construcción.
+> **Censo del universo: contenido 523 · plantilla 13 147 · MIXTOS 3 036** de
+> 16 706, o sea **el 18.2 % sin referencia limpia**. Ése es el ESCALÓN, dicho.
+>
+> **2 · LA COTA DE `lh-poblacion`, ESTRECHADA: de 0 series cortas a 3.** Una
+> serie de término se cuenta **por su término** (y por sus hijas si es padre),
+> no por su colección al bulto. Lo que el instrumento nuevo enseña y el viejo no
+> podía: `/blog` **68 → 68 exacto**, 11 de 12 etiquetas al documento, y **tres
+> huecos reales** —`monitorizacion-ambiental` 91→89, y los dos `/recursos/*` cuyo
+> término no existe—.
+>
+> **3 · EL DATO DE `L1-blog` Y `L1-etiqueta` ESTÁ COMPLETO.**
+> `etiquetas.descripcion` es **campo nuevo**, rico y opcional, con migración y
+> siembra **12/12**; `extracto` sembrado **66 de 68**. LH-SP10 aterriza en el
+> modelo: **campo** en una variante, **derivado** en la otra — se siembra uno y
+> se deriva el otro.
+>
+> **4 · `L1-resources` PARA, y la comprobación fue en LAS DOS DIRECCIONES: el
+> original SÍ tiene jerarquía.** Tres vías independientes —8 rutas de dos
+> segmentos, **8 de 8** migas que nombran al padre con su URL, y el padre
+> listando exactamente sus 8 hijas—, más el contraste de `seminarios-web`, que es
+> término de primer nivel **sin** hijas. `padre: null` **no** es el valor
+> correcto. Y para en vez de arreglarse extrayendo porque **el esquema ya expresa
+> `padre`**: falta una decisión que nadie ha escrito.
+>
+> **5 · EL RECUENTO CASA Y EL CONJUNTO NO.** `/blog 68 → 68` exacto, y **los dos
+> conjuntos difieren en 2 por lado**. Lo destapó sembrar **por slug**. Un cardinal
+> es un contenedor y absorbe la membresía.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **`L1-blog` (1 forma) y `L1-etiqueta` (2 formas) tienen TODO su dato.** Orden
+  ✅ · extracto ✅ · descripción ✅ · título de tarjeta ✅ · fecha derivable ✅.
+  Lo que queda es **construir**, y las dos retículas están medidas y congeladas.
+- ⛔ **`L1-resources` (4 formas) NO se construye hasta escribir la decisión** de
+  §F3-LH-JERARQUIA-RECURSOS **en el ESQUEMA**, y sembrar los 2 términos + `padre`
+  + las 3 entradas. En ese orden.
+- ⚠ **Al leer el primer `qa:lh-cmp` con pares, TRES cosas salen del saco de
+  defecto antes de perseguirlas:** los 2 titulares de §F3-LH-DOS-FOTOS, la
+  posición 2 de `/blog` de §F3-LH-DOS-CONJUNTOS-DE-149, y **los 3 036 pares
+  mixtos**, que la sonda ya cuenta aparte y no suma a `paresDistintos`.
+- ⚠ **`base-distinta` (P-LH-C8) sigue DECLARADO NO EJERCITADO**, cuarta tanda.
+- **La cobertura NO se movió** —302 rutas, matriz idéntica— y es **por
+  construcción**: no entró ninguna ruta. Escrito después de medirlo.
+- **Sondas: 161.** `npm run check` **exit 0** · `qa:lib` **93/93**.
+
+## 1 · Sondas e instrumentos nuevos
+
+| instrumento | qué contesta | negativos |
+|---|---|---|
+| **`cms:extractor-listados`** | los dos campos que viven en el LISTADO y no en la ficha del documento | **3/3** |
+| **`cms:seed-listados`** | los siembra, y cuenta **los dos huecos** (slug sin fila · fila sin slug) | — |
+| `qa:lh-cmp` (ampliada) | la referencia **por eje**, con el corpus como tercer lado | (las 3 de su negativo) |
+| `qa:lh-poblacion` (cota estrechada) | «puede emitir esta serie» en vez de «la colección da» | **4/4**, con `taxonomia-a-medias` |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un cardinal es un contenedor.** `68 = 68` es verdad y no dice nada de
+membresía. La diferencia salió **al sembrar por slug**, que es la operación que
+obliga a nombrar cada elemento — y por eso el hueco lo encontró el seed y no la
+sonda de población, que cuenta.
+
+**(b) Un clasificador que TIRA descubre lo que uno no había previsto.** El eje se
+escribió pensando en «texto contra geometría». Al obligar a clasificar los 16 706
+caminos aparecieron **dos casos que no estaban en esa dicotomía**: `clases` y
+`marca`, que mezclan tema y dato **en el mismo valor**; y **la ausencia de un
+rol**, que es contenido en una variante y plantilla en otra. Con un `?? "plantilla"`
+los dos habrían entrado en el eje del vivo **en silencio**.
+
+**(c) Y el fantasma que sólo se ve al clasificar:** `forma`, `ruta` y `papel` no
+salen de `barrer()` — los añade `lh-spec`. Sin meterlos en `IGNORAR` habrían sido
+**39 pares «AUSENTE»** leídos como defecto del clon. No los cazó una guarda: los
+cazó **no saber en qué eje ponerlos**.
+
+---
+
+# (histórico) HANDOFF — LH-SP10 y LH-SP3 CONTESTADAS con mecanismo; `L1-etiqueta` se queda sin incógnitas de dato y `L1-resources` con las suyas fichadas
 
 > ⚠ **Tanda de CONSTRUCCIÓN (3.ª), 2026-08-13 (64.ª).** PASOS **0 · 3 · 4
 > completos**. **PASO 1 NO ENTREGA NINGUNA FORMA** — sigue **13 AUSENTES · 0
