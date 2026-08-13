@@ -142,7 +142,17 @@ if (!FORMAS.length)
  * par (`listado.nTarjetas`), y los índices que faltan salen como AUSENTE en un
  * lado — que es información, no un hueco.
  * ═════════════════════════════════════════════════════════════════════════ */
-const IGNORAR = new Set(["ancho", "canonical", "titulo", "docH"]); // se comparan aparte, con su propio criterio
+/**
+ * Se comparan aparte, con su propio criterio — más **la contabilidad de
+ * `lh-spec`**.
+ *
+ * ⚠ `forma`, `ruta` y `papel` **no salen de `barrer()`**: se los añade `lh-spec`
+ * encima del barrido para etiquetar sus páginas. El clon **nunca** los tiene, así
+ * que sin esta línea aparecerían como **3 pares «AUSENTE» por forma — 39 en
+ * total— leídos como defecto del clon**. Es la clase de fantasma que se hace
+ * pasar por hallazgo, y la cazó el censo de ejes al no saber clasificarlos.
+ */
+const IGNORAR = new Set(["ancho", "canonical", "titulo", "docH", "forma", "ruta", "papel"]);
 const aplana = (v, camino = "", out = new Map()) => {
   if (v === null || v === undefined) out.set(camino, null);
   else if (Array.isArray(v)) {
@@ -158,6 +168,152 @@ const igual = (a, b) => {
   if (typeof a === "number" && typeof b === "number") return Math.abs(a - b) < 0.01;
   return a === b;
 };
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA REFERENCIA SE DECLARA POR EJE, Y UN PAR SIN EJE NO ES UN PAR
+ *
+ * §F3-LH-DOS-FOTOS: el clon se siembra del **corpus** (F3-0) y esta sonda mide
+ * contra el **espejo** (`lh-spec`, en vivo el 2026-08-11). Son dos fotos del
+ * original en fechas distintas, así que **un Δ de TEXTO no distingue «el clon
+ * está mal» de «el original cambió entre las dos fotos»**.
+ *
+ * Eso no se arregla re-capturando —la siguiente foto vuelve a derivar—: se
+ * arregla **declarando contra qué lado se mide cada propiedad**:
+ *
+ * | eje | referencia | por qué |
+ * |---|---|---|
+ * | `contenido` | **el CORPUS** del que se sembró el clon | comparar el texto contra el vivo mide la deriva del ORIGINAL, no la fidelidad del clon |
+ * | `plantilla` | **el ORIGINAL vivo** (el espejo) | la plantilla no deriva, y ahí es donde vive la fidelidad |
+ * | `mixta` | **ninguna de las dos, limpia** | ver el ESCALÓN de abajo |
+ *
+ * ── ⚠ EL ESCALÓN, DECLARADO Y NO ESCONDIDO ───────────────────────────────
+ * Hay un tercer grupo que **no cae limpio en ninguno de los dos**: las
+ * magnitudes que dependen **de las dos cosas a la vez**. El alto de una tarjeta
+ * es plantilla *y* cuánto texto trae; `renglones` es tipografía *y* longitud;
+ * `nTarjetas` es «entradas por página» (plantilla) *y* cuántas quedan
+ * (contenido); y `clases`/`marca` de una tarjeta mezclan las clases del tema
+ * con `post-68584`, `category-*` y `tag-*`, que son del dato.
+ *
+ * **Medirlas contra el espejo las hace absorber la deriva del contenido; contra
+ * el corpus, la geometría de un render sin hojas.** O sea §La causa común otra
+ * vez, y el contenedor es **el eje**: una magnitud mixta leída contra una sola
+ * referencia se traga la otra variable sin dejar rastro en el número.
+ *
+ * Lo que esta sonda hace con ellas es lo único honesto que puede hacer hoy:
+ * **contarlas aparte y NO leerlas como defecto**. La referencia que las
+ * arreglaría es una tercera —el corpus RENDERIZADO con sus hojas capturadas—, y
+ * construirla es una tanda, no un parámetro.
+ *
+ * ── Y por qué el clasificador TIRA en vez de tener un defecto ─────────────
+ * §regla 6: *un valor por defecto convierte «no lo sé» en «está bien»*. Un
+ * `?? "plantilla"` aquí metería toda propiedad nueva en el eje que se compara
+ * contra el vivo, **en silencio**. Un camino sin eje declarado sale por ERROR
+ * con su nombre, que es la única forma de que el escalón dispare por mecanismo
+ * y no porque alguien se acordara de mirar.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Hoja del camino: `listado.tarjetas.0.titulo.tipo.fontSize` → `fontSize`. */
+const hoja = (c) => c.slice(c.lastIndexOf(".") + 1);
+
+/** Texto y URLs que vienen del DOCUMENTO: su referencia es el corpus. */
+const HOJAS_CONTENIDO = new Set(["texto", "titular", "alt", "src", "srcset", "href", "linkNextDelHead", "attrW", "attrH"]);
+
+/** Depende de la plantilla Y de cuánto contenido hay: sin referencia limpia. */
+const HOJAS_MIXTAS = new Set(["h", "y", "yAbsoluta", "renglones", "nTarjetas", "huecoV", "docH"]);
+
+/** Estructura y piel que la plantilla fija: su referencia es el original vivo. */
+const HOJAS_PLANTILLA = new Set([
+  "w", "x", "via", "piel", "presente", "enElCuerpo", "hayH1", "renderizado", "renderizada",
+  "etiqueta", "que", "reparto", "nFilas", "nColumnas", "nSecciones", "nModulos", "capa",
+  "columnas", "huecoH", "apiladas", "nota", "builder", "tbBody", "estiloInline", "length",
+]);
+
+/**
+ * ⚠ `clases`, `marca` y `hrefs` **no se clasifican por la hoja**: su valor
+ * mezcla las dos cosas (`article.et_pb_post.post-68584`) o es una lista de URLs.
+ * Se resuelven por el camino, antes que por la hoja.
+ */
+function ejeDe(camino) {
+  const h = hoja(camino);
+  /* Las listas de URLs y los índices dentro de ellas: contenido. */
+  if (/(^|\.)hrefs(\.|$)/.test(camino)) return h === "length" ? "mixta" : "contenido";
+  /* `clases.N` y `marca`: el tema y el dato en el mismo valor ⇒ mixta. */
+  if (/(^|\.)clases(\.|$)/.test(camino)) return h === "length" ? "mixta" : "mixta";
+  if (h === "marca") return "mixta";
+  /* `etiquetas` del barrido es la lista de TAGS HTML de la tarjeta: estructura. */
+  if (/(^|\.)etiquetas(\.|$)/.test(camino)) return "plantilla";
+  /* Los grupos de estilo son plantilla enteros, sea cual sea la propiedad CSS. */
+  if (/\.(tipo|ritmo|caja)\.[A-Za-z]+$/.test(camino)) return "plantilla";
+  /* ⚠ `…columnas.N.tipo` NO es el grupo de tipografía: es el TIPO DE COLUMNA
+   * (`et_pb_column_4_4`), o sea el reparto de la retícula. La hoja se llama
+   * igual y significa otra cosa — por eso va por camino y antes que por hoja. */
+  if (/\.columnas\.\d+\.tipo$/.test(camino)) return "plantilla";
+  /**
+   * ⚠ **LA AUSENCIA DE UN ROL ES MIXTA, y es el escalón en su forma más
+   * afilada.** `un(p)` devuelve `null` cuando el rol no casa, y `null` significa
+   * **dos cosas distintas que el camino no distingue**:
+   *
+   *  · `media: null` en la 1.ª tarjeta de `/blog` ⇒ **ese post no tiene imagen**
+   *    (la 2.ª sí) — o sea CONTENIDO;
+   *  · `fecha: null` en las 15 tarjetas de `resources` ⇒ **esa variante no pinta
+   *    fecha** — o sea PLANTILLA.
+   *
+   * El discriminador existe y es el **test B** del proyecto —*¿varía entre
+   * hermanos de la misma página?*—, pero la comparación par a par es plana y no
+   * puede aplicarlo: habría que mirar las 3 tarjetas a la vez. Así que se
+   * declara **mixta** en vez de elegir, que es lo que este repo llama no
+   * inventar un discriminador.
+   */
+  if (/^listado\.tarjetas\.\d+\.(media|envoltorioMedia|titulo|fecha|categoria|meta|extracto)$/.test(camino)) return "mixta";
+  /* Lo mismo para cualquier otro objeto que el barrido pueda devolver nulo. */
+  if (/^(cabecera|pie|contenedorTema|listado\.contenedor)$/.test(camino)) return "mixta";
+  /* `porCapa.tb_header` y compañía: recuento de estructura. */
+  if (/(^|\.)porCapa\./.test(camino)) return "plantilla";
+  if (/(^|\.)regimen\./.test(camino)) return "plantilla";
+  /* `sel` es el selector que casó: dice CON QUÉ se midió, o sea estructura. */
+  if (h === "sel") return "plantilla";
+  if (HOJAS_CONTENIDO.has(h)) return "contenido";
+  if (HOJAS_MIXTAS.has(h)) return "mixta";
+  if (HOJAS_PLANTILLA.has(h)) return "plantilla";
+  return null;
+}
+
+/**
+ * LA DERIVA CONOCIDA — **derivada de `lh-extracto`, no escrita a mano** (§regla
+ * 9). Son los titulares que cambiaron entre el corpus y el espejo: salen del
+ * saco de «defecto» **con su nombre y su fecha**, y no se normalizan.
+ */
+const DERIVA_F = join(QA, "medidas/lh-extracto.json");
+const DERIVA = existsSync(DERIVA_F) ? JSON.parse(readFileSync(DERIVA_F, "utf8")) : null;
+const derivaConocida = new Set();
+for (const f of DERIVA?.deriva?.porForma ?? [])
+  for (const t of f.titularesQueCambiaron ?? []) derivaConocida.add(`${f.forma}::listado.tarjetas.${t.i}.titulo.texto`);
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CENSO DE EJES — se hace ANTES del bucle, y no es cosmético
+ *
+ * Con las 13 formas AUSENTES el bucle de pares no llega a ejecutarse, así que
+ * `ejeDe()` **no se ejercitaría** y el escalón del eje mixto no podría
+ * dispararse: sería un sabotaje que no cambia nada (§sondas 8a). Clasificando
+ * aquí el universo entero del espejo, la sonda dice **hoy** cuántos pares caen
+ * en cada eje y **falla hoy** si aparece un camino sin clasificar.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const censoEjes = { contenido: 0, plantilla: 0, mixta: 0 };
+const sinClasificar = [];
+for (const F of FORMAS)
+  for (const k of aplana(F.espejo).keys()) {
+    if (IGNORAR.has(k)) continue;
+    const e = ejeDe(k);
+    if (!e) { if (sinClasificar.length < 40) sinClasificar.push(`${F.clave}::${k}`); continue; }
+    censoEjes[e]++;
+  }
+if (sinClasificar.length)
+  throw new Error(
+    `PARES SIN EJE DECLARADO: ${sinClasificar.length} camino(s) no caen en 'contenido', 'plantilla' ni 'mixta'.\n` +
+      sinClasificar.slice(0, 12).map((s) => `    · ${s}`).join("\n") +
+      `\n  La referencia se declara POR EJE (§F3-LH-DOS-FOTOS). Un defecto los mediría\n` +
+      `  contra el vivo sin decirlo — clasifícalos en ejeDe() o declara el ESCALÓN.`,
+  );
 
 const { browser } = await launch();
 const censo = new Censo();
@@ -193,6 +349,50 @@ const mide = async (url) => {
   }
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL TERCER LADO: EL CORPUS, que es la referencia del eje `contenido`
+ *
+ * Se mide con **el mismo `barrer()`** que los otros dos —dos definiciones
+ * serían la clase C7, y este fichero ya tiene escrito por qué— pero cargando el
+ * HTML congelado y **abortando todo subrecurso**: hojas, imágenes, fuentes y
+ * scripts.
+ *
+ * ⚠ **De esta medición se lee SÓLO el eje `contenido`, y no es una precaución:
+ * es que su geometría es BASURA POR CONSTRUCCIÓN.** Sin hojas, Divi no parte en
+ * columnas —§F3-1-CSS-NO-CAPTURADO lo midió: `columna.width` **678.52 offline
+ * contra 430.80 en vivo**—. Leer un `rect` de aquí daría números plausibles y
+ * falsos, que es el modo de fallo más caro del repo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const CORPUS = "corpus/fase-3/listados";
+const aCorpus = (r) => join(CORPUS, `${r.replace(/^\/es/, "").replace(/^\//, "").replace(/\/$/, "")}/index.html`);
+
+const mideCorpus = async (ruta) => {
+  const f = aCorpus(ruta);
+  if (!existsSync(f)) return { falta: f, datos: null };
+  /* ⚠ `browser.newPage()` y **no** `openPage`, a propósito: el corpus es un
+   * fichero local ya comprobado con `existsSync`, así que no hay estado HTTP que
+   * mirar — y `openPage` sobre `about:blank` imprimía **13 «❌ HTTP 0»** que se
+   * leen como fallo de la sonda. Un aviso correcto en el sitio equivocado es
+   * ruido que tapa el informe, que es lo que §sondas 1 llama un solo canal de
+   * verdad: lo que imprime y lo que cuenta no pueden discrepar. */
+  const page = await browser.newPage();
+  try {
+    await page.setViewport({ width: ANCHO, height: MOVIL ? 844 : 900, isMobile: MOVIL, deviceScaleFactor: 1 });
+    await page.setRequestInterception(true);
+    page.on("request", (r) => {
+      if (r.isInterceptResolutionHandled?.()) return;
+      /* El documento entra por `setContent`, así que TODO lo que pida la página
+       * es subrecurso y se aborta. Nada de red: el corpus es la fuente. */
+      r.abort().catch(() => {});
+    });
+    await page.setContent(readFileSync(f, "utf8"), { waitUntil: "domcontentloaded" });
+    const { datos } = await censo.medir(page, barrer);
+    return { falta: null, datos };
+  } finally {
+    await page.close().catch(() => {});
+  }
+};
+
 const salida = {
   meta: {
     fecha: hoy(),
@@ -211,16 +411,42 @@ const salida = {
 console.log(`\n════════ LISTADOS · COMPARADOR DE DOS LADOS @${ANCHO} ════════`);
 console.log(`  original   ${salida.meta.ladoOriginal}`);
 console.log(`  clon       ${CLON}`);
-console.log(`  formas     ${FORMAS.length}\n`);
+console.log(`  corpus     ${CORPUS}   ← referencia del eje 'contenido' (§F3-LH-DOS-FOTOS)`);
+console.log(`  deriva     ${derivaConocida.size} pares de titular EXCLUIDOS por conocidos${DERIVA ? "" : "   ⚠ sin medidas/lh-extracto.json: 0 exclusiones"}`);
+console.log(`  formas     ${FORMAS.length}`);
+console.log(
+  `  ejes       contenido ${censoEjes.contenido} · plantilla ${censoEjes.plantilla} · MIXTOS ${censoEjes.mixta}` +
+    `   (censo del universo del espejo, ${censoEjes.contenido + censoEjes.plantilla + censoEjes.mixta} caminos)\n`,
+);
 
 let ausentes = 0;
 let conDiferencia = 0;
 let paresTotales = 0;
 let paresDistintos = 0;
+/* §F3-LH-DOS-FOTOS · los tres recuentos que el eje obliga a llevar aparte. */
+let paresMixtos = 0;
+let mixtasQueDifieren = 0;
+let derivaExcluida = 0;
+let sinReferencia = 0;
+let corpusOk = 0;
+let corpusCaminos = 0;
+const faltanCorpus = [];
 const basesQueNoCasan = [];
 
 for (const F of FORMAS) {
   const orig = VIVO ? (await mide(F.original)).datos : F.espejo;
+  /* ⚠ **El corpus se mide ANTES del corte por AUSENTE, y no es orden casual.**
+   * Estando dentro del `if (sirve)` sería código que **no se ejecuta mientras
+   * las 13 formas estén ausentes**, o sea la referencia del eje `contenido`
+   * declarada y nunca ejercitada — §sondas 8a: *un sabotaje que no cambia nada
+   * no prueba la guarda*, y aquí ni siquiera habría sabotaje: habría una rama
+   * muerta con aspecto de instrumento. Medido aquí, su recuento sale hoy. */
+  const rc = await mideCorpus(F.ruta);
+  if (rc.falta) faltanCorpus.push({ forma: F.clave, fichero: rc.falta });
+  else corpusOk++;
+  const pK = rc.datos ? aplana(rc.datos) : null;
+  if (pK) corpusCaminos += pK.size;
+
   let clon = null;
   let status = null;
   try {
@@ -250,20 +476,52 @@ for (const F of FORMAS) {
   const mismaBase = anclaO.que === anclaC.que && (SABOTAJE === "base-distinta" ? false : anclaO.marca === anclaC.marca);
   if (!mismaBase) basesQueNoCasan.push({ forma: F.forma, original: anclaO, clon: anclaC });
 
-  /* ── LOS PARES ───────────────────────────────────────────────────────────── */
+  /* ── LOS PARES, CADA UNO CONTRA LA REFERENCIA DE SU EJE ──────────────────── */
   const pO = aplana(orig);
   const pC = aplana(clon);
+
   const dif = [];
+  const porEje = { contenido: 0, plantilla: 0, mixta: 0 };
+  const difPorEje = { contenido: 0, plantilla: 0, mixta: 0 };
+  let derivados = 0;
   for (const [k, v] of pO) {
     if (IGNORAR.has(k)) continue;
+    const eje = ejeDe(k);
+    /* §regla 6 · un par sin eje declarado NO es un par: sale por error con su
+     * nombre, nunca por un defecto que lo mete en el eje del vivo en silencio. */
+    if (!eje)
+      throw new Error(
+        `PAR SIN EJE DECLARADO: '${k}' (forma ${F.clave}).\n` +
+          `  La referencia se declara POR EJE (§F3-LH-DOS-FOTOS) y este camino no cae\n` +
+          `  en 'contenido', 'plantilla' ni 'mixta'. Un defecto aquí lo mediría contra el\n` +
+          `  vivo sin decirlo — clasifícalo en ejeDe() o declara el ESCALÓN.`,
+      );
     paresTotales++;
-    const w2 = pC.has(k) ? pC.get(k) : "«AUSENTE»";
-    if (!igual(v, w2)) {
-      paresDistintos++;
-      dif.push({ camino: k, original: v, clon: w2 });
+    porEje[eje]++;
+
+    /* La referencia: corpus para el contenido, espejo para la plantilla. */
+    let ref = v;
+    let contra = eje === "contenido" ? "corpus" : "espejo";
+    if (eje === "contenido") {
+      if (!pK) { sinReferencia++; continue; }   // sin corpus no hay par de contenido
+      ref = pK.has(k) ? pK.get(k) : "«AUSENTE»";
     }
+    /* Las mixtas se miden contra el espejo para poder enseñarlas, pero **no
+     * cuentan como defecto**: no tienen referencia limpia (§ESCALÓN). */
+    const w2 = pC.has(k) ? pC.get(k) : "«AUSENTE»";
+    if (igual(ref, w2)) continue;
+
+    /* Deriva CONOCIDA del original entre las dos fotos: no es defecto del clon. */
+    if (derivaConocida.has(`${F.clave}::${k}`)) { derivados++; continue; }
+
+    difPorEje[eje]++;
+    if (eje !== "mixta") paresDistintos++;
+    dif.push({ camino: k, eje, contra, referencia: ref, clon: w2, ...(eje === "mixta" ? { noEsDefecto: "sin referencia limpia (§ESCALÓN eje mixto)" } : {}) });
   }
-  if (dif.length) conDiferencia++;
+  if (difPorEje.contenido || difPorEje.plantilla) conDiferencia++;
+  paresMixtos += porEje.mixta;
+  mixtasQueDifieren += difPorEje.mixta;
+  derivaExcluida += derivados;
   ev.ok(1);
 
   salida.formas[F.clave] = {
@@ -274,12 +532,19 @@ for (const F of FORMAS) {
      * que viva EN la base (§la regla es ciega a su punto de apoyo). */
     baseCruda: { original: anclaO, clon: anclaC, mismaBase, delta: anclaO.y !== null && anclaC.y !== null ? +(anclaC.y - anclaO.y).toFixed(2) : null },
     pares: pO.size,
+    porEje,
+    difPorEje,
+    derivaExcluida: derivados,
+    corpus: rc.falta ? `AUSENTE (${rc.falta})` : aCorpus(F.ruta),
     distintos: dif.length,
     diferencias: dif.slice(0, 400),
   };
+  const real = difPorEje.contenido + difPorEje.plantilla;
   console.log(
-    `  ${dif.length ? "⚠" : "✓"} ${F.clave.padEnd(46)} ${String(dif.length).padStart(4)} de ${String(pO.size).padStart(4)} pares` +
-      `   base ${mismaBase ? "misma" : "⛔ DISTINTA"} (Δ ${salida.formas[F.clave].baseCruda.delta ?? "—"})`,
+    `  ${real ? "⚠" : "✓"} ${F.clave.padEnd(46)} ${String(real).padStart(4)} de ${String(porEje.contenido + porEje.plantilla).padStart(4)} pares` +
+      `  [cont ${difPorEje.contenido}/${porEje.contenido} · plant ${difPorEje.plantilla}/${porEje.plantilla}]` +
+      `  mixtas ${difPorEje.mixta}/${porEje.mixta}` +
+      `  base ${mismaBase ? "misma" : "⛔ DISTINTA"} (Δ ${salida.formas[F.clave].baseCruda.delta ?? "—"})`,
   );
 }
 
@@ -289,17 +554,35 @@ salida.resumen = {
   conDiferencias: conDiferencia,
   paresComparados: paresTotales,
   paresDistintos,
+  /* Los mixtos NO entran en `paresDistintos`: no tienen referencia limpia. */
+  paresMixtos,
+  mixtasQueDifieren,
+  derivaExcluida,
+  paresDeContenidoSinCorpus: sinReferencia,
+  formasSinCorpus: faltanCorpus.length,
   basesQueNoCasan: basesQueNoCasan.length,
 };
+salida.faltanCorpus = faltanCorpus;
 salida.basesQueNoCasan = basesQueNoCasan;
+salida.ejes = {
+  contenido: "referencia = el CORPUS del que se sembró el clon (corpus/fase-3/listados)",
+  plantilla: `referencia = el ORIGINAL (${salida.meta.ladoOriginal})`,
+  mixta:
+    "SIN referencia limpia: depende de la plantilla Y del contenido a la vez (alto, y, renglones, " +
+    "nTarjetas, clases, marca). Se cuentan y se enseñan, NO se leen como defecto.",
+};
 
 console.log(`\n  ── el recuento, en la unidad que compara ──`);
 console.log(`  formas                 ${FORMAS.length}`);
 console.log(`  AUSENTES en el clon    ${ausentes}`);
 console.log(`  con diferencias        ${conDiferencia}`);
 console.log(`  pares comparados       ${paresTotales}`);
-console.log(`  pares distintos        ${paresDistintos}`);
-console.log(`  bases que NO casan     ${basesQueNoCasan.length}   (P-LH-C8)`);
+console.log(`  pares distintos        ${paresDistintos}   (contenido + plantilla; los mixtos NO cuentan)`);
+console.log(`  ── y los tres que el EJE obliga a llevar aparte ──`);
+console.log(`  pares MIXTOS           ${paresMixtos}, de los que difieren ${mixtasQueDifieren}   ⚠ sin referencia limpia (§ESCALÓN)`);
+console.log(`  deriva CONOCIDA        ${derivaExcluida} pares excluidos por §F3-LH-DOS-FOTOS (el original cambió, no el clon)`);
+console.log(`  contenido sin corpus   ${sinReferencia} pares · ${faltanCorpus.length} formas sin fichero`);
+console.log(`  CORPUS leído           ${corpusOk}/${FORMAS.length} formas · ${corpusCaminos} caminos   (referencia del eje 'contenido')`);
 console.log(`\n  ⚠ sin campaña de ruido en estas rutas: un residuo pequeño es SIN PROBAR, no «limpio».`);
 
 for (const b of basesQueNoCasan)
@@ -324,7 +607,11 @@ if (ausentes) {
   console.log(`\n⚠ ${paresDistintos} pares distintos en ${conDiferencia} formas. Cada uno con su camino en la congelada.`);
   codigo = 2;
 } else if (muertos) codigo = 2;
-else console.log(`\n✅ ${paresTotales} pares · 0 distintos · ${FORMAS.length} formas · bases verificadas (P-LH-C8).`);
+else
+  console.log(
+    `\n✅ ${paresTotales} pares · 0 distintos · ${FORMAS.length} formas · bases verificadas (P-LH-C8).\n` +
+      `   contenido contra el CORPUS · plantilla contra el ORIGINAL · ${paresMixtos} mixtos sin referencia limpia.`,
+  );
 
 /**
  * ⚠ **`process.exit()` explícito, y no es cosmético.** Con sólo `exitCode`, Node
