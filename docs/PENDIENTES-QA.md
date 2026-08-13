@@ -600,6 +600,66 @@ correcto **las excluye hoy y las incluye mañana**, sin tocar una línea.
 > decisiones nuevas donde había una, y tres de ellas podrían haber salido
 > **contra** el precedente sin que nada lo detectara.
 
+### ⚖ DECIDIDA (2026-08-13, PASO 2) — la referencia del cierre XHTML, del final de línea y del espacio duro es **EL PIPELINE**, y lo dirime el ORIGINAL
+
+> **La trampa del PASO 2 era real y estaba bien vista: «coincidir con la
+> transcripción» no es fidelidad, es fidelidad A UNA COPIA.** Así que no se
+> eligió por estabilidad del round-trip — se fue a mirar **qué sirve el
+> original**, que está en el corpus congelado y no cuesta red. Y dirime.
+
+`corpus/` son **bytes del original**, no una copia normalizada: `.gitattributes`
+declara `corpus/** -text`, así que ningún checkout les toca los finales de línea.
+Medido sobre los **309 ficheros** capturados:
+
+| serialización | qué sirve el ORIGINAL | el PIPELINE | la TRANSCRIPCIÓN |
+|---|---|---|---|
+| cierre de `<br>` | **las dos formas**: 513 × `<br />` · 1095 × `<br>` | reproduce cada una donde está | **colapsa todas a `<br>`** |
+| final de línea | **los dos**: 9184 × CRLF · 404 060 × LF | reproduce cada uno | **normaliza a LF** |
+| espacio duro | **U+00A0 crudo** ×1549 · `&nbsp;` ×560 | reproduce cada uno | **escapa a `&nbsp;`** |
+
+Y las tres instancias del control, una a una, con su ancla:
+
+| documento | lo que sirve el original |
+|---|---|
+| `…des-moines-iowa` | `controlar el problema.<br />\nEl personal municipal…` |
+| `…rio-de-janeiro` | `…de Río de Janeiro:</strong><br />\r\n“Con esta iniciativa…` |
+| `…world-athletics` | `aportan altas` **U+00A0** `correlaciones con estaciones…` |
+| `…acuifero-por-lindano` | `infraestructuras públicas,` **U+00A0** `<span class="il">SICE,` |
+
+> **El original no es ambiguo: usa LAS DOS FORMAS de cada cosa, y el pipeline
+> PRESERVA la distinción que el original hace. La transcripción la destruyó** —
+> eligió una y la aplicó a todo. Eso no es «otra convención igual de válida»: es
+> **información perdida**, y se pierde en la dirección de la que no se vuelve.
+
+Y no hace falta muestrear para saber que el pipeline la preserva: **ninguna de
+las 10 transformaciones toca `<br>`, los finales de línea ni U+00A0** —T1 y T3a
+tocan `class`, T2 toca `style`, T3b reutiliza el `<img>` verbatim—, así que el
+cuerpo transformado **hereda los tres del corpus por construcción**.
+
+**La decisión, entonces:**
+
+> **La referencia es el PIPELINE. La transcripción a mano es una copia con
+> criterio, y en estas tres cosas su criterio fue NORMALIZAR.**
+
+Y el criterio queda dicho, que es lo que el encargo pedía: **se decide por
+FIDELIDAD, no por estabilidad del round-trip.** La estabilidad era el criterio de
+reserva para el caso de que el original no dirimiera, y no ha hecho falta usarlo
+— lo cual también quiere decir que **si algún día se estabiliza el round-trip
+normalizando, será una decisión NUEVA y contraria a ésta**, no una consecuencia
+de ésta.
+
+**Lo que cambia en el código: nada del pipeline.** Cambia el INSTRUMENTO —
+`clasificaDiscrepancia` en `scripts/qa/lib.mjs` pliega las tres como
+`espacio` · `cierre-xhtml` · `espacio-duro`, adjudicadas **dato**, y el pliegue
+lleva su razón al lado. Un pliegue sin adjudicación escrita es un pliegue que
+tapa; con ella, es uno que mide.
+
+> ⚠ **Y el límite del pliegue, escrito para que nadie lo lea de más: un pliegue
+> equipara ORTOGRAFÍAS, nunca CANTIDADES.** `<br />`↔`<br>` iguala las dos formas
+> de escribir un salto de línea; **no** iguala dos saltos con uno. Si el pipeline
+> perdiera un `<br>`, el pliegue no lo taparía. Ésa es la línea que separa esto
+> de un umbral.
+
 ## ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142 rutas (2026-08-12)
 
 > **PARADA DE ESCALÓN, disparador 1, y antes de construir una sola línea de
