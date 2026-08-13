@@ -1924,6 +1924,69 @@ en 17 documentos.
 **Abierto y NO bloqueante**: **HOME** sigue sin content type — es singleton, nada
 decidido la apunta, y modelarla después es **añadir** (cubo B).
 
+### ✅ 2e.2 · CMS-PR3 — el documento del CPT **SIN PÁGINA PROPIA** (2026-08-13, F3, tanda de DESBLOQUEO)
+
+**Qué lo trajo.** `qa:productos-hueco` midió que los 57 casos referencian **19**
+slugs de producto y que **3 no son ninguna de las 24 URLs** del CPT: son
+documentos **en inglés** que el editor eligió en la relación `soluciones` de un
+caso español, y su evidencia es la SERVIDA en el panel:
+
+| `data-id` | rótulo | `href` del botón «Ver más» |
+|---|---|---|
+| `accesories` | Accesorios | `…/es/accesorios/` |
+| `air-cloud` | AIR Cloud · *Air quality software* | `…/es/software-de-medicion-calidad-del-aire/` |
+| `ozone-2` | Ozone | `…/?post_type=solutions&p=56674` — **sin permalink** |
+
+**Por qué NO son alias, y es medida.** `air-cloud` sirve una ficha **distinta**
+de la de `software-…`: en inglés, con sus propias viñetas y con la errata
+`condifential`. Aliasarlos pintaría la ficha española donde el original pinta la
+inglesa — se pierde fidelidad **en el panel visible**, no sólo en el `href`.
+
+**La decisión, y sus dos consecuencias.**
+
+| campo | regla |
+|---|---|
+| **`pagina`** | `select` `propia \| ninguna`, **`required` SIN defecto** |
+| **`hrefServido`** | obligatorio si `ninguna`, **prohibido** si `propia` |
+| **`seo.title`** | obligatorio si `propia`, **prohibido** si `ninguna` |
+
+**El discriminador es un CAMPO, no una ausencia.** Derivarlo de que falte
+`hrefServido` —o `seo.title`— borraría la diferencia entre *«no tiene página»* y
+*«nadie lo rellenó»* (§regla 6). La **ida** lo deriva del DATO —*¿el último
+segmento del `href` servido es el `slug`?*— y lo **escribe**; nadie aguas abajo
+lo infiere. Medido: **16 `propia` · 3 `ninguna`**.
+
+**`seo.title` se ESTRECHA, no se invierte.** Su `required` está respaldado por
+`qa:solutions-seo` —`title` **24/24**— y ese 24 son **URLs**, no documentos: los
+tres de aquí **no estaban en el dominio donde la regla se derivó**. Es
+§F2-5-ESCALON-ETIQUETAS aplicada tal cual.
+
+**`hrefServido` no estrena regla de rutas: la consume.** Es el valor medido; al
+pintarlo se le aplica la de siempre —construido → local, no construido →
+original—, así que `…/es/accesorios/` y `…/es/software-…/` **localizan** y
+`?post_type=solutions&p=56674` se queda verbatim, que es lo que la regla dice
+para un destino sin clonar.
+
+**Lo que la sostiene, y son las cuatro condiciones con las que se aceptó:**
+
+1. discriminador explícito → `pagina` `required` sin defecto;
+2. **negativo por los DOS lados** → `qa:pagina-propia`, **6 cuadrantes** contra
+   Payload de verdad (falta ⇒ muere · **sobra ⇒ muere** · discriminador ausente
+   ⇒ muere), negativo **3/3** con `un-solo-lado` y `discriminador-relleno`;
+3. **NO-OP sobre los 9 ya modelados** → migración con guarda de recuento;
+   `qa:cms-roundtrip` **285/285** y `npm run check` **249 rutas · 190 slugs**,
+   los mismos números que antes;
+4. la errata `condifential` **viaja tal cual** (regla 1).
+
+⚠ **Ficha abierta, no bloqueante — §CPT-IDIOMAS.** El CPT **mezcla idiomas** (3
+de los 19 referenciados) y el modelo **no tiene dimensión de idioma**. CMS-PR3 no
+se la inventa: los trata como documentos sin página, que es lo que lo servido
+dice que son. Si F3-4 encuentra lo mismo en otra familia, la decisión está
+planteada con su número.
+
+⛔ **Y no está sembrada todavía**: §DATOS-P-MEDIA — 5 ficheros de imagen ausentes
+paran el cambio de fuente, y capturarlos exige red.
+
 ## ~~⚠ 2e-bis · EL AGUJERO (histórico, cerrado arriba)~~ (2026-08-03)
 
 Acta: `docs/research/precondicion-1/DECISION.md` (pre-registro `cf25baf`,

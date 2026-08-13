@@ -1,5 +1,119 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ DATOS-C-SOLUCIONES · REPARTIDA — los 15 y los 10 no eran el mismo conjunto, y 3 no los arregla ninguna página (2026-08-13, PASO 1)
+
+> **La ficha decía *«qué la cierra: modelar los 15 productos que faltan»*, y las
+> dos mitades que la respaldaban eran ciertas: el CPT tiene 24 URLs y el clon
+> modela 9.** Lo que nadie había hecho es **intersecar** los 15 que faltan con
+> los 10 que bloquean. `qa:productos-hueco` (sin red, negativo 5/5) lo deriva:
+
+| clase | slugs | referencias | qué necesita |
+|---|---:|---:|---|
+| MODELADO | 9 | 177 | — |
+| **EN-CPT-SIN-MODELAR** | **7** | 138 | DOCUMENTO |
+| **SIN-CPT** | **3** | 5 | DOCUMENTO — **pero ninguna página los arregla** |
+
+**De los 15 sin modelar, SIETE desbloquean `casos`; los otros OCHO son cola de
+§F3-COLA-DESTINOS.** Un total sin reparto es el error ya fichado (§El NIVEL al
+que se mide, séptimo contenedor).
+
+**Y los 3 SIN-CPT no son de los 15**: no son ninguna de las 24 URLs, así que
+modelar los 15 habría dejado **5 casos de 57** sin poder entrar. Lo que son, con
+la evidencia SERVIDA del panel de cada caso:
+
+| `data-id` | rótulo | `href` del botón | qué es |
+|---|---|---|---|
+| `accesories` | Accesorios | `…/es/accesorios/` | panel VACÍO |
+| `air-cloud` | AIR Cloud · *Air quality software* | `…/es/software-…/` | **ficha completa EN INGLÉS** |
+| `ozone-2` | Ozone | `…/?post_type=solutions&p=56674` | **sin permalink** |
+
+**Es §regla 9 cobrándose por segunda vez en este mismo CPT** (la primera: «22
+URLs» que eran 24). Y lo que lo impide repetir no es mirar mejor: es **la clase
+`SIN CLASIFICAR`** de la sonda, que es roja. Sin ella los 3 se habrían repartido
+en silencio dentro de «los 15».
+
+**DOCUMENTO o PÁGINA — contestado, y son costes distintos.** La relación
+`soluciones` la satisface el **documento** (`getProductosCms` resuelve por `id` y
+TIRA si falta); la **página** sólo decide si el `href` del panel es local o
+vuelve al original (`segunEntorno`). Así que §DATOS-C-SOLUCIONES cierra con
+documentos y §F3-COLA-DESTINOS necesita rutas — **no se cierran juntas**, que es
+lo contrario de lo que la ficha vieja decía.
+
+**Arquetipo: el escalón NO dispara.** Los 15 traen la plantilla de los ya
+construidos (`solutions-template-default et-tb-has-template`) en 3 formas
+conocidas: 13 cartucho · 1 catálogo · 1 ficha.
+
+## ⛔ DATOS-P-MEDIA · `productos` no cambia de fuente por CINCO ficheros de imagen (2026-08-13, PASO 2)
+
+> **Todo lo que hacía falta para el cambio de fuente está hecho y verde** —
+> esquema (CMS-PR3), migración NO-OP, `cms:extractor-p` con 19 productos y su
+> control 72/72, y `qa:pagina-propia` 6/6 con negativo 3/3—. Lo único que falta
+> son **5 ficheros**, y la guarda `MEDIA AUSENTE` del seed hace bien en pararlo.
+
+Derivado sobre los 19 extraídos, no supuesto:
+
+| | n |
+|---|---:|
+| imagen ya en `apps/web/public` | 8 |
+| **sin foto en el original** — el `<div class="lista-contenido-item-imagen">` va VACÍO: es DATO, no hueco | 6 |
+| **ausentes** (ni en `public` ni en `media-corpus`) | **5** |
+
+Los 5, nombrados: `2023/02/Sulphur-dioxide.jpg` · `2023/01/Carbon_dioxide-1.jpg` ·
+`2023/02/Nitreogen_dioxide.jpg` · `2023/03/CH4.jpg` ·
+`2023/01/Nitric_oxide_cartucho.jpg`.
+
+⚠ **Ojo con el parecido que NO vale:** existe
+`apps/web/public/images/uploads/2024/02/sulphur-dioxide-kunak.jpg`. **Es otro
+fichero** (otra fecha, otro nombre); sustituirlo sería fabricar el dato.
+
+**Es §COMPLETITUD por QUINTA vez** —*capturar las páginas no es capturar sus
+assets*—, y otra vez lo destapó **usar la captura para algo**, no releer un acta.
+
+**Qué la cierra:** `cms:captura-datos` con esas 5 URLs y `cms:coloca-media`.
+Exige RED, que esta tanda tiene vedada por encargo. Mientras tanto se sigue el
+precedente de `casos`: **la fuente no se cambia hasta que la precondición se
+cumple**, para que `cms:seed` siga entero (285 documentos, round-trip 285/285).
+
+**Y lo que bloquea en cascada:** PASO 3 (sembrar los 57 casos) · PASO 5 (el NO-OP
+de píxel de T9, que necesita la ruta de `castel-d-ario` emitida).
+
+## ⚠ CMS-PR4-TAGLINE-MARCADO · el subtítulo de la pestaña se sirve con marcado y el clon lo pinta como TEXTO (2026-08-13, PASO 2)
+
+**Medido: 2 de 19** productos traen marcado en línea en `tagline`
+(`Datos fiables sobre el H<sub>2</sub>S`), y son **fórmulas, no adorno** — el
+mismo caso que ya obligó a `bullets` a ser `htmlLinea`.
+
+`ProductosTabs` lo pinta como texto (`<strong>{p.tagline}</strong>`), así que
+sembrar el valor servido **imprimiría `<sub>` literal: sería una regresión de
+píxel**. `cms:extractor-p` le quita el marcado **con su número** y congela el
+valor servido al lado (`_meta.taglineServido` en `p-extraido.json`), para que
+arreglarlo sea leer la medida y no volver al original.
+
+**Qué lo cierra:** `tagline` a `htmlLinea` + render como HTML, igual que
+`bullets`. Toca **componente compartido** (home · sectores · casos), así que va
+con línea base antes (`qa:clon-base`) y medición después — sin las dos, no se
+toca.
+
+## ⚠ C-SP14 · TERCER valor de `bulletsTitulo`, y el clon lleva pintando el defecto (2026-08-13, PASO 2)
+
+El control de `cms:extractor-p` lo destapó: **`kunak-api` titula su lista
+«Beneficios»** y el catálogo transcrito a mano **omitía el campo**, así que el
+clon pinta el defecto «Ventajas» donde el original dice otra cosa.
+
+Es C-SP14 por tercera vez (Ventajas · Especificaciones · **Beneficios**) y la
+misma lección: *el valor de la primera instancia no se cablea*. Se corrige solo
+al cambiar de fuente (§DATOS-P-MEDIA); mientras tanto queda con su número.
+
+## ⚠ CPT-IDIOMAS · el CPT `solutions` mezcla idiomas y el modelo no tiene esa dimensión (2026-08-13, PASO 2)
+
+**3 documentos de los 19 referenciados son ingleses, y uno (`air-cloud`) trae
+ficha completa** — con su errata `condifential`, que viaja verbatim.
+
+CMS-PR3 **no se inventa una dimensión de idioma**: los trata como *documentos sin
+página propia*, que es lo que la salida servida dice que son. Se anota con su
+número, no bloqueante: **si F3-4 se encuentra lo mismo en otra familia, la
+decisión está planteada en vez de improvisada.**
+
 ## ⛔ DATOS-A · el catálogo del grupo A está EXTRAÍDO y verificado, y las tres colecciones se quedan sin sembrar por tres precondiciones distintas (2026-08-12)
 
 > **`D2.7` decidió sembrar el corpus completo y `cms:extractor-a` ya lo produce**
