@@ -42,13 +42,38 @@ export function rutaLocal(href) {
  * round-trip (§F2-3-HREF-DERIVADO, salida b).
  */
 export function devuelveProducto(d) {
-  const { slug, titulo, padre, ...resto } = d;
+  const { slug, titulo, padre, pagina, hrefServido, ...resto } = d;
   return {
     id: slug,
     name: titulo,
     ...resto,
-    href: `/${[padre, slug].filter(Boolean).join("/")}`,
+    /**
+     * CMS-PR3 · dos orígenes, y el que manda lo dice **el campo**, no la
+     * presencia del otro: `pagina` es el discriminador escrito.
+     *
+     * · `propia`  → el candidato local del §4, como siempre;
+     * · `ninguna` → el `href` **medido**, y sigue siendo un candidato: la regla
+     *   de rutas locales se aplica después en el render (`segunEntorno`). Los
+     *   que apuntan a una ruta del original que el clon SÍ emite localizan
+     *   solos; `?post_type=solutions&p=56674` no es una ruta, así que se queda
+     *   verbatim — que es justo lo que la regla dice para un destino sin clonar.
+     */
+    href: pagina === "ninguna" ? candidatoServido(hrefServido) : `/${[padre, slug].filter(Boolean).join("/")}`,
   };
+}
+
+/**
+ * Un `href` servido convertido en CANDIDATO local **sólo si es una ruta**.
+ * Una URL de consulta (`/?post_type=…`) no tiene ruta que localizar: se
+ * devuelve tal cual, y `segunEntorno` la deja pasar por no empezar por `/`…
+ * salvo que empiece — por eso se comprueba aquí y no allí.
+ */
+function candidatoServido(href) {
+  if (typeof href !== "string") return href;
+  const sinOrigen = href.replace(/^https?:\/\/[^/]+/, "");
+  /* Consulta, fragmento o vacío ⇒ no es una ruta: verbatim, con su origen. */
+  if (!/^\/[^?#]/.test(sinOrigen)) return href;
+  return rutaLocal(href);
 }
 
 /** `taxonomia-sectores`: la relación polimórfica vuelve a ser un slug. */
@@ -69,5 +94,9 @@ export const DEVUELVE = {
  */
 export function comoEmbebido(coleccion, fila) {
   if (coleccion !== "productos") return fila;
-  return { ...fila, href: rutaLocal(fila.href) };
+  /* `candidatoServido` y no `rutaLocal` a secas desde CMS-PR3: los 3 documentos
+   * sin página propia pueden traer una URL de CONSULTA, y `rutaLocal` sobre
+   * `…/?post_type=solutions&p=56674` devuelve un `/…` que no es ruta de nada.
+   * Es la misma función que usa la vuelta, para que no haya dos respuestas. */
+  return { ...fila, href: candidatoServido(fila.href) };
 }

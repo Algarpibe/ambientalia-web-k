@@ -11,7 +11,7 @@
  * sola colección **no hacen falta relaciones polimórficas** — el mecanismo que
  * §1.5b reserva para `sectores`/`monograficos`.
  */
-import type { Block, CollectionConfig, Field } from "payload";
+import type { Block, CollectionConfig, Field, TextField, TextFieldSingleValidation } from "payload";
 import { campoHtml, conDefecto, htmlLinea, seo, subida } from "../campos/comunes.ts";
 import {
   CAMPOS_CTA_DESCARGA,
@@ -190,6 +190,155 @@ const padre: Field = {
   },
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL DOCUMENTO DEL CPT **SIN PÁGINA PROPIA** — CMS-PR3, 2026-08-13
+ *
+ * `qa:productos-hueco` midió que los 57 casos referencian **19** slugs de
+ * producto y que **tres no son ninguna de las 24 URLs del CPT**: son documentos
+ * del CPT **en inglés** que el editor eligió en la relación `soluciones` de un
+ * caso español. Su evidencia es la SERVIDA, no una hipótesis:
+ *
+ * | `data-id` | rótulo | `href` del botón «Ver más» |
+ * |---|---|---|
+ * | `accesories` | Accesorios | `…/es/accesorios/` |
+ * | `air-cloud` | AIR Cloud · *Air quality software* | `…/es/software-de-medicion-calidad-del-aire/` |
+ * | `ozone-2` | Ozone | `…/?post_type=solutions&p=56674` — **sin permalink** |
+ *
+ * ── Por qué NO son alias del documento español, y es una medida ───────────
+ * `air-cloud` sirve una ficha **distinta** de la de `software-…`: en inglés,
+ * con sus propias viñetas (*«Multipurpose air quality software for
+ * professionals»*, `Benefits`, y la errata **`condifential`** que viaja tal cual
+ * por la regla 1). Aliasarlos pintaría la ficha española donde el original pinta
+ * la inglesa — se pierde fidelidad en el panel visible, no sólo en el `href`.
+ * O sea: **son documentos**, y el discriminador es si tienen página.
+ *
+ * ── Las dos consecuencias, y ninguna es cosmética ────────────────────────
+ * **(1) `href` deja de ser derivable.** §4 lo compone como `padre` + `slug`, y
+ * para estos tres eso fabricaría `/es/air-cloud/`, una URL que el original
+ * **no sirve**. El valor medido se guarda en `hrefServido`.
+ *
+ * **(2) `seo.title` deja de ser exigible.** Su `required` está respaldado por
+ * `qa:solutions-seo` — `title` **24/24** — y ese 24 son **URLs**, no documentos:
+ * los tres de aquí no estaban en el dominio donde la regla se derivó. Así que la
+ * regla **se ESTRECHA a su dominio en vez de sustituirse por la contraria**
+ * (`CLAUDE.md` §F2-5-ESCALON-ETIQUETAS, la 3.ª cara de la familia de
+ * calibración).
+ *
+ * ── El discriminador es un CAMPO, no una ausencia ────────────────────────
+ * ⚠ **`pagina` es `required` y sin defecto**, y eso es la §regla 6 puesta donde
+ * muerde: calcularlo por la ausencia de `hrefServido` —o de `seo.title`— borraría
+ * la diferencia entre *«este documento no tiene página»* y *«nadie rellenó el
+ * campo»*, que es exactamente cómo una ausencia se convierte en un valor
+ * benigno. La ida lo deriva **del dato medido** (el último segmento del `href`
+ * servido, ¿es el `slug`?) y lo **escribe**; nadie aguas abajo lo infiere.
+ *
+ * ⚠ **FICHA ABIERTA, no bloqueante: el CPT `solutions` MEZCLA IDIOMAS.**
+ * 3 de 24 documentos referenciados son ingleses y **uno trae ficha completa**.
+ * El modelo **no tiene dimensión de idioma** y esta decisión no se la inventa:
+ * los trata como documentos sin página, que es lo que la salida servida dice que
+ * son. Si F3-4 se encuentra lo mismo en otra familia, la decisión está planteada
+ * con su número en vez de improvisada (`PENDIENTES-QA.md` §CPT-IDIOMAS).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Los dos estados, explícitos. Sin defecto: la ausencia TIRA. */
+export const PAGINA_PRODUCTO = ["propia", "ninguna"] as const;
+
+const pagina: Field = {
+  name: "pagina",
+  type: "select",
+  required: true,
+  options: [
+    { label: "Tiene página propia en /es/", value: "propia" },
+    { label: "Sin página propia (documento del CPT sin permalink de /es/)", value: "ninguna" },
+  ],
+  admin: {
+    description:
+      "CMS-PR3 · el discriminador de «documento sin página propia». SIN DEFECTO a propósito: " +
+      "derivarlo de una ausencia confundiría «no tiene página» con «nadie lo rellenó» (§regla 6). " +
+      "Medido: 21 `propia` · 3 `ninguna` (accesories · air-cloud · ozone-2).",
+  },
+};
+
+/** `es` = tiene valor no vacío. `""` cuenta como ausente en los dos campos:
+ *  ninguno de los dos tiene vacío legal medido, así que no se le inventa uno. */
+const puesto = (v: unknown) => v !== undefined && v !== null && v !== "";
+
+/**
+ * El condicional, en las DOS direcciones. Un condicional con un solo lado no
+ * está probado: dejaría pasar el documento con página y sin `seo.title`
+ * (defecto viejo) **o** el documento sin página que trae uno inventado.
+ */
+type ValidaTexto = TextFieldSingleValidation;
+
+const soloSi = (
+  quiere: (typeof PAGINA_PRODUCTO)[number],
+  campo: string,
+  porQue: string,
+): ValidaTexto =>
+  ((valor: unknown, { data }: { data?: unknown }) => {
+    const p = (data as { pagina?: string } | undefined)?.pagina;
+    /* `pagina` ausente NO se suple: su propio `required` lo caza, y contestar
+     * aquí «true» sería traducir la ausencia a permiso. */
+    if (p !== "propia" && p !== "ninguna") return true;
+    if (p === quiere && !puesto(valor))
+      return `\`${campo}\` es obligatorio cuando \`pagina\` es «${quiere}» — ${porQue}`;
+    if (p !== quiere && puesto(valor))
+      return (
+        `\`${campo}\` NO puede tener valor cuando \`pagina\` es «${p}» — ${porQue}. ` +
+        `Que sobre un dato no es más benigno que que falte: los dos dicen que el documento no es lo que declara.`
+      );
+    return true;
+  }) as ValidaTexto;
+
+/**
+ * El `href` que el original SIRVE, para los documentos que no tienen página
+ * propia y por tanto no lo tienen derivable.
+ *
+ * ⚠ **Es el valor MEDIDO, no una ruta local.** Al pintarlo se le aplica la regla
+ * de rutas locales ya escrita —construido → local, no construido → original—,
+ * así que `…/es/accesorios/` y `…/es/software-…/` **localizan** (el clon las
+ * emite) y `?post_type=solutions&p=56674` **se queda en el original**, porque no
+ * es una ruta que el build emita. No es decisión nueva: es §Regla de rutas
+ * locales aplicada a un `href` que ahora viene del dato en vez de del `padre`.
+ */
+const hrefServido: Field = {
+  name: "hrefServido",
+  type: "text",
+  validate: soloSi(
+    "ninguna",
+    "hrefServido",
+    "sin página propia el `href` no se puede componer con `padre` + `slug` (fabricaría una URL que el original no sirve); con página propia SÍ se compone y guardarlo sería una segunda fuente de verdad",
+  ),
+  admin: {
+    description:
+      "El `href` tal y como lo sirve el original. Sólo para `pagina: ninguna`. " +
+      "La regla de rutas locales se le aplica al pintarlo, igual que a cualquier otro.",
+  },
+};
+
+/**
+ * `seo` de `productos`: igual que el compartido salvo que `title` **es
+ * obligatorio sólo donde se midió** — en documentos con página propia.
+ */
+const seoProducto = (): Field => {
+  const base = seo() as Extract<Field, { type: "group" }>;
+  /* `title` se REEMPLAZA, no se mapea: un `.map()` sobre `fields` ensancha la
+   * unión discriminada de Payload y el resultado deja de ser `Field`. */
+  const title: TextField = {
+    name: "title",
+    type: "text",
+    /* Fuera el `required` de Payload: no sabe de condiciones, y dejarlo puesto
+     * haría irrepresentables los 3 documentos sin página. */
+    required: false,
+    validate: soloSi(
+      "propia",
+      "seo.title",
+      "`qa:solutions-seo` lo midió 24/24 sobre las URLs del CPT, y un documento sin página no está en ese dominio (§ESCALON-ETIQUETAS: la regla se estrecha, no se invierte)",
+    ),
+  };
+  return { ...base, fields: [title, ...base.fields.filter((f) => !("name" in f) || f.name !== "title")] };
+};
+
 export const productos: CollectionConfig = {
   slug: "productos",
   admin: { useAsTitle: "titulo", group: "Catálogo" },
@@ -202,8 +351,18 @@ export const productos: CollectionConfig = {
    * Los otros 18 (`cartuchos-inteligentes/<slug>`, `sensor-…/<slug>`) tienen
    * unicidad nativa de colección y **no se registran**: hacerlo inventaría
    * colisiones que en la URL real no existen.
+   *
+   * ⚠ **Y desde CMS-PR3 hace falta la segunda mitad del predicado.** Los tres
+   * documentos **sin página propia** tampoco tienen `padre`, así que por el
+   * predicado viejo entrarían al plano y reservarían `/accesories`, `/ozone-2` y
+   * `/air-cloud` — tres slugs que **no son URLs de nadie**. Es el mismo
+   * argumento de arriba (*no inventar colisiones que en la URL real no
+   * existen*), aplicado al eje que la clase nueva estrena.
    */
-  hooks: registroDeSlug({ familia: "productos", enElPlano: (doc) => !doc.padre }),
+  hooks: registroDeSlug({
+    familia: "productos",
+    enElPlano: (doc) => !doc.padre && doc.pagina === "propia",
+  }),
   fields: [
     // ⚠ ALIAS de `Product.id` («data-id del `<span>` del tab»): `id` lo reserva
     // Payload para la PK. §2e escribe `slug`, y es el mismo dato.
@@ -222,7 +381,11 @@ export const productos: CollectionConfig = {
       "§2e · 23 de 24 · productos/DECISION.md",
     ),
     padre,
-    seo(),
+    /* CMS-PR3 — el discriminador va ANTES de los dos campos que condiciona:
+     * se lee en el admin en el orden en que manda. */
+    pagina,
+    hrefServido,
+    seoProducto(),
 
     /* ── La ficha, que es PROYECCIÓN del producto y por tanto vive aquí ─────
      * Probado en C-2 sobre 640 nodos de panel: **18 fichas, 17 títulos**, y los

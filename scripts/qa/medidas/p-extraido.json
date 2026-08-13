@@ -1,0 +1,459 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "el catálogo del CPT `solutions` derivado del PANEL servido en el corpus congelado",
+    "fuentes": [
+      "corpus/ (309 páginas) — el panel de #lista-soluciones",
+      "medidas/solutions-seo.json — el bloque seo de las 24 URLs",
+      "apps/web/src/lib/products.ts — el CONTROL (9 transcritos a mano)"
+    ],
+    "alcance": "los 19 slugs que los 57 casos referencian. Los 8 productos del CPT que NINGÚN caso referencia NO tienen panel en el corpus y quedan fuera con su razón medida (§F3-COLA-DESTINOS: necesitan PÁGINA).",
+    "sabotaje": null,
+    "noMide": [
+      "no toca el original",
+      "no siembra",
+      "no decide modelo"
+    ]
+  },
+  "recuento": {
+    "extraidos": 19,
+    "conPagina": 16,
+    "sinPagina": 3,
+    "apariciones": 320
+  },
+  "invariante": {
+    "divergentes": []
+  },
+  "control": {
+    "denominador": "9 de 19 productos · 8 campos · 72 comparaciones",
+    "porClase": {
+      "href-localizado-a-mano": 3,
+      "transcripcion-decodifico-entidades": 1,
+      "⚠ DATO QUE FALTABA EN LA TRANSCRIPCIÓN": 1
+    },
+    "discrepancias": [
+      {
+        "id": "monitor-calidad-aire",
+        "campo": "href",
+        "clase": "href-localizado-a-mano",
+        "aMano": "/monitor-calidad-aire",
+        "extraido": "https://kunakair.com/es/monitor-calidad-aire/"
+      },
+      {
+        "id": "sensor-de-calidad-del-aire",
+        "campo": "bullets",
+        "clase": "transcripcion-decodifico-entidades",
+        "aMano": "Plug & Play (detección automática) | Calibración y validación individuales | Control y garantía de calidad tra",
+        "extraido": "Plug &amp; Play (detección automática) | Calibración y validación individuales | Control y garantía de calidad"
+      },
+      {
+        "id": "software-de-medicion-calidad-del-aire",
+        "campo": "href",
+        "clase": "href-localizado-a-mano",
+        "aMano": "/software-de-medicion-calidad-del-aire",
+        "extraido": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+      },
+      {
+        "id": "kunak-api",
+        "campo": "bulletsTitulo",
+        "clase": "⚠ DATO QUE FALTABA EN LA TRANSCRIPCIÓN",
+        "aMano": "",
+        "extraido": "Beneficios"
+      },
+      {
+        "id": "kunak-api",
+        "campo": "href",
+        "clase": "href-localizado-a-mano",
+        "aMano": "/kunak-api",
+        "extraido": "https://kunakair.com/es/kunak-api/"
+      }
+    ]
+  },
+  "catalogo": {
+    "productos": [
+      {
+        "id": "accesories",
+        "name": "Accesorios",
+        "tagline": "",
+        "description": "",
+        "highlight": "",
+        "bullets": [],
+        "image": "",
+        "href": "https://kunakair.com/es/accesorios/"
+      },
+      {
+        "id": "air-cloud",
+        "name": "AIR Cloud",
+        "tagline": "Air quality software",
+        "description": "Multipurpose air quality software for professionals",
+        "highlight": "REAL-TIME DATA | ALWAYS UPDATED",
+        "bulletsTitulo": "Benefits",
+        "bullets": [
+          "Secure and condifential",
+          "Air quality reporting",
+          "Advanced data analysis and visualisation",
+          "Reliable data guaranteed",
+          "Data sharing and integration"
+        ],
+        "image": "/images/uploads/2023/01/air-cloud.jpg",
+        "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/"
+      },
+      {
+        "id": "amoniaco",
+        "name": "Amoniaco",
+        "tagline": "Datos fiables sobre el NH3",
+        "description": "Datos fiables sobre el amoniaco",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "Precisión típica (MAE): ±0,3 ppm",
+          "Rango de medición: 0-50 ppm",
+          "Resolución: 0,01 ppm",
+          "24 meses de vida útil"
+        ],
+        "image": "",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/amoniaco/",
+        "seo": {
+          "title": "Sensor de NH3 (Amoniaco) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de amoniaco.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg"
+        }
+      },
+      {
+        "id": "compuestos-organicos-volatiles",
+        "name": "Compuestos orgánicos volátiles",
+        "tagline": "Datos fiables sobre los COVs",
+        "description": "Datos fiables sobre los compuestos orgánicos volátiles",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Detector de fotoionización",
+          "R<sup>2</sup> &gt;0,99",
+          "Rango de medición: 0-3.000 ppb (Tipo A) | 0-40 ppm (Tipo B)",
+          "Resolución: 1 ppb (Tipo A) | 0,01 ppm (Tipo B)",
+          "10.000 horas de vida útil"
+        ],
+        "image": "/images/uploads/2023/02/Volatile_organic_compounds.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/compuestos-organicos-volatiles/",
+        "seo": {
+          "title": "Sensor de COVs (Compuestos orgánicos volátiles) - Kunak",
+          "description": "Cartucho inteligente que integra un sensor capaz de medir de forma precisa y fiable los niveles de compuestos orgánicos volátiles.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Volatile-Organic-Compounds.jpg"
+        }
+      },
+      {
+        "id": "dioxido-de-azufre",
+        "name": "Dióxido de azufre",
+        "tagline": "Datos fiables sobre el SO2",
+        "description": "Datos fiables sobre el dióxido de azufre",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,7",
+          "Rango de medición: 0-10.000 ppb",
+          "Resolución: 1 ppb",
+          "24 meses de vida útil"
+        ],
+        "image": "/images/uploads/2023/02/Sulphur-dioxide.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-azufre/",
+        "seo": {
+          "title": "Dióxido de azufre - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir con precisión y fiabilidad los niveles de dióxido de azufre.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Sulphur_dioxide.jpg"
+        }
+      },
+      {
+        "id": "dioxido-de-carbono",
+        "name": "Dióxido de carbono",
+        "tagline": "Datos fiables sobre el CO2",
+        "description": "Datos fiables sobre el dióxido de carbono",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "NDIR",
+          "Precisión típica (MAE): ± 30 ppm",
+          "Rango de medición: 0-5.000 ppb",
+          "Resolución: 1 ppb",
+          "7 años de vida útil"
+        ],
+        "image": "/images/uploads/2023/01/Carbon_dioxide-1.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-carbono/",
+        "seo": {
+          "title": "Sensor de CO2 (Dióxido de carbono) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de dióxido de carbono.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/Carbon_dioxide_cabecera.jpg"
+        }
+      },
+      {
+        "id": "dioxido-de-nitrogeno",
+        "name": "Dióxido de nitrógeno",
+        "tagline": "Datos fiables sobre el NO2",
+        "description": "Datos fiables sobre el dióxido de nitrógeno",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,85",
+          "Rango de medición: 0-5.000 ppb",
+          "Resolución: 1 ppb",
+          "24 meses de vida útil"
+        ],
+        "image": "/images/uploads/2023/02/Nitreogen_dioxide.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-nitrogeno/",
+        "seo": {
+          "title": "Dióxido de nitrógeno - Kunak",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Nitrogen_dioxide_cabecera.jpg"
+        }
+      },
+      {
+        "id": "estacion-de-monitoreo-de-calidad-del-aire",
+        "name": "AIR Lite",
+        "tagline": "Estación de monitoreo de calidad del aire",
+        "description": "Información sobre la calidad del aire calle a calle.",
+        "highlight": "CALIDAD INDUSTRIAL | MÁXIMA PRECISIÓN",
+        "bullets": [
+          "Diseño robusto y compacto",
+          "Sistema de cartuchos",
+          "Funcionamiento autónomo",
+          "Pantalla OLED integrada",
+          "Gran relación calidad-precio"
+        ],
+        "image": "/images/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+        "href": "https://kunakair.com/es/estacion-de-monitoreo-de-calidad-del-aire/",
+        "seo": {
+          "title": "Estación de calidad del aire | Kunak AIR Lite",
+          "description": "Con la estación de monitoreo de calidad del aire Kunak AIR Lite obtendrás información precisa sobre contaminantes fácil, rápida y asequible.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "id": "kunak-api",
+        "name": "Kunak API",
+        "tagline": "Fácil integración de datos",
+        "description": "Fácil integración de datos en cualquier sitio web o plataforma de smart city",
+        "highlight": "DISPONIBILIDAD DE DATOS | COPIAS DE SEGURIDAD AUTOMÁTICAS",
+        "bulletsTitulo": "Beneficios",
+        "bullets": [
+          "Visualización y gestión de datos",
+          "Automatización de procesos",
+          "Herramientas personalizadas",
+          "Integración de sistemas de terceros",
+          "Importación y exportación de datos"
+        ],
+        "image": "",
+        "href": "https://kunakair.com/es/kunak-api/",
+        "seo": {
+          "title": "Kunak API - Kunak",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "id": "metano",
+        "name": "Metano",
+        "tagline": "Datos fiables sobre el CH4",
+        "description": "Datos fiables sobre el metano",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "N.D. <sup>(C) </sup>/ TDLAS <sup>(D)</sup>",
+          "R<sup>2</sup>: &gt; 0,85 <sup>(C)</sup> / &gt; 0,90 <sup>(D)</sup>",
+          "Rango de medición: 2 &#8211; 300 ppm <sup>(C)</sup> / 0 &#8211; 1.000 ppm <sup>(D)</sup>",
+          "Resolución: 0,01 ppm <sup>(C)</sup> / 0,1 ppm <sup>(D)</sup>",
+          "Vida útil: 24 meses <sup>(C)</sup> / 5 años (10 años del fabricante) <sup>(D)</sup>"
+        ],
+        "image": "/images/uploads/2023/03/CH4.jpg",
+        "href": "https://kunakair.com/es/sensor-de-calidad-del-aire/metano/",
+        "seo": {
+          "title": "Sensor de CH4 (Metano) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de metano.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/main-sources-methane.jpg"
+        }
+      },
+      {
+        "id": "monitor-calidad-aire",
+        "name": "AIR Pro",
+        "tagline": "Monitor de calidad de aire para profesionales",
+        "description": "Estación de monitorización de la calidad del aire para profesionales.",
+        "highlight": "BASADA EN SENSORES | LA MAYOR PRECISIÓN",
+        "bullets": [
+          "Multi-contaminante",
+          "Sistema de cartuchos",
+          "Totalmente autónomo",
+          "Datos en tiempo real",
+          "Precisión probada"
+        ],
+        "image": "/images/uploads/2022/12/Kunak-AIR-Pro-1024.jpg",
+        "href": "https://kunakair.com/es/monitor-calidad-aire/",
+        "seo": {
+          "title": "Monitor de calidad del aire profesional | Kunak AIR Pro",
+          "description": "El monitor de calidad del aire exterior multi-contaminante más preciso y fiable del mercado. Validado por la US EPA, Airparif, AQ Spec y más.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "id": "monoxido-de-carbono",
+        "name": "Monóxido de carbono",
+        "tagline": "Datos fiables sobre el CO",
+        "description": "Datos fiables sobre el monóxido de carbono",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,85",
+          "Rango de medición: 0-12.000 ppb (Tipo A) | 0-500 ppm (Tipo B)",
+          "Resolución: 1 ppb (Tipo A) | 0,01 ppm (Tipo B)",
+          "24 meses de vida útil"
+        ],
+        "image": "",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/monoxido-de-carbono/",
+        "seo": {
+          "title": "Sensor de CO (Monóxido de carbono) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de monóxido de carbono.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/cabecera-bosque-incendio.jpg"
+        }
+      },
+      {
+        "id": "oxido-nitrico",
+        "name": "Óxido nítrico",
+        "tagline": "Datos fiables sobre el NO",
+        "description": "Datos fiables sobre el óxido nítrico",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,9",
+          "Rango de medición: 0-5.000 ppb",
+          "Resolución: 1 ppb",
+          "24 meses de vida útil"
+        ],
+        "image": "/images/uploads/2023/01/Nitric_oxide_cartucho.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/oxido-nitrico/",
+        "seo": {
+          "title": "Sensor de NO (Óxido nítrico) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de óxido nítrico.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/01/Nitric_oxide_cabecera.jpg"
+        }
+      },
+      {
+        "id": "ozone-2",
+        "name": "Ozone",
+        "tagline": "",
+        "description": "",
+        "highlight": "",
+        "bullets": [],
+        "image": "",
+        "href": "https://kunakair.com/?post_type=solutions&p=56674"
+      },
+      {
+        "id": "ozono",
+        "name": "Ozono",
+        "tagline": "Datos fiables sobre el O3",
+        "description": "Datos fiables sobre el ozono",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,9",
+          "Rango de medición: 0-2.000 ppb",
+          "Resolución: 1 ppb",
+          "24 meses de vida útil"
+        ],
+        "image": "",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/ozono/",
+        "seo": {
+          "title": "Sensor de O3 (Ozono) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de ozono.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Ozone.jpg"
+        }
+      },
+      {
+        "id": "particulas-en-suspension",
+        "name": "Partículas en suspensión",
+        "tagline": "Medición precisa de material particulado",
+        "description": "Información fiable sobre partículas",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Contador óptico de partículas",
+          "Hasta R<sup>2</sup> &gt;0.9",
+          "Rango: 0-1.000 | 0-2.000 | 0-10.000 ppb",
+          "Resolución: 1 μg/m<sup>3</sup>",
+          "24 meses de vida útil"
+        ],
+        "image": "/images/uploads/2023/02/particulate-matter-sensor.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/particulas-en-suspension/",
+        "seo": {
+          "title": "Sensor de PM (Partículas en suspensión) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de partículas en suspensión.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/particulate-matter.jpg"
+        }
+      },
+      {
+        "id": "sensor-de-calidad-del-aire",
+        "name": "Cartuchos inteligentes",
+        "tagline": "Sistema plug & play",
+        "description": "El sistema plug & play para una medición precisa de los principales contaminantes.",
+        "highlight": "BASADO EN SENSORES | SUSTITUCIÓN FÁCIL Y RÁPIDA",
+        "bullets": [
+          "Plug &amp; Play (detección automática)",
+          "Calibración y validación individuales",
+          "Control y garantía de calidad trazables",
+          "Diseño patentado",
+          "Sostenible"
+        ],
+        "image": "/images/uploads/2023/01/cartridges-300.jpg",
+        "href": "https://kunakair.com/es/sensor-de-calidad-del-aire/",
+        "seo": {
+          "title": "Sensor de calidad del aire exterior preciso y fiable - Kunak",
+          "description": "La tecnología patentada de cartuchos inteligentes desarrollada por Kunak permite medir los contaminantes ambientales de forma precisa.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "id": "software-de-medicion-calidad-del-aire",
+        "name": "AIR Cloud",
+        "tagline": "Software de calidad del aire",
+        "description": "Software profesional de calidad del aire para el análisis de datos.",
+        "highlight": "DATOS EN TIEMPO REAL | ACTUALIZACIONES CONTINUAS",
+        "bullets": [
+          "Seguro y confidencial",
+          "Informes de calidad del aire",
+          "Visualización y análisis avanzado de datos",
+          "Datos fiables garantizados",
+          "Integración y envío de datos"
+        ],
+        "image": "/images/uploads/2023/01/air-cloud.jpg",
+        "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+        "seo": {
+          "title": "Software para el análisis de la calidad del aire | Kunak AIR Cloud",
+          "description": "Software de análisis de la calidad del aire y ayudar a los profesionales a utilizar y explotar los datos para tomar decisiones informadas.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "id": "sulfuro-de-hidrogeno",
+        "name": "Sulfuro de hidrógeno",
+        "tagline": "Datos fiables sobre el H2S",
+        "description": "Datos fiables sobre el sulfuro de hidrógeno",
+        "highlight": "TECNOLOGÍA GASPLUG | DISEÑO PATENTADO",
+        "bulletsTitulo": "Especificaciones",
+        "bullets": [
+          "Electroquímico",
+          "R<sup>2</sup> &gt;0,8",
+          "Rango de medición: 0-2.000 ppb (Tipo A) | 0-20 ppm (Tipo B)",
+          "Resolución: 1 ppb (Tipo A) | 0,01 ppm (Tipo B)",
+          "24 meses de vida útil"
+        ],
+        "image": "/images/uploads/2023/02/Hydrogen-sulfide.jpg",
+        "href": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/",
+        "seo": {
+          "title": "Sensor de H2S (Sulfuro de hidrógeno) - Kunak",
+          "description": "Cartucho inteligente diseñado por Kunak que integra un sensor capaz de medir de forma precisa y fiable los niveles de sulfuro de hidrógeno.",
+          "ogImage": "https://kunakair.com/wp-content/uploads/2023/02/Hydrogen_sulfide.jpg"
+        }
+      }
+    ]
+  }
+}

@@ -372,14 +372,42 @@ export function esSlug(v) {
  * por segmentos y no por prefijo.
  */
 export function preparaProducto(p) {
-  const segs = String(p.href ?? "")
+  const { id, name, href, ...resto } = p;
+  const segs = segmentosDeHref(href);
+  /**
+   * CMS-PR3 · **el discriminador se deriva del DATO y se ESCRIBE**, no se
+   * infiere aguas abajo de una ausencia (§regla 6).
+   *
+   * La pregunta que lo decide es una sola y es de la medida: *¿el último
+   * segmento del `href` que el original SIRVE es el `slug`?* Si lo es, la ruta
+   * es `padre` + `slug` y §4 la compone; si no lo es, componerla fabricaría una
+   * URL que el original no sirve (`/es/air-cloud/`), y entonces el `href` medido
+   * es dato y va a `hrefServido`.
+   *
+   * Medido sobre los 19 referenciados: **16 propia · 3 ninguna**. Los 9 que ya
+   * estaban modelados dan `propia` los 9, que es lo que hace la migración NO-OP.
+   */
+  const derivable = segs.length > 0 && segs[segs.length - 1] === id;
+  const padre = derivable && segs.length > 1 ? segs[segs.length - 2] : undefined;
+  return {
+    ...resto,
+    slug: id,
+    titulo: name,
+    ...(padre ? { padre } : {}),
+    pagina: derivable ? "propia" : "ninguna",
+    /* Verbatim: es el valor servido, no una ruta normalizada. La regla de rutas
+     * locales se le aplica al PINTARLO, como a cualquier otro href. */
+    ...(derivable ? {} : { hrefServido: href }),
+  };
+}
+
+/** Los segmentos de un `href` medido, sin origen y sin el `/es` del original. */
+function segmentosDeHref(href) {
+  return String(href ?? "")
     .replace(/^https?:\/\/[^/]+/, "")
-    .replace(/^\/es/, "")
+    .replace(/^\/es(?=\/|$)/, "")
     .split("/")
     .filter(Boolean);
-  const padre = segs.length > 1 ? segs[segs.length - 2] : undefined;
-  const { id, name, href, ...resto } = p;
-  return { ...resto, slug: id, titulo: name, ...(padre ? { padre } : {}) };
 }
 
 /** `taxonomia-sectores`: `paginaSlug` → relación polimórfica `pagina`. */
