@@ -1,5 +1,83 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📐 F3-LH-ALCANCE-DECLARADO · EL DENOMINADOR, ESCRITO **ANTES** DE CONSTRUIR (2026-08-13, 66.ª tanda)
+
+**Va primero porque es lo único que esta tanda no puede escribir al final sin
+que se lea distinto.** Un cierre que diga *«L1-blog verificado»* es cierto **y
+absorbe** todo lo que no tiene referencia limpia: es §*la cobertura declarada al
+nivel de arriba* con el contenedor más barato que hay, la palabra «verificado».
+Así que el número se deriva cuando todavía no hay nada que defender.
+
+**Instrumento: `npm run qa:lh-alcance` (nueva, negativo 3/3), congelada en
+`medidas/lh-alcance-{1440,390}.json`.** No abre una página ni arranca el clon:
+censa el universo del espejo con **el mismo `ejeDe()`** que usará el comparador
+—extraído a `scripts/qa/lh-ejes.mjs` para que haya **una sola definición** (§C7,
+el mismo argumento que `lh-barrido.mjs` ya tenía escrito)—.
+
+### El universo entero, a los dos anchos
+
+| | @1440 | @390 |
+|---|---|---|
+| pares totales | **16 706** | **16 719** |
+| **verificables** | **13 670** | **13 670** |
+| ↳ `contenido`, contra el CORPUS | 523 | 523 |
+| ↳ `plantilla`, contra el ORIGINAL | 13 147 | 13 147 |
+| **MIXTOS — sin referencia limpia** | **3 036** = **18.2 %** | **3 049** = **18.2 %** |
+
+### Y lo que esta tanda puede verificar, con su fracción
+
+Las **3 formas** que construye (`L1-blog` + las **dos** instancias de
+`L1-etiqueta`, que es la unidad del comparador):
+
+| forma | pares | verificables | MIXTOS | % mixto |
+|---|---|---|---|---|
+| `L1-blog::/es/blog/` | 1 716 | 1 432 | 284 | 16.6 % |
+| `L1-etiqueta::/es/etiqueta/calidad-del-aire/` | 1 996 | 1 670 | 326 | 16.3 % |
+| `L1-etiqueta::/es/etiqueta/h2s-es/` | 1 733 | 1 428 | 305 | 17.6 % |
+| **suma de la tanda** | **5 445** | **4 530** | **915** | **16.8 %** |
+
+> **La frase que esta tanda tiene derecho a escribir al cerrar, y ninguna más
+> ancha:** *«de los 5 445 pares de las 3 formas construidas, **4 530 quedan
+> verificados** contra su referencia declarada y **915 (16.8 %) no son
+> verificables hoy** por el eje mixto»*. Los **11 261 pares restantes** del
+> universo pertenecen a las **10 formas que esta tanda no construye** y siguen
+> AUSENTES, que es correcto.
+
+⚠ **«Verificable» NO es «verificado».** Dice que el par **tiene referencia**, no
+que cuadre. Que cuadre lo dice `qa:lh-cmp`, y sólo en las formas que el clon
+sirva.
+
+### ⚠ Y un defecto de la sonda nueva, cazado antes de que entrara en un acta
+
+La primera versión derivaba «¿el build emite esta forma?» **por el primer
+segmento del árbol de `app/`** — *«¿existe `app/recursos/`?»*. Existe: es el
+catch-all del **DOCUMENTO CIENTÍFICO**. Con eso la sonda declaraba **6 de 13
+formas emitidas** cuando el build no emite **ninguna** ruta de listado, e
+inflaba el denominador de la tanda en **8 087 pares**.
+
+> **§sondas 4 en su tercera cara, reproducida a la primera en una sonda nueva:**
+> un detector que encuentra **más** de lo que hay no da error — **da un número
+> plausible de más**, y encima invita a explicarlo.
+
+Corregido derivando la **ruta exacta** contra el `prerender-manifest` (§El
+principio: contra la salida servida). Lectura de hoy, antes de construir:
+**302 rutas en el manifiesto · 0 de 13 formas de listado emitidas**. Y sin
+manifiesto **no se sustituye por «ninguna»**: se declara con su cero y su razón
+(§regla 6) — hoy «ninguna» sería la respuesta correcta por accidente.
+
+### Las excepciones YA CONOCIDAS, pre-declaradas para que nadie las persiga
+
+Las dos están medidas y fichadas; aquí sólo se citan con su número, **no se
+re-derivan**:
+
+| # | qué va a salir distinto | por qué NO es defecto | ficha |
+|---|---|---|---|
+| 1 | la **posición 2 de la página 1 de `/blog`** (`kunak-obtiene-el-sello-reconcilia`, 1 dic 2025) | son **2 entradas que faltan en el CORPUS de captura**, no en el seed: no están en `corpus/entradas-blog` (149 ficheros) | §F3-LH-DOS-CONJUNTOS-DE-149 |
+| 2 | **2 titulares** de `/es/etiqueta/calidad-del-aire/` (T0 y T1) | el **original cambió** entre la foto del corpus (F3-0) y la del espejo (2026-08-11) | §F3-LH-DOS-FOTOS |
+
+La 2 la excluye el comparador **por mecanismo** (deriva la lista de
+`medidas/lh-extracto.json`); la 1 **no**, y por eso se escribe aquí.
+
 ## ⛔ F3-LH-JERARQUIA-RECURSOS · ESCALÓN: EL ORIGINAL **SÍ** TIENE JERARQUÍA (2026-08-13, 65.ª tanda)
 
 **La comprobación se hizo en las DOS direcciones, que es lo que la hace
