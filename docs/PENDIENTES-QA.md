@@ -382,7 +382,111 @@ cierran sembrando más**. Se cierran (a) dando de alta instancias con formas que
 el corpus no tiene, o (b) declarando cuáles no se van a soportar. Ninguna de las
 dos es trabajo de datos.
 
-## ⛔⛔ DATOS-PIXEL · §DATOS-C-PIPELINE **se ve en píxeles**: 8 de las 37 rutas se movieron al cambiar de fuente (2026-08-12)
+## ⚠ F3-COLA-DESTINOS · 830 enlaces del cuerpo apuntan al original porque el clon no clona su destino (2026-08-13, PASO 5)
+
+> **Con T7 arreglado dejan de ser enlaces ROTOS —vuelven al original y funcionan—
+> pero eso es tapar el síntoma con la regla: el original SÍ tiene esas páginas y
+> el clon NO.** Se ficha con su número como cola de F3; no se resuelve aquí,
+> porque resolverlo es clonar arquetipos, no arreglar un pipeline.
+
+Derivado de `medidas/extractor-corpus.json` → `t7.porDestino` (los 209 cuerpos
+del grupo A contra el manifiesto del build de 2026-08-13):
+
+| familia del destino | destinos | enlaces | qué es |
+|---|---:|---:|---|
+| `/cartuchos-inteligentes/*` | **20** | **544** | ⛔ **el hueco mayor**: el arquetipo no está clonado |
+| `/sensor-de-calidad-del-aire/*` | 2 | 89 | ⛔ ídem |
+| `/casos-de-exito/*` · `/case-studies/*` | 35 | 89 | ✅ **se cierra solo** al sembrar los 57 (§PASO 6) |
+| `/estacion-de-monitoreo-de-calidad-del-aire` | 1 | 33 | ⛔ página sin clonar |
+| `/soluciones` | 1 | 27 | ⛔ ídem |
+| `/informe-tecnico-…` (6 variantes) | 6 | 20 | ⛔ landings de descarga sin clonar |
+| `/contacto` · `/productos` · `/sectores` · `/empresa/*` · `/author/*` · resto | 15 | 28 | ⛔ páginas sueltas sin clonar |
+
+**Los 20 de `/cartuchos-inteligentes/*` son los mismos 20 de §DATOS-C-PIPELINE**,
+y ahora se sabe **cuánto pesan**: 544 enlaces, el 65 % de los 830. Es también
+§F2-3-HREF-DERIVADO visto desde el otro lado — allí eran 6 productos apuntando a
+rutas no emitidas *en la carga RSC*; aquí son 544 enlaces *en el cuerpo servido*.
+
+### Y de camino, dos defectos DEL ORIGINAL que el barrido nombró
+
+Ninguno es del clon, y los dos son contenido que alguien escribió mal en
+WordPress. Se dejan **verbatim** (regla 1: erratas incluidas), nombrados:
+
+| documento | href servido | qué le pasa |
+|---|---|---|
+| `entradas-blog/calidad-del-aire-en-los-aeropuertos` | `/software-de-medicion-calidad-del-aire/%20` | un **espacio codificado** al final: apunta a una ruta que no existe ni en el original |
+| `terminos-kunakpedia/esmog` | `/<a href=` | un `<a>` **anidado dentro de otro** en el marcado del editor |
+
+**El segundo importa para el modelo**, no sólo como curiosidad: es el tipo de
+cosa que el §campo rico tiene que admitir sin romperse, y el saneador lo admite.
+
+## ⛔⛔ DATOS-MEDIA-HOTLINK · el clon SIRVE 3688 imágenes DESDE kunakair.com, y la premisa que lo justificaba es hoy falsa (2026-08-13)
+
+> **Lo destapó el PASO 3, y sólo porque por primera vez alguien comparó un
+> cuerpo.** `CLAUDE.md` §Assets: *«Descargados con `scripts/download-assets.mjs`.
+> **Nunca se enlaza a kunakair.com en caliente**»*. El cuerpo rico del grupo A
+> lo incumple en 169 de 209 documentos, y **ninguna guarda del repo lo veía**.
+
+### El número, por los dos lados
+
+| dónde | medida |
+|---|---|
+| `corpus/transformado/` (209 cuerpos) | **169 con hotlink** · **1815 referencias** · **1268 URL distintas** |
+| reparto por atributo | `srcset` **986** · `src` **586** · `style` (background-image) **180** · `href` **63** |
+| HTML **servido** (`.next/server/app`, build de 2026-08-13) | **180 de 234 rutas** · **3688 referencias** |
+
+**No son enlaces rotos: son peticiones que salen de verdad.** Cada visita a una
+de esas 180 rutas pide 1–130 ficheros al sitio original.
+
+### ⚠ Y la premisa con la que se decidió dejarlo así es HOY FALSA, con su número
+
+T3b lo declara en su cabecera: *«El `src` sigue apuntando al original —la regla
+de rutas locales: **el destino no está publicado**—»*. Era cierto cuando se
+escribió. Desde `cms:coloca-media` (2026-08-12, 682 orígenes + 1179 variantes):
+
+> **1265 de las 1268 URL distintas YA TIENEN su fichero en
+> `apps/web/public/images/uploads`** — el **99.8 %**. Las 3 que faltan van
+> nombradas abajo.
+
+Así que el conflicto entre §Assets y la cabecera de T3b **se disuelve**: con la
+premisa corregida las dos reglas dicen lo mismo, **localizar**. No es una
+decisión nueva; es §regla 9 aplicada a un hecho que envejeció.
+
+Las 3 ausentes, nombradas y no silenciadas: `2026/05/Emisiones-fugitivas_programa-LDAR.jpg` ·
+`2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg` ·
+`2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg`.
+
+### La prueba de que es un DEFECTO y no un criterio: el pipeline se contradice a sí mismo
+
+**T4b SÍ localiza.** Al sustituir el visor FB3D emite el enlace al PDF como
+`/images/uploads/…`, mientras T3b deja el `<img src>` en `https://kunakair.com/…`.
+Son **dos mitades del mismo pipeline con dos respuestas a la misma pregunta** —
+la clase C7 dentro del propio pipeline. Y lo mismo entre capas: el extractor
+**localiza la media de los METADATOS** (`rutaLocalMedia` en `imagenDestacada`,
+`portada`, `ogImage`) y **no la del CUERPO**. Un documento con las dos mitades en
+desacuerdo.
+
+### Por qué NO se arregla en esta tanda, y no es pereza
+
+**Es una transformación distinta sobre los mismos 209 cuerpos.** Meterla en el
+mismo re-sembrado que T7 haría **inatribuible** el efecto de T7 — y eso es
+exactamente el agujero por el que §DATOS-PIXEL no se pudo adjudicar: *«un cambio
+de FUENTE no es un cambio de datos»*, y dos cambios a la vez no se pueden separar
+después. El §PASO 4 de esta tanda exige *«que se mueva EXACTAMENTE donde la
+decisión dice y en ningún otro sitio»*, y eso obliga a una transformación por
+re-sembrado.
+
+**Queda declarado con NÚMERO, no con permiso:** `extractor-a` lleva
+`ABIERTOS = { "media-original": { n: 9 } }` sobre los 14 cuerpos controlados, y
+**la sonda cierra en rojo si el número se mueve**. Un defecto declarado sin número
+deja pasar el suyo y todos los que lleguen detrás con la misma etiqueta.
+
+**Qué la cierra:** una transformación de localización de media (T9) con su
+re-sembrado propio y su `clon-base --cmp` propio, y la cabecera de T3b corregida
+en el mismo acto — porque mientras diga *«el destino no está publicado»* seguirá
+justificando lo contrario de lo que toca.
+
+## ⛔ DATOS-PIXEL · §DATOS-C-PIPELINE **se ve en píxeles**: 8 de las 37 rutas se movieron al cambiar de fuente (2026-08-12)
 
 > **El PASO 7 pedía NO-OP: *«las 37 rutas ya construidas no deben moverse un
 > píxel por haber poblado la DB. Si se mueven, congela y para»*. Se movieron 8.
