@@ -1,9 +1,9 @@
 {
   "meta": {
-    "fecha": "2026-08-12",
+    "fecha": "2026-08-13",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
-    "control": "111 comparaciones contra src/lib/arquetipo-a.ts",
+    "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
     "sabotaje": "cuerpo-ausente",
     "noMide": [
       "no toca el original",
@@ -17,8 +17,9 @@
     "documentos-cientificos": 0
   },
   "control": {
-    "comparaciones": 111,
+    "comparaciones": 125,
     "documentos": 14,
+    "cuerposComparados": 14,
     "poblacion": 3,
     "discrepancias": 14,
     "detalle": [
@@ -108,6 +109,44 @@
       }
     ]
   },
+  "divergencia": {
+    "porClase": {
+      "valor": 14
+    },
+    "adjudicacion": {
+      "espacio": "dato — la transcripción normalizó sangrado y finales de línea; el original sirve LF y CRLF MEZCLADOS (9184 CRLF en el corpus) — §PASO 2",
+      "cierre-xhtml": "dato — el original sirve `<br />` en las 3 instancias medidas; la transcripción lo normalizó a `<br>` — §PASO 2",
+      "espacio-duro": "dato — el original sirve U+00A0 CRUDO; la transcripción lo escapó a `&nbsp;` — §PASO 2",
+      "t8-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T8 · token de Rocket Loader → `text/javascript`",
+      "t1-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T1 · `et_pb_button` → `data-variante=\"boton\"` (el acoplamiento contenido",
+      "t2-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T2 · `style=\"width: NNNpx\"` de `wp-caption` — residuo del editor, se eli",
+      "t3-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3a · `wp-image-<id>` y `aligncenter` se descartan (T3b, wp-caption→rela",
+      "t3b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` (la rela",
+      "t4b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al PDF con ",
+      "t9-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) se desen",
+      "t4-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustitución, nece",
+      "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
+      "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",
+      "t7-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T7 · enlaces internos del cuerpo: a ruta local si el BUILD la emite, y s",
+      "srcset-recapturado": "dato — ninguna de las 10 transformaciones toca `srcset`, así que el del pipeline ES el del corpus. La transcripción es más VIEJA que la captura y el original regenera variantes — arbitrado contra el corpus en 2/2",
+      "t3b-data-media": "dato — CONSECUENCIA de `media-original`: la llave sólo se deriva del `src` del original, y la transcripción lo localizó. Guardado aparte en `extractor-corpus.json` → `mediaDelCuerpo`",
+      "href": "DEFECTO — difieren DESPUÉS de plegar T7, así que no lo explica T7 — §Regla de rutas locales + §F2-3-HREF-DERIVADO (b)",
+      "target": "DEFECTO — difieren DESPUÉS de plegar T7 — §Regla de rutas locales: `target=\"_blank\"` sólo si el destino es externo",
+      "media-original": "DEFECTO — §Assets: «nunca se enlaza a kunakair.com en caliente», y el destino SÍ está publicado — §DATOS-MEDIA-HOTLINK",
+      "SIN CLASIFICAR": "DEFECTO — ninguna regla escrita la cubre"
+    },
+    "abiertos": {
+      "media-original": {
+        "n": 9,
+        "ficha": "§DATOS-MEDIA-HOTLINK (PENDIENTES-QA.md), abierta 2026-08-13"
+      }
+    },
+    "abiertosMal": [
+      "media-original: declarados 9, vistos 0"
+    ],
+    "serializacion": [],
+    "sinClasificar": []
+  },
   "catalogo": {
     "entradas-blog": [
       {
@@ -154,7 +193,7 @@
           "ogImage": "/images/uploads/2024/01/Deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-EDAR.jpeg"
         },
         "titulo": "Webinar: Detección temprana de episodios de contaminación por malos olores en EDAR",
-        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"registration-content__meta flex flex-col md:flex-row\">Los sistemas de saneamiento y especialmente las estaciones depuradoras de aguas residuales, pueden llegar a ser un foco de generación de malos olores, generando molestias a los vecinos más próximos a este tipo de instalaciones.</div>\n<div class=\"registration-content__description registration-block\">\n<div class=\"custom-body ql-editor display\">\n<p class=\"ql-align-justify\">Desde <strong>AGUASRESIDUALES.INFO</strong><strong> </strong>y como medio de referencia para el sector del tratamiento del agua, han organizado esta segunda jornada técnica on-line sobre la detección y eliminación de OLORES y H<sub>2</sub>S en las EDAR y redes de saneamiento (en formato webinar) donde han participado varias empresas especialistas en soluciones como la modelización de olores (<strong>HYDRENS</strong>), la monitorización de la <span class=\"glossary-tooltip\">calidad del aire<span class=\"tooltip-content\">La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen...<br><a target=\"_blank\" href=\"/calidad-del-aire\" class=\"glossary-link\">Leer más</a></span></span> (<strong>KUNAK</strong>) y tratamientos eficaces para la prevención del H<sub>2</sub>S y olores (<strong>Yara</strong>).</p>\n<p class=\"ql-align-justify\">El objetivo de la jornada ha sido conocer la problemática de los olores desde varios puntos y disponer de soluciones como la modelización, la monitorización y la prevención y eliminación, para poder atacar el problema desde la raíz y eliminarlo con éxito.</p>\n<p class=\"ql-align-justify\"><iframe src=\"//www.youtube.com/embed/aHlsyzC3_iI?si=No96iVtUSltiivkn&amp;t=1563\" width=\"800\" height=\"448\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<h3 class=\"ql-align-justify\"></h3>\n<h3 class=\"ql-align-justify\">Programa</h3>\n<h4>Presentación</h4>\n<ul>\n<li><strong>José Miguel del Arco</strong> &#8211; Director y Fundador de <strong>Aguas Residuales</strong></li>\n</ul>\n<h4>1.- Presentación de <a href=\"https://www.hydrens.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">HYDRENS</a>: Diagnóstico del impacto del olor producido en la EDAR a través de metodologías dinámicas de experimentación y modelado.</h4>\n<ul>\n<li><strong>José Vilarroig Herrera</strong>, Responsable del área técnica (CTO) de <strong>HYDRENS</strong></li>\n</ul>\n<h4>2.- Presentación de : Detección temprana de episodios de contaminación por malos olores en las EDAR.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Peio Ibáñez Ancizu</strong>, Técnico Comercial de Medio Ambiente de <strong>Kunak</strong></li>\n</ul>\n<h4>3.- Presentación de <a href=\"https://www.yara.es/productos-quimicos-nitrogenados-y-soluciones-medioambientales/mal-olor-y-yprevencion-de-formacion-de-h2s/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Yara</a>: Detección, y eliminación de H<sub>2</sub>S en redes de saneamiento, EBAR / EDAR con las soluciones Yara Nutriox.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Emilio Bas</strong>, Sales Manager de <strong>Yara</strong></li>\n</ul>\n</div>\n</div>\n\n\t\t\t",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"registration-content__meta flex flex-col md:flex-row\">Los sistemas de saneamiento y especialmente las estaciones depuradoras de aguas residuales, pueden llegar a ser un foco de generación de malos olores, generando molestias a los vecinos más próximos a este tipo de instalaciones.</div>\n<div class=\"registration-content__description registration-block\">\n<div class=\"custom-body ql-editor display\">\n<p class=\"ql-align-justify\">Desde <strong>AGUASRESIDUALES.INFO</strong><strong> </strong>y como medio de referencia para el sector del tratamiento del agua, han organizado esta segunda jornada técnica on-line sobre la detección y eliminación de OLORES y H<sub>2</sub>S en las EDAR y redes de saneamiento (en formato webinar) donde han participado varias empresas especialistas en soluciones como la modelización de olores (<strong>HYDRENS</strong>), la monitorización de la <span class=\"glossary-tooltip\">calidad del aire<span class=\"tooltip-content\">La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen...<br><a href=\"/calidad-del-aire\" class=\"glossary-link\">Leer más</a></span></span> (<strong>KUNAK</strong>) y tratamientos eficaces para la prevención del H<sub>2</sub>S y olores (<strong>Yara</strong>).</p>\n<p class=\"ql-align-justify\">El objetivo de la jornada ha sido conocer la problemática de los olores desde varios puntos y disponer de soluciones como la modelización, la monitorización y la prevención y eliminación, para poder atacar el problema desde la raíz y eliminarlo con éxito.</p>\n<p class=\"ql-align-justify\"><iframe src=\"//www.youtube.com/embed/aHlsyzC3_iI?si=No96iVtUSltiivkn&amp;t=1563\" width=\"800\" height=\"448\" allowfullscreen=\"allowfullscreen\"></iframe></p>\n<h3 class=\"ql-align-justify\"></h3>\n<h3 class=\"ql-align-justify\">Programa</h3>\n<h4>Presentación</h4>\n<ul>\n<li><strong>José Miguel del Arco</strong> &#8211; Director y Fundador de <strong>Aguas Residuales</strong></li>\n</ul>\n<h4>1.- Presentación de <a href=\"https://www.hydrens.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">HYDRENS</a>: Diagnóstico del impacto del olor producido en la EDAR a través de metodologías dinámicas de experimentación y modelado.</h4>\n<ul>\n<li><strong>José Vilarroig Herrera</strong>, Responsable del área técnica (CTO) de <strong>HYDRENS</strong></li>\n</ul>\n<h4>2.- Presentación de : Detección temprana de episodios de contaminación por malos olores en las EDAR.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Peio Ibáñez Ancizu</strong>, Técnico Comercial de Medio Ambiente de <strong>Kunak</strong></li>\n</ul>\n<h4>3.- Presentación de <a href=\"https://www.yara.es/productos-quimicos-nitrogenados-y-soluciones-medioambientales/mal-olor-y-yprevencion-de-formacion-de-h2s/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Yara</a>: Detección, y eliminación de H<sub>2</sub>S en redes de saneamiento, EBAR / EDAR con las soluciones Yara Nutriox.</h4>\n<ul>\n<li class=\"ql-align-justify\"><strong>Emilio Bas</strong>, Sales Manager de <strong>Yara</strong></li>\n</ul>\n</div>\n</div>\n\n\t\t\t",
         "fechaPublicacion": "2 diciembre 2021",
         "categorias": [
           {
