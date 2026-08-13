@@ -37,6 +37,59 @@ seed de KB murió en el 4.º documento. La protección de congeladas funcionando
 su lectura mal hecha. Queda cerrado con una guarda de **sincronía código↔censo**
 en el negativo, en los dos sentidos.
 
+## ⚠ F3-CSS-CANAL-PIELES · `qa:pieles` lee UN canal de CSS de los dos, y 573 de 782 páginas enlazan el otro (2026-08-13, T9 PASO 1)
+
+> **Sale de la comprobación retroactiva de la tanda de T9, hecha en LAS DOS
+> DIRECCIONES como pide `CLAUDE.md`.** La dirección *«¿lo nuevo está
+> sobre-generalizado?»* salió limpia; la otra encontró esto.
+
+**No es un defecto medido: es una afirmación SIN PROBAR con su denominador.** Y
+la distinción importa, porque el sesgo de un canal incompleto tiene **una sola
+dirección**:
+
+| lo que `qa:pieles` afirma | ¿lo toca el canal que falta? |
+|---|---|
+| **presencias** — «1299 overrides», «216 reglas de blurb», «3 pieles del `h2`» | ❌ **no**: una regla hallada en el `<style>` está ahí. Siguen siendo ciertas |
+| **ceros y CONJUNTOS CERRADOS** — «¿es cerrado el conjunto de pieles?», «0 overrides en X» | ✅ **sí**: falta canal, así que un cero puede ser del instrumento (§sondas 4) |
+
+**El número, derivado de `corpus/css/INDICE.json` y del corpus:**
+
+| familia de hoja | hojas distintas | páginas que la enlazan |
+|---|---:|---:|
+| **`et-core-unified-cpt-*`** — *el fichero donde Divi vuelca el CSS UNIFICADO DE MÓDULOS* | 74 | hasta **209** |
+| `et-divi-dynamic-*` — CSS compilado por plantilla/instancia | 422 | hasta 29 |
+| `et-divi-customizer-global` | 2 | 499 |
+| tema · plugins · `wp-includes` | 7 | 573 · 573 · 109 |
+
+**573 de las 782 páginas del corpus enlazan alguna `et-core-unified`**, y
+`pieles-modulo` corre **offline sobre `corpus/`**: `cssDe()` lee el `<style>` en
+línea y de las enlazadas sólo guarda **el recuento**.
+
+⚠ **Lo que NO se puede concluir de aquí, y por eso esto es una ficha y no una
+corrección:** que a `qa:pieles` le falten reglas **no está medido** — hace falta
+capturar esas hojas y volver a cruzar. De hecho hay evidencia en contra para KB:
+las tres pieles del `h2` se encontraron **en el `<style>` en línea**
+(`.et_pb_text_3 h2 {font-weight:300;font-size:44px}`), o sea que en ese arquetipo
+Divi sí sirve el CSS de módulo en línea. **Puede que el otro canal esté vacío de
+pieles; puede que no.** Hoy no se sabe, y antes de esta tanda no se podía ni
+preguntar.
+
+**Y la otra mitad, que es la buena noticia:** `qa:hover-zonal` **ya leía los dos
+canales** —pide las hojas al vuelo y tiene sabotaje `sin-hojas`—, así que **D1 no
+queda tocada**. El canal no era desconocido: lo que faltaba era tenerlo **en el
+archivo**, y por eso sólo lo podía leer una sonda que saliera a la red.
+
+**Qué la cierra:** capturar las hojas de las páginas que `qa:pieles` recorre
+(`cms:captura-css --pagina=…`, o el modo campaña que hoy no existe) y re-cruzar.
+**El coste no es despreciable** — hasta 505 peticiones —, así que se dimensiona
+antes: las `et-core-unified` distintas son **74**, no 505.
+
+⚠ **Alcance de T9, que NO hereda esta duda:** `castel-d-ario` **no enlaza ninguna
+`et-core-unified`**. Sus 7 hojas son las que `qa:t9-css` leyó, y la sonda exige
+que estén **todas** capturadas o tira (sabotaje `sin-hojas`, exit 1). El cruce de
+T9 es completo **para esa página**, que es la única que ejercita la
+transformación.
+
 ## ✅ DATOS-MEDIA-CIFRAS · los dos números del hotlink, ATADOS — y manda el DATO (2026-08-13, PASO 4)
 
 > **3688 y 1820/1268 nunca estuvieron en conflicto: medían objetos distintos.**

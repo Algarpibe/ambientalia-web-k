@@ -1,4 +1,121 @@
-# HANDOFF — población COMPLETA: 348 documentos, 302 rutas, `lh-poblacion` en VERDE, y el inventario de media por fin DERIVADO
+# HANDOFF — T9 cerrada con sus CUATRO condiciones, pagando la última POR MECANISMO; F3-2 se queda sin escalones y lo que falta es CONSTRUIR
+
+> ⚠ **Tanda de T9, 2026-08-13 (61.ª).** PASOS 1 y 2 completos. Registro:
+> `PENDIENTES-QA.md` (§DATOS-DOM-AJENO **cerrada** · §F3-1-CSS-NO-CAPTURADO
+> actualizada con su alcance · §F3-CSS-CANAL-PIELES **nueva**) ·
+> `ESQUEMA-CMS.md` §3.2c · `CLAUDE.md` (§inventario de media, 4.º canal) ·
+> `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` · `package.json` (4 sondas nuevas).
+
+## 0 · Los titulares
+
+> **1 · LA CUARTA CONDICIÓN DE T9 SE PAGÓ POR MECANISMO, NO POR PÍXEL — y es una
+> respuesta MÁS FUERTE.** El encargo autorizó una segunda salida a la red y la
+> **redirigió**: en vez de medir la ruta viva, traerse **las 7 hojas CSS
+> enlazadas** (ficheros estáticos) y completar offline la derivación que estaba a
+> medias. `qa:t9-css`: **0 de 44 clases del envoltorio con regla** en los **8
+> canales** que el documento se trae (231 508 B en línea + 345 315 B enlazados).
+> Sin regla servida no hay render, y sin render desenvolver **no puede** mover un
+> píxel. Un Δ0 habría dicho *«no se observó diferencia»* en una ruta **sin campaña
+> de ruido**, o sea SIN PROBAR; esto dice que **no hay mecanismo**.
+>
+> **2 · «LAS 10 CLASES» ERA UN NÚMERO RECORDADO: SON 44.** §regla 9, citado igual
+> en tres sitios (`transformaciones.mjs`, `ESQUEMA-CMS.md`, la ficha). Ahora se
+> **derivan corriendo T9** y recogiendo su `transporteDesenvuelto` — una lista
+> escrita mediría un conjunto distinto del que la transformación toca.
+>
+> **3 · EL 4.º CANAL DE MEDIA, Y ES EL PRIMERO QUE NO MATA NADA.** Cuerpos →
+> destacadas → panel **mataron un seed**; las hojas CSS enlazadas no rompen: dan
+> una captura **PLAUSIBLE**, que es peor. Costó una condición de T9 **dos tandas**
+> sin pagar y, antes, una spec que habría afirmado con número que el cuerpo de KB
+> es plano (`columna.width` **678.52 offline contra 430.80** en vivo). Regla nueva
+> en `CLAUDE.md`: **las hojas enlazadas entran en la captura por defecto**.
+> Inventario declarado con su cero: **505 distintas · 62 en >1 página · 443 en una
+> sola · 498 son `et-cache`**. Capturadas: **7 de 505**.
+>
+> **4 · Y DESTAPÓ UNA PREGUNTA QUE NO SE PODÍA FORMULAR: §F3-CSS-CANAL-PIELES.**
+> `qa:pieles` corre offline y lee **un canal de los dos**, mientras **573 de 782**
+> páginas del corpus enlazan `et-core-unified-*` —el fichero donde Divi vuelca el
+> CSS unificado de MÓDULOS—. Sus **presencias** siguen siendo ciertas; sus
+> **ceros y su «¿es cerrado el conjunto de pieles?»** están **SIN PROBAR**. No es
+> un defecto medido: es una ficha con su denominador.
+>
+> **5 · F3-2 SE QUEDA SIN ESCALONES ABIERTOS.** Cinco colecciones pobladas ·
+> `qa:lh-poblacion` **VERDE** (0 de 29 series sin alcanzar) · `qa:manifiesto`
+> **302 rutas · 13 familias · 0 vacías** · `qa:lh-paginas` del día **142** ·
+> `npm run check` exit 0 · sondas **153 → 155**.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **LO SIGUIENTE ES CONSTRUIR, y lleva sin empezar desde el principio de la
+  fase: LISTADO-B con sus tres variantes, L2, L3 y L5.** Con dos desviaciones ya
+  declaradas —**L5 sin su filtro** si `sector` se decide en F3-4, y
+  **§LH-C6-L3-SIN-PAGINADOR** replicado por `D2.6`— y con la regla de que **un
+  arquetipo nuevo NO hereda cobertura**: su **comparador de dos lados es parte de
+  la tanda, no un extra**. Una guarda solo-clon (`clon-base`) se lee como verde y
+  **no mide fidelidad**.
+- ⚠ **Capturar hojas NO habilita medir píxeles offline.** §F3-1-CSS-NO-CAPTURADO
+  sigue abierta para eso: faltan las fuentes, la reescritura de URL absolutas y
+  **la campaña que pruebe que el render offline ≡ el vivo**. *Leer* CSS y
+  *renderizar* con CSS son dos usos distintos, y sólo el primero está comprado.
+- ⚠ **El discriminador de T9 en producción sigue leyendo sólo el `<style>`.** Se
+  deja así a propósito —un conjunto de menos sesga hacia **no** desenvolver, la
+  dirección segura—. **Un arquetipo nuevo con DOM ajeno vuelve a pasar por
+  `qa:t9-css`.**
+- **ESCALÓN 3 comprobado y NO disparó:** las 7 hojas traen **39 `url()`**, y las
+  **2** que apuntan a `/uploads/` viven en la hoja del **TEMA**, en selectores de
+  cascarón (`.blog #cabecera-wrap`, `.single-glossary …`) — régimen plantillado,
+  no un canal de contenido. Se declara con su número en vez de callarlo.
+- **`castel-d-ario` no enlaza ninguna `et-core-unified`**, así que la duda de
+  §F3-CSS-CANAL-PIELES **no toca a T9**: sus 7 hojas son las que la sonda leyó, y
+  `qa:t9-css` **tira** si falta una (sabotaje `sin-hojas`, exit 1).
+- **Sigue en pie de la tanda anterior:** la línea base de las 232 rutas está SIN
+  VERIFICAR (una corrida de `clon-base --cmp` salió con exit 0 y cero líneas);
+  `cms:reset && cms:seed` **no repone `articulos-kb`** (hace falta `cms:seed-kb`);
+  T10 aplicada al grupo C y **no** al A, a propósito.
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:t9-css`** | ¿alguna clase del envoltorio ajeno tiene **regla servida**, en línea **y** enlazada? | **4/4** — y `lector-ciego` produce **el mismo `0 de 44`** que la corrida buena |
+| **`cms:captura-css`** | el inventario de hojas enlazadas del corpus; **pide sólo la lista que se le nombre** | **3/3** (alcance declarado: **sin red**) |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un cero que no puede dar error necesita un CONTROL, y el control hay que
+diseñarlo para que produzca EL MISMO NÚMERO.** El sabotaje `lector-ciego` saca
+`0 de 44` — idéntico al verde. Lo único que los separa es que el control
+(`.et_pb_section` 26 reglas · `.et_pb_row` 254 · `.et_pb_text` 19) se queda mudo.
+Sin él, «estas clases no llevan render» y «no sé leer el CSS» eran **la misma
+salida**, y la condición de T9 se habría pagado con un cero que no midió nada.
+
+**(b) Cuando el encargo pide medir píxel, la pregunta previa es si hay MECANISMO
+que medir.** Salió más barato y más fuerte: una propiedad del documento en vez de
+una observación de una carga — y encima inmune a que esa ruta no tenga campaña de
+ruido. §*el eje con mecanismo y servido en los dos lados*.
+
+**(c) La comprobación retroactiva EN LAS DOS DIRECCIONES pagó por la dirección
+que no se buscaba.** *«¿lo nuevo está sobre-generalizado?»* salió limpio (el
+alcance de T9 ya estaba declarado); *«¿lo viejo está mal?»* encontró
+§F3-CSS-CANAL-PIELES. Con el marco de una sola dirección, el hallazgo cabía en el
+resultado «no hay nada» y se habría cerrado en verde.
+
+**(d) Un canal cuyo síntoma es una MEDIDA PLAUSIBLE no tiene disparador.** Los
+tres canales anteriores se descubrieron *porque algo se rompió*. Éste no rompe
+nada, y por eso vivió más. La única defensa es **enumerar los canales antes de
+necesitarlos** — que es lo que la regla ya decía, y lo que «esperar a que el seed
+muera» venía sustituyendo sin que se notara.
+
+**(e) Y una de reutilización: el parser de CSS no se duplicó.** `css-compilado.mjs`
+existe precisamente para que no haya dos, con la peor salida posible —la sonda
+diciendo *«hay 82 overrides»* y el extractor escribiendo otros, **los dos verdes
+en su propio marco**—. `qa:t9-css` importa `reglas()` en vez de escribir un
+`match` sobre el texto, y por eso su criterio es *«una REGLA cuyo selector casa la
+clase»* y no *«la cadena aparece en el fichero»*.
+
+---
+
+# (histórico) HANDOFF — población COMPLETA: 348 documentos, 302 rutas, `lh-poblacion` en VERDE, y el inventario de media por fin DERIVADO
 
 > ⚠ **Tanda de DESBLOQUEO EN CASCADA, 2026-08-13 (60.ª).** PASOS 1 · 2 · 3 · 4 · 6
 > completos; **PASO 5 PARADO por un conflicto del propio encargo** (abajo).

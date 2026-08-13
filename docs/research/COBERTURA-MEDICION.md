@@ -1,5 +1,41 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠⚠ **ACTUALIZADO 2026-08-13 (tanda de T9) — el denominador sube de 252 a 302,
+> y entra un CANAL que ningún eje de esta matriz leía: el CSS ENLAZADO.**
+>
+> | | antes | ahora |
+> |---|---:|---:|
+> | rutas emitidas por el build | 252 | **302** |
+> | de ellas, en la matriz de 9 ejes | 37 | **37** |
+> | ⛔ sin una sola medida contra el original | 215 | **265** |
+>
+> Las 50 nuevas son la población que cerró la tanda anterior (`productos` 9 → 19,
+> `casos` 4 → 57). Entran en `·` en los nueve ejes, como las 215 anteriores:
+> **poblar no es medir**, y el denominador crece más deprisa que la cobertura.
+> Derivado hoy: `qa:manifiesto` **302 rutas · 13 familias · 0 vacías**.
+>
+> **El canal nuevo, y por qué no es un eje más:** los nueve ejes miden geometría;
+> el eje `cuerpo` (abajo) mide el dato que entra. **Ninguno de los diez leía el
+> CSS que el documento ENLAZA** — sólo el `<style>` en línea. Y ese canal es el
+> que decide si una clase tiene render.
+>
+> | | antes | ahora |
+> |---|---:|---:|
+> | hojas CSS enlazadas por el corpus | **0 capturadas** de 505 | **7** de 505 |
+> | páginas que enlazan `et-core-unified` (CSS unificado de MÓDULOS) | — | **573 de 782** |
+>
+> **Lo que compró:** la cuarta condición de T9 —el NO-OP al píxel— pagada **por
+> mecanismo** (`qa:t9-css`: 0 de 44 clases con regla en 8 canales, control vivo,
+> negativo 4/4). **Lo que destapó:** §F3-CSS-CANAL-PIELES — `qa:pieles` corre
+> offline sobre un canal de los dos, así que sus **presencias** valen y sus
+> **ceros y conjuntos cerrados** están SIN PROBAR. No es un defecto medido: es
+> una pregunta que antes de esta tanda no se podía ni formular.
+>
+> ⚠ **Y la lectura que NO hay que dar:** capturar hojas **no** habilita medir
+> píxeles offline (§F3-1-CSS-NO-CAPTURADO sigue abierta para eso — faltan
+> fuentes, URLs absolutas y la campaña de equivalencia). *Leer* CSS y
+> *renderizar* con CSS son dos usos, y sólo el primero está comprado.
+
 > ⚠ **ACTUALIZADO 2026-08-13 (tanda de PIPELINE) — el denominador sube de 232 a
 > 252, y aparece un EJE que esta matriz no tenía.**
 >
