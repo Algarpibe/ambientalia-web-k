@@ -197,6 +197,7 @@
     "qa:pagina-propia-neg": "node --env-file=apps/cms/.env scripts/qa/pagina-propia.neg.mjs",
     "qa:media-canales": "node --env-file=apps/cms/.env scripts/qa/media-canales.mjs",
     "qa:media-canales-neg": "node --env-file=apps/cms/.env scripts/qa/media-canales.neg.mjs",
+    "qa:hotlink-recuento": "node scripts/qa/hotlink-recuento.mjs",
     "qa:atributos-censo": "node scripts/qa/atributos-censo.mjs",
     "qa:atributos-censo-neg": "node scripts/qa/atributos-censo.neg.mjs"
   },

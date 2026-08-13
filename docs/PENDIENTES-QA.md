@@ -1,5 +1,39 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ DATOS-MEDIA-CIFRAS · los dos números del hotlink, ATADOS — y manda el DATO (2026-08-13, PASO 4)
+
+> **3688 y 1820/1268 nunca estuvieron en conflicto: medían objetos distintos.**
+> Pero mientras no se dijera cuál manda, el siguiente sumaba el que tuviera a
+> mano — que es el caso ya fichado de `lh-serie` **149** contra `lh-paginas`
+> **142**. `qa:hotlink-recuento` publica las tres magnitudes con su fuente.
+
+| magnitud | refs | URL dist. | fuente |
+|---|---:|---:|---|
+| **DATO** ← *manda* | **1820** | **1268** | los cuerpos almacenados: `corpus/transformado/` (1820) + `c-extraido` (**0**) |
+| SERVIDO visible | 1827 | 1275 | `.next/server/app` **sin** la carga RSC · 304 rutas, 230 con hotlink |
+| SERVIDO bruto | 3992 | — | ídem **con** la carga RSC (`self.__next_f.push`) |
+| *(aparte)* `articulos-kb` | 64 | 63 | **otro canal**: su media son relaciones `upload`, no URLs en HTML |
+
+**El 3688 de la ficha anterior era SERVIDO BRUTO sobre un build de 234 rutas.**
+Hoy el mismo objeto da 3992 sobre 304 rutas **sin que el dato se haya movido un
+byte** — que es exactamente por qué no puede ser el denominador de nada.
+
+**Manda el DATO** porque es la unidad sobre la que T10 actúa, cuenta su diana y
+comprueba su postcondición. El SERVIDO se sigue publicando —es el impacto real,
+peticiones que salen de verdad al original— pero **se cita siempre con su
+build**.
+
+**Y `c-extraido` a 0 es el primer efecto de T10 medido**: los cuerpos de los 57
+casos y las 19 faqs se regeneraron con T10 en el pipeline y **no hotlinkean
+ninguno**.
+
+⚠ **Dos defectos del instrumento, los dos cazados por el signo y no por un
+error.** (1) Con sólo dos de las tres fuentes el DATO daba 1820 contra 1827
+servidas: un residuo de 7 con pinta de fleco que era **alcance escondido**.
+(2) Al meter `articulos-kb` recorriendo el fichero entero, el DATO subió a 1884 y
+quedó **por encima del servido** — aritméticamente imposible para un dato que se
+sirve. Es el sobre-casado de §sondas 4 dos veces seguidas.
+
 ## ✅ DATOS-C-SOLUCIONES · REPARTIDA — los 15 y los 10 no eran el mismo conjunto, y 3 no los arregla ninguna página (2026-08-13, PASO 1)
 
 > **La ficha decía *«qué la cierra: modelar los 15 productos que faltan»*, y las

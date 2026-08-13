@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "las TRES magnitudes del hotlink, con su unidad y su fuente, y cuál manda",
+    "manda": "DATO",
+    "porQue": "es la unidad sobre la que T10 actúa y comprueba; el SERVIDO depende del nº de rutas emitidas (234 → 302 en dos tandas) y no puede ser denominador estable",
+    "sabotaje": null
+  },
+  "articulosKb": {
+    "refs": 64,
+    "urlsDistintas": 63,
+    "porQue": "su media son relaciones upload, no URLs en HTML: otro canal, no sumable al DATO"
+  },
+  "dato": {
+    "refs": 1820,
+    "urlsDistintas": 1268,
+    "regiones": 504,
+    "conHotlink": 169,
+    "porFuente": {
+      "corpus/transformado": 1820,
+      "c-extraido": 0
+    },
+    "fuente": "corpus/transformado/ + medidas/c-extraido.json"
+  },
+  "servidoVisible": {
+    "refs": 1827,
+    "urlsDistintas": 1275,
+    "rutas": 304,
+    "rutasConHotlink": 230,
+    "fuente": ".next/server/app sin carga RSC"
+  },
+  "servidoBruto": {
+    "refs": 3992,
+    "fuente": ".next/server/app tal cual"
+  },
+  "factores": {
+    "brutoSobreDato": 2.193,
+    "visibleSobreDato": 1.004
+  }
+}
