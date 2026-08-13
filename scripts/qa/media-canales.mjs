@@ -289,6 +289,12 @@ w("medidas/media-canales.json", {
    * justo el objeto que esta sonda existe para que haya UNO solo.
    */
   origenesACapturar: faltan,
+  /**
+   * La MISMA lista con la forma que  consume (objeto por ruta).
+   * No es una segunda lista: es la misma, escrita también en el formato del otro
+   * consumidor para que ninguno tenga que re-derivarla.
+   */
+  faltan: Object.fromEntries(faltan.map((r) => [r, { canales: [...new Set(filas.filter((f) => f.ruta === r).map((f) => f.canal))] }])),
   porColeccion: Object.fromEntries(porColeccion),
 });
 

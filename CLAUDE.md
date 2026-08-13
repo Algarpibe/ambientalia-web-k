@@ -1109,6 +1109,53 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
+### EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA, NO DE LOS QUE ALGÚN EXTRACTOR YA LEE (2026-08-13)
+
+**Es la §regla 9 —derivar en vez de recordar— aplicada a un CONJUNTO en vez de a
+un número, y se ha pagado tres veces con la misma moneda.**
+
+| # | canal | cómo se descubrió | n |
+|---|---|---|---|
+| 1 | el CUERPO rico | el seed murió al sembrar `entradas-blog` | 1889 → 28 |
+| 2 | la DESTACADA y el `og:image` | el seed murió otra vez | 93 → 4 |
+| 3 | **la foto del PANEL de producto** | el seed murió otra vez | **5** |
+
+Las tres veces el inventario se derivó **de lo que el extractor de turno ya
+sabía leer**, y las tres veces el canal que faltaba apareció **chocando con
+`MEDIA AUSENTE`** en mitad de una siembra. No es mala suerte: es que
+
+> **un canal nuevo no avisa — espera a que alguien lo siembre.** El esquema, en
+> cambio, **ya lo declara**: cada campo `upload` y cada campo de texto que el
+> modelo usa para una URL de asset es un canal, tenga dato hoy o no.
+
+**Las cuatro mitades de la regla, y ninguna sobra:**
+
+1. **Los canales se enumeran caminando la CONFIG**, no una lista. Un canal
+   declarado y todavía **sin dato sale nombrado con su cero** — eso es lo que lo
+   convierte en un hueco futuro visible en vez de en la próxima sorpresa. Medido:
+   **39 declarados · 16 ejercidos · 22 sin dato**;
+2. **el cruce va contra LA GUARDA QUE PARA, no contra otra.** `seed.mjs` exige el
+   fichero **exacto** en `apps/web/public`; `seed-kb.mjs` acepta `media-corpus/`
+   y colapsa variantes. Derivar contra la que no corre es lo que convirtió **«90
+   sin capturar» en «4»**: un número correcto de una pregunta que nadie hace;
+3. **un canal que otro sembrador cubre NO es «sin dato»**, es *fuera de alcance*
+   — decirlo de otra forma declara un cero que nadie midió (§sondas 4);
+4. **y el instrumento tiene que poder RECORRERLO entero**: la guarda que mata al
+   sembrar impide contar al medir. Por eso `creaContexto().media` tiene rama de
+   sondeo —anota `{ruta, canal, existe}` en vez de tirar—, igual que `rel()`.
+   **Un inventario no se puede derivar con un instrumento que muere en la primera
+   ausencia**, y ésa es exactamente la razón por la que se descubría chocando.
+
+**El instrumento es `npm run qa:media-canales`**, y su lista congelada la
+consumen las dos campañas (`captura-f3-media --lista=` y `coloca-media
+LISTA=`) — una sola definición de «lo que falta», elegida por parámetro y nunca
+por fallback silencioso.
+
+⚠ **Y capturar no es COLOCAR.** Son dos pasos y el segundo se olvidó una vez
+entera: `cms:captura-*` deja los bytes en `media-corpus/`; `cms:coloca-media` los
+copia a `apps/web/public` y regenera variantes. Entre los dos, el inventario
+sigue diciendo que falta — y tiene razón.
+
 ### Reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un

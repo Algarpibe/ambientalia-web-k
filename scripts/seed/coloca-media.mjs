@@ -65,14 +65,32 @@ if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
 
 /* ── la lista, DERIVADA de la congelada ──────────────────────────────────── */
-const FUENTE = join(QA, "medidas/media-siembra.json");
+/**
+ * ⚠ **DE QUÉ congelada, y por qué es un parámetro y no una segunda lista.**
+ *
+ * La lista sigue siendo **una**: lo que cambia es cuál. `media-siembra` deriva
+ * el hueco de los canales que **algún extractor ya lee**; `media-canales`
+ * (2026-08-13) lo deriva de los que **el ESQUEMA declara**, que es la regla que
+ * `CLAUDE.md` §El inventario de media fija después de pagar el mismo hueco tres
+ * veces. Las dos escriben `faltan`, así que el consumidor no cambia.
+ *
+ * Se elige por `LISTA=…`, igual que en `captura-f3-media` y por la misma razón:
+ * un fallback silencioso entre las dos **sí** sería la clase C7 — dos
+ * definiciones de «lo que falta» y ninguna forma de saber cuál corrió.
+ */
+const LISTA =
+  process.env.LISTA ||
+  (process.argv.slice(2).find((a) => a.startsWith("--lista=")) ?? "").split("=").slice(1).join("=") ||
+  "medidas/media-siembra.json";
+const FUENTE = join(QA, LISTA);
 if (!existsSync(FUENTE))
   throw new Error(
-    "no existe `medidas/media-siembra.json`: corre `npm run qa:media-siembra` antes.\n" +
+    `no existe \`${LISTA}\`: corre la sonda que lo deriva antes (\`qa:media-canales\` o \`qa:media-siembra\`).\n` +
       "  El hueco se DERIVA de ahí, no se recalcula aquí: dos definiciones de «lo que\n" +
       "  falta» serían la clase C7, y la segunda mediría contra la guarda cómoda.",
   );
 const SIEMBRA = JSON.parse(readFileSync(FUENTE, "utf8"));
+console.log(`\n  (lista: ${LISTA})`);
 const pendientes = SABOTAJE === "lista-vacia" ? [] : Object.keys(SIEMBRA.faltan ?? {});
 if (!pendientes.length)
   throw new Error(

@@ -21,7 +21,7 @@
     "canalesDeOtroSembrador": 4,
     "referencias": 611,
     "rutasDistintas": 611,
-    "ausentes": 0
+    "ausentes": 5
   },
   "canalesDeclarados": [
     {
@@ -361,7 +361,13 @@
       "guarda": "seed",
       "refs": 12,
       "rutas": 12,
-      "ausentes": []
+      "ausentes": [
+        "/images/uploads/2023/01/Carbon_dioxide-1.jpg",
+        "/images/uploads/2023/01/Nitric_oxide_cartucho.jpg",
+        "/images/uploads/2023/02/Nitreogen_dioxide.jpg",
+        "/images/uploads/2023/02/Sulphur-dioxide.jpg",
+        "/images/uploads/2023/03/CH4.jpg"
+      ]
     },
     {
       "coleccion": "sectores",
@@ -484,8 +490,40 @@
       "ausentes": []
     }
   ],
-  "origenesACapturar": [],
-  "faltan": {},
+  "origenesACapturar": [
+    "/images/uploads/2023/01/Carbon_dioxide-1.jpg",
+    "/images/uploads/2023/01/Nitric_oxide_cartucho.jpg",
+    "/images/uploads/2023/02/Nitreogen_dioxide.jpg",
+    "/images/uploads/2023/02/Sulphur-dioxide.jpg",
+    "/images/uploads/2023/03/CH4.jpg"
+  ],
+  "faltan": {
+    "/images/uploads/2023/01/Carbon_dioxide-1.jpg": {
+      "canales": [
+        "image"
+      ]
+    },
+    "/images/uploads/2023/01/Nitric_oxide_cartucho.jpg": {
+      "canales": [
+        "image"
+      ]
+    },
+    "/images/uploads/2023/02/Nitreogen_dioxide.jpg": {
+      "canales": [
+        "image"
+      ]
+    },
+    "/images/uploads/2023/02/Sulphur-dioxide.jpg": {
+      "canales": [
+        "image"
+      ]
+    },
+    "/images/uploads/2023/03/CH4.jpg": {
+      "canales": [
+        "image"
+      ]
+    }
+  },
   "porColeccion": {
     "productos": {
       "filas": 19,
