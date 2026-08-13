@@ -1,4 +1,113 @@
-# HANDOFF — §DATOS-C-PIPELINE arbitrada y CERRADA: tres cuartas partes eran reglas sin aplicar, y el cubo de «combinaciones» escondía tres clases
+# HANDOFF — población COMPLETA: 348 documentos, 302 rutas, `lh-poblacion` en VERDE, y el inventario de media por fin DERIVADO
+
+> ⚠ **Tanda de DESBLOQUEO EN CASCADA, 2026-08-13 (60.ª).** PASOS 1 · 2 · 3 · 4 · 6
+> completos; **PASO 5 PARADO por un conflicto del propio encargo** (abajo).
+> Registro: `PENDIENTES-QA.md` (§DATOS-P-MEDIA ✅ · §DATOS-C-SOLUCIONES ✅ ·
+> §F3-COLA-DESTINOS con su alcance · §DATOS-MEDIA-CIFRAS · §CAMPO-RICO-ATRIBUTOS ·
+> §CMS-PR4-TAGLINE-MARCADO · §CPT-IDIOMAS) · `ESQUEMA-CMS.md` §2e.2 (CMS-PR3) ·
+> `CLAUDE.md` (§inventario de media) · `package.json` (6 sondas nuevas).
+
+## 0 · Los titulares
+
+> **1 · LA POBLACIÓN ESTÁ COMPLETA.** 285 → **348 documentos** (+6 de KB) y 249 →
+> **302 rutas**. `productos` 9 → **19**, `casos` 4 → **57**. Round-trip
+> **348/348**, `qa:slugs` 190 sin colisión, y **`qa:lh-poblacion` VERDE** — 0 de 29
+> series sin alcanzar, que era el hito de la tanda.
+>
+> **2 · «LOS 15» Y «LOS 10» NO ERAN EL MISMO CONJUNTO.** De los 15 productos sin
+> modelar, **7** desbloquean casos; los otros 8 son cola. Y **3 de los 10 no son
+> del CPT**: son documentos **en inglés** sin página en `/es/` (CMS-PR3). Modelar
+> los 15 habría dejado **5 casos** fuera, y nadie lo habría visto hasta chocar.
+>
+> **3 · EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA**,
+> no de los que algún extractor ya lee — regla nueva en `CLAUDE.md`, escrita tras
+> pagar el mismo hueco **tres veces** (cuerpos → destacadas → panel). 39 canales
+> declarados · 16 ejercidos · **22 sin dato, nombrados uno a uno**. Y para poder
+> recorrerlo hubo que darle a `media()` rama de sondeo: **un inventario no se
+> deriva con un instrumento que muere en la primera ausencia**.
+>
+> **4 · LOS DOS NÚMEROS DEL HOTLINK, ATADOS.** DATO **1820** / 1268 URL (manda) ·
+> SERVIDO visible **1827** · SERVIDO bruto **3992**. El 3688 de la ficha era
+> servido bruto sobre 234 rutas; hoy son 3992 sobre 304 **sin que el dato se haya
+> movido un byte**, que es exactamente por qué no puede ser denominador.
+>
+> **5 · EL CONTRATO DEL CAMPO RICO YA CENSA ATRIBUTOS**, y el escalón no dispara:
+> `on*` **0** · `javascript:` **0** · `data:` **0** · `srcdoc` **0** en 291 páginas
+> y 47 524 aperturas, así que rechazar **no cuesta contenido servido**. 81
+> atributos exactos, negativo por los dos lados (10/10).
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ⛔ **PASO 5 (el NO-OP de píxel de T9) NO se pagó, y no por falta de sitio: el
+  encargo se contradice consigo mismo.** Pide medir «contra el original» y a la
+  vez fija que *«el original se abre SÓLO en el PASO 1; en cualquier otro paso,
+  pedir una URL de kunakair.com es haber salido del encargo»*. Y la salida
+  offline está **medida como inválida**: §F3-1-CSS-NO-CAPTURADO —0 de 19 hojas
+  externas en la captura, `columna.width` **678.52 offline contra 430.80** en
+  vivo—, o sea *plausible y equivocada*. **Hace falta autorizar la segunda
+  salida**, o T9 sigue con tres de sus cuatro condiciones.
+- **T10 está escrita y APLICADA a los cuerpos del grupo C** (`c-extraido` da **0**
+  hotlinks) **y NO al grupo A**: `a-extraido.json` no se promocionó a propósito,
+  para que su efecto se pueda medir solo. La congelada con T10 está en
+  `a-extraido-2026-08-13-5.json`.
+- ⚠ **La línea base de las 232 rutas está SIN VERIFICAR.** Una corrida de
+  `clon-base --cmp` a 1440 salió con **exit 0 y cero líneas de salida**: no es
+  exhibible y se descartó. Repetirla antes de fiarse de
+  `clon-base-1440-t7-despues.json`.
+- ⚠ **`cms:reset && cms:seed` NO repone `articulos-kb`**: hace falta `cms:seed-kb`
+  después, o `qa:manifiesto` sale con **2 familias vacías** y 296 rutas en vez de
+  302. No es un defecto: son dos sembradores con dos guardas distintas.
+- **`qa:slugs` sigue en 190 y no sube a ~247**: los casos van bajo
+  `/casos-de-exito/` y `/case-studies/`, que tienen unicidad nativa de colección y
+  **no entran al plano de `/es/`**.
+- **Sondas: 150 → 153.**
+
+## 1 · Sondas nuevas
+
+| sonda | qué contesta | negativos |
+|---|---|---|
+| **`qa:productos-hueco`** | el reparto del hueco de `productos` **por PARA-QUÉ**, con clase `SIN CLASIFICAR` en rojo | 5/5 |
+| **`qa:pagina-propia`** | CMS-PR3 por los DOS lados: 6 cuadrantes contra Payload de verdad | 3/3 |
+| **`qa:media-canales`** | el inventario de media derivado de los canales del ESQUEMA | — |
+| **`qa:hotlink-recuento`** | las tres magnitudes del hotlink, con su fuente y cuál manda | — |
+| **`qa:atributos-censo`** | los 81 atributos del campo rico, con las familias sensibles a CERO | — |
+| **`cms:extractor-p`** | las 19 fichas de producto derivadas del panel servido · control 72/72 | — |
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) Un total sin reparto contesta la pregunta equivocada.** «15 sin modelar» y
+«10 que bloquean» eran dos conjuntos con intersección **7**, y nadie los había
+cruzado. Lo que impide repetirlo no es mirar mejor: es que la sonda tenga una
+clase `SIN CLASIFICAR` que sea **roja**.
+
+**(b) Un inventario no se puede derivar con un instrumento que muere en la
+primera ausencia.** Sembrando, `MEDIA AUSENTE` tiene que matar; **midiendo, matar
+es lo que impide contar** — y por eso el hueco se descubrió tres veces chocando
+en vez de derivarse una.
+
+**(c) Un número se cita con su UNIDAD y su FUENTE, o el siguiente suma el que
+tenga a mano.** 3688 y 1820 medían objetos distintos y los dos eran correctos.
+
+**(d) Dos defectos de instrumento cazados POR EL SIGNO, no por un error:** el DATO
+por **debajo** del servido (alcance escondido: faltaba una de las tres mitades del
+corpus) y luego por **encima** (sobre-casado: recorría `meta` y `censo`). Ninguno
+dio excepción; los dos daban un número plausible.
+
+**(e) Una congelada que no se pisa protege la evidencia y NO protege su lectura.**
+La whitelist de atributos salió con **80** porque leí el fichero **anterior** a
+incluir KB — la buena estaba al lado con su fecha. Lo cazó el seed muriendo en el
+4.º documento por `loading`, y ahora lo caza una guarda de sincronía
+código↔censo, en los dos sentidos.
+
+**(f) Y una que es de modelo: un control se lee de SU fichero, nunca del catálogo
+activo.** El control de `cms:extractor-p` son los 9 productos transcritos a mano;
+los leía por `cargaCatalogos()`, así que en cuanto `productos` cambió de fuente
+habría comparado la salida del extractor **consigo misma** — un control que no
+puede fallar, que es la peor forma de pasar.
+
+---
+
+# (histórico) HANDOFF — §DATOS-C-PIPELINE arbitrada y CERRADA: tres cuartas partes eran reglas sin aplicar, y el cubo de «combinaciones» escondía tres clases
 
 > ⚠ **Tanda de PIPELINE, 2026-08-13 (59.ª).** **PASOS 1 · 2 · 3 · 4 · 5 · 7 · 8
 > completos; PASO 6 a MEDIAS con evidencia** (`faqs` sí, `casos` no). Registro:

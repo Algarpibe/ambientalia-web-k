@@ -72,23 +72,9 @@ export const CATALOGOS = [
    * como el **CONTROL** del extractor — 72 comparaciones sobre 9 productos, que
    * es lo que autoriza a fiarse de los 10 que nadie transcribió a mano.
    *
-   * ⛔ **Y NO CAMBIA TODAVÍA, por una precondición de MEDIA — 5 ficheros.**
-   * Con `json: "medidas/p-extraido.json", en: "catalogo.productos"` el seed muere
-   * en `MEDIA AUSENTE`: las fotos de panel de 5 de los 10 productos nuevos no
-   * están **ni en `apps/web/public` ni en `media-corpus`**, y la guarda tiene
-   * razón —*un alta de media vacía convertiría «falta el fichero» en «la imagen
-   * es opcional»*—. Derivado, no supuesto: 8 en public · 6 sin foto en el
-   * original (dato, no hueco) · **5 ausentes**:
-   *
-   *   `2023/02/Sulphur-dioxide.jpg` · `2023/01/Carbon_dioxide-1.jpg` ·
-   *   `2023/02/Nitreogen_dioxide.jpg` · `2023/03/CH4.jpg` ·
-   *   `2023/01/Nitric_oxide_cartucho.jpg`
-   *
-   * Es §COMPLETITUD por quinta vez —*capturar las páginas no es capturar sus
-   * assets*— y capturarlas exige RED, que esta tanda tiene vedada por encargo.
-   * **Se sigue el precedente de `casos`**: la fuente no se cambia hasta que la
-   * precondición se cumple, para que `cms:seed` siga entero. Ficha:
-   * `PENDIENTES-QA.md` §DATOS-P-MEDIA. */
+   * ✅ **RESUELTA el 2026-08-13 (DESBLOQUEO EN CASCADA, PASO 1):** los 5 ficheros
+   * de panel que faltaban se capturaron contra la lista derivada por canales
+   * (`qa:media-canales`) y se colocaron. Ficha: §DATOS-P-MEDIA. */
   { coleccion: "productos", json: "medidas/p-extraido.json", en: "catalogo.productos" },
   { coleccion: "sectores", modulo: "src/lib/sectores.ts", exportado: "SECTORES_PUBLICADOS" },
   { coleccion: "monograficos", modulo: "src/lib/monografico.ts", exportado: "MONOGRAFICOS_PUBLICADOS" },
@@ -107,27 +93,6 @@ export const CATALOGOS = [
    * el CONTROL, igual que `arquetipo-a.ts` (§extractor-a). Que el extractor
    * reproduzca los 6 transcritos a mano es lo que autoriza a sustituir la fuente
    * para los otros 70. */
-  /* ⛔ **`casos` NO cambia de fuente todavía, y no es por el extractor.**
-   *
-   * `cms:extractor-c` sale VERDE con los 57 (control 0, saneador 0, negativo
-   * 7/7) y la siembra **muere en otra guarda**: `RELACIÓN SIN DESTINO`.
-   *
-   * | | n |
-   * |---|---:|
-   * | productos que el clon MODELA | **9** de 24 |
-   * | slugs de producto que los 57 casos referencian | **19** |
-   * | de ésos, **sin destino** | **10** — `dioxido-de-nitrogeno` (37) · `ozono` (29) · `monoxido-de-carbono` (25) · `dioxido-de-azufre` (20) · `oxido-nitrico` (14) · `dioxido-de-carbono` (8) · `metano` (5) · `accesories` (2) · `ozone-2` (2) · `air-cloud` (1) |
-   * | CASOS afectados | **43** de 57 |
-   * | casos con TODAS sus soluciones rotas | **0** |
-   *
-   * **Es §F3-COLA-DESTINOS visto desde la RELACIÓN**: los mismos productos que
-   * allí son 544 enlaces del cuerpo apuntando al original, aquí son 43 casos que
-   * no pueden entrar. Y la guarda tiene razón — *«una relación que apunta a la
-   * nada es un dato perdido»* —, así que **no se poda**: `RUTAS_EN_FRONTERA` se
-   * vació a propósito el 2026-08-04 justo para no volver a podar en silencio.
-   *
-   * Desbloquearlo es **modelar los 15 productos que faltan**, que es clonar un
-   * arquetipo (F3), no trabajo de datos. Ficha: §DATOS-C-SOLUCIONES. */
   { coleccion: "casos", json: "medidas/c-extraido.json", en: "catalogo.casos" },
   /* ✅ **`faqs` SÍ cambia de fuente (2026-08-13, PASO 6): de 2 a 19.** No tiene
    * ni una relación —`slug` · `seo.title` · `titulo` · `cuerpo`—, así que la

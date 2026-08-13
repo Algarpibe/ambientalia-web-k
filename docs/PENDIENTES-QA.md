@@ -71,7 +71,36 @@ servidas: un residuo de 7 con pinta de fleco que era **alcance escondido**.
 quedó **por encima del servido** — aritméticamente imposible para un dato que se
 sirve. Es el sobre-casado de §sondas 4 dos veces seguidas.
 
-## ✅ DATOS-C-SOLUCIONES · REPARTIDA — los 15 y los 10 no eran el mismo conjunto, y 3 no los arregla ninguna página (2026-08-13, PASO 1)
+## ⚠ F3-COLA-DESTINOS · SIGUE ABIERTA, y ahora se sabe con qué alcance (2026-08-13)
+
+**No se cerró con §DATOS-C-SOLUCIONES, y ésa era la corrección**: la ficha vieja
+decía *«las dos se cierran juntas o ninguna»* y la medida dijo lo contrario —
+**una necesita DOCUMENTOS y la otra PÁGINAS**.
+
+| | qué necesita | estado |
+|---|---|---|
+| §DATOS-C-SOLUCIONES | **19 documentos** de `productos` | ✅ **CERRADA**: sembrados, 57 casos dentro |
+| **§F3-COLA-DESTINOS** | **rutas emitidas** | ⛔ **abierta** |
+
+Lo que se cerró de ella al sembrar los casos: los **35 destinos ·  89 enlaces** de
+`/casos-de-exito/*` y `/case-studies/*`, que el barrido ya daba por *«se cierra
+solo al sembrar»*. Lo que queda es lo que necesita **arquetipo clonado**, con su
+número: `/cartuchos-inteligentes/*` **20 destinos · 544 enlaces** ·
+`/sensor-de-calidad-del-aire/*` 2 · 89 · `/estacion-de-monitoreo-…` 1 · 33 ·
+`/soluciones` 1 · 27 · las 6 landings de informe 6 · 20 · y 15 sueltas · 28.
+
+⚠ **Y los 8 productos del CPT que ningún caso referencia son exactamente esta
+cola**: no entraron en la siembra porque **el corpus no sirve su ficha en ninguna
+página** —sólo los casos sirven paneles— así que su dato no existe todavía.
+Necesitan su PÁGINA, que es F3 y no trabajo de datos.
+
+## ✅ DATOS-C-SOLUCIONES · CERRADA — repartida primero, sembrada después (2026-08-13)
+
+> ✅ **Sembrada el mismo día**: `productos` 9 → **19** y `casos` 4 → **57**,
+> round-trip **348/348**, `qa:lh-poblacion` **VERDE** (0 de 29 series cortas). El
+> reparto que lo hizo posible está abajo.
+
+
 
 > **La ficha decía *«qué la cierra: modelar los 15 productos que faltan»*, y las
 > dos mitades que la respaldaban eran ciertas: el CPT tiene 24 URLs y el clon
@@ -114,7 +143,26 @@ lo contrario de lo que la ficha vieja decía.
 construidos (`solutions-template-default et-tb-has-template`) en 3 formas
 conocidas: 13 cartucho · 1 catálogo · 1 ficha.
 
-## ⛔ DATOS-P-MEDIA · `productos` no cambia de fuente por CINCO ficheros de imagen (2026-08-13, PASO 2)
+## ✅ DATOS-P-MEDIA · CERRADA (2026-08-13, tanda de DESBLOQUEO EN CASCADA, PASO 1)
+
+**Los 5 se capturaron y se colocaron**, y no de uno en uno: el encargo autorizó
+**una** salida a la red y se gastó contra **una lista derivada por canales**
+(`qa:media-canales`, §regla nueva en `CLAUDE.md`). Campaña **5/5 · 0 fallos · 0
+404**; `cms:coloca-media` **5/5 copiadas**; inventario re-derivado **0 a
+capturar**.
+
+**Y el resultado del inventario completo es en sí el hallazgo:** sobre lo que se
+iba a sembrar —19 productos · 57 casos · 149 blog · 23 documentos— son **611
+referencias · 611 rutas distintas · 5 ausentes**. Las **348 imágenes de galería**
+de los 57 casos y las **56 de cabecera** ya estaban: las fotos de panel eran el
+hueco entero.
+
+Con eso `productos` cambió de fuente (9 → **19**) y §DATOS-C-SOLUCIONES quedó
+desbloqueada. Ficha histórica abajo.
+
+---
+
+## ⛔ (histórico) DATOS-P-MEDIA · `productos` no cambia de fuente por CINCO ficheros de imagen (2026-08-13, PASO 2)
 
 > **Todo lo que hacía falta para el cambio de fuente está hecho y verde** —
 > esquema (CMS-PR3), migración NO-OP, `cms:extractor-p` con 19 productos y su
