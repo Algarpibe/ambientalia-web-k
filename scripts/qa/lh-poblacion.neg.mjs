@@ -11,8 +11,9 @@
  * | sabotaje | cae por | y NO por |
  * |---|---|---|
  * | `completa` | ✅ **VERDE**: con la población del original, el veredicto pasa | nada — es el control invertido |
+ * | **`taxonomia-a-medias`** | ⛔ **SIN TÉRMINO en las 12 de etiqueta** | «no hay documentos», que es lo que la cota vieja habría dicho |
  * | `huerfana` | **serie sin mapear** ⇒ exit 2 | «sin población que comparar», que es como se leería el olvido |
- * | (control) | ⛔ rojo con **19 series cortas** | un fallo de lectura: si no leyera nada, el rojo no significaría lo mismo |
+ * | (control) | ⛔ rojo con **3 series cortas** | un fallo de lectura: si no leyera nada, el rojo no significaría lo mismo |
  *
  * `completa` es el que importa. Sin él, §sondas 4bis en su forma invertida: una
  * sonda que **sólo sabe salir roja** no distingue *«el clon no llega»* de *«el
@@ -51,6 +52,34 @@ const casos = [
     comprueba: (j) => {
       if (j.resumen.seriesQueNoAlcanzan !== 0) return `siguen faltando ${j.resumen.seriesQueNoAlcanzan} series con la población completa`;
       if (j.series.length !== 35) return `leyó ${j.series.length} series, no 35`;
+      return null;
+    },
+  },
+  {
+    /**
+     * ⚠ **El sabotaje de LA COTA ESTRECHADA** (§F3-LH-TAXONOMIA-RECURSOS).
+     *
+     * Se elige `etiquetas` **porque hoy sale verde en 12 de 12**: saboteando
+     * `categorias-recursos`, que ya está roja, el resultado no cambiaría y el
+     * caso no probaría nada — *un sabotaje que no cambia el resultado no ha
+     * probado la guarda* (§sondas 8a). Con la cota vieja —toda la colección
+     * atribuida a cada serie— este sabotaje **habría salido igual de verde**,
+     * porque el recuento no pasaba por el término.
+     */
+    etiqueta: "taxonomia-a-medias",
+    porQue: "una TAXONOMÍA a medias tiñe de rojo las 12 series de etiqueta que hoy pasan",
+    env: { SABOTAJE: "taxonomia-a-medias" },
+    exit: 2,
+    salidaTiene: /SIN TÉRMINO/,
+    comprueba: (j) => {
+      const etq = j.series.filter((s) => s.ruta.startsWith("/etiqueta/"));
+      if (etq.length !== 12) return `esperaba 12 series de etiqueta, hay ${etq.length}`;
+      const rojas = etq.filter((s) => s.viaClon === "termino-AUSENTE");
+      if (rojas.length !== 12) return `sólo ${rojas.length} de 12 series de etiqueta cayeron: el sabotaje no llegó a todas`;
+      if (etq.some((s) => s.alcanza)) return "alguna serie de etiqueta sigue alcanzando con la taxonomía vacía";
+      /* Y que el rojo sea MAYOR que el del control: si diera lo mismo, el
+       * sabotaje no estaría cambiando el resultado y no probaría la cota. */
+      if (j.resumen.seriesQueNoAlcanzan <= 3) return `${j.resumen.seriesQueNoAlcanzan} series cortas: no supera las 3 del control, así que el sabotaje no cambió nada`;
       return null;
     },
   },
@@ -104,7 +133,9 @@ console.log(
   `\n${fallos === 0 ? "✅" : "❌"} lh-poblacion · test en negativo: ${casos.length - fallos}/${casos.length}\n` +
     (fallos === 0
       ? `   El rojo del control es EXHIBIBLE: la misma sonda sale verde en cuanto la\n` +
-        `   población alcanza, así que «19 series cortas» mide el clon, no el código.\n`
+        `   población alcanza, así que «3 series cortas» mide el clon, no el código.\n` +
+        `   Y la COTA ESTRECHADA está probada por los dos lados: con la taxonomía a\n` +
+        `   medias las 12 series de etiqueta caen, y con la cota vieja no habrían caído.\n`
       : `   Ni el rojo ni el verde de esta sonda se pueden leer hasta que esto pase.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);

@@ -6,7 +6,7 @@
       "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-13.json (2026-08-13) — manda ésta para el recuento de rutas",
       "clon": "DB por Local API, estado=publicado — la misma fuente que usa el build"
     },
-    "sabotaje": "completa",
+    "sabotaje": "taxonomia-a-medias",
     "noMide": [
       "píxeles: no abre navegador ni pide una URL",
       "si sembrar el corpus entero es la salida correcta: eso es una DECISIÓN, no una medida",
@@ -16,14 +16,74 @@
     "cota": "ESTRECHADA el 2026-08-13: una serie de término se cuenta POR SU TÉRMINO (y por sus hijas si es padre de una taxonomía jerárquica). Un término ausente da 0 y sale ROJO. Sólo las series cuya colección ES la serie usan el recuento de colección entera."
   },
   "porVia": {
-    "SABOTAJE completa": 29
+    "coleccion-con-filtro": 1,
+    "coleccion-entera": 3,
+    "termino-AUSENTE": 14,
+    "termino": 11
   },
-  "seriesSinTermino": [],
+  "seriesSinTermino": [
+    {
+      "ruta": "/etiqueta/calidad-del-aire",
+      "motivo": "SABOTAJE: el término 'calidad-del-aire' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/co2-es",
+      "motivo": "SABOTAJE: el término 'co2-es' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos",
+      "motivo": "SABOTAJE: el término 'contaminantes-atmosfericos' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/cov",
+      "motivo": "SABOTAJE: el término 'cov' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/emisiones-industriales",
+      "motivo": "SABOTAJE: el término 'emisiones-industriales' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/gases-de-efecto-invernadero",
+      "motivo": "SABOTAJE: el término 'gases-de-efecto-invernadero' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/h2s-es",
+      "motivo": "SABOTAJE: el término 'h2s-es' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/malos-olores",
+      "motivo": "SABOTAJE: el término 'malos-olores' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental",
+      "motivo": "SABOTAJE: el término 'monitorizacion-ambiental' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/normativa-de-calidad-del-aire",
+      "motivo": "SABOTAJE: el término 'normativa-de-calidad-del-aire' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/particulas-en-suspension",
+      "motivo": "SABOTAJE: el término 'particulas-en-suspension' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire",
+      "motivo": "SABOTAJE: el término 'sensor-de-calidad-del-aire' se declara ausente de etiquetas"
+    },
+    {
+      "ruta": "/recursos/articulos",
+      "motivo": "el término 'articulos' NO existe en categorias-recursos"
+    },
+    {
+      "ruta": "/recursos/seminarios-web",
+      "motivo": "el término 'seminarios-web' NO existe en categorias-recursos"
+    }
+  ],
   "poblacionClon": {
-    "entradas-blog": 91,
+    "entradas-blog": 149,
     "terminos-kunakpedia": 37,
     "faqs": 19,
-    "documentos-cientificos": 14,
+    "documentos-cientificos": 23,
     "casos": 57
   },
   "series": [
@@ -55,7 +115,7 @@
       "poblacionOriginal": 68,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 68,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "coleccion-con-filtro",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 8,
@@ -81,9 +141,9 @@
       "poblacionOriginal": 57,
       "via": "repite-en-todas-sus-paginas",
       "poblacionClon": 57,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "coleccion-entera",
       "motivoClon": null,
-      "cotaSuperior": false,
+      "cotaSuperior": true,
       "paginasClon": 1,
       "alcanza": true
     },
@@ -111,12 +171,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 33,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 33,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'calidad-del-aire' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 4,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/co2-es",
@@ -140,12 +200,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 7,
       "via": "pagina-unica",
-      "poblacionClon": 7,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'co2-es' se declara ausente de etiquetas",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/contaminantes-atmosfericos",
@@ -171,12 +231,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 36,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 36,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'contaminantes-atmosfericos' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 4,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/cov",
@@ -200,12 +260,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 6,
       "via": "pagina-unica",
-      "poblacionClon": 6,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'cov' se declara ausente de etiquetas",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/emisiones-industriales",
@@ -231,12 +291,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 23,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 23,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'emisiones-industriales' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 3,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/gases-de-efecto-invernadero",
@@ -260,12 +320,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 9,
       "via": "pagina-unica",
-      "poblacionClon": 9,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'gases-de-efecto-invernadero' se declara ausente de etiquetas",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/h2s-es",
@@ -288,12 +348,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 4,
       "via": "pagina-unica",
-      "poblacionClon": 4,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'h2s-es' se declara ausente de etiquetas",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/malos-olores",
@@ -317,12 +377,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 8,
       "via": "pagina-unica",
-      "poblacionClon": 8,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'malos-olores' se declara ausente de etiquetas",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/monitorizacion-ambiental",
@@ -348,12 +408,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 91,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 91,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'monitorizacion-ambiental' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 11,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/normativa-de-calidad-del-aire",
@@ -379,12 +439,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 20,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 20,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'normativa-de-calidad-del-aire' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 3,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/particulas-en-suspension",
@@ -409,12 +469,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 16,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 16,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'particulas-en-suspension' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 2,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/etiqueta/sensor-de-calidad-del-aire",
@@ -440,12 +500,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 34,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 34,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "SABOTAJE: el término 'sensor-de-calidad-del-aire' se declara ausente de etiquetas",
       "cotaSuperior": false,
-      "paginasClon": 4,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/glosario",
@@ -469,9 +529,9 @@
       "poblacionOriginal": 37,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 37,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "coleccion-entera",
       "motivoClon": null,
-      "cotaSuperior": false,
+      "cotaSuperior": true,
       "paginasClon": 8,
       "alcanza": true
     },
@@ -497,9 +557,9 @@
       "poblacionOriginal": 19,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 19,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "coleccion-entera",
       "motivoClon": null,
-      "cotaSuperior": false,
+      "cotaSuperior": true,
       "paginasClon": 4,
       "alcanza": true
     },
@@ -574,12 +634,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 80,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 80,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "el término 'articulos' NO existe en categorias-recursos",
       "cotaSuperior": false,
-      "paginasClon": 6,
-      "alcanza": true
+      "paginasClon": 1,
+      "alcanza": false
     },
     {
       "ruta": "/recursos/articulos/contaminacion-en-la-construccion",
@@ -604,7 +664,7 @@
       "poblacionOriginal": 4,
       "via": "pagina-unica",
       "poblacionClon": 4,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -632,8 +692,8 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 1,
       "via": "pagina-unica",
-      "poblacionClon": 1,
-      "viaClon": "SABOTAJE completa",
+      "poblacionClon": 2,
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -662,7 +722,7 @@
       "poblacionOriginal": 1,
       "via": "pagina-unica",
       "poblacionClon": 1,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -693,7 +753,7 @@
       "poblacionOriginal": 24,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 24,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 2,
@@ -724,7 +784,7 @@
       "poblacionOriginal": 19,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 19,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 2,
@@ -755,7 +815,7 @@
       "poblacionOriginal": 21,
       "via": "suma-de-paginas-con-contenido",
       "poblacionClon": 21,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 2,
@@ -784,7 +844,7 @@
       "poblacionOriginal": 3,
       "via": "pagina-unica",
       "poblacionClon": 3,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -814,7 +874,7 @@
       "poblacionOriginal": 7,
       "via": "pagina-unica",
       "poblacionClon": 7,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -911,12 +971,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 3,
       "via": "pagina-unica",
-      "poblacionClon": 3,
-      "viaClon": "SABOTAJE completa",
-      "motivoClon": null,
+      "poblacionClon": 0,
+      "viaClon": "termino-AUSENTE",
+      "motivoClon": "el término 'seminarios-web' NO existe en categorias-recursos",
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": true
+      "alcanza": false
     },
     {
       "ruta": "/scientific-category/articulos-cientificos-y-estudios",
@@ -940,7 +1000,7 @@
       "poblacionOriginal": 14,
       "via": "repite-en-todas-sus-paginas",
       "poblacionClon": 14,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -968,7 +1028,7 @@
       "poblacionOriginal": 1,
       "via": "pagina-unica",
       "poblacionClon": 1,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -996,7 +1056,7 @@
       "poblacionOriginal": 8,
       "via": "repite-en-todas-sus-paginas",
       "poblacionClon": 8,
-      "viaClon": "SABOTAJE completa",
+      "viaClon": "termino",
       "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
@@ -1038,12 +1098,12 @@
       "/recursos/preguntas-frecuentes",
       "/sectores"
     ],
-    "rutasClonCotaSuperior": 84,
-    "seriesQueNoAlcanzan": 0,
+    "rutasClonCotaSuperior": 55,
+    "seriesQueNoAlcanzan": 14,
     "seriesConPoblacion": 29,
     "deficitPorColeccion": {
       "entradas-blog": {
-        "clon": 91,
+        "clon": 149,
         "mayorSerie": 91,
         "deficit": 0
       },
@@ -1058,7 +1118,7 @@
         "deficit": 0
       },
       "documentos-cientificos": {
-        "clon": 14,
+        "clon": 23,
         "mayorSerie": 14,
         "deficit": 0
       },

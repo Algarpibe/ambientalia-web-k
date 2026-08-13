@@ -85,14 +85,35 @@ const PAGINAS_POR_RUTA = new Map(Object.entries(PAGINAS.paginas).map(([r, v]) =>
  * `hub` = página compuesta cuyo listado embebido no es una consulta paginada de
  * colección (`L4`): no tiene población que comparar.
  */
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA COTA, ESTRECHADA (2026-08-13) — §F3-LH-TAXONOMIA-RECURSOS
+ *
+ * Hasta hoy la columna «clon» de una serie de término era **toda su colección**,
+ * declarada honestamente como cota superior. El problema no era la honradez de
+ * la declaración: era **qué significaba el verde**. Con 149 entradas atribuidas
+ * a cada serie, `/recursos/seminarios-web` salía ✅ teniendo **0** documentos
+ * adjudicables — porque su TÉRMINO no existe en el clon.
+ *
+ * O sea §La causa común con un contenedor nuevo: **el criterio de suficiencia**.
+ * Una cota lo bastante generosa absorbe cualquier hueco de la variable que no
+ * mira, y aquí la variable era la TAXONOMÍA.
+ *
+ * Desde hoy, para una serie de término el recuento va **por el término**:
+ * cuántos documentos publicados apuntan a él (o a sus hijas, si es un padre de
+ * una taxonomía jerárquica). Un término que no existe da **0 y sale ROJO**, que
+ * es lo que «el clon puede emitir esta serie» tiene que significar.
+ * ═════════════════════════════════════════════════════════════════════════ */
 const MAPA = [
-  { prefijo: "/blog", coleccion: "entradas-blog", forma: "L1-blog" },
-  { prefijo: "/etiqueta/", coleccion: "entradas-blog", forma: "L1-etiqueta" },
-  { prefijo: "/recursos/articulos", coleccion: "entradas-blog", forma: "L1-resources" },
-  { prefijo: "/recursos/seminarios-web", coleccion: "entradas-blog", forma: "L1-resources" },
+  /** `/blog` no es un archivo de término: es la colección MENOS las que tienen
+   *  `recurso`. Derivado y exacto: 149 − 81 = 68, que es lo que lista el
+   *  original (§F3-LH-TAXONOMIA-RECURSOS). El campo decide miga y listado. */
+  { prefijo: "/blog", coleccion: "entradas-blog", forma: "L1-blog", donde: { recurso: { exists: false } } },
+  { prefijo: "/etiqueta/", coleccion: "entradas-blog", forma: "L1-etiqueta", taxonomia: "etiquetas", campo: "etiquetas" },
+  { prefijo: "/recursos/articulos", coleccion: "entradas-blog", forma: "L1-resources", taxonomia: "categorias-recursos", campo: "recurso", jerarquica: true },
+  { prefijo: "/recursos/seminarios-web", coleccion: "entradas-blog", forma: "L1-resources", taxonomia: "categorias-recursos", campo: "recurso", jerarquica: true },
   { prefijo: "/glosario", coleccion: "terminos-kunakpedia", forma: "L2-glosario" },
   { prefijo: "/preguntas-frecuentes", coleccion: "faqs", forma: "L2-faqs" },
-  { prefijo: "/scientific-category/", coleccion: "documentos-cientificos", forma: "L3-sci" },
+  { prefijo: "/scientific-category/", coleccion: "documentos-cientificos", forma: "L3-sci", taxonomia: "categorias-cientificas", campo: "categoria" },
   { prefijo: "/casos-de-exito", coleccion: "casos", forma: "L5-casos" },
   { prefijo: "/recursos/kunakpedia", coleccion: null, forma: "L4-hub" },
   { prefijo: "/recursos/documentos-cientificos", coleccion: null, forma: "L4-hub" },
@@ -178,7 +199,6 @@ for (const coleccion of COLECCIONES) {
   });
   clon[coleccion] = totalDocs;
 }
-await payload.db.destroy?.();
 
 /* El negativo que prueba que esta sonda SABE ponerse verde: con la población
  * del original, el veredicto tiene que ser ✅. Sin él, una sonda que sólo sabe
@@ -214,6 +234,46 @@ function poblacionOriginal(s) {
 
 /* ─────────────── la comparación, serie a serie ─────────────── */
 
+/** El último segmento de la ruta es el slug del término (`/etiqueta/co2-es`). */
+const slugDe = (ruta) => ruta.replace(/\/$/, "").split("/").pop();
+
+/**
+ * Cuántos documentos puede adjudicar el clon a ESTE término.
+ *
+ * ⚠ **Un término que no existe devuelve 0 CON SU MOTIVO, no un cero mudo.** Es
+ * la diferencia entre «no hay documentos» y «no hay término», y colapsarlas es
+ * justo lo que la cota vieja hacía (§regla del cero).
+ */
+async function poblacionPorTermino(m, ruta) {
+  const slug = slugDe(ruta);
+  /* SABOTAJE `taxonomia-a-medias`: se finge que la taxonomía de ETIQUETAS —hoy
+   * completa y verde en 12 de 12— ha perdido sus términos. Tiene que teñir de
+   * rojo esas 12 series. Se elige una que hoy pasa **a propósito**: un sabotaje
+   * sobre `categorias-recursos`, que ya está roja, no cambiaría nada y por tanto
+   * no probaría la guarda (§sondas 8a). */
+  if (SABOTAJE === "taxonomia-a-medias" && m.taxonomia === "etiquetas")
+    return { n: 0, via: "termino-AUSENTE", termino: slug, motivo: `SABOTAJE: el término '${slug}' se declara ausente de ${m.taxonomia}` };
+  const { docs } = await payload.find({ collection: m.taxonomia, where: { slug: { equals: slug } }, limit: 1, depth: 0 });
+  if (!docs.length) return { n: 0, via: "termino-AUSENTE", termino: slug, motivo: `el término '${slug}' NO existe en ${m.taxonomia}` };
+  const t = docs[0];
+  let ids = [t.id];
+  let via = "termino";
+  /* Taxonomía jerárquica: un PADRE lista lo de sus hijas. Si `padre` está sin
+   * poblar no hay hijas, y el recuento cae a lo adjudicado directamente — que
+   * es exactamente el hueco que hay que ver, no uno que haya que tapar. */
+  if (m.jerarquica) {
+    const { docs: hijas } = await payload.find({ collection: m.taxonomia, where: { padre: { equals: t.id } }, pagination: false, depth: 0 });
+    if (hijas.length) { ids = hijas.map((h) => h.id); via = "termino-padre-por-sus-hijas"; }
+  }
+  const { totalDocs } = await payload.find({
+    collection: m.coleccion,
+    where: { and: [{ estado: { equals: "publicado" } }, { [m.campo]: { in: ids } }] },
+    limit: 0,
+    depth: 0,
+  });
+  return { n: totalDocs, via, termino: slug, motivo: null };
+}
+
 const filas = [];
 for (const s of series) {
   const col = s.map.coleccion;
@@ -223,10 +283,21 @@ for (const s of series) {
     ev.ok();
     continue;
   }
-  const disponible = clon[col] ?? 0;
-  /* El clon no tiene la taxonomía poblada: para las series de término, lo más
-   * favorable que se puede afirmar es que dispone de TODA su colección. Es una
-   * cota SUPERIOR, y se declara como tal — si ni así llega, no llega. */
+  /* ── LA COTA, ESTRECHADA ────────────────────────────────────────────────
+   * Serie de término ⇒ se cuenta POR EL TÉRMINO. Serie de colección con
+   * filtro (`/blog`) ⇒ se aplica el filtro. Sólo el resto usa la colección
+   * entera, y ahí la colección ES la serie. */
+  let disponible;
+  let viaClon;
+  let motivoClon = null;
+  if (SABOTAJE === "completa") { disponible = orig; viaClon = "SABOTAJE completa"; }
+  else if (s.map.taxonomia) {
+    const r = await poblacionPorTermino(s.map, s.ruta);
+    disponible = r.n; viaClon = r.via; motivoClon = r.motivo;
+  } else if (s.map.donde) {
+    const { totalDocs } = await payload.find({ collection: col, where: { and: [{ estado: { equals: "publicado" } }, s.map.donde] }, limit: 0, depth: 0 });
+    disponible = totalDocs; viaClon = "coleccion-con-filtro";
+  } else { disponible = clon[col] ?? 0; viaClon = "coleccion-entera"; }
   const paginasClon = !s.paginaDeVerdad
     ? 1
     : s.porPagina > 0
@@ -238,12 +309,18 @@ for (const s of series) {
     poblacionOriginal: orig,
     via,
     poblacionClon: disponible,
-    cotaSuperior: true,
+    /** ⚠ Ya NO es cota superior en las series de término: es el recuento REAL
+     *  por el término. Se dice cuál se usó, porque el verde significa cosas
+     *  distintas según la vía. */
+    viaClon,
+    motivoClon,
+    cotaSuperior: viaClon === "coleccion-entera",
     paginasClon,
     alcanza: disponible >= orig,
   });
   ev.ok();
 }
+await payload.db.destroy?.();
 
 /* ─────────────── informe ─────────────── */
 
@@ -267,9 +344,11 @@ for (const f of filas) {
     continue;
   }
   const marca = f.alcanza ? "✅" : "⛔";
+  const VIA = { termino: "término", "termino-padre-por-sus-hijas": "término·hijas", "termino-AUSENTE": "⛔ SIN TÉRMINO", "coleccion-con-filtro": "filtro", "coleccion-entera": "colección", "SABOTAJE completa": "sabotaje" };
   console.log(
     `  ${marca} ${f.ruta.padEnd(46)}${String(f.poblacionOriginal).padStart(4)}${String(f.poblacionClon).padStart(6)}   ` +
-      `${String(f.rutasD25).padStart(3)} → ${String(f.paginasClon).padStart(3)}`,
+      `${String(f.rutasD25).padStart(3)} → ${String(f.paginasClon).padStart(3)}   ${VIA[f.viaClon] ?? f.viaClon}` +
+      (f.motivoClon ? `  — ${f.motivoClon}` : ""),
   );
 }
 
@@ -281,8 +360,14 @@ console.log(`\n  ⚠ Y las dos congeladas NO cuentan lo mismo: \`lh-serie\` capt
 console.log(`    ${paginasCapturadas} páginas y \`lh-paginas\` declara ${rutasD25} rutas. La diferencia son`);
 console.log(`    ${noPaginanConCaptura.length} series que la captura recorrió hasta /page/2/ y que NO paginan`);
 console.log(`    (canonical → la página 1, o sea D2.4): ${noPaginanConCaptura.map((f) => f.ruta).join(" · ")}`);
-console.log(`\n  ⚠ La columna «clon» es una COTA SUPERIOR: se le atribuye a cada serie de`);
-console.log(`    término TODA su colección, porque el clon no tiene la taxonomía poblada.`);
+const porVia = filas.filter((f) => f.coleccion).reduce((o, f) => { o[f.viaClon] = (o[f.viaClon] ?? 0) + 1; return o; }, {});
+const sinTermino = filas.filter((f) => f.viaClon === "termino-AUSENTE");
+console.log(`\n  ⚠ LA COTA, ESTRECHADA (§F3-LH-TAXONOMIA-RECURSOS): una serie de TÉRMINO se`);
+console.log(`    cuenta por su término, no por su colección al bulto. Vías usadas:`);
+for (const [v, n] of Object.entries(porVia)) console.log(`      · ${v.padEnd(30)} ${n}`);
+console.log(`    series cuyo TÉRMINO no existe en el clon: ${sinTermino.length}${sinTermino.length ? ` — ${sinTermino.map((f) => f.ruta).join(" · ")}` : ""}`);
+console.log(`    Sólo las de «coleccion-entera» siguen siendo cota superior, y ahí la`);
+console.log(`    colección ES la serie, así que la cota y el recuento coinciden.`);
 
 const salida = {
   meta: {
@@ -296,9 +381,16 @@ const salida = {
     noMide: [
       "píxeles: no abre navegador ni pide una URL",
       "si sembrar el corpus entero es la salida correcta: eso es una DECISIÓN, no una medida",
-      "el reparto por término: el clon no tiene la taxonomía poblada; la columna del clon es COTA SUPERIOR",
+      "píxeles de la plantilla: eso es `lh-cmp`",
+      "si el CONTENIDO de cada documento es el bueno: aquí sólo se cuenta cuántos hay",
     ],
+    cota:
+      "ESTRECHADA el 2026-08-13: una serie de término se cuenta POR SU TÉRMINO (y por sus hijas si es " +
+      "padre de una taxonomía jerárquica). Un término ausente da 0 y sale ROJO. Sólo las series cuya " +
+      "colección ES la serie usan el recuento de colección entera.",
   },
+  porVia,
+  seriesSinTermino: sinTermino.map((f) => ({ ruta: f.ruta, motivo: f.motivoClon })),
   poblacionClon: clon,
   series: filas,
   resumen: {
