@@ -63,8 +63,22 @@ export const CATALOGOS = [
   { coleccion: "sectores", modulo: "src/lib/sectores.ts", exportado: "SECTORES_PUBLICADOS" },
   { coleccion: "monograficos", modulo: "src/lib/monografico.ts", exportado: "MONOGRAFICOS_PUBLICADOS" },
   { coleccion: "taxonomia-sectores", modulo: "src/lib/taxonomia-sectores.ts", exportado: "TERMINOS_SECTOR" },
-  { coleccion: "casos", modulo: "src/lib/casos.ts", exportado: "CASOS_PUBLICADOS" },
-  { coleccion: "faqs", modulo: "src/lib/faqs.ts", exportado: "FAQS_PUBLICADAS" },
+  /* ✅ **`casos` y `faqs` CAMBIAN DE FUENTE (2026-08-13, tanda de PIPELINE, PASO 6):
+   * de la transcripción de muestra (4 y 2) al catálogo extraído (57 y 19).**
+   *
+   * Su precondición era §DATOS-C-PIPELINE, y **no era del extractor**: eran 12
+   * discrepancias en los cuerpos ricos que resultaron ser (a) reglas escritas y
+   * sin aplicar —T7 con su `ctx.rutas` y su `target`—, (b) serialización que la
+   * transcripción normalizó y el original NO —§PASO 2—, y (c) **una clase que el
+   * cubo de «combinaciones» escondía**: el `texto-destacado` anidado dentro de
+   * `necesidad`, que es campo propio y se pintaría dos veces.
+   *
+   * `src/lib/{casos,faqs}.ts` **no se borran**: se quedan como los TIPOS y como
+   * el CONTROL, igual que `arquetipo-a.ts` (§extractor-a). Que el extractor
+   * reproduzca los 6 transcritos a mano es lo que autoriza a sustituir la fuente
+   * para los otros 70. */
+  { coleccion: "casos", json: "medidas/c-extraido.json", en: "catalogo.casos" },
+  { coleccion: "faqs", json: "medidas/c-extraido.json", en: "catalogo.faqs" },
   /* ⚠ **Las tres del grupo A ya NO salen de `src/lib`** (D2.7, 2026-08-12).
    * `src/lib/arquetipo-a.ts` es una transcripción de MUESTRA —7 entradas de
    * 149— y los listados son el primer consumidor que no puede funcionar con

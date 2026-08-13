@@ -2213,6 +2213,54 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 | **T7** | **enlaces internos DENTRO del cuerpo rico** — **181/209** páginas del grupo A llevan enlaces | al importar, **los enlaces cuyo destino sea una ruta que publicamos se reescriben a ruta local; los que apunten fuera se dejan** (la regla de rutas locales de `CLAUDE.md`, aplicada al contenido y no solo a los datos). Nació en la sesión de C-3: dos enlaces dentro del campo rico apuntaban al original y `qa:enlaces` los convirtió en fallo al emitir las rutas nuevas — la sonda vigila la **salida**; T7 es la mitad de **entrada**, para que la guarda no cace uno a uno lo que el import puede reescribir en bloque. ⚠ Vivió solo en el informe de sesión hasta el 2026-07-31 (**mencionado no es documentado**, `CLAUDE.md` §sondas regla 3): una tanda llegó a «corregir» un plan de T1-T7 a T1–T6 comprobando este registro — la comprobación no distingue «nunca existió» de «no se escribió» |
 | **T8** | el **token de Cloudflare Rocket Loader** en el `type` de los `<script>` del cuerpo | **se normaliza a `text/javascript` al importar** (y después T4 decide qué pasa con el script). Rocket Loader reescribe `type="text/javascript"` poniéndole delante un token de 24 hex **distinto en cada petición**, para aplazar la ejecución. Medido al comparar **dos congelaciones de `a-spec` del mismo día**: misma longitud, contenido distinto en **4 de las 14** instancias, y la única diferencia era ese token (evidencia en `medidas/a-spec-SEGUNDA-CARGA-token-cloudflare.json`). Sin T8, **cada re-import marcará esas páginas como cambiadas sin que haya cambiado nada**, y el historial del CMS se llena de ruido que nadie puede explicar. Y hay un argumento de fondo además del operativo: ese `type` **no lo escribió nadie**, lo inyecta la capa de entrega — migrarlo verbatim sería importar un artefacto del CDN como si fuera contenido |
 
+#### 3.2a-bis · T7 — el CONTRATO cambia el 2026-08-13, en dos mitades y las dos por precedente
+
+**Ninguna de las dos es criterio nuevo: son reglas del repo que T7 no aplicaba**
+(§DATOS-C-PIPELINE · PASO 1 y PASO 4 de `PENDIENTES-QA.md`).
+
+| mitad | antes | ahora | la regla que ya lo decía |
+|---|---|---|---|
+| **el conjunto de destinos** | `ctx.rutas` = manifiesto del build **+ todas las URL del corpus** | **SÓLO el manifiesto del build** | §F2-3-HREF-DERIVADO, salida **(b)**, adjudicada el 2026-08-07. *Una URL capturada no es una ruta publicada* |
+| **el `target`** | se reescribía el `href` y **el `target="_blank"` se quedaba** | al localizar, **el `target` se quita** | `CLAUDE.md` §Regla de rutas locales: *«`target="_blank"` **solo si el destino es externo**»* |
+
+**El efecto, medido sobre los 209 cuerpos y no leído del diff:**
+
+| | antes | después |
+|---|---:|---:|
+| `<a href>` totales | 3318 | **3318** — no se pierde ninguno |
+| enlaces **locales** con `target="_blank"` | **1788** | **2** |
+| rutas locales distintas | 153 | 103 |
+| destinos que **el build no emite** | **53** | **2** |
+
+Los 2 que quedan conservan su `target` **con razón**:
+`/cdn-cgi/l/email-protection` es infraestructura de Cloudflare del sitio original
+—**se escribe local y no es nuestro**— y lo decide `ctx.rutas`, no la forma del
+`href`.
+
+**Y la mitad de contrato que hay que saber leer:** el conjunto **crece solo**.
+Cuando se siembre una colección, sus rutas entran en el manifiesto del build
+siguiente y sus destinos pasan a localizarse **sin tocar una línea** — es lo que
+convierte los 89 enlaces a `/casos-de-exito/*` en trabajo de datos y no de
+código.
+
+**Dos postcondiciones, no una**, y la segunda es la que no existía: *(1)* no
+queda ningún `href` al original de una ruta que sí publicamos; *(2)* **no queda
+ningún enlace a una página nuestra con `target="_blank"`** — lo hubiera
+reescrito T7 o hubiera llegado ya local del original. La segunda cazó 3 casos que
+llegaban locales del original, y obligó a que T7 haga **una sola pregunta en los
+dos lados**: *«¿este destino lo publicamos nosotros?»*.
+
+**Lo que NO se toca, declarado:** `rel="noopener"` sobrevive (**37 casos**).
+Existe *por* el `target` y sin él es inerte, pero la regla nombra el `target` y
+sólo el `target`; quitarlo sería ampliar el alcance de una decisión ajena — el
+mismo argumento por el que T3b deja `alignnone` y `size-full`.
+
+**La MARCA de lo que se deja fuera.** §Regla de rutas locales pide anotar el
+destino que no se localiza; en código eso es un comentario, y **en un cuerpo rico
+no hay dónde ponerlo sin cambiar lo que se sirve**. Así que la marca es la
+congelada: `medidas/extractor-corpus.json` → `t7.porDestino`, **830 enlaces en 80
+destinos**, contable y auditable. Ficha del hueco: §F3-COLA-DESTINOS.
+
 #### 3.2b · T3b — `wp-caption` → `<figure>` con relación de media (2026-08-05)
 
 La segunda mitad de **T3**: *«se descartan; la relación con el media pasa a ser

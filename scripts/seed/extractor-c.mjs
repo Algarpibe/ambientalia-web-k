@@ -50,7 +50,7 @@ import { createRequire } from "node:module";
 import { existsSync, readFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { Censo, Evaluadas, enApp, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
+import { Censo, clasificaDiscrepancia, Evaluadas, enApp, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
 
 process.env.SIN_CLON = "1";
@@ -59,7 +59,7 @@ gritaSiRevienta();
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus");
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["selector-muerto", "control-roto", "region-ausente", "saneador"];
+const VALIDOS = ["selector-muerto", "control-roto", "region-ausente", "saneador", "destacado-dentro"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -145,6 +145,22 @@ const SEL = {
   faqTitulo: /<h1 class="entry-title">([\s\S]*?)<\/h1>/,
   faqCuerpo: /<div class="entry-content">([\s\S]*?)<\/div>/,
 };
+
+/**
+ * ⚠ **El `texto-destacado` vive DENTRO de `entry-content-bloque`, y es CAMPO
+ * PROPIO.** Medido en el corpus: en los 3 casos que lo traen, el `<div
+ * class="texto-destacado">` está anidado dentro del bloque de `necesidad`
+ * —`need@253408 · destacado@254732 · solution@255183`—, así que el recorte no
+ * greedy hasta `</div></div>` **se lo traga**. El modelo lo tiene aparte
+ * (`casos.ts`, el esquema y el componente lo pintan por separado), o sea que
+ * dejarlo dentro lo **duplicaría** en la página servida.
+ *
+ * Lo cazó el control de cuerpos ricos (§DATOS-C-PIPELINE, PASO 3): salía como
+ * `SIN CLASIFICAR` en 3 de las 12 discrepancias, y la ficha lo tenía metido en
+ * el cubo de «combinaciones de las anteriores». Un cubo que absorbe una clase
+ * entera.
+ */
+const SIN_DESTACADO = /\s*<div class="texto-destacado">[\s\S]*?<\/div>\s*$/;
 
 /**
  * `imagenCabecera` — el ÚNICO lector que mira el `<style>`, y a propósito: Divi
@@ -258,6 +274,8 @@ const ev = new Evaluadas({ nombre: "extractor-c", unidad: "documentos del grupo 
 
 const salida = { casos: [], faqs: [] };
 const sinRegion = [];
+/** Las regiones de las que hubo que sacar un `texto-destacado` anidado. */
+const destacadoExtraido = [];
 
 for (const [clave, p] of trabajo) {
   const col = clave.split("/")[0];
@@ -300,8 +318,13 @@ for (const [clave, p] of trabajo) {
   /* Las tres regiones obligatorias: 57/57 medido. Una que falte TIRA. */
   const regiones = {};
   for (const campo of ["necesidad", "solucion", "resultados"]) {
-    const bruto = SABOTAJE === "region-ausente" && salida.casos.length === 2 ? null : uno(ambito, SEL[campo])?.trim() ?? null;
+    let bruto = SABOTAJE === "region-ausente" && salida.casos.length === 2 ? null : uno(ambito, SEL[campo])?.trim() ?? null;
     if (bruto === null) { sinRegion.push(`${clave}: ${campo}`); ev.fallo(clave, `sin región \`${campo}\``); }
+    else if (SABOTAJE !== "destacado-dentro" && SIN_DESTACADO.test(bruto)) {
+      /* El `destacado` es campo propio: sale de la región o se pinta dos veces. */
+      bruto = bruto.replace(SIN_DESTACADO, "").trim();
+      destacadoExtraido.push(`${clave}.${campo}`);
+    }
     regiones[campo] = bruto;
   }
   if (Object.values(regiones).some((v) => v === null)) continue;
@@ -362,19 +385,60 @@ await esbuild.build({
 const LIB_FAQS = await import(`${pathToFileURL(bFaqs).href}?t=${Date.now()}`);
 
 /**
- * ⚠ **El HTML se compara NORMALIZANDO EL ESPACIO EN BLANCO, y hay que decirlo.**
- * La transcripción a mano está indentada a mano dentro de una plantilla de JS;
- * el corpus trae la indentación que emite WordPress. Comparar byte a byte
- * mediría **el sangrado del fichero fuente**, no el contenido — y eso no es lo
- * que se está verificando. Lo que sí se compara literal es todo lo demás.
+ * ⚠ **El HTML se compara con `clasificaDiscrepancia` (`qa/lib.mjs`), que es el
+ * MISMO instrumento de `extractor-a` — importado, no copiado (clase C7).**
+ *
+ * Aquí había un `norm` propio que sólo plegaba el espacio en blanco, y con él
+ * las 12 discrepancias de §DATOS-C-PIPELINE se clasificaron a ojo en «4 clases y
+ * 6 combinaciones» — y ese cubo de combinaciones **escondía una clase entera**
+ * (el `texto-destacado` anidado). El instrumento compartido no tiene cubo: lo
+ * que no encaja en ninguna clase sale **`SIN CLASIFICAR`** y es rojo.
+ *
+ * Los pliegues del pipeline se DERIVAN de `TRANSFORMACIONES`, igual que allí:
+ * la transcripción a mano es **anterior** a T1–T8, así que su marcado sin
+ * transformar no las contradice — no las había aplicado.
  */
-const norm = (s) => (typeof s === "string" ? s.replace(/\s+/g, " ").trim() : s);
+const ctxMudo = () => ({
+  pagina: "control", rutas,
+  scriptsQuitados: [], mediaDelCuerpo: [], sinLlaveT3b: [], sustitucionesT4b: [], payloadIlegible: [],
+  noLocalizadas: [], relHuerfano: [],
+});
+const PLIEGUES_PIPELINE = TRANSFORMACIONES.map((t) => ({
+  clase: `${t.id}-declarada`,
+  aplica: (s) => t.aplica(s, ctxMudo()).html,
+  firma: (s) => String(t.diana(s, ctxMudo())),
+}));
+/** Qué significa cada clase. Una que no esté aquí es roja por no estar adjudicada. */
+const CLASES = {
+  ...Object.fromEntries(TRANSFORMACIONES.map((t) => [`${t.id}-declarada`, ["dato", `transformación declarada §3.2 — ${t.titulo.slice(0, 64)}`]])),
+  espacio: ["dato", "la transcripción está indentada a mano y el corpus no (§PASO 2)"],
+  "cierre-xhtml": ["dato", "el original sirve `<br />`; la transcripción normalizó a `<br>` (§PASO 2)"],
+  "espacio-duro": ["dato", "el original sirve U+00A0 crudo; la transcripción lo escapó a `&nbsp;` (§PASO 2)"],
+  "media-original": ["DEFECTO", "§Assets: nunca hotlink a kunakair.com — §DATOS-MEDIA-HOTLINK"],
+  href: ["DEFECTO", "difieren DESPUÉS de plegar T7, así que no lo explica T7"],
+  target: ["DEFECTO", "difieren DESPUÉS de plegar T7"],
+  "SIN CLASIFICAR": ["DEFECTO", "ninguna regla escrita la cubre"],
+};
 
 const control = [];
-const cmp = (slug, campo, leido, esperado, normaliza = false) => {
-  const f = normaliza ? norm : (x) => x;
-  const a = JSON.stringify(f(leido) ?? null), b = JSON.stringify(f(esperado) ?? null);
-  if (a !== b) control.push({ slug, campo, leido: leido ?? null, esperado: esperado ?? null });
+const serializacion = [];
+const cmp = (slug, campo, leido, esperado, rico = false) => {
+  if (!rico) {
+    const a = JSON.stringify(leido ?? null), b = JSON.stringify(esperado ?? null);
+    if (a !== b) control.push({ slug, campo, leido: leido ?? null, esperado: esperado ?? null, clases: ["valor"] });
+    return;
+  }
+  const r = clasificaDiscrepancia(leido, esperado, PLIEGUES_PIPELINE);
+  const defectos = r.clases.filter((c) => (CLASES[c]?.[0] ?? "DEFECTO") === "DEFECTO");
+  if (!defectos.length) {
+    if (r.clases.length) serializacion.push({ slug, campo, clases: r.clases });
+    return;
+  }
+  control.push({
+    slug, campo, clases: r.clases, defectos,
+    leido: typeof leido === "string" ? leido.slice(0, 400) : (leido ?? null),
+    esperado: typeof esperado === "string" ? esperado.slice(0, 400) : (esperado ?? null),
+  });
 };
 const porSlug = (col) => new Map(salida[col].map((d) => [d.slug, d]));
 
@@ -429,8 +493,27 @@ console.log(
     `${control.length === 0 ? "✅ TODAS" : `❌ ${control.length} discrepancia(s)`}`,
 );
 for (const c of control.slice(0, 10))
-  console.log(`     · ${c.slug} · ${c.campo}\n         leído    ${JSON.stringify(c.leido)?.slice(0, 200)}\n         esperado ${JSON.stringify(c.esperado)?.slice(0, 200)}`);
+  console.log(`     · ${c.slug} · ${c.campo}  [${(c.clases ?? []).join("+") || "—"}]\n         leído    ${JSON.stringify(c.leido)?.slice(0, 200)}\n         esperado ${JSON.stringify(c.esperado)?.slice(0, 200)}`);
 if (control.length > 10) console.log(`     … y ${control.length - 10} más`);
+
+/* ── El INVENTARIO de clases, igual que en `extractor-a`: se imprime SIEMPRE.
+ * «0 discrepancias» sin él no distingue «coinciden» de «coinciden por poco». */
+const porClase = new Map();
+for (const x of [...serializacion, ...control])
+  for (const cl of x.clases ?? ["valor"]) porClase.set(cl, (porClase.get(cl) ?? 0) + 1);
+console.log(`\n  INVENTARIO de clases de divergencia sobre los cuerpos ricos controlados:`);
+if (!porClase.size) console.log(`     (ninguna)`);
+for (const [cl, n] of [...porClase].sort((a, b) => b[1] - a[1])) {
+  const [v, porQue] = CLASES[cl] ?? ["DEFECTO", "⛔ CLASE SIN ADJUDICAR: no está en la tabla `CLASES`"];
+  console.log(`     ${String(n).padStart(3)} × ${cl.padEnd(16)} ${v === "dato" ? "· dato   " : "⛔ DEFECTO"}  ${porQue}`);
+}
+
+if (destacadoExtraido.length)
+  console.log(
+    `\n  ⚠ ${destacadoExtraido.length} región(es) traían el \`texto-destacado\` ANIDADO y se ha sacado:\n` +
+      `     ${destacadoExtraido.join(" · ")}\n` +
+      `     Es campo propio del modelo; dejarlo dentro lo pintaría DOS VECES en la página.`,
+  );
 
 censo.paginas = salida.casos.length + salida.faqs.length;
 const muertos = censo.informe("de campos del grupo C");
@@ -448,7 +531,8 @@ w("medidas/c-extraido.json", {
       controlFaqs: `${LIB_FAQS.FAQS_PUBLICADAS.length} de ${salida.faqs.length}`,
       advertencia:
         "denominador PEQUEÑO: 4 y 2. Lo que compra un control es cuántas FORMAS ejercita — los 4 casos son adversarios por diseño (con/sin galería, sin sector, sin soluciones) — no qué fracción cubre.",
-      htmlComparado: "normalizando espacio en blanco: la transcripción está indentada a mano y el corpus no",
+      htmlComparado:
+        "con `clasificaDiscrepancia` (qa/lib.mjs), el MISMO instrumento de extractor-a: identidad plegada la serialización y las transformaciones DECLARADAS, y lo que sobrevive sale SIN CLASIFICAR (rojo)",
     },
     noMide: ["no toca el original", "no siembra", "no decide modelo"],
   },
@@ -456,6 +540,14 @@ w("medidas/c-extraido.json", {
   transformaciones: Object.fromEntries(TRANSFORMACIONES.map((t) => [t.id, porT[t.id].aplicadas])),
   violaciones: Object.fromEntries(TRANSFORMACIONES.map((t) => [t.id, porT[t.id].violaciones])),
   saneador: rechazosSaneador,
+  divergencia: {
+    porClase: Object.fromEntries([...porClase].sort((a, b) => b[1] - a[1])),
+    adjudicacion: Object.fromEntries(Object.entries(CLASES).map(([k, [v, p]]) => [k, `${v} — ${p}`])),
+    serializacion,
+    sinClasificar: control.filter((c) => (c.clases ?? []).includes("SIN CLASIFICAR")).map((c) => `${c.slug}.${c.campo}`),
+  },
+  /** Las regiones de las que se sacó un `texto-destacado` anidado: es campo propio. */
+  destacadoExtraido,
   t7: {
     rutasPublicadas: rutas.size,
     fuente: "SÓLO `.next/prerender-manifest.json` (§F2-3-HREF-DERIVADO b)",
