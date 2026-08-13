@@ -53,12 +53,33 @@ import { pathToFileURL } from "node:url";
 import { Censo, clasificaDiscrepancia, Evaluadas, enApp, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
 import { mediaPublicada } from "./media-publicada.mjs";
+import { cargaExportados } from "./catalogos.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
 
 /** T10 · el entorno, derivado una vez: qué media sirve el clon (§regla 6: TIRA si no hay árbol). */
 const MEDIA_PUBLICADA = mediaPublicada();
+
+/**
+ * ⚠ **El término de sector se embebe COMPLETO, y `paginaSlug` NO está en el chip.**
+ *
+ * El chip servido enlaza al archivo de taxonomía (`/es/sector/<slug>/`), así que
+ * de la página del caso sólo salen `slug` y `nombre`. Pero §2c modela esto como
+ * **término embebido completo** —el caso guarda QUÉ término, y el término lleva
+ * su página cuando la tiene— y la VUELTA reconstituye el término entero desde la
+ * colección. Con el término a medias, el round-trip veía 36 `paginaSlug`
+ * «(ausente) → valor» y los contaba como diferencia de FORMA.
+ *
+ * Enriquecer no es inventar: sale del MISMO catálogo que siembra
+ * `taxonomia-sectores`, no de una segunda tabla. Un slug que no esté ahí se
+ * queda como está y se nombra — un `paginaSlug` fabricado sería peor que su
+ * ausencia.
+ */
+const TERMINOS = new Map(
+  (await cargaExportados("src/lib/taxonomia-sectores.ts", ["TERMINOS_SECTOR"])).map((t) => [t.slug, t]),
+);
+const terminosDesconocidos = new Set();
 const mediaCaliente = [];
 
 const RAIZ = join(QA, "../..");
@@ -216,7 +237,11 @@ function sectoresDe(art) {
   const m = new Map();
   for (const x of bloque.matchAll(/href="https:\/\/kunakair\.com\/es\/sector\/([^"/]+)\/"[^>]*>([\s\S]*?)<\/a>/g))
     m.set(x[1], textoPlano(x[2]).trim());
-  return [...m].map(([slug, nombre]) => ({ slug, nombre }));
+  return [...m].map(([slug, nombre]) => {
+    const t = TERMINOS.get(slug);
+    if (!t) terminosDesconocidos.add(slug);
+    return { slug, nombre, ...(t?.paginaSlug ? { paginaSlug: t.paginaSlug } : {}) };
+  });
 }
 
 function galeriaDe(art) {
@@ -644,9 +669,20 @@ if (canarioComido.length)
       `     Es exactamente lo que el discriminador de T9 tiene que impedir.`,
   );
 
+/* Un slug de sector que el catálogo de términos no conoce NO se enriquece a
+ * ciegas ni se calla: sería un término embebido a medias otra vez, y esta vez
+ * sin que nada lo dijera. */
+if (terminosDesconocidos.size)
+  console.error(
+    `\n❌ TÉRMINO DE SECTOR DESCONOCIDO en ${terminosDesconocidos.size} slug(s): ` +
+      `${[...terminosDesconocidos].join(" · ")}.\n` +
+      `     El chip los sirve y TERMINOS_SECTOR no los tiene, así que su término se\n` +
+      `     embebería SIN paginaSlug sin saber si le toca o no.`,
+  );
+
 const rojo =
   control.length > 0 || muertos > 0 || sinRegion.length > 0 || rechazosSaneador.length > 0 ||
-  violaciones > 0 || canarioComido.length > 0;
+  violaciones > 0 || canarioComido.length > 0 || terminosDesconocidos.size > 0;
 console.log(
   `\n${rojo ? "❌" : "✅"} extractor-c: ${salida.casos.length} casos · ${salida.faqs.length} faqs · ` +
     `${control.length} discrepancia(s) · ${muertos} lector(es) muerto(s) · ${sinRegion.length} sin región · ` +

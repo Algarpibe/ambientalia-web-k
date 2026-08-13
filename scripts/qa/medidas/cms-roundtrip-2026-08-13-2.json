@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 348,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 12,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 8,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 0
+    },
+    "casos": {
+      "documentos": 57,
+      "conDiferencia": 36
+    },
+    "faqs": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "entradas-blog": {
+      "documentos": 149,
+      "conDiferencia": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 37,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 23,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "casos",
+      "slug": "analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-quemas-controladas-cana-azucar",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-hibrida-calidad-aire-atmo-france",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "vigilancia-contaminacion-aire-albacete",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-sensores-calidad-aire-alaquas",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-gases-y-particulas-en-metro-valparaiso",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-en-bilbao",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-calidad-del-aire-en-la-formula-e",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "medicion-contaminantes-ambientales-ciudad-cartagena-colombia",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-emisiones-de-olor-en-ptar-en-israel",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitorizacion-ambiental-y-control-de-olores-en-edar\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-contaminacion-por-malos-olores-en-edar-arazuri",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitorizacion-ambiental-y-control-de-olores-en-edar\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "ruta": "sectores[1].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "estudio-de-la-contaminacion-atmosferica-gwadair",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "pure-cities",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "porto-alegre-red-de-control-de-la-calidad-del-aire",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-ambiental-instalacion-petroleo-gas",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitorizacion-de-emisiones-en-petroleo-y-gas\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "citytraq-calidad-del-aire-urbano",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "control-de-la-calidad-del-aire-en-el-volcan-turrialba",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "distrito-baja-emision-rio-de-janeiro",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "red-de-monitorizacion-ambiental-mades-paraguay",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"estudio-de-la-contaminacion-atmosferica\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "running-for-clean-air-ciudades-saludables",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"calidad-del-aire-en-las-ciudades\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"monitorizacion-ambiental-y-control-de-olores-en-edar\""
+    },
+    {
+      "coleccion": "casos",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "ruta": "sectores[0].paginaSlug",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"control-de-emisiones-industriales\""
+    }
+  ]
+}
