@@ -14,6 +14,7 @@ import * as migration_20260810_140630_f3_kb_reticula_filas_columnas from './2026
 import * as migration_20260810_164348_f3_kb_piel_titular from './20260810_164348_f3_kb_piel_titular';
 import * as migration_20260810_171434_f3_kb_piel_blurb from './20260810_171434_f3_kb_piel_blurb';
 import * as migration_20260813_140606_f3_pr3_documento_sin_pagina from './20260813_140606_f3_pr3_documento_sin_pagina';
+import * as migration_20260813_211316_f3_etiqueta_descripcion from './20260813_211316_f3_etiqueta_descripcion';
 
 export const migrations = [
   {
@@ -94,6 +95,11 @@ export const migrations = [
   {
     up: migration_20260813_140606_f3_pr3_documento_sin_pagina.up,
     down: migration_20260813_140606_f3_pr3_documento_sin_pagina.down,
-    name: '20260813_140606_f3_pr3_documento_sin_pagina'
+    name: '20260813_140606_f3_pr3_documento_sin_pagina',
+  },
+  {
+    up: migration_20260813_211316_f3_etiqueta_descripcion.up,
+    down: migration_20260813_211316_f3_etiqueta_descripcion.down,
+    name: '20260813_211316_f3_etiqueta_descripcion'
   },
 ];

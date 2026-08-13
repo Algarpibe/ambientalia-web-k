@@ -984,7 +984,7 @@ type: es una consulta; el contenido son los términos):
 
 | colección | fuente | docs | campos |
 |---|---|---|---|
-| `etiquetas` | `post_tag` | 12 | `nombre` · `slug` |
+| `etiquetas` | `post_tag` | 12 | `nombre` · `slug` · **`descripcion?` (rico)** |
 | `categoriasRecursos` | `resources`, **jerárquica** | 10 (2 padres + 8 hijas) | `nombre` · `slug` · `padre?` |
 | `categoriasCientificas` | `scientific-category` | 3 | `nombre` · `slug` |
 | `categorias` | `category` | **SIN CENSAR** (LH-SP8: viva y fuera de sitemap) | se censa antes de modelar |
@@ -995,6 +995,44 @@ falta): `fechaPublicacion` · `imagenDestacada` opcional con sizes
 opcional con **derivación por defecto** (~267c del arranque + «…»; LH-SP10
 decide si alguno es manual) · **relaciones a las TRES taxonomías** · y **sin
 `autor`**: no lo exige ningún listado (0/9 formas, 0 URLs de author en `/es`).
+
+### 2c.2 · `etiquetas.descripcion` — CAMPO NUEVO, y `extracto` deja de ser una incógnita (2026-08-13)
+
+**Los dos campos que faltaban viven en EL LISTADO, no en la ficha del
+documento** — por eso ningún extractor anterior los tenía: leen la página del
+documento, y esto es otra plantilla. Instrumentos: `cms:extractor-listados`
+(negativo 3/3) · `cms:seed-listados` · migración
+`20260813_211316_f3_etiqueta_descripcion`.
+
+**(a) `etiquetas.descripcion` — nuevo, rico, opcional.**
+
+| | |
+|---|---|
+| dónde vive | módulo `et_pb_text_4_tb_body` de `/es/etiqueta/<slug>/`, bajo el `h1`, a **941.17** de ancho contra los 1238.39 de la fila |
+| por qué es campo | **varía entre instancias** — el test más simple que hay. Extraído en **12 de 12** |
+| por qué es RICO | **medido, no supuesto**: el marcado que traen las 12 es `p` · `br` · `a`. Guardarlo plano tiraría enlaces y saltos |
+| por qué NO es `required` | las 12 la traen, pero un término **sin** descripción es un camino de render que ningún dato de calibración ejercita (§F2-5-ESCALON-ETIQUETAS). Obligarlo hoy rompería el alta de un término nuevo por una regla que ninguna instancia ha probado |
+
+**(b) `extracto` — LH-SP10 cerrada: es campo en una variante y DERIVADO en la
+otra.** Medido cruzando los dos listados donde el mismo post sale con las dos
+pieles (63 posts: 0 idénticos · 48 prefijo · **15 distintos**):
+
+> · **`/blog`** (loop del tema) usa el extracto **MANUAL** donde existe —los 15,
+>   de 86–102 c— y el automático si no ⇒ **CAMPO**, y se siembra;
+> · **`/etiqueta/*`** (módulo `et_pb_blog`) **ignora el manual** y trunca el
+>   contenido a 256–271 c + «...» ⇒ **DERIVADO**, y **no se guarda**.
+
+⚠ **Guardar los dos habría sido lo cómodo y es el error caro:** produciría dos
+campos donde el original tiene uno y una regla, y el día que un cuerpo cambiara
+el extracto cableado se quedaría atrás **sin que nada fallara**. La spec vieja
+decía *«derivación por defecto (~267c + «…»)»* — correcta para `/etiqueta`,
+**falsa para `/blog`**, y la diferencia sólo se ve cruzando las dos.
+
+**Estado de la siembra, con sus dos direcciones:** `descripcion` **12/12** ·
+`extracto` **66 de 68**. Los 2 que faltan (`descarga-catalogo-kunak` ·
+`kunak-obtiene-el-sello-reconcilia`) **no son un fallo del seed**: sus documentos
+no están en `corpus/entradas-blog` (149 ficheros, y el clon tiene 149) ⇒ es un
+hueco de **CAPTURA**, fichado en §F3-LH-DOS-CONJUNTOS-DE-149.
 
 **Arquetipos**: LISTADO-B (23 instancias, **una plantilla con tres variantes
 de tarjeta** — config uniforme al 100 % dentro de cada familia) ·

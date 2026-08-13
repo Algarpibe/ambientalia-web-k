@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "fecha": "2026-08-13",
+    "que": "siembra de los dos campos que viven en el listado",
+    "fuente": "medidas/extractor-listados.json (2026-08-13)",
+    "sabotaje": null
+  },
+  "etiquetas": {
+    "sembradas": 12,
+    "slugsSinFilaEnLaDb": [],
+    "filasSinCorpus": []
+  },
+  "entradasBlog": {
+    "sembrados": 66,
+    "slugsSinFilaEnLaDb": [
+      "descarga-catalogo-kunak",
+      "kunak-obtiene-el-sello-reconcilia"
+    ],
+    "entradasNoCubiertas": 83,
+    "deEllasConRecurso": 80
+  }
+}

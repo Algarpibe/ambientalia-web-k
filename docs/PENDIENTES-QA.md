@@ -1,5 +1,71 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-LH-JERARQUIA-RECURSOS · ESCALÓN: EL ORIGINAL **SÍ** TIENE JERARQUÍA (2026-08-13, 65.ª tanda)
+
+**La comprobación se hizo en las DOS direcciones, que es lo que la hace
+concluyente:** *«¿el original tiene jerarquía y el extractor la tira, o el
+original no la tiene y `null` es el valor correcto?»*. Son dos defectos
+distintos y sólo uno se arregla extrayendo.
+
+**Contestada sobre el corpus congelado, por tres vías independientes:**
+
+| vía | evidencia | n |
+|---|---|---|
+| forma de la URL | rutas de **dos segmentos** bajo `/recursos/articulos/` | **8** |
+| la MIGA | las hijas nombran al padre **con su URL** — `Artículos y Guías → /es/recursos/articulos/` | **8 de 8**, sin excepción |
+| los CHIPS | el padre lista **exactamente sus 8 hijas**; cada hija lista «Ver todos» + las mismas 8 | 9/9 |
+
+Y el contraste que lo cierra: **`seminarios-web` es un término de primer nivel
+SIN hijas** —su miga es `Inicio › Recursos › Seminarios Web`, sin eslabón
+intermedio, y su fila de chips es el módulo vacío que el espejo mide a `h=0`—.
+O sea que la jerarquía no es una suposición sobre la forma de la URL: **hay
+padres con hijas y padres sin ellas, y el original los distingue**.
+
+> **Conclusión: `padre: null` en las 8 NO es el valor correcto.** El original
+> tiene jerarquía y el clon no la tiene sembrada.
+
+⚠ **Y por qué esto PARA en vez de arreglarse extrayendo** (ESCALÓN 2 del
+encargo): el esquema **ya expresa** `padre`, así que lo que falta no cabe en
+«poblar un campo». Faltan **dos términos que no existen como filas**
+(`articulos` · `seminarios-web`), y con ellos una decisión que nadie ha escrito:
+**qué es `/recursos/articulos` — un archivo de término que incluye a sus
+descendientes, o una página propia**. Las dos producen las mismas 80 tarjetas
+hoy, así que **el dato no las separa**, y elegir por comodidad es exactamente
+cómo se fabrica un discriminador inventado.
+
+**Lo que la tanda que lo retome tiene delante:** los 2 términos, `padre` en las
+8, las **3** entradas de `seminarios-web` — y la decisión de arriba **escrita en
+el ESQUEMA antes de sembrar**. Hasta entonces, las **4 formas `L1-resources`**
+del comparador no son construibles.
+
+## ⚠ F3-LH-DOS-CONJUNTOS-DE-149 · EL RECUENTO CASA Y EL CONJUNTO NO (2026-08-13, 65.ª tanda)
+
+`qa:lh-poblacion` da **`/blog` 68 → 68**, exacto. Y aun así **los dos conjuntos
+de 68 no son el mismo**: lo destapó `cms:seed-listados` al intentar sembrar por
+slug.
+
+| | n | quiénes |
+|---|---|---|
+| en el corpus de `/blog`, **sin fila en la DB** | **2** | `descarga-catalogo-kunak` · `kunak-obtiene-el-sello-reconcilia` |
+| en la DB sin `recurso`, **fuera del corpus de `/blog`** | **2** | (los que compensan el recuento) |
+
+> **Un recuento es un contenedor, y absorbe las diferencias de CONJUNTO.**
+> `68 = 68` es verdad y no dice nada sobre membresía; hacían falta **los slugs**,
+> y el seed los tenía porque siembra por slug y no por cantidad. §La causa común
+> con un contenedor más: **el cardinal**.
+
+**Y no es un fallo del seed:** los 2 slugs **tampoco están en
+`corpus/entradas-blog`** (149 ficheros, y el clon tiene 149 entradas). O sea que
+el clon sembró fielmente lo capturado y **lo que falta es CAPTURA** — el listado
+nombra dos documentos cuyas páginas nunca se bajaron. Es §regla 10 otra vez:
+*una campaña se declara completa respecto a un USO*, y F3-0 estaba completa para
+sembrar los 149 que conocía, no para cubrir lo que el listado nombra.
+
+**Consecuencia medible y directa:** la página 1 de `/blog` del original trae
+`kunak-obtiene-el-sello-reconcilia` (1 dic 2025) en la posición 2, y el clon no
+puede pintarlo. **Ese par saldrá distinto en `qa:lh-cmp` y no será defecto de
+plantilla** — se ficha aquí para que no se persiga, igual que §F3-LH-DOS-FOTOS.
+
 ## ⚠ F3-LH-DOS-FOTOS · EL CLON SE SIEMBRA DEL CORPUS Y SE MIDE CONTRA EL ESPEJO, Y NO SON LA MISMA FECHA (2026-08-13, 64.ª tanda)
 
 **Es de MÉTODO y decide cómo se lee `qa:lh-cmp`, así que va antes que cualquier
