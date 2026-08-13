@@ -102,6 +102,8 @@ const PUBLICO = path.join(APP, "public");
 
 export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
   const mediaPorRuta = new Map();
+  /** T-canales · lo que el sondeo anota en vez de morir: ruta + CANAL + existencia. */
+  const mediaAuditada = [];
   const idsPorColeccion = new Map(); // coleccion → Map(slug → id)
 
   const registra = (coleccion, slug, id) => {
@@ -116,12 +118,40 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
     if (mediaPorRuta.has(ruta)) return mediaPorRuta.get(ruta);
 
     const abs = path.join(PUBLICO, decodeURIComponent(ruta));
-    if (!fs.existsSync(abs))
+    const existe = fs.existsSync(abs);
+    /**
+     * ⚠ **En SONDEO se ANOTA; sembrando se TIRA** — la misma asimetría que `rel`
+     * unas líneas más abajo, y por la misma razón, escrita ahora porque su
+     * ausencia costó tres tandas.
+     *
+     * > **Un inventario de media no se puede derivar con un instrumento que
+     * > muere en la primera ausencia.** Sembrando, `MEDIA AUSENTE` tiene que
+     * > matar; **midiendo**, matar es lo que impide contar — y por eso el hueco
+     * > se ha descubierto tres veces CHOCANDO con la guarda (cuerpos →
+     * > destacadas → panel) en vez de derivándolo una vez.
+     *
+     * Lo que se anota es la ruta **con su `donde`**, que es el CANAL: el mismo
+     * dato que la guarda ya tiene en la mano cuando decide. Así el inventario
+     * sale de LA guarda y no de una segunda definición de «qué es media»
+     * (clase C7).
+     */
+    if (sondeo) {
+      mediaAuditada.push({ ruta, donde, existe });
+      if (!existe) return undefined;
+    } else if (!existe)
       throw new Error(
         `MEDIA AUSENTE: ${ruta} (referenciada en ${donde}) no existe en apps/web/public.\n` +
           `  No se sustituye por nada: un alta de media vacía convertiría «falta el fichero»\n` +
           `  en «la imagen es opcional», y el Δ0 de F2-3 lo pagaría después.`,
       );
+    if (sondeo) {
+      /* No se sube nada en sondeo: se devuelve un id sintético estable para que
+       * el recorrido continúe. Si se devolviera `undefined`, un campo `required`
+       * de tipo upload se contaría además como «required sin dato», y serían dos
+       * hallazgos donde hay uno. */
+      mediaPorRuta.set(ruta, `sondeo:${ruta}`);
+      return mediaPorRuta.get(ruta);
+    }
 
     /**
      * ⚠ **`rutaOrigen` es la PROCEDENCIA, y la escribe la IDA (CMS-0g).**
@@ -337,6 +367,8 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
     media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas, sinLlave, formaDeRel,
     rutaDeMedia, deRel, conKind, declaraKinds, declaraProyector,
     centinelaVacio, esCentinela, centinelas,
+    /** Sólo en sondeo: el inventario de media POR CANAL, con su existencia. */
+    mediaAuditada,
   };
 }
 

@@ -89,11 +89,7 @@ export const CATALOGOS = [
    * **Se sigue el precedente de `casos`**: la fuente no se cambia hasta que la
    * precondición se cumple, para que `cms:seed` siga entero. Ficha:
    * `PENDIENTES-QA.md` §DATOS-P-MEDIA. */
-  {
-    coleccion: "productos",
-    modulo: "src/lib/products.ts",
-    exportado: ["PRODUCTS_TABS", "PRODUCTS_CARTUCHOS"],
-  },
+  { coleccion: "productos", json: "medidas/p-extraido.json", en: "catalogo.productos" },
   { coleccion: "sectores", modulo: "src/lib/sectores.ts", exportado: "SECTORES_PUBLICADOS" },
   { coleccion: "monograficos", modulo: "src/lib/monografico.ts", exportado: "MONOGRAFICOS_PUBLICADOS" },
   { coleccion: "taxonomia-sectores", modulo: "src/lib/taxonomia-sectores.ts", exportado: "TERMINOS_SECTOR" },
@@ -132,7 +128,7 @@ export const CATALOGOS = [
    *
    * Desbloquearlo es **modelar los 15 productos que faltan**, que es clonar un
    * arquetipo (F3), no trabajo de datos. Ficha: §DATOS-C-SOLUCIONES. */
-  { coleccion: "casos", modulo: "src/lib/casos.ts", exportado: "CASOS_PUBLICADOS" },
+  { coleccion: "casos", json: "medidas/c-extraido.json", en: "catalogo.casos" },
   /* ✅ **`faqs` SÍ cambia de fuente (2026-08-13, PASO 6): de 2 a 19.** No tiene
    * ni una relación —`slug` · `seo.title` · `titulo` · `cuerpo`—, así que la
    * guarda que para a `casos` no la toca. Entra entera con sus guardas. */

@@ -46,9 +46,14 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { Censo, clasificaDiscrepancia, Evaluadas, enApp, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
+import { mediaPublicada } from "./media-publicada.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
+
+/** T10 · el entorno, derivado una vez: qué media sirve el clon (§regla 6: TIRA si no hay árbol). */
+const MEDIA_PUBLICADA = mediaPublicada();
+const mediaCaliente = [];
 
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus");
@@ -334,6 +339,8 @@ const ctxMudo = () => ({
   pagina: "control", rutas: rutasT7,
   scriptsQuitados: [], mediaDelCuerpo: [], sinLlaveT3b: [], sustitucionesT4b: [], payloadIlegible: [],
   noLocalizadas: [], relHuerfano: [],
+  /* T10 · el entorno: qué media sirve el clon. Sin esto T10 TIRA (§regla 6). */
+  mediaPublicada: MEDIA_PUBLICADA, mediaCaliente: [],
 });
 const PLIEGUES_PIPELINE = [
   /**
@@ -459,9 +466,14 @@ const CLASES = {
  * re-sembrado haría **inatribuible** el efecto de T7 — que es exactamente el
  * agujero por el que §DATOS-PIXEL no se pudo adjudicar.
  */
-const ABIERTOS = {
-  "media-original": { n: 9, ficha: "§DATOS-MEDIA-HOTLINK (PENDIENTES-QA.md), abierta 2026-08-13" },
-};
+/**
+ * ✅ **`media-original` SE RETIRA, no se baja a 0 (2026-08-13, PASO 4).** T10
+ * localiza la media del cuerpo, así que la clase deja de producirse: **9 → 0**,
+ * y la guarda de «declaración caducada» lo cazó en la misma corrida en que se
+ * aplicó. Un defecto abierto declarado a 0 sería una entrada que no puede
+ * caducar nunca — o sea una guarda que dejó de vigilar sin decirlo.
+ */
+const ABIERTOS = {};
 
 /** Los pares que son el MISMO documento con otra ortografía: dato, no defecto. */
 const serializacion = [];

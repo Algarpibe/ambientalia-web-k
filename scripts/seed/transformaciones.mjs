@@ -749,6 +749,115 @@ export const T9 = {
   diana: (html) => (raizAjenaEn(html) ? 1 : 0),
 };
 
+/* ═══════ T10 · la media del CUERPO se LOCALIZA (§DATOS-MEDIA-HOTLINK) ═════
+ *
+ * ── Qué arregla, y por qué no era un criterio sino un defecto ─────────────
+ * `CLAUDE.md` §Assets: *«Nunca se enlaza a kunakair.com en caliente»*. El cuerpo
+ * rico del grupo A lo incumplía en **169 de 209** documentos —**1820
+ * referencias**, **3688** en el HTML servido de 180 rutas— y **ninguna guarda
+ * del repo lo veía**.
+ *
+ * La cabecera de T3b lo justificaba con *«el destino no está publicado»*. **Era
+ * cierto cuando se escribió y es falso desde `cms:coloca-media`**: derivado hoy,
+ * **1265 de las 1268 URL distintas ya están** en `apps/web/public` (99.8 %). Es
+ * §regla 9 aplicada a un HECHO en vez de a un número — los hechos que una
+ * decisión cita se re-derivan **cuando la decisión se invoca**, no cuando se
+ * escribe.
+ *
+ * Y la prueba de que era defecto y no criterio: **el pipeline se contradecía a
+ * sí mismo**. T4b ya emitía el enlace al PDF como `/images/uploads/…` mientras
+ * T3b dejaba el `<img src>` en `https://kunakair.com/…`; y el extractor
+ * localizaba la media de los METADATOS (`rutaLocalMedia`) y no la del cuerpo.
+ *
+ * ── Por qué importa para MEDIR, que es lo que sube su prioridad ───────────
+ * > **Una ruta que sirve la imagen DESDE kunakair.com compara la imagen del
+ * > original contra la imagen del original: Δ0 por construcción**, y en el eje
+ * > donde vive el elemento principal de una tarjeta de listado. Es §el NIVEL al
+ * > que se mide con un contenedor nuevo —**el propio origen del asset**— y
+ * > construir LISTADO-B encima daría un verde de la familia «0 comparado = verde».
+ *
+ * ── La guarda de entorno, y NO es opcional ───────────────────────────────
+ * ⚠ `ctx.mediaPublicada` **es obligatorio y TIRA si falta**. Sin él la
+ * transformación localizaría **cero** y su `post` no encontraría nada que
+ * reclamar: saldría **verde habiendo hecho nada**, que es exactamente el verde
+ * falso que `rutasConstruidas` ya tiene cerrado del otro lado (§regla 6 — una
+ * ausencia se rechaza, no se sustituye por un valor benigno).
+ *
+ * ── Lo que se queda CALIENTE, con su razón ───────────────────────────────
+ * Una URL que **no** está en `public` **no se localiza** —apuntaría a un 404, y
+ * un 404 propio es peor que un hotlink que funciona— y se cuenta en
+ * `ctx.mediaCaliente` para que el informe la nombre. Medidas: **3**.
+ */
+const RE_SUBIDA_EN_TEXTO = /https?:\/\/(?:www\.)?kunakair\.com\/wp-content\/uploads\/([^"'\s)<>\\]+)/gi;
+
+/** La ruta relativa con la que se busca en `public`: sin query y decodificada. */
+const relDeSubida = (crudo) => {
+  const sinQuery = String(crudo).split("?")[0];
+  try {
+    return decodeURIComponent(sinQuery);
+  } catch {
+    return sinQuery;
+  }
+};
+
+/** Las que HAY que localizar: están bajo uploads **y** publicadas. */
+function subidasLocalizables(html, publicadas) {
+  const fuera = [];
+  RE_SUBIDA_EN_TEXTO.lastIndex = 0;
+  let m;
+  while ((m = RE_SUBIDA_EN_TEXTO.exec(html))) if (publicadas.has(relDeSubida(m[1]))) fuera.push(m[0]);
+  return fuera;
+}
+
+/** El `Set` de publicadas, exigido y no supuesto. */
+function exigePublicadas(ctx, quien) {
+  const s = ctx?.mediaPublicada;
+  if (!(s instanceof Set))
+    throw new Error(
+      `T10.${quien}: \`ctx.mediaPublicada\` tiene que ser un Set y llegó ${typeof s}.\n` +
+        `  Sin el entorno, T10 localizaría CERO y saldría verde habiendo hecho nada —\n` +
+        `  el mismo verde falso que \`rutasConstruidas\` cierra para los href (§regla 6).`,
+    );
+  if (s.size === 0)
+    throw new Error(
+      `T10.${quien}: \`ctx.mediaPublicada\` está VACÍO.\n` +
+        `  Eso no es «no hay media publicada»: es que el barrido de apps/web/public no miró.`,
+    );
+  return s;
+}
+
+export const T10 = {
+  id: "t10",
+  titulo: "T10 · la media del CUERPO se LOCALIZA — el clon deja de servir imágenes desde kunakair.com",
+  aplica(html, ctx) {
+    const publicadas = exigePublicadas(ctx, "aplica");
+    let n = 0;
+    const salida = String(html).replace(RE_SUBIDA_EN_TEXTO, (todo, cola) => {
+      const rel = relDeSubida(cola);
+      if (!publicadas.has(rel)) {
+        /* Caliente a propósito: localizarla apuntaría a un 404 propio, que es
+         * peor que un hotlink que funciona. Se NOMBRA, no se silencia. */
+        ctx?.mediaCaliente?.push({ pagina: ctx.pagina, rel, porQue: "no está en apps/web/public" });
+        return todo;
+      }
+      n++;
+      /* La cola viaja VERBATIM —con su `%`-encoding y su query si la trae—:
+       * lo único que cambia es el origen. Decodificar aquí cambiaría el `src`
+       * servido por uno equivalente pero distinto, y eso ya no sería un NO-OP. */
+      return `/images/uploads/${cola}`;
+    });
+    return { html: salida, n };
+  },
+  /** Muerde si queda una subida que SÍ estaba publicada: ésa tenía que irse. */
+  post(html, ctx) {
+    const quedan = subidasLocalizables(html, exigePublicadas(ctx, "post"));
+    return quedan.length
+      ? [`quedan ${quedan.length} URL(s) de subida SIN localizar y publicadas: ${quedan[0].slice(0, 100)}`]
+      : [];
+  },
+  diana: (html, ctx) => subidasLocalizables(html, exigePublicadas(ctx, "diana")).length,
+};
+
 /**
  * EL ORDEN ES PARTE DEL CONTRATO: T8 antes que T4a (el token se normaliza
  * antes de que la eliminación se lleve el script — es lo que estabiliza la
@@ -780,5 +889,22 @@ export const T9 = {
  *   moverla rompería su propia restricción —**T3b va después de T2 y de T3a**—
  *   que está medida en 415 de 446 contenedores. Una restricción documentada
  *   pesa más que una simetría.
+ *
+ * ⚠ **Y la de T10 (2026-08-13): LA ÚLTIMA, después incluso de T7.**
+ *
+ * Es §lección (c) de la tanda de PIPELINE aplicada antes de que costara nada:
+ * *un pliegue que normaliza tiene que correr DESPUÉS de todo lo que puede
+ * PRODUCIR lo que él normaliza*. Y aquí hay **tres** productores, no uno:
+ *
+ * · **T4b INTRODUCE URLs de subida** al decodificar el payload del visor FB3D —
+ *   es literalmente el defecto que la tanda anterior se comió dos veces;
+ * · **T3b LEE el `src` absoluto** para calcular `claveDeMedia`, y su `RE_SUBIDAS`
+ *   sólo casa la forma `https://kunakair.com/wp-content/uploads/…`. Con T10
+ *   delante, `data-media` saldría `null` en los 446 contenedores **sin dar
+ *   error**: la relación con la colección de media desaparecería en silencio;
+ * · **T7 decide destinos** de `<a href>`, y un enlace a un fichero de subida no
+ *   es una ruta que el build emita — así que T7 lo deja en el original y T10 lo
+ *   recoge después. Al revés, T7 vería un `/images/uploads/…` y tendría que
+ *   opinar sobre una ruta que no es de página.
  */
-export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T4, T5, T6, T7];
+export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T4, T5, T6, T7, T10];

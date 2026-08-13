@@ -93,6 +93,7 @@ import { join } from "node:path";
 import { enApp, Evaluadas, QA, w } from "./lib.mjs";
 import { postContent } from "../seed/corpus.mjs";
 import { TRANSFORMACIONES } from "../seed/transformaciones.mjs";
+import { mediaPublicada } from "../seed/media-publicada.mjs";
 
 process.env.SIN_CLON = "1"; // lee ficheros congelados: un build del clon no la contamina
 

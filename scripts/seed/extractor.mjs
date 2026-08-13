@@ -33,6 +33,7 @@ import path, { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { enApp, Evaluadas, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
+import { mediaPublicada } from "./media-publicada.mjs";
 import { postContent } from "./corpus.mjs";
 
 process.env.SIN_CLON = "1"; // lee ficheros congelados: un build del clon no la contamina

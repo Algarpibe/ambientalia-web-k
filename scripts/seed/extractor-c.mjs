@@ -52,9 +52,14 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { Censo, clasificaDiscrepancia, Evaluadas, enApp, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
 import { TRANSFORMACIONES } from "./transformaciones.mjs";
+import { mediaPublicada } from "./media-publicada.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
+
+/** T10 · el entorno, derivado una vez: qué media sirve el clon (§regla 6: TIRA si no hay árbol). */
+const MEDIA_PUBLICADA = mediaPublicada();
+const mediaCaliente = [];
 
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus");
@@ -303,6 +308,9 @@ function transforma(html, clave, campo, clasesConEstilo) {
     transporteDesenvuelto,
     scriptsQuitados: [],
     mediaDelCuerpo: [],
+    /* T10 · el entorno: qué media sirve el clon. Sin esto T10 TIRA (§regla 6). */
+    mediaPublicada: MEDIA_PUBLICADA,
+    mediaCaliente,
     sinLlaveT3b: [],
     sustitucionesT4b: [],
     payloadIlegible: [],
@@ -468,6 +476,7 @@ const ctxMudo = () => ({
   pagina: "control", rutas,
   scriptsQuitados: [], mediaDelCuerpo: [], sinLlaveT3b: [], sustitucionesT4b: [], payloadIlegible: [],
   noLocalizadas: [], relHuerfano: [],
+  mediaPublicada: MEDIA_PUBLICADA, mediaCaliente: [],
 });
 const PLIEGUES_PIPELINE = TRANSFORMACIONES.map((t) => ({
   clase: `${t.id}-declarada`,
