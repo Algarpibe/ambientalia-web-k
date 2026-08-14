@@ -66,9 +66,9 @@
  * **máximo**, porque el `<style>` de Divi nombra sus propias clases y un patrón
  * que casa de más da un número plausible de más (§sondas 4, 3.ª cara).
  * ═════════════════════════════════════════════════════════════════════════ */
-import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
-import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join, relative, sep } from "node:path";
+import { Evaluadas, gritaSiRevienta, hoy, origenDe, QA, RE_VARIANTE, w } from "./lib.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
@@ -118,6 +118,14 @@ const lee = (f, porQue) => {
 };
 const SERIE = lee("lh-serie.json", "es la población en la unidad PÁGINA, la que estableció que la serie no es una unidad");
 const ESPEJO = lee("lh-spec-1440.json", "es el universo que el comparador tiene HOY: sin él no se puede restar lo ya cubierto");
+/**
+ * La AUTORIDAD de la frontera del servidor, que es lo que separa `D2.5` de
+ * `D2.4`. Se usa la canónica; su `paginaDeVerdad` coincide **35/35** con la del
+ * 2026-08-14 pese a que las dos congeladas tienen fecha y criterio distintos
+ * (`último N con HTTP 200` contra `D2.5`), así que el campo que aquí se lee no
+ * depende de cuál se coja — cruzado el 2026-08-14, no supuesto.
+ */
+const PAGINAS = lee("lh-paginas.json", "es quien mide la frontera del servidor (paginaDeVerdad), y sin ella D2.5 y D2.4 se confunden");
 
 /** `/es/blog/page/2/` · `/blog/page/2` → `blog/page/2`. Tres convenciones en tres ficheros. */
 const clave = (r) => String(r).replace(/^\/es/, "").replace(/^\/+/, "").replace(/\/+$/, "") || "/";
@@ -125,23 +133,53 @@ const clave = (r) => String(r).replace(/^\/es/, "").replace(/^\/+/, "").replace(
 const yaEnElEspejo = new Set(Object.keys(ESPEJO.paginas ?? {}).map((k) => clave(k.slice(k.indexOf("::") + 2))));
 
 /**
- * ⚠ **`vacia: true` TIENE DOS CAUSAS Y EL CAMPO NO LAS SEPARA — y el propio
- * `lh-serie` ya lo sabía (2026-08-14).** Su resumen publica **55 vacías de
- * 139**; contar el campo por página da **65 de 149**. Las dos son ciertas y la
- * diferencia son **10 páginas de 5 series cuya FORMA no usa `<article>`**
- * (`/productos` · `/sectores` · `/recursos/{kunakpedia,documentos-cientificos,
- * preguntas-frecuentes}`): ahí `tarjetas: 0` no significa *«esta página no lista
- * nada»* sino *«esta forma no se lista con `<article>`»*.
+ * ⚠⚠ **`vacia: true` TIENE DOS CAUSAS Y NO SON LA MISMA FRONTERA — dirimido
+ * contra las congeladas, no por parecido (2026-08-14).**
  *
- * Es el mismo par de ceros que `lh-paginas` documenta en su cabecera —
- * *«`/blog/page/9` da 0 porque está VACÍA; `/productos` da 0 porque esa forma no
- * usa `<article>`»*— y meterlos en el mismo cubo declara un cero que nadie
- * midió. Se discrimina igual que allí: **la forma usa `<article>` si ALGUNA
- * página de su serie trae tarjetas**.
+ * El campo por página da **65 de 149**; el resumen del propio `lh-serie` publica
+ * **55 de 139**. Las dos son ciertas, y la diferencia **NO es un matiz del
+ * denominador de `D2.5`**: es otra frontera del servidor, con otra decisión
+ * detrás. Cruzado contra `lh-paginas` (que es la autoridad de la frontera):
+ *
+ * | grupo | n | lo que dice `lh-paginas` | decisión |
+ * |---|---|---|---|
+ * | **A** vacías en series que paginan | **55** | `paginaDeVerdad: true` · 200 hasta el 404 · canonical **a sí misma** · `<title>` «Página N de M» | **`D2.5`**, y su denominador **es 55** |
+ * | **B** página 1 de 5 series | **5** | `paginaDeVerdad: false`, pero es la página 1: ruta ordinaria, canonical a sí misma | **NINGUNA** |
+ * | **C** `/page/2` de esas 5 | **5** | `paginaDeVerdad: false` · 200 hasta N=64 · canonical **a la página 1** (5/5) | **`D2.4`** — y no son «vacías»: **no son rutas** |
+ *
+ * O sea que **`D2.5` NO se estira a 65**: los 10 no comparten su frontera. Ficha
+ * con su número en `PENDIENTES-QA.md` §F3-LH-VACIA-DOS-CAUSAS.
+ *
+ * ⚠ **Y lo que NO se puede afirmar, con la lista de canales que se miraron:**
+ * la primera versión de este comentario decía que en el grupo B *«`tarjetas: 0`
+ * no significa que la página no liste nada, sino que esa forma no se lista con
+ * `<article>`»*. **No está respaldado.** `lh-serie` cuenta por `<article>` y da
+ * 0; `lh-censo` cuenta con **las dos familias** —módulo de Divi y loop del
+ * tema— y **también da 0** en las 5. Con esos dos canales mirados, lo único
+ * sostenible es *«ninguno de los dos instrumentos les encuentra listado»*; si
+ * esas páginas listan por un tercer mecanismo, **nadie lo ha medido**.
+ *
+ * Se discrimina, por tanto, por lo que SÍ está medido: **la forma usa
+ * `<article>` si alguna página de su serie trae tarjetas** — que es el mismo par
+ * de ceros que `lh-paginas` ya separaba en su cabecera.
  */
 const usaArticle = new Map();
 for (const [serie, s] of Object.entries(SERIE.series ?? {}))
   usaArticle.set(clave(serie), (s.paginas ?? []).some((p) => (p.tarjetas ?? 0) > 0));
+
+/** `paginaDeVerdad` por serie: `true` ⇒ la frontera es la de `D2.5` (200 hasta
+ *  el 404); `false` ⇒ la de `D2.4` (200 para cualquier N, canonical a la 1.ª). */
+const paginaDeVerdad = new Map();
+for (const [r, v] of Object.entries(PAGINAS.paginas ?? {})) paginaDeVerdad.set(clave(r), v.paginaDeVerdad !== false);
+{
+  const huerfanas = [...usaArticle.keys()].filter((s) => !paginaDeVerdad.has(s));
+  if (huerfanas.length)
+    throw new Error(
+      `${huerfanas.length} serie(s) sin frontera medida en lh-paginas.json: ${huerfanas.slice(0, 6).join(" · ")}\n` +
+        `  Sin \`paginaDeVerdad\` no se puede separar D2.5 de D2.4, y meterlas en el cubo\n` +
+        `  de las vacías estiraría una decisión firmada a rutas que no cubre.`,
+    );
+}
 
 const UNIVERSO = [];
 for (const [serie, s] of Object.entries(SERIE.series ?? {}))
@@ -154,6 +192,11 @@ for (const [serie, s] of Object.entries(SERIE.series ?? {}))
       clase: pg.clase,
       vacia: pg.vacia,
       formaUsaArticle: usaArticle.get(clave(serie)) === true,
+      paginaDeVerdad: paginaDeVerdad.get(clave(serie)) === true,
+      /* Un `/page/N` de una serie que NO pagina **no es una ruta**: el servidor
+       * sirve el MISMO documento y su canonical apunta a la página 1. Se marca
+       * aquí porque el recuento de «páginas» se los traga sin decirlo. */
+      esFantasma: pg.n > 1 && paginaDeVerdad.get(clave(serie)) === false,
     });
 
 if (!UNIVERSO.length)
@@ -166,6 +209,28 @@ const conContenido = UNIVERSO.filter((p) => p.vacia !== true);
 const vacias = UNIVERSO.filter((p) => p.vacia === true && p.formaUsaArticle);
 const sinArticle = UNIVERSO.filter((p) => p.vacia === true && !p.formaUsaArticle);
 const NUEVAS = conContenido.filter((p) => !yaEnElEspejo.has(p.clave));
+
+/**
+ * ⚠ **EL REPARTO DE `vacia: true` POR FRONTERA — es lo que impide estirar una
+ * decisión firmada a rutas que no cubre.** `D2.5` está firmada **con 55
+ * delante**; los otros 10 tienen otra frontera medida, y «se parecen» no es un
+ * criterio (§la forma de lo que le pasó a `D4`: la medida era buena y **el
+ * denominador estaba mal formado**).
+ */
+const porFrontera = {
+  /* A · la frontera de D2.5: la serie pagina de verdad y esta página no lista. */
+  d25_vaciaEnSerieQuePagina: vacias.filter((p) => p.paginaDeVerdad),
+  /* Si esto no es 0, `vacias` está mezclando fronteras y el reparto miente. */
+  d25_vaciaEnSerieQueNOPagina: vacias.filter((p) => !p.paginaDeVerdad),
+  /* B · página 1 de una serie que no pagina: ruta ordinaria, canonical a sí
+   *     misma, y ninguna de las dos decisiones habla de ella. */
+  sinDecision_pagina1: sinArticle.filter((p) => p.n === 1),
+  /* C · `/page/N` de esas mismas: D2.4 — y no son «vacías», NO SON RUTAS. */
+  d24_fantasma: sinArticle.filter((p) => p.esFantasma),
+};
+/** ⚠ Y los fantasmas que se colaron DENTRO de `conContenido`: su `/page/2`
+ *  duplica las tarjetas de la 1.ª, así que el filtro por contenido no los ve. */
+const fantasmasEnConContenido = conContenido.filter((p) => p.esFantasma);
 
 /* ══════════════════════════════════════════════════════════════════════════
  * (2) LOS CANALES — sobre el HTML SERVIDO, y sobre el que NO lleva CSS dentro
@@ -352,11 +417,17 @@ const resumenCanal = (canal) => {
   }));
   const porFamilia = {};
   for (const f of filas) {
-    porFamilia[f.familia] ??= { distintas: 0, presentes: 0, faltan: 0, fueraDeAlcance: 0 };
+    /* ⚠ `enUnaSolaSerie` va **por familia** y no sólo por canal: el número del
+     * canal entero y el de `et-cache` coinciden hoy por casualidad —las 7 hojas
+     * que no son `et-cache` están todas compartidas— y citar uno por el otro es
+     * una afirmación que no se puede auditar. */
+    porFamilia[f.familia] ??= { distintas: 0, presentes: 0, faltan: 0, fueraDeAlcance: 0, enUnaSolaSerie: 0, enVariasSeries: 0 };
     porFamilia[f.familia].distintas++;
     if (f.presente === true) porFamilia[f.familia].presentes++;
     else if (f.presente === false) porFamilia[f.familia].faltan++;
     else porFamilia[f.familia].fueraDeAlcance++;
+    if (f.series === 1) porFamilia[f.familia].enUnaSolaSerie++;
+    else porFamilia[f.familia].enVariasSeries++;
   }
   /**
    * ⚠ **LA RELACIÓN, no sólo el recuento.** «40 hojas» es compatible con *una
@@ -390,6 +461,55 @@ const resumenCanal = (canal) => {
 
 const canales = Object.fromEntries(Object.keys(CANALES).map((c) => [c, resumenCanal(c)]));
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL REPARTO DE LO QUE FALTA — porque «falta» no es UNA cosa
+ *
+ * ⚠ **Capturar NO es colocar, y una lista que los mezcle pide al original
+ * ficheros que ya están en disco.** De lo que falta en `apps/web/public`:
+ *
+ *   · lo que ya está en `media-corpus/` ⇒ se COPIA (`cms:coloca-media`);
+ *   · una VARIANTE `-WxH` cuyo origen está ⇒ se REGENERA con `sharp` — decisión
+ *     ya tomada y medida (`qa:media-regenera`, 73/73), no se re-decide aquí;
+ *   · lo demás ⇒ se PIDE al original, y **colapsado a su ORIGEN**: pedir la
+ *     variante inflaría la campaña sin añadir un byte.
+ *
+ * La salida usa los mismos nombres que `media-siembra` (`faltan` ·
+ * `origenesACapturar`) para que las dos campañas la consuman **sin una segunda
+ * definición de «lo que falta»** (clase C7).
+ * ═════════════════════════════════════════════════════════════════════════ */
+const MEDIA_CORPUS = join(RAIZ, "media-corpus");
+const enMediaCorpus = new Set();
+(function barre(dir) {
+  if (!existsSync(dir)) return;
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) barre(p);
+    else if (e.isFile() && !e.name.endsWith(".json"))
+      enMediaCorpus.add(relative(MEDIA_CORPUS, p).split(sep).join("/").replace(/^(fase-3|datos)\//, ""));
+  }
+})(MEDIA_CORPUS);
+const enCorpusMedia = (rutaLocal) => enMediaCorpus.has(decodeURIComponent(rutaLocal).replace(/^\/images\/uploads\//, ""));
+
+const faltan = {};
+const reparto = { enMediaCorpus: [], variantesConOrigenEnCorpus: [], aPedir: [] };
+for (const canal of ["imagen", "ogImage"])
+  for (const [u, v] of CANALES[canal].urls) {
+    if (v.familia !== "uploads" || enPublico(u)) continue;
+    const r = aPublico(u);
+    (faltan[r] ??= { canales: [], colecciones: ["listados"], referencias: 0, url: u });
+    if (!faltan[r].canales.includes(canal)) faltan[r].canales.push(canal);
+    faltan[r].referencias += v.paginas.size;
+  }
+for (const r of Object.keys(faltan).sort()) {
+  const esVar = RE_VARIANTE.test(r);
+  if (!esVar && enCorpusMedia(r)) reparto.enMediaCorpus.push(r);
+  else if (esVar && enCorpusMedia(origenDe(r))) reparto.variantesConOrigenEnCorpus.push(r);
+  else reparto.aPedir.push(r);
+}
+/** Las variantes se COLAPSAN a su origen: `sharp` fabrica el resto. */
+const origenesACapturar = [...new Set(reparto.aPedir.map((r) => (RE_VARIANTE.test(r) ? origenDe(r) : r)))].sort();
+const sinRed = reparto.enMediaCorpus.length + reparto.variantesConOrigenEnCorpus.length;
+
 /* Sólo las de las 71 NUEVAS: es el número del encargo, y no es el mismo. */
 const clavesNuevas = new Set(NUEVAS.map((p) => p.clave));
 const soloDeLasNuevas = (canal) => {
@@ -410,9 +530,12 @@ const salida = {
       `el clon: no abre navegador ni servidor — 0 de las ${conContenido.length} páginas se renderiza aquí`,
       `si un asset presente es el CORRECTO: mira que exista, no que case (${canales.imagen.distintas} URL de imagen distintas)`,
       `las ${vacias.length} páginas VACÍAS de D2.5 (de ${UNIVERSO.length}): están en el universo de RUTAS y no en el del comparador, y sus canales NO entran en estos números`,
-      `las ${sinArticle.length} páginas de ${new Set(sinArticle.map((p) => p.serie)).size} series cuya FORMA no usa <article> ` +
-        `(${[...new Set(sinArticle.map((p) => p.serie))].join(" · ")}): su \`tarjetas: 0\` NO es «vacía», así que este universo las deja fuera ` +
-        `y ninguna de ellas está en el espejo — son hubs de D2.4 (canonical a la página 1) y su arquetipo lo miden otras sondas`,
+      `las ${porFrontera.sinDecision_pagina1.length} páginas 1 de series que NO paginan ` +
+        `(${porFrontera.sinDecision_pagina1.map((p) => p.serie).sort().join(" · ")}): son RUTAS ORDINARIAS y ` +
+        `NINGUNA decisión las cubre — D2.5 no se les aplica por parecido. Ficha: §F3-LH-VACIA-DOS-CAUSAS`,
+      `las ${porFrontera.d24_fantasma.length} \`/page/2\` de esas mismas series: D2.4 (canonical a la página 1) ⇒ el MISMO documento, no una ruta`,
+      `${fantasmasEnConContenido.length} fantasmas que sí entran en las ${conContenido.length} con contenido ` +
+        `(${fantasmasEnConContenido.map((p) => p.clave).sort().join(" · ") || "—"}): su /page/2 duplica las tarjetas de la 1.ª y el filtro por contenido no los ve`,
       `el eje de comportamiento: ${fueraDeAlcance.script.size} <script src> distintos en estas ${conContenido.length} páginas, cruzados contra 0 guardas — son unidad de qa:comportamiento, no de ésta`,
     ],
   },
@@ -425,9 +548,58 @@ const salida = {
     sinArticle: sinArticle.length,
     seriesSinArticle: [...new Set(sinArticle.map((p) => p.serie))].sort(),
     cuadraElUniverso: conContenido.length + vacias.length + sinArticle.length === UNIVERSO.length,
+    /**
+     * El reparto de `vacia: true` **por FRONTERA**, que es lo que decide qué
+     * decisión aplica. Cada grupo con su n y su autoridad.
+     */
+    vaciaPorFrontera: {
+      autoridad: `medidas/lh-paginas.json (${PAGINAS.meta?.fecha ?? "?"}) · campo paginaDeVerdad`,
+      A_d25_vaciaEnSerieQuePagina: {
+        n: porFrontera.d25_vaciaEnSerieQuePagina.length,
+        frontera: "200 hasta el 404 · canonical A SÍ MISMA · <title> «Página N de M»",
+        decision: "D2.5 (firmada) — y su denominador es ÉSTE",
+      },
+      B_sinDecision_pagina1DeSerieQueNoPagina: {
+        n: porFrontera.sinDecision_pagina1.length,
+        series: porFrontera.sinDecision_pagina1.map((p) => p.serie).sort(),
+        frontera: "ninguna de paginación: es la página 1, ruta ordinaria con canonical a sí misma",
+        decision: "NINGUNA — no se le aplica D2.5 por parecido (ficha propia)",
+      },
+      C_d24_fantasma: {
+        n: porFrontera.d24_fantasma.length,
+        frontera: "200 para CUALQUIER N hasta 64 · canonical A LA PÁGINA 1 ⇒ el mismo documento",
+        decision: "D2.4 — pero no son «vacías»: NO SON RUTAS",
+      },
+      /* Guarda: si esto no es 0, el cubo de las vacías mezcla dos fronteras. */
+      mezcla_vaciaEnSerieQueNoPagina: porFrontera.d25_vaciaEnSerieQueNOPagina.length,
+    },
+    /**
+     * ⚠ **Y el universo de 149 NO son 149 rutas.** `lh-serie` capturó el
+     * `/page/2` de las 7 series que no paginan; `lh-paginas` declara **142**
+     * rutas. La diferencia son **7 documentos que no son rutas distintas**, y
+     * **2 de ellos están DENTRO de `conContenido`** porque su `/page/2` duplica
+     * las tarjetas de la 1.ª (57 y 3) y el filtro por contenido no los ve.
+     */
+    fantasmas: {
+      total: UNIVERSO.filter((p) => p.esFantasma).length,
+      dentroDeConContenido: fantasmasEnConContenido.length,
+      cuales: fantasmasEnConContenido.map((p) => p.clave).sort(),
+      queSignifica: "documentos servidos con 200 cuyo canonical apunta a la página 1: el MISMO documento, no una ruta más",
+      rutasSegunLhPaginas: PAGINAS.meta?.total ?? null,
+    },
     yaEnElEspejo: yaEnElEspejo.size,
     /* El 71 del encargo, DERIVADO. Si sale otro número, manda éste. */
     nuevasParaElComparador: NUEVAS.length,
+    /**
+     * ⚠ **Y el universo que el comparador debe medir NO es `conContenido`.**
+     * Le sobran los DUPLICADOS: `/page/N` de series que no paginan, que el
+     * servidor sirve como el mismo documento (canonical a la 1.ª) y que el
+     * filtro por contenido no ve porque repiten sus tarjetas. Se publica aquí
+     * para que este número y el de `qa:lh-espejo` **sean el mismo antes** de que
+     * `qa:lh-alcance` prediga sobre ninguno de los dos.
+     */
+    universoDelComparador: conContenido.length - fantasmasEnConContenido.length,
+    nuevasSinDuplicados: NUEVAS.filter((p) => !p.esFantasma).length,
     factorSobreLoQueHoySeCompara: yaEnElEspejo.size ? +(conContenido.length / yaEnElEspejo.size).toFixed(1) : null,
     sinHtmlEnElCorpus: sinCorpus.length,
     rutasSinHtml: sinCorpus,
@@ -440,6 +612,21 @@ const salida = {
     script: { distintos: fueraDeAlcance.script.size, guarda: "ninguna aquí — qa:comportamiento", cruzados: 0 },
   },
   aportacionDeLasNuevas: Object.fromEntries(Object.keys(CANALES).map((c) => [c, soloDeLasNuevas(c)])),
+  /* Los nombres son los de `media-siembra` a propósito: las dos campañas
+   * (`cms:captura-f3-media --lista=` y `cms:coloca-media LISTA=`) los consumen
+   * sin una segunda definición de «lo que falta». */
+  campana: {
+    faltanEnPublico: Object.keys(faltan).length,
+    reparto: {
+      enMediaCorpus: reparto.enMediaCorpus.length,
+      variantesConOrigenEnCorpus: reparto.variantesConOrigenEnCorpus.length,
+      aPedir: reparto.aPedir.length,
+    },
+    seResuelvenSinRed: sinRed,
+    origenesDistintosACapturar: origenesACapturar.length,
+  },
+  faltan,
+  origenesACapturar,
   porPagina,
 };
 
@@ -448,8 +635,20 @@ console.log(
   `  páginas del original      ${UNIVERSO.length}   (${conContenido.length} con contenido · ${vacias.length} vacías D2.5 · ` +
     `${sinArticle.length} de formas SIN <article>)   ${salida.universo.cuadraElUniverso ? "✓ suman" : "⚠ NO SUMAN"}`,
 );
+const vf = salida.universo.vaciaPorFrontera;
+console.log(`  ── \`vacia: true\` = ${vacias.length + sinArticle.length}, y NO es una sola frontera (autoridad: ${vf.autoridad}) ──`);
+console.log(`    A · D2.5  vacía en serie que PAGINA        ${String(vf.A_d25_vaciaEnSerieQuePagina.n).padStart(3)}   ${vf.A_d25_vaciaEnSerieQuePagina.frontera}`);
+console.log(`    B · ——    página 1 de serie que NO pagina  ${String(vf.B_sinDecision_pagina1DeSerieQueNoPagina.n).padStart(3)}   SIN DECISIÓN — ${vf.B_sinDecision_pagina1DeSerieQueNoPagina.series.join(" · ")}`);
+console.log(`    C · D2.4  /page/N de esas mismas           ${String(vf.C_d24_fantasma.n).padStart(3)}   ${vf.C_d24_fantasma.frontera}`);
+if (vf.mezcla_vaciaEnSerieQueNoPagina) console.log(`    ⚠ ${vf.mezcla_vaciaEnSerieQueNoPagina} vacías en serie que NO pagina: el cubo mezcla fronteras`);
+console.log(`  fantasmas (no son rutas)  ${salida.universo.fantasmas.total}   de los que ${salida.universo.fantasmas.dentroDeConContenido} caen DENTRO de las ${conContenido.length} con contenido: ${salida.universo.fantasmas.cuales.join(" · ") || "—"}`);
+console.log(`  lh-paginas declara        ${salida.universo.fantasmas.rutasSegunLhPaginas} rutas   (149 documentos − 7 fantasmas)`);
 console.log(`  el comparador ya trae     ${yaEnElEspejo.size}`);
 console.log(`  ▸ NUEVAS para el dominio  ${NUEVAS.length}   ← el número del encargo, derivado`);
+console.log(
+  `  ▸ universo DEL COMPARADOR ${salida.universo.universoDelComparador}   = ${conContenido.length} − ${fantasmasEnConContenido.length} duplicados` +
+    `   ⇒ nuevas SIN duplicados ${salida.universo.nuevasSinDuplicados}`,
+);
 console.log(`  factor                    ×${salida.universo.factorSobreLoQueHoySeCompara}`);
 if (sinCorpus.length) console.log(`  ⚠ sin HTML en el corpus   ${sinCorpus.length}   ${sinCorpus.slice(0, 6).join(" · ")}`);
 console.log(`\n  ── por canal, con su guarda y sus ceros ──`);
@@ -457,9 +656,19 @@ for (const [nombre, c] of Object.entries(canales)) {
   console.log(`  ${nombre.padEnd(10)} ${String(c.apariciones).padStart(6)} apariciones · ${String(c.distintas).padStart(5)} distintas` +
     `  ⇒ presentes ${String(c.presentes).padStart(4)} · FALTAN ${String(c.faltan).padStart(4)} · fuera de alcance ${String(c.fueraDeAlcance).padStart(4)}   [${c.guarda}]`);
   for (const [f, v] of Object.entries(c.porFamilia))
-    console.log(`      ${f.padEnd(12)} distintas ${String(v.distintas).padStart(5)} · presentes ${String(v.presentes).padStart(4)} · faltan ${String(v.faltan).padStart(4)} · fuera ${String(v.fueraDeAlcance).padStart(4)}`);
+    console.log(
+      `      ${f.padEnd(12)} distintas ${String(v.distintas).padStart(5)} · presentes ${String(v.presentes).padStart(4)} · faltan ${String(v.faltan).padStart(4)} · fuera ${String(v.fueraDeAlcance).padStart(4)}` +
+        `   · en UNA serie ${String(v.enUnaSolaSerie).padStart(4)} · en varias ${String(v.enVariasSeries).padStart(4)}`,
+    );
   console.log(`      ↳ RELACIÓN  en UNA sola serie ${c.porSerie.enUnaSolaSerie} · en varias ${c.porSerie.enVariasSeries}   (reparto por nº de series: ${JSON.stringify(c.porSerie.reparto)})`);
 }
+console.log(`\n  ── el reparto de lo que falta, que NO es una sola cosa ──`);
+console.log(`  faltan en public       ${salida.campana.faltanEnPublico}`);
+console.log(`    ya en media-corpus   ${reparto.enMediaCorpus.length}   ⇒ se COPIA (cms:coloca-media)`);
+console.log(`    variante regenerable ${reparto.variantesConOrigenEnCorpus.length}   ⇒ se REGENERA con sharp (decisión medida: qa:media-regenera 73/73)`);
+console.log(`    A PEDIR al original  ${reparto.aPedir.length}   ⇒ ${origenesACapturar.length} ORÍGENES distintos (las variantes se colapsan)`);
+console.log(`  ⇒ sin red se resuelven ${sinRed} de ${salida.campana.faltanEnPublico}`);
+
 console.log(`\n  ── lo que aportan LAS NUEVAS (no es lo mismo que el total) ──`);
 for (const [n, v] of Object.entries(salida.aportacionDeLasNuevas))
   console.log(`  ${n.padEnd(10)} tocadas por ellas ${String(v.tocadasPorLasNuevas).padStart(5)} · EXCLUSIVAS suyas ${String(v.exclusivasDeLasNuevas).padStart(5)}`);
@@ -496,10 +705,11 @@ if (sinCorpus.length) {
   codigo = 2;
 }
 
-const faltan = Object.entries(canales).filter(([, c]) => c.faltan > 0);
-if (faltan.length) {
+const canalesConHueco = Object.entries(canales).filter(([, c]) => c.faltan > 0);
+if (canalesConHueco.length) {
   console.log(
-    `\n⛔ HUECO DECLARADO — ${faltan.map(([k, c]) => `${k}: ${c.faltan}`).join(" · ")}\n` +
+    `\n⛔ HUECO DECLARADO — ${canalesConHueco.map(([k, c]) => `${k}: ${c.faltan}`).join(" · ")}` +
+      `   ⇒ ${origenesACapturar.length} orígenes A PEDIR · ${sinRed} sin red\n` +
       `   Es el trabajo de la campaña de captura, no un fallo de esta sonda.\n` +
       `   ⚠ Y capturar NO es colocar: \`cms:coloca-media\` después (§la regla, al pie).`,
   );

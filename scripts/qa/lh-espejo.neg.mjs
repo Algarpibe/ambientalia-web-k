@@ -39,6 +39,19 @@ const casos = [
     exit: 1,
     salidaTiene: /ESPEJO INCOMPLETO/,
   },
+  {
+    /**
+     * ⚠ El sabotaje quita **la exclusión, no la detección**: la guarda recalcula
+     * los duplicados en vez de leer la marca, así que tiene algo que rechazar.
+     * Si leyera la marca, quitarla la dejaría ciega y el sabotaje saldría verde
+     * — §*documentado no es conectado* aplicado a una guarda.
+     */
+    etiqueta: "duplicado-sin-marcar",
+    porQue: "un /page/N que sirve el MISMO documento entra al universo ⇒ tira, en vez de inflar los pares y contar dos veces un Δ",
+    env: { SABOTAJE: "duplicado-sin-marcar" },
+    exit: 1,
+    salidaTiene: /DUPLICADOS EN EL UNIVERSO/,
+  },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · lh-espejo ════════`);

@@ -9,7 +9,9 @@
       "el clon: no abre navegador ni servidor — 0 de las 84 páginas se renderiza aquí",
       "si un asset presente es el CORRECTO: mira que exista, no que case (382 URL de imagen distintas)",
       "las 55 páginas VACÍAS de D2.5 (de 149): están en el universo de RUTAS y no en el del comparador, y sus canales NO entran en estos números",
-      "las 10 páginas de 5 series cuya FORMA no usa <article> (productos · recursos/documentos-cientificos · recursos/kunakpedia · recursos/preguntas-frecuentes · sectores): su `tarjetas: 0` NO es «vacía», así que este universo las deja fuera y ninguna de ellas está en el espejo — son hubs de D2.4 (canonical a la página 1) y su arquetipo lo miden otras sondas",
+      "las 5 páginas 1 de series que NO paginan (productos · recursos/documentos-cientificos · recursos/kunakpedia · recursos/preguntas-frecuentes · sectores): son RUTAS ORDINARIAS y NINGUNA decisión las cubre — D2.5 no se les aplica por parecido. Ficha: §F3-LH-VACIA-DOS-CAUSAS",
+      "las 5 `/page/2` de esas mismas series: D2.4 (canonical a la página 1) ⇒ el MISMO documento, no una ruta",
+      "2 fantasmas que sí entran en las 84 con contenido (casos-de-exito/page/2 · recursos/page/2): su /page/2 duplica las tarjetas de la 1.ª y el filtro por contenido no los ve",
       "el eje de comportamiento: 30 <script src> distintos en estas 84 páginas, cruzados contra 0 guardas — son unidad de qa:comportamiento, no de ésta"
     ]
   },
@@ -26,8 +28,46 @@
       "sectores"
     ],
     "cuadraElUniverso": true,
+    "vaciaPorFrontera": {
+      "autoridad": "medidas/lh-paginas.json (2026-07-31) · campo paginaDeVerdad",
+      "A_d25_vaciaEnSerieQuePagina": {
+        "n": 55,
+        "frontera": "200 hasta el 404 · canonical A SÍ MISMA · <title> «Página N de M»",
+        "decision": "D2.5 (firmada) — y su denominador es ÉSTE"
+      },
+      "B_sinDecision_pagina1DeSerieQueNoPagina": {
+        "n": 5,
+        "series": [
+          "productos",
+          "recursos/documentos-cientificos",
+          "recursos/kunakpedia",
+          "recursos/preguntas-frecuentes",
+          "sectores"
+        ],
+        "frontera": "ninguna de paginación: es la página 1, ruta ordinaria con canonical a sí misma",
+        "decision": "NINGUNA — no se le aplica D2.5 por parecido (ficha propia)"
+      },
+      "C_d24_fantasma": {
+        "n": 5,
+        "frontera": "200 para CUALQUIER N hasta 64 · canonical A LA PÁGINA 1 ⇒ el mismo documento",
+        "decision": "D2.4 — pero no son «vacías»: NO SON RUTAS"
+      },
+      "mezcla_vaciaEnSerieQueNoPagina": 0
+    },
+    "fantasmas": {
+      "total": 7,
+      "dentroDeConContenido": 2,
+      "cuales": [
+        "casos-de-exito/page/2",
+        "recursos/page/2"
+      ],
+      "queSignifica": "documentos servidos con 200 cuyo canonical apunta a la página 1: el MISMO documento, no una ruta más",
+      "rutasSegunLhPaginas": 142
+    },
     "yaEnElEspejo": 13,
     "nuevasParaElComparador": 71,
+    "universoDelComparador": 82,
+    "nuevasSinDuplicados": 69,
     "factorSobreLoQueHoySeCompara": 6.5,
     "sinHtmlEnElCorpus": 0,
     "rutasSinHtml": []
@@ -46,25 +86,33 @@
           "distintas": 4,
           "presentes": 4,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 0,
+          "enVariasSeries": 4
         },
         "et-cache": {
           "distintas": 40,
           "presentes": 40,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 32,
+          "enVariasSeries": 8
         },
         "tema": {
           "distintas": 1,
           "presentes": 1,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 0,
+          "enVariasSeries": 1
         },
         "wp-includes": {
           "distintas": 2,
           "presentes": 2,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 0,
+          "enVariasSeries": 2
         }
       },
       "porSerie": {
@@ -426,7 +474,9 @@
           "distintas": 382,
           "presentes": 382,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 49,
+          "enVariasSeries": 333
         }
       },
       "porSerie": {
@@ -457,7 +507,9 @@
           "distintas": 3,
           "presentes": 3,
           "faltan": 0,
-          "fueraDeAlcance": 0
+          "fueraDeAlcance": 0,
+          "enUnaSolaSerie": 3,
+          "enVariasSeries": 0
         }
       },
       "porSerie": {
@@ -491,6 +543,18 @@
       "exclusivasDeLasNuevas": 0
     }
   },
+  "campana": {
+    "faltanEnPublico": 0,
+    "reparto": {
+      "enMediaCorpus": 0,
+      "variantesConOrigenEnCorpus": 0,
+      "aPedir": 0
+    },
+    "seResuelvenSinRed": 0,
+    "origenesDistintosACapturar": 0
+  },
+  "faltan": {},
+  "origenesACapturar": [],
   "porPagina": {
     "blog": {
       "n": 1,

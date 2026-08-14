@@ -72,6 +72,13 @@ if (!existsSync(ESPEJO_F) || SABOTAJE === "sin-espejo")
       `  que se lee como «no hay nada que verificar» en vez de como «no miré» (§sondas 4bis).`,
   );
 const ESPEJO = JSON.parse(readFileSync(ESPEJO_F, "utf8"));
+/* §regla 6 · un espejo PARCIAL se rechaza: declararía un alcance de prueba con
+ * la misma cara que uno de campaña, que es justo lo que esta sonda evita. */
+if (ESPEJO.meta?.parcial)
+  throw new Error(
+    `ESPEJO PARCIAL: ${ESPEJO_NOMBRE} se midió con SOLO= y no contiene el universo.\n` +
+      `  El denominador que saldría de aquí sería el de una prueba, no el de la tanda.`,
+  );
 
 /**
  * ⚠ **Las formas EMITIDAS se derivan del `prerender-manifest`, y la primera

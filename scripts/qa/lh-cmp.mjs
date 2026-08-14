@@ -161,6 +161,13 @@ if (!existsSync(ESPEJO_F) || SABOTAJE === "sin-espejo")
       `  «0 pares con diferencia» — un verde de una sonda que no miró (§sondas 4bis).`,
   );
 const ESPEJO = JSON.parse(readFileSync(ESPEJO_F, "utf8"));
+/* §regla 6 · un espejo PARCIAL se rechaza, no se usa con una nota: comparar
+ * contra dos páginas daría un verde de casi nada, con el aspecto de siempre. */
+if (ESPEJO.meta?.parcial)
+  throw new Error(
+    `ESPEJO PARCIAL: ${ESPEJO_NOMBRE} se midió con SOLO= y no contiene el universo.\n` +
+      `  Un verde contra él sería un verde de las páginas que cupieron en una prueba.`,
+  );
 
 const { base: CLON, parar: pararClon } = await iniciarClon();
 gritaSiRevienta(pararClon);

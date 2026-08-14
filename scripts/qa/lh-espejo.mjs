@@ -75,7 +75,7 @@ const ANCHO = Number(process.argv.slice(2).find((a) => /^\d+$/.test(a)) || 1440)
 const MOVIL = ANCHO <= 500;
 const ORIGEN = "https://kunakair.com";
 
-const SABOTAJES = ["sin-serie", "pierde-el-espejo"];
+const SABOTAJES = ["sin-serie", "pierde-el-espejo", "duplicado-sin-marcar"];
 const SABOTAJE = process.env.SABOTAJE || null;
 if (SABOTAJE && !SABOTAJES.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" | ")})`);
@@ -96,6 +96,9 @@ const SERIE = SABOTAJE === "sin-serie" ? { series: {} } : lee("lh-serie.json", "
 const SPEC = lee(`lh-spec-${ANCHO}.json`, "es el espejo de FORMAS que este universo tiene que contener");
 const CENSO_LH = lee("lh-censo.json", "trae el `grupo` de cada serie, que es de donde sale la etiqueta");
 const HOVER = lee("hover-zonal.json", "trae las 9 formas canónicas con su ruta");
+/** La AUTORIDAD de la frontera del servidor: sin ella no se sabe qué `/page/N`
+ *  es una ruta y cuál es **el mismo documento** servido otra vez. */
+const PAGINAS_F = lee("lh-paginas.json", "es quien mide `paginaDeVerdad`, y sin él los duplicados entran como páginas");
 
 const clave = (r) => String(r).replace(/^\/es/, "").replace(/^\/+/, "").replace(/\/+$/, "") || "/";
 
@@ -140,9 +143,63 @@ for (const [serie, s] of Object.entries(SERIE.series ?? {})) {
     });
 }
 
-const vacias = TODAS.filter((p) => p.vacia === true);
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS DUPLICADOS — y por qué se marcan ANTES de que nadie prediga
+ *
+ * Las 7 series que `lh-paginas` declara `paginaDeVerdad: false` sirven **200
+ * para cualquier `/page/N`** con `<link rel=canonical>` **a la página 1**: o sea
+ * que su `/page/2` **no es una ruta**, es el MISMO documento otra vez.
+ *
+ * ⚠ **Y el filtro por contenido no puede verlos**, que es lo que los hace
+ * peligrosos: en `/casos-de-exito` y `/recursos` el `/page/2` trae **las mismas
+ * tarjetas** que la 1.ª (57 y 3), así que pasa por «página con contenido» y
+ * entra en el universo. Lo que produciría:
+ *
+ *   · **infla el recuento de pares sin añadir cobertura** — dos veces el mismo
+ *     documento no toca una clase más;
+ *   · y si ese documento tuviera un Δ, **el mismo defecto se cuenta dos veces**:
+ *     un pleno fabricado por el UNIVERSO y no por el clon, que es §*un patrón
+ *     que casa en TODAS tampoco mide nada* con el instrumento cambiado.
+ *
+ * Se marcan, se cuentan y **se sacan del conjunto medido**; su número se publica
+ * en `meta` y en `duplicados`. La guarda de abajo **los recalcula** en vez de
+ * fiarse de la marca — si se fiara, el sabotaje que quita la marca la dejaría
+ * ciega, que es la trampa de §*documentado no es conectado*.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const paginaDeVerdad = new Map();
+for (const [r, v] of Object.entries(PAGINAS_F.paginas ?? {})) paginaDeVerdad.set(clave(r), v.paginaDeVerdad !== false);
+const esDuplicado = (p) => p.n > 1 && paginaDeVerdad.get(p.serie) === false;
+
+/**
+ * ⚠ **`vacia: true` NO es todo `D2.5`, y llamarlo así estira una decisión
+ * firmada a rutas que no cubre** (§F3-LH-VACIA-DOS-CAUSAS). Se separa igual que
+ * en `qa:lh-canales`, con la misma autoridad: la serie usa `<article>` si alguna
+ * de sus páginas trae tarjetas.
+ */
+const usaArticle = new Map();
+for (const [serie, s] of Object.entries(SERIE.series ?? {}))
+  usaArticle.set(clave(serie), (s.paginas ?? []).some((p) => (p.tarjetas ?? 0) > 0));
+
+const vacias = TODAS.filter((p) => p.vacia === true && usaArticle.get(p.serie) === true);
+const sinArticle = TODAS.filter((p) => p.vacia === true && usaArticle.get(p.serie) !== true);
+const DUPLICADOS = TODAS.filter(esDuplicado);
 let PAGINAS = TODAS.filter((p) => p.vacia !== true);
+/* El sabotaje NO toca la detección, sólo la EXCLUSIÓN: así la guarda de abajo
+ * —que recalcula— tiene algo que rechazar y el negativo prueba la guarda. */
+if (SABOTAJE !== "duplicado-sin-marcar") PAGINAS = PAGINAS.filter((p) => !esDuplicado(p));
 if (SOLO.length) PAGINAS = PAGINAS.filter((p) => SOLO.includes(p.serie) || SOLO.includes(p.clave));
+
+/* ⚠ Recalculada, no leída de la marca: un espejo con duplicados dentro TIRA. */
+{
+  const colados = PAGINAS.filter(esDuplicado);
+  if (colados.length)
+    throw new Error(
+      `DUPLICADOS EN EL UNIVERSO: ${colados.length} página(s) que el servidor sirve como el MISMO documento que su página 1.\n` +
+        colados.map((p) => `    · ${p.clave}  (canonical → ${p.serie})`).join("\n") +
+        `\n  Entrarían inflando el recuento de pares sin añadir cobertura, y un Δ suyo se\n` +
+        `  contaría DOS VECES: un pleno fabricado por el universo, no por el clon.`,
+    );
+}
 
 if (!PAGINAS.length)
   throw new Error(
@@ -187,10 +244,19 @@ const salida = {
       (MOVIL ? "Emulation.setDeviceMetricsOverride 390×844" : "viewport 1440×900") +
       " · scroll+settle · lazy→eager · 400 ms entre páginas",
     ruido: "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño medido contra este espejo es SIN PROBAR, no «limpio»",
-    contiene: `las ${Object.keys(SPEC.paginas ?? {}).length} páginas de lh-spec-${ANCHO}.json — comprobado antes de medir`,
+    contiene: SOLO.length
+      ? `⚠ CORRIDA PARCIAL (SOLO=${SOLO.join(",")}): NO contiene el espejo de formas y NO sirve como lado original`
+      : `las ${Object.keys(SPEC.paginas ?? {}).length} páginas de lh-spec-${ANCHO}.json — comprobado antes de medir`,
+    parcial: SOLO.length > 0,
+    /* Los duplicados, con su número, ANTES de que nadie prediga sobre esto. */
+    duplicadosExcluidos: DUPLICADOS.length,
     noMide: [
       `el clon: esta sonda mide UN lado — las ${PAGINAS.length} páginas se abren sólo en el original`,
       `las ${vacias.length} páginas VACÍAS de D2.5 (de ${TODAS.length}): existen como ruta y no listan nada, así que no entran en el universo del comparador`,
+      `las ${sinArticle.length} de series cuya forma no usa <article> (${[...new Set(sinArticle.map((p) => p.serie))].sort().join(" · ")}): ` +
+        `NO son «vacías de D2.5» — 5 son páginas 1 SIN DECISIÓN y 5 son duplicados de D2.4 (§F3-LH-VACIA-DOS-CAUSAS)`,
+      `los ${DUPLICADOS.length} \`/page/N\` de series que NO paginan: el servidor sirve el MISMO documento (canonical a la 1.ª), ` +
+        `y ${DUPLICADOS.filter((p) => p.vacia !== true).length} de ellos PASABAN el filtro por contenido porque repiten sus tarjetas — excluidos y nombrados en \`duplicados\``,
       `la varianza entre instancias de una forma: eso es qa:lh-spec, y son sus ${Object.keys(SPEC.paginas ?? {}).length} páginas, no éstas`,
       `la forma de ${TODAS.filter((p) => !p.formaEstablecida && p.vacia !== true).length} páginas de ${PAGINAS.length}: su serie es \`hub\` y ninguna medición la ha nombrado — salen como \`hub:<slug>\` con formaEstablecida:false`,
       "anchos intermedios: el contrato ahí es de RANGO, no de fidelidad (§CONTRATO)",
@@ -200,10 +266,26 @@ const salida = {
   /* Los rótulos (serie · n · posición · clase de lh-serie) van FUERA de
    * `paginas` a propósito — ver el comentario del bucle. */
   rotulos: {},
+  /** Nombrados uno a uno: un recuento no dice CUÁLES, y §el cardinal absorbe la
+   *  membresía. Los que pasaban el filtro por contenido van marcados aparte. */
+  duplicados: {
+    n: DUPLICADOS.length,
+    porQue: "el servidor sirve 200 para cualquier /page/N con canonical A LA PÁGINA 1: el mismo documento, no una ruta",
+    autoridad: `medidas/lh-paginas.json (${PAGINAS_F.meta?.fecha ?? "?"}) · paginaDeVerdad === false`,
+    queHabrianHecho: "inflar los pares sin añadir cobertura, y contar DOS VECES un mismo Δ",
+    colabanPorContenido: DUPLICADOS.filter((p) => p.vacia !== true).map((p) => p.clave).sort(),
+    todos: DUPLICADOS.map((p) => ({ clave: p.clave, canonicalA: p.serie, pasabaElFiltroDeContenido: p.vacia !== true })).sort((a, b) => a.clave.localeCompare(b.clave)),
+  },
 };
 
 console.log(`\n════════ LISTADOS · ESPEJO EN LA UNIDAD PÁGINA @${ANCHO} ════════`);
-console.log(`  población            ${TODAS.length} páginas (${vacias.length} vacías D2.5, fuera del universo)`);
+console.log(
+  `  población            ${TODAS.length} documentos   (${vacias.length} vacías D2.5 · ${sinArticle.length} de formas SIN <article>, que NO son D2.5 — §F3-LH-VACIA-DOS-CAUSAS)`,
+);
+console.log(
+  `  DUPLICADOS excluidos ${DUPLICADOS.length}   (${DUPLICADOS.filter((p) => p.vacia !== true).length} pasaban el filtro por contenido: ` +
+    `${salida.duplicados.colabanPorContenido.join(" · ") || "—"})`,
+);
 console.log(`  A MEDIR              ${PAGINAS.length}${SOLO.length ? `   ⚠ recortado por SOLO=${SOLO.join(",")}` : ""}`);
 console.log(`  lh-spec trae         ${Object.keys(SPEC.paginas ?? {}).length}   ⇒ factor ×${(PAGINAS.length / Object.keys(SPEC.paginas ?? {}).length).toFixed(1)}`);
 console.log(`  forma NO establecida ${PAGINAS.filter((p) => !p.formaEstablecida).length} páginas\n`);
@@ -273,6 +355,13 @@ console.log(`  clases tocadas       ${salida.resumen.clasesTocadas}`);
 console.log(`  pieles de paginador  ${salida.resumen.pielesDePaginador.join(" · ")}`);
 
 const muertos = censo.informe();
-w(`medidas/lh-espejo-${ANCHO}.json`, salida);
+/**
+ * ⚠ **UNA CORRIDA PARCIAL NO PUEDE ESCRIBIR EL NOMBRE DE LA COMPLETA.**
+ * `SOLO=` existe para probar el instrumento con dos páginas antes de gastar una
+ * campaña; si esa corrida pisara `lh-espejo-<ancho>.json`, el comparador
+ * heredaría un universo de dos páginas y **saldría verde comparando casi nada**
+ * — el modo de fallo de esta familia entera, esta vez fabricado por comodidad.
+ */
+w(`medidas/lh-espejo-${ANCHO}${SOLO.length ? "-parcial" : ""}.json`, salida);
 const codigo = ev.informe() + (muertos ? 1 : 0);
 process.exit(codigo === 0 ? 0 : 1);

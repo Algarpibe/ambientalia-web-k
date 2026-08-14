@@ -1,5 +1,229 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-LH-VACIA-DOS-CAUSAS · 10 DOCUMENTOS QUE SE VENÍAN CONTANDO COMO «VACÍOS» NO COMPARTEN LA FRONTERA DE `D2.5` (2026-08-14, 71.ª tanda — NADA DECIDIDO)
+
+**Qué se decide aquí: nada.** Se nombra la causa, se escribe el reparto y se
+deja para tanda de decisión. Derivado contra `medidas/lh-canales.json`
+§`universo.vaciaPorFrontera` y `medidas/lh-paginas.json` §`paginaDeVerdad`.
+
+**El reparto de `vacia: true`, por FRONTERA y no por parecido:**
+
+| grupo | n | frontera medida | decisión |
+|---|---|---|---|
+| **A** | **55** | 200 sin contenido **hasta el 404** · canonical **a sí misma** · `<title>` «Página N de M» | **`D2.5`** — firmada con 55 delante, y **su denominador sigue siendo 55** |
+| **B** | **5** | es la **página 1**: ruta ordinaria, canonical a sí misma. No hay frontera de paginación que aplicar | **⛔ NINGUNA** |
+| **C** | **5** | 200 para **cualquier N hasta 64** · canonical **a la página 1** ⇒ el mismo documento | **`D2.4`** — que dice *no se replican*; y no son «vacías», **no son rutas** |
+
+`149 = 84 + 55 + 10`, con la suma comprobada por el negativo de `qa:lh-canales`.
+
+### Lo que hay que decidir, y por qué no cabe aquí
+
+**Las 5 del grupo B son `/es/productos/` · `/es/sectores/` ·
+`/es/recursos/kunakpedia/` · `/es/recursos/documentos-cientificos/` ·
+`/es/recursos/preguntas-frecuentes/`.** Son rutas reales del original, del grupo
+`hub` del censo, y **ninguna de las dos decisiones de paginación habla de
+ellas**: `D2.5` es sobre páginas vacías de una serie que pagina, y `D2.4` es
+sobre `/page/N` de series que no paginan. La página 1 no es ni una cosa ni la
+otra.
+
+> **No se les aplica `D2.5` por parecido.** Es la forma exacta de lo que le pasó
+> a `D4`: *la medida no estaba mal — su denominador estaba mal formado*. Corregir
+> el denominador a 65 «con la causa nombrada» sería correcto **sólo si la causa
+> fuera la misma**, y está medido que no lo es.
+
+### El ARQUETIPO de las 5, medido — y el `L4-hub` de `lh-barra` NO es evidencia
+
+**`lh-barra.json` sí las llama `L4-hub`, y hay que mirar de dónde saca la
+etiqueta.** Su `familiaDe()` es **una expresión regular sobre la RUTA**, con
+`/^\/recursos(\/page)?(\/|$)/` **de rama recogelotodo**. O sea que «L4-hub» ahí
+es un cubo por camino, no un arquetipo medido — y **acierta 3 de 5**: deja
+`/productos` y `/sectores` en `otra`.
+
+**El discriminador SERVIDO sí existe y parte limpio, 6/6 contra 6/6** — leído en
+el `<body class>` del corpus congelado, que es el canal donde este proyecto ya
+ha resuelto esta misma pregunta dos veces:
+
+| ruta | `<body class>` (lo que decide) | régimen |
+|---|---|---|
+| `/recursos` | `page page-id-33166 page-parent · et_pb_pagebuilder_layout` | **builder** |
+| `/recursos/kunakpedia` | `page page-id-33769 page-child · et_pb_pagebuilder_layout` | **builder** |
+| `/recursos/documentos-cientificos` | `page page-id-61902 page-child · et_pb_pagebuilder_layout` | **builder** |
+| `/recursos/preguntas-frecuentes` | `page page-id-65877 page-child · et_pb_pagebuilder_layout` | **builder** |
+| `/productos` | `page page-id-26358 · et_pb_pagebuilder_layout` | **builder** |
+| `/sectores` | `page page-id-24963 page-parent · et_pb_pagebuilder_layout` | **builder** |
+| `/blog` | `blog · et-tb-has-body` | plantillado |
+| `/recursos/articulos` | `archive tax-resources term-articulos · et-tb-has-body` | plantillado |
+| `/recursos/seminarios-web` | `archive tax-resources term-seminarios-web · et-tb-has-body` | plantillado |
+| `/glosario` | `archive post-type-archive-glossary` | plantillado |
+| `/scientific-category/articulos-tecnicos` | `archive tax-scientific-category` | plantillado |
+| `/casos-de-exito` | `page-template-case-studies-php` | plantilla PHP |
+
+> **Las 5 comparten el RÉGIMEN de `/recursos`** —página propia de builder, sin
+> `et-tb-has-body`—, y `/recursos` es exactamente **la 1 AUSENTE del objetivo
+> `13 · 1 · 12`**, la que ya está declarada como **`L4` = F3-3**.
+>
+> ⚠ **Y hasta ahí llega lo medido: mismo RÉGIMEN no es misma FORMA.** Que
+> `/productos` sea una página de builder no dice que sea `L4-listado-embebido`;
+> `/productos` y `/sectores` son índices de arquetipos que este repo ya clona por
+> otras rutas. Afirmar la forma exige medirla, y **nadie la ha medido**.
+
+**Efecto sobre el objetivo, con su número:** **`13 · 1 · 12` no se mueve.** Las 5
+**no están entre las 13 formas del espejo**, así que no entraban en el
+denominador ni antes ni ahora. Lo que cambia es **por qué están fuera**: no son
+«vacías» de F3-2 sino **páginas de builder, la familia de la ausente**, o sea
+**material de F3-3**. No son deuda de esta fase.
+
+Dato que lo acompaña: **el clon no emite ninguna de las 6** (`/accesorios`, el
+CATÁLOGO, sí — por otra ruta).
+
+**Lo que la decisión tendrá que contestar** (y que esta tanda deja escrito para
+que no se re-descubra):
+
+1. **¿qué FORMA es cada una de las 5?** El régimen está medido; la forma no. Su
+   `tarjetas` es **0 con los dos instrumentos que existen** —`lh-serie` por
+   `<article>` y `lh-censo` con las dos familias—, lo que **no** prueba que no
+   listen nada: prueba que **ningún canal mirado les encuentra listado**;
+2. **¿entran en F3-3 con `/recursos` o son índices de otros arquetipos?**
+   `/productos` y `/sectores` son los casos que el régimen no separa;
+3. **el `/page/2` de las 5 (grupo C) sólo necesita confirmar que `D2.4` las
+   cubre**, que es lo que dice su canonical 5/5. No hay hueco ahí — hay un
+   recuento mal repartido, y queda repartido.
+
+### El daño que evita, con su número
+
+Mientras las 10 vivían dentro de «las vacías», el denominador citable de `D2.5`
+oscilaba entre **55** y **65** según qué sonda lo derivara, **sin que nada lo
+dijera**. Hoy las dos lecturas están nombradas con su frontera y `qa:lh-canales`
+falla si el cubo las mezcla (`mezcla_vaciaEnSerieQueNoPagina ≠ 0`).
+
+## ✅ F3-LH-CANALES-DEL-ENSANCHE · EL INVENTARIO DE LAS 71 PÁGINAS, Y DOS PREMISAS QUE ERAN FALSAS (2026-08-14, 71.ª tanda)
+
+**Antes de capturar nada se derivó el inventario de canales de las páginas que
+el comparador no mira** (§EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL
+ESQUEMA DECLARA). Instrumento: **`npm run qa:lh-canales`** (nueva, negativo
+**5/5**), congelado en `medidas/lh-canales.json`. Cruza con `qa:lh-alcance` sin
+tocarlo: **84 con contenido · 13 en el espejo · 71 nuevas · ×6.5**.
+
+| canal | apariciones | distintas | presentes | FALTAN | guarda |
+|---|---|---|---|---|---|
+| hoja (`<link>`) | 1008 | 47 | 47 | **0** | `corpus/css` |
+| imagen (`src` + `srcset`) | 1714 | 381 | 252 | **129** | `apps/web/public` |
+| `og:image` | 12 | 3 | 1 | **2** | `apps/web/public` |
+
+Fuera de alcance **con su cardinal**, que es lo que lo distingue de un cero:
+**30 `<script src>` distintos, cruzados contra 0 guardas** — son unidad de
+`qa:comportamiento`.
+
+### ⚠ Premisa falsa 1: la `et-cache` NO es por ruta paginada, es por POST
+
+El encargo —y la cabecera de `cms:captura-css`— decían *«Divi compila una hoja
+`et-cache` por página, así que 71 páginas nuevas traen sus hojas»*. Medido:
+
+| | n |
+|---|---|
+| `et-cache` distintas en las 84 páginas | **40** |
+| …usadas por **una sola serie** | **32** |
+| …compartidas por varias | **8** (2 · 5 · 12 · 28 · 29 series) |
+| hojas que las 71 nuevas había que capturar | **0** |
+
+`et-core-unified-cpt-27481.min.css` cubre **las 8 páginas** de su serie. *«Una
+hoja por página»* es cierto con **página = entrada de WordPress** y se lee como
+**ruta**; la lectura equivocada infla la campaña ×2. La campaña del 2026-08-13
+(`--dir=corpus/fase-3/listados`, 149 HTML, 0 fallos) ya las traía todas.
+
+> **Lo cazó el NEGATIVO de la sonda nueva, no la lectura.** Su control exigía
+> `et-cache ≥ 0.5 × páginas` y salió rojo con razón (§sondas 1). Corregido en
+> las dos direcciones: la sonda publica ahora **la RELACIÓN** —cuántas hojas usa
+> una sola serie frente a cuántas comparten varias—, porque **«40 hojas» es
+> compatible con *una por ruta* y con *una por post*, y las dos campañas que
+> salen de ahí difieren en el doble**; y el control exige la relación en vez de
+> la premisa. La congelada del instrumento defectuoso queda nombrada como tal:
+> `lh-canales-SONDA-SIN-LA-RELACION.json` (§sondas 7).
+
+### ⚠ Premisa falsa 2: `vacia: true` tenía DOS causas, y NO son la misma frontera
+
+| lectura | vacías | denominador |
+|---|---|---|
+| el campo `vacia` por página | **65** | 149 |
+| el resumen del propio `lh-serie` | **55** | 139 |
+
+Las dos son ciertas, y la diferencia **no es un matiz del denominador de
+`D2.5`**. Dirimido contra `medidas/lh-paginas.json` §`paginaDeVerdad` —la
+autoridad de la frontera del servidor—, **no por parecido**:
+
+| grupo | n | lo que mide `lh-paginas` | decisión |
+|---|---|---|---|
+| **A** vacía en serie que **pagina de verdad** | **55** | `paginaDeVerdad: true` · 200 hasta el **404** · canonical **a sí misma** · `<title>` «Página N de M» | **`D2.5`**, firmada — y su denominador **es 55** |
+| **B** **página 1** de 5 series que no paginan | **5** | `paginaDeVerdad: false`, pero es la 1.ª: **ruta ordinaria**, canonical a sí misma | **NINGUNA** |
+| **C** el `/page/2` de esas 5 | **5** | 200 para **cualquier N hasta 64** · canonical **a la página 1** (5/5) | **`D2.4`** — y no son «vacías»: **no son rutas** |
+
+> **`D2.5` NO se estira a 65.** Su frontera es *«200 sin contenido hasta que
+> aparece el 404»*; la de B y C es *«el servidor ignora `/page/N`»*, que es la de
+> `D2.4` y dice lo contrario (no se replican). Estirar el denominador por
+> parecido es exactamente lo que le pasó a `D4` —**la medida no estaba mal: el
+> denominador estaba mal formado**— y se paga cuando alguien cite «las 55» dentro
+> de tres tandas.
+
+**Las 5 del grupo B son rutas SIN DECISIÓN**: `/productos` · `/sectores` ·
+`/recursos/kunakpedia` · `/recursos/documentos-cientificos` ·
+`/recursos/preguntas-frecuentes`. **No se decide aquí** — ficha propia abajo.
+
+> ⚠ **Y lo que NO se puede afirmar de ellas, con la lista de canales que se
+> miraron.** La primera redacción de esta ficha decía que su `tarjetas: 0` *«no
+> significa que la página no liste nada, sino que esa forma no se lista con
+> `<article>`»*. **No está respaldado**: `lh-serie` cuenta por `<article>` y da
+> 0, y `lh-censo` cuenta con **las dos familias** —módulo de Divi y loop del
+> tema— y **también da 0 en las 5**. Con esos dos canales mirados, lo sostenible
+> es *«ninguno de los dos instrumentos les encuentra listado»*. Si listan por un
+> tercer mecanismo, **nadie lo ha medido**.
+
+### ⚠ Y un tercero que el recuento se tragaba: 149 documentos NO son 149 rutas — MARCADO EN EL ESPEJO
+
+`lh-serie` capturó el `/page/2` de **las 7 series que no paginan**; `lh-paginas`
+declara **142 rutas**. La diferencia son **7 documentos que no son rutas
+distintas** (canonical a la página 1: el mismo documento servido dos veces).
+
+**Y 2 de esos 7 están DENTRO de las 84 «con contenido»** —
+`casos-de-exito/page/2` y `recursos/page/2` —, porque su `/page/2` **duplica las
+tarjetas de la 1.ª** (57 y 3) y el filtro por contenido no puede verlos.
+
+**Qué habrían hecho si entran sin marcar, que es por lo que se marcan ANTES de
+que `qa:lh-alcance` prediga:**
+
+1. **inflan el recuento de pares sin añadir cobertura** — dos veces el mismo
+   documento no toca una clase más;
+2. y si ese documento tuviera un Δ, **el mismo defecto se cuenta dos veces**: un
+   pleno fabricado **por el universo y no por el clon**, que es §*un patrón que
+   casa en TODAS tampoco mide nada* con el instrumento cambiado.
+
+**Marcados, contados y excluidos del conjunto medido**, con los números
+publicados a los dos lados **antes** de predecir nada:
+
+| | n |
+|---|---|
+| documentos de `lh-serie` | **149** |
+| duplicados (`/page/N` con canonical a la 1.ª) | **7** |
+| rutas de `lh-paginas` | **142** = 149 − 7 |
+| «con contenido» | **84** |
+| …de ellos, duplicados que el filtro no veía | **2** (`casos-de-exito/page/2` · `recursos/page/2`) |
+| **universo del comparador** | **82** |
+| **nuevas para el dominio, sin duplicados** | **69** (era 71) |
+
+`qa:lh-espejo` §`duplicados` los nombra uno a uno y **la guarda los RECALCULA en
+vez de leer la marca**: si leyera la marca, quitarla la dejaría ciega
+(§*documentado no es conectado* aplicado a una guarda). Su negativo lo cubre con
+el sabotaje `duplicado-sin-marcar`, que **quita la exclusión y no la
+detección** — un espejo con duplicados dentro sale **rojo**. Y
+`qa:lh-canales` publica `universoDelComparador` y `nuevasSinDuplicados` para que
+los dos instrumentos no predigan sobre conjuntos distintos.
+
+### El reparto de lo que falta, porque «falta» no es una sola cosa
+
+`capturar` ≠ `colocar`, y la lista lo separa con los mismos nombres que
+`media-siembra` para que las dos campañas la consuman sin una segunda definición
+de «lo que falta» (clase C7): `faltan` · `origenesACapturar`, con el reparto
+`enMediaCorpus` / `variantesConOrigenEnCorpus` / `aPedir`.
+
 ## ⛔ F3-LH-ALCANCE-PAGINA-1 · `qa:lh-cmp` COMPARA 13 PÁGINAS DE 149, Y TODAS SON LA PÁGINA 1 (2026-08-14, 70.ª tanda — PARADA DE ALCANCE, nada construido)
 
 **Qué se decidió aquí: nada de código. Se declara el alcance del comparador con

@@ -54,6 +54,34 @@ const casos = [
         return `las poblaciones no suman: ${u.conContenido} + ${u.vacias} + ${u.sinArticle} ≠ ${u.paginas}`;
       if (!(u.sinArticle > 0) || !u.seriesSinArticle?.length)
         return "no separa las formas SIN <article> de las páginas vacías: son dos causas del mismo cero y `lh-serie` ya las separaba (55/139 contra 65/149)";
+      /**
+       * ⚠ Y las dos causas tienen que estar separadas **POR FRONTERA**, que es
+       * lo que decide qué DECISIÓN aplica. Sin esto, «las 55» y «los 10» son un
+       * reparto por parecido, y la próxima tanda estira `D2.5` a 65.
+       */
+      const vf = u.vaciaPorFrontera;
+      if (!vf?.autoridad) return "el reparto de `vacia` no cita la AUTORIDAD de la frontera (paginaDeVerdad de lh-paginas)";
+      if (vf.mezcla_vaciaEnSerieQueNoPagina !== 0)
+        return `${vf.mezcla_vaciaEnSerieQueNoPagina} vacías caen en una serie que NO pagina: el cubo de D2.5 mezcla dos fronteras`;
+      if (vf.A_d25_vaciaEnSerieQuePagina.n !== u.vacias)
+        return `las vacías (${u.vacias}) y las de la frontera D2.5 (${vf.A_d25_vaciaEnSerieQuePagina.n}) no son el mismo conjunto`;
+      if (vf.B_sinDecision_pagina1DeSerieQueNoPagina.n + vf.C_d24_fantasma.n !== u.sinArticle)
+        return `los grupos B+C (${vf.B_sinDecision_pagina1DeSerieQueNoPagina.n}+${vf.C_d24_fantasma.n}) no suman los ${u.sinArticle} sin <article>`;
+      if (!vf.B_sinDecision_pagina1DeSerieQueNoPagina.decision?.startsWith("NINGUNA"))
+        return "el grupo B declara una decisión: si D2.5 o D2.4 lo cubrieran, habría que enseñarlo, no suponerlo";
+      /* Y los fantasmas: un `/page/N` cuyo canonical va a la 1.ª no es una ruta,
+       * y contarlo como página infla el universo sin que nada lo diga. */
+      if (!u.fantasmas || typeof u.fantasmas.dentroDeConContenido !== "number")
+        return "no publica los FANTASMAS: un /page/N con canonical a la página 1 no es una ruta y el recuento se lo traga";
+      if (u.paginas - u.fantasmas.total !== u.fantasmas.rutasSegunLhPaginas)
+        return `documentos (${u.paginas}) − fantasmas (${u.fantasmas.total}) ≠ rutas de lh-paginas (${u.fantasmas.rutasSegunLhPaginas})`;
+      /* El universo que el comparador debe medir NO es `conContenido`: le sobran
+       * los duplicados, y este número tiene que existir ANTES de que lh-alcance
+       * prediga — si no, los dos instrumentos predicen sobre conjuntos distintos. */
+      if (u.universoDelComparador !== u.conContenido - u.fantasmas.dentroDeConContenido)
+        return `universoDelComparador (${u.universoDelComparador}) ≠ conContenido − duplicados (${u.conContenido} − ${u.fantasmas.dentroDeConContenido})`;
+      if (u.nuevasSinDuplicados !== u.nuevasParaElComparador - u.fantasmas.dentroDeConContenido)
+        return `nuevasSinDuplicados (${u.nuevasSinDuplicados}) no descuenta los ${u.fantasmas.dentroDeConContenido} duplicados de las ${u.nuevasParaElComparador} nuevas`;
       const c = j.canales ?? {};
       for (const k of ["hoja", "imagen", "ogImage"]) {
         if (!c[k]) return `falta el canal '${k}' de la tabla: un canal que no se nombra es la próxima sorpresa`;
@@ -79,6 +107,14 @@ const casos = [
         return "ninguna hoja es exclusiva de una serie: la enumeración está mirando el cascarón, no el documento";
       if (!(c.hoja.porSerie.enVariasSeries > 0))
         return "ninguna hoja se comparte: el reparto no puede ser todo propio, y si lo es la lectura del canal cambia";
+      /* Y la relación POR FAMILIA, no sólo por canal: el número del canal entero
+       * y el de `et-cache` coinciden hoy por casualidad, y citar uno por el otro
+       * no se puede auditar. */
+      const et = c.hoja.porFamilia["et-cache"];
+      if (typeof et.enUnaSolaSerie !== "number" || typeof et.enVariasSeries !== "number")
+        return "la familia `et-cache` no publica su propia relación: la del canal entero no es la suya";
+      if (et.enUnaSolaSerie + et.enVariasSeries !== et.distintas)
+        return `la relación de \`et-cache\` no suma: ${et.enUnaSolaSerie} + ${et.enVariasSeries} ≠ ${et.distintas}`;
       if (!Array.isArray(c.hoja.filas) || c.hoja.filas.length !== c.hoja.distintas)
         return `el canal \`hoja\` no congela sus ${c.hoja.distintas} filas con nombre: un recuento sin nombres no se puede auditar`;
       /* Y la aportación de las nuevas se declara aparte: el total y lo que ellas
