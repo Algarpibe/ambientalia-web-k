@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-14",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
     "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
@@ -21,13 +21,25 @@
     "documentos": 14,
     "cuerposComparados": 14,
     "poblacion": 209,
-    "discrepancias": 25,
+    "discrepancias": 31,
     "detalle": [
       {
         "slug": "contaminacion-por-metano",
         "campo": "titulo",
         "leido": null,
         "esperado": "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones",
+        "clases": [
+          "valor"
+        ]
+      },
+      {
+        "slug": "contaminacion-por-metano",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "industria-y-contaminacion-por-olores",
+          "nombre": "Industria y contaminación por olores"
+        },
         "clases": [
           "valor"
         ]
@@ -51,10 +63,34 @@
         ]
       },
       {
+        "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "contaminacion-urbana",
+          "nombre": "Contaminación urbana"
+        },
+        "clases": [
+          "valor"
+        ]
+      },
+      {
         "slug": "contador-particulas-suspension-movilidad-sostenible",
         "campo": "titulo",
         "leido": null,
         "esperado": "¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?",
+        "clases": [
+          "valor"
+        ]
+      },
+      {
+        "slug": "contador-particulas-suspension-movilidad-sostenible",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "contaminacion-urbana",
+          "nombre": "Contaminación urbana"
+        },
         "clases": [
           "valor"
         ]
@@ -69,6 +105,18 @@
         ]
       },
       {
+        "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "contaminacion-urbana",
+          "nombre": "Contaminación urbana"
+        },
+        "clases": [
+          "valor"
+        ]
+      },
+      {
         "slug": "running-for-clean-air",
         "campo": "titulo",
         "leido": null,
@@ -78,10 +126,34 @@
         ]
       },
       {
+        "slug": "running-for-clean-air",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "contaminacion-y-salud",
+          "nombre": "Contaminación y salud"
+        },
+        "clases": [
+          "valor"
+        ]
+      },
+      {
         "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
         "campo": "titulo",
         "leido": null,
         "esperado": "La contaminación del aire: el asesino silencioso de Europa",
+        "clases": [
+          "valor"
+        ]
+      },
+      {
+        "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+        "campo": "recurso",
+        "leido": null,
+        "esperado": {
+          "slug": "contaminacion-urbana",
+          "nombre": "Contaminación urbana"
+        },
         "clases": [
           "valor"
         ]
@@ -291,19 +363,19 @@
   },
   "divergencia": {
     "porClase": {
-      "valor": 25,
+      "valor": 31,
       "t1-declarada": 9,
       "t7-declarada": 9,
-      "media-original": 9,
+      "t10-declarada": 9,
       "t2-declarada": 7,
       "t3-declarada": 7,
       "t3b-declarada": 7,
       "t3b-data-media": 6,
-      "srcset-recapturado": 4,
       "t8-declarada": 4,
       "t4-declarada": 4,
       "t5-declarada": 3,
-      "t4b-declarada": 3
+      "t4b-declarada": 3,
+      "srcset-recapturado": 2
     },
     "adjudicacion": {
       "espacio": "dato — la transcripción normalizó sangrado y finales de línea; el original sirve LF y CRLF MEZCLADOS (9184 CRLF en el corpus) — §PASO 2",
@@ -320,6 +392,7 @@
       "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
       "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",
       "t7-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T7 · enlaces internos del cuerpo: a ruta local si el BUILD la emite, y s",
+      "t10-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T10 · la media del CUERPO se LOCALIZA — el clon deja de servir imágenes ",
       "srcset-recapturado": "dato — ninguna de las 10 transformaciones toca `srcset`, así que el del pipeline ES el del corpus. La transcripción es más VIEJA que la captura y el original regenera variantes — arbitrado contra el corpus en 2/2",
       "t3b-data-media": "dato — CONSECUENCIA de `media-original`: la llave sólo se deriva del `src` del original, y la transcripción lo localizó. Guardado aparte en `extractor-corpus.json` → `mediaDelCuerpo`",
       "href": "DEFECTO — difieren DESPUÉS de plegar T7, así que no lo explica T7 — §Regla de rutas locales + §F2-3-HREF-DERIVADO (b)",
@@ -327,12 +400,7 @@
       "media-original": "DEFECTO — §Assets: «nunca se enlaza a kunakair.com en caliente», y el destino SÍ está publicado — §DATOS-MEDIA-HOTLINK",
       "SIN CLASIFICAR": "DEFECTO — ninguna regla escrita la cubre"
     },
-    "abiertos": {
-      "media-original": {
-        "n": 9,
-        "ficha": "§DATOS-MEDIA-HOTLINK (PENDIENTES-QA.md), abierta 2026-08-13"
-      }
-    },
+    "abiertos": {},
     "abiertosMal": [],
     "serializacion": [
       {
@@ -344,9 +412,9 @@
           "t3-declarada",
           "t3b-declarada",
           "t7-declarada",
+          "t10-declarada",
           "t3b-data-media",
-          "srcset-recapturado",
-          "media-original"
+          "srcset-recapturado"
         ]
       },
       {
@@ -361,9 +429,8 @@
           "t4-declarada",
           "t5-declarada",
           "t7-declarada",
-          "t3b-data-media",
-          "srcset-recapturado",
-          "media-original"
+          "t10-declarada",
+          "t3b-data-media"
         ]
       },
       {
@@ -372,8 +439,7 @@
         "clases": [
           "t1-declarada",
           "t7-declarada",
-          "srcset-recapturado",
-          "media-original"
+          "t10-declarada"
         ]
       },
       {
@@ -389,8 +455,8 @@
           "t4-declarada",
           "t5-declarada",
           "t7-declarada",
-          "t3b-data-media",
-          "media-original"
+          "t10-declarada",
+          "t3b-data-media"
         ]
       },
       {
@@ -406,9 +472,9 @@
           "t4-declarada",
           "t5-declarada",
           "t7-declarada",
+          "t10-declarada",
           "t3b-data-media",
-          "srcset-recapturado",
-          "media-original"
+          "srcset-recapturado"
         ]
       },
       {
@@ -423,7 +489,7 @@
           "t4b-declarada",
           "t4-declarada",
           "t7-declarada",
-          "media-original"
+          "t10-declarada"
         ]
       },
       {
@@ -435,8 +501,8 @@
           "t3-declarada",
           "t3b-declarada",
           "t7-declarada",
-          "t3b-data-media",
-          "media-original"
+          "t10-declarada",
+          "t3b-data-media"
         ]
       },
       {
@@ -445,7 +511,7 @@
         "clases": [
           "t1-declarada",
           "t7-declarada",
-          "media-original"
+          "t10-declarada"
         ]
       },
       {
@@ -457,8 +523,8 @@
           "t3-declarada",
           "t3b-declarada",
           "t7-declarada",
-          "t3b-data-media",
-          "media-original"
+          "t10-declarada",
+          "t3b-data-media"
         ]
       }
     ],
@@ -576,10 +642,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw",
           "width": "1200",
           "height": "675"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -721,10 +783,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Los terrenos militares o mineros: con presencia de explosivos, mercurio, arsénico u otros contaminantes inorgánicos en proyectos de remediación se dispersan en forma de polvo durante la excavación. - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-la-construccion",
-          "nombre": "Contaminación en la construcción"
         }
       },
       {
@@ -765,10 +823,6 @@
           "width": "2560",
           "height": "1578",
           "alt": "Centro de datos en Wisconsin, EE. UU. - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -809,10 +863,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "PM10 measurement in coarse particle environments: why sensor technology matters - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -853,10 +903,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "El tráfico urbano no solo deteriora la calidad del aire, también genera contaminación acústica crónica cuyos efectos sobre la salud van mucho más allá de la molestia auditiva. - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -897,10 +943,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "La monitorización continua representa el salto cualitativo más notable en la evolución de los programas LDAR. - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -941,10 +983,6 @@
           "width": "2560",
           "height": "1709",
           "alt": "The real revolution in air quality goes beyond accurate measurement; it is about measuring everywhere. - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -985,10 +1023,6 @@
           "width": "1280",
           "height": "853",
           "alt": "Desde el metabolismo del animal hasta la forma de almacenar purines o aplicar fertilizantes a los cultivos, cada eslabón de la cadena productiva agropecuaria emite compuestos al aire. - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1029,10 +1063,6 @@
           "width": "2560",
           "height": "1703",
           "alt": "Las estaciones depuradoras de aguas residuales (EDAR) son infraestructuras esenciales por desempeñar un papel fundamental para completar el ciclo urbano del agua_Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1073,10 +1103,6 @@
           "width": "1280",
           "height": "996",
           "alt": "Vista aérea del archipiélago de Hawaii"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1117,10 +1143,6 @@
           "width": "1280",
           "height": "864",
           "alt": "La corrosión ambiental daña todo tipo de superficies metálicas y recubrimientos industriales_Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1161,10 +1183,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Planta de biogás y biometano - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1205,10 +1223,6 @@
           "width": "2560",
           "height": "1707",
           "alt": "Demandar justicia climática es luchar por un mundo más respetuoso y sostenible - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1253,10 +1267,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "El sargazo cuando flota en el océano es fuente de alimento, refugio y reproducción para la vida marina pero en la orilla litoral supone una amenaza para los ecosistemas litorales - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1296,10 +1306,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
           "width": "1800",
           "height": "1200"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -1336,10 +1342,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Efectos de la contaminación acústica en la salud y el medio ambiente, causada por el tráfico, la industria y las actividades urbanas - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1380,10 +1382,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Análisis de la Nueva Directiva de Calidad del Aire (UE) 2024/2881 - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -1424,10 +1422,6 @@
           "width": "1280",
           "height": "857",
           "alt": "Instalaciones y zona de almacenamiento de industria petroquímica - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1464,10 +1458,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Control de la contaminación del aire en los JJOO de París 2024 - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1512,10 +1502,6 @@
           "width": "1280",
           "height": "848",
           "alt": "Movimiento de residuos en vertedero - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1560,10 +1546,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Líneas eléctricas de alta tensión al atardecer, simbolizando la infraestructura energética y su impacto ambiental - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1643,10 +1625,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Proyecto Pure Cities Innovación tecnología y sostenibilidad urbana en Bélgica de la mano de Airscan y Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -1687,10 +1665,6 @@
           "width": "1200",
           "height": "672",
           "alt": "Ganaderia extensiva y emisiones de metano - crédito imagen Green Habitat - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1731,10 +1705,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Air Pollution: Europe’s Silent Killer and the Call for Cleaner Air"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -1775,10 +1745,6 @@
           "width": "1920",
           "height": "1280",
           "alt": "Fabricación de productos laminados de acero - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1819,10 +1785,6 @@
           "width": "1920",
           "height": "1272",
           "alt": "Medición de gas ozono en la atmósfera - (NOAA) National Oceanic and Atmospheric Administration. U.S. Department of Commerce - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -1863,10 +1825,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Microsensores de calidad del aire: un recurso esencial para la monitorización ambiental"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1907,10 +1865,6 @@
           "width": "1920",
           "height": "1283",
           "alt": "barriada urbana y calidad del aire - kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -1951,10 +1905,6 @@
           "width": "1280",
           "height": "1024",
           "alt": "Chemical accident in Seveso 1976 - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -1995,10 +1945,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Control de la contaminación del aire en los JJOO de París 2024 - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2039,10 +1985,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Contaminación_del_aire_en_Nueva_York - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2083,10 +2025,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Zonas de Bajas Emisiones y el control de la contaminación del aire - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2127,10 +2065,6 @@
           "width": "1200",
           "height": "766",
           "alt": "Cartel demandando justicia ambiental. (David L. Ryan) - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2171,10 +2105,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Impacto ambiental de la industria papelera - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -2207,10 +2137,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Control de la calidad del aire en puertos"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-puertos-y-aeropuertos",
-          "nombre": "Contaminación en puertos y aeropuertos"
         }
       },
       {
@@ -2251,10 +2177,6 @@
           "width": "1280",
           "height": "850",
           "alt": "avioneta-dispersa-fertilizantes-cultivo-agricola-kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -2295,10 +2217,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "La calidad del aire en los aeropuertos es el principal desafío que la aviación afronta para sumarse a la movilidad sostenible de futuro. Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-puertos-y-aeropuertos",
-          "nombre": "Contaminación en puertos y aeropuertos"
         }
       },
       {
@@ -2339,10 +2257,6 @@
           "width": "1000",
           "height": "600",
           "alt": "La contaminación del aire en Madrid es un problema que la capital española comparte con múltiples ciudades en todo el mundo. ¿Cómo abordarlo?"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2383,10 +2297,6 @@
           "width": "1500",
           "height": "900",
           "alt": "Urban pollution affects almost every city on the planet"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2463,10 +2373,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "EHS industrial, transformando el entorno laboral en un lugar seguro"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -2507,10 +2413,6 @@
           "width": "900",
           "height": "500",
           "alt": "Calidad del aire en los asentamientos informales, medir para dignificar la vida"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2595,10 +2497,6 @@
           "width": "1280",
           "height": "848",
           "alt": "Movimiento de residuos en vertedero - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -2661,10 +2559,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw",
           "width": "900",
           "height": "500"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -2705,10 +2599,6 @@
           "width": "900",
           "height": "500",
           "alt": "Monitorización de la calidad del aire alrededor de los colegios, una cuestión de salud"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -2781,10 +2671,6 @@
           "width": "900",
           "height": "500",
           "alt": "Redes híbridas de vigilancia de la calidad del aire"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -2825,10 +2711,6 @@
           "width": "900",
           "height": "500",
           "alt": "Impacto ambiental del cemento - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-la-construccion",
-          "nombre": "Contaminación en la construcción"
         }
       },
       {
@@ -2865,10 +2747,6 @@
           "width": "900",
           "height": "500",
           "alt": "Kunak Cloud, la plataforma web de visualización y análisis de la calidad del aire"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -2913,10 +2791,6 @@
           "width": "900",
           "height": "500",
           "alt": "Calidad del aire y volcanes: cómo las erupciones afectan la atmósfera y la salud - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -3017,10 +2891,6 @@
           "width": "900",
           "height": "500",
           "alt": "Conferencia de las Partes COP26, una cita ineludible"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -3057,10 +2927,6 @@
           "width": "900",
           "height": "500",
           "alt": "Estrés por calor, cuando el verano no invita a disfrutar del aire libre"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -3101,10 +2967,6 @@
           "width": "900",
           "height": "500",
           "alt": "Zona de bajas emisiones"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3140,10 +3002,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw",
           "width": "900",
           "height": "500"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3216,10 +3074,6 @@
           "width": "900",
           "height": "500",
           "alt": "Contaminación por incendios forestales, un problema sin fronteras."
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -3287,10 +3141,6 @@
           "width": "888",
           "height": "500",
           "alt": "Detectores de calidad del aire, contaminación y movilidad, una cuestión influenciada por el coronavirus."
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3357,10 +3207,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw",
           "width": "900",
           "height": "500"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3393,10 +3239,6 @@
           "width": "900",
           "height": "500",
           "alt": "Contaminación del aire en el deporte - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -3433,10 +3275,6 @@
         "imagenDestacada": {
           "src": "/images/uploads/2020/05/contaminación-por-mal-olor-problemas-ambientales.jpg",
           "alt": "La contaminación por mal olor es una queja recurrente en muchas zonas ¿Cómo pueden responder los sensores IoT a los problemas que detecta nuestro olfato?"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -3511,10 +3349,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw",
           "width": "1200",
           "height": "675"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -3546,10 +3380,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw",
           "width": "900",
           "height": "500"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -3588,10 +3418,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1000px, 100vw",
           "width": "1000",
           "height": "662"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3748,10 +3574,6 @@
           "width": "1620",
           "height": "1080",
           "alt": "La contaminación del transporte urbano es un problema al que millones de personas se ven expuestas cada día. Por tanto, la medición del impacto del transporte en la calidad del aire es necesaria para garantizar la movilidad sostenible y la salud de los ciudadanos."
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -3878,10 +3700,6 @@
           "width": "900",
           "height": "500",
           "alt": "Instrumentos para medir la contaminación del aire"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -4041,10 +3859,6 @@
           "width": "900",
           "height": "500",
           "alt": "La calidad del aire será en un factor determinante en la elección de ciudades anfitrionas."
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -4130,10 +3944,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1333px, 100vw",
           "width": "1333",
           "height": "911"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -4217,10 +4027,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw",
           "width": "1280",
           "height": "853"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -4252,10 +4058,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Why is Spain officially the world’s healthiest country? - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -4286,10 +4088,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw",
           "width": "800",
           "height": "376"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -4523,10 +4321,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw",
           "width": "800",
           "height": "458"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -5202,10 +4996,6 @@
           "width": "900",
           "height": "500",
           "alt": "Monitorizando la calidad del aire en las quemas agrícolas prescritas"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -5246,10 +5036,6 @@
           "width": "900",
           "height": "500",
           "alt": "Medidores de calidad del aire cost effective colocados sobre una estación de referencia en Pamplona"
-        },
-        "recurso": {
-          "slug": "productos-kunak",
-          "nombre": "Productos Kunak"
         }
       },
       {
@@ -5290,10 +5076,6 @@
           "width": "900",
           "height": "500",
           "alt": "Movilidad sostenible y monitorización de la calidad del aire, dos herramientas para hacer frente a la contaminación atmosférica en las ciudades"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -5333,10 +5115,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
           "width": "1800",
           "height": "1200"
-        },
-        "recurso": {
-          "slug": "contaminacion-urbana",
-          "nombre": "Contaminación urbana"
         }
       },
       {
@@ -5377,10 +5155,6 @@
           "width": "900",
           "height": "500",
           "alt": "Control de emisiones industriales con soluciones Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       },
       {
@@ -5421,10 +5195,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Emisiones de las refinerías de petróleo - Refinería de petróleo Marathon Anacortes, Washington - Foto de David Ryder/Getty Images - Kunak"
-        },
-        "recurso": {
-          "slug": "petroleo-y-gas",
-          "nombre": "Emisiones del petróleo y gas"
         }
       },
       {
@@ -5465,10 +5235,6 @@
           "width": "900",
           "height": "500",
           "alt": "Monitorizar la emisión de gases y partículas en refinerías y yacimientos de gas, una labor para Kunak"
-        },
-        "recurso": {
-          "slug": "petroleo-y-gas",
-          "nombre": "Emisiones del petróleo y gas"
         }
       },
       {
@@ -5509,10 +5275,6 @@
           "width": "1200",
           "height": "800",
           "alt": "Contaminación del aire por obras, analizando el impacto ambiental de la construcción"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-la-construccion",
-          "nombre": "Contaminación en la construcción"
         }
       },
       {
@@ -5548,10 +5310,6 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1920px, 100vw",
           "width": "1920",
           "height": "1080"
-        },
-        "recurso": {
-          "slug": "contaminacion-en-la-construccion",
-          "nombre": "Contaminación en la construcción"
         }
       },
       {
@@ -5592,10 +5350,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "Soluciones de monitorización para reducir el impacto ambiental dela minería en la calidad del aire - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-minera",
-          "nombre": "Contaminación minera"
         }
       },
       {
@@ -5636,10 +5390,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "AAQMS (Estaciones de monitorización de calidad del aire ambiental): definición, sistemas relacionados y distinciones - Kunak"
-        },
-        "recurso": {
-          "slug": "contaminacion-y-salud",
-          "nombre": "Contaminación y salud"
         }
       },
       {
@@ -5679,10 +5429,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "La monitorización perimetral en instalaciones industriales sitúa la medición donde el impacto se vuelve real, convierte el perímetro en el punto de control más valioso de la instalación. - Kunak"
-        },
-        "recurso": {
-          "slug": "petroleo-y-gas",
-          "nombre": "Emisiones del petróleo y gas"
         }
       },
       {
@@ -5721,10 +5467,6 @@
           "width": "1800",
           "height": "1200",
           "alt": "La monitorización de emisiones fugitivas es el conjunto de técnicas y sistemas empleados para detectar, medir y gestionar fugas no canalizadas de gases o partículas en instalaciones industriales. - Kunak"
-        },
-        "recurso": {
-          "slug": "industria-y-contaminacion-por-olores",
-          "nombre": "Industria y contaminación por olores"
         }
       }
     ],

@@ -197,6 +197,79 @@ function terminosDe(sin, tax) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * EL TÉRMINO DE `resources` — DERIVADO DE LA MIGA, NO POR UN PREFIJO LITERAL
+ *
+ * ⚠ **Aquí vivió `terminosDe(sin, "recursos/articulos")`, y era un MODELO
+ * CABLEADO que acertaba 81 veces y fallaba 2 en silencio.** La ficha es
+ * §F3-LH-EXTRACTOR-PREFIJO-CABLEADO. Lo que lo hace instructivo no es el fallo:
+ * es que **el modelo equivocado no dio error, dio 81 aciertos** — y un 81/83 se
+ * lee como una medida.
+ *
+ * Los dos modelos y lo que los SEPARA (§DOS MODELOS QUE PREDICEN LO MISMO):
+ *
+ * | modelo | `…/recursos/articulos/<hija>/` | `…/recursos/<primer nivel>/` |
+ * |---|---|---|
+ * | cablear el prefijo `recursos/articulos` | acierta (81) | **falla — pierde el campo** |
+ * | **derivar de la miga** | acierta (81) | **acierta (2)** |
+ *
+ * O sea que el denominador de la elección **es 2, no 83**: en las 81 hijas los
+ * dos modelos dan exactamente lo mismo y no deciden nada.
+ *
+ * ── ⚠ Y el canal NO es el que la ficha proponía ───────────────────────────
+ * §F3-LH-EXTRACTOR-PREFIJO-CABLEADO escribió *«el término se deriva de la miga
+ * POR SU CLASE (`taxonomia padre` / `categoria`)»*. **Medido sobre las 149
+ * entradas: 0 llevan clase en sus `<li>`.** Esas clases existen en el ARCHIVO
+ * del término, no en la página del post — así que la recomendación describía un
+ * canal servido en OTRA plantilla. Es §El principio otra vez, y por eso el
+ * discriminador que se usa es el que sí está servido aquí: **la PROFUNDIDAD**.
+ *
+ * Formas de la cadena, medidas sobre las 149 (por nº de eslabones):
+ *
+ *   66 · `Inicio › Blog › <título>`                           ⇒ sin `recurso`
+ *   81 · `Inicio › Recursos › <padre> › <hija> › <título>`    ⇒ la hija
+ *    2 · `Inicio › Recursos › <primer nivel> › <título>`      ⇒ el de primer nivel
+ *
+ * Regla: **el eslabón más profundo bajo `/es/recursos/`, excluido el hub
+ * `/es/recursos/` mismo.** Sirve para los dos niveles sin nombrar ninguno, que
+ * es justamente lo que el prefijo cableado no podía hacer.
+ *
+ * ── Por qué se lee la MIGA y no el documento entero ───────────────────────
+ * `terminosDe()` casa en **todo el HTML**, y la página de una entrada sirve
+ * enlaces a `/es/recursos/…` fuera de la miga (las tarjetas de «también te
+ * puede interesar», por ejemplo). La miga es el canal que declara **a qué
+ * término pertenece ESTA entrada**; el resto son enlaces que hablan de otras.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** El `<ol>` de la miga, o `null` si la página no la sirve. */
+function olMiga(sin) {
+  const i = sin.indexOf("kunak-breadcrumbs");
+  if (i < 0) return null;
+  const fin = sin.indexOf("</ol>", i);
+  return fin < 0 ? null : sin.slice(i, fin);
+}
+
+function recursoDeLaMiga(sin) {
+  const ol = olMiga(sin);
+  if (!ol) return undefined;
+  const eslabones = [...ol.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)].map((x) => x[1]);
+  let mejor = null;
+  for (const li of eslabones) {
+    const href = (li.match(/href="https:\/\/kunakair\.com(\/es\/recursos\/[^"]*)"/) || [, null])[1];
+    if (!href) continue;
+    /* Los segmentos DESPUÉS de `recursos`. El hub `/es/recursos/` da 0 y no es
+       un término: excluirlo es lo que evita adjudicarle a 66 entradas un
+       `recurso` que no tienen. */
+    const segmentos = href.replace(/^\/es\/recursos\//, "").replace(/\/$/, "").split("/").filter(Boolean);
+    if (!segmentos.length) continue;
+    const nombre = textoPlano((li.match(/<span itemprop="name">([\s\S]*?)<\/span>/) || [, ""])[1]).trim();
+    if (!mejor || segmentos.length >= mejor.profundidad)
+      mejor = { slug: segmentos[segmentos.length - 1], nombre, profundidad: segmentos.length };
+  }
+  if (!mejor) return undefined;
+  return { slug: mejor.slug, nombre: mejor.nombre || mejor.slug };
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
  * EL RECORRIDO
  * ═════════════════════════════════════════════════════════════════════════ */
 
@@ -231,7 +304,10 @@ for (const [clave, p] of trabajo) {
   if (col === "entradas-blog") {
     const envoltorio = uno(sin, SEL.destacada);
     const destacada = imagen(cuenta("destacada", envoltorio ? (envoltorio.match(/<img[^>]*>/) ?? [null])[0] : null));
-    const recurso = terminosDe(sin, "recursos/articulos")[0];
+    /* §F3-LH-EXTRACTOR-PREFIJO-CABLEADO — derivado de la miga, ver arriba. El
+       `cuenta()` lo mete en el censo de lectores, así que un selector que deje
+       de casar sale por su cero en vez de por un campo que desaparece. */
+    const recurso = cuenta("recurso", SABOTAJE === "selector-muerto" ? undefined : recursoDeLaMiga(sin));
     const doc = {
       ...base,
       fechaPublicacion: cuenta("fechaPublicacion", deco(uno(sin, SEL.pub))) ?? "",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-14",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
     "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
@@ -128,6 +128,7 @@
       "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
       "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",
       "t7-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T7 · enlaces internos del cuerpo: a ruta local si el BUILD la emite, y s",
+      "t10-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T10 · la media del CUERPO se LOCALIZA — el clon deja de servir imágenes ",
       "srcset-recapturado": "dato — ninguna de las 10 transformaciones toca `srcset`, así que el del pipeline ES el del corpus. La transcripción es más VIEJA que la captura y el original regenera variantes — arbitrado contra el corpus en 2/2",
       "t3b-data-media": "dato — CONSECUENCIA de `media-original`: la llave sólo se deriva del `src` del original, y la transcripción lo localizó. Guardado aparte en `extractor-corpus.json` → `mediaDelCuerpo`",
       "href": "DEFECTO — difieren DESPUÉS de plegar T7, así que no lo explica T7 — §Regla de rutas locales + §F2-3-HREF-DERIVADO (b)",
@@ -135,15 +136,8 @@
       "media-original": "DEFECTO — §Assets: «nunca se enlaza a kunakair.com en caliente», y el destino SÍ está publicado — §DATOS-MEDIA-HOTLINK",
       "SIN CLASIFICAR": "DEFECTO — ninguna regla escrita la cubre"
     },
-    "abiertos": {
-      "media-original": {
-        "n": 9,
-        "ficha": "§DATOS-MEDIA-HOTLINK (PENDIENTES-QA.md), abierta 2026-08-13"
-      }
-    },
-    "abiertosMal": [
-      "media-original: declarados 9, vistos 0"
-    ],
+    "abiertos": {},
+    "abiertosMal": [],
     "serializacion": [],
     "sinClasificar": []
   },
@@ -210,6 +204,10 @@
           "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw",
           "width": "800",
           "height": "466"
+        },
+        "recurso": {
+          "slug": "seminarios-web",
+          "nombre": "Seminarios Web"
         }
       }
     ],

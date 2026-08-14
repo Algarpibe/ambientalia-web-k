@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "que": "ALCANCE VERIFICABLE de los listados a 390: el denominador de qa:lh-cmp, derivado ANTES de comparar",
+    "espejo": "medidas/lh-spec-390.json (2026-08-11)",
+    "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",
+    "noMide": [
+      "el clon: esta sonda no abre una página ni arranca el servidor",
+      "si un par CUADRA: eso es la comparación, no el alcance",
+      "las rutas /page/N: el espejo mide la página 1 de cada forma"
+    ],
+    "porQueMixto": "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Contra el espejo absorbe la deriva del contenido; contra el corpus, la geometría de un render sin hojas. La referencia que las arreglaría es una tercera —el corpus RENDERIZADO con sus hojas— y construirla es una tanda, no un parámetro."
+  },
+  "universo": {
+    "formas": 13,
+    "pares": 16719,
+    "contenido": 523,
+    "plantilla": 13147,
+    "mixta": 3049,
+    "verificables": 13670,
+    "pctMixto": 18.2
+  },
+  "emiteElBuild": {
+    "fuente": "apps/web/.next/prerender-manifest.json (la ruta EXACTA, no el segmento)",
+    "rutasEnElManifiesto": 345,
+    "formas": 3,
+    "claves": [
+      "L1-blog::/es/blog/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/",
+      "L1-etiqueta::/es/etiqueta/h2s-es/"
+    ],
+    "pares": 5448,
+    "verificables": 4530,
+    "mixtos": 918
+  },
+  "porForma": {
+    "L1-blog::/es/blog/": {
+      "ruta": "/es/blog/",
+      "contenido": 54,
+      "plantilla": 1378,
+      "mixta": 285,
+      "pares": 1717,
+      "verificables": 1432,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 327,
+      "pares": 1997,
+      "verificables": 1670,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/h2s-es/": {
+      "ruta": "/es/etiqueta/h2s-es/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 306,
+      "pares": 1734,
+      "verificables": 1428,
+      "pctMixto": 17.6,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 251,
+      "pares": 1468,
+      "verificables": 1217,
+      "pctMixto": 17.1,
+      "emiteElBuild": false
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "contenido": 18,
+      "plantilla": 705,
+      "mixta": 179,
+      "pares": 902,
+      "verificables": 723,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L1-resources-padre::/es/recursos/seminarios-web/": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "contenido": 39,
+      "plantilla": 1037,
+      "mixta": 239,
+      "pares": 1315,
+      "verificables": 1076,
+      "pctMixto": 18.2,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/": {
+      "ruta": "/es/glosario/",
+      "contenido": 25,
+      "plantilla": 653,
+      "mixta": 170,
+      "pares": 848,
+      "verificables": 678,
+      "pctMixto": 20,
+      "emiteElBuild": false
+    },
+    "L2-faqs::/es/preguntas-frecuentes/": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "contenido": 20,
+      "plantilla": 554,
+      "mixta": 158,
+      "pares": 732,
+      "verificables": 574,
+      "pctMixto": 21.6,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 192,
+      "pares": 1014,
+      "verificables": 822,
+      "pctMixto": 18.9,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/articulos-tecnicos/": {
+      "ruta": "/es/scientific-category/articulos-tecnicos/",
+      "contenido": 17,
+      "plantilla": 437,
+      "mixta": 130,
+      "pares": 584,
+      "verificables": 454,
+      "pctMixto": 22.3,
+      "emiteElBuild": false
+    },
+    "L4-listado-embebido::/es/recursos/": {
+      "ruta": "/es/recursos/",
+      "contenido": 48,
+      "plantilla": 1514,
+      "mixta": 353,
+      "pares": 1915,
+      "verificables": 1562,
+      "pctMixto": 18.4,
+      "emiteElBuild": false
+    },
+    "L5-casos::/es/casos-de-exito/": {
+      "ruta": "/es/casos-de-exito/",
+      "contenido": 36,
+      "plantilla": 677,
+      "mixta": 199,
+      "pares": 912,
+      "verificables": 713,
+      "pctMixto": 21.8,
+      "emiteElBuild": false
+    },
+    "L1-resources-padre::/es/recursos/articulos/": {
+      "ruta": "/es/recursos/articulos/",
+      "contenido": 52,
+      "plantilla": 1269,
+      "mixta": 260,
+      "pares": 1581,
+      "verificables": 1321,
+      "pctMixto": 16.4,
+      "emiteElBuild": false
+    }
+  }
+}
