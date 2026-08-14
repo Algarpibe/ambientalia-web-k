@@ -3,7 +3,7 @@
     "fecha": "2026-08-14",
     "que": "siembra de los dos campos que viven en el listado + la jerarquía de `categorias-recursos` (D2.8)",
     "fuente": "medidas/extractor-listados.json (2026-08-14)",
-    "sabotaje": null
+    "sabotaje": "padre-huerfano"
   },
   "etiquetas": {
     "sembradas": 12,
@@ -31,9 +31,11 @@
   "categoriasRecursos": {
     "filas": 10,
     "altas": 0,
-    "padresApuntados": 8,
+    "padresApuntados": 7,
     "padresDeclaradosPorElCorpus": 8,
-    "relacionesSinDestino": [],
+    "relacionesSinDestino": [
+      "contaminacion-en-la-construccion→no-existe-este-padre"
+    ],
     "filasSinCorpus": []
   }
 }

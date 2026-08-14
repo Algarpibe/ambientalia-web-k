@@ -30,7 +30,7 @@
   },
   "categoriasRecursos": {
     "filas": 10,
-    "altas": 0,
+    "altas": 1,
     "padresApuntados": 8,
     "padresDeclaradosPorElCorpus": 8,
     "relacionesSinDestino": [],

@@ -3,7 +3,7 @@
     "fecha": "2026-08-14",
     "que": "siembra de los dos campos que viven en el listado + la jerarquía de `categorias-recursos` (D2.8)",
     "fuente": "medidas/extractor-listados.json (2026-08-14)",
-    "sabotaje": null
+    "sabotaje": "slug-fantasma"
   },
   "etiquetas": {
     "sembradas": 12,
@@ -15,7 +15,9 @@
       "descarga-catalogo-kunak",
       "kunak-obtiene-el-sello-reconcilia"
     ],
-    "huerfanosNuevos": [],
+    "huerfanosNuevos": [
+      "este-slug-no-existe-jamas"
+    ],
     "declaradosYaSembrables": [],
     "porQue": "§F3-LH-DOS-CONJUNTOS-DE-149 — el /blog del original los lista y no están en el corpus de 149"
   },
@@ -23,7 +25,8 @@
     "sembrados": 66,
     "slugsSinFilaEnLaDb": [
       "descarga-catalogo-kunak",
-      "kunak-obtiene-el-sello-reconcilia"
+      "kunak-obtiene-el-sello-reconcilia",
+      "este-slug-no-existe-jamas"
     ],
     "entradasNoCubiertas": 83,
     "deEllasConRecurso": 82

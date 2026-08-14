@@ -1,12 +1,14 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-14",
     "que": "los dos campos que viven en el LISTADO y no en la ficha del documento",
     "corpus": "corpus/fase-3/listados",
     "noExtrae": [
       "el extracto de /etiqueta/*: LH-SP10 lo midió DERIVADO (Divi trunca el cuerpo a 256-271 c + «...»); guardarlo sería cablear el resultado de una truncación",
-      "la jerarquía de `categorias-recursos`: ESCALÓN declarado, el original SÍ la tiene y la pregunta que queda no es de extracción (§F3-LH-JERARQUIA-RECURSOS)"
+      "la DESCRIPCIÓN de un término de `resources`: el módulo homólogo al de `etiquetas` (`_2_`) trae los CHIPS de filtro y no texto — ver `categoriasRecursos[].textoFueraDeLosChips`, que es el denominador de esa afirmación y no una impresión de haber mirado unos cuantos"
     ],
+    "discriminadorDeTermino": "<body class> con `tax-resources` + `term-` (vía 4 de qa:lh-jerarquia). NO el nombre del directorio: 3 de los 5 directorios bajo /recursos/ son PÁGINAS (`page-child`) y filtrarlos por nombre sería cablear una lista de excepciones que nadie midió",
+    "padreDerivadoPorDosVias": "URL (nº de segmentos) y miga (`<li class=\"taxonomia padre\">`); discrepar TIRA",
     "sabotaje": null
   },
   "extractos": {
@@ -199,6 +201,132 @@
       ]
     }
   ],
+  "categoriasRecursos": [
+    {
+      "slug": "articulos",
+      "nombre": "Artículos y Guías",
+      "padre": null,
+      "url": "/es/recursos/articulos/",
+      "segmentos": 1,
+      "viaUrl": null,
+      "viaMiga": null,
+      "chips": 8,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "contaminacion-en-la-construccion",
+      "nombre": "Contaminación en la construcción",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "contaminacion-en-puertos-y-aeropuertos",
+      "nombre": "Contaminación en puertos y aeropuertos",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "contaminacion-minera",
+      "nombre": "Contaminación minera",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/contaminacion-minera/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "contaminacion-urbana",
+      "nombre": "Contaminación urbana",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/contaminacion-urbana/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "contaminacion-y-salud",
+      "nombre": "Contaminación y salud",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/contaminacion-y-salud/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "industria-y-contaminacion-por-olores",
+      "nombre": "Industria y contaminación por olores",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "petroleo-y-gas",
+      "nombre": "Emisiones del petróleo y gas",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/petroleo-y-gas/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "productos-kunak",
+      "nombre": "Productos Kunak",
+      "padre": "articulos",
+      "url": "/es/recursos/articulos/productos-kunak/",
+      "segmentos": 2,
+      "viaUrl": "articulos",
+      "viaMiga": "articulos",
+      "chips": 9,
+      "textoFueraDeLosChips": ""
+    },
+    {
+      "slug": "seminarios-web",
+      "nombre": "Seminarios Web",
+      "padre": null,
+      "url": "/es/recursos/seminarios-web/",
+      "segmentos": 1,
+      "viaUrl": null,
+      "viaMiga": null,
+      "chips": 0,
+      "textoFueraDeLosChips": ""
+    }
+  ],
+  "descartadosNoTermino": [
+    {
+      "ruta": "documentos-cientificos",
+      "clasesBody": "wp-singular page-template-default page"
+    },
+    {
+      "ruta": "kunakpedia",
+      "clasesBody": "wp-singular page-template-default page"
+    },
+    {
+      "ruta": "preguntas-frecuentes",
+      "clasesBody": "wp-singular page-template-default page"
+    }
+  ],
   "resumen": {
     "paginasBlog": 17,
     "extractos": 68,
@@ -208,6 +336,10 @@
       "a",
       "br",
       "p"
-    ]
+    ],
+    "categoriasRecursos": 10,
+    "categoriasRecursosPrimerNivel": 2,
+    "categoriasRecursosConPadre": 8,
+    "archivosBajoRecursosDescartadosPorSerPagina": 3
   }
 }

@@ -11,11 +11,17 @@
  * |---|---|---|
  * | `sin-corpus` | **CORPUS AUSENTE** | «0 extractos», que es como se lee un extractor mudo |
  * | `extracto-vacio` | **0 extractos extraídos** | verde con la lista vacía |
+ * | `via4-muerta` | **0 términos de `resources`** | «recursos no tiene taxonomía» |
  *
  * ── EL CONTROL (§sondas 8a) ───────────────────────────────────────────────
- * Sin sabotaje: 68 extractos y **12 de 12** descripciones. Si el control no
- * sacara las dos cosas, los rojos de abajo no probarían nada — podrían venir de
- * un corpus que no se lee.
+ * Sin sabotaje: 68 extractos, **12 de 12** descripciones y **10 términos de
+ * `resources` con 8 padres**. Si el control no sacara las tres cosas, los rojos
+ * de abajo no probarían nada — podrían venir de un corpus que no se lee.
+ *
+ * ⚠ **Y el control exige además que se DESCARTEN las 3 páginas.** Un
+ * discriminador que casara en los 13 archivos sería el PLENO de §sondas 4: sin
+ * el contraste `page-child`, «10 términos» y «13 términos» se leen igual de
+ * bien, y el segundo metería 3 filas inventadas en la taxonomía.
  *
  * ⚠ **Y el control comprueba además la ETIQUETA HTML**, que es lo que decide el
  * tipo del campo en el ESQUEMA: si las descripciones dejaran de traer marcado,
@@ -31,7 +37,7 @@ const CANONICA = "medidas/extractor-listados.json";
 const casos = [
   {
     etiqueta: "control",
-    porQue: "sin sabotaje: 68 extractos y 12/12 descripciones, con su marcado",
+    porQue: "sin sabotaje: 68 extractos · 12/12 descripciones con su marcado · 10 términos de `resources` (8 con padre) y 3 páginas descartadas",
     env: {},
     exit: 0,
     congela: true,
@@ -45,6 +51,22 @@ const casos = [
       /* Y que NO se haya guardado el extracto derivado: es la mitad deliberada. */
       if (JSON.stringify(j.meta.noExtrae).indexOf("etiqueta") < 0)
         return "no declara que el extracto de /etiqueta queda FUERA por derivado (LH-SP10)";
+
+      /* ── (3) la jerarquía de `resources` ── */
+      if (!j.resumen.categoriasRecursos)
+        return "0 términos de `resources` en el CONTROL: el sabotaje `via4-muerta` no probaría nada";
+      if (!j.resumen.categoriasRecursosConPadre)
+        return "0 términos con `padre`: la jerarquía saldría plana y `D2.8` no tendría dato que sembrar";
+      /* El PLENO es tan defecto como el cero: si casaran los 13, las 3 páginas
+         entrarían como términos inventados (§sondas 4, el complementario). */
+      if (!j.resumen.archivosBajoRecursosDescartadosPorSerPagina)
+        return "0 archivos descartados: el discriminador casa en TODOS ⇒ no discrimina, y mete páginas en la taxonomía";
+      /* Las dos vías tienen que estar las dos, o «coinciden» no dice nada. */
+      const sinDosVias = j.categoriasRecursos.filter((r) => r.padre && r.viaMiga !== r.viaUrl);
+      if (sinDosVias.length) return `${sinDosVias.length} término(s) con las dos vías del padre en desacuerdo`;
+      /* Y que la conclusión sobre `descripcion` venga de un denominador. */
+      if (j.categoriasRecursos.some((r) => r.textoFueraDeLosChips))
+        return "algún término trae TEXTO fuera de los chips: `descripcion` sería campo y el ESQUEMA no lo declara";
       return null;
     },
   },
@@ -61,6 +83,13 @@ const casos = [
     env: { SABOTAJE: "extracto-vacio" },
     exitNoCero: true,
     salidaTiene: /0 extractos extraídos/,
+  },
+  {
+    etiqueta: "via4-muerta",
+    porQue: "el discriminador del `<body class>` no casa en ninguno ⇒ TIRA, nunca «recursos no tiene taxonomía»",
+    env: { SABOTAJE: "via4-muerta" },
+    exitNoCero: true,
+    salidaTiene: /0 términos de `resources`/,
   },
 ];
 

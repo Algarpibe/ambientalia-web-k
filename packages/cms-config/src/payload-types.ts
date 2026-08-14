@@ -502,8 +502,16 @@ export interface Producto {
    * Segmento anterior al slug. Ausente = producto de primer nivel (6 de 24). PR-SP2: `cartuchos-inteligentes` es categoría (17) y `sensor-de-calidad-del-aire` es OTRO producto (1) — por eso hoy es select y no relación.
    */
   padre?: ('cartuchos-inteligentes' | 'sensor-de-calidad-del-aire') | null;
-  seo: {
-    title: string;
+  /**
+   * CMS-PR3 · el discriminador de «documento sin página propia». SIN DEFECTO a propósito: derivarlo de una ausencia confundiría «no tiene página» con «nadie lo rellenó» (§regla 6). Medido: 21 `propia` · 3 `ninguna` (accesories · air-cloud · ozone-2).
+   */
+  pagina: 'propia' | 'ninguna';
+  /**
+   * El `href` tal y como lo sirve el original. Sólo para `pagina: ninguna`. La regla de rutas locales se le aplica al pintarlo, igual que a cualquier otro.
+   */
+  hrefServido?: string | null;
+  seo?: {
+    title?: string | null;
     description?: string | null;
     ogImage?: string | null;
   };
@@ -1475,6 +1483,10 @@ export interface Etiqueta {
   id: number;
   nombre: string;
   slug: string;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  descripcion?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1502,7 +1514,10 @@ export interface TerminosKunakpedia {
     description?: string | null;
     ogImage?: string | null;
   };
-  titulo: string;
+  /**
+   * Obligatorio. La cadena VACÍA es dato medido y se admite — §2c · `esmog`: el `<h1>` de plantilla vacío, 1 de 37.
+   */
+  titulo?: string | null;
   /**
    * Defecto null — §2c.1 · 3 términos de 37
    */
@@ -2942,6 +2957,8 @@ export interface ProductosSelect<T extends boolean = true> {
   titulo?: T;
   tipo?: T;
   padre?: T;
+  pagina?: T;
+  hrefServido?: T;
   seo?:
     | T
     | {
@@ -3692,6 +3709,7 @@ export interface CategoriasSelect<T extends boolean = true> {
 export interface EtiquetasSelect<T extends boolean = true> {
   nombre?: T;
   slug?: T;
+  descripcion?: T;
   updatedAt?: T;
   createdAt?: T;
 }
