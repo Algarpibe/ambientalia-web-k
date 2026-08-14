@@ -1549,6 +1549,38 @@ casó cada selector sumando todas las páginas, y `censo.informe()` devuelve el 
 de muertos para que quien la llama **cierre su código de salida con eso**. Las
 sondas usan `__q(sel)` en vez de `document.querySelector(sel)`.
 
+⚠ **Y EL LADO DEL LECTOR, que ninguna guarda de la sonda puede cubrir: UNA REGLA
+INCOMPLETA SE LEE EXACTAMENTE IGUAL QUE UNA COMPLETA (2026-08-14).**
+
+Todo lo de arriba protege de instrumentos que no miran. Ésta protege del caso
+contrario, y por eso es la más difícil de ver: **el instrumento miró bien, midió
+bien y congeló bien — y quien lo leyó le atribuyó un alcance que no tenía.**
+
+> **Una medida contesta las preguntas que se le hicieron, y su fichero no lleva
+> escrito cuáles NO.** Así que una regla derivada de ella se lee como si cubriera
+> el caso que tienes delante, **aunque la medición nunca lo mirara**. El fallo no
+> es de medición: es **de ALCANCE al leerla**, y sale idéntico a un acierto hasta
+> que algo se ejercita.
+
+**Medido:** `lh-barra.json` acertó en **todo lo que midió** —la fila es `4_4`, no
+hay barra lateral, la columna mide 1238.39— y el componente construido sobre ella
+estaba mal igual. La medida contestaba *«¿hay barra y qué tipo de columna?»*;
+nadie le preguntó **cuántas filas tiene el cuerpo**, y `resources` tiene **3**
+donde sus dos hermanas tienen 2 — su listado va en la fila **3** y cuelga de un
+módulo de texto vacío. Ninguna relectura del fichero lo habría dicho: no está
+ahí.
+
+> **Operativamente, y cuesta dos líneas: antes de construir sobre una medida,
+> escribe QUÉ PREGUNTA CONTESTA y QUÉ PREGUNTAS NO CONTESTA.** Lo segundo es
+> justo lo que el fichero no puede decirte, y por eso es lo único que hay que
+> escribir a mano.
+
+Es hermana de §*una afirmación de que un discriminador NO EXISTE se escribe con
+la lista de canales que se miraron*: allí se declara el alcance de un cero, aquí
+el de un acierto. Y de §*una regla derivada sobre un dominio donde el caso NO SE
+DA está SIN PROBAR para ese caso*, con el eje cambiado — allí falta **dominio**,
+aquí falta **pregunta**.
+
 **Y el caso particular que más aparece al buscar duplicación (2026-08-01): para
 identificar un COMPONENTE, el literal de `className` no discrimina.**
 

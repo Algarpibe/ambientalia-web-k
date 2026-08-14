@@ -35,7 +35,7 @@
  * CMS-0b tenía SIN MEDIR: el tamaño real del corpus.
  */
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { Evaluadas, hoy, QA } from "../qa/lib.mjs";
 import { postContent } from "./corpus.mjs";
@@ -96,6 +96,96 @@ for (const [coleccion, plan] of Object.entries(PLAN)) {
     continue;
   }
   for (const p of plan.paginas()) trabajo.push({ coleccion, fuente: plan.fuente, ...p });
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL HUECO: lo que un LISTADO capturado CITA y el censo no tiene
+ *
+ * ── Por qué esto va DENTRO del plan y no en un script aparte ──────────────
+ * Los censos de arriba son fotos con fecha (`a-censo` es del 2026-07-29) y el
+ * original es un sitio VIVO: una entrada publicada después existe, la citan
+ * los listados, y **ningún censo la nombra**. Capturarla por fuera no vale,
+ * porque `corpus/INDICE.json` **se reescribe entero desde este `PLAN` en cada
+ * corrida** — el fichero se quedaría en disco y su entrada de índice
+ * desaparecería en el siguiente `cms:captura`, que es la peor salida: bytes
+ * sin manifiesto.
+ *
+ * ── La lista se DERIVA (regla 9), y de la fuente que ya la conocía ────────
+ * `corpus/fase-3/listados/**.html` son **149 documentos congelados** con
+ * **807 tarjetas**. Cada tarjeta enlaza a su documento; los que apuntan a la
+ * RAÍZ (`/es/<slug>/`, un solo segmento) son del grupo A. Restando los que el
+ * `PLAN` ya trae salen los huecos — hoy **3**, los mismos que
+ * §F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR nombró por otra vía.
+ *
+ * Que las dos derivaciones den lo mismo es el cruce que vale; el número no se
+ * escribe aquí ni se compara contra una constante, porque **mañana puede ser
+ * otro** y una lista congelada volvería a envejecer contra el repo.
+ *
+ * ── Y la COLECCIÓN no se supone: la dice quién lo cita ────────────────────
+ * Un slug de raíz puede ser entrada de blog, término de Kunakpedia o
+ * documento científico. Se adjudica por la FAMILIA del listado que lo nombra
+ * —`blog` · `etiqueta` · `recursos` listan `entradas-blog`— y una familia sin
+ * traducir **TIRA** en vez de caer a un defecto: §regla 6, la ausencia se
+ * rechaza. Sin esa guarda, un listado nuevo metería sus documentos en la
+ * colección equivocada y el seed los daría por buenos.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const LISTADOS = join(CORPUS, "fase-3/listados");
+/** La familia del listado (primer segmento bajo `listados/`) → su colección. */
+const COLECCION_DE_FAMILIA = {
+  blog: "entradas-blog",
+  etiqueta: "entradas-blog",
+  recursos: "entradas-blog",
+  glosario: "terminos-kunakpedia",
+  "preguntas-frecuentes": "faqs",
+  "scientific-category": "documentos-cientificos",
+  "casos-de-exito": "casos",
+  productos: "productos",
+  sectores: null, // CONSTRUIDA completa: no tiene corpus (ver PLAN.sectores)
+};
+
+function htmlsDe(dir, acc = []) {
+  if (!existsSync(dir)) return acc;
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) htmlsDe(p, acc);
+    else if (e.name.endsWith(".html")) acc.push(p);
+  }
+  return acc;
+}
+
+const yaEnPlan = new Set(trabajo.map((t) => t.slug));
+const huecos = new Map(); // slug → { familia, desde }
+let nTarjetas = 0;
+for (const f of htmlsDe(LISTADOS)) {
+  const familia = f.slice(LISTADOS.length + 1).split(/[\\/]/)[0];
+  const html = readFileSync(f, "utf8").replace(/<script[\s\S]*?<\/script>/g, "").replace(/<style[\s\S]*?<\/style>/g, "");
+  for (const m of html.matchAll(/<article[\s\S]*?<\/article>/g)) {
+    nTarjetas++;
+    const a = m[0].match(/href="https:\/\/kunakair\.com\/es\/([^"]*?)\/?"/);
+    if (!a) continue;
+    const ruta = a[1].replace(/\/$/, "");
+    if (!ruta || ruta.includes("/")) continue; // sólo la RAÍZ: /es/<slug>/
+    if (yaEnPlan.has(ruta) || huecos.has(ruta)) continue;
+    huecos.set(ruta, { familia, desde: f.slice(CORPUS.length + 1).split("\\").join("/") });
+  }
+}
+
+if (huecos.size) {
+  console.log(`\n  ── HUECOS del censo: ${huecos.size} documento(s) que un listado cita y ningún censo nombra`);
+  console.log(`     (derivados de ${nTarjetas} tarjetas en ${htmlsDe(LISTADOS).length} listados congelados)`);
+  for (const [slug, { familia, desde }] of huecos) {
+    if (!(familia in COLECCION_DE_FAMILIA))
+      throw new Error(
+        `FAMILIA DE LISTADO SIN TRADUCIR: '${familia}' cita '${slug}' y COLECCION_DE_FAMILIA no dice a qué colección va.\n` +
+          `  Adjudicarlo por defecto metería el documento en la colección equivocada y el seed lo daría por bueno.\n` +
+          `  La ausencia se rechaza, no se sustituye (regla 6).`,
+      );
+    const coleccion = COLECCION_DE_FAMILIA[familia];
+    if (coleccion === null)
+      throw new Error(`FAMILIA SIN CORPUS: '${familia}' cita '${slug}', y su colección está declarada FUERA de la captura.`);
+    console.log(`     · ${slug.padEnd(56)} ${coleccion.padEnd(22)} ← ${desde}`);
+    trabajo.push({ coleccion, fuente: `listados-f3·hueco (${familia})`, url: `https://kunakair.com/es/${slug}/`, slug });
+  }
 }
 
 /* Dos páginas distintas no pueden caer en el mismo fichero. */
@@ -216,7 +306,10 @@ const indice = {
   meta: {
     fecha: hoy(),
     fuente: "HTML crudo servido por kunakair.com (bytes sin re-codificar)",
-    derivacion: "cms-arquetipos.json (§2f) + a-censo.json + c-censo.json + solutions-campos.json",
+    derivacion:
+      "cms-arquetipos.json (§2f) + a-censo.json + c-censo.json + solutions-campos.json" +
+      " + los HUECOS derivados de las tarjetas de corpus/fase-3/listados (documentos que un listado cita y ningún censo nombra)",
+    huecos: Object.fromEntries([...huecos].map(([slug, h]) => [slug, `${COLECCION_DE_FAMILIA[h.familia]} ← ${h.desde}`])),
     etiqueta: `secuencial · ${ESPACIADO_MS} ms entre peticiones · una vez por página (entre corridas)`,
     fuera: Object.fromEntries(Object.entries(PLAN).filter(([, p]) => p.fuera).map(([c, p]) => [c, p.fuera])),
   },

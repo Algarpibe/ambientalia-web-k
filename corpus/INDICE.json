@@ -1,8 +1,13 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-14",
     "fuente": "HTML crudo servido por kunakair.com (bytes sin re-codificar)",
-    "derivacion": "cms-arquetipos.json (§2f) + a-censo.json + c-censo.json + solutions-campos.json",
+    "derivacion": "cms-arquetipos.json (§2f) + a-censo.json + c-censo.json + solutions-campos.json + los HUECOS derivados de las tarjetas de corpus/fase-3/listados (documentos que un listado cita y ningún censo nombra)",
+    "huecos": {
+      "kunak-obtiene-el-sello-reconcilia": "entradas-blog ← fase-3/listados/blog/index.html",
+      "descarga-catalogo-kunak": "entradas-blog ← fase-3/listados/blog/page/2/index.html",
+      "webinar-control-de-la-contaminacion-del-aire-en-la-industria": "entradas-blog ← fase-3/listados/recursos/seminarios-web/index.html"
+    },
     "etiqueta": "secuencial · 500 ms entre peticiones · una vez por página (entre corridas)",
     "fuera": {
       "sectores": "CONSTRUIDA completa: el cuerpo es dato tipado transcrito (SectorPage), no blob de WordPress",
@@ -11,16 +16,16 @@
     }
   },
   "resumen": {
-    "paginas": 309,
-    "htmlBytes": 105108002,
-    "cuerpoBytes": 4584486,
-    "mediaUrlsDistintas": 1819,
+    "paginas": 312,
+    "htmlBytes": 106033349,
+    "cuerpoBytes": 4598747,
+    "mediaUrlsDistintas": 1824,
     "porColeccion": {
       "entradas-blog": {
-        "paginas": 149,
-        "htmlBytes": 50695934,
-        "cuerpoBytes": 3255212,
-        "conPostContent": 149,
+        "paginas": 152,
+        "htmlBytes": 51621281,
+        "cuerpoBytes": 3269473,
+        "conPostContent": 152,
         "sinPostContent": 0
       },
       "terminos-kunakpedia": {
@@ -2533,6 +2538,30 @@
       "bytes": 468660,
       "sha256": "050f2b8c04f8d1c1e54590d94a53e304dc15f0685f856b981aed3c4a74b14155",
       "capturada": "2026-08-05T00:10:36.254Z"
+    },
+    "entradas-blog/kunak-obtiene-el-sello-reconcilia": {
+      "url": "https://kunakair.com/es/kunak-obtiene-el-sello-reconcilia/",
+      "fichero": "entradas-blog/kunak-obtiene-el-sello-reconcilia.html",
+      "http": 200,
+      "bytes": 306700,
+      "sha256": "231d3b598b9942a51fda0c3bb4c254cc0c6c69311d08022f55c35750f51b8f57",
+      "capturada": "2026-08-14T20:59:26.618Z"
+    },
+    "entradas-blog/descarga-catalogo-kunak": {
+      "url": "https://kunakair.com/es/descarga-catalogo-kunak/",
+      "fichero": "entradas-blog/descarga-catalogo-kunak.html",
+      "http": 200,
+      "bytes": 299781,
+      "sha256": "44bdf6aa9e7a93402c177571400c9fb0f206e5b8087a02cc3e3743070a4c1996",
+      "capturada": "2026-08-14T20:59:29.320Z"
+    },
+    "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria": {
+      "url": "https://kunakair.com/es/webinar-control-de-la-contaminacion-del-aire-en-la-industria/",
+      "fichero": "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
+      "http": 200,
+      "bytes": 318866,
+      "sha256": "60d2f311fd33eb84026e5e0915aa539076d0eca6481fe0e7abf48e98cb9ebb0f",
+      "capturada": "2026-08-14T20:59:31.539Z"
     }
   }
 }

@@ -1,0 +1,1075 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "pregunta": "¿tiene el clon población para emitir y verificar las 142 rutas que D2.5 declara?",
+    "fuentes": {
+      "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-14.json (2026-08-14) — manda ésta para el recuento de rutas",
+      "clon": "DB por Local API, estado=publicado — la misma fuente que usa el build"
+    },
+    "sabotaje": null,
+    "noMide": [
+      "píxeles: no abre navegador ni pide una URL",
+      "si sembrar el corpus entero es la salida correcta: eso es una DECISIÓN, no una medida",
+      "píxeles de la plantilla: eso es `lh-cmp`",
+      "si el CONTENIDO de cada documento es el bueno: aquí sólo se cuenta cuántos hay"
+    ],
+    "cota": "ESTRECHADA el 2026-08-13: una serie de término se cuenta POR SU TÉRMINO (y por sus hijas si es padre de una taxonomía jerárquica). Un término ausente da 0 y sale ROJO. Sólo las series cuya colección ES la serie usan el recuento de colección entera."
+  },
+  "porVia": {
+    "coleccion-con-filtro": 1,
+    "coleccion-entera": 3,
+    "termino": 24,
+    "termino-padre-por-sus-hijas": 1
+  },
+  "seriesSinTermino": [],
+  "poblacionClon": {
+    "entradas-blog": 149,
+    "terminos-kunakpedia": 37,
+    "faqs": 19,
+    "documentos-cientificos": 23,
+    "casos": 57
+  },
+  "series": [
+    {
+      "ruta": "/blog",
+      "map": {
+        "prefijo": "/blog",
+        "coleccion": "entradas-blog",
+        "forma": "L1-blog",
+        "donde": {
+          "recurso": {
+            "exists": false
+          }
+        }
+      },
+      "paginasCapturadas": 17,
+      "paginaDeVerdad": true,
+      "rutasD25": 17,
+      "paginasConContenido": 8,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·A·-N·s6·sb",
+        "t9·A·PN·s6·sb",
+        "t5·A·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 68,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 66,
+      "viaClon": "coleccion-con-filtro",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 8,
+      "alcanza": false
+    },
+    {
+      "ruta": "/casos-de-exito",
+      "map": {
+        "prefijo": "/casos-de-exito",
+        "coleccion": "casos",
+        "forma": "L5-casos"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 57,
+      "porPagina": 57,
+      "clases": [
+        "t57·ninguna·--·s6"
+      ],
+      "coleccion": "casos",
+      "poblacionOriginal": 57,
+      "via": "repite-en-todas-sus-paginas",
+      "poblacionClon": 57,
+      "viaClon": "coleccion-entera",
+      "motivoClon": null,
+      "cotaSuperior": true,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/calidad-del-aire",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 7,
+      "paginaDeVerdad": true,
+      "rutasD25": 7,
+      "paginasConContenido": 4,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t6·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 33,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 33,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 4,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/co2-es",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 7,
+      "porPagina": 7,
+      "clases": [
+        "t7·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 7,
+      "via": "pagina-unica",
+      "poblacionClon": 7,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 8,
+      "paginaDeVerdad": true,
+      "rutasD25": 8,
+      "paginasConContenido": 4,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t9·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 36,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 36,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 4,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/cov",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 6,
+      "porPagina": 6,
+      "clases": [
+        "t6·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 6,
+      "via": "pagina-unica",
+      "poblacionClon": 6,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/emisiones-industriales",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 5,
+      "paginaDeVerdad": true,
+      "rutasD25": 5,
+      "paginasConContenido": 3,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t5·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 23,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 23,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 3,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/gases-de-efecto-invernadero",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 9,
+      "via": "pagina-unica",
+      "poblacionClon": 9,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/h2s-es",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 4,
+      "porPagina": 4,
+      "clases": [
+        "t4·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 4,
+      "via": "pagina-unica",
+      "poblacionClon": 5,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/malos-olores",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 8,
+      "porPagina": 8,
+      "clases": [
+        "t8·ninguna·--·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 8,
+      "via": "pagina-unica",
+      "poblacionClon": 8,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 19,
+      "paginaDeVerdad": true,
+      "rutasD25": 19,
+      "paginasConContenido": 11,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t1·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 91,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 89,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 10,
+      "alcanza": false
+    },
+    {
+      "ruta": "/etiqueta/normativa-de-calidad-del-aire",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 4,
+      "paginaDeVerdad": true,
+      "rutasD25": 4,
+      "paginasConContenido": 3,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t2·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 20,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 20,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 3,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/particulas-en-suspension",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 4,
+      "paginaDeVerdad": true,
+      "rutasD25": 4,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t7·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 16,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 16,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 2,
+      "alcanza": true
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire",
+      "map": {
+        "prefijo": "/etiqueta/",
+        "coleccion": "entradas-blog",
+        "forma": "L1-etiqueta",
+        "taxonomia": "etiquetas",
+        "campo": "etiquetas"
+      },
+      "paginasCapturadas": 7,
+      "paginaDeVerdad": true,
+      "rutasD25": 7,
+      "paginasConContenido": 4,
+      "tarjetasPrimera": 9,
+      "porPagina": 9,
+      "clases": [
+        "t9·ninguna·-N·s6·sb",
+        "t9·ninguna·PN·s6·sb",
+        "t7·ninguna·P-·s6·sb",
+        "t0·ninguna·--·s6·sb"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 34,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 34,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 4,
+      "alcanza": true
+    },
+    {
+      "ruta": "/glosario",
+      "map": {
+        "prefijo": "/glosario",
+        "coleccion": "terminos-kunakpedia",
+        "forma": "L2-glosario"
+      },
+      "paginasCapturadas": 8,
+      "paginaDeVerdad": true,
+      "rutasD25": 8,
+      "paginasConContenido": 8,
+      "tarjetasPrimera": 5,
+      "porPagina": 5,
+      "clases": [
+        "t5·ninguna·-N·s4",
+        "t5·ninguna·PN·s4",
+        "t2·ninguna·P-·s4"
+      ],
+      "coleccion": "terminos-kunakpedia",
+      "poblacionOriginal": 37,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 37,
+      "viaClon": "coleccion-entera",
+      "motivoClon": null,
+      "cotaSuperior": true,
+      "paginasClon": 8,
+      "alcanza": true
+    },
+    {
+      "ruta": "/preguntas-frecuentes",
+      "map": {
+        "prefijo": "/preguntas-frecuentes",
+        "coleccion": "faqs",
+        "forma": "L2-faqs"
+      },
+      "paginasCapturadas": 4,
+      "paginaDeVerdad": true,
+      "rutasD25": 4,
+      "paginasConContenido": 4,
+      "tarjetasPrimera": 5,
+      "porPagina": 5,
+      "clases": [
+        "t5·ninguna·-N·s4",
+        "t5·ninguna·PN·s4",
+        "t4·ninguna·P-·s4"
+      ],
+      "coleccion": "faqs",
+      "poblacionOriginal": 19,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 19,
+      "viaClon": "coleccion-entera",
+      "motivoClon": null,
+      "cotaSuperior": true,
+      "paginasClon": 4,
+      "alcanza": true
+    },
+    {
+      "ruta": "/productos",
+      "map": {
+        "prefijo": "/productos",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 0,
+      "tarjetasPrimera": 0,
+      "porPagina": 0,
+      "clases": [
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 0,
+      "via": "pagina-unica",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    },
+    {
+      "ruta": "/recursos",
+      "map": {
+        "prefijo": "/recursos",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 3,
+      "porPagina": 3,
+      "clases": [
+        "t3·ninguna·--·s8"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 3,
+      "via": "repite-en-todas-sus-paginas",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    },
+    {
+      "ruta": "/recursos/articulos",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 16,
+      "paginaDeVerdad": true,
+      "rutasD25": 16,
+      "paginasConContenido": 6,
+      "tarjetasPrimera": 15,
+      "porPagina": 15,
+      "clases": [
+        "t15·C·-N·s6",
+        "t15·C·PN·s6",
+        "t5·C·P-·s6",
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 80,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 81,
+      "viaClon": "termino-padre-por-sus-hijas",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 6,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-en-la-construccion",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 4,
+      "porPagina": 4,
+      "clases": [
+        "t4·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 4,
+      "via": "pagina-unica",
+      "poblacionClon": 4,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 1,
+      "porPagina": 1,
+      "clases": [
+        "t1·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 1,
+      "via": "pagina-unica",
+      "poblacionClon": 2,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-minera",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 1,
+      "porPagina": 1,
+      "clases": [
+        "t1·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 1,
+      "via": "pagina-unica",
+      "poblacionClon": 1,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-urbana",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 5,
+      "paginaDeVerdad": true,
+      "rutasD25": 5,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 15,
+      "porPagina": 15,
+      "clases": [
+        "t15·C·-N·s6",
+        "t9·C·P-·s6",
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 24,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 24,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 2,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-y-salud",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 4,
+      "paginaDeVerdad": true,
+      "rutasD25": 4,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 15,
+      "porPagina": 15,
+      "clases": [
+        "t15·C·-N·s6",
+        "t4·C·P-·s6",
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 19,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 19,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 2,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/industria-y-contaminacion-por-olores",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 5,
+      "paginaDeVerdad": true,
+      "rutasD25": 5,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 15,
+      "porPagina": 15,
+      "clases": [
+        "t15·C·-N·s6",
+        "t6·C·P-·s6",
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 21,
+      "via": "suma-de-paginas-con-contenido",
+      "poblacionClon": 21,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 2,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/petroleo-y-gas",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 3,
+      "porPagina": 3,
+      "clases": [
+        "t3·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 3,
+      "via": "pagina-unica",
+      "poblacionClon": 3,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/articulos/productos-kunak",
+      "map": {
+        "prefijo": "/recursos/articulos",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 7,
+      "porPagina": 7,
+      "clases": [
+        "t7·ninguna·--·s6",
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 7,
+      "via": "pagina-unica",
+      "poblacionClon": 7,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos",
+      "map": {
+        "prefijo": "/recursos/documentos-cientificos",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 0,
+      "tarjetasPrimera": 0,
+      "porPagina": 0,
+      "clases": [
+        "t0·ninguna·--·s7"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 0,
+      "via": "pagina-unica",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    },
+    {
+      "ruta": "/recursos/kunakpedia",
+      "map": {
+        "prefijo": "/recursos/kunakpedia",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 0,
+      "tarjetasPrimera": 0,
+      "porPagina": 0,
+      "clases": [
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 0,
+      "via": "pagina-unica",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    },
+    {
+      "ruta": "/recursos/preguntas-frecuentes",
+      "map": {
+        "prefijo": "/recursos/preguntas-frecuentes",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 0,
+      "tarjetasPrimera": 0,
+      "porPagina": 0,
+      "clases": [
+        "t0·ninguna·--·s6"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 0,
+      "via": "pagina-unica",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    },
+    {
+      "ruta": "/recursos/seminarios-web",
+      "map": {
+        "prefijo": "/recursos/seminarios-web",
+        "coleccion": "entradas-blog",
+        "forma": "L1-resources",
+        "taxonomia": "categorias-recursos",
+        "campo": "recurso",
+        "jerarquica": true
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 3,
+      "porPagina": 3,
+      "clases": [
+        "t3·ninguna·--·s6"
+      ],
+      "coleccion": "entradas-blog",
+      "poblacionOriginal": 3,
+      "via": "pagina-unica",
+      "poblacionClon": 2,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": false
+    },
+    {
+      "ruta": "/scientific-category/articulos-cientificos-y-estudios",
+      "map": {
+        "prefijo": "/scientific-category/",
+        "coleccion": "documentos-cientificos",
+        "forma": "L3-sci",
+        "taxonomia": "categorias-cientificas",
+        "campo": "categoria"
+      },
+      "paginasCapturadas": 3,
+      "paginaDeVerdad": true,
+      "rutasD25": 3,
+      "paginasConContenido": 3,
+      "tarjetasPrimera": 14,
+      "porPagina": 14,
+      "clases": [
+        "t14·ninguna·--·s5"
+      ],
+      "coleccion": "documentos-cientificos",
+      "poblacionOriginal": 14,
+      "via": "repite-en-todas-sus-paginas",
+      "poblacionClon": 14,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/scientific-category/articulos-tecnicos",
+      "map": {
+        "prefijo": "/scientific-category/",
+        "coleccion": "documentos-cientificos",
+        "forma": "L3-sci",
+        "taxonomia": "categorias-cientificas",
+        "campo": "categoria"
+      },
+      "paginasCapturadas": 1,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 1,
+      "tarjetasPrimera": 1,
+      "porPagina": 1,
+      "clases": [
+        "t1·ninguna·--·s5"
+      ],
+      "coleccion": "documentos-cientificos",
+      "poblacionOriginal": 1,
+      "via": "pagina-unica",
+      "poblacionClon": 1,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/scientific-category/evaluaciones-independientes",
+      "map": {
+        "prefijo": "/scientific-category/",
+        "coleccion": "documentos-cientificos",
+        "forma": "L3-sci",
+        "taxonomia": "categorias-cientificas",
+        "campo": "categoria"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": true,
+      "rutasD25": 2,
+      "paginasConContenido": 2,
+      "tarjetasPrimera": 8,
+      "porPagina": 8,
+      "clases": [
+        "t8·ninguna·--·s5"
+      ],
+      "coleccion": "documentos-cientificos",
+      "poblacionOriginal": 8,
+      "via": "repite-en-todas-sus-paginas",
+      "poblacionClon": 8,
+      "viaClon": "termino",
+      "motivoClon": null,
+      "cotaSuperior": false,
+      "paginasClon": 1,
+      "alcanza": true
+    },
+    {
+      "ruta": "/sectores",
+      "map": {
+        "prefijo": "/sectores",
+        "coleccion": null,
+        "forma": "L4-hub"
+      },
+      "paginasCapturadas": 2,
+      "paginaDeVerdad": false,
+      "rutasD25": 1,
+      "paginasConContenido": 0,
+      "tarjetasPrimera": 0,
+      "porPagina": 0,
+      "clases": [
+        "t0·ninguna·--·s7"
+      ],
+      "coleccion": null,
+      "poblacionOriginal": 0,
+      "via": "pagina-unica",
+      "poblacionClon": null,
+      "paginasClon": null,
+      "alcanza": null
+    }
+  ],
+  "resumen": {
+    "rutasD25": 142,
+    "paginasCapturadasPorLhSerie": 149,
+    "seriesQueCapturaronSinPaginar": [
+      "/casos-de-exito",
+      "/productos",
+      "/recursos",
+      "/recursos/documentos-cientificos",
+      "/recursos/kunakpedia",
+      "/recursos/preguntas-frecuentes",
+      "/sectores"
+    ],
+    "rutasClonCotaSuperior": 83,
+    "seriesQueNoAlcanzan": 3,
+    "seriesConPoblacion": 29,
+    "deficitPorColeccion": {
+      "entradas-blog": {
+        "clon": 149,
+        "mayorSerie": 91,
+        "deficit": 0
+      },
+      "terminos-kunakpedia": {
+        "clon": 37,
+        "mayorSerie": 37,
+        "deficit": 0
+      },
+      "faqs": {
+        "clon": 19,
+        "mayorSerie": 19,
+        "deficit": 0
+      },
+      "documentos-cientificos": {
+        "clon": 23,
+        "mayorSerie": 14,
+        "deficit": 0
+      },
+      "casos": {
+        "clon": 57,
+        "mayorSerie": 57,
+        "deficit": 0
+      }
+    }
+  }
+}
