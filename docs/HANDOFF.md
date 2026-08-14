@@ -1,4 +1,114 @@
-# HANDOFF — el ALCANCE de las specs de `L2`·`L3`·`L5`, escrito antes de construir: CINCO huecos, y uno de ellos era un defecto en lo ya verificado
+# HANDOFF — el comparador mira **13 páginas de 149**, y el verde de la piel B no lo explicaba el alcance: lo explicaba que comparó UNA
+
+> ⛔⛔ **Tanda de ALCANCE, 2026-08-14 (70.ª). CERO formas construidas, y lo ordenó
+> el ESCALÓN 1 del encargo**, que decía: *«si el PASO 1 dice que `lh-cmp` toma el
+> atajo que `lh-serie` rechaza, para antes de construir y escribe la consecuencia:
+> es una decisión de alcance, no un ajuste de sonda»*. **Lo toma.** `L3` y `L5`
+> **no se construyen**; el corte es el limpio que el encargo declara.
+>
+> **Verificación:** `qa:lh-alcance` **13/13** a 1440 y 390, **cruzando al par**
+> con `lh-cmp` (10 707 y 10 714, sin moverse) · negativos `lh-alcance` **3/3** y
+> `lh-huecos` **4/4** · `qa:lib` **167 sondas · 93/93** · `qa:manifiesto` **363
+> rutas · 17 familias · 0 vacías** · `qa:cobertura` **idéntica** · `npm run check`
+> **exit 0**.
+
+## 0 · Los titulares
+
+> **1 · `qa:lh-cmp` COMPARA 13 PÁGINAS DE 149, Y LAS 13 SON LA PÁGINA 1.**
+> Derivado con `qa:lh-alcance` §`alcanceReal` (congelado a los dos anchos,
+> idéntico):
+>
+> | en la unidad de `qa:lh-serie` — la PÁGINA | n |
+> |---|---|
+> | páginas del original | **149** (84 con contenido) |
+> | las que compara | **13**, todas `primera` |
+> | `intermedia` · `última` | **0 de 86** · **0 de 28** |
+> | clases tocadas | **11 de 38** → **27 ciegas = 122 páginas** |
+>
+> `lh-serie` ya había contestado esta pregunta —veredicto literal **«LA SERIE NO
+> ES UNA UNIDAD»**, y su negativo sale rojo ante el atajo de *«una por serie»*—.
+> `lh-cmp` toma ese atajo **y ni siquiera entero**: la página 1 de **13 de las
+> 35** series. Vivía como una línea **SIN NÚMERO** en el `noMide` de
+> `lh-alcance` mientras el cierre se leía como *«LISTADO-B verificado»*.
+
+> **2 · Y CORRIGE EL MECANISMO QUE LA 69.ª ESCRIBIÓ, que es lo que el encargo
+> pedía comprobar.** Aquélla dijo *«los 7 buenos son páginas 1, las únicas que el
+> comparador mira»*. Cruzado **por ruta** y no por cardinal:
+>
+> | | n |
+> |---|---|
+> | instancias de piel B | **43** |
+> | en el universo del espejo | **3** |
+> | **realmente comparadas** | **1** (las otras dos son `L2`, **AUSENTE**) |
+> | **SEPARADORAS** | **0** |
+>
+> > **El verde no vino de mirar sólo páginas buenas: vino de que el dominio
+> > efectivo tenía CERO separadoras.** Y el dominio efectivo es **más pequeño que
+> > el universo**, porque **lo AUSENTE no se resta en ningún denominador**.
+>
+> **Con predicción comprobable:** `/glosario` es página 1 con `total = 8` y **sí
+> separa**, así que **construir `L2` le da al comparador su primera separadora de
+> esta piel sin ensanchar nada**. De paso cae una razón mal escrita en la ficha
+> del arreglo (*«las formas del espejo tienen total ≤ 4»* — `/glosario` tiene 8):
+> el NO-OP se sostenía por la **ausencia**, no por el total.
+
+> **3 · REGLA NUEVA EN `CLAUDE.md` (§12: es regla, no evento).** Un verde vale lo
+> que valen sus **instancias separadoras**, no su recuento de pares; y el dominio
+> efectivo de un comparador es **universo − ausentes**. Con su corolario de
+> redacción: *«el comparador sólo mira X»* y *«de esto comparó UNA y no
+> separaba»* suenan igual, y **sólo la segunda explica un verde**.
+
+> **4 · `CMS-ORDEN-L2` ESCRITA COMO DECISIÓN Y NO DECIDIDA (§7e), y al nombrar
+> los canales que faltaban apareció UNO CON DATO.**
+> `/preguntas-frecuentes` **sí sirve fecha** —`article:modified_time`, **19/19**—
+> y lo que no tiene es un canal **que ORDENE**. *«No hay canal»* era cierto **de
+> los 4 canales mirados** y falso del documento. Y el **sitio** también estaba
+> mal: las fechas viven en la **página individual**, no en el listado, que no
+> sirve fecha en **ninguna** de las dos formas (**0/8 también en `/glosario`**).
+> **El control se cobra dos veces:** en `/glosario`, `dateModified` **tampoco
+> ordena** con 37/37 ⇒ *las fechas de modificación no ordenan estos archivos*,
+> medido en los dos lados. Quedan por barrer: **feed RSS** (servido, no
+> capturado) · **API REST** · `menu_order`.
+
+> **5 · LOS DOS BLOQUEOS DE SIEMBRA, ADJUDICADOS EN VEZ DE SÓLO NOMBRADOS.**
+> §F3-LH-EXTRACTOR-T10-SIN-CABLEAR **sigue fichada y NO entra**: es una
+> **RE-EMISIÓN** de 169 cuerpos, exige línea base antes/después y un `build` —y un
+> `build` **borra el `.next` desde el primer segundo**—, así que no cabe en una
+> tanda con sondas midiendo. §F3-LH-ARTICLE-ETIQUETA-44 va **a T9 y no a la
+> whitelist**: un cierre huérfano es **DOM ajeno**, no estructura; denominador
+> **1 de 3** nuevos y **0 de 209** sembrados, y el discriminador tiene que ser
+> *cierre sin apertura casada*, no el literal `</article>`.
+
+> **6 · LOS TRES NÚMEROS NO SE MUEVEN, Y SE DICEN IGUAL.** Pares **COMPARADOS**
+> 10 707 / 10 714 · **MIXTOS** 1 840 / 1 847 · **AUSENTES** 5 999 / 6 005.
+> Criterio en **13 formas · 6 AUSENTES · 7 comparadas**; el objetivo alcanzable
+> de F3-2 sigue siendo **13 · 1 · 12** (la ausente restante es `L4`, que es
+> F3-3). **Cobertura IDÉNTICA** —`base` 38 · `árbol` 38 · `comportamiento` 37 ·
+> `docH` 31 · `enlaces` 31 · `anchos` 22 · `filas` 13 · `módulos` 9 sobre **363**—
+> y es **por construcción**: cero rutas emitidas, cero geometría nueva.
+>
+> ⚠ **Y los residuos sub-píxel siguen SIN PROBAR, no limpios**: estas rutas no
+> tienen campaña de ruido, y un suelo es propiedad *de las rutas medidas*.
+
+## 0b · Lo que la siguiente tanda tiene delante
+
+1. **Construir `L2`** (2 formas) — desbloqueada sólo cuando `CMS-ORDEN-L2` se
+   decida. Es además la que **más barato** amplía el poder del comparador: mete
+   `/glosario`, su primera instancia separadora de la piel B.
+2. **Construir `L3`** (2 formas, `D2.6`) y **`L5`** (1, sin su filtro) — **no
+   dependen de `CMS-ORDEN-L2`** y siguen siendo el camino más corto a formas
+   verificadas. Sus cinco huecos ya están medidos por la 69.ª: banda de filtros
+   (**162.8** y **264.6 px**), fila **1152** en `L3` donde `mbPorDefecto` **tira**
+   (correcto: no inventarle entrada), cascarón **propio** de `L5` (4 secciones de
+   pie, cabecera **458.09** contra 225). ⚠ **Ninguna de las dos lleva override
+   móvil**: construirle uno cuadraría a 1440 y sería falso.
+3. **Ensanchar el comparador a las `/page/N`** — fichado con su número
+   (**71 páginas**, ×6.5) y con su precondición: hoy **no hay espejo** para ellas,
+   así que es una campaña contra el original, no un parámetro.
+
+---
+
+# (histórico) HANDOFF — el ALCANCE de las specs de `L2`·`L3`·`L5`, escrito antes de construir: CINCO huecos, y uno de ellos era un defecto en lo ya verificado
 
 > ⛔ **Tanda de MEDICIÓN, 2026-08-14 (69.ª). CERO formas construidas, y lo
 > ordenó el propio encargo.** Su ESCALÓN 2 decía *«si al escribir «qué NO
@@ -21,7 +131,7 @@
 > | 1 | `lh-barra`: `L2` `conBarra` **0 de 12** | `L2` **SÍ** tiene barra, **12/12** — la del **TEMA** (`et_right_sidebar` + `#sidebar`, 3 widgets). La partición Divi que aquella medida buscaba: **0/12** en el cuerpo. **Las dos son ciertas** |
 > | 2 | §1 da `ancla 283` y `cabecera 225` y no nombra la diferencia | **58 px, iguales a 1440 y a 390** |
 > | 3 | §3 lista las piezas de la piel B, no su **ventana** | **ventana de 5** con `« First` · `...` · `Last »` |
-> | 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37** · `/preguntas-frecuentes` **sin canal** en los **4** mirados |
+> | 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37** · `/preguntas-frecuentes` **sin canal** en los **4** mirados ⚠ *la 70.ª miró **6**: sí sirve fecha (`article:modified_time` 19/19) y lo que no tiene es canal que **ORDENE*** |
 > | 5 | ninguna nombra la **banda de filtros** | `L3` **3** botones · `L5` **12**, entre el `h1` y el listado |
 >
 > > **Los cinco tienen la misma forma: el número ESTABA en la medida congelada y
@@ -39,8 +149,9 @@
 > | el componente **VIEJO** | **7 / 38** |
 >
 > — y **los 7 que acertaba son exactamente páginas 1**, que son las únicas que
-> el espejo mira. **Segunda vez en dos tandas**: la 68.ª encontró lo mismo en la
-> piel A. Arreglado; **NO-OP sobre todo lo comparado**, mueve el contenido de 23
+> el espejo mira. ⚠ **CORREGIDO por la 70.ª (arriba): el comparador no mira «las
+> 7» — comparó UNA, con 0 SEPARADORAS.** **Segunda vez en dos tandas**: la 68.ª
+> encontró lo mismo en la piel A. Arreglado; **NO-OP sobre todo lo comparado**, mueve el contenido de 23
 > rutas que nada mide.
 
 > **3 · POR QUÉ NADIE LO VIO, QUE ES LO REUTILIZABLE: CERO INSTANCIAS

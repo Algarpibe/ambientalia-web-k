@@ -288,6 +288,26 @@ su propia ficha y su propia línea base. **Dos cambios en una sola medición no 
 pueden atribuir**, así que los 209 se restauraron a su estado sembrado
 (comprobado: **0 difieren**) y los 3 cuerpos nuevos se quedan en disco.
 
+> ⛔ **DECIDIDO 2026-08-14 (70.ª tanda): SIGUE FICHADA, no entra.** La tanda
+> preguntaba si la re-emisión entraba aquí con su línea base o se quedaba
+> fichada, y se queda, por dos razones que no son la misma:
+>
+> 1. **la tanda es una PARADA DE ALCANCE y no construye nada** (§F3-LH-ALCANCE-PAGINA-1),
+>    así que meter una re-emisión de **169 cuerpos ya verificados** dejaría su
+>    diff sin atribuir — que es el argumento del párrafo de arriba, aplicado a
+>    esta tanda en vez de a la anterior;
+> 2. **no es una siembra: es una RE-EMISIÓN**, y una re-emisión se mide
+>    **antes/después** con `clon-base` a los dos anchos. Eso exige un `build`, y
+>    un `build` **borra el `.next` desde el primer segundo** — o sea que no cabe
+>    en una tanda que está corriendo sondas contra el clon servido.
+>
+> **Lo que necesita para entrar, escrito para que no haya que re-derivarlo:** su
+> propia tanda, con (a) la línea base congelada **antes** —`clon-base-{1440,390}`
+> sobre las 363 rutas—, (b) la pasada del extractor, (c) la re-siembra, y (d) el
+> después. El criterio de aceptación es el de §DATOS-MEDIA-HOTLINK, **no** «0
+> regresión»: aquí el contenido **debe** moverse en 169 cuerpos, y lo que hay que
+> comprobar es que se mueve **donde y como** esa ficha dice.
+
 ## ⚠ F3-LH-ARTICLE-ETIQUETA-44 · EL DOCUMENTO 210 EJERCITA UNA ETIQUETA FUERA DEL CENSO DE 43 (2026-08-14, 69.ª tanda)
 
 Al extraer los 3 documentos recién capturados, el saneador rechaza
@@ -306,6 +326,26 @@ el contrato del campo rico: la whitelist se censó sobre **209** documentos y el
 ampliarla — precedente §T3B-NO-CANONICO, misma familia. Y la salida que el
 navegador da está medida por la regla, no por el gusto: un `</article>` sin
 apertura **lo tira el parser**, igual que `min-width: none`.
+
+> **Su sitio en el pipeline, escrito en la 70.ª tanda porque la ficha lo tenía
+> diagnosticado y no ADJUDICADO: es un caso de T9, no de la whitelist.** T9 es la
+> transformación de *DOM ajeno* —lo que el editor pegó y no es contenido—, y un
+> cierre huérfano producido por un find/replace de WordPress **es exactamente
+> eso**. La diferencia importa porque las dos salidas divergen:
+>
+> | salida | qué ES | por qué no |
+> |---|---|---|
+> | ampliar la whitelist a `article` | declarar que `<article>` **es contenido legítimo** del cuerpo | lo dice con n=1, y **no lo es**: no hay apertura que lo justifique |
+> | ⇒ **T9 lo elimina** | tratarlo como **DOM ajeno**, que es lo que la corrupción del original lo hace ser | — |
+>
+> **Alcance, y hay que decirlo con su número:** hoy lo ejercita **1 de 3**
+> documentos nuevos y **0 de los 209** ya sembrados, así que la regla se escribe
+> **con ese denominador** y su discriminador tiene que ser el cierre **sin
+> apertura casada**, no el literal `</article>` — que en un documento futuro
+> podría venir con su apertura y entonces sí sería estructura.
+>
+> ⛔ **Bloquea la siembra de 1 de los 3 documentos capturados.** Los otros 2 no
+> dependen de esto.
 
 ## ✅ F3-LH-CIERRE-68 · `LISTADO-B` COMPLETO — LAS 3 VARIANTES, CLASE A CLASE (2026-08-14, 68.ª tanda)
 
