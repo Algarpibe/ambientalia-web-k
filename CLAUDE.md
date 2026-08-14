@@ -2159,6 +2159,45 @@ La forma correcta es además la más corta: `Write`/`Edit` escriben el fichero
 **sin intérprete en medio**. Para un mensaje de commit largo, el mismo criterio —
 se escribe a un fichero y se pasa con `git commit -F`.
 
+**14 · UNA LIMITACIÓN DECLARADA SIN SU NÚMERO SE LEE COMO UNA NOTA AL PIE.**
+(2026-08-14)
+
+Las trece de arriba persiguen sondas que **no declaran** su límite. Ésta persigue
+la que sí lo declara — y por eso es la que se cuela: cumple la letra del
+contrato, y su salida es indistinguible de la de una sonda sin límites.
+
+> **Una limitación sin cardinal no se puede sopesar, así que no se sopesa: se
+> archiva.** *«No mide las intermedias»* es una frase; *«no mide las 86
+> intermedias de 149»* es una decisión. Las dos ocupan un renglón del mismo
+> campo, y sólo la segunda compite con la frase de cierre que tiene al lado.
+
+**Medido:** `lh-serie` había dictado **«LA SERIE NO ES UNA UNIDAD»** —19 series
+heterogéneas de 28— y el `noMide` de `lh-alcance` lo recogía, **sin número**.
+Mientras tanto el cierre se leía *«LISTADO-B verificado»*. Lo que el campo no
+decía:
+
+| lo que el comparador no miraba | cardinal |
+|---|---|
+| páginas **intermedias** del universo | **86** de 149 |
+| páginas **últimas** | **28** de 149 |
+| clases tocadas | **11** de 38 (27 ciegas, 122 páginas dentro) |
+| páginas que sí comparaba | **13**, todas la primera de su serie |
+
+Y el defecto que vivía justo ahí: `PielB`, **mal en 31 de 38 instancias**, verde.
+
+**Operativamente, y son dos mitades — la segunda es la que faltaba:**
+
+1. **toda línea de `noMide` lleva su cardinal y su denominador.** Un puntero
+   —*«ver `alcanceReal`, que lo dice con su número»*— **no cuenta**: mueve el
+   número a un sitio donde ya no está al lado de la frase que contradice;
+2. **si la limitación cambia lo que una frase de cierre afirma, se escribe
+   TAMBIÉN en esa frase.** El campo que declara el límite y el titular que lo
+   ignora conviven sin contradecirse a la vista, y gana el titular.
+
+Es §*la cobertura declarada al nivel de arriba absorbe todo lo que no se midió
+abajo* con el contenedor movido: aquí el que absorbe **no es la unidad del
+informe, sino el propio campo que declara la limitación.**
+
 ## Comandos
 
 ```bash

@@ -37,7 +37,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { censaEjes } from "./lh-ejes.mjs";
-import { Evaluadas, hoy, leeManifiesto, QA, rutasEmitidas, w } from "./lib.mjs";
+import { env, Evaluadas, hoy, leeManifiesto, QA, rutasEmitidas, w } from "./lib.mjs";
 
 const ARGS = process.argv.slice(2);
 const ANCHO = Number(ARGS.find((a) => /^\d+$/.test(a)) || 1440);
@@ -46,10 +46,28 @@ const SABOTAJES = ["sin-espejo", "eje-sin-declarar"];
 const SABOTAJE = process.env.SABOTAJE || null;
 if (SABOTAJE && !SABOTAJES.includes(SABOTAJE)) throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" · ")})`);
 
-const ESPEJO_F = join(QA, `medidas/lh-spec-${ANCHO}.json`);
+/**
+ * ⚠ **DE QUÉ espejo, y por qué es un PARÁMETRO y no un `if existe`.**
+ *
+ * Hay dos, y miden cosas distintas: `lh-spec` es el espejo de **FORMAS** (13
+ * páginas, todas la 1.ª) y `lh-espejo` es el de **PÁGINAS** (todas las que
+ * listan). El alcance que esta sonda declara **depende de cuál**, así que se
+ * elige por argumento y **nunca por fallback silencioso** — un `?? el que haya`
+ * haría que el mismo comando publicara dos denominadores distintos según el
+ * estado del disco, que es §regla 6 con el número del informe dentro.
+ */
+const ESPEJO_REL =
+  env("ESPEJO") ??
+  (ARGS.find((a) => a.startsWith("--espejo=")) ?? "").split("=").slice(1).join("=") ??
+  null;
+const ESPEJO_NOMBRE = ESPEJO_REL || `medidas/lh-spec-${ANCHO}.json`;
+/** Sufijo del fichero congelado: dos espejos NO pueden pisar la misma salida. */
+const SUFIJO = ESPEJO_REL ? "-todas" : "";
+
+const ESPEJO_F = join(QA, ESPEJO_NOMBRE);
 if (!existsSync(ESPEJO_F) || SABOTAJE === "sin-espejo")
   throw new Error(
-    `ESPEJO AUSENTE: no existe medidas/lh-spec-${ANCHO}.json.\n` +
+    `ESPEJO AUSENTE: no existe ${ESPEJO_NOMBRE}.\n` +
       `  El universo de pares SALE del espejo. Sin él, el alcance saldría «0 pares»,\n` +
       `  que se lee como «no hay nada que verificar» en vez de como «no miré» (§sondas 4bis).`,
   );
@@ -97,7 +115,7 @@ if (!FORMAS.length) throw new Error("0 formas en el espejo: un cero aquí se lee
 const ev = new Evaluadas({ nombre: `lh-alcance@${ANCHO}`, unidad: "formas del espejo censadas", minimo: FORMAS.length });
 
 console.log(`\n════════ LISTADOS · ALCANCE VERIFICABLE @${ANCHO} ════════`);
-console.log(`  espejo     medidas/lh-spec-${ANCHO}.json (congelado ${ESPEJO.meta?.fecha ?? "?"})`);
+console.log(`  espejo     ${ESPEJO_NOMBRE} (congelado ${ESPEJO.meta?.fecha ?? "?"}) — unidad ${ESPEJO.meta?.unidad ?? "?"}`);
 console.log(`  formas     ${FORMAS.length}`);
 console.log(`  ⚠ esto NO es una comparación: es el DENOMINADOR de la que venga después.\n`);
 console.log(`  ${"forma".padEnd(46)} ${"pares".padStart(6)} ${"verif.".padStart(7)} ${"MIXTOS".padStart(7)}  ${"%mixto".padStart(7)}  ruta en app/`);
@@ -303,15 +321,25 @@ const salida = {
   meta: {
     fecha: hoy(),
     que: `ALCANCE VERIFICABLE de los listados a ${ANCHO}: el denominador de qa:lh-cmp, derivado ANTES de comparar`,
-    espejo: `medidas/lh-spec-${ANCHO}.json (${ESPEJO.meta?.fecha ?? "?"})`,
+    espejo: `${ESPEJO_NOMBRE} (${ESPEJO.meta?.fecha ?? "?"})`,
     unidad: "el PAR (camino × propiedad), la misma que qa:lh-cmp",
+    /**
+     * ⚠ **CADA LÍNEA CON SU CARDINAL Y SU DENOMINADOR (§regla 14, 2026-08-14).**
+     *
+     * Estas líneas existían desde el primer día **sin número**, y así se leen
+     * como una nota al pie en vez de como lo que son: la otra mitad del
+     * denominador. Y no vale un puntero —*«ver `alcanceReal`, que lo dice con su
+     * número»*—: mover el número a otro campo lo saca de al lado de la frase que
+     * contradice, que es justo donde tiene que estar para que alguien lo sopese.
+     */
     noMide: [
-      "el clon: esta sonda no abre una página ni arranca el servidor",
-      "si un par CUADRA: eso es la comparación, no el alcance",
-      /* ⚠ Esta línea existía desde el primer día **sin número**, y así se lee
-       * como una nota al pie en vez de como lo que es: la mitad del denominador.
-       * El número vive ahora en `alcanceReal`, abajo — 13 páginas de 149. */
-      "las rutas /page/N: el espejo mide la página 1 de cada forma → ver `alcanceReal`, que lo dice CON SU NÚMERO",
+      `el clon: esta sonda no abre una página ni arranca el servidor — 0 de las ${FORMAS.length} formas se renderiza aquí`,
+      `si un par CUADRA: eso es la comparación, no el alcance — de los ${pares} pares censados, esta sonda comprueba 0`,
+      `las páginas que el espejo NO trae: compara ${alcanceReal.paginas.queCompara} de ${alcanceReal.paginas.enElUniverso} ` +
+        `(${JSON.stringify(alcanceReal.paginas.porPosicionQueCompara)} de ${JSON.stringify(alcanceReal.paginas.porPosicionDelUniverso)}), ` +
+        `y toca ${alcanceReal.clases.queToca} de ${alcanceReal.clases.enElUniverso} clases — ${alcanceReal.clases.ciegas} ciegas, ${alcanceReal.clases.paginasEnClasesCiegas} páginas dentro`,
+      `las formas AUSENTES en el clon: el dominio EFECTIVO es universo − ausentes, y esta sonda no abre el clon — ` +
+        `de las ${FORMAS.length} formas, ${FORMAS.filter((F) => construida(F.ruta) === true).length} tienen ruta emitida`,
     ],
     porQueMixto:
       "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, " +
@@ -348,7 +376,9 @@ else {
 console.log(`\n  ⚠ «verificable» NO quiere decir «verificado»: dice que el par TIENE referencia.`);
 console.log(`    Que cuadre o no lo dice qa:lh-cmp, y sólo en las formas que el clon sirva.\n`);
 
-w(`medidas/lh-alcance-${ANCHO}.json`, salida);
+/* Dos espejos, dos congeladas: pisar la misma borraría la evidencia de que el
+ * alcance era otro antes de ensanchar (§sondas 5). */
+w(`medidas/lh-alcance-${ANCHO}${SUFIJO}.json`, salida);
 
 console.log(
   `✅ ${FORMAS.length} formas censadas · ${pares} pares · ${verificables} verificables · ${total.mixta} MIXTOS (${pctMixto} %).\n`,

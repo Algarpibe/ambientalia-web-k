@@ -1,0 +1,1324 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "que": "INVENTARIO DE CANALES de las páginas que el comparador NO mira — derivado ANTES de capturar",
+    "fuente": "corpus/fase-3/listados (HTML congelado) · población de medidas/lh-serie.json · espejo de medidas/lh-spec-1440.json",
+    "autoridad": "CLAUDE.md §EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA · §F3-LH-ALCANCE-PAGINA-1",
+    "unidad": "la PÁGINA para el universo; la URL DISTINTA para cada canal",
+    "noMide": [
+      "el clon: no abre navegador ni servidor — 0 de las 84 páginas se renderiza aquí",
+      "si un asset presente es el CORRECTO: mira que exista, no que case (0 URL de imagen distintas)",
+      "las 55 páginas VACÍAS de D2.5 (de 149): están en el universo de RUTAS y no en el del comparador, y sus canales NO entran en estos números",
+      "las 10 páginas de 5 series cuya FORMA no usa <article> (productos · recursos/documentos-cientificos · recursos/kunakpedia · recursos/preguntas-frecuentes · sectores): su `tarjetas: 0` NO es «vacía», así que este universo las deja fuera y ninguna de ellas está en el espejo — son hubs de D2.4 (canonical a la página 1) y su arquetipo lo miden otras sondas",
+      "el eje de comportamiento: 30 <script src> distintos en estas 84 páginas, cruzados contra 0 guardas — son unidad de qa:comportamiento, no de ésta"
+    ]
+  },
+  "universo": {
+    "paginas": 149,
+    "conContenido": 84,
+    "vacias": 55,
+    "sinArticle": 10,
+    "seriesSinArticle": [
+      "productos",
+      "recursos/documentos-cientificos",
+      "recursos/kunakpedia",
+      "recursos/preguntas-frecuentes",
+      "sectores"
+    ],
+    "cuadraElUniverso": true,
+    "yaEnElEspejo": 13,
+    "nuevasParaElComparador": 71,
+    "factorSobreLoQueHoySeCompara": 6.5,
+    "sinHtmlEnElCorpus": 0,
+    "rutasSinHtml": []
+  },
+  "canales": {
+    "hoja": {
+      "que": "<link> de hoja de estilo",
+      "guarda": "corpus/css",
+      "apariciones": 1008,
+      "distintas": 47,
+      "presentes": 47,
+      "faltan": 0,
+      "fueraDeAlcance": 0,
+      "porFamilia": {
+        "plugin": {
+          "distintas": 4,
+          "presentes": 4,
+          "faltan": 0,
+          "fueraDeAlcance": 0
+        },
+        "et-cache": {
+          "distintas": 40,
+          "presentes": 40,
+          "faltan": 0,
+          "fueraDeAlcance": 0
+        },
+        "tema": {
+          "distintas": 1,
+          "presentes": 1,
+          "faltan": 0,
+          "fueraDeAlcance": 0
+        },
+        "wp-includes": {
+          "distintas": 2,
+          "presentes": 2,
+          "faltan": 0,
+          "fueraDeAlcance": 0
+        }
+      },
+      "porSerie": {
+        "enUnaSolaSerie": 32,
+        "enVariasSeries": 15,
+        "reparto": {
+          "1": 32,
+          "2": 1,
+          "5": 1,
+          "12": 4,
+          "28": 3,
+          "29": 1,
+          "30": 5
+        }
+      },
+      "listaAPedir": [],
+      "filas": [
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/140/et-core-unified-cpt-140.min.css",
+          "familia": "et-cache",
+          "paginas": 80,
+          "series": 28,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/140/et-core-unified-cpt-deferred-140.min.css",
+          "familia": "et-cache",
+          "paginas": 80,
+          "series": 28,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/24813/et-core-unified-cpt-24813.min.css",
+          "familia": "et-cache",
+          "paginas": 36,
+          "series": 12,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/24813/et-core-unified-cpt-deferred-24813.min.css",
+          "familia": "et-cache",
+          "paginas": 36,
+          "series": 12,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/26987/et-divi-dynamic-tb-140-tb-29204-26987.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/27481/et-core-unified-cpt-27481.min.css",
+          "familia": "et-cache",
+          "paginas": 8,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/27481/et-core-unified-cpt-deferred-27481.min.css",
+          "familia": "et-cache",
+          "paginas": 8,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/33166/et-core-unified-33166.min.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/33166/et-divi-dynamic-tb-140-tb-342-33166.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/342/et-core-unified-cpt-deferred-342.min.css",
+          "familia": "et-cache",
+          "paginas": 80,
+          "series": 28,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/archive/et-divi-dynamic-tb-140-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 12,
+          "series": 2,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/global/et-divi-customizer-cpt-global.min.css",
+          "familia": "et-cache",
+          "paginas": 18,
+          "series": 5,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/global/et-divi-customizer-global.min.css",
+          "familia": "et-cache",
+          "paginas": 82,
+          "series": 29,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/home/et-divi-dynamic-tb-140-tb-27481-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 8,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/205/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 4,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/359/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 11,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/360/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 4,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/411/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 4,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/614/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 3,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/615/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/616/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/617/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/618/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/619/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/620/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/post_tag/621/et-divi-dynamic-tb-140-tb-24813-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 3,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/379/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 6,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/384/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/393/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/394/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/395/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/396/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/397/et-divi-dynamic-tb-140-tb-33040-tb-342-late.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/397/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/399/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/400/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/resources/607/et-divi-dynamic-tb-140-tb-33040-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/scientific-category/528/et-divi-dynamic-tb-140-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 2,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/scientific-category/529/et-divi-dynamic-tb-140-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 3,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/et-cache/taxonomy/scientific-category/673/et-divi-dynamic-tb-140-tb-342.css",
+          "familia": "et-cache",
+          "paginas": 1,
+          "series": 1,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css",
+          "familia": "plugin",
+          "paginas": 84,
+          "series": 30,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front-popuphidden.min.css",
+          "familia": "plugin",
+          "paginas": 84,
+          "series": 30,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/plugins/popups-for-divi/styles/front.min.css",
+          "familia": "plugin",
+          "paginas": 84,
+          "series": 30,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/plugins/text-case-converter/assets/libs/zebra/zebra_tooltips.min.css",
+          "familia": "plugin",
+          "paginas": 84,
+          "series": 30,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-content/themes/KunakAir/style.css",
+          "familia": "tema",
+          "paginas": 84,
+          "series": 30,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
+          "familia": "wp-includes",
+          "paginas": 36,
+          "series": 12,
+          "presente": true
+        },
+        {
+          "url": "https://kunakair.com/wp-includes/js/mediaelement/wp-mediaelement.min.css",
+          "familia": "wp-includes",
+          "paginas": 36,
+          "series": 12,
+          "presente": true
+        }
+      ]
+    },
+    "imagen": {
+      "que": "<img> src y cada candidato de srcset",
+      "guarda": "apps/web/public",
+      "apariciones": 0,
+      "distintas": 0,
+      "presentes": 0,
+      "faltan": 0,
+      "fueraDeAlcance": 0,
+      "porFamilia": {},
+      "porSerie": {
+        "enUnaSolaSerie": 0,
+        "enVariasSeries": 0,
+        "reparto": {}
+      },
+      "listaAPedir": []
+    },
+    "ogImage": {
+      "que": "<meta property=og:image>",
+      "guarda": "apps/web/public",
+      "apariciones": 12,
+      "distintas": 3,
+      "presentes": 1,
+      "faltan": 2,
+      "fueraDeAlcance": 0,
+      "porFamilia": {
+        "uploads": {
+          "distintas": 3,
+          "presentes": 1,
+          "faltan": 2,
+          "fueraDeAlcance": 0
+        }
+      },
+      "porSerie": {
+        "enUnaSolaSerie": 3,
+        "enVariasSeries": 0,
+        "reparto": {
+          "1": 3
+        }
+      },
+      "listaAPedir": [
+        "https://kunakair.com/wp-content/uploads/2022/12/imagen-banner-principal.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/02/urban-air-quality.jpg"
+      ]
+    }
+  },
+  "fueraDeAlcance": {
+    "script": {
+      "distintos": 30,
+      "guarda": "ninguna aquí — qa:comportamiento",
+      "cruzados": 0
+    }
+  },
+  "aportacionDeLasNuevas": {
+    "hoja": {
+      "tocadasPorLasNuevas": 43,
+      "exclusivasDeLasNuevas": 18
+    },
+    "imagen": {
+      "tocadasPorLasNuevas": 0,
+      "exclusivasDeLasNuevas": 0
+    },
+    "ogImage": {
+      "tocadasPorLasNuevas": 3,
+      "exclusivasDeLasNuevas": 0
+    }
+  },
+  "porPagina": {
+    "blog": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·A·-N·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "blog/page/8": {
+      "n": 8,
+      "pos": "intermedia",
+      "clase": "t5·A·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 12,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "casos-de-exito": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t57·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 7,
+      "hojasEtCache": 2,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "casos-de-exito/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t57·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 7,
+      "hojasEtCache": 2,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "etiqueta/calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t6·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/co2-es": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t7·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/cov": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t6·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/gases-de-efecto-invernadero": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/h2s-es": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t4·ninguna·--·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/malos-olores": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t8·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/8": {
+      "n": 8,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/9": {
+      "n": 9,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/10": {
+      "n": 10,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/11": {
+      "n": 11,
+      "pos": "intermedia",
+      "clase": "t1·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t2·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/particulas-en-suspension": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/particulas-en-suspension/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t7·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t7·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 14,
+      "hojasEtCache": 7,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t5·ninguna·-N·s4",
+      "nuevaParaElComparador": false,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "glosario/page/8": {
+      "n": 8,
+      "pos": "última",
+      "clase": "t2·ninguna·P-·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t5·ninguna·-N·s4",
+      "nuevaParaElComparador": false,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/4": {
+      "n": 4,
+      "pos": "última",
+      "clase": "t4·ninguna·P-·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s8",
+      "nuevaParaElComparador": false,
+      "hojas": 7,
+      "hojasEtCache": 2,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "recursos/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t3·ninguna·--·s8",
+      "nuevaParaElComparador": true,
+      "hojas": 7,
+      "hojasEtCache": 2,
+      "imagenes": 0,
+      "ogImage": 1
+    },
+    "recursos/articulos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t5·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-en-la-construccion": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t4·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-en-puertos-y-aeropuertos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-minera": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-urbana": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-urbana/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-y-salud": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-y-salud/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t4·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/industria-y-contaminacion-por-olores": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/industria-y-contaminacion-por-olores/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t6·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/petroleo-y-gas": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/articulos/productos-kunak": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t7·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "recursos/seminarios-web": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 10,
+      "hojasEtCache": 5,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": false,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios/page/3": {
+      "n": 3,
+      "pos": "última",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-tecnicos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s5",
+      "nuevaParaElComparador": false,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/evaluaciones-independientes": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t8·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    },
+    "scientific-category/evaluaciones-independientes/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t8·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 11,
+      "hojasEtCache": 6,
+      "imagenes": 0,
+      "ogImage": 0
+    }
+  }
+}

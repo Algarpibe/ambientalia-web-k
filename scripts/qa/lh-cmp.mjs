@@ -48,9 +48,18 @@
  * restar) y los deltas del cuerpo ya normalizados — y **la cruda va primero**.
  *
  * ── ⛔ EL ALCANCE, DECLARADO AQUÍ PORQUE ES AQUÍ DONDE SE LEE EL VERDE ─────
- * **Esta sonda compara 13 PÁGINAS de 149, y las 13 son la página 1.** No es un
- * detalle de implementación: es la mitad del denominador, y el recuento de pares
- * —10 707 @1440— la absorbe entera.
+ * **El alcance de esta sonda lo pone EL ESPEJO QUE SE LE DÉ, y hay dos.** Desde
+ * la 71.ª tanda se elige por argumento (`--espejo=`), nunca por fallback:
+ *
+ * | espejo | unidad | qué significa su Δ0 |
+ * |---|---|---|
+ * | `lh-spec-<ancho>.json` (por defecto) | la FORMA | **la PÁGINA 1** de 13 formas, y nada de `/page/2` en adelante |
+ * | `lh-espejo-<ancho>.json` (`qa:lh-cmp-todas`) | la PÁGINA | **todas** las que listan, `/page/N` incluidas |
+ *
+ * El número vivo lo imprime la sonda en su segunda línea y lo congela en
+ * `meta.alcance` — §regla 14: *una limitación declarada sin su número se lee
+ * como una nota al pie*, y el recuento de pares (10 707 @1440 con el espejo de
+ * formas) **absorbe entera** la pregunta de sobre cuántas páginas se tomaron.
  *
  * | en la unidad de `qa:lh-serie` (la PÁGINA) | n |
  * |---|---|
@@ -125,10 +134,29 @@ if (SABOTAJE && !SABOTAJES.includes(SABOTAJE)) throw new Error(`SABOTAJE descono
 /* ── El universo: DERIVADO de la spec congelada, no escrito a mano ─────────
  * Las claves de `lh-spec` son las formas medidas del original. Si mañana se
  * mide una décima, entra sola — igual que en `enlaces.mjs`. */
-const ESPEJO_F = join(QA, `medidas/lh-spec-${ANCHO}.json`);
+/**
+ * ⚠ **DE QUÉ espejo, y por qué es un PARÁMETRO (2026-08-14, 71.ª tanda).**
+ *
+ * Hay dos y **no miden la misma unidad**: `lh-spec` es el espejo de **FORMAS**
+ * (13 páginas, todas la 1.ª de su serie) y `lh-espejo` el de **PÁGINAS** (todas
+ * las que listan). El alcance de esta sonda —o sea qué significa su verde— sale
+ * entero de cuál se le dé, así que se nombra por argumento y **nunca por
+ * fallback silencioso**: un `?? el que exista` publicaría dos coberturas
+ * distintas bajo el mismo comando según el estado del disco (§regla 6).
+ */
+const ESPEJO_REL =
+  env("ESPEJO") ??
+  (ARGS.find((a) => a.startsWith("--espejo=")) ?? "").split("=").slice(1).join("=") ??
+  null;
+const ESPEJO_NOMBRE = ESPEJO_REL || `medidas/lh-spec-${ANCHO}.json`;
+/** Dos espejos, dos congeladas: pisar la misma borraría la evidencia del
+ *  alcance anterior, que es lo que §sondas 5 protege. */
+const SUFIJO = ESPEJO_REL ? "-todas" : "";
+
+const ESPEJO_F = join(QA, ESPEJO_NOMBRE);
 if (!existsSync(ESPEJO_F) || SABOTAJE === "sin-espejo")
   throw new Error(
-    `ESPEJO AUSENTE: no existe medidas/lh-spec-${ANCHO}.json.\n` +
+    `ESPEJO AUSENTE: no existe ${ESPEJO_NOMBRE}.\n` +
       `  Sin el lado ORIGINAL no hay comparación posible, y su cero saldría como\n` +
       `  «0 pares con diferencia» — un verde de una sonda que no miró (§sondas 4bis).`,
   );
@@ -346,7 +374,17 @@ const salida = {
   meta: {
     fecha: hoy(),
     que: `COMPARADOR de dos lados de listados, par a par, a ${ANCHO}`,
-    ladoOriginal: VIVO ? "kunakair.com VIVO en esta corrida" : `medidas/lh-spec-${ANCHO}.json (congelado ${ESPEJO.meta?.fecha ?? "?"})`,
+    ladoOriginal: VIVO ? "kunakair.com VIVO en esta corrida" : `${ESPEJO_NOMBRE} (congelado ${ESPEJO.meta?.fecha ?? "?"})`,
+    /* ⚠ §regla 14 · el alcance va EN LA MEDIDA, con su número, no sólo en la
+     * ficha: quien lea este fichero tiene que ver de qué es el verde. */
+    alcance: {
+      espejo: ESPEJO_NOMBRE,
+      unidadDelEspejo: ESPEJO.meta?.unidad ?? "?",
+      paginasQueCompara: FORMAS.length,
+      queSignificaUnVerde: ESPEJO_REL
+        ? `Δ0 en las ${FORMAS.length} PÁGINAS del espejo, /page/N incluidas`
+        : `Δ0 en la PÁGINA 1 de ${FORMAS.length} formas — NO dice nada de /page/2 en adelante (§F3-LH-ALCANCE-PAGINA-1)`,
+    },
     ladoClon: CLON,
     unidad: "el PAR (camino × propiedad), NO el Δ0 de página",
     ruido:
@@ -359,6 +397,7 @@ const salida = {
 
 console.log(`\n════════ LISTADOS · COMPARADOR DE DOS LADOS @${ANCHO} ════════`);
 console.log(`  original   ${salida.meta.ladoOriginal}`);
+console.log(`  ALCANCE    ${salida.meta.alcance.queSignificaUnVerde}`);
 console.log(`  clon       ${CLON}`);
 console.log(`  corpus     ${CORPUS}   ← referencia del eje 'contenido' (§F3-LH-DOS-FOTOS)`);
 console.log(`  deriva     ${derivaConocida.size} pares de titular EXCLUIDOS por conocidos${DERIVA ? "" : "   ⚠ sin medidas/lh-extracto.json: 0 exclusiones"}`);
@@ -537,7 +576,7 @@ console.log(`\n  ⚠ sin campaña de ruido en estas rutas: un residuo pequeño e
 for (const b of basesQueNoCasan)
   console.log(`  ⛔ P-LH-C8 · ${b.forma}: original ${b.original.que}/${b.original.marca} → clon ${b.clon.que}/${b.clon.marca}`);
 
-w(`medidas/lh-cmp-${ANCHO}${VIVO ? "-vivo" : ""}.json`, salida);
+w(`medidas/lh-cmp-${ANCHO}${SUFIJO}${VIVO ? "-vivo" : ""}.json`, salida);
 const muertos = censo.informe?.() ?? 0;
 await pararClon?.();
 

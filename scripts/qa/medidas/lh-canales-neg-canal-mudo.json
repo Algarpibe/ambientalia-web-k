@@ -1,0 +1,1106 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "que": "INVENTARIO DE CANALES de las páginas que el comparador NO mira — derivado ANTES de capturar",
+    "fuente": "corpus/fase-3/listados (HTML congelado) · población de medidas/lh-serie.json · espejo de medidas/lh-spec-1440.json",
+    "autoridad": "CLAUDE.md §EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA · §F3-LH-ALCANCE-PAGINA-1",
+    "unidad": "la PÁGINA para el universo; la URL DISTINTA para cada canal",
+    "noMide": [
+      "el clon: no abre navegador ni servidor — 0 de las 84 páginas se renderiza aquí",
+      "si un asset presente es el CORRECTO: mira que exista, no que case (381 URL de imagen distintas)",
+      "las 55 páginas VACÍAS de D2.5 (de 149): están en el universo de RUTAS y no en el del comparador, y sus canales NO entran en estos números",
+      "las 10 páginas de 5 series cuya FORMA no usa <article> (productos · recursos/documentos-cientificos · recursos/kunakpedia · recursos/preguntas-frecuentes · sectores): su `tarjetas: 0` NO es «vacía», así que este universo las deja fuera y ninguna de ellas está en el espejo — son hubs de D2.4 (canonical a la página 1) y su arquetipo lo miden otras sondas",
+      "el eje de comportamiento: 30 <script src> distintos en estas 84 páginas, cruzados contra 0 guardas — son unidad de qa:comportamiento, no de ésta"
+    ]
+  },
+  "universo": {
+    "paginas": 149,
+    "conContenido": 84,
+    "vacias": 55,
+    "sinArticle": 10,
+    "seriesSinArticle": [
+      "productos",
+      "recursos/documentos-cientificos",
+      "recursos/kunakpedia",
+      "recursos/preguntas-frecuentes",
+      "sectores"
+    ],
+    "cuadraElUniverso": true,
+    "yaEnElEspejo": 13,
+    "nuevasParaElComparador": 71,
+    "factorSobreLoQueHoySeCompara": 6.5,
+    "sinHtmlEnElCorpus": 0,
+    "rutasSinHtml": []
+  },
+  "canales": {
+    "hoja": {
+      "que": "<link> de hoja de estilo",
+      "guarda": "corpus/css",
+      "apariciones": 0,
+      "distintas": 0,
+      "presentes": 0,
+      "faltan": 0,
+      "fueraDeAlcance": 0,
+      "porFamilia": {},
+      "porSerie": {
+        "enUnaSolaSerie": 0,
+        "enVariasSeries": 0,
+        "reparto": {}
+      },
+      "listaAPedir": [],
+      "filas": []
+    },
+    "imagen": {
+      "que": "<img> src y cada candidato de srcset",
+      "guarda": "apps/web/public",
+      "apariciones": 1714,
+      "distintas": 381,
+      "presentes": 252,
+      "faltan": 129,
+      "fueraDeAlcance": 0,
+      "porFamilia": {
+        "uploads": {
+          "distintas": 381,
+          "presentes": 252,
+          "faltan": 129,
+          "fueraDeAlcance": 0
+        }
+      },
+      "porSerie": {
+        "enUnaSolaSerie": 49,
+        "enVariasSeries": 332,
+        "reparto": {
+          "1": 49,
+          "2": 111,
+          "3": 72,
+          "4": 34,
+          "5": 97,
+          "6": 16,
+          "30": 2
+        }
+      },
+      "listaAPedir": [
+        "https://kunakair.com/wp-content/uploads/2019/05/Why-is-Spain-officially-the-worlds-healthiest-country-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2019/05/Why-is-Spain-officially-the-worlds-healthiest-country-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2019/05/calidad-del-aire-ciudad-de-mexico-1080x675.jpeg",
+        "https://kunakair.com/wp-content/uploads/2020/04/athletes-exposure-to-air-pollution-during-world-athletics-relays-a-pilot-study-1024x700.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/04/athletes-exposure-to-air-pollution-during-world-athletics-relays-a-pilot-study-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/04/demolicion-estadio-vicente-calderon-0-1024x576.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/04/demolicion-estadio-vicente-calderon-0-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/05/contaminación-por-mal-olor-problemas-ambientales-300x167.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/05/contaminación-por-mal-olor-problemas-ambientales-480x267.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/05/contaminación-por-mal-olor-problemas-ambientales-768x427.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/06/detectores-de-emisiones-coronavirus-contaminacion-1024x576.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/06/detectores-de-emisiones-coronavirus-contaminacion-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430-1024x576.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-quality-1-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-quality-1-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2021/03/honorable-mention-kunak-1024x768.jpg",
+        "https://kunakair.com/wp-content/uploads/2021/03/honorable-mention-kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1-1024x576.png",
+        "https://kunakair.com/wp-content/uploads/2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1-1080x675.png",
+        "https://kunakair.com/wp-content/uploads/2022/11/real-time-air-quality-monitoring-in-maritime-ports-AQE-2022-award-1-1024x827.jpg",
+        "https://kunakair.com/wp-content/uploads/2022/11/real-time-air-quality-monitoring-in-maritime-ports-AQE-2022-award-1-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/01/impacto-de-la-mineria-en-la-calidad-del-aire-kunak-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/01/impacto-de-la-mineria-en-la-calidad-del-aire-kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria-480x320.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria-980x653.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/07/contaminacion-transporte-urbano-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/07/contaminacion-transporte-urbano-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/08/contaminacion-del-aire-por-obras-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/09/EHS-industrial-1080x675.webp",
+        "https://kunakair.com/wp-content/uploads/2023/10/MCERTS-AIR-PRO-ES-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/10/MCERTS-AIR-PRO-ES-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/01/calidad-del-aire-ena-aeropuertos-Kunak-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/01/calidad-del-aire-ena-aeropuertos-Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/01/urban-air-pollution-monitoring-1024x614.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/01/urban-air-pollution-monitoring-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/03/91-1080x675.png",
+        "https://kunakair.com/wp-content/uploads/2024/03/airplane-465619_1280-1080x675.jpeg",
+        "https://kunakair.com/wp-content/uploads/2024/03/control-de-la-calidad-del-aire-en-puertos-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/03/control-de-la-calidad-del-aire-en-puertos-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/Emisiones-de-las-refinerias-de-petroleo-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/Emisiones-de-las-refinerias-de-petroleo-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/glossary-480x288.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/glossary-980x588.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/glossary.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/guides-480x288.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/guides-980x588.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/guides.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue-480x320.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue-980x653.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/webinar-480x288.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/webinar-980x588.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/04/webinar.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/05/How-clean-your-air-is_Ecowatch-1024x654.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/05/How-clean-your-air-is_Ecowatch-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/05/redes-hibridas-calidad-del-aire-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/06/Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/06/Zonas-de-Bajas-Emisiones-y-el-control-de-la-contaminacion-del-aire-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/07/Contaminacion_del_aire_en_Nueva_York-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/07/Sin-titulo-1-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/07/Sin-titulo-1-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/08/SEVESO-1976-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/09/aqe-awards-2024-1024x398.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/09/aqe-awards-2024-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/Microsensores-de-calidad-del-aire-Una-herramienta-fundamental-para-el-monitoreo-ambiental-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/Microsensores-de-calidad-del-aire-Una-herramienta-fundamental-para-el-monitoreo-ambiental-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/NOAA-Medicion-de-gas-ozono-en-la-atmosfera-1024x678.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/NOAA-Medicion-de-gas-ozono-en-la-atmosfera-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/barriada-urbana-y-calidad-del-aire-1024x684.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/barriada-urbana-y-calidad-del-aire-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/kunak-premiada-aqe-awards-2024-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/kunak-premiada-aqe-awards-2024-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/10/lamina-acero-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/12/Celebrando-la-Excelencia-Empresarial-Kunak-Brilla-en-los-Premios-Pyme-2024-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2024/12/Celebrando-la-Excelencia-Empresarial-Kunak-Brilla-en-los-Premios-Pyme-2024-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/Industria-petroquimica-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/scientific_docs-480x288.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/scientific_docs-980x588.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/scientific_docs.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/webinar-air-quality-in-europe-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/webinar-air-quality-in-europe-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2-1024x535.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2-1080x627.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/04/nueva-directiva-europea-de-calidad-del-aire-2024-2881-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/05/contaminacion-produccion-energia-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/05/contaminacion_acustica-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/05/contaminacion_acustica-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/05/gas-sensor-calibration-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/05/gas-sensor-calibration-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/06/justicia-climatica-kunak-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/06/justicia-climatica-kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/07/aaqms-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-480x320.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-980x653.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/08/planta-biogas_biometano-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/09/Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak-1024x691.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/09/Piezas-industriales-afectadas-por-corrosion-del-metal_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-1024x797.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/11/depuradora-de-aguas-residuales-1024x681.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/11/depuradora-de-aguas-residuales-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak-1024x682.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Ganaderia-y-agricultura_calidad-del-aire_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia-480x320.jpg",
+        "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia-980x653.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/Beam-Beijing-Pollution_UFP_Kunak-1080x675.png",
+        "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1080x675.png",
+        "https://kunakair.com/wp-content/uploads/2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/LDAR-deteccion-y-reparacion-de-fugas-industriales_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/PM10-measurement-in-coarse-particle-environments-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/PM10-measurement-in-coarse-particle-environments-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak-1080x675.jpeg",
+        "https://kunakair.com/wp-content/uploads/2026/05/air-pro-kotiti-certified-web-1024x683.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/05/air-pro-kotiti-certified-web-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/06/monitorizacion-perimetral_Kunak-1080x675.jpg",
+        "https://kunakair.com/wp-content/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-1080x675.jpg"
+      ]
+    },
+    "ogImage": {
+      "que": "<meta property=og:image>",
+      "guarda": "apps/web/public",
+      "apariciones": 12,
+      "distintas": 3,
+      "presentes": 1,
+      "faltan": 2,
+      "fueraDeAlcance": 0,
+      "porFamilia": {
+        "uploads": {
+          "distintas": 3,
+          "presentes": 1,
+          "faltan": 2,
+          "fueraDeAlcance": 0
+        }
+      },
+      "porSerie": {
+        "enUnaSolaSerie": 3,
+        "enVariasSeries": 0,
+        "reparto": {
+          "1": 3
+        }
+      },
+      "listaAPedir": [
+        "https://kunakair.com/wp-content/uploads/2022/12/imagen-banner-principal.jpg",
+        "https://kunakair.com/wp-content/uploads/2023/02/urban-air-quality.jpg"
+      ]
+    }
+  },
+  "fueraDeAlcance": {
+    "script": {
+      "distintos": 30,
+      "guarda": "ninguna aquí — qa:comportamiento",
+      "cruzados": 0
+    }
+  },
+  "aportacionDeLasNuevas": {
+    "hoja": {
+      "tocadasPorLasNuevas": 0,
+      "exclusivasDeLasNuevas": 0
+    },
+    "imagen": {
+      "tocadasPorLasNuevas": 363,
+      "exclusivasDeLasNuevas": 229
+    },
+    "ogImage": {
+      "tocadasPorLasNuevas": 3,
+      "exclusivasDeLasNuevas": 0
+    }
+  },
+  "porPagina": {
+    "blog": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·A·-N·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 28,
+      "ogImage": 1
+    },
+    "blog/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 1
+    },
+    "blog/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 1
+    },
+    "blog/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 13,
+      "ogImage": 1
+    },
+    "blog/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 9,
+      "ogImage": 1
+    },
+    "blog/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 6,
+      "ogImage": 1
+    },
+    "blog/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t9·A·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 1
+    },
+    "blog/page/8": {
+      "n": 8,
+      "pos": "intermedia",
+      "clase": "t5·A·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 1
+    },
+    "casos-de-exito": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t57·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 1
+    },
+    "casos-de-exito/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t57·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 1
+    },
+    "etiqueta/calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/calidad-del-aire/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t6·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 22,
+      "ogImage": 0
+    },
+    "etiqueta/co2-es": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t7·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 24,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/contaminantes-atmosfericos/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/cov": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t6·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 21,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/emisiones-industriales/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 19,
+      "ogImage": 0
+    },
+    "etiqueta/gases-de-efecto-invernadero": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/h2s-es": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t4·ninguna·--·s6·sb",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 15,
+      "ogImage": 0
+    },
+    "etiqueta/malos-olores": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t8·ninguna·--·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 28,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 32,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 22,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 19,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/8": {
+      "n": 8,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 9,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/9": {
+      "n": 9,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/10": {
+      "n": 10,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "etiqueta/monitorizacion-ambiental/page/11": {
+      "n": 11,
+      "pos": "intermedia",
+      "clase": "t1·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/normativa-de-calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t2·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 10,
+      "ogImage": 0
+    },
+    "etiqueta/particulas-en-suspension": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "etiqueta/particulas-en-suspension/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t7·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 25,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t9·ninguna·-N·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 33,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t9·ninguna·PN·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 0
+    },
+    "etiqueta/sensor-de-calidad-del-aire/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t7·ninguna·P-·s6·sb",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 17,
+      "ogImage": 0
+    },
+    "glosario": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t5·ninguna·-N·s4",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/7": {
+      "n": 7,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "glosario/page/8": {
+      "n": 8,
+      "pos": "última",
+      "clase": "t2·ninguna·P-·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t5·ninguna·-N·s4",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t5·ninguna·PN·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "preguntas-frecuentes/page/4": {
+      "n": 4,
+      "pos": "última",
+      "clase": "t4·ninguna·P-·s4",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "recursos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s8",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 1
+    },
+    "recursos/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t3·ninguna·--·s8",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 30,
+      "ogImage": 1
+    },
+    "recursos/articulos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 51,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 50,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/3": {
+      "n": 3,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 53,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/4": {
+      "n": 4,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 48,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/5": {
+      "n": 5,
+      "pos": "intermedia",
+      "clase": "t15·C·PN·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 52,
+      "ogImage": 0
+    },
+    "recursos/articulos/page/6": {
+      "n": 6,
+      "pos": "intermedia",
+      "clase": "t5·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 20,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-en-la-construccion": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t4·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 16,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-en-puertos-y-aeropuertos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 6,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-minera": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 6,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-urbana": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 51,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-urbana/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t9·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 31,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-y-salud": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 50,
+      "ogImage": 0
+    },
+    "recursos/articulos/contaminacion-y-salud/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t4·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 17,
+      "ogImage": 0
+    },
+    "recursos/articulos/industria-y-contaminacion-por-olores": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t15·C·-N·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 53,
+      "ogImage": 0
+    },
+    "recursos/articulos/industria-y-contaminacion-por-olores/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t6·C·P-·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 23,
+      "ogImage": 0
+    },
+    "recursos/articulos/petroleo-y-gas": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 12,
+      "ogImage": 0
+    },
+    "recursos/articulos/productos-kunak": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t7·ninguna·--·s6",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 24,
+      "ogImage": 0
+    },
+    "recursos/seminarios-web": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t3·ninguna·--·s6",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 12,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios/page/2": {
+      "n": 2,
+      "pos": "intermedia",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-cientificos-y-estudios/page/3": {
+      "n": 3,
+      "pos": "última",
+      "clase": "t14·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "scientific-category/articulos-tecnicos": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t1·ninguna·--·s5",
+      "nuevaParaElComparador": false,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "scientific-category/evaluaciones-independientes": {
+      "n": 1,
+      "pos": "primera",
+      "clase": "t8·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    },
+    "scientific-category/evaluaciones-independientes/page/2": {
+      "n": 2,
+      "pos": "última",
+      "clase": "t8·ninguna·--·s5",
+      "nuevaParaElComparador": true,
+      "hojas": 0,
+      "hojasEtCache": 0,
+      "imagenes": 3,
+      "ogImage": 0
+    }
+  }
+}
