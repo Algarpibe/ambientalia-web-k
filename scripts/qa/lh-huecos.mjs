@@ -359,12 +359,38 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
     }
     return m;
   };
-  const publicadoDe = (col, slug) => {
+  /**
+   * ⚠ **AMPLIADO 2026-08-14 (70.ª tanda), y la ampliación CAMBIA EL VEREDICTO.**
+   *
+   * La primera versión miraba **3** canales y de ahí salió *«`/preguntas-frecuentes`
+   * no tiene canal»*. §*una afirmación de que un discriminador NO EXISTE se
+   * escribe con la lista de canales que se miraron* — y esa lista **estaba
+   * escrita**, que es lo que la hacía convincente. Lo que no estaba es la lista de
+   * los que **faltaban**.
+   *
+   * Censando lo que las 19 páginas individuales de `faqs` sirven de verdad,
+   * aparece un cuarto canal con dato en **19/19**: `article:modified_time`. O sea
+   * que el «no hay canal» era **del canal que se miró**, no del documento.
+   *
+   * Se leen los cinco de una vez para que el veredicto no dependa de cuál se
+   * eligió mirar. Y se leen **en la página INDIVIDUAL**, no en el listado: el
+   * listado no sirve fecha **en ninguna de las dos formas** (0/8 también en
+   * `/glosario`), así que buscarla ahí habría dado un cero por el sitio.
+   */
+  const CANALES = {
+    datePublished: /"datePublished"\s*:\s*"([^"]+)"/,
+    dateModified: /"dateModified"\s*:\s*"([^"]+)"/,
+    publishedTime: /property=["']article:published_time["'][^>]*content=["']([^"']+)/,
+    modifiedTime: /property=["']article:modified_time["'][^>]*content=["']([^"']+)/,
+  };
+  const fechaDe = (col, slug, canal) => {
     const f = join(CORPUS, col, `${slug}.html`);
     if (!existsSync(f)) return null;
-    const h = readFileSync(f, "utf8");
-    return (h.match(/"datePublished"\s*:\s*"([^"]+)"/) || [, null])[1];
+    return (readFileSync(f, "utf8").match(CANALES[canal]) || [, null])[1];
   };
+  const publicadoDe = (col, slug) => fechaDe(col, slug, "datePublished");
+  /** ¿El orden SERVIDO ya viene no-creciente por este canal? `null` si falta dato. */
+  const ordenaDesc = (vals, n) => (vals.length === n && vals.length > 1 ? vals.every((v, i) => i === 0 || vals[i - 1] >= v) : null);
 
   const formas = [
     { forma: "L2-glosario", dir: "glosario", col: "terminos-kunakpedia", papel: "CONTROL", re: /<h2 class="entry-title"><a href="https:\/\/kunakair\.com\/es\/([^"/]*?)\/">/g, sm: "glossary-sitemap.xml", prefijo: "https://kunakair.com/es/" },
@@ -389,31 +415,68 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
       }).length,
       /* canal 2: JSON-LD `datePublished` */
       conDatePublished: conPub.length,
-      datePublishedOrdenaDesc:
-        conPub.length === orden.length && conPub.length > 1
-          ? conPub.every((v, i) => i === 0 || conPub[i - 1] >= v)
-          : null,
+      datePublishedOrdenaDesc: ordenaDesc(conPub, orden.length),
       /* canal 3: el `lastmod` del sitemap */
       conLastmod: conLm.length,
       lastmodOrdenaDesc: conLm.length > 1 ? conLm.every((s, i) => porLm[i] === s) : null,
+      /* canales 4-6: los que la primera versión NO miró, y uno de ellos tiene dato
+       * donde se había declarado que no había ninguno. */
+      ...Object.fromEntries(
+        ["dateModified", "publishedTime", "modifiedTime"].flatMap((c) => {
+          const vs = orden.map((s) => fechaDe(F.col, s, c)).filter(Boolean);
+          const C = c[0].toUpperCase() + c.slice(1);
+          return [
+            [`con${C}`, vs.length],
+            [`${c}OrdenaDesc`, ordenaDesc(vs, orden.length)],
+          ];
+        }),
+      ),
     });
   }
   const control = salida.find((s) => s.papel === "CONTROL");
   const controlSirve = SABOTAJE === "sin-control-de-orden" ? false : control && control.datePublishedOrdenaDesc === true;
+  /* ── El veredicto se DERIVA de todos los canales, no del que se miró primero ─
+   * §regla del cero: «no tiene canal» sólo se puede escribir enumerando los que
+   * se probaron. Aquí se enumera **y se recorre**, así que si alguno ordena, el
+   * veredicto lo dice solo en vez de depender de que alguien vuelva a mirar. */
+  const faqs = salida.find((s) => s.papel !== "CONTROL");
+  const EJES = ["datePublished", "dateModified", "publishedTime", "modifiedTime", "lastmod"];
+  const conDatoEnFaqs = EJES.filter((c) => (faqs?.[`con${c[0].toUpperCase()}${c.slice(1)}`] ?? 0) > 0);
+  const ordenanEnFaqs = EJES.filter((c) => faqs?.[`${c}OrdenaDesc`] === true);
   informe.huecos.ordenDeL2 = {
     pregunta: "¿qué ordena el archivo de CPT? — ninguna de las specs lo trata",
+    /* ⚠ Se leen en la página INDIVIDUAL: el LISTADO no sirve fecha en ninguna de
+     * las dos formas (0/8 también en el control), así que un cero medido ahí
+     * sería un cero del sitio, no del dato. */
+    donde: "la página INDIVIDUAL de cada tarjeta (corpus/faqs · corpus/terminos-kunakpedia), no el listado",
     canalesMirados: [
       '<span class="fecha-publicacion"> (el que usa `entradas-blog`)',
       "JSON-LD `datePublished`",
+      "JSON-LD `dateModified`",
+      "`article:published_time`",
+      "`article:modified_time`",
       "sitemap `<lastmod>`",
     ],
+    /* §regla del cero, la otra mitad: lo que NO se miró se nombra, para que el
+     * próximo «no hay canal» tenga su denominador y no haya que redescubrirlo. */
+    canalesQueQUEDAN: [
+      "el FEED RSS (`rel=alternate` está servido en 4/4 y 8/8, y lleva `pubDate`) — NO capturado",
+      "la API REST de WP (`/wp-json/wp/v2/...`) — fuera del corpus",
+      "`menu_order` / `orderby`: no aparecen en lo servido, así que sólo los vería la API",
+    ],
     porForma: salida,
+    faqsConDatoEn: conDatoEnFaqs,
+    faqsOrdenadoPor: ordenanEnFaqs,
     control: controlSirve
       ? "`/glosario`: `datePublished` DESC reproduce el orden servido, así que el canal se sabe LEER"
       : "SIN CONTROL — no se puede afirmar nada sobre el otro",
-    veredicto: controlSirve
-      ? "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` NO tiene ese canal, y `lastmod` NO ordena ni siquiera en el control ⇒ su orden NO es derivable de lo servido."
-      : "NO SE PUEDE AFIRMAR: el control no pasa",
+    veredicto: !controlSirve
+      ? "NO SE PUEDE AFIRMAR: el control no pasa"
+      : ordenanEnFaqs.length
+        ? `\`/glosario\` ordena por \`datePublished\` DESC. Y \`/preguntas-frecuentes\` SÍ es derivable: ordena por ${ordenanEnFaqs.join(" · ")} DESC.`
+        : conDatoEnFaqs.length
+          ? `\`/glosario\` ordena por \`datePublished\` DESC. \`/preguntas-frecuentes\` TIENE dato en ${conDatoEnFaqs.join(" · ")} pero NINGUNO reproduce su orden ⇒ no derivable de lo servido MIRADO.`
+          : "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` no tiene dato en ninguno de los canales mirados.",
   };
   if (!controlSirve)
     console.log("\n  ⚠ El CONTROL del orden no pasa: cualquier «no casa» del otro lado es indistinguible\n    de una lectura mal hecha del canal (§sondas 8a).");

@@ -99,7 +99,7 @@ negativo **4/4**), congelado en `medidas/lh-huecos.json`.
 | 1 | `lh-barra.json`: `L2` `conBarra` **0 de 12** | `L2` **SÍ tiene barra, 12 de 12** — la del TEMA (`et_right_sidebar` + `#sidebar`, 3 widgets), no la partición Divi `3_4+1_4`, que da **0 de 12** en el cuerpo | `SP-C8` |
 | 2 | §1 da `ancla 283` y `cabecera 225` y no nombra la diferencia | **58 px, iguales a los dos anchos** — el `padding-top` del `.container` | `SP-C9` |
 | 3 | §3 describe las piezas de la piel B, no su ventana | **ventana de 5** con `« First` · `...` · `Last »` | `SP-C10` · abajo |
-| 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37**; `/preguntas-frecuentes` **sin canal** | `SP-C11` · §F3-LH-ORDEN-DE-L2 |
+| 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37**; `/preguntas-frecuentes` **sin canal que ORDENE** (⚠ corregido en la 70.ª: *sí* tiene fecha, 19/19) | `SP-C11` · §F3-LH-ORDEN-DE-L2 |
 | 5 | ninguna nombra la **banda de filtros** | `L3` **3 botones**, `L5` **12**, entre el `h1` y el listado | `SP-T8` · `SP-K7` |
 
 > **Los cinco tienen la misma forma, y por eso van juntos: el número ESTABA en
@@ -214,12 +214,27 @@ camino de render que **ningún dato de calibración ejercita**
 **Es el hueco que para la construcción de `L2`**, y las dos mitades son
 distintas.
 
-| | `/glosario` | `/preguntas-frecuentes` |
+> ⚠⚠ **CORREGIDO 2026-08-14 (70.ª tanda): el titular «NO SIRVE ORDEN EN NINGÚN
+> CANAL» era del CANAL QUE SE MIRÓ, no del documento.** `/preguntas-frecuentes`
+> **sí sirve fecha** —`article:modified_time`, **19 de 19**—; lo que no tiene es
+> un canal **que ORDENE**. Y el sitio también estaba mal: las fechas viven en la
+> **página individual**, no en el listado, que no sirve fecha en **ninguna** de
+> las dos formas (**0/8 también en `/glosario`**). Tabla completa y canales que
+> quedan (feed RSS · API REST · `menu_order`): `ESQUEMA-CMS.md` §7e.
+
+| canal (en la PÁGINA INDIVIDUAL) | `/glosario` | `/preguntas-frecuentes` |
 |---|---|---|
 | `<span class="fecha-publicacion">` (el canal de `entradas-blog`) | **0 de 37** | **0 de 19** |
 | JSON-LD `datePublished` | **37 de 37**, y **ordena DESC 37/37** | **0 de 19** |
-| `article:published_time` | — | **0 de 19** |
+| JSON-LD `dateModified` | 37 de 37, y **NO ordena** | **0 de 19** |
+| `article:published_time` | 0 de 37 | **0 de 19** |
+| **`article:modified_time`** ← *el que faltaba* | 34 de 37 (incompleto) | **19 de 19, y NO ordena** |
 | sitemap `<lastmod>` | 37 de 37, y **NO ordena** | 19 de 19, y **NO ordena** |
+
+> **Y el control se cobra dos veces, que es lo que lo hace fuerte:** en
+> `/glosario` **`dateModified` tampoco ordena** aunque esté en 37/37. O sea que
+> *«las fechas de MODIFICACIÓN no ordenan estos archivos»* está medido **en los
+> dos lados**, y el `19/19` que no ordena en faqs deja de ser un dato suelto.
 
 **El `lastmod` se descarta con CONTROL, no por intuición** (§sondas 8a): no
 reproduce el orden **ni siquiera en `/glosario`**, donde el orden verdadero se
@@ -237,7 +252,9 @@ descendentes en el orden servido, así que no es orden de inserción.
    dato sólo existe como **ISO en datos estructurados** y **no se pinta en
    ninguna tarjeta**. O sea que es un campo *para ordenar*, no *para mostrar*, y
    eso es una decisión distinta con su razón;
-2. **`faqs` no tiene canal ninguno.** El orden servido **no es** el de la DB (es
+2. **`faqs` tiene fecha y no tiene ORDEN** (⚠ decía «no tiene canal ninguno»;
+   corregido arriba: `article:modified_time` **19/19**, y no ordena). El orden
+   servido **no es** el de la DB (es
    una permutación, comprobado por Local API) ni el de los id. Modelar aquí un
    campo de orden sería inventarlo — y replicar el orden capturado como dato
    tiene que decirse como lo que es: **una transcripción del original de una

@@ -364,10 +364,19 @@
     },
     "ordenDeL2": {
       "pregunta": "¿qué ordena el archivo de CPT? — ninguna de las specs lo trata",
+      "donde": "la página INDIVIDUAL de cada tarjeta (corpus/faqs · corpus/terminos-kunakpedia), no el listado",
       "canalesMirados": [
         "<span class=\"fecha-publicacion\"> (el que usa `entradas-blog`)",
         "JSON-LD `datePublished`",
+        "JSON-LD `dateModified`",
+        "`article:published_time`",
+        "`article:modified_time`",
         "sitemap `<lastmod>`"
+      ],
+      "canalesQueQUEDAN": [
+        "el FEED RSS (`rel=alternate` está servido en 4/4 y 8/8, y lleva `pubDate`) — NO capturado",
+        "la API REST de WP (`/wp-json/wp/v2/...`) — fuera del corpus",
+        "`menu_order` / `orderby`: no aparecen en lo servido, así que sólo los vería la API"
       ],
       "porForma": [
         {
@@ -378,7 +387,13 @@
           "conDatePublished": 37,
           "datePublishedOrdenaDesc": true,
           "conLastmod": 37,
-          "lastmodOrdenaDesc": false
+          "lastmodOrdenaDesc": false,
+          "conDateModified": 37,
+          "dateModifiedOrdenaDesc": false,
+          "conPublishedTime": 0,
+          "publishedTimeOrdenaDesc": null,
+          "conModifiedTime": 34,
+          "modifiedTimeOrdenaDesc": null
         },
         {
           "forma": "L2-faqs",
@@ -388,9 +403,20 @@
           "conDatePublished": 0,
           "datePublishedOrdenaDesc": null,
           "conLastmod": 19,
-          "lastmodOrdenaDesc": false
+          "lastmodOrdenaDesc": false,
+          "conDateModified": 0,
+          "dateModifiedOrdenaDesc": null,
+          "conPublishedTime": 0,
+          "publishedTimeOrdenaDesc": null,
+          "conModifiedTime": 19,
+          "modifiedTimeOrdenaDesc": false
         }
       ],
+      "faqsConDatoEn": [
+        "modifiedTime",
+        "lastmod"
+      ],
+      "faqsOrdenadoPor": [],
       "control": "SIN CONTROL — no se puede afirmar nada sobre el otro",
       "veredicto": "NO SE PUEDE AFIRMAR: el control no pasa"
     },

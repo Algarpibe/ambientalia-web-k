@@ -3555,17 +3555,48 @@ lo que §*MENCIONADO NO ES DOCUMENTADO* exige. Evidencia congelada:
 **Lo medido, por canal y con su denominador** — y la lista de canales va escrita
 porque la afirmación de abajo es un *«no existe»*:
 
-| canal | `/glosario` (37) | `/preguntas-frecuentes` (19) |
+> ⚠⚠ **AMPLIADA 2026-08-14 (70.ª tanda): la tabla tenía 4 canales y FALTABA UNO
+> CON DATO.** `/preguntas-frecuentes` **sí sirve una fecha** —
+> `article:modified_time`, **19/19**— y la primera versión no lo miró, así que se
+> escribió *«no tiene canal»*. Es §*una afirmación de que un discriminador NO
+> EXISTE se escribe con la lista de canales que se miraron*: la lista **estaba**,
+> y por eso convencía; lo que faltaba era **la lista de los que quedaban**.
+>
+> **Y también estaba mal el SITIO.** Las fechas se leen en la **página individual**
+> de cada tarjeta, no en el listado: el listado **no sirve fecha en ninguna de las
+> dos formas** (0/8 también en `/glosario`), así que medirlo ahí habría dado un
+> cero del sitio en vez de un cero del dato.
+
+| canal (leído en la PÁGINA INDIVIDUAL) | `/glosario` (37) — **CONTROL** | `/preguntas-frecuentes` (19) |
 |---|---|---|
 | `<span class="fecha-publicacion">` — **el que usa `entradas-blog`** | **0/37** | **0/19** |
-| JSON-LD `datePublished` | **37/37**, y **ordena DESC 37/37** | **0/19** |
-| `article:published_time` | — | **0/19** |
+| JSON-LD `datePublished` | **37/37**, y **ordena DESC** ✅ | **0/19** |
+| JSON-LD `dateModified` | 37/37, y **NO ordena** | **0/19** |
+| `article:published_time` | 0/37 | **0/19** |
+| **`article:modified_time`** ← *el que faltaba* | 34/37 (incompleto) | **19/19, y NO ordena** |
 | sitemap `<lastmod>` | 37/37, y **NO ordena** | 19/19, y **NO ordena** |
 
 **El `lastmod` se descarta CON CONTROL** (§sondas 8a): no reproduce el orden ni
 siquiera en `/glosario`, donde el orden verdadero se conoce. Y en `/glosario` la
 fecha **discrimina de verdad**: los post-id **no** son descendentes en el orden
 servido, así que no es orden de inserción.
+
+> **La afirmación correcta, que NO es la que había:** `/preguntas-frecuentes` **no
+> se queda sin canal — se queda sin canal QUE ORDENE.** Tiene fecha servida en
+> 19/19 y **ninguna de las dos que tiene reproduce el orden**. Para la decisión el
+> efecto es el mismo, pero el enunciado ya no depende de qué canal se miró
+> primero. Y el control lo respalda por partida doble: en `/glosario`,
+> `dateModified` **tampoco ordena** aunque esté en 37/37 — o sea que **las fechas
+> de modificación no ordenan estos archivos**, medido en los dos lados.
+
+**Los canales que QUEDAN por barrer**, nombrados para que el próximo *«no hay»*
+tenga denominador (`lh-huecos.ordenDeL2.canalesQueQUEDAN`):
+
+| queda | por qué no se ha mirado |
+|---|---|
+| el **feed RSS** (`rel=alternate` servido en 4/4 y 8/8, lleva `pubDate`) | **no está capturado** — es una campaña de captura, no un `grep` |
+| la **API REST** de WP (`/wp-json/wp/v2/…`) | fuera del corpus |
+| `menu_order` / `orderby` | **no aparecen en lo servido**: sólo los vería la API |
 
 **Las dos mitades, que es lo que hay que decidir:**
 
@@ -3594,6 +3625,49 @@ servido, así que no es orden de inserción.
 lo llevan **las 4 colecciones de grupo A** o sólo las que un listado ordena. Hoy
 lo ejercita **una** (`terminos-kunakpedia`), y generalizar desde ahí es
 §*una regla derivada sobre un dominio donde el caso no se da*.
+
+---
+
+#### LAS DOS PREGUNTAS EXACTAS, y sus salidas con lo que CADA UNA ES
+
+*(Escritas con la forma de `D2.5`: cada salida se describe por **lo que es**, no
+por cuál deja el clon más bonito. La elección es de la tanda de decisión.)*
+
+> **P1 — `terminos-kunakpedia`: ¿se modela un campo de fecha cuyo único uso es
+> ORDENAR?**
+> Hay canal (`datePublished`, 37/37, ordena DESC) y no hay esquema. El precedente
+> `entradas-blog.fechaPublicacion` **no se aplica**: sale de otro canal y guarda el
+> literal español porque el original lo pinta. Aquí el dato **no aparece en ninguna
+> tarjeta**.
+
+| salida | **qué ES** | qué arrastra |
+|---|---|---|
+| **P1-a · campo ISO nuevo**, distinto de `fechaPublicacion` | un campo **de orden**, no de presentación: `date`, no `required`, **no se pinta** | hay que **nombrarlo sin arrastrar el contrato del otro** — llamarlo `fechaPublicacion` cerraría la decisión por analogía (§DOS VARIABLES CONFUNDIDAS aplicado a un nombre) |
+| **P1-b · reutilizar `fechaPublicacion`** | **un campo con dos contratos**: literal español mostrable en una colección, ISO invisible en otra | un `required` y un formato que esta colección no cumple; el precedente deja de significar una cosa |
+| **P1-c · no modelar: orden explícito** (`orden: number` por fila) | **transcribir el resultado**, no la causa: se guarda la posición, no la fecha que la produce | el orden deja de re-derivarse; cualquier alta futura hay que colocarla a mano |
+
+> **P2 — `faqs`: ¿qué se hace con un orden que lo servido NO explica?**
+> Tiene fecha (19/19 en `article:modified_time`) y **ninguna ordena**. El orden
+> servido no es el de la DB (permutación comprobada por Local API) ni el de los
+> id.
+
+| salida | **qué ES** | qué arrastra |
+|---|---|---|
+| **P2-a · `orden` explícito transcrito del original** | **una transcripción**, exactamente como `D2.5` transcribe las 55 páginas vacías: se replica lo observado y se escribe que es observado | 19 valores que **nadie puede re-derivar**; si el original reordena, el clon no se entera |
+| **P2-b · orden por el canal que SÍ existe** (`modifiedTime` DESC) | **inventar un orden plausible**: el canal existe y **está medido que no es éste** | Δ ≠ 0 en el listado **desde el primer día**, y con la medida que lo dice ya congelada |
+| **P2-c · dejar el orden de la DB** | **no modelar el orden**: el listado sale en el orden en que se sembró | idem, y además **inestable**: depende del orden de siembra, no del dato |
+| **P2-d · capturar el FEED y volver a preguntar** | **no decidir todavía**: comprar un canal más antes de elegir | una campaña de captura (el feed no está en el corpus). Es la única salida que puede **disolver** P2 en vez de resolverla |
+
+> ⚠ **P1 y P2 no se resuelven con la misma decisión, y por eso van separadas.**
+> P1 es *«hay causa y falta esquema»*; P2 es *«no hay causa conocida»*. Fundirlas
+> —«pongamos fecha a las dos»— resolvería P2 por analogía con P1, que es
+> exactamente el paso que esta ficha existe para impedir.
+
+**Precondición de la tanda de decisión, y es barata:** P2-d decide si P2 se
+plantea siquiera. **Capturar el feed de `faqs` cuesta una petición** y puede
+convertir P2 en un caso de P1. Mirarlo **antes** de elegir entre P2-a…c es lo que
+§*una campaña se declara COMPLETA respecto a un USO* pide: el uso aquí es
+*decidir*, y para eso el corpus **no está completo**.
 
 ### ✅ 7c · CMS-0g · EL ORIGEN DE MEDIA ES UN CAMPO DE PROCEDENCIA (2026-08-06)
 
