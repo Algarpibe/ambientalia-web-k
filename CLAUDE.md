@@ -844,6 +844,19 @@ no lo usa**: es medir al nivel que absorbe, con una medida real como coartada.
 Lo servido dice que el editor tocó la tipografía **en 89 sitios** de esos 85
 módulos.
 
+⚠ **Y la quinta tiene una hermana pequeña que se paga al TRANSCRIBIR CSS, y son
+tres cosas que «la salida servida» incluye y nadie mira (2026-08-13):**
+
+| lo que se transcribe | lo que el navegador hace | coste medido |
+|---|---|---|
+| una declaración **INVÁLIDA** (`min-width: none`, `border-radius: none`) | **la tira** — la salida servida de una declaración inválida es *que no existe* | traducirlas a lo que «querían decir» daba `border-radius: 0` contra el `50%` medido |
+| el **espacio en blanco** entre elementos `inline-block` | **lo renderiza**: 3.61 px a 18 px de cuerpo | un JSX «limpio» desplazaba el paginador **3.61 px por pieza, acumulativo** |
+| dos reglas de **origen distinto** consolidadas en un selector | **cambia quién gana la cascada** | subir el `10px` global dentro de `.entry-title` dejó sin efecto un `@media (≤479)`: Δ0 a 1440 y **9 pares a 390** |
+
+> **Las tres son la misma:** al transcribir, lo que se replica es **lo que el
+> navegador hace con lo servido**, no lo que el autor pretendía, ni lo que un
+> formateador considera limpio, ni un valor equivalente en otro selector.
+
 De ahí las dos formas de aplicarlo, que son la misma:
 
 - **Alturas** — se mide el DOM renderizado, y **por composición**: `padding-top`,
@@ -880,7 +893,33 @@ Las seis instancias medidas en este proyecto, cada una con su contenedor:
 Los seis contenedores son distintos y el error es el mismo: se leyó el número
 del nivel de arriba porque estaba a mano.
 
-**Y hay un séptimo contenedor, que no contiene píxeles sino AFIRMACIONES: la
+**Y hay un séptimo contenedor que no contiene píxeles ni filas, sino ELEMENTOS:
+UN CARDINAL ES UN CONTENEDOR Y ABSORBE LA MEMBRESÍA (2026-08-13).**
+
+> **Un recuento igual no prueba que los conjuntos sean el mismo.** `68 → 68` es
+> exacto, y los dos conjuntos de 68 pueden diferir en 2 por lado sin que el
+> número se mueva un dígito. Lo que prueba la igualdad de dos conjuntos es
+> **nombrar cada elemento**, no contarlos.
+
+Medido: `qa:lh-poblacion` daba `/blog 68 → 68` y lo destapó `cms:seed-listados`
+al sembrar **por slug** — **2** entradas del corpus sin fila en la DB
+(`descarga-catalogo-kunak` · `kunak-obtiene-el-sello-reconcilia`) y **2** filas
+sin `recurso` fuera del corpus, compensándose. El seed las vio porque siembra
+por slug; el recuento no podía verlas por construcción.
+
+**Es el contenedor más barato del catálogo**, y por eso conviene tenerlo
+presente: cuesta **un `diff` de listas**. La comprobación que sí discrimina es
+la diferencia simétrica, y se escribe con los dos lados —*«2 en el corpus que la
+DB no tiene, 2 en la DB que el corpus no tiene»*—, no con el total.
+
+**Y su corolario, que es lo que lo hace regla y no anécdota:** un cardinal es la
+unidad **más agregada posible** de un conjunto, así que es el nivel de arriba de
+§La causa común aplicado a la membresía. La regla operativa es la misma de
+siempre: **se compara en la unidad que se afirma**. Si la afirmación es «son los
+mismos», la unidad es el ELEMENTO — y el recuento va al lado como resumen, nunca
+como prueba.
+
+**Y hay un octavo contenedor, que no contiene píxeles sino AFIRMACIONES: la
 unidad en la que se declara la COBERTURA (2026-08-02).**
 
 > **Una cobertura declarada al nivel de arriba absorbe todo lo que no se midió
@@ -1051,6 +1090,29 @@ dominio agrupando por Y contesta la pregunta en una línea.
 > en bloques. Se exige que la separación se sostenga en **≥2 instancias**, y si
 > no, se reporta **NO ESTABLECIDO con su denominador**
 > (`qa:kb-tipografia`).
+
+> ⚠⚠ **Y ese «≥2» ESTÁ MAL PUESTO COMO LISTÓN, corregido 2026-08-13 (66.ª
+> tanda).** «≥2» nació para descartar el caso degenerado de n=1, y se lee como
+> si a partir de 2 la cosa estuviera establecida. **No lo está**, y el contraste
+> lo dio esta tanda con una hipótesis que tenía las tres cosas que hacen creíble
+> una medida:
+>
+> | la hipótesis | lo que tenía a favor |
+> |---|---|
+> | *«el tope del extracto son 270 BYTES, no 270 caracteres: PHP `substr` cuenta bytes»* | **mecanismo** real y comprobable · **2 casos** que encajaban al carácter · una tabla con sus números |
+>
+> Barrida contra **las 6** tarjetas con cuerpo: **ninguna longitud en bytes pasa
+> de 5/6**, y dos en caracteres dan **6/6**. Era falsa.
+>
+> > **Una explicación con mecanismo y dos casos a favor se parece muchísimo a una
+> > medida, y la única diferencia es EL DENOMINADOR.** Así que el listón no es
+> > «≥2»: es **todo el dominio alcanzable** — y cuando no se alcanza entero, lo
+> > que se publica es la fracción (`6/6`, `5/6`), nunca «se comprobó».
+>
+> Y la contrapartida operativa, que es barata: **antes de escribir una regla
+> ajustada, BARRE el parámetro** en vez de razonarlo. Aquí fue un bucle de 250 a
+> 300 en las dos unidades — y de paso dijo que **268 y 269 son indistinguibles
+> con n = 6**, que es información que ninguna deducción iba a dar.
 
 ⚠ **Y el tercer caso de la misma familia, que es el que se cuela porque parece
 resuelto: UN DISCRIMINADOR 1:1 PUEDE SER LA SOMBRA DE OTRO (2026-08-10, F3-1).**
