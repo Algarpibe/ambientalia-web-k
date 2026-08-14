@@ -33,10 +33,56 @@
  * que las necesita**. Es una desviación declarada, no un descuido.
  */
 
-/* ── Tokens del tema que las reglas de abajo citan ───────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════
+ * 0 · LO QUE HAY QUE DESHACER DEL CLON ANTES DE PARECERSE AL ORIGINAL
+ *
+ * Las cuatro de aquí abajo **no salieron de leer el CSS: salieron del
+ * comparador**, en su primera corrida, y las cuatro son del mismo tipo — un
+ * default del clon que el original no tiene. Se escriben con su número porque
+ * son el argumento de por qué la aceptación es `qa:lh-cmp` y no releer la hoja.
+ *
+ * | qué | pares | de dónde venía |
+ * |---|---|---|
+ * | `border-color: rgba(0,0,0,0.1)` | **~95** | el *preflight* de Tailwind lo pone en `*`; el original deja `currentColor` |
+ * | `text-align: start` | **~16** | nadie declaraba `left`, y `start` y `left` **computan distinto** aunque pinten igual |
+ * | `font-family` con el fallback de `next/font` | **~70** | `var(--font-manrope)` expande a `Manrope, "Manrope Fallback", …` |
+ * | `color` del enlace de la media | **16** | el azul de enlace global; el original hereda #333 |
+ *
+ * ⚠ **`Manrope` es el nombre real de la familia que `next/font` registra** —el
+ * valor computado del clon empezaba por `Manrope`—, así que escribirla a secas
+ * resuelve la MISMA fuente y computa como el original. Lo que se pierde es el
+ * fallback de métricas ajustadas, que sólo actúa durante el *swap*.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
 .lh-cuerpo {
   --azul: #0075c9;
   --gris: #666666;
+  color: #333;
+}
+
+.lh-cuerpo,
+.lh-cuerpo * {
+  font-family: Manrope, sans-serif;
+}
+
+.lh-cuerpo,
+.lh-cuerpo *,
+.lh-cuerpo *::before,
+.lh-cuerpo *::after {
+  border-color: currentColor;
+}
+
+/* ⚠ **`text-align` NO se pone en el contenedor, y la primera versión lo hizo.**
+   Ponerlo en `.lh-cuerpo` puso `left` en las 42 celdas de las TARJETAS, donde el
+   original computa **`start`**: en el original el `left` sólo llega a lo que
+   cuelga de un módulo con `et_pb_text_align_left`, y el listado de `/etiqueta`
+   **no es un módulo de texto**, así que sus tarjetas heredan del cuerpo.
+
+   O sea: el arreglo del primer pase invirtió el defecto en vez de quitarlo —
+   `start` y `left` pintan igual y **computan distinto**, y por eso el mismo
+   número de pares cambió de lado sin que la pantalla lo dijera. */
+.lh-cuerpo .et_pb_text_align_left {
+  text-align: left;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -104,18 +150,40 @@
   padding-bottom: 8px;
 }
 
-/* Fila 2 — el listado. El `pt` es la única celda donde las dos variantes
-   DIFIEREN, y por eso es una prop del componente y no una constante de la hoja:
-   blog 14.3906 @1440 / 3.89062 @390 · etiqueta 28.7969 / 30. */
-.lh-cuerpo .et_pb_row_2_tb_body {
-  padding-top: var(--lh-fila2-pt);
+/* Fila 2 — el listado. Es donde el ritmo de las dos variantes DIFIERE, y
+   difiere en dos celdas, no en una:
+
+     blog       `pt` 14.3906 / 3.89062  ·  `mt` 0        / 0
+     etiqueta   `pt` 28.7969 / 30       ·  `mt` 14.3906  / 3.89062
+
+   O sea que **el 14.3906 está en las dos y en propiedades distintas**: en blog
+   es `padding-top` de la fila y en etiqueta es su `margin-top`. Leerlo como «la
+   misma celda con otro valor» habría dado un arreglo que cuadra en una y falla
+   en la otra.
+
+   ⚠ Va por CLASE y no por variable en línea: el barrido lee `estiloInline` y es
+   eje `plantilla` — el original lo trae a `null`, así que un `style=` en la
+   fila es una diferencia por sí mismo, aunque el número sea correcto. */
+.lh-cuerpo .lh-fila2-blog {
+  padding-top: 3.89062px;
   padding-bottom: 30px;
 }
 
+.lh-cuerpo .lh-fila2-etiqueta {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 3.89062px;
+}
+
 @media (min-width: 981px) {
-  .lh-cuerpo .et_pb_row_2_tb_body {
-    padding-top: var(--lh-fila2-pt-lg);
+  .lh-cuerpo .lh-fila2-blog {
+    padding-top: 14.3906px;
     padding-bottom: 28.7969px;
+  }
+  .lh-cuerpo .lh-fila2-etiqueta {
+    padding-top: 28.7969px;
+    padding-bottom: 28.7969px;
+    margin-top: 14.3906px;
   }
 }
 
@@ -126,6 +194,9 @@
   position: relative;
   z-index: 9;
   width: 100%;
+  /* Divi se lo pone a todas las columnas; el comparador lo lee en `caja` y sin
+     él salía `0px` contra `1px` en las 12 columnas medidas. */
+  min-height: 1px;
 }
 
 .lh-cuerpo .et_pb_column_4_4 {
@@ -148,8 +219,17 @@
     width: 73.624%;
     margin-right: 5.5%;
   }
+  /* ⚠ **20.875 %, no 20.87 %** — y la diferencia son 0.06 px que el comparador
+     ve y una guarda de alturas no vería nunca: 0.2087 × 1238.39 da 258.44 y lo
+     medido es **258.5**, que es lo que sale de 0.20875. Es el mismo hallazgo que
+     `qa:kb-cmp` pagó con el 73.62 contra el 73.624 de la columna ancha —45 pares
+     por −0.047 px—, aquí en la columna estrecha.
+
+     No se toca `ColumnaEstrecha` de `CascaronTb`: su 20.87 % está adjudicado
+     contra grupo A y KB, y cambiarlo movería 209 rutas por un defecto que sólo
+     está medido aquí. Se ficha en vez de propagarlo a ciegas. */
   .lh-cuerpo .et_pb_column_1_4 {
-    width: 20.87%;
+    width: 20.875%;
     margin-right: 0;
   }
 }
@@ -171,7 +251,17 @@
    global del tema (`h1..h6 { letter-spacing:-0.5px }` · `{ color:#333 }`), y se
    reproducen aquí en el selector que las necesita en vez de traer el reset
    entero (ver el alcance acotado de la cabecera). */
-.lh-cuerpo .lh-titulo h1 {
+/* ⚠ **El selector es el del MÓDULO, y la primera versión lo escribió mal.**
+   Decía `.lh-titulo h1`, una clase que **ningún componente emitía**: la regla
+   estaba escrita, documentada y **nunca conectada** (§sondas 3), así que el `h1`
+   salía con el defecto del clon —48 px, peso 300, `pb` 0— contra los 50/800/10
+   del original. No dio ningún error: dio tres pares distintos por forma.
+
+   Los selectores buenos son los que Divi compila, y son DOS porque el módulo del
+   titular no es el mismo en las dos variantes: `et_pb_text_1_tb_body` en blog y
+   `et_pb_text_3_tb_body` en etiqueta. */
+.lh-cuerpo .et_pb_text_1_tb_body h1,
+.lh-cuerpo .et_pb_text_3_tb_body h1 {
   margin: 0;
   padding-bottom: 10px;
   font-weight: 800;
@@ -183,7 +273,8 @@
 }
 
 @media (min-width: 981px) {
-  .lh-cuerpo .lh-titulo h1 {
+  .lh-cuerpo .et_pb_text_1_tb_body h1,
+  .lh-cuerpo .et_pb_text_3_tb_body h1 {
     font-size: 50px;
   }
 }
@@ -228,10 +319,51 @@
 }
 
 /* La miga: la comparte con el resto del clon, y su tipografía la pone
-   `globals.css`. Aquí sólo el módulo. */
+   `globals.css`. Aquí sólo el módulo.
+
+   ⚠ El `color` va en el MÓDULO, no sólo en el `<ol>`: el comparador lee
+   `borderColor`, que sin borde declarado es `currentColor`, y el original daba
+   `rgb(0,117,201)` donde el clon daba `rgb(51,51,51)`. Un color que no pinta
+   nada visible **se compara igualmente**. */
 .lh-cuerpo .et_pb_text_0_tb_body {
   padding: 0;
   margin: 0;
+  color: #0075c9;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * Los rótulos de taxonomía de `/etiqueta`, y por qué NO empujan al `h1`
+ *
+ * `.tax-tap` es **`position: absolute` con `top: -27px`**, así que los tres
+ * `<span>` salen del flujo y el `h1` arranca en el borde del módulo. Sin esta
+ * regla el clon los pintaba en línea y su base caía **+30.6 px** — un renglón
+ * de cuerpo exacto. No lo marcó ningún par (`yAbsoluta` es eje mixto): lo dijo
+ * la lectura de la BASE EN CRUDO, que por eso se publica antes que los deltas.
+ *
+ * Los `ocultar-*` dependen en el original de la clase de idioma del `<body>`
+ * (`body.es .ocultar-en { display:none }`). El clon sirve **sólo `/es`**, así
+ * que la condición es constante y se aplica sin la clase — lo que se replica es
+ * el efecto medido, no el mecanismo de un sitio multiidioma que el clon no es.
+ * ═════════════════════════════════════════════════════════════════════════ */
+.lh-cuerpo .tax-tap {
+  background: rgba(0, 117, 201, 0.4);
+  font-size: 10px;
+  padding: 8px 11px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: absolute;
+  line-height: 1;
+  font-weight: 600;
+  top: -27px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.6px;
+}
+
+.lh-cuerpo .ocultar-en,
+.lh-cuerpo .ocultar-fr,
+.lh-cuerpo .ocultar-ar {
+  display: none !important;
 }
 
 /* El módulo del listado de `/etiqueta` lleva el `mb` por defecto de Divi
@@ -278,6 +410,8 @@
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
+  /* Medido `relative` en las 9 tarjetas; sin esto el clon daba `static`. */
+  position: relative;
 }
 
 @media (min-width: 480px) {
@@ -339,6 +473,10 @@
   overflow: hidden;
   background-color: #eee;
   text-decoration: none;
+  /* El enlace de la media NO es azul: hereda el #333 del cuerpo. El clon le
+     daba el color de enlace global y eso se propagaba al `<img>` de dentro —
+     16 pares, y el `color` de un `<img>` no pinta nada, pero se COMPARA. */
+  color: inherit;
 }
 
 .lh-cuerpo .et_pb_post .entry-featured-image-url img {
@@ -381,6 +519,32 @@
 .lh-cuerpo .et_pb_blog_1_tb_body .et_pb_post .entry-title {
   font-size: 20px;
   line-height: 1.35em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ A ≤479 EL TITULAR DE LA TARJETA PIERDE SU `padding-bottom`, Y ESO SÓLO SE
+ * VE A 390
+ *
+ * Regla servida: `@media (max-width:479px) { .et_pb_post h2 { font-size:16px;
+ * padding-bottom:0 } }`. En el original el `10px` viene de la regla GLOBAL
+ * `h1..h6 { padding-bottom:10px }` —especificidad 0,0,1—, así que a ≤479 la
+ * gana `.et_pb_post h2` (0,2,0) y queda en 0.
+ *
+ * Esta hoja había consolidado ese 10px dentro de la regla de `.entry-title`
+ * (0,4,0), o sea **le subió la especificidad**, y con eso el override de ≤479 ya
+ * no podía ganar: el clon servía `10px` donde el original sirve `0`. **Δ0
+ * perfecto a 1440 y 9 pares a 390** — la regla espejo del proyecto, con su
+ * mecanismo: consolidar reglas de origen distinto en un selector cambia quién
+ * gana, y eso no se nota hasta que aparece el `@media` que dependía de perder.
+ *
+ * `font-size` NO baja a 16: ahí la regla específica de `.entry-title` (0,3,0)
+ * sigue ganando a `.et_pb_post h2` en el original también. Medido, no supuesto —
+ * el comparador no marcó `fontSize` a 390.
+ * ═════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 479px) {
+  .lh-cuerpo .et_pb_posts .et_pb_post .entry-title {
+    padding-bottom: 0;
+  }
 }
 
 .lh-cuerpo .et_pb_post .entry-title a {
@@ -436,6 +600,10 @@
   margin: 2px;
 }
 
+/* ⚠ **NINGUNA de estas reglas declara `line-height`, y eso es el dato.** La
+   primera versión de la hoja le puso `32px` a la píldora «para centrar el
+   número» — un valor que nadie midió— y salieron **10 pares** con `30.6` contra
+   `32`. El original deja que se herede del cuerpo (18/30.6). */
 .lh-cuerpo .wp-pagenavi a {
   border: 2px solid var(--azul);
   padding: 0 5px;
@@ -447,7 +615,6 @@
   color: var(--azul);
   font-size: 15px;
   font-weight: 600;
-  line-height: 32px;
 }
 
 .lh-cuerpo .wp-pagenavi span.current,
@@ -462,7 +629,6 @@
   border-radius: 50%;
   font-size: 15px;
   font-weight: 600;
-  line-height: 32px;
   background-color: var(--azul);
 }
 
@@ -472,23 +638,44 @@
   color: var(--gris);
 }
 
-/* `a.prev`/`a.next` (piel A) y `.pages`/`.dots` no llevan la píldora. */
+/* ⚠⚠ **AQUÍ EL ORIGINAL SIRVE DOS DECLARACIONES INVÁLIDAS, Y HAY QUE
+   REPLICARLAS SIN «ARREGLARLAS».** Su regla dice:
+
+       .wp-pagenavi a.prev, .wp-pagenavi a.next {
+         border: none; padding: 0px 5px;
+         min-width: none;         ← INVÁLIDA: `none` no es un <length>
+         height: 36px;
+         border-radius: none;     ← INVÁLIDA: `none` no es un <length-percentage>
+       }
+
+   El navegador **tira las dos**, así que `a.next` CONSERVA `min-width: 36px` y
+   `border-radius: 50%` de la regla anterior. Traducirlas a `min-width: 0` y
+   `border-radius: 0` —que es lo que «quería decir»— daba **`border-radius: 0`
+   contra el `50%` medido**.
+
+   Es §El principio en su forma más literal: se verifica contra la salida
+   servida, y la salida servida de una declaración inválida es **que no existe**.
+   Escribir lo que el autor pretendía es interpretar; lo que el clon replica es
+   lo que el navegador hace. */
 .lh-cuerpo .wp-pagenavi a.prev,
 .lh-cuerpo .wp-pagenavi a.next {
   border: none;
   padding: 0 5px;
-  min-width: 0;
   height: 36px;
-  border-radius: 0;
 }
 
 .lh-cuerpo .wp-pagenavi .pages,
 .lh-cuerpo .wp-pagenavi .extend,
 .lh-cuerpo .wp-pagenavi .first,
-.lh-cuerpo .wp-pagenavi .last,
-.lh-cuerpo .wp-pagenavi span.dots {
+.lh-cuerpo .wp-pagenavi .last {
   border: none;
   font-size: 15px;
+}
+
+/* `span.dots` va en su PROPIA regla y **sin `font-size`**: agruparlo con
+   `.pages` le ponía 15px donde el original hereda los 18. Un pár. */
+.lh-cuerpo .wp-pagenavi span.dots {
+  border: none;
 }
 
 .lh-cuerpo .wp-pagenavi .previouspostslink,
@@ -511,7 +698,25 @@
   padding-left: 30px;
 }
 
-.lh-cuerpo .et_pb_sidebar_0_tb_body.et_pb_widget_area {
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ `#D6D6D6` SÍ, PERO SÓLO DONDE HAY `et_pb_with_border` — y las dos lecturas
+ * equivocadas se pagaron una detrás de otra
+ *
+ * La hoja sirve `.et_pb_sidebar_0_tb_body.et_pb_widget_area { border-left-color:
+ * #D6D6D6 }`. Transcribirla tal cual puso `rgb(214,214,214)` en las TRES formas
+ * y el original daba `rgba(0,0,0,0.1)` en dos ⇒ 2 pares. Quitarla entera invirtió
+ * el error: la tercera —blog— **sí** da `rgb(214,214,214)` ⇒ 1 par.
+ *
+ * El discriminador está SERVIDO y es `et_pb_with_border`: la marca con la que
+ * Divi señala que ese módulo tiene ajustes de borde propios. El módulo de blog la
+ * lleva y los de etiqueta no, medido en las tres instancias.
+ *
+ * **La moraleja es la del encargo, cobrada dos veces en el mismo par:** el
+ * barrido EXHIBE reglas, no resuelve la cascada; manda el VALOR COMPUTADO
+ * SERVIDO. Y cuando dos instancias computan distinto con la misma regla
+ * exhibida, lo que falta no es la regla — es su discriminador.
+ * ═════════════════════════════════════════════════════════════════════════ */
+.lh-cuerpo .et_pb_with_border.et_pb_sidebar_0_tb_body.et_pb_widget_area {
   border-left-width: 1px;
   border-left-color: #d6d6d6;
 }

@@ -3,7 +3,7 @@
     "fecha": "2026-08-13",
     "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
     "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-11)",
-    "ladoClon": "http://127.0.0.1:54354",
+    "ladoClon": "http://127.0.0.1:58621",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -11,7 +11,7 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:54354/blog",
+      "clon": "http://127.0.0.1:58621/blog",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -35,12 +35,12 @@
       },
       "difPorEje": {
         "contenido": 26,
-        "plantilla": 54,
-        "mixta": 150
+        "plantilla": 160,
+        "mixta": 151
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\blog\\index.html",
-      "distintos": 230,
+      "distintos": 337,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -218,6 +218,49 @@
           "clon": false
         },
         {
+          "camino": "baseEnCrudo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontSize",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "50px",
+          "clon": "48px"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontWeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "800",
+          "clon": "300"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "baseEnCrudo.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "10px",
+          "clon": "0px"
+        },
+        {
+          "camino": "baseEnCrudo.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 70,
+          "clon": 60,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "cabecera.marca",
           "eje": "mixta",
           "contra": "espejo",
@@ -260,7 +303,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2577.98,
-          "clon": 2473.95,
+          "clon": 2463.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -276,7 +319,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2577.98,
-          "clon": 2473.95,
+          "clon": 2463.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -284,7 +327,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "div",
-          "clon": "div.lh-cuerpo.w-full.overflow-hidden",
+          "clon": "div.w-full.overflow-hidden.bg-[#f7f7f7]",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -292,8 +335,15 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2352.98,
-          "clon": 2248.95,
+          "clon": 2238.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "contenedorTema.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.nSecciones",
@@ -880,44 +930,106 @@
           "clon": "«AUSENTE»"
         },
         {
+          "camino": "esqueleto.cuerpo.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(0, 117, 201)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2302.98,
-          "clon": 2198.95,
+          "clon": 2188.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 102.77,
-          "clon": 102.75,
+          "clon": 92.75,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 94.77,
-          "clon": 94.75,
+          "clon": 84.75,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 94.77,
-          "clon": 94.75,
+          "clon": 84.75,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
-          "camino": "esqueleto.cuerpo.1.filas.1.clases.length",
-          "eje": "mixta",
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 4,
-          "clon": 5,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.clases.2",
@@ -932,8 +1044,15 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "et_pb_row_3-4_1-4",
-          "clon": "lh-fila2-blog",
+          "clon": "blog-contenido",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.estiloInline",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": null,
+          "clon": "--lh-fila2-pt:3.89062px;--lh-fila2-pt-lg:14.3906px"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.rect.h",
@@ -948,8 +1067,15 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 435.36,
-          "clon": 435.34,
+          "clon": 425.34,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.h",
@@ -964,8 +1090,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.h",
@@ -980,8 +1120,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
@@ -996,8 +1150,36 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
@@ -1012,8 +1194,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51) rgb(214, 214, 214)",
+          "clon": "rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgb(214, 214, 214)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.texto",
@@ -1107,16 +1303,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.href",
@@ -1130,16 +1361,58 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 489.5,
-          "clon": 489.47,
+          "clon": 479.47,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 488.5,
-          "clon": 488.47,
+          "clon": 478.47,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.h",
@@ -1154,8 +1427,29 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 515.42,
-          "clon": 515.39,
+          "clon": 505.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.renglones",
@@ -1289,8 +1583,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.h",
@@ -1305,8 +1613,36 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 396.72,
-          "clon": 396.61,
+          "clon": 386.61,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.media.src",
@@ -1341,16 +1677,58 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 666.86,
-          "clon": 666.83,
+          "clon": 656.83,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.href",
@@ -1364,7 +1742,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 764.11,
-          "clon": 764.08,
+          "clon": 754.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1375,20 +1753,83 @@
           "clon": 554.63
         },
         {
+          "camino": "listado.tarjetas.1.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 763.11,
-          "clon": 763.08,
+          "clon": 753.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 790.03,
-          "clon": 790,
+          "clon": 780,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.hrefs.0",
@@ -1498,8 +1939,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.h",
@@ -1514,8 +1969,36 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 396.72,
-          "clon": 419.53,
+          "clon": 409.53,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.media.src",
@@ -1550,8 +2033,29 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.h",
@@ -1566,8 +2070,29 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 666.86,
-          "clon": 666.83,
+          "clon": 656.83,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.texto",
@@ -1611,7 +2136,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 821.61,
-          "clon": 764.08,
+          "clon": 754.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1620,6 +2145,27 @@
           "contra": "espejo",
           "referencia": 884.63,
           "clon": 862.23
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.texto",
@@ -1640,8 +2186,29 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 820.61,
-          "clon": 763.08,
+          "clon": 753.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.meta.texto",
@@ -1663,8 +2230,29 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 847.53,
-          "clon": 790,
+          "clon": 780,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.extracto.texto",
@@ -1708,23 +2296,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 449.75,
-          "clon": 449.72,
+          "clon": 439.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.contenedor.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "paginador.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2449.59,
-          "clon": 2345.56,
+          "clon": 2335.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "paginador.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
         },
         {
           "camino": "paginador.linkNextDelHead",
           "eje": "contenido",
           "contra": "corpus",
           "referencia": "https://kunakair.com/es/blog/page/2/",
-          "clon": "/blog/page/2"
+          "clon": null
         },
         {
           "camino": "paginador.hrefs.0",
@@ -1759,23 +2368,94 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2451.59,
-          "clon": 2347.56,
+          "clon": 2337.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.0.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.0.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
         },
         {
           "camino": "paginador.piezas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2451.59,
-          "clon": 2347.56,
+          "clon": 2337.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.1.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 146.41,
+          "clon": 142.8
+        },
+        {
+          "camino": "paginador.piezas.1.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.1.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
         },
         {
           "camino": "paginador.piezas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2451.59,
-          "clon": 2347.56,
+          "clon": 2337.56,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.2.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 190.02,
+          "clon": 182.8
+        },
+        {
+          "camino": "paginador.piezas.2.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.2.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
+          "camino": "paginador.piezas.3.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 21.39,
+          "clon": 19.48
+        },
+        {
+          "camino": "paginador.piezas.3.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 30,
+          "clon": 27,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1783,30 +2463,100 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2451.59,
-          "clon": 2347.56,
+          "clon": 2341.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.3.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 233.63,
+          "clon": 222.8
+        },
+        {
+          "camino": "paginador.piezas.3.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.3.tipo.fontSize",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "18px",
+          "clon": "15px"
         },
         {
           "camino": "paginador.piezas.4.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2451.59,
-          "clon": 2347.56,
+          "clon": 2337.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.4.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 262.63,
+          "clon": 246.28
+        },
+        {
+          "camino": "paginador.piezas.4.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.4.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
         },
         {
           "camino": "paginador.piezas.5.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2453.59,
-          "clon": 2349.56,
+          "clon": 2339.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.5.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 306.23,
+          "clon": 286.28
+        },
+        {
+          "camino": "paginador.piezas.5.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.5.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
+          "camino": "paginador.piezas.5.caja.borderRadius",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "50%",
+          "clon": "0px"
         }
       ]
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:54354/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:58621/etiqueta/calidad-del-aire",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -1817,10 +2567,10 @@
         "clon": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 363.19
         },
         "mismaBase": true,
-        "delta": 0
+        "delta": 30.6
       },
       "pares": 2003,
       "porEje": {
@@ -1829,13 +2579,13 @@
         "mixta": 326
       },
       "difPorEje": {
-        "contenido": 25,
-        "plantilla": 56,
-        "mixta": 149
+        "contenido": 31,
+        "plantilla": 152,
+        "mixta": 153
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\calidad-del-aire\\index.html",
-      "distintos": 230,
+      "distintos": 336,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -2037,6 +2787,65 @@
           "clon": false
         },
         {
+          "camino": "baseEnCrudo.yAbsoluta",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 332.59,
+          "clon": 363.19,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontSize",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "50px",
+          "clon": "48px"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontWeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "800",
+          "clon": "300"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "baseEnCrudo.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "10px",
+          "clon": "0px"
+        },
+        {
+          "camino": "baseEnCrudo.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 70,
+          "clon": 60,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "baseEnCrudo.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 332.59,
+          "clon": 363.19,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "cabecera.marca",
           "eje": "mixta",
           "contra": "espejo",
@@ -2079,7 +2888,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2483.94,
-          "clon": 2531.27,
+          "clon": 2537.48,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2095,7 +2904,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2483.94,
-          "clon": 2531.27,
+          "clon": 2537.48,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2103,7 +2912,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "div",
-          "clon": "div.lh-cuerpo.w-full.overflow-hidden",
+          "clon": "div.w-full.overflow-hidden.bg-[#f7f7f7]",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2111,8 +2920,15 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2258.94,
-          "clon": 2306.27,
+          "clon": 2312.48,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "contenedorTema.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.nSecciones",
@@ -2699,28 +3515,106 @@
           "clon": "«AUSENTE»"
         },
         {
+          "camino": "esqueleto.cuerpo.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(0, 117, 201)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2208.94,
-          "clon": 2256.27,
+          "clon": 2262.48,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 183.63,
-          "clon": 230.97,
+          "clon": 251.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 175.63,
-          "clon": 222.97,
+          "clon": 243.56,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 70,
+          "clon": 90.59,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.h",
@@ -2731,51 +3625,114 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
-          "camino": "esqueleto.cuerpo.1.filas.1.clases.length",
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 3,
-          "clon": 4,
+          "referencia": 402.59,
+          "clon": 423.19,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.estiloInline",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": null,
+          "clon": "--lh-fila2-pt:30px;--lh-fila2-pt-lg:28.7969px"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 530.61,
-          "clon": 577.94,
+          "clon": 584.16,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "14.3906px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.texto",
           "eje": "contenido",
           "contra": "corpus",
           "referencia": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores May 25, 2026 | ArtículosLa monitorización de la calidad del aire ",
-          "clon": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensoresMay 25, 2026 | ArtículosLa monitorización de la calidad del aire e"
+          "clon": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensoresMay 25, 2026 | ArtículosLa monitorización de la calidad del aire L"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2357.55,
-          "clon": 2404.88,
+          "clon": 2411.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
@@ -2790,8 +3747,36 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
@@ -2806,8 +3791,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0.1)",
+          "clon": "rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgb(214, 214, 214)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.texto",
@@ -2925,16 +3924,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.0.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.media.src",
@@ -2949,6 +3983,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-980x604.png 980w, https://kunakair.com/wp-content/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-480x296.png 480w",
           "clon": "/images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-scaled.png 2560w, /images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1280x789.png 1280w, /images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-980x604.png 980w, /images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-480x296.png 480w"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores",
+          "clon": "Centro de datos en Wisconsin, EE. UU. - Kunak"
         },
         {
           "camino": "listado.tarjetas.0.media.attrW",
@@ -2969,8 +4010,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.h",
@@ -2985,8 +4040,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 776.52,
-          "clon": 823.84,
+          "clon": 830.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.renglones",
@@ -3008,32 +4077,95 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 868.52,
-          "clon": 942.84,
+          "clon": 949.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 868.52,
-          "clon": 942.84,
+          "clon": 949.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 867.52,
-          "clon": 941.84,
+          "clon": 948.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 894.44,
-          "clon": 968.77,
+          "clon": 974.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "La monitorización de la calidad del aire en centros de datos consiste en la medición continua o periódica de contaminantes atmosféricos generados por estas instalaciones en todas sus fases operativas: construcción, operación y desmantelamiento. A diferencia de las...",
+          "clon": "La monitorización de la calidad del aire La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen... Leer más en centros de datos consiste en la medición continua o..."
         },
         {
           "camino": "listado.tarjetas.0.hrefs.0",
@@ -3151,16 +4283,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.media.src",
@@ -3175,6 +4342,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w",
           "clon": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg 1800w, /images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1280x853.jpg 1280w, /images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-980x653.jpg 980w, /images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-480x320.jpg 480w"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible",
+          "clon": "El tráfico urbano no solo deteriora la calidad del aire, también genera contaminación acústica crónica cuyos efectos sobre la salud van mucho más allá de la molestia auditiva. - Kunak"
         },
         {
           "camino": "listado.tarjetas.1.media.attrW",
@@ -3195,16 +4369,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 776.52,
-          "clon": 823.84,
+          "clon": 830.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.href",
@@ -3218,32 +4420,95 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 895.52,
-          "clon": 942.84,
+          "clon": 949.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 895.52,
-          "clon": 942.84,
+          "clon": 949.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 894.52,
-          "clon": 941.84,
+          "clon": 948.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 921.44,
-          "clon": 968.77,
+          "clon": 974.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "La monitorización de emisiones del tráfico urbano permite medir en tiempo real contaminantes como NO2, PM2,5, CO y O3 para evaluar el impacto del transporte en la calidad del aire. Estas redes de sensores facilitan el control de zonas de bajas emisiones, la detección...",
+          "clon": "La monitorización de emisiones del tráfico urbano permite medir en tiempo real contaminantes como NO 2 , PM 2,5 , CO y O 3 para evaluar el impacto del transporte en la calidad del aire La calidad del aire se refiere al estado del aire que respiramos y su composición en..."
         },
         {
           "camino": "listado.tarjetas.1.hrefs.0",
@@ -3369,16 +4634,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.media.src",
@@ -3393,6 +4693,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-1080x675.jpg 1080w, https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-980x763.jpg 980w, https://kunakair.com/wp-content/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-480x374.jpg 480w",
           "clon": "/images/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak.jpg 1280w, /images/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-980x763.jpg 980w, /images/uploads/2025/10/hawaii-archipielago_contaminacion-aire_Kunak-480x374.jpg 480w"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Calidad del aire en islas: un desafío oculto para el paraíso",
+          "clon": "Vista aérea del archipiélago de Hawaii"
         },
         {
           "camino": "listado.tarjetas.2.media.attrW",
@@ -3413,16 +4720,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 776.52,
-          "clon": 823.84,
+          "clon": 830.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.href",
@@ -3436,32 +4771,95 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 841.52,
-          "clon": 888.84,
+          "clon": 895.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 841.52,
-          "clon": 888.84,
+          "clon": 895.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 840.52,
-          "clon": 887.84,
+          "clon": 894.06,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 867.44,
-          "clon": 914.77,
+          "clon": 920.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Pese a ser lugares con fama de prístinos, las islas del mundo, desde Hawái y el Caribe hasta las situadas en el Pacífico Sur y el Mediterráneo, enfrentan desafíos crecientes respecto a la calidad del aire. Un estudio mundial de IQAir destaca que apenas un reducido...",
+          "clon": "Pese a ser lugares con fama de prístinos, las islas del mundo, desde Hawái y el Caribe hasta las situadas en el Pacífico Sur y el Mediterráneo, enfrentan desafíos crecientes respecto a la calidad del aire La calidad del aire se refiere al estado del aire que respiramos..."
         },
         {
           "camino": "listado.tarjetas.2.hrefs.0",
@@ -3475,23 +4873,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 559.41,
-          "clon": 606.73,
+          "clon": 612.95,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.contenedor.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "paginador.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2357.55,
-          "clon": 2404.88,
+          "clon": 2411.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "paginador.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
         },
         {
           "camino": "paginador.linkNextDelHead",
           "eje": "contenido",
           "contra": "corpus",
           "referencia": "https://kunakair.com/es/etiqueta/calidad-del-aire/page/2/",
-          "clon": "/etiqueta/calidad-del-aire/page/2"
+          "clon": null
         },
         {
           "camino": "paginador.hrefs.0",
@@ -3533,15 +4952,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2362.55,
-          "clon": 2409.88,
+          "clon": 2417.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "paginador.piezas.0.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
         },
         {
           "camino": "paginador.piezas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2359.55,
-          "clon": 2406.88,
+          "clon": 2413.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3552,11 +4978,25 @@
           "clon": 189.41
         },
         {
+          "camino": "paginador.piezas.1.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.1.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
           "camino": "paginador.piezas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2359.55,
-          "clon": 2406.88,
+          "clon": 2413.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3567,11 +5007,25 @@
           "clon": 229.41
         },
         {
+          "camino": "paginador.piezas.2.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.2.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
           "camino": "paginador.piezas.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2359.55,
-          "clon": 2406.88,
+          "clon": 2413.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3582,11 +5036,25 @@
           "clon": 269.41
         },
         {
+          "camino": "paginador.piezas.3.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.3.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
           "camino": "paginador.piezas.4.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 2359.55,
-          "clon": 2406.88,
+          "clon": 2413.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3595,12 +5063,40 @@
           "contra": "espejo",
           "referencia": 309.38,
           "clon": 309.41
+        },
+        {
+          "camino": "paginador.piezas.4.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.4.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
+        },
+        {
+          "camino": "paginador.piezas.5.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "paginador.piezas.5.tipo.lineHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "30.6px",
+          "clon": "32px"
         }
       ]
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:54354/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:58621/etiqueta/h2s-es",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -3611,10 +5107,10 @@
         "clon": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 363.19
         },
         "mismaBase": true,
-        "delta": 0
+        "delta": 30.6
       },
       "pares": 1740,
       "porEje": {
@@ -3623,13 +5119,13 @@
         "mixta": 305
       },
       "difPorEje": {
-        "contenido": 20,
-        "plantilla": 51,
-        "mixta": 142
+        "contenido": 25,
+        "plantilla": 134,
+        "mixta": 146
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\h2s-es\\index.html",
-      "distintos": 213,
+      "distintos": 305,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -3831,6 +5327,65 @@
           "clon": false
         },
         {
+          "camino": "baseEnCrudo.yAbsoluta",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 332.59,
+          "clon": 363.19,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontSize",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "50px",
+          "clon": "48px"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.fontWeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "800",
+          "clon": "300"
+        },
+        {
+          "camino": "baseEnCrudo.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "left",
+          "clon": "start"
+        },
+        {
+          "camino": "baseEnCrudo.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "10px",
+          "clon": "0px"
+        },
+        {
+          "camino": "baseEnCrudo.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 70,
+          "clon": 60,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "baseEnCrudo.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 332.59,
+          "clon": 363.19,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "cabecera.marca",
           "eje": "mixta",
           "contra": "espejo",
@@ -3873,7 +5428,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 1775.5,
-          "clon": 1788.05,
+          "clon": 1794.27,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3889,7 +5444,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 1775.5,
-          "clon": 1788.05,
+          "clon": 1794.27,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3897,7 +5452,7 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "div",
-          "clon": "div.lh-cuerpo.w-full.overflow-hidden",
+          "clon": "div.w-full.overflow-hidden.bg-[#f7f7f7]",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3905,8 +5460,15 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 1550.5,
-          "clon": 1563.05,
+          "clon": 1569.27,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "contenedorTema.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.nSecciones",
@@ -4493,28 +6055,106 @@
           "clon": "«AUSENTE»"
         },
         {
+          "camino": "esqueleto.cuerpo.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.0.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(0, 117, 201)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 1500.5,
-          "clon": 1513.05,
+          "clon": 1519.27,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 157.22,
-          "clon": 169.78,
+          "clon": 190.38,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 149.22,
-          "clon": 161.78,
+          "clon": 182.38,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 70,
+          "clon": 90.59,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.h",
@@ -4525,36 +6165,85 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
-          "camino": "esqueleto.cuerpo.1.filas.1.clases.length",
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 3,
-          "clon": 4,
+          "referencia": 402.59,
+          "clon": 423.19,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.estiloInline",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": null,
+          "clon": "--lh-fila2-pt:30px;--lh-fila2-pt-lg:28.7969px"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 504.2,
-          "clon": 516.75,
+          "clon": 522.97,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "14.3906px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.texto",
@@ -4568,8 +6257,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 1689.11,
-          "clon": 1701.66,
+          "clon": 1707.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
@@ -4584,8 +6287,36 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.minHeight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "1px",
+          "clon": "0px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 258.5,
+          "clon": 258.44
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
@@ -4600,8 +6331,22 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.width",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "258.5px",
+          "clon": "258.438px"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0.1)",
+          "clon": "rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgb(214, 214, 214)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.texto",
@@ -4735,16 +6480,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.0.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.0.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.media.src",
@@ -4759,6 +6539,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2025/07/litoral-con-sargazo-y-vida-marina-480x320.jpg 480w",
           "clon": "/images/uploads/2025/07/litoral-con-sargazo-y-vida-marina.jpg 1800w, /images/uploads/2025/07/litoral-con-sargazo-y-vida-marina-480x374.jpg 480w"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Sargazo: problemas ambientales y monitorización del impacto",
+          "clon": "El sargazo cuando flota en el océano es fuente de alimento, refugio y reproducción para la vida marina pero en la orilla litoral supone una amenaza para los ecosistemas litorales - Kunak"
         },
         {
           "camino": "listado.tarjetas.0.media.attrW",
@@ -4779,16 +6566,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 750.11,
-          "clon": 762.66,
+          "clon": 768.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.href",
@@ -4802,32 +6617,88 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 841.11,
-          "clon": 853.66,
+          "clon": 859.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 868.03,
-          "clon": 880.58,
+          "clon": 886.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.0.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.0.hrefs.0",
@@ -4937,16 +6808,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.1.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.media.src",
@@ -4961,6 +6867,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2-1080x627.jpg 1080w, https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2-980x512.jpg 980w, https://kunakair.com/wp-content/uploads/2025/03/webinar-banner-beru-2-480x251.jpg 480w",
           "clon": "/images/uploads/2025/03/webinar-banner-beru-2.jpg 1200w, /images/uploads/2025/03/webinar-banner-beru-2-980x512.jpg 980w, /images/uploads/2025/03/webinar-banner-beru-2-480x251.jpg 480w"
+        },
+        {
+          "camino": "listado.tarjetas.1.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Control de olores en vertederos y EDAR: Descubre las claves en nuestro próximo webinar",
+          "clon": "Webinar: Odour emissions monitoring in landfills and WWTP"
         },
         {
           "camino": "listado.tarjetas.1.media.attrW",
@@ -4981,16 +6894,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 750.11,
-          "clon": 762.66,
+          "clon": 768.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.href",
@@ -5004,32 +6945,95 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 841.11,
-          "clon": 853.66,
+          "clon": 859.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 868.03,
-          "clon": 880.58,
+          "clon": 886.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Los olores no solo son una molestia; también pueden ser indicadores de la presencia de contaminantes que afectan la calidad del aire y el medioambiente. En sectores como la gestión de residuos y el tratamiento de aguas residuales, el monitoreo preciso de los...",
+          "clon": "Los olores no solo son una molestia; también pueden ser indicadores de la presencia de contaminantes que afectan la calidad del aire La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la..."
         },
         {
           "camino": "listado.tarjetas.1.hrefs.0",
@@ -5155,16 +7159,51 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.2.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "relative",
+          "clon": "static"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.media.src",
@@ -5179,6 +7218,13 @@
           "contra": "corpus",
           "referencia": "https://kunakair.com/wp-content/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-1080x675.jpg 1080w, https://kunakair.com/wp-content/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-980x649.jpg 980w, https://kunakair.com/wp-content/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-480x318.jpg 480w",
           "clon": "/images/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak.jpg 1280w, /images/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-980x649.jpg 980w, /images/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak-480x318.jpg 480w"
+        },
+        {
+          "camino": "listado.tarjetas.2.media.alt",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Contaminación del aire en vertederos: cómo afecta a la calidad del aire",
+          "clon": "Movimiento de residuos en vertedero - Kunak"
         },
         {
           "camino": "listado.tarjetas.2.media.attrW",
@@ -5199,16 +7245,44 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.envoltorioMedia.tipo.color",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgb(0, 117, 201)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 750.11,
-          "clon": 762.66,
+          "clon": 768.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.href",
@@ -5222,32 +7296,95 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.fecha.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.fecha.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 842.11,
-          "clon": 854.66,
+          "clon": 860.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.categoria.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(102, 102, 102)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 841.11,
-          "clon": 853.66,
+          "clon": 859.88,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.meta.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         },
         {
           "camino": "listado.tarjetas.2.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 868.03,
-          "clon": 880.58,
+          "clon": 886.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.tipo.fontFamily",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "Manrope, sans-serif",
+          "clon": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "listado.tarjetas.2.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de todo...",
+          "clon": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de todo el..."
         },
         {
           "camino": "listado.tarjetas.2.hrefs.0",
@@ -5261,77 +7398,84 @@
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 533,
-          "clon": 545.55,
+          "clon": 551.77,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.contenedor.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
         }
       ]
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:58621/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:58621/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:54354/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:58621/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:54354/glosario",
+      "clon": "http://127.0.0.1:58621/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:54354/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:58621/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:58621/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:58621/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:54354/recursos",
+      "clon": "http://127.0.0.1:58621/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:54354/casos-de-exito",
+      "clon": "http://127.0.0.1:58621/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos",
+      "clon": "http://127.0.0.1:58621/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
@@ -5342,9 +7486,9 @@
     "ausentesEnElClon": 10,
     "conDiferencias": 3,
     "paresComparados": 5445,
-    "paresDistintos": 232,
+    "paresDistintos": 528,
     "paresMixtos": 915,
-    "mixtasQueDifieren": 441,
+    "mixtasQueDifieren": 450,
     "derivaExcluida": 0,
     "paresDeContenidoSinCorpus": 0,
     "formasSinCorpus": 0,

@@ -47,13 +47,16 @@ import "@/app/listados.css";
 
 export type VarianteL1 = "blog" | "etiqueta";
 
-/** El ritmo de la fila del listado, que es donde las dos variantes difieren. */
-const FILA2 = {
-  /* blog: `pt` 14.3906 @1440 · 3.89062 @390 */
-  blog: { ptLg: "14.3906px", pt: "3.89062px" },
-  /* etiqueta: `pt` 28.7969 @1440 · 30 @390 — el default de Divi (2 % de la fila) */
-  etiqueta: { ptLg: "28.7969px", pt: "30px" },
-} as const;
+/**
+ * La clase de ritmo de la fila del listado. El VALOR vive en `listados.css`;
+ * aquí sólo cuál toca, porque `estiloInline` es eje `plantilla` y el original lo
+ * trae a `null`.
+ *
+ * ⚠ Y el ritmo difiere en **dos celdas, no en una** — el `14.3906` está en las
+ * dos variantes y en propiedades distintas: `padding-top` de la fila en blog,
+ * `margin-top` en etiqueta. Ver el bloque de la fila 2 en la hoja.
+ */
+const FILA2 = { blog: "lh-fila2-blog", etiqueta: "lh-fila2-etiqueta" } as const;
 
 export function PaginaListado({
   variante,
@@ -62,6 +65,7 @@ export function PaginaListado({
   descripcion,
   listado,
   paginador,
+  hrefSiguiente,
 }: {
   variante: VarianteL1;
   miga: BreadcrumbItem[];
@@ -73,10 +77,18 @@ export function PaginaListado({
   listado: ReactNode;
   /** El módulo del paginador. En `/blog` va DENTRO del de listado ⇒ aquí `null`. */
   paginador?: ReactNode;
+  /** `<link rel="next">` del `<head>` — el original lo sirve y el barrido lo lee. */
+  hrefSiguiente?: string;
 }) {
   const ritmo = FILA2[variante];
   return (
     <>
+      {/* `<link rel=next>` — el original lo sirve y `lh-barrido` lo lee como
+          `paginador.linkNextDelHead`. React lo iza al `<head>` en el App Router.
+          Es además lo ÚNICO que `L3` sirve de paginación, así que el rol existe
+          aparte del control del cuerpo. */}
+      {hrefSiguiente ? <link rel="next" href={hrefSiguiente} /> : null}
+
       <HeaderNav />
 
       <main className="flex flex-1 flex-col">
@@ -87,8 +99,12 @@ export function PaginaListado({
         {/* `#main-content` es el `contenedorTema` que el barrido mide: 1440 de
             ancho, fondo #f7f7f7 y `overflow: hidden`. */}
         <div id="et-main-area">
-          <div id="main-content" className="w-full overflow-hidden bg-[#f7f7f7]">
-            <div className="et-l et-l--body lh-cuerpo">
+          {/* `lh-cuerpo` va AQUÍ y no en `.et-l--body`: el barrido mide
+              `#main-content` como `contenedorTema`, y su `borderColor` —que sin
+              borde declarado es `currentColor`— salía con el `rgba(0,0,0,0.1)`
+              del preflight de Tailwind hasta que el reset lo alcanzó. */}
+          <div id="main-content" className="lh-cuerpo w-full overflow-hidden bg-[#f7f7f7]">
+            <div className="et-l et-l--body">
               <div className="et_builder_inner_content et_pb_gutters3">
                 {/* ── Sección 0 · la miga. `pt/pb` a 0 en los dos anchos. ── */}
                 <SeccionTb n={0}>
@@ -117,8 +133,7 @@ export function PaginaListado({
                        documentos. El camino `false` existe y está SIN
                        EJERCITAR — ver la cabecera de `ListadoB.tsx`. */
                     conBarra
-                    ptLg={ritmo.ptLg}
-                    pt={ritmo.pt}
+                    ritmo={ritmo}
                     extra={variante === "blog" ? "blog-contenido" : ""}
                     barra={
                       <BarraLateral

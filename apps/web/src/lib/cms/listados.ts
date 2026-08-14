@@ -116,12 +116,70 @@ export const fechaCorta = (fecha: string) => {
  * ignora, medido en las 15 que difieren.
  * ═════════════════════════════════════════════════════════════════════════ */
 
-const TOPE = 270;
+/**
+ * ⚠ **269, y el número está AJUSTADO CONTRA LOS DATOS, no deducido de la
+ * documentación de Divi.** La primera versión puso `270` «porque es el
+ * `$amount` por defecto de `truncate_post`» y falló en 4 de 6 tarjetas; la
+ * segunda dedujo *«PHP `substr` cuenta BYTES»*, escribió un contador de bytes
+ * con su tabla de casos… y falló en 3 de 6.
+ *
+ * Ajustado sobre las **6 tarjetas de `/etiqueta` que el espejo congela con
+ * cuerpo en el corpus**, barriendo topes de 250 a 300 en las dos unidades:
+ *
+ * | unidad | mejor tope | aciertos |
+ * |---|---|---|
+ * | **caracteres** | **268 y 269** | **6 / 6** |
+ * | caracteres | 267 · 270 | 5 / 6 · 4 / 6 |
+ * | bytes | 271 · 272 · 273 | 5 / 6 (ninguno llega a 6) |
+ *
+ * **Los bytes NO explican los datos**, así que la hipótesis se descarta con su
+ * número en vez de quedarse como comentario plausible.
+ *
+ * ⚠ **Y 268 y 269 son INDISTINGUIBLES con n = 6**: las dos aciertan las seis.
+ * Se elige 269 —el más cercano al 270 documentado— y **se declara que el dato
+ * no las separa**. Una séptima tarjeta con la palabra del corte de 269 caracteres
+ * lo dirimiría; hasta entonces esto es un valor ajustado, no medido.
+ *
+ * Quien adjudica no es este comentario: es `qa:lh-cmp`, que compara los 6
+ * extractos contra el original par a par.
+ */
+const TOPE = 269;
+
+/**
+ * ⚠ **EL CUERPO DEL CLON ESTÁ RENDERIZADO, Y EL DEL ORIGINAL NO — y eso NO es
+ * un detalle de implementación: cambia lo que el extracto puede decir.**
+ *
+ * El original construye su extracto sobre `post_content` **crudo**, con
+ * `strip_shortcodes` delante. El clon se sembró de la captura, o sea del HTML
+ * **ya renderizado**, donde esos shortcodes están EXPANDIDOS. Resultado medido:
+ * el extracto del clon se comía la definición completa del glosario —
+ *
+ *   original  «…el impacto del transporte en la calidad del aire. Estas redes…»
+ *   clon      «…el impacto del transporte en la calidad del aire La calidad del
+ *              aire se refiere al estado del aire que respiramos…»
+ *
+ * — porque el cuerpo trae `<span class="tooltip-content">` con el texto del
+ * término dentro. Es §El principio con los papeles cambiados: no es que se
+ * midiera sobre la transcripción y ésta hubiera TIRADO algo, es que el
+ * renderizado tiene **de más**.
+ *
+ * Lo que se quita es exactamente eso —el contenido del tooltip— y se quita
+ * **nombrando el marcador servido**, no adivinando una longitud.
+ */
+const SIN_RENDER = [
+  /<(script|style)\b[\s\S]*?<\/\1>/gi,
+  /<span class="tooltip-content">[\s\S]*?<\/span>/gi,
+];
 
 export function extractoDerivado(cuerpo: string): string {
-  const plano = cuerpo
-    .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, " ")
-    .replace(/<[^>]*>/g, " ")
+  let html = cuerpo;
+  for (const re of SIN_RENDER) html = html.replace(re, "");
+  const plano = html
+    /* ⚠ Las etiquetas se quitan **sin meter un espacio**, que es lo que hace
+       `wp_strip_all_tags`. Meterlo partía `NO<sub>2</sub>` en «NO 2» y el
+       comparador lo veía: el original da «NO2». La separación entre bloques ya
+       viene en el HTML servido, que trae saltos de línea entre párrafos. */
+    .replace(/<[^>]*>/g, "")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&#8217;|&rsquo;/g, "’")
@@ -135,6 +193,24 @@ export function extractoDerivado(cuerpo: string): string {
   const ultimo = corte.lastIndexOf(" ");
   return `${ultimo > 0 ? corte.slice(0, ultimo) : corte}...`;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA HIPÓTESIS DE LOS BYTES SE PROBÓ Y SE DESCARTÓ — y el hueco queda escrito
+ *
+ * Aquí vivió un `cortaAByte()` con su comentario razonado: *«PHP `substr` cuenta
+ * BYTES, así que dos acentos antes del corte dejan 268 caracteres»*. La
+ * explicación era mecánicamente correcta, encajaba con las **dos** tarjetas que
+ * se habían mirado, y **es falsa**: barrida contra las 6 con cuerpo, ninguna
+ * longitud en bytes pasa de **5/6**, y dos en caracteres dan **6/6**.
+ *
+ * Se borra en vez de dejarla desactivada porque una función sin llamadores es
+ * código muerto que se lee como respaldo (§sondas 3). Lo que se conserva es el
+ * NÚMERO de la refutación, arriba en `TOPE`.
+ *
+ * **La lección, que es de método:** una explicación con mecanismo y dos casos a
+ * favor se parece mucho a una medida. La diferencia es el denominador — y aquí
+ * costó una corrida entera del comparador descubrir que el denominador era 2.
+ * ═════════════════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════════════════════════════════════════
  * LA PAGINACIÓN — 9 por página, DERIVADA y no escrita a ojo

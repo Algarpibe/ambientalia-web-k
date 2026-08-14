@@ -3,7 +3,7 @@
     "fecha": "2026-08-13",
     "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
     "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-11)",
-    "ladoClon": "http://127.0.0.1:54354",
+    "ladoClon": "http://127.0.0.1:51910",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -11,7 +11,7 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:54354/blog",
+      "clon": "http://127.0.0.1:51910/blog",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -35,12 +35,12 @@
       },
       "difPorEje": {
         "contenido": 26,
-        "plantilla": 54,
+        "plantilla": 55,
         "mixta": 150
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\blog\\index.html",
-      "distintos": 230,
+      "distintos": 231,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -1016,6 +1016,13 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51) rgb(214, 214, 214)",
+          "clon": "rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0.1)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.texto",
           "eje": "contenido",
           "contra": "corpus",
@@ -1806,7 +1813,7 @@
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:54354/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:51910/etiqueta/calidad-del-aire",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -3600,7 +3607,7 @@
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:54354/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:51910/etiqueta/h2s-es",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -3623,13 +3630,13 @@
         "mixta": 305
       },
       "difPorEje": {
-        "contenido": 20,
+        "contenido": 22,
         "plantilla": 51,
         "mixta": 142
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\h2s-es\\index.html",
-      "distintos": 213,
+      "distintos": 215,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -5032,6 +5039,13 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.1.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Los olores no solo son una molestia; también pueden ser indicadores de la presencia de contaminantes que afectan la calidad del aire y el medioambiente. En sectores como la gestión de residuos y el tratamiento de aguas residuales, el monitoreo preciso de los...",
+          "clon": "Los olores no solo son una molestia; también pueden ser indicadores de la presencia de contaminantes que afectan la calidad del aire y el medioambiente. En sectores como la gestión de residuos y el tratamiento de aguas residuales, el monitoreo preciso de los compuestos..."
+        },
+        {
           "camino": "listado.tarjetas.1.hrefs.0",
           "eje": "contenido",
           "contra": "corpus",
@@ -5250,6 +5264,13 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.2.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de todo...",
+          "clon": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de todo el..."
+        },
+        {
           "camino": "listado.tarjetas.2.hrefs.0",
           "eje": "contenido",
           "contra": "corpus",
@@ -5268,70 +5289,70 @@
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:51910/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:51910/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:54354/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:51910/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:54354/glosario",
+      "clon": "http://127.0.0.1:51910/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:54354/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:51910/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:51910/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:51910/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:54354/recursos",
+      "clon": "http://127.0.0.1:51910/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:54354/casos-de-exito",
+      "clon": "http://127.0.0.1:51910/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos",
+      "clon": "http://127.0.0.1:51910/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
@@ -5342,7 +5363,7 @@
     "ausentesEnElClon": 10,
     "conDiferencias": 3,
     "paresComparados": 5445,
-    "paresDistintos": 232,
+    "paresDistintos": 235,
     "paresMixtos": 915,
     "mixtasQueDifieren": 441,
     "derivaExcluida": 0,

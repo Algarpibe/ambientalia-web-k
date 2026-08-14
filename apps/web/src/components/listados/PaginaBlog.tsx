@@ -55,6 +55,9 @@ export async function PaginaBlog({ n }: { n: number }) {
   return (
     <PaginaListado
       variante="blog"
+      /* El original lo sirve en absoluto y apuntando a sí mismo; el clon usa su
+         ruta local, que es la que emite. */
+      hrefSiguiente={p.n < p.total ? ruta(p.n + 1) : undefined}
       miga={[{ label: "Inicio", href: "/" }, { label: "Blog" }]}
       titular={
         <ModuloTexto n={1} extra="titulo-puntos">

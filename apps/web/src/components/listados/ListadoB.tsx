@@ -144,8 +144,7 @@ export function ModuloTexto({
 export function FilaListado({
   n,
   conBarra,
-  ptLg,
-  pt,
+  ritmo,
   barra,
   extra = "",
   children,
@@ -153,10 +152,15 @@ export function FilaListado({
   n: number;
   /** `true` ⇒ `3_4 + 1_4` con barra · `false` ⇒ `4_4` sin ella (SIN EJERCITAR). */
   conBarra: boolean;
-  /** `padding-top` de la fila a ≥981 px, medido. */
-  ptLg: string;
-  /** `padding-top` de la fila por debajo de 981 px, medido. */
-  pt: string;
+  /**
+   * La clase de ritmo de la variante (`lh-fila2-blog` · `lh-fila2-etiqueta`).
+   *
+   * ⚠ **Va por clase y no por variable en línea**, y eso lo decidió el
+   * comparador: `estiloInline` es eje `plantilla` y el original lo trae a
+   * `null`, así que un `style=` en la fila **es una diferencia por sí mismo**
+   * aunque el número que lleve dentro sea el correcto. Costó 3 pares.
+   */
+  ritmo: string;
   /** El contenido de la columna estrecha. Sólo se pinta si `conBarra`. */
   barra?: ReactNode;
   extra?: string;
@@ -164,13 +168,9 @@ export function FilaListado({
 }) {
   /* La clase `et_pb_row_3-4_1-4` la emite Divi en las filas de dos columnas y la
      hoja la usa para el hueco de las columnas apiladas a 390. */
-  const clase = [conBarra ? "et_pb_row_3-4_1-4" : "", extra].filter(Boolean).join(" ");
+  const clase = [conBarra ? "et_pb_row_3-4_1-4" : "", ritmo, extra].filter(Boolean).join(" ");
   return (
-    <FilaTbDivi
-      n={n}
-      extra={clase}
-      style={{ "--lh-fila2-pt": pt, "--lh-fila2-pt-lg": ptLg } as React.CSSProperties}
-    >
+    <FilaTbDivi n={n} extra={clase}>
       <ColumnaDivi tipo={conBarra ? "3_4" : "4_4"} n={2} ultima={!conBarra}>
         {children}
       </ColumnaDivi>

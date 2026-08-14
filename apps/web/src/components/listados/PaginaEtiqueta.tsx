@@ -66,6 +66,7 @@ export async function PaginaEtiqueta({ slug, n }: { slug: string; n: number }) {
   return (
     <PaginaListado
       variante="etiqueta"
+      hrefSiguiente={p.n < p.total ? ruta(slug)(p.n + 1) : undefined}
       miga={[
         { label: "Inicio", href: "/" },
         // ruta local: `/blog` la emite esta misma tanda.

@@ -3,7 +3,7 @@
     "fecha": "2026-08-13",
     "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
     "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-11)",
-    "ladoClon": "http://127.0.0.1:54354",
+    "ladoClon": "http://127.0.0.1:62293",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -11,7 +11,7 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:54354/blog",
+      "clon": "http://127.0.0.1:62293/blog",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -1806,7 +1806,7 @@
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:54354/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:62293/etiqueta/calidad-del-aire",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -1829,13 +1829,13 @@
         "mixta": 326
       },
       "difPorEje": {
-        "contenido": 25,
+        "contenido": 27,
         "plantilla": 56,
-        "mixta": 149
+        "mixta": 151
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\calidad-del-aire\\index.html",
-      "distintos": 230,
+      "distintos": 234,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -3036,6 +3036,13 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.0.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "La monitorización de la calidad del aire en centros de datos consiste en la medición continua o periódica de contaminantes atmosféricos generados por estas instalaciones en todas sus fases operativas: construcción, operación y desmantelamiento. A diferencia de las...",
+          "clon": "La monitorización de la calidad del aire en centros de datos consiste en la medición continua o periódica de contaminantes atmosféricos generados por estas instalaciones en todas sus fases operativas: construcción, operación y desmantelamiento. A diferencia de..."
+        },
+        {
           "camino": "listado.tarjetas.0.hrefs.0",
           "eje": "contenido",
           "contra": "corpus",
@@ -3238,11 +3245,34 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.1.extracto.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 186,
+          "clon": 162.75,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": 921.44,
           "clon": 968.77,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "La monitorización de emisiones del tráfico urbano permite medir en tiempo real contaminantes como NO2, PM2,5, CO y O3 para evaluar el impacto del transporte en la calidad del aire. Estas redes de sensores facilitan el control de zonas de bajas emisiones, la detección...",
+          "clon": "La monitorización de emisiones del tráfico urbano permite medir en tiempo real contaminantes como NO2, PM2,5, CO y O3 para evaluar el impacto del transporte en la calidad del aire. Estas redes de sensores facilitan el control de zonas de bajas emisiones, la..."
+        },
+        {
+          "camino": "listado.tarjetas.1.extracto.renglones",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 8,
+          "clon": 7,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3600,7 +3630,7 @@
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:54354/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:62293/etiqueta/h2s-es",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -3623,13 +3653,13 @@
         "mixta": 305
       },
       "difPorEje": {
-        "contenido": 20,
+        "contenido": 21,
         "plantilla": 51,
         "mixta": 142
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\h2s-es\\index.html",
-      "distintos": 213,
+      "distintos": 214,
       "diferencias": [
         {
           "camino": "body.clases.length",
@@ -5250,6 +5280,13 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.2.extracto.texto",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de todo...",
+          "clon": "Resulta imposible permanecer indiferente ante el gran impacto que nuestra basura está causando en la salud y sobre el planeta. Hay soluciones, pero el crecimiento de la población y la urbanización, así como la inadecuada gestión de los residuos en vertederos de..."
+        },
+        {
           "camino": "listado.tarjetas.2.hrefs.0",
           "eje": "contenido",
           "contra": "corpus",
@@ -5268,70 +5305,70 @@
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:62293/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:62293/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:54354/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:62293/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:54354/glosario",
+      "clon": "http://127.0.0.1:62293/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:54354/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:62293/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:62293/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:62293/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:54354/recursos",
+      "clon": "http://127.0.0.1:62293/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:54354/casos-de-exito",
+      "clon": "http://127.0.0.1:62293/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos",
+      "clon": "http://127.0.0.1:62293/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
@@ -5342,9 +5379,9 @@
     "ausentesEnElClon": 10,
     "conDiferencias": 3,
     "paresComparados": 5445,
-    "paresDistintos": 232,
+    "paresDistintos": 235,
     "paresMixtos": 915,
-    "mixtasQueDifieren": 441,
+    "mixtasQueDifieren": 443,
     "derivaExcluida": 0,
     "paresDeContenidoSinCorpus": 0,
     "formasSinCorpus": 0,

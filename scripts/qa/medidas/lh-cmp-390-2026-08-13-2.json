@@ -1,9 +1,9 @@
 {
   "meta": {
     "fecha": "2026-08-13",
-    "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
-    "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-11)",
-    "ladoClon": "http://127.0.0.1:54354",
+    "que": "COMPARADOR de dos lados de listados, par a par, a 390",
+    "ladoOriginal": "medidas/lh-spec-390.json (congelado 2026-08-11)",
+    "ladoClon": "http://127.0.0.1:59600",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -11,42 +11,42 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:54354/blog",
+      "clon": "http://127.0.0.1:59600/blog",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "clon": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "mismaBase": true,
         "delta": 0
       },
-      "pares": 1723,
+      "pares": 1724,
       "porEje": {
         "contenido": 54,
         "plantilla": 1378,
-        "mixta": 284
+        "mixta": 285
       },
       "difPorEje": {
         "contenido": 26,
-        "plantilla": 54,
-        "mixta": 150
+        "plantilla": 53,
+        "mixta": 143
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\blog\\index.html",
-      "distintos": 230,
+      "distintos": 222,
       "diferencias": [
         {
           "camino": "body.clases.length",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 20,
+          "referencia": 21,
           "clon": 3,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -166,7 +166,7 @@
           "camino": "body.clases.14",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "windows",
+          "referencia": "linux",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -198,12 +198,20 @@
           "camino": "body.clases.18",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "min-768",
+          "referencia": "et_mobile_device",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "body.clases.19",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_mobile_device_not_ipad",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.20",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "chrome",
@@ -229,8 +237,8 @@
           "camino": "cabecera.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
-          "clon": 203.59,
+          "referencia": 136.58,
+          "clon": 126,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -244,7 +252,7 @@
           "camino": "cabecera.caja.position",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "static",
+          "referencia": "relative",
           "clon": "absolute"
         },
         {
@@ -259,24 +267,24 @@
           "camino": "pie.yAbsoluta",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2577.98,
-          "clon": 2473.95,
+          "referencia": 5807.16,
+          "clon": 5519.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 590.75,
-          "clon": 594.75,
+          "referencia": 1754.52,
+          "clon": 1762.97,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2577.98,
-          "clon": 2473.95,
+          "referencia": 5807.16,
+          "clon": 5519.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -291,8 +299,8 @@
           "camino": "contenedorTema.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2352.98,
-          "clon": 2248.95,
+          "referencia": 5670.58,
+          "clon": 5382.5,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -390,14 +398,14 @@
           "camino": "esqueleto.cascaron.0.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
+          "referencia": 136.58,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -523,14 +531,14 @@
           "camino": "esqueleto.cascaron.1.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 427.78,
+          "referencia": 1430.77,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -538,7 +546,7 @@
           "camino": "esqueleto.cascaron.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2577.98,
+          "referencia": 5807.16,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -553,7 +561,7 @@
           "camino": "esqueleto.cascaron.1.ritmo.paddingTop",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "57.5938px",
+          "referencia": "50px",
           "clon": "«AUSENTE»"
         },
         {
@@ -664,14 +672,14 @@
           "camino": "esqueleto.cascaron.2.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.2.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 121.97,
+          "referencia": 283.75,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -679,7 +687,7 @@
           "camino": "esqueleto.cascaron.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 3005.77,
+          "referencia": 7237.92,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -797,14 +805,14 @@
           "camino": "esqueleto.cascaron.3.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.3.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 41,
+          "referencia": 40,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -812,7 +820,7 @@
           "camino": "esqueleto.cascaron.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 3127.73,
+          "referencia": 7521.67,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -883,32 +891,32 @@
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2302.98,
-          "clon": 2198.95,
+          "referencia": 5620.58,
+          "clon": 5332.5,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 102.77,
-          "clon": 102.75,
+          "referencia": 66.7,
+          "clon": 66.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 94.77,
-          "clon": 94.75,
+          "referencia": 58.7,
+          "clon": 58.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 94.77,
-          "clon": 94.75,
+          "referencia": 58.7,
+          "clon": 58.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -939,80 +947,72 @@
           "camino": "esqueleto.cuerpo.1.filas.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2085.03,
-          "clon": 1981.02,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "esqueleto.cuerpo.1.filas.1.rect.y",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 435.36,
-          "clon": 435.34,
+          "referencia": 5453.88,
+          "clon": 5165.81,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2041.84,
-          "clon": 1937.84,
+          "referencia": 4981.8,
+          "clon": 4772.55,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 307.17,
+          "clon": 307.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2041.84,
-          "clon": 1937.84,
+          "referencia": 4981.8,
+          "clon": 4772.55,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 307.17,
+          "clon": 307.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 5318.97,
+          "clon": 5109.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 5318.97,
+          "clon": 5109.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1095,27 +1095,19 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
-          "camino": "listado.tarjetas.0.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 653.53,
-          "clon": 549.53,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
           "camino": "listado.tarjetas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 307.17,
+          "clon": 307.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 307.17,
+          "clon": 307.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1129,40 +1121,24 @@
           "camino": "listado.tarjetas.0.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 489.5,
-          "clon": 489.47,
+          "referencia": 336.92,
+          "clon": 336.89,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 488.5,
-          "clon": 488.47,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.0.extracto.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 232.5,
-          "clon": 209.25,
+          "referencia": 335.92,
+          "clon": 335.89,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 515.42,
-          "clon": 515.39,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.0.extracto.renglones",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 10,
-          "clon": 9,
+          "referencia": 362.84,
+          "clon": 362.81,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1277,35 +1253,19 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
-          "camino": "listado.tarjetas.1.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 653.53,
-          "clon": 549.53,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
           "camino": "listado.tarjetas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.1.media.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 293.17,
-          "clon": 293.33,
+          "referencia": 580.84,
+          "clon": 580.81,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 396.72,
-          "clon": 396.61,
+          "referencia": 547.38,
+          "clon": 547.34,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1340,16 +1300,16 @@
           "camino": "listado.tarjetas.1.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 580.84,
+          "clon": 580.81,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 666.86,
-          "clon": 666.83,
+          "referencia": 837.22,
+          "clon": 837.19,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1363,31 +1323,24 @@
           "camino": "listado.tarjetas.1.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 764.11,
-          "clon": 764.08,
+          "referencia": 924.47,
+          "clon": 924.44,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.1.categoria.rect.x",
-          "eje": "plantilla",
-          "contra": "espejo",
-          "referencia": 554.61,
-          "clon": 554.63
         },
         {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 763.11,
-          "clon": 763.08,
+          "referencia": 923.47,
+          "clon": 923.44,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 790.03,
-          "clon": 790,
+          "referencia": 950.39,
+          "clon": 950.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1489,23 +1442,23 @@
           "camino": "listado.tarjetas.2.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 653.53,
-          "clon": 549.53,
+          "referencia": 578.8,
+          "clon": 369.55,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 1168.39,
+          "clon": 1168.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 293.17,
+          "referencia": 293.33,
           "clon": 247.5,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -1513,8 +1466,8 @@
           "camino": "listado.tarjetas.2.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 396.72,
-          "clon": 419.53,
+          "referencia": 1134.92,
+          "clon": 1157.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1549,24 +1502,16 @@
           "camino": "listado.tarjetas.2.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.2.titulo.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 153.75,
-          "clon": 96.25,
+          "referencia": 1168.39,
+          "clon": 1168.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 666.86,
-          "clon": 666.83,
+          "referencia": 1424.77,
+          "clon": 1424.73,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1575,14 +1520,6 @@
           "contra": "corpus",
           "referencia": "Kunak obtiene el Sello Reconcilia por su compromiso con la conciliación laboral y la igualdad",
           "clon": "Webinar: Cómo controlar las emisiones en minería – Junio 2025"
-        },
-        {
-          "camino": "listado.tarjetas.2.titulo.renglones",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 5,
-          "clon": 3,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.href",
@@ -1610,16 +1547,16 @@
           "camino": "listado.tarjetas.2.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 821.61,
-          "clon": 764.08,
+          "referencia": 1512.02,
+          "clon": 1511.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.rect.x",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 884.63,
-          "clon": 862.23
+          "referencia": 176.72,
+          "clon": 154.33
         },
         {
           "camino": "listado.tarjetas.2.categoria.texto",
@@ -1639,8 +1576,8 @@
           "camino": "listado.tarjetas.2.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 820.61,
-          "clon": 763.08,
+          "referencia": 1511.02,
+          "clon": 1510.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1654,7 +1591,7 @@
           "camino": "listado.tarjetas.2.extracto.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 255.75,
+          "referencia": 209.25,
           "clon": 0,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -1662,8 +1599,8 @@
           "camino": "listado.tarjetas.2.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 847.53,
-          "clon": 790,
+          "referencia": 1537.94,
+          "clon": 1537.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1677,7 +1614,7 @@
           "camino": "listado.tarjetas.2.extracto.renglones",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 11,
+          "referencia": 9,
           "clon": null,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -1699,24 +1636,24 @@
           "camino": "listado.contenedor.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1999.84,
-          "clon": 1895.84,
+          "referencia": 4907.8,
+          "clon": 4698.55,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.contenedor.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 449.75,
-          "clon": 449.72,
+          "referencia": 307.17,
+          "clon": 307.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2449.59,
-          "clon": 2345.56,
+          "referencia": 5246.97,
+          "clon": 5037.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -1758,90 +1695,90 @@
           "camino": "paginador.piezas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2451.59,
-          "clon": 2347.56,
+          "referencia": 5248.97,
+          "clon": 5039.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2451.59,
-          "clon": 2347.56,
+          "referencia": 5248.97,
+          "clon": 5039.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2451.59,
-          "clon": 2347.56,
+          "referencia": 5248.97,
+          "clon": 5039.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2451.59,
-          "clon": 2347.56,
+          "referencia": 5248.97,
+          "clon": 5039.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.4.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2451.59,
-          "clon": 2347.56,
+          "referencia": 5248.97,
+          "clon": 5039.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.5.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2453.59,
-          "clon": 2349.56,
+          "referencia": 5250.97,
+          "clon": 5041.69,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         }
       ]
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:54354/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:59600/etiqueta/calidad-del-aire",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "clon": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "mismaBase": true,
         "delta": 0
       },
-      "pares": 2003,
+      "pares": 2004,
       "porEje": {
         "contenido": 66,
         "plantilla": 1604,
-        "mixta": 326
+        "mixta": 327
       },
       "difPorEje": {
         "contenido": 25,
         "plantilla": 56,
-        "mixta": 149
+        "mixta": 156
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\calidad-del-aire\\index.html",
-      "distintos": 230,
+      "distintos": 237,
       "diferencias": [
         {
           "camino": "body.clases.length",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 23,
+          "referencia": 24,
           "clon": 3,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -1985,7 +1922,7 @@
           "camino": "body.clases.17",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "windows",
+          "referencia": "linux",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2017,12 +1954,20 @@
           "camino": "body.clases.21",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "min-768",
+          "referencia": "et_mobile_device",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "body.clases.22",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_mobile_device_not_ipad",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.23",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "chrome",
@@ -2048,8 +1993,8 @@
           "camino": "cabecera.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
-          "clon": 203.59,
+          "referencia": 136.58,
+          "clon": 126,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2063,7 +2008,7 @@
           "camino": "cabecera.caja.position",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "static",
+          "referencia": "relative",
           "clon": "absolute"
         },
         {
@@ -2078,24 +2023,24 @@
           "camino": "pie.yAbsoluta",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2483.94,
-          "clon": 2531.27,
+          "referencia": 5937.23,
+          "clon": 5984.3,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 590.75,
-          "clon": 594.75,
+          "referencia": 1754.52,
+          "clon": 1762.97,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2483.94,
-          "clon": 2531.27,
+          "referencia": 5937.23,
+          "clon": 5984.3,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2110,8 +2055,8 @@
           "camino": "contenedorTema.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2258.94,
-          "clon": 2306.27,
+          "referencia": 5800.66,
+          "clon": 5847.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2209,14 +2154,14 @@
           "camino": "esqueleto.cascaron.0.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
+          "referencia": 136.58,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2342,14 +2287,14 @@
           "camino": "esqueleto.cascaron.1.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 427.78,
+          "referencia": 1430.77,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2357,7 +2302,7 @@
           "camino": "esqueleto.cascaron.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2483.94,
+          "referencia": 5937.23,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2372,7 +2317,7 @@
           "camino": "esqueleto.cascaron.1.ritmo.paddingTop",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "57.5938px",
+          "referencia": "50px",
           "clon": "«AUSENTE»"
         },
         {
@@ -2483,14 +2428,14 @@
           "camino": "esqueleto.cascaron.2.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.2.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 121.97,
+          "referencia": 283.75,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2498,7 +2443,7 @@
           "camino": "esqueleto.cascaron.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2911.72,
+          "referencia": 7368,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2616,14 +2561,14 @@
           "camino": "esqueleto.cascaron.3.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.3.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 41,
+          "referencia": 40,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2631,7 +2576,7 @@
           "camino": "esqueleto.cascaron.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 3033.69,
+          "referencia": 7651.75,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -2702,32 +2647,32 @@
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2208.94,
-          "clon": 2256.27,
+          "referencia": 5750.66,
+          "clon": 5797.72,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 183.63,
-          "clon": 230.97,
+          "referencia": 297.66,
+          "clon": 396.53,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 175.63,
-          "clon": 222.97,
+          "referencia": 289.66,
+          "clon": 388.53,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 105.63,
-          "clon": 152.97,
+          "referencia": 237.66,
+          "clon": 336.53,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2739,27 +2684,51 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "esqueleto.cuerpo.1.filas.1.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 5349.11,
+          "clon": 5297.31,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.filas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 530.61,
-          "clon": 577.94,
+          "referencia": 538.13,
+          "clon": 636.98,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 4850.92,
+          "clon": 4877.92,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 568.13,
+          "clon": 666.98,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 4778.92,
+          "clon": 4805.92,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 568.13,
+          "clon": 666.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2773,40 +2742,40 @@
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2357.55,
-          "clon": 2404.88,
+          "referencia": 5379.05,
+          "clon": 5504.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 5449.05,
+          "clon": 5574.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 5449.05,
+          "clon": 5574.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2924,16 +2893,16 @@
           "camino": "listado.tarjetas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 568.13,
+          "clon": 666.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 568.13,
+          "clon": 666.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -2968,32 +2937,16 @@
           "camino": "listado.tarjetas.0.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.0.titulo.rect.h",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 91,
-          "clon": 118,
+          "referencia": 568.13,
+          "clon": 666.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 776.52,
-          "clon": 823.84,
-          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
-        },
-        {
-          "camino": "listado.tarjetas.0.titulo.renglones",
-          "eje": "mixta",
-          "contra": "espejo",
-          "referencia": 3,
-          "clon": 4,
+          "referencia": 824.5,
+          "clon": 923.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3007,32 +2960,32 @@
           "camino": "listado.tarjetas.0.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 868.52,
-          "clon": 942.84,
+          "referencia": 906.5,
+          "clon": 1005.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 868.52,
-          "clon": 942.84,
+          "referencia": 906.5,
+          "clon": 1005.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 867.52,
-          "clon": 941.84,
+          "referencia": 905.5,
+          "clon": 1004.36,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 894.44,
-          "clon": 968.77,
+          "referencia": 932.42,
+          "clon": 1031.28,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3147,19 +3100,27 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "listado.tarjetas.1.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 527.05,
+          "clon": 554.05,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "listado.tarjetas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1127.17,
+          "clon": 1226.03,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1127.17,
+          "clon": 1226.03,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3194,16 +3155,32 @@
           "camino": "listado.tarjetas.1.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1127.17,
+          "clon": 1226.03,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 81,
+          "clon": 108,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 776.52,
-          "clon": 823.84,
+          "referencia": 1383.55,
+          "clon": 1482.41,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.renglones",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 3,
+          "clon": 4,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3217,32 +3194,32 @@
           "camino": "listado.tarjetas.1.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 895.52,
-          "clon": 942.84,
+          "referencia": 1465.55,
+          "clon": 1591.41,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 895.52,
-          "clon": 942.84,
+          "referencia": 1465.55,
+          "clon": 1591.41,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 894.52,
-          "clon": 941.84,
+          "referencia": 1464.55,
+          "clon": 1590.41,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 921.44,
-          "clon": 968.77,
+          "referencia": 1491.47,
+          "clon": 1617.33,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3368,16 +3345,16 @@
           "camino": "listado.tarjetas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1686.22,
+          "clon": 1812.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1668.75,
+          "clon": 1794.61,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3412,16 +3389,16 @@
           "camino": "listado.tarjetas.2.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 1686.22,
+          "clon": 1812.08,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 776.52,
-          "clon": 823.84,
+          "referencia": 1942.59,
+          "clon": 2068.45,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3435,32 +3412,32 @@
           "camino": "listado.tarjetas.2.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 841.52,
-          "clon": 888.84,
+          "referencia": 1997.59,
+          "clon": 2123.45,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 841.52,
-          "clon": 888.84,
+          "referencia": 1997.59,
+          "clon": 2123.45,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 840.52,
-          "clon": 887.84,
+          "referencia": 1996.59,
+          "clon": 2122.45,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 867.44,
-          "clon": 914.77,
+          "referencia": 2023.52,
+          "clon": 2149.38,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3471,19 +3448,35 @@
           "clon": "/calidad-del-aire-en-islas"
         },
         {
+          "camino": "listado.rejilla.huecoV",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 31.99,
+          "clon": 32,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.contenedor.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 4778.92,
+          "clon": 4805.92,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "listado.contenedor.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 559.41,
-          "clon": 606.73,
+          "referencia": 568.13,
+          "clon": 666.98,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2357.55,
-          "clon": 2404.88,
+          "referencia": 5379.05,
+          "clon": 5504.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3532,110 +3525,110 @@
           "camino": "paginador.piezas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2362.55,
-          "clon": 2409.88,
+          "referencia": 5384.05,
+          "clon": 5509.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2359.55,
-          "clon": 2406.88,
+          "referencia": 5381.05,
+          "clon": 5506.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.1.rect.x",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 189.38,
-          "clon": 189.41
+          "referencia": 115.88,
+          "clon": 115.91
         },
         {
           "camino": "paginador.piezas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2359.55,
-          "clon": 2406.88,
+          "referencia": 5381.05,
+          "clon": 5506.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.2.rect.x",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 229.38,
-          "clon": 229.41
+          "referencia": 155.88,
+          "clon": 155.91
         },
         {
           "camino": "paginador.piezas.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2359.55,
-          "clon": 2406.88,
+          "referencia": 5381.05,
+          "clon": 5506.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.3.rect.x",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 269.38,
-          "clon": 269.41
+          "referencia": 195.88,
+          "clon": 195.91
         },
         {
           "camino": "paginador.piezas.4.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2359.55,
-          "clon": 2406.88,
+          "referencia": 5381.05,
+          "clon": 5506.91,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "paginador.piezas.4.rect.x",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 309.38,
-          "clon": 309.41
+          "referencia": 235.88,
+          "clon": 235.91
         }
       ]
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:54354/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:59600/etiqueta/h2s-es",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "clon": {
           "que": "h1",
           "marca": "h1",
-          "y": 332.59
+          "y": 236.58
         },
         "mismaBase": true,
         "delta": 0
       },
-      "pares": 1740,
+      "pares": 1741,
       "porEje": {
         "contenido": 56,
         "plantilla": 1372,
-        "mixta": 305
+        "mixta": 306
       },
       "difPorEje": {
         "contenido": 20,
         "plantilla": 51,
-        "mixta": 142
+        "mixta": 149
       },
       "derivaExcluida": 0,
       "corpus": "corpus\\fase-3\\listados\\etiqueta\\h2s-es\\index.html",
-      "distintos": 213,
+      "distintos": 220,
       "diferencias": [
         {
           "camino": "body.clases.length",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 23,
+          "referencia": 24,
           "clon": 3,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -3779,7 +3772,7 @@
           "camino": "body.clases.17",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "windows",
+          "referencia": "linux",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -3811,12 +3804,20 @@
           "camino": "body.clases.21",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": "min-768",
+          "referencia": "et_mobile_device",
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "body.clases.22",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_mobile_device_not_ipad",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.23",
           "eje": "mixta",
           "contra": "espejo",
           "referencia": "chrome",
@@ -3842,8 +3843,8 @@
           "camino": "cabecera.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
-          "clon": 203.59,
+          "referencia": 136.58,
+          "clon": 126,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3857,7 +3858,7 @@
           "camino": "cabecera.caja.position",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "static",
+          "referencia": "relative",
           "clon": "absolute"
         },
         {
@@ -3872,24 +3873,24 @@
           "camino": "pie.yAbsoluta",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1775.5,
-          "clon": 1788.05,
+          "referencia": 3145.34,
+          "clon": 3609.42,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 590.75,
-          "clon": 594.75,
+          "referencia": 1754.52,
+          "clon": 1762.97,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "pie.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1775.5,
-          "clon": 1788.05,
+          "referencia": 3145.34,
+          "clon": 3609.42,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -3904,8 +3905,8 @@
           "camino": "contenedorTema.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1550.5,
-          "clon": 1563.05,
+          "referencia": 3008.77,
+          "clon": 3472.84,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4003,14 +4004,14 @@
           "camino": "esqueleto.cascaron.0.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 225,
+          "referencia": 136.58,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4136,14 +4137,14 @@
           "camino": "esqueleto.cascaron.1.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 427.78,
+          "referencia": 1430.77,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4151,7 +4152,7 @@
           "camino": "esqueleto.cascaron.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1775.5,
+          "referencia": 3145.34,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4166,7 +4167,7 @@
           "camino": "esqueleto.cascaron.1.ritmo.paddingTop",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": "57.5938px",
+          "referencia": "50px",
           "clon": "«AUSENTE»"
         },
         {
@@ -4277,14 +4278,14 @@
           "camino": "esqueleto.cascaron.2.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.2.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 121.97,
+          "referencia": 283.75,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4292,7 +4293,7 @@
           "camino": "esqueleto.cascaron.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2203.28,
+          "referencia": 4576.11,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4410,14 +4411,14 @@
           "camino": "esqueleto.cascaron.3.rect.w",
           "eje": "plantilla",
           "contra": "espejo",
-          "referencia": 1440,
+          "referencia": 390,
           "clon": "«AUSENTE»"
         },
         {
           "camino": "esqueleto.cascaron.3.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 41,
+          "referencia": 40,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4425,7 +4426,7 @@
           "camino": "esqueleto.cascaron.3.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 2325.25,
+          "referencia": 4859.86,
           "clon": "«AUSENTE»",
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
@@ -4496,32 +4497,32 @@
           "camino": "esqueleto.cuerpo.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1500.5,
-          "clon": 1513.05,
+          "referencia": 2958.77,
+          "clon": 3422.84,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 157.22,
-          "clon": 169.78,
+          "referencia": 271.25,
+          "clon": 335.34,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 149.22,
-          "clon": 161.78,
+          "referencia": 263.25,
+          "clon": 327.34,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.0.columnas.0.modulos.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 79.22,
-          "clon": 91.78,
+          "referencia": 211.25,
+          "clon": 275.34,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4533,27 +4534,51 @@
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
+          "camino": "esqueleto.cuerpo.1.filas.1.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 2583.63,
+          "clon": 2983.63,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "esqueleto.cuerpo.1.filas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 504.2,
-          "clon": 516.75,
+          "referencia": 511.72,
+          "clon": 575.8,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 2085.44,
+          "clon": 2562.23,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 605.8,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 2053.44,
+          "clon": 2562.23,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 605.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4567,40 +4592,40 @@
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.0.modulos.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 1689.11,
-          "clon": 1701.66,
+          "referencia": 2627.16,
+          "clon": 3200.03,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 2657.16,
+          "clon": 3200.03,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 430.19,
-          "clon": 347.39,
+          "referencia": 408.19,
+          "clon": 329.39,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 2657.16,
+          "clon": 3200.03,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4734,16 +4759,24 @@
           "camino": "listado.tarjetas.0.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 605.8,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.media.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 226.38,
+          "clon": 261.31,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 588.33,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4778,16 +4811,16 @@
           "camino": "listado.tarjetas.0.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 605.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 750.11,
-          "clon": 762.66,
+          "referencia": 798.09,
+          "clon": 862.17,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4801,32 +4834,32 @@
           "camino": "listado.tarjetas.0.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 853.09,
+          "clon": 917.17,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 853.09,
+          "clon": 917.17,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 841.11,
-          "clon": 853.66,
+          "referencia": 852.09,
+          "clon": 916.17,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.0.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 868.03,
-          "clon": 880.58,
+          "referencia": 879.02,
+          "clon": 943.09,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4936,16 +4969,16 @@
           "camino": "listado.tarjetas.1.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1073.77,
+          "clon": 1137.84,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1073.77,
+          "clon": 1137.84,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -4980,16 +5013,16 @@
           "camino": "listado.tarjetas.1.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1073.77,
+          "clon": 1137.84,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 750.11,
-          "clon": 762.66,
+          "referencia": 1330.14,
+          "clon": 1394.22,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -5003,32 +5036,32 @@
           "camino": "listado.tarjetas.1.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 1412.14,
+          "clon": 1476.22,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 1412.14,
+          "clon": 1476.22,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 841.11,
-          "clon": 853.66,
+          "referencia": 1411.14,
+          "clon": 1475.22,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.1.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 868.03,
-          "clon": 880.58,
+          "referencia": 1438.06,
+          "clon": 1502.14,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -5154,16 +5187,16 @@
           "camino": "listado.tarjetas.2.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1609.56,
+          "clon": 1673.64,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.media.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1609.56,
+          "clon": 1673.64,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -5198,16 +5231,16 @@
           "camino": "listado.tarjetas.2.envoltorioMedia.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 1609.56,
+          "clon": 1673.64,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 750.11,
-          "clon": 762.66,
+          "referencia": 1865.94,
+          "clon": 1930.02,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -5221,32 +5254,32 @@
           "camino": "listado.tarjetas.2.fecha.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 1920.94,
+          "clon": 1985.02,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.categoria.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 842.11,
-          "clon": 854.66,
+          "referencia": 1920.94,
+          "clon": 1985.02,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.meta.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 841.11,
-          "clon": 853.66,
+          "referencia": 1919.94,
+          "clon": 1984.02,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
           "camino": "listado.tarjetas.2.extracto.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 868.03,
-          "clon": 880.58,
+          "referencia": 1946.86,
+          "clon": 2010.94,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         },
         {
@@ -5257,81 +5290,97 @@
           "clon": "/contaminacion-del-aire-en-vertederos"
         },
         {
+          "camino": "listado.rejilla.huecoV",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 32,
+          "clon": 31.99,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.contenedor.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 2053.44,
+          "clon": 2562.23,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
           "camino": "listado.contenedor.rect.y",
           "eje": "mixta",
           "contra": "espejo",
-          "referencia": 533,
-          "clon": 545.55,
+          "referencia": 541.72,
+          "clon": 605.8,
           "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
         }
       ]
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:59600/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:59600/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:54354/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:59600/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:54354/glosario",
+      "clon": "http://127.0.0.1:59600/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:54354/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:59600/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:59600/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:54354/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:59600/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:54354/recursos",
+      "clon": "http://127.0.0.1:59600/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:54354/casos-de-exito",
+      "clon": "http://127.0.0.1:59600/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:54354/recursos/articulos",
+      "clon": "http://127.0.0.1:59600/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
@@ -5341,10 +5390,10 @@
     "formas": 13,
     "ausentesEnElClon": 10,
     "conDiferencias": 3,
-    "paresComparados": 5445,
-    "paresDistintos": 232,
-    "paresMixtos": 915,
-    "mixtasQueDifieren": 441,
+    "paresComparados": 5448,
+    "paresDistintos": 231,
+    "paresMixtos": 918,
+    "mixtasQueDifieren": 448,
     "derivaExcluida": 0,
     "paresDeContenidoSinCorpus": 0,
     "formasSinCorpus": 0,
@@ -5354,7 +5403,7 @@
   "basesQueNoCasan": [],
   "ejes": {
     "contenido": "referencia = el CORPUS del que se sembró el clon (corpus/fase-3/listados)",
-    "plantilla": "referencia = el ORIGINAL (medidas/lh-spec-1440.json (congelado 2026-08-11))",
+    "plantilla": "referencia = el ORIGINAL (medidas/lh-spec-390.json (congelado 2026-08-11))",
     "mixta": "SIN referencia limpia: depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Se cuentan y se enseñan, NO se leen como defecto."
   }
 }

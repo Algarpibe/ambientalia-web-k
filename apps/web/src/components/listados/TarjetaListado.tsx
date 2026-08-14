@@ -100,7 +100,16 @@ export function TarjetaListado({
         {...(entrada.imagenDestacada.sizes ? { sizes: entrada.imagenDestacada.sizes } : {})}
         {...(entrada.imagenDestacada.width ? { width: entrada.imagenDestacada.width } : {})}
         {...(entrada.imagenDestacada.height ? { height: entrada.imagenDestacada.height } : {})}
-        alt={entrada.imagenDestacada.alt ?? ""}
+        /* ⚠ **El `alt` sale de sitios DISTINTOS en las dos variantes, y eso está
+           medido, no elegido.** El módulo `et_pb_blog` de `/etiqueta` pinta el
+           TITULAR del post; el shortcode de `/blog` pinta el `alt` propio del
+           adjunto. Se ve en las 6 tarjetas de etiqueta comparadas —«Sargazo:
+           problemas ambientales…» contra «El sargazo cuando flota en el
+           océano…»— y en 0 de las de blog.
+
+           Es la clase de diferencia que sólo aparece con las dos variantes
+           delante: con una sola instancia, cualquiera de las dos reglas cuadra. */
+        alt={esEtiqueta ? entrada.titulo : (entrada.imagenDestacada.alt ?? "")}
         /* `P-LH-C6` midió `sinCargarAntes = 0` en las 9 formas: NO hace falta
            maquinaria de carga diferida para ser fiel. El atributo `loading` es
            markup y el original **sólo lo emite en L4** — ponerlo aquí sería

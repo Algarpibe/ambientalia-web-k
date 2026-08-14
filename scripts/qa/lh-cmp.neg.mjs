@@ -36,17 +36,43 @@ import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 const CANONICA = "medidas/lh-cmp-1440.json";
 
 const casos = [
+  /**
+   * ⚠ **EL INVARIANTE DE ESTE CONTROL CAMBIÓ EL 2026-08-13, y el que había se
+   * retira con su razón.**
+   *
+   * Decía *«el clon no emite listados ⇒ las N formas AUSENTES»*. Era cierto —y
+   * el valor correcto que comprobar— **mientras no hubiera nada construido**. En
+   * cuanto la 66.ª tanda emitió `L1-blog` y las dos `L1-etiqueta`, ese control
+   * empezó a fallar **por la razón buena**: 10 de 13, no 13 de 13.
+   *
+   * Un control que se pone rojo cuando el proyecto AVANZA no está midiendo el
+   * instrumento: está midiendo el estado del clon, que es trabajo de la sonda y
+   * no de su negativo. Así que el invariante se sustituye por el que de verdad
+   * pertenece al instrumento:
+   *
+   *   · congela un `resumen` (llegó al final);
+   *   · derivó un universo del espejo (`formas > 0`);
+   *   · **comparó pares de verdad** (`paresComparados > 0`) — que es lo que
+   *     distingue «no encontré diferencias» de «no miré»;
+   *   · y las servidas más las ausentes suman las formas, o sea que ninguna se
+   *     perdió por el camino en silencio.
+   *
+   * Lo que ya NO se afirma aquí es cuántas formas emite el clon: eso lo dice la
+   * sonda, y fijarlo en su negativo era **cablear el estado de ayer**.
+   */
   {
     etiqueta: "control",
-    porQue: "sin sabotaje: el clon no emite listados ⇒ 9 AUSENTES y exit 2 (el estado inicial DECLARADO)",
+    porQue: "sin sabotaje: deriva el universo, compara pares de verdad y no pierde ninguna forma",
     env: {},
     exit: 2,
     salidaTiene: /AUSENTES en el clon/,
     comprueba: (j) => {
       if (!j.resumen) return "sin resumen: la sonda no llegó a congelar su recuento";
       if (!j.resumen.formas) return "0 formas: el universo no se derivó del espejo";
-      if (j.resumen.ausentesEnElClon !== j.resumen.formas)
-        return `esperaba las ${j.resumen.formas} formas ausentes (el clon no las emite), hay ${j.resumen.ausentesEnElClon}`;
+      if (!(j.resumen.paresComparados > 0))
+        return "0 pares comparados: «no hay diferencias» y «no miré» darían la misma salida (§sondas 4bis)";
+      const servidas = j.resumen.formas - j.resumen.ausentesEnElClon;
+      if (servidas < 0 || servidas > j.resumen.formas) return `recuento incoherente: ${servidas} servidas de ${j.resumen.formas}`;
       return null;
     },
   },
@@ -64,6 +90,36 @@ const casos = [
     exit: 2,
     salidaTiene: /AUSENTES en el clon/,
     comprueba: (j) => (j.resumen.ausentesEnElClon === j.resumen.formas ? null : "una ruta inexistente no salió como AUSENTE"),
+  },
+  /**
+   * ⚠ **AÑADIDO 2026-08-13 (66.ª tanda), y lo pidió esta misma sonda.** Hasta
+   * hoy `base-distinta` salía declarado **NO EJERCITADO** con su razón: el clon
+   * no servía ninguna forma, así que el sabotaje no podía cambiar el resultado
+   * —y *un sabotaje que no cambia nada no prueba la guarda, prueba que el
+   * instrumento no la ejercita* (§sondas 8a)—. El bloque de abajo lo decía y
+   * remataba: *«ejercitable ⇒ HAY QUE AÑADIRLO a los casos de arriba»*.
+   *
+   * Con `L1-blog` y las dos `L1-etiqueta` servidas, **ya cambia el resultado**:
+   * la sonda tiene 3 bases que comparar y el sabotaje fuerza a que ninguna case.
+   *
+   * Lo que prueba: que `P-LH-C8` **discrimina**. El criterio de `qa:c-cabecera`
+   * existe porque *un selector puede casar en los dos lados y apuntar a cosas
+   * distintas*; sin este caso, «las 3 bases casan» y «la sonda no mira las
+   * bases» darían exactamente la misma salida verde.
+   */
+  {
+    etiqueta: "base-distinta",
+    porQue: "P-LH-C8: si la base no es el MISMO elemento, se nombra y no se normaliza nada contra ella",
+    env: { SABOTAJE: "base-distinta" },
+    exit: 2,
+    salidaTiene: /P-LH-C8/,
+    comprueba: (j) => {
+      const servidas = j.resumen.formas - j.resumen.ausentesEnElClon;
+      if (!servidas) return "el clon no sirvió ninguna forma: el sabotaje no puede cambiar nada (§sondas 8a)";
+      if (j.resumen.basesQueNoCasan !== servidas)
+        return `esperaba las ${servidas} bases servidas marcadas como distintas, hay ${j.resumen.basesQueNoCasan}`;
+      return null;
+    },
   },
 ];
 
@@ -98,25 +154,31 @@ for (const c of casos) {
   } else console.log(`  ✓  ${c.etiqueta.padEnd(16)} (${seg}s)  cayó por lo suyo: ${c.porQue}`);
 }
 
-/* ── El caso que HOY no se puede ejercitar, declarado en vez de dado por bueno ── */
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA GUARDA DE LA GUARDA — que `base-distinta` siga siendo EJERCITABLE
+ *
+ * El caso está en la lista desde que el clon sirve formas, pero **eso puede
+ * dejar de ser cierto sin que nadie lo note**: si mañana una regresión deja las
+ * 13 formas AUSENTES, `base-distinta` volvería a pasar «por lo suyo» —exit 2 y
+ * el texto de P-LH-C8 no aparecería… y su `comprueba` lo cazaría—. Para que el
+ * informe no dependa de eso, el nº de formas servidas se imprime aquí.
+ * ═════════════════════════════════════════════════════════════════════════ */
 const control = join(QA, nombreNeg(CANONICA, "control"));
-let baseEjercitable = false;
+let servidas = 0;
 if (existsSync(control)) {
   const j = JSON.parse(readFileSync(control, "utf8"));
-  baseEjercitable = j.resumen.ausentesEnElClon < j.resumen.formas;
+  servidas = j.resumen.formas - j.resumen.ausentesEnElClon;
 }
 console.log(
   `\n  ── \`base-distinta\` (P-LH-C8) ──\n` +
-    (baseEjercitable
-      ? `  ejercitable: el clon ya sirve alguna forma. HAY QUE AÑADIRLO a los casos de arriba.`
-      : `  ⊘ NO EJERCITADO — el clon no sirve ninguna forma todavía, así que el sabotaje\n` +
-        `    no puede cambiar el resultado. Un sabotaje que no cambia nada no prueba la\n` +
-        `    guarda: prueba que el instrumento no la ejercita (§sondas 8a). Se declara.`),
+    (servidas
+      ? `  ✓ EJERCITADO sobre ${servidas} forma(s) servida(s) por el clon.`
+      : `  ⊘ el clon no sirve ninguna forma: el sabotaje no puede cambiar el resultado\n` +
+        `    (§sondas 8a). Si esto sale, el caso de arriba está pasando en falso.`),
 );
 
 console.log(
-  `\n${fallos === 0 ? "✅" : "❌"} lh-cmp · test en negativo: ${casos.length - fallos}/${casos.length}` +
-    ` (+1 declarado NO EJERCITADO)\n` +
+  `\n${fallos === 0 ? "✅" : "❌"} lh-cmp · test en negativo: ${casos.length - fallos}/${casos.length}\n` +
     (fallos === 0
       ? `   El rojo de hoy es del CLON, no del instrumento: la sonda tira sin espejo,\n` +
         `   marca AUSENTE lo que no se sirve y no confunde eso con Δ0.\n`

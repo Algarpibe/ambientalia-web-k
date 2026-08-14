@@ -29,6 +29,8 @@
  * N of M» y la A no. También eso está medido, y también es plantilla.
  */
 
+import { Fragment } from "react";
+
 /** Cuántos números pinta la piel A alrededor del actual, medido en el corpus. */
 const VENTANA_A = 2;
 
@@ -59,27 +61,49 @@ export function Paginador({
  */
 function PielA({ n, total, href }: { n: number; total: number; href: (k: number) => string }) {
   const nums = ventana(n, total, VENTANA_A);
+  const pieza = (k: number | null, i: number) =>
+    k === null ? (
+      <span key={`d${i}`} className="page-numbers dots">
+        &hellip;
+      </span>
+    ) : k === n ? (
+      <span key={k} aria-current="page" className="page-numbers current">
+        {k}
+      </span>
+    ) : (
+      <a key={k} className="page-numbers" href={href(k)}>
+        {k}
+      </a>
+    );
+
   return (
+    /* ⚠⚠ **EL SALTO DE LÍNEA ENTRE PIEZAS ES GEOMETRÍA, NO FORMATO.**
+       Las piezas son `inline-block`, así que el espacio en blanco que las separa
+       en el HTML **se renderiza**: 3.61 px a 18 px de cuerpo. El original las
+       sirve una por línea; la primera versión de este componente las emitía
+       pegadas, y el resultado fue un desplazamiento ACUMULATIVO de 3.61 px por
+       pieza —146.41 → 142.8, 190.02 → 182.8, 233.63 → 222.8…— en las 5 piezas
+       de la piel A.
+
+       Es §El principio en su forma más incómoda: lo servido incluye **el espacio
+       en blanco del marcado**, y un JSX «limpio» es una desviación medible. Por
+       eso el `{" "}` va explícito y comentado: sin el comentario, el primer
+       formateador que pase por aquí se lo lleva y nadie sabrá por qué se movió
+       la paginación. */
     <div className="wp-pagenavi" role="pagination">
-      {nums.map((k, i) =>
-        k === null ? (
-          <span key={`d${i}`} className="page-numbers dots">
-            &hellip;
-          </span>
-        ) : k === n ? (
-          <span key={k} aria-current="page" className="page-numbers current">
-            {k}
-          </span>
-        ) : (
-          <a key={k} className="page-numbers" href={href(k)}>
-            {k}
-          </a>
-        ),
-      )}
+      {nums.map((k, i) => (
+        <Fragment key={k === null ? `d${i}` : k}>
+          {i > 0 ? " " : null}
+          {pieza(k, i)}
+        </Fragment>
+      ))}
       {n < total ? (
-        <a className="next page-numbers" href={href(n + 1)}>
-          Siguiente &raquo;
-        </a>
+        <>
+          {" "}
+          <a className="next page-numbers" href={href(n + 1)}>
+            Siguiente &raquo;
+          </a>
+        </>
       ) : null}
     </div>
   );
