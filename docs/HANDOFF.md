@@ -1,84 +1,140 @@
-# HANDOFF — `padre` DECIDIDO (`D2.8`): se modela la jerarquía y la ruta se deriva; `L1-resources` queda desbloqueada y sin empezar
+# HANDOFF — `LISTADO-B` COMPLETO: las tres variantes de `L1` construidas y verificadas contra el original vivo
 
-> ✅ **Tanda de DECISIÓN, 2026-08-14 (67.ª). PASOS 0 · 1 · 2 · 3 · 4 · 5
-> completos. NADA CONSTRUIDO, a propósito.** La decisión que §0b de la 66.ª dejó
-> escrita se toma **sin escalar**, porque el precedente `D2.4`/`D2.5` la cubre y
-> los cuatro escalones del encargo **miden 0**. Registro:
-> `listados-hubs/DECISIONES.md` §**D2.8** · `ESQUEMA-CMS.md` §**2c.3** ·
-> `PENDIENTES-QA.md` (§F3-LH-JERARQUIA-RECURSOS **cerrada** + 3 fichas nuevas) ·
-> `PLAN-FASE-3.md` §F3-2 · `COBERTURA-MEDICION.md` (no se movió, y por qué) ·
-> `packages/cms-config/…/taxonomias.ts` · **`CLAUDE.md` (2 reglas)**.
+> ✅ **Tanda de CONSTRUCCIÓN, 2026-08-14 (68.ª). PASOS 0 · 1 · 2 · 3 · 5
+> completos; el 4 queda fichado con su número, que era su salida declarada.**
 >
-> **Verificación:** `qa:lh-jerarquia` **38/38** con negativo **4/4** ·
-> `qa:lib` **93/93** (**165** sondas) · `npm run check` **exit 0**, 348/348
-> páginas estáticas · línea base congelada a los dos anchos, **345/345 rutas**.
+> **Verificación:** `qa:lh-cmp --vivo` a **1440 y 390** —13 formas · **6
+> AUSENTES** · **7 comparadas**— · round-trip **349/349** · `qa:slugs` **191 sin
+> colisión** · `qa:lib` **exit 0** · `npm run check` **exit 0**, **363** rutas.
 
 ## 0 · Los titulares
 
-> **1 · LA PREGUNTA QUE «EL DATO NO SEPARABA» LA SEPARA OTRO CANAL DEL MISMO
-> DOCUMENTO.** §0b escribió, con la evidencia delante, *«las dos lecturas
-> producen las mismas 80 tarjetas, así que el dato no las separa»*. Es cierto
-> **del canal de las tarjetas** y falso del documento:
-> `/es/recursos/articulos/` sirve `<body class="archive tax-resources
-> term-articulos term-379">` y sus **tres hermanos** bajo `/recursos/`
-> —`kunakpedia`, `documentos-cientificos`, `preguntas-frecuentes`— sirven
-> `page-child`. Es un **ARCHIVO DE TÉRMINO**, dicho por el original, con su
-> contraste en el mismo directorio.
+> **1 · `LISTADO-B` ESTÁ COMPLETO, Y «COMPLETO» VA CON SU ALCANCE.** Las **tres**
+> variantes de `L1` —blog · etiqueta · resources— están construidas y comparadas
+> par a par contra el original **vivo**. Lo que eso NO dice: F3-2 sigue debiendo
+> **L2 · L3 · L5** (6 formas), las **55** rutas vacías de `D2.5` más las **19**
+> de `resources`, y la decisión de alcance del CASCARÓN. Un «completo» sin ese
+> alcance al lado es §la cobertura declarada al nivel de arriba.
 >
-> **La regla que deja, y es de método:** §El principio con el matiz de
-> 2026-08-10 — *la salida servida tiene MÁS DE UN CANAL*. **Antes de declarar
-> que un discriminador no existe hay que decir qué canales se miraron**; «el
-> dato no separa» sin esa lista es una afirmación sobre el canal que se miró,
-> no sobre el dato.
+> **El cierre con sus TRES números:** pares **COMPARADOS** 10 707 @1440 ·
+> 10 714 @390 · pares **MIXTOS** no verificables 1 840 / 1 847 · pares
+> **AUSENTES** por variante no construida 5 999 / 6 005. Residuos **699 / 695**
+> con **0 clases sin nombrar**, y **base Δ0 en las 7 formas** (`P-LH-C8`).
 >
-> **2 · LA FORMA, QUE ES LO QUE FALTABA — la EXISTENCIA ya estaba.** `qa:lh-jerarquia`
-> (nueva, negativo **4/4**) censa **5 taxonomías · 38 términos** del corpus
-> congelado: profundidad **2** · **1** padre · **0** términos con dos padres ·
-> **0** tercer nivel · **1 de 5** taxonomías con jerarquía. Y cada vía con **su
-> propio** denominador, no con uno solo: miga 35/38 · padre-en-miga 8/35 · chips
-> 9/35 · URL de dos segmentos 8/38 · `<body>` de archivo **35/35**.
+> **Y sin regresión, que es un número y no una impresión:** las 3 formas de la
+> 66.ª suman **232 / 231**, su línea base exacta.
+
+> **2 · EL ESCALÓN 1 DISPARÓ, Y CON UNA RESPUESTA QUE NO ERA NINGUNA DE LAS DOS
+> PREVISTAS.** El encargo pre-registró *«si el camino `4_4`-sin-barra falla al
+> ejercitarse, para: es la implementación desde la medida contradicha»*.
+> `lh-barra.json` **acertó en todo lo que midió** —la fila es `4_4`, no hay
+> barra, la columna mide 1238.39— **y el componente estaba mal igual**:
+> `resources` tiene **3 filas** donde las otras dos tienen 2, su listado va en la
+> fila **3** y cuelga de **un módulo de texto vacío**.
 >
-> **3 · LA DIRECCIÓN CONTRARIA, CONTESTADA: el esquema NO está
-> sobre-generalizado.** `padre` se declara en **1 de 4** colecciones de taxonomía
-> y es **exactamente** la única que el original hace jerárquica. **0 celdas** «el
-> esquema admite un valor que el original no produce». Eso es una respuesta, no
-> una ausencia de respuesta, y por eso va con su cruce entero.
+> > **El error no fue de MEDICIÓN sino de ALCANCE al leerla**, y la regla que
+> > deja es: **una regla INCOMPLETA se lee exactamente igual que una completa.**
 >
-> **4 · EL MODELO DE RUTA SE PONE A PRUEBA, NO SE ELIGE.** `ruta = <prefijo> +
-> [padre] + slug` acierta **35/35**, y hay **2 términos que SEPARAN** este modelo
-> del de cablear el prefijo: `articulos` y `seminarios-web` son de primer nivel,
-> donde derivar predice **un** segmento y cablear predice dos. Sin ellos los dos
-> modelos serían indistinguibles y elegir uno nombraría **una variable al azar**.
-> El control del negativo lo comprueba: `separadores > 0` es condición de verde.
->
-> **5 · EL PADRE CABLEADO NO ES UN RIESGO FUTURO: YA ESTÁ COBRANDO.**
-> `extractor-a.mjs` busca el término por el prefijo literal `recursos/articulos`,
-> así que una entrada cuyo término es de PRIMER NIVEL pierde su `recurso` en
-> silencio. Reparto medido sobre las 149 del corpus —**66** sólo blog · **81**
-> bajo hija · **2** bajo término de primer nivel— y la DB lo confirma al par
-> (81 / 68).
->
-> **Y con eso queda NOMBRADA la mitad anónima de §F3-LH-DOS-CONJUNTOS-DE-149**,
-> que llevaba escrito *«2 en la DB sin `recurso`… (los que compensan el
-> recuento)»* sin decir quiénes. Son las 2 de `seminarios-web`, y **el mecanismo
-> es éste**. El cardinal `68 = 68` salía exacto porque **los 2 que sobraban
-> compensaban a los 2 que faltaban por captura** — dos defectos distintos
-> anulándose en un número.
->
-> **6 · POBLAR `padre` NO MUEVE NINGUNA RUTA, Y SE DERIVÓ EN VEZ DE RAZONARSE.**
-> Quien lee la jerarquía en el clon son **2 líneas**, y las dos la tienen
-> **cableada** (`app/[slug]/page.tsx:134-135`). Lo que sí mueve contenido es
-> arreglar el extractor: **9 rutas ya emitidas** —`/blog/page/2` … `/blog/page/8`
-> y las 2 de `/[slug]` cuya miga pasa de 4 eslabones a 3— **y 0 añadidas o
-> quitadas**. Es re-emisión, y la línea base queda congelada en
-> `clon-base-{1440,390}-f33-padre-antes`.
->
-> ⚠ **Y el arreglo NO deja `/blog` correcto: lo deja HONESTAMENTE incompleto** —
-> de «68 con 2 equivocadas» a «66 con 2 que faltan por capturar». **El recuento
-> empeora y la fidelidad mejora**, y quien mire sólo el número leerá lo
-> contrario.
+> `conBarra` se borró en vez de dejarse (§sondas 3): un camino muerto que dice
+> implementar `L1-resources` y no es lo que sirve es peor que no tenerlo.
+
+> **3 · EL FORMATO CORTO DE FECHA ERA INGLÉS Y ES ESPAÑOL — y 8 de 12 meses no
+> podían verlo.** `fechaCorta()` servía `Jan … Dec` desde la 64.ª. Las dos
+> hipótesis dan **la misma salida en 8 de los 12 meses**; sólo separan `Ene ·
+> Abr · Ago · Dic`. Como el comparador mira **las 3 primeras tarjetas**,
+> `/etiqueta` quedó «verificada» con las suyas cayendo en los 8 ambiguos. La
+> instancia separadora la trajo `contaminacion-urbana`: **`Abr 11, 2025`**.
+> Derivado sobre **456 fechas**: cero `Jan`/`Apr`/`Aug`/`Dec`. **El arreglo toca
+> también a `/etiqueta`.** (§DOS MODELOS QUE PREDICEN LO MISMO.)
+
+> **4 · EL PREFIJO CABLEADO, APLICADO — Y LA FICHA PROPONÍA UN CANAL QUE NO ESTÁ
+> SERVIDO EN LA ENTRADA.** Decía *«derívalo de la miga POR SU CLASE»*; medido:
+> **0 de 149** entradas llevan clase en sus `<li>` —esas clases viven en el
+> ARCHIVO, no en el post—. El discriminador servido es **la PROFUNDIDAD**.
+> Antes/después **por elemento**: +2, −0, 0 cambios de término, 0 otros campos,
+> 2 colecciones idénticas.
+
+> **5 · `/blog 68 → 66` NO SE COMPONE COMO LA FICHA DECÍA.** El total era
+> correcto y la composición no: **−2** por captura, **−1** `calidad-del-aire-en-puertos`
+> (§F3-LH-PUERTOS-1-DE-2 por el otro lado, y **una sola entrada explica TRES
+> deltas**), **+1** `webinar-como-controlar-…-mineria-junio-2025`, que el
+> original **no lista en ningún sitio**. La hipótesis obvia —«el loop excluye
+> `eventos`»— sale **REFUTADA con su denominador: 21 de 22**. §UN CARDINAL ES UN
+> CONTENEDOR, segunda vez en la misma página.
+
+> **6 · SON TRES DOCUMENTOS SIN CAPTURAR, NO DOS** —derivado sobre las **574
+> tarjetas** de todos los listados, no sobre `/blog`—. El tercero está en la
+> **posición 0** de `seminarios-web`, así que **desplaza las 3 tarjetas**: por eso
+> esa forma da **249** residuos contra los ~70 de sus hermanas, y **193 de esos
+> 249 son la excepción de captura**, no la plantilla.
+
+> **7 · `qa:cobertura` NO VEÍA NINGUNA CORRIDA `--vivo`.** `congeladas(base)`
+> exige que el sufijo sea una fecha, así que `lh-cmp-1440-vivo.json` no casaba
+> con ningún patrón y la matriz se quedaba con el espejo congelado, **ignorando
+> la comparación contra el original vivo**. No daba error: daba una matriz
+> plausible y baja (§sondas 4). Corregido ⇒ **+4 en cinco ejes**.
+
+> **8 · UN DEFECTO EN LA PIEL A, QUE ESTABA CONSTRUIDA Y VERIFICADA.** `PielA`
+> no emitía el `« Anterior` que el original sirve en `/blog/page/N` con N≥2. No
+> lo vio nadie porque **el espejo mide la página 1 de cada forma**, así que
+> vivía entero en 7 rutas que ninguna comparación cubre. Arreglado, y el arreglo
+> es **NO-OP sobre todo lo verificado**; sigue **SIN VERIFICAR** por comparador.
 
 ## 0b · LO SIGUIENTE, escrito y NO empezado — en orden de valor
+
+**1 · `L2` · `L3` · `L5` — las 6 formas restantes**, reusando el comparador tal
+cual (ya las tiene en su universo, con **5 999 / 6 005** pares esperándolas).
+`L5` **sin su filtro** de 12 botones (la relación `sector` se decide en F3-4,
+desviación ya declarada) y **con su cascarón propio** —sirve 4 secciones de pie
+contra 3, su cabecera mide 458.09 contra 225 y es la única cuya base SUBE al
+estrechar (`SP-K5` · `SP-H6`)—; `L3` bajo `D2.6` (replica sin paginador).
+
+**2 · Las rutas vacías** — **55** de `D2.5` más las **19** de `resources` que
+esta tanda tampoco emite. La parte gorda de lo que falta para llegar a 142+37.
+Su frontera la decide **el servidor de WordPress** y no se deriva del contenido
+del clon: tanda propia con sus dos salidas ya fichadas
+(§F3-LH-VACIAS-NO-EMITIDAS).
+
+**3 · Los residuos de CASCARÓN — ahora 336, no 144.** Cabecera y pie que no son
+`.et_pb_section` en el clon. `c-cmp` ya lo midió en 31 rutas y **resolverlo mueve
+363**. Tanda propia, con línea base antes.
+
+**4 · Los 3 documentos sin capturar** (§F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR).
+Es el PASO 4 que esta tanda no hizo: **no es bloqueante** y su Δ en el comparador
+está pre-declarado. Cerrarlo baja ~200 residuos de golpe, casi todos de
+`seminarios-web`.
+
+**5 · Los residuos sub-píxel (6 y 5) están SIN PROBAR, no limpios.** Esas rutas
+**no tienen campaña de ruido**, y llamarlos limpios es el error que §*un suelo se
+publica con su FORMA* tiene fichado.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **`/recursos/[...ruta]` sirve DOS arquetipos** —documento científico y
+  archivo de término— y va en un solo fichero **porque Next no admite dos
+  segmentos dinámicos al mismo nivel**. El despacho es **por CATÁLOGO**, no por
+  número de segmentos: la longitud es una correlación de esta población.
+- ▶ **La paginación de `resources` se resuelve DENTRO del catch-all**: un
+  `[...ruta]` consume todo lo que va detrás, así que `page/[n]` no puede ser una
+  ruta hermana.
+- ⚠ **`…/page/1/` NO es una ruta: es un 301** al índice (medido hoy; `page/16/`
+  da 200 y `page/17/` 404). El paginador del original la enlaza así y el clon
+  apunta al **destino**, por §Regla de rutas locales.
+- ▶ **`data-lh` en `#main-content` es el discriminador de variante**, y va en un
+  atributo `data-` porque `lh-barrido` lee `marca()` de la `classList`: meterlo
+  como clase sería inventar una diferencia servida para arreglar otra. Hace falta
+  porque **Divi compila una hoja por página** y el clon sirve una sola.
+- ⚠ **`L1-resources` sirve 15 tarjetas por página, no 9**, y su consulta incluye
+  **los descendientes** del término. Las dos cosas están medidas, no supuestas.
+- **Sondas: la última línea de `qa:lib` lo dice** (§regla 9: no se cita de
+  memoria) — hoy **165**, y **no sube** aunque esta tanda añada un negativo:
+  `auditarSondas` recorre **`scripts/qa/` y nada más**, y `seed-listados.neg.mjs`
+  vive en `scripts/seed/`. Se dice porque si no, un 165 donde se esperaba 166 se
+  lee como que el fichero no se registró. `qa:lib` **93/93**, exit 0.
+
+> ⬇ **Lo de abajo es el HANDOFF de la 67.ª tanda, conservado con su fecha.**
+
+## 0b · (histórico, ✅ RESUELTO por la 68.ª) LO SIGUIENTE: L1-resources y su siembra
 
 **1 · `L1-resources`, sus 4 formas.** Ya no hay decisión pendiente: hay que
 **sembrar** (los 2 términos + `padre` en las 8 + las 3 entradas de
@@ -114,7 +170,7 @@ error que §*un suelo se publica con su FORMA* tiene fichado.
 se ficha para que no se persiga) · §F3-LH-SECTOR-SIN-ARCHIVO (3 de 9 archivos
 sin capturar, con la fracción en la que descansa la lectura «plana»).
 
-## 0bis · Lo que hay que saber para la siguiente tanda
+## 0bis · (histórico de la 67.ª) Lo que había que saber
 
 - ▶ **`D2.8` NO añade ni un campo.** La ruta es **plantilla**: un helper
   `rutaTermino(t)` al lado de `rutaDocumento(t)`. Un `prefijo` por término sería

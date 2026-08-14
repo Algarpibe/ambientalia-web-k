@@ -1,5 +1,62 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-CIERRE-68 · `LISTADO-B` COMPLETO — LAS 3 VARIANTES, CLASE A CLASE (2026-08-14, 68.ª tanda)
+
+**El cierre se escribe con TRES números, no con uno:**
+
+| | |
+|---|---|
+| pares **COMPARADOS** | **10 707** @1440 · **10 714** @390, en **7 formas** |
+| pares **MIXTOS** no verificables | **1 840** / **1 847** — sin referencia limpia |
+| pares **AUSENTES** por variante no construida | **5 999** / **6 005** — las 6 formas de `L2`·`L3`·`L4`·`L5` |
+
+> **La frase que esta tanda tiene derecho a escribir, y ninguna más ancha:**
+> *«`LISTADO-B` está construido y verificado en sus **TRES** variantes; F3-2
+> sigue debiendo `L2`, `L3`, `L5`, las rutas vacías y el CASCARÓN»*. **No**
+> «F3-2 completa».
+
+⚠ **Y una diferencia de referencia respecto a la 66.ª que hay que decir:** esta
+tanda compara contra el original **VIVO** (`qa:lh-cmp --vivo`); la 66.ª comparó
+contra el **espejo congelado** del 2026-08-11. Son dos referencias distintas —
+que los 232/231 de sus 3 formas salgan **idénticos** por las dos vías es, de
+paso, una comprobación de que el original no ha derivado en esas formas.
+
+### Los residuos, clasificados — **0 sin clasificar** a los dos anchos
+
+| # | clase | @1440 | @390 | qué es |
+|---|---|---|---|---|
+| A | **CASCARÓN** | **336** | **336** | cabecera y pie dentro de `.et_pb_section` en Divi; el clon los sirve en Tailwind. `c-cmp` ya lo midió — **no es de esta tanda** |
+| H | **EXCEPCIÓN PRE-DECLARADA** | **216** | **213** | los **3** documentos que los listados nombran y el corpus no tiene, más §F3-LH-PUERTOS-1-DE-2. **193 de ellos son `seminarios-web`**, cuyo documento ausente está en la posición 0 |
+| D | **RUTAS LOCALES** | 55 | 55 | §Regla de rutas locales: `/proyecto-simgo` donde el corpus trae la URL absoluta |
+| E | **MEDIA LOCAL** | 28 | 28 | «nunca se enlaza a kunakair.com en caliente» |
+| F | **VARIANTE DE `srcset`** | 28 | 28 | el clon sirve el original donde WordPress sirve la variante 1024×683 |
+| C | **CABECERA** | 14 | 14 | `HeaderNav` es `absolute` y su `border-color`: site-wide |
+| B | **RÉGIMEN** | 7 | 7 | `body.regimen.tbBody`: un `<body>` para las 363 rutas |
+| I | **RESIDUO SUB-PÍXEL** | 6 | 5 | ⚠ **SIN PROBAR, no «limpio»**: estas rutas no tienen campaña de ruido |
+| G | **ESPACIO ENTRE ETIQUETAS** | 5 | 5 | `txt()` colapsa el blanco entre módulos |
+| J | **FUENTE** | 4 | 4 | `next/font` genera el nombre de familia |
+
+**Base Δ0 en las 7 formas y a los dos anchos**, con `P-LH-C8` verificando que es
+**el mismo elemento** — incluidas las 2 hijas, que son las del `+26` de SP-B6.
+
+### Por forma, y de dónde sale cada número
+
+| forma | @1440 | @390 | lectura |
+|---|---|---|---|
+| `L1-blog` | 80 | 79 | línea base de la 66.ª |
+| `L1-etiqueta` ×2 | 81 · 71 | 81 · 71 | ídem |
+| `L1-resources-hijo` · urbana | **75** | **75** | en banda |
+| `L1-resources-hijo` · puertos | **66** | **64** | en banda; 8/7 de ellos son §F3-LH-PUERTOS-1-DE-2 |
+| `L1-resources-padre` · articulos | **77** | **77** | en banda |
+| `L1-resources-padre` · seminarios-web | **249** | **248** | ⚠ **193 son la excepción de captura**, no la plantilla |
+
+**La primera pasada dio 721/708 y la segunda 699/695**: los 22/13 que bajan son
+los **cuatro defectos** que el comparador sacó y que esta tanda arregló — el
+`margin-top` de dos filas, el `pb 0` del módulo del `h1`, el `padding-bottom` del
+titular de tarjeta y **el idioma de las abreviaturas de mes**. Las dos congeladas
+están commiteadas, que es lo que permite **exhibirlos** en vez de citarlos.
+
+
 ## ✅ F3-LH-ESCALON-4-4 · EL CAMINO SIN BARRA SE EJERCITÓ, Y LA MEDIDA NO CUBRÍA LA FORMA (2026-08-14, 68.ª tanda)
 
 El encargo pre-registró: *«si el camino `4_4`-sin-barra falla al ejercitarse,

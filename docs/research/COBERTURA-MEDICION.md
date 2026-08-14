@@ -622,7 +622,40 @@ sus rutas.
 | `/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud` | · | · | · | · | · | · | · | · | **O** |
 | `/todas-nuestras-soluciones-en-el-iotswc` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 
-### Recuento · HOY (2026-08-11) — **derivado por `qa:cobertura`, no escrito a mano**
+### Recuento · HOY (2026-08-14, 68.ª tanda) — derivado por `qa:cobertura`
+
+Denominador **363** (las rutas que emite el build; eran 345 antes de
+`L1-resources`). Sale de `medidas/cobertura-2026-08-14-2.json`:
+
+| eje | **O** | `c` | `·` | antes (345) | sonda declarada |
+|---|---|---|---|---|---|
+| base cruda (h1.y) | **38** | 0 | 325 | 34 | `c-cabecera` · `lh-cmp` |
+| árbol secciones | **38** | 0 | 325 | 34 | `c-cmp` · `lh-cmp` |
+| comportamiento | 37 | 0 | 326 | 37 | `comportamiento` |
+| docH | 31 | 0 | 332 | 31 | `c-cmp` |
+| enlaces | 31 | 0 | 332 | 31 | `enlaces` |
+| anchos horiz. | **22** | 0 | 341 | 18 | `c-banda` · `a-miga` · `lh-cmp` |
+| filas | **13** | 0 | 350 | 9 | `lh-cmp` · `tree-cmp` · `mono-cmp` |
+| módulos | **9** | 0 | 354 | 5 | `lh-cmp` · `mono-cmp` |
+| offsets / holgura | 0 | **3** | 360 | 0 | `offsets` *(solo clon)* |
+
+**Sube en 5 ejes con el denominador subiendo a la vez** (+18 rutas), y los 4 de
+cada subida son exactamente las 4 formas de `L1-resources`. `docH` y `enlaces`
+**no** suben, y es deliberado: `lh-cmp` no compara `docH` —está en su `IGNORAR`—
+y su `href` va contra el corpus, que es otra pregunta que la de `enlaces.mjs`.
+
+> ⚠⚠ **Y las corridas `--vivo` NO ENTRABAN EN ESTA MATRIZ hasta hoy, que es el
+> caso más fuerte que hay.** `congeladas(base)` exige que el sufijo sea una
+> FECHA, así que `lh-cmp-1440-vivo.json` **no casaba con ningún patrón**: la
+> matriz se quedaba con la comparación contra el ESPEJO congelado e **ignoraba la
+> del original VIVO**.
+>
+> No daba error — daba una matriz **plausible y baja**. Es §sondas 4: un patrón
+> que no casa no es un cero, y aquí el cero se leía como *«esas rutas no están
+> comparadas»* cuando lo están, y contra la mejor referencia que existe.
+> Corregido en `cobertura.mjs`; el efecto es **+4 en cinco ejes**.
+
+### Recuento · 2026-08-11 — **derivado por `qa:cobertura`, no escrito a mano**
 
 Denominador **37** (las rutas que emite el build; eran 31 hasta que `articulos-kb`
 entró con las suyas). Sale de `medidas/cobertura-2026-08-11-2.json`:

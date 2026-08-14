@@ -214,7 +214,21 @@ for (const cual of ["edar", "petroleo"])
 //
 //  Las rutas se DERIVAN de la congelada —y sólo las que el clon sirve—: una
 //  forma AUSENTE no está comparada, está pendiente.
-for (const f of [...congeladas("lh-cmp-1440"), ...congeladas("lh-cmp-390")]) {
+//  ⚠⚠ **Y LAS CORRIDAS `--vivo` NO ENTRABAN, que es el caso más fuerte que hay
+//  (2026-08-14, 68.ª tanda).** `congeladas(base)` exige que el sufijo sea una
+//  FECHA, así que `lh-cmp-1440-vivo.json` y `lh-cmp-1440-vivo-2026-08-14.json`
+//  **no casaban con ningún patrón** y la matriz se quedaba con la comparación
+//  contra el ESPEJO congelado, ignorando la del original VIVO.
+//
+//  No daba error: daba una matriz **plausible y baja** — §sondas 4, un patrón
+//  que no casa no es un cero, y aquí el cero se leía como «esas rutas no están
+//  comparadas» cuando lo están, y mejor.
+for (const f of [
+  ...congeladas("lh-cmp-1440"),
+  ...congeladas("lh-cmp-390"),
+  ...congeladas("lh-cmp-1440-vivo"),
+  ...congeladas("lh-cmp-390-vivo"),
+]) {
   if (!fuente(f)) continue;
   const rutas = Object.values(J(f).formas || {})
     .filter((v) => v && v.estado && v.estado !== "AUSENTE")

@@ -1080,6 +1080,28 @@ Acta: `listados-hubs/DECISIONES.md` §`D2.8`; evidencia
 | **profundidad** | el original produce **2**; el esquema admite **más**, y eso se declara **SIN EJERCITAR** (§F2-5-ESCALON-ETIQUETAS). No se prohíbe |
 | **el archivo del padre** | **es la unión de sus descendientes**, sin entradas propias — 80 tarjetas y 80 en la unión de las 8 hijas, **diferencia simétrica 0 por los dos lados** |
 
+> ✅ **EJERCITADO Y SEMBRADO el 2026-08-14 (68.ª tanda).** El contrato de arriba
+> deja de ser papel: **10 filas · `padre` en 8/8 · 0 relaciones sin destino ·
+> 0 filas que el corpus no traiga**, round-trip **349/349**, y las **4 formas**
+> de `L1-resources` emitidas y comparadas contra el original vivo.
+>
+> **Y el hueco de dato no era de esfuerzo, era DE CANAL**, que es lo reutilizable
+> para cualquier taxonomía futura: `seed.mjs` declara `categorias-recursos`
+> **TAXONOMÍA DERIVADA** (dedupe de `entradas-blog.recurso`), y una taxonomía
+> derivada de sus miembros **no puede ver** (a) un término que ninguna entrada
+> referencia —`articulos` sólo existe como PADRE— ni (b) el `padre`, que no viaja
+> en el `{slug, nombre}` embebido. Las dos las declara **el ARCHIVO del término**,
+> y por eso salen de `cms:extractor-listados` y no del extractor de documentos.
+>
+> `padre` **vuelve como SLUG**, no como objeto: no declara
+> `custom.formaMedida = "objeto"` porque la tarjeta nunca lo pinta embebido —
+> sólo lo necesita para componer una ruta.
+>
+> ⚠ **Y `descripcion` NO existe en esta taxonomía, con su denominador:** en
+> `etiquetas` el módulo homólogo del archivo (`et_pb_text_4_tb_body`) trae texto;
+> en `resources` el suyo (`_2_`) trae **los CHIPS de filtro**, y el texto que
+> queda al quitarlos es vacío en **0 de 10**.
+
 **Y lo que NO se añade, que es la mitad de la decisión:** **cero campos nuevos**.
 Un `prefijo`/`ruta` por término sería una **segunda fuente de verdad** —en 10 de
 10 la ruta es derivable de `padre` + `slug`—, y el repo ya tiene escrito el

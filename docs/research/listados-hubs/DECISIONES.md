@@ -520,6 +520,25 @@ de ruta.** Cierra `PENDIENTES-QA.md` §**F3-LH-JERARQUIA-RECURSOS**, que paró
 Evidencia: `npm run qa:lh-jerarquia` (negativo **4/4**), congelada en
 `medidas/lh-jerarquia.json` — 5 taxonomías · 38 términos · corpus congelado.
 
+> ✅ **EJERCITADA el 2026-08-14 (68.ª tanda), y la decisión aguanta entera.**
+> Sembrada —**10 filas · `padre` en 8/8 · 0 relaciones sin destino**, round-trip
+> **349/349**— y construida: las **4 formas** de `L1-resources` emiten **18
+> rutas** y quedan comparadas contra el original vivo con **base Δ0**.
+> **Cero campos nuevos**, como decía el acta.
+>
+> **Lo que el ejercicio añade y el acta no podía saber:** el hueco de dato no
+> era de esfuerzo sino **de canal** — `categorias-recursos` es una TAXONOMÍA
+> DERIVADA de `entradas-blog.recurso`, y una taxonomía derivada de sus miembros
+> no puede ver un término que ninguna entrada referencia (`articulos`, que sólo
+> existe como padre) ni el `padre` mismo. Los dos los declara **el ARCHIVO**, y
+> por eso salen de `cms:extractor-listados`.
+>
+> ⚠ **Y lo que el ejercicio CORRIGE**: el acta daba por bueno que
+> `L1-resources` era «la misma fila sin barra». No lo es — tiene **3 filas** y
+> su listado cuelga de un módulo de texto vacío. `D1`, que dice *«entre
+> variantes cambia tarjeta + retícula + barra»*, queda **acotada otra vez**:
+> cambia también **el número de filas**. Ficha: §F3-LH-ESCALON-4-4.
+
 ### Las dos preguntas de §0b del HANDOFF, contestadas — y la primera se contesta con un canal que nadie había mirado
 
 **(1) ¿Un archivo de término o una página propia?** El HANDOFF la dejó escrita
