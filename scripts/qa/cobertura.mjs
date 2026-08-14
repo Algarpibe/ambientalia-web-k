@@ -197,6 +197,32 @@ for (const cual of ["edar", "petroleo"])
     );
   }
 
+// 4b · lh-cmp — LISTADO-B par a par contra el original (66.ª tanda, F3-2).
+//
+//  ⚠ **Los ejes que se acreditan son los que la sonda COMPARA, no los que
+//  toca.** Se acreditan `base` (con `P-LH-C8` verificando que es el mismo
+//  elemento), `secciones`, `filas`, `modulos` y `anchos` —`rect.w`/`x` son eje
+//  `plantilla` y se comparan contra el original—. **NO** se acredita:
+//
+//    · `docH`   — está en el `IGNORAR` del comparador: no lo compara;
+//    · `enlaces`— compara `href` contra el CORPUS, que es otra pregunta que la
+//                 de `enlaces.mjs` (contra las rutas que el build emite);
+//    · `comport`/`offsets` — esta sonda no los mira.
+//
+//  Acreditar un eje que la sonda no compara es §la cobertura declarada al nivel
+//  de arriba con el contenedor más cómodo: el nombre de la sonda.
+//
+//  Las rutas se DERIVAN de la congelada —y sólo las que el clon sirve—: una
+//  forma AUSENTE no está comparada, está pendiente.
+for (const f of [...congeladas("lh-cmp-1440"), ...congeladas("lh-cmp-390")]) {
+  if (!fuente(f)) continue;
+  const rutas = Object.values(J(f).formas || {})
+    .filter((v) => v && v.estado && v.estado !== "AUSENTE")
+    .map((v) => String(v.clon || "").replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, ""))
+    .filter(Boolean);
+  set(["base", "secciones", "filas", "modulos", "anchos"], rutas, "O", "lh-cmp", f.replace(".json", ""));
+}
+
 // 5 · tree-cmp — árbol de secciones/filas del cuerpo, original vs clon.
 for (const f of fs.readdirSync(M).filter((x) => /^tree-cmp-.*\.json$/.test(x)))
   set(["secciones", "filas"], J(f).meta.clon.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, ""), "O", "tree-cmp", f.replace(".json", ""));

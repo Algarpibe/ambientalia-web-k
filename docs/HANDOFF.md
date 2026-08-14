@@ -1,13 +1,90 @@
-# HANDOFF — los dos instrumentos ARREGLADOS y el dato de `L1-blog`/`L1-etiqueta` COMPLETO; `L1-resources` para con la jerarquía medida
+# HANDOFF — `LISTADO-B` construido y verificado en 2 de sus 3 variantes; la decisión de `padre` queda escrita y sin empezar
 
-> ⚠ **Tanda de DATO + CONSTRUCCIÓN, 2026-08-13 (65.ª).** PASOS **0 · 1 · 2 · 3(a,b)
-> · 5 completos**. **PASO 3(c) PARA con ESCALÓN declarado** y **PASO 4 (LISTADO-B)
-> NO SE EMPIEZA** — corte limpio *«tras el 3 (dato completo, nada construido)»*,
-> que es una de las dos salidas que el encargo declara. Sigue **13 AUSENTES · 0
-> pares**. Registro: `PENDIENTES-QA.md` (§F3-LH-JERARQUIA-RECURSOS ·
-> §F3-LH-DOS-CONJUNTOS-DE-149) · `ESQUEMA-CMS.md` §2c.2 · `PLAN-FASE-3.md` §F3-2.
+> ✅ **Tanda de CONSTRUCCIÓN, 2026-08-13 (66.ª). PASOS 0 · 1 · 2 · 3 · 4 · 5
+> completos.** `L1-blog` y `L1-etiqueta` pasan de **AUSENTES** a **PARES
+> COMPARADOS** contra el original vivo, a 1440 y 390. `L1-resources` queda fuera
+> con su razón escrita —le falta la decisión de esquema de `padre`, que **no es
+> de esta tanda** y va abajo con sus dos preguntas—. Registro: `PENDIENTES-QA.md`
+> (§F3-LH-CIERRE-66 · §F3-LH-ALCANCE-DECLARADO · §F3-LH-VACIAS-NO-EMITIDAS) ·
+> `ESQUEMA-CMS.md` §2c.2 · `listados-hubs/DECISIONES.md` §*D1 se implementa* ·
+> `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` §F3-2 · `CLAUDE.md` (3 reglas).
 
 ## 0 · Los titulares
+
+> **1 · EL DENOMINADOR SE ESCRIBIÓ ANTES DE CONSTRUIR, Y SE CUMPLIÓ AL PAR.**
+> `qa:lh-alcance` (nueva, negativo 3/3) censó el universo del espejo **antes de
+> que existiera nada que defender**: 16 706 pares · 13 670 verificables · **3 036
+> MIXTOS = 18.2 %**, y para las 3 formas de esta tanda **5 445 pares · 4 530
+> verificables · 915 mixtos**. El comparador midió después exactamente **5 445**.
+> Dos instrumentos independientes sobre la misma unidad — el control que este
+> proyecto no siempre tiene.
+>
+> **Y la sonda nueva llegó con un defecto, cazado antes de entrar en un acta:**
+> derivaba «¿el build emite esta forma?» por el primer segmento de `app/`, y
+> `recursos/` existe (es el catch-all del documento científico). Declaraba **6 de
+> 13 formas emitidas con el build emitiendo cero rutas de listado**, o sea 8 087
+> pares de denominador inflado. §sondas 4 en su tercera cara, reproducida a la
+> primera. Ahora deriva la **ruta exacta** contra el `prerender-manifest`.
+>
+> **2 · EL CIERRE VA CON TRES NÚMEROS, NO CON UNO.** **5 445 comparados** ·
+> **915 mixtos no verificables** · **11 261 ausentes** por variante no
+> construida. La frase que esta tanda tiene derecho a escribir es *«LISTADO-B en
+> **2 de 3 variantes**»*, nunca «LISTADO-B completo».
+>
+> **3 · DE 528 RESIDUOS A 232 @1440 Y 231 @390, CON 0 SIN CLASIFICAR.** Cinco
+> pasadas del comparador, y **cada arreglo salió de él, no de releer la hoja**.
+> Los que quedan caen enteros en 9 clases nombradas: cascarón **144** (la
+> divergencia que `c-cmp` ya midió en 31 rutas, **no es de esta tanda**) · rutas
+> locales 26 · media local 14 · variante de `srcset` 14 · excepción
+> pre-declarada 14 · cabecera 6 · sub-píxel 6/5 · espacio entre etiquetas 5 ·
+> régimen 3.
+>
+> **4 · LA BASE, A Δ0 EN LAS TRES FORMAS Y A LOS DOS ANCHOS**, con `P-LH-C8`
+> verificando que es **el mismo elemento**. Su segunda mitad no se podía pagar
+> hasta que el clon emitiera estas rutas: queda **cumplida entera**. Y lo que la
+> arregló —`.tax-tap { position: absolute }`— **no lo marcó ningún par**:
+> `yAbsoluta` es eje mixto. Lo dijo la lectura de la **BASE EN CRUDO**, que por
+> eso se publica antes que los deltas.
+>
+> **5 · LA COBERTURA SUBE EN 5 EJES CON EL DENOMINADOR SUBIENDO A LA VEZ**
+> (302 → 345 rutas): `base` 31→34 · `árbol` 31→34 · `anchos` 15→18 · **`filas`
+> 6→9** · **`módulos` 2→5**. `docH` y `enlaces` **no** suben **a propósito** —
+> `lh-cmp` no compara `docH`, y su `href` va contra el corpus, que es otra
+> pregunta que la de `enlaces.mjs`. Acreditar un eje que la sonda no compara
+> sería la cobertura declarada al nivel de arriba con el contenedor más cómodo
+> que hay: el nombre de la sonda.
+>
+> **6 · Y TRES REGLAS NUEVAS EN `CLAUDE.md`**, una de ellas **corrigiendo una
+> existente**: el «≥2 instancias» de §DOS VARIABLES CONFUNDIDAS estaba mal puesto
+> como listón. Una hipótesis con **mecanismo real y dos casos que encajaban al
+> carácter** resultó falsa contra el dominio entero (5/6 contra 6/6). *Una
+> explicación con mecanismo y dos casos a favor se parece muchísimo a una medida,
+> y la única diferencia es EL DENOMINADOR.*
+
+## 0b · LO SIGUIENTE, escrito y NO empezado: la decisión de esquema de `padre`
+
+**No falta extracción — falta una decisión que nadie ha escrito**, y va a tanda
+de decisión con estas dos preguntas por delante:
+
+1. **¿Qué es `/recursos/articulos`?** ¿Un **archivo de término** que incluye a
+   sus descendientes, o una **página propia**? Las dos lecturas producen **las
+   mismas 80 tarjetas hoy**, así que **el dato no las separa** — y elegir por
+   comodidad es exactamente cómo se fabrica un discriminador inventado.
+2. **¿Qué hace eso con las rutas de dos segmentos?** Hay **8** bajo
+   `/recursos/articulos/`, con **8/8 migas nombrando al padre con su URL**, el
+   padre listando sus 8 hijas, y `seminarios-web` como contraste **sin hijas**.
+
+**Lo que ya está medido y no hay que rehacer** (§F3-LH-JERARQUIA-RECURSOS,
+comprobado en las DOS direcciones y por tres vías): el original **sí** tiene
+jerarquía; faltan **2 términos que no existen como filas** (`articulos` ·
+`seminarios-web`), `padre` está a `null` en los 8, y `seminarios-web` tiene **0**
+entradas contra 3 del original. Hasta que eso se decida y se siembre, **las 4
+formas `L1-resources` del comparador no son construibles** — y con ellas sigue
+**SIN EJERCITAR** el camino `4_4`-sin-barra que `ListadoB.tsx` ya implementa.
+
+---
+
+## 0 · Los titulares (65.ª tanda — histórico)
 
 > **1 · LA REFERENCIA SE DECLARA POR EJE, Y EL EJE MIXTO SALE CON SU NÚMERO.**
 > `lh-cmp` compara ahora cada par contra el lado que le toca: `contenido` → **el

@@ -79,6 +79,34 @@ los seis hubs de builder.**
 > nuevo: `lh-censo` midió **el primer nivel de secciones** —6 y 2 `_tb_body` en
 > 23/23, que sigue siendo verdad— y **la barra lateral vive una fila más abajo**.
 
+### ✅ 2026-08-13 · D1 se IMPLEMENTA, y su NO SEPARABILIDAD se resuelve por MECANISMO (66.ª tanda)
+
+`ListadoB.tsx` sirve las dos retículas que `lh-barra.json` midió. Lo que la
+construcción tuvo que decidir y esta acta registra:
+
+**(a) Barra y retícula van en UNA sola prop (`conBarra`), no en dos.** El §(b)
+de abajo estableció que son **COLINEALES en 149/149** ⇒ *«propiedad de la CAPA»*
+y *«de la VARIANTE»* son indistinguibles con esta población. Separarlas en dos
+props **afirmaría que se pueden combinar de cuatro formas**, y tres de esas
+cuatro no existen en el original. Se elige el eje con **mecanismo servido** —la
+plantilla de cuerpo del theme builder decide las dos a la vez— y **la razón es
+ésa, no una medida**, tal como el §(b) exigía.
+
+**(b) El camino `4_4`-sin-barra se implementa y se DECLARA SIN EJERCITAR.**
+`L1-resources` está parado por §F3-LH-JERARQUIA-RECURSOS, así que **0 de las 3
+formas construidas pasan por `conBarra={false}`**. Es §F2-5-ESCALON-ETIQUETAS con
+nombre propio: un camino de render que ningún dato de calibración estrena.
+
+> **Lo que NO se hizo, y es la razón de que el componente exista ya: cablear
+> `3_4 + 1_4` porque es el que hay delante.** Eso convertiría la variante medida
+> en una constante, y la tanda que construya `L1-resources` se encontraría un
+> componente **que hay que reescribir** en vez de uno **que hay que estrenar**.
+
+**(c) Y una celda del ritmo que la spec no separaba: el `14.3906` está en las DOS
+variantes y en PROPIEDADES DISTINTAS** — `padding-top` de la fila en blog,
+`margin-top` en etiqueta. Leerlo como «la misma celda con otro valor» habría
+dado un arreglo que cuadra en una y falla en la otra.
+
 ### ✅ 2026-08-11 · D1 queda ACOTADA (no contradicha), y la barra CIERRA sin escalón
 
 Tres cosas, y sólo la primera cambia lo que hay que construir. La corrida es

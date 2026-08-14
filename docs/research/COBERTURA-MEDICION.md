@@ -1,5 +1,43 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ✅ **RE-DERIVADA 2026-08-13 (66.ª tanda, la que CONSTRUYE `L1-blog` y
+> `L1-etiqueta`). La matriz SUBE en cinco ejes y el denominador sube con ella —
+> las dos cosas a la vez, que es lo que hay que leer junto.**
+>
+> | eje | antes (302 rutas) | ahora (345 rutas) | quién lo paga |
+> |---|---|---|---|
+> | comportamiento | 37 | 37 | — |
+> | **base cruda (`h1.y`)** | 31 | **34** | `c-cabecera` · **`lh-cmp`** |
+> | **árbol secciones** | 31 | **34** | `c-cmp` · **`lh-cmp`** |
+> | docH | 31 | 31 | `c-cmp` |
+> | enlaces | 31 | 31 | `enlaces` |
+> | **anchos horiz.** | 15 | **18** | `c-banda` · `a-miga` · **`lh-cmp`** |
+> | **filas** | 6 | **9** | **`lh-cmp`** · `tree-cmp` · `mono-cmp` |
+> | **módulos** | 2 | **5** | **`lh-cmp`** · `mono-cmp` |
+> | offsets/holgura | 0 (3 en `c`) | 0 (3 en `c`) | — |
+>
+> **`filas` y `módulos` son los que más se mueven en relativo** —×1.5 y ×2.5—, y
+> es coherente con lo que la sonda hace: compara el árbol del cuerpo nodo a nodo.
+>
+> ⚠ **`docH` y `enlaces` NO suben, y eso es deliberado, no un olvido.**
+> `lh-cmp` tiene `docH` en su `IGNORAR` (no lo compara) y su `href` se mide
+> contra el **CORPUS**, que es otra pregunta que la de `enlaces.mjs` (contra las
+> rutas que el build emite). **Acreditar un eje que la sonda no compara sería
+> §la cobertura declarada al nivel de arriba con el contenedor más cómodo de
+> todos: el nombre de la sonda.**
+>
+> **Y las 42 rutas `/page/N` entran al denominador en `·`, todas.** El espejo
+> mide la página 1 de cada forma, así que la paginación está **emitida y sin
+> comparar** — se dice aquí para que «43 rutas nuevas» no se lea como «43
+> verificadas»: son **3**.
+>
+> **Lo que la predicción de las tres tandas anteriores acertó a medias:** decía
+> *«cuando F3-2 construya, esta matriz se va a hundir»*. El denominador subió de
+> 302 a 345 (+43) y la cobertura subió en 5 ejes — no se hundió porque **la
+> tanda que construyó trajo su comparador de dos lados en la misma tanda**, que
+> es exactamente lo que §UN ARQUETIPO NUEVO NO HEREDA COBERTURA pide. Las que se
+> hundieron fueron las que sembraron sin comparar.
+
 > ⚠ **RE-DERIVADA 2026-08-13 (2.ª tanda de construcción) — sin movimiento, y eso
 > es lo esperado: esta tanda no construyó rutas.** `qa:cobertura` sobre las
 > **302** emitidas: `comportamiento` **37** · `docH`/`base cruda`/`árbol`/

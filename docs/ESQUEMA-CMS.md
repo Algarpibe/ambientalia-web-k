@@ -1034,6 +1034,30 @@ decía *«derivación por defecto (~267c + «…»)»* — correcta para `/etiqu
 no están en `corpus/entradas-blog` (149 ficheros, y el clon tiene 149) ⇒ es un
 hueco de **CAPTURA**, fichado en §F3-LH-DOS-CONJUNTOS-DE-149.
 
+> ✅ **CONSUMIDOS 2026-08-13 (66.ª tanda): los dos campos se pintan, y `extracto`
+> entra en el TIPO medido.** `EntradaBlog` lo declaraba la colección desde F2-1 y
+> **no** `types/kunak.ts`, con la razón escrita al lado —*«el clon no pinta
+> listados todavía»*—. Los pinta desde hoy, así que el hueco se cierra: `extracto?:
+> string` en `EntradaBlog` y **`EtiquetaA`** nuevo (`TerminoA` + `descripcion`).
+>
+> `EtiquetaA` va **aparte y no ensancha `TerminoA`**, y no es cosmético: la
+> descripción no es propiedad del término *citado desde una tarjeta*, es lo que
+> sirve la plantilla del ARCHIVO. Ensanchar `TerminoA` haría que las 149 entradas
+> arrastraran un campo que su tarjeta no usa.
+>
+> ⚠ **Y la derivación de `/etiqueta` tiene DOS correcciones que sólo aparecen al
+> renderizar** (§F3-LH-CIERRE-66):
+>
+> 1. **el cuerpo del clon está RENDERIZADO y el del original no.** El original
+>    construye el extracto sobre `post_content` **crudo** con `strip_shortcodes`;
+>    el clon se sembró de la captura, donde esos shortcodes están **expandidos**.
+>    Resultado medido: el extracto se comía la definición entera del glosario
+>    (`<span class="tooltip-content">`). Se quita **nombrando el marcador
+>    servido**, no adivinando una longitud;
+> 2. **el tope NO es 270**: ajustado contra las 6 tarjetas con cuerpo, **268 y
+>    269 dan 6/6** y ninguna longitud en bytes pasa de 5/6. Se elige 269 y **se
+>    declara que n = 6 no separa 268 de 269**.
+
 **Arquetipos**: LISTADO-B (23 instancias, **una plantilla con tres variantes
 de tarjeta** — config uniforme al 100 % dentro de cada familia) ·
 LISTADO-TEMA-CPT (2) · LISTADO-TEMA-TAX (3, separado **con reapertura

@@ -1,5 +1,47 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-CIERRE-66 · LO QUE QUEDA DE `L1-blog` Y `L1-etiqueta`, CLASE A CLASE (2026-08-13, 66.ª tanda)
+
+**El cierre se escribe con TRES números, no con uno** (§la cobertura declarada
+al nivel de arriba):
+
+| | |
+|---|---|
+| **pares COMPARADOS** | **5 445** @1440 · **5 448** @390, en **3 formas** |
+| **pares MIXTOS no verificables** | **915** @1440 · **918** @390 — sin referencia limpia (§ESCALÓN eje mixto) |
+| **pares AUSENTES por variante no construida** | **11 261** — las **10 formas** que esta tanda no construye |
+
+> **Y la frase que esta tanda tiene derecho a escribir, y ninguna más ancha:**
+> *«`LISTADO-B` está construido y verificado en **2 de sus 3 variantes**;
+> `L1-resources` sigue parada por §F3-LH-JERARQUIA-RECURSOS»*. **No** «LISTADO-B
+> completo».
+
+### Los residuos, clasificados — **0 sin clasificar** a los dos anchos
+
+De 528 en la primera pasada a **232 @1440 · 231 @390**, y las que quedan caen
+enteras en 9 clases nombradas:
+
+| # | clase | @1440 | @390 | qué es |
+|---|---|---|---|---|
+| A | **CASCARÓN** | **144** | **144** | Divi mete cabecera y pie **dentro de `.et_pb_section`**; el clon los sirve en Tailwind. Es la divergencia que `c-cmp` ya midió en las 31 rutas — **no es de esta tanda** |
+| D | **RUTAS LOCALES** | 26 | 26 | §Regla de rutas locales: el clon apunta a `/proyecto-simgo` donde el corpus trae la URL absoluta |
+| E | **MEDIA LOCAL** | 14 | 14 | «Nunca se enlaza a kunakair.com en caliente» |
+| F | **VARIANTE DE `srcset`** | 14 | 14 | el clon sirve el original (1800×1200) donde WordPress sirve la variante 1024×683 — es §F3-1 `srcset`, ya fichado |
+| H | **EXCEPCIÓN PRE-DECLARADA** | 14 | 14 | la tarjeta que falta en el corpus (§F3-LH-DOS-CONJUNTOS-DE-149) |
+| C | **CABECERA** | 6 | 6 | `HeaderNav` es `absolute` y su `border-color`: site-wide, no de listados |
+| I | **RESIDUO SUB-PÍXEL** | 6 | 5 | 0.02–0.03 px. ⚠ **Sin campaña de ruido en estas rutas, un residuo pequeño es SIN PROBAR, no «limpio»** |
+| G | **ESPACIO ENTRE ETIQUETAS** | 5 | 5 | `txt()` colapsa el blanco entre widgets: el original trae saltos de línea y el clon no |
+| B | **RÉGIMEN** | 3 | 3 | `body.regimen.tbBody`: el `<body>` del clon es **uno solo** para las 345 rutas y el App Router no deja variarlo por ruta |
+
+**La BASE está a Δ0 en las tres formas y a los dos anchos**, con `P-LH-C8`
+verificando que es **el mismo elemento** en los dos lados.
+
+⚠ **Lo que ninguna de estas clases es: un defecto de la plantilla de listados.**
+Y lo que sí queda por hacer con ellas: A · C · B piden una decisión de alcance
+(¿el clon emite el cascarón como secciones de Divi?) que **mueve 345 rutas** y
+por tanto no es de esta tanda; I pide una **campaña de ruido** para estas rutas,
+que hoy no existe.
+
 ## 📐 F3-LH-ALCANCE-DECLARADO · EL DENOMINADOR, ESCRITO **ANTES** DE CONSTRUIR (2026-08-13, 66.ª tanda)
 
 **Va primero porque es lo único que esta tanda no puede escribir al final sin
@@ -77,6 +119,37 @@ re-derivan**:
 
 La 2 la excluye el comparador **por mecanismo** (deriva la lista de
 `medidas/lh-extracto.json`); la 1 **no**, y por eso se escribe aquí.
+
+> ✅ **Y la pre-declaración se cobró: las 14 diferencias de la excepción 1
+> aparecieron exactamente donde se dijo** —`listado.tarjetas.2` de `L1-blog`, con
+> su título, su categoría, su meta y su extracto vacío—. Escribirla antes evitó
+> que la tanda persiguiera un defecto que no lo era, que es para lo que servía.
+
+## 🔎 F3-LH-VACIAS-NO-EMITIDAS · EL CLON SIRVE 43 RUTAS DE LISTADO Y EL ORIGINAL 142 (2026-08-13, 66.ª tanda)
+
+**El número no es un fallo de la construcción: es una frontera que no se
+deriva del contenido del clon**, y conviene separarlo de lo que sí se entrega.
+
+| | |
+|---|---|
+| emitidas por el clon | **43** — 8 de `/blog` + 35 de `/etiqueta/*` |
+| las que el original sirve **con contenido** | idem por construcción: la paginación se deriva de la DB y **coincide al número** (8 en `/blog`, 4 en `calidad-del-aire`) |
+| las que el original sirve **VACÍAS con 200** | **55**, `D2.5` · REPLICAR TAL CUAL |
+
+⚠ **Las 55 vacías NO están emitidas todavía**, y la razón es que su frontera la
+decide el servidor de WordPress —el último `N` que responde 200—, no el
+contenido: son `/blog/page/9..17` cuando el contenido del clon acaba en la 8.
+Emitirlas hoy exigiría **cablear la frontera medida**, que es un dato del
+original de una fecha concreta y no una función de nada que el clon tenga.
+
+Se ficha en vez de inventarlo. Las dos salidas, para la tanda que lo retome:
+
+1. **cablear la frontera** desde `medidas/lh-paginas-*.json` (con su fecha, y
+   asumiendo que envejece contra el original);
+2. **divergir con la razón escrita**, como `D2.4` hace con los 7 sin paginación
+   real.
+
+Lo que no vale es entregar «142 rutas» sin decir que son 43.
 
 ## ⛔ F3-LH-JERARQUIA-RECURSOS · ESCALÓN: EL ORIGINAL **SÍ** TIENE JERARQUÍA (2026-08-13, 65.ª tanda)
 
