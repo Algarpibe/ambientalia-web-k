@@ -1,5 +1,155 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-JERARQUIA-RECURSOS · CERRADA CON `D2.8` — y la pregunta que «el dato no separaba» la separa el `<body>` (2026-08-14, 67.ª tanda)
+
+**Decidida sin escalar, porque el precedente la cubre:** `D2.8` en
+`research/listados-hubs/DECISIONES.md` — **modelar la jerarquía**, `padre`
+poblado y la ruta compuesta en la plantilla. Instrumento:
+`npm run qa:lh-jerarquia` (nueva, negativo **4/4**), congelada en
+`medidas/lh-jerarquia.json`.
+
+**Lo que la 65.ª tanda dejó escrito y esta corrige, con su razón:** *«las dos
+lecturas producen las mismas 80 tarjetas, así que el dato no las separa»*. Es
+verdad **del canal de las tarjetas** y falso del documento —
+
+> **`/es/recursos/articulos/` sirve `<body class="archive tax-resources
+> term-articulos term-379">` y sus tres hermanos bajo `/recursos/` sirven
+> `page-child`.** El original dice qué es cada cosa, con su contraste en el
+> mismo directorio.
+
+Es §El principio con el matiz de 2026-08-10: **la salida servida tiene más de un
+canal**, y «el dato no separa» sólo era cierto del que se había mirado.
+
+### La FORMA, que es lo que faltaba para modelar (la existencia ya estaba)
+
+| | medido | denominador |
+|---|---|---|
+| profundidad máxima | **2** | 35 archivos leídos |
+| términos con padre | **8** | 35 |
+| padres distintos | **1** (`articulos`) | — |
+| con **DOS** padres | **0** | 35 |
+| **tercer nivel** | **0** | 35 |
+| taxonomías con jerarquía | **1 de 5** | — |
+
+Y las vías con **su propio** denominador, no con uno solo: miga **35/38** ·
+padre-en-miga **8/35** · chips **9/35** · URL de dos segmentos **8/38** ·
+`<body>` de archivo **35/35** con **3/4** hermanos marcados PÁGINA.
+
+**El archivo del padre ES la unión de sus descendientes**, y se comprobó con una
+**diferencia simétrica** y no con un recuento (§UN CARDINAL ES UN CONTENEDOR):
+80 tarjetas en `/recursos/articulos/`, 80 en la unión de las 8 hijas, **0 por
+cada lado**.
+
+### La dirección (b): el esquema **NO** está sobre-generalizado
+
+`padre` se declara en **1 de 4** colecciones de taxonomía y es exactamente la
+única que el original hace jerárquica. **0 celdas «el esquema admite un valor que
+el original no produce».** La decisión no tiene que acotar nada — y eso es una
+respuesta, no una ausencia de respuesta.
+
+⚠ **SIN EJERCITAR y declarado:** la relación es a sí misma, así que admite
+**profundidad > 2** y el original no la produce. §F2-5-ESCALON-ETIQUETAS con
+nombre. Se declara; **no se prohíbe**.
+
+### El escalón NO se dispara, y va con sus cuatro umbrales medidos
+
+| escalón del encargo | umbral | medido |
+|---|---|---|
+| un tercer nivel | ≥1 | **0** |
+| un término con dos padres | ≥1 | **0** |
+| poblar `padre` mueve rutas ya emitidas | ≥1 | **0** — la jerarquía la leen **2 líneas** y las dos la tienen cableada |
+| el esquema admite `padre` donde el original no lo produce | ≥1 | **0** |
+
+## ⛔ F3-LH-EXTRACTOR-PREFIJO-CABLEADO · EL PADRE CABLEADO YA ESTÁ COBRANDO, Y ARREGLARLO ES RE-EMISIÓN (2026-08-14, 67.ª tanda)
+
+**Lo destapó medir la consecuencia de enrutado de `D2.8`, y no es la misma
+decisión:** `D2.8` es de ESQUEMA; esto es de DATO, y `padre` no lo arregla.
+
+> **`scripts/seed/extractor-a.mjs` busca el término de `resources` por el
+> prefijo literal `recursos/articulos`.** Una entrada cuyo término es de PRIMER
+> NIVEL no casa y **pierde su `recurso` en silencio**.
+
+Reparto medido sobre las **149** entradas del corpus, por la forma de su cadena
+de miga — y la DB confirma los dos primeros al par (81 con `recurso` · 68 sin):
+
+| forma de la cadena | n | el prefijo cableado |
+|---|---|---|
+| `Inicio › Blog` | **66** | no aplica |
+| `… › /recursos/articulos/<hija>/` | **81** | acierta |
+| **`… › /recursos/seminarios-web/`** | **2** | **NO casa ⇒ caen en `/blog`** |
+
+**Con esto queda NOMBRADA la mitad anónima de §F3-LH-DOS-CONJUNTOS-DE-149.**
+Aquella ficha escribió *«2 en la DB sin `recurso`, fuera del corpus de `/blog`»*
+sin decir quiénes. Son
+`control-de-la-contaminacion-del-aire-en-la-industria-seminario-web` y
+`webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar`,
+y el mecanismo es éste. El cardinal `68 = 68` salía exacto **porque los 2 que
+sobraban compensaban a los 2 que faltaban por captura**.
+
+### Lo que mueve, derivado y no razonado
+
+Posiciones calculadas sobre la DB con el orden que `entradasDeBlog()` aplica:
+
+| | hoy | con `recurso` arreglado |
+|---|---|---|
+| entradas en `/blog` | 68 (**2 mal**) | 66 (**2 ausentes por captura**) |
+| páginas de `/blog` | 8 | **8** |
+| dónde caen las 2 | `/blog/page/2` pos. 5 · `/blog/page/3` pos. 1 | fuera |
+
+⇒ **9 rutas ya emitidas cambian de CONTENIDO** —`/blog/page/2` … `/blog/page/8`
+más las 2 de `/[slug]` cuya miga pasa de 4 eslabones a 3— **y 0 se añaden o
+quitan**. Es re-emisión: va con su medida antes/después, y **la línea base queda
+congelada** en `medidas/clon-base-{1440,390}-f33-padre-antes.json`.
+
+> ⚠ **Y el arreglo NO deja `/blog` correcto: lo deja HONESTAMENTE incompleto.**
+> De «68 con 2 equivocadas» a «66 con 2 que faltan por capturar». Se dice porque
+> **el recuento empeora y la fidelidad mejora**, y quien mire sólo el número leerá
+> lo contrario.
+
+**Lo que hay que hacer, y no es cablear otro prefijo:** el término se deriva de
+la miga **por su clase** (`taxonomia padre` / `categoria`), que es el canal que
+lo declara, y no por un literal de URL.
+
+## ⚠ F3-LH-PUERTOS-1-DE-2 · UNA ENTRADA NOMBRA SU TÉRMINO Y EL ARCHIVO NO LA LISTA (2026-08-14, 67.ª tanda)
+
+Cruzando, término a término, **quién dice pertenecer** (la miga de las 149
+entradas) contra **quién aparece** (las tarjetas del archivo), 7 de 8 hijas
+cuadran exactas y una no:
+
+| término | según la miga | según el archivo |
+|---|---|---|
+| `contaminacion-en-puertos-y-aeropuertos` | **2** | **1** |
+
+La que sobra es `calidad-del-aire-en-puertos`, y su miga es explícita: `Inicio ›
+Recursos › Artículos y Guías › Contaminación en puertos y aeropuertos › …`. El
+archivo tiene **1 tarjeta y ninguna `/page/`**, así que no es un corte de
+paginación.
+
+**La hipótesis con mecanismo —y sin comprobar, dicho así a propósito—** es
+§F3-LH-DOS-FOTOS por el otro lado: la entrada se capturó el **2026-08-04**
+(`corpus/`) y el archivo el **2026-08-09** (`corpus/fase-3/`), o sea que el
+listado es **la foto reciente**. Con lo capturado no se puede dirimir.
+
+**Para qué importa:** cuando se construya `L1-resources`, ese par saldrá
+distinto en `qa:lh-cmp` **y no será defecto de plantilla**. Se ficha aquí para
+que no se persiga, igual que §F3-LH-DOS-FOTOS.
+
+## ⚠ F3-LH-SECTOR-SIN-ARCHIVO · 3 DE 9 ARCHIVOS DE `sector` NO ESTÁN CAPTURADOS (2026-08-14, 67.ª tanda)
+
+`corpus/fase-3/taxonomia-sector/` trae los 9 términos, y **3 sólo con sus
+`/page/N`**: `industria` · `investigacion-consultoria` · `urbano` — que son
+precisamente 3 de los 4 sectores publicados como `/sectores/*`.
+
+**Consecuencia declarada, no absorbida:** en `qa:lh-jerarquia` la lectura
+«`sector` es plana» descansa en la **vía 1** (URL: **9/9** de un segmento) y en
+la **vía 2** (miga: **6/9**). No es «se comprobó»: es esa fracción, y así sale
+impresa y congelada.
+
+No bloquea `D2.8` —`sector` no tiene colección, así que no puede sobre- ni
+infra-generalizar `padre`— pero **sí deja sin cerrar del todo la celda «el
+original tiene jerarquía y el esquema no la expresa»** para esa taxonomía. Se
+cierra capturando 3 páginas.
+
 ## ✅ F3-LH-CIERRE-66 · LO QUE QUEDA DE `L1-blog` Y `L1-etiqueta`, CLASE A CLASE (2026-08-13, 66.ª tanda)
 
 **El cierre se escribe con TRES números, no con uno** (§la cobertura declarada
@@ -151,7 +301,14 @@ Se ficha en vez de inventarlo. Las dos salidas, para la tanda que lo retome:
 
 Lo que no vale es entregar «142 rutas» sin decir que son 43.
 
-## ⛔ F3-LH-JERARQUIA-RECURSOS · ESCALÓN: EL ORIGINAL **SÍ** TIENE JERARQUÍA (2026-08-13, 65.ª tanda)
+## ✅ (histórico) F3-LH-JERARQUIA-RECURSOS · ESCALÓN: EL ORIGINAL **SÍ** TIENE JERARQUÍA (2026-08-13, 65.ª tanda)
+
+> ✅ **CERRADA el 2026-08-14 con `D2.8`** — ficha arriba, al principio de este
+> documento. Lo de abajo se conserva porque es la evidencia de la EXISTENCIA, y
+> sigue siendo válida; lo que le faltaba era la **FORMA**, que la 67.ª tanda
+> midió. **Y una de sus frases queda corregida**: *«las dos lecturas producen
+> las mismas 80 tarjetas, así que el dato no las separa»* es verdad del canal de
+> las tarjetas y falsa del documento — el `<body class>` las separa.
 
 **La comprobación se hizo en las DOS direcciones, que es lo que la hace
 concluyente:** *«¿el original tiene jerarquía y el extractor la tira, o el
@@ -198,7 +355,15 @@ slug.
 | | n | quiénes |
 |---|---|---|
 | en el corpus de `/blog`, **sin fila en la DB** | **2** | `descarga-catalogo-kunak` · `kunak-obtiene-el-sello-reconcilia` |
-| en la DB sin `recurso`, **fuera del corpus de `/blog`** | **2** | (los que compensan el recuento) |
+| en la DB sin `recurso`, **fuera del corpus de `/blog`** | **2** | ✅ **NOMBRADOS el 2026-08-14**: `control-de-la-contaminacion-del-aire-en-la-industria-seminario-web` · `webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar` |
+
+> ✅ **Y con el nombre vino el MECANISMO, que esta ficha no tenía**
+> (§F3-LH-EXTRACTOR-PREFIJO-CABLEADO): su `recurso` es `seminarios-web`, un
+> término de **primer nivel**, y `extractor-a.mjs` busca el término por el
+> prefijo literal `recursos/articulos` — así que no casa y el campo se pierde.
+> **Las dos mitades del descuadre son defectos DISTINTOS**: la de arriba es un
+> hueco de CAPTURA, la de abajo es el padre CABLEADO en la extracción. Que se
+> compensaran en el cardinal fue coincidencia, y por eso `68 = 68` salía exacto.
 
 > **Un recuento es un contenedor, y absorbe las diferencias de CONJUNTO.**
 > `68 = 68` es verdad y no dice nada sobre membresía; hacían falta **los slugs**,

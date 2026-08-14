@@ -1065,6 +1065,38 @@ escrita**). Los 6 hubs de builder **no estrenan arquetipo** (cola larga /
 hipótesis grupo D), y `/es/casos-de-exito/` es una **página índice** sobre la
 colección `casos`: lista las 57, ambos prefijos, **sin paginar** (fidelidad).
 
+### ✅ 2c.3 · `categoriasRecursos.padre` — DECIDIDO: se puebla, y la RUTA se deriva de él (2026-08-14, `D2.8`)
+
+`§2c` declaró el campo y lo dejó sin contrato: *«jerárquica, 10 (2 padres + 8
+hijas)»* sin decir **quién compone la ruta**. Esta tanda lo cierra con medida.
+Acta: `listados-hubs/DECISIONES.md` §`D2.8`; evidencia
+`medidas/lh-jerarquia.json` (`qa:lh-jerarquia`, negativo 4/4).
+
+| | contrato |
+|---|---|
+| **`padre`** | `relationship` a sí misma, **opcional**. Poblado en **8 de 10**; `null` en los 2 de primer nivel (`articulos` · `seminarios-web`). El `null` es un valor **medido**, no un defecto de siembra |
+| **la RUTA** | **PLANTILLA, no campo**: `ruta(t) = /recursos/ + [padre.slug si lo hay] + t.slug`. Acierta **35/35** sobre las URL medidas, y **2 términos de primer nivel SEPARAN** este modelo del de cablear el prefijo |
+| **cardinalidad** | **un padre como mucho** — `relationship` sin `hasMany`, y el original produce **0** términos con dos padres en 35 |
+| **profundidad** | el original produce **2**; el esquema admite **más**, y eso se declara **SIN EJERCITAR** (§F2-5-ESCALON-ETIQUETAS). No se prohíbe |
+| **el archivo del padre** | **es la unión de sus descendientes**, sin entradas propias — 80 tarjetas y 80 en la unión de las 8 hijas, **diferencia simétrica 0 por los dos lados** |
+
+**Y lo que NO se añade, que es la mitad de la decisión:** **cero campos nuevos**.
+Un `prefijo`/`ruta` por término sería una **segunda fuente de verdad** —en 10 de
+10 la ruta es derivable de `padre` + `slug`—, y el repo ya tiene escrito el
+precedente contrario en `productos.pagina`.
+
+> **La corrección de método que arrastra, y vale para cualquier taxonomía
+> futura:** *«el dato no separa las dos lecturas»* era cierto **del canal de las
+> tarjetas** y falso del documento. `/es/recursos/articulos/` sirve `<body
+> class="archive tax-resources term-articulos term-379">` y sus tres hermanos
+> bajo `/recursos/` sirven `page-child`. **Antes de declarar que un
+> discriminador no existe, hay que decir qué canales se miraron.**
+
+**Cruce de la dirección contraria, que ninguna tanda anterior había hecho:**
+`padre` está declarado en **1 de 4** colecciones de taxonomía y es exactamente
+la única que el original hace jerárquica —`etiquetas` (12), `categoriasCientificas`
+(3), `categorias` (4) son planas—. **0 celdas sobre-generalizadas.**
+
 ### ⚠ 2c.0 · Lo que la variante de `LISTADO-B` incluye ADEMÁS de la tarjeta (2026-08-11)
 
 **`D1` queda ACOTADA**, no contradicha (acta: `listados-hubs/DECISIONES.md`

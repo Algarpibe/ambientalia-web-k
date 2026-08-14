@@ -510,6 +510,215 @@ arquetipos más construidos encima.
   escalón y su rojo era deliberado; si con las cinco sembradas siguiera roja,
   eso sería un hallazgo y no un ajuste de la sonda.
 
+## D2.8 · `/recursos/articulos` es un ARCHIVO DE TÉRMINO y su ruta se DERIVA de la jerarquía — **MODELAR LA JERARQUÍA** (2026-08-14)
+
+**Decidido: `categorias-recursos.padre` se puebla, y la ruta de un término se
+compone `<prefijo> + [padre.slug si lo hay] + slug` en la PLANTILLA — sin campo
+de ruta.** Cierra `PENDIENTES-QA.md` §**F3-LH-JERARQUIA-RECURSOS**, que paró
+`L1-resources` porque el esquema ya expresaba `padre` y faltaba la decisión.
+
+Evidencia: `npm run qa:lh-jerarquia` (negativo **4/4**), congelada en
+`medidas/lh-jerarquia.json` — 5 taxonomías · 38 términos · corpus congelado.
+
+### Las dos preguntas de §0b del HANDOFF, contestadas — y la primera se contesta con un canal que nadie había mirado
+
+**(1) ¿Un archivo de término o una página propia?** El HANDOFF la dejó escrita
+con su razón: *«las dos lecturas producen las mismas 80 tarjetas hoy, así que el
+dato no las separa»*. **Eso es cierto de las tarjetas y falso del documento.**
+El original lo declara —y declara además el contraste— en el `<body class>`:
+
+| URL | `<body class>` | qué dice el original que es |
+|---|---|---|
+| `/es/recursos/` | `page-template-default page page-id-33166 **page-parent**` | **PÁGINA** (y padre de páginas) |
+| `/es/recursos/kunakpedia/` | `page-template-default page page-id-33769 **page-child**` | **PÁGINA hija** |
+| `/es/recursos/documentos-cientificos/` · `/es/recursos/preguntas-frecuentes/` | ídem `page-child` | **PÁGINA hija** |
+| **`/es/recursos/articulos/`** | **`archive tax-resources term-articulos term-379`** | **ARCHIVO DE TÉRMINO** |
+| `/es/recursos/seminarios-web/` | `archive tax-resources term-seminarios-web term-384` | ARCHIVO DE TÉRMINO |
+| `/es/recursos/articulos/contaminacion-urbana/` | `archive tax-resources term-contaminacion-urbana term-393` | ARCHIVO DE TÉRMINO |
+
+Y la miga usa **el mismo vocabulario de dos tokens**, servido en la clase del
+`<li>`: `pagina` · `pagina padre` · `categoria` · `taxonomia padre`. Los tres
+hermanos de `articulos` bajo `/recursos/` son `pagina`; `articulos` y
+`seminarios-web` son `categoria`. **El discriminador no se inventa: está en el
+marcado, y su contraste vive en el mismo directorio.**
+
+> **Es §El principio otra vez —*verificar contra la salida servida*— con el
+> matiz de 2026-08-10: la salida servida tiene MÁS DE UN CANAL, y «el dato no
+> las separa» sólo era verdad del canal que se había mirado.** Las tarjetas son
+> el canal que no discrimina; el `<body>` y la clase del `<li>` sí, y llevaban
+> ahí desde la primera captura.
+
+**Y la segunda mitad de la pregunta —¿el archivo INCLUYE a sus descendientes?—
+se contesta con una DIFERENCIA SIMÉTRICA, no con un recuento** (§UN CARDINAL ES
+UN CONTENEDOR): `/recursos/articulos/` lista **80 tarjetas** y la **unión de sus
+8 hijas es exactamente esas 80** — *0 en el padre que ninguna hija tenga, 0 en
+una hija que el padre no tenga*. O sea: **el archivo del padre ES la unión de sus
+descendientes**, y no tiene entradas propias.
+
+**(2) ¿Qué hace eso con las rutas de dos segmentos?** Se derivan. El modelo
+`ruta = <prefijo> + [padre] + slug` reproduce **35 de 35** URLs medidas, y —lo
+que lo convierte en medida y no en preferencia— hay **2 términos que SEPARAN**
+los dos modelos: `articulos` y `seminarios-web` son de primer nivel, y ahí
+«derivar» predice **un** segmento y «cablear el prefijo» predice dos. Sin ellos
+los dos modelos serían indistinguibles y elegir uno nombraría **una variable al
+azar** (§DOS VARIABLES CONFUNDIDAS).
+
+### La FORMA completa, que es lo que faltaba para poder modelar
+
+§F3-LH-JERARQUIA-RECURSOS estableció que la jerarquía **existe**. Con eso no se
+modela: hace falta su forma, y sale del censo de las 5 taxonomías.
+
+| | medido | denominador |
+|---|---|---|
+| profundidad máxima | **2** | 35 archivos leídos |
+| términos con padre | **8** | 35 |
+| padres distintos | **1** (`articulos`) | — |
+| términos con **DOS** padres | **0** | 35 |
+| **tercer nivel** (un término que es padre y tiene padre) | **0** | 35 |
+| taxonomías con jerarquía | **1 de 5** | `post_tag` 12 · `scientific-category` 3 · `category` 4 · `sector` 6/9 son planas |
+
+**Las tres vías van con su propio denominador y no con uno solo**, porque son
+afirmaciones distintas: miga **35/38** · padre-en-miga **8/35** · chips **9/35**
+· URL de dos segmentos **8/38**.
+
+⚠ **Y el alcance se declara donde no está completo:** de `sector` faltan **3 de
+9** archivos en el corpus (`industria` · `investigacion-consultoria` ·
+`urbano`), así que su lectura «plana» descansa en la vía 1 (URL: **9/9** de un
+segmento) y en la vía 2 (miga: **6/9**). No es «se comprobó»: es esa fracción.
+
+### La dirección CONTRARIA, que es la que casi nadie hace
+
+§UNA COMPROBACIÓN RETROACTIVA SE ENMARCA EN LAS DOS DIRECCIONES. La pregunta
+cómoda es *«¿el original tiene jerarquía que el clon no tiene?»*; la otra mitad
+es *«¿el ESQUEMA admite `padre` donde el original nunca lo produce?»*, y decide
+si la salida es «poblar `padre`» o «poblar `padre` **y acotar dónde**».
+
+| taxonomía | el esquema declara `padre` | el original lo produce | celda |
+|---|---|---|---|
+| `resources` → `categorias-recursos` | **sí** | **sí** (8) | OK · modelado y ejercido |
+| `post_tag` → `etiquetas` | no | no | OK · plana en los dos lados |
+| `scientific-category` → `categorias-cientificas` | no | no | OK · plana en los dos lados |
+| `category` → `categorias` | no | no | OK · plana en los dos lados |
+| `sector` → *(sin colección)* | no | no *(6/9)* | OK · plana en los dos lados |
+
+> **Cero celdas «SOBRE-GENERALIZADO».** `padre` está declarado en **1 de 4**
+> colecciones de taxonomía, y es exactamente la única que el original hace
+> jerárquica. **La decisión no tiene que acotar nada** — que es una respuesta,
+> no una ausencia de respuesta, y por eso se escribe con su cruce entero.
+
+⚠ **Lo que sí queda SIN EJERCITAR, dicho para que no se lea como soportado:** la
+relación es a sí misma, así que el esquema admite **profundidad > 2** y el
+original **no la produce**. Es §F2-5-ESCALON-ETIQUETAS con nombre: un camino que
+ningún dato de calibración estrena. Se declara; **no se prohíbe** —prohibirlo
+sería inventar una regla que ninguna instancia ha probado que exista, que es el
+error simétrico.
+
+### Las salidas, escritas con lo que cada una ES
+
+| salida | qué hace | qué es |
+|---|---|---|
+| **(a) modelar la jerarquía** ← **decidida** | `padre` poblado; la ruta se compone en la plantilla | **la única que no añade dato que el original no tenga** |
+| (b) aplanar | `padre` a `null` y las rutas cableadas | exige **quitar `padre`** del esquema y **añadir un campo de ruta**: cambia el modelo en dos sitios para no leer lo que el original ya declara |
+| (c) partir la preocupación | `padre` modela la taxonomía y la ruta sale de otro campo | una **segunda fuente de verdad**: en **10 de 10** la ruta es derivable de `padre` + `slug` |
+
+**Qué cambia cada una, y qué deja sin verificar:**
+
+| | ESQUEMA | ENRUTADO | sin verificar | reversible |
+|---|---|---|---|---|
+| **(a)** | `padre` poblado (8 de 10) + los 2 términos que faltan como filas. **Cero campos nuevos** | `/recursos/[...ruta]` despacha por nº de segmentos contra dos catálogos —documentos (3) y términos (1–2, más `/page/N`)—, igual que `/sectores/[slug]` sirve dos arquetipos | profundidad > 2 (declarada arriba) | **sí**: la columna `padre_id` ya existe con su FK; poblarla es un `UPDATE` y la ruta es una función, no un dato |
+| (b) | **quitar** `padre` (un campo declarado y jamás poblado se lee como modelado) **y añadir** `prefijo`/`ruta` | cada término declara su camino; el prefijo cableado se queda en el extractor y en la miga | **nada nuevo** — y deja **sin explicar** los tres canales del original | en el código sí; **en el dato no**: 10 rutas escritas a mano hay que volver a derivarlas |
+| (c) | `padre` **y** `prefijo` | la ruta la manda el campo; `padre` sólo alimenta miga y chips | **que los dos puedan divergir**: el original no los separa en 10/10 | sí, y es la que más superficie deja |
+
+> **(c) no es «lo mejor de las dos»: es el precedente contrario del propio
+> repo.** `productos.pagina` lo dejó escrito — *«con página propia SÍ se compone
+> y guardarlo sería una segunda fuente de verdad»*. Un campo derivable de otro
+> en **todas** las instancias medidas no es flexibilidad: es un sitio donde el
+> dato puede contradecirse consigo mismo.
+
+### La decisión la toma el PRECEDENTE, no una firma
+
+`D2.4`/`D2.5` se resolvieron con una regla que aquí aplica literal: **el original
+declara él mismo lo que es, y lo declara en un canal servido.** Allí era el
+canonical diciendo *«soy una ruta»*; aquí son **tres canales independientes**
+diciendo *«soy un término y éste es mi padre»* —la miga con `class="taxonomia
+padre"` y el href, los chips del padre listando sus 8 hijas, y el `<body>` con
+`tax-resources term-<slug>`— más un cuarto que dice qué **no** es término
+(`page-child` en los 3 hermanos).
+
+Y los tres escalones que habrían obligado a escalar **no se dan, medidos**:
+
+| escalón | umbral | medido |
+|---|---|---|
+| un tercer nivel | ≥1 | **0** |
+| un término con dos padres | ≥1 | **0** |
+| poblar `padre` mueve rutas ya emitidas | ≥1 | **0** — hoy la jerarquía la leen **2 líneas** y las dos tienen el padre **cableado** |
+| el esquema admite `padre` donde el original no lo produce | ≥1 | **0** |
+
+### ⚠ Lo que la medición destapó y NINGUNA de las tres salidas cubría: el prefijo cableado ya está cobrando
+
+La decisión de arriba es de **esquema**. Al medir la consecuencia de enrutado
+apareció una segunda mitad que es de **dato**, y que `padre` no arregla:
+
+> **`extractor-a.mjs` busca el término de `resources` por el prefijo literal
+> `recursos/articulos`.** O sea que la jerarquía ya está cableada **en la
+> extracción**, y una entrada cuyo término es de PRIMER NIVEL no casa y **pierde
+> su `recurso` en silencio**.
+
+Reparto medido sobre las **149** entradas del corpus, por la forma de su cadena
+de miga — y la DB confirma los dos primeros al par (81 con `recurso`, 68 sin):
+
+| forma de la cadena | n | el prefijo cableado |
+|---|---|---|
+| `Inicio › Blog` | **66** | no aplica |
+| `… › /recursos/articulos/<hija>/` | **81** | acierta |
+| **`… › /recursos/seminarios-web/`** | **2** | **NO casa ⇒ pierden `recurso` y caen en `/blog`** |
+
+**Y con eso queda nombrada la mitad que §F3-LH-DOS-CONJUNTOS-DE-149 dejó
+anónima.** Aquella ficha escribió *«2 en la DB sin `recurso`, fuera del corpus de
+`/blog`»* sin decir quiénes; son
+`control-de-la-contaminacion-del-aire-en-la-industria-seminario-web` y
+`webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar`,
+y **el mecanismo es éste**. El cardinal `68 = 68` salía exacto porque los 2 que
+sobraban compensaban a los 2 que faltaban por captura.
+
+**Su consecuencia sobre lo ya emitido, derivada y no razonada** (posiciones
+calculadas sobre la DB con el orden que `entradasDeBlog()` aplica):
+
+| | hoy | con `recurso` arreglado |
+|---|---|---|
+| entradas en `/blog` | 68 (2 **mal**) | 66 (2 **ausentes por captura**) |
+| páginas de `/blog` | 8 | **8** — no se añade ni se quita ruta |
+| dónde caen los 2 | `/blog/page/2` pos. 5 · `/blog/page/3` pos. 1 | fuera |
+
+⇒ **9 rutas ya emitidas cambian de CONTENIDO** (`/blog/page/2` … `/blog/page/8`,
+más las 2 de `/[slug]` cuya miga pasa de 4 eslabones a 3) **y 0 se añaden o
+quitan**. Eso es re-emisión, va con su medida antes/después, y **no es de esta
+tanda**: la línea base queda congelada en
+`medidas/clon-base-{1440,390}-f33-padre-antes.json`.
+
+> ⚠ **Y el arreglo NO deja `/blog` correcto: lo deja HONESTAMENTE incompleto.**
+> Pasa de «68 con 2 equivocadas» a «66 con 2 que faltan por capturar». Decirlo
+> importa porque el recuento **empeora** y la fidelidad **mejora**, y quien mire
+> sólo el número leerá lo contrario.
+
+### Lo que D2.8 arrastra
+
+- **Se siembran los 2 términos que faltan** —`articulos` (`term-379`) y
+  `seminarios-web` (`term-384`)— y `padre = articulos` en las 8 hijas. Hoy la
+  tabla tiene **8 de 10** filas y `padre_id` a `null` en las 8.
+- **El extractor deja de cablear el prefijo**: el término se deriva de la miga
+  por su **clase** (`taxonomia padre` / `categoria`), que es el canal que lo
+  declara, y no por un literal de URL. Con eso las 3 entradas de
+  `seminarios-web` entran solas.
+- **La ruta es plantilla, no dato.** Un helper `rutaTermino(t)` al lado de
+  `rutaDocumento(t)`, y **cero campos nuevos** en `categorias-recursos`.
+- **`/recursos/` NO es un listado y no se emite como tal**: 0 tarjetas, 0 chips,
+  y `/recursos/page/2/` **canonicaliza a `/es/recursos/`** — o sea *«no soy una
+  ruta»* por la misma regla de `D2.4`, con la que da **la misma respuesta**.
+- **La profundidad > 2 se declara SIN EJERCITAR** y entra en `qa:nunca-vistos`.
+- **`qa:lh-poblacion` tiene que bajar sus dos series de `/recursos/*`** cortas
+  cuando esto se siembre; si no baja, es hallazgo y no ajuste de la sonda.
+
 ## D3 · Lo que los listados le EXIGEN al grupo A — la decisión que condiciona
 
 **Ésta es la razón de que LH-2 vaya antes de construir A: si A nace sin estos
