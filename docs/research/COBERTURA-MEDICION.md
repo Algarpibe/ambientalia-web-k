@@ -1,5 +1,27 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⏸ **NO SE MOVIÓ el 2026-08-14 (69.ª tanda, la del ALCANCE de las specs), y es
+> POR CONSTRUCCIÓN — re-derivada y comprobada IDÉNTICA a la congelada, no
+> supuesta.** La matriz sigue en `base` **38** · `árbol` **38** ·
+> `comportamiento` **37** · `docH` **31** · `enlaces` **31** · `anchos` **22** ·
+> `filas` **13** · `módulos` **9** · `offsets` **0 (3 en `c`)**, sobre **363**
+> rutas.
+>
+> **La tanda no emitió ninguna ruta ni comparó geometría nueva**: su instrumento
+> (`qa:lh-huecos`) es un **censo del corpus congelado** cruzado con
+> `lh-spec-{1440,390}.json`, no un comparador de dos lados. Acreditarle un eje
+> sería §*la cobertura declarada al nivel de arriba* con el contenedor más cómodo
+> que hay — **el hecho de que la tanda midió algo**.
+>
+> ⚠ **Y hay una consecuencia que sí toca a esta tabla, aunque el número no se
+> mueva:** el defecto de la piel B (§F3-LH-PIELB-VENTANA) vivía **entero en las
+> 23 rutas `/etiqueta/*/page/N`**, y esas rutas están en la matriz con **`·` en
+> todos los ejes**. O sea que **el «·» no era neutro: escondía un defecto de
+> plantilla en 31 de 38 instancias medibles.** El espejo mide **la página 1 de
+> cada forma**, así que ninguna `/page/N` tiene referencia — y es la **segunda**
+> tanda seguida que encuentra un defecto ahí (la 68.ª, el `« Anterior` de la piel
+> A). **Dos de dos: el hueco de las `/page/N` ya no es teórico.**
+
 > ⏸ **NO SE MOVIÓ el 2026-08-14 (67.ª tanda, la de la DECISIÓN de `padre`), y
 > es POR CONSTRUCCIÓN — escrito después de mirarlo, no supuesto.** La tanda no
 > emitió ninguna ruta (siguen **345**) ni comparó geometría: su instrumento

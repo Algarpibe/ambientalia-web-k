@@ -105,6 +105,30 @@ forma**. Es la única de las cinco de la que se puede decir eso.
 
 ## 5 · Lo que esta spec NO mide
 
+> ⚠⚠ **CUATRO ENTRADAS NUEVAS (2026-08-14, 69.ª tanda) — y no salieron de
+> re-medir: salieron de ESCRIBIR EL ALCANCE antes de construir.**
+>
+> `CLAUDE.md` §*UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA*. Las cuatro
+> estaban **dentro de los números que esta spec ya cita** y **fuera de su
+> prosa**, que es exactamente la forma en que un hueco llega a la construcción
+> sin que nada dé error. Instrumento: `npm run qa:lh-huecos` (negativo 4/4),
+> congelado en `medidas/lh-huecos.json`.
+>
+> | # | lo que la spec dice | lo que el canal dice |
+> |---|---|---|
+> | **SP-C8** | §4 y §2 no nombran la **BARRA LATERAL**, y `lh-barra.json` da `conBarra 0 de 12` | **`L2` SÍ tiene barra: 12 de 12.** Es la del **TEMA** (`<body … et_right_sidebar>` + `#sidebar` hermano de `#left-area`, **3 widgets**: Buscar · Categorías · ¡Suscríbete!), no la partición Divi `3_4+1_4` que aquella medida buscaba — **0 de 12** en el cuerpo. Las dos medidas son ciertas y contestan preguntas distintas |
+> | **SP-C9** | §1 da `ancla y = 283` y `cabecera h = 225` y **no nombra los 58 de en medio** | **58 px, iguales a 1440 y a 390** (283−225 y 194.58−136.58). Es el `padding-top` del `.container` del tema, y está en los dos números de la tabla sin estar en el texto |
+> | **SP-C10** | §3 describe las piezas de la piel B y **no su VENTANA** | **5 números** con `« First` · `...` · `Last »`. Derivado de las **43** instancias capturadas (totales 2·3·4·8·11): el componente reproduce **38/38** secuencias, el que había **7/38**. ⚠ Y las instancias de esta spec (`total = 4`) **no podían separar los dos modelos** |
+> | **SP-C11** | ninguna sección trata **QUÉ ORDENA** el archivo | `/glosario` = JSON-LD **`datePublished` DESC, 37/37** (y los post-id **no** son descendentes, así que la fecha discrimina). **`/preguntas-frecuentes` no lo sirve en ninguno de los 4 canales mirados** — `<span class="fecha-publicacion">` (el que usa `entradas-blog`), `datePublished`, `article:published_time` y el `<lastmod>` del sitemap —, y `lastmod` **no ordena ni siquiera en `/glosario`**, donde el orden verdadero se conoce (control, §sondas 8a) |
+>
+> **SP-C11 es la que bloquea la construcción**, y con su forma exacta: los dos
+> tipos del clon (`TerminoKunakpedia`, `Faq`) **no tienen campo de fecha**, y el
+> único con precedente —`entradas-blog.fechaPublicacion`— sale de **otro canal**
+> (un `<span>` renderizado que estas 56 páginas no sirven) y guarda **el literal
+> español**, no un ISO. O sea: no es «aplicar el precedente», es una decisión de
+> ESQUEMA con dos mitades distintas. Ficha: `PENDIENTES-QA.md`
+> §F3-LH-ORDEN-DE-L2.
+
 | # | qué | por qué importa |
 |---|---|---|
 | **SP-C1** | el **clon**: no existe, las dos rutas dan 404 | esta spec es de un lado |

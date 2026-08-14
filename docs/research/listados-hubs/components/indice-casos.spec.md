@@ -135,6 +135,42 @@ del modelo del caso *«hasta que un listado la consuma»* — y la consume.
 
 ## 6 · Lo que esta spec NO mide
 
+> ⚠⚠ **`SP-K7` · LA GEOMETRÍA DEL FILTRO NO ES OPCIONAL, aunque su
+> COMPORTAMIENTO sí lo sea (2026-08-14, 69.ª tanda).**
+>
+> §5 decide, con razón, que **F3-2 construye `L5` sin su filtro** porque el
+> filtrado consume la relación `sector`, que se decide en F3-4. Y `SP-K3` dice
+> que el filtro se midió *«como comportamiento, no como geometría»*. Las dos
+> frases son ciertas y **juntas invitan a la lectura equivocada**: que la banda
+> se puede omitir.
+>
+> **No se puede.** El original la sirve entre el `h1` y el listado —
+>
+> ```html
+> <div class="case-filter">
+>   <h2 class="case-filter-title">Sectores</h2>
+>   <div id="filters" class="button-group">
+>     <button class="button is-checked" data-filter="*">Ver todos</button>
+>     <button class="button" data-filter=".sector-edar">EDAR / PTAR</button>
+>     … 11 más
+>   </div>
+> </div>
+> ```
+>
+> — y §1 congela `h1.y = 593.28` mientras §2 congela el listado en `y = 857.88`:
+> **264.6 px** que esta prosa deja sin dueño. Omitir la banda **sube el listado
+> esos 264.6 y descuadra las 57 tarjetas**.
+>
+> > **La desviación declarada es «sin FILTRADO», no «sin BANDA».** Son dos
+> > cosas: la banda es geometría y sus 12 rótulos ya están en el clon
+> > (`TERMINOS_SECTOR`, 11 términos + «Ver todos»); lo que falta es la relación
+> > caso→sector que decide qué tarjeta se esconde. Construir la banda inerte es
+> > fidelidad; omitirla es un defecto de 264.6 px con una desviación por coartada.
+>
+> Derivado en `medidas/lh-huecos.json` (`npm run qa:lh-huecos`, negativo 4/4):
+> **12 botones**, etiqueta `<button>` (en `L3` son `<a>`), con `h2.case-filter-title`
+> que `L3` no tiene.
+
 | # | qué | por qué importa |
 |---|---|---|
 | **SP-K1** | el **clon**: no existe | esta spec es de un lado |

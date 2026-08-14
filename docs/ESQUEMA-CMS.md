@@ -3538,11 +3538,62 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 
 | # | decisión | bloquea |
 |---|---|---|
+| **CMS-ORDEN-L2** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e | **`L2` entera** (`/glosario` · `/preguntas-frecuentes`, 12 rutas) |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
 | ~~**CMS-SP-TIPO**~~ | ~~ninguna guarda mira el TIPO de la hoja, solo su nombre~~ **✅ CERRADA (2026-08-06): `npm run qa:tipo-hoja`, 10/10 hojas con marcado, negativo 5/5 — §7d**. ⚠ Y la cerró **la salida 2 de §7b, no la 1**: el Δ0 de render **NO PUEDE** verla, y eso está medido — el panel de un producto sólo se sirve si es el ACTIVO, y el activo es `monitor-calidad-aire` en las 10 instancias, así que **ninguna ruta emitida contiene el `<sup>`** | **nada** |
 | ~~**CMS-0g · ORIGEN DE MEDIA**~~ | ~~`media` no guarda la ruta de origen del fichero~~ **✅ CERRADA (2026-08-06): campo de PROCEDENCIA `rutaOrigen`, nullable por construcción — §7c**. La premisa era verdadera y **la conclusión no se seguía**: `qa:media-colision` midió que `filename → ruta` **sí es una función hoy** (112 rutas · 0 repetidos) y **deja de serlo en la unión con el corpus** (646 · **1**, 12 referencias). O sea que tabular sobre `filename` funcionaría hoy y se rompería con contenido dentro | **nada** — desbloquea las 5 familias de F2-3 |
+
+### ⛔ 7e · CMS-ORDEN-L2 · UN ARCHIVO DE CPT ORDENA POR FECHA, Y EL MODELO NO LA TIENE (2026-08-14, 69.ª tanda)
+
+**Abierta, no decidida.** Se escribe aquí en la misma tanda que la mide, que es
+lo que §*MENCIONADO NO ES DOCUMENTADO* exige. Evidencia congelada:
+`medidas/lh-huecos.json` (`npm run qa:lh-huecos`, negativo 4/4). Ficha operativa:
+`PENDIENTES-QA.md` §F3-LH-ORDEN-DE-L2.
+
+**Lo medido, por canal y con su denominador** — y la lista de canales va escrita
+porque la afirmación de abajo es un *«no existe»*:
+
+| canal | `/glosario` (37) | `/preguntas-frecuentes` (19) |
+|---|---|---|
+| `<span class="fecha-publicacion">` — **el que usa `entradas-blog`** | **0/37** | **0/19** |
+| JSON-LD `datePublished` | **37/37**, y **ordena DESC 37/37** | **0/19** |
+| `article:published_time` | — | **0/19** |
+| sitemap `<lastmod>` | 37/37, y **NO ordena** | 19/19, y **NO ordena** |
+
+**El `lastmod` se descarta CON CONTROL** (§sondas 8a): no reproduce el orden ni
+siquiera en `/glosario`, donde el orden verdadero se conoce. Y en `/glosario` la
+fecha **discrimina de verdad**: los post-id **no** son descendentes en el orden
+servido, así que no es orden de inserción.
+
+**Las dos mitades, que es lo que hay que decidir:**
+
+1. **`terminos-kunakpedia` — tiene canal y le falta esquema.** El precedente
+   `entradas-blog.fechaPublicacion` **no se aplica tal cual**, y por dos razones
+   medidas, no por gusto: sale de **otro canal** (un `<span>` renderizado que
+   estas 37 páginas no sirven) y guarda **el literal español** («7 enero 2025»)
+   **porque el original lo pinta**. Aquí el dato sólo existe como **ISO en datos
+   estructurados** y **no aparece en ninguna tarjeta**. O sea que lo que haría
+   falta es un campo **para ORDENAR y no para MOSTRAR** — y ésa es una decisión
+   distinta, con su propia razón, no una extensión del precedente.
+
+   > ⚠ **Y el aviso que la hace peligrosa: llamarlo `fechaPublicacion` la
+   > cerraría por analogía.** El nombre arrastra el contrato del otro campo
+   > (literal, mostrable, `required`) a un dato que no es ninguna de las tres
+   > cosas. §DOS VARIABLES CONFUNDIDAS aplicado a un nombre.
+
+2. **`faqs` — no tiene canal ninguno.** El orden servido **no es** el de la DB
+   (es una permutación, comprobado por Local API) ni el de los id. Modelar aquí
+   un campo de orden sería **inventarlo**; y replicar el orden capturado como
+   dato hay que decirlo como lo que es — **una transcripción del original de una
+   fecha**, no un valor derivado —, con el mismo criterio con que `D2.5` replica
+   las 55 páginas vacías: se puede hacer, y se escribe por qué.
+
+**Lo que NO se decide aquí y hay que resistirse a decidir de paso:** si el campo
+lo llevan **las 4 colecciones de grupo A** o sólo las que un listado ordena. Hoy
+lo ejercita **una** (`terminos-kunakpedia`), y generalizar desde ahí es
+§*una regla derivada sobre un dominio donde el caso no se da*.
 
 ### ✅ 7c · CMS-0g · EL ORIGEN DE MEDIA ES UN CAMPO DE PROCEDENCIA (2026-08-06)
 

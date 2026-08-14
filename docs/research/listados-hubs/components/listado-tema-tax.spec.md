@@ -135,6 +135,36 @@ resulta ser un bloque opcional del mismo esqueleto, se fusionan»*. Lo medido:
 
 ## 6 · Lo que esta spec NO mide
 
+> ⚠⚠ **`SP-T8` · LA BANDA DE FILTROS, que esta spec no nombra en ninguna
+> sección (2026-08-14, 69.ª tanda).**
+>
+> Entre el `h1` y `.scientific-list-content` el original sirve **otro bloque**:
+>
+> ```html
+> <div class="scientific-filter">
+>   <div id="filters" class="button-group filtros-scientific">
+>     <a href="…/articulos-cientificos-y-estudios/" class="button current">…</a>
+>     <a href="…/articulos-tecnicos/" class="button">…</a>
+>     <a href="…/evaluaciones-independientes/" class="button">…</a>
+>   </div>
+> </div>
+> ```
+>
+> **Tres botones — uno por término de la taxonomía**, con `current` en el que se
+> está viendo. Y no es un detalle de adorno: §1 congela `h1.y = 337.59` y §2
+> congela el listado en `y = 500.39`, o sea **162.8 px** que esta prosa deja sin
+> dueño. **Construir sin la banda sube el listado esos 162.8** — el número
+> estaba dentro de las medidas y el elemento fuera del texto, que es cómo un
+> hueco llega a la construcción sin que nada dé error
+> (`CLAUDE.md` §*UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA*).
+>
+> ⚠ **Y el listado es la banda de filtros lo que `D1` es a la retícula:** los 3
+> botones **consumen la taxonomía entera**, no el término. O sea que la consulta
+> de esta forma necesita **los 3 términos** aunque pinte las tarjetas de uno.
+>
+> Derivado en `medidas/lh-huecos.json` (`npm run qa:lh-huecos`, negativo 4/4),
+> **presente en las 2 instancias**.
+
 | # | qué | por qué importa |
 |---|---|---|
 | **SP-T1** | el **clon**: no existe | esta spec es de un lado |

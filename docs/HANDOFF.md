@@ -1,4 +1,196 @@
-# HANDOFF — `LISTADO-B` COMPLETO: las tres variantes de `L1` construidas y verificadas contra el original vivo
+# HANDOFF — el ALCANCE de las specs de `L2`·`L3`·`L5`, escrito antes de construir: CINCO huecos, y uno de ellos era un defecto en lo ya verificado
+
+> ⛔ **Tanda de MEDICIÓN, 2026-08-14 (69.ª). CERO formas construidas, y lo
+> ordenó el propio encargo.** Su ESCALÓN 2 decía *«si al escribir «qué NO
+> contesta esta spec» aparece un hueco que decide la construcción, para y
+> mídelo»*. **Disparó cinco veces en la primera forma.**
+>
+> **Verificación:** `qa:lh-huecos` **5/5 huecos derivados** (negativo **4/4**) ·
+> `qa:lib` **167 sondas · 93/93** · `npm run check` **exit 0** ·
+> `qa:manifiesto` **363 rutas, IDÉNTICA a la congelada** · `qa:slugs` **191 sin
+> colisión** · `qa:cobertura` **idéntica** · `cms:captura` **3 nuevas · 0 fallos**.
+
+## 0 · Los titulares
+
+> **1 · LAS CINCO PREGUNTAS QUE LAS SPECS NO CONTESTABAN, Y LAS CINCO DECIDEN LA
+> CONSTRUCCIÓN.** Instrumento: `npm run qa:lh-huecos`, congelado en
+> `medidas/lh-huecos.json`.
+>
+> | # | la spec dice | el canal dice |
+> |---|---|---|
+> | 1 | `lh-barra`: `L2` `conBarra` **0 de 12** | `L2` **SÍ** tiene barra, **12/12** — la del **TEMA** (`et_right_sidebar` + `#sidebar`, 3 widgets). La partición Divi que aquella medida buscaba: **0/12** en el cuerpo. **Las dos son ciertas** |
+> | 2 | §1 da `ancla 283` y `cabecera 225` y no nombra la diferencia | **58 px, iguales a 1440 y a 390** |
+> | 3 | §3 lista las piezas de la piel B, no su **ventana** | **ventana de 5** con `« First` · `...` · `Last »` |
+> | 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37** · `/preguntas-frecuentes` **sin canal** en los **4** mirados |
+> | 5 | ninguna nombra la **banda de filtros** | `L3` **3** botones · `L5` **12**, entre el `h1` y el listado |
+>
+> > **Los cinco tienen la misma forma: el número ESTABA en la medida congelada y
+> > el elemento NO estaba en la prosa.** Ninguna relectura de los ficheros los
+> > habría dicho — sólo escribir *«¿qué NO contesta esto?»*.
+
+> **2 · EL 3 ERA UN DEFECTO EN TRABAJO YA DADO POR VERIFICADO, Y SU NÚMERO ES
+> 31 DE 38.** La `PielB` emitía `current` y detrás `n+1..total`: **cero `page
+> smaller`** y sin ventana. Contra las **43** instancias capturadas (5 totales:
+> 2·3·4·8·11) y comparando **la SECUENCIA entera**, no el conjunto de números —
+>
+> | | acierta |
+> |---|---|
+> | el componente **NUEVO** | **38 / 38** |
+> | el componente **VIEJO** | **7 / 38** |
+>
+> — y **los 7 que acertaba son exactamente páginas 1**, que son las únicas que
+> el espejo mira. **Segunda vez en dos tandas**: la 68.ª encontró lo mismo en la
+> piel A. Arreglado; **NO-OP sobre todo lo comparado**, mueve el contenido de 23
+> rutas que nada mide.
+
+> **3 · POR QUÉ NADIE LO VIO, QUE ES LO REUTILIZABLE: CERO INSTANCIAS
+> SEPARADORAS.** Las dos instancias que calibraron la piel tienen `total = 4`, y
+> con `total ≤ 5` *«todas las siguientes»* y *«ventana de 5»* **predicen el
+> mismo HTML**. §DOS MODELOS QUE PREDICEN LO MISMO EN TODO TU DOMINIO SON UNO
+> SOLO: el denominador de aquella elección no era 4, era **0 separadoras**. Hoy
+> son **19**, y la sonda las publica al lado del acierto **y su negativo exige
+> que sean > 0**.
+
+> **4 · UNA PREGUNTA ABIERTA QUE CIERRA, Y LA CIERRA EL DOMINIO QUE TRAE LA
+> FORMA NUEVA.** `TOPE = 269` del extracto derivado estaba *«ajustado, no
+> medido»* con **n = 6**, y su ficha decía que 268 y 269 eran indistinguibles.
+> Barrido **250–300** contra las **37** tarjetas de `/glosario`: **269 acierta
+> 37/37 y es el ÚNICO tope del rango que lo consigue.**
+
+> **5 · `cms:extractor` LLEVABA UN DÍA SIN PODER CORRER, Y ARREGLARLO DESTAPÓ
+> QUE EL PASO SIGUIENTE NO ERA DE ESTA TANDA.** `mediaPublicada` estaba
+> **importada y sin cablear al `ctx`** desde el 2026-08-13, así que T10 tiraba en
+> el primer documento. No lo vio nadie porque `corpus/transformado/` es
+> **derivable, no se commitea, y ya estaba en disco de una corrida ANTERIOR a
+> T10** (08:05 contra 10:10). ⚠ **Un artefacto derivable que sobrevive a su
+> generador tapa que el generador está roto: no da error, da el fichero de
+> ayer.** Con T10 corriendo aplica **1818** localizaciones sobre **169 de 209**
+> cuerpos ya sembrados — eso es §DATOS-MEDIA-HOTLINK cerrándose de rebote, otra
+> ficha —, así que los 209 se restauraron (0 difieren) y **la siembra no se
+> hizo**.
+
+> **6 · LOS 3 DOCUMENTOS ESTÁN CAPTURADOS (309 → 312, 0 fallos), Y LA LISTA SE
+> DERIVA DE 807 TARJETAS.** Dos derivaciones independientes dan los mismos 3,
+> que es el cruce que vale. **Y la derivación vive DENTRO del `PLAN` de
+> `captura.mjs`** por una razón mecánica: `corpus/INDICE.json` **se reescribe
+> entero desde ese `PLAN`**, así que capturarlas por fuera dejaría **bytes sin
+> manifiesto**. La siembra queda con dos bloqueos nombrados (titular 5 y el
+> `</article>` del documento 210, etiqueta **44** de un censo de 43 — y es un
+> cierre **huérfano**: el original sirve su apertura destrozada).
+
+> **7 · LOS TRES NÚMEROS NO SE MUEVEN, Y SE DICEN IGUAL.** Pares **COMPARADOS**
+> 10 707 / 10 714 · **MIXTOS** 1 840 / 1 847 · **AUSENTES** 5 999 / 6 005;
+> criterio en **13 formas · 6 AUSENTES · 7 comparadas**. **Cero formas
+> construidas.** Cobertura **idéntica**, y es **por construcción**: no se emitió
+> ruta ni se comparó geometría nueva. Escrito después de re-derivarla.
+
+> **8 · Y UNA CORRECCIÓN AL ENCARGO, DERIVADA DEL ESPEJO:** de las **6** formas
+> AUSENTES, una es **`L4-listado-embebido::/es/recursos/`**, que es **F3-3** (el
+> hub) y no F3-2. Las de F3-2 son **5** — `L2` ×2 · `L3` ×2 · `L5` ×1 —, así que
+> el objetivo alcanzable de una tanda de construcción es **13 · 1 · 12**, no
+> `13 · 0 · 13`.
+
+## 0b · LO SIGUIENTE, escrito y NO empezado — en orden de valor
+
+**1 · `CMS-ORDEN-L2` — la decisión que desbloquea `L2`** (§7e del ESQUEMA). Dos
+mitades **que no se resuelven con la misma decisión**: `terminos-kunakpedia`
+**tiene canal** (`datePublished`, 37/37) y le falta esquema — y ojo, el
+precedente `entradas-blog.fechaPublicacion` **no se aplica tal cual**: otro
+canal, otro contenido (literal español mostrable contra ISO no mostrado), así
+que **llamarlo igual cerraría la decisión por analogía**. `faqs` **no tiene
+canal ninguno** en los 4 mirados. Es una tanda de DECISIÓN, como fue `D2.8`.
+
+**2 · `L2` · `L3` · `L5` — las 5 formas, con los cinco huecos ya cerrados.**
+`L3` y `L5` **no dependen de la decisión 1** (su orden no se ha cuestionado) y
+sus dos huecos son de construcción pura: la banda de filtros (**3** botones en
+`L3`, **12** en `L5`) y el cascarón propio de `L5`. ⚠ **La desviación declarada
+de `L5` es «sin FILTRADO», no «sin BANDA»**: omitir la banda son **264.6 px** de
+defecto con una desviación por coartada — los 12 rótulos ya están en el clon
+(`TERMINOS_SECTOR`), lo que falta es la relación caso→sector.
+
+**3 · La siembra de los 3 documentos**, con sus dos bloqueos ya nombrados. El
+primero (T10) es en realidad **§DATOS-MEDIA-HOTLINK**, y conviene hacerlo como
+lo que es: tanda propia **con línea base antes**, porque mueve 169 cuerpos.
+
+**4 · Las rutas vacías** — 55 de `D2.5` + 19 de `resources`. Sin cambios.
+
+**5 · Los residuos de CASCARÓN — 336.** Sin cambios.
+
+**6 · Los residuos sub-píxel siguen SIN PROBAR, no limpios.** Sin campaña de
+ruido para esas rutas.
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **`L2` no es «`L1` sin barra»: es OTRO cascarón.** No tiene cuerpo Divi
+  (`cuerpo: []`, 4 secciones = `tb_header 1` + `tb_footer 3`), su árbol es
+  `#main-content > .container > #content-area > #left-area | #sidebar`, y su
+  base **no es un `h1`** —no lo tiene— sino **la primera tarjeta**.
+- ▶ **`#left-area` mide 911.52 con `padding-right 63.36`** (79.125 % y 5.5 % de
+  un `.container` de 1152), o sea tarjeta **848.16**; el `#sidebar` se lleva los
+  **240.48** que sobran. Los tres números salen de la congelada, no de la prosa.
+- ▶ **El extracto de `L2` es el DERIVADO**, el mismo de `/etiqueta`: `TOPE = 269`
+  reproduce **37/37** las tarjetas de `/glosario`.
+- ▶ **`L3` sirve 5 secciones y su sección propia es SÓLO la miga** (1 fila,
+  `4_4`, 1 módulo). El listado va por `loop-del-tema`, fuera de Divi. Su fila
+  mide **1152** — el tercer ancho, donde `mbPorDefecto` **TIRA**, y eso es
+  correcto: no le inventes una entrada, de esa fila **no cuelga ningún módulo**.
+- ▶ **`L5` tiene DOS contenedores**: **1238.39** para el cascarón (su fila de
+  miga) y **~1152** para el listado (`3 × 357.28 + 2 × 40`).
+- ⚠ **`L3` y `L5` no llevan override móvil de titular** (`qa:lh-pieles-css`:
+  `L1` 4 · `L4` 2 · `L2`/`L3`/`L5` **0**). Construirles uno cuadraría a 1440 y
+  sería falso.
+- **Sondas: 165 → 167.** Lo dice la última línea de `qa:lib` (§regla 9), no la
+  memoria. `qa:lib` **93/93**, exit 0.
+
+## 1 · Sondas e instrumentos nuevos
+
+| instrumento | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-huecos`** | los **cinco** huecos de alcance de las specs de `L2`·`L3`·`L5`, cada uno **con el canal que lo contesta y su denominador** | **4/4** |
+
+**Los cuatro sabotajes, y qué protege cada uno:** `control` (exige los 5
+derivados, **≥1 instancia separadora**, la lista de **canales mirados**, y que el
+componente viejo acierte **menos** que el nuevo — si no, el hueco es inventado) ·
+`sin-corpus` (**TIRA** sin el corpus congelado, en vez de derivar 0 huecos y
+salir verde) · `sin-control-de-orden` (**falla**: un negativo sin control no es
+un negativo) · `ventana-sin-separadores` (**falla**: 0 separadoras ⇒ el modelo no
+está elegido, está escrito al azar).
+
+⚠ **Y la sonda llegó con DOS defectos suyos**, cazados por su propio negativo
+antes de citarla (§sondas 1): el selector de la columna Divi casaba en el
+**documento entero** —**12/12**, porque la cabecera del theme builder usa `3_4`:
+§*un patrón que casa en TODAS tampoco mide nada*— y el recuento de botones
+incluía el envoltorio `button-group` (**4** donde hay 3, **13** donde hay 12).
+Los dos arreglados, y la congelada publica **los dos lados** del primero.
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) El alcance de una medida hay que ESCRIBIRLO, y escribirlo encuentra cosas
+que releerla no encuentra.** Los cinco huecos estaban dentro de números ya
+congelados y citados. La diferencia entre verlos y no verlos fue una pregunta
+—*«¿qué NO contesta esto?»*— hecha por escrito antes de construir.
+
+**(b) La unidad de una comparación decide si el defecto se ve.** La ventana de
+la piel B comparada **por conjunto de números** acierta 43/43 con el modelo
+nuevo y 24/43 con el viejo; comparada **por SECUENCIA** da **38/38** contra
+**7/38**. Los `page smaller` que faltaban no cambian el conjunto en la página 1 —
+sólo el orden y la presencia. §*se compara en la unidad que se afirma*.
+
+**(c) Un artefacto DERIVABLE que sobrevive a su generador tapa que el generador
+está roto.** `corpus/transformado/` no se commitea justamente porque se
+regenera; y por eso mismo nadie notó durante un día que **ya no se podía
+regenerar**. La comprobación no es «¿existe el artefacto?» sino «¿corre el
+generador?».
+
+**(d) Un «no existe» se publica con la lista de canales que se miraron, y con su
+CONTROL.** *«`/preguntas-frecuentes` no sirve orden»* vale porque van al lado
+los **4** canales mirados **y** la prueba de que el descartado (`lastmod`) no
+ordena **ni siquiera donde el orden se conoce**. Sin el control, «no casa» y «lo
+leí mal» son la misma salida.
+
+> ⬇ **Lo de abajo es el HANDOFF de la 68.ª tanda, conservado con su fecha.**
+
+# (histórico) HANDOFF — `LISTADO-B` COMPLETO: las tres variantes de `L1` construidas y verificadas contra el original vivo
 
 > ✅ **Tanda de CONSTRUCCIÓN, 2026-08-14 (68.ª). PASOS 0 · 1 · 2 · 3 · 5
 > completos; el 4 queda fichado con su número, que era su salida declarada.**

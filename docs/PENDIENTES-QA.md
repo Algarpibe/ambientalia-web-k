@@ -1,5 +1,176 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F3-LH-HUECOS-DE-ALCANCE · LAS SPECS DE `L2`·`L3`·`L5` NO CONTESTABAN CINCO PREGUNTAS QUE DECIDEN LA CONSTRUCCIÓN (2026-08-14, 69.ª tanda)
+
+**El encargo pedía aplicar §*UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA*
+a las tres specs antes de construir sobre ellas.** Aplicado, el escalón disparó
+**cinco veces en la primera forma**, así que la tanda mide en vez de construir —
+que es lo que el escalón manda. Instrumento: **`npm run qa:lh-huecos`** (nueva,
+negativo **4/4**), congelado en `medidas/lh-huecos.json`.
+
+**Los cinco, cada uno con su canal y su denominador:**
+
+| # | la spec dice | el canal dice | ficha |
+|---|---|---|---|
+| 1 | `lh-barra.json`: `L2` `conBarra` **0 de 12** | `L2` **SÍ tiene barra, 12 de 12** — la del TEMA (`et_right_sidebar` + `#sidebar`, 3 widgets), no la partición Divi `3_4+1_4`, que da **0 de 12** en el cuerpo | `SP-C8` |
+| 2 | §1 da `ancla 283` y `cabecera 225` y no nombra la diferencia | **58 px, iguales a los dos anchos** — el `padding-top` del `.container` | `SP-C9` |
+| 3 | §3 describe las piezas de la piel B, no su ventana | **ventana de 5** con `« First` · `...` · `Last »` | `SP-C10` · abajo |
+| 4 | nada trata **qué ordena** | `/glosario` = `datePublished` DESC **37/37**; `/preguntas-frecuentes` **sin canal** | `SP-C11` · §F3-LH-ORDEN-DE-L2 |
+| 5 | ninguna nombra la **banda de filtros** | `L3` **3 botones**, `L5` **12**, entre el `h1` y el listado | `SP-T8` · `SP-K7` |
+
+> **Los cinco tienen la misma forma, y por eso van juntos: el número ESTABA en
+> la medida congelada y el elemento NO estaba en la prosa.** Ninguna relectura
+> de los ficheros los habría dicho — sólo escribir *«¿qué NO contesta esto?»*.
+
+⚠ **Y los 3 y 5 se pagan en píxeles si se construye sin ellos:** la banda de
+filtros vale **162.8 px** en `L3` (el hueco entre `h1.y = 337.59` y el listado en
+`500.39`) y **264.6** en `L5` (`593.28` → `857.88`). Los dos huecos están dentro
+de la `y` que las specs ya congelaron.
+
+**La sonda llegó con DOS defectos suyos**, cazados por su propio negativo antes
+de citarla (§sondas 1): el selector de la columna Divi casaba en el **documento
+entero** —**12/12**, porque la CABECERA del theme builder usa `3_4`: §*un patrón
+que casa en TODAS tampoco mide nada*— y el recuento de botones incluía el
+envoltorio `button-group` (**4** donde hay 3, **13** donde hay 12: el
+sobre-casado, §sondas 4 3.ª cara). Los dos arreglados, y la congelada publica
+**los dos lados** del primero para que el contraste se vea.
+
+## ⚠ F3-LH-PIELB-VENTANA · LA PIEL B LLEVABA MAL 31 DE 38 INSTANCIAS, Y LAS 7 BUENAS SON LAS ÚNICAS QUE EL COMPARADOR MIRA (2026-08-14, 69.ª tanda)
+
+**El defecto, con su número.** `PielB` emitía `current` y detrás `n+1..total` —
+o sea **cero `page smaller`** y **sin ventana**. Reproducido el modelo contra las
+**43** instancias capturadas (5 totales: 2·3·4·8·11), **comparando la SECUENCIA
+entera y no el conjunto de números**:
+
+| | acierta |
+|---|---|
+| el componente **NUEVO** | **38 / 38** |
+| el componente **VIEJO** | **7 / 38** |
+
+*(las 5 instancias con `larger page` quedan fuera del denominador — ver abajo.)*
+
+> **Y los 7 que acertaba son exactamente páginas 1.** El espejo mide **la página
+> 1 de cada forma**, así que el defecto vivía entero donde ninguna comparación
+> llega. Es la **segunda** vez en dos tandas: la 68.ª encontró lo mismo en la
+> piel A (el `« Anterior` de `/blog/page/N` con N≥2).
+
+**Por qué nadie lo vio, que es lo reutilizable.** Las dos instancias que
+calibraron la piel —`/etiqueta/calidad-del-aire` y `/preguntas-frecuentes`—
+tienen **`total = 4`**, y con `total ≤ 5` *«todas las siguientes»* y *«ventana de
+5»* **predicen el mismo HTML**. §DOS MODELOS QUE PREDICEN LO MISMO EN TODO TU
+DOMINIO SON UNO SOLO: el denominador de aquella elección no era 4, era **0
+instancias SEPARADORAS**. Hoy son **19**, y por eso `qa:lh-huecos` publica
+`separadoras` al lado del acierto **y su negativo exige que sean > 0**.
+
+**La regla derivada, de las 43 y no de la que había delante:**
+
+| pieza | cuándo |
+|---|---|
+| ventana | **5 números**: `inicio = min(max(n−2, 1), total−4)`, `fin = inicio+4` |
+| `a.first` («« First») + `span.extend` delante | `inicio > 1` |
+| `span.extend` + `a.last` («Last »») detrás | `fin < total` |
+| `a.previouspostslink` / `a.nextpostslink` | `n > 1` / `n < total` |
+| clase del número | `page smaller` si `k < n`, `page larger` si `k > n` |
+
+**El arreglo es NO-OP sobre todo lo comparado** (las formas del espejo tienen
+`total ≤ 4` y se miden en la página 1) y mueve el contenido de las **23** rutas
+`/etiqueta/*/page/N`. `qa:manifiesto`: **363 rutas, idéntica a la congelada** —
+el conjunto no se toca, sólo el contenido. **Sigue SIN VERIFICAR por comparador**,
+por la misma razón que lo estuvo el defecto: nada mide esas rutas.
+
+### ⛔ Lo que NO se implementa, con su denominador: `larger page`
+
+El original sirve además un salto a los múltiplos de 10 (`a.larger.page`). Lo
+ejercita **UNA sola serie** (`/etiqueta/monitorizacion-ambiental`, `total 11`), y
+su borde cae entre `fin = 7` (lo pinta) y `fin = 8` (no) — **un mecanismo que no
+se deriva de n=1 serie**: cualquier predicado que ajuste esas 11 observaciones es
+§*un discriminador hallado en una sola instancia*. Ninguna forma de esta tanda lo
+alcanza (`/glosario` tiene 8 páginas y `/preguntas-frecuentes` 4, y el primer
+múltiplo de 10 queda fuera de las dos), así que implementarlo sería estrenar un
+camino de render que **ningún dato de calibración ejercita**
+(§F2-5-ESCALON-ETIQUETAS). Se ficha; no se inventa.
+
+## ⛔ F3-LH-ORDEN-DE-L2 · `/glosario` ORDENA POR FECHA Y NO HAY CAMPO; `/preguntas-frecuentes` NO SIRVE ORDEN EN NINGÚN CANAL (2026-08-14, 69.ª tanda)
+
+**Es el hueco que para la construcción de `L2`**, y las dos mitades son
+distintas.
+
+| | `/glosario` | `/preguntas-frecuentes` |
+|---|---|---|
+| `<span class="fecha-publicacion">` (el canal de `entradas-blog`) | **0 de 37** | **0 de 19** |
+| JSON-LD `datePublished` | **37 de 37**, y **ordena DESC 37/37** | **0 de 19** |
+| `article:published_time` | — | **0 de 19** |
+| sitemap `<lastmod>` | 37 de 37, y **NO ordena** | 19 de 19, y **NO ordena** |
+
+**El `lastmod` se descarta con CONTROL, no por intuición** (§sondas 8a): no
+reproduce el orden **ni siquiera en `/glosario`**, donde el orden verdadero se
+conoce. Sin ese control, «no casa» sería indistinguible de «leí mal el sitemap».
+
+**Y la fecha discrimina de verdad en `/glosario`**: los post-id **no** son
+descendentes en el orden servido, así que no es orden de inserción.
+
+**Lo que hay que decidir, y es de ESQUEMA (`CMS-n`), no de extractor:**
+
+1. **`terminos-kunakpedia` necesita un campo de orden.** El precedente
+   —`entradas-blog.fechaPublicacion`— **no se aplica tal cual**: sale de otro
+   canal (un `<span>` renderizado que estas 37 páginas **no sirven**) y guarda
+   **el literal español** («7 enero 2025») porque el original lo pinta. Aquí el
+   dato sólo existe como **ISO en datos estructurados** y **no se pinta en
+   ninguna tarjeta**. O sea que es un campo *para ordenar*, no *para mostrar*, y
+   eso es una decisión distinta con su razón;
+2. **`faqs` no tiene canal ninguno.** El orden servido **no es** el de la DB (es
+   una permutación, comprobado por Local API) ni el de los id. Modelar aquí un
+   campo de orden sería inventarlo — y replicar el orden capturado como dato
+   tiene que decirse como lo que es: **una transcripción del original de una
+   fecha**, no un campo derivado.
+
+⚠ **Y las dos mitades no se resuelven con la misma decisión**, que es justo por
+lo que la ficha las separa: la primera tiene canal y le falta esquema; la
+segunda no tiene canal.
+
+## ⚠ F3-LH-EXTRACTOR-T10-SIN-CABLEAR · `cms:extractor` LLEVABA UN DÍA SIN PODER CORRER (2026-08-14, 69.ª tanda)
+
+`extractor.mjs` importaba `mediaPublicada` en la línea 36 y **nunca la cableaba
+al `ctx`**, así que T10 tiraba en el primer documento y el extractor moría
+entero. §sondas 3 —*documentado no es conectado*— en su forma más barata: **el
+`import` ES la documentación**, y el linter no lo caza porque `scripts/` queda
+fuera de su alcance. Sus dos hermanos (`extractor-a`, `extractor-c`) sí lo
+cablean.
+
+**Por qué no lo vio nadie, y esto es lo reutilizable:** `corpus/transformado/` es
+**derivable y no se commitea**, así que ya estaba en disco de una corrida
+**anterior** a T10 —**08:05 contra las 10:10** del commit que la añadió— y el
+consumidor (`extractor-a`) seguía encontrando su cuerpo.
+
+> **Un artefacto derivable que sobrevive a su generador tapa que el generador
+> está roto.** No da error: da **el fichero de ayer**.
+
+✅ **Arreglado.** ⛔ **Y correrlo NO es de esta tanda:** con T10 por fin
+corriendo, la pasada aplica **1818** localizaciones y cambia **169 de los 209**
+cuerpos ya sembrados — que es §DATOS-MEDIA-HOTLINK cerrándose **de rebote**, con
+su propia ficha y su propia línea base. **Dos cambios en una sola medición no se
+pueden atribuir**, así que los 209 se restauraron a su estado sembrado
+(comprobado: **0 difieren**) y los 3 cuerpos nuevos se quedan en disco.
+
+## ⚠ F3-LH-ARTICLE-ETIQUETA-44 · EL DOCUMENTO 210 EJERCITA UNA ETIQUETA FUERA DEL CENSO DE 43 (2026-08-14, 69.ª tanda)
+
+Al extraer los 3 documentos recién capturados, el saneador rechaza
+`kunak-obtiene-el-sello-reconcilia`: trae **`</article>`**, la etiqueta **44**
+fuera del censo de 43 de §campo-rico.
+
+**No es contenido: es un cierre HUÉRFANO.** El original sirve su apertura
+**destrozada** — `<a target="_blank"rticle class="post-content">`, o sea un
+find/replace de WordPress que metió el atributo **dentro del nombre de la
+etiqueta**—. Comprobado sobre `postContent()` del fichero recién bajado: **la
+corrupción está en el crudo capturado, no en el pipeline.**
+
+Es §*UNA REGLA DERIVADA SOBRE UN DOMINIO DONDE EL CASO NO SE DA*, cobrada sobre
+el contrato del campo rico: la whitelist se censó sobre **209** documentos y el
+**210.º** ejercita algo que ninguno tenía. Se **nombra con n=1** en vez de
+ampliarla — precedente §T3B-NO-CANONICO, misma familia. Y la salida que el
+navegador da está medida por la regla, no por el gusto: un `</article>` sin
+apertura **lo tira el parser**, igual que `min-width: none`.
+
 ## ✅ F3-LH-CIERRE-68 · `LISTADO-B` COMPLETO — LAS 3 VARIANTES, CLASE A CLASE (2026-08-14, 68.ª tanda)
 
 **El cierre se escribe con TRES números, no con uno:**
@@ -159,6 +330,32 @@ plantilla.
 **No es defecto de plantilla ni de seed: es hueco de CAPTURA**, y se ficha para
 que no se persiga. Cerrarlo es capturar 3 documentos (los 2 de `/blog` + éste),
 lo que §PASO 4 del encargo dejó como no bloqueante.
+
+> ✅ **LA CAPTURA ESTÁ HECHA (2026-08-14, 69.ª tanda) — y la mitad que queda
+> está NOMBRADA, no pendiente en el aire.** Corpus **309 → 312**, `3 nuevas ·
+> 309 reutilizadas · 0 fallos`.
+>
+> **La lista se DERIVÓ dos veces por caminos distintos y dio lo mismo**, que es
+> el cruce que vale: esta ficha la sacó de las 574 tarjetas de `/blog`; la
+> captura la deriva de **las 807 tarjetas de los 149 listados congelados** —las
+> que enlazan a la RAÍZ (`/es/<slug>/`) menos las que el `PLAN` ya trae—. **3**
+> por las dos vías.
+>
+> **Y la derivación vive DENTRO del `PLAN` de `captura.mjs`, no en un script
+> aparte, por una razón mecánica:** `corpus/INDICE.json` **se reescribe entero
+> desde ese `PLAN` en cada corrida**, así que capturarlas por fuera dejaría los
+> bytes en disco y su entrada de índice desaparecería en el siguiente
+> `cms:captura` — **bytes sin manifiesto**, que es peor que no tenerlos. La
+> colección tampoco se supone: la dice la familia del listado que cita el
+> documento, con una tabla que **TIRA** ante una familia sin traducir (§regla 6).
+>
+> ⛔ **Lo que falta para que el Δ se mueva son DOS bloqueos nombrados, ninguno
+> de captura:** §F3-LH-EXTRACTOR-T10-SIN-CABLEAR (correr el extractor arrastra
+> 1818 localizaciones de T10 sobre 169 cuerpos ya sembrados) y
+> §F3-LH-ARTICLE-ETIQUETA-44 (el saneador rechaza uno de los tres). Hasta
+> entonces `/blog` sigue en **66 de 68**, `/etiqueta/monitorizacion-ambiental` en
+> **89 de 91** y `/recursos/seminarios-web` en **2 de 3** — medido hoy con
+> `qa:lh-poblacion`.
 
 
 ## ✅ F3-LH-JERARQUIA-RECURSOS · CERRADA CON `D2.8` — y la pregunta que «el dato no separaba» la separa el `<body>` (2026-08-14, 67.ª tanda)
