@@ -1,5 +1,109 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-ESCALON-4-4 · EL CAMINO SIN BARRA SE EJERCITÓ, Y LA MEDIDA NO CUBRÍA LA FORMA (2026-08-14, 68.ª tanda)
+
+El encargo pre-registró: *«si el camino `4_4`-sin-barra falla al ejercitarse,
+para y congela: eso no es un ajuste, es la implementación desde la medida
+contradicha»*. **La respuesta no es «falla» ni «cuadra», y por eso se escribe
+entera.**
+
+`lh-barra.json` acertó en **todo lo que midió** —la fila del listado de
+`resources` es `4_4`, no hay barra, la columna mide 1238.39— y el componente
+estaba **mal** igual, porque la retícula no era lo único que cambiaba:
+
+| | blog · etiqueta | `resources` (medido) | lo que emitía `conBarra={false}` |
+|---|---|---|---|
+| filas de la sección 1 | 2 | **3** (titular · chips · listado) | 2 |
+| índice de la fila del listado | 2 | **3** | 2 |
+| índice de su columna | 2 | **3** | 2 |
+| el listado cuelga de… | la columna | **un módulo de texto VACÍO** (`et_pb_text_3_tb_body > .et_pb_text_inner`) | la columna |
+
+Firma del árbol: **1 sola en las 18 páginas con contenido** de `/recursos/`, o
+sea que no es una instancia rara.
+
+> **El error no fue de MEDICIÓN sino de ALCANCE al leerla**: se dio por medida
+> «la forma de la fila del listado» cuando lo medido era «cuántas columnas tiene
+> y si hay barra». Es §UNA REGLA DERIVADA SOBRE UN DOMINIO DONDE EL CASO NO SE
+> DA con el matiz que la hace instructiva —
+>
+> **la regla no era falsa, era INCOMPLETA; y una regla incompleta se lee
+> exactamente igual que una completa.**
+
+**`conBarra` se BORRA en vez de dejarse** (§sondas 3): un camino muerto que dice
+implementar `L1-resources` y no es lo que `L1-resources` sirve es peor que no
+tenerlo, porque el código existe y parece respaldo.
+
+## ✅ SP-B6 · EL `+26` DE `resources-hijo` A 390, DIAGNOSTICADO (2026-08-14, 68.ª tanda)
+
+`listado-b.spec.md` §1 lo dejó **medido y sin diagnosticar**, con la pista
+correcta: *«el sitio donde mirarlo es la miga (los hijos cuelgan un nivel
+más)»*. Ahí estaba.
+
+| @390 | sección 0 (la miga) | `h1.y` en crudo |
+|---|---|---|
+| `resources`-**padre** | **50** | **236.58** |
+| `resources`-**hijo** | **76** | **262.58** |
+
+La miga del hijo tiene **4 eslabones** (`Inicio › Recursos › Artículos y Guías ›
+<hija>`) contra los 3 del padre, envuelve un renglón más y `line-height: 26px`
+⇒ **+26 exactos**. No es un fleco: es el contenido de la miga.
+
+**Y el clon lo reproduce solo**: `qa:lh-cmp` da `base misma (Δ 0)` en las 4
+formas de `resources` a los dos anchos, incluidas las dos hijas. No hizo falta
+cablear nada — hacía falta que la miga tuviera los eslabones que tiene.
+
+
+## ✅ F3-LH-MESES-EN-ESPANOL · EL FORMATO CORTO ERA INGLÉS Y ES ESPAÑOL, Y 8 DE 12 MESES NO PODÍAN VERLO (2026-08-14, 68.ª tanda)
+
+`fechaCorta()` servía `Jan Feb Mar Apr … Dec` desde la 64.ª tanda, y el original
+sirve **`Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic`**.
+
+> **Lo que lo hace una ficha y no una errata: las dos hipótesis dan la MISMA
+> salida en 8 de los 12 meses.** Sólo separan **`Ene` · `Abr` · `Ago` · `Dic`**.
+
+Y el comparador mira **las 3 primeras tarjetas de cada forma**, así que las dos
+instancias de `L1-etiqueta` quedaron «verificadas» en la 66.ª con sus 3 tarjetas
+cayendo dentro de los 8 ambiguos. La instancia separadora la trajo
+`L1-resources-hijo::…/contaminacion-urbana/`: **`Abr 11, 2025`** contra el
+`Apr 11, 2025` que el clon servía.
+
+Derivado sobre **456 fechas** de los listados capturados —287 en `/etiqueta` y
+169 en `/recursos/*`— con **12 abreviaturas distintas en cada familia** y **cero
+apariciones** de `Jan`, `Apr`, `Aug` o `Dec`.
+
+> **La lección es §DOS MODELOS QUE PREDICEN LO MISMO en su forma más barata:** un
+> modelo se elige por lo que lo SEPARA de su alternativa, no por lo que acierta.
+> `ABREV_EN` acertaba 8 de 12 **y en la población visible acertaba todo**.
+
+**Arreglado en `apps/web/src/lib/cms/listados.ts`**, y el arreglo toca también a
+`/etiqueta`, que estaba dada por verificada.
+
+## ⚠ F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR · SON **3**, NO 2 — Y EL TERCERO ES LA PRIMERA TARJETA DE `seminarios-web` (2026-08-14, 68.ª tanda)
+
+§F3-LH-DOS-CONJUNTOS-DE-149 nombró **2** documentos que los listados citan y el
+corpus de 149 no tiene. Derivado ahora sobre **las 574 tarjetas** de TODOS los
+listados capturados —no sobre `/blog`, que es donde se miró la primera vez—:
+
+| slug | dónde lo nombra el original |
+|---|---|
+| `descarga-catalogo-kunak` | `/blog/page/2#0` · `/etiqueta/monitorizacion-ambiental/page/3#6` |
+| `kunak-obtiene-el-sello-reconcilia` | `/blog#2` · `/etiqueta/monitorizacion-ambiental#8` |
+| **`webinar-control-de-la-contaminacion-del-aire-en-la-industria`** | **`/recursos/seminarios-web#0`** |
+
+*(los otros 38 «ausentes» del barrido son de `/glosario` y `/preguntas-frecuentes`,
+o sea de `terminos-kunakpedia` y `faqs` — otra colección, otro denominador.)*
+
+**Por qué el tercero cuesta más que los otros dos:** está en la **posición 0** de
+una serie de **3 tarjetas**, así que el clon sirve 2 y **todas se desplazan**. En
+`qa:lh-cmp` eso es la diferencia entre los ~70 residuos de sus formas hermanas y
+los **249** de `seminarios-web`: **193 de esos 249 son la excepción**, no la
+plantilla.
+
+**No es defecto de plantilla ni de seed: es hueco de CAPTURA**, y se ficha para
+que no se persiga. Cerrarlo es capturar 3 documentos (los 2 de `/blog` + éste),
+lo que §PASO 4 del encargo dejó como no bloqueante.
+
+
 ## ✅ F3-LH-JERARQUIA-RECURSOS · CERRADA CON `D2.8` — y la pregunta que «el dato no separaba» la separa el `<body>` (2026-08-14, 67.ª tanda)
 
 **Decidida sin escalar, porque el precedente la cubre:** `D2.8` en
@@ -60,7 +164,63 @@ nombre. Se declara; **no se prohíbe**.
 | poblar `padre` mueve rutas ya emitidas | ≥1 | **0** — la jerarquía la leen **2 líneas** y las dos la tienen cableada |
 | el esquema admite `padre` donde el original no lo produce | ≥1 | **0** |
 
-## ⛔ F3-LH-EXTRACTOR-PREFIJO-CABLEADO · EL PADRE CABLEADO YA ESTÁ COBRANDO, Y ARREGLARLO ES RE-EMISIÓN (2026-08-14, 67.ª tanda)
+## ✅ F3-LH-EXTRACTOR-PREFIJO-CABLEADO · **APLICADO** (2026-08-14, 68.ª tanda) — con el canal corregido y el antes/después por ELEMENTO
+
+> ⚠ **La ficha de abajo proponía un canal que en la entrada NO ESTÁ SERVIDO.**
+> Decía *«el término se deriva de la miga POR SU CLASE (`taxonomia padre` /
+> `categoria`)»*. Medido sobre las **149** entradas: **0 llevan clase en sus
+> `<li>`** — esas clases viven en el ARCHIVO del término, no en la página del
+> post. Es §El principio otra vez: la recomendación describía un canal de otra
+> plantilla.
+>
+> **El discriminador que sí está servido en la entrada es la PROFUNDIDAD**: el
+> eslabón más hondo bajo `/es/recursos/`, excluido el hub. Y se lee **la miga**,
+> no el documento entero — la página de una entrada sirve enlaces a
+> `/es/recursos/…` fuera de la miga (los «también te puede interesar») que
+> hablan de OTRAS entradas.
+
+**El antes/después, por elemento y no por cardinal** (`cms:extractor-a`,
+congelado en `a-extraido-2026-08-14.json` frente a `a-extraido.json` de git):
+
+| | |
+|---|---|
+| GANAN `recurso` | **2** — los dos que la ficha nombra, → `seminarios-web` |
+| PIERDEN | **0** · CAMBIAN de término | **0** |
+| otros campos movidos | **0** · las otras 2 colecciones | **IDÉNTICAS** |
+
+CONTROL **125/125** contra la transcripción a mano (compara `recurso`) · censo
+de lectores **16 vivos, 0 muertos** · negativo **5/5** corrido entero.
+
+> **El denominador de la elección es 2, no 83** (§DOS MODELOS QUE PREDICEN LO
+> MISMO): en las 81 hijas cablear y derivar dan la misma salida. Por eso el
+> modelo malo daba **81 aciertos**.
+
+### ⚠ Y el `/blog 68 → 66` NO se compone como la ficha decía
+
+La ficha escribió *«66 con **2 ausentes por captura**»*. **El total es correcto y
+la composición no era ésa.** Cruzados los dos conjuntos elemento a elemento
+(§UN CARDINAL ES UN CONTENEDOR, segunda vez en la misma página):
+
+| | slug | qué pasa |
+|---|---|---|
+| **−2** | `descarga-catalogo-kunak` · `kunak-obtiene-el-sello-reconcilia` | hueco de CAPTURA, ya fichado |
+| **−1** | `calidad-del-aire-en-puertos` | el original lo lista en `/blog` **y** su propia miga declara `contaminacion-en-puertos-y-aeropuertos` |
+| **+1** | `webinar-como-controlar-las-emisiones-en-mineria-junio-2025` | el clon lo lista y el original **no lo lista en NINGÚN listado capturado** |
+
+`68 − 2 − 1 + 1 = 66` ✓. Páginas de `/blog`: **8 en los dos lados**, sin cambio.
+
+- el **−1** es §F3-LH-PUERTOS-1-DE-2 **por el otro lado**, y con eso **una sola
+  entrada explica TRES deltas** del comparador: el `/blog`, el archivo de puertos
+  (2 contra 1) y el del padre (81 contra 80). Refuerza la hipótesis de las dos
+  fotos con evidencia independiente;
+- el **+1** es NUEVO. Barrida la hipótesis obvia —*«el loop excluye la categoría
+  `eventos`»*— sale **REFUTADA con su denominador: 21 de las 22** entradas de
+  `eventos` sin `recurso` SÍ salen en `/blog`. Queda con **n = 1 y sin
+  mecanismo**, que es como hay que dejarlo.
+
+<details><summary>La ficha original (2026-08-14, 67.ª tanda), conservada</summary>
+
+## ⛔ (histórico) F3-LH-EXTRACTOR-PREFIJO-CABLEADO · EL PADRE CABLEADO YA ESTÁ COBRANDO, Y ARREGLARLO ES RE-EMISIÓN (2026-08-14, 67.ª tanda)
 
 **Lo destapó medir la consecuencia de enrutado de `D2.8`, y no es la misma
 decisión:** `D2.8` es de ESQUEMA; esto es de DATO, y `padre` no lo arregla.
@@ -109,6 +269,8 @@ congelada** en `medidas/clon-base-{1440,390}-f33-padre-antes.json`.
 **Lo que hay que hacer, y no es cablear otro prefijo:** el término se deriva de
 la miga **por su clase** (`taxonomia padre` / `categoria`), que es el canal que
 lo declara, y no por un literal de URL.
+
+</details>
 
 ## ⚠ F3-LH-PUERTOS-1-DE-2 · UNA ENTRADA NOMBRA SU TÉRMINO Y EL ARCHIVO NO LA LISTA (2026-08-14, 67.ª tanda)
 

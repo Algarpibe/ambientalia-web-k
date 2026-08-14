@@ -187,6 +187,29 @@
   }
 }
 
+/* ── `resources`: sus DOS filas de abajo llevan el mismo `margin-top` ──────
+   Medido por el comparador contra el original vivo, en las **4 formas** y a los
+   dos anchos: `filas.1` (los chips) y `filas.2` (el listado) traen
+   `margin-top` **14.3906 @1440 · 3.89062 @390**, y el clon las tenía a 0.
+
+   Es **el mismo par de números** que `lh-fila2-etiqueta`, o sea el default de
+   Divi resuelto contra la fila — no un valor que nadie escribió. Y por eso
+   entra por las clases que el ORIGINAL sirve (`et_pb_row_2_tb_body` ·
+   `et_pb_row_3_tb_body`) y no por una clase del clon: `filas[].clases` es un
+   par que el barrido compara, y añadir una clase para arreglar un ritmo sería
+   cambiar un eje para arreglar otro. */
+.lh-cuerpo[data-lh="resources"] .et_pb_row_2_tb_body,
+.lh-cuerpo[data-lh="resources"] .et_pb_row_3_tb_body {
+  margin-top: 3.89062px;
+}
+
+@media (min-width: 981px) {
+  .lh-cuerpo[data-lh="resources"] .et_pb_row_2_tb_body,
+  .lh-cuerpo[data-lh="resources"] .et_pb_row_3_tb_body {
+    margin-top: 14.3906px;
+  }
+}
+
 /* Las columnas. `4_4` ocupa la fila; `3_4 + 1_4` es 73.624 % + canal 5.5 % +
    20.87 % — los mismos porcentajes que `CascaronTb`, y el 73.624 no es «el
    porcentaje de Divi»: es el que reproduce el píxel medido (911.75). */
@@ -290,6 +313,19 @@
   .lh-cuerpo .et_pb_text_1_tb_body {
     padding-bottom: 24.7656px;
   }
+}
+
+/* ⚠⚠ **Y EN `resources` EL MISMO MÓDULO LLEVA `0`, MEDIDO EN LAS 4 FORMAS.**
+   Es el caso que obliga al discriminador de variante: Divi compila **una hoja
+   por página**, así que `et_pb_text_1_tb_body` puede valer `24.7656` en blog y
+   `0` en resources sin contradicción — son dos hojas. El clon sirve una sola,
+   y sin `[data-lh]` la primera regla que gane se lleva las dos variantes.
+
+   Se escribe como override y no partiendo la regla de arriba porque el valor de
+   blog está medido y verificado: tocarlo para hacer sitio movería 3 formas ya
+   comparadas a cambio de nada. */
+.lh-cuerpo[data-lh="resources"] .et_pb_text_1_tb_body {
+  padding-bottom: 0;
 }
 
 /* La descripción del término (`/etiqueta`): módulo con ANCHO PROPIO —941.17 de
@@ -532,8 +568,23 @@
 }
 
 /* El titular: 20/1.35 y **`padding-bottom: 0`** —la spec lo midió en 0 contra
-   los 10 de las otras dos—. Los `!important` son del original. */
-.lh-cuerpo .bucle-entradas .entry-title {
+   los 10 de las otras dos—. Los `!important` son del original.
+
+   ⚠⚠ **EL SELECTOR LLEVA `.et_pb_posts` PEGADO, Y NO ES ESTILO: ES
+   ESPECIFICIDAD.** El original saca sus 10 px de la regla GLOBAL
+   `h1..h6 { padding-bottom: 10px }` (0,0,1), así que `.bucle-entradas
+   .entry-title` (0,2,0) la gana sin esfuerzo. Esta hoja **consolidó** aquel
+   10 px dentro de `.lh-cuerpo .et_pb_posts .et_pb_post .entry-title` (0,4,0),
+   o sea le subió la especificidad, y con eso `.lh-cuerpo .bucle-entradas
+   .entry-title` (0,3,0) **perdía**: el clon servía 10 px donde el original
+   sirve 0, en **7 pares**.
+
+   Es exactamente el mecanismo que esta misma hoja ya documenta más abajo para
+   el `@media (max-width:479px)` —*consolidar reglas de origen distinto cambia
+   quién gana*— cobrado por segunda vez y en el otro sentido. `bucle-entradas`
+   y `et_pb_posts` van en el MISMO elemento en el original, así que
+   `.et_pb_posts.bucle-entradas` (0,5,0) no inventa nada: describe el nodo. */
+.lh-cuerpo .et_pb_posts.bucle-entradas .et_pb_post .entry-title {
   padding-bottom: 0;
   font-size: 20px !important;
   font-weight: 400 !important;

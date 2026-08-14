@@ -126,7 +126,23 @@ export function PaginaListado({
               `#main-content` como `contenedorTema`, y su `borderColor` —que sin
               borde declarado es `currentColor`— salía con el `rgba(0,0,0,0.1)`
               del preflight de Tailwind hasta que el reset lo alcanzó. */}
-          <div id="main-content" className="lh-cuerpo w-full overflow-hidden bg-[#f7f7f7]">
+          {/* ⚠ **`data-lh` es un DISCRIMINADOR DE VARIANTE, y va en un atributo
+              `data-` a propósito.** Divi compila **una hoja por página**
+              (`et-cache`), así que el original puede dar valores distintos al
+              MISMO nombre de clase en dos variantes —`et_pb_text_1_tb_body`
+              lleva `pb 24.7656` en blog y `pb 0` en resources—. El clon sirve
+              una sola hoja para las 363 rutas y necesita separarlas.
+
+              No es una clase porque `lh-barrido` lee `marca(contenedorTema)` a
+              partir de la `classList`: meterla ahí sería inventar una
+              diferencia servida para arreglar otra. Un `data-` no lo lee nadie
+              —el mismo criterio que `data-fila`, marcador de sonda y no
+              estilo—. */}
+          <div
+            id="main-content"
+            data-lh={variante}
+            className="lh-cuerpo w-full overflow-hidden bg-[#f7f7f7]"
+          >
             <div className="et-l et-l--body">
               <div className="et_builder_inner_content et_pb_gutters3">
                 {/* ── Sección 0 · la miga. `pt/pb` a 0 en los dos anchos. ── */}

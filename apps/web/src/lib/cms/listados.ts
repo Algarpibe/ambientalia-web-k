@@ -91,7 +91,35 @@ const porFechaDesc = (a: EntradaBlog, b: EntradaBlog) =>
  * cada forma. Si una regla estuviera mal, sale con su camino.
  * ═════════════════════════════════════════════════════════════════════════ */
 
-const ABREV_EN = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ");
+/**
+ * ⚠⚠ **AQUÍ HUBO `ABREV_EN` —`Jan Feb Mar Apr … Dec`— Y ERA FALSO EN 4 DE LOS
+ * 12 MESES. Lo destapó `L1-resources`, y es §DOS MODELOS QUE PREDICEN LO MISMO
+ * en su forma más barata (2026-08-14).**
+ *
+ * El formato corto **es español**, y las dos hipótesis —inglés y español— dan
+ * exactamente la misma salida en **8 de los 12 meses**:
+ *
+ * | | coinciden ES = EN | SEPARADORAS |
+ * |---|---|---|
+ * | | `Feb Mar May Jun Jul Sep Oct Nov` (8) | **`Ene` `Abr` `Ago` `Dic`** (4) |
+ *
+ * O sea que el denominador de la elección **no son las 456 fechas del corpus:
+ * son los 4 meses que separan**. Y el comparador mira **las 3 primeras tarjetas
+ * de cada forma**, así que `/etiqueta/calidad-del-aire` y `/etiqueta/h2s-es`
+ * quedaron «verificadas» con sus 3 tarjetas cayendo en los 8 meses ambiguos.
+ * La instancia separadora la trajo `contaminacion-urbana`: **`Abr 11, 2025`**
+ * contra el `Apr 11, 2025` que el clon servía.
+ *
+ * Derivado sobre las **456 fechas** de los listados capturados: `etiqueta` sirve
+ * `Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic` (287) y `resources` las
+ * mismas (169). **Cero apariciones de `Jan`, `Apr`, `Aug` o `Dec`.**
+ *
+ * La lección, que es la del proyecto: un modelo se elige por lo que lo SEPARA
+ * de su alternativa, no por lo que acierta. `ABREV_EN` acertaba 8 de 12 y en la
+ * población visible acertaba **todo**.
+ */
+const ABREV = "Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic".split(" ");
+
 const partes = (fecha: string) => {
   const d = new Date(aEpoch(fecha));
   return { dia: d.getUTCDate(), mes: d.getUTCMonth(), anio: d.getUTCFullYear() };
@@ -103,10 +131,16 @@ export const fechaLarga = (fecha: string) => {
   return `${dia} de ${MESES[mes]} de ${anio}`;
 };
 
-/** `/etiqueta` — «May 25, 2026», el `.published` del módulo `et_pb_blog`. */
+/**
+ * `/etiqueta` y `/recursos/*` — «Abr 11, 2025».
+ *
+ * El mismo formato en las dos variantes, y por eso una sola función: lo que
+ * cambia es el envoltorio (`<span class="published">` en etiqueta, el `<p
+ * class="post-meta">` a secas en resources), no el texto.
+ */
 export const fechaCorta = (fecha: string) => {
   const { dia, mes, anio } = partes(fecha);
-  return `${ABREV_EN[mes]} ${dia}, ${anio}`;
+  return `${ABREV[mes]} ${dia}, ${anio}`;
 };
 
 /* ══════════════════════════════════════════════════════════════════════════

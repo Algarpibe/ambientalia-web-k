@@ -102,6 +102,25 @@ primeras. Tipografía: `Manrope, sans-serif` en todo.
 | **extracto** | **15 px / 23.25** · `#333` · **267 c** | **no** | ⚠ **sí, 300 c** |
 | alto de tarjeta @1440 | 548.03 | 430.02 | 653.53 |
 
+> ⚠⚠ **CORREGIDO 2026-08-14 (68.ª tanda): los tres «no» de la columna
+> `L1-resources` son TRES SELECTORES QUE NO CASAN, no tres ausencias.** Leído el
+> HTML servido de las 18 páginas con contenido, su tarjeta **sí** trae fecha y
+> **sí** trae término — en otros elementos:
+>
+> | celda | lo que la spec buscó | lo que el original sirve |
+> |---|---|---|
+> | **fecha** | `.published` | **`<p class="post-meta">Jul 21, 2026</p>`**, sin `<span>` |
+> | **categoría** | el enlace de `.post-meta` | **`<p class="resources-categories">`** con el término de `resources`, en 160 de 163 tarjetas |
+> | **extracto** | `.post-content` | ése sí es una ausencia real: **0 de 163** |
+>
+> Es §sondas 4 en la spec en vez de en una sonda: *un selector que no casa
+> devuelve lo mismo que una propiedad ausente*. Los «no» eran ciertos **del
+> selector** y falsos de la tarjeta — y construir desde ellos habría emitido una
+> tarjeta sin fecha y sin término en 18 páginas.
+>
+> **Y el `alt` de la media sale del ADJUNTO, como en blog** (no del titular como
+> en etiqueta): medido en las 4 formas.
+
 ⚠ **Dos celdas contradicen a `PAGE_TOPOLOGY.md` §7b, y no se resuelven aquí.**
 Aquella tabla da `L1-blog` **sin extracto** y con el mismo titular que las
 demás; lo medido ahora da **extracto de 300 c** y **titular de 23 px**. Las dos
@@ -179,10 +198,10 @@ Pero *plantilla* no quiere decir *gratis*:
 
 | # | qué | por qué importa |
 |---|---|---|
-| **SP-B1** | el **clon**: no existe, las 9 formas dan 404 | esta spec es de un lado. La comparación es del PASO 4 |
+| ~~**SP-B1**~~ | ✅ **PARCIAL desde 2026-08-14** — el clon existe en **7 de las 13 formas** del comparador (`L1` entera: blog · 2 etiqueta · 4 resources) y `qa:lh-cmp --vivo` las compara par a par. Las **6** restantes (`L2` ·`L3` · `L4` · `L5`) siguen en 404 |
 | **SP-B2** | **anchos intermedios** | el contrato ahí es de RANGO, no de fidelidad (§CONTRATO) |
 | **SP-B3** | la varianza de `L1-blog` — **n = 1** | todo lo suyo está **SIN PROBAR**, incluida la piel de tarjeta del §3 |
 | **SP-B4** | el **buscador** de la barra lateral | interacción no medida por `P-LH-C6` |
 | **SP-B5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
-| **SP-B6** | el `+26` de `resources-hijo` a 390 | medido, **no diagnosticado** |
+| ~~**SP-B6**~~ | ✅ **CERRADA 2026-08-14** — el `+26` es **la MIGA que envuelve un renglón más**: sección 0 mide **76** en las hijas y **50** en los padres a 390 (4 eslabones contra 3, `line-height: 26px`). El clon lo reproduce **solo** —`base misma (Δ 0)` en las 4 formas y a los dos anchos—, así que no se cableó nada. Ficha: `PENDIENTES-QA.md` §SP-B6 |
 | ~~**SP-B7**~~ | ✅ **CERRADA 2026-08-11** — el contenido del widget «Categorías» está medido en los 80 (§5). Los otros tres (`search-6` · `text-1` vacío · `custom_html-25`) siguen sin censar por dentro, pero **su denominador ya no es «6 text y 2 custom_html»**: eran 6 del pie |
