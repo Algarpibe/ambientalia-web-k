@@ -24,14 +24,21 @@
  *   · las colecciones donde el ESQUEMA declara `padre`  (leído de cms-config)
  * y nombra las cuatro celdas, incluidas las dos que son defecto.
  *
- * ── Las TRES vías, cada una con su denominador ────────────────────────────
- * §sondas 4 en su forma útil: tres selectores independientes sobre la misma
- * afirmación. Si uno diera 0 sería un selector muerto; si los tres coinciden,
- * la afirmación no depende de ninguno.
+ * ── Las CUATRO vías, cada una con su denominador ──────────────────────────
+ * §sondas 4 en su forma útil: selectores independientes sobre la misma
+ * afirmación. Si uno diera 0 sería un selector muerto; si coinciden, la
+ * afirmación no depende de ninguno. **Y no contestan todas la misma pregunta**:
  *
  *   1 · la FORMA DE LA URL      — nº de segmentos bajo el prefijo de la taxonomía
  *   2 · la MIGA                 — `<li class="taxonomia padre">` con el href del padre
- *   3 · los CHIPS              — `.button-group.filtros-resources` del padre
+ *   3 · los CHIPS               — `.button-group.filtros-resources` del padre
+ *   4 · el `<body class>`       — `archive tax-<t> term-<slug>` vs `page page-child`
+ *
+ * Las tres primeras dicen **quién es el padre**; la cuarta dice **qué es la
+ * cosa**, y es la que separa las dos lecturas que §0b del HANDOFF dio por
+ * inseparables (*«las dos producen las mismas 80 tarjetas»*). Las tarjetas son
+ * el canal que no discrimina; el `<body>` sí — y su contraste vive en el mismo
+ * directorio, con 3 hermanos de `articulos` marcados `page-child`.
  *
  * ⚠ **La vía 1 sola no vale, y por eso no se usa sola.** «Dos segmentos» es la
  * SOMBRA de la jerarquía, no la jerarquía: un CPT con prefijo fijo produce la
@@ -159,6 +166,32 @@ const chipsDe = (html) => {
 };
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * VÍA 4 — EL `<body class>`, que es la que contesta «¿término o página?»
+ *
+ * Las vías 1–3 dicen **quién es el padre**. Ésta dice **qué es la cosa**, y es
+ * la que separa las dos lecturas que el HANDOFF dio por inseparables: WordPress
+ * marca el `<body>` de un archivo de taxonomía con `archive tax-<taxonomía>
+ * term-<slug> term-<id>`, y el de una página con `page page-id-<n>` más
+ * `page-parent`/`page-child`. Los dos vocabularios conviven **en el mismo
+ * directorio** del original —`/recursos/articulos/` es `archive`, y sus tres
+ * hermanos `/recursos/{kunakpedia,documentos-cientificos,preguntas-frecuentes}/`
+ * son `page-child`—, y ése contraste es lo que impide que el discriminador sea
+ * inventado: no hay que creerse una regla de WordPress, se ve la partición.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const TOKENS_CUERPO = /^(archive|tax-|term-|page$|page-id-|page-parent|page-child|page-template-|et-tb-has-body|et_pb_pagebuilder_layout|home|blog)/;
+const cuerpoDe = (html) => {
+  const c = (html.match(/<body[^>]*class="([^"]*)"/) || [, ""])[1];
+  const tokens = c.split(/\s+/).filter((t) => TOKENS_CUERPO.test(t));
+  return {
+    tokens,
+    esArchivo: tokens.includes("archive"),
+    esPagina: tokens.some((t) => /^page(-id-|-parent|-child|-template-)?$/.test(t)),
+    taxonomiaDeclarada: (tokens.find((t) => t.startsWith("tax-")) || "").slice(4) || null,
+    terminoDeclarado: (tokens.find((t) => /^term-[a-z0-9-]*[a-z][a-z0-9-]*$/.test(t)) || "").slice(5) || null,
+  };
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
  * EL BARRIDO
  * ═════════════════════════════════════════════════════════════════════════ */
 const universo = [];
@@ -199,7 +232,7 @@ const sinModelar = universo.filter((u) => !u.coleccion);
 const ev = new Evaluadas({ nombre: "lh-jerarquia", unidad: "términos censados", minimo: universo.length });
 
 /** Un censo de vías: cuántos nodos casó cada una, sumando TODAS las páginas. */
-const casos = { miga: 0, padreEnMiga: 0, chips: 0, dosSegmentos: 0 };
+const casos = { miga: 0, padreEnMiga: 0, chips: 0, dosSegmentos: 0, cuerpoArchivo: 0 };
 
 const terminos = [];
 for (const u of universo) {
@@ -250,6 +283,10 @@ for (const u of universo) {
     fila.miga = miga.map((li) => (li.clase ? `${li.clase}|` : "") + (li.href ?? "(sin href)"));
   }
 
+  const cuerpo = cuerpoDe(html);
+  fila.cuerpo = cuerpo;
+  if (cuerpo.esArchivo) casos.cuerpoArchivo++;
+
   const chips = chipsDe(html);
   fila.chips = chips.length;
   if (chips.length) {
@@ -258,6 +295,34 @@ for (const u of universo) {
   }
   terminos.push(fila);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CONTRASTE DE LA VÍA 4 — los hermanos de `articulos` que NO son términos
+ *
+ * Un `archive` en 35 de 35 sería un PLENO, y un patrón que casa en todas no
+ * discrimina (§sondas 4, su complementario). Lo que convierte la vía 4 en un
+ * discriminador es que **el mismo directorio del original trae las dos
+ * lecturas**: `/recursos/` es `page-parent` y tres de sus hijos son
+ * `page-child`. Si esos tres salieran también `archive`, el token no estaría
+ * separando nada y habría que decirlo en vez de citarlo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const CONTRASTE = [
+  ["/es/recursos/", "corpus/fase-3/listados/recursos/index.html"],
+  ["/es/recursos/kunakpedia/", "corpus/fase-3/listados/recursos/kunakpedia/index.html"],
+  ["/es/recursos/documentos-cientificos/", "corpus/fase-3/listados/recursos/documentos-cientificos/index.html"],
+  ["/es/recursos/preguntas-frecuentes/", "corpus/fase-3/listados/recursos/preguntas-frecuentes/index.html"],
+];
+const contraste = [];
+for (const [url, f] of CONTRASTE) {
+  if (!existsSync(rel(f))) {
+    contraste.push({ url, capturado: false });
+    continue;
+  }
+  const c = cuerpoDe(readFileSync(rel(f), "utf8"));
+  contraste.push({ url, capturado: true, esArchivo: c.esArchivo, esPagina: c.esPagina, tokens: c.tokens });
+}
+const contrasteLeido = contraste.filter((c) => c.capturado);
+const contrastePagina = contrasteLeido.filter((c) => c.esPagina && !c.esArchivo);
 
 /* ══════════════════════════════════════════════════════════════════════════
  * GUARDA DE VÍAS MUERTAS — §sondas 4
@@ -457,6 +522,17 @@ const salida = {
     sabotaje: SABOTAJE,
   },
   vias: casos,
+  via4Contraste: {
+    queSepara: "«archivo de término» de «página», en el MISMO directorio del original",
+    terminosConCuerpoDeArchivo: `${casos.cuerpoArchivo}/${terminos.filter((t) => t.capturado).length}`,
+    vecinosLeidos: contrasteLeido.length,
+    vecinosQueSonPAGINA: contrastePagina.length,
+    /* Se dice el reparto porque «4» y «3 hermanos» no son el mismo conjunto y
+     * el acta cita el segundo: la lista trae `/es/recursos/` —el PADRE, que es
+     * `page-parent`— más sus 3 hijas `page-child`. */
+    reparto: "1 `page-parent` (`/es/recursos/`) + 3 `page-child` (kunakpedia · documentos-cientificos · preguntas-frecuentes)",
+    detalle: contraste,
+  },
   forma: {
     profundidadMaxima: profundidad,
     terminosConPadre: conPadre.length,
@@ -519,6 +595,14 @@ for (const r of porTaxonomia.values())
       `${String(r.conPadre).padStart(2)} con padre · profundidad ${r.profundidad}`,
   );
 
+console.log(`\n  ── vía 4: «¿término o página?», y su CONTRASTE ──`);
+console.log(`   términos con <body class="archive …">  ${casos.cuerpoArchivo}/${terminos.filter((t) => t.capturado).length}`);
+console.log(
+  `   vecinos bajo /recursos/ que son PÁGINA  ${contrastePagina.length}/${contrasteLeido.length}  (el padre \`page-parent\` + sus 3 \`page-child\`)`,
+);
+for (const c of contraste)
+  console.log(`     · ${c.url.padEnd(40)} ${c.capturado ? (c.esArchivo ? "archive" : c.esPagina ? "page" : "(ninguno)") : "SIN CAPTURA"}`);
+
 console.log(`\n  ── la forma ──`);
 console.log(`   profundidad máxima ......... ${profundidad}`);
 console.log(`   términos con padre ......... ${conPadre.length} de ${evaluables.length} capturados`);
@@ -570,6 +654,20 @@ if (modeladasSinLeer.length) {
       `   Con sólo hijas delante, «derivar de la jerarquía» y «cablear el segmento» dan\n` +
       `   la misma salida, y elegir uno nombraría una variable AL AZAR (§DOS VARIABLES\n` +
       `   CONFUNDIDAS). El modelo queda SIN PROBAR, no probado.`,
+  );
+  codigo = 2;
+} else if (!contrastePagina.length) {
+  console.log(
+    `\n⛔ La vía 4 no SEPARA: 0 de ${contrasteLeido.length} vecinos bajo /recursos/ salen como PÁGINA.\n` +
+      `   Un token que casa en todo lo que mira no es un discriminador — y la pregunta\n` +
+      `   «¿archivo de término o página propia?» se estaría contestando con un pleno.`,
+  );
+  codigo = 2;
+} else if (casos.cuerpoArchivo !== terminos.filter((t) => t.capturado).length) {
+  console.log(
+    `\n⛔ ${terminos.filter((t) => t.capturado).length - casos.cuerpoArchivo} término(s) leídos SIN <body class="archive">.\n` +
+      `   O el censo metió algo que no es un término, o la vía 4 dejó de casar. En los dos\n` +
+      `   casos el cruce (b) estaría clasificando páginas como taxonomía.`,
   );
   codigo = 2;
 } else if (fallaH.length) {

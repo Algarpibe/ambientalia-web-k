@@ -1,15 +1,188 @@
-# HANDOFF — `LISTADO-B` construido y verificado en 2 de sus 3 variantes; la decisión de `padre` queda escrita y sin empezar
+# HANDOFF — `padre` DECIDIDO (`D2.8`): se modela la jerarquía y la ruta se deriva; `L1-resources` queda desbloqueada y sin empezar
 
-> ✅ **Tanda de CONSTRUCCIÓN, 2026-08-13 (66.ª). PASOS 0 · 1 · 2 · 3 · 4 · 5
-> completos.** `L1-blog` y `L1-etiqueta` pasan de **AUSENTES** a **PARES
-> COMPARADOS** contra el original vivo, a 1440 y 390. `L1-resources` queda fuera
-> con su razón escrita —le falta la decisión de esquema de `padre`, que **no es
-> de esta tanda** y va abajo con sus dos preguntas—. Registro: `PENDIENTES-QA.md`
-> (§F3-LH-CIERRE-66 · §F3-LH-ALCANCE-DECLARADO · §F3-LH-VACIAS-NO-EMITIDAS) ·
-> `ESQUEMA-CMS.md` §2c.2 · `listados-hubs/DECISIONES.md` §*D1 se implementa* ·
-> `COBERTURA-MEDICION.md` · `PLAN-FASE-3.md` §F3-2 · `CLAUDE.md` (3 reglas).
+> ✅ **Tanda de DECISIÓN, 2026-08-14 (67.ª). PASOS 0 · 1 · 2 · 3 · 4 · 5
+> completos. NADA CONSTRUIDO, a propósito.** La decisión que §0b de la 66.ª dejó
+> escrita se toma **sin escalar**, porque el precedente `D2.4`/`D2.5` la cubre y
+> los cuatro escalones del encargo **miden 0**. Registro:
+> `listados-hubs/DECISIONES.md` §**D2.8** · `ESQUEMA-CMS.md` §**2c.3** ·
+> `PENDIENTES-QA.md` (§F3-LH-JERARQUIA-RECURSOS **cerrada** + 3 fichas nuevas) ·
+> `PLAN-FASE-3.md` §F3-2 · `COBERTURA-MEDICION.md` (no se movió, y por qué) ·
+> `packages/cms-config/…/taxonomias.ts` · **`CLAUDE.md` (2 reglas)**.
+>
+> **Verificación:** `qa:lh-jerarquia` **38/38** con negativo **4/4** ·
+> `qa:lib` **93/93** (**165** sondas) · `npm run check` **exit 0**, 348/348
+> páginas estáticas · línea base congelada a los dos anchos, **345/345 rutas**.
 
 ## 0 · Los titulares
+
+> **1 · LA PREGUNTA QUE «EL DATO NO SEPARABA» LA SEPARA OTRO CANAL DEL MISMO
+> DOCUMENTO.** §0b escribió, con la evidencia delante, *«las dos lecturas
+> producen las mismas 80 tarjetas, así que el dato no las separa»*. Es cierto
+> **del canal de las tarjetas** y falso del documento:
+> `/es/recursos/articulos/` sirve `<body class="archive tax-resources
+> term-articulos term-379">` y sus **tres hermanos** bajo `/recursos/`
+> —`kunakpedia`, `documentos-cientificos`, `preguntas-frecuentes`— sirven
+> `page-child`. Es un **ARCHIVO DE TÉRMINO**, dicho por el original, con su
+> contraste en el mismo directorio.
+>
+> **La regla que deja, y es de método:** §El principio con el matiz de
+> 2026-08-10 — *la salida servida tiene MÁS DE UN CANAL*. **Antes de declarar
+> que un discriminador no existe hay que decir qué canales se miraron**; «el
+> dato no separa» sin esa lista es una afirmación sobre el canal que se miró,
+> no sobre el dato.
+>
+> **2 · LA FORMA, QUE ES LO QUE FALTABA — la EXISTENCIA ya estaba.** `qa:lh-jerarquia`
+> (nueva, negativo **4/4**) censa **5 taxonomías · 38 términos** del corpus
+> congelado: profundidad **2** · **1** padre · **0** términos con dos padres ·
+> **0** tercer nivel · **1 de 5** taxonomías con jerarquía. Y cada vía con **su
+> propio** denominador, no con uno solo: miga 35/38 · padre-en-miga 8/35 · chips
+> 9/35 · URL de dos segmentos 8/38 · `<body>` de archivo **35/35**.
+>
+> **3 · LA DIRECCIÓN CONTRARIA, CONTESTADA: el esquema NO está
+> sobre-generalizado.** `padre` se declara en **1 de 4** colecciones de taxonomía
+> y es **exactamente** la única que el original hace jerárquica. **0 celdas** «el
+> esquema admite un valor que el original no produce». Eso es una respuesta, no
+> una ausencia de respuesta, y por eso va con su cruce entero.
+>
+> **4 · EL MODELO DE RUTA SE PONE A PRUEBA, NO SE ELIGE.** `ruta = <prefijo> +
+> [padre] + slug` acierta **35/35**, y hay **2 términos que SEPARAN** este modelo
+> del de cablear el prefijo: `articulos` y `seminarios-web` son de primer nivel,
+> donde derivar predice **un** segmento y cablear predice dos. Sin ellos los dos
+> modelos serían indistinguibles y elegir uno nombraría **una variable al azar**.
+> El control del negativo lo comprueba: `separadores > 0` es condición de verde.
+>
+> **5 · EL PADRE CABLEADO NO ES UN RIESGO FUTURO: YA ESTÁ COBRANDO.**
+> `extractor-a.mjs` busca el término por el prefijo literal `recursos/articulos`,
+> así que una entrada cuyo término es de PRIMER NIVEL pierde su `recurso` en
+> silencio. Reparto medido sobre las 149 del corpus —**66** sólo blog · **81**
+> bajo hija · **2** bajo término de primer nivel— y la DB lo confirma al par
+> (81 / 68).
+>
+> **Y con eso queda NOMBRADA la mitad anónima de §F3-LH-DOS-CONJUNTOS-DE-149**,
+> que llevaba escrito *«2 en la DB sin `recurso`… (los que compensan el
+> recuento)»* sin decir quiénes. Son las 2 de `seminarios-web`, y **el mecanismo
+> es éste**. El cardinal `68 = 68` salía exacto porque **los 2 que sobraban
+> compensaban a los 2 que faltaban por captura** — dos defectos distintos
+> anulándose en un número.
+>
+> **6 · POBLAR `padre` NO MUEVE NINGUNA RUTA, Y SE DERIVÓ EN VEZ DE RAZONARSE.**
+> Quien lee la jerarquía en el clon son **2 líneas**, y las dos la tienen
+> **cableada** (`app/[slug]/page.tsx:134-135`). Lo que sí mueve contenido es
+> arreglar el extractor: **9 rutas ya emitidas** —`/blog/page/2` … `/blog/page/8`
+> y las 2 de `/[slug]` cuya miga pasa de 4 eslabones a 3— **y 0 añadidas o
+> quitadas**. Es re-emisión, y la línea base queda congelada en
+> `clon-base-{1440,390}-f33-padre-antes`.
+>
+> ⚠ **Y el arreglo NO deja `/blog` correcto: lo deja HONESTAMENTE incompleto** —
+> de «68 con 2 equivocadas» a «66 con 2 que faltan por capturar». **El recuento
+> empeora y la fidelidad mejora**, y quien mire sólo el número leerá lo
+> contrario.
+
+## 0b · LO SIGUIENTE, escrito y NO empezado — en orden de valor
+
+**1 · `L1-resources`, sus 4 formas.** Ya no hay decisión pendiente: hay que
+**sembrar** (los 2 términos + `padre` en las 8 + las 3 entradas de
+`seminarios-web`) y **construir**. Y con ellas se ejercita **por primera vez el
+camino `4_4`-sin-barra** que `ListadoB.tsx` ya implementa y que hoy está
+declarado **SIN EJERCITAR** (`DECISIONES.md` §D1 se implementa, (b)).
+
+▸ *El orden que la decisión impone:* sembrar **antes** de construir, y arreglar
+el extractor **antes** de sembrar — si no, las 3 entradas de `seminarios-web`
+siguen sin `recurso` y el listado saldría vacío con la taxonomía llena.
+
+▸ *Y su re-emisión va con su medida:* la línea base está congelada; el
+antes/después es `clon-base --cmp` a los dos anchos, y **se espera que 9 rutas
+se muevan**. Que se muevan **exactamente esas 9** es la comprobación; que se
+mueva una décima es un hallazgo.
+
+**2 · Las 55 rutas vacías de `D2.5`**, que son la parte gorda de las 99 que
+faltan (43 emitidas contra 142). Su frontera la decide **el servidor de
+WordPress** y NO se deriva del contenido del clon: está fichada con sus dos
+salidas (§F3-LH-VACIAS-NO-EMITIDAS) y es una tanda propia.
+
+**3 · Los 144 residuos de CASCARÓN** —cabecera y pie que no son `.et_pb_section`
+en el clon—, que `c-cmp` ya midió en 31 rutas y que **resolverlos mueve 345**.
+Tanda propia, con su línea base.
+
+**4 · Y los residuos sub-píxel (6 y 5) están SIN PROBAR, no limpios.** Esas
+rutas **no tienen campaña de ruido**, y llamarlos limpios sería exactamente el
+error que §*un suelo se publica con su FORMA* tiene fichado.
+
+**5 · Tres fichas nuevas que esta tanda abre y no cierra:**
+§F3-LH-EXTRACTOR-PREFIJO-CABLEADO (la re-emisión de 9 rutas) ·
+§F3-LH-PUERTOS-1-DE-2 (una entrada nombra su término y el archivo no la lista;
+se ficha para que no se persiga) · §F3-LH-SECTOR-SIN-ARCHIVO (3 de 9 archivos
+sin capturar, con la fracción en la que descansa la lectura «plana»).
+
+## 0bis · Lo que hay que saber para la siguiente tanda
+
+- ▶ **`D2.8` NO añade ni un campo.** La ruta es **plantilla**: un helper
+  `rutaTermino(t)` al lado de `rutaDocumento(t)`. Un `prefijo` por término sería
+  una segunda fuente de verdad, y el precedente contrario ya está escrito en
+  `productos.pagina`.
+- ⚠ **`/recursos/` NO es un listado**: 0 tarjetas, 0 chips, y `/recursos/page/2/`
+  **canonicaliza a `/es/recursos/`** — o sea *«no soy una ruta»* por la misma
+  regla de `D2.4`, que aquí da **la misma respuesta**. No se emite como listado.
+- ⚠ **Profundidad > 2: DECLARADA SIN EJERCITAR**, no prohibida. El esquema la
+  admite y el original no la produce (§F2-5-ESCALON-ETIQUETAS). Prohibirla sería
+  inventar una regla que ninguna instancia ha probado.
+- **La cobertura NO se movió** —345 rutas, matriz idéntica— y es **por
+  construcción**: esta tanda no comparó geometría ni emitió ruta. Escrito
+  después de mirarlo.
+- **Sondas: 165.** `qa:lib` **93/93**.
+
+## 1 · Sondas e instrumentos nuevos
+
+| instrumento | qué contesta | negativos |
+|---|---|---|
+| **`qa:lh-jerarquia`** | la **FORMA** de la jerarquía por 4 vías con su denominador, el cruce esquema↔original en las dos direcciones, y la consecuencia de enrutado derivada del manifiesto y del árbol | **4/4** |
+
+**Los cuatro sabotajes, y qué protege cada uno:** `control` (exige padre > 0,
+profundidad ≥ 2, **separadores > 0** y ≥1 vecino marcado PÁGINA) · `sin-corpus`
+(TIRA sin la fuente del denominador, en vez de censar menos y seguir verde) ·
+`via-muerta` (TIRA si el selector de la miga no casa, en vez de decir «no hay
+jerarquía») · `ruta-cableada` (si el modelo derivado no reproduce las URL, sale
+con los términos **nombrados**).
+
+## 2 · Lo que esta tanda aprendió sobre el método
+
+**(a) «El dato no lo separa» es una afirmación sobre UN canal.** Y se escribió
+con la evidencia delante, que es lo que la hace instructiva: las 80 tarjetas
+efectivamente no separan nada. Lo que faltaba no era medir más, era **enumerar
+los canales** — igual que §EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE
+EL ESQUEMA DECLARA, pero aplicado a un discriminador en vez de a un asset.
+
+**(b) Un modelo se elige por lo que lo SEPARA de su alternativa, no por lo que
+acierta.** «H acierta 35/35» es verdad y no decide nada: en las 8 hijas H y el
+cableado dan la **misma** salida. Lo que decide son los **2** términos de primer
+nivel. Por eso el número que la sonda publica —y que su control exige— es
+`separadores`, no `aciertos`.
+
+**(c) Una comprobación retroactiva se enmarca en las dos direcciones, y aquí la
+contraria dio 0 — que también es un resultado.** «0 sobre-generalizaciones» sólo
+vale como respuesta si se enseña el cruce entero: 4 colecciones, 5 taxonomías,
+las cuatro celdas nombradas. Sin la tabla, un 0 se lee igual que no haber
+mirado.
+
+**(d) Dos defectos distintos pueden compensarse dentro de un CARDINAL, y sólo
+salen al nombrar los elementos.** `68 = 68` escondía **2 huecos de captura** y
+**2 pérdidas del extractor**. La ficha de la 65.ª ya había visto la mitad; la
+otra mitad necesitaba cruzar **por la forma de la cadena de miga**, que es una
+unidad que ningún recuento tiene.
+
+**Las dos que subieron a `CLAUDE.md`** (§regla 12: quítale la fecha y el nombre
+propio; si sigue diciendo qué hacer, es regla):
+
+1. **DOS MODELOS QUE PREDICEN LO MISMO EN TODO TU DOMINIO SON UNO SOLO** — en
+   §DOS VARIABLES CONFUNDIDAS, porque es la misma álgebra aplicada a un modelo
+   en vez de a una variable. Se publica `separadores` al lado de `aciertos`, y
+   el control en negativo exige `separadores > 0`;
+2. **una afirmación de que un discriminador NO EXISTE se escribe con la lista de
+   canales que se miraron** — en §El principio, al lado del caso del CSS
+   compilado. Sin esa lista llega a la tanda siguiente **blindada**, porque
+   parece el resultado de una medición.
+
+## 0 · Los titulares (66.ª tanda — histórico)
 
 > **1 · EL DENOMINADOR SE ESCRIBIÓ ANTES DE CONSTRUIR, Y SE CUMPLIÓ AL PAR.**
 > `qa:lh-alcance` (nueva, negativo 3/3) censó el universo del espejo **antes de
@@ -61,7 +234,13 @@
 > explicación con mecanismo y dos casos a favor se parece muchísimo a una medida,
 > y la única diferencia es EL DENOMINADOR.*
 
-## 0b · LO SIGUIENTE, escrito y NO empezado: la decisión de esquema de `padre`
+## 0b · (histórico, ✅ RESUELTO) LO SIGUIENTE, escrito y NO empezado: la decisión de esquema de `padre`
+
+> ✅ **Contestado el 2026-08-14 con `D2.8`** — arriba, §0 de la 67.ª. Se conserva
+> **verbatim** porque la tanda de decisión trabajó estas dos preguntas tal como
+> están escritas, y porque la primera **hay que leerla junto a su corrección**:
+> *«el dato no las separa»* es cierto del canal de las tarjetas y falso del
+> documento. El `<body class>` las separa.
 
 **No falta extracción — falta una decisión que nadie ha escrito**, y va a tanda
 de decisión con estas dos preguntas por delante:

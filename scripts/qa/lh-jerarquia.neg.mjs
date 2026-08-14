@@ -11,7 +11,7 @@
  *
  * | sabotaje | cae por | y NO por |
  * |---|---|---|
- * | (control) | censa 38 términos, encuentra padre en ≥1 y **≥1 separador** | «0 con padre», que se lee como «el original es plano» |
+ * | (control) | censa 38 términos, encuentra padre en ≥1, **≥1 separador** y **≥1 vecino que es PÁGINA** | «0 con padre», que se lee como «el original es plano» |
  * | `sin-corpus` | **TIRA** sin la fuente del denominador | censar menos términos y seguir en verde |
  * | `via-muerta` | **TIRA** con la vía nombrada | «0 términos con padre» = «no hay jerarquía» |
  * | `ruta-cableada` | **falla con los términos nombrados** | tragarse que el modelo derivado no reproduce las URL |
@@ -55,6 +55,8 @@ const casos = [
         return "ninguna colección declara 'padre' según la lectura del esquema: el cruce (b) sería un cero sin haber leído";
       if (!j.enrutado || j.enrutado.consumidoresDeLaJerarquiaEnElClon === undefined)
         return "sin el censo de consumidores: la consecuencia de enrutado quedaría razonada y no derivada";
+      if (!j.via4Contraste || !(j.via4Contraste.vecinosQueSonPAGINA > 0))
+        return "la vía 4 no separa: sin un vecino marcado PÁGINA, «archivo de término» sería un pleno y no un discriminador";
       return null;
     },
   },

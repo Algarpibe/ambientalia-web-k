@@ -46,7 +46,37 @@ export const etiquetas: CollectionConfig = {
   ],
 };
 
-/** `resources`, **jerárquica** — 10 términos (2 padres + 8 hijas). */
+/**
+ * `resources`, **jerárquica** — 10 términos: 2 de primer nivel (`articulos` ·
+ * `seminarios-web`) y 8 hijas de `articulos`.
+ *
+ * ── El contrato de `padre`, decidido en `D2.8` (2026-08-14) ───────────────
+ * Evidencia: `qa:lh-jerarquia` (negativo 4/4), `medidas/lh-jerarquia.json` —
+ * censo de 5 taxonomías y 38 términos sobre el corpus congelado.
+ *
+ *   · **`padre` se puebla**: 8 de 10 con `articulos`; `null` en los 2 de primer
+ *     nivel, y ese `null` es un valor **medido**, no un hueco de siembra;
+ *   · **la RUTA es plantilla, no campo**: `ruta(t) = /recursos/ + [padre.slug] +
+ *     t.slug` acierta **35/35**. Añadir un `prefijo` por término sería una
+ *     segunda fuente de verdad — el precedente contrario está escrito en
+ *     `productos.pagina`;
+ *   · **un padre como mucho** (sin `hasMany`): el original produce **0**
+ *     términos con dos padres en 35;
+ *   · **profundidad 2 medida**; la relación a sí misma admite más y eso queda
+ *     **DECLARADO SIN EJERCITAR** (§F2-5-ESCALON-ETIQUETAS). No se prohíbe:
+ *     prohibirlo sería inventar una regla que ninguna instancia ha probado.
+ *
+ * ⚠ **Y `padre` NO está sobre-generalizado**, que es la mitad que casi nadie
+ * comprueba: se declara en **1 de 4** colecciones de taxonomía y es exactamente
+ * la única que el original hace jerárquica (`etiquetas` 12, `categoriasCientificas`
+ * 3 y `categorias` 4 son planas, medidas).
+ *
+ * ⚠ **Lo que esto NO arregla, y hay que arreglar aparte**: `extractor-a.mjs`
+ * busca el término por el prefijo literal `recursos/articulos`, así que las 2
+ * entradas cuyo `recurso` es de primer nivel pierden el campo
+ * (§F3-LH-EXTRACTOR-PREFIJO-CABLEADO). Es un defecto de DATO, no de esquema, y
+ * arreglarlo mueve el contenido de 9 rutas ya emitidas.
+ */
 export const categoriasRecursos: CollectionConfig = {
   slug: "categorias-recursos",
   admin: { useAsTitle: "nombre", group: "Taxonomías" },

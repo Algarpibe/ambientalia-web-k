@@ -844,6 +844,24 @@ no lo usa**: es medir al nivel que absorbe, con una medida real como coartada.
 Lo servido dice que el editor tocó la tipografía **en 89 sitios** de esos 85
 módulos.
 
+> ⚠ **Y su forma de REDACCIÓN, que es donde este cero se cuela sin que nadie lo
+> note (2026-08-14, F3-2):** el enunciado peligroso no es *«no existe»* — es
+> **«el dato no lo separa»**, porque suena a haber mirado el dato entero.
+>
+> **Toda afirmación de que un discriminador NO EXISTE se escribe con la lista de
+> canales que se miraron.** Sin esa lista es una afirmación sobre el canal que
+> se miró, no sobre el dato — y llega a la tanda siguiente **blindada**, porque
+> parece el resultado de una medición.
+>
+> Medido: *«las dos lecturas producen las mismas 80 tarjetas, así que el dato no
+> las separa»* era **cierto del canal de las tarjetas** y falso del documento.
+> El mismo HTML servía `<body class="archive tax-resources term-articulos">` en
+> la página en cuestión y `page-child` en sus tres hermanas del mismo
+> directorio: **el discriminador estaba servido, con su contraste al lado**, y
+> la frase lo dio por inexistente durante dos tandas. Es §sondas 4 —*un selector
+> que no casa con nada no es un cero*— cobrada sobre **la prosa** en vez de sobre
+> el código.
+
 ⚠ **Y la quinta tiene una hermana pequeña que se paga al TRANSCRIBIR CSS, y son
 tres cosas que «la salida servida» incluye y nadie mira (2026-08-13):**
 
@@ -1113,6 +1131,36 @@ dominio agrupando por Y contesta la pregunta en una línea.
 > ajustada, BARRE el parámetro** en vez de razonarlo. Aquí fue un bucle de 250 a
 > 300 en las dos unidades — y de paso dijo que **268 y 269 son indistinguibles
 > con n = 6**, que es información que ninguna deducción iba a dar.
+
+⚠ **Y la MISMA álgebra aplicada a un MODELO en vez de a una regla: DOS MODELOS
+QUE PREDICEN LO MISMO EN TODO TU DOMINIO SON UNO SOLO (2026-08-14, F3-2).**
+
+La regla de arriba protege de nombrar **una variable** al azar. Ésta protege de
+elegir **un modelo** al azar, y su síntoma es distinto: no es un enunciado
+sospechoso, es un **porcentaje de acierto altísimo**.
+
+> **Un modelo se elige por lo que lo SEPARA de su alternativa, no por lo que
+> acierta.** Antes de decidir, cuenta las **instancias SEPARADORAS** —aquéllas
+> en las que los dos candidatos predicen cosas distintas— y **publica ese
+> número al lado del acierto**. Si son cero, no has elegido: has escrito uno de
+> los dos.
+
+**Medido:** para la ruta de un término había dos modelos —**derivarla** de la
+jerarquía (`prefijo + [padre] + slug`) o **cablear el prefijo**—. El derivado
+acierta **35/35**, y ese número no decide nada: en las **8 hijas** los dos dan
+exactamente la misma URL. Lo que decide son los **2** términos de **primer
+nivel**, donde derivar predice **un** segmento y cablear predice **dos**. O sea
+que el denominador real de la elección es **2**, no 35.
+
+**Y el coste de no contarlos ya estaba cobrado en el árbol:** `extractor-a.mjs`
+había elegido «cablear» —busca el término por el literal `recursos/articulos`— y
+por eso **2 de 149** entradas pierden su campo en silencio. El modelo equivocado
+no dio error: dio **81 aciertos**.
+
+**Operativamente**, y cuesta una línea: la sonda que compara los dos modelos
+publica `separadores` junto a `aciertos`, y **su control en negativo exige
+`separadores > 0`** — si no, el veredicto es *SIN PROBAR*, no *probado*
+(`qa:lh-jerarquia`).
 
 ⚠ **Y el tercer caso de la misma familia, que es el que se cuela porque parece
 resuelto: UN DISCRIMINADOR 1:1 PUEDE SER LA SOMBRA DE OTRO (2026-08-10, F3-1).**

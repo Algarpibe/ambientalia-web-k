@@ -46,7 +46,69 @@
     "miga": 35,
     "padreEnMiga": 8,
     "chips": 9,
-    "dosSegmentos": 8
+    "dosSegmentos": 8,
+    "cuerpoArchivo": 35
+  },
+  "via4Contraste": {
+    "queSepara": "«archivo de término» de «página», en el MISMO directorio del original",
+    "terminosConCuerpoDeArchivo": "35/35",
+    "vecinosLeidos": 4,
+    "vecinosQueSonPAGINA": 4,
+    "reparto": "1 `page-parent` (`/es/recursos/`) + 3 `page-child` (kunakpedia · documentos-cientificos · preguntas-frecuentes)",
+    "detalle": [
+      {
+        "url": "/es/recursos/",
+        "capturado": true,
+        "esArchivo": false,
+        "esPagina": true,
+        "tokens": [
+          "page-template-default",
+          "page",
+          "page-id-33166",
+          "page-parent",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      {
+        "url": "/es/recursos/kunakpedia/",
+        "capturado": true,
+        "esArchivo": false,
+        "esPagina": true,
+        "tokens": [
+          "page-template-default",
+          "page",
+          "page-id-33769",
+          "page-child",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      {
+        "url": "/es/recursos/documentos-cientificos/",
+        "capturado": true,
+        "esArchivo": false,
+        "esPagina": true,
+        "tokens": [
+          "page-template-default",
+          "page",
+          "page-id-61902",
+          "page-child",
+          "et_pb_pagebuilder_layout"
+        ]
+      },
+      {
+        "url": "/es/recursos/preguntas-frecuentes/",
+        "capturado": true,
+        "esArchivo": false,
+        "esPagina": true,
+        "tokens": [
+          "page-template-default",
+          "page",
+          "page-id-65877",
+          "page-child",
+          "et_pb_pagebuilder_layout"
+        ]
+      }
+    ]
   },
   "forma": {
     "profundidadMaxima": 2,
@@ -238,7 +300,20 @@
         "/es/",
         "/es/recursos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-articulos",
+          "term-379",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "articulos"
+      }
     },
     {
       "taxonomia": "resources",
@@ -268,7 +343,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-en-la-construccion",
+          "term-399",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "contaminacion-en-la-construccion"
+      }
     },
     {
       "taxonomia": "resources",
@@ -298,7 +386,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-en-puertos-y-aeropuertos",
+          "term-400",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "contaminacion-en-puertos-y-aeropuertos"
+      }
     },
     {
       "taxonomia": "resources",
@@ -328,7 +429,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-minera",
+          "term-395",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "contaminacion-minera"
+      }
     },
     {
       "taxonomia": "resources",
@@ -358,7 +472,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-urbana",
+          "term-393",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "contaminacion-urbana"
+      }
     },
     {
       "taxonomia": "resources",
@@ -388,7 +515,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-contaminacion-y-salud",
+          "term-394",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "contaminacion-y-salud"
+      }
     },
     {
       "taxonomia": "resources",
@@ -418,7 +558,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-petroleo-y-gas",
+          "term-607",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "petroleo-y-gas"
+      }
     },
     {
       "taxonomia": "resources",
@@ -448,7 +601,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-industria-y-contaminacion-por-olores",
+          "term-397",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "industria-y-contaminacion-por-olores"
+      }
     },
     {
       "taxonomia": "resources",
@@ -478,7 +644,20 @@
         "/es/recursos/",
         "taxonomia padre|/es/recursos/articulos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-productos-kunak",
+          "term-396",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "productos-kunak"
+      }
     },
     {
       "taxonomia": "resources",
@@ -496,7 +675,20 @@
         "/es/",
         "/es/recursos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-resources",
+          "term-seminarios-web",
+          "term-384",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "resources",
+        "terminoDeclarado": "seminarios-web"
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -514,7 +706,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -532,7 +734,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -550,7 +762,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -568,7 +790,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -586,7 +818,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -604,7 +846,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -622,7 +874,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -640,7 +902,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -658,7 +930,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -676,7 +958,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -694,7 +986,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "post_tag",
@@ -712,7 +1014,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "scientific-category",
@@ -730,7 +1042,19 @@
         "/es/",
         "/es/recursos/documentos-cientificos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-scientific-category",
+          "term-articulos-cientificos-y-estudios",
+          "term-529"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "scientific-category",
+        "terminoDeclarado": "articulos-cientificos-y-estudios"
+      }
     },
     {
       "taxonomia": "scientific-category",
@@ -748,7 +1072,19 @@
         "/es/",
         "/es/recursos/documentos-cientificos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-scientific-category",
+          "term-articulos-tecnicos",
+          "term-673"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "scientific-category",
+        "terminoDeclarado": "articulos-tecnicos"
+      }
     },
     {
       "taxonomia": "scientific-category",
@@ -766,7 +1102,19 @@
         "/es/",
         "/es/recursos/documentos-cientificos/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-scientific-category",
+          "term-evaluaciones-independientes",
+          "term-528"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "scientific-category",
+        "terminoDeclarado": "evaluaciones-independientes"
+      }
     },
     {
       "taxonomia": "category",
@@ -784,7 +1132,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "category",
@@ -802,7 +1160,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "category",
@@ -820,7 +1188,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "category",
@@ -838,7 +1216,17 @@
         "/es/",
         "/es/blog/",
         "categoria|(sin href)"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": null,
+        "terminoDeclarado": null
+      }
     },
     {
       "taxonomia": "sector",
@@ -854,7 +1242,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-edar",
+          "term-365",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "edar"
+      }
     },
     {
       "taxonomia": "sector",
@@ -896,7 +1297,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-metalurgia",
+          "term-219",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "metalurgia"
+      }
     },
     {
       "taxonomia": "sector",
@@ -912,7 +1326,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-oil-gas-es",
+          "term-368",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "oil-gas-es"
+      }
     },
     {
       "taxonomia": "sector",
@@ -928,7 +1355,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-olores",
+          "term-518",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "olores"
+      }
     },
     {
       "taxonomia": "sector",
@@ -944,7 +1384,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-puertos",
+          "term-222",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "puertos"
+      }
     },
     {
       "taxonomia": "sector",
@@ -960,7 +1413,20 @@
       "hijasSegunChips": [],
       "miga": [
         "/es/"
-      ]
+      ],
+      "cuerpo": {
+        "tokens": [
+          "archive",
+          "tax-sector",
+          "term-sports",
+          "term-606",
+          "et-tb-has-body"
+        ],
+        "esArchivo": true,
+        "esPagina": false,
+        "taxonomiaDeclarada": "sector",
+        "terminoDeclarado": "sports"
+      }
     },
     {
       "taxonomia": "sector",

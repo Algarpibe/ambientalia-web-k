@@ -1,5 +1,18 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⏸ **NO SE MOVIÓ el 2026-08-14 (67.ª tanda, la de la DECISIÓN de `padre`), y
+> es POR CONSTRUCCIÓN — escrito después de mirarlo, no supuesto.** La tanda no
+> emitió ninguna ruta (siguen **345**) ni comparó geometría: su instrumento
+> (`qa:lh-jerarquia`) es un **censo del corpus congelado** y un cruce con el
+> esquema, no un comparador de dos lados. **Acreditarle un eje sería §la
+> cobertura declarada al nivel de arriba con el contenedor más cómodo que hay:
+> el hecho de que la tanda midió algo.**
+>
+> Lo único que cambia es una **precondición** de la siguiente: la línea base del
+> clon a los dos anchos queda congelada en `clon-base-{1440,390}-f33-padre-antes`
+> (345 · 345 rutas), porque arreglar §F3-LH-EXTRACTOR-PREFIJO-CABLEADO **mueve
+> el contenido de 9 rutas ya emitidas**.
+
 > ✅ **RE-DERIVADA 2026-08-13 (66.ª tanda, la que CONSTRUYE `L1-blog` y
 > `L1-etiqueta`). La matriz SUBE en cinco ejes y el denominador sube con ella —
 > las dos cosas a la vez, que es lo que hay que leer junto.**
