@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
+    "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
+    "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
+    "sabotaje": null,
+    "noMide": [
+      "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
+      "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
+      "si los huecos son TODOS los que hay — es una lista de los encontrados al escribir el alcance, no un censo cerrado",
+      "el mecanismo de `larger page` de la piel B: lo ejercita UNA serie y no se deriva de n=1"
+    ]
+  },
+  "huecos": {
+    "barraDeTema": {
+      "pregunta": "¿`L2` sirve barra lateral? — `lh-barra.json` dice conBarra 0 de 12",
+      "canalDeLaMedidaVieja": "la partición de columnas de Divi (`et_pb_column_3_4` + `et_pb_widget_area`)",
+      "canalQueLoContesta": "`<body class=… et_right_sidebar>` + `#sidebar` hermano de `#left-area`",
+      "documentos": 12,
+      "conSidebar": 12,
+      "conColumnaDivi3_4EnElCuerpo": 0,
+      "conColumnaDivi3_4EnElDocumento": 12,
+      "firmasDeWidgets": 1,
+      "widgets": [
+        "widget_search",
+        "widget_text",
+        "widget_text"
+      ],
+      "titulos": [
+        "Buscar",
+        "Categorías",
+        "¡Suscríbete a nuestra newsletter!"
+      ],
+      "veredicto": "SÍ hay barra, la misma en las 12 (varianza 0 ⇒ plantilla de la familia). Las DOS medidas son ciertas y contestan preguntas distintas."
+    },
+    "bandaDelContenedor": {
+      "pregunta": "¿qué hay entre el contenedor del tema y la primera tarjeta de `L2`?",
+      "porAncho": {
+        "390": [
+          {
+            "forma": "L2-glosario",
+            "ancla": 194.58,
+            "cabecera": 136.58,
+            "contenedorTema": 136.58,
+            "banda": 58
+          },
+          {
+            "forma": "L2-faqs",
+            "ancla": 194.58,
+            "cabecera": 136.58,
+            "contenedorTema": 136.58,
+            "banda": 58
+          }
+        ],
+        "1440": [
+          {
+            "forma": "L2-glosario",
+            "ancla": 283,
+            "cabecera": 225,
+            "contenedorTema": 225,
+            "banda": 58
+          },
+          {
+            "forma": "L2-faqs",
+            "ancla": 283,
+            "cabecera": 225,
+            "contenedorTema": 225,
+            "banda": 58
+          }
+        ]
+      },
+      "valoresDistintos": [
+        58
+      ],
+      "veredicto": "58 px, IGUALES a 1440 y a 390 — px absolutos: la spec los tiene en sus dos números y no los nombra"
+    },
+    "ventanaPielB": {
+      "pregunta": "¿qué números pinta la piel B? — el componente emitía TODAS de n+1 a total",
+      "instancias": 43,
+      "totalesDistintos": [
+        2,
+        3,
+        4,
+        8,
+        11
+      ],
+      "separadoras": 19,
+      "aciertaVentana5": 43,
+      "aciertaTodas": 24,
+      "secuenciaNuevaAcierta": 38,
+      "secuenciaViejaAcierta": 7,
+      "instanciasConLargerPageExcluidasDeLaSecuencia": 5,
+      "fallosDeSecuencia": [],
+      "conFirst": 13,
+      "conLast": 13,
+      "conLargerPage": 5,
+      "seriesConLargerPage": [
+        "etiqueta/monitorizacion-ambiental"
+      ],
+      "fallosDeLaVentana": []
+    },
+    "ordenDeL2": {
+      "pregunta": "¿qué ordena el archivo de CPT? — ninguna de las specs lo trata",
+      "canalesMirados": [
+        "<span class=\"fecha-publicacion\"> (el que usa `entradas-blog`)",
+        "JSON-LD `datePublished`",
+        "sitemap `<lastmod>`"
+      ],
+      "porForma": [
+        {
+          "forma": "L2-glosario",
+          "papel": "CONTROL",
+          "tarjetas": 37,
+          "conSpanFechaRenderizado": 0,
+          "conDatePublished": 37,
+          "datePublishedOrdenaDesc": true,
+          "conLastmod": 37,
+          "lastmodOrdenaDesc": false
+        },
+        {
+          "forma": "L2-faqs",
+          "papel": "el que se quiere contestar",
+          "tarjetas": 19,
+          "conSpanFechaRenderizado": 0,
+          "conDatePublished": 0,
+          "datePublishedOrdenaDesc": null,
+          "conLastmod": 19,
+          "lastmodOrdenaDesc": false
+        }
+      ],
+      "control": "`/glosario`: `datePublished` DESC reproduce el orden servido, así que el canal se sabe LEER",
+      "veredicto": "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` NO tiene ese canal, y `lastmod` NO ordena ni siquiera en el control ⇒ su orden NO es derivable de lo servido."
+    },
+    "bandaDeFiltros": {
+      "pregunta": "¿qué hay entre el `h1` y el listado en `L3` y `L5`? — ninguna spec lo nombra",
+      "filas": [
+        {
+          "forma": "L3-sci",
+          "ruta": "/scientific-category/articulos-cientificos-y-estudios",
+          "presente": true,
+          "botones": 3,
+          "etiqueta": "a",
+          "titulo": null,
+          "enLaSpec": false
+        },
+        {
+          "forma": "L3-sci",
+          "ruta": "/scientific-category/articulos-tecnicos",
+          "presente": true,
+          "botones": 3,
+          "etiqueta": "a",
+          "titulo": null,
+          "enLaSpec": false
+        },
+        {
+          "forma": "L5-casos",
+          "ruta": "/casos-de-exito",
+          "presente": true,
+          "botones": 12,
+          "etiqueta": "button",
+          "titulo": "Sectores",
+          "enLaSpec": false
+        }
+      ],
+      "pxEntreH1YListado": {
+        "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": 108.8,
+        "L5-casos::/es/casos-de-exito/": 210.6
+      },
+      "veredicto": "las TRES sirven banda de filtros. Está en la geometría congelada y no en la prosa: construir sin ella sube el listado."
+    }
+  }
+}

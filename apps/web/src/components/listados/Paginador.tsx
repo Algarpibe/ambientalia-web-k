@@ -138,35 +138,102 @@ function PielA({ n, total, href }: { n: number; total: number; href: (k: number)
 }
 
 /**
- * Piel **B** — `/etiqueta/*`. Trae `span.pages` («Page 1 of 4»), `span.current`,
- * `a.page.larger` para las siguientes y `a.nextpostslink` con `»`.
+ * La VENTANA de la piel B — **5 números**, y su borde se derivó del dominio
+ * entero, no de la instancia que había delante.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ ESTA FUNCIÓN NO EXISTÍA, Y NO PORQUE NADIE LA MIDIERA MAL (2026-08-14)
+ *
+ * La piel B se construyó pintando **todas** las páginas de `n+1` a `total`, y
+ * eso era exacto en todo lo que tenía delante: las instancias que la
+ * calibraron son `/etiqueta/calidad-del-aire` (**4** páginas) y
+ * `/preguntas-frecuentes` (**4**), y con `total ≤ 5` *«todas las siguientes»* y
+ * *«una ventana de 5 con `…` y `Last »`»* **producen exactamente el mismo
+ * HTML**. Dos modelos que predicen lo mismo en todo tu dominio son uno solo:
+ * el denominador de esa elección no era 4, era **0 instancias separadoras**.
+ *
+ * `/glosario` (**8**) las separa, y ahí se ve: el original **no** pinta 8
+ * números, pinta 5 con `« First`, `...` y `Last »`.
+ *
+ * ── Derivada de las 43 instancias capturadas, 5 totales (2·3·4·8·11) ──────
+ * | pieza | cuándo |
+ * |---|---|
+ * | ventana | **5 números**: `inicio = min(max(n−2, 1), total−4)`, `fin = inicio+4` |
+ * | `a.first` («&laquo; First») + `span.extend` delante | `inicio > 1` |
+ * | `span.extend` + `a.last` («Last &raquo;») detrás | `fin < total` |
+ * | `a.previouspostslink` / `a.nextpostslink` | `n > 1` / `n < total` |
+ * | clase del número | `page smaller` si `k < n`, `page larger` si `k > n` |
+ *
+ * Comprobado contra las **43**: reproduce las 5 combinaciones sin excepción.
+ *
+ * ⚠ **Y `larger page` se queda FUERA, con su razón y su denominador.** El
+ * original sirve además un salto a los múltiplos de 10 (`a.larger.page`), y
+ * eso lo ejercita **una sola serie** —`/etiqueta/monitorizacion-ambiental`,
+ * `total 11`—. Su borde cae entre `fin = 7` (lo pinta) y `fin = 8` (no), y
+ * **ese mecanismo no se deriva de una serie**: cualquier predicado que ajuste
+ * las 11 observaciones es §*un discriminador hallado en una sola instancia*.
+ * Ninguna de las formas que esta tanda construye lo alcanza —`/glosario` tiene
+ * 8 páginas y `/preguntas-frecuentes` 4, y el primer múltiplo de 10 queda
+ * fuera de las dos—, así que implementarlo sería estrenar un camino de render
+ * que **ningún dato de calibración ejercita**. Queda NOMBRADO en
+ * `PENDIENTES-QA.md` §F3-LH-PIELB-LARGER-PAGE.
+ */
+function ventanaB(n: number, total: number) {
+  const ANCHO = 5;
+  const inicio = Math.max(1, Math.min(Math.max(n - 2, 1), total - (ANCHO - 1)));
+  const fin = Math.min(total, inicio + ANCHO - 1);
+  return { inicio, fin };
+}
+
+/**
+ * Piel **B** — `/etiqueta/*` y `L2` (`/glosario` · `/preguntas-frecuentes`).
+ * Trae `span.pages` («Page 1 of 4»), `span.current`, los números de la ventana
+ * y `a.nextpostslink` con `»`.
  *
  * ⚠ El literal es **«Page N of M», en inglés, en un sitio en español**. Es una
  * errata del original y va *verbatim*: la regla 1 del proyecto dice textos tal
- * cual, erratas incluidas.
+ * cual, erratas incluidas. Lo mismo `« First` y `Last »`.
  */
 function PielB({ n, total, href }: { n: number; total: number; href: (k: number) => string }) {
+  const { inicio, fin } = ventanaB(n, total);
   return (
     <div className="wp-pagenavi" role="navigation">
       <span className="pages">
         Page {n} of {total}
       </span>
+      {/* `a.first` apunta al ÍNDICE, no a `…/page/1/` — el original lo sirve así
+          y además `/page/1/` es un 301 (medido en la piel C). */}
+      {inicio > 1 ? (
+        <a className="first" aria-label="First Page" href={href(1)}>
+          &laquo; First
+        </a>
+      ) : null}
       {n > 1 ? (
         <a className="previouspostslink" rel="prev" aria-label="Página anterior" href={href(n - 1)}>
           &laquo;
         </a>
       ) : null}
-      <span aria-current="page" className="current">
-        {n}
-      </span>
-      {Array.from({ length: total - n }, (_, i) => n + 1 + i).map((k) => (
-        <a key={k} className="page larger" title={`Página ${k}`} href={href(k)}>
-          {k}
-        </a>
-      ))}
+      {inicio > 1 ? <span className="extend">...</span> : null}
+      {Array.from({ length: fin - inicio + 1 }, (_, i) => inicio + i).map((k) =>
+        k === n ? (
+          <span key={k} aria-current="page" className="current">
+            {k}
+          </span>
+        ) : (
+          <a key={k} className={`page ${k < n ? "smaller" : "larger"}`} title={`Página ${k}`} href={href(k)}>
+            {k}
+          </a>
+        ),
+      )}
+      {fin < total ? <span className="extend">...</span> : null}
       {n < total ? (
         <a className="nextpostslink" rel="next" aria-label="Página siguiente" href={href(n + 1)}>
           &raquo;
+        </a>
+      ) : null}
+      {fin < total ? (
+        <a className="last" aria-label="Last Page" href={href(total)}>
+          Last &raquo;
         </a>
       ) : null}
     </div>
