@@ -1,0 +1,979 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "que": "La FORMA de la jerarquía de términos, medida por tres vías sobre el corpus congelado, y cruzada con lo que el esquema declara.",
+    "alcance": "5 taxonomías · 38 términos (29 de taxonomía MODELADA · 9 sin modelar) · corpus congelado (sin red, sin clon)",
+    "coberturaDeArchivos": {
+      "modeladas": "29/29",
+      "sinModelar": "6/9",
+      "sinArchivo": [
+        "/es/sector/industria/",
+        "/es/sector/investigacion-consultoria/",
+        "/es/sector/urbano/"
+      ]
+    },
+    "fuentes": [
+      {
+        "taxonomia": "resources",
+        "tipo": "sitemap",
+        "ruta": "corpus/fase-3/_sitemaps/resources-sitemap.xml"
+      },
+      {
+        "taxonomia": "post_tag",
+        "tipo": "sitemap",
+        "ruta": "corpus/fase-3/_sitemaps/post_tag-sitemap.xml"
+      },
+      {
+        "taxonomia": "scientific-category",
+        "tipo": "sitemap",
+        "ruta": "corpus/fase-3/_sitemaps/scientific-category-sitemap.xml"
+      },
+      {
+        "taxonomia": "category",
+        "tipo": "corpus",
+        "ruta": "corpus/fase-3/categoria/categoria"
+      },
+      {
+        "taxonomia": "sector",
+        "tipo": "corpus",
+        "ruta": "corpus/fase-3/taxonomia-sector/sector"
+      }
+    ],
+    "noMide": "geometría, el clon, ni el original en vivo",
+    "sabotaje": null
+  },
+  "vias": {
+    "miga": 35,
+    "padreEnMiga": 8,
+    "chips": 9,
+    "dosSegmentos": 8
+  },
+  "forma": {
+    "profundidadMaxima": 2,
+    "terminosConPadre": 8,
+    "padresDistintos": [
+      "articulos"
+    ],
+    "terminosConMasDeUnPadre": [],
+    "tercerNivel": [],
+    "dosSegmentosPorUrl": 8
+  },
+  "porTaxonomia": [
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "terminos": 10,
+      "capturados": 10,
+      "conPadre": 8,
+      "profundidad": 2
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "terminos": 12,
+      "capturados": 12,
+      "conPadre": 0,
+      "profundidad": 1
+    },
+    {
+      "taxonomia": "scientific-category",
+      "coleccion": "categorias-cientificas",
+      "terminos": 3,
+      "capturados": 3,
+      "conPadre": 0,
+      "profundidad": 1
+    },
+    {
+      "taxonomia": "category",
+      "coleccion": "categorias",
+      "terminos": 4,
+      "capturados": 4,
+      "conPadre": 0,
+      "profundidad": 1
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "terminos": 9,
+      "capturados": 6,
+      "conPadre": 0,
+      "profundidad": 1
+    }
+  ],
+  "modeloDeRuta": {
+    "hipotesis": "ruta(t) = <prefijo> + [padre.slug si lo hay] + t.slug",
+    "acierta": 35,
+    "de": 35,
+    "falla": [],
+    "separadores": [
+      "/es/recursos/articulos/",
+      "/es/recursos/seminarios-web/"
+    ],
+    "porQueImportanLosSeparadores": "en las hijas, derivar y cablear dan la MISMA salida; sólo un término de primer nivel de una taxonomía jerárquica los separa"
+  },
+  "direccionB": {
+    "cruce": [
+      {
+        "taxonomia": "resources",
+        "coleccion": "categorias-recursos",
+        "esquemaLoDeclara": true,
+        "originalLoProduce": true,
+        "celda": "OK · modelado y ejercido"
+      },
+      {
+        "taxonomia": "post_tag",
+        "coleccion": "etiquetas",
+        "esquemaLoDeclara": false,
+        "originalLoProduce": false,
+        "celda": "OK · plana en los dos lados"
+      },
+      {
+        "taxonomia": "scientific-category",
+        "coleccion": "categorias-cientificas",
+        "esquemaLoDeclara": false,
+        "originalLoProduce": false,
+        "celda": "OK · plana en los dos lados"
+      },
+      {
+        "taxonomia": "category",
+        "coleccion": "categorias",
+        "esquemaLoDeclara": false,
+        "originalLoProduce": false,
+        "celda": "OK · plana en los dos lados"
+      },
+      {
+        "taxonomia": "sector",
+        "coleccion": "(sin colección)",
+        "esquemaLoDeclara": false,
+        "originalLoProduce": false,
+        "celda": "OK · plana en los dos lados"
+      }
+    ],
+    "sobreGeneralizadas": [],
+    "sinExpresar": []
+  },
+  "enrutado": {
+    "rutasEmitidasTotal": 345,
+    "porQueNoHayManifiesto": null,
+    "rutasDeTerminosEmitidasHoy": [
+      "/etiqueta/calidad-del-aire",
+      "/etiqueta/co2-es",
+      "/etiqueta/contaminantes-atmosfericos",
+      "/etiqueta/cov",
+      "/etiqueta/emisiones-industriales",
+      "/etiqueta/gases-de-efecto-invernadero",
+      "/etiqueta/h2s-es",
+      "/etiqueta/malos-olores",
+      "/etiqueta/monitorizacion-ambiental",
+      "/etiqueta/normativa-de-calidad-del-aire",
+      "/etiqueta/particulas-en-suspension",
+      "/etiqueta/sensor-de-calidad-del-aire"
+    ],
+    "consumidoresDeLaJerarquiaEnElClon": [
+      {
+        "fichero": "apps/web/src/app/[slug]/page.tsx",
+        "linea": 134,
+        "texto": "{ label: \"Artículos y Guías\", href: `${O}/recursos/articulos/` },"
+      },
+      {
+        "fichero": "apps/web/src/app/[slug]/page.tsx",
+        "linea": 135,
+        "texto": "{ label: recurso.nombre, href: `${O}/recursos/articulos/${recurso.slug}/` },"
+      }
+    ],
+    "consumidoresCONELPADRECABLEADO": [
+      {
+        "fichero": "apps/web/src/app/[slug]/page.tsx",
+        "linea": 134,
+        "texto": "{ label: \"Artículos y Guías\", href: `${O}/recursos/articulos/` },"
+      },
+      {
+        "fichero": "apps/web/src/app/[slug]/page.tsx",
+        "linea": 135,
+        "texto": "{ label: recurso.nombre, href: `${O}/recursos/articulos/${recurso.slug}/` },"
+      }
+    ],
+    "consecuenciaYaCobrada": {
+      "denominador": "149 entradas de blog del corpus",
+      "soloBlog": 66,
+      "bajoHijaDeArticulos": 81,
+      "bajoTerminoDePRIMERNIVEL": [
+        {
+          "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+          "termino": "seminarios-web"
+        },
+        {
+          "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+          "termino": "seminarios-web"
+        }
+      ],
+      "sinMiga": 0,
+      "prefijoCableadoEnElExtractor": "recursos/articulos",
+      "queSignifica": "las entradas cuyo término de `resources` es de PRIMER NIVEL no casan con el prefijo literal del extractor, así que pierden su `recurso` y caen en /blog: el padre cableado ya está produciendo dato equivocado"
+    }
+  },
+  "terminos": [
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "articulos",
+      "url": "/es/recursos/articulos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 8,
+      "hijasSegunChips": [
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "contaminacion-en-la-construccion",
+      "url": "/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "contaminacion-en-puertos-y-aeropuertos",
+      "url": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "contaminacion-minera",
+      "url": "/es/recursos/articulos/contaminacion-minera/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "contaminacion-urbana",
+      "url": "/es/recursos/articulos/contaminacion-urbana/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "contaminacion-y-salud",
+      "url": "/es/recursos/articulos/contaminacion-y-salud/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "petroleo-y-gas",
+      "url": "/es/recursos/articulos/petroleo-y-gas/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "industria-y-contaminacion-por-olores",
+      "url": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "productos-kunak",
+      "url": "/es/recursos/articulos/productos-kunak/",
+      "segmentos": 2,
+      "capturado": true,
+      "padreSegunMiga": "articulos",
+      "padreSegunUrl": "articulos",
+      "nPadresEnMiga": 1,
+      "chips": 9,
+      "hijasSegunChips": [
+        "articulos",
+        "contaminacion-en-la-construccion",
+        "contaminacion-en-puertos-y-aeropuertos",
+        "contaminacion-minera",
+        "contaminacion-urbana",
+        "contaminacion-y-salud",
+        "petroleo-y-gas",
+        "industria-y-contaminacion-por-olores",
+        "productos-kunak"
+      ],
+      "padreNombre": "Artículos y Guías",
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "taxonomia padre|/es/recursos/articulos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "resources",
+      "coleccion": "categorias-recursos",
+      "slug": "seminarios-web",
+      "url": "/es/recursos/seminarios-web/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/recursos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "calidad-del-aire",
+      "url": "/es/etiqueta/calidad-del-aire/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "co2-es",
+      "url": "/es/etiqueta/co2-es/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "contaminantes-atmosfericos",
+      "url": "/es/etiqueta/contaminantes-atmosfericos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "cov",
+      "url": "/es/etiqueta/cov/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "emisiones-industriales",
+      "url": "/es/etiqueta/emisiones-industriales/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "gases-de-efecto-invernadero",
+      "url": "/es/etiqueta/gases-de-efecto-invernadero/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "h2s-es",
+      "url": "/es/etiqueta/h2s-es/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "malos-olores",
+      "url": "/es/etiqueta/malos-olores/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "monitorizacion-ambiental",
+      "url": "/es/etiqueta/monitorizacion-ambiental/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "normativa-de-calidad-del-aire",
+      "url": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "particulas-en-suspension",
+      "url": "/es/etiqueta/particulas-en-suspension/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "post_tag",
+      "coleccion": "etiquetas",
+      "slug": "sensor-de-calidad-del-aire",
+      "url": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "scientific-category",
+      "coleccion": "categorias-cientificas",
+      "slug": "articulos-cientificos-y-estudios",
+      "url": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/recursos/documentos-cientificos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "scientific-category",
+      "coleccion": "categorias-cientificas",
+      "slug": "articulos-tecnicos",
+      "url": "/es/scientific-category/articulos-tecnicos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/recursos/documentos-cientificos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "scientific-category",
+      "coleccion": "categorias-cientificas",
+      "slug": "evaluaciones-independientes",
+      "url": "/es/scientific-category/evaluaciones-independientes/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/recursos/documentos-cientificos/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "category",
+      "coleccion": "categorias",
+      "slug": "articulos",
+      "url": "/es/categoria/articulos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "category",
+      "coleccion": "categorias",
+      "slug": "eventos",
+      "url": "/es/categoria/eventos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "category",
+      "coleccion": "categorias",
+      "slug": "noticias",
+      "url": "/es/categoria/noticias/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "category",
+      "coleccion": "categorias",
+      "slug": "podcast-es",
+      "url": "/es/categoria/podcast-es/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/",
+        "/es/blog/",
+        "categoria|(sin href)"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "edar",
+      "url": "/es/sector/edar/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "industria",
+      "url": "/es/sector/industria/",
+      "segmentos": 1,
+      "capturado": false,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": []
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "investigacion-consultoria",
+      "url": "/es/sector/investigacion-consultoria/",
+      "segmentos": 1,
+      "capturado": false,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": []
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "metalurgia",
+      "url": "/es/sector/metalurgia/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "oil-gas-es",
+      "url": "/es/sector/oil-gas-es/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "olores",
+      "url": "/es/sector/olores/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "puertos",
+      "url": "/es/sector/puertos/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "sports",
+      "url": "/es/sector/sports/",
+      "segmentos": 1,
+      "capturado": true,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": [],
+      "miga": [
+        "/es/"
+      ]
+    },
+    {
+      "taxonomia": "sector",
+      "coleccion": null,
+      "slug": "urbano",
+      "url": "/es/sector/urbano/",
+      "segmentos": 1,
+      "capturado": false,
+      "padreSegunMiga": null,
+      "padreSegunUrl": null,
+      "nPadresEnMiga": 0,
+      "chips": 0,
+      "hijasSegunChips": []
+    }
+  ]
+}

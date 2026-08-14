@@ -192,6 +192,8 @@
     "qa:lh-poblacion-neg": "node scripts/qa/lh-poblacion.neg.mjs",
     "qa:lh-extracto": "node scripts/qa/lh-extracto.mjs",
     "qa:lh-extracto-neg": "node scripts/qa/lh-extracto.neg.mjs",
+    "qa:lh-jerarquia": "node scripts/qa/lh-jerarquia.mjs",
+    "qa:lh-jerarquia-neg": "node scripts/qa/lh-jerarquia.neg.mjs",
     "qa:a-inventario": "node scripts/qa/a-inventario.mjs",
     "qa:a-inventario-neg": "node scripts/qa/a-inventario.neg.mjs",
     "qa:c-inventario": "node scripts/qa/c-inventario.mjs",
