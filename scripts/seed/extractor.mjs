@@ -142,6 +142,15 @@ const noLocalizadas = [];
 const relHuerfano = [];
 /** T9 · los contenedores de transporte ajeno desenvueltos, con su página. */
 const transporteDesenvuelto = [];
+/**
+ * T10 · el entorno (qué media sirve el clon) y lo que se queda CALIENTE.
+ *
+ * `mediaCaliente` recoge las subidas que T10 **no** localiza porque el fichero
+ * no está en `apps/web/public`: localizarlas apuntaría a un 404 propio, que es
+ * peor que un hotlink que funciona. Se NOMBRAN en el informe, no se silencian.
+ */
+const MEDIA_PUBLICADA = mediaPublicada();
+const mediaCaliente = [];
 let captionNoCanonico = 0;
 /** §3.3 · las clases cuya sustitución NO es derivable — se listan, no se inventan. */
 const SIN_SUSTITUTO = {
@@ -184,6 +193,23 @@ for (const [clave, p] of trabajo) {
     noLocalizadas, relHuerfano,
     clasesConEstilo: clasesConEstiloDe(crudo),
     transporteDesenvuelto,
+    /**
+     * T10 · el entorno: qué media SIRVE el clon. Sin esto T10 TIRA (§regla 6).
+     *
+     * ⚠ **Estaba IMPORTADO y sin cablear desde el 2026-08-13**, y por eso
+     * `cms:extractor` llevaba desde entonces **sin poder correr**: moría en el
+     * primer documento con `ctx.mediaPublicada … llegó undefined`. No lo vio
+     * nadie porque `corpus/transformado/` es derivable y **ya estaba en disco**
+     * de una corrida anterior a T10 (08:05 contra las 10:10 del commit que la
+     * añadió), así que `extractor-a` seguía encontrando su cuerpo.
+     *
+     * Es §sondas 3 —*documentado no es conectado*— en su forma más barata: el
+     * `import` **es** la documentación, y el linter no lo caza porque `scripts/`
+     * queda fuera de su alcance. Sus dos hermanos (`extractor-a`,
+     * `extractor-c`) sí lo cablean; sólo faltaba aquí.
+     */
+    mediaPublicada: MEDIA_PUBLICADA,
+    mediaCaliente,
   };
   let html = cuerpo;
   const aplicado = {};
