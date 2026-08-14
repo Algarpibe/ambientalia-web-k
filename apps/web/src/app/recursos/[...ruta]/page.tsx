@@ -16,6 +16,12 @@ import {
 } from "@/components/arquetipo-a/CascaronA";
 import { CuerpoRicoA } from "@/components/arquetipo-a/CuerpoRicoA";
 import { IndiceArticulo } from "@/components/arquetipo-a/IndiceArticulo";
+import {
+  PaginaRecursos,
+  metadataRecurso,
+  paramsRecursos,
+  terminoDeRuta,
+} from "@/components/listados/PaginaRecursos";
 import { PREFIJO_DOC_DEFECTO, rutaDocumento } from "@/lib/arquetipo-a";
 // F2-3: el catálogo se lee del CMS por Local API; `src/lib/arquetipo-a.ts` se
 // conserva como seed histórico y sigue aportando los helpers de RUTA, que son
@@ -57,15 +63,43 @@ import { documentosCientificos } from "@/lib/cms/arquetipo-a";
  */
 export const dynamicParams = false;
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ ESTE CATCH-ALL SIRVE **DOS ARQUETIPOS** DESDE EL 2026-08-14
+ *
+ * Bajo `/recursos/` conviven el DOCUMENTO CIENTÍFICO (grupo A, 3 segmentos) y
+ * el ARCHIVO DE TÉRMINO de `resources` (`L1-resources`, 1 ó 2 segmentos), y en
+ * el original **son plantillas distintas**: el primero es una ficha; el segundo,
+ * un listado plantillado con su cascarón `_tb_body`.
+ *
+ * Va en el mismo fichero por la misma razón que `/sectores/[slug]` sirve SECTOR
+ * y MONOGRÁFICO: **Next no admite dos segmentos dinámicos al mismo nivel**, así
+ * que partirlo en dos carpetas de `app/` no es una opción — es un error de
+ * build. El despacho es por CATÁLOGO, no por número de segmentos:
+ *
+ *   · si el catálogo de `categorias-recursos` declara esa ruta → `L1-resources`;
+ *   · si el de `documentos-cientificos` la declara            → la ficha;
+ *   · si ninguno                                              → 404.
+ *
+ * ⚠ **Y NO se despacha por longitud** aunque hoy discriminaría igual (1·2 contra
+ * 3): la longitud es una CORRELACIÓN de esta población —§DOS VARIABLES
+ * CONFUNDIDAS— y el prefijo del documento científico ya tiene **dos** valores
+ * medidos. El catálogo es el eje con mecanismo.
+ *
+ * `dynamicParams = false` sigue mandando: sólo existen las rutas que los dos
+ * catálogos declaran, y `qa:slugs` verifica que ninguna la emiten los dos.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
 const porRuta = async (segmentos: string[]) => {
   const ruta = "/recursos/" + segmentos.join("/");
   return (await documentosCientificos()).find((d) => rutaDocumento(d) === ruta);
 };
 
 export async function generateStaticParams() {
-  return (await documentosCientificos()).map((d) => ({
+  const docs = (await documentosCientificos()).map((d) => ({
     ruta: [d.prefijo ?? PREFIJO_DOC_DEFECTO, d.categoria.slug, d.slug],
   }));
+  /* Los 10 archivos de término. Sus `/page/N` los emite `page/[n]`, hermano. */
+  return [...docs, ...(await paramsRecursos())];
 }
 
 export async function generateMetadata({
@@ -74,6 +108,8 @@ export async function generateMetadata({
   params: Promise<{ ruta: string[] }>;
 }): Promise<Metadata> {
   const { ruta } = await params;
+  const termino = await terminoDeRuta(ruta);
+  if (termino) return metadataRecurso(ruta);
   const doc = await porRuta(ruta);
   if (!doc) return {};
   return {
@@ -91,6 +127,13 @@ export default async function PaginaDocumento({
   params: Promise<{ ruta: string[] }>;
 }) {
   const { ruta } = await params;
+  /* El despacho: primero el archivo de término, luego la ficha. El orden es
+     indiferente porque `qa:slugs` garantiza que ninguna ruta la declaran los
+     dos catálogos; se pregunta por el término primero porque es el caso más
+     frecuente (10 rutas contra 23, pero 18 con sus `/page/N`). */
+  const termino = await terminoDeRuta(ruta);
+  if (termino) return PaginaRecursos({ rutaCompleta: ruta });
+
   const doc = await porRuta(ruta);
   if (!doc) notFound();
 

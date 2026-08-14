@@ -45,7 +45,7 @@ import "@/app/listados.css";
  * pondría verde el par sin que la afirmación fuera cierta en el HTML servido.
  */
 
-export type VarianteL1 = "blog" | "etiqueta";
+export type VarianteL1 = "blog" | "etiqueta" | "resources";
 
 /**
  * La clase de ritmo de la fila del listado. El VALOR vive en `listados.css`;
@@ -56,16 +56,29 @@ export type VarianteL1 = "blog" | "etiqueta";
  * dos variantes y en propiedades distintas: `padding-top` de la fila en blog,
  * `margin-top` en etiqueta. Ver el bloque de la fila 2 en la hoja.
  */
-const FILA2 = { blog: "lh-fila2-blog", etiqueta: "lh-fila2-etiqueta" } as const;
+/**
+ * ⚠ **`resources` entra con la cadena VACÍA, y eso es una declaración, no un
+ * olvido.** El espejo (`lh-spec-{1440,390}.json`) mide **secciones**, no filas:
+ * de `resources` sabemos que su sección 1 lleva `pt/pb 57.5938` @1440 y `50`
+ * @390 —idéntico a las otras dos— y **no sabemos el ritmo de sus tres filas**.
+ *
+ * Inventarle una clase con los números de blog sería cablear el valor de otra
+ * variante, que es exactamente cómo se fabrica una FAMILIA DE CALIBRACIÓN. Se
+ * entra con el default de Divi y **lo adjudica `qa:lh-cmp` contra el original**,
+ * que es el instrumento que existe para eso.
+ */
+const FILA2 = { blog: "lh-fila2-blog", etiqueta: "lh-fila2-etiqueta", resources: "" } as const;
 
 export function PaginaListado({
   variante,
   miga,
   titular,
   descripcion,
+  chips,
   listado,
   paginador,
   hrefSiguiente,
+  hrefAnterior,
 }: {
   variante: VarianteL1;
   miga: BreadcrumbItem[];
@@ -73,14 +86,23 @@ export function PaginaListado({
   titular: ReactNode;
   /** Sólo `/etiqueta`: el módulo `et_pb_text_4_tb_body` con la descripción. */
   descripcion?: ReactNode;
+  /**
+   * Sólo `/recursos/*`: el módulo `et_pb_text_2_tb_body` con el grupo de
+   * botones de filtro. Va en **su propia fila**, que es la diferencia de árbol
+   * entre esta variante y las otras dos.
+   */
+  chips?: ReactNode;
   /** El módulo del listado, ya compuesto por la variante. */
   listado: ReactNode;
   /** El módulo del paginador. En `/blog` va DENTRO del de listado ⇒ aquí `null`. */
   paginador?: ReactNode;
   /** `<link rel="next">` del `<head>` — el original lo sirve y el barrido lo lee. */
   hrefSiguiente?: string;
+  /** `<link rel="prev">`. Medido en `/recursos/*`; en las otras dos SIN MEDIR. */
+  hrefAnterior?: string;
 }) {
   const ritmo = FILA2[variante];
+  const esRecursos = variante === "resources";
   return (
     <>
       {/* `<link rel=next>` — el original lo sirve y `lh-barrido` lo lee como
@@ -88,6 +110,7 @@ export function PaginaListado({
           Es además lo ÚNICO que `L3` sirve de paginación, así que el rol existe
           aparte del control del cuerpo. */}
       {hrefSiguiente ? <link rel="next" href={hrefSiguiente} /> : null}
+      {hrefAnterior ? <link rel="prev" href={hrefAnterior} /> : null}
 
       <HeaderNav />
 
@@ -126,30 +149,61 @@ export function PaginaListado({
                     </ColumnaDivi>
                   </FilaTbDivi>
 
-                  <FilaListado
-                    n={2}
-                    /* ⚠ `true` en las DOS variantes construidas, y no es un
-                       cableado: es lo que `lh-barra.json` mide en 80 de 80
-                       documentos. El camino `false` existe y está SIN
-                       EJERCITAR — ver la cabecera de `ListadoB.tsx`. */
-                    conBarra
-                    ritmo={ritmo}
-                    extra={variante === "blog" ? "blog-contenido" : ""}
-                    barra={
-                      <BarraLateral
-                        /* `et_pb_with_border` lo lleva blog y no etiqueta,
-                           medido en las dos instancias. */
-                        conBorde={variante === "blog"}
-                        /* `/categoria/<slug>/` **no está clonado** (va en F3-4),
-                           así que el enlace se queda apuntando al original —
-                           §Regla de rutas locales. */
-                        hrefCategoria={(slug) => `https://kunakair.com/es/categoria/${slug}/`}
-                      />
-                    }
-                  >
-                    {listado}
-                    {paginador}
-                  </FilaListado>
+                  {/* ⚠ **El árbol de `resources` tiene TRES filas y el de las
+                      otras dos, DOS**, y ésa es la diferencia estructural que
+                      obliga a ramificar aquí en vez de parametrizar una sola
+                      composición:
+
+                        blog · etiqueta   fila1(titular) · fila2(listado + barra)
+                        resources         fila1(titular) · fila2(chips) · fila3(listado)
+
+                      Medido con **una sola firma de árbol en las 18 páginas con
+                      contenido** de `/recursos/`, así que no es una instancia
+                      rara: es la plantilla de la variante.
+
+                      Y en `resources` el listado NO cuelga de la columna: cuelga
+                      de un módulo de texto VACÍO (`et_pb_text_3_tb_body`) y va
+                      dentro de su `.et_pb_text_inner`, con el `<nav>` de
+                      hermano. Colgarlo de la columna «porque es donde va en las
+                      otras dos» habría quitado dos niveles que el barrido lee. */}
+                  {esRecursos ? (
+                    <>
+                      <FilaTbDivi n={2}>
+                        <ColumnaDivi tipo="4_4" n={2} ultima>
+                          {chips}
+                        </ColumnaDivi>
+                      </FilaTbDivi>
+
+                      <FilaTbDivi n={3} extra={ritmo}>
+                        <ColumnaDivi tipo="4_4" n={3} ultima>
+                          <ModuloTexto n={3}>
+                            {listado}
+                            {paginador}
+                          </ModuloTexto>
+                        </ColumnaDivi>
+                      </FilaTbDivi>
+                    </>
+                  ) : (
+                    <FilaListado
+                      n={2}
+                      ritmo={ritmo}
+                      extra={variante === "blog" ? "blog-contenido" : ""}
+                      barra={
+                        <BarraLateral
+                          /* `et_pb_with_border` lo lleva blog y no etiqueta,
+                             medido en las dos instancias. */
+                          conBorde={variante === "blog"}
+                          /* `/categoria/<slug>/` **no está clonado** (va en F3-4),
+                             así que el enlace se queda apuntando al original —
+                             §Regla de rutas locales. */
+                          hrefCategoria={(slug) => `https://kunakair.com/es/categoria/${slug}/`}
+                        />
+                      }
+                    >
+                      {listado}
+                      {paginador}
+                    </FilaListado>
+                  )}
                 </SeccionTb>
               </div>
             </div>

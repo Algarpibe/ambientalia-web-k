@@ -493,12 +493,118 @@
   transform: scale(1.1);
 }
 
-/* ⚠ `min-width: 440px` SÓLO en el listado de `/blog`, y es la causa medida de
-   que su media dé 440 de ancho dentro de una tarjeta de 277.2 mientras la de
-   `/etiqueta` da 277.2. Está en el CSS servido con ese selector literal. */
+/* ⚠⚠ **LA REGLA SERVIDA ES UN GRUPO DE DOS SELECTORES Y AQUÍ SÓLO ESTABA UNO.**
+   El original sirve:
+
+       .et_pb_blog_0_tb_body .et_pb_post .entry-featured-image-url img,
+       .shotcode-listar-entradas-blog .et_pb_post .entry-featured-image-url img {
+         max-width: 100%; min-width: 440px;
+       }
+
+   El primer selector es el módulo del listado de **`resources`**, y se quedó
+   fuera cuando esa variante no se construía. Es lo que explica que la media mida
+   **440 dentro de una tarjeta de 386.08** en `resources` y de 277.2 en `/blog`,
+   mientras la de `/etiqueta` —cuyo módulo es `et_pb_blog_1_tb_body`, y NO está
+   en el grupo— mide 277.2.
+
+   Transcribir media regla es la forma más silenciosa de perder una: el selector
+   que falta no da error, da una imagen que no desborda y por tanto **no se
+   recorta**, que es una tarjeta plausible. */
+.lh-cuerpo .et_pb_blog_0_tb_body .et_pb_post .entry-featured-image-url img,
 .lh-cuerpo .shotcode-listar-entradas-blog .et_pb_post .entry-featured-image-url img {
   max-width: 100%;
   min-width: 440px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4bis · LO PROPIO DE `L1-resources` — reglas servidas de `.bucle-entradas`
+ *
+ * Todas salen del mismo bloque de la hoja del tema, transcritas con su
+ * `!important` donde lo llevan: es cómo Divi compila lo que el editor tocó, y
+ * quitarlo cambiaría quién gana la cascada (§consolidar reglas de origen
+ * distinto cambia quién gana).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/* La media de `resources` tiene `mb 25`, no 30. Una celda, y es de las que se
+   heredan sin mirar porque «la tarjeta es la misma». */
+.lh-cuerpo .bucle-entradas .et_pb_post .entry-featured-image-url {
+  margin-bottom: 25px;
+}
+
+/* El titular: 20/1.35 y **`padding-bottom: 0`** —la spec lo midió en 0 contra
+   los 10 de las otras dos—. Los `!important` son del original. */
+.lh-cuerpo .bucle-entradas .entry-title {
+  padding-bottom: 0;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.35em !important;
+}
+
+/* El original la escribe `body .bucle-entradas …` para subirse la especificidad
+   por encima de la genérica de `.post-meta`; aquí el `.lh-cuerpo` ya cumple ese
+   papel y el `!important` es del original. Copiar el `body` literal habría dado
+   un selector que **no casa nunca** —`body` no puede colgar de `.lh-cuerpo`— y
+   eso es un cero con forma de transcripción fiel. */
+.lh-cuerpo .bucle-entradas .et_pb_post .post-meta {
+  font-size: 13.5px !important;
+}
+
+/* El `<p>` del término. Es lo único que `resources` pinta entre el titular y la
+   fecha, y las otras dos variantes no lo tienen. */
+.lh-cuerpo .resources-categories {
+  padding-bottom: 14px;
+  line-height: 1.25;
+}
+
+.lh-cuerpo .resources-categories a {
+  font-size: 13.5px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4ter · LOS CHIPS DE FILTRO (`button-group.filtros-resources`)
+ *
+ * ⚠ **`filtros-resources` está EXCLUIDA de dos reglas del grupo genérico**, y
+ * eso no es un detalle: el original escribe
+ * `.button-group:not(.filtros-resources):not(.filtros-scientific)` para el
+ * `padding-top: 16px` y para el `:first-child` en negrita. Transcribir el grupo
+ * sin los `:not()` habría metido 16 px de ritmo y un chip en negrita que esta
+ * variante no tiene.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .button-group .button {
+  margin: 0 10px 10px 0;
+  border: 1px solid var(--gris);
+  border-radius: 5px;
+  padding: 6px 26px;
+  font-size: 14px;
+  line-height: 1.2;
+  background-color: #fff;
+}
+
+.lh-cuerpo .button-group .button.show-all {
+  border-color: var(--negro);
+  font-weight: 600;
+}
+
+.lh-cuerpo .button-group .button:last-child {
+  margin-inline-end: 0;
+}
+
+.lh-cuerpo .button-group .button:not(.current):hover {
+  border-color: var(--azul);
+  color: var(--azul);
+  cursor: pointer;
+}
+
+.lh-cuerpo .filtros-resources .button {
+  display: inline-block;
+}
+
+.lh-cuerpo .filtros-resources .button.current {
+  border-color: var(--azul);
+  color: #fff;
+  font-weight: 600;
+  background-color: var(--azul);
 }
 
 /* El titular de la tarjeta. DOS pieles, y las dos son reglas servidas:
@@ -681,6 +787,102 @@
 .lh-cuerpo .wp-pagenavi .previouspostslink,
 .lh-cuerpo .wp-pagenavi .nextpostslink {
   display: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 5bis · LA PIEL **C** — `nav.kunak-pagination` (`L1-resources`)
+ *
+ * ⚠ **En el original TODAS las reglas de arriba son GRUPOS
+ * `.wp-pagenavi X, .kunak-pagination X`**, así que la piel C no tiene una hoja
+ * propia: comparte la de las otras dos y añade lo del `<ul>/<li>`. Se transcribe
+ * como grupo por eso, no por ahorrar líneas — escribir `.kunak-pagination` con
+ * valores copiados a mano habría creado una SEGUNDA definición de lo mismo, que
+ * es la clase C7 (dos caminos que dicen replicar la misma regla y divergen el
+ * día que alguien toca uno).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-cuerpo .kunak-pagination {
+  clear: both;
+}
+
+.lh-cuerpo .kunak-pagination ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ⚠⚠ **`inline-block` ES LA RAZÓN DE QUE EL COMPONENTE EMITA `{" "}` ENTRE LOS
+   `<li>`.** Con esto puesto, el espacio en blanco del marcado **se renderiza**;
+   el original sirve un `<li>` por línea, así que quitarlo del JSX movería el
+   paginador. Es el mismo mecanismo que costó 3.61 px por pieza en la piel A. */
+.lh-cuerpo .kunak-pagination li {
+  display: inline-block;
+  line-height: 1.7em;
+}
+
+.lh-cuerpo .kunak-pagination a,
+.lh-cuerpo .kunak-pagination span {
+  text-decoration: none;
+  border: 1px solid #bfbfbf;
+  padding: 3px 5px;
+  margin: 2px;
+}
+
+.lh-cuerpo .kunak-pagination a {
+  border: 2px solid var(--azul);
+  padding: 0 5px;
+  min-width: 36px;
+  display: inline-block;
+  text-align: center;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--azul);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lh-cuerpo .kunak-pagination span.current,
+.lh-cuerpo .kunak-pagination span.page-numbers.current {
+  color: #fff;
+  border: 2px solid var(--azul);
+  padding: 0 5px;
+  min-width: 36px;
+  display: inline-block;
+  text-align: center;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: var(--azul);
+}
+
+.lh-cuerpo .kunak-pagination a:hover {
+  border-color: var(--gris);
+  transition: all 0.3s;
+  color: var(--gris);
+}
+
+/* Las MISMAS dos declaraciones inválidas que en `wp-pagenavi` (`min-width: none`
+   y `border-radius: none`), y por la misma razón NO se escriben: el navegador
+   las tira, así que `a.prev`/`a.next` conservan `min-width: 36px` y
+   `border-radius: 50%`. Ver el bloque de la piel A. */
+.lh-cuerpo .kunak-pagination a.prev,
+.lh-cuerpo .kunak-pagination a.next {
+  border: none;
+  padding: 0 5px;
+  height: 36px;
+}
+
+.lh-cuerpo .kunak-pagination .pages,
+.lh-cuerpo .kunak-pagination .extend,
+.lh-cuerpo .kunak-pagination .first,
+.lh-cuerpo .kunak-pagination .last {
+  border: none;
+  font-size: 15px;
+}
+
+.lh-cuerpo .kunak-pagination span.dots {
+  border: none;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════

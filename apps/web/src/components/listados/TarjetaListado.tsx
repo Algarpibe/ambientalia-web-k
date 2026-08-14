@@ -64,7 +64,28 @@ function clasesDePost(e: EntradaBlog, extra: string[]): string {
   ].join(" ");
 }
 
-export type VarianteTarjeta = "blog" | "etiqueta";
+/**
+ * ⚠ **`L1-resources` sirve OTRA lista de clases, más corta, y no es una
+ * simplificación mía: es lo que el original emite.**
+ *
+ *   blog · etiqueta   `et_pb_post clearfix post-N post type-post status-publish
+ *                      format-standard has-post-thumbnail hentry category-… tag-…
+ *                      resources-…`
+ *   resources         `et_pb_post clearfix post-N post type-post hentry`
+ *
+ * O sea que el bucle de `resources` **no llama a `post_class()` con los mismos
+ * argumentos**: no emite `status-publish`, ni `format-standard`, ni
+ * `has-post-thumbnail`, ni una sola clase de taxonomía. Medido en las 163
+ * tarjetas de las 18 páginas con contenido, con **una sola firma de árbol**.
+ *
+ * Reutilizar `clasesDePost()` «porque es la misma tarjeta» habría metido 3
+ * clases fijas y hasta 4 de taxonomía por tarjeta que el original no sirve.
+ */
+function clasesDePostResources(): string {
+  return "et_pb_post clearfix post type-post hentry";
+}
+
+export type VarianteTarjeta = "blog" | "etiqueta" | "resources";
 
 export function TarjetaListado({
   entrada,
@@ -74,6 +95,8 @@ export function TarjetaListado({
   hrefEntrada,
   hrefCategoria,
   indice,
+  hrefTermino,
+  nombreTermino,
 }: {
   entrada: EntradaBlog;
   variante: VarianteTarjeta;
@@ -85,8 +108,18 @@ export function TarjetaListado({
   hrefCategoria: string;
   /** Posición en la página — Divi la compila en `et_pb_blog_item_1_<i>`. */
   indice: number;
+  /**
+   * Sólo `resources`: el `<p class="resources-categories">`.
+   *
+   * ⚠ **Lo resuelve la variante y no esta tarjeta**, porque la regla que decide
+   * SI se pinta no es del componente: ver `PaginaRecursos`. Ausente ⇒ no se
+   * emite el `<p>`, que es lo que hacen las 3 tarjetas de `seminarios-web`.
+   */
+  hrefTermino?: string;
+  nombreTermino?: string;
 }) {
   const esEtiqueta = variante === "etiqueta";
+  const esRecursos = variante === "resources";
   const cat = entrada.categorias[0];
 
   const media = entrada.imagenDestacada ? (
@@ -100,6 +133,11 @@ export function TarjetaListado({
         {...(entrada.imagenDestacada.sizes ? { sizes: entrada.imagenDestacada.sizes } : {})}
         {...(entrada.imagenDestacada.width ? { width: entrada.imagenDestacada.width } : {})}
         {...(entrada.imagenDestacada.height ? { height: entrada.imagenDestacada.height } : {})}
+        /* ⚠ **`fetchpriority="high"` SÓLO en la primera tarjeta**, medido en las
+           18 páginas con contenido de `/recursos/`: 1 de 15 la lleva y las 14
+           siguientes no. Es la marca de WordPress al primer `wp-post-image` de
+           la página, y va aquí porque el barrido lee atributos. */
+        {...(esRecursos && indice === 0 ? { fetchPriority: "high" as const } : {})}
         /* ⚠ **El `alt` sale de sitios DISTINTOS en las dos variantes, y eso está
            medido, no elegido.** El módulo `et_pb_blog` de `/etiqueta` pinta el
            TITULAR del post; el shortcode de `/blog` pinta el `alt` propio del
@@ -119,6 +157,38 @@ export function TarjetaListado({
       />
     </a>
   ) : null;
+
+  /**
+   * ⚠ **La tarjeta de `resources` es OTRA, no la misma con menos cosas**, y por
+   * eso sale por su rama en vez de por tres ternarios más:
+   *
+   * | | blog · etiqueta | resources |
+   * |---|---|---|
+   * | clases del `<article>` | `post_class()` completo | 6 clases fijas |
+   * | término | — | `<p class="resources-categories">` con SU término |
+   * | fecha | `«24 de febrero de 2026»` · `<span class="published">` | `<p class="post-meta">May 25, 2026</p>`, **sola** |
+   * | categoría en la meta | sí, con `rel` | **no** |
+   * | extracto | sí | **no** |
+   *
+   * O sea: su `post-meta` **no lleva ni separador ni enlace**. Meter el `" | "`
+   * «porque las otras dos lo llevan» habría añadido un carácter servido que el
+   * original no tiene, en 163 tarjetas.
+   */
+  if (esRecursos)
+    return (
+      <article className={clasesDePostResources()}>
+        {media}
+        <h2 className="entry-title">
+          <a href={hrefEntrada}>{entrada.titulo}</a>
+        </h2>
+        {hrefTermino ? (
+          <p className="resources-categories">
+            <a href={hrefTermino}>{nombreTermino}</a>
+          </p>
+        ) : null}
+        <p className="post-meta">{fecha}</p>
+      </article>
+    );
 
   return (
     <article

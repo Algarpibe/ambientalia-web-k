@@ -25,6 +25,21 @@ export interface BreadcrumbItem {
   label: string;
   /** Sin `href` = página actual (último nivel, sin enlace). */
   href?: string;
+  /**
+   * La clase SEMÁNTICA del eslabón, tal como la sirve el original.
+   *
+   * ⚠ **No es decoración: es el canal con el que el original declara QUÉ es
+   * cada eslabón**, y este proyecto ya lo usa como discriminador —
+   * `qa:lh-jerarquia` deriva el padre de un término de
+   * `<li class="taxonomia padre">`, y lo llama «vía 2».
+   *
+   * Aparece en los archivos de término (`taxonomia padre` · `categoria`) y
+   * **no** en las páginas de entrada: medido, **0 de 149** entradas llevan
+   * clase en sus `<li>`. Por eso es opcional y por eso no se inventa donde el
+   * original no la pone — emitirla en todas convertiría en ubicuo un patrón
+   * cuyo trabajo es discriminar (§sondas 4, el complementario).
+   */
+  clase?: string;
 }
 
 /**
@@ -127,7 +142,10 @@ export function Breadcrumb({
             // era una regla general disfrazada de específica.
             (i === items.length - 1
               ? "max-w-[350px] overflow-hidden text-ellipsis whitespace-nowrap align-bottom"
-              : "")
+              : "") +
+            /* La clase semántica del original va AL FINAL y sin tocar lo de
+               arriba: es marcado servido, no estilo del clon. */
+            (item.clase ? ` ${item.clase}` : "")
           }
           itemProp="itemListElement"
           itemScope

@@ -16,8 +16,15 @@
  * ── Las dos variantes, y en qué se diferencian de verdad ──────────────────
  * `D1` quedó ACOTADA al medir: `L1` es **uno con tres variantes**, y lo que
  * cambia entre ellas no es sólo la tarjeta — es **tarjeta + retícula + barra**.
- * Aquí sólo viven las dos primeras (blog y etiqueta); `L1-resources` está
- * parado por §F3-LH-JERARQUIA-RECURSOS y **no se construye en esta tanda**.
+ * Desde el 2026-08-14 viven aquí **las tres**: `L1-resources` la desbloqueó
+ * `D2.8` y su dato lo sembró el PASO 1 de esa tanda.
+ *
+ * ── Y la tercera aporta un eje que las dos primeras no tenían: la JERARQUÍA ──
+ * `resources` es la única taxonomía jerárquica del sitio (profundidad 2, 1
+ * padre), así que su consulta **no es «las entradas de este término»** sino
+ * «las de este término y las de sus descendientes» — medido, no supuesto: el
+ * archivo del padre sirve 80 tarjetas y la suma de sus 8 hijas es 80.
+ * Y su paginación **no es 9: es 15**.
  *
  * ── LH-SP10: el extracto son DOS MECANISMOS, no uno ───────────────────────
  * Medido (`qa:lh-extracto`, negativo 4/4, `medidas/lh-extracto.json`), sobre
@@ -33,7 +40,7 @@
  * los dos en el mismo campo habría sido el arreglo falso — funcionaría en las
  * 48 y fallaría en las 15.
  */
-import type { EntradaBlog, EtiquetaA } from "@/types/kunak";
+import type { CategoriaRecurso, EntradaBlog, EtiquetaA } from "@/types/kunak";
 import { entradasBlog } from "./arquetipo-a";
 import { leeColeccion } from "./proyector";
 
@@ -227,6 +234,29 @@ export function extractoDerivado(cuerpo: string): string {
 
 export const POR_PAGINA = 9;
 
+/**
+ * ⚠ **`L1-resources` NO sirve 9: sirve 15**, y es lo primero que hay que medir
+ * en vez de heredar. Derivado del corpus congelado, contando `<article>` en las
+ * **18 páginas con contenido** bajo `/recursos/`:
+ *
+ * | serie | tarjetas por página | total | páginas |
+ * |---|---|---|---|
+ * | `/recursos/articulos/` | 15·15·15·15·15·**5** | 80 | 6 |
+ * | `…/contaminacion-urbana/` | 15·**9** | 24 | 2 |
+ * | `…/contaminacion-y-salud/` | 15·**4** | 19 | 2 |
+ * | `…/industria-…-olores/` | 15·**6** | 21 | 2 |
+ * | `…/productos-kunak/` | **7** | 7 | 1 |
+ * | `/recursos/seminarios-web/` | **3** | 3 | 1 |
+ *
+ * Y cuadra con `qa:lh-paginas` del día: `/recursos/articulos/` da **6** páginas
+ * de contenido (16 según el servidor, 10 vacías).
+ *
+ * Se declara aparte y no se reutiliza `POR_PAGINA`, por la misma razón por la
+ * que blog y etiqueta lo declaran una vez cada uno aunque hoy midan igual: si
+ * mañana uno cambiara, el otro no debe seguirlo.
+ */
+export const POR_PAGINA_RESOURCES = 15;
+
 export type Pagina<T> = {
   items: T[];
   n: number;
@@ -242,9 +272,9 @@ export type Pagina<T> = {
  * una entrada** (`/es/blog/page/9/`…`17/`). Devolver `null` aquí las convertiría
  * en 404 y sería divergir del original **sin decirlo**.
  */
-export function pagina<T>(todos: T[], n: number): Pagina<T> {
-  const total = Math.max(1, Math.ceil(todos.length / POR_PAGINA));
-  return { items: todos.slice((n - 1) * POR_PAGINA, n * POR_PAGINA), n, total };
+export function pagina<T>(todos: T[], n: number, porPagina: number = POR_PAGINA): Pagina<T> {
+  const total = Math.max(1, Math.ceil(todos.length / porPagina));
+  return { items: todos.slice((n - 1) * porPagina, n * porPagina), n, total };
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -279,4 +309,69 @@ export async function entradasDeEtiqueta(
   o?: { conBorradores?: boolean },
 ): Promise<EntradaBlog[]> {
   return (await entradasBlog(o)).filter((e) => e.etiquetas?.some((t) => t.slug === slug)).sort(porFechaDesc);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * `L1-resources` — LA TERCERA CONSULTA, y la única JERÁRQUICA
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Los 10 términos de `resources`, con su `padre` (slug) donde lo hay. */
+export async function categoriasRecursos(): Promise<CategoriaRecurso[]> {
+  return leeColeccion<CategoriaRecurso>("categorias-recursos");
+}
+
+/**
+ * La ruta LOCAL del archivo de un término: `prefijo + [padre] + slug`.
+ *
+ * `D2.8` la compone en la plantilla en vez de guardarla, y el discriminador
+ * entre los dos modelos son los **2 términos de primer nivel** — ver la ficha
+ * de `CategoriaRecurso`.
+ *
+ * ⚠ Sin barra final: `trailingSlash` no está activado (§Regla de rutas locales).
+ */
+export function rutaRecurso(t: CategoriaRecurso): string {
+  return t.padre ? `/recursos/${t.padre}/${t.slug}` : `/recursos/${t.slug}`;
+}
+
+/**
+ * Los DESCENDIENTES de un término, él incluido.
+ *
+ * ⚠ **Está escrito como cierre transitivo y con la jerarquía medida da lo mismo
+ * que un solo nivel**, porque la profundidad es **2** (`qa:lh-jerarquia`: 1
+ * padre, 0 con dos padres, 0 tercer nivel). O sea que las dos
+ * implementaciones tienen **0 instancias separadoras** hoy y elegir una es
+ * elegir al azar (§DOS MODELOS QUE PREDICEN LO MISMO).
+ *
+ * Se elige el cierre transitivo porque el coste es el mismo y el fallo es más
+ * ruidoso: si mañana apareciera un tercer nivel, «un solo nivel» dejaría de
+ * listar entradas **en silencio**, y esto las listaría. El defecto se pone en la
+ * dirección que grita.
+ */
+function conDescendientes(slug: string, todos: CategoriaRecurso[]): Set<string> {
+  const dentro = new Set([slug]);
+  let creció = true;
+  while (creció) {
+    creció = false;
+    for (const t of todos) if (t.padre && dentro.has(t.padre) && !dentro.has(t.slug)) { dentro.add(t.slug); creció = true; }
+  }
+  return dentro;
+}
+
+/**
+ * `/recursos/<término>` — las entradas del término **y las de sus
+ * descendientes**, fecha descendente.
+ *
+ * ⚠ **Que el archivo del PADRE liste lo de sus hijas no es una suposición sobre
+ * cómo funciona WordPress: está medido.** `/es/recursos/articulos/` sirve
+ * exactamente **80** tarjetas (15·5 + 5) y la suma de sus 8 hijas es
+ * 24+19+21+7+4+3+1+1 = **80**, sin una repetida y sin ninguna suya propia. Si
+ * listara sólo lo suyo, ese archivo estaría vacío.
+ */
+export async function entradasDeRecurso(
+  slug: string,
+  terminos: CategoriaRecurso[],
+  o?: { conBorradores?: boolean },
+): Promise<EntradaBlog[]> {
+  const dentro = conDescendientes(slug, terminos);
+  return (await entradasBlog(o)).filter((e) => e.recurso && dentro.has(e.recurso.slug)).sort(porFechaDesc);
 }

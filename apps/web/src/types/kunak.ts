@@ -370,6 +370,41 @@ export interface EtiquetaA {
 }
 
 /**
+ * CATEGORÍA DE RECURSOS (`resources`) **con su jerarquía** — 10 términos.
+ *
+ * Es la única de las 5 taxonomías del sitio que el original hace jerárquica, y
+ * `D2.8` decidió MODELARLA: `padre` poblado y la ruta COMPUESTA en la plantilla,
+ * cero campos nuevos.
+ *
+ * ── Por qué la ruta se DERIVA y no se guarda ──────────────────────────────
+ * Los dos modelos —derivar `prefijo + [padre] + slug` o cablear el prefijo—
+ * aciertan **35/35** sobre los términos medidos, y ese número no decide nada:
+ * en las **8 hijas** los dos dan exactamente la misma URL. Lo que los separa son
+ * los **2 términos de primer nivel**, donde derivar predice UN segmento y
+ * cablear predice dos. **El denominador de la elección es 2** (§DOS MODELOS QUE
+ * PREDICEN LO MISMO), y el coste de haber elegido mal ya estaba cobrado en el
+ * árbol: `extractor-a.mjs` cableaba el prefijo y perdía el `recurso` de 2 de las
+ * 149 entradas **sin dar error**.
+ *
+ * ── `padre` vuelve como SLUG, no como objeto ──────────────────────────────
+ * `deRel` devuelve el documento entero sólo donde el campo declara
+ * `custom.formaMedida = "objeto"` (§2c). Éste no lo declara —la tarjeta nunca
+ * pinta el padre embebido, sólo lo necesita para componer una ruta— así que
+ * llega el slug pelado, que es exactamente lo que hace falta.
+ *
+ * ⚠ **`descripcion` NO existe aquí, y es una medida, no un olvido.** En
+ * `etiquetas` el módulo homólogo del archivo (`et_pb_text_4_tb_body`) trae
+ * texto; en `resources` el suyo (`_2_`) trae **los CHIPS de filtro**, y el texto
+ * que queda al quitarlos es vacío en **0 de 10** (`cms:extractor-listados`).
+ */
+export interface CategoriaRecurso {
+  slug: string;
+  nombre: string;
+  /** El slug del término padre. Ausente en los 2 de primer nivel. */
+  padre?: string;
+}
+
+/**
  * Imagen de WordPress con su `srcset`. **`srcset` es campo, no adorno**: es la
  * causa medida de M-IMG (los tres módulos de imagen con residuo de décimas) y
  * la entrada de los *image sizes* que hay que declarar en Payload (CMS-0b).
