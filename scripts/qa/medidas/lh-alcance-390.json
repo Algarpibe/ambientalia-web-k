@@ -1,13 +1,13 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-14",
     "que": "ALCANCE VERIFICABLE de los listados a 390: el denominador de qa:lh-cmp, derivado ANTES de comparar",
     "espejo": "medidas/lh-spec-390.json (2026-08-11)",
     "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",
     "noMide": [
       "el clon: esta sonda no abre una página ni arranca el servidor",
       "si un par CUADRA: eso es la comparación, no el alcance",
-      "las rutas /page/N: el espejo mide la página 1 de cada forma"
+      "las rutas /page/N: el espejo mide la página 1 de cada forma → ver `alcanceReal`, que lo dice CON SU NÚMERO"
     ],
     "porQueMixto": "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Contra el espejo absorbe la deriva del contenido; contra el corpus, la geometría de un render sin hojas. La referencia que las arreglaría es una tercera —el corpus RENDERIZADO con sus hojas— y construirla es una tanda, no un parámetro."
   },
@@ -20,14 +20,89 @@
     "verificables": 13670,
     "pctMixto": 18.2
   },
+  "alcanceReal": {
+    "pregunta": "¿sobre cuántas PÁGINAS compara qa:lh-cmp, y sobre cuántas NO?",
+    "unidad": "la PÁGINA (las /page/N incluidas), que es la unidad que estableció qa:lh-serie",
+    "porQueImporta": "el recuento de PARES es «camino × propiedad DENTRO de una página»: absorbe entero sobre cuántas páginas se tomaron.",
+    "cruceConLhSerie": {
+      "veredicto": "LA SERIE NO ES UNA UNIDAD",
+      "seriesHeterogeneas": 19,
+      "deSeriesConVariasPaginas": 28,
+      "loQueSignifica": "cada /page/N es su propia unidad; «una página por serie» es el atajo que su negativo rechaza"
+    },
+    "paginas": {
+      "enElUniverso": 149,
+      "conContenido": 84,
+      "queCompara": 13,
+      "porPosicionQueCompara": {
+        "primera": 13
+      },
+      "porPosicionDelUniverso": {
+        "primera": 35,
+        "intermedia": 86,
+        "última": 28
+      }
+    },
+    "clases": {
+      "enElUniverso": 38,
+      "queToca": 11,
+      "ciegas": 27,
+      "paginasEnClasesCiegas": 122
+    },
+    "pielB": {
+      "porQue": "§F3-LH-PIELB-VENTANA — el defecto vivía ENTERO en lo que el comparador no mira, y salió verde",
+      "instancias": 43,
+      "enElUniversoDelComparador": 3,
+      "realmenteComparadas": 1,
+      "separadorasComparadas": 0,
+      "detalle": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "glosario",
+          "n": 1,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": false,
+          "separaLosDosModelos": false
+        }
+      ],
+      "veredicto": "SIN PROBAR: 0 instancias SEPARADORAS entre las comparadas — el acierto del comparador sobre esta piel no distingue los dos modelos"
+    },
+    "costeDeEnsanchar": {
+      "paginasConContenidoSinComparar": 71,
+      "factorSobreLoQueHoySeCompara": 6.5,
+      "queCuesta": "cada página nueva es una carga del clon (y del original en --vivo) más su barrido: el comparador tarda ~ lineal en páginas. No es un parámetro: es una tanda con su corrida, su congelada y su lectura.",
+      "loQueNoCuesta": "el espejo YA existe por forma; ensanchar exige medir el original en las /page/N, que hoy no están en lh-spec."
+    }
+  },
   "emiteElBuild": {
     "fuente": "apps/web/.next/prerender-manifest.json (la ruta EXACTA, no el segmento)",
-    "rutasEnElManifiesto": 302,
-    "formas": 0,
-    "claves": [],
-    "pares": 0,
-    "verificables": 0,
-    "mixtos": 0
+    "rutasEnElManifiesto": 363,
+    "formas": 7,
+    "claves": [
+      "L1-blog::/es/blog/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/",
+      "L1-etiqueta::/es/etiqueta/h2s-es/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "L1-resources-padre::/es/recursos/seminarios-web/",
+      "L1-resources-padre::/es/recursos/articulos/"
+    ],
+    "pares": 10714,
+    "verificables": 8867,
+    "mixtos": 1847
   },
   "porForma": {
     "L1-blog::/es/blog/": {
@@ -38,7 +113,7 @@
       "pares": 1717,
       "verificables": 1432,
       "pctMixto": 16.6,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
@@ -48,7 +123,7 @@
       "pares": 1997,
       "verificables": 1670,
       "pctMixto": 16.4,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
@@ -58,7 +133,7 @@
       "pares": 1734,
       "verificables": 1428,
       "pctMixto": 17.6,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
@@ -68,7 +143,7 @@
       "pares": 1468,
       "verificables": 1217,
       "pctMixto": 17.1,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
@@ -78,7 +153,7 @@
       "pares": 902,
       "verificables": 723,
       "pctMixto": 19.8,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
@@ -88,7 +163,7 @@
       "pares": 1315,
       "verificables": 1076,
       "pctMixto": 18.2,
-      "emiteElBuild": false
+      "emiteElBuild": true
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
@@ -158,7 +233,7 @@
       "pares": 1581,
       "verificables": 1321,
       "pctMixto": 16.4,
-      "emiteElBuild": false
+      "emiteElBuild": true
     }
   }
 }

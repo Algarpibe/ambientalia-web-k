@@ -267,6 +267,16 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
   let aciertaNuevo = 0, aciertaViejo = 0, separadoras = 0;
   let secNueva = 0, secVieja = 0;
   const fallos = [], fallosSec = [];
+  /**
+   * ⚠ **Las instancias donde el modelo VIEJO acertaba, CON SU RUTA.** El
+   * recuento `secuenciaViejaAcierta: 7` es un cardinal, y §UN CARDINAL ES UN
+   * CONTENEDOR Y ABSORBE LA MEMBRESÍA: dice *cuántas* acertaban, no *cuáles* —
+   * y la pregunta que decide el alcance del comparador es exactamente cuáles.
+   * Sin esta lista, cruzar «las que el viejo acertaba» con «las que `lh-cmp`
+   * mira» exigiría re-implementar el modelo del paginador en otra sonda, que es
+   * la clase C7 con su peor salida: dos verdes midiendo cosas distintas.
+   */
+  const viejoAciertaEn = [];
   for (const i of inst) {
     const v = ventana(i.n, i.total), t = todas(i.n, i.total);
     const esperadoV = Array.from({ length: v.fin - v.inicio + 1 }, (_, k) => v.inicio + k);
@@ -283,7 +293,10 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
     const sinLarger = i.piezas.filter((p) => !p.startsWith("larger page:"));
     if (JSON.stringify(secuenciaNueva(i.n, i.total)) === JSON.stringify(sinLarger)) secNueva++;
     else if (!i.largerPage) fallosSec.push(`${i.ruta} (n=${i.n}/${i.total}): ${sinLarger.join(" | ")}`);
-    if (JSON.stringify(secuenciaVieja(i.n, i.total)) === JSON.stringify(sinLarger)) secVieja++;
+    if (JSON.stringify(secuenciaVieja(i.n, i.total)) === JSON.stringify(sinLarger)) {
+      secVieja++;
+      viejoAciertaEn.push({ ruta: i.ruta, n: i.n, total: i.total, esPagina1: i.n === 1 });
+    }
   }
   if (SABOTAJE === "ventana-sin-separadores") separadoras = 0;
 
@@ -297,6 +310,13 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
     /* la unidad que adjudica: la SECUENCIA entera, no el conjunto de números */
     secuenciaNuevaAcierta: secNueva,
     secuenciaViejaAcierta: secVieja,
+    /* CUÁLES, no cuántas — ver el comentario de `viejoAciertaEn`. Es lo que
+     * permite que `lh-alcance` cruce el defecto con el alcance del comparador
+     * sin re-implementar el modelo del paginador. */
+    viejoAciertaEn,
+    viejoAciertaSoloEnPagina1: viejoAciertaEn.every((i) => i.esPagina1),
+    /* Todas las instancias, para que el cruce se haga por RUTA y no por cardinal. */
+    instancias_: inst.map((i) => ({ ruta: i.ruta, n: i.n, total: i.total })),
     instanciasConLargerPageExcluidasDeLaSecuencia: inst.filter((i) => i.largerPage).length,
     fallosDeSecuencia: fallosSec,
     conFirst: inst.filter((i) => i.first).length,

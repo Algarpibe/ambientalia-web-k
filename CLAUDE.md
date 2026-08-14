@@ -1162,6 +1162,52 @@ publica `separadores` junto a `aciertos`, y **su control en negativo exige
 `separadores > 0`** — si no, el veredicto es *SIN PROBAR*, no *probado*
 (`qa:lh-jerarquia`).
 
+⚠ **Y la misma álgebra aplicada AL COMPARADOR en vez de a la spec: UN VERDE VALE
+LO QUE VALEN SUS INSTANCIAS SEPARADORAS, NO LO QUE VALE SU RECUENTO DE PARES
+(2026-08-14, F3-2).**
+
+La regla de arriba mira el dominio **de la medición** que eligió el modelo. Ésta
+mira el dominio **de la comparación que después lo da por bueno**, y tiene dos
+mitades que se suman:
+
+> **(a) El recuento de pares no es el denominador de nada.** Un comparador puede
+> publicar decenas de miles de pares verdes y **cero instancias separadoras** de
+> una pieza concreta: entonces su verde **no ha elegido** entre los dos modelos de
+> esa pieza, la ha escrito. El número que hay que publicar al lado del verde es
+> *cuántas instancias distinguían los candidatos*, no cuántos pares se compararon.
+>
+> **(b) El dominio EFECTIVO de un comparador es más pequeño que su universo,
+> porque lo AUSENTE no se resta en ningún sitio.** Las formas que el clon todavía
+> no sirve están en el universo del espejo, salen contadas en «13 formas» y en el
+> resumen como `ausentes`, y **no propagan a ningún denominador**. Lo que se
+> comparó de verdad es *universo − ausentes*, y ése es el número contra el que se
+> lee el verde.
+
+**Medido, y las dos mitades hicieron falta:** un defecto de paginador falso en
+**31 de 38** instancias salió **verde**. El acta lo explicó por (a medias) el
+alcance —*«el comparador sólo mira páginas 1»*—, y cruzando **por ruta** en vez de
+por cardinal salió más estrecho: de las **43** instancias, **3** estaban en el
+universo del comparador, **2 de esas 3 eran formas AUSENTES**, y la **única**
+comparada tenía `total = 4`, donde los dos modelos emiten lo mismo. O sea
+**1 comparada · 0 separadoras**. Instrumento: `qa:lh-alcance` §`alcanceReal`.
+
+> **Y el corolario de redacción, que es donde se cuela:** *«el comparador sólo
+> mira X»* y *«de esto, el comparador comparó UNA y no separaba»* suenan igual y
+> **no son la misma afirmación** — la primera es sobre el alcance, la segunda
+> sobre el poder discriminante, y **sólo la segunda explica un verde**. Un alcance
+> estrecho no produce por sí solo un falso verde: lo produce que **lo que cayó
+> dentro no distinguiera nada**.
+
+**Y su mitad de ALCANCE, que es la otra cara y se declara aparte:** cuando el
+arquetipo tenga **más de una página por ruta** —paginación, series, pestañas—, la
+cobertura **no se puede declarar en rutas**: se declara en la unidad que la
+midió. Si otra sonda del repo ya estableció esa unidad, **su veredicto manda**, y
+que dos instrumentos del mismo repo estén en desacuerdo sobre la unidad es cosa
+que se resuelve **antes** de leer ninguno de los dos verdes. Medido: un
+comparador declaraba «13 formas» y comparaba **13 páginas de 149**, todas la
+página 1 — `intermedia` **86** y `última` **28** sin abrir a ningún ancho, y
+**11 de 38** clases tocadas.
+
 ⚠ **Y el tercer caso de la misma familia, que es el que se cuela porque parece
 resuelto: UN DISCRIMINADOR 1:1 PUEDE SER LA SOMBRA DE OTRO (2026-08-10, F3-1).**
 

@@ -47,6 +47,32 @@
  * publican las dos lecturas — `baseCruda` (la `y` absoluta de los dos lados, sin
  * restar) y los deltas del cuerpo ya normalizados — y **la cruda va primero**.
  *
+ * ── ⛔ EL ALCANCE, DECLARADO AQUÍ PORQUE ES AQUÍ DONDE SE LEE EL VERDE ─────
+ * **Esta sonda compara 13 PÁGINAS de 149, y las 13 son la página 1.** No es un
+ * detalle de implementación: es la mitad del denominador, y el recuento de pares
+ * —10 707 @1440— la absorbe entera.
+ *
+ * | en la unidad de `qa:lh-serie` (la PÁGINA) | n |
+ * |---|---|
+ * | páginas del original | 149 (84 con contenido) |
+ * | las que compara esta sonda | **13**, todas `primera` |
+ * | `intermedia` · `última` comparadas | **0** · **0** (de 86 y 28) |
+ * | clases de `lh-serie` tocadas | **11 de 38** (27 ciegas = 122 páginas) |
+ *
+ * `qa:lh-serie` midió esta pregunta y su veredicto es **«LA SERIE NO ES UNA
+ * UNIDAD»**; su negativo sale rojo si alguien toma el atajo de *«una página por
+ * serie»*. **Esta sonda toma ese atajo**, así que el desacuerdo entre las dos se
+ * declara en vez de dejarlo implícito. Número vivo y su cruce con la piel B:
+ * `qa:lh-alcance` §`alcanceReal`. Ficha y coste de ensanchar (×6.5, y exige medir
+ * el ORIGINAL en las `/page/N`, que hoy NO están en el espejo):
+ * `PENDIENTES-QA.md` §F3-LH-ALCANCE-PAGINA-1.
+ *
+ * ⚠ **Y el corolario que un verde de aquí NO autoriza:** «Δ0 en la forma X»
+ * significa *la página 1 de X*. Las piezas que **sólo existen** en `/page/N` —el
+ * `« Anterior`, los `page smaller`, la ventana con `...`, el resto de la división
+ * en la última— **no las ha mirado nadie**. Dos defectos de plantilla en dos
+ * tandas seguidas vivían exactamente ahí.
+ *
  * ── El suelo de ruido: NO HAY, y por eso se dice ──────────────────────────
  * ⚠ Estas rutas **no tienen campaña de ruido**. Un residuo pequeño aquí **no es
  * «limpio»: es SIN PROBAR**, y no se puede rodear leyendo el suelo de otra ruta

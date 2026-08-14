@@ -124,6 +124,164 @@ for (const F of FORMAS) {
   );
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL ALCANCE EN LA OTRA UNIDAD: LA PÁGINA — y por qué NO es un detalle
+ *
+ * Todo lo de arriba cuenta **pares**, y un par es *camino × propiedad* DENTRO de
+ * una página. Pero el denominador de una tanda tiene una segunda mitad que el
+ * recuento de pares **absorbe entera**: *¿sobre CUÁNTAS PÁGINAS se tomaron esos
+ * pares?* — §UNA COBERTURA DECLARADA AL NIVEL DE ARRIBA ABSORBE TODO LO QUE NO SE
+ * MIDIÓ ABAJO, con la unidad cambiada de la ruta a la página.
+ *
+ * ── El cruce que obliga a declararlo ──────────────────────────────────────
+ * `qa:lh-serie` **midió esta pregunta y la contestó**: su veredicto literal es
+ * **«LA SERIE NO ES UNA UNIDAD»** — 19 de 28 series heterogéneas, **38 clases**
+ * distintas, y su test en negativo sale **rojo por construcción** si alguien
+ * toma el atajo de *«una página por serie»*.
+ *
+ * Y el espejo del comparador (`lh-spec`) mide **la página 1** de cada forma.
+ * O sea que `lh-cmp` toma exactamente el atajo que `lh-serie` rechaza, y hasta
+ * hoy eso vivía como una línea suelta en `noMide` —sin número— mientras el
+ * cierre de la tanda se leía como *«LISTADO-B verificado»*. **Dos instrumentos
+ * del mismo repo en desacuerdo sobre la misma unidad**, que es justo el caso en
+ * el que este proyecto tiene escrito que se cruzan antes de creerse ninguno.
+ *
+ * ── Lo que esta sección NO hace ───────────────────────────────────────────
+ * No ensancha el comparador: **declara su alcance con su número**. Ensancharlo
+ * es una tanda con su coste, y el coste se publica aquí abajo para que la
+ * decisión se tome con él delante y no de memoria.
+ *
+ * ⚠ Y **no cierra el código de salida** (§sondas 1: lo que se imprime y no se
+ * cuenta se dice, y se dice por qué). Un rojo permanente aquí convertiría el
+ * censo del alcance en una guarda de otra cosa; el rojo que corresponde es el
+ * de `lh-cmp` cuando se decida ensancharlo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+/** `/es/etiqueta/x/` · `/etiqueta/x` · `etiqueta/x` → `etiqueta/x`. Los tres
+ *  ficheros congelados usan convenciones distintas y compararlas sin normalizar
+ *  daría **0 coincidencias**, que se leería como «el comparador no mira nada». */
+const aClave = (r) => r.replace(/^\/es/, "").replace(/^\/+/, "").replace(/\/+$/, "") || "/";
+
+/* §regla 6 · las dos congeladas que este cruce necesita se RECHAZAN si faltan:
+ * un `?? null` daría «0 páginas ciegas», que es la respuesta tranquilizadora. */
+const leeCongelada = (f, porQue) => {
+  const p = join(QA, `medidas/${f}`);
+  if (!existsSync(p))
+    throw new Error(
+      `FALTA medidas/${f}: ${porQue}\n` +
+        `  Sin ella el alcance en PÁGINAS saldría vacío, y un cero aquí se lee como\n` +
+        `  «no hay nada ciego» en vez de como «no lo miré» (§regla del cero).`,
+    );
+  return JSON.parse(readFileSync(p, "utf8"));
+};
+const SERIE = leeCongelada("lh-serie.json", "es quien estableció que la unidad es la PÁGINA y no la serie");
+const HUECOS = leeCongelada("lh-huecos.json", "es quien tiene el modelo del paginador y sus 43 instancias");
+
+const universoCmp = new Set(FORMAS.map((F) => aClave(F.ruta)));
+/** Las páginas del original, en la unidad de `lh-serie`: serie + `/page/N`. */
+const paginasUniverso = [];
+for (const [serie, s] of Object.entries(SERIE.series ?? {}))
+  for (const pg of s.paginas ?? []) paginasUniverso.push({ clave: aClave(pg.n === 1 ? serie : `${serie}/page/${pg.n}`), pos: pg.pos, clase: pg.clase, vacia: pg.vacia });
+
+const cuenta = (xs) => xs.reduce((m, x) => ((m[x] = (m[x] || 0) + 1), m), {});
+const vistas = paginasUniverso.filter((p) => universoCmp.has(p.clave));
+const clasesUniverso = new Set(paginasUniverso.map((p) => p.clase));
+const clasesVistas = new Set(vistas.map((p) => p.clase));
+const clasesCiegas = [...clasesUniverso].filter((c) => !clasesVistas.has(c));
+const paginasEnClasesCiegas = paginasUniverso.filter((p) => clasesCiegas.includes(p.clase)).length;
+
+/* ── EL CASO QUE LO DEMUESTRA, y no es hipotético: la PIEL B ───────────────
+ * §F3-LH-PIELB-VENTANA. El modelo viejo emitía `current` + `n+1..total`, o sea
+ * **cero `page smaller`**, y era **falso en 31 de las 38** instancias juzgables
+ * (43 menos las 5 con `larger page`, que quedan fuera del denominador). Salió
+ * verde. La razón se deriva aquí, y **no es la que decía el acta**: no es que el
+ * comparador mirase sólo las buenas — es que de esta piel **comparó UNA**, y no
+ * separaba los dos modelos. */
+const pb = HUECOS.huecos?.ventanaPielB ?? {};
+const instPB = (pb.instancias_ ?? []).map((i) => ({ ...i, clave: aClave(i.ruta) }));
+const buenasPB = new Set((pb.viejoAciertaEn ?? []).map((i) => aClave(i.ruta)));
+/** La página 1 SEPARA los dos modelos sólo si `total ≥ 6`: con `total ≤ 5` la
+ *  ventana de 5 y «todas» emiten la MISMA secuencia (§DOS MODELOS QUE PREDICEN
+ *  LO MISMO EN TODO TU DOMINIO SON UNO SOLO). */
+const separaPB = (i) => !(i.n === 1 ? i.total <= 5 : false) && !buenasPB.has(i.clave);
+const pbEnUniverso = instPB.filter((i) => universoCmp.has(i.clave));
+/**
+ * Y de ésas, las que el clon SIRVE hoy: una forma AUSENTE **no se compara**, así
+ * que estar en el universo del espejo no basta.
+ *
+ * ⚠ **Sin manifiesto esto NO es 0, es `null`** (§regla 6). `construida()`
+ * devuelve `null` cuando no hay `prerender-manifest`, y un `=== true` lo
+ * convertiría en «ninguna comparada» — un número que aquí apunta al lado
+ * prudente y **por la razón equivocada**: diría «el comparador no mira ninguna»
+ * cuando lo que pasa es que nadie miró el build.
+ */
+const pbComparadas = EMITIDAS ? pbEnUniverso.filter((i) => construida(`/${i.clave}/`) === true) : null;
+const pbSeparadorasComparadas = pbComparadas ? pbComparadas.filter(separaPB) : null;
+
+const alcanceReal = {
+  pregunta: "¿sobre cuántas PÁGINAS compara qa:lh-cmp, y sobre cuántas NO?",
+  unidad: "la PÁGINA (las /page/N incluidas), que es la unidad que estableció qa:lh-serie",
+  porQueImporta:
+    "el recuento de PARES es «camino × propiedad DENTRO de una página»: absorbe entero sobre cuántas páginas se tomaron.",
+  cruceConLhSerie: {
+    veredicto: SERIE.resumen?.veredicto ?? null,
+    seriesHeterogeneas: SERIE.resumen?.heterogeneas ?? null,
+    deSeriesConVariasPaginas: SERIE.resumen?.seriesConVariasPaginas ?? null,
+    loQueSignifica: "cada /page/N es su propia unidad; «una página por serie» es el atajo que su negativo rechaza",
+  },
+  paginas: {
+    enElUniverso: paginasUniverso.length,
+    conContenido: paginasUniverso.filter((p) => !p.vacia).length,
+    queCompara: vistas.length,
+    porPosicionQueCompara: cuenta(vistas.map((p) => p.pos)),
+    porPosicionDelUniverso: cuenta(paginasUniverso.map((p) => p.pos)),
+  },
+  clases: {
+    enElUniverso: clasesUniverso.size,
+    queToca: clasesVistas.size,
+    ciegas: clasesCiegas.length,
+    paginasEnClasesCiegas,
+  },
+  pielB: {
+    porQue: "§F3-LH-PIELB-VENTANA — el defecto vivía ENTERO en lo que el comparador no mira, y salió verde",
+    instancias: instPB.length,
+    enElUniversoDelComparador: pbEnUniverso.length,
+    realmenteComparadas: pbComparadas ? pbComparadas.length : null,
+    separadorasComparadas: pbSeparadorasComparadas ? pbSeparadorasComparadas.length : null,
+    detalle: pbEnUniverso.map((i) => ({
+      ruta: i.ruta,
+      n: i.n,
+      total: i.total,
+      laSirveElClon: construida(`/${i.clave}/`),
+      separaLosDosModelos: separaPB(i),
+    })),
+    veredicto: !pbSeparadorasComparadas
+      ? `SIN MANIFIESTO: no se puede decir cuáles se comparan (${porQueNoHayManifiesto}). No se sustituye por 0.`
+      : pbSeparadorasComparadas.length === 0
+        ? "SIN PROBAR: 0 instancias SEPARADORAS entre las comparadas — el acierto del comparador sobre esta piel no distingue los dos modelos"
+        : `${pbSeparadorasComparadas.length} separadora(s) comparada(s)`,
+  },
+  costeDeEnsanchar: {
+    paginasConContenidoSinComparar: paginasUniverso.filter((p) => !p.vacia).length - vistas.filter((p) => !p.vacia).length,
+    factorSobreLoQueHoySeCompara: vistas.length ? +(paginasUniverso.filter((p) => !p.vacia).length / vistas.length).toFixed(1) : null,
+    queCuesta:
+      "cada página nueva es una carga del clon (y del original en --vivo) más su barrido: el comparador tarda ~ lineal en páginas. " +
+      "No es un parámetro: es una tanda con su corrida, su congelada y su lectura.",
+    loQueNoCuesta: "el espejo YA existe por forma; ensanchar exige medir el original en las /page/N, que hoy no están en lh-spec.",
+  },
+};
+
+console.log(`\n  ── EL ALCANCE EN LA OTRA UNIDAD: LA PÁGINA (§lh-serie: «${alcanceReal.cruceConLhSerie.veredicto}») ──`);
+console.log(`  páginas del universo   ${alcanceReal.paginas.enElUniverso}   (${alcanceReal.paginas.conContenido} con contenido)`);
+console.log(`  páginas que COMPARA    ${alcanceReal.paginas.queCompara}   ${JSON.stringify(alcanceReal.paginas.porPosicionQueCompara)}`);
+console.log(`  del universo           ${JSON.stringify(alcanceReal.paginas.porPosicionDelUniverso)}`);
+console.log(`  clases                 toca ${alcanceReal.clases.queToca} de ${alcanceReal.clases.enElUniverso} · CIEGAS ${alcanceReal.clases.ciegas} (${paginasEnClasesCiegas} páginas)`);
+console.log(
+  `  piel B                 ${alcanceReal.pielB.instancias} instancias · ${alcanceReal.pielB.enElUniversoDelComparador} en su universo · ` +
+    `${alcanceReal.pielB.realmenteComparadas ?? "?"} COMPARADAS · ${alcanceReal.pielB.separadorasComparadas ?? "?"} separadoras`,
+);
+console.log(`     ⚠ ${alcanceReal.pielB.veredicto}`);
+console.log(`  ⚠ esto NO cierra el código de salida: es el CENSO del alcance, no la guarda del comparador.`);
+
 /* §regla 6 · un camino sin eje NO se mete en un cubo por defecto: tira. */
 if (sinEje.length)
   throw new Error(
@@ -150,7 +308,10 @@ const salida = {
     noMide: [
       "el clon: esta sonda no abre una página ni arranca el servidor",
       "si un par CUADRA: eso es la comparación, no el alcance",
-      "las rutas /page/N: el espejo mide la página 1 de cada forma",
+      /* ⚠ Esta línea existía desde el primer día **sin número**, y así se lee
+       * como una nota al pie en vez de como lo que es: la mitad del denominador.
+       * El número vive ahora en `alcanceReal`, abajo — 13 páginas de 149. */
+      "las rutas /page/N: el espejo mide la página 1 de cada forma → ver `alcanceReal`, que lo dice CON SU NÚMERO",
     ],
     porQueMixto:
       "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, " +
@@ -159,6 +320,8 @@ const salida = {
       "y construirla es una tanda, no un parámetro.",
   },
   universo: { formas: FORMAS.length, pares, ...total, verificables, pctMixto },
+  /* La otra mitad del denominador: sobre cuántas PÁGINAS se toman esos pares. */
+  alcanceReal,
   emiteElBuild: {
     fuente: EMITIDAS ? "apps/web/.next/prerender-manifest.json (la ruta EXACTA, no el segmento)" : `SIN MANIFIESTO — ${porQueNoHayManifiesto}`,
     rutasEnElManifiesto: EMITIDAS ? EMITIDAS.size : null,

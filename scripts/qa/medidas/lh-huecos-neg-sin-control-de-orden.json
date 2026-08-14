@@ -90,6 +90,268 @@
       "aciertaTodas": 24,
       "secuenciaNuevaAcierta": 38,
       "secuenciaViejaAcierta": 7,
+      "viejoAciertaEn": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales",
+          "n": 1,
+          "total": 3,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire",
+          "n": 1,
+          "total": 3,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension",
+          "n": 1,
+          "total": 2,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        }
+      ],
+      "viejoAciertaSoloEnPagina1": true,
+      "instancias_": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales",
+          "n": 1,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/2",
+          "n": 2,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/3",
+          "n": 3,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental",
+          "n": 1,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/10",
+          "n": 10,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/11",
+          "n": 11,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/2",
+          "n": 2,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/3",
+          "n": 3,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/4",
+          "n": 4,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/5",
+          "n": 5,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/6",
+          "n": 6,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/7",
+          "n": 7,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/8",
+          "n": 8,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/9",
+          "n": 9,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire",
+          "n": 1,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension",
+          "n": 1,
+          "total": 2
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension/page/2",
+          "n": 2,
+          "total": 2
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "glosario",
+          "n": 1,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/2",
+          "n": 2,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/3",
+          "n": 3,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/4",
+          "n": 4,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/5",
+          "n": 5,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/6",
+          "n": 6,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/7",
+          "n": 7,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/8",
+          "n": 8,
+          "total": 8
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/4",
+          "n": 4,
+          "total": 4
+        }
+      ],
       "instanciasConLargerPageExcluidasDeLaSecuencia": 5,
       "fallosDeSecuencia": [],
       "conFirst": 13,

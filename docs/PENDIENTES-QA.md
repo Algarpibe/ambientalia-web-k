@@ -1,5 +1,89 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-LH-ALCANCE-PAGINA-1 · `qa:lh-cmp` COMPARA 13 PÁGINAS DE 149, Y TODAS SON LA PÁGINA 1 (2026-08-14, 70.ª tanda — PARADA DE ALCANCE, nada construido)
+
+**Qué se decidió aquí: nada de código. Se declara el alcance del comparador con
+su número, porque hasta hoy se leía como más de lo que es.** El escalón 1 del
+encargo mandaba parar antes de construir si el comparador tomaba el atajo que
+`qa:lh-serie` rechaza. **Lo toma.** Derivado con `qa:lh-alcance`
+§`alcanceReal` (congelado en `medidas/lh-alcance-{1440,390}.json`), idéntico a
+los dos anchos.
+
+| en la unidad que `lh-serie` estableció — **la PÁGINA** | n |
+|---|---|
+| páginas del original | **149** (84 con contenido) |
+| páginas que `lh-cmp` compara | **13** |
+| …su posición | **`primera` 13** · `intermedia` **0** · `última` **0** |
+| posiciones del universo | `primera` 35 · **`intermedia` 86** · **`última` 28** |
+| **clases** de `lh-serie` que toca | **11 de 38** |
+| clases **CIEGAS** | **27**, o sea **122 páginas** |
+
+> **El desacuerdo entre dos instrumentos del mismo repo, dicho entero.**
+> `qa:lh-serie` midió esta pregunta y su veredicto literal es **«LA SERIE NO ES
+> UNA UNIDAD»** —19 de 28 series heterogéneas, 38 clases— y **su negativo sale
+> rojo por construcción** si alguien toma el atajo de *«una página por serie»*.
+> `qa:lh-cmp` toma ese atajo, y **ni siquiera entero**: no compara una por serie,
+> compara **la página 1 de 13 de las 35 series**.
+
+**Lo que significa exactamente «LISTADO-B verificado», que es lo que había que
+escribir en prosa y no sólo en una ficha:**
+
+> **«`LISTADO-B` verificado» significa: la PÁGINA 1 de sus formas está comparada
+> par a par contra el original, a 1440 y 390.** No dice nada de `/page/2` en
+> adelante — **86 intermedias y 28 últimas, ni una sola comparada a ningún
+> ancho** —, y por tanto no dice nada de las piezas que **sólo existen ahí**: el
+> `« Anterior`, los `page smaller`, la ventana con `...`, el `« First`, el
+> resto de la división en la última página. Un verde suyo es un verde **de la
+> página 1**, y leerlo como «la forma está verificada» es §*la cobertura
+> declarada al nivel de arriba absorbe todo lo que no se midió abajo* con el
+> contenedor puesto en la unidad más cómoda.
+
+**Y no es teórico: son DOS defectos en DOS tandas seguidas, los dos viviendo
+enteros en lo que no se mira** — la piel A en la 68.ª (`« Anterior` de
+`/blog/page/N`) y la piel B en la 69.ª (§F3-LH-PIELB-VENTANA, mala en **31 de
+38** instancias juzgables). **Dos de dos.**
+
+### El número que de verdad explica el verde: 0 SEPARADORAS
+
+El recuento de pares es grande —**10 707** @1440 y **10 714** @390— y no dice lo
+que parece decir. Cruzadas las 43 instancias de la piel B **por ruta**:
+
+| | n |
+|---|---|
+| en el universo del espejo | **3** |
+| **realmente comparadas** (el resto son formas AUSENTES) | **1** |
+| **SEPARADORAS** entre las comparadas | **0** |
+
+> **Un comparador con 10 707 pares verdes y 0 instancias separadoras de una piel
+> no ha elegido entre los dos modelos de esa piel: ha escrito uno.** El
+> denominador que decide no es el de pares — es el de instancias que **distinguen
+> los candidatos**, y ése hay que publicarlo aparte.
+
+⚠ **Y el dominio efectivo del comparador es MÁS PEQUEÑO que su universo, porque
+las formas AUSENTES no se restan en ningún sitio.** De las 3 instancias que
+tenía delante, 2 son `L2` sin construir. Ninguna cifra del comparador lo dice:
+`ausentesEnElClon: 6` está en el resumen, pero **no propaga** a los denominadores
+de nada.
+
+### Ensanchar: FICHADO con su número, NO hecho en esta tanda
+
+| | |
+|---|---|
+| páginas con contenido sin comparar | **71** |
+| factor sobre lo que hoy se compara | **×6.5** |
+| qué hay que medir primero | **el ORIGINAL en las `/page/N`**: hoy `lh-spec` sólo tiene la página 1, así que **no hay espejo** para ellas |
+| qué cuesta | ~lineal en páginas, **por ancho y por lado** (`--vivo` dobla): 13 → 84 páginas × 2 anchos × 2 lados |
+
+**Por qué no se hace aquí:** ensanchar el espejo es una campaña contra el
+original vivo con su corrida, su congelada y su lectura — y el encargo lo excluye
+explícitamente. **Lo que sí queda hecho es que el número está escrito**, de modo
+que la decisión de ensanchar se tome con él delante y no de memoria (§regla 9).
+
+**El atajo barato que aparece de camino, y que no cuesta una campaña:** construir
+`L2` mete `/glosario` (página 1, `total = 8`) en el conjunto comparado, y ésa
+**sí es separadora**. O sea que **parte del hueco se cierra construyendo**, no
+midiendo más — pero sólo la parte que cae en la página 1.
+
 ## ⚠ F3-LH-HUECOS-DE-ALCANCE · LAS SPECS DE `L2`·`L3`·`L5` NO CONTESTABAN CINCO PREGUNTAS QUE DECIDEN LA CONSTRUCCIÓN (2026-08-14, 69.ª tanda)
 
 **El encargo pedía aplicar §*UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA*
@@ -49,10 +133,41 @@ entera y no el conjunto de números**:
 
 *(las 5 instancias con `larger page` quedan fuera del denominador — ver abajo.)*
 
-> **Y los 7 que acertaba son exactamente páginas 1.** El espejo mide **la página
-> 1 de cada forma**, así que el defecto vivía entero donde ninguna comparación
-> llega. Es la **segunda** vez en dos tandas: la 68.ª encontró lo mismo en la
-> piel A (el `« Anterior` de `/blog/page/N` con N≥2).
+> **Y los 7 que acertaba son exactamente páginas 1** —derivado, no supuesto:
+> `lh-huecos.viejoAciertaSoloEnPagina1 = true`, con sus rutas y sus `total` de 2
+> a 4—. El espejo mide **la página 1 de cada forma**, así que el defecto vivía
+> entero donde ninguna comparación llega. Es la **segunda** vez en dos tandas: la
+> 68.ª encontró lo mismo en la piel A (el `« Anterior` de `/blog/page/N` con N≥2).
+
+> ⚠⚠ **CORREGIDO 2026-08-14 (70.ª tanda): la segunda mitad del titular —«y las 7
+> buenas son las únicas que el comparador mira»— ES FALSA, y la falsedad importa
+> porque el mecanismo verdadero es MÁS estrecho.** Derivado con
+> `qa:lh-alcance` §`alcanceReal.pielB`, cruzando por RUTA y no por cardinal:
+>
+> | | n |
+> |---|---|
+> | instancias de piel B en el corpus | **43** |
+> | …de ellas, en el universo del espejo | **3** — `etiqueta/calidad-del-aire` (1/4) · `glosario` (1/**8**) · `preguntas-frecuentes` (1/4) |
+> | …de ellas, que el clon SIRVE hoy ⇒ **realmente comparadas** | **1** |
+> | …de ellas, **SEPARADORAS** | **0** |
+>
+> **El comparador no mira «las 7»: mira UNA.** De las 3 que tiene en el universo,
+> dos (`glosario`, `preguntas-frecuentes`) son **AUSENTES** —`L2` no está
+> construida—, así que la única instancia de esta piel que se comparó de verdad
+> es `etiqueta/calidad-del-aire`, **página 1 de 4**. Y con `total ≤ 5` los dos
+> modelos emiten la MISMA secuencia.
+>
+> > **O sea que el verde no fue «acertó en las que miraba»: fue que su dominio
+> > efectivo tenía CERO instancias separadoras.** Es §DOS MODELOS QUE PREDICEN LO
+> > MISMO EN TODO TU DOMINIO SON UNO SOLO aplicado **al dominio del comparador**
+> > en vez de al de la spec — y el dominio del comparador es más pequeño que su
+> > universo, porque **las formas AUSENTES no se restan en ningún sitio**.
+>
+> **Y la corrección tiene una predicción, que es lo que la hace útil:** `/glosario`
+> es página 1 con **`total = 8`**, así que **SÍ separa los dos modelos**. En cuanto
+> `L2` se construya, esa instancia pasa de ausente a comparada y el comparador
+> gana su **primera separadora** de esta piel — sin ensanchar nada. Ficha del
+> alcance: §F3-LH-ALCANCE-PAGINA-1.
 
 **Por qué nadie lo vio, que es lo reutilizable.** Las dos instancias que
 calibraron la piel —`/etiqueta/calidad-del-aire` y `/preguntas-frecuentes`—
@@ -72,8 +187,12 @@ instancias SEPARADORAS**. Hoy son **19**, y por eso `qa:lh-huecos` publica
 | `a.previouspostslink` / `a.nextpostslink` | `n > 1` / `n < total` |
 | clase del número | `page smaller` si `k < n`, `page larger` si `k > n` |
 
-**El arreglo es NO-OP sobre todo lo comparado** (las formas del espejo tienen
-`total ≤ 4` y se miden en la página 1) y mueve el contenido de las **23** rutas
+**El arreglo es NO-OP sobre todo lo comparado** —y ⚠ **la razón que había escrita
+aquí era falsa**: decía *«las formas del espejo tienen `total ≤ 4`»* y `/glosario`
+tiene **8**. Es NO-OP porque la única instancia de esta piel que el clon sirve hoy
+es `etiqueta/calidad-del-aire` (1/4); `/glosario` **sí separaría** y está AUSENTE.
+Un NO-OP explicado por la propiedad equivocada deja de serlo en cuanto se
+construye `L2`, y nadie lo habría visto venir— y mueve el contenido de las **23** rutas
 `/etiqueta/*/page/N`. `qa:manifiesto`: **363 rutas, idéntica a la congelada** —
 el conjunto no se toca, sólo el contenido. **Sigue SIN VERIFICAR por comparador**,
 por la misma razón que lo estuvo el defecto: nada mide esas rutas.

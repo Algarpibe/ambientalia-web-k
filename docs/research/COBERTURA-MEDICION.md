@@ -1,5 +1,30 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⛔ **LEE ESTO ANTES DE LA MATRIZ (2026-08-14, 70.ª tanda). LOS EJES SE CUENTAN
+> EN RUTAS, Y UNA RUTA DE LISTADO NO ES UNA PÁGINA.** Declarado con su número en
+> `PENDIENTES-QA.md` §F3-LH-ALCANCE-PAGINA-1 y derivado en `qa:lh-alcance`
+> §`alcanceReal`:
+>
+> | | n |
+> |---|---|
+> | páginas del original en las series de listado | **149** (84 con contenido) |
+> | páginas que `qa:lh-cmp` compara | **13**, y **las 13 son la página 1** |
+> | posiciones **nunca comparadas a ningún ancho** | `intermedia` **86** · `última` **28** |
+> | clases de `qa:lh-serie` que se tocan | **11 de 38** → **27 ciegas**, **122 páginas** |
+>
+> **O sea que un `✓` de `base`, `árbol`, `filas` o `módulos` en una ruta de
+> listado quiere decir «la página 1 de esa ruta», no «esa ruta».** La matriz
+> cuenta rutas porque los demás arquetipos son una página por ruta; los listados
+> **no lo son**, y la unidad se declaró en `qa:lh-serie` con veredicto literal
+> **«LA SERIE NO ES UNA UNIDAD»**.
+>
+> ⚠ **Y el `·` de las `/page/N` sigue sin ser neutro: es donde han aparecido los
+> DOS últimos defectos de plantilla**, uno por tanda —la piel A en la 68.ª, la
+> piel B en la 69.ª—. La diferencia con lo que decía esta cabecera hasta hoy es
+> que ahora el hueco tiene **denominador**: no es «hay `/page/N` sin mirar», es
+> **114 páginas en dos posiciones que ninguna sonda de dos lados ha abierto
+> nunca**.
+
 > ⏸ **NO SE MOVIÓ el 2026-08-14 (69.ª tanda, la del ALCANCE de las specs), y es
 > POR CONSTRUCCIÓN — re-derivada y comprobada IDÉNTICA a la congelada, no
 > supuesta.** La matriz sigue en `base` **38** · `árbol` **38** ·
@@ -21,6 +46,14 @@
 > cada forma**, así que ninguna `/page/N` tiene referencia — y es la **segunda**
 > tanda seguida que encuentra un defecto ahí (la 68.ª, el `« Anterior` de la piel
 > A). **Dos de dos: el hueco de las `/page/N` ya no es teórico.**
+>
+> > ⚠ **CORREGIDO 2026-08-14 (70.ª tanda): «el espejo mide la página 1» era
+> > cierto y NO es la explicación del verde.** Cruzadas las 43 instancias **por
+> > ruta**, el comparador tenía **3** en su universo y **comparó UNA**
+> > (`etiqueta/calidad-del-aire`, 1 de 4): las otras dos son `L2`, **AUSENTE**. Y
+> > esa única instancia **no separa los dos modelos**. El verde no vino de mirar
+> > sólo páginas 1 — vino de **0 instancias SEPARADORAS**, que es un número
+> > distinto y más pequeño. Ver §F3-LH-ALCANCE-PAGINA-1.
 
 > ⏸ **NO SE MOVIÓ el 2026-08-14 (67.ª tanda, la de la DECISIÓN de `padre`), y
 > es POR CONSTRUCCIÓN — escrito después de mirarlo, no supuesto.** La tanda no
