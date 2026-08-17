@@ -279,11 +279,96 @@ const ev = new Evaluadas({ nombre: "extractor-a", unidad: "documentos del grupo 
 const salida = { "entradas-blog": [], "terminos-kunakpedia": [], "documentos-cientificos": [] };
 const sinCuerpo = [];
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL DUPLICADO — SE DETECTA Y SE REPORTA; **NO SE EXCLUYE**
+ *
+ * ⛔⛔ **Y ESO ES UNA CORRECCIÓN DEL MISMO DÍA, cobrada por la MEDIDA (2026-08-17).**
+ * Esta guarda se escribió **excluyendo**, con el razonamiento de abajo, que
+ * parecía —y sigue pareciendo— sólido. Al medir, `lh-cmp` dijo lo contrario:
+ *
+ * | residuos de FECHA | inicio | tras sembrar | **tras excluir** |
+ * |---|---|---|---|
+ * | @1440 y @390 | 58 | **6** | **10** |
+ *
+ * **Excluirlo empeora.** Y la razón, mirada después, es de manual:
+ *
+ * > **`D2.4` contesta «¿es una RUTA?» y aquí hacía falta contestar «¿es un
+ * > DOCUMENTO?», que no es la misma pregunta.** En el dominio donde `D2.4` se
+ * > derivó —los `/page/N`— las dos coinciden, porque un `/page/N` **no aparece
+ * > listado en ningún sitio**. Para una ENTRADA se separan: el original
+ * > **redirige su permalink** y **sigue listando su tarjeta** en los archivos de
+ * > etiqueta. Lo que 301 es la URL del documento, no su presencia en la lista.
+ *
+ * Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN
+ * PROBAR para ese caso*, en su forma más cara: la derivación era correcta, el
+ * dominio era real, y **la conclusión no se sigue**. Lo único que lo separó de
+ * un acierto fue **medir después de aplicar** — leer el precedente otra vez
+ * habría vuelto a dar «sí, lo cubre» las veces que hiciera falta.
+ *
+ * ⇒ **ESCALÓN 1 del encargo**: *«si el 301 no lo cubre el precedente escrito,
+ * para y ficha: qué es una ruta es decisión firmada en este proyecto, no
+ * criterio de tanda»*. Ficha con sus salidas: `PENDIENTES-QA.md`
+ * §F3-LH-ENTRADA-QUE-ES-UN-301. **Aquí sólo se DERIVA y se NOMBRA.**
+ *
+ * ── El razonamiento que NO basta, conservado porque es la mitad correcta ───
+ * `DECISIONES.md` §D2.5, la tabla que cierra `D2.4`: *«El original **declara él
+ * mismo** cuáles de sus URL son rutas, y lo declara **en el canonical**»* —
+ * canonical **a sí misma** ⇒ *«sí soy una ruta»*, canonical **a otra** ⇒ *«no
+ * soy una ruta» ⇒ 404 en el clon*. Y textualmente: *«**la misma regla da las dos
+ * respuestas**»*.
+ *
+ * Aquí el objeto es una ENTRADA en vez de un `/page/N`, y el discriminador da la
+ * misma respuesta con **más** margen, no con menos:
+ *
+ * | canal servido | qué dice de `medicion-de-gases-en-los-vertederos-de-basura` |
+ * |---|---|
+ * | el servidor, medido en vivo el 2026-08-17 | **HTTP 301** → `/es/contaminacion-del-aire-en-vertederos/` |
+ * | `<link rel=canonical>` de su captura | **la otra** |
+ * | `og:url` | **la otra** |
+ * | `<title>` | **el de la otra** |
+ *
+ * > **Los casos de `D2.4` servían 200 y sólo el canonical los delataba. Éste ni
+ * > siquiera se sirve.** O sea que si la regla alcanzaba a aquéllos, a éste le
+ * > sobra — la diferencia entre los dominios apunta **en la dirección segura**.
+ *
+ * ── Y la vuelta que había que dar antes de aplicarla (§regla 9) ───────────
+ * La ficha declaraba el barrido como NO CORRIDO, así que se corrió: de los
+ * **212** documentos del grupo A, **1** trae canonical a otro slug. Los otros 3
+ * que el barrido saca **no traen canonical NINGUNO** —y su `og:url` apunta a sí
+ * mismos, y el original en vivo tampoco lo sirve—, así que **no son duplicados**:
+ * son documentos con un canal ausente, que es otra cosa. De ahí que la guarda
+ * mire los DOS canales y que «ausente» NO cuente como duplicado.
+ *
+ * ── Se RECALCULA, no se lee una marca (la lección de `duplicado-sin-marcar`) ─
+ * No hay lista de exclusión. Si mañana el original redirige otro slug, entra
+ * solo; y si deja de redirigir éste, sale solo. Una lista a mano es §regla 9 en
+ * código, y este repo ya la pagó en `cobertura.mjs`.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const slugDe = (url) => {
+  try { return new URL(url).pathname.replace(/\/+$/, "").split("/").pop() || null; }
+  catch { return null; }
+};
+/** El slug que el documento dice ser, por los canales servidos. `null` = no lo dice. */
+const seDeclaraComo = (crudo) => {
+  const can = uno(crudo, /<link rel="canonical" href="([^"]+)"/);
+  if (can) return { slug: slugDe(can), canal: "canonical", url: can };
+  const og = uno(crudo, /property="og:url" content="([^"]+)"/);
+  if (og) return { slug: slugDe(og), canal: "og:url", url: og };
+  return { slug: null, canal: null, url: null };
+};
+const duplicados = [];
+
 for (const [clave, p] of trabajo) {
   const col = clave.split("/")[0];
   const slug = clave.slice(col.length + 1);
   const crudo = readFileSync(join(CORPUS, p.fichero), "utf8");
   const sin = sinScriptNiStyle(crudo);
+
+  /* Se DETECTA y se REPORTA; **no se excluye**. Ver la cabecera: el precedente
+   * contesta «no es una ruta» y NO contesta «no es un documento», que es la
+   * pregunta que hace falta aquí. */
+  const dice = seDeclaraComo(crudo);
+  if (dice.slug && dice.slug !== slug) duplicados.push({ clave, seDeclara: dice.slug, canal: dice.canal, url: dice.url });
 
   const fCuerpo = join(TRANSFORMADO, `${clave}.html`);
   if (SABOTAJE === "cuerpo-ausente" && salida["entradas-blog"].length === 3) { sinCuerpo.push(clave); ev.fallo(clave, "cuerpo ausente (sabotaje)"); continue; }
@@ -676,6 +761,19 @@ w("medidas/a-extraido.json", {
   },
   recuento: Object.fromEntries(GRUPO_A.map((c) => [c, salida[c].length])),
   /**
+   * Los que el original declara que NO son documentos (`D2.4` un nivel abajo).
+   * Se publican **con su denominador y su canal**, no como un número: «1» a
+   * secas no dice si el barrido miró 1 o 212.
+   */
+  duplicados: {
+    n: duplicados.length,
+    deUnTotalDe: trabajo.length,
+    regla: "DECISIONES.md §D2.5/§D2.4 — canonical a OTRA URL ⇒ «no soy una ruta». Aquí, además, el servidor responde 301.",
+    canalesMirados: ["<link rel=canonical>", "og:url"],
+    ausenteNoEsDuplicado: "un documento SIN canonical NI og:url no se excluye: «no lo dice» y «dice que es otro» son distintos (§regla 6)",
+    todos: duplicados,
+  },
+  /**
    * ⚠ **El DENOMINADOR del control se congela al lado de su numerador.** El
    * control no compara los 209 documentos: compara los **transcritos a mano**,
    * que son otro conjunto y mucho más pequeño. Sin este número, cualquiera que
@@ -710,10 +808,22 @@ w("medidas/a-extraido.json", {
   catalogo: salida,
 });
 
+/* Los duplicados se IMPRIMEN uno a uno: un documento que desaparece del catálogo
+ * sin decir por qué es exactamente lo que §sondas 1 persigue —lo que se mira, se
+ * cuenta; lo que se cuenta, se dice—. No cierran el código: excluirlos es la
+ * decisión, no un fallo. */
+if (duplicados.length)
+  console.log(
+    `\n  ── DECLARAN SER OTRA URL — detectados, NO excluidos (§F3-LH-ENTRADA-QUE-ES-UN-301, sin decidir) ──\n` +
+      duplicados.map((d) => `   · ${d.clave}\n       ${d.canal} → ${d.url}`).join("\n") +
+      `\n   ${duplicados.length} de ${trabajo.length}. Se recalcula en cada corrida: no hay lista de exclusión.\n`,
+  );
+
 const rojo = control.length > 0 || muertos > 0 || sinCuerpo.length > 0 || abiertosMal.length > 0;
 console.log(
   `\n${rojo ? "❌" : "✅"} extractor-a: ${GRUPO_A.map((c) => `${salida[c].length} ${c}`).join(" · ")} · ` +
     `${control.length} discrepancia(s) · ${muertos} lector(es) muerto(s) · ${sinCuerpo.length} sin cuerpo · ` +
+    `${duplicados.length} que declaran ser OTRA URL (detectados, SIN excluir) · ` +
     `${abiertosMal.length} declaración(es) de defecto abierto caducada(s)\n`,
 );
 process.exit(rojo ? 2 : 0);

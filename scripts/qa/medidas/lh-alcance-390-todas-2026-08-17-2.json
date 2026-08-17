@@ -1,0 +1,1431 @@
+{
+  "meta": {
+    "fecha": "2026-08-17",
+    "que": "ALCANCE VERIFICABLE de los listados a 390: el denominador de qa:lh-cmp, derivado ANTES de comparar",
+    "espejo": "medidas/lh-espejo-390.json (2026-08-14)",
+    "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",
+    "noMide": [
+      "el clon: esta sonda no abre una página ni arranca el servidor — 0 de las 82 formas se renderiza aquí",
+      "si un par CUADRA: eso es la comparación, no el alcance — de los 129428 pares censados, esta sonda comprueba 0",
+      "las páginas que el espejo NO trae: compara 82 de 149 ({\"primera\":30,\"intermedia\":48,\"última\":4} de {\"primera\":35,\"intermedia\":86,\"última\":28}), y toca 35 de 38 clases — 3 ciegas, 65 páginas dentro",
+      "qué son las 3 clases CIEGAS: 65 de 149 páginas (t=0 tarjetas, 0 con contenido, {\"D2.5·vacía\":55,\"B·sin-decisión\":5,\"D2.4·duplicado\":5}) — todas de CERO tarjetas (t=0) y 0 con contenido: NO son formas sin construir ni L4, y lh-cmp no las cubriría ni ensanchado. NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas. NO: L4 está en el universo del comparador (1 forma[s]) y toca clase. ensanchar lh-cmp alcanzaría 0 de estas 65; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 0 de 65",
+      "por qué `última` es 4 y no 28: las 24 que faltan salen {\"D2.5·vacía\":17,\"D2.4·duplicado\":7} — de ellas HUECO 0, el resto decisiones firmadas. Y el 4 no mide «¿ve el final de la lista?»: `pos` va sobre la serie SERVIDA y el espejo sobre la que tiene CONTENIDO (difieren en 17 de 35 series). Esa pregunta sale 28 de 30",
+      "las formas AUSENTES en el clon: el dominio EFECTIVO es universo − ausentes, y esta sonda no abre el clon — de las 82 formas, 62 tienen ruta emitida",
+      "si el UNIVERSO es correcto: el cruce al par con qa:lh-cmp prueba que los dos leen EL MISMO (82 formas · 129428 pares), no que sea el bueno — los dos salen del mismo espejo. Quien lo verifica es la derivación de qa:lh-espejo (documentos − duplicados) con su guarda que los RECALCULA y su sabotaje `duplicado-sin-marcar` en rojo"
+    ],
+    "porQueMixto": "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Contra el espejo absorbe la deriva del contenido; contra el corpus, la geometría de un render sin hojas. La referencia que las arreglaría es una tercera —el corpus RENDERIZADO con sus hojas— y construirla es una tanda, no un parámetro."
+  },
+  "universo": {
+    "formas": 82,
+    "pares": 129428,
+    "contenido": 4186,
+    "plantilla": 103159,
+    "mixta": 22083,
+    "verificables": 107345,
+    "pctMixto": 17.1
+  },
+  "minParPorPagina": {
+    "minimo": 1,
+    "cumplen": 82,
+    "de": 82,
+    "conCero": [],
+    "queSignificaUnCero": "candidata a un TERCER tipo de fantasma, tras los duplicados y los invisibles al filtro por contenido",
+    "cierraElCodigo": true
+  },
+  "alcanceReal": {
+    "pregunta": "¿sobre cuántas PÁGINAS compara qa:lh-cmp, y sobre cuántas NO?",
+    "unidad": "la PÁGINA (las /page/N incluidas), que es la unidad que estableció qa:lh-serie",
+    "porQueImporta": "el recuento de PARES es «camino × propiedad DENTRO de una página»: absorbe entero sobre cuántas páginas se tomaron.",
+    "cruceConLhSerie": {
+      "veredicto": "LA SERIE NO ES UNA UNIDAD",
+      "seriesHeterogeneas": 19,
+      "deSeriesConVariasPaginas": 28,
+      "loQueSignifica": "cada /page/N es su propia unidad; «una página por serie» es el atajo que su negativo rechaza"
+    },
+    "paginas": {
+      "enElUniverso": 149,
+      "conContenido": 84,
+      "queCompara": 82,
+      "porPosicionQueCompara": {
+        "primera": 30,
+        "intermedia": 48,
+        "última": 4
+      },
+      "porPosicionDelUniverso": {
+        "primera": 35,
+        "intermedia": 86,
+        "última": 28
+      },
+      "fueraPorFrontera": {
+        "D2.5·vacía": 55,
+        "D2.4·duplicado": 7,
+        "B·sin-decisión": 5
+      },
+      "fueraQueEsHueco": 0,
+      "fueraPorPosicionYFrontera": {
+        "primera": {
+          "delUniverso": 35,
+          "compara": 30,
+          "fuera": {
+            "B·sin-decisión": 5
+          }
+        },
+        "intermedia": {
+          "delUniverso": 86,
+          "compara": 48,
+          "fuera": {
+            "D2.5·vacía": 38
+          }
+        },
+        "última": {
+          "delUniverso": 28,
+          "compara": 4,
+          "fuera": {
+            "D2.5·vacía": 17,
+            "D2.4·duplicado": 7
+          }
+        }
+      },
+      "fronteras": {
+        "D2.4·duplicado": "/page/N de una serie que NO pagina: canonical a la 1.ª ⇒ el MISMO documento, no una ruta (D2.4)",
+        "B·sin-decisión": "la página 1 de una serie que no pagina y no lista nada: NI D2.5 NI D2.4 le aplican (§F3-LH-VACIA-DOS-CAUSAS, grupo B)",
+        "D2.5·vacía": "página de una serie que SÍ pagina y no lista nada: 200 · canonical a sí misma · «Página N de M» (D2.5, contrato P-LH-C7)",
+        "espejo·no-la-trae": "página CON CONTENIDO que este espejo no mide: NO es una decisión, es EL ALCANCE — el número que hay que mirar"
+      },
+      "ultimaConContenido": {
+        "porQue": "`pos` se calcula sobre la serie SERVIDA; el espejo es la serie CON CONTENIDO. Son dos unidades y sólo una contesta «¿se ve el final de la lista?»",
+        "seriesDelUniverso": 35,
+        "seriesConAlgunaPaginaConContenido": 30,
+        "suUltimaConContenidoComparada": 28,
+        "deEllas": 30,
+        "suUltimaConContenidoComparadaEnDOCUMENTOS": 30,
+        "noComparadas": [
+          {
+            "serie": "/casos-de-exito",
+            "pagina": 2,
+            "frontera": "D2.4·duplicado",
+            "suDocumentoSeCompara": true
+          },
+          {
+            "serie": "/recursos",
+            "pagina": 2,
+            "frontera": "D2.4·duplicado",
+            "suDocumentoSeCompara": true
+          }
+        ],
+        "seriesSinNingunaPaginaConContenido": [
+          "/productos",
+          "/recursos/documentos-cientificos",
+          "/recursos/kunakpedia",
+          "/recursos/preguntas-frecuentes",
+          "/sectores"
+        ],
+        "seriesDondeLasDosUltimasDIFIEREN": 17
+      }
+    },
+    "clases": {
+      "enElUniverso": 38,
+      "queToca": 35,
+      "ciegas": 3,
+      "paginasEnClasesCiegas": 65,
+      "ciegasDetalle": [
+        {
+          "clase": "t0·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 36,
+          "series": 12,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "D2.5·vacía": 36
+          },
+          "seriesQueLaTraen": [
+            "/blog",
+            "/etiqueta/calidad-del-aire",
+            "/etiqueta/co2-es",
+            "/etiqueta/contaminantes-atmosfericos",
+            "/etiqueta/cov",
+            "/etiqueta/emisiones-industriales",
+            "/etiqueta/gases-de-efecto-invernadero",
+            "/etiqueta/malos-olores",
+            "/etiqueta/monitorizacion-ambiental",
+            "/etiqueta/normativa-de-calidad-del-aire",
+            "/etiqueta/particulas-en-suspension",
+            "/etiqueta/sensor-de-calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t0·ninguna·--·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 25,
+          "series": 8,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "B·sin-decisión": 3,
+            "D2.4·duplicado": 3,
+            "D2.5·vacía": 19
+          },
+          "seriesQueLaTraen": [
+            "/productos",
+            "/recursos/articulos",
+            "/recursos/articulos/contaminacion-urbana",
+            "/recursos/articulos/contaminacion-y-salud",
+            "/recursos/articulos/industria-y-contaminacion-por-olores",
+            "/recursos/articulos/productos-kunak",
+            "/recursos/kunakpedia",
+            "/recursos/preguntas-frecuentes"
+          ]
+        },
+        {
+          "clase": "t0·ninguna·--·s7",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 4,
+          "series": 2,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "B·sin-decisión": 2,
+            "D2.4·duplicado": 2
+          },
+          "seriesQueLaTraen": [
+            "/recursos/documentos-cientificos",
+            "/sectores"
+          ]
+        }
+      ],
+      "queSonLasCiegas": {
+        "paginas": 65,
+        "deUnUniversoDe": 149,
+        "conContenido": 0,
+        "tarjetasDeEsasClases": [
+          0
+        ],
+        "porFrontera": {
+          "D2.5·vacía": 55,
+          "B·sin-decisión": 5,
+          "D2.4·duplicado": 5
+        },
+        "noSon": {
+          "formasSinConstruir": "NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas",
+          "L4": "NO: L4 está en el universo del comparador (1 forma[s]) y toca clase"
+        },
+        "decididoPor": "D2.5·vacía 55 · B·sin-decisión 5 · D2.4·duplicado 5",
+        "veredicto": "todas de CERO tarjetas (t=0) y 0 con contenido: NO son formas sin construir ni L4, y lh-cmp no las cubriría ni ensanchado",
+        "loQueNoCubre": "ensanchar lh-cmp alcanzaría 0 de estas 65; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 0 de 65",
+        "emiteElClon": 0
+      }
+    },
+    "pielB": {
+      "porQue": "§F3-LH-PIELB-VENTANA — el defecto vivía ENTERO en lo que el comparador no mira, y salió verde",
+      "instancias": 43,
+      "enElUniversoDelComparador": 43,
+      "realmenteComparadas": 31,
+      "separadorasComparadas": 25,
+      "detalle": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/2",
+          "n": 2,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/3",
+          "n": 3,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/4",
+          "n": 4,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales",
+          "n": 1,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/2",
+          "n": 2,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/3",
+          "n": 3,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental",
+          "n": 1,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/10",
+          "n": 10,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/11",
+          "n": 11,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/2",
+          "n": 2,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/3",
+          "n": 3,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/4",
+          "n": 4,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/5",
+          "n": 5,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/6",
+          "n": 6,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/7",
+          "n": 7,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/8",
+          "n": 8,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/9",
+          "n": 9,
+          "total": 11,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire",
+          "n": 1,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 3,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension",
+          "n": 1,
+          "total": 2,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension/page/2",
+          "n": 2,
+          "total": 2,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4,
+          "laSirveElClon": true,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario",
+          "n": 1,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/2",
+          "n": 2,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/3",
+          "n": 3,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/4",
+          "n": 4,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/5",
+          "n": 5,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/6",
+          "n": 6,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/7",
+          "n": 7,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "glosario/page/8",
+          "n": 8,
+          "total": 8,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4,
+          "laSirveElClon": false,
+          "separaLosDosModelos": false
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/2",
+          "n": 2,
+          "total": 4,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/3",
+          "n": 3,
+          "total": 4,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/4",
+          "n": 4,
+          "total": 4,
+          "laSirveElClon": false,
+          "separaLosDosModelos": true
+        }
+      ],
+      "veredicto": "25 separadora(s) comparada(s)"
+    },
+    "costeDeEnsanchar": {
+      "paginasConContenidoSinComparar": 2,
+      "factorSobreLoQueHoySeCompara": 1,
+      "queCuesta": "cada página nueva es una carga del clon (y del original en --vivo) más su barrido: el comparador tarda ~ lineal en páginas. No es un parámetro: es una tanda con su corrida, su congelada y su lectura.",
+      "loQueNoCuesta": "el espejo YA existe por forma; ensanchar exige medir el original en las /page/N, que hoy no están en lh-spec."
+    }
+  },
+  "emiteElBuild": {
+    "fuente": "apps/web/.next/prerender-manifest.json (la ruta EXACTA, no el segmento)",
+    "rutasEnElManifiesto": 366,
+    "formas": 62,
+    "claves": [
+      "L1-blog::/es/blog/",
+      "L1-blog::/es/blog/page/2/",
+      "L1-blog::/es/blog/page/3/",
+      "L1-blog::/es/blog/page/4/",
+      "L1-blog::/es/blog/page/5/",
+      "L1-blog::/es/blog/page/6/",
+      "L1-blog::/es/blog/page/7/",
+      "L1-blog::/es/blog/page/8/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/3/",
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/4/",
+      "L1-etiqueta::/es/etiqueta/co2-es/",
+      "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/",
+      "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/2/",
+      "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/3/",
+      "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/4/",
+      "L1-etiqueta::/es/etiqueta/cov/",
+      "L1-etiqueta::/es/etiqueta/emisiones-industriales/",
+      "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/2/",
+      "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/3/",
+      "L1-etiqueta::/es/etiqueta/gases-de-efecto-invernadero/",
+      "L1-etiqueta::/es/etiqueta/h2s-es/",
+      "L1-etiqueta::/es/etiqueta/malos-olores/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/2/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/3/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/4/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/5/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/6/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/7/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/8/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/9/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/10/",
+      "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/11/",
+      "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/",
+      "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/2/",
+      "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/3/",
+      "L1-etiqueta::/es/etiqueta/particulas-en-suspension/",
+      "L1-etiqueta::/es/etiqueta/particulas-en-suspension/page/2/",
+      "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/",
+      "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/2/",
+      "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/3/",
+      "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/4/",
+      "L1-resources-padre::/es/recursos/articulos/",
+      "L1-resources-padre::/es/recursos/articulos/page/2/",
+      "L1-resources-padre::/es/recursos/articulos/page/3/",
+      "L1-resources-padre::/es/recursos/articulos/page/4/",
+      "L1-resources-padre::/es/recursos/articulos/page/5/",
+      "L1-resources-padre::/es/recursos/articulos/page/6/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-minera/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/page/2/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/",
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/page/2/",
+      "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/",
+      "L1-resources-hijo::/es/recursos/articulos/petroleo-y-gas/",
+      "L1-resources-hijo::/es/recursos/articulos/productos-kunak/",
+      "L1-resources-padre::/es/recursos/seminarios-web/"
+    ],
+    "pares": 110829,
+    "verificables": 92430,
+    "mixtos": 18399
+  },
+  "porForma": {
+    "L1-blog::/es/blog/": {
+      "ruta": "/es/blog/",
+      "contenido": 54,
+      "plantilla": 1378,
+      "mixta": 285,
+      "pares": 1717,
+      "verificables": 1432,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/2/": {
+      "ruta": "/es/blog/page/2/",
+      "contenido": 65,
+      "plantilla": 1513,
+      "mixta": 300,
+      "pares": 1878,
+      "verificables": 1578,
+      "pctMixto": 16,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/3/": {
+      "ruta": "/es/blog/page/3/",
+      "contenido": 67,
+      "plantilla": 1546,
+      "mixta": 303,
+      "pares": 1916,
+      "verificables": 1613,
+      "pctMixto": 15.8,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/4/": {
+      "ruta": "/es/blog/page/4/",
+      "contenido": 69,
+      "plantilla": 1579,
+      "mixta": 306,
+      "pares": 1954,
+      "verificables": 1648,
+      "pctMixto": 15.7,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/5/": {
+      "ruta": "/es/blog/page/5/",
+      "contenido": 57,
+      "plantilla": 1509,
+      "mixta": 298,
+      "pares": 1864,
+      "verificables": 1566,
+      "pctMixto": 16,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/6/": {
+      "ruta": "/es/blog/page/6/",
+      "contenido": 56,
+      "plantilla": 1476,
+      "mixta": 297,
+      "pares": 1829,
+      "verificables": 1532,
+      "pctMixto": 16.2,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/7/": {
+      "ruta": "/es/blog/page/7/",
+      "contenido": 44,
+      "plantilla": 1306,
+      "mixta": 278,
+      "pares": 1628,
+      "verificables": 1350,
+      "pctMixto": 17.1,
+      "emiteElBuild": true
+    },
+    "L1-blog::/es/blog/page/8/": {
+      "ruta": "/es/blog/page/8/",
+      "contenido": 40,
+      "plantilla": 1240,
+      "mixta": 272,
+      "pares": 1552,
+      "verificables": 1280,
+      "pctMixto": 17.5,
+      "emiteElBuild": true
+    },
+    "L5-casos::/es/casos-de-exito/": {
+      "ruta": "/es/casos-de-exito/",
+      "contenido": 36,
+      "plantilla": 677,
+      "mixta": 199,
+      "pares": 912,
+      "verificables": 713,
+      "pctMixto": 21.8,
+      "emiteElBuild": false
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 327,
+      "pares": 1997,
+      "verificables": 1670,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/page/2/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 333,
+      "pares": 2038,
+      "verificables": 1705,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/3/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/page/3/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 336,
+      "pares": 2041,
+      "verificables": 1705,
+      "pctMixto": 16.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/4/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/page/4/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 328,
+      "pares": 1998,
+      "verificables": 1670,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/co2-es/": {
+      "ruta": "/es/etiqueta/co2-es/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 309,
+      "pares": 1737,
+      "verificables": 1428,
+      "pctMixto": 17.8,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/": {
+      "ruta": "/es/etiqueta/contaminantes-atmosfericos/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 326,
+      "pares": 1996,
+      "verificables": 1670,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/2/": {
+      "ruta": "/es/etiqueta/contaminantes-atmosfericos/page/2/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 332,
+      "pares": 2037,
+      "verificables": 1705,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/3/": {
+      "ruta": "/es/etiqueta/contaminantes-atmosfericos/page/3/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 336,
+      "pares": 2041,
+      "verificables": 1705,
+      "pctMixto": 16.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/4/": {
+      "ruta": "/es/etiqueta/contaminantes-atmosfericos/page/4/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 328,
+      "pares": 1998,
+      "verificables": 1670,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/cov/": {
+      "ruta": "/es/etiqueta/cov/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 302,
+      "pares": 1730,
+      "verificables": 1428,
+      "pctMixto": 17.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/": {
+      "ruta": "/es/etiqueta/emisiones-industriales/",
+      "contenido": 64,
+      "plantilla": 1571,
+      "mixta": 319,
+      "pares": 1954,
+      "verificables": 1635,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/2/": {
+      "ruta": "/es/etiqueta/emisiones-industriales/page/2/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 331,
+      "pares": 2001,
+      "verificables": 1670,
+      "pctMixto": 16.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/3/": {
+      "ruta": "/es/etiqueta/emisiones-industriales/page/3/",
+      "contenido": 64,
+      "plantilla": 1571,
+      "mixta": 326,
+      "pares": 1961,
+      "verificables": 1635,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/gases-de-efecto-invernadero/": {
+      "ruta": "/es/etiqueta/gases-de-efecto-invernadero/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 306,
+      "pares": 1734,
+      "verificables": 1428,
+      "pctMixto": 17.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/h2s-es/": {
+      "ruta": "/es/etiqueta/h2s-es/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 306,
+      "pares": 1734,
+      "verificables": 1428,
+      "pctMixto": 17.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/malos-olores/": {
+      "ruta": "/es/etiqueta/malos-olores/",
+      "contenido": 56,
+      "plantilla": 1372,
+      "mixta": 306,
+      "pares": 1734,
+      "verificables": 1428,
+      "pctMixto": 17.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/",
+      "contenido": 74,
+      "plantilla": 1769,
+      "mixta": 341,
+      "pares": 2184,
+      "verificables": 1843,
+      "pctMixto": 15.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/2/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/2/",
+      "contenido": 76,
+      "plantilla": 1802,
+      "mixta": 348,
+      "pares": 2226,
+      "verificables": 1878,
+      "pctMixto": 15.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/3/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/3/",
+      "contenido": 76,
+      "plantilla": 1802,
+      "mixta": 342,
+      "pares": 2220,
+      "verificables": 1878,
+      "pctMixto": 15.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/4/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/4/",
+      "contenido": 77,
+      "plantilla": 1802,
+      "mixta": 349,
+      "pares": 2228,
+      "verificables": 1879,
+      "pctMixto": 15.7,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/5/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/5/",
+      "contenido": 77,
+      "plantilla": 1802,
+      "mixta": 350,
+      "pares": 2229,
+      "verificables": 1879,
+      "pctMixto": 15.7,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/6/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/6/",
+      "contenido": 76,
+      "plantilla": 1802,
+      "mixta": 343,
+      "pares": 2221,
+      "verificables": 1878,
+      "pctMixto": 15.4,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/7/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/7/",
+      "contenido": 62,
+      "plantilla": 1664,
+      "mixta": 332,
+      "pares": 2058,
+      "verificables": 1726,
+      "pctMixto": 16.1,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/8/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/8/",
+      "contenido": 62,
+      "plantilla": 1664,
+      "mixta": 330,
+      "pares": 2056,
+      "verificables": 1726,
+      "pctMixto": 16.1,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/9/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/9/",
+      "contenido": 52,
+      "plantilla": 1529,
+      "mixta": 314,
+      "pares": 1895,
+      "verificables": 1581,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/10/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/10/",
+      "contenido": 52,
+      "plantilla": 1529,
+      "mixta": 314,
+      "pares": 1895,
+      "verificables": 1581,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/11/": {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/page/11/",
+      "contenido": 32,
+      "plantilla": 1094,
+      "mixta": 233,
+      "pares": 1359,
+      "verificables": 1126,
+      "pctMixto": 17.1,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "ruta": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "contenido": 64,
+      "plantilla": 1571,
+      "mixta": 322,
+      "pares": 1957,
+      "verificables": 1635,
+      "pctMixto": 16.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/2/": {
+      "ruta": "/es/etiqueta/normativa-de-calidad-del-aire/page/2/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 333,
+      "pares": 2003,
+      "verificables": 1670,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/3/": {
+      "ruta": "/es/etiqueta/normativa-de-calidad-del-aire/page/3/",
+      "contenido": 48,
+      "plantilla": 1301,
+      "mixta": 280,
+      "pares": 1629,
+      "verificables": 1349,
+      "pctMixto": 17.2,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/particulas-en-suspension/": {
+      "ruta": "/es/etiqueta/particulas-en-suspension/",
+      "contenido": 62,
+      "plantilla": 1539,
+      "mixta": 316,
+      "pares": 1917,
+      "verificables": 1601,
+      "pctMixto": 16.5,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/particulas-en-suspension/page/2/": {
+      "ruta": "/es/etiqueta/particulas-en-suspension/page/2/",
+      "contenido": 62,
+      "plantilla": 1538,
+      "mixta": 328,
+      "pares": 1928,
+      "verificables": 1600,
+      "pctMixto": 17,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "ruta": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "contenido": 66,
+      "plantilla": 1605,
+      "mixta": 326,
+      "pares": 1997,
+      "verificables": 1671,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/2/": {
+      "ruta": "/es/etiqueta/sensor-de-calidad-del-aire/page/2/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 328,
+      "pares": 2033,
+      "verificables": 1705,
+      "pctMixto": 16.1,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/3/": {
+      "ruta": "/es/etiqueta/sensor-de-calidad-del-aire/page/3/",
+      "contenido": 68,
+      "plantilla": 1637,
+      "mixta": 332,
+      "pares": 2037,
+      "verificables": 1705,
+      "pctMixto": 16.3,
+      "emiteElBuild": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/4/": {
+      "ruta": "/es/etiqueta/sensor-de-calidad-del-aire/page/4/",
+      "contenido": 66,
+      "plantilla": 1604,
+      "mixta": 328,
+      "pares": 1998,
+      "verificables": 1670,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L2-glosario::/es/glosario/": {
+      "ruta": "/es/glosario/",
+      "contenido": 25,
+      "plantilla": 653,
+      "mixta": 170,
+      "pares": 848,
+      "verificables": 678,
+      "pctMixto": 20,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/2/": {
+      "ruta": "/es/glosario/page/2/",
+      "contenido": 27,
+      "plantilla": 687,
+      "mixta": 176,
+      "pares": 890,
+      "verificables": 714,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/3/": {
+      "ruta": "/es/glosario/page/3/",
+      "contenido": 27,
+      "plantilla": 686,
+      "mixta": 176,
+      "pares": 889,
+      "verificables": 713,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/4/": {
+      "ruta": "/es/glosario/page/4/",
+      "contenido": 30,
+      "plantilla": 752,
+      "mixta": 182,
+      "pares": 964,
+      "verificables": 782,
+      "pctMixto": 18.9,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/5/": {
+      "ruta": "/es/glosario/page/5/",
+      "contenido": 30,
+      "plantilla": 752,
+      "mixta": 182,
+      "pares": 964,
+      "verificables": 782,
+      "pctMixto": 18.9,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/6/": {
+      "ruta": "/es/glosario/page/6/",
+      "contenido": 27,
+      "plantilla": 687,
+      "mixta": 176,
+      "pares": 890,
+      "verificables": 714,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/7/": {
+      "ruta": "/es/glosario/page/7/",
+      "contenido": 27,
+      "plantilla": 687,
+      "mixta": 176,
+      "pares": 890,
+      "verificables": 714,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L2-glosario::/es/glosario/page/8/": {
+      "ruta": "/es/glosario/page/8/",
+      "contenido": 22,
+      "plantilla": 591,
+      "mixta": 151,
+      "pares": 764,
+      "verificables": 613,
+      "pctMixto": 19.8,
+      "emiteElBuild": false
+    },
+    "L2-faqs::/es/preguntas-frecuentes/": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "contenido": 20,
+      "plantilla": 554,
+      "mixta": 158,
+      "pares": 732,
+      "verificables": 574,
+      "pctMixto": 21.6,
+      "emiteElBuild": false
+    },
+    "L2-faqs::/es/preguntas-frecuentes/page/2/": {
+      "ruta": "/es/preguntas-frecuentes/page/2/",
+      "contenido": 22,
+      "plantilla": 587,
+      "mixta": 164,
+      "pares": 773,
+      "verificables": 609,
+      "pctMixto": 21.2,
+      "emiteElBuild": false
+    },
+    "L2-faqs::/es/preguntas-frecuentes/page/3/": {
+      "ruta": "/es/preguntas-frecuentes/page/3/",
+      "contenido": 22,
+      "plantilla": 587,
+      "mixta": 164,
+      "pares": 773,
+      "verificables": 609,
+      "pctMixto": 21.2,
+      "emiteElBuild": false
+    },
+    "L2-faqs::/es/preguntas-frecuentes/page/4/": {
+      "ruta": "/es/preguntas-frecuentes/page/4/",
+      "contenido": 20,
+      "plantilla": 554,
+      "mixta": 161,
+      "pares": 735,
+      "verificables": 574,
+      "pctMixto": 21.9,
+      "emiteElBuild": false
+    },
+    "L4-listado-embebido::/es/recursos/": {
+      "ruta": "/es/recursos/",
+      "contenido": 48,
+      "plantilla": 1514,
+      "mixta": 353,
+      "pares": 1915,
+      "verificables": 1562,
+      "pctMixto": 18.4,
+      "emiteElBuild": false
+    },
+    "L1-resources-padre::/es/recursos/articulos/": {
+      "ruta": "/es/recursos/articulos/",
+      "contenido": 52,
+      "plantilla": 1269,
+      "mixta": 260,
+      "pares": 1581,
+      "verificables": 1321,
+      "pctMixto": 16.4,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/2/": {
+      "ruta": "/es/recursos/articulos/page/2/",
+      "contenido": 56,
+      "plantilla": 1335,
+      "mixta": 268,
+      "pares": 1659,
+      "verificables": 1391,
+      "pctMixto": 16.2,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/3/": {
+      "ruta": "/es/recursos/articulos/page/3/",
+      "contenido": 57,
+      "plantilla": 1335,
+      "mixta": 268,
+      "pares": 1660,
+      "verificables": 1392,
+      "pctMixto": 16.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/4/": {
+      "ruta": "/es/recursos/articulos/page/4/",
+      "contenido": 57,
+      "plantilla": 1335,
+      "mixta": 268,
+      "pares": 1660,
+      "verificables": 1392,
+      "pctMixto": 16.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/5/": {
+      "ruta": "/es/recursos/articulos/page/5/",
+      "contenido": 56,
+      "plantilla": 1335,
+      "mixta": 268,
+      "pares": 1659,
+      "verificables": 1391,
+      "pctMixto": 16.2,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/6/": {
+      "ruta": "/es/recursos/articulos/page/6/",
+      "contenido": 52,
+      "plantilla": 1269,
+      "mixta": 262,
+      "pares": 1583,
+      "verificables": 1321,
+      "pctMixto": 16.6,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "ruta": "/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "contenido": 42,
+      "plantilla": 1037,
+      "mixta": 239,
+      "pares": 1318,
+      "verificables": 1079,
+      "pctMixto": 18.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "contenido": 18,
+      "plantilla": 705,
+      "mixta": 179,
+      "pares": 902,
+      "verificables": 723,
+      "pctMixto": 19.8,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-minera/": {
+      "ruta": "/es/recursos/articulos/contaminacion-minera/",
+      "contenido": 18,
+      "plantilla": 705,
+      "mixta": 179,
+      "pares": 902,
+      "verificables": 723,
+      "pctMixto": 19.8,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 251,
+      "pares": 1468,
+      "verificables": 1217,
+      "pctMixto": 17.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/page/2/": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/page/2/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 253,
+      "pares": 1470,
+      "verificables": 1217,
+      "pctMixto": 17.2,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/": {
+      "ruta": "/es/recursos/articulos/contaminacion-y-salud/",
+      "contenido": 47,
+      "plantilla": 1171,
+      "mixta": 251,
+      "pares": 1469,
+      "verificables": 1218,
+      "pctMixto": 17.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/page/2/": {
+      "ruta": "/es/recursos/articulos/contaminacion-y-salud/page/2/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 253,
+      "pares": 1470,
+      "verificables": 1217,
+      "pctMixto": 17.2,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "ruta": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 251,
+      "pares": 1468,
+      "verificables": 1217,
+      "pctMixto": 17.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/": {
+      "ruta": "/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/",
+      "contenido": 47,
+      "plantilla": 1170,
+      "mixta": 253,
+      "pares": 1470,
+      "verificables": 1217,
+      "pctMixto": 17.2,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/petroleo-y-gas/": {
+      "ruta": "/es/recursos/articulos/petroleo-y-gas/",
+      "contenido": 42,
+      "plantilla": 1037,
+      "mixta": 239,
+      "pares": 1318,
+      "verificables": 1079,
+      "pctMixto": 18.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/productos-kunak/": {
+      "ruta": "/es/recursos/articulos/productos-kunak/",
+      "contenido": 42,
+      "plantilla": 1037,
+      "mixta": 239,
+      "pares": 1318,
+      "verificables": 1079,
+      "pctMixto": 18.1,
+      "emiteElBuild": true
+    },
+    "L1-resources-padre::/es/recursos/seminarios-web/": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "contenido": 39,
+      "plantilla": 1037,
+      "mixta": 239,
+      "pares": 1315,
+      "verificables": 1076,
+      "pctMixto": 18.2,
+      "emiteElBuild": true
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 192,
+      "pares": 1014,
+      "verificables": 822,
+      "pctMixto": 18.9,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/page/2/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/page/2/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 194,
+      "pares": 1016,
+      "verificables": 822,
+      "pctMixto": 19.1,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/page/3/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/page/3/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 194,
+      "pares": 1016,
+      "verificables": 822,
+      "pctMixto": 19.1,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/articulos-tecnicos/": {
+      "ruta": "/es/scientific-category/articulos-tecnicos/",
+      "contenido": 17,
+      "plantilla": 437,
+      "mixta": 130,
+      "pares": 584,
+      "verificables": 454,
+      "pctMixto": 22.3,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/evaluaciones-independientes/": {
+      "ruta": "/es/scientific-category/evaluaciones-independientes/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 192,
+      "pares": 1014,
+      "verificables": 822,
+      "pctMixto": 18.9,
+      "emiteElBuild": false
+    },
+    "L3-sci::/es/scientific-category/evaluaciones-independientes/page/2/": {
+      "ruta": "/es/scientific-category/evaluaciones-independientes/page/2/",
+      "contenido": 45,
+      "plantilla": 777,
+      "mixta": 194,
+      "pares": 1016,
+      "verificables": 822,
+      "pctMixto": 19.1,
+      "emiteElBuild": false
+    }
+  }
+}

@@ -342,6 +342,52 @@ operación**, que es la apertura natural de la tanda siguiente. Ficha propia:
 **Qué se decide aquí: nada.** Se nombra la clase, se escribe su evidencia y se
 deja la decisión al propietario, igual que se hizo con `D2.4` y `D2.5`.
 
+> ⛔⛔ **ACTUALIZADO 2026-08-17 (74.ª tanda): SE INTENTÓ APLICAR EL PRECEDENTE Y
+> LA MEDIDA DIJO QUE NO. El ESCALÓN 1 disparó.**
+>
+> El encargo mandaba mirar si `D2.4`/`D2.5` cubrían el caso **antes** de abrir
+> decisión nueva. Se miró, parecía que sí —el discriminador de `D2.5` es *«el
+> canonical: a sí misma ⇒ soy una ruta; a otra ⇒ no lo soy»*, y aquí además hay
+> un **301**, que es más fuerte que el 200 de los casos de `D2.4`— y **se
+> aplicó**: el extractor excluyó el documento, la DB bajó a 151 y el build a 366
+> rutas.
+>
+> **Medido después, empeora:**
+>
+> | residuos de FECHA (los dos anchos) | inicio | tras sembrar los 3 | **tras excluirlo** |
+> |---|---|---|---|
+> | | 58 | **6** | **10** |
+>
+> **La razón, y es de manual:** `D2.4` contesta *«¿es una RUTA?»* y aquí hacía
+> falta contestar *«¿es un DOCUMENTO?»*, que **no es la misma pregunta**. En el
+> dominio donde `D2.4` se derivó —los `/page/N`— las dos coinciden, porque un
+> `/page/N` **no aparece listado en ningún sitio**. Para una **entrada** se
+> separan:
+>
+> > **el original REDIRIGE su permalink y SIGUE LISTANDO SU TARJETA** en
+> > `/etiqueta/cov` y `/etiqueta/emisiones-industriales/page/3`. Lo que hace 301
+> > es la URL del documento, **no su presencia en la lista**.
+>
+> Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN
+> PROBAR para ese caso*, en su forma más cara: la derivación era correcta, el
+> dominio era real, y **la conclusión no se sigue**. Lo único que lo separó de
+> un acierto fue **medir después de aplicar** — releer el precedente habría
+> vuelto a dar «sí, lo cubre» las veces que hiciera falta.
+>
+> **Revertido.** El extractor **detecta y reporta**, y **no excluye**:
+> `1 que declaran ser OTRA URL (detectados, SIN excluir)`, derivado en cada
+> corrida y sin lista de exclusión. Estado: **152 entradas · 367 rutas · 194
+> slugs**, `npm run check` exit 0.
+>
+> ⚠ **Y la instrucción de «quitar la fila duplicada en cualquier caso» no se
+> aplica, con su razón:** se dio porque *sembrar el contenido de otra fila bajo
+> un slug que el original redirige es un dato inventado*. Cierto — **y quitarla
+> no arregla eso: lo empeora**, porque el original sí lista esa tarjeta y sin
+> fila desaparece de dos listados. El dato malo no es *que la fila exista*: es
+> **de dónde salió su contenido** (una captura que siguió el 301). Eso se
+> arregla capturando la tarjeta, no borrando la fila — y eso es una de las
+> salidas de abajo, no un arreglo de tanda.
+
 **El hecho, en tres canales servidos y medidos hoy:**
 
 | canal | qué dice |
@@ -360,17 +406,24 @@ pares** en 2 formas, con el desplazamiento de orden que provoca la fecha ajena.
 
 **La pregunta a decidir, con sus salidas:**
 
-| | qué implica |
-|---|---|
-| **A · no es un documento** (aplicar `D2.4` un nivel abajo) | se cae del corpus y de la DB: **363 → 362** rutas. Es lo que el original declara en tres canales |
-| **B · es un documento con un alias** | se modela la redirección (`redirigeA`), y el clon emite un 301 propio. Campo nuevo, y hoy **ninguna otra entrada lo ejerce** — §F2-5-ESCALON-ETIQUETAS: un camino sin estrenar |
-| **C · dejarlo** | el clon sirve 200 donde el original sirve 301, con contenido duplicado, y **la fecha ajena sigue desordenando dos listados** |
+| | qué implica | qué dice la medida |
+|---|---|---|
+| ~~**A · no es un documento**~~ (aplicar `D2.4` un nivel abajo) | se cae del corpus y de la DB: **367 → 366** rutas | ⛔ **PROBADA Y DESCARTADA hoy**: los residuos de FECHA suben **6 → 10**. El original **sigue listando su tarjeta** en 2 archivos de etiqueta |
+| **B · documento con ALIAS** | se modela la redirección (`redirigeA`): la tarjeta se lista, y la ruta del documento emite un **301** como el original. Campo nuevo, y hoy **ninguna otra entrada lo ejerce** — §F2-5-ESCALON-ETIQUETAS, un camino sin estrenar | es la única que reproduce **los dos** comportamientos servidos |
+| **C · re-capturar la TARJETA** | la fila se queda, pero su título/fecha/imagen salen del **archivo de etiqueta** (que sí trae los suyos) en vez de la captura del permalink, que siguió el 301 | arregla el dato malo **sin** tocar el conjunto de rutas. No contesta qué hacer con el 301 |
+| **D · dejarlo** | el clon sirve 200 donde el original sirve 301, con contenido ajeno, y **la fecha prestada desordena dos listados** | es el estado de hoy: **6** residuos de FECHA |
 
-**Y la comprobación que hay que hacer ANTES de decidir, porque decide el
-denominador:** hoy se sabe de **1**, y el barrido que lo derivaría —*¿cuántas
-entradas del corpus traen un canonical que no es el suyo?*— **no se ha corrido**.
-Sin él, «es 1» es una afirmación sobre las 2 formas que el comparador destapó, no
-sobre las 152 del corpus (§regla 9, y §*una regla derivada sobre un dominio donde
+> **B y C no son alternativas: son las dos mitades.** `C` arregla *de dónde sale
+> el contenido de la tarjeta*; `B` arregla *qué responde la ruta*. Se pueden
+> firmar por separado, y `C` **no necesita campo nuevo**.
+
+**Y la comprobación que la ficha declaraba como NO CORRIDA, corrida hoy:** de los
+**212** documentos del grupo A, **1** trae un canonical que apunta a otro slug —
+éste. Los otros **3** que el barrido saca **no traen canonical NINGUNO**, y su
+`og:url` apunta a sí mismos (y el original en vivo tampoco lo sirve), así que
+**no son duplicados: son documentos con un canal ausente**, que es otra cosa
+(§regla 6). El discriminador mira **los dos canales** y «ausente» **no** cuenta.
+Derivado, no recordado (§regla 9, y §*una regla derivada sobre un dominio donde
 el caso no se da está SIN PROBAR*). Es barato: un `grep` del `canonical` de cada
 fichero contra su nombre.
 

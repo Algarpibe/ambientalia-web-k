@@ -16,6 +16,24 @@
     "terminos-kunakpedia": 37,
     "documentos-cientificos": 23
   },
+  "duplicados": {
+    "n": 1,
+    "deUnTotalDe": 212,
+    "regla": "DECISIONES.md §D2.5/§D2.4 — canonical a OTRA URL ⇒ «no soy una ruta». Aquí, además, el servidor responde 301.",
+    "canalesMirados": [
+      "<link rel=canonical>",
+      "og:url"
+    ],
+    "ausenteNoEsDuplicado": "un documento SIN canonical NI og:url no se excluye: «no lo dice» y «dice que es otro» son distintos (§regla 6)",
+    "todos": [
+      {
+        "clave": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "seDeclara": "contaminacion-del-aire-en-vertederos",
+        "canal": "canonical",
+        "url": "https://kunakair.com/es/contaminacion-del-aire-en-vertederos/"
+      }
+    ]
+  },
   "control": {
     "comparaciones": 125,
     "documentos": 14,
