@@ -762,6 +762,149 @@ export const T9 = {
   diana: (html) => (raizAjenaEn(html) ? 1 : 0),
 };
 
+/* ═════ T9B · el CIERRE HUÉRFANO — la otra mitad del DOM ajeno ═════════════
+ *
+ * §F3-LH-ARTICLE-ETIQUETA-44, adjudicada en la 70.ª tanda: *«es un caso de T9,
+ * no de la whitelist»*. Va aparte de T9 por lo mismo que T3B va aparte de T3 y
+ * T4B de T4 —misma decisión, mecanismo distinto, y así cada postcondición muerde
+ * por lo suyo—.
+ *
+ * ── Qué pasó, contra el crudo capturado ───────────────────────────────────
+ * Un find/replace de WordPress destrozó la apertura de un `<article>` metiendo
+ * el atributo DENTRO del nombre de la etiqueta:
+ *
+ *     <a target="_blank"rticle class="post-content">   …   </article>
+ *
+ * O sea que el documento sirve **un cierre sin apertura casada**. La corrupción
+ * está en el original, no en el pipeline (comprobado sobre el fichero recién
+ * bajado).
+ *
+ * ── Y lo que se replica lo dijo EL PARSER, no la especificación ────────────
+ * §El principio: *lo que se transcribe es lo que el navegador hace con lo
+ * servido*. Medido en Chrome sobre ese marcado exacto:
+ *
+ * | | medido |
+ * |---|---|
+ * | elementos `article` en el DOM | **0** — el cierre huérfano se **descarta entero** |
+ * | elementos `a` | **1**, con atributos `target="_blank"` · `rticle=""` · `class="post-content"` |
+ * | hijos de esa `<a>` | `h2` · `p` · `figure` · **`p`** ← se traga incluso lo que iba DESPUÉS del cierre |
+ *
+ * De donde las dos mitades de la regla, y las dos son «replicar lo servido»:
+ *
+ *   1 · **el cierre se ELIMINA** — el parser no lo materializa, así que emitirlo
+ *       es emitir un token sin efecto; quitarlo es **NO-OP al píxel** y de paso
+ *       deja de ejercitar una etiqueta 44 fuera del censo de 43;
+ *   2 · **la `<a>` corrupta se CONSERVA** — el parser sí la materializa.
+ *       Repararla a `<article>` sería «lo que el autor quería decir», que es
+ *       justo lo que §*una declaración inválida* prohíbe. Es la misma familia
+ *       que `min-width: none`, con marcado en vez de CSS.
+ *
+ * ── El discriminador tiene DOS mitades, y la primera versión sólo tenía una ─
+ * La ficha pide *«el cierre **sin apertura casada**, no el literal
+ * `</article>`»*, y eso es **necesario y no suficiente**. La primera versión de
+ * esta transformación se quedó ahí y **disparó en 170 de 212 documentos**
+ * cuando la ficha decía **1 de 3 nuevos y 0 de 209 sembrados**.
+ *
+ * > ⚠ **Lo cazó la CONTRADICCIÓN CON UNA MEDIDA BUENA ANTERIOR** (§sondas 4),
+ * > que es el único control que había: un 170/212 es un número plausible y no
+ * > da ningún error. Es §*un detector que encuentra MÁS de lo que hay* en su
+ * > tercera cara — y el fallo de fondo fue derivar la regla de un MECANISMO
+ * > («falta la apertura») en vez de **de lo que hace el parser**.
+ *
+ * **La segunda mitad, medida en Chrome sobre 44 etiquetas** (envoltorio neutro,
+ * `<main id=r>A</X>B</main>`, mirando `innerHTML`):
+ *
+ * | | n | qué hace el parser |
+ * |---|---|---|
+ * | **41 de 44** (`div a article span section figure figcaption em strong li ul ol h2 h3 h4 td tr table tbody thead b i u sup sub blockquote iframe center mark small code pre dl dt dd noscript hr header footer aside nav`) | 41 | **lo IGNORA** — `AB` |
+ * | **`p`** | 1 | **lo materializa**: `A<p></p>B`, un párrafo VACÍO |
+ * | **`br`** | 1 | **lo materializa**: `A<br>B` |
+ * | *(`main` salió «no ignorada» las dos veces por el ENVOLTORIO de la sonda, no por el parser — igual que `div` en el primer intento con `<div id=r>`)* | | |
+ *
+ * De donde el reparto en el corpus, que es lo que reconcilia el número con la
+ * ficha: de **183** cierres huérfanos, **172 son `</p>`** — y ésos **NO se
+ * tocan**, porque quitarlos borraría un `<p></p>` que el navegador sí crea.
+ *
+ * ── Y por qué la ficha decía 0 de 209 y aquí salen 10: son OTRA PREGUNTA ───
+ * La ficha contaba **violaciones de la whitelist de 43** —lo que hacía morder al
+ * saneador—, y `</a>` (9) y `</span>` (1) están **dentro** de las 43, así que
+ * nunca bloquearon nada y nadie los buscó. §*una regla incompleta se lee igual
+ * que una completa*: la medida contestaba *«¿qué me impide sembrar?»*, no
+ * *«¿cuántos cierres huérfanos hay?»*.
+ *
+ * ── Alcance, con su denominador (§regla 9) ────────────────────────────────
+ * **11 cierres en 11 documentos de 212**: `</article>` **1** (el de la ficha) ·
+ * `</a>` **9** · `</span>` **1**. Los `</p>` (172) quedan **fuera por medida**,
+ * no por prudencia.
+ *
+ * ⚠ **Por qué la cuenta de profundidad no da falsos positivos por su lado:** los
+ * cierres implícitos del parser —`<p>a<p>b</p>`, `<li>…<li>…</li>`— producen
+ * **más aperturas que cierres**, nunca al revés, así que la profundidad no baja
+ * de 0 por ellos. Para que la primera mitad muerda hace falta literalmente **un
+ * cierre de más**.
+ */
+const VACIAS = new Set([
+  "area", "base", "br", "col", "embed", "hr", "img", "input",
+  "link", "meta", "param", "source", "track", "wbr",
+]);
+/**
+ * Las que el parser **materializa** en vez de ignorar. Es una lista corta y
+ * **medida**, no deducida de la especificación — y es la mitad del
+ * discriminador que la primera versión no tenía.
+ */
+const CIERRE_QUE_EL_PARSER_MATERIALIZA = new Set(["p", "br"]);
+const RE_TAG = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][a-zA-Z0-9]*)\b([^>]*)>/g;
+
+/**
+ * Los cierres sin apertura casada, en orden. `todos: true` los devuelve TODOS
+ * —incluidos los que el parser materializa—, que es lo que necesita el censo
+ * para poder publicar el reparto en vez de un número ya filtrado.
+ */
+function cierresHuerfanos(html, { todos = false } = {}) {
+  const prof = new Map();
+  const fuera = [];
+  RE_TAG.lastIndex = 0;
+  let m;
+  while ((m = RE_TAG.exec(html))) {
+    if (m[2] === undefined) continue; // comentario
+    const tag = m[2].toLowerCase();
+    if (VACIAS.has(tag)) continue;
+    if (m[1] === "/") {
+      const d = prof.get(tag) ?? 0;
+      if (d > 0) { prof.set(tag, d - 1); continue; }
+      if (todos || !CIERRE_QUE_EL_PARSER_MATERIALIZA.has(tag))
+        fuera.push({ tag, desde: m.index, hasta: m.index + m[0].length });
+    } else if (!/\/\s*$/.test(m[3])) {
+      prof.set(tag, (prof.get(tag) ?? 0) + 1);
+    }
+  }
+  return fuera;
+}
+/** Exportado para que el censo pueda publicar el reparto y no sólo el filtrado. */
+export const censoDeCierresHuerfanos = (html) => cierresHuerfanos(html, { todos: true });
+
+export const T9B = {
+  id: "t9b",
+  titulo: "T9B · un cierre SIN apertura casada se elimina (el parser lo descarta; la apertura corrupta se conserva)",
+  aplica(html, ctx) {
+    const fuera = cierresHuerfanos(html);
+    if (!fuera.length) return { html, n: 0 };
+    let salida = "", desde = 0;
+    for (const h of fuera) {
+      salida += html.slice(desde, h.desde);
+      desde = h.hasta;
+      ctx?.cierresHuerfanos?.push({ pagina: ctx.pagina, tag: h.tag });
+    }
+    return { html: salida + html.slice(desde), n: fuera.length };
+  },
+  /** Muerde si queda alguno: la transformación es idempotente y tiene que cerrar. */
+  post(html) {
+    const q = cierresHuerfanos(html);
+    return q.length ? [`queda un cierre sin apertura casada: </${q[0].tag}>`] : [];
+  },
+  diana: (html) => cierresHuerfanos(html).length,
+};
+
 /* ═══════ T10 · la media del CUERPO se LOCALIZA (§DATOS-MEDIA-HOTLINK) ═════
  *
  * ── Qué arregla, y por qué no era un criterio sino un defecto ─────────────
@@ -920,4 +1063,13 @@ export const T10 = {
  *   recoge después. Al revés, T7 vería un `/images/uploads/…` y tendría que
  *   opinar sobre una ruta que no es de página.
  */
-export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T4, T5, T6, T7, T10];
+/**
+ * ⚠ **T9B va DESPUÉS de T9 y ANTES de T5, y el orden no es de estilo.**
+ *
+ * · **después de T9** porque T9 desenvuelve contenedores y *quita cierres al
+ *   hacerlo*: contar huérfanos antes lo dejaría opinando sobre un árbol que
+ *   está a medio desenvolver;
+ * · **antes de T5** porque T5 deshace envoltorios buscando su cierre con
+ *   `cierreDe`, y un cierre huérfano por medio le desplaza el emparejado.
+ */
+export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T9B, T4, T5, T6, T7, T10];

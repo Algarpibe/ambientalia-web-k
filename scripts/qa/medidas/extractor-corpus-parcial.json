@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "fecha": "2026-08-17",
+    "sabotaje": null,
+    "fuente": "corpus/ (captura congelada) — OFFLINE, sin tocar el sitio vivo",
+    "parcial": true,
+    "solo": [
+      "descarga-catalogo-kunak",
+      "kunak-obtiene-el-sello-reconcilia",
+      "webinar-control-de-la-contaminacion-del-aire-en-la-industria"
+    ],
+    "deUnTotalDe": 212,
+    "alcance": "3 cuerpos de entradas-blog · terminos-kunakpedia · documentos-cientificos; fuera (builder): casos · faqs · productos",
+    "rutasParaT7": 366
+  },
+  "porT": {
+    "t8": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t1": {
+      "aplicadas": 1,
+      "dianas": 1,
+      "violaciones": []
+    },
+    "t2": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t3": {
+      "aplicadas": 1,
+      "dianas": 1,
+      "violaciones": []
+    },
+    "t3b": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t4b": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t9": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t9b": {
+      "aplicadas": 1,
+      "dianas": 1,
+      "violaciones": []
+    },
+    "t4": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t5": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t6": {
+      "aplicadas": 0,
+      "dianas": 0,
+      "violaciones": []
+    },
+    "t7": {
+      "aplicadas": 5,
+      "dianas": 5,
+      "violaciones": []
+    },
+    "t10": {
+      "aplicadas": 1,
+      "dianas": 1,
+      "violaciones": []
+    }
+  },
+  "scriptsQuitados": [],
+  "mediaDelCuerpo": {
+    "referencias": 0,
+    "documentos": [],
+    "detalle": [],
+    "sinLlave": []
+  },
+  "t4b": {
+    "sustituciones": [],
+    "sinSustituto": [],
+    "sinTrabajo": [],
+    "payloadIlegible": []
+  },
+  "t3b": {
+    "noCanonicos": 0
+  },
+  "t7": {
+    "rutasPublicadas": 366,
+    "fuente": "SÓLO `.next/prerender-manifest.json` — una URL capturada no es una ruta publicada (§F2-3-HREF-DERIVADO b)",
+    "dejadosAlOriginal": 2,
+    "porDestino": {
+      "/sensor-de-calidad-del-aire": 1,
+      "/descarga-catalogo": 1
+    },
+    "detalle": [
+      {
+        "pagina": "entradas-blog/descarga-catalogo-kunak",
+        "destino": "/sensor-de-calidad-del-aire"
+      },
+      {
+        "pagina": "entradas-blog/descarga-catalogo-kunak",
+        "destino": "/descarga-catalogo"
+      }
+    ],
+    "relHuerfano": []
+  },
+  "censoContradicho": {
+    "etiquetas": {
+      "article": [
+        "entradas-blog/kunak-obtiene-el-sello-reconcilia"
+      ]
+    },
+    "hosts": {}
+  },
+  "rechazosSaneador": [],
+  "sinCuerpo": [],
+  "paginas": {
+    "entradas-blog/kunak-obtiene-el-sello-reconcilia": {
+      "bytes": 5850,
+      "bytesTransformado": 5805,
+      "t8": 0,
+      "t1": 0,
+      "t2": 0,
+      "t3": 1,
+      "t3b": 0,
+      "t4b": 0,
+      "t9": 0,
+      "t9b": 1,
+      "t4": 0,
+      "t5": 0,
+      "t6": 0,
+      "t7": 0,
+      "t10": 0
+    },
+    "entradas-blog/descarga-catalogo-kunak": {
+      "bytes": 1409,
+      "bytesTransformado": 1329,
+      "t8": 0,
+      "t1": 0,
+      "t2": 0,
+      "t3": 0,
+      "t3b": 0,
+      "t4b": 0,
+      "t9": 0,
+      "t9b": 0,
+      "t4": 0,
+      "t5": 0,
+      "t6": 0,
+      "t7": 2,
+      "t10": 0
+    },
+    "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria": {
+      "bytes": 7002,
+      "bytesTransformado": 6867,
+      "t8": 0,
+      "t1": 1,
+      "t2": 0,
+      "t3": 0,
+      "t3b": 0,
+      "t4b": 0,
+      "t9": 0,
+      "t9b": 0,
+      "t4": 0,
+      "t5": 0,
+      "t6": 0,
+      "t7": 3,
+      "t10": 1
+    }
+  }
+}

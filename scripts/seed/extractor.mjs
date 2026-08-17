@@ -70,7 +70,38 @@ const { validaHtmlCorpus, etiquetasFueraDelCenso, hostsFueraDeAllowlist } = awai
 const INDICE = JSON.parse(readFileSync(join(CORPUS, "INDICE.json"), "utf8"));
 const DEL_GRUPO_A = ["entradas-blog", "terminos-kunakpedia", "documentos-cientificos"];
 const FUERA = ["casos", "faqs", "productos"]; // capturadas; extracción de builder = otra mecánica
-const trabajo = Object.entries(INDICE.paginas).filter(([clave]) => DEL_GRUPO_A.includes(clave.split("/")[0]));
+const todoElGrupoA = Object.entries(INDICE.paginas).filter(([clave]) => DEL_GRUPO_A.includes(clave.split("/")[0]));
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * `SOLO=` — LA EXTRACCIÓN PARCIAL, Y POR QUÉ HACE FALTA QUE EXISTA
+ *
+ * Este extractor re-emite **los 212 cuerpos** en cada corrida, y desde que T10
+ * entró eso cambia **169 de los 209 ya sembrados** — que es una RE-EMISIÓN con
+ * su propia ficha, su antes/después y su criterio de aceptación
+ * (§F3-LH-EXTRACTOR-T10-SIN-CABLEAR, adjudicada como «no entra»).
+ *
+ * Sin un filtro, **sembrar 3 documentos nuevos obliga a arrastrar los 169**, y
+ * entonces el diff de la tanda ya no se puede atribuir: es exactamente
+ * §*dos cambios en una sola medición no se pueden atribuir*.
+ *
+ * ── La convención es la de `lh-espejo`, no una nueva ──────────────────────
+ * Una corrida parcial **NO pisa la congelada canónica**: escribe en
+ * `…-parcial.json` y marca `meta.parcial`, para que ningún consumidor la lea
+ * como si fuera la extracción entera. `SOLO` casa por subcadena de la clave.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SOLO = (process.env.SOLO ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+const trabajo = SOLO.length ? todoElGrupoA.filter(([clave]) => SOLO.some((s) => clave.includes(s))) : todoElGrupoA;
+if (SOLO.length && !trabajo.length)
+  throw new Error(
+    `SOLO=${SOLO.join(",")} no casa con ninguna de las ${todoElGrupoA.length} claves del grupo A.\n` +
+      `  Un filtro que no casa con nada NO es «no había trabajo»: es un filtro mal escrito (§sondas 4).`,
+  );
+if (SOLO.length)
+  console.log(
+    `\n⚠ SOLO=${SOLO.join(",")} — extracción PARCIAL: ${trabajo.length} de ${todoElGrupoA.length} cuerpos.\n` +
+      `  Los otros ${todoElGrupoA.length - trabajo.length} conservan su \`corpus/transformado/\` tal cual.\n` +
+      `  El informe va a \`extractor-corpus-parcial.json\` y NO sustituye a la extracción entera.\n`,
+  );
 
 /* ── las rutas publicadas, para T7: SÓLO el manifiesto del build ───────────
  *
@@ -336,11 +367,17 @@ if (sinLlaveT3b.length)
       sinLlaveT3b.map((s) => `      · ${new URL(s.src).host}  (${s.pagina})`).join("\n"),
   );
 
-w("medidas/extractor-corpus.json", {
+w(`medidas/extractor-corpus${SOLO.length ? "-parcial" : ""}.json`, {
   meta: {
     fecha: hoy(),
     sabotaje: SABOTAJE,
     fuente: "corpus/ (captura congelada) — OFFLINE, sin tocar el sitio vivo",
+    /* ⚠ Se declara SIEMPRE, también en `false`: un campo que sólo aparece cuando
+     * la corrida es parcial obliga a distinguir «no parcial» de «versión vieja
+     * del informe», y son cosas distintas (§regla 6). */
+    parcial: SOLO.length > 0,
+    solo: SOLO.length ? SOLO : null,
+    deUnTotalDe: todoElGrupoA.length,
     alcance: `${trabajo.length} cuerpos de ${DEL_GRUPO_A.join(" · ")}; fuera (builder): ${FUERA.join(" · ")}`,
     rutasParaT7: rutas.size,
   },
