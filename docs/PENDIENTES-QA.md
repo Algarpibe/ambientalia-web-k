@@ -1,5 +1,62 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-CRUCE-82 · EL COMPARADOR MIDE AL ALCANCE NUEVO, Y EL CIERRE SON CUATRO AFIRMACIONES CON CUATRO RESPALDOS DISTINTOS (2026-08-17, 73.ª tanda — nada construido)
+
+**Qué se decide aquí: nada de código de la web.** El ESCALÓN 1 exigía que
+`qa:lh-alcance` predijera el alcance **antes** de que el comparador midiera, y
+que los dos cruzaran. Cruzan, y **al par**:
+
+| @1440 | alcance (predicho) | `lh-cmp` (medido) | |
+|---|---|---|---|
+| formas del universo | 82 | 82 | ✓ |
+| formas con ruta emitida | 61 | 61 comparadas | ✓ |
+| **pares de esas formas** | **109 421** | **109 421** | ✓ |
+| **mixtos** | **18 117** | **18 117** | ✓ |
+| AUSENTES | 21 | 21 | ✓ |
+
+| @390 | alcance | `lh-cmp` | |
+|---|---|---|---|
+| formas · emitidas · ausentes | 82 · 61 · 21 | 82 · 61 · 21 | ✓ |
+| **pares** · **mixtos** | **109 470** · **18 166** | **109 470** · **18 166** | ✓ |
+
+Congeladas: `medidas/lh-cmp-{1440,390}-todas.json`.
+
+### ⚠ Y el cierre son CUATRO afirmaciones, no una — porque cada una la sostiene otra cosa
+
+Escribirlas juntas produciría exactamente lo que §sondas 15 nombra: *un cruce
+entre dos instrumentos que comparten premisa no verifica la premisa*.
+
+| # | afirmación | qué la respalda | fuerza |
+|---|---|---|---|
+| 1 | **`lh-alcance` y `lh-cmp` leen el MISMO universo** | el cruce de arriba, al par | ⚠ **débil por construcción**: los dos derivan sus formas de `ESPEJO.paginas`. Concordarían igual de bien sobre una premisa falsa |
+| 2 | **el universo es 82** | la **derivación**, no el cruce: `149 − 7 duplicados = 142 rutas`, `142 − 60 vacías = 82` | la guarda **recalcula** los duplicados en vez de leer la marca, y `duplicado-sin-marcar` sale **rojo** (`qa:lh-espejo-neg` **3/3**, corrido hoy) |
+| 3 | **las 142 rutas** | **DOS canales independientes**: `lh-paginas.json` (2026-07-31, servidor **vivo**, «último N con HTTP 200; parada por 404») da `total: 142`; el espejo lo deriva del **corpus congelado** de `lh-serie` como `149 − 7` | **fuerte**: uno pega al servidor, el otro lee una captura. No comparten premisa |
+| 4 | **cada unidad rindió medida** | `minParPorPagina`: **82 de 82**, `conCero: []`; y en el comparador `paginasSinNingunPar: 0` a los dos anchos | **por DATO, no por construcción** — el campo existe para poder salir distinto de cero |
+
+> **Lo que NO se escribe, aunque el cruce salga exacto: «el universo está
+> verificado».** Lo verificado es (2) por su derivación y (3) por sus dos
+> canales. El cruce prueba (1), que es real y vale, y nada más. La frase
+> completa que sí se puede firmar es: *«los dos instrumentos leen el mismo
+> universo, y ese universo está derivado con su guarda y con un segundo canal
+> independiente para su número intermedio»*.
+
+**El resto de la división, derivado y no supuesto:** `149` páginas · fuera
+`D2.5·vacía` **55** + `D2.4·duplicado` **7** + `B·sin-decisión` **5** = **67** ·
+`149 − 67 = 82` = `queCompara`. **`fueraQueEsHueco: 0`.** Segunda vía por el
+otro lado: `conContenido` **84** − los **2** duplicados que colaban por
+contenido (`casos-de-exito/page/2`, `recursos/page/2`) = **82**.
+
+**Y `lh-cmp` declara ahora su alcance en DOS columnas**, una por espejo, con
+pares y hueco al lado. Publicar sólo la del espejo por defecto —13 páginas,
+11 de 38 clases— era el `noMide` sin cardinal que la §regla 14 persigue, en el
+fichero donde se lee el verde.
+
+**Lo que este cruce NO cierra**, con su número: las **21 formas AUSENTES** y los
+**6 207 / 6 199** pares distintos son el trabajo del PASO 4, y los **18 117 /
+18 166** pares MIXTOS siguen **sin referencia limpia** (§ESCALÓN eje mixto).
+Estas rutas **no tienen campaña de ruido**: un residuo pequeño aquí es **SIN
+PROBAR**, no «limpio».
+
 ## ✅ F3-LH-CIEGAS-Y-ULTIMA · LAS DOS LÍNEAS QUE «35 DE 38» SE TRAGA, CON SU CARDINAL (2026-08-15, 72.ª tanda — nada construido)
 
 **Qué se decide aquí: nada de código de la web.** Se cierra la §regla 14 sobre

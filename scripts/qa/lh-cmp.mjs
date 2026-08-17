@@ -58,29 +58,46 @@
  *
  * El número vivo lo imprime la sonda en su segunda línea y lo congela en
  * `meta.alcance` — §regla 14: *una limitación declarada sin su número se lee
- * como una nota al pie*, y el recuento de pares (10 707 @1440 con el espejo de
- * formas) **absorbe entera** la pregunta de sobre cuántas páginas se tomaron.
+ * como una nota al pie*, y el recuento de pares **absorbe entera** la pregunta
+ * de sobre cuántas páginas se tomaron. Así que la tabla va **con las dos
+ * columnas**: publicar sólo la del espejo por defecto era exactamente el
+ * `noMide` sin cardinal que la §regla 14 persigue.
  *
- * | en la unidad de `qa:lh-serie` (la PÁGINA) | n |
- * |---|---|
- * | páginas del original | 149 (84 con contenido) |
- * | las que compara esta sonda | **13**, todas `primera` |
- * | `intermedia` · `última` comparadas | **0** · **0** (de 86 y 28) |
- * | clases de `lh-serie` tocadas | **11 de 38** (27 ciegas = 122 páginas) |
+ * | en la unidad de `qa:lh-serie` (la PÁGINA) | `lh-spec` (por defecto) | `lh-espejo` (`-todas`) |
+ * |---|---|---|
+ * | páginas del original | 149 (84 con contenido) | 149 (84 con contenido) |
+ * | las que compara esta sonda | **13**, todas `primera` | **82** |
+ * | `primera` comparadas | 13 de 35 | **30** de 35 |
+ * | `intermedia` · `última` comparadas | **0** · **0** (de 86 y 28) | **48** · **4** |
+ * | clases de `lh-serie` tocadas | **11 de 38** (27 ciegas = 122 págs) | **35 de 38** (3 ciegas = 65 págs) |
+ * | pares @1440 | 10 707 | **109 421** (de un universo de 129 358) |
+ * | de esas páginas, **HUECO de alcance** | **57** | **0** |
+ *
+ * ⚠ **Y las dos cifras de la columna ancha van con su cardinal, porque el
+ * resumen se las traga.** Las **3 clases ciegas** son las de **CERO tarjetas**
+ * —**65 páginas, 0 con contenido**: `D2.5` 55 · grupo B 5 · `D2.4` 5—, así que
+ * **ensanchar más no alcanzaría ninguna**: no tienen cuerpo que comparar y su
+ * contrato es `P-LH-C7`, no una comparación par a par. Y **`última` 4 y no 28
+ * son DOS causas** (`D2.5` 17 + `D2.4` 7, hueco 0); además `pos` va sobre la
+ * serie **SERVIDA**, y la última **CON CONTENIDO** —la pregunta que de verdad
+ * importa— sale comparada en **28 de 30** series (**30/30 en documentos**).
  *
  * `qa:lh-serie` midió esta pregunta y su veredicto es **«LA SERIE NO ES UNA
  * UNIDAD»**; su negativo sale rojo si alguien toma el atajo de *«una página por
- * serie»*. **Esta sonda toma ese atajo**, así que el desacuerdo entre las dos se
- * declara en vez de dejarlo implícito. Número vivo y su cruce con la piel B:
- * `qa:lh-alcance` §`alcanceReal`. Ficha y coste de ensanchar (×6.5, y exige medir
- * el ORIGINAL en las `/page/N`, que hoy NO están en el espejo):
- * `PENDIENTES-QA.md` §F3-LH-ALCANCE-PAGINA-1.
+ * serie»*. **Con el espejo por defecto esta sonda toma ese atajo; con
+ * `-todas`, ya no** — y por eso el desacuerdo entre las dos se declara por
+ * columna en vez de dejarlo implícito. Número vivo y su cruce con la piel B:
+ * `qa:lh-alcance` §`alcanceReal`. Ficha: `PENDIENTES-QA.md`
+ * §F3-LH-ALCANCE-PAGINA-1 y §F3-LH-CIEGAS-Y-ULTIMA.
  *
- * ⚠ **Y el corolario que un verde de aquí NO autoriza:** «Δ0 en la forma X»
- * significa *la página 1 de X*. Las piezas que **sólo existen** en `/page/N` —el
+ * ⚠ **Y el corolario que un verde de aquí NO autoriza, que ahora depende de la
+ * columna:** con el espejo **por defecto**, «Δ0 en la forma X» significa *la
+ * página 1 de X*, y las piezas que **sólo existen** en `/page/N` —el
  * `« Anterior`, los `page smaller`, la ventana con `...`, el resto de la división
- * en la última— **no las ha mirado nadie**. Dos defectos de plantilla en dos
- * tandas seguidas vivían exactamente ahí.
+ * en la última— **no las ha mirado nadie**; dos defectos de plantilla en dos
+ * tandas seguidas vivían exactamente ahí. Con **`-todas`** esas piezas sí entran
+ * (48 `intermedia` + 4 `última`), y lo que sigue sin autorizar un verde es **el
+ * contrato de las 65 sin tarjetas**, que no se mide aquí.
  *
  * ── El suelo de ruido: NO HAY, y por eso se dice ──────────────────────────
  * ⚠ Estas rutas **no tienen campaña de ruido**. Un residuo pequeño aquí **no es
