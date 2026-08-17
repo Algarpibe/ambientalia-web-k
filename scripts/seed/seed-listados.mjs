@@ -75,14 +75,14 @@ const payload = await getPayload({ config: await construyeConfig() });
 /* ══════════════════════════════════════════════════════════════════════════
  * EL HUECO DE CAPTURA, DECLARADO — Y LA DECLARACIÓN CADUCA SOLA
  *
- * Estos 2 slugs los lista el `/blog` del original y **no están en el corpus de
- * las 149** (§F3-LH-DOS-CONJUNTOS-DE-149). O sea que su extracto no se puede
- * sembrar, y eso **no es un fallo de este seed**: es un hueco de CAPTURA.
+ * Aquí vivían 2 slugs que el `/blog` del original lista y que **no estaban en el
+ * corpus de las 149** (§F3-LH-DOS-CONJUNTOS-DE-149): su extracto no se podía
+ * sembrar, y eso **no era un fallo de este seed** sino un hueco de CAPTURA.
  *
- * ⚠ Hasta hoy esto salía como `exit 2` + contrato roto **sin motivo
- * registrado** («ni siquiera se registró el motivo»), y un rojo permanente se
- * lee como ruido a las dos corridas. Lo que lo arregla NO es bajar el listón:
- * es **nombrar la excepción y compararla en los dos sentidos**, para que
+ * ⚠ Antes de la declaración, esto salía como `exit 2` + contrato roto **sin
+ * motivo registrado**, y un rojo permanente se lee como ruido a las dos
+ * corridas. Lo que lo arregló NO fue bajar el listón: fue **nombrar la
+ * excepción y compararla en los dos sentidos**, para que
  *
  *   · un slug huérfano NUEVO ponga la sonda roja (hueco que nadie vio), y
  *   · un slug de esta lista que YA se pueda sembrar la ponga roja también
@@ -90,8 +90,21 @@ const payload = await getPayload({ config: await construyeConfig() });
  *
  * Es el patrón de «declaración de defecto abierto» de `cms:extractor-a`: una
  * excepción que no caduca sola acaba tapando su propio arreglo.
+ *
+ * ✅ **VACIADA 2026-08-17 (73.ª tanda), Y LA VACIÓ LA SEGUNDA MITAD DE LA
+ * GUARDA — no una revisión a mano.** Sembrados los 3 documentos capturados
+ * (§F3-LH-TERCER-DOCUMENTO), esta corrida salió **roja** diciendo
+ * *«DECLARACIÓN CADUCADA: `descarga-catalogo-kunak` · `kunak-obtiene-el-sello-reconcilia`
+ * ya se puede(n) sembrar»*. O sea que la mitad que casi nadie escribe —la que
+ * vigila que la excepción **deje de hacer falta**— es la que cobró: sin ella,
+ * el hueco de captura habría seguido descontándose del mínimo para siempre,
+ * bajando el listón en 2 sobre un dato que ya estaba completo.
+ *
+ * La lista se queda **vacía y con su comentario**, no se borra: el mecanismo
+ * sigue armado para el próximo hueco, y el `[]` es la evidencia de que hoy no
+ * hay ninguno.
  * ═════════════════════════════════════════════════════════════════════════ */
-const HUECO_DE_CAPTURA = ["descarga-catalogo-kunak", "kunak-obtiene-el-sello-reconcilia"];
+const HUECO_DE_CAPTURA = [];
 
 const ev = new Evaluadas({
   nombre: "seed-listados",

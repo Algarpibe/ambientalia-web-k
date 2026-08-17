@@ -1,5 +1,131 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-SEMBRADOS-LOS-3 · LA CAÍDA MEDIDA COMO PRUEBA — Y LO QUE QUEDA DEL PAGINADOR ES OTRA CAUSA (2026-08-17, 74.ª tanda)
+
+**Sembrados los 3 documentos capturados** de §F3-LH-TERCER-DOCUMENTO, con T9B
+desbloqueando el que traía el cierre huérfano. **Sin arrastrar la re-emisión de
+T10**: el extractor estrena `SOLO=` y la corrida parcial movió **1 fichero de
+212** (huella md5 antes/después).
+
+### La caída, que es la prueba
+
+| | antes | ahora |
+|---|---|---|
+| `entradas_blog` | 149 | **152** |
+| entradas con `etiqueta/monitorizacion-ambiental` | 89 | **91** — *el mismo número que el original* |
+| rutas emitidas | 363 | **367** |
+| `qa:slugs` | 190 | **194**, sin colisión |
+| formas comparadas · AUSENTES | 61 · 21 | **62 · 20** |
+| **pares distintos @1440** | **6 207** | **5 282** |
+| **pares distintos @390** | **6 199** | **5 271** |
+| residuos de **FECHA** | 58 | **6** |
+| formas con `Page N of M` distinto | 10 | **0** |
+
+**Y la ruta que no existía, existe:** `/etiqueta/monitorizacion-ambiental/page/11`
+está en el `prerender-manifest`. Era la pieza que una comparación de páginas 1 no
+podía ver.
+
+**Cruce del ESCALÓN 3, exacto al par a los dos anchos:** `qa:lh-alcance` predijo
+**62 formas · 110 779 pares · 18 349 mixtos** @1440 y **110 829 · 18 399** @390;
+`qa:lh-cmp` midió lo mismo.
+
+**Atribución del −925, porque un número sin atribuir no es cosecha:** las bajadas
+son **todas** de `listado.tarjetas.*` —título −47 · meta −46 · extracto −41 ·
+etiquetas −41 · categoría −41/−27 · `media.alt` −28 · fecha −26—, que es el
+contenido dejando de estar desplazado. **Las subidas son `esqueleto.cascaron.*`
++4 en cada capa**, y eso es aritmética: **una forma nueva × 4 capas**, no una
+regresión.
+
+### ⛔ Y lo que NO cerró: el ESCALÓN 2 disparó, y la causa que queda es DE PLANTILLA
+
+El encargo lo pedía explícitamente —*«si sembrar los 3 documentos NO cierra los
+residuos de paginador y fecha, lo que quede es otra causa: para y nómbrala antes
+de construir encima»*—. **Quedan 443 pares de `paginador.piezas.*` en 31 formas**,
+y **no son una clase, son dos**:
+
+| | formas | pares | qué es |
+|---|---|---|---|
+| series de **11** páginas | 11 | **377** | ⛔ **la VENTANA del paginador** — abajo |
+| series de **2 · 3 · 4** | 20 | **66** | ±0.03 px de `rect.x`/`rect.w`: **sub-píxel**, otra clase y menor |
+| series sin `Page N of M` (piel A, `/blog`) | 31 | **0** | limpias |
+
+**La ventana, medida sobre las 43 series del espejo** — ésta es la tabla que
+faltaba, y es lo que hace la ficha accionable:
+
+| total | página | lo que pinta el ORIGINAL |
+|---|---|---|
+| 2 · 3 · 4 | todas | todos los números, con `«` si no es la 1.ª y `»` si no es la última |
+| 8 | 1–3 | `1 2 3 4 5 ... » Last »` |
+| 8 | 4 | `« First « ... 2 3 4 5 6 ... » Last »` |
+| 8 | 6–8 | `« First « ... 4 5 6 7 8` (+`»` si no es la última) |
+| **11** | **1–3** | **`1 2 3 4 5 ... 10 ... » Last »`** |
+| **11** | **4–5** | **`« First « ... 2 3 4 5 6 ... 10 ...`** |
+| 11 | 6–8 | `« First « ... 4 5 6 7 8 ... » Last »` |
+| 11 | 9–11 | `« First « ... 7 8 9 10 11` (+`»` si no es la última) |
+
+**El clon emite 9 piezas donde el original pinta 11**: le faltan **el `10` y el
+segundo `...`**. Medido en `monitorizacion-ambiental` página 1 —
+`piezas.length 11 → 9`, y de la pieza 7 en adelante todo se desplaza.
+
+> ⚠ **Este defecto SÓLO existía a partir de 11 páginas, y hasta hoy ninguna serie
+> del clon llegaba a 11** — la tenía la que estaba corta por los 2 documentos sin
+> sembrar. O sea que **arreglar el dato es lo que lo hizo visible**: es
+> §*a veces el detector de un defecto no es otro ANCHO, es otro CONTENIDO*, con
+> el contenido cambiado por una siembra en vez de por un arquetipo.
+
+**No se arregla aquí por el escalón**, y la ficha queda con su número y su tabla:
+§F3-LH-VENTANA-DEL-PAGINADOR, abajo.
+
+### Lo que hizo falta por el camino, y ninguna de las dos cosas estaba prevista
+
+1. **La guarda de §sondas 5 se cobró una siembra entera.** El primer `cms:seed`
+   sembró **149** y no 152: `cms:extractor-a` había **desviado** su congelada por
+   diferir, y `catalogos.mjs` lee la canónica. La guarda hizo exactamente su
+   trabajo; el precio fue una corrida. Re-congelada con `PISAR=1` (versión
+   anterior en git).
+2. **Los 3 documentos traen 3 media sin capturar** — la **quinta** instancia de
+   §EL INVENTARIO DE MEDIA. Esta vez no se descubrió por colisión repetida: en
+   cuanto murió la primera se corrió `qa:media-canales`, que **enumera caminando
+   la config**, y dijo **3 ficheros**, uno por documento. Capturados y colocados,
+   `0 fallos`.
+3. **`HUECO_DE_CAPTURA` caducó y lo dijo la propia guarda.** `seed-listados`
+   salió **roja** con *«DECLARACIÓN CADUCADA: … ya se puede(n) sembrar»*. Es la
+   mitad que casi nadie escribe —la que vigila que la excepción **deje de hacer
+   falta**—: sin ella el hueco habría seguido descontando 2 del mínimo para
+   siempre. Lista vaciada; el mecanismo se queda armado.
+
+## ⛔ F3-LH-VENTANA-DEL-PAGINADOR · EL CLON PINTA 9 PIEZAS DONDE EL ORIGINAL PINTA 11 (2026-08-17, 74.ª tanda — NADA ARREGLADO)
+
+**Qué se decide aquí: nada.** Se nombra la causa, se congela su tabla y se para,
+que es lo que el ESCALÓN 2 del encargo manda.
+
+**El hecho:** en una serie de **11** páginas el original pinta
+`1 2 3 4 5 ... 10 ... » Last »` (11 piezas) y el clon **9** — sin el `10` y sin
+el segundo `...`. De la pieza 7 en adelante todo se desplaza, y de ahí salen
+**377 pares** en las **11 formas** de esa serie.
+
+**Alcance, con su denominador:** afecta a **1 de las 4 longitudes de serie** que
+el original ejercita (2 · 3 · 4 · 11 con esta piel, más las de piel A). Las de
+2/3/4 están **limpias salvo ±0.03 px**, así que la ventana corta funciona; lo que
+falla es la **larga**.
+
+**La tabla del original está derivada y congelada** (43 series, `qa:lh-espejo`),
+y va en §F3-LH-SEMBRADOS-LOS-3 arriba. **Sin ella no se puede arreglar sin
+inventar**, que es justamente lo que la 69.ª tanda ya pagó una vez con esta misma
+piel (*«emitía `current` + `n+1..total`, cero `page smaller`»*).
+
+> ⚠ **Y la lectura que hay que hacer del historial, porque cambia la confianza:**
+> ésta es la **tercera** tanda seguida en que aparece un defecto de la piel B del
+> paginador, y las tres veces lo destapó **ampliar el dominio** —más instancias,
+> más páginas, más longitudes de serie—, nunca releer el componente. El
+> componente no se da por bueno hasta que exista una instancia de **cada longitud
+> de serie que el original ejercita**.
+
+**Lo que hace falta para cerrarla:** replicar la tabla entera con un caso por
+longitud (2 · 3 · 4 · 8 · 11) y por posición, y verificar con `qa:lh-cmp-todas` a
+los dos anchos. Hoy el clon **no tiene ninguna serie de 8** con esta piel, así que
+esa fila queda **SIN EJERCITAR** y hay que decirlo al cerrar.
+
 ## ✅ F3-LH-COBERTURA-CIEGA · LA MATRIZ NO VEÍA LAS 61 FORMAS COMPARADAS, Y ES LA SEGUNDA VEZ EN EL MISMO BLOQUE (2026-08-17, 73.ª tanda)
 
 **El síntoma:** re-derivada `qa:cobertura` tras comparar **82 páginas** en vez de
