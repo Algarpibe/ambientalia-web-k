@@ -34,6 +34,19 @@
 > formas comparadas menos las **7** que ya estaban contadas. No es una mejora de
 > cobertura, es cobertura que llevaba dos días medida y sin contar.
 >
+> ⚠⚠ **Y HAY QUE DECIRLO ASÍ, NO COMO COSECHA.** Un `+54` en cinco ejes a la vez
+> se lee como una tanda muy productiva, y **no se midió nada nuevo para
+> conseguirlo**: la medición ya estaba hecha y congelada, y lo único que cambió
+> fue que la matriz dejó de ser ciega a un sufijo de fichero. Leerlo como cosecha
+> convierte **un defecto del instrumento en un logro**, que es la peor forma
+> posible de contabilizar una corrección.
+>
+> **Lo que sí es medición nueva se distingue por su tamaño**: el **+1** del
+> 2026-08-17 (74.ª tanda) —`base` 92→**93** · `anchos` 76→**77** · `filas`
+> 67→**68** · `módulos` 63→**64**, con el denominador subiendo 363→**367**— es
+> **una forma**: `/etiqueta/monitorizacion-ambiental/page/11`, que **no existía**
+> hasta que se sembraron los 3 documentos capturados. Ésa sí se compró midiendo.
+>
 > ⚠ **Lo que NO cambia**, y por eso la cabecera de abajo se conserva: `docH`
 > (31), `enlaces` (31) y `comportamiento` (37) **no los acredita `lh-cmp`** —el
 > primero está en su `IGNORAR`, el segundo compara contra el corpus y no contra

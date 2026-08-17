@@ -1,4 +1,78 @@
-# HANDOFF — las 3 variantes de `L1` aguantan el ×6.3, y la cosecha del ensanche es de DATOS: **0 clases nuevas de plantilla**
+# HANDOFF — el dato cerró a medias y **pararon los dos escalones, cada uno con su medida**
+
+> ⚠ **Tanda de DATO, 2026-08-17 (74.ª). `L3` y `L5` NO se construyeron, y lo
+> ordenó el ESCALÓN 2 del encargo**: *«si sembrar los 3 documentos NO cierra los
+> residuos de paginador y fecha, lo que quede es otra causa: para y nómbrala
+> antes de construir encima»*. **No los cerró.**
+>
+> **Verificación:** `npm run check` **exit 0** · `qa:manifiesto` **367 rutas · 17
+> familias · 0 vacías** · `qa:slugs` **194 sin colisión** · `qa:cobertura`
+> **367/367** · cruce `lh-alcance`↔`lh-cmp` **exacto al par** a los dos anchos.
+
+## 0 · Los titulares de esta tanda
+
+> **1 · LOS 3 DOCUMENTOS SEMBRADOS, Y LA CAÍDA MEDIDA COMO PRUEBA.**
+> `entradas_blog` 149→**152** · `monitorizacion-ambiental` 89→**91** *(el número
+> del original)* · rutas 363→**367** · **pares distintos 6 207→5 282** @1440 y
+> **6 199→5 271** @390 · **FECHA 58→6** · formas con `Page N of M` distinto
+> **10→0**. Y **`/etiqueta/monitorizacion-ambiental/page/11` existe**. Sin
+> arrastrar T10: el extractor estrena `SOLO=` y la parcial movió **1 fichero de
+> 212**, comprobado por md5 y no por confianza.
+>
+> **El −925 va ATRIBUIDO**, que es lo que lo hace cosecha: todas las bajadas son
+> `listado.tarjetas.*` —el contenido dejando de estar desplazado— y las subidas
+> son `cascaron.*` **+4 por capa**, o sea *una forma nueva × 4 capas*.
+
+> **2 · ⛔ ESCALÓN 2 — LO QUE QUEDA DEL PAGINADOR ES DE PLANTILLA, Y SON DOS
+> CLASES.** **443 pares en 31 formas**: la **VENTANA** de las series de **11**
+> páginas (**377**; el clon pinta **9 piezas donde el original pinta 11** — le
+> faltan el `10` y el segundo `...`) y **±0.03 px** sub-píxel en las de 2/3/4
+> (**66**). Derivada y congelada **la tabla de ventana del original sobre sus 43
+> series**: sin ella no se arregla sin inventar, que es lo que la 69.ª ya pagó
+> una vez con esta misma piel.
+>
+> ⚠ **Y sólo existe a partir de 11 páginas, longitud que ninguna serie del clon
+> alcanzaba hasta hoy** — la tenía la que estaba corta por los 2 documentos sin
+> sembrar. **Arreglar el DATO es lo que lo hizo visible**: §*a veces el detector
+> no es otro ANCHO, es otro CONTENIDO*.
+
+> **3 · ⛔ ESCALÓN 1 — SE APLICÓ EL PRECEDENTE AL 301 Y LA MEDIDA DIJO QUE NO.**
+> `D2.4`/`D2.5` están escritas como regla sobre el canonical, y para
+> `medicion-de-gases-en-los-vertederos-de-basura` **los cuatro canales servidos
+> coinciden** (301 en vivo · canonical · `og:url` · `<title>`). Se aplicó. Medido
+> después: **FECHA 6 → 10**, *peor*.
+>
+> > `D2.4` contesta **«¿es una RUTA?»** y hacía falta **«¿es un DOCUMENTO?»**. En
+> > los `/page/N` coinciden porque un `/page/N` **no se lista en ningún sitio**;
+> > para una **entrada** se separan — el original **redirige el permalink** y
+> > **sigue listando su tarjeta**.
+>
+> **Revertido.** El extractor **detecta y reporta, no excluye**. Ficha con **4
+> salidas y una ya descartada POR MEDIDA**. Lo único que separó esto de un
+> acierto fue **medir después de aplicar**.
+
+## 1 · Lo que queda, y en qué orden
+
+1. **§F3-LH-VENTANA-DEL-PAGINADOR** — con su tabla derivada. Cerrarla pide un
+   caso por longitud (2 · 3 · 4 · 8 · 11) y por posición; hoy el clon **no tiene
+   ninguna serie de 8** con esa piel, así que esa fila queda **SIN EJERCITAR** y
+   hay que decirlo al cerrar.
+2. **§F3-LH-ENTRADA-QUE-ES-UN-301** — decisión del propietario. `B` (alias) y `C`
+   (re-capturar la tarjeta) **no son alternativas: son las dos mitades**, y `C`
+   no necesita campo nuevo.
+3. **`L3` y `L5`** — con la precondición ya escrita dentro de sus specs (73.ª):
+   `L3` **no pinta paginador en ninguna de sus 6 páginas** y su cuerpo tiene **1
+   fila**; `L5` **no pagina** (57 tarjetas) y `/casos-de-exito/page/2` **no es una
+   ruta**; las dos con **banda de filtros** que ninguna spec nombraba y **cero
+   override móvil**.
+4. **T10** — sigue fichada. `SOLO=` existe ahora, así que la re-emisión se puede
+   acotar y medir por partes.
+5. Las **65 páginas sin tarjetas** (`P-LH-C7`, clon **0 de 65**), las **5** del
+   grupo B sin decisión, **`CMS-ORDEN-L2`** y los **144 residuos de cascarón**.
+
+---
+
+# HANDOFF anterior — las 3 variantes de `L1` aguantan el ×6.3, y la cosecha del ensanche es de DATOS: **0 clases nuevas de plantilla**
 
 > ✅ **Tanda de RE-VERIFICACIÓN, 2026-08-17 (73.ª). CERO líneas de `src/`
 > tocadas.** El comparador pasa de **13 páginas a 82** y se adjudica lo que
