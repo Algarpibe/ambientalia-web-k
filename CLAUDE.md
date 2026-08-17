@@ -1791,6 +1791,26 @@ convierten en ruido visible algo que por defecto pasaba en silencio. La
 diferencia es el objeto — el `Censo` protege **la medida**, ésta protege **la
 evidencia**.
 
+⚠ **Y el efecto secundario que hay que saber leer, porque no es un defecto y
+engaña igual: `<nombre>.json` SIGNIFICA «LA PRIMERA FOTO», NO «EL ESTADO DE
+HOY».**
+
+> Como `w()` **nunca** pisa una congelada que difiera, en una sonda que se corre
+> muchas veces el **nombre canónico conserva la PRIMERA corrida** y todas las
+> demás se van a su fechado. Así que el fichero con el nombre obvio —el que
+> cualquiera abre para saber cómo está la cosa— es, con el tiempo, **el más
+> viejo del montón**.
+
+Medido: `clon-base-{1440,390}.json` dicen **`rutas: 17`** (julio) mientras la
+línea base vigente son **363**, y vive en `clon-base-{1440,390}-2026-08-14.json`.
+Un acta que cite «la línea base de `clon-base`» sin decir **qué fichero** manda a
+la sesión siguiente a leer 17.
+
+**Operativamente, y es una línea:** al citar una línea base, **se nombra el
+fichero**, y el número se deriva de él —`grep '"rutas"'` sobre el montón dice
+cuál es cuál—. Es la §regla 9 aplicada al sitio donde menos se espera: **el
+nombre de una congelada es un dato recordado, no derivado.**
+
 ⚠ **Y su moraleja es la de la regla 4, otra vez:** `c-cabecera` se parcheó a mano
 primero. Eso es arreglar **la instancia y no la CLASE**, que es exactamente cómo
 se llega a la tercera tanda del mismo bug. La guarda solo cuenta cuando está en

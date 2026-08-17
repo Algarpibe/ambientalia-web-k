@@ -1,5 +1,214 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-REVERIFICADO-82 · LAS TRES VARIANTES DE `L1` AGUANTAN EL ×6.3, Y LA COSECHA DEL ENSANCHE ES DE DATOS: **0 CLASES NUEVAS DE PLANTILLA** (2026-08-17, 73.ª tanda — nada construido)
+
+**Qué se decide aquí: nada de código de la web.** Se re-verifican las 3 variantes
+de `L1` al alcance nuevo —**13 → 82 páginas, ×6.3**— y se adjudica lo que
+aparece. El aviso de lectura estaba escrito antes de medir: *iban a aparecer
+defectos, y no serían regresión sino trabajo que ya existía en páginas que nadie
+miraba*. Aparecieron **35 clases nuevas**, y **ninguna es de plantilla**.
+
+### El número que contesta la pregunta de la tanda
+
+Cortando contra **las 7 formas que el comparador viejo comparó de verdad**
+(`lh-cmp-{1440,390}-vivo.json`, 68.ª tanda), no contra «la página 1»:
+
+| | @1440 | @390 |
+|---|---|---|
+| clases de diferencia nuevas | **35** | **35** |
+| sus pares | **400** | **399** |
+| ├ `paginador.piezas.*` | 342 | 341 |
+| ├ `listado.tarjetas.*.fecha.*` | 58 | 58 |
+| └ **cualquier otra cosa** | **0** | **0** |
+| formas `L1` que pasan a AUSENTE | **1** | **1** |
+
+> **Ese `0` es el resultado de la tanda.** Las 33 clases de paginador y las 2 de
+> fecha tienen **una causa de datos cada una**, y las dos están abajo con su
+> mecanismo. **Fuera de ellas, el ensanche a 82 páginas no encontró una sola
+> clase nueva**: las 3 variantes de `L1` renderizan igual de bien la página 7 de
+> una serie que la 1.
+
+**Y una lectura que había que descartar antes de fiarse del corte:** *«ninguna
+clase existe SÓLO fuera de la página 1»* también es cierto —las 35 aparecen
+además en alguna `primera`— y **no es la misma afirmación**. Lo es porque el
+ensanche añadió **30 primeras** donde antes había 3: lo que compró no fueron
+POSICIONES, fueron **PÁGINAS**. Cortar por posición habría dado «0 cosecha», que
+es un cero de la pregunta mal hecha.
+
+### La medida, en la unidad que compara
+
+| | @1440 | @390 |
+|---|---|---|
+| formas del universo | 82 | 82 |
+| comparadas · AUSENTES | **61 · 21** | **61 · 21** |
+| pares comparados | 109 421 | 109 470 |
+| pares distintos | **6 207** | **6 199** |
+| pares MIXTOS (difieren) | 18 117 (8 604) | 18 166 (8 781) |
+| `basesQueNoCasan` · `paginasSinNingunPar` | **0 · 0** | **0 · 0** |
+
+Congeladas: `medidas/lh-cmp-{1440,390}-todas.json`. Esta tanda **no cambia una
+línea de `src/`**, así que la línea base del clon no se re-mide: se cita.
+
+> ⚠ **Y citarla obligó a derivarla, porque el nombre canónico engaña (§regla 9).**
+> «`clon-base` 363/363» vive en `medidas/clon-base-{1440,390}-**2026-08-14**.json`.
+> Las congeladas de nombre canónico —`clon-base-{1440,390}.json`— siguen diciendo
+> **`rutas: 17`**.
+>
+> **No es un defecto: es cómo funciona la guarda de §sondas 5**, y conviene tenerlo
+> escrito. `w()` **nunca** pisa una congelada que difiera, así que el nombre
+> canónico conserva **la PRIMERA** foto y cada corrida posterior se va a su
+> fechado. O sea que en una sonda que se corre muchas veces, **`<nombre>.json`
+> significa «la primera vez», no «el estado de hoy»** — y quien lea el nombre
+> obvio para saber la línea base se lleva 17 en vez de 363, sin nada que se lo
+> advierta.
+
+| línea base | fichero | rutas |
+|---|---|---|
+| **la vigente** | `clon-base-{1440,390}-2026-08-14.json` | **363** |
+| la del nombre canónico | `clon-base-{1440,390}.json` | 17 *(de julio)* |
+
+### Causa 1 · los 3 documentos capturados y NO sembrados — y el ensanche le pone precio nuevo
+
+§F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR (abajo) ya los nombra. Derivado hoy con la
+**diferencia simétrica de los dos lados** (§UN CARDINAL ES UN CONTENEDOR):
+
+| | n |
+|---|---|
+| `corpus/entradas-blog/*.html` | **152** |
+| filas en `entradas_blog` | **149** |
+| **en el corpus y NO en la DB** | **3** |
+| **en la DB y NO en el corpus** | **0** |
+
+Los 3 están en `corpus/INDICE.json` (152) y tienen cuerpo en
+`corpus/transformado/`: **no los tira el seed, no llegan al catálogo** —
+`a-extraido.json` congela `entradas-blog: 149`—, y eso es exactamente lo que la
+ficha dice: capturados en la 69.ª, la siembra parada en
+§F3-LH-EXTRACTOR-T10-SIN-CABLEAR y §F3-LH-ARTICLE-ETIQUETA-44.
+
+**Dos de los tres llevan `etiqueta/monitorizacion-ambiental`** (verificado en su
+HTML), y ahí está el precio que la ficha no podía tener:
+
+| | original / corpus | clon |
+|---|---|---|
+| entradas de la etiqueta | **91** | **89** |
+| páginas de la serie | **11** | **10** |
+| `paginador.piezas.0.texto` | `Page 1 of 11` | `Page 1 of 10` |
+| `/etiqueta/monitorizacion-ambiental/page/11/` | existe | **NO EXISTE** |
+
+> **La ficha lo tasó en «~70 residuos frente a los 249 de `seminarios-web`». Al
+> alcance nuevo, el precio incluye UNA RUTA QUE NO EXISTE** — y una comparación
+> de páginas 1 no podía verlo **por construcción**: el total de la serie sólo se
+> lee en el paginador, y una ruta que falta al final no se echa en falta desde el
+> principio. Las 33 clases de paginador (342 pares) salen **todas de esta única
+> serie**, y los desplazamientos de contenido, de sus páginas 2–10.
+
+**No se arregla aquí, y no por falta de tiempo:** el bloqueo es **T10**, ya
+adjudicada como *«sigue fichada y no entra»* (exige antes/después y un `build`).
+
+### Causa 2 · ⛔ **NUEVA** — una entrada del corpus que es un **301** a otra, sembrada como fila propia
+
+Los 58 pares de `fecha` no los explicaban los 3 documentos. Perseguidos hasta el
+final, salen de **una sola fila**:
+
+| | |
+|---|---|
+| slug | `medicion-de-gases-en-los-vertederos-de-basura` |
+| el original, **hoy y en vivo** | **HTTP 301 → `/es/contaminacion-del-aire-en-vertederos/`** |
+| su HTML capturado | `canonical`, `og:url` y `<title>` **los de la otra** |
+| en la DB | fila **id 53**, con el **título, la fecha, la imagen y el extracto de la otra** |
+
+**El render es fiel: el dato está mal.** Y la fecha equivocada (`Feb 1, 2025` en
+vez de `Abr 4, 2023`) la ordena en la página que no es, así que **el defecto no
+se queda en su tarjeta**: mueve `/etiqueta/cov` y
+`/etiqueta/emisiones-industriales/page/3`. Verificado **contra la salida
+servida**, que es donde se ve entero — la tarjeta lleva su `href` bueno y el
+contenido de la anterior:
+
+```
+/etiqueta/cov  [2] href   /medicion-de-gases-en-los-vertederos-de-basura
+                   titulo Contaminación del aire en vertederos: cómo afecta…   ← la [1]
+                   img    /images/uploads/2025/01/movimiento-de-residuos-…jpg  ← la [1]
+                   fecha  Feb 1, 2025                                          ← la [1]
+```
+
+> **Y el control que lo hace discriminante, porque el síntoma tiene DOS causas.**
+> En `entradas_blog` hay **2 pares** con el mismo título. El otro —
+> `zonas-bajas-emisiones-monitorizacion` / `zonas-de-bajas-emisiones-y-el-control-…`—
+> **no es esto**: `postid-13604` y `postid-52220`, **HTTP 200 los dos**, cada uno
+> con su canonical. Son dos artículos distintos que comparten titular. Sin ese
+> contraste, «2 títulos duplicados» se habría fichado como una clase de 2 cuando
+> es **una de 1 y un no-defecto**. Es §*`vacia: true` eran DOS fronteras* otra vez,
+> una capa más abajo.
+
+**Qué clase es, y no es nueva del todo: es `D2.4` UN NIVEL MÁS ABAJO.** `D2.4`
+dice *«un `/page/N` cuyo canonical apunta a otra sirve el MISMO documento: no es
+una ruta»*. Aquí lo mismo pasa con una **ENTRADA**, donde nunca se había
+aplicado — y el original lo declara en **tres canales servidos** (`301`,
+`canonical`, `og:url`), que es la misma forma de evidencia con la que se firmaron
+`D2.4`, `D2.5` y `D2.8`.
+
+⛔ **No se aplica en esta tanda, y la razón se escribe:** aplicarlo **quita una
+ruta** (363 → 362), así que exige re-sembrar, `build` y re-medir los dos anchos
+con su antes/después. Y **aplicarlo solo no cierra nada**, porque la causa 1
+seguiría dejando `monitorizacion-ambiental` mal. Las dos se hacen **en la misma
+operación**, que es la apertura natural de la tanda siguiente. Ficha propia:
+§F3-LH-ENTRADA-QUE-ES-UN-301, aquí debajo.
+
+### Qué NO cierra esta tanda, con su número
+
+- las **21 formas AUSENTES**: `L2` **12** · `L3` **6** · `L4` **1** · `L5` **1**
+  —las cuatro familias sin construir— **más 1 de `L1`**, que es la ruta que la
+  causa 1 se lleva por delante;
+- los **18 117 / 18 166 pares MIXTOS**, sin referencia limpia (§ESCALÓN eje mixto);
+- los **6 207 / 6 199** distintos, de los que la mayor parte sigue siendo el
+  **cascarón** —presente en las 61 formas, ya fichado, y su resolución mueve 363
+  rutas—;
+- y estas rutas **no tienen campaña de ruido**: un residuo pequeño aquí es **SIN
+  PROBAR**, no «limpio».
+
+## ⛔ F3-LH-ENTRADA-QUE-ES-UN-301 · UNA ENTRADA DEL CORPUS NO ES UN DOCUMENTO SI SU CANONICAL APUNTA A OTRA (2026-08-17, 73.ª tanda — NADA DECIDIDO)
+
+**Qué se decide aquí: nada.** Se nombra la clase, se escribe su evidencia y se
+deja la decisión al propietario, igual que se hizo con `D2.4` y `D2.5`.
+
+**El hecho, en tres canales servidos y medidos hoy:**
+
+| canal | qué dice |
+|---|---|
+| el servidor, en vivo | `GET /es/medicion-de-gases-en-los-vertederos-de-basura/` ⇒ **301** a `/es/contaminacion-del-aire-en-vertederos/` |
+| el HTML capturado | `<link rel=canonical>` y `og:url` ⇒ **la otra** |
+| el `<title>` | **el de la otra** |
+
+**Qué pasó:** la campaña capturó el slug viejo, el servidor sirvió el destino del
+301, y el fichero se guardó **con el nombre del origen**. De ahí en adelante todo
+es fiel: el extractor lee ese HTML, el seed crea la fila, la plantilla la pinta.
+**Ninguna guarda podía verlo**, porque cada capa hizo bien su trabajo.
+
+**El coste medido:** 1 fila de 149 · 1 ruta que el original no sirve · **58
+pares** en 2 formas, con el desplazamiento de orden que provoca la fecha ajena.
+
+**La pregunta a decidir, con sus salidas:**
+
+| | qué implica |
+|---|---|
+| **A · no es un documento** (aplicar `D2.4` un nivel abajo) | se cae del corpus y de la DB: **363 → 362** rutas. Es lo que el original declara en tres canales |
+| **B · es un documento con un alias** | se modela la redirección (`redirigeA`), y el clon emite un 301 propio. Campo nuevo, y hoy **ninguna otra entrada lo ejerce** — §F2-5-ESCALON-ETIQUETAS: un camino sin estrenar |
+| **C · dejarlo** | el clon sirve 200 donde el original sirve 301, con contenido duplicado, y **la fecha ajena sigue desordenando dos listados** |
+
+**Y la comprobación que hay que hacer ANTES de decidir, porque decide el
+denominador:** hoy se sabe de **1**, y el barrido que lo derivaría —*¿cuántas
+entradas del corpus traen un canonical que no es el suyo?*— **no se ha corrido**.
+Sin él, «es 1» es una afirmación sobre las 2 formas que el comparador destapó, no
+sobre las 152 del corpus (§regla 9, y §*una regla derivada sobre un dominio donde
+el caso no se da está SIN PROBAR*). Es barato: un `grep` del `canonical` de cada
+fichero contra su nombre.
+
+**Lo que NO es**, con su control: no es «dos entradas con el mismo título». Ese
+síntoma tiene **2 instancias y 2 causas** — la otra
+(`zonas-bajas-emisiones-monitorizacion` · `zonas-de-bajas-emisiones-…`) son
+**postid-13604** y **postid-52220**, **HTTP 200** los dos y con canonical propio:
+dos artículos distintos que comparten titular, y **no hay nada que arreglar ahí**.
+
 ## ✅ F3-LH-CRUCE-82 · EL COMPARADOR MIDE AL ALCANCE NUEVO, Y EL CIERRE SON CUATRO AFIRMACIONES CON CUATRO RESPALDOS DISTINTOS (2026-08-17, 73.ª tanda — nada construido)
 
 **Qué se decide aquí: nada de código de la web.** El ESCALÓN 1 exigía que
@@ -930,6 +1139,30 @@ apariciones** de `Jan`, `Apr`, `Aug` o `Dec`.
 `/etiqueta`, que estaba dada por verificada.
 
 ## ⚠ F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR · SON **3**, NO 2 — Y EL TERCERO ES LA PRIMERA TARJETA DE `seminarios-web` (2026-08-14, 68.ª tanda)
+
+> ⚠⚠ **EL PRECIO ERA MAYOR QUE EL QUE ESTA FICHA PUDO TASAR, y lo destapó
+> ensanchar el comparador (2026-08-17, 73.ª tanda — §F3-LH-REVERIFICADO-82).**
+>
+> Aquí abajo el coste se tasó en **residuos**: «~70 en las formas hermanas contra
+> **249** en `seminarios-web`». Medido a 82 páginas en vez de a 13, incluye algo
+> que un residuo no puede expresar:
+>
+> | | |
+> |---|---|
+> | dos de los tres llevan `etiqueta/monitorizacion-ambiental` | **91** entradas en el original, **89** en el clon |
+> | ⇒ páginas de esa serie | **11** en el original, **10** en el clon |
+> | ⇒ **`/etiqueta/monitorizacion-ambiental/page/11/`** | **el clon NO LA EMITE** |
+> | ⇒ clases de diferencia nuevas | **33**, todas de paginador, **342 pares**, todas de esta única serie |
+>
+> **Y por qué la ficha no podía saberlo:** el total de una serie sólo se lee en su
+> paginador, y **una ruta que falta al final no se echa en falta desde el
+> principio**. Con el comparador mirando 13 páginas 1, esto era invisible **por
+> construcción** — no por descuido. Es §*la cobertura declarada al nivel de arriba
+> absorbe todo lo que no se midió abajo*, cobrada sobre el precio de una ficha en
+> vez de sobre un recuento.
+>
+> Sigue **sin sembrar** y el bloqueo no cambia: §F3-LH-EXTRACTOR-T10-SIN-CABLEAR
+> (T10, adjudicada como «no entra») y §F3-LH-ARTICLE-ETIQUETA-44.
 
 §F3-LH-DOS-CONJUNTOS-DE-149 nombró **2** documentos que los listados citan y el
 corpus de 149 no tiene. Derivado ahora sobre **las 574 tarjetas** de TODOS los
