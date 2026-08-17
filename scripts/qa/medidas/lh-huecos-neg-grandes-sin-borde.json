@@ -4,7 +4,7 @@
     "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
     "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
     "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
-    "sabotaje": "sin-control-de-orden",
+    "sabotaje": "grandes-sin-borde",
     "noMide": [
       "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
       "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
@@ -90,7 +90,7 @@
       "separadoras": 19,
       "aciertaVentana5": 43,
       "aciertaTodas": 24,
-      "secuenciaNuevaAcierta": 43,
+      "secuenciaNuevaAcierta": 41,
       "secuenciaViejaAcierta": 7,
       "viejoAciertaEn": [
         {
@@ -356,7 +356,10 @@
       ],
       "secuenciaDenominador": 43,
       "instanciasExcluidasDeLaSecuencia": 0,
-      "fallosDeSecuencia": [],
+      "fallosDeSecuencia": [
+        "etiqueta/monitorizacion-ambiental/page/6 (n=6/11): first:« First | previouspostslink:« | extend:... | page smaller:4 | page smaller:5 | current:6 | page larger:7 | page larger:8 | extend:... | nextpostslink:» | last:Last »",
+        "etiqueta/monitorizacion-ambiental/page/7 (n=7/11): first:« First | previouspostslink:« | extend:... | page smaller:5 | page smaller:6 | current:7 | page larger:8 | page larger:9 | extend:... | nextpostslink:» | last:Last »"
+      ],
       "instanciasConMasDe12Piezas": [
         {
           "ruta": "etiqueta/monitorizacion-ambiental/page/4",
@@ -449,8 +452,8 @@
         "lastmod"
       ],
       "faqsOrdenadoPor": [],
-      "control": "SIN CONTROL — no se puede afirmar nada sobre el otro",
-      "veredicto": "NO SE PUEDE AFIRMAR: el control no pasa"
+      "control": "`/glosario`: `datePublished` DESC reproduce el orden servido, así que el canal se sabe LEER",
+      "veredicto": "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` TIENE dato en modifiedTime · lastmod pero NINGUNO reproduce su orden ⇒ no derivable de lo servido MIRADO."
     },
     "bandaDeFiltros": {
       "pregunta": "¿qué hay entre el `h1` y el listado en `L3` y `L5`? — ninguna spec lo nombra",

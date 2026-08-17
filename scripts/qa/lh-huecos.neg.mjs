@@ -14,6 +14,8 @@
  * | `sin-corpus` | **TIRA** sin el corpus congelado | medir 0 huecos y salir en verde |
  * | `sin-control-de-orden` | **falla**: sin el control, «`lastmod` no ordena» no significa nada | dar por bueno un negativo sin control (§sondas 8a) |
  * | `ventana-sin-separadores` | **falla**: 0 instancias separadoras ⇒ el modelo no está elegido | leer «acierta 43/43» como si decidiera algo |
+ * | `grandes-sin-borde` | **falla**: pinta el número grande en las páginas 6 y 7 de 11 | dar el borde por bueno sin que nada lo pruebe |
+ * | `grandes-sin-implementar` | **falla**: 9 piezas donde el original pinta 11 | el verde 38/38 de la 69.ª tanda, con el denominador recortado |
  *
  * ⚠ **`ventana-sin-separadores` es el que protege del daño de verdad**, y es el
  * error que la piel B tenía cometido: con `total ≤ 4` los dos modelos de
@@ -62,10 +64,25 @@ const casos = [
       /* Y la unidad que ADJUDICA: la secuencia entera. Comparar sólo el conjunto
          de números daría por bueno un componente que no emite los `page smaller`,
          que es exactamente el defecto que tenía. */
-      const conLarger = h.ventanaPielB.instanciasConLargerPageExcluidasDeLaSecuencia;
-      const den = h.ventanaPielB.instancias - conLarger;
+      const den = h.ventanaPielB.secuenciaDenominador;
+      if (den !== h.ventanaPielB.instancias)
+        return `secuencia: el denominador es ${den} y las instancias son ${h.ventanaPielB.instancias} — un denominador recortado a mano fue lo que silenció 5 instancias con 377 pares dentro`;
+      if (h.ventanaPielB.instanciasExcluidasDeLaSecuencia !== 0)
+        return "secuencia: hay instancias EXCLUIDAS — eso es el filtro de la 69.ª tanda otra vez";
       if (h.ventanaPielB.secuenciaNuevaAcierta !== den)
         return `secuencia: el componente nuevo reproduce ${h.ventanaPielB.secuenciaNuevaAcierta}/${den} — no vale citar la ventana si la secuencia no casa`;
+      /* Los números grandes: que estén DERIVADOS, no supuestos, y que los tramos
+         sin ejercitar salgan con su cardinal (regla 14) y no en una frase. */
+      const se = h.ventanaPielB.sinEjercitar;
+      if (!se) return "sin bloque `sinEjercitar`: una limitación sin su cardinal se lee como nota al pie (regla 14)";
+      if (!(se.unGrande > 0))
+        return "números grandes: 0 instancias los ejercitan ⇒ implementarlos sería estrenar un camino de render sin dato";
+      if (se.dosOMasGrandes !== 0 || se.grandesDelanteDeLaVentana !== 0)
+        return "números grandes: el original SÍ ejercita 2+ o los de delante ⇒ el `throw` del componente está de más y hay que derivar su regla";
+      /* Y la evidencia del canal: si NINGUNA instancia pasara del tope del
+         espejo, la corrección de la tabla no tendría respaldo. */
+      if (!(h.ventanaPielB.instanciasConMasDe12Piezas?.length > 0))
+        return "canal: 0 instancias pasan del tope de 12 piezas ⇒ el espejo no truncaba nada y la corrección de la tabla es infundada";
       if (!(h.ventanaPielB.secuenciaViejaAcierta < h.ventanaPielB.secuenciaNuevaAcierta))
         return "secuencia: el componente VIEJO acierta igual o más ⇒ no hay defecto que arreglar y el hueco es inventado";
       if (h.ventanaPielB.fallosDeSecuencia?.length)
@@ -108,6 +125,25 @@ const casos = [
     env: { SABOTAJE: "ventana-sin-separadores" },
     exit: 1,
     salidaTiene: /CERO instancias SEPARADORAS/,
+  },
+  /* ── El BORDE de los números grandes, por sus dos lados ───────────────────
+   * No basta con que la secuencia case: hace falta que la sonda sepa fallar
+   * cuando el grande se pinta DONDE NO TOCA y cuando NO se pinta donde sí. Los
+   * dos sabotajes son las dos direcciones del mismo borde, y el segundo es
+   * literalmente el estado del clon antes de esta tanda. */
+  {
+    etiqueta: "grandes-sin-borde",
+    porQue: "`L > fin` en vez de `L ≥ fin+3` pinta el 10 en las páginas 6 y 7 de 11, donde el original NO lo sirve",
+    env: { SABOTAJE: "grandes-sin-borde" },
+    exit: 1,
+    salidaTiene: /la SECUENCIA falla en/,
+  },
+  {
+    etiqueta: "grandes-sin-implementar",
+    porQue: "sin números grandes son 9 piezas donde el original pinta 11 — el defecto de 377 pares, y tiene que salir ROJO",
+    env: { SABOTAJE: "grandes-sin-implementar" },
+    exit: 1,
+    salidaTiene: /la SECUENCIA falla en/,
   },
 ];
 

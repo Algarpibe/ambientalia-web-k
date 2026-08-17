@@ -25,6 +25,20 @@
  * | 1 | la BARRA de `L2` | `lh-barra`: **0 de 12** con barra | el `<body>` trae `et_right_sidebar` y el árbol un `#sidebar` con **3 widgets** — es la barra del TEMA, no la partición Divi `3_4+1_4` que aquella medida buscaba |
  * | 2 | la BANDA de `.container` | la spec da `ancla y = 283` y `cabecera h = 225` y **no nombra los 58 de en medio** | `58` px, **iguales a 1440 y a 390** |
  * | 3 | la VENTANA de la piel B | «todas las páginas de `n+1` a `total`» | **5 números** con `« First`, `...` y `Last »` — y las instancias que la calibraron (`total ≤ 4`) **no podían separar los dos modelos** |
+ *
+ * ⚠⚠ **AMPLIADO 2026-08-17 (75.ª tanda) — y la ampliación es la que cierra el
+ * hueco 3, porque hasta hoy su recuento SILENCIABA 5 instancias.** La
+ * comparación de secuencia se hacía contra `piezas.filter(no larger page)` y el
+ * denominador bajaba a 38: o sea **38/38 en verde con un defecto de 377 pares
+ * dentro**. Ahora se compara la secuencia entera contra las 43 y los números
+ * grandes están **derivados** (borde entre `fin = 7` y `fin = 8`, 11
+ * observaciones), con los tramos sin ejercitar publicados en `sinEjercitar` con
+ * su cardinal en vez de en una frase.
+ *
+ * ⚠ **Y el canal importa: esto se deriva del CORPUS, no del espejo.**
+ * `lh-barrido` corta las piezas en `slice(0, 12)` y **2 instancias emiten 14**,
+ * así que la tabla derivada del espejo daba las páginas 4 y 5 de 11 *sin* `»` ni
+ * `Last »`. Truncamiento del instrumento leído como fidelidad del original.
  * | 4 | el ORDEN de `L2` | la spec **no lo trata** | `/glosario` = `datePublished` DESC **37/37**; `/preguntas-frecuentes` **sin canal** |
  * | 5 | la BANDA DE FILTROS de `L3` y `L5` | ninguna de las dos specs la nombra | `L3` sirve `#filters.filtros-scientific` (3 botones) y `L5` `.case-filter` (12) **entre el `h1` y el listado** |
  *
@@ -40,7 +54,17 @@ import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
 process.env.SIN_CLON = "1"; // lee ficheros congelados: un build del clon no la contamina
 gritaSiRevienta();
 
-const SABOTAJES = ["sin-corpus", "sin-control-de-orden", "ventana-sin-separadores"];
+const SABOTAJES = [
+  "sin-corpus",
+  "sin-control-de-orden",
+  "ventana-sin-separadores",
+  /* Los dos del PASO 1 de la 75.ª tanda: el borde de los números grandes por los
+     dos lados. `grandes-sin-borde` los pinta donde el original no (una posición
+     cuya ventana ya llega cerca del múltiplo) y `grandes-sin-implementar` es el
+     defecto que había — el número viejo, 9 piezas donde el original pinta 11. */
+  "grandes-sin-borde",
+  "grandes-sin-implementar",
+];
 const SABOTAJE = process.env.SABOTAJE || null;
 if (SABOTAJE && !SABOTAJES.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${SABOTAJES.join(" · ")})`);
@@ -238,18 +262,53 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
   const todas = (n, total) => ({ inicio: 1, fin: total });
 
   /**
+   * ⚠⚠ LOS NÚMEROS GRANDES — y esta derivación tiene que hacerse sobre el
+   * CORPUS, no sobre el espejo (2026-08-17, 75.ª tanda).
+   *
+   * `lh-barrido.mjs` corta las piezas en `as.slice(0, 12)`, y las páginas **4 y
+   * 5 de 11** emiten **14**. O sea que la tabla que §F3-LH-VENTANA-DEL-PAGINADOR
+   * congeló desde el espejo daba esas dos filas **sin `»` ni `Last »`** — y eso
+   * es el truncamiento del instrumento, no lo que sirve el original. Lo
+   * desmienten dos canales: el `hrefs` del propio espejo, que NO está truncado
+   * (`… p10 p5 p11` en la página 4), y el HTML del corpus, que es el que esta
+   * sonda lee. **Construir «desde la tabla» sin mirar el canal habría replicado
+   * el corte del instrumento como si fuera fidelidad.**
+   *
+   * El borde, derivado de las 11 observaciones de `total 11`: se pinta con
+   * `fin ∈ {5,6,7}` y no con `fin ∈ {8,9,10,11}` ⇒ `L ≥ fin + 3`. (Y
+   * `L ≥ n + 5` es LA MISMA función, no un segundo candidato: en la ventana sin
+   * recortar `fin = n+2`, y en los recortes las dos caen del mismo lado porque
+   * `L` es múltiplo de 10 y nunca vale 6 ni 7.)
+   */
+  const MULTIPLO = 10;
+  const grandesDe = (n, total, fin) => {
+    const todosL = [];
+    for (let L = MULTIPLO; L <= total; L += MULTIPLO) todosL.push(L);
+    if (SABOTAJE === "grandes-sin-borde") return todosL.filter((L) => L > fin);
+    if (SABOTAJE === "grandes-sin-implementar") return [];
+    return todosL.filter((L) => L >= fin + 3);
+  };
+
+  /**
    * La SECUENCIA que emite el componente, reproducida aquí desde el MISMO
    * modelo. Es lo que convierte esto en una verificación y no en un recuento:
    * §*una sonda que compara conjuntos no ve el orden ni las piezas que faltan*.
    */
   const secuenciaNueva = (n, total) => {
     const { inicio, fin } = ventana(n, total);
+    const grandes = grandesDe(n, total, fin);
     const out = [];
     if (inicio > 1) out.push("first:« First");
     if (n > 1) out.push("previouspostslink:«");
     if (inicio > 1) out.push("extend:...");
     for (let k = inicio; k <= fin; k++) out.push(k === n ? `current:${k}` : `page ${k < n ? "smaller" : "larger"}:${k}`);
     if (fin < total) out.push("extend:...");
+    /* El número grande va ENTRE los dos `...` y DELANTE de `»`/`Last »` — orden
+       verbatim del HTML servido. Con UN solo grande, «un `...` por grande» y
+       «un `...` que cierra el grupo» dan lo mismo: con dos no, y no hay ni una
+       observación con dos (0 de 43). Va declarado abajo en `sinEjercitar`. */
+    for (const L of grandes) out.push(`larger page:${L}`);
+    if (grandes.length) out.push("extend:...");
     if (n < total) out.push("nextpostslink:»");
     if (fin < total) out.push("last:Last »");
     return out;
@@ -289,11 +348,16 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
        elección no está hecha — está escrita al azar. */
     if (JSON.stringify(esperadoV) !== JSON.stringify(esperadoT)) separadoras++;
 
-    /* Y la comprobación que de verdad adjudica: la SECUENCIA entera. */
-    const sinLarger = i.piezas.filter((p) => !p.startsWith("larger page:"));
-    if (JSON.stringify(secuenciaNueva(i.n, i.total)) === JSON.stringify(sinLarger)) secNueva++;
-    else if (!i.largerPage) fallosSec.push(`${i.ruta} (n=${i.n}/${i.total}): ${sinLarger.join(" | ")}`);
-    if (JSON.stringify(secuenciaVieja(i.n, i.total)) === JSON.stringify(sinLarger)) {
+    /* Y la comprobación que de verdad adjudica: la SECUENCIA entera, **con los
+       números grandes dentro**. Hasta la 74.ª tanda se comparaba contra
+       `piezas.filter(no larger page)` y las 5 instancias que los traen quedaban
+       fuera del denominador **y del recuento de fallos** — o sea 38/38 verde con
+       el defecto de 377 pares vivo dentro. Es §*un descuadre impreso y no
+       contado da el mismo informe que uno no visto*, aquí en su forma más
+       barata: el filtro que lo silenciaba estaba escrito y comentado. */
+    if (JSON.stringify(secuenciaNueva(i.n, i.total)) === JSON.stringify(i.piezas)) secNueva++;
+    else fallosSec.push(`${i.ruta} (n=${i.n}/${i.total}): ${i.piezas.join(" | ")}`);
+    if (JSON.stringify(secuenciaVieja(i.n, i.total)) === JSON.stringify(i.piezas)) {
       secVieja++;
       viejoAciertaEn.push({ ruta: i.ruta, n: i.n, total: i.total, esPagina1: i.n === 1 });
     }
@@ -317,8 +381,37 @@ const ev = new Evaluadas({ nombre: "lh-huecos", unidad: "huecos derivados", mini
     viejoAciertaSoloEnPagina1: viejoAciertaEn.every((i) => i.esPagina1),
     /* Todas las instancias, para que el cruce se haga por RUTA y no por cardinal. */
     instancias_: inst.map((i) => ({ ruta: i.ruta, n: i.n, total: i.total })),
-    instanciasConLargerPageExcluidasDeLaSecuencia: inst.filter((i) => i.largerPage).length,
+    /* El denominador de la SECUENCIA son las 43: ya no se excluye ninguna. */
+    secuenciaDenominador: inst.length,
+    instanciasExcluidasDeLaSecuencia: 0,
     fallosDeSecuencia: fallosSec,
+    /* ── EL CANAL, y por qué no vale el espejo para esto ────────────────────
+     * `lh-barrido` corta en `as.slice(0, 12)`. Estas dos instancias emiten más,
+     * así que la tabla derivada del espejo salía sin `»` ni `Last »` en ellas.
+     * Se publica el cardinal para que el corte no vuelva a leerse como dato. */
+    /* ⚠ **EN LA UNIDAD DEL TOPE, no en la de esta sonda.** `i.piezas` excluye
+     * `span.pages` (el parser la salta), y el `slice(0, 12)` de `lh-barrido`
+     * la INCLUYE. Comparar 13 contra 12 daría el mismo signo con el margen
+     * equivocado: §*se compara en la unidad que se afirma*. Se suma 1. */
+    instanciasConMasDe12Piezas: inst
+      .filter((i) => i.piezas.length + 1 > 12)
+      .map((i) => ({ ruta: i.ruta, n: i.n, total: i.total, piezasConLaDePages: i.piezas.length + 1 })),
+    topeDePiezasDelEspejo: 12,
+    unidadDelTope: "piezas del paginador INCLUYENDO `span.pages`, que es lo que cuenta el `slice(0, 12)` de lh-barrido",
+    /* ── LO QUE NO ESTÁ EJERCITADO, con su cardinal (regla 14) ──────────────
+     * Un tramo con 0 instancias es un camino de render sin estrenar
+     * (§F2-5-ESCALON-ETIQUETAS), y el componente TIRA en los dos primeros en vez
+     * de adivinar. Se escriben con su número aquí para que el cero no viva sólo
+     * en la prosa de un comentario. */
+    sinEjercitar: {
+      unGrande: inst.filter((i) => i.largerPage).length,
+      dosOMasGrandes: inst.filter((i) => (i.piezas.filter((p) => p.startsWith("larger page:")).length > 1)).length,
+      grandesDelanteDeLaVentana: inst.filter((i) => {
+        const { inicio } = ventana(i.n, i.total);
+        return i.piezas.some((p) => p.startsWith("larger page:") && Number(p.split(":")[1]) < inicio);
+      }).length,
+      totalesNoVistos: [5, 6, 7, 9, 10, 12].filter((t) => !inst.some((i) => i.total === t)),
+    },
     conFirst: inst.filter((i) => i.first).length,
     conLast: inst.filter((i) => i.last).length,
     conLargerPage: inst.filter((i) => i.largerPage).length,
@@ -558,7 +651,13 @@ informe.meta = {
     "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
     "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
     "si los huecos son TODOS los que hay — es una lista de los encontrados al escribir el alcance, no un censo cerrado",
-    "el mecanismo de `larger page` de la piel B: lo ejercita UNA serie y no se deriva de n=1",
+    /* ⚠ Esta línea decía «el mecanismo de `larger page` no se deriva de n=1» y
+       hoy SÍ está derivado —de las 11 observaciones de `total 11`, con su borde
+       entre fin=7 y fin=8—. Lo que sigue sin ejercitar es OTRA cosa, y va con su
+       cardinal en `sinEjercitar` en vez de en una frase: */
+    "los números grandes con 2 o más a la vez (0 de 43: exige total ≥ 20) y los que van DELANTE de la ventana (0 de 43: exige total ≥ 15 y n ≥ 13). El componente TIRA en los dos en vez de adivinar",
+    "el CÓDIGO del generador: se intentó leer `wp-pagenavi` en su repositorio (403/404), así que «corre con las opciones por defecto» es hipótesis con mecanismo, no medida. El múltiplo 10 se apoya en UNA observación",
+    "los totales 5·6·7·9·10·12…19 de la piel B: 0 de 43 instancias — la ventana interpola sin salto y nadie lo ha medido",
   ],
 };
 
@@ -586,9 +685,18 @@ console.log(`   banda del contenedor ${c.valoresDistintos.join(" · ")} px · ${
 console.log(`   ventana de la piel B ${p.instancias} instancias · totales ${p.totalesDistintos.join("·")} · SEPARADORAS ${p.separadoras}`);
 console.log(`                        números:   ventana-5 ${p.aciertaVentana5}/${p.instancias} · el modelo viejo ${p.aciertaTodas}/${p.instancias}`);
 console.log(
-  `                        SECUENCIA: el componente NUEVO ${p.secuenciaNuevaAcierta}/${p.instancias - p.instanciasConLargerPageExcluidasDeLaSecuencia} · ` +
-    `el VIEJO ${p.secuenciaViejaAcierta}/${p.instancias - p.instanciasConLargerPageExcluidasDeLaSecuencia} ` +
-    `(fuera las ${p.instanciasConLargerPageExcluidasDeLaSecuencia} con \`larger page\`, que no se implementa)`,
+  `                        SECUENCIA: el componente NUEVO ${p.secuenciaNuevaAcierta}/${p.secuenciaDenominador} · ` +
+    `el VIEJO ${p.secuenciaViejaAcierta}/${p.secuenciaDenominador} ` +
+    `(las 43 enteras: los \`larger page\` YA no se excluyen)`,
+);
+console.log(
+  `                        números grandes: 1 grande en ${p.sinEjercitar.unGrande}/${p.instancias} · ` +
+    `2+ en ${p.sinEjercitar.dosOMasGrandes}/${p.instancias} · delante de la ventana en ${p.sinEjercitar.grandesDelanteDeLaVentana}/${p.instancias} ` +
+    `· totales sin ver ${p.sinEjercitar.totalesNoVistos.join("·")}`,
+);
+console.log(
+  `                        canal: el CORPUS, no el espejo — ${p.instanciasConMasDe12Piezas.length} instancia(s) pasan del tope de ` +
+    `${p.topeDePiezasDelEspejo} piezas de \`lh-barrido\` (${p.instanciasConMasDe12Piezas.map((i) => `p${i.n}/${i.total}:${i.piezasConLaDePages}`).join(" ")}, contando \`span.pages\` como él)`,
 );
 console.log(`   orden de L2          ${o.porForma.map((f) => `${f.forma}: datePublished ${f.conDatePublished}/${f.tarjetas}`).join(" · ")}`);
 console.log(`   banda de filtros     ${fl.filas.map((f) => `${f.ruta.split("/").pop()}: ${f.botones}`).join(" · ")} botones`);
@@ -601,6 +709,13 @@ if (b.conSidebar !== b.documentos) rojos.push("la barra de L2 no es uniforme");
 if (c.valoresDistintos.length !== 1) rojos.push("la banda del contenedor no es un solo número");
 if (p.separadoras === 0) rojos.push("la ventana de la piel B no tiene instancias SEPARADORAS: el modelo no está elegido");
 if (p.aciertaVentana5 !== p.instancias) rojos.push(`la ventana de 5 falla en ${p.instancias - p.aciertaVentana5} instancia(s)`);
+/* La SECUENCIA entera sobre las 43, con los números grandes dentro. Es lo que
+   los dos sabotajes nuevos tienen que romper, y lo que el filtro de la 69.ª
+   tanda silenciaba. */
+if (p.secuenciaNuevaAcierta !== p.secuenciaDenominador)
+  rojos.push(`la SECUENCIA falla en ${p.secuenciaDenominador - p.secuenciaNuevaAcierta} de ${p.secuenciaDenominador} instancia(s): ${p.fallosDeSecuencia.slice(0, 2).join(" ;; ")}`);
+if (p.instanciasExcluidasDeLaSecuencia !== 0)
+  rojos.push("hay instancias EXCLUIDAS de la secuencia: un denominador recortado a mano no mide lo que dice");
 if (!o.control.startsWith("`/glosario`")) rojos.push("el control del orden no pasa");
 if (!fl.filas.every((f) => f.presente)) rojos.push("la banda de filtros no aparece en alguna instancia");
 

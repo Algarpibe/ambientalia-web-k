@@ -4,7 +4,7 @@
     "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
     "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
     "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
-    "sabotaje": "sin-control-de-orden",
+    "sabotaje": "grandes-sin-implementar",
     "noMide": [
       "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
       "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
@@ -90,7 +90,7 @@
       "separadoras": 19,
       "aciertaVentana5": 43,
       "aciertaTodas": 24,
-      "secuenciaNuevaAcierta": 43,
+      "secuenciaNuevaAcierta": 38,
       "secuenciaViejaAcierta": 7,
       "viejoAciertaEn": [
         {
@@ -356,7 +356,13 @@
       ],
       "secuenciaDenominador": 43,
       "instanciasExcluidasDeLaSecuencia": 0,
-      "fallosDeSecuencia": [],
+      "fallosDeSecuencia": [
+        "etiqueta/monitorizacion-ambiental (n=1/11): current:1 | page larger:2 | page larger:3 | page larger:4 | page larger:5 | extend:... | larger page:10 | extend:... | nextpostslink:» | last:Last »",
+        "etiqueta/monitorizacion-ambiental/page/2 (n=2/11): previouspostslink:« | page smaller:1 | current:2 | page larger:3 | page larger:4 | page larger:5 | extend:... | larger page:10 | extend:... | nextpostslink:» | last:Last »",
+        "etiqueta/monitorizacion-ambiental/page/3 (n=3/11): previouspostslink:« | page smaller:1 | page smaller:2 | current:3 | page larger:4 | page larger:5 | extend:... | larger page:10 | extend:... | nextpostslink:» | last:Last »",
+        "etiqueta/monitorizacion-ambiental/page/4 (n=4/11): first:« First | previouspostslink:« | extend:... | page smaller:2 | page smaller:3 | current:4 | page larger:5 | page larger:6 | extend:... | larger page:10 | extend:... | nextpostslink:» | last:Last »",
+        "etiqueta/monitorizacion-ambiental/page/5 (n=5/11): first:« First | previouspostslink:« | extend:... | page smaller:3 | page smaller:4 | current:5 | page larger:6 | page larger:7 | extend:... | larger page:10 | extend:... | nextpostslink:» | last:Last »"
+      ],
       "instanciasConMasDe12Piezas": [
         {
           "ruta": "etiqueta/monitorizacion-ambiental/page/4",
@@ -449,8 +455,8 @@
         "lastmod"
       ],
       "faqsOrdenadoPor": [],
-      "control": "SIN CONTROL — no se puede afirmar nada sobre el otro",
-      "veredicto": "NO SE PUEDE AFIRMAR: el control no pasa"
+      "control": "`/glosario`: `datePublished` DESC reproduce el orden servido, así que el canal se sabe LEER",
+      "veredicto": "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` TIENE dato en modifiedTime · lastmod pero NINGUNO reproduce su orden ⇒ no derivable de lo servido MIRADO."
     },
     "bandaDeFiltros": {
       "pregunta": "¿qué hay entre el `h1` y el listado en `L3` y `L5`? — ninguna spec lo nombra",

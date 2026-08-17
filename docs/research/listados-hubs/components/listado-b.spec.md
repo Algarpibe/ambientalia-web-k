@@ -157,6 +157,21 @@ El paginador ocupa **el ancho completo de la columna de contenido** (911.75 /
 ninguna` en `h2s-es` y en los `resources` de 1 tarjeta). O sea que el paginador
 es **condicional al nº de páginas**, no un elemento fijo de la plantilla.
 
+> ⚠⚠ **Y ESTA SECCIÓN SE MIDIÓ SOBRE UN CANAL TRUNCADO — leer antes de citarla
+> (2026-08-17, 75.ª tanda).** `lh-barrido.mjs` congela las piezas del paginador
+> con `as.slice(0, 12)`, y **2 de las 43 instancias emiten 14**
+> (`/etiqueta/monitorizacion-ambiental/page/{4,5}`, `total 11`). Toda tabla de
+> **SECUENCIA** derivada del espejo pierde ahí las piezas 13 y 14 —que son
+> justamente `»` y `Last »`— y las da por inexistentes.
+>
+> Los dos canales que sí traen la secuencia entera: **`paginador.hrefs` del
+> propio espejo** (no truncado) y el **HTML del corpus**. La derivación de la
+> ventana vive en `qa:lh-huecos`, que lee el corpus.
+>
+> Esta tabla de §4 —pieles y selectores— **no la afecta**: se lee del contenedor,
+> no de las piezas. Lo que la afecta es cualquier lectura de `piezas` más allá de
+> la 12.ª.
+
 ## 5 · La barra lateral — 4 widgets, **una sola firma en 80 documentos**
 
 Derivado sobre la población entera de la captura (`qa:lh-barra`, negativo 5/5):

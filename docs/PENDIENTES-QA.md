@@ -1,5 +1,150 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-VENTANA-CERRADA · LOS 443 CAYERON A 162, Y LO QUE QUEDA ES **UNA SOLA COSA CON NOMBRE** (2026-08-17, 75.ª tanda)
+
+**La caída, medida a los dos anchos** (`qa:lh-cmp-todas`, contra el espejo
+congelado de 82 páginas):
+
+| | @1440 | @390 |
+|---|---|---|
+| pares distintos | 5 265 → **4 996** | 5 254 → **4 974** |
+| `paginador.piezas.*` | 443 → **162** | 432 → **140** |
+| de lo que queda, **fuera de la clase sub-píxel** | **0** | **0** |
+| propiedades que quedan · Δ máximo | `w` · `x` · **0.05** | ídem |
+
+**El «0» de la tercera fila es el resultado.** No es que quede poco: es que lo
+que queda **es exactamente la clase que §F3-LH-SUBPIXEL nombra**, sin una sola
+pieza de texto, de caja ni de tipo. La clase de la VENTANA **no existe ya**.
+
+### Lo que se implementó, y de dónde salió
+
+La regla completa de la piel B, derivada de las **43 secuencias** del corpus:
+ventana de 5 (`inicio = max(1, min(n−2, total−4))`) más el **número grande**
+cuando `L ≥ fin + 3`, entre sus dos `...` y delante de `»` / `Last »`.
+
+> ⚠ **`L ≥ fin+3` y `L ≥ n+5` NO son dos candidatos: son la misma función.** Se
+> dice porque contar sus separadoras habría dado **0** y eso invita a fichar una
+> indeterminación que no existe — en la ventana sin recortar `fin = n+2`, y en
+> los recortes (`n ≤ 2`, `n ≥ total−1`) las dos condiciones caen del mismo lado
+> **porque `L` es múltiplo de 10 y nunca vale 6 ni 7**.
+
+`qa:lh-huecos`: la **SECUENCIA pasa de 38/38 a 43/43** — y el denominador es
+parte del arreglo: hasta hoy la comparación se hacía contra
+`piezas.filter(no larger page)` y las **5** instancias con número grande quedaban
+fuera **del recuento y de los fallos**. O sea **38/38 en verde con los 377 pares
+dentro**. Negativo **6/6**, con dos sabotajes nuevos que atacan el borde por sus
+dos lados (`grandes-sin-borde` lo pinta donde el original no; `grandes-sin-implementar`
+reproduce el defecto de ayer).
+
+### ⚠ El ESCALÓN 2 disparó y se adjudicó: NO es de esta tanda
+
+El total bajó **269** y la clase del paginador **281**, o sea **+12 en otro
+sitio**: 36 pares que aparecen en `/recursos/articulos/page/3·4·5`, todos de
+contenido desplazado una tarjeta. Cruzado contra las **tres** corridas del día:
+
+| par de corridas | sólo en la 1.ª | sólo en la 2.ª |
+|---|---|---|
+| `-1` vs `-2` | 36 | 19 |
+| `-2` vs `-3` (esta tanda) | 24 | **36** |
+| **`-1` vs `-3`** | 5 | **0** |
+
+**Contra `-1` esta tanda no introduce ni un par nuevo fuera del paginador.** Los
+36 «nuevos» respecto de `-2` son los que `-1` ya tenía: la rara de las tres es
+`-2`. Queda **fichado y sin perseguir** en §F3-LH-LISTADO-QUE-OSCILA.
+
+## ✅ F3-LH-SUBPIXEL · HAY **UN** RESIDUO, NO 155 — Y SUS 124 CONSECUENCIAS SON ARITMÉTICA (2026-08-17, 75.ª tanda)
+
+**Qué se decide aquí: nada, y ése es el punto.** No se toca un píxel. Se pasa un
+residuo de *«0.03 px, huele a coma flotante»* —que no es un mecanismo— a **un
+mecanismo con su denominador y su negativo**. Instrumento: `qa:lh-subpixel`
+(no abre página; lee las congeladas de `lh-cmp` y `lh-espejo`).
+
+**(a) El residuo es UNO.** El único elemento de toda la comparación —82 páginas ×
+2 anchos— cuyo **ancho** difiere en centésimas es `span.pages` («Page N of M»):
+**31 de 31** pares `.rect.w` sub-píxel son suyos y **0** caen fuera de
+`paginador`, a los dos anchos. Δ observados: **0.01 · 0.02 · 0.03 · 0.04 · 0.05**.
+
+**(b) Los demás son su aritmética.** Las piezas son `inline-block` con
+`margin: 2px`, así que `x(i+1) = x(i) + w(i) + 4`: un Δw en la primera pieza
+desplaza a todas las siguientes. Comprobado **pieza a pieza**, no afirmado —
+@1440 `casan exacto 104 · dentro de la cota 25 · FALLAN 0`; @390 `83 · 24 · 0`,
+sobre un dominio de **30 de 31 formas**.
+
+> **La cota de redondeo se DERIVA, no se afloja a ojo.** `rect` se congela con 2
+> decimales ⇒ ±0.005 por valor, ±0.01 por diferencia, **±0.02** al comparar dos
+> diferencias. Las dos clases se publican por separado: colapsarlas en un umbral
+> único es cómo un residuo real se disfraza de redondeo.
+
+> ⚠ **Y la propagación es POR RENGLÓN, no por paginador — lo enseñó 390.** A 1440
+> la piel B cabe en una línea; **a 390 envuelve en dos** (`312 × 80`), y las
+> piezas del segundo renglón arrancan en el borde izquierdo —el mismo en los dos
+> lados— así que **no heredan el desplazamiento**: `Δx 0` con acumulado `0.03`.
+> La primera versión las contaba como fallo (11 a 390, 0 a 1440): el modelo no era
+> falso, era **incompleto en un ancho**.
+
+### Lo que sigue SIN PROBAR, y por qué no se toca
+
+**De dónde sale el 0.03 mismo no está establecido**, y se escribe con la lista de
+canales mirados (§*una afirmación de que un discriminador no existe se escribe
+con los canales que se miraron*):
+
+| canal | qué dice |
+|---|---|
+| `.rect.w` fuera de `paginador` | **0** pares sub-píxel ⇒ no es un desvío global de métrica |
+| `span.extend` («...»), la otra caja de ancho de texto de la misma pieza | **idéntica** en los dos lados |
+| `.rect.y` sub-píxel | **0** ⇒ el fenómeno es horizontal, no de ritmo |
+
+Fuera de alcance: **el fichero de la fuente** (el clon sirve Manrope re-emitida
+por `next/font`, el original la del tema). Sin campaña de ruido en estas rutas,
+**los 31 pares de `span.pages` siguen SIN PROBAR — ni defecto ni limpios**, y se
+quedan fichados con su número.
+
+> ⚠ **No confundir las dos afirmaciones.** *«Los 124 `.x` están explicados»* está
+> medido. *«Los 31 `.w` son ruido»* **no lo dice nadie.**
+
+### Y la sonda se estrenó con dos defectos suyos, cazados antes de citarla
+
+1. **eligió el fichero equivocado** — «la última congelada» por `.sort()` da
+   **`lh-cmp-1440.json`**, que por la guarda de `w()` es **la PRIMERA foto**
+   (`-` ordena antes que `.`, así que el canónico cae siempre al final). Salió
+   con `0 pares distintos`: se declaró incapaz de explicar nada leyendo el
+   fichero que no era, **sin dar error**. Corregido derivando la recencia **de la
+   fecha del nombre** y publicando cuál se eligió y de cuántas candidatas;
+2. **midió el renglón por `y`** — y dentro de un renglón las piezas **no
+   comparten `y`** porque no miden lo mismo (27 vs 36 de alto), así que el
+   arreglo del ancho que fallaba **estrenó 4 falsos en el que ya iba bien**. Se
+   mide por centro vertical. §*cada arreglo de una sonda vuelve a correr el test
+   en negativo, entero*.
+
+## ⛔ F3-LH-LISTADO-QUE-OSCILA · EL CONTENIDO DE ALGUNAS FORMAS NO ES EL MISMO ENTRE BUILDS (2026-08-17, 75.ª tanda — SÓLO NOMBRADO)
+
+**Qué se decide aquí: nada.** Se nombra porque apareció adjudicando el ESCALÓN 2
+y porque **contradice una premisa que este repo da por buena**: `clon-base` está
+escrita sobre *«dos builds del mismo código dan el mismo número al céntimo, así
+que aquí el umbral es cero»*.
+
+**El hecho:** entre las tres corridas del comparador del 2026-08-17 —cada una
+contra un build distinto del **mismo** código de listados— un grupo de **36
+pares de CONTENIDO** aparece, desaparece y vuelve a aparecer:
+`listado.tarjetas.N.{titulo,meta,media.alt,media.attr*}` y un
+`esqueleto…modulos.N.texto`, en `/recursos/articulos/page/3·4·5` y en
+`/etiqueta/emisiones-industriales/page/3`.
+
+**La forma que toma:** no es un intercambio de dos tarjetas, es **la ventana de
+la página desplazada una posición** — la tarjeta 0 pasa a ser la que el original
+tiene en la 1, etc. O sea que el corte entre páginas cae en otro sitio.
+
+**Lo que NO se ha derivado**, y hay que decirlo porque cambia qué buscar:
+si el desplazamiento viene de un **orden de desempate inestable** en la consulta,
+de un **elemento de más o de menos** antes del corte, o de otra cosa. Con lo
+medido sólo se puede afirmar que **el clon no es determinista entre builds en
+estas formas**, y que **`-1` y `-3` coinciden y `-2` no**.
+
+**Por qué importa más allá de estos 36 pares:** cualquier Δ de contenido medido
+en estas rutas es, hasta que esto se resuelva, **indistinguible de la
+oscilación** — que es exactamente la lectura que el proyecto le da al ruido del
+original, ahora aplicada al clon.
+
 ## ✅ F3-LH-SEMBRADOS-LOS-3 · LA CAÍDA MEDIDA COMO PRUEBA — Y LO QUE QUEDA DEL PAGINADOR ES OTRA CAUSA (2026-08-17, 74.ª tanda)
 
 **Sembrados los 3 documentos capturados** de §F3-LH-TERCER-DOCUMENTO, con T9B
@@ -94,7 +239,12 @@ segundo `...`**. Medido en `monitorizacion-ambiental` página 1 —
    falta**—: sin ella el hueco habría seguido descontando 2 del mínimo para
    siempre. Lista vaciada; el mecanismo se queda armado.
 
-## ⛔ F3-LH-VENTANA-DEL-PAGINADOR · EL CLON PINTA 9 PIEZAS DONDE EL ORIGINAL PINTA 11 (2026-08-17, 74.ª tanda — NADA ARREGLADO)
+## ✅ F3-LH-VENTANA-DEL-PAGINADOR · EL CLON PINTA 9 PIEZAS DONDE EL ORIGINAL PINTA 11 (2026-08-17, 74.ª tanda — diagnóstico; **CERRADA por la 75.ª**)
+
+> ⚠ **CERRADA en §F3-LH-VENTANA-CERRADA (arriba): 443 → 162 @1440 y 432 → 140 @390,
+> con 0 pares fuera de la clase sub-píxel.** Este bloque se conserva como el
+> DIAGNÓSTICO —y su tabla lleva una corrección al final que hay que leer antes de
+> citarla: dos de sus filas eran un truncamiento del instrumento.**
 
 **Qué se decide aquí: nada.** Se nombra la causa, se congela su tabla y se para,
 que es lo que el ESCALÓN 2 del encargo manda.
@@ -125,6 +275,74 @@ piel (*«emitía `current` + `n+1..total`, cero `page smaller`»*).
 longitud (2 · 3 · 4 · 8 · 11) y por posición, y verificar con `qa:lh-cmp-todas` a
 los dos anchos. Hoy el clon **no tiene ninguna serie de 8** con esta piel, así que
 esa fila queda **SIN EJERCITAR** y hay que decirlo al cerrar.
+
+> ⚠⚠ **CORREGIDA LA TABLA 2026-08-17 (75.ª tanda): DOS DE SUS FILAS SON UN
+> TRUNCAMIENTO DEL INSTRUMENTO, NO EL ORIGINAL.**
+>
+> La fila «`11` | `4–5`» de la tabla de arriba dice
+> `« First « ... 2 3 4 5 6 ... 10 ...` — **sin `»` y sin `Last »`**. El original
+> **sí los sirve**: `lh-barrido.mjs` corta las piezas en `as.slice(0, 12)` y esas
+> dos páginas emiten **14**.
+>
+> Lo desmienten **dos canales, y los dos estaban ya congelados**:
+>
+> | canal | qué dice de la página 4 de 11 |
+> |---|---|
+> | `paginador.hrefs` del **mismo** `lh-espejo-1440.json` — NO truncado | `(índice) p3 p2 p3 p5 p6 p10 **p5 p11**` ⇒ hay `nextpostslink` y `last` |
+> | el HTML del **corpus** (`corpus/fase-3/listados/…/page/4/index.html`) | `…<a class="larger page">10</a><span class='extend'>...</span><a class="nextpostslink">»</a><a class="last">Last »</a>` |
+>
+> **Lo que esto costaba:** el encargo decía *«implementa desde la tabla, no desde
+> la instancia»* — y la tabla, leída literalmente, habría hecho que el clon
+> **omitiera `»` y `Last »` en 2 de las 11 páginas** creyendo que replicaba el
+> original. Es §*El principio* con el contenedor movido una vez más: no *«qué
+> fuente lo produce»* sino **qué canal del instrumento se leyó**, y aquí el canal
+> corto y el largo estaban **en el mismo fichero**.
+>
+> **Y no invalida la tabla, la acota**: sus otras 6 filas coinciden con el corpus
+> pieza a pieza. La derivación pasa a hacerse sobre el **corpus** (`qa:lh-huecos`,
+> que ya lo leía) y el cardinal se publica: **2 de 43** instancias pasan del tope
+> de 12 piezas.
+
+## ⛔ F3-LH-PIELB-GRANDES-SIN-EJERCITAR · LOS TRAMOS DEL NÚMERO GRANDE QUE EL ORIGINAL NO SIRVE — Y POR QUÉ EL COMPONENTE TIRA (2026-08-17, 75.ª tanda)
+
+**Ficha que el comentario de `Paginador.tsx` apuntaba y que no existía.** Hasta
+hoy ese comentario citaba *«queda NOMBRADO en `PENDIENTES-QA.md`
+§F3-LH-PIELB-LARGER-PAGE»* y **ese ancla no está en ningún documento del repo**
+(derivado con `grep`, 0 ocurrencias). Es §*MENCIONADO NO ES DOCUMENTADO* con la
+agravante de que el puntero **parecía** cumplirla.
+
+**Qué se decide aquí:** nada nuevo de plantilla. Se escribe **con su cardinal**
+(regla 14) qué tramos del mecanismo de números grandes **no tiene ni una
+instancia** en el original, y por qué el componente **tira** en vez de emitir una
+suposición.
+
+| tramo | instancias en el original | qué queda sin decidir |
+|---|---|---|
+| **un** número grande | **5 de 43** — todas de UNA serie (`etiqueta/monitorizacion-ambiental`, `total 11`) | nada: es lo implementado, borde entre `fin = 7` y `fin = 8` |
+| **dos o más** (exige `total ≥ 20`) | **0 de 43** | dónde caen los `...` **entre** ellos, y cuántos se sirven como mucho |
+| grandes **delante** de la ventana (exige `total ≥ 15` y `n ≥ 13`) | **0 de 43** | si se sirven siquiera, y con qué `...` |
+| totales **5 · 6 · 7 · 9 · 10 · 12…19** | **0 de 43** | la ventana interpola sin salto, y nadie lo ha medido |
+
+**Por qué TIRA y no adivina** (§F2-5-ESCALON-ETIQUETAS + §*el defecto se pone en
+la dirección que GRITA*): los dos primeros son **caminos de render sin estrenar**.
+Estas rutas son **prerender**, así que lo que revienta es el **build**, no una
+petición de nadie — y reventarlo es exactamente lo que se quiere el día que una
+etiqueta pase de 19 páginas. Precedente idéntico: `mbPorDefecto()` en
+`packages/cms-config/src/defaults.ts`.
+
+**Hoy no puede dispararse, y con su número:** el máximo del clon es
+`ceil(91 / 9) = 11` páginas (`POR_PAGINA = 9`), y la piel B sólo la usan
+`/etiqueta/*`. Haría falta una etiqueta con **≥ 172** entradas.
+
+> ⚠ **Y lo que NO se pudo comprobar, con la lista de lo intentado** (§*una
+> afirmación de que algo no existe se escribe con los canales que se miraron*):
+> **el código del generador**. `wp-pagenavi` se intentó leer en
+> `plugins.svn.wordpress.org` (404), `plugins.trac.wordpress.org` (403), el
+> espejo de GitHub (404/503) y un CDN (404). Así que *«el original corre el
+> plugin con sus opciones por defecto»* es **hipótesis con mecanismo, no medida**.
+> Lo que sí está medido: **ventana = 5 en las 43 instancias**. Lo que se apoya en
+> **una sola observación**: que el múltiplo sea **10**. Lo que está **sin
+> determinar**: cuántos grandes como mucho.
 
 ## ✅ F3-LH-COBERTURA-CIEGA · LA MATRIZ NO VEÍA LAS 61 FORMAS COMPARADAS, Y ES LA SEGUNDA VEZ EN EL MISMO BLOQUE (2026-08-17, 73.ª tanda)
 

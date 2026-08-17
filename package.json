@@ -197,6 +197,8 @@
     "qa:lh-jerarquia-neg": "node scripts/qa/lh-jerarquia.neg.mjs",
     "qa:lh-huecos": "node scripts/qa/lh-huecos.mjs",
     "qa:lh-huecos-neg": "node scripts/qa/lh-huecos.neg.mjs",
+    "qa:lh-subpixel": "node scripts/qa/lh-subpixel.mjs",
+    "qa:lh-subpixel-neg": "node scripts/qa/lh-subpixel.neg.mjs",
     "qa:lh-canales": "node scripts/qa/lh-canales.mjs",
     "qa:lh-canales-neg": "node scripts/qa/lh-canales.neg.mjs",
     "qa:lh-espejo": "node scripts/qa/lh-espejo.mjs",

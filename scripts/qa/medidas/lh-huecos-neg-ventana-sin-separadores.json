@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-17",
     "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
     "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
     "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
@@ -9,7 +9,9 @@
       "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
       "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
       "si los huecos son TODOS los que hay — es una lista de los encontrados al escribir el alcance, no un censo cerrado",
-      "el mecanismo de `larger page` de la piel B: lo ejercita UNA serie y no se deriva de n=1"
+      "los números grandes con 2 o más a la vez (0 de 43: exige total ≥ 20) y los que van DELANTE de la ventana (0 de 43: exige total ≥ 15 y n ≥ 13). El componente TIRA en los dos en vez de adivinar",
+      "el CÓDIGO del generador: se intentó leer `wp-pagenavi` en su repositorio (403/404), así que «corre con las opciones por defecto» es hipótesis con mecanismo, no medida. El múltiplo 10 se apoya en UNA observación",
+      "los totales 5·6·7·9·10·12…19 de la piel B: 0 de 43 instancias — la ventana interpola sin salto y nadie lo ha medido"
     ]
   },
   "huecos": {
@@ -88,7 +90,7 @@
       "separadoras": 0,
       "aciertaVentana5": 43,
       "aciertaTodas": 24,
-      "secuenciaNuevaAcierta": 38,
+      "secuenciaNuevaAcierta": 43,
       "secuenciaViejaAcierta": 7,
       "viejoAciertaEn": [
         {
@@ -352,8 +354,38 @@
           "total": 4
         }
       ],
-      "instanciasConLargerPageExcluidasDeLaSecuencia": 5,
+      "secuenciaDenominador": 43,
+      "instanciasExcluidasDeLaSecuencia": 0,
       "fallosDeSecuencia": [],
+      "instanciasConMasDe12Piezas": [
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/4",
+          "n": 4,
+          "total": 11,
+          "piezasConLaDePages": 14
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/5",
+          "n": 5,
+          "total": 11,
+          "piezasConLaDePages": 14
+        }
+      ],
+      "topeDePiezasDelEspejo": 12,
+      "unidadDelTope": "piezas del paginador INCLUYENDO `span.pages`, que es lo que cuenta el `slice(0, 12)` de lh-barrido",
+      "sinEjercitar": {
+        "unGrande": 5,
+        "dosOMasGrandes": 0,
+        "grandesDelanteDeLaVentana": 0,
+        "totalesNoVistos": [
+          5,
+          6,
+          7,
+          9,
+          10,
+          12
+        ]
+      },
       "conFirst": 13,
       "conLast": 13,
       "conLargerPage": 5,

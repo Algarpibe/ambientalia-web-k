@@ -165,24 +165,108 @@ function PielA({ n, total, href }: { n: number; total: number; href: (k: number)
  * | clase del número | `page smaller` si `k < n`, `page larger` si `k > n` |
  *
  * Comprobado contra las **43**: reproduce las 5 combinaciones sin excepción.
- *
- * ⚠ **Y `larger page` se queda FUERA, con su razón y su denominador.** El
- * original sirve además un salto a los múltiplos de 10 (`a.larger.page`), y
- * eso lo ejercita **una sola serie** —`/etiqueta/monitorizacion-ambiental`,
- * `total 11`—. Su borde cae entre `fin = 7` (lo pinta) y `fin = 8` (no), y
- * **ese mecanismo no se deriva de una serie**: cualquier predicado que ajuste
- * las 11 observaciones es §*un discriminador hallado en una sola instancia*.
- * Ninguna de las formas que esta tanda construye lo alcanza —`/glosario` tiene
- * 8 páginas y `/preguntas-frecuentes` 4, y el primer múltiplo de 10 queda
- * fuera de las dos—, así que implementarlo sería estrenar un camino de render
- * que **ningún dato de calibración ejercita**. Queda NOMBRADO en
- * `PENDIENTES-QA.md` §F3-LH-PIELB-LARGER-PAGE.
  */
 function ventanaB(n: number, total: number) {
   const ANCHO = 5;
   const inicio = Math.max(1, Math.min(Math.max(n - 2, 1), total - (ANCHO - 1)));
   const fin = Math.min(total, inicio + ANCHO - 1);
   return { inicio, fin };
+}
+
+/**
+ * Los NÚMEROS GRANDES de la piel B — el salto a los múltiplos de 10.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ ESTABA FUERA A PROPÓSITO Y HOY ENTRA, PORQUE EL DATO CAMBIÓ (2026-08-17)
+ *
+ * La 69.ª tanda lo dejó sin implementar con la razón correcta para entonces:
+ * **ninguna serie del clon llegaba a 10 páginas**, así que implementarlo era
+ * estrenar un camino de render que ningún dato de calibración ejercitaba
+ * (§F2-5-ESCALON-ETIQUETAS). Sembrados los 2 documentos que faltaban
+ * (§F3-LH-SEMBRADOS-LOS-3), `/etiqueta/monitorizacion-ambiental` pasó a **11
+ * páginas** y el camino dejó de ser hipotético: **377 pares** de
+ * `paginador.piezas.*` en 11 formas, el clon con **9 piezas donde el original
+ * pinta 11** (le faltaban el `10` y el segundo `...`).
+ *
+ * Es §*a veces el detector de un defecto no es otro ANCHO, es otro CONTENIDO*
+ * con el contenido cambiado por una siembra.
+ *
+ * ── EL CANAL, y esto corrige la tabla que la ficha había congelado ─────────
+ * La tabla de §F3-LH-VENTANA-DEL-PAGINADOR se derivó del **espejo**, y
+ * `lh-barrido.mjs` corta las piezas en `as.slice(0, 12)`. Las páginas **4 y 5
+ * de 11** emiten **14**, así que la fila «11 | 4–5» de aquella tabla salía
+ * *sin* `»` ni `Last »` — **truncamiento del instrumento, no del original**.
+ * Lo desmienten dos canales del propio fichero congelado: `hrefs`, que NO está
+ * truncado (`… p10 p5 p11` en la página 4), y el HTML del corpus. La regla se
+ * deriva del **corpus**, que trae la secuencia entera.
+ *
+ * ── La regla, derivada de las 43 secuencias COMPLETAS ─────────────────────
+ * Múltiplos de `MULTIPLO` (=10) hasta `total`, y se pinta el que cumpla
+ * `L ≥ fin + 3`. Medido: se pinta con `fin ∈ {5,6,7}` y **no** con
+ * `fin ∈ {8,9,10,11}` — el borde cae entre 7 y 8, en 11 observaciones.
+ *
+ * ⚠ **`L ≥ fin+3` y `L ≥ n+5` son LA MISMA FUNCIÓN, no dos candidatos.** Se
+ * escribe aquí porque parecían dos y contar sus separadoras habría dado 0:
+ * en la ventana no recortada `fin = n+2`, y en los recortes (`n ≤ 2`,
+ * `n ≥ total−1`) las dos condiciones caen del mismo lado **porque `L` es
+ * múltiplo de 10** — nunca vale 6 ni 7. Así que no hay elección que hacer.
+ *
+ * ── El mecanismo, y hasta dónde está respaldado ──────────────────────────
+ * Lo que la salida servida dice por sí sola: el número grande sale con
+ * `class="larger page"` y los de la ventana con `class="page larger"` — el
+ * mismo par de clases en otro orden, o sea **dos rutas de código distintas en
+ * el generador**, no un adorno. Eso es lo que identifica el salto como la
+ * función de «páginas grandes» de `wp-pagenavi` y no como otra cosa.
+ *
+ * ⚠ **Lo que NO se pudo comprobar contra la fuente: el código del plugin.** Se
+ * intentó (SVN y espejo del repositorio: 403/404), así que *«el original corre
+ * `wp-pagenavi` con sus opciones por defecto»* es una **hipótesis con
+ * mecanismo**, no una medida. Lo que sí está medido, y es lo que se
+ * implementa:
+ *
+ * | constante | respaldo |
+ * |---|---|
+ * | ventana = **5** | **medida en las 43 instancias**, 5 totales distintos |
+ * | múltiplo = **10** | **una sola observación** (`10` con `total 11`). Compatible con «múltiplos de 10» y con otras lecturas que en `total 11` predicen lo mismo |
+ * | cuántos grandes como mucho | **sin determinar**: nunca se ha servido más de uno |
+ *
+ * ── Y LO QUE NO ESTÁ EJERCITADO, con su cardinal (regla 14) ───────────────
+ * | tramo | instancias en el original | qué queda sin decidir |
+ * |---|---|---|
+ * | **un** número grande | **5 de 43** (todas de 1 serie: `total 11`) | nada: es lo implementado |
+ * | **dos o más** (`total ≥ 20`) | **0 de 43** | dónde caen los `...` ENTRE ellos, y cuántos se sirven como mucho |
+ * | grandes **antes** de la ventana (`L < inicio`, exige `total ≥ 15` y `n ≥ 13`) | **0 de 43** | si se sirven siquiera, y con qué `...` |
+ * | totales **5·6·7·9·10·12…19** | **0 de 43** | la ventana interpola sin salto, pero nadie lo ha medido |
+ *
+ * Los dos tramos sin decidir **TIRAN** en vez de adivinar, igual que
+ * `mbPorDefecto()`: son prerender, así que lo que se rompe es el **build**, no
+ * una petición — y romperlo es lo que se quiere el día que una etiqueta pase
+ * de 19 páginas. Ficha: `PENDIENTES-QA.md` §F3-LH-PIELB-GRANDES-SIN-EJERCITAR.
+ */
+function grandesB(n: number, total: number, fin: number): number[] {
+  const MULTIPLO = 10;
+  const todos: number[] = [];
+  for (let L = MULTIPLO; L <= total; L += MULTIPLO) todos.push(L);
+
+  /* Los de DELANTE de la ventana: el plugin los emite y el original nunca los
+     ha servido (0 de 43). No se inventa la posición de sus `...`. */
+  const delante = todos.filter((L) => L < ventanaB(n, total).inicio);
+  if (delante.length)
+    throw new Error(
+      `paginador piel B: números grandes DELANTE de la ventana (${delante.join(", ")}) con n=${n}/${total}. ` +
+        `0 de 43 instancias del original ejercitan este tramo — medir una serie de ≥15 páginas antes de emitirlo ` +
+        `(PENDIENTES-QA.md §F3-LH-PIELB-GRANDES-SIN-EJERCITAR).`,
+    );
+
+  const detras = todos.filter((L) => L >= fin + 3);
+  if (detras.length > 1)
+    throw new Error(
+      `paginador piel B: ${detras.length} números grandes (${detras.join(", ")}) con n=${n}/${total}. ` +
+        `El original sólo ha servido UNO (5 de 43 instancias, todas de total=11), así que dónde caen los ` +
+        `'...' entre dos está SIN MEDIR — medir una serie de ≥20 páginas ` +
+        `(PENDIENTES-QA.md §F3-LH-PIELB-GRANDES-SIN-EJERCITAR).`,
+    );
+  return detras;
 }
 
 /**
@@ -196,6 +280,7 @@ function ventanaB(n: number, total: number) {
  */
 function PielB({ n, total, href }: { n: number; total: number; href: (k: number) => string }) {
   const { inicio, fin } = ventanaB(n, total);
+  const grandes = grandesB(n, total, fin);
   return (
     <div className="wp-pagenavi" role="navigation">
       <span className="pages">
@@ -226,6 +311,24 @@ function PielB({ n, total, href }: { n: number; total: number; href: (k: number)
         ),
       )}
       {fin < total ? <span className="extend">...</span> : null}
+      {/* ⚠ El número grande va **entre los dos `...`** y DELANTE de `»`/`Last »`
+          — orden verbatim del HTML servido (página 4 de 11):
+
+            …6</a><span class='extend'>...</span><a class="larger page" title="Página 10"
+            …/page/10/">10</a><span class='extend'>...</span><a class="nextpostslink"…
+
+          Y la clase es `larger page`, no `page larger`: la del generador para
+          este salto, distinta de la de los números de la ventana. El `marca` que
+          construye `lh-barrido` sale de `classList`, así que el ORDEN de las dos
+          clases es lo que discrimina las dos piezas — invertirlo haría que el
+          barrido leyera «un número de ventana» y el error saldría como acierto,
+          igual que el `role` entre las tres pieles. */}
+      {grandes.map((L) => (
+        <a key={`g${L}`} className="larger page" title={`Página ${L}`} href={href(L)}>
+          {L}
+        </a>
+      ))}
+      {grandes.length ? <span className="extend">...</span> : null}
       {n < total ? (
         <a className="nextpostslink" rel="next" aria-label="Página siguiente" href={href(n + 1)}>
           &raquo;
