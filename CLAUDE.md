@@ -1162,6 +1162,33 @@ publica `separadores` junto a `aciertos`, y **su control en negativo exige
 `separadores > 0`** — si no, el veredicto es *SIN PROBAR*, no *probado*
 (`qa:lh-jerarquia`).
 
+> ⚠⚠ **Y AHORA LA VUELTA, PORQUE LA REGLA DE ARRIBA TIENE UN FALSO POSITIVO Y ES
+> CARO (2026-08-17, 75.ª tanda): «0 SEPARADORAS» TAMBIÉN SALE CUANDO NO HAY NADA
+> QUE ELEGIR.**
+>
+> *«Cero separadoras ⇒ no has elegido, has escrito uno de los dos»* es cierta
+> cuando los dos candidatos son **funciones distintas** que tu dominio no
+> distingue. Pero el mismo cero sale, con la misma cara, cuando los dos
+> candidatos son **la MISMA función escrita de dos maneras** — y ahí no hay nada
+> que fichar: fichar un pendiente sería mandar a la tanda siguiente a medir algo
+> que no existe.
+>
+> **Medido:** el número grande de la piel B parecía tener dos predicados,
+> `L ≥ fin + 3` y `L ≥ n + 5`, y ninguna de las 43 instancias los separaba. No
+> podían separarlos: en la ventana sin recortar `fin = n+2`, así que las dos
+> condiciones son idénticas; y en los recortes (`n ≤ 2`, `n ≥ total−1`) caen del
+> mismo lado **porque `L` es múltiplo de 10 y nunca vale 6 ni 7**. Son la misma
+> función en todo el dominio posible, no sólo en el medido.
+>
+> > **Antes de fichar una indeterminación, comprueba que las dos hipótesis sean
+> > DISTINTAS — y si lo son, di sobre qué entrada difieren.** Es una comprobación
+> > de álgebra, no de medición, y es la única que separa *«mi dominio es pobre»*
+> > de *«aquí no hay dos cosas»*.
+>
+> El discriminador operativo: **una separadora es una ENTRADA CONCRETA en la que
+> los dos predicados dan resultados distintos.** Si no puedes escribirla —ni
+> siquiera una hipotética, fuera de tu dominio— no tienes dos modelos.
+
 ⚠ **Y la misma álgebra aplicada AL COMPARADOR en vez de a la spec: UN VERDE VALE
 LO QUE VALEN SUS INSTANCIAS SEPARADORAS, NO LO QUE VALE SU RECUENTO DE PARES
 (2026-08-14, F3-2).**
@@ -1594,6 +1621,36 @@ Está resuelto en el sitio común, no sonda a sonda: **`Censo` en
 casó cada selector sumando todas las páginas, y `censo.informe()` devuelve el nº
 de muertos para que quien la llama **cierre su código de salida con eso**. Las
 sondas usan `__q(sel)` en vez de `document.querySelector(sel)`.
+
+⚠ **Y SU CUARTA CARA, QUE NO ES UN SELECTOR SINO UN `slice`: EL TOPE DE UNA
+SONDA SE LEE COMO UNA AUSENCIA DEL ORIGINAL (2026-08-17).**
+
+Las tres caras de arriba son de *casar*: el cero, el pleno y el sobre-casado.
+Ésta es de **recortar**, y por eso no la ve ninguna guarda de selectores:
+
+> **Una sonda que congela `lista.slice(0, N)` está afirmando «hay N» a todo el
+> que la lea después.** Los elementos N+1 en adelante no salen marcados como
+> recortados: **no salen**. Y una tabla derivada de ahí describe el instrumento
+> creyendo que describe el original.
+
+**Medido:** `lh-barrido.mjs` congela las piezas del paginador con
+`as.slice(0, 12)`. Dos de las 43 instancias de la piel B emiten **14**, así que
+la tabla del original derivada del espejo daba dos de sus filas **sin `»` ni
+`Last »`** — y el encargo de la tanda siguiente decía, con toda la razón,
+*«implementa desde la tabla»*. Implementarla al pie de la letra habría hecho que
+el clon **omitiera dos piezas en 2 de 11 páginas** creyendo que replicaba.
+
+**Las dos mitades operativas, y la segunda es la barata:**
+
+1. **toda sonda que recorte publica su tope y cuántas unidades lo pasan** — un
+   `slice` sin cardinal es una limitación sin número (§regla 14), y el cardinal
+   se declara **en la unidad del tope**, no en la de la sonda (aquí: piezas
+   *incluyendo* la que el parser salta, o el margen sale con el signo bueno y el
+   número malo);
+2. **y quien derive una tabla busca el canal SIN recortar antes de escribirla.**
+   Aquí estaba **en el mismo fichero congelado**: `paginador.hrefs`, que no pasa
+   por el `slice`, y que decía lo contrario. No hizo falta volver al original —
+   hizo falta mirar el otro campo.
 
 ⚠ **Y EL LADO DEL LECTOR, que ninguna guarda de la sonda puede cubrir: UNA REGLA
 INCOMPLETA SE LEE EXACTAMENTE IGUAL QUE UNA COMPLETA (2026-08-14).**

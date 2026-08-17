@@ -38,11 +38,46 @@ extremas (14 y 1 tarjetas).
 | **el contenedor del listado** | `div.scientific-list-content`, **w 1192** |
 | **la base del cascarón** | `contenedorTema.y` **225** @1440 · **136.58** @390 |
 
+### ⚠⚠ EL CUERPO DE `L3` **NO PAGINA**: cada `/page/N` sirve el TÉRMINO ENTERO (derivado 2026-08-17, 75.ª tanda)
+
+**Esto cambia cómo se construye, y estaba dentro de los números que esta spec ya
+citaba.** La línea de abajo decía *«`nTarjetas` es el total de la SERIE (14 en las
+tres páginas), así que cuántas tarjetas van por página no está en el espejo»* —
+y leerla como *«falta un dato»* es leerla al revés. `nTarjetas` es
+`cards.length`, un **recuento del DOM de esa página**, no un total de serie: que
+valga **14 en las tres** significa que **las tres páginas sirven las 14**.
+
+Y hay un segundo canal que lo confirma sin depender de esa lectura: **`docH` es
+idéntico** en las tres, a los dos anchos.
+
+| serie | `nTarjetas` por página | `docH` @1440 · @390 | páginas |
+|---|---|---|---|
+| `articulos-cientificos-y-estudios` | **14 · 14 · 14** | 4169 · 12069 en las 3 | 3 |
+| `evaluaciones-independientes` | **8 · 8** | 2509 · 7443 en las 2 | 2 |
+| `articulos-tecnicos` | 1 | 1713 · 3181 | 1 |
+
+**O sea que `/page/2` y `/page/3` sólo se diferencian de la 1.ª en el `<title>`
+(«Página N de M») y en el `canonical`.** Es coherente con §3 —el cuerpo **no
+sirve paginador**— y con `D2.6`: WordPress pagina la CONSULTA (Yoast ve 3
+páginas, hay `<link rel=next>`), y la plantilla del tema **pinta el término
+entero** ignorando el `paged`.
+
+> **Consecuencia para construir:** la plantilla de `L3` **no parte la lista**.
+> Emitir `/page/N` con una rebanada sería inventar un comportamiento que el
+> original no tiene, y se vería en `nTarjetas` y en `docH` a la vez.
+
+⚠ **Y `LH-SP9` («entradas por página») sigue sin poder cerrarse, pero ya no
+bloquea nada de esta forma:** el nº de `/page/N` que hay que emitir sale de la
+frontera del **SERVIDOR** (`qa:lh-paginas`, 3 · 2 · 1), no de un tamaño de
+página. Con los tres pares (14→3, 8→2, 1→1) el tamaño sólo queda acotado a
+**5 ó 6** —los dos satisfacen los tres—, o sea **0 instancias separadoras**: no
+se escribe un número.
+
 ### Lo que sigue SIN contestar, y hay que decirlo
 
-- **el tamaño de página**: `nTarjetas` es el total de la SERIE (14 en las tres
-  páginas), así que **cuántas tarjetas van por página no está en el espejo** —
-  hay que derivarlo del corpus antes de partir la consulta;
+- ~~**el tamaño de página**~~ — ver el bloque de arriba: el cuerpo no pagina, así
+  que no hace falta para construir, y el valor exacto está **acotado a 5 ó 6 sin
+  instancia que los separe**;
 - **la 3.ª instancia sólo tiene `primera` y `última`**: no hay `intermedia` en
   `evaluaciones-independientes`, así que toda propiedad exclusiva de una
   intermedia se apoya en **una sola serie**;

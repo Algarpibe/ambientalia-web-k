@@ -1,4 +1,103 @@
-# HANDOFF — el dato cerró a medias y **pararon los dos escalones, cada uno con su medida**
+# HANDOFF — la VENTANA cerrada, y lo que queda del paginador es **una sola cosa con nombre**
+
+> ⚠ **Tanda de CONSTRUCCIÓN, 2026-08-17 (75.ª). Se cerró el PASO 1 y el PASO 2;
+> `L3` y `L5` NO se construyeron y la razón es de presupuesto de MEDICIÓN, no de
+> conocimiento: su precondición sigue entera y escrita en sus specs.**
+>
+> **Verificación:** `npm run check` **exit 0** · `qa:manifiesto` **367 rutas · 17
+> familias · 0 vacías** · `qa:slugs` sin colisión · `qa:cobertura` **367/367**
+> (idéntica: no se construyó ninguna forma, así que subir habría sido el síntoma
+> de que cuenta otra cosa) · `qa:lib` **93/93, las 173 sondas declaran su mínimo**
+> · `qa:lh-paginas` **35/35** · `qa:clon-base` línea base **367/367 a los dos
+> anchos** · `qa:lh-huecos` **5/5**, negativo **6/6** · `qa:lh-subpixel` (nueva)
+> **2/2**, negativo **4/4** · `qa:lh-cmp-todas` a los dos anchos.
+>
+> ⛔ **Y lo que NO se pudo verificar, con su número (regla 14):** la guarda
+> clon-contra-clon **`clon-base --cmp` no se completó** — tres intentos, **367 ·
+> 248 · 81** rutas, con el navegador muriendo por contención de la máquina (47
+> procesos node y 25 chrome **de otros proyectos**, que no se tocaron). No se
+> fabricó una unión entre corridas. Ficha:
+> §F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR.
+
+## 0 · Los titulares de esta tanda
+
+> **1 · LA VENTANA DEL PAGINADOR, CERRADA — Y LO QUE QUEDA NO ES «POCO», ES OTRA
+> COSA.** `paginador.piezas.*` **443 → 162** @1440 y **432 → 140** @390; pares
+> distintos **5 265 → 4 996** y **5 254 → 4 974**. Y el número que manda:
+> **0 pares fuera de la clase sub-píxel**, a los dos anchos. Sólo quedan `w` y
+> `x`, con Δ máximo **0.05**. La clase de la VENTANA **ya no existe**.
+>
+> El efecto se ve además por el otro instrumento: en el intento de `clon-base`
+> que alcanzó **248 rutas**, las páginas **1–5** de
+> `/etiqueta/monitorizacion-ambiental` ganan **+1 ancla** cada una —exactamente
+> las **5** instancias que la regla predice— y **243 de las otras 248 sin mover
+> un píxel**. La corrida no está completa (ver arriba) y por eso esto se cita
+> como *evidencia del efecto*, **no** como *«sin regresión»*: son dos
+> afirmaciones y sólo la primera tiene respaldo.
+
+> **2 · ⚠ LA TABLA QUE HABÍA QUE IMPLEMENTAR TENÍA DOS FILAS QUE ERAN EL
+> INSTRUMENTO.** `lh-barrido.mjs` congela las piezas con `as.slice(0, 12)`, y las
+> páginas **4 y 5 de 11 emiten 14**: la tabla derivada del espejo las daba **sin
+> `»` ni `Last »`**. Implementar «desde la tabla» al pie de la letra habría hecho
+> que el clon **omitiera dos piezas en 2 de 11 páginas creyendo que replicaba**.
+>
+> Lo desmintieron **dos canales del mismo fichero congelado**: `paginador.hrefs`
+> (que no pasa por el `slice`) y el HTML del corpus. No hizo falta volver al
+> original: hizo falta mirar el otro campo. Regla nueva en `CLAUDE.md` §sondas 4,
+> **cuarta cara**, y el tope ya se declara en el barrido (`piezasTotales`).
+
+> **3 · EL DENOMINADOR ERA PARTE DEL DEFECTO.** `qa:lh-huecos` comparaba la
+> secuencia contra `piezas.filter(no larger page)`: las **5** instancias con
+> número grande quedaban fuera **del recuento Y de los fallos**. O sea **38/38 en
+> verde con los 377 pares dentro**. Ahora **43/43** sobre las 43 enteras, con dos
+> sabotajes nuevos que atacan el borde por sus dos lados.
+
+> **4 · EL SUB-PÍXEL: HAY UN RESIDUO, NO 155.** El único elemento de las 82
+> páginas × 2 anchos cuyo **ancho** difiere en centésimas es `span.pages`:
+> **31 de 31** pares `.rect.w`, **0** fuera del paginador. Los **124/116**
+> `.rect.x` son su **aritmética** (`x(i+1) = x(i) + w(i) + 4`), comprobada pieza
+> a pieza: `FALLAN 0` en **30 de 31** formas. De dónde sale el 0.03 **sigue SIN
+> PROBAR** y se queda fichado sin tocar. Sonda nueva `qa:lh-subpixel`.
+
+> **5 · ⚠ «0 SEPARADORAS» TIENE UN FALSO POSITIVO, Y ESTA TANDA LO PISÓ.** Los
+> dos predicados candidatos del número grande —`L ≥ fin+3` y `L ≥ n+5`— no los
+> separaba ninguna de las 43 instancias, y la regla del repo decía *«no has
+> elegido»*. **No había nada que elegir: son la misma función** (en la ventana sin
+> recortar `fin = n+2`, y en los recortes coinciden porque `L` es múltiplo de 10
+> y nunca vale 6 ni 7). Fichar aquello habría mandado a la tanda siguiente a
+> medir un dilema inexistente. Regla añadida a `CLAUDE.md`.
+
+> **6 · ⛔ Y APARECIÓ UNA CAUSA QUE NO ES DE ESTA TANDA: EL CLON NO ES
+> DETERMINISTA ENTRE BUILDS.** El ESCALÓN 2 disparó (+12 fuera de clase) y se
+> adjudicó cruzando las **tres** corridas del día: contra la `-1`, esta tanda
+> introduce **0** pares nuevos fuera del paginador — los 36 «nuevos» respecto de
+> la `-2` son los que la `-1` ya tenía. Pero eso deja en pie que **un grupo de 36
+> pares de CONTENIDO aparece y desaparece entre builds del mismo código**, y la
+> guarda `clon-base` lo enseñó por otro lado (`/contaminacion-por-metano`,
+> `docH +16`, una página que el paginador no toca). Ficha:
+> §F3-LH-LISTADO-QUE-OSCILA. **Contradice la premisa sobre la que está escrita
+> `clon-base`** (*«dos builds del mismo código dan el mismo número al céntimo»*).
+
+## 1 · Lo que queda, y en qué orden
+
+1. **`L3` y `L5`** — lo que esta tanda no llegó a construir. **Su precondición
+   está entera** y no hay que re-medirla: `L3` no pinta paginador en ninguna de
+   sus 6 páginas, su cuerpo tiene **1 fila** de **1152** y **sirve TODAS las
+   tarjetas del término en CADA `/page/N`** (derivado del espejo: `nTarjetas` 14
+   en las 3 páginas y `docH` idéntico); `L5` no pagina (57 tarjetas), tiene
+   **cascarón propio** (4 secciones de pie, cabecera **458.09** contra 225) y va
+   **sin su filtro**. Las dos con **banda de filtros** (3 y 12 botones) y **cero
+   override móvil**.
+2. **§F3-LH-LISTADO-QUE-OSCILA** — nueva, y toca una premisa del repo.
+3. **§F3-LH-ENTRADA-QUE-ES-UN-301** — decisión del propietario, sin cambios.
+4. **§F3-LH-PIELB-GRANDES-SIN-EJERCITAR** — los tramos con **0 de 43**
+   instancias; el componente **tira** en vez de adivinar.
+5. **T10**, las **65 páginas sin tarjetas**, las **5** del grupo B,
+   **`CMS-ORDEN-L2`** y los **144 residuos de cascarón**.
+
+---
+
+# HANDOFF anterior — el dato cerró a medias y **pararon los dos escalones, cada uno con su medida**
 
 > ⚠ **Tanda de DATO, 2026-08-17 (74.ª). `L3` y `L5` NO se construyeron, y lo
 > ordenó el ESCALÓN 2 del encargo**: *«si sembrar los 3 documentos NO cierra los

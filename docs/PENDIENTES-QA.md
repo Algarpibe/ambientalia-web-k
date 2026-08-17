@@ -52,6 +52,46 @@ contenido desplazado una tarjeta. Cruzado contra las **tres** corridas del día:
 36 «nuevos» respecto de `-2` son los que `-1` ya tenía: la rara de las tres es
 `-2`. Queda **fichado y sin perseguir** en §F3-LH-LISTADO-QUE-OSCILA.
 
+## ⛔ F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR · TRES INTENTOS, 367 · 248 · 81 (2026-08-17, 75.ª tanda)
+
+**La guarda clon-contra-clon de esta tanda NO está completa, y se dice con su
+número en vez de con un adjetivo** (regla 14). La línea base sí lo está.
+
+| corrida | rutas comparadas | de 367 | por qué paró |
+|---|---|---|---|
+| línea base `p0` @1440 | **367** | ✅ | — |
+| línea base `p0` @390 | **367** | ✅ | (la 1.ª murió a la ruta ~53; repetida) |
+| `p1` @1440, 1.er intento | **248** | ⛔ 119 sin medir | el navegador murió (`ConnectionClosedError` / `detached Frame`) |
+| `p1` @1440, 2.º intento | **81** | ⛔ 286 sin medir | ídem, **antes** |
+| `p1` @390 | **0** | ⛔ | no llegó a lanzarse |
+
+**Por qué no se fabricó una unión entre corridas:** juntar «las 248 de la primera
+más las que faltaban de la segunda» es exactamente *salvar las que parecen bien*,
+que este repo tiene prohibido desde que un `build` a mitad de una corrida dejó
+404 en rutas que existían. **Una corrida rota se descarta entera.** Las dos
+congeladas rotas se conservan con el marcador de la §regla 7
+(`clon-base-1440-p1-neg-corrida-rota-{119,286}-de-367.json`).
+
+**La causa es del entorno, y no se tocó:** la máquina tenía **47 procesos node**
+—servidores MCP y un `npm run test --workspace` de OTRO proyecto con 16 workers—
+y **25 chrome**. Nada de eso es de esta tanda y matarlo habría sido destruir
+trabajo ajeno.
+
+### Lo que SÍ quedó medido, para que el hueco no se lea como «no se sabe nada»
+
+- **el efecto está medido por el otro instrumento y ENTERO**: `qa:lh-cmp-todas`
+  comparó **62 formas de 82 a los dos anchos** —las 20 restantes son AUSENTES,
+  no fallos— y ahí está la caída de 443→162 y 432→140 con **0 fuera de clase**;
+- **el efecto puntual también**: en el intento de 248 rutas, las páginas **1–5**
+  de `/etiqueta/monitorizacion-ambiental` salen con **+1 ancla** cada una —las
+  **5** que la regla predice— y **243 de las otras 248 sin mover un píxel**;
+- **lo que falta es la otra mitad**: que las **119** no medidas tampoco se
+  muevan. Son todas `[slug]` singulares, que no montan paginador — *y «no puede
+  afectarles» es justo la suposición que la guarda existe para comprobar*.
+
+**Cómo se cierra:** re-correr `qa:clon-base 1440 p1 --cmp` y `390` con la máquina
+descargada. No hace falta reconstruir nada: la línea base `p0` está commiteada.
+
 ## ✅ F3-LH-SUBPIXEL · HAY **UN** RESIDUO, NO 155 — Y SUS 124 CONSECUENCIAS SON ARITMÉTICA (2026-08-17, 75.ª tanda)
 
 **Qué se decide aquí: nada, y ése es el punto.** No se toca un píxel. Se pasa un
@@ -139,6 +179,25 @@ si el desplazamiento viene de un **orden de desempate inestable** en la consulta
 de un **elemento de más o de menos** antes del corte, o de otra cosa. Con lo
 medido sólo se puede afirmar que **el clon no es determinista entre builds en
 estas formas**, y que **`-1` y `-3` coinciden y `-2` no**.
+
+> ✅ **Y el eje QUEDA ACOTADO: es entre BUILDS, no entre corridas.** La corrida
+> `-4` se hizo **contra el mismo build que la `-3`** —era la prueba NO-OP de
+> `piezasTotales`— y salió **idéntica al par**: `4 996 → 4 996`, **0** pares sólo
+> en una y **0** sólo en la otra.
+>
+> | corridas | ¿mismo build? | resultado |
+> |---|---|---|
+> | `-3` vs `-4` | **sí** | **idénticas** (0 y 0) |
+> | `-1` · `-2` · `-3` | no | difieren en ~36 pares de contenido |
+>
+> Eso **descarta el ruido de medición** y deja en pie la hipótesis del
+> **desempate**: lo que cambia se decide al construir, no al medir. Sigue sin
+> derivarse **cuál** es el campo que empata.
+
+**Y hay una segunda evidencia, por otro instrumento**, que es lo que lo saca de
+«cosa de listados»: `qa:clon-base --cmp` marcó **`/contaminacion-por-metano`**
+con `docH +16` y `S1 h +16` — una entrada **singular**, que no monta paginador ni
+listado. Mismo código salvo `Paginador.tsx`, otro build.
 
 **Por qué importa más allá de estos 36 pares:** cualquier Δ de contenido medido
 en estas rutas es, hasta que esto se resuelva, **indistinguible de la

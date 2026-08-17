@@ -1,5 +1,24 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠ **2026-08-17 (75.ª tanda) · LA MATRIZ NO SE MUEVE, Y ESO ES LO CORRECTO:
+> `93 · 93 · 77 · 68 · 64` sobre **367**, idéntica a la de la 74.ª.**
+>
+> Esta tanda **arregló un defecto dentro de formas ya comparadas** (la ventana del
+> paginador) y **no construyó ninguna forma nueva**, así que la cobertura no
+> puede subir: subir sería el síntoma de que la matriz está contando otra cosa.
+> Lo que sí cambió es **la calidad de lo que hay dentro** de esas celdas —
+> `paginador.piezas.*` **443 → 162** @1440 y **432 → 140** @390 —, y eso **la
+> matriz no lo ve por diseño**: cuenta *si una ruta está comparada*, no *cuánto
+> residuo le queda*.
+>
+> **Y hay un eje que esta tanda dejó PEOR de lo que suele estar, con su número:**
+> la guarda clon-contra-clon (`clon-base --cmp`) **no se pudo completar** — tres
+> intentos, **367 · 248 · 81** rutas, con el navegador muriendo por contención de
+> la máquina. `clon-base` **no acredita ninguna celda de esta matriz** (es
+> clon-contra-clon, no contra el original), así que no la mueve; pero el hueco
+> existe y está fichado en `PENDIENTES-QA.md`
+> §F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR.
+
 > ✅ **LA CABECERA DE ABAJO YA NO DESCRIBE EL ESTADO (2026-08-17, 73.ª tanda), Y
 > LO QUE LA MOVIÓ NO FUE MEDIR MÁS: FUE QUE LA MATRIZ EMPEZARA A VER LO YA
 > MEDIDO.**

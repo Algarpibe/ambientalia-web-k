@@ -151,6 +151,30 @@ export function barrer() {
       tipo: S(p, TIPO),
       linkNextDelHead: linkNext,
       hrefs: as.map((a) => a.getAttribute?.("href") ?? null).filter(Boolean),
+      /**
+       * ⚠⚠ **EL TOPE SE DECLARA, PORQUE UN `slice` SE LEE COMO UNA AUSENCIA DEL
+       * ORIGINAL (2026-08-17, 75.ª tanda).**
+       *
+       * `piezas` va recortado a 12 y **eso no se veía en ningún sitio**: quien
+       * derivaba una tabla de secuencias desde el espejo leía «12 piezas» y
+       * escribía que el original no sirve más. Medido: las páginas 4 y 5 de
+       * `/etiqueta/monitorizacion-ambiental` (`total 11`) emiten **14**, y las
+       * dos que se caían eran justo `»` y `Last »` — o sea que la tabla decía
+       * que el original NO los sirve, y sí los sirve. Ver `CLAUDE.md` §sondas 4,
+       * cuarta cara.
+       *
+       * `piezasTotales` es el recuento SIN recortar, en la misma unidad que el
+       * tope. Con él, la próxima tabla derivada del espejo puede ver que se
+       * quedó corta en vez de creerse completa.
+       *
+       * ⚠ Es **NO-OP sobre todo lo comparado hoy**: `lh-cmp` recorre las claves
+       * del ESPEJO, y los espejos congelados (2026-08-14) no traen este campo,
+       * así que no genera ni un par. Empieza a comparar el día que se re-mida el
+       * original — y entonces compara algo que hoy nadie mira: **cuántas piezas
+       * tiene el paginador de verdad**.
+       */
+      piezasTotales: as.length,
+      topeDePiezas: 12,
       piezas: as.slice(0, 12).map((a) => ({ marca: marca(a), texto: txt(a), rect: R(a), tipo: S(a, TIPO), ritmo: S(a, RITMO), caja: S(a, CAJA) })),
     };
   })();

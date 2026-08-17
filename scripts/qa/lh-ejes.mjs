@@ -46,7 +46,7 @@
  * que se hace pasar por hallazgo, y la cazó el censo de ejes al no saber
  * clasificarlos.
  */
-export const IGNORAR = new Set(["ancho", "canonical", "titulo", "docH", "forma", "ruta", "papel"]);
+export const IGNORAR = new Set(["ancho", "canonical", "titulo", "docH", "forma", "ruta", "papel", "paginador.topeDePiezas"]);
 
 /**
  * De un árbol a un mapa `camino → escalar`.
@@ -127,6 +127,15 @@ export function ejeDe(camino) {
   if (/(^|\.)regimen\./.test(camino)) return "plantilla";
   /* `sel` es el selector que casó: dice CON QUÉ se midió, o sea estructura. */
   if (h === "sel") return "plantilla";
+  /**
+   * ⚠ **`piezasTotales` es PLANTILLA y `topeDePiezas` NO es una propiedad de la
+   * página.** El primero es cuántas piezas emite el paginador —estructura, y el
+   * eje donde vivía el defecto de la ventana—; el segundo es **el tope del
+   * instrumento**, que se congela para que un `slice` deje de leerse como una
+   * ausencia del original (§sondas 4, cuarta cara) y **no se compara**: sería
+   * comparar la sonda consigo misma.
+   */
+  if (h === "piezasTotales") return "plantilla";
   if (HOJAS_CONTENIDO.has(h)) return "contenido";
   if (HOJAS_MIXTAS.has(h)) return "mixta";
   if (HOJAS_PLANTILLA.has(h)) return "plantilla";
