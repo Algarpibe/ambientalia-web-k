@@ -6,29 +6,34 @@
     "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",
     "noMide": [
       "el clon: esta sonda no abre una página ni arranca el servidor — 0 de las 13 formas se renderiza aquí",
-      "si un par CUADRA: eso es la comparación, no el alcance — de los 16706 pares censados, esta sonda comprueba 0",
+      "si un par CUADRA: eso es la comparación, no el alcance — de los 15126 pares censados, esta sonda comprueba 0",
       "las páginas que el espejo NO trae: compara 13 de 149 ({\"primera\":13} de {\"primera\":35,\"intermedia\":86,\"última\":28}), y toca 11 de 38 clases — 27 ciegas, 122 páginas dentro",
       "qué son las 27 clases CIEGAS: 122 de 149 páginas (t=9/5/0/6/7/8/1/2/4/15 tarjetas, 57 con contenido, {\"espejo·no-la-trae\":57,\"D2.5·vacía\":55,\"B·sin-decisión\":5,\"D2.4·duplicado\":5}) — 57 de esas 122 páginas TIENEN CONTENIDO y este espejo no las trae: eso SÍ es hueco de alcance. NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas. NO: L4 está en el universo del comparador (1 forma[s]) y toca clase. ensanchar lh-cmp alcanzaría 57 de estas 122; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 44 de 122",
       "por qué `última` es 0 y no 28: las 28 que faltan salen {\"D2.5·vacía\":17,\"D2.4·duplicado\":7,\"espejo·no-la-trae\":4} — de ellas HUECO 4, el resto decisiones firmadas. Y el 0 no mide «¿ve el final de la lista?»: `pos` va sobre la serie SERVIDA y el espejo sobre la que tiene CONTENIDO (difieren en 17 de 35 series). Esa pregunta sale 4 de 30",
       "las formas AUSENTES en el clon: el dominio EFECTIVO es universo − ausentes, y esta sonda no abre el clon — de las 13 formas, 7 tienen ruta emitida",
-      "si el UNIVERSO es correcto: el cruce al par con qa:lh-cmp prueba que los dos leen EL MISMO (13 formas · 16706 pares), no que sea el bueno — los dos salen del mismo espejo. Quien lo verifica es la derivación de qa:lh-espejo (documentos − duplicados) con su guarda que los RECALCULA y su sabotaje `duplicado-sin-marcar` en rojo"
+      "si el UNIVERSO es correcto: el cruce al par con qa:lh-cmp prueba que los dos leen EL MISMO (13 formas · 15126 pares), no que sea el bueno — los dos salen del mismo espejo. Quien lo verifica es la derivación de qa:lh-espejo (documentos − duplicados) con su guarda que los RECALCULA y su sabotaje `duplicado-sin-marcar` en rojo"
     ],
     "porQueMixto": "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Contra el espejo absorbe la deriva del contenido; contra el corpus, la geometría de un render sin hojas. La referencia que las arreglaría es una tercera —el corpus RENDERIZADO con sus hojas— y construirla es una tanda, no un parámetro."
   },
   "universo": {
     "formas": 13,
-    "pares": 16706,
-    "contenido": 523,
-    "plantilla": 13147,
-    "mixta": 3036,
-    "verificables": 13670,
-    "pctMixto": 18.2
+    "pares": 15126,
+    "contenido": 471,
+    "plantilla": 11878,
+    "mixta": 2777,
+    "verificables": 12349,
+    "pctMixto": 18.4
   },
   "minParPorPagina": {
     "minimo": 1,
-    "cumplen": 13,
+    "cumplen": 12,
     "de": 13,
-    "conCero": [],
+    "conCero": [
+      {
+        "clave": "L1-resources-padre::/es/recursos/articulos/",
+        "pares": 0
+      }
+    ],
     "queSignificaUnCero": "candidata a un TERCER tipo de fantasma, tras los duplicados y los invisibles al filtro por contenido",
     "cierraElCodigo": true
   },
@@ -766,9 +771,9 @@
       "L1-resources-padre::/es/recursos/seminarios-web/",
       "L1-resources-padre::/es/recursos/articulos/"
     ],
-    "pares": 10707,
-    "verificables": 8867,
-    "mixtos": 1840
+    "pares": 9127,
+    "verificables": 7546,
+    "mixtos": 1581
   },
   "porForma": {
     "L1-blog::/es/blog/": {
@@ -893,12 +898,12 @@
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "contenido": 52,
-      "plantilla": 1269,
-      "mixta": 259,
-      "pares": 1580,
-      "verificables": 1321,
-      "pctMixto": 16.4,
+      "contenido": 0,
+      "plantilla": 0,
+      "mixta": 0,
+      "pares": 0,
+      "verificables": 0,
+      "pctMixto": 0,
       "emiteElBuild": true
     }
   }

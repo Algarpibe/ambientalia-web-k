@@ -1,13 +1,17 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-15",
     "que": "ALCANCE VERIFICABLE de los listados a 390: el denominador de qa:lh-cmp, derivado ANTES de comparar",
     "espejo": "medidas/lh-spec-390.json (2026-08-11)",
     "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",
     "noMide": [
-      "el clon: esta sonda no abre una página ni arranca el servidor",
-      "si un par CUADRA: eso es la comparación, no el alcance",
-      "las rutas /page/N: el espejo mide la página 1 de cada forma → ver `alcanceReal`, que lo dice CON SU NÚMERO"
+      "el clon: esta sonda no abre una página ni arranca el servidor — 0 de las 13 formas se renderiza aquí",
+      "si un par CUADRA: eso es la comparación, no el alcance — de los 16719 pares censados, esta sonda comprueba 0",
+      "las páginas que el espejo NO trae: compara 13 de 149 ({\"primera\":13} de {\"primera\":35,\"intermedia\":86,\"última\":28}), y toca 11 de 38 clases — 27 ciegas, 122 páginas dentro",
+      "qué son las 27 clases CIEGAS: 122 de 149 páginas (t=9/5/0/6/7/8/1/2/4/15 tarjetas, 57 con contenido, {\"espejo·no-la-trae\":57,\"D2.5·vacía\":55,\"B·sin-decisión\":5,\"D2.4·duplicado\":5}) — 57 de esas 122 páginas TIENEN CONTENIDO y este espejo no las trae: eso SÍ es hueco de alcance. NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas. NO: L4 está en el universo del comparador (1 forma[s]) y toca clase. ensanchar lh-cmp alcanzaría 57 de estas 122; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 44 de 122",
+      "por qué `última` es 0 y no 28: las 28 que faltan salen {\"D2.5·vacía\":17,\"D2.4·duplicado\":7,\"espejo·no-la-trae\":4} — de ellas HUECO 4, el resto decisiones firmadas. Y el 0 no mide «¿ve el final de la lista?»: `pos` va sobre la serie SERVIDA y el espejo sobre la que tiene CONTENIDO (difieren en 17 de 35 series). Esa pregunta sale 4 de 30",
+      "las formas AUSENTES en el clon: el dominio EFECTIVO es universo − ausentes, y esta sonda no abre el clon — de las 13 formas, 7 tienen ruta emitida",
+      "si el UNIVERSO es correcto: el cruce al par con qa:lh-cmp prueba que los dos leen EL MISMO (13 formas · 16719 pares), no que sea el bueno — los dos salen del mismo espejo. Quien lo verifica es la derivación de qa:lh-espejo (documentos − duplicados) con su guarda que los RECALCULA y su sabotaje `duplicado-sin-marcar` en rojo"
     ],
     "porQueMixto": "una magnitud MIXTA depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Contra el espejo absorbe la deriva del contenido; contra el corpus, la geometría de un render sin hojas. La referencia que las arreglaría es una tercera —el corpus RENDERIZADO con sus hojas— y construirla es una tanda, no un parámetro."
   },
@@ -19,6 +23,14 @@
     "mixta": 3049,
     "verificables": 13670,
     "pctMixto": 18.2
+  },
+  "minParPorPagina": {
+    "minimo": 1,
+    "cumplen": 13,
+    "de": 13,
+    "conCero": [],
+    "queSignificaUnCero": "candidata a un TERCER tipo de fantasma, tras los duplicados y los invisibles al filtro por contenido",
+    "cierraElCodigo": true
   },
   "alcanceReal": {
     "pregunta": "¿sobre cuántas PÁGINAS compara qa:lh-cmp, y sobre cuántas NO?",
@@ -41,13 +53,667 @@
         "primera": 35,
         "intermedia": 86,
         "última": 28
+      },
+      "fueraPorFrontera": {
+        "espejo·no-la-trae": 69,
+        "D2.5·vacía": 55,
+        "D2.4·duplicado": 7,
+        "B·sin-decisión": 5
+      },
+      "fueraQueEsHueco": 69,
+      "fueraPorPosicionYFrontera": {
+        "primera": {
+          "delUniverso": 35,
+          "compara": 13,
+          "fuera": {
+            "espejo·no-la-trae": 17,
+            "B·sin-decisión": 5
+          }
+        },
+        "intermedia": {
+          "delUniverso": 86,
+          "compara": 0,
+          "fuera": {
+            "espejo·no-la-trae": 48,
+            "D2.5·vacía": 38
+          }
+        },
+        "última": {
+          "delUniverso": 28,
+          "compara": 0,
+          "fuera": {
+            "D2.5·vacía": 17,
+            "D2.4·duplicado": 7,
+            "espejo·no-la-trae": 4
+          }
+        }
+      },
+      "fronteras": {
+        "D2.4·duplicado": "/page/N de una serie que NO pagina: canonical a la 1.ª ⇒ el MISMO documento, no una ruta (D2.4)",
+        "B·sin-decisión": "la página 1 de una serie que no pagina y no lista nada: NI D2.5 NI D2.4 le aplican (§F3-LH-VACIA-DOS-CAUSAS, grupo B)",
+        "D2.5·vacía": "página de una serie que SÍ pagina y no lista nada: 200 · canonical a sí misma · «Página N de M» (D2.5, contrato P-LH-C7)",
+        "espejo·no-la-trae": "página CON CONTENIDO que este espejo no mide: NO es una decisión, es EL ALCANCE — el número que hay que mirar"
+      },
+      "ultimaConContenido": {
+        "porQue": "`pos` se calcula sobre la serie SERVIDA; el espejo es la serie CON CONTENIDO. Son dos unidades y sólo una contesta «¿se ve el final de la lista?»",
+        "seriesDelUniverso": 35,
+        "seriesConAlgunaPaginaConContenido": 30,
+        "suUltimaConContenidoComparada": 4,
+        "deEllas": 30,
+        "suUltimaConContenidoComparadaEnDOCUMENTOS": 6,
+        "noComparadas": [
+          {
+            "serie": "/blog",
+            "pagina": 8,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/casos-de-exito",
+            "pagina": 2,
+            "frontera": "D2.4·duplicado",
+            "suDocumentoSeCompara": true
+          },
+          {
+            "serie": "/etiqueta/calidad-del-aire",
+            "pagina": 4,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/co2-es",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/contaminantes-atmosfericos",
+            "pagina": 4,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/cov",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/emisiones-industriales",
+            "pagina": 3,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/gases-de-efecto-invernadero",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/malos-olores",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/monitorizacion-ambiental",
+            "pagina": 11,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/normativa-de-calidad-del-aire",
+            "pagina": 3,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/particulas-en-suspension",
+            "pagina": 2,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/etiqueta/sensor-de-calidad-del-aire",
+            "pagina": 4,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/glosario",
+            "pagina": 8,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/preguntas-frecuentes",
+            "pagina": 4,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos",
+            "pagina": 2,
+            "frontera": "D2.4·duplicado",
+            "suDocumentoSeCompara": true
+          },
+          {
+            "serie": "/recursos/articulos",
+            "pagina": 6,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/contaminacion-en-la-construccion",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/contaminacion-minera",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/contaminacion-urbana",
+            "pagina": 2,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/contaminacion-y-salud",
+            "pagina": 2,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/industria-y-contaminacion-por-olores",
+            "pagina": 2,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/petroleo-y-gas",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/recursos/articulos/productos-kunak",
+            "pagina": 1,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/scientific-category/articulos-cientificos-y-estudios",
+            "pagina": 3,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          },
+          {
+            "serie": "/scientific-category/evaluaciones-independientes",
+            "pagina": 2,
+            "frontera": "espejo·no-la-trae",
+            "suDocumentoSeCompara": false
+          }
+        ],
+        "seriesSinNingunaPaginaConContenido": [
+          "/productos",
+          "/recursos/documentos-cientificos",
+          "/recursos/kunakpedia",
+          "/recursos/preguntas-frecuentes",
+          "/sectores"
+        ],
+        "seriesDondeLasDosUltimasDIFIEREN": 17
       }
     },
     "clases": {
       "enElUniverso": 38,
       "queToca": 11,
       "ciegas": 27,
-      "paginasEnClasesCiegas": 122
+      "paginasEnClasesCiegas": 122,
+      "ciegasDetalle": [
+        {
+          "clase": "t9·A·PN·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 6,
+          "series": 1,
+          "tarjetas": 9,
+          "conContenido": 6,
+          "porFrontera": {
+            "espejo·no-la-trae": 6
+          },
+          "seriesQueLaTraen": [
+            "/blog"
+          ]
+        },
+        {
+          "clase": "t5·A·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 5,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/blog"
+          ]
+        },
+        {
+          "clase": "t0·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 36,
+          "series": 12,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "D2.5·vacía": 36
+          },
+          "seriesQueLaTraen": [
+            "/blog",
+            "/etiqueta/calidad-del-aire",
+            "/etiqueta/co2-es",
+            "/etiqueta/contaminantes-atmosfericos",
+            "/etiqueta/cov",
+            "/etiqueta/emisiones-industriales",
+            "/etiqueta/gases-de-efecto-invernadero",
+            "/etiqueta/malos-olores",
+            "/etiqueta/monitorizacion-ambiental",
+            "/etiqueta/normativa-de-calidad-del-aire",
+            "/etiqueta/particulas-en-suspension",
+            "/etiqueta/sensor-de-calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t9·ninguna·PN·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 17,
+          "series": 6,
+          "tarjetas": 9,
+          "conContenido": 17,
+          "porFrontera": {
+            "espejo·no-la-trae": 17
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/calidad-del-aire",
+            "/etiqueta/contaminantes-atmosfericos",
+            "/etiqueta/emisiones-industriales",
+            "/etiqueta/monitorizacion-ambiental",
+            "/etiqueta/normativa-de-calidad-del-aire",
+            "/etiqueta/sensor-de-calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t6·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 6,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t7·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 7,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/co2-es"
+          ]
+        },
+        {
+          "clase": "t9·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 9,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/contaminantes-atmosfericos"
+          ]
+        },
+        {
+          "clase": "t6·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 6,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/cov"
+          ]
+        },
+        {
+          "clase": "t5·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 5,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/emisiones-industriales"
+          ]
+        },
+        {
+          "clase": "t9·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 9,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/gases-de-efecto-invernadero"
+          ]
+        },
+        {
+          "clase": "t8·ninguna·--·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 8,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/malos-olores"
+          ]
+        },
+        {
+          "clase": "t1·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 1,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/monitorizacion-ambiental"
+          ]
+        },
+        {
+          "clase": "t2·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 2,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/normativa-de-calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t7·ninguna·P-·s6·sb",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 2,
+          "series": 2,
+          "tarjetas": 7,
+          "conContenido": 2,
+          "porFrontera": {
+            "espejo·no-la-trae": 2
+          },
+          "seriesQueLaTraen": [
+            "/etiqueta/particulas-en-suspension",
+            "/etiqueta/sensor-de-calidad-del-aire"
+          ]
+        },
+        {
+          "clase": "t5·ninguna·PN·s4",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 8,
+          "series": 2,
+          "tarjetas": 5,
+          "conContenido": 8,
+          "porFrontera": {
+            "espejo·no-la-trae": 8
+          },
+          "seriesQueLaTraen": [
+            "/glosario",
+            "/preguntas-frecuentes"
+          ]
+        },
+        {
+          "clase": "t2·ninguna·P-·s4",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 2,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/glosario"
+          ]
+        },
+        {
+          "clase": "t4·ninguna·P-·s4",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 4,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/preguntas-frecuentes"
+          ]
+        },
+        {
+          "clase": "t0·ninguna·--·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 25,
+          "series": 8,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "B·sin-decisión": 3,
+            "D2.4·duplicado": 3,
+            "D2.5·vacía": 19
+          },
+          "seriesQueLaTraen": [
+            "/productos",
+            "/recursos/articulos",
+            "/recursos/articulos/contaminacion-urbana",
+            "/recursos/articulos/contaminacion-y-salud",
+            "/recursos/articulos/industria-y-contaminacion-por-olores",
+            "/recursos/articulos/productos-kunak",
+            "/recursos/kunakpedia",
+            "/recursos/preguntas-frecuentes"
+          ]
+        },
+        {
+          "clase": "t15·C·PN·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 4,
+          "series": 1,
+          "tarjetas": 15,
+          "conContenido": 4,
+          "porFrontera": {
+            "espejo·no-la-trae": 4
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos"
+          ]
+        },
+        {
+          "clase": "t5·C·P-·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 5,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos"
+          ]
+        },
+        {
+          "clase": "t4·ninguna·--·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 4,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos/contaminacion-en-la-construccion"
+          ]
+        },
+        {
+          "clase": "t9·C·P-·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 9,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos/contaminacion-urbana"
+          ]
+        },
+        {
+          "clase": "t4·C·P-·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 4,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos/contaminacion-y-salud"
+          ]
+        },
+        {
+          "clase": "t6·C·P-·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 6,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos/industria-y-contaminacion-por-olores"
+          ]
+        },
+        {
+          "clase": "t7·ninguna·--·s6",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 1,
+          "series": 1,
+          "tarjetas": 7,
+          "conContenido": 1,
+          "porFrontera": {
+            "espejo·no-la-trae": 1
+          },
+          "seriesQueLaTraen": [
+            "/recursos/articulos/productos-kunak"
+          ]
+        },
+        {
+          "clase": "t0·ninguna·--·s7",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 4,
+          "series": 2,
+          "tarjetas": 0,
+          "conContenido": 0,
+          "porFrontera": {
+            "B·sin-decisión": 2,
+            "D2.4·duplicado": 2
+          },
+          "seriesQueLaTraen": [
+            "/recursos/documentos-cientificos",
+            "/sectores"
+          ]
+        },
+        {
+          "clase": "t8·ninguna·--·s5",
+          "formato": "t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]  (lh-serie.mjs §clase)",
+          "paginas": 2,
+          "series": 1,
+          "tarjetas": 8,
+          "conContenido": 2,
+          "porFrontera": {
+            "espejo·no-la-trae": 2
+          },
+          "seriesQueLaTraen": [
+            "/scientific-category/evaluaciones-independientes"
+          ]
+        }
+      ],
+      "queSonLasCiegas": {
+        "paginas": 122,
+        "deUnUniversoDe": 149,
+        "conContenido": 57,
+        "tarjetasDeEsasClases": [
+          9,
+          5,
+          0,
+          6,
+          7,
+          8,
+          1,
+          2,
+          4,
+          15
+        ],
+        "porFrontera": {
+          "espejo·no-la-trae": 57,
+          "D2.5·vacía": 55,
+          "B·sin-decisión": 5,
+          "D2.4·duplicado": 5
+        },
+        "noSon": {
+          "formasSinConstruir": "NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas",
+          "L4": "NO: L4 está en el universo del comparador (1 forma[s]) y toca clase"
+        },
+        "decididoPor": "espejo·no-la-trae 57 · D2.5·vacía 55 · B·sin-decisión 5 · D2.4·duplicado 5",
+        "veredicto": "57 de esas 122 páginas TIENEN CONTENIDO y este espejo no las trae: eso SÍ es hueco de alcance",
+        "loQueNoCubre": "ensanchar lh-cmp alcanzaría 57 de estas 122; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 44 de 122",
+        "emiteElClon": 44
+      }
     },
     "pielB": {
       "porQue": "§F3-LH-PIELB-VENTANA — el defecto vivía ENTERO en lo que el comparador no mira, y salió verde",

@@ -391,6 +391,13 @@ const salida = {
       queSignificaUnVerde: ESPEJO_REL
         ? `Δ0 en las ${FORMAS.length} PÁGINAS del espejo, /page/N incluidas`
         : `Δ0 en la PÁGINA 1 de ${FORMAS.length} formas — NO dice nada de /page/2 en adelante (§F3-LH-ALCANCE-PAGINA-1)`,
+      /* ⚠ Y lo que el cruce con `qa:lh-alcance` NO prueba: que este universo sea
+       * el correcto. Los dos lo derivan del MISMO espejo, así que concuerdan
+       * igual de bien sobre una premisa falsa — medido, los cruces de la 66.ª y
+       * la 68.ª salieron al par sobre un universo con 7 fantasmas dentro. */
+      loQueElCruceNoPrueba:
+        "que el universo sea el bueno: qa:lh-alcance y esta sonda salen del mismo espejo. " +
+        "El universo lo verifica la derivación de qa:lh-espejo con su sabotaje `duplicado-sin-marcar`.",
     },
     ladoClon: CLON,
     unidad: "el PAR (camino × propiedad), NO el Δ0 de página",
@@ -427,6 +434,8 @@ let corpusOk = 0;
 let corpusCaminos = 0;
 const faltanCorpus = [];
 const basesQueNoCasan = [];
+/** Páginas del universo que no rinden ni un par: candidatas a fantasma, no a Δ0. */
+const paginasSinPares = [];
 
 for (const F of FORMAS) {
   const orig = VIVO ? (await mide(F.original)).datos : F.espejo;
@@ -513,6 +522,10 @@ for (const F of FORMAS) {
     if (eje !== "mixta") paresDistintos++;
     dif.push({ camino: k, eje, contra, referencia: ref, clon: w2, ...(eje === "mixta" ? { noEsDefecto: "sin referencia limpia (§ESCALÓN eje mixto)" } : {}) });
   }
+  /* El contrato de `Evaluadas` POR PÁGINA: una forma que no rinda un solo par
+   * comparable no es «0 diferencias», es una página sin medir — y el agregado la
+   * absorbe entera (§La causa común, con el contenedor en el total). */
+  if (porEje.contenido + porEje.plantilla + porEje.mixta < 1) paginasSinPares.push(F.clave);
   if (difPorEje.contenido || difPorEje.plantilla) conDiferencia++;
   paresMixtos += porEje.mixta;
   mixtasQueDifieren += difPorEje.mixta;
@@ -556,7 +569,11 @@ salida.resumen = {
   paresDeContenidoSinCorpus: sinReferencia,
   formasSinCorpus: faltanCorpus.length,
   basesQueNoCasan: basesQueNoCasan.length,
+  /* El mínimo POR PÁGINA, no en agregado: una sola página muda desaparece
+   * dentro de diez mil pares sin mover un dígito. */
+  paginasSinNingunPar: paginasSinPares.length,
 };
+salida.paginasSinNingunPar = paginasSinPares;
 salida.faltanCorpus = faltanCorpus;
 salida.basesQueNoCasan = basesQueNoCasan;
 salida.ejes = {
@@ -593,6 +610,14 @@ if (ausentes) {
     `\n⛔ ${ausentes} de ${FORMAS.length} formas AUSENTES en el clon — no hay nada que comparar en ellas.\n` +
       `   Es el ESTADO INICIAL declarado: el comparador existe antes que la plantilla,\n` +
       `   a propósito, para que no acabe calibrado contra lo que el clon ya hace.`,
+  );
+  codigo = 2;
+} else if (paginasSinPares.length) {
+  console.log(
+    `\n⛔ ${paginasSinPares.length} página(s) del universo SIN UN SOLO PAR comparable:\n` +
+      paginasSinPares.slice(0, 12).map((k) => `   · ${k}`).join("\n") +
+      `\n   Eso NO es «0 diferencias»: es una página sin medir, y el agregado la absorbe.\n` +
+      `   Candidata a un TERCER tipo de fantasma — sepárala antes de leer ningún verde.`,
   );
   codigo = 2;
 } else if (basesQueNoCasan.length) {

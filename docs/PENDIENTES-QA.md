@@ -1,5 +1,171 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-CIEGAS-Y-ULTIMA · LAS DOS LÍNEAS QUE «35 DE 38» SE TRAGA, CON SU CARDINAL (2026-08-15, 72.ª tanda — nada construido)
+
+**Qué se decide aquí: nada de código de la web.** Se cierra la §regla 14 sobre
+el alcance del espejo de PÁGINAS: `toca 35 de 38 clases` y `última 4 de 28` son
+las dos cifras que un resumen convierte en «cobertura completa» y en «24 sin
+mirar», y **ninguna de las dos lecturas es la correcta**. Derivado con
+`qa:lh-alcance` §`alcanceReal`, congelado en `medidas/lh-alcance-{1440,390}-todas.json`,
+**idéntico a los dos anchos**.
+
+### (a) Qué son las 3 clases CIEGAS — y no son ninguna de las dos cosas que uno supone
+
+Las tres empiezan por **`t0`**: cero tarjetas. Son **la página que no lista
+nada**, en sus tres formas estructurales.
+
+| clase (`t{tarjetas}·{piel}·{P|-}{N|-}·s{secciones}[·sb]`) | págs | series | con contenido |
+|---|---|---|---|
+| `t0·ninguna·--·s6·sb` | **36** | 12 | **0** |
+| `t0·ninguna·--·s6` | **25** | 8 | **0** |
+| `t0·ninguna·--·s7` | **4** | 2 | **0** |
+| **total** | **65 de 149** | | **0** |
+
+Y su reparto **por frontera**, que es donde estaba el riesgo de escribirlo mal:
+
+| frontera | n | decisión |
+|---|---|---|
+| `D2.5·vacía` | **55** | firmada — replicar tal cual |
+| `B·sin-decisión` | **5** | ⛔ **NINGUNA** (§F3-LH-VACIA-DOS-CAUSAS, abajo) |
+| `D2.4·duplicado` | **5** | firmada — no son rutas |
+
+> **Las dos lecturas que hay que descartar, con su número al lado:**
+>
+> - **NO son formas sin construir.** Las **5** familias del espejo
+>   (`L1 · L2 · L3 · L4 · L5`) están **todas dentro** del universo del
+>   comparador. Lo que falta son **páginas** de esas formas, no formas.
+> - **NO son `L4`.** `L4` está en el universo con **1** forma
+>   (`L4-listado-embebido::/es/recursos/`) y **toca clase**. No es deuda de F3-3.
+
+**Y la consecuencia operativa, que es la que cambia una decisión:** **ensanchar
+`lh-cmp` alcanzaría 0 de estas 65.** No tienen cuerpo que comparar; su contrato
+es **`P-LH-C7`** (200 · canonical a sí misma · `<title>` «Página N de M»), que
+no es una comparación par a par. Hoy el clon emite **0 de las 65** (derivado del
+`prerender-manifest`), así que `P-LH-C7` **no tiene todavía nada que verificar
+en el clon** — y eso es F3-2 pendiente, ya fichada como «las 55 vacías de
+`D2.5`», **no un hueco del comparador**.
+
+### (b) Por qué `última` es 4 y no 28 — y son DOS causas, no una
+
+El reparto entero, por posición y por frontera:
+
+| posición | universo | compara | fuera |
+|---|---|---|---|
+| `primera` | 35 | **30** | `B·sin-decisión` **5** |
+| `intermedia` | 86 | **48** | `D2.5·vacía` **38** |
+| **`última`** | **28** | **4** | `D2.5·vacía` **17** · `D2.4·duplicado` **7** |
+
+> **La hipótesis de «son las vacías de `D2.5`» acierta en 17 de las 24, no en
+> las 24.** Las otras **7** son los `/page/2` de las series que **no paginan**:
+> el mismo documento con canonical a la 1.ª. Escribirlo con una sola causa sería
+> repetir exactamente lo que la 71.ª tanda midió y escribió — *`vacia: true`
+> eran DOS fronteras* — en el instrumento que viene después.
+
+**HUECO real: 0.** De las **67** páginas que el comparador no mira, **0** están
+fuera porque el espejo no llegue: **las 67 son decisiones firmadas**. (Contraste
+que da el número su sentido: con el espejo de FORMAS —`lh-spec`, 13 páginas— ese
+mismo campo vale **69**.)
+
+### Y la vuelta que explica el 4: `pos` va sobre la serie SERVIDA, el espejo sobre la que tiene CONTENIDO
+
+> **`última` en `lh-serie` significa *la última página SERVIDA*, y en 17 de las
+> 35 series ésa NO es la última CON CONTENIDO.** O sea que el 4 **no contesta** *«¿ve el
+> comparador el final de una lista?»*: contesta una pregunta más estricta que
+> nadie quería hacer. Es §La causa común con el contenedor puesto en **la
+> etiqueta**: `última` absorbía la diferencia entre *última servida* y *última
+> con contenido*.
+
+La pregunta que sí importa —la del **resto de la división**, la fila incompleta,
+el `next` ausente— se contesta así:
+
+| | n |
+|---|---|
+| series del universo | **35** |
+| …con alguna página con contenido | **30** (las 5 restantes son el grupo B) |
+| su última CON CONTENIDO, **comparada** | **28 de 30** |
+| **en DOCUMENTOS** (un duplicado sirve el de la 1.ª, y esa 1.ª sí se compara) | **30 de 30** |
+
+Las 2 que faltan en URL son `/casos-de-exito/page/2` y `/recursos/page/2`:
+`D2.4·duplicado` las dos, **y su documento está comparado**.
+
+### El instrumento, y la cuarta frontera que hacía falta inventar
+
+`qa:lh-alcance` publica ahora `alcanceReal.clases.ciegasDetalle` ·
+`queSonLasCiegas` · `paginas.fueraPorPosicionYFrontera` · `fueraQueEsHueco` ·
+`paginas.ultimaConContenido`, **todo derivado** — ningún 55, ningún 65 y ningún
+17 escrito a mano. La autoridad del reparto es
+`medidas/lh-paginas.json` §`paginaDeVerdad`, leída con `leeCongelada` (§regla 6:
+si falta, tira).
+
+**La cuarta frontera —`espejo·no-la-trae`— es la única que cuenta como hueco**, y
+existe precisamente para que las otras tres no se confundan con ella. Con el
+espejo de PÁGINAS vale **0**; con el de FORMAS, **69**. Ese contraste es lo que
+un `noMide` sin número no podía expresar.
+
+**Negativo `5/5`** (`qa:lh-alcance-neg`), con un sabotaje nuevo:
+
+| sabotaje | cae por |
+|---|---|
+| `frontera-sin-explicar` | una página fuera con `vacia` **sin tipo** ⇒ **TIRA** |
+
+> **Lo que ese sabotaje imita no es «falta una página»: es que `lh-serie`
+> renombre `vacia`.** Sin la comprobación de tipo, `!undefined` es `true` y **las
+> 65 vacías se rebucketean a «el espejo no las trae»**: un hueco de **65**
+> inventado, y encima justo en el número que la §regla 14 manda publicar. Es
+> §sondas 4 en su tercera cara — un detector que encuentra MÁS de lo que hay no
+> da error, da un número plausible de más.
+
+**Congeladas** — **dos espejos, dos congeladas por ancho**, que es lo que impide
+que ensanchar borre la evidencia de que el alcance era otro:
+`lh-alcance-{1440,390}.json` (espejo de FORMAS, `lh-spec`: **13** páginas) ·
+`lh-alcance-{1440,390}-todas.json` (espejo de PÁGINAS, `lh-espejo`: **82**).
+
+> ⚠ **Y aquí el acta se escribió mal a la primera, en las dos direcciones —
+> corregido al commitear, derivando contra git en vez de recordando (§regla 9).**
+> Decía *«las cuatro re-escritas con `PISAR=1` … los estados previos siguen en
+> `-2026-08-1{4,5}*.json`»*. Lo derivado:
+>
+> | fichero | qué fue de verdad |
+> |---|---|
+> | `lh-alcance-{1440,390}.json` | **re-escritas** con `PISAR=1` sobre una versión **que estaba en git** ⇒ recuperable |
+> | `lh-alcance-{1440,390}-todas.json` | **NUEVAS** — nunca estuvieron en git, así que no re-escribieron nada… **o sí, y entonces no hay a qué volver** |
+> | `lh-alcance-1440-neg-{control,pagina-sin-pares}.json` | re-escritas **por construcción**, no por `PISAR`: `w()` fuerza `pisar` con `NEG` puesto, y no son medidas del sitio |
+>
+> **La segunda fila es la que importa:** «la sobrescritura es recuperable» era
+> cierto de 2 de 4, y de las otras 2 **git no puede decirlo** — no hay fechado al
+> lado porque un `PISAR=1` no lo deja. Por eso van commiteadas en esta misma
+> tanda: es la única forma de que el **próximo** `PISAR=1` sí lo sea (§regla 5,
+> su otra mitad).
+
+**Los seis intermedios de la sesión, con lo que contienen medido y no supuesto.**
+Se conservan —renombrados con marcador de §regla 7— porque son **la prueba de que
+el `PISAR=1` no movió un solo número**, y esa prueba no se puede reconstruir una
+vez borrada:
+
+| | 1440 | 390 |
+|---|---|---|
+| campos **NUEVOS** (`undefined` → valor) | 28 · 28 · 27 | 28 · 28 · 27 |
+| **valores cambiados** | **0** | **0** |
+| prosa de `meta.noMide` reescrita | 2 · 1 · 0 | 2 · 1 · 0 |
+| `universo` idéntico al final | **sí, los tres** | **sí, los tres** |
+
+Nombres nuevos, que dicen **por qué** no se citan:
+`lh-alcance-{1440,390}-SONDA-EN-CURSO-{1,2}-DECIA-QUE-ENSANCHAR-NO-ALCANZA.json`
+y `…-SONDA-EN-CURSO-3-SIN-suDocumentoSeCompara.json`.
+
+> **El marcador no es cosmético: los dos primeros llevan una frase que esta misma
+> tanda corrigió por FALSA.** Decían *«ensanchar `lh-cmp` NO las alcanza»* de las
+> 122 páginas ciegas del espejo de formas, y **57 de esas 122 tienen contenido y
+> sí se alcanzan** — el final dice `alcanzaría 57 de estas 122`. Con nombre de
+> medida fechada, esa frase se lee como una congelada buena de otro día. Es
+> §regla 7 en su caso menos vistoso: el fichero no venía de un sabotaje, venía de
+> que el instrumento aún no estaba terminado, **y contiene igual una afirmación
+> que no hay que citar**.
+
+**Lo que esto NO cierra**, dicho con su número: las **5** del grupo B siguen
+**sin decisión** (§F3-LH-VACIA-DOS-CAUSAS, aquí debajo), y el clon sigue
+emitiendo **0 de las 65** páginas sin tarjetas.
+
 ## ⛔ F3-LH-VACIA-DOS-CAUSAS · 10 DOCUMENTOS QUE SE VENÍAN CONTANDO COMO «VACÍOS» NO COMPARTEN LA FRONTERA DE `D2.5` (2026-08-14, 71.ª tanda — NADA DECIDIDO)
 
 **Qué se decide aquí: nada.** Se nombra la causa, se escribe el reparto y se

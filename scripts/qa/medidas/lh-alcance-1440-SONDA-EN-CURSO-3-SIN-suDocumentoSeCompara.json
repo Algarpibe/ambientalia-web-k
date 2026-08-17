@@ -100,163 +100,136 @@
         "seriesConAlgunaPaginaConContenido": 30,
         "suUltimaConContenidoComparada": 4,
         "deEllas": 30,
-        "suUltimaConContenidoComparadaEnDOCUMENTOS": 6,
         "noComparadas": [
           {
             "serie": "/blog",
             "pagina": 8,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/casos-de-exito",
             "pagina": 2,
-            "frontera": "D2.4·duplicado",
-            "suDocumentoSeCompara": true
+            "frontera": "D2.4·duplicado"
           },
           {
             "serie": "/etiqueta/calidad-del-aire",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/co2-es",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/contaminantes-atmosfericos",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/cov",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/emisiones-industriales",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/gases-de-efecto-invernadero",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/malos-olores",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/monitorizacion-ambiental",
             "pagina": 11,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/normativa-de-calidad-del-aire",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/particulas-en-suspension",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/sensor-de-calidad-del-aire",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/glosario",
             "pagina": 8,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/preguntas-frecuentes",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos",
             "pagina": 2,
-            "frontera": "D2.4·duplicado",
-            "suDocumentoSeCompara": true
+            "frontera": "D2.4·duplicado"
           },
           {
             "serie": "/recursos/articulos",
             "pagina": 6,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-en-la-construccion",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-minera",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-urbana",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-y-salud",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/industria-y-contaminacion-por-olores",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/petroleo-y-gas",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/productos-kunak",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/scientific-category/articulos-cientificos-y-estudios",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/scientific-category/evaluaciones-independientes",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           }
         ],
         "seriesSinNingunaPaginaConContenido": [

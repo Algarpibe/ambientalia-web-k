@@ -8,7 +8,7 @@
       "el clon: esta sonda no abre una página ni arranca el servidor — 0 de las 13 formas se renderiza aquí",
       "si un par CUADRA: eso es la comparación, no el alcance — de los 16706 pares censados, esta sonda comprueba 0",
       "las páginas que el espejo NO trae: compara 13 de 149 ({\"primera\":13} de {\"primera\":35,\"intermedia\":86,\"última\":28}), y toca 11 de 38 clases — 27 ciegas, 122 páginas dentro",
-      "qué son las 27 clases CIEGAS: 122 de 149 páginas (t=9/5/0/6/7/8/1/2/4/15 tarjetas, 57 con contenido, {\"espejo·no-la-trae\":57,\"D2.5·vacía\":55,\"B·sin-decisión\":5,\"D2.4·duplicado\":5}) — 57 de esas 122 páginas TIENEN CONTENIDO y este espejo no las trae: eso SÍ es hueco de alcance. NO: las 5 familias del espejo (L1 · L2 · L3 · L4 · L5) están TODAS dentro. Lo que falta son PÁGINAS de esas formas, no formas. NO: L4 está en el universo del comparador (1 forma[s]) y toca clase. ensanchar lh-cmp alcanzaría 57 de estas 122; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 44 de 122",
+      "qué son las 27 clases CIEGAS: las de CERO tarjetas (t=9/5/0/6/7/8/1/2/4/15), 122 de 149 páginas, 57 con contenido — {\"espejo·no-la-trae\":57,\"D2.5·vacía\":55,\"B·sin-decisión\":5,\"D2.4·duplicado\":5}. NO son formas sin construir ni L4: ensanchar lh-cmp NO las cubre (no tienen cuerpo; su contrato es P-LH-C7), y el clon emite 44 de 122",
       "por qué `última` es 0 y no 28: las 28 que faltan salen {\"D2.5·vacía\":17,\"D2.4·duplicado\":7,\"espejo·no-la-trae\":4} — de ellas HUECO 4, el resto decisiones firmadas. Y el 0 no mide «¿ve el final de la lista?»: `pos` va sobre la serie SERVIDA y el espejo sobre la que tiene CONTENIDO (difieren en 17 de 35 series). Esa pregunta sale 4 de 30",
       "las formas AUSENTES en el clon: el dominio EFECTIVO es universo − ausentes, y esta sonda no abre el clon — de las 13 formas, 7 tienen ruta emitida",
       "si el UNIVERSO es correcto: el cruce al par con qa:lh-cmp prueba que los dos leen EL MISMO (13 formas · 16706 pares), no que sea el bueno — los dos salen del mismo espejo. Quien lo verifica es la derivación de qa:lh-espejo (documentos − duplicados) con su guarda que los RECALCULA y su sabotaje `duplicado-sin-marcar` en rojo"
@@ -100,163 +100,136 @@
         "seriesConAlgunaPaginaConContenido": 30,
         "suUltimaConContenidoComparada": 4,
         "deEllas": 30,
-        "suUltimaConContenidoComparadaEnDOCUMENTOS": 6,
         "noComparadas": [
           {
             "serie": "/blog",
             "pagina": 8,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/casos-de-exito",
             "pagina": 2,
-            "frontera": "D2.4·duplicado",
-            "suDocumentoSeCompara": true
+            "frontera": "D2.4·duplicado"
           },
           {
             "serie": "/etiqueta/calidad-del-aire",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/co2-es",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/contaminantes-atmosfericos",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/cov",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/emisiones-industriales",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/gases-de-efecto-invernadero",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/malos-olores",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/monitorizacion-ambiental",
             "pagina": 11,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/normativa-de-calidad-del-aire",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/particulas-en-suspension",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/etiqueta/sensor-de-calidad-del-aire",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/glosario",
             "pagina": 8,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/preguntas-frecuentes",
             "pagina": 4,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos",
             "pagina": 2,
-            "frontera": "D2.4·duplicado",
-            "suDocumentoSeCompara": true
+            "frontera": "D2.4·duplicado"
           },
           {
             "serie": "/recursos/articulos",
             "pagina": 6,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-en-la-construccion",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-minera",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-urbana",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/contaminacion-y-salud",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/industria-y-contaminacion-por-olores",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/petroleo-y-gas",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/recursos/articulos/productos-kunak",
             "pagina": 1,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/scientific-category/articulos-cientificos-y-estudios",
             "pagina": 3,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           },
           {
             "serie": "/scientific-category/evaluaciones-independientes",
             "pagina": 2,
-            "frontera": "espejo·no-la-trae",
-            "suDocumentoSeCompara": false
+            "frontera": "espejo·no-la-trae"
           }
         ],
         "seriesSinNingunaPaginaConContenido": [
@@ -710,8 +683,7 @@
           "L4": "NO: L4 está en el universo del comparador (1 forma[s]) y toca clase"
         },
         "decididoPor": "espejo·no-la-trae 57 · D2.5·vacía 55 · B·sin-decisión 5 · D2.4·duplicado 5",
-        "veredicto": "57 de esas 122 páginas TIENEN CONTENIDO y este espejo no las trae: eso SÍ es hueco de alcance",
-        "loQueNoCubre": "ensanchar lh-cmp alcanzaría 57 de estas 122; las otras 65 NO tienen cuerpo que comparar y su contrato es P-LH-C7 (200 · canonical · <title>), no una comparación par a par. Hoy el clon emite 44 de 122",
+        "loQueNoCubre": "ensanchar lh-cmp NO las alcanza: no tienen cuerpo que comparar. Su contrato es P-LH-C7 (200 · canonical · <title>), y hoy el clon emite 44 de 122",
         "emiteElClon": 44
       }
     },

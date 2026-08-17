@@ -14,6 +14,8 @@
  * | (control) | cuenta las 13 formas y **el nº de mixtos es > 0** | «0 mixtos», que es como se lee un censo que no clasificó |
  * | `sin-espejo` | **TIRA** sin el universo | «0 pares», que se lee como «no hay nada que verificar» |
  * | `eje-sin-declarar` | **TIRA** con el camino nombrado | tragárselo y devolver un denominador **de menos** |
+ * | `pagina-sin-pares` | **exit 2** con la página nombrada | que el agregado se la trague sin mover un dígito |
+ * | `frontera-sin-explicar` | **TIRA** al no poder repartir una página fuera | rebucketearla y publicar un **hueco inventado** |
  *
  * **`eje-sin-declarar` es el que protege del daño real.** Si el barrido gana
  * una propiedad y nadie la clasifica, un clasificador con defecto la metería en
@@ -48,6 +50,37 @@ const casos = [
         return "0 MIXTOS: un clasificador que lo mete todo en 'plantilla' daría el denominador más cómodo posible";
       if (j.universo.verificables + j.universo.mixta !== j.universo.pares)
         return `las partes no suman el total: ${j.universo.verificables}+${j.universo.mixta} ≠ ${j.universo.pares}`;
+      /* El TERCER apoyo del universo, y el único con canal propio: cada página
+       * tiene que rendir al menos un par. Un agregado grande absorbe una página
+       * muda sin mover un dígito. */
+      const m = j.minParPorPagina;
+      if (!m) return "sin `minParPorPagina`: el contrato de Evaluadas sólo está aplicado en agregado, y el total absorbe la página muda";
+      if (m.cumplen !== m.de) return `${m.de - m.cumplen} página(s) con menos de ${m.minimo} par y la sonda salió en verde`;
+      if (m.cierraElCodigo !== true) return "`minParPorPagina` no cierra el código de salida: sería un descuadre impreso y no contado (§sondas 1)";
+
+      /* ── §regla 14: las dos líneas que el resumen se traga si no llevan su
+       * cardinal. El control no comprueba SU VALOR —cambia con el espejo— sino
+       * que EXISTAN y que sus sumas cuadren: un reparto que no suma es un cubo
+       * por defecto disfrazado de clasificación. */
+      const ar = j.alcanceReal ?? {};
+      const cl = ar.clases ?? {};
+      const pg = ar.paginas ?? {};
+      if (!Array.isArray(cl.ciegasDetalle)) return "sin `clases.ciegasDetalle`: «toca N de M» se leería como cobertura y las ciegas sin nombrar (§regla 14)";
+      if (cl.ciegasDetalle.length !== cl.ciegas) return `ciegasDetalle ${cl.ciegasDetalle.length} ≠ ciegas ${cl.ciegas}`;
+      const sumaCiegas = cl.ciegasDetalle.reduce((a, c) => a + c.paginas, 0);
+      if (sumaCiegas !== cl.paginasEnClasesCiegas) return `las páginas de ciegasDetalle suman ${sumaCiegas} y paginasEnClasesCiegas dice ${cl.paginasEnClasesCiegas}`;
+      if (!cl.queSonLasCiegas) return "sin `clases.queSonLasCiegas`: la limitación quedaría declarada sin decir QUÉ es (§regla 14, mitad 2)";
+      if (!pg.fueraPorPosicionYFrontera) return "sin el reparto por posición y frontera: «última 4 de 28» se leería como 24 de hueco";
+      for (const [pos, v] of Object.entries(pg.fueraPorPosicionYFrontera)) {
+        const sf = Object.values(v.fuera).reduce((a, b) => a + b, 0);
+        if (v.compara + sf !== v.delUniverso) return `${pos}: compara ${v.compara} + fuera ${sf} ≠ universo ${v.delUniverso}`;
+      }
+      if (typeof pg.fueraQueEsHueco !== "number")
+        return "sin `fueraQueEsHueco`: sin él las decisiones firmadas y el hueco real se cuentan en el mismo montón";
+      if (!pg.ultimaConContenido) return "sin `ultimaConContenido`: `pos` va sobre la serie SERVIDA y nadie lo diría";
+      /* Un reparto que dejara todo en un solo cubo no lo caza ninguna suma. */
+      if (Object.keys(pg.fueraPorFrontera ?? {}).length < 2)
+        return `el reparto por frontera tiene ${Object.keys(pg.fueraPorFrontera ?? {}).length} cubo(s): un clasificador que lo mete todo en uno da un reparto que suma y no dice nada`;
       return null;
     },
   },
@@ -64,6 +97,34 @@ const casos = [
     env: { SABOTAJE: "eje-sin-declarar" },
     exit: 1,
     salidaTiene: /PARES SIN EJE DECLARADO/,
+  },
+  {
+    /**
+     * ⚠ Este sabotaje vacía **UNA** página, no el universo: es el caso que el
+     * agregado se traga. Con 82 páginas y ~10 000 pares, una muda no mueve un
+     * dígito del total — así que si el contrato sólo vive en agregado, esta
+     * corrida saldría **verde**.
+     */
+    etiqueta: "pagina-sin-pares",
+    porQue: "UNA página del universo rinde 0 pares ⇒ exit 2, en vez de desaparecer dentro del agregado",
+    env: { SABOTAJE: "pagina-sin-pares" },
+    exit: 2,
+    salidaTiene: /CERO pares|MENOS de 1 par/,
+  },
+  {
+    /**
+     * ⚠ **El fallo que este sabotaje imita NO es «falta una página»: es que
+     * `lh-serie` RENOMBRE `vacia`.** Sin la comprobación de tipo, `!undefined`
+     * es `true` y **las 65 páginas vacías se rebucketean a «el espejo no las
+     * trae»** — o sea un hueco de 65 inventado, que además es el número que la
+     * §regla 14 manda publicar. Es §sondas 4 en su tercera cara: un detector que
+     * encuentra MÁS de lo que hay no da error, da un número plausible de más.
+     */
+    etiqueta: "frontera-sin-explicar",
+    porQue: "una página fuera con `vacia` sin tipo ⇒ TIRA, en vez de caer en «el espejo no la trae» e inventar hueco",
+    env: { SABOTAJE: "frontera-sin-explicar" },
+    exit: 1,
+    salidaTiene: /sin frontera que lo explique/,
   },
 ];
 

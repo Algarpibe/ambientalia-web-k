@@ -2198,6 +2198,43 @@ Es §*la cobertura declarada al nivel de arriba absorbe todo lo que no se midió
 abajo* con el contenedor movido: aquí el que absorbe **no es la unidad del
 informe, sino el propio campo que declara la limitación.**
 
+**15 · UN CRUCE ENTRE DOS INSTRUMENTOS QUE COMPARTEN PREMISA NO VERIFICA LA
+PREMISA.** (2026-08-14)
+
+Este repo tiene escrito que **cruzar con otro instrumento es obligatorio** antes
+de creerse un recuento nuevo (§sondas 4, *la contradicción con una medida buena
+anterior*). Le faltaba **el límite**, y sin él un cruce se lee como una
+verificación de todo lo que hay debajo:
+
+> **Dos instrumentos que derivan del MISMO fichero concuerdan igual de bien
+> sobre una premisa verdadera que sobre una falsa.** Así que un cruce al par
+> prueba **que los dos leen lo mismo** —que es real y vale— y **no prueba que lo
+> que leen sea correcto**.
+
+Es el complementario de §*un patrón que casa en TODAS tampoco mide nada*, con el
+objeto cambiado: allí el pleno lo fabricaba el selector, aquí **la concordancia
+la fabrica la premisa compartida**.
+
+**Medido, y por eso es regla:** los cruces de la 66.ª tanda (**5 445** pares) y
+de la 68.ª (**10 707 / 10 714**) salieron **al par** sobre un universo que
+llevaba dentro **7 documentos que no son rutas** —`/page/N` de series que no
+paginan, con el canonical apuntando a la página 1— y **2 de ellos dentro del
+conjunto «con contenido»**, invisibles al filtro porque repetían las tarjetas de
+su página 1. Los dos cruces **no se inmutaron**, y no podían: el universo salía
+del mismo espejo en los dos lados.
+
+**Operativamente, y son dos frases separadas — nunca una:**
+
+| lo que se escribe | lo que lo respalda |
+|---|---|
+| «los dos instrumentos leen el MISMO universo» | **el cruce**. Es real |
+| «el universo es N» | **la derivación**, con su guarda y su sabotaje. El cruce no |
+
+Y la consecuencia de redacción: **tras un cruce verde NO se escribe «el universo
+está verificado»**. Se escribe qué lo verifica —una derivación independiente, con
+un negativo que salga rojo si la premisa se rompe— o se dice que nadie lo ha
+verificado.
+
 ## Comandos
 
 ```bash
