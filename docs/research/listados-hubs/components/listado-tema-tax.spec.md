@@ -9,6 +9,49 @@
 > (`articulos-tecnicos`, **1 tarjeta**). La tercera
 > (`evaluaciones-independientes`) **no está medida en `lh-spec`**.
 
+---
+
+## ⚠ QUÉ CONTESTA ESTA SPEC Y QUÉ **NO** — escrito antes de construir (2026-08-17, 73.ª tanda)
+
+**Por qué esto está aquí:** §*una regla INCOMPLETA se lee exactamente igual que
+una completa*. `lh-barra.json` acertó en todo lo que midió y el componente de
+`L1-resources` salió mal igual, porque **nadie le preguntó cuántas filas tiene el
+cuerpo**. La medida no lleva escrito qué preguntas NO se le hicieron, así que se
+escriben a mano. Lo de abajo **se ha derivado hoy** del espejo de PÁGINAS
+(`medidas/lh-espejo-{1440,390}.json`, 82 páginas), que en agosto no existía.
+
+### Lo que la spec YA contesta, y sigue en pie
+
+Régimen · esqueleto de 5 secciones · la fila propia de **1152** con la miga y
+**0 módulos de cuerpo** · el listado por `loop-del-tema` · las dos instancias
+extremas (14 y 1 tarjetas).
+
+### Lo que la spec NO contesta — y hoy sí está medido
+
+| pregunta que nadie le hizo | derivado del espejo de páginas |
+|---|---|
+| **¿cuántas FILAS tiene el cuerpo?** (la que hundió `resources`) | **1**, en las **6** páginas y a los **dos** anchos. No hay trampa de 3-filas aquí |
+| **la tercera instancia** | **medida**: `evaluaciones-independientes`, **8** tarjetas, **2** páginas |
+| **¿cuántas páginas por serie?** | `articulos-cientificos-y-estudios` **3** · `evaluaciones-independientes` **2** · `articulos-tecnicos` **1** — **6 páginas**, no 3 |
+| **¿pinta paginador en las páginas 2 y 3?** | **NO, en ninguna de las 6.** `D2.6`/§LH-C6-L3-SIN-PAGINADOR estaba afirmada **sólo sobre páginas 1**; ahora está sobre `primera`, `intermedia` y `última` |
+| **¿qué hay entre el `h1` y el listado?** | **banda de filtros: 3 botones**, etiqueta `<a>`, **sin título**, y **108.8 px**. `qa:lh-huecos` la marca `enLaSpec: false` — construir sin ella **sube el listado** |
+| **el contenedor del listado** | `div.scientific-list-content`, **w 1192** |
+| **la base del cascarón** | `contenedorTema.y` **225** @1440 · **136.58** @390 |
+
+### Lo que sigue SIN contestar, y hay que decirlo
+
+- **el tamaño de página**: `nTarjetas` es el total de la SERIE (14 en las tres
+  páginas), así que **cuántas tarjetas van por página no está en el espejo** —
+  hay que derivarlo del corpus antes de partir la consulta;
+- **la 3.ª instancia sólo tiene `primera` y `última`**: no hay `intermedia` en
+  `evaluaciones-independientes`, así que toda propiedad exclusiva de una
+  intermedia se apoya en **una sola serie**;
+- ⚠ **no lleva override móvil**, y eso es un hecho medido, no una omisión:
+  `qa:lh-pieles-css` dio **CERO overrides móviles de titular** en `L2`/`L3`/`L5`.
+  **Construirle uno cuadraría a 1440 y sería falso.**
+
+---
+
 ## 0 · El régimen y el esqueleto
 
 | | medido |

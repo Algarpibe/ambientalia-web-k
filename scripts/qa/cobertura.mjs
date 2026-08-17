@@ -223,12 +223,29 @@ for (const cual of ["edar", "petroleo"])
 //  No daba error: daba una matriz **plausible y baja** — §sondas 4, un patrón
 //  que no casa no es un cero, y aquí el cero se leía como «esas rutas no están
 //  comparadas» cuando lo están, y mejor.
-for (const f of [
-  ...congeladas("lh-cmp-1440"),
-  ...congeladas("lh-cmp-390"),
-  ...congeladas("lh-cmp-1440-vivo"),
-  ...congeladas("lh-cmp-390-vivo"),
-]) {
+//
+//  ⚠⚠⚠ **Y VOLVIÓ A PASAR, CON `-todas` (2026-08-17, 73.ª tanda) — porque la vez
+//  anterior se arregló LA INSTANCIA.** Añadir `congeladas("lh-cmp-<ancho>-vivo")`
+//  a mano tapó el caso de julio y dejó la lista igual de frágil: `lh-cmp` nombra
+//  su salida `lh-cmp-<ancho><-todas?><-vivo?>`, o sea **8 bases posibles**, y la
+//  lista enumeraba **4**. Al ensanchar el espejo, las **61 formas** de
+//  `lh-cmp-{1440,390}-todas.json` **no casaron con ninguna** y la matriz salió
+//  IDÉNTICA a la de antes de comparar 82 páginas: `base 38 · filas 13 · módulos 9`.
+//
+//  Otra vez sin error y otra vez plausible. La lección no es «acuérdate de añadir
+//  el sufijo nuevo» —eso es lo que falló— sino §regla 9 aplicada al instrumento:
+//  **el conjunto se DERIVA de lo que hay en `medidas/`, no se escribe.** Un
+//  sufijo futuro entra solo, como las rutas nuevas entran solas en `enlaces.mjs`.
+//
+//  El filtro es el de la §regla 7 al revés: entra todo `lh-cmp-*.json` MENOS lo
+//  que el nombre declara que no es una medida del sitio.
+const ARTEFACTO = /-neg-|SABOTAJE|SONDA-|CONTAMINADA|OBSOLETA|INTERRUMPIDA/;
+const congeladasDe = (prefijo) =>
+  fs
+    .readdirSync(M)
+    .filter((x) => x.startsWith(`${prefijo}-`) && x.endsWith(".json") && !ARTEFACTO.test(x))
+    .sort();
+for (const f of congeladasDe("lh-cmp")) {
   if (!fuente(f)) continue;
   const rutas = Object.values(J(f).formas || {})
     .filter((v) => v && v.estado && v.estado !== "AUSENTE")

@@ -1,5 +1,50 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-COBERTURA-CIEGA · LA MATRIZ NO VEÍA LAS 61 FORMAS COMPARADAS, Y ES LA SEGUNDA VEZ EN EL MISMO BLOQUE (2026-08-17, 73.ª tanda)
+
+**El síntoma:** re-derivada `qa:cobertura` tras comparar **82 páginas** en vez de
+13, la matriz salió **idéntica** — `base 38 · árbol 38 · anchos 22 · filas 13 ·
+módulos 9`. Un número plausible, sin error, y falso.
+
+**La causa, en el instrumento:** `lh-cmp` nombra su salida
+`lh-cmp-<ancho><-todas?><-vivo?>[-FECHA]`, o sea **8 bases posibles**;
+`cobertura.mjs` **enumeraba 4 a mano**. `lh-cmp-{1440,390}-todas.json` no casaban
+con ninguna, así que las **61 formas comparadas** no entraban.
+
+> ⚠ **Y ya había pasado, con `-vivo`, en julio — arreglado AÑADIENDO LA LÍNEA
+> QUE FALTABA.** El comentario del propio bloque lo cuenta entero, con su
+> «§sondas 4: un patrón que no casa no es un cero». Eso es arreglar **la
+> instancia**, y por eso volvió. Arreglado ahora **en la clase**: el conjunto se
+> **deriva** de `medidas/` filtrando los artefactos de la §regla 7, de modo que
+> un sufijo futuro entra solo.
+
+**Antes y después, la misma tarde y sin medir nada nuevo:**
+
+| eje | ciega | **hoy** | Δ |
+|---|---|---|---|
+| base cruda (`h1.y`) | 38 | **92** | **+54** |
+| árbol secciones | 38 | **92** | **+54** |
+| anchos horiz. | 22 | **76** | **+54** |
+| filas | 13 | **67** | **+54** |
+| módulos | 9 | **63** | **+54** |
+
+**El `+54` idéntico en los cinco es la comprobación**: `61 − 7`, o sea las formas
+comparadas hoy menos las que ya estaban contadas. **No es cobertura nueva: es
+cobertura que llevaba dos días medida y sin contar.**
+
+Evidencia del estado ciego, con marcador de §regla 7:
+`medidas/cobertura-SONDA-NO-VEIA-lh-cmp-todas.json`. La canónica se re-congeló
+con `PISAR=1` (su versión anterior está en git, commit `cf253e9`).
+
+**Lo que NO se movió, y por eso no es un barrido en falso:** `docH` **31** ·
+`enlaces` **31** · `comportamiento` **37** · `offsets` **0 comparado** — `lh-cmp`
+no acredita ninguno de los cuatro, y el bloque lo tiene escrito con su razón.
+
+**Regla añadida a §regla 9 de `CLAUDE.md` (7.ª instancia, y la primera EN
+CÓDIGO):** un conjunto enumerado a mano dentro de una sonda es un **dato
+recordado**. La señal para buscarlo es *un array de literales cuyo trabajo es
+reconocer algo*; si su productor puede combinarlos, la lista **nació incompleta**.
+
 ## ✅ F3-LH-REVERIFICADO-82 · LAS TRES VARIANTES DE `L1` AGUANTAN EL ×6.3, Y LA COSECHA DEL ENSANCHE ES DE DATOS: **0 CLASES NUEVAS DE PLANTILLA** (2026-08-17, 73.ª tanda — nada construido)
 
 **Qué se decide aquí: nada de código de la web.** Se re-verifican las 3 variantes

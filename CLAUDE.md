@@ -2002,9 +2002,31 @@ contrario: **afirmaciones que nadie midió y que se usan como si sí.**
 | 5 | «el CPT `solutions` tiene 22 URLs» | **24**, y **dos «singleton» no lo eran** | una decisión de modelado sobre n mal contado |
 | 6 | **«un ±30 observado una vez, SIN FICHERO»** (pre-registro de `cqa6-390`) | **dos ficheros congelados** de otra sonda | habría convertido un **no-defecto en «defecto con ficha»** |
 
-**Los tres primeros son recuentos; los tres últimos son peores**, porque el
+| 7 | **la lista de sufijos de `lh-cmp` escrita a mano en `cobertura.mjs`** (4 bases) | **8 posibles** (`-todas` × `-vivo`) | **61 formas comparadas invisibles** a la matriz: 5 ejes a **−54** cada uno |
+
+**Los tres primeros son recuentos; el 4.º, el 5.º y el 6.º son peores**, porque el
 número mal contado ya había **decidido algo**: qué se modela, qué se cierra, qué
 se persigue.
+
+⚠ **Y el 7.º extiende la regla a un sitio donde no se buscaba: UN CONJUNTO
+ENUMERADO A MANO DENTRO DE UNA SONDA ES UN DATO RECORDADO** (2026-08-17).
+
+> Los seis primeros son afirmaciones **en prosa**. El séptimo es una **lista de
+> literales en código** —los nombres de fichero que un instrumento acepta— y
+> falla igual: envejece **contra** el repo, en silencio, y no da error porque un
+> patrón que no casa **no es un cero** (§sondas 4).
+
+**Lo que lo hace regla y no anécdota es que fue la SEGUNDA vez en el mismo
+bloque.** En julio la lista se quedó corta con `-vivo` y se arregló **añadiendo
+la línea que faltaba**: eso es la instancia, y por eso volvió con `-todas`. La
+forma correcta es la de siempre — **derivar el conjunto** (leer `medidas/` y
+descartar los artefactos de la §regla 7), que es lo que ya hace `enlaces.mjs` con
+las rutas del build: **lo nuevo entra solo**.
+
+> **La señal para buscarlo:** un array de literales cuyo trabajo es *reconocer*
+> algo —sufijos, familias, prefijos, extensiones—. Si el productor de esos
+> nombres puede combinarlos, **la lista está incompleta desde el día que se
+> escribió**; y si el consumidor no falla cuando no casa, no te vas a enterar.
 
 **Cómo se barre, y es siempre lo mismo:**
 

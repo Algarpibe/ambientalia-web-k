@@ -10,6 +10,49 @@
 > **Alcance: 1 instancia — es que sólo hay una.** A diferencia de `L4`, aquí n=1
 > no es una limitación del muestreo: es la población.
 
+---
+
+## ⚠ QUÉ CONTESTA ESTA SPEC Y QUÉ **NO** — escrito antes de construir (2026-08-17, 73.ª tanda)
+
+**Por qué esto está aquí:** §*una regla INCOMPLETA se lee exactamente igual que
+una completa*. Una medida contesta las preguntas que se le hicieron y **su
+fichero no lleva escrito cuáles NO**. Lo de abajo se derivó hoy del espejo de
+PÁGINAS (`medidas/lh-espejo-{1440,390}.json`).
+
+### Lo que la spec YA contesta, y sigue en pie
+
+Régimen (`page-template-case-studies`, sin builder y sin `tb_body`) · las **6**
+secciones con **`tb_footer` 4** · que la 4.ª es la banda CTA **del grupo C** y el
+clon ya la construye (`CtaInmerso`) · que n=1 es la población, no la muestra.
+
+### Lo que la spec NO contesta — y hoy sí está medido
+
+| pregunta que nadie le hizo | derivado del espejo de páginas |
+|---|---|
+| **¿pagina?** | **NO.** `/es/casos-de-exito/` sirve **las 57 tarjetas en UNA página**, y **no pinta paginador** |
+| **¿y `/casos-de-exito/page/2`?** | **no es una ruta**: es `D2.4·duplicado` —canonical a la 1.ª—, y es una de las **2** que colaban por el filtro de contenido. **No se construye** |
+| **¿cuántas FILAS tiene el cuerpo?** | **1**, a los dos anchos |
+| **¿qué hay entre el `h1` y el listado?** | **banda de filtros: 12 botones**, etiqueta `<button>`, **título «Sectores»**, y **210.6 px**. `qa:lh-huecos` la marca `enLaSpec: false` |
+| **el contenedor del listado** | `div.case-list-content`, **w 1192** |
+| **la base del cascarón** | `contenedorTema.y` **458.09** @1440 · **473.08** @390 |
+
+> ⚠ **`L5` es la ÚNICA forma cuya base BAJA al estrechar** (458.09 → 473.08; en
+> `L3` va 225 → 136.58). No es una anomalía a corregir: es su cascarón propio, el
+> del grupo C. **Calibrarla contra la base de las otras formas la rompe a 390.**
+
+### Lo que sigue SIN contestar, y hay que decirlo
+
+- **el filtro por sector NO se construye** — desviación ya declarada: `sector` se
+  decide en **F3-4** (§LH-C6-FILTRO-L5). Los **12 botones** entran como banda
+  **inerte**, y eso se escribe en el registro, no se calla;
+- **n = 1 no puede separar plantilla de campo.** Todo lo de arriba es *lo que
+  hace esta página*; que sea plantilla de una familia **no lo puede decir esta
+  medida**, porque no hay segunda instancia. Si algún día hay otra, se re-mide;
+- ⚠ **no lleva override móvil** — `qa:lh-pieles-css`: **cero** overrides móviles
+  de titular en `L2`/`L3`/`L5`. Construirle uno cuadraría a 1440 y sería falso.
+
+---
+
 ## 0 · El régimen y el esqueleto
 
 | | medido |

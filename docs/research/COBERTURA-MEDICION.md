@@ -1,6 +1,47 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
-> ⛔ **LEE ESTO ANTES DE LA MATRIZ (2026-08-14, 70.ª tanda). LOS EJES SE CUENTAN
+> ✅ **LA CABECERA DE ABAJO YA NO DESCRIBE EL ESTADO (2026-08-17, 73.ª tanda), Y
+> LO QUE LA MOVIÓ NO FUE MEDIR MÁS: FUE QUE LA MATRIZ EMPEZARA A VER LO YA
+> MEDIDO.**
+>
+> `qa:lh-cmp` compara ahora **82 páginas** —`primera` 30 · `intermedia` 48 ·
+> `última` 4—, y de ellas el clon sirve **61**. Pero la matriz seguía dando los
+> números de antes, y la causa era del instrumento:
+>
+> | | |
+> |---|---|
+> | `lh-cmp` nombra su salida | `lh-cmp-<ancho><-todas?><-vivo?>[-FECHA]` ⇒ **8 bases posibles** |
+> | `cobertura.mjs` **enumeraba a mano** | **4** |
+> | ⇒ `lh-cmp-{1440,390}-todas.json` | **no casaban con ninguna**: 61 formas invisibles |
+>
+> **Es la SEGUNDA vez que pasa en el mismo bloque de código.** En julio fue con
+> `-vivo`, y se arregló **añadiendo la línea que faltaba** — o sea la instancia.
+> Arreglado ahora en la clase: el conjunto **se deriva** de `medidas/` filtrando
+> los artefactos de la §regla 7, así que un sufijo futuro entra solo.
+>
+> **Antes y después, misma tarde y sin medir nada nuevo** (evidencia del estado
+> ciego: `medidas/cobertura-SONDA-NO-VEIA-lh-cmp-todas.json`):
+>
+> | eje | ciega | **hoy** | Δ |
+> |---|---|---|---|
+> | base cruda (`h1.y`) | 38 | **92** | **+54** |
+> | árbol secciones | 38 | **92** | **+54** |
+> | anchos horiz. | 22 | **76** | **+54** |
+> | filas | 13 | **67** | **+54** |
+> | módulos | 9 | **63** | **+54** |
+>
+> **El `+54` idéntico en los cinco ejes es la comprobación**: son las **61**
+> formas comparadas menos las **7** que ya estaban contadas. No es una mejora de
+> cobertura, es cobertura que llevaba dos días medida y sin contar.
+>
+> ⚠ **Lo que NO cambia**, y por eso la cabecera de abajo se conserva: `docH`
+> (31), `enlaces` (31) y `comportamiento` (37) **no los acredita `lh-cmp`** —el
+> primero está en su `IGNORAR`, el segundo compara contra el corpus y no contra
+> las rutas del build, y los otros dos no los mira—. Y `offsets` sigue en **0
+> comparado contra el original**.
+
+> ⛔ **LEE ESTO ANTES DE LA MATRIZ (2026-08-14, 70.ª tanda) — **el alcance ya no
+> es 13 sino 82** (arriba), pero el PRINCIPIO sigue entero: LOS EJES SE CUENTAN
 > EN RUTAS, Y UNA RUTA DE LISTADO NO ES UNA PÁGINA.** Declarado con su número en
 > `PENDIENTES-QA.md` §F3-LH-ALCANCE-PAGINA-1 y derivado en `qa:lh-alcance`
 > §`alcanceReal`:
