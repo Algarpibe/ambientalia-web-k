@@ -1,4 +1,83 @@
-# HANDOFF — el comparador mira **13 páginas de 149**, y el verde de la piel B no lo explicaba el alcance: lo explicaba que comparó UNA
+# HANDOFF — las 3 variantes de `L1` aguantan el ×6.3, y la cosecha del ensanche es de DATOS: **0 clases nuevas de plantilla**
+
+> ✅ **Tanda de RE-VERIFICACIÓN, 2026-08-17 (73.ª). CERO líneas de `src/`
+> tocadas.** El comparador pasa de **13 páginas a 82** y se adjudica lo que
+> aparece. `L3` y `L5` **siguen sin construirse** — el corte limpio del encargo
+> está tras el PASO 4 y ahí acaba; lo que sí se hizo es su **precondición**.
+>
+> **Verificación:** `qa:lh-espejo-neg` **3/3** (con `duplicado-sin-marcar` en
+> rojo) · `qa:manifiesto` **363 rutas · 17 familias · 0 vacías · 0
+> desaparecidas** · `qa:cobertura` **363/363** · `npm run check` **exit 0**.
+
+## 0 · Los titulares de esta tanda
+
+> **1 · EL CRUCE DEL ESCALÓN 1 SALE EXACTO AL PAR, Y AUN ASÍ NO BASTA.**
+> `lh-alcance` predijo **82 formas · 61 emitidas · 109 421 pares · 18 117
+> mixtos** @1440 y `lh-cmp` midió lo mismo (@390: 109 470 · 18 166). Pero el
+> cierre son **cuatro afirmaciones con cuatro respaldos**, no una — §sondas 15,
+> escrita en esta fase: los dos instrumentos salen del **mismo** `ESPEJO.paginas`,
+> así que el cruce prueba *que leen lo mismo* y nada más. El **82** lo prueba su
+> derivación (`149 − 7 duplicados = 142`, `142 − 60 vacías = 82`); las **142** son
+> la única con **dos canales independientes** (`lh-paginas` contra el servidor
+> vivo · el corpus congelado de `lh-serie`). **No se escribe «el universo está
+> verificado».**
+
+> **2 · LA COSECHA DEL ×6.3 SON 35 CLASES NUEVAS, Y NINGUNA ES DE PLANTILLA.**
+> Cortado contra las **7 formas que el comparador viejo comparó de verdad**:
+> **400 pares** @1440 (399 @390) = **342 paginador · 58 fecha · 0 cualquier otra
+> cosa**. Ese **0** es el resultado: a 82 páginas, las tres variantes de `L1`
+> renderizan igual de bien la página 7 de una serie que la 1.
+>
+> ⚠ **Y hubo que descartar un corte que daba «0 cosecha»:** *«ninguna clase existe
+> sólo fuera de la página 1»* también es cierto — porque el ensanche añadió **30
+> primeras** donde había 3. Lo que compró no fueron POSICIONES sino **PÁGINAS**.
+
+> **3 · LAS DOS CAUSAS SON DE DATOS.** **(a)** los **3 documentos capturados y no
+> sembrados** (§F3-LH-TERCER-DOCUMENTO, bloqueo **T10**): diferencia simétrica
+> **de los dos lados** — corpus **152** · DB **149** · **3** sin fila · **0**
+> filas fuera del corpus. Dos llevan `monitorizacion-ambiental`, así que la serie
+> tiene **91 entradas y 11 páginas** en el original y **89 y 10** en el clon, **y
+> `/page/11/` no se emite**. La ficha lo tasaba en residuos; **el precio incluye
+> una RUTA QUE NO EXISTE**, invisible a un comparador de páginas 1 *por
+> construcción*. **(b) ⛔ NUEVA:** `medicion-de-gases-en-los-vertederos-de-basura`
+> **es un 301** — sembrado como fila propia con el título, la fecha y la imagen de
+> la otra, y la fecha ajena lo **desordena en dos listados**. Es **`D2.4` un nivel
+> más abajo**, con su control: el otro par de títulos duplicados **no es esto**
+> (postid 13604 y 52220, **200** los dos).
+
+> **4 · LA MATRIZ DE COBERTURA NO VEÍA LAS 61 FORMAS, Y ERA LA SEGUNDA VEZ EN EL
+> MISMO BLOQUE.** `cobertura.mjs` **enumeraba 4** de las **8** bases que `lh-cmp`
+> puede nombrar. Arreglado **en la clase** (se deriva de `medidas/`): cinco ejes
+> suben **+54 cada uno** —`base` 38→**92**, `filas` 13→**67**, `módulos`
+> 9→**63**— **sin medir nada nuevo**; `61 − 7` es la comprobación. §regla 9 gana
+> su **7.ª instancia y la primera EN CÓDIGO**.
+
+## 1 · Lo que queda, y por qué no se hizo aquí
+
+**La apertura natural de la tanda siguiente es UNA operación de datos**, porque
+las dos causas de arriba se arreglan juntas o no cierran nada: sembrar los 3
+documentos (exige desbloquear **T10**) **y** decidir
+§F3-LH-ENTRADA-QUE-ES-UN-301 (quita una ruta: **363 → 362**). Las dos piden
+re-sembrar, `build` y re-medir los dos anchos con su antes/después.
+
+**`L3` y `L5` no se construyeron, y su precondición SÍ está hecha** — el «qué
+contesta esta spec y qué **NO**» vive dentro de `listado-tema-tax.spec.md` e
+`indice-casos.spec.md`, derivado del espejo de páginas. Lo que ninguna decía:
+`L3` **no pinta paginador en ninguna de sus 6 páginas** (así `D2.6` pasa de estar
+afirmada sobre páginas 1 a estarlo sobre las tres posiciones) y su cuerpo tiene
+**1 fila** en las 6 —no hay trampa de 3-filas como en `resources`—; `L5` **no
+pagina** (57 tarjetas en una página) y `/casos-de-exito/page/2` **no es una
+ruta**. Las dos llevan **banda de filtros** que ninguna spec nombraba (3 y 12
+botones; 108.8 y 210.6 px) y **cero override móvil** — construirles uno cuadraría
+a 1440 y sería falso.
+
+**La cola de F3-2 sigue como estaba**, con las 65 páginas sin tarjetas (contrato
+`P-LH-C7`, clon **0 de 65**), las 5 del grupo B sin decisión, `CMS-ORDEN-L2`,
+T10 y los 144 residuos de cascarón.
+
+---
+
+# HANDOFF anterior — el comparador mira **13 páginas de 149**, y el verde de la piel B no lo explicaba el alcance: lo explicaba que comparó UNA
 
 > ⛔⛔ **Tanda de ALCANCE, 2026-08-14 (70.ª). CERO formas construidas, y lo ordenó
 > el ESCALÓN 1 del encargo**, que decía: *«si el PASO 1 dice que `lh-cmp` toma el
