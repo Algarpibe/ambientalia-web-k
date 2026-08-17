@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-17",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
     "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
@@ -12,7 +12,7 @@
     ]
   },
   "recuento": {
-    "entradas-blog": 149,
+    "entradas-blog": 152,
     "terminos-kunakpedia": 37,
     "documentos-cientificos": 23
   },
@@ -20,7 +20,7 @@
     "comparaciones": 125,
     "documentos": 14,
     "cuerposComparados": 14,
-    "poblacion": 209,
+    "poblacion": 212,
     "discrepancias": 0,
     "detalle": []
   },
@@ -50,6 +50,7 @@
       "t3b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` (la rela",
       "t4b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al PDF con ",
       "t9-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) se desen",
+      "t9b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9B · un cierre SIN apertura casada se elimina (el parser lo descarta; l",
       "t4-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustitución, nece",
       "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
       "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",
@@ -5610,6 +5611,101 @@
         "recurso": {
           "slug": "industria-y-contaminacion-por-olores",
           "nombre": "Industria y contaminación por olores"
+        }
+      },
+      {
+        "slug": "kunak-obtiene-el-sello-reconcilia",
+        "seo": {
+          "title": "Kunak obtiene el Sello Reconcilia por su compromiso con la conciliación laboral y la igualdad - Kunak",
+          "ogImage": "/images/uploads/2025/12/Reconcilia.jpg"
+        },
+        "titulo": "Kunak obtiene el Sello Reconcilia por su compromiso con la conciliación laboral y la igualdad",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<a target=\"_blank\"rticle class=\"post-content\">\n<h2>Un reconocimiento al esfuerzo constante de la compañía por construir un entorno laboral equilibrado, inclusivo y sostenible.</h2>\n<p><em>Pamplona, 28 de noviembre de 2025</em> – Kunak Technologies ha recibido el <strong>Sello Reconcilia</strong>, un distintivo que reconoce a las organizaciones comprometidas con la conciliación entre la vida personal, familiar y profesional de sus equipos. El galardón, otorgado por la <strong>Asociación de Mujeres Empresarias y Directivas de Navarra (AMEDNA)</strong>, pone en valor el trabajo continuo de la empresa por impulsar políticas internas que fomentan la igualdad de oportunidades, la flexibilidad y el bienestar en el entorno laboral.</p>\n<p>La entrega tuvo lugar el pasado 25 de noviembre durante el acto oficial celebrado en Pamplona, en el que se distinguió a diecinueve empresas navarras por su compromiso con la conciliación. El evento contó con la participación de <strong>María Carmen Maeztu</strong>, consejera de Derechos Sociales, Economía Social y Empleo del Gobierno de Navarra; <strong>Iñaki Mendióroz</strong>, director general de Economía Social y Empleo; y <strong>Cristina Sotro</strong>, presidenta de AMEDNA.</p>\n<p>En representación de Kunak, <strong>David Cía Andueza</strong> recogió el distintivo y destacó que este reconocimiento “<em>refuerza el propósito de la compañía de avanzar hacia una organización más humana, innovadora y sostenible, donde la tecnología y las personas crecen en equilibrio</em>”.</p>\n<figure style=\"text-align: center; margin: 2rem auto;\"><img decoding=\"async\" style=\"max-width: 100%; height: auto; border-radius: 6px;\" src=\"https://kunakair.com/wp-content/uploads/2025/12/Reconcilia.jpg\" alt=\"David Cía Andueza, en representación de Kunak, recoge el diploma del Sello Reconcilia\" width=\"600\" height=\"400\" /><figcaption style=\"font-size: 14px; color: #555; margin-top: 0.5rem;\">David Cía Andueza, en representación de Kunak, recoge el diploma de la mano de<br />\nCarmen Maeztu, consejera de Derechos Sociales, Economía Social y Empleo del Gobierno de Navarra;<br />\nIñaki Mendióroz, director general de Economía Social y Empleo; y<br />\nCristina Sotro, presidenta de AMEDNA (Asociación de Mujeres Empresarias y Directivas de Navarra).</figcaption></figure>\n<h3>Un sello que impulsa la competitividad y la responsabilidad empresarial</h3>\n<p>El <strong>Sello Reconcilia</strong> tiene como objetivo promover la implantación de <strong>políticas de conciliación en el tejido empresarial navarro</strong>, contribuyendo a mejorar la competitividad y sostenibilidad de las empresas de la Comunidad Foral. Desde AMEDNA se trabaja para sensibilizar y acompañar a las organizaciones en la puesta en marcha de planes que faciliten la conciliación de la vida laboral, familiar y personal, poniendo de relieve los beneficios sociales y económicos que conlleva.</p>\n<p>Este proyecto se desarrolla en colaboración con la <strong>Dirección General de Economía Social y Trabajo del Gobierno de Navarra</strong>, cuyo respaldo refuerza su impacto en el ecosistema empresarial. Durante la entrega de los reconocimientos, la consejera <strong>Mª Carmen Maeztu</strong> subrayó que “las empresas que concilian son más competitivas, porque mejora el tejido empresarial de Navarra y, sobre todo, porque beneficia a las personas, nuestra prioridad más absoluta”.</p>\n<p>La presidenta de AMEDNA, <strong>Cristina Sotro</strong>, destacó por su parte la metodología propia del proyecto y el crecimiento constante de la <strong>red de empresas Reconcilia</strong>, que continúa ampliándose con compañías que apuestan por la conciliación como herramienta de competitividad y transformación social.</p>\n<figure style=\"text-align: center; margin: 2rem auto;\"><img decoding=\"async\" src=\"https://kunakair.com/wp-content/uploads/2025/12/reconcilia.png\" alt=\"\" width=\"375\" height=\"500\" /><figcaption style=\"font-size: 14px; color: #555; margin-top: 0.5rem;\">Diploma del Sello Reconcilia otorgado a Kunak</figcaption></figure>\n<h3>Compromiso de Kunak con las personas y la sostenibilidad</h3>\n<p>Desde Kunak, la obtención del Sello Reconcilia se considera un paso más dentro de su estrategia de <strong>responsabilidad social corporativa</strong>, que integra la sostenibilidad, la igualdad y el bienestar de las personas como ejes esenciales de su modelo empresarial. La compañía mantiene su compromiso con la conciliación efectiva y la creación de entornos laborales donde el talento pueda desarrollarse plenamente.</p>\n<p>Con este reconocimiento, Kunak refuerza su visión de empresa responsable y humana, convencida de que la innovación y la sostenibilidad comienzan dentro de la organización, cuidando a quienes la hacen posible.</p>\n<p>Kunak felicita a todas las empresas que este año han recibido el <strong data-start=\"230\" data-end=\"250\">Sello Reconcilia</strong>, compartiendo con ellas el compromiso de seguir construyendo un tejido empresarial más humano, equitativo y sostenible.</p>\n<figure style=\"text-align: center; margin: 2rem auto;\"><img decoding=\"async\" style=\"max-width: 100%; height: auto; border-radius: 6px;\" src=\"https://kunakair.com/wp-content/uploads/2025/12/Reconcilia2.jpg\" alt=\"Representantes de las diecinueve empresas navarras reconocidas con el Sello Reconcilia 2025, junto a miembros de AMEDNA y del Gobierno de Navarra\" width=\"600\" height=\"450\" /><figcaption style=\"font-size: 14px; color: #555; margin-top: 0.5rem;\">Representantes de las diecinueve empresas navarras reconocidas con el<br />\nSello Reconcilia 2025, junto a miembros de AMEDNA y del<br />\nGobierno de Navarra, durante el acto de entrega celebrado en Pamplona.</figcaption></figure>\n\n\n\t\t\t",
+        "fechaPublicacion": "1 diciembre 2025",
+        "categorias": [
+          {
+            "slug": "noticias",
+            "nombre": "Noticias"
+          }
+        ],
+        "etiquetas": [
+          {
+            "slug": "monitorizacion-ambiental",
+            "nombre": "Monitorización ambiental"
+          }
+        ],
+        "relacionados": false,
+        "fechaActualizacion": "15 junio 2026",
+        "imagenDestacada": {
+          "src": "/images/uploads/2025/12/Reconcilia.jpg",
+          "srcset": "/images/uploads/2025/12/Reconcilia.jpg 1800w, /images/uploads/2025/12/Reconcilia-1280x853.jpg 1280w, /images/uploads/2025/12/Reconcilia-980x653.jpg 980w, /images/uploads/2025/12/Reconcilia-480x320.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+          "width": "1800",
+          "height": "1200"
+        }
+      },
+      {
+        "slug": "descarga-catalogo-kunak",
+        "seo": {
+          "title": "Catálogo Kunak AIR - Kunak",
+          "ogImage": "/images/uploads/2024/04/kunak-air-catalogue.jpg"
+        },
+        "titulo": "Catálogo Kunak AIR",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<p>Presentamos nuestro nuevo catálogo sobre las soluciones Kunak AIR para la monitorización medioambiental.</p>\n<p>En este nuevo catálogo, hemos ampliado la información sobre nuestras estaciones de <span class=\"glossary-tooltip\">calidad del aire<span class=\"tooltip-content\">La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen...<br><a href=\"/calidad-del-aire\" class=\"glossary-link\">Leer más</a></span></span> (<a href=\"/monitor-calidad-aire\">Kunak AIR Pro</a> y Kunak AIR Lite), los <a target=\"_blank\" href=\"https://kunakair.com/es/sensor-de-calidad-del-aire/\">cartuchos inteligentes</a>, las nuevas pruebas de precisión de los sensores, etc.</p>\n<p>También hemos rediseñado la sección en la que explicamos nuestro exclusivo proceso para garantizar la calidad y el control de los datos, de modo que resulte más fácil comprender cómo esto nos permite ofrecer las mediciones más precisas del mercado, como demuestran los múltiples estudios y evaluaciones realizados por los principales expertos mundiales en calidad del aire.</p>\n<p>Si quieres acceder al catálogo completo <a target=\"_blank\" href=\"https://kunakair.com/es/descarga-catalogo/\"><strong>clic aquí</strong></a>.</p>\n\n\t\t\t",
+        "fechaPublicacion": "26 abril 2024",
+        "categorias": [
+          {
+            "slug": "noticias",
+            "nombre": "Noticias"
+          }
+        ],
+        "etiquetas": [
+          {
+            "slug": "monitorizacion-ambiental",
+            "nombre": "Monitorización ambiental"
+          }
+        ],
+        "relacionados": false,
+        "fechaActualizacion": "15 junio 2026",
+        "imagenDestacada": {
+          "src": "/images/uploads/2024/04/kunak-air-catalogue.jpg",
+          "srcset": "/images/uploads/2024/04/kunak-air-catalogue.jpg 1800w, /images/uploads/2024/04/kunak-air-catalogue-1280x853.jpg 1280w, /images/uploads/2024/04/kunak-air-catalogue-980x653.jpg 980w, /images/uploads/2024/04/kunak-air-catalogue-480x320.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+          "width": "1800",
+          "height": "1200",
+          "alt": "Kunak AIR catalogue 2024"
+        }
+      },
+      {
+        "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+        "seo": {
+          "title": "Webinar: Control de la contaminación atmosférica en la industria - Kunak",
+          "description": "En este seminario web hemos analizado cómo es posible obtener datos precisos y en tiempo real sobre las emisiones industriales.",
+          "ogImage": "/images/uploads/2023/06/contaminacion-del-aire-en-industria.jpg"
+        },
+        "titulo": "Webinar: Control de la contaminación atmosférica en la industria – Grabación y preguntas y respuestas",
+        "cuerpo": "\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<h1></h1>\n<h1 style=\"text-align: center;\"><span style=\"color: #0075c9;\">Grabación del seminario web</span></h1>\n<p>&nbsp;</p>\n<p><iframe title=\"Webinar Control de la contaminación atmosférica en la industria - Kunak\" width=\"1080\" height=\"608\" src=\"https://www.youtube.com/embed/5JWjXFxeW_I?feature=oembed\"  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<h1 style=\"text-align: center;\"><span style=\"color: #0075c9;\">Preguntas y respuestas</span></h1>\n<h4></h4>\n<h4>Mi empresa trabaja en minería y particularmente en las postulaciones a los distintos proyectos de monitoreo exigen que los equipos estén certificados y la curva de calibración respecto a equipos de masa (como la BAM-1020). Según una de las diapositivas, el equipo está en proceso de certificación.</h4>\n<h3>¿Cuándo estará certificado el equipo? ¿Tendrán curvas de calibración? De ser así, ¿respecto a qué equipo de monitoreo oficial?</h3>\n<p>El sensor de partículas no tiene curvas de calibración. Kunak corrige el efecto de la humedad que sufren estos sensores con su algoritmo propio, sin necesidad de adaptar y secar la muestra. Una vez instalados en campo, se pueden llegar a comparar con otro equipo de referencia, ya sea un equivalente como BAM, Palas o GRIM, o gravimétrico.</p><p>\n    <div class=\"calls one-column\" style='background-image: url(/images/uploads/2024/11/banner-suscripcion.svg);'>\n        <div class=\"calls-content\">\n                        <div class=\"calls-content-inner\">\n                <p class=\"calls-title\">Innovación en calidad del aire a 1 clic</p> <!-- Mostrar el título del CTA -->\n                <div class=\"calls-text\"><p>¡Mantente informado sobre el aire que respiras!</p>\n<p>Suscríbete a nuestra newsletter para recibir las últimas novedades en tecnología de monitorización ambiental, estudios sobre calidad del aire y más.</p>\n</div>\n                \t                <div class=\"calls-buttons\">\n\t                    \t                        <span class=\"calls-button kunak-obfuscated-link convertible\" role=\"link\" tabindex=\"0\" data-url=\"aHR0cHM6Ly9rdW5ha2Fpci5jb20vZXMvc3VzY3JpYmV0ZS8=\" data-variante=\"boton\">\n\t                            ¡Me apunto!\t                        </span>\n\t                    \t                </div>\n\t                        </div>   \n            \n        \n        </div>\n    </div>\n\n    </p></p>\n<p>Tras la comparativa se puede aplicar un factor de corrección en función del tipo de partícula de la localización específica donde se instale el dispositivo. Actualmente, contamos con la certificación MCERTS para nuestro sensor de partículas.</p>\n<p>Nuestra precisión en la medición de partículas se asemeja a la de equipos equivalentes como el Palas Fidas.</p>\n<p>&nbsp;</p>\n<h3>Me gustaría que nos comentaran más sobre la &#8216;Herramienta avanzada de rosas de polución&#8217;. Suena interesante, pero me gustaría saber por qué es avanzada y si son solo gráficos o entrega algún análisis (con IA o algo que Uds. hayan desarrollado)</h3>\n<p>La rosa de polución es una herramienta que indica la dirección de la contaminación, respecto a la dirección e intensidad del viento (nuestros equipos pueden incorporar un anemómetro). Esta herramienta está incluida en nuestro software avanzado <span class=\"ui-provider cbk cbl c d e f g h i j k l m n o p q r s t cbm cbn w x y z ab ac ae af ag ah ai aj ak\" dir=\"ltr\"><a href=\"/software-de-medicion-calidad-del-aire\">Kunak AIR Cloud</a> </span> de analíticas. Kunak ofrece diferentes paquetes de software dependiendo de las necesidades del cliente.</p>\n<p>Nuestra herramienta de reportes automáticos genera informes de análisis de la <span class=\"glossary-tooltip\">calidad del aire<span class=\"tooltip-content\">La calidad del aire se refiere al estado del aire que respiramos y su composición en términos de contaminantes presentes en la atmósfera. Se considera buen...<br><a href=\"/calidad-del-aire\" class=\"glossary-link\">Leer más</a></span></span> de manera automática, entre esos, la rosa de polución, ofreciendo una herramienta muy útil a los profesionales de medioambiente.</p>\n<p>&nbsp;</p>\n<h3>¿Disponen de representantes en Ecuador?</h3>\n<p>Actualmente, Kunak cuenta con una amplia red de distribuidores en muchos países del mundo. Si están interesados en convertirse en distribuidores de Kunak no duden en ponerse en contacto con nosotros.</p>\n<p>&nbsp;</p>\n<h3>¿Cómo son los protocolos de comunicación para el equipo para la transmisión de datos? ¿Tiene una redundancia? ¿Qué autonomía tiene con panel solar y batería?</h3>\n<p>El equipo se puede comunicar vía celular, Modbus o Ethernet.</p>\n<p>La autonomía del equipo funcionando con panel solar es de una a dos semanas, según su configuración.</p>\n<p>&nbsp;</p>\n<h3>Dentro del sensor de COV ¿tienen sensor para Benceno?</h3>\n<p>Nuestro sensor de COV detecta Benceno, entre otros muchos compuestos. No existe actualmente tecnología basada en sensores que puedan medir únicamente benceno. Tendría que utilizar analizadores para esta aplicación.</p>\n<p>&nbsp;</p>\n<h3>En relación a vuestro proyecto en la mina de carbón, la diferencia en los datos del Kunak <a href=\"/monitor-calidad-aire\">AIR Pro</a> en comparación con la instalación certificada ¿es siempre igual en %?</h3>\n<p>Kunak ha recibido numerosos premios y reconocimientos en las evaluaciones independientes en las que ha participado, debido a su excelente calidad del dato en contra de estaciones de referencia. En el caso particular de la mina, las estaciones Kunak fueron colocadas en zonas lejanas a las estaciones de referencia, por lo que los datos no se pueden comparar.</p>\n<p>&nbsp;</p>\n<h3>¿Tienen equipos portátiles para el monitoreo de partículas en el aire para el control de la polución en fajas transportadoras de mineral?</h3>\n<p>Nuestros equipos están pensados para monitorización en fijo, ya que, al moverlos, los cartuchos de gases tienen que pasar por un periodo de estabilización y se pueden perder datos en ese intervalo de horas. <span class=\"ui-provider cbk cbl c d e f g h i j k l m n o p q r s t cbm cbn w x y z ab ac ae af ag ah ai aj ak\" dir=\"ltr\">No obstante, los equipos Kunak AIR pueden ser reubicados de forma sencilla, pudiendo ser utilizados para mediciones en diferentes localizaciones, dejando el tiempo suficiente para que se estabilicen los sensores y puedan tomar medidas de forma regular.</span></p>\n<p>Nuestra tecnología está especialmente diseñada para la monitorización en ambientes con alta cantidad de material particulado como minas o cementeras, por lo que nuestros equipos son perfectos para su instalación en fajas transportadoras de mineral.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n\n\t\t\t",
+        "fechaPublicacion": "16 junio 2023",
+        "categorias": [
+          {
+            "slug": "articulos",
+            "nombre": "Artículos"
+          }
+        ],
+        "etiquetas": [],
+        "relacionados": true,
+        "fechaActualizacion": "17 enero 2024",
+        "imagenDestacada": {
+          "src": "/images/uploads/2023/06/contaminacion-del-aire-en-industria.jpg",
+          "srcset": "/images/uploads/2023/06/contaminacion-del-aire-en-industria.jpg 1800w, /images/uploads/2023/06/contaminacion-del-aire-en-industria-1280x853.jpg 1280w, /images/uploads/2023/06/contaminacion-del-aire-en-industria-980x653.jpg 980w, /images/uploads/2023/06/contaminacion-del-aire-en-industria-480x320.jpg 480w",
+          "sizes": "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw",
+          "width": "1800",
+          "height": "1200",
+          "alt": "Webinar: Control de la contaminación atmosférica en la industria"
+        },
+        "recurso": {
+          "slug": "seminarios-web",
+          "nombre": "Seminarios Web"
         }
       }
     ],

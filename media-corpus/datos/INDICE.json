@@ -1,66 +1,48 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-17",
     "que": "La media de los CAMPOS de las 5 colecciones de la tanda de DATOS. Índice PROPIO: los de `media-corpus/` y `fase-3/` no se mueven.",
-    "derivacion": "medidas/media-canales.json → `origenesACapturar`, derivado contra la guarda que PARA (apps/web/public) y con los canales enumerados contra el esquema",
+    "derivacion": "medidas/media-canales-2026-08-17.json → `origenesACapturar`, derivado contra la guarda que PARA (apps/web/public) y con los canales enumerados contra el esquema",
     "etiqueta": "secuencial · 500 ms · nunca en paralelo · una petición por fichero, también entre corridas",
     "porQue": "sin esto el original SIGUE en el camino crítico: 0 de las 56 imágenes de `articulos-kb` estaban capturadas.",
     "fuera": "las VARIANTES (el pipeline reproduce su dimensión: 73/73) y 0 ruta(s) de DIRECTORIO que no son un fichero. El CASCARÓN **NO** se excluye: esa partición no se ha medido para estas páginas y el defecto se pone en la dirección que grita."
   },
   "resumen": {
-    "pedidos": 5,
-    "nuevos": 5,
+    "pedidos": 3,
+    "nuevos": 3,
     "reutilizados": 0,
     "fallos": 0,
     "ausentesEnOrigen": 0,
-    "bytes": 151301
+    "bytes": 804254
   },
   "errores": [],
   "ausentesEnOrigen": [],
   "ficheros": {
-    "2023/01/Carbon_dioxide-1.jpg": {
-      "url": "https://kunakair.com/wp-content/uploads/2023/01/Carbon_dioxide-1.jpg",
-      "fichero": "2023/01/Carbon_dioxide-1.jpg",
-      "bytes": 12312,
-      "sha256": "402246fe89636ad138331f5d9755c3af29c3284fa09eaa497b3214599a6d11b6",
+    "2023/06/contaminacion-del-aire-en-industria.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria.jpg",
+      "fichero": "2023/06/contaminacion-del-aire-en-industria.jpg",
+      "bytes": 438960,
+      "sha256": "8b4b389da257e7afd70d04df39ad7c50109db3550c3e708f6ecb4050527b9904",
       "tipo": "image/jpeg",
-      "capturado": "2026-08-13",
+      "capturado": "2026-08-17",
       "referencias": 1
     },
-    "2023/01/Nitric_oxide_cartucho.jpg": {
-      "url": "https://kunakair.com/wp-content/uploads/2023/01/Nitric_oxide_cartucho.jpg",
-      "fichero": "2023/01/Nitric_oxide_cartucho.jpg",
-      "bytes": 13149,
-      "sha256": "df18d307b83fcd1b229e7246f7f8b8ced55fc07ab459730f5499e7b815fa64bd",
+    "2024/04/kunak-air-catalogue.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue.jpg",
+      "fichero": "2024/04/kunak-air-catalogue.jpg",
+      "bytes": 165271,
+      "sha256": "73b12f6725ec59b517de9ef1c0fd56ebb02a73d312b741b6aeac8cf7e2316784",
       "tipo": "image/jpeg",
-      "capturado": "2026-08-13",
+      "capturado": "2026-08-17",
       "referencias": 1
     },
-    "2023/02/Nitreogen_dioxide.jpg": {
-      "url": "https://kunakair.com/wp-content/uploads/2023/02/Nitreogen_dioxide.jpg",
-      "fichero": "2023/02/Nitreogen_dioxide.jpg",
-      "bytes": 11328,
-      "sha256": "257f8c0bc73b493dbd94ed8191cd1d4d436200d535a0249cbda8ebcbe2fcb13a",
+    "2025/12/Reconcilia.jpg": {
+      "url": "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia.jpg",
+      "fichero": "2025/12/Reconcilia.jpg",
+      "bytes": 200023,
+      "sha256": "1eec0b78eccfc7fb561eb9234678058f2f8c1dfdc83e0d4d6a80cf737ae625d2",
       "tipo": "image/jpeg",
-      "capturado": "2026-08-13",
-      "referencias": 1
-    },
-    "2023/02/Sulphur-dioxide.jpg": {
-      "url": "https://kunakair.com/wp-content/uploads/2023/02/Sulphur-dioxide.jpg",
-      "fichero": "2023/02/Sulphur-dioxide.jpg",
-      "bytes": 11734,
-      "sha256": "6f863bb072edb12173c1fe1a8ef2370b9488757a1801100cd6a234bf8ce9516b",
-      "tipo": "image/jpeg",
-      "capturado": "2026-08-13",
-      "referencias": 1
-    },
-    "2023/03/CH4.jpg": {
-      "url": "https://kunakair.com/wp-content/uploads/2023/03/CH4.jpg",
-      "fichero": "2023/03/CH4.jpg",
-      "bytes": 102778,
-      "sha256": "4c8f3ce1bbf5fef7aa62a2388e6d66f28e40077f459f039677d06ad8553f3f38",
-      "tipo": "image/jpeg",
-      "capturado": "2026-08-13",
+      "capturado": "2026-08-17",
       "referencias": 1
     }
   }
