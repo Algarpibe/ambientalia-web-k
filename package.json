@@ -41,6 +41,8 @@
     "qa:mono": "node scripts/qa/mono-cmp.mjs",
     "qa:dos-rutas": "node scripts/qa/dos-rutas.mjs",
     "qa:clon-base": "node scripts/qa/clon-base.mjs",
+    "qa:clon-estados": "node scripts/qa/clon-estados.mjs",
+    "qa:clon-estados-neg": "node scripts/qa/clon-estados.neg.mjs",
     "qa:ruido": "node scripts/qa/ruido.mjs",
     "qa:estados-390": "node scripts/qa/estados-390.mjs",
     "qa:clase-censo": "node scripts/qa/clase-censo.mjs",
