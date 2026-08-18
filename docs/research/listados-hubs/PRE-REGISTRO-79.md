@@ -66,3 +66,59 @@ selectores de título muertos (`.case-titulo`/`.scientific-titulo` →
 Un comparador que compara un campo más **no es comparable con el de ayer** sin
 decir cuál campo entró. Al cerrar se publica **el reparto por campo**, nunca el
 total a secas.
+
+---
+
+# RESULTADO — contrastado contra lo pre-registrado (2026-08-19, @1440)
+
+## Lo que se cumplió: las 8 predicciones por forma, incluida la que más importaba
+
+| forma | predicho | medido | |
+|---|---|---|---|
+| `L1-blog` | **no se mueve** | 3/3 → **3/3** | ✅ |
+| `L1-etiqueta` | **no se mueve** | 6/6 → **6/6** | ✅ |
+| `L3-sci` | pasa a tener dato | 0/4 → **4/4** | ✅ |
+| `L2-glosario` | pasa a tener dato | 0/3 → **3/3** | ✅ |
+| `L2-faqs` | pasa a tener dato | 0/3 → **3/3** | ✅ |
+| `L1-resources` hijo · padre | **sin extracto** (son de `articulos`) | 0/4 → 0/4 · 0/6 → 0/6 | ✅ |
+| `L4` | sin predicción | 0/3 → 0/3 | — |
+| **`L5-casos`** | **sigue null** | 0/3 → **0/3** | ✅ **disparador (c) NO dispara** |
+
+`L5` confirma por un **segundo canal** —el original vivo— lo que la 78.ª midió
+sobre 114 instancias del corpus: **su tarjeta no lleva extracto**.
+
+## ⚠ LO QUE EL PRE-REGISTRO NO ANTICIPÓ, Y ES LA MAYORÍA DEL MOVIMIENTO
+
+**El arreglo de la 78.ª tocó TRES roles, no dos.** Este pre-registro nombró
+`extracto` y `titulo`, y **se dejó `meta`**: la 78.ª le añadió
+`.case-taxonomies` y `.scientific-taxonomies`. Son **273 de los 358** pares
+movidos — la mitad más grande, y la que este documento daba por inexistente.
+
+> **Es §*una afirmación de que un discriminador no existe se escribe con la lista
+> de canales que se miraron*, cometida sobre un pre-registro.** Enumerar «qué
+> cambió el instrumento» de memoria en vez de derivarlo del diff es §regla 9, y
+> aquí se pagó con una predicción incompleta que se habría leído como cumplida.
+>
+> **La derivación que faltaba cuesta una línea:** `git diff` del commit del
+> arreglo sobre `lh-barrido.mjs`, que nombra los tres roles.
+
+## El reparto de las 358 diferencias, con su causa
+
+| clase | pares | qué es |
+|---|---|---|
+| **campo nuevo del instrumento** (`meta.*` en `L3`/`L5`) | **273** | el rol `meta` pasa de `null` a casar — **no es deriva ni defecto** |
+| `paginador.piezasTotales` · `topeDePiezas` | **12** | campos que añadió la 75.ª al declarar el tope (§sondas 4, 4.ª cara) |
+| `titulo.sel` `h3` → `.scientific-title`/`.case-title` | **7** | el arreglo de los muertos. **NO-OP en geometría**: mismo `rect` y mismo texto, comprobado par a par |
+| `meta: null → undefined` | **7** | consecuencia de la primera fila: el camino deja de ser hoja |
+| **DERIVA DEL ORIGINAL — `Δ+3` en el pie** | **35** | `pie.rect.h 590.75 → 593.75`, propagado a `docH` y a las `y` de abajo. En `L1-blog`(5) · `L1-etiqueta`(10) · `L1-resources-hijo`(10) · `-padre`(10) |
+| **DERIVA DEL ORIGINAL — `L2`, grande** | **24** | `L2-glosario` `docH 1933 → 2242` (**+309**), `pie.rect.h` **+308.64**, y `paddingBottom "0px" → "57.5938px"` en el cascarón. Ídem `L2-faqs` |
+
+## ⛔ Y por tanto: EL DISPARADOR (a) DISPARA
+
+**Hay deriva del original en formas que el arreglo NO PUEDE mover.** `L1-blog` y
+`L1-etiqueta` casaban 3/3 y 6/6 antes y después, y aun así traen **15 pares
+movidos** entre las dos: el pie del original creció **+3 px** entre el
+2026-08-11 y hoy, y `L2` se movió **+309**.
+
+**Son dos causas y sólo una es mía.** Por el escalón del encargo, esto se
+**declara con su número y NO se construye encima**.

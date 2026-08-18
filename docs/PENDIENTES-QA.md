@@ -293,6 +293,49 @@ uno **nuevo** sí cierra el código — es un inventario con fecha, no una amnis
 `p.resources-categories a`, que **no está en la lista** de `categoria`. Sin
 cardinal todavía: no se ha medido cuántas tarjetas pierde.
 
+## ⛔ F3-LH-DERIVA-DEL-ORIGINAL-AGOSTO · EL SITIO SE MOVIÓ ENTRE EL 11 Y EL 19 — Y NO ES DEL CLON (2026-08-19, 79.ª tanda)
+
+**Dispara el disparador (a) del encargo.** Al re-congelar `lh-spec` contra el
+original vivo, hay pares movidos **en formas que el arreglo del selector NO PUEDE
+mover**, y por tanto sólo pueden venir del original.
+
+### El discriminador, pre-registrado antes de medir
+
+`L1-blog` y `L1-etiqueta` tenían el `extracto` **al 100 %** en el espejo caducado
+(3/3 y 6/6 en `lh-spec`; 24/24 y 105/105 en el corpus). El arreglo **sólo añade
+extracto donde había `null`**, así que en esas dos formas es NO-OP por
+construcción. **Lo que se mueva ahí es del original.**
+
+### Lo medido @1440 — deriva separada del arreglo
+
+| clase | pares | qué |
+|---|---|---|
+| **`Δ+3` en el pie** | **35** | `pie.rect.h` **590.75 → 593.75**, propagado a `docH` y a las `y` de todo lo que va debajo. En `L1-blog` (5) · `L1-etiqueta` (10) · `L1-resources-hijo` (10) · `L1-resources-padre` (10) |
+| **`L2`, grande** | **24** | `L2-glosario` `docH` **1933 → 2242** (**+309**) · `pie.rect.h` **+308.64** · `cascaron.1.rect.h` **+55.59** · `paddingBottom` **`0px` → `57.5938px`**. Ídem `L2-faqs` |
+
+### Lo que esto significa para lo YA construido, y es la parte que muerde
+
+> **El clon está calibrado contra el pie de `590.75`.** Si el original sirve hoy
+> `593.75`, las rutas de `L1` ya verificadas van a mostrar un **−3 sistemático**
+> que **no es una regresión del clon**: es el original que se movió. Recalibrar
+> ahí fabricaría una FAMILIA DE CALIBRACIÓN.
+
+**Y el `+309` de `L2` no afecta a nada construido** —`L2` está AUSENTE en el
+clon, bloqueada por `CMS-ORDEN-L2`—, pero **sí cambia lo que su spec dice**: la
+spec de `L2` se redactó desde el espejo del 11 de agosto.
+
+### ⚠ Lo que NO se puede decidir con esto, y por qué
+
+**No hay campaña de ruido cerrada para estas rutas** (`SP-T5` y `SP-K4`, abiertas
+en las dos specs). Así que **no se puede separar «el sitio cambió» de «el sitio
+oscila»**: el `+3` podría ser un despliegue o un segundo estado. §Notas de
+método: *sin campaña cerrada para esa ruta, un residuo pequeño no es «limpio»:
+es SIN PROBAR*.
+
+**Se declara con su número y NO se construye encima.** Lo que decide si es
+cambio o estado es una campaña de ráfagas sobre estas rutas, que es trabajo con
+su propio encargo.
+
 ## ✅ F3-LH-CABLEADO-DEL-ESPEJO · SE LIBERA EL NOMBRE CANÓNICO — Y LOS PUNTOS DE ENTRADA NO ERAN 6, ERAN 16 (2026-08-19, 79.ª tanda)
 
 **El PASO 0 de la tanda tenía dos salidas y la decisión la tomó una derivación,
