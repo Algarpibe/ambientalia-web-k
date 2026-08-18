@@ -567,7 +567,12 @@ for (const e of LIB_CASOS.CASOS_PUBLICADOS) {
   const d = casos.get(e.slug);
   if (!d) { control.push({ slug: e.slug, campo: "—", leido: null, esperado: "existe" }); continue; }
   const esp = SABOTAJE === "control-roto" ? { ...e, titulo: `${e.titulo} ✂` } : e;
-  for (const c of ["titulo", "cliente", "imagenCabecera"]) { cmp(e.slug, c, d[c], esp[c]); nControl++; }
+  /* `fechaPublicacion` entra aquí en la 82.ª: la transcripción a mano existe
+     porque el TIPO la exige, y una transcripción que nadie compara es peso
+     muerto (§sondas 3, *documentado no es conectado*). Con ella, el ISO que el
+     extractor lee del JSON-LD queda contrastado contra 4 valores escritos a
+     mano — que es justo lo que el control existe para hacer. */
+  for (const c of ["titulo", "cliente", "imagenCabecera", "fechaPublicacion"]) { cmp(e.slug, c, d[c], esp[c]); nControl++; }
   for (const c of ["title", "description", "ogImage"]) { cmp(e.slug, `seo.${c}`, d.seo[c], esp.seo[c]); nControl++; }
   cmp(e.slug, "prefijo", d.prefijo, esp.prefijo); nControl++;
   cmp(e.slug, "sectores", d.sectores?.map((t) => t.slug), esp.sectores?.map((t) => t.slug)); nControl++;

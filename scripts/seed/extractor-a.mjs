@@ -696,6 +696,9 @@ for (const e of LIB.TERMINOS_KUNAKPEDIA) {
   if (!d) { control.push({ slug: e.slug, campo: "—", leido: null, esperado: "existe" }); continue; }
   cmp(e.slug, "titulo", d.titulo, e.titulo);
   cmp(e.slug, "tituloMiga", d.tituloMiga, e.tituloMiga);
+  /* Añadido en la 82.ª por la misma razón que en `extractor-c`: el tipo exige
+     la fecha, así que la transcripción existe — y si nadie la compara, no mide. */
+  cmp(e.slug, "fechaPublicacion", d.fechaPublicacion, e.fechaPublicacion);
   cmpRico(e.slug, "cuerpo", d.cuerpo, e.cuerpo);
 }
 const docs = porSlug("documentos-cientificos");
@@ -722,7 +725,7 @@ for (const col of GRUPO_A) console.log(`  ${col.padEnd(24)} ${String(salida[col]
 if (sinCuerpo.length) console.log(`\n  ⛔ ${sinCuerpo.length} sin cuerpo en corpus/transformado: ${sinCuerpo.slice(0, 4).join(" · ")}`);
 
 /* 12 · 3 · 8 campos por documento — el `+1` de cada uno es `cuerpo`. */
-const nControl = LIB.ENTRADAS_BLOG.length * 12 + LIB.TERMINOS_KUNAKPEDIA.length * 3 + LIB.DOCUMENTOS_CIENTIFICOS.length * 8;
+const nControl = LIB.ENTRADAS_BLOG.length * 12 + LIB.TERMINOS_KUNAKPEDIA.length * 4 + LIB.DOCUMENTOS_CIENTIFICOS.length * 8;
 const nRicos = LIB.ENTRADAS_BLOG.length + LIB.TERMINOS_KUNAKPEDIA.length + LIB.DOCUMENTOS_CIENTIFICOS.length;
 console.log(`\n  CONTROL · ${nControl} comparaciones contra la transcripción a mano ` +
   `(${nRicos} de ellas son el CUERPO RICO): ` +

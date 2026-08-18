@@ -73,3 +73,42 @@ export function BotonTermino({ href, actual, children }: { href: string; actual:
     </a>
   );
 }
+
+/**
+ * Un botón de la banda de `L5`: un **`<button>` con `data-filter`**, no un `<a>`.
+ *
+ * ⚠ **La etiqueta es parte de la medida, no una elección**: `qa:lh-huecos` la
+ * censó y en `L3` son `<a>` y aquí `<button>`. Emitir un `<a>` «porque enlaza»
+ * sería inventar marcado — y además no enlaza: **el filtro no cambia la URL**.
+ *
+ * ── ⛔ ENTRA INERTE, Y ES UNA DESVIACIÓN DECLARADA ────────────────────────
+ * El original esconde tarjetas sin recargar; el clon **no**. Lo que se declara
+ * es *«sin FILTRADO»*, **no «sin BANDA»** (§SP-K7): la banda es geometría —210.6
+ * px entre el `h1` y el listado— y omitirla sería un defecto de 264.6 px con una
+ * desviación por coartada. El comportamiento se decide en **F3-4**
+ * (§LH-C6-FILTRO-L5), porque consume la relación `caso → sector` como criterio
+ * de visibilidad.
+ *
+ * Sin `onClick` no hace falta `"use client"`: es un `<button>` sin manejador, que
+ * es exactamente lo que se quiere servir hoy. Cuando F3-4 lo active, el
+ * componente que lo haga interactivo es el que lleva la directiva.
+ *
+ * ⚠ **Y NO lleva `type`**: el original sirve `<button class="button is-checked"
+ * data-filter="*">`, sin atributo. Ponerle `type="button"` «porque es lo
+ * correcto» es inventar marcado — la regla es transcribir lo servido, no lo que
+ * un linter prefiere. Fuera de un `<form>` el defecto de `type` no cambia nada
+ * de lo que el navegador hace, y el atributo sí sería un par de más.
+ */
+export function BotonSector({ filtro, activo, children }: {
+  /** El `data-filter` verbatim: `*` para «Ver todos», `.sector-<slug>` para el resto. */
+  filtro: string;
+  /** `is-checked` — el original arranca con «Ver todos» marcado. */
+  activo: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <button className={activo ? "button is-checked" : "button"} data-filter={filtro}>
+      {children}
+    </button>
+  );
+}

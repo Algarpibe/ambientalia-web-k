@@ -3,7 +3,7 @@
     "fecha": "2026-08-18",
     "que": "el catálogo de CASOS y FAQS extraído del corpus congelado, con T1–T8 por región",
     "fuente": "corpus/{casos,faqs} (metadatos y regiones) + TRANSFORMACIONES (las mismas 10 del grupo A)",
-    "control": "82 comparaciones sobre 6 documentos transcritos a mano",
+    "control": "86 comparaciones sobre 6 documentos transcritos a mano",
     "sabotaje": "destacado-dentro",
     "alcance": {
       "controlCasos": "4 de 57",
@@ -293,7 +293,7 @@
     ]
   },
   "control": {
-    "comparaciones": 82,
+    "comparaciones": 86,
     "documentos": 6,
     "poblacion": 76,
     "discrepancias": 3,

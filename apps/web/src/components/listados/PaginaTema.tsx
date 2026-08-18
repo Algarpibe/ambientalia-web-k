@@ -63,7 +63,6 @@ export function PaginaTema({
   titulo,
   filtros,
   listado,
-  bandaCta,
   hrefSiguiente,
   hrefAnterior,
 }: {
@@ -77,12 +76,6 @@ export function PaginaTema({
   filtros: ReactNode;
   /** El contenedor del listado, ya compuesto por la forma. */
   listado: ReactNode;
-  /**
-   * La **4.ª sección de pie** de la familia CASOS, que las otras cuatro formas
-   * no sirven. La compone la página, no este cascarón: aquí sólo se declara el
-   * hueco para que la varianza del pie se vea en el árbol.
-   */
-  bandaCta?: ReactNode;
   /** `<link rel=next>` del `<head>` — lo único que `L3` sirve de paginación. */
   hrefSiguiente?: string;
   hrefAnterior?: string;
@@ -146,13 +139,18 @@ export function PaginaTema({
           </div>
         </div>
 
-        {/* ⚠ `L5` sirve CUATRO secciones de pie y las otras cuatro formas TRES:
-            la 4.ª es la banda CTA de la familia CASOS, y el clon ya la construye
-            en el singular del caso. Es varianza EN EL CASCARÓN —el sitio donde
-            el arquetipo A midió cero—, así que el pie no se da por común. */}
-        {bandaCta}
       </main>
 
+      {/* ⚠ `L5` sirve CUATRO secciones de pie y las otras cuatro formas TRES: la
+          4.ª es la banda CTA de la familia CASOS. **La emite este `Footer`**,
+          que con `tipo="caso"` la pone delante de `footer-links` — es la misma
+          que el singular del caso ya sirve y `qa:d4-cta` ya midió.
+
+          ⚠ Aquí hubo un prop `bandaCta` «para que la página compusiera la 4.ª
+          sección». **Nadie lo pasaba nunca**, porque el `Footer` ya lo hacía: un
+          hueco declarado que otro sitio llenaba, o sea un comentario que promete
+          algo que el código no hace (§sondas 3). Se borra en vez de
+          actualizarse. */}
       <Footer tipo={esCasos ? "caso" : "grupoA"} />
       <ScrollToTop />
     </>

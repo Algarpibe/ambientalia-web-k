@@ -3,7 +3,7 @@
     "fecha": "2026-08-18",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
-    "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
+    "control": "128 comparaciones contra src/lib/arquetipo-a.ts",
     "sabotaje": "control-roto",
     "noMide": [
       "no toca el original",
@@ -35,7 +35,7 @@
     ]
   },
   "control": {
-    "comparaciones": 125,
+    "comparaciones": 128,
     "documentos": 14,
     "cuerposComparados": 14,
     "poblacion": 212,

@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "sabotaje": null
+  },
+  "tipos": {
+    "SectorPage": {
+      "colecciones": [
+        "sectores"
+      ],
+      "nCampos": 65,
+      "falta": []
+    },
+    "MonograficoPage": {
+      "colecciones": [
+        "monograficos"
+      ],
+      "nCampos": 145,
+      "falta": []
+    },
+    "Product": {
+      "colecciones": [
+        "productos"
+      ],
+      "nCampos": 12,
+      "falta": []
+    },
+    "CasoDeExito": {
+      "colecciones": [
+        "casos"
+      ],
+      "nCampos": 27,
+      "falta": []
+    },
+    "Faq": {
+      "colecciones": [
+        "faqs"
+      ],
+      "nCampos": 4,
+      "falta": []
+    },
+    "TerminoSector": {
+      "colecciones": [
+        "taxonomia-sectores"
+      ],
+      "nCampos": 3,
+      "falta": []
+    },
+    "EntradaBlog": {
+      "colecciones": [
+        "entradas-blog"
+      ],
+      "nCampos": 20,
+      "falta": []
+    },
+    "TerminoKunakpedia": {
+      "colecciones": [
+        "terminos-kunakpedia"
+      ],
+      "nCampos": 8,
+      "falta": []
+    },
+    "DocumentoCientifico": {
+      "colecciones": [
+        "documentos-cientificos"
+      ],
+      "nCampos": 18,
+      "falta": []
+    },
+    "TerminoA": {
+      "colecciones": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas"
+      ],
+      "nCampos": 2,
+      "falta": []
+    }
+  },
+  "sinContraparte": [
+    "articulos-kb",
+    "media",
+    "slugs",
+    "usuarios"
+  ],
+  "alcance": [
+    [
+      "lib/accesorios.ts",
+      "`Accesorio`/`AccesorioSpecs` son composición del CUERPO de un `productos` con `tipo: \"catalogo\"` (§2e). n=1 (PR-SP1): el cuerpo es `blocks` y su composición es contenido, no esquema"
+    ],
+    [
+      "lib/monitor.ts · software.ts · api.ts",
+      "instancias de `productos` (§2e corrigió: SOFTWARE y API son del mismo CPT). Su contenido es cuerpo, no campos de colección"
+    ],
+    [
+      "lib/nav.ts · footer.ts",
+      "§6b — el pie y el menú son plantilla con variantes; su modelo está abierto (6 ejes, §6b.2)"
+    ],
+    [
+      "lib/projects.ts · testimonials.ts · clients.ts · articles.ts · countries.ts · home-carrusel-sectores.ts",
+      "piezas de la HOME, **el único arquetipo genuinamente sin content type** (§2e). Modelarla después es AÑADIR (cubo B), no cambiar"
+    ],
+    [
+      "lib/grupo-c-plantilla.ts",
+      "plantilla del grupo C: varianza cero en las 76 ⇒ no es campo (§2b)"
+    ],
+    [
+      "lib/arquetipo-a.ts · casos.ts · faqs.ts · taxonomia-sectores.ts · products.ts",
+      "son DATOS de tipos que sí entran (`EntradaBlog`, `CasoDeExito`, `Faq`, `TerminoSector`, `Product`), no tipos nuevos"
+    ]
+  ],
+  "problemas": [],
+  "ausentes": []
+}

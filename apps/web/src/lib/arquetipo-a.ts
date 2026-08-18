@@ -1640,6 +1640,8 @@ export const TERMINOS_KUNAKPEDIA: TerminoKunakpedia[] = [
     slug: "cloruro-de-hidrogeno-hcl",
     seo: { title: "Cloruro de hidrógeno (HCl): emisiones, riesgos y monitorización - Kunak", description: "Controlar emisiones de cloruro de hidrógeno es contar con herramienta estratégtca contra riesgos, mejorar eficiencia y proteger trabajadores.", ogImage: "/images/uploads/2026/05/produccion-plasticos-clorados_cloruro-de-hidrogeno_Kunak-1.jpg" },
     titulo: "Cloruro de hidrógeno (HCl): emisiones, riesgos y monitorización en calidad del aire",
+    /* ISO del JSON-LD del singular, transcrito del corpus. Ver el tipo. */
+    fechaPublicacion: "2026-03-09T13:10:34+02:00",
     tituloMiga: "Cloruro de hidrógeno (HCl)",
     cuerpo: `
 				
@@ -2113,6 +2115,8 @@ export const TERMINOS_KUNAKPEDIA: TerminoKunakpedia[] = [
     slug: "emisiones-atmosfericas",
     seo: { title: "Emisiones atmosféricas, contaminantes del aire para nuestra salud", description: "Las emisiones atmosféricas alteran la calidad del aire. Controlar estas emisiones es proteger la salud humana y el medioambiente.", ogImage: "/images/uploads/2024/02/atmospheric-emissions-web.jpg" },
     titulo: "Emisiones atmosféricas y su impacto en el medioambiente",
+    /* ISO del JSON-LD del singular, transcrito del corpus. Ver el tipo. */
+    fechaPublicacion: "2024-02-03T10:41:28+02:00",
     tituloMiga: "Emisiones atmosféricas",
     cuerpo: `
 				
@@ -2164,6 +2168,8 @@ export const TERMINOS_KUNAKPEDIA: TerminoKunakpedia[] = [
     slug: "metano",
     seo: { title: "Metano (CH4) - Kunak", description: "Conoce las razones por las que el metano, aunque presente en la atmósfera de manera natural, se ha convertido en un gas dañino para la vida.", ogImage: "/images/uploads/2023/02/main-sources-methane.jpg" },
     titulo: "Metano, un desafío para la estabilidad climática global",
+    /* ISO del JSON-LD del singular, transcrito del corpus. Ver el tipo. */
+    fechaPublicacion: "2024-07-11T08:57:57+02:00",
     tituloMiga: "Metano (CH 4 )",
     cuerpo: `
 				

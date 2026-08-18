@@ -203,6 +203,20 @@ export interface CasoDeExito {
    * FAQ— y habría que medirlo antes de darlo por bueno.
    */
   imagenCabecera: string;
+  /**
+   * ⚠⚠ **ISO 8601, NO el literal español de `EntradaBlog.fechaPublicacion`.**
+   * El caso **no pinta su fecha en ninguna parte** —ni en la tarjeta de `L5` ni
+   * en el singular—: sólo existe en el JSON-LD, y el verbatim de este campo es
+   * por tanto el ISO (`2021-04-20T10:35:17+02:00`). Se parsea con `aEpochIso`
+   * de `lib/cms/casos.ts`; `aEpoch` de `cms/listados.ts` **tira** con él, que es
+   * la dirección buena del fallo.
+   *
+   * Es la clave de orden de `/casos-de-exito/` (`CMS-ORDEN-L2` · §7g): **57/57**
+   * contra el orden servido, con **56 posiciones separadoras**. Un mismo nombre
+   * con dos formatos va fichado con su cardinal —1 concepto · 2 formatos · 3
+   * colecciones— en `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS.
+   */
+  fechaPublicacion: string;
   /** 55 valores distintos en 57 → texto, no relación. */
   cliente: string;
   /**
@@ -494,6 +508,17 @@ export interface TerminoKunakpedia {
   slug: string;
   seo: SeoA;
   titulo: string;
+  /**
+   * ⚠ **ISO 8601**, por la misma razón que en `CasoDeExito`: el término no pinta
+   * su fecha en ninguna parte y el único canal que la sirve es el JSON-LD. Es la
+   * clave de orden de las **8 páginas** de `/glosario/` — **37/37** con 36
+   * posiciones separadoras. Ficha del doble formato:
+   * `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS.
+   *
+   * ⛔ **`L2` no está construida**, así que este campo todavía **no lo consume
+   * ninguna ruta emitida**: está medido y modelado, no ejercitado por el render.
+   */
+  fechaPublicacion: string;
   /**
    * Rótulo corto para la miga (y para cualquier listado que lo use). **Opcional
    * con defecto «el título», omitido cuando coinciden** — el mismo patrón que

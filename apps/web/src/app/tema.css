@@ -412,3 +412,198 @@
     margin-inline-end: 40px;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4 · LA REJILLA DE `L5` — 3 columnas y 57 tarjetas sin paginar
+ *
+ * `3 × 357.28 + 2 × 40 = 1151.84`: la rejilla llena la fila. Los porcentajes se
+ * resuelven contra `.case-list-content`, que mide `100% + 40px` = **1192** — no
+ * contra los 1152 del `.container`. Es el mismo reparto que `L3`, con `33.33 %`
+ * en vez de `25 %`: `calc(33.33% - 40px)` de 1192 = **357.29**.
+ *
+ * Transcrito de `corpus/css/wp-content/themes/KunakAir/style.css`. Los cuatro
+ * cortes (480 · 768 · 981 · 1280) van con sus anchos, no reducidos a los dos que
+ * este proyecto mide: el contrato de un ancho intermedio es de RANGO —que el
+ * clon VARÍE como varía el original— y cablear sólo 1440 y 390 sería justo la
+ * constante que ese contrato llama defecto.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-tema .case-list-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.lh-tema .case-list-content article {
+  margin-bottom: 2rem;
+  align-items: initial;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ⚠ `aspect-ratio: 4/2.7` con `overflow: hidden` — y el `overflow` NO es
+   adorno: es lo que recorta el `scale(1.1)` del hover para que la foto crezca
+   DENTRO de la caja en vez de desbordarla. */
+.lh-tema .case-list-content article .case-imagen-container {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/2.7;
+}
+
+/* La foto es `background-image` de un `<a>`: **la tarjeta de caso no tiene
+   `<img>`**, que es lo que `qa:hover-zonal` había medido por el canal del CSS. */
+.lh-tema .case-list-content article .case-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 4px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+}
+
+.lh-tema .case-list-content article .case-imagen:focus,
+.lh-tema .case-list-content article .case-imagen:hover {
+  transform: scale(1.1);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 5 · LAS TAXONOMÍAS DE LA TARJETA
+ *
+ * ⚠ `.case-taxonomies span span { font-weight: 700 }` pone en negrita **el
+ * rótulo** («Sector: », «Ubicación: »), que es un `<span>` dentro de un `<span>`.
+ * Por eso los `<a>` de sector van como hijos DIRECTOS de `.case-sectores` y no
+ * envueltos: un `<span>` de más los pondría en negrita a ellos también.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-tema .case-taxonomies {
+  padding: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* El `padding` lo lleva `.case-sectores` por ser el primero, también cuando va
+   VACÍO — que es el caso de 4 de los 57. Por eso el `<span>` se emite siempre. */
+.lh-tema .case-taxonomies > span:first-child {
+  padding-inline-end: 1rem;
+}
+
+.lh-tema .case-taxonomies span span {
+  font-weight: 700;
+}
+
+.lh-tema .case-taxonomies > span.case-ubicacion {
+  display: block;
+}
+
+.lh-tema .case-taxonomies a {
+  color: #0075c9;
+  transition: all 0.3s;
+}
+
+/* `.case-taxonomies a:hover { color: var(--azul) }` con `!important` sobre
+   `.case-detalles-txt a { color: var(--gris-kunak) }`: dentro de la tarjeta el
+   enlace ya es azul, así que el hover no lo mueve. Se transcribe igual. */
+.lh-tema .case-taxonomies a:hover {
+  color: #0075c9;
+  transition: all 0.3s;
+}
+
+.lh-tema .case-list-content .case-taxonomies {
+  font-size: 13.5px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 6 · LA CABECERA DE LA TARJETA — cliente + titular
+ *
+ * `margin-top: 12px` (en `L3` son 20). Y el titular: **20px / 1.35 · 400**, que
+ * es lo que la spec congela. Los tres `!important` están en la hoja servida y se
+ * transcriben: quitarlos cambiaría quién gana la cascada frente a las reglas de
+ * `h3` del tema, que es §El principio en su forma de consolidación.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-tema .case-list-content header {
+  margin-top: 12px;
+}
+
+.lh-tema .case-list-content .case-cliente {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.lh-tema .case-list-content .case-title {
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+  font-weight: 400 !important;
+}
+
+.lh-tema .case-list-content .case-title a:hover {
+  color: #0075c9;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 7 · EL SOBRETÍTULO Y EL FONDO DEL ENVOLTORIO
+ *
+ * `p.sobretitulo` va **EN FLUJO** (el `span.tax-tap` de `L3` es absoluto), así
+ * que sí empuja al `h1`. Y `div.hentry` trae fondo propio: la K del tema a
+ * `left 3rem`, con `padding-bottom: 3rem`.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-tema .sobretitulo {
+  color: #0075c9;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+}
+
+/* `.page-template-case-studies div.hentry { background: #fff url(assets/images/
+   recurso-k-fondo.svg) no-repeat left 3rem }` — el mismo asset que ya sirven la
+   HOME, `/accesorios` y `/kunak-api`, por la ruta que el repo usa. */
+.lh-cuerpo[data-lh="casos"] .hentry {
+  padding-bottom: 3rem;
+  background: #fff url("/images/theme/recurso-k-fondo.svg") no-repeat left 3rem;
+}
+
+@media (min-width: 480px) {
+  .lh-tema .case-list-content {
+    width: calc(100% + 30px);
+  }
+  .lh-tema .case-list-content article {
+    width: calc(50% - 30px);
+    margin-inline-end: 30px;
+    margin-bottom: 40px;
+    float: inline-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .lh-tema .case-list-content {
+    width: calc(100% + 35px);
+  }
+  .lh-tema .case-list-content article {
+    width: calc(50% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 981px) {
+  .lh-tema .case-list-content {
+    width: calc(100% + 35px);
+  }
+  .lh-tema .case-list-content article {
+    width: calc(33.33% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lh-tema .case-list-content {
+    width: calc(100% + 40px);
+  }
+  .lh-tema .case-list-content article {
+    width: calc(33.33% - 40px);
+    margin-inline-end: 40px;
+  }
+}
