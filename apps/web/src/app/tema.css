@@ -1,0 +1,414 @@
+/**
+ * LA HOJA DE LAS PLANTILLAS DEL TEMA — `L3` (archivo de taxonomía) y `L5`
+ * (índice de casos).
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * DE DÓNDE SALE CADA DECLARACIÓN
+ *
+ * De **`corpus/css/wp-content/themes/KunakAir/style.css`**, la hoja del tema
+ * hijo que el original enlaza y que la campaña de pieles capturó. Es §El
+ * principio en su forma literal: *«la salida servida incluye el CSS que el
+ * documento se trae»*. Cada bloque lleva el selector del original al lado, y
+ * **ninguna regla se ha ajustado mirando el clon**: quien adjudica es
+ * `qa:lh-cmp`, par a par.
+ *
+ * ⚠ **Lo que la hoja capturada NO trae, y por tanto se replica como MEDIDA:**
+ * la tipografía del `h1` (44px / 44px) y el `padding-top: 58px` del
+ * `.container` viven en el CSS que Divi compila del *customizer* y en su hoja
+ * de núcleo, que la captura no incluye. Los dos están **medidos a los dos
+ * anchos** (`lh-espejo`, `qa:lh-huecos` §banda del contenedor: 58 px iguales a
+ * 1440 y a 390) y se escriben con su número, no derivados de sus partes.
+ *
+ * ── El alcance, acotado igual que en `listados.css` ───────────────────────
+ * Aquí **no** entran los resets globales de Divi ni su cabecera y su pie: el
+ * cascarón del clon es Tailwind ya verificado a dos anchos. Lo que se
+ * transcribe es el CUERPO de estas dos plantillas.
+ */
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 0 · EL CONTENEDOR DEL TEMA
+ *
+ * `#main-content` de estas dos formas trae fondo BLANCO —`.tax-scientific-category
+ * #main-content { background-color: #fff }`— frente al `#f7f7f7` de `L1`. El
+ * `overflow: hidden` es lo que recorta los 40 px que la rejilla del listado se
+ * sale por la derecha, y sin él aparece una barra horizontal.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * ⚠ **La fila de la miga NO mide lo mismo en las dos formas**, y por eso va por
+ * `data-lh` y no en `.lh-tema`:
+ *
+ *   `L3`  1152    @1440 · 312 @390  ⇒ **80 %**
+ *   `L5`  1238.39 @1440             ⇒ **86 %** (el de `.lh-cuerpo`, sin tocar)
+ *
+ * Es la misma clase de diferencia que `data-lh="resources"` ya resuelve: el
+ * original compila **una hoja por página** y puede dar valores distintos al
+ * mismo nombre de clase; el clon sirve una sola hoja para las 374 rutas.
+ */
+.lh-cuerpo[data-lh="sci"] .et_pb_row {
+  width: 80%;
+}
+
+/* La fila de la miga: `pt/pb 12px`, iguales a 1440 y a 390 ⇒ los escribió una
+   persona en el builder (§Test A). Mismo valor que la fila 0 de `L1`, y aun así
+   con entrada propia: son plantillas distintas. */
+.lh-tema .et_pb_row_0 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/**
+ * ⚠ **El `color` de la sección de la miga es AZUL, y eso se ve en `borderColor`.**
+ * El comparador lee `borderColor` de sección, fila, columna y módulo; sin borde
+ * declarado eso es `currentColor`, y el original da `rgb(0, 117, 201)` en los
+ * cuatro niveles de esta sección. Un color que no pinta nada visible **se
+ * compara igualmente** — es el mismo par que costó 4 nodos en `L1`.
+ */
+.lh-tema .migas {
+  color: #0075c9;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1 · EL `.container` Y LA BANDA DEL TITULAR
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * `#main-content .container` — 80 % con tope de 1380 ⇒ **1152 @1440 · 312 @390**,
+ * y `padding-top: 58px` **igual a los dos anchos** (`qa:lh-huecos`, hueco 2).
+ *
+ * ⚠ Los 58 px son px absolutos a los dos anchos, o sea que **no son un % del
+ * padre**: se escriben como el número medido. Que sean el default de Divi o un
+ * ajuste del tema **no lo puede decir lo capturado**, y por eso no se afirma.
+ */
+.lh-tema .container {
+  position: relative;
+  width: 80%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 58px;
+}
+
+/* `.page-template-case-studies #main-content .hentry .container { padding-top: 50px }`
+   — verbatim, y por eso `L5` emite el envoltorio `.hentry`: sin él la regla no
+   aplica y el listado sube 8 px. */
+.lh-tema .hentry > .container {
+  padding-top: 50px;
+}
+
+.lh-tema .titulo-puntos {
+  position: relative;
+}
+
+/* `.tax-scientific-category .titulo-puntos:before { background: none }` — o sea
+   que `L3` **no** pinta el punteado y `L5` sí. Se emite sólo donde el original
+   lo sirve. */
+.lh-cuerpo[data-lh="casos"] .titulo-puntos::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: -65px;
+  width: 60px;
+  height: 22px;
+  /* El mismo asset que ya sirven `SectionRow` y `TrustBar`: el original lo
+     enlaza desde el tema (`assets/images/punteado.svg`) y el clon lo tiene
+     descargado en las dos rutas. Se usa la que el resto del clon ya usa. */
+  background: url("/images/uploads/2022/12/punteado.svg") no-repeat left top;
+}
+
+/* `.tax-tap` — el rótulo de taxonomía de `L3`. **Absoluto**, así que NO empuja
+   al `h1`: por eso `h1.y` es exactamente `container.y + 58`. */
+.lh-tema .tax-tap {
+  position: absolute;
+  top: -27px;
+  background: rgba(0, 117, 201, 0.4);
+  font-size: 10px;
+  padding: 8px 11px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.6px;
+}
+
+/**
+ * El `h1.entry-title` de estas dos plantillas: **44px / 44px · 300 · #333 ·
+ * `letter-spacing: -0.5px`**, medido igual en `L3` y en `L5` y **a los dos
+ * anchos**.
+ *
+ * ⚠⚠ **NO baja a 390, y eso es un hecho medido, no una omisión.** `L1` sirve
+ * 50px/60 · 800 y baja a 35 en móvil porque su titular es un **módulo de texto
+ * de Divi** cuya piel compila el override del editor; éste es **la banda del
+ * TEMA** (`.main-title > h1.entry-title`) y `qa:lh-pieles-css` censó el
+ * `<style>` completo de las instancias: **CERO overrides móviles de titular en
+ * `L2`/`L3`/`L5`**. Ponerle uno cuadraría a 1440 y sería falso.
+ *
+ * El `letter-spacing` y el `font-weight` sí están en la hoja capturada
+ * (`h1,h2,h3,h4,h5,h6 { letter-spacing:-0.5px; font-weight:300 }`); el tamaño y
+ * el `padding-bottom` son MEDIDA.
+ */
+.lh-tema .entry-title {
+  font-size: 44px;
+  line-height: 44px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 2 · LA BANDA DE FILTROS
+ *
+ * ⚠ La banda **no es opcional aunque su comportamiento lo sea**: son 108.8 px
+ * en `L3` y 210.6 en `L5`, y omitirla sube el listado exactamente eso.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/* `.scientific-filter { padding: 30px 0px 36px }` · `.case-filter { padding: 30px 0px 46px }` */
+.lh-tema .scientific-filter {
+  padding: 30px 0 36px;
+}
+
+.lh-tema .case-filter {
+  padding: 30px 0 46px;
+}
+
+/* `.case-filter-title` — `L3` no lleva título y `L5` sí. */
+.lh-tema .case-filter-title {
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/**
+ * ⚠ **El `padding-top: 16px` del grupo lo lleva `L5` y NO `L3`**, y quien lo
+ * decide es una clase: la regla servida es
+ * `.button-group:not(.filtros-resources):not(.filtros-scientific)`. Transcribir
+ * el `:not()` en vez de «el padding que toca» es lo que hace que las dos formas
+ * salgan distintas del mismo bloque.
+ */
+.lh-tema .button-group:not(.filtros-resources):not(.filtros-scientific) {
+  padding-top: 16px;
+}
+
+.lh-tema .button-group:not(.filtros-resources):not(.filtros-scientific) .button:first-child {
+  border-color: #333;
+  font-weight: 600;
+}
+
+.lh-tema .button-group .button {
+  margin: 0 10px 10px 0;
+  border: 1px solid #7f8798;
+  border-radius: 5px;
+  padding: 6px 26px;
+  font-size: 14px;
+  line-height: 1.2;
+  background-color: #fff;
+}
+
+.lh-tema .button-group .button:last-child {
+  margin-inline-end: 0;
+}
+
+.lh-tema .button-group .button:not(.current):hover {
+  border-color: #0075c9;
+  color: #0075c9;
+  cursor: pointer;
+}
+
+.lh-tema .filtros-scientific .button {
+  display: inline-block;
+}
+
+.lh-tema .filtros-scientific .button.current {
+  border-color: #0075c9;
+  color: #fff;
+  font-weight: 600;
+  background-color: #0075c9;
+}
+
+.lh-tema .button-group .button.is-checked {
+  border-color: #0075c9;
+  color: #fff;
+  font-weight: 600;
+  background-color: #0075c9;
+}
+
+.lh-tema .button-group .button.is-checked:hover {
+  border-color: #0075c9;
+  color: #fff;
+  cursor: inherit;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 3 · LA REJILLA DE `L3` — 4 columnas, la más densa del sitio
+ *
+ * `4 × 258 + 3 × 40 = 1152`: la rejilla llena exactamente la fila. Y los
+ * porcentajes se resuelven contra `.scientific-list-content`, que mide
+ * `100% + 40px` = **1192** — no contra los 1152 del `.container`. Leerlo al
+ * revés da 248 en vez de 258.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+.lh-tema .scientific-list-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.lh-tema .scientific-list-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.lh-tema .scientific-list-content article {
+  margin-bottom: 2rem;
+  align-items: initial;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.lh-tema .scientific-list-content article .scientific-imagen-container {
+  position: relative;
+  border-radius: 10px;
+  aspect-ratio: 4/3.75;
+  max-width: 100%;
+  border: 24px solid #f7f7f7;
+  background-color: #f7f7f7;
+  transition: all 0.3s;
+}
+
+.lh-tema .scientific-list-content article:hover .scientific-imagen-container {
+  border-color: #f0f0f0;
+  background-color: #f0f0f0;
+}
+
+.lh-tema .scientific-list-content article .scientific-imagen {
+  display: block;
+  margin: 0 auto 4px;
+  max-width: 164px;
+  height: 100%;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+/* ⚠ El icono va `position: absolute` **fuera** de la caja de la imagen
+   (`bottom: -20px; right: -10px`), así que **no ocupa alto**: el `header` cae a
+   `imagen + 20`, y eso es lo que reproduce `h3.y = 762.27`. */
+.lh-tema .scientific-list-content article .scientific-ico {
+  display: block;
+  position: absolute;
+  right: -10px;
+  z-index: 10;
+  bottom: -20px;
+}
+
+.lh-tema .scientific-list-content header {
+  margin-top: 20px;
+}
+
+.lh-tema .scientific-list-content .scientific-title {
+  padding-bottom: 1px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 300;
+}
+
+.lh-tema .scientific-list-content .scientific-title a:hover {
+  color: #0075c9;
+}
+
+.lh-tema .scientific-taxonomies {
+  padding: 5px 0;
+  line-height: 1.4;
+}
+
+.lh-tema .scientific-list-content .scientific-taxonomies {
+  font-size: 13.5px;
+}
+
+.lh-tema .scientific-taxonomies span span {
+  font-weight: 700;
+}
+
+.lh-tema .scientific-list-content .scientific-taxonomies .scientific-category {
+  margin-top: 2px;
+  color: #0075c9;
+}
+
+.lh-tema .scientific-list-content .scientific-taxonomies .scientific-category a {
+  color: #0075c9;
+}
+
+.lh-tema .scientific-list-content .scientific-taxonomies .scientific-category a:hover {
+  color: #5e6770;
+}
+
+.lh-tema .scientific-list-content .scientific-excerpt {
+  margin-top: 5px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.lh-tema .scientific-list-content .scientific-excerpt a {
+  display: block;
+  color: #0075c9;
+  font-size: 13.5px;
+}
+
+.lh-tema .scientific-list-content .scientific-excerpt a:hover {
+  color: #5e6770;
+}
+
+/* ⚠ Los CUATRO cortes van transcritos con sus anchos, no reducidos a los dos
+   que este proyecto mide. El contrato de un ancho intermedio es de RANGO —que
+   el clon VARÍE como varía el original—, y cablear sólo 1440 y 390 sería
+   exactamente la constante que ese contrato llama defecto. */
+@media (min-width: 480px) {
+  .lh-tema .scientific-list-content {
+    width: calc(100% + 30px);
+  }
+  .lh-tema .scientific-list-content article {
+    width: calc(50% - 30px);
+    margin-inline-end: 30px;
+    margin-bottom: 40px;
+    float: inline-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .lh-tema .scientific-list-content {
+    width: calc(100% + 35px);
+  }
+  .lh-tema .scientific-list-content article {
+    width: calc(50% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 981px) {
+  .lh-tema .scientific-list-content {
+    width: calc(100% + 35px);
+  }
+  .lh-tema .scientific-list-content article {
+    width: calc(25% - 35px);
+    margin-inline-end: 35px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lh-tema .scientific-list-content {
+    width: calc(100% + 40px);
+  }
+  .lh-tema .scientific-list-content article {
+    width: calc(25% - 40px);
+    margin-inline-end: 40px;
+  }
+}

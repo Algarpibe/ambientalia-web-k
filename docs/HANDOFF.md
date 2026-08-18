@@ -1,4 +1,60 @@
-# HANDOFF — los espejos re-congelados, y el ORIGINAL se movió por debajo
+# HANDOFF — la deriva no llega, `L3` se construye, y `L5` lo para el MODELO
+
+> ✅⛔ **Tanda MIXTA, 2026-08-18 (80.ª). Se cierran el PASO 0, el PASO 1 y el
+> PASO 2; el PASO 3 NO se construye, y no por tiempo: por un hueco del modelo
+> medido en esta tanda.**
+>
+> **1 · De la deriva del original, al clon le llega CERO en la unidad que el
+> comparador lee como defecto.** Sonda nueva `qa:lh-cubos` (negativo 4/4), que
+> reparte las diferencias por CAUSA en vez de sumarlas:
+>
+> | | @1440 | @390 |
+> |---|---|---|
+> | cubo 2 · INSTRUMENTO | **0** | **0** |
+> | cubo 1 · DERIVA | **0** | **0** |
+> | cubo 3 · DEL CLON | 4996 | 4974 |
+> | *mixtas que difieren* | 8451 | 8588 |
+> | — de ellas **DERIVA** | **248** (CREA **0**) | **390** (CREA 11) |
+>
+> ⚠ **Y la mitad que estuvo a punto de publicarse como un cero:** la primera
+> versión de la sonda saltaba el eje MIXTO con un `continue` y publicaba
+> `cubo 1 = 0` al lado de un control que decía **299 caminos movidos**. Los dos
+> números ciertos, la lectura falsa — **los caminos que la deriva mueve son
+> justo los mixtos** (`rect.y`/`rect.h`). Congelada renombrada con su defecto.
+>
+> **2 · La decisión del pie es DECLARAR (`D6`), y va escrita donde se lee.** El
+> dato que la cierra: **el pie NUNCA casó** — clon **594.75** contra 590.75
+> (viejo) y **593.75** (hoy), o sea que la deriva **acercó** el original al clon,
+> de +4 a +1. Recalibrar tocaría el cascarón de las 373 rutas para cerrar un par
+> de eje mixto que no se lee como defecto, contra un objetivo que se movió una
+> vez en cuatro días y **sin campaña de ruido**. Evento en
+> §F3-LH-PIE-DECLARADO-NO-RECALIBRADO; regla en `CLAUDE.md`.
+>
+> **3 · `L3` CONSTRUIDA — 6 rutas, base Δ0 a los dos anchos.** 367 → **373**
+> rutas. Lo que queda en el comparador son **50 pares de la divergencia YA
+> DECLARADA** del cascarón (Divi mete cabecera y pie dentro de
+> `.et_pb_section`) más **3–10 `href` locales** por página. Nada más: tipografía,
+> ritmo, cajas, anchos, textos y extracto **iguales**, y **las 3 primeras
+> tarjetas son las correctas y en el orden correcto** en las 6 páginas.
+>
+> **4 · ⛔ `L5` NO SE CONSTRUYE, y es un hueco del MODELO.** Su orden es
+> `datePublished` DESC —**57/57**, servido en el JSON-LD de los 57 singulares— y
+> **`casos` no tiene ese campo**. Los cuatro candidatos modelados están
+> refutados con su número (`detalles.anyo`, orden de colección, carpeta de
+> `uploads`, ID de WP). Construir con un orden sustituto pondría **otras tres**
+> tarjetas donde el espejo mira y sacaría decenas de pares rojos que **no son
+> defecto de plantilla**. Ficha: §F3-LH-ORDEN-DE-L5-SIN-MODELAR; alcance de
+> esquema: `ESQUEMA-CMS.md` §7g.
+>
+> **5 · Y `CMS-ORDEN-L2` no era de `L2`: es de TRES arquetipos.** `L2-glosario`
+> (37/37), **`L5-casos` (57/57)** y **`L3-sci`** —cuya clave primaria `anyo` sí
+> está modelada y cuyo **desempate no**, decidiendo **17 de 23** tarjetas—. Los
+> dos primeros tienen la clave **servida** y les falta el campo; el tercero
+> **no la tiene por ningún canal** (0 de 23 con `datePublished`).
+
+---
+
+## 79.ª tanda — los espejos re-congelados, y el ORIGINAL se movió por debajo
 
 > ⚠ **Tanda de MEDICIÓN, 2026-08-19 (79.ª). Se cerró el PASO 0 y el PASO 1, y la
 > tanda para en el CORTE LIMPIO 1 declarado por el encargo. `L3` y `L5` NO se

@@ -3605,12 +3605,52 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 | # | decisión | bloquea |
 |---|---|---|
 | ⛔ **CMS-TITULO-RICO** | **`titulo` es `type: "text"` y 8 de 288 documentos del corpus llevan MARCADO dentro del `<h1>`** — `<sub>` de fórmula química (`O<sub>2</sub>`, `H<sub>2</sub>S`, `PM<sub>10</sub>`). Un campo de texto plano **no puede contener su dato medido**, y el clon ya sirve esos 8 aplanados en rutas dadas por verificadas. Reparto: **término 6/37 · blog 1/152 · caso 1/57 · doc. científico 0/23 · faq 0/19**. Ver §7f | **`L2`** (`/glosario` es donde se concentra: 6 de sus 37 términos) y la fidelidad de **8 rutas ya emitidas** |
-| **CMS-ORDEN-L2** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
+| **CMS-ORDEN-L2** ⚠ **ALCANCE AMPLIADO 2026-08-18 (80.ª): son TRES arquetipos, no uno, y uno de ellos BLOQUEA `L5` — ver §7g** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
 | ~~**CMS-SP-TIPO**~~ | ~~ninguna guarda mira el TIPO de la hoja, solo su nombre~~ **✅ CERRADA (2026-08-06): `npm run qa:tipo-hoja`, 10/10 hojas con marcado, negativo 5/5 — §7d**. ⚠ Y la cerró **la salida 2 de §7b, no la 1**: el Δ0 de render **NO PUEDE** verla, y eso está medido — el panel de un producto sólo se sirve si es el ACTIVO, y el activo es `monitor-calidad-aire` en las 10 instancias, así que **ninguna ruta emitida contiene el `<sup>`** | **nada** |
 | ~~**CMS-0g · ORIGEN DE MEDIA**~~ | ~~`media` no guarda la ruta de origen del fichero~~ **✅ CERRADA (2026-08-06): campo de PROCEDENCIA `rutaOrigen`, nullable por construcción — §7c**. La premisa era verdadera y **la conclusión no se seguía**: `qa:media-colision` midió que `filename → ruta` **sí es una función hoy** (112 rutas · 0 repetidos) y **deja de serlo en la unión con el corpus** (646 · **1**, 12 referencias). O sea que tabular sobre `filename` funcionaría hoy y se rompería con contenido dentro | **nada** — desbloquea las 5 familias de F2-3 |
+
+### ⛔ 7g · `CMS-ORDEN-L2` NO ERA DE `L2`: ES DE **TRES** ARQUETIPOS, Y UNO DE ELLOS BLOQUEA UNA CONSTRUCCIÓN (2026-08-18, 80.ª tanda)
+
+**Qué se decide aquí: nada. Lo que cambia es el ALCANCE de una decisión que ya
+estaba abierta**, y con él lo que bloquea.
+
+`CMS-ORDEN-L2` se abrió con una instancia: *«el original ordena `/glosario` por
+`datePublished` DESC (37/37) y ninguno de los dos tipos del clon tiene campo de
+fecha»*. Al construir `L3` y medir `L5` aparecen **dos instancias más de la misma
+clase**, y una de ellas **para una construcción**:
+
+| arquetipo | colección | cómo ordena el ORIGINAL | ¿lo tiene el modelo? | consecuencia |
+|---|---|---|---|---|
+| `L2-glosario` | `terminos-kunakpedia` | `datePublished` DESC (**37/37**) | ⛔ no | `L2` sin construir |
+| **`L5-casos`** | **`casos`** | **`datePublished` DESC (57/57)** | ⛔ **no** | **`L5` NO SE PUEDE CONSTRUIR** — §F3-LH-ORDEN-DE-L5-SIN-MODELAR |
+| **`L3-sci`** | **`documentos-cientificos`** | **`anyo` DESC + ID de WP ASC** | **la mitad**: `anyo` sí, el desempate no | construido, con **17 de 23** tarjetas apoyadas en una coincidencia — §F3-LH-DESEMPATE-DE-L3 |
+
+**Y las tres NO se cierran con la misma decisión, que es justo lo que la ficha de
+`CMS-ORDEN-L2` ya advertía:**
+
+- `casos` y `terminos-kunakpedia` **sí tienen la clave SERVIDA**: `datePublished`
+  aparece en el JSON-LD de sus singulares y reproduce el orden **57/57** y
+  **37/37**. Les falta el **campo**, no la medida;
+- **`documentos-cientificos` NO la tiene**: **0 de 23** traen `datePublished`.
+  Su clave primaria (`anyo`) sí está modelada; su desempate necesitaría un campo
+  **que el original no sirve por ningún canal medido**, así que es una decisión
+  de producto, no una transcripción.
+
+> **La lección de alcance, que es la reutilizable:** `CMS-ORDEN-L2` se llamó así
+> porque `L2` fue el primero en tropezar. **El orden es una exigencia de
+> CUALQUIER listado sobre una colección**, y el modelo se midió contra los
+> SINGULARES — donde la fecha no se pinta. Es §*una regla derivada sobre un
+> dominio donde el caso NO SE DA*: cada índice nuevo ejercita algo que su
+> singular no ejercitaba, y el hueco aparece **al construir**, no al modelar.
+
+**Qué desbloquea qué:** un campo de fecha de publicación en `casos` desbloquea
+`L5` **entero** (57 tarjetas en una página, sin paginación); el mismo campo en
+`terminos-kunakpedia` es una de las dos mitades de `L2`. Los dos van con su
+migración y su re-siembra desde el corpus, y **arrastran `qa:cms-campos` y
+`qa:cms-roundtrip`**: es una tanda, no un parámetro.
 
 ### ⛔ 7f · CMS-TITULO-RICO · EL TITULAR LLEVA FÓRMULA QUÍMICA Y EL CAMPO ES TEXTO PLANO (2026-08-18, 76.ª tanda — NADA DECIDIDO)
 

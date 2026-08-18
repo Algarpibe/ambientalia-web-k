@@ -1,5 +1,110 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-LH-ORDEN-DE-L5-SIN-MODELAR · EL ÍNDICE DE CASOS NO SE PUEDE CONSTRUIR: SU CLAVE DE ORDEN NO ESTÁ EN EL MODELO (2026-08-18, 80.ª tanda)
+
+**`L5` NO se construye en esta tanda, y no es por falta de tiempo: es un hueco
+del MODELO, medido.** El encargo pedía construirlo; lo que se entrega en su
+lugar es la medición que dice por qué no se puede todavía y qué lo cierra.
+
+### El hecho, con sus dos lados
+
+`/es/casos-de-exito/` sirve **57 tarjetas en una sola página**, y su orden **no
+es reproducible con ningún campo de la colección `casos`**:
+
+| candidato | ¿está en el modelo? | reproduce el orden servido |
+|---|---|---|
+| **`datePublished`** (JSON-LD del singular) | ⛔ **NO** | **57 / 57** |
+| `detalles.anyo` | sí | no — la serie empieza `2026 · 2025 · 2026 · 2026` |
+| orden de la colección (`id`) | sí | no — 12 inversiones a simple vista |
+| `imagenCabecera` por su carpeta `uploads/AAAA/MM` | sí | **30 / 57** |
+| ID de WordPress descendente | ⛔ no (irreproducible por diseño) | no — 9 inversiones |
+
+> **La clave existe y está SERVIDA: `datePublished` aparece en el JSON-LD de los
+> 57 singulares, y ordenar por ella descendente reproduce las 57 posiciones.**
+> Lo que falta no es la medida: es el **campo**.
+
+### Por qué construirlo igualmente sería peor que no construirlo
+
+El espejo congela **las 3 primeras tarjetas** de cada página, y `L5` **tiene una
+sola página**. Con un orden sustituto, esas 3 tarjetas serían **otras tres** y el
+comparador sacaría decenas de pares de eje `contenido` en rojo — **título,
+`href`, imagen, sector y ubicación de tres casos que no tocan**.
+
+> **Sería un rojo grande y FALSO: un hueco de modelado leído como defecto de
+> plantilla.** Y el camino de menor resistencia desde ahí es cablear el orden
+> para que cuadren las 3 que el espejo mira — que es exactamente el **arreglo
+> falso** que este proyecto tiene documentado.
+
+### Qué lo cierra, y es una DECISIÓN, no un parche
+
+Añadir a `casos` el campo de **fecha de publicación**, con su migración y su
+re-siembra desde `datePublished` del corpus. Es trabajo de esquema —toca
+`packages/cms-config`, `types/kunak.ts`, `extractor-c.mjs`, una migración y el
+re-sembrado de 57 filas—, y arrastra `qa:cms-campos` y `qa:cms-roundtrip`. **Va a
+`ESQUEMA-CMS.md` como decisión y a una tanda propia**, no al final de ésta.
+
+⚠ **Y no es sólo de `L5`:** cualquier listado futuro sobre `casos` necesita esa
+clave. Es la misma exigencia que `D3` escribió para el grupo A —*«lo que los
+listados le EXIGEN al modelo»*— cobrada ahora sobre el grupo C.
+
+### Lo que esta ficha NO afirma
+
+- **no dice que `casos` esté mal modelado.** El modelo se midió contra el
+  SINGULAR, y para el singular está completo: la fecha no se pinta en la ficha
+  de un caso. Es §*una regla derivada sobre un dominio donde el caso NO SE DA*:
+  el índice ejercita algo que el singular no ejercitaba;
+- **no dice que `datePublished` sea la fecha «correcta» del modelo.** Dice que
+  reproduce el orden servido en 57/57. Si el CMS de destino prefiere otra
+  semántica, eso es la decisión — el dato medido es éste;
+- **no mide `L5` de ningún otro modo.** Su geometría sigue **sin comparar**: es
+  1 de las 14 formas AUSENTES del comparador de páginas.
+
+**Derivaciones:** el orden servido sale de `corpus/fase-3/listados/casos-de-exito/index.html`
+(los 57 `<article>` **sin recortar** — el espejo congela 3); las fechas, de los
+57 `corpus/casos/*.html`; el contraste con la DB, por Local API.
+
+## ⚠ F3-LH-DESEMPATE-DE-L3 · EL ORDEN DEL ARCHIVO CIENTÍFICO SE APOYA EN UNA COINCIDENCIA (2026-08-18, 80.ª tanda)
+
+**`L3` sí se construye, y su clave primaria está medida. Lo que se ficha es el
+DESEMPATE**, que decide **17 de las 23** tarjetas y **no** es una propiedad
+medida del original.
+
+| | modelo | acierta | separadoras |
+|---|---|---|---|
+| clave primaria | **`anyo` DESC** | 23/23 | **2** frente a «sólo el orden de la colección» |
+| desempate | el orden de la colección (`sort: "id"`) | 23/23 **hoy** | — |
+
+**Lo que el original usa en los empates es el ID de WordPress ascendente**, y ese
+ID **no está en el modelo** (`TarjetaListado` ya lo declara irreproducible). Que
+el orden de la colección lo reproduzca es una **coincidencia con causa** —el
+extractor recorrió el corpus en el orden servido—, no una medida:
+
+> ⚠ **Un re-seed en otro orden rompería 17 de 23 tarjetas sin que nada diera
+> error.** El comparador lo vería (las 3 primeras de cada página están en
+> empate), pero como un defecto de contenido sin causa aparente.
+
+**Qué lo cerraría:** una clave de desempate modelada. `datePublished` **no
+sirve aquí**: los 23 documentos científicos **no lo traen** (0 de 23, medido —
+frente a los 57 de 57 de `casos`). Así que este arquetipo necesitaría un campo
+propio, y **eso es una decisión de esquema**, no un arreglo.
+
+## 📋 F3-LH-VARIANTE-724x1024 · LA FOTO DE LA TARJETA DE `L3` USA UNA VARIANTE QUE EL CLON NO GENERA (2026-08-18, 80.ª tanda)
+
+Las **23 de 23** tarjetas de `L3` sirven la portada en la variante `-724x1024`
+de WordPress. El almacén de media del clon declara `300 · 480 · 768 · 980 ·
+1280` y el original, y **no genera esa**. El clon sirve **el original**
+(`portada.src`): la misma imagen a otro tamaño, pintada igual dentro de una caja
+de `max-width: 164px` con `background-size: cover` y `aspect-ratio: 4/3.75`.
+
+> ⚠ **Y NO es un par comparado**, que es justo por lo que se escribe: el barrido
+> lee `media` como `.scientific-imagen-container`, cuyo `backgroundImage`
+> computa `none` — la URL vive en el `<span>` de dentro, que ningún rol mira.
+> **Una desviación que ninguna sonda puede ver es la que se olvida.**
+
+**Qué la cerraría:** declarar el tamaño `724x1024` en `colecciones/media.ts` y
+regenerar variantes (`cms:coloca-media`). No se hace aquí porque toca el almacén
+de media de las 374 rutas para arreglar 23 tarjetas cuya diferencia nadie mide.
+
 ## 📋 F3-LH-PIE-DECLARADO-NO-RECALIBRADO · EL DESFASE DEL PIE, CON SU NÚMERO — Y NO ES REGRESIÓN (2026-08-18, 80.ª tanda)
 
 **Decisión `D6` de `docs/research/listados-hubs/DECISIONES.md`: se DECLARA, no se

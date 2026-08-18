@@ -242,5 +242,63 @@ y los once son el **mismo +30**:
 | **(a)** | **NO dispara** — las 4 rutas dan Δ0 · Δ0 · Δ0 · Δ−30, los dos picos exactos |
 | **(b)** | **NO dispara** — `L3`/`L4`/`L5` están AUSENTES: 0 pares repartidos en ellas |
 | **(c)** | **NO dispara** — a 1440 la deriva atribuida son `pie.rect.h` y `esqueleto.cascaron.*`, ninguno por encima del pie. `cabecera.rect.h` sale movido **sólo a 390** y en las **4** páginas del segundo pico |
-| **(d)** | pendiente del PASO 4 (`qa:lh-poblacion`) |
-| **(e)** | pendiente del PASO 2 (el extracto de `L3`) |
+| **(d)** | **NO dispara** — `qa:lh-poblacion`: `casos` **57/57**, `documentos-cientificos` **14/14 · 8/8 · 1/1**. Déficit 0 en las 29 series |
+| **(e)** | **NO dispara** — el caso «cuerpo más corto que el tope» **no se ejercita**: los 23 cuerpos pasan de 100 bytes. Sigue **SIN PROBAR y declarado como camino de render sin estrenar**, que es lo que la ficha pide |
+
+---
+
+# RESULTADO DE LOS PASOS 2 y 3 (2026-08-18)
+
+## PASO 2 · `L3` CONSTRUIDA — las predicciones D1…D5
+
+| # | predicción | medido | |
+|---|---|---|---|
+| **D1** | rutas **367 → 374** (+6 `L3`, +1 `L5`) | **367 → 373**. La que falta es **`/casos-de-exito`**, y se nombra: `L5` no se construye (§PASO 3). Las 6 de `L3` son exactamente las predichas | ⚠ **nombrada** |
+| **D2** | formas **13 · 6 ausentes → 13 · 3** | **13 · 4 · 9** — las 3 de `L3` menos, `L5` sigue ausente | ⚠ **nombrada** |
+| **D3** | páginas **82 · 20 → 82 · 13** | **82 · 14 · 68** — ídem | ⚠ **nombrada** |
+| **D4** | cobertura sube: `lh-cmp` 62 → 69 rutas | sube a **68** (+6, no +7) — ver el cierre | ⚠ **nombrada** |
+| **D5** | `L3` **no pinta paginador** y las 3 páginas de una serie sirven las mismas tarjetas | reproducido: las 6 páginas emiten el término entero y **ninguna** pinta control | ✅ |
+
+> **Las cuatro desviaciones son LA MISMA y tienen una sola causa: `L5` no se
+> construyó.** Se nombra en vez de ajustarse el número, que es lo que el
+> pre-registro exige.
+
+### Lo que el comparador dice de `L3`, en las 6 páginas y a los dos anchos
+
+**Base `Δ0` en las seis.** Y las diferencias que quedan, todas de clase ya
+declarada:
+
+| clase | pares por página | qué es |
+|---|---|---|
+| **cascarón** | **50** | Divi mete cabecera y pie **dentro de `.et_pb_section`** y el clon los sirve en Tailwind (`nSecciones` 5 → 1, `porCapa.tb_*`, los 4 nodos de `cascaron`). La misma que llevan las 62 páginas de `L1` |
+| **`href` locales** | **3 · 9 · 10** | §Regla de rutas locales — la misma clase que los 259 `paginador.hrefs.N` de `L1` |
+| **nada más** | **0** | tipografía, ritmo, cajas, anchos, `sel`, `marca`, textos y extracto: iguales |
+
+### Los DOS defectos que el comparador cazó, y ninguno se veía sin él
+
+| defecto | coste | clase conocida |
+|---|---|---|
+| interlínea de la miga: **26 en vez de 30.6** | **base −4.59** en las 2 instancias | el módulo vale **26 dentro de un `_tb_body` y 30.6 en las plantillas PHP del tema** — medido en el mismo espejo |
+| **un espacio** detrás del año en `.scientific-taxonomies` | **6 pares** de `contenido` | §*el espacio en blanco entre elementos: el navegador lo renderiza*, aquí sobre el TEXTO |
+
+## PASO 3 · ⛔ `L5` NO SE CONSTRUYE — y la razón es del MODELO, no de la tanda
+
+| # | predicción | resultado |
+|---|---|---|
+| **D6** | `L5` **no lleva extracto** | **sin ejercitar**: no se llegó a construir |
+
+**Lo que se entrega en su lugar es la medición que dice por qué no se puede:**
+el orden de las 57 tarjetas es **`datePublished` DESC — 57/57**, servido en el
+JSON-LD de los 57 singulares, y **`casos` no tiene ese campo**. Los cuatro
+candidatos que sí están modelados quedan refutados **con su número**
+(`detalles.anyo`, orden de la colección, carpeta `uploads/AAAA/MM` **30/57**, ID
+de WordPress).
+
+> **Construir con un orden sustituto pondría OTRAS TRES tarjetas donde el espejo
+> mira** —`L5` tiene una sola página y el espejo congela sus 3 primeras—, y el
+> comparador sacaría decenas de pares rojos que **no son defecto de plantilla**.
+> Desde ahí, el camino de menor resistencia es cablear el orden para que cuadren
+> las 3 que el espejo mira: el **arreglo falso** de manual.
+
+Fichas: `PENDIENTES-QA.md` §F3-LH-ORDEN-DE-L5-SIN-MODELAR · `ESQUEMA-CMS.md`
+§7g (**`CMS-ORDEN-L2` no era de `L2`: es de TRES arquetipos**).

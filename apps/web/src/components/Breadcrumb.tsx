@@ -89,6 +89,24 @@ export interface BreadcrumbItem {
  * Lo destapó el grupo A porque **sus títulos sí pasan de 350** (498.97 y 681.77
  * medidos a 1440): el corpus nuevo ejercitó una regla que el viejo no tocaba.
  */
+
+/**
+ * La interlínea del `<ol>`, por plantilla. Una tabla, un sitio — y con una
+ * entrada por plantilla aunque dos midan igual (la convención de `BANDA`).
+ *
+ * Lo medido en el espejo, mismo fichero y mismo ancho:
+ *
+ * | plantilla | alto del módulo de la miga @1440 |
+ * |---|---|
+ * | `L1` (`_tb_body`) | **26** |
+ * | `L3` (plantilla PHP del tema) | **30.59** |
+ */
+const INTERLINEA = {
+  producto: "leading-[26px]",
+  caso: "leading-[30.6px]",
+  tema: "leading-[30.6px]",
+} as const;
+
 export function Breadcrumb({
   items,
   rowClassName = "mx-auto w-[80%] max-w-[1380px]",
@@ -101,8 +119,16 @@ export function Breadcrumb({
   /**
    * Qué plantilla las pinta. **Solo cambia la interlínea** — el truncado del
    * último eslabón bajó al defecto en A-QA1, porque está en las 7 formas.
+   *
+   * ⚠ **`"tema"` mide lo mismo que `"caso"` y aun así tiene entrada propia**, y
+   * es la convención que `BANDA` ya sigue: *que hoy midan igual no es una razón
+   * para acoplarlas*. Lo que la medida dice es que **el módulo de la miga vale
+   * 26 dentro de un `_tb_body` y 30.6 en las plantillas PHP del tema** — y `L3`
+   * es la tercera instancia, medida (`esqueleto…modulos.0.rect.h` 30.59 contra
+   * los 26 de `L1-blog`, en el mismo espejo). Reusar `"caso"` habría escondido
+   * ese hallazgo detrás de un nombre que no lo dice.
    */
-  variante?: "producto" | "caso";
+  variante?: "producto" | "caso" | "tema";
   /**
    * `"propio"` — la miga trae su `<nav>` y su fila, que es como vive en las 11
    * rutas anteriores: fuera de `main > section`, por la partición D2.
@@ -121,12 +147,11 @@ export function Breadcrumb({
    */
   envoltorio?: "propio" | "heredado";
 }) {
-  const esCaso = variante === "caso";
   const lista = (
     <ol
       className={
         "kunak-breadcrumbs text-[12px] font-semibold tracking-[0.3px] text-[#0075C9] " +
-        (esCaso ? "leading-[30.6px]" : "leading-[26px]")
+        INTERLINEA[variante]
       }
       itemScope
       itemType="https://schema.org/BreadcrumbList"

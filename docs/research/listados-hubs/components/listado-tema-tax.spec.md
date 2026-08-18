@@ -251,4 +251,60 @@ resulta ser un bloque opcional del mismo esqueleto, se fusionan»*. Lo medido:
 | **SP-T4** | **anchos intermedios** | contrato de RANGO |
 | **SP-T5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
 | **SP-T6** | **entradas por página** (`LH-SP9`) | sin ventana de `paginate_links` no se deriva del documento |
+| ~~**SP-T1**~~ | ✅ **CERRADA 2026-08-18 (80.ª tanda): el clon EXISTE.** Ver §7 |
+| ~~**SP-T2**~~ | ✅ **CERRADA**: la 3.ª instancia (`evaluaciones-independientes`) está en el espejo de páginas y **comparada** desde esta tanda |
+| ~~**SP-T3**~~ | ✅ **CERRADA**: la tipografía de la tarjeta está transcrita del CSS servido y **a Δ0 en las dos instancias** (`titulo` 24/32.4/300, `categoria` 13.5/18.9, `extracto` 15/23.25) |
 | ~~**SP-T7**~~ | ✅✅ **CERRADA ENTERA 2026-08-13.** El diagnóstico del 2026-08-12 era correcto y le faltaba el canal: con las **52 hojas capturadas**, `qa:lh-pieles-css` exhibe las dos mitades — `L1` lleva override **por módulo** (`.et_pb_text_1_tb_body h1` 50px + `@media (max-width:980px)` 35px) y `L3`/`L5` tienen **CERO** overrides móviles de titular, que es el mecanismo del *«no baja a 390»*. **Ya no se replica de la medida: se cita la regla.** Canal completo 13/13, negativo 3/3 | ✅ cerrada |
+
+---
+
+## 7 · CONSTRUIDA (2026-08-18, 80.ª tanda) — qué se emitió y qué queda declarado
+
+**Las 6 rutas del original están emitidas** y las 2 instancias que el comparador
+de FORMAS mira salen **con la base a Δ0 a los dos anchos**.
+
+| | dónde |
+|---|---|
+| consulta, orden y extracto | `apps/web/src/lib/cms/documentos.ts` |
+| cascarón compartido con `L5` | `components/listados/PaginaTema.tsx` |
+| tarjeta · banda de filtros | `components/listados/TarjetaCientifica.tsx` · `BandaFiltros.tsx` |
+| hoja transcrita del tema | `apps/web/src/app/tema.css` |
+| rutas | `app/scientific-category/[slug]/{page.tsx,page/[n]/page.tsx}` |
+
+### Lo que el comparador dejó a Δ0, y lo que no
+
+`qa:lh-cmp` @1440 y @390, las 2 instancias del espejo de formas:
+
+| | pares distintos | qué son |
+|---|---|---|
+| `articulos-cientificos-y-estudios` | 60 | **50** cascarón + **10** rutas locales |
+| `articulos-tecnicos` | 53 | **50** cascarón + **3** rutas locales |
+
+- los **50** son la divergencia **YA DECLARADA** de todo el clon: Divi mete
+  cabecera y pie **dentro de `.et_pb_section`** y el clon los sirve en Tailwind
+  (`nSecciones` 5 → 1, `porCapa.tb_*` ausente, y los 4 nodos de `cascaron`);
+- los **10 / 3** son **`href` locales** — la §Regla de rutas locales, exactamente
+  la misma clase que los 259 `paginador.hrefs.N` de `L1`;
+- **nada más**: tipografía, ritmo, cajas, anchos, `sel`, `marca`, textos y el
+  extracto salen **iguales**, y las **3 primeras tarjetas son las 3 correctas y
+  en el orden correcto** en las dos instancias.
+
+### Los DOS defectos que el comparador cazó, y de qué clase eran
+
+| defecto | coste | clase |
+|---|---|---|
+| **la interlínea de la miga**: 26 en vez de 30.6 | **base −4.59** en las 2 instancias, arrastrando la página entera | la miga vale **26 dentro de un `_tb_body` y 30.6 en las plantillas PHP del tema** — medido en el mismo espejo |
+| **el espacio detrás del año** en `.scientific-taxonomies` | **6 pares** de `contenido` («…\| 2026Artículos técnicos») | §*el espacio en blanco entre elementos: el navegador lo renderiza*, aquí sobre el TEXTO |
+
+Los dos son **de la familia que este proyecto ya tiene documentada**, y ninguno
+se habría visto sin el comparador: el primero es un −4.59 que ninguna guarda
+solo-clon distingue de un cambio de contenido, y el segundo es un carácter.
+
+### Lo que queda FICHADO, con su número
+
+| ficha | qué | cardinal |
+|---|---|---|
+| §F3-LH-DESEMPATE-DE-L3 | el desempate del orden no es una propiedad medida del original | decide **17 de 23** tarjetas |
+| §F3-LH-VARIANTE-724x1024 | el clon no genera la variante de foto que el original sirve | **23 de 23**, y **no es par comparado** |
+| `SP-T4` · `SP-T5` | anchos intermedios (contrato de RANGO) y la campaña de ruido | siguen abiertas |
+| el caso «cuerpo más corto que el tope» del extracto | **0 de 23** lo ejercitan | camino de render **sin estrenar** |

@@ -163,4 +163,32 @@ export const BANDA = {
    * RANGO, no de fidelidad.
    */
   listado: { alto: 225, altoMovil: 136.58 },
+  /**
+   * `L5` — `/casos-de-exito`, el ÍNDICE. **458.09 / 473.08**, y es la ÚNICA
+   * banda del sitio que **BAJA al estrechar** (todas las demás encogen).
+   *
+   * ⚠ **No es una anomalía a corregir ni un número a redondear.** Su
+   * `header.et-l--header` lleva una **TERCERA fila** —un módulo de texto
+   * centrado: *«Más información sobre nuestros proyectos más interesantes»*—
+   * que está en las 2 instancias de `L5` y en **0 de 12** listados y **0 de 3**
+   * singulares de caso. O sea que la plantilla de cabecera que recibe
+   * `/casos-de-exito/` trae la banda y el resto del sitio recibe la de 2 filas.
+   *
+   * Y la subida sale por composición desde lo congelado: `h1.y − cabecera.h` =
+   * **135.19 px a los DOS anchos** (593.28−458.09 = 608.27−473.08), así que
+   * todo lo que hay entre cabecera y `h1` es invariante al ancho y **la subida
+   * de la base ES la subida de la cabecera**: la base encoge como en todas
+   * (225→136.58, −88.42) y la fila extra **crece** de 233.09 a 336.5 (+103.41,
+   * porque el texto envuelve y su ritmo es relativo). Neto **+14.99**.
+   *
+   * ⚠ **Calibrarla contra la banda de las otras formas la rompe a 390**, que es
+   * justo el aviso de arriba: coincidir en un ancho no prueba nada. Aquí ni
+   * siquiera coincide en uno.
+   *
+   * **Lo que lo congelado NO puede exhibir** es el reparto interno de la fila
+   * extra —su `padding` y su tipografía viven en la hoja externa `et-cache`, que
+   * la captura no trae—, así que estos dos números **se replican como MEDIDA**,
+   * no se derivan de sus partes.
+   */
+  indiceCasos: { alto: 458.09, altoMovil: 473.08 },
 } as const;

@@ -40,6 +40,42 @@ clon ya la construye (`CtaInmerso`) · que n=1 es la población, no la muestra.
 > `L3` va 225 → 136.58). No es una anomalía a corregir: es su cascarón propio, el
 > del grupo C. **Calibrarla contra la base de las otras formas la rompe a 390.**
 
+### ⛔⛔ Y LA PREGUNTA QUE NADIE LE HIZO A ESTA SPEC, Y QUE PARA LA CONSTRUCCIÓN (2026-08-18, 80.ª tanda)
+
+**`L5` NO se construyó en la 80.ª tanda, y el motivo no está en ninguna de las
+listas de arriba: `¿EN QUÉ ORDEN VAN LAS 57 TARJETAS?`**
+
+Esta spec mide la retícula, la caja, el pie, la cabecera y hasta que **no
+pagina** — y da por hecho el orden, que es lo único que la plantilla no puede
+inventar. Es §*una regla INCOMPLETA se lee exactamente igual que una completa*,
+cobrada por segunda vez en esta familia de specs.
+
+| candidato | ¿está en el modelo `casos`? | reproduce el orden servido |
+|---|---|---|
+| **`datePublished`** (JSON-LD del singular) | ⛔ **NO** | **57 / 57** |
+| `detalles.anyo` | sí | no (`2026 · 2025 · 2026 · 2026`…) |
+| orden de la colección | sí | no |
+| carpeta `uploads/AAAA/MM` de `imagenCabecera` | sí | **30 / 57** |
+| ID de WordPress DESC | no (irreproducible por diseño) | no |
+
+> **La clave existe y está SERVIDA en los 57 singulares. Lo que falta es el
+> CAMPO**, y añadirlo es una decisión de esquema con migración y re-siembra.
+> Ficha: `PENDIENTES-QA.md` §F3-LH-ORDEN-DE-L5-SIN-MODELAR · alcance:
+> `ESQUEMA-CMS.md` §7g.
+
+**Y por qué no se construyó «con el orden que salga»:** esta forma tiene **una
+sola página** y el espejo congela **sus 3 primeras tarjetas**. Con otro orden
+serían **otras tres**, y el comparador sacaría decenas de pares rojos de eje
+`contenido` que **no son defecto de plantilla**. Desde ahí, el camino de menor
+resistencia es cablear el orden para que cuadren las 3 que el espejo mira.
+
+**Lo que sí queda hecho de `L5` en esa tanda**, para que la siguiente no lo
+rehaga: el **cascarón está construido y compartido** con `L3`
+(`components/listados/PaginaTema.tsx`, `variante="casos"`), con su envoltorio
+`.hentry`, su `padding-top: 50px`, su `BANDA.indiceCasos` (458.09 / 473.08), su
+punteado y el hueco para la 4.ª sección de pie. Falta **la consulta, la tarjeta
+y la banda de 12 botones**.
+
 ### Lo que sigue SIN contestar, y hay que decirlo
 
 - **el filtro por sector NO se construye** — desviación ya declarada: `sector` se
