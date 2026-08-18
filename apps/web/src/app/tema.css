@@ -199,6 +199,25 @@
   font-weight: 600;
 }
 
+/**
+ * ⚠⚠ **EL ORIGINAL ESCONDE «Ver todos» MIENTRAS ESTÁ MARCADO**, y ésta es la
+ * regla que la primera transcripción se dejó:
+ *
+ *     .button-group .button:first-child.is-checked { display: none }
+ *
+ * O sea que `L5` sirve **12 botones en el DOM y 11 visibles**. `qa:lh-huecos`
+ * cuenta 12 —cuenta nodos, y hace bien—, así que el número publicado no
+ * distingue los dos, y construir «12 botones» daba una fila de más: **+5.00 px**
+ * en la banda, que es la mitad del Δ0 falso del listado.
+ *
+ * Es §*el navegador renderiza lo servido*: la regla estaba en la hoja capturada,
+ * al lado de la que sí se copió, y leerla de menos no da error — da una banda
+ * plausible.
+ */
+.lh-tema .button-group .button:first-child.is-checked {
+  display: none;
+}
+
 .lh-tema .button-group .button {
   margin: 0 10px 10px 0;
   border: 1px solid #7f8798;
@@ -428,6 +447,15 @@
  * constante que ese contrato llama defecto.
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/* ⚠ `position: relative` es **MEDIDA**, no transcripción: la hoja capturada no
+   la trae (vive en una de las 505 `et-cache` que la captura no incluye) y el
+   espejo la congela — `listado.contenedor.caja.position: "relative"` sobre
+   `div.case-list-content`. Se replica con su número, como el `58px` del
+   `.container`. */
+.lh-tema .case-list-content {
+  position: relative;
+}
+
 .lh-tema .case-list-content::after {
   content: "";
   display: block;
@@ -461,6 +489,18 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 0.5s;
+}
+
+/* ⚠⚠ **`color: inherit` NO está en la hoja del original — está aquí porque el
+   CLON tiene una regla que el original no tiene.** `globals.css` pinta
+   `a { color: #0075c9 }` para todo el sitio; el tema del original pinta los
+   enlaces por sitios concretos (`.case-taxonomies a`, `.case-detalles-txt a`…) y
+   este `<a>` no es uno de ellos, así que hereda **#333**. El espejo lo congela
+   en tres caminos a la vez —`media.tipo.color`, `media.caja.borderColor` (que es
+   `currentColor`) y los dos gemelos de `envoltorioMedia`—, o sea **6 pares por
+   tarjeta**. Se restituye el MECANISMO (heredar), no el número. */
+.lh-tema .case-list-content article .case-imagen {
+  color: inherit;
 }
 
 .lh-tema .case-list-content article .case-imagen:focus,
@@ -514,6 +554,17 @@
   font-size: 13.5px;
 }
 
+/* ⚠ **El corte de 480 baja la interlínea a 1.25**, y es la regla que la primera
+   transcripción se dejó fuera: sin ella el meta computa 18.9 donde el original
+   mide **16.875** (13.5 × 1.25). Lo cazó el comparador, no la relectura de la
+   hoja — que es para lo que está. */
+@media (min-width: 480px) {
+  .lh-tema .case-taxonomies {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}
+
 /* ══════════════════════════════════════════════════════════════════════════
  * 6 · LA CABECERA DE LA TARJETA — cliente + titular
  *
@@ -530,12 +581,27 @@
 .lh-tema .case-list-content .case-cliente {
   font-size: 16px;
   font-weight: 700;
+  /**
+   * ⚠ **SEGUNDA instancia del mismo mecanismo que el `.sobretitulo`** — y la que
+   * lo convierte de anécdota en CLASE. El espejo congela la tarjeta: `titulo.y −
+   * (meta.y + meta.h) = 42.6`, o sea `header` (12) + cliente **30.6**. El clon
+   * daba **27.19** (16 × 1.7) y la tarjeta salía **−3.41**.
+   *
+   * La raíz está en `globals.css` §`body` y **no se toca aquí**: ficha
+   * §F3-LH-INTERLINEA-RATIO-VS-LONGITUD, con su alcance.
+   */
+  line-height: 30.6px;
 }
 
 .lh-tema .case-list-content .case-title {
   font-size: 20px !important;
   line-height: 1.35 !important;
   font-weight: 400 !important;
+  /* ⚠ **MEDIDA**, no transcripción: el `padding-bottom: 10px` de los encabezados
+     lo pone el núcleo de Divi, que la captura del tema no incluye. El espejo lo
+     congela (`titulo.ritmo.paddingBottom: "10px"`) y es el mismo valor que el
+     `h1.entry-title` ya lleva escrito unas líneas más arriba, por la misma razón. */
+  padding-bottom: 10px;
 }
 
 .lh-tema .case-list-content .case-title a:hover {
@@ -556,12 +622,29 @@
   font-weight: 800;
   letter-spacing: 0.1px;
   text-transform: uppercase;
+  /**
+   * ⚠⚠ **30.6px EXPLÍCITOS, y aquí está el porqué — es una diferencia de
+   * MECANISMO de herencia, no un número que falte.**
+   *
+   * El original hereda su interlínea como una **LONGITUD** (Divi la escribe en
+   * `em`, y un `line-height` en `em` se hereda ya computado: 18 × 1.7 = 30.6px
+   * para todos los descendientes, mida lo que mida su letra). El clon la hereda
+   * como **RATIO** (`1.7` sin unidad), así que este `p` de 15px se quedaba en
+   * **25.5**.
+   *
+   * Δ **−5.09** en la base, y no lo tapaba nada… salvo otro error del mismo
+   * tamaño y signo contrario: la banda de filtros iba **+5.00** por la regla de
+   * «Ver todos» que faltaba, y `lista.y` salía a **−0.11** — un Δ de cero que
+   * eran DOS errores anulándose (§El principio). El que lo destapó fue el `h1`,
+   * que está por encima de la banda y no podía absorberlo.
+   */
+  line-height: 30.6px;
 }
 
 /* `.page-template-case-studies div.hentry { background: #fff url(assets/images/
    recurso-k-fondo.svg) no-repeat left 3rem }` — el mismo asset que ya sirven la
    HOME, `/accesorios` y `/kunak-api`, por la ruta que el repo usa. */
-.lh-cuerpo[data-lh="casos"] .hentry {
+.lh-cuerpo[data-lh="casos"] div.hentry {
   padding-bottom: 3rem;
   background: #fff url("/images/theme/recurso-k-fondo.svg") no-repeat left 3rem;
 }
