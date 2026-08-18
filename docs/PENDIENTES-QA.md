@@ -1,9 +1,15 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## 📋 META-CANARIOS-DE-CARGA · SIETE MARCADORES OPACOS EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO (2026-08-18, instrumentación — la medida la toma la sesión siguiente)
+## 📋 META-CANARIOS-DE-CARGA · MARCADORES EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO (v1 opaca 2026-08-18 — **MEDIDA** · v2 visible 2026-08-18 — instrumentación, la medida la toma la sesión siguiente)
 
 **Esto no mide nada todavía.** Deja puesto el instrumento y escribe la lectura
 **antes** de mirar, que es lo único que impide decidirla por cansancio.
+
+> ⚠ **Lo de aquí abajo hasta §Alcance es v1, y su lectura ya está tomada.** El
+> resultado, el defecto del instrumento que lo produjo y la v2 que lo corrige
+> están **al final de la sección**, a partir de §v1 · LO QUE MIDIÓ LA SESIÓN
+> SIGUIENTE. La tabla de lectura de v1 se conserva como está escrita —es el
+> pre-registro— y **no se toca**.
 
 ### La pregunta, y por qué no se contesta sola
 
@@ -108,6 +114,124 @@ auto-cargado. Es §La causa común con un contenedor nuevo — el canal por el q
 se mira.
 
 **No se corrió `npm run check`:** son comentarios HTML en documentos —cero
+código, cero superficie de build— y sigue habiendo ~17 `node.exe` sin
+identificar (§regla 18).
+
+### ✅ v1 · LO QUE MIDIÓ LA SESIÓN SIGUIENTE, y son DOS mitades (2026-08-18)
+
+Se preguntó a una sesión nueva, sin abrir ningún fichero, por lo auto-cargado.
+**Los offsets de esta subsección son del fichero de v1** (156.290 chars, commit
+`b198711`); los de v2 van más abajo y difieren en **+17 por cada `KV-` que les
+quede por encima** — hasta **+119** en §Comandos.
+
+| mitad | lo medido | la derivación |
+|---|---|---|
+| **el truncado a 150.000 queda REFUTADO** | la sesión citó **verbatim** el bloque `bash` de §Comandos | `## Comandos` empieza en el char **156.059**, el fence en **156.072**, y la última línea citada (`npm run typecheck`) **acaba en 156.211**. El auto-cargado llegó **6.211 chars más allá del límite** |
+| **ninguno de los 8 comentarios llegó** | ni los 7 `KC-` ni el `CANARIO-CARGA` | y `KC-01` está en el char **47.825**, el **30 %** del fichero. **No es un corte por posición** |
+
+> **Y el borde, que es el número más fino que dejó v1:** lo último citado acaba
+> en **156.211** y el `CANARIO-CARGA` empieza en **156.217** — **seis chars
+> después**, con un `\n`, el fence de cierre y una línea en blanco en medio. Un
+> corte posicional tendría que caer exactamente en el hueco entre el último
+> contenido legible y el primer comentario. Eso no es un corte: es una
+> **partición por FORMA**.
+
+**Lo que v1 NO separa, y es lo que obliga a v2:** entre `061dc3d` y `HEAD`,
+`git diff --numstat -- CLAUDE.md` da **9 líneas añadidas y 0 borradas**, y las 9
+son **los 8 comentarios más una línea en blanco** — o sea **cero contenido
+legible que difiera**. Por tanto *«el canal borra los comentarios»* (H1) y *«la
+copia auto-cargada es de antes de los canarios»* (H2) **predicen exactamente el
+mismo texto**, incluido el borde de 156.211. Son §dos modelos que predicen lo
+mismo en todo el dominio: **0 instancias separadoras**, así que v1 no eligió
+entre ellos — sólo mató el tercero (el truncado).
+
+### El defecto del instrumento de v1, nombrado
+
+> **Un comentario HTML es la ÚNICA forma cuyo «no aparece» no se distingue de
+> «no existe».** Es contenido que un canal puede retirar sin dejar hueco: no
+> queda línea vacía, ni marca, ni error. Así que su cero es **ambiguo por
+> construcción** entre *«no llegó»* y *«no está ahí»*.
+
+Es **§sondas 4** —*un selector que no casa con nada no es un cero*— cometida en
+el **DISEÑO** de la sonda en vez de en su código: los tres criterios de
+construcción de v1 (token opaco · inerte · autodescriptivo) se cumplieron los
+tres, y el que faltaba —**no eliminable**— no estaba escrito.
+
+**Y arrastró al control.** `KC-00`, el que vive fuera del repo, **también es un
+comentario HTML**: bajo H1 se apaga igual que los otros ocho, así que en v1 el
+control **no discrimina H1 de H2** — hereda el defecto que venía a vigilar.
+Cardinal: **1 de 1 control**, inservible para la pregunta que queda.
+
+### Lo que sigue SIN medir: el MEDIO del fichero
+
+v1 confirmó **el final** y **las dos primeras líneas**, y nada de lo de en
+medio: los únicos marcadores intermedios eran comentarios, y **ninguno llegó**.
+Principio y final no prueban el medio.
+
+Los tramos van en **offsets del fichero de v2** —el que cargará la sesión que
+mida—, para que la tabla se pueda comprobar contra lo que haya en disco:
+
+| tramo | ¿confirmado por v1? | qué lo mide en v2 |
+|---|---|---|
+| **0 … 33** · `# kunak-web-clone` y `## Qué es esto` | sí, citados verbatim | — |
+| **34 … 156.177** · el interior, el **99,8 %** del fichero | **NO** | `KV-01`…`KV-07` |
+| **156.178 … 156.330** · §Comandos y su bloque `bash` | sí, citado verbatim | — |
+| **156.331 … 156.426** · la cola tras el fence de cierre | **NO** | `KV-08` |
+
+O sea que v1 confirmó **153 chars del final y 34 del principio** —187 de
+156.426, el **0,12 %**— y del resto no dijo nada: los únicos marcadores que
+había en medio eran comentarios.
+
+### v2 · LOS OCHO MARCADORES VISIBLES, con sus offsets RE-DERIVADOS
+
+Un `KV-nn` en línea suelta **debajo** de cada `KC-nn`, con token nuevo y opaco.
+**Los ocho comentarios de v1 se quedan**: son la mitad que convierte el par en
+discriminador — si sólo se citan los `KV-`, la diferencia es la FORMA y nada más.
+
+| marcador | offset real | línea | dónde cae |
+|---|---|---|---|
+| `KV-01 · 7HQMPD` | **47.854** | 811 | bajo `KC-01`, antes de §El principio |
+| `KV-02 · 4RXKTB` | **86.759** | 1445 | bajo `KC-02`, antes de §sondas 1 |
+| `KV-03 · 9DWNZL` | **120.160** | 2033 | bajo `KC-03`, antes de §sondas 6 |
+| `KV-04 · 2FGVSC` | **146.830** | 2524 | bajo `KC-04`, antes de §sondas 16 |
+| **`KV-05 · 6BJYRM`** | **149.569** | 2569 | **último BAJO la raya de 150.000** |
+| **`KV-06 · 3PKXWQ`** | **150.592** | 2587 | **primero SOBRE la raya** (§sondas 17) |
+| `KV-07 · 8NTHVG` | **154.743** | 2663 | bajo `KC-07`, antes de §sondas 18 |
+| `KV-08 · 5ZMCFR` | **156.409** | 2701 | final del fichero, bajo el `CANARIO-CARGA` |
+
+**Criterio de aceptación, comprobado y no supuesto:**
+`KV-05 149.569 < 150.000 < KV-06 150.592` ✅ — el par **cruza la raya** con
+**431** y **592** de margen. Se exige aunque el truncado esté refutado: si
+apareciera un corte por otra causa, el par sigue localizándolo.
+
+**El diff, comprobado:** `8 inserciones · 0 borrados · 0 líneas existentes
+modificadas`, y los 8 comentarios de v1 intactos (`grep -c` → **7** `KC-` + **1**
+`CANARIO-CARGA`). El fichero crece **136 chars**: 156.290 → **156.426**.
+
+> ⚠ **El método del offset se declara, porque la tabla de v1 usó otro y difiere
+> en 1.** Aquí: `readFileSync(…,'utf8').indexOf(token)`, **0-indexado, en CHARS**
+> sobre el fichero final —`wc -c` da **160.428** bytes y ése no es el número que
+> se compara contra el límite—. Los `KC-` de la tabla de v1 van **1 menos** que
+> este método (47.824 contra 47.825): es diferencia **de método, no del
+> fichero**, y se escribe para que nadie lea ese −1 como un desplazamiento.
+
+### LA LECTURA DE v2, escrita ANTES de medir
+
+| lo que conteste la sesión nueva | lectura |
+|---|---|
+| cita los `KV-` y **no** los `KC-` | **H1: los comentarios HTML no llegan.** El fichero sí, y el medio queda medido |
+| **ni** `KV-` **ni** `KC-` | **H2: copia obsoleta.** Y la pregunta siguiente es **cuánto** de obsoleta |
+| cita **los dos** juegos | la respuesta de v1 era **incorrecta**: se repite v1 antes de fichar nada |
+| unos `KV-` sí y otros no | **ahí sí hay un corte**, y el reparto dice dónde. Es el único caso que reabre el truncado, **y con otro número** |
+
+### Alcance de v2 — lo que esta ficha NO establece
+
+**Que los `KV-` estén escritos no dice nada sobre si llegan.** Y sigue sin poder
+autoverificarse desde aquí: **un `Read` de `CLAUDE.md` va por un canal DISTINTO
+del auto-cargado** y saldría verde diga lo que diga el auto-cargado (§La causa
+común, con el canal por el que se mira como contenedor).
+
+**No se corrió `npm run check`:** son ocho líneas de texto en un documento —cero
 código, cero superficie de build— y sigue habiendo ~17 `node.exe` sin
 identificar (§regla 18).
 
