@@ -324,7 +324,21 @@ el fichero **en disco tal como está, en LF**.
 código** —`CLAUDE.md`, esta ficha y `HANDOFF.md`— y el encargo lo prohíbe
 explícitamente (§regla 18).
 
-## ⛔ F3-LH-ORDEN-DE-L5-SIN-MODELAR · EL ÍNDICE DE CASOS NO SE PUEDE CONSTRUIR: SU CLAVE DE ORDEN NO ESTÁ EN EL MODELO (2026-08-18, 80.ª tanda)
+## ✅ F3-LH-ORDEN-DE-L5-SIN-MODELAR · **DESBLOQUEADA EL 2026-08-18 (81.ª): LA CLAVE YA ESTÁ EN EL MODELO** (abierta en la 80.ª)
+
+> ✅ **El bloqueo se levanta.** `casos.fechaPublicacion` existe, está migrado
+> (`20260818_193649_f3_fecha_publicacion_orden`), sembrado **57/57** desde el
+> JSON-LD del corpus y verificado por el round-trip (**352/352**). El orden
+> `datePublished` DESC reproduce el servido **57/57**, elegido con **56
+> posiciones separadoras** (`qa:lh-fecha-orden`, negativo 4/4).
+>
+> ⚠ **Lo que esto desbloquea es CONSTRUIR, no «está construido».** `L5` **no se
+> construyó en la 81.ª**: la tanda cerró en el **CORTE LIMPIO 1** que su propio
+> encargo declara válido —campo migrado, sembrado y round-trip verde—, y la
+> página entra entera en la siguiente sin nada a medias. Lo que sigue vigente de
+> esta ficha es **la spec**, no el bloqueo.
+
+**Lo de abajo es el diagnóstico de la 80.ª, que es lo que la decisión consumió:**
 
 **`L5` NO se construye en esta tanda, y no es por falta de tiempo: es un hueco
 del MODELO, medido.** El encargo pedía construirlo; lo que se entrega en su
@@ -386,6 +400,44 @@ listados le EXIGEN al modelo»*— cobrada ahora sobre el grupo C.
 **Derivaciones:** el orden servido sale de `corpus/fase-3/listados/casos-de-exito/index.html`
 (los 57 `<article>` **sin recortar** — el espejo congela 3); las fechas, de los
 57 `corpus/casos/*.html`; el contraste con la DB, por Local API.
+
+## 📋 F3-LH-FECHA-DOS-FORMATOS · UN NOMBRE DE CAMPO, DOS MEDIOS, TRES COLECCIONES (2026-08-18, 81.ª tanda)
+
+**Qué se decide aquí: nada.** Se nombra la clase con su cardinal antes de que se
+lea como uniforme, que es lo que pasa cuando dos cosas comparten nombre.
+
+`fechaPublicacion` existe ahora en **tres** colecciones y **no guarda lo mismo**:
+
+| colección | qué guarda | de dónde sale | ¿lo pinta el original? |
+|---|---|---|---|
+| `entradas-blog` | «7 enero 2025» — la fecha **RENDERIZADA** | `<span class="fecha-publicacion">` | **sí** |
+| **`casos`** | `2021-04-20T10:35:17+02:00` — **ISO 8601** | `"datePublished"` del **JSON-LD** | **no** |
+| **`terminos-kunakpedia`** | ídem ISO | ídem | **no** |
+
+**Cardinal: 1 concepto · 2 formatos · 3 colecciones.**
+
+**Por qué salió así, y no es descuido:** el contrato de fidelidad manda guardar
+**verbatim lo que el original sirve** (§1). En blog el original sirve un literal
+en español y lo pinta; en `casos` y `terminos` **no pinta fecha en ninguna
+parte** y el único canal servido es el JSON-LD. O sea que el verbatim de cada
+colección es lo que su canal trae — y son formatos distintos porque los canales
+lo son.
+
+> ⚠ **El riesgo concreto, para que se vea:** quien lea `casos.fechaPublicacion`
+> esperando poder pintarlo como en blog, pintará un ISO. Y quien ordene
+> `entradas-blog` por comparación de cadenas —que es lo que funciona con ISO—
+> obtendrá un orden alfabético por mes en español. **Las dos direcciones fallan**,
+> y ninguna da error.
+
+**Lo que hoy lo contiene:** `lib/cms/listados.ts` ya parsea la fecha al ordenar
+(`aEpoch`, que **tira** si no la entiende) en vez de comparar cadenas. Esa es la
+pieza que hace convivir los dos formatos sin que nadie elija.
+
+**Qué lo cerraría, y por qué NO se hace aquí:** añadir el ISO también a
+`entradas-blog` y dejar el literal como campo de presentación. Toca una colección
+**poblada y verificada** (152 documentos, `L1` en sus tres variantes), así que es
+una re-emisión con su antes/después — no un parámetro. Entra con su tanda o se
+declara que no entra.
 
 ## ✅⚠ F3-LH-DESEMPATE-DE-L3 · EL ORDEN DEL ARCHIVO CIENTÍFICO SE APOYA EN UNA COINCIDENCIA — **DECIDIDO 2026-08-18 (81.ª): DECLARAR Y NO TOCAR** (abierto en la 80.ª)
 

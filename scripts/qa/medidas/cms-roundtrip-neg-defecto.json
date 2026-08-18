@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-12",
+    "fecha": "2026-08-18",
     "sabotaje": "defecto",
     "alcance": {
       "comparadas": [
@@ -18,7 +18,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 215,
+      "pares": 352,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -38,7 +38,7 @@
       "conDiferencia": 0
     },
     "categorias-recursos": {
-      "documentos": 8,
+      "documentos": 9,
       "conDiferencia": 0
     },
     "categorias-cientificas": {
@@ -46,8 +46,8 @@
       "conDiferencia": 0
     },
     "productos": {
-      "documentos": 9,
-      "conDiferencia": 9
+      "documentos": 19,
+      "conDiferencia": 19
     },
     "sectores": {
       "documentos": 4,
@@ -62,30 +62,30 @@
       "conDiferencia": 0
     },
     "casos": {
-      "documentos": 4,
+      "documentos": 57,
       "conDiferencia": 0
     },
     "faqs": {
-      "documentos": 2,
+      "documentos": 19,
       "conDiferencia": 0
     },
     "entradas-blog": {
-      "documentos": 149,
+      "documentos": 152,
       "conDiferencia": 0
     },
     "terminos-kunakpedia": {
-      "documentos": 3,
+      "documentos": 37,
       "conDiferencia": 0
     },
     "documentos-cientificos": {
-      "documentos": 4,
+      "documentos": 23,
       "conDiferencia": 0
     }
   },
   "diferencias": [
     {
       "coleccion": "productos",
-      "slug": "monitor-calidad-aire",
+      "slug": "accesories",
       "ruta": "tipo",
       "clase": "FORMA",
       "esperado": "(ausente)",
@@ -93,39 +93,7 @@
     },
     {
       "coleccion": "productos",
-      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
-      "ruta": "tipo",
-      "clase": "FORMA",
-      "esperado": "(ausente)",
-      "real": "\"ficha\""
-    },
-    {
-      "coleccion": "productos",
-      "slug": "sensor-de-calidad-del-aire",
-      "ruta": "tipo",
-      "clase": "FORMA",
-      "esperado": "(ausente)",
-      "real": "\"ficha\""
-    },
-    {
-      "coleccion": "productos",
-      "slug": "software-de-medicion-calidad-del-aire",
-      "ruta": "tipo",
-      "clase": "FORMA",
-      "esperado": "(ausente)",
-      "real": "\"ficha\""
-    },
-    {
-      "coleccion": "productos",
-      "slug": "kunak-api",
-      "ruta": "tipo",
-      "clase": "FORMA",
-      "esperado": "(ausente)",
-      "real": "\"ficha\""
-    },
-    {
-      "coleccion": "productos",
-      "slug": "sulfuro-de-hidrogeno",
+      "slug": "air-cloud",
       "ruta": "tipo",
       "clase": "FORMA",
       "esperado": "(ausente)",
@@ -149,7 +117,119 @@
     },
     {
       "coleccion": "productos",
+      "slug": "dioxido-de-azufre",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "dioxido-de-carbono",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "dioxido-de-nitrogeno",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "kunak-api",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "metano",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "monitor-calidad-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "monoxido-de-carbono",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "oxido-nitrico",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "ozone-2",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "ozono",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
       "slug": "particulas-en-suspension",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sensor-de-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ruta": "tipo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"ficha\""
+    },
+    {
+      "coleccion": "productos",
+      "slug": "sulfuro-de-hidrogeno",
       "ruta": "tipo",
       "clase": "FORMA",
       "esperado": "(ausente)",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-18",
     "que": "el catálogo de CASOS y FAQS extraído del corpus congelado, con T1–T8 por región",
     "fuente": "corpus/{casos,faqs} (metadatos y regiones) + TRANSFORMACIONES (las mismas 10 del grupo A)",
     "control": "25 comparaciones sobre 6 documentos transcritos a mano",
@@ -29,10 +29,12 @@
     "t3b": 0,
     "t4b": 0,
     "t9": 0,
+    "t9b": 0,
     "t4": 0,
     "t5": 0,
     "t6": 0,
-    "t7": 1
+    "t7": 1,
+    "t10": 0
   },
   "violaciones": {
     "t8": [],
@@ -42,10 +44,12 @@
     "t3b": [],
     "t4b": [],
     "t9": [],
+    "t9b": [],
     "t4": [],
     "t5": [],
     "t6": [],
-    "t7": []
+    "t7": [],
+    "t10": []
   },
   "saneador": [],
   "divergencia": {
@@ -62,10 +66,12 @@
       "t3b-declarada": "dato — transformación declarada §3.2 — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` ",
       "t4b-declarada": "dato — transformación declarada §3.2 — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al ",
       "t9-declarada": "dato — transformación declarada §3.2 — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) ",
+      "t9b-declarada": "dato — transformación declarada §3.2 — T9B · un cierre SIN apertura casada se elimina (el parser lo des",
       "t4-declarada": "dato — transformación declarada §3.2 — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustituci",
       "t5-declarada": "dato — transformación declarada §3.2 — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no ",
       "t6-declarada": "dato — transformación declarada §3.2 — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índ",
       "t7-declarada": "dato — transformación declarada §3.2 — T7 · enlaces internos del cuerpo: a ruta local si el BUILD la em",
+      "t10-declarada": "dato — transformación declarada §3.2 — T10 · la media del CUERPO se LOCALIZA — el clon deja de servir i",
       "espacio": "dato — la transcripción está indentada a mano y el corpus no (§PASO 2)",
       "cierre-xhtml": "dato — el original sirve `<br />`; la transcripción normalizó a `<br>` (§PASO 2)",
       "espacio-duro": "dato — el original sirve U+00A0 crudo; la transcripción lo escapó a `&nbsp;` (§PASO 2)",
@@ -119,7 +125,7 @@
     "casos/red-calidad-de-aire-para-world-athletics.necesidad"
   ],
   "t7": {
-    "rutasPublicadas": 235,
+    "rutasPublicadas": 376,
     "fuente": "SÓLO `.next/prerender-manifest.json` (§F2-3-HREF-DERIVADO b)",
     "dejadosAlOriginal": 1,
     "porDestino": {
@@ -164,6 +170,7 @@
         "titulo": "Análisis de la calidad del aire mediante estaciones móviles en Bélgica",
         "imagenCabecera": "/images/uploads/2021/03/imec-2.jpg",
         "cliente": "IMEC - Centro Interuniversitario de Microelectrónica",
+        "fechaPublicacion": "2021-04-20T10:35:17+02:00",
         "necesidad": "<p style=\"text-align: justify;\">El Centro Interuniversitario de Microelectrónica (<a href=\"https://www.imec-int.com/en\">IMEC</a>) nos trasladó su interés en realizar un estudio sobre la calidad del aire mediante estaciones de monitorización móviles basadas en sensores con el objetivo de analizar las concentraciones de contaminantes, tanto en el espacio como en el tiempo, y de esta forma desarrollar modelos basados en estos datos móviles de calidad del aire.</p>\n<p style=\"text-align: justify;\">Las redes oficiales de control de la calidad del aire son científicamente sólidas y precisas, pero cuentan con una resolución espacial muy limitada ya que las concentraciones de contaminantes pueden variar mucho en el espacio y en el tiempo.</p>\n<p style=\"text-align: justify;\">Es por eso que IMEC quería analizar el potencial de las redes de sensores de calidad del aire complementarias, las cuales permiten un muestreo a nivel local en diferentes ubicaciones y a lo largo del tiempo.</p>",
         "solucion": "<p style=\"text-align: justify;\">Suministro de 20 equipos Kunak AIR Mobile con GPS para la monitorización de parámetros de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\"><strong>Acciones realizadas</strong></p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Informe periódicos de los datos obtenidos.</li>\n<li>Plataforma Kunak Cloud para gestión operativa de la rede de sensores.</li>\n</ul>",
         "resultados": "<p style=\"text-align: justify;\">Despliegue de una red de monitorización móvil que permiten un muestreo en local y así complementar las redes de estaciones oficiales que alcanzan una resolución de control espacial limitada.</p>\n<ul>\n<li style=\"text-align: justify;\">Validación de este tipo de tecnología basada en sensores para el análisis de la calidad del aire.</li>\n<li style=\"text-align: justify;\">Desarrollo de modelos basados en datos tanto en el espacio como en el tiempo a través de estos sensores.</li>\n<li style=\"text-align: justify;\">Recogida mediciones representativas pormenorizadas.</li>\n<li style=\"text-align: justify;\">Análisis la incidencia del tráfico y de industrias cercanas en la calidad del aire.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de la red de sensores.</li>\n<li style=\"text-align: justify;\">Evaluación de dependencias, trazado series temporales y rosas de viento, investigación de correlaciones y precisiones a través de Kunak Cloud.</li>\n</ul>",
@@ -176,7 +183,8 @@
         "sectores": [
           {
             "slug": "investigacion-consultoria",
-            "nombre": "Investigación y consultoría"
+            "nombre": "Investigación y consultoría",
+            "paginaSlug": "estudio-de-la-contaminacion-atmosferica"
           }
         ],
         "destacado": "«Las soluciones de Kunak aportan importantes pruebas sobre la fiabilidad de los datos de los sensores de calidad del aire»",
@@ -219,6 +227,7 @@
         "titulo": "Red global de calidad de aire en pistas de atletismo de World Athletics",
         "imagenCabecera": "/images/uploads/2019/05/sports.jpg",
         "cliente": "World Athletics",
+        "fechaPublicacion": "2019-05-07T14:06:33+02:00",
         "necesidad": "<p><a href=\"https://worldathletics.org/\" target=\"_blank\" rel=\"noopener\">World Athletics</a> tiene como objetivo trabajar y abogar por un aire limpio al proporcionar información en tiempo real sobre la calidad del aire y el rendimiento de los atletas. Además, busca influir en las políticas medioambientales, encontrar soluciones de calidad del aire y realizar campañas de sensibilización.</p>\n<p>World Athletics, en colaboración con el Programa de las Naciones Unidas para el Medio Ambiente, tiene como objetivo abordar el problema de la contaminación del aire que contribuye a 7 millones de muertes al año en todo el mundo. Al crear una red de monitoreo de la calidad del aire en 1.000 pistas de atletismo en todo el mundo, brinda una oportunidad de primera para proporcionar evidencias que mejoren la salud de los ciudadanos y futuros atletas.</p>\n<p><a href=\"https://worldathletics.org/athletics-better-world/air-quality\" target=\"_blank\" rel=\"noopener\">https://worldathletics.org/athletics-better-world/air-quality</a></p>\n<p><iframe src=\"//player.vimeo.com/video/722223811?title=0&amp;byline=0&amp;portrait=0&amp;color=8dc7dc\" width=\"425\" height=\"auto\" allowfullscreen=\"allowfullscreen\"></iframe></p>",
         "solucion": "<p style=\"text-align: justify;\">Suministro e instalación a demanda de estaciones Kunak <a href=\"/monitor-calidad-aire\">AIR Pro</a> para la monitorización de gases contaminantes y partículas.</p>\n<p style=\"text-align: justify;\">Acciones realizadas:</p>\n<ul style=\"text-align: justify;\">\n<li>Despliegue de una red de sensores con comunicaciones inalámbricas embebidas.</li>\n<li>Desarrollo de aplicación móvil.</li>\n<li>Informe mensual de los datos obtenidos.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"//www.youtube.com/embed/0AmzdyB5Jl4\" width=\"560\" height=\"314\" allowfullscreen=\"allowfullscreen\"></iframe></p>",
         "resultados": "<p style=\"text-align: justify;\">Desarrollo de una solución de monitorización ambiental calibrada con las siguientes funcionalidades:</p>\n<ul>\n<li style=\"text-align: justify;\">Sistema de alarmas, alertas y estadísticas en tiempo real.</li>\n<li style=\"text-align: justify;\">Detección de episodios de aumento de la contaminación.</li>\n<li style=\"text-align: justify;\">Gestión y calibración remota de los equipos.</li>\n<li style=\"text-align: justify;\">Desarrollo de protocolos estadísticos avanzados para la obtención de datos de alta calidad y fiabilidad que aportan altas correlaciones con estaciones oficiales y equipos de referencia.</li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: left;\"><iframe src=\"https://kunakcloud.com/widgets/wa/widget.html\" width=\"800\" height=\"400\"></iframe></p>",

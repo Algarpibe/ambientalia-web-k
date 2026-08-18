@@ -23,11 +23,28 @@
  * cuerpo tiene que impedir el catálogo entero, no colarse.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { existsSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./../qa/lib.mjs";
 
 const CANONICA = "medidas/a-extraido.json";
+
+/**
+ * ⚠ **EL RECUENTO DE ENTRADAS SE DERIVA DEL CORPUS, NO SE ESCRIBE** (§regla 9,
+ * 7.º caso: *un conjunto enumerado a mano dentro de una sonda es un dato
+ * recordado*).
+ *
+ * Aquí estaba cableado a **149** desde el 2026-08-13. La 74.ª tanda sembró los
+ * 3 documentos de §F3-LH-TERCER-DOCUMENTO y el corpus pasó a **152**, así que
+ * este negativo llevaba **rojo desde el 2026-08-17** y nadie se enteró: nada lo
+ * corría. Un número recordado envejece **contra** el repo, en silencio, y no
+ * hay lectura que lo distinga de uno derivado.
+ *
+ * Derivado, capturar un documento más sube el listón **solo**, sin tocar el
+ * fichero — que es la diferencia entre arreglar la instancia y arreglar la
+ * clase.
+ */
+const ENTRADAS_EN_CORPUS = readdirSync(join(QA, "../../corpus/entradas-blog")).filter((f) => f.endsWith(".html")).length;
 
 const casos = [
   {
@@ -56,14 +73,16 @@ const casos = [
      */
     salidaTiene: /CONTROL · \d+ comparaciones[\s\S]*?✅ TODAS/,
     comprueba: (j) => {
-      if (j.recuento["entradas-blog"] !== 149) return `${j.recuento["entradas-blog"]} entradas, no 149`;
+      if (j.recuento["entradas-blog"] !== ENTRADAS_EN_CORPUS)
+        return `${j.recuento["entradas-blog"]} entradas, no ${ENTRADAS_EN_CORPUS} (derivado de corpus/entradas-blog)`;
       if (j.control.discrepancias !== 0) return `${j.control.discrepancias} discrepancias en el control`;
       if (!j.control.documentos) return "la congelada no trae `control.documentos`: el numerador viene sin denominador";
       if (j.control.comparaciones <= j.control.documentos)
         return `${j.control.comparaciones} comparaciones para ${j.control.documentos} documentos controlados: el control mira un campo o menos por documento`;
       /* Sin destacadas ni taxonomías leídas los sabotajes no probarían nada. */
       const conImagen = j.catalogo["entradas-blog"].filter((d) => d.imagenDestacada).length;
-      if (conImagen === 0 || conImagen === 149) return `imagenDestacada en ${conImagen} de 149: o el lector está muerto o es un pleno`;
+      if (conImagen === 0 || conImagen === ENTRADAS_EN_CORPUS)
+        return `imagenDestacada en ${conImagen} de ${ENTRADAS_EN_CORPUS}: o el lector está muerto o es un pleno`;
       return null;
     },
   },
@@ -112,7 +131,7 @@ const casos = [
     env: { SABOTAJE: "cuerpo-ausente" },
     exit: 2,
     salidaTiene: /sin cuerpo/,
-    comprueba: (j) => (j.recuento["entradas-blog"] === 149 ? "el sabotaje no quitó ningún cuerpo" : null),
+    comprueba: (j) => (j.recuento["entradas-blog"] === ENTRADAS_EN_CORPUS ? "el sabotaje no quitó ningún cuerpo" : null),
   },
 ];
 

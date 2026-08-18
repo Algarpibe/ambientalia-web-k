@@ -1,6 +1,71 @@
-# HANDOFF — los canarios cierran: el fichero llega ENTERO, la forma comentario no viaja, y reducir `CLAUDE.md` pasa a HIGIENE
+# HANDOFF — el campo de fecha ENTRA, `L5` queda desbloqueada, y la tanda cierra en el CORTE LIMPIO 1
 
-> ✅ **Tanda de REGISTRO Y LIMPIEZA, 2026-08-18 (81.ª). No mide nada nuevo:
+> ✅ **Tanda de ESQUEMA Y DATOS, 2026-08-18 (81.ª). Se cierran el PASO 0, el
+> PASO 1, el PASO 2 y el PASO 3. `L5` NO se construye: la tanda para en el CORTE
+> LIMPIO 1 que su propio encargo declara cierre válido.**
+>
+> **1 · Las TRES decisiones del propietario, escritas donde se leen.** (a) §7g
+> del ESQUEMA — se añade el campo de fecha a `casos` y `terminos-kunakpedia`,
+> que es **transcripción** y no producto: la clave está servida y medida. (b)
+> §F3-LH-DESEMPATE-DE-L3 — **DECLARAR y no tocar**, con el precedente del `h1`
+> bimodal escrito al lado. (c) Alcance de **F3-5** — las **dos lecturas** que
+> convivían en `PLAN-FASE-3.md` desde el 13 se resuelven **borrando** la de
+> HOME-solo.
+>
+> **2 · `datePublished` REPRODUCE los dos órdenes servidos, y se ELIGE.** Sonda
+> nueva `qa:lh-fecha-orden` (negativo 4/4), sin red: **57/57** en
+> `/casos-de-exito/` y **37/37** en `/glosario/`, con **92 posiciones
+> separadoras** frente a tres rivales. **0 empates · 0 sin fecha.** Disparador
+> (a) **no dispara**.
+>
+> **3 · El campo, con la migración que la generada NO podía ser.**
+> `fechaPublicacion` `text` **requerido** (§sondas 6: un opcional que falte deja
+> el listado en un orden inventado **sin dar error**). `migrate:create` emitía
+> `ADD COLUMN NOT NULL` **sin defecto** sobre tablas con **57 y 37 filas** —
+> imposible—; reescrita **nullable → backfill derivado del corpus → SET NOT
+> NULL**. **Reversa probada** (disparador (b)): `migrate:down` limpio, filas
+> intactas, batch 1 sin tocar.
+>
+> **4 · Round-trip VERDE: 352/352 documentos idénticos en 13 colecciones**, con
+> `qa:cms-campos` 10/10 y **seis negativos enteros** (extractor-a 5/5 ·
+> extractor-c 7/7 · extractor-listados 4/4 · seed-listados 5/5 · cms-campos 5/5
+> · cms-roundtrip 6/6). `qa:lh-poblacion` **0 de 29 series cortas**.
+>
+> **5 · REGLA NUEVA en `CLAUDE.md` (§sondas 20), pagada en esta tanda.** *Una
+> sonda que RESETEA el entorno no es sólo una medida: es una mutación, y su
+> verde no dice que el entorno quede como estaba.* `qa:cms-roundtrip` salió
+> 352/352 y dejó `categorias-recursos` sin el término `articulos`;
+> `qa:lh-poblacion` pasó de **0 series cortas a 1**, y ese rojo **se lee como
+> regresión del campo nuevo y no lo era**. Lo dirimió la congelada del mismo día
+> anterior al cambio.
+>
+> **6 · Un negativo llevaba ROJO desde el 2026-08-17 y nadie lo corría.** El
+> control de `cms:extractor-a-neg` tenía **149** cableado y el corpus pasó a
+> **152** en la 74.ª. Es §regla 9, 7.º caso —*un conjunto enumerado a mano dentro
+> de una sonda es un dato recordado*—; **derivado** de `corpus/entradas-blog`,
+> ahora capturar un documento más sube el listón solo.
+>
+> **7 · `L5` NO se construye, y la razón va escrita:** el CORTE LIMPIO 1 del
+> encargo declara cierre válido con el campo migrado, sembrado y el round-trip
+> verde. Entra entera en la 82.ª sin nada a medias. Lo que queda de
+> §F3-LH-ORDEN-DE-L5-SIN-MODELAR es **la spec, no el bloqueo**.
+>
+> **8 · Barrido §regla 12, con su número:** acotado a `PLAN-FASE-3.md` (patrón
+> `^> **MAYÚSCULA…**`) da **1 enunciado con forma de regla** —*«el original sale
+> del camino crítico»*— **y ya está en `CLAUDE.md`** (§regla 10, que se escribió
+> con ese mismo caso). **0 subidas por el barrido.** La regla de esta tanda
+> (§sondas 20) **no sale de él**: sale de haberla pagado.
+>
+> **9 · Fichado, no resuelto:** §F3-LH-FECHA-DOS-FORMATOS — `fechaPublicacion`
+> guarda la fecha **renderizada** en `entradas-blog` y el **ISO** en las dos
+> nuevas, porque éstas no la pintan en ninguna parte. **1 concepto · 2 formatos ·
+> 3 colecciones.** Unificar toca una colección poblada y verificada.
+
+---
+
+## 80.ª tanda · ADENDA — los canarios cierran: el fichero llega ENTERO y la forma comentario no viaja
+
+> ✅ **Adenda de REGISTRO Y LIMPIEZA, 2026-08-18. No mide nada nuevo:
 > cierra la pregunta de los canarios, escribe la regla y retira el instrumento.**
 >
 > **1 · El truncado a 150.000 queda REFUTADO, y con el medio medido en 8

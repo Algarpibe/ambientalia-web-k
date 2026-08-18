@@ -192,6 +192,14 @@ const SEL = {
   articulo: /<article id="post-\d+"[^>]*class="[^"]*case-studies[^"]*"[\s\S]*?(?=<aside class="container case-list")/,
   titulo: /<h1 class="entry-title">([\s\S]*?)<\/h1>/,
   cliente: /<div class="case-cliente">([\s\S]*?)<\/div>/,
+  /**
+   * `CMS-ORDEN-L2` §7g — la fecha de publicación del CASO, clave de orden de
+   * `/casos-de-exito/` (57/57, `qa:lh-fecha-orden`).
+   *
+   * ⚠ Se lee de `crudo`, **con los `<script>` dentro**: el caso no pinta su
+   * fecha en ninguna parte y el único canal es el JSON-LD.
+   */
+  pubIso: /"datePublished"\s*:\s*"([^"]+)"/,
   necesidad: /class="entry-content entry-content-need"[\s\S]*?<div class="entry-content-bloque">([\s\S]*?)<\/div>\s*<\/div>/,
   solucion: /class="entry-content entry-content-solution"[\s\S]*?<div class="entry-content-bloque">([\s\S]*?)<\/div>\s*<\/div>/,
   resultados: /class="entry-content entry-content-results"[\s\S]*?<div class="entry-content-bloque">([\s\S]*?)<\/div>\s*<\/div>/,
@@ -441,6 +449,10 @@ for (const [clave, p] of trabajo) {
     titulo: cuenta("caso.titulo", textoPlano(uno(ambito, titRe))),
     imagenCabecera: cuenta("caso.imagenCabecera", imagenCabeceraDe(crudo)),
     cliente: cuenta("caso.cliente", textoPlano(uno(ambito, SEL.cliente))),
+    /* SIN fallback a `""` a propósito (§sondas 6): el campo es `required`, así
+     * que un canal roto tiene que MATAR el seed, no colar un vacío que deje
+     * `/casos-de-exito/` en un orden inventado y en verde. */
+    fechaPublicacion: cuenta("caso.fechaPublicacion", uno(crudo, SEL.pubIso)),
     necesidad: transforma(regiones.necesidad, clave, "necesidad", clasesConEstilo),
     solucion: transforma(regiones.solucion, clave, "solucion", clasesConEstilo),
     resultados: transforma(regiones.resultados, clave, "resultados", clasesConEstilo),

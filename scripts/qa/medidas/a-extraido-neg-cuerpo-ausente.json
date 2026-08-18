@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-18",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
     "control": "125 comparaciones contra src/lib/arquetipo-a.ts",
@@ -15,6 +15,24 @@
     "entradas-blog": 3,
     "terminos-kunakpedia": 0,
     "documentos-cientificos": 0
+  },
+  "duplicados": {
+    "n": 1,
+    "deUnTotalDe": 212,
+    "regla": "DECISIONES.md §D2.5/§D2.4 — canonical a OTRA URL ⇒ «no soy una ruta». Aquí, además, el servidor responde 301.",
+    "canalesMirados": [
+      "<link rel=canonical>",
+      "og:url"
+    ],
+    "ausenteNoEsDuplicado": "un documento SIN canonical NI og:url no se excluye: «no lo dice» y «dice que es otro» son distintos (§regla 6)",
+    "todos": [
+      {
+        "clave": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+        "seDeclara": "contaminacion-del-aire-en-vertederos",
+        "canal": "canonical",
+        "url": "https://kunakair.com/es/contaminacion-del-aire-en-vertederos/"
+      }
+    ]
   },
   "control": {
     "comparaciones": 125,
@@ -124,6 +142,7 @@
       "t3b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T3b · `wp-caption` → `<figure>`/`<figcaption>` con `data-media` (la rela",
       "t4b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4b · sustitución de lo que T4a deja huérfano: FB3D → enlace al PDF con ",
       "t9-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9 · contenedores de TRANSPORTE ajenos (DOM pegado de otra app) se desen",
+      "t9b-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T9B · un cierre SIN apertura casada se elimina (el parser lo descarta; l",
       "t4-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T4a · `<script>` se elimina, clasificado §3.3 (T4b, la sustitución, nece",
       "t5-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T5 · `<div>`/`<span>`/`<section>` sin atributos se deshacen (no hay estr",
       "t6-declarada": "dato — transformación declarada §3.2, POSTERIOR a la transcripción — T6 · `id` de encabezado no entra (lo pone el JS del tema; el índice se d",

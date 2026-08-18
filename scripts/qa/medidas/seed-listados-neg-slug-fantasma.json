@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-18",
     "que": "siembra de los dos campos que viven en el listado + la jerarquía de `categorias-recursos` (D2.8)",
     "fuente": "medidas/extractor-listados.json (2026-08-14)",
     "sabotaje": "slug-fantasma"
@@ -11,10 +11,7 @@
     "filasSinCorpus": []
   },
   "huecoDeCaptura": {
-    "declarado": [
-      "descarga-catalogo-kunak",
-      "kunak-obtiene-el-sello-reconcilia"
-    ],
+    "declarado": [],
     "huerfanosNuevos": [
       "este-slug-no-existe-jamas"
     ],
@@ -22,14 +19,12 @@
     "porQue": "§F3-LH-DOS-CONJUNTOS-DE-149 — el /blog del original los lista y no están en el corpus de 149"
   },
   "entradasBlog": {
-    "sembrados": 66,
+    "sembrados": 68,
     "slugsSinFilaEnLaDb": [
-      "descarga-catalogo-kunak",
-      "kunak-obtiene-el-sello-reconcilia",
       "este-slug-no-existe-jamas"
     ],
-    "entradasNoCubiertas": 83,
-    "deEllasConRecurso": 82
+    "entradasNoCubiertas": 84,
+    "deEllasConRecurso": 83
   },
   "categoriasRecursos": {
     "filas": 10,

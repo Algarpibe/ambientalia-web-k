@@ -3635,6 +3635,25 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 > que hubiera cerrado las tres a la vez habría cableado un orden inventado en la
 > tercera.
 
+> ✅ **EJECUTADA EN LA MISMA TANDA (81.ª).** El campo existe, está migrado,
+> sembrado y verificado:
+>
+> | | |
+> |---|---|
+> | campo | `fechaPublicacion`, `type: "text"`, **`required: true`** en `casos` y `terminos-kunakpedia` |
+> | por qué `text` | precedente `entradas-blog` (§2.4): **verbatim** al guardar, parseado al **ordenar** (`aEpoch` en `lib/cms/listados.ts`). Un `date` normalizaría, y normalizar es lo que el contrato de fidelidad prohíbe |
+> | por qué `required` | §sondas 6 — un opcional que falte **no rompe nada y deja el listado en un orden inventado**; requerido mata el seed en el acto. Hoy lo traen **57/57** y **37/37**, así que no cuesta nada |
+> | migración | `20260818_193649_f3_fecha_publicacion_orden` — **nullable → backfill → `SET NOT NULL`**, con los 94 valores DERIVADOS del corpus. La generada por `migrate:create` (`ADD COLUMN NOT NULL` sin defecto) **no servía**: las dos tablas ya tenían filas |
+> | reversa | **probada** (disparador (b)): `migrate:down` EXIT 0, columna fuera, **57 y 37 filas intactas**, batch 1 sin tocar |
+> | round-trip | ✅ **352/352 documentos idénticos en 13 colecciones** |
+> | `qa:cms-campos` | ✅ 10/10 tipos, 0 campos sin contraparte |
+> | fuente del dato | los extractores `cms:extractor-a` y `cms:extractor-c` leen `"datePublished"` del **JSON-LD**, **sin fallback a `""`** — si el canal se rompe, el seed muere |
+>
+> ⚠ **Un nombre, dos medios**: en `entradas-blog` el verbatim es la fecha
+> **renderizada**; aquí es el **ISO**, porque estas dos colecciones no pintan
+> fecha en ninguna parte. Fichado con su cardinal —**1 concepto · 2 formatos · 3
+> colecciones**— en `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS.
+
 **Lo que sigue es el ALCANCE tal como se midió en la 80.ª**, que es lo que la
 decisión de arriba consume:
 

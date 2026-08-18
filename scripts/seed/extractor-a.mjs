@@ -103,6 +103,17 @@ const SEL = {
   desc: /<meta\s+name="description"\s+content="([^"]*)"/,
   og: /<meta\s+property="og:image"\s+content="([^"]*)"/,
   pub: /<span class="fecha-publicacion">([^<]*)<\/span>/,
+  /**
+   * `CMS-ORDEN-L2` §7g — la fecha de publicación del TÉRMINO, que es la clave
+   * de orden de `/glosario/` (37/37, `qa:lh-fecha-orden`).
+   *
+   * ⚠ **Va contra `crudo`, NO contra `sin`**: el término no pinta su fecha en
+   * ninguna parte, así que el único canal es el **JSON-LD**, y el JSON-LD vive
+   * dentro de un `<script>` — lo que `sinScriptNiStyle` se lleva por delante.
+   * Es el mismo par de canales con tratamiento opuesto que documenta la sonda:
+   * el MARCADO se busca sin scripts, el DATO se busca con ellos.
+   */
+  pubIso: /"datePublished"\s*:\s*"([^"]+)"/,
   act: /<span class="fecha-actualizacion">\s*Actualizado\s*([^<]*)<\/span>/,
   /**
    * La destacada es un `et_pb_image` del `_tb_body`, FUERA del `post_content`
@@ -407,6 +418,10 @@ for (const [clave, p] of trabajo) {
   } else if (col === "terminos-kunakpedia") {
     const miga = cuenta("miga", SABOTAJE === "selector-muerto" ? null : migaDe(sin));
     const doc = { ...base };
+    /* SIN fallback a `""` a propósito (§sondas 6): si el canal se rompe, lo que
+     * tiene que pasar es que el seed MUERA —el campo es `required`—, no que
+     * entre un vacío que deje el listado en un orden inventado y en verde. */
+    doc.fechaPublicacion = cuenta("termino.fechaPublicacion", uno(crudo, SEL.pubIso));
     /* El rótulo de la miga es campo con defecto «el título», OMITIDO cuando
      * coinciden — el mismo patrón que `prefijo` (CMS-1). */
     if (miga && miga !== titulo) doc.tituloMiga = miga;

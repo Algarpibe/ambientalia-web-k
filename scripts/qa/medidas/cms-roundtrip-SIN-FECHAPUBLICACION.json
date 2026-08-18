@@ -1,7 +1,7 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
-    "sabotaje": "tipo-hoja",
+    "fecha": "2026-08-04",
+    "sabotaje": null,
     "alcance": {
       "comparadas": [
         "categorias",
@@ -18,7 +18,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 352,
+      "pares": 63,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -30,15 +30,15 @@
   },
   "porColeccion": {
     "categorias": {
-      "documentos": 4,
+      "documentos": 3,
       "conDiferencia": 0
     },
     "etiquetas": {
-      "documentos": 12,
+      "documentos": 8,
       "conDiferencia": 0
     },
     "categorias-recursos": {
-      "documentos": 9,
+      "documentos": 3,
       "conDiferencia": 0
     },
     "categorias-cientificas": {
@@ -46,7 +46,7 @@
       "conDiferencia": 0
     },
     "productos": {
-      "documentos": 19,
+      "documentos": 9,
       "conDiferencia": 0
     },
     "sectores": {
@@ -62,23 +62,23 @@
       "conDiferencia": 0
     },
     "casos": {
-      "documentos": 57,
+      "documentos": 4,
       "conDiferencia": 0
     },
     "faqs": {
-      "documentos": 19,
+      "documentos": 2,
       "conDiferencia": 0
     },
     "entradas-blog": {
-      "documentos": 152,
+      "documentos": 7,
       "conDiferencia": 0
     },
     "terminos-kunakpedia": {
-      "documentos": 37,
+      "documentos": 3,
       "conDiferencia": 0
     },
     "documentos-cientificos": {
-      "documentos": 23,
+      "documentos": 4,
       "conDiferencia": 0
     }
   },

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-05",
+    "fecha": "2026-08-18",
     "sabotaje": null
   },
   "tipos": {
@@ -50,7 +50,7 @@
       "colecciones": [
         "entradas-blog"
       ],
-      "nCampos": 19,
+      "nCampos": 20,
       "falta": []
     },
     "TerminoKunakpedia": {

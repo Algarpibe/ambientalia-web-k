@@ -2713,6 +2713,34 @@ cada sesión, **entero**—. El instrumento se retira salvo dos líneas sueltas,
 «¿me llega entero?» **sin volver a instrumentar**. Acta, los cinco veredictos y
 lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
 
+**20 · UNA SONDA QUE RESETEA EL ENTORNO NO ES SÓLO UNA MEDIDA: ES UNA MUTACIÓN,
+Y SU VERDE NO DICE QUE EL ENTORNO QUEDE COMO ESTABA.** (2026-08-18)
+
+> **Un comparador que necesita partir de cero —un `reset`, un `exigeVacia`, un
+> `truncate`— destruye el estado ANTES de medir, y lo que reconstruye después es
+> SU universo, no el de la sesión.** Así que su ✅ es cierto **de lo que
+> compara** y no dice absolutamente nada del entorno que deja detrás.
+
+**Medido:** `qa:cms-roundtrip` resetea la DB y siembra las **9 colecciones de
+`SEMBRADAS`**. Salió **352/352 documentos idénticos** —verde legítimo— y dejó
+`categorias-recursos` **sin el término `articulos`**, porque ese término lo
+escribe `cms:seed-listados`, que el round-trip no corre. `qa:lh-poblacion` pasó
+en el acto de **0 series cortas a 1**, con `poblacionClon: 0` en
+`/recursos/articulos`.
+
+**Y lo que la hace regla y no anécdota es la ATRIBUCIÓN:** ese rojo se lee como
+una regresión del cambio que la tanda estaba haciendo —un campo nuevo en el
+esquema— **y no lo era**. Lo dirimió comparar contra la congelada **del mismo día
+y anterior al cambio** (`lh-poblacion-2026-08-18.json`, `seriesQueNoAlcanzan: 0`).
+Es §regla 16 —*el discriminador es si cambió el ÁRBOL o el DATO*— con el DATO
+movido **por una sonda** en vez de por una edición, que es el caso que aquella
+regla no nombra.
+
+> **Operativamente, y son dos líneas:** (1) toda sonda que resetee **lo dice en
+> su salida y nombra qué repuebla y qué no**; (2) después de correrla, el entorno
+> se **restaura con el pipeline completo** antes de leer ninguna otra sonda —
+> porque las que vengan detrás van a medir el universo que ella dejó, no el tuyo.
+
 ## Comandos
 
 ```bash
