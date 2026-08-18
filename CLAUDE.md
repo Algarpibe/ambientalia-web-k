@@ -871,10 +871,19 @@ tres cosas que «la salida servida» incluye y nadie mira (2026-08-13):**
 | una declaración **INVÁLIDA** (`min-width: none`, `border-radius: none`) | **la tira** — la salida servida de una declaración inválida es *que no existe* | traducirlas a lo que «querían decir» daba `border-radius: 0` contra el `50%` medido |
 | el **espacio en blanco** entre elementos `inline-block` | **lo renderiza**: 3.61 px a 18 px de cuerpo | un JSX «limpio» desplazaba el paginador **3.61 px por pieza, acumulativo** |
 | dos reglas de **origen distinto** consolidadas en un selector | **cambia quién gana la cascada** | subir el `10px` global dentro de `.entry-title` dejó sin efecto un `@media (≤479)`: Δ0 a 1440 y **9 pares a 390** |
+| un marcado y el **`<script>` que lo REPARA en cliente** | ejecuta el script y **repara el marcado** antes de que nadie lo vea | quitar el script y **dejar el marcado** convirtió 2 enlaces vivos en **404 permanentes** — y otros 3 esperando a que se construyan sus páginas |
 
-> **Las tres son la misma:** al transcribir, lo que se replica es **lo que el
+> **Las cuatro son la misma:** al transcribir, lo que se replica es **lo que el
 > navegador hace con lo servido**, no lo que el autor pretendía, ni lo que un
 > formateador considera limpio, ni un valor equivalente en otro selector.
+
+> ⚠ **Y la cuarta añade un eje que las otras tres no tienen: el TIEMPO.** Las
+> tres primeras se ven en el HTML servido tal cual llega; ésta sólo existe
+> **después de ejecutar**. Así que una transformación que limpie el marcado tiene
+> que preguntarse **qué scripts reparaban lo que va a dejar atrás** — y si quita
+> el reparador, **deshacer la reparación a mano** es parte de la transformación,
+> no un extra. Un marcado ofuscado más su descifrador son **una unidad**: media
+> unidad no es una versión más limpia, es un defecto que el original no tiene.
 
 De ahí las dos formas de aplicarlo, que son la misma:
 
@@ -2740,6 +2749,47 @@ regla no nombra.
 > su salida y nombra qué repuebla y qué no**; (2) después de correrla, el entorno
 > se **restaura con el pipeline completo** antes de leer ninguna otra sonda —
 > porque las que vengan detrás van a medir el universo que ella dejó, no el tuyo.
+
+**21 · UN NEGATIVO EN ROJO NO ES UN NEGATIVO PODRIDO HASTA QUE CORRES SU SONDA
+SOLA.** (2026-08-18)
+
+Las veinte de arriba protegen de instrumentos que no miran. Ésta protege de
+**arreglar el instrumento equivocado**, y su coste es que el arreglo *funciona*:
+el negativo se pone verde y el hallazgo que había debajo desaparece.
+
+> **«El sabotaje ya no muerde» y «la sonda está gritando un hallazgo real» dan
+> EXACTAMENTE LA MISMA SALIDA desde fuera: un caso en rojo.** Y sólo el primero
+> se arregla tocando el negativo. Así que la primera orden ante un negativo rojo
+> no es abrir el negativo: es **correr su sonda sola, sin sabotaje**, y mirar si
+> ya sale roja.
+
+**El discriminador, y es una sola corrida:**
+
+| la sonda sola sale… | qué es | dónde se arregla |
+|---|---|---|
+| **verde** | el sabotaje dejó de morder, o su expectativa envejeció | **en el negativo** |
+| **roja** | la sonda tiene razón: hay un hallazgo | **en el dato o en la sonda** — y el negativo se queda rojo, con su ficha |
+
+**La evidencia es un reparto medido, no una anécdota:** de **6** negativos que
+quedaron rojos tras una tanda dedicada a arreglarlos, **5** lo estaban porque su
+CONTROL reproducía un rojo legítimo de la sonda — un campo del esquema sin
+lector, un control interno que no cuadra, un dominio por debajo de su testigo,
+28 rutas sin origen. **Uno solo era un negativo podrido.**
+
+> **Y el corolario que evita el daño: un caso que pasa a verde AJUSTANDO su
+> expectativa al valor de hoy no ha arreglado nada — ha escrito el defecto
+> DENTRO de la guarda.** Si para poner verde un negativo hay que cambiar el
+> `exit` que espera, o rebajar la condición que comprueba, la respuesta correcta
+> casi siempre es **dejarlo rojo y ficharlo**. Una guarda que se acomoda al
+> defecto que vigila deja de vigilarlo, y encima en silencio.
+
+**El tercer caso, que no es ninguno de los dos y hay que saber nombrarlo:** el
+sabotaje muerde, la sonda está bien, y **el dominio no tiene con qué ejercitar
+el caso** — 0 instancias separadoras, 0 elementos de la clase que la guarda
+vigila. Eso no es «roto» ni «probado»: es **SIN PROBAR**, se reporta con su
+denominador y **sigue contando como fallo**, porque un SIN PROBAR que sale verde
+se lee como probado (§*dos modelos que predicen lo mismo en todo tu dominio son
+uno solo*, aplicado al sabotaje).
 
 ## Comandos
 

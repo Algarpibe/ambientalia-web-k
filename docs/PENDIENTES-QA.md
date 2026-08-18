@@ -14672,6 +14672,29 @@ tanda**, con antes/después a umbral cero sobre las 374 × 2 anchos.
 > **nadie ha barrido cuántos son**. Ese barrido es la primera mitad de la tanda
 > que la cierre.
 
+### ⏳ SIGUE ABIERTA — confirmado el 2026-08-18 (83.ª tanda)
+
+**La 83.ª NO la tocó, a propósito**: era la tanda de los instrumentos, y esta
+clase necesita **el instrumento limpio** que aquella producía. Estado sin
+cambios, con su número:
+
+| | |
+|---|---|
+| la raíz | **1 carácter** en `globals.css` §`body` (`1.7` → `1.7em`) |
+| alcance del cambio | **374 rutas** × 2 anchos |
+| instancias ya parcheadas | **2** (`p.sobretitulo` −5.09 · `.case-cliente` −3.41) |
+| instancias **sin barrer** | **desconocido** — nadie ha contado los elementos con letra ≠ 18px |
+
+**Es lo primero de la 84.ª**, y el orden que la ficha ya fija no cambia: primero
+el **barrido** (cuántos elementos con letra ≠ 18px hay, con su cardinal), después
+el carácter, y el antes/después a umbral cero sobre las 374 × 2 anchos.
+
+> ⚠ **Y una condición que la 83.ª añade, porque la pagó:** el antes/después se
+> lee contra `clon-base`, y **`clon-base` mide alto y estructura** (§*la guarda
+> también tiene un nivel*). Un cambio de `line-height` que no altere el nº de
+> renglones **no le mueve un píxel**. La adjudicación tiene que venir de una
+> sonda que mida **la interlínea computada**, no de un `clon-base` limpio.
+
 ---
 
 ## ⚠ F3-LH-BOTON-VER-TODOS · el original ESCONDE «Ver todos», y el recuento publicado no lo distingue (2026-08-18, 82.ª tanda)
@@ -14886,3 +14909,346 @@ acaba de **descubrir**, no de causar.
   salida**, no la calidad del sabotaje: uno que anula media hipótesis sale verde
   aquí y sigue sin medir nada (§*un sabotaje que anula media hipótesis no
   falsea nada*).
+
+---
+
+## ✅ F3-SONDAS-NEGATIVOS-PODRIDOS · CERRADA EN SU MITAD ARREGLABLE (2026-08-18, 83.ª tanda) — 10 rojos → 6, y los 6 son hallazgos, no negativos podridos
+
+`qa:negativos`: **40 baratos corridos enteros · 34 verdes · 6 rojos**, y los 6
+son **subconjunto estricto** de los 10 de partida. O sea **0 negativos nuevos
+rotos**: el NO-OP de los 30 que ya sabían fallar está **probado, no supuesto**.
+
+### Los 4 cerrados en verde
+
+| negativo | antes → ahora | qué se había podrido |
+|---|---|---|
+| `a-inventario` | 1/3 → **3/3** | `209` cableado en dos comprobaciones; el corpus del grupo A pasó a **212** en la 74.ª |
+| `c-inventario` | 3/4 → **4/4** | **no era el negativo: la SONDA estaba roja** desde `021b6b0` |
+| `cms-teaser` | 1/3 → **3/3** | cardinal cableado **+** un 301 del original que añadió un segundo no-derivable |
+| `manifiesto` | 4/6 → **6/6** | la diana se derivaba del BUILD y las desaparecidas se cuentan contra la BASE |
+
+**Los cuatro se pudrieron por el mismo mecanismo —§regla 9, un cardinal escrito
+a mano dentro del código— y los cuatro se arreglan DERIVÁNDOLO.** Ninguno se
+arregló subiendo el número: eso habría reiniciado el reloj hasta la siguiente.
+
+#### El que más enseña: `c-inventario` no era un negativo podrido
+
+Su **control** salía `exit 2`, o sea que la sonda estaba roja **sin sabotaje** —
+y lo estaba **funcionando exactamente como promete**: `casos.fechaPublicacion`
+entró en el esquema con el listado (`021b6b0`) y en `extractor-c` con su
+control, y esta sonda se quedó **sin lector**. Llevaba desde entonces saliendo
+por ERROR con «1 campo del esquema SIN LECTOR» y **nadie la corrió** hasta que
+`qa:negativos` la destapó **desde fuera**.
+
+Arreglado con el mismo selector que el extractor real (`datePublished` del
+JSON-LD, contra el HTML **crudo** porque el dato vive dentro de un `<script>`) y
+metido **también en el CONTROL** — un lector presente y sin contrastar es
+§regla 3. Hoy: `fechaPublicacion` **57/57**, control **60 → 64** comparaciones,
+**0** campos sin lector.
+
+> **§sondas 5bis — la congelada canónica CADUCA, y su alcance se declara:**
+>
+> | fichero | fecha | `sinLector` | ¿lee `fechaPublicacion`? |
+> |---|---|---|---|
+> | `c-inventario.json` | 2026-08-12 | `[]` | **no** |
+> | `c-inventario-2026-08-18.json` | hoy | `["casos.fechaPublicacion"]` | no |
+> | `c-inventario-2026-08-18-2.json` | hoy | `[]` | **sí** |
+>
+> La canónica es **verde por una razón que ya no vale**: el esquema no tenía el
+> campo. Lo que caduca es su **veredicto de completitud**, no sus datos — los 21
+> lectores que midió siguen buenos. **NO se renombra**, y la razón se deriva de
+> contar los consumidores (§regla 9, 8.º caso): el único en código es
+> `media-siembra.mjs:92-93`, que la lee para derivar **canales de media**, eje
+> que no se ha movido. Romperle la lectura señalaría un defecto que no le afecta.
+
+#### `cms-teaser`: el original cambió debajo, y REFUERZA su decisión
+
+El negativo se escribió con **3 pares comparables** y hoy hay **34**. Con ellos
+entró un **segundo** campo no derivable, con **otra causa**: `entradas-blog.title`,
+**1 de 18** —
+
+```
+teaser →  «Medición de gases en los vertederos de basura»
+doc    →  «Contaminación del aire en vertederos: cómo afecta a la calidad del aire»
+```
+
+No es mal emparejamiento ni deriva de captura: `corpus/INDICE.json` trae
+`url …/medicion-de-gases-en-los-vertederos-de-basura/` y
+`urlFinal …/contaminacion-del-aire-en-vertederos/`. **Un 301.** El post se
+retituló, se re-sluggeó **y se re-fechó**, y el teaser conserva lo de antes.
+
+Así que neutralizar el formato de la fecha **anula media hipótesis** y la otra
+mitad la sostiene un 301 que ningún formateador toca. El caso pasa a comprobar
+lo que de verdad compra, **con su control al lado**: `date` va de **18 DISTINTO
+→ 1**, y el residuo tiene que caer **dentro** de los pares con `title` también
+distinto. Si el formateador se rompiera, aparecería residuo en pares con el
+título idéntico y el caso caería **por eso**. Falsable y sin cablear un cardinal.
+
+**Efecto sobre §F2-2 · TEASER: la REFUERZA** — se sostiene sobre dos campos con
+causas independientes, y la segunda ni siquiera es de formato.
+
+### Los 6 rojos que quedan — en los seis el rojo lo pone la SONDA o el DATO
+
+**Ninguno es un negativo podrido.** Cablear cualquiera de ellos escribiría el
+defecto **dentro de la guarda**, que es exactamente lo que estas fichas impiden.
+
+| negativo | ahora | ficha |
+|---|---|---|
+| `media-hueco` | **6/7** — los 6 sabotajes cazan | §MEDIA-HUECO-T10-EN-LA-CADENA |
+| `media-regenera` | **2/5** | §MEDIA-REGENERA-SUBIDOS-RECODIFICADOS |
+| `media-colision` | 3/6 | §MEDIA-COLISION-DOMINIO-BAJO-EL-TESTIGO |
+| `media-siembra` | 3/4 | §MEDIA-SIEMBRA-SIN-SEPARADORAS |
+| `productos-hueco` | 3/5 | §PRODUCTOS-HUECO-MODELADO-FUERA-DEL-CPT |
+| `coloca-media` | 2/3 | §COLOCA-MEDIA-28-SIN-ORIGEN |
+
+**`qa:negativos` sigue SIN cablearse a `check`** mientras esté roja: cablear una
+sonda roja a la puerta acaba con la puerta desactivada.
+
+---
+
+## ⚠ MEDIA-HUECO-T10-EN-LA-CADENA · el veredicto que sostiene una decisión del ESQUEMA se midió con una cadena que ya no corre (2026-08-18, 83.ª tanda)
+
+**Disparador (a) del escalón: el negativo no sabía fallar Y la sonda no sabía
+medir. Se ficha y no se escala.**
+
+`media-hueco` **reventaba entera**: T10 ganó una precondición (`ctx.mediaPublicada`
+tiene que ser un `Set`, commit `6484953`) y el `ctx` de la sonda no la llevaba —
+el `import` estaba en la cabecera desde entonces y **no se usaba**, o sea import
+muerto (§regla 3 con la llamada a medias). Sus **7** casos salían con `exit 1`,
+control incluido, y el `0/7` se leía como «este negativo no caza nada».
+
+Reparada, **los 6 sabotajes cazan a la primera**. Pero su veredicto ha **VOLTEADO**:
+
+| congelada | veredicto | `srcset` que sobreviven |
+|---|---|---|
+| `media-hueco.json` (2026-08-04) | **NO ENTRA NADA EN EL ESQUEMA** | todos |
+| hoy | «el CUERPO no lo conserva: hay que reponerlo» | **0/311** |
+
+### El `0/311` está MEDIDO como artefacto de T10, no supuesto
+
+T10 entró en `TRANSFORMACIONES` **después** de aquella congelada. Corriendo la
+cadena **con y sin T10** sobre los mismos cuerpos:
+
+| | |
+|---|---|
+| pares que cambian | **311** |
+| de ésos, con los **MISMOS anchos** | **311** |
+| **pérdida real de la caja pedida** | **0** |
+
+Lo único que cambia es **el prefijo de la URL**, que es justo para lo que T10
+existe, y la comparación «verbatim» lo cuenta como pérdida. **El denominador
+coincide al par con el `0/311` de la sonda.**
+
+**NO se cablea el veredicto de hoy para poner el control en verde**: eso
+escribiría el artefacto en la guarda. La decisión pendiente es si la comparación
+debe ser de **la CAJA** (`srcset` + `sizes` + `width` + `size-`) en vez de la
+cadena literal. Afecta a una decisión publicada: `docs/ESQUEMA-CMS.md` §276.
+
+---
+
+## ⚠ MEDIA-REGENERA-SUBIDOS-RECODIFICADOS · el fichero servido no conserva los bytes del fuente (2026-08-18, 83.ª tanda)
+
+`media-regenera` **moría en `sharp`** con «Input file is missing» sobre un
+fichero que **SÍ existe** (`existsSync` da `true` y `ls` lo ve). Causa: el
+**MAX_PATH de Windows** — libvips es código nativo y no usa la API de rutas
+largas. Barrido: **3 de 2 707** ficheros de `apps/web/public` tienen ruta ≥ 260
+caracteres.
+
+**Arreglado sin convertir la ausencia en un valor benigno** (§regla 6): el par
+que no se puede leer **se anota con su razón** y sale **FUERA del denominador** —
+si se contara, `dimensionesIguales/n` bajaría y el veredicto **voltearía por un
+fallo de lectura**. Se publica con su cardinal (§regla 14). Con la sonda viva,
+el veredicto principal **se sostiene: 438/438** dimensiones iguales.
+
+### Lo que queda, y es un hallazgo de dato
+
+El **CONTROL interno** sale **324/335**: 11 ficheros *comparados consigo mismos*
+no dan `sha256` idéntico. Medido:
+
+- los **11** son `-600x600.webp`;
+- los **11** pesan **más** en `apps/web/public` que en `media/` (**+2…+4 %**);
+- los **11** están **bien clasificados** como SUBIDOS — `media/` guarda
+  `X-600x600.webp` como **fuente**, con sus `-300x300` y `-480x480` derivadas
+  de él.
+
+O sea **no es la clasificación**: el fichero servido **no conserva los bytes del
+fuente**. Es una **re-codificación** en la cadena de colocación. Los 3 casos
+rojos (`CONTROL`, `sobre-casado`, `sin-cascaron`) esperan `exit 0` y la sonda
+sale 2 por esto; **no se cablea `exit: 2`**.
+
+---
+
+## ⚠ MEDIA-COLISION-DOMINIO-BAJO-EL-TESTIGO · 39 orígenes que el seed escribió y ningún `upload` referencia (2026-08-18, 83.ª tanda)
+
+La sonda cae por **su propio contrato**: `dominio 614 < suelo 653`. Y el suelo
+**no está cableado**: se **deriva** de `media/`, que es el testigo independiente
+—lo escribió el último seed y `cms:reset` lo vacía—.
+
+| | 2026-08-06 | hoy |
+|---|---|---|
+| dominio (rutas que llegan a un `upload`) | 112 | **614** |
+| suelo (orígenes en `media/`) | 110 | **653** |
+
+**Descartada la acumulación de generaciones**: los **2 929** ficheros de `media/`
+tienen `mtime` **del mismo día**. Así que son 39 orígenes que el **último** seed
+escribió y que ningún campo referencia.
+
+**No se dirime aquí**: hace falta repoblar con el pipeline completo, y eso es una
+**MUTACIÓN** (§sondas 20 — *una sonda que resetea el entorno no dice que el
+entorno quede como estaba*). Va en su tanda, y **antes** de leer ningún verde de
+las sondas de media.
+
+---
+
+## ⚠ MEDIA-SIEMBRA-SIN-SEPARADORAS · el mensaje afirmaba más de lo que el dato soporta (2026-08-18, 83.ª tanda)
+
+El caso `guarda-blanda` decía **«la sonda NO está usando la guarda que
+declara»**, y lo único medido es que **las dos guardas dan 33**. Eso tiene **dos
+causas** y sólo una es un defecto:
+
+| causa | veredicto |
+|---|---|
+| la sonda usa la guarda blanda | **defecto real** |
+| el dominio **no tiene instancias separadoras** | **SIN PROBAR** |
+
+**Y hoy es la segunda, medido:** las 33 que faltan, faltan **en `public` Y en
+`media-corpus`**, así que ninguna guarda las distingue. (En el conjunto global
+**sí** hay con qué separarlas —**1 248** ficheros de `media-corpus` fuera de
+`public`— pero **ninguno cae en el dominio** que estos 3 canales referencian.)
+
+Es §*dos modelos que predicen lo mismo en todo tu dominio son uno solo*: con **0
+separadoras** el caso **no ha elegido** entre las dos guardas. **Sigue en rojo** —
+un SIN PROBAR no puede leerse como probado— pero nombrando la causa correcta,
+que es la que dice qué haría falta para cerrarlo: **una ruta del dominio presente
+en `media-corpus` y ausente de `public`**.
+
+---
+
+## ⚠ PRODUCTOS-HUECO-MODELADO-FUERA-DEL-CPT · 3 slugs que el clon modela y el corpus no tiene como URL (2026-08-18, 83.ª tanda)
+
+Dos causas distintas en el mismo negativo:
+
+1. **`panel-muerto` está SIN PROBAR, no roto.** La guarda que ejercita es
+   `noModeladoNiCpt.length && evidencia.size === 0`, o sea que necesita **al
+   menos un slug fuera del CPT** para poder saltar, y hoy hay **0**. Matar el
+   localizador no puede producir «LOCALIZADOR MUERTO» — no porque la guarda
+   falle, sino **porque no hay nada que localizar**. Es §*una regla derivada
+   sobre un dominio donde el caso NO SE DA está SIN PROBAR*, aplicado al
+   sabotaje. **No se rebaja a `exit: 0` ni se retira**: el día que vuelva a haber
+   un slug fuera del CPT, esa guarda es la que impide leer su cero como «no son
+   nada»;
+2. **el CONTROL cae por un hallazgo de DATO**: **3** slugs que el clon modela y
+   el corpus **no tiene como URL** — `accesories` · `air-cloud` · `ozone-2`.
+   «Eso NO es uno de más: es que las dos fuentes no denotan el mismo conjunto.»
+   Nótese la errata de `accesories` (una sola `s`).
+
+---
+
+## ⚠ COLOCA-MEDIA-28-SIN-ORIGEN · «son los 28 que el original 404» es una afirmación SIN FICHERO (2026-08-18, 83.ª tanda)
+
+El control exige `sinOrigen === 0` y salen **28**. La prosa del propio negativo
+dice que ésos son «los 28 que el original 404», y **derivado contra el archivo**
+(§regla 8b — *los hechos negativos se comprueban contra el archivo, no de
+memoria*):
+
+| índice | `ausentesEnOrigen` |
+|---|---|
+| `media-corpus/datos/INDICE.json` | **0** |
+| `media-corpus/fase-3/INDICE.json` | **la clave no existe** |
+
+y `coloca-media` lee los 404 declarados **exactamente de ahí**. O sea que los 28
+**no están declarados como ausentes en ninguna campaña**: su condición de «404
+del original» es una afirmación **sin respaldo**, no una ausencia **medida**
+como la propia sonda exige en su §*Los 404 DECLARADOS*.
+
+**El control hace bien en estar rojo.** Rebajarlo convertiría **28 rutas de
+estado desconocido** en un verde. Dirimirlo exige pegarle al **ORIGINAL** —una
+campaña con su congelada—.
+
+---
+
+## ✅ F3-LH-ENLACES-105 · REPARTIDA CON SU CARDINAL (2026-08-18, 83.ª tanda) — los 105 son todos localizables HOY, y los 2 rotos son UN solo mecanismo
+
+### Los 2 ROTOS, adjudicados con su origen y su mecanismo
+
+| página que lo sirve | href | correo real |
+|---|---|---|
+| `/estamos-listos-para-ayudarle` | `/cdn-cgi/l/email-protection#2053…` | **support@kunak.es** |
+| `/fourth-session-of-the-united-nations-environment-assembly-2` | `/cdn-cgi/l/email-protection#5777…` | **info@kunak.es** |
+
+Los dos son **el ofuscador de correo de Cloudflare** (el HEX decodifica con XOR
+contra su primer byte). **Mecanismo medido en los dos lados**, sobre el mismo
+fichero:
+
+| fichero | `href` ofuscado | `<script>` descifrador |
+|---|---|---|
+| `corpus/entradas-blog/estamos-listos-para-ayudarle.html` | **1** | **1** |
+| `corpus/transformado/…/estamos-listos-para-ayudarle.html` | **1** | **0** |
+
+> **La cadena QUITA EL SCRIPT y DEJA EL HREF que ese script existía para
+> reparar.** El par `href`+`script` es **una unidad**: en el original el enlace
+> funciona —Cloudflare lo restaura a `mailto:` en cliente— y en el clon es un
+> **404 permanente**. Es §*el principio: verificar contra la salida servida*, con
+> la mitad que se quitó y la mitad que se quedó.
+
+**No es regresión de L5 y no sale de ninguna forma verificada**: **0**
+ocurrencias en `src/`, todas en el cuerpo rico importado. **El disparador (b) NO
+se dispara.**
+
+**Cardinal completo, incluido lo que aún no duele:** **7** ficheros del corpus
+traen la ofuscación — los **2** construidos, **2** en `corpus/transformado/` (su
+salida) y **3 SUELTAS todavía sin construir** (`aviso-legal` ·
+`politica-de-privacidad-y-de-proteccion-de-datos` ·
+`sistema-interno-de-informacion`), que traerán el mismo 404 al construirse.
+
+**Arreglo propuesto, no aplicado:** una transformación de **desofuscación en la
+importación** (`href → mailto:` con el XOR). Es pipeline de datos + re-extraer +
+re-sembrar, o sea **construir y mutar**.
+
+### Los 105 destinos, por CAUSA — y las clases SUMAN
+
+Escrito como **sonda** y no como tabla en un acta, porque un reparto citado de
+memoria envejece **contra** el repo (§regla 9): **`npm run qa:enlaces-clases`**,
+congela en `medidas/enlaces-clases.json`, y **deriva** su fuente y su mínimo.
+
+| clase | destinos |
+|---|---|
+| interno · el build **SÍ** emite la ruta local | **105** |
+| interno · el build **NO** emite la ruta local | **0** |
+| externo legítimo | **0** |
+| SIN CLASIFICAR | **0** |
+| **SUMA** | **105** ✓ cuadra |
+
+> **El 0 de la segunda clase es el resultado que decide: NINGUNO de los 105 pide
+> clonar nada.** Los 105 son la §Regla de rutas locales **sin aplicar** sobre
+> destinos que **ya existen**. **El disparador (d) NO se dispara.**
+
+**Y el corte que parte el trabajo en dos, que el total escondía:**
+
+| dónde se escribe | destinos | qué lo arregla |
+|---|---|---|
+| origen **literal en `src/`** | **54** | se edita el dato tipado |
+| **cuerpo rico** / dato derivado | **51** | lo tiene que coger una **T al importar** |
+
+| familia de destino | destinos | apariciones | cuerpo | `src/` |
+|---|---|---|---|---|
+| raíz `/[slug]` | 38 | 61 | 4 | 34 |
+| `casos-de-exito` | 36 | 460 | 20 | 16 |
+| **LISTADO · etiqueta** | 12 | 288 | 12 | 0 |
+| **LISTADO · recursos/articulos** | 9 | 165 | 8 | 1 |
+| `case-studies` | 3 | 5 | 2 | 1 |
+| centro de ayuda | 3 | 3 | 2 | 1 |
+| **LISTADO · scientific-category** | 3 | 23 | 3 | 0 |
+| **LISTADO · blog** | 1 | **374** | 0 | 1 |
+| **TOTAL** | **105** | **1379** | **51** | **54** |
+
+> **25 de los 105 destinos apuntan a familias de LISTADO** —las que construyó la
+> 82.ª— y se llevan **850 de las 1379 apariciones, el 62 %**. La lectura es
+> directa: **la 82.ª construyó los listados y no localizó los enlaces que
+> apuntan a ellos**. `/blog` aparece en **las 374 páginas** porque lo escriben la
+> cabecera y el pie (`nav.ts:35` · `footer.ts:60` · `HeaderNav.tsx:573` ·
+> `Paginador.tsx:99`).
+
+**ALCANCE, con su fecha:** el reparto es contra las **374** rutas que el build
+emite **HOY (2026-08-18)**. Una familia que se construya mañana mueve destinos
+de «NO emitida» a «emitida» **sin que la sonda cambie una línea**.

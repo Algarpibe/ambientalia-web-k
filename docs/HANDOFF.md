@@ -1,4 +1,115 @@
-# HANDOFF — `L5` construida, el Δ0 que eran dos errores, y una guarda que llevaba dos tandas muda
+# HANDOFF — los instrumentos primero: 4 negativos arreglados, 6 que gritaban, y un enlace que Cloudflare reparaba
+
+> ✅ **Tanda de INSTRUMENTOS, 2026-08-18 (83.ª). Se cierran el PASO 0, el PASO 1,
+> el PASO 2, el PASO 3 y el PASO 4. NO se construye nada: se arreglan
+> instrumentos y se clasifica.**
+>
+> **1 · `qa:negativos` de 10 rojos a 6**, y los 6 son **subconjunto estricto** de
+> los 10: **0 negativos nuevos rotos**, o sea que el NO-OP de los 30 que ya
+> sabían fallar está **probado, no supuesto** (predicción `c` cumplida).
+>
+> | cerrados en verde | rojos con ficha |
+> |---|---|
+> | `a-inventario` 1/3 → **3/3** | `media-hueco` 0/7 → **6/7** |
+> | `c-inventario` 3/4 → **4/4** | `media-regenera` 0/5 → **2/5** |
+> | `cms-teaser` 1/3 → **3/3** | `media-colision` **3/6** |
+> | `manifiesto` 4/6 → **6/6** | `media-siembra` **3/4** |
+> | | `productos-hueco` **3/5** |
+> | | `coloca-media` **2/3** |
+>
+> **2 · EL HALLAZGO, y es de método: 5 de los 6 rojos NO son negativos podridos
+> — son SONDAS GRITANDO.** Su CONTROL falla porque la sonda ya sale roja **sin
+> sabotaje**, y desde fuera eso se lee exactamente igual que un sabotaje que
+> dejó de morder. De ahí la **§regla 21** nueva en `CLAUDE.md`: *ante un negativo
+> rojo, la primera orden es correr su sonda SOLA*. Una sola corrida discrimina, y
+> arreglar el negativo sin hacerla habría **borrado el hallazgo poniéndolo
+> verde**.
+>
+> **3 · El que más enseña: `c-inventario` llevaba roja desde `021b6b0`.**
+> `casos.fechaPublicacion` entró en el esquema con el listado y en `extractor-c`
+> con su control, y la sonda se quedó **sin lector**: salía por ERROR con «1
+> campo del esquema SIN LECTOR» —haciendo exactamente lo que promete— y **nadie
+> la corría**. Hoy: **57/57**, control **60 → 64**, 0 campos sin lector.
+>
+> **4 · Los 4 cerrados se pudrieron por el MISMO mecanismo** —§regla 9, un
+> cardinal escrito a mano dentro del código— **y los 4 se arreglan
+> derivándolo**, no subiendo el número: `209` contra un corpus de **212**, `1
+> campo` contra **2**, la diana del `manifiesto` sacada del BUILD (374) cuando
+> las desaparecidas se cuentan contra la BASE (**31**).
+>
+> **5 · Dos sondas estaban MUERTAS, no ciegas.** `media-hueco` reventaba porque
+> T10 ganó una precondición (`ctx.mediaPublicada`) que su `ctx` no llevaba —con
+> el `import` en la cabecera **sin usar**—; `media-regenera` moría en `sharp`
+> por el **MAX_PATH de Windows** (**3 de 2 707** ficheros con ruta ≥ 260 chars).
+> Sus `0/7` y `0/5` se leían como «este negativo no caza nada».
+>
+> **6 · Y al reparar `media-hueco`, su veredicto VOLTEÓ** — de «NO ENTRA NADA EN
+> EL ESQUEMA» a «el CUERPO no lo conserva», con **0/311**. Medido que es
+> **artefacto de T10**: corriendo la cadena con y sin él, **311 pares cambian y
+> los 311 conservan los MISMOS anchos**, 0 pérdida real. El denominador coincide
+> al par. **No se cablea el veredicto de hoy**: afecta a `ESQUEMA-CMS.md` §276 y
+> va en su tanda (§MEDIA-HUECO-T10-EN-LA-CADENA).
+>
+> **7 · Los 2 ROTOS de `qa:enlaces` son UN solo mecanismo**, adjudicados con su
+> página y su correo: `/cdn-cgi/l/email-protection` es el **ofuscador de correo
+> de Cloudflare** (`support@kunak.es` e `info@kunak.es`). Medido en los dos
+> lados sobre el mismo fichero: el capturado trae **el href ofuscado Y su
+> `<script>` descifrador**; tras la cadena, **el script vale 0 y el href sigue
+> valiendo 1**. La cadena **quita el reparador y deja lo reparado**. En el
+> original el enlace funciona; en el clon es 404 permanente. **No es regresión
+> de L5** (0 ocurrencias en `src/`), o sea que el **disparador (b) no se
+> dispara**. Cardinal completo: **7** ficheros del corpus, de los que **3 son
+> sueltas sin construir** que traerán el mismo 404.
+>
+> **8 · Los 105 destinos, clasificados y con las clases que SUMAN** (predicción
+> cumplida): **105 internos con ruta emitida · 0 sin emitir · 0 externos · 0 sin
+> clasificar**. El **0** de la segunda clase es el resultado que decide:
+> **ninguno pide clonar nada**, son la §Regla de rutas locales sin aplicar sobre
+> destinos que ya existen — **el disparador (d) no se dispara**. Y el corte que
+> el total escondía: **54** se escriben en `src/` (se edita el dato) y **51**
+> vienen del **cuerpo rico** (lo tiene que coger una T al importar). **25
+> destinos apuntan a familias de LISTADO** —las de la 82.ª— y se llevan **850 de
+> las 1379 apariciones, el 62 %**.
+>
+> **9 · Instrumento nuevo: `qa:enlaces-clases`** (sondas **184 → 185**), porque
+> un reparto citado de memoria envejece contra el repo (§regla 9). Deriva su
+> fuente y su mínimo, congela en `medidas/enlaces-clases.json`, y su clase «SIN
+> CLASIFICAR» cierra el código de salida — un cubo de sobras es donde se pierden
+> las causas que nadie nombró.
+>
+> **10 · Dos mensajes que afirmaban MÁS de lo que el dato soporta, corregidos a
+> SIN PROBAR con su número.** `media-siembra` decía «la sonda NO está usando la
+> guarda que declara» y lo medido es que las dos guardas dan **33**: las 33 que
+> faltan, faltan **en los dos sitios** — **0 instancias separadoras** (aunque en
+> el conjunto global haya **1 248** con que separarlas, ninguna cae en su
+> dominio). `productos-hueco` §`panel-muerto` necesita ≥1 slug fuera del CPT y
+> hoy hay **0**. Los dos **siguen en rojo**: un SIN PROBAR no puede leerse como
+> probado.
+>
+> **11 · Reglas subidas a `CLAUDE.md` (§regla 12), con su barrido y su número:**
+> el barrido acotado de las actas de F3 da **0 reglas nuevas** —la única con
+> forma de regla ya cita §regla 10, el resto son eventos con sus cifras—, y
+> **esta tanda aporta 2**: la **§regla 21** (*un negativo rojo no es un negativo
+> podrido hasta que corres su sonda sola*) y la **cuarta fila** de §*la hermana
+> pequeña que se paga al transcribir* (*un marcado y el script que lo repara son
+> una unidad*), que añade a esa familia el eje que no tenía: **el tiempo**.
+>
+> **12 · Lo que NO entra, y se dice:** la **CLASE DE INTERLÍNEA** sigue
+> **ABIERTA** a propósito —1 carácter en `globals.css` · **374 rutas** · **2**
+> instancias parcheadas · el barrido de cuántos elementos con letra ≠ 18px hay
+> **sin hacer**—, porque necesitaba el instrumento limpio que esta tanda
+> produce. Es **lo primero de la 84.ª**. Y con una condición que esta tanda
+> añade: **`clon-base` no puede adjudicarla** —mide alto y estructura, y un
+> cambio de interlínea que no altere el nº de renglones no le mueve un píxel—.
+>
+> **13 · Estado:** `check` **verde** · `qa:lib` **185 sondas** · `qa:manifiesto`
+> **374 rutas · 20 familias** (predicción cumplida: esta tanda no construye) ·
+> `qa:slugs` **A · B · C limpias** · `qa:enlaces` **374 páginas · 105 destinos ·
+> 2 rotos**, los dos fichados.
+
+---
+
+## 82.ª tanda — `L5` construida, el Δ0 que eran dos errores, y una guarda que llevaba dos tandas muda
 
 > ✅ **Tanda de CONSTRUCCIÓN Y BARRIDO, 2026-08-18 (82.ª). Se cierran el PASO 0,
 > el PASO 1, el PASO 2, el PASO 3 y el PASO 4. `L5` entra entera y verificada a
