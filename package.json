@@ -20,6 +20,7 @@
     "qa:tree": "node scripts/qa/tree-cmp.mjs",
     "qa:cmp-sector": "node scripts/qa/cmp-sector.mjs",
     "qa:enlaces": "node scripts/qa/enlaces.mjs",
+    "qa:enlaces-clases": "node scripts/qa/enlaces-clases.mjs",
     "qa:corte": "node scripts/qa/corte-cuerpo.mjs",
     "qa:esqueleto": "node scripts/qa/esqueleto.mjs",
     "qa:a-censo": "node scripts/qa/a-censo.mjs",

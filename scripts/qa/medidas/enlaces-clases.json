@@ -1,0 +1,706 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "pregunta": "de los href que apuntan al original teniendo ruta local, ¿qué CAUSA tiene cada uno?",
+    "fuente": "enlaces-2026-08-18.json",
+    "alcance": "contra las 374 rutas emitidas por el build en la fecha de arriba",
+    "noClasifica": "2 href rotos (404): otra causa"
+  },
+  "totales": {
+    "destinos": 105,
+    "apariciones": 1379
+  },
+  "clases": {
+    "internoEmitida": 105,
+    "internoNoEmitida": 0,
+    "externo": 0,
+    "sinClasificar": 0
+  },
+  "dondeSeEscriben": {
+    "enSrc": 54,
+    "enCuerpoRico": 51
+  },
+  "porFamilia": {
+    "LISTADO · blog": {
+      "destinos": 1,
+      "apariciones": 374,
+      "cuerpo": 0,
+      "src": 1
+    },
+    "casos-de-exito": {
+      "destinos": 36,
+      "apariciones": 460,
+      "cuerpo": 20,
+      "src": 16
+    },
+    "raíz /[slug]": {
+      "destinos": 38,
+      "apariciones": 61,
+      "cuerpo": 4,
+      "src": 34
+    },
+    "LISTADO · etiqueta": {
+      "destinos": 12,
+      "apariciones": 288,
+      "cuerpo": 12,
+      "src": 0
+    },
+    "LISTADO · recursos/articulos": {
+      "destinos": 9,
+      "apariciones": 165,
+      "cuerpo": 8,
+      "src": 1
+    },
+    "case-studies": {
+      "destinos": 3,
+      "apariciones": 5,
+      "cuerpo": 2,
+      "src": 1
+    },
+    "centro de ayuda": {
+      "destinos": 3,
+      "apariciones": 3,
+      "cuerpo": 2,
+      "src": 1
+    },
+    "LISTADO · scientific-category": {
+      "destinos": 3,
+      "apariciones": 23,
+      "cuerpo": 3,
+      "src": 0
+    }
+  },
+  "noEmitidas": [],
+  "detalle": [
+    {
+      "href": "https://kunakair.com/es/blog/",
+      "local": "/blog",
+      "paginas": 374,
+      "origen": "src/components/HeaderNav.tsx:573 · src/components/listados/Paginador.tsx:99 · src/lib/footer.ts:60 · src/lib/nav.ts:35"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/",
+      "local": "/casos-de-exito",
+      "paginas": 374,
+      "origen": "src/app/casos-de-exito/page.tsx:62 · src/components/caso/CasoPagina.tsx:96 · src/components/HeaderNav.tsx:164 · src/components/HeaderNav.tsx:550 · src/components/UltimosProyectos.tsx:24 · src/lib/footer.ts:59 · src/lib/software.ts:29"
+    },
+    {
+      "href": "https://kunakair.com/es/el-sensor-de-calidad-del-aire-mas-preciso/",
+      "local": "/el-sensor-de-calidad-del-aire-mas-preciso",
+      "paginas": 1,
+      "origen": "src/components/SolucionProfesional.tsx:204 · src/components/SolucionProfesional.tsx:213 · src/components/SolucionProfesional.tsx:304"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+      "local": "/monitorizacion-de-emisiones-fugitivas",
+      "paginas": 2,
+      "origen": "src/lib/articles.ts:15 · src/lib/monografico.ts:1399"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-perimetral/",
+      "local": "/monitorizacion-perimetral",
+      "paginas": 1,
+      "origen": "src/lib/articles.ts:22"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-near-reference/",
+      "local": "/monitorizacion-near-reference",
+      "paginas": 1,
+      "origen": "src/lib/articles.ts:29"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman/",
+      "local": "/casos-de-exito/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman",
+      "paginas": 5,
+      "origen": "src/lib/projects.ts:17"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/",
+      "local": "/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez",
+      "paginas": 3,
+      "origen": "src/lib/projects.ts:26"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+      "local": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "paginas": 7,
+      "origen": "src/lib/arquetipo-a.ts:468 · src/lib/arquetipo-a.ts:542 · src/lib/arquetipo-a.ts:708 · src/lib/arquetipo-a.ts:791 · src/lib/arquetipo-a.ts:797 · src/lib/arquetipo-a.ts:799 · src/lib/monografico.ts:413 · src/lib/projects.ts:35 · src/lib/sectores.ts:709"
+    },
+    {
+      "href": "https://kunakair.com/es/ehs-industrial/",
+      "local": "/ehs-industrial",
+      "paginas": 1,
+      "origen": "src/lib/accesorios.ts:381"
+    },
+    {
+      "href": "https://kunakair.com/es/impacto-ambiental-de-la-industria-petroquimica/",
+      "local": "/impacto-ambiental-de-la-industria-petroquimica",
+      "paginas": 1,
+      "origen": "src/lib/accesorios.ts:396"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/monitorizacion-ambiental/",
+      "local": "/etiqueta/monitorizacion-ambiental",
+      "paginas": 91,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/",
+      "local": "/recursos/articulos",
+      "paginas": 84,
+      "origen": "src/components/listados/Paginador.tsx:376"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "local": "/recursos/articulos/industria-y-contaminacion-por-olores",
+      "paginas": 21,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/contaminantes-atmosfericos/",
+      "local": "/etiqueta/contaminantes-atmosfericos",
+      "paginas": 36,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/emisiones-industriales/",
+      "local": "/etiqueta/emisiones-industriales",
+      "paginas": 23,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama/",
+      "local": "/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
+      "paginas": 5,
+      "origen": "src/lib/arquetipo-a.ts:241 · src/lib/arquetipo-a.ts:293"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/productos-kunak/",
+      "local": "/recursos/articulos/productos-kunak",
+      "paginas": 7,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+      "local": "/etiqueta/calidad-del-aire",
+      "paginas": 33,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/sensor-de-calidad-del-aire/",
+      "local": "/etiqueta/sensor-de-calidad-del-aire",
+      "paginas": 34,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/contaminacion-urbana/",
+      "local": "/recursos/articulos/contaminacion-urbana",
+      "paginas": 24,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/normativa-de-calidad-del-aire/",
+      "local": "/etiqueta/normativa-de-calidad-del-aire",
+      "paginas": 20,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/contaminacion-y-salud/",
+      "local": "/recursos/articulos/contaminacion-y-salud",
+      "paginas": 19,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "local": "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/particulas-en-suspension/",
+      "local": "/etiqueta/particulas-en-suspension",
+      "paginas": 16,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/",
+      "local": "/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb",
+      "paginas": 3,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre/",
+      "local": "/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom/",
+      "local": "/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom",
+      "paginas": 5,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu/",
+      "local": "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao/",
+      "local": "/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz/",
+      "local": "/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria/",
+      "local": "/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+      "local": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/comparativa-de-los-informes-de-evaluacion-de-aqspec/",
+      "local": "/comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "paginas": 2,
+      "origen": "src/lib/arquetipo-a.ts:753"
+    },
+    {
+      "href": "https://kunakair.com/es/necesidad-estandares-y-programas-certificacion/",
+      "local": "/necesidad-estandares-y-programas-certificacion",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+      "local": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco/",
+      "local": "/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "local": "/recursos/articulos/contaminacion-en-la-construccion",
+      "paginas": 4,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/gases-de-efecto-invernadero/",
+      "local": "/etiqueta/gases-de-efecto-invernadero",
+      "paginas": 9,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-quemas-controladas-cana-azucar/",
+      "local": "/casos-de-exito/control-quemas-controladas-cana-azucar",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air/",
+      "local": "/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
+      "paginas": 3,
+      "origen": "src/lib/arquetipo-a.ts:1120 · src/lib/arquetipo-a.ts:1142"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/vigilancia-contaminacion-aire-albacete/",
+      "local": "/casos-de-exito/vigilancia-contaminacion-aire-albacete",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian/",
+      "local": "/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid/",
+      "local": "/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/cov/",
+      "local": "/etiqueta/cov",
+      "paginas": 6,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/h2s-es/",
+      "local": "/etiqueta/h2s-es",
+      "paginas": 5,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/malos-olores/",
+      "local": "/etiqueta/malos-olores",
+      "paginas": 8,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+      "local": "/casos-de-exito/demolicion-estadio-vicente-calderon",
+      "paginas": 2,
+      "origen": "src/lib/sectores.ts:927"
+    },
+    {
+      "href": "https://kunakair.com/es/etiqueta/co2-es/",
+      "local": "/etiqueta/co2-es",
+      "paginas": 7,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/running-for-clean-air-ciudades-saludables/",
+      "local": "/casos-de-exito/running-for-clean-air-ciudades-saludables",
+      "paginas": 2,
+      "origen": "src/lib/arquetipo-a.ts:1354"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+      "local": "/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "paginas": 4,
+      "origen": "src/lib/monografico.ts:432 · src/lib/sectores.ts:729"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba/",
+      "local": "/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba",
+      "paginas": 4,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/petroleo-y-gas/",
+      "local": "/recursos/articulos/petroleo-y-gas",
+      "paginas": 3,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey/",
+      "local": "/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
+      "paginas": 4,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-de-la-contaminacion-en-bilbao/",
+      "local": "/casos-de-exito/control-de-la-contaminacion-en-bilbao",
+      "paginas": 6,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/calidad-del-aire/",
+      "local": "/calidad-del-aire",
+      "paginas": 4,
+      "origen": "src/lib/arquetipo-a.ts:64 · src/lib/arquetipo-a.ts:396 · src/lib/arquetipo-a.ts:836 · src/lib/arquetipo-a.ts:1039 · src/lib/arquetipo-a.ts:1315 · src/lib/arquetipo-a.ts:1474 · src/lib/arquetipo-a.ts:1847 · src/lib/arquetipo-a.ts:2159 · src/lib/arquetipo-a.ts:2245"
+    },
+    {
+      "href": "https://kunakair.com/es/dioxido-de-carbono/",
+      "local": "/dioxido-de-carbono",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:1443 · src/lib/arquetipo-a.ts:2179"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminantes-atmosfericos/",
+      "local": "/contaminantes-atmosfericos",
+      "paginas": 4,
+      "origen": "src/lib/arquetipo-a.ts:161 · src/lib/arquetipo-a.ts:396 · src/lib/arquetipo-a.ts:1001 · src/lib/arquetipo-a.ts:1081 · src/lib/arquetipo-a.ts:1358"
+    },
+    {
+      "href": "https://kunakair.com/es/compuestos-organicos-volatiles/",
+      "local": "/compuestos-organicos-volatiles",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:290 · src/lib/arquetipo-a.ts:1525"
+    },
+    {
+      "href": "https://kunakair.com/es/gases-de-efecto-invernadero/",
+      "local": "/gases-de-efecto-invernadero",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:139 · src/lib/arquetipo-a.ts:1133 · src/lib/arquetipo-a.ts:2238"
+    },
+    {
+      "href": "https://kunakair.com/es/sulfuro-de-hidrogeno/",
+      "local": "/sulfuro-de-hidrogeno",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:290"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-de-la-calidad-del-aire/",
+      "local": "/monitorizacion-de-la-calidad-del-aire",
+      "paginas": 11,
+      "origen": "src/lib/arquetipo-a.ts:170 · src/lib/arquetipo-a.ts:396 · src/lib/arquetipo-a.ts:838 · src/lib/arquetipo-a.ts:1175 · src/lib/arquetipo-a.ts:1373"
+    },
+    {
+      "href": "https://kunakair.com/es/particulas-en-suspension/",
+      "local": "/particulas-en-suspension",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/sensor-calidad-aire/",
+      "local": "/sensor-calidad-aire",
+      "paginas": 4,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/red-hibrida-calidad-aire-atmo-france/",
+      "local": "/casos-de-exito/red-hibrida-calidad-aire-atmo-france",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia/",
+      "local": "/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/recursos/articulos/contaminacion-minera/",
+      "local": "/recursos/articulos/contaminacion-minera",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron/",
+      "local": "/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals/",
+      "local": "/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals",
+      "paginas": 3,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas/",
+      "local": "/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas",
+      "paginas": 3,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-mal-olor-sensores/",
+      "local": "/contaminacion-mal-olor-sensores",
+      "paginas": 1,
+      "origen": "src/lib/api.ts:186"
+    },
+    {
+      "href": "https://kunakair.com/es/calidad-aire-tiempo-real-kunak-air-lite/",
+      "local": "/calidad-aire-tiempo-real-kunak-air-lite",
+      "paginas": 1,
+      "origen": "src/lib/api.ts:193"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023/",
+      "local": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
+      "paginas": 2,
+      "origen": "src/lib/arquetipo-a.ts:1425"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica/",
+      "local": "/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+      "paginas": 2,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+      "local": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+      "paginas": 1,
+      "origen": "src/lib/monitor.ts:254"
+    },
+    {
+      "href": "https://kunakair.com/es/detectores-calidad-aire-movilidad/",
+      "local": "/detectores-calidad-aire-movilidad",
+      "paginas": 1,
+      "origen": "src/lib/monitor.ts:663"
+    },
+    {
+      "href": "https://kunakair.com/es/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas/",
+      "local": "/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "paginas": 1,
+      "origen": "src/lib/monitor.ts:670"
+    },
+    {
+      "href": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+      "local": "/scientific-category/articulos-cientificos-y-estudios",
+      "paginas": 14,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/scientific-category/evaluaciones-independientes/",
+      "local": "/scientific-category/evaluaciones-independientes",
+      "paginas": 8,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/scientific-category/articulos-tecnicos/",
+      "local": "/scientific-category/articulos-tecnicos",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia/",
+      "local": "/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:1426"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/citytraq-calidad-del-aire-urbano/",
+      "local": "/casos-de-exito/citytraq-calidad-del-aire-urbano",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:417"
+    },
+    {
+      "href": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+      "local": "/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:426"
+    },
+    {
+      "href": "https://kunakair.com/es/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas/",
+      "local": "/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:450"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-del-aire-en-madrid/",
+      "local": "/contaminacion-del-aire-en-madrid",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:467"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+      "local": "/contaminacion-del-aire-por-obras",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:945"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+      "local": "/monitorizacion-aire-remediacion-suelos-contaminados",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:952"
+    },
+    {
+      "href": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+      "local": "/impacto-ambiental-industria-cementera",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:960"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+      "local": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "paginas": 3,
+      "origen": "src/lib/monografico.ts:423 · src/lib/sectores.ts:719"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+      "local": "/contaminacion-incendios-forestales-aire",
+      "paginas": 2,
+      "origen": "src/lib/monografico.ts:954 · src/lib/sectores.ts:747"
+    },
+    {
+      "href": "https://kunakair.com/es/medicion-de-gases-en-los-vertederos-de-basura/",
+      "local": "/medicion-de-gases-en-los-vertederos-de-basura",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:754"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-aire-deporte/",
+      "local": "/contaminacion-aire-deporte",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:761"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay/",
+      "local": "/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1107"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas/",
+      "local": "/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1117"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe/",
+      "local": "/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1126"
+    },
+    {
+      "href": "https://kunakair.com/es/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico/",
+      "local": "/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1143"
+    },
+    {
+      "href": "https://kunakair.com/es/quemas-prescritas-agricolas-calidad-aire/",
+      "local": "/quemas-prescritas-agricolas-calidad-aire",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1150"
+    },
+    {
+      "href": "https://kunakair.com/es/conferencia-partes-cop26-incendios/",
+      "local": "/conferencia-partes-cop26-incendios",
+      "paginas": 1,
+      "origen": "src/lib/sectores.ts:1157"
+    },
+    {
+      "href": "https://kunakair.com/es/monitorizacion-mal-olor-industrial/",
+      "local": "/monitorizacion-mal-olor-industrial",
+      "paginas": 1,
+      "origen": "src/lib/monografico.ts:940"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire/",
+      "local": "/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "paginas": 1,
+      "origen": "src/lib/monografico.ts:947"
+    },
+    {
+      "href": "https://kunakair.com/es/contaminacion-por-produccion-de-energia/",
+      "local": "/contaminacion-por-produccion-de-energia",
+      "paginas": 1,
+      "origen": "src/lib/monografico.ts:1381"
+    },
+    {
+      "href": "https://kunakair.com/es/control-emisiones-industriales/",
+      "local": "/control-emisiones-industriales",
+      "paginas": 1,
+      "origen": "src/lib/arquetipo-a.ts:1685 · src/lib/software.ts:430"
+    },
+    {
+      "href": "https://kunakair.com/es/impacto-ambiental-del-acero-en-la-calidad-del-aire/",
+      "local": "/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "paginas": 1,
+      "origen": "src/lib/software.ts:446"
+    },
+    {
+      "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
+      "local": "/software-de-medicion-calidad-del-aire",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    },
+    {
+      "href": "https://kunakair.com/es/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel/",
+      "local": "/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel",
+      "paginas": 1,
+      "origen": "(no está en src/ literal — plantilla o dato derivado)"
+    }
+  ]
+}
