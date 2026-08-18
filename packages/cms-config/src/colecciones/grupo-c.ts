@@ -67,6 +67,40 @@ export const casos: CollectionConfig = {
     seo(),
     { name: "titulo", type: "text", required: true },
     /**
+     * ⚠⚠ **`CMS-ORDEN-L2` · §7g — LA CLAVE DE ORDEN DE `/casos-de-exito/`, y es
+     * TRANSCRIPCIÓN, no decisión de producto** (2026-08-18, 81.ª tanda).
+     *
+     * El original ordena su archivo por `datePublished` **DESC**, y está medido
+     * contra el orden SERVIDO: **57/57**, elegido con **56 posiciones
+     * separadoras** frente a tres rivales (`fecha-asc` · `alfabetico` ·
+     * `orden-corpus`). Sonda `qa:lh-fecha-orden`, negativo 4/4.
+     *
+     * ── POR QUÉ `text` Y NO `date` ────────────────────────────────────────
+     * Precedente de la casa (`entradas-blog.fechaPublicacion`, §2.4): la fecha
+     * se guarda **verbatim como la sirve el original** y se parsea al ORDENAR
+     * (`aEpoch` en `lib/cms/listados.ts`). Un `type: "date"` la normalizaría al
+     * guardar, y normalizar es justo de lo que protege el contrato de fidelidad.
+     *
+     * ⚠ **Y AQUÍ EL MEDIO ES OTRO QUE EN BLOG, que es lo que hay que no
+     * confundir:** en `entradas-blog` el verbatim es la fecha **RENDERIDA**
+     * («7 enero 2025»), porque el original la pinta. En `casos` **no se pinta en
+     * ninguna parte** —ni en la tarjeta de `L5` ni en el singular—: sólo existe
+     * en el **JSON-LD**, en ISO 8601 (`2021-04-20T10:35:17+02:00`). Así que el
+     * verbatim de este campo es **el ISO**, no un literal en español.
+     *
+     * Un mismo nombre con dos formatos es una inconsistencia real y va fichada
+     * con su cardinal —**1 concepto · 2 formatos · 3 colecciones**— en
+     * `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS. No se unifica aquí porque
+     * unificar toca `entradas-blog`, que está **poblada y verificada**.
+     *
+     * ── REQUERIDO A PROPÓSITO (§sondas 6: el defecto en la dirección que grita)
+     * Hoy lo traen **57 de 57**, así que `required` no cuesta nada. Y lo que
+     * compra es el fallo bueno: sin fecha, un opcional **no rompe nada y deja el
+     * listado en un orden inventado** —silencioso, y exactamente el defecto que
+     * esta tanda existe para evitar—; requerido **mata el seed en el acto**.
+     */
+    { name: "fechaPublicacion", type: "text", required: true },
+    /**
      * La foto de la **banda de cabecera** (C-QA1). El original la pone como
      * `background-image` del `et_pb_section` de `header.et-l--header`. El alto
      * es `min-height: 387px` en **4 de 4** ⇒ plantilla; la **foto es distinta en

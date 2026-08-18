@@ -15,6 +15,7 @@ import * as migration_20260810_164348_f3_kb_piel_titular from './20260810_164348
 import * as migration_20260810_171434_f3_kb_piel_blurb from './20260810_171434_f3_kb_piel_blurb';
 import * as migration_20260813_140606_f3_pr3_documento_sin_pagina from './20260813_140606_f3_pr3_documento_sin_pagina';
 import * as migration_20260813_211316_f3_etiqueta_descripcion from './20260813_211316_f3_etiqueta_descripcion';
+import * as migration_20260818_193649_f3_fecha_publicacion_orden from './20260818_193649_f3_fecha_publicacion_orden';
 
 export const migrations = [
   {
@@ -100,6 +101,11 @@ export const migrations = [
   {
     up: migration_20260813_211316_f3_etiqueta_descripcion.up,
     down: migration_20260813_211316_f3_etiqueta_descripcion.down,
-    name: '20260813_211316_f3_etiqueta_descripcion'
+    name: '20260813_211316_f3_etiqueta_descripcion',
+  },
+  {
+    up: migration_20260818_193649_f3_fecha_publicacion_orden.up,
+    down: migration_20260818_193649_f3_fecha_publicacion_orden.down,
+    name: '20260818_193649_f3_fecha_publicacion_orden'
   },
 ];

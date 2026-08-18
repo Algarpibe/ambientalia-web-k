@@ -1320,6 +1320,7 @@ export interface Caso {
     ogImage?: string | null;
   };
   titulo: string;
+  fechaPublicacion: string;
   imagenCabecera: number | Media;
   cliente: string;
   sectores?: (number | TaxonomiaSectore)[] | null;
@@ -1518,6 +1519,7 @@ export interface TerminosKunakpedia {
    * Obligatorio. La cadena VACÍA es dato medido y se admite — §2c · `esmog`: el `<h1>` de plantilla vacío, 1 de 37.
    */
   titulo?: string | null;
+  fechaPublicacion: string;
   /**
    * Defecto null — §2c.1 · 3 términos de 37
    */
@@ -3244,6 +3246,7 @@ export interface CasosSelect<T extends boolean = true> {
         ogImage?: T;
       };
   titulo?: T;
+  fechaPublicacion?: T;
   imagenCabecera?: T;
   cliente?: T;
   sectores?: T;
@@ -3360,6 +3363,7 @@ export interface TerminosKunakpediaSelect<T extends boolean = true> {
         ogImage?: T;
       };
   titulo?: T;
+  fechaPublicacion?: T;
   tituloMiga?: T;
   cuerpo?: T;
   estado?: T;

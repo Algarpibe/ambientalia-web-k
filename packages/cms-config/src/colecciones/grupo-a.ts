@@ -86,6 +86,30 @@ export const terminosKunakpedia: CollectionConfig = {
      */
     requeridoConVacio({ name: "titulo", type: "text" } as Field, "§2c · `esmog`: el `<h1>` de plantilla vacío, 1 de 37"),
     /**
+     * ⚠⚠ **`CMS-ORDEN-L2` · §7g — LA CLAVE DE ORDEN DE `/glosario/`, y es
+     * TRANSCRIPCIÓN, no decisión de producto** (2026-08-18, 81.ª tanda).
+     *
+     * El original ordena su archivo por `datePublished` **DESC**: **37/37**
+     * contra el orden SERVIDO, elegido con **36 posiciones separadoras** frente
+     * a tres rivales. Sonda `qa:lh-fecha-orden`, negativo 4/4.
+     *
+     * ⚠ **El canal del orden son las OCHO páginas de `/glosario/`, no su
+     * índice**: el índice sirve **5** tarjetas, así que un «37/37» leído de una
+     * sola página sería un **5/5 disfrazado**. El control del negativo lo exige
+     * (`paginasLeidas === 8`).
+     *
+     * `text` y no `date`, y el verbatim es el **ISO del JSON-LD** y no un
+     * literal en español: el término **no pinta su fecha en ninguna parte**. La
+     * diferencia de medio con `entradas-blog` va fichada en
+     * `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS — misma razón y mismo
+     * cardinal que en `casos` (ver `grupo-c.ts`).
+     *
+     * **Requerido a propósito** (§sondas 6): lo traen **37 de 37**, y un
+     * opcional que faltase dejaría el listado en un orden inventado **sin dar
+     * error**, que es el defecto silencioso que esta tanda evita.
+     */
+    { name: "fechaPublicacion", type: "text", required: true },
+    /**
      * **`tituloMiga` — el rótulo NO es el titular** (§2c.1, medido al cerrar
      * A-QA1). De las 14 instancias transcritas, **3 de 3 términos difieren** y
      * **11 de 11** blog/doc coinciden: el `h1` es el titular largo y el rótulo
