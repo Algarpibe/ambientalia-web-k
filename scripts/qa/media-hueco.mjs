@@ -376,6 +376,11 @@ for (const p of Object.values(INDICE.paginas)) {
 let cuerposConImg = 0, imgsAntes = 0, imgsDespues = 0, srcsetAntes = 0, srcsetSobreviven = 0;
 const perdidos = [];
 const scriptsQuitados = [];
+/* El barrido de `apps/web/public`, una vez para las 312 páginas. Se exige no
+ * vacío aquí y no sólo dentro de T10, porque un Set vacío haría que la cadena
+ * corriera con T10 sin localizar nada — el verde falso de §regla 6. */
+const MEDIA_PUBLICADA = mediaPublicada();
+const mediaCaliente = [];
 for (const [clave, meta] of PAGINAS) {
   const html = soloMarcado(readFileSync(join(CORPUS, meta.fichero), "utf8"));
   const cuerpo = postContent(html);
@@ -384,7 +389,13 @@ for (const [clave, meta] of PAGINAS) {
   if (!antes.length) continue;
   cuerposConImg++;
   let out = cuerpo;
-  const ctx = { pagina: clave, rutas, scriptsQuitados };
+  /* ⚠ `mediaPublicada` es OBLIGATORIO desde `6484953` (T10 lo exige con un
+   * throw, §regla 6: la ausencia se rechaza en vez de sustituirse). El import
+   * estaba desde entonces en la cabecera y el `ctx` NO lo llevaba: import
+   * muerto, o sea §regla 3 —*documentado no es conectado*— con la llamada a
+   * medias. La sonda reventaba entera y sus 7 casos del negativo salían todos
+   * con exit 1, control incluido. Corregido 2026-08-18 (83.ª). */
+  const ctx = { pagina: clave, rutas, scriptsQuitados, mediaPublicada: MEDIA_PUBLICADA, mediaCaliente };
   for (const t of cadena) out = t.aplica(out, ctx).html;
   const despues = attrsDe(out);
   imgsAntes += antes.length;

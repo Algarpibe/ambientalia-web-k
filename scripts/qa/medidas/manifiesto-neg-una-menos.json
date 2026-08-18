@@ -7,6 +7,7 @@
   },
   "rutas": [
     "/",
+    "/aaqms-estaciones-de-calidad-del-aire",
     "/accesorios",
     "/additive-presenta-sistema-kunak-air-en-sensortest-2018",
     "/amoniaco-nh3",
@@ -29,7 +30,6 @@
     "/calidad-del-aire-en-los-aeropuertos",
     "/calidad-del-aire-en-los-asentamientos-informales",
     "/calidad-del-aire-en-puertos",
-    "/case-studies/distrito-baja-emision-rio-de-janeiro",
     "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu",
     "/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
     "/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
@@ -382,11 +382,11 @@
   ],
   "familias": {
     "/": 1,
-    "/[slug]": 188,
+    "/[slug]": 189,
     "/accesorios": 1,
     "/blog": 1,
     "/blog/page/[n]": 7,
-    "/case-studies/[slug]": 4,
+    "/case-studies/[slug]": 3,
     "/casos-de-exito": 1,
     "/casos-de-exito/[slug]": 53,
     "/centro-de-ayuda/[...ruta]": 5,
@@ -418,8 +418,11 @@
     "/soporte/[...ruta]"
   ],
   "vacias": [],
-  "desaparecidas": [],
+  "desaparecidas": [
+    "/case-studies/distrito-baja-emision-rio-de-janeiro"
+  ],
   "nuevas": [
+    "/aaqms-estaciones-de-calidad-del-aire",
     "/additive-presenta-sistema-kunak-air-en-sensortest-2018",
     "/amoniaco-nh3",
     "/biometano-y-biogas",

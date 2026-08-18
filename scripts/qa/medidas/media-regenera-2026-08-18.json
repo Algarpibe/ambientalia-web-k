@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "fuente": "corpus/ (312 páginas) + media/ (pipeline REAL de Payload+sharp) + apps/web/public/images",
+    "pregunta": "¿hay que capturar las 1571 variantes, o basta con los orígenes y Payload regenera?",
+    "sabotaje": null
+  },
+  "reproduccion": {
+    "generadas": {
+      "n": 438,
+      "pares": 440,
+      "dimensionesIguales": 438,
+      "shaIdentico": 191,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 416,
+          "media": 1.5,
+          "min": -20.4,
+          "max": 17.2
+        },
+        "png": {
+          "n": 15,
+          "media": 51.3,
+          "min": -0.1,
+          "max": 262.9
+        },
+        "webp": {
+          "n": 7,
+          "media": 1.6,
+          "min": -10.4,
+          "max": 17.3
+        }
+      },
+      "noAnalizables": [
+        {
+          "fichero": "Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-480x679.jpg",
+          "chars": 260,
+          "razon": "Input file is missing: C:/Users/algar/OneDrive/Documentos/Ambientalia_2026_K/kunak-web-clone/apps/web/public/images/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-480x679.jpg"
+        },
+        {
+          "fichero": "Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-480x679.jpg",
+          "chars": 278,
+          "razon": "Input file is missing: C:/Users/algar/OneDrive/Documentos/Ambientalia_2026_K/kunak-web-clone/apps/web/public/images/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-480x679.jpg"
+        }
+      ]
+    },
+    "control_subidas": {
+      "n": 335,
+      "pares": 335,
+      "dimensionesIguales": 335,
+      "shaIdentico": 324,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 323,
+          "media": 0,
+          "min": 0,
+          "max": 0
+        },
+        "webp": {
+          "n": 11,
+          "media": -2.9,
+          "min": -5.1,
+          "max": -1.3
+        },
+        "png": {
+          "n": 1,
+          "media": 0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "noAnalizables": []
+    }
+  },
+  "poblaciones": {
+    "urlsTodoElHtml": 2824,
+    "origenesTodoElHtml": 1339,
+    "urlsEnCuerpo": 1271,
+    "origenesEnCuerpo": 603,
+    "yaLocales": 541,
+    "aCapturar": 62
+  },
+  "cajasDelCuerpo": {
+    "variantes": 721,
+    "regenerables": 682,
+    "noRegenerables": {
+      "875x1024": 1,
+      "791x1024": 1,
+      "600x600": 32,
+      "374x1024": 1,
+      "169x300": 4
+    }
+  },
+  "listaACapturar": [
+    "https://kunakair.com/wp-content/uploads/2022/01/Polar-Plot-Mapa.png",
+    "https://kunakair.com/wp-content/uploads/2022/11/AQE-award-1.jpg",
+    "https://kunakair.com/wp-content/uploads/2022/11/medicion-de-la-calidad-del-aire-en-puertos-maritimos-Illes-Balears-1.jpg",
+    "https://kunakair.com/wp-content/uploads/2022/11/medicion-de-la-calidad-del-aire-en-puertos-maritimos-Illes-Balears-2.jpg",
+    "https://kunakair.com/wp-content/uploads/2022/11/medicion-de-la-calidad-del-aire-en-puertos-maritimos-Illes-Balears-3.jpg",
+    "https://kunakair.com/wp-content/uploads/2022/11/medicion-de-la-calidad-del-aire-en-puertos-maritimos-Illes-Balears-4.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/Datos-mundiales-dioxido-de-nitrogeno-OMS-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/Geoplataforma-herramienta-evaluacion-justicia-climatica-y-economica-Gobierno-EE.UU_.png",
+    "https://kunakair.com/wp-content/uploads/2024/06/Inmision-Emision.png",
+    "https://kunakair.com/wp-content/uploads/2024/06/Niveles-de-O3-Organizacion-Mundial-Salud-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/OMS-danos-del-dioxido-de-nitrogeno-kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/ZFE_paris.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/city-of-london-4481399_1280.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/traffic-7272520_1280.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/trafico-ciudad-berlin.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/06/zona-de-bajas-emisiones-de-espana.png",
+    "https://kunakair.com/wp-content/uploads/2024/07/Medicion-de-la-calidad-del-aire.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/07/New-York-por-la-noche-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/07/Nueva-York-al-atardecer-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/07/Puente-de-Brooklyn-New-York-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/07/Trafico-en-New-York-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/09/urban-contamination-kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/10/Estacion-Kunak-en-Senegal.jpg",
+    "https://kunakair.com/wp-content/uploads/2024/11/cta-case-study-cemex-ES.png",
+    "https://kunakair.com/wp-content/uploads/2025/01/Antorcha-de-gas-en-un-pozo-petrolifero-Foto-credito-Andrew-BurtonGetty-Images.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/01/Ciclo-del-metano-Copernicus-Atmosphere-Monitoring-Service-ECMWF.png",
+    "https://kunakair.com/wp-content/uploads/2025/01/Emisiones-de-metano-de-un-vertedero-de-Madrid-detectadas-el-20-agosto-2021-European-Space-Agency.png",
+    "https://kunakair.com/wp-content/uploads/2025/01/Gestion-vertedero.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/01/Metano_Britannica.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/01/Sellado-de-vertedero-con-membranas-avanzadas-Foto-credito-Genap.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/01/Vertedero_credit-medianews.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/02/Principe-Alberto-II-de-Monaco-en-la-instalacion-de-sensores-Kunak-por-World-Athletics.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/02/air_pollution_filtration_process.png",
+    "https://kunakair.com/wp-content/uploads/2025/04/Centro-urbano-Boston-Foto-Douglas-Brugge.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/Analisis-espectral-del-ruido.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/Cartografia-acustica.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/Dosimetro-de-ruido.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/Estaciones-fijas-de-monitorizacion-acustica.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/Example-of-a-simulated-map-of-an-acoustic-field-in-a-part-of-the-city-by-CADNA-software.png",
+    "https://kunakair.com/wp-content/uploads/2025/05/Modelos-predictivos-de-propagacion-del-sonido.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/carbon-emissions-by-sector.jpeg",
+    "https://kunakair.com/wp-content/uploads/2025/05/decibelimetro.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/efectos-en-salud-de-contaminacion-energetica-Kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/05/gases-efecto-invernadero_gei-de-la-energia-electrica_page-0001.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/06/justicia-climatica-para-todos-kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/06/manifestacion-justicia-climatica-kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/06/stop-cambio-climatico-kunak.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/07/Sargazo-macroalga-Wikimedia-Commons.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/07/Sargazo_es-1.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/08/infografia_Biometano_Repsol.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/09/Agricultor-tratando-con-pesticida-el-cultivo.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/09/fumingando-cultivo-con-pesticida.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/11/compuestos-organicos-volatiles-emisiones-depuradora-aguas-residuales.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/Agua-potable-potabilizada-con-cloro.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/Industria-fabricacion-papel-con-blanqueamiento-por-cloro.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/Industria-textil-y-blanqueamiento-de-fibras-con-cloro.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/Papel-blanqueado-con-cloro.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia2.jpg",
+    "https://kunakair.com/wp-content/uploads/2025/12/reconcilia.png",
+    "https://kunakair.com/wp-content/uploads/2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
+    "https://kunakair.com/wp-content/uploads/2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
+    "https://kunakair.com/wp-content/uploads/2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg"
+  ],
+  "veredicto": {
+    "reproduceDimension": true,
+    "reproduceBytes": false,
+    "controlOk": false,
+    "lectura": "el pipeline reproduce la DIMENSIÓN exacta de la variante capturada; los BYTES no (re-codificación). Para la geometría —lo único que este proyecto mide— basta con capturar los ORÍGENES."
+  }
+}

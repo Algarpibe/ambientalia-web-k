@@ -63,15 +63,58 @@ if (!familiaDeAlguna) {
 }
 /* Y la de `una-menos` tiene que dejar la familia VIVA (≥1 ruta), o encendería
  * también la #1 y el sabotaje dejaría de aislar la #2. */
-const conVarias = Object.entries(
-  Object.values(real.routes || {}).reduce((a, v) => ((a[v.srcRoute] = (a[v.srcRoute] || 0) + 1), a), {}),
-).find(([f, n]) => n > 1 && !f.startsWith("/_"));
-if (!conVarias) {
+const porFamilia = Object.values(real.routes || {}).reduce(
+  (a, v) => ((a[v.srcRoute] = (a[v.srcRoute] || 0) + 1), a),
+  {},
+);
+const conVarias = Object.entries(porFamilia).filter(([f, n]) => n > 1 && !f.startsWith("/_"));
+if (!conVarias.length) {
   console.error(`\n❌ SIN DIANA — ninguna familia emite más de una ruta: 'una-menos' encendería la #1 también.`);
   process.exit(2);
 }
-const [famVarias] = conVarias;
-const rutaSuelta = Object.entries(real.routes).find(([, v]) => v.srcRoute === famVarias)[0];
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LA DIANA TIENE QUE ESTAR EN LA BASE (corregido 2026-08-18, 83.ª)
+ *
+ * `una-menos` y `vacio` comprueban **desaparecidas**, y «desaparecida» se
+ * calcula contra la BASE, no contra el build: `rutasBase.filter(r => !RUTAS
+ * .includes(r))`. Aquí se elegía la primera ruta de una familia con varias —
+ * derivada del BUILD— y hoy el build tiene 374 rutas mientras la base de F2-1
+ * declara 31. La diana caía casi seguro fuera de la base, así que borrarla no
+ * producía ninguna desaparecida y el caso salía **exit 0 con el sabotaje
+ * puesto**.
+ *
+ * Es §regla 5 en su efecto secundario: el fichero con el nombre obvio
+ * conserva la PRIMERA foto, y el negativo se escribió cuando build y base
+ * medían casi lo mismo. Se deriva la diana de la INTERSECCIÓN, con guarda
+ * anti-cero: si no hay ninguna, el negativo sale por ERROR en vez de por un
+ * verde que no ha probado nada.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const baseCruda = JSON.parse(readFileSync(join(QA, BASE), "utf8"));
+const RUTAS_BASE = Array.isArray(baseCruda.rutas)
+  ? [...baseCruda.rutas].sort()
+  : Object.keys(baseCruda.paginas ?? {}).sort();
+if (!RUTAS_BASE.length) {
+  console.error(`\n❌ SIN BASE — ${BASE} no declara rutas: 'una-menos' y 'vacio' no tendrían contra qué desaparecer.`);
+  process.exit(2);
+}
+
+/* La diana cumple LAS DOS condiciones a la vez: su familia sigue viva al
+ * borrarla (≥2 rutas, o encendería también la #1) y está declarada en la base
+ * (o no habría desaparecida que contar). Se recorren TODAS las familias con
+ * varias, no sólo la primera. */
+const famsConVarias = new Set(conVarias.map(([f]) => f));
+const diana = Object.entries(real.routes).find(([r, v]) => famsConVarias.has(v.srcRoute) && RUTAS_BASE.includes(r));
+if (!diana) {
+  console.error(
+    `\n❌ SIN DIANA — ninguna ruta de una familia con varias está en la base ${BASE}.\n` +
+      `   Borrar una ruta que la base no declara NO produce ninguna desaparecida:\n` +
+      `   el sabotaje saldría verde sin haber ejercitado la comprobación #2.`,
+  );
+  process.exit(2);
+}
+const [rutaSuelta] = diana;
+const famVarias = diana[1].srcRoute;
 
 const casos = [
   {
@@ -108,9 +151,12 @@ const casos = [
     entrada: () => fabrica("vacio", (m) => (m.routes = {})),
     salidaTiene: /NO SE PUDO EVALUAR/,
     comprueba: (d) =>
-      d.rutas?.length === 0 && d.desaparecidas?.length === RUTAS.length
+      /* Desaparecidas se cuenta contra la BASE, no contra el build: vaciar el
+       * manifiesto sólo puede hacer desaparecer lo que la base declaraba.
+       * Aquí estuvo `RUTAS.length` (el build, 374) contra una base de 31. */
+      d.rutas?.length === 0 && d.desaparecidas?.length === RUTAS_BASE.length
         ? null
-        : `esperaba 0 rutas y ${RUTAS.length} desaparecidas; salió ${d.rutas?.length} / ${d.desaparecidas?.length}`,
+        : `esperaba 0 rutas y ${RUTAS_BASE.length} desaparecidas (las de la BASE); salió ${d.rutas?.length} / ${d.desaparecidas?.length}`,
   },
   {
     etiqueta: "ausente",
@@ -136,7 +182,10 @@ const casos = [
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · manifiesto ════════\n`);
-console.log(`  build real: ${RUTAS.length} rutas · diana vacía: ${familiaDeAlguna} · diana suelta: ${rutaSuelta}\n`);
+console.log(
+  `  build real: ${RUTAS.length} rutas · BASE ${BASE.split("/").pop()}: ${RUTAS_BASE.length} rutas\n` +
+    `  diana vacía: ${familiaDeAlguna} · diana suelta: ${rutaSuelta} (de ${famVarias}, y EN la base)\n`,
+);
 
 const ev = new Evaluadas({ nombre: "manifiesto-neg", unidad: "sabotajes", minimo: casos.length });
 let fallos = 0;

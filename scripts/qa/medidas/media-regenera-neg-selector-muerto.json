@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "fecha": "2026-08-14",
+    "fuente": "corpus/ (312 páginas) + media/ (pipeline REAL de Payload+sharp) + apps/web/public/images",
+    "pregunta": "¿hay que capturar las 1571 variantes, o basta con los orígenes y Payload regenera?",
+    "sabotaje": "selector-muerto"
+  },
+  "reproduccion": {
+    "generadas": {
+      "n": 438,
+      "pares": 440,
+      "dimensionesIguales": 438,
+      "shaIdentico": 191,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 416,
+          "media": 1.5,
+          "min": -20.4,
+          "max": 17.2
+        },
+        "png": {
+          "n": 15,
+          "media": 51.3,
+          "min": -0.1,
+          "max": 262.9
+        },
+        "webp": {
+          "n": 7,
+          "media": 1.6,
+          "min": -10.4,
+          "max": 17.3
+        }
+      },
+      "noAnalizables": [
+        {
+          "fichero": "Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-480x679.jpg",
+          "chars": 260,
+          "razon": "Input file is missing: C:/Users/algar/OneDrive/Documentos/Ambientalia_2026_K/kunak-web-clone/apps/web/public/images/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-480x679.jpg"
+        },
+        {
+          "fichero": "Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-480x679.jpg",
+          "chars": 278,
+          "razon": "Input file is missing: C:/Users/algar/OneDrive/Documentos/Ambientalia_2026_K/kunak-web-clone/apps/web/public/images/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-480x679.jpg"
+        }
+      ]
+    },
+    "control_subidas": {
+      "n": 335,
+      "pares": 335,
+      "dimensionesIguales": 335,
+      "shaIdentico": 324,
+      "difDim": [],
+      "peso": {
+        "jpeg": {
+          "n": 323,
+          "media": 0,
+          "min": 0,
+          "max": 0
+        },
+        "webp": {
+          "n": 11,
+          "media": -2.9,
+          "min": -5.1,
+          "max": -1.3
+        },
+        "png": {
+          "n": 1,
+          "media": 0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "noAnalizables": []
+    }
+  },
+  "poblaciones": {
+    "urlsTodoElHtml": 0,
+    "origenesTodoElHtml": 0,
+    "urlsEnCuerpo": 0,
+    "origenesEnCuerpo": 0,
+    "yaLocales": 0,
+    "aCapturar": 0
+  },
+  "cajasDelCuerpo": {
+    "variantes": 0,
+    "regenerables": 0,
+    "noRegenerables": {}
+  },
+  "listaACapturar": [],
+  "veredicto": {
+    "reproduceDimension": true,
+    "reproduceBytes": false,
+    "controlOk": false,
+    "lectura": "el pipeline reproduce la DIMENSIÓN exacta de la variante capturada; los BYTES no (re-codificación). Para la geometría —lo único que este proyecto mide— basta con capturar los ORÍGENES."
+  }
+}

@@ -1,3 +1,27 @@
+/* ⚠ 2026-08-18 (83.ª) · POR QUÉ ESTE NEGATIVO ESTÁ EN 2/5 Y NO EN 5/5.
+ *
+ * Se arreglaron las DOS averías del instrumento y quedan 3 casos rojos por
+ * UNA SOLA causa, que no es del negativo sino un hallazgo de la sonda:
+ *
+ *  1 · [ARREGLADO] la sonda moría entera en `sharp`: «Input file is missing»
+ *      sobre un fichero que SÍ existe. Es el MAX_PATH de Windows —libvips no
+ *      usa la API de rutas largas—, y son **3 de 2 707** ficheros de
+ *      `apps/web/public` con ruta ≥ 260 chars. Ahora se anotan y se publican
+ *      con su cardinal, fuera del denominador (§regla 14);
+ *
+ *  2 · [FICHADO §MEDIA-REGENERA-SUBIDOS-RECODIFICADOS] el CONTROL interno de
+ *      la sonda sale **324/335**: 11 ficheros «comparados consigo mismos» no
+ *      dan sha256 idéntico. Medido: los 11 son `-600x600.webp`, los 11 pesan
+ *      MÁS en `apps/web/public` que en `media/` (+2…+4 %), y los 11 están
+ *      bien clasificados como SUBIDOS —`media/` guarda `X-600x600.webp` como
+ *      fuente, con sus `-300x300` y `-480x480` derivadas de él—. O sea que no
+ *      es la clasificación: es que el fichero servido **no conserva los bytes
+ *      del fuente**, que es una re-codificación en la cadena de colocación.
+ *
+ * Los 3 casos rojos (`CONTROL`, `sobre-casado`, `sin-cascaron`) esperan exit 0
+ * y la sonda sale 2 por (2). **No se cablea `exit: 2`**: eso escribiría el
+ * defecto en la guarda. Se dejan rojos hasta que (2) se resuelva en su tanda.
+ */
 /**
  * TEST EN NEGATIVO de `media-regenera` — entero, cada sabotaje por SU
  * invariante, **y con control**.

@@ -137,11 +137,43 @@ for (const c of capturadas) {
 }
 
 const sha = (f) => createHash("sha256").update(readFileSync(f)).digest("hex");
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ UN FICHERO QUE NO SE PUEDE LEER SE ANOTA, NO MATA LA SONDA
+ * (corregido 2026-08-18, 83.ª)
+ *
+ * `sharp` reventaba con «Input file is missing» en un fichero que SÍ existe:
+ * `existsSync` da true y `ls` lo ve. La causa es el **MAX_PATH de Windows** —
+ * la ruta mide 260 caracteres exactos y libvips, que es código nativo, no usa
+ * la API de rutas largas. Barrido: **3 de 2 707** ficheros de
+ * `apps/web/public` pasan de 260.
+ *
+ * La sonda moría en el primero, así que sus 5 casos del negativo salían con
+ * exit 1 —control incluido— y el 0/5 se leía como «este negativo no caza
+ * nada». Es el patrón que la casa ya tiene escrito para el inventario de
+ * media: *un inventario no se puede derivar con un instrumento que muere en
+ * la primera ausencia*.
+ *
+ * Y NO se salta en silencio (§regla 6, *un valor por defecto convierte «no lo
+ * sé» en «está bien»*): el par no analizado sale del DENOMINADOR —si no,
+ * `dimensionesIguales/n` bajaría y el veredicto voltearía a NO por un fallo
+ * de lectura— y se publica aparte con su cardinal y su razón (§regla 14).
+ * ═════════════════════════════════════════════════════════════════════════ */
 async function analiza(pares) {
   let dim = 0, id = 0;
-  const difDim = [], porFmt = new Map();
+  const difDim = [], porFmt = new Map(), noAnalizables = [];
   for (const p of pares) {
-    const [a, b] = await Promise.all([sharp(p.capturado).metadata(), sharp(p.generado).metadata()]);
+    let a, b;
+    try {
+      [a, b] = await Promise.all([sharp(p.capturado).metadata(), sharp(p.generado).metadata()]);
+    } catch (e) {
+      noAnalizables.push({
+        fichero: basename(p.capturado),
+        chars: p.capturado.length,
+        razon: String(e?.message ?? e).split("\n")[0],
+      });
+      continue;
+    }
     if (a.width === b.width && a.height === b.height) dim++;
     else difDim.push({ n: basename(p.capturado), capturado: `${a.width}x${a.height}`, generado: `${b.width}x${b.height}` });
     if (sha(p.capturado) === sha(p.generado)) id++;
@@ -152,7 +184,18 @@ async function analiza(pares) {
   const peso = Object.fromEntries(
     [...porFmt].map(([f, v]) => [f, { n: v.length, media: +(v.reduce((s, x) => s + x, 0) / v.length).toFixed(1), min: +Math.min(...v).toFixed(1), max: +Math.max(...v).toFixed(1) }]),
   );
-  return { n: pares.length, dimensionesIguales: dim, shaIdentico: id, difDim, peso };
+  /* `n` son los ANALIZADOS, no los pares: es el denominador de todo lo de
+   * abajo y tiene que expresar lo que de verdad se comparó. `pares` va al
+   * lado para que la diferencia sea visible y no haya que restarla. */
+  return {
+    n: pares.length - noAnalizables.length,
+    pares: pares.length,
+    dimensionesIguales: dim,
+    shaIdentico: id,
+    difDim,
+    peso,
+    noAnalizables,
+  };
 }
 const G = await analiza(gen);
 const S = await analiza(sub);
@@ -193,6 +236,15 @@ console.log(`  GENERADAS por sharp .... n=${M(G.n)}  dimensiones iguales ${G.dim
 for (const [f, p] of Object.entries(G.peso)) console.log(`      peso ${f.padEnd(5)} n=${String(p.n).padStart(3)}  media ${p.media >= 0 ? "+" : ""}${p.media}%  [${p.min}%, ${p.max}%]`);
 for (const d of G.difDim.slice(0, 6)) console.log(`      ⚠ ${d.n}  capturado ${d.capturado} → generado ${d.generado}`);
 console.log(`  CONTROL · SUBIDAS ...... n=${M(S.n)}  dimensiones iguales ${S.dimensionesIguales}/${S.n} · sha256 idéntico ${S.shaIdentico}/${S.n}  ← fichero contra sí mismo: tiene que ser 100 %`);
+/* La limitación va CON SU CARDINAL y su denominador, no como nota al pie
+ * (§regla 14): «no analiza algunas» es una frase, «no analiza 1 de 112» es
+ * una decisión. Y sale nombrada aunque sea cero. */
+const noAn = [...G.noAnalizables, ...S.noAnalizables];
+console.log(
+  `  noMide · ${noAn.length} par(es) NO analizables de ${G.pares + S.pares}` +
+    (noAn.length ? ` — fuera del denominador de arriba:` : ` (ninguno)`),
+);
+for (const x of noAn) console.log(`      ⚠ ${x.fichero}  (ruta ${x.chars} chars) · ${x.razon}`);
 
 console.log(`\n── 2 · las poblaciones del corpus, y qué hay que capturar ──────────`);
 console.log(`  URLs de uploads en TODO el HTML .... ${M(enTodo.size)}  → orígenes ${origTodo.size}`);

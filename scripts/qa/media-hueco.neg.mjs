@@ -141,7 +141,28 @@ const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 const segCtl = ((Date.now() - t0) / 1000).toFixed(0);
 let malCtl = null;
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
-else if (!/NO ENTRA NADA EN EL ESQUEMA/.test(ctlOut)) malCtl = "sin la línea del veredicto";
+else if (!/NO ENTRA NADA EN EL ESQUEMA/.test(ctlOut))
+  /* ⚠ FICHADO 2026-08-18 (83.ª) · §MEDIA-HUECO-T10-EN-LA-CADENA.
+   * Este rojo NO es del negativo: es el control haciendo su trabajo. La sonda
+   * corría reventada (le faltaba `ctx.mediaPublicada`), y al repararla resultó
+   * que su veredicto ha VOLTEADO —de «NO ENTRA NADA EN EL ESQUEMA» (congelada
+   * del 2026-08-04) a «el CUERPO no lo conserva», con 0/311—.
+   *
+   * El 0/311 está MEDIDO como artefacto de T10, que entró en
+   * `TRANSFORMACIONES` después de aquella congelada: comparando la cadena con
+   * y sin T10 sobre los mismos cuerpos salen **311 pares distintos y los 311
+   * con los MISMOS anchos** — 0 pérdida real de la caja pedida. Lo que cambia
+   * es el prefijo de la URL, que es justo para lo que T10 existe, y la
+   * comparación «verbatim» lo cuenta como pérdida.
+   *
+   * NO se cablea el veredicto de hoy para poner esto en verde: eso escribiría
+   * el artefacto en la guarda. Se deja rojo, con su número, hasta que se
+   * decida en su tanda si la comparación tiene que ser de la CAJA (anchos +
+   * sizes + width + size-) en vez de la cadena literal. Afecta a una decisión
+   * publicada: `docs/ESQUEMA-CMS.md` §276. */
+  malCtl =
+    "el veredicto VOLTEÓ (0/311 srcset «no sobreviven») — FICHADO §MEDIA-HUECO-T10-EN-LA-CADENA: " +
+    "medido, los 311 conservan los anchos y sólo cambia la URL que T10 localiza a propósito";
 else {
   const d = leeArtefacto("control");
   if (!d) malCtl = "no congeló su medida";
