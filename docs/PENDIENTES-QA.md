@@ -306,12 +306,68 @@ mover**, y por tanto sólo pueden venir del original.
 extracto donde había `null`**, así que en esas dos formas es NO-OP por
 construcción. **Lo que se mueva ahí es del original.**
 
-### Lo medido @1440 — deriva separada del arreglo
+### Lo medido — deriva separada del arreglo, **a los DOS anchos**
 
-| clase | pares | qué |
+| clase | pares @1440 | qué |
 |---|---|---|
 | **`Δ+3` en el pie** | **35** | `pie.rect.h` **590.75 → 593.75**, propagado a `docH` y a las `y` de todo lo que va debajo. En `L1-blog` (5) · `L1-etiqueta` (10) · `L1-resources-hijo` (10) · `L1-resources-padre` (10) |
 | **`L2`, grande** | **24** | `L2-glosario` `docH` **1933 → 2242** (**+309**) · `pie.rect.h` **+308.64** · `cascaron.1.rect.h` **+55.59** · `paddingBottom` **`0px` → `57.5938px`**. Ídem `L2-faqs` |
+
+### El número COMPLETO — sobre las 82 páginas del espejo, no sobre 13
+
+`lh-espejo-1440` (82 páginas) da **1 359 pares distintos de 122 762**, y se
+reparten en tres cubos con causa:
+
+| cubo | pares | qué |
+|---|---|---|
+| **instrumento** | **~905** | el rol `meta` casando por primera vez en `L3` (624) y `L5` (117), `piezasTotales`/`topeDePiezas`, y el nombre del selector de título. **Ni deriva ni defecto** |
+| **DERIVA `Δ3` en `L1`** | **~310** | `L1-etiqueta` 175 · `L1-resources-hijo` 55 · `L1-blog` 40 · `L1-resources-padre` 35 |
+| **DERIVA en `L2`** | **~124** | y **no es un desplazamiento uniforme**: `Δ55.59 · 115.19 · 137.86 · 193.45 · 308.64 · 309`. `L2` cambió de estructura, no de posición |
+
+> ⚠ **Y el `Δ5` que no encajaba lo explica del todo: el pie del original ERA
+> BIMODAL.** 5 pares de `L1-etiqueta` venían de **588.75** y el resto de
+> **590.75**; hoy **las 82 páginas convergen a 593.75**. Convergencia a un valor
+> único es la firma de un **despliegue**, no de una oscilación — y es la única
+> evidencia que este proyecto tiene hoy para inclinar «cambió» frente a «oscila»,
+> porque la campaña de ruido de estas rutas sigue sin existir.
+
+### Y el `null` de 107 tarjetas queda repartido, con la suma cuadrando
+
+| | tarjetas | |
+|---|---|---|
+| **eran defecto del instrumento** | **51** | `L3-sci` 16 · `L2-glosario` 23 · `L2-faqs` 12 — hoy con dato |
+| **eran DATO** | **56** | `L1-resources` 50 (son de `articulos`, sin extracto) · `L5-casos` 3 · `L4` 3 |
+| | **107** | ✅ **51 + 56 = 107**, exacto |
+
+Y las dos formas de control **no se movieron**: `L1-blog` **24/24 → 24/24** y
+`L1-etiqueta` **105/105 → 105/105**.
+
+> ✅ **Y SE REPRODUCE A 390 CON OTRO NÚMERO, que es lo que lo saca de «ruido»:**
+> el mismo pie da **1754.52 → 1761.17 (+6.65)** a 390 contra **+3** a 1440, y el
+> `padding` de `L2` va **`0px` → `50px`** (contra `57.5938px` a 1440) — que son
+> **los dos valores del default de sección de Divi a cada ancho**, o sea un
+> cambio con mecanismo, no un temblor.
+>
+> §Notas de método: *reproducirse entre anchos pesa más que el tamaño*. Dos
+> maquetaciones distintas no producen el mismo cambio por azar.
+
+### ✅ Lo que ACOTA el daño: `L3` y `L5` NO tienen deriva
+
+**Cero Δ numérico en `L3` y en `L5`, en los dos anchos.** Toda su diferencia
+entre espejos es **instrumento** (los campos nuevos de `meta` y el nombre del
+selector de título). Sus specs siguen exactas, verificado contra el original de
+hoy:
+
+| | `L3-sci` | `L5-casos` |
+|---|---|---|
+| `h1.y` @1440 · @390 | **337.59 · 279.77** | **593.28 · 608.27** |
+| secciones | **5** | **6** |
+| tarjetas | **14** y **1** | **57** |
+| paginador | **ninguno** | **ninguno** |
+
+**O sea que la deriva NO toca las dos formas que esta tanda iba a construir** —
+pero el escalón es el escalón: disparó, se ficha, y no se construye encima
+mientras el `−3` de `L1` esté sin adjudicar.
 
 ### Lo que esto significa para lo YA construido, y es la parte que muerde
 

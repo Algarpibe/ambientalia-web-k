@@ -1966,6 +1966,42 @@ y las medidas son el producto de la sesión tanto como el código. Si acabas de
 medir algo que vas a citar, **commitéalo antes de la siguiente orden que toque el
 árbol.**
 
+**5bis · ARREGLAR UN INSTRUMENTO NO ARREGLA SUS MEDIDAS: LAS CADUCA.**
+(2026-08-18, subida aquí por el barrido de §regla 12 el 2026-08-19)
+
+La regla 5 protege la evidencia de que una sonda **la pise**. Ésta protege de
+algo que ninguna guarda puede ver, porque no pasa dentro de la sonda:
+
+> **Toda medida congelada es una FOTO TOMADA CON UN INSTRUMENTO CONCRETO.** El
+> día que ese instrumento se corrige, sus congeladas **no se vuelven falsas
+> ruidosamente: se quedan calladas diciendo lo de antes**. Y como el fichero no
+> lleva escrito con qué versión se tomó, la comparación siguiente mezcla dos
+> instrumentos y **produce diferencias que no son de ninguno de los dos lados**.
+
+**Medido:** arreglar el selector del extracto convirtió `extracto: null` en dato
+para **51** tarjetas. Los dos espejos congelados llevaban ese `null` en **107**,
+y **56 de esos 107 eran dato bueno**. Comparar el clon medido con el instrumento
+nuevo contra el espejo medido con el viejo habría dado **51 falsos rojos**, y el
+camino de menor resistencia habría sido **construir el clon SIN extracto para
+cuadrar el `null`** — o sea cablearlo al defecto del instrumento.
+
+**Las tres mitades operativas:**
+
+1. **el alcance del daño se declara con su número**, y casi nunca es «todo»:
+   aquí era **sólo el campo `extracto`** — geometría, ritmo y árbol seguían
+   valiendo, y decir «el espejo está mal» habría tirado una medida buena;
+2. **la congelada caducada se RENOMBRA con el defecto y su alcance**, no con
+   «viejo» (§regla 7). Y renombrarla **libera el nombre canónico**, con lo que
+   los consumidores recogen la nueva **por derivación** en vez de por una lista
+   escrita a mano (§regla 9, 8.º caso);
+3. **y hay que RE-MEDIR contra la fuente, no re-derivar de un sustituto.** Un
+   corpus capturado sirve para el texto y **falsea la geometría** si no trae sus
+   hojas — reconstruir el espejo desde ahí cambia un defecto conocido por otro
+   invisible.
+
+**Y el defecto se pone en la dirección que grita:** liberado el canónico, lo que
+todavía no se ha re-medido **falla en voz alta** en vez de leer lo caducado.
+
 **6 · UN PARÁMETRO POR DEFECTO CONVIERTE «NO LO SÉ» EN «ESTÁ BIEN».**
 
 Las cinco reglas de arriba persiguen el mismo animal: *no encontrar nada y no
@@ -2103,6 +2139,29 @@ FAMILIA DE CALIBRACIÓN fabricada a mano.
 > parece justo lo que el pre-registro prohíbe. Los hechos negativos que un
 > pre-registro afirme (*«no existe», «no hay fichero», «no se ha visto»*) **se
 > comprueban al escribirlo**, contra el archivo, no de memoria.
+
+> ⚠ **Y SU SEGUNDA MITAD, PAGADA EL 2026-08-19: CUANDO LO QUE PREDICES ES EL
+> EFECTO DE UN CAMBIO DE INSTRUMENTO, «QUÉ CAMBIÓ EL INSTRUMENTO» SE DERIVA DEL
+> `diff` — NUNCA SE RECUERDA.**
+>
+> Es §regla 9 aplicada al sitio donde peor sienta, porque el pre-registro se
+> escribe **el mismo día** que el cambio y por tanto se siente sabido:
+>
+> > **La lista de lo que tocaste es un conjunto derivable —`git diff` del commit
+> > del arreglo— y escribirla de memoria produce una predicción INCOMPLETA que se
+> > lee como cumplida**, porque lo que sí predijiste acierta y lo que olvidaste
+> > no sale nombrado en ninguna parte.
+>
+> **Medido:** un pre-registro afirmó que el arreglo tocaba **dos** roles
+> —`extracto` y `titulo`— y tocaba **tres**: se dejó `meta`. De los **358** pares
+> que se movieron, **273 eran del rol olvidado** — la mayoría del movimiento,
+> declarada inexistente por el documento que iba a interpretarlo. Las
+> predicciones sobre los otros dos roles se cumplieron **todas**, así que nada
+> chirriaba.
+>
+> **Operativamente, y cuesta una línea:** un pre-registro sobre un cambio de
+> instrumento **empieza pegando el `diff`** —o la lista de símbolos que toca— y
+> predice **sobre esa lista**, no sobre la que uno recuerda haber escrito.
 
 **9 · UN RECUENTO —O UNA AUSENCIA— AFIRMADOS DE MEMORIA SE BARREN ANTES DE
 USARSE.** (2026-08-04)

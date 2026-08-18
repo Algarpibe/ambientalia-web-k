@@ -1,3 +1,45 @@
+# HANDOFF — los espejos re-congelados, y el ORIGINAL se movió por debajo
+
+> ⚠ **Tanda de MEDICIÓN, 2026-08-19 (79.ª). Se cerró el PASO 0 y el PASO 1, y la
+> tanda para en el CORTE LIMPIO 1 declarado por el encargo. `L3` y `L5` NO se
+> construyeron** — el **disparador (a) disparó**: el original se movió entre el
+> 2026-08-11 y hoy, y eso se separa y se declara **antes** de construir.
+>
+> **Lo que ya no está abierto:**
+>
+> - **el cableado del espejo** — los 4 caducados quedan marcados
+>   `…-SONDA-EXTRACTO-EN-2-FORMAS-DE-9.json` y el nombre canónico **libre**, así
+>   que los consumidores recogen el espejo nuevo **por derivación**. Decidido
+>   contando: el encargo enumeraba **6** puntos de entrada y son **16 en 11
+>   ficheros** — la lista escrita a mano se había quedado corta en 10 **antes de
+>   usarse**;
+> - **`lh-spec` re-congelado a los dos anchos** contra el original vivo, 13/13
+>   páginas, 0 selectores muertos, escrito en el canónico;
+> - **las 8 predicciones del pre-registro**, cumplidas — incluida la que más
+>   importaba: **`L5` sigue sin extracto** (0/3 → 0/3), confirmando por un
+>   **segundo canal** lo que la 78.ª midió sobre 114 instancias. **El disparador
+>   (c) NO dispara.**
+>
+> **⛔ Lo que abre, y es la razón de la parada:** el pie del original creció
+> **+3 px @1440 y +6.65 @390**, y `L2` **+309**. Toca `L1-blog`, `L1-etiqueta` y
+> las dos `L1-resources` — **formas que el arreglo del selector no puede mover**,
+> luego es del original. **El clon está calibrado contra el pie viejo**, así que
+> lo ya verificado mostrará un **−3 sistemático que NO es regresión suya**;
+> recalibrar ahí fabricaría una familia de calibración.
+>
+> ✅ **Lo que acota el daño: `L3` y `L5` NO tienen deriva** — cero Δ numérico en
+> los dos anchos, con sus specs confirmadas contra el original de hoy
+> (`h1.y` 337.59/279.77 y 593.28/608.27 · 5 y 6 secciones · 14·1 y 57 tarjetas ·
+> sin paginador). La construcción no está bloqueada por falta de conocimiento.
+>
+> ⚠ **Y una lección sobre el propio pre-registro:** decía que el arreglo tocó
+> `extracto` y `titulo`, y **se dejó `meta`** — 273 de los 358 pares movidos.
+> Enumerar de memoria qué cambió el instrumento, en vez de derivarlo del `git
+> diff`, es §regla 9 cometida **dentro de un pre-registro**, donde llega
+> blindada.
+
+---
+
 # HANDOFF — el extracto cierra en BYTES, y el `null` de 107 tarjetas era la SONDA
 
 > ⚠ **Tanda de MEDICIÓN, 2026-08-18 (78.ª). Se cerraron los PASOS 0 y 1 y la
