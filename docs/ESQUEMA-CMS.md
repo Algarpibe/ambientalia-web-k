@@ -3538,12 +3538,82 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 
 | # | decisión | bloquea |
 |---|---|---|
+| ⛔ **CMS-TITULO-RICO** | **`titulo` es `type: "text"` y 8 de 288 documentos del corpus llevan MARCADO dentro del `<h1>`** — `<sub>` de fórmula química (`O<sub>2</sub>`, `H<sub>2</sub>S`, `PM<sub>10</sub>`). Un campo de texto plano **no puede contener su dato medido**, y el clon ya sirve esos 8 aplanados en rutas dadas por verificadas. Reparto: **término 6/37 · blog 1/152 · caso 1/57 · doc. científico 0/23 · faq 0/19**. Ver §7f | **`L2`** (`/glosario` es donde se concentra: 6 de sus 37 términos) y la fidelidad de **8 rutas ya emitidas** |
 | **CMS-ORDEN-L2** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
 | §3.4 | tabla: nodo de Lexical vs block | ~~whitelist~~ → **nada**: §3.1d sacó el corpus del editor, así que las 35 páginas con tabla ya no dependen de esto. Sigue abierta como decisión de producto |
 | ~~§3.3b~~ | ~~contenido de la allowlist de hosts de embebido~~ **✅ FIRMADA (2026-08-04): los 18 hosts censados, por HOST, con procedimiento de alta** — alcance grupo A; C-SP6 sigue abierto y entra por el alta | **nada** — la política está firmada y el saneador la ejecuta |
 | ~~**CMS-SP-TIPO**~~ | ~~ninguna guarda mira el TIPO de la hoja, solo su nombre~~ **✅ CERRADA (2026-08-06): `npm run qa:tipo-hoja`, 10/10 hojas con marcado, negativo 5/5 — §7d**. ⚠ Y la cerró **la salida 2 de §7b, no la 1**: el Δ0 de render **NO PUEDE** verla, y eso está medido — el panel de un producto sólo se sirve si es el ACTIVO, y el activo es `monitor-calidad-aire` en las 10 instancias, así que **ninguna ruta emitida contiene el `<sup>`** | **nada** |
 | ~~**CMS-0g · ORIGEN DE MEDIA**~~ | ~~`media` no guarda la ruta de origen del fichero~~ **✅ CERRADA (2026-08-06): campo de PROCEDENCIA `rutaOrigen`, nullable por construcción — §7c**. La premisa era verdadera y **la conclusión no se seguía**: `qa:media-colision` midió que `filename → ruta` **sí es una función hoy** (112 rutas · 0 repetidos) y **deja de serlo en la unión con el corpus** (646 · **1**, 12 referencias). O sea que tabular sobre `filename` funcionaría hoy y se rompería con contenido dentro | **nada** — desbloquea las 5 familias de F2-3 |
+
+### ⛔ 7f · CMS-TITULO-RICO · EL TITULAR LLEVA FÓRMULA QUÍMICA Y EL CAMPO ES TEXTO PLANO (2026-08-18, 76.ª tanda — NADA DECIDIDO)
+
+**Qué se decide aquí: nada.** Se nombra la clase con su cardinal y se deja al
+propietario, como `D2.4`, `D2.5` y `CMS-ORDEN-L2`.
+
+**El hecho, derivado del corpus** (`<h1>` de cada documento, ¿contiene alguna
+etiqueta?):
+
+| colección | con marcado en el `<h1>` | de |
+|---|---|---|
+| `terminos-kunakpedia` | **6** | 37 |
+| `entradas-blog` | **1** | 152 |
+| `casos` | **1** | 57 |
+| `documentos-cientificos` | 0 | 23 |
+| `faqs` | 0 | 19 |
+| **total** | **8** | **288** |
+
+Los 8 son `<sub>` de **fórmula química**: `Oxígeno (O<sub>2</sub>)` ·
+`Sulfuro de hidrógeno (H<sub>2</sub>S)` · `Amoníaco (NH<sub>3</sub>)` ·
+`Dióxido de azufre (SO<sub>2</sub>)` · `Óxidos de nitrógeno (NOx) y óxido
+nitroso (N<sub>2</sub>O)` · `cloro (Cl<sub>2</sub>) y dióxido de cloro
+(ClO<sub>2</sub>)` · `Medición de PM<sub>10</sub>…` · y el caso de la PTAR de
+Israel.
+
+**Y el modelo lo declara plano:** `{ name: "titulo", type: "text" }` en las tres
+colecciones del grupo A (`colecciones/grupo-a.ts`). O sea **un campo que no puede
+contener su dato medido** — la misma forma exacta que `CMS-SP-TIPO`, que este
+registro ya pagó una vez con el `<sup>` de la tabla de producto.
+
+### Por qué no lo vio nadie, y son tres cegueras distintas
+
+| instrumento | por qué es ciego |
+|---|---|
+| `clon-base` | congela `h1.txt`, que es `textContent`: `PM<sub>10</sub>` y `PM10` dan **la misma cadena**. Ciego **por construcción**, no por descuido |
+| `lh-cmp` | **tiene** el canal (`listado.tarjetas.N.etiquetas` censa las etiquetas dentro de la tarjeta), pero el espejo congela **3 tarjetas de 15** y **7 de las 11** tarjetas con `<sub>` caen fuera — §F3-TARJETAS-RECORTADAS-A-3 |
+| el round-trip del CMS | compara el dato **contra sí mismo**: un título aplanado en la ida sale aplanado en la vuelta y **casa** |
+
+> **Las tres son la misma familia**: §*una medición tomada a un nivel que puede
+> absorber el error no es una medición*. Aquí el contenedor es **`textContent`**,
+> que absorbe el marcado por definición.
+
+### Lo medido en la salida servida, que es lo que lo saca de hipótesis
+
+`/es/recursos/articulos/`, tarjeta **5 de 15**:
+
+| lado | lo servido |
+|---|---|
+| original | `Medición de PM<sub>10</sub> en entornos con alta presencia…` |
+| clon | `Medición de PM10 en entornos con alta presencia…` |
+
+**Y el `<sub>` NO es una etiqueta nueva para este proyecto:** §3.1 ya lo tiene en
+la whitelist del campo rico con su censo —*«subíndice · superíndice · **139** ·
+37 — fórmulas químicas. No es opcional»*—. Lo que está sin resolver es que **el
+titular no es campo rico**, y nadie preguntó si debía serlo.
+
+### Las salidas, sin decidir
+
+| | qué implica | coste |
+|---|---|---|
+| **A · `titulo` pasa a campo rico** (mismo contrato que §3.1, whitelist recortada) | el titular admite `<sub>`/`<sup>`/`<em>`; hay que decidir qué se hace en `<title>`, `og:title` y la miga, donde el marcado **no** va | toca las 3 colecciones del grupo A y el render de **288** documentos: exige antes/después y build |
+| **B · campo hermano `tituloHtml`, opcional** | `titulo` sigue plano para metadatos y ordenación; el render usa `tituloHtml ?? titulo` | campo nuevo con **8 de 288** ejerciéndolo — §F2-5-ESCALON-ETIQUETAS: *un camino de render que casi nadie estrena* |
+| **C · dejarlo** | el clon sirve 8 titulares aplanados; a 1440 la diferencia de alto es **0** porque `<sub>` no cambia el `line-height`, así que **ninguna guarda vertical lo verá nunca** | es el estado de hoy, y hay que escribirlo como desviación en vez de callarlo |
+
+> ⚠ **Lo que NO se ha medido, y hace falta para elegir:** el `<sub>` tiene otro
+> tamaño y otra línea base, así que **puede mover el ancho del titular** y con él
+> el punto de envolvimiento. Con 8 instancias y ningún ancho medido, *«no se
+> ve»* es **SIN PROBAR**, no *«no pasa nada»*. El instrumento que lo diría es el
+> mismo que hoy no llega: §F3-TARJETAS-RECORTADAS-A-3.
 
 ### ⛔ 7e · CMS-ORDEN-L2 · UN ARCHIVO DE CPT ORDENA POR FECHA, Y EL MODELO NO LA TIENE (2026-08-14, 69.ª tanda)
 

@@ -1,5 +1,109 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-TARJETA-DE-MAS-76 · NO FALTA NINGUNA TARJETA: SOBRA UNA EN 3 FORMAS, Y LAS DOS CAUSAS YA TIENEN FICHA (2026-08-18, 76.ª tanda)
+
+**El encargo pedía adjudicar «el clon sirve 5 tarjetas donde el original sirve
+6» en `/etiqueta/cov`. Derivado contra las congeladas de hoy, el signo está
+invertido y la ruta es otra.**
+
+> ⚠ **El `5 → 6` es de la corrida `-2`, la del experimento del 301 revertido.**
+> En el árbol de hoy (`lh-cmp-1440-todas-2026-08-17-4`) `/etiqueta/cov` **no
+> tiene diferencia de `nTarjetas`**: sirve **6 → 6**. Lo que difiere ahí es el
+> **contenido** de la tarjeta 2. Es §regla 9 en su forma más barata: el número
+> venía heredado del mensaje anterior, no derivado.
+
+**Lo que sí hay hoy, derivado de las 82 formas a los DOS anchos:** exactamente
+**3** con `listado.nTarjetas` distinto, y en las tres **el clon sirve UNA MÁS**:
+
+| forma | orig → clon | el sobrante, nombrado | ficha que lo posee |
+|---|---|---|---|
+| `/es/etiqueta/h2s-es/` | **4 → 5** | `medicion-de-gases-en-los-vertederos-de-basura` | **§F3-LH-ENTRADA-QUE-ES-UN-301** |
+| `/es/recursos/articulos/` (serie) | **80 → 81** | `calidad-del-aire-en-puertos` | **§F3-LH-PUERTOS-1-DE-2** |
+| `…/articulos/contaminacion-en-puertos-y-aeropuertos/` | **1 → 2** | `calidad-del-aire-en-puertos` (**el mismo**) | **§F3-LH-PUERTOS-1-DE-2** |
+
+**Ninguna es hueco nuevo. El ESCALÓN 2 no dispara.** §F3-LH-PUERTOS-1-DE-2 lo
+predijo literalmente: *«cuando se construya `L1-resources`, ese par saldrá
+distinto en `qa:lh-cmp` y no será defecto de plantilla»*.
+
+### Cómo se nombró el sobrante — y el canal que NO valía
+
+**Un cardinal no prueba membresía** (§*un cardinal es un contenedor*), así que se
+hizo la diferencia simétrica **por elemento**. El primer intento salió mal y por
+un motivo que ya tiene regla:
+
+> ⚠ **El espejo congela `cards.slice(0, 3)`** (`lh-barrido.mjs:296`), así que la
+> serie `articulos` da **18 tarjetas** donde el original sirve **80**. Una
+> diferencia simétrica contra ese lado es una diferencia contra el instrumento.
+> El canal sin recortar es **el corpus capturado**: 6 ficheros, **80** tarjetas.
+> §sondas 4 **cuarta cara**, segunda instancia en dos tandas — ver
+> §F3-TARJETAS-RECORTADAS-A-3, abajo.
+
+Contra el corpus, la diferencia simétrica de la serie `articulos` sale **80 → 81**
+con **tres** pares y sólo uno es dato:
+
+| par | qué es |
+|---|---|
+| `+1 calidad-del-aire-en-puertos` | **el sobrante real** — §F3-LH-PUERTOS-1-DE-2 |
+| `+1 «Contaminación del aire en vertederos…»` / `−1 «Medición de gases…»` | **neutro en cardinal**: la fila del 301 renderiza el contenido ajeno — §F3-LH-ENTRADA-QUE-ES-UN-301 |
+| `+1 «Medición de PM10…»` / `−1 «Medición de PM»` | ⚠ **el instrumento otra vez**: mi `grep` corta en `<sub>`. Y al mirarlo salió un hallazgo que no era de esta pregunta — §CMS-TITULO-RICO |
+
+### ⚠ Y la fila del 301 arrastra algo que su ficha NO publica: heredó la TAXONOMÍA ajena
+
+**Medido en los dos canales, y es lo que decide que la salida `C` no basta:**
+
+| archivo | ¿lista el original a `medicion-de-gases…`? | ¿lo lista el clon? |
+|---|---|---|
+| `/etiqueta/cov` | **sí** (2 apariciones en el HTML capturado) | sí — membresía correcta, **contenido ajeno** |
+| `/etiqueta/h2s-es` | **NO** (**0** apariciones) | ⛔ **sí** — `href` derivado de lo servido |
+
+O sea que la fila no sólo tiene el título y la fecha del otro documento: tiene
+**una etiqueta que no es suya**, y por eso aparece en un archivo donde el
+original no la lista. **`C` (re-capturar la TARJETA) arregla el título, la fecha
+y la imagen, y NO arregla esto**: la pertenencia salió de la captura que siguió
+el 301. Se anota en la ficha del 301 como cuarta consecuencia medida, con su
+cardinal: **1 archivo de más, `/etiqueta/h2s-es`**.
+
+## ⚠ F3-TARJETAS-RECORTADAS-A-3 · EL COMPARADOR VE **236 DE 693** TARJETAS, Y ESO NO ESTABA EN NINGÚN `noMide` (2026-08-18, 76.ª tanda)
+
+**Qué se decide aquí: nada. Se le pone el cardinal a una limitación que estaba
+en el código y no en el informe** (§regla 14: *una limitación declarada sin su
+número se lee como una nota al pie*).
+
+`lh-barrido.mjs:296` congela `tarjetas: cards.slice(0, 3)`. Derivado sobre
+`lh-espejo-{1440,390}.json`, **idéntico a los dos anchos**:
+
+| | valor |
+|---|---|
+| páginas del espejo | **82** |
+| tarjetas **SERVIDAS** por el original | **693** |
+| tarjetas **congeladas** (y por tanto comparables) | **236** — el **34.1 %** |
+| tarjetas **nunca comparadas** | **457** |
+| páginas que pasan el tope de 3 | **73 de 82** |
+
+> **Y no es teórico: ahora mismo tapa un defecto servido.** El original sirve
+> `Medición de PM<sub>10</sub>…` en la tarjeta **5 de 15** de
+> `/es/recursos/articulos/`; el clon sirve `PM10` sin `<sub>`. El canal que lo
+> vería existe —`listado.tarjetas.N.etiquetas`, que censa las etiquetas dentro
+> de la tarjeta y ya marca 21 diferencias `a`/`h2`— pero **no llega al índice
+> 5**. De las **11** tarjetas con `<sub>`/`<sup>` en el titular que hay en las
+> 149 capturas de listado, **7 caen fuera del tope y 4 dentro**.
+
+⚠ **Es la MISMA clase que la 75.ª cerró 118 líneas más arriba, en el mismo
+fichero.** Aquella tanda encontró `as.slice(0, 12)` en el paginador, lo declaró
+con `piezasTotales` y escribió la regla — y **no barrió el fichero**: `slice(0, 3)`
+en `tarjetas`, `slice(0, 6)` en `hrefs` y `slice(0, 4)` en las clases de sección
+siguen sin declarar su tope. Es §*arreglar la instancia y no la CLASE*, cobrada
+sobre la corrección de esa misma regla.
+
+**Lo que hay que hacer, y no es subir el tope a ciegas:** declarar
+`tarjetasTotales` como se declaró `piezasTotales`, y **entonces** decidir el tope
+con su coste de tamaño de congelada. Subirlo de 3 a 15 multiplica por 5 el lado
+de tarjetas de un fichero que ya pesa 3.5 MB.
+
+**Lo que esta ficha NO dice:** si las 457 sin comparar están bien o mal. **Nadie
+las ha mirado** — que es exactamente la diferencia entre «no hay defecto
+conocido» y «no se ha mirado» (`COBERTURA-MEDICION.md`).
+
 ## ⛔⛔ F3-AUDITORIA-76 · LA «OSCILACIÓN ENTRE BUILDS» ERA UNA EDICIÓN, Y SE RETIRA UNA AFIRMACIÓN DEL REGISTRO (2026-08-18, 76.ª tanda — auditoría, nada reparado)
 
 **Qué se decide aquí: nada se construye. Se retira una afirmación, y se retira
@@ -919,6 +1023,25 @@ es fiel: el extractor lee ese HTML, el seed crea la fila, la plantilla la pinta.
 
 **El coste medido:** 1 fila de 149 · 1 ruta que el original no sirve · **58
 pares** en 2 formas, con el desplazamiento de orden que provoca la fecha ajena.
+
+> ⚠ **CUARTA CONSECUENCIA, medida el 2026-08-18 (76.ª) y que esta ficha no
+> tenía: la fila heredó también la TAXONOMÍA ajena.**
+>
+> | archivo | ¿lo lista el original? | ¿lo lista el clon? |
+> |---|---|---|
+> | `/etiqueta/cov` | **sí** — 2 apariciones del slug en el HTML capturado | sí (6 → 6 tarjetas): membresía correcta, **contenido ajeno** |
+> | `/etiqueta/h2s-es` | **NO** — **0** apariciones | ⛔ **sí** — `4 → 5` tarjetas, `href` leído de lo servido |
+>
+> **Y eso cambia lo que la salida `C` puede prometer.** `C` (re-capturar la
+> TARJETA desde el archivo de etiqueta) arregla **título, fecha e imagen**, y
+> **no arregla la pertenencia**: la etiqueta `h2s-es` salió de la captura que
+> siguió el 301, no del archivo. Con `C` sola, el clon **seguiría listando la
+> fila en `/etiqueta/h2s-es`**, donde el original no la lista.
+>
+> O sea que `B` + `C` tampoco son «las dos mitades» completas: falta **qué hace
+> el dato con las taxonomías de una fila cuya captura apuntaba a otro
+> documento**. Es una tercera pregunta, y se escribe aquí para que no se
+> descubra construyendo. Derivación: §F3-TARJETA-DE-MAS-76.
 
 **La pregunta a decidir, con sus salidas:**
 
