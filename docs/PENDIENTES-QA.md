@@ -1,5 +1,66 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 F3-LH-PIE-DECLARADO-NO-RECALIBRADO · EL DESFASE DEL PIE, CON SU NÚMERO — Y NO ES REGRESIÓN (2026-08-18, 80.ª tanda)
+
+**Decisión `D6` de `docs/research/listados-hubs/DECISIONES.md`: se DECLARA, no se
+recalibra.** Esta ficha existe para que un `Δ` futuro en el pie no se lea como
+defecto del clon: **un desfase conocido y no escrito se lee como defecto dos
+tandas después**, que es justo lo que la salida (B) obliga a evitar.
+
+### El número, y las dos lecturas
+
+`pie.rect.h` del clon **no se mueve**. Lo que se movió es el original:
+
+| ancho | clon (fijo) | original 08-14 | original 08-18 | Δ contra el viejo | Δ contra el de hoy |
+|---|---|---|---|---|---|
+| **1440** | **594.75** | 590.75 | **593.75** | +4 | **+1** |
+| **390** | **1762.97** | 1754.52 | **1761.17** | +8.45 | **+1.80** |
+
+> **La deriva ACERCÓ el original al clon.** No hay nada que «recuperar»: el pie
+> **nunca casó**, y recalibrar habría movido el cascarón de **las 367 rutas**
+> para cerrar un par de **eje mixto** que el comparador no lee como defecto.
+
+### Por qué no es daño: el reparto por causa, no el total
+
+`qa:lh-cubos` (sonda nueva de esta tanda, negativo 4/4) sobre los dos anchos:
+
+| | @1440 | @390 |
+|---|---|---|
+| cubo 2 · INSTRUMENTO | **0** | **0** |
+| cubo 1 · DERIVA | **0** | **0** |
+| cubo 3 · DEL CLON | 4996 | 4974 |
+| *mixtas que difieren* | 8451 | 8588 |
+| — de ellas **DERIVA** | **248** | **390** |
+| — de ellas **CREA** | **0** | **11** |
+| — de ellas **MUEVE** | **248** | **379** |
+| *control* · caminos que el espejo movió | 299 | 513 |
+
+**Los 11 «creados» de 390 no son del pie**: son de **una sola página**
+(`/recursos/articulos/industria-y-contaminacion-por-olores/page/2/`) y son el
+**mismo +30** de la base — el segundo pico de 390, con el clon en el dominante.
+
+### ⚠ Lo que esta ficha NO afirma
+
+- **no dice que `pie.rect.h` esté limpio.** Sigue difiriendo (+1 · +1.80) y sigue
+  siendo eje mixto **sin referencia limpia**: lo decidido es no recalibrar
+  ahora, no que el número esté bien;
+- **no establece la forma de las 4 rutas de ±30 @390.** Dos lecturas separadas
+  cuatro días son **n = 2**, no una campaña. Lo establecido es que el original
+  produjo dos valores separados por **exactamente 30** en ellas, y que el clon
+  cae en uno de los dos picos (Δ0 · Δ0 · Δ0 · Δ−30, sin valores intermedios);
+- **no abre la campaña de ruido** de estas rutas. Sin ella, un residuo pequeño
+  aquí es **SIN PROBAR**.
+
+### Cómo se lee un Δ futuro en el pie
+
+> **Antes de tocar el clon, correr `qa:lh-cubos`**: dice de quién es cada
+> diferencia. Si el par sale en el cubo 1 con `MUEVE`, es el original; si sale
+> con `CREA`, es daño nuevo y entonces sí hay algo que mirar.
+
+**Ficheros:** `medidas/lh-cubos-{1440,390}.json` ·
+`medidas/lh-cmp-{1440,390}-todas-2026-08-18.json` ·
+`medidas/lh-espejo-{1440,390}.json` y su caducado.
+
 ## ✅ F3-LH-DOS-MEDIDAS-77 · LAS DOS MEDIDAS ABIERTAS, CERRADAS — Y EL `+16` RESULTA SER DE UN SOLO ANCHO (2026-08-17, 77.ª tanda)
 
 **Cierra el escalón que la 75.ª dejó abierto. L3 y L5 NO se construyeron: la

@@ -1152,3 +1152,81 @@ resuelve **por forma** (h1 · primera tarjeta) y publica la lectura **EN CRUDO**
 antes que ningún delta normalizado — §*la regla del `h1` es ciega a su propio
 punto de apoyo*. Un comparador que normalizara primero no podría ver un desfase
 que viva **en** la base, que es justo lo que costó cuatro páginas en C-QA1.
+
+---
+
+## D6 · La deriva del pie de agosto: **DECLARAR, NO RECALIBRAR** (2026-08-18, 80.ª tanda)
+
+**La decisión es explícita porque dejarla implícita era la otra salida**, y la
+implícita se lee dos tandas después como un defecto del clon.
+
+### El hecho
+
+Entre el **2026-08-14** y el **2026-08-18** el pie del original creció, y la
+79.ª lo fichó (`PENDIENTES-QA.md` §F3-LH-DERIVA-DEL-ORIGINAL-AGOSTO):
+
+| forma | `pie.rect.h` @1440 | @390 |
+|---|---|---|
+| `L1-blog` · `L1-resources-padre` · `L1-resources-hijo` | **+3** | **+6.65** |
+| `L1-etiqueta` | **+3** (35 pág) y **+5** (1) | +6.65 y +8.65 |
+| `L2-glosario` · `L2-faqs` | **+308.64** | +321.89 |
+| **`L3-sci` · `L4` · `L5-casos`** | **0** | **0** |
+
+### Las dos salidas, y la que se toma
+
+| | qué exige | qué compra |
+|---|---|---|
+| **(A) RECALIBRAR** | tocar el cascarón que comparten **las 367 rutas**, con antes/después a umbral cero sobre TODAS, no sólo sobre las que se miran | cerrar `pie.rect.h` de +4 a 0 en 62 páginas |
+| **(B) DECLARAR** ✅ | escribir el desfase donde se lea, con su número | no mover nada verificado |
+
+### Por qué (B), con el número del PASO 0 delante y no por comodidad
+
+1. **La deriva no CREA ni un par de defecto.** `qa:lh-cubos` reparte los 4996
+   pares distintos de 1440 y los 4974 de 390 y da **cubo 1 = 0** en la unidad
+   que el comparador lee como defecto. Toca **248** pares a 1440 y **390** a
+   390, **todos de eje mixto**, y a 1440 **los 248 ya diferían**: la deriva
+   **cambia su magnitud, no su existencia**;
+2. **el pie NUNCA casó, así que no hay nada que «recuperar».** El congelado del
+   17 da `pie.rect.h` **orig 590.75 → clon 594.75**. Con el pie nuevo a
+   **593.75** el par sigue difiriendo — **con Δ +1 en vez de +4**. La deriva
+   **acercó** el original al clon;
+3. **el objetivo se ha movido una vez en cuatro días y no hay campaña de ruido
+   para estas rutas.** Calibrar contra un valor así es exactamente cómo se
+   fabrica una **FAMILIA DE CALIBRACIÓN**: la tanda siguiente encontraría un
+   `−3` y volvería a mover el clon;
+4. **precedente en casa, y es el mismo mecanismo:** con el `h1` bimodal el clon
+   quedó a **Δ0 contra UN estado** y el otro se declaró (`cqa6-390`). Mover el
+   clon no quita la discrepancia — **cambia contra cuál de los dos valores es
+   exacto**;
+5. **`L2` no entra en la decisión** aunque su deriva sea de +308.64: está
+   AUSENTE en el clon, así que no hay nada calibrado que reabrir. Se construirá
+   contra el espejo del día que se construya.
+
+### Lo que (B) OBLIGA a escribir, y dónde
+
+> **Un desfase conocido y no escrito se lee como defecto del clon dos tandas
+> después.** Por eso la decisión no termina aquí:
+
+| qué | dónde | forma |
+|---|---|---|
+| el desfase, con su número y su fecha | `PENDIENTES-QA.md` §F3-LH-PIE-DECLARADO-NO-RECALIBRADO | **evento** |
+| la regla de método que lo generaliza | `CLAUDE.md` | **regla** — sin fecha ni ruta |
+
+**Y el criterio de lectura que queda vigente, que es lo operativo:**
+
+> **`pie.rect.h` del clon vale 594.75 @1440 y 1762.97 @390, y NO se mueve.**
+> Contra el original de hoy eso es **+1** y **+1.80**; contra el del 14 era
+> **+4** y **+8.45**. Un Δ futuro en ese camino **no es una regresión del clon
+> mientras el clon no cambie**: es el original. Se comprueba con `qa:lh-cubos`,
+> que dice de quién es cada diferencia, **antes** de tocar nada.
+
+### Lo que esta decisión NO decide
+
+- **no cierra `pie.rect.h` como «limpio»**: sigue difiriendo, y sigue siendo un
+  par de eje mixto sin referencia limpia. Lo que se decide es **no recalibrar
+  ahora**, no que el número esté bien;
+- **no toca la divergencia de cascarón** (`esqueleto.cascaron.*`, 248 pares):
+  ésa es la declarada de Divi metiendo cabecera y pie dentro de
+  `.et_pb_section`, y es de otra clase;
+- **no abre la campaña de ruido** de estas rutas. Sin ella, un residuo pequeño
+  aquí sigue siendo **SIN PROBAR**, no «limpio».

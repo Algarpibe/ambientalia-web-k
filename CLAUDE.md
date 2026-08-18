@@ -937,6 +937,29 @@ siempre: **se compara en la unidad que se afirma**. Si la afirmación es «son l
 mismos», la unidad es el ELEMENTO — y el recuento va al lado como resumen, nunca
 como prueba.
 
+**Y hay un contenedor hermano que no contiene elementos sino CAUSAS: EL RECUENTO
+DE PARES TOCADOS POR UNA DERIVA DEL OBJETIVO.**
+
+> **Cuando el objetivo se mueve, «cuántos pares tocó» NO dice si hay daño.** Un
+> par que **ya difería** y cuya referencia se desplaza sigue difiriendo: la
+> deriva le cambió la magnitud, no la existencia. El discriminador es el corte
+> **CREA / MUEVE** —¿casaba antes ese par?— y hay que contarlo, porque el total
+> los suma y **el total es el nivel de arriba de la atribución**.
+
+**Y su mitad de redacción, que es donde se decide mal:** *«la deriva toca 248
+pares»* y *«la deriva rompió 248 pares»* se escriben casi igual y sólo la segunda
+justifica recalibrar el clon. **Recalibrar contra un objetivo que se acaba de
+mover, sin ese corte delante, es exactamente cómo se fabrica una FAMILIA DE
+CALIBRACIÓN**: la tanda siguiente encuentra el signo contrario y vuelve a mover.
+
+**Y el sitio donde la deriva se esconde:** si tu comparador tiene un eje que
+**no lee como defecto** —un «mixto», un «sin referencia limpia»—, la deriva
+geométrica cae **entera ahí**, porque `y` y `h` son justo las magnitudes que
+dependen de las dos cosas a la vez. Saltarlo con un `continue` publica **«deriva
+= 0»** al lado de un control que dice que la referencia se movió: dos números
+ciertos y una lectura falsa. **Los ejes excluidos se reparten igual y se
+publican con su cardinal, fuera del recuento** (§regla 14).
+
 **Y hay un octavo contenedor, que no contiene píxeles sino AFIRMACIONES: la
 unidad en la que se declara la COBERTURA (2026-08-02).**
 
