@@ -1,5 +1,227 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔⛔ F3-AUDITORIA-76 · LA «OSCILACIÓN ENTRE BUILDS» ERA UNA EDICIÓN, Y SE RETIRA UNA AFIRMACIÓN DEL REGISTRO (2026-08-18, 76.ª tanda — auditoría, nada reparado)
+
+**Qué se decide aquí: nada se construye. Se retira una afirmación, y se retira
+POR MEDIDA.** El encargo pedía la comprobación retroactiva **en las dos
+direcciones** (§*una comprobación retroactiva se enmarca en las dos
+direcciones*). Las dos se contestaron con el mismo barrido sobre las congeladas,
+y la que salió cargada fue **la segunda**, que es la que casi nunca se hace.
+
+### La afirmación que se retira
+
+> ⛔ §F3-LH-LISTADO-QUE-OSCILA afirmaba: *«un grupo de **36 pares de CONTENIDO**
+> aparece y desaparece **entre builds del mismo código**»*, y de ahí *«**el clon
+> no es determinista entre builds**»* y *«**contradice la premisa sobre la que
+> está escrita `clon-base`**»*.
+>
+> **Las tres se retiran.** No eran builds del mismo código: entre la corrida
+> `-1` y la `-2` **se aplicó la salida `A` de §F3-LH-ENTRADA-QUE-ES-UN-301** —el
+> extractor excluyendo el documento del 301— y entre la `-2` y la `-3` **se
+> revirtió**. La misma tanda que midió la «oscilación» es la que hizo la
+> edición, y **la escribió en su propio mensaje de commit**.
+
+### La prueba, por cuatro canales y ninguno circunstancial
+
+**(a) El recuento de tarjetas, que es directo y no admite lectura alternativa.**
+En `/es/etiqueta/cov/`, forma `L1-etiqueta`:
+
+| corrida | `listado.nTarjetas` orig → clon | `tarjetas.2.titulo` del clon |
+|---|---|---|
+| `-1` (09:08) | (sin diferencia: **6 → 6**) | «Contaminación del aire en vertederos…» |
+| **`-2` (09:30)** | ⛔ **6 → 5** | «Monitorización de emisiones en refinerías…» |
+| `-3` (14:11) | (sin diferencia: **6 → 6**) | «Contaminación del aire en vertederos…» |
+
+**En la `-2` falta una tarjeta y las siguientes suben una posición.** Eso no es
+un empate resuelto de otra forma: es **un documento menos en la consulta**, y el
+documento es el que la edición excluyó.
+
+**(b) Los residuos de FECHA, con el mismo `+4` que el registro ya tenía
+escrito.** Derivado de las congeladas (`camino` que contiene `fecha`):
+
+| corrida | FECHA | `paginador` | pares distintos |
+|---|---|---|---|
+| `-1` | **111** | 1 173 | 5 282 |
+| **`-2`** | **115** *(+4)* | 1 173 | 5 265 |
+| `-3` | **111** | **852** | 4 996 |
+| `-4` | **111** | **852** | 4 996 |
+
+El acta de la 74.ª ya publicaba ese mismo evento con otro filtro —**«FECHA
+6 → 10»**, también **+4**— y lo atribuía, correctamente, a la exclusión. **Son
+la misma medida contada dos veces**: una vez como prueba de que la exclusión
+empeoraba, y otra como prueba de que el clon oscilaba.
+
+**(c) Las rutas afectadas son EXACTAMENTE las dos que el mensaje de commit
+nombra.** `9d60d40` escribe: *«el original REDIRIGE su permalink y SIGUE
+LISTANDO SU TARJETA en `/etiqueta/cov` y en
+`/etiqueta/emisiones-industriales/page/3`»*. Diferencia simétrica derivada de
+las tres congeladas:
+
+| conjunto | n | reparto |
+|---|---|---|
+| claves que la `-2` **arregla** (en `-1`, no en `-2`, otra vez en `-3`) | **58** | `/recursos/articulos/page/{2,3,4,5,6}` **54** · `/etiqueta/h2s-es` 1 · `…/industria-y-contaminacion-por-olores/page/2` 3 |
+| claves que la `-2` **rompe** (sólo en `-2`) | **43** | **`/etiqueta/cov` 7 · `/etiqueta/emisiones-industriales/page/3` 22** · `industria-…/page/2` 11 · `/recursos/articulos/page/4` 2 · `/etiqueta/malos-olores` 1 |
+
+Los **29** que el commit predice están ahí. Y el **58** es el número que
+§F3-LH-ENTRADA-QUE-ES-UN-301 ya publicaba como *«el coste medido: **58 pares** en
+2 formas»*.
+
+**(d) `-1` ⊂ `-3` como conjunto**: de `-1` a `-3` hay **326 claves menos y 0
+nuevas**. Un árbol que se mueve solo introduce claves en las dos direcciones; una
+secuencia de arreglos sólo las quita.
+
+### La otra dirección: ¿algún «0 con regresión» de `clon-base` se dio por bueno sobre un blanco móvil?
+
+**No, y se contesta con un cardinal, no con un argumento.** Derivado de las **94**
+congeladas `clon-base-*`:
+
+> **Ninguna ruta `/page/N` entra en el universo de `clon-base` antes del
+> 2026-08-14.** Las 94 congeladas dan `/page/N` = **0** en todas las corridas de
+> 11 · 17 · 31 · 232 · 249 · 302 rutas; la primera con paginación es
+> `clon-base-{1440,390}-f33-padre-antes` (**345 rutas · 30 `/page/N`**), y la de
+> hoy tiene **367 · 39**.
+
+Las **10** citas de «0 con regresión» del registro (`ESQUEMA-CMS.md` ×2 ·
+`HANDOFF.md` ×6 · `PENDIENTES-QA.md` ×1 · `PLAN-FASE-2.md` ×1) son todas de
+universos de **11 · 17 · 31 · 232** rutas, o sea **sin una sola forma paginada
+dentro**. La única corrida de `clon-base --cmp` que ha mirado alguna vez un
+universo con listados es **la que no se completó** —§F3-LH-GUARDA-DE-REGRESION-
+SIN-COMPLETAR—, que es justo la que esta tanda tiene que cerrar.
+
+**Y la premisa de `clon-base` sale REFORZADA, con su número:** cinco pares de
+congeladas tomadas contra el mismo build (dos procesos de servidor distintos,
+dos sesiones de navegador distintas) dan **Δ0 en 205 comparaciones de ruta**:
+
+| par | rutas comunes | con delta |
+|---|---|---|
+| `1440-2026-08-02` vs `1440-tras-marcador` | 31 | **0** |
+| `1440-tras-marcador` vs `1440-sin-marcador` | 31 | **0** |
+| `1440-valida10` vs `1440-valida10-2026-08-03` | 31 | **0** |
+| `1440-f23-prod-control` vs `1440-f23-productos` | 31 | **0** |
+| **las dos corridas rotas `p1`** (mismo `.next`) | **81** | **0** |
+
+El último par importa especialmente: `iniciarClon()` **no construye** —lanza
+`npm run start` contra el `.next` que haya—, así que los tres intentos de `p1`
+sirvieron **el mismo build**, y los dos que dejaron congelada coinciden **al
+céntimo en las 81 rutas que los dos alcanzaron**.
+
+### Lo que NO se retira, y queda SIN PROBAR con su denominador
+
+**`/contaminacion-por-metano`, `docH 41 974 → 41 990` y `S1 h +16`** entre `p0` y
+`p1`. Sigue en pie **y no puede sostener la afirmación general**:
+
+| | |
+|---|---|
+| observaciones | **1** — la segunda corrida `p1` **no llegó a esa ruta** (`ConnectionClosedError`) |
+| ¿lo explica el diff? | **no**: lo único de `apps/web/src/` que cambió entre los dos builds es `Paginador.tsx`, y esa ruta entra por `app/[slug]/page.tsx`, que **no importa `PaginaListado`** (derivado: el único importador de `Paginador` es `PaginaListado.tsx`) |
+| lo que se movió | `anclas` **204 → 204** · `imgs` **26 → 26** · `h1.y` **Δ0** · sólo `S1` (el cuerpo rico, 40 430 px) |
+| lo que lo dirime | **la corrida completa de `p1`**, que es el PASO 2 de esta tanda. Una segunda observación lo convierte en defecto; su ausencia, en episodio |
+
+**No se ficha como no-determinismo ni se descarta**: se declara **n = 1** y se
+espera a la medida que ya estaba planificada. Es §*«no se observó un segundo
+estado en N cargas» NO es «es unimodal»* con N = 1.
+
+### Qué pasa a SIN PROBAR y qué sigue en pie
+
+| afirmación | estado |
+|---|---|
+| «36 pares de contenido oscilan entre builds del mismo código» | ⛔ **RETIRADA** — eran 58 arreglados + 43 rotos por una edición documentada |
+| «el clon no es determinista entre builds» | ⛔ **RETIRADA** — sin evidencia; y 205 comparaciones a Δ0 la contradicen |
+| «contradice la premisa de `clon-base`» | ⛔ **RETIRADA** — la premisa no se ha puesto a prueba nunca sobre formas paginadas, que es distinto de haber fallado |
+| «`-3` y `-4`, mismo build, idénticas al par» | ✅ **EN PIE** — derivado hoy: 0 claves sólo en una y 0 sólo en la otra |
+| «`/contaminacion-por-metano` +16» | ⚠ **SIN PROBAR, n = 1** |
+| `CMS-ORDEN-L2` **§7e ampliada con «¿y con qué DESEMPATE?»** | ⚠ **la ampliación se retira**: su única evidencia era la oscilación. La pregunta *«por qué campo ordena»* sigue **entera y sin decidir** |
+
+> ⚠ **Y la consecuencia operativa que evita la tanda equivocada:** el encargo de
+> esta tanda mandaba *«añadir desempate determinista si los ~36 pares son
+> documentos con la clave de orden empatada»*, con su ESCALÓN diciendo *«si no lo
+> son, para»*. **No lo son — no son empates de nada.** Añadir un desempate aquí
+> sería arreglar un defecto que no existe, y peor: **re-emitiría el orden servido
+> de rutas ya verificadas** por una causa inventada, que es exactamente la
+> FAMILIA DE CALIBRACIÓN que este repo tiene prohibido fabricar.
+>
+> Un desempate total y estable **sigue siendo buena idea por sí misma** —lo pide
+> `CMS-ORDEN-L2` cuando se decida qué campo ordena—, pero entra **con esa
+> decisión y con su antes/después**, no como reparación de urgencia.
+
+## 📋 F3-ESTADO-76 · LA FOTO DERIVADA DEL ÁRBOL, CADA LÍNEA CON SU DERIVACIÓN (2026-08-18, 76.ª tanda)
+
+**Ninguna cifra de aquí se hereda del `HANDOFF`** (§regla 9: un número recordado
+envejece **contra** el repo). Cada una lleva al lado la orden que la produce.
+
+### Salud del árbol
+
+| | valor | derivación |
+|---|---|---|
+| rama · sincronía | `main`, **0 ahead / 0 behind** de `origin/main` | `git rev-list --left-right --count origin/main...HEAD` |
+| árbol | **limpio** | `git status --porcelain` sin salida |
+| HEAD | `0bb9707` (2026-08-17 15:10) | `git log -1` |
+
+### Instrumental — tres unidades distintas, y no se suman
+
+| unidad | valor | derivación |
+|---|---|---|
+| **sondas** que compilan y declaran su mínimo | **173** | última línea de `npm run qa:lib` (`93/93`, EXIT 0) |
+| ficheros `.mjs` en `scripts/qa/` | **178** | `ls scripts/qa/*.mjs \| wc -l` — la diferencia son las **5 librerías** que la propia sonda nombra (`lib.mjs · lib.test.mjs · css-compilado.mjs · lh-barrido.mjs · lh-ejes.mjs`) |
+| **rutas emitidas** | **367** · 17 familias · 0 vacías · 0 desaparecidas | `npm run qa:manifiesto`, EXIT 0 |
+| **congeladas** en `scripts/qa/medidas/` | **1 056** `.json`, de los que **372** llevan marcador de artefacto (`-neg-` 326 · `SONDA-` 38 · `SABOTAJE` 8) | `ls` + `grep -c` sobre los nombres |
+
+### Qué ha entregado F3-2 y qué debe
+
+**El comparador de dos lados contra el original VIVO** —el que fija el objetivo
+de la fase— está en `lh-cmp-{1440,390}-vivo-2026-08-14.json`, y **no se ha vuelto
+a correr desde el 2026-08-14**:
+
+| | hoy | objetivo de F3-2 |
+|---|---|---|
+| formas | 13 | 13 |
+| **AUSENTES** | **6** | **1** |
+| comparadas | **7** | **12** |
+
+**Las 6 ausentes, nombradas** (derivado de `formas[].estado`), que es lo que
+convierte «6 → 1» en una lista de trabajo y no en un titular:
+
+| forma | fase |
+|---|---|
+| `L2-glosario::/es/glosario/` | **F3-2** |
+| `L2-faqs::/es/preguntas-frecuentes/` | **F3-2** |
+| `L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/` | **F3-2** |
+| `L3-sci::/es/scientific-category/articulos-tecnicos/` | **F3-2** |
+| `L5-casos::/es/casos-de-exito/` | **F3-2** |
+| `L4-listado-embebido::/es/recursos/` | **F3-3** — es **la 1** del objetivo |
+
+> ⚠ **El otro comparador NO es éste, y confundirlos cambia el denominador.**
+> `qa:lh-cmp-todas` mide contra el **espejo congelado** de 82 páginas
+> (`13 formas` ≠ `82 páginas`), y hoy va **82 formas · 20 ausentes · 62 con
+> diferencias · 4 996 pares distintos** @1440 (`…-todas-2026-08-17-4.json`) y
+> **4 974** @390 (`…-390-todas-2026-08-17-3.json`). Los dos son buenos; sólo el
+> primero fija `13 · 1 · 12`.
+
+### Las fichas abiertas, con su número
+
+| ficha | el número, derivado |
+|---|---|
+| §F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR | línea base **367/367** a los dos anchos; `p1` @1440 **248** y **81** comparadas (**119** y **286** sin medir, congeladas con marcador de §regla 7); `p1` @390 **0**. Comprobado leyendo las congeladas, no la ficha |
+| §F3-LH-ENTRADA-QUE-ES-UN-301 | **1** de 212 documentos con canonical a otro slug; salida **A DESCARTADA POR MEDIDA** (FECHA **6 → 10**); **B** y **C** son las dos mitades y **C no necesita campo nuevo**. Sigue **sin decidir** |
+| §F3-LH-VACIA-DOS-CAUSAS | `149 = 84 + 55 + 10`; grupo **B = 5** sin ninguna decisión (`/productos`·`/sectores`·`/recursos/kunakpedia`·`/recursos/documentos-cientificos`·`/recursos/preguntas-frecuentes`), **régimen medido, forma NO** |
+| `CMS-ORDEN-L2` §7e | **2 preguntas × 3 y 4 salidas**, sin decidir. ⚠ Su ampliación de la 75.ª —*«¿y con qué DESEMPATE?»*— **se retira** en §F3-AUDITORIA-76 |
+| **T10** | re-emisión de **169** cuerpos; sigue fichada y **no entra** sin antes/después |
+| **65 páginas sin tarjetas** | contrato `P-LH-C7`; el clon emite **0 de 65**; cobertura **CERO** — y `P-LH-C7` **no tiene todavía nada que verificar** |
+| **144 residuos de cascarón** | ⚠ **cifra con alcance caducado**: es de la **66.ª** (3 formas, 232 residuos totales @1440). Al alcance de hoy —62 formas— las entradas de `esqueleto.cascaron` son **4 712** a los dos anchos. Citar «144» hoy es §regla 14: una limitación sin su denominador |
+| §F3-LH-PIELB-GRANDES-SIN-EJERCITAR | **0 de 43** instancias en los dos tramos; el componente **tira** en vez de adivinar |
+| §F3-LH-SUBPIXEL | **31 de 31** pares `.rect.w` son `span.pages`; los **124/116** `.x` son su aritmética; el origen del 0.03 **SIN PROBAR** |
+
+### La máquina, antes de medir
+
+| | node | chrome |
+|---|---|---|
+| al abrir la tanda | **30** | **0** |
+
+**Los 30 son servidores MCP** (`chrome-devtools-mcp` · `server-postgres` ·
+`firebase-tools` · `n8n-mcp`), **ninguno de este proyecto**, y **el `npm run
+test` de 16 workers que mató las tres corridas ya no está**. **0 chrome
+huérfanos** de las corridas de ayer: la limpieza de la 75.ª sí cerró.
+
 ## ✅ F3-LH-VENTANA-CERRADA · LOS 443 CAYERON A 162, Y LO QUE QUEDA ES **UNA SOLA COSA CON NOMBRE** (2026-08-17, 75.ª tanda)
 
 **La caída, medida a los dos anchos** (`qa:lh-cmp-todas`, contra el espejo
@@ -156,7 +378,24 @@ quedan fichados con su número.
    mide por centro vertical. §*cada arreglo de una sonda vuelve a correr el test
    en negativo, entero*.
 
-## ⛔ F3-LH-LISTADO-QUE-OSCILA · EL CONTENIDO DE ALGUNAS FORMAS NO ES EL MISMO ENTRE BUILDS (2026-08-17, 75.ª tanda — SÓLO NOMBRADO)
+## ⛔ (RETIRADA) F3-LH-LISTADO-QUE-OSCILA · EL CONTENIDO DE ALGUNAS FORMAS NO ES EL MISMO ENTRE BUILDS (2026-08-17, 75.ª tanda — SÓLO NOMBRADO)
+
+> ⛔⛔ **RETIRADA POR MEDIDA el 2026-08-18 (76.ª tanda) — §F3-AUDITORIA-76,
+> arriba. NO era «entre builds del mismo código»: entre la corrida `-1` y la
+> `-2` se APLICÓ la salida `A` del 301 y entre la `-2` y la `-3` se REVIRTIÓ.**
+>
+> El canal que lo cierra sin discusión: en la `-2` el clon sirve
+> `/etiqueta/cov` con **`nTarjetas` 5 donde el original sirve 6** — falta el
+> documento que la edición excluyó, y por eso «la ventana se desplaza una
+> posición». Además, **`-1` ⊂ `-3`** (326 claves menos, **0 nuevas**), y los
+> residuos de FECHA hacen `111 → 115 → 111`, el mismo **+4** que el acta de la
+> 74.ª ya publicaba como «6 → 10» y atribuía —bien— a la exclusión.
+>
+> **Se deja el texto entero por debajo, sin tocar, como evidencia de qué se
+> afirmó y con qué.** Lo único que estaba mal era la premisa negativa *«el mismo
+> código»*, que nadie derivó del diff. Lo que SÍ sigue en pie: la corrida `-4`
+> contra el mismo build de la `-3` es **idéntica al par**, y
+> `/contaminacion-por-metano` **+16** queda **SIN PROBAR con n = 1**.
 
 **Qué se decide aquí: nada.** Se nombra porque apareció adjudicando el ESCALÓN 2
 y porque **contradice una premisa que este repo da por buena**: `clon-base` está

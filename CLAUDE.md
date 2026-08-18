@@ -2334,6 +2334,55 @@ está verificado»**. Se escribe qué lo verifica —una derivación independien
 un negativo que salga rojo si la premisa se rompe— o se dice que nadie lo ha
 verificado.
 
+**16 · «MISMO CÓDIGO» ES UN HECHO NEGATIVO. EL NO-DETERMINISMO ES LA ÚLTIMA
+HIPÓTESIS, NUNCA LA PRIMERA.** (2026-08-18)
+
+La §regla 8b dice que **los hechos negativos que un pre-registro afirme se
+comprueban contra el archivo, no de memoria**. Ésta es la misma regla aplicada al
+hecho negativo que más se afirma sin comprobar, porque quien lo afirma es quien
+estuvo delante del teclado:
+
+> **«las dos corridas son contra el MISMO código» no se recuerda: se DERIVA del
+> diff entre los dos builds.** Y mientras no esté derivado, la explicación de que
+> dos medidas difieran es **la más aburrida** —el árbol cambió entre medio—, no
+> la más interesante.
+
+**Por qué el orden importa tanto:** «no determinista» es una hipótesis que **no
+tiene forma de fallar** y que **contamina hacia atrás todo lo medido en esas
+rutas** —el propio registro lo escribió: *«cualquier Δ de contenido medido en
+estas rutas es indistinguible de la oscilación»*—. O sea que colocarla la
+primera **retira afirmaciones buenas** y manda a la tanda siguiente a arreglar un
+defecto que no existe.
+
+**Medido, y las dos mitades son del mismo día:** la 75.ª tanda fichó *«un grupo
+de 36 pares de CONTENIDO aparece y desaparece entre builds del mismo código»* y
+de ahí *«el clon no es determinista»* y *«contradice la premisa de `clon-base`»*.
+**La misma tanda había aplicado y revertido una exclusión de documento entre esas
+dos corridas, y lo escribió en su propio mensaje de commit.** Un `git log` de 12
+líneas lo decía; nadie lo miró porque «no se tocó nada» se sentía sabido.
+
+**Los tres discriminadores, en orden de coste creciente** — el primero suele
+bastar:
+
+| # | pregunta | cómo se contesta |
+|---|---|---|
+| 1 | ¿cambió el ÁRBOL entre las dos medidas? | `git log --format='%h %ad %s' --date=format:'%H:%M'` contra las **mtime de las congeladas**. Los commits llevan la hora |
+| 2 | ¿cambió el DATO? | el clon lee de una DB: sembrar, excluir o re-extraer **no toca `src/` y mueve el render**. Un `nTarjetas` que baja es un documento menos, **no un empate** |
+| 3 | ¿queda algo? | **entonces** sí: dos corridas contra el **mismo `.next`**. Y ojo, `iniciarClon()` **no construye** — lanza `npm run start` contra el `.next` que haya, así que dos sondas seguidas ya son mismo-build **por defecto** |
+
+> **Y la firma que distingue las dos causas, que es gratis:** una EDICIÓN produce
+> un conjunto de diferencias **anidado** —arregla unas, rompe otras, y al
+> revertir vuelve exactamente al conjunto de partida—; el ruido produce
+> diferencias **en las dos direcciones sin volver**. Medido: `-1 ⊂ -3` con **326
+> claves menos y 0 nuevas**, que es la forma de una secuencia de arreglos y no la
+> de un árbol que tiembla.
+
+**Y la mitad que protege a la hipótesis de morir injustamente:** lo que quede sin
+explicar **se declara con su n**, no se descarta por asociación. Aquí quedó
+`/contaminacion-por-metano` **+16** con **n = 1**, en una corrida que murió antes
+de repetirlo — ni defecto, ni ruido: **SIN PROBAR, y con la medida que lo dirime
+ya planificada**.
+
 ## Comandos
 
 ```bash
