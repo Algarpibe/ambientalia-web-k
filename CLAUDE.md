@@ -2682,3 +2682,5 @@ npm run check      # lint + typecheck + build  ← antes de commitear
 npm run build
 npm run typecheck
 ```
+
+<!-- CANARIO-CARGA-2026-08-18: si lees esto, el fichero llega entero -->
