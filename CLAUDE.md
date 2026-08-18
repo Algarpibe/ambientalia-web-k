@@ -2383,6 +2383,85 @@ explicar **se declara con su n**, no se descarta por asociación. Aquí quedó
 de repetirlo — ni defecto, ni ruido: **SIN PROBAR, y con la medida que lo dirime
 ya planificada**.
 
+> ✅ **MEDIDO 2026-08-17 (77.ª tanda), y el resultado NO es el que cerraba la
+> pregunta:** `qa:clon-estados`, 60 cargas contra un solo build, da **UN estado
+> en las dos rutas** (`41990`×30 y, en el control, `38502`×30). Así que se
+> escribe **la cota** —regla de tres, `3/30` ⇒ **< 10 % por carga y ruta**— y el
+> `+16` sigue siendo **regresión con su mecanismo SIN PROBAR**. Y una
+> constricción nueva que ninguna de las dos sondas de un solo ancho podía dar:
+> a **390 esa ruta no se mueve** (`81132 → 81132`), o sea que el `+16` es **de
+> 1440 y sólo de 1440** — §regla espejo: en el otro ancho hay un contenedor que
+> se lo come.
+
+**17 · UNA GUARDA TIENE QUE DEVOLVER TODAS LAS MITADES DEL COMPORTAMIENTO QUE
+RELEVA — Y `process.exitCode` NO MATA.** (2026-08-17)
+
+La §4bis-sexta dice que un gancho que **releva** a Node —`uncaughtException`,
+`unhandledRejection`— tiene que **devolver el fallo a su sitio**. Le faltaba
+decir **cuántas mitades tiene ese sitio**, y son dos:
+
+> **Ante una excepción no capturada, Node hace DOS cosas: elegir el código ≠ 0
+> **y salir en el acto**. Un gancho que sólo pone `process.exitCode = 1`
+> devuelve la primera y se queda la segunda** — porque `exitCode` no termina
+> nada: sólo dice con qué código se terminará **cuando el bucle de eventos se
+> vacíe**. Si algo lo mantiene vivo, **no se vacía nunca**.
+
+**Medido:** `gritaSiRevienta` imprimía su banner entero y el proceso **se
+quedaba colgado para siempre**, porque la excepción saltaba **después de
+`launch()`** y el navegador de puppeteer sostenía el bucle. Con `spawnSync`
+delante eso no es un rojo: es **`status: null` tras 15 minutos**, o sea un
+negativo que **ni pasa ni falla — se agota**.
+
+**Y por qué llevaba tiempo invisible, que es la parte reutilizable:** `qa:lib`
+§3b ya probaba *«tras `iniciarClon()`, un `throw` SIGUE saliendo ≠0»* **y
+pasaba**. Podía pasar: en su dominio **no hay ningún handle abierto**, así que
+el bucle se vaciaba solo y las dos mitades daban el mismo resultado. Es
+§*una regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR
+para ese caso*, aplicada al **negativo de la propia guarda**.
+
+> **Operativamente:** todo gancho que releve un comportamiento por defecto se
+> prueba **con el bucle sostenido**, no sólo con el bucle limpio — y el remate
+> va `unref()`ado, para no cambiar el caso que ya funcionaba.
+
+**Y su hermana, del mismo día: UN SABOTAJE QUE COMPARTE VARIABLE CON EL MÍNIMO
+NO PUEDE EJERCITARLO.**
+
+> **Si el mínimo de una sonda se DERIVA de lo mismo que el sabotaje anula, el
+> sabotaje MUEVE LA PORTERÍA** y el caso nunca prueba lo que su tabla promete.
+
+Medido: el caso `sin-cargas` prometía *«0 cargas **< mínimo** ⇒ NO SE PUDO
+EVALUAR»*, y con `minimo: RUTAS.length * CARGAS` poner `CARGAS=0` deja el mínimo
+**en 0 también**: no hay «0 contra un mínimo positivo», hay «0 contra 0». Es
+§regla 15 —*compartir premisa no verifica la premisa*— con el objeto cambiado:
+aquí lo compartido no es el fichero, es **la variable**.
+
+**18 · «HAY UNA SONDA EN VUELO» NO SE DERIVA DEL ÁRBOL.** (2026-08-17)
+
+Este documento ya manda *«mientras haya una sonda en vuelo, nada de `build`,
+`check` ni `dev`»*. Le faltaba **cómo se sabe**, y resulta que con lo que una
+tanda tiene mandado derivar **no se sabe**:
+
+> **`git log`, `git status`, `qa:lib` y `ls medidas/` dan EXACTAMENTE LO MISMO
+> con una sonda de otra sesión corriendo y sin ella.** La comprobación es de
+> **PROCESOS**, no del árbol — y por eso hay que hacerla explícita: un árbol
+> limpio no es un puerto libre.
+
+**Medido:** una corrida de `clon-base 390 p1` venía en vuelo **de antes de la
+sesión**, y el `npm run check` del PASO 0 —mandado por el propio encargo— le
+cambió el `.next` por debajo. La guarda de `w()` hizo su trabajo y la desvió a
+`clon-base-390-p1-CONTAMINADA.json` en vez de dejarla aterrizar con el nombre
+bueno.
+
+**Y el número que justifica descartar la corrida ENTERA** en vez de salvar «las
+que parecen bien»: contra la corrida buena del mismo día, la contaminada difiere
+en **10 de 367 rutas** — y **el fichero no dice cuáles**. Sin la guarda, esas 10
+habrían entrado en la línea base indistinguibles de las 357 buenas.
+
+> **Antes de `build`/`check`/`dev`: mirar los procesos** (`tasklist` / `ps`), no
+> sólo `git status`. Y si aparece una sonda ajena en vuelo, **se espera o se
+> construye fuera** (`NEXT_DIST_DIR`), que es lo que la §regla del build ya dice
+> hacer.
+
 ## Comandos
 
 ```bash

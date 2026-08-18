@@ -1,5 +1,140 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-LH-DOS-MEDIDAS-77 · LAS DOS MEDIDAS ABIERTAS, CERRADAS — Y EL `+16` RESULTA SER DE UN SOLO ANCHO (2026-08-17, 77.ª tanda)
+
+**Cierra el escalón que la 75.ª dejó abierto. L3 y L5 NO se construyeron: la
+tanda paró en el CORTE LIMPIO 1 y se dice por qué, con su número.**
+
+### PASO 1 · el `+16` queda ACOTADO, que no es lo mismo que explicado
+
+`qa:clon-estados` — 60 cargas contra **un solo build**, @1440
+(`medidas/clon-estados-1440.json`):
+
+| ruta | válidas | estados | valor |
+|---|---|---|---|
+| `/contaminacion-por-metano` | 30 | **1** | `41990` ×30 |
+| **control** `/monitorizacion-de-emisiones-del-trafico-urbano` | 30 | **1** | `38502` ×30 |
+
+0 errores · 0 selectores muertos.
+
+**La lectura es la PRE-REGISTRADA en la cabecera de la sonda, no una escrita
+hoy:** un estado ⇒ **no se escribe «el clon es determinista»**, se escribe **la
+cota** (regla de tres, `3/30`) ⇒ **< 10 % por carga y ruta**, y el `+16` se
+queda como **regresión con su mecanismo SIN PROBAR**.
+
+> **El control es lo que hace discriminante el resultado.** Las dos rutas dan un
+> estado, así que **no hay disparador (b)**: la sonda no es ruidosa. Si las dos
+> hubieran dado dos, lo medido no sería «esa página» sino el instrumento.
+
+### PASO 2 · la guarda @390, cerrada ENTERA — y el reparto, no el total
+
+`node clon-base.mjs 390 p1 --cmp medidas/clon-base-390-p0.json` →
+**367 comparadas · 5 con regresión · 0 sin medir · EXIT 1** (lo esperado).
+
+| ruta | `docH` | `S1 h` | anclas |
+|---|---|---|---|
+| `/etiqueta/monitorizacion-ambiental` | +2 | +2 | 153→154 |
+| `…/page/2` | +2 | +2 | 154→155 |
+| `…/page/3` | +2 | +2 | 154→155 |
+| `…/page/4` | — | — | 155→156 |
+| `…/page/5` | — | — | 155→156 |
+
+Las cinco son **la misma serie** y todas ganan **+1 ancla**: la regla del
+paginador. **Disparador (d): NO se cumple.**
+
+> **Y la partición dice algo que el total tapaba:** las páginas **6…11** de esa
+> misma serie **no se mueven**. Con `total = 11` sólo cambian de ventana las
+> cinco primeras — coherente con `ventanaPielB.aciertaVentana5 = 43` de
+> `lh-huecos`, de donde salió la ventana de 5. Dos instrumentos concuerdan sin
+> haberse puesto de acuerdo.
+
+### ⚠ EL HALLAZGO QUE NADIE PIDIÓ: EL `+16` ES DE 1440 Y SÓLO DE 1440
+
+| `/contaminacion-por-metano` | `docH` | `h1.y` |
+|---|---|---|
+| @390 `p0` → `p1` | **81132 → 81132 (Δ0)** | 317.58 → 317.58 |
+| @1440 `p0` → `p1` | 41974 → 41990 (**+16**) | — |
+
+§Notas de método: **un residuo que aparece sólo en un ancho es un contenedor que
+en el otro lo tapaba.** O sea que a 390 hay holgura que se lo come, y el `+16`
+deja de ser un Δ anónimo para ser **un Δ con un ancho**. Ni la corrida de 1440
+ni `clon-estados` podían darlo: las dos miran a un ancho solo.
+
+### Dos defectos de sonda, encontrados y arreglados EN LA CLASE
+
+| # | dónde | qué |
+|---|---|---|
+| 1 | **`lib.mjs`** (las 175 sondas) | `gritaSiRevienta` ponía `exitCode = 1` **y nada más**: con el navegador abierto el bucle no se vacía y el proceso **se cuelga para siempre**. `spawnSync` lo veía como **`status: null` tras 15 min** — ni pasa ni falla. → **§regla 17** |
+| 2 | `clon-estados` | contaba **cada carga dos veces** (`porPaginas: true` **y** `ev.ok()`): la corrida buena imprimió **`evaluadas 120/60`**. Va en la dirección que **fabrica verdes** — 30 buenas + 30 muertas dentro de `openPage` suman el mínimo exacto |
+
+**Y el negativo NO probaba lo que decía:** el caso `sin-cargas` prometía el
+contrato *en ejecución* y **no puede ejercitarlo**, porque `minimo` se **deriva**
+de lo mismo que el sabotaje anula (`RUTAS.length * CARGAS`) — el sabotaje **mueve
+la portería**. Corregido: la aserción sustantiva (*no imprimir «UN SOLO
+ESTADO»*) **se muda a `muerto`**, que es el único caso que recorre el cuerpo
+entero con 0 cargas válidas. Negativos corridos **enteros**: `qa:lib` 93/93 ·
+`qa:clon-estados-neg` 3/3.
+
+### ⚠ LA CORRIDA QUE ESTA TANDA SE ENCONTRÓ MUERTA — y su número
+
+`clon-base-390-p1-CONTAMINADA.json` **no la lanzó esta tanda**: venía en vuelo
+de antes y el `npm run check` del PASO 0 —mandado por el encargo— le cambió el
+`.next` por debajo. La guarda de `w()` la desvió en vez de dejarla aterrizar con
+el nombre bueno.
+
+**Contra la corrida buena de hoy, la contaminada difiere en 10 de 367 rutas — y
+el fichero no dice cuáles.** Ése es el número que justifica descartar la corrida
+entera en vez de salvar «las que parecen bien». → **§regla 18**: *«hay una sonda
+en vuelo» no se deriva del árbol*.
+
+### Las predicciones pre-registradas, y cuáles quedaron sin evaluar
+
+| # | predicción | resultado |
+|---|---|---|
+| P1 | rutas 367 → 374 | **SIN EVALUAR** — no se construyó |
+| P2 | formas 13 · 6 aus. → 13 · 3 · 10 | **SIN EVALUAR** |
+| P3 | páginas 82 · 20 aus. → 82 · 13 | **SIN EVALUAR** |
+| P4 | `qa:cobertura` tiene que subir | **SIN EVALUAR** |
+
+**Las cuatro dependían de construir**, así que no se declaran ni cumplidas ni
+falladas: se declaran **no ejercitadas** (§regla 10 — *una afirmación de
+completitud se verifica ejercitándola*).
+
+### Por qué la tanda para aquí — CORTE LIMPIO 1, con su razón
+
+`qa:lh-poblacion` de hoy: **0 de 29 series sin alcanzar**;
+`documentos-cientificos` clon **23** / mayor serie **14** y `casos` **57/57**,
+**déficit 0** en las dos. **Disparador (c): NO se cumple** — la población está.
+
+Lo que faltaba no era el dato: era **presupuesto de medición**. Las dos medidas
+abiertas consumieron ~75 min (la de 390 sola, **31 min** para 367 rutas), y
+construir `L3` exige derivar cosas que **su propia spec declara no medidas**
+(`SP-T3`, la tipografía de la tarjeta). **Partir una construcción por la mitad es
+peor que no empezarla**, y el encargo lo declaraba como cierre válido.
+
+### Lo que queda BANCADO para la 78.ª, ya derivado
+
+**El extracto de la tarjeta de `L3`**, que ninguna spec mide, derivado del
+**corpus capturado** —el canal **sin recortar**, no el espejo, que congela
+`cards.slice(0, 3)`— sobre **las 23 tarjetas de los 3 términos**:
+
+| unidad | valores observados | cabe en |
+|---|---|---|
+| **caracteres** | 96 · 97 · 98 · 99 | `≤ 99` → **23/23** |
+| **bytes** | **99 · 100** | `≤ 100` → **23/23** |
+
+Y **no hay retroceso a frontera de palabra**: los extractos cortan **a mitad de
+palabra** («…debido a la ind…»), así que `wp_trim_words` queda descartado —
+barrido 15…20 palabras, mejor **7/23**.
+
+> ⚠ **NO se elige unidad todavía, y ésa es la disciplina.** Las dos cotas dan
+> **23/23**: son **0 instancias separadoras** sobre este dominio, o sea que
+> elegir sería **escribir una de las dos** (§*dos modelos que predicen lo mismo
+> en todo tu dominio son uno solo*). Lo que **sí** inclina —y no basta— es que
+> la distribución en bytes tiene **2 valores** y la de caracteres **4**.
+> **La separadora se fabrica aplicando la regla al `cuerpo` del CMS** y viendo
+> cuál reproduce los 23; es el primer paso barato de la 78.ª.
+
 ## ✅ F3-TARJETA-DE-MAS-76 · NO FALTA NINGUNA TARJETA: SOBRA UNA EN 3 FORMAS, Y LAS DOS CAUSAS YA TIENEN FICHA (2026-08-18, 76.ª tanda)
 
 **El encargo pedía adjudicar «el clon sirve 5 tarjetas donde el original sirve
