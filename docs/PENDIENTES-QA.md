@@ -387,7 +387,29 @@ listados le EXIGEN al modelo»*— cobrada ahora sobre el grupo C.
 (los 57 `<article>` **sin recortar** — el espejo congela 3); las fechas, de los
 57 `corpus/casos/*.html`; el contraste con la DB, por Local API.
 
-## ⚠ F3-LH-DESEMPATE-DE-L3 · EL ORDEN DEL ARCHIVO CIENTÍFICO SE APOYA EN UNA COINCIDENCIA (2026-08-18, 80.ª tanda)
+## ✅⚠ F3-LH-DESEMPATE-DE-L3 · EL ORDEN DEL ARCHIVO CIENTÍFICO SE APOYA EN UNA COINCIDENCIA — **DECIDIDO 2026-08-18 (81.ª): DECLARAR Y NO TOCAR** (abierto en la 80.ª)
+
+> ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-18 (81.ª tanda): SE DECLARA Y NO SE
+> MODELA.** Los **17 de 23** apoyados en la coincidencia **se quedan como están**,
+> con su número escrito aquí y en la spec, y **no se inventa una clave de
+> desempate propia**.
+>
+> **La razón, y es la misma que en el sentido contrario cerró `CMS-ORDEN-L2`:**
+> el original **no sirve esa clave por ningún canal medido** (**0 de 23** con
+> `datePublished`, frente a los 57/57 de `casos`). Modelar un desempate aquí
+> sería **producto disfrazado de fidelidad** — elegir un criterio y presentarlo
+> como transcripción.
+>
+> **El precedente en casa es el `h1` BIMODAL:** cuando el original tiene un
+> comportamiento que el clon no puede reproducir por falta de canal, **el clon se
+> queda con UN valor fijo y el otro estado se DECLARA**. No se recalibra hacia lo
+> que no está medido, porque eso fabrica una FAMILIA DE CALIBRACIÓN.
+>
+> **Lo que esto NO dice, y hay que leerlo:** no dice que el orden sea correcto —
+> dice que **su corrección no está probada y no se va a fingir que sí**. El aviso
+> de abajo (*«un re-seed en otro orden rompería 17 de 23 sin que nada diera
+> error»*) **sigue vigente en su totalidad** y es parte de la declaración, no un
+> residuo de antes de decidir.
 
 **`L3` sí se construye, y su clave primaria está medida. Lo que se ficha es el
 DESEMPATE**, que decide **17 de las 23** tarjetas y **no** es una propiedad
