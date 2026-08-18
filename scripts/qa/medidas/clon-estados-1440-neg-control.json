@@ -7,7 +7,7 @@
       "/monitorizacion-de-emisiones-del-trafico-urbano"
     ],
     "base": "http://127.0.0.1:<efímero>",
-    "ts": "2026-08-18T01:28:58.731Z",
+    "ts": "2026-08-18T01:43:05.510Z",
     "escala": {
       "ts": "UTC"
     },
@@ -27,8 +27,8 @@
       "huecos": [],
       "cotaSiUnEstado": 1.5,
       "cargaMs": {
-        "min": 9323,
-        "max": 10056
+        "min": 9335,
+        "max": 9926
       }
     },
     "/monitorizacion-de-emisiones-del-trafico-urbano": {
@@ -44,8 +44,8 @@
       "huecos": [],
       "cotaSiUnEstado": 1.5,
       "cargaMs": {
-        "min": 7969,
-        "max": 8033
+        "min": 7967,
+        "max": 8265
       }
     }
   },
@@ -62,7 +62,7 @@
         "nImgs": 26,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 10056,
+        "cargaMs": 9926,
         "i": 0
       },
       {
@@ -76,7 +76,7 @@
         "nImgs": 26,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 9323,
+        "cargaMs": 9335,
         "i": 1
       }
     ],
@@ -92,7 +92,7 @@
         "nImgs": 31,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 7969,
+        "cargaMs": 7967,
         "i": 0
       },
       {
@@ -106,7 +106,7 @@
         "nImgs": 31,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 8033,
+        "cargaMs": 8265,
         "i": 1
       }
     ]

@@ -7,7 +7,7 @@
       "/monitorizacion-de-emisiones-del-trafico-urbano"
     ],
     "base": "http://127.0.0.1:<efímero>",
-    "ts": "2026-08-18T01:29:36.279Z",
+    "ts": "2026-08-18T01:43:43.055Z",
     "escala": {
       "ts": "UTC"
     },
@@ -42,7 +42,7 @@
         "nImgs": 26,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 9753,
+        "cargaMs": 9803,
         "i": 0
       },
       {
@@ -52,7 +52,7 @@
         "nImgs": 26,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 9279,
+        "cargaMs": 9197,
         "i": 1
       }
     ],
@@ -64,7 +64,7 @@
         "nImgs": 31,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 8129,
+        "cargaMs": 8104,
         "i": 0
       },
       {
@@ -74,7 +74,7 @@
         "nImgs": 31,
         "imgsSinCargar": 0,
         "fuentes": "loaded",
-        "cargaMs": 7947,
+        "cargaMs": 8054,
         "i": 1
       }
     ]

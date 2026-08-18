@@ -86,11 +86,25 @@ const censo = new Censo();
  * sonda de muestreo que mide de menos es precisamente la que fabricaría el
  * «un solo estado» falso, que es la conclusión cara de las dos.
  */
+/* ⚠ `porPaginas: false` A PROPÓSITO, corregido 2026-08-17 tras la 1.ª corrida.
+ *
+ * Estaba a `true` **y además** el bucle llama a `ev.ok()`, así que cada carga se
+ * contaba DOS veces: la corrida buena imprimió `evaluadas 120/60 cargas`. Es
+ * §sondas 1 —*lo que imprime y lo que cuenta no pueden discrepar*— y no es
+ * cosmético, porque el doble conteo va en la dirección que **fabrica verdes**:
+ * con el mínimo en 60, treinta cargas buenas (60) y treinta muertas dentro de
+ * `openPage` (0) suman exactamente el mínimo, y la sonda declararía haber
+ * evaluado sus 60 habiendo medido la mitad.
+ *
+ * La unidad de ESTA sonda es la carga MEDIDA, no la página abierta: una carga
+ * que abre y no deja dato no vale. Por eso cuenta a mano —`ok()` tras `medir`—
+ * y `porPaginas` sobra. El dato de la corrida ya congelada NO cambia: el doble
+ * conteo vivía en el contador del contrato, no en el `docH`. */
 const ev = new Evaluadas({
   nombre: `clon-estados @${ANCHO}`,
   unidad: "cargas",
   minimo: RUTAS.length * CARGAS,
-  porPaginas: true,
+  porPaginas: false,
 });
 
 const LECTOR = (sabotaje) => {
